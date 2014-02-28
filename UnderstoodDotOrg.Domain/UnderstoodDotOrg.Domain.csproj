@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomItemGenerator">
+      <HintPath>..\Libraries\CustomItemGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\Libraries\Sitecore.Kernel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\AuthorItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\AuthorItem.instance.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CommonSenseMedia\" />
@@ -47,7 +55,6 @@
     <Folder Include="Facebook\" />
     <Folder Include="Luminate\" />
     <Folder Include="Salesforce\" />
-    <Folder Include="SitecoreCIG\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnderstoodDotOrg.Common\UnderstoodDotOrg.Common.csproj">
