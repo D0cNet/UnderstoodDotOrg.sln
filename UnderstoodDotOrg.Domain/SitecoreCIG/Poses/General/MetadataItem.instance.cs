@@ -6,8 +6,8 @@ using Sitecore.Web.UI.WebControls;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General
 {
-public partial class MetadataItem 
-{
+    public partial class MetadataItem
+    {
 
-}
+    }
 }

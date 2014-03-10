@@ -9,251 +9,252 @@ using CustomItemGenerator.Fields.SimpleTypes;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.AssistiveTools
 {
-public partial class ReviewItem : CustomItem
-{
+    public partial class ReviewItem : CustomItem
+    {
 
-public static readonly string TemplateId = "{C9DFC576-7750-4A84-9A79-61F16585E64E}";
-
-
-#region Boilerplate CustomItem Code
-
-public ReviewItem(Item innerItem) : base(innerItem)
-{
-
-}
-
-public static implicit operator ReviewItem(Item innerItem)
-{
-	return innerItem != null ? new ReviewItem(innerItem) : null;
-}
-
-public static implicit operator Item(ReviewItem customItem)
-{
-	return customItem != null ? customItem.InnerItem : null;
-}
-
-#endregion //Boilerplate CustomItem Code
+        public static readonly string TemplateId = "{C9DFC576-7750-4A84-9A79-61F16585E64E}";
 
 
-#region Field Instance Methods
+        #region Boilerplate CustomItem Code
+
+        public ReviewItem(Item innerItem)
+            : base(innerItem)
+        {
+
+        }
+
+        public static implicit operator ReviewItem(Item innerItem)
+        {
+            return innerItem != null ? new ReviewItem(innerItem) : null;
+        }
+
+        public static implicit operator Item(ReviewItem customItem)
+        {
+            return customItem != null ? customItem.InnerItem : null;
+        }
+
+        #endregion //Boilerplate CustomItem Code
 
 
-public CustomTextField AppleAppStoreID
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Apple App Store ID"]);
-	}
-}
+        #region Field Instance Methods
 
 
-public CustomTreeListField Categories
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Categories"]);
-	}
-}
+        public CustomTextField AppleAppStoreID
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Apple App Store ID"]);
+            }
+        }
 
 
-public CustomTreeListField Platforms
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Platforms"]);
-	}
-}
+        public CustomTreeListField Categories
+        {
+            get
+            {
+                return new CustomTreeListField(InnerItem, InnerItem.Fields["Categories"]);
+            }
+        }
 
 
-public CustomTreeListField Screenshots
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Screenshots"]);
-	}
-}
+        public CustomTreeListField Platforms
+        {
+            get
+            {
+                return new CustomTreeListField(InnerItem, InnerItem.Fields["Platforms"]);
+            }
+        }
 
 
-public CustomTreeListField Skills
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Skills"]);
-	}
-}
+        public CustomTreeListField Screenshots
+        {
+            get
+            {
+                return new CustomTreeListField(InnerItem, InnerItem.Fields["Screenshots"]);
+            }
+        }
 
 
-public CustomTreeListField Subjects
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Subjects"]);
-	}
-}
+        public CustomTreeListField Skills
+        {
+            get
+            {
+                return new CustomTreeListField(InnerItem, InnerItem.Fields["Skills"]);
+            }
+        }
 
 
-public CustomTextField TargetGrade
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Target Grade"]);
-	}
-}
+        public CustomTreeListField Subjects
+        {
+            get
+            {
+                return new CustomTreeListField(InnerItem, InnerItem.Fields["Subjects"]);
+            }
+        }
 
 
-public CustomTextField Title
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Title"]);
-	}
-}
+        public CustomTextField TargetGrade
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Target Grade"]);
+            }
+        }
 
 
-public CustomTreeListField Type
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Type"]);
-	}
-}
+        public CustomTextField Title
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Title"]);
+            }
+        }
 
 
-public CustomTreeListField Genre
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Genre"]);
-	}
-}
+        public CustomTreeListField Type
+        {
+            get
+            {
+                return new CustomTreeListField(InnerItem, InnerItem.Fields["Type"]);
+            }
+        }
 
 
-public CustomTextField GooglePlayStoreID
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Google Play Store ID"]);
-	}
-}
+        public CustomTreeListField Genre
+        {
+            get
+            {
+                return new CustomTreeListField(InnerItem, InnerItem.Fields["Genre"]);
+            }
+        }
 
 
-public CustomTextField OnGrade
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["On Grade"]);
-	}
-}
+        public CustomTextField GooglePlayStoreID
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Google Play Store ID"]);
+            }
+        }
 
 
-public CustomTextField Summary
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Summary"]);
-	}
-}
+        public CustomTextField OnGrade
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["On Grade"]);
+            }
+        }
 
 
-public CustomGeneralLinkField ExternalLink
-{
-	get
-	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["External Link"]);
-	}
-}
+        public CustomTextField Summary
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Summary"]);
+            }
+        }
 
 
-public CustomTextField OffGrade
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Off Grade"]);
-	}
-}
+        public CustomGeneralLinkField ExternalLink
+        {
+            get
+            {
+                return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["External Link"]);
+            }
+        }
 
 
-public CustomImageField ThumbnailImage
-{
-	get
-	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["Thumbnail Image"]);
-	}
-}
+        public CustomTextField OffGrade
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Off Grade"]);
+            }
+        }
 
 
-public CustomTextField Description
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Description"]);
-	}
-}
+        public CustomImageField ThumbnailImage
+        {
+            get
+            {
+                return new CustomImageField(InnerItem, InnerItem.Fields["Thumbnail Image"]);
+            }
+        }
 
 
-public CustomTextField Quality
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Quality"]);
-	}
-}
+        public CustomTextField Description
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Description"]);
+            }
+        }
 
 
-public CustomTextField TelligentID
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Telligent ID"]);
-	}
-}
+        public CustomTextField Quality
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Quality"]);
+            }
+        }
 
 
-public CustomTextField CSMID
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["CSM ID"]);
-	}
-}
+        public CustomTextField TelligentID
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Telligent ID"]);
+            }
+        }
 
 
-public CustomTextField Learning
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Learning"]);
-	}
-}
+        public CustomTextField CSMID
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["CSM ID"]);
+            }
+        }
 
 
-public CustomTextField WhatKidsCanLearn
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["What Kids Can Learn"]);
-	}
-}
+        public CustomTextField Learning
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Learning"]);
+            }
+        }
 
 
-public CustomTextField AnyGood
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Any Good"]);
-	}
-}
+        public CustomTextField WhatKidsCanLearn
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["What Kids Can Learn"]);
+            }
+        }
 
 
-public CustomTextField HowParentsCanHelp
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["How Parents Can Help"]);
-	}
-}
+        public CustomTextField AnyGood
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Any Good"]);
+            }
+        }
 
 
-#endregion //Field Instance Methods
-}
+        public CustomTextField HowParentsCanHelp
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["How Parents Can Help"]);
+            }
+        }
+
+
+        #endregion //Field Instance Methods
+    }
 }

@@ -6,8 +6,8 @@ using Sitecore.Web.UI.WebControls;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.AssistiveTools
 {
-public partial class ReviewItem 
-{
+    public partial class ReviewItem
+    {
 
-}
+    }
 }
