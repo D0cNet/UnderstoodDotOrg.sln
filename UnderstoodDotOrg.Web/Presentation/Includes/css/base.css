@@ -1,0 +1,309 @@
+﻿/*
+ * Legal Disclaimer
+ *
+ * These Fonts are licensed only for use on these domains and their subdomains:
+ * understood.org
+ * digitalpulp.com
+ * agencyoasis.com
+ *
+ * It is illegal to download or use them on other websites.
+ *
+ * While the @font-face statements below may be modified by the client, this
+ * disclaimer may not be removed.
+ *
+ * Lineto.com, 2013
+ */
+/*
+@font-face {
+  font-family: 'Circular Book';
+  src: url('fonts/lineto-circular-book.eot');
+  src: url('fonts/lineto-circular-book.eot?#iefix') format('embedded-opentype'),
+       url('fonts/lineto-circular-book.woff') format('woff'),
+       url('fonts/lineto-circular-book.ttf') format('truetype'),
+       url('fonts/lineto-circular-book.svg#CircularBook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular Book Italic';
+  src: url('fonts/lineto-circular-bookitalic.eot');
+  src: url('fonts/lineto-circular-bookitalic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/lineto-circular-bookitalic.woff') format('woff'),
+       url('fonts/lineto-circular-bookitalic.ttf') format('truetype'),
+       url('fonts/lineto-circular-bookitalic.svg#CircularBookItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular Medium';
+  src: url('fonts/lineto-circular-medium.eot');
+  src: url('fonts/lineto-circular-medium.eot?#iefix') format('embedded-opentype'),
+       url('fonts/lineto-circular-medium.woff') format('woff'),
+       url('fonts/lineto-circular-medium.ttf') format('truetype'),
+       url('fonts/lineto-circular-medium.svg#CircularMedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular Medium Italic';
+  src: url('fonts/lineto-circular-mediumitalic.eot');
+  src: url('fonts/lineto-circular-mediumitalic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/lineto-circular-mediumitalic.woff') format('woff'),
+       url('fonts/lineto-circular-mediumitalic.ttf') format('truetype'),
+       url('fonts/lineto-circular-mediumitalic.svg#CircularMediumItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular Bold';
+  src: url('fonts/lineto-circular-bold.eot');
+  src: url('fonts/lineto-circular-bold.eot?#iefix') format('embedded-opentype'),
+       url('fonts/lineto-circular-bold.woff') format('woff'),
+       url('fonts/lineto-circular-bold.ttf') format('truetype'),
+       url('fonts/lineto-circular-bold.svg#CircularBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular Bold Italic';
+  src: url('fonts/lineto-circular-bolditalic.eot');
+  src: url('fonts/lineto-circular-bolditalic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/lineto-circular-bolditalic.woff') format('woff'),
+       url('fonts/lineto-circular-bolditalic.ttf') format('truetype'),
+       url('fonts/lineto-circular-bolditalic.svg#CircularBoldItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular Black';
+  src: url('fonts/lineto-circular-black.eot');
+  src: url('fonts/lineto-circular-black.eot?#iefix') format('embedded-opentype'),
+       url('fonts/lineto-circular-black.woff') format('woff'),
+       url('fonts/lineto-circular-black.ttf') format('truetype'),
+       url('fonts/lineto-circular-black.svg#CircularBlack') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular Black Italic';
+  src: url('fonts/lineto-circular-blackitalic.eot');
+  src: url('fonts/lineto-circular-blackitalic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/lineto-circular-blackitalic.woff') format('woff'),
+       url('fonts/lineto-circular-blackitalic.ttf') format('truetype'),
+       url('fonts/lineto-circular-blackitalic.svg#CircularBlackItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+/* set up fonts via font-style linking instead. we're only using four styles,
+ * so define them as a single font ("Circular") with the appropriate weights
+ * and styles.
+ */
+@font-face {
+  font-family: 'Circular';
+  src: url("fonts/lineto-circular-book.eot");
+  src: url("fonts/lineto-circular-book.eot?#iefix") format("embedded-opentype"), url("fonts/lineto-circular-book.woff") format("woff"), url("fonts/lineto-circular-book.ttf") format("truetype"), url("fonts/lineto-circular-book.svg#CircularBook") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url("fonts/lineto-circular-bookitalic.eot");
+  src: url("fonts/lineto-circular-bookitalic.eot?#iefix") format("embedded-opentype"), url("fonts/lineto-circular-bookitalic.woff") format("woff"), url("fonts/lineto-circular-bookitalic.ttf") format("truetype"), url("fonts/lineto-circular-bookitalic.svg#CircularBookItalic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url("fonts/lineto-circular-bold.eot");
+  src: url("fonts/lineto-circular-bold.eot?#iefix") format("embedded-opentype"), url("fonts/lineto-circular-bold.woff") format("woff"), url("fonts/lineto-circular-bold.ttf") format("truetype"), url("fonts/lineto-circular-bold.svg#CircularBold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url("fonts/lineto-circular-bolditalic.eot");
+  src: url("fonts/lineto-circular-bolditalic.eot?#iefix") format("embedded-opentype"), url("fonts/lineto-circular-bolditalic.woff") format("woff"), url("fonts/lineto-circular-bolditalic.ttf") format("truetype"), url("fonts/lineto-circular-bolditalic.svg#CircularBoldItalic") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* line 4, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+html {
+  font-family: Circular, Arial, sans-serif;
+  /* circular looks too heavy on webkit browsers. setting font smoothing
+   * lightens things up a bit.
+   *
+   * FIXME: it may be wise to only add font smoothing to specific elements
+   * that contain smaller type.
+   */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 16, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+body {
+  overflow-x: hidden;
+}
+
+/* line 33, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+address,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+table,
+caption,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 40, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 46, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+td, th {
+  vertical-align: top;
+}
+
+/* line 50, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 56, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+p {
+  margin-bottom: 1em;
+}
+
+/* line 61, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/* line 69, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+}
+
+/* line 84, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  line-height: 1.1;
+}
+
+/* line 89, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* line 93, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+a {
+  text-decoration: none;
+}
+
+/* Atomic styles */
+/* Zen Coding (Emmet) syntax http://docs.emmet.io/cheat-sheet/ */
+/* line 101, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.m-0 {
+  margin: 0 !important;
+}
+
+/* line 104, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+/* line 107, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.mr-0 {
+  margin-right: 0 !important;
+}
+
+/* line 110, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+/* line 113, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.ml-0 {
+  margin-left: 0 !important;
+}
+
+/* line 118, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.bd-n {
+  border: none !important;
+}
+
+/* line 122, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.fl-l {
+  float: left !important;
+}
+
+/* line 125, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.fl-r {
+  float: right !important;
+}
+
+/* line 128, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.fl-n {
+  float: none !important;
+}
+
+/* line 132, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.ta-l {
+  text-align: left !important;
+}
+
+/* line 135, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.ta-r {
+  text-align: right !important;
+}
+
+/* line 138, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.ta-c {
+  text-align: center !important;
+}
+
+/* line 142, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/base.scss */
+.whs-nw {
+  white-space: nowrap;
+}
