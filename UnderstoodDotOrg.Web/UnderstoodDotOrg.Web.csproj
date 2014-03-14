@@ -57,23 +57,281 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentation\Layouts\Web.aspx.cs">
+      <DependentUpon>Web.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Layouts\Web.aspx.designer.cs">
+      <DependentUpon>Web.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\MoreToExplore.ascx.cs">
+      <DependentUpon>MoreToExplore.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\MoreToExplore.ascx.designer.cs">
+      <DependentUpon>MoreToExplore.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Home\GuideMe.ascx.cs">
+      <DependentUpon>GuideMe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Home\GuideMe.ascx.designer.cs">
+      <DependentUpon>GuideMe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Home\HomeFeatured.ascx.cs">
+      <DependentUpon>HomeFeatured.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Home\HomeFeatured.ascx.designer.cs">
+      <DependentUpon>HomeFeatured.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx.cs">
+      <DependentUpon>HomeHeroCarousel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx.designer.cs">
+      <DependentUpon>HomeHeroCarousel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx.cs">
+      <DependentUpon>YourParentToolkit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx.designer.cs">
+      <DependentUpon>YourParentToolkit.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="placehold.it\100x1000.gif" />
+    <Content Include="placehold.it\1200x475.gif" />
+    <Content Include="placehold.it\1200x542.gif" />
+    <Content Include="placehold.it\150x150&amp;text=150x150.gif" />
+    <Content Include="placehold.it\150x150.gif" />
+    <Content Include="placehold.it\150x60.gif" />
+    <Content Include="placehold.it\150x84.gif" />
+    <Content Include="placehold.it\1740x980.gif" />
+    <Content Include="placehold.it\189x109.gif" />
+    <Content Include="placehold.it\190x106.gif" />
+    <Content Include="placehold.it\190x107&amp;text=190x107.gif" />
+    <Content Include="placehold.it\190x107.gif" />
+    <Content Include="placehold.it\230x129.gif" />
+    <Content Include="placehold.it\270x180&amp;text=Shot+1.gif" />
+    <Content Include="placehold.it\270x180&amp;text=Shot+2.gif" />
+    <Content Include="placehold.it\270x180&amp;text=Shot+3.gif" />
+    <Content Include="placehold.it\290x163&amp;text=290x163.gif" />
+    <Content Include="placehold.it\290x384.gif" />
+    <Content Include="placehold.it\294x187.gif" />
+    <Content Include="placehold.it\380x220.gif" />
+    <Content Include="placehold.it\510x288.gif" />
+    <Content Include="placehold.it\510x292.gif" />
+    <Content Include="placehold.it\589x348.gif" />
+    <Content Include="placehold.it\60x60.gif" />
+    <Content Include="placehold.it\630x354.gif" />
+    <Content Include="placehold.it\70x70.gif" />
+    <Content Include="placehold.it\870x489&amp;text=870x489.gif" />
+    <Content Include="placehold.it\980x1740.gif" />
+    <Content Include="Presentation\Includes\css\account.css" />
+    <Content Include="Presentation\Includes\css\base.css" />
+    <Content Include="Presentation\Includes\css\globals.css" />
+    <Content Include="Presentation\Includes\css\grid.css" />
+    <Content Include="Presentation\Includes\css\layout.css" />
+    <Content Include="Presentation\Includes\css\modules.css" />
+    <Content Include="Presentation\Includes\css\uniform-understood.css" />
+    <Content Include="Presentation\Includes\css\vendor\blank.html" />
+    <Content Include="Presentation\Includes\css\vendor\boilerplate.css" />
+    <Content Include="Presentation\Includes\css\vendor\bootstrap.css" />
+    <Content Include="Presentation\Includes\css\vendor\grab.html" />
+    <Content Include="Presentation\Includes\css\vendor\grabbing.html" />
+    <Content Include="Presentation\Includes\css\vendor\jplayer.blue.monday.css" />
+    <Content Include="Presentation\Includes\css\vendor\normalize.css" />
+    <Content Include="Presentation\Includes\css\vendor\royalslider.css" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\animated-overlay.gif" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Presentation\Includes\css\vendor\ui-lightness\jquery-ui-1.10.4.custom.css" />
+    <Content Include="Presentation\Includes\images\bg-input-focus-retina.html" />
+    <Content Include="Presentation\Includes\images\bg-input-focus.html" />
+    <Content Include="Presentation\Includes\images\bg-input-retina.html" />
+    <Content Include="Presentation\Includes\images\bg-input.html" />
+    <Content Include="Presentation\Includes\img\app-store.png" />
+    <Content Include="Presentation\Includes\img\arrow.down.000.10.png" />
+    <Content Include="Presentation\Includes\img\arrow.down.000.20.png" />
+    <Content Include="Presentation\Includes\img\arrow.down.fff.12.png" />
+    <Content Include="Presentation\Includes\img\arrow.down.fff.24.png" />
+    <Content Include="Presentation\Includes\img\arrow.up.000.10.png" />
+    <Content Include="Presentation\Includes\img\arrow.up.fff.12.png" />
+    <Content Include="Presentation\Includes\img\arrow.up.fff.24.png" />
+    <Content Include="Presentation\Includes\img\avatar.signed-out.png" />
+    <Content Include="Presentation\Includes\img\bg-subtopic-minitools.jpg" />
+    <Content Include="Presentation\Includes\img\child.content.indicator.png" />
+    <Content Include="Presentation\Includes\img\icon.arrow-promo.png" />
+    <Content Include="Presentation\Includes\img\icon.arrow.down.fff.9.png" />
+    <Content Include="Presentation\Includes\img\icon.book.read-me.png" />
+    <Content Include="Presentation\Includes\img\icon.close.overlay.16.png" />
+    <Content Include="Presentation\Includes\img\icon.close.overlay.22.png" />
+    <Content Include="Presentation\Includes\img\icon.close.overlay.44.png" />
+    <Content Include="Presentation\Includes\img\icon.close.parent-toolkit-lo-res.png" />
+    <Content Include="Presentation\Includes\img\icon.close.parent-toolkit.png" />
+    <Content Include="Presentation\Includes\img\icon.close.white.64.png" />
+    <Content Include="Presentation\Includes\img\icon.comments-summary.arrow-quote-bottom.png" />
+    <Content Include="Presentation\Includes\img\icon.expert-answer.lowres.png" />
+    <Content Include="Presentation\Includes\img\icon.expert-question.lowres.png" />
+    <Content Include="Presentation\Includes\img\icon.fb-sign-in%402x.png" />
+    <Content Include="Presentation\Includes\img\icon.footer.newsletter.34.png" />
+    <Content Include="Presentation\Includes\img\icon.footer.newsletter.68.png" />
+    <Content Include="Presentation\Includes\img\icon.guide-me.43.png" />
+    <Content Include="Presentation\Includes\img\icon.guide-me.86.png" />
+    <Content Include="Presentation\Includes\img\icon.logo.assistive-technology-search-tool.png" />
+    <Content Include="Presentation\Includes\img\icon.logo.partnership-carousel.png" />
+    <Content Include="Presentation\Includes\img\icon.nav-arrow.68.png" />
+    <Content Include="Presentation\Includes\img\icon.search.56.png" />
+    <Content Include="Presentation\Includes\img\icon.sign-in-prompt.lock.png" />
+    <Content Include="Presentation\Includes\img\icon.toolkit.childs.world.png" />
+    <Content Include="Presentation\Includes\img\icon.toolkit.decisions.png" />
+    <Content Include="Presentation\Includes\img\icon.toolkit.find.png" />
+    <Content Include="Presentation\Includes\img\icon.toolkit.observation.png" />
+    <Content Include="Presentation\Includes\img\icon.toolkit.ratings.png" />
+    <Content Include="Presentation\Includes\img\icon.toolkit.support.plan.png" />
+    <Content Include="Presentation\Includes\img\icon.tools.related-articles.png" />
+    <Content Include="Presentation\Includes\img\jplayer.blue.monday.jpg" />
+    <Content Include="Presentation\Includes\img\jplayer.blue.monday.seeking.gif" />
+    <Content Include="Presentation\Includes\img\jplayer.blue.monday.video.play.png" />
+    <Content Include="Presentation\Includes\img\logo.partner.commonsense.png" />
+    <Content Include="Presentation\Includes\img\logo.partner.commonsense2.png" />
+    <Content Include="Presentation\Includes\img\logo.partner.greatschools.png" />
+    <Content Include="Presentation\Includes\img\logo.u.default.png" />
+    <Content Include="Presentation\Includes\img\logo.u.footer.png" />
+    <Content Include="Presentation\Includes\img\logo.u.large.lo-res.png" />
+    <Content Include="Presentation\Includes\img\logo.u.large.png" />
+    <Content Include="Presentation\Includes\img\mid-dot.png" />
+    <Content Include="Presentation\Includes\img\play-store.png" />
+    <Content Include="Presentation\Includes\img\rating.slider.selection.png" />
+    <Content Include="Presentation\Includes\img\sprite.advice.results.png" />
+    <Content Include="Presentation\Includes\img\sprite.arrows.article-slideshow.lo-res.png" />
+    <Content Include="Presentation\Includes\img\sprite.arrows.article-slideshow.png" />
+    <Content Include="Presentation\Includes\img\sprite.arrows.carousel.png" />
+    <Content Include="Presentation\Includes\img\sprite.assistive-technology.review-flag.png" />
+    <Content Include="Presentation\Includes\img\sprite.friends-view-tabs.comment-bg.png" />
+    <Content Include="Presentation\Includes\img\sprite.helpful-count%402x.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.account.nav.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.arrow-down.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.arrows.lo-res.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.arrows.next-prev.12.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.arrows.next-prev.24.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.arrows.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.comments.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.hide-show.fff.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.menu.88.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.notifications.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.search.32.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.search.lo-res.png" />
+    <Content Include="Presentation\Includes\img\sprite.icon.support.png" />
+    <Content Include="Presentation\Includes\img\sprite.icons.article-tips.png" />
+    <Content Include="Presentation\Includes\img\sprite.icons.lo-res.png" />
+    <Content Include="Presentation\Includes\img\sprite.icons.png" />
+    <Content Include="Presentation\Includes\img\sprite.icons.toolkit-thumbnails.lo-res.png" />
+    <Content Include="Presentation\Includes\img\sprite.icons.toolkit-thumbnails.png" />
+    <Content Include="Presentation\Includes\img\sprite.infographic-zoom.png" />
+    <Content Include="Presentation\Includes\img\sprite.knowledge-quiz.correct-incorrect.png" />
+    <Content Include="Presentation\Includes\img\sprite.knowledge-quiz.results-indicator.png" />
+    <Content Include="Presentation\Includes\img\sprite.nav-arrows.carousel-grey.png" />
+    <Content Include="Presentation\Includes\img\sprite.nav-back.68.png" />
+    <Content Include="Presentation\Includes\img\sprite.nav-bullets.parent-toolkit.png" />
+    <Content Include="Presentation\Includes\img\sprite.rating-sliders%402x.png" />
+    <Content Include="Presentation\Includes\img\sprite.share-save.social.png" />
+    <Content Include="Presentation\Includes\img\sprite.share.article-slideshow.lo-res.png" />
+    <Content Include="Presentation\Includes\img\sprite.share.article-slideshow.png" />
+    <Content Include="Presentation\Includes\img\sprite.social.footer.lo-res.png" />
+    <Content Include="Presentation\Includes\img\sprite.social.footer.png" />
+    <Content Include="Presentation\Includes\img\sprite.text-slides.save-and-share.png" />
+    <Content Include="Presentation\Includes\img\sprite.tooltip.info.png" />
+    <Content Include="Presentation\Includes\img\sprite.uniform.1200.png" />
+    <Content Include="Presentation\Includes\img\sprite.uniform.600.png" />
+    <Content Include="Presentation\Includes\img\temp.bg.slide.1200.01.jpg" />
+    <Content Include="Presentation\Includes\img\temp.bg.slide.1200.02.jpg" />
+    <Content Include="Presentation\Includes\img\temp.bg.slide.1200.03.jpg" />
+    <Content Include="Presentation\Includes\img\temp.user.jpg" />
+    <Content Include="Presentation\Includes\js\global.js" />
+    <Content Include="Presentation\Includes\js\modules.js" />
+    <Content Include="Presentation\Includes\js\site.js" />
+    <Content Include="Presentation\Includes\js\vendor\bootstrap.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery-1.10.2.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.easytabs.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.equalheights.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.ezmark.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.hoverIntent.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.jplayer.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.mobile.custom.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.placeholder.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.royalslider.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.ui.touch-punch.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.uniform.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.validate.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\modernizr.custom.js" />
+    <Content Include="Presentation\Layouts\Web.aspx" />
+    <Content Include="Presentation\Sublayouts\Common\Footer.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Header.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\MoreToExplore.ascx" />
+    <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
+    <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
+    <Content Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx" />
+    <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
     <Content Include="zforce-deploy-on-build-always.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bold.eot" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bold.svg" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bold.ttf" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bold.woff" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-boldd41d.eot" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bolditalic.eot" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bolditalic.svg" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bolditalic.ttf" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bolditalic.woff" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bolditalicd41d.eot" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-book.eot" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-book.svg" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-book.ttf" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-book.woff" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookd41d.eot" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookitalic.eot" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookitalic.svg" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookitalic.ttf" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookitalic.woff" />
+    <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookitalicd41d.eot" />
     <None Include="Properties\PublishProfiles\Local.pubxml">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DigitalPulpHTML\" />
-    <Folder Include="Presentation\Includes\css\" />
-    <Folder Include="Presentation\Includes\images\" />
-    <Folder Include="Presentation\Includes\js\" />
-    <Folder Include="Presentation\Layouts\" />
-    <Folder Include="Presentation\Sublayouts\Common\" />
     <Folder Include="Presentation\Sublayouts\Telligent\" />
     <Folder Include="Presentation\Sublayouts\Tools\Advocacy\" />
     <Folder Include="Presentation\Sublayouts\Tools\AssistiveTechnology\" />
