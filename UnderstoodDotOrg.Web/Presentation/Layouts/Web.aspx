@@ -1,8 +1,5 @@
-﻿<%@ Page Language="c#" CodePage="65001" AutoEventWireup="true" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Web.aspx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Layouts.Web" %>
 
-<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-
-<%@ OutputCache Location="None" VaryByParam="none" %>
 <!DOCTYPE html>
 <!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
 <!--[if gte IE 9]><!-->
@@ -10,14 +7,13 @@
 <!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
-<head>
+
+<!-- Mirrored from un-20140306.herokuapp.com/home.g1a.html by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 13 Mar 2014 10:00:35 GMT -->
+<head runat="server">
     <meta charset="utf-8">
-    <title></title>
-
+    <title>Homepage (G1a)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
     <link href="/Presentation/includes/css/vendor/bootstrap.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
@@ -30,15 +26,14 @@
     <link href="/Presentation/includes/css/globals.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/modules.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
-
-    <script src="/Presentation/includes/js/vendor/modernizr.custom.js"></script>
+    <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
 </head>
 
 <!-- END PARTIAL: head -->
 <body>
     <form id="form1" runat="server">
-        <%--<sc:sublayout id="scHeader" runat="server" path="~/Presentation/SubLayouts/Containers/Header.ascx" />--%>
-         <!-- BEGIN PARTIAL: language-selector -->
+
+        <!-- BEGIN PARTIAL: language-selector -->
         <div id="language-selector-bar">
 
             <span class="button-close ir">Close</span>
@@ -53,17 +48,16 @@
         <!-- END PARTIAL: language-selector -->
 
         <div id="wrapper">
-            <sc:placeholder ID="Placeholder1" key="Header" runat="server" />
-            <sc:placeholder ID="Placeholder2" key="Main" runat="server" />
-            <sc:placeholder ID="Placeholder3" key="Footer" runat="server" />
+            <sc:placeholder key="Header" runat="server" />
+            <sc:placeholder key="Main" runat="server" />
+            <sc:placeholder key="Footer" runat="server" />
         </div>
         <!-- #wrapper -->
 
-
         <!-- BEGIN PARTIAL: footerjs -->
-        <script src="/Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>
+        <script src="Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>
         <!--[if lte IE 8]>
-            <script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
+<script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
         <script src="/Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
         <script src="/Presentation/includes/js/vendor/jquery.validate.min.js"></script>
@@ -86,4 +80,6 @@
     </form>
 </body>
 
+
+<!-- Mirrored from un-20140306.herokuapp.com/home.g1a.html by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 13 Mar 2014 10:01:13 GMT -->
 </html>
