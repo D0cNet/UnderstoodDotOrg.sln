@@ -160,6 +160,20 @@
       <DependentUpon>AssistiveToolsReviewResults.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolAdviceDetail.ascx.cs">
+      <DependentUpon>BehaviorToolAdviceDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolAdviceDetail.ascx.designer.cs">
+      <DependentUpon>BehaviorToolAdviceDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolLandingMiddle.ascx.cs">
+      <DependentUpon>BehaviorToolLandingMiddle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolLandingMiddle.ascx.designer.cs">
+      <DependentUpon>BehaviorToolLandingMiddle.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -379,6 +393,8 @@
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDescription.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDetails.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewResults.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolAdviceDetail.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolLandingMiddle.ascx" />
     <Content Include="zforce-deploy-on-build-always.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
