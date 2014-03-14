@@ -131,6 +131,13 @@
     <Compile Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx.designer.cs">
       <DependentUpon>YourParentToolkit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsLandingPage.ascx.cs">
+      <DependentUpon>AssistiveToolsLandingPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsLandingPage.ascx.designer.cs">
+      <DependentUpon>AssistiveToolsLandingPage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDescription.ascx.cs">
       <DependentUpon>AssistiveToolsReviewDescription.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,13 +160,6 @@
       <DependentUpon>AssistiveToolsReviewResults.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -375,10 +375,10 @@
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDescription.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDetails.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewResults.ascx" />
-    <Content Include="test.aspx" />
     <Content Include="zforce-deploy-on-build-always.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
