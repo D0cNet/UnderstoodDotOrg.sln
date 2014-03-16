@@ -117,6 +117,20 @@
     <Compile Include="Presentation\Sublayouts\Common\MoreToExplore.ascx.designer.cs">
       <DependentUpon>MoreToExplore.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\NewsletterSignup.ascx.cs">
+      <DependentUpon>NewsletterSignup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\NewsletterSignup.ascx.designer.cs">
+      <DependentUpon>NewsletterSignup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx.cs">
+      <DependentUpon>PartnersCarousel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx.designer.cs">
+      <DependentUpon>PartnersCarousel.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Containers\TwoRow.ascx.cs">
       <DependentUpon>TwoRow.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,6 +165,20 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx.designer.cs">
       <DependentUpon>YourParentToolkit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\SignIn.ascx.cs">
+      <DependentUpon>SignIn.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\SignIn.ascx.designer.cs">
+      <DependentUpon>SignIn.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\SignUp.ascx.cs">
+      <DependentUpon>SignUp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\SignUp.ascx.designer.cs">
+      <DependentUpon>SignUp.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsLandingPage.ascx.cs">
       <DependentUpon>AssistiveToolsLandingPage.ascx</DependentUpon>
@@ -408,11 +436,15 @@
     <Content Include="Presentation\Sublayouts\Common\Footer.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Header.ascx" />
     <Content Include="Presentation\Sublayouts\Common\MoreToExplore.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\NewsletterSignup.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Containers\TwoRow.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDescription.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDetails.ascx" />
