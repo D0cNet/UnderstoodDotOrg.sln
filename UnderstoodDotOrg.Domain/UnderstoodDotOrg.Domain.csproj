@@ -50,6 +50,12 @@
     <Compile Include="CommonSenseMedia\ReviewManager.cs" />
     <Compile Include="CommonSenseMedia\ReviewModel.cs" />
     <Compile Include="CommonSenseMedia\CommonSenseImportHelper.cs" />
+    <Compile Include="Import.cs" />
+    <Compile Include="Import.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Import.settings</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SitecoreCIG\Poses\AssistiveTools\ReviewItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\AssistiveTools\ReviewItem.instance.cs" />
@@ -69,6 +75,13 @@
       <Project>{509436f1-51ec-425b-b6bd-42ae307ef012}</Project>
       <Name>UnderstoodDotOrg.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Import.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Import.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

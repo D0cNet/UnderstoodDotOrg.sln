@@ -1,6 +1,7 @@
 ﻿using Sitecore.SecurityModel;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -51,65 +52,65 @@ namespace UnderstoodDotOrg.Domain.Importer
             /// <summary>
             /// Name of the Master database
             /// </summary>
-            public static string MasterDatabaseName = "master";
+            public static string MasterDatabaseName = ConfigurationManager.AppSettings["MasterDatabaseName"];
 
             /// <summary>
             /// Name of the Web database
             /// </summary>
-            public static string WebDatabaseName = "web";
+            public static string WebDatabaseName = ConfigurationManager.AppSettings["WebDatabaseName"];
 
             // Templates
             /// <summary>
             /// GUID for the Review Data Template in Sitecore
             /// </summary>
-            public static string ReviewTemplate = "{C9DFC576-7750-4A84-9A79-61F16585E64E}";
+            public static string ReviewTemplate = ConfigurationManager.AppSettings["ReviewTemplateGUID"];
 
             /// <summary>
             /// GUID for the Metadata Data Template in Sitecore
             /// </summary>
-            public static string MetadataTemplate = "{B793F0F5-2857-4379-99B9-EC1D132C887F}";
+            public static string MetadataTemplate = ConfigurationManager.AppSettings["MetadataTemplateGUID"];
 
             // Content Containers
             /// <summary>
             /// GUID for the folder that holds instances of the Review content
             /// </summary>
-            public static string ReviewsContainer = "{03877E4C-8EDD-42CE-B94A-E27621C16745}";
+            public static string ReviewsContainer = ConfigurationManager.AppSettings["ReviewsContainerGUID"];
 
             /// <summary>
             /// Sitecore path to the folder to hold screenshots and images
             /// </summary>
-            public static string ImagesPath = "/sitecore/media library/Images/Poses/Reviews/";
+            public static string ImagesPath = ConfigurationManager.AppSettings["ImagesPath"];
 
             // Metadata Containers
             /// <summary>
             /// GUID for the folder that holds instances of Categories Metadata
             /// </summary>
-            public static string CategoriesContainer = "{8DE67A64-0E64-47A5-87FD-5096F3979F55}";
+            public static string CategoriesContainer = ConfigurationManager.AppSettings["CategoriesContainerGUID"];
 
             /// <summary>
             /// GUID for the folder that holds instances of the Genre Metadata
             /// </summary>
-            public static string GenreContainer = "{97908446-B312-4183-915E-2E43BA5A7693}";
+            public static string GenreContainer = ConfigurationManager.AppSettings["GenreContainerGUID"];
 
             /// <summary>
             /// GUID for the folder that holds instances of the Platform Metadata
             /// </summary>
-            public static string PlatforomContainer = "{042EBC5C-CCA0-4758-823D-A07213A72434}";
+            public static string PlatforomContainer = ConfigurationManager.AppSettings["PlatformContainerGUID"];
 
             /// <summary>
             /// GUID for the folder that holds instances of the Skill Metadata
             /// </summary>
-            public static string SkillsContainer = "{0AC054FE-599B-4B8A-B5A2-BA805260674B}";
+            public static string SkillsContainer = ConfigurationManager.AppSettings["SkillsContainerGUID"];
 
             /// <summary>
             /// GUID for the folder that holds instances of the Subject Metadata
             /// </summary>
-            public static string SubjectsContainer = "{11AAE042-9BFA-43C4-A971-0AF140108921}";
+            public static string SubjectsContainer = ConfigurationManager.AppSettings["SubjectsContainerGUID"];
 
             /// <summary>
             /// GUID for the folder that holds instances of the Types Metadata
             /// </summary>
-            public static string TypesContainer = "{88226E2B-BAFE-44E9-8EEE-95525458EA14}";
+            public static string TypesContainer = ConfigurationManager.AppSettings["TypesContainerGUID"];
         }
 
         /// <summary>
