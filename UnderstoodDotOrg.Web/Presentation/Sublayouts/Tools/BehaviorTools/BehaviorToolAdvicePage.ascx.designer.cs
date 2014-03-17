@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.Behavior {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools {
     
     
-    public partial class BehaviorToolAdviceDetail {
+    public partial class BehaviorToolAdvicePage {
     }
 }
