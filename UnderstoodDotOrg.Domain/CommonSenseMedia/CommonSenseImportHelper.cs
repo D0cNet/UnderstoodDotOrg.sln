@@ -44,7 +44,7 @@ namespace UnderstoodDotOrg.Domain.Importer
         #endregion
 
         /// <summary>
-        /// Static class containing the various IDs and names needed for import
+        /// Static class containing the various IDs and names needed for import. These are read from the app.config
         /// </summary>
         static public class Settings
         {
