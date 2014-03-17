@@ -124,6 +124,13 @@
     <Compile Include="Presentation\Sublayouts\Common\NewsletterSignup.ascx.designer.cs">
       <DependentUpon>NewsletterSignup.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Page Topic.ascx.cs">
+      <DependentUpon>Page Topic.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Page Topic.ascx.designer.cs">
+      <DependentUpon>Page Topic.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx.cs">
       <DependentUpon>PartnersCarousel.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -437,6 +444,7 @@
     <Content Include="Presentation\Sublayouts\Common\Header.ascx" />
     <Content Include="Presentation\Sublayouts\Common\MoreToExplore.ascx" />
     <Content Include="Presentation\Sublayouts\Common\NewsletterSignup.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Page Topic.ascx" />
     <Content Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Containers\TwoRow.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
