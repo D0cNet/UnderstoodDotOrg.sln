@@ -12,7 +12,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
     public class ReviewModel
     {
         /// <summary>
-        /// Title of review. Also used for Name
+        /// Title of review. Also used for Name (with punctuation removed)
         /// </summary>
         public string Title { get; set; }
 
@@ -124,32 +124,11 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// <summary>
         /// ReviewImages to use as Screenshots
         /// </summary>
-        public List<ReviewImage> Screenshots { get; set; }
+        public List<ReviewImageModel> Screenshots { get; set; }
 
         /// <summary>
         /// ReviewImage to use as the Thumbnail
         /// </summary>
-        public ReviewImage Thumbnail { get; set; }
-    }
-
-    /// <summary>
-    /// Class for defining the parts of a ReviewImage
-    /// </summary>
-    public class ReviewImage
-    {
-        /// <summary>
-        /// URL to image
-        /// </summary>
-        public string URL { get; set; }
-
-        /// <summary>
-        /// Alt-text to use for the image
-        /// </summary>
-        public string AltText { get; set; }
-
-        /// <summary>
-        /// Name to use for the image
-        /// </summary>
-        public string Name { get; set; }
+        public ReviewImageModel Thumbnail { get; set; }
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonSenseMedia\ReviewImageModel.cs" />
     <Compile Include="CommonSenseMedia\ReviewManager.cs" />
     <Compile Include="CommonSenseMedia\ReviewModel.cs" />
     <Compile Include="CommonSenseMedia\CommonSenseImportHelper.cs" />

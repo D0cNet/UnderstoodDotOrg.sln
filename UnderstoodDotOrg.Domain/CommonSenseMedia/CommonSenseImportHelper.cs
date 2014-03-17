@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Domain.CommonSenseMedia;
 
@@ -241,7 +242,7 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// </summary>
         /// <param name="image">Image to add to Sitecore</param>
         /// <returns>Returns GUID of the image that was added to Sitecore</returns>
-        public static string addMedia(ReviewImage image)
+        public static string addMedia(ReviewImageModel image)
         {
             return addMedia(image.URL, image.Name, image.AltText);
         }
@@ -251,7 +252,7 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// </summary>
         /// <param name="images"></param>
         /// <returns></returns>
-        public static string addMedia(List<ReviewImage> images)
+        public static string addMedia(List<ReviewImageModel> images)
         {
             List<string> ret = new List<string>();
 
@@ -345,5 +346,16 @@ namespace UnderstoodDotOrg.Domain.Importer
         {
             return s.Remove(s.LastIndexOf('.'));
         }
+
+        /// <summary>
+        /// Revmoes invalid punctionation from potential Sitecore names
+        /// </summary>
+        /// <param name="s">string to cleanse</param>
+        /// <returns>string with invalid characters replaced</returns>
+        public static string removePunctuation(string s)
+        {
+            return Regex.Replace(s, @"[^\w\.@-]", "");
+        }
+
     }
 }

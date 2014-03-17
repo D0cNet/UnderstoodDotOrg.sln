@@ -24,7 +24,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
             {
                 Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(CommonSenseImportHelper.Settings.MasterDatabaseName);
                 Sitecore.Data.Items.TemplateItem reviewTemplate = master.Templates[CommonSenseImportHelper.Settings.ReviewTemplate];
-                Sitecore.Data.Items.Item newReview = Get(CommonSenseImportHelper.Settings.ReviewsContainer).Add(Review.Title, reviewTemplate);
+                Sitecore.Data.Items.Item newReview = Get(CommonSenseImportHelper.Settings.ReviewsContainer).Add(CommonSenseImportHelper.removePunctuation(Review.Title), reviewTemplate);
 
                 newReview.Editing.BeginEdit();
 
