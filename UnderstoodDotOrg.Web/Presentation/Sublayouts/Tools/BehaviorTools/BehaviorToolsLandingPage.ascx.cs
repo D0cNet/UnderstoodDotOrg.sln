@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.Behavior
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 {
-    public partial class BehaviorToolLandingMiddle : System.Web.UI.UserControl
+    public partial class BehaviorToolsLandingPage : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

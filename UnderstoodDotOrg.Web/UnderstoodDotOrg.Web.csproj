@@ -215,20 +215,20 @@
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewResults.ascx.designer.cs">
       <DependentUpon>AssistiveToolsReviewResults.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdviceDetail.ascx.designer.cs">
+      <DependentUpon>BehaviorToolAdviceDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx.designer.cs">
+      <DependentUpon>BehaviorToolsLandingPage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolAdviceDetail.ascx.cs">
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdviceDetail.ascx.cs">
       <DependentUpon>BehaviorToolAdviceDetail.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolAdviceDetail.ascx.designer.cs">
-      <DependentUpon>BehaviorToolAdviceDetail.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolLandingMiddle.ascx.cs">
-      <DependentUpon>BehaviorToolLandingMiddle.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx.cs">
+      <DependentUpon>BehaviorToolsLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolLandingMiddle.ascx.designer.cs">
-      <DependentUpon>BehaviorToolLandingMiddle.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -457,8 +457,8 @@
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDetails.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewResults.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolAdviceDetail.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolLandingMiddle.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdviceDetail.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx" />
     <Content Include="zforce-deploy-on-build-always.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BehaviorToolLandingMiddle.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.Behavior.BehaviorToolLandingMiddle" %>
+﻿<%@ Control Language="C#" AutoEventWireup="True" CodeBehind="BehaviorToolsLandingPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.BehaviorToolsLandingPage" %>
 
       <!-- Hero Image -->
 <div class="container flush hero-container-wrap">
