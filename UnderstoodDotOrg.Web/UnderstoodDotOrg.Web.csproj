@@ -75,12 +75,54 @@
     <Compile Include="Presentation\Layouts\Web.aspx.designer.cs">
       <DependentUpon>Web.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx.cs">
+      <DependentUpon>Action Style List Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx.designer.cs">
+      <DependentUpon>Action Style List Page.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\AudioArticle.ascx.cs">
+      <DependentUpon>AudioArticle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\AudioArticle.ascx.designer.cs">
+      <DependentUpon>AudioArticle.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\BasicArticle.ascx.cs">
       <DependentUpon>BasicArticle.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\BasicArticle.ascx.designer.cs">
       <DependentUpon>BasicArticle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Comments.ascx.cs">
+      <DependentUpon>Comments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Comments.ascx.designer.cs">
+      <DependentUpon>Comments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx.cs">
+      <DependentUpon>DeepDiveArticle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx.designer.cs">
+      <DependentUpon>DeepDiveArticle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Glossary Article.ascx.cs">
+      <DependentUpon>Glossary Article.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Glossary Article.ascx.designer.cs">
+      <DependentUpon>Glossary Article.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx.cs">
+      <DependentUpon>SlideshowArticle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx.designer.cs">
+      <DependentUpon>SlideshowArticle.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\TextOnlyTipsArticle.ascx.cs">
       <DependentUpon>TextOnlyTipsArticle.ascx</DependentUpon>
@@ -95,6 +137,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\TipsArticle.ascx.designer.cs">
       <DependentUpon>TipsArticle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\VideoArticle.ascx.cs">
+      <DependentUpon>VideoArticle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\VideoArticle.ascx.designer.cs">
+      <DependentUpon>VideoArticle.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
@@ -451,9 +500,16 @@
     <Content Include="Presentation\Includes\js\vendor\modernizr.custom.js" />
     <Content Include="Presentation\Layouts\Browser.aspx" />
     <Content Include="Presentation\Layouts\Web.aspx" />
+    <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\AudioArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\BasicArticle.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Comments.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Glossary Article.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TextOnlyTipsArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TipsArticle.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\VideoArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Footer.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Header.ascx" />
     <Content Include="Presentation\Sublayouts\Common\More Carousel.ascx" />
