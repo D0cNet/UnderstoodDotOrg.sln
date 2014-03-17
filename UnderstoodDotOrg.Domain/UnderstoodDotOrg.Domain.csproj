@@ -37,6 +37,7 @@
       <HintPath>..\Libraries\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,12 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonSenseMedia\ReviewManager.cs" />
+    <Compile Include="CommonSenseMedia\ReviewModel.cs" />
+    <Compile Include="CommonSenseMedia\CommonSenseImportHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SitecoreCIG\Poses\AssistiveTools\ReviewItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\AssistiveTools\ReviewItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\AuthorItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\AuthorItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\MetadataItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\MetadataItem.instance.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CommonSenseMedia\" />
     <Folder Include="ExactTarget\" />
     <Folder Include="Facebook\" />
     <Folder Include="Luminate\" />

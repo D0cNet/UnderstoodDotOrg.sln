@@ -47,6 +47,26 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         public string ExternalLink { get; set; }
 
         /// <summary>
+        /// Apple App Store ID, used for Apps
+        /// </summary>
+        public string AppleAppStoreID { get; set; }
+
+        /// <summary>
+        /// Google Play Store ID, used for Apps
+        /// </summary>
+        public string GooglePlayStoreID { get; set; }
+
+        /// <summary>
+        /// Telligent ID, for relation to Telligent stub
+        /// </summary>
+        public string TelligentID { get; set; }
+
+        /// <summary>
+        /// Reference ID back to CommonSenseMedia's data set
+        /// </summary>
+        public string CommonSenseMediaID { get; set; }
+
+        /// <summary>
         /// Quality rank single-line content
         /// </summary>
         public string QualityRank { get; set; }
