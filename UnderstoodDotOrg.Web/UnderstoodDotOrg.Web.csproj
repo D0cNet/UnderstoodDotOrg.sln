@@ -180,32 +180,32 @@
     <Compile Include="Presentation\Sublayouts\MyAccount\SignUp.ascx.designer.cs">
       <DependentUpon>SignUp.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsLandingPage.ascx.cs">
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx.cs">
       <DependentUpon>AssistiveToolsLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsLandingPage.ascx.designer.cs">
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx.designer.cs">
       <DependentUpon>AssistiveToolsLandingPage.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDescription.ascx.cs">
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx.cs">
       <DependentUpon>AssistiveToolsReviewDescription.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDescription.ascx.designer.cs">
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx.designer.cs">
       <DependentUpon>AssistiveToolsReviewDescription.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDetails.ascx.cs">
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDetails.ascx.cs">
       <DependentUpon>AssistiveToolsReviewDetails.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDetails.ascx.designer.cs">
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDetails.ascx.designer.cs">
       <DependentUpon>AssistiveToolsReviewDetails.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewResults.ascx.cs">
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewResults.ascx.cs">
       <DependentUpon>AssistiveToolsReviewResults.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewResults.ascx.designer.cs">
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewResults.ascx.designer.cs">
       <DependentUpon>AssistiveToolsReviewResults.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -445,10 +445,10 @@
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsLandingPage.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDescription.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewDetails.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\AssistiveTechnology\AssistiveToolsReviewResults.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDetails.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewResults.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolAdviceDetail.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\Behavior\BehaviorToolLandingMiddle.ascx" />
     <Content Include="zforce-deploy-on-build-always.txt">

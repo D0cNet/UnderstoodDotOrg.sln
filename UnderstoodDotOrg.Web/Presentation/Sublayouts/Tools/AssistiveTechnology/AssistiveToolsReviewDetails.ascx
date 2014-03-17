@@ -1,2 +1,0 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AssistiveToolsReviewDetails.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTechnology.AssistiveToolsReviewDetails" %>
-<h1>Review Details</h1>
