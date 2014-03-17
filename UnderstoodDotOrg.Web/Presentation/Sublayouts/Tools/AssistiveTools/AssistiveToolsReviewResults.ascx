@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AssistiveToolsReviewResults.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.AssistiveToolsReviewResults" %>
 
-<!-- BEGIN PARTIAL: pagetopic -->
+<%--<!-- BEGIN PARTIAL: pagetopic -->
 <!-- Page Title -->
 <div class="container page-topic no-bottom-margin">
     <div class="row">
@@ -35,7 +35,7 @@
 
     </div>
 </div>
-<!-- .container -->
+<!-- .container -->--%>
 
 <!-- END PARTIAL: pagetopic -->
 <div class="container flush search-tool-layout-wrapper">
