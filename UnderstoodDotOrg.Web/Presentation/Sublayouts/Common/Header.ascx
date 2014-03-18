@@ -6,7 +6,7 @@
 
             <div class="logo-u-main">
                 <a href="REPLACE.html">
-                    <img alt="Understood Logo" src="Presentation/includes/img/logo.u.default.png" /></a>
+                    <img alt="Understood Logo" src="/Presentation/includes/img/logo.u.default.png" /></a>
             </div>
             <!-- logo-u-main -->
 
