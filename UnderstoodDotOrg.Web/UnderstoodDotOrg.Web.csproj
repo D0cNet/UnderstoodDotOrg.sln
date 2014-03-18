@@ -196,7 +196,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Page Topic.ascx.cs">
       <DependentUpon>Page Topic.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Page Topic.ascx.designer.cs">
       <DependentUpon>Page Topic.ascx</DependentUpon>
@@ -284,6 +283,27 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Section\SectionTools.ascx.designer.cs">
       <DependentUpon>SectionTools.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\SubTopics\RightCalloutContainer.ascx.cs">
+      <DependentUpon>RightCalloutContainer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\SubTopics\RightCalloutContainer.ascx.designer.cs">
+      <DependentUpon>RightCalloutContainer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\SubTopics\SubTopicArticleListing.ascx.cs">
+      <DependentUpon>SubTopicArticleListing.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\SubTopics\SubTopicArticleListing.ascx.designer.cs">
+      <DependentUpon>SubTopicArticleListing.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx.cs">
+      <DependentUpon>TwoColumnContainer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx.designer.cs">
+      <DependentUpon>TwoColumnContainer.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx.cs">
       <DependentUpon>Assisitive Tools Search.ascx</DependentUpon>
@@ -607,6 +627,9 @@
     <Content Include="Presentation\Sublayouts\Section\SectionListing.ascx" />
     <Content Include="Presentation\Sublayouts\Section\SectionPageTopic.ascx" />
     <Content Include="Presentation\Sublayouts\Section\SectionTools.ascx" />
+    <Content Include="Presentation\Sublayouts\SubTopics\RightCalloutContainer.ascx" />
+    <Content Include="Presentation\Sublayouts\SubTopics\SubTopicArticleListing.ascx" />
+    <Content Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx" />
