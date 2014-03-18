@@ -117,6 +117,19 @@
     <Compile Include="Presentation\Sublayouts\Articles\Glossary Article.ascx.designer.cs">
       <DependentUpon>Glossary Article.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.cs">
+      <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.designer.cs">
+      <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx.cs">
+      <DependentUpon>Simple Expert Article Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx.designer.cs">
+      <DependentUpon>Simple Expert Article Page.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx.cs">
       <DependentUpon>SlideshowArticle.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -506,6 +519,8 @@
     <Content Include="Presentation\Sublayouts\Articles\Comments.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Glossary Article.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TextOnlyTipsArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TipsArticle.ascx" />
