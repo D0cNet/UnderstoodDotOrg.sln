@@ -30,6 +30,14 @@ namespace UnderstoodDotOrg.Framework.UI {
             }
         }
 
+        public string AdditionalCssClass
+        {
+            get
+            {
+                return this.GetParameter("AdditionalCSSClass");
+            }
+        }
+
         public string GetParameter(string key) {
             string rawParameters = this.Parameters;
             NameValueCollection parameters = Sitecore.Web.WebUtil.ParseUrlParameters(rawParameters);
