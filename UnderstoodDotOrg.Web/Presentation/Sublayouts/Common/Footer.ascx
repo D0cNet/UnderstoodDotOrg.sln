@@ -53,51 +53,51 @@
                 <ul>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                     <li>
                         <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+                            <img alt="Partner Logo FPO" src="../Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
                     </li>
                 </ul>
             </div>
@@ -177,7 +177,7 @@
     <div class="row">
         <div class="col col-24">
 
-            <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/img/logo.u.footer.png" />
+            <img class="logo-u-footer" alt="Understood U Logo" src="../Presentation/includes/img/logo.u.footer.png" />
 
         </div>
         <!-- .col -->
