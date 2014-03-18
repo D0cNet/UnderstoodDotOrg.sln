@@ -285,6 +285,12 @@
     <Compile Include="Presentation\Sublayouts\Section\SectionTools.ascx.designer.cs">
       <DependentUpon>SectionTools.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx.cs">
+      <DependentUpon>Assisitive Tools Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx.designer.cs">
+      <DependentUpon>Assisitive Tools Search.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx.cs">
       <DependentUpon>AssistiveToolsLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -572,6 +578,7 @@
     <Content Include="Presentation\Sublayouts\Section\SectionListing.ascx" />
     <Content Include="Presentation\Sublayouts\Section\SectionPageTopic.ascx" />
     <Content Include="Presentation\Sublayouts\Section\SectionTools.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDetails.ascx" />
