@@ -228,10 +228,10 @@
                                 <div class="purchase">Purchase</div>
                                 <div class="price">Price: $0.99</div>
                                 <a href="REPLACE">
-                                    <img alt="REPLACE" src="Presentation/includes/img/app-store.png" />
+                                    <img alt="REPLACE" src="/Presentation/includes/img/app-store.png" />
                                 </a>
                                 <a href="REPLACE">
-                                    <img alt="REPLACE" src="Presentation/includes/img/play-store.png" />
+                                    <img alt="REPLACE" src="/Presentation/includes/img/play-store.png" />
                                 </a>
                             </div>
                             <!-- END PARTIAL: get-this-app -->
