@@ -287,6 +287,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx.cs">
       <DependentUpon>Assisitive Tools Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx.designer.cs">
       <DependentUpon>Assisitive Tools Search.ascx</DependentUpon>
@@ -331,6 +332,34 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx.designer.cs">
       <DependentUpon>BehaviorToolsResultsPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Topic\ArticleListing.ascx.cs">
+      <DependentUpon>ArticleListing.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Topic\ArticleListing.ascx.designer.cs">
+      <DependentUpon>ArticleListing.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Topic\CalloutContainer.ascx.cs">
+      <DependentUpon>CalloutContainer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Topic\CalloutContainer.ascx.designer.cs">
+      <DependentUpon>CalloutContainer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Topic\TopicCarousel.ascx.cs">
+      <DependentUpon>TopicCarousel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Topic\TopicCarousel.ascx.designer.cs">
+      <DependentUpon>TopicCarousel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Topic\TopicPageHeader.ascx.cs">
+      <DependentUpon>TopicPageHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Topic\TopicPageHeader.ascx.designer.cs">
+      <DependentUpon>TopicPageHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdvicePage.ascx.cs">
@@ -586,6 +615,10 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdvicePage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Topic\ArticleListing.ascx" />
+    <Content Include="Presentation\Sublayouts\Topic\CalloutContainer.ascx" />
+    <Content Include="Presentation\Sublayouts\Topic\TopicCarousel.ascx" />
+    <Content Include="Presentation\Sublayouts\Topic\TopicPageHeader.ascx" />
     <Content Include="zforce-deploy-on-build-always.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
