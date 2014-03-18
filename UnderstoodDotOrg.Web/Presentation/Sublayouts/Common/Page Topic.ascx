@@ -2,7 +2,7 @@
 
 <!-- BEGIN PARTIAL: pagetopic -->
 <!-- Page Title -->
-<div class="container page-topic"> <%--no-bottom-margin--%>
+<div class="container page-topic <%= AdditionalCssClass %>">
     <div class="row">
         <div class="col col-14 offset-1">
 

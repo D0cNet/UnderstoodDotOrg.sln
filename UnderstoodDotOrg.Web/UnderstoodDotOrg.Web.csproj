@@ -657,6 +657,10 @@
       <Project>{ba887ae1-f638-4b47-aa65-d3451f3d5cfe}</Project>
       <Name>UnderstoodDotOrg.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UnderstoodDotOrg.Framework\UnderstoodDotOrg.Framework.csproj">
+      <Project>{ec2d5068-6aed-422b-a3fd-4b75ac0c247f}</Project>
+      <Name>UnderstoodDotOrg.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
