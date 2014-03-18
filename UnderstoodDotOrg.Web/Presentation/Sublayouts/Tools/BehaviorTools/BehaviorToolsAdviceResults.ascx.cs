@@ -4,11 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Framework.UI;
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 {
-    public partial class Page_Topic : BaseSublayout
+    public partial class BehaviorToolsAdviceResults : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
