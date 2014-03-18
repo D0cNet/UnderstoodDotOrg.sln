@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col col-12 rating-container">
             <div>Review and ratings by</div>
-            <img alt="Common Sense Media" src="Presentation/includes/img/logo.partner.commonsense2.png" />
+            <img alt="Common Sense Media" src="/Presentation/includes/img/logo.partner.commonsense2.png" />
         </div>
         <div class="col col-10">
             <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Back to Results</a>
