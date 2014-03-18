@@ -2,7 +2,7 @@
 <!-- BEGIN PARTIAL: tools -->
 <!-- Tools -->
 
-<div class="container mini-tools-wrap" style="background-image: url(Presentation/includes/img/bg-subtopic-minitools.jpg)">
+<div class="container mini-tools-wrap" style="background-image: url(../Presentation/includes/img/bg-subtopic-minitools.jpg)">
 
     <div class="row">
 
@@ -69,7 +69,7 @@
                 <footer class="powered-by">
                     <h5>powered by</h5>
                     <div class="logo">
-                        <img class="logo-img" alt="Common Sense" src="Presentation/includes/img/logo.partner.commonsense.png" />
+                        <img class="logo-img" alt="Common Sense" src="../Presentation/includes/img/logo.partner.commonsense.png" />
                     </div>
                 </footer>
 
@@ -208,7 +208,7 @@
                 <footer class="powered-by">
                     <h5>powered by</h5>
                     <div class="logo">
-                        <img class="logo-img" alt="Great Schools" src="Presentation/includes/img/logo.partner.greatschools.png" />
+                        <img class="logo-img" alt="Great Schools" src="../Presentation/includes/img/logo.partner.greatschools.png" />
                     </div>
                 </footer>
 
