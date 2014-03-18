@@ -119,9 +119,17 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx.cs">
       <DependentUpon>Infographic Article Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx.designer.cs">
       <DependentUpon>Infographic Article Page.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx.cs">
+      <DependentUpon>Parent Toolkit Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx.designer.cs">
+      <DependentUpon>Parent Toolkit Page.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.cs">
       <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
@@ -143,6 +151,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx.designer.cs">
       <DependentUpon>SlideshowArticle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\SuggestArticlePageCarousal.ascx.cs">
+      <DependentUpon>SuggestArticlePageCarousal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\SuggestArticlePageCarousal.ascx.designer.cs">
+      <DependentUpon>SuggestArticlePageCarousal.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\TextOnlyTipsArticle.ascx.cs">
       <DependentUpon>TextOnlyTipsArticle.ascx</DependentUpon>
@@ -611,9 +626,11 @@
     <Content Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Glossary Article.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\SuggestArticlePageCarousal.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TextOnlyTipsArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TipsArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\VideoArticle.ascx" />
