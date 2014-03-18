@@ -96,6 +96,13 @@
     <Compile Include="Presentation\Sublayouts\Articles\BasicArticle.ascx.designer.cs">
       <DependentUpon>BasicArticle.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Checklist Article Page.ascx.cs">
+      <DependentUpon>Checklist Article Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Checklist Article Page.ascx.designer.cs">
+      <DependentUpon>Checklist Article Page.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Comments.ascx.cs">
       <DependentUpon>Comments.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -622,6 +629,7 @@
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\AudioArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\BasicArticle.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Checklist Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Comments.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Glossary Article.ascx" />
