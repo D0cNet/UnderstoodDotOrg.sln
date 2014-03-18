@@ -119,6 +119,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.cs">
       <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.designer.cs">
       <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
@@ -309,34 +310,34 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <Content Include="placehold.it\100x1000.gif" />
-    <Content Include="placehold.it\1200x475.gif" />
-    <Content Include="placehold.it\1200x542.gif" />
-    <Content Include="placehold.it\150x150&amp;text=150x150.gif" />
-    <Content Include="placehold.it\150x150.gif" />
-    <Content Include="placehold.it\150x60.gif" />
-    <Content Include="placehold.it\150x84.gif" />
-    <Content Include="placehold.it\1740x980.gif" />
-    <Content Include="placehold.it\189x109.gif" />
-    <Content Include="placehold.it\190x106.gif" />
-    <Content Include="placehold.it\190x107&amp;text=190x107.gif" />
-    <Content Include="placehold.it\190x107.gif" />
-    <Content Include="placehold.it\230x129.gif" />
-    <Content Include="placehold.it\270x180&amp;text=Shot+1.gif" />
-    <Content Include="placehold.it\270x180&amp;text=Shot+2.gif" />
-    <Content Include="placehold.it\270x180&amp;text=Shot+3.gif" />
-    <Content Include="placehold.it\290x163&amp;text=290x163.gif" />
-    <Content Include="placehold.it\290x384.gif" />
-    <Content Include="placehold.it\294x187.gif" />
-    <Content Include="placehold.it\380x220.gif" />
-    <Content Include="placehold.it\510x288.gif" />
-    <Content Include="placehold.it\510x292.gif" />
-    <Content Include="placehold.it\589x348.gif" />
-    <Content Include="placehold.it\60x60.gif" />
-    <Content Include="placehold.it\630x354.gif" />
-    <Content Include="placehold.it\70x70.gif" />
-    <Content Include="placehold.it\870x489&amp;text=870x489.gif" />
-    <Content Include="placehold.it\980x1740.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\100x1000.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\1200x475.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\1200x542.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\150x150&amp;text=150x150.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\150x150.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\150x60.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\150x84.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\1740x980.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\189x109.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\190x106.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\190x107&amp;text=190x107.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\190x107.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\230x129.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\270x180&amp;text=Shot+1.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\270x180&amp;text=Shot+2.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\270x180&amp;text=Shot+3.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\290x163&amp;text=290x163.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\290x384.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\294x187.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\380x220.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\510x288.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\510x292.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\589x348.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\60x60.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\630x354.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\70x70.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\870x489&amp;text=870x489.gif" />
+    <Content Include="Presentation\Includes\images\placefolder\980x1740.gif" />
     <Content Include="Presentation\Includes\css\account.css" />
     <Content Include="Presentation\Includes\css\base.css" />
     <Content Include="Presentation\Includes\css\globals.css" />

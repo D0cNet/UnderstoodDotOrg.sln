@@ -12,37 +12,37 @@
                         <li>
                             <a href="REPLACE.html">
                                 <p>Understand Your Child's Problem: Start a Log</p>
-                                <img alt="230x129 Placeholder" src="../placehold.it/230x129.gif" />
+                                <img alt="230x129 Placeholder" src="../Presentation/Includes/images/placefolder/230x129.gif" />
                             </a>
                         </li>
                         <li>
                             <a href="REPLACE.html">
                                 <p>Does my Child Have Dyslexia? Take the Quiz</p>
-                                <img alt="230x129 Placeholder" src="../placehold.it/230x129.gif" />
+                                <img alt="230x129 Placeholder" src="../Presentation/Includes/images/placefolder/230x129.gif" />
                             </a>
                         </li>
                         <li>
                             <a href="REPLACE.html">
                                 <p>Get Better Recommendations: Create a Profile</p>
-                                <img alt="230x129 Placeholder" src="../placehold.it/230x129.gif" />
+                                <img alt="230x129 Placeholder" src="../Presentation/Includes/images/placefolder/230x129.gif" />
                             </a>
                         </li>
                         <li>
                             <a href="REPLACE.html">
                                 <p>Understand Your Child's Problem: Start a Log</p>
-                                <img alt="230x129 Placeholder" src="../placehold.it/230x129.gif" />
+                                <img alt="230x129 Placeholder" src="../Presentation/Includes/images/placefolder/230x129.gif" />
                             </a>
                         </li>
                         <li>
                             <a href="REPLACE.html">
                                 <p>Does my Child Have Dyslexia? Take the Quiz</p>
-                                <img alt="230x129 Placeholder" src="../placehold.it/230x129.gif" />
+                                <img alt="230x129 Placeholder" src="../Presentation/Includes/images/placefolder/230x129.gif" />
                             </a>
                         </li>
                         <li>
                             <a href="REPLACE.html">
                                 <p>Get Better Recommendations: Create a Profile</p>
-                                <img alt="230x129 Placeholder" src="../placehold.it/230x129.gif" />
+                                <img alt="230x129 Placeholder" src="../Presentation/Includes/images/placefolder/230x129.gif" />
                             </a>
                         </li>
                     </ul>

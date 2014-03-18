@@ -21,7 +21,7 @@
                             <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
                         </div>
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/190x106.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/190x106.gif" />
                         </div>
                         <div class="footer">
                             <a href="#">Learn
@@ -44,7 +44,7 @@
                             </p>
                         </div>
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/190x106.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/190x106.gif" />
                         </div>
                         <div class="footer">
                             <a href="#">Learn
@@ -77,7 +77,7 @@
                         </fieldset>
 
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/150x60.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/150x60.gif" />
                         </div>
                     </li>
                     <li>
@@ -86,7 +86,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
                         </div>
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/190x106.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/190x106.gif" />
                         </div>
                         <div class="footer">
                             <a href="#">Learn
@@ -103,7 +103,7 @@
                             <p>Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/190x106.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/190x106.gif" />
                         </div>
                         <div class="footer">
                             <a href="#">Learn
@@ -120,7 +120,7 @@
                             <p>Lorem ipsum dolor sit amet</p>
                         </div>
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/190x106.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/190x106.gif" />
                         </div>
                         <div class="footer">
                             <a href="#">Learn
@@ -137,7 +137,7 @@
                             <p>Lorem ipsum dolor</p>
                         </div>
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/190x106.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/190x106.gif" />
                         </div>
                         <div class="footer">
                             <a href="#">Learn
@@ -154,7 +154,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur</p>
                         </div>
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/190x106.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/190x106.gif" />
                         </div>
                         <div class="footer">
                             <a href="#">Learn
@@ -171,7 +171,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
                         </div>
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/190x106.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/190x106.gif" />
                         </div>
                         <div class="footer">
                             <a href="#">Learn
@@ -188,7 +188,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
                         </div>
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/190x106.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/190x106.gif" />
                         </div>
                         <div class="footer">
                             <a href="#">Learn
@@ -205,7 +205,7 @@
                             <p>Lorem ipsum</p>
                         </div>
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/190x106.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/190x106.gif" />
                         </div>
                         <div class="footer">
                             <a href="#">Learn
@@ -222,7 +222,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
                         </div>
                         <div class="image">
-                            <img alt="190x106 Placeholder" src="../placehold.it/190x106.gif" />
+                            <img alt="190x106 Placeholder" src="../Presentation/Includes/images/placefolder/190x106.gif" />
                         </div>
                         <div class="footer">
                             <a href="#">Learn
