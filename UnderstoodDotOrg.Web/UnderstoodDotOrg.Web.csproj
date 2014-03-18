@@ -257,12 +257,33 @@
     <Compile Include="Presentation\Sublayouts\MyAccount\SignUp.ascx.designer.cs">
       <DependentUpon>SignUp.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Section\Recommendations.ascx.cs">
+      <DependentUpon>Recommendations.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Section\Recommendations.ascx.designer.cs">
+      <DependentUpon>Recommendations.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Section\SectionListing.ascx.cs">
+      <DependentUpon>SectionListing.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Section\SectionListing.ascx.designer.cs">
+      <DependentUpon>SectionListing.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Section\SectionPageTopic.ascx.cs">
       <DependentUpon>SectionPageTopic.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Section\SectionPageTopic.ascx.designer.cs">
       <DependentUpon>SectionPageTopic.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Section\SectionTools.ascx.cs">
+      <DependentUpon>SectionTools.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Section\SectionTools.ascx.designer.cs">
+      <DependentUpon>SectionTools.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx.cs">
       <DependentUpon>AssistiveToolsLandingPage.ascx</DependentUpon>
@@ -547,7 +568,10 @@
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />
+    <Content Include="Presentation\Sublayouts\Section\Recommendations.ascx" />
+    <Content Include="Presentation\Sublayouts\Section\SectionListing.ascx" />
     <Content Include="Presentation\Sublayouts\Section\SectionPageTopic.ascx" />
+    <Content Include="Presentation\Sublayouts\Section\SectionTools.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDetails.ascx" />
