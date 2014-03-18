@@ -117,6 +117,12 @@
     <Compile Include="Presentation\Sublayouts\Articles\Glossary Article.ascx.designer.cs">
       <DependentUpon>Glossary Article.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx.cs">
+      <DependentUpon>Infographic Article Page.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx.designer.cs">
+      <DependentUpon>Infographic Article Page.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.cs">
       <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -196,6 +202,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Page Topic.ascx.cs">
       <DependentUpon>Page Topic.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Page Topic.ascx.designer.cs">
       <DependentUpon>Page Topic.ascx</DependentUpon>
@@ -603,6 +610,7 @@
     <Content Include="Presentation\Sublayouts\Articles\Comments.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Glossary Article.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx" />
