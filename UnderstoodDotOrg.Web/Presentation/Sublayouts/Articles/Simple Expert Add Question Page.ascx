@@ -1,5 +1,48 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Simple Expert Add Question Page.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Simple_Expert_Add_Question_Page" %>
-<!-- BEGIN PARTIAL: expert-question -->
+ <!-- BEGIN PARTIAL: pagetopic -->
+<!-- Page Title -->
+<div class="container page-topic">
+  <div class="row">
+    <div class="col col-14 offset-1">
+      
+        <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Lorem Ipsum Dolar</a>
+      
+      <h1>Lorem ipsum dolar sit amet</h1>
+      
+        <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
+      
+    </div>
+    
+    <div class="col col-9">
+      <!-- BEGIN PARTIAL: share-save -->
+<div class="share-save-container">
+  <div class="share-save-social-icon">
+  	<div class="toggle">
+	    <a href="REPLACE" class="socicon icon-facebook">Facebook</a><br />
+	    <a href="REPLACE" class="socicon icon-twitter">Twitter</a><br />
+	    <a href="REPLACE" class="socicon icon-googleplus">Google&#43;</a><br />
+	    <a href="REPLACE" class="socicon icon-pinterest">Pinterest</a><br />
+	</div>
+  </div>
+  <div class="share-save-icon">
+    <h3>Share &amp; Save</h3>
+    <!-- leave no white space for layout consistency -->
+    <a href="REPLACE" class="icon icon-share">Share</a><span class="tools"><a href="REPLACE" class="icon icon-email">Email</a><a href="REPLACE" class="icon icon-save">Save</a><a href="REPLACE" class="icon icon-print">Print</a><a href="REPLACE" class="icon icon-remind">Remind</a><a href="REPLACE" class="icon icon-rss">RSS</a></span>
+  </div>
+</div>
+
+<!-- END PARTIAL: share-save -->
+    </div>
+    
+  </div>
+</div><!-- .container -->
+
+<!-- END PARTIAL: pagetopic -->
+<div class="container article">
+  <div class="row row-equal-heights">
+    <!-- article -->
+    <div class="col col-15 offset-1">
+      <!-- BEGIN PARTIAL: expert-question -->
 <div class="expert-question">
   <p>Adipisci illum aut animi voluptatem nobis repudiandae velit non quo. quia sit aliquam voluptas placeat ratione quisquam. voluptate aspernatur consequatur consequatur sed earum nisi nihil modi est accusantium repellendus sit similique. dolores hic est quasi suscipit provident. voluptas fugiat perferendis rerum voluptatem dolores voluptate dignissimos sit ut nulla quae mollitia et. ut rem debitis earum qui ducimus voluptas consequuntur vel ea. et iste est distinctio placeat minus voluptatem error et id nihil</p>
   <p>Et recusandae doloribus rerum sunt nihil ea qui. impedit et dolorum fuga optio quibusdam quia eveniet deleniti mollitia non. debitis aut ipsam quae. numquam corporis et provident officia sapiente cumque ullam et quasi laborum omnis. laudantium commodi quis quis modi harum vel et</p>
@@ -7,7 +50,7 @@
 </div> <!-- end expert-question -->
 
 <!-- END PARTIAL: expert-question -->
- <!-- BEGIN PARTIAL: expert-answer -->
+      <!-- BEGIN PARTIAL: expert-answer -->
 <div class="expert-answer">
   <div class="expert-author">
     <img alt="294x187 Placeholder" src="http://placehold.it/294x187" />
@@ -24,3 +67,172 @@
 </div> <!-- end expert-answer -->
 
 <!-- END PARTIAL: expert-answer -->
+      <!-- BEGIN PARTIAL: about-the-author -->
+<section class="about-the-author">
+  <header>
+    <h2>About the Author</h2>
+  </header>
+  <img src="http://placehold.it/60x60" alt="REPLACE">
+  <div class="author-text">
+    <h3>Christine Flagler</h3>
+    <p>Lorem ipsum dolor sit amet, consectetuer laoreet dolore adipiscing elit, sed diam nonummy nibh euismod tincidunt ut dolore.</p>
+    <a href="REPLACE">More Posts by this Author</a>
+  </div>
+</section>
+<!-- END PARTIAL: about-the-author -->
+      <!-- BEGIN PARTIAL: find-helpful -->
+<div class="find-this-helpful content">
+   
+  <h4>Did you find this helpful?</h4>
+  <ul>
+    <li>
+      <button class="helpful-yes">Yes</button>
+    </li>
+    <li>
+      <button class="helpful-no">No</button>
+    </li>
+  </ul>
+  <div class="clearfix"></div>
+   
+</div>
+<!-- END PARTIAL: find-helpful -->
+    </div>
+
+    <div class="col col-1 sidebar-spacer"></div>
+
+    <!-- right bar -->
+    <div class="col col-5 offset-1">
+      <!-- BEGIN PARTIAL: helpful-count -->
+<div class="count-helpful">
+  <a href="REPLACE"><span>34</span>Found this helpful</a>
+</div>
+<!-- END PARTIAL: helpful-count -->
+      <!-- BEGIN PARTIAL: comments-count -->
+<div class="count-comments">
+  <a href="REPLACE"><span>19</span>Comments</a>
+</div>
+<!-- END PARTIAL: comments-count -->
+      <!-- BEGIN PARTIAL: find-helpful -->
+<div class="find-this-helpful sidebar">
+   
+  <h4>Did you find this helpful?</h4>
+  <ul>
+    <li>
+      <button class="helpful-yes">Yes</button>
+    </li>
+    <li>
+      <button class="helpful-no">No</button>
+    </li>
+  </ul>
+  <div class="clearfix"></div>
+   
+</div>
+<!-- END PARTIAL: find-helpful -->
+      <!-- BEGIN PARTIAL: keep-reading -->
+<div class="keep-reading">
+  <h3>Keep Reading</h3>
+  <ul>
+    <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
+    <li><a href="REPLACE">How to Build a Homework Plan</a></li>
+    <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
+  </ul>
+</div>
+<!-- END PARTIAL: keep-reading -->
+      <!-- BEGIN PARTIAL: comments-summary -->
+<section class="comments-summary">
+  <header>
+    <h3>Comments (19)</h3>
+  </header>
+  <div class="quote-container">
+    <blockquote>
+      <p>Maiores pariatur recusandae omnis sint provident fuga maxime non maiores consectetur. perferendis et suscipit sit ut dolor. commodi sunt qui ea harum molestiae autem nemo et incidunt sapiente molestias soluta ut voluptatem. exercitationem rerum minima quisquam sed veniam natus laudantium et sit molestiae. optio voluptatem exercitationem enim iusto ex ut delectus. asperiores est explicabo maiores et repudiandae dolore earum est praesentium quos vel officiis ut. rem autem ut vero sed voluptatem beatae alias ea</p>
+      <i class="arrow-quote-bottom"></i>
+    </blockquote>
+    <span><strong>Carrie S</strong> &bull; 30 min ago</span>
+  </div>
+
+  <ul>
+    <li><a href="REPLACE">See All Comments</a></li>
+    <li><a href="REPLACE">Add My Comment</a></li>
+  </ul>
+</section>
+<!-- END PARTIAL: comments-summary -->
+      <!-- BEGIN PARTIAL: sidebar-promos -->
+<div class="sidebar-promos">
+  <div class="promo purple-dark">
+    <a href="REPLACE">
+      <span>Get advice</span>
+      <i class="icon-arrow-promo"></i>
+    </a>
+  </div> <!-- end promo -->
+
+  <div class="promo purple-light">
+    <a href="REPLACE">
+      <span>Find Technology that can Help</span>
+      <i class="icon-arrow-promo"></i>
+    </a>
+  </div> <!-- end promo -->
+
+  <div class="promo blue">
+    <a href="REPLACE">
+      <span>Navigating Your Child's Healthcare Needs</span>
+      <i class="icon-arrow-promo"></i>
+    </a>
+  </div> <!-- end promo -->
+</div> <!-- end sidebar-promos -->
+
+<!-- END PARTIAL: sidebar-promos -->
+    </div>
+  </div><!-- .row -->
+</div><!-- .container -->
+
+<div class="container more-carousel">
+  <div class="row">
+    <div class="col col-24 offset-1">
+      <h2>More Like this:</h2>
+      <!-- BEGIN PARTIAL: more-carousel -->
+<div id="more-carousel-slides-container">
+  <ul>
+    <li>
+      <a href="REPLACE">
+        <p>Understand Your Child's Problem: Start a Log</p>
+        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+      </a>
+    </li>
+    <li>
+      <a href="REPLACE">
+        <p>Does my Child Have Dyslexia? Take the Quiz</p>
+        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+      </a>
+    </li>
+    <li>
+      <a href="REPLACE">
+        <p>Get Better Recommendations: Create a Profile</p>
+        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+      </a>
+    </li>
+    <li>
+      <a href="REPLACE">
+        <p>Understand Your Child's Problem: Start a Log</p>
+        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+      </a>
+    </li>
+    <li>
+      <a href="REPLACE">
+        <p>Does my Child Have Dyslexia? Take the Quiz</p>
+        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+      </a>
+    </li>
+    <li>
+      <a href="REPLACE">
+        <p>Get Better Recommendations: Create a Profile</p>
+        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+      </a>
+    </li>
+  </ul>
+</div><!-- #more-carousel-slides-container-->
+
+<!-- END PARTIAL: more-carousel -->
+    </div>
+  </div>
+</div>

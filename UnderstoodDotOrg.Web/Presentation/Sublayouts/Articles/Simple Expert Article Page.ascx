@@ -1,5 +1,51 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Simple Expert Article Page.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Simple_Expert_Article_Page" %>
- <!-- BEGIN PARTIAL: about-the-author -->
+ <!-- BEGIN PARTIAL: pagetopic -->
+<!-- Page Title -->
+<div class="container page-topic">
+  <div class="row">
+    <div class="col col-14 offset-1">
+      
+        <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Lorem Ipsum Dolar</a>
+      
+      <h1>Lorem ipsum dolar sit amet</h1>
+      
+        <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
+      
+    </div>
+    
+    <div class="col col-9">
+      <!-- BEGIN PARTIAL: share-save -->
+<div class="share-save-container">
+  <div class="share-save-social-icon">
+  	<div class="toggle">
+	    <a href="REPLACE" class="socicon icon-facebook">Facebook</a><br />
+	    <a href="REPLACE" class="socicon icon-twitter">Twitter</a><br />
+	    <a href="REPLACE" class="socicon icon-googleplus">Google&#43;</a><br />
+	    <a href="REPLACE" class="socicon icon-pinterest">Pinterest</a><br />
+	</div>
+  </div>
+  <div class="share-save-icon">
+    <h3>Share &amp; Save</h3>
+    <!-- leave no white space for layout consistency -->
+    <a href="REPLACE" class="icon icon-share">Share</a><span class="tools"><a href="REPLACE" class="icon icon-email">Email</a><a href="REPLACE" class="icon icon-save">Save</a><a href="REPLACE" class="icon icon-print">Print</a><a href="REPLACE" class="icon icon-remind">Remind</a><a href="REPLACE" class="icon icon-rss">RSS</a></span>
+  </div>
+</div>
+
+<!-- END PARTIAL: share-save -->
+    </div>
+    
+  </div>
+</div><!-- .container -->
+
+<!-- END PARTIAL: pagetopic -->
+<div class="container article">
+  <div class="row row-equal-heights">
+    <!-- article -->
+    <div class="col col-15 offset-1">
+      
+
+<!-- END PARTIAL: expert-answer -->
+      <!-- BEGIN PARTIAL: about-the-author -->
 <section class="about-the-author">
   <header>
     <h2>About the Author</h2>
@@ -12,7 +58,7 @@
   </div>
 </section>
 <!-- END PARTIAL: about-the-author -->
- <!-- BEGIN PARTIAL: find-helpful -->
+      <!-- BEGIN PARTIAL: find-helpful -->
 <div class="find-this-helpful content">
    
   <h4>Did you find this helpful?</h4>
@@ -28,10 +74,11 @@
    
 </div>
 <!-- END PARTIAL: find-helpful -->
- 
+    </div>
 
     <div class="col col-1 sidebar-spacer"></div>
- <!-- right bar -->
+
+    <!-- right bar -->
     <div class="col col-5 offset-1">
       <!-- BEGIN PARTIAL: helpful-count -->
 <div class="count-helpful">
@@ -114,6 +161,8 @@
 
 <!-- END PARTIAL: sidebar-promos -->
     </div>
+  </div><!-- .row -->
+</div><!-- .container -->
 
 <div class="container more-carousel">
   <div class="row">
