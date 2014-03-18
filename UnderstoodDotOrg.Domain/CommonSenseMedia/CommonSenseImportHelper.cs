@@ -1,13 +1,9 @@
 ﻿using Sitecore.SecurityModel;
-using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using UnderstoodDotOrg.Domain.CommonSenseMedia;
 
 namespace UnderstoodDotOrg.Domain.Importer
@@ -22,12 +18,13 @@ namespace UnderstoodDotOrg.Domain.Importer
 
         private CommonSenseImportHelper()
         {
-            this.Skill = new Mapping(Settings.SkillsContainer);
-            this.Subject = new Mapping(Settings.SubjectsContainer);
-            this.Platform = new Mapping(Settings.PlatforomContainer);
-            this.Genre = new Mapping(Settings.GenreContainer);
-            this.Type = new Mapping(Settings.TypesContainer);
-            this.Category = new Mapping(Settings.CategoriesContainer);
+            this.Settings = new ImportSettings();
+            this.Skill = new Mapping(this.Settings.SkillsContainer);
+            this.Subject = new Mapping(this.Settings.SubjectsContainer);
+            this.Platform = new Mapping(this.Settings.PlatforomContainer);
+            this.Genre = new Mapping(this.Settings.GenreContainer);
+            this.Type = new Mapping(this.Settings.TypesContainer);
+            this.Category = new Mapping(this.Settings.CategoriesContainer);
         }
 
         public static CommonSenseImportHelper Instance
@@ -44,73 +41,92 @@ namespace UnderstoodDotOrg.Domain.Importer
         #endregion
 
         /// <summary>
-        /// Static class containing the various IDs and names needed for import. These are read from the app.config
+        /// Class containing the various IDs and names needed for import. These are read from the app.config
         /// </summary>
-        static public class Settings
+        public class ImportSettings
         {
+            /// <summary>
+            /// Initializes the settings from the app.config
+            /// </summary>
+            public ImportSettings()
+            {
+                this.MasterDatabaseName = ConfigurationManager.AppSettings["MasterDatabaseName"];
+                this.WebDatabaseName = ConfigurationManager.AppSettings["WebDatabaseName"];
+                this.ReviewTemplate = ConfigurationManager.AppSettings["ReviewTemplateGUID"];
+                this.MetadataTemplate = ConfigurationManager.AppSettings["MetadataTemplateGUID"];
+                this.ReviewsContainer = ConfigurationManager.AppSettings["ReviewsContainerGUID"];
+                this.ImagesPath = ConfigurationManager.AppSettings["ImagesPath"];
+                this.CategoriesContainer = ConfigurationManager.AppSettings["CategoriesContainerGUID"];
+                this.GenreContainer = ConfigurationManager.AppSettings["GenreContainerGUID"];
+                this.PlatforomContainer = ConfigurationManager.AppSettings["PlatformContainerGUID"];
+                this.SkillsContainer = ConfigurationManager.AppSettings["SkillsContainerGUID"];
+                this.SubjectsContainer = ConfigurationManager.AppSettings["SubjectsContainerGUID"];
+                this.TypesContainer = ConfigurationManager.AppSettings["TypesContainerGUID"];
+            }
+
             // Databases
             /// <summary>
             /// Name of the Master database
             /// </summary>
-            public static string MasterDatabaseName = ConfigurationManager.AppSettings["MasterDatabaseName"];
+            public string MasterDatabaseName;
 
             /// <summary>
             /// Name of the Web database
             /// </summary>
-            public static string WebDatabaseName = ConfigurationManager.AppSettings["WebDatabaseName"];
+            public string WebDatabaseName;
 
             // Templates
             /// <summary>
             /// GUID for the Review Data Template in Sitecore
             /// </summary>
-            public static string ReviewTemplate = ConfigurationManager.AppSettings["ReviewTemplateGUID"];
+            public string ReviewTemplate;
 
             /// <summary>
             /// GUID for the Metadata Data Template in Sitecore
             /// </summary>
-            public static string MetadataTemplate = ConfigurationManager.AppSettings["MetadataTemplateGUID"];
+            public string MetadataTemplate;
 
             // Content Containers
             /// <summary>
             /// GUID for the folder that holds instances of the Review content
             /// </summary>
-            public static string ReviewsContainer = ConfigurationManager.AppSettings["ReviewsContainerGUID"];
+            public string ReviewsContainer;
 
             /// <summary>
             /// Sitecore path to the folder to hold screenshots and images
             /// </summary>
-            public static string ImagesPath = ConfigurationManager.AppSettings["ImagesPath"];
+            public string ImagesPath;
 
             // Metadata Containers
             /// <summary>
             /// GUID for the folder that holds instances of Categories Metadata
             /// </summary>
-            public static string CategoriesContainer = ConfigurationManager.AppSettings["CategoriesContainerGUID"];
+            public string CategoriesContainer;
 
             /// <summary>
             /// GUID for the folder that holds instances of the Genre Metadata
             /// </summary>
-            public static string GenreContainer = ConfigurationManager.AppSettings["GenreContainerGUID"];
+            public string GenreContainer;
 
             /// <summary>
             /// GUID for the folder that holds instances of the Platform Metadata
             /// </summary>
-            public static string PlatforomContainer = ConfigurationManager.AppSettings["PlatformContainerGUID"];
+            public string PlatforomContainer;
 
             /// <summary>
             /// GUID for the folder that holds instances of the Skill Metadata
             /// </summary>
-            public static string SkillsContainer = ConfigurationManager.AppSettings["SkillsContainerGUID"];
+            public string SkillsContainer;
 
             /// <summary>
             /// GUID for the folder that holds instances of the Subject Metadata
             /// </summary>
-            public static string SubjectsContainer = ConfigurationManager.AppSettings["SubjectsContainerGUID"];
+            public string SubjectsContainer;
 
             /// <summary>
             /// GUID for the folder that holds instances of the Types Metadata
             /// </summary>
-            public static string TypesContainer = ConfigurationManager.AppSettings["TypesContainerGUID"];
+            public string TypesContainer;
         }
 
         /// <summary>
@@ -151,7 +167,7 @@ namespace UnderstoodDotOrg.Domain.Importer
             {
                 Dictionary<string, string> ret = new Dictionary<string, string>();
 
-                Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(Settings.MasterDatabaseName);
+                Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(Instance.Settings.MasterDatabaseName);
                 Sitecore.Data.Items.Item container = master.GetItem(Container);
 
                 foreach (Sitecore.Data.Items.Item item in container.Children)
@@ -172,6 +188,8 @@ namespace UnderstoodDotOrg.Domain.Importer
                 this.updateMapping();
             }
         }
+
+        public ImportSettings Settings { get; set; }
 
         /// <summary>
         /// Mapping instance for Skill relations
@@ -278,10 +296,10 @@ namespace UnderstoodDotOrg.Domain.Importer
             {
                 Sitecore.Resources.Media.MediaCreatorOptions options = new Sitecore.Resources.Media.MediaCreatorOptions();
 
-                options.Database = Sitecore.Configuration.Factory.GetDatabase(Settings.MasterDatabaseName);
+                options.Database = Sitecore.Configuration.Factory.GetDatabase(Instance.Settings.MasterDatabaseName);
                 options.Language = Sitecore.Globalization.Language.Parse(Sitecore.Configuration.Settings.DefaultLanguage);
                 options.Versioned = Sitecore.Configuration.Settings.Media.UploadAsVersionableByDefault;
-                options.Destination = Settings.ImagesPath;
+                options.Destination = Instance.Settings.ImagesPath;
                 options.FileBased = Sitecore.Configuration.Settings.Media.UploadAsFiles;
 
                 Sitecore.Resources.Media.MediaCreator creator = new Sitecore.Resources.Media.MediaCreator();
@@ -309,9 +327,9 @@ namespace UnderstoodDotOrg.Domain.Importer
         {
             using (new SecurityDisabler())
             {
-                Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(Settings.MasterDatabaseName);
+                Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(Instance.Settings.MasterDatabaseName);
                 Sitecore.Data.Items.Item container = master.GetItem(Mapping.Container);
-                Sitecore.Data.Items.TemplateItem metadataTemplate = master.Templates[Settings.MetadataTemplate];
+                Sitecore.Data.Items.TemplateItem metadataTemplate = master.Templates[Instance.Settings.MetadataTemplate];
                 Sitecore.Data.Items.Item newItem = container.Add(Name, metadataTemplate);
 
                 newItem.Editing.BeginEdit();

@@ -1,9 +1,4 @@
 ﻿using Sitecore.SecurityModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnderstoodDotOrg.Domain.Importer;
 
 namespace UnderstoodDotOrg.Domain.CommonSenseMedia
@@ -20,11 +15,14 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// <returns>Sitecore Item that was added</returns>
         public Sitecore.Data.Items.Item Add(ReviewModel Review)
         {
+            //using (new Sitecore.Data.BulkUpdateContext()) //wrap a foreach with this bad larry
+            //{ }
+
             using (new SecurityDisabler())
             {
-                Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(CommonSenseImportHelper.Settings.MasterDatabaseName);
-                Sitecore.Data.Items.TemplateItem reviewTemplate = master.Templates[CommonSenseImportHelper.Settings.ReviewTemplate];
-                Sitecore.Data.Items.Item newReview = Get(CommonSenseImportHelper.Settings.ReviewsContainer).Add(CommonSenseImportHelper.removePunctuation(Review.Title), reviewTemplate);
+                Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(CommonSenseImportHelper.Instance.Settings.MasterDatabaseName);
+                Sitecore.Data.Items.TemplateItem reviewTemplate = master.Templates[CommonSenseImportHelper.Instance.Settings.ReviewTemplate];
+                Sitecore.Data.Items.Item newReview = Get(CommonSenseImportHelper.Instance.Settings.ReviewsContainer).Add(CommonSenseImportHelper.removePunctuation(Review.Title), reviewTemplate);
 
                 newReview.Editing.BeginEdit();
 
@@ -43,7 +41,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// <returns>Desired Review</returns>
         public Sitecore.Data.Items.Item Get(string GUID)
         {
-            Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(CommonSenseImportHelper.Settings.MasterDatabaseName);
+            Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(CommonSenseImportHelper.Instance.Settings.MasterDatabaseName);
             return master.GetItem(GUID);
         }
 
@@ -54,7 +52,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// <returns>Updated Review</returns>
         public Sitecore.Data.Items.Item Update(ReviewModel Review)
         {
-            Sitecore.Data.Items.Item updateReview = Get(CommonSenseImportHelper.Settings.ReviewsContainer);
+            Sitecore.Data.Items.Item updateReview = Get(CommonSenseImportHelper.Instance.Settings.ReviewsContainer);
 
             updateReview.Editing.BeginEdit();
 
