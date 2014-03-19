@@ -1,7 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BehaviorToolsBehaviorAdvice.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.BehaviorToolsBehaviorAdvice" %>
-<div class="container flush <%= AdditionalCssClass %>">
-  <div class="row">
-<div class="col col-16 behavior-advice-container">
+<div class="col col-16 <%= HttpUtility.UrlDecode(AdditionalCssClass) %>">
 <!-- BEGIN PARTIAL: behavior-advice -->
 <div class="behavior-advice-wrapper">
   <div class="behavior-advice">
@@ -90,5 +88,3 @@
 
 <!-- END PARTIAL: behavior-advice -->
     </div>
-<sc:Placeholder Key="Get-Expert-Advice-Aside" runat="server" />
-      </div></div>

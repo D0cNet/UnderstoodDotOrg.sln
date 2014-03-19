@@ -367,48 +367,63 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceResults.ascx.cs">
       <DependentUpon>BehaviorToolsAdviceResults.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceResults.ascx.designer.cs">
       <DependentUpon>BehaviorToolsAdviceResults.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceVideoPage.ascx.cs">
       <DependentUpon>BehaviorToolsAdviceVideoPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceVideoPage.ascx.designer.cs">
       <DependentUpon>BehaviorToolsAdviceVideoPage.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdvice.ascx.cs">
       <DependentUpon>BehaviorToolsBehaviorAdvice.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdvice.ascx.designer.cs">
       <DependentUpon>BehaviorToolsBehaviorAdvice.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx.cs">
+      <DependentUpon>BehaviorToolsBehaviorAdviceWrapper.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx.designer.cs">
+      <DependentUpon>BehaviorToolsBehaviorAdviceWrapper.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsCommentGallery.ascx.cs">
       <DependentUpon>BehaviorToolsCommentGallery.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsCommentGallery.ascx.designer.cs">
       <DependentUpon>BehaviorToolsCommentGallery.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerComments.ascx.cs">
       <DependentUpon>BehaviorToolsContainerComments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerComments.ascx.designer.cs">
       <DependentUpon>BehaviorToolsContainerComments.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerMore-Carousel.ascx.cs">
       <DependentUpon>BehaviorToolsContainerMore-Carousel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerMore-Carousel.ascx.designer.cs">
       <DependentUpon>BehaviorToolsContainerMore-Carousel.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsHelpful-Count.ascx.cs">
       <DependentUpon>BehaviorToolsHelpful-Count.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsHelpful-Count.ascx.designer.cs">
       <DependentUpon>BehaviorToolsHelpful-Count.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsHeroContainer.ascx.cs">
       <DependentUpon>BehaviorToolsHeroContainer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsHeroContainer.ascx.designer.cs">
       <DependentUpon>BehaviorToolsHeroContainer.ascx</DependentUpon>
@@ -418,6 +433,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsRelatedArticles.ascx.cs">
       <DependentUpon>BehaviorToolsRelatedArticles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsRelatedArticles.ascx.designer.cs">
       <DependentUpon>BehaviorToolsRelatedArticles.ascx</DependentUpon>
@@ -428,6 +444,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx.designer.cs">
       <DependentUpon>BehaviorToolsResultsPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx.cs">
+      <DependentUpon>BehaviorToolsResultsWrapper.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx.designer.cs">
+      <DependentUpon>BehaviorToolsResultsWrapper.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Topic\ArticleListing.ascx.cs">
       <DependentUpon>ArticleListing.ascx</DependentUpon>
@@ -718,6 +741,7 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceResults.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceVideoPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdvice.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsCommentGallery.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerComments.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerMore-Carousel.ascx" />
@@ -726,6 +750,7 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsRelatedArticles.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\ArticleListing.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\CalloutContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\TopicCarousel.ascx" />
