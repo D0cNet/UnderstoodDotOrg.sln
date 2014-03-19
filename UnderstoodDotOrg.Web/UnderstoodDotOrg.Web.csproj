@@ -96,6 +96,27 @@
     <Compile Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx.designer.cs">
       <DependentUpon>Articles Landing Page.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage1.ascx.cs">
+      <DependentUpon>AssessmentQuizArticlePage1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage1.ascx.designer.cs">
+      <DependentUpon>AssessmentQuizArticlePage1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage2.ascx.cs">
+      <DependentUpon>AssessmentQuizArticlePage2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage2.ascx.designer.cs">
+      <DependentUpon>AssessmentQuizArticlePage2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePageEnd.ascx.cs">
+      <DependentUpon>AssessmentQuizArticlePageEnd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePageEnd.ascx.designer.cs">
+      <DependentUpon>AssessmentQuizArticlePageEnd.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\AudioArticle.ascx.cs">
       <DependentUpon>AudioArticle.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -109,6 +130,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\BasicArticle.ascx.designer.cs">
       <DependentUpon>BasicArticle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Checklist Article Page.ascx.cs">
+      <DependentUpon>Checklist Article Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Checklist Article Page.ascx.designer.cs">
+      <DependentUpon>Checklist Article Page.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Comments.ascx.cs">
       <DependentUpon>Comments.ascx</DependentUpon>
@@ -138,6 +166,48 @@
     <Compile Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx.designer.cs">
       <DependentUpon>Infographic Article Page.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswer2ArticlePage.ascx.cs">
+      <DependentUpon>KnowledgeQuizAnswer2ArticlePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswer2ArticlePage.ascx.designer.cs">
+      <DependentUpon>KnowledgeQuizAnswer2ArticlePage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswerArticlePage.ascx.cs">
+      <DependentUpon>KnowledgeQuizAnswerArticlePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswerArticlePage.ascx.designer.cs">
+      <DependentUpon>KnowledgeQuizAnswerArticlePage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestion2ArticlePage.ascx.cs">
+      <DependentUpon>KnowledgeQuizQuestion2ArticlePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestion2ArticlePage.ascx.designer.cs">
+      <DependentUpon>KnowledgeQuizQuestion2ArticlePage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx.cs">
+      <DependentUpon>KnowledgeQuizQuestionArticlePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx.designer.cs">
+      <DependentUpon>KnowledgeQuizQuestionArticlePage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizResultsArticlePage.ascx.cs">
+      <DependentUpon>KnowledgeQuizResultsArticlePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizResultsArticlePage.ascx.designer.cs">
+      <DependentUpon>KnowledgeQuizResultsArticlePage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx.cs">
+      <DependentUpon>Parent Toolkit Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx.designer.cs">
+      <DependentUpon>Parent Toolkit Page.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.cs">
       <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -158,6 +228,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx.designer.cs">
       <DependentUpon>SlideshowArticle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\SuggestArticlePageCarousal.ascx.cs">
+      <DependentUpon>SuggestArticlePageCarousal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\SuggestArticlePageCarousal.ascx.designer.cs">
+      <DependentUpon>SuggestArticlePageCarousal.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\TextOnlyTipsArticle.ascx.cs">
       <DependentUpon>TextOnlyTipsArticle.ascx</DependentUpon>
@@ -699,15 +776,26 @@
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Article Entry Message Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage1.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage2.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePageEnd.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\AudioArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\BasicArticle.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Checklist Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Comments.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Glossary Article.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswer2ArticlePage.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswerArticlePage.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestion2ArticlePage.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizResultsArticlePage.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\SuggestArticlePageCarousal.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TextOnlyTipsArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TipsArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\VideoArticle.ascx" />
