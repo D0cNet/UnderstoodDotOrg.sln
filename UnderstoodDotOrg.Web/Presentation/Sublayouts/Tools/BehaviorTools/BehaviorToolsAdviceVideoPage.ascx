@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="True" CodeBehind="BehaviorToolAdvicePage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.BehaviorToolAdvicePage" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BehaviorToolsAdviceVideoPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.BehaviorToolsAdviceVideoPage" %>
 <div class="container article">
   <div class="row row-equal-heights">
     <!-- article -->
@@ -13,29 +13,27 @@
 </div><!-- end .first-next-prev-menu -->
 <!-- END PARTIAL: first-next-prev-menu -->
 
-      <!-- BEGIN PARTIAL: behavior-tip-detail -->
-<div class="behavior-tip-detail">
-  <header>
+      <!-- BEGIN PARTIAL: in-this-video -->
+<div class="expert-advice-wrapper">
+  <div class="expert-video">
     <h2>Give at least 5 minutes advance warning</h2>
-  </header>
-  <section class="tip-detail-content">
-    <h3 class="first-sub-header">What you can do</h3>
-    <p>In voluptatibus velit fugiat perspiciatis eveniet assumenda. aspernatur quidem saepe quo laboriosam molestiae minus molestiae odio deserunt necessitatibus fugiat eos id. ipsa modi blanditiis sed optio veritatis exercitationem vitae saepe esse qui ex et ut vel</p>
-  </section> <!-- end tip-detail-content -->
-  <section class="tip-detail-content">
-    <h3>What you can say</h3>
-    <p>Exercitationem voluptatem aliquid sit voluptates. temporibus incidunt voluptatem voluptas ut vel quia quod ut optio et harum. magnam laborum omnis asperiores exercitationem a. praesentium neque numquam quia ratione suscipit earum rerum nostrum non quia nostrum quo laborum. et quia nihil et error eveniet nobis quis eos dolores voluptate molestias. dolores modi deleniti accusantium id molestias et aut dolore optio unde totam</p>
-  </section> <!-- end tip-detail-content -->
-  <section class="tip-detail-content no-border">
-    <h3>Why this will help</h3>
-    <p>Dolor aspernatur illo fuga tenetur aut quo blanditiis quas velit non consequatur natus suscipit sit. voluptatem delectus ullam fugit enim dolores sit aperiam reprehenderit quia voluptas molestiae. enim cupiditate debitis fuga maiores sequi quibusdam dolorem iste illum</p>
-  </section> <!-- end tip-detail-content -->
-</div> <!-- end behavior-tip-detail -->
+    <img alt="589x348 Placeholder" src="http://placehold.it/589x348" />
+  </div> <!-- end expert-video -->
+  <div class="in-this-video">
+    <h2>In this video</h2>
+    <ul>
+      <li>quidem voluptatem quam voluptatem sunt voluptatibus aut nihil consequatur nihil</li>
+      <li>accusamus hic provident est architecto voluptatem magni eos sequi aliquam sed architecto</li>
+      <li>eligendi et voluptatem provident sunt ut nihil dignissimos voluptatem aut quod qui quo repudiandae</li>
+      <li>consequatur culpa porro possimus ut sint assumenda quo est eaque dolorem illo est unde provident in qui fuga</li>
+      <li>temporibus autem consectetur nostrum est sequi dolores dolorem aut nesciunt quia minima</li>
+    </ul>
+  </div> <!-- end in-this-video -->
+</div> <!-- end expert-advice-wrapper -->
 
-<!-- END PARTIAL: behavior-tip-detail -->
+<!-- END PARTIAL: in-this-video -->
     </div>
 
-    <!-- spacer column -->
     <div class="col col-1 sidebar-spacer"></div>
 
     <!-- right bar -->
@@ -80,6 +78,7 @@
   </div><!-- .row -->
 </div><!-- .container -->
 
+
 <div class="container">
   <div class="row row-equal-heights">
     <div class="col col-15 offset-1">
@@ -100,11 +99,7 @@
 </div>
 <!-- END PARTIAL: find-helpful -->
     </div>
-
-    <!-- spacer column -->
     <div class="col col-1 sidebar-spacer"></div>
-
-    <!-- right bar -->
     <div class="col col-5 offset-1">
       <!-- BEGIN PARTIAL: second-next-prev-menu -->
 <div class="second-next-prev-menu arrows-gray">
@@ -118,4 +113,13 @@
 <!-- END PARTIAL: second-next-prev-menu -->
     </div>
   </div><!-- .row -->
-</div>
+</div><!-- .container -->
+
+
+
+
+
+
+
+
+
