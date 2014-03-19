@@ -82,6 +82,13 @@
     <Compile Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx.designer.cs">
       <DependentUpon>Action Style List Page.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Article Entry Message Page.ascx.cs">
+      <DependentUpon>Article Entry Message Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Article Entry Message Page.ascx.designer.cs">
+      <DependentUpon>Article Entry Message Page.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx.cs">
       <DependentUpon>Articles Landing Page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -662,6 +669,7 @@
     <Content Include="Presentation\Layouts\Browser.aspx" />
     <Content Include="Presentation\Layouts\Web.aspx" />
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Article Entry Message Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\AudioArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\BasicArticle.ascx" />
