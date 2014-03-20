@@ -68,13 +68,6 @@
     <Compile Include="Presentation\Layouts\Browser.aspx.designer.cs">
       <DependentUpon>Browser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Layouts\Web.aspx.cs">
-      <DependentUpon>Web.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Layouts\Web.aspx.designer.cs">
-      <DependentUpon>Web.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx.cs">
       <DependentUpon>Action Style List Page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -354,6 +347,55 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\SignUp.ascx.designer.cs">
       <DependentUpon>SignUp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx.cs">
+      <DependentUpon>ProfileStepFive.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx.designer.cs">
+      <DependentUpon>ProfileStepFive.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFour.ascx.cs">
+      <DependentUpon>ProfileStepFour.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFour.ascx.designer.cs">
+      <DependentUpon>ProfileStepFour.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepOne.ascx.cs">
+      <DependentUpon>ProfileStepOne.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepOne.ascx.designer.cs">
+      <DependentUpon>ProfileStepOne.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepThree.ascx.cs">
+      <DependentUpon>ProfileStepThree.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepThree.ascx.designer.cs">
+      <DependentUpon>ProfileStepThree.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepTwo.ascx.cs">
+      <DependentUpon>ProfileStepTwo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepTwo.ascx.designer.cs">
+      <DependentUpon>ProfileStepTwo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Registration\RegisterChildInformation.ascx.cs">
+      <DependentUpon>RegisterChildInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Registration\RegisterChildInformation.ascx.designer.cs">
+      <DependentUpon>RegisterChildInformation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Registration\RegisterCommunityProfile.ascx.cs">
+      <DependentUpon>RegisterCommunityProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Registration\RegisterCommunityProfile.ascx.designer.cs">
+      <DependentUpon>RegisterCommunityProfile.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Section\Recommendations.ascx.cs">
       <DependentUpon>Recommendations.ascx</DependentUpon>
@@ -772,7 +814,6 @@
     <Content Include="Presentation\Includes\js\vendor\jquery.validate.min.js" />
     <Content Include="Presentation\Includes\js\vendor\modernizr.custom.js" />
     <Content Include="Presentation\Layouts\Browser.aspx" />
-    <Content Include="Presentation\Layouts\Web.aspx" />
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Article Entry Message Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx" />
@@ -813,6 +854,13 @@
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />
+    <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx" />
+    <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFour.ascx" />
+    <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepOne.ascx" />
+    <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepThree.ascx" />
+    <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepTwo.ascx" />
+    <Content Include="Presentation\Sublayouts\Registration\RegisterChildInformation.ascx" />
+    <Content Include="Presentation\Sublayouts\Registration\RegisterCommunityProfile.ascx" />
     <Content Include="Presentation\Sublayouts\Section\Recommendations.ascx" />
     <Content Include="Presentation\Sublayouts\Section\SectionListing.ascx" />
     <Content Include="Presentation\Sublayouts\Section\SectionPageTopic.ascx" />
