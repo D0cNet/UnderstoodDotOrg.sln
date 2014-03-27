@@ -4,7 +4,7 @@
 <div class="container article">
   <div class="row row-equal-heights">
     <!-- article -->
-
+     
     <div class="col col-15 offset-1">
       <div class="count-mobile">
         <!-- BEGIN PARTIAL: helpful-count -->

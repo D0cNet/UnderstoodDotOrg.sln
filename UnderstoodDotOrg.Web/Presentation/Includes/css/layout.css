@@ -665,7 +665,7 @@ body:after {
     display: block;
     width: 230px;
     height: 73px;
-    background-image: url("../img/logo.u.large.png");
+   /* background-image: url("../img/logo.u.large.png");*/
     background-size: contain;
   }
 }
@@ -682,7 +682,7 @@ body:after {
 @media (min-width: 769px) {
   /* line 486, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
   .logo-u-main img {
-    display: none;
+    /*display: none;*/
   }
 }
 /* line 495, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */

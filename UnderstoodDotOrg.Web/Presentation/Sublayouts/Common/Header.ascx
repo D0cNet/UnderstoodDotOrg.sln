@@ -1,44 +1,79 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Header" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN PARTIAL: header -->
 <header id="header-page" class="container">
     <div class="row">
         <div class="col col-24">
 
             <div class="logo-u-main">
-                <a href="REPLACE.html">
-                    <img alt="Understood Logo" src="/Presentation/includes/img/logo.u.default.png" /></a>
+
+                <asp:HyperLink runat="server" ID="hlLogoLink">
+                    <sc:FieldRenderer runat="server" ID="scLogoImage" FieldName="Company Logo" Parameters="w=235&h=73&as=1" />
+                </asp:HyperLink>
+                <%--<a href="REPLACE.html">
+                    <img alt="Understood Logo" src="/Presentation/includes/img/logo.u.default.png" /></a>--%>
             </div>
             <!-- logo-u-main -->
+            <asp:Repeater runat="server" ID="rptLanguage" OnItemDataBound="rptLanguage_ItemDataBound">
+                <HeaderTemplate>
+                    <ul class="language-selection">
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <li><%--<a href="REPLACE.html" title="English" class="is-active">Eng</a>--%>
+                        <asp:HyperLink runat="server" ID="hypLanguageLink"></asp:HyperLink>
 
-            <ul class="language-selection">
+                        <%--<sc:fieldrenderer id="frLanguageLink" runat="server" fieldname="Link" />--%>
+                    </li>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </ul>
+                </FooterTemplate>
+            </asp:Repeater>
+            <%-- <ul class="language-selection">
                 <li><a href="REPLACE.html" title="English" class="is-active">Eng</a></li>
                 <li><a href="REPLACE.html" title="Espa&ntilde;ol">Esp</a></li>
-            </ul>
+            </ul>--%>
             <!-- .language-selection -->
 
             <div class="l-bar">
-
-                <nav class="nav-utility">
+                <asp:Repeater runat="server" ID="rptNavUtility" OnItemDataBound="rptNavUtility_ItemDataBound">
+                    <HeaderTemplate>
+                        <nav class="nav-utility">
+                            <ul role="menu">
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <li role="menuitem" aria-haspopup="true"><%--<a href="REPLACE.html">About</a>--%>
+                            <sc:FieldRenderer ID="frUtilityLink" runat="server" FieldName="Link" />
+                            <asp:Literal runat="server" ID="ltRender" ></asp:Literal>
+                        </li>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </ul>
+                </nav>
+                    </FooterTemplate>
+                </asp:Repeater>
+                <%--<nav class="nav-utility">
                     <ul role="menu">
                         <li role="menuitem" aria-haspopup="true"><a href="REPLACE.html">About</a></li>
                         <li role="menuitem" aria-haspopup="true"><a href="REPLACE.html">Take Action</a></li>
                         <li role="menuitem" aria-haspopup="true"><a href="REPLACE.html">Donate</a></li>
                     </ul>
-                </nav>
+                </nav>--%>
                 <!-- .nav-utility -->
 
                 <!-- BEGIN PARTIAL: user-state -->
                 <div class="sign-in" aria-haspopup="true">
-                    <a href="REPLACE.html" class="link-sign-in">Sign In</a>
+                    <sc:FieldRenderer runat="server" ID="scLinkSignIn" FieldName="Sign In" Parameters="class=link-sign-in"/>
+                    <%--<a href="REPLACE.html" class="link-sign-in">Sign In</a>--%>
                 </div>
 
                 <!-- END PARTIAL: user-state -->
 
                 <div id="search-site">
                     <fieldset>
-                        <legend>Search</legend>
+                        <legend><sc:FieldRenderer ID="frSearchLabel1" runat="server" FieldName="Link" /><%--Search--%></legend>
                         <span class="field">
-                            <label for="search-term" class="visuallyhidden">Search</label>
+                            <label for="search-term" class="visuallyhidden"><sc:FieldRenderer ID="frSearchLabel2" runat="server" FieldName="Link" /><%--Search--%></label>
                             <input type="text" id="search-term" placeholder="Enter Search Term">
                             <input type="submit" value="Go">
                         </span>
@@ -50,7 +85,36 @@
             <!-- .l-bar -->
 
             <!-- BEGIN PARTIAL: nav-main -->
-            <nav class="nav-main">
+            <asp:Repeater runat="server" ID="rptMainNavigation" OnItemDataBound="rptMainNavigation_ItemDataBound">
+                <HeaderTemplate>
+                    <nav class="nav-main">
+                        <ul role="menu">
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <li role="menuitem" aria-haspopup="true"><span>
+                        <sc:FieldRenderer ID="frMainNavigationLink" runat="server" FieldName="Link" />
+                    </span>
+                        <asp:Repeater runat="server" ID="rptPrimaryNavigation" OnItemDataBound="rptPrimaryNavigation_ItemDataBound">
+                            <HeaderTemplate>
+                                <ul>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <li role="menuitem"><span>
+                                    <sc:FieldRenderer ID="frPrimaryNavigationLink" runat="server" FieldName="Link" />
+                                </span></li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </ul>
+                            </FooterTemplate>
+                        </asp:Repeater>
+                    </li>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </ul>
+            </nav>
+                </FooterTemplate>
+            </asp:Repeater>
+            <%--            <nav class="nav-main">
                 <ul role="menu">
                     <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE.html">Learning &amp;<br>
                         Attention Issues</a></span>
@@ -108,10 +172,12 @@
                         </ul>
                     </li>
                 </ul>
-            </nav>
+            </nav>--%>
             <!-- END PARTIAL: nav-main -->
 
-            <div id="toolkit" aria-haspopup="true"><span>Your Parent Toolkit</span></div>
+            <div id="toolkit" aria-haspopup="true"><span><%--Your Parent Toolkit--%>
+                <sc:FieldRenderer ID="frParentToolKitHeading" runat="server" FieldName="Heading" />
+                                                   </span></div>
 
         </div>
         <!-- .col -->
@@ -128,8 +194,24 @@
                     <h2>Your Parent Toolkit</h2>
 
                     <span class="button-close"><i class="icon-close-toolkit"></i>Close</span>
-
-                    <div class="slides-container">
+                    <asp:Repeater runat="server" ID="rptParentToolkit" OnItemDataBound="rptParentToolkit_ItemDataBound" >
+                        <HeaderTemplate>
+                             <div class="slides-container">
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                             <li>
+                                    <asp:Panel runat="server" ID="pnlParentToolKit" CssClass="icon">
+                                         <sc:FieldRenderer ID="frNavLink" runat="server" FieldName="Link" />
+                                        <%--<a href="REPLACE.html">My Support Plan</a>--%>
+                                        <%--<div class="coming-soon">Coming Soon</div>--%>
+                                    </asp:Panel>
+                                </li>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </div>
+                        </FooterTemplate>
+                    </asp:Repeater>
+                    <%--<div class="slides-container">
 
                         <div class="slide">
                             <ul>
@@ -190,7 +272,7 @@
                             </ul>
                         </div>
                         <!-- .slide -->
-                    </div>
+                    </div>--%>
                     <!-- .slides-container -->
 
                 </div>
