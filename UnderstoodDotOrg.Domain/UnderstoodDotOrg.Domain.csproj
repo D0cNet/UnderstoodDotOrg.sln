@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,12 +58,41 @@
       <DependentUpon>Import.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SitecoreCIG\FolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\MainsectionItem.base.cs" />
+    <Compile Include="SitecoreCIG\MainsectionItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\AssistiveTools\ReviewItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\AssistiveTools\ReviewItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\AuthorItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\AuthorItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\FooterFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\GlobalsItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\HeaderFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\HeaderFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\LanguageNavigationFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\LanguageNavigationFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\MainNavigationFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\MainNavigationFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\ParentToolkitFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\ParentToolkitFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\PartnerFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\PartnerFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\SocialMediaFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\SocialMediaFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\UtilityNavigationFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\UtilityNavigationFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\LanguageLinkItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\LanguageLinkItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\MetadataItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\MetadataItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\NavigationLinkItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\SocialMediaItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\BasePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\BasePageNEWItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\BasicArticleItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\ContentPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.instance.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExactTarget\" />
@@ -82,6 +112,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Import.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="SitecoreCIG\Poses\Folders\GlobalsItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\FooterFolderItem.instance.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
