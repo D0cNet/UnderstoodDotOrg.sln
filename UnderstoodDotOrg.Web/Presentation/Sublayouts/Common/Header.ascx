@@ -197,6 +197,8 @@
                     <asp:Repeater runat="server" ID="rptParentToolkit" OnItemDataBound="rptParentToolkit_ItemDataBound" >
                         <HeaderTemplate>
                              <div class="slides-container">
+                                 <div class="slide">
+                            <ul>
                         </HeaderTemplate>
                         <ItemTemplate>
                              <li>
@@ -208,6 +210,8 @@
                                 </li>
                         </ItemTemplate>
                         <FooterTemplate>
+                            </ul>
+                            </div>
                             </div>
                         </FooterTemplate>
                     </asp:Repeater>

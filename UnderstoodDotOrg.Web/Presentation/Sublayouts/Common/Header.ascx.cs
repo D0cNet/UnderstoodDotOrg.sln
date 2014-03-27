@@ -29,7 +29,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
                 frParentToolKitHeading.Item = parentToolkitFolder;
                 var result = parentToolkitFolder.GetNavigationLinkItems();
                 if (result != null) {
-
+                    rptParentToolkit.DataSource = result;
+                    rptParentToolkit.DataBind();
                 }
             }
         }
