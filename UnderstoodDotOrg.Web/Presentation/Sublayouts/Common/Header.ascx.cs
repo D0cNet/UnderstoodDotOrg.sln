@@ -1,4 +1,5 @@
 ﻿using Sitecore.Data.Items;
+using Sitecore.Web;
 using Sitecore.Web.UI.WebControls;
 using System;
 using System.Collections.Generic;
@@ -170,7 +171,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
 
                             // link to the home page and let JavaScript add the current page (this allows for sublayout HTML caching)
                             string currentPageUrl = Sitecore.Context.Item.GetUrl();
-                            string languageSwitchUrl = string.Format("{0}?{1}={2}", currentPageUrl, Constants.SCLANG_QUERY_STRING, languageItem.IsoCode);
+                            // WebUtil.GetHostName, languageItem.IsoCode
+
+                            string languageSwitchUrl = string.Format("{0}://{1}/{2}/", Request.Url.Scheme, WebUtil.GetHostName(), languageItem.IsoCode.ToLower());
                             hypLanguageLink.NavigateUrl = languageSwitchUrl;
                         }
                     }
