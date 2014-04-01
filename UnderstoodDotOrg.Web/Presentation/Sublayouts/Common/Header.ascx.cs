@@ -176,6 +176,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
                             Language currentSiteLanugage;
                             if (Language.TryParse(languageItem.IsoCode, out currentSiteLanugage)) {
                                 Sitecore.Context.SetLanguage(currentSiteLanugage, true);
+                                string cookieName = Sitecore.Context.Site.GetCookieKey("lang");
+                                Sitecore.Web.WebUtil.SetCookieValue(cookieName, currentSiteLanugage.Name, DateTime.MaxValue);
                             }
                             string languageSwitchUrl = string.Format("{0}://{1}/{2}.aspx", Request.Url.Scheme, WebUtil.GetHostName(), languageItem.IsoCode);
                             hypLanguageLink.NavigateUrl = languageSwitchUrl;
