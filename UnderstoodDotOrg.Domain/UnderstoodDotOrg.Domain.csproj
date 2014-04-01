@@ -87,6 +87,7 @@
     <Compile Include="SitecoreCIG\Poses\General\MetadataItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\NavigationLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\SocialMediaItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\BasicArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\BasePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\BasePageNEWItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\BasicArticleItem.base.cs" />
