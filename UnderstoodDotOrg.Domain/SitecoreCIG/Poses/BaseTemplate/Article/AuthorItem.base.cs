@@ -7,7 +7,7 @@ using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.BaseTemplate.Article
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article
 {
 public partial class AuthorItem : CustomItem
 {
@@ -61,6 +61,15 @@ public CustomImageField AuthorImage
 	get
 	{
 		return new CustomImageField(InnerItem, InnerItem.Fields["Author Image"]);
+	}
+}
+
+
+public CustomCheckboxField IsReviewer
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Is Reviewer"]);
 	}
 }
 
