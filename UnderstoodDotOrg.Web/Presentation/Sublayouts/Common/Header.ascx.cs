@@ -177,7 +177,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
                             if (Language.TryParse(languageItem.IsoCode, out currentSiteLanugage)) {
                                 Sitecore.Context.SetLanguage(currentSiteLanugage, true);
                             }
-                            string languageSwitchUrl = string.Format("{0}://{1}/{2}/", Request.Url.Scheme, WebUtil.GetHostName(), languageItem.IsoCode.ToLower());
+                            string languageSwitchUrl = string.Format("{0}://{1}/{2}.aspx", Request.Url.Scheme, WebUtil.GetHostName(), languageItem.IsoCode);
                             hypLanguageLink.NavigateUrl = languageSwitchUrl;
                         }
                     }
