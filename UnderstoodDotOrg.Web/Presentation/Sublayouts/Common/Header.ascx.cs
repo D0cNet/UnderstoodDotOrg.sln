@@ -179,7 +179,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
                                 string cookieName = Sitecore.Context.Site.GetCookieKey("lang");
                                 Sitecore.Web.WebUtil.SetCookieValue(cookieName, currentSiteLanugage.Name, DateTime.MaxValue);
                             }
-                            string languageSwitchUrl = string.Format("{0}://{1}/{2}.aspx", Request.Url.Scheme, WebUtil.GetHostName(), languageItem.IsoCode);
+                            string languageSwitchUrl = string.Format("{0}://{1}/{2}/", Request.Url.Scheme, WebUtil.GetHostName(), languageItem.IsoCode);
                             hypLanguageLink.NavigateUrl = languageSwitchUrl;
                         }
                     }
