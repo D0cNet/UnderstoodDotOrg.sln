@@ -212,6 +212,20 @@
     <Compile Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx.designer.cs">
       <DependentUpon>Parent Toolkit Page.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx.cs">
+      <DependentUpon>QuizFoundHelpfulControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx.designer.cs">
+      <DependentUpon>QuizFoundHelpfulControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx.cs">
+      <DependentUpon>QuizKeepReadingControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx.designer.cs">
+      <DependentUpon>QuizKeepReadingControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.cs">
       <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -582,6 +596,20 @@
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx.designer.cs">
       <DependentUpon>BehaviorToolsResultsWrapper.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx.cs">
+      <DependentUpon>QuizMiniToolsContainer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx.designer.cs">
+      <DependentUpon>QuizMiniToolsContainer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx.cs">
+      <DependentUpon>QuizTryMoreQuizzes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx.designer.cs">
+      <DependentUpon>QuizTryMoreQuizzes.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Topic\ArticleListing.ascx.cs">
       <DependentUpon>ArticleListing.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -845,6 +873,8 @@
     <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizResultsArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx" />
@@ -899,6 +929,8 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsRelatedArticles.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\ArticleListing.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\CalloutContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\TopicCarousel.ascx" />

@@ -5,15 +5,15 @@
             <header class="profile-questions-header">
                 <div class="column-left">
                     <!-- BEGIN PARTIAL: profile-questions-header-left -->
-                    <h1>Complete My Profile</h1>
-                    <p class="subtitle">amet qui earum placeat omnis sed dolorem voluptas ipsa sint alias et earum</p>
+                    <h1><sc:Text ID="Text1" Field="Header Title" runat="server" /></h1>
+                    <p class="subtitle"><sc:Text ID="Text2" Field="Header Text" runat="server" /></p>
 
                     <!-- END PARTIAL: profile-questions-header-left -->
                 </div>
                 <div class="column-right">
                     <!-- BEGIN PARTIAL: profile-questions-header-right -->
                     <div class="progress-bar-wrapper">
-                        <div class="progress-header">Progress</div>
+                        <div class="progress-header"><sc:Text ID="Text3" Field="Header Progress Bar Text" runat="server" /></div>
                         <div class="progress-bar step-3">
                             <span class="step-1 step">1</span>
                             <span class="step-1-progress progress">
@@ -33,7 +33,7 @@
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="done step">Done</span>
+                            <span class="done step"><sc:Text ID="Text4" Field="Header Progress Bar Done Text" runat="server" /></span>
                         </div>
                     </div>
                     <!-- .progress-bar-wrapper -->
@@ -53,35 +53,35 @@
         <div class="col col-22 offset-1">
             <!-- BEGIN PARTIAL: profile-questions-step3 -->
             <div class="profile-questions step-3">
-                <h2>What topics are you interested in?</h2>
+                <h2><sc:Text ID="Text5" Field="Form Title" runat="server" /></h2>
 
                 <div class="question-wrapper clearfix school-issues-question">
-                    <h3 class="question">School Issues</h3>
+                    <h3 class="question"><sc:Text ID="Text6" Field="School Issues Question Title" runat="server" /></h3>
                     <div class="checkboxes-wrapper">
 
                         <div class="column-left">
                             <div class="checkbox-wrapper">
                                 <label>
                                     <input type="checkbox" name="q1a1">
-                                    <span>Choosing or changing schools</span>
+                                    <span><sc:Text ID="Text7" Field="SI Area 1" runat="server" /></span>
                                 </label>
                             </div>
                             <div class="checkbox-wrapper">
                                 <label>
                                     <input type="checkbox" name="q1a2">
-                                    <span>Mainstream vs. special ed</span>
+                                    <span><sc:Text ID="Text8" Field="SI Area 2" runat="server" /></span>
                                 </label>
                             </div>
                             <div class="checkbox-wrapper">
                                 <label>
                                     <input type="checkbox" name="q1a3">
-                                    <span>School services (IEPs/504 plans)</span>
+                                    <span><sc:Text ID="Text9" Field="SI Area 3" runat="server" /></span>
                                 </label>
                             </div>
                             <div class="checkbox-wrapper">
                                 <label>
                                     <input type="checkbox" name="q1a4">
-                                    <span>Homeschooling</span>
+                                    <span><sc:Text ID="Text10" Field="SI Area 4" runat="server" /></span>
                                 </label>
                             </div>
                         </div>
@@ -91,25 +91,25 @@
                             <div class="checkbox-wrapper">
                                 <label>
                                     <input type="checkbox" name="q1a8">
-                                    <span>Working with teachers</span>
+                                    <span><sc:Text ID="Text11" Field="SI Area 5" runat="server" /></span>
                                 </label>
                             </div>
                             <div class="checkbox-wrapper">
                                 <label>
                                     <input type="checkbox" name="q1a9">
-                                    <span>RTI/MTSS</span>
+                                    <span><sc:Text ID="Text12" Field="SI Area 6" runat="server" /></span>
                                 </label>
                             </div>
                             <div class="checkbox-wrapper">
                                 <label>
                                     <input type="checkbox" name="q1a10">
-                                    <span>Bullying</span>
+                                    <span><sc:Text ID="Text13" Field="SI Area 7" runat="server" /></span>
                                 </label>
                             </div>
                             <div class="checkbox-wrapper">
                                 <label>
                                     <input type="checkbox" name="q1a11">
-                                    <span>Homework & study skills</span>
+                                    <span><sc:Text ID="Text14" Field="SI Area 8" runat="server" /></span>
                                 </label>
                             </div>
                         </div>
@@ -122,36 +122,36 @@
                 <div class="column-wrapper clearfix">
                     <div class="column-left">
                         <div class="question-wrapper help-question">
-                            <h3 class="question">Ways to Help Your Child</h3>
+                            <h3 class="question"><sc:Text ID="Text15" Field="Ways To Help Question Title" runat="server" /></h3>
                             <div class="checkboxes-wrapper">
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q2a1">
-                                        <span>Evaluations</span>
+                                        <span><sc:Text ID="Text16" Field="WTH Area 1" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q2a2">
-                                        <span>Therapies & medications</span>
+                                        <span><sc:Text ID="Text17" Field="WTH Area 2" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q2a3">
-                                        <span>Tutors & academic skill programs</span>
+                                        <span><sc:Text ID="Text18" Field="WTH Area 3" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q2a4">
-                                        <span>Technologies & apps</span>
+                                        <span><sc:Text ID="Text19" Field="WTH Area 4" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q2a5">
-                                        <span>Advocating for your child's rights</span>
+                                        <span><sc:Text ID="Text20" Field="WTH Area 5" runat="server" /></span>
                                     </label>
                                 </div>
                             </div>
@@ -163,30 +163,30 @@
 
                     <div class="column-right">
                         <div class="question-wrapper home-life-question">
-                            <h3 class="question">Home Life</h3>
+                            <h3 class="question"><sc:Text ID="Text21" Field="Home Life Question Title" runat="server" /></h3>
                             <div class="checkboxes-wrapper">
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q3a1">
-                                        <span>Travel, entertainment & activities</span>
+                                        <span><sc:Text ID="Text22" Field="HL Area 1" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q3a2">
-                                        <span>Siblings</span>
+                                        <span><sc:Text ID="Text23" Field="HL Area 2" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q3a3">
-                                        <span>Communicating with family & friends</span>
+                                        <span><sc:Text ID="Text24" Field="HL Area 3" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q3a4">
-                                        <span>Finding support</span>
+                                        <span><sc:Text ID="Text25" Field="HL Area 4" runat="server" /></span>
                                     </label>
                                 </div>
                             </div>
@@ -201,36 +201,36 @@
                 <div class="column-wrapper clearfix">
                     <div class="column-left">
                         <div class="question-wrapper growing-up-question">
-                            <h3 class="question">Growing Up</h3>
+                            <h3 class="question"><sc:Text ID="Text26" Field="Growing Up Question Title" runat="server" /></h3>
                             <div class="checkboxes-wrapper">
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q4a1">
-                                        <span>Teenage concerns (driving, dating, etc.)</span>
+                                        <span><sc:Text ID="Text27" Field="GU Area 1" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q4a2">
-                                        <span>College & vocational school</span>
+                                        <span><sc:Text ID="Text28" Field="GU Area 2" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q4a3">
-                                        <span>Work & jobs</span>
+                                        <span><sc:Text ID="Text29" Field="GU Area 3" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q4a4">
-                                        <span>Assisted living</span>
+                                        <span><sc:Text ID="Text30" Field="GU Area 4" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q4a5">
-                                        <span>Self-advocacy skills</span>
+                                        <span><sc:Text ID="Text31" Field="GU Area 5" runat="server" /></span>
                                     </label>
                                 </div>
                             </div>
@@ -242,24 +242,24 @@
 
                     <div class="column-right">
                         <div class="question-wrapper social-emotional-question">
-                            <h3 class="question">Social/Emotional Issues</h3>
+                            <h3 class="question"><sc:Text ID="Text32" Field="Social Emotional Issues Question Title" runat="server" /></h3>
                             <div class="checkboxes-wrapper">
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q5a1">
-                                        <span>Feelings & self-esteem</span>
+                                        <span><sc:Text ID="Text33" Field="SEI Area 1" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q5a2">
-                                        <span>Social challenges & friendship</span>
+                                        <span><sc:Text ID="Text34" Field="SEI Area 2" runat="server" /></span>
                                     </label>
                                 </div>
                                 <div class="checkbox-wrapper">
                                     <label>
                                         <input type="checkbox" name="q5a3">
-                                        <span>Behavior issues</span>
+                                        <span><sc:Text ID="Text35" Field="SEI Area 3" runat="server" /></span>
                                     </label>
                                 </div>
                             </div>
@@ -272,24 +272,24 @@
                 <!-- .column-wrapper -->
 
                 <div class="question-wrapper journey-question">
-                    <h3 class="question">Where are you in the journey?</h3>
+                    <h3 class="question"><sc:Text ID="Text36" Field="Where Are You Question Title" runat="server" /></h3>
                     <div class="radios-wrapper">
                         <div class="radio-wrapper">
                             <label>
                                 <input type="radio" name="q6" value="a1">
-                                <span>I'm still trying to figure out what is going on with my child.</span>
+                                <span><sc:Text ID="Text37" Field="WAY Area 1" runat="server" /></span>
                             </label>
                         </div>
                         <div class="radio-wrapper">
                             <label>
                                 <input type="radio" name="q6" value="a2">
-                                <span>We've been working through my child's issues this past year.</span>
+                                <span><sc:Text ID="Text38" Field="WAY Area 2" runat="server" /></span>
                             </label>
                         </div>
                         <div class="radio-wrapper">
                             <label>
                                 <input type="radio" name="q6" value="a3">
-                                <span>We've been working through my child's issues for many years now.</span>
+                                <span><sc:Text ID="Text39" Field="WAY Area 3" runat="server" /></span>
                             </label>
                         </div>
                     </div>
@@ -298,20 +298,20 @@
                 <!-- .question-wrapper -->
 
                 <div class="question-wrapper role-question">
-                    <p class="question with-margin">What is your role?</p>
+                    <p class="question with-margin"><sc:Text ID="Text40" Field="What Is Your Role Question Title" runat="server" /></p>
                     <div class="radio-toggle-wrapper">
-                        <label class="button">Mom<input name="q7" value="boy" type="radio"></label>
-                        <label class="button">Dad<input name="q7" value="girl" type="radio"></label>
+                        <label class="button"><sc:Text ID="Text41" Field="Mom Button Text" runat="server" /><input name="q7" value="boy" type="radio"></label>
+                        <label class="button"><sc:Text ID="Text42" Field="Dad Button Text" runat="server" /><input name="q7" value="girl" type="radio"></label>
                     </div>
                     <label class="inline">
                         <select name="q7b">
-                            <option value="">Other (select one)</option>
-                            <option value="grandparent">Grandparent</option>
-                            <option value="aunt_uncle">Aunt / Uncle</option>
-                            <option value="teacher">Teacher</option>
-                            <option value="medical">Medical Professional</option>
-                            <option value="caregiver">Caregiver</option>
-                            <option value="other">Other</option>
+                            <option value=""><sc:Text ID="Text43" Field="Other Field Default" runat="server" /></option>
+                            <option value="grandparent"><sc:Text ID="Text44" Field="Other Field 1" runat="server" /></option>
+                            <option value="aunt_uncle"><sc:Text ID="Text45" Field="Other Field 2" runat="server" /></option>
+                            <option value="teacher"><sc:Text ID="Text46" Field="Other Field 3" runat="server" /></option>
+                            <option value="medical"><sc:Text ID="Text47" Field="Other Field 4" runat="server" /></option>
+                            <option value="caregiver"><sc:Text ID="Text48" Field="Other Field 5" runat="server" /></option>
+                            <option value="other"><sc:Text ID="Text49" Field="Other Field 6" runat="server" /></option>
                         </select>
                     </label>
                 </div>
@@ -319,34 +319,34 @@
 
                 <div class="question-wrapper connect-question">
                     <p class="question">
-                        Would you like to connect with our parent community?
+                        <sc:Text ID="Text50" Field="Connect Question Title" runat="server" />
      
-                                    <span class="question-description">A safe place to share experiences and advice with people who understand.</span>
+                                    <span class="question-description"><sc:Text ID="Text51" Field="Connect Question Text" runat="server" /></span>
                     </p>
                     <div class="textfields-wrapper">
                         <div class="textfield-wrapper">
-                            <input type="textfield" name="connect-1" placeholder="Enter a Screen Name">
-                            <span class="popover-trigger-container"><a class="popover-link" href="REPLACE">Why do we ask?</a></span>
+                            <input type="textfield" name="connect-1" placeholder="Screen Name">
+                            <span class="popover-trigger-container"><a class="popover-link" href="REPLACE"><sc:Text ID="Text52" Field="Why Do We Ask Text 1" runat="server" /></a></span>
                             <div class="popover-container">
-                                <p><span class="title">lorem ipsum soged</span> Voluptas autem quia cum repellendus tempore quasi culpa reprehenderit consequatur aperiam impedit aut quaerat. quibusdam non alias sunt. dolores quas vitae voluptates optio commodi. eligendi id nulla fugiat nemo error sit consequuntur sed cum accusamus nobis velit incidunt. ducimus error delectus in voluptatem est et consequuntur officia. voluptas nihil sapiente explicabo sint</p>
+                                <p><span class="title"><sc:Text ID="Text53" Field="Why Do We Ask Subtext Header 1" runat="server" /></span> <sc:Text ID="Text54" Field="Why Do We Ask Subtext 1" runat="server" /></p>
                             </div>
                         </div>
                         <div class="textfield-wrapper">
                             <input type="textfield" name="connect-2" placeholder="Zip Code">
-                            <span class="popover-trigger-container"><a class="popover-link" href="REPLACE">Why do we ask?</a></span>
+                            <span class="popover-trigger-container"><a class="popover-link" href="REPLACE"><sc:Text ID="Text55" Field="Why Do We Ask Text 2" runat="server" /></a></span>
                             <div class="popover-container">
-                                <p><span class="title">lorem ipsum soged</span> Sint voluptate qui nobis ut. doloribus eos sint quisquam aut dignissimos ipsum quaerat sunt neque. quisquam necessitatibus voluptatem accusantium commodi suscipit ex sunt autem eaque. atque et commodi deleniti nostrum qui in</p>
+                                <p><span class="title"><sc:Text ID="Text56" Field="Why Do We Ask Subtext Header 2" runat="server" /></span> <sc:Text ID="Text57" Field="Why Do We Ask Subtext 2" runat="server" /></p>
                             </div>
                         </div>
                     </div>
                     <div class="no-uniform-wrapper">
                         <label>
                             <input class="no-uniform" type="checkbox">
-                            <span>I'm interested in connect requests from parents like me.</span>
+                            <span><sc:Text ID="Text58" Field="Interest Text" runat="server" /></span>
                         </label>
                         <label>
                             <input class="no-uniform" type="checkbox">
-                            <span>Yes, I’d like to sign up for my personalized newsletter.</span>
+                            <span><sc:Text ID="Text59" Field="Personalized Newsletter Text" runat="server" /></span>
                         </label>
                     </div>
                 </div>

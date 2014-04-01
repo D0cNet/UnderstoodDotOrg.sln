@@ -5,15 +5,17 @@
             <header class="profile-questions-header">
                 <div class="column-left">
                     <!-- BEGIN PARTIAL: profile-questions-header-left -->
-                    <h1>Complete My Profile</h1>
-                    <p class="subtitle">delectus odit labore quos impedit magni pariatur ea distinctio labore consequatur inventore ea</p>
+                    <h1>
+                        <sc:Text Field="Header Title" ID="PageHeader1" runat="server" />
+                    </h1>
+                    <p class="subtitle"><sc:Text Field="Header Text" ID="HeaderText1" runat="server" /></p>
 
                     <!-- END PARTIAL: profile-questions-header-left -->
                 </div>
                 <div class="column-right">
                     <!-- BEGIN PARTIAL: profile-questions-header-right -->
                     <div class="progress-bar-wrapper">
-                        <div class="progress-header">Progress</div>
+                        <div class="progress-header"><sc:Text Field="Header Progress Bar Text" ID="BarText1" runat="server" /></div>
                         <div class="progress-bar step-2">
                             <span class="step-1 step">1</span>
                             <span class="step-1-progress progress">
@@ -55,78 +57,78 @@
 
 
             <div class="profile-questions step-2">
-                <h2>Tell us about your 3rd grader</h2>
+                <h2><sc:Text Field="Form Title" runat="server" /></h2>
 
                 <div class="question-wrapper clearfix short-bottom trouble-question">
-                    <h3 class="question-inline">Your child's nickname
+                    <h3 class="question-inline"><sc:Text Field="Child Nickname Question Title" runat="server" />
      
-                                    <span class="question-description">Child's nickname is private and only viewable by you.</span>
+                                    <span class="question-description"><sc:Text Field="Child Nickname Question Text" runat="server" /></span>
                     </h3>
                     <input type="textfield">
                 </div>
                 <!-- .question-wrapper -->
 
                 <div class="question-wrapper evaluation-question">
-                    <h3 class="question">What is he having trouble with?</h3>
+                    <h3 class="question"><sc:Text Field="Trouble Areas Question Title" runat="server" /></h3>
                     <div class="checkboxes-wrapper">
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q1a1">
-                                <span>Reading</span>
+                                <span><sc:Text ID="Text1" Field="TA Area 1" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q1a2">
-                                <span>Writing</span>
+                                <span><sc:Text ID="Text2" Field="TA Area 2" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q1a3">
-                                <span>Math</span>
+                                <span><sc:Text ID="Text3" Field="TA Area 3" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q1a4">
-                                <span>Listening comprehension</span>
+                                <span><sc:Text ID="Text4" Field="TA Area 4" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q1a5">
-                                <span>Spoken language</span>
+                                <span><sc:Text ID="Text5" Field="TA Area 5" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q1a6">
-                                <span>Executive function (organization, planning, flexible thinking)</span>
+                                <span><sc:Text ID="Text6" Field="TA Area 6" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q1a7">
-                                <span>Hyperactivity/impulsivity</span>
+                                <span><sc:Text ID="Text7" Field="TA Area 7" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q1a8">
-                                <span>Attention/staying focused</span>
+                                <span><sc:Text ID="Text8" Field="TA Area 8" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q1a9">
-                                <span>Social skills</span>
+                                <span><sc:Text ID="Text9" Field="TA Area 9" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q1a10">
-                                <span>Motor skills</span>
+                                <span><sc:Text ID="Text10" Field="TA Area 10" runat="server" /></span>
                             </label>
                         </div>
                     </div>
@@ -135,50 +137,50 @@
                 <!-- .question-wrapper -->
 
                 <div class="question-wrapper evaluation-question">
-                    <h3 class="question">Has he been formally evaluated for learning or attention issues?</h3>
+                    <h3 class="question"><sc:Text ID="Text11" Field="Formally Evaluated Question Title" runat="server" /></h3>
                     <div class="radio-toggle-wrapper">
-                        <label class="button">Yes<input name="q2" value="yes" class="radio-toggle" type="radio"></label>
-                        <label class="button">No<input name="q2" value="no" class="radio-toggle" type="radio"></label>
-                        <label class="button">In Progress<input name="q2" value="progress" class="radio-toggle" type="radio"></label>
+                        <label class="button"><sc:Text ID="Text12" Field="Yes Button" runat="server" /><input name="q2" value="yes" class="radio-toggle" type="radio"></label>
+                        <label class="button"><sc:Text ID="Text13" Field="No Button" runat="server" /><input name="q2" value="no" class="radio-toggle" type="radio"></label>
+                        <label class="button"><sc:Text ID="Text14" Field="In Progress Button" runat="server" /><input name="q2" value="progress" class="radio-toggle" type="radio"></label>
                     </div>
                 </div>
                 <!-- .question-wrapper -->
 
                 <div class="question-wrapper family-question">
-                    <h3 class="question">Are there any special family circumstances? *</h3>
+                    <h3 class="question"><sc:Text ID="Text15" Field="Special Circumstances Question Title" runat="server" /></h3>
                     <div class="checkboxes-wrapper">
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q3a1">
-                                <span>Parents are divorced</span>
+                                <span><sc:Text ID="Text16" Field="SC Area 1" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q3a2">
-                                <span>Blended family</span>
+                                <span><sc:Text ID="Text17" Field="SC Area 2" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q3a3">
-                                <span>Single parent</span>
+                                <span><sc:Text ID="Text18" Field="SC Area 3" runat="server" /></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label>
                                 <input type="checkbox" name="q3a4">
-                                <span>Adopted child</span>
+                                <span><sc:Text ID="Text19" Field="SC Area 4" runat="server" /></span>
                             </label>
                         </div>
                     </div>
                     <!-- .checkboxes-wrapper -->
-                    <div class="question-description"><span>*</span> This will help us personalize for you today and in the future.</div>
+                    <div class="question-description"><span>*</span><sc:Text ID="Text20" Field="Special Circumstances Question SubText" runat="server" /></div>
                 </div>
                 <!-- .question-wrapper -->
 
                 <div class="form-actions">
-                    <input class="button" type="submit" value="Next">
+                    <input class="button" type="submit" value="<sc:Text ID="Text21" Field="Next Button Text" runat="server" />">
                 </div>
             </div>
             <!-- .profile-questions.step-2 -->
