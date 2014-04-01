@@ -43,6 +43,14 @@
       <HintPath>..\Libraries\CustomItemGenerator.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Sitecore.Kernel.dll</HintPath>
@@ -212,6 +220,12 @@
     <Compile Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx.designer.cs">
       <DependentUpon>Parent Toolkit Page.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx.cs">
+      <DependentUpon>Author Bio.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx.designer.cs">
+      <DependentUpon>Author Bio.ascx</DependentUpon>
     <Compile Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx.cs">
       <DependentUpon>QuizFoundHelpfulControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -873,7 +887,8 @@
     <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizResultsArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx" />
+	<Content Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx" />
