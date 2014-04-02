@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="Membership\Models\Child.cs" />
     <Compile Include="Membership\Models\Member.cs" />
+    <Compile Include="Membership\Models\MemberInterests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SitecoreCIG\FolderItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.base.cs" />
