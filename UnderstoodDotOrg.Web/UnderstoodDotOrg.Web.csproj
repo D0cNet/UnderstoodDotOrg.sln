@@ -226,6 +226,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx.designer.cs">
       <DependentUpon>Author Bio.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx.cs">
       <DependentUpon>QuizFoundHelpfulControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
