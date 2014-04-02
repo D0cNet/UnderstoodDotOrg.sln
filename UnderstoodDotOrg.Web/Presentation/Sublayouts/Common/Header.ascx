@@ -8,7 +8,7 @@
             <div class="logo-u-main">
 
                 <asp:HyperLink runat="server" ID="hlLogoLink">
-                    <sc:FieldRenderer runat="server" ID="scLogoImage" FieldName="Company Logo" Parameters="w=235&h=73&as=1" />
+                    <sc:FieldRenderer runat="server" ID="scLogoImage" FieldName="Company Logo" Parameters="w=230&h=73&as=1" />
                 </asp:HyperLink>
                 <%--<a href="REPLACE.html">
                     <img alt="Understood Logo" src="/Presentation/includes/img/logo.u.default.png" /></a>--%>

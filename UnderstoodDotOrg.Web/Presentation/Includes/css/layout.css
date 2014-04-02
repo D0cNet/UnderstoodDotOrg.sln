@@ -671,12 +671,12 @@ body:after {
 }
 /* line 486, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
 .logo-u-main img {
-  width: 90px;
+  /*width: 90px;*/
 }
 @media (min-width: 650px) {
   /* line 486, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
   .logo-u-main img {
-    width: 180px;
+    /*width: 180px;*/
   }
 }
 @media (min-width: 769px) {
