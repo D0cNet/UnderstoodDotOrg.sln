@@ -99,7 +99,7 @@
                     <h3 class="question-inline"><sc:Text ID="Text21" Field="Siblings Question Title" runat="server" /></h3>
                     <div class="radio-toggle-wrapper no-margin">
                         <label class="button"><sc:Text ID="Text22" Field="Siblings Yes Button Text" runat="server" /><input name="q3" value="yes" class="radio-toggle" type="radio"></label>
-                        <label class="button"><sc:Text ID="Text23" Field="Siblings Yes Button Text" runat="server" /><input name="q3" value="no" class="radio-toggle" type="radio"></label>
+                        <label class="button"><sc:Text ID="Text23" Field="Siblings No Button Text" runat="server" /><input name="q3" value="no" class="radio-toggle" type="radio"></label>
                     </div>
                 </div>
                 <!-- .question-wrapper -->
