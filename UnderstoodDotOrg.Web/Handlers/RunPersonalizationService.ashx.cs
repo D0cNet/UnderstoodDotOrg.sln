@@ -15,6 +15,7 @@ namespace UnderstoodDotOrg.Web.Handlers
         {
             context.Response.ContentType = "text/plain";
             context.Response.Write("Running personalization!!!!");
+            context.Response.Write("</br>is this request coming from a local machine: " + context.Request.IsLocal.ToString()); 
         }
 
         public bool IsReusable
