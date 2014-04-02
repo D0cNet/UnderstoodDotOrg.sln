@@ -73,12 +73,22 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\RunPersonalizationService.ashx.cs">
+      <DependentUpon>RunPersonalizationService.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Layouts\Browser.aspx.cs">
       <DependentUpon>Browser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Layouts\Browser.aspx.designer.cs">
       <DependentUpon>Browser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx.cs">
+      <DependentUpon>PersonalizationAdmin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx.designer.cs">
+      <DependentUpon>PersonalizationAdmin.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx.cs">
       <DependentUpon>Action Style List Page.ascx</DependentUpon>
@@ -545,13 +555,6 @@
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdvice.ascx.designer.cs">
       <DependentUpon>BehaviorToolsBehaviorAdvice.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx.cs">
-      <DependentUpon>BehaviorToolsBehaviorAdviceWrapper.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx.designer.cs">
-      <DependentUpon>BehaviorToolsBehaviorAdviceWrapper.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsCommentGallery.ascx.cs">
       <DependentUpon>BehaviorToolsCommentGallery.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -603,13 +606,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx.designer.cs">
       <DependentUpon>BehaviorToolsResultsPage.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx.cs">
-      <DependentUpon>BehaviorToolsResultsWrapper.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx.designer.cs">
-      <DependentUpon>BehaviorToolsResultsWrapper.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx.cs">
       <DependentUpon>QuizMiniToolsContainer.ascx</DependentUpon>
@@ -868,6 +864,7 @@
     <Content Include="Presentation\Includes\js\vendor\jquery.validate.min.js" />
     <Content Include="Presentation\Includes\js\vendor\modernizr.custom.js" />
     <Content Include="Presentation\Layouts\Browser.aspx" />
+    <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Article Entry Message Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx" />
@@ -935,7 +932,6 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceResults.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceVideoPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdvice.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsCommentGallery.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerComments.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerMore-Carousel.ascx" />
@@ -944,7 +940,6 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsRelatedArticles.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\ArticleListing.ascx" />
@@ -974,6 +969,7 @@
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookitalic.ttf" />
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookitalic.woff" />
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookitalicd41d.eot" />
+    <Content Include="Handlers\RunPersonalizationService.ashx" />
     <None Include="Properties\PublishProfiles\Local.pubxml">
       <SubType>Designer</SubType>
     </None>
@@ -1034,7 +1030,7 @@
     <ReadLinesFromFile File="output-path.txt">
       <Output PropertyName="DeployPath" TaskParameter="Lines" />
     </ReadLinesFromFile>
-    <CreateItem Include="bin\*.dll;bin\*.pdb;Presentation\**\*.*" Exclude="Presentation\**\*.cs">
+    <CreateItem Include="Handlers\*.ashx;bin\*.dll;bin\*.pdb;Presentation\**\*.*" Exclude="Presentation\**\*.cs">
       <Output ItemName="DeployFiles" TaskParameter="Include" />
     </CreateItem>
     <Copy SourceFiles="@(DeployFiles)" DestinationFiles="@(DeployFiles->'$(DeployPath)\%(RelativeDir)%(Filename)%(Extension)')" />
