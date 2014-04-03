@@ -589,12 +589,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::Sitecore.Web.UI.WebControls.Text Text38;
         
         /// <summary>
-        /// Text39 control.
+        /// NextButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text70;
+        protected global::System.Web.UI.WebControls.Button NextButton;
     }
 }

@@ -64,7 +64,7 @@
      
                                     <span class="question-description"><sc:Text Field="Child Nickname Question Text" runat="server" /></span>
                     </h3>
-                    <input type="textfield">
+                    <asp:TextBox id="ScreenNameTextBox" type="textfield" runat="server" />
                 </div>
                 <!-- .question-wrapper -->
 
@@ -180,7 +180,8 @@
                 <!-- .question-wrapper -->
 
                 <div class="form-actions">
-                    <input class="button" type="submit" value="<sc:Text ID="Text21" Field="Next Button Text" runat="server" />">
+                    <asp:Button ID="NextButton" CssClass="button" runat="server" />
+                    <!--<input class="button" type="submit" value="<sc:Text ID="Text21" Field="Next Button Text" runat="server" />">-->
                 </div>
             </div>
             <!-- .profile-questions.step-2 -->

@@ -45,6 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="DictionaryConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Extensions\ItemExtensions.cs" />
     <Compile Include="Extensions\RepeaterExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

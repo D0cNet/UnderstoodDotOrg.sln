@@ -325,14 +325,16 @@
                     </p>
                     <div class="textfields-wrapper">
                         <div class="textfield-wrapper">
-                            <input type="textfield" name="connect-1" placeholder="Screen Name">
+                            <asp:TextBox type="textfield" ID="ScreenNameTextField" runat="server" />
+                            <!--input type="textfield" name="connect-1" placeholder="Screen Name"-->
                             <span class="popover-trigger-container"><a class="popover-link" href="REPLACE"><sc:Text ID="Text52" Field="Why Do We Ask Text 1" runat="server" /></a></span>
                             <div class="popover-container">
                                 <p><span class="title"><sc:Text ID="Text53" Field="Why Do We Ask Subtext Header 1" runat="server" /></span> <sc:Text ID="Text54" Field="Why Do We Ask Subtext 1" runat="server" /></p>
                             </div>
                         </div>
                         <div class="textfield-wrapper">
-                            <input type="textfield" name="connect-2" placeholder="Zip Code">
+                            <asp:TextBox type="textfield" ID="ZipCodeTextField" runat="server" />
+                            <!--input type="textfield" name="connect-2" placeholder="Zip Code"-->
                             <span class="popover-trigger-container"><a class="popover-link" href="REPLACE"><sc:Text ID="Text55" Field="Why Do We Ask Text 2" runat="server" /></a></span>
                             <div class="popover-container">
                                 <p><span class="title"><sc:Text ID="Text56" Field="Why Do We Ask Subtext Header 2" runat="server" /></span> <sc:Text ID="Text57" Field="Why Do We Ask Subtext 2" runat="server" /></p>
@@ -353,7 +355,8 @@
                 <!-- .connect-question -->
 
                 <div class="form-actions">
-                    <input class="button" type="submit" value="Submit">
+                    <asp:Button CssClass="button" ID="SubmitButton" runat="server" />
+                    <!--input class="button" type="submit" value="Submit"-->
                 </div>
             </div>
             <!-- .profile-questions.step-3 -->

@@ -105,7 +105,8 @@
                 <!-- .question-wrapper -->
 
                 <div class="form-actions">
-                    <input class="button" type="submit" value="Next">
+                    <asp:Button ID="NextButton" CssClass="button" runat="server" />
+                    <!--<input class="button" type="submit" value="Next">-->
                 </div>
             </div>
             <!-- .profile-questions.step-1 -->

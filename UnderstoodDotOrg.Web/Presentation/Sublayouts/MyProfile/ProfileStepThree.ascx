@@ -294,7 +294,8 @@
                 <!-- .question-wrapper -->
 
                 <div class="form-actions">
-                    <input class="button" type="submit" value="<sc:Text ID="Text39" Field="Next Button Text" runat="server" />">
+                    <asp:Button ID="NextButton" CssClass="button" runat="server" />
+                    <!--<input class="button" type="submit" value="Next" runat="server" />">-->
                 </div>
             </div>
             <!-- .profile-questions.step-2 -->
