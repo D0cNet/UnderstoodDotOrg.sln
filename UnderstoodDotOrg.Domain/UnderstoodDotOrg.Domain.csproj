@@ -68,6 +68,8 @@
     <Compile Include="SitecoreCIG\Poses\AssistiveTools\ReviewItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\AuthorItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\AuthorItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\ReviewerBioItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\ReviewerBioItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\FooterFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\GlobalsItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\HeaderFolderItem.base.cs" />
@@ -90,11 +92,22 @@
     <Compile Include="SitecoreCIG\Poses\General\MetadataItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\NavigationLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\SocialMediaItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AudioArticlePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AudioArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\BasicArticlePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\BasicArticlePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ChecklistArticlePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ChecklistArticlePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ChecklistArticle\HeaderCheckboxItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ChecklistArticle\TopicCheckboxItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\DeepDiveArticlePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\DeepDiveArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\BasePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\BasePageNEWItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\BasicArticleItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\ContentPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\DefaultArticlePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\DefaultArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.instance.cs" />
   </ItemGroup>
