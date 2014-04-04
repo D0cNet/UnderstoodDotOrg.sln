@@ -39,7 +39,7 @@
             <!-- END PARTIAL: at-a-glance -->
 
             <!-- BEGIN PARTIAL: article-copy -->
-           <%-- <div class="article-copy">
+            <%-- <div class="article-copy">
                 <p>
                     Veniam quas rerum aut provident incidunt natus voluptate rerum blanditiis. sapiente commodi aut aut odit vel. aliquam repellendus odio temporibus sed consectetur aut praesentium
     <span class="glossary-term-popover">
@@ -231,7 +231,7 @@
             
             <!-- END PARTIAL: bullet-point-with-image -->
             --%>
-             <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
+            <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
             <!-- BEGIN PARTIAL: key-takeaways -->
             <div class="key-takeaways">
                 <header class='header-key-takeaways'>
@@ -256,7 +256,12 @@
                 <header>
                     <h2>About the Author</h2>
                 </header>
-                <img src="http://placehold.it/60x60" alt="REPLACE">
+                <%--<img src="http://placehold.it/60x60" alt="REPLACE">--%>
+                <asp:HyperLink ID="hlAuthorImage" runat="server">
+
+                    <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server" />
+                </asp:HyperLink>
+
                 <div class="author-text">
                     <h3><%-- Christine Flagler--%>
                         <!--<sc:Text ID="txAuthorName" runat="server" Field="Author Name" />-->
@@ -276,16 +281,15 @@
                 <span class="reviewed-by-title">Reviewed&nbsp;by</span>
                 <span class="reviewed-by-author">
                     <%--<a href="REPLACE">Dr. Samantha Frank</a>--%>
-                    <sc:Link ID="lnkReviewedBy" runat="server"></sc:Link>
+                    <sc:Link ID="lnkReviewedBy" runat="server" Field="Revierwer Name"></sc:Link>
                     <asp:HyperLink ID="HyplnkReviewedBy" runat="server"></asp:HyperLink>
                 </span>
                 <span class="dot"></span>
                 <span class="reviewed-by-date">
                     <%--12&nbsp;Dec&nbsp;&apos;13 --%>
-                    <sc:FieldRenderer ID="frReviewedDate" runat="server" />
-                   <br /> New date
-                    <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd-MMM-YY" />
-                    
+
+                    <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />
+
                 </span>
             </p>
             <!-- END PARTIAL: reviewed-by -->
@@ -482,18 +486,23 @@
 <div class="container more-carousel">
     <div class="row">
         <div class="col col-24">
-            <h2>More Like This:</h2>
+            <h2><%--More Like This:--%>
+                <sc:FieldRenderer ID="frRelatedLinkTitle" runat="server" FieldName="Related Link Header Title" />
+            </h2>
             <div class="more-carousel-container">
                 <!--<sc:Sublayout ID="slMoreArticle" runat="server" Path="~/Presentation/Sublayouts/Articles/SuggestArticlePageCarousal.ascx" />-->
-                 <asp:Repeater ID="rptMoreArticle" runat="server" OnItemDataBound="rptMoreArticle_ItemDataBound">
+                <asp:Repeater ID="rptMoreArticle" runat="server" OnItemDataBound="rptMoreArticle_ItemDataBound">
                     <HeaderTemplate>
                         <div id="partners-slides-container" class="arrows-gray">
                             <ul>
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <asp:HyperLink runat="server" ID="hlLink">
-                            <sc:Image runat="server" ID="scImage" Field="Image" />
-                        </asp:HyperLink>
+                        <ul>
+                            <asp:HyperLink runat="server" ID="hlLinkTitle">
+                                <sc:FieldRenderer ID="frLinkTitle" runat="server" FieldName="Page Title" />
+                                <sc:FieldRenderer runat="server" ID="frLinkImage" Field="Content Thumbnail" />
+                            </asp:HyperLink>
+                        </ul>
                     </ItemTemplate>
                     <FooterTemplate>
                         </ul>

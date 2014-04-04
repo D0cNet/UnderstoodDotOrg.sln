@@ -1,18 +1,24 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Checklist Article Page.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Checklist_Article_Page" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="container article">
   <div class="row row-equal-heights">
     <!-- article -->
     <div class="col col-15 offset-1">
       <!-- BEGIN PARTIAL: article-intro-text -->
 <div class="article-intro-text">
-  <p>This would be the intro text to the slideshow. It should run about 35 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum convallis risus id felis.</p>
+  <p><%--This would be the intro text to the slideshow. It should run about 35 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum convallis risus id felis.--%>
+      <sc:FieldRenderer ID="frSummary" runat="server" FieldName="Intro text" />
+  </p>
 </div>
 <!-- END PARTIAL: article-intro-text -->
       <!-- BEGIN PARTIAL: article-checklist -->
 <div class="article-checklist">
   <div class="checklist-form">
     <div class="checklist-questions">
-
+        <asp:TreeView ID="tvCheckBoxTree" runat="server" ShowCheckBoxes="All">
+           
+        </asp:TreeView>
+        <%--
       <div class="checklist-question-wrapper">
         <div class="checklist-question">Reading</div>
         <div class="checkboxes-wrapper">
@@ -179,7 +185,7 @@
             </label>
           </div>
         </div><!-- .checkboxes-wrapper -->
-      </div><!-- .checklist-question -->
+      </div><!-- .checklist-question --> --%>
 
       <div class="checklist-actions">
         <div class="save-answers"><button class="submit">Save My Answers</button></div>

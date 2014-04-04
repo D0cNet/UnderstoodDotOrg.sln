@@ -58,6 +58,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frKeyTakeawayData;
         
         /// <summary>
+        /// hlAuthorImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlAuthorImage;
+        
+        /// <summary>
+        /// frAuthorImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorImage;
+        
+        /// <summary>
         /// txAuthorName control.
         /// </summary>
         /// <remarks>
@@ -103,15 +121,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.HyperLink HyplnkReviewedBy;
         
         /// <summary>
-        /// frReviewedDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frReviewedDate;
-        
-        /// <summary>
         /// dtReviewdDate control.
         /// </summary>
         /// <remarks>
@@ -119,6 +128,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Date dtReviewdDate;
+        
+        /// <summary>
+        /// frRelatedLinkTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frRelatedLinkTitle;
         
         /// <summary>
         /// slMoreArticle control.
