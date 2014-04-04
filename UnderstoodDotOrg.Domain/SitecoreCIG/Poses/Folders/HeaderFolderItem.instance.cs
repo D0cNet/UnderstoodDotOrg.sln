@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders {
     public partial class HeaderFolderItem {
@@ -11,7 +12,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders {
         /// Get language navigation folder
         /// </summary>
         /// <returns></returns>
-        public LanguageNavigationFolderItem GetLanguageNavigationFolder() {
+        private LanguageNavigationFolderItem GetLanguageNavigationFolder() {
             return (LanguageNavigationFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(LanguageNavigationFolderItem.TemplateId)).FirstOrDefault();
         }
 
@@ -38,5 +39,21 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders {
         public ParentToolkitFolderItem GetParentToolkitFolder() {
             return (ParentToolkitFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(ParentToolkitFolderItem.TemplateId)).FirstOrDefault();
         }
+
+		private IEnumerable<LanguageLinkItem> _languageLinks;
+		public IEnumerable<LanguageLinkItem> GetLanguageLinks()
+		{
+			if (_languageLinks == null)
+			{
+				LanguageNavigationFolderItem languageFolder = this.GetLanguageNavigationFolder();
+
+				if (languageFolder != null)
+				{
+					_languageLinks = languageFolder.GetLanguageLinkItems();
+				}
+			}
+
+			return _languageLinks;
+		}
     }
 }

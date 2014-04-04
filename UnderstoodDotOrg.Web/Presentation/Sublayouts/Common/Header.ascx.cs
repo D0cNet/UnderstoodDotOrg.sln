@@ -4,7 +4,9 @@ using Sitecore.Web;
 using Sitecore.Web.UI.WebControls;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Web;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
@@ -14,11 +16,12 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     public partial class Header : System.Web.UI.UserControl {
+		HeaderFolderItem headerFolderItem = GetHeader();
+
         protected void Page_Load(object sender, EventArgs e) {
-            HeaderFolderItem headerFolderItem = GetHeader();
             if (headerFolderItem != null) {
                 GetCompanyLogoDetail(headerFolderItem);
-                GetLanguageItems(headerFolderItem);
+                SetLanguageItemsRepeater();
                 GetMainNavigationItems(headerFolderItem);
                 GetUtilityNavigationItems(headerFolderItem);
                 GetParentTookKitItems(headerFolderItem);
@@ -92,15 +95,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// Get language items.
         /// </summary>
         /// <param name="headerFolderItem"></param>
-        private void GetLanguageItems(HeaderFolderItem headerFolderItem) {
-            LanguageNavigationFolderItem languageFolder = headerFolderItem.GetLanguageNavigationFolder();
-            if (languageFolder != null) {
-                var results = languageFolder.GetLanguageLinkItems();
-                if (results != null && results.Any()) {
-                    rptLanguage.DataSource = results;
-                    rptLanguage.DataBind();
-                }
-            }
+        private void SetLanguageItemsRepeater() {
+			var languageLinks = headerFolderItem.GetLanguageLinks();
+
+			if (languageLinks != null && languageLinks.Any()) {
+				rptLanguage.DataSource = languageLinks;
+				rptLanguage.DataBind();
+			}
         }
 
         protected void rptNavUtility_ItemDataBound(object sender, RepeaterItemEventArgs e) {
@@ -170,17 +171,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
                         if (!languageItem.LanguageName.Raw.IsNullOrEmpty() && !languageItem.SitecoreLanguage.Raw.IsNullOrEmpty()) {
                             hypLanguageLink.Text = languageItem.LanguageName.Rendered;
 
-                            // link to the home page and let JavaScript add the current page (this allows for sublayout HTML caching)
-                            string currentPageUrl = Sitecore.Context.Item.GetUrl();
-                           
-                            Language currentSiteLanugage;
-                            if (Language.TryParse(languageItem.IsoCode, out currentSiteLanugage)) {
-                                Sitecore.Context.SetLanguage(currentSiteLanugage, true);
-                                string cookieName = Sitecore.Context.Site.GetCookieKey("lang");
-                                Sitecore.Web.WebUtil.SetCookieValue(cookieName, currentSiteLanugage.Name, DateTime.MaxValue);
-                            }
-                            string languageSwitchUrl = string.Format("{0}://{1}/{2}/", Request.Url.Scheme, WebUtil.GetHostName(), languageItem.IsoCode);
-                            hypLanguageLink.NavigateUrl = languageSwitchUrl;
+							string currentUrlAndQS = Request.Url.PathAndQuery;
+
+							foreach (var langItem in headerFolderItem.GetLanguageLinks())
+							{
+								if (currentUrlAndQS.StartsWith("/" + langItem.IsoCode))
+								{
+									currentUrlAndQS = new string(currentUrlAndQS.Skip(("/" + langItem.IsoCode).Length).ToArray());
+								}
+							}
+
+							hypLanguageLink.NavigateUrl = string.Format("/{0}{1}", languageItem.IsoCode, currentUrlAndQS);
                         }
                     }
                 }
