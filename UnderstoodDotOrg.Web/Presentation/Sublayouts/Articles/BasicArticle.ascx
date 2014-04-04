@@ -490,7 +490,7 @@
                 <sc:FieldRenderer ID="frRelatedLinkTitle" runat="server" FieldName="Related Link Header Title" />
             </h2>
             <div class="more-carousel-container">
-                <!--<sc:Sublayout ID="slMoreArticle" runat="server" Path="~/Presentation/Sublayouts/Articles/SuggestArticlePageCarousal.ascx" />-->
+                <%--<sc:Sublayout ID="slMoreArticle" runat="server" Path="~/Presentation/Sublayouts/Articles/SuggestArticlePageCarousal.ascx" />--%>
                 <asp:Repeater ID="rptMoreArticle" runat="server" OnItemDataBound="rptMoreArticle_ItemDataBound">
                     <HeaderTemplate>
                         <div id="partners-slides-container" class="arrows-gray">
