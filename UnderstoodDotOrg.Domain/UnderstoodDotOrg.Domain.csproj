@@ -33,12 +33,19 @@
     <Reference Include="CustomItemGenerator">
       <HintPath>..\Libraries\CustomItemGenerator.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\Libraries\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,6 +63,36 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Import.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\Child.cs">
+      <DependentUpon>MembershipModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\Diagnosis.cs">
+      <DependentUpon>MembershipModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\Interest.cs">
+      <DependentUpon>MembershipModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\Issue.cs">
+      <DependentUpon>MembershipModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\Member.cs">
+      <DependentUpon>MembershipModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\MembershipModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MembershipModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\MembershipModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MembershipModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\MembershipModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MembershipModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SitecoreCIG\FolderItem.base.cs" />
@@ -107,12 +144,17 @@
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\DefaultArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.instance.cs" />
+    <Compile Include="Understood\Common\GradeModel.cs" />
+    <Compile Include="Understood\Common\IssueModel.cs" />
+    <Compile Include="Understood\Content\ContentItemModel.cs" />
+    <Compile Include="Understood\Personalization\PersonalizedItemModel.cs" />
+    <Compile Include="Understood\Users\ChildModel.cs" />
+    <Compile Include="Understood\Users\ParentModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExactTarget\" />
     <Folder Include="Facebook\" />
     <Folder Include="Luminate\" />
-    <Folder Include="Membership\Models\" />
     <Folder Include="Salesforce\" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +171,27 @@
     </None>
     <Compile Include="SitecoreCIG\Poses\Folders\GlobalsItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\FooterFolderItem.instance.cs" />
+    <EntityDeploy Include="Membership\MembershipModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MembershipModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Membership\MembershipModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MembershipModel.edmx</DependentUpon>
+      <LastGenOutput>MembershipModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Membership\MembershipModel.edmx.diagram">
+      <DependentUpon>MembershipModel.edmx</DependentUpon>
+    </None>
+    <None Include="Membership\MembershipModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MembershipModel.edmx</DependentUpon>
+      <LastGenOutput>MembershipModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
