@@ -495,18 +495,20 @@
                     <HeaderTemplate>
                         <div id="partners-slides-container" class="arrows-gray">
                             <ul>
+                                <div id="more-carousel-slides-container">
                     </HeaderTemplate>
                     <ItemTemplate>
                         <ul>
-                            <asp:HyperLink runat="server" ID="hlLinkTitle">
-                                <sc:FieldRenderer ID="frLinkTitle" runat="server" FieldName="Page Title" />
-                                <sc:FieldRenderer runat="server" ID="frLinkImage" Field="Content Thumbnail" />
-                            </asp:HyperLink>
+                            <li>
+                                <asp:HyperLink runat="server" ID="hlLinkTitle">
+                                    <sc:FieldRenderer ID="frLinkTitle" runat="server"  FieldName="Page Title" />
+                                    <sc:FieldRenderer runat="server" ID="frLinkImage" FieldName="Content Thumbnail" />
+                                </asp:HyperLink>
+                            </li>
                         </ul>
                     </ItemTemplate>
                     <FooterTemplate>
-                        </ul>
-                    </div>
+                        </div> </ul> </div>
                     </FooterTemplate>
                 </asp:Repeater>
                 <!-- BEGIN PARTIAL: more-carousel -->

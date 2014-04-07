@@ -139,15 +139,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frRelatedLinkTitle;
         
         /// <summary>
-        /// slMoreArticle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout slMoreArticle;
-        
-        /// <summary>
         /// rptMoreArticle control.
         /// </summary>
         /// <remarks>
