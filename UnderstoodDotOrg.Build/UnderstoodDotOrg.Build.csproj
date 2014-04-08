@@ -51,6 +51,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\ConnectionStrings.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\DataFolder.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.ContentSearch.MediaFramework.Brightcove.config" />
