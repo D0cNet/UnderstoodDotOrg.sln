@@ -42,14 +42,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\CustomItemGenerator.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libraries\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libraries\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -978,16 +970,8 @@
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookitalic.woff" />
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookitalicd41d.eot" />
     <Content Include="Handlers\RunPersonalizationService.ashx" />
-    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml">
       <SubType>Designer</SubType>
-    </None>
-    <Content Include="Web.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
