@@ -74,6 +74,7 @@
     <Compile Include="Membership\Diagnosis.cs">
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Membership\IMembershipManager.cs" />
     <Compile Include="Membership\Interest.cs">
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
@@ -83,6 +84,8 @@
     <Compile Include="Membership\Member.cs">
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Membership\MembershipManager.cs" />
+    <Compile Include="Membership\MembershipManagerProxy.cs" />
     <Compile Include="Membership\MembershipModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
