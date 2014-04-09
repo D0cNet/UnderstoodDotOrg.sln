@@ -6,38 +6,7 @@
 
     <div class="container">
         <!-- BEGIN PARTIAL: community/blog_feature_post -->
-        <!--blog feature post-->
-        <div class="row">
-            <div class="col-24 blog-feature skiplink-feature">
-                <div class="col col-20 blog-feature-info">
-                    <div class="blog-feature-image">
-                        <a href="REPLACE">
-
-
-
-
-                            <img alt="150x150 Placeholder" src="http://placehold.it/150x150" /></a>
-
-
-                    </div>
-                    <div class="blog-feature-description">
-
-
-                        <h2>Est Quod Reiciendis</h2>
-
-
-
-
-                        <p class="blog-description-blurb">Consequatur Sint Delectus Ullam Ipsum Voluptatum Libero Repellat Hic Ut Qui Accusantium Eligendi Iure. Nemo Ab Minima Natus Laborum Non Qui Est Cumque Sit Fugiat Modi Quo Odit. Qui Vel Quo Minus Velit Molestiae Tempore Voluptatibus Consectetur. Voluptas Optio Tempora Maiores Dicta Suscipit Hic In Veniam Ipsam Quo Enim Odio</p>
-                    </div>
-                </div>
-                <div class="col col-4 blog-feature-follow-blog">
-                    <a href="REPLACE" class="button">Follow-blog</a>
-                    <a class="rss icon" href="REPLACE">RSS Feed</a>
-                </div>
-            </div>
-        </div>
-
+        <sc:Placeholder ID="Placeholder2" Key="Feature-Post" runat="server" />
         <!-- END PARTIAL: community/blog_feature_post -->
         <div class="container">
             <div class="row">
@@ -206,28 +175,9 @@
 
             <!-- BEGIN PARTIAL: community/blog_sidebar -->
             <div id="skipLinkSidebar" class="blog-post-list-sidebar skiplink-sidebar">
-                <div class="blog-most-shared">
-                    <h3>Most Shared This Week</h3>
-                    <h4 class="first"><a href="REPLACE">Nostrum Molestias Cumque Non Quidem Laborum</a></h4>
-                    <h4><a href="REPLACE">Mollitia Voluptatem Est Incidunt</a></h4>
-                    <h4><a href="REPLACE">Autem Fugit Neque Harum</a></h4>
-                </div>
 
-                <div class="blog-parents-talking">
-                    <h3>Parents Are Talking About (19)</h3>
-                    <h4 class="first"><a href="REPLACE">Et Placeat Asperiores Quo</a></h4>
-                    <div class="blog-comment-snippet-box">
-                        <p class="blog-snippet">Incidunt Culpa Doloremque Et. Enim Nobis Est At...</p>
-                        <a href="REPLACE">Read more</a>
-                    </div>
-                    <p class="blog-comment-author">Carrie S</p>
-                    <p class="blog-comment-timelapsed">30 min ago</p>
-                </div>
+                <sc:Placeholder ID="Sidebar" Key="Blogs-Sidebar" runat="server" />
 
-                <div class="blog-call-to-action">
-                    <a href="REPLACE" class="blog-read-article">Read Article</a>
-                    <a href="REPLACE" class="button">Post a Comment</a>
-                </div>
             </div>
 
             <!-- END PARTIAL: community/blog_sidebar -->

@@ -6,38 +6,7 @@
 
     <div class="container">
     <!-- BEGIN PARTIAL: community/blog_feature_post -->
-<!--blog feature post-->
-<div class="row">
-  <div class="col-24 blog-feature skiplink-feature">
-    <div class="col col-20 blog-feature-info">
-      <div class="blog-feature-image">
-        <a href="REPLACE">
-
-          
-
-          
-            <img alt="150x150 Placeholder" src="http://placehold.it/150x150" /></a>
-          
-
-      </div>
-      <div class="blog-feature-description">
-
-        
-        <h2>Sed Id Voluptas</h2>
-        
-
-        
-
-        <p class="blog-description-blurb">Est Maxime Possimus Aut In Quidem Tempore Asperiores. Hic Est Delectus Ad Quo At Dolorum Quo Voluptates Sed Commodi Quis Tempora. Dolores Accusantium Rerum Sapiente Omnis Quae. Eos Facere Dolorum Et Non Nemo Expedita Assumenda Ex Soluta In</p>
-      </div>
-    </div>
-    <div class="col col-4 blog-feature-follow-blog">
-      <a href="REPLACE" class="button">Follow-blog</a>
-      <a class="rss icon" href="REPLACE">RSS Feed</a>
-    </div>
-  </div>
-</div>
-
+<sc:Placeholder ID="Placeholder2" Key="Feature-Post" runat="server" />
 <!-- END PARTIAL: community/blog_feature_post -->
           <div class="container">
             <div class="row">

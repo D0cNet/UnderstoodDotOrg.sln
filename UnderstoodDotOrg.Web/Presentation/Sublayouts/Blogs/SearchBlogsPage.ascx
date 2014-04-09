@@ -6,38 +6,7 @@
 
   <div class="container">
     <!-- BEGIN PARTIAL: community/blog_feature_post -->
-<!--blog feature post-->
-<div class="row">
-  <div class="col-24 blog-feature skiplink-feature">
-    <div class="col col-20 blog-feature-info">
-      <div class="blog-feature-image">
-        <a href="REPLACE">
-
-          
-
-          
-            <img alt="150x150 Placeholder" src="http://placehold.it/150x150" /></a>
-          
-
-      </div>
-      <div class="blog-feature-description">
-
-        
-        <h2>Sequi Dolores Beatae</h2>
-        
-
-        
-
-        <p class="blog-description-blurb">Ratione Velit Itaque Dicta Repellat. Quaerat Maiores Atque Corporis Quidem Laborum. Quo Ipsum Sunt Provident Minus. Beatae Enim Inventore Consequatur Velit Est Ullam Quia Quia</p>
-      </div>
-    </div>
-    <div class="col col-4 blog-feature-follow-blog">
-      <a href="REPLACE" class="button">Follow-blog</a>
-      <a class="rss icon" href="REPLACE">RSS Feed</a>
-    </div>
-  </div>
-</div>
-
+      <sc:Placeholder ID="Placeholder2" Key="Feature-Post" runat="server" />
 <!-- END PARTIAL: community/blog_feature_post -->
     <div class="container">
       <div class="row">

@@ -20,5 +20,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder1;
+        
+        /// <summary>
+        /// Placeholder2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder2;
+        
+        /// <summary>
+        /// Sidebar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Placeholder Sidebar;
     }
 }
