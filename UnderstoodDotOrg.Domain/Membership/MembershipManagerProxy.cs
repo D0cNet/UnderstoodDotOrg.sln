@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnderstoodDotOrg.Domain.Membership
 {
-    class MembershipManagerProxy : IMembershipManager
+    public class MembershipManagerProxy : IMembershipManager
     {
         public Member AuthenticateUser(string Username, string Password)
         {
@@ -39,6 +39,11 @@ namespace UnderstoodDotOrg.Domain.Membership
         }
 
         public Member GetMember(string MemberId)
+        {
+            return new Member();
+        }
+
+        public Member AddMember(Member Member, string Username, string Password)
         {
             return new Member();
         }

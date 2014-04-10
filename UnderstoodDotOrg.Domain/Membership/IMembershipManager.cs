@@ -14,6 +14,8 @@ namespace UnderstoodDotOrg.Domain.Membership
 
         Member AddMember(Member Member);
 
+        Member AddMember(Member Member, string Username, string Password);
+
         Child AddChild(Child Child, Guid MemberId);
 
         //?add interest

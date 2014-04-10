@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 using MembershipProvider = System.Web.Security.Membership;
 
 namespace UnderstoodDotOrg.Domain.Membership
 {
-    class MembershipManager : IMembershipManager
+    public class MembershipManager : IMembershipManager
     {
+        private static string connString = @"metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='data source=162.209.22.3;initial catalog=Understood.org.DEV.membership;persist security info=True;user id=understood_org;password=dahyeSDf;MultipleActiveResultSets=True;App=EntityFramework'";
+
         public Member AuthenticateUser(string Username, string Password)
         {
             // use custom provider
@@ -48,7 +51,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             try
             {
-                using (var db = new Membership())
+                using (var db = new Membership(connString))
                 {
                     db.Members.Add(Member);
                     db.SaveChanges();
@@ -60,6 +63,44 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             
             return Member;
+        }
+
+        public Member AddMember(Member Member, string Username, string Password)
+        {
+            try
+            {
+                // use custom provider
+                var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
+
+                var isExistingUser = provider.ValidateUser(Username, Password);
+
+                Guid memberId;
+
+                if (isExistingUser)
+                {
+                    memberId = Guid.Parse(provider.GetUser(Username, true).ProviderUserKey.ToString());
+                }
+                else
+                {
+                    memberId = Guid.NewGuid();
+                    var status = new MembershipCreateStatus();
+
+                    var user = provider.CreateUser(Username, Password, Username, null, null, true, memberId, out status);
+
+                    if (status != MembershipCreateStatus.Success)
+                    {
+                        throw new Exception("Unable to create user. Reason: " + status);
+                    }
+                }
+
+                Member.MemberId = memberId;
+
+                return this.AddMember(Member);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Child AddChild(Child Child, Guid MemberId)

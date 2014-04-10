@@ -48,6 +48,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
@@ -85,6 +86,7 @@
     <Compile Include="Membership\Member.cs">
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Membership\MembershipEntities.cs" />
     <Compile Include="Membership\MembershipManager.cs" />
     <Compile Include="Membership\MembershipManagerProxy.cs" />
     <Compile Include="Membership\MembershipModel.Context.cs">
