@@ -7,7 +7,7 @@ using UnderstoodDotOrg.Domain.Membership;
 
 namespace UnderstoodDotOrg.Framework.UI
 {
-    class BaseRegistration : BaseSublayout
+    public class BaseRegistration : BaseSublayout
     {
         private string sessionKey = "understood_org_registering_user";
 
