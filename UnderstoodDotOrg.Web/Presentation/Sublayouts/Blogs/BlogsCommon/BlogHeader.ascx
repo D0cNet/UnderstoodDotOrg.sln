@@ -29,7 +29,7 @@
             </div>
         </div>
     </header>
-    <nav class="container nav-secondary">
+    <nav class="container nav-secondary" style="visibility:visible">
         <div class="row">
             <div class="col col-24">
                 <div class="label-menu"><span>Menu</span></div>

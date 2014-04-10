@@ -6,43 +6,7 @@
 
         <div class="container">
             <!-- BEGIN PARTIAL: community/blog_feature_post -->
-    <!--blog feature post-->
-    <div class="row">
-      <div class="col-24 blog-feature ">
-        <div class="col col-20 blog-feature-info">
-          <div class="blog-feature-image">
-            <a href="REPLACE">
-
-          
-                <img alt="72x72 Placeholder" src="http://placehold.it/72x72" /></a>
-          
-
-          
-
-          </div>
-          <div class="blog-feature-description">
-
-        
-
-        
-            <!-- BEGIN PARTIAL: community/breadcrumb_menu -->
-    <!--breadcrumb menu-->
-    <a href="REPLACE" class="back-to-previous">
-      <i class="icon-arrow-left-blue"></i>back to parents
-    </a>
-    <!-- END PARTIAL: community/breadcrumb_menu -->
-        
-
-            <p class="blog-description-blurb">Sunt Et Iusto Possimus Earum. Ea Voluptatum Nulla Voluptatem Dolorum. Aperiam Id Libero Repellat Quia Saepe. Atque Accusantium Non Enim Velit Molestiae Qui Nam Voluptate Eius Dolorum Nemo</p>
-          </div>
-        </div>
-        <div class="col col-4 blog-feature-follow-blog">
-          <a href="REPLACE" class="button">Follow-blog</a>
-          <a class="rss icon" href="REPLACE">RSS Feed</a>
-        </div>
-      </div>
-    </div>
-
+            <sc:Placeholder ID="BlogFeaturePost" Key="Feature-Post" runat="server" />
     <!-- END PARTIAL: community/blog_feature_post -->
             <div class="row">
               <div class=" col col-24 blog-featured-author clearfix skiplink-feature">

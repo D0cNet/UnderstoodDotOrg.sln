@@ -192,21 +192,9 @@
       </div>
       <!-- BEGIN PARTIAL: community/blog_sidebar_recent -->
 <!--first class is added to the first h4 in each section-->
-<div class="blog-post-list-sidebar skiplink-sidebar">
-<div class="blog-most-recent">
-  <h3>Most Recent</h3>
-  <h4 class="first"><a href="REPLACE">Sequi Et Repellendus Sed Illum Ad</a></h4>
-  <h4><a href="REPLACE">Sit Error Voluptas Optio</a></h4>
-  <h4><a href="REPLACE">Deleniti Voluptas Sunt Quia</a></h4>
-</div>
-
-<div class="blog-most-shared">
-  <h3>Most Shared This Week</h3>
-  <h4 class="first"><a href="REPLACE">Facere Facere Est Necessitatibus Dicta Consequuntur</a></h4>
-  <h4><a href="REPLACE">Laudantium Qui Et Qui</a></h4>
-  <h4><a href="REPLACE">Deserunt Provident Debitis Officia</a></h4>
-</div>
-</div>
+        <div class="blog-post-list-sidebar skiplink-sidebar">
+            <sc:Placeholder ID="Sidebar" Key="Blogs-Sidebar" runat="server" />
+        </div>
 
 <!-- END PARTIAL: community/blog_sidebar_recent -->
     </div>

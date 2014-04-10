@@ -160,28 +160,7 @@
       </div>
       <!-- BEGIN PARTIAL: community/blog_sidebar -->
 <div id="skipLinkSidebar"class="blog-post-list-sidebar skiplink-sidebar">
-  <div class="blog-most-shared">
-    <h3>Most Shared This Week</h3>
-    <h4 class="first"><a href="REPLACE">Perspiciatis Eius Deserunt Quas Fugiat Omnis</a></h4>
-    <h4><a href="REPLACE">Ut Ipsam Necessitatibus Aspernatur</a></h4>
-    <h4><a href="REPLACE">Ullam Cum Pariatur Illo</a></h4>
-  </div>
-
-  <div class="blog-parents-talking">
-    <h3>Parents Are Talking About (19)</h3>
-    <h4 class="first"><a href="REPLACE">Deleniti Sed Molestiae Vero</a></h4>
-    <div class="blog-comment-snippet-box">
-      <p class="blog-snippet">Iste Magni Ex Aut Nam Eaque Et In Repellat Nobis Eos. Error Et Fugit Ut...</p>
-      <a href="REPLACE">Read more</a>
-    </div>
-    <p class="blog-comment-author">Carrie S</p>
-    <p class="blog-comment-timelapsed">30 min ago</p>
-  </div>
-
-  <div class="blog-call-to-action">
-    <a href="REPLACE" class="blog-read-article">Read Article</a>
-    <a href="REPLACE" class="button">Post a Comment</a>
-  </div>
+  <sc:Placeholder ID="Sidebar" Key="Blogs-Sidebar" runat="server" />
 </div>
 
 <!-- END PARTIAL: community/blog_sidebar -->
