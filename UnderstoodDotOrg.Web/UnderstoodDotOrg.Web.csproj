@@ -188,27 +188,6 @@
     <Compile Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx.designer.cs">
       <DependentUpon>Infographic Article Page.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswer2ArticlePage.ascx.cs">
-      <DependentUpon>KnowledgeQuizAnswer2ArticlePage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswer2ArticlePage.ascx.designer.cs">
-      <DependentUpon>KnowledgeQuizAnswer2ArticlePage.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswerArticlePage.ascx.cs">
-      <DependentUpon>KnowledgeQuizAnswerArticlePage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswerArticlePage.ascx.designer.cs">
-      <DependentUpon>KnowledgeQuizAnswerArticlePage.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestion2ArticlePage.ascx.cs">
-      <DependentUpon>KnowledgeQuizQuestion2ArticlePage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestion2ArticlePage.ascx.designer.cs">
-      <DependentUpon>KnowledgeQuizQuestion2ArticlePage.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx.cs">
       <DependentUpon>KnowledgeQuizQuestionArticlePage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -879,9 +858,6 @@
     <Content Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Glossary Article.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswer2ArticlePage.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizAnswerArticlePage.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestion2ArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizResultsArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx" />

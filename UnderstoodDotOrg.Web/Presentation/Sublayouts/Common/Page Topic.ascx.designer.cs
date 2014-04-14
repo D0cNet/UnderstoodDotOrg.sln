@@ -11,5 +11,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     
     
     public partial class Page_Topic {
+        
+        /// <summary>
+        /// rfTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer rfTitle;
+        
+        /// <summary>
+        /// frSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSummary;
+        
+        /// <summary>
+        /// HylkByline control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HylkByline;
     }
 }

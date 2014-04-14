@@ -49,39 +49,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAudioTranscript;
         
         /// <summary>
-        /// frReviewedBy control.
+        /// lnkReviewedBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frReviewedBy;
+        protected global::Sitecore.Web.UI.WebControls.Link lnkReviewedBy;
         
         /// <summary>
-        /// dtReviewedDate control.
+        /// HyplnkReviewedBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Date dtReviewedDate;
+        protected global::System.Web.UI.WebControls.HyperLink HyplnkReviewedBy;
         
         /// <summary>
-        /// slSuggestedArticles control.
+        /// dtReviewdDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout slSuggestedArticles;
-        
-        /// <summary>
-        /// rptMoreArticle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptMoreArticle;
+        protected global::Sitecore.Web.UI.WebControls.Date dtReviewdDate;
     }
 }

@@ -12,6 +12,8 @@ using Sitecore.ContentSearch;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.ContentSearch.SearchTypes;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.SimpleExpertArticle;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -21,8 +23,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         DefaultArticlePageItem ObjDefaultArticle;
         AudioArticlePageItem ObjAudioArticle;
         ChecklistArticlePageItem ObjChecklistArticle;
+        SimpleExpertArticleItem ObjSimpleExpertArticle;
+        SlideshowArticlePageItem ObjSlideShowArticle;
+        VideoArticlePageItem ObjVideoArticle;
+        BasicArticlePageItem ObjBasicArticle;
+        TextOnlyTipsArticlePageItem ObjTextTipsArticle;
 
-        System.Collections.Generic.IEnumerable<Item> FinalRelatedArticles = null;
+        IEnumerable <DefaultArticlePageItem> FinalRelatedArticles = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             //ObjDefaultArticle = new DefaultArticlePageItem(Sitecore.Context.Item);
@@ -31,6 +38,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 ObjAudioArticle = new AudioArticlePageItem(Sitecore.Context.Item);
                 ObjDefaultArticle = ObjAudioArticle.DefaultArticlePage;
             }
+            if (Sitecore.Context.Item.TemplateID.ToString() == TextOnlyTipsArticlePageItem.TemplateId.ToString())
+            {
+                ObjTextTipsArticle = new TextOnlyTipsArticlePageItem(Sitecore.Context.Item);
+                ObjDefaultArticle = ObjTextTipsArticle.DefaultArticlePage;
+            }
+
+            if (Sitecore.Context.Item.TemplateID.ToString() == VideoArticlePageItem.TemplateId.ToString())
+            {
+                ObjVideoArticle = new VideoArticlePageItem(Sitecore.Context.Item);
+                ObjDefaultArticle = ObjVideoArticle.DefaultArticlePage;
+            }
 
             if (Sitecore.Context.Item.TemplateID.ToString() == ChecklistArticlePageItem.TemplateId.ToString())
             {
@@ -38,88 +56,150 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 ObjDefaultArticle = ObjChecklistArticle.DefaultArticlePage;
             }
 
-            Response.Write(Sitecore.Context.Item.TemplateID.ToString());
-            if (ObjDefaultArticle.HideRelatedActiveLinks.Checked == false) // Show Articles
+            if (Sitecore.Context.Item.TemplateID.ToString() == SimpleExpertArticleItem.TemplateId.ToString())
             {
-                //Get list of selected item
-                FinalRelatedArticles = GetRelatedItemsList(ObjDefaultArticle);
-                if (FinalRelatedArticles != null)
-                {
-                    rptMoreArticle.DataSource = FinalRelatedArticles;
-                    rptMoreArticle.DataBind();
-                }
+                ObjSimpleExpertArticle = new SimpleExpertArticleItem(Sitecore.Context.Item);
+                ObjDefaultArticle = ObjSimpleExpertArticle.DefaultArticlePage;
             }
-        }
-        /// <summary>
-        /// Function :GetRelatedItemsList(DefaultArticlePageItem)
-        /// Details: If Articles are selected to show in "Related Links" field, show only six articles from list
-        /// else select any random six articles from tree.
-        /// Owner: Yugali Bharote
-        /// Edited : Yugali Bharote
-        /// </summary>
-        /// <param name="ObjDefaultArt"></param>
-        /// <returns></returns>
-        private System.Collections.Generic.IEnumerable<Item> GetRelatedItemsList(DefaultArticlePageItem ObjDefaultArt)
-        {
-            System.Collections.Generic.IEnumerable<Item> ActualRelatedLinks = null;
-            // if (ObjDefaultArt.HideRelatedActiveLinks.Checked == false)
-            //{
-            if (ObjDefaultArt.RelatedLink.ListItems.ToList().Count >= 1) // Are Articles selected? Show first six if selected
+
+            if (Sitecore.Context.Item.TemplateID.ToString() == SlideshowArticlePageItem.TemplateId.ToString())
             {
-                System.Collections.Generic.IEnumerable<Item> AllRelatedLinks = ObjDefaultArt.RelatedLink.ListItems;
-                ActualRelatedLinks = from art in AllRelatedLinks
-                                     where (art.TemplateID.ToString() == BasicArticleItem.TemplateId.ToString()) || (art.InheritsTemplate(DefaultArticlePageItem.TemplateId))
-                                     select art;
-                if (ActualRelatedLinks != null)
+                ObjSlideShowArticle = new SlideshowArticlePageItem(Sitecore.Context.Item);
+                ObjDefaultArticle = ObjSlideShowArticle.DefaultArticlePage;
+            }
+
+            if (Sitecore.Context.Item.TemplateID.ToString() == BasicArticlePageItem.TemplateId.ToString())
+            {
+                ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
+                ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;
+            }
+            if (ObjDefaultArticle != null)
+            {
+                if (ObjDefaultArticle.HideRelatedActiveLinks.Checked == false) // Show Articles
                 {
-                    if (ActualRelatedLinks.Count() > 6)
+                    //Get list of selected item
+                    FinalRelatedArticles = GetRelatedLinks(ObjDefaultArticle);
+                    if (FinalRelatedArticles != null)
                     {
-                        ActualRelatedLinks = ActualRelatedLinks.Take(6);
+                        rptMoreArticle.DataSource = FinalRelatedArticles;
+                        rptMoreArticle.DataBind();
                     }
 
                 }
             }
-            else // Show random six articles
+
+
+
+        }
+
+        public IEnumerable<DefaultArticlePageItem> GetRelatedLinks(DefaultArticlePageItem ObjDefArt)
+        {
+            // Item SiteRoot=Sitecore.Context.Database.GetItem(Sitecore.Context.Site.RootPath, Sitecore.Data.Managers.LanguageManager.GetLanguage("en"));
+            IEnumerable<Item> AllArticles = ObjDefArt.RelatedLink.ListItems.Where(t => t.InheritsTemplate(DefaultArticlePageItem.TemplateId));
+            List<DefaultArticlePageItem> FinalArticles = null;
+            if (AllArticles != null)
             {
+                if (AllArticles.Count() > 6) AllArticles.Take(6);
+                FinalArticles = new List<DefaultArticlePageItem>(AllArticles.Count());
+                foreach (DefaultArticlePageItem DefItem in AllArticles)
+                {
+                    FinalArticles.Add(DefItem);
+                }
+            }
+            else
+            {
+                //Select Random max 6 articles to show
                 var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
                 using (var context = index.CreateSearchContext())
                 {
-                    var RandomRelatedLink = (System.Collections.Generic.IEnumerable<Item>)context.GetQueryable<SearchResultItem>()
-                         .Where(i => i.GetItem().TemplateID.ToString() == BasicArticleItem.TemplateId.ToString() || i.GetItem().InheritsTemplate(DefaultArticlePageItem.TemplateId));
+                    IEnumerable<Item> RandomRelatedLink = (System.Collections.Generic.IEnumerable<Item>)context.GetQueryable<SearchResultItem>()
+                         .Where(i => i.GetItem().InheritsTemplate(DefaultArticlePageItem.TemplateId));
                     //ActualRelatedLinks = (System.Collections.Generic.IEnumerable<Item>)RandomRelatedLink;
-                    ActualRelatedLinks = RandomRelatedLink;
-                    if (ActualRelatedLinks != null)
+                    if (RandomRelatedLink != null)
                     {
-                        if (ActualRelatedLinks.Count() > 6)
-                        {
-                            ActualRelatedLinks = ActualRelatedLinks.Take(6);
-                        }
-
+                        if (RandomRelatedLink.Count() > 6) RandomRelatedLink.Take(6);
+                        FinalArticles = new List<DefaultArticlePageItem>(RandomRelatedLink.Count());
+                    }
+                    foreach (DefaultArticlePageItem DefItem in RandomRelatedLink)
+                    {
+                        FinalArticles.Add(DefItem);
                     }
                 }
-                // }
             }
-            return ActualRelatedLinks;
+
+            return FinalArticles;
         }
+        //private System.Collections.Generic.IEnumerable<Item> GetRelatedItemsList(DefaultArticlePageItem ObjDefaultArt)
+        //{
+        //    System.Collections.Generic.IEnumerable<Item> ActualRelatedLinks = null;
+        //    // if (ObjDefaultArt.HideRelatedActiveLinks.Checked == false)
+        //    //{
+        //    if (ObjDefaultArt.RelatedLink.ListItems.ToList().Count >= 1) // Are Articles selected? Show first six if selected
+        //    {
+        //        System.Collections.Generic.IEnumerable<Item> AllRelatedLinks = ObjDefaultArt.RelatedLink.ListItems;
+        //        ActualRelatedLinks = from art in AllRelatedLinks
+        //                             where (art.InheritsTemplate(DefaultArticlePageItem.TemplateId))
+        //                             select art;
+        //        if (ActualRelatedLinks != null)
+        //        {
+        //            if (ActualRelatedLinks.Count() > 6)
+        //            {
+        //                ActualRelatedLinks = ActualRelatedLinks.Take(6);
+        //            }
+
+        //        }
+        //    }
+        //    else // Show random six articles
+        //    {
+        //        var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+        //        using (var context = index.CreateSearchContext())
+        //        {
+        //            var RandomRelatedLink = (System.Collections.Generic.IEnumerable<Item>)context.GetQueryable<SearchResultItem>()
+        //                 .Where(i => i.GetItem().InheritsTemplate(DefaultArticlePageItem.TemplateId));
+        //            //ActualRelatedLinks = (System.Collections.Generic.IEnumerable<Item>)RandomRelatedLink;
+        //            ActualRelatedLinks = RandomRelatedLink;
+        //            if (ActualRelatedLinks != null)
+        //            {
+        //                if (ActualRelatedLinks.Count() > 6)
+        //                {
+        //                    ActualRelatedLinks = ActualRelatedLinks.Take(6);
+        //                }
+
+        //            }
+        //        }
+        //        // }
+        //    }
+        //    return ActualRelatedLinks;
+        //}
 
         protected void rptMoreArticle_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            Item RelatedLink = e.Item.DataItem as Item;
-            if (RelatedLink != null)
+            if (e.IsItem())
             {
-                FieldRenderer frLinkTitle = e.FindControlAs<FieldRenderer>("frLinkTitle");
-                if (frLinkTitle != null)
-                {
-                    frLinkTitle.Item = RelatedLink;
+                DefaultArticlePageItem RelatedLink = e.Item.DataItem as DefaultArticlePageItem;
+                //CHECK FOR HEAR TEMPPLATE SET H2 TAG
+                //IF ITEM TEMPLATE, SET ALL ARTICLE DATA.
 
-                }
-                FieldRenderer frLinkImage = e.FindControlAs<FieldRenderer>("frLinkImage");
-                if (frLinkImage != null)
+                if (RelatedLink != null)
                 {
-                    frLinkImage.Item = RelatedLink;
+                  //  DefaultArticlePageItem def = e.Item.DataItem as DefaultArticlePageItem;
+                    FieldRenderer frLinkTitle = e.FindControlAs<FieldRenderer>("frLinkTitle");
+                    HyperLink hlLinkTitle = e.FindControlAs<HyperLink>("hlLinkTitle");
+                    if (frLinkTitle != null)
+                    {
+                        frLinkTitle.Item = RelatedLink.ContentPage.InnerItem;
+                        hlLinkTitle.NavigateUrl = frLinkTitle.Item.Paths.ContentPath;
+                    }
+                    FieldRenderer frLinkImage = e.FindControlAs<FieldRenderer>("frLinkImage");
+                    if (frLinkImage != null)
+                    {
+                        frLinkImage.Item = RelatedLink.InnerItem;
 
+                    }
                 }
+
             }
+
 
         }
 

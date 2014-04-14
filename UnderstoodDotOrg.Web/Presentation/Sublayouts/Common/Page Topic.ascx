@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Page Topic.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Page_Topic" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <!-- BEGIN PARTIAL: pagetopic -->
 <!-- Page Title -->
@@ -6,9 +7,12 @@
     <div class="row">
         <div class="col col-14 offset-1">
 
-            <h1>Technology that Can Help</h1>
-
-            <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
+            <h1><%--Technology that Can Help--%>
+           <sc:FieldRenderer id="rfTitle" runat="server" FieldName="Page Title"/></h1>
+            <p class="page-subtitle"><%--Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas --%>
+            <sc:FieldRenderer ID="frSummary" runat="server"/>
+                <asp:HyperLink ID="HylkByline" Text="ByLine" runat="server" ></asp:HyperLink>
+            </p>
 
         </div>
 

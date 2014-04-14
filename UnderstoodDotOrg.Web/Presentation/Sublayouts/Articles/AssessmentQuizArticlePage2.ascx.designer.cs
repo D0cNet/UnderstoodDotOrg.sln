@@ -13,21 +13,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     public partial class AssessmentQuizArticlePage2 {
         
         /// <summary>
-        /// Placeholder1 control.
+        /// rptQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder1;
+        protected global::System.Web.UI.WebControls.Repeater rptQuestion;
         
         /// <summary>
-        /// Placeholder2 control.
+        /// btnBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder2;
+        protected global::System.Web.UI.WebControls.Button btnBack;
+        
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

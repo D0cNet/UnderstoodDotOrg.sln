@@ -138,10 +138,13 @@
             <!-- BEGIN PARTIAL: reviewed-by -->
             <p class="reviewed-by">
                 <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
-                    <%--<a href="REPLACE">Dr. Samantha Frank</a>--%></span><span class="dot"></span>
-                <sc:FieldRenderer ID="frReviewedBy" runat="server" FieldName="Reviewer Name" />
-                <span class="reviewed-by-date"><%--12&nbsp;Dec&nbsp;&apos;13--%>
-                    <sc:Date ID="dtReviewedDate" runat="server" Field="Reviewed Date" Format="dd MMM yy" />
+                    <%--<a href="REPLACE">Dr. Samantha Frank</a>--%>
+                    <sc:Link ID="lnkReviewedBy" runat="server" Field="Revierwer Name">
+                    </sc:Link>
+                    <asp:HyperLink ID="HyplnkReviewedBy" runat="server"></asp:HyperLink>
+                </span><span class="dot"></span><span class="reviewed-by-date">
+                    <%--12&nbsp;Dec&nbsp;&apos;13 --%>
+                    <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />
                 </span>
             </p>
             <!-- END PARTIAL: reviewed-by -->
@@ -167,12 +170,12 @@
 </div>
 <!-- .container -->
 
-
-<div class="container more-carousel">
+ 
+<%--<div class="container more-carousel">
     <div class="row">
         <div class="col col-24 offset-1">
-            <sc:Sublayout ID="slSuggestedArticles" runat="server" Path="~/Presentation/Sublayouts/Articles/SuggestArticlePageCarousal.ascx"  />
-           <%-- <h2>More Like this:</h2> --%>
+           
+            <h2>More Like this:</h2> 
             <!-- BEGIN PARTIAL: more-carousel -->
             
            <asp:Repeater ID="rptMoreArticle" runat="server" OnItemDataBound="rptMoreArticle_ItemDataBound">
@@ -192,7 +195,7 @@
                     </ul>
                     </div>
                 </FooterTemplate>
-            </asp:Repeater>
+            </asp:Repeater> 
             <!--<div id="more-carousel-slides-container">
                 <ul>
                     <li>
@@ -238,10 +241,10 @@
             <!-- END PARTIAL: more-carousel -->
         </div>
     </div>
-</div>
+</div> --%>
 
 <!-- comments -->
-<div class="container comments">
+<%--<div class="container comments">
     <div class="row">
         <!-- comments col -->
         <div class="col col-23 offset-1">
@@ -379,6 +382,6 @@
         </div>
     </div>
     <!-- .row -->
-</div>
+</div>--%>
 <!-- .container -->
 

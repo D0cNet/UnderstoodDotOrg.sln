@@ -20,7 +20,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     public partial class BasicArticle : System.Web.UI.UserControl
     {
         BasicArticlePageItem ObjBasicArticle;//Craete Basic Article Object for currnet Item.
-        System.Collections.Generic.List<DefaultArticlePageItem> FinalRelatedArticles = null;
+       // System.Collections.Generic.List<DefaultArticlePageItem> FinalRelatedArticles = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
@@ -29,11 +29,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                 if (ObjBasicArticle.DefaultArticlePage.AuthorName.Item != null)
                 {
-                    Response.Write(ObjBasicArticle.DefaultArticlePage.AuthorName.Item["Author Name"]);
-                    Response.Write(ObjBasicArticle.InnerItem.Language.GetDisplayName());
                     //Show Author details
-
-                    Response.Write(ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Language.GetDisplayName());
                     frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
                     frAuthorBio.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
                     frAuthorImage.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
@@ -52,17 +48,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     dtReviewdDate.Format = "dd MMM yy";
                 }
 
-                if (ObjBasicArticle.DefaultArticlePage.HideRelatedActiveLinks.Checked == false) // Show Articles
-                {
-                    DefaultArticlePageItem ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;
-                    //Get list of selected item
-                    FinalRelatedArticles = ObjBasicArticle.GetRelatedLinks(ObjDefaultArticle);
-                    if (FinalRelatedArticles != null)
-                    {
-                        rptMoreArticle.DataSource = FinalRelatedArticles;
-                        rptMoreArticle.DataBind();
-                    }
-                }
+                //if (ObjBasicArticle.DefaultArticlePage.HideRelatedActiveLinks.Checked == false) // Show Articles
+                //{
+                //    DefaultArticlePageItem ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;
+                //    //Get list of selected item
+                //    FinalRelatedArticles = ObjBasicArticle.GetRelatedLinks(ObjDefaultArticle);
+                //    if (FinalRelatedArticles != null)
+                //    {
+                //        rptMoreArticle.DataSource = FinalRelatedArticles;
+                //        rptMoreArticle.DataBind();
+                //    }
+                //}
 
             }
         }
@@ -122,27 +118,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         //}
         protected void rptMoreArticle_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            Item RelatedLink = e.Item.DataItem as DefaultArticlePageItem ;
-
-            if (RelatedLink != null)
+            if (e.IsItem())
             {
-                DefaultArticlePageItem def = e.Item.DataItem as DefaultArticlePageItem;
-                FieldRenderer frLinkTitle = e.FindControlAs<FieldRenderer>("frLinkTitle");
-                HyperLink hlLinkTitle = e.FindControlAs<HyperLink>("hlLinkTitle");
-                if (frLinkTitle != null)
+                Item RelatedLink = e.Item.DataItem as DefaultArticlePageItem;
+                if (RelatedLink != null)
                 {
-                    frLinkTitle.Item = def.ContentPage.InnerItem;
-                    //frLinkTitle.Item = RelatedLink;
-                    //frLinkTitle.FieldName = "Page Title";
-                    hlLinkTitle.NavigateUrl = frLinkTitle.Item.Paths.ContentPath;
+                    DefaultArticlePageItem def = e.Item.DataItem as DefaultArticlePageItem;
+                    FieldRenderer frLinkTitle = e.FindControlAs<FieldRenderer>("frLinkTitle");
+                    HyperLink hlLinkTitle = e.FindControlAs<HyperLink>("hlLinkTitle");
+                    if (frLinkTitle != null)
+                    {
+                        frLinkTitle.Item = def.ContentPage.InnerItem;
+                        //frLinkTitle.Item = RelatedLink;
+                        //frLinkTitle.FieldName = "Page Title";
+                        hlLinkTitle.NavigateUrl = frLinkTitle.Item.Paths.ContentPath;
+                    }
+                    FieldRenderer frLinkImage = e.FindControlAs<FieldRenderer>("frLinkImage");
+                    if (frLinkImage != null)
+                    {
+                        frLinkImage.Item = def.InnerItem;
+                        //frLinkImage.Item = RelatedLink;
+                        //frLinkImage.FieldName = "Content Thumbnail";
+                    }
                 }
-                FieldRenderer frLinkImage = e.FindControlAs<FieldRenderer>("frLinkImage");
-                if (frLinkImage != null)
-                {
-                    frLinkImage.Item = def.InnerItem;
-                    //frLinkImage.Item = RelatedLink;
-                    //frLinkImage.FieldName = "Content Thumbnail";
-                }
+
             }
 
 

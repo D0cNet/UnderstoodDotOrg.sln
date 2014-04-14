@@ -46,38 +46,20 @@ public static implicit operator Item(DeepDiveArticlePageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField ContentName
+public CustomTextField KeyTakeawayTitle
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Content Name"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["KeyTake away Title"]);
 	}
 }
 
 
-public CustomImageField ThumbnailImage
+public CustomTextField KeyTakeawayDetails
 {
 	get
 	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["Thumbnail Image"]);
-	}
-}
-
-
-public CustomImageField FeatureImage
-{
-	get
-	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["Feature Image"]);
-	}
-}
-
-
-public CustomTextField KeyTakaway
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Key Takaway"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Key Take away Details"]);
 	}
 }
 

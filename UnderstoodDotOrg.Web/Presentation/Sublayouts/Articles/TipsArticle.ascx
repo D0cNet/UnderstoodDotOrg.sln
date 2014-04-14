@@ -497,7 +497,7 @@
     <fieldset>
 
       <label for="tool-tech-issue" class="visuallyhidden">Select behavior issue</label>
-      <select name="tool-tech-issue" id="tool-tech-issue" required aria-required="true">
+      <select name="tool-tech-issue" id="tool-tech-issue"  aria-required="true">
         <option value="">Select behavior issue</option>
           <option>Attention & hyperactivity issues</option>
           <option>Reading issues</option>
@@ -509,7 +509,7 @@
       </select>
 
       <label for="tool-tech-grade" class="visuallyhidden">Select grade</label>
-      <select name="tool-tech-grade" id="tool-tech-grade" required aria-required="true">
+      <select name="tool-tech-grade" id="tool-tech-grade"  aria-required="true">
         <option value="">Select grade</option>
         <option>Grade 1</option>
         <option>Grade 2</option>
@@ -518,7 +518,7 @@
       </select>
 
       <label for="tool-tech-alltech" class="visuallyhidden">All Technology</label>
-      <select name="tool-tech-alltech" id="tool-tech-alltech" required aria-required="true">
+      <select name="tool-tech-alltech" id="tool-tech-alltech"  aria-required="true">
         <option value="">All technology</option>
         <option>Apps</option>
         <option>Games</option>
@@ -526,7 +526,7 @@
       </select>
 
       <label for="tool-tech-platforms" class="visuallyhidden">All Platforms &amp; Devices</label>
-      <select name="tool-tech-platforms" id="tool-tech-platforms" required aria-required="true">
+      <select name="tool-tech-platforms" id="tool-tech-platforms"  aria-required="true">
         <option value="">All platforms &amp; devices</option>
         <option>iPhone</option>
         <option>iPod Touch</option>
@@ -568,7 +568,7 @@
     <fieldset>
 
       <label for="tool-advice-issue" class="visuallyhidden">Select behavior issue</label>
-      <select name="tool-advice-issue" id="tool-advice-issue" required aria-required="true">
+      <select name="tool-advice-issue" id="tool-advice-issue"  aria-required="true">
         <option value="">Select challenge</option>
         <option>Attention & hyperactivity issues</option>
         <option>Reading issues</option>
@@ -580,7 +580,7 @@
       </select>
 
       <label for="tool-advice-grade" class="visuallyhidden">Select grade</label>
-      <select name="tool-advice-grade" id="tool-advice-grade" required aria-required="true">
+      <select name="tool-advice-grade" id="tool-advice-grade"  aria-required="true">
         <option value="">Select grade</option>
         <option>Grade 1</option>
         <option>Grade 2</option>
@@ -651,7 +651,7 @@
           <input type="text" name="tool-ratings-school" id="tool-ratings-school" placeholder="Enter school name">
 
           <label for="tool-ratings-state" class="visuallyhidden">Select a state</label>
-          <select name="tool-ratings-state" id="tool-ratings-state" required aria-required="true">
+          <select name="tool-ratings-state" id="tool-ratings-state"  aria-required="true">
             <option value="">Select a state</option>
             <option>Alabama</option>
             <option>Arizona</option>
