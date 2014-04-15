@@ -22,7 +22,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 BasicArticlePageItem ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
                 if (ObjBasicArticle !=null)
                 {
-                    if (ObjBasicArticle.DefaultArticlePage.AuthorName != null)
+                    if (ObjBasicArticle.DefaultArticlePage.AuthorName.Item != null)
                     {
                         frSummary.Item = ObjBasicArticle.DefaultArticlePage.AuthorName;
                         frSummary.FieldName = "Author Biodata";
