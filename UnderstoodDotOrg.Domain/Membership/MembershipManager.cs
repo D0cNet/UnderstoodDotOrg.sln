@@ -12,6 +12,12 @@ namespace UnderstoodDotOrg.Domain.Membership
     {
         private static string connString = @"metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='data source=162.209.22.3;initial catalog=Understood.org.DEV.membership;persist security info=True;user id=understood_org;password=dahyeSDf;MultipleActiveResultSets=True;App=EntityFramework'";
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Username"></param>
+        /// <param name="Password"></param>
+        /// <returns></returns>
         public Member AuthenticateUser(string Username, string Password)
         {
             // use custom provider
@@ -53,6 +59,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             {
                 using (var db = new Membership(connString))
                 {
+                    //add last modified date
                     db.Members.Add(Member);
                     db.SaveChanges();
                 }
@@ -69,9 +76,9 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             try
             {
-                // use custom provider
+                // use custom provider for authentication
                 var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
-
+                
                 var isExistingUser = provider.ValidateUser(Username, Password);
 
                 Guid memberId;
@@ -107,7 +114,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             try
             {
-                using (var db = new Membership())
+                using (var db = new Membership(connString))
                 {
                     Child.Members.Add(this.GetMember(MemberId));
                     db.Children.Add(Child);
@@ -126,7 +133,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             try
             {
-                using (var db = new Membership())
+                using (var db = new Membership(connString))
                 {
                     db.Entry(Member).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
@@ -144,7 +151,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             try
             {
-                using (var db = new Membership())
+                using (var db = new Membership(connString))
                 {
                     db.Entry(Child).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
@@ -162,7 +169,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             Member member = new Member();
 
-            using (var db = new Membership())
+            using (var db = new Membership(connString))
             {
                 var query = from m in db.Members
                             where m.MemberId == MemberId
