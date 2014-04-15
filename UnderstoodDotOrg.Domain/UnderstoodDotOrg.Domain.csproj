@@ -87,6 +87,7 @@
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Membership\MembershipEntities.cs" />
+    <Compile Include="Membership\MembershipHelper.cs" />
     <Compile Include="Membership\MembershipManager.cs" />
     <Compile Include="Membership\MembershipManagerProxy.cs" />
     <Compile Include="Membership\MembershipModel.Context.cs">
@@ -173,6 +174,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\KnowledgeQuizQuestionArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\KnowledgeQuizResultsArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\KnowledgeQuizResultsArticlePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\QuizPages\AssesmentQuizPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\QuizPages\AssesmentQuizPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SimpleExpertArticle\SimpleExpertAddQuestionPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SimpleExpertArticle\SimpleExpertAddQuestionPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SimpleExpertArticle\SimpleExpertArticleItem.base.cs" />
@@ -195,6 +198,27 @@
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\DefaultArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFiveItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFiveItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFiveItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFourItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFourItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFourItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepOneItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepOneItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepOneItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepThreeItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepThreeItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepThreeItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepTwoItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepTwoItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepTwoItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.interface.cs" />
     <Compile Include="Understood\Common\GradeModel.cs" />
     <Compile Include="Understood\Common\IssueModel.cs" />
     <Compile Include="Understood\Content\ContentItemModel.cs" />
