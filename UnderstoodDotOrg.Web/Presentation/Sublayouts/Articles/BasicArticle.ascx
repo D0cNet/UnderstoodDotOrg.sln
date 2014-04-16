@@ -227,9 +227,11 @@
             
             <!-- END PARTIAL: bullet-point-with-image -->
             --%>
-            <p>
-                <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
-            </p>
+            <div class="article-copy">
+                <p>
+                    <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
+                </p>
+            </div>
             <!-- BEGIN PARTIAL: key-takeaways -->
             <div class="key-takeaways">
                 <header class='header-key-takeaways'>
