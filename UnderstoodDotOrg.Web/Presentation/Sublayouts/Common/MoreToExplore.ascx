@@ -67,7 +67,7 @@
                             <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
                             <label for="explore-select" class="visuallyhidden">Select state</label>
-                            <select name="explore-select" id="explore-select" required="" aria-required="true">
+                            <select name="explore-select" id="explore-select" aria-required="true">
                                 <option value="">Select a state</option>
                                 <option>Alabama</option>
                                 <option>Arizona</option>
