@@ -29,6 +29,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                         //frSummary.FieldName = "Author Name";
                         frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
                         hlAuthorName.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.GetUrl();
+                        hlAuthorName.Text = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Fields["Author Name"].Value;
                     }
                    
                 }
