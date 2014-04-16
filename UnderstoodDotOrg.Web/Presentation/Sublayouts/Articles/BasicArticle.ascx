@@ -228,9 +228,9 @@
             <!-- END PARTIAL: bullet-point-with-image -->
             --%>
             <div class="article-copy">
-                <p>
+               
                     <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
-                </p>
+                
             </div>
             <!-- BEGIN PARTIAL: key-takeaways -->
             <div class="key-takeaways">
@@ -677,6 +677,6 @@
     <!-- .row -->
 </div> --%>
 <!-- .container -->
-<sc:Placeholder key="slComment" runat="server" />
+<sc:Placeholder Key="slComment" runat="server" />
 <%--<sc:Sublayout ID="slComment" runat="server" Path="~/Presentation/Sublayouts/Articles/Comments.ascx" />--%>
 <!-- BEGIN PARTIAL: footer -->
