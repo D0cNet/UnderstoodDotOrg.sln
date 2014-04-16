@@ -30,6 +30,7 @@
     <link href="/Presentation/includes/css/globals.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/modules.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/account.css" rel="stylesheet" />
+    <link href="Presentation/includes/css/article.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/community.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
 

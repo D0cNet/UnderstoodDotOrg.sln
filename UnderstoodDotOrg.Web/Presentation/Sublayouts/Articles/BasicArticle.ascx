@@ -16,7 +16,8 @@
 <div class="container article">
     <div class="row row-equal-heights">
         <!-- article -->
-        <div class="col col-15 offset-1">
+        <div class="col col-15 offset-1 skiplink-content" aria-role="main" aria-role="main">
+
             <!-- BEGIN PARTIAL: at-a-glance -->
             <div class="at-a-glance">
                 <header class='header-at-a-glance'>
@@ -228,9 +229,7 @@
             <!-- END PARTIAL: bullet-point-with-image -->
             --%>
             <div class="article-copy">
-               
                     <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
-                
             </div>
             <!-- BEGIN PARTIAL: key-takeaways -->
             <div class="key-takeaways">
