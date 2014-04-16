@@ -22,7 +22,7 @@
             <div class="at-a-glance">
                 <header class='header-at-a-glance'>
                     <h2><%--At-a-glance--%>
-                        <sc:FieldRenderer runat="server" ID="frHeadlineText" FieldName="Headline Text" />
+                        <sc:FieldRenderer runat="server" ID="frHeadlineText" FieldName="At-a-glance Header" />
                     </h2>
                 </header>
                 <%-- <ul>
@@ -31,7 +31,7 @@
     <li>This article talks about lorem ipsum</li>
   </ul>
                 --%>
-                <sc:FieldRenderer runat="server" FieldName="Sub Headline Text" ID="frSubHeadlineText" />
+                <sc:FieldRenderer runat="server" FieldName="At-a-glance Content" ID="frSubHeadlineText" />
             </div>
             <!-- end at-a-glance -->
             <!-- END PARTIAL: at-a-glance -->

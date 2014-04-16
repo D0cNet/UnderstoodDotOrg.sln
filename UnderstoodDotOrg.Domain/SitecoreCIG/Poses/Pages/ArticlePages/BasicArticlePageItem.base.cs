@@ -64,7 +64,7 @@ public CustomTextField KeyTakeawayData
 }
 
 
-public CustomTextField HeadlineText
+public CustomTextField AtaglanceHeader
 {
 	get
 	{
@@ -73,7 +73,7 @@ public CustomTextField HeadlineText
 }
 
 
-public CustomTextField SubHeadlineText
+public CustomTextField AtaglanceContent
 {
 	get
 	{
