@@ -675,5 +675,6 @@
     <!-- .row -->
 </div> --%>
 <!-- .container -->
+<sc:Placeholder key="slComment" runat="server" />
 <%--<sc:Sublayout ID="slComment" runat="server" Path="~/Presentation/Sublayouts/Articles/Comments.ascx" />--%>
 <!-- BEGIN PARTIAL: footer -->
