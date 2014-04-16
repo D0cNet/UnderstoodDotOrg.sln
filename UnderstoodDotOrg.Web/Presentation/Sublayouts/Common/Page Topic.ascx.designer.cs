@@ -31,12 +31,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSummary;
         
         /// <summary>
-        /// HylkByline control.
+        /// hlAuthorName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HylkByline;
+        protected global::System.Web.UI.WebControls.HyperLink hlAuthorName;
+        
+        /// <summary>
+        /// frAuthorName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorName;
     }
 }

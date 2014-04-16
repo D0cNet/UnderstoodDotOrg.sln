@@ -103,22 +103,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorBio;
         
         /// <summary>
-        /// lnkReviewedBy control.
+        /// hlAuthorMorePost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Link lnkReviewedBy;
+        protected global::System.Web.UI.WebControls.HyperLink hlAuthorMorePost;
         
         /// <summary>
-        /// HyplnkReviewedBy control.
+        /// hlReviewdby control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyplnkReviewedBy;
+        protected global::System.Web.UI.WebControls.HyperLink hlReviewdby;
+        
+        /// <summary>
+        /// frReviewedby control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frReviewedby;
         
         /// <summary>
         /// dtReviewdDate control.

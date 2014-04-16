@@ -15,7 +15,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            HylkByline.Visible = false;
+           // HylkByline.Visible = false;
+            hlAuthorName.Visible = false;
            // For Basic ARticle , show desc as Author Bio if author have bio
             if (Sitecore.Context.Item.TemplateID.ToString() == BasicArticlePageItem.TemplateId)
             {
@@ -24,11 +25,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 {
                     if (ObjBasicArticle.DefaultArticlePage.AuthorName.Item != null)
                     {
-                        frSummary.Item = ObjBasicArticle.DefaultArticlePage.AuthorName;
-                        frSummary.FieldName = "Author Biodata";
-                        HylkByline.Visible = true;
-                        //Navigate to Author's Bio page
-                        HylkByline.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.GetFriendlyUrl();
+                        //frSummary.Item = ObjBasicArticle.DefaultArticlePage.AuthorName;
+                        //frSummary.FieldName = "Author Name";
+                        frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                        hlAuthorName.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.GetUrl();
                     }
                    
                 }

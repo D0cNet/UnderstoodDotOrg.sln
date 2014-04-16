@@ -8,10 +8,14 @@
         <div class="col col-14 offset-1">
 
             <h1><%--Technology that Can Help--%>
-           <sc:FieldRenderer id="rfTitle" runat="server" FieldName="Page Title"/></h1>
-            <p class="page-subtitle"><%--Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas --%>
-            <sc:FieldRenderer ID="frSummary" runat="server"/>
-                <asp:HyperLink ID="HylkByline" Text="ByLine" runat="server" ></asp:HyperLink>
+                <sc:FieldRenderer ID="rfTitle" runat="server" FieldName="Page Title" />
+            </h1>
+            <p class="page-subtitle">
+                <%--Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas --%>
+                <sc:FieldRenderer ID="frSummary" runat="server" />
+                <asp:HyperLink ID="hlAuthorName" runat="server">
+                    <sc:FieldRenderer ID="frAuthorName" runat="server" FieldName="Author Name" />
+                </asp:HyperLink>
             </p>
 
         </div>

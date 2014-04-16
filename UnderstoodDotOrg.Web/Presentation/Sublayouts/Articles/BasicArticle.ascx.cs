@@ -20,7 +20,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     public partial class BasicArticle : System.Web.UI.UserControl
     {
         BasicArticlePageItem ObjBasicArticle;//Craete Basic Article Object for currnet Item.
-       // System.Collections.Generic.List<DefaultArticlePageItem> FinalRelatedArticles = null;
+        // System.Collections.Generic.List<DefaultArticlePageItem> FinalRelatedArticles = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
@@ -35,12 +35,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     frAuthorImage.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
                     frAuthorImage.FieldName = "Author Image";
                     hlAuthorImage.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
+                    hlAuthorMorePost.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.FullPath;
                 }
                 if (ObjBasicArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
                 {
-                    lnkReviewedBy.Item = ObjBasicArticle.DefaultArticlePage.Reviewedby.Item;
-                    lnkReviewedBy.Field = "Revierwer Name";
-                    HyplnkReviewedBy.Text = lnkReviewedBy.Text;
+                    frReviewedby.Item = ObjBasicArticle.DefaultArticlePage.Reviewedby.Item;
+                    hlReviewdby.NavigateUrl = ObjBasicArticle.DefaultArticlePage.Reviewedby.Item.GetUrl();
                 }
                 if (ObjBasicArticle.DefaultArticlePage.ReviewedDate.DateTime != null)// Reviewed date 
                 {

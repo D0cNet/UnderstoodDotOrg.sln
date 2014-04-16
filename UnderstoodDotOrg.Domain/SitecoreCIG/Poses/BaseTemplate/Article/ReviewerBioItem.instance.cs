@@ -8,6 +8,6 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article
 {
 public partial class ReviewerBioItem 
 {
-
+    
 }
 }

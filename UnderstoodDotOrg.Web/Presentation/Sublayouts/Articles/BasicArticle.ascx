@@ -255,7 +255,7 @@
                 </header>
                 <%--<img src="http://placehold.it/60x60" alt="REPLACE">--%>
                 <asp:HyperLink ID="hlAuthorImage" runat="server">
-                    <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server" />
+                    <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server"  Width="60px" Height="60px" />
                 </asp:HyperLink>
 
                 <div class="author-text">
@@ -267,7 +267,9 @@
                         <%--Lorem ipsum dolor sit amet, consectetuer laoreet dolore adipiscing elit, sed diam nonummy nibh euismod tincidunt ut dolore.--%>
                         <sc:FieldRenderer ID="frAuthorBio" runat="server" FieldName="Author Biodata" />
                     </p>
-                    <a href="REPLACE">More Posts by this Author</a>
+                    <asp:HyperLink ID="hlAuthorMorePost" runat="server" Text="More Posts by this Author">
+                    </asp:HyperLink>
+                    <%--<a href="REPLACE">More Posts by this Author</a>--%>
 
                 </div>
             </section>
@@ -276,9 +278,9 @@
             <p class="reviewed-by">
                 <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
                     <%--<a href="REPLACE">Dr. Samantha Frank</a>--%>
-                    <sc:Link ID="lnkReviewedBy" runat="server" Field="Revierwer Name">
-                    </sc:Link>
-                    <asp:HyperLink ID="HyplnkReviewedBy" runat="server"></asp:HyperLink>
+                   <asp:HyperLink ID="hlReviewdby" runat="server">
+                       <sc:FieldRenderer ID="frReviewedby" runat="server" FieldName="Revierwer Name" />
+                    </asp:HyperLink>
                 </span><span class="dot"></span><span class="reviewed-by-date">
                     <%--12&nbsp;Dec&nbsp;&apos;13 --%>
                     <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />

@@ -68,7 +68,7 @@ public CustomTextField HeadlineText
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Headline Text"]);
+        return new CustomTextField(InnerItem, InnerItem.Fields["At-a-glance Header"]);
 	}
 }
 
@@ -77,7 +77,7 @@ public CustomTextField SubHeadlineText
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Sub Headline Text"]);
+        return new CustomTextField(InnerItem, InnerItem.Fields["At-a-glance Content"]);
 	}
 }
 
