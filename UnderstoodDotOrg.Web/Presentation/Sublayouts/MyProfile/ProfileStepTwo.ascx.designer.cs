@@ -13,31 +13,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
     public partial class ProfileStepTwo {
         
         /// <summary>
-        /// PageHeader1 control.
+        /// uxFormTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text PageHeader1;
-        
-        /// <summary>
-        /// HeaderText1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text HeaderText1;
-        
-        /// <summary>
-        /// BarText1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text BarText1;
+        protected global::System.Web.UI.WebControls.Literal uxFormTitle;
         
         /// <summary>
         /// ScreenNameTextBox control.
@@ -49,184 +31,238 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.TextBox ScreenNameTextBox;
         
         /// <summary>
-        /// Text1 control.
+        /// uxTroubleAreasTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text1;
+        protected global::System.Web.UI.WebControls.Literal uxTroubleAreasTitle;
         
         /// <summary>
-        /// Text2 control.
+        /// q1a1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text2;
+        protected global::System.Web.UI.WebControls.CheckBox q1a1;
         
         /// <summary>
-        /// Text3 control.
+        /// uxQ1a1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text3;
+        protected global::System.Web.UI.WebControls.Literal uxQ1a1;
         
         /// <summary>
-        /// Text4 control.
+        /// q1a2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text4;
+        protected global::System.Web.UI.WebControls.CheckBox q1a2;
         
         /// <summary>
-        /// Text5 control.
+        /// uxQ1a2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text5;
+        protected global::System.Web.UI.WebControls.Literal uxQ1a2;
         
         /// <summary>
-        /// Text6 control.
+        /// q1a3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text6;
+        protected global::System.Web.UI.WebControls.CheckBox q1a3;
         
         /// <summary>
-        /// Text7 control.
+        /// uxQ1a3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text7;
+        protected global::System.Web.UI.WebControls.Literal uxQ1a3;
         
         /// <summary>
-        /// Text8 control.
+        /// q1a4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text8;
+        protected global::System.Web.UI.WebControls.CheckBox q1a4;
         
         /// <summary>
-        /// Text9 control.
+        /// uxQ1a4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text9;
+        protected global::System.Web.UI.WebControls.Literal uxQ1a4;
         
         /// <summary>
-        /// Text10 control.
+        /// q1a5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text10;
+        protected global::System.Web.UI.WebControls.CheckBox q1a5;
         
         /// <summary>
-        /// Text11 control.
+        /// uxQ1a5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text11;
+        protected global::System.Web.UI.WebControls.Literal uxQ1a5;
         
         /// <summary>
-        /// Text12 control.
+        /// q1a6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text12;
+        protected global::System.Web.UI.WebControls.CheckBox q1a6;
         
         /// <summary>
-        /// Text13 control.
+        /// uxQ1a6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text13;
+        protected global::System.Web.UI.WebControls.Literal uxQ1a6;
         
         /// <summary>
-        /// Text14 control.
+        /// q1a7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text14;
+        protected global::System.Web.UI.WebControls.CheckBox q1a7;
         
         /// <summary>
-        /// Text15 control.
+        /// uxQ1a7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text15;
+        protected global::System.Web.UI.WebControls.Literal uxQ1a7;
         
         /// <summary>
-        /// Text16 control.
+        /// q1a8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text16;
+        protected global::System.Web.UI.WebControls.CheckBox q1a8;
         
         /// <summary>
-        /// Text17 control.
+        /// uxQ1a8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text17;
+        protected global::System.Web.UI.WebControls.Literal uxQ1a8;
         
         /// <summary>
-        /// Text18 control.
+        /// q1a9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text18;
+        protected global::System.Web.UI.WebControls.CheckBox q1a9;
         
         /// <summary>
-        /// Text19 control.
+        /// uxQ1a9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text19;
+        protected global::System.Web.UI.WebControls.Literal uxQ1a9;
         
         /// <summary>
-        /// Text20 control.
+        /// q1a10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text20;
+        protected global::System.Web.UI.WebControls.CheckBox q1a10;
+        
+        /// <summary>
+        /// uxQ1a10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal uxQ1a10;
+        
+        /// <summary>
+        /// uxEvaluatedTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal uxEvaluatedTitle;
+        
+        /// <summary>
+        /// q2a1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton q2a1;
+        
+        /// <summary>
+        /// q2a2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton q2a2;
+        
+        /// <summary>
+        /// q2a3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton q2a3;
+        
+        /// <summary>
+        /// uxFamilyCircumstances control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel uxFamilyCircumstances;
         
         /// <summary>
         /// NextButton control.
@@ -236,14 +272,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button NextButton;
-        
-        /// <summary>
-        /// Text21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text21;
     }
 }
