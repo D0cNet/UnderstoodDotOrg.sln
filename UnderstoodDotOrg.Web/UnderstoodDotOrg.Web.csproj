@@ -83,6 +83,13 @@
     <Compile Include="Presentation\Layouts\Browser.aspx.designer.cs">
       <DependentUpon>Browser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\MembershipTest.aspx.cs">
+      <DependentUpon>MembershipTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\MembershipTest.aspx.designer.cs">
+      <DependentUpon>MembershipTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx.cs">
       <DependentUpon>PersonalizationAdmin.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -843,6 +850,7 @@
     <Content Include="Presentation\Includes\js\vendor\jquery.validate.min.js" />
     <Content Include="Presentation\Includes\js\vendor\modernizr.custom.js" />
     <Content Include="Presentation\Layouts\Browser.aspx" />
+    <Content Include="Presentation\MembershipTest.aspx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Article Entry Message Page.ascx" />
