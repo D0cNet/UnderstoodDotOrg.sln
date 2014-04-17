@@ -106,5 +106,102 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "Zip Code Watermark");
             }
         }
+
+        public static class Grades
+        {
+            public static string SelectGrade
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Select Grade");
+                }
+            }
+
+            public static string Grade1
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 1");
+                }
+            }
+
+            public static string Grade2
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 2");
+                }
+            }
+            public static string Grade3
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 3");
+                }
+            }
+            public static string Grade4
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 4");
+                }
+            }
+            public static string Grade5
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 5");
+                }
+            }
+            public static string Grade6
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 6");
+                }
+            }
+            public static string Grade7
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 7");
+                }
+            }
+            public static string Grade8
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 8");
+                }
+            }
+            public static string Grade9
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 9");
+                }
+            }
+            public static string Grade10
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 10");
+                }
+            }
+            public static string Grade11
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 11");
+                }
+            }
+            public static string Grade12
+            {
+                get
+                {
+                    return Translate.TextByDomain(PosesDictionary, "Grade 12");
+                }
+            }
+        }
     }
 }
