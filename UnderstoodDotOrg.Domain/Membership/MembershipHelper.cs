@@ -68,7 +68,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             {
                 case 1:
                     id = "{2A9B3FBC-208F-4DA0-8BC5-9024CA8D6F4E}";
-                        break;
+                    break;
                 case 2:
                     id = "{417F1D9E-E74E-4CE2-879F-CA7D38D0E43F}";
                     break;
@@ -88,7 +88,7 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             if (id != string.Empty)
             {
-                var item = Sitecore.Configuration.Factory.GetDatabase(CommonSenseImportHelper.Instance.Settings.MasterDatabaseName).GetItem(id);
+                var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(id);
                 ret = Sitecore.Links.LinkManager.GetItemUrl(item);
             }
 

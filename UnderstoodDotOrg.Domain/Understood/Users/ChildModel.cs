@@ -7,17 +7,13 @@ using UnderstoodDotOrg.Domain.Understood.Common;
 
 namespace UnderstoodDotOrg.Domain.Users
 {
-    class ChildModel
+    /// <summary>
+    /// Used for storing temporary information about children during the registration process. All other data is stored directly in Entity Child Model
+    /// </summary>
+    public class ChildModel
     {
-        /// <summary>
-        /// The Sitecore GUID of the Grade that this child is in
-        /// </summary>
-        public string GradeID  { get; set; }
-
-        /// <summary>
-        /// A list of all of the Issues that this child is tagged with
-        /// </summary>
-        public List<IssueModel> Issues { get; set; }
-
+        public string Grade { get; set; }
+        public string Pronoun { get; set; }
     }
+
 }
