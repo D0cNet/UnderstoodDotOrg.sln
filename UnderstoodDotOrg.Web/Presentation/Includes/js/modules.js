@@ -3220,13 +3220,13 @@ jQuery(document).ready(function(){
     var self = this;
 
     // Maximum amount of children the user can add.
-    this.MAX_CHILDREN = 4;
+    this.MAX_CHILDREN = 6;
 
     // Current number of children added.
     this.childCount = 1;
 
     // Converts integers to an adjective.
-    this.numberAdjectives = ['', 'second', 'third', 'fourth'];
+    this.numberAdjectives = ['', 'second', 'third', 'fourth', "fifth", "sixth"];
 
     // Original child question, before cloning.
     this.$childQuestion = null;
@@ -3317,8 +3317,9 @@ jQuery(document).ready(function(){
      * @return {boolean} false
      */
     this.copyChildForm = function() {
-      var clone = $(self.$childQuestion);
-      $('.profile-questions-child-wrapper').append(clone);
+        //var clone = $(self.$childQuestion);
+        var clone = $(".profile-questions-child-wrapper.hidden").first();
+      //$('.profile-questions-child-wrapper').append(clone);
 
       // Increment count and adjust wording on question.
       self.childCount++;
@@ -3327,6 +3328,8 @@ jQuery(document).ready(function(){
       if (self.childCount == self.MAX_CHILDREN) {
         $('.child-count-question').hide();
       }
+
+      clone.removeClass("hidden");
 
       // Fixes 'selected' class never added to selects after clone.
       clone.find('select').uniform().change(function() {

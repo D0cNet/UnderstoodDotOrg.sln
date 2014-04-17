@@ -13,247 +13,202 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
     public partial class ProfileStepOne {
         
         /// <summary>
-        /// Text1 control.
+        /// uxBoy1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text1;
+        protected global::System.Web.UI.WebControls.RadioButton uxBoy1;
         
         /// <summary>
-        /// Text2 control.
+        /// uxGirl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text2;
+        protected global::System.Web.UI.WebControls.RadioButton uxGirl1;
         
         /// <summary>
-        /// Text3 control.
+        /// uxSelectGrade1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text3;
+        protected global::System.Web.UI.WebControls.DropDownList uxSelectGrade1;
         
         /// <summary>
-        /// Text4 control.
+        /// uxBoy2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text4;
+        protected global::System.Web.UI.WebControls.RadioButton uxBoy2;
         
         /// <summary>
-        /// Text5 control.
+        /// uxGirl2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text5;
+        protected global::System.Web.UI.WebControls.RadioButton uxGirl2;
         
         /// <summary>
-        /// Text6 control.
+        /// uxSelectGrade2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text6;
+        protected global::System.Web.UI.WebControls.DropDownList uxSelectGrade2;
         
         /// <summary>
-        /// Text7 control.
+        /// uxBoy3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text7;
+        protected global::System.Web.UI.WebControls.RadioButton uxBoy3;
         
         /// <summary>
-        /// Text8 control.
+        /// uxGirl3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text8;
+        protected global::System.Web.UI.WebControls.RadioButton uxGirl3;
         
         /// <summary>
-        /// Text9 control.
+        /// uxSelectGrade3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text9;
+        protected global::System.Web.UI.WebControls.DropDownList uxSelectGrade3;
         
         /// <summary>
-        /// Text10 control.
+        /// uxBoy4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text10;
+        protected global::System.Web.UI.WebControls.RadioButton uxBoy4;
         
         /// <summary>
-        /// Text11 control.
+        /// uxGirl4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text11;
+        protected global::System.Web.UI.WebControls.RadioButton uxGirl4;
         
         /// <summary>
-        /// Text12 control.
+        /// uxSelectGrade4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text12;
+        protected global::System.Web.UI.WebControls.DropDownList uxSelectGrade4;
         
         /// <summary>
-        /// Text13 control.
+        /// uxBoy5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text13;
+        protected global::System.Web.UI.WebControls.RadioButton uxBoy5;
         
         /// <summary>
-        /// Text14 control.
+        /// uxGirl5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text14;
+        protected global::System.Web.UI.WebControls.RadioButton uxGirl5;
         
         /// <summary>
-        /// Text15 control.
+        /// uxSelectGrade5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text15;
+        protected global::System.Web.UI.WebControls.DropDownList uxSelectGrade5;
         
         /// <summary>
-        /// Text16 control.
+        /// uxBoy6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text16;
+        protected global::System.Web.UI.WebControls.RadioButton uxBoy6;
         
         /// <summary>
-        /// Text17 control.
+        /// uxGirl6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text17;
+        protected global::System.Web.UI.WebControls.RadioButton uxGirl6;
         
         /// <summary>
-        /// Text19 control.
+        /// uxSelectGrade6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text19;
+        protected global::System.Web.UI.WebControls.DropDownList uxSelectGrade6;
         
         /// <summary>
-        /// Text18 control.
+        /// uxAddChildYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text18;
+        protected global::System.Web.UI.WebControls.RadioButton uxAddChildYes;
         
         /// <summary>
-        /// Text20 control.
+        /// uxAddChildNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text20;
+        protected global::System.Web.UI.WebControls.RadioButton uxAddChildNo;
         
         /// <summary>
-        /// Text24 control.
+        /// uxOtherChildrenYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text24;
+        protected global::System.Web.UI.WebControls.RadioButton uxOtherChildrenYes;
         
         /// <summary>
-        /// Text25 control.
+        /// uxOtherChildrenNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text25;
-        
-        /// <summary>
-        /// Text26 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text26;
-        
-        /// <summary>
-        /// Text27 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text27;
-        
-        /// <summary>
-        /// Text21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text21;
-        
-        /// <summary>
-        /// Text22 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text22;
-        
-        /// <summary>
-        /// Text23 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text23;
+        protected global::System.Web.UI.WebControls.RadioButton uxOtherChildrenNo;
         
         /// <summary>
         /// NextButton control.
