@@ -53,6 +53,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UnderstoodDotOrg.Common\UnderstoodDotOrg.Common.csproj">
+      <Project>{509436f1-51ec-425b-b6bd-42ae307ef012}</Project>
+      <Name>UnderstoodDotOrg.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UnderstoodDotOrg.Domain\UnderstoodDotOrg.Domain.csproj">
       <Project>{ba887ae1-f638-4b47-aa65-d3451f3d5cfe}</Project>
       <Name>UnderstoodDotOrg.Domain</Name>
