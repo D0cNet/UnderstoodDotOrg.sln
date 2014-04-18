@@ -14,6 +14,7 @@ namespace UnderstoodDotOrg.Domain.Users
     {
         public string Grade { get; set; }
         public string Pronoun { get; set; }
+        public string Nickname { get; set; }
     }
 
 }
