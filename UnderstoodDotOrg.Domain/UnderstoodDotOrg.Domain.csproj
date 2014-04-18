@@ -219,6 +219,12 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildDiagnosisItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildDiagnosisItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildDiagnosisItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildIssueItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildIssueItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildIssueItem.interface.cs" />
     <Compile Include="Understood\Common\GradeModel.cs" />
     <Compile Include="Understood\Common\IssueModel.cs" />
     <Compile Include="Understood\Content\ContentItemModel.cs" />
