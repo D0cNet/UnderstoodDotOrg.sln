@@ -148,11 +148,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             if (q1a10.Checked) { issues.Add(new Issue() { Key = Constants.Issues.ElementAt(9).Key, Value = Constants.Issues.ElementAt(9).Value }); }
 
             registeringUser.Children.ElementAt(index).Issues = issues;
+            registeringUser.Children.ElementAt(index).Nickname = ScreenNameTextBox.Text;
 
             // handle redirects
             if (q2a1.Checked)
             {
                 redirect = MembershipHelper.GetNextStepURL(3);
+                children[0].Nickname = ScreenNameTextBox.Text;
+                Session["temp_child"] = children;
             }
             else
             {
@@ -168,8 +171,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 }
             }
 
-            //Response.Redirect(redirect);
-            Response.Write(redirect);
+            Response.Redirect(redirect);
+            //Response.Write(redirect);
         }
     }
 }
