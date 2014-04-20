@@ -107,6 +107,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string ParentRoleDefault
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Parent List Watermark");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade
@@ -202,6 +210,7 @@ namespace UnderstoodDotOrg.Common
                     return Translate.TextByDomain(PosesDictionary, "Grade 12");
                 }
             }
+
         }
     }
 }
