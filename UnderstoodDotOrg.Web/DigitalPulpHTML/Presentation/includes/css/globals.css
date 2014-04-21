@@ -1,0 +1,802 @@
+/**
+ * SASS mixin for cross-platform border-radius.
+ */
+/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+a {
+  color: #426da9;
+  text-decoration: none;
+}
+
+/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+a:hover,
+a:focus {
+  color: #426da9;
+  text-decoration: underline;
+}
+
+/* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button {
+  font-size: 18px;
+  font-size: 1.125rem;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: #f2af00;
+  border: none;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button:focus {
+  background-color: #ffbc0d;
+  color: black;
+  text-decoration: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  outline: none;
+}
+/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button:hover {
+  background-color: #ffbc0d;
+  color: black;
+  text-decoration: none;
+}
+/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.disabled, .button.disabled:hover, .button[disabled], .button[disabled]:hover {
+  background-color: #f7c84c;
+  color: #4c4c4c;
+  cursor: default;
+}
+
+/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.blue {
+  font-size: 16px;
+  font-size: 1rem;
+  background-color: #298fc2;
+  color: white;
+  line-height: 40px;
+  height: 40px;
+}
+/* line 69, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.blue:hover {
+  background-color: #20a6e9;
+}
+
+/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.gray {
+  background-color: #bcbdc0;
+  color: black;
+}
+/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.gray:hover, .button.gray:focus {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+  background-color: white;
+  color: black;
+}
+/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.gray.disabled, .button.gray.disabled:hover, .button.gray[disabled], .button.gray[disabled]:hover {
+  -webkit-box-shadow: 0px 0px 0px 0px transparent;
+  -moz-box-shadow: 0px 0px 0px 0px transparent;
+  box-shadow: 0px 0px 0px 0px transparent;
+  background-color: #d0d1d3;
+  color: #4e4e4e;
+}
+/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.gray.selected, .button.gray.active, .button.gray.checked {
+  background-color: #7a4183;
+  color: white;
+}
+
+/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.purple {
+  font-size: 16px;
+  font-size: 1rem;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-color: #7a4183;
+  color: white;
+  font-weight: normal;
+  height: 70px;
+  line-height: 70px;
+  padding-right: 35px;
+}
+/* line 111, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.purple:hover {
+  background-color: #208ec4;
+}
+
+/* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.white {
+  font-size: 16px;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+}
+/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.white:hover {
+  background-color: #bcbdc0;
+}
+/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.white.selected, .button.white.active {
+  background-color: #7a4183;
+  color: white;
+}
+/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.button.white.selected:hover, .button.white.active:hover {
+  background-color: #9850a2;
+}
+
+/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+button.rsArrowIcn {
+  background: transparent;
+  border: none;
+}
+
+/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.icon-arrow-down-blue {
+  width: 18px;
+  height: 11px;
+  display: inline-block;
+  background: url("../images/sprite.icon.arrows.png") 0 0 no-repeat;
+  background-size: 150px 150px;
+}
+/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .icon-arrow-down-blue {
+  background-image: url("../images/sprite.icon.arrows.lo-res.png");
+}
+
+/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.icon-arrow-right-blue {
+  width: 8px;
+  height: 12px;
+  display: inline-block;
+  background: url("../images/sprite.icon.arrows.png") -25px 0 no-repeat;
+  background-size: 150px 150px;
+}
+/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .icon-arrow-right-blue {
+  background-image: url("../images/sprite.icon.arrows.lo-res.png");
+}
+
+/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.icon-arrow-left-blue {
+  width: 8px;
+  height: 12px;
+  display: inline-block;
+  background: url("../images/sprite.icon.arrows.png") -36px 0 no-repeat;
+  background-size: 150px 150px;
+}
+/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .icon-arrow-left-blue {
+  background-image: url("../images/sprite.icon.arrows.lo-res.png");
+}
+
+/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.icon-question-mark {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  background: url("../images/sprite.icons.png") 0 0 no-repeat;
+  background-size: 200px 100px;
+  text-indent: -9999px;
+}
+/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .icon-question-mark {
+  background-image: url("../images/sprite.icons.lo-res.png");
+}
+/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.icon-question-mark.tooltip {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 199, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.icon-close-toolkit {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url("../images/icon.close.parent-toolkit.png") no-repeat;
+  background-size: 25px 25px;
+}
+/* line 206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .icon-close-toolkit {
+  background-image: url("../images/icon.close.parent-toolkit-lo-res.png");
+}
+
+/* line 213, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.children-key {
+  padding: 0;
+}
+/* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.children-key li {
+  list-style-type: none;
+}
+
+/* line 225, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.child-a,
+.child-b,
+.child-c,
+.child-d,
+.child-e {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background: url("../images/child.content.indicator.png") 0 0 no-repeat;
+  background-size: 125px 25px;
+}
+/* line 232, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .child-a, .no-backgroundsize
+.child-b, .no-backgroundsize
+.child-c, .no-backgroundsize
+.child-d, .no-backgroundsize
+.child-e {
+  background-image: url("../images/child.content.indicator.lo-res.png");
+}
+
+/* line 237, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.child-a {
+  background-position: 0 0;
+}
+
+/* line 240, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.child-b {
+  background-position: -25px 0;
+}
+
+/* line 243, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.child-c {
+  width: 16px;
+  background-position: -50px 0;
+}
+
+/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.child-d {
+  width: 16px;
+  background-position: -75px 0;
+}
+
+/* line 251, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.child-e {
+  width: 16px;
+  height: 16px;
+  background-position: -100px 0;
+}
+
+/* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+input[type=text],
+input[type=url],
+input[type=tel],
+input[type=number],
+input[type=date],
+input[type=email] {
+  font-size: 14px;
+  font-size: 0.875rem;
+  height: 50px;
+  border: solid 2px #e1e1e1;
+  padding: 0 14px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-appearance: none;
+  color: #696969;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+/* line 274, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+input[type=text]:focus,
+input[type=url]:focus,
+input[type=tel]:focus,
+input[type=number]:focus,
+input[type=date]:focus,
+input[type=email]:focus {
+  outline: none;
+}
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+input[type=text][type=text]:focus.placeholder,
+input[type=url][type=text]:focus.placeholder,
+input[type=tel][type=text]:focus.placeholder,
+input[type=number][type=text]:focus.placeholder,
+input[type=date][type=text]:focus.placeholder,
+input[type=email][type=text]:focus.placeholder {
+  color: transparent;
+}
+/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+input[type=text][type=text]:focus:-moz-placeholder,
+input[type=url][type=text]:focus:-moz-placeholder,
+input[type=tel][type=text]:focus:-moz-placeholder,
+input[type=number][type=text]:focus:-moz-placeholder,
+input[type=date][type=text]:focus:-moz-placeholder,
+input[type=email][type=text]:focus:-moz-placeholder {
+  color: transparent;
+}
+/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+input[type=text][type=text]:focus::-moz-placeholder,
+input[type=url][type=text]:focus::-moz-placeholder,
+input[type=tel][type=text]:focus::-moz-placeholder,
+input[type=number][type=text]:focus::-moz-placeholder,
+input[type=date][type=text]:focus::-moz-placeholder,
+input[type=email][type=text]:focus::-moz-placeholder {
+  color: transparent;
+}
+/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+input[type=text][type=text]:focus:-ms-input-placeholder,
+input[type=url][type=text]:focus:-ms-input-placeholder,
+input[type=tel][type=text]:focus:-ms-input-placeholder,
+input[type=number][type=text]:focus:-ms-input-placeholder,
+input[type=date][type=text]:focus:-ms-input-placeholder,
+input[type=email][type=text]:focus:-ms-input-placeholder {
+  color: transparent;
+}
+/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+input[type=text][type=text]:focus::-webkit-input-placeholder,
+input[type=url][type=text]:focus::-webkit-input-placeholder,
+input[type=tel][type=text]:focus::-webkit-input-placeholder,
+input[type=number][type=text]:focus::-webkit-input-placeholder,
+input[type=date][type=text]:focus::-webkit-input-placeholder,
+input[type=email][type=text]:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+textarea.placeholder {
+  color: #000000;
+}
+/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+textarea:-moz-placeholder {
+  color: #000000;
+}
+/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+textarea::-moz-placeholder {
+  color: #000000;
+}
+/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+textarea:-ms-input-placeholder {
+  color: #000000;
+}
+/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+textarea::-webkit-input-placeholder {
+  color: #000000;
+}
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+textarea:focus.placeholder {
+  color: transparent;
+}
+/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+textarea:focus:-moz-placeholder {
+  color: transparent;
+}
+/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+textarea:focus:-ms-input-placeholder {
+  color: transparent;
+}
+/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+/* line 299, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.placeholder {
+  color: #aaa;
+}
+
+/* line 303, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.support-plan {
+  background: url("../images/icon.toolkit.support.plan.png") no-repeat;
+  background-size: 100px 100px;
+}
+/* line 307, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .support-plan {
+  background-image: url("../images/icon.toolkit.support.plan.100.png");
+}
+/* line 311, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .support-plan .icon {
+  background-image: url("../images/icon.toolkit.support.plan.60.png");
+}
+
+/* line 317, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.childs-world {
+  background: url("../images/icon.toolkit.childs.world.png") no-repeat;
+  background-size: 100px 100px;
+}
+/* line 321, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .childs-world {
+  background-image: url("../images/icon.toolkit.childs.world.100.png");
+}
+
+/* line 327, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.observation-logs {
+  background: url("../images/icon.toolkit.observation.png") no-repeat;
+  background-size: 100px 100px;
+}
+/* line 331, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .observation-logs {
+  background-image: url("../images/icon.toolkit.observation.100.png");
+}
+
+/* line 337, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.rate-schools {
+  background: url("../images/icon.toolkit.ratings.png") no-repeat;
+  background-size: 100px 100px;
+}
+/* line 341, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .rate-schools {
+  background-image: url("../images/icon.toolkit.ratings.100.png");
+}
+
+/* line 347, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.decisions {
+  background: url("../images/icon.toolkit.decisions.png") no-repeat;
+  background-size: 100px 100px;
+}
+/* line 351, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .decisions {
+  background-image: url("../images/icon.toolkit.decisions.100.png");
+}
+
+/* line 357, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.find {
+  background: url("../images/icon.toolkit.find.png") no-repeat;
+  background-size: 100px 100px;
+}
+/* line 361, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.no-backgroundsize .find {
+  background-image: url("../images/icon.toolkit.find.100.png");
+}
+
+/* line 368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown {
+  position: relative;
+  float: left;
+}
+/* line 372, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown a {
+  text-decoration: none;
+}
+
+/* line 377, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-toggle {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #f2af00;
+  background: #f2af00;
+  color: #000;
+  padding: 0 52px 0 20px;
+  font-weight: 700;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: regular;
+}
+/* line 389, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-toggle:after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 21px;
+  height: 10px;
+  width: 10px;
+  background: url("../images/arrow.down.000.10.png") 0 0 no-repeat;
+}
+
+/* line 400, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-toggle:hover {
+  background: #ffbc0d;
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #efefef;
+}
+
+/* line 407, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.open .dropdown-toggle {
+  background: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  color: #696969;
+}
+
+/* line 414, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.open .dropdown-toggle {
+  border-bottom: none;
+}
+
+/* line 418, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-title {
+  display: none;
+}
+
+/* line 423, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.open .dropdown-toggle .current-page {
+  display: none;
+}
+/* line 427, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.open .dropdown-toggle .dropdown-title {
+  display: inline-block;
+}
+
+/* line 432, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-toggle:focus {
+  outline: 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+}
+
+/* line 436, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 1px;
+  width: 100%;
+  z-index: 1000;
+  display: none;
+  float: left;
+  list-style: none;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #f4f2f1;
+}
+/* line 450, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-menu a {
+  padding: 0 20px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  color: #696969;
+  background: #f4f2f1;
+}
+/* line 459, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-menu a:hover, .dropdown-menu a:active {
+  background: #794381;
+  color: #fff;
+}
+/* line 465, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-menu .current-page a {
+  color: #794381;
+}
+/* line 468, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-menu .current-page a:hover {
+  color: #fff;
+}
+
+/* line 473, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+
+/* line 477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+
+/* line 483, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.open > .dropdown-menu {
+  display: block;
+}
+
+/* line 486, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.open > a {
+  outline: 0;
+}
+
+/* line 489, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+/* line 493, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-menu-left {
+  right: auto;
+  left: 0;
+}
+
+/* line 497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.428571429;
+  color: #999;
+}
+
+/* line 504, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 990;
+}
+
+/* line 512, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+/* line 517, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropup .caret,
+.navbar-fixed-bottom .dropdown .caret {
+  content: "";
+  border-top: 0;
+  border-bottom: 4px solid;
+}
+
+/* line 523, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.dropup .dropdown-menu,
+.navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 1px;
+}
+
+/* line 530, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+/* line 535, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 542, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.col.sidebar-spacer {
+  border-right: 1px solid #f4f2f1;
+  display: none;
+  height: 100%;
+  margin-top: -45px;
+}
+@media (min-width: 769px) {
+  /* line 542, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+  .col.sidebar-spacer {
+    display: block;
+  }
+}
+
+/* line 554, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+body.modal-open {
+  overflow-y: scroll;
+  margin: 0;
+}
+
+/* line 559, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* line 565, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.modal .modal-dialog,
+.modal.fade .modal-dialog {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+/* line 576, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.modal.in .modal-dialog {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+/* line 583, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.modal-dialog {
+  margin: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+}
+@media (min-width: 769px) {
+  /* line 583, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+  .modal-dialog {
+    width: 600px;
+  }
+}
+
+/* line 595, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.modal-content {
+  border-radius: 0;
+  border: 0;
+  margin: 15px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 603, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.modal-backdrop {
+  background-color: #f4f2f1;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+/* line 612, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.modal-backdrop.in {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.modal-body {
+  overflow-y: visible;
+  background: #fff;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
+}
+
+/* line 622, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.modal-footer {
+  margin-top: 0;
+}
+
+/* line 626, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.popover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
+  color: #696969;
+}
+
+/* line 631, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.popover-content {
+  padding: 30px 20px;
+}
+@media (min-width: 960px) {
+  /* line 631, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+  .popover-content {
+    padding: 40px;
+  }
+}

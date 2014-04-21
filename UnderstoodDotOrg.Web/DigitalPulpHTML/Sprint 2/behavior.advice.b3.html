@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
-<!--[if gte IE 9]><!--><html class="no-js"><!--<![endif]-->
+<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
+<!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
 <head>
@@ -12,7 +13,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
 
-
+  
   
   <link href="Presentation/includes/css/vendor/bootstrap.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
@@ -20,12 +21,28 @@
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-<link href="Presentation/includes/css/base.css" rel="stylesheet" />
+
+  
+  <!--[if gte IE 9]><!-->
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
 <link href="Presentation/includes/css/grid.css" rel="stylesheet" />
 <link href="Presentation/includes/css/layout.css" rel="stylesheet" />
 <link href="Presentation/includes/css/globals.css" rel="stylesheet" />
 <link href="Presentation/includes/css/modules.css" rel="stylesheet" />
+<link href="Presentation/includes/css/behavior-tool.css" rel="stylesheet" />
 <link href="Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
+  <!--<![endif]-->
+
+  
+  <!--[if lte IE 8]>
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
+<link href="Presentation/includes/css/grid-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/layout-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/globals-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/modules-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/behavior-tool-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/uniform-understood-nonresponsive.css" rel="stylesheet" />
+  <![endif]-->
 
   
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
@@ -57,7 +74,10 @@
     <div class="col col-24">
       
       <div class="logo-u-main">
-        <a href="REPLACE"><img alt="Understood Logo" src="Presentation/includes/img/logo.u.default.png" /></a>
+        <a href="REPLACE">
+          <span class="visuallyhidden">Understood for learning and attention issues</span> 
+          <img alt="Understood – for learning and attention issues" src="Presentation/includes/images/logo.u.default.png" />
+        </a>
       </div><!-- logo-u-main -->
 
       <ul class="language-selection">
@@ -83,22 +103,20 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <fieldset>
-            <legend>Search</legend>
-            <span class="field">
-              <label for="search-term" class="visuallyhidden">Search</label>
-              <input type="text" id="search-term" placeholder="Enter Search Term">
-              <input type="submit" value="Go">
-            </span>
-          </fieldset>
+          <span class="field">
+            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+            <input type="text" id="search-term" placeholder="Enter Search Term">
+            <input type="submit" value="Go">
+          </span>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
 
       <!-- BEGIN PARTIAL: nav-main -->
 <nav class="nav-main">
-  <ul role="menu">
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
+  <ul role="menu" aria-role="navigation" aria-label="main-navigation">
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -108,7 +126,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true" ><span><a href="REPLACE">School &amp;<br> Learning</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">School &amp;<br> Learning</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Partnering with your child's school</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Evaluations</a></span></li>
@@ -118,7 +137,8 @@
         <li role="menuitem"><span><a href="REPLACE">Learning at home</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Friends &amp;<br> Feelings</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Friends &amp;<br> Feelings</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -128,7 +148,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">You &amp;<br> Your Family</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">You &amp;<br> Your Family</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -138,7 +159,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Community &amp;<br> Events</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Community &amp;<br> Events</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -152,7 +174,7 @@
 </nav>
 <!-- END PARTIAL: nav-main -->
 
-      <div id="toolkit" aria-haspopup="true"><span>Your Parent Toolkit</span></div>
+      <div id="toolkit" class="toolkit-element" aria-haspopup="true"><button>Your Parent Toolkit</button></div>
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -174,19 +196,19 @@
         <ul>
           <li>
             <div class="icon support-plan">
-              <a href="REPLACE">My Support Plan</a>
+              <a class="toolkit-element" href="REPLACE">My Support Plan</a>
               <div class="coming-soon">Coming Soon</div>
             </div>
           </li>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Observation Log</a>
+              <a class="toolkit-element" href="REPLACE">Observation Log</a>
             </div>
           </li>
        
           <li>
             <div class="icon childs-world">
-              <a href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Childs World</a>
             </div>
           </li>
         </ul>
@@ -196,18 +218,18 @@
         <ul>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Find Technology</a>
+              <a class="toolkit-element" href="REPLACE">Find Technology</a>
             </div>
           </li>
           <li>
             <div class="icon decisions">
-              <a href="REPLACE">My Decisions</a>
+              <a class="toolkit-element" href="REPLACE">My Decisions</a>
             </div>
           </li>
        
           <li>
             <div class="icon rate-schools">
-              <a href="REPLACE">Rate Schools</a>
+              <a class="toolkit-element" href="REPLACE">Rate Schools</a>
             </div>
           </li>
         </ul>
@@ -216,12 +238,12 @@
         <ul>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
         </ul>
@@ -238,10 +260,15 @@
 <!-- END PARTIAL: header -->
 
       <!-- BEGIN PARTIAL: pagetopic -->
+<!-- FIXME: Documentation needed to explain share on/off functionality in page topic module -->
+
+<!-- Determine variables present and change column width to fit the content available -->
+
+
 <!-- Page Title -->
 <div class="container page-topic behavior-page-topic">
-  <div class="row">
-    <div class="col col-14 offset-1">
+  <div class="row" >
+    <div class="col col-14 offset-1 ">
       
       <h1>Your Expert Advisor</h1>
       
@@ -270,19 +297,21 @@
 <!-- END PARTIAL: share-save -->
     </div>
     
+    
   </div>
 </div><!-- .container -->
 
 <!-- END PARTIAL: pagetopic -->
 <div class="count-mobile">
   <!-- BEGIN PARTIAL: helpful-count -->
+
 <div class="count-helpful">
-  <a href="REPLACE"><span>34</span>Found this helpful</a>
+  <a href="#count-helpful-content"><span>34</span>Found this helpful</a>
 </div>
 <!-- END PARTIAL: helpful-count -->
   <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
-  <a href="REPLACE"><span>19</span>Comments</a>
+  <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
 </div>
@@ -307,15 +336,15 @@
   </header>
   <section class="tip-detail-content">
     <h3 class="first-sub-header">What you can do</h3>
-    <p>In voluptatibus velit fugiat perspiciatis eveniet assumenda. aspernatur quidem saepe quo laboriosam molestiae minus molestiae odio deserunt necessitatibus fugiat eos id. ipsa modi blanditiis sed optio veritatis exercitationem vitae saepe esse qui ex et ut vel</p>
+    <p>Itaque aspernatur ut qui quo asperiores voluptatem magni aspernatur et atque quasi ab est voluptas. cum doloremque vitae et consequatur voluptatem recusandae dolore in non est aut quia nostrum enim. numquam vero qui ea pariatur sit expedita sequi fugit. explicabo officia veritatis optio commodi reiciendis aut quia eos nulla. sunt voluptas et maxime eaque non et in nisi dignissimos quibusdam est vel. mollitia porro dignissimos mollitia ut ex qui dolor repellendus</p>
   </section> <!-- end tip-detail-content -->
   <section class="tip-detail-content">
     <h3>What you can say</h3>
-    <p>Exercitationem voluptatem aliquid sit voluptates. temporibus incidunt voluptatem voluptas ut vel quia quod ut optio et harum. magnam laborum omnis asperiores exercitationem a. praesentium neque numquam quia ratione suscipit earum rerum nostrum non quia nostrum quo laborum. et quia nihil et error eveniet nobis quis eos dolores voluptate molestias. dolores modi deleniti accusantium id molestias et aut dolore optio unde totam</p>
+    <p>Sit consectetur enim quo blanditiis. dicta velit qui voluptatem perspiciatis officia quasi ab inventore perferendis quibusdam necessitatibus consequatur. omnis culpa cumque ratione odio beatae. possimus velit nihil aut iste doloremque sit</p>
   </section> <!-- end tip-detail-content -->
   <section class="tip-detail-content no-border">
     <h3>Why this will help</h3>
-    <p>Dolor aspernatur illo fuga tenetur aut quo blanditiis quas velit non consequatur natus suscipit sit. voluptatem delectus ullam fugit enim dolores sit aperiam reprehenderit quia voluptas molestiae. enim cupiditate debitis fuga maiores sequi quibusdam dolorem iste illum</p>
+    <p>Occaecati enim et nemo autem voluptatem et sapiente quis maiores inventore. nostrum optio similique et doloribus voluptatibus expedita quod debitis dolores omnis neque debitis. qui maxime eos cumque ut omnis recusandae voluptate. laboriosam alias voluptas quos sunt aspernatur sint laudantium laboriosam nihil vitae impedit ut et eum. nihil sapiente tenetur est sint quos magni. culpa hic facere iure nemo sit</p>
   </section> <!-- end tip-detail-content -->
 </div> <!-- end behavior-tip-detail -->
 
@@ -326,32 +355,37 @@
     <div class="col col-1 sidebar-spacer"></div>
 
     <!-- right bar -->
-    <div class="col col-5 offset-1">
+    <div class="col col-5 offset-1 skiplink-sidebar">
       <!-- BEGIN PARTIAL: helpful-count -->
+
 <div class="count-helpful">
-  <a href="REPLACE"><span>34</span>Found this helpful</a>
+  <a href="#count-helpful-content"><span>34</span>Found this helpful</a>
 </div>
 <!-- END PARTIAL: helpful-count -->
       <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
-  <a href="REPLACE"><span>19</span>Comments</a>
+  <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
       <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful sidebar">
-   
+<div class="find-this-helpful sidebar" id="count-helpful-sidebar">
+  
+
+  
+
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="helpful-yes">Yes</button>
+      <button class="button yes">Yes</button>
     </li>
     <li>
-      <button class="helpful-no">No</button>
+      <button class="button no gray">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
-   
+  
 </div>
+
 <!-- END PARTIAL: find-helpful -->
       <!-- BEGIN PARTIAL: keep-reading -->
 <div class="keep-reading">
@@ -367,24 +401,28 @@
   </div><!-- .row -->
 </div><!-- .container -->
 
-<div class="container">
+<div class="container find-helpful">
   <div class="row row-equal-heights">
     <div class="col col-15 offset-1">
       <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful content">
-   
+<div class="find-this-helpful content" id="count-helpful-content">
+  
+
+  
+
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="helpful-yes">Yes</button>
+      <button class="button yes">Yes</button>
     </li>
     <li>
-      <button class="helpful-no">No</button>
+      <button class="button no gray">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
-   
+  
 </div>
+
 <!-- END PARTIAL: find-helpful -->
     </div>
 
@@ -394,12 +432,16 @@
     <!-- right bar -->
     <div class="col col-5 offset-1">
       <!-- BEGIN PARTIAL: second-next-prev-menu -->
-<div class="second-next-prev-menu arrows-gray">
-  <span class="next-prev-text">Next Tip</span>
+<div class="second-next-prev-menu arrows-gray" data-start-slide-number="3">
+  <span class="next-prev-text">More Tips</span>
   <div class="second-next-prev-menu-slider">
-    <p class="next-prev-title">Start by demonstrating, then shift to supervising</p>
-    <p class="next-prev-title">Start by demonstrating, then shift to supervising</p>
-    <p class="next-prev-title">Start by demonstrating, then shift to supervising</p>
+    <p class="next-prev-title"><a href="REPLACE">Start by demonstrating, then shift to supervising</a></p>
+    <p class="next-prev-title"><a href="REPLACE">Slide 2</a></p>
+    <p class="next-prev-title"><a href="REPLACE">Slide 3</a></p>
+    <p class="next-prev-title"><a href="REPLACE">Slide 4</a></p>
+    <p class="next-prev-title"><a href="REPLACE">Slide 5</a></p>
+    <p class="next-prev-title"><a href="REPLACE">Slide 6</a></p>
+    <p class="next-prev-title"><a href="REPLACE">Slide 7</a></p>
   </div>
 </div><!-- end .second-next-prev-menu -->
 <!-- END PARTIAL: second-next-prev-menu -->
@@ -408,16 +450,16 @@
 </div><!-- .container -->
 
 <!-- comments -->
-<div class="container comments">
+<div class="container comments comments-behavior-tool">
   <div class="row">
     <!-- comments col -->
-    <div class="col col-23 offset-1">
+    <div class="col col-23 offset-1 skiplink-comments">
       <!-- BEGIN PARTIAL: comment-list -->
-<section class="comment-list">
+<section class="comment-list" id="count-comments">
 
   <header>
-    <span class="comment-count">Comments (19)</span>
-    <select name="comment-sort-option" class="comment-sort">
+    <h2 class="comment-count">Comments (19)</h2>
+    <select name="comment-sort-option" id="comment-sort-option-dropdown" class="comment-sort">
       <option value="">Sort by</option>
       <option>A-Z</option>
       <option>Z-A</option>
@@ -435,7 +477,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -458,7 +500,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -481,7 +523,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -504,7 +546,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -521,11 +563,21 @@
 
   <div class="comment-footer">
     <div class="comment-more-wrapper">
-      <a class="comment-more" href="REPLACE">More Comments<i class="icon-comment-more"></i></a>
+      <!-- BEGIN PARTIAL: community/show_more -->
+<!--Show More-->
+<div class="container show-more">
+  <div class="row">
+    <div class="col col-24">
+      <a class="show-more-link " href="#" data-path="articles/comments" data-container="comment-list-wrapper" data-item="comment-wrapper" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
+    </div>
+  </div>
+</div><!-- .show-more -->
+<!-- END PARTIAL: community/show_more -->
     </div>
     <div class="comment-form">
-      <textarea name="comment-form-reply" class="comment-form-reply" placeholder="Add your comment..."></textarea>
-      <input type="submit" value="Submit" class="comment-form-submit submit-button" />
+      <label for="comment-form-reply-text" class="visuallyhidden">Add your comment</label>
+      <textarea name="comment-form-reply" class="comment-form-reply" id="comment-form-reply-text" placeholder="Add your comment..."></textarea>
+      <input type="submit" value="Submit" class="comment-form-submit button" />
       <div class="clearfix"></div>
     </div>
   </div>
@@ -539,10 +591,10 @@
 
 <div class="container more-carousel">
   <div class="row">
-    <div class="col col-24 offset-1">
+    <div class="col col-24">
       <h2>Related Articles</h2>
       <!-- BEGIN PARTIAL: more-carousel -->
-<div id="more-carousel-slides-container">
+<div id="featured-slides-container" class="arrows-gray">
   <ul>
     <li>
       <a href="REPLACE">
@@ -596,39 +648,34 @@
 
 
 <!-- BEGIN MODULE: Newsletter Signup -->
-<div class="container">
+<div class="container newsletter-signup">
   <div class="row">
 
-    <!-- FIXME: discard this div and move the .newsletter-signup class to div.container element for consistency -->
-    <div class="newsletter-signup">
+    <div class="col col-12">
 
-      <div class="col col-12">
+      <header>
+        <h2>Personalized Email</h2>
+        <p>Stay connected with us by signing up for our weekly personalized emails.</p>
+      </header>
 
-        <header>
-          <h2>Personalized Email</h2>
-          <p>Stay connected with us by signing up for our weekly personalized emails.</p>
-        </header>
+    </div><!-- .col -->
 
-      </div><!-- .col -->
+    <div class="col col-12">
 
-      <div class="col col-12">
-
-        <div class="form personalized-email-form">
-          <fieldset class="input-wrap">
-            <label for="personalized-email-email" class="visuallyhidden">Enter Email Address</label>
-            <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
-          </fieldset>
-          <div class="submit-button-wrap">
-            <input type="submit" class="submit-button" value="Sign Up">
-          </div>
+      <div class="form personalized-email-form">
+        <fieldset class="input-wrap">
+          <label for="personalized-email-email" class="visuallyhidden" aria-hidden="true">Enter Email Address</label>
+          <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
+        </fieldset>
+        <div class="submit-button-wrap">
+          <input type="submit" class="button" value="Sign Up">
         </div>
+      </div>
 
-      </div><!-- .col -->
-
-    </div><!-- .newsletter-signup -->
+    </div><!-- .col -->
 
   </div><!-- .row -->
-</div><!-- .container -->
+</div><!-- .container .newsletter-signup -->
 
 <!-- END MODULE: Newsletter Signup -->
 
@@ -636,46 +683,45 @@
 <div class="container partners-carousel">
   <div class="row">
     <div class="col col-24">
-
+      <h2>In Partnership with</h2>
       <!-- BEGIN PARTIAL: partners-carousel -->
-<h2>In Partnership with</h2>
 <div id="partners-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
   </ul>
 </div><!-- end partners-carousel-container -->
@@ -720,7 +766,7 @@
 <!-- END PARTIAL: glossary-term -->
 
 <!-- BEGIN MODULE: Footer -->
-<footer class="container" id="footer-page">
+<footer class="container" id="footer-page" aria-role="content info">
   <div class="row footer-social">
 
     <div class="col col-7 push-17">
@@ -744,7 +790,7 @@
   <div class="row">
     <div class="col col-24">
 
-      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/img/logo.u.footer.png" />
+      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/images/logo.u.footer.png" />
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -760,9 +806,28 @@
 <!--[if lte IE 8]>
 <script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
-<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script><script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script><script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script><script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script><script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script><script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script><script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script><script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script><script src="Presentation/includes/js/vendor/bootstrap.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script><script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script><script src="Presentation/includes/js/site.js"></script>
+
+
+  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
+<script src="Presentation/includes/js/vendor/bootstrap.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
+<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
+<script src="Presentation/includes/js/behavior-tool.js"></script>
 <script src="Presentation/includes/js/global.js"></script>
+
 <!-- END PARTIAL: footerjs -->
 
   </form>

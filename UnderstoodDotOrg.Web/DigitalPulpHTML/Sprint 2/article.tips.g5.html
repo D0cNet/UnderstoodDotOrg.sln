@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
-<!--[if gte IE 9]><!--><html class="no-js"><!--<![endif]-->
+<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
+<!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
 <head>
@@ -12,7 +13,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
 
-
+  
   
   <link href="Presentation/includes/css/vendor/bootstrap.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
@@ -20,12 +21,28 @@
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-<link href="Presentation/includes/css/base.css" rel="stylesheet" />
+
+  
+  <!--[if gte IE 9]><!-->
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
 <link href="Presentation/includes/css/grid.css" rel="stylesheet" />
 <link href="Presentation/includes/css/layout.css" rel="stylesheet" />
 <link href="Presentation/includes/css/globals.css" rel="stylesheet" />
 <link href="Presentation/includes/css/modules.css" rel="stylesheet" />
+<link href="Presentation/includes/css/article.css" rel="stylesheet" />
 <link href="Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
+  <!--<![endif]-->
+
+  
+  <!--[if lte IE 8]>
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
+<link href="Presentation/includes/css/grid-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/layout-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/globals-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/modules-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/article-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/uniform-understood-nonresponsive.css" rel="stylesheet" />
+  <![endif]-->
 
   
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
@@ -57,7 +74,10 @@
     <div class="col col-24">
       
       <div class="logo-u-main">
-        <a href="REPLACE"><img alt="Understood Logo" src="Presentation/includes/img/logo.u.default.png" /></a>
+        <a href="REPLACE">
+          <span class="visuallyhidden">Understood for learning and attention issues</span> 
+          <img alt="Understood – for learning and attention issues" src="Presentation/includes/images/logo.u.default.png" />
+        </a>
       </div><!-- logo-u-main -->
 
       <ul class="language-selection">
@@ -83,22 +103,20 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <fieldset>
-            <legend>Search</legend>
-            <span class="field">
-              <label for="search-term" class="visuallyhidden">Search</label>
-              <input type="text" id="search-term" placeholder="Enter Search Term">
-              <input type="submit" value="Go">
-            </span>
-          </fieldset>
+          <span class="field">
+            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+            <input type="text" id="search-term" placeholder="Enter Search Term">
+            <input type="submit" value="Go">
+          </span>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
 
       <!-- BEGIN PARTIAL: nav-main -->
 <nav class="nav-main">
-  <ul role="menu">
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
+  <ul role="menu" aria-role="navigation" aria-label="main-navigation">
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -108,7 +126,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true" ><span><a href="REPLACE">School &amp;<br> Learning</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">School &amp;<br> Learning</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Partnering with your child's school</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Evaluations</a></span></li>
@@ -118,7 +137,8 @@
         <li role="menuitem"><span><a href="REPLACE">Learning at home</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Friends &amp;<br> Feelings</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Friends &amp;<br> Feelings</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -128,7 +148,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">You &amp;<br> Your Family</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">You &amp;<br> Your Family</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -138,7 +159,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Community &amp;<br> Events</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Community &amp;<br> Events</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -152,7 +174,7 @@
 </nav>
 <!-- END PARTIAL: nav-main -->
 
-      <div id="toolkit" aria-haspopup="true"><span>Your Parent Toolkit</span></div>
+      <div id="toolkit" class="toolkit-element" aria-haspopup="true"><button>Your Parent Toolkit</button></div>
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -174,19 +196,19 @@
         <ul>
           <li>
             <div class="icon support-plan">
-              <a href="REPLACE">My Support Plan</a>
+              <a class="toolkit-element" href="REPLACE">My Support Plan</a>
               <div class="coming-soon">Coming Soon</div>
             </div>
           </li>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Observation Log</a>
+              <a class="toolkit-element" href="REPLACE">Observation Log</a>
             </div>
           </li>
        
           <li>
             <div class="icon childs-world">
-              <a href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Childs World</a>
             </div>
           </li>
         </ul>
@@ -196,18 +218,18 @@
         <ul>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Find Technology</a>
+              <a class="toolkit-element" href="REPLACE">Find Technology</a>
             </div>
           </li>
           <li>
             <div class="icon decisions">
-              <a href="REPLACE">My Decisions</a>
+              <a class="toolkit-element" href="REPLACE">My Decisions</a>
             </div>
           </li>
        
           <li>
             <div class="icon rate-schools">
-              <a href="REPLACE">Rate Schools</a>
+              <a class="toolkit-element" href="REPLACE">Rate Schools</a>
             </div>
           </li>
         </ul>
@@ -216,12 +238,12 @@
         <ul>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
         </ul>
@@ -238,10 +260,15 @@
 <!-- END PARTIAL: header -->
 
       <!-- BEGIN PARTIAL: pagetopic -->
+<!-- FIXME: Documentation needed to explain share on/off functionality in page topic module -->
+
+<!-- Determine variables present and change column width to fit the content available -->
+
+
 <!-- Page Title -->
-<div class="container page-topic">
-  <div class="row">
-    <div class="col col-14 offset-1">
+<div class="container page-topic with-share">
+  <div class="row" >
+    <div class="col col-14 offset-1 ">
       
         <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Homework &amp; Study Skills</a>
       
@@ -271,29 +298,31 @@ Your Kid Stick With It</h1>
 <!-- END PARTIAL: share-save -->
     </div>
     
+    
   </div>
 </div><!-- .container -->
 
 <!-- END PARTIAL: pagetopic -->
 <div class="count-mobile">
   <!-- BEGIN PARTIAL: helpful-count -->
+
 <div class="count-helpful">
-  <a href="REPLACE"><span>34</span>Found this helpful</a>
+  <a href="#count-helpful-content"><span>34</span>Found this helpful</a>
 </div>
 <!-- END PARTIAL: helpful-count -->
   <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
-  <a href="REPLACE"><span>19</span>Comments</a>
+  <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
 </div>
 <div class="container article">
   <div class="row row-equal-heights">
     <!-- article -->
-    <div class="col col-15 offset-1">
+    <div class="col col-15 offset-1 skiplink-content" aria-role="main" aria-role="main">
       <!-- BEGIN PARTIAL: article-tips-intro-text -->
 <div class="article-tips-intro-text">
-  <p>Explicabo alias neque modi. vitae rerum odit qui similique repellendus fugiat aspernatur molestias pariatur est. at molestiae sint assumenda quia et nostrum est ut asperiores</p>
+  <p>Veniam non unde ratione ipsa soluta ipsum eos harum. eligendi ratione et voluptatem nihil ut dolor culpa cum sed vel necessitatibus tenetur repellendus. aliquid suscipit perferendis et ipsum sed. quasi voluptatem aliquid ea nisi doloribus excepturi ad dicta ut rerum corporis</p>
 </div>
 <!-- END PARTIAL: article-tips-intro-text -->
       <!-- BEGIN PARTIAL: article-tips -->
@@ -309,30 +338,30 @@ Your Kid Stick With It</h1>
       <div class="tools-wrap">
         <div class="tools clearfix">
           <div class="buttons-container">
-            <span><i class="icon-email"></i></span>
-            <span><i class="icon-plus"></i></span>
-            <span><i class="icon-print"></i></span>
+            <button class="icon-email">email</button>
+            <button class="icon-plus">save this</button>
+            <button class="icon-print">print</button>
           </div>
           <div class="share-dropdown-menu-wrap">
             <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
 <div class="share-dropdown-menu">
-  <span>Share <i class="icon-arrow"></i></span>
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
-    <span>Share <i class="icon-arrow"></i></span>
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
     <ul>
       <li class="clearfix">
-        <a class="icon-facebook" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
       </li>
       <li class="clearfix">
-        <a class="icon-twitter" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
       </li>
       <li class="clearfix">
-        <a class="icon-google" href="REPLACE"><i class="icon-google"></i>Google +</a>
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
       </li>
       <li class="clearfix">
-        <a class="icon-pinterest" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
       </li>
     </ul>
   </div>
@@ -342,7 +371,7 @@ Your Kid Stick With It</h1>
         </div><!-- /.tools-->
       </div><!-- /.col -->
     </div>
-    <p>voluptas id ipsam dolor dolores ipsam consectetur fugiat ut et voluptatem sapiente voluptatem consequatur unde sunt voluptas repellendus pariatur aut ut exercitationem unde et sint optio et ut esse eaque cumque architecto nostrum quaerat excepturi est iste veniam odit et amet qui et culpa illo facere nam quia vitae id porro dolore ipsam sed id at sunt harum temporibus facilis voluptatibus est voluptate eveniet aut et ipsa blanditiis non ea ut itaque omnis quasi aspernatur dolores ut aspernatur dicta expedita enim vel et delectus accusamus</p>
+    <p>voluptatem ea inventore consectetur esse ea beatae nemo recusandae eaque in et tenetur sint nostrum vel ratione ut repellat enim aspernatur totam quidem sed facilis nobis est dolorem dolor exercitationem tempore iste et voluptatem animi molestias temporibus eos velit repellat quae est dolores voluptas repellat praesentium quia accusamus cum est sed exercitationem veniam rerum et voluptatem eum ea in dicta qui incidunt nulla qui vero eos corrupti eum corporis commodi doloremque provident laboriosam asperiores sint odio animi provident cupiditate quo assumenda cumque qui suscipit explicabo</p>
   </div><!-- /.article-tips-item -->
 
   <div class="article-tips-item">
@@ -356,30 +385,30 @@ Your Kid Stick With It</h1>
       <div class="tools-wrap">
         <div class="tools clearfix">
           <div class="buttons-container">
-            <span><i class="icon-email"></i></span>
-            <span><i class="icon-plus"></i></span>
-            <span><i class="icon-print"></i></span>
+            <button class="icon-email">email</button>
+            <button class="icon-plus">save this</button>
+            <button class="icon-print">print</button>
           </div>
           <div class="share-dropdown-menu-wrap">
             <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
 <div class="share-dropdown-menu">
-  <span>Share <i class="icon-arrow"></i></span>
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
-    <span>Share <i class="icon-arrow"></i></span>
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
     <ul>
       <li class="clearfix">
-        <a class="icon-facebook" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
       </li>
       <li class="clearfix">
-        <a class="icon-twitter" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
       </li>
       <li class="clearfix">
-        <a class="icon-google" href="REPLACE"><i class="icon-google"></i>Google +</a>
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
       </li>
       <li class="clearfix">
-        <a class="icon-pinterest" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
       </li>
     </ul>
   </div>
@@ -389,7 +418,7 @@ Your Kid Stick With It</h1>
         </div><!-- /.tools-->
       </div><!-- /.col -->
     </div>
-    <p>expedita incidunt exercitationem vero soluta necessitatibus laudantium rerum aut ad veritatis vero repudiandae repudiandae voluptatem quam temporibus quae ut eum sit adipisci et molestiae repellat non a qui voluptatibus veritatis dolor blanditiis vel ad omnis aliquid repudiandae deleniti maiores blanditiis dolorum id vel consectetur eligendi in necessitatibus iste cumque cum nihil nisi adipisci voluptate officiis sequi ea dolores eos quod quo magnam porro quas voluptas officiis ut voluptas est voluptatem pariatur cum officia saepe soluta autem quod omnis eos officia occaecati maxime illo sunt minus</p>
+    <p>ut soluta qui quis nihil omnis voluptatem nemo omnis molestiae tenetur dolor ad dicta et voluptas rerum esse optio aut sed repudiandae aliquam minus sint fugit sit quas voluptas voluptatibus itaque porro quia incidunt repudiandae sint reiciendis nobis nisi iste culpa dolorem sunt voluptatem harum in non incidunt aut ex voluptates quasi sunt adipisci sed similique hic et aut velit nemo et molestiae perferendis ea nisi necessitatibus nemo ducimus non iure quos dolorem recusandae voluptatibus optio voluptatum maxime dolor neque ab sit nemo dolorum rerum</p>
   </div><!-- /.article-tips-item -->
 
   <div class="article-tips-item">
@@ -397,35 +426,35 @@ Your Kid Stick With It</h1>
     </div>
     <div class="row">
       <div class="title-wrap">
-        <h3>#3: molestiae quia</h3>
+        <h3>#3: natus aut</h3>
       </div>
       <div class="tools-wrap">
         <div class="tools clearfix">
           <div class="buttons-container">
-            <span><i class="icon-email"></i></span>
-            <span><i class="icon-plus"></i></span>
-            <span><i class="icon-print"></i></span>
+            <button class="icon-email">email</button>
+            <button class="icon-plus">save this</button>
+            <button class="icon-print">print</button>
           </div>
           <div class="share-dropdown-menu-wrap">
             <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
 <div class="share-dropdown-menu">
-  <span>Share <i class="icon-arrow"></i></span>
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
-    <span>Share <i class="icon-arrow"></i></span>
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
     <ul>
       <li class="clearfix">
-        <a class="icon-facebook" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
       </li>
       <li class="clearfix">
-        <a class="icon-twitter" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
       </li>
       <li class="clearfix">
-        <a class="icon-google" href="REPLACE"><i class="icon-google"></i>Google +</a>
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
       </li>
       <li class="clearfix">
-        <a class="icon-pinterest" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
       </li>
     </ul>
   </div>
@@ -435,7 +464,7 @@ Your Kid Stick With It</h1>
         </div><!-- /.tools-->
       </div><!-- /.col -->
     </div>
-    <p>iste magnam et est laborum quaerat sit labore dolorem maxime sunt provident rerum odit tenetur recusandae odio reprehenderit illo qui incidunt tempora nihil qui et quos qui quod et quam voluptatem dicta accusamus est ipsam at mollitia ad magni corporis occaecati ipsa nostrum facere qui porro eaque alias fugit maxime aut deleniti labore eos eos voluptatem ullam vel doloremque aliquam a non nobis pariatur quisquam dolor voluptatem voluptatem architecto est est voluptatem suscipit aut saepe et error earum ea voluptates magni ratione labore esse iste</p>
+    <p>et quam eligendi soluta voluptates ratione incidunt nihil veniam repellendus esse ut ut magnam molestias illo exercitationem consequuntur rerum saepe vel voluptas alias ipsum id tenetur provident non laboriosam voluptate corrupti qui nesciunt aut accusamus ipsam et illum totam veniam quibusdam at vel vero ab explicabo neque ut illo dolores minima optio facilis autem est vero earum rerum harum eos reiciendis rerum quidem ut libero qui quia consequatur maiores vero voluptatem ipsam sint suscipit inventore error ut totam molestias corrupti deleniti ut asperiores est recusandae</p>
   </div><!-- /.article-tips-item -->
 
   <div class="article-tips-item">
@@ -444,35 +473,35 @@ Your Kid Stick With It</h1>
     </div>
     <div class="row">
       <div class="title-wrap">
-        <h3>#4: pariatur qui</h3>
+        <h3>#4: aut ut</h3>
       </div>
       <div class="tools-wrap">
         <div class="tools clearfix">
           <div class="buttons-container">
-            <span><i class="icon-email"></i></span>
-            <span><i class="icon-plus"></i></span>
-            <span><i class="icon-print"></i></span>
+            <button class="icon-email">email</button>
+            <button class="icon-plus">save this</button>
+            <button class="icon-print">print</button>
           </div>
           <div class="share-dropdown-menu-wrap">
             <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
 <div class="share-dropdown-menu">
-  <span>Share <i class="icon-arrow"></i></span>
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
-    <span>Share <i class="icon-arrow"></i></span>
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
     <ul>
       <li class="clearfix">
-        <a class="icon-facebook" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
       </li>
       <li class="clearfix">
-        <a class="icon-twitter" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
       </li>
       <li class="clearfix">
-        <a class="icon-google" href="REPLACE"><i class="icon-google"></i>Google +</a>
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
       </li>
       <li class="clearfix">
-        <a class="icon-pinterest" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
       </li>
     </ul>
   </div>
@@ -482,7 +511,7 @@ Your Kid Stick With It</h1>
         </div><!-- /.tools-->
       </div><!-- /.col -->
     </div>
-    <p>corporis dolor aliquam blanditiis quidem repellendus dolor non voluptas ullam ipsam modi eaque dolor laudantium consequatur est velit nisi quisquam aut qui architecto consequatur assumenda nostrum ipsa quia placeat ab a asperiores vel qui molestiae et ut eum et aut sint iste cum ea dolorem ipsa et laborum rem accusamus eum harum maxime aut sint quos dicta distinctio dicta voluptas odio debitis autem voluptates aut aut qui dignissimos animi consequuntur ipsam repellendus ex excepturi et atque totam praesentium atque aspernatur occaecati architecto reiciendis est dolores</p>
+    <p>quam animi id et maiores hic harum occaecati quia vero assumenda corporis inventore ut nihil dicta dolores quos rerum et autem fugiat corporis placeat eligendi sit inventore architecto dolorum sapiente animi animi perferendis enim aut et sunt omnis aut suscipit aspernatur dolorem et sint facere quia est dolor iste tempora voluptas architecto et accusantium labore et quae beatae ipsam modi nihil aut sit vero enim nobis ex nesciunt dolorem quia beatae impedit reprehenderit nisi nisi molestias voluptatibus eveniet blanditiis dolores et at eligendi facere tempore</p>
   </div><!-- /.article-tips-item -->
 
   <div class="article-tips-item">
@@ -490,35 +519,35 @@ Your Kid Stick With It</h1>
     </div>
     <div class="row">
       <div class="title-wrap">
-        <h3>#3: ipsum minima</h3>
+        <h3>#3: accusantium facilis</h3>
       </div>
       <div class="tools-wrap">
         <div class="tools clearfix">
           <div class="buttons-container">
-            <span><i class="icon-email"></i></span>
-            <span><i class="icon-plus"></i></span>
-            <span><i class="icon-print"></i></span>
+            <button class="icon-email">email</button>
+            <button class="icon-plus">save this</button>
+            <button class="icon-print">print</button>
           </div>
           <div class="share-dropdown-menu-wrap">
             <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
 <div class="share-dropdown-menu">
-  <span>Share <i class="icon-arrow"></i></span>
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
-    <span>Share <i class="icon-arrow"></i></span>
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
     <ul>
       <li class="clearfix">
-        <a class="icon-facebook" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
       </li>
       <li class="clearfix">
-        <a class="icon-twitter" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
       </li>
       <li class="clearfix">
-        <a class="icon-google" href="REPLACE"><i class="icon-google"></i>Google +</a>
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
       </li>
       <li class="clearfix">
-        <a class="icon-pinterest" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
       </li>
     </ul>
   </div>
@@ -528,58 +557,67 @@ Your Kid Stick With It</h1>
         </div><!-- /.tools-->
       </div><!-- /.col -->
     </div>
-    <p>minima veritatis et ut fuga doloremque ad et illo architecto itaque laborum quis labore accusamus illum velit omnis minus velit non id vitae labore officiis laborum dolorem quidem voluptas ut ullam quis pariatur omnis sit minima fuga et et laudantium aut est autem aliquid adipisci facere aspernatur est non necessitatibus reiciendis dolor eligendi voluptates quibusdam libero aspernatur optio consequatur corporis nesciunt aut accusantium perspiciatis natus consequatur asperiores et consequatur molestiae dolor aspernatur nesciunt adipisci velit cum aut et necessitatibus et magnam laborum eum aut neque</p>
+    <p>deleniti quo placeat quos dolores et sit ut dolorem exercitationem similique est non voluptatem incidunt at et sed ea ut enim consequatur ipsam quis debitis inventore consequatur amet saepe nulla ullam cupiditate rem sed quod velit quo necessitatibus enim consequatur dicta aut est dolorem et consectetur neque occaecati eos magnam esse animi doloribus rerum doloremque nemo quaerat corrupti sit voluptatem fugit et corrupti et cumque eos voluptas sed incidunt molestiae repudiandae harum dolorem quis sit sapiente aut est qui eius ratione est omnis quod enim</p>
   </div><!-- /.article-tips-item -->
 
 </div><!-- /.article-tips-container -->
 <!-- END PARTIAL: article-tips -->
       <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful content">
-   
+<div class="find-this-helpful content" id="count-helpful-content">
+  
+
+  
+
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="helpful-yes">Yes</button>
+      <button class="button yes">Yes</button>
     </li>
     <li>
-      <button class="helpful-no">No</button>
+      <button class="button no gray">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
-   
+  
 </div>
+
 <!-- END PARTIAL: find-helpful -->
     </div>
 
     <div class="col col-1 sidebar-spacer"></div>
 
     <!-- right bar -->
-    <div class="col col-5 offset-1">
+    <div class="col col-5 offset-1 skiplink-sidebar">
       <!-- BEGIN PARTIAL: helpful-count -->
+
 <div class="count-helpful">
-  <a href="REPLACE"><span>34</span>Found this helpful</a>
+  <a href="#count-helpful-content"><span>34</span>Found this helpful</a>
 </div>
 <!-- END PARTIAL: helpful-count -->
       <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
-  <a href="REPLACE"><span>19</span>Comments</a>
+  <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
       <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful sidebar">
-   
+<div class="find-this-helpful sidebar" id="count-helpful-sidebar">
+  
+
+  
+
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="helpful-yes">Yes</button>
+      <button class="button yes">Yes</button>
     </li>
     <li>
-      <button class="helpful-no">No</button>
+      <button class="button no gray">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
-   
+  
 </div>
+
 <!-- END PARTIAL: find-helpful -->
       <!-- BEGIN PARTIAL: keep-reading -->
 <div class="keep-reading">
@@ -592,7 +630,7 @@ Your Kid Stick With It</h1>
 </div>
 <!-- END PARTIAL: keep-reading -->
       <!-- BEGIN PARTIAL: sidebar-promos -->
-<div class="sidebar-promos">
+<div class="sidebar-promos vertical">
   <div class="promo purple-dark">
     <a href="REPLACE">
       <span>Get advice</span>
@@ -624,13 +662,13 @@ Your Kid Stick With It</h1>
 <div class="container comments">
   <div class="row">
     <!-- comments col -->
-    <div class="col col-23 offset-1">
+    <div class="col col-23 offset-1 skiplink-comments">
       <!-- BEGIN PARTIAL: comment-list -->
-<section class="comment-list">
+<section class="comment-list" id="count-comments">
 
   <header>
-    <span class="comment-count">Comments (19)</span>
-    <select name="comment-sort-option" class="comment-sort">
+    <h2 class="comment-count">Comments (19)</h2>
+    <select name="comment-sort-option" id="comment-sort-option-dropdown" class="comment-sort">
       <option value="">Sort by</option>
       <option>A-Z</option>
       <option>Z-A</option>
@@ -648,7 +686,7 @@ Your Kid Stick With It</h1>
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -671,7 +709,7 @@ Your Kid Stick With It</h1>
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -694,7 +732,7 @@ Your Kid Stick With It</h1>
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -717,7 +755,7 @@ Your Kid Stick With It</h1>
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -734,11 +772,21 @@ Your Kid Stick With It</h1>
 
   <div class="comment-footer">
     <div class="comment-more-wrapper">
-      <a class="comment-more" href="REPLACE">More Comments<i class="icon-comment-more"></i></a>
+      <!-- BEGIN PARTIAL: community/show_more -->
+<!--Show More-->
+<div class="container show-more">
+  <div class="row">
+    <div class="col col-24">
+      <a class="show-more-link " href="#" data-path="articles/comments" data-container="comment-list-wrapper" data-item="comment-wrapper" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
+    </div>
+  </div>
+</div><!-- .show-more -->
+<!-- END PARTIAL: community/show_more -->
     </div>
     <div class="comment-form">
-      <textarea name="comment-form-reply" class="comment-form-reply" placeholder="Add your comment..."></textarea>
-      <input type="submit" value="Submit" class="comment-form-submit submit-button" />
+      <label for="comment-form-reply-text" class="visuallyhidden">Add your comment</label>
+      <textarea name="comment-form-reply" class="comment-form-reply" id="comment-form-reply-text" placeholder="Add your comment..."></textarea>
+      <input type="submit" value="Submit" class="comment-form-submit button" />
       <div class="clearfix"></div>
     </div>
   </div>
@@ -753,11 +801,11 @@ Your Kid Stick With It</h1>
 <!-- BEGIN PARTIAL: tools -->
 <!-- Tools -->
 
-<div class="container mini-tools-wrap" style="background-image: url(Presentation/includes/img/bg-subtopic-minitools.jpg)">
+<div class="container mini-tools-wrap" style="background-image: url(Presentation/includes/images/bg-subtopic-minitools.jpg)">
 
   <div class="row">
 
-    <div class="col col-8">
+    <div class="col col-8 skiplink-content" aria-role="main">
 
       <!-- BEGIN PARTIAL: tool-technology -->
 <section class="mini-tool" id="mini-tool-apps">
@@ -772,7 +820,7 @@ Your Kid Stick With It</h1>
     <fieldset>
 
       <label for="tool-tech-issue" class="visuallyhidden">Select behavior issue</label>
-      <select name="tool-tech-issue" id="tool-tech-issue" required aria-required="true">
+      <select name="tool-tech-issue" id="tool-tech-issue" aria-required="true">
         <option value="">Select behavior issue</option>
           <option>Attention & hyperactivity issues</option>
           <option>Reading issues</option>
@@ -784,7 +832,7 @@ Your Kid Stick With It</h1>
       </select>
 
       <label for="tool-tech-grade" class="visuallyhidden">Select grade</label>
-      <select name="tool-tech-grade" id="tool-tech-grade" required aria-required="true">
+      <select name="tool-tech-grade" id="tool-tech-grade" aria-required="true">
         <option value="">Select grade</option>
         <option>Grade 1</option>
         <option>Grade 2</option>
@@ -793,7 +841,7 @@ Your Kid Stick With It</h1>
       </select>
 
       <label for="tool-tech-alltech" class="visuallyhidden">All Technology</label>
-      <select name="tool-tech-alltech" id="tool-tech-alltech" required aria-required="true">
+      <select name="tool-tech-alltech" id="tool-tech-alltech" aria-required="true">
         <option value="">All technology</option>
         <option>Apps</option>
         <option>Games</option>
@@ -801,7 +849,7 @@ Your Kid Stick With It</h1>
       </select>
 
       <label for="tool-tech-platforms" class="visuallyhidden">All Platforms &amp; Devices</label>
-      <select name="tool-tech-platforms" id="tool-tech-platforms" required aria-required="true">
+      <select name="tool-tech-platforms" id="tool-tech-platforms" aria-required="true">
         <option value="">All platforms &amp; devices</option>
         <option>iPhone</option>
         <option>iPod Touch</option>
@@ -811,7 +859,7 @@ Your Kid Stick With It</h1>
     </fieldset>
 
     <div class="submit-button-wrap">
-      <input class="submit-button" type="submit" value="Submit">
+      <input class="button" type="submit" value="Submit">
     </div>
 
   </div><!-- .form --> 
@@ -819,11 +867,12 @@ Your Kid Stick With It</h1>
   <footer class="powered-by">
     <h5>powered by</h5>
     <div class="logo">
-      <img class="logo-img" alt="Common Sense" src="Presentation/includes/img/logo.partner.commonsense.png" />
+      <img class="logo-img" alt="Common Sense Media" src="Presentation/includes/images/logo.partner.commonsense.png" />
     </div>
   </footer>
 
-</section><!-- .module --> 
+</section><!-- .module -->
+
 <!-- END PARTIAL: tool-technology -->
       
     </div><!-- .col --> 
@@ -843,7 +892,7 @@ Your Kid Stick With It</h1>
     <fieldset>
 
       <label for="tool-advice-issue" class="visuallyhidden">Select behavior issue</label>
-      <select name="tool-advice-issue" id="tool-advice-issue" required aria-required="true">
+      <select name="tool-advice-issue" id="tool-advice-issue" aria-required="true">
         <option value="">Select challenge</option>
         <option>Attention & hyperactivity issues</option>
         <option>Reading issues</option>
@@ -855,7 +904,7 @@ Your Kid Stick With It</h1>
       </select>
 
       <label for="tool-advice-grade" class="visuallyhidden">Select grade</label>
-      <select name="tool-advice-grade" id="tool-advice-grade" required aria-required="true">
+      <select name="tool-advice-grade" id="tool-advice-grade" aria-required="true">
         <option value="">Select grade</option>
         <option>Grade 1</option>
         <option>Grade 2</option>
@@ -866,95 +915,40 @@ Your Kid Stick With It</h1>
     </fieldset>
 
     <div class="submit-button-wrap">
-      <input class="submit-button" type="submit" value="Submit">
+      <input class="button" type="submit" value="Submit">
     </div>
 
   </div><!-- .form --> 
 
 </section><!-- .module -->
+
 <!-- END PARTIAL: tool-experts -->
 
     </div><!-- .col --> 
 
     <div class="col col-8">
 
-      <!-- BEGIN PARTIAL: tool-school-ratings -->
-<section class="mini-tool" id="mini-tool-ratings">
+      <!-- BEGIN PARTIAL: tool-decision-guide -->
+<section class="mini-tool" id="mini-tool-decision-guide">
 
   <header>
-    <h3>School Ratings</h3>
-    <p>Find a new school or rate your child's</p>
+    <h3>Decision Guide</h3>
+    <p>Key questions to help you weigh your options</p>
   </header>
 
+  <ul class="decision-guide">
+    <li>Is he ready?</li>
+    <li>Which is best?</li>
+    <li>Should I...</li>
+  </ul>
 
-  <div class="tabs">
-    <!-- NO WHITE SPACE BETWEEN As to PRESERVE LAYOUT -->
-    <a href="#by-location">By Location</a><a href="#by-name">By Name</a>
-  </div>
-
-  <ul class="tab-content-wrap">
-
-    
-
-    <li class="tab-content" id="by-location">
-
-      <div class="form">
-
-        <fieldset>
-
-          <label for="tool-ratings-zip" class="visuallyhidden"></label>
-          <input type="text" name="tool-ratings-zip" id="tool-ratings-zip" placeholder="Enter zip code or city &amp; state">
-
-        </fieldset>
-
-        <div class="submit-button-wrap">
-          <input class="submit-button" type="submit" value="Submit">
-        </div>
-
-      </div><!-- .form -->
-
-    </li><!-- .by-location -->
-
-
-    <li class="tab-content" id="by-name">
-
-      <div class="form select-container">
-
-        <fieldset>
-
-          <label for="tool-ratings-school" class="visuallyhidden"></label>
-          <input type="text" name="tool-ratings-school" id="tool-ratings-school" placeholder="Enter school name">
-
-          <label for="tool-ratings-state" class="visuallyhidden">Select a state</label>
-          <select name="tool-ratings-state" id="tool-ratings-state" required aria-required="true">
-            <option value="">Select a state</option>
-            <option>Alabama</option>
-            <option>Arizona</option>
-            <option>Arkansas</option>
-          </select>
-
-        </fieldset>
-
-        <div class="submit-button-wrap">
-          <input class="submit-button" type="submit" value="Submit">
-        </div>
-
-      </div><!-- .form -->
-
-    </li><!-- .by-name -->
-
-    
-  </ul><!-- .tab-content-wrap -->
-
-  <footer class="powered-by">
-    <h5>powered by</h5>
-    <div class="logo">
-      <img class="logo-img" alt="Great Schools" src="Presentation/includes/img/logo.partner.greatschools.png" />
+   <div class="submit-button-wrap">
+      <button class="button">Try It</button>
     </div>
-  </footer>
 
 </section><!-- .module -->
-<!-- END PARTIAL: tool-school-ratings -->
+
+<!-- END PARTIAL: tool-decision-guide -->
        
     </div><!-- .col --> 
 
@@ -1016,11 +1010,11 @@ Your Kid Stick With It</h1>
 
       <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden">Enter School Name</label>
+        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
         <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
         <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" required="" aria-required="true">
+        <select name="explore-select" id="explore-select" aria-required="true">
           <option value="">Select a state</option>
           <option>Alabama</option>
           <option>Arizona</option>
@@ -1161,39 +1155,34 @@ Your Kid Stick With It</h1>
 <!-- END MODULE: More to Explore -->
 
 <!-- BEGIN MODULE: Newsletter Signup -->
-<div class="container">
+<div class="container newsletter-signup">
   <div class="row">
 
-    <!-- FIXME: discard this div and move the .newsletter-signup class to div.container element for consistency -->
-    <div class="newsletter-signup">
+    <div class="col col-12">
 
-      <div class="col col-12">
+      <header>
+        <h2>Personalized Email</h2>
+        <p>Stay connected with us by signing up for our weekly personalized emails.</p>
+      </header>
 
-        <header>
-          <h2>Personalized Email</h2>
-          <p>Stay connected with us by signing up for our weekly personalized emails.</p>
-        </header>
+    </div><!-- .col -->
 
-      </div><!-- .col -->
+    <div class="col col-12">
 
-      <div class="col col-12">
-
-        <div class="form personalized-email-form">
-          <fieldset class="input-wrap">
-            <label for="personalized-email-email" class="visuallyhidden">Enter Email Address</label>
-            <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
-          </fieldset>
-          <div class="submit-button-wrap">
-            <input type="submit" class="submit-button" value="Sign Up">
-          </div>
+      <div class="form personalized-email-form">
+        <fieldset class="input-wrap">
+          <label for="personalized-email-email" class="visuallyhidden" aria-hidden="true">Enter Email Address</label>
+          <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
+        </fieldset>
+        <div class="submit-button-wrap">
+          <input type="submit" class="button" value="Sign Up">
         </div>
+      </div>
 
-      </div><!-- .col -->
-
-    </div><!-- .newsletter-signup -->
+    </div><!-- .col -->
 
   </div><!-- .row -->
-</div><!-- .container -->
+</div><!-- .container .newsletter-signup -->
 
 <!-- END MODULE: Newsletter Signup -->
 
@@ -1201,46 +1190,45 @@ Your Kid Stick With It</h1>
 <div class="container partners-carousel">
   <div class="row">
     <div class="col col-24">
-
+      <h2>In Partnership with</h2>
       <!-- BEGIN PARTIAL: partners-carousel -->
-<h2>In Partnership with</h2>
 <div id="partners-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
   </ul>
 </div><!-- end partners-carousel-container -->
@@ -1285,7 +1273,7 @@ Your Kid Stick With It</h1>
 <!-- END PARTIAL: glossary-term -->
 
 <!-- BEGIN MODULE: Footer -->
-<footer class="container" id="footer-page">
+<footer class="container" id="footer-page" aria-role="content info">
   <div class="row footer-social">
 
     <div class="col col-7 push-17">
@@ -1309,7 +1297,7 @@ Your Kid Stick With It</h1>
   <div class="row">
     <div class="col col-24">
 
-      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/img/logo.u.footer.png" />
+      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/images/logo.u.footer.png" />
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -1325,9 +1313,28 @@ Your Kid Stick With It</h1>
 <!--[if lte IE 8]>
 <script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
-<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script><script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script><script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script><script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script><script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script><script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script><script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script><script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script><script src="Presentation/includes/js/vendor/bootstrap.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script><script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script><script src="Presentation/includes/js/site.js"></script>
+
+
+  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
+<script src="Presentation/includes/js/vendor/bootstrap.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
+<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
+<script src="Presentation/includes/js/article.js"></script>
 <script src="Presentation/includes/js/global.js"></script>
+
 <!-- END PARTIAL: footerjs -->
 
   </form>

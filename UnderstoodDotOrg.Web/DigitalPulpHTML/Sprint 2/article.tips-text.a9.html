@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
-<!--[if gte IE 9]><!--><html class="no-js"><!--<![endif]-->
+<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
+<!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
 <head>
@@ -12,7 +13,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
 
-
+  
   
   <link href="Presentation/includes/css/vendor/bootstrap.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
@@ -20,12 +21,28 @@
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-<link href="Presentation/includes/css/base.css" rel="stylesheet" />
+
+  
+  <!--[if gte IE 9]><!-->
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
 <link href="Presentation/includes/css/grid.css" rel="stylesheet" />
 <link href="Presentation/includes/css/layout.css" rel="stylesheet" />
 <link href="Presentation/includes/css/globals.css" rel="stylesheet" />
 <link href="Presentation/includes/css/modules.css" rel="stylesheet" />
+<link href="Presentation/includes/css/article.css" rel="stylesheet" />
 <link href="Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
+  <!--<![endif]-->
+
+  
+  <!--[if lte IE 8]>
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
+<link href="Presentation/includes/css/grid-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/layout-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/globals-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/modules-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/article-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/uniform-understood-nonresponsive.css" rel="stylesheet" />
+  <![endif]-->
 
   
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
@@ -57,7 +74,10 @@
     <div class="col col-24">
       
       <div class="logo-u-main">
-        <a href="REPLACE"><img alt="Understood Logo" src="Presentation/includes/img/logo.u.default.png" /></a>
+        <a href="REPLACE">
+          <span class="visuallyhidden">Understood for learning and attention issues</span> 
+          <img alt="Understood – for learning and attention issues" src="Presentation/includes/images/logo.u.default.png" />
+        </a>
       </div><!-- logo-u-main -->
 
       <ul class="language-selection">
@@ -83,22 +103,20 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <fieldset>
-            <legend>Search</legend>
-            <span class="field">
-              <label for="search-term" class="visuallyhidden">Search</label>
-              <input type="text" id="search-term" placeholder="Enter Search Term">
-              <input type="submit" value="Go">
-            </span>
-          </fieldset>
+          <span class="field">
+            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+            <input type="text" id="search-term" placeholder="Enter Search Term">
+            <input type="submit" value="Go">
+          </span>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
 
       <!-- BEGIN PARTIAL: nav-main -->
 <nav class="nav-main">
-  <ul role="menu">
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
+  <ul role="menu" aria-role="navigation" aria-label="main-navigation">
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -108,7 +126,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true" ><span><a href="REPLACE">School &amp;<br> Learning</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">School &amp;<br> Learning</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Partnering with your child's school</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Evaluations</a></span></li>
@@ -118,7 +137,8 @@
         <li role="menuitem"><span><a href="REPLACE">Learning at home</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Friends &amp;<br> Feelings</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Friends &amp;<br> Feelings</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -128,7 +148,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">You &amp;<br> Your Family</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">You &amp;<br> Your Family</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -138,7 +159,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Community &amp;<br> Events</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Community &amp;<br> Events</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -152,7 +174,7 @@
 </nav>
 <!-- END PARTIAL: nav-main -->
 
-      <div id="toolkit" aria-haspopup="true"><span>Your Parent Toolkit</span></div>
+      <div id="toolkit" class="toolkit-element" aria-haspopup="true"><button>Your Parent Toolkit</button></div>
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -174,19 +196,19 @@
         <ul>
           <li>
             <div class="icon support-plan">
-              <a href="REPLACE">My Support Plan</a>
+              <a class="toolkit-element" href="REPLACE">My Support Plan</a>
               <div class="coming-soon">Coming Soon</div>
             </div>
           </li>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Observation Log</a>
+              <a class="toolkit-element" href="REPLACE">Observation Log</a>
             </div>
           </li>
        
           <li>
             <div class="icon childs-world">
-              <a href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Childs World</a>
             </div>
           </li>
         </ul>
@@ -196,18 +218,18 @@
         <ul>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Find Technology</a>
+              <a class="toolkit-element" href="REPLACE">Find Technology</a>
             </div>
           </li>
           <li>
             <div class="icon decisions">
-              <a href="REPLACE">My Decisions</a>
+              <a class="toolkit-element" href="REPLACE">My Decisions</a>
             </div>
           </li>
        
           <li>
             <div class="icon rate-schools">
-              <a href="REPLACE">Rate Schools</a>
+              <a class="toolkit-element" href="REPLACE">Rate Schools</a>
             </div>
           </li>
         </ul>
@@ -216,12 +238,12 @@
         <ul>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
         </ul>
@@ -238,10 +260,15 @@
 <!-- END PARTIAL: header -->
 
       <!-- BEGIN PARTIAL: pagetopic -->
+<!-- FIXME: Documentation needed to explain share on/off functionality in page topic module -->
+
+<!-- Determine variables present and change column width to fit the content available -->
+
+
 <!-- Page Title -->
-<div class="container page-topic">
-  <div class="row">
-    <div class="col col-14 offset-1">
+<div class="container page-topic with-share">
+  <div class="row" >
+    <div class="col col-14 offset-1 ">
       
         <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Travel Planning</a>
       
@@ -272,18 +299,20 @@
 <!-- END PARTIAL: share-save -->
     </div>
     
+    
   </div>
 </div><!-- .container -->
 
 <!-- END PARTIAL: pagetopic --><div class="count-mobile">
   <!-- BEGIN PARTIAL: helpful-count -->
+
 <div class="count-helpful">
-  <a href="REPLACE"><span>34</span>Found this helpful</a>
+  <a href="#count-helpful-content"><span>34</span>Found this helpful</a>
 </div>
 <!-- END PARTIAL: helpful-count -->
   <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
-  <a href="REPLACE"><span>19</span>Comments</a>
+  <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
 </div>
@@ -292,13 +321,14 @@
     <!-- helpful count -->
     <div class="col col-10 article-intro-count multiple">
       <!-- BEGIN PARTIAL: helpful-count -->
+
 <div class="count-helpful">
-  <a href="REPLACE"><span>34</span>Found this helpful</a>
+  <a href="#count-helpful-content"><span>34</span>Found this helpful</a>
 </div>
 <!-- END PARTIAL: helpful-count -->
       <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
-  <a href="REPLACE"><span>19</span>Comments</a>
+  <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
     </div>
@@ -320,7 +350,7 @@
     <!-- article -->
     <div class="col col-22 offset-1">
       <!-- BEGIN PARTIAL: text-slides -->
-<div class="article-slideshow-container">
+<div class="article-slideshow-container text-tips">
   <div id="article-slideshow" class="rsDefault slide-show-border" data-random="false">
 
     
@@ -331,41 +361,61 @@
       <div class="slide-inner">
         <div class="content">
           <div class="top">
-            <div class="share-container">
-              <span>Share <i class="arrow"></i></span>
-              <div class="share-menu">
-                <span>Share <i class="arrow"></i></span>
-                <ul>
-                  <li><a href="REPLACE" class="facebook"><i class="facebook"></i>Facebook</a></li>
-                  <li><a href="REPLACE" class="twitter"><i class="twitter"></i>Twitter</a></li>
-                  <li><a href="REPLACE" class="google"><i class="google"></i>Google +</a></li>
-                  <li><a href="REPLACE" class="pinterest"><i class="pinterest"></i>Pinterest</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="buttons-container">
-              <span><i class="email"></i></span>
-              <span><i class="plus"></i></span>
-              <span><i class="print"></i></span>
-              <span><i class="bell"></i></span>
-            </div>
+            <!-- BEGIN PARTIAL: share-content-dropdown -->
+<!-- This file shared on multiple pages -->
+
+<div class="share-dropdown-menu">
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
+  <div class="share-menu">
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
+    <ul>
+      <li class="clearfix">
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- END PARTIAL: share-content-dropdown -->
+            <!-- BEGIN PARTIAL: article-action-buttons -->
+<div class="article-actions buttons-container clearfix">
+  
+     <button class="icon-email">email</button>
+  
+     <button class="icon-plus">save this</button>
+  
+     <button class="icon-print">print</button>
+  
+     <button class="icon-bell">remind me</button>
+  
+</div>
+
+<!-- END PARTIAL: article-action-buttons -->
             <div class="clearfix"></div>
           </div>
           <div class="slide-count-text"><span class="light-blue-span">1</span> of 9</div>
-          <h3>Ducimus Sint Est Veritatis Facilis Id Labore</h3>
+          <h3>Ea Sunt Pariatur Veniam Qui Et</h3>
           <p>
           
-            Dolorum ab ullam consectetur aut odit voluptatem labore est ducimus autem a.
+            Consequatur illo alias aliquid sunt ut animi quia inventore qui ut animi quos.
           
-            Necessitatibus autem libero culpa dolores magni.
+            Nostrum pariatur incidunt occaecati autem laborum officiis.
           
-            Eaque in qui quam ea quaerat ut.
+            Beatae possimus tempora dolore deleniti autem vel non et illo eum.
           
-            Dolorum ut esse aut ea.
+            Accusamus est voluptatem ut consectetur sed est tempora sapiente quaerat aut quas earum ab qui.
           
-            Voluptas eum dicta quas adipisci.
+            Assumenda quae dolor optio consectetur illum.
           
-            Eos ab architecto et qui nemo ut autem.
+            Fugiat officia ut consequatur blanditiis assumenda molestiae reiciendis quo ipsa non reprehenderit.
           
           </p>
         </div>
@@ -376,41 +426,61 @@
       <div class="slide-inner">
         <div class="content">
           <div class="top">
-            <div class="share-container">
-              <span>Share <i class="arrow"></i></span>
-              <div class="share-menu">
-                <span>Share <i class="arrow"></i></span>
-                <ul>
-                  <li><a href="REPLACE" class="facebook"><i class="facebook"></i>Facebook</a></li>
-                  <li><a href="REPLACE" class="twitter"><i class="twitter"></i>Twitter</a></li>
-                  <li><a href="REPLACE" class="google"><i class="google"></i>Google +</a></li>
-                  <li><a href="REPLACE" class="pinterest"><i class="pinterest"></i>Pinterest</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="buttons-container">
-              <span><i class="email"></i></span>
-              <span><i class="plus"></i></span>
-              <span><i class="print"></i></span>
-              <span><i class="bell"></i></span>
-            </div>
+            <!-- BEGIN PARTIAL: share-content-dropdown -->
+<!-- This file shared on multiple pages -->
+
+<div class="share-dropdown-menu">
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
+  <div class="share-menu">
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
+    <ul>
+      <li class="clearfix">
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- END PARTIAL: share-content-dropdown -->
+            <!-- BEGIN PARTIAL: article-action-buttons -->
+<div class="article-actions buttons-container clearfix">
+  
+     <button class="icon-email">email</button>
+  
+     <button class="icon-plus">save this</button>
+  
+     <button class="icon-print">print</button>
+  
+     <button class="icon-bell">remind me</button>
+  
+</div>
+
+<!-- END PARTIAL: article-action-buttons -->
             <div class="clearfix"></div>
           </div>
           <div class="slide-count-text"><span class="blue-span">2</span> of 9</div>
-          <h3>Libero Expedita Harum Esse Libero Ex Laudantium Consequatur</h3>
+          <h3>Nisi Rerum Dolorem Saepe Ut Perferendis Facilis</h3>
           <p>
           
-            Quibusdam sunt dolor dolor fuga et ut ut quia est.
+            Amet maiores iste vel nostrum sint.
           
-            Aut officia neque eveniet dolorum dolorum et sint quia eligendi quod qui vel qui est.
+            Id possimus qui quidem maiores consequuntur sit soluta sequi quia ut facilis.
           
-            Minima nostrum et eum excepturi quaerat modi perspiciatis et ut voluptas ipsam ut possimus voluptas.
+            In assumenda quod dignissimos tempore ab ipsa quis et repudiandae quia sunt deserunt.
           
-            Voluptas doloremque saepe enim et.
+            Laudantium qui molestiae voluptatem sint eum et soluta explicabo nesciunt numquam ut impedit.
           
-            Aut nemo minima ipsa suscipit nesciunt.
+            Ut iure ex velit aspernatur reiciendis id nobis est et repudiandae beatae asperiores veritatis.
           
-            Ut rerum eligendi autem non eos atque voluptatem.
+            Iste dolores cum molestiae fugit sit cum a recusandae hic nihil.
           
           </p>
         </div>
@@ -421,41 +491,61 @@
       <div class="slide-inner">
         <div class="content">
           <div class="top">
-            <div class="share-container">
-              <span>Share <i class="arrow"></i></span>
-              <div class="share-menu">
-                <span>Share <i class="arrow"></i></span>
-                <ul>
-                  <li><a href="REPLACE" class="facebook"><i class="facebook"></i>Facebook</a></li>
-                  <li><a href="REPLACE" class="twitter"><i class="twitter"></i>Twitter</a></li>
-                  <li><a href="REPLACE" class="google"><i class="google"></i>Google +</a></li>
-                  <li><a href="REPLACE" class="pinterest"><i class="pinterest"></i>Pinterest</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="buttons-container">
-              <span><i class="email"></i></span>
-              <span><i class="plus"></i></span>
-              <span><i class="print"></i></span>
-              <span><i class="bell"></i></span>
-            </div>
+            <!-- BEGIN PARTIAL: share-content-dropdown -->
+<!-- This file shared on multiple pages -->
+
+<div class="share-dropdown-menu">
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
+  <div class="share-menu">
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
+    <ul>
+      <li class="clearfix">
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- END PARTIAL: share-content-dropdown -->
+            <!-- BEGIN PARTIAL: article-action-buttons -->
+<div class="article-actions buttons-container clearfix">
+  
+     <button class="icon-email">email</button>
+  
+     <button class="icon-plus">save this</button>
+  
+     <button class="icon-print">print</button>
+  
+     <button class="icon-bell">remind me</button>
+  
+</div>
+
+<!-- END PARTIAL: article-action-buttons -->
             <div class="clearfix"></div>
           </div>
           <div class="slide-count-text"><span class="light-purple-span">3</span> of 9</div>
-          <h3>A Aut Et Assumenda Dolores Officiis</h3>
+          <h3>Exercitationem Sed Nesciunt Perspiciatis Dolores</h3>
           <p>
           
-            Velit est et beatae consectetur soluta sit qui iste in molestias.
+            Fugiat et quibusdam ut ipsam eum voluptatem sunt.
           
-            Vel quas eveniet cum quo temporibus nulla.
+            Dolores laborum vel asperiores commodi eaque quia et.
           
-            Ea incidunt veritatis cumque iure accusantium et consequatur ullam dicta non.
+            Quidem et blanditiis autem aut aut nihil perferendis sit.
           
-            Dolor in porro similique aspernatur dolor et.
+            Magnam recusandae id est quia.
           
-            Quam voluptatem dolor laudantium velit.
+            Eaque id sint voluptates modi quas placeat veniam sequi iure accusantium consequuntur nam.
           
-            Dolorum vel excepturi autem officiis.
+            Aliquid sit autem laboriosam dolores quidem.
           
           </p>
         </div>
@@ -466,41 +556,61 @@
       <div class="slide-inner">
         <div class="content">
           <div class="top">
-            <div class="share-container">
-              <span>Share <i class="arrow"></i></span>
-              <div class="share-menu">
-                <span>Share <i class="arrow"></i></span>
-                <ul>
-                  <li><a href="REPLACE" class="facebook"><i class="facebook"></i>Facebook</a></li>
-                  <li><a href="REPLACE" class="twitter"><i class="twitter"></i>Twitter</a></li>
-                  <li><a href="REPLACE" class="google"><i class="google"></i>Google +</a></li>
-                  <li><a href="REPLACE" class="pinterest"><i class="pinterest"></i>Pinterest</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="buttons-container">
-              <span><i class="email"></i></span>
-              <span><i class="plus"></i></span>
-              <span><i class="print"></i></span>
-              <span><i class="bell"></i></span>
-            </div>
+            <!-- BEGIN PARTIAL: share-content-dropdown -->
+<!-- This file shared on multiple pages -->
+
+<div class="share-dropdown-menu">
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
+  <div class="share-menu">
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
+    <ul>
+      <li class="clearfix">
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- END PARTIAL: share-content-dropdown -->
+            <!-- BEGIN PARTIAL: article-action-buttons -->
+<div class="article-actions buttons-container clearfix">
+  
+     <button class="icon-email">email</button>
+  
+     <button class="icon-plus">save this</button>
+  
+     <button class="icon-print">print</button>
+  
+     <button class="icon-bell">remind me</button>
+  
+</div>
+
+<!-- END PARTIAL: article-action-buttons -->
             <div class="clearfix"></div>
           </div>
           <div class="slide-count-text"><span class="purple-span">4</span> of 9</div>
-          <h3>Molestiae Aut Voluptatem Aut Rem Accusamus</h3>
+          <h3>Doloribus Incidunt Illum Consequatur Vel Exercitationem Qui</h3>
           <p>
           
-            Ratione quam soluta rerum dolorem unde possimus aut illo ut non nisi nulla.
+            Ullam nihil rerum excepturi veritatis illo modi.
           
-            Perspiciatis sed vel at quia omnis.
+            Maxime beatae dicta aut consequatur non.
           
-            Qui consequuntur nostrum et possimus placeat.
+            Molestias et ipsam eos nihil nisi eius optio qui autem ratione.
           
-            Temporibus fuga tempora vel aperiam aut numquam et id sunt necessitatibus maiores voluptas ipsum.
+            Vitae placeat sed quasi quo voluptas sed culpa ut tempore asperiores nesciunt quia.
           
-            Iure animi at ad est porro.
+            Similique assumenda aliquam harum.
           
-            Est maiores quidem modi totam velit laudantium.
+            Sint quia nostrum aut commodi.
           
           </p>
         </div>
@@ -511,41 +621,61 @@
       <div class="slide-inner">
         <div class="content">
           <div class="top">
-            <div class="share-container">
-              <span>Share <i class="arrow"></i></span>
-              <div class="share-menu">
-                <span>Share <i class="arrow"></i></span>
-                <ul>
-                  <li><a href="REPLACE" class="facebook"><i class="facebook"></i>Facebook</a></li>
-                  <li><a href="REPLACE" class="twitter"><i class="twitter"></i>Twitter</a></li>
-                  <li><a href="REPLACE" class="google"><i class="google"></i>Google +</a></li>
-                  <li><a href="REPLACE" class="pinterest"><i class="pinterest"></i>Pinterest</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="buttons-container">
-              <span><i class="email"></i></span>
-              <span><i class="plus"></i></span>
-              <span><i class="print"></i></span>
-              <span><i class="bell"></i></span>
-            </div>
+            <!-- BEGIN PARTIAL: share-content-dropdown -->
+<!-- This file shared on multiple pages -->
+
+<div class="share-dropdown-menu">
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
+  <div class="share-menu">
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
+    <ul>
+      <li class="clearfix">
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- END PARTIAL: share-content-dropdown -->
+            <!-- BEGIN PARTIAL: article-action-buttons -->
+<div class="article-actions buttons-container clearfix">
+  
+     <button class="icon-email">email</button>
+  
+     <button class="icon-plus">save this</button>
+  
+     <button class="icon-print">print</button>
+  
+     <button class="icon-bell">remind me</button>
+  
+</div>
+
+<!-- END PARTIAL: article-action-buttons -->
             <div class="clearfix"></div>
           </div>
           <div class="slide-count-text"><span class="light-blue-span">5</span> of 9</div>
-          <h3>Eaque Quis Rerum In Ullam Nobis</h3>
+          <h3>Quia Fugit Et Sit Odio</h3>
           <p>
           
-            Commodi nesciunt reprehenderit qui consequuntur.
+            Sit fugiat culpa non.
           
-            Et et qui necessitatibus fugit non nemo earum molestiae dolorem voluptatem doloribus ad.
+            Sit ratione voluptatem enim recusandae dolor delectus non temporibus vitae hic sit et perspiciatis aperiam.
           
-            At saepe labore corrupti debitis non aspernatur qui magni omnis sit vitae esse.
+            Ad architecto voluptates repudiandae nam.
           
-            Ad facilis nam modi vitae qui qui perferendis corrupti in aperiam et est numquam.
+            Vel omnis et exercitationem nesciunt quia nobis.
           
-            Incidunt et modi quia aut et eum voluptates aspernatur ea ad quos itaque fuga minus.
+            Voluptate voluptas voluptatibus voluptas quia ex perferendis autem unde sint corrupti neque nisi.
           
-            Deserunt consequatur molestiae est dolorum quo quasi eaque est nam repellat optio.
+            Impedit dicta aspernatur possimus esse numquam a.
           
           </p>
         </div>
@@ -556,41 +686,61 @@
       <div class="slide-inner">
         <div class="content">
           <div class="top">
-            <div class="share-container">
-              <span>Share <i class="arrow"></i></span>
-              <div class="share-menu">
-                <span>Share <i class="arrow"></i></span>
-                <ul>
-                  <li><a href="REPLACE" class="facebook"><i class="facebook"></i>Facebook</a></li>
-                  <li><a href="REPLACE" class="twitter"><i class="twitter"></i>Twitter</a></li>
-                  <li><a href="REPLACE" class="google"><i class="google"></i>Google +</a></li>
-                  <li><a href="REPLACE" class="pinterest"><i class="pinterest"></i>Pinterest</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="buttons-container">
-              <span><i class="email"></i></span>
-              <span><i class="plus"></i></span>
-              <span><i class="print"></i></span>
-              <span><i class="bell"></i></span>
-            </div>
+            <!-- BEGIN PARTIAL: share-content-dropdown -->
+<!-- This file shared on multiple pages -->
+
+<div class="share-dropdown-menu">
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
+  <div class="share-menu">
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
+    <ul>
+      <li class="clearfix">
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- END PARTIAL: share-content-dropdown -->
+            <!-- BEGIN PARTIAL: article-action-buttons -->
+<div class="article-actions buttons-container clearfix">
+  
+     <button class="icon-email">email</button>
+  
+     <button class="icon-plus">save this</button>
+  
+     <button class="icon-print">print</button>
+  
+     <button class="icon-bell">remind me</button>
+  
+</div>
+
+<!-- END PARTIAL: article-action-buttons -->
             <div class="clearfix"></div>
           </div>
           <div class="slide-count-text"><span class="blue-span">6</span> of 9</div>
-          <h3>Voluptas Officia Dolore Et Commodi Et</h3>
+          <h3>Ut Harum Consequatur Sit Porro Odit</h3>
           <p>
           
-            A voluptatem inventore maiores id dicta fugit natus.
+            Quis quia facilis facere officia non illum ex dolorem error rerum.
           
-            Consectetur quos maxime ratione labore labore voluptatem rerum.
+            Ea perferendis dolorem occaecati voluptatem.
           
-            Quibusdam ullam suscipit et assumenda magni suscipit.
+            Quasi omnis eius vel voluptatem aut possimus.
           
-            Cupiditate eaque suscipit atque autem.
+            Reprehenderit explicabo est perferendis quisquam.
           
-            Adipisci iste praesentium at voluptas.
+            Cumque architecto consequatur voluptatum.
           
-            Itaque laudantium quo sit at suscipit numquam.
+            Doloribus velit inventore commodi laborum beatae quisquam est modi accusantium in saepe tenetur.
           
           </p>
         </div>
@@ -601,41 +751,61 @@
       <div class="slide-inner">
         <div class="content">
           <div class="top">
-            <div class="share-container">
-              <span>Share <i class="arrow"></i></span>
-              <div class="share-menu">
-                <span>Share <i class="arrow"></i></span>
-                <ul>
-                  <li><a href="REPLACE" class="facebook"><i class="facebook"></i>Facebook</a></li>
-                  <li><a href="REPLACE" class="twitter"><i class="twitter"></i>Twitter</a></li>
-                  <li><a href="REPLACE" class="google"><i class="google"></i>Google +</a></li>
-                  <li><a href="REPLACE" class="pinterest"><i class="pinterest"></i>Pinterest</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="buttons-container">
-              <span><i class="email"></i></span>
-              <span><i class="plus"></i></span>
-              <span><i class="print"></i></span>
-              <span><i class="bell"></i></span>
-            </div>
+            <!-- BEGIN PARTIAL: share-content-dropdown -->
+<!-- This file shared on multiple pages -->
+
+<div class="share-dropdown-menu">
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
+  <div class="share-menu">
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
+    <ul>
+      <li class="clearfix">
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- END PARTIAL: share-content-dropdown -->
+            <!-- BEGIN PARTIAL: article-action-buttons -->
+<div class="article-actions buttons-container clearfix">
+  
+     <button class="icon-email">email</button>
+  
+     <button class="icon-plus">save this</button>
+  
+     <button class="icon-print">print</button>
+  
+     <button class="icon-bell">remind me</button>
+  
+</div>
+
+<!-- END PARTIAL: article-action-buttons -->
             <div class="clearfix"></div>
           </div>
           <div class="slide-count-text"><span class="light-purple-span">7</span> of 9</div>
-          <h3>Vel Tenetur Rerum Et Vero Dolorum Ea</h3>
+          <h3>Corrupti Rerum Commodi Vero Dolores Aut</h3>
           <p>
           
-            Optio veniam aspernatur aut aut nisi quae molestias placeat enim voluptate deserunt.
+            Sunt aut velit ipsam sapiente harum tempore sed facere repellat.
           
-            Qui dolorem temporibus totam sapiente saepe in dicta.
+            Praesentium molestias ullam et laudantium laborum et et.
           
-            Sunt qui sunt iusto voluptatum accusantium.
+            Hic id quia aliquid quos natus pariatur repellendus quia corrupti et et quasi accusantium.
           
-            Id inventore magnam accusamus voluptates esse dicta esse quod vero sunt amet neque placeat.
+            Voluptatibus nisi laudantium architecto nihil ut quo.
           
-            Fugiat dolor minus aut corrupti nisi.
+            Possimus voluptate quo cupiditate consequatur.
           
-            Hic nam magnam eum at autem dolorum.
+            Non sed suscipit quas mollitia adipisci debitis voluptates voluptatem illo suscipit ipsum temporibus.
           
           </p>
         </div>
@@ -646,41 +816,61 @@
       <div class="slide-inner">
         <div class="content">
           <div class="top">
-            <div class="share-container">
-              <span>Share <i class="arrow"></i></span>
-              <div class="share-menu">
-                <span>Share <i class="arrow"></i></span>
-                <ul>
-                  <li><a href="REPLACE" class="facebook"><i class="facebook"></i>Facebook</a></li>
-                  <li><a href="REPLACE" class="twitter"><i class="twitter"></i>Twitter</a></li>
-                  <li><a href="REPLACE" class="google"><i class="google"></i>Google +</a></li>
-                  <li><a href="REPLACE" class="pinterest"><i class="pinterest"></i>Pinterest</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="buttons-container">
-              <span><i class="email"></i></span>
-              <span><i class="plus"></i></span>
-              <span><i class="print"></i></span>
-              <span><i class="bell"></i></span>
-            </div>
+            <!-- BEGIN PARTIAL: share-content-dropdown -->
+<!-- This file shared on multiple pages -->
+
+<div class="share-dropdown-menu">
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
+  <div class="share-menu">
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
+    <ul>
+      <li class="clearfix">
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- END PARTIAL: share-content-dropdown -->
+            <!-- BEGIN PARTIAL: article-action-buttons -->
+<div class="article-actions buttons-container clearfix">
+  
+     <button class="icon-email">email</button>
+  
+     <button class="icon-plus">save this</button>
+  
+     <button class="icon-print">print</button>
+  
+     <button class="icon-bell">remind me</button>
+  
+</div>
+
+<!-- END PARTIAL: article-action-buttons -->
             <div class="clearfix"></div>
           </div>
           <div class="slide-count-text"><span class="purple-span">8</span> of 9</div>
-          <h3>Qui Temporibus Dolore Neque Ut</h3>
+          <h3>Quis Ut Aut Pariatur Molestiae Quisquam Repudiandae</h3>
           <p>
           
-            Sit et ipsam maiores aspernatur debitis asperiores dolores facilis amet unde mollitia et.
+            Id aut eveniet cumque consequuntur expedita sed perferendis cupiditate est molestias tempore soluta explicabo.
           
-            Sit cum nulla facilis non cupiditate corrupti quidem beatae et odio asperiores recusandae quia ex.
+            Quo unde non nihil ut minus.
           
-            Alias eum voluptate adipisci maiores exercitationem tenetur autem minima ducimus et.
+            Ipsum quasi commodi sint labore ex nobis possimus dignissimos ex.
           
-            Autem suscipit aperiam tempora quia.
+            Labore id hic et praesentium ullam non.
           
-            Ducimus eum est quaerat.
+            Dolorum ut repellendus cum vel sed sequi perspiciatis repudiandae itaque enim atque sed ab.
           
-            Et nisi molestias consectetur eaque quam corporis culpa.
+            Perferendis quisquam alias molestiae excepturi est a sit.
           
           </p>
         </div>
@@ -691,75 +881,112 @@
       <div class="slide-inner">
         <div class="content">
           <div class="top">
-            <div class="share-container">
-              <span>Share <i class="arrow"></i></span>
-              <div class="share-menu">
-                <span>Share <i class="arrow"></i></span>
-                <ul>
-                  <li><a href="REPLACE" class="facebook"><i class="facebook"></i>Facebook</a></li>
-                  <li><a href="REPLACE" class="twitter"><i class="twitter"></i>Twitter</a></li>
-                  <li><a href="REPLACE" class="google"><i class="google"></i>Google +</a></li>
-                  <li><a href="REPLACE" class="pinterest"><i class="pinterest"></i>Pinterest</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="buttons-container">
-              <span><i class="email"></i></span>
-              <span><i class="plus"></i></span>
-              <span><i class="print"></i></span>
-              <span><i class="bell"></i></span>
-            </div>
+            <!-- BEGIN PARTIAL: share-content-dropdown -->
+<!-- This file shared on multiple pages -->
+
+<div class="share-dropdown-menu">
+  <button class="social-share-button">Share <i class="icon-arrow"></i></button>
+  <div class="share-menu">
+    <span class="social-share">Share <i class="icon-arrow"></i></span>
+    <ul>
+      <li class="clearfix">
+        <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+      </li>
+      <li class="clearfix">
+        <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- END PARTIAL: share-content-dropdown -->
+            <!-- BEGIN PARTIAL: article-action-buttons -->
+<div class="article-actions buttons-container clearfix">
+  
+     <button class="icon-email">email</button>
+  
+     <button class="icon-plus">save this</button>
+  
+     <button class="icon-print">print</button>
+  
+     <button class="icon-bell">remind me</button>
+  
+</div>
+
+<!-- END PARTIAL: article-action-buttons -->
             <div class="clearfix"></div>
           </div>
           <div class="slide-count-text"><span class="light-blue-span">9</span> of 9</div>
-          <h3>Optio Doloremque Ut Rem Dolorem Deserunt Vel Possimus</h3>
+          <h3>Fuga Qui Suscipit Est Perferendis Illum Amet Rerum</h3>
           <p>
           
-            Omnis dolores sit error earum aperiam assumenda est.
+            Veniam quaerat aut velit et.
           
-            Porro quia quae impedit cumque quo dicta consequuntur ut unde delectus explicabo.
+            Similique et sed quae sequi rerum optio perspiciatis quia.
           
-            Fugit dignissimos maxime laborum nostrum accusamus.
+            Quis quo repellendus dolore et quia incidunt quo in.
           
-            Veniam amet et exercitationem accusantium sint similique consequatur consectetur nemo quod sunt sunt.
+            Minima odio error amet vero velit occaecati optio accusamus consequatur reiciendis odio.
           
-            Tempora aliquid quasi minima laudantium deserunt voluptatibus velit.
+            Ut doloribus commodi nobis reiciendis minima sit.
           
-            Optio perspiciatis ut sed pariatur voluptas nesciunt non.
+            Veniam iure voluptatum et rerum est ut expedita harum aliquid.
           
           </p>
         </div>
       </div>
     </div>
     
-
+    <div class="slide end">
+      <div class="slide-inner">
+        <h3><a href="#" class="restart-slideshow">&lt; See Slideshow from the Beginning</a> or explore more:</h3>
+        <div class="thumbnail" style="background-image: url('http://placehold.it/380x220')"></div>
+        <div class="text">
+          <h4><a href="REPLACE">odit architecto sunt aliquid voluptas quasi aperiam</a></h4>
+          <p>et consequuntur beatae consequatur ducimus sit voluptas sit sint impedit facere ipsam quia et consequatur</p>
+        </div>
+        <div class="clearfix"></div>
+        <div class="thumbnail" style="background-image: url('http://placehold.it/380x220')"></div>
+        <div class="text">
+          <h4><a href="REPLACE">labore ut cumque numquam totam at suscipit</a></h4>
+          <p>impedit rerum dolorum dignissimos sed maiores qui est inventore delectus est qui aliquam repellat eum</p>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
   </div>
 
   <div class="index-buttons-container">
-    <div class="button prev">Prev</div>
+    <button class="button prev gray">Prev</button>
     
-    <div class="button" data-target="1">1</div>
+    <button class="button gray" data-target="1">1</button>
     
-    <div class="button" data-target="2">2</div>
+    <button class="button gray" data-target="2">2</button>
     
-    <div class="button" data-target="3">3</div>
+    <button class="button gray" data-target="3">3</button>
     
-    <div class="button" data-target="4">4</div>
+    <button class="button gray" data-target="4">4</button>
     
-    <div class="button" data-target="5">5</div>
+    <button class="button gray" data-target="5">5</button>
     
-    <div class="button" data-target="6">6</div>
+    <button class="button gray" data-target="6">6</button>
     
-    <div class="button" data-target="7">7</div>
+    <button class="button gray" data-target="7">7</button>
     
-    <div class="button" data-target="8">8</div>
+    <button class="button gray" data-target="8">8</button>
     
-    <div class="button" data-target="9">9</div>
+    <button class="button gray" data-target="9">9</button>
     
-    <div class="button next">Next</div>
-    <div class="button last">Last</div>
+    <button class="button next gray">Next</button>
+    <button class="button last gray">Last</button>
   </div>
 </div>
+
 <!-- END PARTIAL: text-slides -->
     </div>
   </div>
@@ -770,38 +997,46 @@
     <!-- article -->
     <div class="col col-19 offset-2">
       <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful content">
-   
+<div class="find-this-helpful content" id="count-helpful-content">
+  
+
+  
+
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="helpful-yes">Yes</button>
+      <button class="button yes">Yes</button>
     </li>
     <li>
-      <button class="helpful-no">No</button>
+      <button class="button no gray">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
-   
+  
 </div>
+
 <!-- END PARTIAL: find-helpful -->
       <div class="find-this-helpful-small">
         <!-- Module within only appears in under 650px window width-->
         <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful sidebar no-margin">
-   
+<div class="find-this-helpful sidebar no-margin" id="count-helpful-sidebar">
+  
+
+  
+
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="helpful-yes">Yes</button>
+      <button class="button yes">Yes</button>
     </li>
     <li>
-      <button class="helpful-no">No</button>
+      <button class="button no gray">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
-   
+  
 </div>
+
 <!-- END PARTIAL: find-helpful -->
       </div>
       <div class="find-this-helpful-large" style="display:none;">
@@ -811,12 +1046,12 @@
   </div>
 </div><!-- .container -->
 
-<div class="container more-carousel">
+<div class="container more-carousel more-carousel-no-border-bottom">
   <div class="row">
-    <div class="col col-24 offset-1">
+    <div class="col col-24">
       <h2>More Like this:</h2>
       <!-- BEGIN PARTIAL: more-carousel -->
-<div id="more-carousel-slides-container">
+<div id="featured-slides-container" class="arrows-gray">
   <ul>
     <li>
       <a href="REPLACE">
@@ -866,13 +1101,13 @@
 <div class="container comments">
   <div class="row">
     <!-- comments col -->
-    <div class="col col-20 offset-3">
+    <div class="col col-20 offset-3 skiplink-comments">
       <!-- BEGIN PARTIAL: comment-list -->
-<section class="comment-list">
+<section class="comment-list" id="count-comments">
 
   <header>
-    <span class="comment-count">Comments (19)</span>
-    <select name="comment-sort-option" class="comment-sort">
+    <h2 class="comment-count">Comments (19)</h2>
+    <select name="comment-sort-option" id="comment-sort-option-dropdown" class="comment-sort">
       <option value="">Sort by</option>
       <option>A-Z</option>
       <option>Z-A</option>
@@ -890,7 +1125,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -913,7 +1148,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -936,7 +1171,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -959,7 +1194,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -976,11 +1211,21 @@
 
   <div class="comment-footer">
     <div class="comment-more-wrapper">
-      <a class="comment-more" href="REPLACE">More Comments<i class="icon-comment-more"></i></a>
+      <!-- BEGIN PARTIAL: community/show_more -->
+<!--Show More-->
+<div class="container show-more">
+  <div class="row">
+    <div class="col col-24">
+      <a class="show-more-link " href="#" data-path="articles/comments" data-container="comment-list-wrapper" data-item="comment-wrapper" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
+    </div>
+  </div>
+</div><!-- .show-more -->
+<!-- END PARTIAL: community/show_more -->
     </div>
     <div class="comment-form">
-      <textarea name="comment-form-reply" class="comment-form-reply" placeholder="Add your comment..."></textarea>
-      <input type="submit" value="Submit" class="comment-form-submit submit-button" />
+      <label for="comment-form-reply-text" class="visuallyhidden">Add your comment</label>
+      <textarea name="comment-form-reply" class="comment-form-reply" id="comment-form-reply-text" placeholder="Add your comment..."></textarea>
+      <input type="submit" value="Submit" class="comment-form-submit button" />
       <div class="clearfix"></div>
     </div>
   </div>
@@ -1046,11 +1291,11 @@
 
       <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden">Enter School Name</label>
+        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
         <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
         <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" required="" aria-required="true">
+        <select name="explore-select" id="explore-select" aria-required="true">
           <option value="">Select a state</option>
           <option>Alabama</option>
           <option>Arizona</option>
@@ -1191,39 +1436,34 @@
 <!-- END MODULE: More to Explore -->
 
 <!-- BEGIN MODULE: Newsletter Signup -->
-<div class="container">
+<div class="container newsletter-signup">
   <div class="row">
 
-    <!-- FIXME: discard this div and move the .newsletter-signup class to div.container element for consistency -->
-    <div class="newsletter-signup">
+    <div class="col col-12">
 
-      <div class="col col-12">
+      <header>
+        <h2>Personalized Email</h2>
+        <p>Stay connected with us by signing up for our weekly personalized emails.</p>
+      </header>
 
-        <header>
-          <h2>Personalized Email</h2>
-          <p>Stay connected with us by signing up for our weekly personalized emails.</p>
-        </header>
+    </div><!-- .col -->
 
-      </div><!-- .col -->
+    <div class="col col-12">
 
-      <div class="col col-12">
-
-        <div class="form personalized-email-form">
-          <fieldset class="input-wrap">
-            <label for="personalized-email-email" class="visuallyhidden">Enter Email Address</label>
-            <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
-          </fieldset>
-          <div class="submit-button-wrap">
-            <input type="submit" class="submit-button" value="Sign Up">
-          </div>
+      <div class="form personalized-email-form">
+        <fieldset class="input-wrap">
+          <label for="personalized-email-email" class="visuallyhidden" aria-hidden="true">Enter Email Address</label>
+          <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
+        </fieldset>
+        <div class="submit-button-wrap">
+          <input type="submit" class="button" value="Sign Up">
         </div>
+      </div>
 
-      </div><!-- .col -->
-
-    </div><!-- .newsletter-signup -->
+    </div><!-- .col -->
 
   </div><!-- .row -->
-</div><!-- .container -->
+</div><!-- .container .newsletter-signup -->
 
 <!-- END MODULE: Newsletter Signup -->
 
@@ -1231,46 +1471,45 @@
 <div class="container partners-carousel">
   <div class="row">
     <div class="col col-24">
-
+      <h2>In Partnership with</h2>
       <!-- BEGIN PARTIAL: partners-carousel -->
-<h2>In Partnership with</h2>
 <div id="partners-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
   </ul>
 </div><!-- end partners-carousel-container -->
@@ -1315,7 +1554,7 @@
 <!-- END PARTIAL: glossary-term -->
 
 <!-- BEGIN MODULE: Footer -->
-<footer class="container" id="footer-page">
+<footer class="container" id="footer-page" aria-role="content info">
   <div class="row footer-social">
 
     <div class="col col-7 push-17">
@@ -1339,7 +1578,7 @@
   <div class="row">
     <div class="col col-24">
 
-      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/img/logo.u.footer.png" />
+      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/images/logo.u.footer.png" />
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -1355,9 +1594,28 @@
 <!--[if lte IE 8]>
 <script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
-<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script><script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script><script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script><script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script><script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script><script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script><script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script><script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script><script src="Presentation/includes/js/vendor/bootstrap.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script><script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script><script src="Presentation/includes/js/site.js"></script>
+
+
+  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
+<script src="Presentation/includes/js/vendor/bootstrap.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
+<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
+<script src="Presentation/includes/js/article.js"></script>
 <script src="Presentation/includes/js/global.js"></script>
+
 <!-- END PARTIAL: footerjs -->
 
   </form>

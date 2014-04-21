@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
-<!--[if gte IE 9]><!--><html class="no-js"><!--<![endif]-->
+<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
+<!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
 <head>
@@ -12,7 +13,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
 
-
+  
   
   <link href="Presentation/includes/css/vendor/bootstrap.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
@@ -20,13 +21,28 @@
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-<link href="Presentation/includes/css/base.css" rel="stylesheet" />
+
+  
+  <!--[if gte IE 9]><!-->
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
 <link href="Presentation/includes/css/grid.css" rel="stylesheet" />
 <link href="Presentation/includes/css/layout.css" rel="stylesheet" />
 <link href="Presentation/includes/css/globals.css" rel="stylesheet" />
 <link href="Presentation/includes/css/modules.css" rel="stylesheet" />
 <link href="Presentation/includes/css/account.css" rel="stylesheet" />
 <link href="Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
+  <!--<![endif]-->
+
+  
+  <!--[if lte IE 8]>
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
+<link href="Presentation/includes/css/grid-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/layout-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/globals-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/modules-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/account-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/uniform-understood-nonresponsive.css" rel="stylesheet" />
+  <![endif]-->
 
   
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
@@ -58,7 +74,10 @@
     <div class="col col-24">
       
       <div class="logo-u-main">
-        <a href="REPLACE"><img alt="Understood Logo" src="Presentation/includes/img/logo.u.default.png" /></a>
+        <a href="REPLACE">
+          <span class="visuallyhidden">Understood for learning and attention issues</span> 
+          <img alt="Understood – for learning and attention issues" src="Presentation/includes/images/logo.u.default.png" />
+        </a>
       </div><!-- logo-u-main -->
 
       <ul class="language-selection">
@@ -84,22 +103,20 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <fieldset>
-            <legend>Search</legend>
-            <span class="field">
-              <label for="search-term" class="visuallyhidden">Search</label>
-              <input type="text" id="search-term" placeholder="Enter Search Term">
-              <input type="submit" value="Go">
-            </span>
-          </fieldset>
+          <span class="field">
+            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+            <input type="text" id="search-term" placeholder="Enter Search Term">
+            <input type="submit" value="Go">
+          </span>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
 
       <!-- BEGIN PARTIAL: nav-main -->
 <nav class="nav-main">
-  <ul role="menu">
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
+  <ul role="menu" aria-role="navigation" aria-label="main-navigation">
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -109,7 +126,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true" ><span><a href="REPLACE">School &amp;<br> Learning</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">School &amp;<br> Learning</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Partnering with your child's school</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Evaluations</a></span></li>
@@ -119,7 +137,8 @@
         <li role="menuitem"><span><a href="REPLACE">Learning at home</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Friends &amp;<br> Feelings</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Friends &amp;<br> Feelings</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -129,7 +148,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">You &amp;<br> Your Family</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">You &amp;<br> Your Family</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -139,7 +159,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Community &amp;<br> Events</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Community &amp;<br> Events</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -153,7 +174,7 @@
 </nav>
 <!-- END PARTIAL: nav-main -->
 
-      <div id="toolkit" aria-haspopup="true"><span>Your Parent Toolkit</span></div>
+      <div id="toolkit" class="toolkit-element" aria-haspopup="true"><button>Your Parent Toolkit</button></div>
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -175,19 +196,19 @@
         <ul>
           <li>
             <div class="icon support-plan">
-              <a href="REPLACE">My Support Plan</a>
+              <a class="toolkit-element" href="REPLACE">My Support Plan</a>
               <div class="coming-soon">Coming Soon</div>
             </div>
           </li>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Observation Log</a>
+              <a class="toolkit-element" href="REPLACE">Observation Log</a>
             </div>
           </li>
        
           <li>
             <div class="icon childs-world">
-              <a href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Childs World</a>
             </div>
           </li>
         </ul>
@@ -197,18 +218,18 @@
         <ul>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Find Technology</a>
+              <a class="toolkit-element" href="REPLACE">Find Technology</a>
             </div>
           </li>
           <li>
             <div class="icon decisions">
-              <a href="REPLACE">My Decisions</a>
+              <a class="toolkit-element" href="REPLACE">My Decisions</a>
             </div>
           </li>
        
           <li>
             <div class="icon rate-schools">
-              <a href="REPLACE">Rate Schools</a>
+              <a class="toolkit-element" href="REPLACE">Rate Schools</a>
             </div>
           </li>
         </ul>
@@ -217,12 +238,12 @@
         <ul>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
         </ul>
@@ -253,12 +274,12 @@
 <div class="container flush my-account-nav">
   <div class="row account-top-wrapper">
     <div class="col col-23 offset-1">
-      <div class="account-photo">
+      <div class="account-photo skiplink-dashboard">
         <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
       </div>
       <div class="account-info">
-        <div class="account-username">SonyasMom65</div>
-        <div class="account-location">Colorado</div>
+        <h1 class="account-username">SonyasMom65</h1>
+        <p class="account-location">Colorado</p>
       </div>
       <div class="account-links">
         <a class="profile-link button" href="REPLACE">My Profile</a>
@@ -315,13 +336,15 @@
 <div class="row">
     <!-- subheader -->
     <div class="col col-8">
-      <h1>My Groups</h1>
+      <h2>My Groups</h2>
     </div>
     <div class="col col-16">
       <div class="row">
 
         <div class="col push-5 offset-1 my-groups-dropdown-label">
-          <span>My Groups:</span>
+          <label for="subheader-groups">
+            <span>My Groups:</span>
+          <label>
         </div>
         <div class="col push-5">
           <div class="select-container filter-group">
@@ -343,7 +366,7 @@
 
 <div class="container groups-discussion">
   <div class="row">
-    <div class="col col-22 offset-1">
+    <div class="col col-22 offset-1 skiplink-content" aria-role="main">
       <!-- BEGIN PARTIAL: account-mygroups -->
 <section class="account-mygroups">
   <div class="row mygroups-header-wrap">
@@ -358,15 +381,15 @@
   </div>
 
   <div class="row mygroup-grid-header clearfix">
-    <div class="col col-15">Discussions</div>
-    <div class="col col-3 offset-1">Replies</div>
-    <div class="col col-4 offset-1">Latest Post</div>
+    <h3 class="col col-15">Discussions</h3>
+    <h3 class="col col-3 offset-1">Replies</h3>
+    <h3 class="col col-4 offset-1">Latest Post</h3>
   </div>
 
   <div class="row mygroup-list clearfix">
 
     <div class="row mygroup-item clearfix">
-        <p class="col col-15 mygroup-title"><a href="REPLACE">Velit ea debitis quo in officiis dolorum quasi ipsa dolorem velit quia. et odio expedita voluptatum quis maxime sequi officiis dolores eos voluptas dolor. doloribus suscipit quos incidunt odio. repellat laborum sed eos fuga omnis pariatur in beatae. ut et laboriosam veniam saepe in sed</a></p>
+        <p class="col col-15 mygroup-title"><a href="REPLACE">Corrupti autem aut consectetur dolor tempore molestiae ut amet perspiciatis officia molestias non. asperiores temporibus nesciunt est alias dolorem doloribus ipsa. tempora nisi consequatur nam corrupti magni nisi consequatur fugiat natus laboriosam officia impedit suscipit ab. sed non ipsa odit minima quia quasi dolore dicta quod fugiat. ex sint quod consequatur rerum sit. veniam id rem ea omnis dolore et sed facilis quia tempore accusamus et non</a></p>
         <div class="col col-3 offset-1 reply-count-wrapper">
           <span class="reply-count">10</span> <span class="reply-label">Replies</span>
         </div>
@@ -374,58 +397,69 @@
           <p class="timestamp">
             <span class="lastest-post">Latest post </span>10 mins ago
           </p>
-          <p class="posted-by-name"><a href="REPLACE">Daren Choi</a></p>
+          <p class="posted-by-name"><a href="REPLACE">Kerry Locklear</a></p>
         </div>
     </div><!-- .mygroup-item -->
 
      <div class="row mygroup-item clearfix">
-        <p class="col col-15 mygroup-title"><a href="REPLACE">Nam accusamus ipsum fugit recusandae quia est aut quibusdam est eius quaerat ut. earum ipsum quibusdam quis odio quidem. nisi dolorem vel non rerum dolorem et ipsum quaerat. accusantium impedit iusto sed similique qui</a></p>
+        <p class="col col-15 mygroup-title"><a href="REPLACE">Et nihil quos fuga eum nihil aperiam ut similique odit aut ea voluptatem. cumque temporibus temporibus fugit sapiente qui. et sed reiciendis non illum expedita vel ea unde voluptatum dolores minus eos. nihil voluptas occaecati officiis recusandae qui molestiae nihil sed iusto ducimus. sint laudantium porro aliquid fugiat quam quia est maiores saepe dolor neque quos debitis neque</a></p>
         <div class="col col-3 offset-1 reply-count-wrapper">
           <span class="reply-count">10</span> <span class="reply-label">Replies</span>
         </div>
         <div class="col col-4 offset-1">
           <p class="timestamp">10 mins ago</p>
-          <p class="posted-by-name"><a href="REPLACE">Tracy Morse</a></p>
+          <p class="posted-by-name"><a href="REPLACE">Isabelle Kaplan</a></p>
         </div>
     </div><!-- .mygroup-item -->
 
     <div class="row mygroup-item clearfix">
-        <p class="col col-15 mygroup-title"><a href="REPLACE">Rerum est aut et blanditiis commodi deserunt fugit alias. et vel odio occaecati autem iure aperiam nulla dolorem in voluptatibus. ipsam et ex suscipit cupiditate facilis aut pariatur aut officiis magni</a></p>
+        <p class="col col-15 mygroup-title"><a href="REPLACE">Quisquam vel amet sapiente minima temporibus est maxime quia vitae explicabo voluptate. est est totam veniam itaque iste. vel et ratione voluptatem officiis suscipit corrupti eligendi impedit et. est quaerat ratione voluptatum eius tenetur placeat provident et. impedit nostrum eos officiis amet ratione perferendis cum quasi. temporibus est porro non id sit. quibusdam officia ea aspernatur esse ad labore ipsa dolor quas repellat doloremque praesentium</a></p>
         <div class="col col-3 offset-1 reply-count-wrapper">
           <span class="reply-count">10</span> <span class="reply-label">Replies</span>
         </div>
         <div class="col col-4 offset-1">
           <p class="timestamp">10 mins ago</p>
-          <p class="posted-by-name"><a href="REPLACE">Earl Dougherty</a></p>
+          <p class="posted-by-name"><a href="REPLACE">Sienna Carlton</a></p>
         </div>
     </div><!-- .mygroup-item -->
 
     <div class="row mygroup-item clearfix">
-        <p class="col col-15 mygroup-title"><a href="REPLACE">Laboriosam eos illum qui dolor saepe doloremque rem ut dolorem. ducimus ut voluptas tempore soluta qui incidunt voluptas inventore est est possimus rerum temporibus sit. qui atque incidunt omnis. dolorum numquam unde exercitationem assumenda voluptate cupiditate a. molestiae deleniti sed voluptatem id exercitationem consequatur ab doloremque ut</a></p>
+        <p class="col col-15 mygroup-title"><a href="REPLACE">Et occaecati saepe similique. doloribus voluptatem tempore delectus quam est modi distinctio quasi eos voluptas itaque quis sit laudantium. minima unde delectus aut eligendi consequuntur quo qui</a></p>
         <div class="col col-3 offset-1 reply-count-wrapper">
           <span class="reply-count">10</span> <span class="reply-label">Replies</span>
         </div>
         <div class="col col-4 offset-1">
           <p class="timestamp">10 mins ago</p>
-          <p class="posted-by-name"><a href="REPLACE">Abigail Gallagher</a></p>
+          <p class="posted-by-name"><a href="REPLACE">Bryce Barton</a></p>
         </div>
     </div><!-- .mygroup-item -->
 
     <div class="row mygroup-item clearfix">
-        <p class="col col-15 mygroup-title"><a href="REPLACE">Unde deserunt nemo nemo fugiat ab sint. reprehenderit est et labore similique autem aspernatur sed esse ipsum. quia eos enim quas tempora a molestias assumenda sint reprehenderit. temporibus occaecati voluptatibus et sit iure quia accusamus officiis natus aperiam et autem fugit. eligendi minima eos eos rerum deleniti facere harum voluptate tempora magni nostrum modi ratione ea. quia dolor aut soluta et aut sit ut facere unde rerum. consequuntur et delectus tenetur consequatur</a></p>
+        <p class="col col-15 mygroup-title"><a href="REPLACE">Sunt numquam explicabo ab et sunt ea veritatis ea perspiciatis inventore dolorem aut. fuga corporis labore vitae omnis commodi earum eum. quisquam eveniet impedit eum est velit ipsum distinctio eos commodi sint sit vitae. et est earum ex est aspernatur excepturi. odit doloribus fugit at aut sit alias consectetur aut provident cumque mollitia ea officia</a></p>
         <div class="col col-3 offset-1 reply-count-wrapper">
           <span class="reply-count">10</span> <span class="reply-label">Replies</span>
         </div>
         <div class="col col-4 offset-1">
           <p class="timestamp">10 mins ago</p>
-          <p class="posted-by-name"><a href="REPLACE">Dwayne Atkins</a></p>
+          <p class="posted-by-name"><a href="REPLACE">Alvin Steele</a></p>
         </div>
     </div><!-- .mygroup-item -->
 
   </div><!-- .mygroup-list -->
 
   <div class="showmore-footer">
-    <a class="showmore" href="REPLACE">Show More<i class="icon-arrow-down-blue"></i></a>
+    <!-- Show More -->
+    <!-- BEGIN PARTIAL: community/show_more -->
+<!--Show More-->
+<div class="container show-more">
+  <div class="row">
+    <div class="col col-24">
+      <a class="show-more-link show_more" href="#" data-path="my-account/my-groups" data-container="mygroup-list" data-item="mygroup-item" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
+    </div>
+  </div>
+</div><!-- .show-more -->
+<!-- END PARTIAL: community/show_more -->
+    <!-- .show-more -->
   </div>
 
 </section><!-- .account-mygroups container -->
@@ -436,18 +470,21 @@
   <div class="row">
     <div class="col col-15 offset-1">
       <!-- BEGIN PARTIAL: my-groups-discussion-form -->
-<section class="my-groups-discussion-form">
+<section class="my-groups-discussion-form clearfix">
   <header>
     <h2>Start a Discussion in Parents of Kids<br />with Attention Issues</h2>
   </header>
   <label>
+    <span class="visuallyhidden">Title of discussion</span>
     <input type="text" placeholder="Title of discussion" >
   </label>
   <label>
+    <span class="visuallyhidden">More Detail</span>
     <textarea placeholder="More Detail"></textarea>
   </label>
-  <button>Submit</button>
+  <button class="button">Submit</button>
 </section>
+
 <!-- END PARTIAL: my-groups-discussion-form -->
     </div>
   </div><!-- .row -->
@@ -507,11 +544,11 @@
 
       <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden">Enter School Name</label>
+        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
         <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
         <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" required="" aria-required="true">
+        <select name="explore-select" id="explore-select" aria-required="true">
           <option value="">Select a state</option>
           <option>Alabama</option>
           <option>Arizona</option>
@@ -652,39 +689,34 @@
 <!-- END MODULE: More to Explore -->
 
 <!-- BEGIN MODULE: Newsletter Signup -->
-<div class="container">
+<div class="container newsletter-signup">
   <div class="row">
 
-    <!-- FIXME: discard this div and move the .newsletter-signup class to div.container element for consistency -->
-    <div class="newsletter-signup">
+    <div class="col col-12">
 
-      <div class="col col-12">
+      <header>
+        <h2>Personalized Email</h2>
+        <p>Stay connected with us by signing up for our weekly personalized emails.</p>
+      </header>
 
-        <header>
-          <h2>Personalized Email</h2>
-          <p>Stay connected with us by signing up for our weekly personalized emails.</p>
-        </header>
+    </div><!-- .col -->
 
-      </div><!-- .col -->
+    <div class="col col-12">
 
-      <div class="col col-12">
-
-        <div class="form personalized-email-form">
-          <fieldset class="input-wrap">
-            <label for="personalized-email-email" class="visuallyhidden">Enter Email Address</label>
-            <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
-          </fieldset>
-          <div class="submit-button-wrap">
-            <input type="submit" class="submit-button" value="Sign Up">
-          </div>
+      <div class="form personalized-email-form">
+        <fieldset class="input-wrap">
+          <label for="personalized-email-email" class="visuallyhidden" aria-hidden="true">Enter Email Address</label>
+          <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
+        </fieldset>
+        <div class="submit-button-wrap">
+          <input type="submit" class="button" value="Sign Up">
         </div>
+      </div>
 
-      </div><!-- .col -->
-
-    </div><!-- .newsletter-signup -->
+    </div><!-- .col -->
 
   </div><!-- .row -->
-</div><!-- .container -->
+</div><!-- .container .newsletter-signup -->
 
 <!-- END MODULE: Newsletter Signup -->
 
@@ -692,46 +724,45 @@
 <div class="container partners-carousel">
   <div class="row">
     <div class="col col-24">
-
+      <h2>In Partnership with</h2>
       <!-- BEGIN PARTIAL: partners-carousel -->
-<h2>In Partnership with</h2>
 <div id="partners-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
   </ul>
 </div><!-- end partners-carousel-container -->
@@ -776,7 +807,7 @@
 <!-- END PARTIAL: glossary-term -->
 
 <!-- BEGIN MODULE: Footer -->
-<footer class="container" id="footer-page">
+<footer class="container" id="footer-page" aria-role="content info">
   <div class="row footer-social">
 
     <div class="col col-7 push-17">
@@ -800,7 +831,7 @@
   <div class="row">
     <div class="col col-24">
 
-      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/img/logo.u.footer.png" />
+      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/images/logo.u.footer.png" />
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -816,9 +847,28 @@
 <!--[if lte IE 8]>
 <script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
-<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script><script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script><script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script><script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script><script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script><script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script><script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script><script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script><script src="Presentation/includes/js/vendor/bootstrap.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script><script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script><script src="Presentation/includes/js/site.js"></script>
+
+
+  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
+<script src="Presentation/includes/js/vendor/bootstrap.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
+<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
+<script src="Presentation/includes/js/account.js"></script>
 <script src="Presentation/includes/js/global.js"></script>
+
 <!-- END PARTIAL: footerjs -->
 
   </form>

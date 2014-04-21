@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
-<!--[if gte IE 9]><!--><html class="no-js"><!--<![endif]-->
+<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
+<!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
 <head>
@@ -12,7 +13,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
 
-
+  
   
   <link href="Presentation/includes/css/vendor/bootstrap.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
@@ -20,13 +21,28 @@
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-<link href="Presentation/includes/css/base.css" rel="stylesheet" />
+
+  
+  <!--[if gte IE 9]><!-->
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
 <link href="Presentation/includes/css/grid.css" rel="stylesheet" />
 <link href="Presentation/includes/css/layout.css" rel="stylesheet" />
 <link href="Presentation/includes/css/globals.css" rel="stylesheet" />
 <link href="Presentation/includes/css/modules.css" rel="stylesheet" />
 <link href="Presentation/includes/css/account.css" rel="stylesheet" />
 <link href="Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
+  <!--<![endif]-->
+
+  
+  <!--[if lte IE 8]>
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
+<link href="Presentation/includes/css/grid-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/layout-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/globals-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/modules-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/account-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/uniform-understood-nonresponsive.css" rel="stylesheet" />
+  <![endif]-->
 
   
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
@@ -58,7 +74,10 @@
     <div class="col col-24">
       
       <div class="logo-u-main">
-        <a href="REPLACE"><img alt="Understood Logo" src="Presentation/includes/img/logo.u.default.png" /></a>
+        <a href="REPLACE">
+          <span class="visuallyhidden">Understood for learning and attention issues</span> 
+          <img alt="Understood – for learning and attention issues" src="Presentation/includes/images/logo.u.default.png" />
+        </a>
       </div><!-- logo-u-main -->
 
       <ul class="language-selection">
@@ -84,22 +103,20 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <fieldset>
-            <legend>Search</legend>
-            <span class="field">
-              <label for="search-term" class="visuallyhidden">Search</label>
-              <input type="text" id="search-term" placeholder="Enter Search Term">
-              <input type="submit" value="Go">
-            </span>
-          </fieldset>
+          <span class="field">
+            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+            <input type="text" id="search-term" placeholder="Enter Search Term">
+            <input type="submit" value="Go">
+          </span>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
 
       <!-- BEGIN PARTIAL: nav-main -->
 <nav class="nav-main">
-  <ul role="menu">
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
+  <ul role="menu" aria-role="navigation" aria-label="main-navigation">
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -109,7 +126,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true" ><span><a href="REPLACE">School &amp;<br> Learning</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">School &amp;<br> Learning</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Partnering with your child's school</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Evaluations</a></span></li>
@@ -119,7 +137,8 @@
         <li role="menuitem"><span><a href="REPLACE">Learning at home</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Friends &amp;<br> Feelings</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Friends &amp;<br> Feelings</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -129,7 +148,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">You &amp;<br> Your Family</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">You &amp;<br> Your Family</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -139,7 +159,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Community &amp;<br> Events</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Community &amp;<br> Events</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -153,7 +174,7 @@
 </nav>
 <!-- END PARTIAL: nav-main -->
 
-      <div id="toolkit" aria-haspopup="true"><span>Your Parent Toolkit</span></div>
+      <div id="toolkit" class="toolkit-element" aria-haspopup="true"><button>Your Parent Toolkit</button></div>
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -175,19 +196,19 @@
         <ul>
           <li>
             <div class="icon support-plan">
-              <a href="REPLACE">My Support Plan</a>
+              <a class="toolkit-element" href="REPLACE">My Support Plan</a>
               <div class="coming-soon">Coming Soon</div>
             </div>
           </li>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Observation Log</a>
+              <a class="toolkit-element" href="REPLACE">Observation Log</a>
             </div>
           </li>
        
           <li>
             <div class="icon childs-world">
-              <a href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Childs World</a>
             </div>
           </li>
         </ul>
@@ -197,18 +218,18 @@
         <ul>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Find Technology</a>
+              <a class="toolkit-element" href="REPLACE">Find Technology</a>
             </div>
           </li>
           <li>
             <div class="icon decisions">
-              <a href="REPLACE">My Decisions</a>
+              <a class="toolkit-element" href="REPLACE">My Decisions</a>
             </div>
           </li>
        
           <li>
             <div class="icon rate-schools">
-              <a href="REPLACE">Rate Schools</a>
+              <a class="toolkit-element" href="REPLACE">Rate Schools</a>
             </div>
           </li>
         </ul>
@@ -217,12 +238,12 @@
         <ul>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
         </ul>
@@ -238,41 +259,45 @@
 </header><!-- #header-page -->
 <!-- END PARTIAL: header -->
 
-      <div class="container profile-questions flush">
+      <div class="container profile-questions-header-container flush">
   <div class="row">
     <div class="col col-22 offset-1">
       <header class="profile-questions-header">
         <div class="column-left">
           <!-- BEGIN PARTIAL: profile-questions-header-left -->
 <h1>Complete My Profile</h1>
-<p class="subtitle">amet qui earum placeat omnis sed dolorem voluptas ipsa sint alias et earum</p>
+<p class="subtitle">adipisci labore dignissimos nemo fugiat pariatur recusandae eius voluptas fuga quis explicabo ut</p>
 
 <!-- END PARTIAL: profile-questions-header-left -->
         </div>
         <div class="column-right">
           <!-- BEGIN PARTIAL: profile-questions-header-right -->
 <div class="progress-bar-wrapper">
-  <div class="progress-header">Progress</div>
+  <div class="progress-header">Progress
+    
+      <span class="visuallyhidden">Step 3 of 4</span>
+    
+  </div>
   <div class="progress-bar step-3">
-    <span class="step-1 step">1</span>
+    <span class="step-1 step" aria-hidden="true" role="presentation">1</span>
     <span class="step-1-progress progress">
       <span class="progress-spacer">
         <span class="progress-percent"></span>
       </span>
     </span>
-    <span class="step-2 step">2</span>
+    <span class="step-2 step" aria-hidden="true" role="presentation">2</span>
     <span class="step-2-progress progress">
       <span class="progress-spacer">
         <span class="progress-percent"></span>
       </span>
     </span>
-    <span class="step-3 step">3</span>
+    <span class="step-3 step" aria-hidden="true" role="presentation">3</span>
     <span class="step-3-progress progress">
       <span class="progress-spacer">
         <span class="progress-percent"></span>
       </span>
     </span>
-    <span class="done step">Done</span>
+    <span class="done step" aria-hidden="true" role="presentation">Done</span>
   </div>
 </div><!-- .progress-bar-wrapper -->
 
@@ -283,255 +308,266 @@
   </div>
 </div>
 
-
-
-
-<div class="container profile-questions flush">
+<div class="container profile-questions-container flush">
   <div class="row">
     <div class="col col-22 offset-1">
       <!-- BEGIN PARTIAL: profile-questions-step3 -->
-<div class="profile-questions step-3">
+<div class="profile-questions step-3 skiplink-content" aria-role="main">
   <h2>What topics are you interested in?</h2>
 
   <div class="question-wrapper clearfix school-issues-question">
-    <h3 class="question">School Issues</h3>
-    <div class="checkboxes-wrapper">
+    <fieldset>
+      <legend class="question">School Issues</legend>
+      <div class="checkboxes-wrapper">
 
-      <div class="column-left">
-        <div class="checkbox-wrapper">
-          <label>
-            <input type="checkbox" name="q1a1">
-            <span>Choosing or changing schools</span>
-          </label>
-        </div>
-        <div class="checkbox-wrapper">
-          <label>
-            <input type="checkbox" name="q1a2">
-            <span>Mainstream vs. special ed</span>
-          </label>
-        </div>
-        <div class="checkbox-wrapper">
-          <label>
-            <input type="checkbox" name="q1a3">
-            <span>School services (IEPs/504 plans)</span>
-          </label>
-        </div>
-        <div class="checkbox-wrapper">
-          <label>
-            <input type="checkbox" name="q1a4">
-            <span>Homeschooling</span>
-          </label>
-        </div>
-      </div><!-- .checkboxes-left -->
+        <div class="column-left">
+          <div class="checkbox-wrapper">
+            <label for="q1a1">
+              <input type="checkbox" name="q1a1" id="q1a1">
+              <span>Choosing or changing schools</span>
+            </label>
+          </div>
+          <div class="checkbox-wrapper">
+            <label for="q1a2">
+              <input type="checkbox" name="q1a2" id="q1a2">
+              <span>Mainstream vs. special ed</span>
+            </label>
+          </div>
+          <div class="checkbox-wrapper">
+            <label for="q1a3">
+              <input type="checkbox" name="q1a3" id="q1a3">
+              <span>School services (IEPs/504 plans)</span>
+            </label>
+          </div>
+          <div class="checkbox-wrapper">
+            <label for="q1a4">
+              <input type="checkbox" name="q1a4" id="q1a4">
+              <span>Homeschooling</span>
+            </label>
+          </div>
+        </div><!-- .checkboxes-left -->
 
-      <div class="column-right">
-        <div class="checkbox-wrapper">
-          <label>
-            <input type="checkbox" name="q1a8">
-            <span>Working with teachers</span>
-          </label>
-        </div>
-        <div class="checkbox-wrapper">
-          <label>
-            <input type="checkbox" name="q1a9">
-            <span>RTI/MTSS</span>
-          </label>
-        </div>
-        <div class="checkbox-wrapper">
-          <label>
-            <input type="checkbox" name="q1a10">
-            <span>Bullying</span>
-          </label>
-        </div>
-        <div class="checkbox-wrapper">
-          <label>
-            <input type="checkbox" name="q1a11">
-            <span>Homework & study skills</span>
-          </label>
-        </div>
-      </div><!-- .checkboxes-right -->
-    </div><!-- .checkboxes-wrapper -->
+        <div class="column-right">
+          <div class="checkbox-wrapper">
+            <label for="q1a8">
+              <input type="checkbox" name="q1a8" id="q1a8">
+              <span>Working with teachers</span>
+            </label>
+          </div>
+          <div class="checkbox-wrapper">
+            <label for="q1a9">
+              <input type="checkbox" name="q1a9" id="q1a9">
+              <span>RTI/MTSS</span>
+            </label>
+          </div>
+          <div class="checkbox-wrapper">
+            <label for="q1a10">
+              <input type="checkbox" name="q1a10" id="q1a10">
+              <span>Bullying</span>
+            </label>
+          </div>
+          <div class="checkbox-wrapper">
+            <label for="q1a11">
+              <input type="checkbox" name="q1a11" id="q1a11">
+              <span>Homework & study skills</span>
+            </label>
+          </div>
+        </div><!-- .checkboxes-right -->
+      </div><!-- .checkboxes-wrapper -->
+    </fieldset>
   </div><!-- .question-wrapper -->
 
   <div class="column-wrapper clearfix">
     <div class="column-left">
       <div class="question-wrapper help-question">
-        <h3 class="question">Ways to Help Your Child</h3>
-        <div class="checkboxes-wrapper">
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q2a1">
-              <span>Evaluations</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q2a2">
-              <span>Therapies & medications</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q2a3">
-              <span>Tutors & academic skill programs</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q2a4">
-              <span>Technologies & apps</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q2a5">
-              <span>Advocating for your child's rights</span>
-            </label>
-          </div>
-        </div><!-- .checkboxes-wrapper -->
-      </div><!-- .question-wrapper -->
+        <fieldset>
+          <legend class="question">Ways to Help Your Child</legend>
+          <div class="checkboxes-wrapper">
+            <div class="checkbox-wrapper">
+              <label for="q2a1">
+                <input type="checkbox" name="q2a1" id="q2a1">
+                <span>Evaluations</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q2a2">
+                <input type="checkbox" name="q2a2" id="q2a2">
+                <span>Therapies & medications</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q2a3">
+                <input type="checkbox" name="q2a3" id="q2a3">
+                <span>Tutors & academic skill programs</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q2a4">
+                <input type="checkbox" name="q2a4" id="q2a4">
+                <span>Technologies & apps</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q2a5">
+                <input type="checkbox" name="q2a5" id="q2a5">
+                <span>Advocating for your child's rights</span>
+              </label>
+            </div>
+          </div><!-- .checkboxes-wrapper -->
+        </div><!-- .question-wrapper -->
+      </fieldset>
     </div><!-- .column-right -->
 
     <div class="column-right">
       <div class="question-wrapper home-life-question">
-        <h3 class="question">Home Life</h3>
-        <div class="checkboxes-wrapper">
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q3a1">
-              <span>Travel, entertainment & activities</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q3a2">
-              <span>Siblings</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q3a3">
-              <span>Communicating with family & friends</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q3a4">
-              <span>Finding support</span>
-            </label>
-          </div>
-        </div><!-- .checkboxes-wrapper -->
-      </div><!-- .question-wrapper -->
+        <fieldset>
+          <legend class="question">Home Life</legend>
+          <div class="checkboxes-wrapper">
+            <div class="checkbox-wrapper">
+              <label for="q3a1">
+                <input type="checkbox" name="q3a1" id="q3a1">
+                <span>Travel, entertainment & activities</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q3a2">
+                <input type="checkbox" name="q3a2" id="q3a2">
+                <span>Siblings</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q3a3">
+                <input type="checkbox" name="q3a3" id="q3a3">
+                <span>Communicating with family & friends</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q3a4">
+                <input type="checkbox" name="q3a4" id="q3a4">
+                <span>Finding support</span>
+              </label>
+            </div>
+          </div><!-- .checkboxes-wrapper -->
+        </div><!-- .question-wrapper -->
+      </fieldset>
     </div><!-- .column-right -->
   </div><!-- .column-wrapper -->
 
   <div class="column-wrapper clearfix">
     <div class="column-left">
       <div class="question-wrapper growing-up-question">
-        <h3 class="question">Growing Up</h3>
-        <div class="checkboxes-wrapper">
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q4a1">
-              <span>Teenage concerns (driving, dating, etc.)</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q4a2">
-              <span>College & vocational school</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q4a3">
-              <span>Work & jobs</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q4a4">
-              <span>Assisted living</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q4a5">
-              <span>Self-advocacy skills</span>
-            </label>
-          </div>
-        </div><!-- .checkboxes-wrapper -->
-      </div><!-- .question-wrapper -->
+        <fieldset>
+          <legend class="question">Growing Up</legend>
+          <div class="checkboxes-wrapper">
+            <div class="checkbox-wrapper">
+              <label for="q4a1">
+                <input type="checkbox" name="q4a1" id="q4a1">
+                <span>Teenage concerns (driving, dating, etc.)</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q4a2">
+                <input type="checkbox" name="q4a2" id="q4a2">
+                <span>College & vocational school</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q4a3">
+                <input type="checkbox" name="q4a3" id="q4a3">
+                <span>Work & jobs</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q4a4">
+                <input type="checkbox" name="q4a4" id="q4a4">
+                <span>Assisted living</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q4a5">
+                <input type="checkbox" name="q4a5" id="q4a5">
+                <span>Self-advocacy skills</span>
+              </label>
+            </div>
+          </div><!-- .checkboxes-wrapper -->
+        </div><!-- .question-wrapper -->
+      </fieldset>
     </div><!-- .column-right -->
 
     <div class="column-right">
       <div class="question-wrapper social-emotional-question">
-        <h3 class="question">Social/Emotional Issues</h3>
-        <div class="checkboxes-wrapper">
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q5a1">
-              <span>Feelings & self-esteem</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q5a2">
-              <span>Social challenges & friendship</span>
-            </label>
-          </div>
-          <div class="checkbox-wrapper">
-            <label>
-              <input type="checkbox" name="q5a3">
-              <span>Behavior issues</span>
-            </label>
-          </div>
-        </div><!-- .checkboxes-wrapper -->
-      </div><!-- .question-wrapper -->
+        <fieldset>
+          <legend class="question">Social/Emotional Issues</legend>
+          <div class="checkboxes-wrapper">
+            <div class="checkbox-wrapper">
+              <label for="q5a1">
+                <input type="checkbox" name="q5a1" id="q5a1">
+                <span>Feelings & self-esteem</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q5a2">
+                <input type="checkbox" name="q5a2" id="q5a2">
+                <span>Social challenges & friendship</span>
+              </label>
+            </div>
+            <div class="checkbox-wrapper">
+              <label for="q5a3">
+                <input type="checkbox" name="q5a3" id="q5a3">
+                <span>Behavior issues</span>
+              </label>
+            </div>
+          </div><!-- .checkboxes-wrapper -->
+        </div><!-- .question-wrapper -->
+      </fieldset>
     </div><!-- .column-right -->
   </div><!-- .column-wrapper -->
 
   <div class="question-wrapper journey-question">
-    <h3 class="question">Where are you in the journey?</h3>
-    <div class="radios-wrapper">
-      <div class="radio-wrapper">
-        <label>
-          <input type="radio" name="q6" value="a1">
-          <span>I'm still trying to figure out what is going on with my child.</span>
-        </label>
-      </div>
-      <div class="radio-wrapper">
-        <label>
-          <input type="radio" name="q6" value="a2">
-          <span>We've been working through my child's issues this past year.</span>
-        </label>
-      </div>
-      <div class="radio-wrapper">
-        <label>
-          <input type="radio" name="q6" value="a3">
-          <span>We've been working through my child's issues for many years now.</span>
-        </label>
-      </div>
-    </div><!-- .radios-wrapper -->
+    <fieldset>
+      <legend class="question">Where are you in the journey?</legend>
+      <div class="radios-wrapper">
+        <div class="radio-wrapper">
+          <label for="q6a1">
+            <input type="radio" name="q6" value="a1" id="q6a1">
+            <span>I'm still trying to figure out what is going on with my child.</span>
+          </label>
+        </div>
+        <div class="radio-wrapper">
+          <label for="q6a2">
+            <input type="radio" name="q6" value="a2" id="q6a2">
+            <span>We've been working through my child's issues this past year.</span>
+          </label>
+        </div>
+        <div class="radio-wrapper">
+          <label for="q6a3">
+            <input type="radio" name="q6" value="a3" id="q6a3">
+            <span>We've been working through my child's issues for many years now.</span>
+          </label>
+        </div>
+      </div><!-- .radios-wrapper -->
+    </fieldset>
   </div><!-- .question-wrapper -->
 
-  <div class="question-wrapper role-question">
-    <p class="question with-margin">What is your role?</p>
-    <div class="radio-toggle-wrapper">
-      <label class="button">Mom<input name="q7" value="boy" type="radio"></label>
-      <label class="button">Dad<input name="q7" value="girl" type="radio"></label>
-    </div>
-    <label class="inline">
-      <select name="q7b">
-        <option value="">Other (select one)</option>
-        <option value="grandparent">Grandparent</option>
-        <option value="aunt_uncle">Aunt / Uncle</option>
-        <option value="teacher">Teacher</option>
-        <option value="medical">Medical Professional</option>
-        <option value="caregiver">Caregiver</option>
-        <option value="other">Other</option>
-      </select>
-    </label>
+  <div class="question-wrapper role-question clearfix">
+    <fieldset>
+      <legend class="question with-margin">What is your role?</legend>
+      <div class="radio-toggle-wrapper">
+        <button class="button gray">Mom<input name="q7" value="boy" type="radio"></button>
+        <button class="button gray">Dad<input name="q7" value="girl" type="radio"></button>
+      </div>
+      <label class="inline">
+        <select name="q7b">
+          <option value="">Other (select one)</option>
+          <option value="grandparent">Grandparent</option>
+          <option value="aunt_uncle">Aunt / Uncle</option>
+          <option value="teacher">Teacher</option>
+          <option value="medical">Medical Professional</option>
+          <option value="caregiver">Caregiver</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+    </fieldset>
   </div><!-- .question-wrapper -->
 
   <div class="question-wrapper connect-question">
@@ -541,14 +577,16 @@
     </p>
     <div class="textfields-wrapper">
       <div class="textfield-wrapper">
-        <input type="textfield" name="connect-1" placeholder="Enter a Screen Name">
-        <span class="popover-trigger-container"><a class="popover-link" href="REPLACE">Why do we ask?</a></span>
-        <div class="popover-container"><p><span class="title">lorem ipsum soged</span> Voluptas autem quia cum repellendus tempore quasi culpa reprehenderit consequatur aperiam impedit aut quaerat. quibusdam non alias sunt. dolores quas vitae voluptates optio commodi. eligendi id nulla fugiat nemo error sit consequuntur sed cum accusamus nobis velit incidunt. ducimus error delectus in voluptatem est et consequuntur officia. voluptas nihil sapiente explicabo sint</p></div>
+        <label for="screen-name-text" class="visuallyhidden" aria-hidden="true">Enter a Screen Name</label>
+        <input type="textfield" name="connect-1" placeholder="Enter a Screen Name" id="screen-name-text">
+        <span class="popover-trigger-container"><button class="popover-link">Why do we ask?</button></span>
+        <div class="popover-container"><p><span class="title">lorem ipsum soged</span> Deserunt libero nesciunt qui ab consequatur. ad ipsam doloribus impedit nesciunt amet id accusamus eaque est id ipsa. voluptatibus in sit et quo consectetur ea magnam vitae quia ea porro earum quo quia. sit ut modi et quibusdam libero. quia dolores perspiciatis aliquam quia odit. voluptate sed in cumque neque quos</p></div>
       </div>
       <div class="textfield-wrapper">
-        <input type="textfield" name="connect-2" placeholder="Zip Code">
-        <span class="popover-trigger-container"><a class="popover-link" href="REPLACE">Why do we ask?</a></span>
-        <div class="popover-container"><p><span class="title">lorem ipsum soged</span> Sint voluptate qui nobis ut. doloribus eos sint quisquam aut dignissimos ipsum quaerat sunt neque. quisquam necessitatibus voluptatem accusantium commodi suscipit ex sunt autem eaque. atque et commodi deleniti nostrum qui in</p></div>
+        <label for="zip-code-text" class="visuallyhidden" aria-hidden="true">Zip Code</label>
+        <input type="textfield" name="connect-2" placeholder="Zip Code" id="zip-code-text">
+        <span class="popover-trigger-container"><button class="popover-link">Why do we ask?</button></span>
+        <div class="popover-container"><p><span class="title">lorem ipsum soged</span> Sequi voluptates esse odio consequatur qui omnis omnis nulla fuga. et perspiciatis nihil libero autem enim error vel necessitatibus eos nihil et. rerum error vel et cupiditate rerum aut quia sed modi deserunt voluptatem quia nihil labore. est optio deserunt rerum asperiores. animi voluptatem et iure explicabo sint quia</p></div>
       </div>
     </div>
     <div class="no-uniform-wrapper">
@@ -572,7 +610,6 @@
     </div>
   </div>
 </div>
-
 
 
       <!-- BEGIN PARTIAL: footer -->
@@ -628,11 +665,11 @@
 
       <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden">Enter School Name</label>
+        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
         <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
         <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" required="" aria-required="true">
+        <select name="explore-select" id="explore-select" aria-required="true">
           <option value="">Select a state</option>
           <option>Alabama</option>
           <option>Arizona</option>
@@ -773,39 +810,34 @@
 <!-- END MODULE: More to Explore -->
 
 <!-- BEGIN MODULE: Newsletter Signup -->
-<div class="container">
+<div class="container newsletter-signup">
   <div class="row">
 
-    <!-- FIXME: discard this div and move the .newsletter-signup class to div.container element for consistency -->
-    <div class="newsletter-signup">
+    <div class="col col-12">
 
-      <div class="col col-12">
+      <header>
+        <h2>Personalized Email</h2>
+        <p>Stay connected with us by signing up for our weekly personalized emails.</p>
+      </header>
 
-        <header>
-          <h2>Personalized Email</h2>
-          <p>Stay connected with us by signing up for our weekly personalized emails.</p>
-        </header>
+    </div><!-- .col -->
 
-      </div><!-- .col -->
+    <div class="col col-12">
 
-      <div class="col col-12">
-
-        <div class="form personalized-email-form">
-          <fieldset class="input-wrap">
-            <label for="personalized-email-email" class="visuallyhidden">Enter Email Address</label>
-            <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
-          </fieldset>
-          <div class="submit-button-wrap">
-            <input type="submit" class="submit-button" value="Sign Up">
-          </div>
+      <div class="form personalized-email-form">
+        <fieldset class="input-wrap">
+          <label for="personalized-email-email" class="visuallyhidden" aria-hidden="true">Enter Email Address</label>
+          <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
+        </fieldset>
+        <div class="submit-button-wrap">
+          <input type="submit" class="button" value="Sign Up">
         </div>
+      </div>
 
-      </div><!-- .col -->
-
-    </div><!-- .newsletter-signup -->
+    </div><!-- .col -->
 
   </div><!-- .row -->
-</div><!-- .container -->
+</div><!-- .container .newsletter-signup -->
 
 <!-- END MODULE: Newsletter Signup -->
 
@@ -813,46 +845,45 @@
 <div class="container partners-carousel">
   <div class="row">
     <div class="col col-24">
-
+      <h2>In Partnership with</h2>
       <!-- BEGIN PARTIAL: partners-carousel -->
-<h2>In Partnership with</h2>
 <div id="partners-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
   </ul>
 </div><!-- end partners-carousel-container -->
@@ -897,7 +928,7 @@
 <!-- END PARTIAL: glossary-term -->
 
 <!-- BEGIN MODULE: Footer -->
-<footer class="container" id="footer-page">
+<footer class="container" id="footer-page" aria-role="content info">
   <div class="row footer-social">
 
     <div class="col col-7 push-17">
@@ -921,7 +952,7 @@
   <div class="row">
     <div class="col col-24">
 
-      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/img/logo.u.footer.png" />
+      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/images/logo.u.footer.png" />
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -937,9 +968,28 @@
 <!--[if lte IE 8]>
 <script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
-<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script><script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script><script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script><script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script><script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script><script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script><script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script><script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script><script src="Presentation/includes/js/vendor/bootstrap.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script><script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script><script src="Presentation/includes/js/site.js"></script>
+
+
+  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
+<script src="Presentation/includes/js/vendor/bootstrap.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
+<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
+<script src="Presentation/includes/js/account.js"></script>
 <script src="Presentation/includes/js/global.js"></script>
+
 <!-- END PARTIAL: footerjs -->
 
   </form>

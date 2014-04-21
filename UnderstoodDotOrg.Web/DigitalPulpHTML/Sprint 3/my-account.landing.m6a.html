@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
-<!--[if gte IE 9]><!--><html class="no-js"><!--<![endif]-->
+<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
+<!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
 <head>
@@ -12,7 +13,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
 
-
+  
   
   <link href="Presentation/includes/css/vendor/bootstrap.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
@@ -20,13 +21,28 @@
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-<link href="Presentation/includes/css/base.css" rel="stylesheet" />
+
+  
+  <!--[if gte IE 9]><!-->
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
 <link href="Presentation/includes/css/grid.css" rel="stylesheet" />
 <link href="Presentation/includes/css/layout.css" rel="stylesheet" />
 <link href="Presentation/includes/css/globals.css" rel="stylesheet" />
 <link href="Presentation/includes/css/modules.css" rel="stylesheet" />
 <link href="Presentation/includes/css/account.css" rel="stylesheet" />
 <link href="Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
+  <!--<![endif]-->
+
+  
+  <!--[if lte IE 8]>
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
+<link href="Presentation/includes/css/grid-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/layout-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/globals-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/modules-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/account-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/uniform-understood-nonresponsive.css" rel="stylesheet" />
+  <![endif]-->
 
   
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
@@ -58,7 +74,10 @@
     <div class="col col-24">
       
       <div class="logo-u-main">
-        <a href="REPLACE"><img alt="Understood Logo" src="Presentation/includes/img/logo.u.default.png" /></a>
+        <a href="REPLACE">
+          <span class="visuallyhidden">Understood for learning and attention issues</span> 
+          <img alt="Understood – for learning and attention issues" src="Presentation/includes/images/logo.u.default.png" />
+        </a>
       </div><!-- logo-u-main -->
 
       <ul class="language-selection">
@@ -84,22 +103,20 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <fieldset>
-            <legend>Search</legend>
-            <span class="field">
-              <label for="search-term" class="visuallyhidden">Search</label>
-              <input type="text" id="search-term" placeholder="Enter Search Term">
-              <input type="submit" value="Go">
-            </span>
-          </fieldset>
+          <span class="field">
+            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+            <input type="text" id="search-term" placeholder="Enter Search Term">
+            <input type="submit" value="Go">
+          </span>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
 
       <!-- BEGIN PARTIAL: nav-main -->
 <nav class="nav-main">
-  <ul role="menu">
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
+  <ul role="menu" aria-role="navigation" aria-label="main-navigation">
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -109,7 +126,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true" ><span><a href="REPLACE">School &amp;<br> Learning</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">School &amp;<br> Learning</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Partnering with your child's school</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Evaluations</a></span></li>
@@ -119,7 +137,8 @@
         <li role="menuitem"><span><a href="REPLACE">Learning at home</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Friends &amp;<br> Feelings</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Friends &amp;<br> Feelings</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -129,7 +148,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">You &amp;<br> Your Family</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">You &amp;<br> Your Family</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -139,7 +159,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Community &amp;<br> Events</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Community &amp;<br> Events</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -153,7 +174,7 @@
 </nav>
 <!-- END PARTIAL: nav-main -->
 
-      <div id="toolkit" aria-haspopup="true"><span>Your Parent Toolkit</span></div>
+      <div id="toolkit" class="toolkit-element" aria-haspopup="true"><button>Your Parent Toolkit</button></div>
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -175,19 +196,19 @@
         <ul>
           <li>
             <div class="icon support-plan">
-              <a href="REPLACE">My Support Plan</a>
+              <a class="toolkit-element" href="REPLACE">My Support Plan</a>
               <div class="coming-soon">Coming Soon</div>
             </div>
           </li>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Observation Log</a>
+              <a class="toolkit-element" href="REPLACE">Observation Log</a>
             </div>
           </li>
        
           <li>
             <div class="icon childs-world">
-              <a href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Childs World</a>
             </div>
           </li>
         </ul>
@@ -197,18 +218,18 @@
         <ul>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Find Technology</a>
+              <a class="toolkit-element" href="REPLACE">Find Technology</a>
             </div>
           </li>
           <li>
             <div class="icon decisions">
-              <a href="REPLACE">My Decisions</a>
+              <a class="toolkit-element" href="REPLACE">My Decisions</a>
             </div>
           </li>
        
           <li>
             <div class="icon rate-schools">
-              <a href="REPLACE">Rate Schools</a>
+              <a class="toolkit-element" href="REPLACE">Rate Schools</a>
             </div>
           </li>
         </ul>
@@ -217,12 +238,12 @@
         <ul>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
         </ul>
@@ -255,12 +276,12 @@
 <div class="container flush my-account-nav">
   <div class="row account-top-wrapper">
     <div class="col col-23 offset-1">
-      <div class="account-photo">
+      <div class="account-photo skiplink-dashboard">
         <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
       </div>
       <div class="account-info">
-        <div class="account-username">SonyasMom65</div>
-        <div class="account-location">Colorado</div>
+        <h1 class="account-username">SonyasMom65</h1>
+        <p class="account-location">Colorado</p>
       </div>
       <div class="account-links">
         <a class="profile-link button" href="REPLACE">My Profile</a>
@@ -313,7 +334,7 @@
 <div class="container account-landing-wrapper">
   <div class="row">
     <!-- article -->
-    <div class="col col-7 offset-1 large-landing-module">
+    <div class="col col-7 offset-1 large-landing-module skiplink-content" aria-role="main">
       <!-- BEGIN PARTIAL: account-landing-notifications -->
 <div class="landing-notifications landing-modules">
   <header class="clearfix">
@@ -327,11 +348,11 @@
           <i class="icon-notification-link"></i>2:48PM <span class="dot"></span> Dec 12 2014
         </p>
         <p class="notification-item">
-          inley Palmer <a href="REPLACE">wants to connect</a> with you.
+          Tricia Singer <a href="REPLACE">wants to connect</a> with you.
         </p>
         <p class="clearfix button-wrapper">
           <a href="REPLACE" class="button accept-connection">Accept</a>
-          <a href="REPLACE" class="button decline-connection">Decline</a>
+          <a href="REPLACE" class="button gray decline-connection">Decline</a>
         </p>
       </li>
 
@@ -341,7 +362,7 @@
           <i class="icon-notification-reminder"></i>2:48PM <span class="dot"></span> Dec 20 2014
         </p>
         <p class="notification-item">
-          voluptas voluptatibus delectus voluptas deserunt cum aspernatur sed voluptatem consequatur quo omnis corrupti impedit ipsam
+          dolores illo porro tempora et doloremque explicabo iste repudiandae cupiditate et voluptatum blanditiis enim commodi
         </p>
         <p class="clearfix button-wrapper">
           <a href="REPLACE" class="button add-a-note">Add a Note</a>
@@ -354,7 +375,7 @@
           <i class="icon-notification-comment"></i>2:48PM <span class="dot"></span> Dec 16 2014
         </p>
         <p class="notification-item">
-          Sheryl Adkins <a href="REPLACE">added a comment</a> to hic a aspernatur voluptas dolor et omnis et et facilis occaecati officiis est laborum et
+          Eli Love <a href="REPLACE">added a comment</a> to deserunt tenetur soluta facere voluptates atque quia nesciunt nisi sit dolor nihil quam est enim
         </p>
       </li>
     </ul>
@@ -362,6 +383,7 @@
   
 
 </div><!-- /.landing-notifications /.landing-modules -->
+
 <!-- END PARTIAL: account-landing-notifications -->
     </div>
     <div class="col col-15 small-landing-modules">
@@ -375,9 +397,9 @@
   </header>
   
     <ul class="landing-module-items">
-      <li><a href="REPLACE">architecto molestias ut ea dicta minima similique non saepe</a></li>
-      <li><a href="REPLACE">dolorem quia culpa ut similique nihil voluptatum voluptatibus temporibus voluptas</a></li>
-      <li><a href="REPLACE">explicabo ut magni est debitis voluptates non soluta quo</a></li>
+      <li><a href="REPLACE">minus ab non tempore quo minima sunt sunt iure</a></li>
+      <li><a href="REPLACE">voluptatibus sunt ea nobis ea doloremque sed optio tempore corporis</a></li>
+      <li><a href="REPLACE">ut qui omnis ad ipsam nobis non accusantium quia</a></li>
     </ul>
     <div class="bottom"><a href="REPLACE">See All Groups</a></div>
   
@@ -393,7 +415,7 @@
   <ul class="landing-module-items">
     <li>
       <span class="event-wrap">
-        <a href="REPLACE">ex nemo reiciendis harum sunt quis ut non et earum</a>
+        <a href="REPLACE">accusamus a eos cupiditate amet quo placeat voluptate vel et</a>
         <a href="REPLACE" class="event-type">Webinar</a>
         <span class="timestamp">
           Dec 12 2014 <span class="dot"></span> 2:48PM
@@ -402,7 +424,7 @@
     </li>
     <li>
       <span class="event-wrap">
-        <a href="REPLACE">est tempora odio quia sint dolor omnis in unde voluptatem</a>
+        <a href="REPLACE">aut quae voluptas praesentium vel cumque molestias numquam vel sunt</a>
         <a href="REPLACE" class="event-type">Q&A</a>
         <span class="timestamp">
           Dec 20 2014 <span class="dot"></span> 2:48PM
@@ -427,14 +449,14 @@
     <ul class="landing-module-items">
       <li>
         <span class="comment-wrap">
-          <a href="REPLACE" class="comment-link">sit omnis facere</a>
-          <p class="comment-description">totam temporibus consectetur tempore quisquam voluptatem voluptatem possimus inventore ut aut odio maiores aut perspiciatis</p>
+          <a href="REPLACE" class="comment-link">id voluptas ex</a>
+          <p class="comment-description">soluta quos repellat perferendis et sit aut porro distinctio quia et et maxime asperiores corrupti</p>
         </span>
       </li>
       <li>
         <span class="comment-wrap">
-          <a href="REPLACE" class="comment-link">sunt aut necessitatibus</a>
-          <p class="comment-description">excepturi quis harum fuga veniam sit porro architecto quos deserunt quasi et veritatis sint quia</p>
+          <a href="REPLACE" class="comment-link">ut perspiciatis harum</a>
+          <p class="comment-description">sit iure sunt error rerum assumenda quasi minus in harum dolores animi praesentium ut perferendis</p>
         </span>
       </li>
     </ul>
@@ -451,9 +473,9 @@
   </header>
   
     <ul class="landing-module-items">
-      <li><a href="REPLACE">soluta et corporis neque qui eveniet fuga doloremque omnis minima</a></li>
-      <li><a href="REPLACE">laboriosam eum et qui tempore voluptas ad illo aut omnis</a></li>
-      <li><a href="REPLACE">velit et porro voluptas enim corporis et totam praesentium pariatur</a></li>
+      <li><a href="REPLACE">et sit pariatur nam nihil sed voluptas occaecati odio qui</a></li>
+      <li><a href="REPLACE">officia accusantium sunt cum mollitia repudiandae praesentium ullam deserunt tempore</a></li>
+      <li><a href="REPLACE">natus impedit est atque hic laudantium reiciendis dolores voluptatem sunt</a></li>
     </ul>
     <div class="bottom"><a href="REPLACE">See All Favorites</a></div>
   
@@ -473,194 +495,266 @@
     <header>
       <h3>My Connections<span class="landing-module-count">102</span></h3>
     </header>
-    <section class="connections group">
-      <div class="row">
-        <div class="user col col-8 group">
-          <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-          <div>
-            <p class="user-name"><a href="REPLACE">PetersDad17</a></p>
-            <p class="user-location">Colorado</p>
-          </div>
-          <p class="user-details group">
-            <span class="user-child-grade">4th</span>
-            <span class="user-child-grade">6th</span>
-            <span class="user-child-details-toggle popover-link" data-popover-placement="bottom"></span>
-          </p>
-          <!-- BEGIN PARTIAL: my-connections-popover -->
-<!-- popover hidden content -->
-<div class="popover-container" id="myconnections-tooltip" style="display: none;">
-  <section class="user-child-details-popover">
-    <div class="change-slide-buttons arrows-gray">
-      <div class="rsArrow rsArrowRight"><div class="rsArrowIcn"></div></div>
-      <div class="rsArrow rsArrowLeft"><div class="rsArrowIcn"></div></div>
-    </div>
-    <div class="slide active">
-      <p class="grade">Grade 4, boy:</p>
-      <ul>
-        <li>Spoken language</li>
-        <li>Listening comprehension</li>
-        <li>Social skills, including conversation</li>
-        <li>Motor skills</li>
-      </ul>
-      <div class="button-choices group">
-        <button type="button" class="button profile">View Profile</button>
-        <button type="button" class="button activity">See Activity</button>
-      </div>
-    </div>
-    <div class="slide">
-      <p class="grade">Grade 7, boy:</p>
-      <ul>
-        <li>ducimus eum soluta</li>
-        <li>error ea ipsum</li>
-        <li>temporibus quos modi</li>
-        <li>est officiis dolore</li>
-      </ul>
-      <div class="button-choices group">
-        <button type="button" class="button profile">View Profile</button>
-        <button type="button" class="button activity">See Activity</button>
-      </div>
-    </div>
-    <div class="slide">
-      <p class="grade">Grade 9, boy:</p>
-      <ul>
-        <li>aut enim quia</li>
-        <li>labore nulla laboriosam</li>
-        <li>dolorum ullam ea</li>
-        <li>exercitationem accusamus et</li>
-      </ul>
-      <div class="button-choices group">
-        <button type="button" class="button profile">View Profile</button>
-        <button type="button" class="button activity">See Activity</button>
-      </div>
-    </div>
-  </section>
-</div>
-<!-- END PARTIAL: my-connections-popover -->
+    <section class="connections group" id="user_equal_heights">
+      <div class="row member-cards">
+        <!-- BEGIN PARTIAL: community/member_card -->
+<div class="member-card-container">
+    <div class="col member-card col-8">
+        <div class="member-card-info group">
+            <div class="member-card-image">
+                <a href="REPLACE">
+                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                    
+                </a>
+            </div><!-- end .member-card-image -->
+            <div class="member-card-name hyphenate member">
+                
+                    <a href="REPLACE" class="name-member">Sonja79</a>
+                    <p class="location">est</p>
+                
+            </div><!-- end .member-card-name -->
+            
+        </div><!-- end .member-card-info -->
+        <div class="member-card-specialties">
+            <ul>
+              <span class="visuallyhidden">grade level</span>
+                <li class='specialty '><span tabindex='0' data-tabbable='true'>12th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 12,
+            Girl
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Esse Voluptas</li>
+            <li>Ipsa Velit</li>
+            <li>Sint Sequi</li>
+            <li>Architecto Est</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
         </div>
-        <div class="user col col-8 group">
-          <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-          <div>
-            <p class="user-name"><a href="REPLACE">CharlottesMother25</a></p>
-            <p class="user-location">New York</p>
-          </div>
-          <p class="user-details group">
-            <span class="user-child-grade">4th</span>
-            <span class="user-child-grade">6th</span>
-            <span class="user-child-details-toggle popover-link" data-popover-placement="bottom"></span>
-          </p>
-          <!-- BEGIN PARTIAL: my-connections-popover -->
-<!-- popover hidden content -->
-<div class="popover-container" id="myconnections-tooltip" style="display: none;">
-  <section class="user-child-details-popover">
-    <div class="change-slide-buttons arrows-gray">
-      <div class="rsArrow rsArrowRight"><div class="rsArrowIcn"></div></div>
-      <div class="rsArrow rsArrowLeft"><div class="rsArrowIcn"></div></div>
     </div>
-    <div class="slide active">
-      <p class="grade">Grade 4, boy:</p>
-      <ul>
-        <li>Spoken language</li>
-        <li>Listening comprehension</li>
-        <li>Social skills, including conversation</li>
-        <li>Motor skills</li>
-      </ul>
-      <div class="button-choices group">
-        <button type="button" class="button profile">View Profile</button>
-        <button type="button" class="button activity">See Activity</button>
-      </div>
-    </div>
-    <div class="slide">
-      <p class="grade">Grade 7, boy:</p>
-      <ul>
-        <li>sint animi excepturi</li>
-        <li>et cumque amet</li>
-        <li>id aut et</li>
-        <li>ut molestiae quod</li>
-      </ul>
-      <div class="button-choices group">
-        <button type="button" class="button profile">View Profile</button>
-        <button type="button" class="button activity">See Activity</button>
-      </div>
-    </div>
-    <div class="slide">
-      <p class="grade">Grade 9, boy:</p>
-      <ul>
-        <li>voluptas cum nesciunt</li>
-        <li>at nemo mollitia</li>
-        <li>recusandae non iusto</li>
-        <li>eveniet labore quisquam</li>
-      </ul>
-      <div class="button-choices group">
-        <button type="button" class="button profile">View Profile</button>
-        <button type="button" class="button activity">See Activity</button>
-      </div>
-    </div>
-  </section>
 </div>
-<!-- END PARTIAL: my-connections-popover -->
+<!-- END PARTIAL: community/child_info_card --></li>
+
+                <li class="specialty specialty-final">
+                  <span class="visuallyhidden">additional information</span>
+                  <span tabindex='0' data-tabbable='true'>&nbsp;</span>
+                </li>
+            </ul>
         </div>
-        <div class="user col col-8 group">
-          <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-          <div>
-            <p class="user-name"><a href="REPLACE">BillyandMikesDad48</a></p>
-            <p class="user-location">California</p>
-          </div>
-          <p class="user-details group">
-            <span class="user-child-grade">4th</span>
-            <span class="user-child-grade">6th</span>
-            <span class="user-child-details-toggle popover-link" data-popover-placement="bottom"></span>
-          </p>
-          <!-- BEGIN PARTIAL: my-connections-popover -->
-<!-- popover hidden content -->
-<div class="popover-container" id="myconnections-tooltip" style="display: none;">
-  <section class="user-child-details-popover">
-    <div class="change-slide-buttons arrows-gray">
-      <div class="rsArrow rsArrowRight"><div class="rsArrowIcn"></div></div>
-      <div class="rsArrow rsArrowLeft"><div class="rsArrowIcn"></div></div>
+    </div><!-- end .member-card -->
+</div><!-- end .member-card-container  -->
+<!-- END PARTIAL: community/member_card -->
+        <!-- BEGIN PARTIAL: community/member_card -->
+<div class="member-card-container">
+    <div class="col member-card col-8">
+        <div class="member-card-info group">
+            <div class="member-card-image">
+                <a href="REPLACE">
+                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                    
+                </a>
+            </div><!-- end .member-card-image -->
+            <div class="member-card-name hyphenate member">
+                
+                    <a href="REPLACE" class="name-member">Sadie15</a>
+                    <p class="location">porro</p>
+                
+            </div><!-- end .member-card-name -->
+            
+        </div><!-- end .member-card-info -->
+        <div class="member-card-specialties">
+            <ul>
+              <span class="visuallyhidden">grade level</span>
+                <li class='specialty specialty-long'><span tabindex='0' data-tabbable='true'>PreK</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>PreK,
+            Girl
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Delectus Similique</li>
+            <li>Nostrum Autem</li>
+            <li>Id Molestias</li>
+            <li>Sit Asperiores</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
     </div>
-    <div class="slide active">
-      <p class="grade">Grade 4, boy:</p>
-      <ul>
-        <li>Spoken language</li>
-        <li>Listening comprehension</li>
-        <li>Social skills, including conversation</li>
-        <li>Motor skills</li>
-      </ul>
-      <div class="button-choices group">
-        <button type="button" class="button profile">View Profile</button>
-        <button type="button" class="button activity">See Activity</button>
-      </div>
-    </div>
-    <div class="slide">
-      <p class="grade">Grade 7, boy:</p>
-      <ul>
-        <li>non provident aut</li>
-        <li>veniam quas numquam</li>
-        <li>aut aperiam eos</li>
-        <li>et at voluptate</li>
-      </ul>
-      <div class="button-choices group">
-        <button type="button" class="button profile">View Profile</button>
-        <button type="button" class="button activity">See Activity</button>
-      </div>
-    </div>
-    <div class="slide">
-      <p class="grade">Grade 9, boy:</p>
-      <ul>
-        <li>cupiditate rem quis</li>
-        <li>repellendus asperiores quis</li>
-        <li>iure quia eos</li>
-        <li>non eos qui</li>
-      </ul>
-      <div class="button-choices group">
-        <button type="button" class="button profile">View Profile</button>
-        <button type="button" class="button activity">See Activity</button>
-      </div>
-    </div>
-  </section>
 </div>
-<!-- END PARTIAL: my-connections-popover -->
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>12th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 12,
+            Girl
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Non Placeat</li>
+            <li>Sunt Minus</li>
+            <li>Est Omnis</li>
+            <li>Adipisci Aliquam</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
         </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li>
+
+                <li class="specialty specialty-final">
+                  <span class="visuallyhidden">additional information</span>
+                  <span tabindex='0' data-tabbable='true'>&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+    </div><!-- end .member-card -->
+</div><!-- end .member-card-container  -->
+<!-- END PARTIAL: community/member_card -->
+        <!-- BEGIN PARTIAL: community/member_card -->
+<div class="member-card-container">
+    <div class="col member-card col-8">
+        <div class="member-card-info group">
+            <div class="member-card-image">
+                <a href="REPLACE">
+                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                    
+                </a>
+            </div><!-- end .member-card-image -->
+            <div class="member-card-name hyphenate member">
+                
+                    <a href="REPLACE" class="name-member">Bonita29</a>
+                    <p class="location">quis</p>
+                
+            </div><!-- end .member-card-name -->
+            
+        </div><!-- end .member-card-info -->
+        <div class="member-card-specialties">
+            <ul>
+              <span class="visuallyhidden">grade level</span>
+                <li class='specialty '><span tabindex='0' data-tabbable='true'>2nd</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 2,
+            Boy
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Ut Hic</li>
+            <li>Veritatis Fugit</li>
+            <li>Minima Et</li>
+            <li>Nobis Rerum</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>7th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 7,
+            Girl
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Dicta Doloribus</li>
+            <li>Enim Autem</li>
+            <li>Amet Qui</li>
+            <li>Occaecati Placeat</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>11th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 11,
+            Girl
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Aut Quas</li>
+            <li>Eos Aperiam</li>
+            <li>Minima Ut</li>
+            <li>Dolores Hic</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li>
+
+                <li class="specialty specialty-final">
+                  <span class="visuallyhidden">additional information</span>
+                  <span tabindex='0' data-tabbable='true'>&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+    </div><!-- end .member-card -->
+</div><!-- end .member-card-container  -->
+<!-- END PARTIAL: community/member_card -->
       </div>
     </section>
     <div class="bottom"><a href="REPLACE">See All Connections</a></div>
@@ -725,11 +819,11 @@
 
       <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden">Enter School Name</label>
+        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
         <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
         <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" required="" aria-required="true">
+        <select name="explore-select" id="explore-select" aria-required="true">
           <option value="">Select a state</option>
           <option>Alabama</option>
           <option>Arizona</option>
@@ -870,39 +964,34 @@
 <!-- END MODULE: More to Explore -->
 
 <!-- BEGIN MODULE: Newsletter Signup -->
-<div class="container">
+<div class="container newsletter-signup">
   <div class="row">
 
-    <!-- FIXME: discard this div and move the .newsletter-signup class to div.container element for consistency -->
-    <div class="newsletter-signup">
+    <div class="col col-12">
 
-      <div class="col col-12">
+      <header>
+        <h2>Personalized Email</h2>
+        <p>Stay connected with us by signing up for our weekly personalized emails.</p>
+      </header>
 
-        <header>
-          <h2>Personalized Email</h2>
-          <p>Stay connected with us by signing up for our weekly personalized emails.</p>
-        </header>
+    </div><!-- .col -->
 
-      </div><!-- .col -->
+    <div class="col col-12">
 
-      <div class="col col-12">
-
-        <div class="form personalized-email-form">
-          <fieldset class="input-wrap">
-            <label for="personalized-email-email" class="visuallyhidden">Enter Email Address</label>
-            <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
-          </fieldset>
-          <div class="submit-button-wrap">
-            <input type="submit" class="submit-button" value="Sign Up">
-          </div>
+      <div class="form personalized-email-form">
+        <fieldset class="input-wrap">
+          <label for="personalized-email-email" class="visuallyhidden" aria-hidden="true">Enter Email Address</label>
+          <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
+        </fieldset>
+        <div class="submit-button-wrap">
+          <input type="submit" class="button" value="Sign Up">
         </div>
+      </div>
 
-      </div><!-- .col -->
-
-    </div><!-- .newsletter-signup -->
+    </div><!-- .col -->
 
   </div><!-- .row -->
-</div><!-- .container -->
+</div><!-- .container .newsletter-signup -->
 
 <!-- END MODULE: Newsletter Signup -->
 
@@ -910,46 +999,45 @@
 <div class="container partners-carousel">
   <div class="row">
     <div class="col col-24">
-
+      <h2>In Partnership with</h2>
       <!-- BEGIN PARTIAL: partners-carousel -->
-<h2>In Partnership with</h2>
 <div id="partners-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
   </ul>
 </div><!-- end partners-carousel-container -->
@@ -994,7 +1082,7 @@
 <!-- END PARTIAL: glossary-term -->
 
 <!-- BEGIN MODULE: Footer -->
-<footer class="container" id="footer-page">
+<footer class="container" id="footer-page" aria-role="content info">
   <div class="row footer-social">
 
     <div class="col col-7 push-17">
@@ -1018,7 +1106,7 @@
   <div class="row">
     <div class="col col-24">
 
-      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/img/logo.u.footer.png" />
+      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/images/logo.u.footer.png" />
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -1034,9 +1122,29 @@
 <!--[if lte IE 8]>
 <script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
-<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script><script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script><script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script><script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script><script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script><script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script><script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script><script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script><script src="Presentation/includes/js/vendor/bootstrap.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script><script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script><script src="Presentation/includes/js/site.js"></script>
+
+
+  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
+<script src="Presentation/includes/js/vendor/bootstrap.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
+<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
+<script src="Presentation/includes/js/user_profile.js"></script>
+<script src="Presentation/includes/js/account.js"></script>
 <script src="Presentation/includes/js/global.js"></script>
+
 <!-- END PARTIAL: footerjs -->
 
   </form>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
-<!--[if gte IE 9]><!--><html class="no-js"><!--<![endif]-->
+<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
+<!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
 <head>
@@ -12,7 +13,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
 
-
+  
   
   <link href="Presentation/includes/css/vendor/bootstrap.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
@@ -20,12 +21,28 @@
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-<link href="Presentation/includes/css/base.css" rel="stylesheet" />
+
+  
+  <!--[if gte IE 9]><!-->
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
 <link href="Presentation/includes/css/grid.css" rel="stylesheet" />
 <link href="Presentation/includes/css/layout.css" rel="stylesheet" />
 <link href="Presentation/includes/css/globals.css" rel="stylesheet" />
 <link href="Presentation/includes/css/modules.css" rel="stylesheet" />
+<link href="Presentation/includes/css/assistive-tech.css" rel="stylesheet" />
 <link href="Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
+  <!--<![endif]-->
+
+  
+  <!--[if lte IE 8]>
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
+<link href="Presentation/includes/css/grid-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/layout-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/globals-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/modules-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/assistive-tech-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/uniform-understood-nonresponsive.css" rel="stylesheet" />
+  <![endif]-->
 
   
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
@@ -57,7 +74,10 @@
     <div class="col col-24">
       
       <div class="logo-u-main">
-        <a href="REPLACE"><img alt="Understood Logo" src="Presentation/includes/img/logo.u.default.png" /></a>
+        <a href="REPLACE">
+          <span class="visuallyhidden">Understood for learning and attention issues</span> 
+          <img alt="Understood – for learning and attention issues" src="Presentation/includes/images/logo.u.default.png" />
+        </a>
       </div><!-- logo-u-main -->
 
       <ul class="language-selection">
@@ -83,22 +103,20 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <fieldset>
-            <legend>Search</legend>
-            <span class="field">
-              <label for="search-term" class="visuallyhidden">Search</label>
-              <input type="text" id="search-term" placeholder="Enter Search Term">
-              <input type="submit" value="Go">
-            </span>
-          </fieldset>
+          <span class="field">
+            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+            <input type="text" id="search-term" placeholder="Enter Search Term">
+            <input type="submit" value="Go">
+          </span>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
 
       <!-- BEGIN PARTIAL: nav-main -->
 <nav class="nav-main">
-  <ul role="menu">
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
+  <ul role="menu" aria-role="navigation" aria-label="main-navigation">
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -108,7 +126,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true" ><span><a href="REPLACE">School &amp;<br> Learning</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">School &amp;<br> Learning</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Partnering with your child's school</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Evaluations</a></span></li>
@@ -118,7 +137,8 @@
         <li role="menuitem"><span><a href="REPLACE">Learning at home</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Friends &amp;<br> Feelings</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Friends &amp;<br> Feelings</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -128,7 +148,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">You &amp;<br> Your Family</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">You &amp;<br> Your Family</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -138,7 +159,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Community &amp;<br> Events</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Community &amp;<br> Events</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -152,7 +174,7 @@
 </nav>
 <!-- END PARTIAL: nav-main -->
 
-      <div id="toolkit" aria-haspopup="true"><span>Your Parent Toolkit</span></div>
+      <div id="toolkit" class="toolkit-element" aria-haspopup="true"><button>Your Parent Toolkit</button></div>
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -174,19 +196,19 @@
         <ul>
           <li>
             <div class="icon support-plan">
-              <a href="REPLACE">My Support Plan</a>
+              <a class="toolkit-element" href="REPLACE">My Support Plan</a>
               <div class="coming-soon">Coming Soon</div>
             </div>
           </li>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Observation Log</a>
+              <a class="toolkit-element" href="REPLACE">Observation Log</a>
             </div>
           </li>
        
           <li>
             <div class="icon childs-world">
-              <a href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Childs World</a>
             </div>
           </li>
         </ul>
@@ -196,18 +218,18 @@
         <ul>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Find Technology</a>
+              <a class="toolkit-element" href="REPLACE">Find Technology</a>
             </div>
           </li>
           <li>
             <div class="icon decisions">
-              <a href="REPLACE">My Decisions</a>
+              <a class="toolkit-element" href="REPLACE">My Decisions</a>
             </div>
           </li>
        
           <li>
             <div class="icon rate-schools">
-              <a href="REPLACE">Rate Schools</a>
+              <a class="toolkit-element" href="REPLACE">Rate Schools</a>
             </div>
           </li>
         </ul>
@@ -216,12 +238,12 @@
         <ul>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
         </ul>
@@ -238,10 +260,15 @@
 <!-- END PARTIAL: header -->
 
       <!-- BEGIN PARTIAL: pagetopic -->
+<!-- FIXME: Documentation needed to explain share on/off functionality in page topic module -->
+
+<!-- Determine variables present and change column width to fit the content available -->
+
+
 <!-- Page Title -->
-<div class="container page-topic">
-  <div class="row">
-    <div class="col col-14 offset-1">
+<div class="container page-topic with-share">
+  <div class="row" >
+    <div class="col col-14 offset-1 ">
       
       <h1>Technology that Can Help</h1>
       
@@ -270,44 +297,78 @@
 <!-- END PARTIAL: share-save -->
     </div>
     
+    
   </div>
 </div><!-- .container -->
 
 <!-- END PARTIAL: pagetopic -->
-<!-- BEGIN PARTIAL: back-button -->
-<!-- Back Button -->
-<div class="container back-button">
+
+<div class="container tech-results-single-container">
   <div class="row">
-    <div class="col col-12 rating-container">
+    <!-- article -->
+    <div class="col col-23 offset-1">
+      <!-- BEGIN PARTIAL: back-button -->
+<!-- Back Button -->
+<div class="back-button">
+    <div class="rating-container">
       <div>Review and ratings by</div>
-      <img alt="Common Sense Media" src="Presentation/includes/img/logo.partner.commonsense2.png" />
+      <img alt="Common Sense Media" src="Presentation/includes/images/logo.partner.commonsense2.png" />
     </div>
-    <div class="col col-10">
+    <div class="back-results-container">
       <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i> Back to Results</a>
     </div>
-  </div>
 </div><!-- .container -->
 
 <!-- END PARTIAL: back-button -->
+    </div>
+  </div><!-- .row -->
+</div><!-- .container -->
+
 <div class="container article">
   <div class="row">
     <!-- article -->
-    <div class="col col-22 offset-1">
+    <div class="col col-24 skiplink-feature">
         <!-- BEGIN PARTIAL: tech-results-single -->
 <section class="tech-search-results single">
 
   <div class="tech-results-wrapper">
     <div class="search-result row">
-      <div class="result-image col col-4 offset-1">
-        <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+      <div class="result-image screenshots-popover col col-4 offset-1">
+        <div class="result-image-inner">
+          <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><img alt="150x150 Placeholder" src="http://placehold.it/150x150" /></a>
+          <span class="icon-search">search</span>
+        </div>
+        <!-- BEGIN PARTIAL: assistive-tech-screenshots-popover -->
+<!-- popover hidden content -->
+<div class="popover-container popover-content">
+  <!-- Borrows CSS class from other module -->
+  <section class="user-child-details-popover">
+    <div class="tooltip-title">Autism Play</div>
+    <div class="change-slide-buttons arrows-gray">
+      <span class="count"><span class="curr">1</span> of 3</span>
+      <div class="rsArrow rsArrowRight"><div class="rsArrowIcn"></div></div>
+      <div class="rsArrow rsArrowLeft"><div class="rsArrowIcn"></div></div>
+    </div>
+    <div class="slide active">
+      <img alt="270x180 Placeholder" src="http://placehold.it/270x180&amp;text=Shot+1" />
+    </div>
+    <div class="slide">
+      <img alt="270x180 Placeholder" src="http://placehold.it/270x180&amp;text=Shot+2" />
+    </div>
+    <div class="slide">
+      <img alt="270x180 Placeholder" src="http://placehold.it/270x180&amp;text=Shot+3" />
+    </div>
+  </section>
+</div>
+<!-- END PARTIAL: assistive-tech-screenshots-popover -->
         <div class="result-type">(App, 2013)</div>
       </div>
 
       <div class="result-ratings-wrap col col-11 offset-1">
-        <div class="result-ratings ">
+        <div class="result-ratings">
           <div class="result-details">
-            <div class="result-title">Read Me Stories</div>
-            <div class="result-description">eum sunt vero iusto ullam aut nobis est voluptas et</div>
+            <h3 class="result-title">Read Me Stories</h3>
+            <div class="result-description">vel alias quia quis modi</div>
             <div class="result-keywords">
               <ul>
                 <li><a href="REPLACE">Reading</a></li>
@@ -317,26 +378,28 @@
           </div>
 
           <div class="tech-search-results-ratings">
+            <div class="rating-grade-container">
             <div class="rating-label">Grade</div>
             <div class="grade-scale-wrapper">
+              <span class="visuallyhidden">rating</span>
               <div class="grade-scale">
                 <div class="selection grade6">6</div>
-                <span class="grade1 grade red">1</span>
-                <span class="grade2 grade red">2</span>
-                <span class="grade3 grade yellow">3</span>
-                <span class="grade4 grade yellow">4</span>
-                <span class="grade5 grade yellow">5</span>
-                <span class="grade6 grade green">6</span>
-                <span class="grade7 grade green">7</span>
-                <span class="grade8 grade green">8</span>
-                <span class="grade9 grade green">9</span>
-                <span class="grade10 grade green">10</span>
-                <span class="grade11 grade green">11</span>
-                <span class="grade12 grade green">12</span>
+                <span class="grade1 grade red" aria-hidden="true" role="presentation">1</span>
+                <span class="grade2 grade red" aria-hidden="true" role="presentation">2</span>
+                <span class="grade3 grade yellow" aria-hidden="true" role="presentation">3</span>
+                <span class="grade4 grade yellow" aria-hidden="true" role="presentation">4</span>
+                <span class="grade5 grade yellow" aria-hidden="true" role="presentation">5</span>
+                <span class="grade6 grade green" aria-hidden="true" role="presentation">6</span>
+                <span class="grade7 grade green" aria-hidden="true" role="presentation">7</span>
+                <span class="grade8 grade green" aria-hidden="true" role="presentation">8</span>
+                <span class="grade9 grade green" aria-hidden="true" role="presentation">9</span>
+                <span class="grade10 grade green" aria-hidden="true" role="presentation">10</span>
+                <span class="grade11 grade green" aria-hidden="true" role="presentation">11</span>
+                <span class="grade12 grade green" aria-hidden="true" role="presentation">12</span>
               </div>
             </div>
             <div class="grade-info-wrapper">
-              <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></a></div>
+              <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more info</i></a></div>
               <!-- BEGIN PARTIAL: popover-grade-info -->
 <div class="grade-tooltip popover-container">
   <div class="tooltip-title">About our rating system</div>
@@ -357,48 +420,54 @@
 </div><!-- .grade-tooltip -->
 <!-- END PARTIAL: popover-grade-info -->
             </div>
+          </div>
 
+<div class="quality-learning-scale-wrap">
+
+          <div class="quality-scale-container">
             <div class="rating-label">Quality</div>
             <div class="quality-scale-wrapper">
+              <span class="visuallyhidden">rating</span>
               <div class="quality-scale">
                 <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
 <!-- END PARTIAL: results-slider -->
               </div>
             </div>
+
             <div class="quality-info-wrapper">
-              <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></a></div>
+              <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more info</i></a></div>
               <!-- BEGIN PARTIAL: popover-quality-info -->
 <div class="quality-tooltip popover-container">
   <div class="tooltip-title">Quality Rating</div>
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-five">&nbsp;</div>
+<div class="results-slider blue-five" aria-label="5">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">The best!</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Really Good</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-three">&nbsp;</div>
+<div class="results-slider blue-three" aria-label="3">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Just Fine</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Disappointing</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-one">&nbsp;</div>
+<div class="results-slider blue-one" aria-label="1">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Don't Bother</div>
     </div>
@@ -406,53 +475,55 @@
 </div><!-- .quality-tooltip -->
 <!-- END PARTIAL: popover-quality-info -->
             </div>
-
+          </div>
+          <div class="learning-scale-container">
             <div class="rating-label">Learning</div>
+            <span class="visuallyhidden">rating</span>
             <div class="learning-scale-wrapper">
               <div class="learning-scale">
                 <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
 <!-- END PARTIAL: results-slider -->
               </div>
               <div class="learning-info-wrapper">
-                <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></a></div>
+                <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more info</i></a></div>
                 <!-- BEGIN PARTIAL: popover-learning-info -->
 <div class="learning-tooltip popover-container">
   <div class="tooltip-title">Learning Rating</div>
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-five">&nbsp;</div>
+<div class="results-slider purple-five" aria-label="5">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Best:</strong> Really engaging, excellent learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Very Good:</strong> Engaging, very good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Good:</strong> Pretty engaging, good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-two">&nbsp;</div>
+<div class="results-slider purple-two" aria-label="2">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Fair:</strong> Somewhat engaging, okay learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-one">&nbsp;</div>
+<div class="results-slider purple-one" aria-label="1">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for learning:</strong> Not recommended for learning.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero">&nbsp;</div>
+<div class="results-slider zero" aria-label="0">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for kids:</strong> Not age-appropriate for kids; not recommended for learning.</div>
     </div>
@@ -461,19 +532,23 @@
 <!-- END PARTIAL: popover-learning-info -->
               </div>
             </div>
+          </div>
+
+</div>
+
           </div><!-- .tech-search-results-ratings -->
         </div><!-- .result-ratings -->
       </div>
-      <div class="col col-6">
+      <div class="col col-6 offset-1">
         <!-- BEGIN PARTIAL: get-this-app -->
 <div class="get-this-app">
   <div class="purchase">Purchase</div>
   <div class="price">Price: $0.99</div>
   <a href="REPLACE">
-    <img alt="REPLACE" src="Presentation/includes/img/app-store.png" />
+    <img alt="Available in the app store" src="Presentation/includes/images/app-store.png" />
   </a>
   <a href="REPLACE">
-    <img alt="REPLACE" src="Presentation/includes/img/play-store.png" />
+    <img alt="Get it on Google Play" src="Presentation/includes/images/play-store.png" />
   </a>
 </div>
 <!-- END PARTIAL: get-this-app -->
@@ -488,8 +563,7 @@
 
 <div class="container flush">
   <div class="row">
-    <!-- article -->
-    <div class="col col-22 offset-1">
+    <div class="col col-22 offset-1 skiplink-content" aria-role="main" aria-role="main">
         <!-- BEGIN PARTIAL: what-you-need-to-know-tabs -->
 <div id="tab-container" class="tab-container what-you-need-to-know-tabs">
   <ul class='etabs'>
@@ -504,7 +578,7 @@
 
         <section>
           <h3>What is it ?</h3>
-          <p>Corporis beatae et quo deserunt incidunt eveniet facilis cum sed occaecati amet. suscipit nam esse repellendus qui error. cupiditate ab doloremque rerum quos rerum sit voluptates animi asperiores voluptatem est dolore nihil. vitae dolorum eveniet similique qui ducimus vel sit et perspiciatis qui praesentium</p>
+          <p>Magnam sint doloribus voluptatibus et aut dolorem debitis ipsam sunt voluptatum. maxime aliquam soluta quo est qui corrupti excepturi aut architecto sed voluptate reiciendis temporibus eos. reprehenderit corrupti tempore voluptatem suscipit nemo labore nulla est quo nisi autem nemo. dolorum eveniet beatae et eos nulla. libero odio reiciendis dignissimos cum. in dolore delectus occaecati debitis totam veniam consequuntur</p>
           <p><span class="platform-list"><a href="REPLACE">iPhone</a>, <a href="REPLACE">Android</a></span> <span class="about-platforms"><a href="REPLACE">Learn about Platforms</a></p>
         </section>
 
@@ -527,12 +601,13 @@
 
         <section>
           <h3>What can kids learn ?</h3>
+          <span class="visuallyhidden">learning rating</span>
           <span class="slider-position"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></span>
-          <p>Necessitatibus laborum culpa sit ducimus ut placeat officia soluta. fugit assumenda repellat praesentium expedita qui dicta maiores repudiandae blanditiis. in nobis nihil in doloribus fugit est aliquid distinctio recusandae nobis. culpa ut omnis suscipit. ut sed expedita nihil aut culpa quia assumenda suscipit iste minus</p>
+          <p>Reiciendis molestiae laborum perferendis. corrupti dicta consequatur dolor nihil ratione ullam repellendus aperiam neque ad exercitationem dolor sunt vitae. ut blanditiis blanditiis autem quis necessitatibus voluptatibus. at reprehenderit vel dolores aut odio. omnis maxime voluptatem amet id rerum libero dolor. ab molestias facere autem necessitatibus a mollitia dolor dolores voluptatem provident non. et doloribus aut vitae molestias consequatur laborum deleniti omnis</p>
           <h5>Subjects</h5>
-          <ul>
+          <ul class="kids-subjects">
             <li>Language and Reading</li>
             <li>Thinking & Reasoning</li>
             <li>Math</li>
@@ -546,20 +621,21 @@
 
         <section>
           <h3>What is it about ?</h3>
-          <p>Aliquid ipsa qui at sunt. sequi quas et rerum similique non et impedit dolores velit labore reprehenderit ut. dignissimos necessitatibus voluptas omnis. qui assumenda inventore sequi ut non sapiente nesciunt neque cumque consequuntur doloremque aut autem vitae. labore facilis distinctio sit voluptatem itaque quo. qui rerum recusandae voluptas. nisi beatae incidunt consequatur neque ut repellendus quibusdam qui voluptas</p>
+          <p>Sequi sit tenetur iusto. nulla dolores in aut velit velit ea officia iste illum quas et similique aperiam. magni et adipisci consequatur aut quae repellendus odio voluptas adipisci modi nostrum</p>
         </section>
 
         <section>
           <h3>Is it any good ?</h3>
+          <span class="visuallyhidden">quality rating</span>
           <span class="slider-position"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
 <!-- END PARTIAL: results-slider --></span>
-          <p>Aut est maiores nisi culpa facere assumenda quam odit accusamus laudantium animi. natus quisquam nihil autem ut dolorum. sit aut error laudantium ipsam adipisci ullam illum dolore. eveniet dolor eum sint tempore nihil repellendus et facere quis sed rerum labore et nemo. maxime repellendus quaerat voluptas voluptas autem rerum. placeat repellat qui qui vel possimus voluptatem incidunt eveniet dolore et ipsam</p>
+          <p>Eligendi alias doloremque rerum et vitae autem non dolores qui architecto. autem numquam neque similique ut fugiat fuga aut. aliquid molestias accusantium ab facilis accusamus incidunt labore. sunt aut rerum aut aliquid maiores alias totam qui molestias aut voluptatibus doloremque provident. non doloremque et quas quia</p>
         </section>
 
         <section>
           <h3>How parents can help ?</h3>
-          <p>Delectus sit reprehenderit nam libero vitae asperiores illum ipsam eum. rerum ipsam soluta quis reiciendis suscipit voluptatem aut repudiandae corporis quaerat aspernatur possimus aut. voluptatibus quisquam ab id ut inventore eos id voluptas aspernatur blanditiis harum quia cumque voluptatibus</p>
+          <p>Nobis voluptates eaque eveniet reiciendis rerum eos deleniti et debitis ut qui aliquam voluptatum. placeat officia iste corrupti optio in commodi consequatur provident. ex quaerat ut voluptate voluptatem et ullam quo dolorum natus. aut recusandae et dolorem optio sed sed aut dolorem. dolores quia autem sed atque temporibus iste id soluta. nisi non quis debitis libero non velit sunt aliquid ut adipisci corrupti</p>
         </section>
 
         <footer>
@@ -588,68 +664,110 @@
     <div class="row">
       <div class="col col-17">
         <div class="review-intro">
+          <span class="visuallyhidden">review rating</span>
           <div class="review-rating">
             <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
 <!-- END PARTIAL: results-slider -->
             <h4>7 Reviews of this App</h4>
             <p>For learning &amp; attention issues</p>
           </div><!-- end review-rating -->
-          <div class="review-rating">
-            <span>Sort By:</span>
-            <label>
-              <select name="comment-sort-option" class="comment-sort">
-                <option value="">Date: Newest to Oldest</option>
-                <option>A-Z</option>
-                <option>Z-A</option>
-              </select>
-            </label>
+          <div class="review-rating-sort select-inverted-mobile">
+            <label for="parent-review-comment-sort">Sort By:</label>
+            <select name="comment-sort-option" class="comment-sort" id="parent-review-comment-sort">
+              <option value="">Date: Newest to Oldest</option>
+              <option>A-Z</option>
+              <option>Z-A</option>
+            </select>
           </div><!-- end review-rating -->
         </div><!-- end .review-intro -->
 
         <div class="parent-reviews">
           <section class="parent-review">
             <div class="review-section-title">
-              <div class="review-section grade">Grade<span class="review-grade four">4</span></div> <div class="review-section quality">Quality<span><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four">&nbsp;</div>
-<!-- END PARTIAL: results-slider --></span></div> <div class="review-section date">February 9, 2013</div>
+              <div class="review-section grade">
+                Grade
+                <span class="review-grade four">4</span>
+              </div>
+              <div class="review-section quality">
+                Quality
+                <span class="visuallyhidden">rating</span>
+                <span><!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<!-- END PARTIAL: results-slider --></span>
+              </div>
+            <div class="review-section date">February 9, 2013</div>
             </div>
-            <p>Iste aspernatur sunt rerum. magnam doloremque et impedit et iure. ut explicabo incidunt suscipit doloribus incidunt dicta eius. et unde et in exercitationem eum occaecati amet reprehenderit voluptatem est eos architecto. eveniet architecto eaque asperiores rem fugiat est quis veniam sunt pariatur omnis. at iusto iusto nostrum autem dicta debitis possimus dolores quam nihil sit reiciendis. eligendi nemo quia quidem nisi assumenda ea qui deserunt ut sequi et</p>
+            <p>
+              <strong>cumque ea facere at quia.</strong> Enim in natus quos. odio tempore id corrupti quia totam harum delectus consequatur aspernatur consequuntur quia. laborum laborum et consequatur numquam dolorum sit distinctio veritatis ad ut architecto vero qui in
+            </p>
 
-            <p><span>Good For</span> <span><a href="REPLACE">Reading</a></span> <span><a href="REPLACE">Math</a></span> <span><a href="REPLACE">Writing</a></span> <span><a href="REPLACE">Listening Comprehension</a></span></p>
+            <p>
+              <span>Good For</span>
+              <span>
+                <a href="REPLACE">Reading</a>
+              </span>
+              <span>
+                <a href="REPLACE">Math</a>
+              </span>
+              <span>
+                <a href="REPLACE">Writing</a>
+              </span>
+              <span>
+                <a href="REPLACE">Listening Comprehension</a>
+              </span>
+            </p>
 
             <div class="review-report">
-              <span class="write-review"><i></i>Write Your Own Review</span> <span class="review-report"><i></i>Report</span>
+              <span class="write-review"><i></i><a href="REPLACE">Write Your Own Review</a></span> <span class="review-report"><i></i><a href="REPLACE">Report</a></span>
             </div><!-- end review-report -->
           </section>
 
           <section class="parent-review">
             <div class="review-section-title">
-              <div class="review-section grade">Grade<span class="review-grade four">4</span></div> <div class="review-section quality">Quality<span><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four">&nbsp;</div>
-<!-- END PARTIAL: results-slider --></span></div> <div class="review-section date">February 9, 2013</div>
+              <div class="review-section grade">
+                Grade
+                <span class="review-grade four">4</span>
+              </div>
+              <div class="review-section quality">
+                Quality
+                <span class="visuallyhidden">rating</span>
+                <span><!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<!-- END PARTIAL: results-slider --></span>
+              </div>
+              <div class="review-section date">February 9, 2013</div>
             </div>
-            <p>Odio quis hic magni nostrum iure hic et tempora et id cum qui. nobis aut culpa rerum magni vero. ut molestiae architecto facere aut quisquam similique in qui laborum impedit tempora rerum. nam dolor non id maxime voluptatum consectetur fuga exercitationem iure. consequatur aut voluptatem laboriosam blanditiis enim adipisci ut. facilis assumenda earum dolores id dignissimos error adipisci aliquam non et eveniet beatae aspernatur ducimus</p>
+            <p><strong>quis sed optio sit quo.</strong> Nemo labore id reprehenderit sapiente deleniti illum blanditiis sint. molestiae suscipit iste aut praesentium similique est assumenda iure. pariatur occaecati quia molestiae</p>
 
             <p><span>Good For</span> <span><a href="REPLACE">Reading</a></span> <span><a href="REPLACE">Math</a></span> <span><a href="REPLACE">Writing</a></span> <span><a href="REPLACE">Listening Comprehension</a></span></p>
 
             <div class="review-report">
-              <span class="write-review"><i></i>Write Your Own Review</span> <span class="review-report"><i></i>Report</span>
+              <span class="write-review"><i></i><a href="REPLACE">Write Your Own Review</a></span> <span class="review-report"><i></i><a href="REPLACE">Report</a></span>
             </div><!-- end review-report -->
           </section>
 
           <section class="parent-review">
             <div class="review-section-title">
-              <div class="review-section grade">Grade<span class="review-grade four">4</span></div> <div class="review-section quality">Quality<span><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four">&nbsp;</div>
-<!-- END PARTIAL: results-slider --></span></div> <div class="review-section date">February 9, 2013</div>
+              <div class="review-section grade">
+                Grade
+                <span class="review-grade four">4</span>
+              </div>
+              <div class="review-section quality">
+                Quality
+                <span class="visuallyhidden">rating</span>
+                <span><!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<!-- END PARTIAL: results-slider --></span>
+              </div>
+              <div class="review-section date">February 9, 2013</div>
             </div>
-            <p>Totam nesciunt nisi voluptatem fugiat officia accusantium ea sit earum accusamus. doloribus sit corporis rerum quis magni esse. voluptatem possimus est culpa dolores fugiat commodi. delectus deserunt omnis et quo. hic dolores non facilis veritatis</p>
+            <p><strong>illum asperiores ut illum rerum.</strong> Numquam nobis est earum sit. ut consequuntur dolores voluptatum nemo explicabo est consequatur molestiae sint voluptas. soluta unde omnis accusamus aliquam alias quam fuga quaerat praesentium impedit. aliquam illum temporibus possimus id delectus ipsum quo aut. asperiores expedita debitis consequuntur eos suscipit voluptatum sunt. nam nam ut ut architecto earum iusto</p>
 
             <p><span>Good For</span> <span><a href="REPLACE">Reading</a></span> <span><a href="REPLACE">Math</a></span> <span><a href="REPLACE">Writing</a></span> <span><a href="REPLACE">Listening Comprehension</a></span></p>
 
             <div class="review-report">
-              <span class="write-review"><i></i>Write Your Own Review</span> <span class="review-report"><i></i>Report</span>
+              <span class="write-review"><i></i><a href="REPLACE">Write Your Own Review</a></span> <span class="review-report"><i></i><a href="REPLACE">Report</a></span>
             </div><!-- end review-report -->
           </section>
         </div><!-- .parent-reviews -->
@@ -657,7 +775,7 @@
         <!-- Show More -->
         <div class="show-more">
           
-              <a href="REPLACE" class="show-more-link" data-path="assistive-tech/reviews" data-container="parent-reviews" data-item="parent-review" data-count="6">More Reviews<i class="icon-arrow-down-blue"></i></a>
+              <a href="#" class="show-more-link" data-path="assistive-tech/reviews" data-container="parent-reviews" data-item="parent-review" data-count="6">More Results<i class="icon-arrow-down-blue"></i></a>
            
         </div><!-- .show-more --> 
 
@@ -669,15 +787,22 @@
   <p>For learning & attention issues</p>
   <div class="is-it-any-good">
     <h3>Is it any good ?</h3>
-    <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero">&nbsp;</div>
-<!-- END PARTIAL: results-slider -->
+    <!-- BEGIN PARTIAL: results-slider-ratings -->
+<div class="results-slider zero blue blue-one ">
+  <span class="visuallyhidden">quality rating</span>
+  <button class="slider-button">1</button>
+  <button class="slider-button">2</button>
+  <button class="slider-button">3</button>
+  <button class="slider-button">4</button>
+  <button class="slider-button">5</button>
+</div>
+<!-- END PARTIAL: results-slider-ratings -->
   </div>
 
   <div class="for-kids">
     <h3>For kids</h3>
     <label for="rate-for-kids">
-      <select name="rate-for-kids" id="rate-for-kids">
+      <select name="rate-for-kids" id="rate-for-kids" title="For kids in grade">
         <option value="">Select Grade</option>
         <option>Option 1</option>
         <option>Option 2</option>
@@ -689,7 +814,7 @@
   <div class="i-think-it-is">
     <h3>I think it is</h3>
     <label for="rate-i-think">
-      <select name="rate-i-think" id="rate-i-think">
+      <select name="rate-i-think" id="rate-i-think" title="I think it is">
         <option value="">Select on / pause / off</option>
         <option>Option 1</option>
         <option>Option 2</option>
@@ -699,58 +824,59 @@
   </div>
 
   <div class="it-is-good-for">
-    <h3>It is good for</h3>
-
-    <ul>
-      <li>
-        <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-reading" id="rate-goodfor-reading"></span>
-        <label for="rate-goodfor-reading">Reading</label>
-      </li>
-      <li>
-        <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-math" id="rate-goodfor-math"></span>
-        <label for="rate-goodfor-math">Math</label>
-      </li>
-      <li>
-        <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-writing" id="rate-goodfor-writing"></span>
-        <label for="rate-goodfor-writing">Writing</label>
-      </li>
-      <li>
-        <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-attention" id="rate-goodfor-attention"></span>
-        <label for="rate-goodfor-attention">Attention/hyperactivity/impulsiveity</label>  
-      </li>
-      <li>
-        <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-executive-function" id="rate-goodfor-executive-function"></span>
-        <label for="rate-goodfor-executive-function">Organization, planning, time management</label>
-      </li>
-      <li>
-        <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-oral-expression" id="rate-goodfor-oral-expression"></span>
-        <label for="rate-goodfor-oral-expression">Oral expression</label>
-      </li>
-      <li>
-        <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-listening" id="rate-goodfor-listening"></span>
-        <label for="rate-goodfor-listening">Listening comprehension</label>
-      </li>
-      <li>
-        <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-social-skills" id="rate-goodfor-social-skills"></span>
-        <label for="rate-goodfor-social-skills">Social skills, including conversation</label>
-      </li>
-      <li>
-        <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-motor-skills" id="rate-goodfor-motor-skills"></span>
-        <label for="rate-goodfor-motor-skills">Motor skills</label>
-      </li>
-    </ul>
+    <fieldset>
+      <legend>It is good for</legend>
+      <ul>
+        <li>
+          <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-reading" id="rate-goodfor-reading" aria-required="true"></span>
+          <label for="rate-goodfor-reading">Reading</label>
+        </li>
+        <li>
+          <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-math" id="rate-goodfor-math" aria-required="true"></span>
+          <label for="rate-goodfor-math">Math</label>
+        </li>
+        <li>
+          <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-writing" id="rate-goodfor-writing" aria-required="true"></span>
+          <label for="rate-goodfor-writing">Writing</label>
+        </li>
+        <li>
+          <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-attention" id="rate-goodfor-attention" aria-required="true"></span>
+          <label for="rate-goodfor-attention">Attention/hyperactivity/impulsiveity</label>
+        </li>
+        <li>
+          <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-executive-function" id="rate-goodfor-executive-function" aria-required="true"></span>
+          <label for="rate-goodfor-executive-function">Organization, planning, time management</label>
+        </li>
+        <li>
+          <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-oral-expression" id="rate-goodfor-oral-expression" aria-required="true"></span>
+          <label for="rate-goodfor-oral-expression">Oral expression</label>
+        </li>
+        <li>
+          <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-listening" id="rate-goodfor-listening" aria-required="true"></span>
+          <label for="rate-goodfor-listening">Listening comprehension</label>
+        </li>
+        <li>
+          <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-social-skills" id="rate-goodfor-social-skills" aria-required="true"></span>
+          <label for="rate-goodfor-social-skills">Social skills, including conversation</label>
+        </li>
+        <li>
+          <span class="checkbox-wrap"><input type="checkbox" name="rate-goodfor-motor-skills" id="rate-goodfor-motor-skills" aria-required="true"></span>
+          <label for="rate-goodfor-motor-skills">Motor skills</label>
+        </li>
+      </ul>
+    </fieldset>
   </div>
 
   <div class="tell-other-families">
-    <h3>Tell other families what you think</h3>
     <label>
+      <span>Tell other families what you think</span>
       <textarea></textarea>
     </label>
   </div>
 
   <div class="give-your-review">
-    <h3>Give your review a title</h3>
     <label>
+      <span>Give your review a title</span>
       <textarea></textarea>
     </label>
   </div>
@@ -768,9 +894,16 @@
     <h2>Rate This App</h2>
   </header>
   <p>For learning & attention issues</p>
-  <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero">&nbsp;</div>
-<!-- END PARTIAL: results-slider -->
+  <!-- BEGIN PARTIAL: results-slider-ratings -->
+<div class="results-slider zero blue blue-one ">
+  <span class="visuallyhidden">quality rating</span>
+  <button class="slider-button">1</button>
+  <button class="slider-button">2</button>
+  <button class="slider-button">3</button>
+  <button class="slider-button">4</button>
+  <button class="slider-button">5</button>
+</div>
+<!-- END PARTIAL: results-slider-ratings -->
 </section>
 <!-- END PARTIAL: rate-this-app-sidebar -->
       </div><!-- end .col.col-7 -->
@@ -792,39 +925,34 @@
 
 
 <!-- BEGIN MODULE: Newsletter Signup -->
-<div class="container">
+<div class="container newsletter-signup">
   <div class="row">
 
-    <!-- FIXME: discard this div and move the .newsletter-signup class to div.container element for consistency -->
-    <div class="newsletter-signup">
+    <div class="col col-12">
 
-      <div class="col col-12">
+      <header>
+        <h2>Personalized Email</h2>
+        <p>Stay connected with us by signing up for our weekly personalized emails.</p>
+      </header>
 
-        <header>
-          <h2>Personalized Email</h2>
-          <p>Stay connected with us by signing up for our weekly personalized emails.</p>
-        </header>
+    </div><!-- .col -->
 
-      </div><!-- .col -->
+    <div class="col col-12">
 
-      <div class="col col-12">
-
-        <div class="form personalized-email-form">
-          <fieldset class="input-wrap">
-            <label for="personalized-email-email" class="visuallyhidden">Enter Email Address</label>
-            <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
-          </fieldset>
-          <div class="submit-button-wrap">
-            <input type="submit" class="submit-button" value="Sign Up">
-          </div>
+      <div class="form personalized-email-form">
+        <fieldset class="input-wrap">
+          <label for="personalized-email-email" class="visuallyhidden" aria-hidden="true">Enter Email Address</label>
+          <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
+        </fieldset>
+        <div class="submit-button-wrap">
+          <input type="submit" class="button" value="Sign Up">
         </div>
+      </div>
 
-      </div><!-- .col -->
-
-    </div><!-- .newsletter-signup -->
+    </div><!-- .col -->
 
   </div><!-- .row -->
-</div><!-- .container -->
+</div><!-- .container .newsletter-signup -->
 
 <!-- END MODULE: Newsletter Signup -->
 
@@ -832,46 +960,45 @@
 <div class="container partners-carousel">
   <div class="row">
     <div class="col col-24">
-
+      <h2>In Partnership with</h2>
       <!-- BEGIN PARTIAL: partners-carousel -->
-<h2>In Partnership with</h2>
 <div id="partners-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
   </ul>
 </div><!-- end partners-carousel-container -->
@@ -916,7 +1043,7 @@
 <!-- END PARTIAL: glossary-term -->
 
 <!-- BEGIN MODULE: Footer -->
-<footer class="container" id="footer-page">
+<footer class="container" id="footer-page" aria-role="content info">
   <div class="row footer-social">
 
     <div class="col col-7 push-17">
@@ -940,7 +1067,7 @@
   <div class="row">
     <div class="col col-24">
 
-      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/img/logo.u.footer.png" />
+      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/images/logo.u.footer.png" />
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -956,9 +1083,28 @@
 <!--[if lte IE 8]>
 <script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
-<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script><script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script><script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script><script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script><script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script><script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script><script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script><script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script><script src="Presentation/includes/js/vendor/bootstrap.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script><script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script><script src="Presentation/includes/js/site.js"></script>
+
+
+  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
+<script src="Presentation/includes/js/vendor/bootstrap.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
+<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
+<script src="Presentation/includes/js/assistive-tech.js"></script>
 <script src="Presentation/includes/js/global.js"></script>
+
 <!-- END PARTIAL: footerjs -->
 
   </form>

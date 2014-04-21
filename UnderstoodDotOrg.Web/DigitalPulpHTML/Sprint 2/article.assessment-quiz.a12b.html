@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
-<!--[if gte IE 9]><!--><html class="no-js"><!--<![endif]-->
+<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
+<!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
 <head>
@@ -12,7 +13,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
 
-
+  
   
   <link href="Presentation/includes/css/vendor/bootstrap.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
@@ -20,12 +21,28 @@
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-<link href="Presentation/includes/css/base.css" rel="stylesheet" />
+
+  
+  <!--[if gte IE 9]><!-->
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
 <link href="Presentation/includes/css/grid.css" rel="stylesheet" />
 <link href="Presentation/includes/css/layout.css" rel="stylesheet" />
 <link href="Presentation/includes/css/globals.css" rel="stylesheet" />
 <link href="Presentation/includes/css/modules.css" rel="stylesheet" />
+<link href="Presentation/includes/css/article.css" rel="stylesheet" />
 <link href="Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
+  <!--<![endif]-->
+
+  
+  <!--[if lte IE 8]>
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
+<link href="Presentation/includes/css/grid-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/layout-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/globals-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/modules-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/article-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/uniform-understood-nonresponsive.css" rel="stylesheet" />
+  <![endif]-->
 
   
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
@@ -57,7 +74,10 @@
     <div class="col col-24">
       
       <div class="logo-u-main">
-        <a href="REPLACE"><img alt="Understood Logo" src="Presentation/includes/img/logo.u.default.png" /></a>
+        <a href="REPLACE">
+          <span class="visuallyhidden">Understood for learning and attention issues</span> 
+          <img alt="Understood – for learning and attention issues" src="Presentation/includes/images/logo.u.default.png" />
+        </a>
       </div><!-- logo-u-main -->
 
       <ul class="language-selection">
@@ -83,22 +103,20 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <fieldset>
-            <legend>Search</legend>
-            <span class="field">
-              <label for="search-term" class="visuallyhidden">Search</label>
-              <input type="text" id="search-term" placeholder="Enter Search Term">
-              <input type="submit" value="Go">
-            </span>
-          </fieldset>
+          <span class="field">
+            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+            <input type="text" id="search-term" placeholder="Enter Search Term">
+            <input type="submit" value="Go">
+          </span>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
 
       <!-- BEGIN PARTIAL: nav-main -->
 <nav class="nav-main">
-  <ul role="menu">
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
+  <ul role="menu" aria-role="navigation" aria-label="main-navigation">
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -108,7 +126,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true" ><span><a href="REPLACE">School &amp;<br> Learning</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">School &amp;<br> Learning</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Partnering with your child's school</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Evaluations</a></span></li>
@@ -118,7 +137,8 @@
         <li role="menuitem"><span><a href="REPLACE">Learning at home</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Friends &amp;<br> Feelings</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Friends &amp;<br> Feelings</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -128,7 +148,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">You &amp;<br> Your Family</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">You &amp;<br> Your Family</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -138,7 +159,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Community &amp;<br> Events</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Community &amp;<br> Events</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -152,7 +174,7 @@
 </nav>
 <!-- END PARTIAL: nav-main -->
 
-      <div id="toolkit" aria-haspopup="true"><span>Your Parent Toolkit</span></div>
+      <div id="toolkit" class="toolkit-element" aria-haspopup="true"><button>Your Parent Toolkit</button></div>
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -174,19 +196,19 @@
         <ul>
           <li>
             <div class="icon support-plan">
-              <a href="REPLACE">My Support Plan</a>
+              <a class="toolkit-element" href="REPLACE">My Support Plan</a>
               <div class="coming-soon">Coming Soon</div>
             </div>
           </li>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Observation Log</a>
+              <a class="toolkit-element" href="REPLACE">Observation Log</a>
             </div>
           </li>
        
           <li>
             <div class="icon childs-world">
-              <a href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Childs World</a>
             </div>
           </li>
         </ul>
@@ -196,18 +218,18 @@
         <ul>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Find Technology</a>
+              <a class="toolkit-element" href="REPLACE">Find Technology</a>
             </div>
           </li>
           <li>
             <div class="icon decisions">
-              <a href="REPLACE">My Decisions</a>
+              <a class="toolkit-element" href="REPLACE">My Decisions</a>
             </div>
           </li>
        
           <li>
             <div class="icon rate-schools">
-              <a href="REPLACE">Rate Schools</a>
+              <a class="toolkit-element" href="REPLACE">Rate Schools</a>
             </div>
           </li>
         </ul>
@@ -216,12 +238,12 @@
         <ul>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
         </ul>
@@ -238,10 +260,15 @@
 <!-- END PARTIAL: header -->
 
       <!-- BEGIN PARTIAL: pagetopic -->
+<!-- FIXME: Documentation needed to explain share on/off functionality in page topic module -->
+
+<!-- Determine variables present and change column width to fit the content available -->
+
+
 <!-- Page Title -->
-<div class="container page-topic">
-  <div class="row">
-    <div class="col col-14 offset-1">
+<div class="container page-topic with-share">
+  <div class="row" >
+    <div class="col col-14 offset-1 ">
       
         <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Game & Skill Builders</a>
       
@@ -272,6 +299,7 @@
 <!-- END PARTIAL: share-save -->
     </div>
     
+    
   </div>
 </div><!-- .container -->
 
@@ -279,91 +307,97 @@
 <div class="container article">
   <div class="row row-equal-heights">
     <!-- article -->
-    <div class="col col-15 offset-1">
+    <div class="col col-15 offset-1 skiplink-content" aria-role="main" aria-role="main">
       <!-- BEGIN PARTIAL: assessment-quiz-2 -->
 <div class="container assessment-quiz">
   <div class="assessment-quiz-form">
 
-    <div class="assessment-quiz-pager">Page 2 of 2</div>
-    <p class="assessment-quiz-intro">sint commodi incidunt aut reprehenderit doloribus aliquam perspiciatis velit asperiores hic molestias earum est qui excepturi pariatur in ut et aliquid autem fugiat quod odio</p>
+    <h3 class="assessment-quiz-pager">Page 2 of 2</h3>
+    <p class="assessment-quiz-intro">sequi corrupti est sit dolorem similique fugiat rerum id qui quisquam occaecati deleniti aliquam vitae ea nulla dolorem vero perspiciatis ipsum voluptatibus et molestiae provident</p>
 
     <div class="assessment-questions">
       <div class="assessment-question-wrapper">
-        <p class="assessment-question">My child's favorite activity is:</p>
-        <div class="radio-wrapper">
-          <label>
-            <input type="radio" name="question1" value="answer1">
-            <span>Getting lost in a good book</span>
-          </label>
-        </div>
-        <div class="radio-wrapper">
-          <label>
-            <input type="radio" name="question1" value="answer2">
-            <span>Doing crafts or art projects</span>
-          </label>
-        </div>
-        <div class="radio-wrapper">
-          <label>
-            <input type="radio" name="question1" value="answer3">
-            <span>Trying to solve mysteries, riddles, or crossword puzzles</span>
-          </label>
-        </div>
+        <fieldset>
+          <legend class="assessment-question">My child's favorite activity is:</legend>
+          <div class="radio-wrapper">
+            <label for="q1r1">
+              <input type="radio" name="question1" id="q1r1" value="answer1">
+              <span>Getting lost in a good book</span>
+            </label>
+          </div>
+          <div class="radio-wrapper">
+            <label for="q1r2">
+              <input type="radio" name="question1" id="q1r2" value="answer2">
+              <span>Doing crafts or art projects</span>
+            </label>
+          </div>
+          <div class="radio-wrapper">
+            <label for="q1r3">
+              <input type="radio" name="question1" id="q1r3" value="answer3">
+              <span>Trying to solve mysteries, riddles, or crossword puzzles</span>
+            </label>
+          </div>
+        </fieldset>
       </div>
 
       <div class="assessment-question-wrapper">
-        <p class="assessment-question">My child's favorite activity is:</p>
-        <div class="radio-wrapper">
-          <label>
-            <input type="radio" name="question2" value="answer1">
-            <span>Doing crafts or art projects</span>
-          </label>
-        </div>
-        <div class="radio-wrapper">
-          <label>
-            <input type="radio" name="question2" value="answer2">
-            <span>Trying to solve mysteries, riddles, or crossword puzzles</span>
-          </label>
-        </div>
-        <div class="radio-wrapper">
-          <label>
-            <input type="radio" name="question2" value="answer3">
-            <span>Writing a journal or blogging</span>
-          </label>
-        </div>
-        <div class="radio-wrapper">
-          <label>
-            <input type="radio" name="question2" value="answer4">
-            <span>Reflecting on your life and your future</span>
-          </label>
-        </div>
+        <fieldset>
+          <legend class="assessment-question">My child's favorite activity is:</legend>
+          <div class="radio-wrapper">
+            <label for="q2r1">
+              <input type="radio" name="question2" id="q2r1" value="answer1">
+              <span>Doing crafts or art projects</span>
+            </label>
+          </div>
+          <div class="radio-wrapper">
+            <label for="q2r2">
+              <input type="radio" name="question2" id="q2r2" value="answer2">
+              <span>Trying to solve mysteries, riddles, or crossword puzzles</span>
+            </label>
+          </div>
+          <div class="radio-wrapper">
+            <label for="q2r3">
+              <input type="radio" name="question2" id="q2r3" value="answer3">
+              <span>Writing a journal or blogging</span>
+            </label>
+          </div>
+          <div class="radio-wrapper">
+            <label for="q2r4">
+              <input type="radio" name="question2" id="q2r4" value="answer4">
+              <span>Reflecting on your life and your future</span>
+            </label>
+          </div>
+        </fieldset>
       </div>
 
       <div class="assessment-question-wrapper">
-        <p class="assessment-question">My child's favorite activity is:</p>
-        <div class="radio-wrapper">
-          <label>
-            <input type="radio" name="question1" value="answer1">
-            <span>Getting lost in a good book</span>
-          </label>
-        </div>
-        <div class="radio-wrapper">
-          <label>
-            <input type="radio" name="question1" value="answer2">
-            <span>Doing crafts or art projects</span>
-          </label>
-        </div>
-        <div class="radio-wrapper">
-          <label>
-            <input type="radio" name="question1" value="answer3">
-            <span>Trying to solve mysteries, riddles, or crossword puzzles</span>
-          </label>
-        </div>
+        <fieldset>
+          <legend class="assessment-question">My child's favorite activity is:</legend>
+          <div class="radio-wrapper">
+            <label for="q3r1">
+              <input type="radio" name="question3" id="q3r1" value="answer1">
+              <span>Getting lost in a good book</span>
+            </label>
+          </div for="q3r2">
+          <div class="radio-wrapper">
+            <label>
+              <input type="radio" name="question3" id="q3r2" value="answer2">
+              <span>Doing crafts or art projects</span>
+            </label>
+          </div>
+          <div class="radio-wrapper">
+            <label for="q3r3">
+              <input type="radio" name="question3" id="q3r3" value="answer3">
+              <span>Trying to solve mysteries, riddles, or crossword puzzles</span>
+            </label>
+          </div>
+        </fieldset>
       </div>
     </div><!-- .assessment-questions -->
 
     <div class="assessment-actions">
-      <input class="quiz-back-button quiz-back" type="button" value="Back">
-      <input class="submit-button quiz-next" type="submit" value="Submit">
+      <input class="button no gray quiz-back" type="button" value="Back">
+      <input class="button quiz-next" type="submit" value="Submit">
     </div>
 
   </div><!-- .assessment-quiz-form -->
@@ -375,27 +409,32 @@
     <div class="col col-1 sidebar-spacer"></div>
 
     <!-- right bar -->
-    <div class="col col-5 offset-1">
+    <div class="col col-5 offset-1 skiplink-sidebar">
       <!-- BEGIN PARTIAL: helpful-count -->
+
 <div class="count-helpful">
-  <a href="REPLACE"><span>34</span>Found this helpful</a>
+  <a href="#count-helpful-sidebar"><span>34</span>Found this helpful</a>
 </div>
 <!-- END PARTIAL: helpful-count -->
       <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful sidebar">
-   
+<div class="find-this-helpful sidebar" id="count-helpful-sidebar">
+  
+
+  
+
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="helpful-yes">Yes</button>
+      <button class="button yes">Yes</button>
     </li>
     <li>
-      <button class="helpful-no">No</button>
+      <button class="button no gray">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
-   
+  
 </div>
+
 <!-- END PARTIAL: find-helpful -->
       <!-- BEGIN PARTIAL: keep-reading -->
 <div class="keep-reading">
@@ -414,11 +453,11 @@
 <!-- BEGIN PARTIAL: tools -->
 <!-- Tools -->
 
-<div class="container mini-tools-wrap" style="background-image: url(Presentation/includes/img/bg-subtopic-minitools.jpg)">
+<div class="container mini-tools-wrap" style="background-image: url(Presentation/includes/images/bg-subtopic-minitools.jpg)">
 
   <div class="row">
 
-    <div class="col col-8">
+    <div class="col col-8 skiplink-content" aria-role="main">
 
       <!-- BEGIN PARTIAL: tool-technology -->
 <section class="mini-tool" id="mini-tool-apps">
@@ -433,7 +472,7 @@
     <fieldset>
 
       <label for="tool-tech-issue" class="visuallyhidden">Select behavior issue</label>
-      <select name="tool-tech-issue" id="tool-tech-issue" required aria-required="true">
+      <select name="tool-tech-issue" id="tool-tech-issue" aria-required="true">
         <option value="">Select behavior issue</option>
           <option>Attention & hyperactivity issues</option>
           <option>Reading issues</option>
@@ -445,7 +484,7 @@
       </select>
 
       <label for="tool-tech-grade" class="visuallyhidden">Select grade</label>
-      <select name="tool-tech-grade" id="tool-tech-grade" required aria-required="true">
+      <select name="tool-tech-grade" id="tool-tech-grade" aria-required="true">
         <option value="">Select grade</option>
         <option>Grade 1</option>
         <option>Grade 2</option>
@@ -454,7 +493,7 @@
       </select>
 
       <label for="tool-tech-alltech" class="visuallyhidden">All Technology</label>
-      <select name="tool-tech-alltech" id="tool-tech-alltech" required aria-required="true">
+      <select name="tool-tech-alltech" id="tool-tech-alltech" aria-required="true">
         <option value="">All technology</option>
         <option>Apps</option>
         <option>Games</option>
@@ -462,7 +501,7 @@
       </select>
 
       <label for="tool-tech-platforms" class="visuallyhidden">All Platforms &amp; Devices</label>
-      <select name="tool-tech-platforms" id="tool-tech-platforms" required aria-required="true">
+      <select name="tool-tech-platforms" id="tool-tech-platforms" aria-required="true">
         <option value="">All platforms &amp; devices</option>
         <option>iPhone</option>
         <option>iPod Touch</option>
@@ -472,7 +511,7 @@
     </fieldset>
 
     <div class="submit-button-wrap">
-      <input class="submit-button" type="submit" value="Submit">
+      <input class="button" type="submit" value="Submit">
     </div>
 
   </div><!-- .form --> 
@@ -480,11 +519,12 @@
   <footer class="powered-by">
     <h5>powered by</h5>
     <div class="logo">
-      <img class="logo-img" alt="Common Sense" src="Presentation/includes/img/logo.partner.commonsense.png" />
+      <img class="logo-img" alt="Common Sense Media" src="Presentation/includes/images/logo.partner.commonsense.png" />
     </div>
   </footer>
 
-</section><!-- .module --> 
+</section><!-- .module -->
+
 <!-- END PARTIAL: tool-technology -->
       
     </div><!-- .col --> 
@@ -504,7 +544,7 @@
     <fieldset>
 
       <label for="tool-advice-issue" class="visuallyhidden">Select behavior issue</label>
-      <select name="tool-advice-issue" id="tool-advice-issue" required aria-required="true">
+      <select name="tool-advice-issue" id="tool-advice-issue" aria-required="true">
         <option value="">Select challenge</option>
         <option>Attention & hyperactivity issues</option>
         <option>Reading issues</option>
@@ -516,7 +556,7 @@
       </select>
 
       <label for="tool-advice-grade" class="visuallyhidden">Select grade</label>
-      <select name="tool-advice-grade" id="tool-advice-grade" required aria-required="true">
+      <select name="tool-advice-grade" id="tool-advice-grade" aria-required="true">
         <option value="">Select grade</option>
         <option>Grade 1</option>
         <option>Grade 2</option>
@@ -527,95 +567,40 @@
     </fieldset>
 
     <div class="submit-button-wrap">
-      <input class="submit-button" type="submit" value="Submit">
+      <input class="button" type="submit" value="Submit">
     </div>
 
   </div><!-- .form --> 
 
 </section><!-- .module -->
+
 <!-- END PARTIAL: tool-experts -->
 
     </div><!-- .col --> 
 
     <div class="col col-8">
 
-      <!-- BEGIN PARTIAL: tool-school-ratings -->
-<section class="mini-tool" id="mini-tool-ratings">
+      <!-- BEGIN PARTIAL: tool-decision-guide -->
+<section class="mini-tool" id="mini-tool-decision-guide">
 
   <header>
-    <h3>School Ratings</h3>
-    <p>Find a new school or rate your child's</p>
+    <h3>Decision Guide</h3>
+    <p>Key questions to help you weigh your options</p>
   </header>
 
+  <ul class="decision-guide">
+    <li>Is he ready?</li>
+    <li>Which is best?</li>
+    <li>Should I...</li>
+  </ul>
 
-  <div class="tabs">
-    <!-- NO WHITE SPACE BETWEEN As to PRESERVE LAYOUT -->
-    <a href="#by-location">By Location</a><a href="#by-name">By Name</a>
-  </div>
-
-  <ul class="tab-content-wrap">
-
-    
-
-    <li class="tab-content" id="by-location">
-
-      <div class="form">
-
-        <fieldset>
-
-          <label for="tool-ratings-zip" class="visuallyhidden"></label>
-          <input type="text" name="tool-ratings-zip" id="tool-ratings-zip" placeholder="Enter zip code or city &amp; state">
-
-        </fieldset>
-
-        <div class="submit-button-wrap">
-          <input class="submit-button" type="submit" value="Submit">
-        </div>
-
-      </div><!-- .form -->
-
-    </li><!-- .by-location -->
-
-
-    <li class="tab-content" id="by-name">
-
-      <div class="form select-container">
-
-        <fieldset>
-
-          <label for="tool-ratings-school" class="visuallyhidden"></label>
-          <input type="text" name="tool-ratings-school" id="tool-ratings-school" placeholder="Enter school name">
-
-          <label for="tool-ratings-state" class="visuallyhidden">Select a state</label>
-          <select name="tool-ratings-state" id="tool-ratings-state" required aria-required="true">
-            <option value="">Select a state</option>
-            <option>Alabama</option>
-            <option>Arizona</option>
-            <option>Arkansas</option>
-          </select>
-
-        </fieldset>
-
-        <div class="submit-button-wrap">
-          <input class="submit-button" type="submit" value="Submit">
-        </div>
-
-      </div><!-- .form -->
-
-    </li><!-- .by-name -->
-
-    
-  </ul><!-- .tab-content-wrap -->
-
-  <footer class="powered-by">
-    <h5>powered by</h5>
-    <div class="logo">
-      <img class="logo-img" alt="Great Schools" src="Presentation/includes/img/logo.partner.greatschools.png" />
+   <div class="submit-button-wrap">
+      <button class="button">Try It</button>
     </div>
-  </footer>
 
 </section><!-- .module -->
-<!-- END PARTIAL: tool-school-ratings -->
+
+<!-- END PARTIAL: tool-decision-guide -->
        
     </div><!-- .col --> 
 
@@ -677,11 +662,11 @@
 
       <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden">Enter School Name</label>
+        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
         <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
         <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" required="" aria-required="true">
+        <select name="explore-select" id="explore-select" aria-required="true">
           <option value="">Select a state</option>
           <option>Alabama</option>
           <option>Arizona</option>
@@ -822,39 +807,34 @@
 <!-- END MODULE: More to Explore -->
 
 <!-- BEGIN MODULE: Newsletter Signup -->
-<div class="container">
+<div class="container newsletter-signup">
   <div class="row">
 
-    <!-- FIXME: discard this div and move the .newsletter-signup class to div.container element for consistency -->
-    <div class="newsletter-signup">
+    <div class="col col-12">
 
-      <div class="col col-12">
+      <header>
+        <h2>Personalized Email</h2>
+        <p>Stay connected with us by signing up for our weekly personalized emails.</p>
+      </header>
 
-        <header>
-          <h2>Personalized Email</h2>
-          <p>Stay connected with us by signing up for our weekly personalized emails.</p>
-        </header>
+    </div><!-- .col -->
 
-      </div><!-- .col -->
+    <div class="col col-12">
 
-      <div class="col col-12">
-
-        <div class="form personalized-email-form">
-          <fieldset class="input-wrap">
-            <label for="personalized-email-email" class="visuallyhidden">Enter Email Address</label>
-            <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
-          </fieldset>
-          <div class="submit-button-wrap">
-            <input type="submit" class="submit-button" value="Sign Up">
-          </div>
+      <div class="form personalized-email-form">
+        <fieldset class="input-wrap">
+          <label for="personalized-email-email" class="visuallyhidden" aria-hidden="true">Enter Email Address</label>
+          <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
+        </fieldset>
+        <div class="submit-button-wrap">
+          <input type="submit" class="button" value="Sign Up">
         </div>
+      </div>
 
-      </div><!-- .col -->
-
-    </div><!-- .newsletter-signup -->
+    </div><!-- .col -->
 
   </div><!-- .row -->
-</div><!-- .container -->
+</div><!-- .container .newsletter-signup -->
 
 <!-- END MODULE: Newsletter Signup -->
 
@@ -862,46 +842,45 @@
 <div class="container partners-carousel">
   <div class="row">
     <div class="col col-24">
-
+      <h2>In Partnership with</h2>
       <!-- BEGIN PARTIAL: partners-carousel -->
-<h2>In Partnership with</h2>
 <div id="partners-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
   </ul>
 </div><!-- end partners-carousel-container -->
@@ -946,7 +925,7 @@
 <!-- END PARTIAL: glossary-term -->
 
 <!-- BEGIN MODULE: Footer -->
-<footer class="container" id="footer-page">
+<footer class="container" id="footer-page" aria-role="content info">
   <div class="row footer-social">
 
     <div class="col col-7 push-17">
@@ -970,7 +949,7 @@
   <div class="row">
     <div class="col col-24">
 
-      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/img/logo.u.footer.png" />
+      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/images/logo.u.footer.png" />
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -986,9 +965,28 @@
 <!--[if lte IE 8]>
 <script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
-<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script><script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script><script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script><script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script><script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script><script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script><script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script><script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script><script src="Presentation/includes/js/vendor/bootstrap.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script><script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script><script src="Presentation/includes/js/site.js"></script>
+
+
+  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
+<script src="Presentation/includes/js/vendor/bootstrap.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
+<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
+<script src="Presentation/includes/js/article.js"></script>
 <script src="Presentation/includes/js/global.js"></script>
+
 <!-- END PARTIAL: footerjs -->
 
   </form>

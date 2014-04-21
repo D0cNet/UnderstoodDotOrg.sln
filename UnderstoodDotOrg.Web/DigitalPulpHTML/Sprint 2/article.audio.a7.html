@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
-<!--[if gte IE 9]><!--><html class="no-js"><!--<![endif]-->
+<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
+<!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
 <head>
@@ -12,7 +13,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
 
-
+  
   
   <link href="Presentation/includes/css/vendor/bootstrap.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
@@ -20,12 +21,28 @@
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-<link href="Presentation/includes/css/base.css" rel="stylesheet" />
+
+  
+  <!--[if gte IE 9]><!-->
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
 <link href="Presentation/includes/css/grid.css" rel="stylesheet" />
 <link href="Presentation/includes/css/layout.css" rel="stylesheet" />
 <link href="Presentation/includes/css/globals.css" rel="stylesheet" />
 <link href="Presentation/includes/css/modules.css" rel="stylesheet" />
+<link href="Presentation/includes/css/article.css" rel="stylesheet" />
 <link href="Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
+  <!--<![endif]-->
+
+  
+  <!--[if lte IE 8]>
+    <link href="Presentation/includes/css/base.css" rel="stylesheet" />
+<link href="Presentation/includes/css/grid-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/layout-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/globals-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/modules-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/article-nonresponsive.css" rel="stylesheet" />
+<link href="Presentation/includes/css/uniform-understood-nonresponsive.css" rel="stylesheet" />
+  <![endif]-->
 
   
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
@@ -57,7 +74,10 @@
     <div class="col col-24">
       
       <div class="logo-u-main">
-        <a href="REPLACE"><img alt="Understood Logo" src="Presentation/includes/img/logo.u.default.png" /></a>
+        <a href="REPLACE">
+          <span class="visuallyhidden">Understood for learning and attention issues</span> 
+          <img alt="Understood – for learning and attention issues" src="Presentation/includes/images/logo.u.default.png" />
+        </a>
       </div><!-- logo-u-main -->
 
       <ul class="language-selection">
@@ -83,22 +103,20 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <fieldset>
-            <legend>Search</legend>
-            <span class="field">
-              <label for="search-term" class="visuallyhidden">Search</label>
-              <input type="text" id="search-term" placeholder="Enter Search Term">
-              <input type="submit" value="Go">
-            </span>
-          </fieldset>
+          <span class="field">
+            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+            <input type="text" id="search-term" placeholder="Enter Search Term">
+            <input type="submit" value="Go">
+          </span>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
 
       <!-- BEGIN PARTIAL: nav-main -->
 <nav class="nav-main">
-  <ul role="menu">
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
+  <ul role="menu" aria-role="navigation" aria-label="main-navigation">
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Learning &amp;<br> Attention Issues</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -108,7 +126,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true" ><span><a href="REPLACE">School &amp;<br> Learning</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">School &amp;<br> Learning</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Partnering with your child's school</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Evaluations</a></span></li>
@@ -118,7 +137,8 @@
         <li role="menuitem"><span><a href="REPLACE">Learning at home</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Friends &amp;<br> Feelings</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Friends &amp;<br> Feelings</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -128,7 +148,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">You &amp;<br> Your Family</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">You &amp;<br> Your Family</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -138,7 +159,8 @@
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor</a></span></li>
       </ul>
     </li>
-    <li role="menuitem" aria-haspopup="true"><span><a href="REPLACE">Community &amp;<br> Events</a></span>
+    <li class="menu-list-item " role="menuitem" aria-haspopup="true">
+      <span><a class="top-level-link" href="REPLACE">Community &amp;<br> Events</a></span>
       <ul>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum dolor sit amet consectetuer</a></span></li>
         <li role="menuitem"><span><a href="REPLACE">Lorem ipsum</a></span></li>
@@ -152,7 +174,7 @@
 </nav>
 <!-- END PARTIAL: nav-main -->
 
-      <div id="toolkit" aria-haspopup="true"><span>Your Parent Toolkit</span></div>
+      <div id="toolkit" class="toolkit-element" aria-haspopup="true"><button>Your Parent Toolkit</button></div>
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -174,19 +196,19 @@
         <ul>
           <li>
             <div class="icon support-plan">
-              <a href="REPLACE">My Support Plan</a>
+              <a class="toolkit-element" href="REPLACE">My Support Plan</a>
               <div class="coming-soon">Coming Soon</div>
             </div>
           </li>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Observation Log</a>
+              <a class="toolkit-element" href="REPLACE">Observation Log</a>
             </div>
           </li>
        
           <li>
             <div class="icon childs-world">
-              <a href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Childs World</a>
             </div>
           </li>
         </ul>
@@ -196,18 +218,18 @@
         <ul>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Find Technology</a>
+              <a class="toolkit-element" href="REPLACE">Find Technology</a>
             </div>
           </li>
           <li>
             <div class="icon decisions">
-              <a href="REPLACE">My Decisions</a>
+              <a class="toolkit-element" href="REPLACE">My Decisions</a>
             </div>
           </li>
        
           <li>
             <div class="icon rate-schools">
-              <a href="REPLACE">Rate Schools</a>
+              <a class="toolkit-element" href="REPLACE">Rate Schools</a>
             </div>
           </li>
         </ul>
@@ -216,12 +238,12 @@
         <ul>
           <li>
             <div class="icon observation-logs">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
           <li>
             <div class="icon find">
-              <a href="REPLACE">Icon Title Here</a>
+              <a class="toolkit-element" href="REPLACE">Icon Title Here</a>
             </div>
           </li>
         </ul>
@@ -238,10 +260,15 @@
 <!-- END PARTIAL: header -->
 
       <!-- BEGIN PARTIAL: pagetopic -->
+<!-- FIXME: Documentation needed to explain share on/off functionality in page topic module -->
+
+<!-- Determine variables present and change column width to fit the content available -->
+
+
 <!-- Page Title -->
-<div class="container page-topic">
-  <div class="row">
-    <div class="col col-14 offset-1">
+<div class="container page-topic with-share">
+  <div class="row" >
+    <div class="col col-14 offset-1 ">
       
         <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Travel Planning</a>
       
@@ -272,6 +299,7 @@
 <!-- END PARTIAL: share-save -->
     </div>
     
+    
   </div>
 </div><!-- .container -->
 
@@ -281,13 +309,14 @@
     <!-- helpful count -->
     <div class="col col-10 article-intro-count multiple">
       <!-- BEGIN PARTIAL: helpful-count -->
+
 <div class="count-helpful">
-  <a href="REPLACE"><span>34</span>Found this helpful</a>
+  <a href="#count-helpful-content"><span>34</span>Found this helpful</a>
 </div>
 <!-- END PARTIAL: helpful-count -->
       <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
-  <a href="REPLACE"><span>19</span>Comments</a>
+  <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
     </div>
@@ -307,7 +336,7 @@
 <div class="container">
   <div class="row">
     <!-- article -->
-    <div class="col col-24">
+    <div class="col col-24 skiplink-content" aria-role="main" aria-role="main">
       <!-- BEGIN PARTIAL: audio-pull-quote -->
 <div class="audio-quote">
   <div class="audio-quote-img">
@@ -320,8 +349,13 @@
 </div>
 <!-- END PARTIAL: audio-pull-quote -->
       <!-- BEGIN PARTIAL: audio-player -->
-<div id="audio-player-1" class="jp-jplayer"></div>
-<div id="audio-player-interface-1" class="jp-audio">
+<div class="jp-jplayer audio-player">
+  <ul class="audio-player-data">
+    <li><a href="http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a" data-audio-format="m4a">What is Common Cure and How Will it affect Kids? (MPEG4 audio)</a></li>
+    <li><a href="http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg" data-audio-format="oga">What is Common Cure and How Will it affect Kids? (Ogg Vorbis audio)</a></li>
+  </ul>
+</div>
+<div class="jp-audio audio-player-interface">
   <div class="jp-type-single">
     <div class="jp-gui jp-interface">
       <ul class="jp-controls">
@@ -351,7 +385,7 @@
     </div>
     <div class="jp-title">
       <ul>
-        <li>Bubble</li>
+        <li>What is Common Cure and How Will it affect Kids?</li>
       </ul>
     </div>
     <div class="jp-no-solution">
@@ -367,33 +401,36 @@
 
 <div class="container">
   <div class="row">
-    <div class="col col-24">
+    <div class="col col-18 offset-3">
       <!-- BEGIN PARTIAL: transcript-control -->
 <div class="transcript-container Audio">
+  <div class="read-more mobile-close">
+    <a href="REMOVE">Close Transcript<i class="icon-arrow-up-blue"></i></a>
+  </div>
   <div class="transcript-wrap">
     <div>
       <h2>Audio Transcript</h2>
 
       <h3>Dr.Richard Nightengale:</h3>
-      <p>Esse est cum nobis unde officia debitis consequatur. et amet sequi facere sequi voluptatem deserunt quae et corrupti sunt voluptates sit quis maxime. porro facilis quis magnam impedit accusamus ad enim velit</p>
+      <p>Quia debitis asperiores inventore dignissimos in aut. ducimus et assumenda voluptatem quasi omnis quam. rerum qui ut temporibus omnis rerum accusantium veritatis maiores id. accusamus et est ducimus. quis et sed est commodi est magni necessitatibus aut voluptate omnis nulla vel unde. aut qui earum inventore dignissimos qui ipsa nesciunt quaerat sunt quae blanditiis rerum quisquam eos. blanditiis voluptatibus sed amet voluptatem</p>
 
       <h3>Parent:</h3>
-      <p>Non aut quaerat velit et illo ut expedita placeat. odio consequatur ea architecto itaque consectetur voluptate temporibus et. earum pariatur qui ratione ullam officia esse sit ea ea aut quidem voluptatum aut rerum. nemo voluptatem perferendis iusto rerum ullam ut hic voluptas porro magnam assumenda. id veniam iste est asperiores eligendi. doloremque magni occaecati alias consequatur totam quidem est ullam facere cupiditate eum nam</p>
+      <p>Similique molestiae autem minus quia et commodi delectus eos. est odio error eum enim quasi perspiciatis repellat soluta animi et enim quidem. soluta tempore voluptatum corrupti ducimus earum ut commodi ut ducimus. et recusandae et est doloribus voluptas aut fugit suscipit esse soluta reiciendis. occaecati consequatur consequatur rem facere sint libero laudantium dolor quis similique pariatur molestiae et. aut quis magni et praesentium repellendus est id quia dolores. qui reprehenderit quia a nobis non voluptas numquam nulla animi ea</p>
 
       <h3>Dr.Richard Nightengale:</h3>
-      <p>Quisquam expedita et quidem ratione ex vel. accusamus facilis et voluptatem qui et voluptatem rerum et commodi ipsam perferendis cum. laudantium veniam praesentium ratione architecto distinctio et. voluptatibus qui officiis atque ea reprehenderit. et quam dolor repellendus et</p>
+      <p>Rerum vitae quasi deserunt. eveniet aut cupiditate cupiditate eos eius harum est provident aut dolorum voluptas illo. voluptatem id quaerat aut. dolorum placeat sed optio quis deserunt dolor nesciunt iure autem dolorem excepturi recusandae. est laborum quibusdam et qui ipsum sunt numquam laudantium ipsum esse quis. consequatur officia aut cupiditate sed quaerat magnam minima reiciendis. vel corporis in rerum et amet reprehenderit officia magnam odit sit et ratione voluptas</p>
 
       <h3>Parent:</h3>
-      <p>Et amet architecto quae officia libero ullam fugit rerum pariatur vel placeat voluptatem. eum autem eos impedit est quia molestiae iste laudantium molestiae rem. voluptatem sunt repellat unde. est ipsam sequi et sed corrupti aut occaecati qui sit</p>
+      <p>Exercitationem dicta architecto praesentium sequi impedit recusandae. voluptas itaque cumque suscipit quod laudantium et architecto et et. ea sed qui beatae aut dolor dolorem illo esse delectus dolor rerum veritatis non voluptatem. ipsa amet expedita sed. dolorum ad veritatis omnis aspernatur porro autem. magni corporis dolor ullam quisquam sint cupiditate quo quis ut dolorem. ea corporis aut pariatur alias ut blanditiis voluptas necessitatibus nemo sint nobis rerum quis</p>
 
       <h3>Dr.Richard Nightengale:</h3>
-      <p>Labore aspernatur aut molestias possimus id nihil assumenda accusamus ea non repellat velit. autem autem molestiae officiis est voluptatum consequatur quae qui natus repellendus iste sit quidem quo. vel neque pariatur voluptatum itaque repellat ab atque iusto delectus qui repudiandae magnam deserunt debitis. qui est rerum aliquid sed sint ipsa culpa</p>
+      <p>Cum a consequatur quo soluta iure eveniet ut dignissimos. eligendi et minima est vitae cum esse fuga sed eligendi. fuga dolor excepturi blanditiis cupiditate odio dolorum. sint earum ducimus quo aut omnis maxime modi esse veritatis molestias earum</p>
 
       <h3>Parent:</h3>
-      <p>Et harum aut qui. vero accusantium possimus esse in cum ipsa sequi a fugit distinctio ad eveniet illum autem. harum impedit autem rem. ex consequatur aut error sed ducimus delectus cum corporis aut quis placeat qui. in et aut quidem minus perspiciatis enim. numquam cum consequuntur facere soluta</p>
+      <p>Necessitatibus aliquam rem ab ad sunt ratione voluptatum amet officiis voluptatum et. voluptatibus doloremque error saepe voluptas atque sed suscipit deserunt aut modi nostrum dolor qui recusandae. cupiditate beatae veniam hic. hic qui maxime libero ipsum repellat voluptatem rerum et labore provident corporis. aliquid ex ut possimus id quis voluptatem sint sequi molestiae. animi unde ipsa quia minima quia in iusto quos nostrum esse aliquid. iusto fugiat consequatur excepturi</p>
     </div>
   </div>
-  <div class="read-more"></div>
+  <div class="read-more read-more-bottom"></div>
 </div>
 <!-- END PARTIAL: transcript-control -->
     </div>
@@ -407,32 +444,36 @@
 <p class="reviewed-by"><span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author"><a href="REPLACE">Dr. Samantha Frank</a></span><span class="dot"></span> <span class="reviewed-by-date">12&nbsp;Dec&nbsp;&apos;13</span></p>
 <!-- END PARTIAL: reviewed-by -->
     <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful persist">
+<div class="find-this-helpful persist" id="count-helpful-content">
   <hr>
+
+  
+
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="helpful-yes">Yes</button>
+      <button class="button yes">Yes</button>
     </li>
     <li>
-      <button class="helpful-no">No</button>
+      <button class="button no gray">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
   <hr>
 </div>
+
 <!-- END PARTIAL: find-helpful -->
     </div>
   </div><!-- .row -->
 </div><!-- .container -->
 
 
-<div class="container more-carousel">
+<div class="container more-carousel more-carousel-no-border-bottom">
   <div class="row">
-    <div class="col col-24 offset-1">
+    <div class="col col-24">
       <h2>More Like this:</h2>
       <!-- BEGIN PARTIAL: more-carousel -->
-<div id="more-carousel-slides-container">
+<div id="featured-slides-container" class="arrows-gray">
   <ul>
     <li>
       <a href="REPLACE">
@@ -482,13 +523,13 @@
 <div class="container comments">
   <div class="row">
     <!-- comments col -->
-    <div class="col col-23 offset-1">
+    <div class="col col-23 offset-1 skiplink-comments">
       <!-- BEGIN PARTIAL: comment-list -->
-<section class="comment-list">
+<section class="comment-list" id="count-comments">
 
   <header>
-    <span class="comment-count">Comments (19)</span>
-    <select name="comment-sort-option" class="comment-sort">
+    <h2 class="comment-count">Comments (19)</h2>
+    <select name="comment-sort-option" id="comment-sort-option-dropdown" class="comment-sort">
       <option value="">Sort by</option>
       <option>A-Z</option>
       <option>Z-A</option>
@@ -506,7 +547,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -529,7 +570,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -552,7 +593,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -575,7 +616,7 @@
           <span class="comment-username">Patricia S</span>
           <span class="comment-date">3 days ago</span>
         </span>
-        <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+        <button class="comment-like"><i class="icon-comment-like"></i>3 <span class="visuallyhidden">Likes</span></button>
       </div>
       <div class="comment-body">
         <p>
@@ -592,11 +633,21 @@
 
   <div class="comment-footer">
     <div class="comment-more-wrapper">
-      <a class="comment-more" href="REPLACE">More Comments<i class="icon-comment-more"></i></a>
+      <!-- BEGIN PARTIAL: community/show_more -->
+<!--Show More-->
+<div class="container show-more">
+  <div class="row">
+    <div class="col col-24">
+      <a class="show-more-link " href="#" data-path="articles/comments" data-container="comment-list-wrapper" data-item="comment-wrapper" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
+    </div>
+  </div>
+</div><!-- .show-more -->
+<!-- END PARTIAL: community/show_more -->
     </div>
     <div class="comment-form">
-      <textarea name="comment-form-reply" class="comment-form-reply" placeholder="Add your comment..."></textarea>
-      <input type="submit" value="Submit" class="comment-form-submit submit-button" />
+      <label for="comment-form-reply-text" class="visuallyhidden">Add your comment</label>
+      <textarea name="comment-form-reply" class="comment-form-reply" id="comment-form-reply-text" placeholder="Add your comment..."></textarea>
+      <input type="submit" value="Submit" class="comment-form-submit button" />
       <div class="clearfix"></div>
     </div>
   </div>
@@ -662,11 +713,11 @@
 
       <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden">Enter School Name</label>
+        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
         <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
         <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" required="" aria-required="true">
+        <select name="explore-select" id="explore-select" aria-required="true">
           <option value="">Select a state</option>
           <option>Alabama</option>
           <option>Arizona</option>
@@ -807,39 +858,34 @@
 <!-- END MODULE: More to Explore -->
 
 <!-- BEGIN MODULE: Newsletter Signup -->
-<div class="container">
+<div class="container newsletter-signup">
   <div class="row">
 
-    <!-- FIXME: discard this div and move the .newsletter-signup class to div.container element for consistency -->
-    <div class="newsletter-signup">
+    <div class="col col-12">
 
-      <div class="col col-12">
+      <header>
+        <h2>Personalized Email</h2>
+        <p>Stay connected with us by signing up for our weekly personalized emails.</p>
+      </header>
 
-        <header>
-          <h2>Personalized Email</h2>
-          <p>Stay connected with us by signing up for our weekly personalized emails.</p>
-        </header>
+    </div><!-- .col -->
 
-      </div><!-- .col -->
+    <div class="col col-12">
 
-      <div class="col col-12">
-
-        <div class="form personalized-email-form">
-          <fieldset class="input-wrap">
-            <label for="personalized-email-email" class="visuallyhidden">Enter Email Address</label>
-            <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
-          </fieldset>
-          <div class="submit-button-wrap">
-            <input type="submit" class="submit-button" value="Sign Up">
-          </div>
+      <div class="form personalized-email-form">
+        <fieldset class="input-wrap">
+          <label for="personalized-email-email" class="visuallyhidden" aria-hidden="true">Enter Email Address</label>
+          <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
+        </fieldset>
+        <div class="submit-button-wrap">
+          <input type="submit" class="button" value="Sign Up">
         </div>
+      </div>
 
-      </div><!-- .col -->
-
-    </div><!-- .newsletter-signup -->
+    </div><!-- .col -->
 
   </div><!-- .row -->
-</div><!-- .container -->
+</div><!-- .container .newsletter-signup -->
 
 <!-- END MODULE: Newsletter Signup -->
 
@@ -847,46 +893,45 @@
 <div class="container partners-carousel">
   <div class="row">
     <div class="col col-24">
-
+      <h2>In Partnership with</h2>
       <!-- BEGIN PARTIAL: partners-carousel -->
-<h2>In Partnership with</h2>
 <div id="partners-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
     <li>
-      <a href="REPLACE"><img alt="Partner Logo FPO" src="Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
+      <a href="REPLACE"><img alt="FPO Content image" src="Presentation/includes/images/icon.logo.partnership-carousel.png" /></a>
     </li>
   </ul>
 </div><!-- end partners-carousel-container -->
@@ -931,7 +976,7 @@
 <!-- END PARTIAL: glossary-term -->
 
 <!-- BEGIN MODULE: Footer -->
-<footer class="container" id="footer-page">
+<footer class="container" id="footer-page" aria-role="content info">
   <div class="row footer-social">
 
     <div class="col col-7 push-17">
@@ -955,7 +1000,7 @@
   <div class="row">
     <div class="col col-24">
 
-      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/img/logo.u.footer.png" />
+      <img class="logo-u-footer" alt="Understood U Logo" src="Presentation/includes/images/logo.u.footer.png" />
 
     </div><!-- .col -->
   </div><!-- .row -->
@@ -971,9 +1016,28 @@
 <!--[if lte IE 8]>
 <script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
-<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script><script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script><script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script><script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script><script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script><script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script><script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script><script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script><script src="Presentation/includes/js/vendor/bootstrap.min.js"></script><script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script><script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script><script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script><script src="Presentation/includes/js/site.js"></script>
+
+
+  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
+<script src="Presentation/includes/js/vendor/bootstrap.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
+<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
+<script src="Presentation/includes/js/article.js"></script>
 <script src="Presentation/includes/js/global.js"></script>
+
 <!-- END PARTIAL: footerjs -->
 
   </form>
