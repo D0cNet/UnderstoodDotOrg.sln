@@ -300,6 +300,111 @@
     <Compile Include="Presentation\Sublayouts\Articles\VideoArticle.ascx.designer.cs">
       <DependentUpon>VideoArticle.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\AllBlogsPage.ascx.cs">
+      <DependentUpon>AllBlogsPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\AllBlogsPage.ascx.designer.cs">
+      <DependentUpon>AllBlogsPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogCallToActionWidget.ascx.cs">
+      <DependentUpon>BlogCallToActionWidget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogCallToActionWidget.ascx.designer.cs">
+      <DependentUpon>BlogCallToActionWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx.cs">
+      <DependentUpon>BlogFeaturePostControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx.designer.cs">
+      <DependentUpon>BlogFeaturePostControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx.cs">
+      <DependentUpon>BlogFeaturePostWithBreadcrumb.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx.designer.cs">
+      <DependentUpon>BlogFeaturePostWithBreadcrumb.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogHeader.ascx.cs">
+      <DependentUpon>BlogHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogHeader.ascx.designer.cs">
+      <DependentUpon>BlogHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsAuthorPage.ascx.cs">
+      <DependentUpon>BlogsAuthorPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsAuthorPage.ascx.designer.cs">
+      <DependentUpon>BlogsAuthorPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostRecentWidget.ascx.cs">
+      <DependentUpon>BlogMostRecentWidget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostRecentWidget.ascx.designer.cs">
+      <DependentUpon>BlogMostRecentWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostSharedWidget.ascx.cs">
+      <DependentUpon>BlogMostSharedWidget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostSharedWidget.ascx.designer.cs">
+      <DependentUpon>BlogMostSharedWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogParentsAreTalkingWidget.ascx.cs">
+      <DependentUpon>BlogParentsAreTalkingWidget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogParentsAreTalkingWidget.ascx.designer.cs">
+      <DependentUpon>BlogParentsAreTalkingWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsPostPage.ascx.cs">
+      <DependentUpon>BlogsPostPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsPostPage.ascx.designer.cs">
+      <DependentUpon>BlogsPostPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\MostReadBlogsPage.ascx.cs">
+      <DependentUpon>MostReadBlogsPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\MostReadBlogsPage.ascx.designer.cs">
+      <DependentUpon>MostReadBlogsPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\MostRecentBlogsPage.ascx.cs">
+      <DependentUpon>MostRecentBlogsPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\MostRecentBlogsPage.ascx.designer.cs">
+      <DependentUpon>MostRecentBlogsPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\MostSharedBlogsPage.ascx.cs">
+      <DependentUpon>MostSharedBlogsPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\MostSharedBlogsPage.ascx.designer.cs">
+      <DependentUpon>MostSharedBlogsPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\MostTalkedBlogsPage.ascx.cs">
+      <DependentUpon>MostTalkedBlogsPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\MostTalkedBlogsPage.ascx.designer.cs">
+      <DependentUpon>MostTalkedBlogsPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\SearchBlogsPage.ascx.cs">
+      <DependentUpon>SearchBlogsPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\SearchBlogsPage.ascx.designer.cs">
+      <DependentUpon>SearchBlogsPage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -503,6 +608,20 @@
     <Compile Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx.designer.cs">
       <DependentUpon>TwoColumnContainer.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Test\Telligent\CommentsTestControl.ascx.cs">
+      <DependentUpon>CommentsTestControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Test\Telligent\CommentsTestControl.ascx.designer.cs">
+      <DependentUpon>CommentsTestControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Test\Telligent\CommentTest.ascx.cs">
+      <DependentUpon>CommentTest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Test\Telligent\CommentTest.ascx.designer.cs">
+      <DependentUpon>CommentTest.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx.cs">
       <DependentUpon>Assisitive Tools Search.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -562,6 +681,13 @@
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdvice.ascx.designer.cs">
       <DependentUpon>BehaviorToolsBehaviorAdvice.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx.cs">
+      <DependentUpon>BehaviorToolsBehaviorAdviceWrapper.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx.designer.cs">
+      <DependentUpon>BehaviorToolsBehaviorAdviceWrapper.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsCommentGallery.ascx.cs">
       <DependentUpon>BehaviorToolsCommentGallery.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -614,6 +740,13 @@
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx.designer.cs">
       <DependentUpon>BehaviorToolsResultsPage.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx.cs">
+      <DependentUpon>BehaviorToolsResultsWrapper.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx.designer.cs">
+      <DependentUpon>BehaviorToolsResultsWrapper.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Topic\ArticleListing.ascx.cs">
       <DependentUpon>ArticleListing.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -654,6 +787,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Presentation\Includes\css\community.css" />
     <Content Include="Presentation\Includes\images\placefolder\100x1000.gif" />
     <Content Include="Presentation\Includes\images\placefolder\1200x475.gif" />
     <Content Include="Presentation\Includes\images\placefolder\1200x542.gif" />
@@ -888,6 +1022,21 @@
     <Content Include="Presentation\Sublayouts\Articles\TextOnlyTipsArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TipsArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\VideoArticle.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\AllBlogsPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogCallToActionWidget.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogHeader.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsAuthorPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostRecentWidget.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostSharedWidget.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogParentsAreTalkingWidget.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsPostPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\MostReadBlogsPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\MostRecentBlogsPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\MostSharedBlogsPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\MostTalkedBlogsPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\SearchBlogsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Footer.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Header.ascx" />
     <Content Include="Presentation\Sublayouts\Common\More Carousel.ascx" />
@@ -917,6 +1066,8 @@
     <Content Include="Presentation\Sublayouts\SubTopics\RightCalloutContainer.ascx" />
     <Content Include="Presentation\Sublayouts\SubTopics\SubTopicArticleListing.ascx" />
     <Content Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx" />
+    <Content Include="Presentation\Sublayouts\Test\Telligent\CommentsTestControl.ascx" />
+    <Content Include="Presentation\Sublayouts\Test\Telligent\CommentTest.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx" />
@@ -926,6 +1077,7 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceResults.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceVideoPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdvice.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsCommentGallery.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerComments.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerMore-Carousel.ascx" />
@@ -934,6 +1086,7 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsRelatedArticles.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\ArticleListing.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\CalloutContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\TopicCarousel.ascx" />
