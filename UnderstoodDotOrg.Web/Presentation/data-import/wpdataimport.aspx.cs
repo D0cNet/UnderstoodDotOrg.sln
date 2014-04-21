@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using Sitecore;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
+using Sitecore.Data;
 using Sitecore.Data.Items;
 using System;
 using System.Collections.Generic;
@@ -362,44 +363,46 @@ namespace UnderstoodDotOrg.Web.Presentation.data_import {
 
                     if (tops != null && tops.Rows.Count > 0) {
 
-                        foreach (DataRow dr in tops.Rows) {
-                            i++;
-                            this.DefaultLanguagePostID = this.CurrentPostID = dr["PostID"].ToString();
-                            this.CurrentLanguage = dr["language"].ToString();
-                            this.PageTitle = dr["post_title"].ToString().Trim();
-                            Item newItem = null;
-                            if (this.PostType == "quiz") {
-                                this.CurrentReportType = GetQuizType(this.CurrentPostID);
-                                if (CurrentReportType == AssessmentQuizType) {
-                                    assessment++;
-                                    this.ArticleItemName = string.Format("Assessment Quiz-{0}", assessment);
-                                    this.Template_Import = "/sitecore/templates/User Defined/Poses/Folders/Assessment Quiz Folder";
-                                    newItem = this.CreateItem(SetImportConfiguration());
-                                }
-                                else {
-                                    knowledge++;
-                                    this.ArticleItemName = string.Format("Knowledge Quiz-{0}", knowledge);
-                                    this.Template_Import = "/sitecore/templates/User Defined/Poses/Folders/Knowledge Quiz Folder";
-                                    newItem = this.CreateItem(SetImportConfiguration());
-                                }
-                                if (newItem != null) {
-                                    this.AddDifferentLanguageVerstion(newItem);
-                                    if (HasChildPost) {
-                                        this.GetChilds(newItem);
-                                    }
-                                }
-                            }
-                            else {
-                                newItem = this.CreateItem(SetImportConfiguration());
+						using (new BulkUpdateContext()) {
+							foreach (DataRow dr in tops.Rows) {
+								i++;
+								this.DefaultLanguagePostID = this.CurrentPostID = dr["PostID"].ToString();
+								this.CurrentLanguage = dr["language"].ToString();
+								this.PageTitle = dr["post_title"].ToString().Trim();
+								Item newItem = null;
+								if (this.PostType == "quiz") {
+									this.CurrentReportType = GetQuizType(this.CurrentPostID);
+									if (CurrentReportType == AssessmentQuizType) {
+										assessment++;
+										this.ArticleItemName = string.Format("Assessment Quiz-{0}", assessment);
+										this.Template_Import = "/sitecore/templates/User Defined/Poses/Folders/Assessment Quiz Folder";
+										newItem = this.CreateItem(SetImportConfiguration());
+									}
+									else {
+										knowledge++;
+										this.ArticleItemName = string.Format("Knowledge Quiz-{0}", knowledge);
+										this.Template_Import = "/sitecore/templates/User Defined/Poses/Folders/Knowledge Quiz Folder";
+										newItem = this.CreateItem(SetImportConfiguration());
+									}
+									if (newItem != null) {
+										this.AddDifferentLanguageVerstion(newItem);
+										if (HasChildPost) {
+											this.GetChilds(newItem);
+										}
+									}
+								}
+								else {
+									newItem = this.CreateItem(SetImportConfiguration());
 
-                                if (newItem != null) {
-                                    this.AddDifferentLanguageVerstion(newItem);
-                                    if (HasChildPost) {
-                                        this.GetChilds(newItem);
-                                    }
-                                }
-                            }
-                        }
+									if (newItem != null) {
+										this.AddDifferentLanguageVerstion(newItem);
+										if (HasChildPost) {
+											this.GetChilds(newItem);
+										}
+									}
+								}
+							}
+						}
                     }
                 }
                 Response.Write(this.PostType + "- Record count: " + i + "<br/>");
@@ -460,7 +463,7 @@ namespace UnderstoodDotOrg.Web.Presentation.data_import {
                 }
                 catch (System.Exception ex) {
                     // The update failed, write a message to the log
-                    Sitecore.Diagnostics.Log.Error("Could not update item " + newItem.Paths.FullPath + ": " + ex.Message, this);
+                    Sitecore.Diagnostics.Log.Error("Could not update item " + newItem.Paths.FullPath + ": " + ex.ToString(), this);
 
                     Response.Write(newItem.Paths.FullPath);
                     Response.Write(ex.Message);
@@ -936,7 +939,7 @@ namespace UnderstoodDotOrg.Web.Presentation.data_import {
                     foreach (var fields in fieldsToUpdate) {
 
                         if (fields.Key == "Page Title") {
-                            Response.Write(fields.Key + "=>" + this.CurrentPostID + " | " + this.CurrentLanguage + " | <b>" + fields.Value + "</b><br/>");
+							Response.Write("SC Item: " + contentItem.Paths.Path + " | " + fields.Key + "=>" + this.CurrentPostID + " | " + this.CurrentLanguage + " | <b>" + fields.Value + "</b><br/>");
                         }
                         field = fields.Key;
                         string tagids = string.Empty;
@@ -1076,7 +1079,7 @@ namespace UnderstoodDotOrg.Web.Presentation.data_import {
                 }
                 catch (Exception ex) {
                     contentItem.Editing.CancelEdit();
-                    Response.Write("<span style='color:red;'><b>Error on this field: (" + field + ") </b>" + ex.Message + "</span><br/>");
+                    Response.Write("<span style='color:red;'><b>Error on this field: (" + field + ") </b>" + ex.ToString() + "</span><br/>");
                 }
             }
         }
