@@ -146,7 +146,7 @@
                 </header>
                 <%--<img src="http://placehold.it/60x60" alt="REPLACE">--%>
                 <asp:HyperLink ID="hlAuthorImage" runat="server">
-                    <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server" />
+                    <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server"  Width="60px" Height="60px" />
                 </asp:HyperLink>
                 <div class="author-text">
                     <h3><%-- Christine Flagler--%>

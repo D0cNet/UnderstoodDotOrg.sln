@@ -81,7 +81,7 @@
                 <h2>About the Author</h2>
             </header>
              <asp:HyperLink ID="hlAuthorImage" runat="server">
-                <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server" />
+                <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server"  Width="60px" Height="60px" />
             </asp:HyperLink>
 
             <div class="author-text">
