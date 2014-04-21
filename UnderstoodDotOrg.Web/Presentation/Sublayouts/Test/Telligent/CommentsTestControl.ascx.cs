@@ -1,23 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Data.SqlClient;
-using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Xml;
-using System.Xml.Linq;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 {
     public partial class CommentsTestControl : System.Web.UI.UserControl
     {
-        string apiKey = "vr7sr63ehedv0gcxzlk8s71l1xrctb3";
+        string apiKey = "2ome2soq1ablkmtlc";
         int blogId = 1;
-        int blogPostId = 1;
+        int blogPostId = 2;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +20,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
-            
+
             if (!IsPostBack)
             {
                 CommentEntryTextField.Text = "Add your comment...";
@@ -33,8 +28,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
         }
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            string apiKey = "vr7sr63ehedv0gcxzlk8s71l1xrctb3";
-            int blogId = 1;
+            string apiKey = "2ome2soq1ablkmtlc";
+            int blogId = 2;
             int blogPostId = 1;
             string body = CommentEntryTextField.Text;
             PostComment(apiKey, blogId, blogPostId, body);
@@ -49,7 +44,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
             string id = btn.CommandArgument;
 
             using (SqlConnection conn =
-                new SqlConnection(@"Data Source=(local);Initial Catalog=Telligent Evolution;User ID=sa;Password=oasis2006"))
+                new SqlConnection(@"Data Source=169.209.22.3;Initial Catalog=Telligent;User ID=telligent;Password=telligent"))
             {
                 conn.Open();
                 try
@@ -72,6 +67,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
                 }
             }
         }
+        protected void ReplyButton_Click(object sender, EventArgs e)
+        {
+            CommentEntryTextField.Focus();
+        }
         protected static void PostComment(string apiKey, int blogId, int blogPostId, string body)
         {
             var webClient = new WebClient();
@@ -82,7 +81,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
             webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
 
-            var postUrl = "http://localhost/telligentevolution/api.ashx/v2/blogs/" + blogId + "/posts/" + blogPostId + "/comments.xml ";
+            var postUrl = "http://telligent.dev01.rax.webstagesite.com/telligent/api.ashx/v2/blogs/" + blogId + "/posts/" + blogPostId + "/comments.xml ";
             var data = "Body=" + body + "&PublishedDate=" + DateTime.Now + "&IsApproved=true&BlogId=" + blogId;
 
             webClient.UploadData(postUrl, "POST", Encoding.ASCII.GetBytes(data));
@@ -97,7 +96,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-            var requestUrl = "http://localhost/telligentevolution/api.ashx/v2/blogs/" + blogId + "/posts/" + blogPostId + "/comments.xml";
+            var requestUrl = "http://telligent.dev01.rax.webstagesite.com/telligent/api.ashx/v2/blogs/" + blogId + "/posts/" + blogPostId + "/comments.xml";
             var xml = webClient.DownloadString(requestUrl);
 
             var xmlDoc = new XmlDocument();

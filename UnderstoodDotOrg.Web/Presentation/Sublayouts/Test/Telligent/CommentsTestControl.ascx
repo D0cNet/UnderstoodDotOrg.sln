@@ -36,7 +36,7 @@
                                     </p>
                                 </div>
                                 <div class="comment-actions">
-                                    <a class="comment-reply" href="REPLACE"><i class="icon-comment-reply"></i>Reply</a>
+                                    <asp:LinkButton CssClass="comment-reply" OnClick="ReplyButton_Click" ID="ReplyButton" runat="server"><i class="icon-comment-reply"></i>Reply</asp:LinkButton>
                                     <a class="comment-like" href="REPLACE"><i class="icon-comment-like"></i>This Helped</a>
                                     <asp:LinkButton CssClass="comment-flag" CommandArgument='<%# Eval("_id") %>' OnClick="FlagButton_Click" ID="FlagButton" runat="server">
                                         <i class="icon-comment-flag"></i>Report as inappropriate</asp:LinkButton>
@@ -55,7 +55,9 @@
                     </div>
                     <div class="comment-form">
                         <form>
-                            <asp:TextBox name="comment-form-reply" class="comment-form-reply" ID="CommentEntryTextField" placeholder="Add your comment..." runat="server" />
+                            <asp:TextBox onfocus="if (this.value == 'Add your comment...') this.value = '';" onblur="if (this.value == '') this.value = 'Add your comment...';"
+                                name="comment-form-reply" class="comment-form-reply" ID="CommentEntryTextField" Style="color: #555; text-align: left; font-size:15px;"
+                                runat="server" />
                             <asp:Button ID="SubmitButton" OnClick="SubmitButton_Click" class="comment-form-submit submit-button" runat="server" />
                         </form>
                         <div class="clearfix"></div>
