@@ -73,12 +73,12 @@
                     <div class="checkboxes-wrapper">
 
                         <div class="column-left">
-                            <asp:ListView runat="server" ID="uxSchoolLeft" ItemType="Sitecore.Data.Items.Item">
+                            <asp:ListView runat="server" ID="uxSchoolLeft" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
                                 <ItemTemplate>
                                     <div class="checkbox-wrapper">
                                         <label>
                                             <%--<input type="checkbox" name="q1a1">--%>
-                                            <asp:CheckBox ID="issue" runat="server" />
+                                            <asp:CheckBox ID="interest" runat="server" />
                                             <span>
                                                 <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                 <%# Eval("Fields[Interest Name]") %>
@@ -123,12 +123,12 @@
                         <!-- .checkboxes-left -->
 
                         <div class="column-right">
-                            <asp:ListView runat="server" ID="uxSchoolRight" ItemType="Sitecore.Data.Items.Item">
+                            <asp:ListView runat="server" ID="uxSchoolRight" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
                                 <ItemTemplate>
                                     <div class="checkbox-wrapper">
                                         <label>
                                             <%--<input type="checkbox" name="q1a1">--%>
-                                            <asp:CheckBox ID="issue" runat="server" />
+                                            <asp:CheckBox ID="interest" runat="server" />
                                             <span>
                                                 <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                 <%# Eval("Fields[Interest Name]") %>
@@ -184,12 +184,12 @@
                                 <sc:text id="Text15" field="Ways To Help Question Title" runat="server" />
                             </h3>
                             <div class="checkboxes-wrapper">
-                                <asp:ListView runat="server" ID="uxWaysToHelp" ItemType="Sitecore.Data.Items.Item">
+                                <asp:ListView runat="server" ID="uxWaysToHelp" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
                                     <ItemTemplate>
                                         <div class="checkbox-wrapper">
                                             <label>
                                                 <%--<input type="checkbox" name="q1a1">--%>
-                                                <asp:CheckBox ID="issue" runat="server" />
+                                                <asp:CheckBox ID="interest" runat="server" />
                                                 <span>
                                                     <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                     <%# Eval("Fields[Interest Name]") %>
@@ -252,12 +252,12 @@
                                 <sc:text id="Text21" field="Home Life Question Title" runat="server" />
                             </h3>
                             <div class="checkboxes-wrapper">
-                                <asp:ListView runat="server" ID="uxHomeLife" ItemType="Sitecore.Data.Items.Item">
+                                <asp:ListView runat="server" ID="uxHomeLife" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
                                     <ItemTemplate>
                                         <div class="checkbox-wrapper">
                                             <label>
                                                 <%--<input type="checkbox" name="q1a1">--%>
-                                                <asp:CheckBox ID="issue" runat="server" />
+                                                <asp:CheckBox ID="interest" runat="server" />
                                                 <span>
                                                     <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                     <%# Eval("Fields[Interest Name]") %>
@@ -314,12 +314,12 @@
                                 <sc:text id="Text26" field="Growing Up Question Title" runat="server" />
                             </h3>
                             <div class="checkboxes-wrapper">
-                                <asp:ListView runat="server" ID="uxGrowingUp" ItemType="Sitecore.Data.Items.Item">
+                                <asp:ListView runat="server" ID="uxGrowingUp" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
                                     <ItemTemplate>
                                         <div class="checkbox-wrapper">
                                             <label>
                                                 <%--<input type="checkbox" name="q1a1">--%>
-                                                <asp:CheckBox ID="issue" runat="server" />
+                                                <asp:CheckBox ID="interest" runat="server" />
                                                 <span>
                                                     <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                     <%# Eval("Fields[Interest Name]") %>
@@ -381,12 +381,12 @@
                                 <sc:text id="Text32" field="Social Emotional Issues Question Title" runat="server" />
                             </h3>
                             <div class="checkboxes-wrapper">
-                                <asp:ListView runat="server" ID="uxSocialEmotional" ItemType="Sitecore.Data.Items.Item">
+                                <asp:ListView runat="server" ID="uxSocialEmotional" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
                                     <ItemTemplate>
                                         <div class="checkbox-wrapper">
                                             <label>
                                                 <%--<input type="checkbox" name="q1a1">--%>
-                                                <asp:CheckBox ID="issue" runat="server" />
+                                                <asp:CheckBox ID="interest" runat="server" />
                                                 <span>
                                                     <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                     <%# Eval("Fields[Interest Name]") %>
@@ -433,7 +433,7 @@
                         <sc:text id="Text36" field="Where Are You Question Title" runat="server" />
                     </h3>
                     <div class="radios-wrapper">
-                        <asp:ListView runat="server" ID="uxJourney" ItemType="Sitecore.Data.Items.Item">
+                        <asp:ListView runat="server" ID="uxJourney" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
                             <ItemTemplate>
                                 <div class="radio-wrapper">
                                     <label>
@@ -583,7 +583,7 @@
                 <!-- .connect-question -->
 
                 <div class="form-actions">
-                    <asp:Button CssClass="button" ID="SubmitButton" runat="server" />
+                    <asp:Button CssClass="button" ID="SubmitButton" runat="server" OnClick="SubmitButton_Click" />
                     <!--input class="button" type="submit" value="Submit"-->
                 </div>
             </div>

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Sitecore.Globalization;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Domain.Membership;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
@@ -72,6 +73,114 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             uxParentList.DataBind();
 
             uxParentList.Items.Insert(0, new ListItem() { Text = DictionaryConstants.ParentRoleDefault, Value = null });
+        }
+
+        protected void SubmitButton_Click(object sender, EventArgs e)
+        {
+            foreach (var item in uxSchoolLeft.Items)
+            {
+                var check = item.FindControl("interest") as CheckBox;
+                if (check != null && check.Checked)
+                {
+                    //registeringUser.Children.ElementAt(index).Diagnoses.Add(new Domain.Membership.Diagnosis() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                }
+            }
+
+            foreach (var item in uxSchoolRight.Items)
+            {
+                var check = item.FindControl("interest") as CheckBox;
+                if (check != null && check.Checked)
+                {
+                    //registeringUser.Children.ElementAt(index).Diagnoses.Add(new Domain.Membership.Diagnosis() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                }
+            }
+
+            foreach (var item in uxWaysToHelp.Items)
+            {
+                var check = item.FindControl("interest") as CheckBox;
+                if (check != null && check.Checked)
+                {
+                    //registeringUser.Children.ElementAt(index).Diagnoses.Add(new Domain.Membership.Diagnosis() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                }
+            }
+
+            foreach (var item in uxGrowingUp.Items)
+            {
+                var check = item.FindControl("interest") as CheckBox;
+                if (check != null && check.Checked)
+                {
+                    //registeringUser.Children.ElementAt(index).Diagnoses.Add(new Domain.Membership.Diagnosis() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                }
+            }
+
+            foreach (var item in uxHomeLife.Items)
+            {
+                var check = item.FindControl("interest") as CheckBox;
+                if (check != null && check.Checked)
+                {
+                    //registeringUser.Children.ElementAt(index).Diagnoses.Add(new Domain.Membership.Diagnosis() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                }
+            }
+
+            foreach (var item in uxSocialEmotional.Items)
+            {
+                var check = item.FindControl("interest") as CheckBox;
+                if (check != null && check.Checked)
+                {
+                    //registeringUser.Children.ElementAt(index).Diagnoses.Add(new Domain.Membership.Diagnosis() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                }
+            }
+
+            foreach (var item in uxJourney.Items)
+            {
+                var check = item.FindControl("journey") as RadioButton;
+                if (check != null && check.Checked)
+                {
+                    //registeringUser.Children.ElementAt(index).Diagnoses.Add(new Domain.Membership.Diagnosis() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                }
+            }
+
+            if (uxMotherButton.Checked || uxFatherButton.Checked || uxParentList.SelectedIndex > 0)
+            {
+                if (uxMotherButton.Checked)
+                {
+                    registeringUser.Role = Guid.Parse("{890F06AF-284E-43E1-9647-0EFEEB000526}");
+                }
+                else
+                {
+                    if (uxFatherButton.Checked)
+                    {
+                        registeringUser.Role = Guid.Parse("{2BF9D7BE-2E40-432C-ADE7-A25C80B9B9EE}");
+                    }
+                    else
+                    {
+                        registeringUser.Role = Guid.Parse(uxParentList.SelectedValue);
+                    }
+                }
+            }
+
+            var membershipManager = new MembershipManager();
+            membershipManager.AddMember(registeringUser);
+
+            Response.Redirect(MembershipHelper.GetNextStepURL(5));
+        }
+
+        protected void ListItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            var check = e.Item.FindControl("interest") as CheckBox;
+            var item = e.Item.DataItem as Sitecore.Data.Items.Item;
+
+            if (check != null && item != null)
+            {
+                check.Attributes.Add("guid", item.ID.ToString());
+            }
         }
     }
 }
