@@ -29,8 +29,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
             string apiKey = "2ome2soq1ablkmtlc";
-            int blogId = 2;
-            int blogPostId = 1;
+            int blogId = 1;
+            int blogPostId = 2;
             string body = CommentEntryTextField.Text;
             PostComment(apiKey, blogId, blogPostId, body);
             List<Comment> dataSource = ReadComments(apiKey, blogId, blogPostId);
