@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -39,6 +42,35 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
+        }
+        protected void FlagButton_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)(sender);
+            string id = btn.CommandArgument;
+
+            using (SqlConnection conn =
+                new SqlConnection(@"Data Source=(local);Initial Catalog=Telligent Evolution;User ID=sa;Password=oasis2006"))
+            {
+                conn.Open();
+                try
+                {
+                    using (SqlCommand cmd =
+                        new SqlCommand(@"UPDATE te_Comment_Comments SET IsApproved=@Approved 
+                                         WHERE LegacyCommentId=" + id, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Approved", "false");
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    List<Comment> dataSource = ReadComments(apiKey, blogId, blogPostId);
+                    CommentRepeater.DataSource = dataSource;
+                    CommentRepeater.DataBind();
+                }
+                catch (SqlException ex)
+                {
+                    //Update Failed
+                }
+            }
         }
         protected static void PostComment(string apiKey, int blogId, int blogPostId, string body)
         {

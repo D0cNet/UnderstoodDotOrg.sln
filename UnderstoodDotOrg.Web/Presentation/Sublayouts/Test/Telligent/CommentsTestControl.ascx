@@ -38,7 +38,9 @@
                                 <div class="comment-actions">
                                     <a class="comment-reply" href="REPLACE"><i class="icon-comment-reply"></i>Reply</a>
                                     <a class="comment-like" href="REPLACE"><i class="icon-comment-like"></i>This Helped</a>
-                                    <a class="comment-flag" href="REPLACE"><i class="icon-comment-flag"></i>Report as inappropriate</a>
+                                    <asp:LinkButton CssClass="comment-flag" CommandArgument='<%# Eval("_id") %>' OnClick="FlagButton_Click" ID="FlagButton" runat="server">
+                                        <i class="icon-comment-flag"></i>Report as inappropriate</asp:LinkButton>
+                                    <!--<a class="comment-flag" href="REPLACE"><i class="icon-comment-flag"></i>Report as inappropriate</--a>-->
                                 </div>
                             </div>
                         </ItemTemplate>
