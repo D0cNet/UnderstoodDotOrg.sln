@@ -438,7 +438,7 @@
                                 <div class="radio-wrapper">
                                     <label>
                                         <%--<input type="radio" name="q6" value="a1">--%>
-                                        <asp:RadioButton runat="server" ID="journey" GroupName="journey" />
+                                        <asp:RadioButton runat="server" ID="interest" GroupName="journey" />
                                         <span>
                                             <%--<sc:text id="Text37" field="WAY Area 1" runat="server" />--%>
                                             <%# Eval("Fields[Interest Name]") %>

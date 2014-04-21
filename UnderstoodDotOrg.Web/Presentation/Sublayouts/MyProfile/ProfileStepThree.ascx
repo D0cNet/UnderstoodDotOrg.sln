@@ -435,7 +435,7 @@
                                     <sc:text id="Text32" field="IEP Option 5" runat="server" />
                                 </option>
                             </select>--%>
-                            <asp:DropDownList ID="uxIEPStatus" runat="server"></asp:DropDownList>
+                            <asp:DropDownList ID="uxIEPStatus" runat="server" name="iepstatus"></asp:DropDownList>
                             <span>
                                 <a href="REPLACE" class="icon-wrapper popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></a>
                             </span>
@@ -471,7 +471,7 @@
                                     <sc:text id="Text38" field="504 Option 4" runat="server" />
                                 </option>
                             </select>--%>
-                            <asp:DropDownList ID="ux504Status" runat="server"></asp:DropDownList>
+                            <asp:DropDownList ID="ux504Status" runat="server" name="iepstatus"></asp:DropDownList>
                             <span>
                                 <a href="REPLACE" class="icon-wrapper popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></a>
                             </span>

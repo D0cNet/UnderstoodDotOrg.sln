@@ -433,6 +433,13 @@
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepTwo.ascx.designer.cs">
       <DependentUpon>ProfileStepTwo.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\SavedProfileQuestionsControl.ascx.cs">
+      <DependentUpon>SavedProfileQuestionsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\SavedProfileQuestionsControl.ascx.designer.cs">
+      <DependentUpon>SavedProfileQuestionsControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Registration\RegisterChildInformation.ascx.cs">
       <DependentUpon>RegisterChildInformation.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -900,6 +907,7 @@
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepOne.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepThree.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepTwo.ascx" />
+    <Content Include="Presentation\Sublayouts\MyProfile\SavedProfileQuestionsControl.ascx" />
     <Content Include="Presentation\Sublayouts\Registration\RegisterChildInformation.ascx" />
     <Content Include="Presentation\Sublayouts\Registration\RegisterCommunityProfile.ascx" />
     <Content Include="Presentation\Sublayouts\Section\Recommendations.ascx" />
