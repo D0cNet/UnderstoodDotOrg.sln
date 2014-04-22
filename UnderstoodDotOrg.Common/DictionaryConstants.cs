@@ -115,6 +115,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string SelectChallenge
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Select Challenge");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

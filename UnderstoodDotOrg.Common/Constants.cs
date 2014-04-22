@@ -30,7 +30,15 @@ namespace UnderstoodDotOrg.Common
         {
             get
             {
-                return new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}");
+                return new Guid("{1106FF43-4C23-412E-A37D-E19C6A34CF8F}");
+            }
+        }
+
+        public static Guid ChallengesContainer
+        {
+            get
+            {
+                return new Guid("{DAB8D18D-844D-489C-91CC-757F8783781E}");
             }
         }
 

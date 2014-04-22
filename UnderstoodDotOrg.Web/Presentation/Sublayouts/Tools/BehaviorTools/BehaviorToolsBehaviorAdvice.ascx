@@ -5,50 +5,14 @@
   <div class="behavior-advice">
     <div class="behavior-advice-title">Get Expert Advice</div>
     <div class="advice-question-wrapper">
-      <label for="question1" class="visuallyhidden">Select Challenge</label>
-      <select id="advice-challenge" name="question1">
-        <option value="">Select Challenge</option>
-        <option>Friendships</option>
-        <option>Gives up easily</option>
-        <option>Task-to-task transitions</option>
-        <option>Overdependence</option>
-        <option>Disorganization</option>
-        <option>Initiating/finishing tasks/time management</option>
-        <option>Anxiousness and fear</option>
-        <option>Interpersonal problem solving (includes fairness and blame/responsibility) </option>
-        <option>Social media/technology</option>
-        <option>Frustration</option>
-        <option>ADD</option>
-        <option>Self-esteem</option>
-        <option>Fitting in</option>
-        <option>Peer interactions</option>
-        <option>Interactions with adults</option>
-        <option>Risk-taking</option>
-        <option>Self-advocacy</option>
-      </select>
+        <asp:Label AssociatedControlID="ddlChallenges" runat="server" CssClass="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SelectChallenge %></asp:Label>
+        <asp:DropDownList ID="ddlChallenges" runat="server" />
     </div>
 
     <div class="advice-question-bottom clearfix">
       <div class="advice-question-wrapper select-container">
-        <label for="question2" class="visuallyhidden">Select Challenge</label>
-        <select id="advice-grade" name="question2">
-          <option value="">Select Grade</option>
-          <option>Toddler/Preschool</option>
-          <option>Kindergarten</option>
-          <option>Grade 1</option>
-          <option>Grade 2</option>
-          <option>Grade 3</option>
-          <option>Grade 4</option>
-          <option>Grade 5</option>
-          <option>Grade 6</option>
-          <option>Grade 7</option>
-          <option>Grade 8</option>
-          <option>Grade 9</option>
-          <option>Grade 10</option>
-          <option>Grade 11</option>
-          <option>Grade 12</option>
-          <option>After High School</option>
-        </select>
+          <asp:Label AssociatedControlID="ddlGrades" runat="server" CssClass="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.Grades.SelectGrade %></asp:Label>
+          <asp:DropDownList ID="ddlGrades" runat="server" />
       </div>
 
       <div class="behavior-advice-actions">
