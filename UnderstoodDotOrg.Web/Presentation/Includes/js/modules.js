@@ -2820,7 +2820,8 @@ jQuery(document).ready(function(){
     var self = this;
 
     //trigger the modal when the "don't see your child's challenge?" link is clicked
-    jQuery('.advice-more-link').click(function(){
+    jQuery('.advice-more-link').click(function(e){
+	  e.preventDefault();
       jQuery('#suggest-a-behavior').modal('show');
     });
 
@@ -2832,28 +2833,6 @@ jQuery(document).ready(function(){
     });
     suggestABehaviorModal.on('hide.bs.modal', function (e) {
       jQuery('#wrapper').css('position', 'relative');
-    });
-
-    //check that the textarea has content before submission
-    jQuery('.suggest-a-behavior input[type=submit]').click(function(e){
-      if (!jQuery.trim(jQuery('.suggest-a-behavior textarea').val())) {
-        //the textarea is empty so show an alert message
-        jQuery('.suggest-a-behavior .alert-message.hidden').removeClass('hidden');
-        e.preventDefault(); //prevent form submission
-      }else{
-        //make sure alert message is hidden
-        jQuery('.suggest-a-behavior .alert-message').addClass('hidden');
-
-        ////////////////////////////////////////////////////////////////////////
-        //This next bit is temporary. The confirmation message would normally //
-        // be done after an ajax call to submit the text.                     //
-        ////////////////////////////////////////////////////////////////////////
-
-        //hide form and show the confirmation text
-        jQuery('#suggest-a-behavior .suggest-a-behavior').hide();
-        jQuery('#suggest-a-behavior .suggest-a-behavior-confirmation').show();
-        e.preventDefault(); //prevent form submission
-      }
     });
 
     return this;

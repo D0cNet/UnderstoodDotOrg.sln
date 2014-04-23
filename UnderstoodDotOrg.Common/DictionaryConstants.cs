@@ -99,6 +99,30 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string CloseButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Close Button Text");
+            }
+        }
+
+        public static string CloseWindowButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Close Window Button Text");
+            }
+        }
+
+        public static string SendSuggestionButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Send Suggestion Button Text");
+            }
+        }
+
         public static string ScreenNameWatermark
         {
             get

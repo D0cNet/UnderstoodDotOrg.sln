@@ -13,6 +13,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 {
     public partial class BehaviorToolsBehaviorAdvice : BaseSublayout
     {
+        protected string Close
+        {
+            get { return DictionaryConstants.CloseButtonText; }
+        }
+
+        protected string CloseWindow
+        {
+            get { return DictionaryConstants.CloseWindowButtonText; }
+        }
+
         private string SelectedGrade
         {
             get { return Request.QueryString[Constants.GRADE_QUERY_STRING] ?? String.Empty; }
@@ -27,7 +37,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         {
             BindEvents();
             BindContent();
-
+            
             if (!IsPostBack)
             {
                 BindControls();
@@ -37,6 +47,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         private void BindEvents()
         {
             btnSubmit.Click += btnSubmit_Click;
+            btnSubmitSuggestion.Click += btnSubmitSuggestion_Click;
+            cvSuggestion.ServerValidate += cvSuggestion_ServerValidate;
+        }
+
+        #region Event Handlers
+
+        void cvSuggestion_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            bool hasSuggestion = !String.IsNullOrEmpty(txtSuggestion.Text.Trim());
+            pnlSuggestError.Visible = !hasSuggestion;
+            args.IsValid = hasSuggestion;
+        }
+
+        void btnSubmitSuggestion_Click(object sender, EventArgs e)
+        {
+            Page.Validate("Suggestion");
+            if (Page.IsValid) 
+            {
+                // TODO: send email
+                pnlEntryForm.Visible = false;
+                pnlSuccessForm.Visible = true;
+            }
+            
+            pnlSuggest.Update();
         }
 
         void btnSubmit_Click(object sender, EventArgs e)
@@ -50,9 +84,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
             Response.Redirect(FormHelper.GetBehaviorResultsUrl(ddlChallenges.SelectedValue, ddlGrades.SelectedValue));
         }
 
+        #endregion
+
         private void BindContent()
         {
             btnSubmit.Text = DictionaryConstants.GoButtonText;
+            btnSubmitSuggestion.Text = DictionaryConstants.SendSuggestionButtonText;
+
+            frSuggestionTitle.Item = frSuggestionInstructions.Item = frSuggestionRequired.Item =
+                    frSuccessTitle.Item = frSuccessText.Item = frSuccessSignupLink.Item = 
+                    frCalloutTitle.Item = frCalloutLinkText.Item = this.DataSource;
         }
 
         private void BindControls()
