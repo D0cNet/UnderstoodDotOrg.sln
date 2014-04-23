@@ -489,6 +489,13 @@
     <Compile Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx.designer.cs">
       <DependentUpon>YourParentToolkit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx.cs">
+      <DependentUpon>Back To Home.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx.designer.cs">
+      <DependentUpon>Back To Home.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx.cs">
       <DependentUpon>My Account Header.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1077,6 +1084,7 @@
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
