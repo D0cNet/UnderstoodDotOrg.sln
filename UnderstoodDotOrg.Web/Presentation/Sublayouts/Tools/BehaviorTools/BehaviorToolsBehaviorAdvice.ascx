@@ -16,7 +16,7 @@
       </div>
 
       <div class="behavior-advice-actions">
-        <input class="submit-button" type="submit" value="Go">
+        <asp:Button ID="btnSubmit" runat="server" CssClass="submit-button" />
       </div>
     </div>
 

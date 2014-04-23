@@ -48,6 +48,7 @@
     <Compile Include="DictionaryConstants.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Extensions\DropDownListExtensions.cs" />
     <Compile Include="Extensions\ItemExtensions.cs" />
     <Compile Include="Extensions\RepeaterExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

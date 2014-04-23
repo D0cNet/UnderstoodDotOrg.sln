@@ -91,6 +91,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string GoButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Go Button Text");
+            }
+        }
+
         public static string ScreenNameWatermark
         {
             get

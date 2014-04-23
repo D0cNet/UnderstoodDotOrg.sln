@@ -8,7 +8,13 @@ namespace UnderstoodDotOrg.Common
 {
     public static class Constants
     {
+        #region Query Strings
+
         public static readonly string SCLANG_QUERY_STRING = "sc_lang";
+        public static readonly string CHALLENGE_QUERY_STRING = "challenge";
+        public static readonly string GRADE_QUERY_STRING = "grade";
+
+        #endregion
 
         public static string CURRENT_INDEX_NAME
         {
@@ -26,6 +32,8 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        #region Container Guid
+
         public static Guid GradeContainer
         {
             get
@@ -41,6 +49,23 @@ namespace UnderstoodDotOrg.Common
                 return new Guid("{DAB8D18D-844D-489C-91CC-757F8783781E}");
             }
         }
+
+        #endregion
+
+        #region Page Guids
+
+        public static class Pages
+        {
+            public static Guid BehaviorToolsResults
+            {
+                get
+                {
+                    return new Guid("{D4E382E1-34D1-47DB-8430-9EE4A1545B25}");
+                }
+            }
+        }
+
+        #endregion
 
         public static Dictionary<Guid, string> Issues
         {
