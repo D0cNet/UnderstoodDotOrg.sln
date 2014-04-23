@@ -489,6 +489,13 @@
     <Compile Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx.designer.cs">
       <DependentUpon>YourParentToolkit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx.cs">
+      <DependentUpon>MyAccount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx.designer.cs">
+      <DependentUpon>MyAccount.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\SignIn.ascx.cs">
       <DependentUpon>SignIn.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -621,6 +628,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Test\Telligent\CommentTest.ascx.designer.cs">
       <DependentUpon>CommentTest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Test\Telligent\MyCommentsTest.ascx.cs">
+      <DependentUpon>MyCommentsTest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Test\Telligent\MyCommentsTest.ascx.designer.cs">
+      <DependentUpon>MyCommentsTest.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx.cs">
       <DependentUpon>Assisitive Tools Search.ascx</DependentUpon>
@@ -1049,6 +1063,7 @@
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx" />
@@ -1068,6 +1083,7 @@
     <Content Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Test\Telligent\CommentsTestControl.ascx" />
     <Content Include="Presentation\Sublayouts\Test\Telligent\CommentTest.ascx" />
+    <Content Include="Presentation\Sublayouts\Test\Telligent\MyCommentsTest.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx" />
@@ -1152,7 +1168,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>54252</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:3032/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
