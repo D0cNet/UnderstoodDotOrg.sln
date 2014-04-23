@@ -29,7 +29,7 @@
                                         <span class="comment-username"><%# Eval("_username") %></span>
                                         <span class="comment-date"><%# Eval("_date") %></span>
                                     </span>
-                                    <a class="comment-like"><i class="icon-comment-like"></i>3</a>
+                                    <a class="comment-like"><i class="icon-comment-like"></i><%# Eval("_likes") %></a>
                                 </div>
                                 <div class="comment-body">
                                     <p>
