@@ -510,6 +510,13 @@
     <Compile Include="Presentation\Sublayouts\MyAccount\SignUp.ascx.designer.cs">
       <DependentUpon>SignUp.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\My Profile.ascx.cs">
+      <DependentUpon>My Profile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyProfile\My Profile.ascx.designer.cs">
+      <DependentUpon>My Profile.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx.cs">
       <DependentUpon>ProfileStepFive.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1066,6 +1073,7 @@
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />
+    <Content Include="Presentation\Sublayouts\MyProfile\My Profile.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFour.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepOne.ascx" />
