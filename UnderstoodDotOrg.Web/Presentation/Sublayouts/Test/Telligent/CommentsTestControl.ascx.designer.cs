@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
     public partial class CommentsTestControl {
         
         /// <summary>
+        /// CommentCountDisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CommentCountDisplay;
+        
+        /// <summary>
         /// CommentRepeater control.
         /// </summary>
         /// <remarks>

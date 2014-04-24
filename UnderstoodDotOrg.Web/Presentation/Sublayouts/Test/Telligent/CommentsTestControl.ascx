@@ -9,7 +9,7 @@
             <section class="comment-list">
 
                 <header>
-                    <span class="comment-count">Comments (19)</span>
+                    <asp:Label CssClass="comment-count" ID="CommentCountDisplay" runat="server" />
                     <select name="comment-sort-option" class="comment-sort">
                         <option value="">Sort by</option>
                         <option>A-Z</option>
@@ -23,7 +23,7 @@
                             <div class="comment-wrapper">
                                 <div class="comment-header">
                                     <span class="comment-avatar">
-                                        <img alt="60x60 Placeholder" src="http://placehold.it/60x60" />
+                                        <img style="height:60px; width:60px;" alt="60x60 Placeholder" src='<%# Eval("_authorAvatarUrl") %>' />
                                     </span>
                                     <span class="comment-info">
                                         <span class="comment-username"><%# Eval("_authorUsername") %></span>

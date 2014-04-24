@@ -11,9 +11,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 {
     public partial class CommentsTestControl : System.Web.UI.UserControl
     {
-        string apiKey = "vr7sr63ehedv0gcxzlk8s71l1xrctb3";
-        int blogId = 1;
-        int blogPostId = 1;
+        public static string apiKey = "vr7sr63ehedv0gcxzlk8s71l1xrctb3";
+        public static int commentCount;
+        public static int blogId = 1;
+        public static int blogPostId = 1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,19 +22,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
+            CommentCountDisplay.Text = "Comments (" + commentCount + ")";
+
+            if (!IsPostBack) { CommentEntryTextField.Text = "Add your comment..."; }
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
             string body = CommentEntryTextField.Text;
-            if (body.Equals("Add your comment...") || body.Equals("") || body.Equals(null))
-            {
-                PostComment(apiKey, blogId, blogPostId, body);
-                List<Comment> dataSource = ReadComments(apiKey, blogId, blogPostId);
+            PostComment(apiKey, blogId, blogPostId, body);
+            List<Comment> dataSource = ReadComments(apiKey, blogId, blogPostId);
 
-                CommentRepeater.DataSource = dataSource;
-                CommentRepeater.DataBind();
-            }
+            CommentRepeater.DataSource = dataSource;
+            CommentRepeater.DataBind();
         }
 
         protected void FlagButton_Click(object sender, EventArgs e)
@@ -99,18 +100,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 
         protected static void PostComment(string apiKey, int blogId, int blogPostId, string body)
         {
-            var webClient = new WebClient();
+                var webClient = new WebClient();
 
-            var adminKey = string.Format("{0}:{1}", apiKey, "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+                var adminKey = string.Format("{0}:{1}", apiKey, "admin");
+                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
 
-            var postUrl = "http://localhost/telligentevolution/api.ashx/v2/blogs/" + blogId + "/posts/" + blogPostId + "/comments.xml ";
-            var data = "Body=" + body + "&PublishedDate=" + DateTime.Now + "&IsApproved=true&BlogId=" + blogId;
+                var postUrl = "http://localhost/telligentevolution/api.ashx/v2/blogs/" + blogId + "/posts/" + blogPostId + "/comments.xml ";
+                var data = "Body=" + body + "&PublishedDate=" + DateTime.Now + "&IsApproved=true&BlogId=" + blogId;
 
-            webClient.UploadData(postUrl, "POST", Encoding.ASCII.GetBytes(data));
+                webClient.UploadData(postUrl, "POST", Encoding.ASCII.GetBytes(data));
         }
 
         static List<Comment> ReadComments(string apiKey, int blogId, int blogPostId)
@@ -131,7 +132,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 
             XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
             XmlNodeList nodes2 = xmlDoc.SelectNodes("Response/Comments/Comment/Author");
-            int commentCount = nodes.Count;
+            commentCount = nodes.Count;
             List<Comment> commentList = new List<Comment>();
             int nodecount = 0;
             foreach (XmlNode xn in nodes)
@@ -153,8 +154,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
                 string authorProfileUrl = nodes2[nodecount]["ProfileUrl"].InnerText;
                 string authorUsername = nodes2[nodecount]["Username"].InnerText;
                 string likesCount = ReadLikes(apiKey, commentId);
-                Comment comment = new Comment(id,url, body,parentId,contentId,isApproved,replyCount,commentId,
-                    commentContentTypeId,authorId,authorAvatarUrl,authorUsername, publishedDate, authorDisplayName,
+                Comment comment = new Comment(id, url, body, parentId, contentId, isApproved, replyCount, commentId,
+                    commentContentTypeId, authorId, authorAvatarUrl, authorUsername, publishedDate, authorDisplayName,
                     authorProfileUrl, likesCount);
                 commentList.Add(comment);
                 //Console.WriteLine("Comment: {0} {1} {2}", username, id, body);
@@ -267,7 +268,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
                 _authorUsername = authorUsername;
                 _likes = likes;
             }
-
         }
     }
 }

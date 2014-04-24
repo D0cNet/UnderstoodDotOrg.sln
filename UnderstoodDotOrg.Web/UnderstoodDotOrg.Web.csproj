@@ -843,6 +843,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Presentation\Includes\css\article.css" />
     <Content Include="Presentation\Includes\css\community.css" />
     <Content Include="Presentation\Includes\images\placefolder\100x1000.gif" />
     <Content Include="Presentation\Includes\images\placefolder\1200x475.gif" />
