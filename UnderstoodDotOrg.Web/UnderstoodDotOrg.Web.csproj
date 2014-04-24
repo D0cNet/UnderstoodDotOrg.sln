@@ -496,6 +496,13 @@
     <Compile Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx.designer.cs">
       <DependentUpon>Back To Home.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Forgot Password.ascx.cs">
+      <DependentUpon>Forgot Password.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Forgot Password.ascx.designer.cs">
+      <DependentUpon>Forgot Password.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx.cs">
       <DependentUpon>My Account Header.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -509,6 +516,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx.designer.cs">
       <DependentUpon>MyAccount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx.cs">
+      <DependentUpon>Reset Password.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx.designer.cs">
+      <DependentUpon>Reset Password.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\SignIn.ascx.cs">
       <DependentUpon>SignIn.ascx</DependentUpon>
@@ -1092,8 +1106,10 @@
     <Content Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Forgot Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Terms and Conditions.ascx" />
