@@ -155,6 +155,158 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string AboutMeLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "About Me Label");
+            }
+        }
+
+        public static string CommunityLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Community Label");
+            }
+        }
+
+        public static string ContactLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Contact Label");
+            }
+        }
+
+        public static string ContactReminderText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Contact Reminder Text");
+            }
+        }
+
+        public static string EmailAndPasswordLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Email and Password Label");
+            }
+        }
+
+        public static string EmailLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Email Label");
+            }
+        }
+
+        public static string MobilePhoneLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Mobile Phone Label");
+            }
+        }
+
+        public static string MyChildrenLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "My Children Label");
+            }
+        }
+
+        public static string MyConnectionsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "My Connections Label");
+            }
+        }
+
+        public static string MyInterestsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "My Interests Label");
+            }
+        }
+
+        public static string MyJourneyLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "My Journey Label");
+            }
+        }
+
+        public static string MyLocationLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "My Location Label");
+            }
+        }
+
+        public static string MyPublicViewLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "My Public View Label");
+            }
+        }
+
+        public static string MyRoleLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "My Role Label");
+            }
+        }
+
+        public static string MyScreenNameLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "My Screen Name Label");
+            }
+        }
+
+        public static string NicknameReminderText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Nickname Reminder Text");
+            }
+        }
+
+        public static string PasswordLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Password Label");
+            }
+        }
+
+        public static string PrivacyLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Privacy Label");
+            }
+        }
+
+        public static string ZipcodeReminderText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Zipcode Reminder Text");
+            }
+        }
+
         public static string EnterSuggestionWatermark
         {
             get
