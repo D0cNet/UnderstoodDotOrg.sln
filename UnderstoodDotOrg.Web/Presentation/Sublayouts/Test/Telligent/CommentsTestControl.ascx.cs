@@ -21,21 +21,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
-
-            if (!IsPostBack)
-            {
-                CommentEntryTextField.Text = "Add your comment...";
-            }
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
             string body = CommentEntryTextField.Text;
-            PostComment(apiKey, blogId, blogPostId, body);
-            List<Comment> dataSource = ReadComments(apiKey, blogId, blogPostId);
+            if (body.Equals("Add your comment...") || body.Equals("") || body.Equals(null))
+            {
+                PostComment(apiKey, blogId, blogPostId, body);
+                List<Comment> dataSource = ReadComments(apiKey, blogId, blogPostId);
 
-            CommentRepeater.DataSource = dataSource;
-            CommentRepeater.DataBind();
+                CommentRepeater.DataSource = dataSource;
+                CommentRepeater.DataBind();
+            }
         }
 
         protected void FlagButton_Click(object sender, EventArgs e)
