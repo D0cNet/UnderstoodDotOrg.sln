@@ -51,7 +51,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
             webClient.Headers.Add("Rest-Method", "PUT");
-            var requestUrl = "http://localhost/telligentevolution/api.ashx/v2/comments/353B457F-38B8-42E1-ADC0-4D226C41C67D.xml";
+            var requestUrl = "http://localhost/telligentevolution/api.ashx/v2/comments/" + id + ".xml";
 
             var values = new NameValueCollection();
             values.Add("CommentId", id);
@@ -65,6 +65,38 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
         protected void ReplyButton_Click(object sender, EventArgs e)
         {
             CommentEntryTextField.Focus();
+        }
+
+        protected void LikeButton_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)(sender);
+            string ids = btn.CommandArgument;
+            string[] s = ids.Split('&');
+
+            string contentId = s[0];
+            string contentTypeId = s[1];
+
+            var webClient = new WebClient();
+
+            // replace the "admin" and "Admin's API key" with your valid user and apikey!
+            var adminKey = String.Format("{0}:{1}", apiKey, "admin");
+            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            var requestUrl = "http://localhost/telligentevolution/api.ashx/v2/likes.xml";
+
+            var values = new NameValueCollection();
+            values.Add("ContentId", contentId);
+            values.Add("ContentTypeId", contentTypeId);
+
+            var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+
+            Console.WriteLine(xml);
+
+            List<Comment> dataSource = ReadComments(apiKey, blogId, blogPostId);
+
+            CommentRepeater.DataSource = dataSource;
+            CommentRepeater.DataBind();
         }
 
         protected static void PostComment(string apiKey, int blogId, int blogPostId, string body)
@@ -106,13 +138,26 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
             int nodecount = 0;
             foreach (XmlNode xn in nodes)
             {
-                string id = xn["CommentId"].InnerText;
+                string id = xn["Id"].InnerText;
+                string url = xn["Url"].InnerText;
+                string parentId = xn["ParentId"].InnerText;
+                string contentId = xn["ContentId"].InnerText;
+                string isApproved = xn["IsApproved"].InnerText;
+                string replyCount = xn["ReplyCount"].InnerText;
+                string commentId = xn["CommentId"].InnerText;
+                string commentContentTypeId = xn["CommentContentTypeId"].InnerText;
                 string body = xn["Body"].InnerText;
                 string dateTime = xn["PublishedDate"].InnerText;
                 string publishedDate = FormatDate(dateTime);
-                string username = nodes2[nodecount]["Username"].InnerText;
-                string likesCount = ReadLikes(apiKey, id);
-                Comment comment = new Comment(id, body, username, publishedDate, likesCount);
+                string authorId = nodes2[nodecount]["Id"].InnerText;
+                string authorAvatarUrl = nodes2[nodecount]["AvatarUrl"].InnerText;
+                string authorDisplayName = nodes2[nodecount]["DisplayName"].InnerText;
+                string authorProfileUrl = nodes2[nodecount]["ProfileUrl"].InnerText;
+                string authorUsername = nodes2[nodecount]["Username"].InnerText;
+                string likesCount = ReadLikes(apiKey, commentId);
+                Comment comment = new Comment(id,url, body,parentId,contentId,isApproved,replyCount,commentId,
+                    commentContentTypeId,authorId,authorAvatarUrl,authorUsername, publishedDate, authorDisplayName,
+                    authorProfileUrl, likesCount);
                 commentList.Add(comment);
                 //Console.WriteLine("Comment: {0} {1} {2}", username, id, body);
             }
@@ -187,17 +232,41 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
         public class Comment
         {
             public string _id { get; set; }
+            public string _url { get; set; }
             public string _body { get; set; }
-            public string _username { get; set; }
-            public string _date { get; set; }
+            public string _parentId { get; set; }
+            public string _publishedDate { get; set; }
             public string _likes { get; set; }
-
-            public Comment(string id, string body, string username, string date, string likes)
+            public string _commentId { get; set; }
+            public string _contentId { get; set; }
+            public string _commentContentTypeId { get; set; }
+            public string _authorId { get; set; }
+            public string _authorAvatarUrl { get; set; }
+            public string _authorDisplayName { get; set; }
+            public string _authorProfileUrl { get; set; }
+            public string _replyCount { get; set; }
+            public string _isApproved { get; set; }
+            public string _authorUsername { get; set; }
+           
+            public Comment(string id, string url, string body, string parentId, string contentId, string isApproved, string replyCount, 
+                string commentId, string commentContentTypeId, string authorId, string authorAvatarUrl, string authorUsername, string publishedDate,
+                    string authorDisplayName, string authorProfileUrl, string likes)
             {
                 _id = id;
+                _url = url;
                 _body = body;
-                _username = username;
-                _date = date;
+                _parentId = parentId;
+                _contentId = contentId;
+                _isApproved = isApproved;
+                _replyCount = replyCount;
+                _commentId = commentId;
+                _commentContentTypeId = commentContentTypeId;
+                _publishedDate = publishedDate;
+                _authorId = authorId;
+                _authorAvatarUrl = authorAvatarUrl;
+                _authorDisplayName = authorDisplayName;
+                _authorProfileUrl = authorProfileUrl;
+                _authorUsername = authorUsername;
                 _likes = likes;
             }
 

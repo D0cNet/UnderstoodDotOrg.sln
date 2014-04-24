@@ -26,8 +26,8 @@
                                         <img alt="60x60 Placeholder" src="http://placehold.it/60x60" />
                                     </span>
                                     <span class="comment-info">
-                                        <span class="comment-username"><%# Eval("_username") %></span>
-                                        <span class="comment-date"><%# Eval("_date") %></span>
+                                        <span class="comment-username"><%# Eval("_authorUsername") %></span>
+                                        <span class="comment-date"><%# Eval("_publishedDate") %></span>
                                     </span>
                                     <a class="comment-like"><i class="icon-comment-like"></i><%# Eval("_likes") %></a>
                                 </div>
@@ -38,8 +38,8 @@
                                 </div>
                                 <div class="comment-actions">
                                     <asp:LinkButton CssClass="comment-reply" OnClick="ReplyButton_Click" ID="ReplyButton" runat="server"><i class="icon-comment-reply"></i>Reply</asp:LinkButton>
-                                    <a class="comment-like" href="REPLACE"><i class="icon-comment-like"></i>This Helped</a>
-                                    <asp:LinkButton CssClass="comment-flag" CommandArgument='<%# Eval("_id") %>' OnClick="FlagButton_Click" ID="FlagButton" runat="server">
+                                    <asp:LinkButton OnClick="LikeButton_Click" ID="LikeButton" CommandArgument='<%# Eval("_commentId") + "&" + Eval("_commentContentTypeId") %>' class="comment-like" runat="server"><i class="icon-comment-like"></i>This Helped</asp:LinkButton>
+                                    <asp:LinkButton CssClass="comment-flag" CommandArgument='<%# Eval("_commentId") %>' OnClick="FlagButton_Click" ID="FlagButton" runat="server">
                                         <i class="icon-comment-flag"></i>Report as inappropriate</asp:LinkButton>
                                     <!--<a class="comment-flag" href="REPLACE"><i class="icon-comment-flag"></i>Report as inappropriate</--a>-->
                                 </div>
