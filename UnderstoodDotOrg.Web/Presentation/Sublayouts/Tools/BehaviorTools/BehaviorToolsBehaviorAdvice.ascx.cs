@@ -57,6 +57,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         {
             bool hasSuggestion = !String.IsNullOrEmpty(txtSuggestion.Text.Trim());
             pnlSuggestError.Visible = !hasSuggestion;
+            litSuggestError.Text = this.DataSource.Fields["Suggestion Required Field Message"].Value;
             args.IsValid = hasSuggestion;
         }
 
@@ -66,6 +67,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
             if (Page.IsValid) 
             {
                 // TODO: send email
+                // Field for to address - "Suggestion E-mail Address"
+                // Field for failed email error - "Suggestion Submit Failed Message"
+
                 pnlEntryForm.Visible = false;
                 pnlSuccessForm.Visible = true;
             }
@@ -75,7 +79,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 
         void btnSubmit_Click(object sender, EventArgs e)
         {
-            // TODO: no error treatment provided, add required field validators?
             if (!Page.IsValid)
             {
                 return;
@@ -90,8 +93,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         {
             btnSubmit.Text = DictionaryConstants.GoButtonText;
             btnSubmitSuggestion.Text = DictionaryConstants.SendSuggestionButtonText;
+            txtSuggestion.Attributes.Add("placeholder", DictionaryConstants.EnterSuggestionWatermark);
 
-            frSuggestionTitle.Item = frSuggestionInstructions.Item = frSuggestionRequired.Item =
+            frSuggestionTitle.Item = frSuggestionInstructions.Item = 
                     frSuccessTitle.Item = frSuccessText.Item = frSuccessSignupLink.Item = 
                     frCalloutTitle.Item = frCalloutLinkText.Item = this.DataSource;
         }

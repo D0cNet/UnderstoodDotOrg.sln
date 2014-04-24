@@ -155,6 +155,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string EnterSuggestionWatermark
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Enter Suggestion Watermark");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

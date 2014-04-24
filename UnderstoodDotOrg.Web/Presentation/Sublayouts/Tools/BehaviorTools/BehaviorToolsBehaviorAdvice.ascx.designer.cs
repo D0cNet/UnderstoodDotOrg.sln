@@ -85,13 +85,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools {
         protected global::System.Web.UI.WebControls.Panel pnlSuggestError;
         
         /// <summary>
-        /// frSuggestionRequired control.
+        /// litSuggestError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSuggestionRequired;
+        protected global::System.Web.UI.WebControls.Literal litSuggestError;
         
         /// <summary>
         /// frSuggestionTitle control.

@@ -34,7 +34,7 @@
       <asp:UpdatePanel ID="pnlSuggest" class="modal-body" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <asp:Panel ID="pnlEntryForm" CssClass="suggest-a-behavior" runat="server">
-                <asp:Panel id="pnlSuggestError" CssClass="alert-message" runat="server" Visible="false"><sc:FieldRenderer ID="frSuggestionRequired" runat="server" FieldName="Suggestion Required Field Message" /></div></asp:Panel>
+                <asp:Panel id="pnlSuggestError" CssClass="alert-message" runat="server" Visible="false"><asp:Literal ID="litSuggestError" runat="server" /></asp:Panel>
                 <h3><sc:FieldRenderer ID="frSuggestionTitle" runat="server" FieldName="Suggestion Title" /></h3>
                 <p><sc:FieldRenderer ID="frSuggestionInstructions" runat="server" FieldName="Suggestion Instructions" /></p>
                 <asp:TextBox ID="txtSuggestion" runat="server" TextMode="MultiLine" />
