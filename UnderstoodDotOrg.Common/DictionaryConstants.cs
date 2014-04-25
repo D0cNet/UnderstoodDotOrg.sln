@@ -315,6 +315,22 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string NotOpenToConnect
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Not Open To Connect Description");
+            }
+        }
+
+        public static string OpenToConnect
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Open To Connect Description");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade
