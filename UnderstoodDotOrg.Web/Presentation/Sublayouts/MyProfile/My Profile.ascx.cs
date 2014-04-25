@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.UI.WebControls;
     using UnderstoodDotOrg.Common;
     using UnderstoodDotOrg.Domain.Membership;
 
@@ -10,7 +12,7 @@
         private void Page_Load(object sender, EventArgs e)
         {
             // Put user code to initialize the page here
-
+#region Mock User
             var currentUser = new Member()
             {
                 FirstName = "Sonya",
@@ -135,9 +137,90 @@
                     }
                 },
             };
-           
             
+            string username = "sonya.mik@gmail.com";
+            string password = "digitalpulp!";
+            string phonenumber = "555-555-1234";
+#endregion
 
+            uxChildList.DataSource = currentUser.Children;
+            uxChildList.DataBind();
+
+            uxInterestList.DataSource = currentUser.Interests.Where(x => x.CategoryName != "Journey");
+            uxInterestList.DataBind();
+
+            uxEmailAddress.Text = username;
+            uxJourney.Text = currentUser.Interests.Where(x => x.CategoryName == "Journey").First().Value;
+            uxPassword.Text = replacePassword(password);
+            uxPhoneNumber.Text = phonenumber;
+            uxPrivacyLevel.Text = currentUser.allowConnections ? DictionaryConstants.OpenToConnect : DictionaryConstants.NotOpenToConnect;
+            uxRole.Text = getItemName(currentUser.Role); //lookup
+            uxScreenname.Text = currentUser.ScreenName;
+            uxZipcode.Text = currentUser.ZipCode;
+            uxAddChild.Text = string.Format(uxAddChild.Text, ((ChildCount) currentUser.Children.Count).ToString());
+
+        }
+
+        private string replacePassword(string password)
+        {
+            string ret = string.Empty;
+            
+            for (int i = 0; i < password.Length; i++)
+            {
+                ret += "·";
+            }
+
+            return ret;
+        }
+
+        enum ChildCount
+        {
+            First = 0,
+            Second = 1,
+            Third = 2,
+            Fourth = 3,
+            Fifth = 4,
+            Sixth = 5
+        }
+
+        protected void uxChildList_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            string[] g = { "boy", "girl" };
+
+            var item = e.Item.DataItem as Child;
+            var issueList = e.Item.FindControl("uxChildIssueList") as ListView;
+            var grade = e.Item.FindControl("uxGrade") as Literal;
+            var gender = e.Item.FindControl("uxGender") as Literal;
+            var evaluatedStatus = e.Item.FindControl("uxEvaluationStatus") as Literal;
+
+            if (item != null)
+            {
+                if (issueList != null)
+                {
+                    issueList.DataSource = item.Issues;
+                    issueList.DataBind();
+                }
+
+                if (grade != null)
+                {
+                    grade.Text = getItemName(item.Grade); //lookup
+                }
+
+                if (gender != null)
+                {
+                    gender.Text = g[e.Item.DataItemIndex];
+                }
+
+                if (evaluatedStatus != null)
+                {
+                    evaluatedStatus.Text = getItemName(item.EvaluationStatus); //lookup
+                }
+            }
+        }
+
+        protected string getItemName(Guid guid)
+        {
+            return Sitecore.Context.Database.GetItem(guid.ToString()).Name;
         }
     }
 }

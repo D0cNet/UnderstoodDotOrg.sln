@@ -17,7 +17,7 @@
             <div class="account-links">
                 <a class="profile-link button" href="REPLACE">My Profile</a>
                 <span class="button-wrapper">
-                    <a class="notifications-link button" href="REPLACE">Notifications<span class="notification-count">3</span></a>
+                    <a class="notifications-link button" href="REPLACE">Notifications<span class="notification-count">9001</span></a>
                 </span>
             </div>
         </div>
