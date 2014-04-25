@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnderstoodDotOrg.Domain.Understood.Common;
-using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using System.Web;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.Understood.Common;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 
 namespace UnderstoodDotOrg.Domain.Understood.Helper
 {
@@ -31,14 +32,14 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
         public static List<ListItem> GetGrades()
         {
             var container = Sitecore.Context.Database.GetItem(Constants.GradeContainer.ToString());
-            var grades = from c in container.Children
-                         let exclude = new CheckboxField(c.Fields["Exclude from website display"])
-                         where !exclude.Checked
+            var grades = from c in container.Children.Select(x => new GradeLevelItem(x))
+                         where !c.ExcludeFromWebsiteDisplay.Checked
                          select new ListItem
                          {
-                             Value = c.ID.ToString(),
-                             Text = c.Fields["Name"].Value
+                             Text = c.Name,
+                             Value = c.ID.ToString()
                          };
+                         
 
             return PopulateList(DictionaryConstants.Grades.SelectGrade, grades);
         }
@@ -50,11 +51,11 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
         public static List<ListItem> GetChallenges()
         {
             var container = Sitecore.Context.Database.GetItem(Constants.ChallengesContainer.ToString());
-            var challenges = from c in container.Children
+            var challenges = from c in container.Children.Select(x => new ChildChallengeItem(x))
                              select new ListItem
                              {
                                  Value = c.ID.ToString(),
-                                 Text = c.Fields["Challenge Name"].Value
+                                 Text = c.ChallengeName
                              };
 
             return PopulateList(DictionaryConstants.SelectChallenge, challenges);
