@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <JSLintSkip>\Presentation\Includes\js\vendor\|\Presentation\Includes\js\global.js|\Presentation\Includes\js\modules.js|\Presentation\Includes\js\site.js</JSLintSkip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -362,6 +363,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogParentsAreTalkingWidget.ascx.designer.cs">
       <DependentUpon>BlogParentsAreTalkingWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogPostBody.ascx.cs">
+      <DependentUpon>BlogPostBody.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogPostBody.ascx.designer.cs">
+      <DependentUpon>BlogPostBody.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsPostPage.ascx.cs">
       <DependentUpon>BlogsPostPage.ascx</DependentUpon>
@@ -1088,6 +1096,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostRecentWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostSharedWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogParentsAreTalkingWidget.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogPostBody.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsPostPage.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\MostReadBlogsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\MostRecentBlogsPage.ascx" />

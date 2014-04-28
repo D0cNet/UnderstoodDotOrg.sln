@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CommentsTestControl.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent.CommentsTestControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CommentsTestControl.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent.Comments" %>
 
 <!-- comments -->
 <div class="container comments">

@@ -12,8 +12,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         public static string apiKey = "vr7sr63ehedv0gcxzlk8s71l1xrctb3";
         public static int commentCount;
-        public static int blogId = 1;
-        public static int blogPostId = 1;
+        public static int blogId = 2;
+        public static int blogPostId = 2;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -105,6 +105,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            webClient.Headers.Add("Rest-Impersonate-User", "BobbyTestUser");
             webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
 
             var postUrl = "http://localhost/telligentevolution/api.ashx/v2/blogs/" + blogId + "/posts/" + blogPostId + "/comments.xml ";
@@ -157,7 +158,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     commentContentTypeId, authorId, authorAvatarUrl, authorUsername, publishedDate, authorDisplayName,
                     authorProfileUrl, likesCount);
                 commentList.Add(comment);
-                //Console.WriteLine("Comment: {0} {1} {2}", username, id, body);
+                nodecount++;
             }
             return commentList;
         }
@@ -173,7 +174,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             string publishedDate = "Published " + timeSince + " days ago";
             if (timeSince.Equals("1"))
             {
-                publishedDate = "Published yesterday";
+                publishedDate = "yesterday";
             }
             if (timeSince.Equals("0"))
             {
@@ -182,15 +183,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 span = (int)s.TotalSeconds;
                 if (span < 60)
                 {
-                    return "Published just now";
+                    return "just now";
                 }
                 if (span < 120)
                 {
-                    return "Published 1 minute ago";
+                    return "1 minute ago";
                 }
                 if (span < 3600)
                 {
-                    return string.Format("Published {0} minutes ago",
+                    return string.Format("{0} minutes ago",
                         Math.Floor((double)span / 60));
                 }
                 if (span < 7200)
@@ -199,7 +200,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 }
                 if (span < 86400)
                 {
-                    return string.Format("Published {0} hours ago",
+                    return string.Format("{0} hours ago",
                         Math.Floor((double)span / 3600));
                 }
             }

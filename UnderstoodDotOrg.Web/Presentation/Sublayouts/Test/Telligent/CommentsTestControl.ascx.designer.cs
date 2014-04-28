@@ -10,7 +10,7 @@
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
     
     
-    public partial class CommentsTestControl {
+    public partial class Comments {
         
         /// <summary>
         /// CommentCountDisplay control.

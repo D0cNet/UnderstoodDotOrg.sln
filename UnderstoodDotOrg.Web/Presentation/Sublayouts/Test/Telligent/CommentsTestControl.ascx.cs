@@ -9,7 +9,7 @@ using System.Xml;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 {
-    public partial class CommentsTestControl : System.Web.UI.UserControl
+    public partial class Comments : System.Web.UI.UserControl
     {
         public static string apiKey = "vr7sr63ehedv0gcxzlk8s71l1xrctb3";
         public static int commentCount;
