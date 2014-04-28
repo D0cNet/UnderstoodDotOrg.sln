@@ -14,11 +14,11 @@ namespace UnderstoodDotOrg.Domain.Membership
     
     public partial class Member
     {
-        public Member()
-        {
-            this.Children = new HashSet<Child>();
-            this.Interests = new HashSet<Interest>();
-        }
+        //public Member()
+        //{
+        //    this.Children = new HashSet<Child>();
+        //    this.Interests = new HashSet<Interest>();
+        //}
     
         public System.Guid MemberId { get; set; }
         public System.Guid UserId { get; set; }
