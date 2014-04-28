@@ -52,6 +52,7 @@
     <Folder Include="FacebookService\" />
     <Folder Include="LuminateService\" />
     <Folder Include="SalesforceService\" />
+    <Folder Include="TelligentService\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnderstoodDotOrg.Common\UnderstoodDotOrg.Common.csproj">
