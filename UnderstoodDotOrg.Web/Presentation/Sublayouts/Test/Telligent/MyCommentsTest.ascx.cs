@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Collections.Specialized;
 using System.Xml;
+using Sitecore.Configuration;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 {
     public partial class MyCommentsTest : System.Web.UI.UserControl
@@ -23,27 +24,35 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
         protected override void OnInit(EventArgs e)
         {
             topComments.ItemDataBound += topComments_ItemDataBound;
+            
             base.OnInit(e);
         }
 
-        void topComments_ItemDataBound(object sender, RepeaterItemEventArgs e)
+    
+        void topComments_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-
-            if (e.Item.ItemType == ListItemType.Item)
-            {
-
-                HyperLink lnk = (HyperLink)e.Item.FindControl("cLink");
-                if (lnk != null)
+            
+            
+                if (e.Item.ItemType == ListViewItemType.DataItem)
                 {
-                    lnk.NavigateUrl = ((CommentSnippet)e.Item.DataItem).Url;
-                    lnk.Text = ((CommentSnippet)e.Item.DataItem).Title;
+                    if (e.Item.DataItem != null)
+                    {
+                        HyperLink lnk = (HyperLink)e.Item.FindControl("cLink");
+                        if (lnk != null)
+                        {
+                            lnk.NavigateUrl = ((CommentSnippet)e.Item.DataItem).Url;
+                            lnk.Text = ((CommentSnippet)e.Item.DataItem).Title;
+
+                        }
+
+                        Literal lit = (Literal)e.Item.FindControl("cDesc");
+                        if (lit != null)
+                            lit.Text = ((CommentSnippet)e.Item.DataItem).Desc;
+                    }
 
                 }
-
-                Literal lit = (Literal)e.Item.FindControl("cDesc");
-                if (lit != null)
-                    lit.Text = ((CommentSnippet)e.Item.DataItem).Desc;
-            }
+         
+           
 
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -61,14 +70,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
             var id = "2100";
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
             webClient.Headers.Add("Rest-Impersonate-User", userId);
-            var requestUrl = "http://telligentevolution/api.ashx/v2/comments.xml?UserId="+id;
+            var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig")+"api.ashx/v2/comments.xml?UserId="+id;
               
             
            
             var xml = webClient.DownloadString(requestUrl);
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xml);
-            var nodes = xmlDoc.SelectNodes("Response/Comments[position()<=3] ");
+            var nodes = xmlDoc.SelectNodes("Response/Comments[position()<=2] ");
          // PagedList<Comment> commentList = PublicApi.Comments.Get(new CommentGetOptions() { UserId = 2100 });
             lblCount.Text = nodes.Count.ToString();
             List<CommentSnippet> commentSource = new List<CommentSnippet>();

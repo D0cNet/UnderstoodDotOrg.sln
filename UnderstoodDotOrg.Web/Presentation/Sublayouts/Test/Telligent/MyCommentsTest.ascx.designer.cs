@@ -28,6 +28,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater topComments;
+        protected global::System.Web.UI.WebControls.ListView topComments;
     }
 }
