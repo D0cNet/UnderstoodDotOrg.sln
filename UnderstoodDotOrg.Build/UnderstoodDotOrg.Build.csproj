@@ -58,7 +58,9 @@
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.MediaFramework.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.MediaFramework.Services.Brightcove.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.RestSharp.Brightcove.config" />
-    <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\TelligentEvolution.config" />
+    <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\TelligentEvolution.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="EnvironmentSpecifics\DEV01\Web.config" />
   </ItemGroup>
   <ItemGroup>

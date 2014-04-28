@@ -110,6 +110,9 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
-
+        public static class Settings
+        {
+            public static string TelligentConfig = "TelligentConfig";
+        }
     }
 }
