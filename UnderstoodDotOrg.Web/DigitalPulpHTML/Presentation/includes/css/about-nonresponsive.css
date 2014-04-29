@@ -66,9 +66,9 @@
   font-size: 0.9375rem;
   line-height: 26px;
   line-height: 1.625rem;
-  padding: 0px 14px 20px;
+  padding: 0px 14px 20px 14px;
   margin-bottom: 20px;
-  padding-top: 60px;
+  padding: 60px 14px 20px 0px;
   padding-top: 44px;
 }
 /* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-introduction.scss */
@@ -542,12 +542,12 @@
   width: 100%;
   max-width: 271px;
 }
-/* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
+/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-head {
   margin-top: 9px;
   padding-left: 10px;
 }
-/* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
+/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-head h3 {
   margin-bottom: 15px;
   display: block;
@@ -558,83 +558,93 @@
   font-weight: normal;
   margin-bottom: 30px;
 }
-/* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
+/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-head h3 a {
   color: #7a4183;
   text-decoration: none;
 }
-/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
+/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-head h3 a:hover {
   text-decoration: underline;
 }
-/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
+/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-text p {
   margin-bottom: 15px;
 }
-/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
+/* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-text .partner-block-read-more {
   display: block;
   vertical-align: bottom;
   padding-bottom: 40px;
 }
-/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
+/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-text .partner-block-read-more a {
   text-decoration: underline;
 }
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
+/* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-text .partner-block-read-more a:hover {
   text-decoration: none;
 }
 
-/* line 2, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
-.about-search-results-container .top {
-  border-top: solid 1px #e2e2e2;
-}
-
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results {
-  border-bottom: solid 1px #e2e2e2;
   margin-bottom: 47px;
+  border-bottom: solid 1px #e2e2e2;
   padding: 50px 0 0 0;
   /* .row */
 }
-/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results .search-result-container {
   position: relative;
   display: block;
-  border-bottom: solid 1px #e2e2e2;
+  margin-bottom: 30px;
   margin-bottom: 50px;
   border: none;
 }
-/* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results .search-result-container:last-child {
   border: none;
 }
-/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results .search-result-container .search-image {
   margin-bottom: 20px;
+  float: left;
   margin-bottom: 0;
 }
-/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results .search-result-container .search-image img {
   width: 100%;
+  max-width: 130px;
+  max-width: 100%;
 }
-/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+.about-search-results .search-result-container .search-content {
+  margin-left: 150px;
+  margin-left: 4.16666666667%;
+}
+/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results .search-result-container .search-content h4 {
   margin-bottom: 11px;
 }
-/* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results .search-result-container .search-content h4 a {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: normal;
   font-size: 24px;
   font-size: 1.5rem;
-  font-weight: normal;
+  line-height: 26px;
+  line-height: 1.625rem;
 }
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results .search-result-container .search-content h4 a span {
   font-weight: bold;
 }
-/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results .search-result-container .search-content p {
+  display: none;
   color: #696969;
   font-family: Arial, sans-serif;
   font-size: 15px;
@@ -642,35 +652,44 @@
   font-weight: normal;
   margin-bottom: 20px;
   margin-bottom: 0;
+  display: block;
 }
-/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results .search-result-container .search-category {
+  margin-left: 150px;
   border-left: solid 1px #e2e2e2;
   text-align: center;
   float: right;
+  margin-left: 4.16666666667%;
   margin-right: -10px;
 }
-/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results .search-result-container .search-category span {
-  padding: 15px 0;
-  padding: 50px 0;
+  padding: 0;
   color: #7a4183;
+  display: block;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  padding: 50px 0;
   font-size: 20px;
   font-size: 1.25rem;
-  display: block;
+  line-height: 25px;
+  line-height: 1.5625rem;
 }
 
 /* .about-search-results */
-/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results-more {
   margin: 0 0 54px 0;
   /* .show-more */
 }
-/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results-more .show-more {
   text-align: center;
 }
-/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results-more .show-more a {
   text-decoration: none;
   color: #426da9;
@@ -678,11 +697,11 @@
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 100, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results-more .show-more a span {
   display: inline-block;
 }
-/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
+/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results-more .show-more a i.icon-show-more {
   background-image: url("/img/sprite.icon.arrows.png");
   background-position: top left;
@@ -810,6 +829,10 @@
   margin: 0 auto -100px;
 }
 /* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
+.signup-newsletter-container .form .safe-information {
+  display: none;
+}
+/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
 .signup-newsletter-container .form .safe-information-wrapper a.safe-information-link {
   color: #fff;
   font-size: 15px;
@@ -817,8 +840,13 @@
   line-height: 21px;
   line-height: 1.3125rem;
   padding: 5px 0px;
+  text-decoration: underline;
 }
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
+/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
+.signup-newsletter-container .form .safe-information-wrapper a.safe-information-link:hover {
+  text-decoration: none;
+}
+/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
 .signup-newsletter-container .form .safe-information-wrapper .popover {
   font-size: 16px;
   font-size: 1rem;
@@ -826,54 +854,31 @@
   line-height: 1.375rem;
   max-width: 450px;
 }
-/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
+/* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
 .signup-newsletter-container .form .safe-information-wrapper .popover a {
   text-decoration: underline;
 }
-/* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
+/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
+.signup-newsletter-container .form .safe-information-wrapper .popover a:hover {
+  text-decoration: none;
+}
+/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
 .signup-newsletter-container .form fieldset {
   margin-bottom: 16px;
 }
-/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
+/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
 .signup-newsletter-container .form fieldset .newsletter-input-wrap {
   margin-bottom: 10px;
   float: left;
   margin-bottom: 0px;
   width: 70.5%;
 }
-/* line 149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
-.signup-newsletter-container .form fieldset .newsletter-input-wrap input {
-  font-size: 16px;
-  font-size: 1rem;
-  color: #777;
-  width: 100%;
-}
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.signup-newsletter-container .form fieldset .newsletter-input-wrap input.placeholder {
-  color: #777;
-}
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.signup-newsletter-container .form fieldset .newsletter-input-wrap input:-moz-placeholder {
-  color: #777;
-}
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.signup-newsletter-container .form fieldset .newsletter-input-wrap input::-moz-placeholder {
-  color: #777;
-}
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.signup-newsletter-container .form fieldset .newsletter-input-wrap input:-ms-input-placeholder {
-  color: #777;
-}
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.signup-newsletter-container .form fieldset .newsletter-input-wrap input::-webkit-input-placeholder {
-  color: #777;
-}
-/* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
+/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
 .signup-newsletter-container .form fieldset .newsletter-button-wrap {
   float: right;
   width: 27.5%;
 }
-/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
+/* line 165, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
 .signup-newsletter-container .form fieldset .newsletter-button-wrap input {
   font-size: 16px;
   font-size: 1rem;
@@ -1576,32 +1581,46 @@
   padding-right: 10px;
   text-align: right;
 }
-/* line 328, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .other-amount-form input[type=text] {
-  display: block;
-  width: 100%;
+/* line 327, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+.donate-create-wrap .choose-gift-section .other-amount-form .form-group .dollar-prefix {
+  display: inline-block;
+  height: 50px;
+  float: left;
+  width: 8%;
+  color: #696969;
+  text-align: center;
+  border: solid 2px #e9e9e9;
+  background-color: #eeeeee;
+  position: relative;
+  right: -2px;
+  padding: 12px 0;
 }
-/* line 331, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 341, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+.donate-create-wrap .choose-gift-section .other-amount-form input[type=text] {
+  display: inline-block;
+  width: 92%;
+}
+/* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .choose-gift-section .other-amount-form input[type=text]::-ms-clear {
   width: 0;
   height: 0;
 }
-/* line 342, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 355, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section {
   margin-bottom: 25px;
   margin-bottom: 38px;
 }
-/* line 347, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section h2 {
   margin-bottom: 14px;
   margin-bottom: 34px;
 }
-/* line 353, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 366, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper {
   overflow: hidden;
   position: relative;
 }
-/* line 357, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 370, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper label {
   display: block;
   margin-bottom: 18px;
@@ -1609,19 +1628,19 @@
   display: inline-block;
   margin-right: 5px;
 }
-/* line 362, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 375, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper label span {
   height: 50px;
 }
-/* line 370, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 383, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper label.no-card span {
   width: 153px;
 }
-/* line 373, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 386, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper label.yes-send-card span {
   width: 243px;
 }
-/* line 379, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 392, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper label > span {
   background-color: #fff;
   -webkit-border-radius: 3px;
@@ -1638,12 +1657,12 @@
   line-height: 39px;
   line-height: 2.4375rem;
 }
-/* line 388, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 401, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper label > span:hover {
   background-color: #bcbdc0;
   color: #000;
 }
-/* line 393, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper label > span button {
   padding: 8px 0px;
   width: 100%;
@@ -1652,16 +1671,16 @@
   color: inherit;
   border: none;
 }
-/* line 401, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 414, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper label > span button:focus {
   background-color: #bcbdc0;
   color: #000;
 }
-/* line 408, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 421, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper label input {
   display: none;
 }
-/* line 412, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 425, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper input:checked + span {
   background-color: #794382;
   -webkit-border-radius: 3px;
@@ -1672,26 +1691,26 @@
   color: #fff;
   display: block;
 }
-/* line 418, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 431, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-for-section .gift-for-wrapper input:checked + span button {
   background: transparent;
   color: inherit;
 }
-/* line 428, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 441, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-occurance-section {
   margin-bottom: 25px;
   margin-bottom: 46px;
 }
-/* line 433, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 446, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-occurance-section h2 {
   margin-bottom: 25px;
   margin-bottom: 29px;
 }
-/* line 440, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 453, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-occurance-section div.radio, .donate-create-wrap .gift-occurance-section div.radio span, .donate-create-wrap .gift-occurance-section div.radio input {
   height: 22px;
 }
-/* line 444, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 457, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-occurance-section .radio-wrapper label, .donate-create-wrap .gift-occurance-section .radio-wrapper .label {
   display: inline-block;
   margin-bottom: 28px;
@@ -1701,7 +1720,7 @@
   margin-bottom: 15px;
   width: 29.5%;
 }
-/* line 457, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 470, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .gift-occurance-section .radio-wrapper span {
   color: dimgrey;
   font-size: 16px;
@@ -1710,24 +1729,24 @@
   line-height: 1rem;
   font-weight: bold;
 }
-/* line 468, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section {
   color: dimgrey;
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 471, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 484, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section h2 {
   margin-bottom: 18px;
   width: 190px;
   width: 100%;
   margin-bottom: 27px;
 }
-/* line 483, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 496, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section div.radio, .donate-create-wrap .how-pay-section div.radio span, .donate-create-wrap .how-pay-section div.radio input {
   height: 22px;
 }
-/* line 487, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 500, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-option-wrapper .pay-by {
   display: block;
   line-height: 30px;
@@ -1739,7 +1758,7 @@
   text-align: right;
   width: 200px;
 }
-/* line 500, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-option-wrapper .radio-wrapper {
   margin-bottom: 32px;
   position: relative;
@@ -1747,13 +1766,13 @@
   margin-bottom: 19px;
   width: 470px;
 }
-/* line 508, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 521, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-option-wrapper .radio-wrapper label {
   display: inline-block;
   width: 49%;
   width: 30%;
 }
-/* line 515, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 528, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-option-wrapper .radio-wrapper span {
   color: dimgrey;
   font-size: 16px;
@@ -1762,29 +1781,29 @@
   line-height: 1rem;
   font-weight: bold;
 }
-/* line 523, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 536, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper {
   margin-bottom: 29px;
   margin-bottom: 25px;
 }
-/* line 530, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 543, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group {
   line-height: 40px;
   line-height: 2.5rem;
   margin-bottom: 23px;
   margin-bottom: 20px;
 }
-/* line 536, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 549, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group.expiration-date-wrap {
   margin-bottom: 26px;
   margin-bottom: 25px;
 }
-/* line 542, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 555, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper {
   display: inline-block;
   margin-left: 5px;
 }
-/* line 545, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 558, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .popover-link {
   position: relative;
   top: 3px;
@@ -1792,7 +1811,7 @@
   padding: 0px;
   border: 0;
 }
-/* line 552, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 565, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .popover {
   font-size: 14px;
   font-size: 0.875rem;
@@ -1800,8 +1819,10 @@
   line-height: 1.25rem;
   min-width: 320px;
   min-width: 400px;
+  /* CSS hack to fix bad calculation by popover JS */
+  left: 164px !important;
 }
-/* line 560, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 578, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .icon-tooltip-dark {
   background-image: url("../images/sprite.tooltip.info-dark.png");
   background-size: 44px 22px;
@@ -1812,11 +1833,11 @@
   width: 22px;
   vertical-align: text-bottom;
 }
-/* line 570, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 588, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .icon-tooltip-dark:hover {
   background-position: -22px 0px;
 }
-/* line 574, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 592, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group label, .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .label {
   display: block;
   line-height: 27px;
@@ -1826,32 +1847,31 @@
   text-align: right;
   width: 203px;
 }
-/* line 584, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 602, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text] {
   display: block;
-  width: 100%;
   display: inline-block;
   width: 470px;
 }
-/* line 591, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 609, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text].cvv-input {
   display: inline-block;
   width: 89%;
   width: 230px;
 }
-/* line 598, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text].phone-input {
   margin-bottom: 17px;
   display: inline-block;
   width: 310px;
   margin-bottom: 0px;
 }
-/* line 606, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 624, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text].zip-input {
   display: inline-block;
   width: 150px;
 }
-/* line 613, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 631, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container {
   display: block;
   width: auto;
@@ -1859,29 +1879,29 @@
   display: inline-block;
   margin-bottom: 0px;
 }
-/* line 617, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 635, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.month-dropdown {
   margin-bottom: 15px;
 }
-/* line 624, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 642, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.month-dropdown {
   width: 230px;
 }
-/* line 627, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 645, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.year-dropdown {
   margin-left: 4px;
   width: 230px;
 }
-/* line 631, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 649, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.cell-dropdown {
   margin-left: 7px;
   width: 150px;
 }
-/* line 635, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 653, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.state-dropdown {
   width: 470px;
 }
-/* line 646, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 664, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .form-center {
   width: 620px;
   margin-right: auto;
@@ -1953,25 +1973,13 @@
 .gift-for-section .ecard-form-wrapper .form-group textarea,
 .gift-for-section .ecard-form-wrapper .form-group input[type=text] {
   display: block;
-  width: 100%;
   display: inline-block;
   width: 470px;
 }
 /* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-ecard.scss */
 .gift-for-section .ecard-form-wrapper .form-group textarea {
-  border: 2px solid #e1e1e1;
-  color: #696969;
-  font-family: Circular, Arial, sans-serif;
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 18px;
-  line-height: 1.125rem;
   height: 130px;
-  outline: none;
   padding: 10px 14px;
-  resize: none;
-  -webkit-font-smoothing: antialiased;
-  -webkit-appearance: none;
 }
 
 /**
@@ -2314,39 +2322,12 @@
   margin-bottom: 0px;
   width: 70.5%;
 }
-/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-search.scss */
-.page-not-found-search fieldset .search-input-wrap input {
-  font-size: 16px;
-  font-size: 1rem;
-  color: #777;
-  width: 100%;
-}
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.page-not-found-search fieldset .search-input-wrap input.placeholder {
-  color: #777;
-}
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.page-not-found-search fieldset .search-input-wrap input:-moz-placeholder {
-  color: #777;
-}
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.page-not-found-search fieldset .search-input-wrap input::-moz-placeholder {
-  color: #777;
-}
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.page-not-found-search fieldset .search-input-wrap input:-ms-input-placeholder {
-  color: #777;
-}
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.page-not-found-search fieldset .search-input-wrap input::-webkit-input-placeholder {
-  color: #777;
-}
-/* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-search.scss */
+/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-search.scss */
 .page-not-found-search fieldset .search-button-wrap {
   float: right;
   width: 27.5%;
 }
-/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-search.scss */
+/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-search.scss */
 .page-not-found-search fieldset .search-button-wrap input.search-button {
   font-size: 16px;
   font-size: 1rem;
@@ -2866,15 +2847,18 @@
 /* line 2, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
 .l-results-and-filter .row {
   padding: 30px 5px 30px 5px;
+  margin-bottom: 30px;
+  border-bottom: solid 1px #e2e2e2;
   padding: 50px 5px 40px 5px;
+  margin-bottom: 0;
   /* .results */
 }
-/* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
+/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
 .l-results-and-filter .row .results {
   float: left;
   /* h1 */
 }
-/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
+/* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
 .l-results-and-filter .row .results h1 {
   color: #696969;
   font-size: 36px;
@@ -2884,12 +2868,12 @@
   font-weight: normal;
   margin-bottom: 0;
 }
-/* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
+/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
 .l-results-and-filter .row .results h1 span {
   color: #7a4183;
   font-weight: bold;
 }
-/* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
+/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
 .l-results-and-filter .row label {
   width: 190px;
   float: right;
@@ -2978,7 +2962,7 @@
   background: #fff;
   border: solid 2px #e1e1e1;
   padding: 0 8px;
-  height: 46px;
+  height: 50px;
 }
 /* line 16, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_search-box-module.scss */
 .l-search-box-container .search-box-module legend {
@@ -2998,41 +2982,17 @@
 /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_search-box-module.scss */
 .l-search-box-container .search-box-module .field {
   display: block;
-  height: 46px;
+  height: 50px;
   padding: 0 10px 0 6px;
 }
 /* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_search-box-module.scss */
 .l-search-box-container .search-box-module input[type="text"] {
-  font-size: 16px;
-  font-size: 1rem;
-  height: 42px;
-  border: 0;
-  color: #696969;
-  background: none;
+  height: 46px;
+  border: 0 !important;
   width: 90%;
   padding: 0;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.l-search-box-container .search-box-module input[type="text"].placeholder {
-  color: #696969;
-}
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.l-search-box-container .search-box-module input[type="text"]:-moz-placeholder {
-  color: #696969;
-}
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.l-search-box-container .search-box-module input[type="text"]::-moz-placeholder {
-  color: #696969;
-}
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.l-search-box-container .search-box-module input[type="text"]:-ms-input-placeholder {
-  color: #696969;
-}
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.l-search-box-container .search-box-module input[type="text"]::-webkit-input-placeholder {
-  color: #696969;
-}
-/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_search-box-module.scss */
+/* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_search-box-module.scss */
 .l-search-box-container .search-box-module input[type="submit"] {
   float: right;
   padding: 0;
@@ -3040,7 +3000,7 @@
   border: 0;
   width: 20px;
   height: 20px;
-  margin-top: 10px;
+  margin-top: 12px;
   background-color: transparent;
   background-image: url("../images/sprite.icon.search.32.png");
   background-repeat: no-repeat;
@@ -3048,11 +3008,11 @@
   background-size: 16px 41px;
   text-indent: -999em;
 }
-/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_search-box-module.scss */
+/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_search-box-module.scss */
 .no-backgroundsize .l-search-box-container .search-box-module input[type="submit"] {
   background-image: url("../images/sprite.icon.search.lo-res.png");
 }
-/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_search-box-module.scss */
+/* line 58, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_search-box-module.scss */
 .l-search-box-container .search-box-module input[type="submit"]:focus, .l-search-box-container .search-box-module input[type="submit"]:active {
   border: solid 2px #99c2e7;
   width: 24px;
@@ -3373,14 +3333,15 @@
 }
 /* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-events-title .see-more:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  background: #bcbdc0;
 }
-/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event:first-child {
   margin-bottom: 40px;
   margin-bottom: 47px;
 }
-/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event:last-child {
   padding-bottom: 30px;
   margin-bottom: 40px;
@@ -3388,43 +3349,43 @@
   padding-bottom: 49px;
   margin-bottom: 46px;
 }
-/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 107, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .border-col {
   display: none;
   display: block;
 }
-/* line 111, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .border-col div {
   height: 128px;
   border-right: 1px solid #c6c5c5;
 }
-/* line 117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .col:nth-child(2) {
   clear: both;
   float: left;
   clear: none;
 }
-/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .col:last-child {
   margin-left: 4.16666666667%;
 }
-/* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 131, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .expert-event-image {
   margin-bottom: 12px;
   width: auto;
   margin-bottom: 0px;
 }
-/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .expert-event-image a {
   display: block;
 }
-/* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .expert-event-image a img {
   height: auto;
   width: 100%;
   display: block;
 }
-/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .expert-event-type h4 {
   color: #7a4183;
   font-size: 16px;
@@ -3432,13 +3393,15 @@
   line-height: 30px;
   line-height: 1.875rem;
   font-weight: normal;
+  margin-bottom: 4px;
   line-height: 16px;
   line-height: 1rem;
   text-align: center;
   width: auto;
   position: relative;
+  margin-bottom: 0px;
 }
-/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .expert-event-type .time-past {
   color: #696969;
   font-size: 16px;
@@ -3446,21 +3409,13 @@
   line-height: 16px;
   line-height: 1rem;
   font-weight: normal;
+  text-align: left;
+  margin: 0 0 18px 0;
   text-align: center;
-  margin: 0px;
   position: relative;
   top: 56px;
 }
-/* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
-.expert-events .expert-event-container .expert-event .expert-event-type .time-past span {
-  font-size: 26px;
-  font-size: 1.625rem;
-  line-height: 28px;
-  line-height: 1.75rem;
-  display: block;
-  margin: 6px 0;
-}
-/* line 178, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .expert-event-type .time-past span {
   font-size: 16px;
   font-size: 1rem;
@@ -3469,7 +3424,7 @@
   display: inline;
   margin: 0px;
 }
-/* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .expert-event-details .date-future {
   color: #7a4183;
   font-size: 16px;
@@ -3483,7 +3438,7 @@
   line-height: 18px;
   line-height: 1.125rem;
 }
-/* line 205, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+/* line 203, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
 .expert-events .expert-event-container .expert-event .expert-event-details .date-past {
   color: #696969;
   font-size: 16px;
@@ -3492,6 +3447,8 @@
   line-height: 1rem;
   font-weight: bold;
   margin-bottom: 12px;
+  display: none;
+  display: block;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 18px;
@@ -3557,6 +3514,33 @@
   border: none;
   padding-right: 0px;
   margin-right: 0px;
+}
+/* line 281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+.expert-events .expert-event-container .see-more {
+  display: block;
+  text-decoration: none;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1rem;
+  font-weight: normal;
+  background-color: #f4f2f1;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  max-width: 110px;
+  height: 40px;
+  text-align: center;
+  padding-top: 11px;
+  margin: 40px auto;
+  margin: 0px;
+}
+/* line 295, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
+.expert-events .expert-event-container .see-more:hover {
+  text-decoration: none;
+  background: #bcbdc0;
 }
 
 /**
@@ -3679,53 +3663,54 @@
 }
 /* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-posts-title .see-more:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  background: #bcbdc0;
 }
-/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post:first-child {
   margin-bottom: 40px;
   margin-bottom: 40px;
 }
-/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post:last-child {
   margin-bottom: 50px;
   margin-bottom: 58px;
 }
-/* line 69, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .border-col {
   display: none;
   display: block;
 }
-/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .border-col div {
   height: 140px;
   border-right: 1px solid #c6c5c5;
 }
-/* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .col:nth-child(2) {
   float: left;
   clear: none;
 }
-/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .col:last-child {
   margin-left: 4.16666666667%;
 }
-/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-image {
   margin-bottom: 12px;
   width: auto;
 }
-/* line 100, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-image a {
   display: block;
 }
-/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-image a img {
   height: auto;
   width: 100%;
   display: block;
 }
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-type h4 {
   color: #696969;
   display: inline-block;
@@ -3744,7 +3729,7 @@
   position: relative;
   top: 42px;
 }
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-type .comments {
   color: #696969;
   display: inline-block;
@@ -3761,12 +3746,12 @@
   text-align: center;
   top: 44px;
 }
-/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-details {
   position: relative;
   top: -5px;
 }
-/* line 157, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-details a.event-title {
   color: #426da9;
   font-size: 18px;
@@ -3781,7 +3766,7 @@
   line-height: 30px;
   line-height: 1.875rem;
 }
-/* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-details .post-meta {
   color: #696969;
   font-size: 15px;
@@ -3791,11 +3776,11 @@
   font-weight: normal;
   margin-bottom: 14px;
 }
-/* line 177, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 178, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-details .post-meta .author {
   color: #696969;
 }
-/* line 181, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-details .excerpt {
   color: #696969;
   font-size: 16px;
@@ -3805,28 +3790,55 @@
   font-weight: normal;
   margin-bottom: 12px;
 }
-/* line 187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-details .excerpt a {
   text-decoration: underline;
 }
-/* line 190, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-details .excerpt a:hover {
   text-decoration: none;
 }
-/* line 195, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 196, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-details .blog-shapes {
   margin-bottom: 0px;
   text-align: left;
 }
-/* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 199, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-details .blog-shapes .shape {
   margin-right: 2px;
 }
 /* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+.expert-blog-posts .see-more {
+  display: block;
+  text-decoration: none;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1rem;
+  font-weight: normal;
+  background-color: #f4f2f1;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  max-width: 110px;
+  height: 40px;
+  text-align: center;
+  padding-top: 11px;
+  margin: 40px auto;
+  margin: 0px;
+}
+/* line 224, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+.expert-blog-posts .see-more:hover {
+  text-decoration: none;
+  background: #bcbdc0;
+}
+/* line 235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .blog-shapes .child-content-indicator {
   margin: 0;
 }
-/* line 214, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
+/* line 239, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
 .expert-blog-posts .blog-shapes .children-key ul li {
   margin-right: 35px;
 }
@@ -3986,30 +3998,24 @@
   margin-left: 5px;
   padding: 37px 38px 38px 38px;
 }
-/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
-.l-itemize-your-child .email-itemize-content .child-nickname .form-action-text input[type=text] {
-  width: 100%;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
+/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .email-itemize-next {
   text-align: left;
   margin: 35px 0 30px 15px;
   margin: 39px 0 40px 0;
   text-align: center;
 }
-/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
+/* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .email-itemize-next .checkbox-wrap {
   margin-bottom: 30px;
   margin-bottom: 25px;
 }
-/* line 147, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
+/* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .email-itemize-next .checkbox-wrap label {
   display: table;
   margin: 0 auto;
 }
-/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
+/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .email-itemize-next .checkbox-wrap label span {
   display: table-cell;
   font-size: 18px;
@@ -4020,18 +4026,18 @@
   font-weight: normal;
   margin: 38px 0 27px 0;
 }
-/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
+/* line 154, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .email-itemize-next .checkbox-wrap label input[type=checkbox] {
   display: table-cell;
   margin-right: 10px;
   position: relative;
   bottom: 2px;
 }
-/* line 169, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
+/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .email-itemize-next .form-action-next {
   text-align: center;
 }
-/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
+/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .email-itemize-next .form-action-next input[type=submit] {
   max-width: 150px;
 }

@@ -681,6 +681,55 @@ if( Modernizr.mq('(min-width: 320px)') || !Modernizr.mq('only all')){
   $(window).resize(adjustModalMaxHeightAndPosition).trigger('resize');
 }
 
+/**
+ * ReadSpeaker functions
+ */
+U.readSpeaker = function () {
+
+  var self = {};
+
+  self.carousels = new Array();
+
+  self.queueCarousel = function(c) {
+    self.carousels.push(c);
+  }
+
+  self.renderCarouselFocusables = function() {
+    ReadSpeaker.q(function() {
+      $.each(self.carousels, function(i,e) {
+        U.carousels.accessibleSlide(e);
+      });
+    });
+  }
+
+  //Runs when the dom is ready
+  self.init = function() {
+    ReadSpeaker.q(function () {
+      //Method adds a random guid to every element that has a class of rs_read_this (to comply with the documentation)
+      $('.rs_read_this').each(function (index, value) {
+        var $value = $(value);
+        if (!$value.attr('id')) {
+          $value.attr('id', guid());
+        }
+      });
+
+      /**
+       * Guid generator function found here: http://stackoverflow.com/a/16693578/524874
+       * @returns {*}
+       */
+      function guid() {
+        function _p8(s) {
+          var p = (Math.random().toString(16) + "000000000").substr(2, 8);
+          return s ? "-" + p.substr(0, 4) + "-" + p.substr(4, 4) : p;
+        }
+        return '_' + _p8() + _p8(true) + _p8(true) + _p8();
+      }
+
+    });
+  }
+
+  return self;
+};
 
 $(document).ready(function() {
 
@@ -699,6 +748,8 @@ $(document).ready(function() {
   var languageSelector = new U.languageSelector();
 
   new U.uniformStyling();
+
+  new U.readSpeaker().init();
 
   // input placeholder fix for IE
   $('input:text').placeholder();

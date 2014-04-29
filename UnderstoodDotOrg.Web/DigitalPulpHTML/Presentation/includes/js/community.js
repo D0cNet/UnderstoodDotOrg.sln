@@ -434,12 +434,13 @@
     self.init = function(){
 
       self.dom.container = $('.whats-happening-page');
+      self.dom.html = $('html');
 
       if (self.dom.container.length === 0) {
         return;
       }
 
-      self.equalizeHeights();
+      self.dom.html.on('equalHeights', self.equalizeHeights);
       self.initializeEventsSlider();
       self.initializeQuestionsSlider();
       self.initializeMembersSlider();
@@ -450,7 +451,6 @@
     };
 
     self.equalizeHeights = function() {
-
       // only above 320 viewport or nonresponsive
       if(Modernizr.mq('(min-width: 321px)') || !Modernizr.mq('only all')){
         self.dom.container.find('.event-card-title').equalHeights();
@@ -702,6 +702,7 @@
 
         self.cacheSelectors = function() {
             self.dom = {};
+            self.dom.html = $('html');
             self.dom.window = $(window);
             self.dom.container = $('#community-page');
             self.dom.chatCarousel = self.dom.container.find('.live-chat .event-cards');
@@ -719,8 +720,8 @@
 
             if (self.dom.container.hasClass('experts-page')) {
                 self.setModel();
-                self.equalizeHeights();
                 self.fireCarousel();
+                self.dom.html.on('equalHeights', self.equalizeHeights);
             }
         };
 
@@ -785,6 +786,7 @@
         self.cacheSelectors = function() {
             self.dom = {};
             self.dom.topLevel = $('body, html');
+            self.dom.html = $('html');
             self.dom.window = $(window);
             self.dom.calendarContainer = $('.container.calendar');
             self.dom.gridRows = self.dom.calendarContainer.find('.grid-row');
@@ -806,6 +808,8 @@
                 self.dom.moreInfoToggles.on('click', self.toggleDetailView);
                 self.dom.eventHeaderLinks.on('click', self.showEvent);
             }
+
+            self.dom.html.on('equalHeights', self.equalizeHeights);
             self.setKeyboardAccess();
         };
 
@@ -844,8 +848,8 @@
         self.resize = function() {
             self.updateModel();
             self.closeOpenDetailViews();
-            self.closeEventPopovers();
             self.equalizeHeights();
+            self.closeEventPopovers();
         };
 
         self.equalizeHeights = function() {
@@ -1181,6 +1185,7 @@
 
       self.init = function(){
 
+        self.dom.html = $('html');
         self.dom.container = $('.community-blogs-main');
         self.dom.filter = $('.blog-filter');
 
@@ -1200,24 +1205,27 @@
       };
 
       self.equalizeHeights = function() {
-
         var moreBlogsContainer = $('.community-blogs-more');
 
         // only above 960 viewport or nonresponsive
         if(Modernizr.mq('(min-width: 960px)') || !Modernizr.mq('only all')){
-          moreBlogsContainer.find('.blog-card-title').equalHeights();
-          moreBlogsContainer.find('.blog-card-post-excerpt').equalHeights();
-          moreBlogsContainer.find('.blog-card-info').equalHeights();
-
-          moreBlogsContainer.find('.blogger-card-info').equalHeights();
+          self.dom.html.on('equalHeights', function() {
+            alert('foo');
+            self.triggerEqualHeights();
+          });
         }
+      };
+
+      self.triggerEqualHeights = function() {
+        moreBlogsContainer.find('.blog-card-title').equalHeights();
+        moreBlogsContainer.find('.blog-card-post-excerpt').equalHeights();
+        moreBlogsContainer.find('.blog-card-info').equalHeights();
+        moreBlogsContainer.find('.blogger-card-info').equalHeights();
       };
 
       self.resize = function() {
         self.dom.container.find('.blogger-card-info').height('auto');
         self.dom.container.find('.blogger-card-title').height('auto');
-
-        self.equalizeBloggerCardHeights();
       };
 
       self.initializeMoreBlogSlider = function() {
@@ -1424,20 +1432,15 @@
     };
 
     self.initAnswerSorting = function() {
-      $('.sort-options').on('click', '.filter', self.updateSort);
+      $('.sort-options').on('change', 'select', self.updateSort);
     };
 
     self.updateSort = function(event) {
       var $target = $(event.target);
-      var $options = $('.sort-options');
-      $options.find('.current-filter').text($target.text());
-      $options.find('.filter.selected').removeClass('selected');
-      var $closest = $target.closest('.filter');
-      $closest.addClass('selected');
-      self.sortBy($closest.data('sort-by'));
+      self.sortBy($target.val());
     };
 
-    self.sortBy = function(sortBy) {
+    self.sortBy = function(selectedValue) {
       var $answerList = $('.answer-list');
       $answerList.fadeOut(function() {
         // TODO - Sort the answers

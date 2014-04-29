@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>Behavior - Results (B2)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -268,13 +284,18 @@
 <!-- Page Title -->
 <div class="container page-topic no-bottom-margin behavior-page-topic">
   <div class="row" >
-    <div class="col col-14 offset-1 ">
+    <div class="col col-14 offset-1">
       
-      <h1>Lorem ipsum dolar</h1>
-      
-        <p class="page-subtitle behavior-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
-      
+      <div>
+        <h1 class="rs_read_this">Lorem ipsum dolar</h1>
+        
+          <p class="page-subtitle behavior-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
+        
+      </div>
     </div>
+
+    
+
     
     <div class="col col-9">
       <!-- BEGIN PARTIAL: share-save -->
@@ -297,7 +318,7 @@
 <!-- END PARTIAL: share-save -->
     </div>
     
-    
+
   </div>
 </div><!-- .container -->
 
@@ -307,7 +328,7 @@
     <!-- article -->
     <div class="col col-16 behavior-advice-container">
       <!-- BEGIN PARTIAL: behavior-advice -->
-<div class="behavior-advice-wrapper skiplink-toolbar">
+<div class="behavior-advice-wrapper skiplink-toolbar rs_read_this">
   <div class="behavior-advice">
     <h2 class="behavior-advice-title">Get Expert Advice</h2>
     <div class="advice-question-wrapper">
@@ -365,7 +386,7 @@
     <a href="REPLACE" class="advice-more-link">Don't see your child's challenge?</a>
     <!-- BEGIN PARTIAL: suggest-a-behavior -->
 <!-- Suggest a Behavior Modal -->
-<div class="modal fade" id="suggest-a-behavior" tabindex="-1" role="dialog" aria-labelledby="suggest-a-behavior-modal" aria-hidden="true">
+<div class="modal fade rs_skip" id="suggest-a-behavior" tabindex="-1" role="dialog" aria-labelledby="suggest-a-behavior-modal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <i class="close-overlay" data-dismiss="modal">Close</i>
@@ -409,7 +430,7 @@
   <div class="row">
     <div class="col col-24">
     <header>
-      <h3>Work on task-to-task transitions</h3>
+      <h3 class="rs_read_this">Work on task-to-task transitions</h3>
       <i class="icon-tooltip"></i>
       <a class="how-to-use" href="REPLACE">How to use these strategies</a>
     </header>
@@ -418,14 +439,14 @@
   <div class="results-outer-wrapper">
     <div class="results-wrapper">
 
-      <div class="search-result skiplink-content" aria-role="main">
+      <div class="search-result skiplink-content rs_read_this" aria-role="main">
         <button class="result-body">
           <div class="result-tip">Make a picture schedule</div>
           <div class="result-info">
             <span class="tip-comment">19<span class="visuallyhidden">comments</span></span>
             <span class="tip-like" href="REPLACE"><i class="icon-advice-like"></i>3<span class="visuallyhidden">likes</span></span>
           </div>
-          <div class="result-hover">
+          <div class="result-hover rs_skip">
             <div class="hover-link-wrapper">
               <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span>Save This</span></a>
             </div>
@@ -434,17 +455,17 @@
             </div>
           </div>
         </button>
-        <a class="tip-view" href="REPLACE">View Tip</a>
+        <a class="tip-view rs_skip" href="REPLACE">View Tip</a>
       </div>
 
-      <div class="search-result">
+      <div class="search-result rs_read_this">
         <button class="result-body">
           <div class="result-tip">Start by demonstrating</div>
           <div class="result-info">
             <span class="tip-comment">19<span class="visuallyhidden">comments</span></span>
             <span class="tip-like" href="REPLACE"><i class="icon-advice-like"></i>3<span class="visuallyhidden">likes</span></span>
           </div>
-          <div class="result-hover">
+          <div class="result-hover rs_skip">
             <div class="hover-link-wrapper">
               <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span>Save This</span></a>
             </div>
@@ -453,17 +474,17 @@
             </div>
           </div>
         </button>
-        <a class="tip-view" href="REPLACE">View Tip</a>
+        <a class="tip-view rs_skip" href="REPLACE">View Tip</a>
       </div>
 
-      <div class="search-result">
+      <div class="search-result rs_read_this">
         <button class="result-body">
           <div class="result-tip">Use color-coding</div>
           <div class="result-info">
             <span class="tip-comment">19<span class="visuallyhidden">comments</span></span>
             <span class="tip-like" href="REPLACE"><i class="icon-advice-like"></i>3<span class="visuallyhidden">likes</span></span>
           </div>
-          <div class="result-hover">
+          <div class="result-hover rs_skip">
             <div class="hover-link-wrapper">
               <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span>Save This</span></a>
             </div>
@@ -472,17 +493,17 @@
             </div>
           </div>
         </button>
-        <a class="tip-view" href="REPLACE">View Tip</a>
+        <a class="tip-view rs_skip" href="REPLACE">View Tip</a>
       </div>
 
-      <div class="search-result">
+      <div class="search-result rs_read_this">
         <button class="result-body">
           <div class="result-tip">Create incentives for your child</div>
           <div class="result-info">
             <span class="tip-comment">19<span class="visuallyhidden">comments</span></span>
             <span class="tip-like" href="REPLACE"><i class="icon-advice-like"></i>3<span class="visuallyhidden">likes</span></span>
           </div>
-          <div class="result-hover">
+          <div class="result-hover rs_skip">
             <div class="hover-link-wrapper">
               <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span>Save This</span></a>
             </div>
@@ -491,17 +512,17 @@
             </div>
           </div>
         </button>
-        <a class="tip-view" href="REPLACE">View Tip</a>
+        <a class="tip-view rs_skip" href="REPLACE">View Tip</a>
       </div>
 
-      <div class="search-result">
+      <div class="search-result rs_read_this">
         <button class="result-body">
           <div class="result-tip">Prepare your child for the day</div>
           <div class="result-info">
             <span class="tip-comment">19<span class="visuallyhidden">comments</span></span>
             <span class="tip-like" href="REPLACE"><i class="icon-advice-like"></i>3<span class="visuallyhidden">likes</span></span>
           </div>
-          <div class="result-hover">
+          <div class="result-hover rs_skip">
             <div class="hover-link-wrapper">
               <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span>Save This</span></a>
             </div>
@@ -510,17 +531,17 @@
             </div>
           </div>
         </button>
-        <a class="tip-view" href="REPLACE">View Tip</a>
+        <a class="tip-view rs_skip" href="REPLACE">View Tip</a>
       </div>
 
-      <div class="search-result">
+      <div class="search-result rs_read_this">
         <button class="result-body">
           <div class="result-tip">Give fair warning</div>
           <div class="result-info">
             <span class="tip-comment">19<span class="visuallyhidden">comments</span></span>
             <span class="tip-like" href="REPLACE"><i class="icon-advice-like"></i>3<span class="visuallyhidden">likes</span></span>
           </div>
-          <div class="result-hover">
+          <div class="result-hover rs_skip">
             <div class="hover-link-wrapper">
               <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span>Save This</span></a>
             </div>
@@ -529,17 +550,17 @@
             </div>
           </div>
         </button>
-        <a class="tip-view" href="REPLACE">View Tip</a>
+        <a class="tip-view rs_skip" href="REPLACE">View Tip</a>
       </div>
 
-      <div class="search-result">
+      <div class="search-result rs_read_this">
         <button class="result-body">
           <div class="result-tip">Give fair warning</div>
           <div class="result-info">
             <span class="tip-comment">19<span class="visuallyhidden">comments</span></span>
             <span class="tip-like" href="REPLACE"><i class="icon-advice-like"></i>3<span class="visuallyhidden">likes</span></span>
           </div>
-          <div class="result-hover">
+          <div class="result-hover rs_skip">
             <div class="hover-link-wrapper">
               <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span>Save This</span></a>
             </div>
@@ -548,17 +569,17 @@
             </div>
           </div>
         </button>
-        <a class="tip-view" href="REPLACE">View Tip</a>
+        <a class="tip-view rs_skip" href="REPLACE">View Tip</a>
       </div>
 
-      <div class="search-result">
+      <div class="search-result rs_read_this">
         <button class="result-body">
           <div class="result-tip">Give fair warning</div>
           <div class="result-info">
             <span class="tip-comment">19<span class="visuallyhidden">comments</span></span>
             <span class="tip-like" href="REPLACE"><i class="icon-advice-like"></i>3<span class="visuallyhidden">likes</span></span>
           </div>
-          <div class="result-hover">
+          <div class="result-hover rs_skip">
             <div class="hover-link-wrapper">
               <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span>Save This</span></a>
             </div>
@@ -567,17 +588,17 @@
             </div>
           </div>
         </button>
-        <a class="tip-view" href="REPLACE">View Tip</a>
+        <a class="tip-view rs_skip" href="REPLACE">View Tip</a>
       </div>
 
-      <div class="search-result">
+      <div class="search-result rs_read_this">
         <button class="result-body">
           <div class="result-tip">Give fair warning</div>
           <div class="result-info">
             <span class="tip-comment">19<span class="visuallyhidden">comments</span></span>
             <span class="tip-like" href="REPLACE"><i class="icon-advice-like"></i>3<span class="visuallyhidden">likes</span></span>
           </div>
-          <div class="result-hover">
+          <div class="result-hover rs_skip">
             <div class="hover-link-wrapper">
               <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span>Save This</span></a>
             </div>
@@ -586,7 +607,7 @@
             </div>
           </div>
         </button>
-        <a class="tip-view" href="REPLACE">View Tip</a>
+        <a class="tip-view rs_skip" href="REPLACE">View Tip</a>
       </div>
 
     </div><!-- .results-wrapper -->
@@ -595,7 +616,7 @@
   <!-- Show More -->
   <!-- BEGIN PARTIAL: community/show_more -->
 <!--Show More-->
-<div class="container show-more">
+<div class="container show-more rs_skip">
   <div class="row">
     <div class="col col-24">
       <a class="show-more-link " href="#" data-path="advice-results/behavior-results" data-container="results-wrapper" data-item="search-results" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
@@ -636,7 +657,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -793,7 +814,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -808,6 +829,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/behavior-tool.js"></script>

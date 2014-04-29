@@ -626,6 +626,8 @@
     // Original child question, before cloning.
     this.$childQuestion = null;
 
+    this.$html = $('html');
+
     /**
      * Initialize module on page load.
      * @return {object} this instance
@@ -637,6 +639,8 @@
         '.profile-questions input[type=radio]'
       ].join(',');
       $(uniform_elements).uniform();
+
+      this.$html.on('equalHeights', this.resizeQuestions);
 
       // Clone child question on button click.
       var $questionWrapper = $('.profile-questions-child-wrapper');
@@ -734,7 +738,7 @@
             }
           }
         });
-      }
+      };
 
     /**
      * Add equal heights to columns on resize event.

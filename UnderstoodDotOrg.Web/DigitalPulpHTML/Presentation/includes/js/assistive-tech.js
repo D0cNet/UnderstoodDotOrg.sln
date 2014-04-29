@@ -316,12 +316,13 @@
    */
   U.assistiveToolRelatedArticles = function() {
 
-    var $module = $('.assistive-tool-related-articles');
+    var $module = $('.assistive-tool-related-articles'),
+        $html = $('html');
     // if get-better-recommendations module exists on the page
     if(!$module.length) { return; }
 
     // Run once on window load
-    repositionElement();
+    $html.on('equalHeights', repositionElement);
     // Run on resize
     jQuery(window).resize(repositionElement);
 

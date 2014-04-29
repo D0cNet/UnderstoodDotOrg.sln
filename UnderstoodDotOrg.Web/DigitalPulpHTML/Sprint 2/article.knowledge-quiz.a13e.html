@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>Article - Knowledge Quiz - Results (A13e)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -268,15 +284,20 @@
 <!-- Page Title -->
 <div class="container page-topic with-share">
   <div class="row" >
-    <div class="col col-14 offset-1 ">
+    <div class="col col-14 offset-1">
       
         <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Game & Skill Builders</a>
       
-      <h1>What's Your Child's Learning Style</h1>
-      
-        <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
-      
+      <div>
+        <h1 class="rs_read_this">What's Your Child's Learning Style</h1>
+        
+          <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
+        
+      </div>
     </div>
+
+    
+
     
     <div class="col col-9">
       <!-- BEGIN PARTIAL: share-save -->
@@ -299,7 +320,7 @@
 <!-- END PARTIAL: share-save -->
     </div>
     
-    
+
   </div>
 </div><!-- .container -->
 
@@ -307,7 +328,7 @@
 <div class="container article knowledge-quiz-page">
   <div class="row row-equal-heights">
     <!-- article -->
-    <div class="col col-15 offset-1 skiplink-content" aria-role="main" aria-role="main">
+    <div class="col col-15 offset-1 skiplink-content rs_read_this article-knowledge-quiz-rs-wrapper" aria-role="main" aria-role="main">
       <!-- BEGIN PARTIAL: knowledge-quiz-a13e -->
 <div class="knowledge-quiz">
   <h4 class="question-counter-results">
@@ -326,12 +347,12 @@
     <span class="results-indicator correct"></span>
   </div>
   <p class="correctness-headline">6 out of 10 correct</p>
-  <p class="explanation">Sint necessitatibus quis numquam nihil laudantium aut sequi nobis voluptatem facilis accusantium id dolores oditDolor perspiciatis reiciendis aut cum et incidunt est non et voluptas iusto laudantium consequaturRepellendus quae ex molestiae fugiat ut aut explicabo aliquam eligendi praesentium reprehenderit dolores atqueQui dicta ipsam nulla aspernatur qui porro minus necessitatibus numquam officia <a href="REPLACE">Text link goes here</a> Atque vel et expedita consequatur eligendiReprehenderit officiis quaerat possimus et magni voluptas illo facilis nam aspernaturOmnis est explicabo adEius iure quas autem sunt iusto et pariatur mollitia at</p>
+  <p class="explanation">Et sunt repudiandae iste at error praesentium non eveniet quasi tempore occaecatiDebitis est sint praesentium sequi consectetur autem nonFacere illo dolores expedita minimaMagnam et voluptas quia aut quis consequuntur illum eum ut accusantium <a href="REPLACE">Text link goes here</a> Eum vel aut et temporibus deseruntAt illo enim fugiat dignissimos ut velit consequatur perspiciatis laboriosam eveniet cupiditate est temporibusMagni asperiores autem fuga iste fugit vel sed molestias minus nemo maxime iure illoPerspiciatis laboriosam repellat beatae atque laudantium veniam asperiores non quas dignissimos odit distinctio quis mollitia</p>
   <!-- BEGIN PARTIAL: reviewed-by -->
 <p class="reviewed-by"><span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author"><a href="REPLACE">Dr. Samantha Frank</a></span><span class="dot"></span> <span class="reviewed-by-date">12&nbsp;Dec&nbsp;&apos;13</span></p>
 <!-- END PARTIAL: reviewed-by -->
   <div class="next-question">
-    <button type="button" class="button">Take the Quiz Again</button>
+    <button type="button" class="button rs_skip">Take the Quiz Again</button>
   </div>
 </div>
 
@@ -341,7 +362,7 @@
     <div class="col col-1 sidebar-spacer"></div>
 
     <!-- right bar -->
-    <div class="col col-5 offset-1 skiplink-sidebar">
+    <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
       <!-- BEGIN PARTIAL: helpful-count -->
 
 <div class="count-helpful">
@@ -349,7 +370,7 @@
 </div>
 <!-- END PARTIAL: helpful-count -->
       <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful sidebar" id="count-helpful-sidebar">
+<div class="find-this-helpful sidebar" id="count-helpful-sidebar rs_read_this">
   
 
   
@@ -357,10 +378,10 @@
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="button yes">Yes</button>
+      <button class="button yes rs_skip">Yes</button>
     </li>
     <li>
-      <button class="button no gray">No</button>
+      <button class="button no gray rs_skip">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
@@ -383,7 +404,7 @@
 </div><!-- .container -->
 
 <div class="container try-another-quiz">
-  <div class="row">
+  <div class="row rs_read_this try-another-quiz-rs-wrapper">
     <!-- BEGIN PARTIAL: try-another-quiz -->
 <h2>Try Another Quiz</h2>
 <div class="col col-11 offset-1">
@@ -392,7 +413,7 @@
       <img src="http://placehold.it/150x84" alt="REPLACE">
     </div>
     <div class="quiz-text">
-      <h4>quis et itaque beatae earum non</h4>
+      <h4>velit sed laborum quia dolore consectetur</h4>
       <span><a class="more-link" href="REPLACE">Take the Quiz</a></span>
     </div>
   </div>
@@ -403,7 +424,7 @@
       <img src="http://placehold.it/150x84" alt="REPLACE">
     </div>
     <div class="quiz-text">
-      <h4>labore iste esse neque</h4>
+      <h4>nihil qui est numquam</h4>
       <span><a class="more-link" href="REPLACE">Take the Quiz</a></span>
     </div>
   </div>
@@ -421,40 +442,52 @@
 <div id="featured-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE">
-        <p>Understand Your Child's Problem: Start a Log</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Understand Your Child's Problem: Start a Log</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Does my Child Have Dyslexia? Take the Quiz</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Does my Child Have Dyslexia? Take the Quiz</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Get Better Recommendations: Create a Profile</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Get Better Recommendations: Create a Profile</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Understand Your Child's Problem: Start a Log</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Understand Your Child's Problem: Start a Log</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Does my Child Have Dyslexia? Take the Quiz</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Does my Child Have Dyslexia? Take the Quiz</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Get Better Recommendations: Create a Profile</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Get Better Recommendations: Create a Profile</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
   </ul>
 </div><!-- #more-carousel-slides-container-->
@@ -475,8 +508,7 @@
     <div class="col col-8 skiplink-content" aria-role="main">
 
       <!-- BEGIN PARTIAL: tool-technology -->
-<section class="mini-tool" id="mini-tool-apps">
-
+<section class="mini-tool rs_read_this" id="mini-tool-apps">
   <header>
     <h3>Apps &amp; Technology</h3>
     <p>Find technology to help your child.</p>
@@ -486,7 +518,7 @@
 
     <fieldset>
 
-      <label for="tool-tech-issue" class="visuallyhidden">Select behavior issue</label>
+      <label for="tool-tech-issue" class="visuallyhidden rs_skip">Select behavior issue</label>
       <select name="tool-tech-issue" id="tool-tech-issue" aria-required="true">
         <option value="">Select behavior issue</option>
           <option>Attention & hyperactivity issues</option>
@@ -498,7 +530,7 @@
           <option>Trouble understanding visual information</option>
       </select>
 
-      <label for="tool-tech-grade" class="visuallyhidden">Select grade</label>
+      <label for="tool-tech-grade" class="visuallyhidden rs_skip">Select grade</label>
       <select name="tool-tech-grade" id="tool-tech-grade" aria-required="true">
         <option value="">Select grade</option>
         <option>Grade 1</option>
@@ -507,7 +539,7 @@
         <option>Grade 4</option>
       </select>
 
-      <label for="tool-tech-alltech" class="visuallyhidden">All Technology</label>
+      <label for="tool-tech-alltech" class="visuallyhidden rs_skip">All Technology</label>
       <select name="tool-tech-alltech" id="tool-tech-alltech" aria-required="true">
         <option value="">All technology</option>
         <option>Apps</option>
@@ -515,13 +547,15 @@
         <option>Websites</option>
       </select>
 
-      <label for="tool-tech-platforms" class="visuallyhidden">All Platforms &amp; Devices</label>
-      <select name="tool-tech-platforms" id="tool-tech-platforms" aria-required="true">
-        <option value="">All platforms &amp; devices</option>
-        <option>iPhone</option>
-        <option>iPod Touch</option>
-        <option>iPad</option>
-      </select>
+      <div class="rs_skip">
+        <label for="tool-tech-platforms" class="visuallyhidden">All Platforms &amp; Devices</label>
+        <select name="tool-tech-platforms" id="tool-tech-platforms" aria-required="true">
+          <option value="">All platforms &amp; devices</option>
+          <option>iPhone</option>
+          <option>iPod Touch</option>
+          <option>iPad</option>
+        </select>
+      </div>
 
     </fieldset>
 
@@ -529,7 +563,7 @@
       <input class="button" type="submit" value="Submit">
     </div>
 
-  </div><!-- .form --> 
+  </div><!-- .form -->
 
   <footer class="powered-by">
     <h5>powered by</h5>
@@ -537,7 +571,6 @@
       <img class="logo-img" alt="Common Sense Media" src="Presentation/includes/images/logo.partner.commonsense.png" />
     </div>
   </footer>
-
 </section><!-- .module -->
 
 <!-- END PARTIAL: tool-technology -->
@@ -547,46 +580,44 @@
     <div class="col col-8">
 
        <!-- BEGIN PARTIAL: tool-experts -->
-<section class="mini-tool" id="mini-tool-experts">
+<section class="mini-tool rs_read_this" id="mini-tool-experts">
+    <header>
+      <h3>Advice from Behavior Experts</h3>
+      <p>Find practical strategies for handling common behavior challenges.</p>
+    </header>
 
-  <header>
-    <h3>Advice from Behavior Experts</h3>
-    <p>Find practical strategies for handling common behavior challenges.</p>
-  </header>
+    <div class="form select-container">
 
-  <div class="form select-container">
+      <fieldset>
 
-    <fieldset>
+        <label for="tool-advice-issue" class="visuallyhidden rs_skip">Select behavior issue</label>
+        <select name="tool-advice-issue" id="tool-advice-issue" aria-required="true">
+          <option value="">Select challenge</option>
+          <option>Attention & hyperactivity issues</option>
+          <option>Reading issues</option>
+          <option>Writing issues</option>
+          <option>Math issues</option>
+          <option>Trouble with motor skills</option>
+          <option>Trouble with spoken and written language</option>
+          <option>Trouble understanding visual information</option>
+        </select>
 
-      <label for="tool-advice-issue" class="visuallyhidden">Select behavior issue</label>
-      <select name="tool-advice-issue" id="tool-advice-issue" aria-required="true">
-        <option value="">Select challenge</option>
-        <option>Attention & hyperactivity issues</option>
-        <option>Reading issues</option>
-        <option>Writing issues</option>
-        <option>Math issues</option>
-        <option>Trouble with motor skills</option>
-        <option>Trouble with spoken and written language</option>
-        <option>Trouble understanding visual information</option>
-      </select>
+        <label for="tool-advice-grade" class="visuallyhidden rs_skip">Select grade</label>
+        <select name="tool-advice-grade" id="tool-advice-grade" aria-required="true">
+          <option value="">Select grade</option>
+          <option>Grade 1</option>
+          <option>Grade 2</option>
+          <option>Grade 3</option>
+          <option>Grade 4</option>
+        </select>
 
-      <label for="tool-advice-grade" class="visuallyhidden">Select grade</label>
-      <select name="tool-advice-grade" id="tool-advice-grade" aria-required="true">
-        <option value="">Select grade</option>
-        <option>Grade 1</option>
-        <option>Grade 2</option>
-        <option>Grade 3</option>
-        <option>Grade 4</option>
-      </select>
+      </fieldset>
 
-    </fieldset>
+      <div class="submit-button-wrap">
+        <input class="button" type="submit" value="Submit">
+      </div>
 
-    <div class="submit-button-wrap">
-      <input class="button" type="submit" value="Submit">
-    </div>
-
-  </div><!-- .form --> 
-
+    </div><!-- .form -->
 </section><!-- .module -->
 
 <!-- END PARTIAL: tool-experts -->
@@ -596,8 +627,7 @@
     <div class="col col-8">
 
       <!-- BEGIN PARTIAL: tool-decision-guide -->
-<section class="mini-tool" id="mini-tool-decision-guide">
-
+<section class="mini-tool rs_read_this" id="mini-tool-decision-guide">
   <header>
     <h3>Decision Guide</h3>
     <p>Key questions to help you weigh your options</p>
@@ -611,8 +641,7 @@
 
    <div class="submit-button-wrap">
       <button class="button">Try It</button>
-    </div>
-
+   </div>
 </section><!-- .module -->
 
 <!-- END PARTIAL: tool-decision-guide -->
@@ -634,8 +663,7 @@
 <div class="container more-to-explore">
   <div class="row">
     <div class="col col-24">
-
-      <h2>More to Explore</h2>
+      <h2 class="rs_read_this">More to Explore</h2>
 
     </div>
   </div>
@@ -646,171 +674,195 @@
 <div class="more-to-explore-container">
   <ul>
     <li>
-      <div class="header">
-        <h3>Dad's Unite</h3>
-        <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Dad's Unite</h3>
+          <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+        </div>
 
-      <fieldset class="more-to-explore-form rsNoDrag select-container">
+        <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
-        <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
+          <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
+          <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
-        <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" aria-required="true">
-          <option value="">Select a state</option>
-          <option>Alabama</option>
-          <option>Arizona</option>
-          <option>Arkansas</option>
-        </select>
+          <label for="explore-select" class="visuallyhidden rs_skip">Select state</label>
+          <select name="explore-select" id="explore-select" aria-required="true">
+            <option value="">Select a state</option>
+            <option>Alabama</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+          </select>
 
-      </fieldset>
+        </fieldset>
 
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Lorem ipsum dolor sit amet, consectetur</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Lorem ipsum dolor sit amet, consectetur</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
   </ul>
@@ -827,7 +879,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -984,7 +1036,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -999,6 +1051,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/article.js"></script>

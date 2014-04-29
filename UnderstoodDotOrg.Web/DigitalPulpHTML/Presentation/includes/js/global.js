@@ -144,8 +144,9 @@
      * @return {object} this instance
      */
     this.initialize = function() {
+      $html = $('html');
       $(window).on('resize', this.resizeColumns);
-      return this.resizeColumns();
+      $html.on('equalHeights', this.resizeColumns);
     };
 
     /**
@@ -190,7 +191,103 @@
   };
 
 
-  
+  /* From MDN -- https://developer.mozilla.org/en-US/docs/Web/API/document.cookie */
+  U.Global.Cookies = (function() {
+    var docCookies = {
+      getItem: function (sKey) {
+        return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+      },
+      setItem: function (sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+        if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
+        var sExpires = "";
+        if (vEnd) {
+          switch (vEnd.constructor) {
+            case Number:
+              sExpires = vEnd === Infinity ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + vEnd;
+              break;
+            case String:
+              sExpires = "; expires=" + vEnd;
+              break;
+            case Date:
+              sExpires = "; expires=" + vEnd.toUTCString();
+              break;
+          }
+        }
+        document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
+        return true;
+      },
+      removeItem: function (sKey, sPath, sDomain) {
+        if (!sKey || !this.hasItem(sKey)) { return false; }
+        document.cookie = encodeURIComponent(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + ( sDomain ? "; domain=" + sDomain : "") + ( sPath ? "; path=" + sPath : "");
+        return true;
+      },
+      hasItem: function (sKey) {
+        return (new RegExp("(?:^|;\\s*)" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+      },
+      keys: /* optional method: you can safely remove it! */ function () {
+        var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
+        for (var nIdx = 0; nIdx < aKeys.length; nIdx++) { aKeys[nIdx] = decodeURIComponent(aKeys[nIdx]); }
+        return aKeys;
+      }
+    };
 
+    return docCookies;
+  })();
 
+  U.Global.Readspeaker = function() {
+    var self = this;
+
+    self.dom = {
+      html: $('html')
+    };
+
+    self.classes = ['rsTextNormal', 'rsTextLarger', 'rsTextLarge'];
+
+    self.init = function() {
+      ReadSpeaker.q(function() {
+        self.firstLoad();
+        self.attachHandlers();
+      });
+    };
+
+    /* Set Defaults if Readspeaker Cookie Hasn't been set */
+    self.firstLoad = function() {
+      var cookie = U.Global.Cookies.getItem('ReadSpeakerSettings'),
+          initialValue = 'rstoggle=rsoff&dpTxtSize=0';
+
+      if (!cookie) {
+        U.Global.Cookies.setItem('ReadSpeakerSettings', initialValue);
+      }
+    };
+
+    self.removeTextSizeClasses = function() {
+      var selector = self.classes.join(' ');
+
+      self.dom.html.removeClass(selector);
+    };
+
+    self.attachHandlers = function() {
+      if (! window.rsConf) { window.rsConf = {}; }
+      if (! window.rsConf.Custom) { window.rsConf.Custom = {}; }
+
+      window.rsConf.Custom.txtDec = function() {
+        self.removeTextSizeClasses();
+        self.dom.html.addClass(self.classes[0]).trigger('equalHeights');
+      };
+
+      window.rsConf.Custom.txtInc = function() {
+        self.removeTextSizeClasses();
+        self.dom.html.addClass(self.classes[1]).trigger('equalHeights');
+      };
+
+      window.rsConf.Custom.txtIncLarge = function() {
+        self.removeTextSizeClasses();
+        self.dom.html.addClass(self.classes[2]).trigger('equalHeights');
+      };
+    };
+
+    self.init();
+  };
+
+  U.Global.Readspeaker();
 })(jQuery);

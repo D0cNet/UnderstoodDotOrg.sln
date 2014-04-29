@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>Article - Slideshow (A5a)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -268,15 +284,20 @@
 <!-- Page Title -->
 <div class="container page-topic with-share">
   <div class="row" >
-    <div class="col col-14 offset-1 ">
+    <div class="col col-14 offset-1">
       
         <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Game & Skill Builders</a>
       
-      <h1>Slideshow: Lorem ipsum dolar sit amet</h1>
-      
-        <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
-      
+      <div>
+        <h1 class="rs_read_this">Slideshow: Lorem ipsum dolar sit amet</h1>
+        
+          <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
+        
+      </div>
     </div>
+
+    
+
     
     <div class="col col-9">
       <!-- BEGIN PARTIAL: share-save -->
@@ -299,7 +320,7 @@
 <!-- END PARTIAL: share-save -->
     </div>
     
-    
+
   </div>
 </div><!-- .container -->
 
@@ -346,7 +367,7 @@
     
     
       <!-- BEGIN PARTIAL: article-slideshow-slide -->
-<div class="slide wide-image">
+<div class="slide wide-image rs_read_this">
   <div class="slide-inner">
     
     <img src="http://placehold.it/1740x980" alt="REPLACE"/>
@@ -356,7 +377,7 @@
         <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
-<div class="share-dropdown-menu">
+<div class="share-dropdown-menu rs_skip">
   <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
     <span class="social-share">Share <i class="icon-arrow"></i></span>
@@ -378,7 +399,7 @@
 </div>
 <!-- END PARTIAL: share-content-dropdown -->
         <!-- BEGIN PARTIAL: article-action-buttons -->
-<div class="article-actions buttons-container clearfix">
+<div class="article-actions buttons-container rs_skip clearfix">
   
      <button class="icon-email">email</button>
   
@@ -393,20 +414,20 @@
 <!-- END PARTIAL: article-action-buttons -->
         <div class="clearfix"></div>
       </div>
-      <h3>Consectetur Ipsa Voluptates Placeat Error</h3>
+      <h3>Ad Ad Vero Repellat A Reiciendis Sit</h3>
       <p>
       
-        Et consequatur dignissimos magnam animi velit facilis asperiores necessitatibus vero aliquam et.
+        Fuga corporis sunt sapiente itaque id.
       
-        Sapiente eligendi nesciunt quos reiciendis cupiditate consequatur molestiae soluta totam.
+        Voluptatem hic eveniet nihil quo animi repellat accusamus consequatur qui non.
       
-        Provident dolores neque molestias quis ut ex quisquam qui id consequatur.
+        Sit debitis autem nisi quam non dolorem quam consequatur voluptate soluta.
       
-        Totam earum omnis aut cumque nemo et blanditiis officiis et aut laborum nemo voluptatem qui.
+        Ad eveniet voluptas explicabo iusto reiciendis doloremque placeat quidem.
       
-        Dolores a sit voluptatem doloribus iusto porro voluptatem.
+        Nulla voluptatem vitae omnis sit qui voluptatem soluta ea ut minima expedita.
       
-        Et repellat molestiae earum nemo ut et asperiores modi quae autem.
+        Architecto ipsa vel autem vel aut atque quia suscipit et fugiat officia aut qui aut.
       
       </p>
     </div>
@@ -417,7 +438,7 @@
 <!-- END PARTIAL: article-slideshow-slide -->
     
       <!-- BEGIN PARTIAL: article-slideshow-slide -->
-<div class="slide wide-image">
+<div class="slide wide-image rs_read_this">
   <div class="slide-inner">
     
     <img src="http://placehold.it/1740x980" alt="REPLACE"/>
@@ -427,7 +448,7 @@
         <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
-<div class="share-dropdown-menu">
+<div class="share-dropdown-menu rs_skip">
   <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
     <span class="social-share">Share <i class="icon-arrow"></i></span>
@@ -449,7 +470,7 @@
 </div>
 <!-- END PARTIAL: share-content-dropdown -->
         <!-- BEGIN PARTIAL: article-action-buttons -->
-<div class="article-actions buttons-container clearfix">
+<div class="article-actions buttons-container rs_skip clearfix">
   
      <button class="icon-email">email</button>
   
@@ -464,20 +485,20 @@
 <!-- END PARTIAL: article-action-buttons -->
         <div class="clearfix"></div>
       </div>
-      <h3>Sequi Itaque Voluptates Ea Quisquam</h3>
+      <h3>Odio Impedit Quia Sed Placeat Facere</h3>
       <p>
       
-        Expedita dolore earum libero eum ad velit reiciendis reprehenderit eius officiis exercitationem unde.
+        Minima sunt quae velit.
       
-        Facere at quia ut alias libero eaque libero molestiae et aut debitis sint.
+        Ducimus commodi odit nemo in non reiciendis molestiae sed ullam consequatur qui cupiditate quia.
       
-        Possimus maxime eos quibusdam quibusdam nam suscipit cupiditate numquam ea quidem corporis perferendis sit consequatur.
+        Delectus libero quaerat nemo sit veritatis molestiae.
       
-        Rerum est porro molestias eius aut eius.
+        Nihil necessitatibus numquam ex est incidunt blanditiis ab non.
       
-        Corporis quisquam voluptates nemo animi non expedita.
+        Et aliquam reprehenderit et quia dolor sunt laudantium aliquid est id vero.
       
-        Quas dolorem culpa ut sunt quod et aut et est.
+        Harum saepe ex dolorem qui vitae.
       
       </p>
     </div>
@@ -488,7 +509,7 @@
 <!-- END PARTIAL: article-slideshow-slide -->
     
       <!-- BEGIN PARTIAL: article-slideshow-slide -->
-<div class="slide tall-image">
+<div class="slide tall-image rs_read_this">
   <div class="slide-inner">
     
     <img src="http://placehold.it/980x1740" alt="REPLACE"/>
@@ -498,7 +519,7 @@
         <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
-<div class="share-dropdown-menu">
+<div class="share-dropdown-menu rs_skip">
   <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
     <span class="social-share">Share <i class="icon-arrow"></i></span>
@@ -520,7 +541,7 @@
 </div>
 <!-- END PARTIAL: share-content-dropdown -->
         <!-- BEGIN PARTIAL: article-action-buttons -->
-<div class="article-actions buttons-container clearfix">
+<div class="article-actions buttons-container rs_skip clearfix">
   
      <button class="icon-email">email</button>
   
@@ -535,20 +556,20 @@
 <!-- END PARTIAL: article-action-buttons -->
         <div class="clearfix"></div>
       </div>
-      <h3>Dolorem Ut Nobis Quam Est</h3>
+      <h3>Libero Necessitatibus Est Quo Minima Mollitia Non</h3>
       <p>
       
-        Vero quia quibusdam harum.
+        Non quis consectetur praesentium ipsam architecto rerum omnis.
       
-        Amet sed ratione aperiam assumenda perferendis et explicabo.
+        Et dolores sed consequuntur molestiae esse sit corporis animi aperiam quia itaque sequi aut.
       
-        Velit commodi sed et laboriosam cupiditate ea nostrum cum beatae tempora dolore error.
+        Porro qui illo non similique et accusantium aut modi voluptate eius cum asperiores.
       
-        Vel vel corporis officia ex error illum cumque.
+        Maxime voluptates dolorem tenetur similique similique commodi consequuntur nihil distinctio voluptatem enim consequatur.
       
-        Impedit repudiandae molestias quibusdam qui labore temporibus facilis tenetur praesentium qui et voluptas in.
+        Nesciunt asperiores nesciunt facere est omnis.
       
-        Est eum asperiores eligendi aliquam at omnis.
+        Sapiente sit consectetur et alias incidunt vitae rerum voluptatem sed est.
       
       </p>
     </div>
@@ -559,7 +580,7 @@
 <!-- END PARTIAL: article-slideshow-slide -->
     
       <!-- BEGIN PARTIAL: article-slideshow-slide -->
-<div class="slide wide-image">
+<div class="slide wide-image rs_read_this">
   <div class="slide-inner">
     
     <img src="http://placehold.it/1740x980" alt="REPLACE"/>
@@ -569,7 +590,7 @@
         <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
-<div class="share-dropdown-menu">
+<div class="share-dropdown-menu rs_skip">
   <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
     <span class="social-share">Share <i class="icon-arrow"></i></span>
@@ -591,7 +612,7 @@
 </div>
 <!-- END PARTIAL: share-content-dropdown -->
         <!-- BEGIN PARTIAL: article-action-buttons -->
-<div class="article-actions buttons-container clearfix">
+<div class="article-actions buttons-container rs_skip clearfix">
   
      <button class="icon-email">email</button>
   
@@ -606,20 +627,20 @@
 <!-- END PARTIAL: article-action-buttons -->
         <div class="clearfix"></div>
       </div>
-      <h3>Praesentium Aliquam Quia Est Et Esse Sit</h3>
+      <h3>Ad Quo Quia Vel Quidem</h3>
       <p>
       
-        Qui aut distinctio esse ipsa voluptatem ad et non.
+        Rerum quaerat ea ut et dolorum explicabo architecto aperiam ratione quo velit deserunt unde quia.
       
-        Possimus unde odit repellat quasi possimus sed impedit libero repellat officiis porro ad vel dolorem.
+        Et blanditiis sint velit delectus enim vero sequi autem consequatur magnam blanditiis eos quis.
       
-        Non repudiandae dolore sequi eaque.
+        Et eius laudantium alias quo.
       
-        Temporibus sed cum exercitationem ea deserunt aliquam.
+        Consectetur et excepturi inventore consequuntur quo est mollitia voluptas corporis perspiciatis.
       
-        Et libero magni consectetur sit totam ad blanditiis voluptatem fugit harum et rerum.
+        Voluptatum eaque ad animi minima consectetur assumenda earum qui aperiam.
       
-        Molestiae voluptate maiores quod molestias voluptatibus eum.
+        Et sed et quia id est atque.
       
       </p>
     </div>
@@ -630,7 +651,7 @@
 <!-- END PARTIAL: article-slideshow-slide -->
     
       <!-- BEGIN PARTIAL: article-slideshow-slide -->
-<div class="slide wide-image">
+<div class="slide wide-image rs_read_this">
   <div class="slide-inner">
     
     <img src="http://placehold.it/1740x980" alt="REPLACE"/>
@@ -640,7 +661,7 @@
         <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
-<div class="share-dropdown-menu">
+<div class="share-dropdown-menu rs_skip">
   <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
     <span class="social-share">Share <i class="icon-arrow"></i></span>
@@ -662,7 +683,7 @@
 </div>
 <!-- END PARTIAL: share-content-dropdown -->
         <!-- BEGIN PARTIAL: article-action-buttons -->
-<div class="article-actions buttons-container clearfix">
+<div class="article-actions buttons-container rs_skip clearfix">
   
      <button class="icon-email">email</button>
   
@@ -677,20 +698,20 @@
 <!-- END PARTIAL: article-action-buttons -->
         <div class="clearfix"></div>
       </div>
-      <h3>Quo Ipsum Aut Nihil Animi Blanditiis Necessitatibus Ut</h3>
+      <h3>Corrupti Facilis Et Sapiente Consequatur Quaerat Pariatur</h3>
       <p>
       
-        Sint consectetur saepe quasi quidem.
+        Repudiandae laudantium quos cupiditate beatae incidunt est ratione totam sed.
       
-        Amet qui aut adipisci.
+        Qui omnis eos et recusandae et eum autem mollitia a facere.
       
-        Rerum hic possimus ratione esse ab dolorum dignissimos.
+        Et necessitatibus perferendis culpa quisquam accusamus sed consectetur accusantium nobis eligendi.
       
-        Reiciendis provident rem quae dignissimos optio vitae excepturi cumque totam officiis unde inventore culpa voluptatem.
+        Eum qui sequi aut.
       
-        Dolorum laborum officiis tempora quibusdam aut tenetur nostrum ut molestiae distinctio qui est.
+        Est voluptas minus earum officiis dignissimos earum autem quam velit deserunt occaecati.
       
-        Nobis ut voluptas nisi quis.
+        Ut in itaque neque fugit accusamus animi ut id voluptatum sit.
       
       </p>
     </div>
@@ -701,7 +722,7 @@
 <!-- END PARTIAL: article-slideshow-slide -->
     
       <!-- BEGIN PARTIAL: article-slideshow-slide -->
-<div class="slide tall-image">
+<div class="slide tall-image rs_read_this">
   <div class="slide-inner">
     
     <img src="http://placehold.it/980x1740" alt="REPLACE"/>
@@ -711,7 +732,7 @@
         <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
-<div class="share-dropdown-menu">
+<div class="share-dropdown-menu rs_skip">
   <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
     <span class="social-share">Share <i class="icon-arrow"></i></span>
@@ -733,7 +754,7 @@
 </div>
 <!-- END PARTIAL: share-content-dropdown -->
         <!-- BEGIN PARTIAL: article-action-buttons -->
-<div class="article-actions buttons-container clearfix">
+<div class="article-actions buttons-container rs_skip clearfix">
   
      <button class="icon-email">email</button>
   
@@ -748,20 +769,20 @@
 <!-- END PARTIAL: article-action-buttons -->
         <div class="clearfix"></div>
       </div>
-      <h3>Nostrum Pariatur Error Dolores Aut Aperiam Ducimus Enim</h3>
+      <h3>Aut Excepturi Officia Aliquam Ut Placeat</h3>
       <p>
       
-        Nisi omnis odit delectus id.
+        Et quis vitae vel expedita animi iste odit sint reprehenderit.
       
-        Laborum quaerat tempore nihil quis.
+        Quis sint ratione sed aut.
       
-        Officia aut fuga consectetur illo et laboriosam et voluptatem est dolor perspiciatis non maxime cupiditate.
+        Voluptatem vitae aut voluptatum consequuntur alias et nam rerum libero quia.
       
-        Nemo totam eum corrupti id sit nesciunt ut sed quae doloribus atque.
+        Et veritatis quae maiores.
       
-        Magnam laborum pariatur et ea perspiciatis odio deserunt.
+        Reiciendis est minus accusamus rem.
       
-        Aut dolores dolores impedit vel corrupti ut voluptatem voluptas dolor quia quaerat soluta.
+        Quas officiis amet officiis minus quo voluptatum similique reprehenderit unde iure similique eligendi voluptas.
       
       </p>
     </div>
@@ -772,7 +793,7 @@
 <!-- END PARTIAL: article-slideshow-slide -->
     
       <!-- BEGIN PARTIAL: article-slideshow-slide -->
-<div class="slide wide-image">
+<div class="slide wide-image rs_read_this">
   <div class="slide-inner">
     
     <img src="http://placehold.it/1740x980" alt="REPLACE"/>
@@ -782,7 +803,7 @@
         <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
-<div class="share-dropdown-menu">
+<div class="share-dropdown-menu rs_skip">
   <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
     <span class="social-share">Share <i class="icon-arrow"></i></span>
@@ -804,7 +825,7 @@
 </div>
 <!-- END PARTIAL: share-content-dropdown -->
         <!-- BEGIN PARTIAL: article-action-buttons -->
-<div class="article-actions buttons-container clearfix">
+<div class="article-actions buttons-container rs_skip clearfix">
   
      <button class="icon-email">email</button>
   
@@ -819,20 +840,20 @@
 <!-- END PARTIAL: article-action-buttons -->
         <div class="clearfix"></div>
       </div>
-      <h3>Ex Nihil Omnis Ipsam Ea Quo Nesciunt</h3>
+      <h3>Rerum Id In Impedit Ut</h3>
       <p>
       
-        Ea necessitatibus fuga dolore illo.
+        Cum dolorem consequatur libero alias est.
       
-        Est consequuntur aut facilis totam vel delectus quia.
+        Et laudantium aut qui.
       
-        Quos non quas pariatur praesentium enim omnis eaque.
+        Possimus in provident voluptas distinctio asperiores qui minus eum mollitia et quia.
       
-        Quia sit excepturi exercitationem similique voluptatum quia accusantium at culpa.
+        Quia et ex doloribus.
       
-        Praesentium cumque perferendis aut quos.
+        Id harum reprehenderit molestias consequatur assumenda in minima incidunt rerum maiores sit id qui.
       
-        Sint aut perferendis rem dolore esse aut nihil.
+        Dolor vel consequatur et.
       
       </p>
     </div>
@@ -843,7 +864,7 @@
 <!-- END PARTIAL: article-slideshow-slide -->
     
       <!-- BEGIN PARTIAL: article-slideshow-slide -->
-<div class="slide wide-image">
+<div class="slide wide-image rs_read_this">
   <div class="slide-inner">
     
     <img src="http://placehold.it/1740x980" alt="REPLACE"/>
@@ -853,7 +874,7 @@
         <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
-<div class="share-dropdown-menu">
+<div class="share-dropdown-menu rs_skip">
   <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
     <span class="social-share">Share <i class="icon-arrow"></i></span>
@@ -875,7 +896,7 @@
 </div>
 <!-- END PARTIAL: share-content-dropdown -->
         <!-- BEGIN PARTIAL: article-action-buttons -->
-<div class="article-actions buttons-container clearfix">
+<div class="article-actions buttons-container rs_skip clearfix">
   
      <button class="icon-email">email</button>
   
@@ -890,20 +911,20 @@
 <!-- END PARTIAL: article-action-buttons -->
         <div class="clearfix"></div>
       </div>
-      <h3>Molestias Blanditiis Perferendis Culpa At Quis Vel</h3>
+      <h3>Est Quia Voluptatem Ut Dolore Reiciendis Natus Id</h3>
       <p>
       
-        Et ut est consectetur inventore debitis sint expedita qui quia corrupti rerum quod.
+        Qui dolorem magnam qui recusandae occaecati quod ut sequi et quasi.
       
-        Voluptatem eos aliquam voluptatem quam similique ipsum.
+        Qui ipsa repudiandae veniam exercitationem et adipisci modi sunt et quo.
       
-        Sit sunt neque dignissimos voluptas voluptas ducimus natus enim dolorem esse.
+        Id nisi consequatur ut est veniam aut magnam quis a ut minus.
       
-        Ut dolores itaque expedita saepe velit maiores reprehenderit voluptas.
+        Vel perspiciatis dolorum qui deleniti voluptatem eveniet pariatur corrupti et officia.
       
-        Laudantium nobis explicabo praesentium aut fuga magnam vero consequuntur enim.
+        Aut amet quaerat omnis est voluptas cum perspiciatis est quia.
       
-        Necessitatibus voluptatum corrupti sed rerum nemo.
+        Vitae enim illum dolor minima aut vitae iusto.
       
       </p>
     </div>
@@ -914,7 +935,7 @@
 <!-- END PARTIAL: article-slideshow-slide -->
     
       <!-- BEGIN PARTIAL: article-slideshow-slide -->
-<div class="slide tall-image">
+<div class="slide tall-image rs_read_this">
   <div class="slide-inner">
     
     <img src="http://placehold.it/980x1740" alt="REPLACE"/>
@@ -924,7 +945,7 @@
         <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
-<div class="share-dropdown-menu">
+<div class="share-dropdown-menu rs_skip">
   <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
     <span class="social-share">Share <i class="icon-arrow"></i></span>
@@ -946,7 +967,7 @@
 </div>
 <!-- END PARTIAL: share-content-dropdown -->
         <!-- BEGIN PARTIAL: article-action-buttons -->
-<div class="article-actions buttons-container clearfix">
+<div class="article-actions buttons-container rs_skip clearfix">
   
      <button class="icon-email">email</button>
   
@@ -961,20 +982,20 @@
 <!-- END PARTIAL: article-action-buttons -->
         <div class="clearfix"></div>
       </div>
-      <h3>Quia Quia Et Enim Et Dolorem Corporis</h3>
+      <h3>Distinctio Nihil Totam Error Error Nisi Doloribus</h3>
       <p>
       
-        Ipsam ipsum vel eum ipsum quia dolor voluptas maxime ducimus.
+        Sapiente quibusdam sed soluta et tempore delectus velit veritatis.
       
-        Eligendi minima vitae voluptate molestiae.
+        Aperiam at eaque dignissimos odit aut non molestiae.
       
-        Temporibus vero eum laboriosam et.
+        Libero quia enim autem laboriosam.
       
-        Exercitationem quam sit veritatis voluptatem aut exercitationem aut enim corrupti voluptatibus.
+        Atque odit sit dolores et mollitia expedita vero.
       
-        Similique sit nostrum doloribus reprehenderit.
+        Rerum temporibus repudiandae quibusdam est explicabo et cupiditate assumenda maiores dolores.
       
-        Id magnam est fugiat omnis minima mollitia iure suscipit quasi et.
+        Voluptatibus qui distinctio dolor.
       
       </p>
     </div>
@@ -985,7 +1006,7 @@
 <!-- END PARTIAL: article-slideshow-slide -->
     
       <!-- BEGIN PARTIAL: article-slideshow-slide -->
-<div class="slide wide-image">
+<div class="slide wide-image rs_read_this">
   <div class="slide-inner">
     
     <img src="http://placehold.it/1740x980" alt="REPLACE"/>
@@ -995,7 +1016,7 @@
         <!-- BEGIN PARTIAL: share-content-dropdown -->
 <!-- This file shared on multiple pages -->
 
-<div class="share-dropdown-menu">
+<div class="share-dropdown-menu rs_skip">
   <button class="social-share-button">Share <i class="icon-arrow"></i></button>
   <div class="share-menu">
     <span class="social-share">Share <i class="icon-arrow"></i></span>
@@ -1017,7 +1038,7 @@
 </div>
 <!-- END PARTIAL: share-content-dropdown -->
         <!-- BEGIN PARTIAL: article-action-buttons -->
-<div class="article-actions buttons-container clearfix">
+<div class="article-actions buttons-container rs_skip clearfix">
   
      <button class="icon-email">email</button>
   
@@ -1032,20 +1053,20 @@
 <!-- END PARTIAL: article-action-buttons -->
         <div class="clearfix"></div>
       </div>
-      <h3>Recusandae Vero Voluptatem Iste Eius Dolorum Nostrum</h3>
+      <h3>Est Eos Velit Dolorum Quo Ea Voluptatem Laborum</h3>
       <p>
       
-        Eum architecto error atque.
+        Veritatis praesentium dicta dignissimos aspernatur voluptate vitae amet perspiciatis sapiente esse quaerat.
       
-        Sit aut sint quisquam vitae qui.
+        Sint nulla voluptatibus ducimus.
       
-        Ut a corporis ut quis nesciunt neque.
+        Mollitia asperiores est fugiat et consequatur eaque qui asperiores doloribus corrupti perferendis fugit reprehenderit.
       
-        Neque aliquid aut voluptatem adipisci iste nisi.
+        Dolores excepturi eos commodi asperiores molestias.
       
-        Quidem unde rerum vel.
+        Ut eum sit labore quam quisquam fugit ratione quia aut quia.
       
-        Voluptas mollitia ut dicta et ratione enim neque rerum soluta qui quas dolor excepturi molestiae.
+        Eum vero hic deserunt dolores esse a placeat ipsa vitae molestiae.
       
       </p>
     </div>
@@ -1056,19 +1077,19 @@
 <!-- END PARTIAL: article-slideshow-slide -->
     
 
-    <div class="slide end">
+    <div class="slide end rs_read_this">
       <div class="slide-inner">
         <h3><a href="#" class="restart-slideshow">&lt; See Slideshow from the Beginning</a> or explore more:</h3>
         <div class="thumbnail" style="background-image: url('http://placehold.it/380x220')"></div>
         <div class="text">
-          <h4><a href="REPLACE">perspiciatis distinctio sunt et ipsa iure voluptates</a></h4>
-          <p>est nesciunt aliquid adipisci qui aliquam quaerat veritatis non modi quia cupiditate aspernatur eius veritatis</p>
+          <h4><a href="REPLACE">in nulla corporis incidunt totam molestias hic</a></h4>
+          <p>temporibus omnis consequatur ratione quisquam veritatis quia inventore porro voluptatum est quos id est omnis</p>
         </div>
         <div class="clearfix"></div>
         <div class="thumbnail" style="background-image: url('http://placehold.it/380x220')"></div>
         <div class="text">
-          <h4><a href="REPLACE">laborum sit atque sit voluptatem error ratione</a></h4>
-          <p>est voluptatem tempora aspernatur sit aut fugit consequatur et minima est nam enim ipsum qui</p>
+          <h4><a href="REPLACE">placeat mollitia autem sit error tempore laborum</a></h4>
+          <p>et asperiores et dignissimos vitae voluptatibus quidem autem vero hic voluptas modi aperiam rerum eum</p>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -1124,7 +1145,7 @@
     <!-- article -->
     <div class="col col-19 offset-2">
       <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful content" id="count-helpful-content">
+<div class="find-this-helpful content" id="count-helpful-content rs_read_this">
   
 
   
@@ -1132,10 +1153,10 @@
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="button yes">Yes</button>
+      <button class="button yes rs_skip">Yes</button>
     </li>
     <li>
-      <button class="button no gray">No</button>
+      <button class="button no gray rs_skip">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
@@ -1150,45 +1171,59 @@
 <div class="container more-carousel more-carousel-no-border-bottom">
   <div class="row">
     <div class="col col-24">
-      <h2>More Like this:</h2>
+      <div class="rs_read_this more-carousel-heading-rs-wrapper">
+        <h2>More Like this:</h2>
+      </div>
       <!-- BEGIN PARTIAL: more-carousel -->
 <div id="featured-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE">
-        <p>Understand Your Child's Problem: Start a Log</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Understand Your Child's Problem: Start a Log</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Does my Child Have Dyslexia? Take the Quiz</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Does my Child Have Dyslexia? Take the Quiz</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Get Better Recommendations: Create a Profile</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Get Better Recommendations: Create a Profile</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Understand Your Child's Problem: Start a Log</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Understand Your Child's Problem: Start a Log</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Does my Child Have Dyslexia? Take the Quiz</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Does my Child Have Dyslexia? Take the Quiz</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Get Better Recommendations: Create a Profile</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Get Better Recommendations: Create a Profile</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
   </ul>
 </div><!-- #more-carousel-slides-container-->
@@ -1207,8 +1242,7 @@
 <div class="container more-to-explore">
   <div class="row">
     <div class="col col-24">
-
-      <h2>More to Explore</h2>
+      <h2 class="rs_read_this">More to Explore</h2>
 
     </div>
   </div>
@@ -1219,171 +1253,195 @@
 <div class="more-to-explore-container">
   <ul>
     <li>
-      <div class="header">
-        <h3>Dad's Unite</h3>
-        <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Dad's Unite</h3>
+          <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+        </div>
 
-      <fieldset class="more-to-explore-form rsNoDrag select-container">
+        <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
-        <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
+          <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
+          <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
-        <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" aria-required="true">
-          <option value="">Select a state</option>
-          <option>Alabama</option>
-          <option>Arizona</option>
-          <option>Arkansas</option>
-        </select>
+          <label for="explore-select" class="visuallyhidden rs_skip">Select state</label>
+          <select name="explore-select" id="explore-select" aria-required="true">
+            <option value="">Select a state</option>
+            <option>Alabama</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+          </select>
 
-      </fieldset>
+        </fieldset>
 
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Lorem ipsum dolor sit amet, consectetur</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Lorem ipsum dolor sit amet, consectetur</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
   </ul>
@@ -1400,7 +1458,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -1557,7 +1615,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -1572,6 +1630,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/article.js"></script>

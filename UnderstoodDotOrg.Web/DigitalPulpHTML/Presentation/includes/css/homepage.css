@@ -773,7 +773,7 @@
   z-index: 2;
   border: none;
   position: absolute;
-  bottom: 10px;
+  bottom: 40px;
   right: 10px;
   width: 34px;
   height: 34px;
@@ -782,30 +782,36 @@
   background-image: url("../images/sprite.btn.carousel.play-pause.png");
   background-color: transparent;
 }
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+@media (min-width: 650px) {
+  /* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  .hero-carousel-inner .play-pause {
+    bottom: 10px;
+  }
+}
+/* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .play-pause:hover {
   background-position: 0 -36.5px;
 }
-/* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .play-pause.play {
   background-position: 0 -73px;
 }
-/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .play-pause.play:hover {
   background-position: 0 -109.5px;
 }
-/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .no-backgroundsize .hero-carousel-inner .play-pause {
   background-image: url("../images/sprite.btn.carousel.play-pause.lo-res.png");
 }
-/* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-keyboard-trigger {
   border: none;
   background: none;
   position: absolute;
   left: -99999px;
 }
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers {
   list-style-type: none;
   height: 0;
@@ -813,9 +819,16 @@
   top: 50%;
   margin: -59px 0 0;
   position: absolute;
+  display: none;
 }
 @media (min-width: 769px) {
-  /* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  /* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  .hero-carousel-inner .carousel-pagers {
+    display: block;
+  }
+}
+@media (min-width: 769px) {
+  /* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   .hero-carousel-inner .carousel-pagers .rsArrow {
     position: absolute;
     width: 48px;
@@ -831,28 +844,28 @@
     transition: opacity .4s;
   }
 }
-/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers.active .rsArrow {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 107, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers .rsArrowLeft {
   left: 0;
 }
-/* line 100, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers .rsArrowLeft .rsArrowIcn {
   background-position: 0 0;
 }
-/* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers .rsArrowRight {
   right: 0;
 }
-/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers .rsArrowRight .rsArrowIcn {
   background-position: 100% 0;
 }
-/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers .rsArrowIcn {
   border: none;
   background-color: transparent;
@@ -862,25 +875,30 @@
   background-image: url("../images/sprite.icon.arrows.next-prev.24.png");
   background-size: 25px 21px;
 }
-/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .no-backgroundsize .hero-carousel-inner .carousel-pagers .rsArrowIcn {
   background-image: url("../images/sprite.icon.arrows.next-prev.12.png");
 }
+/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+.hero-carousel-inner .carousel-navigation {
+  display: none;
+}
 @media (min-width: 769px) {
-  /* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  /* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   .hero-carousel-inner .carousel-navigation {
+    display: block;
     position: absolute;
     bottom: 69px;
     width: 100%;
     text-align: center;
     z-index: 2;
   }
-  /* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  /* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   .hero-carousel-inner .carousel-navigation li {
     display: inline-block;
     margin: 0 14px;
   }
-  /* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  /* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   .hero-carousel-inner .carousel-navigation .navigation-link {
     border: none;
     text-indent: -9999px;
@@ -890,29 +908,29 @@
     border-radius: 50%;
     cursor: pointer;
   }
-  /* line 148, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  /* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   .hero-carousel-inner .carousel-navigation .navigation-link:hover, .hero-carousel-inner .carousel-navigation .navigation-link:focus {
     background: #bcbdc0;
   }
-  /* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  /* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   .hero-carousel-inner .carousel-navigation .navigation-link.selected {
     background: #7a4183;
     cursor: default;
   }
 }
 
-/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper {
   width: 100%;
   height: 200px;
 }
 @media (min-width: 650px) {
-  /* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  /* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   #hero-carousel-wrapper {
     height: 400px;
   }
 }
-/* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide {
   background-position: 50% 0;
   background-size: 600px 200px;
@@ -920,13 +938,13 @@
   height: 200px;
 }
 @media (min-width: 650px) {
-  /* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  /* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   #hero-carousel-wrapper .slide {
     height: 400px;
     background-size: auto;
   }
 }
-/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide .text {
   font-weight: bold;
   font-size: 18px;
@@ -936,7 +954,7 @@
   padding: 19px 0 0 27px;
 }
 @media (min-width: 650px) {
-  /* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  /* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   #hero-carousel-wrapper .slide .text {
     font-size: 36px;
     font-size: 2.25rem;
@@ -946,14 +964,14 @@
   }
 }
 @media (min-width: 769px) {
-  /* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  /* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   #hero-carousel-wrapper .slide .text {
     padding-left: 45px;
     max-width: 350px;
   }
 }
 @media (min-width: 960px) {
-  /* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+  /* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   #hero-carousel-wrapper .slide .text {
     position: absolute;
     left: 50%;
@@ -961,15 +979,15 @@
     padding-left: 0;
   }
 }
-/* line 197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide .text p {
   margin-bottom: 0.778em;
 }
-/* line 200, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide .text.text-color-white {
   color: #fff;
 }
-/* line 203, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide .text.text-color-purple {
   color: #7a4183;
 }

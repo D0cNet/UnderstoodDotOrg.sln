@@ -108,13 +108,15 @@ the callbacks passed to the module.
    */
   U.getRecommendations = function() {
 
-    var $module = $('.get-better-recommendations');
+    var $module = $('.get-better-recommendations'),
+        $html = $('html');
+
     // if get-better-recommendations module exists on the page
     if(!$module.length) { return; } 
 
     // call splitModules function if elemet exists, resize event
     if ($('.split-modules'.length)) {
-      splitModules();
+      $html.on('equalHeights', splitModules);
       $(window).on('resize.getRecommends', splitModules);
     }
 
@@ -530,6 +532,14 @@ the callbacks passed to the module.
 
         $dataContainer.append(newContent);
         newContent.find(':focusable').eq(0).focus();
+        $dataContainer.append($(data));
+
+        /*
+        creates a readspeaker play button for all elements that have a cass of rs_read_this (only for elements that
+        do not have a play button)
+        */
+        ReadSpeaker.q(function(){rspkr.Toggle.createPlayer()});
+
       },'html');  
 
       return false;
@@ -617,60 +627,6 @@ the callbacks passed to the module.
 
 })(jQuery);
 /**
- * Definition for the contentFilter javascript module.
- */
-
-(function($){
-
-  // Initialize the module on page load.
-  $(document).ready(function() {
-    new U.contentFilter();
-  });
-
-  U.contentFilter = function(){
-    var self = this;
-
-    self.$filter = $('.content-filter');
-
-    self.init = function(){
-
-      self.$menu = self.$filter.find('div.menu');
-      self.$list = self.$menu.find('ul');
-
-      if (Modernizr.touch) {
-        self.attachToggleEvent('touchstart');
-      } else {
-        self.attachToggleEvent('click');
-      }
-
-      // when dropdown is opened, an event is attached to document to close it.
-      // stop event propogation to dropdown itself
-      self.$list.on('click touchstart', function(e) {
-        e.stopPropagation();
-      });
-
-    }
-
-    self.attachToggleEvent = function(event) {
-      self.$menu.find('> div.selected').on(event, function(e) {
-        if (!self.$menu.hasClass('is-open')) {
-          e.stopPropagation();
-          self.$menu.addClass('is-open');
-          $(document).one(event, function() {
-            self.$menu.removeClass('is-open');
-          });
-        }
-      });
-    }
-
-    if (self.$filter.length) {
-      self.init();
-    }
-
-  };
-
-})(jQuery);
-/**
  * Definition for the carousels javascript module.
  * @todo Remove dependencies between various carousels (one module/carousel).
  * @todo This needs to be refactored to match existing module patterns:
@@ -680,11 +636,14 @@ the callbacks passed to the module.
 (function($){
 
   U.carousels = function() {
+    U.carousels.readSpeakerStarted = false;
+
     // Saves initial page load html for carousel
     var saveSliderHtml;
     var featuredSliderArr = [];
     var exploreSliderArr = [];
     var partnersSliderArr = [];
+    var forYouSliderArr = [];
     var commentGallerySliderArr = [];
     var parentsAreSayingSliderArr = [];
     var partnersAnchor;
@@ -734,35 +693,39 @@ the callbacks passed to the module.
       return html;
     };
 
-    U.carousels.keyboardAccess = function(carouselWrapper, separatePagination, nestedCarouselContainer, arrowsBeforeContent) {
-      U.carousels.accessibleControls(carouselWrapper, arrowsBeforeContent);
+    U.carousels.keyboardAccess = function(carouselWrappers, separatePagination, nestedCarouselContainer, arrowsBeforeContent) {
+      carouselWrappers.each(function(i, carouselWrapper) {
+        carouselWrapper = $(carouselWrapper);
 
-      if (nestedCarouselContainer) {
-        U.carousels.accessibleSlides(nestedCarouselContainer);
-      } else {
-        U.carousels.accessibleSlides(carouselWrapper);
-      }
+        U.carousels.accessibleControls(carouselWrapper, arrowsBeforeContent);
 
-      if (!separatePagination) {
-        U.carousels.accessiblePagination(carouselWrapper);
-      }
-
-      /* Keyboard Navigation is disabled in royal sliders as it triggers animation on */
-      /* All visible sliders - this will re-attach navigation for each instance */
-      var sliderEl = nestedCarouselContainer ? nestedCarouselContainer : carouselWrapper,
-          slider = sliderEl.data('royalSlider');
-          keyActions = {
-            37: 'prev',
-            39: 'next'
-          };
-
-      carouselWrapper.parent().off('keyup.arrows');
-      carouselWrapper.parent().on('keyup.arrows', function(e) {
-        var action = keyActions[e.keyCode];
-
-        if (slider && typeof(action) !== 'undefined') {
-          slider[action]();
+        if (nestedCarouselContainer) {
+          U.carousels.accessibleSlides(nestedCarouselContainer);
+        } else {
+          U.carousels.accessibleSlides(carouselWrapper);
         }
+
+        if (!separatePagination) {
+          U.carousels.accessiblePagination(carouselWrapper);
+        }
+
+        /* Keyboard Navigation is disabled in royal sliders as it triggers animation on */
+        /* All visible sliders - this will re-attach navigation for each instance */
+        var sliderEl = nestedCarouselContainer ? nestedCarouselContainer : carouselWrapper,
+            slider = sliderEl.data('royalSlider');
+        keyActions = {
+          37: 'prev',
+          39: 'next'
+        };
+
+        carouselWrapper.parent().off('keyup.arrows');
+        carouselWrapper.parent().on('keyup.arrows', function(e) {
+          var action = keyActions[e.keyCode];
+
+          if (slider && typeof(action) !== 'undefined') {
+            slider[action]();
+          }
+        });
       });
     };
 
@@ -814,7 +777,6 @@ the callbacks passed to the module.
         var obj = slides[i],
             slide = obj.content,
             focusable = slide.find(':focusable');
-
         focusable.removeAttr('tabindex');
         focusable.filter('[data-tabbable]').attr('tabindex', '0');
         if (!slide.is(current_slide)) {
@@ -941,6 +903,15 @@ the callbacks passed to the module.
         }
       }
 
+      /*
+       creates a readspeaker play button for all elements that have a case of rs_read_this (only for elements that
+       do not have a play button). Used to recreate play buttons on resize of window
+       */
+      ReadSpeaker.q(function () {
+        U.carousels.readSpeakerStarted = true;
+        rspkr.Toggle.createPlayer();
+      });
+
       U.carousels.keyboardAccess(sliderObj);
     };
 
@@ -1057,6 +1028,9 @@ the callbacks passed to the module.
 
     // On Document Ready: Destroy carousel if window width under 480
     $(document).ready(function(){
+
+      //var rs = new U.readSpeaker();
+
       ///////////////////////////////// Featured Slider /////////////////////////////////
 
       // Pushes Featured Slider items into an array
@@ -1069,6 +1043,14 @@ the callbacks passed to the module.
 
       // Initializes Featured Slider
       responsiveSliderChange( featuredSliderArr, false, jQuery('#featured-slides-container'), 3, false, 1000, false );
+
+      //rs.queueCarousel(jQuery('#featured-slides-container'));
+
+      //rs.renderCarouselFocusables();
+
+     /* ReadSpeaker.q(function() {
+        U.carousels.accessibleSlide($("#featured-slides-container"));
+      })*/
 
       ///////////////////////////////// End Featured Slider /////////////////////////////////
 
@@ -1085,6 +1067,18 @@ the callbacks passed to the module.
 
       // Initializes More to Explore Slider
       responsiveSliderChange( exploreSliderArr, false, jQuery('.more-to-explore-container'), 3, true, 500, false, 2);
+
+      var moreToExploreContainer = $(".more-to-explore-container");
+
+      if (moreToExploreContainer.length) {
+        var moreToExplore = moreToExploreContainer.data('royalSlider');
+
+        moreToExplore.ev.on('rsAfterSlideChange', function() {
+          if (U.carousels.readSpeakerStarted) {
+            rspkr.Toggle.createPlayer();
+          }
+        });
+      }
 
       ///////////////////////////////// End More to Explore Slider /////////////////////////////////
 
@@ -1158,6 +1152,26 @@ the callbacks passed to the module.
 
     });
 
+    ///////////////////////////////// Recos For You Slider /////////////////////////////////
+
+    // Pushes Recos For You Slider items into an array
+    jQuery(".recos-for-you li").each(function(){
+      forYouSliderArr.push( '<li>' + jQuery(this).html() + '</li>' );
+    });
+
+    // Clears Recos For You Slider Contents
+    $(".recos-for-you").html('');
+
+    // Initializes Recos For You Slider
+    responsiveSliderChange( forYouSliderArr, false, jQuery('.recos-for-you'), 4, false, false, false );
+    if (Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all') ){
+        $('.recos-for-you li').equalHeights();
+      } else {
+        $('.recos-for-you li').height('');
+      }
+
+    ///////////////////////////////// End Recos For You Slider /////////////////////////////////
+
 
     // On Window Resize: Delay, then call responsiveSliderSize function to initialize or destroy slider
 
@@ -1185,6 +1199,11 @@ the callbacks passed to the module.
       }, 500, 'parentsAreSayingSlider');
 
       waitForFinalEvent(function(){
+        responsiveSliderChange( forYouSliderArr, true, jQuery('.recos-for-you'), 4, false, false, false );
+        new U.Recos();
+      }, 500, 'forYouSlider');
+
+      waitForFinalEvent(function(){
         responsiveSliderChange( partnersSliderArr, true, jQuery('#partners-slides-container'), 6, false, 1000, false, 4, 2);
         // only above 960 viewport or nonresponsive
         if(Modernizr.mq('(min-width: 960px)') || !Modernizr.mq('only all')){
@@ -1198,6 +1217,7 @@ the callbacks passed to the module.
         }
     });
 
+    
     // Initialize Carousels outside of document.ready
       U.carousels.attachArrowHandlers = function(navigation, slider) {
           navigation.on('click', '.rsArrow', function (e) {
@@ -1212,40 +1232,44 @@ the callbacks passed to the module.
           });
       };
 
-      U.carousels.initializeSlider = function(container, slideSelector, navigation, itemsPerSlide, itemsPerSlideMedium, itemsPerSlideMobile, resizeCallback, destroyOnResize) {
-          var sliderArr = [];
-          destroyOnResize = typeof(destroyOnResize) !== 'undefined' ? destroyOnResize : true;
+      U.carousels.initializeSlider = function (container, slideSelector, navigation, itemsPerSlide, itemsPerSlideMedium, itemsPerSlideMobile, resizeCallback, destroyOnResize) {
+        var sliderArr = [];
+        destroyOnResize = typeof(destroyOnResize) !== 'undefined' ? destroyOnResize : true;
 
-          // Pushes Featured Slider items into an array
-          container.find(slideSelector).each(function(){
-              var html = jQuery(this).get(0).outerHTML;
-              if (html) {
-                  sliderArr.push( '<li>' + html + '</li>' );
-              }
-          });
+        // Pushes Featured Slider items into an array
+        container.find(slideSelector).each(function () {
+          var html = jQuery(this).get(0).outerHTML;
+          if (html) {
+            sliderArr.push('<li>' + html + '</li>');
+          }
+        });
 
-          // Clears Featured Slider Contents
-          container.html('');
+        // Clears Featured Slider Contents
+        container.html('');
 
-          var slider = resetSlider(container, sliderArr, slideSelector, navigation, itemsPerSlide, itemsPerSlideMedium, itemsPerSlideMobile, false);
+        var slider = resetSlider(container, sliderArr, slideSelector, navigation, itemsPerSlide, itemsPerSlideMedium, itemsPerSlideMobile, false);
 
-          onResizeEvent.push([
-              function () {
-                  if (destroyOnResize) {
-                      navigation.off('click');
+        onResizeEvent.push([
+          function () {
+            if (destroyOnResize) {
+              navigation.off('click');
 
-                      resetSlider(container, sliderArr, slideSelector, navigation, itemsPerSlide, itemsPerSlideMedium, itemsPerSlideMobile, true);
-                  }
+              resetSlider(container, sliderArr, slideSelector, navigation, itemsPerSlide, itemsPerSlideMedium, itemsPerSlideMobile, true);
+            }
 
-                  if (resizeCallback) {
-                      resizeCallback();
-                  }
-              },
-              onResizeEvent.length + 'responsiveSlider']);
+            if (resizeCallback) {
+              resizeCallback();
+            }
+          },
+          onResizeEvent.length + 'responsiveSlider']);
 
-          U.carousels.keyboardAccess(container, true);
+        ReadSpeaker.q(function () {
+          U.carousels.accessibleSlide(container);
+        });
 
-          return slider;
+        U.carousels.keyboardAccess(container, true);
+
+        return slider;
       };
 
       var resetSlider = function(container, sliderArr, slideSelector, navigation, itemsPerSlide, itemsPerSlideMedium, itemsPerSlideMobile, sliderExists) {
@@ -1442,7 +1466,7 @@ the callbacks passed to the module.
     function init() {
       self.$toolkit = $('#toolkit');
       self.$toolkitButton = self.$toolkit.children('button');
-      self.$toolkit_wrapper = $('#parent-toolkit-wrapper');
+      self.$toolkit_wrapper = $('.parent-toolkit-wrapper');
       self.$toolkit_container = self.$toolkit_wrapper.find('div.parent-toolkit-header-container');
       self.$slides_container = $('.slides-container');
       self.$slides_org = self.$slides_container.find('div.slide').clone();
@@ -1515,7 +1539,7 @@ the callbacks passed to the module.
           listItem.addClass('is-active');
         },
         blurHandler: function(e, newTarget) {
-          var itemInToolkit = newTarget.is('.toolkit-element'),
+          var itemInToolkit = newTarget.is('.toolkit-element') || newTarget.is('.rsArrowIcn'),
           itemIsBody = newTarget.is('body');
 
           // If not IE8 - IE8 was closing overlay when clicking arrows 
@@ -1602,6 +1626,8 @@ the callbacks passed to the module.
         },
         sliderDrag: false
       });
+
+      U.carousels.keyboardAccess(self.$slides_container, true, false, false);
     };
 
     // destroy the sliders events
@@ -1637,7 +1663,8 @@ the callbacks passed to the module.
       var uniform_components = [
         '.comment-sort',
         '.comment-form-reply'
-      ].join(',');
+      ].join(','),
+          $html = $('html');
 
       // Build uniform components.
       $(uniform_components).uniform();
@@ -1645,7 +1672,7 @@ the callbacks passed to the module.
       // Attach events.
       $(window).resize(function() { self.resizeElements(); });
 
-      return this.resizeElements();
+      $html.on('equalHeights', self.resizeElements);
     };
 
     /**
@@ -2275,6 +2302,7 @@ jQuery(document).ready(function(){
       };
 
       self.attachHandlers = function() {
+        self.dom.body.on('click', '.skip-link', self.firefoxFocusWorkaround);
         self.dom.body.on('click', '.secondary-navigation-link', self.skipBackToMainLinkMenu);
       };
 
@@ -2290,9 +2318,18 @@ jQuery(document).ready(function(){
               item = self.model.skipLinks[index];
 
           skipList.append('<li><a class="skip-link" href="'+ item.linkHref +'" tabindex="1">' + item.subNavText + '</li>');
-          item.element.prepend('<div class="skip-link-secondary"><a href="#" class="skip-link secondary-navigation-link" id="'+ item.linkId +'">Back to Navigation</a></div>');
+          item.element.prepend('<div class="skip-link-secondary"><a href="#" class="skip-link secondary-navigation-link rs_skip" id="'+ item.linkId +'">Back to Navigation</a></div>');
         });
       };
+
+    self.firefoxFocusWorkaround = function(e) {
+      var clicked = $(e.currentTarget),
+          selector = clicked.attr('href');
+
+      setTimeout(function() {
+        $(selector).focus();
+      }, 100);
+    };
 
       self.skipBackToMainLinkMenu = function(e) {
           self.dom.skipList.find(':focusable').eq(0).focus();
@@ -2412,7 +2449,124 @@ jQuery(document).ready(function(){
   };
 
 })(jQuery);
+(function($){
 
+  $(document).ready(function(){
+    new U.readspeakerInformation();
+  });
+
+  U.readspeakerInformation = function(){
+
+    var self = this;
+
+    self.init = function() {
+      self.cacheSelectors();
+      self.setModel();
+      self.rsReady();
+    };
+
+    self.cacheSelectors = function() {
+      self.dom = {};
+      self.dom.body = $(document.body);
+    };
+
+    self.setModel = function() {
+      self.model = {};
+    };
+
+
+    self.rsReady = function() {
+      ReadSpeaker.q(function () {
+
+        if (!rspkr.c.e.dpInfoClick) rspkr.c.e.dpInfoClick = [];
+
+        ReadSpeaker.Common.addEvent('dpInfoClick', function () {
+          self.fetch();
+
+        });
+      });
+    };
+
+    self.fetch = function() {
+      $.get('/modal.readspeaker.help.html').done(self.renderLightbox);
+    };
+
+    self.renderLightbox = function(res) {
+      var modal = $(res);
+      self.dom.carousel = modal.find('#rs-slides-container');
+      self.dom.carouselNav = modal.find('.rs-navigation');
+      self.dom.carouselImages = self.dom.carousel.find('.rs-carousel-image');
+      self.dom.close = modal.find('.close');
+      self.dom.pagers = modal.find('.rs-pager-button');
+      self.dom.body.append(modal);
+      self.dom.modal = $('.readspeaker-modal');
+      self.dom.dialog = self.dom.modal.find('.modal-dialog');
+
+      self.fireCarousel();
+      self.attachHandlers();
+
+      self.dom.modal.modal('show');
+
+    };
+
+    self.fireCarousel = function() {
+      self.model.carousel = U.carousels.initializeSlider(self.dom.carousel, '.slide', self.dom.carouselNav, 1, 1, 1, self.resize, false);
+    };
+
+    self.attachHandlers = function() {
+      self.dom.modal.on('show.bs.modal', self.positionModal);
+      self.dom.modal.on('hide.bs.modal', self.destroy);
+      self.dom.body.on('click', '.close' , self.closeModal);
+      self.dom.pagers.on('click' , self.pagerSlide);
+      self.dom.modal.on('show.bs.modal', function() {
+        $(this).find(':focusable').first().focus();
+      });
+      self.setActiveSlide();
+    };
+
+    self.pagerSlide = function(e) {
+      var element = $(e.currentTarget),
+          buttonIndex = self.dom.pagers.index(element),
+          slider = self.dom.carousel.data('royalSlider');
+
+      slider.goTo(buttonIndex);
+    };
+
+    self.closeModal = function() {
+      self.dom.modal.modal('hide');
+    };
+
+    self.destroy = function() {
+      self.dom.modal.remove();
+    };
+
+    self.resize = function() {
+      self.positionModal();
+    };
+
+    self.setActiveSlide = function() {
+      var slider = self.dom.carousel.data('royalSlider');
+      slider.ev.on('rsAfterSlideChange', function() {
+        self.dom.pagers.removeClass('active');
+        self.dom.pagers.eq(slider.currSlideId).addClass('active');
+      });
+    };
+
+    self.positionModal = function() {
+      var leftMargin = (self.dom.dialog.width() / 2) * -1;
+
+      self.dom.dialog.css({
+        'margin-left': leftMargin,
+        'margin-top': 0
+      });
+    };
+
+
+
+    self.init();
+
+  };
+})(jQuery);
 
 
 

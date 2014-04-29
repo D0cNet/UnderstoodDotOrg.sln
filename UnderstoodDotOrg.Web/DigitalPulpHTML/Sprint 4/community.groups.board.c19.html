@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>Groups - Board (C19)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -264,7 +280,7 @@
 <div class="container community-main-header ">
     <header>
         <div class="row header-wrapper">
-            <div class="col col-14 offset-1 header-title">
+            <div class="col col-14 offset-1 header-title rs_read_this">
                 <h1>Welcome to the Understood Community</h1>
                 <p class="subhead">A private parent community with expert guidance and support</p>
             </div>
@@ -363,10 +379,10 @@
     <div class="container">
         <div class="row">
             <div class="container">
-              <header class="groups-heading">
+              <header class="groups-heading rs_read_this">
                 <!-- BEGIN PARTIAL: community/breadcrumb_menu -->
 <!--breadcrumb menu-->
-<a href="REPLACE" class="back-to-previous">
+<a href="REPLACE" class="back-to-previous rs_skip">
   <i class="icon-arrow-left-blue"></i>Back to Parents of Kids with Reading Issues
 </a>
 <!-- END PARTIAL: community/breadcrumb_menu -->
@@ -386,11 +402,12 @@
 <!--discussion board-->
 
 <div class="col col-24 search-board">
-  <div class="col-16 discussion-boards mobile-group-search-form offset-1 skiplink-toolbar">
-    <h3>Search this board</h3>
+  <div class="rs_read_this discussion-board-rs-wrapper">
+    <div class="col-16 discussion-boards mobile-group-search-form offset-1 skiplink-toolbar">
+      <h3>Search this board</h3>
 
-    
-    <!-- BEGIN PARTIAL: community/groups_search_form -->
+      
+      <!-- BEGIN PARTIAL: community/groups_search_form -->
 <!--groups search form-->
 <fieldset class="group-search-form mobile-group-search-form">
   <label for="group-search-text" class="visuallyhidden" aria-hidden="true">Search</label>
@@ -398,23 +415,24 @@
   <input class="group-search-button" type="submit" value="Go"></input>
 </fieldset>
 <!-- END PARTIAL: community/groups_search_form -->
-    
+      
 
-    
+      
 
-  </div><!-- end .discussion-boards -->
-  <div class="col-6 start-discussion">
+    </div><!-- end .discussion-boards -->
+    <div class="col-6 start-discussion">
     <p>Got a question?</p>
     <p class="want-to-talk">Want to talk?</p>
     <a href="REPLACE" class="button">Start a Discussion</a>
   </div><!-- end .start-discussion -->
+  </div>
 </div><!-- end .discussion-board -->
 <!-- END PARTIAL: community/groups_start_discussion -->
 
               <div class="col col-23 individual-group skiplink-content" aria-role="main">
                 <!-- BEGIN PARTIAL: community/groups_table -->
 <div class="discussion-box col col-23 offset-1">
-  <header>
+  <header class="rs_skip">
 
     
 
@@ -426,7 +444,7 @@
     
 
   </header>
-  <ul class="discussions table-discussions search-results">
+  <ul class="discussions table-discussions search-results rs_read_this">
 
     
 
@@ -436,88 +454,88 @@
 <li>
   <div class="col summary">
     <h4>Discussion:</h4>
-    <a href="REPLACE">Eaque Voluptatem Error Quia Accusantium Et Quidem Quibusdam Labore. Iusto Ut Dolor Quo Quae Hic Repellendus Itaque Voluptas Quas Iure Voluptatem Iusto Magnam Et</a>
+    <a href="REPLACE">Et Autem Deserunt Sit Et Voluptatem Quae. Et Sit Reiciendis Atque Amet Aliquam Blanditiis Est Quia Distinctio Est Eveniet</a>
   </div>
-  <div class="col latest-post">
+  <div class="col latest-post rs_skip">
     <h4>Latest Post:</h4>
-    <p class="mins-ago">32 mins ago</p>
-    <a href="REPLACE">Voluptate</a>
-    <p>Consequatur Illo Sed Officiis Illo Id Dolor Labore Qui Quae Repudiandae Unde Id Soluta</p>
+    <p class="mins-ago">53 mins ago</p>
+    <a href="REPLACE">Magnam</a>
+    <p>Odio Quos Temporibus Maxime Optio Et Et Dicta Eius</p>
   </div>
   <div class="col started-by">
     <h4>Started by:</h4>
-    <a href="REPLACE">Facere</a>
+    <a href="REPLACE">Officia</a>
   </div>
 
   <div class="col replies">
     <h4>Replies:</h4>
-    <p>51</p>
+    <p>21</p>
   </div>
   <div class="col latest-post-tabular">
     <h4>Latest Post:</h4>
-    <p>43 mins ago</p>
-    <a href="REPLACE">Dolor</a>
-    <p>Nisi Et Et Dignissimos Neque Sint Sed Modi Et Quidem Doloribus Exercitationem Veritatis Quisquam Odio</p>
-  </div>
-</li>
-<!-- END PARTIAL: community/individual_board_list_item -->
-      <!-- BEGIN PARTIAL: community/individual_board_list_item -->
-<!--individual board list item-->
-<li>
-  <div class="col summary">
-    <h4>Discussion:</h4>
-    <a href="REPLACE">Doloremque Iste Necessitatibus Dolorum Voluptates Est Eum Voluptate Officia Iusto Quod Quis Nobis Repudiandae. Tenetur Eius Et Suscipit Consequuntur Debitis Consequuntur Sed</a>
-  </div>
-  <div class="col latest-post">
-    <h4>Latest Post:</h4>
-    <p class="mins-ago">20 mins ago</p>
-    <a href="REPLACE">Earum</a>
-    <p>Sint Officiis Adipisci Molestias Laborum Et Ipsum Optio Debitis</p>
-  </div>
-  <div class="col started-by">
-    <h4>Started by:</h4>
-    <a href="REPLACE">Voluptatem</a>
-  </div>
-
-  <div class="col replies">
-    <h4>Replies:</h4>
-    <p>76</p>
-  </div>
-  <div class="col latest-post-tabular">
-    <h4>Latest Post:</h4>
-    <p>38 mins ago</p>
-    <a href="REPLACE">Nulla</a>
-    <p>Dolor Voluptas Iure Est</p>
-  </div>
-</li>
-<!-- END PARTIAL: community/individual_board_list_item -->
-      <!-- BEGIN PARTIAL: community/individual_board_list_item -->
-<!--individual board list item-->
-<li>
-  <div class="col summary">
-    <h4>Discussion:</h4>
-    <a href="REPLACE">Temporibus Esse Dolores Eius Iste Cumque Aut Fugiat Qui. Maxime Fuga Velit Aliquam Molestiae Similique Autem Aspernatur Quam Eum Porro Adipisci</a>
-  </div>
-  <div class="col latest-post">
-    <h4>Latest Post:</h4>
-    <p class="mins-ago">5 mins ago</p>
-    <a href="REPLACE">Est</a>
-    <p>Harum Eligendi Libero Cum Quia Quo Vel Error Ipsa Consequatur Dolore Aut Alias Quia</p>
-  </div>
-  <div class="col started-by">
-    <h4>Started by:</h4>
+    <p>16 mins ago</p>
     <a href="REPLACE">Sunt</a>
+    <p>Vel Dolores Repellat Tempore Rem Eius Error Assumenda Sed Corrupti Ducimus Ullam</p>
+  </div>
+</li>
+<!-- END PARTIAL: community/individual_board_list_item -->
+      <!-- BEGIN PARTIAL: community/individual_board_list_item -->
+<!--individual board list item-->
+<li>
+  <div class="col summary">
+    <h4>Discussion:</h4>
+    <a href="REPLACE">Explicabo Delectus Quo Repudiandae Voluptatem Aliquid Id Illo Rerum Totam Explicabo Ducimus Dicta. Exercitationem Et Eligendi Dolor</a>
+  </div>
+  <div class="col latest-post rs_skip">
+    <h4>Latest Post:</h4>
+    <p class="mins-ago">44 mins ago</p>
+    <a href="REPLACE">Voluptatem</a>
+    <p>Labore Aliquid Reprehenderit Id Expedita</p>
+  </div>
+  <div class="col started-by">
+    <h4>Started by:</h4>
+    <a href="REPLACE">Ea</a>
   </div>
 
   <div class="col replies">
     <h4>Replies:</h4>
-    <p>24</p>
+    <p>93</p>
   </div>
   <div class="col latest-post-tabular">
     <h4>Latest Post:</h4>
-    <p>14 mins ago</p>
-    <a href="REPLACE">Nisi</a>
-    <p>Aut Deleniti Sunt Eveniet Illum Incidunt Culpa Qui</p>
+    <p>23 mins ago</p>
+    <a href="REPLACE">Autem</a>
+    <p>Consequatur Sed Totam Aperiam Vel Ut Voluptates Sit Veniam Consequuntur Nam Itaque</p>
+  </div>
+</li>
+<!-- END PARTIAL: community/individual_board_list_item -->
+      <!-- BEGIN PARTIAL: community/individual_board_list_item -->
+<!--individual board list item-->
+<li>
+  <div class="col summary">
+    <h4>Discussion:</h4>
+    <a href="REPLACE">Inventore Pariatur Minus Eum. Exercitationem Impedit Tempora Totam Fugit Aliquid Nihil Consequatur Excepturi Dolorum Laborum Similique Aut Sunt</a>
+  </div>
+  <div class="col latest-post rs_skip">
+    <h4>Latest Post:</h4>
+    <p class="mins-ago">49 mins ago</p>
+    <a href="REPLACE">Architecto</a>
+    <p>Vero Id Id Consectetur Ut Hic Impedit Nihil</p>
+  </div>
+  <div class="col started-by">
+    <h4>Started by:</h4>
+    <a href="REPLACE">Harum</a>
+  </div>
+
+  <div class="col replies">
+    <h4>Replies:</h4>
+    <p>19</p>
+  </div>
+  <div class="col latest-post-tabular">
+    <h4>Latest Post:</h4>
+    <p>0 mins ago</p>
+    <a href="REPLACE">Et</a>
+    <p>Voluptas In Delectus Magni Architecto Eos Explicabo Accusantium Praesentium Et Et Sapiente Ipsa Aperiam</p>
   </div>
 </li>
 <!-- END PARTIAL: community/individual_board_list_item -->
@@ -534,7 +552,7 @@
   <!-- Show More -->
   <!-- BEGIN PARTIAL: community/show_more -->
 <!--Show More-->
-<div class="container show-more">
+<div class="container show-more rs_skip">
   <div class="row">
     <div class="col col-24">
       <a class="show-more-link " href="#" data-path="community/groups-board-results" data-container="table-discussions" data-item="summary" data-count="3">Show More<i class="icon-arrow-down-blue"></i></a>
@@ -554,8 +572,7 @@
 <div class="container more-to-explore">
   <div class="row">
     <div class="col col-24">
-
-      <h2>More to Explore</h2>
+      <h2 class="rs_read_this">More to Explore</h2>
 
     </div>
   </div>
@@ -566,171 +583,195 @@
 <div class="more-to-explore-container">
   <ul>
     <li>
-      <div class="header">
-        <h3>Dad's Unite</h3>
-        <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Dad's Unite</h3>
+          <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+        </div>
 
-      <fieldset class="more-to-explore-form rsNoDrag select-container">
+        <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
-        <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
+          <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
+          <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
-        <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" aria-required="true">
-          <option value="">Select a state</option>
-          <option>Alabama</option>
-          <option>Arizona</option>
-          <option>Arkansas</option>
-        </select>
+          <label for="explore-select" class="visuallyhidden rs_skip">Select state</label>
+          <select name="explore-select" id="explore-select" aria-required="true">
+            <option value="">Select a state</option>
+            <option>Alabama</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+          </select>
 
-      </fieldset>
+        </fieldset>
 
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Lorem ipsum dolor sit amet, consectetur</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Lorem ipsum dolor sit amet, consectetur</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
   </ul>
@@ -747,7 +788,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -904,7 +945,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -919,6 +960,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/community.js"></script>

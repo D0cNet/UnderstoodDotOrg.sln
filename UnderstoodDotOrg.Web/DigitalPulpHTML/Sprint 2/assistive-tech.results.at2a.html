@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>Assistive Tech - Results (AT2a)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -268,13 +284,18 @@
 <!-- Page Title -->
 <div class="container page-topic no-bottom-margin">
   <div class="row" >
-    <div class="col col-14 offset-1 ">
+    <div class="col col-14 offset-1">
       
-      <h1>Lorem ipsum dolar</h1>
-      
-        <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
-      
+      <div>
+        <h1 class="rs_read_this">Lorem ipsum dolar</h1>
+        
+          <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
+        
+      </div>
     </div>
+
+    
+
     
     <div class="col col-9">
       <!-- BEGIN PARTIAL: share-save -->
@@ -297,7 +318,7 @@
 <!-- END PARTIAL: share-save -->
     </div>
     
-    
+
   </div>
 </div><!-- .container -->
 
@@ -307,75 +328,77 @@
     <!-- article -->
     <div class="col col-15 skiplink-toolbar">
       <!-- BEGIN PARTIAL: at-search-tool -->
-<div id="search-by-tool-tabs">
-  <ul>
-    <li class="browse-by-tab">
-      <a href="#browse-by">
-        Browse By
-      </a>
-      <!-- Needs to be on one line to prevent whitespace -->
-    </li><li class="search-by-tab">
+<div class="rs_read_this">
+  <div id="search-by-tool-tabs">
+    <ul>
+      <li class="browse-by-tab">
+        <a href="#browse-by">
+          Browse By
+        </a>
+        <!-- Needs to be on one line to prevent whitespace -->
+      </li><li class="search-by-tab">
       <a href="#search-by">
         Search By
       </a>
     </li>
-  </ul>
+    </ul>
 
-  <div id="browse-by">
-    <div class="form">
-      <fieldset>
-        <select name="at-browse-by-issues" id="at-browse-by-issues" required aria-required="true" title="Select Issue">
-          <option>Select Issue</option>
-          <option>Issue Value 1</option>
-          <option>Issue Value 2</option>
-          <option>Issue Value 3</option>
-        </select>
-        <select name="at-browse-by-grade" id="at-browse-by-grade" required aria-required="true" title="Select Grade"">
-          <option>Select Grade</option>
-          <option>Pre-K - K</option>
-          <option>3 - 5</option>
-          <option>6 - 8</option>
-          <option>9 - 12</option>
-        </select>
-        <select name="at-browse-by-technology" id="at-browse-by-technology" class="tech parent small-width" required aria-required="true" title="Select Technology">
-          <option>Select Technology</option>
-          <option value="at-browse-by-app">Apps</option>
-          <option value="at-browse-by-games">Games</option>
-          <option value="at-browse-by-websites">Websites</option>
-          <option value="at-browse-by-technology">Assistive Technology</option>
-        </select>
-        <select name="at-browse-by-app" id="at-browse-by-app" class="tech child small-width" style="display:none;" title="Select Platform">
-          <option value>Select Platform</option>
-          <option value="1">all platforms</option>
-          <option value="2">iPhone</option>
-          <option value="3">iPod Touch</option>
-          <option value="4">iPad</option>
-          <option value="5">Android</option>
-          <option value="6">Kindle Fire</option>
-          <option value"7">Nook HD</option>
-        </select>
-        <select name="at-browse-by-games" id="at-browse-by-games" class="tech child small-width" style="display:none;" title="Select Platform">
-          <option value>Select Platform</option>
-          <option value="1">[List of Games]</option>
-          <option value="2"><!-- retrive games from website --></option>
-        </select>
-        <div class="submit-button-container"><input class="button" type="submit" value="Find"></div>
-      </fieldset>
+    <div id="browse-by">
+      <div class="form">
+        <fieldset>
+          <select name="at-browse-by-issues" id="at-browse-by-issues" required aria-required="true">
+            <option>Select Issue</option>
+            <option>Issue Value 1</option>
+            <option>Issue Value 2</option>
+            <option>Issue Value 3</option>
+          </select>
+          <select name="at-browse-by-grade" id="at-browse-by-grade" required aria-required="true">
+            <option>Select Grade</option>
+            <option>Pre-K - K</option>
+            <option>3 - 5</option>
+            <option>6 - 8</option>
+            <option>9 - 12</option>
+          </select>
+          <select name="at-browse-by-technology" id="at-browse-by-technology" class="tech parent small-width" required aria-required="true">
+            <option>Select Technology</option>
+            <option value="at-browse-by-app">Apps</option>
+            <option value="at-browse-by-games">Games</option>
+            <option value="at-browse-by-websites">Websites</option>
+            <option value="at-browse-by-technology">Assistive Technology</option>
+          </select>
+          <select name="at-browse-by-app" id="at-browse-by-app" class="tech child small-width" style="display:none;">
+            <option value>Select Platform</option>
+            <option value="1">all platforms</option>
+            <option value="2">iPhone</option>
+            <option value="3">iPod Touch</option>
+            <option value="4">iPad</option>
+            <option value="5">Android</option>
+            <option value="6">Kindle Fire</option>
+            <option value"7">Nook HD</option>
+          </select>
+          <select name="at-browse-by-games" id="at-browse-by-games" class="tech child small-width" style="display:none;">
+            <option value>Select Platform</option>
+            <option value="1">[List of Games]</option>
+            <option value="2"><!-- retrive games from website --></option>
+          </select>
+          <div class="submit-button-container"><input class="button" type="submit" value="Find"></div>
+        </fieldset>
+      </div>
+    </div><!-- /.browse-by -->
+    <div id="search-by">
+      <div class="form">
+        <fieldset>
+          <label for="at-search-by" class="visuallyhidden">Search by</label>
+          <input type="text" name="at-search-by" id="at-search-by">
+          <div class="submit-button-container2 rs_skip"><input class="button" type="submit" value="Find"></div>
+        </fieldset>
+      </div><!-- .form -->
     </div>
-  </div><!-- /.browse-by -->
-  <div id="search-by">
-    <div class="form">
-      <fieldset>
-        <label for="at-search-by" class="visuallyhidden">Search by</label>
-        <input type="text" name="at-search-by" id="at-search-by">
-        <div class="submit-button-container2"><input class="button" type="submit" value="Find"></div>
-      </fieldset>
-    </div><!-- .form -->
-  </div>
-  <div class="powered-by-logo-container">
-    <div class="powered-by-logo">
-      <span>Powered by</span>
-      <span class="visuallyhidden">Common Sense Media</span>
+    <div class="powered-by-logo-container">
+      <div class="powered-by-logo">
+        <span>Powered by</span>
+        <span class="visuallyhidden">Common Sense Media</span>
+      </div>
     </div>
   </div>
 </div>
@@ -398,7 +421,7 @@
 <section class="tech-search-results multi">
   <header class="row">
     <div class="col col-10">
-      <h3>Assistive Technologies</h3>
+      <h3 class="rs_read_this" >Assistive Technologies</h3>
       <div class="popover-trigger-container assistive-tooltip-trigger">
         <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a>
       </div>
@@ -420,20 +443,22 @@
   </header>
 
   <div class="tech-results-wrapper at-top">
-    <div class="search-result row">
+    <div class="search-result row rs_read_this">
       <div class="result-image screenshots-popover col col-4 offset-1">
         <div class="result-image-inner">
+          <!-- This hidden span's content matches the alt tag of the image which ReadSpeaker is ignoring -->
+          <span class="visuallyhidden rs_read">150x150 Placeholder</span>
           <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
           </a>
-          <span class="icon-search"></span>
+          <span class="icon-search rs_skip">search</span>
         </div>
         <!-- BEGIN PARTIAL: assistive-tech-screenshots-popover -->
 <!-- popover hidden content -->
-<div class="popover-container popover-content">
+<div class="popover-container popover-content rs_skip">
   <!-- Borrows CSS class from other module -->
   <section class="user-child-details-popover">
-    <div class="tooltip-title">Autism Play</div>
-    <div class="change-slide-buttons arrows-gray">
+    <div class="tooltip-title rs_skip">Autism Play</div>
+    <div class="change-slide-buttons arrows-gray rs_skip">
       <span class="count"><span class="curr">1</span> of 3</span>
       <div class="rsArrow rsArrowRight"><div class="rsArrowIcn"></div></div>
       <div class="rsArrow rsArrowLeft"><div class="rsArrowIcn"></div></div>
@@ -454,7 +479,7 @@
       </div>
       <div class="result-details col col-7 offset-1">
         <h3 class="result-title">1in5 Stories</h3>
-        <div class="result-description">qui et enim qui quibusdam eum veniam aut amet ex</div>
+        <div class="result-description">sint incidunt iusto ratione soluta sunt deleniti dolorem earum doloremque</div>
         <div class="result-keywords">
           <ul>
             <li><a href="REPLACE">Reading</a></li>
@@ -462,8 +487,8 @@
             <li><a href="REPLACE">Writing</a></li>
           </ul>
         </div>
-        <div class="see-rating">
-          <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom">See Rating</a></div>
+        <div class="see-rating rs_skip">
+          <div class="popover-trigger-container"><a href="REPLACE" class="popover-link rs_skip" data-popover-placement="bottom">See Rating</a></div>
           <!-- BEGIN PARTIAL: popover-see-rating -->
 <div class="search-result row popover-container">
   <div class="result-image">
@@ -472,7 +497,7 @@
   </div>
   <div class="result-details">
     <div class="result-title">1in5 Stories</div>
-    <div class="result-description">eius accusamus ipsum et consequatur aliquam perspiciatis ut rem eveniet</div>
+    <div class="result-description">doloremque ut quibusdam et expedita et ipsa quod quasi ipsa</div>
   </div>
 
   <div class="result-ratings col col-11 offset-1">
@@ -499,7 +524,7 @@
     <div class="quality-scale-wrapper full-width">
       <div class="quality-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
         <a class="quality-review-link-see-rating" href="REPLACE">4 Reviews</a>
       </div>
@@ -509,7 +534,7 @@
     <div class="learning-scale-wrapper">
       <div class="learning-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider -->
       </div>
     </div>
@@ -528,21 +553,21 @@
           <span class="visuallyhidden">rating</span>
           <div class="grade-scale">
             <div class="selection grade6">6</div>
-            <span class="grade1 grade red" aria-hidden="true" role="presentation">1</span>
-            <span class="grade2 grade red" aria-hidden="true" role="presentation">2</span>
-            <span class="grade3 grade yellow" aria-hidden="true" role="presentation">3</span>
-            <span class="grade4 grade yellow" aria-hidden="true" role="presentation">4</span>
-            <span class="grade5 grade yellow" aria-hidden="true" role="presentation">5</span>
-            <span class="grade6 grade green" aria-hidden="true" role="presentation">6</span>
-            <span class="grade7 grade green" aria-hidden="true" role="presentation">7</span>
-            <span class="grade8 grade green" aria-hidden="true" role="presentation">8</span>
-            <span class="grade9 grade green" aria-hidden="true" role="presentation">9</span>
-            <span class="grade10 grade green" aria-hidden="true" role="presentation">10</span>
-            <span class="grade11 grade green" aria-hidden="true" role="presentation">11</span>
-            <span class="grade12 grade green" aria-hidden="true" role="presentation">12</span>
+            <span class="grade1 grade red rs_skip" aria-hidden="true" role="presentation">1</span>
+            <span class="grade2 grade red rs_skip" aria-hidden="true" role="presentation">2</span>
+            <span class="grade3 grade yellow rs_skip" aria-hidden="true" role="presentation">3</span>
+            <span class="grade4 grade yellow rs_skip" aria-hidden="true" role="presentation">4</span>
+            <span class="grade5 grade yellow rs_skip" aria-hidden="true" role="presentation">5</span>
+            <span class="grade6 grade green rs_skip" aria-hidden="true" role="presentation">6</span>
+            <span class="grade7 grade green rs_skip" aria-hidden="true" role="presentation">7</span>
+            <span class="grade8 grade green rs_skip" aria-hidden="true" role="presentation">8</span>
+            <span class="grade9 grade green rs_skip" aria-hidden="true" role="presentation">9</span>
+            <span class="grade10 grade green rs_skip" aria-hidden="true" role="presentation">10</span>
+            <span class="grade11 grade green rs_skip" aria-hidden="true" role="presentation">11</span>
+            <span class="grade12 grade green rs_skip" aria-hidden="true" role="presentation">12</span>
           </div>
         </div>
-        <div class="grade-info-wrapper">
+        <div class="grade-info-wrapper rs_skip">
           <div class="popover-trigger-container">
             <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a>
           </div>
@@ -572,11 +597,11 @@
           <span class="visuallyhidden">rating</span>
           <div class="quality-scale">
             <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
           </div>
         </div>
-        <div class="quality-info-wrapper">
+        <div class="quality-info-wrapper rs_skip">
           <span class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></span>
           <!-- BEGIN PARTIAL: popover-quality-info -->
 <div class="quality-tooltip popover-container">
@@ -584,31 +609,31 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-five" aria-label="5">&nbsp;</div>
+<div class="results-slider blue-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">The best!</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Really Good</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-three" aria-label="3">&nbsp;</div>
+<div class="results-slider blue-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Just Fine</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Disappointing</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-one" aria-label="1">&nbsp;</div>
+<div class="results-slider blue-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Don't Bother</div>
     </div>
@@ -623,10 +648,10 @@
           <span class="visuallyhidden">rating</span>
           <div class="learning-scale">
             <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider -->
           </div>
-          <div class="learning-info-wrapper">
+          <div class="learning-info-wrapper rs_skip">
             <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></div>
             <!-- BEGIN PARTIAL: popover-learning-info -->
 <div class="learning-tooltip popover-container">
@@ -634,37 +659,37 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-five" aria-label="5">&nbsp;</div>
+<div class="results-slider purple-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Best:</strong> Really engaging, excellent learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Very Good:</strong> Engaging, very good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Good:</strong> Pretty engaging, good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-two" aria-label="2">&nbsp;</div>
+<div class="results-slider purple-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Fair:</strong> Somewhat engaging, okay learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-one" aria-label="1">&nbsp;</div>
+<div class="results-slider purple-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for learning:</strong> Not recommended for learning.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero" aria-label="0">&nbsp;</div>
+<div class="results-slider zero" aria-label="0">0</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for kids:</strong> Not age-appropriate for kids; not recommended for learning.</div>
     </div>
@@ -677,19 +702,19 @@
     </div><!-- .search-result -->
 
     
-      <div class="search-result row">
+      <div class="search-result row rs_read_this">
         <div class="result-image screenshots-popover col col-3 offset-1">
           <div class="result-image-inner">
             <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><img alt="150x150 Placeholder" src="http://placehold.it/150x150" /></a>
-            <span class="icon-search">search</span>
+            <span class="icon-search rs_skip">search</span>
           </div>
           <!-- BEGIN PARTIAL: assistive-tech-screenshots-popover -->
 <!-- popover hidden content -->
-<div class="popover-container popover-content">
+<div class="popover-container popover-content rs_skip">
   <!-- Borrows CSS class from other module -->
   <section class="user-child-details-popover">
-    <div class="tooltip-title">Autism Play</div>
-    <div class="change-slide-buttons arrows-gray">
+    <div class="tooltip-title rs_skip">Autism Play</div>
+    <div class="change-slide-buttons arrows-gray rs_skip">
       <span class="count"><span class="curr">1</span> of 3</span>
       <div class="rsArrow rsArrowRight"><div class="rsArrowIcn"></div></div>
       <div class="rsArrow rsArrowLeft"><div class="rsArrowIcn"></div></div>
@@ -710,7 +735,7 @@
         </div>
         <div class="result-details col col-7 offset-1">
           <h3 class="result-title">Autism Play</h3>
-          <div class="result-description">inventore vitae alias minima iure sed qui aut suscipit quo</div>
+          <div class="result-description">qui inventore et necessitatibus aut quia eius itaque in omnis</div>
           <div class="result-keywords">
             <ul>
               <li><a href="REPLACE">Reading</a></li>
@@ -718,8 +743,8 @@
               <li><a href="REPLACE">Writing</a></li>
             </ul>
           </div>
-          <div class="see-rating">
-            <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom">See Rating</a></div>
+          <div class="see-rating rs_skip">
+            <div class="popover-trigger-container rs_skip"><a href="REPLACE" class="popover-link" data-popover-placement="bottom">See Rating</a></div>
             <!-- BEGIN PARTIAL: popover-see-rating -->
 <div class="search-result row popover-container">
   <div class="result-image">
@@ -728,7 +753,7 @@
   </div>
   <div class="result-details">
     <div class="result-title">1in5 Stories</div>
-    <div class="result-description">sint inventore omnis aut omnis quam a aut labore quo</div>
+    <div class="result-description">rerum et incidunt optio pariatur quis voluptas quam voluptas fuga</div>
   </div>
 
   <div class="result-ratings col col-11 offset-1">
@@ -755,7 +780,7 @@
     <div class="quality-scale-wrapper full-width">
       <div class="quality-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
         <a class="quality-review-link-see-rating" href="REPLACE">4 Reviews</a>
       </div>
@@ -765,7 +790,7 @@
     <div class="learning-scale-wrapper">
       <div class="learning-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider -->
       </div>
     </div>
@@ -784,21 +809,21 @@
             <span class="visuallyhidden">rating</span>
             <div class="grade-scale">
               <div class="selection grade8">8</div>
-              <span class="grade1 grade red" aria-hidden="true" role="presentation">1</span>
-              <span class="grade2 grade red" aria-hidden="true" role="presentation">2</span>
-              <span class="grade3 grade red" aria-hidden="true" role="presentation">3</span>
-              <span class="grade4 grade red" aria-hidden="true" role="presentation">4</span>
-              <span class="grade5 grade red" aria-hidden="true" role="presentation">5</span>
-              <span class="grade6 grade yellow" aria-hidden="true" role="presentation">6</span>
-              <span class="grade7 grade yellow" aria-hidden="true" role="presentation">7</span>
-              <span class="grade8 grade green" aria-hidden="true" role="presentation">8</span>
-              <span class="grade9 grade green" aria-hidden="true" role="presentation">9</span>
-              <span class="grade10 grade green" aria-hidden="true" role="presentation">10</span>
-              <span class="grade11 grade green" aria-hidden="true" role="presentation">11</span>
-              <span class="grade12 grade green" aria-hidden="true" role="presentation">12</span>
+              <span class="grade1 grade red rs_skip" aria-hidden="true" role="presentation">1</span>
+              <span class="grade2 grade red rs_skip" aria-hidden="true" role="presentation">2</span>
+              <span class="grade3 grade red rs_skip" aria-hidden="true" role="presentation">3</span>
+              <span class="grade4 grade red rs_skip" aria-hidden="true" role="presentation">4</span>
+              <span class="grade5 grade red rs_skip" aria-hidden="true" role="presentation">5</span>
+              <span class="grade6 grade yellow rs_skip" aria-hidden="true" role="presentation">6</span>
+              <span class="grade7 grade yellow rs_skip" aria-hidden="true" role="presentation">7</span>
+              <span class="grade8 grade green rs_skip" aria-hidden="true" role="presentation">8</span>
+              <span class="grade9 grade green rs_skip" aria-hidden="true" role="presentation">9</span>
+              <span class="grade10 grade green rs_skip" aria-hidden="true" role="presentation">10</span>
+              <span class="grade11 grade green rs_skip" aria-hidden="true" role="presentation">11</span>
+              <span class="grade12 grade green rs_skip" aria-hidden="true" role="presentation">12</span>
             </div>
           </div>
-          <div class="grade-info-wrapper">
+          <div class="grade-info-wrapper rs_skip">
             <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></div>
             <!-- BEGIN PARTIAL: popover-grade-info -->
 <div class="grade-tooltip popover-container">
@@ -826,11 +851,11 @@
             <span class="visuallyhidden">rating</span>
             <div class="quality-scale">
               <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider -->
             </div>
           </div>
-          <div class="quality-info-wrapper">
+          <div class="quality-info-wrapper rs_skip">
             <span class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></span>
             <!-- BEGIN PARTIAL: popover-quality-info -->
 <div class="quality-tooltip popover-container">
@@ -838,31 +863,31 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-five" aria-label="5">&nbsp;</div>
+<div class="results-slider blue-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">The best!</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Really Good</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-three" aria-label="3">&nbsp;</div>
+<div class="results-slider blue-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Just Fine</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Disappointing</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-one" aria-label="1">&nbsp;</div>
+<div class="results-slider blue-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Don't Bother</div>
     </div>
@@ -877,10 +902,10 @@
             <span class="visuallyhidden">rating</span>
             <div class="learning-scale">
               <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
             </div>
-            <div class="learning-info-wrapper">
+            <div class="learning-info-wrapper rs_skip">
               <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></div>
               <!-- BEGIN PARTIAL: popover-learning-info -->
 <div class="learning-tooltip popover-container">
@@ -888,37 +913,37 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-five" aria-label="5">&nbsp;</div>
+<div class="results-slider purple-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Best:</strong> Really engaging, excellent learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Very Good:</strong> Engaging, very good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Good:</strong> Pretty engaging, good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-two" aria-label="2">&nbsp;</div>
+<div class="results-slider purple-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Fair:</strong> Somewhat engaging, okay learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-one" aria-label="1">&nbsp;</div>
+<div class="results-slider purple-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for learning:</strong> Not recommended for learning.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero" aria-label="0">&nbsp;</div>
+<div class="results-slider zero" aria-label="0">0</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for kids:</strong> Not age-appropriate for kids; not recommended for learning.</div>
     </div>
@@ -936,7 +961,7 @@
     <!-- Show More -->
     <!-- BEGIN PARTIAL: community/show_more -->
 <!--Show More-->
-<div class="container show-more">
+<div class="container show-more rs_skip">
   <div class="row">
     <div class="col col-24">
       <a class="show-more-link " href="#" data-path="assistive-tech/search-results" data-container="at-top" data-item="search-results" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
@@ -960,7 +985,7 @@
 <section class="tech-search-results multi">
   <header class="row">
     <div class="col col-10">
-      <h3 class="two-lines">Instructional Technologies</h3>
+      <h3 class="two-lines rs_read_this" >Instructional Technologies</h3>
       <div class="popover-trigger-container assistive-tooltip-trigger">
         <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a>
       </div>
@@ -993,20 +1018,22 @@
   </header>
 
   <div class="tech-results-wrapper at-bottom">
-    <div class="search-result row">
+    <div class="search-result row rs_read_this">
       <div class="result-image screenshots-popover col col-4 offset-1">
         <div class="result-image-inner">
+          <!-- This hidden span's content matches the alt tag of the image which ReadSpeaker is ignoring -->
+          <span class="visuallyhidden rs_read">150x150 Placeholder</span>
           <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
           </a>
-          <span class="icon-search"></span>
+          <span class="icon-search rs_skip">search</span>
         </div>
         <!-- BEGIN PARTIAL: assistive-tech-screenshots-popover -->
 <!-- popover hidden content -->
-<div class="popover-container popover-content">
+<div class="popover-container popover-content rs_skip">
   <!-- Borrows CSS class from other module -->
   <section class="user-child-details-popover">
-    <div class="tooltip-title">Autism Play</div>
-    <div class="change-slide-buttons arrows-gray">
+    <div class="tooltip-title rs_skip">Autism Play</div>
+    <div class="change-slide-buttons arrows-gray rs_skip">
       <span class="count"><span class="curr">1</span> of 3</span>
       <div class="rsArrow rsArrowRight"><div class="rsArrowIcn"></div></div>
       <div class="rsArrow rsArrowLeft"><div class="rsArrowIcn"></div></div>
@@ -1027,7 +1054,7 @@
       </div>
       <div class="result-details col col-7 offset-1">
         <h3 class="result-title">1in5 Stories</h3>
-        <div class="result-description">ratione dolorem eius nemo iusto velit aut explicabo facere quam</div>
+        <div class="result-description">voluptatum maiores aut fugiat unde non ut necessitatibus non assumenda</div>
         <div class="result-keywords">
           <ul>
             <li><a href="REPLACE">Reading</a></li>
@@ -1035,8 +1062,8 @@
             <li><a href="REPLACE">Writing</a></li>
           </ul>
         </div>
-        <div class="see-rating">
-          <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom">See Rating</a></div>
+        <div class="see-rating rs_skip">
+          <div class="popover-trigger-container"><a href="REPLACE" class="popover-link rs_skip" data-popover-placement="bottom">See Rating</a></div>
           <!-- BEGIN PARTIAL: popover-see-rating -->
 <div class="search-result row popover-container">
   <div class="result-image">
@@ -1045,7 +1072,7 @@
   </div>
   <div class="result-details">
     <div class="result-title">1in5 Stories</div>
-    <div class="result-description">id laudantium dicta vitae consequatur earum qui voluptatem unde architecto</div>
+    <div class="result-description">et ab cupiditate repudiandae omnis pariatur voluptatem est voluptatem quis</div>
   </div>
 
   <div class="result-ratings col col-11 offset-1">
@@ -1072,7 +1099,7 @@
     <div class="quality-scale-wrapper full-width">
       <div class="quality-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
         <a class="quality-review-link-see-rating" href="REPLACE">4 Reviews</a>
       </div>
@@ -1082,7 +1109,7 @@
     <div class="learning-scale-wrapper">
       <div class="learning-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider -->
       </div>
     </div>
@@ -1101,21 +1128,21 @@
           <span class="visuallyhidden">rating</span>
           <div class="grade-scale">
             <div class="selection grade6">6</div>
-            <span class="grade1 grade red" aria-hidden="true" role="presentation">1</span>
-            <span class="grade2 grade red" aria-hidden="true" role="presentation">2</span>
-            <span class="grade3 grade yellow" aria-hidden="true" role="presentation">3</span>
-            <span class="grade4 grade yellow" aria-hidden="true" role="presentation">4</span>
-            <span class="grade5 grade yellow" aria-hidden="true" role="presentation">5</span>
-            <span class="grade6 grade green" aria-hidden="true" role="presentation">6</span>
-            <span class="grade7 grade green" aria-hidden="true" role="presentation">7</span>
-            <span class="grade8 grade green" aria-hidden="true" role="presentation">8</span>
-            <span class="grade9 grade green" aria-hidden="true" role="presentation">9</span>
-            <span class="grade10 grade green" aria-hidden="true" role="presentation">10</span>
-            <span class="grade11 grade green" aria-hidden="true" role="presentation">11</span>
-            <span class="grade12 grade green" aria-hidden="true" role="presentation">12</span>
+            <span class="grade1 grade red rs_skip" aria-hidden="true" role="presentation">1</span>
+            <span class="grade2 grade red rs_skip" aria-hidden="true" role="presentation">2</span>
+            <span class="grade3 grade yellow rs_skip" aria-hidden="true" role="presentation">3</span>
+            <span class="grade4 grade yellow rs_skip" aria-hidden="true" role="presentation">4</span>
+            <span class="grade5 grade yellow rs_skip" aria-hidden="true" role="presentation">5</span>
+            <span class="grade6 grade green rs_skip" aria-hidden="true" role="presentation">6</span>
+            <span class="grade7 grade green rs_skip" aria-hidden="true" role="presentation">7</span>
+            <span class="grade8 grade green rs_skip" aria-hidden="true" role="presentation">8</span>
+            <span class="grade9 grade green rs_skip" aria-hidden="true" role="presentation">9</span>
+            <span class="grade10 grade green rs_skip" aria-hidden="true" role="presentation">10</span>
+            <span class="grade11 grade green rs_skip" aria-hidden="true" role="presentation">11</span>
+            <span class="grade12 grade green rs_skip" aria-hidden="true" role="presentation">12</span>
           </div>
         </div>
-        <div class="grade-info-wrapper">
+        <div class="grade-info-wrapper rs_skip">
           <div class="popover-trigger-container">
             <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a>
           </div>
@@ -1145,11 +1172,11 @@
           <span class="visuallyhidden">rating</span>
           <div class="quality-scale">
             <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
           </div>
         </div>
-        <div class="quality-info-wrapper">
+        <div class="quality-info-wrapper rs_skip">
           <span class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></span>
           <!-- BEGIN PARTIAL: popover-quality-info -->
 <div class="quality-tooltip popover-container">
@@ -1157,31 +1184,31 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-five" aria-label="5">&nbsp;</div>
+<div class="results-slider blue-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">The best!</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Really Good</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-three" aria-label="3">&nbsp;</div>
+<div class="results-slider blue-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Just Fine</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Disappointing</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-one" aria-label="1">&nbsp;</div>
+<div class="results-slider blue-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Don't Bother</div>
     </div>
@@ -1196,10 +1223,10 @@
           <span class="visuallyhidden">rating</span>
           <div class="learning-scale">
             <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider -->
           </div>
-          <div class="learning-info-wrapper">
+          <div class="learning-info-wrapper rs_skip">
             <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></div>
             <!-- BEGIN PARTIAL: popover-learning-info -->
 <div class="learning-tooltip popover-container">
@@ -1207,37 +1234,37 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-five" aria-label="5">&nbsp;</div>
+<div class="results-slider purple-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Best:</strong> Really engaging, excellent learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Very Good:</strong> Engaging, very good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Good:</strong> Pretty engaging, good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-two" aria-label="2">&nbsp;</div>
+<div class="results-slider purple-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Fair:</strong> Somewhat engaging, okay learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-one" aria-label="1">&nbsp;</div>
+<div class="results-slider purple-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for learning:</strong> Not recommended for learning.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero" aria-label="0">&nbsp;</div>
+<div class="results-slider zero" aria-label="0">0</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for kids:</strong> Not age-appropriate for kids; not recommended for learning.</div>
     </div>
@@ -1250,19 +1277,19 @@
     </div><!-- .search-result -->
 
     
-      <div class="search-result row">
+      <div class="search-result row rs_read_this">
         <div class="result-image screenshots-popover col col-3 offset-1">
           <div class="result-image-inner">
             <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><img alt="150x150 Placeholder" src="http://placehold.it/150x150" /></a>
-            <span class="icon-search">search</span>
+            <span class="icon-search rs_skip">search</span>
           </div>
           <!-- BEGIN PARTIAL: assistive-tech-screenshots-popover -->
 <!-- popover hidden content -->
-<div class="popover-container popover-content">
+<div class="popover-container popover-content rs_skip">
   <!-- Borrows CSS class from other module -->
   <section class="user-child-details-popover">
-    <div class="tooltip-title">Autism Play</div>
-    <div class="change-slide-buttons arrows-gray">
+    <div class="tooltip-title rs_skip">Autism Play</div>
+    <div class="change-slide-buttons arrows-gray rs_skip">
       <span class="count"><span class="curr">1</span> of 3</span>
       <div class="rsArrow rsArrowRight"><div class="rsArrowIcn"></div></div>
       <div class="rsArrow rsArrowLeft"><div class="rsArrowIcn"></div></div>
@@ -1283,7 +1310,7 @@
         </div>
         <div class="result-details col col-7 offset-1">
           <h3 class="result-title">Autism Play</h3>
-          <div class="result-description">dignissimos totam perspiciatis sint architecto qui adipisci odio ipsam voluptates</div>
+          <div class="result-description">neque repudiandae maxime est et facilis temporibus odio voluptatem sunt</div>
           <div class="result-keywords">
             <ul>
               <li><a href="REPLACE">Reading</a></li>
@@ -1291,8 +1318,8 @@
               <li><a href="REPLACE">Writing</a></li>
             </ul>
           </div>
-          <div class="see-rating">
-            <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom">See Rating</a></div>
+          <div class="see-rating rs_skip">
+            <div class="popover-trigger-container rs_skip"><a href="REPLACE" class="popover-link" data-popover-placement="bottom">See Rating</a></div>
             <!-- BEGIN PARTIAL: popover-see-rating -->
 <div class="search-result row popover-container">
   <div class="result-image">
@@ -1301,7 +1328,7 @@
   </div>
   <div class="result-details">
     <div class="result-title">1in5 Stories</div>
-    <div class="result-description">quia dolorum dolor cum voluptatem quas delectus repellat voluptatem maxime</div>
+    <div class="result-description">est ipsam consequatur nostrum aut voluptas id voluptates velit distinctio</div>
   </div>
 
   <div class="result-ratings col col-11 offset-1">
@@ -1328,7 +1355,7 @@
     <div class="quality-scale-wrapper full-width">
       <div class="quality-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
         <a class="quality-review-link-see-rating" href="REPLACE">4 Reviews</a>
       </div>
@@ -1338,7 +1365,7 @@
     <div class="learning-scale-wrapper">
       <div class="learning-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider -->
       </div>
     </div>
@@ -1357,21 +1384,21 @@
             <span class="visuallyhidden">rating</span>
             <div class="grade-scale">
               <div class="selection grade8">8</div>
-              <span class="grade1 grade red" aria-hidden="true" role="presentation">1</span>
-              <span class="grade2 grade red" aria-hidden="true" role="presentation">2</span>
-              <span class="grade3 grade red" aria-hidden="true" role="presentation">3</span>
-              <span class="grade4 grade red" aria-hidden="true" role="presentation">4</span>
-              <span class="grade5 grade red" aria-hidden="true" role="presentation">5</span>
-              <span class="grade6 grade yellow" aria-hidden="true" role="presentation">6</span>
-              <span class="grade7 grade yellow" aria-hidden="true" role="presentation">7</span>
-              <span class="grade8 grade green" aria-hidden="true" role="presentation">8</span>
-              <span class="grade9 grade green" aria-hidden="true" role="presentation">9</span>
-              <span class="grade10 grade green" aria-hidden="true" role="presentation">10</span>
-              <span class="grade11 grade green" aria-hidden="true" role="presentation">11</span>
-              <span class="grade12 grade green" aria-hidden="true" role="presentation">12</span>
+              <span class="grade1 grade red rs_skip" aria-hidden="true" role="presentation">1</span>
+              <span class="grade2 grade red rs_skip" aria-hidden="true" role="presentation">2</span>
+              <span class="grade3 grade red rs_skip" aria-hidden="true" role="presentation">3</span>
+              <span class="grade4 grade red rs_skip" aria-hidden="true" role="presentation">4</span>
+              <span class="grade5 grade red rs_skip" aria-hidden="true" role="presentation">5</span>
+              <span class="grade6 grade yellow rs_skip" aria-hidden="true" role="presentation">6</span>
+              <span class="grade7 grade yellow rs_skip" aria-hidden="true" role="presentation">7</span>
+              <span class="grade8 grade green rs_skip" aria-hidden="true" role="presentation">8</span>
+              <span class="grade9 grade green rs_skip" aria-hidden="true" role="presentation">9</span>
+              <span class="grade10 grade green rs_skip" aria-hidden="true" role="presentation">10</span>
+              <span class="grade11 grade green rs_skip" aria-hidden="true" role="presentation">11</span>
+              <span class="grade12 grade green rs_skip" aria-hidden="true" role="presentation">12</span>
             </div>
           </div>
-          <div class="grade-info-wrapper">
+          <div class="grade-info-wrapper rs_skip">
             <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></div>
             <!-- BEGIN PARTIAL: popover-grade-info -->
 <div class="grade-tooltip popover-container">
@@ -1399,11 +1426,11 @@
             <span class="visuallyhidden">rating</span>
             <div class="quality-scale">
               <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider -->
             </div>
           </div>
-          <div class="quality-info-wrapper">
+          <div class="quality-info-wrapper rs_skip">
             <span class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></span>
             <!-- BEGIN PARTIAL: popover-quality-info -->
 <div class="quality-tooltip popover-container">
@@ -1411,31 +1438,31 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-five" aria-label="5">&nbsp;</div>
+<div class="results-slider blue-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">The best!</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Really Good</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-three" aria-label="3">&nbsp;</div>
+<div class="results-slider blue-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Just Fine</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Disappointing</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-one" aria-label="1">&nbsp;</div>
+<div class="results-slider blue-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Don't Bother</div>
     </div>
@@ -1450,10 +1477,10 @@
             <span class="visuallyhidden">rating</span>
             <div class="learning-scale">
               <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
             </div>
-            <div class="learning-info-wrapper">
+            <div class="learning-info-wrapper rs_skip">
               <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></div>
               <!-- BEGIN PARTIAL: popover-learning-info -->
 <div class="learning-tooltip popover-container">
@@ -1461,37 +1488,37 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-five" aria-label="5">&nbsp;</div>
+<div class="results-slider purple-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Best:</strong> Really engaging, excellent learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Very Good:</strong> Engaging, very good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Good:</strong> Pretty engaging, good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-two" aria-label="2">&nbsp;</div>
+<div class="results-slider purple-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Fair:</strong> Somewhat engaging, okay learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-one" aria-label="1">&nbsp;</div>
+<div class="results-slider purple-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for learning:</strong> Not recommended for learning.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero" aria-label="0">&nbsp;</div>
+<div class="results-slider zero" aria-label="0">0</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for kids:</strong> Not age-appropriate for kids; not recommended for learning.</div>
     </div>
@@ -1503,19 +1530,19 @@
         </div><!-- .result-ratings -->
       </div><!-- .search-result -->
     
-      <div class="search-result row">
+      <div class="search-result row rs_read_this">
         <div class="result-image screenshots-popover col col-3 offset-1">
           <div class="result-image-inner">
             <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><img alt="150x150 Placeholder" src="http://placehold.it/150x150" /></a>
-            <span class="icon-search">search</span>
+            <span class="icon-search rs_skip">search</span>
           </div>
           <!-- BEGIN PARTIAL: assistive-tech-screenshots-popover -->
 <!-- popover hidden content -->
-<div class="popover-container popover-content">
+<div class="popover-container popover-content rs_skip">
   <!-- Borrows CSS class from other module -->
   <section class="user-child-details-popover">
-    <div class="tooltip-title">Autism Play</div>
-    <div class="change-slide-buttons arrows-gray">
+    <div class="tooltip-title rs_skip">Autism Play</div>
+    <div class="change-slide-buttons arrows-gray rs_skip">
       <span class="count"><span class="curr">1</span> of 3</span>
       <div class="rsArrow rsArrowRight"><div class="rsArrowIcn"></div></div>
       <div class="rsArrow rsArrowLeft"><div class="rsArrowIcn"></div></div>
@@ -1536,7 +1563,7 @@
         </div>
         <div class="result-details col col-7 offset-1">
           <h3 class="result-title">Autism Play</h3>
-          <div class="result-description">voluptatum cupiditate aut doloremque hic aut minima molestias nobis molestiae</div>
+          <div class="result-description">labore molestiae velit eum qui reprehenderit magnam laudantium qui reiciendis</div>
           <div class="result-keywords">
             <ul>
               <li><a href="REPLACE">Reading</a></li>
@@ -1544,8 +1571,8 @@
               <li><a href="REPLACE">Writing</a></li>
             </ul>
           </div>
-          <div class="see-rating">
-            <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom">See Rating</a></div>
+          <div class="see-rating rs_skip">
+            <div class="popover-trigger-container rs_skip"><a href="REPLACE" class="popover-link" data-popover-placement="bottom">See Rating</a></div>
             <!-- BEGIN PARTIAL: popover-see-rating -->
 <div class="search-result row popover-container">
   <div class="result-image">
@@ -1554,7 +1581,7 @@
   </div>
   <div class="result-details">
     <div class="result-title">1in5 Stories</div>
-    <div class="result-description">et magni voluptatibus ullam voluptates omnis sed velit maiores facere</div>
+    <div class="result-description">magnam rerum maxime occaecati necessitatibus facere corrupti blanditiis facere perspiciatis</div>
   </div>
 
   <div class="result-ratings col col-11 offset-1">
@@ -1581,7 +1608,7 @@
     <div class="quality-scale-wrapper full-width">
       <div class="quality-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
         <a class="quality-review-link-see-rating" href="REPLACE">4 Reviews</a>
       </div>
@@ -1591,7 +1618,7 @@
     <div class="learning-scale-wrapper">
       <div class="learning-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider -->
       </div>
     </div>
@@ -1610,21 +1637,21 @@
             <span class="visuallyhidden">rating</span>
             <div class="grade-scale">
               <div class="selection grade8">8</div>
-              <span class="grade1 grade red" aria-hidden="true" role="presentation">1</span>
-              <span class="grade2 grade red" aria-hidden="true" role="presentation">2</span>
-              <span class="grade3 grade red" aria-hidden="true" role="presentation">3</span>
-              <span class="grade4 grade red" aria-hidden="true" role="presentation">4</span>
-              <span class="grade5 grade red" aria-hidden="true" role="presentation">5</span>
-              <span class="grade6 grade yellow" aria-hidden="true" role="presentation">6</span>
-              <span class="grade7 grade yellow" aria-hidden="true" role="presentation">7</span>
-              <span class="grade8 grade green" aria-hidden="true" role="presentation">8</span>
-              <span class="grade9 grade green" aria-hidden="true" role="presentation">9</span>
-              <span class="grade10 grade green" aria-hidden="true" role="presentation">10</span>
-              <span class="grade11 grade green" aria-hidden="true" role="presentation">11</span>
-              <span class="grade12 grade green" aria-hidden="true" role="presentation">12</span>
+              <span class="grade1 grade red rs_skip" aria-hidden="true" role="presentation">1</span>
+              <span class="grade2 grade red rs_skip" aria-hidden="true" role="presentation">2</span>
+              <span class="grade3 grade red rs_skip" aria-hidden="true" role="presentation">3</span>
+              <span class="grade4 grade red rs_skip" aria-hidden="true" role="presentation">4</span>
+              <span class="grade5 grade red rs_skip" aria-hidden="true" role="presentation">5</span>
+              <span class="grade6 grade yellow rs_skip" aria-hidden="true" role="presentation">6</span>
+              <span class="grade7 grade yellow rs_skip" aria-hidden="true" role="presentation">7</span>
+              <span class="grade8 grade green rs_skip" aria-hidden="true" role="presentation">8</span>
+              <span class="grade9 grade green rs_skip" aria-hidden="true" role="presentation">9</span>
+              <span class="grade10 grade green rs_skip" aria-hidden="true" role="presentation">10</span>
+              <span class="grade11 grade green rs_skip" aria-hidden="true" role="presentation">11</span>
+              <span class="grade12 grade green rs_skip" aria-hidden="true" role="presentation">12</span>
             </div>
           </div>
-          <div class="grade-info-wrapper">
+          <div class="grade-info-wrapper rs_skip">
             <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></div>
             <!-- BEGIN PARTIAL: popover-grade-info -->
 <div class="grade-tooltip popover-container">
@@ -1652,11 +1679,11 @@
             <span class="visuallyhidden">rating</span>
             <div class="quality-scale">
               <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider -->
             </div>
           </div>
-          <div class="quality-info-wrapper">
+          <div class="quality-info-wrapper rs_skip">
             <span class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></span>
             <!-- BEGIN PARTIAL: popover-quality-info -->
 <div class="quality-tooltip popover-container">
@@ -1664,31 +1691,31 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-five" aria-label="5">&nbsp;</div>
+<div class="results-slider blue-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">The best!</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Really Good</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-three" aria-label="3">&nbsp;</div>
+<div class="results-slider blue-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Just Fine</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Disappointing</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-one" aria-label="1">&nbsp;</div>
+<div class="results-slider blue-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Don't Bother</div>
     </div>
@@ -1703,10 +1730,10 @@
             <span class="visuallyhidden">rating</span>
             <div class="learning-scale">
               <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
             </div>
-            <div class="learning-info-wrapper">
+            <div class="learning-info-wrapper rs_skip">
               <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></div>
               <!-- BEGIN PARTIAL: popover-learning-info -->
 <div class="learning-tooltip popover-container">
@@ -1714,37 +1741,37 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-five" aria-label="5">&nbsp;</div>
+<div class="results-slider purple-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Best:</strong> Really engaging, excellent learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Very Good:</strong> Engaging, very good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Good:</strong> Pretty engaging, good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-two" aria-label="2">&nbsp;</div>
+<div class="results-slider purple-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Fair:</strong> Somewhat engaging, okay learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-one" aria-label="1">&nbsp;</div>
+<div class="results-slider purple-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for learning:</strong> Not recommended for learning.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero" aria-label="0">&nbsp;</div>
+<div class="results-slider zero" aria-label="0">0</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for kids:</strong> Not age-appropriate for kids; not recommended for learning.</div>
     </div>
@@ -1756,19 +1783,19 @@
         </div><!-- .result-ratings -->
       </div><!-- .search-result -->
     
-      <div class="search-result row">
+      <div class="search-result row rs_read_this">
         <div class="result-image screenshots-popover col col-3 offset-1">
           <div class="result-image-inner">
             <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><img alt="150x150 Placeholder" src="http://placehold.it/150x150" /></a>
-            <span class="icon-search">search</span>
+            <span class="icon-search rs_skip">search</span>
           </div>
           <!-- BEGIN PARTIAL: assistive-tech-screenshots-popover -->
 <!-- popover hidden content -->
-<div class="popover-container popover-content">
+<div class="popover-container popover-content rs_skip">
   <!-- Borrows CSS class from other module -->
   <section class="user-child-details-popover">
-    <div class="tooltip-title">Autism Play</div>
-    <div class="change-slide-buttons arrows-gray">
+    <div class="tooltip-title rs_skip">Autism Play</div>
+    <div class="change-slide-buttons arrows-gray rs_skip">
       <span class="count"><span class="curr">1</span> of 3</span>
       <div class="rsArrow rsArrowRight"><div class="rsArrowIcn"></div></div>
       <div class="rsArrow rsArrowLeft"><div class="rsArrowIcn"></div></div>
@@ -1789,7 +1816,7 @@
         </div>
         <div class="result-details col col-7 offset-1">
           <h3 class="result-title">Autism Play</h3>
-          <div class="result-description">voluptatem eos reiciendis temporibus consequatur voluptatem et excepturi a qui</div>
+          <div class="result-description">aut officia suscipit perspiciatis est modi ut rerum dolorem repellat</div>
           <div class="result-keywords">
             <ul>
               <li><a href="REPLACE">Reading</a></li>
@@ -1797,8 +1824,8 @@
               <li><a href="REPLACE">Writing</a></li>
             </ul>
           </div>
-          <div class="see-rating">
-            <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom">See Rating</a></div>
+          <div class="see-rating rs_skip">
+            <div class="popover-trigger-container rs_skip"><a href="REPLACE" class="popover-link" data-popover-placement="bottom">See Rating</a></div>
             <!-- BEGIN PARTIAL: popover-see-rating -->
 <div class="search-result row popover-container">
   <div class="result-image">
@@ -1807,7 +1834,7 @@
   </div>
   <div class="result-details">
     <div class="result-title">1in5 Stories</div>
-    <div class="result-description">ipsa voluptatem sed natus sed autem accusantium numquam deserunt veniam</div>
+    <div class="result-description">eos velit qui cupiditate totam rerum dolore placeat fugiat nulla</div>
   </div>
 
   <div class="result-ratings col col-11 offset-1">
@@ -1834,7 +1861,7 @@
     <div class="quality-scale-wrapper full-width">
       <div class="quality-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
         <a class="quality-review-link-see-rating" href="REPLACE">4 Reviews</a>
       </div>
@@ -1844,7 +1871,7 @@
     <div class="learning-scale-wrapper">
       <div class="learning-scale">
         <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider -->
       </div>
     </div>
@@ -1863,21 +1890,21 @@
             <span class="visuallyhidden">rating</span>
             <div class="grade-scale">
               <div class="selection grade8">8</div>
-              <span class="grade1 grade red" aria-hidden="true" role="presentation">1</span>
-              <span class="grade2 grade red" aria-hidden="true" role="presentation">2</span>
-              <span class="grade3 grade red" aria-hidden="true" role="presentation">3</span>
-              <span class="grade4 grade red" aria-hidden="true" role="presentation">4</span>
-              <span class="grade5 grade red" aria-hidden="true" role="presentation">5</span>
-              <span class="grade6 grade yellow" aria-hidden="true" role="presentation">6</span>
-              <span class="grade7 grade yellow" aria-hidden="true" role="presentation">7</span>
-              <span class="grade8 grade green" aria-hidden="true" role="presentation">8</span>
-              <span class="grade9 grade green" aria-hidden="true" role="presentation">9</span>
-              <span class="grade10 grade green" aria-hidden="true" role="presentation">10</span>
-              <span class="grade11 grade green" aria-hidden="true" role="presentation">11</span>
-              <span class="grade12 grade green" aria-hidden="true" role="presentation">12</span>
+              <span class="grade1 grade red rs_skip" aria-hidden="true" role="presentation">1</span>
+              <span class="grade2 grade red rs_skip" aria-hidden="true" role="presentation">2</span>
+              <span class="grade3 grade red rs_skip" aria-hidden="true" role="presentation">3</span>
+              <span class="grade4 grade red rs_skip" aria-hidden="true" role="presentation">4</span>
+              <span class="grade5 grade red rs_skip" aria-hidden="true" role="presentation">5</span>
+              <span class="grade6 grade yellow rs_skip" aria-hidden="true" role="presentation">6</span>
+              <span class="grade7 grade yellow rs_skip" aria-hidden="true" role="presentation">7</span>
+              <span class="grade8 grade green rs_skip" aria-hidden="true" role="presentation">8</span>
+              <span class="grade9 grade green rs_skip" aria-hidden="true" role="presentation">9</span>
+              <span class="grade10 grade green rs_skip" aria-hidden="true" role="presentation">10</span>
+              <span class="grade11 grade green rs_skip" aria-hidden="true" role="presentation">11</span>
+              <span class="grade12 grade green rs_skip" aria-hidden="true" role="presentation">12</span>
             </div>
           </div>
-          <div class="grade-info-wrapper">
+          <div class="grade-info-wrapper rs_skip">
             <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></div>
             <!-- BEGIN PARTIAL: popover-grade-info -->
 <div class="grade-tooltip popover-container">
@@ -1905,11 +1932,11 @@
             <span class="visuallyhidden">rating</span>
             <div class="quality-scale">
               <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider -->
             </div>
           </div>
-          <div class="quality-info-wrapper">
+          <div class="quality-info-wrapper rs_skip">
             <span class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></span>
             <!-- BEGIN PARTIAL: popover-quality-info -->
 <div class="quality-tooltip popover-container">
@@ -1917,31 +1944,31 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-five" aria-label="5">&nbsp;</div>
+<div class="results-slider blue-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">The best!</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Really Good</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-three" aria-label="3">&nbsp;</div>
+<div class="results-slider blue-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Just Fine</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Disappointing</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-one" aria-label="1">&nbsp;</div>
+<div class="results-slider blue-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Don't Bother</div>
     </div>
@@ -1956,10 +1983,10 @@
             <span class="visuallyhidden">rating</span>
             <div class="learning-scale">
               <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
             </div>
-            <div class="learning-info-wrapper">
+            <div class="learning-info-wrapper rs_skip">
               <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></div>
               <!-- BEGIN PARTIAL: popover-learning-info -->
 <div class="learning-tooltip popover-container">
@@ -1967,37 +1994,37 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-five" aria-label="5">&nbsp;</div>
+<div class="results-slider purple-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Best:</strong> Really engaging, excellent learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Very Good:</strong> Engaging, very good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Good:</strong> Pretty engaging, good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-two" aria-label="2">&nbsp;</div>
+<div class="results-slider purple-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Fair:</strong> Somewhat engaging, okay learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-one" aria-label="1">&nbsp;</div>
+<div class="results-slider purple-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for learning:</strong> Not recommended for learning.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero" aria-label="0">&nbsp;</div>
+<div class="results-slider zero" aria-label="0">0</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for kids:</strong> Not age-appropriate for kids; not recommended for learning.</div>
     </div>
@@ -2015,7 +2042,7 @@
     <!-- Show More -->
     <!-- BEGIN PARTIAL: community/show_more -->
 <!--Show More-->
-<div class="container show-more">
+<div class="container show-more rs_skip">
   <div class="row">
     <div class="col col-24">
       <a class="show-more-link " href="#" data-path="assistive-tech/search-results" data-container="at-bottom" data-item="search-results" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
@@ -2056,7 +2083,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -2213,7 +2240,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -2228,6 +2255,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/assistive-tech.js"></script>

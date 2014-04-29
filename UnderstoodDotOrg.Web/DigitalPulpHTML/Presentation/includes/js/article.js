@@ -19,6 +19,7 @@
     var self = this;
 
     self.focusedElement = [];
+    self.readSpeakerReady = false;
 
     self.init = function(){
       self.$container = $('#article-slideshow');
@@ -29,6 +30,10 @@
       }
 
       $('.index-buttons-container .button').click(self.indexButtonClick);
+
+      ReadSpeaker.q(function () {
+        self.readSpeakerReady = true;
+      });
 
       self.overflowToggleActions();
     };
@@ -165,6 +170,11 @@
         $('.index-buttons-container .button.next').removeClass('disabled');
       }
 
+      /* Re-Fire Readspeaker when current item doesn't have a play button */
+      if (self.readSpeakerReady && !slider.currSlide.content.find('.rsbtn_play').length) {
+        rspkr.Toggle.createPlayer();
+      }
+
       self.repositionArrows();
     };
 
@@ -263,7 +273,9 @@
     // Audio players
     var $audioPlayers = jQuery(".audio-player");
     // Instantiate jPlayer
-    $audioPlayers.articleAudioPlayer();
+    if($audioPlayers.length){
+      $audioPlayers.articleAudioPlayer();
+    }
   });
 
   $.fn.articleAudioPlayer = function() {
@@ -419,12 +431,19 @@
   U.tryAnotherQuiz = function() {
     var self = this;
 
+    self.$html = $('html');
+
     /**
      * Initialize module on page load.
      * @return {object} this instance
      */
-    this.initialize = function() {
+    self.initialize = function() {
 
+      self.$html.on('equalHeights', self.equalizeHeights);
+      return this;
+    };
+
+    self.equalizeHeights = function() {
       // only above 650 viewport or nonresponsive
       if(Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')){
 
@@ -435,7 +454,6 @@
         $('.set-height').equalHeights();
 
       }
-      return this;
     };
 
     return this.initialize();

@@ -1,0 +1,142 @@
+/*
+ * Purple: 7A4182
+ * Blue: 298FC2
+ */
+/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+#gameboard.dyslexia_game {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+.breakpoint_phone #gameboard {
+  font-size: 18px;
+}
+
+/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+#dyslexia_swaps_ctr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #7A4182;
+}
+
+/* line 19, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+.breakpoint_phone #dyslexia_swaps_ctr {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+#dyslexia_swaps {
+  color: #FFF;
+  line-height: 30px;
+  margin: 25px 40px;
+  min-width: 175px;
+}
+
+/* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+.breakpoint_phone #dyslexia_swaps {
+  line-height: 21px;
+  margin: 10px 15px;
+  min-width: 0px;
+}
+
+/* line 36, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+#dyslexia_swaps .rule {
+  padding: 0 10px 0 0;
+}
+
+/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+#dyslexia_sentence {
+  position: absolute;
+  top: 130px;
+  width: 96%;
+  padding: 0 2%;
+  text-align: left;
+}
+
+/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+.breakpoint_phone #dyslexia_sentence {
+  top: 80px;
+  width: 100%;
+  padding: 0;
+}
+
+/* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+#dyslexia_sentence .word {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 15px 10px;
+}
+
+/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+.breakpoint_phone #dyslexia_sentence .word {
+  margin: 5px 10px;
+}
+
+/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+#dyslexia_sentence .punctuation {
+  font-size: 42px;
+  color: #7A4182;
+}
+
+/* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+.breakpoint_phone #dyslexia_sentence .punctuation {
+  font-size: 30px;
+}
+
+/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+#dyslexia_sentence .letter {
+  cursor: pointer;
+  display: inline-block;
+  min-width: 38px;
+  max-width: 48px;
+  height: 48px;
+  line-height: 48px;
+  font-size: 42px;
+  text-align: center;
+  margin: 0 5px;
+}
+
+/* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+.breakpoint_phone #dyslexia_sentence .letter {
+  min-width: 30px;
+  max-width: 36px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 30px;
+  margin: 0 2px;
+}
+
+/* line 91, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+#dyslexia_score {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+.breakpoint_phone #dyslexia_score {
+  top: 20px;
+  left: 20px;
+  bottom: auto;
+  text-align: left;
+}
+
+/* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+.thumbsup {
+  width: 52px;
+  height: 52px;
+  background: url("../../../images/simulations/dyslexia/desktop/thumbs_up.png") no-repeat;
+}
+
+/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+.thumbsdown {
+  width: 52px;
+  height: 52px;
+  background: url("../../../images/simulations/dyslexia/desktop/thumbs_down.png") no-repeat;
+}

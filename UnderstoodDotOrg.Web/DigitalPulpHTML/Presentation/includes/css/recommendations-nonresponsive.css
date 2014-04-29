@@ -1,0 +1,1183 @@
+/**
+ * Include SASS partials for recos modules.
+ */
+/**
+ * SASS mixin for cross-platform border-radius.
+ */
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.recos-for-you-container h2,
+.recos-upcoming-events h2,
+.recos-ask-parents h2 {
+  color: #7a4183;
+  font-weight: normal;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 28px;
+  line-height: 1.75rem;
+  text-align: center;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 36px;
+  font-size: 2.25rem;
+  margin-bottom: 40px;
+  padding: 0 6.5%;
+  padding: 0;
+}
+
+/* R1 - Create Account */
+/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.page-topic.recommendations h1 {
+  padding-left: 100px;
+  margin-top: 21px;
+  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 40px;
+  line-height: 2.5rem;
+  position: relative;
+}
+/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.page-topic.recommendations h1:before {
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 80px;
+  content: "";
+  background-image: url("../images/icon.recommendations.star.png");
+  background-size: 78px auto;
+  background-repeat: no-repeat;
+}
+/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.page-topic.recommendations .page-subtitle {
+  padding-left: 100px;
+  font-size: 21px;
+  font-size: 1.3125rem;
+  color: #7a4183;
+  margin-top: 12px;
+}
+
+/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-sample {
+  margin-bottom: 30px;
+  margin-right: 4.166666%;
+  margin-bottom: 0;
+}
+/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-sample > img {
+  display: none;
+  display: block;
+  width: 100%;
+  max-width: 388px;
+}
+
+/* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-usage {
+  padding-left: 4.166666%;
+  border-left: 1px solid #e2e2e2;
+}
+/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-usage h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: #7a4183;
+}
+/* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-usage dl {
+  display: table;
+  margin-bottom: 33px;
+}
+/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-usage dt, .col.recommendations-usage dd {
+  display: table-cell;
+  vertical-align: top;
+}
+/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-usage dt {
+  width: 80px;
+}
+/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-usage dt .count {
+  display: block;
+  width: 55px;
+  height: 55px;
+  line-height: 56px;
+  line-height: 3.5rem;
+  font-size: 32px;
+  font-size: 2rem;
+  color: #7a4183;
+  text-align: center;
+  background-image: url("../images/icon.circle.110x110.png");
+  background-size: 55px auto;
+  background-repeat: no-repeat;
+  font-weight: 700;
+}
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-usage dd {
+  color: #696969;
+  line-height: 24px;
+  line-height: 1.5rem;
+  padding: 0;
+}
+/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-usage .buttons {
+  padding-left: 80px;
+}
+/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-usage .buttons .button {
+  display: inline-block;
+  width: 45%;
+  margin-bottom: 0;
+}
+/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.col.recommendations-usage .buttons .sign-up {
+  margin-right: 0;
+}
+
+/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations {
+  margin: 40px 0 0;
+  padding: 40px 0;
+  background: #f4f2f1;
+}
+/* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .recommendations-promos {
+  padding: 0;
+}
+/* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .promo {
+  display: table;
+  margin-bottom: 45px;
+  padding: 0 15px;
+  padding: 0;
+}
+/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .promo a {
+  color: #426da9;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+/* line 157, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .promo a:hover {
+  text-decoration: underline;
+}
+/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .recommendations-promos .thumb,
+.additional-recommendations .recommendations-promos .promo-content {
+  display: table-cell;
+  vertical-align: top;
+}
+/* line 169, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .recommendations-promos .thumb {
+  width: 135px;
+  padding-right: 15px;
+  width: 190px;
+  padding-right: 30px;
+}
+/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .recommendations-promos .thumb.video {
+  position: relative;
+}
+/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .recommendations-promos .thumb.video:before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 66px;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 160px;
+  height: 88px;
+}
+/* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .recommendations-promos .thumb.video:after {
+  content: "";
+  width: 41px;
+  height: 41px;
+  top: 13px;
+  left: 40px;
+  background-image: url("../images/sprite.icon.reco.play-button.png");
+  background-size: 41px auto;
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  top: 24px;
+  left: 60px;
+}
+/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .recommendations-promos .thumb.video:hover:after {
+  background-position: 0 -41px;
+}
+/* line 214, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .recommendations-promos .thumb img {
+  width: 100%;
+}
+/* line 225, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .children-key ul {
+  padding: 0;
+}
+/* line 229, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .children-key li {
+  display: inline-block;
+  width: 25px;
+}
+/* line 235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .related-tool-wrapper {
+  margin: 0 15px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 30px;
+}
+/* line 245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .related-tool {
+  display: block;
+  background: #fff;
+  padding: 20px 40px 30px 40px;
+  color: #7a4183;
+  width: 100%;
+  max-width: 390px;
+  margin: 0;
+  float: right;
+}
+/* line 258, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .related-tool:hover {
+  text-decoration: none;
+}
+/* line 262, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .related-tool span {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+/* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .related-tool .tool-intro {
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 20px;
+  font-size: 1.25rem;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+/* line 275, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .related-tool .tool-name {
+  font-size: 24px;
+  font-size: 1.5rem;
+  padding-top: 105px;
+  background-size: 114px auto;
+  background-image: url("../images/icon.recommendations.parenting.coach.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+/* line 286, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .child-content-indicator {
+  clear: both;
+  margin: 40px 0 0;
+  float: left;
+  width: 100%;
+  padding: 0 15px;
+}
+/* line 301, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.additional-recommendations .child-content-indicator .children-key {
+  width: 100%;
+}
+
+/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container {
+  margin: 0 15px 25px;
+  margin: 0 20px 45px;
+}
+/* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .carousel-container {
+  border-bottom: solid 1px #c6c5c5;
+  padding-bottom: 25px;
+  padding-bottom: 40px;
+}
+/* line 19, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .why-link {
+  text-align: center;
+  text-align: left;
+}
+/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .why-link .popover ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .why-link .popover .col1 {
+  float: left;
+  width: 33%;
+}
+/* line 36, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .why-link .popover .col1 li {
+  display: block;
+  background: #f4f2f1;
+  color: #208ec4;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 40px;
+  line-height: 2.5rem;
+  height: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .why-link .popover .col2 {
+  float: left;
+  width: 67%;
+  padding-left: 30px;
+}
+/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .why-link .popover .col2 h4 {
+  color: #7b3f84;
+  font-weight: normal;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 20px;
+  line-height: 1.25rem;
+  margin: -5px 0 15px 0;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .why-link .popover .col2 ul {
+  float: left;
+  margin-bottom: 22px;
+}
+/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .why-link .popover .col2 li {
+  color: #696969;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 16px;
+  line-height: 1rem;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 20px;
+  line-height: 1.25rem;
+}
+/* line 82, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .why-link .popover .col2 li a {
+  text-decoration: underline;
+}
+/* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .why-link .popover .col2 li a:hover {
+  text-decoration: none;
+}
+/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-container .why-link .popover .col2 .button {
+  float: left;
+  height: 40px;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 40px;
+  line-height: 2.5rem;
+  width: 110px;
+  margin-bottom: 30px;
+}
+
+/* line 111, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-carousels .recos-for-you-container:last-child.recos-for-you-container {
+  margin-bottom: 0;
+}
+/* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you-carousels .recos-for-you-container:last-child .carousel-container {
+  border-bottom: none;
+}
+
+/* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you {
+  margin-bottom: 20px;
+}
+/* line 126, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding: 80px 0 0 0;
+}
+/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you .rsOverflow {
+  margin-top: -70px;
+  margin-top: -95px;
+}
+/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li {
+  width: 100%;
+  width: 50%;
+  float: left;
+  margin-top: 25px;
+}
+/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li .article-photo {
+  display: block;
+  float: left;
+  margin-bottom: 95px;
+  overflow: hidden;
+  width: 45%;
+  margin-bottom: 45px;
+  width: 45%;
+  width: 32%;
+}
+/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li .article-photo img {
+  width: 100%;
+}
+/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li .article-title {
+  float: left;
+  padding-left: 20px;
+  width: 55%;
+  margin-bottom: 95px;
+  margin-bottom: 45px;
+  width: 49%;
+  width: 62%;
+}
+/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li .article-title h3 {
+  margin: 0 0 .5em;
+  font-weight: normal;
+  margin: -5px 0 .5em;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 22px;
+  line-height: 1.375rem;
+  margin: -5px 0 .5em;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 28px;
+  line-height: 1.75rem;
+}
+/* line 204, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li .article-title h3:hover {
+  text-decoration: underline;
+}
+/* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li .article-title p {
+  line-height: 1.2em;
+  color: #696969;
+}
+/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li .article-title .buttons-container {
+  display: block;
+  display: none;
+}
+/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li .article-title .buttons-container button {
+  float: left;
+  width: 28px;
+  height: 30px;
+  border-right: solid 1px #d2d2d2;
+  margin: 0 12px 0 0;
+  width: 35px;
+  margin: 0 15px 0 0;
+}
+/* line 230, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li .article-title .buttons-container button:last-child {
+  border-right: none !important;
+}
+/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you .rsArrowIcn {
+  z-index: 2;
+  top: 0;
+  bottom: initial;
+}
+/* line 257, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you .rsArrowLeft .rsArrowIcn {
+  top: auto;
+  bottom: 26px;
+  right: 50%;
+  margin-right: 15px;
+  margin-right: 0;
+  bottom: 0;
+  top: 26px;
+  right: 54px;
+  right: 44px;
+}
+/* line 276, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you .rsArrowRight .rsArrowIcn {
+  top: auto;
+  bottom: 26px;
+  right: auto;
+  left: 50%;
+  margin-left: 15px;
+  left: auto;
+  margin-left: 0;
+  bottom: 0;
+  top: 26px;
+  right: 0;
+}
+
+/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events {
+  position: relative;
+  background: #f4f2f1;
+  margin: 0;
+  padding: 0 15px;
+  padding: 0 20px;
+}
+/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events > .row {
+  border-bottom: solid 1px #c6c5c5;
+  padding: 25px 0 80px;
+  padding-bottom: 25px;
+  padding: 45px 0 25px;
+}
+/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .rsContent > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .rsContent > ul > li {
+  padding-bottom: 25px;
+  float: left;
+  width: 50%;
+  padding-right: 20px;
+  padding-bottom: 0;
+}
+/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .event-wrapper {
+  padding: 0 20px 0 40px;
+}
+/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .event-wrapper .author-image {
+  float: left;
+  position: relative;
+}
+/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .event-wrapper .author-image img {
+  width: 100%;
+}
+/* line 60, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .event-wrapper .author-image .label {
+  background: #426da9;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  height: 35px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 35px;
+  line-height: 2.1875rem;
+  color: #fff;
+  width: 100%;
+}
+/* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .event-wrapper .event-card-info {
+  padding-left: 20px;
+  overflow: hidden;
+}
+/* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .event-wrapper .event-card-info .event-card-title {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 22px;
+  line-height: 1.375rem;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 28px;
+  line-height: 1.75rem;
+}
+/* line 91, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .event-wrapper .event-card-info .event-card-date {
+  color: #7a4283;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-size: 1rem;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .event-wrapper .event-card-info .event-card-author {
+  color: #7a4283;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-size: 16px;
+  font-size: 1rem;
+}
+/* line 117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .rsArrowIcn {
+  z-index: 2;
+  top: 0;
+  bottom: initial;
+}
+/* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .rsArrowLeft .rsArrowIcn {
+  top: auto;
+  bottom: 20px;
+  right: 50%;
+  margin-right: 15px;
+  margin-right: 0;
+  bottom: 26px;
+  top: 0;
+  right: 54px;
+  right: 44px;
+}
+/* line 147, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
+.recos-upcoming-events .rsArrowRight .rsArrowIcn {
+  top: auto;
+  bottom: 20px;
+  right: auto;
+  left: 50%;
+  margin-left: 15px;
+  left: auto;
+  margin-left: 0;
+  bottom: 26px;
+  top: 0;
+  right: 0;
+}
+
+/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents {
+  position: relative;
+  background: #f4f2f1;
+  margin: 0;
+  padding: 0 15px;
+  padding: 0 20px;
+}
+/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents > .row {
+  padding: 25px 0 80px;
+  padding-bottom: 25px;
+  padding: 45px 0 0;
+}
+/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .rsContent > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .rsContent > ul > li {
+  float: left;
+  width: 50%;
+  padding-bottom: 0;
+}
+/* line 36, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .rsContent > ul > li:nth-child(odd) {
+  padding-right: 10px;
+}
+/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .parents-wrapper {
+  background: #fff;
+  float: left;
+  padding: 25px;
+  padding: 35px 40px;
+}
+/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .parents-wrapper .parents-question h3 {
+  font-weight: normal;
+  color: #7a4183;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 22px;
+  line-height: 1.375rem;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 28px;
+  line-height: 1.75rem;
+}
+/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .parents-wrapper .parents-question p {
+  color: #696969;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  margin-bottom: 20px;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .parents-wrapper .toolbar .links {
+  margin-bottom: 15px;
+  float: left;
+}
+/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .parents-wrapper .toolbar .link {
+  font-size: 14px;
+  font-size: 0.875rem;
+  border-left: solid 1px #d2d2d2;
+  display: inline-block;
+  padding-left: 7px;
+  margin-left: 4px;
+  text-decoration: underline;
+  font-size: 16px;
+  font-size: 1rem;
+  padding-left: 20px;
+  margin-left: 17px;
+}
+/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .parents-wrapper .toolbar .link:first-child {
+  border-left: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .parents-wrapper .toolbar .link:hover {
+  text-decoration: none;
+}
+/* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .parents-wrapper .toolbar .children {
+  float: right;
+}
+/* line 126, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .rsArrowIcn {
+  z-index: 2;
+  top: 0;
+  bottom: initial;
+}
+/* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .rsArrowLeft .rsArrowIcn {
+  top: auto;
+  bottom: 20px;
+  right: 50%;
+  margin-right: 15px;
+  margin-right: 0;
+  bottom: 26px;
+  top: 0;
+  right: 54px;
+  right: 44px;
+}
+/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.recos-ask-parents .rsArrowRight .rsArrowIcn {
+  top: auto;
+  bottom: 20px;
+  right: auto;
+  left: 50%;
+  margin-left: 15px;
+  left: auto;
+  margin-left: 0;
+  bottom: 26px;
+  top: 0;
+  right: 0;
+}
+
+/* line 175, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.child-content-indicator.recos {
+  background: #f4f2f1;
+  margin: 0 0 45px;
+  padding: 0 15px;
+  margin-bottom: 45px;
+  padding: 0 20px 20px;
+}
+/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+.child-content-indicator.recos .col-23.offset-1 {
+  width: 100%;
+  margin-left: 0;
+}
+
+/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
+.recos-tab-content {
+  margin: 0;
+  margin: 0 15px;
+}
+/* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
+.recos-tab-content > .row {
+  border-bottom: solid 1px #c6c5c5;
+}
+/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
+.recos-tab-content .tab-content {
+  padding: 0 15px;
+}
+
+/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
+#recos-tabs > ul {
+  padding: 0;
+  display: table;
+  width: 100%;
+  list-style: none;
+  margin: 0 0 25px;
+  margin-bottom: 40px;
+}
+/* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
+#recos-tabs > ul > li {
+  display: table;
+  float: left;
+  width: 25%;
+}
+/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
+#recos-tabs > ul > li a {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 15px;
+  line-height: 0.9375rem;
+  background-color: #e7e4e2;
+  display: table-cell;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border-right: solid 1px #fff;
+  border-top: solid 1px #fff;
+  color: #696969;
+  padding: 0 5%;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 19px;
+  line-height: 1.1875rem;
+}
+/* line 58, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
+#recos-tabs > ul > li a:hover {
+  color: #426da9;
+}
+/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
+#recos-tabs > ul > li.active a {
+  cursor: default;
+  background-color: #fff;
+  border-top: solid 1px #7a4183;
+  color: #7a4183;
+  margin-right: 1px;
+}
+/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
+#recos-tabs > ul > li.active a:hover {
+  text-decoration: none;
+}
+
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
+.recos-tab-connect header {
+  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
+.recos-tab-connect header h3 {
+  font-weight: normal;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 19px;
+  line-height: 1.1875rem;
+  color: #696969;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+  margin-bottom: 0;
+}
+/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
+.recos-tab-connect header .button {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  font-size: 16px;
+  font-size: 1rem;
+}
+/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
+.recos-tab-connect .parents-member-cards {
+  position: relative;
+}
+/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
+.recos-tab-connect .parents-member-cards .member-card-container {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  width: 33.3333333%;
+  width: 25%;
+}
+/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
+.recos-tab-connect .member-card {
+  float: none;
+  height: 302px;
+  margin: 0 auto;
+  width: 128px;
+  margin-bottom: 25px;
+  height: 323px;
+  margin-bottom: 45px;
+  padding: 0;
+  width: 160px;
+}
+/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
+.recos-tab-connect .member-card .member-card-info {
+  height: 273px;
+  width: 150px;
+}
+/* line 82, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
+.recos-tab-connect .member-card .member-card-specialties {
+  margin-top: 12px;
+  width: 190px;
+}
+
+/* line 2, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups,
+.recos-blogs {
+  margin: 0;
+}
+/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .community-groups-wrapper,
+.recos-blogs .community-groups-wrapper {
+  position: relative;
+}
+/* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards,
+.recos-blogs .group-cards {
+  margin-top: 31px;
+  margin-bottom: 25px;
+  height: auto !important;
+  margin: 60px 0 50px 0;
+}
+/* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card,
+.recos-blogs .group-cards .group-card {
+  margin-bottom: 40px;
+  padding: 0;
+  display: table;
+}
+/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-image,
+.recos-blogs .group-cards .group-card-image {
+  display: table-cell;
+  vertical-align: top;
+  padding-right: 16px;
+  width: 45%;
+  width: 36%;
+}
+/* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-image img,
+.recos-blogs .group-cards .group-card-image img {
+  width: 100%;
+}
+/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info,
+.recos-blogs .group-cards .group-card-info {
+  display: table-cell;
+  vertical-align: top;
+  width: 55%;
+  float: none;
+  padding-right: 40px;
+  width: 64%;
+}
+/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info .group-card-name,
+.recos-blogs .group-cards .group-card-info .group-card-name {
+  color: #7a4183;
+  display: inline-block;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 21px;
+  line-height: 1.3125rem;
+  font-weight: normal;
+  margin-bottom: 16px;
+  margin-top: -5px;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 30px;
+  line-height: 1.875rem;
+  max-width: 240px;
+}
+/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info .group-card-members, .recos-groups .group-cards .group-card-info .group-card-posts,
+.recos-blogs .group-cards .group-card-info .group-card-members,
+.recos-blogs .group-cards .group-card-info .group-card-posts {
+  color: #7b3f84;
+  display: inline-block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  height: 24px;
+  font-size: 16px;
+  font-size: 1rem;
+}
+/* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info .group-card-members,
+.recos-blogs .group-cards .group-card-info .group-card-members {
+  border-bottom: 1px solid #d2d2d2;
+}
+/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info .group-card-date, .recos-groups .group-cards .group-card-info .group-card-source,
+.recos-blogs .group-cards .group-card-info .group-card-date,
+.recos-blogs .group-cards .group-card-info .group-card-source {
+  color: #696969;
+  display: inline-block;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info .card-buttons,
+.recos-blogs .group-cards .group-card-info .card-buttons {
+  display: table;
+  margin-top: 15px;
+  padding: 0;
+  margin-top: 30px;
+}
+/* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info .card-buttons span,
+.recos-blogs .group-cards .group-card-info .card-buttons span {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info .card-buttons .button,
+.recos-blogs .group-cards .group-card-info .card-buttons .button {
+  margin-right: 10px;
+  width: 78px;
+  margin-bottom: 12px;
+  width: 135px;
+  margin-bottom: 0;
+  margin-right: 26px;
+  width: 90px;
+}
+/* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info .card-buttons .button:after,
+.recos-blogs .group-cards .group-card-info .card-buttons .button:after {
+  content: '';
+  white-space: normal;
+}
+/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info .card-buttons a,
+.recos-blogs .group-cards .group-card-info .card-buttons a {
+  cursor: pointer;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-size: 16px;
+  font-size: 1rem;
+}
+/* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info .card-buttons a:before,
+.recos-blogs .group-cards .group-card-info .card-buttons a:before {
+  content: '\a';
+  white-space: pre;
+}
+/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-info .card-buttons a:before,
+.recos-blogs .group-cards .group-card-info .card-buttons a:before {
+  content: '';
+  white-space: normal;
+}
+/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .action-skip-this,
+.recos-blogs .action-skip-this {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #426da9;
+  text-decoration: underline;
+  text-align: left;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-size: 16px;
+  font-size: 1rem;
+}
+/* line 165, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .action-skip-this:hover, .recos-groups .action-skip-this:focus,
+.recos-blogs .action-skip-this:hover,
+.recos-blogs .action-skip-this:focus {
+  text-decoration: none;
+}
+/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .rsContent > ul,
+.recos-blogs .rsContent > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .carousel-arrow-wrapper,
+.recos-blogs .carousel-arrow-wrapper {
+  height: 36px;
+  position: relative;
+  right: 0;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  width: 180px;
+  height: 31px;
+}
+/* line 196, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .carousel-arrow-wrapper .next-prev-menu.arrows,
+.recos-blogs .carousel-arrow-wrapper .next-prev-menu.arrows {
+  position: relative;
+}
+/* line 200, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .carousel-arrow-wrapper .rsArrow,
+.recos-blogs .carousel-arrow-wrapper .rsArrow {
+  display: inline-block;
+  height: 36px;
+  position: static;
+  right: 0;
+  width: 36px;
+  height: 31px;
+  width: 31px;
+}
+/* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .carousel-arrow-wrapper .rsArrowLeft .rsArrowIcn,
+.recos-blogs .carousel-arrow-wrapper .rsArrowLeft .rsArrowIcn {
+  left: 0;
+}
+/* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .carousel-arrow-wrapper .view-all,
+.recos-blogs .carousel-arrow-wrapper .view-all {
+  color: #298fc2;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 36px;
+  line-height: 2.25rem;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  width: 100%;
+  height: 36px;
+  text-align: center;
+  font-size: 16px;
+  font-size: 1rem;
+  left: 0px;
+  height: 31px;
+  line-height: 29px;
+  line-height: 1.8125rem;
+}
+
+/* line 248, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards {
+  margin-top: 40px;
+}
+/* line 256, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .disclaimer {
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #696969;
+  font-size: 16px;
+  font-size: 1rem;
+}
+/* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .disclaimer i {
+  display: inline-block;
+  background: url("../images/icon.lock.lo-res.png") right 0 no-repeat;
+  width: 13px;
+  height: 18px;
+  background-size: 13px 18px;
+  margin-left: 10px;
+  position: absolute;
+  position: relative;
+  top: 2px;
+}
+
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-toolkit.scss */
+.recos-tab-content .tab-toolkit-wrapper {
+  display: block;
+  position: static;
+  top: auto;
+  left: auto;
+  width: 100%;
+  height: 100%;
+}
+/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-toolkit.scss */
+.recos-tab-content .tab-toolkit-wrapper .tab-toolkit-header-container {
+  background: none;
+  padding: 0;
+  position: static;
+}

@@ -318,7 +318,7 @@
 /* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-in.scss */
 .myaccount-sign-in .fb-sign-in img {
   margin-bottom: 25px;
-  height: auto;
+  height: 50px;
   max-width: 310px;
   width: 100%;
   display: block;
@@ -334,52 +334,16 @@
 /* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-in.scss */
 .myaccount-sign-in input {
   display: block;
-  width: 100%;
   margin-bottom: 25px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.myaccount-sign-in input.placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.myaccount-sign-in input:-moz-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.myaccount-sign-in input::-moz-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.myaccount-sign-in input:-ms-input-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.myaccount-sign-in input::-webkit-input-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-in.scss */
+/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-in.scss */
 .myaccount-sign-in .button {
   display: block;
   margin: 0px auto 15px auto;
   width: 40%;
   width: 30%;
 }
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-in.scss */
+/* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-in.scss */
 .myaccount-sign-in .sign-in-forgot-password {
   color: #426da9;
   font-family: Arial, sans-serif;
@@ -763,21 +727,25 @@
   display: inline-block;
   height: 18px;
 }
-/* line 260, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 259, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.no-backgroundsize .account-notification-tabs i {
+  background-image: url("../images/sprite.icon.notifications.lo-res.png");
+}
+/* line 263, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-notification-comment {
   width: 21px;
 }
-/* line 263, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 266, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-notification-link {
   background-position: -40px 0px;
   width: 16px;
 }
-/* line 267, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 270, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-notification-reminder {
   background-position: -22px 0px;
   width: 16px;
 }
-/* line 271, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 274, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-results-more {
   background-image: url("../images/sprite.icon.arrows.png");
   background-position: top left;
@@ -788,7 +756,7 @@
   margin-left: 20px;
   width: 18px;
 }
-/* line 281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 284, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .results-more-link {
   font-size: 24px;
   font-size: 1.5rem;
@@ -800,51 +768,51 @@
   top: 55px;
   margin: 70px 0;
 }
-/* line 292, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 295, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .results-more-link span {
   display: inline-block;
 }
-/* line 295, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 298, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-item {
   border-bottom: 1px solid #d1d1d1;
   padding: 15px 0px 30px 0px;
   padding: 0px 0px 15px 0px;
 }
-/* line 298, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 301, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-item p {
   margin: 1em 0 0 0;
 }
-/* line 304, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 307, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header {
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 306, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 309, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header h4 {
   font-weight: normal;
 }
-/* line 309, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 312, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label {
   margin-bottom: 13px;
 }
-/* line 311, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 314, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label i {
   margin-right: 10px;
   position: relative;
 }
-/* line 314, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 317, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label i.icon-notification-comment {
   top: 7px;
 }
-/* line 317, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 320, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label i.icon-notification-link {
   top: 4px;
 }
-/* line 320, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 323, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label i.icon-notification-reminder {
   top: 4px;
 }
-/* line 324, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 327, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label a.notification-link {
   display: block;
   margin-bottom: 18px;
@@ -854,7 +822,7 @@
   display: inline;
   margin-left: 0px;
 }
-/* line 334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 337, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label .timestamp {
   color: #bcbdc0;
   display: none;
@@ -863,21 +831,21 @@
   font-size: 0.875rem;
   display: block;
 }
-/* line 347, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 350, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-body .notification-action {
   margin-top: 0px;
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 350, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 353, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-body .notification-action a {
   text-decoration: underline;
 }
-/* line 352, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 355, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-body .notification-action a:hover {
   text-decoration: none;
 }
-/* line 357, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-body .button {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -888,17 +856,17 @@
   max-width: 110px;
   margin-bottom: 5px;
 }
-/* line 368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 371, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .paragraph-widget {
   display: block;
   display: none;
 }
-/* line 372, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 375, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .textarea-widget {
   display: none;
   display: block;
 }
-/* line 377, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 380, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .checkbox-wrapper {
   display: block;
   margin-bottom: 20px;
@@ -906,15 +874,15 @@
   width: 99%;
   text-align: right;
 }
-/* line 386, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 389, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .checkbox-wrapper label {
   display: inline-block;
 }
-/* line 388, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 391, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .checkbox-wrapper label:first-child {
   margin-right: 42px;
 }
-/* line 390, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 393, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .checkbox-wrapper label span, .account-notification-tabs .checkbox-wrapper label input {
   font-size: 18px;
   font-size: 1.125rem;
@@ -924,16 +892,16 @@
   line-height: 1.125rem;
   width: 18px;
 }
-/* line 397, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 400, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .checkbox-wrapper label input {
   margin-right: 10px;
 }
-/* line 400, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 403, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .account-notifications-tab-notifications-empty {
   padding-top: 25px;
   padding-top: 50px;
 }
-/* line 405, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 408, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .account-notifications-tab-notifications-empty p {
   color: #7a4183;
   font-size: 24px;
@@ -941,15 +909,15 @@
   padding-bottom: 20px;
   border-bottom: 1px solid #d1d1d1;
 }
-/* line 412, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 415, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .account-notifications-tab-email {
   padding-top: 10px;
 }
-/* line 415, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 418, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .account-notifications-tab-messages {
   padding-top: 50px;
 }
-/* line 418, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 421, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .private-message-tool {
   background: #f4f2f1;
   text-align: center;
@@ -964,18 +932,18 @@
   height: 700px;
   line-height: 700px;
 }
-/* line 435, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 438, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .showmore-footer {
   border-top: none;
   padding: 60px 0 0 0;
   padding-top: 100px;
 }
-/* line 443, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 446, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .showmore-footer .show-more {
   margin-bottom: -20px;
   margin-bottom: 0;
 }
-/* line 450, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 453, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .showmore-footer a i {
   width: 18px;
   height: 11px;
@@ -983,109 +951,96 @@
   background-size: 150px 150px;
 }
 
-/* line 461, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 464, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form p.instructions {
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 464, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 467, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form p.please-read, .account-notifications-tab-text-form legend.please-read {
   font-size: 15px;
   font-size: 0.9375rem;
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 470, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 473, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form legend.please-read {
   margin-bottom: 1em;
 }
-/* line 474, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form input[type=text],
 .account-notifications-tab-text-form textarea {
-  font-family: arial !important;
   max-width: 470px;
-  width: 100%;
 }
-/* line 480, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form input[type=text] {
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 18px;
-  line-height: 1.125rem;
   margin-bottom: 30px;
-  min-height: 45px;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 20px;
-  line-height: 1.25rem;
   margin-bottom: 40px;
 }
-/* line 492, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 490, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form textarea {
-  font-size: 15px;
-  font-size: 0.9375rem;
-  background-color: #f4f2f1;
-  border: none;
+  background-color: #f4f2f1 !important;
+  border: none !important;
   height: 185px;
   padding: 20px;
 }
-/* line 500, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form label {
   display: block;
   margin: 20px 0 40px 0;
 }
-/* line 505, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 502, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form .mobile-phone-number {
   display: inline;
   margin: 0px;
 }
-/* line 510, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 507, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form .button {
   margin-bottom: 40px;
   margin-right: 0px;
   max-width: 230px;
 }
 
-/* line 517, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 514, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggles-wrapper {
   margin-bottom: 50px;
 }
 
-/* line 522, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 519, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper {
   display: block;
   margin-bottom: 20px;
 }
-/* line 526, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 523, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper label {
   cursor: pointer;
   display: table;
   width: 100%;
 }
-/* line 531, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 528, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper label > span, .toggle-wrapper label .ez-checkbox {
   display: table-cell;
   vertical-align: top;
   width: 48%;
 }
-/* line 535, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 532, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper label > span:first-child, .toggle-wrapper label .ez-checkbox:first-child {
   padding-right: 20px;
 }
-/* line 539, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 536, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .ez-checkbox {
   text-align: right;
 }
-/* line 540, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 537, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .ez-hide {
   display: none;
 }
-/* line 541, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 538, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .switch-wrapper {
   display: inline-block;
   width: 155px;
 }
-/* line 546, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 543, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .btn-toggle {
   display: inline-block;
   font-size: 18px;
@@ -1096,7 +1051,7 @@
   width: 75px;
   position: relative;
 }
-/* line 555, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 552, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .btn-toggle button {
   position: absolute;
   top: 0;
@@ -1109,7 +1064,7 @@
   color: inherit;
   padding: 0;
 }
-/* line 568, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 565, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .btn-right {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -1122,7 +1077,7 @@
   background-color: #f4f2f1;
   color: dimgrey;
 }
-/* line 575, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 572, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .btn-left,
 .toggle-wrapper .ez-checked .btn-right {
   -webkit-border-radius: 2px;
@@ -1138,7 +1093,7 @@
   height: 32px;
   line-height: 32px;
 }
-/* line 583, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 580, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .ez-checked .btn-left {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -1194,7 +1149,7 @@
   width: 100%;
   max-width: 310px;
   display: block;
-  height: auto;
+  height: 50px;
   margin-bottom: 25px;
 }
 /* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
@@ -1225,46 +1180,10 @@
 /* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-inputs label input {
   display: block;
-  width: 100%;
   margin-top: 23px;
   margin-bottom: 5px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.sign-up .sign-up-inputs label input.placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.sign-up .sign-up-inputs label input:-moz-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.sign-up .sign-up-inputs label input::-moz-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.sign-up .sign-up-inputs label input:-ms-input-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.sign-up .sign-up-inputs label input::-webkit-input-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 84, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 76, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-inputs p {
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -1278,39 +1197,39 @@
   vertical-align: top;
   margin-top: 15px;
 }
-/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-inputs .zip-code {
   margin-bottom: 20px;
 }
-/* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-inputs .zip-code label {
   width: 35%;
   position: relative;
 }
-/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-inputs .zip-code p {
   margin-left: 42%;
   width: 22%;
   margin-top: 40px;
 }
-/* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-inputs .zip-code p a {
   position: absolute;
   left: 37%;
 }
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 121, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-inputs span {
   display: none;
 }
-/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-inputs .error {
   margin-top: -15px;
 }
-/* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-inputs .error input {
   border-color: #de5a02;
 }
-/* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-inputs .error span {
   color: #de5a02;
   font-family: Arial, sans-serif;
@@ -1321,17 +1240,17 @@
   display: inline-block;
   width: 940px;
 }
-/* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 147, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-newsletter {
   width: 76%;
 }
-/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-newsletter label input {
   display: inline-block;
   width: 30px;
   height: 15px;
 }
-/* line 169, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-newsletter label span {
   font-family: Arial, sans-serif;
   color: #696969;
@@ -1346,7 +1265,7 @@
   font-size: 1.125rem;
   width: 92%;
 }
-/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-newsletter p {
   margin-top: 25px;
   width: 100%;
@@ -1355,7 +1274,7 @@
   font-family: 'Circular', Arial, sans-serif;
   width: 98%;
 }
-/* line 199, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-newsletter .button {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -1367,7 +1286,7 @@
   margin-bottom: 15px;
   width: 35%;
 }
-/* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 204, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-newsletter .we-take-your-privacy-seriously {
   color: #426da9;
   font-family: Arial, sans-serif;
@@ -1379,16 +1298,16 @@
   padding-top: 6px;
   text-align: center;
 }
-/* line 228, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 220, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .popover {
   max-width: 450px;
 }
-/* line 231, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .we-take-your-privacy-seriously-container {
   min-width: 400px;
   text-align: center;
 }
-/* line 236, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 228, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .we-take-your-privacy-seriously-container .we-take-your-privacy-seriously-content {
   color: #696969;
   line-height: 24px;
@@ -1397,11 +1316,11 @@
   font-size: 1rem;
   font-style: normal;
 }
-/* line 241, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 233, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .we-take-your-privacy-seriously-container .we-take-your-privacy-seriously-content a {
   text-decoration: underline;
 }
-/* line 248, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
+/* line 240, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
 .sign-up .sign-up-inputs .zip-code p.why-do-we-ask-container .why-do-we-ask-content {
   font-size: 16px;
   font-size: 1rem;
@@ -1948,45 +1867,9 @@
 }
 /* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_reset-password.scss */
 .reset-password input {
-  width: 100%;
   margin-bottom: 30px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.reset-password input.placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.reset-password input:-moz-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.reset-password input::-moz-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.reset-password input:-ms-input-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.reset-password input::-webkit-input-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_reset-password.scss */
+/* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_reset-password.scss */
 .reset-password .button {
   display: block;
   margin: 0 auto;
@@ -2030,57 +1913,18 @@
   margin-bottom: 22px;
 }
 /* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_forgot-password.scss */
-.forgot-password input {
-  width: 100%;
-}
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.forgot-password input.placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.forgot-password input:-moz-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.forgot-password input::-moz-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.forgot-password input:-ms-input-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.forgot-password input::-webkit-input-placeholder {
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_forgot-password.scss */
 .forgot-password .button {
   margin-bottom: 35px;
   margin-top: 35px;
   max-width: 110px;
   max-width: 150px;
 }
-/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_forgot-password.scss */
+/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_forgot-password.scss */
 .forgot-password a {
   color: #426da9;
   text-decoration: underline;
 }
-/* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_forgot-password.scss */
+/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_forgot-password.scss */
 .forgot-password a:hover {
   text-decoration: none;
 }
@@ -2646,22 +2490,26 @@
   margin-left: -25px;
 }
 
-/* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+.landing-modules.my-connections {
+  margin-bottom: 2px;
+}
+/* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections h3 {
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 30px;
   line-height: 1.875rem;
 }
-/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 84, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections a {
   color: #406cab;
 }
-/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .button-choices {
   margin-top: 1em;
 }
-/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .button-choices .button {
   height: 40px;
   line-height: normal;
@@ -2670,18 +2518,18 @@
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .button-choices .button.activity {
   float: right;
   margin-right: 0;
 }
-/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .button-choices .button.profile {
   float: left;
   margin-right: 5px;
   margin-right: 10px;
 }
-/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 111, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .connections {
   margin-bottom: 16px;
   padding: 20px 0;
@@ -2689,11 +2537,11 @@
   padding: 20px 0 0;
   margin-left: 20px;
 }
-/* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 121, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .connections .member-cards {
   position: relative;
 }
-/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .connections .user {
   float: left;
   min-height: 257px;
@@ -2701,28 +2549,28 @@
   min-height: 270px;
   width: 33.3333333333%;
 }
-/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .connections .user:nth-child(2) {
   margin-left: 18px;
   margin-left: 0px;
 }
-/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .connections .user:nth-child(3) {
   display: none;
   display: block;
 }
-/* line 144, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .connections .user .user > div {
   min-height: 75px;
   min-height: 25px;
 }
-/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .connections .user img {
   display: block;
   max-width: 100%;
   height: auto;
 }
-/* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .connections .user .user-location {
   color: #696969;
   font-size: 13px;
@@ -2736,7 +2584,7 @@
   line-height: 1.375rem;
   margin-bottom: 10px;
 }
-/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .connections .user .user-name {
   font-size: 18px;
   font-size: 1.125rem;
@@ -2751,7 +2599,7 @@
   line-height: 1.625rem;
   margin: 21px 0 0;
 }
-/* line 178, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
+/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-landing-my-connections.scss */
 .landing-modules.my-connections .connections .user .user-title {
   color: #696969;
   line-height: 22px;
@@ -3176,12 +3024,16 @@
   display: inline-block;
   text-align: right;
 }
-/* line 287, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_friends-view-tabs.scss */
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+.old-ie .friends-view-tabs .comments-panel .comments-col-right footer button {
+  background-color: transparent;
+}
+/* line 290, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_friends-view-tabs.scss */
 .friends-view-tabs .comments-panel .showmore-footer {
   border-top: none;
   padding-top: 10px;
 }
-/* line 293, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_friends-view-tabs.scss */
+/* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_friends-view-tabs.scss */
 .friends-view-tabs .friends-view-tabs-select {
   position: relative;
   bottom: 25px;
@@ -3254,7 +3106,7 @@
 .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes i.icon-comment-like {
   background: url("../images/sprite.icon.comments.png") -19px 0px no-repeat;
   background-image: url("../images/sprite.icon.comments.png");
-  background-size: 54px 36px;
+  background-size: 51px 36px;
   display: inline-block;
   height: 18px;
   position: relative;
@@ -3269,7 +3121,7 @@
 /* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
 .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes:focus i.icon-comment-like, .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes i.icon-comment-like:hover {
   background: url("../images/sprite.icon.comments.png") -19px -18px no-repeat;
-  background-size: 54px 36px;
+  background-size: 51px 36px;
 }
 /* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
 .no-backgroundsize .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes:focus i.icon-comment-like, .no-backgroundsize .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes i.icon-comment-like:hover {
@@ -3282,7 +3134,11 @@
   font-size: 1.125rem;
   font-weight: bold;
 }
-/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+.old-ie .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes {
+  background-color: transparent;
+}
+/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
 .account-mycomments .mycomment-list .mycomment-item .comment-details .dot-container {
   position: absolute;
   display: inline;
@@ -3290,17 +3146,17 @@
   left: 137px;
   left: 194px;
 }
-/* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
+/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
 .account-mycomments .mycomment-list .mycomment-item .comment-details .dot {
   font-size: 25px;
   font-size: 1.5625rem;
   vertical-align: top;
 }
-/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
 .account-mycomments .mycomment-list .mycomment-item .comment-details .timestamp {
   font-family: Arial, sans-serif;
 }
-/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
+/* line 117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
 .account-mycomments .mycomment-list .mycomment-item .comment-type {
   border-bottom: 1px solid #d2d2d2;
   color: #7a4183;
@@ -3312,7 +3168,7 @@
   padding-bottom: 25px;
   border-bottom: none;
 }
-/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
+/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-mycomments.scss */
 .account-mycomments .showmore-footer {
   border-top: none;
   padding-top: 10px;
@@ -3380,65 +3236,12 @@
   margin-bottom: 20px;
   text-align: left;
 }
-/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_my-groups-discussion-form.scss */
-.my-groups-discussion-form input,
-.my-groups-discussion-form textarea {
-  width: 100%;
-}
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.my-groups-discussion-form input.placeholder,
-.my-groups-discussion-form textarea.placeholder {
-  color: #c9c9c9;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  font-size: 1.125rem;
-}
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.my-groups-discussion-form input:-moz-placeholder,
-.my-groups-discussion-form textarea:-moz-placeholder {
-  color: #c9c9c9;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  font-size: 1.125rem;
-}
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.my-groups-discussion-form input::-moz-placeholder,
-.my-groups-discussion-form textarea::-moz-placeholder {
-  color: #c9c9c9;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  font-size: 1.125rem;
-}
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.my-groups-discussion-form input:-ms-input-placeholder,
-.my-groups-discussion-form textarea:-ms-input-placeholder {
-  color: #c9c9c9;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  font-size: 1.125rem;
-}
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.my-groups-discussion-form input::-webkit-input-placeholder,
-.my-groups-discussion-form textarea::-webkit-input-placeholder {
-  color: #c9c9c9;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  font-size: 1.125rem;
-}
-/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_my-groups-discussion-form.scss */
+/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_my-groups-discussion-form.scss */
 .my-groups-discussion-form textarea {
   margin-top: 20px;
-  border: solid 2px #e1e1e1;
-  padding: 14px 0 0 14px;
-  -webkit-font-smoothing: antialiased;
-  color: #696969;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  font-size: 1.125rem;
-  line-height: 24px;
   min-height: 140px;
 }
-/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_my-groups-discussion-form.scss */
+/* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_my-groups-discussion-form.scss */
 .my-groups-discussion-form .button {
   font-size: 16px;
   font-size: 1rem;
@@ -4612,13 +4415,8 @@
   width: 66%;
 }
 /* line 248, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
-.profile-questions input[type=textfield] {
-  font-size: 16px;
-  font-size: 1rem;
-  border: 2px solid #f4f2f1;
+.profile-questions input[type=text] {
   display: inline-block;
-  min-height: 50px;
-  width: 100%;
   max-width: 470px;
 }
 /* line 258, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
@@ -4867,65 +4665,64 @@
   margin-bottom: 25px;
 }
 /* line 456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
-.profile-questions.step-2 input[type=textfield] {
-  width: 100%;
+.profile-questions.step-2 input[type=text] {
   max-width: none;
   max-width: 435px;
 }
 
-/* line 464, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 463, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .difficulties-question {
   padding-bottom: 50px;
 }
-/* line 467, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 466, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .difficulties-question label {
   display: table-row;
   min-height: 23px;
 }
-/* line 471, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 470, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .difficulties-question label span.description {
   padding-right: 25px;
 }
-/* line 474, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 473, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .difficulties-question .question {
   margin-bottom: 5px;
   line-height: 30px;
   line-height: 1.875rem;
 }
-/* line 478, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .difficulties-question .question-description {
   margin: 8px 0 27px 0;
   margin: 0 0 27px 0;
 }
-/* line 485, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 484, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .difficulties-question .checkbox-wrapper {
   min-height: 23px;
   position: relative;
 }
-/* line 490, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 489, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .difficulties-question .info-link {
   display: inline-block;
   position: absolute;
   right: 0px;
   display: none;
 }
-/* line 495, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 494, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .difficulties-question .info-link.selected {
   display: inline !important;
 }
-/* line 501, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 500, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .focus-question .question {
   margin-bottom: 35px;
 }
-/* line 502, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 501, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .disorder-question .question {
   margin-bottom: 50px;
 }
-/* line 504, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 503, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .iep-question .question-inline, .profile-questions.step-2b .select-question .question-inline {
   line-height: 50px;
 }
-/* line 509, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 508, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .select-question .question-inline,
 .profile-questions.step-2b .select-question .select-wrapper {
   display: inline-block;
@@ -4934,7 +4731,7 @@
   margin-bottom: 0;
   width: 50%;
 }
-/* line 518, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 517, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .select-question .select-inner-wrapper {
   display: inline-block;
   position: relative;
@@ -4943,11 +4740,11 @@
   text-align: right;
   min-width: 475px;
 }
-/* line 528, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 527, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .select-question .selector, .profile-questions.step-2b .select-question .icon-wrapper {
   display: inline-block;
 }
-/* line 529, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 528, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .select-question .selector {
   max-width: 85%;
   text-align: left;
@@ -4956,7 +4753,7 @@
   max-width: 240px;
   max-width: 390px;
 }
-/* line 537, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 536, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .select-question select {
   width: 100%;
   width: 90%;
@@ -4964,22 +4761,22 @@
   width: 100%;
 }
 /* line 547, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
-.profile-questions.step-2b span {
+.profile-questions.step-2b .description, .profile-questions.step-2b .info-link, .profile-questions.step-2b .popover-container, .profile-questions.step-2b .title-block {
   display: inline-block;
 }
-/* line 549, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
-.profile-questions.step-2b span .icon-wrapper {
+/* line 551, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+.profile-questions.step-2b .icon-wrapper {
   margin: 0 0 0 10px;
   padding: 0px;
   border: none;
   background-color: transparent;
 }
-/* line 555, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
-.profile-questions.step-2b span .icon-wrapper:focus .icon-tooltip {
+/* line 557, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+.profile-questions.step-2b .icon-wrapper:focus .icon-tooltip {
   background-position: -22px 0px;
 }
-/* line 559, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
-.profile-questions.step-2b span .icon-wrapper .icon-tooltip {
+/* line 561, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+.profile-questions.step-2b .icon-wrapper .icon-tooltip {
   background-image: url("../images/sprite.tooltip.info.png");
   background-size: 44px 22px;
   cursor: pointer;
@@ -4988,15 +4785,15 @@
   line-height: 30px;
   width: 22px;
 }
-/* line 567, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
-.profile-questions.step-2b span .icon-wrapper .icon-tooltip:hover {
+/* line 569, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+.profile-questions.step-2b .icon-wrapper .icon-tooltip:hover {
   background-position: -22px 0px;
 }
-/* line 572, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 573, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .popover {
   max-width: 360px;
 }
-/* line 574, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 575, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .popover .popover-content {
   min-width: 320px;
   height: auto;
@@ -5006,63 +4803,63 @@
   line-height: 24px;
   line-height: 1.5rem;
 }
-/* line 575, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 576, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .popover .popover-content p {
   margin: 0;
 }
-/* line 583, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 584, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .popover .popover-content a {
   color: #406cab;
   text-decoration: underline;
 }
 
-/* line 594, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 595, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 h3.question {
   margin-bottom: 35px;
 }
-/* line 597, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 598, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .role-question .select-wrapper label {
   display: block;
   max-height: 50px;
   width: 100%;
 }
-/* line 602, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 603, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .role-question .selector {
   max-width: 99%;
   width: 100%;
   max-width: 712px;
 }
-/* line 608, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 609, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .role-question label.inline {
   width: 100%;
   max-width: 345px;
 }
-/* line 613, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 614, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .role-question .radio-toggle-wrapper {
   margin-bottom: 0px;
   width: 54%;
 }
-/* line 617, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 618, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .role-question .radio-toggle-wrapper .button {
   margin: 0 0 20px 4%;
   max-width: 47%;
   margin: 0 50px;
   max-width: 150px;
 }
-/* line 620, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 621, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .role-question .radio-toggle-wrapper .button:first-child {
   margin-left: 0px;
 }
-/* line 624, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 625, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .role-question .radio-toggle-wrapper .button:first-child {
   margin: 0;
 }
-/* line 629, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 630, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .role-question .radio-toggle-wrapper,
 .profile-questions.step-3 .role-question label.inline {
   float: left;
 }
-/* line 632, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 633, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .question {
   font-size: 24px;
   font-size: 1.5rem;
@@ -5070,7 +4867,7 @@
   line-height: 24px;
   line-height: 1.5rem;
 }
-/* line 640, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 641, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .question-description {
   font-size: 18px;
   font-size: 1.125rem;
@@ -5080,24 +4877,24 @@
   line-height: 18px;
   line-height: 1.125rem;
 }
-/* line 650, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 651, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .connect-question {
   line-height: inherit;
 }
-/* line 652, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 653, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .connect-question .question {
   margin-bottom: 0;
 }
-/* line 654, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
-.profile-questions.step-3 .connect-question span {
+/* line 655, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+.profile-questions.step-3 .connect-question .title {
   display: table-cell;
 }
-/* line 656, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
-.profile-questions.step-3 .connect-question input[type=textfield] {
+/* line 657, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+.profile-questions.step-3 .connect-question input[type=text] {
   max-width: 444px;
   max-width: 470px;
 }
-/* line 661, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 662, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .connect-question label {
   font-size: 18px;
   font-size: 1.125rem;
@@ -5105,10 +4902,9 @@
   margin-top: 25px;
   margin-top: 30px;
 }
-/* line 668, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 669, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .connect-question .textfield-wrapper input {
   margin-bottom: 5px;
-  display: table-cell;
   margin-bottom: 0px;
 }
 /* line 676, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
@@ -5123,41 +4919,38 @@
 }
 /* line 684, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .connect-question .textfield-wrapper input {
-  width: 100%;
-  font-size: 16px;
-  font-size: 1rem;
   min-width: auto;
 }
-/* line 689, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 687, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .connect-question .textfield-wrapper a {
   display: block;
   text-decoration: underline;
   display: inline-block;
   padding-left: 50px;
 }
-/* line 700, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 698, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .no-uniform-wrapper label {
   display: table;
 }
-/* line 702, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 700, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .no-uniform-wrapper label input, .profile-questions.step-3 .no-uniform-wrapper label span {
   display: table-cell;
 }
-/* line 703, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 701, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .no-uniform-wrapper label span {
   padding-left: 10px;
 }
-/* line 707, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 705, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .form-actions {
   margin: 50px 0 30px 0;
   margin: 50px 0 0 0;
 }
-/* line 714, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 712, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 span.popover-trigger-container {
   display: inline-block;
   padding-left: 50px;
 }
-/* line 718, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 716, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 span.popover-trigger-container .popover-link {
   cursor: pointer;
   display: inline-block;
@@ -5168,15 +4961,15 @@
   color: #406cab;
   font-weight: normal;
 }
-/* line 727, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 725, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 span.popover-trigger-container .popover-link:hover {
   text-decoration: none;
 }
-/* line 730, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 728, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 span.popover-trigger-container .popover {
   max-width: 360px;
 }
-/* line 732, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 730, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 span.popover-trigger-container .popover .popover-content {
   min-width: 320px;
   height: auto;
@@ -5186,11 +4979,11 @@
   line-height: 24px;
   line-height: 1.5rem;
 }
-/* line 733, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 731, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 span.popover-trigger-container .popover .popover-content p {
   margin: 0;
 }
-/* line 742, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
+/* line 740, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-3 span.popover-trigger-container .popover .popover-content a {
   color: #406cab;
   text-decoration: underline;
@@ -5315,8 +5108,6 @@
   color: dimgrey;
   margin: 70px 0 150px 0;
   padding: 0 15px;
-  font-size: 14px;
-  font-size: 0.875rem;
 }
 /* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile h1 {
@@ -5365,23 +5156,18 @@
 .registration-profile .textfield-wrapper {
   margin-top: 20px;
 }
-/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
-.registration-profile .textfield-wrapper input {
-  border: 2px solid #e1e1e1;
-  min-height: 50px;
-}
-/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile .select-wrapper,
 .registration-profile .textfield-wrapper,
 .registration-profile .form-actions {
   display: block;
   width: 100%;
 }
-/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile .form-actions {
   text-align: center;
 }
-/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile .select-wrapper select,
 .registration-profile .textfield-wrapper input,
 .registration-profile .selector,
@@ -5389,14 +5175,14 @@
   max-width: 100%;
   width: 100% !important;
 }
-/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile .question-description {
   font-size: 18px;
   font-size: 1.125rem;
   width: 100%;
   width: 80%;
 }
-/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile .button,
 .registration-profile .full-profile-link {
   display: inline-block;
@@ -5405,32 +5191,32 @@
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile .button:hover,
 .registration-profile .full-profile-link:hover {
   color: #000000;
 }
-/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile .full-profile-link {
   font-size: 14px;
   font-size: 0.875rem;
   margin-top: 25px;
   text-decoration: underline;
 }
-/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile .button {
   max-width: 150px;
 }
 
-/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.about-child h2 {
   margin-bottom: 42px;
 }
-/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.about-child p.question, .registration-profile.about-child legend.question {
   margin-bottom: 15px;
 }
-/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.about-child p.question-description {
   margin: 20px 0 0 0;
   color: #696969;
@@ -5440,21 +5226,15 @@
   line-height: 16px;
   line-height: 1rem;
 }
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
-.registration-profile.about-child input.uniform-input,
-.registration-profile.about-child .selector {
-  font-size: 16px;
-  font-size: 1rem;
-}
 
-/* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile {
   font-size: 18px;
   font-size: 1.125rem;
   margin: 70px 0 50px 0;
   padding: 0 45px !important;
 }
-/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 116, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile .subtitle {
   font-size: 19px;
   font-size: 1.1875rem;
@@ -5462,71 +5242,39 @@
   line-height: 1.4375rem;
   margin-bottom: 15px;
 }
-/* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile .textfield-wrapper input {
   display: inline-block;
-  font-size: 16px;
-  font-size: 1rem;
   float: left;
   margin-bottom: 25px;
   max-width: 241px;
   max-width: 357px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.registration-profile.community-profile .textfield-wrapper input.placeholder {
-  color: #999;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.registration-profile.community-profile .textfield-wrapper input:-moz-placeholder {
-  color: #999;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.registration-profile.community-profile .textfield-wrapper input::-moz-placeholder {
-  color: #999;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.registration-profile.community-profile .textfield-wrapper input:-ms-input-placeholder {
-  color: #999;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-.registration-profile.community-profile .textfield-wrapper input::-webkit-input-placeholder {
-  color: #999;
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 148, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile .checkbox-wrapper {
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile .checkbox-wrapper label {
   display: table;
 }
-/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile .checkbox-wrapper input, .registration-profile.community-profile .checkbox-wrapper span {
   display: table-cell;
 }
-/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile .checkbox-wrapper span {
   padding-left: 10px;
 }
-/* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile div.why-ask-popover-trigger {
   display: inline-block;
   margin-left: 50px;
   margin-left: 40px;
   margin-left: 50px;
 }
-/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 154, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile div.why-ask-popover-trigger button.popover-link {
   cursor: pointer;
   display: inline-block;
@@ -5542,11 +5290,11 @@
   border: 0;
   color: #406cab;
 }
-/* line 178, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile div.why-ask-popover-trigger .popover {
   max-width: 360px;
 }
-/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile div.why-ask-popover-trigger .popover .popover-content {
   min-width: 320px;
   height: auto;
@@ -5556,33 +5304,33 @@
   line-height: 24px;
   line-height: 1.5rem;
 }
-/* line 181, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile div.why-ask-popover-trigger .popover .popover-content p {
   margin: 0;
 }
-/* line 189, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile div.why-ask-popover-trigger .popover .popover-content a {
   color: #406cab;
   text-decoration: underline;
 }
-/* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 183, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile div.why-ask-popover-trigger .popover .popover-content .title {
   font-size: 16px;
   font-size: 1rem;
   font-weight: bold;
   color: #696969;
 }
-/* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile .question-wrapper.sign-up-newsletter {
   max-width: 430px;
 }
-/* line 207, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.community-profile .question-wrapper .question-description {
   max-width: 490px;
   width: auto;
 }
 
-/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
+/* line 205, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_registration-profile.scss */
 .registration-profile.about-child {
   margin: 70px 0 50px 0;
 }

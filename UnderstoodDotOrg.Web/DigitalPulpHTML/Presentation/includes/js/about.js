@@ -206,7 +206,9 @@
   U.AboutTools = function() {
     var self = this;
 
-    detect();
+    self.$html = $('html');
+
+    self.$html.on('equalHeights', detect);
     jQuery(window).resize(detect);
 
     function detect(){
@@ -377,17 +379,22 @@
 
   U.pageNotFoundPromo = function() {
     var self = this;
+    self.$html = $('html');
 
-    // only above 650 viewport or nonresponsive
-    if (Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')){
+    self.$html.on('equalHeights', self.equalizeHeights);
+
+    self.equalizeHeights = function() {
+      // only above 650 viewport or nonresponsive
+      if (Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')){
         $('.promo-single a')
-          .css('height', 'auto')
-          .equalHeights();
+            .css('height', 'auto')
+            .equalHeights();
       }
       else {
         $('.promo-single a')
-          .css('height', 'auto');
+            .css('height', 'auto');
       }
+    };
 
     return this;
   };
@@ -425,6 +432,71 @@
   };
 
 })(jQuery);
+/**
+ * Definition for the expertEvents module.
+ */
+
+(function($){
+
+  // Initialize the module on page load.
+  $(document).ready(function() {
+    new U.expertEvents();
+  });
+
+  U.expertEvents= function() {
+    var self = this;
+
+    /**
+     * Initialize module on page load.
+     * @return {object} this instance
+     */
+    this.initialize = function() {
+
+      self.relocateReadMore();
+
+      $(window).resize(function(){
+        self.relocateReadMore();
+      });
+
+    };
+
+    self.relocateReadMore = function(){
+      // Cache vars
+      var mobileBreakpoint = U.Global.Breakpoints.SMALL_PLUS;
+      var windowWidth = $(window).width();
+      var $seeMore1 = $('.expert-events .expert-events-see-more');
+      var $seeMore2 = $('.expert-blog-posts .expert-events-see-more');
+
+      if(windowWidth < mobileBreakpoint){
+
+        // Move readmore links below content on mobile
+        $seeMore1.appendTo('.expert-event-container');
+        $seeMore1.removeClass('.col-3 offset-1');
+        $seeMore1.addClass('.col-24');
+
+        $seeMore2.appendTo('.expert-blog-post-container');
+        $seeMore2.removeClass('col-3 offset-1');
+        $seeMore2.addClass('col-24');
+
+      }else{
+
+        // More readmore links above content on large viewports
+        $seeMore1.appendTo('.expert-events-title');
+        $seeMore1.removeClass('.col-24');
+        $seeMore1.addClass('.col-3 offset-1');
+
+        $seeMore2.appendTo('.expert-blog-posts-title');
+        $seeMore2.removeClass('col-24');
+        $seeMore2.addClass('col-3 offset-1');
+
+      }
+    };
+
+    return this.initialize();
+  };
+
+})(jQuery);
+
 
 
 

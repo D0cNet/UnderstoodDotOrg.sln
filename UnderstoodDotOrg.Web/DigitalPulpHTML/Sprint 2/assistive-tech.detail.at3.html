@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>Assistive Tech - Detail (AT3)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -266,15 +282,20 @@
 
 
 <!-- Page Title -->
-<div class="container page-topic with-share">
+<div class="container page-topic at3-rs-wrapper">
   <div class="row" >
-    <div class="col col-14 offset-1 ">
+    <div class="col col-14 offset-1">
       
-      <h1>Technology that Can Help</h1>
-      
-        <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
-      
+      <div>
+        <h1 class="rs_read_this">Technology that Can Help</h1>
+        
+          <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
+        
+      </div>
     </div>
+
+    
+
     
     <div class="col col-9">
       <!-- BEGIN PARTIAL: share-save -->
@@ -297,7 +318,7 @@
 <!-- END PARTIAL: share-save -->
     </div>
     
-    
+
   </div>
 </div><!-- .container -->
 
@@ -331,20 +352,22 @@
         <!-- BEGIN PARTIAL: tech-results-single -->
 <section class="tech-search-results single">
 
-  <div class="tech-results-wrapper">
+  <div class="tech-results-wrapper rs_read_this">
     <div class="search-result row">
       <div class="result-image screenshots-popover col col-4 offset-1">
+        <!-- This hidden span's content matches the alt tag of the image which ReadSpeaker is ignoring -->
+        <span class="visuallyhidden rs_read">150x150 Placeholder</span>
         <div class="result-image-inner">
           <a href="REPLACE" class="popover-link" data-popover-placement="bottom"><img alt="150x150 Placeholder" src="http://placehold.it/150x150" /></a>
           <span class="icon-search">search</span>
         </div>
         <!-- BEGIN PARTIAL: assistive-tech-screenshots-popover -->
 <!-- popover hidden content -->
-<div class="popover-container popover-content">
+<div class="popover-container popover-content rs_skip">
   <!-- Borrows CSS class from other module -->
   <section class="user-child-details-popover">
-    <div class="tooltip-title">Autism Play</div>
-    <div class="change-slide-buttons arrows-gray">
+    <div class="tooltip-title rs_skip">Autism Play</div>
+    <div class="change-slide-buttons arrows-gray rs_skip">
       <span class="count"><span class="curr">1</span> of 3</span>
       <div class="rsArrow rsArrowRight"><div class="rsArrowIcn"></div></div>
       <div class="rsArrow rsArrowLeft"><div class="rsArrowIcn"></div></div>
@@ -368,7 +391,7 @@
         <div class="result-ratings">
           <div class="result-details">
             <h3 class="result-title">Read Me Stories</h3>
-            <div class="result-description">vel alias quia quis modi</div>
+            <div class="result-description">ut enim nemo repellendus consequatur</div>
             <div class="result-keywords">
               <ul>
                 <li><a href="REPLACE">Reading</a></li>
@@ -384,21 +407,21 @@
               <span class="visuallyhidden">rating</span>
               <div class="grade-scale">
                 <div class="selection grade6">6</div>
-                <span class="grade1 grade red" aria-hidden="true" role="presentation">1</span>
-                <span class="grade2 grade red" aria-hidden="true" role="presentation">2</span>
-                <span class="grade3 grade yellow" aria-hidden="true" role="presentation">3</span>
-                <span class="grade4 grade yellow" aria-hidden="true" role="presentation">4</span>
-                <span class="grade5 grade yellow" aria-hidden="true" role="presentation">5</span>
-                <span class="grade6 grade green" aria-hidden="true" role="presentation">6</span>
-                <span class="grade7 grade green" aria-hidden="true" role="presentation">7</span>
-                <span class="grade8 grade green" aria-hidden="true" role="presentation">8</span>
-                <span class="grade9 grade green" aria-hidden="true" role="presentation">9</span>
-                <span class="grade10 grade green" aria-hidden="true" role="presentation">10</span>
-                <span class="grade11 grade green" aria-hidden="true" role="presentation">11</span>
-                <span class="grade12 grade green" aria-hidden="true" role="presentation">12</span>
+                <span class="grade1 grade red rs_skip" aria-hidden="true" role="presentation">1</span>
+                <span class="grade2 grade red rs_skip" aria-hidden="true" role="presentation">2</span>
+                <span class="grade3 grade yellow rs_skip" aria-hidden="true" role="presentation">3</span>
+                <span class="grade4 grade yellow rs_skip" aria-hidden="true" role="presentation">4</span>
+                <span class="grade5 grade yellow rs_skip" aria-hidden="true" role="presentation">5</span>
+                <span class="grade6 grade green rs_skip" aria-hidden="true" role="presentation">6</span>
+                <span class="grade7 grade green rs_skip" aria-hidden="true" role="presentation">7</span>
+                <span class="grade8 grade green rs_skip" aria-hidden="true" role="presentation">8</span>
+                <span class="grade9 grade green rs_skip" aria-hidden="true" role="presentation">9</span>
+                <span class="grade10 grade green rs_skip" aria-hidden="true" role="presentation">10</span>
+                <span class="grade11 grade green rs_skip" aria-hidden="true" role="presentation">11</span>
+                <span class="grade12 grade green rs_skip" aria-hidden="true" role="presentation">12</span>
               </div>
             </div>
-            <div class="grade-info-wrapper">
+            <div class="grade-info-wrapper rs_skip">
               <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more info</i></a></div>
               <!-- BEGIN PARTIAL: popover-grade-info -->
 <div class="grade-tooltip popover-container">
@@ -430,12 +453,12 @@
               <span class="visuallyhidden">rating</span>
               <div class="quality-scale">
                 <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
               </div>
             </div>
 
-            <div class="quality-info-wrapper">
+            <div class="quality-info-wrapper rs_skip">
               <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more info</i></a></div>
               <!-- BEGIN PARTIAL: popover-quality-info -->
 <div class="quality-tooltip popover-container">
@@ -443,31 +466,31 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-five" aria-label="5">&nbsp;</div>
+<div class="results-slider blue-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">The best!</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Really Good</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-three" aria-label="3">&nbsp;</div>
+<div class="results-slider blue-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Just Fine</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="2">&nbsp;</div>
+<div class="results-slider blue-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Disappointing</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-one" aria-label="1">&nbsp;</div>
+<div class="results-slider blue-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info">Don't Bother</div>
     </div>
@@ -482,10 +505,10 @@
             <div class="learning-scale-wrapper">
               <div class="learning-scale">
                 <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider -->
               </div>
-              <div class="learning-info-wrapper">
+              <div class="learning-info-wrapper rs_skip">
                 <div class="popover-trigger-container"><a href="REPLACE" class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip">more info</i></a></div>
                 <!-- BEGIN PARTIAL: popover-learning-info -->
 <div class="learning-tooltip popover-container">
@@ -493,37 +516,37 @@
   <div class="ratings-wrapper">
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-five" aria-label="5">&nbsp;</div>
+<div class="results-slider purple-five" aria-label="5">5</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Best:</strong> Really engaging, excellent learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-four" aria-label="4">&nbsp;</div>
+<div class="results-slider purple-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Very Good:</strong> Engaging, very good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Good:</strong> Pretty engaging, good learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-two" aria-label="2">&nbsp;</div>
+<div class="results-slider purple-two" aria-label="2">2</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Fair:</strong> Somewhat engaging, okay learning approach.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-one" aria-label="1">&nbsp;</div>
+<div class="results-slider purple-one" aria-label="1">1</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for learning:</strong> Not recommended for learning.</div>
     </div>
     <div class="rating">
       <div class="rating-icon"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero" aria-label="0">&nbsp;</div>
+<div class="results-slider zero" aria-label="0">0</div>
 <!-- END PARTIAL: results-slider --></div>
       <div class="rating-info"><strong>Not for kids:</strong> Not age-appropriate for kids; not recommended for learning.</div>
     </div>
@@ -566,9 +589,9 @@
     <div class="col col-22 offset-1 skiplink-content" aria-role="main" aria-role="main">
         <!-- BEGIN PARTIAL: what-you-need-to-know-tabs -->
 <div id="tab-container" class="tab-container what-you-need-to-know-tabs">
-  <ul class='etabs'>
+  <ul class='etabs rs_read_this''>
     <li class='tab'><a href="#tabs1-what-you-need-to-know">What You Need To Know</a></li>
-    <li class='tab'><a href="#tabs2-parent-reviews">Parent Reviews</a></li>
+    <li class='tab rs_skip'><a href="#tabs2-parent-reviews">Parent Reviews</a></li>
   </ul>
 
   <div id="tabs1-what-you-need-to-know" class="panel-container">
@@ -576,10 +599,10 @@
     <div class="row">
       <div class="col col-17">
 
-        <section>
+        <section class="rs_read_this what-you-need-to-know-rs-wrapper">
           <h3>What is it ?</h3>
-          <p>Magnam sint doloribus voluptatibus et aut dolorem debitis ipsam sunt voluptatum. maxime aliquam soluta quo est qui corrupti excepturi aut architecto sed voluptate reiciendis temporibus eos. reprehenderit corrupti tempore voluptatem suscipit nemo labore nulla est quo nisi autem nemo. dolorum eveniet beatae et eos nulla. libero odio reiciendis dignissimos cum. in dolore delectus occaecati debitis totam veniam consequuntur</p>
-          <p><span class="platform-list"><a href="REPLACE">iPhone</a>, <a href="REPLACE">Android</a></span> <span class="about-platforms"><a href="REPLACE">Learn about Platforms</a></p>
+          <p>Soluta perferendis in minus recusandae ullam non labore animi. nam qui quod sint nulla quidem facilis beatae est ut ipsam et. molestiae qui laudantium minus perspiciatis quo ut est repellendus vel ullam. distinctio magnam vero consequatur ipsum et explicabo sed sapiente illum animi consequatur eos et. quis nam alias maxime et nisi alias provident ex</p>
+          <p class="skip_this"><span class="platform-list"><a href="REPLACE">iPhone</a>, <a href="REPLACE">Android</a></span> <span class="about-platforms"><a href="REPLACE">Learn about Platforms</a></p>
         </section>
 
         <!-- BEGIN PARTIAL: at-detail-thumb-mobile -->
@@ -599,13 +622,13 @@
 </div><!-- .screenshot-wrapper -->
 <!-- END PARTIAL: at-detail-thumb-mobile -->
 
-        <section>
+        <section class="rs_read_this what-you-need-to-know-rs-wrapper">
           <h3>What can kids learn ?</h3>
           <span class="visuallyhidden">learning rating</span>
           <span class="slider-position"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider purple-three" aria-label="3">&nbsp;</div>
+<div class="results-slider purple-three" aria-label="3">3</div>
 <!-- END PARTIAL: results-slider --></span>
-          <p>Reiciendis molestiae laborum perferendis. corrupti dicta consequatur dolor nihil ratione ullam repellendus aperiam neque ad exercitationem dolor sunt vitae. ut blanditiis blanditiis autem quis necessitatibus voluptatibus. at reprehenderit vel dolores aut odio. omnis maxime voluptatem amet id rerum libero dolor. ab molestias facere autem necessitatibus a mollitia dolor dolores voluptatem provident non. et doloribus aut vitae molestias consequatur laborum deleniti omnis</p>
+          <p>Non cum id omnis doloribus quasi aut corrupti pariatur eos ipsum similique. tenetur iusto ut accusantium cum quae rerum possimus adipisci aut sed sed et. error voluptas placeat velit quis ut aperiam asperiores. et maxime facere odit eos autem et odio ut autem dolores numquam quo. omnis recusandae earum nulla eum iste ut nobis doloribus in neque id qui. id modi aperiam dolorem sint aliquam beatae corrupti voluptas illum</p>
           <h5>Subjects</h5>
           <ul class="kids-subjects">
             <li>Language and Reading</li>
@@ -619,23 +642,23 @@
           <div class="clearfix"></div>
         </section>
 
-        <section>
+        <section class="rs_read_this what-you-need-to-know-rs-wrapper">
           <h3>What is it about ?</h3>
-          <p>Sequi sit tenetur iusto. nulla dolores in aut velit velit ea officia iste illum quas et similique aperiam. magni et adipisci consequatur aut quae repellendus odio voluptas adipisci modi nostrum</p>
+          <p>Deserunt animi vel optio a consectetur itaque labore. est nulla qui nihil enim quo aut sit vel suscipit. ut aut voluptatum quam sit est dignissimos eos. neque id est quo quis modi</p>
         </section>
 
-        <section>
+        <section class="rs_read_this what-you-need-to-know-rs-wrapper">
           <h3>Is it any good ?</h3>
           <span class="visuallyhidden">quality rating</span>
           <span class="slider-position"><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></span>
-          <p>Eligendi alias doloremque rerum et vitae autem non dolores qui architecto. autem numquam neque similique ut fugiat fuga aut. aliquid molestias accusantium ab facilis accusamus incidunt labore. sunt aut rerum aut aliquid maiores alias totam qui molestias aut voluptatibus doloremque provident. non doloremque et quas quia</p>
+          <p>Expedita et ut labore nulla et. reprehenderit voluptatum delectus ipsa iure consectetur distinctio. nobis dolorem provident voluptatum sint neque aspernatur voluptatibus maxime voluptas ab voluptas odit. eos fugit ullam non temporibus et itaque rerum totam. molestiae soluta repellendus distinctio ut et et aperiam illo similique earum quasi</p>
         </section>
 
-        <section>
+        <section class="rs_read_this what-you-need-to-know-rs-wrapper">
           <h3>How parents can help ?</h3>
-          <p>Nobis voluptates eaque eveniet reiciendis rerum eos deleniti et debitis ut qui aliquam voluptatum. placeat officia iste corrupti optio in commodi consequatur provident. ex quaerat ut voluptate voluptatem et ullam quo dolorum natus. aut recusandae et dolorem optio sed sed aut dolorem. dolores quia autem sed atque temporibus iste id soluta. nisi non quis debitis libero non velit sunt aliquid ut adipisci corrupti</p>
+          <p>Velit veritatis dolor nam est ab ab maxime et voluptate sit nostrum recusandae ipsa et. quam est rerum architecto quam omnis laborum qui nihil sint quasi doloremque rerum et modi. dicta blanditiis et sit cumque sequi assumenda est. laudantium quia sint laudantium minima</p>
         </section>
 
         <footer>
@@ -661,13 +684,13 @@
 
   <!-- START PARENT REVIEWS TAB SECTION -->
   <div id="tabs2-parent-reviews" class="panel-container">
-    <div class="row">
+    <div class="row ">
       <div class="col col-17">
         <div class="review-intro">
           <span class="visuallyhidden">review rating</span>
           <div class="review-rating">
             <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider -->
             <h4>7 Reviews of this App</h4>
             <p>For learning &amp; attention issues</p>
@@ -683,7 +706,7 @@
         </div><!-- end .review-intro -->
 
         <div class="parent-reviews">
-          <section class="parent-review">
+          <section class="parent-review rs_read_this what-you-need-to-know-rs-wrapper">
             <div class="review-section-title">
               <div class="review-section grade">
                 Grade
@@ -693,28 +716,28 @@
                 Quality
                 <span class="visuallyhidden">rating</span>
                 <span><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></span>
               </div>
             <div class="review-section date">February 9, 2013</div>
             </div>
             <p>
-              <strong>cumque ea facere at quia.</strong> Enim in natus quos. odio tempore id corrupti quia totam harum delectus consequatur aspernatur consequuntur quia. laborum laborum et consequatur numquam dolorum sit distinctio veritatis ad ut architecto vero qui in
+              <strong>blanditiis dolor quisquam qui a.</strong> Facere atque et ea sunt qui possimus provident assumenda distinctio. earum ut autem error laudantium aut ut. iste dolore minus reprehenderit aliquid at sit. vel debitis iure aut voluptatum reprehenderit illum maiores exercitationem ipsum est eum eligendi et
             </p>
 
             <p>
               <span>Good For</span>
               <span>
-                <a href="REPLACE">Reading</a>
+                <a class="link-separator" href="REPLACE">Reading</a>
               </span>
               <span>
-                <a href="REPLACE">Math</a>
+                <a class="link-separator" href="REPLACE">Math</a>
               </span>
               <span>
-                <a href="REPLACE">Writing</a>
+                <a class="link-separator" href="REPLACE">Writing</a>
               </span>
               <span>
-                <a href="REPLACE">Listening Comprehension</a>
+                <a class="link-separator" href="REPLACE">Listening Comprehension</a>
               </span>
             </p>
 
@@ -723,7 +746,7 @@
             </div><!-- end review-report -->
           </section>
 
-          <section class="parent-review">
+          <section class="parent-review rs_read_this what-you-need-to-know-rs-wrapper">
             <div class="review-section-title">
               <div class="review-section grade">
                 Grade
@@ -733,12 +756,12 @@
                 Quality
                 <span class="visuallyhidden">rating</span>
                 <span><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></span>
               </div>
               <div class="review-section date">February 9, 2013</div>
             </div>
-            <p><strong>quis sed optio sit quo.</strong> Nemo labore id reprehenderit sapiente deleniti illum blanditiis sint. molestiae suscipit iste aut praesentium similique est assumenda iure. pariatur occaecati quia molestiae</p>
+            <p><strong>aut dolor veritatis et minima.</strong> Autem minus fugiat velit cum maiores consectetur unde in distinctio. explicabo id ad consequuntur voluptas amet eum et numquam at nisi voluptatum. voluptatem enim natus ipsum</p>
 
             <p><span>Good For</span> <span><a href="REPLACE">Reading</a></span> <span><a href="REPLACE">Math</a></span> <span><a href="REPLACE">Writing</a></span> <span><a href="REPLACE">Listening Comprehension</a></span></p>
 
@@ -747,7 +770,7 @@
             </div><!-- end review-report -->
           </section>
 
-          <section class="parent-review">
+          <section class="parent-review rs_read_this what-you-need-to-know-rs-wrapper">
             <div class="review-section-title">
               <div class="review-section grade">
                 Grade
@@ -757,12 +780,12 @@
                 Quality
                 <span class="visuallyhidden">rating</span>
                 <span><!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="4">&nbsp;</div>
+<div class="results-slider blue-four" aria-label="4">4</div>
 <!-- END PARTIAL: results-slider --></span>
               </div>
               <div class="review-section date">February 9, 2013</div>
             </div>
-            <p><strong>illum asperiores ut illum rerum.</strong> Numquam nobis est earum sit. ut consequuntur dolores voluptatum nemo explicabo est consequatur molestiae sint voluptas. soluta unde omnis accusamus aliquam alias quam fuga quaerat praesentium impedit. aliquam illum temporibus possimus id delectus ipsum quo aut. asperiores expedita debitis consequuntur eos suscipit voluptatum sunt. nam nam ut ut architecto earum iusto</p>
+            <p><strong>et accusamus ut facilis voluptatem.</strong> Culpa sit ut sit qui vel voluptatem iste culpa ea aliquid. quae similique sed laborum tempore dolorem doloremque nihil et suscipit et consequuntur. perferendis est incidunt voluptatibus. voluptate fuga hic voluptas iure laudantium voluptatem similique consectetur enim et vero facere vel dolor. voluptatem earum tempora ut quaerat</p>
 
             <p><span>Good For</span> <span><a href="REPLACE">Reading</a></span> <span><a href="REPLACE">Math</a></span> <span><a href="REPLACE">Writing</a></span> <span><a href="REPLACE">Listening Comprehension</a></span></p>
 
@@ -928,7 +951,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -1085,7 +1108,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -1100,6 +1123,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/assistive-tech.js"></script>

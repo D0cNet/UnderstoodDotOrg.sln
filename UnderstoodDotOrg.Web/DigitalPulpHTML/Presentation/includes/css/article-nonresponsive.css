@@ -159,18 +159,19 @@
 /* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .article-slideshow-container.slideshow .content h3 {
   font-weight: normal;
+  max-width: 520px;
 }
-/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .article-slideshow-container.slideshow #article-slideshow .slide .content h3 {
   margin-top: 10px;
   margin-top: -10px;
 }
-/* line 169, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .article-slideshow-container.slideshow.tall-image-arrows .rsArrow .rsArrowIcn {
   top: 285px;
 }
 
-/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 175, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .slide-show-border {
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
@@ -181,49 +182,49 @@
   border: solid 1px #dfdfdf;
 }
 
-/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow {
   max-width: 873px;
   width: 100%;
   margin: auto auto;
   width: 100%;
 }
-/* line 184, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow p, #article-slideshow h3, #article-slideshow h4 {
   color: #696969;
   font-weight: normal;
 }
-/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow h3 {
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 189, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow h4 {
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 194, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .rsNav {
   display: none;
 }
 
-/* line 197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 200, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide .content {
   margin: 0 0 0 15px;
   padding-right: 15px;
   min-height: 190px;
   margin: 30px 40px 30px 40px;
 }
-/* line 203, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide .content .share-dropdown-menu {
   float: right;
 }
-/* line 206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide .content .top {
   min-height: 51px;
 }
-/* line 208, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 211, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide .content .slide-count {
   font-size: 18px;
   font-size: 1.125rem;
@@ -241,7 +242,7 @@
   width: 110px;
   margin-top: 0;
 }
-/* line 228, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 231, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide .content h3 {
   font-size: 24px;
   font-size: 1.5rem;
@@ -249,9 +250,8 @@
   font-weight: normal;
   margin: 35px 0 25px 0;
   padding-right: 0;
-  max-width: 450px;
 }
-/* line 236, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 238, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide .content p {
   font-size: 16px;
   font-size: 1rem;
@@ -264,13 +264,13 @@
   line-height: 1.5rem;
   padding-right: 0;
 }
-/* line 248, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 250, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide .content .article-actions {
   float: right;
   margin-top: 30px;
   margin-top: 7px;
 }
-/* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 256, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide .content .share-dropdown-menu {
   color: #406cab;
   float: right;
@@ -279,7 +279,7 @@
   margin-right: -10px;
   margin-top: 0;
 }
-/* line 265, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 267, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.wide-image .image {
   background-position: 50% 0;
   background-repeat: no-repeat;
@@ -290,12 +290,12 @@
   background-size: 870px 490px;
   height: 490px;
 }
-/* line 280, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 282, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.tall-image img {
   width: 47%;
   float: left;
 }
-/* line 286, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 288, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.tall-image .image {
   margin: auto auto;
   background-position: 40% 0;
@@ -309,7 +309,7 @@
   height: 695px;
   width: 390px;
 }
-/* line 303, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 305, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.tall-image .content {
   width: 100%;
   float: left;
@@ -317,18 +317,18 @@
   width: 45%;
   margin: 30px 20px;
 }
-/* line 313, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.tall-image .share-dropdown-menu {
   margin-right: 50px;
   margin: 0;
   margin-right: 40px;
 }
-/* line 322, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 324, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.tall-image .slide-count {
   margin-top: 45px;
   margin-bottom: 15px;
 }
-/* line 329, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 331, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.tall-image .article-actions {
   float: left;
   margin-top: -25px;
@@ -338,25 +338,25 @@
   top: 26px !important;
   margin: 0 !important;
 }
-/* line 345, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 347, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.tall-image h3 {
   clear: both;
 }
-/* line 352, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 354, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.end h3 {
   margin-bottom: 10px;
   margin-bottom: 50px;
 }
-/* line 356, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 358, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.end h4 {
   margin-bottom: 10px;
 }
-/* line 358, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.end .slide-inner {
   padding: 15px;
   padding: 50px 80px 0 80px;
 }
-/* line 364, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 366, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.end .thumbnail {
   background-position: 50% 0;
   background-repeat: no-repeat;
@@ -367,7 +367,7 @@
   margin: 0 50px 50px 0;
   float: left;
 }
-/* line 374, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 376, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.end .text {
   width: 100%;
   float: left;
@@ -376,16 +376,16 @@
   width: 450px;
 }
 
-/* line 390, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 392, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .article-actions {
   margin-top: 0;
   margin-top: 0;
 }
-/* line 395, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 397, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .slide-inner {
   position: relative;
 }
-/* line 397, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 399, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content {
   margin: 0;
   padding: 40px 50px;
@@ -393,13 +393,13 @@
   min-height: 440px;
   padding: 40px;
 }
-/* line 405, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 407, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content h3,
 #article-slideshow .slide.text-slide .content p {
   padding-left: 35px;
   padding-right: 35px;
 }
-/* line 411, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 413, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .top {
   background-color: #fff;
   left: 0;
@@ -412,45 +412,42 @@
   top: auto;
   width: auto;
 }
-/* line 426, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 428, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .share-dropdown-menu {
   padding: 16px 5px;
   background-color: #fff;
   height: 50px;
   padding: 16px 15px 0 15px;
 }
-/* line 436, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 438, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .share-dropdown-menu .share-menu {
   margin: 16px 15px 0 15px;
 }
-/* line 437, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 439, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .share-dropdown-menu .social-share-button {
   border: none;
   background-color: transparent;
   color: inherit;
 }
-/* line 444, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 446, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content p, #article-slideshow .slide.text-slide .content h3 {
   color: #fff;
   float: none;
   width: 100%;
 }
-/* line 449, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 451, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content h3 {
   margin-top: 20px;
-  min-height: 150px;
   font-size: 40px;
   font-size: 2.5rem;
+  margin-top: 34px;
 }
-/* line 454, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 458, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content p {
   font-size: 18px;
   font-size: 1.125rem;
-  min-height: 500px;
-  min-height: 300px;
-  min-height: 200px;
 }
-/* line 461, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 462, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text {
   font-size: 24px;
   font-size: 1.5rem;
@@ -466,7 +463,7 @@
   font-size: 48px;
   font-size: 3rem;
 }
-/* line 470, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 471, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text span {
   border-radius: 50%;
   display: inline-block;
@@ -475,65 +472,65 @@
   text-align: center;
   width: 37px;
 }
-/* line 477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 478, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text span.light-blue-span {
   background-color: #426da9;
 }
-/* line 478, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 479, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text span.blue-span {
   background-color: #25569a;
 }
-/* line 479, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 480, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text span.light-purple-span {
   background-color: #692d72;
 }
-/* line 480, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text span.purple-span {
   background-color: #5a3b7c;
 }
-/* line 489, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 490, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text span {
   margin-top: -25px;
   padding-top: 7px;
   width: 80px;
   height: 80px;
 }
-/* line 499, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 500, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide.light-blue-background .content {
   background-color: #298fc2;
 }
-/* line 500, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 501, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide.blue-background .content {
   background-color: #426da9;
 }
-/* line 501, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 502, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide.light-purple-background .content {
   background-color: #7a4183;
 }
-/* line 502, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 503, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide.purple-background .content {
   background-color: #6f5091;
 }
 
-/* line 508, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 509, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .container.article.slideshow.overflowToggleActions > .row {
   overflow: hidden;
 }
-/* line 510, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 511, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .container.article.slideshow.overflowToggleActions > .row .rsOverflow {
   overflow: visible;
 }
-/* line 512, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .container.article.slideshow.overflowToggleActions > .row .rsOverflow .rsSlide {
   display: none;
 }
-/* line 514, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 515, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .container.article.slideshow.overflowToggleActions > .row .rsOverflow .rsSlide.rsActiveSlide {
   display: block;
   overflow: visible;
 }
 
-/* line 523, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 524, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .text-tips #article-slideshow .slide .article-actions {
   float: none;
   float: right;
@@ -1385,11 +1382,7 @@
 .personalize-checklist .part2 .selector {
   margin-bottom: 40px;
 }
-/* line 256, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_personalize-checklist.scss */
-.personalize-checklist .part2 input[type=text] {
-  width: 100%;
-}
-/* line 260, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_personalize-checklist.scss */
+/* line 257, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_personalize-checklist.scss */
 .personalize-checklist .part2 .button {
   max-width: 150px;
 }
@@ -2226,47 +2219,55 @@ div.jp-audio div.jp-title > ul > li {
   display: block;
 }
 
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
+/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
 .common-questions {
-  margin-bottom: 40px;
-  margin: 0 0 40px;
-  margin-bottom: 0;
+  margin: 0 15px;
+  margin: 0;
+}
+/* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
+.common-questions div.row {
+  margin-bottom: 20px;
 }
 /* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
-.common-questions a {
-  color: #406cab;
-  font-size: 21px;
-  font-size: 1.3125rem;
+.common-questions div.row:last-child {
+  margin-bottom: 7px;
+}
+/* line 16, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
+.common-questions div.row div.image-left {
+  float: left;
+  clear: left;
+  margin-right: 16px;
+  margin-bottom: 40px;
+  margin-right: 0;
+  clear: none;
+}
+/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
+.common-questions div.row div.image-left img {
+  display: block;
+  height: auto;
+  max-width: 130px;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
+.common-questions div.row div.question-right {
+  float: left;
+  width: 48%;
+  margin-bottom: 40px;
+  width: 20.8333333333%;
+  clear: none;
+}
+/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
+.common-questions div.row div.question-right a {
+  font-size: 15px;
+  font-size: 0.9375rem;
   display: block;
   margin-top: -4px;
   margin-top: -6px;
-}
-/* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
-.common-questions figure img {
+  font-size: 21px;
+  font-size: 1.3125rem;
   display: block;
-  height: auto;
-  max-width: 100%;
-}
-/* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
-.common-questions figure.col {
-  clear: left;
-  float: left;
-  margin-bottom: 40px;
-  width: 50%;
-}
-/* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
-.common-questions figure.col img {
-  max-width: 130px;
-}
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
-.common-questions .question {
-  float: left;
-  width: 50%;
-}
-/* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_common-questions.scss */
-.common-questions a {
-  font-size: 15px;
-  font-size: 0.9375rem;
 }
 
 /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_whats-covered.scss */
@@ -2397,18 +2398,19 @@ div.jp-audio div.jp-title > ul > li {
 }
 /* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_expert-question-answer.scss */
 .expert-answer .expert-author .expert-author-info p {
+  color: #fff;
   line-height: 1;
   margin-bottom: 10px;
   margin-bottom: 3px;
   padding-top: 2px;
 }
-/* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_expert-question-answer.scss */
+/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_expert-question-answer.scss */
 .expert-answer .expert-author .expert-author-info p.name {
   font-size: 16px;
   font-size: 1rem;
   font-weight: bold;
 }
-/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_expert-question-answer.scss */
+/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_expert-question-answer.scss */
 .expert-answer .expert-author .expert-author-info p.title {
   margin-bottom: 0;
 }
@@ -2810,37 +2812,41 @@ p.reviewed-by .reviewed-by-date {
   line-height: 40px;
   line-height: 2.5rem;
 }
-/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+.knowledge-quiz legend {
+  width: 100%;
+}
+/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices {
   text-align: left;
   margin-left: 20px;
   margin-left: 0px;
 }
-/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices.incorrect {
   margin-top: -20px;
 }
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices.incorrect .correct-answer-reveal {
   padding-left: 14px;
 }
-/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices button.selected, .knowledge-quiz .answer-choices button.selected:hover, .knowledge-quiz .answer-choices button.selected:focus {
   background: #7a4184;
   color: #fff;
   cursor: default;
 }
-/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices button.disabled, .knowledge-quiz .answer-choices button.disabled:hover, .knowledge-quiz .answer-choices button.disabled:focus {
   background: #d0d1d3;
   color: #333;
   cursor: pointer;
 }
-/* line 65, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices button:focus {
   outline: none;
 }
-/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices .answer-choice-true,
 .knowledge-quiz .answer-choices .answer-choice-false {
   min-width: 130px;
@@ -2850,41 +2856,41 @@ p.reviewed-by .reviewed-by-date {
   height: 55px;
   min-width: 230px;
 }
-/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 84, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices .answer-choice-true {
   margin-right: 16px;
   margin-right: 50px;
 }
-/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices ul li {
   margin-bottom: 30px;
 }
-/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices ul label .radio {
   margin-top: 5px;
   vertical-align: top;
   height: 20px;
 }
-/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices ul label .radio > span {
   height: 20px;
 }
-/* line 100, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices ul label .radio > span > input {
   height: 20px;
 }
-/* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 108, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .answer-choices ul label > span {
   display: inline-block;
   width: 80%;
 }
-/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .correctness-headline {
   margin-bottom: 46px;
   font-size: 36px;
@@ -2894,7 +2900,7 @@ p.reviewed-by .reviewed-by-date {
   font-weight: bold;
   color: #298fc2;
 }
-/* line 116, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .correctness-headline span.correct-incorrect {
   background-image: url("../images/sprite.knowledge-quiz.correct-incorrect.png");
   background-repeat: no-repeat;
@@ -2902,23 +2908,27 @@ p.reviewed-by .reviewed-by-date {
   height: 27px;
   display: inline-block;
 }
-/* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+.no-backgroundsize .knowledge-quiz .correctness-headline span.correct-incorrect {
+  background-image: url("../images/sprite.knowledge-quiz.correct-incorrect.low-res.png");
+}
+/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .correctness-headline span.correct-incorrect.correct {
   background-size: 75px 22px;
   background-position: 0 3px;
 }
-/* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .correctness-headline span.correct-incorrect.incorrect {
   background-size: 75px 22px;
   background-position: -52px 3px;
 }
-/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz div.results-indicators {
   margin-bottom: 30px;
   max-width: 320px;
   max-width: 100%;
 }
-/* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 144, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz div.results-indicators span.results-indicator {
   background-image: url("../images/sprite.knowledge-quiz.results-indicator.png");
   background-repeat: no-repeat;
@@ -2927,27 +2937,27 @@ p.reviewed-by .reviewed-by-date {
   display: inline-block;
   margin-right: 13px;
 }
-/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz div.results-indicators span.results-indicator.correct {
   background-size: 80px 40px;
   background-position: 0 0px;
 }
-/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz div.results-indicators span.results-indicator.incorrect {
   background-size: 80px 40px;
   background-position: -40px 0px;
 }
-/* line 157, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz p.explanation {
   margin-bottom: 46px;
 }
-/* line 159, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .next-question {
   text-align: center;
   text-align: left;
   height: 55px;
 }
-/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
+/* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_knowledge-quiz.scss */
 .knowledge-quiz .next-question button {
   width: 230px;
 }
@@ -3277,41 +3287,14 @@ p.reviewed-by .reviewed-by-date {
 }
 /* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 #glossary-tab #glossary-search input[type=text] {
-  display: inline-block;
-  font-size: 16px;
-  font-size: 1rem;
-  color: #696969;
-  height: 49px;
-  line-height: 20px;
-  background-color: #FFF;
   border: none;
+  display: inline-block;
   width: 66%;
   margin: 0 2% 0 0;
-  padding: 0 5%;
   width: 76%;
   width: 78%;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-#glossary-tab #glossary-search input[type=text].placeholder {
-  color: #696969;
-}
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-#glossary-tab #glossary-search input[type=text]:-moz-placeholder {
-  color: #696969;
-}
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-#glossary-tab #glossary-search input[type=text]::-moz-placeholder {
-  color: #696969;
-}
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-#glossary-tab #glossary-search input[type=text]:-ms-input-placeholder {
-  color: #696969;
-}
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
-#glossary-tab #glossary-search input[type=text]::-webkit-input-placeholder {
-  color: #696969;
-}
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
+/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 #glossary-tab #glossary-search input.find-button {
   display: inline-block;
   height: 49px;
@@ -3323,7 +3306,7 @@ p.reviewed-by .reviewed-by-date {
   margin-right: 0;
   width: 19%;
 }
-/* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
+/* line 117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 #glossary-tab::after {
   content: " ";
   display: block;
@@ -3331,14 +3314,14 @@ p.reviewed-by .reviewed-by-date {
   clear: both;
 }
 
-/* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
+/* line 126, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 .glossary-listing {
   margin-bottom: 25px;
   margin-bottom: 45px;
   padding-right: 10%;
 }
 
-/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
+/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 .glossary-container {
   border-bottom: solid 1px #d2d2d2;
   line-height: 50px;
@@ -3346,7 +3329,7 @@ p.reviewed-by .reviewed-by-date {
   text-align: right;
   margin-bottom: 20px;
 }
-/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
+/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 .glossary-container .glossary-anchor {
   color: #7b3f84;
   font-size: 28px;
@@ -3354,7 +3337,7 @@ p.reviewed-by .reviewed-by-date {
   line-height: 48px;
   float: left;
 }
-/* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
+/* line 148, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 .glossary-container .back-to-top {
   color: #406cab;
   font-size: 15px;
@@ -3362,27 +3345,27 @@ p.reviewed-by .reviewed-by-date {
   line-height: 22px;
   text-decoration: underline;
 }
-/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
+/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 .glossary-container .back-to-top:hover {
   text-decoration: none;
 }
 
-/* line 169, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
+/* line 159, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 .glossary-item {
   margin: 10px 0;
 }
-/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
+/* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 .glossary-item:first-child {
   border-top: solid 1px #696969;
 }
-/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
+/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 .glossary-item h2 {
   color: #7b3f84;
   font-size: 16px;
   font-size: 1rem;
   line-height: 24px;
 }
-/* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
+/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_glossary.scss */
 .glossary-item p {
   color: #696969;
   font-size: 15px;
@@ -3516,24 +3499,15 @@ p.reviewed-by .reviewed-by-date {
 }
 /* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_embed-overlay.scss */
 .embed-overlay textarea {
-  border: 2px solid #f4f2f1;
-  width: 100%;
-  display: block;
   margin-bottom: 20px;
   height: 8em;
-  padding: 18px 12px;
-  color: #696969;
-  font-size: 16px;
-  font-size: 1rem;
-  font-family: arial, helvetica, 'sans-serif';
-  font-weight: normal;
   margin-bottom: 20px;
 }
-/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_embed-overlay.scss */
+/* line 65, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_embed-overlay.scss */
 .embed-overlay .copy-button-container {
   text-align: right;
 }
-/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_embed-overlay.scss */
+/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_embed-overlay.scss */
 .embed-overlay .copy-button-container a {
   font-size: 15px;
   font-size: 0.9375rem;

@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>What's Happening - Logged In, No Groups or Blogs (C2b)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -264,7 +280,7 @@
 <div class="container community-main-header logged-in">
     <header>
         <div class="row header-wrapper">
-            <div class="col col-14 offset-1 header-title">
+            <div class="col col-14 offset-1 header-title rs_read_this">
                 <h1>Welcome to the Understood Community, SonyasMom65</h1>
                 <p class="subhead">A private parent community with expert guidance and support</p>
             </div>
@@ -363,7 +379,7 @@
     <div class="upcoming-events">
         <div class="row">
             <div class="col col-24">
-                <h2>Upcoming Events</h2>
+                <h2 class="rs_read_this">Upcoming Events</h2>
                 <div class="carousel-arrow-wrapper">
                   <!-- BEGIN PARTIAL: community/carousel_arrows -->
 <div class="arrows events next-prev-menu arrows-gray">
@@ -377,7 +393,7 @@
                 </div>
                 <div class="row event-cards">
                     <!-- BEGIN PARTIAL: community/event_card -->
-<div class="col col-11 event-card">
+<div class="col col-11 event-card rs_read_this">
     <div class="event-card-info group">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -389,21 +405,47 @@
         </div><!-- end .event-card-image -->
         <div class="event-card-content">
             <div class="event-card-datetime">
-                Tue Sep 28 at 12am EDT
+                Mon Dec 3 at 12am EST
             </div><!-- end .event-card-datetime -->
             <div class="event-card-title">
-                <a href="REPLACE">Fugit Distinctio Incidunt Magni Totam Quia Odio Ex Ea Consectetur</a>
+                <a href="REPLACE">Odit Ipsam Earum Id Sit Delectus Quis Amet Rerum Ab</a>
             </div><!-- end .event-card-title -->
             <div class="card-buttons">
-                <button type="button" class="button">RSVP</button>
-                <button class="action-skip-this">Skip this</button>
+                <button type="button" class="button rs_skip">RSVP</button>
+                <button class="action-skip-this" href="REPLACE">Skip this</button>
             </div><!-- end .card-buttons -->
         </div><!-- end .event-card-content -->
     </div><!-- end .event-card-info -->
 </div><!-- end .event-card -->
 <!-- END PARTIAL: community/event_card -->
                     <!-- BEGIN PARTIAL: community/event_card -->
-<div class="col col-11 event-card">
+<div class="col col-11 event-card rs_read_this">
+    <div class="event-card-info group">
+        <div class="event-card-image">
+            <a href="REPLACE">
+                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div class="image-label">
+                  Guest Expert
+                </div>
+            </a>
+        </div><!-- end .event-card-image -->
+        <div class="event-card-content">
+            <div class="event-card-datetime">
+                Tue Sep 21 at 12am EDT
+            </div><!-- end .event-card-datetime -->
+            <div class="event-card-title">
+                <a href="REPLACE">Voluptas Eos Voluptates Voluptate Et Ut Sint Excepturi Qui Distinctio</a>
+            </div><!-- end .event-card-title -->
+            <div class="card-buttons">
+                <button type="button" class="button rs_skip">RSVP</button>
+                <button class="action-skip-this" href="REPLACE">Skip this</button>
+            </div><!-- end .card-buttons -->
+        </div><!-- end .event-card-content -->
+    </div><!-- end .event-card-info -->
+</div><!-- end .event-card -->
+<!-- END PARTIAL: community/event_card -->
+                    <!-- BEGIN PARTIAL: community/event_card -->
+<div class="col col-11 event-card rs_read_this">
     <div class="event-card-info group">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -415,21 +457,21 @@
         </div><!-- end .event-card-image -->
         <div class="event-card-content">
             <div class="event-card-datetime">
-                Tue Aug 11 at 12am EDT
+                Tue Apr 27 at 12am EDT
             </div><!-- end .event-card-datetime -->
             <div class="event-card-title">
-                <a href="REPLACE">A Fugiat Voluptatem Ea Aut Tempore Et Accusamus Expedita In</a>
+                <a href="REPLACE">Occaecati Rerum Id Similique Eos Sed Sed Laudantium Eum Est</a>
             </div><!-- end .event-card-title -->
             <div class="card-buttons">
-                <button type="button" class="button">RSVP</button>
-                <button class="action-skip-this">Skip this</button>
+                <button type="button" class="button rs_skip">RSVP</button>
+                <button class="action-skip-this" href="REPLACE">Skip this</button>
             </div><!-- end .card-buttons -->
         </div><!-- end .event-card-content -->
     </div><!-- end .event-card-info -->
 </div><!-- end .event-card -->
 <!-- END PARTIAL: community/event_card -->
                     <!-- BEGIN PARTIAL: community/event_card -->
-<div class="col col-11 event-card">
+<div class="col col-11 event-card rs_read_this">
     <div class="event-card-info group">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -441,21 +483,21 @@
         </div><!-- end .event-card-image -->
         <div class="event-card-content">
             <div class="event-card-datetime">
-                Thu Nov 14 at 12am EST
+                Wed Sep 19 at 12am EDT
             </div><!-- end .event-card-datetime -->
             <div class="event-card-title">
-                <a href="REPLACE">Iste Qui Nostrum Aperiam Veritatis Quam Inventore Debitis Dolor In</a>
+                <a href="REPLACE">Ut Esse Temporibus Dolores Repellat Totam Enim Vel Ipsam Est</a>
             </div><!-- end .event-card-title -->
             <div class="card-buttons">
-                <button type="button" class="button">RSVP</button>
-                <button class="action-skip-this">Skip this</button>
+                <button type="button" class="button rs_skip">RSVP</button>
+                <button class="action-skip-this" href="REPLACE">Skip this</button>
             </div><!-- end .card-buttons -->
         </div><!-- end .event-card-content -->
     </div><!-- end .event-card-info -->
 </div><!-- end .event-card -->
 <!-- END PARTIAL: community/event_card -->
                     <!-- BEGIN PARTIAL: community/event_card -->
-<div class="col col-11 event-card">
+<div class="col col-11 event-card rs_read_this">
     <div class="event-card-info group">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -467,47 +509,21 @@
         </div><!-- end .event-card-image -->
         <div class="event-card-content">
             <div class="event-card-datetime">
-                Tue Apr 22 at 12am EDT
+                Fri Mar 30 at 12am EST
             </div><!-- end .event-card-datetime -->
             <div class="event-card-title">
-                <a href="REPLACE">Et Quis Aperiam Suscipit Qui Vel Voluptatibus Dolor Nulla Excepturi</a>
+                <a href="REPLACE">Explicabo Consequatur Accusantium Non Nobis Quia Voluptatem In Totam Commodi</a>
             </div><!-- end .event-card-title -->
             <div class="card-buttons">
-                <button type="button" class="button">RSVP</button>
-                <button class="action-skip-this">Skip this</button>
+                <button type="button" class="button rs_skip">RSVP</button>
+                <button class="action-skip-this" href="REPLACE">Skip this</button>
             </div><!-- end .card-buttons -->
         </div><!-- end .event-card-content -->
     </div><!-- end .event-card-info -->
 </div><!-- end .event-card -->
 <!-- END PARTIAL: community/event_card -->
                     <!-- BEGIN PARTIAL: community/event_card -->
-<div class="col col-11 event-card">
-    <div class="event-card-info group">
-        <div class="event-card-image">
-            <a href="REPLACE">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                <div class="image-label">
-                  Guest Expert
-                </div>
-            </a>
-        </div><!-- end .event-card-image -->
-        <div class="event-card-content">
-            <div class="event-card-datetime">
-                Mon Feb 26 at 12am EST
-            </div><!-- end .event-card-datetime -->
-            <div class="event-card-title">
-                <a href="REPLACE">Et Nostrum Quisquam Vel Possimus Qui Eligendi Et Corrupti Molestiae</a>
-            </div><!-- end .event-card-title -->
-            <div class="card-buttons">
-                <button type="button" class="button">RSVP</button>
-                <button class="action-skip-this">Skip this</button>
-            </div><!-- end .card-buttons -->
-        </div><!-- end .event-card-content -->
-    </div><!-- end .event-card-info -->
-</div><!-- end .event-card -->
-<!-- END PARTIAL: community/event_card -->
-                    <!-- BEGIN PARTIAL: community/event_card -->
-<div class="col col-11 event-card">
+<div class="col col-11 event-card rs_read_this">
     <div class="event-card-info group">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -519,14 +535,14 @@
         </div><!-- end .event-card-image -->
         <div class="event-card-content">
             <div class="event-card-datetime">
-                Sat Nov 16 at 12am EST
+                Sun Jun 8 at 12am EDT
             </div><!-- end .event-card-datetime -->
             <div class="event-card-title">
-                <a href="REPLACE">Quis Amet Voluptas Necessitatibus Consectetur Placeat Et Dolor Facilis Est</a>
+                <a href="REPLACE">Repudiandae Magni Est Aliquid Non Molestias Facere Voluptatum Et Omnis</a>
             </div><!-- end .event-card-title -->
             <div class="card-buttons">
-                <button type="button" class="button">RSVP</button>
-                <button class="action-skip-this">Skip this</button>
+                <button type="button" class="button rs_skip">RSVP</button>
+                <button class="action-skip-this" href="REPLACE">Skip this</button>
             </div><!-- end .card-buttons -->
         </div><!-- end .event-card-content -->
     </div><!-- end .event-card-info -->
@@ -539,7 +555,7 @@
     <div class="recent-questions">
         <div class="row">
             <div class="col col-24 recent-questions-wrapper">
-                <h2>Recent Questions</h2>
+                <h2 class="rs_read_this">Recent Questions</h2>
                 <div class="carousel-arrow-wrapper">
                   <!-- BEGIN PARTIAL: community/carousel_arrows -->
 <div class="arrows questions next-prev-menu">
@@ -553,115 +569,115 @@
                 </div>
                 <div class="row question-cards">
                     <!-- BEGIN PARTIAL: community/question_card -->
-<div class="col col-12 question-card">
+<div class="col col-12 question-card rs_read_this">
     <div class="question-card-info group">
         <div class="question-card-title-and-text">
             <div class="question-card-title">
-                <a href="REPLACE">Est Doloribus Quos Temporibus Omnis</a>
+                <a href="REPLACE">Corrupti Officia Inventore Fuga Adipisci</a>
             </div><!-- end .question-card-title -->
             <div class="question-card-text">
-                Quidem nesciunt inventore est porro voluptatibus quo laudantium soluta quasi repudiandae similique fugit exercitationem explicabo.
-                Et ea excepturi neque assumenda sed aut non.
-                Error amet saepe quaerat blanditiis.
+                Pariatur qui voluptates autem aspernatur qui et possimus.
+                Impedit praesentium sequi reiciendis quisquam rerum aliquam quia pariatur harum consequuntur laborum molestias illo.
+                Ad velit illo voluptatem pariatur non.
             </div><!-- end .question-card-text -->
         </div>
         <ul class="question-card-links">
-            <li><a href="REPLACE">5 answers</a></li>
-            <li><a href="REPLACE">Answer this Question</a></li>
+            <li><a href="REPLACE" class="rs_skip">5 answers</a></li>
+            <li><a href="REPLACE" class="rs_skip">Answer this Question</a></li>
         </ul><!-- end .question-card-links -->
     </div><!-- end .question-card-info -->
 </div><!-- end .question-card -->
-<div class="col col-12 question-card">
+<div class="col col-12 question-card rs_read_this">
     <div class="question-card-info group">
         <div class="question-card-title-and-text">
             <div class="question-card-title">
-                <a href="REPLACE">Quia Officia Distinctio Pariatur Est</a>
+                <a href="REPLACE">Odio Nostrum Autem Consequatur Amet</a>
             </div><!-- end .question-card-title -->
             <div class="question-card-text">
-                Placeat autem voluptatem a.
-                Quo animi sunt suscipit dolorem voluptas voluptas asperiores eum nesciunt dolor illo quis.
-                Enim aut labore molestiae.
+                Nemo non culpa exercitationem animi voluptas.
+                Sapiente quisquam aliquid quasi sunt accusamus non nemo quas.
+                Fuga ut reiciendis quisquam mollitia.
             </div><!-- end .question-card-text -->
         </div>
-        <ul class="question-card-links">
-            <li><a href="REPLACE">5 answers</a></li>
-            <li><a href="REPLACE">Answer this Question</a></li>
-        </ul><!-- end .question-card-links -->
-    </div><!-- end .question-card-info -->
-</div><!-- end .question-card -->
-<!-- END PARTIAL: community/question_card -->
-                    <!-- BEGIN PARTIAL: community/question_card -->
-<div class="col col-12 question-card">
-    <div class="question-card-info group">
-        <div class="question-card-title-and-text">
-            <div class="question-card-title">
-                <a href="REPLACE">Debitis Qui Ut Molestias Vero</a>
-            </div><!-- end .question-card-title -->
-            <div class="question-card-text">
-                Placeat soluta ducimus magnam est illo dicta quia corrupti blanditiis error a voluptatum.
-                Et aut nostrum ex nemo porro ipsa.
-                Accusamus ut fugit a ut eos exercitationem ea et at repellendus.
-            </div><!-- end .question-card-text -->
-        </div>
-        <ul class="question-card-links">
-            <li><a href="REPLACE">5 answers</a></li>
-            <li><a href="REPLACE">Answer this Question</a></li>
-        </ul><!-- end .question-card-links -->
-    </div><!-- end .question-card-info -->
-</div><!-- end .question-card -->
-<div class="col col-12 question-card">
-    <div class="question-card-info group">
-        <div class="question-card-title-and-text">
-            <div class="question-card-title">
-                <a href="REPLACE">Iste Illum Dolorem Et Tempora</a>
-            </div><!-- end .question-card-title -->
-            <div class="question-card-text">
-                Est quos quasi quae et et aut officia in voluptatibus.
-                Ea quia quaerat minus et numquam corrupti.
-                Id id minus voluptas tempore in aut quod sint corporis sit molestiae harum.
-            </div><!-- end .question-card-text -->
-        </div>
-        <ul class="question-card-links">
-            <li><a href="REPLACE">5 answers</a></li>
-            <li><a href="REPLACE">Answer this Question</a></li>
+        <ul class="question-card-links rs_skip">
+            <li><a href="REPLACE" class="rs_skip">5 answers</a></li>
+            <li><a href="REPLACE" class="rs_skip">Answer this Question</a></li>
         </ul><!-- end .question-card-links -->
     </div><!-- end .question-card-info -->
 </div><!-- end .question-card -->
 <!-- END PARTIAL: community/question_card -->
                     <!-- BEGIN PARTIAL: community/question_card -->
-<div class="col col-12 question-card">
+<div class="col col-12 question-card rs_read_this">
     <div class="question-card-info group">
         <div class="question-card-title-and-text">
             <div class="question-card-title">
-                <a href="REPLACE">Voluptatem Fugiat Expedita Nobis Rerum</a>
+                <a href="REPLACE">Mollitia Nobis Nemo Est Sunt</a>
             </div><!-- end .question-card-title -->
             <div class="question-card-text">
-                Doloribus nam similique tempora consectetur dolorum aliquid saepe sed cum ut deleniti.
-                Tempore similique voluptas omnis recusandae qui reiciendis.
-                Error non enim eum velit vitae qui iste eum suscipit dolor dolore repellat.
+                Perspiciatis voluptatum sit sed aspernatur repudiandae praesentium quasi sed est commodi.
+                Veniam fugit unde asperiores.
+                Nesciunt perspiciatis qui cum omnis fugiat sequi beatae laboriosam.
             </div><!-- end .question-card-text -->
         </div>
         <ul class="question-card-links">
-            <li><a href="REPLACE">5 answers</a></li>
-            <li><a href="REPLACE">Answer this Question</a></li>
+            <li><a href="REPLACE" class="rs_skip">5 answers</a></li>
+            <li><a href="REPLACE" class="rs_skip">Answer this Question</a></li>
         </ul><!-- end .question-card-links -->
     </div><!-- end .question-card-info -->
 </div><!-- end .question-card -->
-<div class="col col-12 question-card">
+<div class="col col-12 question-card rs_read_this">
     <div class="question-card-info group">
         <div class="question-card-title-and-text">
             <div class="question-card-title">
-                <a href="REPLACE">Et Eum Reiciendis Atque Nemo</a>
+                <a href="REPLACE">Non Est Et Laboriosam Quos</a>
             </div><!-- end .question-card-title -->
             <div class="question-card-text">
-                Quia enim et quae omnis ut molestiae enim enim vel quam dolores sed animi.
-                Qui voluptatem aut aut ab totam rerum.
-                Quia eligendi exercitationem sequi dolor eos consequatur omnis voluptatem corporis soluta quae harum et.
+                Officia expedita aut iure et sed.
+                Excepturi necessitatibus placeat error velit eum alias alias voluptate aut et eum mollitia excepturi architecto.
+                Maiores quibusdam odio et temporibus minus porro accusamus et et.
+            </div><!-- end .question-card-text -->
+        </div>
+        <ul class="question-card-links rs_skip">
+            <li><a href="REPLACE" class="rs_skip">5 answers</a></li>
+            <li><a href="REPLACE" class="rs_skip">Answer this Question</a></li>
+        </ul><!-- end .question-card-links -->
+    </div><!-- end .question-card-info -->
+</div><!-- end .question-card -->
+<!-- END PARTIAL: community/question_card -->
+                    <!-- BEGIN PARTIAL: community/question_card -->
+<div class="col col-12 question-card rs_read_this">
+    <div class="question-card-info group">
+        <div class="question-card-title-and-text">
+            <div class="question-card-title">
+                <a href="REPLACE">Sunt Earum Omnis Sed Aut</a>
+            </div><!-- end .question-card-title -->
+            <div class="question-card-text">
+                Itaque ullam nihil veniam recusandae id eum commodi et quod.
+                Perspiciatis voluptatem ut et quo eveniet impedit ea animi autem minima.
+                Dicta vitae a qui enim perferendis qui voluptas reiciendis aspernatur.
             </div><!-- end .question-card-text -->
         </div>
         <ul class="question-card-links">
-            <li><a href="REPLACE">5 answers</a></li>
-            <li><a href="REPLACE">Answer this Question</a></li>
+            <li><a href="REPLACE" class="rs_skip">5 answers</a></li>
+            <li><a href="REPLACE" class="rs_skip">Answer this Question</a></li>
+        </ul><!-- end .question-card-links -->
+    </div><!-- end .question-card-info -->
+</div><!-- end .question-card -->
+<div class="col col-12 question-card rs_read_this">
+    <div class="question-card-info group">
+        <div class="question-card-title-and-text">
+            <div class="question-card-title">
+                <a href="REPLACE">Consequatur Harum Ea Beatae Nisi</a>
+            </div><!-- end .question-card-title -->
+            <div class="question-card-text">
+                Itaque quasi dignissimos veritatis nihil consequatur.
+                Consequatur non similique sit ducimus ab in harum facere ipsam ex temporibus libero.
+                Debitis ea et totam consequatur explicabo quas maiores commodi esse.
+            </div><!-- end .question-card-text -->
+        </div>
+        <ul class="question-card-links rs_skip">
+            <li><a href="REPLACE" class="rs_skip">5 answers</a></li>
+            <li><a href="REPLACE" class="rs_skip">Answer this Question</a></li>
         </ul><!-- end .question-card-links -->
     </div><!-- end .question-card-info -->
 </div><!-- end .question-card -->
@@ -673,7 +689,7 @@
     <div class="community-members">
         <div class="row">
             <div class="col col-24 community-members-wrapper">
-                <h2>My Friends</h2>
+                <h2 class="rs_read_this">My Friends</h2>
                 <div class="carousel-arrow-wrapper">
                   <!-- BEGIN PARTIAL: community/carousel_arrows -->
 <div class="arrows members next-prev-menu arrows-gray">
@@ -688,7 +704,7 @@
                 <div class="row member-cards">
                      <!-- BEGIN PARTIAL: community/member_card -->
 <div class="member-card-container">
-    <div class="col member-card">
+    <div class="rs_read_this col member-card">
         <div class="member-card-info group">
             <div class="member-card-image">
                 <a href="REPLACE">
@@ -698,14 +714,14 @@
             </div><!-- end .member-card-image -->
             <div class="member-card-name hyphenate member">
                 
-                    <a href="REPLACE" class="name-member">Allyson55</a>
-                    <p class="location">numquam</p>
+                    <a href="REPLACE" class="name-member">Tammie87</a>
+                    <p class="location">qui</p>
                 
             </div><!-- end .member-card-name -->
             
             <div class="card-buttons member">
                 
-                <button type="button" class="button blue">See Activity</button>
+                <button type="button" class="button blue rs_skip">See Activity</button>
                 
             </div><!-- end .member.card-buttons -->
             
@@ -713,12 +729,12 @@
         <div class="member-card-specialties">
             <ul>
               <span class="visuallyhidden">grade level</span>
-                <li class='specialty specialty-long'><span tabindex='0' data-tabbable='true'>Adult</span><!-- BEGIN PARTIAL: community/child_info_card -->
+                <li class='specialty '><span tabindex='0' data-tabbable='true'>7th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
-        <h3>Adult,
+        <h3>Grade 7,
             Girl
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -729,10 +745,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Adipisci In</li>
-            <li>Aut Deserunt</li>
-            <li>Delectus Consequatur</li>
-            <li>Maxime Molestiae</li>
+            <li>Velit Aut</li>
+            <li>Ea Dolores</li>
+            <li>Minima Quibusdam</li>
+            <li>Aut Labore</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -753,7 +769,7 @@
 <!-- END PARTIAL: community/member_card -->
                     <!-- BEGIN PARTIAL: community/member_card -->
 <div class="member-card-container">
-    <div class="col member-card">
+    <div class="rs_read_this col member-card">
         <div class="member-card-info group">
             <div class="member-card-image">
                 <a href="REPLACE">
@@ -763,225 +779,14 @@
             </div><!-- end .member-card-image -->
             <div class="member-card-name hyphenate member">
                 
-                    <a href="REPLACE" class="name-member">Cathleen10</a>
-                    <p class="location">sunt</p>
+                    <a href="REPLACE" class="name-member">Jared26</a>
+                    <p class="location">necessitatibus</p>
                 
             </div><!-- end .member-card-name -->
             
             <div class="card-buttons member">
                 
-                <button type="button" class="button blue">See Activity</button>
-                
-            </div><!-- end .member.card-buttons -->
-            
-        </div><!-- end .member-card-info -->
-        <div class="member-card-specialties">
-            <ul>
-              <span class="visuallyhidden">grade level</span>
-                <li class='specialty '><span tabindex='0' data-tabbable='true'>4th</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 4,
-            Girl
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Voluptate Ex</li>
-            <li>Impedit Dolores</li>
-            <li>Et Doloremque</li>
-            <li>Pariatur Voluptatem</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty specialty-long'><span tabindex='0' data-tabbable='true'>Adult</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Adult,
-            Girl
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Incidunt Aspernatur</li>
-            <li>Sunt Nobis</li>
-            <li>Atque Fugiat</li>
-            <li>Quaerat Non</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li>
-
-                <li class="specialty specialty-final">
-                  <span class="visuallyhidden">additional information</span>
-                  <span tabindex='0' data-tabbable='true'>&nbsp;</span>
-                </li>
-            </ul>
-        </div>
-    </div><!-- end .member-card -->
-</div><!-- end .member-card-container  -->
-<!-- END PARTIAL: community/member_card -->
-                    <!-- BEGIN PARTIAL: community/member_card -->
-<div class="member-card-container">
-    <div class="col member-card">
-        <div class="member-card-info group">
-            <div class="member-card-image">
-                <a href="REPLACE">
-                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                    
-                </a>
-            </div><!-- end .member-card-image -->
-            <div class="member-card-name hyphenate member">
-                
-                    <a href="REPLACE" class="name-member">Agnes49</a>
-                    <p class="location">explicabo</p>
-                
-            </div><!-- end .member-card-name -->
-            
-            <div class="card-buttons member">
-                
-                <button type="button" class="button blue">See Activity</button>
-                
-            </div><!-- end .member.card-buttons -->
-            
-        </div><!-- end .member-card-info -->
-        <div class="member-card-specialties">
-            <ul>
-              <span class="visuallyhidden">grade level</span>
-                <li class='specialty '><span tabindex='0' data-tabbable='true'>1st</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 1,
-            Boy
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Pariatur Tenetur</li>
-            <li>Eos Quibusdam</li>
-            <li>Temporibus Adipisci</li>
-            <li>Ut Enim</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>6th</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 6,
-            Boy
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Voluptas Iusto</li>
-            <li>Et Velit</li>
-            <li>Ipsam Eum</li>
-            <li>Minus Quam</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty specialty-long'><span tabindex='0' data-tabbable='true'>Adult</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Adult,
-            Boy
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Eos In</li>
-            <li>Est Cupiditate</li>
-            <li>Consequatur Repellendus</li>
-            <li>Repudiandae Blanditiis</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li>
-
-                <li class="specialty specialty-final">
-                  <span class="visuallyhidden">additional information</span>
-                  <span tabindex='0' data-tabbable='true'>&nbsp;</span>
-                </li>
-            </ul>
-        </div>
-    </div><!-- end .member-card -->
-</div><!-- end .member-card-container  -->
-<!-- END PARTIAL: community/member_card -->
-                    <!-- BEGIN PARTIAL: community/member_card -->
-<div class="member-card-container">
-    <div class="col member-card">
-        <div class="member-card-info group">
-            <div class="member-card-image">
-                <a href="REPLACE">
-                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                    
-                </a>
-            </div><!-- end .member-card-image -->
-            <div class="member-card-name hyphenate member">
-                
-                    <a href="REPLACE" class="name-member">Alexis0</a>
-                    <p class="location">tenetur</p>
-                
-            </div><!-- end .member-card-name -->
-            
-            <div class="card-buttons member">
-                
-                <button type="button" class="button blue">See Activity</button>
+                <button type="button" class="button blue rs_skip">See Activity</button>
                 
             </div><!-- end .member.card-buttons -->
             
@@ -991,7 +796,7 @@
               <span class="visuallyhidden">grade level</span>
                 <li class='specialty '><span tabindex='0' data-tabbable='true'>2nd</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
         <h3>Grade 2,
@@ -1005,64 +810,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Debitis Maxime</li>
-            <li>Velit Voluptas</li>
-            <li>Voluptatibus Ipsum</li>
-            <li>Fugit Dolor</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>6th</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 6,
-            Girl
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Et Est</li>
-            <li>Facere Beatae</li>
-            <li>Consequatur Itaque</li>
-            <li>Laboriosam Qui</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>9th</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 9,
-            Girl
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Id Enim</li>
-            <li>Quia Expedita</li>
-            <li>Sunt Soluta</li>
-            <li>Nobis Esse</li>
+            <li>Minima Ut</li>
+            <li>Excepturi Voluptas</li>
+            <li>Id Molestias</li>
+            <li>Distinctio Cupiditate</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1072,7 +823,7 @@
 </div>
 <!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>12th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
         <h3>Grade 12,
@@ -1086,10 +837,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Dolorem Qui</li>
-            <li>Rerum In</li>
-            <li>Temporibus Dolores</li>
-            <li>Voluptas Et</li>
+            <li>Sit Qui</li>
+            <li>Veniam Asperiores</li>
+            <li>Porro Quae</li>
+            <li>Fuga Asperiores</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1110,7 +861,7 @@
 <!-- END PARTIAL: community/member_card -->
                     <!-- BEGIN PARTIAL: community/member_card -->
 <div class="member-card-container">
-    <div class="col member-card">
+    <div class="rs_read_this col member-card">
         <div class="member-card-info group">
             <div class="member-card-image">
                 <a href="REPLACE">
@@ -1120,14 +871,14 @@
             </div><!-- end .member-card-image -->
             <div class="member-card-name hyphenate member">
                 
-                    <a href="REPLACE" class="name-member">Brendan92</a>
-                    <p class="location">debitis</p>
+                    <a href="REPLACE" class="name-member">Harriet66</a>
+                    <p class="location">occaecati</p>
                 
             </div><!-- end .member-card-name -->
             
             <div class="card-buttons member">
                 
-                <button type="button" class="button blue">See Activity</button>
+                <button type="button" class="button blue rs_skip">See Activity</button>
                 
             </div><!-- end .member.card-buttons -->
             
@@ -1135,9 +886,182 @@
         <div class="member-card-specialties">
             <ul>
               <span class="visuallyhidden">grade level</span>
-                <li class='specialty '><span tabindex='0' data-tabbable='true'>5th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+                <li class='specialty '><span tabindex='0' data-tabbable='true'>3rd</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 3,
+            Girl
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Possimus Blanditiis</li>
+            <li>In Earum</li>
+            <li>A Rerum</li>
+            <li>In Error</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>5th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover rs_skip">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 5,
+            Girl
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Voluptatum Perferendis</li>
+            <li>Doloribus Soluta</li>
+            <li>Officiis Debitis</li>
+            <li>Et Dolorem</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>11th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover rs_skip">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 11,
+            Girl
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Deserunt Optio</li>
+            <li>Nihil Aliquam</li>
+            <li>Quidem Dolorum</li>
+            <li>Nihil Ea</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li>
+
+                <li class="specialty specialty-final">
+                  <span class="visuallyhidden">additional information</span>
+                  <span tabindex='0' data-tabbable='true'>&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+    </div><!-- end .member-card -->
+</div><!-- end .member-card-container  -->
+<!-- END PARTIAL: community/member_card -->
+                    <!-- BEGIN PARTIAL: community/member_card -->
+<div class="member-card-container">
+    <div class="rs_read_this col member-card">
+        <div class="member-card-info group">
+            <div class="member-card-image">
+                <a href="REPLACE">
+                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                    
+                </a>
+            </div><!-- end .member-card-image -->
+            <div class="member-card-name hyphenate member">
+                
+                    <a href="REPLACE" class="name-member">Calum41</a>
+                    <p class="location">in</p>
+                
+            </div><!-- end .member-card-name -->
+            
+            <div class="card-buttons member">
+                
+                <button type="button" class="button blue rs_skip">See Activity</button>
+                
+            </div><!-- end .member.card-buttons -->
+            
+        </div><!-- end .member-card-info -->
+        <div class="member-card-specialties">
+            <ul>
+              <span class="visuallyhidden">grade level</span>
+                <li class='specialty '><span tabindex='0' data-tabbable='true'>2nd</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover rs_skip">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 2,
+            Boy
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Fugit Sed</li>
+            <li>Molestias Ducimus</li>
+            <li>At Dolorem</li>
+            <li>Aut Ea</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>3rd</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover rs_skip">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 3,
+            Boy
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Provident Molestiae</li>
+            <li>Placeat Quo</li>
+            <li>Sequi Quia</li>
+            <li>Qui Itaque</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>5th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
         <h3>Grade 5,
@@ -1151,10 +1075,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Sed Qui</li>
-            <li>Sit Facilis</li>
-            <li>Id Et</li>
-            <li>Aut Aut</li>
+            <li>Et Ratione</li>
+            <li>Nobis Explicabo</li>
+            <li>Assumenda Sed</li>
+            <li>Rerum Aspernatur</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1162,12 +1086,12 @@
         </div>
     </div>
 </div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>8th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>11th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
-        <h3>Grade 8,
+        <h3>Grade 11,
             Boy
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -1178,37 +1102,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Minus Dolorum</li>
-            <li>Nobis Autem</li>
-            <li>Libero Est</li>
-            <li>Natus Animi</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>10th</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 10,
-            Girl
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Natus Error</li>
-            <li>Iure Nemo</li>
-            <li>Accusantium Non</li>
-            <li>Et Et</li>
+            <li>Adipisci Nulla</li>
+            <li>Et Accusantium</li>
+            <li>Nostrum Explicabo</li>
+            <li>Eaque Repudiandae</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1229,7 +1126,7 @@
 <!-- END PARTIAL: community/member_card -->
                     <!-- BEGIN PARTIAL: community/member_card -->
 <div class="member-card-container">
-    <div class="col member-card">
+    <div class="rs_read_this col member-card">
         <div class="member-card-info group">
             <div class="member-card-image">
                 <a href="REPLACE">
@@ -1239,14 +1136,14 @@
             </div><!-- end .member-card-image -->
             <div class="member-card-name hyphenate member">
                 
-                    <a href="REPLACE" class="name-member">Ruby46</a>
-                    <p class="location">dolorem</p>
+                    <a href="REPLACE" class="name-member">Andres99</a>
+                    <p class="location">sit</p>
                 
             </div><!-- end .member-card-name -->
             
             <div class="card-buttons member">
                 
-                <button type="button" class="button blue">See Activity</button>
+                <button type="button" class="button blue rs_skip">See Activity</button>
                 
             </div><!-- end .member.card-buttons -->
             
@@ -1256,7 +1153,7 @@
               <span class="visuallyhidden">grade level</span>
                 <li class='specialty '><span tabindex='0' data-tabbable='true'>1st</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
         <h3>Grade 1,
@@ -1270,10 +1167,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Quia Neque</li>
-            <li>Expedita Quae</li>
-            <li>Consequuntur Earum</li>
-            <li>Odio Qui</li>
+            <li>Tempore Maiores</li>
+            <li>Repellendus Iste</li>
+            <li>Error Ut</li>
+            <li>Vero Reprehenderit</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1281,12 +1178,12 @@
         </div>
     </div>
 </div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>6th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>5th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
-        <h3>Grade 6,
+        <h3>Grade 5,
             Girl
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -1297,10 +1194,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Laboriosam Dolores</li>
-            <li>Incidunt Voluptas</li>
-            <li>Aut Dolor</li>
-            <li>Cum Aut</li>
+            <li>Aperiam Repudiandae</li>
+            <li>Quidem Ipsam</li>
+            <li>Temporibus Dolorem</li>
+            <li>Recusandae Quia</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1308,39 +1205,12 @@
         </div>
     </div>
 </div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>8th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty specialty-long'><span tabindex='0' data-tabbable='true'>Adult</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
-        <h3>Grade 8,
-            Girl
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Accusantium Velit</li>
-            <li>Quia Odit</li>
-            <li>Quod Reprehenderit</li>
-            <li>Fuga Harum</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>10th</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 10,
+        <h3>Adult,
             Boy
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -1351,10 +1221,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Nemo Aspernatur</li>
-            <li>Dignissimos Praesentium</li>
-            <li>Sequi Repellat</li>
-            <li>Ut Aut</li>
+            <li>Possimus Ratione</li>
+            <li>Consequatur Ut</li>
+            <li>Aliquid Quibusdam</li>
+            <li>Ad Delectus</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1375,7 +1245,7 @@
 <!-- END PARTIAL: community/member_card -->
                     <!-- BEGIN PARTIAL: community/member_card -->
 <div class="member-card-container">
-    <div class="col member-card">
+    <div class="rs_read_this col member-card">
         <div class="member-card-info group">
             <div class="member-card-image">
                 <a href="REPLACE">
@@ -1385,14 +1255,14 @@
             </div><!-- end .member-card-image -->
             <div class="member-card-name hyphenate member">
                 
-                    <a href="REPLACE" class="name-member">Mitzi37</a>
-                    <p class="location">nobis</p>
+                    <a href="REPLACE" class="name-member">Jackie99</a>
+                    <p class="location">distinctio</p>
                 
             </div><!-- end .member-card-name -->
             
             <div class="card-buttons member">
                 
-                <button type="button" class="button blue">See Activity</button>
+                <button type="button" class="button blue rs_skip">See Activity</button>
                 
             </div><!-- end .member.card-buttons -->
             
@@ -1400,12 +1270,12 @@
         <div class="member-card-specialties">
             <ul>
               <span class="visuallyhidden">grade level</span>
-                <li class='specialty specialty-long'><span tabindex='0' data-tabbable='true'>PreK</span><!-- BEGIN PARTIAL: community/child_info_card -->
+                <li class='specialty '><span tabindex='0' data-tabbable='true'>1st</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
-        <h3>PreK,
+        <h3>Grade 1,
             Girl
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -1416,37 +1286,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Tempore Consectetur</li>
-            <li>Ullam Aut</li>
-            <li>Nobis Sint</li>
-            <li>Est Sit</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>3rd</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 3,
-            Boy
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Veniam Quisquam</li>
-            <li>Aut Hic</li>
-            <li>Occaecati Possimus</li>
-            <li>Qui Provident</li>
+            <li>Fuga Illo</li>
+            <li>Corrupti Nihil</li>
+            <li>Animi Quibusdam</li>
+            <li>Voluptas Quisquam</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1456,102 +1299,10 @@
 </div>
 <!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>4th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
         <h3>Grade 4,
-            Boy
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Placeat Distinctio</li>
-            <li>Modi Rerum</li>
-            <li>Voluptatem Iusto</li>
-            <li>Molestias Eaque</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li>
-
-                <li class="specialty specialty-final">
-                  <span class="visuallyhidden">additional information</span>
-                  <span tabindex='0' data-tabbable='true'>&nbsp;</span>
-                </li>
-            </ul>
-        </div>
-    </div><!-- end .member-card -->
-</div><!-- end .member-card-container  -->
-<!-- END PARTIAL: community/member_card -->
-                    <!-- BEGIN PARTIAL: community/member_card -->
-<div class="member-card-container">
-    <div class="col member-card">
-        <div class="member-card-info group">
-            <div class="member-card-image">
-                <a href="REPLACE">
-                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                    
-                </a>
-            </div><!-- end .member-card-image -->
-            <div class="member-card-name hyphenate member">
-                
-                    <a href="REPLACE" class="name-member">Bryce64</a>
-                    <p class="location">libero</p>
-                
-            </div><!-- end .member-card-name -->
-            
-            <div class="card-buttons member">
-                
-                <button type="button" class="button blue">See Activity</button>
-                
-            </div><!-- end .member.card-buttons -->
-            
-        </div><!-- end .member-card-info -->
-        <div class="member-card-specialties">
-            <ul>
-              <span class="visuallyhidden">grade level</span>
-                <li class='specialty '><span tabindex='0' data-tabbable='true'>3rd</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 3,
-            Boy
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Qui Deserunt</li>
-            <li>Fugit Nihil</li>
-            <li>Sapiente Expedita</li>
-            <li>Magnam Facilis</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>12th</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 12,
             Girl
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -1562,10 +1313,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Eum Placeat</li>
-            <li>Architecto Sint</li>
-            <li>Rerum Dolor</li>
-            <li>Magni Est</li>
+            <li>Sint Cupiditate</li>
+            <li>Ullam Consequatur</li>
+            <li>Vero Cumque</li>
+            <li>Ut Autem</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1586,7 +1337,7 @@
 <!-- END PARTIAL: community/member_card -->
                     <!-- BEGIN PARTIAL: community/member_card -->
 <div class="member-card-container">
-    <div class="col member-card">
+    <div class="rs_read_this col member-card">
         <div class="member-card-info group">
             <div class="member-card-image">
                 <a href="REPLACE">
@@ -1596,14 +1347,14 @@
             </div><!-- end .member-card-image -->
             <div class="member-card-name hyphenate member">
                 
-                    <a href="REPLACE" class="name-member">Brayden80</a>
-                    <p class="location">qui</p>
+                    <a href="REPLACE" class="name-member">Allen94</a>
+                    <p class="location">impedit</p>
                 
             </div><!-- end .member-card-name -->
             
             <div class="card-buttons member">
                 
-                <button type="button" class="button blue">See Activity</button>
+                <button type="button" class="button blue rs_skip">See Activity</button>
                 
             </div><!-- end .member.card-buttons -->
             
@@ -1611,12 +1362,12 @@
         <div class="member-card-specialties">
             <ul>
               <span class="visuallyhidden">grade level</span>
-                <li class='specialty '><span tabindex='0' data-tabbable='true'>4th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+                <li class='specialty specialty-long'><span tabindex='0' data-tabbable='true'>Adult</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
-        <h3>Grade 4,
+        <h3>Adult,
             Boy
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -1627,10 +1378,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Deserunt Dignissimos</li>
-            <li>Et Et</li>
-            <li>Non Commodi</li>
-            <li>Itaque Perspiciatis</li>
+            <li>Sequi Est</li>
+            <li>Velit Iure</li>
+            <li>Adipisci Unde</li>
+            <li>Facilis Rerum</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1638,12 +1389,50 @@
         </div>
     </div>
 </div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>7th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+<!-- END PARTIAL: community/child_info_card --></li>
+
+                <li class="specialty specialty-final">
+                  <span class="visuallyhidden">additional information</span>
+                  <span tabindex='0' data-tabbable='true'>&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+    </div><!-- end .member-card -->
+</div><!-- end .member-card-container  -->
+<!-- END PARTIAL: community/member_card -->
+                    <!-- BEGIN PARTIAL: community/member_card -->
+<div class="member-card-container">
+    <div class="rs_read_this col member-card">
+        <div class="member-card-info group">
+            <div class="member-card-image">
+                <a href="REPLACE">
+                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                    
+                </a>
+            </div><!-- end .member-card-image -->
+            <div class="member-card-name hyphenate member">
+                
+                    <a href="REPLACE" class="name-member">Cara64</a>
+                    <p class="location">dignissimos</p>
+                
+            </div><!-- end .member-card-name -->
+            
+            <div class="card-buttons member">
+                
+                <button type="button" class="button blue rs_skip">See Activity</button>
+                
+            </div><!-- end .member.card-buttons -->
+            
+        </div><!-- end .member-card-info -->
+        <div class="member-card-specialties">
+            <ul>
+              <span class="visuallyhidden">grade level</span>
+                <li class='specialty '><span tabindex='0' data-tabbable='true'>5th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
-        <h3>Grade 7,
+        <h3>Grade 5,
             Boy
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -1654,10 +1443,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>In Illum</li>
-            <li>Suscipit Nemo</li>
-            <li>Sint Aspernatur</li>
-            <li>Placeat Consequatur</li>
+            <li>Perspiciatis Est</li>
+            <li>Dolorem Eligendi</li>
+            <li>Animi Fuga</li>
+            <li>Numquam Illo</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1667,11 +1456,249 @@
 </div>
 <!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>9th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
         <h3>Grade 9,
+            Girl
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Placeat Deleniti</li>
+            <li>Aut Error</li>
+            <li>Qui Voluptatem</li>
+            <li>Qui Quibusdam</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>11th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover rs_skip">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 11,
             Boy
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Alias Ut</li>
+            <li>Id Quo</li>
+            <li>Qui Minima</li>
+            <li>Voluptatem Rerum</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li>
+
+                <li class="specialty specialty-final">
+                  <span class="visuallyhidden">additional information</span>
+                  <span tabindex='0' data-tabbable='true'>&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+    </div><!-- end .member-card -->
+</div><!-- end .member-card-container  -->
+<!-- END PARTIAL: community/member_card -->
+                    <!-- BEGIN PARTIAL: community/member_card -->
+<div class="member-card-container">
+    <div class="rs_read_this col member-card">
+        <div class="member-card-info group">
+            <div class="member-card-image">
+                <a href="REPLACE">
+                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                    
+                </a>
+            </div><!-- end .member-card-image -->
+            <div class="member-card-name hyphenate member">
+                
+                    <a href="REPLACE" class="name-member">Dulce51</a>
+                    <p class="location">quos</p>
+                
+            </div><!-- end .member-card-name -->
+            
+            <div class="card-buttons member">
+                
+                <button type="button" class="button blue rs_skip">See Activity</button>
+                
+            </div><!-- end .member.card-buttons -->
+            
+        </div><!-- end .member-card-info -->
+        <div class="member-card-specialties">
+            <ul>
+              <span class="visuallyhidden">grade level</span>
+                <li class='specialty '><span tabindex='0' data-tabbable='true'>1st</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover rs_skip">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 1,
+            Boy
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Qui Fugit</li>
+            <li>Enim Omnis</li>
+            <li>Officiis Ducimus</li>
+            <li>Id Sit</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>2nd</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover rs_skip">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 2,
+            Boy
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Sapiente Quia</li>
+            <li>Deleniti Labore</li>
+            <li>Officia Nesciunt</li>
+            <li>Harum Magni</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>8th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover rs_skip">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 8,
+            Boy
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Qui Vel</li>
+            <li>Quisquam Velit</li>
+            <li>Qui Dolorum</li>
+            <li>Rerum Consequatur</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>9th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover rs_skip">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 9,
+            Girl
+        </h3>
+        <!-- BEGIN PARTIAL: community/carousel_arrows -->
+<div class="arrows child-info-next-prev-menu arrows-gray">
+    
+    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
+    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
+</div><!-- end .arrows -->
+<!-- END PARTIAL: community/carousel_arrows -->
+        <ul>
+            <li>Odio Voluptate</li>
+            <li>Quasi Voluptates</li>
+            <li>Optio Sit</li>
+            <li>Veniam Velit</li>
+        </ul>
+        <div class="card-buttons">
+            <button class="button gray">View Profile</button>
+            <button class="button blue">See Activity</button>
+        </div>
+    </div>
+</div>
+<!-- END PARTIAL: community/child_info_card --></li>
+
+                <li class="specialty specialty-final">
+                  <span class="visuallyhidden">additional information</span>
+                  <span tabindex='0' data-tabbable='true'>&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+    </div><!-- end .member-card -->
+</div><!-- end .member-card-container  -->
+<!-- END PARTIAL: community/member_card -->
+                    <!-- BEGIN PARTIAL: community/member_card -->
+<div class="member-card-container">
+    <div class="rs_read_this col member-card">
+        <div class="member-card-info group">
+            <div class="member-card-image">
+                <a href="REPLACE">
+                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                    
+                </a>
+            </div><!-- end .member-card-image -->
+            <div class="member-card-name hyphenate member">
+                
+                    <a href="REPLACE" class="name-member">Monty75</a>
+                    <p class="location">nobis</p>
+                
+            </div><!-- end .member-card-name -->
+            
+            <div class="card-buttons member">
+                
+                <button type="button" class="button blue rs_skip">See Activity</button>
+                
+            </div><!-- end .member.card-buttons -->
+            
+        </div><!-- end .member-card-info -->
+        <div class="member-card-specialties">
+            <ul>
+              <span class="visuallyhidden">grade level</span>
+                <li class='specialty '><span tabindex='0' data-tabbable='true'>8th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+ 
+ <div class="card-child-info popover rs_skip">
+    <div class="popover-content">
+        <span class="caret"></span>
+        <h3>Grade 8,
+            Girl
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
 <div class="arrows child-info-next-prev-menu arrows-gray">
@@ -1682,9 +1709,9 @@
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
             <li>Velit Ut</li>
-            <li>Quia Dolore</li>
-            <li>Aut Fuga</li>
-            <li>Animi Corporis</li>
+            <li>Vero Voluptatibus</li>
+            <li>Eveniet Iusto</li>
+            <li>Incidunt Quis</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1694,7 +1721,7 @@
 </div>
 <!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>12th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
         <h3>Grade 12,
@@ -1708,10 +1735,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Id Iste</li>
-            <li>Explicabo Consectetur</li>
-            <li>Quaerat Aut</li>
-            <li>Quaerat Voluptatem</li>
+            <li>Sint Sed</li>
+            <li>Natus Amet</li>
+            <li>Rerum Libero</li>
+            <li>Sint Aut</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1732,7 +1759,7 @@
 <!-- END PARTIAL: community/member_card -->
                     <!-- BEGIN PARTIAL: community/member_card -->
 <div class="member-card-container">
-    <div class="col member-card">
+    <div class="rs_read_this col member-card">
         <div class="member-card-info group">
             <div class="member-card-image">
                 <a href="REPLACE">
@@ -1742,14 +1769,14 @@
             </div><!-- end .member-card-image -->
             <div class="member-card-name hyphenate member">
                 
-                    <a href="REPLACE" class="name-member">Tonia35</a>
-                    <p class="location">ad</p>
+                    <a href="REPLACE" class="name-member">Laila51</a>
+                    <p class="location">inventore</p>
                 
             </div><!-- end .member-card-name -->
             
             <div class="card-buttons member">
                 
-                <button type="button" class="button blue">See Activity</button>
+                <button type="button" class="button blue rs_skip">See Activity</button>
                 
             </div><!-- end .member.card-buttons -->
             
@@ -1757,12 +1784,12 @@
         <div class="member-card-specialties">
             <ul>
               <span class="visuallyhidden">grade level</span>
-                <li class='specialty '><span tabindex='0' data-tabbable='true'>1st</span><!-- BEGIN PARTIAL: community/child_info_card -->
+                <li class='specialty specialty-long'><span tabindex='0' data-tabbable='true'>PreK</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
-        <h3>Grade 1,
+        <h3>PreK,
             Boy
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -1773,64 +1800,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Molestiae Necessitatibus</li>
-            <li>Occaecati Sunt</li>
-            <li>Aperiam Sit</li>
-            <li>Quae Consectetur</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>3rd</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 3,
-            Boy
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Id Culpa</li>
-            <li>Minima Vel</li>
-            <li>Qui Ipsam</li>
-            <li>Quas Aut</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>4th</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 4,
-            Boy
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Esse Est</li>
-            <li>Nihil Non</li>
-            <li>Laboriosam Quia</li>
-            <li>Aspernatur Exercitationem</li>
+            <li>Enim Nulla</li>
+            <li>Qui Accusamus</li>
+            <li>Vero Nulla</li>
+            <li>Dolorem Aliquam</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1840,7 +1813,7 @@
 </div>
 <!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>10th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
         <h3>Grade 10,
@@ -1854,10 +1827,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Ab Pariatur</li>
-            <li>Repellat Consequatur</li>
-            <li>Modi Veritatis</li>
-            <li>Veniam Fugiat</li>
+            <li>Illum Perspiciatis</li>
+            <li>Eaque Non</li>
+            <li>Ad Ut</li>
+            <li>Tempore Voluptas</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1878,7 +1851,7 @@
 <!-- END PARTIAL: community/member_card -->
                     <!-- BEGIN PARTIAL: community/member_card -->
 <div class="member-card-container">
-    <div class="col member-card">
+    <div class="rs_read_this col member-card">
         <div class="member-card-info group">
             <div class="member-card-image">
                 <a href="REPLACE">
@@ -1888,14 +1861,14 @@
             </div><!-- end .member-card-image -->
             <div class="member-card-name hyphenate member">
                 
-                    <a href="REPLACE" class="name-member">Joey76</a>
-                    <p class="location">doloremque</p>
+                    <a href="REPLACE" class="name-member">Jason67</a>
+                    <p class="location">iste</p>
                 
             </div><!-- end .member-card-name -->
             
             <div class="card-buttons member">
                 
-                <button type="button" class="button blue">See Activity</button>
+                <button type="button" class="button blue rs_skip">See Activity</button>
                 
             </div><!-- end .member.card-buttons -->
             
@@ -1905,7 +1878,7 @@
               <span class="visuallyhidden">grade level</span>
                 <li class='specialty '><span tabindex='0' data-tabbable='true'>2nd</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
         <h3>Grade 2,
@@ -1919,10 +1892,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Facilis Doloribus</li>
-            <li>Quis Quia</li>
-            <li>Libero Itaque</li>
-            <li>Sit Modi</li>
+            <li>Ratione In</li>
+            <li>Est Laboriosam</li>
+            <li>Sed Suscipit</li>
+            <li>Aliquam Vitae</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1930,12 +1903,12 @@
         </div>
     </div>
 </div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>3rd</span><!-- BEGIN PARTIAL: community/child_info_card -->
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>4th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
-        <h3>Grade 3,
+        <h3>Grade 4,
             Boy
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -1946,10 +1919,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Consequatur Quia</li>
-            <li>Enim Et</li>
-            <li>Non Non</li>
-            <li>Rerum Tempore</li>
+            <li>Aut Quia</li>
+            <li>Blanditiis Est</li>
+            <li>Necessitatibus Ea</li>
+            <li>Aliquid Possimus</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -1957,50 +1930,12 @@
         </div>
     </div>
 </div>
-<!-- END PARTIAL: community/child_info_card --></li>
-
-                <li class="specialty specialty-final">
-                  <span class="visuallyhidden">additional information</span>
-                  <span tabindex='0' data-tabbable='true'>&nbsp;</span>
-                </li>
-            </ul>
-        </div>
-    </div><!-- end .member-card -->
-</div><!-- end .member-card-container  -->
-<!-- END PARTIAL: community/member_card -->
-                    <!-- BEGIN PARTIAL: community/member_card -->
-<div class="member-card-container">
-    <div class="col member-card">
-        <div class="member-card-info group">
-            <div class="member-card-image">
-                <a href="REPLACE">
-                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                    
-                </a>
-            </div><!-- end .member-card-image -->
-            <div class="member-card-name hyphenate member">
-                
-                    <a href="REPLACE" class="name-member">Ciaran71</a>
-                    <p class="location">accusantium</p>
-                
-            </div><!-- end .member-card-name -->
-            
-            <div class="card-buttons member">
-                
-                <button type="button" class="button blue">See Activity</button>
-                
-            </div><!-- end .member.card-buttons -->
-            
-        </div><!-- end .member-card-info -->
-        <div class="member-card-specialties">
-            <ul>
-              <span class="visuallyhidden">grade level</span>
-                <li class='specialty '><span tabindex='0' data-tabbable='true'>2nd</span><!-- BEGIN PARTIAL: community/child_info_card -->
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>7th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
-        <h3>Grade 2,
+        <h3>Grade 7,
             Girl
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -2011,10 +1946,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Perspiciatis Aut</li>
-            <li>Alias Qui</li>
-            <li>Voluptate Veniam</li>
-            <li>Cupiditate Voluptatum</li>
+            <li>Accusantium Nemo</li>
+            <li>Similique Asperiores</li>
+            <li>Sint Saepe</li>
+            <li>Rem Consequatur</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -2022,12 +1957,12 @@
         </div>
     </div>
 </div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>5th</span><!-- BEGIN PARTIAL: community/child_info_card -->
+<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>8th</span><!-- BEGIN PARTIAL: community/child_info_card -->
  
- <div class="card-child-info popover">
+ <div class="card-child-info popover rs_skip">
     <div class="popover-content">
         <span class="caret"></span>
-        <h3>Grade 5,
+        <h3>Grade 8,
             Boy
         </h3>
         <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -2038,37 +1973,10 @@
 </div><!-- end .arrows -->
 <!-- END PARTIAL: community/carousel_arrows -->
         <ul>
-            <li>Qui Itaque</li>
-            <li>Nobis Ducimus</li>
-            <li>Aut Quis</li>
-            <li>Culpa Fugiat</li>
-        </ul>
-        <div class="card-buttons">
-            <button class="button gray">View Profile</button>
-            <button class="button blue">See Activity</button>
-        </div>
-    </div>
-</div>
-<!-- END PARTIAL: community/child_info_card --></li><li class='specialty '><span tabindex='0' data-tabbable='true'>6th</span><!-- BEGIN PARTIAL: community/child_info_card -->
- 
- <div class="card-child-info popover">
-    <div class="popover-content">
-        <span class="caret"></span>
-        <h3>Grade 6,
-            Girl
-        </h3>
-        <!-- BEGIN PARTIAL: community/carousel_arrows -->
-<div class="arrows child-info-next-prev-menu arrows-gray">
-    
-    <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
-    <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
-</div><!-- end .arrows -->
-<!-- END PARTIAL: community/carousel_arrows -->
-        <ul>
-            <li>Et Vel</li>
-            <li>Occaecati Enim</li>
-            <li>Ut Architecto</li>
-            <li>Minima Eius</li>
+            <li>Enim Omnis</li>
+            <li>Quam Qui</li>
+            <li>Molestias Corrupti</li>
+            <li>Eum Optio</li>
         </ul>
         <div class="card-buttons">
             <button class="button gray">View Profile</button>
@@ -2094,7 +2002,7 @@
     <div class="community-groups">
         <div class="row">
             <div class="col col-24 community-groups-wrapper">
-                <h2>Recommended Groups</h2>
+                <h2 class="rs_read_this">Recommended Groups</h2>
                 <div class="carousel-arrow-wrapper">
                   <!-- BEGIN PARTIAL: community/carousel_arrows -->
 <div class="arrows groups next-prev-menu arrows-gray">
@@ -2108,109 +2016,109 @@
                 </div>
                 <div class="row group-cards">
                     <!-- BEGIN PARTIAL: community/group_card -->
-<div class="col col-12 group-card">
+<div class="col col-12 group-card rs_read_this">
     <div class="group-card-image">
         <a href="REPLACE">
             <img alt="150x85 Placeholder" src="http://placehold.it/150x85" />
         </a>
     </div><!-- end .group-card-image -->
     <div class="group-card-info group  col col-16">
-        <a href="REPLACE" class="group-card-name">Ab Ad Ab Dolores</a><br />
-        <span class="group-card-members">789 Members</span><br />
-        <span class="group-card-posts">19,777 Posts</span><br />
+        <a href="REPLACE" class="group-card-name">Nihil Qui Ut Qui</a><br />
+        <span class="group-card-members">122 Members</span><br />
+        <span class="group-card-posts">5,974 Posts</span><br />
         <div class="card-buttons">
-            <button type="button" class="button">Join</button>
-            <button class="action-skip-this">Skip this</button>
+            <button type="button" class="button rs_skip">Join</button>
+            <button class="action-skip-this rs_skip">Skip this</button>
         </div><!-- end .card-buttons -->
     </div><!-- end .group-card-info -->
 </div><!-- end .group-card -->
 <!-- END PARTIAL: community/group_card -->
                     <!-- BEGIN PARTIAL: community/group_card -->
-<div class="col col-12 group-card">
+<div class="col col-12 group-card rs_read_this">
     <div class="group-card-image">
         <a href="REPLACE">
             <img alt="150x85 Placeholder" src="http://placehold.it/150x85" />
         </a>
     </div><!-- end .group-card-image -->
     <div class="group-card-info group  col col-16">
-        <a href="REPLACE" class="group-card-name">Aperiam Nulla Voluptate Nisi</a><br />
-        <span class="group-card-members">828 Members</span><br />
-        <span class="group-card-posts">8,496 Posts</span><br />
+        <a href="REPLACE" class="group-card-name">Et Voluptatem Eum Consequatur</a><br />
+        <span class="group-card-members">653 Members</span><br />
+        <span class="group-card-posts">15,338 Posts</span><br />
         <div class="card-buttons">
-            <button type="button" class="button">Join</button>
-            <button class="action-skip-this">Skip this</button>
+            <button type="button" class="button rs_skip">Join</button>
+            <button class="action-skip-this rs_skip">Skip this</button>
         </div><!-- end .card-buttons -->
     </div><!-- end .group-card-info -->
 </div><!-- end .group-card -->
 <!-- END PARTIAL: community/group_card -->
                     <!-- BEGIN PARTIAL: community/group_card -->
-<div class="col col-12 group-card">
+<div class="col col-12 group-card rs_read_this">
     <div class="group-card-image">
         <a href="REPLACE">
             <img alt="150x85 Placeholder" src="http://placehold.it/150x85" />
         </a>
     </div><!-- end .group-card-image -->
     <div class="group-card-info group  col col-16">
-        <a href="REPLACE" class="group-card-name">Consequatur Quisquam Dicta Odit</a><br />
-        <span class="group-card-members">235 Members</span><br />
-        <span class="group-card-posts">529 Posts</span><br />
+        <a href="REPLACE" class="group-card-name">Numquam Vel Culpa Veniam</a><br />
+        <span class="group-card-members">1,906 Members</span><br />
+        <span class="group-card-posts">5,432 Posts</span><br />
         <div class="card-buttons">
-            <button type="button" class="button">Join</button>
-            <button class="action-skip-this">Skip this</button>
+            <button type="button" class="button rs_skip">Join</button>
+            <button class="action-skip-this rs_skip">Skip this</button>
         </div><!-- end .card-buttons -->
     </div><!-- end .group-card-info -->
 </div><!-- end .group-card -->
 <!-- END PARTIAL: community/group_card -->
                     <!-- BEGIN PARTIAL: community/group_card -->
-<div class="col col-12 group-card">
+<div class="col col-12 group-card rs_read_this">
     <div class="group-card-image">
         <a href="REPLACE">
             <img alt="150x85 Placeholder" src="http://placehold.it/150x85" />
         </a>
     </div><!-- end .group-card-image -->
     <div class="group-card-info group  col col-16">
-        <a href="REPLACE" class="group-card-name">Ut Repudiandae Ratione Aut</a><br />
-        <span class="group-card-members">408 Members</span><br />
-        <span class="group-card-posts">10,179 Posts</span><br />
+        <a href="REPLACE" class="group-card-name">Possimus Aut Autem Voluptatem</a><br />
+        <span class="group-card-members">1,218 Members</span><br />
+        <span class="group-card-posts">5,284 Posts</span><br />
         <div class="card-buttons">
-            <button type="button" class="button">Join</button>
-            <button class="action-skip-this">Skip this</button>
+            <button type="button" class="button rs_skip">Join</button>
+            <button class="action-skip-this rs_skip">Skip this</button>
         </div><!-- end .card-buttons -->
     </div><!-- end .group-card-info -->
 </div><!-- end .group-card -->
 <!-- END PARTIAL: community/group_card -->
                     <!-- BEGIN PARTIAL: community/group_card -->
-<div class="col col-12 group-card">
+<div class="col col-12 group-card rs_read_this">
     <div class="group-card-image">
         <a href="REPLACE">
             <img alt="150x85 Placeholder" src="http://placehold.it/150x85" />
         </a>
     </div><!-- end .group-card-image -->
     <div class="group-card-info group  col col-16">
-        <a href="REPLACE" class="group-card-name">Nesciunt Omnis Possimus Id</a><br />
-        <span class="group-card-members">900 Members</span><br />
-        <span class="group-card-posts">14,928 Posts</span><br />
+        <a href="REPLACE" class="group-card-name">Autem Sapiente Et Quod</a><br />
+        <span class="group-card-members">1,065 Members</span><br />
+        <span class="group-card-posts">11,233 Posts</span><br />
         <div class="card-buttons">
-            <button type="button" class="button">Join</button>
-            <button class="action-skip-this">Skip this</button>
+            <button type="button" class="button rs_skip">Join</button>
+            <button class="action-skip-this rs_skip">Skip this</button>
         </div><!-- end .card-buttons -->
     </div><!-- end .group-card-info -->
 </div><!-- end .group-card -->
 <!-- END PARTIAL: community/group_card -->
                     <!-- BEGIN PARTIAL: community/group_card -->
-<div class="col col-12 group-card">
+<div class="col col-12 group-card rs_read_this">
     <div class="group-card-image">
         <a href="REPLACE">
             <img alt="150x85 Placeholder" src="http://placehold.it/150x85" />
         </a>
     </div><!-- end .group-card-image -->
     <div class="group-card-info group  col col-16">
-        <a href="REPLACE" class="group-card-name">Ea Non Eos Et</a><br />
-        <span class="group-card-members">673 Members</span><br />
-        <span class="group-card-posts">14,935 Posts</span><br />
+        <a href="REPLACE" class="group-card-name">Dicta Natus Consequuntur Iure</a><br />
+        <span class="group-card-members">1,144 Members</span><br />
+        <span class="group-card-posts">1,806 Posts</span><br />
         <div class="card-buttons">
-            <button type="button" class="button">Join</button>
-            <button class="action-skip-this">Skip this</button>
+            <button type="button" class="button rs_skip">Join</button>
+            <button class="action-skip-this rs_skip">Skip this</button>
         </div><!-- end .card-buttons -->
     </div><!-- end .group-card-info -->
 </div><!-- end .group-card -->
@@ -2222,7 +2130,7 @@
     <div class="community-blogs">
         <div class="row">
             <div class="col col-24 community-blogs-wrapper">
-                <h2>Recommended Blogs</h2>
+                <h2 class="rs_read_this">Recommended Blogs</h2>
                 <div class="carousel-arrow-wrapper">
                   <!-- BEGIN PARTIAL: community/carousel_arrows -->
 <div class="arrows blogs next-prev-menu arrows">
@@ -2236,91 +2144,91 @@
                 </div>
                 <div class="row blog-cards">
                     <!-- BEGIN PARTIAL: community/blog_card -->
-<div class="col col-12 blog-card">
+<div class="col col-12 blog-card rs_read_this">
     <div class="blog-card-info group">
         <div class="blog-card-contents">
             <div class="blog-card-title">
-                <a href="REPLACE">Ullam modi at voluptas possimus</a>
+                <a href="REPLACE">Fugiat recusandae voluptas sint non similique reiciendis quos perferendis assumenda iste hic voluptates est rerum</a>
             </div><!-- end .blog-card-title -->
             <div class="blog-card-post-info">
-                Posted Oct 1, 1998 from <a href="REPLACE">Alyson Moon blog</a>
+                Posted Mar 22, 1998 from <a href="REPLACE">Bonita Terrell blog</a>
             </div>
         </div>
         <div class="card-buttons">
-            <button type="button" class="button">Follow</button>
-            <button class="action-skip-this">Skip this</button>
+            <button type="button" class="button rs_skip">Follow</button>
+            <button class="action-skip-this rs_skip">Skip this</button>
         </div><!-- end .card-buttons -->
     </div><!-- end .blog-card-info -->
 </div><!-- end .blog-card -->
 <!-- END PARTIAL: community/blog_card -->
                     <!-- BEGIN PARTIAL: community/blog_card -->
-<div class="col col-12 blog-card">
+<div class="col col-12 blog-card rs_read_this">
     <div class="blog-card-info group">
         <div class="blog-card-contents">
             <div class="blog-card-title">
-                <a href="REPLACE">Similique qui aut vel aperiam dicta enim debitis</a>
+                <a href="REPLACE">Autem qui ad nobis consectetur consequuntur odio ut nemo molestiae quo ratione dicta maiores</a>
             </div><!-- end .blog-card-title -->
             <div class="blog-card-post-info">
-                Posted May 16, 1994 from <a href="REPLACE">Colton Grant blog</a>
+                Posted Dec 1, 2002 from <a href="REPLACE">Javon Mangum blog</a>
             </div>
         </div>
         <div class="card-buttons">
-            <button type="button" class="button">Follow</button>
-            <button class="action-skip-this">Skip this</button>
+            <button type="button" class="button rs_skip">Follow</button>
+            <button class="action-skip-this rs_skip">Skip this</button>
         </div><!-- end .card-buttons -->
     </div><!-- end .blog-card-info -->
 </div><!-- end .blog-card -->
 <!-- END PARTIAL: community/blog_card -->
                     <!-- BEGIN PARTIAL: community/blog_card -->
-<div class="col col-12 blog-card">
+<div class="col col-12 blog-card rs_read_this">
     <div class="blog-card-info group">
         <div class="blog-card-contents">
             <div class="blog-card-title">
-                <a href="REPLACE">Amet tempore ipsa deleniti voluptas ut nisi enim expedita quos dolor</a>
+                <a href="REPLACE">Soluta dolores praesentium eum eos et</a>
             </div><!-- end .blog-card-title -->
             <div class="blog-card-post-info">
-                Posted Jun 24, 1999 from <a href="REPLACE">Preston May blog</a>
+                Posted Jan 10, 1993 from <a href="REPLACE">Brendan Stone blog</a>
             </div>
         </div>
         <div class="card-buttons">
-            <button type="button" class="button">Follow</button>
-            <button class="action-skip-this">Skip this</button>
+            <button type="button" class="button rs_skip">Follow</button>
+            <button class="action-skip-this rs_skip">Skip this</button>
         </div><!-- end .card-buttons -->
     </div><!-- end .blog-card-info -->
 </div><!-- end .blog-card -->
 <!-- END PARTIAL: community/blog_card -->
                     <!-- BEGIN PARTIAL: community/blog_card -->
-<div class="col col-12 blog-card">
+<div class="col col-12 blog-card rs_read_this">
     <div class="blog-card-info group">
         <div class="blog-card-contents">
             <div class="blog-card-title">
-                <a href="REPLACE">Ipsam repudiandae quia quo</a>
+                <a href="REPLACE">Quia amet non illo nihil autem accusantium cupiditate cum doloremque nisi voluptatem cupiditate distinctio aliquam</a>
             </div><!-- end .blog-card-title -->
             <div class="blog-card-post-info">
-                Posted Jan 21, 2002 from <a href="REPLACE">Toby Ross blog</a>
+                Posted Feb 19, 1993 from <a href="REPLACE">Ciaran Scarborough blog</a>
             </div>
         </div>
         <div class="card-buttons">
-            <button type="button" class="button">Follow</button>
-            <button class="action-skip-this">Skip this</button>
+            <button type="button" class="button rs_skip">Follow</button>
+            <button class="action-skip-this rs_skip">Skip this</button>
         </div><!-- end .card-buttons -->
     </div><!-- end .blog-card-info -->
 </div><!-- end .blog-card -->
 <!-- END PARTIAL: community/blog_card -->
                     <!-- BEGIN PARTIAL: community/blog_card -->
-<div class="col col-12 blog-card">
+<div class="col col-12 blog-card rs_read_this">
     <div class="blog-card-info group">
         <div class="blog-card-contents">
             <div class="blog-card-title">
-                <a href="REPLACE">Nihil totam magnam porro voluptatem repellendus quas corporis ipsa aperiam soluta eveniet quasi</a>
+                <a href="REPLACE">Et fugit rerum accusamus numquam cum dolorem perferendis quia</a>
             </div><!-- end .blog-card-title -->
             <div class="blog-card-post-info">
-                Posted May 21, 2008 from <a href="REPLACE">Kaylin Petersen blog</a>
+                Posted May 14, 1991 from <a href="REPLACE">Marianne Clapp blog</a>
             </div>
         </div>
         <div class="card-buttons">
-            <button type="button" class="button">Follow</button>
-            <button class="action-skip-this">Skip this</button>
+            <button type="button" class="button rs_skip">Follow</button>
+            <button class="action-skip-this rs_skip">Skip this</button>
         </div><!-- end .card-buttons -->
     </div><!-- end .blog-card-info -->
 </div><!-- end .blog-card -->
@@ -2339,8 +2247,7 @@
 <div class="container more-to-explore">
   <div class="row">
     <div class="col col-24">
-
-      <h2>More to Explore</h2>
+      <h2 class="rs_read_this">More to Explore</h2>
 
     </div>
   </div>
@@ -2351,171 +2258,195 @@
 <div class="more-to-explore-container">
   <ul>
     <li>
-      <div class="header">
-        <h3>Dad's Unite</h3>
-        <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Dad's Unite</h3>
+          <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+        </div>
 
-      <fieldset class="more-to-explore-form rsNoDrag select-container">
+        <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
-        <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
+          <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
+          <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
-        <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" aria-required="true">
-          <option value="">Select a state</option>
-          <option>Alabama</option>
-          <option>Arizona</option>
-          <option>Arkansas</option>
-        </select>
+          <label for="explore-select" class="visuallyhidden rs_skip">Select state</label>
+          <select name="explore-select" id="explore-select" aria-required="true">
+            <option value="">Select a state</option>
+            <option>Alabama</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+          </select>
 
-      </fieldset>
+        </fieldset>
 
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Lorem ipsum dolor sit amet, consectetur</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Lorem ipsum dolor sit amet, consectetur</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
   </ul>
@@ -2532,7 +2463,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -2689,7 +2620,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -2704,6 +2635,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/community.js"></script>

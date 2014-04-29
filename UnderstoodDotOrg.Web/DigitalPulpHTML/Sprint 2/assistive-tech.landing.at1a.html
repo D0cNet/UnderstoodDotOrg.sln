@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>Assistive Tech - Landing Page (AT1a)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -267,7 +283,7 @@
   <div class="text-container">
     <div class="row">
       <div class="col col-24">
-        <div class="hero-content">
+        <div class="hero-content rs_read_this">
           <h1>Technology That Can Help</h1>
           <h2>Find apps, games and websites to help your child</h2>
         </div>
@@ -283,75 +299,77 @@
   <div class="row">
     <div class="col col-20 centered at-search-tool-wrapper at-search-tool-wrapper-pull skiplink-content" aria-role="main" aria-role="main">
       <!-- BEGIN PARTIAL: at-search-tool -->
-<div id="search-by-tool-tabs">
-  <ul>
-    <li class="browse-by-tab">
-      <a href="#browse-by">
-        Browse By
-      </a>
-      <!-- Needs to be on one line to prevent whitespace -->
-    </li><li class="search-by-tab">
+<div class="rs_read_this">
+  <div id="search-by-tool-tabs">
+    <ul>
+      <li class="browse-by-tab">
+        <a href="#browse-by">
+          Browse By
+        </a>
+        <!-- Needs to be on one line to prevent whitespace -->
+      </li><li class="search-by-tab">
       <a href="#search-by">
         Search By
       </a>
     </li>
-  </ul>
+    </ul>
 
-  <div id="browse-by">
-    <div class="form">
-      <fieldset>
-        <select name="at-browse-by-issues" id="at-browse-by-issues" required aria-required="true" title="Select Issue">
-          <option>Select Issue</option>
-          <option>Issue Value 1</option>
-          <option>Issue Value 2</option>
-          <option>Issue Value 3</option>
-        </select>
-        <select name="at-browse-by-grade" id="at-browse-by-grade" required aria-required="true" title="Select Grade"">
-          <option>Select Grade</option>
-          <option>Pre-K - K</option>
-          <option>3 - 5</option>
-          <option>6 - 8</option>
-          <option>9 - 12</option>
-        </select>
-        <select name="at-browse-by-technology" id="at-browse-by-technology" class="tech parent small-width" required aria-required="true" title="Select Technology">
-          <option>Select Technology</option>
-          <option value="at-browse-by-app">Apps</option>
-          <option value="at-browse-by-games">Games</option>
-          <option value="at-browse-by-websites">Websites</option>
-          <option value="at-browse-by-technology">Assistive Technology</option>
-        </select>
-        <select name="at-browse-by-app" id="at-browse-by-app" class="tech child small-width" style="display:none;" title="Select Platform">
-          <option value>Select Platform</option>
-          <option value="1">all platforms</option>
-          <option value="2">iPhone</option>
-          <option value="3">iPod Touch</option>
-          <option value="4">iPad</option>
-          <option value="5">Android</option>
-          <option value="6">Kindle Fire</option>
-          <option value"7">Nook HD</option>
-        </select>
-        <select name="at-browse-by-games" id="at-browse-by-games" class="tech child small-width" style="display:none;" title="Select Platform">
-          <option value>Select Platform</option>
-          <option value="1">[List of Games]</option>
-          <option value="2"><!-- retrive games from website --></option>
-        </select>
-        <div class="submit-button-container"><input class="button" type="submit" value="Find"></div>
-      </fieldset>
+    <div id="browse-by">
+      <div class="form">
+        <fieldset>
+          <select name="at-browse-by-issues" id="at-browse-by-issues" required aria-required="true">
+            <option>Select Issue</option>
+            <option>Issue Value 1</option>
+            <option>Issue Value 2</option>
+            <option>Issue Value 3</option>
+          </select>
+          <select name="at-browse-by-grade" id="at-browse-by-grade" required aria-required="true">
+            <option>Select Grade</option>
+            <option>Pre-K - K</option>
+            <option>3 - 5</option>
+            <option>6 - 8</option>
+            <option>9 - 12</option>
+          </select>
+          <select name="at-browse-by-technology" id="at-browse-by-technology" class="tech parent small-width" required aria-required="true">
+            <option>Select Technology</option>
+            <option value="at-browse-by-app">Apps</option>
+            <option value="at-browse-by-games">Games</option>
+            <option value="at-browse-by-websites">Websites</option>
+            <option value="at-browse-by-technology">Assistive Technology</option>
+          </select>
+          <select name="at-browse-by-app" id="at-browse-by-app" class="tech child small-width" style="display:none;">
+            <option value>Select Platform</option>
+            <option value="1">all platforms</option>
+            <option value="2">iPhone</option>
+            <option value="3">iPod Touch</option>
+            <option value="4">iPad</option>
+            <option value="5">Android</option>
+            <option value="6">Kindle Fire</option>
+            <option value"7">Nook HD</option>
+          </select>
+          <select name="at-browse-by-games" id="at-browse-by-games" class="tech child small-width" style="display:none;">
+            <option value>Select Platform</option>
+            <option value="1">[List of Games]</option>
+            <option value="2"><!-- retrive games from website --></option>
+          </select>
+          <div class="submit-button-container"><input class="button" type="submit" value="Find"></div>
+        </fieldset>
+      </div>
+    </div><!-- /.browse-by -->
+    <div id="search-by">
+      <div class="form">
+        <fieldset>
+          <label for="at-search-by" class="visuallyhidden">Search by</label>
+          <input type="text" name="at-search-by" id="at-search-by">
+          <div class="submit-button-container2 rs_skip"><input class="button" type="submit" value="Find"></div>
+        </fieldset>
+      </div><!-- .form -->
     </div>
-  </div><!-- /.browse-by -->
-  <div id="search-by">
-    <div class="form">
-      <fieldset>
-        <label for="at-search-by" class="visuallyhidden">Search by</label>
-        <input type="text" name="at-search-by" id="at-search-by">
-        <div class="submit-button-container2"><input class="button" type="submit" value="Find"></div>
-      </fieldset>
-    </div><!-- .form -->
-  </div>
-  <div class="powered-by-logo-container">
-    <div class="powered-by-logo">
-      <span>Powered by</span>
-      <span class="visuallyhidden">Common Sense Media</span>
+    <div class="powered-by-logo-container">
+      <div class="powered-by-logo">
+        <span>Powered by</span>
+        <span class="visuallyhidden">Common Sense Media</span>
+      </div>
     </div>
   </div>
 </div>
@@ -366,7 +384,7 @@
   <!-- BEGIN PARTIAL: parents-are-saying -->
 <div class="container parents-are-saying">
   <div class="row">
-    <div class="col col-24 header-container">
+    <div class="col col-24 header-container rs_read_this parents-are-saying-heading-rs-wrapper">
       <h2>What parents are saying...</h2>
     </div>
   </div>
@@ -374,112 +392,136 @@
     <div class="col slider-col col-18 offset-4">
       <div class="parents-are-saying-container">
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi Adipisc est un...<a href="REPLACE">read more</a></p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero" aria-label=" ">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi Adipisc est un...<a href="REPLACE">read more</a></p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider zero" aria-label=" "> </div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">13rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">13rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-one" aria-label="Quality Rating: 1">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-one" aria-label="Quality Rating: 1">Quality Rating: 1</div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">23rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">23rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="Quality Rating: 2">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-two" aria-label="Quality Rating: 2">Quality Rating: 2</div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">33rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">33rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-three" aria-label="Quality Rating: 3">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-three" aria-label="Quality Rating: 3">Quality Rating: 3</div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">43rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">43rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="Quality Rating: 4">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-four" aria-label="Quality Rating: 4">Quality Rating: 4</div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">53rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">53rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-five" aria-label="Quality Rating: 5">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-five" aria-label="Quality Rating: 5">Quality Rating: 5</div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-five" aria-label="Quality Rating: 5">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-five" aria-label="Quality Rating: 5">Quality Rating: 5</div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-four" aria-label="Quality Rating: 4">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-four" aria-label="Quality Rating: 4">Quality Rating: 4</div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-three" aria-label="Quality Rating: 3">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-three" aria-label="Quality Rating: 3">Quality Rating: 3</div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-two" aria-label="Quality Rating: 2">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-two" aria-label="Quality Rating: 2">Quality Rating: 2</div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider blue-one" aria-label="Quality Rating: 1">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider blue-one" aria-label="Quality Rating: 1">Quality Rating: 1</div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <h3>Autism Play</h3>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: results-slider -->
-<div class="results-slider zero" aria-label=" ">&nbsp;</div>
+          <div class="rs_read_this parents-are-saying-rs-wrapper">
+            <h3>Autism Play</h3>
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: results-slider -->
+<div class="results-slider zero" aria-label=" "> </div>
 <!-- END PARTIAL: results-slider -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
       </div>
     </div>
@@ -497,40 +539,52 @@
 <div id="featured-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE">
-        <p>Understand Your Child's Problem: Start a Log</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Understand Your Child's Problem: Start a Log</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Does my Child Have Dyslexia? Take the Quiz</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Does my Child Have Dyslexia? Take the Quiz</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Get Better Recommendations: Create a Profile</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Get Better Recommendations: Create a Profile</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Understand Your Child's Problem: Start a Log</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Understand Your Child's Problem: Start a Log</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Does my Child Have Dyslexia? Take the Quiz</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Does my Child Have Dyslexia? Take the Quiz</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Get Better Recommendations: Create a Profile</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Get Better Recommendations: Create a Profile</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
   </ul>
 </div><!-- #more-carousel-slides-container-->
@@ -551,7 +605,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -708,7 +762,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -723,6 +777,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/assistive-tech.js"></script>

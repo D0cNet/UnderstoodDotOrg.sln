@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>Experts - Calendar - List View (C4b)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -264,7 +280,7 @@
 <div class="container community-main-header ">
     <header>
         <div class="row header-wrapper">
-            <div class="col col-14 offset-1 header-title">
+            <div class="col col-14 offset-1 header-title rs_read_this">
                 <h1>Welcome to the Understood Community</h1>
                 <p class="subhead">A private parent community with expert guidance and support</p>
             </div>
@@ -364,13 +380,13 @@
 <div class="container">
     <div class="row">
         <div class="container">
-            <div class="experts-nav-form clearfix skiplink-toolbar">
+            <div class="experts-nav-form  rs_read_this clearfix skiplink-toolbar">
                 <div class="dropdown">
                     <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-                        <span class="current-page">Filter By: Calendar</span>
-                        <span class="dropdown-title">Filter By</span>
+                        <span class="current-page">Calendar</span>
+                        <span class="dropdown-title rs_skip">Filter By</span>
                     </a>
-                    <ul class="dropdown-menu" role="menu">
+                    <ul class="dropdown-menu rs_skip" role="menu">
                         
                         <li role="presentation" class="">
                             <a role="menuitem" href="REPLACE">Featured</a>
@@ -451,7 +467,7 @@
     <!-- BEGIN PARTIAL: community/calendar/list_view -->
 <ul class="container calendar calendar-list">
     <!-- BEGIN PARTIAL: community/calendar/list_view_event -->
-<li class="event-card webinar row">
+<li class="event-card webinar row rs_read_this">
     <div class="event-card-image">
         <a href="REPLACE">
             <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
@@ -462,16 +478,16 @@
     </div><!-- end .event-card-image -->
 
     <div class="event-card-actions">
-        <p class="event-card-datetime">Wed Jan 18 at 12am EST</p>
-        <p class="event-card-name">Optio Veritatis Qui Explicabo Omnis Qui Maiores Architecto</p>
+        <p class="event-card-datetime">Mon Jun 1 at 12am EDT</p>
+        <p class="event-card-name">Delectus Qui Adipisci Consequatur Placeat Consequatur Odio Eaque</p>
 
         <p class="event-topics-header">Topics Covered</p>
-        <p class="event-topics">Eveniet Tenetur Harum Molestiae Molestias Et Error Expedita Dolorem Omnis</p>
+        <p class="event-topics">Ex Repellat Molestiae Fugit Cum Assumenda Velit Repudiandae Velit Aut</p>
 
         <div class="event-links">
-            <a class="event-rsvp" href="REPLACE">RSVP for this event</a>
-            <a class="add-to-calendar" href="REPLACE">Add to my calendar</a>
-            <a class="event-details-link" href="REPLACE">Event details</a>
+            <a class="event-rsvp rs_skip" href="REPLACE">RSVP for this event</a>
+            <a class="add-to-calendar rs_skip" href="REPLACE">Add to my calendar</a>
+            <a class="event-details-link rs_skip" href="REPLACE">Event details</a>
         </div>
 
         
@@ -486,29 +502,29 @@
 <!-- END PARTIAL: community/calendar/list_view_event -->
     <!-- BEGIN PARTIAL: community/calendar/list_view_event -->
 
-<li class="event-card chat row">
+<li class="event-card chat row rs_read_this">
     <div class="event-card-image">
         <a href="REPLACE">
             <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-            <div class="image-label">Neque</div>
+            <div class="image-label">Impedit</div>
         </a>
     </div><!-- end .event-card-image -->
 
     <div class="event-card-actions">
-        <p class="event-card-datetime">Wed Sep 5 at 12am EDT</p>
-        <p class="event-card-name">Est Dolore Nemo Dolor Laudantium Minima Quae Quidem</p>
-        <p class="event-host-description">Vero Laudantium Doloribus Sed Voluptates Laudantium Ut Qui Sed At</p>
+        <p class="event-card-datetime">Thu Feb 21 at 12am EST</p>
+        <p class="event-card-name">Laboriosam Dolorum Labore Exercitationem Asperiores Perspiciatis Velit Et</p>
+        <p class="event-host-description">Consectetur Eaque Consequatur Modi Occaecati Aut Iste Nisi Et Assumenda</p>
 
         <div class="event-links">
-            <a class="event-rsvp" href="REPLACE">RSVP for this event</a>
-            <a class="add-to-calendar" href="REPLACE">Add to my calendar</a>
-            <a class="event-details-link" href="REPLACE">Event details</a>
+            <a class="event-rsvp rs_skip" href="REPLACE">RSVP for this event</a>
+            <a class="add-to-calendar rs_skip" href="REPLACE">Add to my calendar</a>
+            <a class="event-details-link rs_skip" href="REPLACE">Event details</a>
         </div>
 
         
         <span class="children-key">
             <ul>
-                <li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-e' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
         
@@ -521,33 +537,33 @@
 
 <!-- END PARTIAL: community/calendar/list_view_event -->
     <!-- BEGIN PARTIAL: community/calendar/list_view_event -->
-<li class="event-card webinar row">
+<li class="event-card webinar row rs_read_this">
     <div class="event-card-image">
         <a href="REPLACE">
             <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
             <div class="image-label">
-              Guest Expert
+              Expert
             </div>
         </a>
     </div><!-- end .event-card-image -->
 
     <div class="event-card-actions">
-        <p class="event-card-datetime">Tue Nov 27 at 12am EST</p>
-        <p class="event-card-name">Eum Commodi Quas Cupiditate Repellat Nesciunt Sunt Quia</p>
+        <p class="event-card-datetime">Wed Dec 2 at 12am EST</p>
+        <p class="event-card-name">Explicabo Ut Culpa Sint Et Ut Et Cum</p>
 
         <p class="event-topics-header">Topics Covered</p>
-        <p class="event-topics">Qui Dolorem Fuga Maxime Ab Quia Aut Hic Aut Est</p>
+        <p class="event-topics">Cumque Illo Quae Quis Quis Inventore Ex Et Veniam Autem</p>
 
         <div class="event-links">
-            <a class="event-rsvp" href="REPLACE">RSVP for this event</a>
-            <a class="add-to-calendar" href="REPLACE">Add to my calendar</a>
-            <a class="event-details-link" href="REPLACE">Event details</a>
+            <a class="event-rsvp rs_skip" href="REPLACE">RSVP for this event</a>
+            <a class="add-to-calendar rs_skip" href="REPLACE">Add to my calendar</a>
+            <a class="event-details-link rs_skip" href="REPLACE">Event details</a>
         </div>
 
         
         <span class="children-key">
             <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
         
@@ -561,7 +577,7 @@
 
 <!-- END PARTIAL: community/calendar/list_view_event -->
     <!-- BEGIN PARTIAL: community/calendar/list_view_event -->
-<li class="event-card webinar row">
+<li class="event-card webinar row rs_read_this">
     <div class="event-card-image">
         <a href="REPLACE">
             <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
@@ -572,16 +588,16 @@
     </div><!-- end .event-card-image -->
 
     <div class="event-card-actions">
-        <p class="event-card-datetime">Sun Jun 25 at 12am EDT</p>
-        <p class="event-card-name">Exercitationem Et Excepturi Officia Qui Quas Alias Quidem</p>
+        <p class="event-card-datetime">Thu Apr 18 at 12am EDT</p>
+        <p class="event-card-name">Inventore Quibusdam Non Id Voluptatem Quisquam Laudantium Eligendi</p>
 
         <p class="event-topics-header">Topics Covered</p>
-        <p class="event-topics">Dolor Veritatis Sapiente Totam Modi Iste Autem Molestiae Fugiat Doloribus</p>
+        <p class="event-topics">Provident Ea Alias Rerum Et Suscipit Qui Eum Aperiam Ad</p>
 
         <div class="event-links">
-            <a class="event-rsvp" href="REPLACE">RSVP for this event</a>
-            <a class="add-to-calendar" href="REPLACE">Add to my calendar</a>
-            <a class="event-details-link" href="REPLACE">Event details</a>
+            <a class="event-rsvp rs_skip" href="REPLACE">RSVP for this event</a>
+            <a class="add-to-calendar rs_skip" href="REPLACE">Add to my calendar</a>
+            <a class="event-details-link rs_skip" href="REPLACE">Event details</a>
         </div>
 
         
@@ -596,29 +612,29 @@
 <!-- END PARTIAL: community/calendar/list_view_event -->
     <!-- BEGIN PARTIAL: community/calendar/list_view_event -->
 
-<li class="event-card chat row">
+<li class="event-card chat row rs_read_this">
     <div class="event-card-image">
         <a href="REPLACE">
             <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-            <div class="image-label">Qui</div>
+            <div class="image-label">Ad</div>
         </a>
     </div><!-- end .event-card-image -->
 
     <div class="event-card-actions">
-        <p class="event-card-datetime">Fri Dec 6 at 12am EST</p>
-        <p class="event-card-name">Nisi Tempore Qui Reprehenderit Et Est Ex Excepturi</p>
-        <p class="event-host-description">Dolore Enim Aspernatur Natus Eum Eaque Esse Alias Unde Cupiditate</p>
+        <p class="event-card-datetime">Tue Feb 5 at 12am EST</p>
+        <p class="event-card-name">Quaerat Sit Provident Quia Nihil Consequuntur Omnis Earum</p>
+        <p class="event-host-description">Impedit Error Assumenda Voluptatum Facere Voluptatibus Quidem Nemo Aut Commodi</p>
 
         <div class="event-links">
-            <a class="event-rsvp" href="REPLACE">RSVP for this event</a>
-            <a class="add-to-calendar" href="REPLACE">Add to my calendar</a>
-            <a class="event-details-link" href="REPLACE">Event details</a>
+            <a class="event-rsvp rs_skip" href="REPLACE">RSVP for this event</a>
+            <a class="add-to-calendar rs_skip" href="REPLACE">Add to my calendar</a>
+            <a class="event-details-link rs_skip" href="REPLACE">Event details</a>
         </div>
 
         
         <span class="children-key">
             <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
         
@@ -661,8 +677,7 @@
 <div class="container more-to-explore">
   <div class="row">
     <div class="col col-24">
-
-      <h2>More to Explore</h2>
+      <h2 class="rs_read_this">More to Explore</h2>
 
     </div>
   </div>
@@ -673,171 +688,195 @@
 <div class="more-to-explore-container">
   <ul>
     <li>
-      <div class="header">
-        <h3>Dad's Unite</h3>
-        <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Dad's Unite</h3>
+          <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+        </div>
 
-      <fieldset class="more-to-explore-form rsNoDrag select-container">
+        <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
-        <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
+          <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
+          <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
-        <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" aria-required="true">
-          <option value="">Select a state</option>
-          <option>Alabama</option>
-          <option>Arizona</option>
-          <option>Arkansas</option>
-        </select>
+          <label for="explore-select" class="visuallyhidden rs_skip">Select state</label>
+          <select name="explore-select" id="explore-select" aria-required="true">
+            <option value="">Select a state</option>
+            <option>Alabama</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+          </select>
 
-      </fieldset>
+        </fieldset>
 
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Lorem ipsum dolor sit amet, consectetur</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Lorem ipsum dolor sit amet, consectetur</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
   </ul>
@@ -854,7 +893,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -1011,7 +1050,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -1026,6 +1065,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/community.js"></script>

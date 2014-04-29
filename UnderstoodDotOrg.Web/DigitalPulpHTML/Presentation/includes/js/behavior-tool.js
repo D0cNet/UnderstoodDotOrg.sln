@@ -132,15 +132,14 @@ jQuery(document).ready(function(){
      */
     this.initialize = function() {
       var $searchResultButton = $('.result-body'),
-          $searchResultItems = $searchResultButton.find('.hover-link-wrapper a');
+          $searchResultItems = $searchResultButton.find('.hover-link-wrapper a'),
+          $htmlEl = $('html');
 
-      $('.search-result .result-tip').equalHeights();
+      $htmlEl.on('equalHeights', this.equalizeHeights);
       this.$html = $('.advice-results .results-outer-wrapper').html();
       this.$wrapper = $('.advice-results .results-outer-wrapper');
 
       $(window).resize(function() { self.resizeHandler(); });
-
-
 
 
       new U.keyboard_access ({
@@ -188,6 +187,10 @@ jQuery(document).ready(function(){
       this.adviceResultsIcons();
 
       return this.resizeHandler();
+    };
+
+    this.equalizeHeights = function() {
+      $('.search-result .result-tip').equalHeights();
     };
 
     /**
@@ -437,12 +440,14 @@ jQuery(document).ready(function(){
    */
   U.behaviorToolRelatedArticles = function() {
 
-    var $module = $('.behavior-tool-related-articles');
+    var $module = $('.behavior-tool-related-articles'),
+        $html = $('html');
     // if get-better-recommendations module exists on the page
     if(!$module.length) { return; }
 
     // Run once on window load
-    repositionElement();
+    $html.on('equalHeights', repositionElement);
+
     // Run on resize
     jQuery(window).resize(repositionElement);
 

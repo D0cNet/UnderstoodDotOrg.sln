@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>Behavior - Landing Page (B1)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -267,13 +283,13 @@
   <div class="hero-text-container">
     <div class="row">
       <div class="col col-24">
-        <div class="hero-text">
+        <div class="hero-text rs_read_this">
           <h1>Your Expert Advisor</h1>
           <h2 class="hero-subheader">Practical advice on everyday challenges from our experts</h2>
           <a href="REPLACE" id="meet-the-experts-link" class="meet-the-experts-link">Meet the experts</a>
           <!-- BEGIN PARTIAL: meet-the-experts -->
 <!-- Suggest a Behavior Modal -->
-<div class="modal fade" id="meet-the-experts" tabindex="-1" role="dialog" aria-labelledby="meet-the-experts-modal" aria-hidden="true">
+<div class="modal fade rs_skip" id="meet-the-experts" tabindex="-1" role="dialog" aria-labelledby="meet-the-experts-modal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <i class="close-overlay" data-dismiss="modal">Close</i>
@@ -289,21 +305,21 @@
             <img alt="215x207 Placeholder" src="http://placehold.it/215x207" />
             <h4 class="expert-name">Christine Anderson</h4>
             <p class="expert-description">
-              &ldquo;omnis mollitia recusandae unde quidem ab libero et vitae voluptates velit hic omnis odit enim&rdquo;
+              &ldquo;molestiae eaque quia doloribus sint temporibus vitae qui excepturi dignissimos eius incidunt autem et esse&rdquo;
             </p>
           </div>
           <div class="slide clearfix">
             <img alt="215x207 Placeholder" src="http://placehold.it/215x207" />
-            <h4 class="expert-name">Alfredo Lucas</h4>
+            <h4 class="expert-name">Eli McNamara</h4>
             <p class="expert-description">
-              &ldquo;explicabo et consequatur aut distinctio maiores corrupti consequatur quam eos optio non et ut nihil&rdquo;
+              &ldquo;voluptas facilis sed aut amet consequatur sunt tempora veniam et aperiam consequatur dolorum quisquam sit&rdquo;
             </p>
           </div>
           <div class="slide clearfix">
             <img alt="215x207 Placeholder" src="http://placehold.it/215x207" />
-            <h4 class="expert-name">Ana Vick</h4>
+            <h4 class="expert-name">Dora Cain</h4>
             <p class="expert-description">
-              &ldquo;aut accusamus quos alias autem autem delectus porro dolor aliquid eum dignissimos eos dolores sit&rdquo;
+              &ldquo;sit quae blanditiis totam placeat quo sit quo porro autem provident ipsum est laboriosam ut&rdquo;
             </p>
           </div>
         </section>
@@ -327,7 +343,7 @@
   <div class="row">
     <div class="col col-16 centered behavior-advice-container behavior-advice-container-pull">
       <!-- BEGIN PARTIAL: behavior-advice -->
-<div class="behavior-advice-wrapper skiplink-toolbar">
+<div class="behavior-advice-wrapper skiplink-toolbar rs_read_this">
   <div class="behavior-advice">
     <h2 class="behavior-advice-title">Get Expert Advice</h2>
     <div class="advice-question-wrapper">
@@ -385,7 +401,7 @@
     <a href="REPLACE" class="advice-more-link">Don't see your child's challenge?</a>
     <!-- BEGIN PARTIAL: suggest-a-behavior -->
 <!-- Suggest a Behavior Modal -->
-<div class="modal fade" id="suggest-a-behavior" tabindex="-1" role="dialog" aria-labelledby="suggest-a-behavior-modal" aria-hidden="true">
+<div class="modal fade rs_skip" id="suggest-a-behavior" tabindex="-1" role="dialog" aria-labelledby="suggest-a-behavior-modal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <i class="close-overlay" data-dismiss="modal">Close</i>
@@ -421,7 +437,7 @@
 <!-- BEGIN PARTIAL: comment-gallery -->
 <div class="container comment-gallery">
   <div class="row">
-    <div class="col col-24">
+    <div class="col col-24 rs_read_this comment-gallery-rs-wrapper">
       <h2>What parents are saying...</h2>
     </div>
   </div>
@@ -429,124 +445,148 @@
     <div class="col slider-col col-18 offset-4">
       <div class="comment-gallery-container">
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi Adipisc est un...<a href="REPLACE">read more</a></p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi Adipisc est un...<a href="REPLACE">read more</a></p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">13rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">13rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">23rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">23rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">33rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">33rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">43rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">43rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">53rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">53rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
         <li>
-          <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-          <!-- BEGIN PARTIAL: comments-count -->
+          <div class="rs_read_this comment-gallery-rs-wrapper">
+            <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
+            <!-- BEGIN PARTIAL: comments-count -->
 <div class="count-comments">
   <a href="#count-comments"><span>19</span>Comments</a>
 </div>
 <!-- END PARTIAL: comments-count -->
-          <h4>Parent</h4>
-          <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+            <h4>Parent</h4>
+            <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
+          </div>
         </li>
       </div>
     </div>
@@ -558,46 +598,60 @@
 <div class="container more-carousel">
   <div class="row">
     <div class="col col-24">
-      <h2>Related Articles:</h2>
+      <div class="rs_read_this more-carousel-heading-rs-wrapper">
+        <h2>Related Articles:</h2>
+      </div>
       <div class="more-carousel-container">
         <!-- BEGIN PARTIAL: more-carousel -->
 <div id="featured-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE">
-        <p>Understand Your Child's Problem: Start a Log</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Understand Your Child's Problem: Start a Log</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Does my Child Have Dyslexia? Take the Quiz</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Does my Child Have Dyslexia? Take the Quiz</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Get Better Recommendations: Create a Profile</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Get Better Recommendations: Create a Profile</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Understand Your Child's Problem: Start a Log</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Understand Your Child's Problem: Start a Log</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Does my Child Have Dyslexia? Take the Quiz</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Does my Child Have Dyslexia? Take the Quiz</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
     <li>
-      <a href="REPLACE">
-        <p>Get Better Recommendations: Create a Profile</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+      <div class="rs_read_this">
+        <a href="REPLACE">
+          <p>Get Better Recommendations: Create a Profile</p>
+          <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+        </a>
+      </div>
     </li>
   </ul>
 </div><!-- #more-carousel-slides-container-->
@@ -619,7 +673,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -776,7 +830,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -791,6 +845,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/behavior-tool.js"></script>

@@ -9,45 +9,68 @@
  */
 /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
 .advocacy-article {
-  margin-bottom: 50px;
+  margin-bottom: 44px;
 }
-/* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
-.advocacy-article .article-header {
-  margin-bottom: 37px;
+@media (min-width: 650px) {
+  /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+  .advocacy-article .article-header {
+    margin-bottom: 53px;
+  }
 }
-/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
 .advocacy-article .article-header p {
-  margin-top: -7px;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
-/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+@media (min-width: 650px) {
+  /* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+  .advocacy-article .article-header p {
+    margin-top: -7px;
+    margin-bottom: 15px;
+  }
+}
+/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
 .advocacy-article .article-header .share-save-container {
   position: relative;
 }
 @media (min-width: 960px) {
-  /* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+  /* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
   .advocacy-article .article-header .share-save-container {
     left: -36px;
   }
 }
-/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
 .advocacy-article .article-callout {
-  margin-bottom: 45px;
-}
-/* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
-.advocacy-article .article-callout .article-callout-item {
-  margin-bottom: 23px;
-}
-/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
-.advocacy-article .article-callout .article-callout-item .article-callout-title {
-  color: #7a4183;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  font-weight: normal;
+  margin-bottom: 32px;
 }
 @media (min-width: 650px) {
-  /* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+  /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+  .advocacy-article .article-callout {
+    margin-bottom: 50px;
+  }
+}
+/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+.advocacy-article .article-callout .article-callout-item {
+  margin-bottom: 15px;
+}
+@media (min-width: 650px) {
+  /* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+  .advocacy-article .article-callout .article-callout-item {
+    margin-bottom: 25px;
+  }
+}
+/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+.advocacy-article .article-callout .article-callout-item .article-callout-title {
+  color: #7a4183;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 30px;
+  line-height: 1.875rem;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+@media (min-width: 650px) {
+  /* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
   .advocacy-article .article-callout .article-callout-item .article-callout-title {
     font-size: 28px;
     font-size: 1.75rem;
@@ -56,11 +79,11 @@
     margin-bottom: 16px;
   }
 }
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+/* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
 .advocacy-article .article-call-to-action {
   margin-bottom: 45px;
 }
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
+/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-article.scss */
 .advocacy-article p {
   color: #696969;
   font-family: Arial, sans-serif;
@@ -76,37 +99,41 @@
  */
 /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
 .advocacy-pagetopic {
+  margin-bottom: 29px;
   min-height: 0px;
-  padding: 25px 15px 29px;
+  padding: 25px 18px 30px 15px;
 }
 @media (min-width: 650px) {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
   .advocacy-pagetopic {
-    padding: 40px 0 47px;
+    padding: 40px 0 45px;
+    margin-bottom: 45px;
   }
 }
-/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+/* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
 .advocacy-pagetopic a.back-to-previous {
-  height: 25px;
+  height: 18px;
   margin-bottom: 0px;
-  top: -7px;
+  top: -10px;
   position: relative;
 }
 @media (min-width: 650px) {
-  /* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+  /* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
   .advocacy-pagetopic a.back-to-previous {
+    height: 25px;
     top: -15px;
   }
 }
-/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+/* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
 .advocacy-pagetopic h1 {
-  font-size: 34px;
-  font-size: 2.125rem;
+  font-size: 30px;
+  font-size: 1.875rem;
   line-height: 36px;
   line-height: 2.25rem;
+  margin-top: -3px;
 }
 @media (min-width: 650px) {
-  /* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+  /* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
   .advocacy-pagetopic h1 {
     font-size: 36px;
     font-size: 2.25rem;
@@ -115,7 +142,7 @@
     margin-top: 0px;
   }
 }
-/* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
 .advocacy-pagetopic .page-subtitle {
   font-size: 16px;
   font-size: 1rem;
@@ -123,7 +150,7 @@
   line-height: 1.375rem;
 }
 @media (min-width: 650px) {
-  /* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+  /* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
   .advocacy-pagetopic .page-subtitle {
     font-size: 18px;
     font-size: 1.125rem;
@@ -132,32 +159,77 @@
     margin-top: 10px;
   }
 }
-/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+.advocacy-pagetopic .powered-by {
+  color: #666666;
+  display: block;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  padding-top: 14px;
+}
+@media (min-width: 650px) {
+  /* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+  .advocacy-pagetopic .powered-by {
+    display: inline-block;
+    font-size: 16px;
+    font-size: 1rem;
+    padding-top: 0;
+    padding-right: 10px;
+    text-align: center;
+  }
+}
+/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+.advocacy-pagetopic .partner-image {
+  display: none;
+}
+@media (min-width: 650px) {
+  /* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+  .advocacy-pagetopic .partner-image {
+    display: inline-block;
+    text-align: left;
+  }
+}
+/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
 .advocacy-pagetopic .partner-image img {
-  padding-top: 28px;
+  padding-top: 10px;
   max-width: 315px;
   width: 100%;
 }
 @media (min-width: 650px) {
-  /* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+  /* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
   .advocacy-pagetopic .partner-image img {
     padding-top: 0;
+    max-width: 210px;
+  }
+}
+/* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+.advocacy-pagetopic .partner-text {
+  font-size: 18px;
+  font-size: 1.125rem;
+  text-decoration: underline;
+}
+@media (min-width: 650px) {
+  /* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+  .advocacy-pagetopic .partner-text {
+    display: none;
   }
 }
 @media (min-width: 650px) {
-  /* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+  /* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
   .advocacy-pagetopic > .row > div:first-child {
     display: table-cell;
     float: none;
   }
 }
-/* line 60, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
-.advocacy-pagetopic > .row > div:last-child {
+/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+.advocacy-pagetopic > .row .partner-image-column {
   display: block;
 }
 @media (min-width: 650px) {
-  /* line 60, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
-  .advocacy-pagetopic > .row > div:last-child {
+  /* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_advocacy-pagetopic.scss */
+  .advocacy-pagetopic > .row .partner-image-column {
     display: table-cell;
     vertical-align: middle;
     float: none;
@@ -219,19 +291,25 @@
   min-height: 109px;
   padding-bottom: 0;
 }
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
+@media (min-width: 650px) {
+  /* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
+  .l-on-the-issues .issues-column:last-child .issues-item {
+    min-height: 85px;
+  }
+}
+/* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
 .l-on-the-issues .issues-item {
-  min-height: 117px;
+  min-height: 112px;
   padding-bottom: 20px;
 }
 @media (min-width: 650px) {
-  /* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
+  /* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
   .l-on-the-issues .issues-item {
     min-height: 165px;
     padding-bottom: 10px;
   }
 }
-/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
+/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
 .l-on-the-issues .issues-item h3 {
   margin: -3px 0 4px;
   font-size: 16px;
@@ -241,7 +319,7 @@
   font-weight: normal;
 }
 @media (min-width: 650px) {
-  /* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
+  /* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
   .l-on-the-issues .issues-item h3 {
     margin: -5px 0 8px;
     font-size: 18px;
@@ -251,7 +329,7 @@
   }
 }
 @media (min-width: 769px) {
-  /* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
+  /* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
   .l-on-the-issues .issues-item h3 {
     font-size: 22px;
     font-size: 1.375rem;
@@ -259,7 +337,7 @@
     line-height: 1.75rem;
   }
 }
-/* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
+/* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
 .l-on-the-issues .issues-item .issues-image {
   display: block;
   float: left;
@@ -267,23 +345,23 @@
   width: 50%;
 }
 @media (min-width: 480px) {
-  /* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
+  /* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
   .l-on-the-issues .issues-item .issues-image {
     padding-right: 6%;
   }
 }
 @media (min-width: 650px) {
-  /* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
+  /* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
   .l-on-the-issues .issues-item .issues-image {
-    padding-right: 6%;
+    padding-right: 5%;
     margin-right: 5%;
   }
 }
-/* line 84, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
+/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
 .l-on-the-issues .issues-item .issues-image img {
   width: 100%;
 }
-/* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
+/* line 91, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_on-the-issues.scss */
 .l-on-the-issues .issues-item .issues-title {
   width: 45%;
   padding-left: 0px;
@@ -324,26 +402,30 @@
   }
 }
 /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+.take-action .action-items {
+  margin-bottom: 35px;
+}
+/* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
 .take-action .action-item {
   margin-bottom: 26px;
 }
 @media (min-width: 480px) {
-  /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+  /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
   .take-action .action-item {
-    margin-bottom: 28px;
+    margin-bottom: 35px;
   }
 }
-/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+/* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
 .take-action .action-item .action-header {
   margin: 0 15px;
 }
 @media (min-width: 480px) {
-  /* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+  /* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
   .take-action .action-item .action-header {
     margin: 0;
   }
 }
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
 .take-action .action-item .action-header .action-image {
   float: left;
   margin: 4px 20px 10px 0px;
@@ -351,18 +433,18 @@
   width: 43%;
 }
 @media (min-width: 480px) {
-  /* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+  /* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
   .take-action .action-item .action-header .action-image {
-    margin: 4px 5% 20px 1px;
+    margin: 4px 8% 20px 1px;
     max-width: 190px;
     width: 30%;
   }
 }
-/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
 .take-action .action-item .action-header .action-image img {
   width: 100%;
 }
-/* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
 .take-action .action-item .action-header .action-description {
   color: #696969;
   font-size: 15px;
@@ -372,13 +454,15 @@
   margin-bottom: 18px;
 }
 @media (min-width: 480px) {
-  /* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+  /* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
   .take-action .action-item .action-header .action-description {
+    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 7px;
-    margin-left: 36%;
+    margin-left: 38%;
   }
 }
-/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+/* line 65, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
 .take-action .action-item .action-header .action-title {
   font-size: 17px;
   font-size: 1.0625rem;
@@ -387,13 +471,13 @@
   font-weight: normal;
 }
 @media (min-width: 480px) {
-  /* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+  /* line 65, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
   .take-action .action-item .action-header .action-title {
     margin-bottom: 18px;
-    margin-left: 36%;
+    margin-left: 38%;
   }
 }
-/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+/* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
 .take-action .action-item .action-button-wrap {
   background: #f4f2f1;
   margin-bottom: 15px;
@@ -401,14 +485,14 @@
   text-align: center;
 }
 @media (min-width: 480px) {
-  /* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+  /* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
   .take-action .action-item .action-button-wrap {
     background: #ffffff;
-    margin-left: 36%;
+    margin-left: 38%;
     text-align: left;
   }
 }
-/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+/* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
 .take-action .action-item .action-button-wrap button {
   font-size: 14px;
   font-size: 0.875rem;
@@ -419,14 +503,14 @@
   width: 132px;
 }
 @media (min-width: 480px) {
-  /* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
+  /* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action.scss */
   .take-action .action-item .action-button-wrap button {
     font-size: 16px;
     font-size: 1rem;
     line-height: 38px;
     line-height: 2.375rem;
     height: 40px;
-    width: 103px;
+    width: 100px;
   }
 }
 
@@ -435,41 +519,29 @@
  */
 /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
 .l-take-action-share {
-  margin-bottom: 35px;
+  margin-bottom: 22px;
 }
 @media (min-width: 650px) {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
   .l-take-action-share {
     position: relative;
-    top: -30px;
-  }
-}
-@media (min-width: 650px) {
-  /* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
-  .l-take-action-share div.share-save-icon {
-    width: 200px;
+    top: -16px;
   }
 }
 @media (min-width: 769px) {
-  /* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
-  .l-take-action-share div.share-save-icon {
-    width: 218px;
+  /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
+  .l-take-action-share {
+    left: -29px;
   }
 }
-@media (min-width: 960px) {
-  /* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
-  .l-take-action-share div.share-save-icon {
-    width: 275px;
-  }
-}
-/* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
+/* line 16, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
 .l-take-action-share div.share-save-icon h3 {
   font-size: 18px;
   font-size: 1.125rem;
   text-align: center;
 }
 @media (min-width: 650px) {
-  /* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
+  /* line 16, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
   .l-take-action-share div.share-save-icon h3 {
     font-size: 16px;
     font-size: 1rem;
@@ -477,34 +549,43 @@
   }
 }
 
+/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
+.l-take-action-signup {
+  clear: both;
+  margin-bottom: 35px;
+}
+@media (min-width: 650px) {
+  /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
+  .l-take-action-signup {
+    margin-bottom: 40px;
+  }
+}
+
 /* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
-.l-take-action-signup,
 .l-take-action-promo {
   clear: both;
   margin-bottom: 35px;
 }
 @media (min-width: 650px) {
   /* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
-  .l-take-action-signup,
   .l-take-action-promo {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 }
 
 /* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
 .take-action-signup {
   background-color: #f4f2f1;
-  margin: 0 15px;
+  margin: 0;
   padding: 35px 21px 30px 25px;
 }
 @media (min-width: 650px) {
   /* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
   .take-action-signup {
-    margin: 0;
     padding: 35px 20px 30px 20px;
   }
 }
-/* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
+/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
 .take-action-signup h4 {
   color: #7a4183;
   font-size: 24px;
@@ -514,26 +595,31 @@
   font-weight: normal;
   margin-bottom: 20px;
 }
-/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
+/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
+.take-action-signup .take-action-email-button {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 47px;
+  line-height: 2.9375rem;
+}
+/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
 .take-action-signup .take-action-input {
   margin-bottom: 10px;
-  width: 100%;
 }
 
-/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
+/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
 .take-action-promo {
   background-color: #f4f2f1;
-  margin: 0 15px;
+  margin: 0;
   padding: 10px;
 }
 @media (min-width: 650px) {
-  /* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
+  /* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
   .take-action-promo {
-    margin: 0;
     padding: 0;
   }
 }
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
+/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/advocacy/_take-action-signup.scss */
 .take-action-promo img {
   width: 100%;
 }

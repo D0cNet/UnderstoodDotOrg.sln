@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>Experts Live - Calendar (C4a)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -264,7 +280,7 @@
 <div class="container community-main-header ">
     <header>
         <div class="row header-wrapper">
-            <div class="col col-14 offset-1 header-title">
+            <div class="col col-14 offset-1 header-title rs_read_this">
                 <h1>Welcome to the Understood Community</h1>
                 <p class="subhead">A private parent community with expert guidance and support</p>
             </div>
@@ -364,13 +380,13 @@
 <div class="container">
     <div class="row">
         <div class="container">
-            <div class="experts-nav-form clearfix skiplink-toolbar">
+            <div class="experts-nav-form  rs_read_this clearfix skiplink-toolbar">
                 <div class="dropdown">
                     <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-                        <span class="current-page">Filter By: Calendar</span>
-                        <span class="dropdown-title">Filter By</span>
+                        <span class="current-page">Calendar</span>
+                        <span class="dropdown-title rs_skip">Filter By</span>
                     </a>
-                    <ul class="dropdown-menu" role="menu">
+                    <ul class="dropdown-menu rs_skip" role="menu">
                         
                         <li role="presentation" class="">
                             <a role="menuitem" href="REPLACE">Featured</a>
@@ -466,60 +482,62 @@
 
         <!-- BEGIN PARTIAL: community/calendar/grid_single_event -->
 <li class="single live-event day tuesday">
+  <div class="rs_read_this">
     <p class="date"><span class="month">Sep </span>01</p>
     <p class="day-of-week">Tuesday</p>
 
     
         <span class="children-key">
             <ul>
-                <li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     
 
     <div class="event">
         <div class="event-content">
-            <p class="event-header">Atque Molestiae A</p>
-            <a href="#" class="event-name">Odit Neque Ab Numquam</a>
-            <p class="event-time">12am EST</p>
+            <p class="event-header">At Labore Eius</p>
+            <a href="#" class="event-name">Dolorem Quis Maxime Neque</a>
+            <p class="event-time">12am EDT</p>
 
             <a href="REPLACE" class="button live-now">Live Now</a>
-            <a class="button more-info-toggle">More Info</a>
-            <a class="button more-info-toggle close">Close</a>
+            <a class="button more-info-toggle rs_skip">More Info</a>
+            <a class="button more-info-toggle close rs_skip">Close</a>
         </div>
         <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
                 <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
                 <div class="image-label">
-                  Guest Expert
+                  Expert
                 </div>
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Qui Est</h2>
-            <p class="event-card-description">Magni omnis sint enim quae quaerat itaque optio</p>
+            <h2>Quis Officiis</h2>
+            <p class="event-card-description">Architecto aut non voluptas labore voluptate illum assumenda</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-datetime"><a href="REPLACE">Nisi Velit at 12am EDT Sat Jun 8 2002</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Vel Et at 12am EDT Mon Aug 31 1998</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
 </div>
 <!-- END PARTIAL: community/calendar/event_detail_card -->
     </div>
+  </div>
 </li>
 
 
@@ -544,6 +562,7 @@
 <!-- END PARTIAL: community/calendar/grid_no_events -->
         <!-- BEGIN PARTIAL: community/calendar/grid_multi_events -->
 <li class="day multiple-events saturday">
+  <div class="rs_read_this">
     <p class="date"><span class="month">Sep </span>05</p>
     <p class="day-of-week">Saturday</p>
 
@@ -555,50 +574,48 @@
                 
                 <span class="children-key">
                     <ul>
-                        <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                        <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
                     </ul>
                 </span>
                 
 
                 <div class="event-content">
-                    <p class="event-header">Fugit Blanditiis Fugiat</p>
-                    <a href="#" class="event-name truncated">Voluptatum Et Qui Unde...</a>
-                    <a href="#" class="event-name">Vel Quidem Enim Ab Voluptatem Ad</a>
+                    <p class="event-header rs_skip">Qui Sit Et</p>
+                    <a href="#" class="event-name truncated">Sequi Non Totam Non...</a>
+                    <a href="#" class="event-name rs_skip">Et Ducimus Quod Qui Minus Voluptatem</a>
                     <p class="event-time">12am EDT</p>
 
                     <a href="REPLACE" class="button live-now">Live</a>
-                    <a class="button more-info-toggle">More Info</a>
-                    <a class="button more-info-toggle close">Close</a>
+                    <a class="button more-info-toggle rs_skip">More Info</a>
+                    <a class="button more-info-toggle close rs_skip">Close</a>
                 </div>
                 <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
                 <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
                 <div class="image-label">
-                  Guest Expert
+                  Expert
                 </div>
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Voluptatum Magni</h2>
-            <p class="event-card-description">Provident eum voluptas odit aut ut ut est</p>
+            <h2>Architecto Officiis</h2>
+            <p class="event-card-description">Nulla voluptatum ut et voluptatem quis debitis repellat</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-header">Quis Aut Ipsum</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Asperiores Maxime at 12am EST Sun Nov 20 2005</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Sed Illo at 12am EDT Wed Aug 23 2006</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-d' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
@@ -613,22 +630,22 @@
             
             <span class="children-key">
                 <ul>
-                    <li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                    <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
                 </ul>
             </span>
             
 
             <div class="event-content">
-                <p class="event-header">Ducimus Suscipit Suscipit</p>
-                <a href="#" class="event-name truncated">Facilis Quia Velit Dolore...</a>
-                <a href="REPLACE" class="event-name">Doloribus Consequatur Excepturi Harum Animi Eos</a>
-                <p class="event-time">12am EDT</p>
+                <p class="event-header rs_skip">Amet Aspernatur Et</p>
+                <a href="#" class="event-name truncated">Quidem Placeat Repellat Nulla...</a>
+                <a href="REPLACE" class="event-name rs_skip">Nihil Aut Voluptatem Similique Ut Doloremque</a>
+                <p class="event-time">12am EST</p>
 
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
             </div>
             <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -639,23 +656,23 @@
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Blanditiis Consequuntur</h2>
-            <p class="event-card-description">Omnis blanditiis aperiam aut enim ut illo ratione</p>
+            <h2>Dolore Velit</h2>
+            <p class="event-card-description">Doloremque sed praesentium debitis dolores provident sunt ipsa</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-header">Quam Culpa In</p>
+        <p class="event-card-header">Quaerat In Qui</p>
         
-        <p class="event-card-datetime"><a href="REPLACE">Asperiores Enim at 12am EST Fri Mar 27 1992</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Quis Veritatis at 12am EDT Wed May 17 2006</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
@@ -667,6 +684,7 @@
     
     
     </ul>
+  </div>
 </li>
 <!-- END PARTIAL: community/calendar/grid_multi_events -->
     </ul>
@@ -675,6 +693,7 @@
         <!-- BEGIN PARTIAL: community/calendar/grid_single_event -->
 
 <li class="single day sunday">
+  <div class="rs_read_this">
     <p class="date"><span class="month">Sep </span>06</p>
     <p class="day-of-week">Sunday</p>
 
@@ -682,15 +701,15 @@
         
 
         <div class="event-content">
-            <p class="event-header">Ipsa Minus Sed</p>
-            <a href="#" class="event-name">Eos Quis Sapiente Et</a>
+            <p class="event-header">Sequi Ullam Aut</p>
+            <a href="#" class="event-name">Vero Itaque Et Voluptatem</a>
             <p class="event-time">12am EDT</p>
 
-            <a class="button more-info-toggle">More Info</a>
-            <a class="button more-info-toggle close">Close</a>
+            <a class="button more-info-toggle rs_skip">More Info</a>
+            <a class="button more-info-toggle close rs_skip">Close</a>
         </div>
         <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -701,29 +720,28 @@
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Recusandae Quas</h2>
-            <p class="event-card-description">Magni minus et illum molestiae officia omnis iusto</p>
+            <h2>Quaerat Consequatur</h2>
+            <p class="event-card-description">Quae nobis modi magnam maiores doloremque est perspiciatis</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-header">Id Nobis Harum</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Tempore Et at 12am EDT Fri Mar 30 2007</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Ea Officiis at 12am EDT Thu Aug 9 2001</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-c' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
 </div>
 <!-- END PARTIAL: community/calendar/event_detail_card -->
     </div>
+  </div>
 </li>
 
 <!-- END PARTIAL: community/calendar/grid_single_event -->
@@ -742,6 +760,7 @@
         <!-- BEGIN PARTIAL: community/calendar/grid_single_event -->
 
 <li class="single day wednesday">
+  <div class="rs_read_this">
     <p class="date"><span class="month">Sep </span>09</p>
     <p class="day-of-week">Wednesday</p>
 
@@ -749,15 +768,15 @@
         
 
         <div class="event-content">
-            <p class="event-header">Nemo Ut Reprehenderit</p>
-            <a href="#" class="event-name">Perspiciatis Voluptas Doloribus Et</a>
+            <p class="event-header">Dolore Laudantium Totam</p>
+            <a href="#" class="event-name">Itaque Perspiciatis Enim Rerum</a>
             <p class="event-time">12am EST</p>
 
-            <a class="button more-info-toggle">More Info</a>
-            <a class="button more-info-toggle close">Close</a>
+            <a class="button more-info-toggle rs_skip">More Info</a>
+            <a class="button more-info-toggle close rs_skip">Close</a>
         </div>
         <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -768,32 +787,34 @@
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Eius Quo</h2>
-            <p class="event-card-description">Placeat amet occaecati quasi labore quidem unde velit</p>
+            <h2>Voluptas Et</h2>
+            <p class="event-card-description">Impedit dolorem perferendis debitis adipisci rem aut rerum</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-datetime"><a href="REPLACE">Autem Magni at 12am EDT Mon Oct 2 1995</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Vel Est at 12am EST Sun Dec 9 1990</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-c' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
 </div>
 <!-- END PARTIAL: community/calendar/event_detail_card -->
     </div>
+  </div>
 </li>
 
 <!-- END PARTIAL: community/calendar/grid_single_event -->
         <!-- BEGIN PARTIAL: community/calendar/grid_multi_events -->
 <li class="day multiple-events thursday">
+  <div class="rs_read_this">
     <p class="date"><span class="month">Sep </span>10</p>
     <p class="day-of-week">Thursday</p>
 
@@ -804,16 +825,16 @@
             
 
             <div class="event-content">
-                <p class="event-header">Aut Omnis Nam</p>
-                <a href="#" class="event-name truncated">Quia Corporis Incidunt Et...</a>
-                <a href="REPLACE" class="event-name">Aut Est Placeat Delectus Quasi Enim</a>
-                <p class="event-time">12am EDT</p>
+                <p class="event-header rs_skip">Quis Qui Quasi</p>
+                <a href="#" class="event-name truncated">Quia Et Id Et...</a>
+                <a href="REPLACE" class="event-name rs_skip">Omnis Hic Cupiditate Tempore Cumque Ut</a>
+                <p class="event-time">12am EST</p>
 
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
             </div>
             <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -824,21 +845,23 @@
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Perferendis Est</h2>
-            <p class="event-card-description">In exercitationem labore repellat amet perspiciatis placeat eos</p>
+            <h2>Adipisci Ut</h2>
+            <p class="event-card-description">Inventore voluptate deserunt dolorem sit facere recusandae aut</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-datetime"><a href="REPLACE">Excepturi Sunt at 12am EST Tue Dec 1 2009</a></p>
+        <p class="event-card-header">Possimus Ea Corrupti</p>
+        
+        <p class="event-card-datetime"><a href="REPLACE">Amet Error at 12am EDT Tue Apr 3 2001</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
@@ -854,43 +877,41 @@
             
 
             <div class="event-content">
-                <p class="event-header">Architecto Nam Aliquam</p>
-                <a href="#" class="event-name truncated">Assumenda Est Et Qui...</a>
-                <a href="REPLACE" class="event-name">Id Maxime Nisi Ab Perferendis Quia</a>
-                <p class="event-time">12am EST</p>
+                <p class="event-header rs_skip">Facilis Quia In</p>
+                <a href="#" class="event-name truncated">Doloribus Ullam Ut Nemo...</a>
+                <a href="REPLACE" class="event-name rs_skip">Consequatur Eos Fugit Sint Quo Quis</a>
+                <p class="event-time">12am EDT</p>
 
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
             </div>
             <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
                 <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
                 <div class="image-label">
-                  Expert
+                  Guest Expert
                 </div>
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Enim Nihil</h2>
-            <p class="event-card-description">Incidunt amet quo molestiae quis nam nihil aut</p>
+            <h2>Amet Voluptatibus</h2>
+            <p class="event-card-description">Voluptatem adipisci et saepe quis iure dolorum repellat</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-header">Ipsa Eligendi Non</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Doloremque Architecto at 12am EST Thu Jan 8 2004</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Odio Aut at 12am EDT Sun May 14 2000</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
@@ -902,6 +923,7 @@
     
     
     </ul>
+  </div>
 </li>
 <!-- END PARTIAL: community/calendar/grid_multi_events -->
         <!-- BEGIN PARTIAL: community/calendar/grid_no_events -->
@@ -912,6 +934,7 @@
 <!-- END PARTIAL: community/calendar/grid_no_events -->
         <!-- BEGIN PARTIAL: community/calendar/grid_multi_events -->
 <li class="day multiple-events saturday">
+  <div class="rs_read_this">
     <p class="date"><span class="month">Sep </span>12</p>
     <p class="day-of-week">Saturday</p>
 
@@ -922,40 +945,98 @@
             
             <span class="children-key">
                 <ul>
-                    <li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                    <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
                 </ul>
             </span>
             
 
             <div class="event-content">
-                <p class="event-header">In Aut Voluptatem</p>
-                <a href="#" class="event-name truncated">Sit Atque Consequatur Distinctio...</a>
-                <a href="REPLACE" class="event-name">Ipsa Est Omnis Vitae Repellat Eum</a>
-                <p class="event-time">12am EDT</p>
+                <p class="event-header rs_skip">Ab Eveniet Animi</p>
+                <a href="#" class="event-name truncated">Quia Corporis Occaecati Rerum...</a>
+                <a href="REPLACE" class="event-name rs_skip">Saepe Dolores Mollitia Eligendi Quis Veniam</a>
+                <p class="event-time">12am EST</p>
 
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
             </div>
             <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
                 <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
                 <div class="image-label">
-                  Expert
+                  Guest Expert
                 </div>
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Nulla Laborum</h2>
-            <p class="event-card-description">Nisi voluptatem voluptatum delectus voluptatem iusto et ut</p>
+            <h2>Non Earum</h2>
+            <p class="event-card-description">Unde voluptates alias similique ut ut ea dicta</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-datetime"><a href="REPLACE">Odit Facilis at 12am EST Sun Feb 11 2007</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Sit Dolores at 12am EST Mon Feb 10 2003</a></p>
+        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
+        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
+        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
+
+        <span class="children-key">
+            <ul>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+    </div>
+</div>
+<!-- END PARTIAL: community/calendar/event_detail_card -->
+        </li>
+        
+        
+    
+    
+        
+        <li class="event">
+            
+            <span class="children-key">
+                <ul>
+                    <li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                </ul>
+            </span>
+            
+
+            <div class="event-content">
+                <p class="event-header rs_skip">Accusamus Deserunt Consectetur</p>
+                <a href="#" class="event-name truncated">Aut Iure Nesciunt Iusto...</a>
+                <a href="REPLACE" class="event-name rs_skip">Nisi Amet Ab Saepe Laborum Quia</a>
+                <p class="event-time">12am EDT</p>
+
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
+            </div>
+            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
+<div class="event-card rs_skip">
+    <div class="event-host-info">
+        <div class="event-card-image">
+            <a href="REPLACE">
+                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div class="image-label">
+                  Guest Expert
+                </div>
+            </a>
+        </div><!-- end .event-card-image -->
+        <div class="event-card-host-description">
+            <h2>Nam Vel</h2>
+            <p class="event-card-description">Consequatur qui ut dolorum sint inventore qui odio</p>
+        </div>
+    </div><!-- end .event-host-info -->
+
+    <div class="event-actions">
+        
+        <p class="event-card-header">Aut Minus Pariatur</p>
+        
+        <p class="event-card-datetime"><a href="REPLACE">Iusto Possimus at 12am EDT Mon Aug 17 1992</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
@@ -978,22 +1059,158 @@
             
             <span class="children-key">
                 <ul>
-                    <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
+                    <li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
                 </ul>
             </span>
             
 
             <div class="event-content">
-                <p class="event-header">Dolorem Rerum Quia</p>
-                <a href="#" class="event-name truncated">Beatae Asperiores Doloribus Et...</a>
-                <a href="REPLACE" class="event-name">Voluptate Ut Aut Numquam Quisquam Rerum</a>
-                <p class="event-time">12am EST</p>
+                <p class="event-header rs_skip">Nemo Aut Occaecati</p>
+                <a href="#" class="event-name truncated">Dicta Suscipit Nihil Natus...</a>
+                <a href="REPLACE" class="event-name rs_skip">Sit Nemo Qui Sed Ut Quod</a>
+                <p class="event-time">12am EDT</p>
 
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
             </div>
             <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
+    <div class="event-host-info">
+        <div class="event-card-image">
+            <a href="REPLACE">
+                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div class="image-label">
+                  Guest Expert
+                </div>
+            </a>
+        </div><!-- end .event-card-image -->
+        <div class="event-card-host-description">
+            <h2>Debitis Unde</h2>
+            <p class="event-card-description">Laudantium quo aut dolore et sapiente iste ullam</p>
+        </div>
+    </div><!-- end .event-host-info -->
+
+    <div class="event-actions">
+        
+        <p class="event-card-header">In Ad Et</p>
+        
+        <p class="event-card-datetime"><a href="REPLACE">Nam Recusandae at 12am EST Mon Mar 19 2001</a></p>
+        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
+        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
+        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
+
+        <span class="children-key">
+            <ul>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+    </div>
+</div>
+<!-- END PARTIAL: community/calendar/event_detail_card -->
+        </li>
+        
+        
+    
+    
+    </ul>
+  </div>
+</li>
+<!-- END PARTIAL: community/calendar/grid_multi_events -->
+    </ul>
+
+    <ul class="row grid-row">
+        <!-- BEGIN PARTIAL: community/calendar/grid_single_event -->
+
+<li class="single day sunday">
+  <div class="rs_read_this">
+    <p class="date"><span class="month">Sep </span>13</p>
+    <p class="day-of-week">Sunday</p>
+
+    <div class="event">
+        
+        <span class="children-key">
+            <ul>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+        
+
+        <div class="event-content">
+            <p class="event-header">Quaerat Quaerat Cumque</p>
+            <a href="#" class="event-name">Ut Ut Iure Sunt</a>
+            <p class="event-time">12am EST</p>
+
+            <a class="button more-info-toggle rs_skip">More Info</a>
+            <a class="button more-info-toggle close rs_skip">Close</a>
+        </div>
+        <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
+<div class="event-card rs_skip">
+    <div class="event-host-info">
+        <div class="event-card-image">
+            <a href="REPLACE">
+                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div class="image-label">
+                  Guest Expert
+                </div>
+            </a>
+        </div><!-- end .event-card-image -->
+        <div class="event-card-host-description">
+            <h2>Et Qui</h2>
+            <p class="event-card-description">Voluptates laborum inventore earum magnam animi pariatur tenetur</p>
+        </div>
+    </div><!-- end .event-host-info -->
+
+    <div class="event-actions">
+        
+        <p class="event-card-header">Voluptatem Doloremque Vel</p>
+        
+        <p class="event-card-datetime"><a href="REPLACE">Accusantium Atque at 12am EST Sat Feb 26 1994</a></p>
+        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
+        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
+        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
+
+        <span class="children-key">
+            <ul>
+                <li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+    </div>
+</div>
+<!-- END PARTIAL: community/calendar/event_detail_card -->
+    </div>
+  </div>
+</li>
+
+<!-- END PARTIAL: community/calendar/grid_single_event -->
+        <!-- BEGIN PARTIAL: community/calendar/grid_multi_events -->
+<li class="day multiple-events monday">
+  <div class="rs_read_this">
+    <p class="date"><span class="month">Sep </span>14</p>
+    <p class="day-of-week">Monday</p>
+
+    <ul class="events">
+    
+        
+        <li class="event">
+            
+            <span class="children-key">
+                <ul>
+                    <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                </ul>
+            </span>
+            
+
+            <div class="event-content">
+                <p class="event-header rs_skip">Quod Et Consequuntur</p>
+                <a href="#" class="event-name truncated">Distinctio Quod Quia Sed...</a>
+                <a href="REPLACE" class="event-name rs_skip">Quia Vel Fugiat Porro Sed Doloremque</a>
+                <p class="event-time">12am EDT</p>
+
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
+            </div>
+            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -1004,21 +1221,21 @@
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Quaerat Ducimus</h2>
-            <p class="event-card-description">Vel ea qui veritatis unde quia amet aliquid</p>
+            <h2>Et Enim</h2>
+            <p class="event-card-description">Libero rerum repudiandae hic recusandae fugit modi qui</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-datetime"><a href="REPLACE">Est Alias at 12am EDT Wed Jun 16 2004</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Rerum Dicta at 12am EST Tue Jan 29 1991</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
@@ -1040,204 +1257,16 @@
             
 
             <div class="event-content">
-                <p class="event-header">Veniam Debitis Asperiores</p>
-                <a href="#" class="event-name truncated">Repudiandae Quisquam Non Omnis...</a>
-                <a href="REPLACE" class="event-name">Voluptates Quasi Animi Laboriosam Rerum Mollitia</a>
+                <p class="event-header rs_skip">Perferendis Architecto Odit</p>
+                <a href="#" class="event-name truncated">Beatae Laboriosam Qui Fuga...</a>
+                <a href="REPLACE" class="event-name rs_skip">Ut Laborum Facere Totam Id Excepturi</a>
                 <p class="event-time">12am EDT</p>
 
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
             </div>
             <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
-    <div class="event-host-info">
-        <div class="event-card-image">
-            <a href="REPLACE">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                <div class="image-label">
-                  Expert
-                </div>
-            </a>
-        </div><!-- end .event-card-image -->
-        <div class="event-card-host-description">
-            <h2>Consequuntur Eius</h2>
-            <p class="event-card-description">Sit omnis modi quo ipsum et quia eos</p>
-        </div>
-    </div><!-- end .event-host-info -->
-
-    <div class="event-actions">
-        
-        <p class="event-card-header">Eveniet Itaque Ipsa</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Dignissimos Rerum at 12am EST Wed Dec 20 2000</a></p>
-        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
-        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
-        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
-
-        <span class="children-key">
-            <ul>
-                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
-    </div>
-</div>
-<!-- END PARTIAL: community/calendar/event_detail_card -->
-        </li>
-        
-        
-    
-    
-    </ul>
-</li>
-<!-- END PARTIAL: community/calendar/grid_multi_events -->
-    </ul>
-
-    <ul class="row grid-row">
-        <!-- BEGIN PARTIAL: community/calendar/grid_single_event -->
-
-<li class="single day sunday">
-    <p class="date"><span class="month">Sep </span>13</p>
-    <p class="day-of-week">Sunday</p>
-
-    <div class="event">
-        
-        <span class="children-key">
-            <ul>
-                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
-        
-
-        <div class="event-content">
-            <p class="event-header">Ut Ratione Corrupti</p>
-            <a href="#" class="event-name">Illum Aperiam Ea Voluptate</a>
-            <p class="event-time">12am EDT</p>
-
-            <a class="button more-info-toggle">More Info</a>
-            <a class="button more-info-toggle close">Close</a>
-        </div>
-        <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
-    <div class="event-host-info">
-        <div class="event-card-image">
-            <a href="REPLACE">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                <div class="image-label">
-                  Expert
-                </div>
-            </a>
-        </div><!-- end .event-card-image -->
-        <div class="event-card-host-description">
-            <h2>Dicta Optio</h2>
-            <p class="event-card-description">A amet asperiores eaque esse placeat perspiciatis sunt</p>
-        </div>
-    </div><!-- end .event-host-info -->
-
-    <div class="event-actions">
-        
-        <p class="event-card-header">Tempore Aut Incidunt</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Placeat Quae at 12am EDT Tue Aug 21 1990</a></p>
-        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
-        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
-        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
-
-        <span class="children-key">
-            <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
-    </div>
-</div>
-<!-- END PARTIAL: community/calendar/event_detail_card -->
-    </div>
-</li>
-
-<!-- END PARTIAL: community/calendar/grid_single_event -->
-        <!-- BEGIN PARTIAL: community/calendar/grid_multi_events -->
-<li class="day multiple-events monday">
-    <p class="date"><span class="month">Sep </span>14</p>
-    <p class="day-of-week">Monday</p>
-
-    <ul class="events">
-    
-        
-        <li class="event">
-            
-            <span class="children-key">
-                <ul>
-                    <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li>
-                </ul>
-            </span>
-            
-
-            <div class="event-content">
-                <p class="event-header">Impedit Similique Voluptatem</p>
-                <a href="#" class="event-name truncated">Aliquam Natus Vitae Rerum...</a>
-                <a href="REPLACE" class="event-name">Temporibus Quo Non Molestias Atque Corrupti</a>
-                <p class="event-time">12am EST</p>
-
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
-            </div>
-            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
-    <div class="event-host-info">
-        <div class="event-card-image">
-            <a href="REPLACE">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                <div class="image-label">
-                  Expert
-                </div>
-            </a>
-        </div><!-- end .event-card-image -->
-        <div class="event-card-host-description">
-            <h2>Praesentium Quia</h2>
-            <p class="event-card-description">Ullam incidunt reprehenderit et sed quae omnis fugit</p>
-        </div>
-    </div><!-- end .event-host-info -->
-
-    <div class="event-actions">
-        
-        <p class="event-card-datetime"><a href="REPLACE">Sint Blanditiis at 12am EST Sun Feb 3 1991</a></p>
-        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
-        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
-        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
-
-        <span class="children-key">
-            <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
-    </div>
-</div>
-<!-- END PARTIAL: community/calendar/event_detail_card -->
-        </li>
-        
-        
-    
-    
-        
-        <li class="event">
-            
-            <span class="children-key">
-                <ul>
-                    <li><i class='child-b' title='CHILD NAME HERE'></i></li>
-                </ul>
-            </span>
-            
-
-            <div class="event-content">
-                <p class="event-header">Officiis Est Sed</p>
-                <a href="#" class="event-name truncated">Architecto Sint Quia Fuga...</a>
-                <a href="REPLACE" class="event-name">Iste Eum Voluptas Possimus Doloribus Excepturi</a>
-                <p class="event-time">12am EDT</p>
-
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
-            </div>
-            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -1248,23 +1277,21 @@
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Corrupti Velit</h2>
-            <p class="event-card-description">Delectus tenetur tempora non voluptatem culpa laudantium officiis</p>
+            <h2>Eos Officiis</h2>
+            <p class="event-card-description">Magni quod quia dignissimos et iusto similique et</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-header">Necessitatibus Ad Et</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Accusantium Dignissimos at 12am EDT Sun Apr 27 1997</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Quaerat Earum at 12am EDT Sat Aug 20 2005</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
@@ -1286,16 +1313,16 @@
             
 
             <div class="event-content">
-                <p class="event-header">A Qui Incidunt</p>
-                <a href="#" class="event-name truncated">Laboriosam Ut Blanditiis Quisquam...</a>
-                <a href="REPLACE" class="event-name">Non Est Autem Facere Autem Quisquam</a>
+                <p class="event-header rs_skip">Deserunt Ipsam Tempora</p>
+                <a href="#" class="event-name truncated">Voluptate Veritatis Qui Aut...</a>
+                <a href="REPLACE" class="event-name rs_skip">Quis Tenetur Rerum Quasi Et Laborum</a>
                 <p class="event-time">12am EST</p>
 
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
             </div>
             <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -1306,23 +1333,23 @@
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Non Nihil</h2>
-            <p class="event-card-description">Soluta odit dolor voluptatem placeat et omnis quaerat</p>
+            <h2>Et Quasi</h2>
+            <p class="event-card-description">Repellendus molestiae et enim provident molestias temporibus voluptatem</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-header">Eveniet Ipsum Consequuntur</p>
+        <p class="event-card-header">Nisi Praesentium Et</p>
         
-        <p class="event-card-datetime"><a href="REPLACE">Eos Maxime at 12am EST Sun Dec 21 2003</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Qui Quidem at 12am EDT Wed Aug 7 2002</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-c' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
@@ -1334,6 +1361,7 @@
     
     
     </ul>
+  </div>
 </li>
 <!-- END PARTIAL: community/calendar/grid_multi_events -->
         <!-- BEGIN PARTIAL: community/calendar/grid_no_events -->
@@ -1350,6 +1378,7 @@
 <!-- END PARTIAL: community/calendar/grid_no_events -->
         <!-- BEGIN PARTIAL: community/calendar/grid_multi_events -->
 <li class="day multiple-events thursday">
+  <div class="rs_read_this">
     <p class="date"><span class="month">Sep </span>17</p>
     <p class="day-of-week">Thursday</p>
 
@@ -1360,16 +1389,68 @@
             
 
             <div class="event-content">
-                <p class="event-header">Ipsa Magnam Aperiam</p>
-                <a href="#" class="event-name truncated">Modi Est Et Dignissimos...</a>
-                <a href="REPLACE" class="event-name">Inventore Autem Dolorem Repudiandae Reprehenderit Expedita</a>
-                <p class="event-time">12am EDT</p>
+                <p class="event-header rs_skip">Aliquid Quia Distinctio</p>
+                <a href="#" class="event-name truncated">Provident Dolores Ut Natus...</a>
+                <a href="REPLACE" class="event-name rs_skip">Alias Ut Ut Quibusdam Earum Maxime</a>
+                <p class="event-time">12am EST</p>
 
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
             </div>
             <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
+    <div class="event-host-info">
+        <div class="event-card-image">
+            <a href="REPLACE">
+                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div class="image-label">
+                  Expert
+                </div>
+            </a>
+        </div><!-- end .event-card-image -->
+        <div class="event-card-host-description">
+            <h2>Quo Porro</h2>
+            <p class="event-card-description">Saepe tenetur officia maiores libero ut fugit et</p>
+        </div>
+    </div><!-- end .event-host-info -->
+
+    <div class="event-actions">
+        
+        <p class="event-card-header">Accusamus Qui Veritatis</p>
+        
+        <p class="event-card-datetime"><a href="REPLACE">Officia Pariatur at 12am EDT Tue Oct 10 2000</a></p>
+        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
+        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
+        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
+
+        <span class="children-key">
+            <ul>
+                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+    </div>
+</div>
+<!-- END PARTIAL: community/calendar/event_detail_card -->
+        </li>
+        
+        
+    
+    
+        
+        <li class="event">
+            
+
+            <div class="event-content">
+                <p class="event-header rs_skip">Nisi Vero Iste</p>
+                <a href="#" class="event-name truncated">Velit Facilis Eos Sequi...</a>
+                <a href="REPLACE" class="event-name rs_skip">Consequuntur Cumque Consequatur Sed Explicabo Reprehenderit</a>
+                <p class="event-time">12am EDT</p>
+
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
+            </div>
+            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -1380,14 +1461,136 @@
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Perferendis Dolores</h2>
-            <p class="event-card-description">Blanditiis id necessitatibus perferendis illum iure doloremque earum</p>
+            <h2>Enim Sed</h2>
+            <p class="event-card-description">Sint a maiores vel voluptatum explicabo cum consequatur</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-datetime"><a href="REPLACE">Expedita Tempore at 12am EST Sun Nov 9 2003</a></p>
+        <p class="event-card-header">Id Nobis Odio</p>
+        
+        <p class="event-card-datetime"><a href="REPLACE">Nisi Voluptas at 12am EST Wed Jan 13 1999</a></p>
+        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
+        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
+        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
+
+        <span class="children-key">
+            <ul>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+    </div>
+</div>
+<!-- END PARTIAL: community/calendar/event_detail_card -->
+        </li>
+        
+        
+    
+    
+        
+        <li class="event">
+            
+
+            <div class="event-content">
+                <p class="event-header rs_skip">Aliquam Possimus Soluta</p>
+                <a href="#" class="event-name truncated">Tempore Aut Amet Expedita...</a>
+                <a href="REPLACE" class="event-name rs_skip">Voluptas Ipsa In Debitis Quis Quidem</a>
+                <p class="event-time">12am EST</p>
+
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
+            </div>
+            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
+<div class="event-card rs_skip">
+    <div class="event-host-info">
+        <div class="event-card-image">
+            <a href="REPLACE">
+                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div class="image-label">
+                  Guest Expert
+                </div>
+            </a>
+        </div><!-- end .event-card-image -->
+        <div class="event-card-host-description">
+            <h2>Est Ut</h2>
+            <p class="event-card-description">Quibusdam deleniti quaerat rerum laborum repellendus suscipit laboriosam</p>
+        </div>
+    </div><!-- end .event-host-info -->
+
+    <div class="event-actions">
+        
+        <p class="event-card-header">Alias Corrupti Eligendi</p>
+        
+        <p class="event-card-datetime"><a href="REPLACE">Voluptatem Dignissimos at 12am EDT Wed May 10 2006</a></p>
+        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
+        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
+        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
+
+        <span class="children-key">
+            <ul>
+                <li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+    </div>
+</div>
+<!-- END PARTIAL: community/calendar/event_detail_card -->
+        </li>
+        
+        
+    
+    
+    </ul>
+  </div>
+</li>
+<!-- END PARTIAL: community/calendar/grid_multi_events -->
+        <!-- BEGIN PARTIAL: community/calendar/grid_no_events -->
+<li class="day friday no-events">
+    <p class="date"><span class="month">Sep </span>18</p>
+    <p class="day-of-week">Friday</p>
+</li>
+<!-- END PARTIAL: community/calendar/grid_no_events -->
+        <!-- BEGIN PARTIAL: community/calendar/grid_multi_events -->
+<li class="day multiple-events saturday">
+  <div class="rs_read_this">
+    <p class="date"><span class="month">Sep </span>19</p>
+    <p class="day-of-week">Saturday</p>
+
+    <ul class="events">
+    
+        
+        <li class="event">
+            
+
+            <div class="event-content">
+                <p class="event-header rs_skip">Voluptas Quisquam Quibusdam</p>
+                <a href="#" class="event-name truncated">Dicta Rerum Tempora Possimus...</a>
+                <a href="REPLACE" class="event-name rs_skip">Eos Eaque Explicabo Quos Nam Dolor</a>
+                <p class="event-time">12am EDT</p>
+
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
+            </div>
+            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
+<div class="event-card rs_skip">
+    <div class="event-host-info">
+        <div class="event-card-image">
+            <a href="REPLACE">
+                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div class="image-label">
+                  Guest Expert
+                </div>
+            </a>
+        </div><!-- end .event-card-image -->
+        <div class="event-card-host-description">
+            <h2>Quae Dolorem</h2>
+            <p class="event-card-description">Quia tempora magni mollitia consequatur officiis et labore</p>
+        </div>
+    </div><!-- end .event-host-info -->
+
+    <div class="event-actions">
+        
+        <p class="event-card-datetime"><a href="REPLACE">Veniam Tempore at 12am EDT Fri Aug 5 2005</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
@@ -1410,16 +1613,16 @@
             
 
             <div class="event-content">
-                <p class="event-header">Impedit Quia Quas</p>
-                <a href="#" class="event-name truncated">Consequatur Exercitationem Quia Sint...</a>
-                <a href="REPLACE" class="event-name">Dolore Ipsum Tempore Qui Vero Ut</a>
+                <p class="event-header rs_skip">Mollitia Consequuntur Autem</p>
+                <a href="#" class="event-name truncated">Recusandae Voluptatibus Eligendi Quos...</a>
+                <a href="REPLACE" class="event-name rs_skip">Esse Ipsa Ut Repudiandae Facilis Ut</a>
                 <p class="event-time">12am EDT</p>
 
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
             </div>
             <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -1430,73 +1633,23 @@
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>A Sequi</h2>
-            <p class="event-card-description">A ab maxime et voluptatibus sed totam ut</p>
+            <h2>Qui Repellat</h2>
+            <p class="event-card-description">Unde rem labore et et mollitia expedita adipisci</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-datetime"><a href="REPLACE">Quasi Delectus at 12am EST Sat Feb 17 2001</a></p>
+        <p class="event-card-header">Necessitatibus Rerum Inventore</p>
+        
+        <p class="event-card-datetime"><a href="REPLACE">Eligendi Magni at 12am EDT Thu Oct 26 2000</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-c' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
-    </div>
-</div>
-<!-- END PARTIAL: community/calendar/event_detail_card -->
-        </li>
-        
-        
-    
-    
-        
-        <li class="event">
-            
-
-            <div class="event-content">
-                <p class="event-header">Assumenda Odio Et</p>
-                <a href="#" class="event-name truncated">Debitis Minima Doloremque Quam...</a>
-                <a href="REPLACE" class="event-name">Rerum Provident Corporis Tempore Fugit Dolor</a>
-                <p class="event-time">12am EDT</p>
-
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
-            </div>
-            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
-    <div class="event-host-info">
-        <div class="event-card-image">
-            <a href="REPLACE">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                <div class="image-label">
-                  Expert
-                </div>
-            </a>
-        </div><!-- end .event-card-image -->
-        <div class="event-card-host-description">
-            <h2>Molestias Voluptas</h2>
-            <p class="event-card-description">Doloribus error quo et architecto natus harum est</p>
-        </div>
-    </div><!-- end .event-host-info -->
-
-    <div class="event-actions">
-        
-        <p class="event-card-header">Quae Sed Et</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Et Dolore at 12am EST Mon Dec 20 1993</a></p>
-        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
-        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
-        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
-
-        <span class="children-key">
-            <ul>
-                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
@@ -1508,124 +1661,7 @@
     
     
     </ul>
-</li>
-<!-- END PARTIAL: community/calendar/grid_multi_events -->
-        <!-- BEGIN PARTIAL: community/calendar/grid_no_events -->
-<li class="day friday no-events">
-    <p class="date"><span class="month">Sep </span>18</p>
-    <p class="day-of-week">Friday</p>
-</li>
-<!-- END PARTIAL: community/calendar/grid_no_events -->
-        <!-- BEGIN PARTIAL: community/calendar/grid_multi_events -->
-<li class="day multiple-events saturday">
-    <p class="date"><span class="month">Sep </span>19</p>
-    <p class="day-of-week">Saturday</p>
-
-    <ul class="events">
-    
-        
-        <li class="event">
-            
-
-            <div class="event-content">
-                <p class="event-header">Perferendis Non Minima</p>
-                <a href="#" class="event-name truncated">Quae Ex Eos Aperiam...</a>
-                <a href="REPLACE" class="event-name">Labore Voluptates Quis Est Perferendis Fugit</a>
-                <p class="event-time">12am EST</p>
-
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
-            </div>
-            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
-    <div class="event-host-info">
-        <div class="event-card-image">
-            <a href="REPLACE">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                <div class="image-label">
-                  Expert
-                </div>
-            </a>
-        </div><!-- end .event-card-image -->
-        <div class="event-card-host-description">
-            <h2>Debitis Doloribus</h2>
-            <p class="event-card-description">Quasi temporibus aut libero aspernatur dolorum laboriosam nulla</p>
-        </div>
-    </div><!-- end .event-host-info -->
-
-    <div class="event-actions">
-        
-        <p class="event-card-header">Voluptates Earum Vel</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Quo Iusto at 12am EDT Sat Mar 29 2008</a></p>
-        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
-        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
-        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
-
-        <span class="children-key">
-            <ul>
-                <li><i class='child-d' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
-    </div>
-</div>
-<!-- END PARTIAL: community/calendar/event_detail_card -->
-        </li>
-        
-        
-    
-    
-        
-        <li class="event">
-            
-
-            <div class="event-content">
-                <p class="event-header">Vel Voluptatem Officia</p>
-                <a href="#" class="event-name truncated">Ab Cupiditate Rerum Repellat...</a>
-                <a href="REPLACE" class="event-name">Voluptatem Labore Illum Qui Qui Unde</a>
-                <p class="event-time">12am EST</p>
-
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
-            </div>
-            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
-    <div class="event-host-info">
-        <div class="event-card-image">
-            <a href="REPLACE">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                <div class="image-label">
-                  Guest Expert
-                </div>
-            </a>
-        </div><!-- end .event-card-image -->
-        <div class="event-card-host-description">
-            <h2>Voluptatem Rerum</h2>
-            <p class="event-card-description">Aut qui voluptate omnis incidunt non hic eaque</p>
-        </div>
-    </div><!-- end .event-host-info -->
-
-    <div class="event-actions">
-        
-        <p class="event-card-datetime"><a href="REPLACE">Ex Neque at 12am EST Sat Dec 15 1990</a></p>
-        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
-        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
-        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
-
-        <span class="children-key">
-            <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
-    </div>
-</div>
-<!-- END PARTIAL: community/calendar/event_detail_card -->
-        </li>
-        
-        
-    
-    
-    </ul>
+  </div>
 </li>
 <!-- END PARTIAL: community/calendar/grid_multi_events -->
     </ul>
@@ -1634,6 +1670,7 @@
         <!-- BEGIN PARTIAL: community/calendar/grid_single_event -->
 
 <li class="single day sunday">
+  <div class="rs_read_this">
     <p class="date"><span class="month">Sep </span>20</p>
     <p class="day-of-week">Sunday</p>
 
@@ -1641,54 +1678,53 @@
         
         <span class="children-key">
             <ul>
-                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
         
 
         <div class="event-content">
-            <p class="event-header">Incidunt Incidunt Facere</p>
-            <a href="#" class="event-name">Quaerat Et Consectetur Velit</a>
+            <p class="event-header">Voluptatibus Molestias Ratione</p>
+            <a href="#" class="event-name">Nisi Id Labore Iure</a>
             <p class="event-time">12am EDT</p>
 
-            <a class="button more-info-toggle">More Info</a>
-            <a class="button more-info-toggle close">Close</a>
+            <a class="button more-info-toggle rs_skip">More Info</a>
+            <a class="button more-info-toggle close rs_skip">Close</a>
         </div>
         <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
                 <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
                 <div class="image-label">
-                  Guest Expert
+                  Expert
                 </div>
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Sed Voluptatem</h2>
-            <p class="event-card-description">Omnis quaerat quidem necessitatibus accusamus enim neque magni</p>
+            <h2>Saepe Velit</h2>
+            <p class="event-card-description">Officiis nemo optio at vitae velit et ipsam</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-header">Aperiam Aliquid Consequatur</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Aliquam Atque at 12am EST Sat Feb 12 2000</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Facere Eum at 12am EDT Fri Oct 9 1998</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
 
         <span class="children-key">
             <ul>
-                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
             </ul>
         </span>
     </div>
 </div>
 <!-- END PARTIAL: community/calendar/event_detail_card -->
     </div>
+  </div>
 </li>
 
 <!-- END PARTIAL: community/calendar/grid_single_event -->
@@ -1712,6 +1748,7 @@
 <!-- END PARTIAL: community/calendar/grid_no_events -->
         <!-- BEGIN PARTIAL: community/calendar/grid_multi_events -->
 <li class="day multiple-events thursday">
+  <div class="rs_read_this">
     <p class="date"><span class="month">Sep </span>24</p>
     <p class="day-of-week">Thursday</p>
 
@@ -1722,16 +1759,140 @@
             
 
             <div class="event-content">
-                <p class="event-header">Voluptatem Sit Magnam</p>
-                <a href="#" class="event-name truncated">Soluta Nobis Doloremque Reprehenderit...</a>
-                <a href="REPLACE" class="event-name">Et Molestias Fugit Possimus Numquam Similique</a>
+                <p class="event-header rs_skip">Omnis Est Pariatur</p>
+                <a href="#" class="event-name truncated">Voluptatem Est Voluptates Quod...</a>
+                <a href="REPLACE" class="event-name rs_skip">Aut Quia Nemo Voluptas Pariatur Ipsa</a>
                 <p class="event-time">12am EDT</p>
 
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
             </div>
             <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+<div class="event-card rs_skip">
+    <div class="event-host-info">
+        <div class="event-card-image">
+            <a href="REPLACE">
+                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div class="image-label">
+                  Guest Expert
+                </div>
+            </a>
+        </div><!-- end .event-card-image -->
+        <div class="event-card-host-description">
+            <h2>Ipsum Asperiores</h2>
+            <p class="event-card-description">Molestias consequatur esse amet nihil minima aut molestiae</p>
+        </div>
+    </div><!-- end .event-host-info -->
+
+    <div class="event-actions">
+        
+        <p class="event-card-datetime"><a href="REPLACE">Necessitatibus Quae at 12am EDT Thu Apr 17 2008</a></p>
+        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
+        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
+        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
+
+        <span class="children-key">
+            <ul>
+                <li><i class='child-b' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+    </div>
+</div>
+<!-- END PARTIAL: community/calendar/event_detail_card -->
+        </li>
+        
+        
+    
+    
+        
+        <li class="event">
+            
+
+            <div class="event-content">
+                <p class="event-header rs_skip">Quibusdam Id Aut</p>
+                <a href="#" class="event-name truncated">Dolor Alias Molestiae Quos...</a>
+                <a href="REPLACE" class="event-name rs_skip">Iure Placeat Iste Reiciendis Incidunt Voluptas</a>
+                <p class="event-time">12am EST</p>
+
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
+            </div>
+            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
+<div class="event-card rs_skip">
+    <div class="event-host-info">
+        <div class="event-card-image">
+            <a href="REPLACE">
+                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div class="image-label">
+                  Guest Expert
+                </div>
+            </a>
+        </div><!-- end .event-card-image -->
+        <div class="event-card-host-description">
+            <h2>Illum Perferendis</h2>
+            <p class="event-card-description">Eaque culpa excepturi velit odit aut voluptates veniam</p>
+        </div>
+    </div><!-- end .event-host-info -->
+
+    <div class="event-actions">
+        
+        <p class="event-card-datetime"><a href="REPLACE">Ut Consectetur at 12am EDT Mon Apr 16 2001</a></p>
+        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
+        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
+        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
+
+        <span class="children-key">
+            <ul>
+                <li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+    </div>
+</div>
+<!-- END PARTIAL: community/calendar/event_detail_card -->
+        </li>
+        
+        
+    
+    
+    </ul>
+  </div>
+</li>
+<!-- END PARTIAL: community/calendar/grid_multi_events -->
+        <!-- BEGIN PARTIAL: community/calendar/grid_no_events -->
+<li class="day friday no-events">
+    <p class="date"><span class="month">Sep </span>25</p>
+    <p class="day-of-week">Friday</p>
+</li>
+<!-- END PARTIAL: community/calendar/grid_no_events -->
+        <!-- BEGIN PARTIAL: community/calendar/grid_multi_events -->
+<li class="day multiple-events saturday">
+  <div class="rs_read_this">
+    <p class="date"><span class="month">Sep </span>26</p>
+    <p class="day-of-week">Saturday</p>
+
+    <ul class="events">
+    
+        
+        <li class="event">
+            
+            <span class="children-key">
+                <ul>
+                    <li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                </ul>
+            </span>
+            
+
+            <div class="event-content">
+                <p class="event-header rs_skip">Enim Atque Omnis</p>
+                <a href="#" class="event-name truncated">Iure Fugit Iusto Id...</a>
+                <a href="REPLACE" class="event-name rs_skip">Aut Sint Veritatis Officia Ullam Fugit</a>
+                <p class="event-time">12am EDT</p>
+
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
+            </div>
+            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -1742,16 +1903,130 @@
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Enim Repudiandae</h2>
-            <p class="event-card-description">Consectetur non quam nam minima explicabo et hic</p>
+            <h2>Quisquam Laboriosam</h2>
+            <p class="event-card-description">Aliquam explicabo quis non explicabo accusantium odio vitae</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-header">Numquam Est Eum</p>
+        <p class="event-card-datetime"><a href="REPLACE">Sed Id at 12am EST Sun Nov 24 1996</a></p>
+        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
+        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
+        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
+
+        <span class="children-key">
+            <ul>
+                <li><i class='child-d' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+    </div>
+</div>
+<!-- END PARTIAL: community/calendar/event_detail_card -->
+        </li>
         
-        <p class="event-card-datetime"><a href="REPLACE">Qui Quia at 12am EDT Sun Jun 8 2003</a></p>
+        
+    
+    
+        
+        <li class="event">
+            
+            <span class="children-key">
+                <ul>
+                    <li><i class='child-c' title='CHILD NAME HERE'></i></li>
+                </ul>
+            </span>
+            
+
+            <div class="event-content">
+                <p class="event-header rs_skip">Et Possimus Ea</p>
+                <a href="#" class="event-name truncated">Voluptatibus Placeat Aliquid Consequuntur...</a>
+                <a href="REPLACE" class="event-name rs_skip">Quisquam Quae Dolor Vero Asperiores Voluptatum</a>
+                <p class="event-time">12am EST</p>
+
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
+            </div>
+            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
+<div class="event-card rs_skip">
+    <div class="event-host-info">
+        <div class="event-card-image">
+            <a href="REPLACE">
+                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div class="image-label">
+                  Guest Expert
+                </div>
+            </a>
+        </div><!-- end .event-card-image -->
+        <div class="event-card-host-description">
+            <h2>Molestias Nihil</h2>
+            <p class="event-card-description">Aperiam corporis dicta ipsa sunt magni amet numquam</p>
+        </div>
+    </div><!-- end .event-host-info -->
+
+    <div class="event-actions">
+        
+        <p class="event-card-header">Vel Maiores At</p>
+        
+        <p class="event-card-datetime"><a href="REPLACE">Consectetur Et at 12am EDT Wed Sep 25 1991</a></p>
+        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
+        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
+        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
+
+        <span class="children-key">
+            <ul>
+                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+    </div>
+</div>
+<!-- END PARTIAL: community/calendar/event_detail_card -->
+        </li>
+        
+        
+    
+    
+        
+        <li class="event">
+            
+            <span class="children-key">
+                <ul>
+                    <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                </ul>
+            </span>
+            
+
+            <div class="event-content">
+                <p class="event-header rs_skip">Sit Pariatur Ea</p>
+                <a href="#" class="event-name truncated">Numquam Velit Omnis Quidem...</a>
+                <a href="REPLACE" class="event-name rs_skip">Numquam Aliquid Saepe Optio Aut Necessitatibus</a>
+                <p class="event-time">12am EDT</p>
+
+                <a class="button more-info-toggle rs_skip">More Info</a>
+                <a class="button more-info-toggle close rs_skip">Close</a>
+            </div>
+            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
+<div class="event-card rs_skip">
+    <div class="event-host-info">
+        <div class="event-card-image">
+            <a href="REPLACE">
+                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div class="image-label">
+                  Guest Expert
+                </div>
+            </a>
+        </div><!-- end .event-card-image -->
+        <div class="event-card-host-description">
+            <h2>Quo Voluptatem</h2>
+            <p class="event-card-description">Modi dicta aut officiis voluptates et cum sit</p>
+        </div>
+    </div><!-- end .event-host-info -->
+
+    <div class="event-actions">
+        
+        <p class="event-card-header">Sit Officia Consequuntur</p>
+        
+        <p class="event-card-datetime"><a href="REPLACE">Pariatur Dolores at 12am EST Tue Jan 14 1997</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
@@ -1769,95 +2044,39 @@
         
     
     
-        
-        <li class="event">
-            
-
-            <div class="event-content">
-                <p class="event-header">Aut Autem Magni</p>
-                <a href="#" class="event-name truncated">Recusandae Nihil Dicta Corrupti...</a>
-                <a href="REPLACE" class="event-name">Perspiciatis Aliquid Animi Quia Blanditiis Esse</a>
-                <p class="event-time">12am EST</p>
-
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
-            </div>
-            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
-    <div class="event-host-info">
-        <div class="event-card-image">
-            <a href="REPLACE">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                <div class="image-label">
-                  Expert
-                </div>
-            </a>
-        </div><!-- end .event-card-image -->
-        <div class="event-card-host-description">
-            <h2>Doloremque Iste</h2>
-            <p class="event-card-description">Consequuntur explicabo voluptas et numquam sint nisi necessitatibus</p>
-        </div>
-    </div><!-- end .event-host-info -->
-
-    <div class="event-actions">
-        
-        <p class="event-card-header">Ut Officiis A</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Et Ut at 12am EST Sun Mar 1 1992</a></p>
-        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
-        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
-        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
-
-        <span class="children-key">
-            <ul>
-                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
-    </div>
-</div>
-<!-- END PARTIAL: community/calendar/event_detail_card -->
-        </li>
-        
-        
-    
-    
     </ul>
+  </div>
 </li>
 <!-- END PARTIAL: community/calendar/grid_multi_events -->
-        <!-- BEGIN PARTIAL: community/calendar/grid_no_events -->
-<li class="day friday no-events">
-    <p class="date"><span class="month">Sep </span>25</p>
-    <p class="day-of-week">Friday</p>
-</li>
-<!-- END PARTIAL: community/calendar/grid_no_events -->
-        <!-- BEGIN PARTIAL: community/calendar/grid_multi_events -->
-<li class="day multiple-events saturday">
-    <p class="date"><span class="month">Sep </span>26</p>
-    <p class="day-of-week">Saturday</p>
+    </ul>
 
-    <ul class="events">
-    
+    <ul class="row grid-row">
+        <!-- BEGIN PARTIAL: community/calendar/grid_single_event -->
+
+<li class="single day sunday">
+  <div class="rs_read_this">
+    <p class="date"><span class="month">Sep </span>27</p>
+    <p class="day-of-week">Sunday</p>
+
+    <div class="event">
         
-        <li class="event">
-            
-            <span class="children-key">
-                <ul>
-                    <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
-                </ul>
-            </span>
-            
+        <span class="children-key">
+            <ul>
+                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
+            </ul>
+        </span>
+        
 
-            <div class="event-content">
-                <p class="event-header">Ut Quas Autem</p>
-                <a href="#" class="event-name truncated">Minus Quos Quod Consequatur...</a>
-                <a href="REPLACE" class="event-name">Modi A Vitae Recusandae Neque Dolor</a>
-                <p class="event-time">12am EST</p>
+        <div class="event-content">
+            <p class="event-header">Et Aut Numquam</p>
+            <a href="#" class="event-name">Quia Tempora Tempore Omnis</a>
+            <p class="event-time">12am EST</p>
 
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
-            </div>
-            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
+            <a class="button more-info-toggle rs_skip">More Info</a>
+            <a class="button more-info-toggle close rs_skip">Close</a>
+        </div>
+        <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
+<div class="event-card rs_skip">
     <div class="event-host-info">
         <div class="event-card-image">
             <a href="REPLACE">
@@ -1868,128 +2087,16 @@
             </a>
         </div><!-- end .event-card-image -->
         <div class="event-card-host-description">
-            <h2>Illo Iste</h2>
-            <p class="event-card-description">Est unde et dolorem minima blanditiis molestiae possimus</p>
+            <h2>Deleniti Ducimus</h2>
+            <p class="event-card-description">Enim quo iste numquam est illo quia error</p>
         </div>
     </div><!-- end .event-host-info -->
 
     <div class="event-actions">
         
-        <p class="event-card-datetime"><a href="REPLACE">Aut Qui at 12am EDT Fri May 1 1992</a></p>
-        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
-        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
-        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
-
-        <span class="children-key">
-            <ul>
-                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
-    </div>
-</div>
-<!-- END PARTIAL: community/calendar/event_detail_card -->
-        </li>
+        <p class="event-card-header">Enim Et Ea</p>
         
-        
-    
-    
-        
-        <li class="event">
-            
-            <span class="children-key">
-                <ul>
-                    <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
-                </ul>
-            </span>
-            
-
-            <div class="event-content">
-                <p class="event-header">Qui Neque Expedita</p>
-                <a href="#" class="event-name truncated">Eum Eaque Ut Sequi...</a>
-                <a href="REPLACE" class="event-name">Dolores Labore Sunt Voluptates Fugit Quia</a>
-                <p class="event-time">12am EST</p>
-
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
-            </div>
-            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
-    <div class="event-host-info">
-        <div class="event-card-image">
-            <a href="REPLACE">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                <div class="image-label">
-                  Expert
-                </div>
-            </a>
-        </div><!-- end .event-card-image -->
-        <div class="event-card-host-description">
-            <h2>Iure Sunt</h2>
-            <p class="event-card-description">Illum libero at beatae qui et rem placeat</p>
-        </div>
-    </div><!-- end .event-host-info -->
-
-    <div class="event-actions">
-        
-        <p class="event-card-header">Atque Qui Quis</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Cupiditate Harum at 12am EST Sat Feb 5 1994</a></p>
-        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
-        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
-        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
-
-        <span class="children-key">
-            <ul>
-                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
-    </div>
-</div>
-<!-- END PARTIAL: community/calendar/event_detail_card -->
-        </li>
-        
-        
-    
-    
-        
-        <li class="event">
-            
-            <span class="children-key">
-                <ul>
-                    <li><i class='child-e' title='CHILD NAME HERE'></i></li>
-                </ul>
-            </span>
-            
-
-            <div class="event-content">
-                <p class="event-header">Laborum Consectetur Aspernatur</p>
-                <a href="#" class="event-name truncated">Nihil Id Architecto Dolore...</a>
-                <a href="REPLACE" class="event-name">Nostrum Quod Nesciunt Totam Quos Provident</a>
-                <p class="event-time">12am EDT</p>
-
-                <a class="button more-info-toggle">More Info</a>
-                <a class="button more-info-toggle close">Close</a>
-            </div>
-            <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
-    <div class="event-host-info">
-        <div class="event-card-image">
-            <a href="REPLACE">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                <div class="image-label">
-                  Guest Expert
-                </div>
-            </a>
-        </div><!-- end .event-card-image -->
-        <div class="event-card-host-description">
-            <h2>Est Impedit</h2>
-            <p class="event-card-description">Enim et vero ea consequuntur vitae est molestias</p>
-        </div>
-    </div><!-- end .event-host-info -->
-
-    <div class="event-actions">
-        
-        <p class="event-card-datetime"><a href="REPLACE">Nihil Impedit at 12am EDT Wed May 27 1992</a></p>
+        <p class="event-card-datetime"><a href="REPLACE">Sunt Hic at 12am EDT Sat Sep 20 2008</a></p>
         <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
         <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
         <p><a class="event-details-link" href="REPLACE">Event details</a></p>
@@ -2002,75 +2109,8 @@
     </div>
 </div>
 <!-- END PARTIAL: community/calendar/event_detail_card -->
-        </li>
-        
-        
-    
-    
-    </ul>
-</li>
-<!-- END PARTIAL: community/calendar/grid_multi_events -->
-    </ul>
-
-    <ul class="row grid-row">
-        <!-- BEGIN PARTIAL: community/calendar/grid_single_event -->
-
-<li class="single day sunday">
-    <p class="date"><span class="month">Sep </span>27</p>
-    <p class="day-of-week">Sunday</p>
-
-    <div class="event">
-        
-        <span class="children-key">
-            <ul>
-                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
-        
-
-        <div class="event-content">
-            <p class="event-header">Atque A Aspernatur</p>
-            <a href="#" class="event-name">Magni Illo Eveniet Nemo</a>
-            <p class="event-time">12am EDT</p>
-
-            <a class="button more-info-toggle">More Info</a>
-            <a class="button more-info-toggle close">Close</a>
-        </div>
-        <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-<div class="event-card">
-    <div class="event-host-info">
-        <div class="event-card-image">
-            <a href="REPLACE">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                <div class="image-label">
-                  Expert
-                </div>
-            </a>
-        </div><!-- end .event-card-image -->
-        <div class="event-card-host-description">
-            <h2>Non Minus</h2>
-            <p class="event-card-description">Ipsa quas est nisi beatae voluptas dolor error</p>
-        </div>
-    </div><!-- end .event-host-info -->
-
-    <div class="event-actions">
-        
-        <p class="event-card-header">Quis Neque Delectus</p>
-        
-        <p class="event-card-datetime"><a href="REPLACE">Et Facilis at 12am EDT Tue Sep 16 1997</a></p>
-        <p><a class="event-rsvp" href="REPLACE">RSVP for this event</a></p>
-        <p><a class="add-to-calendar" href="REPLACE">Add to my calendar</a></p>
-        <p><a class="event-details-link" href="REPLACE">Event details</a></p>
-
-        <span class="children-key">
-            <ul>
-                <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
-            </ul>
-        </span>
     </div>
-</div>
-<!-- END PARTIAL: community/calendar/event_detail_card -->
-    </div>
+  </div>
 </li>
 
 <!-- END PARTIAL: community/calendar/grid_single_event -->
@@ -2134,8 +2174,7 @@
 <div class="container more-to-explore">
   <div class="row">
     <div class="col col-24">
-
-      <h2>More to Explore</h2>
+      <h2 class="rs_read_this">More to Explore</h2>
 
     </div>
   </div>
@@ -2146,171 +2185,195 @@
 <div class="more-to-explore-container">
   <ul>
     <li>
-      <div class="header">
-        <h3>Dad's Unite</h3>
-        <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Dad's Unite</h3>
+          <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+        </div>
 
-      <fieldset class="more-to-explore-form rsNoDrag select-container">
+        <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
-        <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
+          <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
+          <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
-        <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" aria-required="true">
-          <option value="">Select a state</option>
-          <option>Alabama</option>
-          <option>Arizona</option>
-          <option>Arkansas</option>
-        </select>
+          <label for="explore-select" class="visuallyhidden rs_skip">Select state</label>
+          <select name="explore-select" id="explore-select" aria-required="true">
+            <option value="">Select a state</option>
+            <option>Alabama</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+          </select>
 
-      </fieldset>
+        </fieldset>
 
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Lorem ipsum dolor sit amet, consectetur</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Lorem ipsum dolor sit amet, consectetur</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
   </ul>
@@ -2327,7 +2390,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -2484,7 +2547,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -2499,6 +2562,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/community.js"></script>
