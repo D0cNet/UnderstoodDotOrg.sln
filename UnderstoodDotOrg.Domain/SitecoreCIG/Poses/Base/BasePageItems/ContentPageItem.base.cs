@@ -82,6 +82,15 @@ public CustomTextField BodyContent
 }
 
 
+public CustomImageField ThumbnailImage
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Thumbnail Image"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

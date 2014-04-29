@@ -17,6 +17,29 @@ namespace UnderstoodDotOrg.Common.Extensions {
             return string.IsNullOrWhiteSpace(value);
         }
 
+        /// Like linq take - takes the first x characters
+        public static string Truncate(this string s, int length, bool atWord, bool addEllipsis) {
+            // Return if the string is less than or equal to the truncation length     
+            if (s == null || s.Length <= length)
+                return s;
+            // Do a simple tuncation at the desired length     
+            string s2 = s.Substring(0, length);
+            // Truncate the string at the word     
+            if (atWord) {
+                // List of characters that denote the start or a new word (add to or remove more as necessary)          
+                List<char> alternativeCutOffs = new List<char>() { ' ', ',', '.', '?', '/', ':', ';', '\'', '\"', '\'', '-' };
+                // Get the index of the last space in the truncated string          
+                int lastSpace = s2.LastIndexOf(' ');
+                // If the last space index isn't -1 and also the next character in the original          
+                // string isn't contained in the alternativeCutOffs List (which means the previous          
+                // truncation actually truncated at the end of a word),then shorten string to the last space          
+                if (lastSpace != -1 && (s.Length >= length + 1 && !alternativeCutOffs.Contains(s.ToCharArray()[length]))) s2 = s2.Remove(lastSpace);
+            }      // Add Ellipsis if desired     
+            if (addEllipsis)
+                s2 += "...";
+            return s2;
+        }
+
         /// <summary>
         ///  update sitecore item links in string
         /// </summary>

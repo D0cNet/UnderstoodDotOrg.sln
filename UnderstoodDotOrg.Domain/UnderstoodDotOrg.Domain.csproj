@@ -209,6 +209,12 @@
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\DefaultArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\SectionLandingPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\SectionLandingPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\SubtopicLandingPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\SubtopicLandingPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\TopicLandingPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\TopicLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.interface.cs" />

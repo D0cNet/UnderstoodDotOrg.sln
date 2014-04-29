@@ -25,49 +25,66 @@
 <!-- FIXME: should all .listing elements on this page be combined into one? -->
 
 <!-- BEGIN MODULE: Listing -->
-<div class="container listing">
-    <!-- Listing Row -->
-    <div class="row">
-        <div class="col col-23 offset-1">
-            <h2><a href="REPLACE">Early Learners <i class="icon-arrow-right-blue"></i></a></h2>
-        </div>
-    </div>
-
-    <div class="row listing-row">
-        <div class="col col-5 offset-1">
-            <img alt="190x107 Placeholder" src="http://placehold.it/190x107" />
-        </div>
-
-        <div class="col col-5 offset-1">
-            <h3><a href="REPLACE">Atque Ut Consequatur Vel Pariatur Voluptatem Veritatis</a></h3>
-            <div class="children">
-                <i class="child-a" title="CHILD NAME HERE"></i><i class="child-b" title="CHILD NAME HERE"></i><i class="child-c" title="CHILD NAME HERE"></i><i class="child-d" title="CHILD NAME HERE"></i><i class="child-e" title="CHILD NAME HERE"></i>
+<asp:Repeater runat="server" ID="rptTopicLandingItems" OnItemDataBound="rptTopicLanding_ItemDataBound">
+    <ItemTemplate>
+        <div class="container listing">
+            <!-- Listing Row -->
+            <div class="row">
+                <div class="col col-23 offset-1">
+                    <h2><%--<a href="REPLACE">Early Learners <i class="icon-arrow-right-blue"></i></a>--%>
+                        <asp:HyperLink ID="hlTopicLink" runat="server">
+                            
+                        </asp:HyperLink><i class="icon-arrow-right-blue"></i>
+                    </h2>
+                </div>
             </div>
-        </div>
 
-        <div class="col col-5 offset-1">
-            <h3><a href="REPLACE">Corporis Voluptas Et Ipsum Consequatur Recusandae Praesentium Modi Sapiente Sint Labore Rerum</a></h3>
-            <div class="children">
-                <i class="child-a" title="CHILD NAME HERE"></i><i class="child-c" title="CHILD NAME HERE"></i><i class="child-e" title="CHILD NAME HERE"></i>
+            <div class="row listing-row">
+                <div class="col col-5 offset-1">
+                    <sc:image id="scThumbnailImage" runat="server" field="Thumbnail Image" />
+                    <asp:Image runat="server" ID="defaultImage" Visible="false" ImageUrl="http://placehold.it/190x107" />
+                    <%--<img alt="190x107 Placeholder" src="http://placehold.it/190x107" />--%>
+                </div>
+                <asp:Repeater runat="server" ID="rptTopicListItems" OnItemDataBound="rptTopicListItems_ItemDataBound">
+                    <ItemTemplate>
+                        <div class="col col-5 offset-1">
+                            <h3>
+                                <%--<a href="REPLACE">Atque Ut Consequatur Vel Pariatur Voluptatem Veritatis</a>--%>
+                                <asp:HyperLink ID="hlTopicTitle" runat="server">
+                                </asp:HyperLink>
+                            </h3>
+                            <%-- <div class="children">
+                                <i class="child-a" title="CHILD NAME HERE"></i><i class="child-b" title="CHILD NAME HERE"></i><i class="child-c" title="CHILD NAME HERE"></i><i class="child-d" title="CHILD NAME HERE"></i><i class="child-e" title="CHILD NAME HERE"></i>
+                            </div>--%>
+                        </div>
+                    </ItemTemplate>
+
+                </asp:Repeater>
+                <%--  <div class="col col-5 offset-1">
+                    <h3><a href="REPLACE">Corporis Voluptas Et Ipsum Consequatur Recusandae Praesentium Modi Sapiente Sint Labore Rerum</a></h3>
+                    <div class="children">
+                        <i class="child-a" title="CHILD NAME HERE"></i><i class="child-c" title="CHILD NAME HERE"></i><i class="child-e" title="CHILD NAME HERE"></i>
+                    </div>
+                </div>
+
+                <div class="col col-5 offset-1">
+                    <h3><a href="REPLACE">Et Iste Reiciendis Et Laborum Eligendi</a></h3>
+                    <div class="children">
+                        <i class="child-a" title="CHILD NAME HERE"></i>
+                    </div>
+                </div>--%>
             </div>
-        </div>
+            <!-- .row -->
 
-        <div class="col col-5 offset-1">
-            <h3><a href="REPLACE">Et Iste Reiciendis Et Laborum Eligendi</a></h3>
-            <div class="children">
-                <i class="child-a" title="CHILD NAME HERE"></i>
-            </div>
         </div>
-    </div>
-    <!-- .row -->
-
-</div>
+    </ItemTemplate>
+</asp:Repeater>
 <!-- .container .listing -->
 
 <!-- END MODULE: Listing -->
 
 <!-- BEGIN MODULE: Listing -->
-<div class="container listing">
+<%--<div class="container listing">
     <!-- Listing Row -->
     <div class="row">
         <div class="col col-23 offset-1">
@@ -103,13 +120,13 @@
     </div>
     <!-- .row -->
 
-</div>
+</div>--%>
 <!-- .container .listing -->
 
 <!-- END MODULE: Listing -->
 
 <!-- BEGIN MODULE: Listing -->
-<div class="container listing">
+<%--<div class="container listing">
     <!-- Listing Row -->
     <div class="row">
         <div class="col col-23 offset-1">
@@ -139,13 +156,13 @@
     </div>
     <!-- .row -->
 
-</div>
+</div>--%>
 <!-- .container .listing -->
 
 <!-- END MODULE: Listing -->
 
 <!-- BEGIN MODULE: Listing -->
-<div class="container listing">
+<%--<div class="container listing">
     <!-- Listing Row -->
     <div class="row">
         <div class="col col-23 offset-1">
@@ -175,13 +192,13 @@
     </div>
     <!-- .row -->
 
-</div>
+</div>--%>
 <!-- .container .listing -->
 
 <!-- END MODULE: Listing -->
 
 <!-- BEGIN MODULE: Listing -->
-<div class="container listing">
+<%--<div class="container listing">
     <!-- Listing Row -->
     <div class="row">
         <div class="col col-23 offset-1">
@@ -211,13 +228,13 @@
     </div>
     <!-- .row -->
 
-</div>
+</div>--%>
 <!-- .container .listing -->
 
 <!-- END MODULE: Listing -->
 
 <!-- BEGIN MODULE: Listing -->
-<div class="container listing">
+<%--<div class="container listing">
     <!-- Listing Row -->
     <div class="row">
         <div class="col col-23 offset-1">
@@ -247,13 +264,13 @@
     </div>
     <!-- .row -->
 
-</div>
+</div>--%>
 <!-- .container .listing -->
 
 <!-- END MODULE: Listing -->
 
 <!-- BEGIN MODULE: Listing -->
-<div class="container listing">
+<%--<div class="container listing">
     <!-- Listing Row -->
     <div class="row">
         <div class="col col-23 offset-1">
@@ -280,7 +297,7 @@
     </div>
     <!-- .row -->
 
-</div>
+</div>--%>
 <!-- .container .listing -->
 
 <!-- END MODULE: Listing -->
