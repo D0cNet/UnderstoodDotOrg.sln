@@ -15,7 +15,7 @@ namespace UnderstoodDotOrg.Web.Handlers
     {
         private Guid? _childId;
         private Guid? _memberId;
-        private DateTime? _simulatedDate;
+        private DateTime _simulatedDate;
 
         public void ProcessRequest(HttpContext context)
         {
@@ -26,11 +26,21 @@ namespace UnderstoodDotOrg.Web.Handlers
                 return;
             }
 
-
+            InitSearchParams();
 
             context.Response.ContentType = "text/html";
             context.Response.Write("Running personalization!!!!");
             context.Response.Write("<br>is this request coming from a local machine: " + context.Request.IsLocal.ToString()); 
+        }
+
+        private void InitSearchParams()
+        {
+            if (!DateTime.TryParse(Common.Helpers.HttpHelper.GetQueryString(Constants.HANDLER_TIMELY_DATE_QUERY_STRING), out _simulatedDate))
+            {
+                _simulatedDate = DateTime.UtcNow;
+            }
+            
+
         }
 
         public bool IsReusable
@@ -53,17 +63,10 @@ namespace UnderstoodDotOrg.Web.Handlers
 
         private string GetIpAddress()
         {
-            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
-            {
-                IPAddress address = Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
-
-                if (address != null)
-                {
-                    return address.ToString();
-                }
-            }
-
-            return String.Empty;
+            return HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]
+                ?? HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]
+                ?? HttpContext.Current.Request.UserHostAddress
+                ?? String.Empty;
         }
 
         private bool HasAllowedIp()

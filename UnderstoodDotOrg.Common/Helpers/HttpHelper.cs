@@ -15,7 +15,7 @@ namespace UnderstoodDotOrg.Common.Helpers
         /// <param name="key">Query string key</param>
         /// <param name="defaultValue">Value to return if key does not exist</param>
         /// <returns>Value of query string or default value if the key does not exist</returns>
-        public static string GetQueryString(string key, string defaultValue)
+        public static string GetQueryString(string key, string defaultValue = "")
         {
             if (HttpContext.Current != null)
             {
