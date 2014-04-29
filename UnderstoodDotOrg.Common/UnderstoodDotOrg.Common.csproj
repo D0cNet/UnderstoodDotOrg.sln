@@ -52,6 +52,7 @@
     <Compile Include="Extensions\ItemExtensions.cs" />
     <Compile Include="Extensions\RepeaterExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Helpers\HttpHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

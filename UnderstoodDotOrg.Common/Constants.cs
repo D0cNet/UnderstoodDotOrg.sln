@@ -13,6 +13,9 @@ namespace UnderstoodDotOrg.Common
         public static readonly string SCLANG_QUERY_STRING = "sc_lang";
         public static readonly string CHALLENGE_QUERY_STRING = "challenge";
         public static readonly string GRADE_QUERY_STRING = "grade";
+        public static readonly string HANDLER_CHILD_QUERY_STRING = "child";
+        public static readonly string HANDLER_MEMBER_QUERY_STRING = "member";
+        public static readonly string HANDLER_TIMELY_DATE_QUERY_STRING = "date";
 
         #endregion
 
@@ -113,6 +116,7 @@ namespace UnderstoodDotOrg.Common
         public static class Settings
         {
             public static string TelligentConfig = "TelligentConfig";
+            public static string PersonalizationHandlerAllowedIps = "PersonalizationHandlerAllowedIps";
         }
     }
 }
