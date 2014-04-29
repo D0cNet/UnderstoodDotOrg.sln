@@ -22,7 +22,7 @@ namespace UnderstoodDotOrg.Web.Presentation
                 ScreenName = "JustTesting",
                 ZipCode = "12345",
                 Role = Guid.Parse("{2BF9D7BE-2E40-432C-ADE7-A25C80B9B9EE}"),
-                HomeLife = Guid.Parse("{8FFA90D9-F2DA-402D-9AC4-7C203769C810}"),
+                //HomeLife = Guid.Parse("{8FFA90D9-F2DA-402D-9AC4-7C203769C810}"),
                 PersonalityType = Guid.Parse("{8B7EB70D-64B2-45B9-B06E-6AA5CB6FE983}"),
                 hasOtherChildren = false,
                 allowConnections = false,
@@ -40,7 +40,7 @@ namespace UnderstoodDotOrg.Web.Presentation
                         Nickname = "Bobby",
                         IEPStatus = Guid.Parse("{73842143-B6CA-4B6A-A94F-BA59C475A6D7}"),
                         Section504Status = Guid.Parse("{82102C70-B526-47FB-BD99-5F71A33C3C87}"),
-                        Grade = Guid.Parse("{DFF0FA84-B68E-4259-A107-274B5694247D}"),
+                        //Grade = Guid.Parse("{DFF0FA84-B68E-4259-A107-274B5694247D}"),
                         EvaluationStatus = Guid.Parse("{F6849A63-C841-4D79-BF53-AA68DA6D6EEB}"),
                         Issues = new List<Issue>() { 
                             new Issue() {

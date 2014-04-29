@@ -73,7 +73,7 @@
                         Nickname = "Michael",
                         //IEPStatus = Guid.Parse("{73842143-B6CA-4B6A-A94F-BA59C475A6D7}"),
                         //Section504Status = Guid.Parse("{82102C70-B526-47FB-BD99-5F71A33C3C87}"),
-                        Grade = Guid.Parse("{67AA2A29-E6FF-49B2-9F9E-D29F07C19C23}"),
+                        //Grade = Guid.Parse("{67AA2A29-E6FF-49B2-9F9E-D29F07C19C23}"),
                         EvaluationStatus = Guid.Parse("{990FB117-F12E-4E3C-898B-8A9EB217FCFD}"),
                         Issues = new List<Issue>() { 
                             new Issue() {
@@ -104,7 +104,7 @@
                         Nickname = "Sally",
                         //IEPStatus = Guid.Parse("{73842143-B6CA-4B6A-A94F-BA59C475A6D7}"),
                         //Section504Status = Guid.Parse("{82102C70-B526-47FB-BD99-5F71A33C3C87}"),
-                        Grade = Guid.Parse("{79AB134B-CC1F-4BB6-94F8-12FE9E181F9E}"),
+                        //Grade = Guid.Parse("{79AB134B-CC1F-4BB6-94F8-12FE9E181F9E}"),
                         EvaluationStatus = Guid.Parse("{990FB117-F12E-4E3C-898B-8A9EB217FCFD}"),
                         Issues = new List<Issue>() { 
                             new Issue() {
@@ -203,7 +203,7 @@
 
                 if (grade != null)
                 {
-                    grade.Text = getItemName(item.Grade); //lookup
+                    //grade.Text = getItemName(item.Grade); //lookup
                 }
 
                 if (gender != null)

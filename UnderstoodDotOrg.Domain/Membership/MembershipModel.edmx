@@ -4,17 +4,21 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Understood.org.DEV.membershipModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Understood.org.DEV.membershipModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="UnderstoodorgDEVmembershipModelStoreContainer">
           <EntitySet Name="Children" EntityType="Understood.org.DEV.membershipModel.Store.Children" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ChildToDiagnosis" EntityType="Understood.org.DEV.membershipModel.Store.ChildToDiagnosis" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ChildToGrades" EntityType="Understood.org.DEV.membershipModel.Store.ChildToGrades" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ChildToIssues" EntityType="Understood.org.DEV.membershipModel.Store.ChildToIssues" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Diagnosis" EntityType="Understood.org.DEV.membershipModel.Store.Diagnosis" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Grades" EntityType="Understood.org.DEV.membershipModel.Store.Grades" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Interests" EntityType="Understood.org.DEV.membershipModel.Store.Interests" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Issues" EntityType="Understood.org.DEV.membershipModel.Store.Issues" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Journey" EntityType="Understood.org.DEV.membershipModel.Store.Journey" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Members" EntityType="Understood.org.DEV.membershipModel.Store.Members" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="MemberToChild" EntityType="Understood.org.DEV.membershipModel.Store.MemberToChild" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="MemberToInterests" EntityType="Understood.org.DEV.membershipModel.Store.MemberToInterests" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MemberToJourney" EntityType="Understood.org.DEV.membershipModel.Store.MemberToJourney" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_ChildToDiagnosis_Children" Association="Understood.org.DEV.membershipModel.Store.FK_ChildToDiagnosis_Children">
             <End Role="Children" EntitySet="Children" />
             <End Role="ChildToDiagnosis" EntitySet="ChildToDiagnosis" />
@@ -22,6 +26,14 @@
           <AssociationSet Name="FK_ChildToDiagnosis_Diagnosis" Association="Understood.org.DEV.membershipModel.Store.FK_ChildToDiagnosis_Diagnosis">
             <End Role="Diagnosis" EntitySet="Diagnosis" />
             <End Role="ChildToDiagnosis" EntitySet="ChildToDiagnosis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChildToGrades_Children" Association="Understood.org.DEV.membershipModel.Store.FK_ChildToGrades_Children">
+            <End Role="Children" EntitySet="Children" />
+            <End Role="ChildToGrades" EntitySet="ChildToGrades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChildToGrades_Grades" Association="Understood.org.DEV.membershipModel.Store.FK_ChildToGrades_Grades">
+            <End Role="Grades" EntitySet="Grades" />
+            <End Role="ChildToGrades" EntitySet="ChildToGrades" />
           </AssociationSet>
           <AssociationSet Name="FK_ChildToIssues_Children" Association="Understood.org.DEV.membershipModel.Store.FK_ChildToIssues_Children">
             <End Role="Children" EntitySet="Children" />
@@ -47,6 +59,14 @@
             <End Role="Members" EntitySet="Members" />
             <End Role="MemberToInterests" EntitySet="MemberToInterests" />
           </AssociationSet>
+          <AssociationSet Name="FK_MemberToJourney_Journey" Association="Understood.org.DEV.membershipModel.Store.FK_MemberToJourney_Journey">
+            <End Role="Journey" EntitySet="Journey" />
+            <End Role="MemberToJourney" EntitySet="MemberToJourney" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberToJourney_Members" Association="Understood.org.DEV.membershipModel.Store.FK_MemberToJourney_Members">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="MemberToJourney" EntitySet="MemberToJourney" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Children">
           <Key>
@@ -56,8 +76,10 @@
           <Property Name="Nickname" Type="nchar" Nullable="false" MaxLength="20" />
           <Property Name="IEPStatus" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Section504Status" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Grade" Type="uniqueidentifier" Nullable="false" />
           <Property Name="EvaluationStatus" Type="uniqueidentifier" Nullable="false" />
+          
+          <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="HomeLife" Type="uniqueidentifier" />
         </EntityType>
         <EntityType Name="ChildToDiagnosis">
           <Key>
@@ -66,6 +88,16 @@
           </Key>
           <Property Name="ChildId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="DiagnosisId" Type="uniqueidentifier" Nullable="false" />
+          
+        </EntityType>
+        <EntityType Name="ChildToGrades">
+          <Key>
+            <PropertyRef Name="ChildId" />
+            <PropertyRef Name="GradeId" />
+          </Key>
+          <Property Name="ChildId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GradeId" Type="uniqueidentifier" Nullable="false" />
+          
         </EntityType>
         <EntityType Name="ChildToIssues">
           <Key>
@@ -74,6 +106,7 @@
           </Key>
           <Property Name="ChildId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="IssueId" Type="uniqueidentifier" Nullable="false" />
+          
         </EntityType>
         <EntityType Name="Diagnosis">
           <Key>
@@ -82,6 +115,15 @@
           <Property Name="rowId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="50" />
+          
+        </EntityType>
+        <EntityType Name="Grades">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="50" />
+          
         </EntityType>
         <EntityType Name="Interests">
           <Key>
@@ -91,6 +133,7 @@
           <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
           <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          
         </EntityType>
         <EntityType Name="Issues">
           <Key>
@@ -99,6 +142,15 @@
           <Property Name="rowId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="50" />
+          
+        </EntityType>
+        <EntityType Name="Journey">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="50" />
+          
         </EntityType>
         <EntityType Name="Members">
           <Key>
@@ -115,8 +167,10 @@
           <Property Name="isPrivate" Type="bit" Nullable="false" />
           <Property Name="hasOtherChildren" Type="bit" Nullable="false" />
           <Property Name="PersonalityType" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="HomeLife" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Role" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Phone" Type="int" />
+          <Property Name="emailSubscription" Type="bit" Nullable="false" />
+          <Property Name="isFacebookUser" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="MemberToChild">
           <Key>
@@ -125,6 +179,7 @@
           </Key>
           <Property Name="MemberId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ChildId" Type="uniqueidentifier" Nullable="false" />
+          
         </EntityType>
         <EntityType Name="MemberToInterests">
           <Key>
@@ -133,6 +188,16 @@
           </Key>
           <Property Name="MemberId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="InterestId" Type="uniqueidentifier" Nullable="false" />
+          
+        </EntityType>
+        <EntityType Name="MemberToJourney">
+          <Key>
+            <PropertyRef Name="MemberId" />
+            <PropertyRef Name="JourneyId" />
+          </Key>
+          <Property Name="MemberId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="JourneyId" Type="uniqueidentifier" Nullable="false" />
+          
         </EntityType>
         <Association Name="FK_ChildToDiagnosis_Children">
           <End Role="Children" Type="Understood.org.DEV.membershipModel.Store.Children" Multiplicity="1" />
@@ -155,6 +220,30 @@
             </Principal>
             <Dependent Role="ChildToDiagnosis">
               <PropertyRef Name="DiagnosisId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChildToGrades_Children">
+          <End Role="Children" Type="Understood.org.DEV.membershipModel.Store.Children" Multiplicity="1" />
+          <End Role="ChildToGrades" Type="Understood.org.DEV.membershipModel.Store.ChildToGrades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Children">
+              <PropertyRef Name="ChildId" />
+            </Principal>
+            <Dependent Role="ChildToGrades">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChildToGrades_Grades">
+          <End Role="Grades" Type="Understood.org.DEV.membershipModel.Store.Grades" Multiplicity="1" />
+          <End Role="ChildToGrades" Type="Understood.org.DEV.membershipModel.Store.ChildToGrades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grades">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="ChildToGrades">
+              <PropertyRef Name="GradeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -230,8 +319,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+        <Association Name="FK_MemberToJourney_Journey">
+          <End Role="Journey" Type="Understood.org.DEV.membershipModel.Store.Journey" Multiplicity="1" />
+          <End Role="MemberToJourney" Type="Understood.org.DEV.membershipModel.Store.MemberToJourney" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Journey">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="MemberToJourney">
+              <PropertyRef Name="JourneyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MemberToJourney_Members">
+          <End Role="Members" Type="Understood.org.DEV.membershipModel.Store.Members" Multiplicity="1" />
+          <End Role="MemberToJourney" Type="Understood.org.DEV.membershipModel.Store.MemberToJourney" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="MemberToJourney">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Understood.org.DEV.membershipModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -257,6 +369,26 @@
             <End Role="Interests" EntitySet="Interests" />
             <End Role="Members" EntitySet="Members" />
           </AssociationSet>
+          <EntitySet Name="ChildToGrades" EntityType="Understood.org.DEV.membershipModel.ChildToGrade" />
+          <EntitySet Name="Grades" EntityType="Understood.org.DEV.membershipModel.Grade" />
+          <EntitySet Name="Journeys" EntityType="Understood.org.DEV.membershipModel.Journey" />
+          <EntitySet Name="MemberToJourneys" EntityType="Understood.org.DEV.membershipModel.MemberToJourney" />
+          <AssociationSet Name="FK_ChildToGrades_Children" Association="Understood.org.DEV.membershipModel.FK_ChildToGrades_Children">
+            <End Role="Child" EntitySet="Children" />
+            <End Role="ChildToGrade" EntitySet="ChildToGrades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChildToGrades_Grades" Association="Understood.org.DEV.membershipModel.FK_ChildToGrades_Grades">
+            <End Role="Grade" EntitySet="Grades" />
+            <End Role="ChildToGrade" EntitySet="ChildToGrades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberToJourney_Journey" Association="Understood.org.DEV.membershipModel.FK_MemberToJourney_Journey">
+            <End Role="Journey" EntitySet="Journeys" />
+            <End Role="MemberToJourney" EntitySet="MemberToJourneys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberToJourney_Members" Association="Understood.org.DEV.membershipModel.FK_MemberToJourney_Members">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="MemberToJourney" EntitySet="MemberToJourneys" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Child">
           <Key>
@@ -266,11 +398,14 @@
           <Property Name="Nickname" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
           <Property Name="IEPStatus" Type="Guid" Nullable="false" />
           <Property Name="Section504Status" Type="Guid" Nullable="false" />
-          <Property Name="Grade" Type="Guid" Nullable="false" />
           <Property Name="EvaluationStatus" Type="Guid" Nullable="false" />
           <NavigationProperty Name="Diagnoses" Relationship="Understood.org.DEV.membershipModel.ChildToDiagnosis" FromRole="Children" ToRole="Diagnosis" />
           <NavigationProperty Name="Issues" Relationship="Understood.org.DEV.membershipModel.ChildToIssues" FromRole="Children" ToRole="Issues" />
           <NavigationProperty Name="Members" Relationship="Understood.org.DEV.membershipModel.MemberToChild" FromRole="Children" ToRole="Members" />
+          
+          <Property Type="String" Name="Gender" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="HomeLife" />
+          <NavigationProperty Name="ChildToGrades" Relationship="Understood.org.DEV.membershipModel.FK_ChildToGrades_Children" FromRole="Child" ToRole="ChildToGrade" />
         </EntityType>
         <EntityType Name="Diagnosis">
           <Key>
@@ -280,6 +415,7 @@
           <Property Name="Key" Type="Guid" Nullable="false" />
           <Property Name="Value" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Children" Relationship="Understood.org.DEV.membershipModel.ChildToDiagnosis" FromRole="Diagnosis" ToRole="Children" />
+          
         </EntityType>
         <EntityType Name="Interest">
           <Key>
@@ -299,6 +435,7 @@
           <Property Name="Key" Type="Guid" Nullable="false" />
           <Property Name="Value" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Children" Relationship="Understood.org.DEV.membershipModel.ChildToIssues" FromRole="Issues" ToRole="Children" />
+          
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -315,10 +452,13 @@
           <Property Name="isPrivate" Type="Boolean" Nullable="false" />
           <Property Name="hasOtherChildren" Type="Boolean" Nullable="false" />
           <Property Name="PersonalityType" Type="Guid" Nullable="false" />
-          <Property Name="HomeLife" Type="Guid" Nullable="false" />
           <Property Name="Role" Type="Guid" Nullable="false" />
           <NavigationProperty Name="Children" Relationship="Understood.org.DEV.membershipModel.MemberToChild" FromRole="Members" ToRole="Children" />
           <NavigationProperty Name="Interests" Relationship="Understood.org.DEV.membershipModel.MemberToInterests" FromRole="Members" ToRole="Interests" />
+          <Property Type="Int32" Name="Phone" />
+          <Property Type="Boolean" Name="emailSubscription" Nullable="false" />
+          <Property Type="Boolean" Name="isFacebookUser" Nullable="false" />
+          <NavigationProperty Name="MemberToJourneys" Relationship="Understood.org.DEV.membershipModel.FK_MemberToJourney_Members" FromRole="Member" ToRole="MemberToJourney" />
         </EntityType>
         <Association Name="ChildToDiagnosis">
           <End Role="Children" Type="Understood.org.DEV.membershipModel.Child" Multiplicity="*" />
@@ -336,6 +476,94 @@
           <End Role="Interests" Type="Understood.org.DEV.membershipModel.Interest" Multiplicity="*" />
           <End Role="Members" Type="Understood.org.DEV.membershipModel.Member" Multiplicity="*" />
         </Association>
+        <EntityType Name="ChildToGrade">
+          <Key>
+            <PropertyRef Name="ChildId" />
+            <PropertyRef Name="GradeId" />
+          </Key>
+          <Property Type="Guid" Name="ChildId" Nullable="false" />
+          <Property Type="Guid" Name="GradeId" Nullable="false" />
+          
+          <NavigationProperty Name="Child" Relationship="Understood.org.DEV.membershipModel.FK_ChildToGrades_Children" FromRole="ChildToGrade" ToRole="Child" />
+          <NavigationProperty Name="Grade" Relationship="Understood.org.DEV.membershipModel.FK_ChildToGrades_Grades" FromRole="ChildToGrade" ToRole="Grade" />
+        </EntityType>
+        <EntityType Name="Grade">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          
+          <NavigationProperty Name="ChildToGrades" Relationship="Understood.org.DEV.membershipModel.FK_ChildToGrades_Grades" FromRole="Grade" ToRole="ChildToGrade" />
+        </EntityType>
+        <EntityType Name="Journey">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          
+          <NavigationProperty Name="MemberToJourneys" Relationship="Understood.org.DEV.membershipModel.FK_MemberToJourney_Journey" FromRole="Journey" ToRole="MemberToJourney" />
+        </EntityType>
+        <EntityType Name="MemberToJourney">
+          <Key>
+            <PropertyRef Name="MemberId" />
+            <PropertyRef Name="JourneyId" />
+          </Key>
+          <Property Type="Guid" Name="MemberId" Nullable="false" />
+          <Property Type="Guid" Name="JourneyId" Nullable="false" />
+          
+          <NavigationProperty Name="Journey" Relationship="Understood.org.DEV.membershipModel.FK_MemberToJourney_Journey" FromRole="MemberToJourney" ToRole="Journey" />
+          <NavigationProperty Name="Member" Relationship="Understood.org.DEV.membershipModel.FK_MemberToJourney_Members" FromRole="MemberToJourney" ToRole="Member" />
+        </EntityType>
+        <Association Name="FK_ChildToGrades_Children">
+          <End Type="Understood.org.DEV.membershipModel.Child" Role="Child" Multiplicity="1" />
+          <End Type="Understood.org.DEV.membershipModel.ChildToGrade" Role="ChildToGrade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Child">
+              <PropertyRef Name="ChildId" />
+            </Principal>
+            <Dependent Role="ChildToGrade">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChildToGrades_Grades">
+          <End Type="Understood.org.DEV.membershipModel.Grade" Role="Grade" Multiplicity="1" />
+          <End Type="Understood.org.DEV.membershipModel.ChildToGrade" Role="ChildToGrade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grade">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="ChildToGrade">
+              <PropertyRef Name="GradeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MemberToJourney_Journey">
+          <End Type="Understood.org.DEV.membershipModel.Journey" Role="Journey" Multiplicity="1" />
+          <End Type="Understood.org.DEV.membershipModel.MemberToJourney" Role="MemberToJourney" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Journey">
+              <PropertyRef Name="Key" />
+            </Principal>
+            <Dependent Role="MemberToJourney">
+              <PropertyRef Name="JourneyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MemberToJourney_Members">
+          <End Type="Understood.org.DEV.membershipModel.Member" Role="Member" Multiplicity="1" />
+          <End Type="Understood.org.DEV.membershipModel.MemberToJourney" Role="MemberToJourney" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="MemberToJourney">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -345,11 +573,13 @@
           <EntitySetMapping Name="Children">
             <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.Child">
               <MappingFragment StoreEntitySet="Children">
+                <ScalarProperty Name="HomeLife" ColumnName="HomeLife" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                
                 <ScalarProperty Name="ChildId" ColumnName="ChildId" />
                 <ScalarProperty Name="Nickname" ColumnName="Nickname" />
                 <ScalarProperty Name="IEPStatus" ColumnName="IEPStatus" />
                 <ScalarProperty Name="Section504Status" ColumnName="Section504Status" />
-                <ScalarProperty Name="Grade" ColumnName="Grade" />
                 <ScalarProperty Name="EvaluationStatus" ColumnName="EvaluationStatus" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -357,6 +587,7 @@
           <EntitySetMapping Name="Diagnoses">
             <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.Diagnosis">
               <MappingFragment StoreEntitySet="Diagnosis">
+                
                 <ScalarProperty Name="rowId" ColumnName="rowId" />
                 <ScalarProperty Name="Key" ColumnName="Key" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
@@ -376,6 +607,7 @@
           <EntitySetMapping Name="Issues">
             <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.Issue">
               <MappingFragment StoreEntitySet="Issues">
+                
                 <ScalarProperty Name="rowId" ColumnName="rowId" />
                 <ScalarProperty Name="Key" ColumnName="Key" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
@@ -385,6 +617,9 @@
           <EntitySetMapping Name="Members">
             <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.Member">
               <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="isFacebookUser" ColumnName="isFacebookUser" />
+                <ScalarProperty Name="emailSubscription" ColumnName="emailSubscription" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="MemberId" ColumnName="MemberId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="ScreenName" ColumnName="ScreenName" />
@@ -396,7 +631,6 @@
                 <ScalarProperty Name="isPrivate" ColumnName="isPrivate" />
                 <ScalarProperty Name="hasOtherChildren" ColumnName="hasOtherChildren" />
                 <ScalarProperty Name="PersonalityType" ColumnName="PersonalityType" />
-                <ScalarProperty Name="HomeLife" ColumnName="HomeLife" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -433,6 +667,42 @@
               <ScalarProperty Name="MemberId" ColumnName="MemberId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="ChildToGrades">
+            <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.ChildToGrade">
+              <MappingFragment StoreEntitySet="ChildToGrades">
+                
+                <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grades">
+            <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.Grade">
+              <MappingFragment StoreEntitySet="Grades">
+                
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Journeys">
+            <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.Journey">
+              <MappingFragment StoreEntitySet="Journey">
+                
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberToJourneys">
+            <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.MemberToJourney">
+              <MappingFragment StoreEntitySet="MemberToJourney">
+                
+                <ScalarProperty Name="JourneyId" ColumnName="JourneyId" />
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

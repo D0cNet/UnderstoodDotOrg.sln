@@ -30,5 +30,9 @@ namespace UnderstoodDotOrg.Domain.Membership
         public DbSet<Interest> Interests { get; set; }
         public DbSet<Issue> Issues { get; set; }
         public DbSet<Member> Members { get; set; }
+        public DbSet<ChildToGrade> ChildToGrades { get; set; }
+        public DbSet<Grade> Grades { get; set; }
+        public DbSet<Journey> Journeys { get; set; }
+        public DbSet<MemberToJourney> MemberToJourneys { get; set; }
     }
 }

@@ -14,11 +14,12 @@ namespace UnderstoodDotOrg.Domain.Membership
     
     public partial class Member
     {
-        //public Member()
-        //{
-        //    this.Children = new HashSet<Child>();
-        //    this.Interests = new HashSet<Interest>();
-        //}
+        public Member()
+        {
+            this.Children = new HashSet<Child>();
+            this.Interests = new HashSet<Interest>();
+            this.MemberToJourneys = new HashSet<MemberToJourney>();
+        }
     
         public System.Guid MemberId { get; set; }
         public System.Guid UserId { get; set; }
@@ -31,10 +32,13 @@ namespace UnderstoodDotOrg.Domain.Membership
         public bool isPrivate { get; set; }
         public bool hasOtherChildren { get; set; }
         public System.Guid PersonalityType { get; set; }
-        public System.Guid HomeLife { get; set; }
         public System.Guid Role { get; set; }
+        public Nullable<int> Phone { get; set; }
+        public bool emailSubscription { get; set; }
+        public bool isFacebookUser { get; set; }
     
         public virtual ICollection<Child> Children { get; set; }
         public virtual ICollection<Interest> Interests { get; set; }
+        public virtual ICollection<MemberToJourney> MemberToJourneys { get; set; }
     }
 }

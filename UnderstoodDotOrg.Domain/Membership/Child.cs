@@ -14,22 +14,26 @@ namespace UnderstoodDotOrg.Domain.Membership
     
     public partial class Child
     {
-        //public Child()
-        //{
-        //    this.Diagnoses = new HashSet<Diagnosis>();
-        //    this.Issues = new HashSet<Issue>();
-        //    this.Members = new HashSet<Member>();
-        //}
+        public Child()
+        {
+            this.Diagnoses = new HashSet<Diagnosis>();
+            this.Issues = new HashSet<Issue>();
+            this.Members = new HashSet<Member>();
+            this.ChildToGrades = new HashSet<ChildToGrade>();
+        }
     
         public System.Guid ChildId { get; set; }
         public string Nickname { get; set; }
         public System.Guid IEPStatus { get; set; }
         public System.Guid Section504Status { get; set; }
-        public System.Guid Grade { get; set; }
         public System.Guid EvaluationStatus { get; set; }
+        public System.DateTime DateModified { get; set; }
+        public string Gender { get; set; }
+        public Nullable<System.Guid> HomeLife { get; set; }
     
         public virtual ICollection<Diagnosis> Diagnoses { get; set; }
         public virtual ICollection<Issue> Issues { get; set; }
         public virtual ICollection<Member> Members { get; set; }
+        public virtual ICollection<ChildToGrade> ChildToGrades { get; set; }
     }
 }

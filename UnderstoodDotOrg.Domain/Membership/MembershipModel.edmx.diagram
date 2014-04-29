@@ -4,16 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5b8530c4acd04e8cb489ad3cec77a583" Name="Diagram1">
-        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Child" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Diagnosis" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Interest" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Issue" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Member" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+      <Diagram DiagramId="5b8530c4acd04e8cb489ad3cec77a583" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Child" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Diagnosis" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Interest" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Issue" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Member" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
         <AssociationConnector Association="Understood.org.DEV.membershipModel.ChildToDiagnosis" ManuallyRouted="false" />
         <AssociationConnector Association="Understood.org.DEV.membershipModel.ChildToIssues" ManuallyRouted="false" />
         <AssociationConnector Association="Understood.org.DEV.membershipModel.MemberToChild" ManuallyRouted="false" />
         <AssociationConnector Association="Understood.org.DEV.membershipModel.MemberToInterests" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.ChildToGrade" Width="1.5" PointX="3" PointY="8.75" />
+        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Grade" Width="1.5" PointX="6.125" PointY="10.75" />
+        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.Journey" Width="1.5" PointX="6" PointY="2.875" />
+        <EntityTypeShape EntityType="Understood.org.DEV.membershipModel.MemberToJourney" Width="1.5" PointX="8.25" PointY="6.75" />
+        <AssociationConnector Association="Understood.org.DEV.membershipModel.FK_ChildToGrades_Children" />
+        <AssociationConnector Association="Understood.org.DEV.membershipModel.FK_ChildToGrades_Grades" />
+        <AssociationConnector Association="Understood.org.DEV.membershipModel.FK_MemberToJourney_Journey" />
+        <AssociationConnector Association="Understood.org.DEV.membershipModel.FK_MemberToJourney_Members" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

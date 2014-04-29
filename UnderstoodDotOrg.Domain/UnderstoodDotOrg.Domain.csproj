@@ -79,7 +79,13 @@
     <Compile Include="Membership\Child.cs">
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Membership\ChildToGrade.cs">
+      <DependentUpon>MembershipModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Membership\Diagnosis.cs">
+      <DependentUpon>MembershipModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\Grade.cs">
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Membership\IMembershipManager.cs" />
@@ -89,10 +95,12 @@
     <Compile Include="Membership\Issue.cs">
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Membership\Journey.cs">
+      <DependentUpon>MembershipModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Membership\Member.cs">
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Membership\MembershipConstructors.cs" />
     <Compile Include="Membership\MembershipEntities.cs" />
     <Compile Include="Membership\MembershipHelper.cs" />
     <Compile Include="Membership\MembershipManager.cs" />
@@ -111,6 +119,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MembershipModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\MemberToJourney.cs">
+      <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search\BehaviorAdvice.cs" />

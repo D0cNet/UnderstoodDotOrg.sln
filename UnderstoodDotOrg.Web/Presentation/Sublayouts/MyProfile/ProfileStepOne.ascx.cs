@@ -105,37 +105,37 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             if ((uxBoy1.Checked || uxGirl1.Checked) && uxSelectGrade1.SelectedValue != string.Empty)
             {
-                registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade1.SelectedValue) });
+                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade1.SelectedValue) });
                 children.Add(new ChildModel() { Grade = uxSelectGrade1.SelectedValue, Pronoun = uxBoy1.Checked ? "he" : "she" });
             }
 
             if ((uxBoy2.Checked || uxGirl2.Checked) && uxSelectGrade2.SelectedValue != string.Empty)
             {
-                registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade2.SelectedValue) });
+                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade2.SelectedValue) });
                 children.Add(new ChildModel() { Grade = uxSelectGrade2.SelectedValue, Pronoun = uxBoy2.Checked ? "he" : "she" });
             }
 
             if ((uxBoy3.Checked || uxGirl3.Checked) && uxSelectGrade3.SelectedValue != string.Empty)
             {
-                registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade3.SelectedValue) });
+                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade3.SelectedValue) });
                 children.Add(new ChildModel() { Grade = uxSelectGrade3.SelectedValue, Pronoun = uxBoy3.Checked ? "he" : "she" });
             }
 
             if ((uxBoy4.Checked || uxGirl4.Checked) && uxSelectGrade4.SelectedValue != string.Empty)
             {
-                registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade4.SelectedValue) });
+                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade4.SelectedValue) });
                 children.Add(new ChildModel() { Grade = uxSelectGrade4.SelectedValue, Pronoun = uxBoy4.Checked ? "he" : "she" });
             }
 
             if ((uxBoy5.Checked || uxGirl5.Checked) && uxSelectGrade5.SelectedValue != string.Empty)
             {
-                registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade5.SelectedValue) });
+                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade5.SelectedValue) });
                 children.Add(new ChildModel() { Grade = uxSelectGrade5.SelectedValue, Pronoun = uxBoy5.Checked ? "he" : "she" });
             }
 
             if ((uxBoy6.Checked || uxGirl6.Checked) && uxSelectGrade6.SelectedValue != string.Empty)
             {
-                registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade6.SelectedValue) });
+                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade6.SelectedValue) });
                 children.Add(new ChildModel() { Grade = uxSelectGrade6.SelectedValue, Pronoun = uxBoy6.Checked ? "he" : "she" });
             }
 

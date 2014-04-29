@@ -12,18 +12,17 @@ namespace UnderstoodDotOrg.Domain.Membership
     using System;
     using System.Collections.Generic;
     
-    public partial class Diagnosis
+    public partial class Journey
     {
-        public Diagnosis()
+        public Journey()
         {
-            this.Children = new HashSet<Child>();
+            this.MemberToJourneys = new HashSet<MemberToJourney>();
         }
     
-        public System.Guid rowId { get; set; }
         public System.Guid Key { get; set; }
         public string Value { get; set; }
         public System.DateTime DateModified { get; set; }
     
-        public virtual ICollection<Child> Children { get; set; }
+        public virtual ICollection<MemberToJourney> MemberToJourneys { get; set; }
     }
 }
