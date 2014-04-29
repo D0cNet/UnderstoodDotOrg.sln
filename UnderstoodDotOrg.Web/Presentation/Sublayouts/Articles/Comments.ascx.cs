@@ -18,7 +18,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Comment> dataSource = CommunityHelper.ReadComments(CommunityManager.apiKey, blogId, blogPostId);
+            List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
 
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
@@ -30,8 +30,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
             string body = CommentEntryTextField.Text;
-            CommunityHelper.PostComment(CommunityManager.apiKey, blogId, blogPostId, body);
-            List<Comment> dataSource = CommunityHelper.ReadComments(CommunityManager.apiKey, blogId, blogPostId);
+            CommunityHelper.PostComment(blogId, blogPostId, body);
+            List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
 
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
@@ -92,7 +92,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             Console.WriteLine(xml);
 
-            List<Comment> dataSource = CommunityHelper.ReadComments(CommunityManager.apiKey, blogId, blogPostId);
+            List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
 
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();

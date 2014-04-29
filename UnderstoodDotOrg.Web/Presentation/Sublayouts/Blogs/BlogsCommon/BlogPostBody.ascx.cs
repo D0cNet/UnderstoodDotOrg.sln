@@ -15,7 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            BlogPost bp = CommunityHelper.ReadBlogBody(CommunityManager.apiKey, blogId, blogPostId);
+            BlogPost bp = CommunityHelper.ReadBlogBody(blogId, blogPostId);
             BlogTitle.Text = bp._title;
             BlogBody.Text = bp._body;
             BlogDate.Text = bp._publishedDate;
