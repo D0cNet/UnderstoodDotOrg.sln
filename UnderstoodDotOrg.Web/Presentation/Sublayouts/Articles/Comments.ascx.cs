@@ -5,6 +5,8 @@ using System.Net;
 using System.Text;
 using System.Web.UI.WebControls;
 using System.Xml;
+using Sitecore.Configuration;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -49,7 +51,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
             webClient.Headers.Add("Rest-Method", "PUT");
-            var requestUrl = "http://localhost/telligentevolution/api.ashx/v2/comments/" + id + ".xml";
+            var requestUrl = String.Format("{0}/api.ashx/v2/comments/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), id);
 
             var values = new NameValueCollection();
             values.Add("CommentId", id);
@@ -81,7 +83,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = "http://localhost/telligentevolution/api.ashx/v2/likes.xml";
+            var requestUrl = String.Format("{0}/api.ashx/v2/likes.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
 
             var values = new NameValueCollection();
             values.Add("ContentId", contentId);
@@ -108,7 +110,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             webClient.Headers.Add("Rest-Impersonate-User", "BobbyTestUser");
             webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
 
-            var postUrl = "http://localhost/telligentevolution/api.ashx/v2/blogs/" + blogId + "/posts/" + blogPostId + "/comments.xml ";
+            var postUrl = String.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}/comments.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
             var data = "Body=" + body + "&PublishedDate=" + DateTime.Now + "&IsApproved=true&BlogId=" + blogId;
 
             webClient.UploadData(postUrl, "POST", Encoding.ASCII.GetBytes(data));
@@ -124,7 +126,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-            var requestUrl = "http://localhost/telligentevolution/api.ashx/v2/blogs/" + blogId + "/posts/" + blogPostId + "/comments.xml";
+            var requestUrl = String.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
             var xml = webClient.DownloadString(requestUrl);
 
             var xmlDoc = new XmlDocument();
@@ -215,7 +217,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = "http://localhost/telligentevolution/api.ashx/v2/likes.xml?ContentId=" + commentId;
+            var requestUrl = String.Format("{0}/api.ashx/v2/likes.xml?ContentId={1}", Settings.GetSetting(Constants.Settings.TelligentConfig), commentId);
 
             var xml = webClient.DownloadString(requestUrl);
 

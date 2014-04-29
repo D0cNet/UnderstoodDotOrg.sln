@@ -58,9 +58,9 @@
             </div>
             <!-- END PARTIAL: community/blog-post-sidebar -->
         </div>
-</div>
+    </div>
 
     <!-- BEGIN PARTIAL: community/blog_comments -->
-<sc:Placeholder Key="blogComments" runat="server" />
-<!-- END PARTIAL: community/blog_comments -->
+    <sc:Placeholder Key="blogComments" runat="server" />
+    <!-- END PARTIAL: community/blog_comments -->
 </div>
