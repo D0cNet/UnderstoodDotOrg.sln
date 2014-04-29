@@ -21,7 +21,6 @@ namespace UnderstoodDotOrg.Domain.Membership
     
         public System.Guid Key { get; set; }
         public string Value { get; set; }
-        public Nullable<System.DateTime> DateModified { get; set; }
     
         public virtual ICollection<ChildToGrade> ChildToGrades { get; set; }
     }

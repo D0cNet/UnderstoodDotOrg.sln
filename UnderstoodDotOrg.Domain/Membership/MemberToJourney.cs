@@ -16,7 +16,6 @@ namespace UnderstoodDotOrg.Domain.Membership
     {
         public System.Guid MemberId { get; set; }
         public System.Guid JourneyId { get; set; }
-        public System.DateTime DateModified { get; set; }
     
         public virtual Journey Journey { get; set; }
         public virtual Member Member { get; set; }

@@ -16,7 +16,6 @@ namespace UnderstoodDotOrg.Domain.Membership
     {
         public System.Guid ChildId { get; set; }
         public System.Guid GradeId { get; set; }
-        public System.DateTime DateModified { get; set; }
     
         public virtual Child Child { get; set; }
         public virtual Grade Grade { get; set; }

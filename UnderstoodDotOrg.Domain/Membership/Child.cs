@@ -27,7 +27,6 @@ namespace UnderstoodDotOrg.Domain.Membership
         public System.Guid IEPStatus { get; set; }
         public System.Guid Section504Status { get; set; }
         public System.Guid EvaluationStatus { get; set; }
-        public System.DateTime DateModified { get; set; }
         public string Gender { get; set; }
         public Nullable<System.Guid> HomeLife { get; set; }
     
