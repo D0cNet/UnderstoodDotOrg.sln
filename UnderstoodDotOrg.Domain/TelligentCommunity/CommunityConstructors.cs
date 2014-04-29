@@ -63,4 +63,27 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             _author = author;
         }
     }
+
+    public class User
+    {
+        public string username { get; set; }
+        public string displayName { get; set; }
+        public string password { get; set; }
+        public string privateEmail { get; set; }
+        public bool allowSiteToContact { get; set; }
+        public DateTime birthday { get; set; }
+        public string editorType { get; set; }
+        public bool receiveEmails { get; set; }
+        public bool enableTracking { get; set; }
+        public string gender { get; set; }
+        public string language { get; set; }
+        public string location { get; set; }
+        public double timeZone { get; set; }
+        public string webUrl { get; set; }
+
+        public User()
+        {
+            this.password = Guid.NewGuid().ToString();
+        }
+    }
 }

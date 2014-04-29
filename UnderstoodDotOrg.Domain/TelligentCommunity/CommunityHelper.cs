@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Collections.Specialized;
 using System.Net;
+using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using Sitecore.Configuration;
 using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Domain.Importer;
 
 namespace UnderstoodDotOrg.Domain.TelligentCommunity
 {
@@ -57,12 +56,12 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return publishedDate;
         }
 
-        public static List<Comment> ReadComments(string apiKey, int blogId, int blogPostId)
+        public static List<Comment> ReadComments(int blogId, int blogPostId)
         {
             var webClient = new WebClient();
 
             // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = String.Format("{0}:{1}", apiKey, "admin");
+            var adminKey = String.Format("{0}:{1}", CommunityManager.apiKey, "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
@@ -95,7 +94,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string authorDisplayName = nodes2[nodecount]["DisplayName"].InnerText;
                 string authorProfileUrl = nodes2[nodecount]["ProfileUrl"].InnerText;
                 string authorUsername = nodes2[nodecount]["Username"].InnerText;
-                string likesCount = ReadLikes(apiKey, commentId);
+                string likesCount = ReadLikes(commentId);
                 Comment comment = new Comment(id, url, body, parentId, contentId, isApproved, replyCount, commentId,
                     commentContentTypeId, authorId, authorAvatarUrl, authorUsername, publishedDate, authorDisplayName,
                     authorProfileUrl, likesCount);
@@ -105,12 +104,12 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return commentList;
         }
 
-        public static BlogPost ReadBlogBody(string apiKey, int blogId, int blogPostId)
+        public static BlogPost ReadBlogBody(int blogId, int blogPostId)
         {
             var webClient = new WebClient();
 
             // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = String.Format("{0}:{1}", apiKey, "admin");
+            var adminKey = String.Format("{0}:{1}", CommunityManager.apiKey, "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
@@ -132,11 +131,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return blogPost;
         }
 
-        public static void PostComment(string apiKey, int blogId, int blogPostId, string body)
+        public static void PostComment(int blogId, int blogPostId, string body)
         {
             var webClient = new WebClient();
 
-            var adminKey = string.Format("{0}:{1}", apiKey, "admin");
+            var adminKey = string.Format("{0}:{1}", CommunityManager.apiKey, "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
@@ -149,11 +148,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             webClient.UploadData(postUrl, "POST", Encoding.ASCII.GetBytes(data));
         }
 
-        public static string ReadLikes(string apiKey, string commentId)
+        public static string ReadLikes(string commentId)
         {
             var webClient = new WebClient();
 
-            var adminKey = String.Format("{0}:{1}", apiKey, "admin");
+            var adminKey = String.Format("{0}:{1}", CommunityManager.apiKey, "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
@@ -170,5 +169,36 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return likes;
         }
 
+        public static void CreateUser(User user)
+        {
+            var webClient = new WebClient();
+
+            // replace the "admin" and "Admin's API key" with your valid user and apikey!
+            var adminKey = String.Format("{0}:{1}", CommunityManager.apiKey, "admin");
+            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            var requestUrl = String.Format("{0}api.ashx/v2/users.xml",Settings.GetSetting(Constants.Settings.TelligentConfig));
+
+            var values = new NameValueCollection();
+            values["Username"] = user.username;
+            values["Password"] = user.password;
+            values["PrivateEmail"] = user.privateEmail;
+
+            PropertyInfo[] ps = user.GetType().GetProperties();
+            foreach (PropertyInfo pi in ps)
+            {
+                string value = pi.GetValue(user, null).ToString();
+
+                if (!string.IsNullOrEmpty(value))
+                {
+                    values[pi.Name] = value;
+                }
+            }
+
+            var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+
+            Console.WriteLine(xml);
+        }
     }
 }
