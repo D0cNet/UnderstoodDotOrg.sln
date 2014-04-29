@@ -259,6 +259,9 @@
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\GradeLevelItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\GradeLevelItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\GradeLevelItem.interface.cs" />
+    <Compile Include="TelligentCommunity\CommunityConstructors.cs" />
+    <Compile Include="TelligentCommunity\CommunityHelper.cs" />
+    <Compile Include="TelligentCommunity\CommunityManager.cs" />
     <Compile Include="Understood\Common\GradeModel.cs" />
     <Compile Include="Understood\Common\IssueModel.cs" />
     <Compile Include="Understood\Content\ContentItemModel.cs" />
