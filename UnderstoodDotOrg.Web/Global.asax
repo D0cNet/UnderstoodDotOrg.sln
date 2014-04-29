@@ -1,4 +1,4 @@
-<%@Application Language='C#' Inherits="Sitecore.Web.Application" %>
+<%@Application Language='C#' Inherits="Sitecore.ContentSearch.SolrProvider.CastleWindsorIntegration.WindsorApplication" %>
 
 <script runat="server">
   public void Application_Start() {
