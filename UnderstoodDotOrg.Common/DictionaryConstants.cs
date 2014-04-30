@@ -11,6 +11,8 @@ namespace UnderstoodDotOrg.Common
     {
         private static string PosesDictionary = "Poses Dictionary";
 
+        #region Button Text
+
         public static string YesButtonText
         {
             get
@@ -123,6 +125,10 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        #endregion
+
+        #region Input Placeholders
+
         public static string ScreenNameWatermark
         {
             get
@@ -154,6 +160,10 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "Select Challenge");
             }
         }
+
+        #endregion
+
+        #region My Profile
 
         public static string AboutMeLabel
         {
@@ -330,6 +340,76 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "Open To Connect Description");
             }
         }
+
+#endregion
+
+        #region Registration/Validation
+
+        public static string ConfirmPasswordErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Confirm Password Error Message");
+            }
+        }
+
+        public static string EmailAddressErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "First Name Error Message");
+            }
+        }
+
+        public static string FirstNameErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "First Name Error Message");
+            }
+        }
+
+        public static string FirstNameMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "First Name Message");
+            }
+        }
+
+        public static string OptionalMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Optional Message");
+            }
+        }
+
+        public static string PasswordErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Password Error Message");
+            }
+        }
+
+        public static string PasswordMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Password Message");
+            }
+        }
+
+        public static string ZipCodeErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Zip Code Error Message");
+            }
+        }
+
+        #endregion
 
         public static class Grades
         {
