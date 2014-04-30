@@ -33,7 +33,6 @@
                 <div class="col col-23 offset-1">
                     <h2><%--<a href="REPLACE">Early Learners <i class="icon-arrow-right-blue"></i></a>--%>
                         <asp:HyperLink ID="hlTopicLink" runat="server">
-                            
                         </asp:HyperLink><i class="icon-arrow-right-blue"></i>
                     </h2>
                 </div>
@@ -41,7 +40,7 @@
 
             <div class="row listing-row">
                 <div class="col col-5 offset-1">
-                    <sc:image id="scThumbnailImage" runat="server" field="Thumbnail Image" />
+                    <sc:image id="scThumbnailImage" runat="server" field="Content Thumbnail" />
                     <asp:Image runat="server" ID="defaultImage" Visible="false" ImageUrl="http://placehold.it/190x107" />
                     <%--<img alt="190x107 Placeholder" src="http://placehold.it/190x107" />--%>
                 </div>

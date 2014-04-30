@@ -38,32 +38,26 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section {
                         hlTopicLink.NavigateUrl = item.InnerItem.GetUrl();
                     }
 
-
-                   // ContentPageItem contentPageItem = new ContentPageItem(item.InnerItem);
-
-                    //if (scThumbnailImage != null) {
-                    //    if (defaultImage != null && contentPageItem.ThumbnailImage.MediaUrl.IsNullOrEmpty()) {
-                    //        defaultImage.Visible = true;
-                    //    }
-                    //    else {
-                    //        scThumbnailImage.Item = contentPageItem;
-                    //    }
-                    //}
                     defaultImage.Visible = true;
                     if (item.CuratedFeaturedcontent != null) {
                         var resultFeaturedContent = item.CuratedFeaturedcontent.ListItems;
                         if (resultFeaturedContent.Any()) {
                             if (scThumbnailImage != null) {
+                                // Gets thumbnail image of first article item from curated featured content list.
                                 Item firstFeaturedItem = resultFeaturedContent.FirstOrDefault();
-                                ContentPageItem contentPageItem = new ContentPageItem(firstFeaturedItem);
-                                //MediaItem thumbnailImage = MediaManager.GetMediaUrl(mediaItem, mediaOptions);
-                                if (contentPageItem != null) {
-                                    if (contentPageItem.ThumbnailImage.MediaUrl.IsNullOrEmpty()) {
-                                        defaultImage.Visible = true;
-                                    }
-                                    if (scThumbnailImage != null) {
-                                        scThumbnailImage.Item = contentPageItem;
-                                        defaultImage.Visible = false;
+                                if (firstFeaturedItem.InheritsFromType(DefaultArticlePageItem.TemplateId)) {
+                                    DefaultArticlePageItem contentPageItem = new DefaultArticlePageItem(firstFeaturedItem);
+                                  
+                                    if (contentPageItem != null) {
+                                        if (contentPageItem.ContentThumbnail.MediaItem == null) {
+                                            defaultImage.Visible = true;
+                                        }
+                                        else {
+                                            if (scThumbnailImage != null) {
+                                                scThumbnailImage.Item = contentPageItem;
+                                                defaultImage.Visible = false;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -79,11 +73,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section {
         protected void rptTopicListItems_ItemDataBound(object sender, RepeaterItemEventArgs e) {
             if (e.IsItem()) {
                 Item item = e.Item.DataItem as Item;
-                if (item != null) {
+                if (item != null && item.InheritsFromType(ContentPageItem.TemplateId)) {
+                    ContentPageItem content = new ContentPageItem(item);
+
                     HyperLink hlTopicTitle = e.FindControlAs<HyperLink>("hlTopicTitle");
                     if (hlTopicTitle != null) {
                         hlTopicTitle.NavigateUrl = LinkManager.GetItemUrl(item);
-                        hlTopicTitle.Text = item.Fields["Page Title"].Value;
+                        hlTopicTitle.Text = content.PageTitle.Rendered;
                     }
                 }
             }
