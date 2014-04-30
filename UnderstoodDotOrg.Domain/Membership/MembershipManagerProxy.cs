@@ -47,5 +47,10 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             return new Member();
         }
+
+        public Child GetChild(Guid ChildId)
+        {
+            return new Child();
+        }
     }
 }

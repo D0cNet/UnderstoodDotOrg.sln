@@ -30,5 +30,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         Member GetMember(Guid MemberId);
 
         Member GetMember(string MemberId);
+
+        Child GetChild(Guid ChildId);
     }
 }

@@ -125,7 +125,10 @@
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\Article.cs" />
     <Compile Include="Search\BehaviorAdvice.cs" />
+    <Compile Include="Search\Fields\AllTemplatesField.cs" />
+    <Compile Include="Search\SearchHelper.cs" />
     <Compile Include="SitecoreCIG\FolderItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.instance.cs" />

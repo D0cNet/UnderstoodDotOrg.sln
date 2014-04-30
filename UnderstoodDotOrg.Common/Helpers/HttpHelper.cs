@@ -24,5 +24,13 @@ namespace UnderstoodDotOrg.Common.Helpers
 
             return defaultValue;
         }
+
+        public static string GetIpAddress()
+        {
+            return HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]
+                ?? HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]
+                ?? HttpContext.Current.Request.UserHostAddress
+                ?? String.Empty;
+        }
     }
 }

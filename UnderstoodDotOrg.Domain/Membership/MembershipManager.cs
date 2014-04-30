@@ -187,5 +187,21 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             return this.GetMember(Guid.Parse(MemberId));
         }
+
+        public Child GetChild(Guid ChildId)
+        {
+            Child child = new Child();
+
+            using (var db = new Membership(connString))
+            {
+                var query = from c in db.Children
+                            where c.ChildId == ChildId
+                            select c;
+
+                child = query.First();
+            }
+
+            return child;
+        }
     }
 }
