@@ -18,6 +18,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             this.Diagnoses = new HashSet<Diagnosis>();
             this.Issues = new HashSet<Issue>();
             this.Members = new HashSet<Member>();
+            this.ChildToGrades = new HashSet<ChildToGrade>();
         }
     }
 
@@ -35,6 +36,7 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             this.Children = new HashSet<Child>();
             this.Interests = new HashSet<Interest>();
+            this.MemberToJourneys = new HashSet<MemberToJourney>();
         }
     }
 }

@@ -101,6 +101,7 @@
     <Compile Include="Membership\Member.cs">
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Membership\MembershipConstructors.cs" />
     <Compile Include="Membership\MembershipEntities.cs" />
     <Compile Include="Membership\MembershipHelper.cs" />
     <Compile Include="Membership\MembershipManager.cs" />

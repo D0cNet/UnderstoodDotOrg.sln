@@ -14,13 +14,13 @@ namespace UnderstoodDotOrg.Domain.Membership
     
     public partial class Child
     {
-        public Child()
-        {
-            this.Diagnoses = new HashSet<Diagnosis>();
-            this.Issues = new HashSet<Issue>();
-            this.Members = new HashSet<Member>();
-            this.ChildToGrades = new HashSet<ChildToGrade>();
-        }
+        //public Child()
+        //{
+        //    this.Diagnoses = new HashSet<Diagnosis>();
+        //    this.Issues = new HashSet<Issue>();
+        //    this.Members = new HashSet<Member>();
+        //    this.ChildToGrades = new HashSet<ChildToGrade>();
+        //}
     
         public System.Guid ChildId { get; set; }
         public string Nickname { get; set; }

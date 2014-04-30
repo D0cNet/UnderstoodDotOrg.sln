@@ -178,6 +178,8 @@ namespace UnderstoodDotOrg.Domain.Membership
                 member = query.First();
             }
 
+            //TODO: throw exception if no user was found
+
             return member;
         }
 
