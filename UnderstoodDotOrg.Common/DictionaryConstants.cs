@@ -161,6 +161,62 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string ConfirmPasswordWatermark
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Confirm Password Watermark");
+            }
+        }
+
+        public static string EnterEmailAddressWatermark
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Enter Email Address Watermark");
+            }
+        }
+
+        public static string EnterNewPasswordWatermark
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Enter New Password Watermark");
+            }
+        }
+
+        public static string EnterPasswordWatermark
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Enter Password Watermark");
+            }
+        }
+
+        public static string EnterSuggestionWatermark
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Enter Suggestion Watermark");
+            }
+        }
+
+        public static string FirstNameWatermark
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "First Name Watermark");
+            }
+        }
+
+        public static string ReEnterNewPasswordWatermark
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Re-enter New Password Watermark");
+            }
+        }
+
         #endregion
 
         #region My Profile
@@ -317,14 +373,6 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
-        public static string EnterSuggestionWatermark
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "Enter Suggestion Watermark");
-            }
-        }
-
         public static string NotOpenToConnect
         {
             get
@@ -341,7 +389,7 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
-#endregion
+        #endregion
 
         #region Registration/Validation
 
