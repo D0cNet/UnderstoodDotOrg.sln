@@ -4,16 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
 using Sitecore.Data.Items;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
 using Sitecore.ContentSearch;
-using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.ContentSearch.SearchTypes;
+using UnderstoodDotOrg.Common.Extensions;
+
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.SimpleExpertArticle;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Advocacy;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -28,8 +30,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         VideoArticlePageItem ObjVideoArticle;
         BasicArticlePageItem ObjBasicArticle;
         TextOnlyTipsArticlePageItem ObjTextTipsArticle;
-
-        IEnumerable <DefaultArticlePageItem> FinalRelatedArticles = null;
+        TakeActionPageItem ObjTakeActionPage;
+        IEnumerable<DefaultArticlePageItem> FinalRelatedArticles = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             //ObjDefaultArticle = new DefaultArticlePageItem(Sitecore.Context.Item);
@@ -73,6 +75,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
                 ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;
             }
+            if (Sitecore.Context.Item.TemplateID.ToString() == TakeActionPageItem.TemplateId.ToString())
+            {
+                ObjTakeActionPage = new TakeActionPageItem(Sitecore.Context.Item);
+                ObjDefaultArticle = null;
+                if (ObjTakeActionPage.HideRelatedActiveLinks.Checked == false) // Show Articles
+                {
+                    //Get list of selected item
+                    FinalRelatedArticles = GetRelatedLinks(ObjTakeActionPage);
+                    if (FinalRelatedArticles != null)
+                    {
+                        rptMoreArticle.DataSource = FinalRelatedArticles;
+                        rptMoreArticle.DataBind();
+                    }
+
+                }
+            }
             if (ObjDefaultArticle != null)
             {
                 if (ObjDefaultArticle.HideRelatedActiveLinks.Checked == false) // Show Articles
@@ -87,11 +105,44 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                 }
             }
-
-
-
         }
+        public IEnumerable<DefaultArticlePageItem> GetRelatedLinks(TakeActionPageItem ObjDefArt)
+        {
+            // Item SiteRoot=Sitecore.Context.Database.GetItem(Sitecore.Context.Site.RootPath, Sitecore.Data.Managers.LanguageManager.GetLanguage("en"));
+            IEnumerable<Item> AllArticles = ObjDefArt.RelatedLink.ListItems.Where(t => t.InheritsTemplate(DefaultArticlePageItem.TemplateId));
+            List<DefaultArticlePageItem> FinalArticles = null;
+            if (AllArticles != null)
+            {
+                if (AllArticles.Count() > 6) AllArticles.Take(6);
+                FinalArticles = new List<DefaultArticlePageItem>(AllArticles.Count());
+                foreach (DefaultArticlePageItem DefItem in AllArticles)
+                {
+                    FinalArticles.Add(DefItem);
+                }
+            }
+            else
+            {
+                //Select Random max 6 articles to show
+                var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+                using (var context = index.CreateSearchContext())
+                {
+                    IEnumerable<Item> RandomRelatedLink = (System.Collections.Generic.IEnumerable<Item>)context.GetQueryable<SearchResultItem>()
+                         .Where(i => i.GetItem().InheritsTemplate(DefaultArticlePageItem.TemplateId));
+                    //ActualRelatedLinks = (System.Collections.Generic.IEnumerable<Item>)RandomRelatedLink;
+                    if (RandomRelatedLink != null)
+                    {
+                        if (RandomRelatedLink.Count() > 6) RandomRelatedLink.Take(6);
+                        FinalArticles = new List<DefaultArticlePageItem>(RandomRelatedLink.Count());
+                    }
+                    foreach (DefaultArticlePageItem DefItem in RandomRelatedLink)
+                    {
+                        FinalArticles.Add(DefItem);
+                    }
+                }
+            }
 
+            return FinalArticles;
+        }
         public IEnumerable<DefaultArticlePageItem> GetRelatedLinks(DefaultArticlePageItem ObjDefArt)
         {
             // Item SiteRoot=Sitecore.Context.Database.GetItem(Sitecore.Context.Site.RootPath, Sitecore.Data.Managers.LanguageManager.GetLanguage("en"));
@@ -182,7 +233,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                 if (RelatedLink != null)
                 {
-                  //  DefaultArticlePageItem def = e.Item.DataItem as DefaultArticlePageItem;
+                    //  DefaultArticlePageItem def = e.Item.DataItem as DefaultArticlePageItem;
                     FieldRenderer frLinkTitle = e.FindControlAs<FieldRenderer>("frLinkTitle");
                     HyperLink hlLinkTitle = e.FindControlAs<HyperLink>("hlLinkTitle");
                     if (frLinkTitle != null)

@@ -6,6 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
+//using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
@@ -46,20 +47,46 @@ public static implicit operator Item(BasicArticlePageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField KeyTakeawayTitle
+public CustomTextField KeepReadingHeadline
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Key Takeaway Title"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Keep Reading Headline"]);
 	}
 }
 
 
-public CustomTextField KeyTakeawayData
+public CustomTreeListField KeepReadingContent
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Key Takeaway Data"]);
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Keep Reading Content"]);
+	}
+}
+
+public CustomCheckboxField ShowPromotionalControl
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Promotional Control"]);
+	}
+}
+
+
+public CustomTextField PromotionalHeadline
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Promotional Headline"]);
+	}
+}
+
+
+public CustomTreeListField PromotionalContent
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Promotional Content"]);
 	}
 }
 
@@ -68,7 +95,7 @@ public CustomTextField AtaglanceHeader
 {
 	get
 	{
-        return new CustomTextField(InnerItem, InnerItem.Fields["At-a-glance Header"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["At-a-glance Header"]);
 	}
 }
 
@@ -77,11 +104,26 @@ public CustomTextField AtaglanceContent
 {
 	get
 	{
-        return new CustomTextField(InnerItem, InnerItem.Fields["At-a-glance Content"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["At-a-glance Content"]);
 	}
 }
 
+public CustomTextField KeyTakeawayTitle
+{
+    get
+    {
+        return new CustomTextField(InnerItem, InnerItem.Fields["Key Takeaway Title"]);
+    }
+}
 
+
+public CustomTextField KeyTakeawayData
+{
+    get
+    {
+        return new CustomTextField(InnerItem, InnerItem.Fields["Key Takeaway Data"]);
+    }
+}
 #endregion //Field Instance Methods
 }
 }

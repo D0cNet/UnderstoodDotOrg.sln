@@ -6,6 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
+//using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
@@ -42,21 +43,65 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
         }
 
         #endregion //Boilerplate CustomItem Code
-        public CustomGeneralLinkField LinktoResultPage
-        {
-            get
-            {
-                return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Link to Result Page"]);
-            }
 
-        }
 
         #region Field Instance Methods
 
 
         //Could not find Field Type for Link to Result Page
 
+        public CustomTextField KeepReadingHeadline
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Keep Reading Headline"]);
+            }
+        }
 
+
+        public CustomTreeListField KeepReadingContent
+        {
+            get
+            {
+                return new CustomTreeListField(InnerItem, InnerItem.Fields["Keep Reading Content"]);
+            }
+        }
+
+        public CustomCheckboxField ShowPromotionalControl
+        {
+            get
+            {
+                return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Promotional Control"]);
+            }
+        }
+
+
+        public CustomTextField PromotionalHeadline
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Promotional Headline"]);
+            }
+        }
+
+
+        public CustomTreeListField PromotionalContent
+        {
+            get
+            {
+                return new CustomTreeListField(InnerItem, InnerItem.Fields["Promotional Content"]);
+            }
+        }
+
+        public CustomGeneralLinkField LinktoResultPage
+        {
+            get
+            {
+                return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Link to Result Page"]);
+            }
+        }
+
+   
         #endregion //Field Instance Methods
     }
 }

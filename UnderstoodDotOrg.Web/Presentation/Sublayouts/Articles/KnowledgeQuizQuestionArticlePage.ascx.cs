@@ -365,7 +365,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected void btnResult_Click(object sender, EventArgs e)
         {
             //store all question values in session
-            Response.Redirect(string.Concat(Request.Url.Host.ToString(), ObjKnowledgeQuiz.LinktoResultPage));
+            Response.Redirect(string.Concat(Request.Url.Host.ToString(),"/", ObjKnowledgeQuiz.LinktoResultPage));
         }
     }
     public class KnowledgeQuizQuestion

@@ -6,6 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
+//using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
@@ -46,6 +47,15 @@ public static implicit operator Item(DeepDiveArticlePageItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField KeepReadingHeadline
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Keep Reading Headline"]);
+	}
+}
+
+
 public CustomTextField KeyTakeawayTitle
 {
 	get
@@ -55,11 +65,47 @@ public CustomTextField KeyTakeawayTitle
 }
 
 
+public CustomTreeListField KeepReadingContent
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Keep Reading Content"]);
+	}
+}
+
+
 public CustomTextField KeyTakeawayDetails
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Key Take away Details"]);
+	}
+}
+
+
+public CustomCheckboxField ShowPromotionalControl
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Promotional Control"]);
+	}
+}
+
+
+public CustomTextField PromotionalHeadline
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Promotional Headline"]);
+	}
+}
+
+
+public CustomTreeListField PromotionalContent
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Promotional Content"]);
 	}
 }
 

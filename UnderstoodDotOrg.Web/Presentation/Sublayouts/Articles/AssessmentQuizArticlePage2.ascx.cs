@@ -44,14 +44,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected void btnBack_Click(object sender, EventArgs e)
         {
             //btnSubmit.PostBackUrl =string.Concat( Request.Url.Host.ToString() , ObjAssessmentQuizPage2.LinktoBackPage);
-            Response.Redirect(string.Concat(Request.Url.Host.ToString(), ObjAssessmentQuizPage2.LinktoBackPage));
+            Response.Redirect(string.Concat(Request.Url.Host.ToString(),"/", ObjAssessmentQuizPage2.LinktoBackPage));
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
         
             //btnSubmit.PostBackUrl =string.Concat( Request.Url.Host.ToString() , ObjAssessmentQuizPage2.LinktoResultPage);
-            Response.Redirect(string.Concat(Request.Url.Host.ToString(), ObjAssessmentQuizPage2.LinktoResultPage));
+            Response.Redirect(string.Concat(Request.Url.Host.ToString(), "/", ObjAssessmentQuizPage2.LinktoResultPage));
         }
 
         protected void rptQuestion_ItemDataBound(object sender, RepeaterItemEventArgs e)

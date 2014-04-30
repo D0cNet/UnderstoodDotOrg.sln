@@ -99,7 +99,7 @@
                 </header>
                 <%--<img src="http://placehold.it/60x60" alt="REPLACE">--%>
                 <asp:HyperLink ID="hlAuthorImage" runat="server">
-                    <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server"  Width="60px" Height="60px"/>
+                    <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server" />
                 </asp:HyperLink>
 
                 <div class="author-text">
@@ -149,14 +149,15 @@
                 <!-- Module within only appears in under 650px window width-->
             </div>
             <!-- BEGIN PARTIAL: keep-reading-mobile -->
-            <div class="keep-reading keep-reading-mobile">
+            <%--<div class="keep-reading keep-reading-mobile">
                 <h3>Keep Reading</h3>
                 <ul>
                     <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
                     <li><a href="REPLACE">How to Build a Homework Plan</a></li>
                     <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
                 </ul>
-            </div>
+            </div>--%>
+            
             <!-- END PARTIAL: keep-reading-mobile -->
             <!-- BEGIN PARTIAL: article-poll -->
             <section class="article-poll">
@@ -263,7 +264,9 @@
                 <!-- END PARTIAL: find-helpful -->
             </div>
             <!-- BEGIN PARTIAL: keep-reading-lg -->
-            <div class="keep-reading keep-reading-lg"></div>
+            <div class="keep-reading keep-reading-lg">
+              <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
+            </div>
             <!-- END PARTIAL: keep-reading-lg -->
             <!-- BEGIN PARTIAL: comments-summary -->
             <section class="comments-summary">
@@ -285,7 +288,8 @@
             </section>
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
-            <div class="sidebar-promos">
+            <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx"/>
+            <%--<div class="sidebar-promos">
                 <div class="promo purple-dark">
                     <a href="REPLACE">
                         <span>Get advice</span>
@@ -309,7 +313,7 @@
                     </a>
                 </div>
                 <!-- end promo -->
-            </div>
+            </div> --%>
             <!-- end sidebar-promos -->
 
             <!-- END PARTIAL: sidebar-promos -->

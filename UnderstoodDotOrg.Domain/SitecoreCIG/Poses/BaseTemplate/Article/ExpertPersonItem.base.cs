@@ -9,71 +9,108 @@ using CustomItemGenerator.Fields.SimpleTypes;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article
 {
-public partial class ExpertPersonItem : CustomItem
-{
+    public partial class ExpertPersonItem : CustomItem
+    {
 
-public static readonly string TemplateId = "{0A6E0FC9-7CB2-4E64-AF58-A38B6B3C1CFD}";
-
-
-#region Boilerplate CustomItem Code
-
-public ExpertPersonItem(Item innerItem) : base(innerItem)
-{
-
-}
-
-public static implicit operator ExpertPersonItem(Item innerItem)
-{
-	return innerItem != null ? new ExpertPersonItem(innerItem) : null;
-}
-
-public static implicit operator Item(ExpertPersonItem customItem)
-{
-	return customItem != null ? customItem.InnerItem : null;
-}
-
-#endregion //Boilerplate CustomItem Code
+        public static readonly string TemplateId = "{0A6E0FC9-7CB2-4E64-AF58-A38B6B3C1CFD}";
 
 
-#region Field Instance Methods
+        #region Boilerplate CustomItem Code
+
+        public ExpertPersonItem(Item innerItem)
+            : base(innerItem)
+        {
+
+        }
+
+        public static implicit operator ExpertPersonItem(Item innerItem)
+        {
+            return innerItem != null ? new ExpertPersonItem(innerItem) : null;
+        }
+
+        public static implicit operator Item(ExpertPersonItem customItem)
+        {
+            return customItem != null ? customItem.InnerItem : null;
+        }
+
+        #endregion //Boilerplate CustomItem Code
 
 
-public CustomTextField ExpertName
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Expert Name"]);
-	}
-}
+        #region Field Instance Methods
 
 
-public CustomTextField ExpertBiodata
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Expert Biodata"]);
-	}
-}
+        public CustomTextField FullName
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Full Name"]);
+            }
+        }
 
 
-public CustomImageField ExpertImage
-{
-	get
-	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["Expert Image"]);
-	}
-}
+        public CustomTextField Biodata
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Biodata"]);
+            }
+        }
 
 
-public CustomTextField ExpertTitle
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Expert Title"]);
-	}
-}
+        public CustomImageField ExpertImage
+        {
+            get
+            {
+                return new CustomImageField(InnerItem, InnerItem.Fields["Expert Image"]);
+            }
+        }
 
 
-#endregion //Field Instance Methods
-}
+        public CustomTextField TitleandInstitution
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Title and Institution"]);
+            }
+        }
+
+
+        public CustomTreeListField Participation
+        {
+            get
+            {
+                return new CustomTreeListField(InnerItem, InnerItem.Fields["Participation"]);
+            }
+        }
+
+
+        public CustomTextField TwitterLink
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Twitter Link"]);
+            }
+        }
+
+
+        public CustomCheckboxField ShowBioPage
+        {
+            get
+            {
+                return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Bio Page"]);
+            }
+        }
+
+
+        public CustomTextField BlogPageLink
+        {
+            get
+            {
+                return new CustomTextField(InnerItem, InnerItem.Fields["Blog Page Link"]);
+            }
+        }
+
+
+        #endregion //Field Instance Methods
+    }
 }

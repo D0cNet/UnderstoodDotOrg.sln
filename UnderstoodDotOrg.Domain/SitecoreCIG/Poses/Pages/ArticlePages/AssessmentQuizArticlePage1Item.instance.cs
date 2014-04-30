@@ -6,7 +6,9 @@ using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.BaseforQuiz;
 using UnderstoodDotOrg.Common.Extensions;
 using System.Linq;
-
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.SearchTypes;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
 {
@@ -61,5 +63,8 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
             return _QnAID;
         }
 
+
+    
+       
     }
 }

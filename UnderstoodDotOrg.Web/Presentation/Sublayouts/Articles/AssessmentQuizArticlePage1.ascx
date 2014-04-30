@@ -216,7 +216,7 @@
                     <!-- .assessment-questions -->
                     <div class="assessment-actions">
                         <%--s<input class="submit-button assessment-quiz-next" type="submit" value="Next" />--%>
-                        <asp:Button class="submit-button assessment-quiz-next" ID="btnNext" runat="server" OnClick="btnNext_Click" Text="Next" />
+                        <asp:Button CssClass="submit-button assessment-quiz-next" ID="btnNext" runat="server" OnClick="btnNext_Click" Text="Next" />
                     </div>
                 </div>
                 <!-- .assessment-quiz-form -->

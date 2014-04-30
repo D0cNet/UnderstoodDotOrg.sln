@@ -6,7 +6,7 @@ using Sitecore.Web.UI.WebControls;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article
 {
-public partial class ExpertPersonItem 
+    public partial class ExpertPersonItem : CustomItem
 {
 
 }

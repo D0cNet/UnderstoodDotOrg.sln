@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -15,30 +16,29 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           // HylkByline.Visible = false;
+            // HylkByline.Visible = false;
             hlAuthorName.Visible = false;
-           // For Basic ARticle , show desc as Author Bio if author have bio
+            // For Basic ARticle , show link to Author Bio if author have bio
             if (Sitecore.Context.Item.TemplateID.ToString() == BasicArticlePageItem.TemplateId)
             {
                 BasicArticlePageItem ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
-                if (ObjBasicArticle !=null)
+                if (ObjBasicArticle != null && ObjBasicArticle.DefaultArticlePage.AuthorName.Item != null)
                 {
-                    if (ObjBasicArticle.DefaultArticlePage.AuthorName.Item != null)
-                    {
-                        //frSummary.Item = ObjBasicArticle.DefaultArticlePage.AuthorName;
-                        //frSummary.FieldName = "Author Name";
-                        frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                        hlAuthorName.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.GetUrl();
-                        hlAuthorName.Text = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Fields["Author Name"].Value;
-                    }
-                   
+                    frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    hlAuthorName.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.GetUrl();
+                    hlAuthorName.Text = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Name;
+                    hlAuthorName.Visible = true;
+                    frSummary.Visible = false;
                 }
-               }
+            }
             else
-            { 
-                // show data of Summary field
-                frSummary.Item = Sitecore.Context.Item;
-                frSummary.FieldName = "Summary";
+            {
+                if (Sitecore.Context.Item.TemplateID.ToString() != AboutUnderstoodItem.TemplateId)
+                {
+                    frSummary.Item = Sitecore.Context.Item;
+                    frSummary.Visible = true;
+                    hlAuthorName.Visible = false;
+                }
                 
             }
         }

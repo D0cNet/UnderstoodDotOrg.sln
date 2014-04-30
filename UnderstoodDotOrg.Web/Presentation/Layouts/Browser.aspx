@@ -29,6 +29,8 @@
     <link href="/Presentation/includes/css/layout.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/globals.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/modules.css" rel="stylesheet" />
+    <link href="Presentation/includes/css/about.css" rel="stylesheet" />
+    <link href="Presentation/includes/css/advocacy.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/account.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/article.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/community.css" rel="stylesheet" />
@@ -41,7 +43,7 @@
 <body>
     <form id="form1" runat="server">
         <%--<sc:sublayout id="scHeader" runat="server" path="~/Presentation/SubLayouts/Containers/Header.ascx" />--%>
-         <!-- BEGIN PARTIAL: language-selector -->
+        <!-- BEGIN PARTIAL: language-selector -->
         <div id="language-selector-bar">
 
             <span class="button-close ir">Close</span>
@@ -56,10 +58,10 @@
         <!-- END PARTIAL: language-selector -->
 
         <div id="wrapper">
-           
-            <sc:placeholder ID="Placeholder1" key="Header" runat="server" />
-            <sc:placeholder ID="Placeholder2" key="Main" runat="server" />
-            <sc:placeholder ID="Placeholder3" key="Footer" runat="server" />
+
+            <sc:Placeholder ID="Placeholder1" Key="Header" runat="server" />
+            <sc:Placeholder ID="Placeholder2" Key="Main" runat="server" />
+            <sc:Placeholder ID="Placeholder3" Key="Footer" runat="server" />
         </div>
         <!-- #wrapper -->
 

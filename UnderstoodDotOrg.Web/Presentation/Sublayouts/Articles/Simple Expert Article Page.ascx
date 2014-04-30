@@ -81,7 +81,7 @@
                 <h2>About the Author</h2>
             </header>
              <asp:HyperLink ID="hlAuthorImage" runat="server">
-                <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server"  Width="60px" Height="60px" />
+                <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server" />
             </asp:HyperLink>
 
             <div class="author-text">
@@ -146,14 +146,15 @@
         </div>
         <!-- END PARTIAL: find-helpful -->
         <!-- BEGIN PARTIAL: keep-reading -->
-        <div class="keep-reading">
+        <%--<div class="keep-reading">
             <h3>Keep Reading</h3>
             <ul>
                 <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
                 <li><a href="REPLACE">How to Build a Homework Plan</a></li>
                 <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
             </ul>
-        </div>
+        </div>--%>
+        <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
         <!-- END PARTIAL: keep-reading -->
         <!-- BEGIN PARTIAL: comments-summary -->
         <section class="comments-summary">

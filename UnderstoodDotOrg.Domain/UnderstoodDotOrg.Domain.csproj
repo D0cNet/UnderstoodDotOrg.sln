@@ -136,15 +136,20 @@
     <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\ExpertPersonItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\ReviewerBioItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\ReviewerBioItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\ContentPageItem.base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\DefaultArticlePageItem.base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SitecoreCIG\Poses\Folders\AdvocacyMainFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\BasePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\BasePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\BasePageNEWItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\BasePageNEWItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\BehaviorAdvicePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\BehaviorAdvicePageItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\ContentPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\ContentPageItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\DefaultArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\DefaultArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\FooterFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\GlobalsItem.base.cs" />
@@ -167,10 +172,25 @@
     <Compile Include="SitecoreCIG\Poses\General\MetadataItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\MetadataItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\NavigationLinkItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\PromoItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\SocialMediaItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutExpertsItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutExpertsItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutPartnersItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutPartnersItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\PartnerInfoItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyArticlePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyArticlePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\CampaignItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\CampaignItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\TakeActionPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\TakeActionPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ActionStyleListArticle\ActionPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ActionStyleListPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ActionStyleListPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ArticleCalloutItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AssessmentQuizArticlePage1Item.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AssessmentQuizArticlePage1Item.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AssessmentQuizArticlePage2Item.base.cs" />

@@ -308,7 +308,7 @@
                 <!-- Module within only appears in under 650px window width-->
             </div>
             <!-- BEGIN PARTIAL: keep-reading-mobile -->
-            <div class="keep-reading keep-reading-mobile">
+            <%--<div class="keep-reading keep-reading-mobile">
                 <h3>Keep Reading</h3>
                 <ul>
                     <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
@@ -316,7 +316,8 @@
                     <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study
                         Nook</a></li>
                 </ul>
-            </div>
+            </div>--%>
+           
             <!-- END PARTIAL: keep-reading-mobile -->
             <!-- BEGIN PARTIAL: article-poll -->
             <section class="article-poll">
@@ -423,6 +424,7 @@
             </div>
             <!-- BEGIN PARTIAL: keep-reading-lg -->
             <div class="keep-reading keep-reading-lg">
+                 <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
             </div>
             <!-- END PARTIAL: keep-reading-lg -->
             <!-- BEGIN PARTIAL: comments-summary -->
@@ -445,7 +447,8 @@
             </section>
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
-            <div class="sidebar-promos">
+            <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx"/>
+            <%--<div class="sidebar-promos">
                 <div class="promo purple-dark">
                     <a href="REPLACE"><span>Get advice</span> <i class="icon-arrow-promo"></i></a>
                 </div>
@@ -458,7 +461,7 @@
                     <a href="REPLACE"><span>Navigating Your Child's Healthcare Needs</span> <i class="icon-arrow-promo"></i></a>
                 </div>
                 <!-- end promo -->
-            </div>
+            </div>--%>
             <!-- end sidebar-promos -->
             <!-- END PARTIAL: sidebar-promos -->
         </div>

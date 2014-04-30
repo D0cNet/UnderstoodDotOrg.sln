@@ -111,12 +111,61 @@
     <Compile Include="Presentation\MembershipTest.aspx.designer.cs">
       <DependentUpon>MembershipTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\About\AboutExpertDetail.ascx.cs">
+      <DependentUpon>AboutExpertDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\AboutExpertDetail.ascx.designer.cs">
+      <DependentUpon>AboutExpertDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\AboutExperts.ascx.cs">
+      <DependentUpon>AboutExperts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\AboutExperts.ascx.designer.cs">
+      <DependentUpon>AboutExperts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\AboutPartners.ascx.cs">
+      <DependentUpon>AboutPartners.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\AboutPartners.ascx.designer.cs">
+      <DependentUpon>AboutPartners.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\AboutPartner_Details.ascx.cs">
+      <DependentUpon>AboutPartner_Details.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\AboutPartner_Details.ascx.designer.cs">
+      <DependentUpon>AboutPartner_Details.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\AboutUnderstood.ascx.cs">
+      <DependentUpon>AboutUnderstood.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\AboutUnderstood.ascx.designer.cs">
+      <DependentUpon>AboutUnderstood.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx.cs">
       <DependentUpon>PersonalizationAdmin.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx.designer.cs">
       <DependentUpon>PersonalizationAdmin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx.cs">
+      <DependentUpon>Advocacy Article Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx.designer.cs">
+      <DependentUpon>Advocacy Article Page.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Advocacy\Take Action Page.ascx.cs">
+      <DependentUpon>Take Action Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Advocacy\Take Action Page.ascx.designer.cs">
+      <DependentUpon>Take Action Page.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx.cs">
       <DependentUpon>Action Style List Page.ascx</DependentUpon>
@@ -271,6 +320,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx.designer.cs">
       <DependentUpon>QuizTryMoreQuizzes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx.cs">
+      <DependentUpon>Promotionals List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx.designer.cs">
+      <DependentUpon>Promotionals List.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.cs">
       <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
@@ -481,6 +537,20 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx.designer.cs">
       <DependentUpon>PartnersCarousel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx.cs">
+      <DependentUpon>ShareAndSaveTool.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx.designer.cs">
+      <DependentUpon>ShareAndSaveTool.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx.cs">
+      <DependentUpon>ShareNSave_SendEmail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx.designer.cs">
+      <DependentUpon>ShareNSave_SendEmail.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Containers\TwoRow.ascx.cs">
       <DependentUpon>TwoRow.ascx</DependentUpon>
@@ -871,6 +941,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Presentation\Includes\css\about.css" />
+    <Content Include="Presentation\Includes\css\advocacy.css" />
     <Content Include="Global.asax" />
     <Content Include="Presentation\Includes\css\article.css" />
     <Content Include="Presentation\Includes\css\community.css" />
@@ -1078,7 +1150,14 @@
     <Content Include="Presentation\Includes\js\vendor\modernizr.custom.js" />
     <Content Include="Presentation\Layouts\Browser.aspx" />
     <Content Include="Presentation\MembershipTest.aspx" />
+    <Content Include="Presentation\Sublayouts\About\AboutExpertDetail.ascx" />
+    <Content Include="Presentation\Sublayouts\About\AboutExperts.ascx" />
+    <Content Include="Presentation\Sublayouts\About\AboutPartners.ascx" />
+    <Content Include="Presentation\Sublayouts\About\AboutPartner_Details.ascx" />
+    <Content Include="Presentation\Sublayouts\About\AboutUnderstood.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
+    <Content Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx" />
+    <Content Include="Presentation\Sublayouts\Advocacy\Take Action Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Article Entry Message Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx" />
@@ -1101,6 +1180,7 @@
     <Content Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx" />
@@ -1131,6 +1211,8 @@
     <Content Include="Presentation\Sublayouts\Common\NewsletterSignup.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Page Topic.ascx" />
     <Content Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx" />
     <Content Include="Presentation\Sublayouts\Containers\TwoRow.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
@@ -1212,13 +1294,6 @@
     <Content Include="Handlers\RunPersonalizationService.ashx" />
     <None Include="Properties\PublishProfiles\Local.pubxml">
       <SubType>Designer</SubType>
-    </None>
-    <Content Include="Web.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
