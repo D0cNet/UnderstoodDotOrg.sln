@@ -20,6 +20,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         public Membership(string connectionString)
             : base(connectionString)
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     }
 }
