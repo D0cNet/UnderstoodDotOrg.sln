@@ -10,14 +10,17 @@ namespace UnderstoodDotOrg.Domain.Membership
 {
     public class MembershipManager : IMembershipManager
     {
+        /// <summary>
+        /// Entity-specific connection string
+        /// </summary>
         private static string connString = @"metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='data source=162.209.22.3;initial catalog=Understood.org.DEV.membership;persist security info=True;user id=understood_org;password=dahyeSDf;MultipleActiveResultSets=True;App=EntityFramework'";
 
         /// <summary>
-        /// 
+        /// Verifies credentials and process login for the user. Uses ASP.Net Membership for authentication and sets the Sitecore Virtual User
         /// </summary>
-        /// <param name="Username"></param>
-        /// <param name="Password"></param>
-        /// <returns></returns>
+        /// <param name="Username">Email address of the user</param>
+        /// <param name="Password">User's password</param>
+        /// <returns>Returns an instance of the Member object filled with the current user, if authentication is successful</returns>
         public Member AuthenticateUser(string Username, string Password)
         {
             // use custom provider

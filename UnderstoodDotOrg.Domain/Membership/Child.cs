@@ -19,7 +19,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         //    this.Diagnoses = new HashSet<Diagnosis>();
         //    this.Issues = new HashSet<Issue>();
         //    this.Members = new HashSet<Member>();
-        //    this.ChildToGrades = new HashSet<ChildToGrade>();
+        //    this.Grades = new HashSet<Grade>();
         //}
     
         public System.Guid ChildId { get; set; }
@@ -33,6 +33,6 @@ namespace UnderstoodDotOrg.Domain.Membership
         public virtual ICollection<Diagnosis> Diagnoses { get; set; }
         public virtual ICollection<Issue> Issues { get; set; }
         public virtual ICollection<Member> Members { get; set; }
-        public virtual ICollection<ChildToGrade> ChildToGrades { get; set; }
+        public virtual ICollection<Grade> Grades { get; set; }
     }
 }

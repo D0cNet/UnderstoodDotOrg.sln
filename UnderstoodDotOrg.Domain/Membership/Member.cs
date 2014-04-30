@@ -18,7 +18,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         //{
         //    this.Children = new HashSet<Child>();
         //    this.Interests = new HashSet<Interest>();
-        //    this.MemberToJourneys = new HashSet<MemberToJourney>();
+        //    this.Journeys = new HashSet<Journey>();
         //}
     
         public System.Guid MemberId { get; set; }
@@ -39,6 +39,6 @@ namespace UnderstoodDotOrg.Domain.Membership
     
         public virtual ICollection<Child> Children { get; set; }
         public virtual ICollection<Interest> Interests { get; set; }
-        public virtual ICollection<MemberToJourney> MemberToJourneys { get; set; }
+        public virtual ICollection<Journey> Journeys { get; set; }
     }
 }

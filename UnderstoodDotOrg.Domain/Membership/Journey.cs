@@ -16,12 +16,12 @@ namespace UnderstoodDotOrg.Domain.Membership
     {
         public Journey()
         {
-            this.MemberToJourneys = new HashSet<MemberToJourney>();
+            this.Members = new HashSet<Member>();
         }
     
         public System.Guid Key { get; set; }
         public string Value { get; set; }
     
-        public virtual ICollection<MemberToJourney> MemberToJourneys { get; set; }
+        public virtual ICollection<Member> Members { get; set; }
     }
 }

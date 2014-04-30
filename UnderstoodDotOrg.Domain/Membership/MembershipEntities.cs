@@ -20,6 +20,10 @@ namespace UnderstoodDotOrg.Domain.Membership
         public Membership(string connectionString)
             : base(connectionString)
         {
+            // this will probably hurt (a lot) later. Lazy Loading means that the lookup properties need to be accessed while within an active context, 
+            // which we dispose of before we hand things back through the Manager. This turns off Lazy Loading, which returns the full dataset and lookup
+            // when requested, not accessed. We can revert this in the future and instead do Eager Loading (see: http://msdn.microsoft.com/en-us/data/jj574232.aspx)
+            // on a per-lookup or per-object level
             this.Configuration.LazyLoadingEnabled = false;
         }
     }

@@ -16,12 +16,12 @@ namespace UnderstoodDotOrg.Domain.Membership
     {
         public Grade()
         {
-            this.ChildToGrades = new HashSet<ChildToGrade>();
+            this.Children = new HashSet<Child>();
         }
     
         public System.Guid Key { get; set; }
         public string Value { get; set; }
     
-        public virtual ICollection<ChildToGrade> ChildToGrades { get; set; }
+        public virtual ICollection<Child> Children { get; set; }
     }
 }
