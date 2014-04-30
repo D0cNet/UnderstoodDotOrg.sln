@@ -93,6 +93,13 @@
                                 Value = "Motor Skills"
                             },
                         },
+                        //ChildToGrades = new List<ChildToGrade>() {
+                        //    new ChildToGrade() {
+                        //        Grade = new Grade() {
+                        //            Key = Guid.Parse("{67AA2A29-E6FF-49B2-9F9E-D29F07C19C23}")
+                        //        }
+                        //    },
+                        //},
                         //Diagnoses = new List<Diagnosis>() { 
                         //    new Diagnosis() {
                         //        Key = Guid.Parse("{7A035CC2-D6BD-4332-9518-7AB22083F652}"),
@@ -204,6 +211,7 @@
                 if (grade != null)
                 {
                     //grade.Text = getItemName(item.Grade); //lookup
+                    //grade.Text = item.ChildToGrades.First().Grade.Value;
                 }
 
                 if (gender != null)

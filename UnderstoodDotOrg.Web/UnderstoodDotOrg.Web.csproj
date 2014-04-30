@@ -946,6 +946,7 @@
     <Content Include="Global.asax" />
     <Content Include="Presentation\Includes\css\article.css" />
     <Content Include="Presentation\Includes\css\community.css" />
+    <Content Include="Presentation\Includes\images\icon.fb-sign-in%402x.png" />
     <Content Include="Presentation\Includes\images\placefolder\100x1000.gif" />
     <Content Include="Presentation\Includes\images\placefolder\1200x475.gif" />
     <Content Include="Presentation\Includes\images\placefolder\1200x542.gif" />
