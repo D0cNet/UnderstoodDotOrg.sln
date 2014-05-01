@@ -233,7 +233,17 @@
 
             <!-- END PARTIAL: article-checklist -->
             <!-- BEGIN PARTIAL: reviewed-by -->
-            <p class="reviewed-by"><span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author"><a href="REPLACE">Dr. Samantha Frank</a></span><span class="dot"></span> <span class="reviewed-by-date">12&nbsp;Dec&nbsp;&apos;13</span></p>
+           <p class="reviewed-by">
+                <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
+                    <%--<a href="REPLACE">Dr. Samantha Frank</a>--%>
+                   <asp:HyperLink ID="hlReviewdby" runat="server">
+                       <sc:FieldRenderer ID="frReviewedby" runat="server" FieldName="Revierwer Name" />
+                    </asp:HyperLink>
+                </span><span class="dot"></span><span class="reviewed-by-date">
+                    <%--12&nbsp;Dec&nbsp;&apos;13 --%>
+                    <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />
+                </span>
+            </p>
             <!-- END PARTIAL: reviewed-by -->
             <!-- BEGIN PARTIAL: find-helpful -->
             <div class="find-this-helpful content">

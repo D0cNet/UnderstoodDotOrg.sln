@@ -23,6 +23,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             ObjChecklistArticle = new ChecklistArticlePageItem(Sitecore.Context.Item);
             if (ObjChecklistArticle != null)
             {
+                if (ObjChecklistArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
+                {
+                    frReviewedby.Item = ObjChecklistArticle.DefaultArticlePage.Reviewedby.Item;
+                    hlReviewdby.NavigateUrl = ObjChecklistArticle.DefaultArticlePage.Reviewedby.Item.GetUrl();
+                }
+                if (ObjChecklistArticle.DefaultArticlePage.ReviewedDate.DateTime != null)// Reviewed date 
+                {
+                    dtReviewdDate.Field = "Reviewed Date";
+                    dtReviewdDate.Format = "dd MMM yy";
+                }
+
                 // Create the checklist from base object
                 if (ObjChecklistArticle.InnerItem.GetChildren() != null)
                 {
