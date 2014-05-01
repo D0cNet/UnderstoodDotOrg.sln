@@ -60,7 +60,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
         {
          
             var webClient = new WebClient();
-            var apiKey = CommunityManager.apiKey ?? "d956up05xiu5l8fn7wpgmwj4ohgslp";
+            string keyTest = Sitecore.Configuration.Settings.GetSetting("TelligentAdminApiKey");
+            var apiKey = String.IsNullOrEmpty(keyTest) ? "d956up05xiu5l8fn7wpgmwj4ohgslp" : keyTest;
            
             var adminKey = String.Format("{0}:{1}", apiKey, "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
