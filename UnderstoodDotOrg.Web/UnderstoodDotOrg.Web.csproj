@@ -552,6 +552,34 @@
     <Compile Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx.designer.cs">
       <DependentUpon>ShareNSave_SendEmail.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\All Parents Search.ascx.cs">
+      <DependentUpon>All Parents Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\All Parents Search.ascx.designer.cs">
+      <DependentUpon>All Parents Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Moderators.ascx.cs">
+      <DependentUpon>Moderators.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Moderators.ascx.designer.cs">
+      <DependentUpon>Moderators.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Search Module.ascx.cs">
+      <DependentUpon>Parent Search Module.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Search Module.ascx.designer.cs">
+      <DependentUpon>Parent Search Module.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parents Like Me.ascx.cs">
+      <DependentUpon>Parents Like Me.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parents Like Me.ascx.designer.cs">
+      <DependentUpon>Parents Like Me.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Containers\TwoRow.ascx.cs">
       <DependentUpon>TwoRow.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1213,7 +1241,11 @@
     <Content Include="Presentation\Sublayouts\Common\Page Topic.ascx" />
     <Content Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\All Parents Search.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Moderators.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Parent Search Module.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Parents Like Me.ascx" />
     <Content Include="Presentation\Sublayouts\Containers\TwoRow.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
