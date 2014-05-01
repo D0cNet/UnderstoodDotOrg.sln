@@ -84,7 +84,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
             var roleid = Sitecore.Configuration.Settings.GetSetting("TelligentModeratorRoleID")??"3";
             var serverHost = Sitecore.Configuration.Settings.GetSetting("TelligentConfig")??"localhost/telligent.com";
-            var requestUrl = serverHost  + "api.ashx/v2/roles/"+roleid+"/users.xml";
+            var requestUrl = serverHost  + "/api.ashx/v2/roles/"+roleid+"/users.xml";
             
             var xml = webClient.DownloadString(requestUrl);
             var xmlDoc = new XmlDocument();

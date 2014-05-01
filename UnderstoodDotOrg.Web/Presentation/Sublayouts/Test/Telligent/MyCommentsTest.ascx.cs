@@ -70,7 +70,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
             var id = "2100";
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
             webClient.Headers.Add("Rest-Impersonate-User", userId);
-            var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig")+"api.ashx/v2/comments.xml?UserId="+id;
+            var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig")+"/api.ashx/v2/comments.xml?UserId="+id;
               
             
            
