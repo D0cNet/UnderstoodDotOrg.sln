@@ -1,6 +1,7 @@
 ﻿using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.Data.Items;
+using Sitecore.Web.UI.WebControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,18 +32,16 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
             if (Request["itemID"] != null) {
                 parentId = Request["itemID"].ToString();
                 TopicLandingPageItem objContextItem = Sitecore.Context.Database.GetItem(parentId);
-                if (objContextItem.SliderCuratedFeaturedcontent != null && objContextItem.SliderCuratedFeaturedcontent.ListItems.Any()) {
-
-                }
-
-                var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-                using (var context = index.CreateSearchContext()) {
-
-                    List<Item> articles = objContextItem.InnerItem.Axes.GetDescendants().FilterByContextLanguageVersion().Where(i => i.InheritsFromType(DefaultArticlePageItem.TemplateId)).ToList();
-
-                    if (articles != null) {
+                if (objContextItem.SliderCuratedFeaturedcontent != null) {
+                    List<Item> articles = objContextItem.SliderCuratedFeaturedcontent.ListItems;
+                    if (articles.Any()) {
                         rptArticleListing.DataSource = articles.Skip(clickCount * resultsPeClick).Take(resultsPeClick).ToList();
                         rptArticleListing.DataBind();
+
+                        int itemCount = ((clickCount * resultsPeClick) + resultsPeClick);
+                        if (articles.Count() <= itemCount) {
+                            lblmoreArticle.Text = "false";
+                        }
                     }
                 }
             }
@@ -52,10 +51,22 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
             if (e.IsItem()) {
                 Item subTopicItem = e.Item.DataItem as Item;
                 if (subTopicItem != null) {
+                    Literal ltRowListingStart = e.FindControlAs<Literal>("ltRowListingStart");
+                    Literal ltRowListingEnd = e.FindControlAs<Literal>("ltRowListingEnd");
                     HyperLink hlNavLink = e.FindControlAs<HyperLink>("hlNavLink");
                     HyperLink hlLinkText = e.FindControlAs<HyperLink>("hlLinkText");
-                    Image defaultImage = e.FindControlAs<Image>("defaultImage");
-                    Sitecore.Web.UI.WebControls.Image scThumbnailImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scThumbnailImage");
+                    System.Web.UI.WebControls.Image defaultImage = e.FindControlAs<System.Web.UI.WebControls.Image>("defaultImage");
+                    FieldRenderer scThumbnailImage = e.FindControlAs<FieldRenderer>("scThumbnailImage");
+                    if (e.Item.ItemIndex % 2 != 1) {
+                        if (ltRowListingStart != null) {
+                            ltRowListingStart.Text = "<div class=\"row listing-row\">";
+                        }
+                    }
+                    else {
+                        if (ltRowListingEnd != null) {
+                            ltRowListingEnd.Text = "</div>";
+                        }
+                    }
 
                     ContentPageItem content = new ContentPageItem(subTopicItem);
                     if (hlLinkText != null) {

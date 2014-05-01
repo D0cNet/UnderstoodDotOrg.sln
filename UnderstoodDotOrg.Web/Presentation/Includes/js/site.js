@@ -578,7 +578,12 @@ U.articleListing = function () {
             success: function (data) {
                 try {
                     
-                    
+                    $('.article-listing').append(data);
+
+                    if ($("#lblmoreArticle").text() == "false") {
+                        $('#pnlMoreArticle').hide();
+                    }
+                    vcount = vcount + 1;
                 }
                 catch (ex)
                 { }

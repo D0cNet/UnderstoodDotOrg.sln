@@ -26,22 +26,17 @@
 <!-- BEGIN MODULE: Article Listing -->
 <div class="container article-listing-container article-listing">
     <asp:Repeater ID="rptArticleListing" runat="server" OnItemDataBound="rptArticleListing_ItemDataBound">
-       <%-- <HeaderTemplate>
-            <div class="row listing-row">
-        </HeaderTemplate>--%>
         <ItemTemplate>
             <asp:Literal runat="server" ID="ltRowListingStart" ></asp:Literal>
             <div class="col col-11 offset-1">
                 <!-- BEGIN ELEMENT: Article -->
                 <div class="article">
-                    <%--<a href="REPLACE">
-                        <img alt="190x107 Placeholder" src="http://placehold.it/190x107" /></a>--%>
                     <asp:HyperLink runat="server" ID="hlNavLink">
-                        <sc:image id="scThumbnailImage" runat="server" field="Content Thumbnail" />
+                        <sc:FieldRenderer id="scThumbnailImage" runat="server" Parameters="w=190&h=107&as=1" FieldName="Content Thumbnail" />
                         <asp:Image runat="server" ID="defaultImage" Visible="false" ImageUrl="http://placehold.it/190x107" />
                     </asp:HyperLink>
                     <div class="article-title-container">
-                        <h3><%--<a href="REPLACE">Ducimus Reiciendis Consequuntur Eum Placeat Illo Aperiam Corporis Aspernatur Recusandae</a>--%>
+                        <h3>
                             <asp:HyperLink runat="server" ID="hlLinkText"></asp:HyperLink>
                         </h3>
                         <div class="children">
@@ -53,9 +48,6 @@
             </div>
             <asp:Literal runat="server" ID="ltRowListingEnd" ></asp:Literal>
         </ItemTemplate>
-        <%--<FooterTemplate>
-            </div>
-        </FooterTemplate>--%>
     </asp:Repeater>
 </div>
 <!-- .container -->
@@ -63,13 +55,13 @@
 <!-- END MODULE: Article Listing -->
 
 <!-- BEGIN MODULE: More Articles -->
-<div class="container show-more">
+<asp:Panel ID="pnlMoreArticle" runat="server" ClientIDMode="Static" CssClass="container show-more" Visible="false">
     <div class="row">
         <div class="col col-24">
             <a href="REPLACE" class="show-more-link" data-path="articles/g3" data-container="article-listing" data-item="article" data-count="6">More Articles<i class="icon-arrow-down-blue"></i></a>
         </div>
     </div>
-</div>
+</asp:Panel>
 <!-- .show-more -->
 
 <!-- END MODULE: More Articles -->

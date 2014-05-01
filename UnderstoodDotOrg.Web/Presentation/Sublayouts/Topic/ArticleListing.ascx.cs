@@ -1,5 +1,7 @@
 ﻿using Sitecore.Data.Items;
+using Sitecore.Web.UI.WebControls;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
@@ -11,12 +13,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
         protected void Page_Load(object sender, EventArgs e) {
             TopicLandingPageItem topicPage = Sitecore.Context.Item;
             if (topicPage != null && topicPage.SliderCuratedFeaturedcontent != null) {
-                var sliderCuratedFeatured = topicPage.SliderCuratedFeaturedcontent.ListItems;
+                List<Item> sliderCuratedFeatured = topicPage.SliderCuratedFeaturedcontent.ListItems;
                 if (sliderCuratedFeatured != null && sliderCuratedFeatured.Any()) {
-                    var result = sliderCuratedFeatured.Split(2);
-                    rptArticleListing.DataSource = sliderCuratedFeatured;
+
+                    // Gets all article under topic page.
+                    // List<Item> articles = topicPage.InnerItem.Axes.GetDescendants().FilterByContextLanguageVersion().Where(i => i.InheritsFromType(DefaultArticlePageItem.TemplateId)).ToList();
+
+                    //var excludeCuratedFeaturedArticle = from t1 in articles
+                    //                                           where sliderCuratedFeatured.Any(t2 => t2.ID.ToString() != t1.ID.ToString())
+                    //                                           select t1;	
+                   
+                    rptArticleListing.DataSource = sliderCuratedFeatured.Take(6);
                     rptArticleListing.DataBind();
-                    //fill hidden fields
+                    if (sliderCuratedFeatured.Count() > 6) {
+                        pnlMoreArticle.Visible = true;
+                    }
                     hfGUID.Value = Sitecore.Context.Item.ID.ToString();
                     hfResultsPerClick.Value = "6";
                 }
@@ -33,13 +44,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
             if (e.IsItem()) {
                 Item subTopicItem = e.Item.DataItem as Item;
                 if (subTopicItem != null) {
-                    //Response.Write(e.Item.ItemIndex.ToString());
                     Literal ltRowListingStart = e.FindControlAs<Literal>("ltRowListingStart");
                     Literal ltRowListingEnd = e.FindControlAs<Literal>("ltRowListingEnd");
                     HyperLink hlNavLink = e.FindControlAs<HyperLink>("hlNavLink");
                     HyperLink hlLinkText = e.FindControlAs<HyperLink>("hlLinkText");
-                    Image defaultImage = e.FindControlAs<Image>("defaultImage");
-                    Sitecore.Web.UI.WebControls.Image scThumbnailImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scThumbnailImage");
+                    System.Web.UI.WebControls.Image defaultImage = e.FindControlAs<System.Web.UI.WebControls.Image>("defaultImage");
+                    FieldRenderer scThumbnailImage = e.FindControlAs<FieldRenderer>("scThumbnailImage");
                     if (e.Item.ItemIndex % 2 != 1) {
                         if (ltRowListingStart != null) {
                             ltRowListingStart.Text = "<div class=\"row listing-row\">";
