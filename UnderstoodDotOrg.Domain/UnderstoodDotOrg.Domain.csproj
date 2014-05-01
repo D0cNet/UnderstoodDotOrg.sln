@@ -47,6 +47,9 @@
     <Reference Include="Sitecore.ContentSearch.Linq">
       <HintPath>..\Libraries\Sitecore.ContentSearch.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq.Solr">
+      <HintPath>..\Libraries\Sitecore.ContentSearch.Linq.Solr.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\Libraries\Sitecore.Kernel.dll</HintPath>
     </Reference>

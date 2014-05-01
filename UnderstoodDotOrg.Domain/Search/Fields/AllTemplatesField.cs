@@ -18,6 +18,10 @@ namespace UnderstoodDotOrg.Domain.Search.Fields
         public object ComputeFieldValue(IIndexable indexable)
         {
             var indexItem = indexable as SitecoreIndexableItem;
+            if (indexItem == null)
+            {
+                return null;
+            }
             var item = (Sitecore.Data.Items.Item)indexItem.Item;
 
             var templates = new List<string>();

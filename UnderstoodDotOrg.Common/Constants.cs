@@ -113,6 +113,28 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static class ArticleTags
+        {
+            public static string ExcludeFromPersonalization = "{6100E802-A5B9-431F-9F4F-58238DF23DC7}";
+            public static string MustRead = "{C15701FE-ACA7-4423-B630-79329383BFB1}";
+            public static string Evaluated504 = "{93BF5E6A-9884-42A2-ABB7-7457D1AC0037}";
+            public static string EvaluatedIEP = "{5258F442-2E85-4D11-A513-63852B7AA48B}";
+            public static string ConditionDiagnosed = "{19EC4E1A-9E55-4FC1-942D-2BCBF99F0083}";
+            public static string ConditionUndiagnosed = "{C9D1AD3D-C704-41D1-8817-BA1867030F45}";
+            public static string AllChildDiagnosis = "{3FB0E002-E7EE-4726-B21E-2F1E6058AF5F}";
+            public static string AllChildGrades = "{7DD838FD-8BD3-4861-8E1E-540E6ED9BBE9}";
+            public static string AllChildIssues = "{9E988E8F-4036-49E7-B9ED-687C99A669F9}";
+            public static string Status504InProgress = "{55F38A58-7506-454E-95E5-0ECE22A3B99C}";
+            public static string Status504No = "{5754554A-D588-4EF9-8F9C-1E1DE66446F8}";
+            public static string Status504Yes = "{82102C70-B526-47FB-BD99-5F71A33C3C87}";
+            public static string StatusEvaluationInProgress = "{F6849A63-C841-4D79-BF53-AA68DA6D6EEB}";
+            public static string StatusEvaluationNo = "{992AB3CB-BAE7-47C6-B040-B674DC7FD29C}";
+            public static string StatusEvaluationYes = "{990FB117-F12E-4E3C-898B-8A9EB217FCFD}";
+            public static string StatusIEPInProgress = "{73842143-B6CA-4B6A-A94F-BA59C475A6D7}";
+            public static string StatusIEPNo = "{80CB7C44-F570-4991-B395-6A634C2DE1D5}";
+            public static string StatusIEPYes = "{FBE464C6-0E52-45C5-A1E9-660CB3C6B688}";
+        }
+
         public static class Settings
         {
             public static string TelligentConfig = "TelligentConfig";
