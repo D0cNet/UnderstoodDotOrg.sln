@@ -22,15 +22,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer rfTitle;
         
         /// <summary>
-        /// frSummary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSummary;
-        
-        /// <summary>
         /// hlAuthorName control.
         /// </summary>
         /// <remarks>

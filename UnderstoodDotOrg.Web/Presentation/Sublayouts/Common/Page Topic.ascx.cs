@@ -19,28 +19,37 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             // HylkByline.Visible = false;
             hlAuthorName.Visible = false;
             // For Basic ARticle , show link to Author Bio if author have bio
-            if (Sitecore.Context.Item.TemplateID.ToString() == BasicArticlePageItem.TemplateId)
+            if (Sitecore.Context.Item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
             {
-                BasicArticlePageItem ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
-                if (ObjBasicArticle != null && ObjBasicArticle.DefaultArticlePage.AuthorName.Item != null)
+                DefaultArticlePageItem ObjDefArticle = (DefaultArticlePageItem)Sitecore.Context.Item;
+                if (ObjDefArticle != null && ObjDefArticle.AuthorName.Item != null)
                 {
-                    frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                    hlAuthorName.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.GetUrl();
-                    hlAuthorName.Text = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Name;
+                    frAuthorName.Item = ObjDefArticle.AuthorName.Item;
+                    hlAuthorName.NavigateUrl = ObjDefArticle.AuthorName.Item.GetUrl();
+                    hlAuthorName.Text = ObjDefArticle.AuthorName.Item.Name;
                     hlAuthorName.Visible = true;
-                    frSummary.Visible = false;
+                    //  frSummary.Visible = false;
                 }
+                //BasicArticlePageItem ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
+                //if (ObjBasicArticle != null && ObjBasicArticle.DefaultArticlePage.AuthorName.Item != null)
+                //{
+                //    frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                //    hlAuthorName.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.GetUrl();
+                //    hlAuthorName.Text = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Name;
+                //    hlAuthorName.Visible = true;
+                //    frSummary.Visibldefae = false;
+                //}
             }
-            else
-            {
-                if (Sitecore.Context.Item.TemplateID.ToString() != AboutUnderstoodItem.TemplateId)
-                {
-                    frSummary.Item = Sitecore.Context.Item;
-                    frSummary.Visible = true;
-                    hlAuthorName.Visible = false;
-                }
-                
-            }
+            //else
+            //{
+            //    if (Sitecore.Context.Item.TemplateID.ToString() != AboutUnderstoodItem.TemplateId)
+            //    {
+            //        frSummary.Item = Sitecore.Context.Item;
+            //        frSummary.Visible = false;
+            //        hlAuthorName.Visible = false;
+            //    }
+
+            //}
         }
     }
 }
