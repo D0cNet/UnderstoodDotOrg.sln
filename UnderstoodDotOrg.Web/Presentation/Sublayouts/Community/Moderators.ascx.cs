@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
@@ -75,7 +76,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
         protected void Page_Load(object sender, EventArgs e)
         {
             var webClient = new WebClient();
-            var apiKey = "d956up05xiu5l8fn7wpgmwj4ohgslp";
+            var apiKey = CommunityManager.apiKey ??"d956up05xiu5l8fn7wpgmwj4ohgslp";
 
             var adminKey = String.Format("{0}:{1}", apiKey, "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));

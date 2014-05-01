@@ -9,6 +9,7 @@ using System.Text;
 using System.Collections.Specialized;
 using System.Xml;
 using Sitecore.Configuration;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 {
     public partial class MyCommentsTest : System.Web.UI.UserControl
@@ -59,7 +60,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
         {
          
             var webClient = new WebClient();
-            var apiKey = "d956up05xiu5l8fn7wpgmwj4ohgslp";
+            var apiKey = CommunityManager.apiKey ?? "d956up05xiu5l8fn7wpgmwj4ohgslp";
            
             var adminKey = String.Format("{0}:{1}", apiKey, "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
