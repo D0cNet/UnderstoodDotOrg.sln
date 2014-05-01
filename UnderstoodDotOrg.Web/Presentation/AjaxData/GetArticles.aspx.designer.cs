@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
+namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
     
     
-    public partial class TopicCarousel {
+    public partial class GetArticles {
         
         /// <summary>
-        /// rptTopicCarousel control.
+        /// rptArticleListing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTopicCarousel;
+        protected global::System.Web.UI.WebControls.Repeater rptArticleListing;
     }
 }

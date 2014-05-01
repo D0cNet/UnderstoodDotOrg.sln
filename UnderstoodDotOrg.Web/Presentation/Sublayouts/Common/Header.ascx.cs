@@ -166,8 +166,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
                 if (languageItem != null) {
                     HyperLink hypLanguageLink = e.FindControlAs<HyperLink>("hypLanguageLink");
                     if (hypLanguageLink != null) {
-                        // scLanguageLink.Item = languageItem;
-                        //  scLanguageLink.Item = languageItem;
+                       
                         if (!languageItem.LanguageName.Raw.IsNullOrEmpty() && !languageItem.SitecoreLanguage.Raw.IsNullOrEmpty()) {
                             hypLanguageLink.Text = languageItem.LanguageName.Rendered;
 
@@ -200,7 +199,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
 
                     if (pnlParentToolKit != null) {
                         pnlParentToolKit.Style.Add("background", item.NavigationImage.MediaUrl);
-                        //pnlParentToolKit.Style.Add("background", item.Link);
                     }
                 }
             }

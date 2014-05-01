@@ -97,6 +97,13 @@
     <Compile Include="Handlers\RunPersonalizationService.ashx.cs">
       <DependentUpon>RunPersonalizationService.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\AjaxData\GetArticles.aspx.cs">
+      <DependentUpon>GetArticles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\GetArticles.aspx.designer.cs">
+      <DependentUpon>GetArticles.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Layouts\Browser.aspx.cs">
       <DependentUpon>Browser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -972,6 +979,7 @@
     <Content Include="Presentation\Includes\css\about.css" />
     <Content Include="Presentation\Includes\css\advocacy.css" />
     <Content Include="Global.asax" />
+    <Content Include="Presentation\AjaxData\GetArticles.aspx" />
     <Content Include="Presentation\Includes\css\article.css" />
     <Content Include="Presentation\Includes\css\community.css" />
     <Content Include="Presentation\Includes\images\icon.fb-sign-in%402x.png" />
@@ -1330,7 +1338,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DigitalPulpHTML\" />
     <Folder Include="Presentation\Sublayouts\Telligent\" />
     <Folder Include="Presentation\Sublayouts\Tools\Advocacy\" />
     <Folder Include="Presentation\Sublayouts\Tools\TYCE\" />

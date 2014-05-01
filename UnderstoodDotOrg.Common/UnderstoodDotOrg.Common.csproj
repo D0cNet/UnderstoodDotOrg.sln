@@ -50,6 +50,7 @@
     </Compile>
     <Compile Include="Extensions\DropDownListExtensions.cs" />
     <Compile Include="Extensions\ItemExtensions.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\RepeaterExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\HttpHelper.cs" />

@@ -100,15 +100,6 @@ public CustomTreeListField ImportanceLevel
 }
 
 
-public CustomTreeListField PrimaryCategorization
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Primary Categorization"]);
-	}
-}
-
-
 public CustomTreeListField ApplicablePersonalities
 {
 	get
@@ -172,15 +163,6 @@ public CustomTextField RelatedLinkHeaderTitle
 }
 
 
-public CustomTreeListField SecondaryCategorization
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Secondary Categorization"]);
-	}
-}
-
-
 public CustomTreeListField ChildDiagnoses
 {
 	get
@@ -213,15 +195,6 @@ public CustomLookupField Reviewedby
 	get
 	{
 		return new CustomLookupField(InnerItem, InnerItem.Fields["Reviewed by"]);
-	}
-}
-
-
-public CustomTreeListField TertiaryCategorization
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Tertiary Categorization"]);
 	}
 }
 
@@ -262,11 +235,11 @@ public CustomTextField Post
 }
 
 
-public CustomTextField FeatureImage
+public CustomImageField FeaturedImage
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Feature Image"]);
+		return new CustomImageField(InnerItem, InnerItem.Fields["Featured Image"]);
 	}
 }
 

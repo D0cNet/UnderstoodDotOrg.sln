@@ -55,6 +55,15 @@ public CustomTreeListField CuratedFeaturedcontent
 }
 
 
+public CustomTreeListField SliderCuratedFeaturedcontent
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Slider Curated Featured content"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

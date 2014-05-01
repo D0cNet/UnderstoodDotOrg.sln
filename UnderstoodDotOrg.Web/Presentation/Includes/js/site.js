@@ -564,8 +564,33 @@ U.popovers = function () {
   }
 };
 
-$(document).ready(function() {
+U.articleListing = function () {
+    /*View more article*/
+    var vcount = 1;
+    $('.show-more-link').click(function () {
+        var itemId = $('#hfGUID').val();
+        var resultsPerClick = $('#hfResultsPerClick').val();
+       
+        var getQuery = '/Presentation/AjaxData/GetArticles.aspx?' + 'itemID=' + itemId + "&count=" + vcount + "&rpc=" + resultsPerClick;
+        $.ajax({
 
+            cache: false, url: getQuery,
+            success: function (data) {
+                try {
+                    
+                    
+                }
+                catch (ex)
+                { }
+            }
+        });
+        return false;
+    });
+
+};
+
+$(document).ready(function() {
+    
   var drawerMenu = new U.drawerMenu();
 
   var searchSite = new U.searchSite();
@@ -577,6 +602,8 @@ $(document).ready(function() {
   });
 
   var languageSelector = new U.languageSelector();
+
+  var articleListing = new U.articleListing();
 
   // input placeholder fix for IE
   $('input:text').placeholder();

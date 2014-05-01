@@ -24,9 +24,10 @@
 
 <!-- FIXME: should all .listing elements on this page be combined into one? -->
 
-<!-- BEGIN MODULE: Listing -->
+
 <asp:Repeater runat="server" ID="rptTopicLandingItems" OnItemDataBound="rptTopicLanding_ItemDataBound">
     <ItemTemplate>
+         <!-- BEGIN MODULE: Listing -->
         <div class="container listing">
             <!-- Listing Row -->
             <div class="row">
@@ -42,19 +43,17 @@
                 <div class="col col-5 offset-1">
                     <sc:image id="scThumbnailImage" runat="server" field="Content Thumbnail" />
                     <asp:Image runat="server" ID="defaultImage" Visible="false" ImageUrl="http://placehold.it/190x107" />
-                    <%--<img alt="190x107 Placeholder" src="http://placehold.it/190x107" />--%>
                 </div>
                 <asp:Repeater runat="server" ID="rptTopicListItems" OnItemDataBound="rptTopicListItems_ItemDataBound">
                     <ItemTemplate>
                         <div class="col col-5 offset-1">
                             <h3>
-                                <%--<a href="REPLACE">Atque Ut Consequatur Vel Pariatur Voluptatem Veritatis</a>--%>
                                 <asp:HyperLink ID="hlTopicTitle" runat="server">
                                 </asp:HyperLink>
                             </h3>
-                            <%-- <div class="children">
-                                <i class="child-a" title="CHILD NAME HERE"></i><i class="child-b" title="CHILD NAME HERE"></i><i class="child-c" title="CHILD NAME HERE"></i><i class="child-d" title="CHILD NAME HERE"></i><i class="child-e" title="CHILD NAME HERE"></i>
-                            </div>--%>
+                            <div class="children">
+                                <i class="child-a" title="CHILD NAME HERE"></i><i class="child-c" title="CHILD NAME HERE"></i><i class="child-e" title="CHILD NAME HERE"></i>
+                            </div>
                         </div>
                     </ItemTemplate>
 
@@ -74,13 +73,11 @@
                 </div>--%>
             </div>
             <!-- .row -->
-
         </div>
+        <!-- END MODULE: Listing -->
     </ItemTemplate>
 </asp:Repeater>
-<!-- .container .listing -->
 
-<!-- END MODULE: Listing -->
 
 <!-- BEGIN MODULE: Listing -->
 <%--<div class="container listing">

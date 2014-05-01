@@ -1,14 +1,20 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TopicPageHeader.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic.TopicPageHeader" %>
-
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
       <!-- BEGIN PARTIAL: pagetopic -->
 <!-- Page Title -->
 <div class="container page-topic">
   <div class="row">
     <div class="col col-14 offset-1">
       
-        <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>School & Learning</a>
+        <asp:HyperLink runat="server" ID="hlBreadcrumbNav" CssClass="back-to-previous">
+            <i class="icon-arrow-left-blue"></i>
+            <asp:Literal runat="server" ID="txtBreadcrumbNav" ></asp:Literal>
+            <!--School & Learning-->
+        </asp:HyperLink>
       
-      <h1>Grade School</h1>
+      <h1><%--Grade School--%>
+          <asp:Literal runat="server" ID="scTopicTitle" ></asp:Literal>
+      </h1>
       
     </div>
     
@@ -46,12 +52,19 @@
 
       <div class="label-menu"><span>Menu</span></div>
       <ul class="menu">
-        <li class="title"><span>Overview</span> <i class="icon-hide-show-fff"></i></li>
+        <li class="title"><span>Overview1</span> <i class="icon-hide-show-fff"></i></li>
         <li class="submenu">
           <div class="inner">
             <div class="label-more"><span>More <i class="icon-hide-show-fff"></i></span></div>
             <ul>
-              <li><span><a href="REPLACE" class="selected">Overview</a></span></li>
+                <asp:Repeater runat="server" ID="rptTopicHeader" OnItemDataBound="rptTopicHeader_ItemDataBound" >
+                    <ItemTemplate>
+                        <li><span><%--<a href="REPLACE" class="selected">Overview</a>--%>
+                                <asp:HyperLink runat="server" ID="hlNavigationTitle" ></asp:HyperLink>
+                            </span></li>
+                    </ItemTemplate>
+                </asp:Repeater>
+              <%--<li><span><a href="REPLACE" class="selected">Overview</a></span></li>
               <li><span><a href="REPLACE">Organization</a></span></li>
               <li><span><a href="REPLACE">Encouraging Reading &amp; Writing</a></span></li>
               <li><span><a href="REPLACE">Following Directions</a></span></li>
@@ -63,7 +76,7 @@
               <li><span><a href="REPLACE">Item One</a></span></li>
               <li><span><a href="REPLACE">Item Two</a></span></li>
               <li><span><a href="REPLACE">Item Three</a></span></li>
-              <li><span><a href="REPLACE">Item Four</a></span></li>
+              <li><span><a href="REPLACE">Item Four</a></span></li>--%>
             </ul>
           </div><!-- .inner -->
         </li><!-- .submenu -->
