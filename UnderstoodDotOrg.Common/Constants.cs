@@ -124,6 +124,10 @@ namespace UnderstoodDotOrg.Common
             public static string AllChildDiagnosis = "{3FB0E002-E7EE-4726-B21E-2F1E6058AF5F}";
             public static string AllChildGrades = "{7DD838FD-8BD3-4861-8E1E-540E6ED9BBE9}";
             public static string AllChildIssues = "{9E988E8F-4036-49E7-B9ED-687C99A669F9}";
+        }
+
+        public static class ChildEvaluation
+        {
             public static string Status504InProgress = "{55F38A58-7506-454E-95E5-0ECE22A3B99C}";
             public static string Status504No = "{5754554A-D588-4EF9-8F9C-1E1DE66446F8}";
             public static string Status504Yes = "{82102C70-B526-47FB-BD99-5F71A33C3C87}";

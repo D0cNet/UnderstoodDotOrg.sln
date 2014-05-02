@@ -70,7 +70,7 @@ namespace UnderstoodDotOrg.Web.Handlers
             // Default date to current if a valid date isn't provided
             if (!DateTime.TryParse(HttpHelper.GetQueryString(Constants.HANDLER_TIMELY_DATE_QUERY_STRING), out _searchDate))
             {
-                _searchDate = DateTime.UtcNow;
+                _searchDate = DateTime.Now;
             }
 
             Guid childId, memberId;

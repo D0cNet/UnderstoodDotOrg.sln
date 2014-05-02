@@ -33,9 +33,15 @@ namespace UnderstoodDotOrg.Domain.Search
         public IEnumerable<ID> ParentInterests { get; set; }
 
         [IndexField("alltemplates")]
-        public List<ID> Templates { get; set; }
+        public IEnumerable<ID> Templates { get; set; }
 
-        [IndexField("site")]
-        public List<string> Sites { get; set; }
+        [IndexField("importance_level")]
+        public IEnumerable<ID> ImportanceLevels { get; set; }
+
+        [IndexField("other_applicable_evaluations")]
+        public IEnumerable<ID> ApplicableEvaluations { get; set; }
+
+        [IndexField("diagnosed_condition")]
+        public IEnumerable<ID> DiagnosedConditions { get; set; }
     }
 }
