@@ -70,7 +70,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
         protected void Page_Load(object sender, EventArgs e)
         {
+<<<<<<< .mine
+            var webClient = new WebClient();
+            string keyTest = Sitecore.Configuration.Settings.GetSetting("TelligentAdminApiKey");
+            var apiKey = String.IsNullOrEmpty(keyTest) ? "2vptamj4g2m3jvb62y" : keyTest;
+=======
             List<MemberCardModel> memberCardSrc = CommunityHelper.GetModerators();
+>>>>>>> .r291
 
             rptMemberCards.DataSource = memberCardSrc;
             rptMemberCards.DataBind();
