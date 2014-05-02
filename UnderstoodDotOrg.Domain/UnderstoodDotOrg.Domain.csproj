@@ -248,6 +248,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\ContentPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\DefaultArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\BasePageItems\DefaultArticlePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Blogs\BlogsPostPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Blogs\BlogsPostPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\SectionLandingPageItem.base.cs" />

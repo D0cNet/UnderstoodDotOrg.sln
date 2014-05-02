@@ -8,6 +8,5 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 {
     public class CommunityManager
     {
-        public static string apiKey = "2ome2soq1ablkmtlc";
     }
 }

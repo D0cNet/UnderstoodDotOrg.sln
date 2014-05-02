@@ -53,6 +53,7 @@
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\ConnectionStrings.config" />
+    <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\CustomEvents.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\DataFolder.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.ContentSearch.MediaFramework.Brightcove.config.disabled" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.ContentSearch.Solr.Indexes.config" />
@@ -64,10 +65,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="EnvironmentSpecifics\DEV01\Web.config" />
+    <None Include="EnvironmentSpecifics\Local\App_Config\Include\SitecoreSettings.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EnvironmentSpecifics\Local\App_Config\Include\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
