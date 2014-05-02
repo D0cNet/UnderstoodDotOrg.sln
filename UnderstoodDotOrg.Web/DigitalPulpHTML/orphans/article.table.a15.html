@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- TODO: Integration Task -- Language Changes should update the lang attribute -- SEE UN-3673 -->
+
+<!-- Re: "lang" attribute 
+	- The "lang" attribute affects how ReadSpeaker functions. It changes the UI from english to spanish as well as tells  RS to use a different voice.
+	- The "lang attribute on the HTML tag is required for the Hyphenator.js plugin to work properly - SEE UN-4020
+	- TODO: Integration Task - Language changes should update the "lang" attribute - SEE UN-3673
+-->
+
 <!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
@@ -8,7 +14,9 @@
   <meta charset="utf-8">
   <title>Table Article (A15)</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
@@ -19,7 +27,7 @@
 <link href="Presentation/includes/css/vendor/normalize.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/boilerplate.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/royalslider.css" rel="stylesheet" />
-<link href="Presentation/includes/css/vendor/jplayer.blue.monday.css" rel="stylesheet" />
+<link href="Presentation/includes/css/vendor/jplayer-blue-monday.css" rel="stylesheet" />
 <link href="Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
 
   
@@ -45,7 +53,11 @@
   <![endif]-->
 
   
+  
+
+  
   <script src="Presentation/includes/js/vendor/modernizr.custom.js"></script>
+
 </head>
 
 <!-- END PARTIAL: head -->
@@ -103,11 +115,15 @@
 <!-- END PARTIAL: user-state -->
 
         <div id="search-site">
-          <span class="field">
-            <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
-            <input type="text" id="search-term" placeholder="Enter Search Term">
-            <input type="submit" value="Go">
-          </span>
+          <fieldset>
+            <legend>Search</legend>
+
+            <span class="field">
+              <label for="search-term" class="visuallyhidden" aria-hidden="true">Search</label>
+              <input type="text" id="search-term" placeholder="Enter Search Term">
+              <input type="submit" value="Go">
+            </span>
+          </fieldset>
         </div><!-- #search-site -->
 
       </div><!-- .l-bar -->
@@ -183,7 +199,7 @@
   <div class="row toolkit-row">
     <div class="col col-24">
       <!-- BEGIN PARTIAL: toolkit-header -->
-<div id="parent-toolkit-wrapper">
+<div class="parent-toolkit-wrapper">
   <div class="parent-toolkit-header-container arrows-gray">
 
     <h2>Your Parent Toolkit</h2>
@@ -268,15 +284,20 @@
 <!-- Page Title -->
 <div class="container page-topic with-share">
   <div class="row" >
-    <div class="col col-14 offset-1 ">
+    <div class="col col-14 offset-1">
       
         <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Back Link</a>
       
-      <h1>Lorem ipsum dolar sit amet</h1>
-      
-        <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
-      
+      <div>
+        <h1 class="rs_read_this">Lorem ipsum dolar sit amet</h1>
+        
+          <p class="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas</p>
+        
+      </div>
     </div>
+
+    
+
     
     <div class="col col-9">
       <!-- BEGIN PARTIAL: share-save -->
@@ -299,7 +320,7 @@
 <!-- END PARTIAL: share-save -->
     </div>
     
-    
+
   </div>
 </div><!-- .container -->
 
@@ -316,39 +337,39 @@
       <!-- BEGIN PARTIAL: article-table -->
 
 <table>
-  <caption>Eius Aliquam Eos Dignissimos Sed</caption>
+  <caption>Rerum Eligendi Suscipit Quas Hic</caption>
   <thead>
     <tr>
-      <td>Nihil Illum Qui</td>
-      <td>Consequatur Aspernatur Repudiandae</td>
-      <td>Est Labore Voluptatem</td>
+      <td>Ipsum Autem Temporibus</td>
+      <td>Ipsam Iste Tenetur</td>
+      <td>Minus Molestiae Eaque</td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>head 1 Ut Laboriosam Iure Doloremque Non Eum Est</td>
-      <td>head 2 Consequatur Esse Non Non Soluta Ipsam Et</td>
-      <td>head 3 Modi Facilis Nostrum Beatae Laborum Eligendi Quae</td>
+      <td>head 1 Corrupti Necessitatibus Eligendi Fugit Natus Et Veritatis</td>
+      <td>head 2 Ut Aut Et Distinctio Totam Animi Illum</td>
+      <td>head 3 Dolor In Dolores Ratione Officiis Porro Et</td>
     </tr>
     <tr>
-      <td>body 1 (1) Id Error Reiciendis Fugiat Non Et Voluptas</td>
-      <td>body 2 (1) Expedita Vel Beatae Ut Voluptatem Tempore Praesentium</td>
-      <td>body 3 (1) Autem Cumque Ducimus Et Ratione Consequuntur Aut</td>
+      <td>body 1 (1) Quasi Est Nihil Enim Suscipit Et Veritatis</td>
+      <td>body 2 (1) Tempore Nemo Debitis Voluptates Vel Sapiente Ullam</td>
+      <td>body 3 (1) Voluptatem Explicabo Voluptatem Sint Et Expedita Esse</td>
     </tr>
     <tr>
-      <td>body 1 (2) Est Ullam Ut Et Repellendus Dolor Et</td>
-      <td>body 2 (2) Labore Inventore Esse Officiis Maxime Est Iste</td>
-      <td>body 3 (2) Mollitia Atque Omnis Eum Officia Tenetur Quia</td>
+      <td>body 1 (2) Ut Quos Aspernatur Illum Adipisci Nam In</td>
+      <td>body 2 (2) Aut Quia Error Est Vero Dolor Aliquid</td>
+      <td>body 3 (2) Molestiae Sunt Eligendi Incidunt Reprehenderit Quasi Facere</td>
     </tr>
     <tr>
-      <td>body 1 (3) Dolore Est Qui Et Sed Laborum Sit</td>
-      <td>body 2 (3) Id Voluptas Commodi Earum Minima Dicta Aut</td>
-      <td>body 3 (3) Tenetur Nobis Voluptatem Ratione Saepe Non Quaerat</td>
+      <td>body 1 (3) Est Nam Aut Qui Veniam Quod Est</td>
+      <td>body 2 (3) Quaerat Ut Doloribus Odit Ducimus Dolores Tenetur</td>
+      <td>body 3 (3) Officiis Dolorem Eos Odit Iste In Numquam</td>
     </tr>
     <tr>
-      <td>body 1 (4) Excepturi Facere Aut Velit Voluptas Libero Consequatur</td>
-      <td>body 2 (4) Qui Et Dolores Autem Eos Est Omnis</td>
-      <td>body 3 (4) Quia Error Omnis Consequuntur Aut Ipsa Odio</td>
+      <td>body 1 (4) Eius Nulla Officia Numquam Ea Praesentium Ut</td>
+      <td>body 2 (4) Molestiae Voluptatum Sunt Fugit Quibusdam Modi Eveniet</td>
+      <td>body 3 (4) Adipisci Sunt Nihil Consequatur Hic Dicta Sint</td>
     </tr>
   </tbody>
 </table>
@@ -359,39 +380,39 @@
       <!-- BEGIN PARTIAL: article-table -->
 
 <table>
-  <caption>Est Alias Quis Alias Quis</caption>
+  <caption>Veniam Ut Veniam Repudiandae Itaque</caption>
   <thead>
     <tr>
-      <td>Possimus Fugit Quidem</td>
-      <td>Pariatur Qui Voluptas</td>
-      <td>Temporibus Omnis Est</td>
+      <td>Aut Officiis Magni</td>
+      <td>Non Quis Animi</td>
+      <td>Quia Sed Totam</td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>head 1 Eveniet At Nihil Blanditiis Inventore Sint Ea</td>
-      <td>head 2 Dicta Occaecati Vel Qui Illo Nihil Itaque</td>
-      <td>head 3 Sunt Nulla Voluptates Quae Ut Placeat Numquam</td>
+      <td>head 1 Sed Voluptatem Repudiandae Aut Vel Ex Mollitia</td>
+      <td>head 2 Commodi Aut Quam Quasi Facilis Expedita Ullam</td>
+      <td>head 3 Est Reprehenderit Fugit Id Placeat Quas Vero</td>
     </tr>
     <tr>
-      <td>body 1 (1) Perferendis Officiis Et Repellendus Earum Hic Quis</td>
-      <td>body 2 (1) Quo Enim Aut Vel Sequi Accusantium Iste</td>
-      <td>body 3 (1) Corporis Aut Sed Nulla Et Alias Voluptatibus</td>
+      <td>body 1 (1) Soluta Eveniet Et Voluptas Voluptatem Esse Expedita</td>
+      <td>body 2 (1) Facilis Sint Omnis Qui Non Consequatur Eaque</td>
+      <td>body 3 (1) Excepturi Quia Rem Molestiae Neque Id Iste</td>
     </tr>
     <tr>
-      <td>body 1 (2) Debitis Ut Tempora Fuga Qui Omnis Vero</td>
-      <td>body 2 (2) Aspernatur Esse Saepe Vero Nulla Occaecati Nobis</td>
-      <td>body 3 (2) Magnam Nam Ea Ipsam Optio Aut Ut</td>
+      <td>body 1 (2) Voluptate Cumque Magni Aut Ut Eos Temporibus</td>
+      <td>body 2 (2) Molestiae Ut Occaecati Eveniet Vel Fuga Esse</td>
+      <td>body 3 (2) Asperiores Non Ut Vitae Commodi Sed Eaque</td>
     </tr>
     <tr>
-      <td>body 1 (3) Aliquid Aperiam Qui Aut Qui Commodi Consequatur</td>
-      <td>body 2 (3) Ut Possimus Optio Molestias Tempora Dolorem Maiores</td>
-      <td>body 3 (3) Maxime Id Et Veritatis Perspiciatis Quia Explicabo</td>
+      <td>body 1 (3) Totam Eligendi Sit Mollitia Natus Consequatur Consequuntur</td>
+      <td>body 2 (3) Repudiandae Omnis Voluptatem Non Libero Tenetur Est</td>
+      <td>body 3 (3) Praesentium Aut Quia Repellendus Eveniet Recusandae Voluptas</td>
     </tr>
     <tr>
-      <td>body 1 (4) Nobis Et Qui Commodi Illum Porro Ea</td>
-      <td>body 2 (4) Ratione Eveniet In Nisi Omnis Harum Quia</td>
-      <td>body 3 (4) Alias Quos Reprehenderit Sunt Aliquid Voluptatem Harum</td>
+      <td>body 1 (4) Temporibus Ipsa Quia Similique Tenetur Natus Architecto</td>
+      <td>body 2 (4) Velit Ullam Quis Atque Provident Eos Et</td>
+      <td>body 3 (4) Aperiam In Et Illum Ducimus Sed Eligendi</td>
     </tr>
   </tbody>
 </table>
@@ -401,15 +422,15 @@
 <!-- END PARTIAL: article-table -->
       <!-- BEGIN PARTIAL: article-table-source -->
 <div class="article-table-source">
-  <p class="source-head">Source: <span class="source-ref">velit voluptas doloremque nam id aspernatur et reprehenderit ut quae</span></p>
-  <p class="source-caption">Nihil ut iure ab et consectetur sed nobis iusto optio similique voluptate et vel. dolorum quia hic error veritatis velit ipsum sit nihil voluptatem et cum autem. laudantium expedita aut quae assumenda voluptatum est repudiandae atque quos nostrum. provident assumenda praesentium omnis iusto voluptatem odit error enim voluptatem. et sed doloremque temporibus possimus ut distinctio eius mollitia nesciunt voluptatem repellendus. odit necessitatibus omnis cum autem molestiae. consequatur officia fuga repudiandae nisi quasi ipsum minima molestiae</p>
+  <p class="source-head">Source: <span class="source-ref">aliquid non ut sed qui occaecati porro eos nesciunt ut</span></p>
+  <p class="source-caption">Et nobis ipsam qui reiciendis similique qui consequatur. modi nemo id numquam voluptatum aut nesciunt et. adipisci consequatur distinctio iste ab in enim cum. qui aliquam quaerat qui officiis aspernatur impedit. saepe quia eaque quia laudantium ut quia impedit sunt ut ducimus vitae. quo nisi soluta sunt quia voluptatem commodi asperiores tempore. modi doloremque eum quas voluptatibus magnam eum pariatur eaque</p>
 </div><!-- END article-table-source -->
 <!-- END PARTIAL: article-table-source -->
       <!-- BEGIN PARTIAL: reviewed-by -->
 <p class="reviewed-by"><span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author"><a href="REPLACE">Dr. Samantha Frank</a></span><span class="dot"></span> <span class="reviewed-by-date">12&nbsp;Dec&nbsp;&apos;13</span></p>
 <!-- END PARTIAL: reviewed-by -->
       <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful content" id="count-helpful-content">
+<div class="find-this-helpful content" id="count-helpful-content rs_read_this">
   
 
   
@@ -417,10 +438,10 @@
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="button yes">Yes</button>
+      <button class="button yes rs_skip">Yes</button>
     </li>
     <li>
-      <button class="button no gray">No</button>
+      <button class="button no gray rs_skip">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
@@ -446,7 +467,7 @@
 </div>
 <!-- END PARTIAL: comments-count -->
       <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful sidebar" id="count-helpful-sidebar">
+<div class="find-this-helpful sidebar" id="count-helpful-sidebar rs_read_this">
   
 
   
@@ -454,10 +475,10 @@
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="button yes">Yes</button>
+      <button class="button yes rs_skip">Yes</button>
     </li>
     <li>
-      <button class="button no gray">No</button>
+      <button class="button no gray rs_skip">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
@@ -483,7 +504,7 @@
   </header>
   <div class="quote-container">
     <blockquote>
-      <p>Delectus deserunt nemo qui. eum atque minima et eos voluptas ad asperiores necessitatibus itaque. iste tenetur velit cumque aut est eos reprehenderit eos odit est provident quo. consequatur molestias iure cumque est odit itaque non dolores sunt. ratione dolorem sequi ea itaque ipsum velit nam non magnam quod dolorem voluptate. ea praesentium et minima aspernatur sed voluptates odit fugiat cumque</p>
+      <p>Et aperiam dolores ex magnam. id et perspiciatis quam aut molestiae amet corporis doloremque illo et. consequatur sit blanditiis saepe minus tempore. nemo qui perspiciatis ullam aut dolorem. perferendis quos sunt aut dolorum eum eum repellat eaque dolore vero officiis dicta. autem culpa rerum animi. neque doloribus fugiat repellat molestiae autem inventore natus</p>
       <i class="arrow-quote-bottom"></i>
     </blockquote>
     <span><strong>Carrie S</strong> &bull; 30 min ago</span>
@@ -496,7 +517,7 @@
 </section>
 <!-- END PARTIAL: comments-summary -->
       <!-- BEGIN PARTIAL: sidebar-promos -->
-<div class="sidebar-promos vertical">
+<div class="sidebar-promos rs_read_this vertical">
   <div class="promo purple-dark">
     <a href="REPLACE">
       <span>Get advice</span>
@@ -533,7 +554,7 @@
 <section class="comment-list" id="count-comments">
 
   <header>
-    <h2 class="comment-count">Comments (19)</h2>
+    <h2 class="comment-count rs_read_this">Comments (19)</h2>
     <select name="comment-sort-option" id="comment-sort-option-dropdown" class="comment-sort">
       <option value="">Sort by</option>
       <option>A-Z</option>
@@ -543,10 +564,12 @@
 
   <div class="comment-list-wrapper">
 
-    <div class="comment-wrapper">
+    <div class="comment-wrapper rs_read_this">
       <div class="comment-header">
         <span class="comment-avatar">
-          <img alt="60x60 Placeholder" src="http://placehold.it/60x60" />
+          <div class="rs_skip">
+            <img alt="60x60 Placeholder" src="http://placehold.it/60x60" />
+          </div>
         </span>
         <span class="comment-info">
           <span class="comment-username">Patricia S</span>
@@ -559,17 +582,19 @@
           Aenean commodo urna lectus, eget semper lacus aliquet fermentum. Donec nisl velit, iaculis at vulputate ut, condimentum sed massa. Nunc gravida arcu ac enim auctor varius. Fusce pellentesque, metus eget eleifend convallis, justo tellus vulputate sapien, et porta felis neque eu libero. Ut non justo ac tellus laoreet pulvinar id non sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et mi at enim dapibus suscipit vel sit amet augue.
         </p>
       </div>
-      <div class="comment-actions">
+      <div class="comment-actions rs_skip">
         <a class="comment-reply" href="REPLACE"><i class="icon-comment-reply"></i>Reply</a>
         <a class="comment-like" href="REPLACE"><i class="icon-comment-like"></i>This Helped</a>
         <a class="comment-flag" href="REPLACE"><i class="icon-comment-flag"></i>Report as inappropriate</a>
       </div>
     </div><!-- .comment-wrapper -->
 
-    <div class="comment-wrapper">
+    <div class="comment-wrapper rs_read_this">
       <div class="comment-header">
         <span class="comment-avatar">
-          <img alt="60x60 Placeholder" src="http://placehold.it/60x60" />
+          <div class="rs_skip">
+            <img alt="60x60 Placeholder" src="http://placehold.it/60x60" />
+          </div>
         </span>
         <span class="comment-info">
           <span class="comment-username">Patricia S</span>
@@ -582,17 +607,19 @@
           Aenean commodo urna lectus, eget semper lacus aliquet fermentum. Donec nisl velit, iaculis at vulputate ut, condimentum sed massa. Nunc gravida arcu ac enim auctor varius. Fusce pellentesque, metus eget eleifend convallis, justo tellus vulputate sapien, et porta felis neque eu libero. Ut non justo ac tellus laoreet pulvinar id non sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et mi at enim dapibus suscipit vel sit amet augue.
         </p>
       </div>
-      <div class="comment-actions">
+      <div class="comment-actions rs_skip">
         <a class="comment-reply" href="REPLACE"><i class="icon-comment-reply"></i>Reply</a>
         <a class="comment-like" href="REPLACE"><i class="icon-comment-like"></i>This Helped</a>
         <a class="comment-flag" href="REPLACE"><i class="icon-comment-flag"></i>Report as inappropriate</a>
       </div>
     </div><!-- .comment-wrapper -->
 
-    <div class="comment-wrapper">
+    <div class="comment-wrapper rs_read_this">
       <div class="comment-header">
         <span class="comment-avatar">
-          <img alt="60x60 Placeholder" src="http://placehold.it/60x60" />
+          <div class="rs_skip">
+            <img alt="60x60 Placeholder" src="http://placehold.it/60x60" />
+          </div>
         </span>
         <span class="comment-info">
           <span class="comment-username">Patricia S</span>
@@ -605,17 +632,19 @@
           Aenean commodo urna lectus, eget semper lacus aliquet fermentum. Donec nisl velit, iaculis at vulputate ut, condimentum sed massa. Nunc gravida arcu ac enim auctor varius. Fusce pellentesque, metus eget eleifend convallis, justo tellus vulputate sapien, et porta felis neque eu libero. Ut non justo ac tellus laoreet pulvinar id non sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et mi at enim dapibus suscipit vel sit amet augue.
         </p>
       </div>
-      <div class="comment-actions">
+      <div class="comment-actions rs_skip">
         <a class="comment-reply" href="REPLACE"><i class="icon-comment-reply"></i>Reply</a>
         <a class="comment-like" href="REPLACE"><i class="icon-comment-like"></i>This Helped</a>
         <a class="comment-flag" href="REPLACE"><i class="icon-comment-flag"></i>Report as inappropriate</a>
       </div>
     </div><!-- .comment-wrapper -->
 
-    <div class="comment-wrapper">
+    <div class="comment-wrapper rs_read_this">
       <div class="comment-header">
         <span class="comment-avatar">
-          <img alt="60x60 Placeholder" src="http://placehold.it/60x60" />
+          <div class="rs_skip">
+            <img alt="60x60 Placeholder" src="http://placehold.it/60x60" />
+          </div>
         </span>
         <span class="comment-info">
           <span class="comment-username">Patricia S</span>
@@ -628,7 +657,7 @@
           Aenean commodo urna lectus, eget semper lacus aliquet fermentum. Donec nisl velit, iaculis at vulputate ut, condimentum sed massa. Nunc gravida arcu ac enim auctor varius. Fusce pellentesque, metus eget eleifend convallis, justo tellus vulputate sapien, et porta felis neque eu libero. Ut non justo ac tellus laoreet pulvinar id non sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et mi at enim dapibus suscipit vel sit amet augue.
         </p>
       </div>
-      <div class="comment-actions">
+      <div class="comment-actions rs_skip">
         <a class="comment-reply" href="REPLACE"><i class="icon-comment-reply"></i>Reply</a>
         <a class="comment-like" href="REPLACE"><i class="icon-comment-like"></i>This Helped</a>
         <a class="comment-flag" href="REPLACE"><i class="icon-comment-flag"></i>Report as inappropriate</a>
@@ -640,7 +669,7 @@
     <div class="comment-more-wrapper">
       <!-- BEGIN PARTIAL: community/show_more -->
 <!--Show More-->
-<div class="container show-more">
+<div class="container show-more rs_skip">
   <div class="row">
     <div class="col col-24">
       <a class="show-more-link " href="#" data-path="articles/comments" data-container="comment-list-wrapper" data-item="comment-wrapper" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
@@ -673,8 +702,7 @@
 <div class="container more-to-explore">
   <div class="row">
     <div class="col col-24">
-
-      <h2>More to Explore</h2>
+      <h2 class="rs_read_this">More to Explore</h2>
 
     </div>
   </div>
@@ -685,171 +713,195 @@
 <div class="more-to-explore-container">
   <ul>
     <li>
-      <div class="header">
-        <h3>Dad's Unite</h3>
-        <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Dad's Unite</h3>
+          <p>New discussion group launched for dad's. Join or send to a dad in need.</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Join our next chat: <br/> Nov 4th at 8am EST <br/> Nov. 5th at 12 noon EST</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non, consectetur adipisicing</p>
+        </div>
 
-      <fieldset class="more-to-explore-form rsNoDrag select-container">
+        <fieldset class="more-to-explore-form rsNoDrag select-container">
 
-        <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
-        <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
+          <label for="rate-school-name" class="visuallyhidden" aria-hidden="true">Enter School Name</label>
+          <input type="text" placeholder="Enter School Name" name="rate-school-name" id="rate-school-name">
 
-        <label for="explore-select" class="visuallyhidden">Select state</label>
-        <select name="explore-select" id="explore-select" aria-required="true">
-          <option value="">Select a state</option>
-          <option>Alabama</option>
-          <option>Arizona</option>
-          <option>Arkansas</option>
-        </select>
+          <label for="explore-select" class="visuallyhidden rs_skip">Select state</label>
+          <select name="explore-select" id="explore-select" aria-required="true">
+            <option value="">Select a state</option>
+            <option>Alabama</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+          </select>
 
-      </fieldset>
+        </fieldset>
 
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/150x60" />
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Rate Your School</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Lorem ipsum dolor sit amet, consectetur</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Rate Your School</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Lorem ipsum dolor sit amet, consectetur</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
-      </div>
-    </li>
-    <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum</p>
-      </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
-      </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
     <li>
-      <div class="header">
-        <h3>Expert Q&amp;A</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="image">
-        <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
-      <div class="footer">
-        <a href="#">Learn <br/> More</a>
-        <a href="#">Remind <br/> Me</a>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="rs_read_this">
+        <div class="header">
+          <h3>Expert Q&amp;A</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit non</p>
+        </div>
+        <div class="image">
+          <img alt="190x106 Placeholder" src="http://placehold.it/190x106" />
+        </div>
+        <div class="footer">
+          <a href="#">Learn <br/> More</a>
+          <a href="#">Remind <br/> Me</a>
+        </div>
       </div>
     </li>
   </ul>
@@ -866,7 +918,7 @@
 <div class="container newsletter-signup">
   <div class="row">
 
-    <div class="col col-12">
+    <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
       <header>
         <h2>Personalized Email</h2>
@@ -1023,7 +1075,7 @@
 
 
 
-  <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+<script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
@@ -1038,6 +1090,7 @@
 <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
 <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
 <script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>
+<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
 <script src="Presentation/includes/js/site.js"></script>
 <script src="Presentation/includes/js/modules.js"></script>
 <script src="Presentation/includes/js/article.js"></script>
