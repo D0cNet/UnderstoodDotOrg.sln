@@ -139,13 +139,10 @@ namespace UnderstoodDotOrg.Common
         {
             public static string TelligentConfig = "TelligentConfig";
             public static string PersonalizationHandlerAllowedIps = "PersonalizationHandlerAllowedIps";
-<<<<<<< .mine
             public static string TelligentAdminApiKey = "TelligentAdminApiKey";
-=======
             //Added for default avatar
             public static string AnonymousAvatar = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "/utility/anonymous.gif";
             public static string DefaultLocation = "Toronto";
->>>>>>> .r291
         }
     }
 }
