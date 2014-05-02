@@ -206,5 +206,16 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             return child;
         }
+        public List<Member> GetMembers()
+        {
+            List<Member> members = null; 
+            using (var db = new Membership(connString))
+            {
+                var query = from m in db.Members
+                            select m;
+                members = query.ToList<Member>();             
+            }
+            return members;
+        }
     }
 }

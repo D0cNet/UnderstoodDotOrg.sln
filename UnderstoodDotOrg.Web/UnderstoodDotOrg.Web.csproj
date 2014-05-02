@@ -97,13 +97,6 @@
     <Compile Include="Handlers\RunPersonalizationService.ashx.cs">
       <DependentUpon>RunPersonalizationService.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\AjaxData\GetArticles.aspx.cs">
-      <DependentUpon>GetArticles.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\AjaxData\GetArticles.aspx.designer.cs">
-      <DependentUpon>GetArticles.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Layouts\Browser.aspx.cs">
       <DependentUpon>Browser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -573,13 +566,6 @@
     <Compile Include="Presentation\Sublayouts\Community\Moderators.ascx.designer.cs">
       <DependentUpon>Moderators.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Community\Parent Search Module.ascx.cs">
-      <DependentUpon>Parent Search Module.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Community\Parent Search Module.ascx.designer.cs">
-      <DependentUpon>Parent Search Module.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Parents Like Me.ascx.cs">
       <DependentUpon>Parents Like Me.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -979,10 +965,8 @@
     <Content Include="Presentation\Includes\css\about.css" />
     <Content Include="Presentation\Includes\css\advocacy.css" />
     <Content Include="Global.asax" />
-    <Content Include="Presentation\AjaxData\GetArticles.aspx" />
     <Content Include="Presentation\Includes\css\article.css" />
     <Content Include="Presentation\Includes\css\community.css" />
-    <Content Include="Presentation\Includes\images\icon.fb-sign-in%402x.png" />
     <Content Include="Presentation\Includes\images\placefolder\100x1000.gif" />
     <Content Include="Presentation\Includes\images\placefolder\1200x475.gif" />
     <Content Include="Presentation\Includes\images\placefolder\1200x542.gif" />
@@ -1252,7 +1236,6 @@
     <Content Include="Presentation\Sublayouts\Community\All Parents Search.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Moderators.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx" />
-    <Content Include="Presentation\Sublayouts\Community\Parent Search Module.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Like Me.ascx" />
     <Content Include="Presentation\Sublayouts\Containers\TwoRow.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
@@ -1338,6 +1321,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DigitalPulpHTML\" />
     <Folder Include="Presentation\Sublayouts\Telligent\" />
     <Folder Include="Presentation\Sublayouts\Tools\Advocacy\" />
     <Folder Include="Presentation\Sublayouts\Tools\TYCE\" />

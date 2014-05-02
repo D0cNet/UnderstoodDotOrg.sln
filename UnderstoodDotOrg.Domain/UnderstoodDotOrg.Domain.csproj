@@ -296,8 +296,10 @@
     <Compile Include="TelligentCommunity\CommunityConstructors.cs" />
     <Compile Include="TelligentCommunity\CommunityHelper.cs" />
     <Compile Include="TelligentCommunity\CommunityManager.cs" />
+    <Compile Include="Understood\Common\ChildCardModel.cs" />
     <Compile Include="Understood\Common\GradeModel.cs" />
     <Compile Include="Understood\Common\IssueModel.cs" />
+    <Compile Include="Understood\Common\MemberCardModel.cs" />
     <Compile Include="Understood\Content\ContentItemModel.cs" />
     <Compile Include="Understood\Helper\FormHelper.cs" />
     <Compile Include="Understood\Personalization\PersonalizedItemModel.cs" />

@@ -7,6 +7,7 @@ using System.Text;
 using System.Xml;
 using Sitecore.Configuration;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.Understood.Common;
 
 namespace UnderstoodDotOrg.Domain.TelligentCommunity
 {
@@ -199,6 +200,46 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
 
             Console.WriteLine(xml);
+        }
+
+        public static List<MemberCardModel> GetModerators()
+        {
+            var webClient = new WebClient();
+            string keyTest = Sitecore.Configuration.Settings.GetSetting("TelligentAdminApiKey");
+            var apiKey = String.IsNullOrEmpty(keyTest) ? "d956up05xiu5l8fn7wpgmwj4ohgslp" : keyTest;
+
+            var adminKey = String.Format("{0}:{1}", apiKey, "admin");
+            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+            var roleid = Sitecore.Configuration.Settings.GetSetting("TelligentModeratorRoleID") ?? "3";
+            var serverHost = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") ?? "localhost/telligent.com";
+            var requestUrl = serverHost + "/api.ashx/v2/roles/" + roleid + "/users.xml";
+
+            var xml = webClient.DownloadString(requestUrl);
+            var xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+            var nodes = xmlDoc.SelectNodes("/Response/Users/User");
+            // PagedList<Comment> commentList = PublicApi.Comments.Get(new CommentGetOptions() { UserId = 2100 });
+            // lblCount.Text = nodes.Count.ToString();
+            List<MemberCardModel> memberCardSrc = new List<MemberCardModel>();
+            foreach (XmlNode item in nodes)
+            {
+
+                MemberCardModel cm = new MemberCardModel();
+                cm.AvatarUrl = item.SelectSingleNode("AvatarUrl").InnerText;
+
+                //TODO: This is to change once we figure out retrieving users by roleid
+                cm.UserLabel = "Moderator";
+
+                cm.UserLocation = item.SelectSingleNode("Location").InnerText;
+                cm.UserName = item.SelectSingleNode("Username").InnerText;
+
+                memberCardSrc.Add(cm);
+                cm = null;
+            }
+            return memberCardSrc;
         }
     }
 }

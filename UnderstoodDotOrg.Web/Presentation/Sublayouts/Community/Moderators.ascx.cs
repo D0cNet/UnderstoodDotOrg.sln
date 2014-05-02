@@ -7,18 +7,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
+using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
-
+using System.Web.UI.HtmlControls;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
-    public class MemberCard
-    {
-        public string AvatarUrl { get; set; }
-        public string UserName { get; set; }
-        public string UserLocation { get; set; }
-        public string UserLabel { get; set; }
-
-    }
+   
 
      
     public partial class Moderators : System.Web.UI.UserControl
@@ -40,7 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     Image avaturl = (Image)e.Item.FindControl("UserAvatar");
                     if (avaturl != null)
                     {
-                        avaturl.ImageUrl = ((MemberCard)e.Item.DataItem).AvatarUrl;
+                        avaturl.ImageUrl = ((MemberCardModel)e.Item.DataItem).AvatarUrl;
                         
 
                     }
@@ -48,23 +42,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     Literal username = (Literal)e.Item.FindControl("UserName");
                     if (username != null)
                     {
-                        username.Text= ((MemberCard)e.Item.DataItem).UserName;
+                        username.Text = ((MemberCardModel)e.Item.DataItem).UserName;
 
 
                     }
-
+                    HtmlControl divImg = (HtmlControl)e.Item.FindControl("lblImg"); 
                     Literal userlbl = (Literal)e.Item.FindControl("UserLabel");
                     if (userlbl != null)
                     {
-                        userlbl.Text = ((MemberCard)e.Item.DataItem).UserLabel;
 
+                        userlbl.Text = ((MemberCardModel)e.Item.DataItem).UserLabel;
+                        divImg.Visible = true;
 
                     }
 
                     Literal userloc = (Literal)e.Item.FindControl("UserLocation");
                     if (userloc != null)
                     {
-                        userloc.Text = ((MemberCard)e.Item.DataItem).UserLocation;
+                        userloc.Text = ((MemberCardModel)e.Item.DataItem).UserLocation;
 
 
                     }
@@ -75,45 +70,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var webClient = new WebClient();
-            string keyTest = Sitecore.Configuration.Settings.GetSetting("TelligentAdminApiKey");
-            var apiKey = String.IsNullOrEmpty(keyTest) ? "d956up05xiu5l8fn7wpgmwj4ohgslp" : keyTest;
-
-            var adminKey = String.Format("{0}:{1}", apiKey, "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-
-            var roleid = Sitecore.Configuration.Settings.GetSetting("TelligentModeratorRoleID")??"3";
-            var serverHost = Sitecore.Configuration.Settings.GetSetting("TelligentConfig")??"localhost/telligent.com";
-            var requestUrl = serverHost  + "/api.ashx/v2/roles/"+roleid+"/users.xml";
-            
-            var xml = webClient.DownloadString(requestUrl);
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-            var nodes = xmlDoc.SelectNodes("/Response/Users/User");
-            // PagedList<Comment> commentList = PublicApi.Comments.Get(new CommentGetOptions() { UserId = 2100 });
-           // lblCount.Text = nodes.Count.ToString();
-            List<MemberCard> memberCardSrc = new List<MemberCard>();
-            foreach (XmlNode item in nodes)
-            {
-
-                MemberCard cm = new MemberCard();
-                cm.AvatarUrl = item.SelectSingleNode("AvatarUrl").InnerText;
-
-                //TODO: This is to change once we figure out retrieving users by roleid
-                cm.UserLabel = "Moderator";
-
-                cm.UserLocation = item.SelectSingleNode("Location").InnerText;
-                cm.UserName = item.SelectSingleNode("Username").InnerText;
-       
-                memberCardSrc.Add(cm);
-                cm = null;
-            }
+            List<MemberCardModel> memberCardSrc = CommunityHelper.GetModerators();
 
             rptMemberCards.DataSource = memberCardSrc;
             rptMemberCards.DataBind();
 
         }
+
+       
     }
 }
