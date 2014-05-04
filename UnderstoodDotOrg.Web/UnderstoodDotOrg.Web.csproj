@@ -72,6 +72,7 @@
     <Reference Include="Sitecore.Kernel, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Sitecore.Kernel.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="SolrNet">
       <HintPath>..\Libraries\SolrNet.dll</HintPath>
@@ -92,6 +93,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="UnderstoodDotOrg.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UnderstoodDotOrg.Services\bin\Debug\UnderstoodDotOrg.Services.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers\RunPersonalizationService.ashx.cs">
@@ -145,6 +150,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\AboutUnderstood.ascx.designer.cs">
       <DependentUpon>AboutUnderstood.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx.cs">
+      <DependentUpon>ExactTargetAdmin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx.designer.cs">
+      <DependentUpon>ExactTargetAdmin.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx.cs">
       <DependentUpon>PersonalizationAdmin.ascx</DependentUpon>
@@ -1176,6 +1188,7 @@
     <Content Include="Presentation\Sublayouts\About\AboutPartners.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutPartner_Details.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutUnderstood.ascx" />
+    <Content Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\Take Action Page.ascx" />

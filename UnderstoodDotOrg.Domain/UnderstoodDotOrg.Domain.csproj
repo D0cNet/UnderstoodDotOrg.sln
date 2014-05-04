@@ -73,6 +73,10 @@
     <Compile Include="CommonSenseMedia\ReviewManager.cs" />
     <Compile Include="CommonSenseMedia\ReviewModel.cs" />
     <Compile Include="CommonSenseMedia\CommonSenseImportHelper.cs" />
+    <Compile Include="ExactTarget\ETBaseConfig.cs" />
+    <Compile Include="ExactTarget\ETEmail.cs" />
+    <Compile Include="ExactTarget\ETSubscriber.cs" />
+    <Compile Include="ExactTarget\TriggeredSendEmail.cs" />
     <Compile Include="Import.cs" />
     <Compile Include="Import.Designer.cs">
       <AutoGen>True</AutoGen>
