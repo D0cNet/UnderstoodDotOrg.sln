@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
@@ -18,6 +19,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             uxPassword.Attributes["placeholder"] = DictionaryConstants.EnterPasswordWatermark;
             uxPasswordConfirm.Attributes["placeholder"] = DictionaryConstants.ReEnterNewPasswordWatermark;
             uxZipCode.Attributes["placeholder"] = DictionaryConstants.ZipCodeWatermark;
+
+            uxSubmit.Text = DictionaryConstants.SubmitButtonText;
         }
 
         protected void uxSubmit_Click(object sender, EventArgs e)
@@ -47,13 +50,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
             if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
             {
-                //everythiung's cool
+                //everything's cool
                 if (this.registeringUser == null)
                 {
                     this.registeringUser = new Domain.Membership.Member();
                 }
 
                 this.registeringUser.FirstName = name;
+
+                var membershipManager = new MembershipManager();
+
+                this.registeringUser = membershipManager.AddMember(this.registeringUser);
+
+                this.CurrentMember = this.registeringUser;
+                this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
+
+                Response.Redirect(MembershipHelper.GetNextStepURL(1));
             }
             else
             {

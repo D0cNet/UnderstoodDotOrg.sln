@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        <asp:DataGrid ID="uxOutput" runat="server" AutoGenerateColumns="true"></asp:DataGrid>
     </div>
     </form>
 </body>

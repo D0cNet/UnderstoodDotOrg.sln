@@ -101,45 +101,65 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
         protected void NextButton_Click(object sender, EventArgs e)
         {
-            var children = new List<ChildModel>();
-
             if ((uxBoy1.Checked || uxGirl1.Checked) && uxSelectGrade1.SelectedValue != string.Empty)
             {
-                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade1.SelectedValue) });
-                children.Add(new ChildModel() { Grade = uxSelectGrade1.SelectedValue, Pronoun = uxBoy1.Checked ? "he" : "she" });
+                var child = new Child();
+
+                child.Grades.Add(new Grade() { Key = Constants.GradesByValue[uxSelectGrade1.SelectedValue] });
+                child.Gender = uxBoy1.Checked ? "boy" : "girl";
+
+                registeringUser.Children.Add(child);
             }
 
             if ((uxBoy2.Checked || uxGirl2.Checked) && uxSelectGrade2.SelectedValue != string.Empty)
             {
-                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade2.SelectedValue) });
-                children.Add(new ChildModel() { Grade = uxSelectGrade2.SelectedValue, Pronoun = uxBoy2.Checked ? "he" : "she" });
+                var child = new Child();
+
+                child.Grades.Add(new Grade() { Key = Constants.GradesByValue[uxSelectGrade2.SelectedValue] });
+                child.Gender = uxBoy2.Checked ? "boy" : "girl";
+
+                registeringUser.Children.Add(child);
             }
 
             if ((uxBoy3.Checked || uxGirl3.Checked) && uxSelectGrade3.SelectedValue != string.Empty)
             {
-                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade3.SelectedValue) });
-                children.Add(new ChildModel() { Grade = uxSelectGrade3.SelectedValue, Pronoun = uxBoy3.Checked ? "he" : "she" });
+                var child = new Child();
+
+                child.Grades.Add(new Grade() { Key = Constants.GradesByValue[uxSelectGrade3.SelectedValue] });
+                child.Gender = uxBoy3.Checked ? "boy" : "girl";
+
+                registeringUser.Children.Add(child);
             }
 
             if ((uxBoy4.Checked || uxGirl4.Checked) && uxSelectGrade4.SelectedValue != string.Empty)
             {
-                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade4.SelectedValue) });
-                children.Add(new ChildModel() { Grade = uxSelectGrade4.SelectedValue, Pronoun = uxBoy4.Checked ? "he" : "she" });
+                var child = new Child();
+
+                child.Grades.Add(new Grade() { Key = Constants.GradesByValue[uxSelectGrade4.SelectedValue] });
+                child.Gender = uxBoy4.Checked ? "boy" : "girl";
+
+                registeringUser.Children.Add(child);
             }
 
             if ((uxBoy5.Checked || uxGirl5.Checked) && uxSelectGrade5.SelectedValue != string.Empty)
             {
-                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade5.SelectedValue) });
-                children.Add(new ChildModel() { Grade = uxSelectGrade5.SelectedValue, Pronoun = uxBoy5.Checked ? "he" : "she" });
+                var child = new Child();
+
+                child.Grades.Add(new Grade() { Key = Constants.GradesByValue[uxSelectGrade5.SelectedValue] });
+                child.Gender = uxBoy5.Checked ? "boy" : "girl";
+
+                registeringUser.Children.Add(child);
             }
 
             if ((uxBoy6.Checked || uxGirl6.Checked) && uxSelectGrade6.SelectedValue != string.Empty)
             {
-                //registeringUser.Children.Add(new Domain.Membership.Child() { Grade = MembershipHelper.GetGrade(uxSelectGrade6.SelectedValue) });
-                children.Add(new ChildModel() { Grade = uxSelectGrade6.SelectedValue, Pronoun = uxBoy6.Checked ? "he" : "she" });
-            }
+                var child = new Child();
 
-            Session["temp_child"] = children;
+                child.Grades.Add(new Grade() { Key = Constants.GradesByValue[uxSelectGrade6.SelectedValue] });
+                child.Gender = uxBoy6.Checked ? "boy" : "girl";
+
+                registeringUser.Children.Add(child);
+            }
 
             Response.Redirect(MembershipHelper.GetNextStepURL(2));
         }
