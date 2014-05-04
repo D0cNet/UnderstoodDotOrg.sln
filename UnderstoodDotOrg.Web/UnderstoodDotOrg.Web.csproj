@@ -93,10 +93,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="UnderstoodDotOrg.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\UnderstoodDotOrg.Services\bin\Debug\UnderstoodDotOrg.Services.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers\RunPersonalizationService.ashx.cs">
@@ -1351,6 +1347,10 @@
     <ProjectReference Include="..\UnderstoodDotOrg.Framework\UnderstoodDotOrg.Framework.csproj">
       <Project>{ec2d5068-6aed-422b-a3fd-4b75ac0c247f}</Project>
       <Name>UnderstoodDotOrg.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnderstoodDotOrg.Services\UnderstoodDotOrg.Services.csproj">
+      <Project>{57d49129-17e1-41f7-b197-1536de7be13f}</Project>
+      <Name>UnderstoodDotOrg.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
