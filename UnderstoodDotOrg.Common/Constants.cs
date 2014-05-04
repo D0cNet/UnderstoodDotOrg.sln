@@ -8,6 +8,8 @@ namespace UnderstoodDotOrg.Common
 {
     public static class Constants
     {
+        public const int PERSONALIZATION_ARTICLES_PER_USER = 40;
+
         #region Query Strings
 
         public static readonly string SCLANG_QUERY_STRING = "sc_lang";
