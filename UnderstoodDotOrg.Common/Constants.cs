@@ -37,6 +37,11 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        #region Session Keys
+        public static string currentUserKey { get { return "_understood_org_current_user"; } }
+        public static string currentMemberKey { get { return "_understood_org_current_member"; } }
+        #endregion
+
         #region Container Guid
 
         public static Guid GradeContainer
@@ -54,6 +59,11 @@ namespace UnderstoodDotOrg.Common
                 return new Guid("{DAB8D18D-844D-489C-91CC-757F8783781E}");
             }
         }
+
+        public static Guid IssueContainer { get { return new Guid(""); } }
+        public static Guid DiagnosisContainer { get { return new Guid("{A3955F76-4D6F-4CC0-8D3F-EECC01479EC7}"); } }
+        public static Guid IEPStatusContainer { get { return new Guid("{D273E040-578D-4B1B-B0B1-E1256CB249EA}"); } }
+        public static Guid Section504StatusContainer { get { return new Guid("{BDAAB8F1-8FEA-4E3D-AE6A-C436ACAEB366}"); } }
 
         #endregion
 
@@ -111,6 +121,50 @@ namespace UnderstoodDotOrg.Common
                     {Guid.Parse("{256CBB20-A2DD-468E-82C6-EA7B7B82BCBA}"), "Sensory Processing"},
                     {Guid.Parse("{6A4BE256-C9D3-4F3A-9FC0-C2AD9F6304CE}"), "Social Pragmatic Language Disorder"},
                     {Guid.Parse("{493C315E-DDA0-47D6-9B8E-78125858F43A}"), "Visual Processing"},
+                };
+            }
+        }
+
+        public static Dictionary<Guid, string> GradesByGuid
+        {
+            get
+            {
+                return new Dictionary<Guid, string>
+                {
+                    {Guid.Parse("{E26222FB-07CD-413B-9127-9050B6D2D037}"), "1"},
+                    {Guid.Parse("{0CDA88F1-5F69-485C-AE6B-50E8D5C265EB}"), "2"},
+                    {Guid.Parse("{67AA2A29-E6FF-49B2-9F9E-D29F07C19C23}"), "3"},
+                    {Guid.Parse("{32702CD8-0625-498F-9D8F-17691E81BC69}"), "4"},
+                    {Guid.Parse("{79AB134B-CC1F-4BB6-94F8-12FE9E181F9E}"), "5"},
+                    {Guid.Parse("{E82EB59B-2A3C-4910-96C9-E276C92B712E}"), "6"},
+                    {Guid.Parse("{79B1ACCE-CD06-4F0C-84B2-15A6C01020B9}"), "7"},
+                    {Guid.Parse("{DFF0FA84-B68E-4259-A107-274B5694247D}"), "8"},
+                    {Guid.Parse("{5EEF6AE2-1CBE-4532-883F-C6C0859581A1}"), "9"},
+                    {Guid.Parse("{E0B459C0-548A-4E6C-854A-E8F475416F12}"), "10"},
+                    {Guid.Parse("{9FFF9854-5951-4A7F-94A5-4F8507800916}"), "11"},
+                    {Guid.Parse("{0762C21C-2B35-439C-A45F-A4FCEF5C87B7}"), "12"},
+                };
+            }
+        }
+
+        public static Dictionary<string, Guid> GradesByValue
+        {
+            get
+            {
+                return new Dictionary<string, Guid> 
+                { 
+                    {"1", Guid.Parse("{E26222FB-07CD-413B-9127-9050B6D2D037}")},
+                    {"2", Guid.Parse("{0CDA88F1-5F69-485C-AE6B-50E8D5C265EB}")},
+                    {"3", Guid.Parse("{67AA2A29-E6FF-49B2-9F9E-D29F07C19C23}")},
+                    {"4", Guid.Parse("{32702CD8-0625-498F-9D8F-17691E81BC69}")},
+                    {"5", Guid.Parse("{79AB134B-CC1F-4BB6-94F8-12FE9E181F9E}")},
+                    {"6", Guid.Parse("{E82EB59B-2A3C-4910-96C9-E276C92B712E}")},
+                    {"7", Guid.Parse("{79B1ACCE-CD06-4F0C-84B2-15A6C01020B9}")},
+                    {"8", Guid.Parse("{DFF0FA84-B68E-4259-A107-274B5694247D}")},
+                    {"9", Guid.Parse("{5EEF6AE2-1CBE-4532-883F-C6C0859581A1}")},
+                    {"10", Guid.Parse("{E0B459C0-548A-4E6C-854A-E8F475416F12}")},
+                    {"11", Guid.Parse("{9FFF9854-5951-4A7F-94A5-4F8507800916}")},
+                    {"12", Guid.Parse("{0762C21C-2B35-439C-A45F-A4FCEF5C87B7}")},
                 };
             }
         }
