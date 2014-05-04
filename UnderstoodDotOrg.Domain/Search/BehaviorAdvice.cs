@@ -7,12 +7,13 @@ using Sitecore.Data;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.Data.Items;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
     public class BehaviorAdvice : SearchResultItem
     {
-        [IndexField("child_grades")]
+        [IndexField(Constants.SolrFields.ChildGrades)]
         public IEnumerable<ID> ChildGrades { get; set; }
 
         [IndexField("child_challenges")]

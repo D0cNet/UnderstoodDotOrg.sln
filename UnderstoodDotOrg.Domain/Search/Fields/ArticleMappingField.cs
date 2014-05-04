@@ -1,6 +1,8 @@
-﻿using Sitecore.ContentSearch;
+﻿using CustomItemGenerator.Fields.ListTypes;
+using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.ComputedFields;
 using Sitecore.ContentSearch.Utilities;
+using Sitecore.Data;
 using Sitecore.Data.Items;
 using System;
 using System.Collections.Generic;
@@ -26,28 +28,65 @@ namespace UnderstoodDotOrg.Domain.Search.Fields
             }
             var item = (Sitecore.Data.Items.Item)indexItem.Item;
 
-            // Only process article templates
+            // Skip non-articles
             if (!item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
             {
                 return null;
             }
 
-            var templates = new List<string>();
-            this.GetAllTemplates(item.Template, templates);
-            return templates;
+            var article = new DefaultArticlePageItem(item);
+            bool fieldMatch = true;
+            CustomTreeListField target = null;
+
+            // Only index the following fields
+            switch (FieldName)
+            {
+                case UnderstoodDotOrg.Common.Constants.SolrFields.ChildDiagnoses:
+                    target = article.ChildDiagnoses;
+                    break;
+                case UnderstoodDotOrg.Common.Constants.SolrFields.ChildGrades:
+                    target = article.ChildGrades;
+                    break;
+                case UnderstoodDotOrg.Common.Constants.SolrFields.ChildIssues:
+                    target = article.ChildIssues;
+                    break;
+                case UnderstoodDotOrg.Common.Constants.SolrFields.ApplicableEvaluations:
+                    target = article.OtherApplicableEvaluations;
+                    break;
+                case UnderstoodDotOrg.Common.Constants.SolrFields.DiagnosedConditions:
+                    target = article.DiagnosedCondition;
+                    break;
+                case UnderstoodDotOrg.Common.Constants.SolrFields.ImportanceLevels:
+                    target = article.ImportanceLevel;
+                    break;
+                case UnderstoodDotOrg.Common.Constants.SolrFields.OverrideTypes:
+                    target = article.OverrideType;
+                    break;
+                case UnderstoodDotOrg.Common.Constants.SolrFields.ParentInterests:
+                    target = article.ApplicableInterests;
+                    break;
+                default:
+                    fieldMatch = false;
+                    break;
+            }
+
+            return fieldMatch ? GetSelectedItems(target) : null;
         }
 
-        public void GetAllTemplates(TemplateItem baseTemplate, List<string> list)
+        public List<string> GetSelectedItems(CustomTreeListField field)
         {
-            if (baseTemplate.ID != Sitecore.TemplateIDs.StandardTemplate)
+            // Return a list with an empty guid so we can search via Solr for unmapped fields
+            if (!field.ListItems.Any())
             {
-                string str = IdHelper.NormalizeGuid(baseTemplate.ID);
-                list.Add(str);
-                foreach (TemplateItem item in baseTemplate.BaseTemplates)
-                {
-                    this.GetAllTemplates(item, list);
-                }
+                return new List<string>() { 
+                    IdHelper.NormalizeGuid(ID.Parse(Guid.Empty)) 
+                };
             }
+
+            var query = from i in field.ListItems
+                         select IdHelper.NormalizeGuid(i.ID);
+
+            return query.ToList();
         }
 
     }

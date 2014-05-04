@@ -6,42 +6,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
     public class Article : SearchResultItem
     {
-        [IndexField("child_grades")]
+        [IndexField(Constants.SolrFields.ChildGrades)]
         public IEnumerable<ID> ChildGrades { get; set; }
 
-        [IndexField("child_issues")]
+        [IndexField(Constants.SolrFields.ChildIssues)]
         public IEnumerable<ID> ChildIssues { get; set; }
 
-        [IndexField("child_diagnoses")]
+        [IndexField(Constants.SolrFields.ChildDiagnoses)]
         public IEnumerable<ID> ChildDiagnoses { get; set; }
 
-        [IndexField("override_type")]
+        [IndexField(Constants.SolrFields.OverrideTypes)]
         public IEnumerable<ID> OverrideTypes { get; set; }
 
-        [IndexField("date_start")]
+        [IndexField(Constants.SolrFields.TimelyStart)]
         public DateTime TimelyStart { get; set; }
 
-        [IndexField("date_end")]
+        [IndexField(Constants.SolrFields.TimelyEnd)]
         public DateTime TimelyEnd { get; set; }
 
-        [IndexField("applicable_interests")]
+        [IndexField(Constants.SolrFields.ParentInterests)]
         public IEnumerable<ID> ParentInterests { get; set; }
 
-        [IndexField("alltemplates")]
+        [IndexField(Constants.SolrFields.Templates)]
         public IEnumerable<ID> Templates { get; set; }
 
-        [IndexField("importance_level")]
+        [IndexField(Constants.SolrFields.ImportanceLevels)]
         public IEnumerable<ID> ImportanceLevels { get; set; }
 
-        [IndexField("other_applicable_evaluations")]
+        [IndexField(Constants.SolrFields.ApplicableEvaluations)]
         public IEnumerable<ID> ApplicableEvaluations { get; set; }
 
-        [IndexField("diagnosed_condition")]
+        [IndexField(Constants.SolrFields.DiagnosedConditions)]
         public IEnumerable<ID> DiagnosedConditions { get; set; }
     }
 }

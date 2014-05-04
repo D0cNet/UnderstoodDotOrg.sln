@@ -65,6 +65,9 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
 
+            // Include un-mapped interests
+            pred = pred.Or(a => a.ParentInterests.Contains(ID.Parse(Guid.Empty)));
+
             // Include member interests
             foreach (var interest in member.Interests)
             {
@@ -78,36 +81,34 @@ namespace UnderstoodDotOrg.Domain.Search
 
         #region Child predicates
 
-        private static Expression<Func<Article, bool>> GetChild504Predicate(Child child)
+        private static Expression<Func<Article, bool>> GetChildIEP504Predicate(Child child)
         {
-            Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
+            Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
+
+            // Unmapped
+            pred = pred.Or(a => a.ApplicableEvaluations.Contains(ID.Parse(Guid.Empty)));
+
+            Expression<Func<Article, bool>> innerPred = PredicateBuilder.True<Article>();
+
+            if (child.IEPStatus == Guid.Parse(Constants.ChildEvaluation.StatusIEPInProgress)
+                || child.IEPStatus == Guid.Parse(Constants.ChildEvaluation.StatusIEPYes))
+            {
+                pred = pred.Or(a => a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.EvaluatedIEP)));
+            }
+            else if (child.IEPStatus == Guid.Parse(Constants.ChildEvaluation.StatusIEPNo))
+            {
+                pred = pred.Or(a => !a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.EvaluatedIEP)));
+            }
 
             // TODO: 504 status
             if (child.Section504Status == Guid.Parse(Constants.ChildEvaluation.Status504InProgress)
                 || child.Section504Status == Guid.Parse(Constants.ChildEvaluation.Status504Yes)) 
             {
-                pred = pred.And(a => a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.Evaluated504)));
+                pred = pred.Or(a => a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.Evaluated504)));
             }
             else if (child.Section504Status == Guid.Parse(Constants.ChildEvaluation.Status504No)) 
             {
-                pred = pred.And(a => !a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.Evaluated504)));
-            }
-
-            return pred;
-        }
-
-        private static Expression<Func<Article, bool>> GetChildIEPPredicate(Child child)
-        {
-            Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
-
-            if (child.IEPStatus == Guid.Parse(Constants.ChildEvaluation.StatusIEPInProgress)
-                || child.IEPStatus == Guid.Parse(Constants.ChildEvaluation.StatusIEPYes))
-            {
-                pred = pred.And(a => a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.EvaluatedIEP)));
-            }
-            else if (child.IEPStatus == Guid.Parse(Constants.ChildEvaluation.StatusIEPNo))
-            {
-                pred = pred.And(a => !a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.EvaluatedIEP)));
+                pred = pred.Or(a => !a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.Evaluated504)));
             }
 
             return pred;
@@ -115,16 +116,19 @@ namespace UnderstoodDotOrg.Domain.Search
 
         private static Expression<Func<Article, bool>> GetChildEvaluationPredicate(Child child)
         {
-            Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
+            Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
+
+            // Unmapped
+            pred = pred.Or(a => a.DiagnosedConditions.Contains(ID.Parse(Guid.Empty)));
 
             if (child.EvaluationStatus == Guid.Parse(Constants.ChildEvaluation.StatusEvaluationInProgress)
                 || child.EvaluationStatus == Guid.Parse(Constants.ChildEvaluation.StatusEvaluationYes))
             {
-                pred = pred.And(a => a.DiagnosedConditions.Contains(ID.Parse(Constants.ArticleTags.ConditionDiagnosed)));
+                pred = pred.Or(a => a.DiagnosedConditions.Contains(ID.Parse(Constants.ArticleTags.ConditionDiagnosed)));
             }
             else if (child.EvaluationStatus == Guid.Parse(Constants.ChildEvaluation.StatusEvaluationNo))
             {
-                pred = pred.And(a => a.DiagnosedConditions.Contains(ID.Parse(Constants.ArticleTags.ConditionUndiagnosed)));
+                pred = pred.Or(a => a.DiagnosedConditions.Contains(ID.Parse(Constants.ArticleTags.ConditionUndiagnosed)));
             }
 
             return pred;
@@ -133,6 +137,9 @@ namespace UnderstoodDotOrg.Domain.Search
         private static Expression<Func<Article, bool>> GetChildDiagnosisPredicate(Child child)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
+
+            // Include un tagged
+            pred = pred.Or(a => a.ChildDiagnoses.Contains(ID.Parse(Guid.Empty)));
 
             // Include content tagged with All
             pred = pred.Or(a => a.ChildDiagnoses.Contains(ID.Parse(Constants.ArticleTags.AllChildDiagnosis)));
@@ -151,6 +158,9 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
 
+            // Include un tagged
+            pred = pred.Or(a => a.ChildGrades.Contains(ID.Parse(Guid.Empty)));
+            
             // Include content tagged with All
             pred = pred.Or(a => a.ChildGrades.Contains(ID.Parse(Constants.ArticleTags.AllChildGrades)));
 
@@ -168,6 +178,9 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
 
+            // Include un tagged
+            pred = pred.Or(a => a.ChildIssues.Contains(ID.Parse(Guid.Empty)));
+            
             // Include content tagged with All
             pred = pred.Or(a => a.ChildIssues.Contains(ID.Parse(Constants.ArticleTags.AllChildIssues)));
 
@@ -187,8 +200,7 @@ namespace UnderstoodDotOrg.Domain.Search
                 .And(GetChildGradesPredicate(child))
                 .And(GetChildIssuesPredicate(child))
                 .And(GetChildDiagnosisPredicate(child))
-                .And(GetChild504Predicate(child))
-                .And(GetChildIEPPredicate(child))
+                .And(GetChildIEP504Predicate(child))
                 .And(GetChildEvaluationPredicate(child));
 
             return pred;
@@ -200,7 +212,7 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
 
-            pred = pred.And(a => a.ImportanceLevels != null && a.ImportanceLevels.Contains(ID.Parse(Constants.ArticleTags.MustRead)));
+            pred = pred.And(a => a.ImportanceLevels.Contains(ID.Parse(Constants.ArticleTags.MustRead)));
 
             return pred;
         }
@@ -220,44 +232,22 @@ namespace UnderstoodDotOrg.Domain.Search
                                     .Where(GetMemberInterestsPredicate(member))
                                     .Where(GetChildPredicates(child));
 
-                var nonMatching = allArticles.Take(allArticles.GetResults().TotalSearchResults).ToList().Except(memberChildArticles);
-
-                // Manually add unmapped items
-                List<Article> unmapped = new List<Article>();
-                foreach (var article in nonMatching)
-                {
-                    if (article.ParentInterests == null
-                        && article.ApplicableEvaluations == null
-                        && article.ChildGrades == null
-                        && article.ChildDiagnoses == null
-                        && article.ChildIssues == null
-                        && article.DiagnosedConditions == null)
-                    {
-                        unmapped.Add(article);
-                    }
-                }
-
-                var filtered = memberChildArticles.Take(memberChildArticles.GetResults().TotalSearchResults).ToList();
-                filtered.AddRange(unmapped);
-
-                var queryable = filtered.AsQueryable();
+                //var nonMatching = allArticles.Take(allArticles.GetResults().TotalSearchResults).ToList().Except(memberChildArticles);
 
                 // Identify timely articles to bring to top of list
-                var timelyArticles = queryable.Where(GetTimelyPredicate(date));
+                var timelyArticles = memberChildArticles.Where(GetTimelyPredicate(date));
 
-                var mustReadArticles = queryable.Where(GetMustReadPredicate());
+                var mustReadArticles = memberChildArticles.Where(GetMustReadPredicate());
 
                 var resp = System.Web.HttpContext.Current.Response;
                 resp.Write(String.Format("Total articles to search: {0}<br>", allArticles.GetResults().TotalSearchResults));
                 resp.Write(String.Format("Matches: {0}<br>", memberChildArticles.GetResults().TotalSearchResults));
-                resp.Write(String.Format("Non matching: {0}<br>", nonMatching.Count()));
-                resp.Write(String.Format("Unmapped: {0}<br>", unmapped.Count()));
-                resp.Write(String.Format("Timely: {0}<br>", timelyArticles.Count()));
-                resp.Write(String.Format("Must: {0}<br><br>", mustReadArticles.Count()));
+                //resp.Write(String.Format("Timely: {0}<br>", timelyArticles.Count()));
+                //resp.Write(String.Format("Must: {0}<br><br>", mustReadArticles.Count()));
 
                 foreach (Article f in memberChildArticles.Take(40))
                 {
-                    resp.Write(String.Format("{0} - {1}<br>", f.ItemId.ToString(), f.Name));
+                    resp.Write(String.Format("{0} - {1} ({2})<br>", f.ItemId.ToString(), f.Name, f.Language));
                 }
                 resp.Write("<br><br>");
             }  

@@ -113,6 +113,21 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static class SolrFields
+        {
+            public const string ChildGrades = "_child_grades";
+            public const string ChildIssues = "_child_issues";
+            public const string ChildDiagnoses = "_child_diagnoses";
+            public const string OverrideTypes = "_override_type";
+            public const string TimelyStart = "date_start";
+            public const string TimelyEnd = "date_end";
+            public const string ParentInterests = "_applicable_interests";
+            public const string Templates = "alltemplates";
+            public const string ImportanceLevels = "_importance_level";
+            public const string ApplicableEvaluations = "_other_applicable_evaluations";
+            public const string DiagnosedConditions = "_diagnosed_condition";
+        }
+
         public static class ArticleTags
         {
             public static string ExcludeFromPersonalization = "{6100E802-A5B9-431F-9F4F-58238DF23DC7}";
