@@ -22,6 +22,9 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
 
+            // TODO: retrieve member language
+            pred = pred.And(a => a.Language == "en");
+
             // Include only articles
             pred = pred.And(a => a.Templates.Contains(ID.Parse(DefaultArticlePageItem.TemplateId)));
 
