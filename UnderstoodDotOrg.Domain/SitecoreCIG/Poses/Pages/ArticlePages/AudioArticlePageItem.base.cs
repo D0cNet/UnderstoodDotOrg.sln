@@ -6,7 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
 {
@@ -46,15 +46,6 @@ public static implicit operator Item(AudioArticlePageItem customItem)
 #region Field Instance Methods
 
 
-public CustomImageField File
-{
-	get
-	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["File"]);
-	}
-}
-
-
 public CustomTextField IntroText
 {
 	get
@@ -78,6 +69,33 @@ public CustomTextField Transcript
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Transcript"]);
+	}
+}
+
+
+public CustomFileField AudioFile
+{
+	get
+	{
+		return new CustomFileField(InnerItem, InnerItem.Fields["Audio File"]);
+	}
+}
+
+
+public CustomTextField CincopaID
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Cincopa ID"]);
+	}
+}
+
+
+public CustomTextField DescriptionAltText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Description Alt Text"]);
 	}
 }
 

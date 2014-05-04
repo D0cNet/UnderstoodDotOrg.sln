@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.BaseforQuiz;
 using UnderstoodDotOrg.Common.Extensions;
 

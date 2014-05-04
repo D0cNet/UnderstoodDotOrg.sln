@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {

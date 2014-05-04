@@ -10,10 +10,10 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
 {
-public partial class InfographicArticlePageItem : CustomItem
+public partial class ImageArticlePageItem : CustomItem
 {
 
-public static readonly string TemplateId = "{BE7A3EE2-B9EE-4ACA-8C61-7EAF22B9E341}";
+public static readonly string TemplateId = "{174C551A-9B7F-476B-A7EF-01170AD0466C}";
 
 #region Inherited Base Templates
 
@@ -24,18 +24,18 @@ public DefaultArticlePageItem DefaultArticlePage { get { return _DefaultArticleP
 
 #region Boilerplate CustomItem Code
 
-public InfographicArticlePageItem(Item innerItem) : base(innerItem)
+public ImageArticlePageItem(Item innerItem) : base(innerItem)
 {
 	_DefaultArticlePageItem = new DefaultArticlePageItem(innerItem);
 
 }
 
-public static implicit operator InfographicArticlePageItem(Item innerItem)
+public static implicit operator ImageArticlePageItem(Item innerItem)
 {
-	return innerItem != null ? new InfographicArticlePageItem(innerItem) : null;
+	return innerItem != null ? new ImageArticlePageItem(innerItem) : null;
 }
 
-public static implicit operator Item(InfographicArticlePageItem customItem)
+public static implicit operator Item(ImageArticlePageItem customItem)
 {
 	return customItem != null ? customItem.InnerItem : null;
 }
@@ -46,20 +46,11 @@ public static implicit operator Item(InfographicArticlePageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField IntroText
+public CustomTextField ArticleContent
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Intro Text"]);
-	}
-}
-
-
-public CustomImageField Image
-{
-	get
-	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["Image"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Article Content"]);
 	}
 }
 

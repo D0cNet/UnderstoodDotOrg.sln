@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Sitecore.ContentSearch;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.ContentSearch.SearchTypes;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.SimpleExpertArticle;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;

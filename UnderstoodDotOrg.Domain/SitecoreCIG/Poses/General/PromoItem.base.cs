@@ -6,8 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
-//using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General
 {
@@ -47,15 +46,6 @@ public static implicit operator Item(PromoItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField PromoTitle
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Promo Title"]);
-	}
-}
-
-
 public CustomTextField PromoURL
 {
 	get
@@ -76,10 +66,28 @@ public CustomCheckboxField IncludeinPromoTool
 
 public CustomImageField PromoImage
 {
-    get
-    {
-        return new CustomImageField(InnerItem, InnerItem.Fields["Promo Image"]);
-    }
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Promo Image"]);
+	}
+}
+
+
+public CustomFileField MediaFile
+{
+	get
+	{
+		return new CustomFileField(InnerItem, InnerItem.Fields["Media File"]);
+	}
+}
+
+
+public CustomCheckboxField ShowMediaFile
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Media File"]);
+	}
 }
 
 

@@ -6,8 +6,8 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
-//using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages
 {
 public partial class PartnerInfoItem : CustomItem

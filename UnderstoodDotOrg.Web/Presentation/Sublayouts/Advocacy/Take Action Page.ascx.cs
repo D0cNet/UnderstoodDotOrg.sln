@@ -10,7 +10,7 @@ using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 

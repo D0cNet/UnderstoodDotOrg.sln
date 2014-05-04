@@ -6,11 +6,28 @@ using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.BaseforQuiz;
 using UnderstoodDotOrg.Common.Extensions;
 using System.Linq;
+using CustomItemGenerator.Fields.LinkTypes;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
 {
 public partial class AssessmentQuizArticlePage2Item 
 {
+    public CustomGeneralLinkField LinktoBackPage
+    {
+        get
+        {
+            return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Link to Back Page"]);
+        }
+    }
+
+    public CustomGeneralLinkField LinktoResultPage
+    {
+        get
+        {
+            return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Link to Result Page"]);
+        }
+    }
+
     public static IEnumerable<QuizQuestionItem> GetAllQuestions(AssessmentQuizArticlePage2Item CurrentQuiz2)
     {
         IEnumerable<QuizQuestionItem> AllSlideItems = CurrentQuiz2.AllQuestions;

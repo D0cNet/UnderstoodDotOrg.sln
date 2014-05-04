@@ -12,7 +12,7 @@ using Sitecore.ContentSearch.Linq;
 using Sitecore.ContentSearch.Linq.Solr;
 using Sitecore.ContentSearch.Linq.Utilities;
 using System.Linq.Expressions;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.Search
 {

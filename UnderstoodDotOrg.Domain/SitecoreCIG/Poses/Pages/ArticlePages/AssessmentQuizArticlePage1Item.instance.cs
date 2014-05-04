@@ -6,14 +6,22 @@ using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.BaseforQuiz;
 using UnderstoodDotOrg.Common.Extensions;
 using System.Linq;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
+using CustomItemGenerator.Fields.LinkTypes;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
 {
     public partial class AssessmentQuizArticlePage1Item
     {
+        public CustomGeneralLinkField LinktoNextPage
+        {
+            get
+            {
+                return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Link to Next page"]);
+            }
+        }
 
         public static IEnumerable<QuizQuestionItem> GetAllQuestions(AssessmentQuizArticlePage1Item CurrentQuiz1)
         {
