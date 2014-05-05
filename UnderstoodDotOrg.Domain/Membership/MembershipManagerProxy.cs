@@ -51,11 +51,14 @@ namespace UnderstoodDotOrg.Domain.Membership
                 Interests = new List<Interest>() {
                     new Interest() {
                         Key = Guid.Parse("{26A98810-4539-4BB7-8D6F-43CFE075AED3}"),
+                        Value = "Apps",
+                        CategoryName = "Technology and Apps",
                     }
                 },
                 Journeys = new List<Journey>() {
                     new Journey() {
                         Key = Guid.Parse("{CB9F1AC5-4E58-499C-8D07-8BC4E8D42F0F}"),
+                        Value = "We've been working through my child's issues this past year.",
                     }
                 },
                 Children = new List<Child>() { 
@@ -69,16 +72,19 @@ namespace UnderstoodDotOrg.Domain.Membership
                         Issues = new List<Issue>() { 
                             new Issue() {
                                 Key = Guid.Parse("{FFB5F34E-5A5F-43C6-A987-9AFF713C66C9}"),
+                                Value = "Attention or Staying Focused",
                             }  
                         },
                         Diagnoses = new List<Diagnosis>() { 
                             new Diagnosis() {
                                 Key = Guid.Parse("{7A035CC2-D6BD-4332-9518-7AB22083F652}"),
+                                Value = "ADHD",
                             }
                         },           
                         Grades = new List<Grade>() {
                             new Grade() {
                                 Key = Constants.GradesByValue["3"],
+                                Value = "3",
                             }
                         },
                     },
@@ -92,16 +98,19 @@ namespace UnderstoodDotOrg.Domain.Membership
                         Issues = new List<Issue>() { 
                             new Issue() {
                                 Key = Guid.Parse("{FFB5F34E-5A5F-43C6-A987-9AFF713C66C9}"),
+                                Value = "Attention or Staying Focused",
                             }  
                         },
                         Diagnoses = new List<Diagnosis>() { 
                             new Diagnosis() {
                                 Key = Guid.Parse("{7A035CC2-D6BD-4332-9518-7AB22083F652}"),
+                                Value = "ADHD",
                             }
                         },           
                         Grades = new List<Grade>() {
                             new Grade() {
                                 Key = Constants.GradesByValue["5"],
+                                Value = "5",
                             }
                         },
                     },
@@ -132,20 +141,23 @@ namespace UnderstoodDotOrg.Domain.Membership
                 HomeLife = Guid.Parse("{8FFA90D9-F2DA-402D-9AC4-7C203769C810}"),
                 Gender = "boy",
                 Issues = new List<Issue>() { 
-                    new Issue() {
-                        Key = Guid.Parse("{FFB5F34E-5A5F-43C6-A987-9AFF713C66C9}"),
-                    }  
-                },
+                            new Issue() {
+                                Key = Guid.Parse("{FFB5F34E-5A5F-43C6-A987-9AFF713C66C9}"),
+                                Value = "Attention or Staying Focused",
+                            }  
+                        },
                 Diagnoses = new List<Diagnosis>() { 
-                    new Diagnosis() {
-                        Key = Guid.Parse("{7A035CC2-D6BD-4332-9518-7AB22083F652}"),
-                    }
-                },
+                            new Diagnosis() {
+                                Key = Guid.Parse("{7A035CC2-D6BD-4332-9518-7AB22083F652}"),
+                                Value = "ADHD",
+                            }
+                        },
                 Grades = new List<Grade>() {
-                    new Grade() {
-                        Key = Constants.GradesByValue["3"],
-                    }
-                },
+                            new Grade() {
+                                Key = Constants.GradesByValue["3"],
+                                Value = "3",
+                            }
+                        },
             };
             return child;
         }
