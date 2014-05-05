@@ -37,9 +37,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
         protected TopicLandingPageItem GetTopicLandingPageItem() {
             Item contextItem = Sitecore.Context.Item;
             Item topicLandingPageItem = contextItem;
-            while (!contextItem.IsOfType(TopicLandingPageItem.TemplateId)) {
+            while (contextItem != null && !contextItem.IsOfType(TopicLandingPageItem.TemplateId)) {
 
-                if (contextItem.Parent.IsOfType(TopicLandingPageItem.TemplateId)) {
+                if (contextItem.Parent != null && contextItem.Parent.IsOfType(TopicLandingPageItem.TemplateId)) {
                     topicLandingPageItem = contextItem.Parent;
                     break;
                 }
