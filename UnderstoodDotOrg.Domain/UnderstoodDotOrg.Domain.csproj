@@ -257,6 +257,9 @@
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\SubtopicLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\TopicLandingPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\TopicLandingPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.interface.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.interface.cs" />
@@ -309,7 +312,6 @@
     <Compile Include="Understood\Users\ParentModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ExactTarget\" />
     <Folder Include="Facebook\" />
     <Folder Include="Luminate\" />
     <Folder Include="Salesforce\" />
