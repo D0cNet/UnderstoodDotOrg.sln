@@ -125,6 +125,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string SignInButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Sign In Button Text");
+            }
+        }
+
         #endregion
 
         #region Input Placeholders
