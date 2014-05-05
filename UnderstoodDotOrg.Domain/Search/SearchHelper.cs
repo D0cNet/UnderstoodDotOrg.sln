@@ -212,34 +212,23 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;
         }
 
-        private static Expression<Func<Article, bool>> GetChildPredicates(Child child)
-        {
-            Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>()
-                .And(GetChildGradesPredicate(child))
-                .And(GetChildIssuesPredicate(child))
-                .And(GetChildDiagnosisPredicate(child))
-                .And(GetChildIEP504Predicate(child))
-                .And(GetChildEvaluationPredicate(child));
-
-            return pred;
-        }
-
         #endregion
 
         private static Expression<Func<Article, bool>> GetMustReadPredicate()
         {
-            Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
-
-            pred = pred.And(a => a.ImportanceLevels.Contains(ID.Parse(Constants.ArticleTags.MustRead)));
-
-            return pred;
+            return (a => a.ImportanceLevels.Contains(ID.Parse(Constants.ArticleTags.MustRead)));
         }
 
         private static Expression<Func<Article, bool>> GetExcludeArticlesPredicate(List<Article> articles)
         {
+            ParameterExpression pe = Expression.Parameter(typeof(Article), "a");
             Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
 
-            // TODO: investigate bug where and predicate and ItemId fails
+            foreach (Article article in articles)
+            {
+                var i = article;
+                pred = pred.And(a => a.ItemId != i.ItemId);
+            }
 
             return pred;
         }
@@ -247,7 +236,7 @@ namespace UnderstoodDotOrg.Domain.Search
         private static List<int> GetRandomKeys(IQueryable<Article> query)
         {
             List<int> keys = new List<int>();
-            int totalMatches = query.GetResults().TotalSearchResults;
+            int totalMatches = query.Count();
             int limit = Math.Min(totalMatches, 8); // TODO: use constant
             Random rand = new Random();
             while (keys.Count != limit)
@@ -290,46 +279,52 @@ namespace UnderstoodDotOrg.Domain.Search
                 // Inclusion/Exclusion processing based on member and child
                 var matchingArticlesQuery = allArticlesQuery
                                     .Where(GetMemberInterestsPredicate(member))
-                                    .Where(GetChildPredicates(child));
-
-                // 1 - Child Grade
-                var firstQuery = matchingArticlesQuery.Where(GetChildGradesPredicate(child));
-                List<Article> firstMatches = GetRandomBucket(firstQuery);
-
-                // 2 - Child Issues / Diagnosis
-                var secondQuery = matchingArticlesQuery.Where(GetChildDiagnosisPredicate(child))
+                                    .Where(GetChildGradesPredicate(child))
                                     .Where(GetChildIssuesPredicate(child))
-                                    .Where(GetExcludeArticlesPredicate(firstMatches));
+                                    .Where(GetChildDiagnosisPredicate(child))
+                                    .Where(GetChildIEP504Predicate(child))
+                                    .Where(GetChildEvaluationPredicate(child));
 
-                List<Article> secondMatches = GetRandomBucket(secondQuery);
+                int totalMatches = matchingArticlesQuery.GetResults().TotalSearchResults;
 
-                // 3 - Parent interest
-                var thirdQuery = matchingArticlesQuery.Where(GetMemberInterestsPredicate(member))
-                                    .Where(GetExcludeArticlesPredicate(firstMatches))
-                                    .Where(GetExcludeArticlesPredicate(secondMatches));
-                List<Article> thirdMatches = GetRandomBucket(thirdQuery);
-
-                // 4 - Must read
-                var fourthQuery = matchingArticlesQuery.Where(GetMustReadPredicate())
-                                    .Where(GetExcludeArticlesPredicate(firstMatches))
-                                    .Where(GetExcludeArticlesPredicate(secondMatches))
-                                    .Where(GetExcludeArticlesPredicate(thirdMatches));
-                List<Article> fourthMatches = GetRandomBucket(fourthQuery);
-
-                // 5 - IEP/504
-                var fifthQuery = matchingArticlesQuery.Where(GetChildIEP504Predicate(child))
-                                    .Where(GetExcludeArticlesPredicate(firstMatches))
-                                    .Where(GetExcludeArticlesPredicate(secondMatches))
-                                    .Where(GetExcludeArticlesPredicate(thirdMatches))
-                                    .Where(GetExcludeArticlesPredicate(fourthMatches));
-                List<Article> fifthMatches = GetRandomBucket(fifthQuery);
+                List<Article> matchingArticles = matchingArticlesQuery.Take(totalMatches).ToList();
 
                 List<Article> toProcess = new List<Article>();
-                toProcess.AddRange(firstMatches);
-                toProcess.AddRange(secondMatches);
-                toProcess.AddRange(thirdMatches);
-                toProcess.AddRange(fourthMatches);
-                toProcess.AddRange(fifthMatches);
+
+                // 1 - Child Grade
+                var firstQuery = matchingArticles.AsQueryable()
+                                    .Where(GetChildGradesPredicate(child));
+
+                toProcess.AddRange(GetRandomBucket(firstQuery));
+
+                // 2 - Child Issues / Diagnosis
+                var secondQuery = matchingArticles.AsQueryable()
+                                    .Where(GetExcludeArticlesPredicate(toProcess))
+                                    .Where(GetChildDiagnosisPredicate(child))
+                                    .Where(GetChildIssuesPredicate(child));
+
+                toProcess.AddRange(GetRandomBucket(secondQuery));
+
+                // 3 - Parent interest
+                var thirdQuery = matchingArticles.AsQueryable()
+                                    .Where(GetExcludeArticlesPredicate(toProcess))
+                                    .Where(GetMemberInterestsPredicate(member));
+
+                toProcess.AddRange(GetRandomBucket(thirdQuery));
+
+                // 4 - Must read
+                var fourthQuery = matchingArticles.AsQueryable()
+                                    .Where(GetExcludeArticlesPredicate(toProcess))
+                                    .Where(GetMustReadPredicate());
+
+                toProcess.AddRange(GetRandomBucket(fourthQuery));
+
+                // 5 - IEP/504
+                var fifthQuery = matchingArticles.AsQueryable()
+                                    .Where(GetExcludeArticlesPredicate(toProcess))
+                                    .Where(GetChildIEP504Predicate(child));
+
+                toProcess.AddRange(GetRandomBucket(fifthQuery));
 
                 // Timely and Must Read can overlap, so only include unique entries.
 
