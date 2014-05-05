@@ -324,96 +324,6 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
         }
 
-        //private Journey GetJourney(Guid JourneyId)
-        //{
-        //    try
-        //    {
-        //        using (_db)
-        //        {
-        //            return _db.Journeys
-        //                .Where(x => x.Key == JourneyId)
-        //                //.AsNoTracking()
-        //                .First();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
-        //private Diagnosis GetDiagnosis(Guid DiagnosisId)
-        //{
-        //    try
-        //    {
-        //        using (_db)
-        //        {
-        //            return _db.Diagnoses
-        //                .Where(x => x.Key == DiagnosisId)
-        //                //.AsNoTracking()
-        //                .First();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
-        //private Grade GetGrade(Guid GradeId)
-        //{
-        //    try
-        //    {
-        //        using (_db)
-        //        {
-        //            return _db.Grades
-        //                .Where(x => x.Key == GradeId)
-        //                //.AsNoTracking()
-        //                .First();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
-        //private Issue GetIssue(Guid IssueId)
-        //{
-        //    try
-        //    {
-        //        using (_db)
-        //        {
-        //            return _db.Issues
-        //                .Where(x => x.Key == IssueId)
-        //                //.AsNoTracking()
-        //                .First();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
-        //private Interest GetInterest(Guid InterestId)
-        //{
-        //    try
-        //    {
-        //        using (_db)
-        //        {
-        //            return _db.Interests
-        //                .Where(x => x.Key == InterestId)
-        //                //.AsNoTracking()
-        //                .First();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
         /// <summary>
         /// Adds a new user to the authentication database, and then adds a new member to the membership database
         /// </summary>
@@ -623,14 +533,16 @@ namespace UnderstoodDotOrg.Domain.Membership
      
         public List<Member> GetMembers()
         {
-            List<Member> members = null; 
-            using (var db = new Membership(connString))
-            {
-                var query = from m in db.Members
-                            select m;
-                members = query.ToList<Member>();             
-            }
-            return members;
+            //List<Member> members = null; 
+            //using (var db = new Membership(connString))
+            //{
+            //    var query = from m in db.Members
+            //                select m;
+            //    members = query.ToList<Member>();             
+            //}
+            //return members;
+
+            return _db.Members.ToList();
         }
     }
 }
