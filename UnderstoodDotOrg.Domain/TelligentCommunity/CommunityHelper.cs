@@ -173,9 +173,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         /// 
         /// </summary>
         /// <param name="username">Unique username to be used in the Telligent Community</param>
-        /// <param name="password"></param>
         /// <param name="email">Unique email to be used in the Telligent Community</param>
-        public static void CreateUser(/*User user*/string username, string password, string email)
+        public static bool CreateUser(/*User user*/string username, string email)
         {
             try
             {
@@ -190,7 +189,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                 var values = new NameValueCollection();
                 values["Username"] = username;
-                values["Password"] = password;
+                values["Password"] = Guid.NewGuid().ToString();
                 values["PrivateEmail"] = email;
                 //values["Username"] = user.username;
                 //values["Password"] = user.password;
@@ -208,6 +207,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 //}
 
                 var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+                return true;
             }
             catch(Exception e)
             {
