@@ -326,11 +326,17 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 toProcess.AddRange(GetRandomBucket(fifthQuery));
 
+                // Backfill
+                if (toProcess.Count() < Constants.PERSONALIZATION_ARTICLES_PER_USER)
+                {
+
+                }
+
                 // Timely and Must Read can overlap, so only include unique entries.
 
                 var resp = System.Web.HttpContext.Current.Response;
                 resp.Write(String.Format("Total articles to search: {0}<br>", allArticlesQuery.GetResults().TotalSearchResults));
-                resp.Write(String.Format("Matches: {0}<br>", matchingArticlesQuery.GetResults().TotalSearchResults));
+                resp.Write(String.Format("Matches: {0}<br>", totalMatches));
                 //resp.Write(String.Format("Timely: {0}<br>", timelyArticles.Count()));
                 //resp.Write(String.Format("Must: {0}<br><br>", mustReadArticles.Count()));
 
