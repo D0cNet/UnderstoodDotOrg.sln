@@ -24,7 +24,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
         /// <summary>
         /// Use this method to send a test email with Exact Target
         /// </summary>
-        void InvokeTriggeredSendEmail(TriggeredSendEmail triggeredSendEmail);
+        string InvokeTriggeredSendEmail(TriggeredSendEmail triggeredSendEmail);
         
     }
 }

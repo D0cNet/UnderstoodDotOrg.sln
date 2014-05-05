@@ -10,7 +10,19 @@
     {
         private void Page_Load(object sender, EventArgs e)
         {
+            // initialize text boxes
+            tbxSubscriberEmail1.Text = "bwilson@agencyoasis.com";
+            tbxSubscriberKey1.Text = "bwilson@agencyoasis.com";
+            tbxSubscriberFN1.Text = "Brian";
 
+            tbxSubscriberEmail2.Text = "wilsonbri@gmail.com";
+            tbxSubscriberKey2.Text = "wilsonbri@gmail.com";
+            tbxSubscriberFN2.Text = "wilsonbri";
+
+            tbxCustomerKey.Text = "201"; //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
+            tbxEmailID.Text = "103";   // This is the "Text Only Test Email" configured within NCLD's ExactTarget system ....  Available in the ET UI [Content > My Emails > Properties]
+
+            lblMessage.Text = "Email Test has not started ...";
         }
 
         protected void btnETTests_Click(object sender, EventArgs e)
@@ -20,22 +32,28 @@
             ETBaseConfig etBaseConfig = new ETBaseConfig();
            // etBaseConfig.ExactTargetWSUsername = "NCLDDEV01";   //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
            // etBaseConfig.ExactTargetWSPassword = "NCLDDEV01!!";   //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
-
+             
             ETEmail etEmail = new ETEmail();
-            etEmail.CustomerKey = "201";   //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
-            etEmail.EmailID = "103";   // This is the "Text Only Test Email" configured within NCLD's ExactTarget system ....  Available in the ET UI [Content > My Emails > Properties]
-                                       
-
+            //etEmail.CustomerKey = "201";   //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
+            //etEmail.EmailID = "103";   // This is the "Text Only Test Email" configured within NCLD's ExactTarget system ....  Available in the ET UI [Content > My Emails > Properties]
+            etEmail.CustomerKey = tbxCustomerKey.Text;   //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
+            etEmail.EmailID = tbxEmailID.Text;   // This is the "Text Only Test Email" configured within NCLD's ExactTarget system ....  Available in the ET UI [Content > My Emails > Properties]                                     
 
             ETSubscriber etSubscriber1 = new ETSubscriber();
-            etSubscriber1.Email = "wilsonbri@gmail.com";
-            etSubscriber1.Key = "wilsonbri@gmail.com";
-            etSubscriber1.FN = "wilsonbri";
+            etSubscriber1.Email = tbxSubscriberEmail1.Text;
+            etSubscriber1.Key = tbxSubscriberKey1.Text;
+            etSubscriber1.FN = tbxSubscriberFN1.Text;           
+            //etSubscriber1.Email = "wilsonbri@gmail.com";
+            //etSubscriber1.Key = "wilsonbri@gmail.com";
+            //etSubscriber1.FN = "wilsonbri";
 
             ETSubscriber etSubscriber2 = new ETSubscriber();
-            etSubscriber2.Email = "wilsonbri@gmail.com";
-            etSubscriber2.Key = "wilsonbri@gmail.com";
-            etSubscriber2.FN = "wilsonbri";
+            etSubscriber2.Email = tbxSubscriberEmail2.Text;
+            etSubscriber2.Key = tbxSubscriberKey2.Text;
+            etSubscriber2.FN = tbxSubscriberFN2.Text; 
+            //etSubscriber2.Email = "bwilson@agnecyoasis.com";
+            //etSubscriber2.Key = "bwilson@agnecyoasi.com";
+            //etSubscriber2.FN = "Brian";
 
             TriggeredSendEmail tse = new TriggeredSendEmail();
             tse.ETBaseConfig = etBaseConfig;
@@ -49,23 +67,11 @@
             tse.ETSubscriberList = etSubscriberList;
 
             IExactTargetService etService = new ExactTargetService();
-            etService.InvokeTriggeredSendEmail(tse);
+
+
+            lblMessage.Text = etService.InvokeTriggeredSendEmail(tse);
         }
 
 
-
-        //public const string CONST_ET_WS_USERNAME = "NCLDDEV01";   //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
-        //public const string CONST_ET_WS_PASSWORD = "NCLDDEV01!!";   //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
-
-        //public const int CONST_ET_EMAIL_ID = 445;    //Available in the ET UI [Content > My Emails > Properties]
-        //public const string CONST_ET_CUSTOMER_KEY = "4201";   //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
-
-        //public const string CONST_ET_NEW_SUBSCR_EMAIL = "wilsonbri@gmail.com";
-        //public const string CONST_ET_NEW_SUBSCR_KEY = "wilsonbri@gmail.com";
-        //public const string CONST_ET_NEW_SUBSCR_FN = "wilsonbri";
-
-        //public const string CONST_ET_NEW_SUBSCR_EMAIL2 = "bwils06@gmail.com";
-        //public const string CONST_ET_NEW_SUBSCR_KEY2 = "bwils06@gmail.com";
-        //public const string CONST_ET_NEW_SUBSCR_FN2 = "bwils06";
     }
 }
