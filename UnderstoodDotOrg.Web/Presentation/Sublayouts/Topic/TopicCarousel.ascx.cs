@@ -10,8 +10,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
     public partial class TopicCarousel : System.Web.UI.UserControl {
         protected void Page_Load(object sender, EventArgs e) {
             TopicLandingPageItem contextItem = Sitecore.Context.Item;
-            if (contextItem != null && contextItem.CuratedFeaturedcontent != null) {
-                var curatedFeaturedContent = contextItem.CuratedFeaturedcontent.ListItems;
+            if (contextItem != null && contextItem.SliderCuratedFeaturedcontent != null) {
+                var curatedFeaturedContent = contextItem.SliderCuratedFeaturedcontent.ListItems;
                 if (curatedFeaturedContent != null && curatedFeaturedContent.Count > 0) {
                     rptTopicCarousel.DataSource = curatedFeaturedContent.Take(4);
                     rptTopicCarousel.DataBind();
@@ -33,7 +33,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
                      
                      Sitecore.Web.UI.WebControls.Image scThumbnailImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scThumbnailImage");
                      Image defaultImage = e.FindControlAs<Image>("defaultImage");
-                     Sitecore.Web.UI.WebControls.Text scNavigationTitle = e.FindControlAs<Sitecore.Web.UI.WebControls.Text>("scNavigationTitle");
+                     Literal ltNavigationTitle = e.FindControlAs<Literal>("ltNavigationTitle");
 
                      if (scThumbnailImage != null && content.FeaturedImage.MediaItem != null) {
                          scThumbnailImage.Item = content;
@@ -42,9 +42,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
                          defaultImage.Visible = true;
                      }
 
-                     BasePageNEWItem basePageNewItem = new BasePageNEWItem(item);
-                     if(basePageNewItem != null && scNavigationTitle != null){
-                         scNavigationTitle.Item = basePageNewItem;
+                     
+                     if (ltNavigationTitle != null) {
+                         ltNavigationTitle.Text = item.DisplayName;
                      }
                  }
             }

@@ -13,16 +13,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
         protected void Page_Load(object sender, EventArgs e) {
             TopicLandingPageItem topicPage = Sitecore.Context.Item;
             if (topicPage != null && topicPage.SliderCuratedFeaturedcontent != null) {
-                List<Item> sliderCuratedFeatured = topicPage.SliderCuratedFeaturedcontent.ListItems;
+                List<Item> sliderCuratedFeatured = topicPage.CuratedFeaturedcontent.ListItems;
                 if (sliderCuratedFeatured != null && sliderCuratedFeatured.Any()) {
 
-                    // Gets all article under topic page.
-                    // List<Item> articles = topicPage.InnerItem.Axes.GetDescendants().FilterByContextLanguageVersion().Where(i => i.InheritsFromType(DefaultArticlePageItem.TemplateId)).ToList();
-
-                    //var excludeCuratedFeaturedArticle = from t1 in articles
-                    //                                           where sliderCuratedFeatured.Any(t2 => t2.ID.ToString() != t1.ID.ToString())
-                    //                                           select t1;	
-                   
                     rptArticleListing.DataSource = sliderCuratedFeatured.Take(6);
                     rptArticleListing.DataBind();
                     if (sliderCuratedFeatured.Count() > 6) {

@@ -15,33 +15,14 @@
                                 <sc:image id="scThumbnailImage" runat="server" field="Featured Image" />
                                 <asp:Image runat="server" ID="defaultImage" Visible="false" ImageUrl="http://placehold.it/630x354" />
                             </asp:HyperLink>
-                            <%--<a href="REPLACE">
-                                <img alt="630x354 Placeholder" class="rsImg" src="http://placehold.it/630x354" /></a>--%>
                             <div class="rsTmb">
-                                <sc:Text runat="server" Field="Navigation Title" Id="scNavigationTitle"></sc:Text> 
+                                <asp:Literal runat="server" ID="ltNavigationTitle" ></asp:Literal>
+                               <%-- <sc:Text runat="server" Field="Navigation Title" Id="scNavigationTitle"></sc:Text> --%>
                             </div>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
                
-                <%--<div class="rsContent">
-    <p class="title"></p>
-    <a href="REPLACE">
-    <img alt="630x354 Placeholder" class="rsImg" src="http://placehold.it/630x354" /></a>
-    <div class="rsTmb">Tips: Trouble Following Directions</div>
-  </div>
-  <div class="rsContent">
-    <p class="title"></p>
-    <a href="REPLACE">
-    <img alt="630x354 Placeholder" class="rsImg" src="http://placehold.it/630x354" /></a>
-    <div class="rsTmb">Expert Webinar: Time- Blindedness and ADHD</div>
-  </div>
-  <div class="rsContent">
-    <p class="title"></p>
-    <a href="REPLACE">
-    <img alt="630x354 Placeholder" class="rsImg" src="http://placehold.it/630x354" /></a>
-    <div class="rsTmb">Grab this summer-friendly book list</div>
-  </div>--%>
             </div>
             <!-- END PARTIAL: topic-carousel -->
 

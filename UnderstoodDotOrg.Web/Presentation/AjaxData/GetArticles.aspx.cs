@@ -9,7 +9,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 
 namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
@@ -33,7 +33,7 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
                 parentId = Request["itemID"].ToString();
                 TopicLandingPageItem objContextItem = Sitecore.Context.Database.GetItem(parentId);
                 if (objContextItem.SliderCuratedFeaturedcontent != null) {
-                    List<Item> articles = objContextItem.SliderCuratedFeaturedcontent.ListItems;
+                    List<Item> articles = objContextItem.CuratedFeaturedcontent.ListItems;
                     if (articles.Any()) {
                         rptArticleListing.DataSource = articles.Skip(clickCount * resultsPeClick).Take(resultsPeClick).ToList();
                         rptArticleListing.DataBind();

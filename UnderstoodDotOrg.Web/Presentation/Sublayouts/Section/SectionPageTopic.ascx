@@ -4,9 +4,7 @@
     <div class="row">
         <div class="col col-23 offset-1">
             <asp:HyperLink runat="server" ID="hlBackLink" CssClass="back-to-previous"><i class="icon-arrow-left-blue"></i>Homepage</asp:HyperLink>
-           <%-- <a class="back-to-previous" href="REPLACE"><i class="icon-arrow-left-blue"></i>Homepage</a>--%>
-
-            <h1><%--School &amp; Learning--%>
+           <h1>
                 <asp:Literal runat="server" ID="scTopicTitle" ></asp:Literal>
             </h1>
 

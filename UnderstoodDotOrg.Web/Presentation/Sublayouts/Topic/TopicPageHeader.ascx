@@ -52,7 +52,7 @@
 
       <div class="label-menu"><span>Menu</span></div>
       <ul class="menu">
-        <li class="title"><span>Overview1</span> <i class="icon-hide-show-fff"></i></li>
+        <li class="title"><span>Overview</span> <i class="icon-hide-show-fff"></i></li>
         <li class="submenu">
           <div class="inner">
             <div class="label-more"><span>More <i class="icon-hide-show-fff"></i></span></div>
@@ -64,19 +64,7 @@
                             </span></li>
                     </ItemTemplate>
                 </asp:Repeater>
-              <%--<li><span><a href="REPLACE" class="selected">Overview</a></span></li>
-              <li><span><a href="REPLACE">Organization</a></span></li>
-              <li><span><a href="REPLACE">Encouraging Reading &amp; Writing</a></span></li>
-              <li><span><a href="REPLACE">Following Directions</a></span></li>
-              <li><span><a href="REPLACE">Encouraging Advocacy</a></span></li>
-              <li><span><a href="REPLACE">Homework &amp; Study Skills</a></span></li>
-              <li><span><a href="REPLACE">Games &amp; Skill Builders</a></span></li>
-              <li><span><a href="REPLACE">Different Skill Builders</a></span></li>
-              <li><span><a href="REPLACE">Building on Strengths</a></span></li>
-              <li><span><a href="REPLACE">Item One</a></span></li>
-              <li><span><a href="REPLACE">Item Two</a></span></li>
-              <li><span><a href="REPLACE">Item Three</a></span></li>
-              <li><span><a href="REPLACE">Item Four</a></span></li>--%>
+            
             </ul>
           </div><!-- .inner -->
         </li><!-- .submenu -->
