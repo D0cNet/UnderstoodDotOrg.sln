@@ -169,7 +169,12 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
             return likes;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username">Unique username to be used in the Telligent Community</param>
+        /// <param name="password"></param>
+        /// <param name="email">Unique email to be used in the Telligent Community</param>
         public static void CreateUser(/*User user*/string username, string password, string email)
         {
             try
