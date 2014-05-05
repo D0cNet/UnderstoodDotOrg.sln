@@ -26,7 +26,7 @@ namespace UnderstoodDotOrg.Domain.Search
             pred = pred.And(a => a.Language == "en");
 
             // Include only articles
-            pred = pred.And(a => a.Templates.Contains(ID.Parse(DefaultArticlePageItem.TemplateId)));
+            pred = pred.And(GetInheritsArticlePredicate());
 
             // Exclude articles marked for exclusion
             pred = pred.And(a => !a.OverrideTypes.Contains(ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization)));
@@ -34,6 +34,11 @@ namespace UnderstoodDotOrg.Domain.Search
             // TODO: Exclude items interacted by member
 
             return pred;                               
+        }
+
+        private static Expression<Func<Article, bool>> GetInheritsArticlePredicate()
+        {
+            return (a => a.Templates.Contains(ID.Parse(DefaultArticlePageItem.TemplateId)));
         }
 
         private static Expression<Func<Article, bool>> GetTimelyPredicate(DateTime date)
@@ -212,6 +217,16 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;
         }
 
+        private static Expression<Func<Article, bool>> GetCombinedChildPredicate(Child child)
+        {
+            return PredicateBuilder.True<Article>()
+                .And(GetChildGradesPredicate(child))
+                .And(GetChildIssuesPredicate(child))
+                .And(GetChildDiagnosisPredicate(child))
+                .And(GetChildIEP504Predicate(child))
+                .And(GetChildEvaluationPredicate(child));
+        }
+
         #endregion
 
         private static Expression<Func<Article, bool>> GetMustReadPredicate()
@@ -221,7 +236,6 @@ namespace UnderstoodDotOrg.Domain.Search
 
         private static Expression<Func<Article, bool>> GetExcludeArticlesPredicate(List<Article> articles)
         {
-            ParameterExpression pe = Expression.Parameter(typeof(Article), "a");
             Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
 
             foreach (Article article in articles)
@@ -233,11 +247,11 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;
         }
 
-        private static List<int> GetRandomKeys(IQueryable<Article> query)
+        private static List<int> GetRandomKeys(IQueryable<Article> query, int totalKeys)
         {
             List<int> keys = new List<int>();
             int totalMatches = query.Count();
-            int limit = Math.Min(totalMatches, 8); // TODO: use constant
+            int limit = Math.Min(totalMatches, totalKeys);
             Random rand = new Random();
             while (keys.Count != limit)
             {
@@ -251,11 +265,11 @@ namespace UnderstoodDotOrg.Domain.Search
             return keys;
         }
 
-        private static List<Article> GetRandomBucket(IQueryable<Article> query)
+        private static List<Article> GetRandomBucketArticles(IQueryable<Article> query, int totalEntries)
         {
             List<Article> articles = new List<Article>();
 
-            foreach (int i in GetRandomKeys(query))
+            foreach (int i in GetRandomKeys(query, totalEntries))
             {
                 Article random = (i == 0) ? query.First() : query.Skip(i).First();
 
@@ -263,6 +277,17 @@ namespace UnderstoodDotOrg.Domain.Search
             }
 
             return articles;
+        }
+
+        private static void AddFromBucket(IQueryable<Article> query, ref List<Article> result)
+        {
+            int currentEntries = result.Count();
+            if (currentEntries < Constants.PERSONALIZATION_ARTICLES_PER_USER)
+            {
+                // Calculate remaining spots
+                int spotsToFill = Math.Min(Constants.PERSONALIZATION_ARTICLES_PER_USER - currentEntries, Constants.PERSONALIZATION_ARTICLES_PER_BUCKET);
+                result.AddRange(GetRandomBucketArticles(query, spotsToFill));
+            }
         }
 
         public static List<Article> GetArticles(Member member, Child child, DateTime date)
@@ -279,23 +304,32 @@ namespace UnderstoodDotOrg.Domain.Search
                 // Inclusion/Exclusion processing based on member and child
                 var matchingArticlesQuery = allArticlesQuery
                                     .Where(GetMemberInterestsPredicate(member))
-                                    .Where(GetChildGradesPredicate(child))
-                                    .Where(GetChildIssuesPredicate(child))
-                                    .Where(GetChildDiagnosisPredicate(child))
-                                    .Where(GetChildIEP504Predicate(child))
-                                    .Where(GetChildEvaluationPredicate(child));
+                                    .Where(GetCombinedChildPredicate(child));
 
                 int totalMatches = matchingArticlesQuery.GetResults().TotalSearchResults;
 
+                // NOTE: Converting query to list will populate custom search result class
+                // Ideally this would be avoided until items need to be selected, but 
                 List<Article> matchingArticles = matchingArticlesQuery.Take(totalMatches).ToList();
 
                 List<Article> toProcess = new List<Article>();
+
+                // 0 - Grab timely articles
+                var timelyQuery = matchingArticles.AsQueryable()
+                                    .Where(GetTimelyPredicate(date));
+                int timelyMatches = timelyQuery.Count();
+
+                if (timelyMatches > 0)
+                {
+                    int resultsToTake = Math.Min(timelyMatches, Constants.PERSONALIZATION_ARTICLES_PER_USER);
+                    toProcess.AddRange(timelyQuery.Take(resultsToTake).ToList());
+                }
 
                 // 1 - Child Grade
                 var firstQuery = matchingArticles.AsQueryable()
                                     .Where(GetChildGradesPredicate(child));
 
-                toProcess.AddRange(GetRandomBucket(firstQuery));
+                AddFromBucket(firstQuery, ref toProcess);
 
                 // 2 - Child Issues / Diagnosis
                 var secondQuery = matchingArticles.AsQueryable()
@@ -303,36 +337,46 @@ namespace UnderstoodDotOrg.Domain.Search
                                     .Where(GetChildDiagnosisPredicate(child))
                                     .Where(GetChildIssuesPredicate(child));
 
-                toProcess.AddRange(GetRandomBucket(secondQuery));
+                AddFromBucket(secondQuery, ref toProcess);
 
                 // 3 - Parent interest
                 var thirdQuery = matchingArticles.AsQueryable()
                                     .Where(GetExcludeArticlesPredicate(toProcess))
                                     .Where(GetMemberInterestsPredicate(member));
 
-                toProcess.AddRange(GetRandomBucket(thirdQuery));
+                AddFromBucket(thirdQuery, ref toProcess);
 
                 // 4 - Must read
                 var fourthQuery = matchingArticles.AsQueryable()
                                     .Where(GetExcludeArticlesPredicate(toProcess))
                                     .Where(GetMustReadPredicate());
 
-                toProcess.AddRange(GetRandomBucket(fourthQuery));
+                AddFromBucket(fourthQuery, ref toProcess);
 
                 // 5 - IEP/504
                 var fifthQuery = matchingArticles.AsQueryable()
-                                    .Where(GetExcludeArticlesPredicate(toProcess))
                                     .Where(GetChildIEP504Predicate(child));
 
-                toProcess.AddRange(GetRandomBucket(fifthQuery));
+                AddFromBucket(fifthQuery, ref toProcess);
 
                 // Backfill
-                if (toProcess.Count() < Constants.PERSONALIZATION_ARTICLES_PER_USER)
+                int spotsToFill = Constants.PERSONALIZATION_ARTICLES_PER_USER - toProcess.Count();
+                if (spotsToFill > 0)
                 {
+                    var backfillQuery = allArticlesQuery
+                                            .Where(GetMemberBackfillInterestsPredicate(member))
+                                            .Where(GetCombinedChildPredicate(child));
 
+                    int backfillMatches = backfillQuery.GetResults().TotalSearchResults;
+
+                    List<Article> backfill = backfillQuery.Take(backfillMatches).ToList();
+
+                    var filteredBackfill = backfill.AsQueryable().Where(GetExcludeArticlesPredicate(toProcess));
+
+                    toProcess.AddRange(GetRandomBucketArticles(filteredBackfill, spotsToFill));
                 }
 
-                // Timely and Must Read can overlap, so only include unique entries.
+                // Post Process
 
                 var resp = System.Web.HttpContext.Current.Response;
                 resp.Write(String.Format("Total articles to search: {0}<br>", allArticlesQuery.GetResults().TotalSearchResults));

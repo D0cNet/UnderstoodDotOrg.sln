@@ -9,6 +9,7 @@ namespace UnderstoodDotOrg.Common
     public static class Constants
     {
         public const int PERSONALIZATION_ARTICLES_PER_USER = 40;
+        public const int PERSONALIZATION_ARTICLES_PER_BUCKET = 8;
 
         #region Query Strings
 
