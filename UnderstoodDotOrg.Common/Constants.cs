@@ -210,6 +210,13 @@ namespace UnderstoodDotOrg.Common
             public static string StatusIEPYes = "{FBE464C6-0E52-45C5-A1E9-660CB3C6B688}";
         }
 
+        public enum TelligentRole
+        {
+            Expert,
+            Moderator,
+            Blogger,
+            Member
+        }
         public static class Settings
         {
             public static string TelligentConfig = "TelligentConfig";

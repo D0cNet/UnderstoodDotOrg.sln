@@ -23,39 +23,25 @@
                         <div id="parents-search-grade-slider"></div>
                         <input type="hidden" name="parents-search-grade" id="parents-search-grade" data-collision="2" data-start-low="prek" data-start-high="8" data-values="prek,1,2,3,4,5,6,7,8,9,10,11,12,adult" data-labels="Pre-K,Grade 1,Grade 2,Grade 3,Grade 4,Grade 5,Grade 6,Grade 7,Grade 8,Grade 9,Grade 10,Grade 11,Grade 12,Adult"/>
                     </div>
-                    <asp:ListView ID="lvChildIssues"  runat="server">
-                        <LayoutTemplate>
-                             <select name="parents-search-issue" id="parents-search-issue" aria-required="true">
-                                  <option value="">Child's Issues</option>
-                                 <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
-                             </select>
-                        </LayoutTemplate>
-
-                        <ItemTemplate>
-                            <option value='<%#Eval("Id") %>'><%#Eval("Name") %></option>
-                        </ItemTemplate>
-                    </asp:ListView>
+                    <asp:DropDownList name="parents-search-issue"  AppendDataBoundItems="true" DataTextField="Name" DataValueField="Id" ID="ddlChildIssues" aria-required="true" runat="server">
+                        <asp:ListItem  Value=""  >Child's Issue</asp:ListItem>
+                       
+                    </asp:DropDownList>
+   
                    
                       
-                        
-                    <asp:ListView ID="lvTopics"  runat="server">
-                        <LayoutTemplate>
-                             <select name="parents-search-topic" id="parents-search-topic" aria-required="true">
-                                  <option value="">Topic</option>
-                                 <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
-                             </select>
-                        </LayoutTemplate>
-
-                        <ItemTemplate>
-                            <option value='<%#Eval("Id") %>'><%#Eval("Name") %></option>
-                        </ItemTemplate>
-                    </asp:ListView>
+                         <asp:DropDownList name="parents-search-topic" DataTextField="Name" AppendDataBoundItems="true" DataValueField="Id" ID="ddlTopics" aria-required="true" runat="server">
+                        <asp:ListItem Value="">Topic</asp:ListItem>
+                       
+                    </asp:DropDownList>
+           
                   
                 
 
 
                     <div class="checkboxes">
                         <div class="checkbox">
+                            
                            <%-- <input type="checkbox" name="search-include-members" id="search-include-members" checked="checked" />
                             <label for="search-include-members" class="label-checkbox">Members</label>--%>
                             <asp:CheckBox runat="server" ID="memberChkbx" name="search-include-members" ClientIDMode="Static" CssClass="label-checkbox" Text="Members" Checked="true" />
@@ -71,7 +57,7 @@
                              <asp:CheckBox runat="server" ID="expertChkbx" ClientIDMode="Static" CssClass="label-checkbox" Text="Experts"  Checked="true" />
                         </div>
                     </div>
-                    <asp:Button CssClass="button"  Text="Search" runat="server" ID="btnSearch" />
+                    <asp:Button CssClass="button"  Text="Search" OnClick="btnSearch_Click" runat="server" ID="btnSearch" />
                  <%--   <button class="button">Search</button>--%>
 
                 </div>
@@ -112,7 +98,7 @@
                                     </div><!-- end .member-card-info -->  
                                     <div class="member-card-specialties">
                         
-                                        <asp:Repeater ID="rptChildCard"  ClientIDMode="Static" runat="server">
+                                        <asp:Repeater ID="rptChildCard" OnItemDataBound="rptChildCard_ItemDataBound"  ClientIDMode="Static" runat="server">
                                             <HeaderTemplate>
                                                 <ul>
                                                 <span class="visuallyhidden">grade level</span>
@@ -135,7 +121,7 @@
 									                            <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>
 								                            </div><!-- end .arrows -->
 									                            <!-- END PARTIAL: community/carousel_arrows -->
-                                                         <asp:Repeater ID="rptChildIssues" runat="server" >
+                                                         <asp:Repeater ID="rptChildIssues"   ClientIDMode="Static" runat="server" >
                                                              <HeaderTemplate>
                                                                  <ul>
                                                              </HeaderTemplate>

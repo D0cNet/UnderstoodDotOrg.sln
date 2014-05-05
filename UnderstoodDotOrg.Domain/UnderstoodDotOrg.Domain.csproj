@@ -298,6 +298,7 @@
     <Compile Include="TelligentCommunity\CommunityHelper.cs" />
     <Compile Include="TelligentCommunity\CommunityManager.cs" />
     <Compile Include="Understood\Common\ChildCardModel.cs" />
+    <Compile Include="Understood\Common\ChildExtensions.cs" />
     <Compile Include="Understood\Common\GradeModel.cs" />
     <Compile Include="Understood\Common\IssueModel.cs" />
     <Compile Include="Understood\Common\MemberCardModel.cs" />
