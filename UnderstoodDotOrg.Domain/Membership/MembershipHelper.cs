@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Importer;
 
 namespace UnderstoodDotOrg.Domain.Membership
@@ -16,20 +17,23 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             switch (nextStep)
             {
-                case 1:
-                    id = "{2A9B3FBC-208F-4DA0-8BC5-9024CA8D6F4E}";
+                case 0: //sign up page
+                    id = Constants.Pages.SignUp.ToString();
                     break;
-                case 2:
-                    id = "{417F1D9E-E74E-4CE2-879F-CA7D38D0E43F}";
+                case 1: //page 1 - kids, gender, grades
+                    id = Constants.Pages.Registration1.ToString();
                     break;
-                case 3:
-                    id = "{95B73EB6-323A-46F8-BA21-C4F57712BE86}";
+                case 2: //page 2 - repeats, nicknames, issues, nicknames
+                    id = Constants.Pages.Registration2.ToString();
                     break;
-                case 4:
-                    id = "{907EAD93-A2AB-48ED-886C-2DF985375803}";
+                case 3: //page 3 - repeats and conditional, diagnosis, IEP/504 status
+                    id = Constants.Pages.Registration3.ToString();
                     break;
-                case 5:
-                    id = "{FE5442E8-CC81-4D9C-926B-2745DF398829}";
+                case 4: //page 4 - parent issues, community registration
+                    id = Constants.Pages.Registration4.ToString();
+                    break;
+                case 5: //page 5 - confirmation
+                    id = Constants.Pages.Registration5.ToString();
                     break;
                 default:
                     ret = "/";
