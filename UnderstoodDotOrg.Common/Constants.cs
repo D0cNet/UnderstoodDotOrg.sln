@@ -78,6 +78,70 @@ namespace UnderstoodDotOrg.Common
                     return new Guid("{D4E382E1-34D1-47DB-8430-9EE4A1545B25}");
                 }
             }
+
+            public static Guid MyProfile
+            {
+                get
+                {
+                    return new Guid("{D8217E23-B6B3-4F51-A1F7-5E9673F18381}");
+                }
+            }
+
+            public static Guid SignIn
+            {
+                get
+                {
+                    return new Guid("{31F94423-5969-4506-B782-C3B8E5A2F7B9}");
+                }
+            }
+
+            public static Guid SignUp
+            {
+                get
+                {
+                    return new Guid("{B313DB7F-1EB4-45AF-B448-C1091239A91B}");
+                }
+            }
+
+            public static Guid Registration1
+            {
+                get
+                {
+                    return new Guid("{2A9B3FBC-208F-4DA0-8BC5-9024CA8D6F4E}");
+                }
+            }
+
+            public static Guid Registration2
+            {
+                get
+                {
+                    return new Guid("{417F1D9E-E74E-4CE2-879F-CA7D38D0E43F}");
+                }
+            }
+
+            public static Guid Registration3
+            {
+                get
+                {
+                    return new Guid("{95B73EB6-323A-46F8-BA21-C4F57712BE86}");
+                }
+            }
+
+            public static Guid Registration4
+            {
+                get
+                {
+                    return new Guid("{907EAD93-A2AB-48ED-886C-2DF985375803}");
+                }
+            }
+
+            public static Guid Registration5
+            {
+                get
+                {
+                    return new Guid("{FE5442E8-CC81-4D9C-926B-2745DF398829}");
+                }
+            }
         }
 
         #endregion
