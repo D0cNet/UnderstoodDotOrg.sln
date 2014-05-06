@@ -133,6 +133,22 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string CancelButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Cancel Button Text");
+            }
+        }
+
+        public static string SaveButtonText 
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Save Button Text");
+            }
+        }
+
         #endregion
 
         #region Input Placeholders
