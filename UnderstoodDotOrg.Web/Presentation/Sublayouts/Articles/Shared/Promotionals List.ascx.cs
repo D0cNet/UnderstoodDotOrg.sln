@@ -143,20 +143,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                 }
                
                
-                frPromo1.Item = FinalRelatedArticles.ElementAt(0);
+                frPromo1.Item = FinalRelatedArticles.ElementAt(0).InnerItem;
                 hlPromo1.NavigateUrl = FinalRelatedArticles.ElementAt(0).InnerItem.GetUrl();
-                hlPromo1.Text = FinalRelatedArticles.ElementAt(0).InnerItem.Name;
+              //hlPromo1.Text = FinalRelatedArticles.ElementAt(0).InnerItem.Name;
                 hlPromo1.Visible = true;
 
-                frPromo2.Item= FinalRelatedArticles.ElementAt(1);
+                frPromo2.Item= FinalRelatedArticles.ElementAt(1).InnerItem;
                 hlPromo2.NavigateUrl = FinalRelatedArticles.ElementAt(1).InnerItem.GetUrl();
-                hlPromo2.Text = FinalRelatedArticles.ElementAt(1).InnerItem.Name;
+                //hlPromo2.Text = FinalRelatedArticles.ElementAt(1).InnerItem.Name;
                 hlPromo2.Visible = true;
 
 
-                frPromo3.Item=  FinalRelatedArticles.ElementAt(2);
+                frPromo3.Item=  FinalRelatedArticles.ElementAt(2).InnerItem;
                 hlPromo3.NavigateUrl = FinalRelatedArticles.ElementAt(2).InnerItem.GetUrl();
-                hlPromo3.Text = FinalRelatedArticles.ElementAt(2).InnerItem.Name;
+               //hlPromo3.Text = FinalRelatedArticles.ElementAt(2).InnerItem.Name;
                 hlPromo3.Visible = true;
                 
             }

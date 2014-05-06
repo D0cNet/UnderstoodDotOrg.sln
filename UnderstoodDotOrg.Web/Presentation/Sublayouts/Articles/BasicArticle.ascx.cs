@@ -47,7 +47,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     dtReviewdDate.Field = "Reviewed Date";
                     dtReviewdDate.Format = "dd MMM yy";
                 }
+                if (ObjBasicArticle.ShowPromotionalControl.Checked == true)
+                {
+                    sbSidebarPromo.Visible = true;
+                }
+                else
+                {
 
+                    sbSidebarPromo.Visible = false;
+                }
                 //if (ObjBasicArticle.DefaultArticlePage.HideRelatedActiveLinks.Checked == false) // Show Articles
                 //{
                 //    DefaultArticlePageItem ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;

@@ -229,7 +229,7 @@
             <!-- END PARTIAL: bullet-point-with-image -->
             --%>
             <div class="article-copy">
-                    <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
+                <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
             </div>
             <!-- BEGIN PARTIAL: key-takeaways -->
             <div class="key-takeaways">
@@ -255,7 +255,7 @@
                 </header>
                 <%--<img src="http://placehold.it/60x60" alt="REPLACE">--%>
                 <asp:HyperLink ID="hlAuthorImage" runat="server">
-                    <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server"  Width="60px" Height="60px" />
+                    <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server" Width="60px" Height="60px" />
                 </asp:HyperLink>
 
                 <div class="author-text">
@@ -270,7 +270,6 @@
                     <asp:HyperLink ID="hlAuthorMorePost" runat="server" Text="More Posts by this Author">
                     </asp:HyperLink>
                     <%--<a href="REPLACE">More Posts by this Author</a>--%>
-
                 </div>
             </section>
             <!-- END PARTIAL: about-the-author -->
@@ -278,8 +277,8 @@
             <p class="reviewed-by">
                 <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
                     <%--<a href="REPLACE">Dr. Samantha Frank</a>--%>
-                   <asp:HyperLink ID="hlReviewdby" runat="server">
-                       <sc:FieldRenderer ID="frReviewedby" runat="server" FieldName="Revierwer Name" />
+                    <asp:HyperLink ID="hlReviewdby" runat="server">
+                        <sc:FieldRenderer ID="frReviewedby" runat="server" FieldName="Revierwer Name" />
                     </asp:HyperLink>
                 </span><span class="dot"></span><span class="reviewed-by-date">
                     <%--12&nbsp;Dec&nbsp;&apos;13 --%>
@@ -317,7 +316,7 @@
                         Nook</a></li>
                 </ul>
             </div>--%>
-           
+
             <!-- END PARTIAL: keep-reading-mobile -->
             <!-- BEGIN PARTIAL: article-poll -->
             <section class="article-poll">
@@ -424,7 +423,7 @@
             </div>
             <!-- BEGIN PARTIAL: keep-reading-lg -->
             <div class="keep-reading keep-reading-lg">
-                 <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
+                <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
             </div>
             <!-- END PARTIAL: keep-reading-lg -->
             <!-- BEGIN PARTIAL: comments-summary -->
@@ -447,7 +446,9 @@
             </section>
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
-            <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx"/>
+            <div class="sidebar-promos rs_read_this vertical">
+                <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
+            </div>
             <%--<div class="sidebar-promos">
                 <div class="promo purple-dark">
                     <a href="REPLACE"><span>Get advice</span> <i class="icon-arrow-promo"></i></a>
@@ -681,6 +682,6 @@
     <!-- .row -->
 </div> --%>
 <!-- .container -->
-<sc:Placeholder Key="slComment" runat="server" />
+<sc:Placeholder ID="Placeholder1" Key="slComment" runat="server" />
 <%--<sc:Sublayout ID="slComment" runat="server" Path="~/Presentation/Sublayouts/Articles/Comments.ascx" />--%>
 <!-- BEGIN PARTIAL: footer -->
