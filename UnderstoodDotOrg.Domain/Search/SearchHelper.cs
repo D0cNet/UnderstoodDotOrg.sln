@@ -26,7 +26,7 @@ namespace UnderstoodDotOrg.Domain.Search
             pred = pred.And(a => a.Language == "en");
 
             // Exclude templates
-            pred = pred.And(a => !a.Fullpath.Contains("/sitecore/templates/"));
+            pred = pred.And(a => !a.Fullpath.StartsWith("/sitecore/templates/"));
 
             // Include only articles
             pred = pred.And(GetInheritsArticlePredicate());
@@ -34,7 +34,7 @@ namespace UnderstoodDotOrg.Domain.Search
             // Exclude articles marked for exclusion
             pred = pred.And(a => !a.OverrideTypes.Contains(ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization)));
 
-            // TODO: Exclude items interacted by member
+            // TODO: Exclude items interacted by member - MemberActivity table
 
             return pred;                               
         }
@@ -54,6 +54,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
 
+            // Require true statement for sequence of and - Sitecore bug
+
             // Start date only
             pred = pred
                 .Or(a => a.TimelyStart != DateTime.MinValue && a.TimelyEnd == DateTime.MinValue
@@ -65,8 +67,10 @@ namespace UnderstoodDotOrg.Domain.Search
                 && a.TimelyEnd >= comparisonDate);
 
             // Start and end dates
+            // Sitecore bug requires true statement first if you have a sequence of AND negation checks
             pred = pred
-                .Or(a => a.TimelyStart != DateTime.MinValue && a.TimelyEnd != DateTime.MinValue
+                .Or(a => a.Paths.Contains(Sitecore.ItemIDs.RootID) && 
+                    a.TimelyStart != DateTime.MinValue && a.TimelyEnd != DateTime.MinValue
                 && a.TimelyStart <= comparisonDate && a.TimelyEnd >= comparisonDate);
 
             return pred;
@@ -95,7 +99,7 @@ namespace UnderstoodDotOrg.Domain.Search
             Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
 
             // Workaround Sitecore bug - require a single true condition
-            pred = pred.And(a => a.Paths.Contains(Sitecore.ItemIDs.RootID));
+            pred = pred.And(GetAlwaysTruePredicate());
             
             // Exclude member interests
             foreach (var interest in member.Interests)
@@ -119,28 +123,30 @@ namespace UnderstoodDotOrg.Domain.Search
 
             Expression<Func<Article, bool>> innerPred = PredicateBuilder.True<Article>();
 
+            innerPred = innerPred.And(GetAlwaysTruePredicate());
+
             if (child.IEPStatus == Guid.Parse(Constants.ChildEvaluation.StatusIEPInProgress)
                 || child.IEPStatus == Guid.Parse(Constants.ChildEvaluation.StatusIEPYes))
             {
-                pred = pred.Or(a => a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.EvaluatedIEP)));
+                innerPred = innerPred.And(a => a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.EvaluatedIEP)));
             }
             else if (child.IEPStatus == Guid.Parse(Constants.ChildEvaluation.StatusIEPNo))
             {
-                pred = pred.Or(a => !a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.EvaluatedIEP)));
+                innerPred = innerPred.And(a => !a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.EvaluatedIEP)));
             }
 
-            // TODO: 504 status
+            // 504 status
             if (child.Section504Status == Guid.Parse(Constants.ChildEvaluation.Status504InProgress)
                 || child.Section504Status == Guid.Parse(Constants.ChildEvaluation.Status504Yes)) 
             {
-                pred = pred.Or(a => a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.Evaluated504)));
+                innerPred = innerPred.And(a => a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.Evaluated504)));
             }
             else if (child.Section504Status == Guid.Parse(Constants.ChildEvaluation.Status504No)) 
             {
-                pred = pred.Or(a => !a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.Evaluated504)));
+                innerPred = innerPred.And(a => !a.ApplicableEvaluations.Contains(ID.Parse(Constants.ArticleTags.Evaluated504)));
             }
 
-            return pred;
+            return pred.Or(innerPred);
         }
 
         private static Expression<Func<Article, bool>> GetChildEvaluationPredicate(Child child)
@@ -240,12 +246,17 @@ namespace UnderstoodDotOrg.Domain.Search
             return (a => a.ImportanceLevels.Contains(ID.Parse(Constants.ArticleTags.MustRead)));
         }
 
+        private static Expression<Func<Article, bool>> GetAlwaysTruePredicate()
+        {
+            return (a => a.Paths.Contains(Sitecore.ItemIDs.RootID));
+        }
+
         private static Expression<Func<Article, bool>> GetExcludeArticlesPredicate(List<Article> articles)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
 
             // Workaround Sitecore bug - require a single true condition
-            pred = pred.And(a => a.Paths.Contains(Sitecore.ItemIDs.RootID));
+            pred = pred.And(GetAlwaysTruePredicate());
             
             foreach (Article article in articles)
             {
@@ -259,7 +270,7 @@ namespace UnderstoodDotOrg.Domain.Search
         private static List<int> GetRandomKeys(IQueryable<Article> query, int totalKeys)
         {
             List<int> keys = new List<int>();
-            int totalMatches = query.Count();
+            int totalMatches = query.Take(1).GetResults().TotalSearchResults;
             int limit = Math.Min(totalMatches, totalKeys);
             Random rand = new Random();
             while (keys.Count != limit)
@@ -280,7 +291,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
             foreach (int i in GetRandomKeys(query, totalEntries))
             {
-                Article random = (i == 0) ? query.First() : query.Skip(i).First();
+                Article random = (i == 0) ? query.Take(1).First() : query.Skip(i).Take(1).First();
 
                 articles.Add(random);
             }
@@ -307,26 +318,23 @@ namespace UnderstoodDotOrg.Domain.Search
             using (var ctx = index.CreateSearchContext())
             {
                 // Pre-process
+                // Filter performs no relevancy scoring
                 var allArticlesQuery = ctx.GetQueryable<Article>()
-                                    .Where(GetBasePredicate(member));
+                                    .Filter(GetBasePredicate(member));
 
                 // Inclusion/Exclusion processing based on member and child
                 var matchingArticlesQuery = allArticlesQuery
                                     .Where(GetMemberInterestsPredicate(member))
                                     .Where(GetCombinedChildPredicate(child));
 
-                int totalMatches = matchingArticlesQuery.GetResults().TotalSearchResults;
-
-                // NOTE: Converting query to list will populate custom search result class
-                // Ideally this would be avoided until items need to be selected, but 
-                IQueryable<Article> matchingArticles = matchingArticlesQuery.Take(totalMatches);
+                int totalMatches = matchingArticlesQuery.Take(1).GetResults().TotalSearchResults;
 
                 List<Article> toProcess = new List<Article>();
 
                 // 0 - Grab timely articles
-                var timelyQuery = matchingArticles
+                var timelyQuery = matchingArticlesQuery
                                     .Where(GetTimelyPredicate(date));
-                int timelyMatches = timelyQuery.Count();
+                int timelyMatches = timelyQuery.Take(1).GetResults().TotalSearchResults;
 
                 if (timelyMatches > 0)
                 {
@@ -334,37 +342,38 @@ namespace UnderstoodDotOrg.Domain.Search
                     toProcess.AddRange(timelyQuery.Take(resultsToTake).ToList());
                 }
 
+                // The buckets diagrammed by Digital Pulp all contain inclusive search terms
+                // Additional filtering is broken out to match diagram, but effectively does no
+                // extra filtering save for timely, must read, and backfill
+
                 // 1 - Child Grade
-                var firstQuery = matchingArticles
-                                    .Where(GetChildGradesPredicate(child));
+                var firstQuery = matchingArticlesQuery
+                                    .Filter(GetExcludeArticlesPredicate(toProcess));
 
                 AddFromBucket(firstQuery, ref toProcess);
 
                 // 2 - Child Issues / Diagnosis
-                var secondQuery = matchingArticles
-                                    .Where(GetExcludeArticlesPredicate(toProcess))
-                                    .Where(GetChildDiagnosisPredicate(child))
-                                    .Where(GetChildIssuesPredicate(child));
+                var secondQuery = matchingArticlesQuery
+                                    .Filter(GetExcludeArticlesPredicate(toProcess));
 
                 AddFromBucket(secondQuery, ref toProcess);
 
                 // 3 - Parent interest
-                var thirdQuery = matchingArticles
-                                    .Where(GetExcludeArticlesPredicate(toProcess))
-                                    .Where(GetMemberInterestsPredicate(member));
+                var thirdQuery = matchingArticlesQuery
+                                    .Filter(GetExcludeArticlesPredicate(toProcess));
 
                 AddFromBucket(thirdQuery, ref toProcess);
 
                 // 4 - Must read
-                var fourthQuery = matchingArticles
-                                    .Where(GetExcludeArticlesPredicate(toProcess))
+                var fourthQuery = matchingArticlesQuery
+                                    .Filter(GetExcludeArticlesPredicate(toProcess))
                                     .Where(GetMustReadPredicate());
 
                 AddFromBucket(fourthQuery, ref toProcess);
 
                 // 5 - IEP/504
-                var fifthQuery = matchingArticles
-                                    .Where(GetChildIEP504Predicate(child));
+                var fifthQuery = matchingArticlesQuery
+                                    .Filter(GetExcludeArticlesPredicate(toProcess));
 
                 AddFromBucket(fifthQuery, ref toProcess);
 
@@ -373,22 +382,18 @@ namespace UnderstoodDotOrg.Domain.Search
                 if (spotsToFill > 0)
                 {
                     var backfillQuery = allArticlesQuery
-                                            .Where(GetExcludeArticlesPredicate(toProcess))
+                                            .Filter(GetExcludeArticlesPredicate(toProcess))
                                             .Where(GetMemberBackfillInterestsPredicate(member))
                                             .Where(GetCombinedChildPredicate(child));
 
-                    int backfillMatches = backfillQuery.GetResults().TotalSearchResults;
-
-                    IQueryable<Article> backfill = backfillQuery.Take(backfillMatches);
-
-                    toProcess.AddRange(GetRandomBucketArticles(backfill, spotsToFill));
+                    toProcess.AddRange(GetRandomBucketArticles(backfillQuery, spotsToFill));
                 }
 
                 // Post Process
 
                 var resp = System.Web.HttpContext.Current.Response;
-                resp.Write(String.Format("Total articles to search: {0}<br>", allArticlesQuery.GetResults().TotalSearchResults));
-                resp.Write(String.Format("Matches: {0}<br>", totalMatches));
+                resp.Write(String.Format("Total articles to search: {0}<br>", allArticlesQuery.Take(1).GetResults().TotalSearchResults));
+                resp.Write(String.Format("Matches: {0}<br><br>", totalMatches));
                 //resp.Write(String.Format("Timely: {0}<br>", timelyArticles.Count()));
                 //resp.Write(String.Format("Must: {0}<br><br>", mustReadArticles.Count()));
 
