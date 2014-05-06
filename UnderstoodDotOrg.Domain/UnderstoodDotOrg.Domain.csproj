@@ -51,8 +51,7 @@
       <HintPath>..\Libraries\Sitecore.ContentSearch.Linq.Solr.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\..\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Kernel.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\Libraries\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
