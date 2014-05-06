@@ -28,28 +28,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     hlAuthorName.NavigateUrl = ObjDefArticle.AuthorName.Item.GetUrl();
                     hlAuthorName.Text = ObjDefArticle.AuthorName.Item.Name;
                     hlAuthorName.Visible = true;
-                    //  frSummary.Visible = false;
                 }
-                //BasicArticlePageItem ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
-                //if (ObjBasicArticle != null && ObjBasicArticle.DefaultArticlePage.AuthorName.Item != null)
-                //{
-                //    frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                //    hlAuthorName.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.GetUrl();
-                //    hlAuthorName.Text = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Name;
-                //    hlAuthorName.Visible = true;
-                //    frSummary.Visibldefae = false;
-                //}
+                frSectionTitle.Item = Sitecore.Context.Item.Parent;
+                hlSectionTitle.Text = Sitecore.Context.Item.Parent.Name;
+                hlSectionTitle.NavigateUrl = Sitecore.Context.Item.Parent.GetUrl();
             }
-            //else
-            //{
-            //    if (Sitecore.Context.Item.TemplateID.ToString() != AboutUnderstoodItem.TemplateId)
-            //    {
-            //        frSummary.Item = Sitecore.Context.Item;
-            //        frSummary.Visible = false;
-            //        hlAuthorName.Visible = false;
-            //    }
 
-            //}
         }
     }
 }

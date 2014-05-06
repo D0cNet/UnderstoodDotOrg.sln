@@ -6,18 +6,23 @@
 <div class="container page-topic <%= AdditionalCssClass %>">
     <div class="row">
         <div class="col col-14 offset-1">
-
-            <h1><%--Technology that Can Help--%>
-                <sc:FieldRenderer ID="rfTitle" runat="server" FieldName="Page Title" />
-            </h1>
-            <p class="page-subtitle">
-                <%--Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas --%>
-                <%--<sc:FieldRenderer ID="frSummary" runat="server" FieldName="Page Summary" />--%>
-                <asp:HyperLink ID="hlAuthorName" runat="server">
-                    <sc:FieldRenderer ID="frAuthorName" runat="server" FieldName="Author Name" />
-                </asp:HyperLink>
-            </p>
-
+            <%--<a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Lorem Ipsum Dolar</a>--%>
+            <asp:HyperLink ID="hlSectionTitle" runat="server" CssClass="back-to-previous">
+                <sc:FieldRenderer ID="frSectionTitle" runat="server" FieldName="Name" />
+                <i class="icon-arrow-left-blue"></i>
+            </asp:HyperLink>
+            <div>
+                <h1><%--Technology that Can Help--%>
+                    <sc:FieldRenderer ID="rfTitle" runat="server" FieldName="Page Title" />
+                </h1>
+                <p class="page-subtitle">
+                    <%--Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas --%>
+                    <%--<sc:FieldRenderer ID="frSummary" runat="server" FieldName="Page Summary" />--%>
+                    <asp:HyperLink ID="hlAuthorName" runat="server">
+                        <sc:FieldRenderer ID="frAuthorName" runat="server" FieldName="Author Name" />
+                    </asp:HyperLink>
+                </p>
+            </div>
         </div>
 
         <div class="col col-9">
