@@ -7,7 +7,7 @@ using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Blogs
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs
 {
 public partial class BlogsPostPageItem : CustomItem
 {
@@ -36,6 +36,60 @@ public static implicit operator Item(BlogsPostPageItem customItem)
 
 
 #region Field Instance Methods
+
+
+public CustomTextField BlogPostId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["BlogPostId"]);
+	}
+}
+
+
+public CustomTextField Title
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Title"]);
+	}
+}
+
+
+public CustomTextField BlogId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["BlogId"]);
+	}
+}
+
+
+public CustomTextField Body
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Body"]);
+	}
+}
+
+
+public CustomDateField Date
+{
+	get
+	{
+		return new CustomDateField(InnerItem, InnerItem.Fields["Date"]);
+	}
+}
+
+
+public CustomTextField Author
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Author"]);
+	}
+}
 
 
 #endregion //Field Instance Methods

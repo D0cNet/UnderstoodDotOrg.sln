@@ -8,6 +8,7 @@ using System.Xml;
 using Sitecore.Configuration;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -15,8 +16,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int blogId = Convert.ToInt32(Sitecore.Context.Item.Fields["BlogId"].Value);
-            int blogPostId = Convert.ToInt32(Sitecore.Context.Item.Fields["BlogPostId"].Value);
+            var blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
+            int blogId = Convert.ToInt32(blogCig.BlogId.Raw);
+            int blogPostId = Convert.ToInt32(blogCig.BlogPostId.Raw);
             List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();

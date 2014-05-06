@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Blogs;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
 
 namespace UnderstoodDotOrg.Framework.EventHandlers
 {
