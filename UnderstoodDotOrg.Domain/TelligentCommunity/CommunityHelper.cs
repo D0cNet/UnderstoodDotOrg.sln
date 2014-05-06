@@ -78,50 +78,57 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
         public static List<Comment> ReadComments(int blogId, int blogPostId)
         {
-            var webClient = new WebClient();
-
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-
-            var requestUrl = String.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
-            var xml = webClient.DownloadString(requestUrl);
-
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
-            XmlNodeList nodes2 = xmlDoc.SelectNodes("Response/Comments/Comment/Author");
-            List<Comment> commentList = new List<Comment>();
-            int nodecount = 0;
-            foreach (XmlNode xn in nodes)
+            try
             {
-                string id = xn["Id"].InnerText;
-                string url = xn["Url"].InnerText;
-                string parentId = xn["ParentId"].InnerText;
-                string contentId = xn["ContentId"].InnerText;
-                string isApproved = xn["IsApproved"].InnerText;
-                string replyCount = xn["ReplyCount"].InnerText;
-                string commentId = xn["CommentId"].InnerText;
-                string commentContentTypeId = xn["CommentContentTypeId"].InnerText;
-                string body = xn["Body"].InnerText;
-                string dateTime = xn["PublishedDate"].InnerText;
-                string publishedDate = CommunityHelper.FormatDate(dateTime);
-                string authorId = nodes2[nodecount]["Id"].InnerText;
-                string authorAvatarUrl = nodes2[nodecount]["AvatarUrl"].InnerText;
-                string authorDisplayName = nodes2[nodecount]["DisplayName"].InnerText;
-                string authorProfileUrl = nodes2[nodecount]["ProfileUrl"].InnerText;
-                string authorUsername = nodes2[nodecount]["Username"].InnerText;
-                string likesCount = ReadLikes(commentId);
-                Comment comment = new Comment(id, url, body, parentId, contentId, isApproved, replyCount, commentId,
-                    commentContentTypeId, authorId, authorAvatarUrl, authorUsername, publishedDate, authorDisplayName,
-                    authorProfileUrl, likesCount);
-                commentList.Add(comment);
-                nodecount++;
+                var webClient = new WebClient();
+
+                // replace the "admin" and "Admin's API key" with your valid user and apikey!
+                var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                var requestUrl = String.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
+                var xml = webClient.DownloadString(requestUrl);
+
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+
+                XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+                XmlNodeList nodes2 = xmlDoc.SelectNodes("Response/Comments/Comment/Author");
+                List<Comment> commentList = new List<Comment>();
+                int nodecount = 0;
+                foreach (XmlNode xn in nodes)
+                {
+                    string id = xn["Id"].InnerText;
+                    string url = xn["Url"].InnerText;
+                    string parentId = xn["ParentId"].InnerText;
+                    string contentId = xn["ContentId"].InnerText;
+                    string isApproved = xn["IsApproved"].InnerText;
+                    string replyCount = xn["ReplyCount"].InnerText;
+                    string commentId = xn["CommentId"].InnerText;
+                    string commentContentTypeId = xn["CommentContentTypeId"].InnerText;
+                    string body = xn["Body"].InnerText;
+                    string dateTime = xn["PublishedDate"].InnerText;
+                    string publishedDate = CommunityHelper.FormatDate(dateTime);
+                    string authorId = nodes2[nodecount]["Id"].InnerText;
+                    string authorAvatarUrl = nodes2[nodecount]["AvatarUrl"].InnerText;
+                    string authorDisplayName = nodes2[nodecount]["DisplayName"].InnerText;
+                    string authorProfileUrl = nodes2[nodecount]["ProfileUrl"].InnerText;
+                    string authorUsername = nodes2[nodecount]["Username"].InnerText;
+                    string likesCount = ReadLikes(commentId);
+                    Comment comment = new Comment(id, url, body, parentId, contentId, isApproved, replyCount, commentId,
+                        commentContentTypeId, authorId, authorAvatarUrl, authorUsername, publishedDate, authorDisplayName,
+                        authorProfileUrl, likesCount);
+                    commentList.Add(comment);
+                    nodecount++;
+                }
+                return commentList;
             }
-            return commentList;
+            catch
+            {
+                return null;
+            }
         }
 
         public static BlogPost ReadBlogBody(int blogId, int blogPostId)
