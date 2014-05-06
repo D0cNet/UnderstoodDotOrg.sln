@@ -293,5 +293,18 @@ namespace UnderstoodDotOrg.Common
             public static string AnonymousAvatar = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "/utility/anonymous.gif";
             public static string DefaultLocation = "Toronto";
         }
+
+        public static class ContentItem
+        {
+            // Used for missing personalized
+            public static Guid PersonalizedContentNotFound
+            {
+                get
+                {
+                    return new Guid("{93BCF308-EE08-4F66-AB64-F4CB495BB64F}");
+                }
+            }
+
+        }
     }
 }

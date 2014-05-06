@@ -432,6 +432,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 finalList.AddRange(toProcess);
 
+                results = finalList;
+
                 var resp = System.Web.HttpContext.Current.Response;
                 resp.Write(String.Format("Member: {0} {1} | Child: {2}<br>", member.FirstName, member.LastName, child.Nickname));
                 resp.Write(String.Format("Total articles to search: {0}<br>", allArticlesQuery.Take(1).GetResults().TotalSearchResults));

@@ -8,6 +8,8 @@ using UnderstoodDotOrg.Common.Helpers;
 using System.Net.Sockets;
 using UnderstoodDotOrg.Domain.Membership;
 using System.Diagnostics;
+using UnderstoodDotOrg.Domain.Personalization;
+using UnderstoodDotOrg.Domain.Search;
 
 namespace UnderstoodDotOrg.Web.Handlers
 {
@@ -140,7 +142,7 @@ namespace UnderstoodDotOrg.Web.Handlers
         {
             List<UnderstoodDotOrg.Domain.Search.Article> articles = Domain.Search.SearchHelper.GetArticles(member, child, _searchDate);
 
-            // TODO: Save results to membership table
+            PersonalizationHelper.SavePersonalizedContent(member, child, articles);
         }
 
         private void UpdateChild(Guid childId)
