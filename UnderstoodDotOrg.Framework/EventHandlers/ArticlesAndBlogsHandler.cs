@@ -80,7 +80,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                 try
                 {
                     item.Editing.BeginEdit();
-                    item["BlogPostId"] = xn["PostId"].InnerText;
+                    item["Id"] = xn["PostId"].InnerText;
                     item["BlogId"] = blogId.ToString();
                 }
                 finally
