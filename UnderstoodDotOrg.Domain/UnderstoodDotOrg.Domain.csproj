@@ -300,6 +300,8 @@
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\GradeLevelItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\GradeLevelItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\GradeLevelItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\CSS\CSSItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\JS\JSItem.base.cs" />
     <Compile Include="TelligentCommunity\CommunityConstructors.cs" />
     <Compile Include="TelligentCommunity\CommunityHelper.cs" />
     <Compile Include="TelligentCommunity\CommunityManager.cs" />
