@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Security;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 using MembershipProvider = System.Web.Security.Membership;
 
 namespace UnderstoodDotOrg.Domain.Membership
@@ -25,7 +27,9 @@ namespace UnderstoodDotOrg.Domain.Membership
         /// <summary>
         /// Entity-specific connection string
         /// </summary>
-        private static string connString = @"metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='data source=162.209.22.3;initial catalog=Understood.org.DEV.membership;persist security info=True;user id=understood_org;password=dahyeSDf;MultipleActiveResultSets=True;App=EntityFramework'";
+        //private static string connString = string.Format("metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='{0}persist security info=True;MultipleActiveResultSets=True;App=EntityFramework'", "data source=162.209.22.3;initial catalog=Understood.org.DEV.membership;user id=understood_org;password=dahyeSDf;");
+        private static string connString = string.Format("metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='{0};persist security info=True;MultipleActiveResultSets=True;App=EntityFramework'", ConfigurationManager.ConnectionStrings["membership"].ConnectionString );
+        
 
         /// <summary>
         /// Verifies credentials and process login for the user. Uses ASP.Net Membership for authentication and sets the Sitecore Virtual User
@@ -362,7 +366,15 @@ namespace UnderstoodDotOrg.Domain.Membership
                         throw new Exception("Unable to create user. Reason: " + status);
                     }
 
-                    return this.AddMember(Member);
+                    Member = this.AddMember(Member);
+
+                    //create Telligent user
+                    if (!string.IsNullOrEmpty(Member.ScreenName))
+                    {
+                        var communitySuccess = CommunityHelper.CreateUser(Member.ScreenName, Username);
+                    }
+
+                    return Member;
                 }
 
             }
@@ -489,6 +501,24 @@ namespace UnderstoodDotOrg.Domain.Membership
             var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
 
             return provider.GetUser(EmailAddress, updateIsOnline);
+        }
+
+        public bool ResetPassword(Guid MemberId, string NewPassword)
+        {
+            try
+            {
+                var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
+                var user = provider.GetUser(MemberId, false);
+
+                user.ChangePassword(user.ResetPassword(), NewPassword);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         /// <summary>
