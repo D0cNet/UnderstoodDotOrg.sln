@@ -10,19 +10,23 @@
     {
         private void Page_Load(object sender, EventArgs e)
         {
-            // initialize text boxes
-            tbxSubscriberEmail1.Text = "bwilson@agencyoasis.com";
-            tbxSubscriberKey1.Text = "bwilson@agencyoasis.com";
-            tbxSubscriberFN1.Text = "Brian";
 
-            tbxSubscriberEmail2.Text = "wilsonbri@gmail.com";
-            tbxSubscriberKey2.Text = "wilsonbri@gmail.com";
-            tbxSubscriberFN2.Text = "wilsonbri";
+            if (!IsPostBack)
+            {
+                // initialize text boxes
+                tbxSubscriberEmail1.Text = "bwilson@agencyoasis.com";
+                tbxSubscriberKey1.Text = "bwilson@agencyoasis.com";
+                tbxSubscriberFN1.Text = "Brian";
 
-            tbxCustomerKey.Text = "201"; //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
-            tbxEmailID.Text = "103";   // This is the "Text Only Test Email" configured within NCLD's ExactTarget system ....  Available in the ET UI [Content > My Emails > Properties]
+                tbxSubscriberEmail2.Text = "wilsonbri@gmail.com";
+                tbxSubscriberKey2.Text = "wilsonbri@gmail.com";
+                tbxSubscriberFN2.Text = "wilsonbri";
 
-            lblMessage.Text = "Email Test has not started ...";
+                tbxCustomerKey.Text = "201"; //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
+                tbxEmailID.Text = "103";   // This is the "Text Only Test Email" configured within NCLD's ExactTarget system ....  Available in the ET UI [Content > My Emails > Properties]
+
+                lblMessage.Text = "Email Test has not started ...";
+            }
         }
 
         protected void btnETTests_Click(object sender, EventArgs e)
