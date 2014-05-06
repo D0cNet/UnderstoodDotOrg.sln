@@ -44,7 +44,7 @@
                     <ItemTemplate>
                         <li role="menuitem" aria-haspopup="true"><%--<a href="REPLACE.html">About</a>--%>
                             <sc:FieldRenderer ID="frUtilityLink" runat="server" FieldName="Link" />
-                            <asp:Literal runat="server" ID="ltRender" ></asp:Literal>
+                            <asp:Literal runat="server" ID="ltRender"></asp:Literal>
                         </li>
                     </ItemTemplate>
                     <FooterTemplate>
@@ -63,7 +63,7 @@
 
                 <!-- BEGIN PARTIAL: user-state -->
                 <div class="sign-in" aria-haspopup="true">
-                    <sc:FieldRenderer runat="server" ID="scLinkSignIn" FieldName="Sign In" Parameters="class=link-sign-in"/>
+                    <sc:FieldRenderer runat="server" ID="scLinkSignIn" FieldName="Sign In" Parameters="class=link-sign-in" />
                     <%--<a href="REPLACE.html" class="link-sign-in">Sign In</a>--%>
                 </div>
 
@@ -71,9 +71,13 @@
 
                 <div id="search-site">
                     <fieldset>
-                        <legend><sc:FieldRenderer ID="frSearchLabel1" runat="server" FieldName="Link" /><%--Search--%></legend>
+                        <legend>
+                            <sc:FieldRenderer ID="frSearchLabel1" runat="server" FieldName="Link" />
+                            <%--Search--%></legend>
                         <span class="field">
-                            <label for="search-term" class="visuallyhidden"><sc:FieldRenderer ID="frSearchLabel2" runat="server" FieldName="Link" /><%--Search--%></label>
+                            <label for="search-term" class="visuallyhidden">
+                                <sc:FieldRenderer ID="frSearchLabel2" runat="server" FieldName="Link" />
+                                <%--Search--%></label>
                             <input type="text" id="search-term" placeholder="Enter Search Term">
                             <input type="submit" value="Go">
                         </span>
@@ -175,9 +179,11 @@
             </nav>--%>
             <!-- END PARTIAL: nav-main -->
 
-            <div id="toolkit" aria-haspopup="true"><span><%--Your Parent Toolkit--%>
-                <sc:FieldRenderer ID="frParentToolKitHeading" runat="server" FieldName="Heading" />
-                                                   </span></div>
+            <div id="toolkit" aria-haspopup="true">
+                <span><%--Your Parent Toolkit--%>
+                    <sc:FieldRenderer ID="frParentToolKitHeading" runat="server" FieldName="Heading" />
+                </span>
+            </div>
 
         </div>
         <!-- .col -->
@@ -194,20 +200,20 @@
                     <h2>Your Parent Toolkit</h2>
 
                     <span class="button-close"><i class="icon-close-toolkit"></i>Close</span>
-                    <asp:Repeater runat="server" ID="rptParentToolkit" OnItemDataBound="rptParentToolkit_ItemDataBound" >
+                    <asp:Repeater runat="server" ID="rptParentToolkit" OnItemDataBound="rptParentToolkit_ItemDataBound">
                         <HeaderTemplate>
-                             <div class="slides-container">
-                                 <div class="slide">
-                            <ul>
+                            <div class="slides-container">
+                                <div class="slide">
+                                    <ul>
                         </HeaderTemplate>
                         <ItemTemplate>
-                             <li>
-                                    <asp:Panel runat="server" ID="pnlParentToolKit" CssClass="icon">
-                                         <sc:FieldRenderer ID="frNavLink" runat="server" FieldName="Link" />
-                                        <%--<a href="REPLACE.html">My Support Plan</a>--%>
-                                        <%--<div class="coming-soon">Coming Soon</div>--%>
-                                    </asp:Panel>
-                                </li>
+                            <li>
+                                <asp:Panel runat="server" ID="pnlParentToolKit" CssClass="icon">
+                                    <sc:FieldRenderer ID="frNavLink" runat="server" FieldName="Link" />
+                                    <%--<a href="REPLACE.html">My Support Plan</a>--%>
+                                    <%--<div class="coming-soon">Coming Soon</div>--%>
+                                </asp:Panel>
+                            </li>
                         </ItemTemplate>
                         <FooterTemplate>
                             </ul>
@@ -290,3 +296,4 @@
 </header>
 <!-- #header-page -->
 <!-- END PARTIAL: header -->
+

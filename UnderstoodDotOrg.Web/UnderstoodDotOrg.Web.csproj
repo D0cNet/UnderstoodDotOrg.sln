@@ -106,6 +106,20 @@
     <Compile Include="Handlers\RunPersonalizationService.ashx.cs">
       <DependentUpon>RunPersonalizationService.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\AjaxData\GetArticles.aspx.cs">
+      <DependentUpon>GetArticles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\GetArticles.aspx.designer.cs">
+      <DependentUpon>GetArticles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\WelcomeTour.aspx.cs">
+      <DependentUpon>WelcomeTour.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\WelcomeTour.aspx.designer.cs">
+      <DependentUpon>WelcomeTour.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Layouts\Browser.aspx.cs">
       <DependentUpon>Browser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -999,6 +1013,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Presentation\AjaxData\GetArticles.aspx" />
+    <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />
     <Content Include="Presentation\Includes\css\about.css" />
     <Content Include="Presentation\Includes\css\advocacy.css" />
     <Content Include="Global.asax" />
@@ -1188,6 +1204,7 @@
     <Content Include="Presentation\Includes\img\temp.bg.slide.1200.02.jpg" />
     <Content Include="Presentation\Includes\img\temp.bg.slide.1200.03.jpg" />
     <Content Include="Presentation\Includes\img\temp.user.jpg" />
+    <Content Include="Presentation\Includes\js\community.js" />
     <Content Include="Presentation\Includes\js\global.js" />
     <Content Include="Presentation\Includes\js\modules.js" />
     <Content Include="Presentation\Includes\js\site.js" />

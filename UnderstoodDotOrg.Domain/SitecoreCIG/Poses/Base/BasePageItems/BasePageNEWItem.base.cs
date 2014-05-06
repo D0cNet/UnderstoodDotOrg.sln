@@ -74,6 +74,15 @@ public CustomTextField NavigationTitle
 }
 
 
+public CustomCheckboxField ShowWelcomeTour
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Welcome Tour"]);
+	}
+}
+
+
 public CustomCheckboxField IncludeinNavigation
 {
 	get

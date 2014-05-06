@@ -614,6 +614,7 @@ $(document).ready(function() {
   $('input:text').placeholder();
   $('textarea').placeholder();
 
+
   // event handler for FPO URLs to prevent navigating to 404s
   // FIXME: this is temporary and needs to be removed during integration
   jQuery('a[href=REPLACE]').on('click', function(){ return false; });

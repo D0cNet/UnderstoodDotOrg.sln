@@ -48,7 +48,46 @@
 <!-- END MODULE: Newsletter Signup -->
 
 <!-- BEGIN MODULE: Partners Carousel -->
+
 <div class="container partners-carousel">
+  <div class="row">
+    <div class="col col-24">
+
+      <!-- BEGIN PARTIAL: partners-carousel -->
+<h2>In Partnership with</h2>
+<div class="arrows-gray rsAutoHeight rsHor" id="partners-slides-container" style="height: 380px;"><div class="rsOverflow" style="width: 950px; height: 186px; transition: height 600ms ease-in-out 0s;"><div class="rsContainer" style="transition-duration: 0s; transform: translate3d(0px, 0px, 0px);"><div class="rsSlide " style="left: 0px;"><div class="m-featured-slide" style="visibility: visible; opacity: 1; transition: opacity 400ms ease-in-out 0s;"><div class="rsContent"><ul><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li></ul></div></div></div><div class="rsSlide " style="left: 958px;"><div class="m-featured-slide"><div class="rsContent"><ul><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li><li>
+      <a href="REPLACE"><img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
+    </li></ul></div></div></div></div><div class="rsArrow rsArrowLeft rsArrowDisabled" style="display: block;"><div class="rsArrowIcn"></div></div><div class="rsArrow rsArrowRight" style="display: block;"><div class="rsArrowIcn"></div></div></div><div style="clear:both; float: none;"></div></div><!-- end partners-carousel-container -->
+<a href="REPLACE" class="viewAll">View All</a>
+<!-- END PARTIAL: partners-carousel -->
+
+    </div>
+  </div>
+</div>
+
+<div class="container partners-carousel" runat="server" id="sfds" visible="false">
     <div class="row">
         <div class="col col-24">
 
@@ -71,58 +110,6 @@
                     </div>
                 </FooterTemplate>
             </asp:Repeater>
-            <%--<div id="partners-slides-container" class="arrows-gray">
-                <ul>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                    <li>
-                        <a href="REPLACE.html">
-                            <img alt="Partner Logo FPO" src="/Presentation/includes/img/icon.logo.partnership-carousel.png" /></a>
-                    </li>
-                </ul>
-            </div>--%>
             <!-- end partners-carousel-container -->
             <a class="viewAll" href="REPLACE.html">View All</a>
             <!-- END PARTIAL: partners-carousel -->
@@ -155,24 +142,7 @@
         </div>
     </FooterTemplate>
 </asp:Repeater>
-<%--<div class="container">
-    <div class="row">
-        <div class="col col-24" role="navigation">
 
-            <ul id="footer-nav" role="menu">
-                <li role="menuitem"><a href="REPLACE.html"><span>About Us</span></a></li>
-                <li role="menuitem"><a href="REPLACE.html"><span>Learning &amp; Attention Issues</span></a></li>
-                <li role="menuitem"><a href="REPLACE.html"><span>School &amp; Learning</span></a></li>
-                <li role="menuitem"><a href="REPLACE.html"><span>Friends &amp; Feelings</span></a></li>
-                <li role="menuitem"><a href="REPLACE.html"><span>You &amp; Your Family</span></a></li>
-                <li role="menuitem"><a href="REPLACE.html"><span>Community &amp; Events</span></a></li>
-            </ul>
-            <!-- #footer-nav -->
-
-        </div>
-    </div>
-    <!-- .row -->
-</div>--%>
 <!-- .container -->
 
 <!-- END MODULE: Footer Nav -->
@@ -206,17 +176,7 @@
         </div>
             </FooterTemplate>
         </asp:Repeater>
-        <%-- <div class="col col-7 push-17">
-            <ul>
-                <!-- NO WHITE SPACE BETWEEN LIs to PRESERVE LAYOUT -->
-                <li><a href="REPLACE.html" class="icon icon-facebook">Facebook</a></li>
-                <li><a href="REPLACE.html" class="icon icon-twitter">Twitter</a></li>
-                <li><a href="REPLACE.html" class="icon icon-google">Google +</a></li>
-                <li><a href="REPLACE.html" class="icon icon-pinterest">Pinterest</a></li>
-            </ul>
-        </div>--%>
-        <!-- /.col -->
-
+       
         <div class="col col-17 pull-7" role="navigation">
             <asp:Repeater runat="server" ID="rptFooterUtilityNav" OnItemDataBound="rptFooterUtilityNav_ItemDataBound" >
                 <HeaderTemplate>
@@ -231,13 +191,6 @@
                     </ul>
                 </FooterTemplate>
             </asp:Repeater>
-            <%--<ul class="footer-nav-utility" role="menu">
-                <!-- NO WHITE SPACE BETWEEN LIs to PRESERVE LAYOUT -->
-                <li role="menuitem"><a href="REPLACE.html">Sitemap</a></li>
-                <li role="menuitem"><a href="REPLACE.html">Terms &amp; Conditions</a></li>
-                <li role="menuitem"><a href="REPLACE.html">Contact Us</a></li>
-                <li role="menuitem"><a href="REPLACE.html">About</a></li>
-            </ul>--%>
             <p>
                 <%--All contents copyright © 2013 Understood.  All rights reserved.--%>
                 <sc:FieldRenderer ID="frCopyrightText" runat="server" FieldName="Copyright Text" />

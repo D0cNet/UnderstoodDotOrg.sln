@@ -54,11 +54,9 @@ namespace UnderstoodDotOrg.Web.Presentation.data_import {
 
                 // Get the place in the site tree where the new item must be inserted
                 Item parentItem = master.GetItem(rootItempath);
-                //  itemName = itemName + "-" + postid;
-                //  itemName = RemoveSpecialCharacters(itemName);
+               
                 if (addVersion == false) {
                     newItem = CreateDefaultLanguageItem(itemName + postid, fieldsToUpdate, newItem, template, parentItem);
-                    //AddLanguageVersionItem(posttype, itemName, fieldsToUpdate, template, newItem, master, lang, postid);
                 }
 
                 if (newItem == null) {
@@ -121,7 +119,6 @@ namespace UnderstoodDotOrg.Web.Presentation.data_import {
                                 }
                                 break;
                             case "Complexity Levels":
-
                                 tagids = GetTags(posttype, "content-complexity", postid, ComplexityLevelsTemplate, "Complexity Name");
                                 if (!string.IsNullOrEmpty(tagids)) {
                                     newLanguageVersionItem[fields.Key] = tagids;
@@ -132,7 +129,6 @@ namespace UnderstoodDotOrg.Web.Presentation.data_import {
                                 if (!string.IsNullOrEmpty(tagids)) {
                                     newLanguageVersionItem[fields.Key] = tagids;
                                 }
-
                                 break;
                             case "Applicable Interests":
                                 tagids = GetTags(posttype, "parent-interests", postid, ApplicableInterestsTemplate, "Applicable Interests");
@@ -269,8 +265,6 @@ namespace UnderstoodDotOrg.Web.Presentation.data_import {
 
             DataTable datasource = ds.Tables[0];
 
-
-
             foreach (DataRow varrow in datasource.Rows) {
                 Dictionary<string, string> ids = new Dictionary<string, string>();
                 ids.Add("Revierwer Name", varrow["UserName"].ToString());
@@ -281,8 +275,6 @@ namespace UnderstoodDotOrg.Web.Presentation.data_import {
                     CreateItem(userloc, reviewerTemplate, varrow["UserName"].ToString(), ids, false, null, "en", null, null);
                 }
             }
-
-
         }
 
         public MediaItem AddFile(string fileName, string mediaItemName) {
@@ -350,219 +342,231 @@ namespace UnderstoodDotOrg.Web.Presentation.data_import {
         private void GetTexonomy() {
             Item postItem = null;
             string posttype = "basic_article_image";
-            MySqlConnection connection = new MySqlConnection(MyConnectionString);
-            MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT DISTINCT wt.slug " +
-                                  "FROM testf.wp_posts p " +
-                                  "INNER JOIN wp_postmeta wp ON p.ID = wp.post_id " +
-                                  "INNER JOIN wp_term_relationships wtr ON p.ID = wtr.object_id " +
-                                  "INNER JOIN wp_term_taxonomy wtt ON wtr.term_taxonomy_id = wtt.term_taxonomy_id " +
-                                  "INNER JOIN wp_terms wt ON wt.term_id = wtt.term_id " +
-                                  "WHERE p.post_type = 'basic_article_image' AND wtt.taxonomy = 'post_translations' AND wtt.count > 0";
-
-            connection.Open();
-
-            MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
-            adap.Fill(ds);
 
-            DataTable datasource = ds.Tables[0];
-            //DataTable tops = datasource.Rows.Cast<System.Data.DataRow>().Take(40).CopyToDataTable();
-            foreach (DataRow dr in datasource.Rows) {
-                this.GetLanguagePosts(dr["slug"].ToString(), posttype);
+            using (MySqlConnection connection = new MySqlConnection(MyConnectionString)) {
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "SELECT DISTINCT wt.slug " +
+                                      "FROM testf.wp_posts p " +
+                                      "INNER JOIN wp_postmeta wp ON p.ID = wp.post_id " +
+                                      "INNER JOIN wp_term_relationships wtr ON p.ID = wtr.object_id " +
+                                      "INNER JOIN wp_term_taxonomy wtt ON wtr.term_taxonomy_id = wtt.term_taxonomy_id " +
+                                      "INNER JOIN wp_terms wt ON wt.term_id = wtt.term_id " +
+                                      "WHERE  p.post_type = '" + posttype + "' AND wtt.taxonomy = 'post_translations' AND wtt.count > 0";
+                //p.ID = 500 and
+                connection.Open();
+
+                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
+
+                adap.Fill(ds);
+
+
+                connection.Close();
+
             }
 
-            connection.Close();
+            if (ds != null && ds.Tables.Count > 0) {
+                DataTable datasource = ds.Tables[0];
+                //DataTable tops = datasource.Rows.Cast<System.Data.DataRow>().Take(40).CopyToDataTable();
+                foreach (DataRow dr in datasource.Rows) {
+                    this.GetLanguagePosts(dr["slug"].ToString(), posttype);
+                }
+            }
         }
 
         private void GetLanguagePosts(string translationid, string posttype) {
             Item postItem = null;
-            MySqlConnection connection = new MySqlConnection(MyConnectionString);
-            MySqlCommand cmd = connection.CreateCommand();
-            string getPostQuery = "SELECT " +
-                                  "DISTINCT p.ID, R1.slug " +
-                                  "FROM testf.wp_posts p " +
-                                  "INNER JOIN (SELECT WP1.ID, wt1.slug FROM wp_posts wp1 " +
-                                  "              INNER JOIN wp_term_relationships wtr1 ON Wp1.ID = wtr1.object_id " +
-                                  "INNER JOIN wp_term_taxonomy wtt1 ON wtr1.term_taxonomy_id = wtt1.term_taxonomy_id " +
-                                  "INNER JOIN wp_terms wt1 ON wt1.term_id = wtt1.term_id" +
-                                  "               WHERE wtt1.taxonomy = 'language') R1 ON R1.ID = p.ID " +
-                                  "INNER JOIN wp_postmeta wp ON p.ID = wp.post_id " +
-                                  "INNER JOIN wp_term_relationships wtr ON p.ID = wtr.object_id " +
-                                  "INNER JOIN wp_term_taxonomy wtt ON wtr.term_taxonomy_id = wtt.term_taxonomy_id " +
-                                  "INNER JOIN wp_terms wt ON wt.term_id = wtt.term_id " +
-                                  "WHERE  p.post_type = 'basic_article_image' AND " +
-                                  " wt.slug = '" + translationid + "' " +
-                                  "AND wtt.taxonomy = 'post_translations' AND wtt.count > 0 ";
-
-            connection.Open();
-            cmd.CommandText = getPostQuery;
-            MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
-            adap.Fill(ds);
+            using (MySqlConnection connection = new MySqlConnection(MyConnectionString)) {
+                MySqlCommand cmd = connection.CreateCommand();
+                string getPostQuery = "SELECT " +
+                                      "DISTINCT p.ID, R1.slug " +
+                                      "FROM testf.wp_posts p " +
+                                      "INNER JOIN (SELECT WP1.ID, wt1.slug FROM wp_posts wp1 " +
+                                      "              INNER JOIN wp_term_relationships wtr1 ON Wp1.ID = wtr1.object_id " +
+                                      "INNER JOIN wp_term_taxonomy wtt1 ON wtr1.term_taxonomy_id = wtt1.term_taxonomy_id " +
+                                      "INNER JOIN wp_terms wt1 ON wt1.term_id = wtt1.term_id" +
+                                      "               WHERE wtt1.taxonomy = 'language') R1 ON R1.ID = p.ID " +
+                                      "INNER JOIN wp_postmeta wp ON p.ID = wp.post_id " +
+                                      "INNER JOIN wp_term_relationships wtr ON p.ID = wtr.object_id " +
+                                      "INNER JOIN wp_term_taxonomy wtt ON wtr.term_taxonomy_id = wtt.term_taxonomy_id " +
+                                      "INNER JOIN wp_terms wt ON wt.term_id = wtt.term_id " +
+                                      "WHERE  p.post_type = 'basic_article_image' AND " +
+                                      " wt.slug = '" + translationid + "' " +
+                                      "AND wtt.taxonomy = 'post_translations' AND wtt.count > 0 ";
 
-            DataTable datasource = ds.Tables[0];
-            //throw new NotImplementedException();
-            string page_title = string.Empty;
-            string post_name = string.Empty;
-            string post_alternatename = string.Empty;
+                connection.Open();
+                cmd.CommandText = getPostQuery;
+                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
+
+                adap.Fill(ds);
+                connection.Close();
+            }
+
+            if (ds != null && ds.Tables.Count > 0) {
+                DataTable datasource = ds.Tables[0];
+                //throw new NotImplementedException();
+                string page_title = string.Empty;
+                string post_name = string.Empty;
+                string post_alternatename = string.Empty;
 
 
 
-            foreach (DataRow dr in datasource.Rows) {
+                foreach (DataRow dr in datasource.Rows) {
 
-                if (dr["slug"].ToString().Equals("en")) {
-                    postItem = this.GetPostContent("en", dr["ID"].ToString(), posttype, false, null);
-                }
-                else {
-                    this.GetPostContent(dr["slug"].ToString(), dr["ID"].ToString(), posttype, true, postItem);
+                    if (dr["slug"].ToString().Equals("en")) {
+                        postItem = this.GetPostContent("en", dr["ID"].ToString(), posttype, false, null);
+                    }
+                    else {
+                        this.GetPostContent(dr["slug"].ToString(), dr["ID"].ToString(), posttype, true, postItem);
+                    }
                 }
             }
         }
 
         private Item GetPostContent(string langu, string postid, string posttype, bool addVersion, Item defaultLanguageItem) {
             Item postItem = null;
-            MySqlConnection connection = new MySqlConnection(MyConnectionString);
-            MySqlCommand cmd = connection.CreateCommand();
-            string getPostQuery = "SELECT ID,  post_author,  post_content,  post_title, post_name,  post_status, " +
-                                  "comment_status, post_name,  post_content_filtered,  post_parent,  guid,  menu_order,  post_type, " +
-                                  "post_mime_type,  comment_count FROM testf.wp_posts Where ID = " + postid + " And post_type='" + posttype + "'";
-            connection.Open();
-            cmd.CommandText = getPostQuery;
-            MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
-            adap.Fill(ds);
+            using (MySqlConnection connection = new MySqlConnection(MyConnectionString)) {
+                MySqlCommand cmd = connection.CreateCommand();
+                string getPostQuery = "SELECT ID,  post_author,  post_content,  post_title, post_name,  post_status, " +
+                                      "comment_status, post_name,  post_content_filtered,  post_parent,  guid,  menu_order,  post_type, " +
+                                      "post_mime_type,  comment_count FROM testf.wp_posts Where ID = " + postid + " And post_type='" + posttype + "'";
+                connection.Open();
+                cmd.CommandText = getPostQuery;
+                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
 
-            DataTable datasource = ds.Tables[0];
-            //throw new NotImplementedException();
-            string page_title = string.Empty;
-            string post_name = string.Empty;
-            string post_alternatename = string.Empty;
-
-
-
-            foreach (DataRow dr in datasource.Rows) {
-
-                //  Response.Write(dr["ID"].ToString() + " | " + langu + " | <b>" + dr["post_title"].ToString() + "</b><br/>");
-                page_title = String.IsNullOrEmpty(Convert.ToString(dr["post_title"]).Trim()) ? string.Empty : Convert.ToString(dr["post_title"]);
-                post_alternatename = String.Format("{0}-{1}", String.IsNullOrEmpty(Convert.ToString(dr["post_type"])) ? string.Empty : Convert.ToString(dr["post_type"]), dr["ID"].ToString());
-                //   post_name = String.IsNullOrEmpty(Convert.ToString(dr["post_name"])) ? post_alternatename : Convert.ToString(dr["post_name"]);
-                postItem = this.GetPostDetail(dr["ID"].ToString(), langu, page_title.Replace(" ", "-"), page_title, addVersion, defaultLanguageItem, posttype);
-                // Response.Write("<br/><div style=\"border:1px solid red; width:100%;\" ></div><br/>");
-                break;
+                adap.Fill(ds);
+                connection.Close();
             }
+            if (ds != null && ds.Tables.Count > 0) {
+                DataTable datasource = ds.Tables[0];
+                //throw new NotImplementedException();
+                string page_title = string.Empty;
+                
+                
+                foreach (DataRow dr in datasource.Rows) {
 
-            connection.Close();
+                    Response.Write(dr["ID"].ToString() + " | " + langu + " | <b>" + dr["post_title"].ToString() + "</b><br/>");
+                    page_title = String.IsNullOrEmpty(Convert.ToString(dr["post_title"]).Trim()) ? string.Empty : Convert.ToString(dr["post_title"]);
+                    
+                    //   post_name = String.IsNullOrEmpty(Convert.ToString(dr["post_name"])) ? post_alternatename : Convert.ToString(dr["post_name"]);
+                    postItem = this.GetPostDetail(dr["ID"].ToString(), langu, page_title.Replace(" ", "-"), page_title, addVersion, defaultLanguageItem, posttype);
+                    Response.Write("<br/><div style=\"border:1px solid red; width:100%;\" ></div><br/>");
+                    break;
+                }
+
+            }
             return postItem;
         }
 
         private Item GetPostDetail(string postid, string lang, string itemname, string page_title, bool addVersion, Item defaultLanguageItem, string posttype) {
             Item newItem = null;
-            MySqlConnection connection = new MySqlConnection(MyConnectionString);
-            MySqlCommand cmd = connection.CreateCommand();
-            string getPostQuery = "SELECT pm.*, t.slug " +
-                                  "FROM wp_posts p " +
-                                  "INNER JOIN wp_postmeta pm ON p.ID = pm.post_id " +
-                                  "INNER JOIN wp_term_relationships tr ON p.ID = tr.object_id " +
-                                  "INNER JOIN wp_term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id " +
-                                  "INNER JOIN wp_terms t ON tt.term_id = t.term_id " +
-                                  "WHERE p.ID =" + postid + " AND t.slug ='" + lang + "'";
-            connection.Open();
-            cmd.CommandText = getPostQuery;
-            MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
-            adap.Fill(ds);
+            using (MySqlConnection connection = new MySqlConnection(MyConnectionString)) {
+                MySqlCommand cmd = connection.CreateCommand();
+                string getPostQuery = "SELECT pm.*, t.slug " +
+                                      "FROM wp_posts p " +
+                                      "INNER JOIN wp_postmeta pm ON p.ID = pm.post_id " +
+                                      "INNER JOIN wp_term_relationships tr ON p.ID = tr.object_id " +
+                                      "INNER JOIN wp_term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id " +
+                                      "INNER JOIN wp_terms t ON tt.term_id = t.term_id " +
+                                      "WHERE p.ID =" + postid + " AND t.slug ='" + lang + "'";
+                connection.Open();
+                cmd.CommandText = getPostQuery;
+                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
 
-            DataTable datasource = ds.Tables[0];
-            Dictionary<string, string> ids = new Dictionary<string, string>();
-            ids.Add("Page Title", page_title);
-            ids.Add("Post", postid);
-
-            foreach (DataRow varrow in datasource.Rows) {
-                //Response.Write(varrow["meta_key"].ToString() + "|" + varrow["meta_value"].ToString() + "<br/>");
-                switch (varrow["meta_key"].ToString()) {
-                    case "wpcf-content-thumbnail":
-                        if (!string.IsNullOrEmpty(varrow["meta_value"].ToString())) {
-
-                            ids.Add("Content Thumbnail", varrow["meta_value"].ToString());
-                        }
-                        break;
-                    case "wpcf-feature-image":
-                      
-                        break;
-                    case "wpcf-meta-title":
-                        ids.Add("Meta Title", varrow["meta_value"].ToString());
-                        break;
-                    case "wpcf-meta-keywords":
-                        ids.Add("Meta Keywords", varrow["meta_value"].ToString());
-                        break;
-                    case "wpcf-meta-description":
-                        ids.Add("Meta Description", varrow["meta_value"].ToString());
-                        break;
-                    case "wpcf-article-content":
-                        ids.Add("Body Content", varrow["meta_value"].ToString());
-                        break;
-                    case "wpcf-at-a-glance":
-
-                        ids.Add("Headline Text", varrow["meta_value"].ToString());
-                        break;
-                    case "wpcf-key-takeaway":
-                        ids.Add("Key Takeaway Data", varrow["meta_value"].ToString());
-                        break;
-                }
-
-
+                adap.Fill(ds);
+                connection.Close();
             }
-            ids.Add("Child Issues", "");
-            ids.Add("Child Grades", "");
-            ids.Add("Child Diagnoses", "");
-            ids.Add("Complexity Levels", "");
-            ids.Add("Diagnosed Condition", "");
-            ids.Add("Applicable Interests", "");
-            ids.Add("Applicable Personalities", "");
-            ids.Add("Other Applicable Evaluations", "");
+            if (ds != null && ds.Tables.Count > 0) {
+                DataTable datasource = ds.Tables[0];
+                Dictionary<string, string> ids = new Dictionary<string, string>();
+                ids.Add("Page Title", page_title);
+                ids.Add("Post", postid);
 
-            newItem = CreateItem(Article_Folder, Basic_Article_Page, itemname, ids, addVersion, defaultLanguageItem, lang, postid, posttype);
-            connection.Close();
+                foreach (DataRow varrow in datasource.Rows) {
+                    //Response.Write(varrow["meta_key"].ToString() + "|" + varrow["meta_value"].ToString() + "<br/>");
+                    switch (varrow["meta_key"].ToString()) {
+                        case "wpcf-content-thumbnail":
+
+                            break;
+                        case "wpcf-feature-image":
+                            if (!string.IsNullOrEmpty(varrow["meta_value"].ToString())) {
+
+                                ids.Add("Content Thumbnail", varrow["meta_value"].ToString());
+                            }
+                            break;
+                        case "wpcf-meta-title":
+                            ids.Add("Meta Title", varrow["meta_value"].ToString());
+                            break;
+                        case "wpcf-meta-keywords":
+                            ids.Add("Meta Keywords", varrow["meta_value"].ToString());
+                            break;
+                        case "wpcf-meta-description":
+                            ids.Add("Meta Description", varrow["meta_value"].ToString());
+                            break;
+                        case "wpcf-article-content":
+                            ids.Add("Body Content", varrow["meta_value"].ToString());
+                            break;
+                        case "wpcf-at-a-glance":
+                            ids.Add("Headline Text", varrow["meta_value"].ToString());
+                            break;
+                        case "wpcf-key-takeaway":
+                            ids.Add("Key Takeaway Data", varrow["meta_value"].ToString());
+                            break;
+                    }
+                }
+                ids.Add("Child Issues", "");
+                ids.Add("Child Grades", "");
+                ids.Add("Child Diagnoses", "");
+                ids.Add("Complexity Levels", "");
+                ids.Add("Diagnosed Condition", "");
+                ids.Add("Applicable Interests", "");
+                ids.Add("Applicable Personalities", "");
+                ids.Add("Other Applicable Evaluations", "");
+            }
+            //newItem = CreateItem(Article_Folder, Basic_Article_Page, itemname, ids, addVersion, defaultLanguageItem, lang, postid, posttype);
+
             return newItem;
         }
 
         private string GetTags(string articleType, string tagType, string postId, string templateId, string fieldName) {
-            MySqlConnection connection = new MySqlConnection(MyConnectionString);
-            MySqlCommand cmd = connection.CreateCommand();
-            string getPostQuery = "SELECT wt.slug,wt.name, wtt.taxonomy, wtt.term_id, wtt.term_taxonomy_id, wtr.object_id " +
-             "FROM testf.wp_posts p " +
-             "INNER JOIN wp_term_relationships wtr ON p.ID = wtr.object_id " +
-             "INNER JOIN wp_term_taxonomy wtt ON wtr.term_taxonomy_id = wtt.term_taxonomy_id " +
-             "INNER JOIN wp_terms wt ON wt.term_id = wtt.term_id " +
-             "WHERE p.post_type = '" + articleType + "' AND wtt.taxonomy = '" + tagType + "'  " +
-             "AND wtr.object_id IN (" + postId + ") " +
-             "ORDER BY wtr.object_id";
-            connection.Open();
-            cmd.CommandText = getPostQuery;
-            MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
-            adap.Fill(ds);
+            using (MySqlConnection connection = new MySqlConnection(MyConnectionString)) {
+                MySqlCommand cmd = connection.CreateCommand();
+                string getPostQuery = "SELECT wt.slug,wt.name, wtt.taxonomy, wtt.term_id, wtt.term_taxonomy_id, wtr.object_id " +
+                 "FROM testf.wp_posts p " +
+                 "INNER JOIN wp_term_relationships wtr ON p.ID = wtr.object_id " +
+                 "INNER JOIN wp_term_taxonomy wtt ON wtr.term_taxonomy_id = wtt.term_taxonomy_id " +
+                 "INNER JOIN wp_terms wt ON wt.term_id = wtt.term_id " +
+                 "WHERE p.post_type = '" + articleType + "' AND wtt.taxonomy = '" + tagType + "'  " +
+                 "AND wtr.object_id IN (" + postId + ") " +
+                 "ORDER BY wtr.object_id";
+                connection.Open();
+                cmd.CommandText = getPostQuery;
+                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
 
-            DataTable datasource = ds.Tables[0];
-
-
-            String tagIds = String.Empty;
-
-
-            foreach (DataRow varrow in datasource.Rows) {
-                //GetTagItem(varrow["name"].ToString(), "{FB6B3A57-321D-4223-9C2E-4549E87A7EF6}", "Issue Name");
-                Item child = GetTagItem(varrow["name"].ToString(), templateId, fieldName);
-                //sourceItem.GetChildren().Where(t => t.Fields[fieldName].Value == varrow["name"].ToString()).FirstOrDefault();
-                if (child != null) {
-                    tagIds = tagIds + "|" + child.ID.ToString();
-                }
+                adap.Fill(ds);
+                connection.Close();
             }
 
+            String tagIds = String.Empty;
+            if (ds != null && ds.Tables.Count > 0) {
+                DataTable datasource = ds.Tables[0];
 
-            connection.Close();
-            if (tagIds.Length > 0) {
-                tagIds = tagIds.Substring(1);
+                foreach (DataRow varrow in datasource.Rows) {
+                    //GetTagItem(varrow["name"].ToString(), "{FB6B3A57-321D-4223-9C2E-4549E87A7EF6}", "Issue Name");
+                    Item child = GetTagItem(varrow["name"].ToString(), templateId, fieldName);
+                    //sourceItem.GetChildren().Where(t => t.Fields[fieldName].Value == varrow["name"].ToString()).FirstOrDefault();
+                    if (child != null) {
+                        tagIds = tagIds + "|" + child.ID.ToString();
+                    }
+                }
+
+                if (tagIds.Length > 0) {
+                    tagIds = tagIds.Substring(1);
+                }
             }
             return tagIds;
         }

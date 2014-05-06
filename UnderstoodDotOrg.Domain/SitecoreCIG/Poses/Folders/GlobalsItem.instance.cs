@@ -23,5 +23,13 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         public FooterFolderItem GetFooter() {
             return (FooterFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(FooterFolderItem.TemplateId)).FirstOrDefault();
         }
+
+        /// <summary>
+        /// Get Welcome Tour folder Item.
+        /// </summary>
+        /// <returns></returns>
+        public WelcomeTourFolderItem GetWelcomeTourFolder() {
+            return (WelcomeTourFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(WelcomeTourFolderItem.TemplateId)).FirstOrDefault();
+        }
     }
 }
