@@ -7,6 +7,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Helpers;
 using System.Net.Sockets;
 using UnderstoodDotOrg.Domain.Membership;
+using System.Diagnostics;
 
 namespace UnderstoodDotOrg.Web.Handlers
 {
@@ -30,12 +31,16 @@ namespace UnderstoodDotOrg.Web.Handlers
             }
 
             context.Response.ContentType = "text/html";
+
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
             
             InitSearchParams();
             InitSearchTargets();
 
-            context.Response.Write("Running personalization!!!!");
-            context.Response.Write("<br>is this request coming from a local machine: " + context.Request.IsLocal.ToString()); 
+            stopWatch.Stop();
+
+            context.Response.Write(String.Format("Elapsed time: {0} seconds", stopWatch.Elapsed.Seconds));
         }
 
         private void InitSearchTargets()
