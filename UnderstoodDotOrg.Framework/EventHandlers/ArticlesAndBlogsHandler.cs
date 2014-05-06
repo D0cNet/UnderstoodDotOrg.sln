@@ -22,31 +22,32 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             //item.path.paths
             var itm = Event.ExtractParameter(args, 0) as Item;
             int blogId = 0;
-            switch (itm.Parent.Name)
-            {
-                case "The Understood Blog":
-                    blogId = 1;
-                    break;
-                case "Motherlode":
-                    blogId = 2;
-                    break;
-                case "Live Well":
-                    blogId = 3;
-                    break;
-                case "Blog 4":
-                    blogId = 4;
-                    break;
-                case "Blog 5":
-                    blogId = 5;
-                    break;
-                case "Blog 6":
-                    blogId = 6;
-                    break;
-                default:
-                    return;
-            }
+
             if (itm["Post"] == "")
             {
+                switch (itm.Parent.Name)
+                {
+                    case "The Understood Blog":
+                        blogId = 1;
+                        break;
+                    case "Motherlode":
+                        blogId = 2;
+                        break;
+                    case "Live Well":
+                        blogId = 3;
+                        break;
+                    case "Blog 4":
+                        blogId = 4;
+                        break;
+                    case "Blog 5":
+                        blogId = 5;
+                        break;
+                    case "Blog 6":
+                        blogId = 6;
+                        break;
+                    default:
+                        return;
+                }
                 if (blogId != 0 && (itm.TemplateID.ToString() == BlogsPostPageItem.TemplateId || itm.TemplateID.ToString() == DefaultArticlePageItem.TemplateId))
                 {
                     CreateTelligentPost(itm, blogId);
@@ -56,37 +57,44 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
 
         private void CreateTelligentPost(Item item, int blogId)
         {
-            var webClient = new WebClient();
-
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = String.Format("{0}api.ashx/v2/blogs/{1}/posts.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
-
-            var values = new NameValueCollection();
-            values["Title"] = item.Name;
-            values["Body"] = item.Paths.FullPath;
-
-            var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
-
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/BlogPost");
-            foreach (XmlNode xn in nodes)
+            try
             {
-                try
+                var webClient = new WebClient();
+
+                // replace the "admin" and "Admin's API key" with your valid user and apikey!
+                var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                var requestUrl = String.Format("{0}api.ashx/v2/blogs/{1}/posts.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
+
+                var values = new NameValueCollection();
+                values["Title"] = item.Name;
+                values["Body"] = item.Paths.FullPath;
+
+                var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+
+                XmlNodeList nodes = xmlDoc.SelectNodes("Response/BlogPost");
+                foreach (XmlNode xn in nodes)
                 {
-                    item.Editing.BeginEdit();
-                    item["Id"] = xn["PostId"].InnerText;
-                    item["BlogId"] = blogId.ToString();
+                    try
+                    {
+                        item.Editing.BeginEdit();
+                        item["BlogPostId"] = xn["Id"].InnerText;
+                        item["BlogId"] = blogId.ToString();
+                    }
+                    finally
+                    {
+                        item.Editing.EndEdit();
+                    }
                 }
-                finally
-                {
-                    item.Editing.EndEdit();
-                }
+            }
+            catch
+            {
+                //do nothing
             }
         }
     }
