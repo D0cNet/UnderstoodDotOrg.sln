@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     
     
-    public partial class Moderators {
+    public partial class MemberCardList {
         
         /// <summary>
-        /// memberList control.
+        /// rptMemberCards control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder memberList;
+        protected global::System.Web.UI.WebControls.ListView rptMemberCards;
     }
 }

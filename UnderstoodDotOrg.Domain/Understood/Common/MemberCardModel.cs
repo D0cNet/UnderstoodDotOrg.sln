@@ -13,6 +13,11 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
     {
         public  MemberCardModel()
         {
+            this.AvatarUrl = Constants.Settings.AnonymousAvatar;
+            this.Children = new List<ChildCardModel>();
+            this.UserLabel = String.Empty; //TODO: find role                                                                                   
+            this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
+            this.UserName = String.Empty;
         }
 
         public  MemberCardModel(Member m)

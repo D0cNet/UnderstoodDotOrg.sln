@@ -10,7 +10,7 @@
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
     
     
-    public partial class Moderators {
+    public partial class Parents_Recommended {
         
         /// <summary>
         /// memberList control.
@@ -20,5 +20,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder memberList;
+        
+        /// <summary>
+        /// showmore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor showmore;
     }
 }

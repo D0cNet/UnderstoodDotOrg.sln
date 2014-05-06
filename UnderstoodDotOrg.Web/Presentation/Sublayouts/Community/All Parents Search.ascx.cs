@@ -9,13 +9,13 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Understood.Common;
-
+using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
 
-    
     public partial class All_Parents_Search : System.Web.UI.UserControl
     {
+        MemberCardList rptMemberCards;
         Member member1 = new Member()
                 {
                     allowConnections = true,
@@ -32,7 +32,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     Children = new List<Child>(){
                                     new Child(){ 
                                         Grades=new List<Grade>(){
-                                        new Grade(){Value="7" },
+                                        new Grade(){Value="7", Key=Constants.GradesByValue["7"] },
                                         }, 
                                         Gender="Male",
                                         Issues = new List<Issue>()
@@ -51,86 +51,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                                               
                                 }
                 };
-        protected override void OnInit(EventArgs e)
-        {
-            rptMemberCards.ItemDataBound += rptMemberCards_ItemDataBound;
-            
-            base.OnInit(e);
-        }
-
-
-       
-        void rptMemberCards_ItemDataBound(object sender, ListViewItemEventArgs e)
-        {
-            if (e.Item.ItemType == ListViewItemType.EmptyItem)
-            {
-                if (e.Item.DataItem != null)
-                {
-                    Label emptyText = (Label)e.Item.FindControl("txtEmpty");
-                    if (emptyText != null)
-                    {
-                        emptyText.Text = "There are no community members within your selections, try to remove a filter option for better results";
-
-
-                    }
-                }
-            }
-            else if (e.Item.ItemType == ListViewItemType.DataItem)
-            {
-                if (e.Item.DataItem != null)
-                {
-                    Image avaturl = (Image)e.Item.FindControl("UserAvatar");
-                    if (avaturl != null)
-                    {
-                        avaturl.ImageUrl = ((MemberCardModel)e.Item.DataItem).AvatarUrl;
-
-
-                    }
-
-                    Literal username = (Literal)e.Item.FindControl("UserName");
-                    if (username != null)
-                    {
-                        username.Text = ((MemberCardModel)e.Item.DataItem).UserName;
-
-
-                    }
-
-                    HtmlControl divImg = (HtmlControl)e.Item.FindControl("lblImg"); 
-                    Literal userlbl = (Literal)e.Item.FindControl("UserLabel");
-                    if (userlbl != null)
-                    {
-                        userlbl.Text = ((MemberCardModel)e.Item.DataItem).UserLabel;
-                        divImg.Visible = true;
-
-                    }
-
-                    Literal userloc = (Literal)e.Item.FindControl("UserLocation");
-                    if (userloc != null)
-                    {
-                        userloc.Text = ((MemberCardModel)e.Item.DataItem).UserLocation;
-
-
-                    }
-
-                   
-                        Repeater childModel_repeater = (Repeater)e.Item.FindControl("rptChildCard");
-                        if (childModel_repeater != null)
-                        {
-                            childModel_repeater.DataSource = ((MemberCardModel)e.Item.DataItem).Children;
-                            childModel_repeater.DataBind();
-                        }
-                   
-                }
-
-            }
-
-
-        }
-
+      
         protected void Page_Load(object sender, EventArgs e)
         {
+            rptMemberCards = (MemberCardList)Page.LoadControl("~/Presentation/Sublayouts/Common/MemberCardList.ascx");
+            rptMemberCards.ID = "rptMemberCards";
+            memberList.Controls.Add(rptMemberCards);
+
             if (!IsPostBack)
             {
+         
                 Item currItem = Sitecore.Context.Item;
 
                 //Child Issue Drop List
@@ -163,8 +93,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
                // List<Member> members = mem.GetMembers();
               
-                List<Member> members = new List<Member>();
-                members.Add(member1);
+              // List<Member> members = new List<Member>();
+               // members.Add(member1);
+
+                //TODO: To replace with actual data for production
+                MembershipManagerProxy mem = new MembershipManagerProxy();
+
+                List<Member> members = new List<Member>() { mem.GetMember(Guid.Empty) };
+                //////////////////////////////////////////////////////////
+
                 List<MemberCardModel> memberCardSrc = new List<MemberCardModel>();
                 List<ChildCardModel> childCardSrc = new List<ChildCardModel>();
                 foreach (var member in members)
@@ -204,24 +141,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     memberCardSrc.Add(mm);
                     mm = null;
                 }
-
-                rptMemberCards.DataSource = memberCardSrc;
+                Session["members_parents"] = memberCardSrc;
+                rptMemberCards.DataSource = memberCardSrc.Take(25).ToList<MemberCardModel>();
                 rptMemberCards.DataBind();
 
             }
             
         }
 
-        protected void rptChildCard_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-
-            Repeater childIssues_repeater = (Repeater)e.Item.FindControl("rptChildIssues");
-            if (childIssues_repeater != null)
-            {
-                childIssues_repeater.DataSource = ((ChildCardModel)e.Item.DataItem).IssueList;
-                childIssues_repeater.DataBind();
-            }
-        }
+       
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
@@ -299,6 +227,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             return workingSet.Select(m=> new MemberCardModel(m)).ToList<MemberCardModel>();
 
 
+        }
+
+        protected void ShowMore_ServerClick(object sender, EventArgs e)
+        {
+            List<MemberCardModel> m = rptMemberCards.DataSource as List<MemberCardModel>;
+            if (m != null)
+            {
+                var mems = (List<MemberCardModel>)Session["members_parents"];
+
+                if (mems != null)
+                {
+                    rptMemberCards.DataSource = mems;
+                    rptMemberCards.DataBind();
+
+                    showmore.Visible = false;
+                }
+            }
         }
     }
 }

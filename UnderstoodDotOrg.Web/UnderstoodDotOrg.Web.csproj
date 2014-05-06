@@ -596,6 +596,13 @@
     <Compile Include="Presentation\Sublayouts\Community\Parents Like Me.ascx.designer.cs">
       <DependentUpon>Parents Like Me.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parents Recommended.ascx.cs">
+      <DependentUpon>Parents Recommended.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parents Recommended.ascx.designer.cs">
+      <DependentUpon>Parents Recommended.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Containers\TwoRow.ascx.cs">
       <DependentUpon>TwoRow.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -812,6 +819,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Test\Telligent\CommentTest.ascx.designer.cs">
       <DependentUpon>CommentTest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\MemberCardList.ascx.cs">
+      <DependentUpon>MemberCardList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\MemberCardList.ascx.designer.cs">
+      <DependentUpon>MemberCardList.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Test\Telligent\MyCommentsTest.ascx.cs">
       <DependentUpon>MyCommentsTest.ascx</DependentUpon>
@@ -1262,6 +1276,7 @@
     <Content Include="Presentation\Sublayouts\Community\Moderators.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Like Me.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Parents Recommended.ascx" />
     <Content Include="Presentation\Sublayouts\Containers\TwoRow.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
@@ -1293,6 +1308,7 @@
     <Content Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Test\Telligent\CommentsTestControl.ascx" />
     <Content Include="Presentation\Sublayouts\Test\Telligent\CommentTest.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\MemberCardList.ascx" />
     <Content Include="Presentation\Sublayouts\Test\Telligent\MyCommentsTest.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx" />
