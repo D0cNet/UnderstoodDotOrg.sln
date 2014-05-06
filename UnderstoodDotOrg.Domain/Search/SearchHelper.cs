@@ -335,11 +335,13 @@ namespace UnderstoodDotOrg.Domain.Search
                 var timelyQuery = matchingArticlesQuery
                                     .Where(GetTimelyPredicate(date));
                 int timelyMatches = timelyQuery.Take(1).GetResults().TotalSearchResults;
+                List<Article> timelyArticles = new List<Article>();
 
                 if (timelyMatches > 0)
                 {
                     int resultsToTake = Math.Min(timelyMatches, Constants.PERSONALIZATION_ARTICLES_PER_USER);
-                    toProcess.AddRange(timelyQuery.Take(resultsToTake).ToList());
+                    timelyArticles = timelyQuery.Take(resultsToTake).ToList();
+                    toProcess.AddRange(timelyArticles);
                 }
 
                 // The buckets diagrammed by Digital Pulp all contain inclusive search terms
@@ -390,14 +392,33 @@ namespace UnderstoodDotOrg.Domain.Search
                 }
 
                 // Post Process
+                List<Article> finalList = new List<Article>();
+
+                // Place timely at top
+                if (timelyArticles.Any())
+                {
+                    finalList.AddRange(timelyArticles);
+                    toProcess = toProcess.Except(timelyArticles).ToList();
+                }
+                
+                // Shift must read next
+                List<Article> mustRead = toProcess.AsQueryable().Where(GetMustReadPredicate()).ToList();
+                if (mustRead.Any())
+                {
+                    finalList.AddRange(mustRead);
+                    toProcess = toProcess.Except(mustRead).ToList();
+                }
+
+                finalList.AddRange(toProcess);
 
                 var resp = System.Web.HttpContext.Current.Response;
+                resp.Write(String.Format("Member: {0} {1} | Child: {2}<br>", member.FirstName, member.LastName, child.Nickname));
                 resp.Write(String.Format("Total articles to search: {0}<br>", allArticlesQuery.Take(1).GetResults().TotalSearchResults));
                 resp.Write(String.Format("Matches: {0}<br><br>", totalMatches));
                 //resp.Write(String.Format("Timely: {0}<br>", timelyArticles.Count()));
                 //resp.Write(String.Format("Must: {0}<br><br>", mustReadArticles.Count()));
 
-                foreach (Article a in toProcess)
+                foreach (Article a in finalList)
                 {
                     resp.Write(String.Format("{0} - {1} ({2})<br>", a.ItemId.ToString(), a.Name, a.Language));
                 }
