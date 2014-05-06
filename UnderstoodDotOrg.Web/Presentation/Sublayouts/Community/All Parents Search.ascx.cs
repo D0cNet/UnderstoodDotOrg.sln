@@ -102,45 +102,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 List<Member> members = new List<Member>() { mem.GetMember(Guid.Empty) };
                 //////////////////////////////////////////////////////////
 
-                List<MemberCardModel> memberCardSrc = new List<MemberCardModel>();
-                List<ChildCardModel> childCardSrc = new List<ChildCardModel>();
-                foreach (var member in members)
-                {
+                
+                List<MemberCardModel> memberCardSrc = members.Select(m => new MemberCardModel(m)).ToList<MemberCardModel>();
 
-                    MemberCardModel mm = new MemberCardModel();
-                    mm.AvatarUrl = UnderstoodDotOrg.Common.Constants.Settings.AnonymousAvatar;
-
-                    //TODO: This is to change once we figure out retrieving users by roleid
-                    mm.UserLabel = "UserLabel";
-
-                    mm.UserLocation = UnderstoodDotOrg.Common.Constants.Settings.DefaultLocation;
-                    mm.UserName = member.ScreenName;
-
-                    ChildCardModel cm = new ChildCardModel();
-                    cm.IssueList = new List<ChildCardModel.Issue>();
-                    foreach (var child in member.Children)
-                    {
-                        cm.Gender = child.Gender;
-                        cm.Grade = child.Grades.First().Value;
-
-
-                        foreach (var issue in child.Issues)
-                        {
-                            ChildCardModel.Issue iss = new ChildCardModel.Issue();
-                            iss.IssueName = issue.Value;
-                            cm.IssueList.Add(iss);
-
-                            iss = null;
-                        }
-                        childCardSrc.Add(cm);
-                        cm = null;
-                        
-                    }
-                    mm.Children = childCardSrc;
-
-                    memberCardSrc.Add(mm);
-                    mm = null;
-                }
                 Session["members_parents"] = memberCardSrc;
                 rptMemberCards.DataSource = memberCardSrc.Take(25).ToList<MemberCardModel>();
                 rptMemberCards.DataBind();
@@ -211,14 +175,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
                 workingSet = workingSet.Where(m =>
                                                 (from c in m.Children
-                                                 where c.Issues.Where(x => x.Key.Equals(new Guid(issue))).Count() > 0
+                                                 where c.Issues.Any(x => x.Key.ToString().Equals( new Guid(issue).ToString()))
                                                  select c).Count() > 0);
                       
             }
 
             if (!String.IsNullOrEmpty(topic))
             {
-                workingSet = workingSet.Where(m => m.Interests.Select(x => x.Key.Equals(new Guid(topic))).Count() > 0);
+                workingSet = workingSet.Where(m => m.Interests.Any(x => x.Key.ToString().Equals(new Guid(topic).ToString())));
 
                 
                                                     

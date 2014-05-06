@@ -10,11 +10,6 @@ using UnderstoodDotOrg.Domain.Understood.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common 
 {
-
-    [AspNetHostingPermission(SecurityAction.Demand,
-       Level = AspNetHostingPermissionLevel.Minimal)]
-    [AspNetHostingPermission(SecurityAction.InheritanceDemand,
-        Level = AspNetHostingPermissionLevel.Minimal)]
     public partial class MemberCardList : System.Web.UI.UserControl
     {
         protected override void OnInit(EventArgs e)
@@ -32,7 +27,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     Label emptyText = (Label)e.Item.FindControl("txtEmpty");
                     if (emptyText != null)
                     {
-                        emptyText.Text = "There are no community members within your selections, try to remove a filter option for better results";
+                        emptyText.Text = EmptyText??"There are no community members within your selections, try to remove a filter option for better results";
 
 
                     }
@@ -112,6 +107,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             }
         }
 
+        public string EmptyText { get; set; }
         public override void DataBind()
         {
             rptMemberCards.DataBind();
