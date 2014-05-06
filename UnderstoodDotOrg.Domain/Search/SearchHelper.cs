@@ -26,7 +26,7 @@ namespace UnderstoodDotOrg.Domain.Search
             pred = pred.And(a => a.Language == "en");
 
             // Exclude templates
-            pred = pred.And(a => !a.Fullpath.StartsWith("/sitecore/templates/"));
+            pred = pred.And(a => !a.Fullpath.Contains("/sitecore/templates/"));
 
             // Include only articles
             pred = pred.And(GetInheritsArticlePredicate());
