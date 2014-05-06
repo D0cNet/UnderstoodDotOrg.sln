@@ -44,5 +44,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
         [IndexField(Constants.SolrFields.DiagnosedConditions)]
         public IEnumerable<ID> DiagnosedConditions { get; set; }
+
+        [IndexField("_fullpath")]
+        public string Fullpath { get; set; }
     }
 }
