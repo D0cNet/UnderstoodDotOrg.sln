@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * Bootstrap v3.0.3
  *
  * Copyright 2013 Twitter, Inc
@@ -483,11 +483,9 @@ hr {
   text-align: left;
   background-color: #ffffff;
   background-clip: padding-box;
-  border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   white-space: normal;
 }
 .popover.top {

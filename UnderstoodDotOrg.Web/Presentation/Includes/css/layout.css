@@ -1,4 +1,7 @@
-﻿/* line 4, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/**
+ * SASS mixin for cross-platform border-radius.
+ */
+/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 body:before {
   content: '';
   display: block;
@@ -14,19 +17,19 @@ body:before {
   background-image: linear-gradient(left, #624a93 0%, #625298 30%, #595a9d 42%, #3c71ad 68%, #2088c6 89%, #1690d0 100%);
 }
 @media (min-width: 650px) {
-  /* line 4, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   body:before {
     height: 10px;
   }
 }
 @media (min-width: 769px) {
-  /* line 4, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   body:before {
     height: 5px;
   }
 }
 
-/* line 20, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 body:after {
   content: '';
   display: block;
@@ -42,28 +45,28 @@ body:after {
   background-image: linear-gradient(left, #624a93 0%, #624a93 50%, #1690d0 50%, #1690d0 100%);
 }
 @media (min-width: 650px) {
-  /* line 20, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   body:after {
     height: 10px;
   }
 }
 @media (min-width: 769px) {
-  /* line 20, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   body:after {
     height: 5px;
   }
 }
 
-/* line 38, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .container {
   margin: 0 15px;
 }
-/* line 45, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .container.flush {
   margin: 0;
 }
 
-/* line 50, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #language-selector-bar {
   background: #426da9;
   color: #fff;
@@ -77,7 +80,7 @@ body:after {
   font-size: 0.75rem;
 }
 @media (min-width: 650px) {
-  /* line 50, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #language-selector-bar {
     padding-top: 17px;
     height: 90px;
@@ -86,49 +89,49 @@ body:after {
   }
 }
 @media (min-width: 769px) {
-  /* line 50, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #language-selector-bar {
     display: none !important;
   }
 }
-/* line 69, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #language-selector-bar .button-close {
   display: inline-block;
   height: 16px;
   width: 16px;
   vertical-align: text-bottom;
   cursor: pointer;
-  background-image: url("../img/icon.close.white.64.png");
+  background-image: url("../images/icon.close.white.64.png");
   background-size: 16px 16px;
 }
 @media (min-width: 650px) {
-  /* line 69, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #language-selector-bar .button-close {
     height: 32px;
     width: 32px;
     background-size: 32px 32px;
   }
 }
-/* line 83, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #language-selector-bar dl {
   margin: 0;
   display: inline;
   font-weight: bold;
   font-family: 'Circular', arial, sans-serif;
 }
-/* line 89, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #language-selector-bar dt {
   display: inline;
   margin: 0 0.5em 0 1.167em;
   font-size: 1.25em;
   line-height: 1.667;
 }
-/* line 95, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #language-selector-bar dd {
   display: inline;
   margin: 0 0 0 1.333em;
 }
-/* line 99, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 108, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #language-selector-bar .button {
   display: inline-block;
   font-size: inherit;
@@ -138,29 +141,29 @@ body:after {
   width: 5.167em;
 }
 
-/* line 109, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #wrapper {
   position: relative;
   z-index: 10;
   background: #fff;
   overflow: hidden;
 }
-/* line 114, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #wrapper.is-offscreen {
   position: fixed;
 }
-/* line 116, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .language-selector-visible #wrapper.is-offscreen {
   top: 50px;
 }
 @media (min-width: 650px) {
-  /* line 116, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selector-visible #wrapper.is-offscreen {
     top: 100px;
   }
 }
 
-/* line 126, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .language-selection {
   display: none;
   list-style: none;
@@ -172,21 +175,21 @@ body:after {
   font-size: 0.5625rem;
   line-height: 2.889;
 }
-/* line 38, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/vendor/bundle/ruby/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, /Users/justin/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .language-selection:after {
   content: "";
   display: table;
   clear: both;
 }
 @media (min-width: 650px) {
-  /* line 126, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection {
     font-size: 18px;
     font-size: 1.125rem;
   }
 }
 @media (min-width: 769px) {
-  /* line 126, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection {
     font-size: 14px;
     font-size: 0.875rem;
@@ -195,26 +198,26 @@ body:after {
     margin-bottom: 20px;
   }
 }
-/* line 144, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .language-selection li {
   float: left;
 }
 @media (min-width: 769px) {
-  /* line 147, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection li + li {
     border-left: 1px solid #f4f2f1;
   }
 }
 @media (min-width: 769px) {
-  /* line 151, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection li + li a {
     padding-right: 0;
   }
 }
-/* line 157, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .language-selection a {
   display: block;
-  color: #a9a9a9;
+  color: #696969;
   padding: 0 0.889em;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(2%, #b7b6b5), color-stop(4%, #dedcdb), color-stop(6%, #f4f2f1), color-stop(98%, #f4f2f1), color-stop(100%, rgba(255, 255, 255, 0)));
   background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0) 0%, #b7b6b5 2%, #dedcdb 4%, #f4f2f1 6%, #f4f2f1 98%, rgba(255, 255, 255, 0) 100%);
@@ -223,23 +226,23 @@ body:after {
   background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, #b7b6b5 2%, #dedcdb 4%, #f4f2f1 6%, #f4f2f1 98%, rgba(255, 255, 255, 0) 100%);
 }
 @media (min-width: 480px) {
-  /* line 157, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection a {
     color: transparent;
   }
 }
 @media (min-width: 769px) {
-  /* line 157, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection a {
     padding: 0 10px;
     background: none !important;
   }
 }
-/* line 170, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 184, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .language-selection a:hover {
   text-decoration: none;
 }
-/* line 175, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 189, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .language-selection .is-active {
   color: #fff;
   background: #7a4183;
@@ -247,49 +250,55 @@ body:after {
   border-radius: 1px;
 }
 @media (min-width: 480px) {
-  /* line 175, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 189, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection .is-active {
     color: transparent;
   }
 }
 @media (min-width: 480px) {
-  /* line 184, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection a[title]:after {
     display: block;
     content: attr(title);
     margin-top: -2.889em;
-    color: #a9a9a9;
+    color: #696969;
   }
 }
 @media (min-width: 769px) {
-  /* line 184, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection a[title]:after {
     margin-top: -1.429em;
   }
 }
 @media (min-width: 480px) {
-  /* line 195, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection .is-active[title]:after {
     color: #fff;
   }
 }
 @media (min-width: 769px) {
-  /* line 195, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection .is-active[title]:after {
     color: #7a4183;
   }
 }
-/* line 203, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+@media (min-width: 480px) {
+  /* line 217, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+  .language-selection a:hover {
+    color: #fff;
+  }
+}
+/* line 222, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .language-selection a:hover:after {
   color: #426da9;
 }
 
-/* line 208, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 227, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .nav-utility {
   display: none;
 }
 @media (min-width: 769px) {
-  /* line 208, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 227, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .nav-utility {
     display: block;
     float: left;
@@ -299,92 +308,92 @@ body:after {
   }
 }
 @media (min-width: 769px) {
-  /* line 216, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .nav-utility li {
     display: inline;
     margin: 0 11px;
   }
 }
-/* line 221, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 240, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .nav-utility li:first-child {
   margin-left: 0;
 }
-/* line 225, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 244, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .nav-utility a {
   color: #696969;
 }
-/* line 228, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .nav-utility a:hover {
   color: #426da9;
   text-decoration: none;
 }
 
-/* line 235, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .nav-main {
   display: none;
 }
 @media (min-width: 769px) {
-  /* line 235, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .nav-main {
     display: block;
   }
 }
-/* line 240, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 259, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .nav-main a {
   color: #696969;
 }
-/* line 243, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 262, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .nav-main a:hover {
   color: #426da9;
   text-decoration: none;
 }
 
-/* line 250, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 269, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page {
   height: 45px;
   position: relative;
   margin: 0;
 }
 @media (min-width: 650px) {
-  /* line 250, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 269, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page {
     height: 90px;
   }
 }
 @media (min-width: 769px) {
-  /* line 250, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 269, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page {
     height: auto;
     padding-top: 20px;
     *zoom: 1;
     margin: 0 15px;
   }
-  /* line 38, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/vendor/bundle/ruby/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, /Users/justin/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   #header-page:after {
     content: "";
     display: table;
     clear: both;
   }
 }
-/* line 264, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .row {
   padding: 0;
 }
 @media (min-width: 769px) {
-  /* line 264, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .row {
     padding: 0 5px;
   }
 }
 @media (min-width: 769px) {
-  /* line 270, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 289, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .l-bar {
     float: right;
     clear: right;
     margin-bottom: 35px;
   }
 }
-/* line 277, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .sign-in {
   position: absolute;
   top: 0;
@@ -393,7 +402,7 @@ body:after {
   padding: 10px 0 0 10px;
 }
 @media (min-width: 650px) {
-  /* line 277, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in {
     padding: 20px 0 0 20px;
     right: 245px;
@@ -401,7 +410,7 @@ body:after {
   }
 }
 @media (min-width: 769px) {
-  /* line 277, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in {
     padding: 0;
     font-size: 14px;
@@ -414,47 +423,47 @@ body:after {
   }
 }
 @media (min-width: 960px) {
-  /* line 277, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in {
     margin-right: 30px;
   }
 }
-/* line 301, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 320, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .sign-in .user-info {
   text-decoration: none;
 }
-/* line 304, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 323, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .sign-in .user-info:hover .user-name {
   text-decoration: underline;
 }
-/* line 309, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 328, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .sign-in .avatar {
   width: 25px;
 }
 @media (min-width: 650px) {
-  /* line 309, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 328, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .avatar {
     width: 50px;
   }
 }
 @media (min-width: 769px) {
-  /* line 309, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 328, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .avatar {
     width: 30px;
   }
 }
-/* line 318, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 337, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .sign-in .user-name {
   display: none;
 }
 @media (min-width: 960px) {
-  /* line 318, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 337, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .user-name {
     display: inline-block;
     padding: 5px 0 0 5px;
   }
 }
-/* line 325, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .sign-in .messages {
   display: inline-block;
   background: #426da9;
@@ -472,7 +481,7 @@ body:after {
   border-radius: 2px;
 }
 @media (min-width: 650px) {
-  /* line 325, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .messages {
     top: 8px;
     left: 57px;
@@ -483,7 +492,7 @@ body:after {
   }
 }
 @media (min-width: 769px) {
-  /* line 325, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .messages {
     top: -9px;
     left: 21px;
@@ -493,22 +502,22 @@ body:after {
     min-width: 18px;
   }
 }
-/* line 354, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 373, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .sign-in a {
   color: #426da9;
 }
-/* line 357, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 376, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .sign-in .link-sign-in {
   display: inline-block;
   overflow: hidden;
   width: 25px;
   height: 25px;
   text-indent: -999em;
-  background-image: url("../img/avatar.signed-out.png");
+  background-image: url("../images/avatar.signed-out.png");
   background-size: 25px 25px;
 }
 @media (min-width: 650px) {
-  /* line 357, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 376, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .link-sign-in {
     width: 50px;
     height: 50px;
@@ -516,7 +525,7 @@ body:after {
   }
 }
 @media (min-width: 769px) {
-  /* line 357, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 376, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .link-sign-in {
     width: auto;
     height: auto;
@@ -525,64 +534,64 @@ body:after {
     padding-top: 5px;
   }
 }
-/* line 379, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 398, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page.is-search-active {
   height: 115px;
 }
 @media (min-width: 650px) {
-  /* line 379, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 398, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page.is-search-active {
     height: 180px;
   }
 }
-/* line 386, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 405, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main {
   clear: both;
   width: 78%;
 }
 @media (min-width: 930px) {
-  /* line 386, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 405, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main {
     width: 81%;
   }
 }
-/* line 395, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 414, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main > ul > li {
   float: left;
   width: 20%;
   line-height: 1.125;
   border-top: 5px solid #fff;
 }
-/* line 400, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 419, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main > ul > li > span a {
   display: block;
   position: relative;
-  height: 70px;
-  padding: 17px 5px 0 12px;
+  height: 65px;
+  padding: 12px 5px 0 12px;
 }
 @media (min-width: 820px) {
-  /* line 400, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 419, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main > ul > li > span a {
     padding-left: 20px;
   }
 }
 @media (min-width: 930px) {
-  /* line 400, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 419, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main > ul > li > span a {
     padding-left: 25px;
   }
 }
-/* line 411, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 430, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main > ul > li > span a br {
   display: none;
 }
 @media (min-width: 820px) {
-  /* line 411, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 430, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main > ul > li > span a br {
     display: block;
   }
 }
-/* line 418, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 437, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main > ul > li ul {
   display: none;
   position: absolute;
@@ -593,44 +602,45 @@ body:after {
   padding: 13px 20px 16px 12px;
 }
 @media (min-width: 820px) {
-  /* line 418, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 437, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main > ul > li ul {
     padding-left: 20px;
   }
 }
 @media (min-width: 930px) {
-  /* line 418, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 437, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main > ul > li ul {
     padding-left: 25px;
   }
 }
-/* line 432, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 451, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main > ul > li ul li {
   line-height: 1.188;
   margin-bottom: 13px;
 }
-/* line 437, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main > ul > li.is-current {
+  border-color: #f4f2f1;
   background: #f4f2f1;
 }
-/* line 439, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 459, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main > ul > li.is-current > span a:before {
   background: #f4f2f1;
 }
-/* line 442, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 462, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main > ul > li.is-current + li > span a:before {
   background: #fff;
 }
-/* line 446, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 466, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main > ul > li.is-active {
   border-color: #7a4183;
   background: none;
 }
-/* line 450, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 470, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main > ul > li.is-active ul {
   display: block;
 }
-/* line 453, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 473, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #header-page .nav-main > ul > li > span a:before {
   content: "";
   display: inline-block;
@@ -639,58 +649,58 @@ body:after {
   background: #e8e8e8;
   position: absolute;
   left: 0;
-  top: 20px;
+  top: 15px;
 }
 
-/* line 468, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .logo-u-main {
   float: left;
   padding: 12px 0 0 49px;
 }
 @media (min-width: 650px) {
-  /* line 468, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .logo-u-main {
     padding: 24px 0 0 107px;
   }
 }
 @media (min-width: 769px) {
-  /* line 468, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .logo-u-main {
     padding: 20px 0 0;
   }
 }
 @media (min-width: 769px) {
-  /* line 477, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .logo-u-main a {
     display: block;
     width: 230px;
     height: 73px;
-   /* background-image: url("../img/logo.u.large.png");*/
+    background-image: url("../images/logo.u.large.png");
     background-size: contain;
   }
 }
-/* line 486, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 506, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .logo-u-main img {
-  /*width: 90px;*/
+  width: 90px;
 }
 @media (min-width: 650px) {
-  /* line 486, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 506, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .logo-u-main img {
-    /*width: 180px;*/
+    width: 180px;
   }
 }
 @media (min-width: 769px) {
-  /* line 486, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 506, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .logo-u-main img {
-    /*display: none;*/
+    display: none;
   }
 }
-/* line 495, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 515, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize .logo-u-main a {
-  background-image: url("../img/logo.u.large.lo-res.png");
+  background-image: url("../images/logo.u.large.lo-res.png");
 }
 
-/* line 501, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 521, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #search-site {
   position: absolute;
   top: 45px;
@@ -699,13 +709,13 @@ body:after {
   background: #f4f2f1;
 }
 @media (min-width: 650px) {
-  /* line 501, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 521, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site {
     top: 90px;
   }
 }
 @media (min-width: 769px) {
-  /* line 501, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 521, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site {
     float: right;
     position: static;
@@ -714,13 +724,13 @@ body:after {
   }
 }
 @media (min-width: 769px) {
-  /* line 516, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 536, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site.is-focused {
     background: none;
     border-color: #bdbdc0;
   }
 }
-/* line 522, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 542, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #search-site legend {
   display: block;
   height: 45px;
@@ -729,13 +739,13 @@ body:after {
   right: 76px;
   top: -45px;
   text-indent: -999em;
-  background-image: url("../img/icon.search.56.png");
+  background-image: url("../images/icon.search.56.png");
   background-repeat: no-repeat;
   background-size: 14px 14px;
   background-position: 50% 50%;
 }
 @media (min-width: 650px) {
-  /* line 522, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 542, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site legend {
     right: 155px;
     height: 90px;
@@ -745,42 +755,42 @@ body:after {
   }
 }
 @media (min-width: 769px) {
-  /* line 522, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 542, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site legend {
     top: -9999px;
     left: -9999px;
   }
 }
-/* line 545, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 565, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .is-search-active #search-site legend {
   background-color: #f4f2f1;
 }
-/* line 549, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 569, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #search-site .field {
   display: none;
 }
 @media (min-width: 769px) {
-  /* line 549, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 569, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site .field {
     display: block;
     height: 28px;
     padding: 2px 10px 0 6px;
   }
 }
-/* line 556, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 576, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .is-search-active #search-site .field {
   display: block;
   height: 70px;
   padding: 10px 13px 0;
 }
 @media (min-width: 650px) {
-  /* line 556, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 576, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .is-search-active #search-site .field {
     height: 90px;
     padding: 16px 33px 0 32px;
   }
 }
-/* line 566, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 586, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #search-site input[type="text"] {
   font-size: 14px;
   font-size: 0.875rem;
@@ -792,7 +802,7 @@ body:after {
   padding: 0;
 }
 @media (min-width: 769px) {
-  /* line 566, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 586, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site input[type="text"] {
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
@@ -800,7 +810,7 @@ body:after {
   }
 }
 @media (min-width: 769px) {
-  /* line 581, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 601, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site input[type="text"]:focus {
     width: 150px;
     -webkit-transition: all .5s ease;
@@ -810,32 +820,34 @@ body:after {
   }
 }
 @media (min-width: 820px) {
-  /* line 581, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 601, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site input[type="text"]:focus {
     width: 188px;
   }
 }
-/* line 3, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/mixins/_placeholder.scss */
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
 #search-site input[type="text"].placeholder {
-  color: #a9a9a9;
+  color: #696969;
 }
-/* line 4, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/mixins/_placeholder.scss */
+/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
 #search-site input[type="text"]:-moz-placeholder {
-  color: #a9a9a9;
+  color: #696969;
+  opacity: 1;
 }
-/* line 5, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/mixins/_placeholder.scss */
+/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
 #search-site input[type="text"]::-moz-placeholder {
-  color: #a9a9a9;
+  color: #696969;
+  opacity: 1;
 }
-/* line 6, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/mixins/_placeholder.scss */
+/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
 #search-site input[type="text"]:-ms-input-placeholder {
-  color: #a9a9a9;
+  color: #696969;
 }
-/* line 7, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/mixins/_placeholder.scss */
+/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
 #search-site input[type="text"]::-webkit-input-placeholder {
-  color: #a9a9a9;
+  color: #696969;
 }
-/* line 596, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .is-search-active #search-site input[type="text"] {
   font-size: 12px;
   font-size: 0.75rem;
@@ -844,7 +856,7 @@ body:after {
   margin-top: 10px;
 }
 @media (min-width: 650px) {
-  /* line 596, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .is-search-active #search-site input[type="text"] {
     font-size: 24px;
     font-size: 1.5rem;
@@ -852,31 +864,40 @@ body:after {
     margin-top: 4px;
   }
 }
-/* line 608, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 628, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #search-site input[type="submit"] {
   padding: 0;
   color: inherit;
 }
+/* line 632, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+#search-site input[type="submit"]:focus {
+  border: solid 2px #99c2e7;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  margin-right: -2px;
+  outline: none;
+}
 @media (min-width: 769px) {
-  /* line 608, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 628, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site input[type="submit"] {
     border: 0;
     width: 20px;
     height: 20px;
     margin-top: 2px;
     background-color: transparent;
-    background-image: url("../img/sprite.icon.search.32.png");
+    background-image: url("../images/sprite.icon.search.32.png");
     background-repeat: no-repeat;
     background-position: 50% 2px;
     background-size: 16px 41px;
     text-indent: -999em;
   }
-  /* line 622, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 652, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .no-backgroundsize #search-site input[type="submit"] {
-    background-image: url("../img/sprite.icon.search.lo-res.png");
+    background-image: url("../images/sprite.icon.search.lo-res.png");
   }
 }
-/* line 626, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 656, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .is-search-active #search-site input[type="submit"] {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -889,7 +910,7 @@ body:after {
   float: right;
 }
 @media (min-width: 650px) {
-  /* line 626, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 656, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .is-search-active #search-site input[type="submit"] {
     font-size: 18px;
     font-size: 1.125rem;
@@ -897,34 +918,37 @@ body:after {
     min-width: 122px;
   }
 }
-/* line 642, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 672, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #search-site.is-focused input[type="submit"] {
   background-position: 50% -23px;
 }
 
-/* line 649, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
-#toolkit > span {
+/* line 679, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+#toolkit > button {
   background-color: #7a4183;
   color: #fff;
   width: 76px;
   height: 45px;
   float: right;
-  padding: 12px 18px 0 8px;
+  padding: 0 18px 0 8px;
   font-size: 9px;
   font-size: 0.5625rem;
   line-height: 1.222;
-  background-image: url("../img/arrow.down.fff.24.png");
+  background-image: url("../images/arrow.down.fff.24.png");
   background-repeat: no-repeat;
   background-size: 6px 4px;
   background-position: 64px 21px;
   cursor: pointer;
+  border: none;
+  font-weight: 300;
+  text-align: left;
 }
 @media (min-width: 650px) {
-  /* line 649, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
-  #toolkit > span {
+  /* line 679, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+  #toolkit > button {
     width: 155px;
     height: 90px;
-    padding: 24px 35px 0 16px;
+    padding: 0 35px 0 16px;
     font-size: 18px;
     font-size: 1.125rem;
     background-size: 12px 8px;
@@ -932,47 +956,48 @@ body:after {
   }
 }
 @media (min-width: 769px) {
-  /* line 649, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
-  #toolkit > span {
+  /* line 679, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+  #toolkit > button {
     float: right;
     position: static;
     width: 150px;
-    height: 75px;
-    padding: 18px 35px 0 20px;
+    height: 70px;
+    padding: 0 35px 0 20px;
     font-size: 16px;
     font-size: 1rem;
-    line-height: 1.063;
+    line-height: 1.125;
     background-position: 120px 32px;
     cursor: pointer;
   }
 }
-/* line 685, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
-#toolkit > span:hover {
+/* line 719, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+#toolkit > button:hover, #toolkit > button:focus {
   background-color: #298fc2;
+  outline: none;
 }
-/* line 690, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 725, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize #toolkit > span {
-  background-image: url("../img/arrow.down.fff.12.png");
+  background-image: url("../images/arrow.down.fff.12.png");
 }
-/* line 694, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 729, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize #toolkit.is-open > span {
-  background-image: url("../img/arrow.up.fff.12.png");
+  background-image: url("../images/arrow.up.fff.12.png");
 }
-/* line 701, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 736, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #toolkit.is-open > span {
   color: #7a4183;
   background-color: #fdfdfd;
-  background-image: url("../img/arrow.up.fff.24.png");
+  background-image: url("../images/arrow.up.fff.24.png");
 }
 @media (min-width: 769px) {
-  /* line 701, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 736, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #toolkit.is-open > span {
     padding: 13px 35px 0 20px;
     border-top: 5px solid #7a4183;
   }
 }
 
-/* line 716, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 751, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #button-drawermenu {
   position: absolute;
   z-index: 2;
@@ -984,13 +1009,13 @@ body:after {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
-  background-image: url("../img/sprite.icon.menu.88.png");
+  background-image: url("../images/sprite.icon.menu.88.png");
   background-size: 22px 82px;
   background-position: 17px 14px;
   background-repeat: no-repeat;
 }
 @media (min-width: 650px) {
-  /* line 716, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 751, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #button-drawermenu {
     width: 44px;
     height: 34px;
@@ -1000,24 +1025,24 @@ body:after {
     background-position: 0 0;
   }
 }
-/* line 740, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 775, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #button-drawermenu.is-active {
   background-color: #f2af00;
   background-position: 14px -18px;
 }
 @media (min-width: 650px) {
-  /* line 740, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 775, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #button-drawermenu.is-active {
     background-position: 0 98%;
     background-color: transparent !important;
   }
 }
-/* line 747, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 782, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #button-drawermenu.is-active:hover {
   background-color: #ffbc0d;
 }
 
-/* line 755, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 790, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu {
   position: fixed;
   top: 0;
@@ -1026,47 +1051,47 @@ body:after {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-/* line 762, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 797, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu.is-wide {
   padding: 17px 19px 0 8px;
   width: 84.4%;
   border-right: 1px solid #dfdfdf;
 }
 @media (min-width: 650px) {
-  /* line 762, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 797, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu.is-wide {
     padding: 30px 43px 0 23px;
   }
 }
-/* line 769, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 804, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .language-selector-visible #drawermenu.is-wide {
   padding-top: 62px;
 }
 @media (min-width: 650px) {
-  /* line 769, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 804, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selector-visible #drawermenu.is-wide {
     padding-top: 120px;
   }
 }
-/* line 776, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 811, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .content {
   overflow: hidden;
 }
-/* line 779, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 814, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .logo-u-main {
   padding: 4px 0 0 6px;
 }
 @media (min-width: 650px) {
-  /* line 779, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 814, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .logo-u-main {
     padding: 8px 0 0 9px;
   }
 }
-/* line 785, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 820, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .language-selection {
   display: block;
 }
-/* line 789, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 824, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility {
   display: block;
   overflow: hidden;
@@ -1075,49 +1100,49 @@ body:after {
   line-height: 1.786;
   padding-bottom: 20px;
 }
-/* line 795, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 830, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility ul {
   float: left;
   position: relative;
   left: 50%;
 }
-/* line 800, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 835, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility li {
   float: left;
   position: relative;
   right: 50%;
 }
-/* line 805, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 840, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility li + li {
   border-left: 1px solid #bcbdc0;
 }
-/* line 808, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 843, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility a {
   display: block;
   padding: 0 13px;
 }
-/* line 812, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 847, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility li:first-child a {
   padding-left: 0;
 }
-/* line 815, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 850, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility li:last-child a {
   padding-right: 0;
 }
 @media (min-width: 650px) {
-  /* line 789, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 824, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-utility {
     font-size: 18px;
     font-size: 1.125rem;
     line-height: 2.778;
     padding-bottom: 30px;
   }
-  /* line 822, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 857, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-utility a {
     padding: 0 49px;
   }
 }
-/* line 828, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 863, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main {
   display: block;
   clear: both;
@@ -1129,7 +1154,7 @@ body:after {
   line-height: 1.056;
 }
 @media (min-width: 650px) {
-  /* line 828, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 863, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main {
     font-size: 24px;
     font-size: 1.5rem;
@@ -1138,44 +1163,44 @@ body:after {
     padding-top: 38px;
   }
 }
-/* line 842, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 877, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main br {
   display: none;
 }
-/* line 845, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 880, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main li + li > span {
   border-top: 1px solid #bcbdc0;
 }
-/* line 848, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 883, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main ul {
   width: 50%;
   float: left;
   padding-left: 6px;
 }
 @media (min-width: 650px) {
-  /* line 848, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 883, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main ul {
     padding-left: 9px;
   }
 }
-/* line 856, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 891, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main li {
   position: relative;
 }
-/* line 859, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 894, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main li > span {
   display: block;
   padding-right: 35px;
   margin: 0 19px 0 8px;
 }
 @media (min-width: 650px) {
-  /* line 859, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 894, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main li > span {
     padding-right: 70px;
     margin: 0 43px 0 23px;
   }
 }
-/* line 869, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 904, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main a,
 #drawermenu .nav-main .title {
   display: block;
@@ -1183,33 +1208,33 @@ body:after {
   text-decoration: none;
 }
 @media (min-width: 650px) {
-  /* line 869, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 904, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main a,
   #drawermenu .nav-main .title {
     padding: 28px 0 26px;
   }
 }
-/* line 877, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 912, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .level-2 {
   display: none;
 }
-/* line 879, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 914, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .level-2 li > span {
   padding-right: 0;
 }
-/* line 883, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 918, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .level-2 a,
 #drawermenu .nav-main .level-2 .title {
   padding-left: 27px;
 }
 @media (min-width: 650px) {
-  /* line 883, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 918, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main .level-2 a,
   #drawermenu .nav-main .level-2 .title {
     padding-left: 32px;
   }
 }
-/* line 889, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 924, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .level-2 .is-current:after {
   display: none;
   content: 'You are here';
@@ -1228,14 +1253,14 @@ body:after {
   line-height: 1.091;
 }
 @media (min-width: 650px) {
-  /* line 889, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 924, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main .level-2 .is-current:after {
     padding: 17px 0 0;
     font-size: 22px;
     font-size: 1.375rem;
   }
 }
-/* line 909, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 944, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .level-2 .is-current:before {
   display: none;
   content: '';
@@ -1248,24 +1273,24 @@ body:after {
   border-bottom: 9px solid transparent;
 }
 @media (min-width: 650px) {
-  /* line 909, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 944, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main .level-2 .is-current:before {
     border-width: 18px 18px 18px 0;
     margin-top: -18px;
   }
 }
-/* line 925, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 960, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .button-more {
   width: 22px;
   height: 22px;
-  background-image: url("../img/icon.nav-arrow.68.png");
+  background-image: url("../images/icon.nav-arrow.68.png");
   background-size: 22px 22px;
   position: absolute;
   right: 19px;
   top: 20px;
 }
 @media (min-width: 650px) {
-  /* line 925, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 960, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main .button-more {
     width: 34px;
     height: 34px;
@@ -1274,11 +1299,11 @@ body:after {
     top: 24px;
   }
 }
-/* line 941, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 976, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .icon-back {
   width: 22px;
   height: 22px;
-  background-image: url("../img/sprite.nav-back.68.png");
+  background-image: url("../images/sprite.nav-back.68.png");
   background-size: 22px 44px;
   position: absolute;
   left: 2px;
@@ -1286,7 +1311,7 @@ body:after {
   cursor: pointer;
 }
 @media (min-width: 650px) {
-  /* line 941, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 976, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main .icon-back {
     width: 34px;
     height: 34px;
@@ -1295,36 +1320,29 @@ body:after {
     top: 23px;
   }
 }
-/* line 957, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 992, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .icon-back:hover {
   background-position: 0 100%;
 }
-/* line 961, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 996, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .slider {
   width: 200%;
   position: relative;
   *zoom: 1;
 }
-/* line 38, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/vendor/bundle/ruby/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, /Users/justin/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 #drawermenu .nav-main .slider:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 970, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1005, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu.is-open .is-current:after,
 #drawermenu.is-open .is-current:before {
   display: block !important;
 }
 
-/* line 979, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
-.partners-carousel ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* line 993, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1014, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav {
   margin: 0;
   padding: 0;
@@ -1335,7 +1353,7 @@ body:after {
   line-height: 1;
 }
 @media (min-width: 650px) {
-  /* line 993, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1014, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav {
     display: table;
     width: 100%;
@@ -1347,19 +1365,19 @@ body:after {
   }
 }
 @media (min-width: 769px) {
-  /* line 993, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1014, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav {
     padding-left: 0;
     padding-right: 0;
   }
 }
-/* line 1014, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1035, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav li {
   border-bottom: 1px solid #bcbdc0;
   vertical-align: top;
 }
 @media (min-width: 650px) {
-  /* line 1014, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1035, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav li {
     display: table-cell;
     border-bottom: none;
@@ -1368,53 +1386,53 @@ body:after {
   }
 }
 @media (min-width: 650px) {
-  /* line 1026, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1047, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav li:first-child a {
     padding-left: 0;
     text-align: left;
   }
 }
-/* line 1034, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1055, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav li:last-child {
   border-right: none;
   border-bottom: none;
 }
 @media (min-width: 650px) {
-  /* line 1037, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1058, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav li:last-child a {
     padding-right: 0;
     text-align: right;
   }
 }
-/* line 1045, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1066, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav li a {
   display: block;
   padding: 25px 0;
   color: #696969;
 }
-/* line 1050, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1071, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav li a:hover {
   color: #426da9;
 }
 @media (min-width: 650px) {
-  /* line 1045, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1066, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav li a {
     padding: 0 10px;
   }
 }
-/* line 1058, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1079, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav li a span {
   display: inline-block;
   text-align: left;
 }
 @media (min-width: 960px) {
-  /* line 1058, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1079, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav li a span {
     line-height: 25px;
   }
 }
 
-/* line 1074, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1095, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page {
   font-family: Arial, sans-serif;
   background-color: #f4f2f1;
@@ -1428,7 +1446,7 @@ footer#footer-page {
   line-height: 1rem;
 }
 @media (min-width: 650px) {
-  /* line 1074, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1095, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page {
     font-size: 16px;
     font-size: 1rem;
@@ -1437,7 +1455,7 @@ footer#footer-page {
   }
 }
 @media (min-width: 769px) {
-  /* line 1074, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1095, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page {
     font-size: 14px;
     font-size: 0.875rem;
@@ -1446,7 +1464,7 @@ footer#footer-page {
   }
 }
 @media (min-width: 650px) and (max-width: 768px) {
-  /* line 1096, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .row .col {
     width: auto;
     float: none;
@@ -1455,42 +1473,42 @@ footer#footer-page {
     padding: 0;
   }
 }
-/* line 1107, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .logo-u-footer {
   margin: 0 auto 0 auto;
   display: block;
   width: 25px;
 }
 @media (min-width: 650px) {
-  /* line 1107, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .logo-u-footer {
     width: 37px;
   }
 }
 @media (min-width: 769px) {
-  /* line 1107, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .logo-u-footer {
     width: 25px;
     margin: 0 auto;
   }
 }
-/* line 1124, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .footer-social {
   padding: 50px 30px 20px 30px;
 }
 @media (min-width: 650px) {
-  /* line 1124, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .footer-social {
     padding: 50px 6.5% 20px;
   }
 }
 @media (min-width: 769px) {
-  /* line 1124, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .footer-social {
     padding: 50px 15px 36px;
   }
 }
-/* line 1137, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul {
   display: table;
   margin: 0 auto 45px auto;
@@ -1499,57 +1517,57 @@ footer#footer-page ul {
   text-align: center;
 }
 @media (min-width: 769px) {
-  /* line 1137, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul {
     margin: 0;
     float: right;
   }
 }
-/* line 1149, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul li {
   display: block;
   float: left;
   padding: 0 16px 0 0;
 }
 @media (min-width: 650px) {
-  /* line 1149, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul li {
     padding: 0 42px 0 0;
   }
 }
 @media (min-width: 769px) {
-  /* line 1149, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul li {
     padding: 0 2px;
   }
 }
-/* line 1162, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1183, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul li:first-child {
   padding-left: 0;
 }
-/* line 1166, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul li:last-child {
   padding-right: 0;
 }
-/* line 1172, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul.footer-nav-utility {
   margin-bottom: 25px;
   float: none;
 }
 @media (min-width: 650px) {
-  /* line 1172, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul.footer-nav-utility {
     margin-bottom: 40px;
   }
 }
 @media (min-width: 769px) {
-  /* line 1172, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul.footer-nav-utility {
     margin-top: 18px;
     text-align: left;
   }
 }
-/* line 1185, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul.footer-nav-utility li {
   display: table-cell;
   border-right: 1px solid #696969;
@@ -1557,41 +1575,41 @@ footer#footer-page ul.footer-nav-utility li {
   line-height: 1;
 }
 @media (min-width: 650px) {
-  /* line 1185, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul.footer-nav-utility li {
     padding: 0 13px;
   }
 }
-/* line 1195, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul.footer-nav-utility li:first-child {
   padding-left: 0;
 }
-/* line 1199, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1220, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul.footer-nav-utility li:last-child {
   padding-right: 0;
   border-right: none;
 }
-/* line 1210, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1231, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page a {
   color: #696969;
 }
-/* line 1214, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page p {
   text-align: left;
   margin: 0;
 }
 @media (min-width: 769px) {
-  /* line 1214, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page p {
     padding: 0;
   }
 }
-/* line 1224, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon {
   width: 49px;
   height: 48px;
   display: inline-block;
-  background-image: url("../img/sprite.social.footer.png");
+  background-image: url("../images/sprite.social.footer.png");
   background-repeat: no-repeat;
   background-size: 219px 106px;
   text-indent: -119988px;
@@ -1599,7 +1617,7 @@ footer#footer-page .icon {
   text-align: left;
 }
 @media (min-width: 650px) {
-  /* line 1224, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon {
     width: 64px;
     height: 64px;
@@ -1607,187 +1625,187 @@ footer#footer-page .icon {
   }
 }
 @media (min-width: 769px) {
-  /* line 1224, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon {
     width: 42px;
     height: 42px;
     background-size: 193px 93px;
   }
 }
-/* line 1245, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1266, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon {
   width: 42px;
   height: 42px;
-  background: url("../img/sprite.social.footer.lo-res.png");
+  background: url("../images/sprite.social.footer.lo-res.png");
 }
-/* line 1253, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1274, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-facebook {
   background-position: 0 0;
 }
-/* line 1256, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1277, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-facebook {
   background-position: 0 0;
 }
-/* line 1260, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-facebook:hover {
   background-position: 0 -56px;
 }
 @media (min-width: 650px) {
-  /* line 1260, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-facebook:hover {
     background-position: 0 -74px;
   }
 }
 @media (min-width: 769px) {
-  /* line 1260, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-facebook:hover {
     background-position: 0 -50px;
   }
 }
-/* line 1271, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1292, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-facebook:hover:hover {
   background-position: 0 -50px;
 }
-/* line 1279, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-twitter {
   background-position: -56px 0;
 }
-/* line 1282, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1303, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-twitter {
   background-position: -50px 0;
 }
 @media (min-width: 650px) {
-  /* line 1279, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-twitter {
     background-position: -75px 0;
   }
 }
 @media (min-width: 769px) {
-  /* line 1279, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-twitter {
     background-position: -50px 0;
   }
 }
-/* line 1294, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-twitter:hover {
   background-position: -56px -56px;
 }
 @media (min-width: 650px) {
-  /* line 1294, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-twitter:hover {
     background-position: -75px -74px;
   }
 }
 @media (min-width: 769px) {
-  /* line 1294, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-twitter:hover {
     background-position: -50px -50px;
   }
 }
-/* line 1305, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1326, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-twitter:hover:hover {
   background-position: -50px -50px;
 }
-/* line 1313, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-google {
   background-position: -113px 0;
 }
-/* line 1316, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1337, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-google {
   background-position: -100px 0;
 }
 @media (min-width: 650px) {
-  /* line 1313, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-google {
     background-position: -151px 0;
   }
 }
 @media (min-width: 769px) {
-  /* line 1313, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-google {
     background-position: -100px 0;
   }
 }
-/* line 1328, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1349, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-google:hover {
   background-position: -113px -56px;
 }
 @media (min-width: 650px) {
-  /* line 1328, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1349, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-google:hover {
     background-position: -151px -74px;
   }
 }
 @media (min-width: 769px) {
-  /* line 1328, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1349, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-google:hover {
     background-position: -100px -50px;
   }
 }
-/* line 1339, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-google:hover:hover {
   background-position: -100px -50px;
 }
-/* line 1347, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-pinterest {
   background-position: -170px 0;
 }
-/* line 1350, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1371, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-pinterest {
   background-position: -150px 0;
 }
 @media (min-width: 650px) {
-  /* line 1347, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-pinterest {
     background-position: -226px 0;
   }
 }
 @media (min-width: 769px) {
-  /* line 1347, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-pinterest {
     background-position: -150px 0;
   }
 }
-/* line 1362, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1383, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-pinterest:hover {
   background-position: -170px -56px;
 }
 @media (min-width: 650px) {
-  /* line 1362, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1383, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-pinterest:hover {
     background-position: -226px -74px;
   }
 }
 @media (min-width: 769px) {
-  /* line 1362, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1383, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-pinterest:hover {
     background-position: -150px -50px;
   }
 }
-/* line 1373, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1394, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-pinterest:hover:hover {
   background-position: -150px -50px;
 }
 
-/* line 1385, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic {
   padding: 20px 15px 40px;
   background-color: #f4f2f1;
   margin: 0;
   margin-bottom: 20px;
 }
-/* line 1402, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1423, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.no-bottom-margin {
   margin-bottom: 0;
 }
 @media (min-width: 480px) {
-  /* line 1385, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic {
     padding: 20px 15px 40px;
   }
 }
 @media (min-width: 650px) {
-  /* line 1385, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic {
     padding: 25px 0 33px;
     margin-bottom: 45px;
@@ -1795,45 +1813,33 @@ footer#footer-page .icon-pinterest:hover {
   }
 }
 @media (min-width: 769px) {
-  /* line 1385, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic {
     min-height: 183px;
     background-color: #f4f2f1;
   }
 }
-/* line 1420, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1441, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.has-recommendations {
   min-height: 270px;
   padding-top: 50px;
   margin-bottom: 20px;
 }
-@media (min-width: 769px) {
-  /* line 1426, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
-  .page-topic.has-recommendations h1 {
-    width: 35%;
-  }
-}
-@media (min-width: 960px) {
-  /* line 1429, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
-  .page-topic.has-recommendations h1 {
-    width: 42%;
-  }
-}
-/* line 1433, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1452, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.has-subhead {
   height: 211px;
   margin-bottom: 75px;
 }
-/* line 1437, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.has-subhead .row:first-child {
   height: 185px;
   padding-bottom: 0;
 }
-/* line 1443, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1462, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic .row {
   position: relative;
 }
-/* line 1447, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1466, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic h1 {
   color: #7b3f84;
   font-size: 34px;
@@ -1842,7 +1848,7 @@ footer#footer-page .icon-pinterest:hover {
   line-height: 2.375rem;
 }
 @media (min-width: 650px) {
-  /* line 1447, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1466, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic h1 {
     font-size: 44px;
     font-size: 2.75rem;
@@ -1850,7 +1856,7 @@ footer#footer-page .icon-pinterest:hover {
     line-height: 3rem;
   }
 }
-/* line 1458, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.logged-in h1 {
   font-size: 28px;
   font-size: 1.75rem;
@@ -1858,7 +1864,7 @@ footer#footer-page .icon-pinterest:hover {
   line-height: 2rem;
 }
 @media (min-width: 650px) {
-  /* line 1458, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic.logged-in h1 {
     font-size: 36px;
     font-size: 2.25rem;
@@ -1866,39 +1872,39 @@ footer#footer-page .icon-pinterest:hover {
     line-height: 2.5rem;
   }
 }
-/* line 1468, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1487, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic .page-subtitle {
   margin: 20px 0 0 0;
   color: #696969;
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 1474, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1493, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.behavior-page-topic {
   padding-top: 40px;
 }
-/* line 1476, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1495, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.behavior-page-topic .share-save-container div.share-save-icon {
   top: 40px;
 }
 @media (min-width: 650px) {
-  /* line 1474, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1493, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic.behavior-page-topic {
     padding: 45px 0;
   }
-  /* line 1482, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1501, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic.behavior-page-topic .share-save-container div.share-save-icon {
     top: 0;
   }
 }
-/* line 1488, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1507, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic .behavior-subtitle {
   color: #7a4183;
   font-size: 21px;
   font-size: 1.3125rem;
   margin-top: 15px;
 }
-/* line 1494, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic a.back-to-previous {
   color: #426da9;
   margin-bottom: 10px;
@@ -1907,30 +1913,30 @@ footer#footer-page .icon-pinterest:hover {
   font-size: 0.875rem;
 }
 @media (min-width: 650px) {
-  /* line 1494, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic a.back-to-previous {
     margin-bottom: 10px;
   }
 }
 @media (min-width: 769px) {
-  /* line 1494, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic a.back-to-previous {
     margin-bottom: 17px;
   }
 }
 @media (min-width: 480px) {
-  /* line 1494, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic a.back-to-previous {
     margin-bottom: 18px;
   }
 }
-/* line 1510, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+/* line 1529, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic a.back-to-previous i {
   margin-right: 7px;
   margin-bottom: -1px;
 }
 @media (min-width: 480px) {
-  /* line 1510, /tmp/build_218e4b59-11d3-4337-bfb1-689f7d8c4cd6/source/Presentation/includes/css/layout.scss */
+  /* line 1529, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic a.back-to-previous i {
     margin-right: 13px;
   }

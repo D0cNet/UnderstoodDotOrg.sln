@@ -1,223 +1,4 @@
-
-$(document).ready(function () {
-    
-    new U.communitySubmitQuestion();
-});
-(function ($) {
-
-    // Initialize the module on page load.
-    $(document).ready(function () {
-       
-        new U.communityWelcome();
-        
-
-    });
-
-    U.communityWelcome = function () {
-
-        var self = this;
-
-        self.init = function () {
-            self.cacheSelectors();
-            self.setModel();
-            self.fetch();
-        };
-
-        self.cacheSelectors = function () {
-            self.dom = {};
-            self.dom.body = $(document.body);
-            self.dom.communityPage = $('#community-page');
-        };
-
-        self.setModel = function () {
-            self.model = {
-                tourEnabled: self.dom.communityPage.data('showWelcomeTour')
-            };
-        };
-
-        self.fetch = function () {
-            if (self.model.tourEnabled) {
-                $.get('/Presentation/AjaxData/WelcomeTour.aspx').done(self.renderLightbox);
-            }
-        };
-
-        self.renderLightbox = function (res) {
-            var modal = $(res);
-            self.dom.carousel = modal.find('#welcome-slides-container');
-            self.dom.carouselNav = modal.find('.welcome-tour-navigation');
-            self.dom.carouselImages = self.dom.carousel.find('.welcome-tour-image');
-            self.dom.close = modal.find('.close');
-            self.dom.pagingData = modal.find('.paging-data');
-            self.dom.body.append(modal);
-            self.dom.modal = $('.welcome-tour-modal');
-            self.dom.dialog = self.dom.modal.find('.modal-dialog');
-
-            self.fireCarousel();
-            self.updatePagingData();
-            self.attachHandlers();
-
-            self.dom.modal.modal('show');
-        };
-
-        self.fireCarousel = function () {
-            self.model.carousel = U.carousels.initializeSlider(self.dom.carousel, '.slide', self.dom.carouselNav, 1, 1, 1, self.resize, false);
-        };
-
-        self.attachHandlers = function () {
-            self.model.carousel.ev.on('rsAfterSlideChange', self.slideChange);
-            self.dom.modal.on('show.bs.modal', self.positionModal);
-            self.dom.modal.on('hide.bs.modal', self.onClose);
-            self.dom.body.on('click', '.close', self.closeModal);
-            self.dom.modal.on('show.bs.modal', function () {
-                $(this).find(':focusable').first().focus();
-            });
-        };
-
-        self.slideChange = function (e) {
-            self.updatePagingData();
-        };
-
-        self.updatePagingData = function () {
-            self.model.paging = {
-                currentSlide: self.model.carousel.staticSlideId + 1,
-                totalSlides: self.model.carousel.numSlides
-            };
-            self.model.paging.text = self.model.paging.currentSlide + ' of ' + self.model.paging.totalSlides;
-
-            self.dom.pagingData.text(self.model.paging.text);
-        };
-
-        self.closeModal = function () {
-
-            self.dom.modal.modal('hide');
-        };
-
-        self.onClose = function () {
-            self.dom.body.focus();
-            // TODO -- Integration task - set cookie so lightbox isn't displayed once this has been dismissed
-        };
-
-        self.resize = function () {
-            self.positionModal();
-        };
-
-        /* TODO - This is a temporary fix, should be refactored to use global modal positioning method */
-        self.positionModal = function () {
-            var leftMargin = (self.dom.dialog.width() / 2) * -1,
-                topMargin = ((self.dom.dialog.height() - $(window).height()) / 2);
-
-            self.dom.dialog.css({
-                'margin-left': leftMargin,
-                'margin-top': topMargin
-            });
-        };
-
-        self.init();
-
-    };
-
-})(jQuery);
-
-
-
-(function ($) {
-
-    // Initialize the module on page load.
-    $(document).ready(function () {
-        new U.communitySubmitQuestion();
-    });
-
-    U.communitySubmitQuestion = function () {
-
-        var self = this;
-
-        self.init = function () {
-            self.cacheSelectors();
-            self.attachHandlers();
-        };
-
-        self.cacheSelectors = function () {
-            self.dom = {};
-            self.dom.body = $(document.body);
-            self.dom.topLevel = $('html, body');
-            self.dom.questionButton = $('.card-ask .button');
-        };
-
-        self.attachHandlers = function () {
-            self.dom.questionButton.on('click', self.fetch);
-        };
-
-        self.attachModalHandlers = function () {
-            self.dom.close.on('click', self.closeModal);
-            self.dom.modal.on('hide.bs.modal', self.onClose);
-            self.dom.continueButton.on('click', self.showQuestion);
-            self.dom.modal.on('show.bs.modal', function () {
-                $(this).find(':focusable').first().focus();
-            });
-        };
-
-        self.closeModal = function (e) {
-            if (typeof (e) !== 'undefined') {
-                e.preventDefault();
-            }
-
-            self.dom.modal.modal('hide');
-        };
-
-        self.onClose = function () {
-            self.dom.body.removeClass('modal-open');
-            self.dom.modal.remove();
-        };
-
-        self.fetch = function (e) {
-            if (typeof (e) !== 'undefined') {
-                e.preventDefault();
-            }
-
-            $.get('community.qa.question-asked.html').done(self.renderLightbox);
-        };
-
-        self.renderLightbox = function (res) {
-            var modal = $(res);
-
-            self.dom.close = modal.find('.close');
-            self.dom.body.append(modal);
-            self.dom.modal = $('.submit-question-modal');
-            self.dom.continueButton = modal.find('.continue');
-            self.dom.alreadyAsked = modal.find('.already-asked');
-            self.dom.submitQuestion = modal.find('.submit-question');
-            self.dom.modalSelects = modal.find('select');
-
-            modal.find('input[type=checkbox]').uniform();
-            U.uniformSelects(self.dom.modalSelects);
-
-            // vertically align modal
-            adjustModalMaxHeightAndPosition();
-
-            // only above 320 viewport or nonresponsive
-            if (Modernizr.mq('(min-width: 320px)') || !Modernizr.mq('only all')) {
-                $(window).resize(adjustModalMaxHeightAndPosition).trigger('resize');
-            }
-
-            self.attachModalHandlers();
-            self.dom.modal.modal('show');
-        };
-
-        self.showQuestion = function (e) {
-            e.preventDefault();
-
-            self.dom.alreadyAsked.fadeOut(300, function () {
-                self.dom.submitQuestion.fadeIn(300);
-                self.dom.modal.animate({ scrollTop: 0 }, 500);
-            });
-        };
-
-        self.init();
-    };
-
-})(jQuery);
-
-(function ($) {
+(function($){
 
     // Initialize the module on page load.
     $(document).ready(function() {
@@ -436,7 +217,117 @@ $(document).ready(function () {
  * Definition for the behaviorTool javascript module.
  */
 
+(function($){
 
+    // Initialize the module on page load.
+    $(document).ready(function() {
+        new U.communityWelcome();
+
+    });
+
+    U.communityWelcome = function(){
+
+        var self = this;
+
+        self.init = function(){
+            self.cacheSelectors();
+            self.setModel();
+            self.fetch();
+        };
+
+        self.cacheSelectors = function() {
+            self.dom = {};
+            self.dom.body = $(document.body);
+            self.dom.communityPage = $('#community-page');
+        };
+
+        self.setModel = function() {
+            self.model = {
+                tourEnabled: self.dom.communityPage.data('showWelcomeTour')
+            };
+        };
+
+        self.fetch = function() {
+            if (self.model.tourEnabled) {
+                $.get('/modal.welcome-tour.c1a.html').done(self.renderLightbox);
+            }
+        };
+
+        self.renderLightbox = function(res) {
+            var modal = $(res);
+            self.dom.carousel = modal.find('#welcome-slides-container');
+            self.dom.carouselNav = modal.find('.welcome-tour-navigation');
+            self.dom.carouselImages = self.dom.carousel.find('.welcome-tour-image');
+            self.dom.close = modal.find('.close');
+            self.dom.pagingData = modal.find('.paging-data');
+            self.dom.body.append(modal);
+            self.dom.modal = $('.welcome-tour-modal');
+            self.dom.dialog = self.dom.modal.find('.modal-dialog');
+
+            self.fireCarousel();
+            self.updatePagingData();
+            self.attachHandlers();
+
+            self.dom.modal.modal('show');
+        };
+
+        self.fireCarousel = function() {
+            self.model.carousel = U.carousels.initializeSlider(self.dom.carousel, '.slide', self.dom.carouselNav, 1, 1, 1, self.resize, false);
+        };
+
+        self.attachHandlers = function() {
+            self.model.carousel.ev.on('rsAfterSlideChange', self.slideChange);
+            self.dom.modal.on('show.bs.modal', self.positionModal);
+            self.dom.modal.on('hide.bs.modal', self.onClose);
+            self.dom.body.on('click', '.close' , self.closeModal);
+            self.dom.modal.on('show.bs.modal', function() {
+                $(this).find(':focusable').first().focus();
+            });
+        };
+
+        self.slideChange = function(e) {
+            self.updatePagingData();
+        };
+
+        self.updatePagingData = function() {
+            self.model.paging = {
+                currentSlide: self.model.carousel.staticSlideId + 1,
+                totalSlides: self.model.carousel.numSlides
+            };
+            self.model.paging.text = self.model.paging.currentSlide + ' of ' + self.model.paging.totalSlides;
+
+            self.dom.pagingData.text(self.model.paging.text);
+        };
+
+        self.closeModal = function() {
+            self.dom.modal.modal('hide');
+        };
+
+        self.onClose = function() {
+            self.dom.body.focus();
+            // TODO -- Integration task - set cookie so lightbox isn't displayed once this has been dismissed
+        };
+
+        self.resize = function() {
+          self.positionModal();
+        };
+
+        /* TODO - This is a temporary fix, should be refactored to use global modal positioning method */
+        self.positionModal = function() {
+          var leftMargin = (self.dom.dialog.width() / 2) * -1,
+              topMargin = ((self.dom.dialog.height() - $(window).height()) / 2);
+
+          self.dom.dialog.css({
+            'margin-left': leftMargin,
+            'margin-top': topMargin
+          });
+        };
+
+        self.init();
+
+    };
+
+})(jQuery);
 /**
  * Definition for the Experts Page Sub Navigation javascript module.
  */
@@ -543,12 +434,13 @@ $(document).ready(function () {
     self.init = function(){
 
       self.dom.container = $('.whats-happening-page');
+      self.dom.html = $('html');
 
       if (self.dom.container.length === 0) {
         return;
       }
 
-      self.equalizeHeights();
+      self.dom.html.on('equalHeights', self.equalizeHeights);
       self.initializeEventsSlider();
       self.initializeQuestionsSlider();
       self.initializeMembersSlider();
@@ -559,7 +451,6 @@ $(document).ready(function () {
     };
 
     self.equalizeHeights = function() {
-
       // only above 320 viewport or nonresponsive
       if(Modernizr.mq('(min-width: 321px)') || !Modernizr.mq('only all')){
         self.dom.container.find('.event-card-title').equalHeights();
@@ -811,6 +702,7 @@ $(document).ready(function () {
 
         self.cacheSelectors = function() {
             self.dom = {};
+            self.dom.html = $('html');
             self.dom.window = $(window);
             self.dom.container = $('#community-page');
             self.dom.chatCarousel = self.dom.container.find('.live-chat .event-cards');
@@ -828,8 +720,8 @@ $(document).ready(function () {
 
             if (self.dom.container.hasClass('experts-page')) {
                 self.setModel();
-                self.equalizeHeights();
                 self.fireCarousel();
+                self.dom.html.on('equalHeights', self.equalizeHeights);
             }
         };
 
@@ -894,6 +786,7 @@ $(document).ready(function () {
         self.cacheSelectors = function() {
             self.dom = {};
             self.dom.topLevel = $('body, html');
+            self.dom.html = $('html');
             self.dom.window = $(window);
             self.dom.calendarContainer = $('.container.calendar');
             self.dom.gridRows = self.dom.calendarContainer.find('.grid-row');
@@ -915,6 +808,8 @@ $(document).ready(function () {
                 self.dom.moreInfoToggles.on('click', self.toggleDetailView);
                 self.dom.eventHeaderLinks.on('click', self.showEvent);
             }
+
+            self.dom.html.on('equalHeights', self.equalizeHeights);
             self.setKeyboardAccess();
         };
 
@@ -953,8 +848,8 @@ $(document).ready(function () {
         self.resize = function() {
             self.updateModel();
             self.closeOpenDetailViews();
-            self.closeEventPopovers();
             self.equalizeHeights();
+            self.closeEventPopovers();
         };
 
         self.equalizeHeights = function() {
@@ -1279,8 +1174,7 @@ $(document).ready(function () {
 })(jQuery);
 (function($){
 
-    $(document).ready(function () {
-        
+    $(document).ready(function() {
       new U.blogs();
     });
 
@@ -1291,6 +1185,7 @@ $(document).ready(function () {
 
       self.init = function(){
 
+        self.dom.html = $('html');
         self.dom.container = $('.community-blogs-main');
         self.dom.filter = $('.blog-filter');
 
@@ -1310,24 +1205,27 @@ $(document).ready(function () {
       };
 
       self.equalizeHeights = function() {
-
         var moreBlogsContainer = $('.community-blogs-more');
 
         // only above 960 viewport or nonresponsive
         if(Modernizr.mq('(min-width: 960px)') || !Modernizr.mq('only all')){
-          moreBlogsContainer.find('.blog-card-title').equalHeights();
-          moreBlogsContainer.find('.blog-card-post-excerpt').equalHeights();
-          moreBlogsContainer.find('.blog-card-info').equalHeights();
-
-          moreBlogsContainer.find('.blogger-card-info').equalHeights();
+          self.dom.html.on('equalHeights', function() {
+            alert('foo');
+            self.triggerEqualHeights();
+          });
         }
+      };
+
+      self.triggerEqualHeights = function() {
+        moreBlogsContainer.find('.blog-card-title').equalHeights();
+        moreBlogsContainer.find('.blog-card-post-excerpt').equalHeights();
+        moreBlogsContainer.find('.blog-card-info').equalHeights();
+        moreBlogsContainer.find('.blogger-card-info').equalHeights();
       };
 
       self.resize = function() {
         self.dom.container.find('.blogger-card-info').height('auto');
         self.dom.container.find('.blogger-card-title').height('auto');
-
-        self.equalizeBloggerCardHeights();
       };
 
       self.initializeMoreBlogSlider = function() {
@@ -1534,20 +1432,15 @@ $(document).ready(function () {
     };
 
     self.initAnswerSorting = function() {
-      $('.sort-options').on('click', '.filter', self.updateSort);
+      $('.sort-options').on('change', 'select', self.updateSort);
     };
 
     self.updateSort = function(event) {
       var $target = $(event.target);
-      var $options = $('.sort-options');
-      $options.find('.current-filter').text($target.text());
-      $options.find('.filter.selected').removeClass('selected');
-      var $closest = $target.closest('.filter');
-      $closest.addClass('selected');
-      self.sortBy($closest.data('sort-by'));
+      self.sortBy($target.val());
     };
 
-    self.sortBy = function(sortBy) {
+    self.sortBy = function(selectedValue) {
       var $answerList = $('.answer-list');
       $answerList.fadeOut(function() {
         // TODO - Sort the answers
@@ -1564,6 +1457,102 @@ $(document).ready(function () {
  * Definition for the behaviorTool javascript module.
  */
 
+(function($){
+
+  // Initialize the module on page load.
+  $(document).ready(function() {
+    new U.communitySubmitQuestion();
+  });
+
+  U.communitySubmitQuestion = function(){
+
+    var self = this;
+
+    self.init = function(){
+      self.cacheSelectors();
+      self.attachHandlers();
+    };
+
+    self.cacheSelectors = function() {
+      self.dom = {};
+      self.dom.body = $(document.body);
+      self.dom.topLevel = $('html, body');
+      self.dom.questionButton = $('.card-ask .button');
+    };
+
+    self.attachHandlers = function() {
+      self.dom.questionButton.on('click', self.fetch);
+    };
+
+    self.attachModalHandlers = function() {
+      self.dom.close.on('click', self.closeModal);
+      self.dom.modal.on('hide.bs.modal', self.onClose);
+      self.dom.continueButton.on('click', self.showQuestion);
+      self.dom.modal.on('show.bs.modal', function() {
+        $(this).find(':focusable').first().focus();
+      });
+    };
+
+    self.closeModal= function(e) {
+      if (typeof(e) !== 'undefined') {
+        e.preventDefault();
+      }
+
+      self.dom.modal.modal('hide');
+    };
+
+    self.onClose = function() {
+      self.dom.body.removeClass('modal-open');
+      self.dom.modal.remove();
+    };
+
+    self.fetch = function(e) {
+      if (typeof(e) !== 'undefined') {
+        e.preventDefault();
+      }
+
+      $.get('community.qa.question-asked.html').done(self.renderLightbox);
+    };
+
+    self.renderLightbox = function(res) {
+      var modal = $(res);
+
+      self.dom.close = modal.find('.close');
+      self.dom.body.append(modal);
+      self.dom.modal = $('.submit-question-modal');
+      self.dom.continueButton = modal.find('.continue');
+      self.dom.alreadyAsked = modal.find('.already-asked');
+      self.dom.submitQuestion = modal.find('.submit-question');
+      self.dom.modalSelects = modal.find('select');
+
+      modal.find('input[type=checkbox]').uniform();
+      U.uniformSelects(self.dom.modalSelects);
+
+      // vertically align modal
+      adjustModalMaxHeightAndPosition();
+
+      // only above 320 viewport or nonresponsive
+      if( Modernizr.mq('(min-width: 320px)') || !Modernizr.mq('only all')){
+        $(window).resize(adjustModalMaxHeightAndPosition).trigger('resize');
+      }
+
+      self.attachModalHandlers();
+      self.dom.modal.modal('show');
+    };
+
+    self.showQuestion = function(e) {
+      e.preventDefault();
+
+      self.dom.alreadyAsked.fadeOut(300, function() {
+        self.dom.submitQuestion.fadeIn(300);
+        self.dom.modal.animate({scrollTop: 0}, 500);
+      });
+    };
+
+    self.init();
+  };
+
+})(jQuery);
 
 
 

@@ -277,6 +277,36 @@ U.hoverDropdown = function(options){
 };
 
 
+/* This module is responsible for keyboard navigation for the main menu dropdowns */
+U.focusDropdown = function() {
+    var menuItems = $('#header-page .menu-list-item'),
+        topLevelLinks = $('#header-page .top-level-link'),
+        dropdownLinks = menuItems.find('a');
+
+    new U.keyboard_access({
+        focusElements: topLevelLinks,
+        blurElements: dropdownLinks,
+        focusHandler: function(e) {
+            var focused = $(e.currentTarget),
+                listItem = focused.parents('.menu-list-item'),
+                isActive = listItem.hasClass('is-active');
+
+            if (!isActive) {
+                listItem.siblings().removeClass('is-active');
+            }
+
+            listItem.addClass('is-active');
+        },
+        blurHandler: function(e, newTarget) {
+            var itemInNavigation = newTarget.parents().is('.menu-list-item');
+
+            if (!itemInNavigation) {
+                menuItems.removeClass('is-active');
+            }
+        }
+    });
+};
+
 U.searchSite = function(){
 
   var self = this;
@@ -320,7 +350,6 @@ U.searchSite = function(){
 
   self.detectBreakpoint = function() {
 
-    // TODO needs to handle delivering desktop content to IE8
     // mobile
     if (Modernizr.mq('(max-width: 649px)') && self.viewport_size !== 'small') {
       // switch out submit value
@@ -349,8 +378,8 @@ U.searchSite = function(){
       self.viewport_size = "medium";
     }
 
-    // desktop
-    else if (Modernizr.mq('(min-width: 769px)') && self.viewport_size !== 'large') {
+    // desktop and nonresponsive
+    else if (Modernizr.mq('(min-width: 769px)') && self.viewport_size !== 'large' || !Modernizr.mq('only all')){
       // switch out placeholder text
       self.input_text.attr('placeholder', self.placeholder_text_large);
 
@@ -431,6 +460,8 @@ U.popovers = function () {
       if (!jQuery(".popover:hover").length && !jQuery(".popover-link:hover").length) {
         $('.popover-link').popover('hide').removeClass('active');
       }
+    }).on('resize', function() {
+      $('.popover-link').popover('hide').removeClass('active');
     });
   };
 
@@ -483,28 +514,41 @@ U.popovers = function () {
 
   self.mobileWidthFix = function () {
     var windowWidth = $(window).width(); //width of the window
-    var popoverElement = $('.popover'); //popover element
-    var popoverWidth = popoverElement.outerWidth(); //width of the popover (including padding/border)
+    var $popoverElement = $('.popover'); //popover element
+    var popoverWidth = $popoverElement.outerWidth(); //width of the popover (including padding/border)
+    var defaultWidth = 362; //minimum popover width
+    var defaultMargin = 15;
 
-    if(popoverWidth >= windowWidth){
-      popoverElement.css('min-width', windowWidth);
-    }else{
-      popoverElement.css('min-width', '362px');
+    //increase popover width to 362
+    if(popoverWidth < defaultWidth){
+      $popoverElement.css('min-width', '362px');
+      $popoverElement.css('width', '362px');
+      popoverWidth = defaultWidth;
     }
+
+    // If popover width is greater than window width, make it window width, minus the margins
+    if(popoverWidth >= windowWidth - (defaultMargin * 2)){
+      $popoverElement.css('min-width', windowWidth - (defaultMargin * 2));
+      $popoverElement.css('width', windowWidth - (defaultMargin * 2));
+      $popoverElement.css('left', defaultMargin);
+    }
+
+    // If min-width of the popover is > 362 and < window width then leave it alone.
   };
 
   self.arrowHorizontalFix = function (e) {
     var body = $('body'); //body element
+    var arrow = body.find('.arrow');
     var triggerOffsetLeft = $(e.target).offset().left; //trigger offset on left
-    var arrowOffsetLeft = body.find('.arrow').offset().left; //arrow offset on left
-    var arrowPositionLeft = body.find('.arrow').position().left; //arrow position on left
-    var triggerWidth = $(e.target).width(); //trigger width
+    var arrowOffsetLeft = arrow.offset().left; //arrow offset on left
+    var arrowWidth = arrow.outerWidth(); //arrow width
+    var arrowPositionLeft = arrow.position().left; //arrow position on left
+    var triggerWidth = $(e.target).outerWidth(); //trigger width
 
     var difference = triggerOffsetLeft - arrowOffsetLeft;
-    var correctionFactor = 10;
-    var leftCss = arrowPositionLeft + parseInt(difference, 10) + (triggerWidth/2 - correctionFactor);
+    var leftCss = arrowPositionLeft + difference + (triggerWidth/2 - arrowWidth/2);
 
-    $("body").find('.arrow').css({'left': leftCss + 'px'});
+    arrow.css({'left': parseInt(leftCss, 10) + 'px'});
   };
 
   self.mobilePositionFix = function () {
@@ -549,8 +593,9 @@ U.popovers = function () {
     var popoverWidth = popoverElement.outerWidth(); //width of the popover (including padding/border)
     var popoverPositionLeft = popoverElement.position().left; //distance from popover to its container on left side
     var popoverOffsetLeft = popoverElement.offset().left; //distance from popover to document on left side
+    var defaultMargin = 15;
 
-    var bodyPopoverDifference = bodyWidth - popoverWidth;
+    var bodyPopoverDifference = bodyWidth - popoverWidth - (defaultMargin);
 
     //if the position of the popover is off the screen to the right
     if(bodyPopoverDifference < popoverOffsetLeft){
@@ -564,38 +609,130 @@ U.popovers = function () {
   }
 };
 
-U.articleListing = function () {
-    /*View more article*/
-    var vcount = 1;
-    $('.show-more-link').click(function () {
-        var itemId = $('#hfGUID').val();
-        var resultsPerClick = $('#hfResultsPerClick').val();
-       
-        var getQuery = '/Presentation/AjaxData/GetArticles.aspx?' + 'itemID=' + itemId + "&count=" + vcount + "&rpc=" + resultsPerClick;
-        $.ajax({
+/**
+ * Sets the styling (adds/removes classes) for elements in uniform
+ * Styling for selects
+ */
+U.uniformStyling = function () {
 
-            cache: false, url: getQuery,
-            success: function (data) {
-                try {
-                    
-                    $('.article-listing').append(data);
+  //for select
+  new U.keyboard_access({
+    focusElements: 'select',
+    blurElements: 'select',
+    focusHandler: function(e) {
+      var $current = $(e.currentTarget);
+      $current.parent().addClass('focused');
+    },
+    blurHandler: function(e, newTarget) {
+      var $current = $(e.currentTarget);
+      $current.parent().removeClass('focused');
+    }
+  });
 
-                    if ($("#lblmoreArticle").text() == "false") {
-                        $('#pnlMoreArticle').hide();
-                    }
-                    vcount = vcount + 1;
-                }
-                catch (ex)
-                { }
-            }
-        });
-        return false;
+  new U.keyboard_access({
+    focusElements: 'input[type=radio], input[type=checkbox]',
+    blurElements: 'input[type=radio], input[type=checkbox]',
+    forceBlur: true,
+    focusHandler: function(e) {
+      var $current = $(e.currentTarget);
+      $current.parent().addClass('focused');
+    },
+    blurHandler: function(e, newTarget) {
+      var $current = $(e.currentTarget);
+      $current.parent().removeClass('focused');
+    }
+  });
+};
+
+/**
+ * Modal Windows (Bootstrap 3 modal vertical position center)
+ * http://stackoverflow.com/questions/18422223/bootstrap-3-modal-vertical-position-center
+ * 
+*/
+function adjustModalMaxHeightAndPosition(){
+  $('.modal').each(function(){
+    if($(this).hasClass('in') === false){
+      $(this).show(); /* Need this to get modal dimensions */
+    };
+
+    var contentHeight = $(window).height() - 140;  //140 is sum of modal's top and bottom margin
+  
+    $(this).find('.modal-content').css({
+      'max-height': function () {
+        return contentHeight;
+      }
     });
 
+    $(this).find('.modal-dialog').addClass('modal-dialog-center').css({
+      'margin-top': function () {
+        return -($(this).outerHeight() / 2);
+      },
+      'margin-left': function () {
+        return -($(this).outerWidth() / 2);
+      }
+    });
+    if($(this).hasClass('in') === false){
+      $(this).hide(); /* Hide modal */
+    }
+  });
+}
+ // only above 320 viewport or nonresponsive
+if( Modernizr.mq('(min-width: 320px)') || !Modernizr.mq('only all')){
+  $(window).resize(adjustModalMaxHeightAndPosition).trigger('resize');
+}
+
+/**
+ * ReadSpeaker functions
+ */
+U.readSpeaker = function () {
+
+  var self = {};
+
+  self.carousels = new Array();
+
+  self.queueCarousel = function(c) {
+    self.carousels.push(c);
+  }
+
+  self.renderCarouselFocusables = function() {
+    ReadSpeaker.q(function() {
+      $.each(self.carousels, function(i,e) {
+        U.carousels.accessibleSlide(e);
+      });
+    });
+  }
+
+  //Runs when the dom is ready
+  self.init = function() {
+    ReadSpeaker.q(function () {
+      //Method adds a random guid to every element that has a class of rs_read_this (to comply with the documentation)
+      $('.rs_read_this').each(function (index, value) {
+        var $value = $(value);
+        if (!$value.attr('id')) {
+          $value.attr('id', guid());
+        }
+      });
+
+      /**
+       * Guid generator function found here: http://stackoverflow.com/a/16693578/524874
+       * @returns {*}
+       */
+      function guid() {
+        function _p8(s) {
+          var p = (Math.random().toString(16) + "000000000").substr(2, 8);
+          return s ? "-" + p.substr(0, 4) + "-" + p.substr(4, 4) : p;
+        }
+        return '_' + _p8() + _p8(true) + _p8(true) + _p8();
+      }
+
+    });
+  }
+
+  return self;
 };
 
 $(document).ready(function() {
-    
+
   var drawerMenu = new U.drawerMenu();
 
   var searchSite = new U.searchSite();
@@ -606,9 +743,13 @@ $(document).ready(function() {
     container : "#header-page .nav-main > ul"
   });
 
+  var navKeyboardHandler = new U.focusDropdown();
+
   var languageSelector = new U.languageSelector();
 
-  var articleListing = new U.articleListing();
+  new U.uniformStyling();
+
+  new U.readSpeaker().init();
 
   // input placeholder fix for IE
   $('input:text').placeholder();
@@ -619,4 +760,8 @@ $(document).ready(function() {
   // FIXME: this is temporary and needs to be removed during integration
   jQuery('a[href=REPLACE]').on('click', function(){ return false; });
 
+  
 });
+
+
+
