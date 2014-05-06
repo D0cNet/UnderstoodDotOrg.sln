@@ -206,6 +206,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 }
             }
 
+            registeringUser.ScreenName = ScreenNameTextField.Text;
+
+            if (string.IsNullOrEmpty(registeringUser.ZipCode) && !string.IsNullOrEmpty(ZipCodeTextField.Text))
+            {
+                registeringUser.ZipCode = ZipCodeTextField.Text;
+            }
+
             var membershipManager = new MembershipManager();
             //membershipManager.AddMember(registeringUser);
             membershipManager.UpdateMember(this.registeringUser);
