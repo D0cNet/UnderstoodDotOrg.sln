@@ -18,7 +18,7 @@ namespace UnderstoodDotOrg.Domain.Search
 {
     public class SearchHelper
     {
-        private static Expression<Func<Article, bool>> GetBasePredicate(Member member)
+        private static Expression<Func<Article, bool>> GetBasePredicate(Member member = null)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
 
@@ -35,6 +35,10 @@ namespace UnderstoodDotOrg.Domain.Search
             pred = pred.And(a => !a.OverrideTypes.Contains(ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization)));
 
             // TODO: Exclude items interacted by member - MemberActivity table
+            if (member != null)
+            {
+
+            }
 
             return pred;                               
         }
@@ -310,11 +314,28 @@ namespace UnderstoodDotOrg.Domain.Search
             }
         }
 
+        public static List<Article> GetRandomMustReadArticles(int numberOfArticles)
+        {
+            List<Article> results = new List<Article>();
+
+            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            using (var ctx = index.CreateSearchContext())
+            {
+                 var allArticlesQuery = ctx.GetQueryable<Article>()
+                                    .Filter(GetBasePredicate())
+                                    .Where(GetMustReadPredicate());
+
+                 results = GetRandomBucketArticles(allArticlesQuery, numberOfArticles);
+            }
+
+            return results;
+        }
+
         public static List<Article> GetArticles(Member member, Child child, DateTime date)
         {
             List<Article> results = new List<Article>();
 
-            var index = ContentSearchManager.GetIndex("sitecore_web_index");
+            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
             using (var ctx = index.CreateSearchContext())
             {
                 // Pre-process
@@ -330,7 +351,7 @@ namespace UnderstoodDotOrg.Domain.Search
                 int totalMatches = matchingArticlesQuery.Take(1).GetResults().TotalSearchResults;
 
                 List<Article> toProcess = new List<Article>();
-
+                
                 // 0 - Grab timely articles
                 var timelyQuery = matchingArticlesQuery
                                     .Where(GetTimelyPredicate(date));
