@@ -56,6 +56,25 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return publishedDate;
         }
+        /// <summary>
+        /// Formats the input string to show only the first 100 characters
+        /// </summary>
+        /// <param name="inputString">String to be formatted</param>
+        /// <returns></returns>
+        public static string FormatString100(string inputString)
+        {
+            if (inputString.Length >= 100)
+            {
+                string myString = inputString.Substring(0, 100);
+
+                int index = myString.LastIndexOf(' ');
+
+                string outputString = myString.Substring(0, index);
+
+                return outputString;
+            }
+            else { return inputString; }
+        }
 
         public static List<Comment> ReadComments(int blogId, int blogPostId)
         {
@@ -255,7 +274,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return memberCardSrc;
         }
-        public static void ListBlogs(string blogId)
+        public static List<BlogPost> ListBlogPosts(string blogId)
         {
             var webClient = new WebClient();
 
@@ -264,7 +283,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = String.Format("http://{0}/api.ashx/v2/blogs/posts.xml?BlogIds={1};", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
+            var requestUrl = String.Format("{0}/api.ashx/v2/blogs/posts.xml?BlogIds={1};", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
 
             var xml = webClient.DownloadString(requestUrl);
 
@@ -273,10 +292,48 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xml);
             XmlNodeList nodes = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost");
-            foreach(var node in nodes)
+            XmlNodeList nodes1 = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost/Author");
+            int count = 0;
+            foreach(XmlNode node in nodes)
             {
-                
+                string title = node["Title"].InnerText;
+                string body = FormatString100(node["Body"].InnerText);
+                string publishedDate = FormatDate(node["PublishedDate"].InnerText);
+                string author = nodes1[count]["DisplayName"].InnerText;
+                BlogPost blogPost = new BlogPost(body, title, publishedDate, author);
+                blogPosts.Add(blogPost);
+                count++;
             }
+            return blogPosts;
+        }
+        public static List<Blog> ListBlogs()
+        {
+            var webClient = new WebClient();
+
+            // replace the "admin" and "Admin's API key" with your valid user and apikey!
+            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            var requestUrl = String.Format("{0}/api.ashx/v2/blogs.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+
+            var xml = webClient.DownloadString(requestUrl);
+
+            List<Blog> blogs = new List<Blog>();
+
+            var xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+            XmlNodeList nodes = xmlDoc.SelectNodes("Response/Blogs/Blog");
+            int count = 0;
+            foreach (XmlNode node in nodes)
+            {
+                string title = node["Name"].InnerText;
+                string description = FormatString100(node["Description"].InnerText);
+                Blog blogPost = new Blog(description, title);
+                blogs.Add(blogPost);
+                count++;
+            }
+            return blogs;
         }
     }
 }

@@ -19,7 +19,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected void Page_Load(object sender, EventArgs e)
         {
             List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
-
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
             CommentCountDisplay.Text = "Comments (" + dataSource.Count + ")";

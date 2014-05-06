@@ -64,6 +64,18 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         }
     }
 
+    public class Blog
+    {
+        public string _description { get; set; }
+        public string _title { get; set; }
+
+        public Blog(string description, string title)
+        {
+            _description = description;
+            _title = title;
+        }
+    }
+
     public class User
     {
         public string username { get; set; }
