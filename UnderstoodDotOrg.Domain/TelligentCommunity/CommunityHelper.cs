@@ -145,9 +145,10 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             string body = nodes[0]["Body"].InnerText;
             string title = nodes[0]["Title"].InnerText;
             string dateTime = nodes[0]["PublishedDate"].InnerText;
+            string blogName = CommunityHelper.BlogNameById(nodes[0]["BlogId"].InnerText);
             string publishedDate = CommunityHelper.FormatDate(dateTime);
             string author = nodes2[0]["DisplayName"].InnerText;
-            BlogPost blogPost = new BlogPost(body, title, publishedDate, author);
+            BlogPost blogPost = new BlogPost(body, title, publishedDate, author, blogName);
             return blogPost;
         }
 
@@ -159,7 +160,6 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            webClient.Headers.Add("Rest-Impersonate-User", "BobbyTestUser");
             webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
 
             var postUrl = String.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}/comments.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
@@ -235,6 +235,27 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
+        public static string BlogNameById(string blogId)
+        {
+            var webClient = new WebClient();
+ 
+            // replace the "admin" and "Admin's API key" with your valid user and apikey!
+            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+ 
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            var requestUrl = String.Format("{0}/api.ashx/v2/blogs/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
+ 
+            var xml = webClient.DownloadString(requestUrl);
+ 
+            Console.WriteLine(xml);
+            var xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+            var nodes = xmlDoc.SelectNodes("/Response/Blog");
+            string blogName = nodes[0]["Name"].InnerText;
+            return blogName;
+        }
+
         public static List<MemberCardModel> GetModerators()
         {
             var webClient = new WebClient();
@@ -274,6 +295,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return memberCardSrc;
         }
+        /// <summary>
+        /// Gets a list of blog posts that a specified blog contains.
+        /// </summary>
+        /// <param name="blogId">As string, if multiple, separate with a comma. Ex:("1,2,4")</param>
+        /// <returns></returns>
         public static List<BlogPost> ListBlogPosts(string blogId)
         {
             var webClient = new WebClient();
@@ -299,8 +325,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string title = node["Title"].InnerText;
                 string body = FormatString100(node["Body"].InnerText);
                 string publishedDate = FormatDate(node["PublishedDate"].InnerText);
+                string blogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText);
                 string author = nodes1[count]["DisplayName"].InnerText;
-                BlogPost blogPost = new BlogPost(body, title, publishedDate, author);
+                BlogPost blogPost = new BlogPost(body, title, publishedDate, author, blogName);
                 blogPosts.Add(blogPost);
                 count++;
             }

@@ -20,116 +20,33 @@
                 <!-- END PARTIAL: community/carousel_arrows -->
             </div>
             <div class="row blog-cards">
-                <!-- BEGIN PARTIAL: community/blog_card -->
-                <div class="col col-12 blog-card">
-                    <div class="blog-card-info group">
-                        <div class="blog-card-contents">
-                            <div class="blog-card-title">
-                                <a href="REPLACE">Aut voluptate sit quasi nobis beatae modi</a>
+                <asp:Repeater ID="BlogsRepeater" runat="server">
+                    <ItemTemplate>
+                        <!-- BEGIN PARTIAL: community/blog_card -->
+                        <div class="col col-12 blog-card">
+                            <div class="blog-card-info group">
+                                <div class="blog-card-contents">
+                                    <div class="blog-card-title">
+                                        <a href="REPLACE"><%# Eval("_title") %></a>
+                                    </div>
+                                    <!-- end .blog-card-title -->
+                                    <div class="blog-card-post-info">
+                                        <%# Eval("_publishedDate") %> from <a href="REPLACE"><%# Eval("_blogName") %></a>
+                                    </div>
+                                </div>
+                                <div class="card-buttons">
+                                    <button type="button" class="button">Follow</button>
+                                    <button class="action-skip-this">Skip this</button>
+                                </div>
+                                <!-- end .card-buttons -->
                             </div>
-                            <!-- end .blog-card-title -->
-                            <div class="blog-card-post-info">
-                                Posted Nov 18, 1993 from <a href="REPLACE">Zoe Monroe blog</a>
-                            </div>
+                            <!-- end .blog-card-info -->
                         </div>
-                        <div class="card-buttons">
-                            <button type="button" class="button">Follow</button>
-                            <button class="action-skip-this">Skip this</button>
-                        </div>
-                        <!-- end .card-buttons -->
-                    </div>
-                    <!-- end .blog-card-info -->
-                </div>
-                <!-- end .blog-card -->
-                <!-- END PARTIAL: community/blog_card -->
-                <!-- BEGIN PARTIAL: community/blog_card -->
-                <div class="col col-12 blog-card">
-                    <div class="blog-card-info group">
-                        <div class="blog-card-contents">
-                            <div class="blog-card-title">
-                                <a href="REPLACE">Ducimus tempore unde sunt excepturi dolore at sed similique aliquam quaerat unde accusantium consectetur</a>
-                            </div>
-                            <!-- end .blog-card-title -->
-                            <div class="blog-card-post-info">
-                                Posted May 4, 1996 from <a href="REPLACE">Margarita Snyder blog</a>
-                            </div>
-                        </div>
-                        <div class="card-buttons">
-                            <button type="button" class="button">Follow</button>
-                            <button class="action-skip-this">Skip this</button>
-                        </div>
-                        <!-- end .card-buttons -->
-                    </div>
-                    <!-- end .blog-card-info -->
-                </div>
-                <!-- end .blog-card -->
-                <!-- END PARTIAL: community/blog_card -->
-                <!-- BEGIN PARTIAL: community/blog_card -->
-                <div class="col col-12 blog-card">
-                    <div class="blog-card-info group">
-                        <div class="blog-card-contents">
-                            <div class="blog-card-title">
-                                <a href="REPLACE">Et possimus asperiores et ratione ab ea quos consequatur qui</a>
-                            </div>
-                            <!-- end .blog-card-title -->
-                            <div class="blog-card-post-info">
-                                Posted Sep 13, 1997 from <a href="REPLACE">Daren Waters blog</a>
-                            </div>
-                        </div>
-                        <div class="card-buttons">
-                            <button type="button" class="button">Follow</button>
-                            <button class="action-skip-this">Skip this</button>
-                        </div>
-                        <!-- end .card-buttons -->
-                    </div>
-                    <!-- end .blog-card-info -->
-                </div>
-                <!-- end .blog-card -->
-                <!-- END PARTIAL: community/blog_card -->
-                <!-- BEGIN PARTIAL: community/blog_card -->
-                <div class="col col-12 blog-card">
-                    <div class="blog-card-info group">
-                        <div class="blog-card-contents">
-                            <div class="blog-card-title">
-                                <a href="REPLACE">Atque error ratione vitae</a>
-                            </div>
-                            <!-- end .blog-card-title -->
-                            <div class="blog-card-post-info">
-                                Posted Jun 28, 1999 from <a href="REPLACE">Kyla Snyder blog</a>
-                            </div>
-                        </div>
-                        <div class="card-buttons">
-                            <button type="button" class="button">Follow</button>
-                            <button class="action-skip-this">Skip this</button>
-                        </div>
-                        <!-- end .card-buttons -->
-                    </div>
-                    <!-- end .blog-card-info -->
-                </div>
-                <!-- end .blog-card -->
-                <!-- END PARTIAL: community/blog_card -->
-                <!-- BEGIN PARTIAL: community/blog_card -->
-                <div class="col col-12 blog-card">
-                    <div class="blog-card-info group">
-                        <div class="blog-card-contents">
-                            <div class="blog-card-title">
-                                <a href="REPLACE">Aliquid quaerat excepturi eum vel et id nemo in maiores iusto</a>
-                            </div>
-                            <!-- end .blog-card-title -->
-                            <div class="blog-card-post-info">
-                                Posted Jul 8, 1997 from <a href="REPLACE">Niall Snyder blog</a>
-                            </div>
-                        </div>
-                        <div class="card-buttons">
-                            <button type="button" class="button">Follow</button>
-                            <button class="action-skip-this">Skip this</button>
-                        </div>
-                        <!-- end .card-buttons -->
-                    </div>
-                    <!-- end .blog-card-info -->
-                </div>
-                <!-- end .blog-card -->
-                <!-- END PARTIAL: community/blog_card -->
+                        <!-- end .blog-card -->
+                        <!-- END PARTIAL: community/blog_card -->
+                    </ItemTemplate>
+                </asp:Repeater>
+
             </div>
             <!-- end .blog-cards -->
         </div>

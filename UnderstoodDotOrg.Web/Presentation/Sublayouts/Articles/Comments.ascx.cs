@@ -13,11 +13,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
     public partial class Comments : System.Web.UI.UserControl
     {
-        public static int blogId = 2;
-        public static int blogPostId = 2;
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            int blogId = Convert.ToInt32(Sitecore.Context.Item.Fields["BlogId"].Value);
+            int blogPostId = Convert.ToInt32(Sitecore.Context.Item.Fields["BlogPostId"].Value);
             List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
@@ -28,6 +27,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
+            int blogId = Convert.ToInt32(Sitecore.Context.Item["BlogId"]);
+            int blogPostId = Convert.ToInt32(Sitecore.Context.Item["BlogPostId"]);
             string body = CommentEntryTextField.Text;
             CommunityHelper.PostComment(blogId, blogPostId, body);
             List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
@@ -67,6 +68,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void LikeButton_Click(object sender, EventArgs e)
         {
+            int blogId = Convert.ToInt32(Sitecore.Context.Item["BlogId"]);
+            int blogPostId = Convert.ToInt32(Sitecore.Context.Item["BlogPostId"]);
             LinkButton btn = (LinkButton)(sender);
             string ids = btn.CommandArgument;
             string[] s = ids.Split('&');

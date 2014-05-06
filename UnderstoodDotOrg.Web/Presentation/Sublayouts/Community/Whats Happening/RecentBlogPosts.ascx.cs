@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 {
@@ -11,7 +12,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            List<BlogPost> dataSource = CommunityHelper.ListBlogPosts("1");
+            BlogsRepeater.DataSource = dataSource;
+            BlogsRepeater.DataBind();
         }
     }
 }

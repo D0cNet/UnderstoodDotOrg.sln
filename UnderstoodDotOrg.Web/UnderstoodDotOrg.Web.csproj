@@ -421,6 +421,13 @@
     <Compile Include="Presentation\Sublayouts\Blogs\AllBlogsPage.ascx.designer.cs">
       <DependentUpon>AllBlogsPage.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\AllBlogsPageHeader.ascx.cs">
+      <DependentUpon>AllBlogsPageHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\AllBlogsPageHeader.ascx.designer.cs">
+      <DependentUpon>AllBlogsPageHeader.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogCallToActionWidget.ascx.cs">
       <DependentUpon>BlogCallToActionWidget.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -483,6 +490,20 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogPostBody.ascx.designer.cs">
       <DependentUpon>BlogPostBody.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FromOurBlogs.ascx.cs">
+      <DependentUpon>FromOurBlogs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FromOurBlogs.ascx.designer.cs">
+      <DependentUpon>FromOurBlogs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\MoreBlogs.ascx.cs">
+      <DependentUpon>MoreBlogs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\MoreBlogs.ascx.designer.cs">
+      <DependentUpon>MoreBlogs.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsPostPage.ascx.cs">
       <DependentUpon>BlogsPostPage.ascx</DependentUpon>
@@ -616,6 +637,55 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Parents Recommended.ascx.designer.cs">
       <DependentUpon>Parents Recommended.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\CommunityMembers.ascx.cs">
+      <DependentUpon>CommunityMembers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\CommunityMembers.ascx.designer.cs">
+      <DependentUpon>CommunityMembers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\MostActiveGroups.ascx.cs">
+      <DependentUpon>MostActiveGroups.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\MostActiveGroups.ascx.designer.cs">
+      <DependentUpon>MostActiveGroups.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\RecentBlogPosts.ascx.cs">
+      <DependentUpon>RecentBlogPosts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\RecentBlogPosts.ascx.designer.cs">
+      <DependentUpon>RecentBlogPosts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\RecentQuestions.ascx.cs">
+      <DependentUpon>RecentQuestions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\RecentQuestions.ascx.designer.cs">
+      <DependentUpon>RecentQuestions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\UpcomingEvents.ascx.cs">
+      <DependentUpon>UpcomingEvents.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\UpcomingEvents.ascx.designer.cs">
+      <DependentUpon>UpcomingEvents.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningLoggedIn.ascx.cs">
+      <DependentUpon>WhatsHappeningLoggedIn.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningLoggedIn.ascx.designer.cs">
+      <DependentUpon>WhatsHappeningLoggedIn.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningLoggedOut.ascx.cs">
+      <DependentUpon>WhatsHappeningLoggedOut.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningLoggedOut.ascx.designer.cs">
+      <DependentUpon>WhatsHappeningLoggedOut.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Containers\TwoRow.ascx.cs">
       <DependentUpon>TwoRow.ascx</DependentUpon>
@@ -1266,6 +1336,7 @@
     <Content Include="Presentation\Sublayouts\Articles\TipsArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\VideoArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\AllBlogsPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\AllBlogsPageHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogCallToActionWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
@@ -1275,6 +1346,8 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostSharedWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogParentsAreTalkingWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogPostBody.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\FromOurBlogs.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\MoreBlogs.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsPostPage.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\MostReadBlogsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\MostRecentBlogsPage.ascx" />
@@ -1294,6 +1367,13 @@
     <Content Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Like Me.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Recommended.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Whats Happening\CommunityMembers.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Whats Happening\MostActiveGroups.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Whats Happening\RecentBlogPosts.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Whats Happening\RecentQuestions.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Whats Happening\UpcomingEvents.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningLoggedIn.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningLoggedOut.ascx" />
     <Content Include="Presentation\Sublayouts\Containers\TwoRow.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />

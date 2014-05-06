@@ -33,6 +33,15 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                 case "Live Well":
                     blogId = 3;
                     break;
+                case "Blog 4":
+                    blogId = 4;
+                    break;
+                case "Blog 5":
+                    blogId = 5;
+                    break;
+                case "Blog 6":
+                    blogId = 6;
+                    break;
                 default:
                     return;
             }
@@ -71,7 +80,8 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                 try
                 {
                     item.Editing.BeginEdit();
-                    item["Post"] = xn["ContentId"].InnerText;
+                    item["BlogPostId"] = xn["PostId"].InnerText;
+                    item["BlogId"] = blogId.ToString();
                 }
                 finally
                 {
