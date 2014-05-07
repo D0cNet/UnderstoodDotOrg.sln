@@ -21,7 +21,7 @@
 </div>
 
 <asp:PlaceHolder ID="phResults" runat="server">
-    <div class="container l-results-and-filter">
+<div class="container l-results-and-filter">
   <div class="row">
     <div class="col col-24 rs_read_this">
       <!-- UN-1741 - # of Results & Filter -->
@@ -55,14 +55,13 @@
     </div>
 </script>
 
+<div class="container about-search-results-container">
+    <div class="row">
+    <div class="col col-24">
+
     <asp:Repeater ID="rptResults" runat="server">
         <HeaderTemplate>
-            <div class="container about-search-results-container">
-                <div class="row">
-                <div class="col col-24">
-
-                    <div class="about-search-results skiplink-content" aria-role="main">
-
+            <div class="about-search-results skiplink-content" aria-role="main">
         </HeaderTemplate>
         <ItemTemplate>
             <div class="row search-result-container rs_read_this">
@@ -81,27 +80,31 @@
             </div>
         </ItemTemplate>
         <FooterTemplate>
-            </div> <!-- .about-search-results -->
-                    <div class="about-search-results-more">
-                    <!-- Show More -->
-                    <!-- BEGIN PARTIAL: community/show_more -->
-                    <!--Show More-->
-                    <div class="container show-more rs_skip">
-                        <div class="row">
-                        <div class="col col-24">
-                            <a class="show-more-search-results-link" href="#" data-path="<%= AjaxUrl %>" data-type="<%= AjaxType %>" data-container="about-search-results" data-term="<%= AjaxTerm %>" data-item="search-result-entry">Show More<i class="icon-arrow-down-blue"></i></a>
-                        </div>
-                        </div>
-                    </div><!-- .show-more -->
-                    <!-- END PARTIAL: community/show_more -->
-                    <!-- .show-more -->
-                    </div><!-- .about-search-results-more -->
-
-                </div><!-- .col -->
-                </div><!-- .row -->
-            </div> <!-- .container -->
+            </div> 
+            <!-- .about-search-results -->
         </FooterTemplate>
     </asp:Repeater>
+
+    <asp:PlaceHolder ID="phMoreResults" runat="server">
+        <div class="about-search-results-more">
+        <!-- Show More -->
+        <!-- BEGIN PARTIAL: community/show_more -->
+        <!--Show More-->
+        <div class="container show-more rs_skip">
+            <div class="row">
+            <div class="col col-24">
+                <a class="show-more-search-results-link" href="#" data-path="<%= AjaxUrl %>" data-type="<%= AjaxType %>" data-container="about-search-results" data-term="<%= AjaxTerm %>" data-item="search-result-entry">Show More<i class="icon-arrow-down-blue"></i></a>
+            </div>
+            </div>
+        </div><!-- .show-more -->
+        <!-- END PARTIAL: community/show_more -->
+        <!-- .show-more -->
+        </div><!-- .about-search-results-more -->
+    </asp:PlaceHolder>
+
+    </div><!-- .col -->
+    </div><!-- .row -->
+</div> <!-- .container -->
 
 </asp:PlaceHolder>
 

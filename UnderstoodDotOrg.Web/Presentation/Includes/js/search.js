@@ -59,7 +59,13 @@
 			
 			nextPage++;
 			
-			var entries = data.d;
+			var result = data.d;
+			
+			if (!result.HasMoreResults) {
+				$showMore.hide();
+			}
+			
+			var entries = result.Articles;
 			
 			for (var i = 0, j = entries.length; i < j; i++) {
 				$dataContainer.append(template(entries[i]));

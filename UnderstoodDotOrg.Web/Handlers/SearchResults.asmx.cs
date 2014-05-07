@@ -6,6 +6,7 @@ using System.Web.Script.Services;
 using System.Web.Services;
 using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Handlers
 {
@@ -23,10 +24,12 @@ namespace UnderstoodDotOrg.Web.Handlers
 
         [WebMethod]
         [ScriptMethod(ResponseFormat=ResponseFormat.Json)]
-        public List<SearchArticle> ShowMoreResults(string terms, string type, int page)
+        public ResultSet ShowMoreResults(string terms, string type, int page)
         {
-            int results = 0;
-            List<Article> articles = SearchHelper.GetSearchResultArticles(terms, type, page, out results);
+            ResultSet results = new ResultSet();
+
+            int totalResults = 0;
+            List<Article> articles = SearchHelper.GetSearchResultArticles(terms, type, page, out totalResults);
             var query = from a in articles
                         let i = a.GetItem()
                         select new SearchArticle
@@ -38,7 +41,14 @@ namespace UnderstoodDotOrg.Web.Handlers
                             Type = "TODO"
                         };
 
-            return query.ToList();
+            results.Articles = query.ToList();
+
+            // Determine if there are more results to be paged
+
+            int currentResultTotal = ((page - 1) * Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE) + results.Articles.Count();
+            results.HasMoreResults =  currentResultTotal < totalResults;
+
+            return results;
         }
     }
 }

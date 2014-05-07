@@ -38,14 +38,19 @@
                 return;
             }
 
-            int resultCount;
+            int totalMatches;
 
-            List<Article> results = SearchHelper.GetSearchResultArticles(query, "", 1, out resultCount);
+            List<Article> results = SearchHelper.GetSearchResultArticles(query, "", 1, out totalMatches);
 
             if (results.Any()) 
             {
                 rptResults.DataSource = results;
                 rptResults.DataBind();
+
+                if (totalMatches <= Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE)
+                {
+                    phMoreResults.Visible = false;
+                }
             } 
             else 
             {
@@ -54,7 +59,7 @@
             }
 
             litSearchTerm.Text = litSearchTermNoResults.Text = System.Net.WebUtility.HtmlEncode(query);
-            litResultCount.Text = resultCount.ToString();
+            litResultCount.Text = totalMatches.ToString();
         }
 
         private void BindEvents()
@@ -97,7 +102,7 @@
         {
             get
             {
-                return "";
+                return Sitecore.Configuration.Settings.GetSetting(Constants.Settings.SearchResultsEndpoint);
             }
         }
 

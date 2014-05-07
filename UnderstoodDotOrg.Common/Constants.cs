@@ -10,7 +10,7 @@ namespace UnderstoodDotOrg.Common
     {
         public const int PERSONALIZATION_ARTICLES_PER_USER = 40;
         public const int PERSONALIZATION_ARTICLES_PER_BUCKET = 8;
-        public const int SEARCH_RESULTS_ENTRIES_PER_PAGE = 20;
+        public const int SEARCH_RESULTS_ENTRIES_PER_PAGE = 5;
 
         #region Query Strings
 

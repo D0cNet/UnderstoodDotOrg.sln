@@ -138,6 +138,7 @@
     <Compile Include="Search\Fields\ArticleMappingField.cs" />
     <Compile Include="Search\SearchArticle.cs" />
     <Compile Include="Search\SearchHelper.cs" />
+    <Compile Include="Search\ResultSet.cs" />
     <Compile Include="SitecoreCIG\FolderItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.instance.cs" />
