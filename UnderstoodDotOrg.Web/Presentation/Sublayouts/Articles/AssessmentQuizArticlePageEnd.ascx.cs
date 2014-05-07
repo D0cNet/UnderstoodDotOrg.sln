@@ -43,7 +43,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                             AssessmentQuizArticlePage1Item ObjPage1 = (AssessmentQuizArticlePage1Item)Session["AssessmentPage1Item"];
                             if (ObjPage1 != null)
                             {
-                                Response.Redirect(string.Concat( "http://",ObjPage1.InnerItem.GetUrl()));
+                                Response.Redirect(string.Concat( "http://",Request.Url.Host.ToString(),ObjPage1.InnerItem.GetUrl()));
                             }
                             
                         }
@@ -57,7 +57,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                             AssessmentQuizArticlePage2Item ObjPage2 = (AssessmentQuizArticlePage2Item)Session["AssessmentPage1Item"];
                             if (ObjPage2 != null)
                             {
-                                Response.Redirect(string.Concat( "http://",ObjPage2.InnerItem.GetUrl()));
+                                Response.Redirect(string.Concat( "http://",Request.Url.Host.ToString(),ObjPage2.InnerItem.GetUrl()));
                             }
                             
                         }
