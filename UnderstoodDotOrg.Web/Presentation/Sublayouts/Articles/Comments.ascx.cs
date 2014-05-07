@@ -19,17 +19,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             var blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
             int blogId = Convert.ToInt32(blogCig.BlogId.Raw);
             int blogPostId = Convert.ToInt32(blogCig.BlogPostId.Raw);
-            try
-            {
-                List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
-                CommentRepeater.DataSource = dataSource;
-                CommentRepeater.DataBind();
-                CommentCountDisplay.Text = "Comments (" + dataSource.Count + ")";
-            }
-            catch
-            {
-                //do nothing
-            }
+            List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
+            CommentRepeater.DataSource = dataSource;
+            CommentRepeater.DataBind();
+            CommentCountDisplay.Text = "Comments (" + dataSource.Count + ")";
+
             if (!IsPostBack) { CommentEntryTextField.Text = "Add your comment..."; }
         }
 

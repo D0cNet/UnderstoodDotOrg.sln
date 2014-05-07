@@ -34,16 +34,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                         blogId = 2;
                         break;
                     case "Live Well":
-                        blogId = 3;
-                        break;
-                    case "Blog 4":
                         blogId = 4;
-                        break;
-                    case "Blog 5":
-                        blogId = 5;
-                        break;
-                    case "Blog 6":
-                        blogId = 6;
                         break;
                     default:
                         return;
