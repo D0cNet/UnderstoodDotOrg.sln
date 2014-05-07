@@ -6,6 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs
 {
@@ -14,11 +15,18 @@ public partial class BlogsPostPageItem : CustomItem
 
 public static readonly string TemplateId = "{261A659C-F4D4-4788-BC26-FD0EF5ADE168}";
 
+#region Inherited Base Templates
+
+private readonly CommunityBaseTemplateItem _CommunityBaseTemplateItem;
+public CommunityBaseTemplateItem CommunityBaseTemplate { get { return _CommunityBaseTemplateItem; } }
+
+#endregion
 
 #region Boilerplate CustomItem Code
 
 public BlogsPostPageItem(Item innerItem) : base(innerItem)
 {
+	_CommunityBaseTemplateItem = new CommunityBaseTemplateItem(innerItem);
 
 }
 
@@ -70,6 +78,15 @@ public CustomTextField Body
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Body"]);
+	}
+}
+
+
+public CustomTextField ContentId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["ContentId"]);
 	}
 }
 

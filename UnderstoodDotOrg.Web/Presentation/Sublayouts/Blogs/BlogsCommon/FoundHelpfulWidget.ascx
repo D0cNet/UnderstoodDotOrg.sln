@@ -2,7 +2,7 @@
 <!-- BEGIN PARTIAL: helpful-count -->
 <div class="post-meta">
     <div class="count-helpful">
-        <a href="#count-helpful-content"><span>34</span>Found this helpful</a>
+        <a href="#count-helpful-content"><span><asp:Label ID="LikeCount" runat="server" /></span>Found this helpful</a>
     </div>
     <!-- END PARTIAL: helpful-count -->
     <div class="replies">
