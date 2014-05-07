@@ -26,6 +26,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
                 publishedDate = "yesterday";
             }
+
             if (timeSince.Equals("0"))
             {
                 date = DateTime.Parse(d[1]);
@@ -35,27 +36,30 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     return "just now";
                 }
+
                 if (span < 120)
                 {
                     return "1 minute ago";
                 }
+
                 if (span < 3600)
                 {
-                    return string.Format("{0} minutes ago",
-                        Math.Floor((double)span / 60));
+                    return string.Format("{0} minutes ago", Math.Floor((double)span / 60));
                 }
+
                 if (span < 7200)
                 {
                     return "Published 1 hour ago";
                 }
+
                 if (span < 86400)
                 {
-                    return string.Format("{0} hours ago",
-                        Math.Floor((double)span / 3600));
+                    return string.Format("{0} hours ago", Math.Floor((double)span / 3600));
                 }
             }
             return publishedDate;
         }
+
         /// <summary>
         /// Formats the input string to show only the first 100 characters
         /// </summary>
@@ -73,7 +77,10 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                 return outputString;
             }
-            else { return inputString; }
+            else
+            {
+                return inputString;
+            }
         }
 
         public static List<Comment> ReadComments(int blogId, int blogPostId)
@@ -81,12 +88,12 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var webClient = new WebClient();
 
             // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-            var requestUrl = String.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
+            var requestUrl = string.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
             var xml = webClient.DownloadString(requestUrl);
 
             var xmlDoc = new XmlDocument();
@@ -118,7 +125,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 Comment comment = new Comment(id, url, body, parentId, contentId, isApproved, replyCount, commentId,
                     commentContentTypeId, authorId, authorAvatarUrl, authorUsername, publishedDate, authorDisplayName,
                     authorProfileUrl, likesCount);
+
                 commentList.Add(comment);
+
                 nodecount++;
             }
             return commentList;
@@ -129,7 +138,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var webClient = new WebClient();
 
             // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
@@ -144,11 +153,12 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             XmlNodeList nodes2 = xmlDoc.SelectNodes("Response/BlogPost/Author");
             string body = nodes[0]["Body"].InnerText;
             string title = nodes[0]["Title"].InnerText;
+            string contentId = nodes[0]["ContentId"].InnerText;
             string dateTime = nodes[0]["PublishedDate"].InnerText;
             string blogName = CommunityHelper.BlogNameById(nodes[0]["BlogId"].InnerText);
             string publishedDate = CommunityHelper.FormatDate(dateTime);
             string author = nodes2[0]["DisplayName"].InnerText;
-            BlogPost blogPost = new BlogPost(body, title, publishedDate, author, blogName);
+            BlogPost blogPost = new BlogPost(body, title, publishedDate, author, blogName, contentId);
             return blogPost;
         }
 
@@ -162,21 +172,21 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
             webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
 
-            var postUrl = String.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}/comments.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
+            var postUrl = string.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}/comments.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
             var data = "Body=" + body + "&PublishedDate=" + DateTime.Now + "&IsApproved=true&BlogId=" + blogId;
 
             webClient.UploadData(postUrl, "POST", Encoding.ASCII.GetBytes(data));
         }
 
-        public static string ReadLikes(string commentId)
+        public static string ReadLikes(string contentId)
         {
             var webClient = new WebClient();
 
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = String.Format("{0}/api.ashx/v2/likes.xml?ContentId={1}", Settings.GetSetting(Constants.Settings.TelligentConfig), commentId);
+            var requestUrl = string.Format("{0}/api.ashx/v2/likes.xml?ContentId={1}", Settings.GetSetting(Constants.Settings.TelligentConfig), contentId);
 
             var xml = webClient.DownloadString(requestUrl);
 
@@ -200,38 +210,38 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 var webClient = new WebClient();
 
                 // replace the "admin" and "Admin's API key" with your valid user and apikey!
-                var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
                 var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
                 webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                var requestUrl = String.Format("{0}api.ashx/v2/users.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                var requestUrl = string.Format("{0}api.ashx/v2/users.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
 
                 var values = new NameValueCollection();
                 values["Username"] = username;
                 values["Password"] = Guid.NewGuid().ToString();
                 values["PrivateEmail"] = email;
-                //values["Username"] = user.username;
-                //values["Password"] = user.password;
-                //values["PrivateEmail"] = user.privateEmail;
+                ////values["Username"] = user.username;
+                ////values["Password"] = user.password;
+                ////values["PrivateEmail"] = user.privateEmail;
 
-                //PropertyInfo[] ps = user.GetType().GetProperties();
-                //foreach (PropertyInfo pi in ps)
-                //{
-                //    string value = pi.GetValue(user, null).ToString();
+                ////PropertyInfo[] ps = user.GetType().GetProperties();
+                ////foreach (PropertyInfo pi in ps)
+                ////{
+                ////    string value = pi.GetValue(user, null).ToString();
 
-                //    if (!string.IsNullOrEmpty(value))
-                //    {
-                //        values[pi.Name] = value;
-                //    }
-                //}
+                ////    if (!string.IsNullOrEmpty(value))
+                ////    {
+                ////        values[pi.Name] = value;
+                ////    }
+                ////}
 
                 var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
                 return true;
             }
-            catch(Exception e)
+            catch (Exception)
             {
                 Exception createException = new Exception("An error occurred when creating the user. Username may already be in use");
-                throw (createException);
+                throw createException;
             }
         }
 
@@ -240,11 +250,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var webClient = new WebClient();
  
             // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
  
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = String.Format("{0}/api.ashx/v2/blogs/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
+            var requestUrl = string.Format("{0}/api.ashx/v2/blogs/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
  
             var xml = webClient.DownloadString(requestUrl);
  
@@ -260,9 +270,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         {
             var webClient = new WebClient();
             string keyTest = Sitecore.Configuration.Settings.GetSetting("TelligentAdminApiKey");
-            var apiKey = String.IsNullOrEmpty(keyTest) ? "d956up05xiu5l8fn7wpgmwj4ohgslp" : keyTest;
+            var apiKey = string.IsNullOrEmpty(keyTest) ? "d956up05xiu5l8fn7wpgmwj4ohgslp" : keyTest;
 
-            var adminKey = String.Format("{0}:{1}", apiKey, "admin");
+            var adminKey = string.Format("{0}:{1}", apiKey, "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
@@ -275,16 +285,15 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xml);
             var nodes = xmlDoc.SelectNodes("/Response/Users/User");
-            // PagedList<Comment> commentList = PublicApi.Comments.Get(new CommentGetOptions() { UserId = 2100 });
-            // lblCount.Text = nodes.Count.ToString();
+            //// PagedList<Comment> commentList = PublicApi.Comments.Get(new CommentGetOptions() { UserId = 2100 });
+            //// lblCount.Text = nodes.Count.ToString();
             List<MemberCardModel> memberCardSrc = new List<MemberCardModel>();
             foreach (XmlNode item in nodes)
             {
-
                 MemberCardModel cm = new MemberCardModel();
                 cm.AvatarUrl = item.SelectSingleNode("AvatarUrl").InnerText;
 
-                //TODO: This is to change once we figure out retrieving users by roleid
+                // TODO: This is to change once we figure out retrieving users by roleid
                 cm.UserLabel = "Moderator";
 
                 cm.UserLocation = item.SelectSingleNode("Location").InnerText;
@@ -294,7 +303,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 cm = null;
             }
             return memberCardSrc;
+
         }
+
         /// <summary>
         /// Gets a list of blog posts that a specified blog contains.
         /// </summary>
@@ -305,11 +316,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var webClient = new WebClient();
 
             // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = String.Format("{0}/api.ashx/v2/blogs/posts.xml?BlogIds={1};", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
+            var requestUrl = string.Format("{0}/api.ashx/v2/blogs/posts.xml?BlogIds={1};", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
 
             var xml = webClient.DownloadString(requestUrl);
 
@@ -320,29 +331,32 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             XmlNodeList nodes = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost");
             XmlNodeList nodes1 = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost/Author");
             int count = 0;
-            foreach(XmlNode node in nodes)
+            foreach (XmlNode node in nodes)
             {
                 string title = node["Title"].InnerText;
+                string contentId = node["ContentId"].InnerText;
                 string body = FormatString100(node["Body"].InnerText);
                 string publishedDate = FormatDate(node["PublishedDate"].InnerText);
                 string blogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText);
                 string author = nodes1[count]["DisplayName"].InnerText;
-                BlogPost blogPost = new BlogPost(body, title, publishedDate, author, blogName);
+                BlogPost blogPost = new BlogPost(body, title, publishedDate, author, blogName, contentId);
                 blogPosts.Add(blogPost);
                 count++;
+
             }
             return blogPosts;
+        
         }
         public static List<Blog> ListBlogs()
         {
             var webClient = new WebClient();
 
             // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = String.Format("{0}/api.ashx/v2/blogs.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+            var requestUrl = string.Format("{0}/api.ashx/v2/blogs.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
 
             var xml = webClient.DownloadString(requestUrl);
 
@@ -357,6 +371,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string title = node["Name"].InnerText;
                 string description = FormatString100(node["Description"].InnerText);
                 Blog blogPost = new Blog(description, title);
+
                 blogs.Add(blogPost);
                 count++;
             }

@@ -311,7 +311,9 @@
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\CSS\CSSItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\JS\JSItem.base.cs" />
     <Compile Include="TelligentCommunity\CommunityConstructors.cs" />
-    <Compile Include="TelligentCommunity\CommunityHelper.cs" />
+    <Compile Include="TelligentCommunity\CommunityHelper.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
     <Compile Include="TelligentCommunity\CommunityManager.cs" />
     <Compile Include="Understood\Common\ChildCardModel.cs" />
     <Compile Include="Understood\Common\ChildExtensions.cs" />

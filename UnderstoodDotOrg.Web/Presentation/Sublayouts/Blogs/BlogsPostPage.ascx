@@ -13,27 +13,8 @@
             <sc:Placeholder Key="BlogBody" runat="server" />
             <!-- BEGIN PARTIAL: community/blog-post-sidebar -->
             <div class="col col-6 blog-post-sidebar skiplink-sidebar">
-                <div class="post-meta">
-                    <!-- BEGIN PARTIAL: helpful-count -->
-
-                    <div class="count-helpful">
-                        <a href="#count-helpful-content"><span>34</span>Found this helpful</a>
-                    </div>
-                    <!-- END PARTIAL: helpful-count -->
-                    <div class="replies">
-                        <!-- BEGIN PARTIAL: comments-count -->
-                        <div class="count-comments">
-                            <a href="#count-comments"><span>19</span>Comments</a>
-                        </div>
-                        <!-- END PARTIAL: comments-count -->
-                    </div>
-                </div>
-
-                <div class="was-this-helpful" id="count-helpful">
-                    <h5>Did you find this helpful?</h5>
-                    <a href="REPLACE" class="button yes">Yes</a>
-                    <a href="REPLACE" class="button gray no">No</a>
-                </div>
+                    
+                    <sc:Placeholder key="FoundHelpful" runat="server" />
 
                 <div class="keep-reading">
                     <h4>Keep Reading</h4>

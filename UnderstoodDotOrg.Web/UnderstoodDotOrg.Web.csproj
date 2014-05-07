@@ -461,6 +461,13 @@
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx.designer.cs">
       <DependentUpon>BlogFeaturePostWithBreadcrumb.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx.cs">
+      <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx.designer.cs">
+      <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\CommunityHeader.ascx.cs">
       <DependentUpon>CommunityHeader.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -923,33 +930,12 @@
     <Compile Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx.designer.cs">
       <DependentUpon>TwoColumnContainer.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Test\Telligent\CommentsTestControl.ascx.cs">
-      <DependentUpon>CommentsTestControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Test\Telligent\CommentsTestControl.ascx.designer.cs">
-      <DependentUpon>CommentsTestControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Test\Telligent\CommentTest.ascx.cs">
-      <DependentUpon>CommentTest.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Test\Telligent\CommentTest.ascx.designer.cs">
-      <DependentUpon>CommentTest.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\MemberCardList.ascx.cs">
       <DependentUpon>MemberCardList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\MemberCardList.ascx.designer.cs">
       <DependentUpon>MemberCardList.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Test\Telligent\MyCommentsTest.ascx.cs">
-      <DependentUpon>MyCommentsTest.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Test\Telligent\MyCommentsTest.ascx.designer.cs">
-      <DependentUpon>MyCommentsTest.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx.cs">
       <DependentUpon>Assisitive Tools Search.ascx</DependentUpon>
@@ -1658,6 +1644,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogCallToActionWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Common\CommunityHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsAuthorPage.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostRecentWidget.ascx" />
@@ -1724,10 +1711,7 @@
     <Content Include="Presentation\Sublayouts\SubTopics\RightCalloutContainer.ascx" />
     <Content Include="Presentation\Sublayouts\SubTopics\SubTopicArticleListing.ascx" />
     <Content Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx" />
-    <Content Include="Presentation\Sublayouts\Test\Telligent\CommentsTestControl.ascx" />
-    <Content Include="Presentation\Sublayouts\Test\Telligent\CommentTest.ascx" />
     <Content Include="Presentation\Sublayouts\Common\MemberCardList.ascx" />
-    <Content Include="Presentation\Sublayouts\Test\Telligent\MyCommentsTest.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx" />

@@ -11,23 +11,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
     
     
     public partial class BlogsPostPage {
-        
-        /// <summary>
-        /// Placeholder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder1;
-        
-        /// <summary>
-        /// BlogFeaturePost control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder BlogFeaturePost;
     }
 }

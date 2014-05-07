@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CommunityHeader.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogHeader" %>
+    <!-- BEGIN PARTIAL: community/main_header -->
 <div class="container community-main-header ">
     <header>
         <div class="row header-wrapper">
@@ -29,67 +30,65 @@
             </div>
         </div>
     </header>
-    <nav class="container nav-secondary" style="visibility:visible">
+    <nav class="container nav-secondary">
         <div class="row">
             <div class="col col-24">
                 <div class="label-menu"><span>Menu</span></div>
                 <ul class="menu" aria-role="navigation" aria-label="secondary-navigation">
-
-
-
-
-
-
-
-
-
-
-
-
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     <li class="title">
-                        <p class="select-topic">Select a topic:</p>
-                        <button>Blogs</button>
-                        <i class="icon-hide-show-fff"></i>
+                      <p class="select-topic">Select a topic:</p>
+                      <button>Blogs</button>
+                      <i class="icon-hide-show-fff"></i>
                     </li>
-
-
+                    
+                    
                     <li class="submenu">
                         <div class="inner">
-                            <div class="label-more">
-                                <button>More <i class="icon-hide-show-fff"></i></button>
-                            </div>
+                            <div class="label-more"><button>More <i class="icon-hide-show-fff"></i></button></div>
                             <ul>
-
-
-
+                                
+                                
+                                
                                 <li><span><a href="REPLACE">What's Happening Now</a></span></li>
-
-
-
-
+                                
+                                
+                                
+                                
                                 <li><span><a href="REPLACE">Experts Live</a></span></li>
-
-
-
-
+                                
+                                
+                                
+                                
                                 <li><span><a href="REPLACE">Q&nbsp;&amp;&nbsp;A</a></span></li>
-
-
-
-
+                                
+                                
+                                
+                                
                                 <li><span><a href="REPLACE">Parents Like Me</a></span></li>
-
-
-
-
+                                
+                                
+                                
+                                
                                 <li><span><a href="REPLACE">Groups</a></span></li>
-
-
-
+                                
+                                
+                                
                                 <li><span><a href="REPLACE" class="selected">Blogs</a></span></li>
-
-
-
+                                
+                                
+                                
                             </ul>
                         </div>
                     </li>

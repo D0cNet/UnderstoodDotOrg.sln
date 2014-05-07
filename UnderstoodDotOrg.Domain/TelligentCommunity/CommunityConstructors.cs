@@ -55,14 +55,16 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string _publishedDate { get; set; }
         public string _author { get; set; }
         public string _blogName { get; set; }
+        public string _contentId { get; set; }
 
-        public BlogPost(string body, string title, string publishedDate, string author, string blogName)
+        public BlogPost(string body, string title, string publishedDate, string author, string blogName, string contentId)
         {
             _body = body;
             _title = title;
             _publishedDate = publishedDate;
             _author = author;
             _blogName = blogName;
+            _contentId = contentId;
         }
     }
 

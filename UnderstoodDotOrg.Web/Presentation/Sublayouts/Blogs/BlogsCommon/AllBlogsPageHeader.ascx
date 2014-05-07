@@ -6,8 +6,8 @@
                 <img alt="310x174 Placeholder" src="http://placehold.it/310x174" />
             </div>
             <div class="blog-info">
-                <h2>Minus Molestias Blog</h2>
-                <p>Fuga ipsa et nam voluptatibus rerum est impedit iure ut. In veniam pariatur omnis tenetur et atque in autem ut sint dolorem voluptas facilis</p>
+                <h2>The Understood Blog</h2>
+                <p>In sit deserunt dolorem aut odit sed aut sint incidunt quaerat ullam at quis esse. Non ut ut rerum excepturi</p>
                 <a class="button" href="REPLACE">Read the Understood Blog</a>
             </div>
         </div>

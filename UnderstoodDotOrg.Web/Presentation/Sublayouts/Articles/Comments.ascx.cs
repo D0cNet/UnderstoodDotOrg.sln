@@ -16,9 +16,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
-            int blogId = Convert.ToInt32(blogCig.BlogId.Raw);
-            int blogPostId = Convert.ToInt32(blogCig.BlogPostId.Raw);
+            int blogId;
+            int blogPostId;
+            try
+            {
+                var blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
+                blogId = Convert.ToInt32(blogCig.BlogId.Raw);
+                blogPostId = Convert.ToInt32(blogCig.BlogPostId.Raw);
+            }
+            catch
+            {
+                blogId = 1;
+                blogPostId = 1;
+            }
             List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
