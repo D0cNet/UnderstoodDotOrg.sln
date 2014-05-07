@@ -88,33 +88,33 @@
 
 
         <!-- BEGIN PARTIAL: footerjs -->
-        <script src="Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>
+        <script src="/Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>
         <!--[if lte IE 8]>
 <script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
 
 
-        <script src="Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery.validate.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery.equalheights.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
-        <script src="Presentation/includes/js/vendor/bootstrap.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
-        <script src="Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.uniform.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.validate.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.royalslider.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.hoverIntent.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.equalheights.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/bootstrap.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
         <%--<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>--%>
         <script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
-        <script src="Presentation/includes/js/site.js"></script>
-        <script src="Presentation/includes/js/modules.js"></script>
+        <script src="/Presentation/includes/js/site.js"></script>
+        <script src="/Presentation/includes/js/modules.js"></script>
         <script type="text/javascript" src="/Presentation/includes/js/homepage.js"></script>
         <asp:literal runat="server" id="footerSectionJS"></asp:literal>
-        <script src="Presentation/includes/js/global.js"></script>
+        <script src="/Presentation/includes/js/global.js"></script>
 
         <!-- END PARTIAL: footerjs -->
 

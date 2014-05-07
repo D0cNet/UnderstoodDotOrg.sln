@@ -183,7 +183,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
 							}
 
 							hypLanguageLink.NavigateUrl = string.Format("/{0}{1}", languageItem.IsoCode, currentUrlAndQS);
-                            if (hypLanguageLink.NavigateUrl.Equals(language)) {
+                            
+                            if (hypLanguageLink.NavigateUrl.Contains(Sitecore.Context.Language.Name) ) {
                                 hypLanguageLink.Attributes.Add("class", "is-active");
                             }
                             else {
