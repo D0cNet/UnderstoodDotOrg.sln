@@ -13,6 +13,7 @@ using Sitecore.ContentSearch.SearchTypes;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
@@ -23,6 +24,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         // System.Collections.Generic.List<DefaultArticlePageItem> FinalRelatedArticles = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
             if (ObjBasicArticle != null)
             {
@@ -57,6 +59,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     sbSidebarPromo.Visible = false;
                 }
+                if(ObjBasicArticle.ShowCommentsTeaser.Checked == true)
+                {
+                    sbCommentsSummary.Visible=true;
+                
+                }
+                else
+                {
+                    sbCommentsSummary.Visible = false;
+                }
+                litHelpfulLikes.Text = litHelpfulLikes2.Text = CommunityHelper.ReadLikes(ObjBasicArticle.DefaultArticlePage.ContentId);
+                litCommentCount.Text =litCommentCount2.Text= CommunityHelper.ReadComments(Convert.ToInt32(ObjBasicArticle.BlogId.Text),Convert.ToInt32( ObjBasicArticle.BlogPostId.Text)).Count().ToString();
                 //if (ObjBasicArticle.DefaultArticlePage.HideRelatedActiveLinks.Checked == false) // Show Articles
                 //{
                 //    DefaultArticlePageItem ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;

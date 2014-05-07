@@ -245,5 +245,10 @@ public CustomImageField FeaturedImage
 
 
 #endregion //Field Instance Methods
+
+public string ContentId
+{
+    get { return new CustomTextField(InnerItem, InnerItem.Fields["ContentId"]); } 
+}
 }
 }

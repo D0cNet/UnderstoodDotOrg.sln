@@ -4,12 +4,14 @@
 <div class="count-mobile">
     <!-- BEGIN PARTIAL: helpful-count -->
     <div class="count-helpful">
-        <a href="REPLACE"><span>34</span>Found this helpful</a>
+        <a href="REPLACE"><span><a href="REPLACE"><span> <asp:Literal Text="" ID="litHelpfulLikes2" runat="server" />
+           </span>Found this helpful</a>
     </div>
     <!-- END PARTIAL: helpful-count -->
     <!-- BEGIN PARTIAL: comments-count -->
     <div class="count-comments">
-        <a href="REPLACE"><span>19</span>Comments</a>
+        <a href="REPLACE"><span> <a href="REPLACE"><span><asp:Literal Text="" ID="litCommentCount2" runat="server" />
+            </span>Comments</a>
     </div>
     <!-- END PARTIAL: comments-count -->
 </div>
@@ -394,12 +396,12 @@
         <div class="col col-5 offset-1">
             <!-- BEGIN PARTIAL: helpful-count -->
             <div class="count-helpful">
-                <a href="REPLACE"><span>34</span>Found this helpful</a>
+                <a href="REPLACE"><span> <asp:Literal Text="" ID="litHelpfulLikes" runat="server" /></span>Found this helpful</a>
             </div>
             <!-- END PARTIAL: helpful-count -->
             <!-- BEGIN PARTIAL: comments-count -->
             <div class="count-comments">
-                <a href="REPLACE"><span>19</span>Comments</a>
+                <a href="REPLACE"><span><asp:Literal Text="" ID="litCommentCount" runat="server" /></span>Comments</a>
             </div>
             <!-- END PARTIAL: comments-count -->
             <div class="find-this-helpful-large">
@@ -429,22 +431,8 @@
             <!-- END PARTIAL: keep-reading-lg -->
             <!-- BEGIN PARTIAL: comments-summary -->
             <section class="comments-summary">
-                <header>
-                    <h3>Comments (19)</h3>
-                </header>
-                <div class="quote-container">
-                    <blockquote>
-                        <p>Consequatur ad facilis hic dolore et quia rem tenetur repellat veniam quia aut et assumenda. et nostrum officiis voluptatem fugiat tenetur. eaque omnis qui minus quia corrupti est nihil perferendis voluptas provident reprehenderit</p>
-                        <i class="arrow-quote-bottom"></i>
-                    </blockquote>
-                    <span><strong>Carrie S</strong> &bull; 30 min ago</span>
-                </div>
-
-                <ul>
-                    <li><a href="REPLACE">See All Comments</a></li>
-                    <li><a href="REPLACE">Add My Comment</a></li>
-                </ul>
-            </section>
+               <sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/CommentsSummary.ascx" />
+             </section>
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
             <div class="sidebar-promos rs_read_this vertical">

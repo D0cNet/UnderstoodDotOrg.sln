@@ -6,7 +6,7 @@
         <!-- comments col -->
         <div class="col col-23 offset-1">
             <!-- BEGIN PARTIAL: comment-list -->
-            <section class="comment-list">
+            <section class="comment-list" id="comment-list">
 
                 <header>
                     <asp:Label CssClass="comment-count" ID="CommentCountDisplay" runat="server" />
@@ -21,7 +21,7 @@
                     <asp:Repeater runat="server" ID="CommentRepeater">
                         <ItemTemplate>
                             <div class="comment-wrapper">
-                                <div class="comment-header">
+                                <div class="comment-header" id="<%# Eval("_commentId") %>">
                                     <span class="comment-avatar">
                                         <img style="height: 60px; width: 60px;" alt="60x60 Placeholder" src='<%# Eval("_authorAvatarUrl") %>' />
                                     </span>

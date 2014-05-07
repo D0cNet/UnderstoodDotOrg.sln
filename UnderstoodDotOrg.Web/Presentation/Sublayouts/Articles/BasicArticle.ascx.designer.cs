@@ -13,6 +13,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     public partial class BasicArticle {
         
         /// <summary>
+        /// litHelpfulLikes2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litHelpfulLikes2;
+        
+        /// <summary>
+        /// litCommentCount2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litCommentCount2;
+        
+        /// <summary>
         /// frHeadlineText control.
         /// </summary>
         /// <remarks>
@@ -94,6 +112,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.Date dtReviewdDate;
         
         /// <summary>
+        /// litHelpfulLikes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litHelpfulLikes;
+        
+        /// <summary>
+        /// litCommentCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litCommentCount;
+        
+        /// <summary>
         /// slKeepReading control.
         /// </summary>
         /// <remarks>
@@ -101,6 +137,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Sublayout slKeepReading;
+        
+        /// <summary>
+        /// sbCommentsSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbCommentsSummary;
         
         /// <summary>
         /// sbSidebarPromo control.

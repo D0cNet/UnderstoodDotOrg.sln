@@ -279,6 +279,13 @@
     <Compile Include="Presentation\Sublayouts\Articles\Comments.ascx.designer.cs">
       <DependentUpon>Comments.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\CommentsSummary.ascx.cs">
+      <DependentUpon>CommentsSummary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\CommentsSummary.ascx.designer.cs">
+      <DependentUpon>CommentsSummary.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Deep Dive Article Section Info Page.ascx.cs">
       <DependentUpon>Deep Dive Article Section Info Page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1618,6 +1625,7 @@
     <Content Include="Presentation\Sublayouts\Articles\BasicArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Checklist Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Comments.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\CommentsSummary.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Deep Dive Article Section Info Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Glossary Article.ascx" />
