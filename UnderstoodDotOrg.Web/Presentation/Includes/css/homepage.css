@@ -200,7 +200,7 @@
   font-weight: bold;
   font-size: 15px;
   font-size: 0.9375rem;
-  background-image: url("../images/arrow.down.000.20.png");
+  background-image: url("/Presentation/Includes/images/arrow.down.000.20.png");
   background-repeat: no-repeat;
   background-size: 13px 13px;
   background-position: 94% 50%;
@@ -228,7 +228,7 @@
 }
 /* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
 .no-backgroundsize .guide-me .guide-me-inner .button {
-  background-image: url("../images/arrow.down.000.10.png");
+  background-image: url("/Presentation/Includes/images/arrow.down.000.10.png");
 }
 /* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .button:focus {
@@ -247,7 +247,7 @@
     display: inline-block;
     width: 43px;
     height: 51px;
-    background-image: url("../images/icon.guide-me.86.png");
+    background-image: url("/Presentation/Includes/images/icon.guide-me.86.png");
     background-size: 43px 51px;
     vertical-align: middle;
     margin-right: 15px;
@@ -255,7 +255,7 @@
 }
 /* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
 .no-backgroundsize .guide-me .guide-me-inner .icon {
-  background-image: url("../images/icon.guide-me.43.png");
+  background-image: url("/Presentation/Includes/images/icon.guide-me.43.png");
 }
 
 /**
@@ -298,7 +298,7 @@
 }
 /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .close-guide {
-  background: url("../images/icon.close.overlay.44.png") 0 2px no-repeat;
+  background: url("/Presentation/Includes/images/icon.close.overlay.44.png") 0 2px no-repeat;
   background-size: 16px 36px;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -320,7 +320,7 @@
 }
 /* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
 .no-backgroundsize .container-guide-me-overlay .close-guide {
-  background-image: url("../images/icon.close.overlay.16.png");
+  background-image: url("/Presentation/Includes/images/icon.close.overlay.16.png");
 }
 @media (min-width: 650px) {
   /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
@@ -339,7 +339,7 @@
   }
   /* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .no-backgroundsize .container-guide-me-overlay .close-guide {
-    background-image: url("../images/icon.close.overlay.22.png");
+    background-image: url("/Presentation/Includes/images/icon.close.overlay.22.png");
   }
 }
 @media (min-width: 769px) {
@@ -779,7 +779,7 @@
   height: 34px;
   background-size: 34px auto;
   text-indent: -9999px;
-  background-image: url("../images/sprite.btn.carousel.play-pause.png");
+  background-image: url("/Presentation/Includes/images/sprite.btn.carousel.play-pause.png");
   background-color: transparent;
 }
 @media (min-width: 650px) {
@@ -802,7 +802,7 @@
 }
 /* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .no-backgroundsize .hero-carousel-inner .play-pause {
-  background-image: url("../images/sprite.btn.carousel.play-pause.lo-res.png");
+  background-image: url("/Presentation/Includes/images/sprite.btn.carousel.play-pause.lo-res.png");
 }
 /* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-keyboard-trigger {
@@ -872,12 +872,12 @@
   position: static;
   width: 12px;
   height: 21px;
-  background-image: url("../images/sprite.icon.arrows.next-prev.24.png");
+  background-image: url("/Presentation/Includes/images/sprite.icon.arrows.next-prev.24.png");
   background-size: 25px 21px;
 }
 /* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .no-backgroundsize .hero-carousel-inner .carousel-pagers .rsArrowIcn {
-  background-image: url("../images/sprite.icon.arrows.next-prev.12.png");
+  background-image: url("/Presentation/Includes/images/sprite.icon.arrows.next-prev.12.png");
 }
 /* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-navigation {

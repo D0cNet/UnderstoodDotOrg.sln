@@ -109,7 +109,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
                 NavigationLinkItem item = e.Item.DataItem as NavigationLinkItem;
                 if (item != null) {
                     FieldRenderer frUtilityLink = e.FindControlAs<FieldRenderer>("frUtilityLink");
-                    Literal ltRender = e.FindControlAs<Literal>("ltRender");
+                   
                     if (frUtilityLink != null) {
                         frUtilityLink.Item = item;
                     }
@@ -168,10 +168,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
                     if (hypLanguageLink != null) {
                        
                         if (!languageItem.LanguageName.Raw.IsNullOrEmpty() && !languageItem.SitecoreLanguage.Raw.IsNullOrEmpty()) {
+
                             hypLanguageLink.Text = languageItem.LanguageName.Rendered;
+                            hypLanguageLink.Attributes.Add("title", languageItem.LanguageName.Rendered);
 
 							string currentUrlAndQS = Request.Url.PathAndQuery;
-
+                            string language = currentUrlAndQS;
 							foreach (var langItem in headerFolderItem.GetLanguageLinks())
 							{
 								if (currentUrlAndQS.StartsWith("/" + langItem.IsoCode))
@@ -181,6 +183,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
 							}
 
 							hypLanguageLink.NavigateUrl = string.Format("/{0}{1}", languageItem.IsoCode, currentUrlAndQS);
+                            if (hypLanguageLink.NavigateUrl.Equals(language)) {
+                                hypLanguageLink.Attributes.Add("class", "is-active");
+                            }
+                            else {
+                                hypLanguageLink.Attributes.Remove("class");
+                            }
                         }
                     }
                 }
@@ -197,8 +205,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
                         frNavLink.Item = item;
                     }
 
-                    if (pnlParentToolKit != null) {
-                        pnlParentToolKit.Style.Add("background", item.NavigationImage.MediaUrl);
+                    if (pnlParentToolKit != null && item.Image != null && item.Image.MediaItem != null) {
+                        pnlParentToolKit.Style.Add("background", string.Format("url('{0}') no-repeat scroll 0 0 / 100px 100px rgba(0, 0, 0, 0); background-size:40px 40px; height:180px; background-color:#ffffff; background-position:50% 10px; position:relative;", item.Image.MediaUrl));
                     }
                 }
             }

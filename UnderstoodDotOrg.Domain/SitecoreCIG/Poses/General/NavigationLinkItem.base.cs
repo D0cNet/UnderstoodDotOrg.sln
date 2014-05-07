@@ -56,11 +56,11 @@ public CustomCheckboxField ShowImage
 }
 
 
-public CustomImageField NavigationImage
+public CustomImageField Image
 {
 	get
 	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["Navigation Image"]);
+		return new CustomImageField(InnerItem, InnerItem.Fields["Image"]);
 	}
 }
 
