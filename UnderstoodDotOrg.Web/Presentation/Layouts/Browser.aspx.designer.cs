@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts {
     public partial class Browser {
         
         /// <summary>
+        /// headerSectionCSS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal headerSectionCSS;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -56,5 +65,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder3;
+        
+        /// <summary>
+        /// footerSectionJS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal footerSectionJS;
     }
 }
