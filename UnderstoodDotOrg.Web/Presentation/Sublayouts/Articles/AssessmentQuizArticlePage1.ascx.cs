@@ -23,6 +23,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (ObjAssessmentQuizPage1 != null)
             {
                 //Get list of Questions
+                Session["AssessmentPage1Item"] = ObjAssessmentQuizPage1;
                 _allQuestion = AssessmentQuizArticlePage1Item.GetAllQuestions(ObjAssessmentQuizPage1);
                 if (_allQuestion != null)
                 {
@@ -99,7 +100,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected void btnNext_Click(object sender, EventArgs e)
         {
             //btnNext.PostBackUrl = string.Concat(Request.Url.Host.ToString(), ObjAssessmentQuizPage1.LinktoNextPage);
-            Response.Redirect(string.Concat(Request.Url.Host.ToString(), ObjAssessmentQuizPage1.LinktoNextPage));
+            Response.Redirect(string.Concat("http://",Request.Url.Host.ToString(), ObjAssessmentQuizPage1.LinktoNextPage));
         }
         public bool UpdateScore(AssessmentQuizArticlePage1Item ObjQuizPage1, string SelectedAnswer)
         {

@@ -22,6 +22,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             ObjAssessmentQuizPage2 = new AssessmentQuizArticlePage2Item(Sitecore.Context.Item);
             if (ObjAssessmentQuizPage2 != null)
             {
+                Session["AssessmentPage2Item"] = ObjAssessmentQuizPage2;
                 //Get list of Questions
                 _allQuestion = AssessmentQuizArticlePage2Item.GetAllQuestions(ObjAssessmentQuizPage2);
                 if (_allQuestion != null)
@@ -44,14 +45,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected void btnBack_Click(object sender, EventArgs e)
         {
             //btnSubmit.PostBackUrl =string.Concat( Request.Url.Host.ToString() , ObjAssessmentQuizPage2.LinktoBackPage);
-            Response.Redirect(string.Concat(Request.Url.Host.ToString(),"/", ObjAssessmentQuizPage2.LinktoBackPage));
+            Response.Redirect(string.Concat("http://",Request.Url.Host.ToString(), ObjAssessmentQuizPage2.LinktoBackPage));
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
         
             //btnSubmit.PostBackUrl =string.Concat( Request.Url.Host.ToString() , ObjAssessmentQuizPage2.LinktoResultPage);
-            Response.Redirect(string.Concat(Request.Url.Host.ToString(), "/", ObjAssessmentQuizPage2.LinktoResultPage));
+            Response.Redirect(string.Concat("http://",Request.Url.Host.ToString(), ObjAssessmentQuizPage2.LinktoResultPage));
         }
 
         protected void rptQuestion_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -159,7 +160,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             //DropDownList ddlAnswer = (DropDownList)this.FindControl("ddlAnswer");
             if (UpdateScore(ObjAssessmentQuizPage2, opAnsSel) == true)
             {
-                Session["_AssessmentQuiz_Page1Score"] = _AssessmentQuiz_Page2Score;
+                Session["_AssessmentQuiz_Page2Score"] = _AssessmentQuiz_Page2Score;
             }
         }
         
