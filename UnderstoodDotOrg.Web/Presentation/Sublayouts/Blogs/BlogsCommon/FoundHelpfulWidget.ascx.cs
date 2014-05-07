@@ -22,7 +22,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             }
             catch
             {
-                // do nothing
+                // do nothing for now
             }
         }
     }
