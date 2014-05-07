@@ -25,12 +25,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 if (ObjSimpleExpertArticle.DefaultArticlePage.AuthorName.Item != null)
                 {
-                    //Show Author details
-                    frAuthorName.Item = ObjSimpleExpertArticle.DefaultArticlePage.AuthorName.Item;
-                    frAuthorBio.Item = ObjSimpleExpertArticle.DefaultArticlePage.AuthorName.Item;
-                    frAuthorImage.Item = ObjSimpleExpertArticle.DefaultArticlePage.AuthorName.Item;
-                    frAuthorImage.FieldName = "Author Image";
-                    hlAuthorImage.NavigateUrl = ObjSimpleExpertArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
+                    sbAboutAuthor.Visible = true;
+                    ////Show Author details
+                    //frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorBio.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorImage.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorImage.FieldName = "Author Image";
+                    //hlAuthorImage.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
+                    //hlAuthorMorePost.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.FullPath;
+                }
+                if (ObjSimpleExpertArticle.ShowPromotionalControl.Checked == true)
+                {
+                    sbSidebarPromo.Visible = true;
+                }
+                else
+                {
+                    sbSidebarPromo.Visible = false;
                 }
                 IEnumerable<SimpleExpertAddQuestionPageItem> AllQAList = SimpleExpertArticleItem.GetSimpleExpertQAList(ObjSimpleExpertArticle);
                 if (AllQAList != null)

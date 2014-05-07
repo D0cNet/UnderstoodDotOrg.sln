@@ -22,10 +22,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 //Get Authors Details
                 if (ObjDeepDiveArticle.DefaultArticlePage.AuthorName != null)
                 {
-                    frAuthorName.Item = ObjDeepDiveArticle.DefaultArticlePage.AuthorName.Item;
-                    frAuthorImage.Item = ObjDeepDiveArticle.DefaultArticlePage.AuthorName.Item;
-                    frAuthorBio.Item = ObjDeepDiveArticle.DefaultArticlePage.AuthorName.Item;
-                    hlAuthorImage.NavigateUrl = ObjDeepDiveArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
+                    sbAboutAuthor.Visible = true;
+                    ////Show Author details
+                    //frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorBio.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorImage.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorImage.FieldName = "Author Image";
+                    //hlAuthorImage.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
+                    //hlAuthorMorePost.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.FullPath;
                 }
                 
                 //Get Reviewer Name
@@ -39,6 +43,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     dtReviewdDate.Field = "Reviewed Date";
                     dtReviewdDate.Format = "dd MMM yy";
+                }
+
+                if (ObjDeepDiveArticle.ShowPromotionalControl.Checked == true)
+                {
+                    sbSidebarPromo.Visible = true;
+                }
+                else
+                {
+                    sbSidebarPromo.Visible = false;
                 }
 
                 List<DeepDiveSectionInfoPageItem> FinalSectionList = DeepDiveArticlePageItem.GetSectionData(ObjDeepDiveArticle);

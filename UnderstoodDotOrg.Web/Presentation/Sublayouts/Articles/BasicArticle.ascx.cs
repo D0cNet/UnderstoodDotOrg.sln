@@ -29,18 +29,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                 if (ObjBasicArticle.DefaultArticlePage.AuthorName.Item != null)
                 {
-                    //Show Author details
-                    frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                    frAuthorBio.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                    frAuthorImage.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                    frAuthorImage.FieldName = "Author Image";
-                    hlAuthorImage.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
-                    hlAuthorMorePost.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.FullPath;
+                    sbAboutAuthor.Visible = true;
+                    ////Show Author details
+                    //frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorBio.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorImage.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorImage.FieldName = "Author Image";
+                    //hlAuthorImage.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
+                    //hlAuthorMorePost.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.FullPath;
                 }
+
                 if (ObjBasicArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
                 {
                     frReviewedby.Item = ObjBasicArticle.DefaultArticlePage.Reviewedby.Item;
-                    hlReviewdby.NavigateUrl = ObjBasicArticle.DefaultArticlePage.Reviewedby.Item.GetUrl();
+                    hlReviewdby.NavigateUrl = string.Concat("http://", Request.Url.Host.ToString(), ObjBasicArticle.DefaultArticlePage.Reviewedby.Item.GetUrl());
                 }
                 if (ObjBasicArticle.DefaultArticlePage.ReviewedDate.DateTime != null)// Reviewed date 
                 {
@@ -53,7 +55,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 }
                 else
                 {
-
                     sbSidebarPromo.Visible = false;
                 }
                 //if (ObjBasicArticle.DefaultArticlePage.HideRelatedActiveLinks.Checked == false) // Show Articles

@@ -26,12 +26,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 if (ObjActionListArticle.DefaultArticlePage.AuthorName.Item != null)
                 {
-                    //Show Author details
-                    frAuthorName.Item = ObjActionListArticle.DefaultArticlePage.AuthorName.Item;
-                    frAuthorBio.Item = ObjActionListArticle.DefaultArticlePage.AuthorName.Item;
-                    frAuthorImage.Item = ObjActionListArticle.DefaultArticlePage.AuthorName.Item;
-                    frAuthorImage.FieldName = "Author Image";
-                    hlAuthorImage.NavigateUrl = ObjActionListArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
+                    sbAboutAuthor.Visible = true;
+                    ////Show Author details
+                    //frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorBio.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorImage.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
+                    //frAuthorImage.FieldName = "Author Image";
+                    //hlAuthorImage.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
+                    //hlAuthorMorePost.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.FullPath;
+                }
+                if (ObjActionListArticle.ShowPromotionalControl.Checked == true)
+                {
+                    sbSidebarPromo.Visible = true;
+                }
+                else
+                {
+                    sbSidebarPromo.Visible = false;
                 }
                 if (ObjActionListArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
                 {

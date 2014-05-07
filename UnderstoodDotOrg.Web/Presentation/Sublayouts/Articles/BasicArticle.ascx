@@ -249,29 +249,30 @@
             <!-- end key-takeaways -->
             <!-- END PARTIAL: key-takeaways -->
             <!-- BEGIN PARTIAL: about-the-author -->
-            <section class="about-the-author">
+            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" Visible="false" />
+            <%--<section class="about-the-author">
                 <header>
-                    <h2>About the Author</h2>
+                    <h2>About the Author Main</h2>
                 </header>
-                <%--<img src="http://placehold.it/60x60" alt="REPLACE">--%>
+                <%--<img src="http://placehold.it/60x60" alt="REPLACE">
                 <asp:HyperLink ID="hlAuthorImage" runat="server">
                     <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server" Width="60px" Height="60px" />
                 </asp:HyperLink>
 
                 <div class="author-text">
-                    <h3><%-- Christine Flagler--%>
+                    <h3><%-- Christine Flagler
                         <!--<sc:Text ID="txAuthorName" runat="server" Field="Author Name" />-->
                         <sc:FieldRenderer ID="frAuthorName" runat="server" FieldName="Author Name" />
                     </h3>
                     <p>
-                        <%--Lorem ipsum dolor sit amet, consectetuer laoreet dolore adipiscing elit, sed diam nonummy nibh euismod tincidunt ut dolore.--%>
+                        <%--Lorem ipsum dolor sit amet, consectetuer laoreet dolore adipiscing elit, sed diam nonummy nibh euismod tincidunt ut dolore.
                         <sc:FieldRenderer ID="frAuthorBio" runat="server" FieldName="Author Biodata" />
                     </p>
                     <asp:HyperLink ID="hlAuthorMorePost" runat="server" Text="More Posts by this Author">
                     </asp:HyperLink>
-                    <%--<a href="REPLACE">More Posts by this Author</a>--%>
+                    <%--<a href="REPLACE">More Posts by this Author</a>
                 </div>
-            </section>
+            </section>--%>
             <!-- END PARTIAL: about-the-author -->
             <!-- BEGIN PARTIAL: reviewed-by -->
             <p class="reviewed-by">

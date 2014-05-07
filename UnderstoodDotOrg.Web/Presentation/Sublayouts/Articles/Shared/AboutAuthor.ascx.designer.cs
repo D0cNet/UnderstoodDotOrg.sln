@@ -7,72 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
     
     
-    public partial class Checklist_Article_Page {
+    public partial class AboutAuthor {
         
         /// <summary>
-        /// frSummary control.
+        /// hlAuthorImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSummary;
+        protected global::System.Web.UI.WebControls.HyperLink hlAuthorImage;
         
         /// <summary>
-        /// rptHeaderChkbox control.
+        /// frAuthorImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptHeaderChkbox;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorImage;
         
         /// <summary>
-        /// hlReviewdby control.
+        /// txAuthorName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlReviewdby;
+        protected global::Sitecore.Web.UI.WebControls.Text txAuthorName;
         
         /// <summary>
-        /// frReviewedby control.
+        /// frAuthorName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frReviewedby;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorName;
         
         /// <summary>
-        /// dtReviewdDate control.
+        /// frAuthorBio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Date dtReviewdDate;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorBio;
         
         /// <summary>
-        /// slKeepReading control.
+        /// hlAuthorMorePost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout slKeepReading;
-        
-        /// <summary>
-        /// sbSidebarPromo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbSidebarPromo;
+        protected global::System.Web.UI.WebControls.HyperLink hlAuthorMorePost;
     }
 }

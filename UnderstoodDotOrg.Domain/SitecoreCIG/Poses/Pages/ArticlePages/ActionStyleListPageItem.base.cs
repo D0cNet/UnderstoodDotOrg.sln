@@ -73,13 +73,13 @@ public CustomCheckboxField ShowPromotionalControl
 }
 
 
-public CustomTextField PromotionalHeadline
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Promotional Headline"]);
-	}
-}
+//public CustomTextField PromotionalHeadline
+//{
+//    get
+//    {
+//        return new CustomTextField(InnerItem, InnerItem.Fields["Promotional Headline"]);
+//    }
+//}
 
 
 public CustomTreeListField PromotionalContent

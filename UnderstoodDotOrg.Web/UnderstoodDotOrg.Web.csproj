@@ -324,6 +324,13 @@
     <Compile Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx.designer.cs">
       <DependentUpon>Parent Toolkit Page.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\AboutAuthor.ascx.cs">
+      <DependentUpon>AboutAuthor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\AboutAuthor.ascx.designer.cs">
+      <DependentUpon>AboutAuthor.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx.cs">
       <DependentUpon>Author Bio.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1624,6 +1631,7 @@
     <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizResultsArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\AboutAuthor.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx" />

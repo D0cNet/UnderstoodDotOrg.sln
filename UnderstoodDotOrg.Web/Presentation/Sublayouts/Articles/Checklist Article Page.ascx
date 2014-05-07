@@ -266,7 +266,7 @@
         <div class="col col-1 sidebar-spacer"></div>
 
         <!-- right bar -->
-        <div class="col col-5 offset-1">
+        <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
             <!-- BEGIN PARTIAL: helpful-count -->
             <div class="count-helpful">
                 <a href="REPLACE"><span>34</span>Found this helpful</a>
@@ -323,8 +323,11 @@
                 </ul>
             </section>
             <!-- END PARTIAL: comments-summary -->
-            <!-- BEGIN PARTIAL: sidebar-promos -->
-            <div class="sidebar-promos">
+             <!-- BEGIN PARTIAL: sidebar-promos -->
+            <div class="sidebar-promos rs_read_this vertical">
+                <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
+            </div>
+            <%--<div class="sidebar-promos">
                 <div class="promo purple-dark">
                     <a href="REPLACE">
                         <span>Get advice</span>
@@ -348,7 +351,8 @@
                     </a>
                 </div>
                 <!-- end promo -->
-            </div>
+            </div>--%>
+
             <!-- end sidebar-promos -->
 
             <!-- END PARTIAL: sidebar-promos -->

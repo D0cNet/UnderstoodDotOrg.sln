@@ -71,82 +71,86 @@
             <!-- end expert-content -->
         </div>
         <!-- end expert-answer -->
-        --%>
+            --%>
 
 
-        <!-- END PARTIAL: expert-answer -->
-        <!-- BEGIN PARTIAL: about-the-author -->
-        <section class="about-the-author">
-            <header>
-                <h2>About the Author</h2>
-            </header>
-             <asp:HyperLink ID="hlAuthorImage" runat="server">
-                <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server" />
-            </asp:HyperLink>
+            <!-- END PARTIAL: expert-answer -->
+            <!-- BEGIN PARTIAL: about-the-author -->
+            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" Visible="false" />
+            <%--<section class="about-the-author">
+                <header>
+                    <h2>About the Author Main</h2>
+                </header>
+                <%--<img src="http://placehold.it/60x60" alt="REPLACE">
+                <asp:HyperLink ID="hlAuthorImage" runat="server">
+                    <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server" Width="60px" Height="60px" />
+                </asp:HyperLink>
 
-            <div class="author-text">
-                <h3>
-                    <sc:FieldRenderer ID="frAuthorName" runat="server" FieldName="Author Name" />
-                </h3>
-                <p>
-                  
-                    <sc:FieldRenderer ID="frAuthorBio" runat="server" FieldName="Author Biodata" />
-                </p>
-                <a href="REPLACE">More Posts by this Author</a>
+                <div class="author-text">
+                    <h3><%-- Christine Flagler
+                        <!--<sc:Text ID="txAuthorName" runat="server" Field="Author Name" />-->
+                        <sc:FieldRenderer ID="frAuthorName" runat="server" FieldName="Author Name" />
+                    </h3>
+                    <p>
+                        <%--Lorem ipsum dolor sit amet, consectetuer laoreet dolore adipiscing elit, sed diam nonummy nibh euismod tincidunt ut dolore.
+                        <sc:FieldRenderer ID="frAuthorBio" runat="server" FieldName="Author Biodata" />
+                    </p>
+                    <asp:HyperLink ID="hlAuthorMorePost" runat="server" Text="More Posts by this Author">
+                    </asp:HyperLink>
+                    <%--<a href="REPLACE">More Posts by this Author</a>
+                </div>
+            </section>--%>
+            <!-- END PARTIAL: about-the-author -->
+            <!-- BEGIN PARTIAL: find-helpful -->
+            <div class="find-this-helpful content">
+
+                <h4>Did you find this helpful?</h4>
+                <ul>
+                    <li>
+                        <button class="helpful-yes">Yes</button>
+                    </li>
+                    <li>
+                        <button class="helpful-no">No</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
 
             </div>
-        </section>
-        <!-- END PARTIAL: about-the-author -->
-        <!-- BEGIN PARTIAL: find-helpful -->
-        <div class="find-this-helpful content">
-
-            <h4>Did you find this helpful?</h4>
-            <ul>
-                <li>
-                    <button class="helpful-yes">Yes</button>
-                </li>
-                <li>
-                    <button class="helpful-no">No</button>
-                </li>
-            </ul>
-            <div class="clearfix"></div>
-
+            <!-- END PARTIAL: find-helpful -->
         </div>
-        <!-- END PARTIAL: find-helpful -->
-    </div>
 
-    <div class="col col-1 sidebar-spacer"></div>
+        <div class="col col-1 sidebar-spacer"></div>
 
-    <!-- right bar -->
-    <div class="col col-5 offset-1">
-        <!-- BEGIN PARTIAL: helpful-count -->
-        <div class="count-helpful">
-            <a href="REPLACE"><span>34</span>Found this helpful</a>
-        </div>
-        <!-- END PARTIAL: helpful-count -->
-        <!-- BEGIN PARTIAL: comments-count -->
-        <div class="count-comments">
-            <a href="REPLACE"><span>19</span>Comments</a>
-        </div>
-        <!-- END PARTIAL: comments-count -->
-        <!-- BEGIN PARTIAL: find-helpful -->
-        <div class="find-this-helpful sidebar">
+        <!-- right bar -->
+         <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
+            <!-- BEGIN PARTIAL: helpful-count -->
+            <div class="count-helpful">
+                <a href="REPLACE"><span>34</span>Found this helpful</a>
+            </div>
+            <!-- END PARTIAL: helpful-count -->
+            <!-- BEGIN PARTIAL: comments-count -->
+            <div class="count-comments">
+                <a href="REPLACE"><span>19</span>Comments</a>
+            </div>
+            <!-- END PARTIAL: comments-count -->
+            <!-- BEGIN PARTIAL: find-helpful -->
+            <div class="find-this-helpful sidebar">
 
-            <h4>Did you find this helpful?</h4>
-            <ul>
-                <li>
-                    <button class="helpful-yes">Yes</button>
-                </li>
-                <li>
-                    <button class="helpful-no">No</button>
-                </li>
-            </ul>
-            <div class="clearfix"></div>
+                <h4>Did you find this helpful?</h4>
+                <ul>
+                    <li>
+                        <button class="helpful-yes">Yes</button>
+                    </li>
+                    <li>
+                        <button class="helpful-no">No</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
 
-        </div>
-        <!-- END PARTIAL: find-helpful -->
-        <!-- BEGIN PARTIAL: keep-reading -->
-        <%--<div class="keep-reading">
+            </div>
+            <!-- END PARTIAL: find-helpful -->
+            <!-- BEGIN PARTIAL: keep-reading -->
+            <%--<div class="keep-reading">
             <h3>Keep Reading</h3>
             <ul>
                 <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
@@ -154,58 +158,62 @@
                 <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
             </ul>
         </div>--%>
-        <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
-        <!-- END PARTIAL: keep-reading -->
-        <!-- BEGIN PARTIAL: comments-summary -->
-        <section class="comments-summary">
-            <header>
-                <h3>Comments (19)</h3>
-            </header>
-            <div class="quote-container">
-                <blockquote>
-                    <p>Maiores pariatur recusandae omnis sint provident fuga maxime non maiores consectetur. perferendis et suscipit sit ut dolor. commodi sunt qui ea harum molestiae autem nemo et incidunt sapiente molestias soluta ut voluptatem. exercitationem rerum minima quisquam sed veniam natus laudantium et sit molestiae. optio voluptatem exercitationem enim iusto ex ut delectus. asperiores est explicabo maiores et repudiandae dolore earum est praesentium quos vel officiis ut. rem autem ut vero sed voluptatem beatae alias ea</p>
-                    <i class="arrow-quote-bottom"></i>
-                </blockquote>
-                <span><strong>Carrie S</strong> &bull; 30 min ago</span>
-            </div>
+            <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
+            <!-- END PARTIAL: keep-reading -->
+            <!-- BEGIN PARTIAL: comments-summary -->
+            <section class="comments-summary">
+                <header>
+                    <h3>Comments (19)</h3>
+                </header>
+                <div class="quote-container">
+                    <blockquote>
+                        <p>Maiores pariatur recusandae omnis sint provident fuga maxime non maiores consectetur. perferendis et suscipit sit ut dolor. commodi sunt qui ea harum molestiae autem nemo et incidunt sapiente molestias soluta ut voluptatem. exercitationem rerum minima quisquam sed veniam natus laudantium et sit molestiae. optio voluptatem exercitationem enim iusto ex ut delectus. asperiores est explicabo maiores et repudiandae dolore earum est praesentium quos vel officiis ut. rem autem ut vero sed voluptatem beatae alias ea</p>
+                        <i class="arrow-quote-bottom"></i>
+                    </blockquote>
+                    <span><strong>Carrie S</strong> &bull; 30 min ago</span>
+                </div>
 
-            <ul>
-                <li><a href="REPLACE">See All Comments</a></li>
-                <li><a href="REPLACE">Add My Comment</a></li>
-            </ul>
-        </section>
-        <!-- END PARTIAL: comments-summary -->
-        <!-- BEGIN PARTIAL: sidebar-promos -->
-        <div class="sidebar-promos">
-            <div class="promo purple-dark">
-                <a href="REPLACE">
-                    <span>Get advice</span>
-                    <i class="icon-arrow-promo"></i>
-                </a>
+                <ul>
+                    <li><a href="REPLACE">See All Comments</a></li>
+                    <li><a href="REPLACE">Add My Comment</a></li>
+                </ul>
+            </section>
+            <!-- END PARTIAL: comments-summary -->
+            <!-- BEGIN PARTIAL: sidebar-promos -->
+            <div class="sidebar-promos rs_read_this vertical">
+                <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
             </div>
-            <!-- end promo -->
+            <%--<div class="sidebar-promos">
+                <div class="promo purple-dark">
+                    <a href="REPLACE">
+                        <span>Get advice</span>
+                        <i class="icon-arrow-promo"></i>
+                    </a>
+                </div>
+                <!-- end promo -->
 
-            <div class="promo purple-light">
-                <a href="REPLACE">
-                    <span>Find Technology that can Help</span>
-                    <i class="icon-arrow-promo"></i>
-                </a>
-            </div>
-            <!-- end promo -->
+                <div class="promo purple-light">
+                    <a href="REPLACE">
+                        <span>Find Technology that can Help</span>
+                        <i class="icon-arrow-promo"></i>
+                    </a>
+                </div>
+                <!-- end promo -->
 
-            <div class="promo blue">
-                <a href="REPLACE">
-                    <span>Navigating Your Child's Healthcare Needs</span>
-                    <i class="icon-arrow-promo"></i>
-                </a>
-            </div>
-            <!-- end promo -->
+                <div class="promo blue">
+                    <a href="REPLACE">
+                        <span>Navigating Your Child's Healthcare Needs</span>
+                        <i class="icon-arrow-promo"></i>
+                    </a>
+                </div>
+                <!-- end promo -->
+            </div> --%>
+            <!-- end sidebar-promos -->
+
+            <!-- END PARTIAL: sidebar-promos -->
         </div>
-        <!-- end sidebar-promos -->
-
-        <!-- END PARTIAL: sidebar-promos -->
     </div>
+    <!-- .row -->
 </div>
-<!-- .row -->
-</div><!-- .container -->
+<!-- .container -->
 

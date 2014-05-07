@@ -57,7 +57,7 @@
                     <asp:Repeater ID="rptAlphabet" runat="server" OnItemCommand="rptAlphabet_ItemCommand">
                         <ItemTemplate>
                             <a>
-                                <asp:LinkButton ID="btnTermAnchor" runat="server"  CommandName="AlphabetClick">
+                                <asp:LinkButton ID="btnTermAnchor" runat="server" CommandName="AlphabetClick">
                                     <%#Container.DataItem %>
                                 </asp:LinkButton>
                             </a>
@@ -183,7 +183,7 @@
         <div class="col col-1 sidebar-spacer"></div>
 
         <!-- right bar -->
-        <div class="col col-5 offset-1">
+        <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
             <!-- BEGIN PARTIAL: helpful-count -->
             <div class="count-helpful">
                 <a href="REPLACE"><span>34</span>Found this helpful</a>
@@ -217,7 +217,9 @@
             <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
             <!-- END PARTIAL: keep-reading -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
-            <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx"/>
+            <div class="sidebar-promos rs_read_this vertical">
+                <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
+            </div>
             <%--<div class="sidebar-promos">
                 <div class="promo purple-dark">
                     <a href="REPLACE">

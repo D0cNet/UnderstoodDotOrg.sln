@@ -32,6 +32,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     dtReviewdDate.Field = "Reviewed Date";
                     dtReviewdDate.Format = "dd MMM yy";
                 }
+                if (ObjGlossrayArticle.ShowPromotionalControl.Checked == true)
+                {
+                    sbSidebarPromo.Visible = true;
+                }
+                else
+                {
+                    sbSidebarPromo.Visible = false;
+                }
                 //Get list of selected item
                 IEnumerable<string> FinalRelatedArticles = GlossaryPageItem.GetTermAnchorList(ObjGlossrayArticle);
                 if (FinalRelatedArticles != null)
