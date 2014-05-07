@@ -25,48 +25,48 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
                 }
             }
 
-            if (ContextItem != null && ContextItem.InheritsTemplate(CSSTemplateItem.TemplateId))
+            //if (ContextItem != null && ContextItem.InheritsTemplate(CSSTemplateItem.TemplateId))
+            //{
+            CSSTemplateItem cssTemplate = ContextItem;
+
+            string cssInsert = "<link href=\"{0}\" rel=\"stylesheet\" />";
+            var css = this.FindControl("headerSectionCSS") as Literal;
+
+            if (css != null && cssTemplate != null && cssTemplate.CSSInclude.ListItems.Count > 0)
             {
-                CSSTemplateItem cssTemplate = ContextItem;
-
-                string cssInsert = "<link href=\"{0}\" rel=\"stylesheet\" />";
-                var css = this.FindControl("headerSectionCSS") as Literal;
-
-                if (css != null)
+                foreach (var item in cssTemplate.CSSInclude.ListItems)
                 {
-                    foreach (var item in cssTemplate.CSSInclude.ListItems)
-                    {
-                        CSSItem cssItem = item;
+                    CSSItem cssItem = item;
 
-                        if (cssItem != null && !string.IsNullOrEmpty(cssItem.CSSFilename.Text) && !string.IsNullOrEmpty(cssItem.CSSFilepath.Text))
-                        {
-                            css.Text += string.Format(cssInsert, cssItem.CSSFilepath.Text + cssItem.CSSFilename.Text);
-                        }
+                    if (cssItem != null && !string.IsNullOrEmpty(cssItem.CSSFilename.Text) && !string.IsNullOrEmpty(cssItem.CSSFilepath.Text))
+                    {
+                        css.Text += string.Format(cssInsert, cssItem.CSSFilepath.Text + cssItem.CSSFilename.Text);
+                    }
+                }
+            }
+            //}
+
+            //if (ContextItem != null && ContextItem.InheritsTemplate(JSTemplateItem.TemplateId))
+            //{
+            JSTemplateItem jsTemplate = ContextItem;
+
+            string jsInsert = "<script src=\"{0}\"></script>";
+            var js = this.FindControl("footerSectionJS") as Literal;
+
+            if (js != null && jsTemplate != null && jsTemplate.JSInclude.ListItems.Count > 0)
+            {
+                foreach (var item in jsTemplate.JSInclude.ListItems)
+                {
+                    JSItem jsItem = item;
+
+                    if (jsItem != null && !string.IsNullOrEmpty(jsItem.JSFilename.Text) && !string.IsNullOrEmpty(jsItem.JSFilepath.Text))
+                    {
+                        js.Text += string.Format(jsInsert, jsItem.JSFilepath.Text + jsItem.JSFilename.Text);
                     }
                 }
             }
 
-            if (ContextItem != null && ContextItem.InheritsTemplate(JSTemplateItem.TemplateId))
-            {
-                JSTemplateItem jsTemplate = ContextItem;
-                
-                string jsInsert = "<script src=\"{0}\"></script>";
-                var js = this.FindControl("footerSectionJS") as Literal;
-
-                if (js != null)
-                {
-                    foreach (var item in jsTemplate.JSInclude.ListItems)
-                    {
-                        JSItem jsItem = item;
-
-                        if (jsItem != null && !string.IsNullOrEmpty(jsItem.JSFilename.Text) && !string.IsNullOrEmpty(jsItem.JSFilepath.Text))
-                        {
-                            js.Text += string.Format(jsInsert, jsItem.JSFilepath.Text + jsItem.JSFilename.Text);
-                        }
-                    }
-                }
-
-            }
+            //}
         }
     }
 }

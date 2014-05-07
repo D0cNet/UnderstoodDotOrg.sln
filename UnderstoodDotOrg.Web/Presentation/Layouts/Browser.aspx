@@ -90,7 +90,7 @@
         <!-- BEGIN PARTIAL: footerjs -->
         <script src="/Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>
         <!--[if lte IE 8]>
-<script src="Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
+<script src="/Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
 
 
