@@ -221,35 +221,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
             //    AllArticles = ObjKQuiz.PromotionalContent.ListItems.Where(t => t.InheritsTemplate(PromoItem.TemplateId));
             //}
 
-            //if (AllArticles != null)
-            //{
-            //    if (AllArticles.Count() > 3) AllArticles.Take(3);
-            //    FinalArticles = new List<PromoItem>(AllArticles.Count());
-            //    foreach (PromoItem DefItem in AllArticles)
-            //    {
-            //        FinalArticles.Add(DefItem);
-            //    }
-            //}
-            //else
-            //{
-            //    //Select Random max 6 articles to show
-            //    var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-            //    using (var context = index.CreateSearchContext())
-            //    {
-            //        IEnumerable<Item> RandomRelatedLink = (System.Collections.Generic.IEnumerable<Item>)context.GetQueryable<SearchResultItem>()
-            //             .Where(i => i.GetItem().InheritsTemplate(PromoItem.TemplateId));
-            //        //ActualRelatedLinks = (System.Collections.Generic.IEnumerable<Item>)RandomRelatedLink;
-            //        if (RandomRelatedLink != null)
-            //        {
-            //            if (RandomRelatedLink.Count() > 3) RandomRelatedLink.Take(3);
-            //            FinalArticles = new List<PromoItem>(RandomRelatedLink.Count());
-            //        }
-            //        foreach (PromoItem DefItem in RandomRelatedLink)
-            //        {
-            //            FinalArticles.Add(DefItem);
-            //        }
-            //    }
-            //}
+            if (AllArticles != null)
+            {
+                if (AllArticles.Count() > 3) AllArticles.Take(3);
+                FinalArticles = new List<PromoItem>(AllArticles.Count());
+                foreach (PromoItem DefItem in AllArticles)
+                {
+                    FinalArticles.Add(DefItem);
+                }
+            }
+            
 
             return FinalArticles;
         }
