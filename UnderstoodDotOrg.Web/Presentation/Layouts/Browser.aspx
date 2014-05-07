@@ -37,7 +37,7 @@
     <link href="/Presentation/includes/css/layout.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/globals.css" rel="stylesheet" />
     <link href="/Presentation/includes/css/modules.css" rel="stylesheet" />
-    <link href="/Presentation/includes/css/homepage.css" rel="stylesheet" />
+    <%-- this gets included via selections in Sitecore <link href="/Presentation/includes/css/homepage.css" rel="stylesheet" />--%>
     <asp:Literal ID="headerSectionCSS" runat="server"></asp:Literal>
     <link href="/Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
     <!--<![endif]-->
@@ -112,7 +112,7 @@
         <script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
         <script src="/Presentation/includes/js/site.js"></script>
         <script src="/Presentation/includes/js/modules.js"></script>
-        <script type="text/javascript" src="/Presentation/includes/js/homepage.js"></script>
+        <%-- this gets included via selections in Sitecore <script type="text/javascript" src="/Presentation/includes/js/homepage.js"></script>--%>
         <asp:literal runat="server" id="footerSectionJS"></asp:literal>
         <script src="/Presentation/includes/js/global.js"></script>
 
