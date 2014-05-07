@@ -10,6 +10,7 @@ namespace UnderstoodDotOrg.Common
     {
         public const int PERSONALIZATION_ARTICLES_PER_USER = 40;
         public const int PERSONALIZATION_ARTICLES_PER_BUCKET = 8;
+        public const int SEARCH_RESULTS_ENTRIES_PER_PAGE = 20;
 
         #region Query Strings
 
@@ -301,6 +302,7 @@ namespace UnderstoodDotOrg.Common
             //Added for default avatar
             public static string AnonymousAvatar = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "/utility/anonymous.gif";
             public static string DefaultLocation = "Toronto";
+            public static string SearchResultsEndpoint = "SearchResultsEndpoint";
         }
 
         public static class ContentItem

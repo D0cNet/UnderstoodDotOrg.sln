@@ -107,6 +107,10 @@
     <Compile Include="Handlers\RunPersonalizationService.ashx.cs">
       <DependentUpon>RunPersonalizationService.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\SearchResults.asmx.cs">
+      <DependentUpon>SearchResults.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Presentation\AjaxData\GetArticles.aspx.cs">
       <DependentUpon>GetArticles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1112,6 +1116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Handlers\SearchResults.asmx" />
     <Content Include="Presentation\AjaxData\GetArticles.aspx" />
     <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />
     <Content Include="Presentation\Includes\css\about-nonresponsive.css" />
@@ -1543,6 +1548,7 @@
     <Content Include="Presentation\Includes\js\homepage.js" />
     <Content Include="Presentation\Includes\js\modules.js" />
     <Content Include="Presentation\Includes\js\recommendations.js" />
+    <Content Include="Presentation\Includes\js\search.js" />
     <Content Include="Presentation\Includes\js\simulations\common\framework.js" />
     <Content Include="Presentation\Includes\js\simulations\common\wtfinput.js" />
     <Content Include="Presentation\Includes\js\simulations\dysgraphia\config.js" />
@@ -1555,6 +1561,7 @@
     <Content Include="Presentation\Includes\js\user_profile.js" />
     <Content Include="Presentation\Includes\js\vendor\bootstrap.js" />
     <Content Include="Presentation\Includes\js\vendor\bootstrap.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\handlebars-v1.3.0.js" />
     <Content Include="Presentation\Includes\js\vendor\hyphenate.min.js" />
     <Content Include="Presentation\Includes\js\vendor\Hyphenator.js" />
     <Content Include="Presentation\Includes\js\vendor\Jplayer.swf" />
@@ -1598,6 +1605,7 @@
     <Content Include="Presentation\Includes\js\vendor\jquery.uniform.min.js" />
     <Content Include="Presentation\Includes\js\vendor\jquery.validate.js" />
     <Content Include="Presentation\Includes\js\vendor\jquery.validate.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\json2.js" />
     <Content Include="Presentation\Includes\js\vendor\modernizr.custom.js" />
     <Content Include="Presentation\Includes\js\vendor\modernizr.custom.min.js" />
     <Content Include="Presentation\Includes\js\vendor\selectivizr.js" />
@@ -1854,7 +1862,7 @@
     <ReadLinesFromFile File="output-path.txt">
       <Output PropertyName="DeployPath" TaskParameter="Lines" />
     </ReadLinesFromFile>
-    <CreateItem Include="Handlers\*.ashx;bin\*.dll;bin\*.pdb;Presentation\**\*.*" Exclude="Presentation\**\*.cs">
+    <CreateItem Include="Global.asax;Handlers\*.ashx;Handlers\*.asmx;bin\*.dll;bin\*.pdb;Presentation\**\*.*" Exclude="Presentation\**\*.cs">
       <Output ItemName="DeployFiles" TaskParameter="Include" />
     </CreateItem>
     <Copy SourceFiles="@(DeployFiles)" DestinationFiles="@(DeployFiles->'$(DeployPath)\%(RelativeDir)%(Filename)%(Extension)')" />

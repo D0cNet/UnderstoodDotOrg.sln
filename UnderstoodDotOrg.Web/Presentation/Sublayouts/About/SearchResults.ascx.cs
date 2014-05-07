@@ -9,6 +9,9 @@
     using UnderstoodDotOrg.Common.Extensions;
     using Sitecore.ContentSearch.Linq;
     using Sitecore.ContentSearch.Linq.Solr;
+    using System.Web.Services;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public partial class SearchResults : System.Web.UI.UserControl
     {
@@ -22,6 +25,7 @@
             if (IsPostBack)
             {
                 query = txtSearch.Text.Trim();
+                Response.Redirect(SearchHelper.GetSearchResultsUrl(query));
             }
 
             PerformSearch(query);
@@ -36,10 +40,20 @@
 
             int resultCount;
 
-            lvResults.DataSource = SearchHelper.GetSearchResultArticles(query, "", out resultCount);
-            lvResults.DataBind();
+            List<Article> results = SearchHelper.GetSearchResultArticles(query, "", 1, out resultCount);
 
-            litSearchTerm.Text = System.Net.WebUtility.HtmlEncode(query);
+            if (results.Any()) 
+            {
+                rptResults.DataSource = results;
+                rptResults.DataBind();
+            } 
+            else 
+            {
+                phNoResults.Visible = true;
+                phResults.Visible = false;
+            }
+
+            litSearchTerm.Text = litSearchTermNoResults.Text = System.Net.WebUtility.HtmlEncode(query);
             litResultCount.Text = resultCount.ToString();
         }
 
@@ -47,12 +61,12 @@
         {
             btnSearch.Click += btnSearch_Click;
 
-            lvResults.ItemDataBound += lvResults_ItemDataBound;
+            rptResults.ItemDataBound += rptResults_ItemDataBound;
         }
 
-        void lvResults_ItemDataBound(object sender, System.Web.UI.WebControls.ListViewItemEventArgs e)
+        void rptResults_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            if (e.Item.ItemType == ListViewItemType.DataItem)
+            if (e.IsItem()) 
             {
                 Article article = (Article)e.Item.DataItem;
                 Item item = article.GetItem();
@@ -61,8 +75,6 @@
                 hlArticlePage.NavigateUrl = item.GetUrl();
 
                 hlArticlePage.Text = item.Name;
-
-                // TODO: determine video type
             }
         }
 
@@ -79,6 +91,30 @@
                 // TODO: display error?
             }
             
+        }
+
+        protected string AjaxUrl
+        {
+            get
+            {
+                return "";
+            }
+        }
+
+        protected string AjaxTerm
+        {
+            get
+            {
+                return System.Web.HttpUtility.HtmlAttributeEncode(HttpHelper.GetQueryString(Constants.SEARCH_TERM_QUERY_STRING));
+            }
+        }
+
+        protected string AjaxType
+        {
+            get
+            {
+                return String.Empty;
+            }
         }
     }
 }

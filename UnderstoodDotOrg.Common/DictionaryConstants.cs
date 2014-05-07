@@ -241,6 +241,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string SearchWatermark
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Search Watermark");
+            }
+        }
+
         #endregion
 
         #region My Profile
@@ -482,6 +490,14 @@ namespace UnderstoodDotOrg.Common
         }
 
         #endregion
+
+        public static string SearchLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Search Label");
+            }
+        }
 
         public static class Grades
         {

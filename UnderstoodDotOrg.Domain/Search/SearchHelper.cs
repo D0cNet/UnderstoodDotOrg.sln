@@ -336,7 +336,7 @@ namespace UnderstoodDotOrg.Domain.Search
             return results;
         }
 
-        public static List<Article> GetSearchResultArticles(string terms, string template, out int totalResults)
+        public static List<Article> GetSearchResultArticles(string terms, string template, int page, out int totalResults)
         {
             var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
             using (var ctx = index.CreateSearchContext())
@@ -346,10 +346,11 @@ namespace UnderstoodDotOrg.Domain.Search
                                 .Where(a => a.Name.Contains(terms).Boost(3)
                                     || a.Content.Contains(terms));
 
-                // TEMP
                 totalResults = query.Take(1).GetResults().TotalSearchResults;
 
-                return query.Take(40).ToList();
+                int offset = (page - 1) * Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE;
+
+                return query.Skip(offset).Take(Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE).ToList();
             }
         }
 
