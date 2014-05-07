@@ -555,6 +555,13 @@
     <Compile Include="Presentation\Sublayouts\Common\Footer.ascx.designer.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\GroupSummaryList.ascx.cs">
+      <DependentUpon>GroupSummaryList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\GroupSummaryList.ascx.designer.cs">
+      <DependentUpon>GroupSummaryList.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Header.ascx.cs">
       <DependentUpon>Header.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -624,6 +631,20 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Moderators.ascx.designer.cs">
       <DependentUpon>Moderators.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Groups.ascx.cs">
+      <DependentUpon>Parent Groups.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Groups.ascx.designer.cs">
+      <DependentUpon>Parent Groups.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parents Group Recommended.ascx.cs">
+      <DependentUpon>Parents Group Recommended.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parents Group Recommended.ascx.designer.cs">
+      <DependentUpon>Parents Group Recommended.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Parents Like Me.ascx.cs">
       <DependentUpon>Parents Like Me.ascx</DependentUpon>
@@ -1636,6 +1657,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\MostTalkedBlogsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\SearchBlogsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Footer.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\GroupSummaryList.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Header.ascx" />
     <Content Include="Presentation\Sublayouts\Common\More Carousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\MoreToExplore.ascx" />
@@ -1646,6 +1668,8 @@
     <Content Include="Presentation\Sublayouts\Community\All Parents Search.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Moderators.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Parent Groups.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Parents Group Recommended.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Like Me.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Recommended.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\CommunityMembers.ascx" />

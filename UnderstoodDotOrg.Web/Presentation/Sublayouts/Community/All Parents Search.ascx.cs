@@ -62,29 +62,34 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             {
          
                 Item currItem = Sitecore.Context.Item;
-
+                 Item[] items =null;
                 //Child Issue Drop List
                 Sitecore.Data.Fields.MultilistField childIssues = currItem.Fields["Child Issues"];
-                Item[] items = childIssues.GetItems();
-
-                foreach (var item in items)
+                if (childIssues != null)
                 {
-                    ddlChildIssues.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
-                }
+                   items= childIssues.GetItems();
 
-                ddlChildIssues.DataBind();
+                    foreach (var item in items)
+                    {
+                        ddlChildIssues.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
+                    }
+
+                    ddlChildIssues.DataBind();
+                }
 
                 //Topic Drop List
                 Sitecore.Data.Fields.MultilistField topics = currItem.Fields["Topics"];
-                items = topics.GetItems();
-
-                foreach (var item in items)
+                if (topics != null)
                 {
-                    ddlTopics.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
+                    items = topics.GetItems();
+
+                    foreach (var item in items)
+                    {
+                        ddlTopics.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
+                    }
+
+                    ddlTopics.DataBind();
                 }
-
-                ddlTopics.DataBind();
-
                 memberChkbx.Attributes.Add("value", Constants.TelligentRole.Member.ToString());
                 expertChkbx.Attributes.Add("value", Constants.TelligentRole.Expert.ToString());
                 moderatorChkbx.Attributes.Add("value", Constants.TelligentRole.Moderator.ToString());
@@ -151,7 +156,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
        
 
-        public List<MemberCardModel> FindMembers(string zipcode,string issue,string topic,List<Constants.TelligentRole> roles)
+        private List<MemberCardModel> FindMembers(string zipcode,string issue,string topic,List<Constants.TelligentRole> roles)
         {
 
             //MembershipManager mem = new MembershipManager();

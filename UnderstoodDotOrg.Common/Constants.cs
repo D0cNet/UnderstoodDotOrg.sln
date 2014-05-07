@@ -152,7 +152,7 @@ namespace UnderstoodDotOrg.Common
                 get
                 {
                     return new Guid("{A6EFCE43-84B2-4D04-BCF3-A2850801D72D}");
-                }
+        }
             }
         }
 
@@ -314,6 +314,10 @@ namespace UnderstoodDotOrg.Common
                 }
             }
 
+        }
+        public static class Groups
+        {
+            public static string GroupTemplateID { get { return "{92FB8D67-690A-45F1-B330-C4BBAE189AAF}"; } }
         }
     }
 }

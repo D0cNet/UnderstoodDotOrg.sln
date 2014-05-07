@@ -114,7 +114,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DataSource = new List<MemberCardModel>();
         }
     }
 }
