@@ -262,6 +262,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\Blogs\BlogsPostPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\Blogs\BlogsPostPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\Blogs\BlogsPostPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\CommunityBaseTemplateItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\CommunityBaseTemplateItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\SectionLandingPageItem.base.cs" />
