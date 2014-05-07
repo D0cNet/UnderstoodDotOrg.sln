@@ -450,12 +450,12 @@
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx.designer.cs">
       <DependentUpon>BlogFeaturePostWithBreadcrumb.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogHeader.ascx.cs">
-      <DependentUpon>BlogHeader.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\Common\CommunityHeader.ascx.cs">
+      <DependentUpon>CommunityHeader.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogHeader.ascx.designer.cs">
-      <DependentUpon>BlogHeader.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\Common\CommunityHeader.ascx.designer.cs">
+      <DependentUpon>CommunityHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsAuthorPage.ascx.cs">
       <DependentUpon>BlogsAuthorPage.ascx</DependentUpon>
@@ -1642,7 +1642,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogCallToActionWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
-    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogHeader.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\CommunityHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsAuthorPage.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostRecentWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostSharedWidget.ascx" />
