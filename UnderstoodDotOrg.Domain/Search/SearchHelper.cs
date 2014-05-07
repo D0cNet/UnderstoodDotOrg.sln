@@ -13,11 +13,15 @@ using Sitecore.ContentSearch.Linq.Solr;
 using Sitecore.ContentSearch.Linq.Utilities;
 using System.Linq.Expressions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Common.Extensions;
+using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
     public class SearchHelper
     {
+        #region Predicates
+
         private static Expression<Func<Article, bool>> GetBasePredicate(Member member = null)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
@@ -115,8 +119,6 @@ namespace UnderstoodDotOrg.Domain.Search
 
             return pred;
         }
-
-        #region Child predicates
 
         private static Expression<Func<Article, bool>> GetChildIEP504Predicate(Child child)
         {
@@ -243,8 +245,6 @@ namespace UnderstoodDotOrg.Domain.Search
                 .And(GetChildEvaluationPredicate(child));
         }
 
-        #endregion
-
         private static Expression<Func<Article, bool>> GetMustReadPredicate()
         {
             return (a => a.ImportanceLevels.Contains(ID.Parse(Constants.ArticleTags.MustRead)));
@@ -270,6 +270,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
             return pred;
         }
+
+        #endregion
 
         private static List<int> GetRandomKeys(IQueryable<Article> query, int totalKeys)
         {
@@ -314,6 +316,9 @@ namespace UnderstoodDotOrg.Domain.Search
             }
         }
 
+
+        #region Public methods
+
         public static List<Article> GetRandomMustReadArticles(int numberOfArticles)
         {
             List<Article> results = new List<Article>();
@@ -329,6 +334,22 @@ namespace UnderstoodDotOrg.Domain.Search
             }
 
             return results;
+        }
+
+        public static List<Article> GetSearchResultArticles(string terms, string template, out int totalResults)
+        {
+            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            using (var ctx = index.CreateSearchContext())
+            {
+                var query = ctx.GetQueryable<Article>()
+                                .Filter(GetBasePredicate())
+                                .Where(a => a.Content.Contains(terms));
+
+                // TEMP
+                totalResults = query.Take(1).GetResults().TotalSearchResults;
+
+                return query.Take(40).ToList();
+            }
         }
 
         public static List<Article> GetArticles(Member member, Child child, DateTime date)
@@ -451,5 +472,14 @@ namespace UnderstoodDotOrg.Domain.Search
 
             return results;
         }
+
+        public static string GetSearchResultsUrl(string searchTerm)
+        {
+            Item item = Sitecore.Context.Database.GetItem(Constants.Pages.SearchResults.ToString());
+
+            return String.Format("{0}?{1}={2}", item.GetUrl(), Constants.SEARCH_TERM_QUERY_STRING, System.Net.WebUtility.UrlEncode(searchTerm));
+        }
+
+        #endregion
     }
 }

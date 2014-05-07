@@ -19,6 +19,7 @@ namespace UnderstoodDotOrg.Common
         public static readonly string HANDLER_CHILD_QUERY_STRING = "childid";
         public static readonly string HANDLER_MEMBER_QUERY_STRING = "memberid";
         public static readonly string HANDLER_TIMELY_DATE_QUERY_STRING = "date";
+        public static readonly string SEARCH_TERM_QUERY_STRING = "q";
 
         #endregion
 
@@ -143,6 +144,14 @@ namespace UnderstoodDotOrg.Common
                 get
                 {
                     return new Guid("{FE5442E8-CC81-4D9C-926B-2745DF398829}");
+                }
+            }
+
+            public static Guid SearchResults
+            {
+                get
+                {
+                    return new Guid("{A6EFCE43-84B2-4D04-BCF3-A2850801D72D}");
                 }
             }
         }
