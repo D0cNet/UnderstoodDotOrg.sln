@@ -19,13 +19,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             SmtpClient smtpClient = new SmtpClient();
             MailMessage message = new MailMessage();
-            MailAddress fromAddress = new MailAddress   (txtYourEmail.Text.Trim(),txtYourName.Text.Trim(),System.Text.Encoding.Default);
+            MailAddress fromAddress = new MailAddress(txtYourEMailID.Text.Trim(), txtYourname.Text.Trim(), System.Text.Encoding.Default);
             message.From = fromAddress;
-            message.Subject = txtYourName.Text.Trim() + " has found this helpful information for you!";
+            message.Subject = txtYourname.Text.Trim() + " has found this helpful information for you!";
             message.Body = txtThoughts.Text.Trim();//Here put the textbox text
-            message.To.Add(txtRecipientEmail.Text.Trim());
+            message.To.Add(txtRecipentEMailID.Text.Trim());
             smtpClient.Send(message);
-            
         }
     }
 }

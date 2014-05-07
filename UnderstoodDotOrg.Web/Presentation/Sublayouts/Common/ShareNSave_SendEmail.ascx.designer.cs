@@ -13,31 +13,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     public partial class ShareNSave_SendEmail {
         
         /// <summary>
-        /// txtYourName control.
+        /// txtYourname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtYourName;
+        protected global::System.Web.UI.WebControls.TextBox txtYourname;
         
         /// <summary>
-        /// txtYourEmail control.
+        /// txtYourEMailID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtYourEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtYourEMailID;
         
         /// <summary>
-        /// txtRecipientEmail control.
+        /// txtRecipentEMailID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRecipientEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtRecipentEMailID;
         
         /// <summary>
         /// txtThoughts control.
