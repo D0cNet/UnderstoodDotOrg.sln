@@ -343,7 +343,8 @@ namespace UnderstoodDotOrg.Domain.Search
             {
                 var query = ctx.GetQueryable<Article>()
                                 .Filter(GetBasePredicate())
-                                .Where(a => a.Content.Contains(terms));
+                                .Where(a => a.Name.Contains(terms).Boost(3)
+                                    || a.Content.Contains(terms));
 
                 // TEMP
                 totalResults = query.Take(1).GetResults().TotalSearchResults;
