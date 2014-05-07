@@ -10,5 +10,6 @@ namespace UnderstoodDotOrg.Domain.Search
     {
         public List<SearchArticle> Articles { get; set; }
         public bool HasMoreResults { get; set; }
+        public int TotalMatches { get; set; }
     }
 }

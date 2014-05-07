@@ -336,7 +336,7 @@ namespace UnderstoodDotOrg.Domain.Search
             return results;
         }
 
-        public static List<Article> GetSearchResultArticles(string terms, string template, int page, out int totalResults)
+        public static List<Article> PerformArticleSearch(string terms, string template, int page, out int totalResults)
         {
             var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
             using (var ctx = index.CreateSearchContext())

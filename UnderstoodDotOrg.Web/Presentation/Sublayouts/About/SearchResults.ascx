@@ -59,23 +59,23 @@
     <div class="row">
     <div class="col col-24">
 
-    <asp:Repeater ID="rptResults" runat="server">
+    <asp:Repeater ID="rptResults" runat="server" ItemType="UnderstoodDotOrg.Domain.Search.SearchArticle">
         <HeaderTemplate>
             <div class="about-search-results skiplink-content" aria-role="main">
         </HeaderTemplate>
         <ItemTemplate>
             <div class="row search-result-container rs_read_this">
                 <div class="col col-6 search-image">
-                <img class="foo" alt="FPO content image" src="http://placehold.it/230x129&amp;text=230x129" />
+                <img alt="" src="<%#: Item.Thumbnail %>" />
                 </div>
 
                 <div class="col col-11 offset-1 search-content">
-                <h4><asp:HyperLink ID="hlArticlePage" runat="server" /></h4>
-                <p>"…Lorem ipsum dolor sit amet, dyslexia adipiscing elit, sed diam nonummynibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat…."</p>
+                <h4><a href="<%#: Item.Url %>"><%#: Item.Title%></a></h4>
+                <p><%#: Item.Blurb %></p>
                 </div>
 
                 <div class="col col-5 search-category">
-                <span><asp:Literal ID="litArticleType" runat="server" /></span>
+                <span><%#: Item.Type %></span>
                 </div><!-- end .col.col-5 -->
             </div>
         </ItemTemplate>

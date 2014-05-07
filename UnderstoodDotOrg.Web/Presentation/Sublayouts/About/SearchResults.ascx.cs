@@ -38,49 +38,29 @@
                 return;
             }
 
-            int totalMatches;
+            Handlers.SearchResultsService svc = new Handlers.SearchResultsService();
 
-            List<Article> results = SearchHelper.GetSearchResultArticles(query, "", 1, out totalMatches);
+            ResultSet searchResults = svc.SearchAllArticles(query, "", 1);
 
-            if (results.Any()) 
+            if (searchResults.Articles.Any()) 
             {
-                rptResults.DataSource = results;
+                rptResults.DataSource = searchResults.Articles;
                 rptResults.DataBind();
 
-                if (totalMatches <= Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE)
-                {
-                    phMoreResults.Visible = false;
-                }
+                phMoreResults.Visible = searchResults.HasMoreResults;
             } 
             else 
             {
                 phNoResults.Visible = true;
                 phResults.Visible = false;
             }
-
             litSearchTerm.Text = litSearchTermNoResults.Text = System.Net.WebUtility.HtmlEncode(query);
-            litResultCount.Text = totalMatches.ToString();
+            litResultCount.Text = searchResults.TotalMatches.ToString();
         }
 
         private void BindEvents()
         {
             btnSearch.Click += btnSearch_Click;
-
-            rptResults.ItemDataBound += rptResults_ItemDataBound;
-        }
-
-        void rptResults_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.IsItem()) 
-            {
-                Article article = (Article)e.Item.DataItem;
-                Item item = article.GetItem();
-
-                HyperLink hlArticlePage = (HyperLink)e.Item.FindControl("hlArticlePage");
-                hlArticlePage.NavigateUrl = item.GetUrl();
-
-                hlArticlePage.Text = item.Name;
-            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

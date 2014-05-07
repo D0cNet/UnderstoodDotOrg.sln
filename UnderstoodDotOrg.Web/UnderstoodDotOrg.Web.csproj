@@ -107,8 +107,8 @@
     <Compile Include="Handlers\RunPersonalizationService.ashx.cs">
       <DependentUpon>RunPersonalizationService.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\SearchResults.asmx.cs">
-      <DependentUpon>SearchResults.asmx</DependentUpon>
+    <Compile Include="Handlers\SearchResultsService.asmx.cs">
+      <DependentUpon>SearchResultsService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Presentation\AjaxData\GetArticles.aspx.cs">
@@ -1116,7 +1116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <Content Include="Handlers\SearchResults.asmx" />
+    <Content Include="Handlers\SearchResultsService.asmx" />
     <Content Include="Presentation\AjaxData\GetArticles.aspx" />
     <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />
     <Content Include="Presentation\Includes\css\about-nonresponsive.css" />

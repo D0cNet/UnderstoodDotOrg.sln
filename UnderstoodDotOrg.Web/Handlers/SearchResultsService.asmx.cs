@@ -11,7 +11,7 @@ using UnderstoodDotOrg.Common;
 namespace UnderstoodDotOrg.Web.Handlers
 {
     /// <summary>
-    /// Summary description for SearchResults
+    /// Summary description for SearchResultsService
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -19,17 +19,17 @@ namespace UnderstoodDotOrg.Web.Handlers
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     
     [System.Web.Script.Services.ScriptService]
-    public class SearchResults : System.Web.Services.WebService
+    public class SearchResultsService : System.Web.Services.WebService
     {
 
         [WebMethod]
         [ScriptMethod(ResponseFormat=ResponseFormat.Json)]
-        public ResultSet ShowMoreResults(string terms, string type, int page)
+        public ResultSet SearchAllArticles(string terms, string type, int page)
         {
             ResultSet results = new ResultSet();
 
             int totalResults = 0;
-            List<Article> articles = SearchHelper.GetSearchResultArticles(terms, type, page, out totalResults);
+            List<Article> articles = SearchHelper.PerformArticleSearch(terms, type, page, out totalResults);
             var query = from a in articles
                         let i = a.GetItem()
                         select new SearchArticle
@@ -42,11 +42,11 @@ namespace UnderstoodDotOrg.Web.Handlers
                         };
 
             results.Articles = query.ToList();
+            results.TotalMatches = totalResults;
 
             // Determine if there are more results to be paged
-
             int currentResultTotal = ((page - 1) * Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE) + results.Articles.Count();
-            results.HasMoreResults =  currentResultTotal < totalResults;
+            results.HasMoreResults = currentResultTotal < totalResults;
 
             return results;
         }
