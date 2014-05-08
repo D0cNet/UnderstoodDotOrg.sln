@@ -22,7 +22,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             // item.path.paths
             try
             {
-                var itm = Event.ExtractParameter(args, 0) as Item;
+                var itm = Sitecore.Events.Event.ExtractParameter(args, 0) as Item;
                 int blogId = 0;
 
                 if (itm["Post"] == string.Empty)
