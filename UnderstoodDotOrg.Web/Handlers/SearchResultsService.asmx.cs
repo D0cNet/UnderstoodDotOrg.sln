@@ -38,7 +38,7 @@ namespace UnderstoodDotOrg.Web.Handlers
                             Url = i.GetUrl(),
                             Thumbnail = "http://placehold.it/230x129&text=230x129",
                             Blurb = "Lorem ipsum...",
-                            Type = "TODO"
+                            Type = ""
                         };
 
             results.Articles = query.ToList();
