@@ -286,7 +286,7 @@
       };
     };
 
-    self.init();
+    //self.init();
   };
 
   U.Global.Readspeaker();

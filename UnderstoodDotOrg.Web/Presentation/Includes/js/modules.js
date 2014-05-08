@@ -538,7 +538,7 @@ the callbacks passed to the module.
         creates a readspeaker play button for all elements that have a cass of rs_read_this (only for elements that
         do not have a play button)
         */
-        ReadSpeaker.q(function(){rspkr.Toggle.createPlayer()});
+        //ReadSpeaker.q(function(){rspkr.Toggle.createPlayer()});
 
       },'html');  
 
@@ -907,10 +907,10 @@ the callbacks passed to the module.
        creates a readspeaker play button for all elements that have a case of rs_read_this (only for elements that
        do not have a play button). Used to recreate play buttons on resize of window
        */
-      ReadSpeaker.q(function () {
-        U.carousels.readSpeakerStarted = true;
-        rspkr.Toggle.createPlayer();
-      });
+      //ReadSpeaker.q(function () {
+      //  U.carousels.readSpeakerStarted = true;
+      //  rspkr.Toggle.createPlayer();
+      //});
 
       U.carousels.keyboardAccess(sliderObj);
     };
@@ -2563,7 +2563,7 @@ jQuery(document).ready(function(){
 
 
 
-    self.init();
+    //self.init();
 
   };
 })(jQuery);

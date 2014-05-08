@@ -111,7 +111,7 @@
         <%--<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>--%>
         <script src="/Presentation/includes/js/vendor/json2.js"></script>
         <script src="/Presentation/includes/js/vendor/handlebars-v1.3.0.js"></script>
-        <script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>
+        <%--<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>--%>
         <script src="/Presentation/includes/js/site.js"></script>
         <script src="/Presentation/includes/js/modules.js"></script>
         <%-- this gets included via selections in Sitecore <script type="text/javascript" src="/Presentation/includes/js/homepage.js"></script>--%>

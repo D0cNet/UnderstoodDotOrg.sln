@@ -749,7 +749,7 @@ $(document).ready(function() {
 
   new U.uniformStyling();
 
-  new U.readSpeaker().init();
+  //new U.readSpeaker().init();
 
   // input placeholder fix for IE
   $('input:text').placeholder();
