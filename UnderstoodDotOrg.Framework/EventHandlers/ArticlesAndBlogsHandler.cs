@@ -20,38 +20,30 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
         protected void OnItemSaved(object sender, EventArgs args)
         {
             // item.path.paths
-            try
-            {
-                var itm = Sitecore.Events.Event.ExtractParameter(args, 0) as Item;
-                int blogId = 0;
+            var itm = Sitecore.Events.Event.ExtractParameter(args, 0) as Item;
+            int blogId = 0;
 
-                if (itm["Post"] == string.Empty)
+            if (itm["Post"] == "")
+            {
+                switch (itm.Parent.Name)
                 {
-                    switch (itm.Parent.Name)
-                    {
-                        case "The Understood Blog":
-                            blogId = 1;
-                            break;
-                        case "Motherlode":
-                            blogId = 2;
-                            break;
-                        case "Live Well":
-                            blogId = 4;
-                            break;
-                        default:
-                            return;
-                    }
-
-                    if (blogId != 0 && (itm.TemplateID.ToString() == BlogsPostPageItem.TemplateId || itm.TemplateID.ToString() == DefaultArticlePageItem.TemplateId))
-                    {
-                        this.CreateTelligentPost(itm, blogId);
-                    }
+                    case "The Understood Blog":
+                        blogId = 1;
+                        break;
+                    case "Motherlode":
+                        blogId = 2;
+                        break;
+                    case "Live Well":
+                        blogId = 3;
+                        break;
+                    default:
+                        return;
                 }
-            }
-            catch
-            {
-                Exception e = new Exception("nope nope");
-                throw e;
+
+                if (blogId != 0 && (itm.TemplateID.ToString() == BlogsPostPageItem.TemplateId || itm.TemplateID.ToString() == DefaultArticlePageItem.TemplateId))
+                {
+                    CreateTelligentPost(itm, blogId);
+                }
             }
         }
 
@@ -95,10 +87,9 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     }
                 }
             }
-            catch(Exception e)
+            catch
             {
-                Exception ex = new Exception("nope");
-                throw ex;
+                // do nothing
             }
         }
     }
