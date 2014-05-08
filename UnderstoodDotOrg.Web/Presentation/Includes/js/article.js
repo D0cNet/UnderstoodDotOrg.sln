@@ -31,9 +31,9 @@
 
       $('.index-buttons-container .button').click(self.indexButtonClick);
 
-      ReadSpeaker.q(function () {
-        self.readSpeakerReady = true;
-      });
+      //ReadSpeaker.q(function () {
+      //  self.readSpeakerReady = true;
+      //});
 
       self.overflowToggleActions();
     };

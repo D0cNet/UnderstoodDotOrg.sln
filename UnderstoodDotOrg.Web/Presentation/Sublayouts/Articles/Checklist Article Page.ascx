@@ -16,35 +16,41 @@
             <div class="article-checklist">
                 <div class="checklist-form">
                     <div class="checklist-questions">
+
                         <div class="checklist-question-wrapper">
-                            <asp:Repeater ID="rptHeaderChkbox" runat="server" OnItemDataBound="rptHeaderChkbox_ItemDataBound">
-                                <HeaderTemplate>
-                                </HeaderTemplate>
-                                <ItemTemplate>
-                                    <div class="checklist-question">
-                                        <asp:CheckBox ID="cbHeaderItem" runat="server"></asp:CheckBox>
+                            <fieldset>
+                                <asp:Repeater ID="rptHeaderChkbox" runat="server" OnItemDataBound="rptHeaderChkbox_ItemDataBound">
+                                    <ItemTemplate>
+                                        <%--<div class="checklist-question">--%>
+                                        <legend class="checklist-question">
+                                            <sc:FieldRenderer ID="frHeaderItem" runat="server" FieldName="Title" />
+                                        </legend>
+                                        <%--<asp:CheckBox ID="cbHeaderItem" runat="server"></asp:CheckBox>
                                         <sc:FieldRenderer ID="frHeaderItem" runat="server" FieldName="Title" />
-                                    </div>
-                                    <div class="checkboxes-wrapper">
-                                        <asp:Repeater ID="rptTopicChkbox" runat="server" OnItemDataBound="rptTopicChkbox_ItemDataBound">
-                                            <HeaderTemplate>
-                                            </HeaderTemplate>
-                                            <ItemTemplate>
-                                                <div class="checkbox-wrapper">
-                                                    <asp:CheckBox ID="cbTopicItem" runat="server"></asp:CheckBox>
-                                                    <sc:FieldRenderer runat="server" ID="frTopicItem" FieldName="Topic Title" />
-                                                </div>
-                                            </ItemTemplate>
-                                            <FooterTemplate>
-                                            </FooterTemplate>
-                                        </asp:Repeater>
-                                    </div>
-                                </ItemTemplate>
-                                <FooterTemplate>
-                                </FooterTemplate>
-                            </asp:Repeater>
+                                    </div>--%>
+                                        <div class="checkboxes-wrapper">
+                                            <asp:Repeater ID="rptTopicChkbox" runat="server" OnItemDataBound="rptTopicChkbox_ItemDataBound">
+                                                <ItemTemplate>
+                                                    <div class="checkbox-wrapper">
+                                                        <asp:Label ID="lblTopicItem" runat="server" AssociatedControlID="cbTopicItem">
+                                                            <asp:CheckBox ID="cbTopicItem" runat="server"></asp:CheckBox>
+                                                            <span>
+                                                                <sc:FieldRenderer runat="server" ID="frTopicItem" FieldName="Topic Title" />
+                                                            </span>
+                                                        </asp:Label>
+                                                    </div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </fieldset>
                         </div>
-                        <%--
+                        <!-- .checkboxes-wrapper -->
+                    </div>
+                    <!-- .checklist-question -->
+
+                    <%--
       <div class="checklist-question-wrapper">
         <div class="checklist-question">Reading</div>
         <div class="checkboxes-wrapper">
@@ -213,17 +219,15 @@
         </div><!-- .checkboxes-wrapper -->
       </div><!-- .checklist-question --> --%>
 
-                        <div class="checklist-actions">
-                            <div class="save-answers">
-                                <button class="submit">Save My Answers</button>
-                            </div>
-                            <div class="download-pdf">
-                                <button class="download">Download as PDF</button>
-                            </div>
-                            <!--        <div class="button"><input class="checklist-form-save" type="submit" value="Save My Answers"></div>
-        <div class="button"><input class="submit-button" type="submit" value="Download as PDF"></div> -->
+                    <div class="checklist-actions clearfix">
+                        <div class="save-answers">
+                            <button class="submit button">Save My Answers</button>
                         </div>
-
+                        <div class="download-pdf">
+                            <button class="download button gray">Download as PDF</button>
+                        </div>
+                        <!--        <div class="button"><input class="checklist-form-save" type="submit" value="Save My Answers"></div>
+        <div class="button"><input class="submit-button" type="submit" value="Download as PDF"></div> -->
                     </div>
                     <!-- .checklist-questions -->
                 </div>
@@ -233,8 +237,8 @@
 
             <!-- END PARTIAL: article-checklist -->
             <!-- BEGIN PARTIAL: reviewed-by -->
-             <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
-          <%--<p class="reviewed-by">
+            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
+            <%--<p class="reviewed-by">
                 <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
                    <%--<a href="REPLACE">Dr. Samantha Frank</a>
                    <asp:HyperLink ID="hlReviewdby" runat="server">
@@ -324,7 +328,7 @@
                 </ul>
             </section>
             <!-- END PARTIAL: comments-summary -->
-             <!-- BEGIN PARTIAL: sidebar-promos -->
+            <!-- BEGIN PARTIAL: sidebar-promos -->
             <div class="sidebar-promos rs_read_this vertical">
                 <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
             </div>

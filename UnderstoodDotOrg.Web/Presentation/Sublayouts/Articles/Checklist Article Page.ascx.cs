@@ -55,29 +55,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (HeadItem != null)
             {
                 FieldRenderer frHeaderItem = e.FindControlAs<FieldRenderer>("frHeaderItem");
-                frHeaderItem.Item = HeadItem;
-                List<TopicCheckboxItem> Topics = ChecklistArticlePageItem.GetAllTopicItem(HeadItem);
-                if (Topics != null)
+                
+                if (frHeaderItem != null)
                 {
-                    if (HeadItem.ShowCheckbox.Checked == false)// No checkbox for current header and its topics
+                    frHeaderItem.Item = HeadItem;
+
+                    List<TopicCheckboxItem> Topics = ChecklistArticlePageItem.GetAllTopicItem(HeadItem);
+
+                    if (Topics != null)
                     {
-                        CheckBox cbHeaderItem = e.FindControlAs<CheckBox>("cbHeaderItem");
-                        cbHeaderItem.Enabled = false;
-                        cbHeaderItem.Checked = false;
-
+                        Repeater rptTopicChkbox = e.FindControlAs<Repeater>("rptTopicChkbox");
+                        if (rptTopicChkbox != null)
+                        {
+                            rptTopicChkbox.DataSource = Topics;
+                            rptTopicChkbox.DataBind();
+                        }
                     }
-                    else
-                    {
-                        CheckBox cbHeaderItem = e.FindControlAs<CheckBox>("cbHeaderItem");
-                        cbHeaderItem.Enabled = true;
-
-                    }
-
-                    Repeater rptTopicChkbox = e.FindControlAs<Repeater>("rptTopicChkbox");
-                    rptTopicChkbox.DataSource = Topics;
-                    rptTopicChkbox.DataBind();
                 }
-
             }
 
         }
@@ -90,12 +84,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 if (TopicItem.ShowCheckbox.Checked == false)
                 {
                     CheckBox cbTopicItem = e.FindControlAs<CheckBox>("cbTopicItem");
-                    cbTopicItem.Enabled = false;
+                    if (cbTopicItem != null)
+                    {
+                        cbTopicItem.Enabled = false;
+                    }
                 }
 
-
                 FieldRenderer frTopicItem = e.FindControlAs<FieldRenderer>("frTopicItem");
-                frTopicItem.Item = TopicItem;
+                if (frTopicItem != null )
+                {
+                    frTopicItem.Item = TopicItem;
+                }
             }
         }
     }
