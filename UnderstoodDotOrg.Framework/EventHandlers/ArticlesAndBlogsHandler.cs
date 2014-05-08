@@ -20,30 +20,38 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
         protected void OnItemSaved(object sender, EventArgs args)
         {
             // item.path.paths
-            var itm = Event.ExtractParameter(args, 0) as Item;
-            int blogId = 0;
-
-            if (itm["Post"] == string.Empty)
+            try
             {
-                switch (itm.Parent.Name)
-                {
-                    case "The Understood Blog":
-                        blogId = 1;
-                        break;
-                    case "Motherlode":
-                        blogId = 2;
-                        break;
-                    case "Live Well":
-                        blogId = 4;
-                        break;
-                    default:
-                        return;
-                }
+                var itm = Event.ExtractParameter(args, 0) as Item;
+                int blogId = 0;
 
-                if (blogId != 0 && (itm.TemplateID.ToString() == BlogsPostPageItem.TemplateId || itm.TemplateID.ToString() == DefaultArticlePageItem.TemplateId))
+                if (itm["Post"] == string.Empty)
                 {
-                    this.CreateTelligentPost(itm, blogId);
+                    switch (itm.Parent.Name)
+                    {
+                        case "The Understood Blog":
+                            blogId = 1;
+                            break;
+                        case "Motherlode":
+                            blogId = 2;
+                            break;
+                        case "Live Well":
+                            blogId = 4;
+                            break;
+                        default:
+                            return;
+                    }
+
+                    if (blogId != 0 && (itm.TemplateID.ToString() == BlogsPostPageItem.TemplateId || itm.TemplateID.ToString() == DefaultArticlePageItem.TemplateId))
+                    {
+                        this.CreateTelligentPost(itm, blogId);
+                    }
                 }
+            }
+            catch
+            {
+                Exception e = new Exception("nope nope");
+                throw e;
             }
         }
 
@@ -89,7 +97,8 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             }
             catch(Exception e)
             {
-                throw e;
+                Exception ex = new Exception("nope");
+                throw ex;
             }
         }
     }
