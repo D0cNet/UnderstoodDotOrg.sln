@@ -19,13 +19,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
                 var contentId = blogCig.ContentId.Raw;
                 var likesCount = CommunityHelper.ReadLikes(contentId);
                 LikeCount.Text = likesCount;
-
-                List<Comment> comments = CommunityHelper.ReadComments(Convert.ToInt32(blogCig.BlogId), Convert.ToInt32(blogCig.BlogPostId));
-                CommentCount.Text = comments.Count.ToString();
             }
             catch
             {
                 LikeCount.Text = "0";
+            }
+            
+            try
+            {
+                var blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
+                var blogId = blogCig.BlogId.Raw;
+                var blogPostId = blogCig.BlogPostId.Raw;
+                List<Comment> comments = CommunityHelper.ReadComments(Convert.ToInt32(blogId), Convert.ToInt32(blogPostId));
+                CommentCount.Text = comments.Count.ToString();
+            }
+            catch
+            {
                 CommentCount.Text = "0";
             }
         }
