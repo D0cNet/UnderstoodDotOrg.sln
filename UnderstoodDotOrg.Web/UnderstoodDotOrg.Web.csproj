@@ -111,6 +111,9 @@
       <DependentUpon>SearchResultsService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Handlers\RunSalesforceUpsert.ashx.cs">
+      <DependentUpon>RunSalesforceUpsert.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\AjaxData\GetArticles.aspx.cs">
       <DependentUpon>GetArticles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1768,6 +1771,7 @@
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-bookitalicd41d.eot" />
     <Content Include="Handlers\RunPersonalizationService.ashx" />
     <Content Include="packages.config" />
+    <Content Include="Handlers\RunSalesforceUpsert.ashx" />
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-black.eot" />
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-black.ttf" />
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-black.woff" />

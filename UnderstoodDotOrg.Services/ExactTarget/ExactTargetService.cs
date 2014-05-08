@@ -88,7 +88,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
                 tsd.IsWrappedSpecified = true;//required
 
                 //Create Email object to refer to pre-create Email
-                Email em = new Email();
+                UnderstoodDotOrg.Services.ExactTarget.etAPI.Email em = new UnderstoodDotOrg.Services.ExactTarget.etAPI.Email();
                 em.ID = Convert.ToInt16(triggeredSendEmail.ETEmail.EmailID);
                 //em.ID = 620046;//required //Available in the ET UI [Content > My Emails > Properties]
                 em.IDSpecified = true;//required

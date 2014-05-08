@@ -42,6 +42,7 @@
     <Reference Include="System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.ServiceModel.DomainServices.Server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,7 +63,6 @@
     <Folder Include="CommonSenseMediaService\" />
     <Folder Include="FacebookService\" />
     <Folder Include="LuminateService\" />
-    <Folder Include="SalesforceService\" />
     <Folder Include="ServiceReferences\" />
     <Folder Include="TelligentService\" />
   </ItemGroup>
@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="SalesforceService\WSDL\Understood.wsdl" />
     <None Include="Service References\ExactTarget.etAPI\etframework.wsdl" />
     <None Include="Service References\ExactTarget.etAPI\ETFrameworkFault.xsd">
       <SubType>Designer</SubType>

@@ -327,5 +327,135 @@ namespace UnderstoodDotOrg.Common
         {
             public static string GroupTemplateID { get { return "{92FB8D67-690A-45F1-B330-C4BBAE189AAF}"; } }
         }
+        #region Salesforce Item Id to Sitecore Guid Mapping
+
+
+        public static Dictionary<Guid, string> SitecoreRoleGuid_to_SalesforceRoleId
+        {
+            get
+            {
+                return new Dictionary<Guid, string>
+                {
+                    {Guid.Parse("{2BF9D7BE-2E40-432C-ADE7-A25C80B9B9EE}"), "a0UF000000QFoJrMAL"},
+                    {Guid.Parse("{890F06AF-284E-43E1-9647-0EFEEB000526}"), "a0UF000000QFoJsMAL"}
+                };
+            }
+        }
+        //  Parent Journey
+        //
+        // a0aF000000A3rx0IAB	cb9f1ac5-4e58-499c-8d07-8bc4e8d42f0f	Working A Year
+        // a0aF000000A3rx1IAB	fa64561b-5118-4d2f-9f03-67e0cf69e6c1	Working Few Years
+        // a0aF000000A3rx2IAB	0642e401-8e66-4c69-89c6-294c257456c8	Still Figuring Out
+        public static Dictionary<Guid, string> SitecoreJourneyGuid_to_SalesforceJourneyId
+        {
+            get 
+            {
+                return new Dictionary<Guid, string>
+                { 
+                    {Guid.Parse("{cb9f1ac5-4e58-499c-8d07-8bc4e8d42f0f}"), "a0aF000000A3rx0IAB"},	
+                    {Guid.Parse("{fa64561b-5118-4d2f-9f03-67e0cf69e6c1}"), "a0aF000000A3rx1IAB"},
+                    {Guid.Parse("{0642e401-8e66-4c69-89c6-294c257456c8}"), "a0aF000000A3rx2IAB"}	
+
+                };
+            }
+        }
+        /*  Parent Interests
+         * 
+            {110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}	a0VF00000094mK4MAI	Assisted Living
+            {8FFA90D9-F2DA-402D-9AC4-7C203769C810}	a0VF00000094mK5MAI	Activities
+            {448FFAC8-AE1E-446D-9A38-DB134C793140}	a0VF00000094mK6MAI	Bullying
+            {0A1B36D6-85B0-4B80-A6C0-193B19CF7E94}	a0VF00000094mK7MAI	Behavior Issues
+            {26A98810-4539-4BB7-8D6F-43CFE075AED3}	a0VF00000094mK8MAI	Apps
+            {8891DE05-873F-43AE-804A-E7D1DCF6DD6D}	a0VF00000094mK9MAI	Evaluations
+            {90C09D0B-DB8F-4CAB-94EB-B91C4296AAA2}	a0VF00000094mKJMAY	College and Vocational School
+            {C4563D3E-CBA3-40A1-9072-1FE9584B8586}	a0VF00000094mKKMAY	Self-Advocacy Skills
+            {BB193A51-8492-4373-A578-CA0ADFF74A88}	a0VF00000094mKLMAY	Teenage Concerns
+            {541EB9E1-8327-4FB8-A750-8EA9A6D0EC34}	a0VF00000094mKMMAY	Work and jobs
+            {1C5ED05B-2FB6-4297-A037-F35E68C40A23}	a0VF00000094mKNMAY	Communication
+            {4EA66B91-F632-46E9-8A48-156149B8EEF2}	a0VF00000094mKOMAY	Finding Support
+            {447AC977-8C58-48F8-91DB-8ACD62EA5096}	a0VF00000094mKPMAY	Siblings
+            {1F374DA8-9209-4DD2-9E0D-E63FC644941A}	a0VF00000094mKQMAY	Choosing or Changing Schools
+            {09DE69B9-6043-47C8-8ECB-40574E013956}	a0VF00000094mKRMAY	Homeschooling
+            {3C185099-76B4-49DD-80D4-A069A3F55FA1}	a0VF00000094mKSMAY	Homework and Study Skills
+            {6DF3ED70-3AF6-4D76-8590-808F07AF50DB}	a0VF00000094mKTMAY	Mainstream or Special
+            {C291E1B4-9A98-411C-8CFE-C175943B9A23}	a0VF00000094mKUMAY	RTI or MTSS
+            {78FC54BD-691A-4C74-9E84-5B299094143E}	a0VF00000094mKVMAY	School Services
+            {060910C4-FB0C-4ED3-A16F-10E864B2B088}	a0VF00000094mKWMAY	Working with Teachers
+            {B98576AB-E4AD-4FFE-ABCC-1ECFF52D3485}	a0VF00000094mKXMAY	Feelings & Self-Esteem
+            {CA2E148B-5493-4D89-ADDD-E0BD18F9506C}	a0VF00000094mKYMAY	Social Challenges & Friendship
+            {70045D51-CCF8-4CCD-8C14-AFE23F6759B0}	a0VF00000094mKZMAY	Rights of Child
+            {5927D7F1-D49D-4DF0-82EC-70EB51B93C65}	a0VF00000094mKaMAI	Technologies and Apps
+            {6DDF01DA-81BF-4C94-B705-373DDFD40276}	a0VF00000094mKbMAI	Therapies and Medications
+            {DDD43387-BE5D-4884-BC13-645FA356150F}	a0VF00000094mKcMAI	Tutors & Academic Skills Programs
+            */
+        /// <summary>
+        /// Pass in a Guid from Sitecore, get the corresponding ID that is used in Salesoforce to track the constant
+        /// Issues, Grades, Journey, Interests, etc
+        /// </summary>
+        public static Dictionary<Guid, string> SalesforceLookupDictionary
+        {
+            get
+            {
+                return new Dictionary<Guid, string>
+                { 
+                    {Guid.Parse("{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}"), "a0VF00000094mK4MAI"},	
+                    {Guid.Parse("{8FFA90D9-F2DA-402D-9AC4-7C203769C810}"), "a0VF00000094mK5MAI"},	
+                    {Guid.Parse("{448FFAC8-AE1E-446D-9A38-DB134C793140}"), "a0VF00000094mK6MAI"},
+                    {Guid.Parse("{0A1B36D6-85B0-4B80-A6C0-193B19CF7E94}"), "a0VF00000094mK7MAI"},	
+                    {Guid.Parse("{26A98810-4539-4BB7-8D6F-43CFE075AED3}"), "a0VF00000094mK8MAI"},	
+                    {Guid.Parse("{8891DE05-873F-43AE-804A-E7D1DCF6DD6D}"), "a0VF00000094mK9MAI"},	
+                    {Guid.Parse("{90C09D0B-DB8F-4CAB-94EB-B91C4296AAA2}"), "a0VF00000094mKJMAY"},	
+                    {Guid.Parse("{C4563D3E-CBA3-40A1-9072-1FE9584B8586}"), "a0VF00000094mKKMAY"},	
+                    {Guid.Parse("{BB193A51-8492-4373-A578-CA0ADFF74A88}"), "a0VF00000094mKLMAY"},	
+                    {Guid.Parse("{541EB9E1-8327-4FB8-A750-8EA9A6D0EC34}"), "a0VF00000094mKMMAY"},	
+                    {Guid.Parse("{1C5ED05B-2FB6-4297-A037-F35E68C40A23}"), "a0VF00000094mKNMAY"},	
+                    {Guid.Parse("{4EA66B91-F632-46E9-8A48-156149B8EEF2}"), "a0VF00000094mKOMAY"},	
+                    {Guid.Parse("{447AC977-8C58-48F8-91DB-8ACD62EA5096}"), "a0VF00000094mKPMAY"},	
+                    {Guid.Parse("{1F374DA8-9209-4DD2-9E0D-E63FC644941A}"), "a0VF00000094mKQMAY"},	
+                    {Guid.Parse("{09DE69B9-6043-47C8-8ECB-40574E013956}"), "a0VF00000094mKRMAY"},	
+                    {Guid.Parse("{3C185099-76B4-49DD-80D4-A069A3F55FA1}"), "a0VF00000094mKSMAY"},	
+                    {Guid.Parse("{6DF3ED70-3AF6-4D76-8590-808F07AF50DB}"), "a0VF00000094mKTMAY"},	
+                    {Guid.Parse("{C291E1B4-9A98-411C-8CFE-C175943B9A23}"), "a0VF00000094mKUMAY"},	
+                    {Guid.Parse("{78FC54BD-691A-4C74-9E84-5B299094143E}"), "a0VF00000094mKVMAY"},	
+                    {Guid.Parse("{060910C4-FB0C-4ED3-A16F-10E864B2B088}"), "a0VF00000094mKWMAY"},	
+                    {Guid.Parse("{B98576AB-E4AD-4FFE-ABCC-1ECFF52D3485}"), "a0VF00000094mKXMAY"},	
+                    {Guid.Parse("{CA2E148B-5493-4D89-ADDD-E0BD18F9506C}"), "a0VF00000094mKYMAY"},	
+                    {Guid.Parse("{70045D51-CCF8-4CCD-8C14-AFE23F6759B0}"), "a0VF00000094mKZMAY"},	
+                    {Guid.Parse("{5927D7F1-D49D-4DF0-82EC-70EB51B93C65}"), "a0VF00000094mKaMAI"},	
+                    {Guid.Parse("{6DDF01DA-81BF-4C94-B705-373DDFD40276}"), "a0VF00000094mKbMAI"},	
+                    {Guid.Parse("{DDD43387-BE5D-4884-BC13-645FA356150F}"), "a0VF00000094mKcMAI"},		
+                    {Guid.Parse("{9E988E8F-4036-49E7-B9ED-687C99A669F9}"), "a0OF0000009nM4cMAE"},
+                    {Guid.Parse("{28BB0311-D062-48F0-BEDF-C2D74EB6737E}"), "a0OF0000009nM4rMAE"},
+                    {Guid.Parse("{B904242D-E290-4A2E-86D9-372DC42AB692}"), "a0OF0000009nM5uMAE"},
+                    {Guid.Parse("{777EA342-4313-45CC-BDB5-AE141FCFA016}"), "a0OF0000009nM4mMAE"},
+                    {Guid.Parse("{CE405288-18FA-4665-A94C-AE6A558795DF}"), "a0OF0000009nM5kMAE"},
+                    {Guid.Parse("{2611BEA0-33E6-4732-9BD5-B56857C5EA26}"), "a0OF0000009nM5QMAU"},
+                    {Guid.Parse("{3B4DC3FC-517D-47B5-B151-198AB7B3C6D4}"), "a0OF0000009nM5pMAE"},
+                    {Guid.Parse("{CB5320E9-5F0D-4204-B76C-DE630A8BBE51}"), "a0OF0000009nM5LMAU"},
+                    {Guid.Parse("{FFB5F34E-5A5F-43C6-A987-9AFF713C66C9}"), "a0OF0000009nM4hMAE"},
+                    {Guid.Parse("{1D338D37-CF4E-4C1C-9499-EBA6C0A2BBA0}"), "a0OF0000009nM5GMAU"},
+                    {Guid.Parse("{3390C210-0B22-48FD-A411-881F956EDC0C}"), "a0OF0000009nM5BMAU"},
+                    {Guid.Parse("{45CE350D-46D2-4346-9CCC-92C48C557DC1}"), "a0NF000001FYqY8MAL"},
+                    {Guid.Parse("{E82EB59B-2A3C-4910-96C9-E276C92B712E}"), "a0NF000001FYqc5MAD"},
+                    {Guid.Parse("{E26222FB-07CD-413B-9127-9050B6D2D037}"), "a0NF000001FYqYhMAL"},
+                    {Guid.Parse("{E0B459C0-548A-4E6C-854A-E8F475416F12}"), "a0NF000001FYqctMAD"},
+                    {Guid.Parse("{5EEF6AE2-1CBE-4532-883F-C6C0859581A1}"), "a0NF000001FYqcoMAD"},
+                    {Guid.Parse("{DFF0FA84-B68E-4259-A107-274B5694247D}"), "a0NF000001FYqcUMAT"},
+                    {Guid.Parse("{7CA91300-1D9F-4031-94A2-6D4950842DD2}"), "a0NF000001FYqWlMAL"},
+                    {Guid.Parse("{79B1ACCE-CD06-4F0C-84B2-15A6C01020B9}"), "a0NF000001FYqcKMAT"},
+                    {Guid.Parse("{9FFF9854-5951-4A7F-94A5-4F8507800916}"), "a0NF000001FYqcyMAD"},
+                    {Guid.Parse("{32702CD8-0625-498F-9D8F-17691E81BC69}"), "a0NF000001FYqbqMAD"},
+                    {Guid.Parse("{0CDA88F1-5F69-485C-AE6B-50E8D5C265EB}"), "a0NF000001FYqb2MAD"},
+                    {Guid.Parse("{79AB134B-CC1F-4BB6-94F8-12FE9E181F9E}"), "a0NF000001FYqc0MAD"},
+                    {Guid.Parse("{67AA2A29-E6FF-49B2-9F9E-D29F07C19C23}"), "a0NF000001FYqbbMAD"},
+                    {Guid.Parse("{0762C21C-2B35-439C-A45F-A4FCEF5C87B7}"), "a0NF000001FaYHGMA3"},
+                    {Guid.Parse("{A1354149-C308-4AEA-A74E-E31EA0B4142F}"), "a0NF000001FaYHHMA3"},
+                    {Guid.Parse("{6985927C-99FF-4EE9-B9F0-A543A368594C}"), "a0SF000000ABvIsMAL"},
+	                {Guid.Parse("{8B7EB70D-64B2-45B9-B06E-6AA5CB6FE983}"), "a0SF000000ABvItMAL"},
+	                {Guid.Parse("{BF02DC92-2CCE-4D0A-901C-B0F26193895D}"), "a0SF000000ABvIuMAL"}	
+                };
+            }
+        }
+        #endregion
     }
 }
