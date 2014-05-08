@@ -102,7 +102,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         rptMoreArticle.DataSource = FinalRelatedArticles;
                         rptMoreArticle.DataBind();
                     }
-
+                    frRelatedLinkTitle.Visible = true;
+                }
+                else
+                {
+                    
+                    frRelatedLinkTitle.Visible = false;
+                    rptMoreArticle.DataSource = null;
+                    rptMoreArticle.DataBind();
                 }
             }
         }
