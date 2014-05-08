@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        
+        <sc:Sublayout ID="sbShareNSave" runat="server" Path="~/Presentation/Sublayouts/Common/ShareAndSaveTool.ascx" />
      <%--   <div class="col col-9">
             <!-- BEGIN PARTIAL: share-save -->
             <div class="share-save-container">
