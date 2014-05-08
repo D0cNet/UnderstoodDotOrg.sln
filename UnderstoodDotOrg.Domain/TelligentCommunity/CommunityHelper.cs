@@ -122,7 +122,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string authorProfileUrl = nodes2[nodecount]["ProfileUrl"].InnerText;
                 string authorUsername = nodes2[nodecount]["Username"].InnerText;
                 string likesCount = ReadLikes(commentId);
-                string commentDate = "";
+                string commentDate = xn["PublishedDate"].InnerText;
                 Comment comment = new Comment(id, url, body, parentId, contentId, isApproved, replyCount, commentId,
                     commentContentTypeId, authorId, authorAvatarUrl, authorUsername, publishedDate, authorDisplayName,
                     authorProfileUrl, likesCount, commentDate);

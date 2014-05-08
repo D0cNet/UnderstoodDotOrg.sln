@@ -27,7 +27,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
         public Comment(string id, string url, string body, string parentId, string contentId, string isApproved, string replyCount,
             string commentId, string commentContentTypeId, string authorId, string authorAvatarUrl, string authorUsername, string publishedDate,
-                string authorDisplayName, string authorProfileUrl, string likes,string commentDate)
+                string authorDisplayName, string authorProfileUrl, string likes, string commentDate)
         {
             _id = id;
             _url = url;
