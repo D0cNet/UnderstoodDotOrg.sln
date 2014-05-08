@@ -25,7 +25,8 @@
             </div>
         </div>
 
-        <div class="col col-9">
+        
+     <%--   <div class="col col-9">
             <!-- BEGIN PARTIAL: share-save -->
             <div class="share-save-container">
                 <div class="share-save-social-icon">
@@ -51,7 +52,7 @@
             </div>
 
             <!-- END PARTIAL: share-save -->
-        </div>
+        </div>--%>
 
     </div>
 </div>
