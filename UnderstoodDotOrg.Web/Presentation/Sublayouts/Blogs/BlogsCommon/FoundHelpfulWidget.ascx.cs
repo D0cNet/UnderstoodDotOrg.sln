@@ -25,7 +25,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             }
             catch
             {
-                // do nothing for now
+                LikeCount.Text = "0";
+                CommentCount.Text = "0";
             }
         }
     }
