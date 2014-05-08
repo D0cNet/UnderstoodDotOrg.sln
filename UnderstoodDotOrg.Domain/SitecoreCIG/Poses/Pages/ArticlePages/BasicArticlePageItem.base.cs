@@ -55,6 +55,15 @@ public CustomTextField KeepReadingHeadline
 }
 
 
+public CustomCheckboxField ShowComment
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Comment"]);
+	}
+}
+
+
 public CustomTreeListField KeepReadingContent
 {
 	get
@@ -89,38 +98,6 @@ public CustomCheckboxField ShowPromotionalControl
 		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Promotional Control"]);
 	}
 }
-public CustomCheckboxField ShowCommentsTeaser
-{
-    get
-    {
-        return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Comment"]);
-    }
-}
-
-public CustomTextField BlogId
-{
-    get
-    {
-        return new CustomTextField(InnerItem, InnerItem.Fields["BlogId"]);
-    }
-}
-
-public CustomTextField BlogPostId
-{
-    get
-    {
-        return new CustomTextField(InnerItem, InnerItem.Fields["BlogPostId"]);
-    }
-}
-
-
-//public CustomTextField PromotionalHeadline
-//{
-//    get
-//    {
-//        return new CustomTextField(InnerItem, InnerItem.Fields["Promotional Headline"]);
-//    }
-//}
 
 
 public CustomTreeListField PromotionalContent
