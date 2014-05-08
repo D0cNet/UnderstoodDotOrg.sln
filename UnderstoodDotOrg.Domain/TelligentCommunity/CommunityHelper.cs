@@ -123,6 +123,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string authorUsername = nodes2[nodecount]["Username"].InnerText;
                 string likesCount = ReadLikes(commentId);
                 string commentDate = xn["PublishedDate"].InnerText;
+                string[] t = commentDate.Split('T');
+                commentDate = t[0];
                 Comment comment = new Comment(id, url, body, parentId, contentId, isApproved, replyCount, commentId,
                     commentContentTypeId, authorId, authorAvatarUrl, authorUsername, publishedDate, authorDisplayName,
                     authorProfileUrl, likesCount, commentDate);
