@@ -31,15 +31,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frEmailAbstract;
         
         /// <summary>
-        /// sfds control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sfds;
-        
-        /// <summary>
         /// frPartnership control.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptPartnerships;
+        
+        /// <summary>
+        /// sfds control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sfds;
         
         /// <summary>
         /// rptFooterNav control.
