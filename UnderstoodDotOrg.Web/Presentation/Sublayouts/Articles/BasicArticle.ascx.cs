@@ -59,7 +59,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     sbSidebarPromo.Visible = false;
                 }
-                if(ObjBasicArticle.ShowCommentsTeaser.Checked == true)
+                if(ObjBasicArticle.ShowComment.Checked == true)
                 {
                     sbCommentsSummary.Visible=true;
                 
@@ -69,7 +69,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     sbCommentsSummary.Visible = false;
                 }
                 litHelpfulLikes.Text = litHelpfulLikes2.Text = CommunityHelper.ReadLikes(ObjBasicArticle.DefaultArticlePage.ContentId);
-                litCommentCount.Text =litCommentCount2.Text= CommunityHelper.ReadComments(Convert.ToInt32(ObjBasicArticle.BlogId.Text),Convert.ToInt32( ObjBasicArticle.BlogPostId.Text)).Count().ToString();
+                litCommentCount.Text =litCommentCount2.Text= CommunityHelper.ReadComments(Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Text),Convert.ToInt32( ObjBasicArticle.DefaultArticlePage.BlogPostId.Text)).Count().ToString();
                 //if (ObjBasicArticle.DefaultArticlePage.HideRelatedActiveLinks.Checked == false) // Show Articles
                 //{
                 //    DefaultArticlePageItem ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;

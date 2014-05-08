@@ -226,15 +226,6 @@ public CustomDateField ReviewedDate
 }
 
 
-public CustomTextField Post
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Post"]);
-	}
-}
-
-
 public CustomImageField FeaturedImage
 {
 	get
@@ -244,11 +235,33 @@ public CustomImageField FeaturedImage
 }
 
 
-#endregion //Field Instance Methods
-
-public string ContentId
+public CustomTextField BlogId
 {
-    get { return new CustomTextField(InnerItem, InnerItem.Fields["ContentId"]); } 
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["BlogId"]);
+	}
 }
+
+
+public CustomTextField BlogPostId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["BlogPostId"]);
+	}
+}
+
+
+public CustomTextField ContentId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["ContentId"]);
+	}
+}
+
+
+#endregion //Field Instance Methods
 }
 }
