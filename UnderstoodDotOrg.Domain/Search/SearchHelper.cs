@@ -15,6 +15,7 @@ using System.Linq.Expressions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Items;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
@@ -342,9 +343,48 @@ namespace UnderstoodDotOrg.Domain.Search
             using (var ctx = index.CreateSearchContext())
             {
                 var query = ctx.GetQueryable<Article>()
-                                .Filter(GetBasePredicate())
-                                .Where(a => a.Name.Contains(terms).Boost(3)
+                                .Filter(a => a.Language == "en");
+
+                bool hasTemplateMappings = false;
+
+                // Filter types
+                if (!String.IsNullOrEmpty(template))
+                {
+                    Item container = Sitecore.Context.Database.GetItem(Constants.SearchFilterTypesContainer.ToString());
+                    var child = from c in container.Children
+                                where c.ID.ToString() == template
+                                select new SearchFilterTypeItem(c);
+
+                    SearchFilterTypeItem typeItem = child.FirstOrDefault();
+                    if (typeItem != null)
+                    {
+                        hasTemplateMappings = typeItem.TemplateTypes.ListItems.Count() > 0;
+
+                        // Restrict articles types to dropdown choice
+                        if (hasTemplateMappings)
+                        {
+                            var pred = PredicateBuilder.False<Article>();
+
+                            foreach (var item in typeItem.TemplateTypes.ListItems)
+                            {
+                                var i = item;
+                                pred = pred.Or(a => a.TemplateId == i.ID);
+                            }
+
+                            query = query.Filter(pred);
+                        }
+                    }
+                }
+                
+                // Fallback to all articles
+                if (!hasTemplateMappings) 
+                {
+                    query = query.Filter(GetInheritsArticlePredicate());
+                }
+
+                query = query.Where(a => a.Name.Contains(terms).Boost(3)
                                     || a.Content.Contains(terms));
+
 
                 totalResults = query.Take(1).GetResults().TotalSearchResults;
 
@@ -473,13 +513,6 @@ namespace UnderstoodDotOrg.Domain.Search
             }  
 
             return results;
-        }
-
-        public static string GetSearchResultsUrl(string searchTerm)
-        {
-            Item item = Sitecore.Context.Database.GetItem(Constants.Pages.SearchResults.ToString());
-
-            return String.Format("{0}?{1}={2}", item.GetUrl(), Constants.SEARCH_TERM_QUERY_STRING, System.Net.WebUtility.UrlEncode(searchTerm));
         }
 
         #endregion

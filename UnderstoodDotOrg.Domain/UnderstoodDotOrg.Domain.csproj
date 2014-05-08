@@ -200,6 +200,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\PartnerInfoItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\SearchFilterTypeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\CampaignItem.base.cs" />

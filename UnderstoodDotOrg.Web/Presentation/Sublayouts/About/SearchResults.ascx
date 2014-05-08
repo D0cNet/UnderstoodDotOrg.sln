@@ -30,7 +30,7 @@
           <h1><asp:Literal ID="litResultCount" runat="server" /> Results for <span>&ldquo;<asp:Literal ID="litSearchTerm" runat="server" />&rdquo;</span></h1>
         </div>
         <label>
-          <asp:DropDownList ID="ddlSearchFilter" runat="server" />
+          <asp:DropDownList ID="ddlSearchFilter" AutoPostBack="true" runat="server" />
         </label>
         <div class="clearfix"></div>
 <!-- END PARTIAL: about/results-and-filter -->

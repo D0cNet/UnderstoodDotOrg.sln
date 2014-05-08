@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 
 namespace UnderstoodDotOrg.Domain.Understood.Helper
 {
@@ -62,6 +63,19 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
         }
         #endregion
 
+        public static List<ListItem> GetSearchArticleTypes()
+        {
+            var container = Sitecore.Context.Database.GetItem(Constants.SearchFilterTypesContainer.ToString());
+            var types = from c in container.Children.Select(x => new SearchFilterTypeItem(x))
+                        select new ListItem
+                        {
+                            Value = c.ID.ToString(),
+                            Text = c.FilterLabel.Raw
+                        };
+
+            return PopulateList(DictionaryConstants.FilterByLabel, types);
+        }
+
         #region URL Helpers
 
         public static string GetBehaviorResultsUrl(string challengeGuid, string gradeGuid)
@@ -79,6 +93,21 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
             return String.Empty;
         }
 
+        public static string GetSearchResultsUrl(string term, string type)
+        {
+            Item item = Sitecore.Context.Database.GetItem(Constants.Pages.SearchResults.ToString());
+            if (item != null)
+            {
+                Dictionary<string, string> queryParams = new Dictionary<string, string>()
+                {
+                    { Constants.SEARCH_TERM_QUERY_STRING, term },
+                    { Constants.SEARCH_TYPE_FILTER_QUERY_STRING, type }
+                };
+                return AssembleUrl(item.GetUrl(), queryParams);
+            }
+            return String.Empty;
+        }
+
         /// <summary>
         /// Returns a formatted URL with query string variables appended
         /// </summary>
@@ -89,7 +118,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
         {
             var pairs = (from qp in queryParams
                          where !String.IsNullOrEmpty(qp.Value) 
-                         select String.Format("{0}={1}", qp.Key, qp.Value)).ToArray();
+                         select String.Format("{0}={1}", qp.Key, System.Net.WebUtility.UrlEncode(qp.Value))).ToArray();
 
             string queryString = (pairs.Any()) ?
                 String.Concat("?", String.Join("&", pairs)) :

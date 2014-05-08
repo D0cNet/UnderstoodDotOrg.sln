@@ -21,6 +21,7 @@ namespace UnderstoodDotOrg.Common
         public static readonly string HANDLER_MEMBER_QUERY_STRING = "memberid";
         public static readonly string HANDLER_TIMELY_DATE_QUERY_STRING = "date";
         public static readonly string SEARCH_TERM_QUERY_STRING = "q";
+        public static readonly string SEARCH_TYPE_FILTER_QUERY_STRING = "t";
 
         #endregion
 
@@ -69,6 +70,11 @@ namespace UnderstoodDotOrg.Common
         public static Guid DiagnosisContainer { get { return new Guid("{A3955F76-4D6F-4CC0-8D3F-EECC01479EC7}"); } }
         public static Guid IEPStatusContainer { get { return new Guid("{D273E040-578D-4B1B-B0B1-E1256CB249EA}"); } }
         public static Guid Section504StatusContainer { get { return new Guid("{BDAAB8F1-8FEA-4E3D-AE6A-C436ACAEB366}"); } }
+
+        public static Guid SearchFilterTypesContainer
+        {
+            get { return new Guid("{9976F89D-1FE4-49FA-A143-F6493A76D669}"); } 
+        }
 
         #endregion
 

@@ -12,26 +12,55 @@
     using System.Web.Services;
     using System.Collections.Generic;
     using System.Linq;
+    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+    using UnderstoodDotOrg.Domain.Understood.Helper;
 
     public partial class SearchResults : System.Web.UI.UserControl
     {
         private void Page_Load(object sender, EventArgs e)
         {
             BindEvents();
+            BindCopy();
 
             // Parse query string
             string query = HttpHelper.GetQueryString(Constants.SEARCH_TERM_QUERY_STRING);
+            string type = HttpHelper.GetQueryString(Constants.SEARCH_TYPE_FILTER_QUERY_STRING);
 
             if (IsPostBack)
             {
-                query = txtSearch.Text.Trim();
-                Response.Redirect(SearchHelper.GetSearchResultsUrl(query));
+                if (!String.IsNullOrEmpty(txtSearch.Text.Trim()))
+                {
+                    query = txtSearch.Text.Trim();
+                }
+                type = ddlSearchFilter.SelectedValue;
+                Response.Redirect(FormHelper.GetSearchResultsUrl(query, type));
+                return;
+            }
+            else
+            {
+                BindControls(type);
             }
 
-            PerformSearch(query);
+            PerformSearch(query, type);
         }
 
-        private void PerformSearch(string query)
+        private void BindControls(string selectedState)
+        {
+            // Populate dropdown
+            ddlSearchFilter.DataSource = FormHelper.GetSearchArticleTypes();
+            ddlSearchFilter.DataTextField = "Text";
+            ddlSearchFilter.DataValueField = "Value";
+            ddlSearchFilter.DataBind();
+
+            // Re-select choice based on query string;
+            ListItem li = ddlSearchFilter.Items.FindByValue(selectedState);
+            if (li != null)
+            {
+                li.Selected = true;
+            }
+        }
+
+        private void PerformSearch(string query, string type)
         {
             if (String.IsNullOrEmpty(query))
             {
@@ -40,7 +69,7 @@
 
             Handlers.SearchResultsService svc = new Handlers.SearchResultsService();
 
-            ResultSet searchResults = svc.SearchAllArticles(query, "", 1);
+            ResultSet searchResults = svc.SearchAllArticles(query, type, 1);
 
             if (searchResults.Articles.Any()) 
             {
@@ -63,13 +92,18 @@
             btnSearch.Click += btnSearch_Click;
         }
 
+        private void BindCopy()
+        {
+            txtSearch.Attributes.Add("placeholder", DictionaryConstants.SearchWatermark);
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string term = txtSearch.Text.Trim();
 
             if (!String.IsNullOrEmpty(term))
             {
-                Response.Redirect(SearchHelper.GetSearchResultsUrl(term));
+                Response.Redirect(FormHelper.GetSearchResultsUrl(term, String.Empty));
             }
             else
             {
@@ -98,7 +132,7 @@
         {
             get
             {
-                return String.Empty;
+                return System.Web.HttpUtility.HtmlAttributeEncode(HttpHelper.GetQueryString(Constants.SEARCH_TYPE_FILTER_QUERY_STRING));
             }
         }
     }

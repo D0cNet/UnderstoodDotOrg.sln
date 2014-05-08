@@ -499,6 +499,15 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string FilterByLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Filter By Label");
+            }
+        }
+
+
         public static class Grades
         {
             public static string SelectGrade
