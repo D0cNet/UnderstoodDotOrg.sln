@@ -19,6 +19,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
                 var contentId = blogCig.ContentId.Raw;
                 var likesCount = CommunityHelper.ReadLikes(contentId);
                 LikeCount.Text = likesCount;
+
+                List<Comment> comments = CommunityHelper.ReadComments(Convert.ToInt32(blogCig.BlogId), Convert.ToInt32(blogCig.BlogPostId));
+                CommentCount.Text = comments.Count.ToString();
             }
             catch
             {

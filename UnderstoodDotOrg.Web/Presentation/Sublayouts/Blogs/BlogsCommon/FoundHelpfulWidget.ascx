@@ -2,13 +2,13 @@
 <!-- BEGIN PARTIAL: helpful-count -->
 <div class="post-meta">
     <div class="count-helpful">
-        <a href="#count-helpful-content"><span><asp:Label ID="LikeCount" runat="server" /></span>Found this helpful</a>
+        <a href="#count-helpful-content"><asp:Label ID="LikeCount" runat="server" />Found this helpful</a>
     </div>
     <!-- END PARTIAL: helpful-count -->
     <div class="replies">
         <!-- BEGIN PARTIAL: comments-count -->
         <div class="count-comments">
-            <a href="#count-comments"><span>19</span>Comments</a>
+            <a href="#count-comments"><asp:Label ID="CommentCount" runat="server" />Comments</a>
         </div>
         <!-- END PARTIAL: comments-count -->
     </div>
