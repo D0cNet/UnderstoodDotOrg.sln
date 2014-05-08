@@ -22,17 +22,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (ObjAssessmentEndPage != null)
             {
                 //Get Reviewer Name
-                if (ObjAssessmentEndPage.Reviewedby.Item != null)//Reviwer Name
-                {
-                    lnkReviewedBy.Item = ObjAssessmentEndPage.Reviewedby.Item;
-                    lnkReviewedBy.Field = "Revierwer Name";
-                    HyplnkReviewedBy.Text = lnkReviewedBy.Text;
-                }
-                if (ObjAssessmentEndPage.ReviewedDate.DateTime != null)// Reviewed date 
-                {
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
+                if (ObjAssessmentEndPage.Reviewedby.Item != null && ObjAssessmentEndPage.ReviewedDate.DateTime != null)//Reviwer Name
+                    SBReviewedBy.Visible = true;
+                else
+                    SBReviewedBy.Visible = false;
+
                 IEnumerable<QuizResultItem> _allResults = AssessmentQuizArticlePageEndItem.GetAllResults(ObjAssessmentEndPage);
                 if (_allResults != null)
                 {

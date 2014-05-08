@@ -33,17 +33,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 }
                 
                 //Get Reviewer Name
-                if (ObjDeepDiveArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
-                {
-                    lnkReviewedBy.Item = ObjDeepDiveArticle.DefaultArticlePage.Reviewedby.Item;
-                    lnkReviewedBy.Field = "Revierwer Name";
-                    HyplnkReviewedBy.Text = lnkReviewedBy.Text;
-                }
-                if (ObjDeepDiveArticle.DefaultArticlePage.ReviewedDate.DateTime != null)// Reviewed date 
-                {
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
+                if (ObjDeepDiveArticle.DefaultArticlePage.Reviewedby.Item != null && ObjDeepDiveArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
+                    SBReviewedBy.Visible = true;
+                else
+                    SBReviewedBy.Visible = false;
 
                 if (ObjDeepDiveArticle.ShowPromotionalControl.Checked == true)
                 {

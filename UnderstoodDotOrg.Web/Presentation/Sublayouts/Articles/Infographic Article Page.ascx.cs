@@ -22,17 +22,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if(ObjInfographArticle!=null)
             {
                 //Get Reviewer Details
-                if (ObjInfographArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
-                {
-                    lnkReviewedBy.Item = ObjInfographArticle.DefaultArticlePage.Reviewedby.Item;
-                    lnkReviewedBy.Field = "Revierwer Name";
-                    HyplnkReviewedBy.Text = lnkReviewedBy.Text;
-                }
-                if (ObjInfographArticle.DefaultArticlePage.ReviewedDate.DateTime != null)// Reviewed date 
-                {
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
+                if (ObjInfographArticle.DefaultArticlePage.Reviewedby.Item != null && ObjInfographArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
+                    SBReviewedBy.Visible = true;
+                else
+                    SBReviewedBy.Visible = false;
+
             }
 
         }

@@ -25,17 +25,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (ObjKnowledgeQuizResult != null)
             {
                 //Get Reviewer Name
-                if (ObjKnowledgeQuizResult.Reviewedby.Item != null)//Reviwer Name
-                {
-                    lnkReviewedBy.Item = ObjKnowledgeQuizResult.Reviewedby.Item;
-                    lnkReviewedBy.Field = "Revierwer Name";
-                    HyplnkReviewedBy.Text = lnkReviewedBy.Text;
-                }
-                if (ObjKnowledgeQuizResult.ReviewedDate.DateTime != null)// Reviewed date 
-                {
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
+                if (ObjKnowledgeQuizResult.Reviewedby.Item != null && ObjKnowledgeQuizResult.ReviewedDate.DateTime != null)//Reviwer Name
+                    SBReviewedBy.Visible = true;
+                else
+                    SBReviewedBy.Visible = false;
+
                 if (Session["QuizQs"] != null)
                 {
                     //open result panel and load rpt control

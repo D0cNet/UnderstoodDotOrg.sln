@@ -387,6 +387,13 @@
     <Compile Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx.designer.cs">
       <DependentUpon>Promotionals List.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\ReviewerInfo.ascx.cs">
+      <DependentUpon>ReviewerInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\ReviewerInfo.ascx.designer.cs">
+      <DependentUpon>ReviewerInfo.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.cs">
       <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1643,6 +1650,7 @@
     <Content Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\ReviewerInfo.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx" />

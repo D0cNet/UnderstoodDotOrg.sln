@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
     
     
-    public partial class Infographic_Article_Page {
+    public partial class ReviewerInfo {
         
         /// <summary>
-        /// frIntroText control.
+        /// hlReviewdby control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frIntroText;
+        protected global::System.Web.UI.WebControls.HyperLink hlReviewdby;
         
         /// <summary>
-        /// frInfographicImage control.
+        /// frReviewedby control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frInfographicImage;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frReviewedby;
         
         /// <summary>
-        /// frInfographEmbedtag control.
+        /// dtReviewdDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frInfographEmbedtag;
-        
-        /// <summary>
-        /// SBReviewedBy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout SBReviewedBy;
+        protected global::Sitecore.Web.UI.WebControls.Date dtReviewdDate;
     }
 }

@@ -24,52 +24,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         // System.Collections.Generic.List<DefaultArticlePageItem> FinalRelatedArticles = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
             if (ObjBasicArticle != null)
             {
 
-                if (ObjBasicArticle.DefaultArticlePage.AuthorName.Item != null)
-                {
-                    sbAboutAuthor.Visible = true;
-                    ////Show Author details
-                    //frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                    //frAuthorBio.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                    //frAuthorImage.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                    //frAuthorImage.FieldName = "Author Image";
-                    //hlAuthorImage.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
-                    //hlAuthorMorePost.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.FullPath;
-                }
+                if (ObjBasicArticle.DefaultArticlePage.AuthorName.Item != null) sbAboutAuthor.Visible = true; else sbAboutAuthor.Visible = false;
 
-                if (ObjBasicArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
-                {
-                    frReviewedby.Item = ObjBasicArticle.DefaultArticlePage.Reviewedby.Item;
-                    hlReviewdby.NavigateUrl = string.Concat("http://", Request.Url.Host.ToString(), ObjBasicArticle.DefaultArticlePage.Reviewedby.Item.GetUrl());
-                }
-                if (ObjBasicArticle.DefaultArticlePage.ReviewedDate.DateTime != null)// Reviewed date 
-                {
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
-                if (ObjBasicArticle.ShowPromotionalControl.Checked == true)
-                {
-                    sbSidebarPromo.Visible = true;
-                }
+                if (ObjBasicArticle.DefaultArticlePage.Reviewedby.Item != null && ObjBasicArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
+                    SBReviewedBy.Visible = true;
                 else
-                {
-                    sbSidebarPromo.Visible = false;
-                }
-                if(ObjBasicArticle.ShowComment.Checked == true)
-                {
-                    sbCommentsSummary.Visible=true;
-                
-                }
-                else
-                {
-                    sbCommentsSummary.Visible = false;
-                }
+                    SBReviewedBy.Visible = false;
+
+
+                if (ObjBasicArticle.ShowPromotionalControl.Checked == true) sbSidebarPromo.Visible = true; else sbSidebarPromo.Visible = false;
+
+                if (ObjBasicArticle.ShowComment.Checked == true) sbCommentsSummary.Visible = true; else sbCommentsSummary.Visible = false;
+
                 litHelpfulLikes.Text = litHelpfulLikes2.Text = CommunityHelper.ReadLikes(ObjBasicArticle.DefaultArticlePage.ContentId);
-                litCommentCount.Text =litCommentCount2.Text= CommunityHelper.ReadComments(Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Text),Convert.ToInt32( ObjBasicArticle.DefaultArticlePage.BlogPostId.Text)).Count().ToString();
+                litCommentCount.Text = litCommentCount2.Text = CommunityHelper.ReadComments(Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Text), Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Text)).Count().ToString();
                 //if (ObjBasicArticle.DefaultArticlePage.HideRelatedActiveLinks.Checked == false) // Show Articles
                 //{
                 //    DefaultArticlePageItem ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;

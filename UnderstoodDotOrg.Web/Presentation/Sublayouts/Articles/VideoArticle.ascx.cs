@@ -18,24 +18,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
     public partial class VideoArticle : System.Web.UI.UserControl
     {
-        AudioArticlePageItem ObjAudioArticle;
+        VideoArticlePageItem ObjVideoArticle;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjAudioArticle = new AudioArticlePageItem(Sitecore.Context.Item);
-            if (ObjAudioArticle != null)
+            ObjVideoArticle = new VideoArticlePageItem(Sitecore.Context.Item);
+            if (ObjVideoArticle != null)
             {
                 //Get Reviewer details
-                if (ObjAudioArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
-                {
-                    lnkReviewedBy.Item = ObjAudioArticle.DefaultArticlePage.Reviewedby.Item;
-                    lnkReviewedBy.Field = "Revierwer Name";
-                    HyplnkReviewedBy.Text = lnkReviewedBy.Text;
-                }
-                if (ObjAudioArticle.DefaultArticlePage.ReviewedDate.DateTime != null)// Reviewed date 
-                {
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
+                if (ObjVideoArticle.DefaultArticlePage.Reviewedby.Item != null && ObjVideoArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
+                    SBReviewedBy.Visible = true;
+                else
+                    SBReviewedBy.Visible = false;
 
             }
         }

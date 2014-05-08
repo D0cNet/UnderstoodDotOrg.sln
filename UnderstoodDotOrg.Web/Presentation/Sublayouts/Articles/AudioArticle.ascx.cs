@@ -22,18 +22,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (ObjAudioArticle != null)
             { 
                 //Show Reviewer Details
-                if (ObjAudioArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
-                {
-                    lnkReviewedBy.Item = ObjAudioArticle.DefaultArticlePage.Reviewedby.Item;
-                    lnkReviewedBy.Field = "Revierwer Name";
-                    HyplnkReviewedBy.Text = lnkReviewedBy.Text;
-                }
-                if (ObjAudioArticle.DefaultArticlePage.ReviewedDate.DateTime != null)// Reviewed date 
-                {
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
-
+                if (ObjAudioArticle.DefaultArticlePage.Reviewedby.Item != null && ObjAudioArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
+                    SBReviewedBy.Visible = true;
+                else
+                    SBReviewedBy.Visible = false;
                 
 
             }

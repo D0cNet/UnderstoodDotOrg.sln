@@ -21,17 +21,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (ObjGlossrayArticle != null)
             {
 
-                if (ObjGlossrayArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
-                {
-                    lnkReviewedBy.Item = ObjGlossrayArticle.DefaultArticlePage.Reviewedby.Item;
-                    lnkReviewedBy.Field = "Revierwer Name";
-                    HyplnkReviewedBy.Text = lnkReviewedBy.Text;
-                }
-                if (ObjGlossrayArticle.DefaultArticlePage.ReviewedDate.DateTime != null)// Reviewed date 
-                {
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
+                if (ObjGlossrayArticle.DefaultArticlePage.Reviewedby.Item != null && ObjGlossrayArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
+                    SBReviewedBy.Visible = true;
+                else
+                    SBReviewedBy.Visible = false;
+
                 if (ObjGlossrayArticle.ShowPromotionalControl.Checked == true)
                 {
                     sbSidebarPromo.Visible = true;
