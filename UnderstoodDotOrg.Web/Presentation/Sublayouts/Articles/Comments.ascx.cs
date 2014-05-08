@@ -62,7 +62,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
             webClient.Headers.Add("Rest-Method", "PUT");
-            var requestUrl = String.Format("{0}/api.ashx/v2/comments/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), id);
+            var requestUrl = String.Format("{0}api.ashx/v2/comments/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), id);
 
             var values = new NameValueCollection();
             values.Add("CommentId", id);
@@ -96,7 +96,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = String.Format("{0}/api.ashx/v2/likes.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+            var requestUrl = String.Format("{0}api.ashx/v2/likes.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
 
             var values = new NameValueCollection();
             values.Add("ContentId", contentId);

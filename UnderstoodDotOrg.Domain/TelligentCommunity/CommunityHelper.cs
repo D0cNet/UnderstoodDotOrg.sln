@@ -93,7 +93,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-            var requestUrl = string.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
+            var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
             var xml = webClient.DownloadString(requestUrl);
 
             var xmlDoc = new XmlDocument();
@@ -145,7 +145,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
+            var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
 
             var xml = webClient.DownloadString(requestUrl);
 
@@ -175,7 +175,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
             webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
 
-            var postUrl = string.Format("{0}/api.ashx/v2/blogs/{1}/posts/{2}/comments.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
+            var postUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}/comments.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
             var data = "Body=" + body + "&PublishedDate=" + DateTime.Now + "&IsApproved=true&BlogId=" + blogId;
 
             webClient.UploadData(postUrl, "POST", Encoding.ASCII.GetBytes(data));
@@ -189,7 +189,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}/api.ashx/v2/likes.xml?ContentId={1}", Settings.GetSetting(Constants.Settings.TelligentConfig), contentId);
+            var requestUrl = string.Format("{0}api.ashx/v2/likes.xml?ContentId={1}", Settings.GetSetting(Constants.Settings.TelligentConfig), contentId);
 
             var xml = webClient.DownloadString(requestUrl);
 
@@ -257,7 +257,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
  
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}/api.ashx/v2/blogs/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
+            var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
  
             var xml = webClient.DownloadString(requestUrl);
  
@@ -323,7 +323,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}/api.ashx/v2/blogs/posts.xml?BlogIds={1};", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
+            var requestUrl = string.Format("{0}api.ashx/v2/blogs/posts.xml?BlogIds={1};", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
 
             var xml = webClient.DownloadString(requestUrl);
 
@@ -359,7 +359,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}/api.ashx/v2/blogs.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+            var requestUrl = string.Format("{0}api.ashx/v2/blogs.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
 
             var xml = webClient.DownloadString(requestUrl);
 
