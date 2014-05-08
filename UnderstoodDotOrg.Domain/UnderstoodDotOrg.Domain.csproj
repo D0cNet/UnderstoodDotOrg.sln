@@ -171,10 +171,14 @@
     <Compile Include="SitecoreCIG\Poses\Folders\GlobalsItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\HeaderFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\HeaderFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\HomeSliderFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\HomeSliderFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\LanguageNavigationFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\LanguageNavigationFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\MainNavigationFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\MainNavigationFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\PageResourceFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\PageResourceFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\ParentToolkitFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\ParentToolkitFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PartnerFolderItem.base.cs" />
@@ -185,6 +189,7 @@
     <Compile Include="SitecoreCIG\Poses\Folders\UtilityNavigationFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\HomeSliderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\LanguageLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\LanguageLinkItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\MetadataItem.base.cs" />
