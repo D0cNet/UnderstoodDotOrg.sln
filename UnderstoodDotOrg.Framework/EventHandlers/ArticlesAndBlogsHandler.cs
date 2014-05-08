@@ -87,9 +87,9 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     }
                 }
             }
-            catch
+            catch(Exception e)
             {
-                // do nothing
+                throw e;
             }
         }
     }
