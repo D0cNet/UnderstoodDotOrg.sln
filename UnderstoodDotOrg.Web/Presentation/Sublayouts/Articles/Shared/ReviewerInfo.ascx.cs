@@ -128,7 +128,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                 if (ObjDefaultArticle.Reviewedby.Item != null)//Reviwer Name
                 {
                     frReviewedby.Item = ObjDefaultArticle.Reviewedby.Item;
-                    hlReviewdby.NavigateUrl = string.Concat("http://", Request.Url.Host.ToString(), ObjBasicArticle.DefaultArticlePage.Reviewedby.Item.GetUrl());
+                    hlReviewdby.NavigateUrl = string.Concat("http://", Request.Url.Host.ToString(), ObjDefaultArticle.Reviewedby.Item.GetUrl());
                 }
                 if (ObjDefaultArticle.ReviewedDate.DateTime != null)// Reviewed date 
                 {
