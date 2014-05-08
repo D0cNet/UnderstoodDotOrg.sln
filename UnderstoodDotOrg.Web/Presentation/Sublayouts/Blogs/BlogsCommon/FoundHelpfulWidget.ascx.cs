@@ -28,9 +28,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             try
             {
                 var blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
-                var blogId = blogCig.BlogId.Raw;
-                var blogPostId = blogCig.BlogPostId.Raw;
-                List<Comment> comments = CommunityHelper.ReadComments(Convert.ToInt32(blogId), Convert.ToInt32(blogPostId));
+                var blogId = Convert.ToInt32(blogCig.BlogId.Raw);
+                var blogPostId = Convert.ToInt32(blogCig.BlogPostId.Raw);
+                List<Comment> comments = CommunityHelper.ReadComments(blogId, blogPostId);
                 CommentCount.Text = comments.Count.ToString();
             }
             catch
