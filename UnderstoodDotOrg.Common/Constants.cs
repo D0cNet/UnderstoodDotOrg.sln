@@ -328,66 +328,6 @@ namespace UnderstoodDotOrg.Common
             public static string GroupTemplateID { get { return "{92FB8D67-690A-45F1-B330-C4BBAE189AAF}"; } }
         }
         #region Salesforce Item Id to Sitecore Guid Mapping
-
-
-        public static Dictionary<Guid, string> SitecoreRoleGuid_to_SalesforceRoleId
-        {
-            get
-            {
-                return new Dictionary<Guid, string>
-                {
-                    {Guid.Parse("{2BF9D7BE-2E40-432C-ADE7-A25C80B9B9EE}"), "a0UF000000QFoJrMAL"},
-                    {Guid.Parse("{890F06AF-284E-43E1-9647-0EFEEB000526}"), "a0UF000000QFoJsMAL"}
-                };
-            }
-        }
-        //  Parent Journey
-        //
-        // a0aF000000A3rx0IAB	cb9f1ac5-4e58-499c-8d07-8bc4e8d42f0f	Working A Year
-        // a0aF000000A3rx1IAB	fa64561b-5118-4d2f-9f03-67e0cf69e6c1	Working Few Years
-        // a0aF000000A3rx2IAB	0642e401-8e66-4c69-89c6-294c257456c8	Still Figuring Out
-        public static Dictionary<Guid, string> SitecoreJourneyGuid_to_SalesforceJourneyId
-        {
-            get 
-            {
-                return new Dictionary<Guid, string>
-                { 
-                    {Guid.Parse("{cb9f1ac5-4e58-499c-8d07-8bc4e8d42f0f}"), "a0aF000000A3rx0IAB"},	
-                    {Guid.Parse("{fa64561b-5118-4d2f-9f03-67e0cf69e6c1}"), "a0aF000000A3rx1IAB"},
-                    {Guid.Parse("{0642e401-8e66-4c69-89c6-294c257456c8}"), "a0aF000000A3rx2IAB"}	
-
-                };
-            }
-        }
-        /*  Parent Interests
-         * 
-            {110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}	a0VF00000094mK4MAI	Assisted Living
-            {8FFA90D9-F2DA-402D-9AC4-7C203769C810}	a0VF00000094mK5MAI	Activities
-            {448FFAC8-AE1E-446D-9A38-DB134C793140}	a0VF00000094mK6MAI	Bullying
-            {0A1B36D6-85B0-4B80-A6C0-193B19CF7E94}	a0VF00000094mK7MAI	Behavior Issues
-            {26A98810-4539-4BB7-8D6F-43CFE075AED3}	a0VF00000094mK8MAI	Apps
-            {8891DE05-873F-43AE-804A-E7D1DCF6DD6D}	a0VF00000094mK9MAI	Evaluations
-            {90C09D0B-DB8F-4CAB-94EB-B91C4296AAA2}	a0VF00000094mKJMAY	College and Vocational School
-            {C4563D3E-CBA3-40A1-9072-1FE9584B8586}	a0VF00000094mKKMAY	Self-Advocacy Skills
-            {BB193A51-8492-4373-A578-CA0ADFF74A88}	a0VF00000094mKLMAY	Teenage Concerns
-            {541EB9E1-8327-4FB8-A750-8EA9A6D0EC34}	a0VF00000094mKMMAY	Work and jobs
-            {1C5ED05B-2FB6-4297-A037-F35E68C40A23}	a0VF00000094mKNMAY	Communication
-            {4EA66B91-F632-46E9-8A48-156149B8EEF2}	a0VF00000094mKOMAY	Finding Support
-            {447AC977-8C58-48F8-91DB-8ACD62EA5096}	a0VF00000094mKPMAY	Siblings
-            {1F374DA8-9209-4DD2-9E0D-E63FC644941A}	a0VF00000094mKQMAY	Choosing or Changing Schools
-            {09DE69B9-6043-47C8-8ECB-40574E013956}	a0VF00000094mKRMAY	Homeschooling
-            {3C185099-76B4-49DD-80D4-A069A3F55FA1}	a0VF00000094mKSMAY	Homework and Study Skills
-            {6DF3ED70-3AF6-4D76-8590-808F07AF50DB}	a0VF00000094mKTMAY	Mainstream or Special
-            {C291E1B4-9A98-411C-8CFE-C175943B9A23}	a0VF00000094mKUMAY	RTI or MTSS
-            {78FC54BD-691A-4C74-9E84-5B299094143E}	a0VF00000094mKVMAY	School Services
-            {060910C4-FB0C-4ED3-A16F-10E864B2B088}	a0VF00000094mKWMAY	Working with Teachers
-            {B98576AB-E4AD-4FFE-ABCC-1ECFF52D3485}	a0VF00000094mKXMAY	Feelings & Self-Esteem
-            {CA2E148B-5493-4D89-ADDD-E0BD18F9506C}	a0VF00000094mKYMAY	Social Challenges & Friendship
-            {70045D51-CCF8-4CCD-8C14-AFE23F6759B0}	a0VF00000094mKZMAY	Rights of Child
-            {5927D7F1-D49D-4DF0-82EC-70EB51B93C65}	a0VF00000094mKaMAI	Technologies and Apps
-            {6DDF01DA-81BF-4C94-B705-373DDFD40276}	a0VF00000094mKbMAI	Therapies and Medications
-            {DDD43387-BE5D-4884-BC13-645FA356150F}	a0VF00000094mKcMAI	Tutors & Academic Skills Programs
-            */
         /// <summary>
         /// Pass in a Guid from Sitecore, get the corresponding ID that is used in Salesoforce to track the constant
         /// Issues, Grades, Journey, Interests, etc
@@ -452,7 +392,35 @@ namespace UnderstoodDotOrg.Common
                     {Guid.Parse("{A1354149-C308-4AEA-A74E-E31EA0B4142F}"), "a0NF000001FaYHHMA3"},
                     {Guid.Parse("{6985927C-99FF-4EE9-B9F0-A543A368594C}"), "a0SF000000ABvIsMAL"},
 	                {Guid.Parse("{8B7EB70D-64B2-45B9-B06E-6AA5CB6FE983}"), "a0SF000000ABvItMAL"},
-	                {Guid.Parse("{BF02DC92-2CCE-4D0A-901C-B0F26193895D}"), "a0SF000000ABvIuMAL"}	
+	                {Guid.Parse("{BF02DC92-2CCE-4D0A-901C-B0F26193895D}"), "a0SF000000ABvIuMAL"},
+	                {Guid.Parse("{2BF9D7BE-2E40-432C-ADE7-A25C80B9B9EE}"), "a0UF000000QFoJrMAL"},
+                    {Guid.Parse("{890F06AF-284E-43E1-9647-0EFEEB000526}"), "a0UF000000QFoJsMAL"},
+                    {Guid.Parse("{cb9f1ac5-4e58-499c-8d07-8bc4e8d42f0f}"), "a0aF000000A3rx0IAB"},	
+                    {Guid.Parse("{fa64561b-5118-4d2f-9f03-67e0cf69e6c1}"), "a0aF000000A3rx1IAB"},
+                    {Guid.Parse("{0642e401-8e66-4c69-89c6-294c257456c8}"), "a0aF000000A3rx2IAB"},	
+                    {Guid.Parse("{3FB0E002-E7EE-4726-B21E-2F1E6058AF5F}"), "a0QF000000HWadZMAT"},	
+                    {Guid.Parse("{256CBB20-A2DD-468E-82C6-EA7B7B82BCBA}"), "a0QF000000HWaipMAD"},	
+                    {Guid.Parse("{A66286A0-CD70-4FDD-9D13-9CF1C90EFC4A}"), "a0QF000000HWaeXMAT"},
+                    {Guid.Parse("{B6D3DF62-CBEC-4311-8544-38B6E890762A}"), "a0QF000000HWadjMAD"},	
+                    {Guid.Parse("{D5C01CEF-3A6F-455A-ABDD-282C26086AC5}"), "a0QF000000HWae8MAD"},	
+                    {Guid.Parse("{6A4BE256-C9D3-4F3A-9FC0-C2AD9F6304CE}"), "a0QF000000HWaiuMAD"},	
+                    {Guid.Parse("{8E9E9A5A-D630-472F-9264-16039F28A12E}"), "a0QF000000HWae3MAD"},	
+                    {Guid.Parse("{DF62BA5C-234B-4A4F-813D-FE6F765E2A4A}"), "a0QF000000HWadtMAD"},	
+                    {Guid.Parse("{B998E9E7-D05C-4279-B5D7-448F93089228}"), "a0QF000000HWaeDMAT"},	
+                    {Guid.Parse("{7A035CC2-D6BD-4332-9518-7AB22083F652}"), "a0QF000000HWadeMAD"},	
+                    {Guid.Parse("{493C315E-DDA0-47D6-9B8E-78125858F43A}"), "a0QF000000HWaizMAD"},	
+                    {Guid.Parse("{E55DEB0F-00D5-4F59-B86C-05655333FC72}"), "a0QF000000HWaeNMAT"},	
+                    {Guid.Parse("{07544BF9-EFD2-4613-8E9D-304347993BA8}"), "a0QF000000HWadyMAD"},	
+                    {Guid.Parse("{CC002EC5-4328-4719-9A8D-9350E482A8FB}"), "a0QF000000HWadoMAD"},
+                    {Guid.Parse("{73842143-B6CA-4B6A-A94F-BA59C475A6D7}"), "a0dF00000052NiAIAU"},	
+                    {Guid.Parse("{80CB7C44-F570-4991-B395-6A634C2DE1D5}"), "a0dF00000052NiBIAU"},	
+                    {Guid.Parse("{FBE464C6-0E52-45C5-A1E9-660CB3C6B688}"), "a0dF00000052NiCIAU"},
+	                {Guid.Parse("{55F38A58-7506-454E-95E5-0ECE22A3B99C}"), "a0cF0000007Q73nIAC"},		
+                    {Guid.Parse("{5754554A-D588-4EF9-8F9C-1E1DE66446F8}"), "a0cF0000007Q73oIAC"},		
+                    {Guid.Parse("{82102C70-B526-47FB-BD99-5F71A33C3C87}"), "a0cF0000007Q73pIAC"},	
+                    {Guid.Parse("{F6849A63-C841-4D79-BF53-AA68DA6D6EEB}"), "a0eF0000008E3aIIAS"},		
+                    {Guid.Parse("{992AB3CB-BAE7-47C6-B040-B674DC7FD29C}"), "a0eF0000008E3aJIAS"},		
+                    {Guid.Parse("{990FB117-F12E-4E3C-898B-8A9EB217FCFD}"), "a0eF0000008E3aKIAS"}		
                 };
             }
         }

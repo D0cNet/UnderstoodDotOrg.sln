@@ -51,12 +51,12 @@ namespace UnderstoodDotOrg.Web.Handlers
                 m.UserId = Guid.NewGuid(); //add in a random user id guid
                 
                 m.allowConnections = true;
-                m.allowNewsletter = true;
+                m.allowNewsletter = false ;
                 m.emailSubscription = true;
                 m.FirstName = fname;
-                m.hasOtherChildren = true;
+                m.hasOtherChildren = false;
                 m.isFacebookUser = true;
-                m.isPrivate = false;
+                m.isPrivate = true;
                 m.LastName = lname;
                 m.PersonalityType = new Guid("8B7EB70D-64B2-45B9-B06E-6AA5CB6FE983");//Optimisic Parent
               
@@ -84,40 +84,65 @@ namespace UnderstoodDotOrg.Web.Handlers
                 intr2.Value = "Homework and Study Skills";
                 m.Interests.Add(intr2);
 
+                //setting up a couple of issues for children
                 Issue issueOne = new Issue();
                 issueOne.Key = new Guid("3390C210-0B22-48FD-A411-881F956EDC0C");
                 issueOne.Value = "Listening";
                 Issue issueTwo = new Issue();
                 issueTwo.Key = new Guid("1D338D37-CF4E-4C1C-9499-EBA6C0A2BBA0");
                 issueTwo.Value = "Math";
-                
 
+                //setting up a couple of diagnosis values for children
+                Diagnosis d1 = new Diagnosis();
+                d1.Key = new Guid("A66286A0-CD70-4FDD-9D13-9CF1C90EFC4A");
+                d1.Value = "Receptive Language Disorder";
+                Diagnosis d2 = new Diagnosis();
+                d2.Key = new Guid("7A035CC2-D6BD-4332-9518-7AB22083F652");
+                d2.Value = "ADHD";
 
+                //setting up a couple of grade values for children
+                Grade g1 = new Grade();
+                g1.Key = new Guid("E26222FB-07CD-413B-9127-9050B6D2D037");
+                g1.Value = "Grade 1";
+                Grade g2 = new Grade();
+                g2.Key = new Guid("E0B459C0-548A-4E6C-854A-E8F475416F12");
+                g2.Value = "Grade 10";
+              
+                //setting up status values for children
+                Guid iepStatus = new Guid("FBE464C6-0E52-45C5-A1E9-660CB3C6B688");//yes
+                Guid section504Status = new Guid("55F38A58-7506-454E-95E5-0ECE22A3B99C");//in progress
+                Guid evaluationStatus = new Guid("990FB117-F12E-4E3C-898B-8A9EB217FCFD");//yes
+                //------------------------------------------
+                //test child 1
+                //------------------------------------------
                 Child childOne = new Child();
-                Grade gOne = new Grade();
-                gOne.Key = new Guid("E26222FB-07CD-413B-9127-9050B6D2D037");
-                gOne.Value = "Grade 1";
-                childOne.Grades.Add(gOne);
+                childOne.ChildId = Guid.NewGuid();//random new child guid for testing purposes
                 childOne.Gender = "boy";
-                childOne.Nickname = "C1_" + m.FirstName;
-        
+                childOne.Nickname = "Bobby";
+                childOne.IEPStatus = iepStatus;
+                childOne.Section504Status = section504Status;
+                childOne.EvaluationStatus = evaluationStatus;
+
                 childOne.Issues.Add(issueOne);
                 childOne.Issues.Add(issueTwo);
-
+                childOne.Grades.Add(g1);
+                childOne.Diagnoses.Add(d1);
+                childOne.Diagnoses.Add(d2);
                 m.Children.Add(childOne); 
-
+                //------------------------------------------
+                //test child 2
+                //------------------------------------------
                 Child childTwo = new Child();
-                Grade gTwo = new Grade();
-                gTwo.Key = new Guid("E0B459C0-548A-4E6C-854A-E8F475416F12");
-                gTwo.Value = "Grade 10";
-                childTwo.Grades.Add(gTwo);
+                childTwo.ChildId = Guid.NewGuid();//random new guid for testing
                 childTwo.Gender = "boy";
-                childTwo.Nickname = "C2_" + m.FirstName;
-                
+                childTwo.Nickname = "Tommy";
+                childTwo.IEPStatus = iepStatus;
+                childTwo.Section504Status = section504Status;
+                childTwo.EvaluationStatus = evaluationStatus;
 
+                childTwo.Grades.Add(g2);
                 childTwo.Issues.Add(issueOne);
                 childTwo.Issues.Add(issueTwo);
-
                 m.Children.Add(childTwo); 
 
                 try

@@ -155,26 +155,45 @@ namespace UnderstoodDotOrg.Domain.Salesforce
             newSalesforceContact.member_MemberId__c = newMember.MemberId.ToString(); //member_MemberId__c is our sfdc external uid on Contact
             newSalesforceContact.member_UserId__c = newMember.UserId.ToString();
             newSalesforceContact.member_ScreenName__c = newMember.ScreenName;
+
+
+            //Discovered that if you do not set both the field, and the specififed field, you don't update the checkbocx
             newSalesforceContact.member_allowConnections__c = newMember.allowConnections;
+            newSalesforceContact.member_allowConnections__cSpecified = newMember.allowConnections;
+
             newSalesforceContact.member_allowNewsletter__c = newMember.allowNewsletter;
+            newSalesforceContact.member_allowNewsletter__cSpecified = newMember.allowNewsletter;
+
             newSalesforceContact.member_emailSubscription__c = newMember.emailSubscription;
+            newSalesforceContact.member_emailSubscription__cSpecified = newMember.emailSubscription;
+
             newSalesforceContact.member_hasOtherChildren__c = newMember.hasOtherChildren;
+            newSalesforceContact.member_hasOtherChildren__cSpecified = newMember.hasOtherChildren;
+
             newSalesforceContact.member_isFacebookUser__c = newMember.isFacebookUser;
+            newSalesforceContact.member_isFacebookUser__cSpecified = newMember.isFacebookUser;
+
+
             newSalesforceContact.member_isPrivate__c = newMember.isPrivate;
-            newSalesforceContact.member_PersonalityType__c = newMember.PersonalityType.ToString();
-           
+            
 
-
-            newSalesforceContact.member_ScreenName__c = newMember.ScreenName;
             newSalesforceContact.member_ZipCode__c = newMember.ZipCode;
             newSalesforceContact.Email = "bgarnier_noreply@agencyoasis.com";
             
             //mapped guid values from Sitecore to Salesforce id. Pass in GUID from sitecore. Get back string ID from salesforce.
 
-            newSalesforceContact.member_Role__c = Constants.SitecoreRoleGuid_to_SalesforceRoleId[newMember.Role];
-            newSalesforceContact.Journey__c = Constants.SitecoreJourneyGuid_to_SalesforceJourneyId[newMember.Journeys.First().Key];
-
-                //((Journey)newMember.Journeys.First()).Key.ToString();
+            newSalesforceContact.member_Role__c = Constants.SalesforceLookupDictionary [newMember.Role];
+           
+            
+            newSalesforceContact.Journey__c = Constants.SalesforceLookupDictionary[newMember.Journeys.First().Key];
+           
+            //ContactsPersonality
+            //THERE IS ALSO A PERSONALITYTYPE IN THE WSDL. DO NOT USE IT.
+            newSalesforceContact.member_Personality__c = Constants.SalesforceLookupDictionary[newMember.PersonalityType];//.ToString();
+            
+            
+            
+            //((Journey)newMember.Journeys.First()).Key.ToString();
 
             //exernal id field name is not the value of the userid. its our guid for member. the name of the field/column in sfdc
             //sfdc needs to know the primary, unique key to look for when updating existing rows
@@ -199,19 +218,19 @@ namespace UnderstoodDotOrg.Domain.Salesforce
             //create entrires for Interests
             foreach (Interest i in newMember.Interests)
             {
-                MemberToInterests__c membertoInterest = new MemberToInterests__c();
+                MemberToInterests__c sfdcMembertoInterest = new MemberToInterests__c();
                 
                 //i believe that I am going to need to get the ID of the user that was just created.
                // membertoInterest.MemberMaster__c = newMember.UserId.ToString();
-                membertoInterest.MemberMaster__c = SalesforceNewContactId; 
+                sfdcMembertoInterest.MemberMaster__c = SalesforceNewContactId; 
           
                 //lookup the Salesforce Id from the Sitecore Guid
-                membertoInterest.MemberInterest__c = Constants.SalesforceLookupDictionary[i.Key];
-                membertoInterest.Name = i.Value;
+                sfdcMembertoInterest.MemberInterest__c = Constants.SalesforceLookupDictionary[i.Key];
+                sfdcMembertoInterest.Name = i.Value;
 
                 //NEED to use an exernal id for any upserted rows.... 
                 //i think for masterdetail records we want to just do an INSERT
-                SaveResult interestSaveResult = _sfs.create(new sObject[] { membertoInterest })[0];
+                SaveResult interestSaveResult = _sfs.create(new sObject[] { sfdcMembertoInterest })[0];
                 if (interestSaveResult.success == false)
                 {
                     sfResult.Success = false;
@@ -230,57 +249,78 @@ namespace UnderstoodDotOrg.Domain.Salesforce
             //add children to salesforce
             foreach (Child c in newMember.Children)
             {
-                Children__c salesforceChild = new Children__c();
-                salesforceChild.ContactChild__c = SalesforceNewContactId;
-                salesforceChild.Grade__c = Constants.SalesforceLookupDictionary[(c.Grades.First().Key)];
-                salesforceChild.Nickname__c = c.Nickname;
-                salesforceChild.Name = c.Nickname;
-                //child to issues need to be added like interests are after the child is created        
+                Children__c sfdcChild = new Children__c();
+                sfdcChild.ContactChild__c = SalesforceNewContactId;
+                sfdcChild.Grade__c = Constants.SalesforceLookupDictionary[(c.Grades.First().Key)];
+                sfdcChild.ChildTo504Status__c = Constants.SalesforceLookupDictionary[c.Section504Status];
+                sfdcChild.ChildToEvaluationStatus__c = Constants.SalesforceLookupDictionary[c.EvaluationStatus];
+                sfdcChild.ChildToIEPStatus__c = Constants.SalesforceLookupDictionary[c.IEPStatus];
 
-                SaveResult childSaveResult = _sfs.create(new sObject[]{salesforceChild})[0];
-                if(childSaveResult.success == false)
+                sfdcChild.Nickname__c = c.Nickname;
+                sfdcChild.Name = c.Nickname;
+                
+                //include a guid for the child's id
+                sfdcChild.UnderstoodChildId__c = c.ChildId.ToString() ;
+
+
+                
+                SaveResult sfdcChildSaveResult = _sfs.create(new sObject[]{sfdcChild})[0];
+                
+
+                if(sfdcChildSaveResult.success == false)
                 {
                     sfResult.Success = false;
                     sfResult.Message = "An error occured during the upsert to Salesforce. Upserting the Members Children did not succeed." +
                         Environment.NewLine + "Error Messages: " + Environment.NewLine;
-                    foreach (Error e in childSaveResult.errors)
+                    foreach (Error e in sfdcChildSaveResult.errors)
                     {
                         sfResult.Message += "Status code: (" + e.statusCode + ") Message: " + e.message + Environment.NewLine;
                     }
                     
                     return sfResult;
-                }//-------------------
-                //with this child successfully created, get the new child's salesforce id and add in issues into the salesforce lookup object
-               
+                }
+                //=====================================================================================================
+             
+                //with this child successfully created, we can now add rows to other objects that reference the child
+                //get the new child's salesforce id and add in issues into the salesforce lookup object
                 foreach (Issue childIssue in c.Issues)
                 {
-                    ChildToIssues__c salesforceChildIssues = new ChildToIssues__c();
-                    salesforceChildIssues.ChildMaster__c = childSaveResult.id; //we get back the ID that salesforce made during create
-                    salesforceChildIssues.ChildIssue__c =Constants.SalesforceLookupDictionary[(childIssue.Key)];
-                    salesforceChildIssues.Name = childIssue.Value;
-                    SaveResult childIssuesSaveResult = _sfs.create(new sObject[] { salesforceChildIssues })[0];
-                    if (childIssuesSaveResult.success == false)
+                    ChildToIssues__c sfdcforceChildIssues = new ChildToIssues__c();
+                    sfdcforceChildIssues.ChildMaster__c = sfdcChildSaveResult.id; //we get back the ID that salesforce made during create
+                    sfdcforceChildIssues.ChildIssue__c =Constants.SalesforceLookupDictionary[childIssue.Key];
+                    sfdcforceChildIssues.Name = childIssue.Value;
+                    SaveResult sr = _sfs.create(new sObject[] { sfdcforceChildIssues })[0];
+                    if (sr.success == false)
                     {
                         sfResult.Success = false;
                         sfResult.Message = "An error occured during the upsert to Salesforce. Creating the Issues of Children did not succeed." +
                             Environment.NewLine + "Error Messages: " + Environment.NewLine;
-                        foreach (Error e in childIssuesSaveResult.errors)
+                        foreach (Error e in sr.errors)
                         {
                             sfResult.Message += "Status code: (" + e.statusCode + ") Message: " + e.message + Environment.NewLine;
                         }
                         return sfResult;
                     }//-------------------
-
-                   sfResult.Message= Environment.NewLine + 
-                       "Save Result for Issue (Name:" + salesforceChildIssues.Name + Environment.NewLine +
-                                                                    "|Issue:" + salesforceChildIssues.ChildIssue__c + Environment.NewLine +
-                                                                    " |Success:" + childIssuesSaveResult.success.ToString();
-                   
+                    sfResult.Message= Environment.NewLine + 
+                                                "Save Result for Issue (Name:" + sfdcforceChildIssues.Name + Environment.NewLine +
+                                                                    "|Issue:" + sfdcforceChildIssues.ChildIssue__c + Environment.NewLine +
+                                                                    " |Success:" + sr.success.ToString();                   
                 }
-                
-        
-
-
+                //save child diagnosis values
+                foreach (Diagnosis childDiagnosis in c.Diagnoses)
+                {
+                    ChildToDiagnosis__c salesforceChildDiagnosis = new ChildToDiagnosis__c();
+                    salesforceChildDiagnosis.ChildMaster__c = sfdcChildSaveResult.id;
+                    salesforceChildDiagnosis.ChildDiagnosis__c = Constants.SalesforceLookupDictionary[childDiagnosis.Key];
+                    salesforceChildDiagnosis.Name = childDiagnosis.Value;
+                    SaveResult sr = _sfs.create(new sObject[] { salesforceChildDiagnosis })[0];
+                    if (sr.success == false)
+                    {
+                        sfResult.Success = false;
+                        sfResult.Message = "Error when saving child Diagnosis: " + sr.errors.First().message;
+                        return sfResult;
+                    }
+                }
             }
             //          
             return sfResult;
