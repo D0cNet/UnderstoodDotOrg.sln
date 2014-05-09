@@ -22,17 +22,22 @@
                 <button class="play-pause pause">
                     Pause</button>
                 <div id="hero-carousel-wrapper" class="rsDefault" data-random="false">
-                    <div class="slide" style="background-image: url(Presentation/includes/images/temp.bg.slide.1200.01.jpg)">
-                        <div class="text">
-                            <p>
-                                Empowered parent, confident child.
-                            </p>
-                            <p>
-                                It isn't easy&hellip;
-                            </p>
-                        </div>
-                    </div>
-                    <!-- .slide -->
+                    <asp:Repeater runat="server" ID="rptHomeSlider" OnItemDataBound="rptHomeSlider_ItemDataBound">
+                        <ItemTemplate>
+                            <asp:Panel runat="server" ID="pnlSliderImage" CssClass="slide" >
+                                <asp:Panel runat="server" ID="pnlSliderText" class="text">
+                                    <sc:FieldRenderer ID="frSliderText" runat="server" FieldName="Text" />
+                                    <%--<p>
+                                        Empowered parent, confident  child.
+                                    </p>
+                                    <p>
+                                        It isn't easy&hellip;
+                                    </p>--%>
+                                </asp:Panel>
+                            </asp:Panel>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <%-- <!-- .slide -->
                     <div class="slide" style="background-image: url(Presentation/includes/images/temp.bg.slide.1200.02.jpg)">
                         <div class="text text-color-white">
                             <p>
@@ -48,7 +53,7 @@
                                 Understand your child's struggles.
                             </p>
                         </div>
-                    </div>
+                    </div>--%>
                     <!-- .slide -->
                 </div>
                 <!-- #hero-carousel-wrapper -->
@@ -251,3 +256,4 @@
 </div>
 <!-- .container.guide-me -->
 <!-- END MODULE: Guide Me -->
+<asp:HiddenField runat="server" ID="hfRandomizeSlider" ClientIDMode="Static" />

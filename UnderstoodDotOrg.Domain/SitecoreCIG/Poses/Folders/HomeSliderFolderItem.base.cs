@@ -46,6 +46,15 @@ public static implicit operator Item(HomeSliderFolderItem customItem)
 #region Field Instance Methods
 
 
+public CustomCheckboxField RandomizeSlides
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Randomize Slides"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
