@@ -29,11 +29,11 @@
                     <ItemTemplate>
                         <div>
                             <div class="action-step">
-                                <span>
+                               
                                     <%-- 4
                                     <sc:FieldRenderer ID="frActionNo" runat="server" FieldName="Action Number" />--%>
                                     <asp:Label ID="lblActionCount" runat="server"></asp:Label>
-                                </span>
+                                
                             </div>
                             <div class="action-head">
                                 <h3><%--Lorem Ipsum--%>
