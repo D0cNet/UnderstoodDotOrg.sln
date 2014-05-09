@@ -786,6 +786,20 @@
     <Compile Include="Presentation\Sublayouts\Community\Parents Recommended.ascx.designer.cs">
       <DependentUpon>Parents Recommended.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\QandA\QandA.ascx.cs">
+      <DependentUpon>QandA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\QandA\QandA.ascx.designer.cs">
+      <DependentUpon>QandA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\QandA\QandADetails.ascx.cs">
+      <DependentUpon>QandADetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\QandA\QandADetails.ascx.designer.cs">
+      <DependentUpon>QandADetails.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\CommunityMembers.ascx.cs">
       <DependentUpon>CommunityMembers.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1812,6 +1826,8 @@
     <Content Include="Presentation\Sublayouts\Community\Parents Group Recommended.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Like Me.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Recommended.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\QandA\QandA.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\QandA\QandADetails.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\CommunityMembers.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\MostActiveGroups.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\RecentBlogPosts.ascx" />
