@@ -154,6 +154,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 Session["_AssessmentQuiz_Page1Score"] = _AssessmentQuiz_Page1Score;
             }
         }
+
+        protected void btnTrue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnFalse_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class AssessmentQuizScorePage1

@@ -19,6 +19,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         ActionStyleListPageItem ObjActionListArticle;
         IEnumerable<ActionPageItem> AllChildSlides;
+        int _currentActionNo;
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjActionListArticle = new ActionStyleListPageItem(Sitecore.Context.Item);
@@ -52,6 +53,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 if (AllChildSlides != null)
                 {
                    // _totalSlide = AllChildSlides.Count();
+                    _currentActionNo = 0;
                     rptAction.DataSource = AllChildSlides;
                     rptAction.DataBind();
 
@@ -67,11 +69,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 ActionPageItem _currentItem = e.Item.DataItem as ActionPageItem;
                 if (_currentItem != null)
                 {
-                    FieldRenderer frActionNo = e.FindControlAs<FieldRenderer>("frActionNo");
-                    if (frActionNo != null)
+                    _currentActionNo++;
+                    Label lblActionCount = e.FindControlAs<Label>("lblActionCount");
+                    if (lblActionCount != null)
                     {
-                        frActionNo.Item = _currentItem;
+                        lblActionCount.Text = _currentActionNo.ToString();
                     }
+                    //FieldRenderer frActionNo = e.FindControlAs<FieldRenderer>("frActionNo");
+                    //if (frActionNo != null)
+                    //{
+                    //    frActionNo.Item = _currentItem;
+                    //}
                     FieldRenderer frActionTitle = e.FindControlAs<FieldRenderer>("frActionTitle");
                     if (frActionTitle != null)
                     {

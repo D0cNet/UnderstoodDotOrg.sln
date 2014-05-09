@@ -21,6 +21,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         SlideshowArticlePageItem ObjSlideshowArticle;
         IEnumerable<SlidesPageItem> AllChildSlides;
         int _totalSlide;
+        int _currentSlideNo;
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjSlideshowArticle = new SlideshowArticlePageItem(Sitecore.Context.Item);
@@ -50,6 +51,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (AllChildSlides != null)
             {
                 _totalSlide = AllChildSlides.Count();
+                _currentSlideNo = 0;
                 rptSlides.DataSource = AllChildSlides;
                 rptSlides.DataBind();
                 
@@ -68,17 +70,28 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 SlidesPageItem _currentSlide = e.Item.DataItem as SlidesPageItem;
                 if (_currentSlide != null)
                 {
+                    _currentSlideNo++;
                     Panel pnlSlide = e.FindControlAs<Panel>("pnlSlide");
                     PlaceHolder phImageSlide=e.FindControlAs<PlaceHolder>("phImageSlide");
                     PlaceHolder phEnd = e.FindControlAs<PlaceHolder>("phEnd");
+                    Label lblTotalSlide = e.FindControlAs<Label>("lblTotalSlide");
+                    if (lblTotalSlide != null)
+                    {
+                        lblTotalSlide.Text = _totalSlide.ToString();
+                    }
+                    Label lblCurrentSlide = e.FindControlAs<Label>("lblCurrentSlide");
+                    if (lblCurrentSlide != null)
+                    {
+                        lblCurrentSlide.Text = _currentSlideNo.ToString();
+                    }
                     if (pnlSlide != null)
                     { //Set the css class based on slide type
-                        pnlSlide.CssClass += " " + _currentSlide.SlideFormat.Raw;
-                        Label lblTotalSlide = e.FindControlAs<Label>("lblTotalSlide");
-                        if (lblTotalSlide != null)
-                        {
-                            lblTotalSlide.Text = _totalSlide.ToString();
-                        }
+                        pnlSlide.CssClass += " " + _currentSlide.SlideFormat.Raw + " rs_read_this";
+                        //Label lblTotalSlide = e.FindControlAs<Label>("lblTotalSlide");
+                        //if (lblTotalSlide != null)
+                        //{
+                        //    lblTotalSlide.Text = _totalSlide.ToString();
+                        //}
                     }
                     if(_currentSlide.SlideFormat.Raw.Contains("end"))
                     {

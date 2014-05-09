@@ -144,6 +144,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\404Page.ascx.cs">
       <DependentUpon>404Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\404Page.ascx.designer.cs">
       <DependentUpon>404Page.ascx</DependentUpon>
@@ -185,12 +186,14 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\Donate Page.ascx.cs">
       <DependentUpon>Donate Page.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\Donate Page.ascx.designer.cs">
       <DependentUpon>Donate Page.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\Donation Thank you.ascx.cs">
       <DependentUpon>Donation Thank you.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\Donation Thank you.ascx.designer.cs">
       <DependentUpon>Donation Thank you.ascx</DependentUpon>
@@ -974,12 +977,14 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Recommendation\CreateAccount.ascx.cs">
       <DependentUpon>CreateAccount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Recommendation\CreateAccount.ascx.designer.cs">
       <DependentUpon>CreateAccount.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Recommendation\Multiple Children.ascx.cs">
       <DependentUpon>Multiple Children.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Recommendation\Multiple Children.ascx.designer.cs">
       <DependentUpon>Multiple Children.ascx</DependentUpon>

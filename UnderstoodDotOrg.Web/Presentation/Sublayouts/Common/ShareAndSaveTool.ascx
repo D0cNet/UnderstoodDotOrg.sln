@@ -10,6 +10,7 @@
         f.parentNode.insertBefore(p, f);
     }(document));
 </script>
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
 <%--<script type="text/JavaScript">
     function saveIt() {
         //check for browser
@@ -28,7 +29,7 @@
         }
     }
 </script>--%>
-<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+
 <%--<script >
     function sendemail()
     {

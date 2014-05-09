@@ -18,6 +18,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         TextOnlyTipsArticlePageItem ObjTextTipsArticle;
         IEnumerable<TextTipPageItem> AllChildSlides;
+        int _CurrentTipNo, _totalTipsCount;
         protected void Page_Load(object sender, EventArgs e)
         {
             //Set Slide Counter value and binda data accordinly
@@ -34,6 +35,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (AllChildSlides != null)
             {
                 // _totalSlide = AllChildSlides.Count();
+                _CurrentTipNo = 0;
+                _totalTipsCount = AllChildSlides.Count();
                 rptAllTips.DataSource = AllChildSlides;
                 rptAllTips.DataBind();
 
@@ -67,6 +70,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     Panel pnlTips = e.FindControlAs<Panel>("pnlTips");
                     PlaceHolder phEnd = e.FindControlAs<PlaceHolder>("phEnd");
                     PlaceHolder phSlide = e.FindControlAs<PlaceHolder>("phSlide");
+                    _CurrentTipNo++;
                     if (pnlTips != null)
                     {
                         //check for tip type(end slide) open phend
@@ -134,6 +138,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                                 if (frTipText != null)
                                 {
                                     frTipText.Item = _currentTip;
+                                }
+                                Label lblCurrentTip = e.FindControlAs<Label>("lblCurrentTip");
+                                if (lblCurrentTip != null)
+                                {
+                                    lblCurrentTip.Text=_CurrentTipNo.ToString();
+                                }
+                                Label lblTotalTips = e.FindControlAs<Label>("lblTotalTips");
+                                if (lblTotalTips != null)
+                                {
+                                    lblTotalTips.Text = _totalTipsCount.ToString();
                                 }
                             }
 

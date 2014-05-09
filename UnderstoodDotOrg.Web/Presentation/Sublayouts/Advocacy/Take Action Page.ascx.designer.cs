@@ -40,6 +40,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPartnerLogo;
         
         /// <summary>
+        /// Placeholder1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder1;
+        
+        /// <summary>
         /// frCampaignSectionHeadline control.
         /// </summary>
         /// <remarks>

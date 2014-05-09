@@ -1,6 +1,16 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TextOnlyTipsArticle.ascx.cs"
     Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.TextOnlyTipsArticle" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+<script type="text/javascript">
+    (function (d) {
+        var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
+        p.type = 'text/javascript';
+        p.async = true;
+        p.src = '//assets.pinterest.com/js/pinit.js';
+        f.parentNode.insertBefore(p, f);
+    }(document));
+</script>
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
 <div class="count-mobile">
     <!-- BEGIN PARTIAL: helpful-count -->
     <div class="count-helpful">
@@ -70,10 +80,10 @@
                                                     <div class="share-menu">
                                                         <span class="social-share">Share <i class="icon-arrow"></i></span>
                                                         <ul>
-                                                            <li class="clearfix"><a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a> </li>
-                                                            <li class="clearfix"><a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a> </li>
-                                                            <li class="clearfix"><a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a> </li>
-                                                            <li class="clearfix"><a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a> </li>
+                                                            <li class="clearfix"><a class="icon-facebook share-icon" href="https://facebook.com/sharer.php?u=<%= Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Item) %>"><i class="icon-facebook"></i>Facebook</a> </li>
+                                                            <li class="clearfix"><a class="icon-twitter share-icon" href="https://twitter.com/intent/tweet?url=<%= Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Item) %>&text=<%= Sitecore.Context.Item.Name %>&via=YOURTWITTERNAMEHERE"><i class="icon-twitter"></i>Twitter</a> </li>
+                                                            <li class="clearfix"><a class="icon-google share-icon" href="https://plus.google.com/share?url=<%= Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Item) %>"><i class="icon-google"></i>Google +</a> </li>
+                                                            <li class="clearfix"><a class="icon-pinterest share-icon" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above" class="socicon icon-pinterest"><i class="icon-pinterest"></i>Pinterest</a> </li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -84,7 +94,7 @@
                                                         email</button>
                                                     <button class="icon-plus">
                                                         save this</button>
-                                                    <button class="icon-print">
+                                                    <button class="icon-print"  onclick="window.print()">
                                                         print</button>
                                                     <button class="icon-bell">
                                                         remind me</button>
@@ -94,7 +104,7 @@
                                                 </div>
                                             </div>
                                             <div class="slide-count-text">
-                                                <span class="light-blue-span">1</span> of 9
+                                                <span class="light-blue-span"><%--1--%><asp:Label ID="lblCurrentTip" runat="server"></asp:Label></span> of <%--9--%><asp:Label ID="lblTotalTips" runat="server"></asp:Label>
                                             </div>
                                             <h3>
                                                 <sc:FieldRenderer ID="frTipTitle" runat="server" FieldName="Tip Title" />

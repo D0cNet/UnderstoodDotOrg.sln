@@ -78,6 +78,12 @@
                                         <%--My child's favorite activity is:--%>
                                         <sc:FieldRenderer ID="frQuestion" runat="server" FieldName="Question Title" />
                                     </p>
+                                    <asp:PlaceHolder ID="phBoolean" runat="server">
+                                        <%--<button type="button" class="answer-choice-true">True</button>
+                    <button type="button" class="answer-choice-false">False</button>--%>
+                                        <asp:Button ID="btnTrue" runat="server" Text="True" CssClass="answer-choice-true" OnClick="btnTrue_Click" />
+                                        <asp:Button ID="btnFalse" runat="server" Text="False" CssClass="answer-choice-false" OnClick="btnFalse_Click" />
+                                    </asp:PlaceHolder>
                                     <asp:PlaceHolder ID="phOption" runat="server" Visible="false">
                                         <asp:RadioButtonList ID="rblAnswer" runat="server" OnSelectedIndexChanged="rblAnswer_SelectedIndexChanged">
                                         </asp:RadioButtonList>
