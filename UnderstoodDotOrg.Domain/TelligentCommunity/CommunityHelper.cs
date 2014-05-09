@@ -381,5 +381,127 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return blogs;
         }
+
+        public static XmlNode ReadGroup(string groupID)
+        {
+            XmlNode node = null;
+           
+            if (!String.IsNullOrEmpty(groupID))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                var xmlDoc = new XmlDocument();
+                var requestUrl = String.Format("{0}api.ashx/v2/groups/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
+                var xml = webClient.DownloadString(requestUrl);
+
+                xmlDoc.LoadXml(xml);
+                node = xmlDoc.SelectSingleNode("Response/Group");
+            }
+            return node;
+           
+        }
+        public static XmlNode ReadForum(string forumID)
+        {
+            XmlNode node = null;
+            if (!String.IsNullOrEmpty(forumID))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID);
+                var xml = webClient.DownloadString(requestUrl);
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                node = xmlDoc.SelectSingleNode("Response/Forum");
+            }
+            return node;
+        }
+        public static XmlNode ReadForums(string groupID)
+        {
+            XmlNode node = null;
+            if (!String.IsNullOrEmpty(groupID))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                var requestUrl = String.Format("{0}api.ashx/v2/groups/{1}/forums.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
+                var xml = webClient.DownloadString(requestUrl);
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                node = xmlDoc.SelectSingleNode("Response/Forums");
+            }
+            return node;
+        }
+        public static XmlNode ReadThreads(string forumID)
+        {
+            XmlNode node = null;
+            if (!String.IsNullOrEmpty(forumID))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}/threads.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID);
+                var xml = webClient.DownloadString(requestUrl);
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                node = xmlDoc.SelectSingleNode("Response/Threads");
+            }
+            return node;
+        }
+        public static List<ThreadModel> ReadThreadList(string forumID)
+        {
+            List<ThreadModel> th = new List<ThreadModel>();
+            try
+            {
+                var node = ReadThreads(forumID);
+                foreach (XmlNode childNode in node)
+                {
+                    ThreadModel t = new ThreadModel(childNode);
+                    th.Add(t);
+                }
+            }catch(Exception ex)
+            {
+                th = null;
+            }
+            return th;
+        }
+        public static List<ForumModel> ReadForumsList(string groupID)
+        {
+            List<ForumModel> fm = new List<ForumModel>();
+            try
+            {
+                var node = ReadForums(groupID);
+                foreach (XmlNode childNode in node)
+                {
+                    ForumModel f = new ForumModel(childNode);
+                    fm.Add(f);
+                }
+            }
+            catch (Exception ex)
+            {
+                fm = null;
+            }
+            return fm;
+        }
+        public static string TelligentAuth()
+        {
+            //Telligent Forum info
+            string adminKeyBase64 = String.Empty;
+            string keyTest = Settings.GetSetting(Constants.Settings.TelligentAdminApiKey);
+            var apiKey = String.IsNullOrEmpty(keyTest) ? "d956up05xiu5l8fn7wpgmwj4ohgslp" : keyTest;
+
+            // replace the "admin" and "Admin's API key" with your valid user and apikey!
+            var adminKey = String.Format("{0}:{1}", apiKey, "admin");
+            adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+            return adminKeyBase64;
+        }
     }
 }

@@ -27,13 +27,13 @@
             </header>
             <div class="col col-4 feature-image"><img alt="150x150 Placeholder" src="<%#Eval("ModeratorAvatarUrl") %>"/></div>
             <div class="col col-18 description">
-            <p class="group-description-info"><%# Eval("Quote") %></p>
+            <p class="group-description-info"><%# Eval("Description") %></p>
             <p class="leader"><%# Eval("ModeratorName")  %>,<%#Eval("ModeratorTitle") %></p>
             </div>
         </div>
         <div class="col col-6 statistics">
-            <p class="members"><%#Eval("NumOfMembers","#,###") %> Members</p>
-            <p class="discussions"><%#Eval("NumOfDiscussions","#,###") %> Discussions</p>
+            <p class="members"><%#Eval("NumOfMembers", "{0:0,0.00}") %> Members</p>
+            <p class="discussions"><%#Eval("NumOfDiscussions", "{0:0,0.00}") %> Discussions</p>
             <div class="submit-button-wrap">
             <a href="<%#Eval("JoinUrl") %>" class="button rs_skip">Join this Group</a>
             </div>

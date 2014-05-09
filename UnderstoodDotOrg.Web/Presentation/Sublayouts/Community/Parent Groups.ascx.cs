@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
 
@@ -93,10 +95,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     ddlPartners.DataBind();
                 }
                 //Get all groups under parent folder
-                List<Item>  groups = currItem.Children.Where(x => x.TemplateID.ToString().Equals(Constants.Groups.GroupTemplateID)).ToList() ;
+                List<GroupItem> groups = currItem.Children.Where(x => x.TemplateID.ToString().Equals(Constants.Groups.GroupTemplateID)).Select(x => new GroupItem(x)).ToList<GroupItem>();
                 
                 //Convert sitecore group items to GroupCardModels
-                rptGroupCards.DataSource = groups.Select(x=> new GroupCardModel(x)).ToList<GroupCardModel>();
+                var grpItems = groups.Select(x => new GroupCardModel(x)).ToList<GroupCardModel>();
+                Session["groupItems"] = grpItems;
+                rptGroupCards.DataSource = grpItems;
                 rptGroupCards.DataBind();
 
             }
@@ -116,14 +120,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             string partner = ddlPartners.SelectedValue.ToString();
 
             //Perform search using criteria
-            var test = FindGroups( issue, topic, grade,state,partner);
+            var test = FindGroups( issue, topic, grade,state,partner); ///TODO: To decide on logic to find groups
             rptGroupCards.DataSource = test;
             rptGroupCards.DataBind();
         }
 
         private List<GroupCardModel> FindGroups(string issue, string topic, string grade, string state, string partner)
         {
-            throw new NotImplementedException();
+            List<GroupCardModel> results = new List<GroupCardModel>();
+            if (Session["groupItems"] is List<GroupCardModel>)
+            {
+
+                throw new NotImplementedException();
+            }
+
+            return results;
         }
     }
 }

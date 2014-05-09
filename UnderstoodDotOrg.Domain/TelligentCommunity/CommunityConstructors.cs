@@ -105,4 +105,14 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             this.password = Guid.NewGuid().ToString();
         }
     }
+
+    //public class Group
+    //{
+    //    public string TelligentGroupID { get; set; }
+    //    public string GroupID { get; set; }
+    //    public string ModeratorID { get; set; }
+    //    public string NumOfMembers {get;set;}
+    //    public string NumOfDiscussions { get; set; }
+    //    public string Description { get; set; }
+    //}
 }

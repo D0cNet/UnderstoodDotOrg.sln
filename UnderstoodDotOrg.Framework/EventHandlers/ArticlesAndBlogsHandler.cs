@@ -12,6 +12,7 @@ using System.Xml;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 
 namespace UnderstoodDotOrg.Framework.EventHandlers
 {
@@ -54,8 +55,8 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                 var webClient = new WebClient();
 
                 // replace the "admin" and "Admin's API key" with your valid user and apikey!
-                var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+              //  var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                var adminKeyBase64 = CommunityHelper.TelligentAuth(); //Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
                 webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
                 var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);

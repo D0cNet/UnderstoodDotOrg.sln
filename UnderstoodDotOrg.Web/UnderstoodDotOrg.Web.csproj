@@ -611,6 +611,13 @@
     <Compile Include="Presentation\Sublayouts\Common\Footer.ascx.designer.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\GroupCardModelView.ascx.cs">
+      <DependentUpon>GroupCardModelView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\GroupCardModelView.ascx.designer.cs">
+      <DependentUpon>GroupCardModelView.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\GroupSummaryList.ascx.cs">
       <DependentUpon>GroupSummaryList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -771,6 +778,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Parents Group Recommended.ascx.designer.cs">
       <DependentUpon>Parents Group Recommended.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Group Boards.ascx.cs">
+      <DependentUpon>Parent Group Boards.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Group Boards.ascx.designer.cs">
+      <DependentUpon>Parent Group Boards.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Parents Like Me.ascx.cs">
       <DependentUpon>Parents Like Me.ascx</DependentUpon>
@@ -1801,6 +1815,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\MostTalkedBlogsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\SearchBlogsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Footer.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\GroupCardModelView.ascx" />
     <Content Include="Presentation\Sublayouts\Common\GroupSummaryList.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Header.ascx" />
     <Content Include="Presentation\Sublayouts\Common\More Carousel.ascx" />
@@ -1824,6 +1839,7 @@
     <Content Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parent Groups.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Group Recommended.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Parent Group Boards.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Like Me.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Recommended.ascx" />
     <Content Include="Presentation\Sublayouts\Community\QandA\QandA.ascx" />
