@@ -14,12 +14,17 @@
     using System.Linq;
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
     using UnderstoodDotOrg.Domain.Understood.Helper;
+    using System.Web.UI;
 
     public partial class SearchResults : System.Web.UI.UserControl
     {
-        private void Page_Load(object sender, EventArgs e)
+        private void Page_Init(object sender, EventArgs e)
         {
             BindEvents();
+        }
+
+        private void Page_Load(object sender, EventArgs e)
+        {
             BindCopy();
 
             // Parse query string
@@ -28,11 +33,23 @@
 
             if (IsPostBack)
             {
+                string target = Request.Params.Get("__EVENTTARGET") ?? String.Empty;
+
                 if (!String.IsNullOrEmpty(txtSearch.Text.Trim()))
                 {
                     query = txtSearch.Text.Trim();
                 }
-                type = ddlSearchFilter.SelectedValue;
+
+                if (target == ddlSearchFilter.UniqueID)
+                {
+                    type = ddlSearchFilter.SelectedValue;      
+                }
+                else
+                {
+                    // Empty out type
+                    type = String.Empty;
+                }
+
                 Response.Redirect(FormHelper.GetSearchResultsUrl(query, type));
                 return;
             }
@@ -70,6 +87,8 @@
             Handlers.SearchResultsService svc = new Handlers.SearchResultsService();
 
             ResultSet searchResults = svc.SearchAllArticles(query, type, 1);
+
+            SearchHelper.GetSpellCheckSuggestions(query);
 
             if (searchResults.Articles.Any()) 
             {

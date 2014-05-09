@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.Personalization;
 using UnderstoodDotOrg.Domain.Search;
 
 namespace UnderstoodDotOrg.Domain.Personalization
