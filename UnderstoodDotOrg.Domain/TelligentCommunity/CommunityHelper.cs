@@ -350,6 +350,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return blogPosts;
         
         }
+
         public static List<Blog> ListBlogs()
         {
             var webClient = new WebClient();

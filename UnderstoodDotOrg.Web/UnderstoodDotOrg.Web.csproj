@@ -660,6 +660,76 @@
     <Compile Include="Presentation\Sublayouts\Community\All Parents Search.ascx.designer.cs">
       <DependentUpon>All Parents Search.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsCalendarListView.ascx.cs">
+      <DependentUpon>ExpertsCalendarListView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsCalendarListView.ascx.designer.cs">
+      <DependentUpon>ExpertsCalendarListView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsLive.ascx.cs">
+      <DependentUpon>ExpertsLive.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsLive.ascx.designer.cs">
+      <DependentUpon>ExpertsLive.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveArchive.ascx.cs">
+      <DependentUpon>ExpertsLiveArchive.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveArchive.ascx.designer.cs">
+      <DependentUpon>ExpertsLiveArchive.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveCalendar.ascx.cs">
+      <DependentUpon>ExpertsLiveCalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveCalendar.ascx.designer.cs">
+      <DependentUpon>ExpertsLiveCalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveNoWebinar.ascx.cs">
+      <DependentUpon>ExpertsLiveNoWebinar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveNoWebinar.ascx.designer.cs">
+      <DependentUpon>ExpertsLiveNoWebinar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveRecommended.ascx.cs">
+      <DependentUpon>ExpertsLiveRecommended.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveRecommended.ascx.designer.cs">
+      <DependentUpon>ExpertsLiveRecommended.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsPastChat.ascx.cs">
+      <DependentUpon>ExpertsPastChat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsPastChat.ascx.designer.cs">
+      <DependentUpon>ExpertsPastChat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsPastWebinar.ascx.cs">
+      <DependentUpon>ExpertsPastWebinar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsPastWebinar.ascx.designer.cs">
+      <DependentUpon>ExpertsPastWebinar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsUpcomingChat.ascx.cs">
+      <DependentUpon>ExpertsUpcomingChat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsUpcomingChat.ascx.designer.cs">
+      <DependentUpon>ExpertsUpcomingChat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsUpcomingWebinar.ascx.cs">
+      <DependentUpon>ExpertsUpcomingWebinar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsUpcomingWebinar.ascx.designer.cs">
+      <DependentUpon>ExpertsUpcomingWebinar.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Moderators.ascx.cs">
       <DependentUpon>Moderators.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1688,6 +1758,16 @@
     <Content Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx" />
     <Content Include="Presentation\Sublayouts\Community\All Parents Search.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsCalendarListView.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsLive.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveArchive.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveCalendar.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveNoWebinar.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveRecommended.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsPastChat.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsPastWebinar.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsUpcomingChat.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsUpcomingWebinar.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Moderators.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parent Groups.ascx" />

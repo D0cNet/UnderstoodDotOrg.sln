@@ -25,15 +25,15 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
 
             if (itm["Post"] == "")
             {
-                switch (itm.Parent.Name)
+                switch (itm.Parent.ID.ToString())
                 {
-                    case "The Understood Blog":
+                    case "{37478172-CCDF-454E-BABA-D56096EBE8F9}":
                         blogId = 1;
                         break;
-                    case "Motherlode":
+                    case "{23DC4EBA-B296-46A7-AC68-D813C9931AF0}":
                         blogId = 2;
                         break;
-                    case "Live Well":
+                    case "{A720AAA9-8AC8-4851-A873-0E0F158C61BD}":
                         blogId = 3;
                         break;
                     default:
@@ -89,7 +89,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             }
             catch
             {
-                // do nothing
+                // do nothing for now
             }
         }
     }
