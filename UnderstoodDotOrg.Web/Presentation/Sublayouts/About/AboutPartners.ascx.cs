@@ -37,30 +37,53 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
             if (e.IsItem())
             {
                 PartnerInfoItem _partneritem = e.Item.DataItem as PartnerInfoItem;
+                
                 if (_partneritem != null)
                 {
+                    var itemLink = _partneritem.InnerItem.GetUrl();
                     FieldRenderer frPartnerName = e.FindControlAs<FieldRenderer>("frPartnerName");
+                    
                     if (frPartnerName != null)
                     {
                         frPartnerName.Item = _partneritem;
                         HyperLink hlPartnerNameLink = e.FindControlAs<HyperLink>("hlPartnerNameLink");
                         if (hlPartnerNameLink != null)
                         {
-                            hlPartnerNameLink.NavigateUrl = string.Concat(Request.Url.Host.ToString(), "/", _partneritem.InnerItem.GetUrl());
+                            //hlPartnerNameLink.NavigateUrl = string.Concat(Request.Url.Host.ToString(), "/", _partneritem.InnerItem.GetUrl());
+
+                            hlPartnerNameLink.NavigateUrl = itemLink;
                             hlPartnerNameLink.Visible = true;
                         }
                     }
-                    FieldRenderer frPartnerLogo = e.FindControlAs<FieldRenderer>("frPartnerLogo");
-                    if (frPartnerLogo != null)
+                    //FieldRenderer frPartnerLogo = e.FindControlAs<FieldRenderer>("frPartnerLogo");
+                    //if (frPartnerLogo != null)
+                    //{
+                    //    frPartnerLogo.Item = _partneritem;
+                    //    HyperLink hlPartnerLogo = e.FindControlAs<HyperLink>("hlPartnerLogo");
+                    //    if (hlPartnerLogo != null)
+                    //    {
+                    //        //hlPartnerLogo.NavigateUrl = Request.Url.Host.ToString() + "/" + _partneritem.InnerItem.GetUrl();
+
+                    //        hlPartnerLogo.NavigateUrl = _partneritem.InnerItem.GetUrl();
+                    //        hlPartnerLogo.Visible = true;
+                    //    }
+                    //} //imgPartnerLogo
+
+                    Sitecore.Web.UI.WebControls.Image imgPartnerLogo = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("imgPartnerLogo");
+                    if (imgPartnerLogo != null)
                     {
-                        frPartnerLogo.Item = _partneritem;
+                        imgPartnerLogo.Item = _partneritem;
                         HyperLink hlPartnerLogo = e.FindControlAs<HyperLink>("hlPartnerLogo");
                         if (hlPartnerLogo != null)
                         {
-                            hlPartnerLogo.NavigateUrl = Request.Url.Host.ToString() + "/" + _partneritem.InnerItem.GetUrl();
+                            //hlPartnerLogo.NavigateUrl = Request.Url.Host.ToString() + "/" + _partneritem.InnerItem.GetUrl();
+
+                            hlPartnerLogo.NavigateUrl = itemLink;
                             hlPartnerLogo.Visible = true;
                         }
-                    }
+                    } //imgPartnerLogo
+
+
                     FieldRenderer frPartnerDescription = e.FindControlAs<FieldRenderer>("frPartnerDescription");
                     if (frPartnerDescription != null)
                     {
@@ -69,7 +92,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
                     HyperLink hlPartnerSite = e.FindControlAs<HyperLink>("hlPartnerSite");
                     if (hlPartnerSite != null)
                     {
-                        hlPartnerSite.NavigateUrl = _partneritem.Link;
+                        //hlPartnerSite.NavigateUrl = _partneritem.Link; // no, just no. Use the link manager to link to this item.
+
+                        hlPartnerSite.NavigateUrl = itemLink;
                     }
                 }
             }
