@@ -8,6 +8,7 @@ using Sitecore.Globalization;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.Salesforce;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
@@ -220,6 +221,29 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             //set current user stuff
             this.CurrentMember = this.registeringUser;
             this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
+
+            //updating salesforce
+            SalesforceManager sfMgr = new SalesforceManager("brettgarnier@outlook.com", 
+                                                            "8f9C3Ayq", 
+                                                            "hlY0jOIILtogz3sQlLUtmERlu");
+            if (sfMgr.LoggedIn)
+            {
+                try
+                {
+                    SalesforceActionResult result = sfMgr.CreateWebsiteMemberAsContact(this.CurrentMember, CurrentUser.Email);
+                    if (result.Success == false)
+                    {
+                        //result.Message has info
+                        //write an error message or something
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //handle how you want
+                    //write an error message or something
+                }
+            }
+
 
             Response.Redirect(MembershipHelper.GetNextStepURL(5));
         }

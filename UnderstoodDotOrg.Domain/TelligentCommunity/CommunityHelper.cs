@@ -210,7 +210,18 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         {
             try
             {
+                if (string.IsNullOrEmpty(email))
+                {
+                    throw new Exception("Required value is missing: Email");
+                }
+                if (string.IsNullOrEmpty(username))
+                {
+                    throw new Exception("Required value is missing: username");
+                }
+
                 var webClient = new WebClient();
+
+
 
                 // replace the "admin" and "Admin's API key" with your valid user and apikey!
                 var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");

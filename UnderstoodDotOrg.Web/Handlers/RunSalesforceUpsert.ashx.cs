@@ -19,20 +19,16 @@ namespace UnderstoodDotOrg.Web.Handlers
 	///				SalesforceActionResult result = sfMgr.UpsertWebsiteMemberToSalesforce(m);
     ///               if (result.Success == false)
     ///                {
-	///					//resultMessage has info
-	///				}
+	///					    //result.Message has info
+	///				   }
 	///			catch (Exception ex)
     ///            {
 	///				//handle how you want
-    ///                    //context.Response.Write(Environment.NewLine + "An error occured during in RunSalesfroceUpsert.ashx.cs " + 
-    ///                    //Environment.NewLine + "Message: " +  ex.Message +
-    ///                    //Environment.NewLine + "Stack Trace: " + ex.StackTrace);
     ///            }
     ///		}
     /// </summary>
     public class RunSalesforceUpsert : IHttpHandler
     {
-
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
@@ -40,6 +36,7 @@ namespace UnderstoodDotOrg.Web.Handlers
 
             string fname = context.Request.QueryString["fname"];
             string lname = context.Request.QueryString["lname"];
+            string email = context.Request.QueryString["email"];
 
             
             SalesforceManager sfMgr = new SalesforceManager("brettgarnier@outlook.com", "8f9C3Ayq", "hlY0jOIILtogz3sQlLUtmERlu");
@@ -147,10 +144,8 @@ namespace UnderstoodDotOrg.Web.Handlers
 
                 try
                 {
-
-                    SalesforceActionResult result = sfMgr.UpsertWebsiteMemberToSalesforce(m);
-                   
-
+                    SalesforceActionResult result = sfMgr.CreateWebsiteMemberAsContact(m,email);
+                 
                     if (result.Success == true)
                     {
                         context.Response.Write(Environment.NewLine + "Contact (" + fname + " " + lname + ") is 'saved' to salesforce at: (" + sfMgr.SalesforceURL + ")"
@@ -167,14 +162,9 @@ namespace UnderstoodDotOrg.Web.Handlers
                     context.Response.Write(Environment.NewLine + "An error occured during in RunSalesfroceUpsert.ashx.cs " + 
                         Environment.NewLine + "Message: " +  ex.Message +
                         Environment.NewLine + "Stack Trace: " + ex.StackTrace);
-                }
-
-
+                }                
             }
-
-
         }
-
         public bool IsReusable
         {
             get

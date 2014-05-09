@@ -219,6 +219,13 @@
     <Compile Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx.designer.cs">
       <DependentUpon>PersonalizationAdmin.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx.cs">
+      <DependentUpon>SalesforceContactAdmin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx.designer.cs">
+      <DependentUpon>SalesforceContactAdmin.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx.cs">
       <DependentUpon>Advocacy Article Page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1759,6 +1766,7 @@
     <Content Include="Presentation\Sublayouts\About\SearchResults.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
+    <Content Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\Take Action Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />

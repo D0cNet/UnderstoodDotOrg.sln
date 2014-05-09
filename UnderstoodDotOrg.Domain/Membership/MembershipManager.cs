@@ -371,7 +371,12 @@ namespace UnderstoodDotOrg.Domain.Membership
                     //create Telligent user
                     if (!string.IsNullOrEmpty(Member.ScreenName))
                     {
-                        var communitySuccess = CommunityHelper.CreateUser(Member.ScreenName, Username);
+                        bool communitySuccess = CommunityHelper.CreateUser(Member.ScreenName, Username);
+                        if (communitySuccess == false)
+                        {
+                            // ¡Ay, caramba!
+                            
+                        }
                     }
 
                     return Member;

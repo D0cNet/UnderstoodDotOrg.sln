@@ -10,7 +10,6 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Salesforce;
 using UnderstoodDotOrg.Domain.Membership;
 
-
 namespace UnderstoodDotOrg.Domain.Salesforce
 {
     /// <summary>
@@ -43,7 +42,6 @@ namespace UnderstoodDotOrg.Domain.Salesforce
                 return this._salesforceUrl;
             }
         }
-
 
         public SalesforceManager()
         {
@@ -117,7 +115,7 @@ namespace UnderstoodDotOrg.Domain.Salesforce
         /// </summary>
         /// <param name="newMember"></param>
         /// <returns>SalesforceSaveResult with success/fail bool & message if there was an error</returns>
-        public SalesforceActionResult    UpsertWebsiteMemberToSalesforce(Member newMember)
+        public SalesforceActionResult    CreateWebsiteMemberAsContact(Member newMember, string newMemberEmail) //member needs to be updated to have an email field
         {
 
             ////sf upserts have to happen in the proper order. upsert the member first
@@ -134,17 +132,16 @@ namespace UnderstoodDotOrg.Domain.Salesforce
             //check required values
             if (newMember.FirstName == string.Empty)
             {
-                throw new Exception("First Name is required to save a new Contact to Salesforce");
+                throw new Exception("First Name is required to save a new Contact Member to Service.");
             }
             else
             {
                 newSalesforceContact.FirstName = newMember.FirstName;
                 newSalesforceContact.member_FirstName__c = newMember.FirstName;
-
             }
             if (newMember.LastName == string.Empty)
             {
-                throw new Exception("Last Name is required to save a new Contact to Salesforce");
+                throw new Exception("Last Name is required to save a new Website Contact Member to Service.");
             }
             else
             {
@@ -155,7 +152,6 @@ namespace UnderstoodDotOrg.Domain.Salesforce
             newSalesforceContact.member_MemberId__c = newMember.MemberId.ToString(); //member_MemberId__c is our sfdc external uid on Contact
             newSalesforceContact.member_UserId__c = newMember.UserId.ToString();
             newSalesforceContact.member_ScreenName__c = newMember.ScreenName;
-
 
             //Discovered that if you do not set both the field, and the specififed field, you don't update the checkbocx
             newSalesforceContact.member_allowConnections__c = newMember.allowConnections;
@@ -173,28 +169,18 @@ namespace UnderstoodDotOrg.Domain.Salesforce
             newSalesforceContact.member_isFacebookUser__c = newMember.isFacebookUser;
             newSalesforceContact.member_isFacebookUser__cSpecified = newMember.isFacebookUser;
 
-
             newSalesforceContact.member_isPrivate__c = newMember.isPrivate;
+            newSalesforceContact.member_isPrivate__cSpecified = newMember.isPrivate;
             
-
             newSalesforceContact.member_ZipCode__c = newMember.ZipCode;
-            newSalesforceContact.Email = "bgarnier_noreply@agencyoasis.com";
-            
-            //mapped guid values from Sitecore to Salesforce id. Pass in GUID from sitecore. Get back string ID from salesforce.
-
+            newSalesforceContact.Email = newMemberEmail;            
             newSalesforceContact.member_Role__c = Constants.SalesforceLookupDictionary [newMember.Role];
-           
-            
             newSalesforceContact.Journey__c = Constants.SalesforceLookupDictionary[newMember.Journeys.First().Key];
            
             //ContactsPersonality
             //THERE IS ALSO A PERSONALITYTYPE IN THE WSDL. DO NOT USE IT.
             newSalesforceContact.member_Personality__c = Constants.SalesforceLookupDictionary[newMember.PersonalityType];//.ToString();
             
-            
-            
-            //((Journey)newMember.Journeys.First()).Key.ToString();
-
             //exernal id field name is not the value of the userid. its our guid for member. the name of the field/column in sfdc
             //sfdc needs to know the primary, unique key to look for when updating existing rows
             UpsertResult result = _sfs.upsert("member_MemberId__c", 
@@ -261,11 +247,7 @@ namespace UnderstoodDotOrg.Domain.Salesforce
                 
                 //include a guid for the child's id
                 sfdcChild.UnderstoodChildId__c = c.ChildId.ToString() ;
-
-
-                
                 SaveResult sfdcChildSaveResult = _sfs.create(new sObject[]{sfdcChild})[0];
-                
 
                 if(sfdcChildSaveResult.success == false)
                 {
@@ -275,8 +257,7 @@ namespace UnderstoodDotOrg.Domain.Salesforce
                     foreach (Error e in sfdcChildSaveResult.errors)
                     {
                         sfResult.Message += "Status code: (" + e.statusCode + ") Message: " + e.message + Environment.NewLine;
-                    }
-                    
+                    }   
                     return sfResult;
                 }
                 //=====================================================================================================
@@ -304,7 +285,7 @@ namespace UnderstoodDotOrg.Domain.Salesforce
                     sfResult.Message= Environment.NewLine + 
                                                 "Save Result for Issue (Name:" + sfdcforceChildIssues.Name + Environment.NewLine +
                                                                     "|Issue:" + sfdcforceChildIssues.ChildIssue__c + Environment.NewLine +
-                                                                    " |Success:" + sr.success.ToString();                   
+                                                                   " |Success:" + sr.success.ToString();                   
                 }
                 //save child diagnosis values
                 foreach (Diagnosis childDiagnosis in c.Diagnoses)
@@ -325,10 +306,5 @@ namespace UnderstoodDotOrg.Domain.Salesforce
             //          
             return sfResult;
         }
-
-
-
-
-
     }
 }
