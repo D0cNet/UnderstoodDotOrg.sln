@@ -208,6 +208,10 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutPartnersItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonationThankYouPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonationThankYouPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Page404Item.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Page404Item.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\PartnerInfoItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\SearchFilterTypeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyArticlePageItem.base.cs" />
@@ -304,6 +308,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\CreateAccountItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\CreateAccountItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdvicePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdvicePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdviceVideoPageItem.base.cs" />
