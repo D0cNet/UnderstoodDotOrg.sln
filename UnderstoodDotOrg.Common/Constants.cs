@@ -43,6 +43,8 @@ namespace UnderstoodDotOrg.Common
 
         public const string ARTICLE_SEARCH_INDEX_NAME = "sitecore_web_index";
 
+        public const string ConnectionStringMembership = "membership";
+
         #region Session Keys
         public static string currentUserKey { get { return "_understood_org_current_user"; } }
         public static string currentMemberKey { get { return "_understood_org_current_member"; } }

@@ -16,6 +16,12 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using Microsoft.Practices.ServiceLocation;
+using SolrNet;
+using SolrNet.Commands.Parameters;
+using SolrNet.Impl;
+using SolrNet.Impl.QuerySerializers;
+using SolrNet.Impl.FieldSerializers;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
@@ -337,9 +343,33 @@ namespace UnderstoodDotOrg.Domain.Search
             return results;
         }
 
+        public static void GetSpellCheckSuggestions(string term)
+        {
+            var solr = ServiceLocator.Current.GetInstance<ISolrOperations<Article>>();
+            var schema = solr.GetSchema();
+
+            var templateId = ID.Parse(DefaultArticlePageItem.TemplateId).ToShortID().ToString().ToLower();
+            var q = new SolrQuery(term);
+            var serializer = new DefaultQuerySerializer(new DefaultFieldSerializer());
+            var t = serializer.Serialize(q);
+            var results = solr.Query(q, new QueryOptions
+            {
+                SpellCheck = new SpellCheckingParameters { }
+            });
+
+            foreach (var sc in results.SpellChecking)
+            {
+                foreach (var s in sc.Suggestions)
+                {
+
+                }
+            }
+        }
+
         public static List<Article> PerformArticleSearch(string terms, string template, int page, out int totalResults)
         {
             var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+
             using (var ctx = index.CreateSearchContext())
             {
                 var query = ctx.GetQueryable<Article>()

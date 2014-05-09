@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Sitecore.Data.Items;
+using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,14 +13,29 @@ namespace UnderstoodDotOrg.Domain.Personalization
 {
     public class PersonalizationHelper
     {
+        private static IOrderedQueryable<PersonalizedContent> GetOrderedChildContent(PersonalizationContext dataContext, Child child)
+        {
+            return from entry in dataContext.PersonalizedContent
+                   where entry.ChildId == child.ChildId
+                   orderby entry.DisplayOrder
+                   select entry;
+        }
+
+        public static List<Guid> GetChildPersonalizedContents(Child child)
+        {
+            using (var pc = new PersonalizationContext(System.Configuration.ConfigurationManager.ConnectionStrings[Constants.ConnectionStringMembership].ConnectionString))
+            {
+                return (from c in GetOrderedChildContent(pc, child)
+                       where c.ContentId != Constants.ContentItem.PersonalizedContentNotFound
+                       select c.ContentId).ToList();
+            }
+        }
+
         public static void SavePersonalizedContent(Member member, Child child, List<Article> articles)
         {
-            using (var pc = new PersonalizationContext(System.Configuration.ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+            using (var pc = new PersonalizationContext(System.Configuration.ConfigurationManager.ConnectionStrings[Constants.ConnectionStringMembership].ConnectionString))
             {
-                var results = from entry in pc.PersonalizedContent
-                              where entry.ChildId == child.ChildId
-                              orderby entry.DisplayOrder
-                              select entry;
+                var results = GetOrderedChildContent(pc, child);
 
                 if (!results.Any())
                 {
