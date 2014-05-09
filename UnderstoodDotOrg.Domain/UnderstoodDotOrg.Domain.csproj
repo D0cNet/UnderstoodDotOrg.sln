@@ -201,6 +201,7 @@
     <Compile Include="SitecoreCIG\Poses\Folders\UtilityNavigationFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\HeroImageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\HomeSliderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\LanguageLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\LanguageLinkItem.instance.cs" />
