@@ -31,6 +31,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frReviewedby;
         
         /// <summary>
+        /// uxReviewDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder uxReviewDate;
+        
+        /// <summary>
         /// dtReviewdDate control.
         /// </summary>
         /// <remarks>

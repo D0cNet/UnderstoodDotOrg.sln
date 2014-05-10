@@ -21,123 +21,143 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 {
     public partial class ReviewerInfo : System.Web.UI.UserControl
     {
-        DefaultArticlePageItem ObjDefaultArticle;
-        
-        ChecklistArticlePageItem ObjChecklistArticle;
-        BasicArticlePageItem ObjBasicArticle;
-        AudioArticlePageItem ObjAudioArtcile;
-        VideoArticlePageItem ObjVideoArticle;
-        DeepDiveArticlePageItem ObjDeepDievArticle;
-       // TextOnlyTipsArticlePageItem ObjTextTipArticle;
-        ActionStyleListPageItem ObjActionStyleArticle;
-        GlossaryPageItem ObjGlossaryArticle;
-       // AssessmentQuizArticlePage1Item ObjAssesmtQuizPage1;
-       // AssessmentQuizArticlePage2Item ObjAssesmtQuizPage2;
-        AssessmentQuizArticlePageEndItem ObjAssesmtQuizEnd;
-       // KnowledgeQuizQuestionArticlePageItem ObjKnowledgeQuizPage;
-        KnowledgeQuizResultsArticlePageItem ObjKnowledgeQuizResult;
-        //SimpleExpertArticleItem ObjSimpleExpertArticle;
-        InfographicArticlePageItem ObjInfoGraphicArticle;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Sitecore.Context.Item.TemplateID.ToString() == BasicArticlePageItem.TemplateId)
+            var item = (DefaultArticlePageItem)Sitecore.Context.Item;
+
+            if (item != null)
             {
-                ObjBasicArticle = (BasicArticlePageItem)Sitecore.Context.Item;
-                ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;
-            }
-            if (Sitecore.Context.Item.TemplateID.ToString() == ChecklistArticlePageItem.TemplateId)
-            {
-                ObjChecklistArticle= (ChecklistArticlePageItem)Sitecore.Context.Item;
-                ObjDefaultArticle = ObjChecklistArticle.DefaultArticlePage;
-            }
-            if (Sitecore.Context.Item.TemplateID.ToString() == AudioArticlePageItem.TemplateId)
-            {
-                ObjAudioArtcile= (AudioArticlePageItem)Sitecore.Context.Item;
-                ObjDefaultArticle = ObjAudioArtcile.DefaultArticlePage;
-            }
-            if (Sitecore.Context.Item.TemplateID.ToString() == VideoArticlePageItem.TemplateId)
-            {
-                ObjVideoArticle= (VideoArticlePageItem)Sitecore.Context.Item;
-                ObjDefaultArticle = ObjVideoArticle.DefaultArticlePage;
-            }
-            if (Sitecore.Context.Item.TemplateID.ToString() == DeepDiveArticlePageItem.TemplateId)
-            {
-                ObjDeepDievArticle= (DeepDiveArticlePageItem)Sitecore.Context.Item;
-                ObjDefaultArticle = ObjDeepDievArticle.DefaultArticlePage;
-            }
-            //if (Sitecore.Context.Item.TemplateID.ToString() == TextOnlyTipsArticlePageItem.TemplateId)
-            //{
-            //    ObjTextTipArticle= (TextOnlyTipsArticlePageItem)Sitecore.Context.Item;
-            //    ObjDefaultArticle = ObjTextTipArticle.DefaultArticlePage;
-            //}
-            if (Sitecore.Context.Item.TemplateID.ToString() == ActionStyleListPageItem.TemplateId)
-            {
-                ObjActionStyleArticle= (ActionStyleListPageItem)Sitecore.Context.Item;
-                ObjDefaultArticle = ObjActionStyleArticle.DefaultArticlePage;
-            }
-            if (Sitecore.Context.Item.TemplateID.ToString() == GlossaryPageItem.TemplateId)
-            {
-                ObjGlossaryArticle= (GlossaryPageItem)Sitecore.Context.Item;
-                ObjDefaultArticle = ObjGlossaryArticle.DefaultArticlePage;
-            }
-            if (Sitecore.Context.Item.TemplateID.ToString() == AssessmentQuizArticlePageEndItem.TemplateId)
-            {
-                ObjAssesmtQuizEnd= (AssessmentQuizArticlePageEndItem)Sitecore.Context.Item;
-                ObjDefaultArticle = null;
-                if (ObjAssesmtQuizEnd.Reviewedby.Item != null)//Reviwer Name
+                if (item.Reviewedby.Item != null)//Reviwer Name
                 {
-                    frReviewedby.Item = ObjAssesmtQuizEnd.Reviewedby.Item;
-                    hlReviewdby.NavigateUrl = string.Concat("http://", Request.Url.Host.ToString(), ObjAssesmtQuizEnd.Reviewedby.Item.GetUrl());
+                    frReviewedby.Item = item.Reviewedby.Item;
+                    hlReviewdby.NavigateUrl = item.Reviewedby.Item.GetUrl();
                 }
-                if (ObjAssesmtQuizEnd.ReviewedDate.DateTime != null)// Reviewed date 
+                if (item.ReviewedDate.DateTime != null && item.ReviewedDate.DateTime != DateTime.MinValue)// Reviewed date 
                 {
+                    uxReviewDate.Visible = true;
                     dtReviewdDate.Field = "Reviewed Date";
                     dtReviewdDate.Format = "dd MMM yy";
                 }
             }
-            if (Sitecore.Context.Item.TemplateID.ToString() == KnowledgeQuizResultsArticlePageItem.TemplateId)
-            {
-                ObjKnowledgeQuizResult= (KnowledgeQuizResultsArticlePageItem)Sitecore.Context.Item;
-                ObjDefaultArticle = null;
-                if (ObjAssesmtQuizEnd.Reviewedby.Item != null)//Reviwer Name
-                {
-                    frReviewedby.Item = ObjAssesmtQuizEnd.Reviewedby.Item;
-                    hlReviewdby.NavigateUrl = string.Concat("http://", Request.Url.Host.ToString(), ObjAssesmtQuizEnd.Reviewedby.Item.GetUrl());
-                }
-                if (ObjAssesmtQuizEnd.ReviewedDate.DateTime != null)// Reviewed date 
-                {
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
-            }
-            //if (Sitecore.Context.Item.TemplateID.ToString() == SimpleExpertArticleItem.TemplateId)
-            //{
-            //    ObjSimpleExpertArticle= (SimpleExpertArticleItem)Sitecore.Context.Item;
-            //    ObjDefaultArticle = ObjSimpleExpertArticle.DefaultArticlePage;
-            //}
-            if (Sitecore.Context.Item.TemplateID.ToString() == InfographicArticlePageItem.TemplateId)
-            {
-                ObjInfoGraphicArticle= (InfographicArticlePageItem)Sitecore.Context.Item;
-                ObjDefaultArticle = ObjInfoGraphicArticle.DefaultArticlePage;
-            }
+        }
+
+       // DefaultArticlePageItem ObjDefaultArticle;
+        
+       // ChecklistArticlePageItem ObjChecklistArticle;
+       // BasicArticlePageItem ObjBasicArticle;
+       // AudioArticlePageItem ObjAudioArtcile;
+       // VideoArticlePageItem ObjVideoArticle;
+       // DeepDiveArticlePageItem ObjDeepDievArticle;
+       //// TextOnlyTipsArticlePageItem ObjTextTipArticle;
+       // ActionStyleListPageItem ObjActionStyleArticle;
+       // GlossaryPageItem ObjGlossaryArticle;
+       //// AssessmentQuizArticlePage1Item ObjAssesmtQuizPage1;
+       //// AssessmentQuizArticlePage2Item ObjAssesmtQuizPage2;
+       // AssessmentQuizArticlePageEndItem ObjAssesmtQuizEnd;
+       //// KnowledgeQuizQuestionArticlePageItem ObjKnowledgeQuizPage;
+       // KnowledgeQuizResultsArticlePageItem ObjKnowledgeQuizResult;
+       // //SimpleExpertArticleItem ObjSimpleExpertArticle;
+       // InfographicArticlePageItem ObjInfoGraphicArticle;
+
+       // protected void Page_Load(object sender, EventArgs e)
+       // {
+       //     if (Sitecore.Context.Item.TemplateID.ToString() == BasicArticlePageItem.TemplateId)
+       //     {
+       //         ObjBasicArticle = (BasicArticlePageItem)Sitecore.Context.Item;
+       //         ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;
+       //     }
+       //     if (Sitecore.Context.Item.TemplateID.ToString() == ChecklistArticlePageItem.TemplateId)
+       //     {
+       //         ObjChecklistArticle= (ChecklistArticlePageItem)Sitecore.Context.Item;
+       //         ObjDefaultArticle = ObjChecklistArticle.DefaultArticlePage;
+       //     }
+       //     if (Sitecore.Context.Item.TemplateID.ToString() == AudioArticlePageItem.TemplateId)
+       //     {
+       //         ObjAudioArtcile= (AudioArticlePageItem)Sitecore.Context.Item;
+       //         ObjDefaultArticle = ObjAudioArtcile.DefaultArticlePage;
+       //     }
+       //     if (Sitecore.Context.Item.TemplateID.ToString() == VideoArticlePageItem.TemplateId)
+       //     {
+       //         ObjVideoArticle= (VideoArticlePageItem)Sitecore.Context.Item;
+       //         ObjDefaultArticle = ObjVideoArticle.DefaultArticlePage;
+       //     }
+       //     if (Sitecore.Context.Item.TemplateID.ToString() == DeepDiveArticlePageItem.TemplateId)
+       //     {
+       //         ObjDeepDievArticle= (DeepDiveArticlePageItem)Sitecore.Context.Item;
+       //         ObjDefaultArticle = ObjDeepDievArticle.DefaultArticlePage;
+       //     }
+       //     //if (Sitecore.Context.Item.TemplateID.ToString() == TextOnlyTipsArticlePageItem.TemplateId)
+       //     //{
+       //     //    ObjTextTipArticle= (TextOnlyTipsArticlePageItem)Sitecore.Context.Item;
+       //     //    ObjDefaultArticle = ObjTextTipArticle.DefaultArticlePage;
+       //     //}
+       //     if (Sitecore.Context.Item.TemplateID.ToString() == ActionStyleListPageItem.TemplateId)
+       //     {
+       //         ObjActionStyleArticle= (ActionStyleListPageItem)Sitecore.Context.Item;
+       //         ObjDefaultArticle = ObjActionStyleArticle.DefaultArticlePage;
+       //     }
+       //     if (Sitecore.Context.Item.TemplateID.ToString() == GlossaryPageItem.TemplateId)
+       //     {
+       //         ObjGlossaryArticle= (GlossaryPageItem)Sitecore.Context.Item;
+       //         ObjDefaultArticle = ObjGlossaryArticle.DefaultArticlePage;
+       //     }
+       //     if (Sitecore.Context.Item.TemplateID.ToString() == AssessmentQuizArticlePageEndItem.TemplateId)
+       //     {
+       //         ObjAssesmtQuizEnd= (AssessmentQuizArticlePageEndItem)Sitecore.Context.Item;
+       //         ObjDefaultArticle = null;
+       //         if (ObjAssesmtQuizEnd.Reviewedby.Item != null)//Reviwer Name
+       //         {
+       //             frReviewedby.Item = ObjAssesmtQuizEnd.Reviewedby.Item;
+       //             hlReviewdby.NavigateUrl = string.Concat("http://", Request.Url.Host.ToString(), ObjAssesmtQuizEnd.Reviewedby.Item.GetUrl());
+       //         }
+       //         if (ObjAssesmtQuizEnd.ReviewedDate.DateTime != null)// Reviewed date 
+       //         {
+       //             dtReviewdDate.Field = "Reviewed Date";
+       //             dtReviewdDate.Format = "dd MMM yy";
+       //         }
+       //     }
+       //     if (Sitecore.Context.Item.TemplateID.ToString() == KnowledgeQuizResultsArticlePageItem.TemplateId)
+       //     {
+       //         ObjKnowledgeQuizResult= (KnowledgeQuizResultsArticlePageItem)Sitecore.Context.Item;
+       //         ObjDefaultArticle = null;
+       //         if (ObjAssesmtQuizEnd.Reviewedby.Item != null)//Reviwer Name
+       //         {
+       //             frReviewedby.Item = ObjAssesmtQuizEnd.Reviewedby.Item;
+       //             hlReviewdby.NavigateUrl = string.Concat("http://", Request.Url.Host.ToString(), ObjAssesmtQuizEnd.Reviewedby.Item.GetUrl());
+       //         }
+       //         if (ObjAssesmtQuizEnd.ReviewedDate.DateTime != null)// Reviewed date 
+       //         {
+       //             dtReviewdDate.Field = "Reviewed Date";
+       //             dtReviewdDate.Format = "dd MMM yy";
+       //         }
+       //     }
+       //     //if (Sitecore.Context.Item.TemplateID.ToString() == SimpleExpertArticleItem.TemplateId)
+       //     //{
+       //     //    ObjSimpleExpertArticle= (SimpleExpertArticleItem)Sitecore.Context.Item;
+       //     //    ObjDefaultArticle = ObjSimpleExpertArticle.DefaultArticlePage;
+       //     //}
+       //     if (Sitecore.Context.Item.TemplateID.ToString() == InfographicArticlePageItem.TemplateId)
+       //     {
+       //         ObjInfoGraphicArticle= (InfographicArticlePageItem)Sitecore.Context.Item;
+       //         ObjDefaultArticle = ObjInfoGraphicArticle.DefaultArticlePage;
+       //     }
 
 
-            if (ObjDefaultArticle != null)
-            {
-                if (ObjDefaultArticle.Reviewedby.Item != null)//Reviwer Name
-                {
-                    frReviewedby.Item = ObjDefaultArticle.Reviewedby.Item;
-                    hlReviewdby.NavigateUrl = string.Concat("http://", Request.Url.Host.ToString(), ObjDefaultArticle.Reviewedby.Item.GetUrl());
-                }
-                if (ObjDefaultArticle.ReviewedDate.DateTime != null)// Reviewed date 
-                {
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
-            }
+       //     if (ObjDefaultArticle != null)
+       //     {
+       //         if (ObjDefaultArticle.Reviewedby.Item != null)//Reviwer Name
+       //         {
+       //             frReviewedby.Item = ObjDefaultArticle.Reviewedby.Item;
+       //             hlReviewdby.NavigateUrl = string.Concat("http://", Request.Url.Host.ToString(), ObjDefaultArticle.Reviewedby.Item.GetUrl());
+       //         }
+       //         if (ObjDefaultArticle.ReviewedDate.DateTime != null)// Reviewed date 
+       //         {
+       //             dtReviewdDate.Field = "Reviewed Date";
+       //             dtReviewdDate.Format = "dd MMM yy";
+       //         }
+       //     }
 
             
-        }
+       // }
     }
 }

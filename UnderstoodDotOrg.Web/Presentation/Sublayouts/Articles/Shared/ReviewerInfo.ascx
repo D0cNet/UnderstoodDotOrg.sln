@@ -4,10 +4,14 @@
     <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
         <%--<a href="REPLACE">Dr. Samantha Frank</a>--%>
         <asp:HyperLink ID="hlReviewdby" runat="server">
-            <sc:fieldrenderer id="frReviewedby" runat="server" fieldname="Revierwer Name" />
+            <sc:FieldRenderer ID="frReviewedby" runat="server" FieldName="Revierwer Name" />
         </asp:HyperLink>
-    </span><span class="dot"></span><span class="reviewed-by-date">
-        <%--12&nbsp;Dec&nbsp;&apos;13 --%>
-        <sc:date id="dtReviewdDate" field="Reviewed Date" runat="server" format="dd MMM yy" />
     </span>
+    <asp:Placeholder ID="uxReviewDate" runat="server" Visible="false">
+        <span class="dot"></span>
+        <span class="reviewed-by-date">
+            <%--12&nbsp;Dec&nbsp;&apos;13 --%>
+            <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />
+        </span>
+    </asp:Placeholder>
 </p>
