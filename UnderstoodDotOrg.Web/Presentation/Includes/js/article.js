@@ -591,6 +591,7 @@
   };
 
 })(jQuery);
+
 $(document).ready(function() {
 
 
@@ -807,14 +808,49 @@ $(document).ready(function() {
 
 })(jQuery);
 
+(function ($) {
 
+    // Initialize the module on page load.
+    $(document).ready(function () {
+        new U.infographic();
+    });
 
+    U.infographic = function () {
+        var self = this;
 
+        this.initialize = function () {
+            //set click-to-select on text area
 
+            $("#embed-overlay").on('shown.bs.modal', function (e) {
+                //alert('done modal load');
 
+                //attach "click-to-select" to modal text body
+                $(".modal-body textarea").click(function () {
+                    $(this).select();
+                });
 
+                //attach zClip "click-to-copy" to modal copy button
+                $(".copy-button-container a").zclip(
+                    {
+                        path: "/Presentation/Includes/js/vendor/ZeroClipboard.swf",
+                        copy: $(".modal-body textarea").text(),
+                        afterCopy: function () {
+                            //show message saying stuff was copied?
 
+                            $("#copyAlert").removeClass("hidden").addClass("show");
+                            window.setTimeout(function () { $("#copyAlert").removeClass("show").addClass("hidden"); }, 2000);
+                            //return false to prevent an alert from showing up
+                            return false;
+                        }
+                    });
+            });
 
+            $("#embed-overlay").on('hide.bs.modal', function (e) {
+                //detach zClip from button
+                $(".copy-button-container a").zclip('remove');
+            });
+        };
 
-
-
+        return this.initialize();
+    };
+})(jQuery);

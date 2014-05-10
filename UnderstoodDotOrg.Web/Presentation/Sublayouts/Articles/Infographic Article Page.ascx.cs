@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.Glossarypage;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Items;
 using Sitecore.Web.UI.WebControls;
+using System.IO;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -27,6 +28,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 else
                     SBReviewedBy.Visible = false;
 
+                uxModalEmbed.Text = ObjInfographArticle.Image.Rendered.Replace("src=\"", "src=\"" + Request.Url.Scheme + "://" + Request.Url.Host);
             }
 
         }

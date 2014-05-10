@@ -31,13 +31,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frInfographicImage;
         
         /// <summary>
-        /// frInfographEmbedtag control.
+        /// uxModalEmbed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frInfographEmbedtag;
+        protected global::System.Web.UI.WebControls.TextBox uxModalEmbed;
         
         /// <summary>
         /// SBReviewedBy control.

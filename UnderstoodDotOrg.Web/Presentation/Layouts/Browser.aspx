@@ -107,6 +107,7 @@
         <script src="/Presentation/includes/js/vendor/jquery.mobile.custom.min.js"></script>
         <script src="/Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
         <script src="/Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.zclip.min.js"></script>
         <%--<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>--%>
         <script src="/Presentation/includes/js/vendor/json2.js"></script>
         <script src="/Presentation/includes/js/vendor/handlebars-v1.3.0.js"></script>

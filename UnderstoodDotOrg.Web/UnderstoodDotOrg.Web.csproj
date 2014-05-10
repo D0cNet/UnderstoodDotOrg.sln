@@ -104,6 +104,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\DownloadFile.ashx.cs">
+      <DependentUpon>DownloadFile.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Handlers\RunPersonalizationService.ashx.cs">
       <DependentUpon>RunPersonalizationService.ashx</DependentUpon>
     </Compile>
@@ -1748,11 +1751,13 @@
     <Content Include="Presentation\Includes\js\vendor\jquery.uniform.min.js" />
     <Content Include="Presentation\Includes\js\vendor\jquery.validate.js" />
     <Content Include="Presentation\Includes\js\vendor\jquery.validate.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\jquery.zclip.min.js" />
     <Content Include="Presentation\Includes\js\vendor\json2.js" />
     <Content Include="Presentation\Includes\js\vendor\modernizr.custom.js" />
     <Content Include="Presentation\Includes\js\vendor\modernizr.custom.min.js" />
     <Content Include="Presentation\Includes\js\vendor\selectivizr.js" />
     <Content Include="Presentation\Includes\js\vendor\selectivizr.min.js" />
+    <Content Include="Presentation\Includes\js\vendor\ZeroClipboard.swf" />
     <Content Include="Presentation\Layouts\Browser.aspx" />
     <Content Include="Presentation\MembershipTest.aspx" />
     <Content Include="Presentation\Sublayouts\About\404Page.ascx" />
@@ -1955,6 +1960,7 @@
     <Content Include="Presentation\Includes\images\sprite.advice.results.psd" />
     <Content Include="Presentation\Includes\images\sprite.infographic-zoom.psd" />
     <Content Include="Presentation\Includes\js\vendor\jquery-1.10.2.min.map" />
+    <Content Include="Handlers\DownloadFile.ashx" />
     <None Include="Properties\PublishProfiles\Local.pubxml">
       <SubType>Designer</SubType>
     </None>
