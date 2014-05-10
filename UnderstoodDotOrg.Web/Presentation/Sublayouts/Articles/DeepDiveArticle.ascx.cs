@@ -31,7 +31,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     //hlAuthorImage.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
                     //hlAuthorMorePost.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.FullPath;
                 }
-                
+
                 //Get Reviewer Name
                 if (ObjDeepDiveArticle.DefaultArticlePage.Reviewedby.Item != null && ObjDeepDiveArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
                     SBReviewedBy.Visible = true;
@@ -50,49 +50,37 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 List<DeepDiveSectionInfoPageItem> FinalSectionList = DeepDiveArticlePageItem.GetSectionData(ObjDeepDiveArticle);
                 if (FinalSectionList != null)
                 {
-                    rptSectionPage.DataSource = FinalSectionList;
-                    rptSectionPage.DataBind();
-
                     rptSectionList.DataSource = FinalSectionList;
                     rptSectionList.DataBind();
+
+                    uxSections.DataSource = FinalSectionList;
+                    uxSections.DataBind();
                 }
             }
         }
 
-        protected void rptSectionList_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        protected void rptSectionList_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            if (e.IsItem())
+            var itemLink = e.Item.FindControl("uxItemLink") as HyperLink;
+            if (itemLink != null)
             {
-                DeepDiveSectionInfoPageItem SecItem = e.Item.DataItem as DeepDiveSectionInfoPageItem;
-                if (SecItem != null)
-                {
-                    FieldRenderer frSectionTitle = e.FindControlAs<FieldRenderer>("frSectionTitle");
-                    frSectionTitle.Item = SecItem;
-                    HyperLink hlSectionTitle = e.FindControlAs<HyperLink>("hlSectionTitle");
-                    hlSectionTitle.NavigateUrl = SecItem.InnerItem.Uri.Path;
-
-                }
+                itemLink.Attributes["href"] = "#item" + e.Item.DisplayIndex;
             }
-           
         }
 
-        protected void rptSectionPage_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        protected void uxSections_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            if (e.IsItem())
+            var jumpLink = e.Item.FindControl("uxJumpLink") as Literal;
+            if (jumpLink != null)
             {
-                DeepDiveSectionInfoPageItem SecItem = e.Item.DataItem as DeepDiveSectionInfoPageItem;
-                if (SecItem != null)
-                {
-                    FieldRenderer frSectionTitle = e.FindControlAs<FieldRenderer>("frSectionTitle");
-                    frSectionTitle.Item = SecItem;
-                    FieldRenderer frSectionSubTitle = e.FindControlAs<FieldRenderer>("frSectionSubTitle");
-                    frSectionSubTitle.Item = SecItem;
-                    FieldRenderer frSectionContent = e.FindControlAs<FieldRenderer>("frSectionContent");
-                    frSectionContent.Item = SecItem;
-
-                }
+                jumpLink.Text = string.Format("<a name=\"item{0}\"></a>", e.Item.DisplayIndex);
             }
-           
+
+            var moreLink = e.Item.FindControl("uxMore") as Placeholder;
+            if (moreLink != null && e.Item.DisplayIndex == 3)
+            {
+                moreLink.Visible = true;
+            }
         }
     }
 }
