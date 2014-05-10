@@ -64,7 +64,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                 frAuthorName.Item = ObjDefaultArticle.AuthorName.Item;
                 frAuthorBio.Item = ObjDefaultArticle.AuthorName.Item;
                 frAuthorImage.Item = ObjDefaultArticle.AuthorName.Item;
-                frAuthorImage.FieldName = "Author Image";
+                //frAuthorImage.FieldName = "Author Image";
                 hlAuthorImage.NavigateUrl = ObjDefaultArticle.AuthorName.Item.Paths.ContentPath;
                 hlAuthorMorePost.NavigateUrl = ObjDefaultArticle.AuthorName.Item.Paths.FullPath;
             }
