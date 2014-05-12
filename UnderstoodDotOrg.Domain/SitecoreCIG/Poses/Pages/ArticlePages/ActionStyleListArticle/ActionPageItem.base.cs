@@ -56,13 +56,13 @@ public CustomTextField Introduction
 }
 
 
-public CustomIntegerField ActionNumber
-{
-	get
-	{
-		return new CustomIntegerField(InnerItem, InnerItem.Fields["Action Number"]);
-	}
-}
+//public CustomIntegerField ActionNumber
+//{
+//    get
+//    {
+//        return new CustomIntegerField(InnerItem, InnerItem.Fields["Action Number"]);
+//    }
+//}
 
 
 #endregion //Field Instance Methods
