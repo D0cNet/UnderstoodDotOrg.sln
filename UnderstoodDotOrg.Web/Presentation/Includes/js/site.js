@@ -334,8 +334,11 @@ U.searchSite = function(){
         }
     });
 	self.input_submit.on("click", function(e) {
-		e.preventDefault();
-		self.redirectToSearch($dataPath, self.input_text.val());
+		// prevent .NET from triggering postback
+		if ($(this).is(":focus")) {
+			e.preventDefault();
+			self.redirectToSearch($dataPath, self.input_text.val());
+		}
 	});
     // END - OASIS
 
