@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="True" CodeBehind="BehaviorToolAdvicePage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.BehaviorToolAdvicePage" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="container article">
   <div class="row row-equal-heights">
     <!-- article -->
@@ -16,19 +17,19 @@
       <!-- BEGIN PARTIAL: behavior-tip-detail -->
 <div class="behavior-tip-detail">
   <header>
-    <h2>Give at least 5 minutes advance warning</h2>
+    <h2><sc:FieldRenderer ID="frTitle" runat="server" FieldName="Tip Title" /></h2>
   </header>
   <section class="tip-detail-content">
     <h3 class="first-sub-header">What you can do</h3>
-    <p>In voluptatibus velit fugiat perspiciatis eveniet assumenda. aspernatur quidem saepe quo laboriosam molestiae minus molestiae odio deserunt necessitatibus fugiat eos id. ipsa modi blanditiis sed optio veritatis exercitationem vitae saepe esse qui ex et ut vel</p>
+    <sc:FieldRenderer ID="frWhatYouCanDo" runat="server" FieldName="What You Can Do" />
   </section> <!-- end tip-detail-content -->
   <section class="tip-detail-content">
     <h3>What you can say</h3>
-    <p>Exercitationem voluptatem aliquid sit voluptates. temporibus incidunt voluptatem voluptas ut vel quia quod ut optio et harum. magnam laborum omnis asperiores exercitationem a. praesentium neque numquam quia ratione suscipit earum rerum nostrum non quia nostrum quo laborum. et quia nihil et error eveniet nobis quis eos dolores voluptate molestias. dolores modi deleniti accusantium id molestias et aut dolore optio unde totam</p>
+    <sc:FieldRenderer ID="frWhatYouCanSay" runat="server" FieldName="What You Can Say" />
   </section> <!-- end tip-detail-content -->
   <section class="tip-detail-content no-border">
     <h3>Why this will help</h3>
-    <p>Dolor aspernatur illo fuga tenetur aut quo blanditiis quas velit non consequatur natus suscipit sit. voluptatem delectus ullam fugit enim dolores sit aperiam reprehenderit quia voluptas molestiae. enim cupiditate debitis fuga maiores sequi quibusdam dolorem iste illum</p>
+    <sc:FieldRenderer ID="frWhyThisWillHelp" runat="server" FieldName="Why This Will Help" />
   </section> <!-- end tip-detail-content -->
 </div> <!-- end behavior-tip-detail -->
 

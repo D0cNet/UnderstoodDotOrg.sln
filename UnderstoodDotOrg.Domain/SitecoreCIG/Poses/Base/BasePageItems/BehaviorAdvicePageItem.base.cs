@@ -55,11 +55,38 @@ public CustomTreeListField ChildChallenges
 }
 
 
+public CustomTextField TipTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Tip Title"]);
+	}
+}
+
+
+public CustomTextField RelatedArticlesTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Related Articles Title"]);
+	}
+}
+
+
 public CustomTreeListField ChildGrades
 {
 	get
 	{
 		return new CustomTreeListField(InnerItem, InnerItem.Fields["Child Grades"]);
+	}
+}
+
+
+public CustomTreeListField RelatedArticlesItems
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Related Articles Items"]);
 	}
 }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 {
@@ -11,7 +12,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            BindContent();
+        }
 
+        private void BindContent()
+        {
+            BehaviorToolsAdvicePageItem item = new BehaviorToolsAdvicePageItem(Sitecore.Context.Item);
+            
+            frTitle.Item = frWhatYouCanDo.Item = frWhatYouCanSay.Item = frWhyThisWillHelp.Item = item;
         }
     }
 }

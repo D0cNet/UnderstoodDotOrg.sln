@@ -46,15 +46,6 @@ public static implicit operator Item(BehaviorToolsAdviceVideoPageItem customItem
 #region Field Instance Methods
 
 
-public CustomTextField TipTitle
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Tip Title"]);
-	}
-}
-
-
 public CustomTextField BrightcoveVideoURL
 {
 	get

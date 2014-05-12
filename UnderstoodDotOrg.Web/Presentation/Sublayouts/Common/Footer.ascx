@@ -30,7 +30,7 @@
                         <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
                     </fieldset>
                     <div class="submit-button-wrap">
-                        <input type="submit" class="submit-button" value="Sign Up">
+                        <input type="submit" class="button" value="Sign Up">
                     </div>
                 </div>
 

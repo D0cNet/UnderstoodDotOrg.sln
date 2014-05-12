@@ -5,13 +5,15 @@
     <div class="col col-24 offset-1">
       <h2>Related Articles</h2>
       <!-- BEGIN PARTIAL: more-carousel -->
-<div id="more-carousel-slides-container">
+<div id="featured-slides-container" class="arrows-gray">
   <ul>
     <li>
-      <a href="REPLACE">
-        <p>Understand Your Child's Problem: Start a Log</p>
-        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-      </a>
+        <div class="rs_read_this">
+          <a href="REPLACE">
+            <p>Understand Your Child's Problem: Start a Log</p>
+            <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
+          </a>
+        </div>
     </li>
     <li>
       <a href="REPLACE">
