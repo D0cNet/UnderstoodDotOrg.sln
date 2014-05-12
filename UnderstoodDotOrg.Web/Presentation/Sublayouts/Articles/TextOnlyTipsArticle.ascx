@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TextOnlyTipsArticle.ascx.cs"
     Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.TextOnlyTipsArticle" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+
 <script type="text/javascript">
     (function (d) {
         var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
@@ -94,7 +95,7 @@
                                                         email</button>
                                                     <button class="icon-plus">
                                                         save this</button>
-                                                    <button class="icon-print"  onclick="window.print()">
+                                                    <button class="icon-print" onclick="window.print()">
                                                         print</button>
                                                     <button class="icon-bell">
                                                         remind me</button>
@@ -647,7 +648,14 @@
                 <div class="index-buttons-container">
                     <button class="button prev gray">
                         Prev</button>
-                    <button class="button gray" data-target="1">
+                    <asp:ListView runat="server" ID="uxSliderButtonGroup">
+                        <ItemTemplate>
+                            <button class="button gray" data-target="<%# ((ListViewDataItem)Container).DisplayIndex + 1 %>">
+                                <%# ((ListViewDataItem)Container).DisplayIndex + 1 %>
+                            </button>
+                        </ItemTemplate>
+                    </asp:ListView>
+                    <%--<button class="button gray" data-target="1">
                         1</button>
                     <button class="button gray" data-target="2">
                         2</button>
@@ -664,7 +672,7 @@
                     <button class="button gray" data-target="8">
                         8</button>
                     <button class="button gray" data-target="9">
-                        9</button>
+                        9</button>--%>
                     <button class="button next gray">
                         Next</button>
                     <button class="button last gray">

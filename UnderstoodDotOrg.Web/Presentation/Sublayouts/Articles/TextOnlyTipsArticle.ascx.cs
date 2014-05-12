@@ -40,6 +40,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 rptAllTips.DataSource = AllChildSlides;
                 rptAllTips.DataBind();
 
+                uxSliderButtonGroup.DataSource = AllChildSlides;
+                uxSliderButtonGroup.DataBind();
+
             }
 
         }
