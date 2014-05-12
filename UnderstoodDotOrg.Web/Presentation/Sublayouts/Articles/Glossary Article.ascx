@@ -79,10 +79,18 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <div class="glossary-container">
-                            <a class="glossary-anchor"><%-- name="A">A--%>
+                            <div class="glossary-anchor">
                                 <asp:LinkButton ID="btnTermAnchor" runat="server">
                                     <%#Container.DataItem %>
                                 </asp:LinkButton>
+                            </div>
+                            <%--<a class="glossary-anchor">
+                                <asp:LinkButton ID="btnTermAnchor" runat="server">
+                                    <%#Container.DataItem %>
+                                </asp:LinkButton>
+                            </a>--%>
+                            <a class="glossary-anchor"><%-- name="A">A--%>
+                              
                             </a>
                             <a class="back-to-top" href="#">Back to Top</a>
                         </div>
@@ -215,7 +223,9 @@
                     <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
                 </ul>
             </div>--%>
-            <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
+            <div class="keep-reading keep-reading-lg">
+                <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
+            </div>
             <!-- END PARTIAL: keep-reading -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
             <div class="sidebar-promos rs_read_this vertical">

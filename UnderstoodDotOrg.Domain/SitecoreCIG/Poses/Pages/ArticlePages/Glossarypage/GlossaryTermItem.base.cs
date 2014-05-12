@@ -65,13 +65,13 @@ public CustomTextField GlossaryTermAlternateSpellings
 }
 
 
-public CustomTextField TermAnchor
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Term Anchor"]);
-	}
-}
+//public CustomTextField TermAnchor
+//{
+//    get
+//    {
+//        return new CustomTextField(InnerItem, InnerItem.Fields["Term Anchor"]);
+//    }
+//}
 
 
 #endregion //Field Instance Methods

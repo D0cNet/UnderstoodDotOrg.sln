@@ -73,11 +73,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 GlossaryTermItem GTerm = e.Item.DataItem as GlossaryTermItem;
                 if (GTerm != null)
                 {
-                    FieldRenderer frTermAnchor = e.FindControlAs<FieldRenderer>("frTermAnchor");
-                    if (frTermAnchor != null)
-                    {
-                        frTermAnchor.Item = GTerm.InnerItem;
-                    }
+                    //FieldRenderer frTermAnchor = e.FindControlAs<FieldRenderer>("frTermAnchor");
+                    //if (frTermAnchor != null)
+                    //{
+                    //    frTermAnchor.Item = GTerm.InnerItem;
+                    //}
 
                     FieldRenderer frTermTitle = e.FindControlAs<FieldRenderer>("frTermTitle");
                     if (frTermTitle != null)
