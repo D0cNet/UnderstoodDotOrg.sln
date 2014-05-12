@@ -311,7 +311,7 @@
         <!-- .row -->
     </div>
     <!-- .container -->
-
+</div>
 
     <!-- comments -->
     <div class="container comments">
