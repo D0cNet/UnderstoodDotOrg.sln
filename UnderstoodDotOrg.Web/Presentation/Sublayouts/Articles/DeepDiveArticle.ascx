@@ -4,41 +4,42 @@
 <div class="container article">
     <div class="row row-equal-heights">
         <!-- article -->
-        <div class="col col-15 offset-1">
-            <div class="count-mobile">
-                <!-- BEGIN PARTIAL: helpful-count -->
-                <div class="count-helpful">
-                    <a href="REPLACE"><span>34</span>Found this helpful</a>
+        <div class="col col-15 offset-1 skiplink-content" aria-role="main" aria-role="main">
+            <div class="rs_read_this">
+                <div class="count-mobile">
+                    <!-- BEGIN PARTIAL: helpful-count -->
+                    <div class="count-helpful">
+                        <a href="REPLACE"><span>34</span>Found this helpful</a>
+                    </div>
+                    <!-- END PARTIAL: helpful-count -->
+                    <!-- BEGIN PARTIAL: comments-count -->
+                    <div class="count-comments">
+                        <a href="REPLACE"><span>19</span>Comments</a>
+                    </div>
+                    <!-- END PARTIAL: comments-count -->
                 </div>
-                <!-- END PARTIAL: helpful-count -->
-                <!-- BEGIN PARTIAL: comments-count -->
-                <div class="count-comments">
-                    <a href="REPLACE"><span>19</span>Comments</a>
-                </div>
-                <!-- END PARTIAL: comments-count -->
-            </div>
 
-            <!-- BEGIN PARTIAL: article-deep-dive-copy -->
-            <div class="deep-dive-article-container">
-                <div class="whats-covered-deep-dive" id="top">
-                    <h2><%--What&rsquo;s covered--%>
-                        <sc:FieldRenderer ID="frContentBody" runat="server" FieldName="Body Content" />
-                    </h2>
-                    <asp:ListView ID="rptSectionList" runat="server" OnItemDataBound="rptSectionList_ItemDataBound" ItemPlaceholderID="itemPlaceholder" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
-                        <LayoutTemplate>
-                            <ul>
-                                <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
-                            </ul>
-                        </LayoutTemplate>
-                        <ItemTemplate>
-                            <li>
-                                <asp:HyperLink ID="uxItemLink" runat="server">
+                <!-- BEGIN PARTIAL: article-deep-dive-copy -->
+                <div class="deep-dive-article-container">
+                    <div class="whats-covered-deep-dive" id="top">
+                        <h2><%--What&rsquo;s covered--%>
+                            <sc:FieldRenderer ID="frContentBody" runat="server" FieldName="Body Content" />
+                        </h2>
+                        <asp:ListView ID="rptSectionList" runat="server" OnItemDataBound="rptSectionList_ItemDataBound" ItemPlaceholderID="itemPlaceholder" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
+                            <LayoutTemplate>
+                                <ul>
+                                    <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                                </ul>
+                            </LayoutTemplate>
+                            <ItemTemplate>
+                                <li>
+                                    <asp:HyperLink ID="uxItemLink" runat="server">
                                     <%# Item.Title.Rendered %>
-                                </asp:HyperLink>
-                            </li>
-                        </ItemTemplate>
-                    </asp:ListView>
-                    <%--<ul>
+                                    </asp:HyperLink>
+                                </li>
+                            </ItemTemplate>
+                        </asp:ListView>
+                        <%--<ul>
     <li><a href="REPLACE">IEP Basics</a></li>
     <li><a href="REPLACE">What is in an IEP?</a></li>
     <li><a href="REPLACE">Who makes an IEP?</a></li>
@@ -48,29 +49,29 @@
     <li><a href="REPLACE">Who makes an IEP?</a></li>
     <li><a href="REPLACE">What is the Parent&rsquo;s Role?</a></li>
   </ul> --%>
-                </div>
-                <!-- END whats-covered -->
-                <!-- END PARTIAL: whats-covered -->
-                <!-- FIXME: add correct article content for A8a here. see speckle. -->
-                <!-- BEGIN PARTIAL: article-copy -->
-                <div class="deep-dive-copy">
+                    </div>
+                    <!-- END whats-covered -->
+                    <!-- END PARTIAL: whats-covered -->
+                    <!-- FIXME: add correct article content for A8a here. see speckle. -->
+                    <!-- BEGIN PARTIAL: article-copy -->
+                    <div class="deep-dive-copy">
 
-                    <asp:ListView ID="uxSections" runat="server" OnItemDataBound="uxSections_ItemDataBound" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
-                        <ItemTemplate>
-                            <div class="deep-dive-block">
-                                <asp:Literal runat="server" ID="uxJumpLink"></asp:Literal>
-                                <h2>
-                                    <%# Item.Title.Rendered %>
-                                </h2>
-                                <%# Item.Content.Rendered %>
-                                <span class="back-to-top rs_skip"><a href="#top">Back to Top</a></span>
-                            </div>
-                        </ItemTemplate>
-                        <ItemSeparatorTemplate>
-                            <div class="clearfix"></div>
-                        </ItemSeparatorTemplate>
-                    </asp:ListView>
-                    <%--
+                        <asp:ListView ID="uxSections" runat="server" OnItemDataBound="uxSections_ItemDataBound" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
+                            <ItemTemplate>
+                                <div class="deep-dive-block">
+                                    <asp:Literal runat="server" ID="uxJumpLink"></asp:Literal>
+                                    <h2>
+                                        <%# Item.Title.Rendered %>
+                                    </h2>
+                                    <%# Item.Content.Rendered %>
+                                    <span class="back-to-top rs_skip"><a href="#top">Back to Top</a></span>
+                                </div>
+                            </ItemTemplate>
+                            <ItemSeparatorTemplate>
+                                <div class="clearfix"></div>
+                            </ItemSeparatorTemplate>
+                        </asp:ListView>
+                        <%--
                 <p>
                     Deserunt ut animi non quibusdam fugiat doloribus sed et. facilis est ipsam placeat omnis totam qui repudiandae maiores molestiae. quod voluptatibus cum minus et autem autem eveniet nam. non amet sequi unde dolorum repellendus id quos. dolores cupiditate veniam distinctio autem illum omnis cupiditate voluptates non. nam neque repellat voluptas ut ipsam corporis reiciendis dignissimos maiores sapiente quisquam sint
    
@@ -118,10 +119,10 @@
                 <!-- END PARTIAL: quotes-layout-3 -->
                 <p>Laboriosam est maxime quia explicabo placeat deserunt quam. vero fuga repellat nobis doloribus ut vitae eveniet earum unde quas. beatae aliquid quis voluptatum atque eaque omnis vel ut illum odio itaque ipsa iste</p>
                 <p>Dicta et voluptatem molestiae quae autem est voluptas aut quibusdam. non in ipsa reiciendis sint. id officia temporibus a. accusantium omnis blanditiis porro ullam deleniti nihil est nemo porro earum omnis nihil. corporis ut et sequi</p>
-                    --%>
+                        --%>
+                    </div>
+                    <!-- END PARTIAL: article-copy -->
                 </div>
-                <!-- END PARTIAL: article-copy -->
-
                 <!-- BEGIN PARTIAL: key-takeaways -->
                 <div class="key-takeaways">
                     <header class='header-key-takeaways'>
@@ -145,9 +146,12 @@
                 <!-- end key-takeaways -->
 
                 <!-- END PARTIAL: key-takeaways -->
-                <!-- BEGIN PARTIAL: about-the-author -->
+            </div>
+            <!-- BEGIN PARTIAL: about-the-author -->
+            <div class="rs_about_author rs_read_this">
                 <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" Visible="false" />
-                <%--<section class="about-the-author">
+            </div>
+            <%--<section class="about-the-author">
                 <header>
                     <h2>About the Author Main</h2>
                 </header>
@@ -170,10 +174,10 @@
                     <%--<a href="REPLACE">More Posts by this Author</a>
                 </div>
             </section>--%>
-                <!-- END PARTIAL: about-the-author -->
-                <!-- BEGIN PARTIAL: reviewed-by -->
-                <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
-                <%--<p class="reviewed-by">
+            <!-- END PARTIAL: about-the-author -->
+            <!-- BEGIN PARTIAL: reviewed-by -->
+            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
+            <%--<p class="reviewed-by">
                 <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
                    <%--<a href="REPLACE">Dr. Samantha Frank</a>
                    <asp:HyperLink ID="hlReviewdby" runat="server">
@@ -184,9 +188,65 @@
                     <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />
                 </span>
             </p>--%>
-                <!-- END PARTIAL: reviewed-by -->
+            <!-- END PARTIAL: reviewed-by -->
+            <!-- BEGIN PARTIAL: find-helpful -->
+            <div class="find-this-helpful content" id="count-helpful-content rs_read_this">
+
+                <h4>Did you find this helpful?</h4>
+                <ul>
+                    <li>
+                        <button class="helpful-yes">Yes</button>
+                    </li>
+                    <li>
+                        <button class="helpful-no">No</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- END PARTIAL: find-helpful -->
+            <div class="find-this-helpful-small">
+                <!-- Module within only appears in under 650px window width-->
+            </div>
+            <!-- BEGIN PARTIAL: keep-reading-mobile -->
+            <div class="keep-reading keep-reading-mobile">
+                <h3>Keep Reading</h3>
+                <ul>
+                    <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
+                    <li><a href="REPLACE">How to Build a Homework Plan</a></li>
+                    <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
+                </ul>
+            </div>
+            <%--<div class="keep-reading keep-reading-mobile">
+                <h3>Keep Reading</h3>
+                <ul>
+                    <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
+                    <li><a href="REPLACE">How to Build a Homework Plan</a></li>
+                    <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
+                </ul>
+            </div>--%>
+
+            <!-- END PARTIAL: keep-reading-mobile -->
+        </div>
+
+        <div class="col col-1 sidebar-spacer"></div>
+
+        <!-- right bar -->
+        <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
+            <!-- BEGIN PARTIAL: helpful-count -->
+            <div class="count-helpful">
+                <a href="REPLACE"><span>34</span>Found this helpful</a>
+            </div>
+            <!-- END PARTIAL: helpful-count -->
+            <!-- BEGIN PARTIAL: comments-count -->
+            <div class="count-comments">
+                <a href="REPLACE"><span>19</span>Comments</a>
+            </div>
+            <!-- END PARTIAL: comments-count -->
+            <div class="find-this-helpful-large">
+                <!-- Module within only appears in over 650px window width-->
                 <!-- BEGIN PARTIAL: find-helpful -->
-                <div class="find-this-helpful content">
+                <div class="find-this-helpful sidebar">
 
                     <h4>Did you find this helpful?</h4>
                     <ul>
@@ -201,84 +261,36 @@
 
                 </div>
                 <!-- END PARTIAL: find-helpful -->
-                <div class="find-this-helpful-small">
-                    <!-- Module within only appears in under 650px window width-->
-                </div>
-                <!-- BEGIN PARTIAL: keep-reading-mobile -->
-                <%--<div class="keep-reading keep-reading-mobile">
-                <h3>Keep Reading</h3>
-                <ul>
-                    <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
-                    <li><a href="REPLACE">How to Build a Homework Plan</a></li>
-                    <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
-                </ul>
-            </div>--%>
-
-                <!-- END PARTIAL: keep-reading-mobile -->
             </div>
-
-            <div class="col col-1 sidebar-spacer"></div>
-
-            <!-- right bar -->
-            <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
-                <!-- BEGIN PARTIAL: helpful-count -->
-                <div class="count-helpful">
-                    <a href="REPLACE"><span>34</span>Found this helpful</a>
+            <!-- BEGIN PARTIAL: keep-reading-lg -->
+            <div class="keep-reading keep-reading-lg">
+                <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
+            </div>
+            <!-- END PARTIAL: keep-reading-lg -->
+            <!-- BEGIN PARTIAL: comments-summary -->
+            <section class="comments-summary">
+                <header>
+                    <h3>Comments (19)</h3>
+                </header>
+                <div class="quote-container">
+                    <blockquote>
+                        <p>Inventore et qui quis quis veritatis. doloribus odio ut nam. rerum eos earum sed sed optio fugiat cupiditate atque velit id doloremque voluptatem</p>
+                        <i class="arrow-quote-bottom"></i>
+                    </blockquote>
+                    <span><strong>Carrie S</strong> &bull; 30 min ago</span>
                 </div>
-                <!-- END PARTIAL: helpful-count -->
-                <!-- BEGIN PARTIAL: comments-count -->
-                <div class="count-comments">
-                    <a href="REPLACE"><span>19</span>Comments</a>
-                </div>
-                <!-- END PARTIAL: comments-count -->
-                <div class="find-this-helpful-large">
-                    <!-- Module within only appears in over 650px window width-->
-                    <!-- BEGIN PARTIAL: find-helpful -->
-                    <div class="find-this-helpful sidebar">
 
-                        <h4>Did you find this helpful?</h4>
-                        <ul>
-                            <li>
-                                <button class="helpful-yes">Yes</button>
-                            </li>
-                            <li>
-                                <button class="helpful-no">No</button>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-
-                    </div>
-                    <!-- END PARTIAL: find-helpful -->
-                </div>
-                <!-- BEGIN PARTIAL: keep-reading-lg -->
-                <div class="keep-reading keep-reading-lg">
-                    <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
-                </div>
-                <!-- END PARTIAL: keep-reading-lg -->
-                <!-- BEGIN PARTIAL: comments-summary -->
-                <section class="comments-summary">
-                    <header>
-                        <h3>Comments (19)</h3>
-                    </header>
-                    <div class="quote-container">
-                        <blockquote>
-                            <p>Inventore et qui quis quis veritatis. doloribus odio ut nam. rerum eos earum sed sed optio fugiat cupiditate atque velit id doloremque voluptatem</p>
-                            <i class="arrow-quote-bottom"></i>
-                        </blockquote>
-                        <span><strong>Carrie S</strong> &bull; 30 min ago</span>
-                    </div>
-
-                    <ul>
-                        <li><a href="REPLACE">See All Comments</a></li>
-                        <li><a href="REPLACE">Add My Comment</a></li>
-                    </ul>
-                </section>
-                <!-- END PARTIAL: comments-summary -->
-                <!-- BEGIN PARTIAL: sidebar-promos -->
-                <div class="sidebar-promos rs_read_this vertical">
-                    <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
-                </div>
-                <%--<div class="sidebar-promos">
+                <ul>
+                    <li><a href="REPLACE">See All Comments</a></li>
+                    <li><a href="REPLACE">Add My Comment</a></li>
+                </ul>
+            </section>
+            <!-- END PARTIAL: comments-summary -->
+            <!-- BEGIN PARTIAL: sidebar-promos -->
+            <div class="sidebar-promos rs_read_this vertical">
+                <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
+            </div>
+            <%--<div class="sidebar-promos">
                 <div class="promo purple-dark">
                     <a href="REPLACE">
                         <span>Get advice</span>
@@ -303,23 +315,24 @@
                 </div>
                 <!-- end promo -->
             </div> --%>
-                <!-- end sidebar-promos -->
+            <!-- end sidebar-promos -->
 
-                <!-- END PARTIAL: sidebar-promos -->
-            </div>
+            <!-- END PARTIAL: sidebar-promos -->
         </div>
-        <!-- .row -->
     </div>
-    <!-- .container -->
+    <!-- .row -->
+</div>
+<!-- .container -->
 </div>
 
-    <!-- comments -->
-    <div class="container comments">
-        <div class="row">
-            <!-- comments col -->
-            <div class="col col-23 offset-1">
+<!-- comments -->
+<div class="container comments">
+    <div class="row">
+        <!-- comments col -->
+        <div class="col col-23 offset-1">
+            <div class="col col-23 offset-1 skiplink-comments">
                 <!-- BEGIN PARTIAL: comment-list -->
-                <section class="comment-list">
+                <section class="comment-list" id="count-comments">
 
                     <header>
                         <span class="comment-count">Comments (19)</span>
@@ -451,6 +464,7 @@
                 <!-- END PARTIAL: comment-list -->
             </div>
         </div>
-        <!-- .row -->
     </div>
-    <!-- .container -->
+    <!-- .row -->
+</div>
+<!-- .container -->
