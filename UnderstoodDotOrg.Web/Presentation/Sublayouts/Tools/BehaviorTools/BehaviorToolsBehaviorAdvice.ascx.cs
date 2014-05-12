@@ -82,6 +82,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 
                 BehaviorSearchCalloutItem callout = new BehaviorSearchCalloutItem(this.DataSource);
 
+                rfvChallenges.Text = callout.CalloutChallengeRequiredFieldMessage.Text;
+                rfvGrades.Text = callout.CalloutGradeRequiredFieldMessage.Text;
                 litSuggestError.Text = callout.SuggestionRequiredFieldMessage.Text;
             }
         }

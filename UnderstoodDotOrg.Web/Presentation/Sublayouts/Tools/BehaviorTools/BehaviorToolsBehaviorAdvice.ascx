@@ -11,12 +11,14 @@
     <div class="advice-question-wrapper">
         <asp:Label AssociatedControlID="ddlChallenges" runat="server" CssClass="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SelectChallenge %></asp:Label>
         <asp:DropDownList ID="ddlChallenges" runat="server" />
+        <asp:RequiredFieldValidator ID="rfvChallenges" runat="server" ControlToValidate="ddlChallenges" Display="Dynamic" />
     </div>
 
     <div class="advice-question-bottom clearfix">
       <div class="advice-question-wrapper select-container">
           <asp:Label AssociatedControlID="ddlGrades" runat="server" CssClass="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.Grades.SelectGrade %></asp:Label>
           <asp:DropDownList ID="ddlGrades" runat="server" />
+          <asp:RequiredFieldValidator ID="rfvGrades" runat="server" ControlToValidate="ddlGrades" Display="Dynamic" />
       </div>
 
       <div class="behavior-advice-actions">

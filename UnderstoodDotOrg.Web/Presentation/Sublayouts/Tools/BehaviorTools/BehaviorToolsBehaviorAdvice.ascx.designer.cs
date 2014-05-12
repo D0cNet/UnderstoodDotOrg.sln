@@ -31,6 +31,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools {
         protected global::System.Web.UI.WebControls.DropDownList ddlChallenges;
         
         /// <summary>
+        /// rfvChallenges control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvChallenges;
+        
+        /// <summary>
         /// ddlGrades control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlGrades;
+        
+        /// <summary>
+        /// rfvGrades control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvGrades;
         
         /// <summary>
         /// btnSubmit control.

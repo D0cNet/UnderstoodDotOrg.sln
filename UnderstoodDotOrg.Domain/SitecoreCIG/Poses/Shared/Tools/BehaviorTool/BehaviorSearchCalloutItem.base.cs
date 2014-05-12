@@ -92,6 +92,15 @@ public CustomTextField SuggestionInstructions
 }
 
 
+public CustomTextField CalloutChallengeRequiredFieldMessage
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Callout Challenge Required Field Message"]);
+	}
+}
+
+
 public CustomTextField SuccessSignUpText
 {
 	get
@@ -106,6 +115,15 @@ public CustomTextField SuggestionEmailAddress
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Suggestion E-mail Address"]);
+	}
+}
+
+
+public CustomTextField CalloutGradeRequiredFieldMessage
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Callout Grade Required Field Message"]);
 	}
 }
 
