@@ -7,36 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.QandA {
     
     
-    public partial class QandADetails {
+    public partial class QuestionToolbar {
         
         /// <summary>
-        /// QuestionTitle control.
+        /// AskTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text QuestionTitle;
+        protected global::System.Web.UI.WebControls.TextBox AskTextBox;
         
         /// <summary>
-        /// QuestionBody control.
+        /// AskQuestionButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text QuestionBody;
-        
-        /// <summary>
-        /// Author control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Author;
+        protected global::System.Web.UI.WebControls.Button AskQuestionButton;
     }
 }

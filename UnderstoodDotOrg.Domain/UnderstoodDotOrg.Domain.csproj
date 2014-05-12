@@ -289,6 +289,10 @@
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\GroupsTemplate\ForumItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\GroupsTemplate\GroupItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\GroupsTemplate\GroupItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\QandA\QandADetailsItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\QandA\QandADetailsItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\QandA\QandAItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\QandA\QandAItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\SectionLandingPageItem.base.cs" />

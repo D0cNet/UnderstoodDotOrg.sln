@@ -61,17 +61,17 @@
                                 
                                 
                                 
-                                <li><span><a href="REPLACE">What's Happening Now</a></span></li>
+                                <li><span><a href="~/en/Community/Whats%20Happening%20Logged%20In.aspx">What's Happening Now</a></span></li>
                                 
                                 
                                 
                                 
-                                <li><span><a href="REPLACE">Experts Live</a></span></li>
+                                <li><span><a href="~/en/Blogs/All%20Blogs%20Page.aspx">Experts Live</a></span></li>
                                 
                                 
                                 
                                 
-                                <li><span><a href="REPLACE">Q&nbsp;&amp;&nbsp;A</a></span></li>
+                                <li><span><a href="~/en/Community/Q%20and%20A/Q%20and%20A.aspx">Q&nbsp;&amp;&nbsp;A</a></span></li>
                                 
                                 
                                 
@@ -85,7 +85,7 @@
                                 
                                 
                                 
-                                <li><span><a href="REPLACE" class="selected">Blogs</a></span></li>
+                                <li><span><a href="~/en/Blogs/All%20Blogs%20Page.aspx" class="selected">Blogs</a></span></li>
                                 
                                 
                                 

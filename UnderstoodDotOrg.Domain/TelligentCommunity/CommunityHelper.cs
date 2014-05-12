@@ -259,6 +259,64 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
+        public static List<Answer> GetAnswers(string wikiId, string wikiPageId)
+        {
+            var webClient = new WebClient();
+ 
+            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+ 
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId, wikiPageId);
+ 
+            var xml = webClient.DownloadString(requestUrl);
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+
+            XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+            XmlNodeList nodes2 = xmlDoc.SelectNodes("Response/Comments/Comment/Author");
+            List<Answer> answerList = new List<Answer>();
+            int count = 0;
+            foreach (XmlNode xn in nodes)
+            {
+                string publishedDate = FormatDate(xn["PublishedDate"].InnerText);
+                string body = xn["Body"].InnerText;
+                string author = nodes2[count]["Username"].InnerText;
+
+                Answer answer = new Answer(body,publishedDate,author);
+                answerList.Add(answer);
+                count++;
+            }
+
+            return answerList;
+        }
+
+        /// <summary>
+        /// Creates a new Question(Wiki) in Telligent
+        /// </summary>
+        /// <param name="questionGroupId">The group that the question should be created in in Telligent</param>
+        /// <param name="questionText"></param>
+        public static void CreateQuestion(string questionGroupId, string questionText)
+        {
+            var webClient = new WebClient();
+
+            // replace the "admin" and "Admin's API key" with your valid user and apikey!
+            var adminKey = String.Format("{0}:{1}", "Admin's API Key", "admin");
+            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), questionGroupId);
+
+            var values = new NameValueCollection();
+            values["GroupId"] = questionGroupId;
+            values["Name"] = questionText;
+
+            var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+
+            Console.WriteLine(xml);
+        }
+
         public static string BlogNameById(string blogId)
         {
             var webClient = new WebClient();

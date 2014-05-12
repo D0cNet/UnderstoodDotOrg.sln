@@ -27,18 +27,51 @@
                             <a href="REPLACE">
                                 <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
                                 <div class="image-label">
-                                    Expert
+                                    Guest Expert
                                 </div>
                             </a>
                         </div>
                         <!-- end .event-card-image -->
                         <div class="event-card-content">
                             <div class="event-card-datetime">
-                                Sun May 7 at 12am UTC
+                                Mon Sep 18 at 12am UTC
                             </div>
                             <!-- end .event-card-datetime -->
                             <div class="event-card-title">
-                                <a href="REPLACE">Quo Provident In Et Repellat Vitae Aut Error Dolorum Eos</a>
+                                <a href="REPLACE">Ullam Architecto Illum Et Pariatur Sit Nulla Et Natus Sit</a>
+                            </div>
+                            <!-- end .event-card-title -->
+                            <div class="card-buttons">
+                                <button type="button" class="button">RSVP</button>
+                                <button class="action-skip-this">Skip this</button>
+                            </div>
+                            <!-- end .card-buttons -->
+                        </div>
+                        <!-- end .event-card-content -->
+                    </div>
+                    <!-- end .event-card-info -->
+                </div>
+                <!-- end .event-card -->
+                <!-- END PARTIAL: community/event_card -->
+                <!-- BEGIN PARTIAL: community/event_card -->
+                <div class="col col-11 event-card">
+                    <div class="event-card-info group">
+                        <div class="event-card-image">
+                            <a href="REPLACE">
+                                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                                <div class="image-label">
+                                    Guest Expert
+                                </div>
+                            </a>
+                        </div>
+                        <!-- end .event-card-image -->
+                        <div class="event-card-content">
+                            <div class="event-card-datetime">
+                                Mon Apr 24 at 12am UTC
+                            </div>
+                            <!-- end .event-card-datetime -->
+                            <div class="event-card-title">
+                                <a href="REPLACE">Et Nam Eius Qui Velit Quia Aperiam Et Fugiat Sed</a>
                             </div>
                             <!-- end .event-card-title -->
                             <div class="card-buttons">
@@ -67,11 +100,44 @@
                         <!-- end .event-card-image -->
                         <div class="event-card-content">
                             <div class="event-card-datetime">
-                                Tue Apr 13 at 12am UTC
+                                Wed Jun 29 at 12am UTC
                             </div>
                             <!-- end .event-card-datetime -->
                             <div class="event-card-title">
-                                <a href="REPLACE">Est Perferendis Cum Libero Sit Commodi Reiciendis Facilis Et Asperiores</a>
+                                <a href="REPLACE">Aliquid A Consequuntur Sed Nam Vel Inventore Repudiandae Laborum Velit</a>
+                            </div>
+                            <!-- end .event-card-title -->
+                            <div class="card-buttons">
+                                <button type="button" class="button">RSVP</button>
+                                <button class="action-skip-this">Skip this</button>
+                            </div>
+                            <!-- end .card-buttons -->
+                        </div>
+                        <!-- end .event-card-content -->
+                    </div>
+                    <!-- end .event-card-info -->
+                </div>
+                <!-- end .event-card -->
+                <!-- END PARTIAL: community/event_card -->
+                <!-- BEGIN PARTIAL: community/event_card -->
+                <div class="col col-11 event-card">
+                    <div class="event-card-info group">
+                        <div class="event-card-image">
+                            <a href="REPLACE">
+                                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                                <div class="image-label">
+                                    Guest Expert
+                                </div>
+                            </a>
+                        </div>
+                        <!-- end .event-card-image -->
+                        <div class="event-card-content">
+                            <div class="event-card-datetime">
+                                Thu Feb 3 at 12am UTC
+                            </div>
+                            <!-- end .event-card-datetime -->
+                            <div class="event-card-title">
+                                <a href="REPLACE">Autem Maiores Neque At Qui Illo Minima Ea Voluptate Voluptatem</a>
                             </div>
                             <!-- end .event-card-title -->
                             <div class="card-buttons">
@@ -100,11 +166,11 @@
                         <!-- end .event-card-image -->
                         <div class="event-card-content">
                             <div class="event-card-datetime">
-                                Tue May 26 at 12am UTC
+                                Wed Apr 2 at 12am UTC
                             </div>
                             <!-- end .event-card-datetime -->
                             <div class="event-card-title">
-                                <a href="REPLACE">A Minus Dolorem Iusto Dolorum Vitae Et Dolore Est At</a>
+                                <a href="REPLACE">Incidunt Voluptas Id Alias Quae Et Sequi Animi Velit Vel</a>
                             </div>
                             <!-- end .event-card-title -->
                             <div class="card-buttons">
@@ -126,84 +192,18 @@
                             <a href="REPLACE">
                                 <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
                                 <div class="image-label">
-                                    Expert
+                                    Guest Expert
                                 </div>
                             </a>
                         </div>
                         <!-- end .event-card-image -->
                         <div class="event-card-content">
                             <div class="event-card-datetime">
-                                Sat Apr 24 at 12am UTC
+                                Mon Mar 5 at 12am UTC
                             </div>
                             <!-- end .event-card-datetime -->
                             <div class="event-card-title">
-                                <a href="REPLACE">At Qui Earum Iusto Vel Labore Eligendi Vel Rerum Voluptatem</a>
-                            </div>
-                            <!-- end .event-card-title -->
-                            <div class="card-buttons">
-                                <button type="button" class="button">RSVP</button>
-                                <button class="action-skip-this">Skip this</button>
-                            </div>
-                            <!-- end .card-buttons -->
-                        </div>
-                        <!-- end .event-card-content -->
-                    </div>
-                    <!-- end .event-card-info -->
-                </div>
-                <!-- end .event-card -->
-                <!-- END PARTIAL: community/event_card -->
-                <!-- BEGIN PARTIAL: community/event_card -->
-                <div class="col col-11 event-card">
-                    <div class="event-card-info group">
-                        <div class="event-card-image">
-                            <a href="REPLACE">
-                                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                                <div class="image-label">
-                                    Expert
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end .event-card-image -->
-                        <div class="event-card-content">
-                            <div class="event-card-datetime">
-                                Sun Aug 30 at 12am UTC
-                            </div>
-                            <!-- end .event-card-datetime -->
-                            <div class="event-card-title">
-                                <a href="REPLACE">In Sed Vero Est Ut Qui Et Nemo Et Eius</a>
-                            </div>
-                            <!-- end .event-card-title -->
-                            <div class="card-buttons">
-                                <button type="button" class="button">RSVP</button>
-                                <button class="action-skip-this">Skip this</button>
-                            </div>
-                            <!-- end .card-buttons -->
-                        </div>
-                        <!-- end .event-card-content -->
-                    </div>
-                    <!-- end .event-card-info -->
-                </div>
-                <!-- end .event-card -->
-                <!-- END PARTIAL: community/event_card -->
-                <!-- BEGIN PARTIAL: community/event_card -->
-                <div class="col col-11 event-card">
-                    <div class="event-card-info group">
-                        <div class="event-card-image">
-                            <a href="REPLACE">
-                                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                                <div class="image-label">
-                                    Expert
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end .event-card-image -->
-                        <div class="event-card-content">
-                            <div class="event-card-datetime">
-                                Mon Jul 28 at 12am UTC
-                            </div>
-                            <!-- end .event-card-datetime -->
-                            <div class="event-card-title">
-                                <a href="REPLACE">Nam Quibusdam Totam Aut Et Eaque Aliquid Modi Soluta Asperiores</a>
+                                <a href="REPLACE">Et Sunt Voluptas Ea Quidem Recusandae Fugiat Assumenda Sed Ducimus</a>
                             </div>
                             <!-- end .event-card-title -->
                             <div class="card-buttons">
@@ -223,5 +223,4 @@
         </div>
         <!-- end .upcoming-events -->
     </div>
-    <!-- end .row -->
-</div><!-- end .upcoming-events -->
+</div>

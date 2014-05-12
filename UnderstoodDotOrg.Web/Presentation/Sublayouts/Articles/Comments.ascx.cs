@@ -34,7 +34,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             CommentRepeater.DataBind();
             CommentCountDisplay.Text = "Comments (" + dataSource.Count + ")";
 
-            if (!IsPostBack) { CommentEntryTextField.Text = "Add your comment..."; }
+            if (!IsPostBack)
+            {
+                CommentEntryTextField.Text = "Add your comment...";
+            }
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)

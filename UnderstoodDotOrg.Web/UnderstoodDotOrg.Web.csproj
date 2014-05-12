@@ -828,6 +828,20 @@
     <Compile Include="Presentation\Sublayouts\Community\QandA\QandADetails.ascx.designer.cs">
       <DependentUpon>QandADetails.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\QandA\QuestionAnswers.ascx.cs">
+      <DependentUpon>QuestionAnswers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\QandA\QuestionAnswers.ascx.designer.cs">
+      <DependentUpon>QuestionAnswers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\QandA\QuestionToolbar.ascx.cs">
+      <DependentUpon>QuestionToolbar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\QandA\QuestionToolbar.ascx.designer.cs">
+      <DependentUpon>QuestionToolbar.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\CommunityMembers.ascx.cs">
       <DependentUpon>CommunityMembers.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1862,6 +1876,8 @@
     <Content Include="Presentation\Sublayouts\Community\Parents Recommended.ascx" />
     <Content Include="Presentation\Sublayouts\Community\QandA\QandA.ascx" />
     <Content Include="Presentation\Sublayouts\Community\QandA\QandADetails.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\QandA\QuestionAnswers.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\QandA\QuestionToolbar.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\CommunityMembers.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\MostActiveGroups.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\RecentBlogPosts.ascx" />

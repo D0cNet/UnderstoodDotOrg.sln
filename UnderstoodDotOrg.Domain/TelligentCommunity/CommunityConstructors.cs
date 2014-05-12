@@ -106,6 +106,39 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         }
     }
 
+    public class Question
+    {
+        public string _title { get; set; }
+        public string _body { get; set; }
+        public string _publishedDate { get; set; }
+        public string _author { get; set; }
+        public string _group { get; set; }
+
+        public Question(string title, string body, string publishedDate, string author, string group)
+        {
+            _title = title;
+            _body = body;
+            _publishedDate = publishedDate;
+            _author = author;
+        }
+    }
+
+    public class Answer
+    {
+        public string _body { get; set; }
+        public string _publishedDate { get; set; }
+        public string _author { get; set; }
+        public string _likes { get; set; }
+
+
+        public Answer(string body, string publishedDate, string author)
+        {
+            _body = body;
+            _publishedDate = publishedDate;
+            _author = author;
+        }
+    }
+
     //public class Group
     //{
     //    public string TelligentGroupID { get; set; }
