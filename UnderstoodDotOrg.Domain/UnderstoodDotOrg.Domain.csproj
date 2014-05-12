@@ -327,6 +327,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdvicePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdviceVideoPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdviceVideoPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildChallengeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildChallengeItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildChallengeItem.interface.cs" />

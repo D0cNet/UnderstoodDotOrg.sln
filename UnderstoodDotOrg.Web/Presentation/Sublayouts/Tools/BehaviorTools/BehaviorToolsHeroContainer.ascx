@@ -3,7 +3,7 @@
 <div class="container flush hero-container-wrap">
   <!-- BEGIN PARTIAL: hero-image -->
 <section class="hero-image-container">
-  <sc:FieldRenderer ID="frImage" runat="server" FieldName="Hero Image" />
+  <sc:FieldRenderer ID="frImage" runat="server" FieldName="Hero Image" Parameters="mw=1220&mh=475" />
   <div class="hero-text-container">
     <div class="row">
       <div class="col col-24">

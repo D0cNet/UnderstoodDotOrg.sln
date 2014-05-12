@@ -78,6 +78,11 @@ namespace UnderstoodDotOrg.Common
             get { return new Guid("{9976F89D-1FE4-49FA-A143-F6493A76D669}"); } 
         }
 
+        public static Guid BehaviorToolLandingArticlesContainer
+        {
+            get { return new Guid("{18EB3BFE-EE11-4202-AB18-8EE7BEF68C8A}"); }
+        }
+
         #endregion
 
         #region Page Guids
