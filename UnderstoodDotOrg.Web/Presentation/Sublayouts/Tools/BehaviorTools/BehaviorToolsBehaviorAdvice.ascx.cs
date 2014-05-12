@@ -8,11 +8,17 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Tools.BehaviorTool;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 {
     public partial class BehaviorToolsBehaviorAdvice : BaseSublayout
     {
+        protected string AjaxPath
+        {
+            get { return Sitecore.Configuration.Settings.GetSetting(Constants.Settings.BehaviorSuggestionEndpoint); }
+        }
+
         protected string Close
         {
             get { return DictionaryConstants.CloseButtonText; }
@@ -46,36 +52,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 
         private void BindEvents()
         {
-            btnSubmit.Click += btnSubmit_Click;
-            btnSubmitSuggestion.Click += btnSubmitSuggestion_Click;
-            cvSuggestion.ServerValidate += cvSuggestion_ServerValidate;
+            btnSubmit.Click += btnSubmit_Click;          
         }
 
         #region Event Handlers
-
-        void cvSuggestion_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            bool hasSuggestion = !String.IsNullOrEmpty(txtSuggestion.Text.Trim());
-            pnlSuggestError.Visible = !hasSuggestion;
-            litSuggestError.Text = this.DataSource.Fields["Suggestion Required Field Message"].Value;
-            args.IsValid = hasSuggestion;
-        }
-
-        void btnSubmitSuggestion_Click(object sender, EventArgs e)
-        {
-            Page.Validate("Suggestion");
-            if (Page.IsValid) 
-            {
-                // TODO: send email
-                // Field for to address - "Suggestion E-mail Address"
-                // Field for failed email error - "Suggestion Submit Failed Message"
-
-                pnlEntryForm.Visible = false;
-                pnlSuccessForm.Visible = true;
-            }
-            
-            pnlSuggest.Update();
-        }
 
         void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -92,12 +72,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         private void BindContent()
         {
             btnSubmit.Text = DictionaryConstants.GoButtonText;
-            btnSubmitSuggestion.Text = DictionaryConstants.SendSuggestionButtonText;
             txtSuggestion.Attributes.Add("placeholder", DictionaryConstants.EnterSuggestionWatermark);
+            
+            if (this.DataSource != null)
+            {
+                frSuggestionTitle.Item = frSuggestionInstructions.Item =
+                        frSuccessTitle.Item = frSuccessText.Item = frSuccessSignupLink.Item =
+                        frCalloutTitle.Item = frCalloutLinkText.Item = this.DataSource;
 
-            frSuggestionTitle.Item = frSuggestionInstructions.Item = 
-                    frSuccessTitle.Item = frSuccessText.Item = frSuccessSignupLink.Item = 
-                    frCalloutTitle.Item = frCalloutLinkText.Item = this.DataSource;
+                BehaviorSearchCalloutItem callout = new BehaviorSearchCalloutItem(this.DataSource);
+
+                litSuggestError.Text = callout.SuggestionRequiredFieldMessage.Text;
+            }
         }
 
         private void BindControls()

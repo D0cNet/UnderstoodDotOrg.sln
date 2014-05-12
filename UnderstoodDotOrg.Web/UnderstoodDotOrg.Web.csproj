@@ -107,6 +107,10 @@
     <Compile Include="Handlers\DownloadFile.ashx.cs">
       <DependentUpon>DownloadFile.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\FormSubmissionsService.asmx.cs">
+      <DependentUpon>FormSubmissionsService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Handlers\RunPersonalizationService.ashx.cs">
       <DependentUpon>RunPersonalizationService.ashx</DependentUpon>
     </Compile>
@@ -1262,6 +1266,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Handlers\FormSubmissionsService.asmx" />
     <Content Include="Handlers\SearchResultsService.asmx" />
     <Content Include="Presentation\AjaxData\GetArticles.aspx" />
     <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />

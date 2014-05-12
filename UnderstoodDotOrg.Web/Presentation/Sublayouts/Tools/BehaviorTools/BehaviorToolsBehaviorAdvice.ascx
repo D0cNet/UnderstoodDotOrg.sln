@@ -20,7 +20,7 @@
       </div>
 
       <div class="behavior-advice-actions">
-        <asp:Button ID="btnSubmit" runat="server" CssClass="submit-button" />
+        <asp:Button ID="btnSubmit" runat="server" CssClass="button" />
       </div>
     </div>
 
@@ -33,20 +33,19 @@
         <i class="close-overlay" data-dismiss="modal"><%= Close %></i>
       <asp:UpdatePanel ID="pnlSuggest" class="modal-body" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
-            <asp:Panel ID="pnlEntryForm" CssClass="suggest-a-behavior" runat="server">
-                <asp:Panel id="pnlSuggestError" CssClass="alert-message" runat="server" Visible="false"><asp:Literal ID="litSuggestError" runat="server" /></asp:Panel>
+            <div class="suggest-a-behavior">
+                <div class="alert-message hidden"><asp:Literal ID="litSuggestError" runat="server" /></div>
                 <h3><sc:FieldRenderer ID="frSuggestionTitle" runat="server" FieldName="Suggestion Title" /></h3>
                 <p><sc:FieldRenderer ID="frSuggestionInstructions" runat="server" FieldName="Suggestion Instructions" /></p>
                 <asp:TextBox ID="txtSuggestion" runat="server" TextMode="MultiLine" />
-                <asp:Button ID="btnSubmitSuggestion" CssClass="button" runat="server" />
-                <asp:CustomValidator ID="cvSuggestion" runat="server" ValidationGroup="Suggestion" Display="None" />
-            </asp:Panel>
-            <asp:Panel ID="pnlSuccessForm" CssClass="suggest-a-behavior-confirmation" runat="server" Visible="false">
+                <input type="submit" class="button" value="<%= UnderstoodDotOrg.Common.DictionaryConstants.SendSuggestionButtonText %>" data-source="<%= txtSuggestion.ClientID %>" data-path="<%= AjaxPath %>" />
+            </div>
+            <div class="suggest-a-behavior-confirmation hidden">
                 <h3><sc:FieldRenderer ID="frSuccessTitle" runat="server" FieldName="Success Title" /></h3>
                 <p><sc:FieldRenderer ID="frSuccessText" runat="server" FieldName="Success Text" /></p>
                 <input type="submit" data-dismiss="modal" class="button submit-button" value="<%= CloseWindow %>">
                 <div class="sign-up"><asp:HyperLink ID="hlSignUp" runat="server"><sc:FieldRenderer ID="frSuccessSignupLink" runat="server" FieldName="Success Sign-Up Text" /></asp:HyperLink></div>
-            </asp:Panel>
+            </div>
         </ContentTemplate>
     </asp:UpdatePanel>
     </div><!-- /.modal-content -->

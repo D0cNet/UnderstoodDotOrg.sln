@@ -341,6 +341,7 @@
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\GradeLevelItem.interface.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\CSS\CSSItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\JS\JSItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\Tools\BehaviorTool\BehaviorSearchCalloutItem.base.cs" />
     <Compile Include="TelligentCommunity\CommunityConstructors.cs" />
     <Compile Include="TelligentCommunity\CommunityHelper.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
@@ -358,6 +359,7 @@
     <Compile Include="Understood\Content\ContentItemModel.cs" />
     <Compile Include="Understood\Helper\FormHelper.cs" />
     <Compile Include="Understood\Personalization\PersonalizedItemModel.cs" />
+    <Compile Include="Understood\Submissions\SubmissionResult.cs" />
     <Compile Include="Understood\Users\ChildModel.cs" />
     <Compile Include="Understood\Users\ParentModel.cs" />
   </ItemGroup>

@@ -311,6 +311,7 @@ namespace UnderstoodDotOrg.Common
             public static string AnonymousAvatar = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "/utility/anonymous.gif";
             public static string DefaultLocation = "Toronto";
             public static string SearchResultsEndpoint = "SearchResultsEndpoint";
+            public static string BehaviorSuggestionEndpoint = "BehaviorSuggestionEndpoint";
         }
 
         public static class ContentItem

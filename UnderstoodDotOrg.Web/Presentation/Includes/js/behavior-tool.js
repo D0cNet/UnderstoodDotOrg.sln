@@ -381,7 +381,8 @@ jQuery(document).ready(function(){
  */
 
 (function($){
-
+  var inProgress = false;
+  
   // Initialize the module on page load.
   $(document).ready(function() {
     new U.suggestABehavior();
@@ -397,10 +398,15 @@ jQuery(document).ready(function(){
 
     //check that the textarea has content before submission
     jQuery('.suggest-a-behavior input[type=submit]').click(function(e){
+	  e.preventDefault();
+	  
+	  if (inProgress) {
+	    return;
+	  }
+	  
       if (!jQuery.trim(jQuery('.suggest-a-behavior textarea').val())) {
         //the textarea is empty so show an alert message
         jQuery('.suggest-a-behavior .alert-message.hidden').removeClass('hidden');
-        e.preventDefault(); //prevent form submission
       }else{
         //make sure alert message is hidden
         jQuery('.suggest-a-behavior .alert-message').addClass('hidden');
@@ -411,9 +417,37 @@ jQuery(document).ready(function(){
         ////////////////////////////////////////////////////////////////////////
 
         //hide form and show the confirmation text
-        jQuery('#suggest-a-behavior .suggest-a-behavior').hide();
-        jQuery('#suggest-a-behavior .suggest-a-behavior-confirmation').show();
-        e.preventDefault(); //prevent form submission
+		inProgress = true;
+		
+		var $dataPath = $(this).data('path');
+		var $dataSource = $(this).data('source');
+		
+		var message = $("#" + $dataSource).val();
+		
+		var data = {
+			message: message
+		};
+		
+		$.ajax({
+			url: $dataPath,
+			dataType: 'json',
+			contentType: 'application/json; charset=utf-8',
+			data: JSON.stringify(data),
+			method: 'POST'
+		}).done(function (data) {
+			
+			var result = data.d;
+			
+			if (!result.IsValid) {
+				jQuery('.suggest-a-behavior .alert-message.hidden').removeClass('hidden');
+				return;
+			}
+			
+			jQuery('#suggest-a-behavior .suggest-a-behavior').hide();
+			jQuery('#suggest-a-behavior .suggest-a-behavior-confirmation').removeClass("hidden").show();
+		}).always(function() {
+			inProgress = false;
+		});
       }
     });
 
