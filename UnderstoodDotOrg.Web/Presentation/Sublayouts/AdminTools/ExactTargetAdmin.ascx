@@ -32,6 +32,12 @@
 <hr />
 <asp:Button ID="btnETTests" runat="server" Text="Invoke Trigger Send Email" OnClick="btnETTests_Click" />
 <br />
+<br /><!-- START OF PASSWORD RESET TEST -->
+<h3>Reset Password Email Test</h3>
+<br />
+<asp:Label ID="Label3" runat="server" Text="Enter your reset link here"></asp:Label><asp:TextBox ID="txtResetLink" runat="server"  />
+<br />
 <br />
 <h4>Results:</h4>
 <asp:Label ID="lblMessage" runat="server" ></asp:Label>
+<br /><br />

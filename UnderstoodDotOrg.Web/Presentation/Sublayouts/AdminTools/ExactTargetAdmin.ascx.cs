@@ -18,12 +18,12 @@
                 tbxSubscriberKey1.Text = "bwilson@agencyoasis.com";
                 tbxSubscriberFN1.Text = "Brian";
 
-                tbxSubscriberEmail2.Text = "wilsonbri@gmail.com";
-                tbxSubscriberKey2.Text = "wilsonbri@gmail.com";
-                tbxSubscriberFN2.Text = "wilsonbri";
+                tbxSubscriberEmail2.Text = "jtesta@agencyoasis.com";
+                tbxSubscriberKey2.Text = "jtesta@agencyoasis.com";
+                tbxSubscriberFN2.Text = "Joe";
 
                 tbxCustomerKey.Text = "201"; //required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
-                tbxEmailID.Text = "103";   // This is the "Text Only Test Email" configured within NCLD's ExactTarget system ....  Available in the ET UI [Content > My Emails > Properties]
+                tbxEmailID.Text = "177";   // This is the "Text Only Test Email" configured within NCLD's ExactTarget system ....  Available in the ET UI [Content > My Emails > Properties]
 
                 lblMessage.Text = "Email Test has not started ...";
             }
@@ -71,11 +71,7 @@
             tse.ETSubscriberList = etSubscriberList;
 
             IExactTargetService etService = new ExactTargetService();
-
-
             lblMessage.Text = etService.InvokeTriggeredSendEmail(tse);
-        }
-
-
+        }        
     }
 }

@@ -53,8 +53,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
         }
 
-       
-
+        //triggers send of test email based on Email ID
         public string InvokeTriggeredSendEmail(TriggeredSendEmail triggeredSendEmail)
         {
 
@@ -64,7 +63,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
             try
             {
 
-                 //client = new SoapClient();
+                //client = new SoapClient();
 
                 //Authenticate
                 //client.ClientCredentials.UserName.UserName = triggeredSendEmail.ETBaseConfig.ExactTargetWSUsername;
@@ -75,6 +74,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
                 //Create TriggeredSendDefinition object [Messages > Email > Triggered]
                 TriggeredSendDefinition tsd = new TriggeredSendDefinition();
+                //tsd.Email.HTMLBody
                 tsd.Name = "TSD_Name_" + strGUID;//required
                 tsd.CustomerKey = strGUID;//recommended or the application will assign a number
                 tsd.Description = "TSD_Description_" + strGUID;//recommended or the Description will default to the Name
@@ -95,181 +95,213 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
                 //Apply Email object to the TriggeredSendDefinition object
                 tsd.Email = em;//required
+                tsd.Email.IsHTMLPaste = true;
 
                 //Create SendClassification
                 tsd.SendClassification = new SendClassification();
-               // tsd.SendClassification.CustomerKey = "4201";//required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
+                // tsd.SendClassification.CustomerKey = "4201";//required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
                 tsd.SendClassification.CustomerKey = triggeredSendEmail.ETEmail.CustomerKey;//required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
 
-                
+
                 string cRequestID = String.Empty;
                 string cStatus = String.Empty;
 
+                try
+                {
+                    //Call the Create method on the TriggeredSendDefinition object
+                    CreateResult[] cResults = client.Create(new CreateOptions(), new APIObject[] { tsd }, out cRequestID, out cStatus);
+
+                    Log.Info("[EXACTTARGET] Overall Create Status: " + cStatus, this);
+                    Log.Info("[EXACTTARGET] Number of Results: " + cResults.Length, this);
+                    sbReturnString.Append("[EXACTTARGET] Overall Create Status: " + cStatus).AppendLine();
+                    sbReturnString.Append("[EXACTTARGET] Number of Results: " + cResults.Length).AppendLine();
+
+
+                    ////Display Results
+                    //lblMessage.Text += "Overall Create Status: " + cStatus;
+                    //lblMessage.Text += "<br/>";
+                    //lblMessage.Text += "Number of Results: " + cResults.Length;
+                    //lblMessage.Text += "<br/>";
+
+                    //Loop through each object returned and display the StatusMessage
+                    foreach (CreateResult cr in cResults)
+                    {
+                        Log.Info("[EXACTTARGET] Status Message: " + cr.StatusMessage, this);
+                        sbReturnString.Append("[EXACTTARGET] Status Message: " + cr.StatusMessage).AppendLine();
+
+                        //lblMessage.Text += "Status Message: " + cr.StatusMessage;
+                        //lblMessage.Text += "<br/>";
+                    }
+                }
+                catch (Exception exCreate)
+                {
+                    //Set Message
+                    Log.Error("[EXACTTARGET] CREATE TSD ERROR: " + exCreate.Message.ToString(), exCreate, this);
+                    //lblMessage.Text += "<br/><br/>CREATE TSD ERROR:<br/>" + exCreate.Message;
+                    // sbReturnString.Append("[EXACTTARGET] CREATE TSD ERROR: " + exCreate.Message.ToString()).AppendLine();
+                    throw;
+                }
+
+                //Preceed if the above Create call was successful
+                if (cStatus == "OK")
+                {
+
+                    // *** MAKE TRIGGERED SEND DEFINITION ACTIVE  
+                    tsd = new TriggeredSendDefinition();
+                    tsd.CustomerKey = strGUID;//required
+                    tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active;//necessary to set the TriggeredSendDefinition to "Running"
+                    tsd.TriggeredSendStatusSpecified = true;//required
+
+                    string uRequestID = String.Empty;
+                    string uStatus = String.Empty;
+
                     try
                     {
-                        //Call the Create method on the TriggeredSendDefinition object
-                        CreateResult[] cResults = client.Create(new CreateOptions(), new APIObject[] { tsd }, out cRequestID, out cStatus);
+                        //Call the Create method on the EmailSendDefinition object
+                        UpdateResult[] uResults = client.Update(new UpdateOptions(), new APIObject[] { tsd }, out uRequestID, out uStatus);
 
-                       Log.Info("[EXACTTARGET] Overall Create Status: " + cStatus, this);
-                       Log.Info("[EXACTTARGET] Number of Results: " + cResults.Length, this);
-                       sbReturnString.Append("[EXACTTARGET] Overall Create Status: " + cStatus).AppendLine();
-                       sbReturnString.Append("[EXACTTARGET] Number of Results: " + cResults.Length).AppendLine();
+                        //Display Results
+                        Log.Info("[EXACTTARGET] Overall Create Status: " + cStatus, this);
+                        Log.Info("[EXACTTARGET] Number of Results: " + uResults.Length, this);
+                        sbReturnString.Append("[EXACTTARGET] Overall Create Status: " + cStatus).AppendLine();
+                        sbReturnString.Append("[EXACTTARGET] Number of Results: " + uResults.Length).AppendLine();
+                        //lblMessage.Text += "Overall Update Status: " + uStatus;
+                        //lblMessage.Text += "<br/>";
+                        //lblMessage.Text += "Number of Results: " + uResults.Length;
+                        //lblMessage.Text += "<br/>";
 
-
-                        ////Display Results
-                       //lblMessage.Text += "Overall Create Status: " + cStatus;
-                       //lblMessage.Text += "<br/>";
-                       //lblMessage.Text += "Number of Results: " + cResults.Length;
-                       //lblMessage.Text += "<br/>";
-                        
                         //Loop through each object returned and display the StatusMessage
-                        foreach (CreateResult cr in cResults)
+                        foreach (UpdateResult ur in uResults)
                         {
-                            Log.Info("[EXACTTARGET] Status Message: " + cr.StatusMessage, this);
-                            sbReturnString.Append("[EXACTTARGET] Status Message: " + cr.StatusMessage).AppendLine();
-
-                            //lblMessage.Text += "Status Message: " + cr.StatusMessage;
+                            Log.Info("[EXACTTARGET] Status Message: " + ur.StatusMessage, this);
+                            sbReturnString.Append("[EXACTTARGET] Status Message: " + ur.StatusMessage).AppendLine();
+                            //lblMessage.Text += "Status Message: " + ur.StatusMessage;
                             //lblMessage.Text += "<br/>";
                         }
                     }
                     catch (Exception exCreate)
                     {
                         //Set Message
-                        Log.Error("[EXACTTARGET] CREATE TSD ERROR: " + exCreate.Message.ToString(), exCreate, this);
-                        //lblMessage.Text += "<br/><br/>CREATE TSD ERROR:<br/>" + exCreate.Message;
-                        // sbReturnString.Append("[EXACTTARGET] CREATE TSD ERROR: " + exCreate.Message.ToString()).AppendLine();
+                        Log.Error("[EXACTTARGET] UPDATE TSD ERROR: " + exCreate.Message.ToString(), exCreate, this);
                         throw;
+                        //sbReturnString.Append("[EXACTTARGET] UPDATE TSD ERROR: " + exCreate.Message).AppendLine();
+                        //lblMessage.Text += "<br/><br/>UPDATE TSD ERROR:<br/>" + exCreate.Message;
+
                     }
 
-                    //Preceed if the above Create call was successful
-                    if (cStatus == "OK")
+                    //Preceed if the above Update call was successful
+                    if (uStatus == "OK")
                     {
+                        // *** SEND THE TRIGGER EMAIL
 
-                        // *** MAKE TRIGGERED SEND DEFINITION ACTIVE  
-                        tsd = new TriggeredSendDefinition();
-                        tsd.CustomerKey = strGUID;//required
-                        tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active;//necessary to set the TriggeredSendDefinition to "Running"
-                        tsd.TriggeredSendStatusSpecified = true;//required
+                        //Create a new Subscriber to send the Trigger to
+                        Subscriber newSub = new Subscriber();
+                        newSub.EmailAddress = triggeredSendEmail.ETSubscriberList[0].Email;
+                        newSub.SubscriberKey = triggeredSendEmail.ETSubscriberList[0].Key;
 
-                        string uRequestID = String.Empty;
-                        string uStatus = String.Empty;
+                        Subscriber newSub2 = new Subscriber();
+                        newSub2.EmailAddress = triggeredSendEmail.ETSubscriberList[1].Email;
+                        newSub2.SubscriberKey = triggeredSendEmail.ETSubscriberList[1].Key;
+                        string htmlContent = "";
+
+                        switch (triggeredSendEmail.ETEmail.EmailID) {//defines the contents of the email based on the Email specified
+                            case "205":
+                                ResetPasswordLink(ref newSub, ref triggeredSendEmail, htmlContent);
+                                break;
+                            case "206":
+                            case "207":
+                            case "208":
+                            case "209":
+                            case "210":
+                            case "211":
+                                //invoke function for newsletter content
+                                SetNewsLetterContents(ref newSub, ref triggeredSendEmail);
+                                break;
+                            case "212":
+                            case "213":
+                            case "214":
+                            case "215":
+                            case "216":
+                            case "217":
+                            case "218":
+                            case "219":
+                            case "220":
+                            case "221":
+                            case "222":
+                            case "223":
+                                //invoke function for transactional content
+                                SetTransactionEmailContents(ref newSub, ref triggeredSendEmail);
+                                break;
+                            default:
+                                //Create Subscriber Attributes
+                                newSub.Attributes = new etAPI.Attribute[2];//Attributes are available in the ET UI [Subscribers > Profile Management]
+                                //1
+                                newSub.Attributes[0] = new etAPI.Attribute();
+                                newSub.Attributes[0].Name = "FromName";//Account Specific
+                                newSub.Attributes[0].Value = "From " + triggeredSendEmail.ETSubscriberList[0].FN;//Subscriber Specific
+                                //2
+                                newSub.Attributes[1] = new etAPI.Attribute();
+                                newSub.Attributes[1].Name = "HTML_Content";//Account Specific
+                                newSub.Attributes[1].Value = "This is a test <a href=\"httpgetwrap|http://poses.dev01.rax.webstagesite.com/my-account/reset-your-password?guid=4e4bd256-cbca-4b54-9111-b4ccfe91abda\" alias=\"Password Reset Link\">link</a>"; //httpgetwrap| must be before the http for ExactTarget to track this URL //Subscriber Specific
+
+                                //Create Subscriber Attributes
+                                newSub2.Attributes = new etAPI.Attribute[2];//Attributes are available in the ET UI [Subscribers > Profile Management]
+                                //1
+                                newSub2.Attributes[0] = new etAPI.Attribute();
+                                newSub2.Attributes[0].Name = "FromName";//Account Specific
+                                newSub2.Attributes[0].Value = "From " + triggeredSendEmail.ETSubscriberList[1].FN;//Subscriber Specific
+                                //2
+                                newSub2.Attributes[1] = new etAPI.Attribute();
+                                newSub2.Attributes[1].Name = "HTML_Content";//Account Specific
+                                newSub2.Attributes[1].Value = "This is a test <a href=\"httpgetwrap|http://exacttarget.com\" alias=\"ET Link\">link</a>"; //httpgetwrap| must be before the http for ExactTarget to track this URL //Subscriber Specific
+                                break;
+                        }                       
+
+
+                        //Create a TriggeredSend object to referrence the earlier created TriggeredSendDefinition
+                        TriggeredSend ts = new TriggeredSend();
+                        ts.TriggeredSendDefinition = new TriggeredSendDefinition();
+                        ts.TriggeredSendDefinition.CustomerKey = strGUID;//This is the External Key from the UI
+
+                        ts.Subscribers = new Subscriber[] { newSub, newSub2 };//Add the Subscriber objects to the TriggeredSend object
+
+                        string tsRequestID = "";
+                        string tsStatus = "";
 
                         try
                         {
-                            //Call the Create method on the EmailSendDefinition object
-                            UpdateResult[] uResults = client.Update(new UpdateOptions(), new APIObject[] { tsd }, out uRequestID, out uStatus);
+                            //Call the Create method on the TriggeredSend object
+                            CreateResult[] tsResults = client.Create(new CreateOptions(), new APIObject[] { ts }, out tsRequestID, out tsStatus);
 
                             //Display Results
-                           Log.Info("[EXACTTARGET] Overall Create Status: " + cStatus, this);
-                           Log.Info("[EXACTTARGET] Number of Results: " + uResults.Length, this);
-                           sbReturnString.Append("[EXACTTARGET] Overall Create Status: " + cStatus).AppendLine();
-                           sbReturnString.Append("[EXACTTARGET] Number of Results: " + uResults.Length).AppendLine();
-                            //lblMessage.Text += "Overall Update Status: " + uStatus;
+                            Log.Info("[EXACTTARGET] Overall Create Status: " + tsResults, this);
+                            Log.Info("[EXACTTARGET] Number of Results: " + tsResults.Length, this);
+                            sbReturnString.Append("<br />[EXACTTARGET] Overall Create Status: " + tsResults).AppendLine();
+                            sbReturnString.Append("<br />[EXACTTARGET] Number of Results: " + tsResults.Length).AppendLine();
+                            //lblMessage.Text += "Overall Update Status: " + tsStatus;
                             //lblMessage.Text += "<br/>";
-                            //lblMessage.Text += "Number of Results: " + uResults.Length;
+                            //lblMessage.Text += "Number of Results: " + tsResults.Length;
                             //lblMessage.Text += "<br/>";
 
                             //Loop through each object returned and display the StatusMessage
-                            foreach (UpdateResult ur in uResults)
+                            foreach (CreateResult tscr in tsResults)
                             {
-                                Log.Info("[EXACTTARGET] Status Message: " + ur.StatusMessage, this);
-                                sbReturnString.Append("[EXACTTARGET] Status Message: " + ur.StatusMessage).AppendLine();
-                                //lblMessage.Text += "Status Message: " + ur.StatusMessage;
+                                Log.Info("[EXACTTARGET] Status Message: " + tscr.StatusMessage.ToString(), this);
+                                sbReturnString.Append("<br />[EXACTTARGET] Status Message: " + tscr.StatusMessage).AppendLine();
+                                //lblMessage.Text += "Status Message: " + tscr.StatusMessage;
                                 //lblMessage.Text += "<br/>";
                             }
                         }
                         catch (Exception exCreate)
                         {
-                            //Set Message
-                            Log.Error("[EXACTTARGET] UPDATE TSD ERROR: " + exCreate.Message.ToString(), exCreate, this);
+
+                            Log.Error("<br />[EXACTTARGET] CREATE TS ERROR: " + exCreate.Message.ToString(), exCreate, this);
+                            //sbReturnString.Append("[EXACTTARGET] CREATE TS ERROR: " + exCreate.Message).AppendLine();
+                            //lblMessage.Text += "<br/><br/>CREATE TS ERROR:<br/>" + exCreate.Message;
                             throw;
-                            //sbReturnString.Append("[EXACTTARGET] UPDATE TSD ERROR: " + exCreate.Message).AppendLine();
-                            //lblMessage.Text += "<br/><br/>UPDATE TSD ERROR:<br/>" + exCreate.Message;
-                            
-                        }
-
-                        //Preceed if the above Update call was successful
-                        if (uStatus == "OK")
-                        {
-                            // *** SEND THE TRIGGER EMAIL
-
-                            //Create a new Subscriber to send the Trigger to
-                            Subscriber newSub = new Subscriber();
-                            newSub.EmailAddress = triggeredSendEmail.ETSubscriberList[0].Email;
-                            newSub.SubscriberKey = triggeredSendEmail.ETSubscriberList[0].Key;
-
-
-                            //Create Subscriber Attributes
-                            newSub.Attributes = new etAPI.Attribute[2];//Attributes are available in the ET UI [Subscribers > Profile Management]
-                            //1
-                            newSub.Attributes[0] = new etAPI.Attribute();
-                            newSub.Attributes[0].Name = "FromName";//Account Specific
-                            newSub.Attributes[0].Value = "From " + triggeredSendEmail.ETSubscriberList[0].FN;//Subscriber Specific
-                            //2
-                            newSub.Attributes[1] = new etAPI.Attribute();
-                            newSub.Attributes[1].Name = "HTML__Content";//Account Specific
-                            newSub.Attributes[1].Value = "This is a test <a href=\"httpgetwrap|http://google.com\" alias=\"Google Link\">link</a>"; //httpgetwrap| must be before the http for ExactTarget to track this URL //Subscriber Specific
-
-                            //Create a new Subscriber to send the Trigger to
-                            Subscriber newSub2 = new Subscriber();
-                            newSub2.EmailAddress = triggeredSendEmail.ETSubscriberList[1].Email;
-                            newSub2.SubscriberKey = triggeredSendEmail.ETSubscriberList[1].Key;
-
-                            //Create Subscriber Attributes
-                            newSub2.Attributes = new etAPI.Attribute[2];//Attributes are available in the ET UI [Subscribers > Profile Management]
-                            //1
-                            newSub2.Attributes[0] = new etAPI.Attribute();
-                            newSub2.Attributes[0].Name = "FromName";//Account Specific
-                            newSub2.Attributes[0].Value = "From " + triggeredSendEmail.ETSubscriberList[1].FN;//Subscriber Specific
-                            //2
-                            newSub2.Attributes[1] = new etAPI.Attribute();
-                            newSub2.Attributes[1].Name = "HTML__Content";//Account Specific
-                            newSub2.Attributes[1].Value = "This is a test <a href=\"httpgetwrap|http://exacttarget.com\" alias=\"ET Link\">link</a>"; //httpgetwrap| must be before the http for ExactTarget to track this URL //Subscriber Specific
-
-                            //Create a TriggeredSend object to referrence the earlier created TriggeredSendDefinition
-                            TriggeredSend ts = new TriggeredSend();
-                            ts.TriggeredSendDefinition = new TriggeredSendDefinition();
-                            ts.TriggeredSendDefinition.CustomerKey = strGUID;//This is the External Key from the UI
-
-                            ts.Subscribers = new Subscriber[] { newSub, newSub2 };//Add the Subscriber objects to the TriggeredSend object
-
-                            string tsRequestID = "";
-                            string tsStatus = "";
-
-                            try
-                            {
-                                //Call the Create method on the TriggeredSend object
-                                CreateResult[] tsResults = client.Create(new CreateOptions(), new APIObject[] { ts }, out tsRequestID, out tsStatus);
-
-                                //Display Results
-                               Log.Info("[EXACTTARGET] Overall Create Status: " + tsResults, this);
-                               Log.Info("[EXACTTARGET] Number of Results: " + tsResults.Length, this);
-                               sbReturnString.Append("[EXACTTARGET] Overall Create Status: " + tsResults).AppendLine();
-                               sbReturnString.Append("[EXACTTARGET] Number of Results: " + tsResults.Length).AppendLine();
-                                //lblMessage.Text += "Overall Update Status: " + tsStatus;
-                                //lblMessage.Text += "<br/>";
-                                //lblMessage.Text += "Number of Results: " + tsResults.Length;
-                                //lblMessage.Text += "<br/>";
-
-                                //Loop through each object returned and display the StatusMessage
-                                foreach (CreateResult tscr in tsResults)
-                                {
-                                    Log.Info("[EXACTTARGET] Status Message: " + tscr.StatusMessage.ToString(), this);
-                                    sbReturnString.Append("[EXACTTARGET] Status Message: " + tscr.StatusMessage).AppendLine();
-                                    //lblMessage.Text += "Status Message: " + tscr.StatusMessage;
-                                    //lblMessage.Text += "<br/>";
-                                }
-                            }
-                            catch (Exception exCreate)
-                            {
-
-                                Log.Error("[EXACTTARGET] CREATE TS ERROR: " + exCreate.Message.ToString(), exCreate, this);
-                                //sbReturnString.Append("[EXACTTARGET] CREATE TS ERROR: " + exCreate.Message).AppendLine();
-                                //lblMessage.Text += "<br/><br/>CREATE TS ERROR:<br/>" + exCreate.Message;
-                                throw;
-                            }
                         }
                     }
+                }
             }
             catch (Exception exc)
             {
@@ -283,8 +315,34 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
             return (sbReturnString.ToString());
 
-            
+
         }
-        
+
+        //sets contents on an email without any predefined content
+        public void ResetPasswordLink(ref Subscriber newSub, ref TriggeredSendEmail triggeredSendEmail, string htmlContent)
+        {
+                newSub.Attributes = new etAPI.Attribute[2];//Attributes are available in the ET UI [Subscribers > Profile Management]
+                //1
+                newSub.Attributes[0] = new etAPI.Attribute();
+                newSub.Attributes[0].Name = "FromName";//Account Specific
+                newSub.Attributes[0].Value = "From " + triggeredSendEmail.ETSubscriberList[0].FN;//Subscriber Specific
+                //2
+                newSub.Attributes[1] = new etAPI.Attribute();
+                newSub.Attributes[1].Name = "HTML_Content";//Account Specific
+                newSub.Attributes[1].Value = htmlContent; //contains all html between the header and footer of the email
+        }
+
+
+        //sets contents on a newsletter Email
+        public void SetNewsLetterContents(ref Subscriber newSub, ref TriggeredSendEmail triggeredSendEmail)
+        {
+            //TODO: get content to inject into newsletters based on Email ID
+        }
+
+        //sets contents on a transactional Email
+        public void SetTransactionEmailContents(ref Subscriber newSub, ref TriggeredSendEmail triggeredSendEmail)
+        {
+            //TODO: set content specifically for transactional Emails
+        }
     }
 }
