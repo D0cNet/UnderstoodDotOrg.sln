@@ -324,6 +324,21 @@ U.searchSite = function(){
     self.submit_value_default = 'Go';
     self.submit_value_medium = 'Submit';
 
+	var $dataPath = self.input_text.data('path');
+	
+    // START - OASIS
+    self.input_text.on("keypress", function (e) {
+		if (e.which == 13) {
+			e.preventDefault();
+			self.redirectToSearch($dataPath, $(this).val());
+        }
+    });
+	self.input_submit.on("click", function(e) {
+		e.preventDefault();
+		self.redirectToSearch($dataPath, self.input_text.val());
+	});
+    // END - OASIS
+
     self.detectBreakpoint();
     // FIXME Candidate for inclusion in future unified resize event framework
     var resizeDelay;
@@ -346,6 +361,10 @@ U.searchSite = function(){
       self.$search_site.removeClass('is-focused');
     });
 
+  };
+  
+  self.redirectToSearch = function(base, term) {
+	location.href = base + "?q=" + term;
   };
 
   self.detectBreakpoint = function() {

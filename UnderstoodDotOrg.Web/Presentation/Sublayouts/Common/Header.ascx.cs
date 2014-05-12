@@ -13,10 +13,16 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.Understood.Helper;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     public partial class Header : System.Web.UI.UserControl {
 		HeaderFolderItem headerFolderItem = GetHeader();
+
+        public string SearchPath
+        {
+            get { return FormHelper.GetSearchResultsUrl(String.Empty, String.Empty); }
+        }
 
         protected void Page_Load(object sender, EventArgs e) {
             if (headerFolderItem != null) {
