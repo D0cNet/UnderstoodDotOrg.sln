@@ -10,62 +10,65 @@ using Sitecore.Data.Items;
 using Sitecore.ContentSearch;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.ContentSearch.SearchTypes;
+using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Common.Helpers;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 {
-    public partial class Multiple_Children : System.Web.UI.UserControl
+    public partial class Multiple_Children : BaseSublayout
     {
         MultipleChildrenItem ObjMultipleChildren;
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjMultipleChildren = new MultipleChildrenItem(Sitecore.Context.Item);
-            if (ObjMultipleChildren != null)
+
+            BindControls();
+        }
+
+        private void BindControls()
+        {
+            BindChildren();
+        }
+
+        private void BindChildren()
+        {
+            // Temp proxy - use CurrentMember for final implementation
+            var mmp = new MembershipManager();
+            var member = mmp.GetMember(Guid.Parse("{2FC0FD53-CD17-4A9F-9D24-AD2B17852ECB}"));
+            if (member != null)
             {
-                //Get the list of chidlrens to assign rptChildBasicInfo
-                //rptChildBasicInfo.DataSource= Child Item list;
-                //rptChildBasicInfo.DataBind();
-
+                var children = member.Children;
+                if (children.Any())
+                {
+                    rptChildBasicInfo.DataSource = member.Children;
+                    rptChildBasicInfo.DataBind();
+                }
             }
-
-
         }
 
         protected void rptChildBasicInfo_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.IsItem())
             {
-                //Create item of type Child!
-                //Child ObjChild= e.Item.DataItem as Child
+                Child child = (Child)e.Item.DataItem;
+
+                Literal litChildGrade = e.FindControlAs<Literal>("litChildGrade");
+                litChildGrade.Text = child.Grades.First().Value;
+
+                Literal litChildGender = e.FindControlAs<Literal>("litChildGender");
+                litChildGender.Text = TextHelper.ToTitleCase(child.Gender);
+
+                Repeater rptChildRelatedArticles = e.FindControlAs<Repeater>("rptChildRelatedArticles");
+                if (rptChildRelatedArticles != null)
                 {
-                    FieldRenderer frChildName = e.FindControlAs<FieldRenderer>("frChildName");
-                    if (frChildName != null)
+                    List<DefaultArticlePageItem> articles = UnderstoodDotOrg.Domain.Personalization.PersonalizationHelper.GetChildPersonalizedContents(child);
+                    if (articles.Any())
                     {
-                        //frChildName.Item=current ChildControlsCreated Item;
+                        rptChildRelatedArticles.DataSource = articles;
+                        rptChildRelatedArticles.DataBind();
                     }
-                    FieldRenderer frWhyGrade = e.FindControlAs<FieldRenderer>("frWhyGrade");
-                    if (frWhyGrade != null)
-                    {
-                        //frWhyGrade.Item=Current ChildControlsCreated Item;
-                    }
-                    FieldRenderer frWhyChildGender = e.FindControlAs<FieldRenderer>("frWhyChildGender");
-                    if (frWhyChildGender!=null)
-                    {
-                        //frWhyChildGender.Item=current ChildControlsCreated item;
-                    }
-                    Label lblCHildNameRecommendText = e.FindControlAs<Label>("lblCHildNameRecommendText");
-                    if (lblCHildNameRecommendText != null)
-                    {
-                        //lblCHildNameRecommendText.Text="Recommendations match what you told us about " + Child's Name;
-                    }
-                    
-                    Repeater rptChildRelatedArticles = e.FindControlAs<Repeater>("rptChildRelatedArticles");
-                    if (rptChildRelatedArticles != null)
-                    {
-                        //Get the list of matching articles according to each child and assign to rptChildRelatedArticles
-                    }
-                    //Get the list of matching issues of child and assign to rptChildIssuesList
-                        
-                 
                 }
             }
         }
@@ -74,36 +77,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
         {
             if(e.IsItem())
             {
-                //Create Obj of ARticle Type
-                //Articles ObjArticle = e.Item.DataItem as Articles;
+                DefaultArticlePageItem item = (DefaultArticlePageItem)e.Item.DataItem;
                 {
                     HyperLink hlArticleImage = e.FindControlAs<HyperLink>("hlArticleImage");
-                    if(hlArticleImage!=null)
-                    {
-                        //hlArticleImage.NavigateUrl=;
-                        FieldRenderer frArticleImage = e.FindControlAs<FieldRenderer>("frArticleImage");
-                        if (frArticleImage != null)
-                        {
-                            //frArticleImage.Item = ObjArticle;
-                        }
-                    }
-                    HyperLink hlArtcielTitle = e.FindControlAs<HyperLink>("hlArtcielTitle");
-                    if (hlArtcielTitle != null)
-                    {
-                        //hlArtcielTitle.NavigateUrl=;
-                        FieldRenderer frArticleTitle = e.FindControlAs<FieldRenderer>("frArticleTitle");
-                        if (frArticleTitle != null)
-                        {
-                            //frArticleTitle.Item = ObjArticle;
-                        }
-                    }
-                    FieldRenderer frArticleGrade = e.FindControlAs<FieldRenderer>("frArticleGrade");
-                    if (frArticleGrade != null)
-                    {
-                        //frArticleGrade.Item = ObjArticle;
-                    }
-                }
+                    HyperLink hlArticleTitle = e.FindControlAs<HyperLink>("hlArticleTitle");
 
+                    hlArticleImage.NavigateUrl = hlArticleTitle.NavigateUrl = item.InnerItem.GetUrl();
+                }
             }
         }
 
@@ -113,11 +93,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
             {
                 //ChildIssue ObjChildIssue = e.Item.DataItem as ChildIssue;
                 {
-                    FieldRenderer frChildIssue = e.FindControlAs<FieldRenderer>("frChildIssue");
-                    if (frChildIssue != null)
-                    {
-                        //frChildIssue.Item = ObjChildIssue;
-                    }
                     HyperLink hlReplaceMatchingIssues = e.FindControlAs<HyperLink>("hlReplaceMatchingIssues");
                     if (hlReplaceMatchingIssues != null)
                     {

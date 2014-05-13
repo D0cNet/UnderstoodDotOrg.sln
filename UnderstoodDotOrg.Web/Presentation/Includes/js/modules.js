@@ -1263,9 +1263,10 @@ the callbacks passed to the module.
           },
           onResizeEvent.length + 'responsiveSlider']);
 
+		/*
         ReadSpeaker.q(function () {
           U.carousels.accessibleSlide(container);
-        });
+        });*/
 
         U.carousels.keyboardAccess(container, true);
 

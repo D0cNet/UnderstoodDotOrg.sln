@@ -491,6 +491,18 @@ namespace UnderstoodDotOrg.Common
 
         #endregion
 
+        #region Fragments
+
+        public static string RecommendationsMatchFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Recommendations Match Fragment");
+            }
+        }
+
+        #endregion
+
         public static string SearchLabel
         {
             get

@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Personalization;
 using UnderstoodDotOrg.Domain.Search;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.Personalization
 {
@@ -22,14 +23,27 @@ namespace UnderstoodDotOrg.Domain.Personalization
                    select entry;
         }
 
-        public static List<Guid> GetChildPersonalizedContents(Child child)
+        public static List<DefaultArticlePageItem> GetChildPersonalizedContents(Child child)
         {
+            List<DefaultArticlePageItem> results = new List<DefaultArticlePageItem>();
+
             using (var pc = new PersonalizationContext(System.Configuration.ConfigurationManager.ConnectionStrings[Constants.ConnectionStringMembership].ConnectionString))
             {
-                return (from c in GetOrderedChildContent(pc, child)
-                       where c.ContentId != Constants.ContentItem.PersonalizedContentNotFound
-                       select c.ContentId).ToList();
+                var guids = from c in GetOrderedChildContent(pc, child)
+                            where c.ContentId != Constants.ContentItem.PersonalizedContentNotFound
+                            select c.ContentId;
+
+                foreach (Guid g in guids)
+                {
+                    var item = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(g));
+                    if (item != null)
+                    {
+                        results.Add(new DefaultArticlePageItem(item));
+                    }
+                }
             }
+
+            return results;
         }
 
         public static void SavePersonalizedContent(Member member, Child child, List<Article> articles)
