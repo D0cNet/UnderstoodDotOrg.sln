@@ -31,22 +31,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         protected global::System.Web.UI.WebControls.TextBox tbxEmailID;
         
         /// <summary>
-        /// lblCustomerKey control.
+        /// LabelHtmlContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCustomerKey;
+        protected global::System.Web.UI.WebControls.Label LabelHtmlContent;
         
         /// <summary>
-        /// tbxCustomerKey control.
+        /// txtHtmlContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxCustomerKey;
+        protected global::System.Web.UI.WebControls.TextBox txtHtmlContent;
         
         /// <summary>
         /// lblSubscriberEmail1 control.
@@ -103,60 +103,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         protected global::System.Web.UI.WebControls.TextBox tbxSubscriberFN1;
         
         /// <summary>
-        /// lblSubscriberEmail2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSubscriberEmail2;
-        
-        /// <summary>
-        /// tbxSubscriberEmail2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxSubscriberEmail2;
-        
-        /// <summary>
-        /// lblSubscriberKey2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSubscriberKey2;
-        
-        /// <summary>
-        /// tbxSubscriberKey2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxSubscriberKey2;
-        
-        /// <summary>
-        /// lblSubscriberFN2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSubscriberFN2;
-        
-        /// <summary>
-        /// tbxSubscriberFN2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxSubscriberFN2;
-        
-        /// <summary>
         /// btnETTests control.
         /// </summary>
         /// <remarks>
@@ -166,22 +112,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         protected global::System.Web.UI.WebControls.Button btnETTests;
         
         /// <summary>
-        /// Label3 control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
-        /// txtResetLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtResetLink;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// lblMessage control.

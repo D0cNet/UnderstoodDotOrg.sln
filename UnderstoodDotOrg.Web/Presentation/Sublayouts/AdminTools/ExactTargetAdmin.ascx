@@ -9,9 +9,13 @@
 <br />
 <asp:Label ID="lblEmailID" runat="server" Text="Email ID"></asp:Label><asp:TextBox ID="tbxEmailID" runat="server"></asp:TextBox>  Available in the ET UI [Content > My Emails > Properties] 
 <br />
-<asp:Label ID="lblCustomerKey" runat="server" Text="Customer Key"></asp:Label><asp:TextBox ID="tbxCustomerKey" runat="server"></asp:TextBox>  Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
 <br />
 <hr />
+<asp:Label ID="LabelHtmlContent" runat="server" Text="HTML content for Emails without predefined content"></asp:Label>
+<br />
+<asp:TextBox ID="txtHtmlContent" runat="server" TextMode="multiline" rows="10" Width="450px"></asp:TextBox>
+<br />
+<br />
 <h4>Subscriber 1:</h4>
 <asp:Label ID="lblSubscriberEmail1" runat="server" Text="Subscriber Email 1"></asp:Label><asp:TextBox ID="tbxSubscriberEmail1" runat="server" Width="250px"></asp:TextBox>
 <br />
@@ -21,21 +25,9 @@
 <br />
 <br />
 <hr />
-<h4>Subscriber 2:</h4>
-<asp:Label ID="lblSubscriberEmail2" runat="server" Text="Subscriber Email 2"></asp:Label><asp:TextBox ID="tbxSubscriberEmail2" runat="server" Width="250px"></asp:TextBox>
-<br />
-<asp:Label ID="lblSubscriberKey2" runat="server" Text="Key 2"></asp:Label><asp:TextBox ID="tbxSubscriberKey2" runat="server" Width="250px"></asp:TextBox>
-<br />
-<asp:Label ID="lblSubscriberFN2" runat="server" Text="First Name 2"></asp:Label><asp:TextBox ID="tbxSubscriberFN2" runat="server" Width="250px"></asp:TextBox>
-<br />
-<br />
-<hr />
 <asp:Button ID="btnETTests" runat="server" Text="Invoke Trigger Send Email" OnClick="btnETTests_Click" />
-<br />
-<br /><!-- START OF PASSWORD RESET TEST -->
-<h3>Reset Password Email Test</h3>
-<br />
-<asp:Label ID="Label3" runat="server" Text="Enter your reset link here"></asp:Label><asp:TextBox ID="txtResetLink" runat="server"  />
+<br /><br /><!-- 
+<asp:Button ID="Button1" runat="server" Text="Send welcome Email" OnClick="btnSendEmail_Click" />-->
 <br />
 <br />
 <h4>Results:</h4>
