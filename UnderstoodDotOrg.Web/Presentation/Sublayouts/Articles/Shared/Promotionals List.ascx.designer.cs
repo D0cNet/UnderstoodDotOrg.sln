@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
     public partial class Promotionals_List {
         
         /// <summary>
+        /// rptPromoList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptPromoList;
+        
+        /// <summary>
         /// hlPromo1 control.
         /// </summary>
         /// <remarks>

@@ -34,6 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 
         IEnumerable<PromoItem> FinalRelatedArticles = null;
         bool ShowPromo = false;
+        int PromoCounter = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Sitecore.Context.Item.TemplateID.ToString() == BasicArticlePageItem.TemplateId.ToString())
@@ -138,23 +139,34 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 
                 if (FinalRelatedArticles != null)
                 {
-                    if (FinalRelatedArticles.Count() > 3 && FinalRelatedArticles.Count()!=0) FinalRelatedArticles = FinalRelatedArticles.Take(3);
+                    if (FinalRelatedArticles.Count() > 3 && FinalRelatedArticles.Count() != 0) FinalRelatedArticles = FinalRelatedArticles.Take(3);
+                    PromoCounter = 0;
+                    rptPromoList.DataSource = FinalRelatedArticles;
+                    rptPromoList.DataBind();
 
-                    frPromo1.Item = FinalRelatedArticles.ElementAt(0).InnerItem;
-                    hlPromo1.NavigateUrl = string.Concat( "http://",Request.Url.Host.ToString(),FinalRelatedArticles.ElementAt(0).InnerItem.GetUrl());
-                    //hlPromo1.Text = FinalRelatedArticles.ElementAt(0).InnerItem.Name;
-                    hlPromo1.Visible = true;
+                    //frPromo1.Item = FinalRelatedArticles.ElementAt(0).InnerItem;
 
-                    frPromo2.Item = FinalRelatedArticles.ElementAt(1).InnerItem;
-                    hlPromo2.NavigateUrl = string.Concat( "http://",Request.Url.Host.ToString(),FinalRelatedArticles.ElementAt(1).InnerItem.GetUrl());
-                    //hlPromo2.Text = FinalRelatedArticles.ElementAt(1).InnerItem.Name;
-                    hlPromo2.Visible = true;
+                    //if (!String.IsNullOrEmpty(FinalRelatedArticles.ElementAt(0).PromoURL.Text) && String.IsNullOrWhiteSpace(FinalRelatedArticles.ElementAt(0).PromoURL.Text))
+                    //{
+                    //    if (FinalRelatedArticles.ElementAt(0).PromoURL.Text.Contains(Request.Url.Host.ToString()))
+                    //        hlPromo1.NavigateUrl = string.Concat("http://", Request.Url.Host.ToString(), FinalRelatedArticles.ElementAt(0).PromoURL.Text);
+                    //    else
+                    //        hlPromo1.NavigateUrl = FinalRelatedArticles.ElementAt(0).PromoURL.Text;
+                    //}
+                    ////hlPromo1.NavigateUrl = FinalRelatedArticles.ElementAt(0).PromoURL.Text;
+                    ////hlPromo1.Text = FinalRelatedArticles.ElementAt(0).InnerItem.Name;
+                    //hlPromo1.Visible = true;
+
+                    //frPromo2.Item = FinalRelatedArticles.ElementAt(1).InnerItem;
+                    //hlPromo2.NavigateUrl = string.Concat( "http://",Request.Url.Host.ToString(),FinalRelatedArticles.ElementAt(1).InnerItem.GetUrl());
+                    ////hlPromo2.Text = FinalRelatedArticles.ElementAt(1).InnerItem.Name;
+                    //hlPromo2.Visible = true;
 
 
-                    frPromo3.Item = FinalRelatedArticles.ElementAt(2).InnerItem;
-                    hlPromo3.NavigateUrl =string.Concat( "http://",Request.Url.Host.ToString(), FinalRelatedArticles.ElementAt(2).InnerItem.GetUrl());
-                    //hlPromo3.Text = FinalRelatedArticles.ElementAt(2).InnerItem.Name;
-                    hlPromo3.Visible = true;
+                    //frPromo3.Item = FinalRelatedArticles.ElementAt(2).InnerItem;
+                    //hlPromo3.NavigateUrl =string.Concat( "http://",Request.Url.Host.ToString(), FinalRelatedArticles.ElementAt(2).InnerItem.GetUrl());
+                    ////hlPromo3.Text = FinalRelatedArticles.ElementAt(2).InnerItem.Name;
+                    //hlPromo3.Visible = true;
                 }
 
             }
@@ -230,9 +242,35 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                     FinalArticles.Add(DefItem);
                 }
             }
-            
+
 
             return FinalArticles;
         }
+        protected string GetCSSName(int Countrer)
+        {
+            if (Countrer == 0)
+                return "purple-dark";
+            if (Countrer == 1)
+                return "purple-light";
+            if (Countrer == 2)
+                return "blue";
+            else
+                return "";
+        }
+        protected void rptPromoList_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+
+                Panel pnlPromoItem = e.FindControlAs<Panel>("pnlPromoItem");
+                if (pnlPromoItem != null)
+                {
+                    pnlPromoItem.CssClass += GetCSSName(PromoCounter);
+                    PromoCounter++;
+                }
+            }
+        }
+
+
     }
 }
