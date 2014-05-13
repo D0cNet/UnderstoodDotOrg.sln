@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace UnderstoodDotOrg.Domain.TelligentCommunity
@@ -59,15 +60,20 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string _author { get; set; }
         public string _blogName { get; set; }
         public string _contentId { get; set; }
+        public string _sitecoreUrl { get; set; }
 
         public BlogPost(string body, string title, string publishedDate, string author, string blogName, string contentId)
         {
             _body = body;
+
+            string[] url = Regex.Split(body.ToLower(),"/sitecore/content/home");
+            url[0].Replace(' ', '-');
+
+            _sitecoreUrl = url[0];
             _title = title;
             _publishedDate = publishedDate;
             _author = author;
             _blogName = blogName;
-            _contentId = contentId;
         }
     }
 

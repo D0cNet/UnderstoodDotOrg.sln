@@ -77,7 +77,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
 
                 var values = new NameValueCollection();
                 values["Title"] = item.Name;
-                values["Body"] = item.Paths.FullPath;
+                values["Body"] = item.Paths.Path;
 
 
                 var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));

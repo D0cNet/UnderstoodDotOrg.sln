@@ -21,7 +21,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             TimeSpan s = now.Subtract(date);
             int span = (int)s.TotalDays;
             string timeSince = span.ToString();
-            string publishedDate = "Published " + timeSince + " days ago";
+            string publishedDate = timeSince + " days ago";
             if (timeSince.Equals("1"))
             {
                 publishedDate = "yesterday";
@@ -49,7 +49,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                 if (span < 7200)
                 {
-                    return "Published 1 hour ago";
+                    return "1 hour ago";
                 }
 
                 if (span < 86400)

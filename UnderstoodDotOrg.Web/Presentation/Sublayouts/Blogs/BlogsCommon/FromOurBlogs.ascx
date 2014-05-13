@@ -19,10 +19,10 @@
                                 </div>
                                 <!-- end .blog-card-title -->
                                 <div class="blog-card-post-info">
-                                    Posted by <a href="REPLACE"><%# Eval("_author") %></a> on <%# Eval("_publishedDate") %>
+                                    Posted by <a href="REPLACE"><%# Eval("_author") %></a> <%# Eval("_publishedDate") %>
                                 </div>
                                 <div class="blog-card-post-excerpt">
-                                    <%# Eval("_body") %> <a href="REPLACE" class="link-see-more">See more</a>
+                                    <!--<%# Eval("_body") %> --><a href="REPLACE" class="link-see-more">See more</a>
                                 </div>
                                 <span class="children-key clearfix">
                                     <ul>
