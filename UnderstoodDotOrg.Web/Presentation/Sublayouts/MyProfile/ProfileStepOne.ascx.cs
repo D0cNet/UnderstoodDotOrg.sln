@@ -161,7 +161,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 registeringUser.Children.Add(child);
             }
 
-            Response.Redirect(MembershipHelper.GetNextStepURL(2));
+            if (registeringUser.Children.Count > 0)
+            {
+                // get info for each child
+                Response.Redirect(MembershipHelper.GetNextStepURL(2));
+            }
+            else
+            {
+                // hey, you said you didn't have any children...
+                Response.Redirect(MembershipHelper.GetNextStepURL(4));
+            }
         }
     }
 }

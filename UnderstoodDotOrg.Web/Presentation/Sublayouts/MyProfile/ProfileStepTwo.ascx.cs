@@ -18,7 +18,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
         {
             NextButton.Text = NextButtonText;
 
-            MyProfileStepTwoItem currentItem = Sitecore.Context.Database.GetItem(Sitecore.Context.Item.ID);
+            MyProfileStepTwoItem currentItem = Sitecore.Context.Item;
 
             string grade = string.Empty;
             string gender = string.Empty;
