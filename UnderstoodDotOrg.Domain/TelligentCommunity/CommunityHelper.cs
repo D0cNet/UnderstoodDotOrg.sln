@@ -444,8 +444,10 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string title = node["Name"].InnerText;
                 string description = FormatString100(node["Description"].InnerText);
                 Blog blogPost = new Blog(description, title);
-
-                blogs.Add(blogPost);
+                if (!title.Equals("Articles"))
+                {
+                    blogs.Add(blogPost);
+                }
                 count++;
             }
             return blogs;
