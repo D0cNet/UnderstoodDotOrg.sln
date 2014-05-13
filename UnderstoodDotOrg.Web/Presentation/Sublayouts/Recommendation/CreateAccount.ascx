@@ -26,10 +26,6 @@
 
             </div>
         </div>
-
-
-
-
         <div class="col col-9">
             <!-- BEGIN PARTIAL: share-save -->
             <sc:Placeholder ID="Placeholder1" Key="ShareNSave" runat="server" />
@@ -51,8 +47,6 @@
 
             <!-- END PARTIAL: share-save -->
         </div>
-
-
     </div>
 </div>
 <!-- .container -->
@@ -66,7 +60,7 @@
             <sc:FieldRenderer ID="frImageContent" runat="server" FieldName="Image Content"/>
         </div>
 
-        <div class="col col-11 recommendations-usage skiplink-content">
+        <div class="col col-11 recommendations-usage">
             <h3><%--3 ways to use recommendations--%>
                 <sc:FieldRenderer ID="frrecommendationHeader" runat="server" FieldName="Recommendation Header" />
             </h3>
@@ -169,7 +163,7 @@
                 </li> --%>
             </ul>
         </div>
-        <div class="col col-12 related-tool-wrapper skiplink-toolbar">
+        <div class="col col-12 related-tool-wrapper">
             <a href="REPLACE" class="related-tool parenting-coach">
                 <span class="tool-intro">Try a related tool</span>
                 <span class="tool-name">Parenting Coach</span>
