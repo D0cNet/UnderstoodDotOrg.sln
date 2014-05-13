@@ -10,7 +10,7 @@
 <!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
-<head>
+<head runat="server">
     <meta charset="utf-8">
     <title></title>
 

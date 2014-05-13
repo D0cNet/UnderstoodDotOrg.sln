@@ -19,9 +19,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
             if (ContextItem != null && ContextItem.InheritsFromType(BasePageNEWItem.TemplateId))
             {
                 BasePageNEWItem basePage = new BasePageNEWItem(ContextItem);
-                if (basePage != null && !basePage.ShowWelcomeTour.Raw.IsNullOrEmpty())
+                if (basePage != null)
                 {
-                    ltWelcomeTour.Text = "<div data-show-welcome-tour=\"true\" id=\"community-page\"></div>";
+                    if (!basePage.ShowWelcomeTour.Raw.IsNullOrEmpty())
+                    {
+                        ltWelcomeTour.Text = "<div data-show-welcome-tour=\"true\" id=\"community-page\"></div>";
+                    }
+
+                    if (!basePage.MetaTitle.Raw.IsNullOrEmpty())
+                    {
+                        this.Title = basePage.MetaTitle.Raw; // do not use Rendered since this will make the <title> a mess in Page Editor
+                    }
                 }
             }
 
