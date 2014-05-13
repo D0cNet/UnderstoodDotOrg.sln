@@ -65,11 +65,16 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public BlogPost(string body, string title, string publishedDate, string author, string blogName, string contentId)
         {
             _body = body;
+            try
+            {
+                string[] url = Regex.Split(body.ToLower(), "/sitecore/content/home");
+                url[1].Replace(' ', '-');
+                _sitecoreUrl = url[0];
+            }
+            catch
+            {
 
-            string[] url = Regex.Split(body.ToLower(),"/sitecore/content/home");
-            url[0].Replace(' ', '-');
-
-            _sitecoreUrl = url[0];
+            }
             _title = title;
             _publishedDate = publishedDate;
             _author = author;
