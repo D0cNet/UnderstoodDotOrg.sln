@@ -15,7 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             string blogId;
             try
             {
-                blogId = "1,2,4;";
+                blogId = "1,2,3;";
                 List<BlogPost> dataSource = CommunityHelper.ListBlogPosts(blogId);
                 BlogPostsRepeater.DataSource = dataSource;
                 BlogPostsRepeater.DataBind();
