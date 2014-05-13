@@ -32,12 +32,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     {
                         litNumComments.Text = "(" + numComments + ")";
                     }
-                    Comment recentComment = comments.OrderByDescending(x => x._commentDate).First();
-                    litCommentblurb.Text =CommunityHelper.FormatString100( recentComment._body);// Take(100).ToString();
-                    litAuthorName.Text = recentComment._authorDisplayName;
-                    litTimeStamp.Text = recentComment._publishedDate;
-                    hlAddMyComment.HRef ="#"+recentComment._commentId; //Navigate to comment
-                       
+                    try
+                    {
+                        Comment recentComment = comments.OrderByDescending(x => x._commentDate).First();
+                        litCommentblurb.Text = CommunityHelper.FormatString100(recentComment._body);// Take(100).ToString();
+                        litAuthorName.Text = recentComment._authorDisplayName;
+                        litTimeStamp.Text = recentComment._publishedDate;
+                        hlAddMyComment.HRef = "#" + recentComment._commentId; //Navigate to comment
+                    }
+                    catch
+                    {
+
+                    }
                 }
                
 
