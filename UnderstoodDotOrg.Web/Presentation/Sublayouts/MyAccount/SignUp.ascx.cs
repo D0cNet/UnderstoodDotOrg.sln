@@ -60,7 +60,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                 var membershipManager = new MembershipManager();
 
-                this.registeringUser = membershipManager.AddMember(this.registeringUser);
+                // helps to call the right addMember method...
+                this.registeringUser = membershipManager.AddMember(this.registeringUser, email, password);
 
                 this.CurrentMember = this.registeringUser;
                 this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);

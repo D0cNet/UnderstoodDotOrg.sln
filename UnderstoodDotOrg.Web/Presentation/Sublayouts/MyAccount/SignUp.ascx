@@ -23,7 +23,8 @@
                 <sc:Text ID="pageDirections" runat="server" Field="Directions" />
             </p>
             <div class="sign-up-inputs">
-                <label class="first-name error">
+                <%--TODO: add .error to the labels to show validation error messages--%>
+                <label class="first-name">
                     <%--<input type="text" placeholder="First name" aria-required="true">--%>
                     <asp:TextBox runat="server" ID="uxFirstName" aria-required="true"></asp:TextBox>
                     <span><%--* Please enter your first name--%>
@@ -34,14 +35,14 @@
                 <p>
                     <%= UnderstoodDotOrg.Common.DictionaryConstants.FirstNameMessage %>
                 </p>
-                <label class="email-address error">
+                <label class="email-address">
                     <%--<input type="text" placeholder="Enter email address" aria-required="true">--%>
                     <asp:TextBox runat="server" ID="uxEmailAddress" aria-required="true"></asp:TextBox>
                     <span><%--* It looks like you mistyped your email address. Please try again.--%>
                         <%= UnderstoodDotOrg.Common.DictionaryConstants.FirstNameErrorMessage %>
                     </span>
                 </label>
-                <label class="enter-password error">
+                <label class="enter-password">
                     <%--<input type="text" placeholder="Enter password" aria-required="true">--%>
                     <asp:TextBox runat="server" ID="uxPassword" aria-required="true" TextMode="Password"></asp:TextBox>
                     <span><%--* Please create a password that has 6 or more characters. You can use letters and/or numbers.--%>
@@ -51,14 +52,14 @@
                 <p><%--password must be at least 6 characters--%>
                     <%= UnderstoodDotOrg.Common.DictionaryConstants.PasswordMessage %>
                 </p>
-                <label class="re-enter-password error">
+                <label class="re-enter-password">
                     <%--<input type="text" placeholder="Re-enter Password" aria-required="true">--%>
                     <asp:TextBox runat="server" ID="uxPasswordConfirm" aria-required="true" TextMode="Password"></asp:TextBox>
                     <span><%--* Please retype your password to match your password above--%>
                         <%= UnderstoodDotOrg.Common.DictionaryConstants.ConfirmPasswordErrorMessage %>
                     </span>
                 </label>
-                <div class="zip-code error">
+                <div class="zip-code">
                     <label>
                         <%--<input type="text" placeholder="Zip code (optional)">--%>
                         <asp:TextBox runat="server" ID="uxZipCode"></asp:TextBox>
