@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
@@ -24,29 +25,42 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             var itm = Sitecore.Events.Event.ExtractParameter(args, 0) as Item;
             int blogId = 0;
 
-            if (itm["Post"] == "")
+            if (itm.InheritsFromType(DefaultArticlePageItem.TemplateId.ToString()))
             {
-                switch (itm.Parent.ID.ToString())
+                if (itm["BlogId"] == "" || itm["BlogId"] == "1")
                 {
-                    case "{37478172-CCDF-454E-BABA-D56096EBE8F9}":
-                        blogId = 1;
-                        break;
-                    case "{23DC4EBA-B296-46A7-AC68-D813C9931AF0}":
-                        blogId = 2;
-                        break;
-                    case "{A720AAA9-8AC8-4851-A873-0E0F158C61BD}":
-                        blogId = 3;
-                        break;
-                    default:
-                        return;
-                }
-
-                if (blogId != 0 && (itm.TemplateID.ToString() == BlogsPostPageItem.TemplateId || itm.TemplateID.ToString() == DefaultArticlePageItem.TemplateId))
-                {
+                    blogId = 4;
                     CreateTelligentPost(itm, blogId);
                 }
             }
+            else if (itm.InheritsFromType(BlogsPostPageItem.TemplateId.ToString()))
+            {
+                if (itm["BlogId"] == "")
+                {
+                    switch (itm.Parent.ID.ToString())
+                    {
+                        case "{37478172-CCDF-454E-BABA-D56096EBE8F9}":
+                            blogId = 1;
+                            break;
+                        case "{23DC4EBA-B296-46A7-AC68-D813C9931AF0}":
+                            blogId = 2;
+                            break;
+                        case "{A720AAA9-8AC8-4851-A873-0E0F158C61BD}":
+                            blogId = 3;
+                            break;
+                        default:
+                            return;
+                    }
+                    CreateTelligentPost(itm, blogId);
+                }
+                //if (blogId != 0 && (itm.TemplateID.ToString() == BlogsPostPageItem.TemplateId || itm.TemplateID.ToString() == DefaultArticlePageItem.TemplateId))
+                //{
+                    //CreateTelligentPost(itm, blogId);
+                //}
+            }
         }
+        
+        
 
         private void CreateTelligentPost(Item item, int blogId)
         {
