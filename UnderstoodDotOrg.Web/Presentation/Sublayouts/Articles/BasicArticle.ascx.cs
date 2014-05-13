@@ -39,7 +39,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                 if (ObjBasicArticle.ShowPromotionalControl.Checked == true) sbSidebarPromo.Visible = true; else sbSidebarPromo.Visible = false;
 
-                if (ObjBasicArticle.ShowComment.Checked == true) sbCommentsSummary.Visible = true; else sbCommentsSummary.Visible = false;
+                //if (ObjBasicArticle.ShowComment.Checked == true) sbCommentsSummary.Visible = true; else sbCommentsSummary.Visible = false;
 
                 litHelpfulLikes.Text = litHelpfulLikes2.Text = CommunityHelper.ReadLikes(ObjBasicArticle.DefaultArticlePage.ContentId);
                 litCommentCount.Text = litCommentCount2.Text = CommunityHelper.ReadComments(Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Text), Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Text)).Count().ToString();
