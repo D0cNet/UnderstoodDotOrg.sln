@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using UnderstoodDotOrg.Common;
 using Sitecore.ContentSearch.Linq;
 using Sitecore.ContentSearch.Linq.Solr;
 using Sitecore.ContentSearch.Linq.Utilities;
 using System.Linq.Expressions;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
@@ -422,6 +423,26 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 return query.Skip(offset).Take(Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE).ToList();
             }
+        }
+
+        public static List<BehaviorAdvice> PerformBehaviorArticleSearch(string challenge, string grade, int page, out int totalResults)
+        {
+            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+
+            using (var ctx = index.CreateSearchContext())
+            {
+                var query = ctx.GetQueryable<BehaviorAdvice>()
+                                     .Where(i => i.TemplateId == Sitecore.Data.ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
+                                        || i.TemplateId == Sitecore.Data.ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
+                                     .Where(i => i.ChildChallenges.Contains(Sitecore.Data.ID.Parse(challenge))
+                                            && i.ChildGrades.Contains(Sitecore.Data.ID.Parse(grade)));
+
+                totalResults = query.Take(1).GetResults().TotalSearchResults;
+
+                int offset = (page - 1) * Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE;
+
+                return query.Skip(offset).Take(Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE).ToList();
+            }   
         }
 
         public static List<Article> GetArticles(Member member, Child child, DateTime date)

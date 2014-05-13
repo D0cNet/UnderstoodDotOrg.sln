@@ -50,5 +50,16 @@ namespace UnderstoodDotOrg.Web.Handlers
 
             return results;
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat=ResponseFormat.Json)]
+        public BehaviorResultSet SearchBehaviorArticles(string challenge, string grade, int page)
+        {
+            BehaviorResultSet results = new BehaviorResultSet();
+
+            int totalResults = 0;
+
+            return results;
+        }
     }
 }

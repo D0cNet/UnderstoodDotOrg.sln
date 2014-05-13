@@ -23,6 +23,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
     public partial class BehaviorToolsAdviceResults : System.Web.UI.UserControl
     {
         private ChildChallengeItem _challenge;
+        private GradeLevelItem _grade;
 
         private string SelectedGrade
         {
@@ -36,7 +37,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Validate challenge and grade
+            // Validate challenge
             if (!String.IsNullOrEmpty(SelectedChallenge)) 
             {
                 Item challenge = FindChildById(Constants.ChallengesContainer, SelectedChallenge);
@@ -47,6 +48,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
                 }
 
                 _challenge = new ChildChallengeItem(challenge);
+            }
+
+            // Validate grade
+            if (!String.IsNullOrEmpty(SelectedGrade))
+            {
+                Item grade = FindChildById(Constants.GradeContainer, SelectedGrade);
+                if (grade == null)
+                {
+                    // TODO: display error
+                    return;
+                }
+
+                _grade = new GradeLevelItem(grade);
             }
 
             BindContent();
@@ -88,7 +102,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
                 var results = ctx.GetQueryable<BehaviorAdvice>()
                                  .Where(i => i.TemplateId == Sitecore.Data.ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
                                     || i.TemplateId == Sitecore.Data.ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
-                                 .Where(i => i.ChildChallenges.Contains(Sitecore.Data.ID.Parse(SelectedChallenge)));
+                                 .Where(i => i.ChildChallenges.Contains(Sitecore.Data.ID.Parse(SelectedChallenge))
+                                        && i.ChildGrades.Contains(Sitecore.Data.ID.Parse(SelectedGrade)));
 
                 foreach (var r in results)
                 {

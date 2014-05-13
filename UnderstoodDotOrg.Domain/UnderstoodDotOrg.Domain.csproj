@@ -146,6 +146,7 @@
     <Compile Include="Salesforce\SforceService.cs" />
     <Compile Include="Search\Article.cs" />
     <Compile Include="Search\BehaviorAdvice.cs" />
+    <Compile Include="Search\BehaviorResultSet.cs" />
     <Compile Include="Search\Fields\AllTemplatesField.cs" />
     <Compile Include="Search\Fields\ArticleMappingField.cs" />
     <Compile Include="Search\SearchArticle.cs" />

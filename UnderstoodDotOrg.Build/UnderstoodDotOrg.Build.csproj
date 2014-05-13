@@ -55,8 +55,8 @@
     <None Include="EnvironmentSpecifics\DEV01\App_Config\ConnectionStrings.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\CustomEvents.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\DataFolder.config" />
-    <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.ContentSearch.MediaFramework.Brightcove.config.disabled" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.ContentSearch.Solr.Indexes.config" />
+    <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.ContentSearch.Solr.Indexes.MediaFramework.Brightcove.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.MediaFramework.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.MediaFramework.Services.Brightcove.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.RestSharp.Brightcove.config" />
