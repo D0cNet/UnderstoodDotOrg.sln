@@ -137,7 +137,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return commentList;
         }
 
-        public static int CommentCount(int blogId, int blogPostId)
+        public static string CommentCount(int blogId, int blogPostId)
         {
             var webClient = new WebClient();
 
@@ -160,7 +160,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
                 nodecount++;
             }
-            return nodecount;
+            return nodecount.ToString();
         }
 
         public static BlogPost ReadBlogBody(int blogId, int blogPostId)
