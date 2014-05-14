@@ -31,8 +31,8 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			SoapClient client = new SoapClient(binding, endpoint);
 
 			// Set the username and password
-			client.ClientCredentials.UserName.UserName = "bmedulan@agencyoasis.com";//ConfigurationManager.AppSettings["ExactTargetUserName"]; 
-			client.ClientCredentials.UserName.Password = "Hm6@5G!tT";//ConfigurationManager.AppSettings["ExactTargetPassword"];
+			client.ClientCredentials.UserName.UserName = ConfigurationManager.AppSettings["ExactTargetUserName"]; 
+			client.ClientCredentials.UserName.Password = ConfigurationManager.AppSettings["ExactTargetPassword"];
 
 			return client;
 		}
@@ -72,7 +72,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			//Create SendClassification
 			tsd.SendClassification = new SendClassification();
 			// tsd.SendClassification.CustomerKey = "201";//required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
-			tsd.SendClassification.CustomerKey = "201"; //ConfigurationManager.AppSettings["ExactTargetCustomerKey"]; //"201";
+			tsd.SendClassification.CustomerKey = ConfigurationManager.AppSettings["ExactTargetCustomerKey"];
 
 			return tsd;
 		}
@@ -245,7 +245,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			return (sbReturnString.ToString());
 		}
 
-		//Transactional Email methods
+		//Transactional Email methods TODO: edit Email ID and confirm which parts of a template are dynamic
 		public static InvokeEM2ParentToolkitReply InvokeEM2ParentToolkit(InvokeEM2ParentToolkitRequest request)
 		{
 			InvokeEM2ParentToolkitReply reply = new InvokeEM2ParentToolkitReply();
@@ -399,171 +399,768 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			return reply;
 		}
-		
+		public static InvokeEM11DonationAcknowledgementReply InvokeEM11DonationAcknowledgement(InvokeEM11DonationAcknowledgementRequest request) {
+			InvokeEM11DonationAcknowledgementReply reply = new InvokeEM11DonationAcknowledgementReply();
 
-		public static void InvokeEM11DonationAcknowledgement(string EmailAddress)
-		{
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeEM12ThankYouForContactingUs(string EmailAddress)
-		{
+		public static InvokeEM12ThankYouForContactingUsReply InvokeEM12ThankYouForContactingUs(InvokeEM12ThankYouForContactingUsRequest request) {
+			InvokeEM12ThankYouForContactingUsReply reply = new InvokeEM12ThankYouForContactingUsReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeEM15HappyHolidays(string EmailAddress)
+		public static InvokeEM15HappyHolidaysReply InvokeEM15ThankYouForContactingUs(InvokeEM15HappyHolidaysRequest request)
 		{
+			InvokeEM15HappyHolidaysReply reply = new InvokeEM15HappyHolidaysReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeEM3ExploreTheCommunity(string EmailAddress)
+		public static InvokeEM3ExploreTheCommunityReply InvokeEM3ExploreTheCommunity(InvokeEM3ExploreTheCommunityRequest request)
 		{
+			InvokeEM3ExploreTheCommunityReply reply = new InvokeEM3ExploreTheCommunityReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeEM4LearnAct(string EmailAddress)
-		{
+		public static InvokeEM4LearnActReply InvokeEM4LearnAct(InvokeEM4LearnActRequest request) {
+			InvokeEM4LearnActReply reply = new InvokeEM4LearnActReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
-		}
-		public static void InvokeEM5KeepingAllStudentsSafe(string EmailAddress)
-		{
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
+		}//This email will be sent from Convio/Luminate.
+		public static InvokeEM5KeepingAllStudentsSafeReply InvokeEM5KeepingAllStudentsSafe(InvokeEM5KeepingAllStudentsSafeRequest request) {
+			InvokeEM5KeepingAllStudentsSafeReply reply = new InvokeEM5KeepingAllStudentsSafeReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
-		}
-		public static void InvokeEM6HolidayDonations(string EmailAddress)
-		{
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
+		}//This email will be sent from Convio/Luminate.
+		public static InvokeEM6HolidayDonationsReply InvokeEM6HolidayDonations(InvokeEM6HolidayDonationsRequest request) {
+			InvokeEM6HolidayDonationsReply reply = new InvokeEM6HolidayDonationsReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeEM7NewsletterConfirmation(string EmailAddress)
-		{
+		public static InvokeEM7NewsletterConfirmationReply InvokeEM7NewsletterConfirmation(InvokeEM7NewsletterConfirmationRequest request) {
+			InvokeEM7NewsletterConfirmationReply reply = new InvokeEM7NewsletterConfirmationReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeEM8SubscriptionConfirmation(string EmailAddress)
-		{
+		public static InvokeEM8SubscriptionConfirmationReply InvokeEM8SubscriptionConfirmation(InvokeEM8SubscriptionConfirmationRequest request) {
+			InvokeEM8SubscriptionConfirmationReply reply = new InvokeEM8SubscriptionConfirmationReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeEM9GroupWelcome(string EmailAddress)
-		{
+		public static InvokeEM9GroupWelcomeReply InvokeEM9GroupWelcome(InvokeEM9GroupWelcomeRequest request) {
+			InvokeEM9GroupWelcomeReply reply = new InvokeEM9GroupWelcomeReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-
 
 
 		//Newsletter Email methods
-		public static void InvokeE1ATurnAroundBullying(string EmailAddress)
-		{
+		public static InvokeE1ATurnAroundBullyingReply InvokeE1ATurnAroundBullying(InvokeE1ATurnAroundBullyingRequest request) {
+			InvokeE1ATurnAroundBullyingReply reply = new InvokeE1ATurnAroundBullyingReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeE1B1TurnAroundBullying(string EmailAddress)
-		{
+		public static InvokeE1B1TurnAroundBullyingReply InvokeE1B1TurnAroundBullying(InvokeE1B1TurnAroundBullyingRequest request) {
+			InvokeE1B1TurnAroundBullyingReply reply = new InvokeE1B1TurnAroundBullyingReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeE1B2TurnAroundBullying(string EmailAddress)
-		{
+		public static InvokeE1B2TurnAroundBullyingReply InvokeE1B2TurnAroundBullying(InvokeE1B2TurnAroundBullyingRequest request) {
+			InvokeE1B2TurnAroundBullyingReply reply = new InvokeE1B2TurnAroundBullyingReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeE1CTurnAroundBullying(string EmailAddress)
-		{
+		public static InvokeE1CTurnAroundBullyingReply InvokeE1CTurnAroundBullying(InvokeE1CTurnAroundBullyingRequest request) {
+			InvokeE1CTurnAroundBullyingReply reply = new InvokeE1CTurnAroundBullyingReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeEM13ActivityFromToday(string EmailAddress)
-		{
+		public static InvokeEM13ActivityFromTodayReply InvokeEM13ActivityFromToday(InvokeEM13ActivityFromTodayRequest request) {
+			InvokeEM13ActivityFromTodayReply reply = new InvokeEM13ActivityFromTodayReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
-		public static void InvokeEM14ThisWeeksActivity(string EmailAddress)
-		{
+		public static InvokeEM14ThisWeeksActivityReply InvokeEM14ThisWeeksActivity(InvokeEM14ThisWeeksActivityRequest request){
+			InvokeEM14ThisWeeksActivityReply reply = new InvokeEM14ThisWeeksActivityReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
+
+
 	}
 }

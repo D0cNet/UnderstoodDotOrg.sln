@@ -24,7 +24,61 @@
 <br />
 <br />
 <hr />
-<asp:Button ID="btnETTests" runat="server" Text="Invoke Trigger Send Email" OnClick="btnETTests_Click" />
+<asp:Button ID="btnEM1" runat="server" Text="EM1" OnClick="btnETTests_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM2" runat="server" Text="EM2" OnClick="btnEM2_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM3" runat="server" Text="EM3" OnClick="btnEM3_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM4" runat="server" Text="EM4" OnClick="btnEM4_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM5" runat="server" Text="EM5" OnClick="btnEM5_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM6" runat="server" Text="EM6" OnClick="btnEM6_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM7" runat="server" Text="EM7" OnClick="btnEM7_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM8" runat="server" Text="EM8" OnClick="btnEM8_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM9" runat="server" Text="EM9" OnClick="btnEM9_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM10" runat="server" Text="EM10" OnClick="btnEM10_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM11" runat="server" Text="EM11" OnClick="btnEM11_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM12" runat="server" Text="EM12" OnClick="btnEM12_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM13" runat="server" Text="EM13" OnClick="btnEM13_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM14" runat="server" Text="EM14" OnClick="btnEM14_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btnEM15" runat="server" Text="EM15" OnClick="btnEM15_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btne1a" runat="server" Text="e1a" OnClick="btne1a_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btne1b" runat="server" Text="e1b" OnClick="btne1b_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="btne1B" runat="server" Text="e1B" OnClick="btne1B_Click1" />
+<br /><br />
+<hr />
+<asp:Button ID="btne1c" runat="server" Text="e1c" OnClick="btne1c_Click" />
 <br /><br />
 <br />
 <br />
