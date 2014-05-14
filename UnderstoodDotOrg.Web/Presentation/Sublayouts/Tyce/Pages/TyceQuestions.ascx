@@ -56,7 +56,7 @@
                                 <ItemTemplate>
                                     <li>
                                         <input type="checkbox" name="tyce-issue-<%# Eval("Id") %>">
-                                        <label for="tyce-issue-<%# Eval("Id") %>">Reading</label>
+                                        <label for="tyce-issue-<%# Eval("Id") %>"><%# Eval("Title") %></label>
                                     </li>
                                 </ItemTemplate>
                             </asp:Repeater>

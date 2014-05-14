@@ -50,7 +50,7 @@
 </div>
 <!-- .tyce-on-demand-container -->
 
-<div class="modal fade modal-standard" id="tyce-modal-select-child" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:1031;">
+<div class="modal fade modal-standard tyce-modal-select-child" id="tyce-modal-select-child" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <button type="button" class="close-overlay" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -76,7 +76,8 @@
                     </ul>
                 </fieldset>
                 <div class="actions">
-                    <a href="REPLACE" class="button">Ok let's go</a>
+                    <asp:LinkButton ID="lbLetsGo" runat="server" CssClass="button">Ok let's go</asp:LinkButton>
+                    <%--<a href="REPLACE" class="button">Ok let's go</a>--%>
                     <a href="REPLACE" class="button gray">Let Me Customize</a>
                 </div>
 

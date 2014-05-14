@@ -159,11 +159,19 @@ $(document).ready(function () {
         tabs: '.tab-controls li'
     });
 
-    $(".button.button-select-children").off(".button");
-    $('.tyce-personalize').find('.button-select-children').on('click', function () {
-        $("#tyce-modal-select-child").modal('show');
-        //$(window).trigger('resize');
-    });
+    var $tyceModalSelectChild = $("#tyce-modal-select-child");
+    if ($tyceModalSelectChild.length) {
+        var html = $tyceModalSelectChild.html();
+        $tyceModalSelectChild.remove();
+        //$("form").append(html);
+        $(html).appendTo("form").hide();
+
+        $(".button.button-select-children").off(".button");
+        $('.tyce-personalize').find('.button-select-children').on('click', function () {
+            $tyceModalSelectChild.modal('show');
+            //$(window).trigger('resize');
+        });
+    }
 });
 /**
  * TYCE Player
