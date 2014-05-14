@@ -15,9 +15,14 @@
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
     using UnderstoodDotOrg.Domain.Understood.Helper;
     using System.Web.UI;
+    using System.Text;
 
     public partial class SearchResults : System.Web.UI.UserControl
     {
+        private string _term;
+        protected string SearchTerm { get; set; }
+        protected string ResultCount { get; set; }
+
         private void Page_Init(object sender, EventArgs e)
         {
             BindEvents();
@@ -88,12 +93,26 @@
 
             ResultSet searchResults = svc.SearchAllArticles(query, type, 1);
 
-            SearchHelper.GetSpellCheckSuggestions(query);
+            List<string> suggestions = SearchHelper.GetSpellCheckSuggestions(query);
+            litMisspellings.Text = AssembleSuggestions(suggestions);
 
-            if (searchResults.Articles.Any()) 
+            bool hasSuggestions = suggestions.Any();
+            bool hasResults = searchResults.Articles.Any();
+
+            phResultsMisspelling.Visible = hasSuggestions;
+            phResultsNoMisspelling.Visible = !hasSuggestions;
+
+            if (hasResults || hasSuggestions) 
             {
-                rptResults.DataSource = searchResults.Articles;
-                rptResults.DataBind();
+                if (hasResults)
+                {
+                    rptResults.DataSource = searchResults.Articles;
+                    rptResults.DataBind();
+                }
+                else
+                {
+                    ddlSearchFilter.Visible = false;
+                }
 
                 phMoreResults.Visible = searchResults.HasMoreResults;
             } 
@@ -102,8 +121,18 @@
                 phNoResults.Visible = true;
                 phResults.Visible = false;
             }
-            litSearchTerm.Text = litSearchTermNoResults.Text = System.Net.WebUtility.HtmlEncode(query);
-            litResultCount.Text = searchResults.TotalMatches.ToString();
+            SearchTerm = litSearchTermNoResults.Text = System.Net.WebUtility.HtmlEncode(query);
+            ResultCount = searchResults.TotalMatches.ToString();
+        }
+
+        private string AssembleSuggestions(List<string> suggestions)
+        {
+            var pairs = (from s in suggestions
+                         select String.Format("<a href=\"{0}\">{1}</a>", 
+                            FormHelper.GetSearchResultsUrl(s, String.Empty), 
+                            System.Net.WebUtility.HtmlEncode(s))).ToArray();
+
+            return String.Join(", ", pairs);
         }
 
         private void BindEvents()

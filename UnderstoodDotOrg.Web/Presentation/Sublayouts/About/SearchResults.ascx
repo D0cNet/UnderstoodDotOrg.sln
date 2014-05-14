@@ -21,13 +21,21 @@
 </div>
 
 <asp:PlaceHolder ID="phResults" runat="server">
-<div class="container l-results-and-filter">
+<div class="container l-results-and-filter l-results-misspelling">
   <div class="row">
     <div class="col col-24 rs_read_this">
       <!-- UN-1741 - # of Results & Filter -->
       <!-- BEGIN PARTIAL: about/results-and-filter -->
         <div class="results">
-          <h1><asp:Literal ID="litResultCount" runat="server" /> Results for <span>&ldquo;<asp:Literal ID="litSearchTerm" runat="server" />&rdquo;</span></h1>
+          <asp:PlaceHolder ID="phResultsNoMisspelling" runat="server">
+              <h1><%= ResultCount %> Results for <span>&ldquo;<%= SearchTerm %>&rdquo;</span></h1>
+          </asp:PlaceHolder>
+            <asp:PlaceHolder ID="phResultsMisspelling" runat="server">
+                <h1>Showing results for <span>&ldquo;<%= SearchTerm %>&rdquo;</span></h1>
+                <h2>Search instead for <asp:Literal ID="litMisspellings" runat="server" /></h2>
+                <h3><%= ResultCount %> Results for <span>&ldquo;<%= SearchTerm %>&rdquo;</span></h3>
+            </asp:PlaceHolder>
+            
         </div>
         <label>
           <asp:DropDownList ID="ddlSearchFilter" AutoPostBack="true" runat="server" />

@@ -40,22 +40,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         protected global::System.Web.UI.WebControls.PlaceHolder phResults;
         
         /// <summary>
-        /// litResultCount control.
+        /// phResultsNoMisspelling control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litResultCount;
+        protected global::System.Web.UI.WebControls.PlaceHolder phResultsNoMisspelling;
         
         /// <summary>
-        /// litSearchTerm control.
+        /// phResultsMisspelling control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litSearchTerm;
+        protected global::System.Web.UI.WebControls.PlaceHolder phResultsMisspelling;
+        
+        /// <summary>
+        /// litMisspellings control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litMisspellings;
         
         /// <summary>
         /// ddlSearchFilter control.

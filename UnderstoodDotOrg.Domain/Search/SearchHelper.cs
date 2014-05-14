@@ -344,27 +344,32 @@ namespace UnderstoodDotOrg.Domain.Search
             return results;
         }
 
-        public static void GetSpellCheckSuggestions(string term)
+        public static List<string> GetSpellCheckSuggestions(string term)
         {
+            List<string> suggestions = new List<string>();
+
             var solr = ServiceLocator.Current.GetInstance<ISolrOperations<Article>>();
             var schema = solr.GetSchema();
 
             var templateId = ID.Parse(DefaultArticlePageItem.TemplateId).ToShortID().ToString().ToLower();
-            var q = new SolrQuery(term);
+            var q = new SolrQuery(term)
+                && new SolrQueryByField("alltemplates_sm", templateId) { Quoted = false }
+                && new SolrQueryByField("_language", "en") { Quoted = false };
+            
             var serializer = new DefaultQuerySerializer(new DefaultFieldSerializer());
             var t = serializer.Serialize(q);
+
             var results = solr.Query(q, new QueryOptions
             {
-                SpellCheck = new SpellCheckingParameters { }
+                SpellCheck = new SpellCheckingParameters { Query = term, Collate = true }
             });
 
             foreach (var sc in results.SpellChecking)
             {
-                foreach (var s in sc.Suggestions)
-                {
-
-                }
+                suggestions.Add(sc.Suggestions.First());
             }
+
+            return suggestions;
         }
 
         public static List<Article> PerformArticleSearch(string terms, string template, int page, out int totalResults)
