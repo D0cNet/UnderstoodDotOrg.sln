@@ -376,6 +376,7 @@
     <Compile Include="Understood\Common\IssueModel.cs" />
     <Compile Include="Understood\Common\MemberCardModel.cs" />
     <Compile Include="Understood\Common\MemberManagerProxy.cs" />
+    <Compile Include="Understood\Common\ReplyModel.cs" />
     <Compile Include="Understood\Common\ThreadModel.cs" />
     <Compile Include="Understood\Content\ContentItemModel.cs" />
     <Compile Include="Understood\Helper\FormHelper.cs" />

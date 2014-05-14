@@ -204,7 +204,7 @@
     <div class="bottom"><a href="REPLACE">See All Comments</a></div>
   
 </div>--%><!-- /.landing-notifications /.landing-modules -->
-         <sc:Placeholder key="Content" runat="server" />
+         <sc:Placeholder key="Comments" runat="server" />
             
 <!-- END PARTIAL: account-landing-mycomments -->
         </div>

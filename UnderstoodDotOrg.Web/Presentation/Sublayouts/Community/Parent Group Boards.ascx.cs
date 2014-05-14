@@ -14,18 +14,35 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Item currItem = Sitecore.Context.Item;
-            GroupItem grpItem = new GroupItem(currItem);
             
-            if(grpItem !=null)
+
+            
+            if (Page.Request.QueryString != null)
             {
-                GroupCardModel grpModel = new GroupCardModel(grpItem);
-                if(grpModel !=null)
-                {
-                    rptForums.DataSource = grpModel.Forums;
-                    rptForums.DataBind(); 
-                }
+                pnlDefaultSection.Visible = false;
+                pnlSearchSection.Visible = true;
+
             }
+            else
+            {
+                Item currItem = Sitecore.Context.Item;
+                GroupItem grpItem = new GroupItem(currItem);
+                pnlDefaultSection.Visible = true;
+                pnlSearchSection.Visible = false;
+                if (grpItem != null)
+                {
+                    GroupCardModel grpModel = new GroupCardModel(grpItem);
+                    if (grpModel != null)
+                    {
+                        rptForums.DataSource = grpModel.Forums;
+                        rptForums.DataBind();
+                    }
+                }
+
+              
+            }
+
+           
         }
 
         protected void rptForums_ItemDataBound(object sender, RepeaterItemEventArgs e)

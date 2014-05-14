@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Sitecore.Data.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
@@ -19,69 +22,45 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         }
         void rptGroupCards_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            
-           
-                //if (e.Item.DataItem != null)
-                //{
-                //    Image avaturl = (Image)e.Item.FindControl("UserAvatar");
-                //    if (avaturl != null)
-                //    {
-                //        avaturl.ImageUrl = ((MemberCardModel)e.Item.DataItem).AvatarUrl;
 
 
-                //    }
+            if (e.Item.DataItem != null)
+            {
+                
+                ///
+                LinkButton joinView = (LinkButton)e.Item.FindControl("btnJoinGroup");
+                if (joinView != null)
+                {
+                    bool viewDiscussions=CommunityHelper.IsUserInGroup(UserID, ((GroupCardModel)e.Item.DataItem).GroupID) ;
+                    joinView.Text = viewDiscussions ? "View Discussions" : "Join this Group";
+                    //If the user is to join group, then use Telligent group id, else use sitecore item id
+                    joinView.CommandArgument = viewDiscussions ? ((GroupCardModel)e.Item.DataItem).GroupItemID : ((GroupCardModel)e.Item.DataItem).GroupID;
+                    joinView.Attributes.Add("name", viewDiscussions ? "view" : "join");
+                }
+            }
 
-                //    Literal username = (Literal)e.Item.FindControl("UserName");
-                //    if (username != null)
-                //    {
-                //        username.Text = ((MemberCardModel)e.Item.DataItem).UserName;
-
-
-                //    }
-
-                //    HtmlControl divImg = (HtmlControl)e.Item.FindControl("lblImg");
-                //    Literal userlbl = (Literal)e.Item.FindControl("UserLabel");
-                //    if (userlbl != null)
-                //    {
-                //        userlbl.Text = ((MemberCardModel)e.Item.DataItem).UserLabel;
-                //        divImg.Visible = true;
-
-                //    }
-
-                //    Literal userloc = (Literal)e.Item.FindControl("UserLocation");
-                //    if (userloc != null)
-                //    {
-                //        userloc.Text = ((MemberCardModel)e.Item.DataItem).UserLocation;
-
-
-                //    }
-
-
-                    //Repeater childModel_repeater = (Repeater)e.Item.FindControl("rptChildCard");
-                    //if (childModel_repeater != null)
-                    //{
-                    //    childModel_repeater.DataSource = ((MemberCardModel)e.Item.DataItem).Children;
-                    //    childModel_repeater.DataBind();
-                    //}
-
-              //  }
-
-       
+             
 
 
         }
-        //protected void rptChildCard_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        //{
 
-        //    Repeater childIssues_repeater = (Repeater)e.Item.FindControl("rptChildIssues");
-        //    if (childIssues_repeater != null)
-        //    {
-        //        childIssues_repeater.DataSource = ((ChildCardModel)e.Item.DataItem).IssueList;
-        //        childIssues_repeater.DataBind();
-        //    }
-        //}
 
-       
+        ///TODO:Get current user id in session
+        public string UserID
+        {
+            get
+            {
+                if (Session["username"] == null)
+                {
+                    MembershipManagerProxy mem = new MembershipManagerProxy();
+                    Member member = mem.GetMember(Guid.Empty);
+                    Session["username"] = member.ScreenName;
+                    return member.ScreenName;
+                }
+                else
+                    return Session["username"].ToString();
+            }
+        }
 
         public List<GroupCardModel> DataSource
         {
@@ -103,6 +82,42 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
         protected void Page_Load(object sender, EventArgs e)
         {
+             
+            
+            ///TODO:Get current user id in session
+            //string UserID = Guid.Empty;
+
+        }
+
+        protected void btnJoinGroup_Click(object sender, EventArgs e)
+        {
+
+            LinkButton btn = ((LinkButton)sender);
+            if(btn.Attributes["name"].ToString().Equals("view"))
+            {
+                try
+                {
+                    //Call view Discussion using sitecore group id
+                    Sitecore.Data.ID grpItemID = Sitecore.Data.ID.Parse(btn.CommandArgument);
+                    Item grpItem = Sitecore.Context.Database.GetItem(grpItemID);
+                    string itemUrl = Sitecore.Links.LinkManager.GetItemUrl(grpItem);
+                    Sitecore.Web.WebUtil.Redirect(itemUrl);
+                }catch(Exception ex)
+                {
+                    
+                }
+            }
+            else
+            {
+                //Join the group using telligent group id
+                if(CommunityHelper.JoinGroup(btn.CommandArgument,UserID))
+                {
+                    
+                }
+
+            }
+             
+            DataBind();
 
         }
     }

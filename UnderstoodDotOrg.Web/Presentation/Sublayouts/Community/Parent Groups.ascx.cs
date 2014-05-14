@@ -131,7 +131,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             if (Session["groupItems"] is List<GroupCardModel>)
             {
 
-                throw new NotImplementedException();
+                //throw new NotImplementedException();
+                ///TODO: Implement search results
+                results=(List<GroupCardModel>)Session["groupItems"] ;
             }
 
             return results;

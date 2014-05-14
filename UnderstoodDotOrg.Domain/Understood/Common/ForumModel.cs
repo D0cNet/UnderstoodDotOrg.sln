@@ -9,12 +9,12 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
 {
     public class ForumModel
     {
-        ForumModel(ForumItem forumItem)
+        public ForumModel(ForumItem forumItem)
         {
             ForumID = forumItem.ForumID.Text;
             GroupID = forumItem.GroupID.Text;
             Description = forumItem.Description.Text;
-            Name = forumItem.Name;
+            Name = forumItem.Name.Text;
         }
 
         public ForumModel(System.Xml.XmlNode childNode)

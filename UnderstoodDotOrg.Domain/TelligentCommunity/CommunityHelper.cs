@@ -72,10 +72,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string myString = inputString.Substring(0, 100);
 
                 int index = myString.LastIndexOf(' ');
+                //Have to check the value for index
+                if(index>-1)
+                    myString = myString.Substring(0, index);
 
-                string outputString = myString.Substring(0, index);
-
-                return outputString;
+                return myString;
             }
             else
             {
@@ -527,6 +528,59 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return node;
         }
+        public static XmlNode ReadThread(string forumID,string threadID)
+        {
+            XmlNode node = null;
+            if (!String.IsNullOrEmpty(forumID))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}/threads/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID,threadID);
+                var xml = webClient.DownloadString(requestUrl);
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                node = xmlDoc.SelectSingleNode("Response/Thread");
+            }
+            return node;
+        }
+        public static List<ReplyModel> ReadReplies(string forumID, string threadID)
+        {
+            List<ReplyModel> replies = new List<ReplyModel>();
+            if (!String.IsNullOrEmpty(forumID) && !String.IsNullOrEmpty(threadID))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}/threads/{2}/replies.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID, threadID);
+                var xml = webClient.DownloadString(requestUrl);
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                XmlNode node = xmlDoc.SelectSingleNode("Response/Replies");
+
+                if(node!=null)
+                {
+                    foreach (XmlNode reply in node)
+                    {
+                        ReplyModel rpm = new ReplyModel();
+                        rpm.Author = reply.SelectSingleNode("Author/Username").InnerText;
+                        rpm.Body = CommunityHelper.FormatString100(reply.SelectSingleNode("Body").InnerText);
+                        rpm.ReplyDate=CommunityHelper.FormatDate(reply.SelectSingleNode("Date").InnerText);
+                        rpm.Date = Convert.ToDateTime((reply.SelectSingleNode("Date").InnerText));
+                        replies.Add(rpm);
+                        rpm = null;
+                    }
+
+
+                }
+
+            }
+            return replies;
+        }
         public static List<ThreadModel> ReadThreadList(string forumID)
         {
             List<ThreadModel> th = new List<ThreadModel>();
@@ -540,7 +594,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 }
             }catch(Exception ex)
             {
-                th = null;
+                //Bth = null;
             }
             return th;
         }
@@ -561,6 +615,57 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 fm = null;
             }
             return fm;
+        }
+        public static bool IsUserInGroup(string userScreenName,string groupID)
+        {
+            bool val = false;
+            if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                try
+                {
+                    var requestUrl = String.Format("{0}api.ashx/v2/groups/{1}/members/users/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID, userScreenName);
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/User/Group");
+
+                    if (node != null)
+                        val = true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+            return val;
+
+        }
+        public static bool JoinGroup(string groupID,string userScreenName)
+        {
+            bool success = false;
+            if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                var requestUrl = string.Format("{0}api.ashx/v2/groups/{1}/members/users.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
+
+                var values = new NameValueCollection();
+                values["username"] = userScreenName;
+
+
+                var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                XmlNode node = xmlDoc.SelectSingleNode("Response/Errors");
+                if(node!=null || !node.HasChildNodes)
+                    success = true;
+            }
+            return success;
         }
         public static string TelligentAuth()
         {

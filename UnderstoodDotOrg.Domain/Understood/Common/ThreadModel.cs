@@ -12,26 +12,57 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
     {
        private object childNode;
 
-
-       public ThreadModel()
-       {
-        
+       public ThreadModel(XmlNode childNode){
+           if (childNode != null)
+           {
+               ThreadID = childNode.SelectSingleNode("Id").InnerText;
+               ForumID = childNode.SelectSingleNode("ForumId").InnerText;
+               Initialize(childNode);
+           }
         }
-       public ThreadModel(XmlNode childNode)
+       public ThreadModel(string forumID,string threadID)
+       {
+           ForumID = forumID;
+           ThreadID = threadID;
+           XmlNode node = CommunityHelper.ReadThread(forumID, threadID);
+           Initialize(node);
+        }
+       public void Initialize(XmlNode childNode)
        {
            // TODO: Complete member initialization
            //this.childNode = childNode;
            Subject = childNode.SelectSingleNode("Subject").InnerText;
-           Replies = childNode.SelectSingleNode("ReplyCount").InnerText;
-         LastPostTime=CommunityHelper.FormatDate(childNode.SelectSingleNode("LatestPostDate").InnerText);
-
+           ReplyCount = childNode.SelectSingleNode("ReplyCount").InnerText;
+           LastPostTime=CommunityHelper.FormatDate(childNode.SelectSingleNode("LatestPostDate").InnerText);
+           LastPostUser = Replies.OrderByDescending(x => x.Date).First().Author;
+           LastPostBody = Replies.OrderByDescending(x => x.Date).First().Body;
+           StartedBy = childNode.SelectSingleNode("Author/Username").InnerText;
+           Snippet = CommunityHelper.FormatString100(childNode.SelectSingleNode("Body").InnerText);
+           
        }
 
        public string Subject { get; set; }
-       public string Replies { get; set; }
        public string LastPostTime { get; set; }
        public string LastPostUser { get; set; }
+       public string StartedBy { get; set; }
+       public string Snippet { get; set; }
+       public string ThreadID { get; set; }
+       public string ForumID { get; set; }
+       public string ReplyCount { get; set; }
+       private List<ReplyModel> _replies =null;
+       public List<ReplyModel> Replies
+       {
+           get
+           {
+               if (_replies == null)
+               {
+                _replies =  CommunityHelper.ReadReplies(ForumID, ThreadID);
+                   return _replies;
+               }else
+                    return _replies;
+            }
+       }
 
-
+       public string LastPostBody { get; set; }
     }
 }

@@ -35,7 +35,8 @@
             <p class="members"><%#Eval("NumOfMembers", "{0:0,0.00}") %> Members</p>
             <p class="discussions"><%#Eval("NumOfDiscussions", "{0:0,0.00}") %> Discussions</p>
             <div class="submit-button-wrap">
-            <a href="<%#Eval("JoinUrl") %>" class="button rs_skip">Join this Group</a>
+            <%--<a href="<%#Eval("JoinUrl") %>" class="button rs_skip">Join this Group</a>--%>
+                <asp:LinkButton ID="btnJoinGroup"  OnClick="btnJoinGroup_Click" CssClass="button rs_skip" runat="server" Text=""></asp:LinkButton>
             </div>
         </div>
         </div> 

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Xml;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
@@ -16,9 +17,14 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
 {
     public class GroupCardModel
     {
-        public GroupCardModel()
+       
+        public GroupCardModel(XmlNode grpNode)
         {
-            
+            if (grpNode != null)
+            {
+                GroupID = grpNode.SelectSingleNode("Id").InnerText;
+                Initialize(grpNode);
+            }
         }
 
         public GroupCardModel(GroupItem groupItem)
@@ -27,39 +33,34 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             if (groupItem != null)
             {
                 GrpItem = groupItem;
-                //Poses info
-                ///TODO: Ensure that moderator member is in userID
-              string userID = GrpItem.UserID.Text;
-               // if (!String.IsNullOrEmpty(userID))
-               // {
-                   UserID = String.IsNullOrEmpty(userID) ? Guid.Empty : new Guid(userID);
-                    // MembershipManager mem = new MembershipManager();
-                   MembershipManagerProxy mem = new MembershipManagerProxy();
-                   
 
-                    Member member = mem.GetMember(UserID);
-
-
-
-                
-                    GroupID = groupItem.GroupID.Text;
-
-                    var node = CommunityHelper.ReadGroup(GroupID);
-                    if (node!=null)
-                    {
-                        ///TODO: Further refactor to Forum Class
-                        NumOfMembers = node.SelectSingleNode("TotalMembers").InnerText;
-                        NumOfDiscussions = CommunityHelper.ReadForums(GroupID).ChildNodes.Count.ToString(); //node.SelectSingleNode("ThreadCount").InnerText; ///TODO:Number of Forums
-                        Description = node.SelectSingleNode("Description").InnerText;
-                        Title = node.SelectSingleNode("Name").InnerText;
-                        ModeratorAvatarUrl = node.SelectSingleNode("AvatarUrl").InnerText;//Constants.Settings.AnonymousAvatar;
-
-                        ModeratorTitle = Constants.TelligentRole.Moderator.ToString();
-                        ModeratorName = member.ScreenName;
-                    }
-               // }
+                GroupID = groupItem.GroupID.Text;
+                XmlNode node = CommunityHelper.ReadGroup(GroupID);
+               
+                Initialize(node);
+              
             }
 
+        }
+
+        private void Initialize(XmlNode groupNode)
+        {
+            
+          
+
+            if (groupNode != null)
+            {
+
+                ///TODO: Further refactor to Forum Class
+                NumOfMembers = groupNode.SelectSingleNode("TotalMembers").InnerText;
+                NumOfDiscussions = CommunityHelper.ReadForums(GroupID).ChildNodes.Count.ToString(); //node.SelectSingleNode("ThreadCount").InnerText; ///TODO:Number of Forums
+                Description = groupNode.SelectSingleNode("Description").InnerText;
+                Title = groupNode.SelectSingleNode("Name").InnerText;
+                ModeratorAvatarUrl = groupNode.SelectSingleNode("AvatarUrl").InnerText;//Constants.Settings.AnonymousAvatar;
+
+                ModeratorTitle = Constants.TelligentRole.Moderator.ToString();
+                ModeratorName = UserID;
+            }
         }
 
         
@@ -70,7 +71,22 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         //Poses
         public string ModeratorAvatarUrl { get; set; }
         public string ModeratorName { get; set; }
-        private Guid UserID { get; set; }
+        ///TODO:Get current user id in session
+        private string UserID
+        {
+            get
+            {
+                if (HttpContext.Current.Session["username"] == null)
+                {
+                    MembershipManagerProxy mem = new MembershipManagerProxy();
+                    Member member = mem.GetMember(Guid.Empty);
+                    HttpContext.Current.Session["username"] = member.ScreenName;
+                    return member.ScreenName;
+                }
+                else
+                    return HttpContext.Current.Session["username"].ToString();
+            }
+        }
         List<Child> ChildrenWithIssues { get; set; } //TODO:Related through Group issues
         public string ModeratorTitle { get; set; }
         private List<ForumModel> fModel = null;
@@ -93,7 +109,8 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         public string NumOfMembers { get; set; }
         public string NumOfDiscussions { get; set; }
         public string JoinUrl { get; set; } //TODO: point create Group Item
-        private string GroupID { get; set; }
+        public  string GroupID { get; protected set; }
+        public string GroupItemID { get { return GrpItem.ID.ToString(); } }
         private GroupItem GrpItem { get; set; }
        // List<Issue> RelatedIssues { get; set; }
     }

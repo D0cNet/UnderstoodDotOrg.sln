@@ -16,17 +16,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             Item currItem = Sitecore.Context.Item;
             if(currItem !=null){
                 UnderstoodDotOrg.Domain.Understood.Common.GroupCardModel gm = new UnderstoodDotOrg.Domain.Understood.Common.GroupCardModel(new GroupItem(currItem));
-                if (gm != null)
-                {
-                    imgModeratorImage.ImageUrl = gm.ModeratorAvatarUrl;
-                    litDesc.Text = gm.Description;
-                    litModeratorScreenName.Text = gm.ModeratorName;
-                    litModeratorTitle.Text = gm.ModeratorTitle;
-                    litTitle.Text = gm.Title;
-                    litNumMembers.Text = gm.NumOfMembers;
-                    litNumThreads.Text = gm.NumOfDiscussions;
-                    
-                }
+                InitializeView(gm);
+            }
+        }
+
+        protected void InitializeView(UnderstoodDotOrg.Domain.Understood.Common.GroupCardModel gm)
+        {
+            if (gm != null)
+            {
+                imgModeratorImage.ImageUrl = gm.ModeratorAvatarUrl;
+                litDesc.Text = gm.Description;
+                litModeratorScreenName.Text = gm.ModeratorName;
+                litModeratorTitle.Text = gm.ModeratorTitle;
+                litTitle.Text = gm.Title;
+                litNumMembers.Text = gm.NumOfMembers;
+                litNumThreads.Text = gm.NumOfDiscussions;
+
             }
         }
     }
