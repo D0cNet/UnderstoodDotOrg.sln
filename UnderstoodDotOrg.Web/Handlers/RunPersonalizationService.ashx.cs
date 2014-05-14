@@ -130,7 +130,7 @@ namespace UnderstoodDotOrg.Web.Handlers
             UpdateMember(member);
         }
 
-        private void UpdateMember(Member member)
+        public void UpdateMember(Member member)
         {
             foreach (var child in member.Children)
             {
