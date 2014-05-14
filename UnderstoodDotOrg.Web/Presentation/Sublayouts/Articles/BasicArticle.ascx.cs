@@ -42,7 +42,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 if (ObjBasicArticle.ShowComment.Checked == true) sbCommentsSummary.Visible = true; else sbCommentsSummary.Visible = false;
 
                 litHelpfulLikes.Text = litHelpfulLikes2.Text = CommunityHelper.ReadLikes(ObjBasicArticle.DefaultArticlePage.ContentId);
-                litCommentCount.Text = litCommentCount2.Text = CommunityHelper.CommentCount(Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Raw), Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw));
+                try
+                {
+                    litCommentCount.Text = litCommentCount2.Text = CommunityHelper.CommentCount(Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Raw), Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw));
+                }
+                catch
+                {
+                    litCommentCount.Text = litCommentCount2.Text = "0";
+                }
                 //if (ObjBasicArticle.DefaultArticlePage.HideRelatedActiveLinks.Checked == false) // Show Articles
                 //{
                 //    DefaultArticlePageItem ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;
