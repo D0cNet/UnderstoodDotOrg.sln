@@ -3,8 +3,8 @@
 <div class="container tyce-page-topic">
     <div class="row">
         <div class="col col-14 offset-1">
-            <a href="<%= HomePageItem.GetUrl() %>" class="back-to-previous">
-                <i class="icon-arrow-left-blue"></i><%= HomePageItem.ContentPage.BasePageNEW.NavigationTitle.Rendered %>
+            <a href="<%= PreviousPageItem.GetUrl() %>" class="back-to-previous">
+                <i class="icon-arrow-left-blue"></i><%= PreviousPageItem.NavigationTitle.Rendered %>
             </a>
         </div>
     </div>

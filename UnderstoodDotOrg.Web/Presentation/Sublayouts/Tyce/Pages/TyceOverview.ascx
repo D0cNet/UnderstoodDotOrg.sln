@@ -37,9 +37,9 @@
                         <li>
                             <a href="REPLACE">
                                 <h4>
-                                    <%# Eval("NavigationTitle.Rendered") %>
+                                    <%# Eval("ChildDemographic.NavigationTitle.Rendered") %>
                                 </h4>
-                                <i class="icon-block <%# Eval("IssueCssClass.Raw") %>"><b></b></i>
+                                <i class="icon-block <%# Eval("ChildDemographic.CssClass.Raw") %>"><b></b></i>
                             </a>
                         </li>
                     </ItemTemplate>
@@ -50,7 +50,7 @@
 </div>
 <!-- .tyce-on-demand-container -->
 
-<div class="modal fade modal-standard" id="tyce-modal-select-child" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade modal-standard" id="tyce-modal-select-child" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:1031;">
     <div class="modal-dialog">
         <div class="modal-content">
             <button type="button" class="close-overlay" data-dismiss="modal" aria-hidden="true">Close</button>

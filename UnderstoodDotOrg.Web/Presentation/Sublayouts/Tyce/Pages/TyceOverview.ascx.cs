@@ -18,7 +18,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             PageItem = (TyceOverviewPageItem)Sitecore.Context.Item;
-
+            
             //TODO: change the below to a CIG logical method after more appropriate folder templates are created
             var tyceIssuesFolder = Sitecore.Context.Database.GetItem("{FFC2C76F-4E6C-458F-9E70-4273F562D243}");
             var tyceIssues = tyceIssuesFolder.Children

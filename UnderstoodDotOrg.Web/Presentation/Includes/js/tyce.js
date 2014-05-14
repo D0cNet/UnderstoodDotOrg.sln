@@ -162,7 +162,7 @@ $(document).ready(function () {
     $(".button.button-select-children").off(".button");
     $('.tyce-personalize').find('.button-select-children').on('click', function () {
         $("#tyce-modal-select-child").modal('show');
-        $(window).trigger('resize');
+        //$(window).trigger('resize');
     });
 });
 /**
