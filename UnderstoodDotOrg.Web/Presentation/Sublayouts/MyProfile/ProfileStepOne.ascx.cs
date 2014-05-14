@@ -101,6 +101,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
         protected void NextButton_Click(object sender, EventArgs e)
         {
+           
             if ((uxBoy1.Checked || uxGirl1.Checked) && uxSelectGrade1.SelectedValue != string.Empty)
             {
                 var child = new Child();

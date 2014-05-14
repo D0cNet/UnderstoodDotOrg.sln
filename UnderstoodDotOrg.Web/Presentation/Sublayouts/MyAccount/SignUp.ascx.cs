@@ -57,12 +57,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 }
 
                 this.registeringUser.FirstName = name;
+                
+                //bg: adding in zip code
+                this.registeringUser.ZipCode = zip;
+                
+
+
 
                 var membershipManager = new MembershipManager();
 
                 // helps to call the right addMember method...
                 this.registeringUser = membershipManager.AddMember(this.registeringUser, email, password);
-
+                
                 this.CurrentMember = this.registeringUser;
                 this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
 

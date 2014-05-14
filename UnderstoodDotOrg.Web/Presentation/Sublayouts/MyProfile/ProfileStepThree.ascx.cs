@@ -203,7 +203,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             {
                 redirect = MembershipHelper.GetNextStepURL(4);
             }
+           
+            var membershipManager = new MembershipManager();
 
+            // update the member
+            membershipManager.UpdateMember(registeringUser);
+            //move onto next step
             Response.Redirect(redirect);
 
         }

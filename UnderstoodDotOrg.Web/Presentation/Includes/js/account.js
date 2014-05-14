@@ -653,7 +653,7 @@
 
       // For all toggle buttons.
       $('.profile-questions').on('click', '.button', function(e) {
-        e.preventDefault();
+        //e.preventDefault();
 
         $(this).parent().children('.checked').removeClass('checked');
         $(this).addClass('checked');

@@ -150,16 +150,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             registeringUser.Children.ElementAt(index).Issues = issues;
             registeringUser.Children.ElementAt(index).Nickname = ScreenNameTextBox.Text;
+            
 
             // handle redirects
-            if (q2a1.Checked)
+            if (q2a1.Checked) // Has (child) been formally evauluated for ...
             {
+                //BG: Set Evaulation status to the true value.
+                registeringUser.Children.ElementAt(index).EvaluationStatus = new Guid(Constants.ChildEvaluation.StatusEvaluationYes);
+            
                 redirect = MembershipHelper.GetNextStepURL(3);
                 //children[0].Nickname = ScreenNameTextBox.Text;
                 //Session["temp_child"] = children;
-            }
+            
+              }
             else
             {
+                //BG: Set alternative child evaulation status
+                if (q2a2.Checked)//BG: Child has not been evaluated
+                {
+                    registeringUser.Children.ElementAt(index).EvaluationStatus = new Guid(Constants.ChildEvaluation.StatusEvaluationNo );
+                }
+                else if (q2a3.Checked)//BG: Child evaluation is in progress
+                {
+                    registeringUser.Children.ElementAt(index).EvaluationStatus = new Guid(Constants.ChildEvaluation.StatusEvaluationInProgress );  
+                }
                 if (this.registeringUser.Children.Where(x => x.Issues.Count == 0).Count() > 1)
                 {
                     redirect = MembershipHelper.GetNextStepURL(2);

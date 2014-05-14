@@ -570,7 +570,7 @@
                 </div>
                 <!-- .question-wrapper -->
 
-                <div class="form-actions">
+                <div class="form-actions"> 
                     <asp:Button ID="NextButton" CssClass="button" runat="server" OnClick="NextButton_Click" />
                     <!--<input class="button" type="submit" value="Next">-->
                 </div>

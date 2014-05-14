@@ -9,6 +9,8 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Salesforce;
+using UnderstoodDotOrg.Domain.ExactTarget;
+using UnderstoodDotOrg.Services.ExactTarget;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
@@ -207,6 +209,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 }
             }
 
+            //bg: verify that this is working:
             registeringUser.ScreenName = ScreenNameTextField.Text;
 
             if (string.IsNullOrEmpty(registeringUser.ZipCode) && !string.IsNullOrEmpty(ZipCodeTextField.Text))
@@ -217,6 +220,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             var membershipManager = new MembershipManager();
             //membershipManager.AddMember(registeringUser);
             membershipManager.UpdateMember(this.registeringUser);
+
+
 
             //set current user stuff
             this.CurrentMember = this.registeringUser;
@@ -235,6 +240,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                     {
                         //result.Message has info
                         //write an error message or something
+                        Response.Write("<h2>BG: SalesforceActionResult == false</h2><h3>Message: " + result.Message + "</h3>");
+                        Response.End();//bgdebugging
+
                     }
                 }
                 catch (Exception ex)
@@ -243,7 +251,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                     //write an error message or something
                 }
             }
+            else
+            {
+                Response.Write("<!-- There was a problem logging into salesforce.-->");
+            }
 
+            //send an email through exact target 
+            InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
 
             Response.Redirect(MembershipHelper.GetNextStepURL(5));
         }

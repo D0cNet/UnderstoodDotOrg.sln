@@ -109,7 +109,45 @@ namespace UnderstoodDotOrg.Domain.Salesforce
 
             return sfs;
         }
+        public SalesforceActionResult UpdateWebsiteMember(Member websiteMember)
+        {
+            SalesforceActionResult sfResult = new SalesforceActionResult();
 
+            Contact salesforceContact = new Contact();
+            //fill the contact with the current user's info
+            //_sfs.retrieve(
+            return sfResult;
+        }
+        /// <summary>
+        /// We are not sure what kind of reports are going to be needed or newsletters are going to be produced
+        /// but we can assume that if a user does something notable we may want to track that in sfdc as well
+        /// </summary>
+        /// <param name="WebsiteMemberId"></param>
+        /// <param name="Activity"></param>
+        /// <returns></returns>
+        public SalesforceActionResult UploadMemberActivityData(Guid WebsiteMemberId, string Activity)
+        {
+            SalesforceActionResult sfResult = new SalesforceActionResult();
+
+            return sfResult;
+        }
+
+        /// <summary>
+        /// We have to track what donations are made into Luminate, by who, and for what campagin.
+        /// This will need to be filled out after we know more about what kind of information is
+        /// required when we make a donation
+        /// </summary>
+        /// <param name="WebsiteMemberId"></param>
+        /// <param name="CampaignName"></param>
+        /// <param name="DonationAmount"></param>
+        /// <param name="LuminateId"></param>
+        /// <returns></returns>
+        public SalesforceActionResult UploadMemberDonationData(Guid WebsiteMemberId, string CampaignName, double DonationAmount, string LuminateId)
+        {
+            SalesforceActionResult sfResult = new SalesforceActionResult();
+
+            return sfResult;
+        }
         /// <summary>
         /// Pass a populated Member in and it will update salesforce.
         /// </summary>
@@ -130,7 +168,7 @@ namespace UnderstoodDotOrg.Domain.Salesforce
             newSalesforceContact.AccountId = "001F0000014EhHtIAK"; //todo Move this and other similar values into a config
             
             //check required values
-            if (newMember.FirstName == string.Empty)
+            if (string.IsNullOrEmpty(newMember.FirstName))
             {
                 throw new Exception("First Name is required to save a new Contact Member to Service.");
             }
@@ -139,9 +177,13 @@ namespace UnderstoodDotOrg.Domain.Salesforce
                 newSalesforceContact.FirstName = newMember.FirstName;
                 newSalesforceContact.member_FirstName__c = newMember.FirstName;
             }
-            if (newMember.LastName == string.Empty)
+            if (string.IsNullOrEmpty(newMember.LastName))
             {
-                throw new Exception("Last Name is required to save a new Website Contact Member to Service.");
+                //last name will always be empty for now.
+                //throw new Exception("Last Name is required to save a new Website Contact Member to Service.");
+                newMember.LastName = "NotSpecified";
+                newSalesforceContact.LastName = newMember.LastName;
+                newSalesforceContact.member_LastName__c = newMember.LastName;
             }
             else
             {
@@ -151,6 +193,13 @@ namespace UnderstoodDotOrg.Domain.Salesforce
            
             newSalesforceContact.member_MemberId__c = newMember.MemberId.ToString(); //member_MemberId__c is our sfdc external uid on Contact
             newSalesforceContact.member_UserId__c = newMember.UserId.ToString();
+
+            if (newMember.ScreenName == "Screen Name")//more garbage coming through
+            {
+                Random random = new Random();
+                int randomNumber = random.Next(0, 30000);
+                newMember.ScreenName = "ScreenName_" + randomNumber.ToString(); 
+            }
             newSalesforceContact.member_ScreenName__c = newMember.ScreenName;
 
             //Discovered that if you do not set both the field, and the specififed field, you don't update the checkbocx
@@ -174,13 +223,31 @@ namespace UnderstoodDotOrg.Domain.Salesforce
             
             newSalesforceContact.member_ZipCode__c = newMember.ZipCode;
             newSalesforceContact.Email = newMemberEmail;            
-            newSalesforceContact.member_Role__c = Constants.SalesforceLookupDictionary [newMember.Role];
-            newSalesforceContact.Journey__c = Constants.SalesforceLookupDictionary[newMember.Journeys.First().Key];
-           
+
+            //garbage is getting in still. 
+            if (newMember.Role != new Guid("{00000000-0000-0000-0000-000000000000}"))
+            {
+                newSalesforceContact.member_Role__c = Constants.SalesforceLookupDictionary[newMember.Role];
+            }
+            
+            //Journey may be null 
+            if (newMember.Journeys.Count >= 1)
+            {
+                newSalesforceContact.Journey__c = Constants.SalesforceLookupDictionary[newMember.Journeys.First().Key];
+            }
+            
             //ContactsPersonality
             //THERE IS ALSO A PERSONALITYTYPE IN THE WSDL. DO NOT USE IT.
-            newSalesforceContact.member_Personality__c = Constants.SalesforceLookupDictionary[newMember.PersonalityType];//.ToString();
-            
+            if(!string.IsNullOrEmpty(newMember.PersonalityType.ToString()))
+            {
+                //garbage is getting in. skip garbage.
+                if(newMember.PersonalityType != new Guid("{00000000-0000-0000-0000-000000000000}"))
+                {
+                    newSalesforceContact.member_Personality__c = Constants.SalesforceLookupDictionary[newMember.PersonalityType];//.ToString();
+         
+                }
+
+            }
             //exernal id field name is not the value of the userid. its our guid for member. the name of the field/column in sfdc
             //sfdc needs to know the primary, unique key to look for when updating existing rows
             UpsertResult result = _sfs.upsert("member_MemberId__c", 
@@ -238,10 +305,21 @@ namespace UnderstoodDotOrg.Domain.Salesforce
                 Children__c sfdcChild = new Children__c();
                 sfdcChild.ContactChild__c = SalesforceNewContactId;
                 sfdcChild.Grade__c = Constants.SalesforceLookupDictionary[(c.Grades.First().Key)];
-                sfdcChild.ChildTo504Status__c = Constants.SalesforceLookupDictionary[c.Section504Status];
-                sfdcChild.ChildToEvaluationStatus__c = Constants.SalesforceLookupDictionary[c.EvaluationStatus];
-                sfdcChild.ChildToIEPStatus__c = Constants.SalesforceLookupDictionary[c.IEPStatus];
 
+                //these are blowing up with garbage values getting through
+                if (c.Section504Status != new Guid("{00000000-0000-0000-0000-000000000000}"))
+                {
+                    sfdcChild.ChildTo504Status__c = Constants.SalesforceLookupDictionary[c.Section504Status];
+                }
+                if (c.EvaluationStatus != new Guid("{00000000-0000-0000-0000-000000000000}"))
+                {
+                   sfdcChild.ChildToEvaluationStatus__c = Constants.SalesforceLookupDictionary[c.EvaluationStatus];
+                }
+                if (c.IEPStatus != new Guid("{00000000-0000-0000-0000-000000000000}"))
+                {
+                    sfdcChild.ChildToIEPStatus__c = Constants.SalesforceLookupDictionary[c.IEPStatus];
+                }
+             
                 sfdcChild.Nickname__c = c.Nickname;
                 sfdcChild.Name = c.Nickname;
                 
