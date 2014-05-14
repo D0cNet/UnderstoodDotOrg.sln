@@ -227,6 +227,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             this.CurrentMember = this.registeringUser;
             this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
 
+            
+            
             //updating salesforce
             SalesforceManager sfMgr = new SalesforceManager("brettgarnier@outlook.com", 
                                                             "8f9C3Ayq", 
@@ -258,6 +260,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             //send an email through exact target 
             InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
+
+            //run personalization for this user
+            Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
+            rps.UpdateMember(CurrentMember);
 
             Response.Redirect(MembershipHelper.GetNextStepURL(5));
         }
