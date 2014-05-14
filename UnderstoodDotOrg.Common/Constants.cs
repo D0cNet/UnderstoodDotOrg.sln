@@ -68,7 +68,7 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
-        public static Guid IssueContainer { get { return new Guid(""); } }
+        public static Guid IssueContainer { get { return new Guid("{4B5B4ACE-6470-4E3D-A1F9-88F34CBC1A86}"); } }
         public static Guid DiagnosisContainer { get { return new Guid("{A3955F76-4D6F-4CC0-8D3F-EECC01479EC7}"); } }
         public static Guid IEPStatusContainer { get { return new Guid("{D273E040-578D-4B1B-B0B1-E1256CB249EA}"); } }
         public static Guid Section504StatusContainer { get { return new Guid("{BDAAB8F1-8FEA-4E3D-AE6A-C436ACAEB366}"); } }

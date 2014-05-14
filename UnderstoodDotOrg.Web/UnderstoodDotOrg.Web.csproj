@@ -214,11 +214,39 @@
     <Compile Include="Presentation\Sublayouts\About\Donation Thank you.ascx.designer.cs">
       <DependentUpon>Donation Thank you.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\About\SearchResults.ascx.cs">
+    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx.cs">
+      <DependentUpon>Newsletter_ChildInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx.designer.cs">
+      <DependentUpon>Newsletter_ChildInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ParentInterest.ascx.cs">
+      <DependentUpon>Newsletter_ParentInterest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ParentInterest.ascx.designer.cs">
+      <DependentUpon>Newsletter_ParentInterest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_SignUp.ascx.cs">
+      <DependentUpon>Newsletter_SignUp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_SignUp.ascx.designer.cs">
+      <DependentUpon>Newsletter_SignUp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_Thankyou.ascx.cs">
+      <DependentUpon>Newsletter_Thankyou.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_Thankyou.ascx.designer.cs">
+      <DependentUpon>Newsletter_Thankyou.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\SearchResults.ascx.cs">
       <DependentUpon>SearchResults.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\About\SearchResults.ascx.designer.cs">
+    <Compile Include="Presentation\Sublayouts\Blogs\SearchResults.ascx.designer.cs">
       <DependentUpon>SearchResults.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx.cs">
@@ -1874,7 +1902,11 @@
     <Content Include="Presentation\Sublayouts\About\AboutUnderstood.ascx" />
     <Content Include="Presentation\Sublayouts\About\Donate Page.ascx" />
     <Content Include="Presentation\Sublayouts\About\Donation Thank you.ascx" />
-    <Content Include="Presentation\Sublayouts\About\SearchResults.ascx" />
+    <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx" />
+    <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ParentInterest.ascx" />
+    <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_SignUp.ascx" />
+    <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_Thankyou.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\SearchResults.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx" />

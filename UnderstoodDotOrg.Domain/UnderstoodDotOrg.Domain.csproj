@@ -263,6 +263,13 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonationThankYouPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonationThankYouPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\NewsLetter\Newsletter_ChildInfoItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\NewsLetter\Newsletter_ChildInfoItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\NewsLetter\Newsletter_ParentInterestItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\NewsLetter\Newsletter_ParentInterestItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\NewsLetter\Newsletter_SignUpItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\NewsLetter\Newsletter_ThankYouItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\NewsLetter\Newsletter_ThankYouItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Page404Item.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Page404Item.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\PartnerInfoItem.base.cs" />
