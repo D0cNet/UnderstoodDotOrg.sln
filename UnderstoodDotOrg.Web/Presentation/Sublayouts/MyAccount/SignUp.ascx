@@ -15,7 +15,7 @@
             <h1><%--Sign Up--%>
                 <sc:Text ID="pageTitle" runat="server" Field="Page Title" />
             </h1>
-            <a class="fb-sign-in" href="REPLACE">
+            <a class="fb-sign-in" href="\sign%20in">
                 <img alt="facebook" src="/Presentation/includes/images/icon.fb-sign-in@2x.png" /> <%--wire up to FB--%>
             </a>
             <%--<p>Or create an account using your email address</p>--%>

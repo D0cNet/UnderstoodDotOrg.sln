@@ -368,16 +368,6 @@ namespace UnderstoodDotOrg.Domain.Membership
 
                     Member = this.AddMember(Member);
 
-                    //create Telligent user
-                    if (!string.IsNullOrEmpty(Member.ScreenName))
-                    {
-                        bool communitySuccess = CommunityHelper.CreateUser(Member.ScreenName, Username);
-                        if (communitySuccess == false)
-                        {
-                            // ¡Ay, caramba!
-                            
-                        }
-                    }
 
                     return Member;
                 }

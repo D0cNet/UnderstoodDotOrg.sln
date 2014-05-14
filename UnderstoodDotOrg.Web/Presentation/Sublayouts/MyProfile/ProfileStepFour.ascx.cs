@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Salesforce;
 using UnderstoodDotOrg.Domain.ExactTarget;
 using UnderstoodDotOrg.Services.ExactTarget;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
@@ -64,11 +65,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             //    },
             //    };
             //}
-
-            ScreenNameTextField.Text = DictionaryConstants.ScreenNameWatermark;
-            ZipCodeTextField.Text = DictionaryConstants.ZipCodeWatermark;
-            SubmitButton.Text = DictionaryConstants.SubmitButtonText;
-
+            if (!IsPostBack)
+            {
+                ScreenNameTextField.Text = DictionaryConstants.ScreenNameWatermark;
+                ZipCodeTextField.Text = DictionaryConstants.ZipCodeWatermark;
+                SubmitButton.Text = DictionaryConstants.SubmitButtonText;
+            }
+            
             string schoolIssueContainer = "{596757D6-B2DB-4819-AA25-95DC9BB2FD0E}";
             string homeLifeContainer = "{18D5FA6B-32EC-476B-9194-3B18F7572D10}";
             string growingUpContainer = "{E9194DCB-1A67-4CFF-A8A4-B799639AFADC}";
@@ -131,7 +134,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 var check = item.FindControl("interest") as CheckBox;
                 if (check != null && check.Checked)
                 {
-                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
                 }
             }
 
@@ -140,7 +143,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 var check = item.FindControl("interest") as CheckBox;
                 if (check != null && check.Checked)
                 {
-                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
                 }
             }
 
@@ -158,7 +161,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 var check = item.FindControl("interest") as CheckBox;
                 if (check != null && check.Checked)
                 {
-                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
                 }
             }
 
@@ -167,7 +170,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 var check = item.FindControl("interest") as CheckBox;
                 if (check != null && check.Checked)
                 {
-                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
                 }
             }
 
@@ -176,7 +179,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 var check = item.FindControl("interest") as CheckBox;
                 if (check != null && check.Checked)
                 {
-                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
                 }
             }
 
@@ -186,7 +189,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 if (check != null && check.Checked)
                 {
                     //registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
-                    registeringUser.Journeys.Add(new Journey() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Journeys.Add(new Journey() { Key = Guid.Parse(check.Attributes["guid"]) });
                 }
             }
 
@@ -194,27 +197,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             {
                 if (uxMotherButton.Checked)
                 {
-                    registeringUser.Role = Guid.Parse("{890F06AF-284E-43E1-9647-0EFEEB000526}");
+                    this.registeringUser.Role = Guid.Parse("{890F06AF-284E-43E1-9647-0EFEEB000526}");
                 }
                 else
                 {
                     if (uxFatherButton.Checked)
                     {
-                        registeringUser.Role = Guid.Parse("{2BF9D7BE-2E40-432C-ADE7-A25C80B9B9EE}");
+                        this.registeringUser.Role = Guid.Parse("{2BF9D7BE-2E40-432C-ADE7-A25C80B9B9EE}");
                     }
                     else
                     {
-                        registeringUser.Role = Guid.Parse(uxParentList.SelectedValue);
+                        this.registeringUser.Role = Guid.Parse(uxParentList.SelectedValue);
                     }
                 }
             }
 
             //bg: verify that this is working:
-            registeringUser.ScreenName = ScreenNameTextField.Text;
+            this.registeringUser.ScreenName = ScreenNameTextField.Text;
 
             if (string.IsNullOrEmpty(registeringUser.ZipCode) && !string.IsNullOrEmpty(ZipCodeTextField.Text))
             {
-                registeringUser.ZipCode = ZipCodeTextField.Text;
+                this.registeringUser.ZipCode = ZipCodeTextField.Text;
             }
 
             var membershipManager = new MembershipManager();
@@ -239,23 +242,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 {
                     SalesforceActionResult result = sfMgr.CreateWebsiteMemberAsContact(this.CurrentMember, CurrentUser.Email);
                     if (result.Success == false)
-                    {
-                        //result.Message has info
-                        //write an error message or something
-                        Response.Write("<h2>BG: SalesforceActionResult == false</h2><h3>Message: " + result.Message + "</h3>");
-                        Response.End();//bgdebugging
-
+                    {                     
+                        Response.Write("<!-- Error 401 -->");
                     }
                 }
                 catch (Exception ex)
                 {
-                    //handle how you want
-                    //write an error message or something
+                    Response.Write("<!-- Error 501 -->");
                 }
             }
             else
             {
-                Response.Write("<!-- There was a problem logging into salesforce.-->");
+                Response.Write("<!-- Error 601 -->");
             }
 
             //send an email through exact target 
@@ -265,6 +263,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
             rps.UpdateMember(CurrentMember);
 
+            //pulling this out of membership manager for now until we find the best place. 
+            //It had been in AddMember berfore but there is no screen name available when we Add a member.
+            //create Telligent user:
+            if (!string.IsNullOrEmpty(CurrentMember.ScreenName))
+            {
+                bool communitySuccess = CommunityHelper.CreateUser(CurrentMember.ScreenName, CurrentUser.Email);
+                if (communitySuccess == false)
+                {
+                    // ¡Ay, caramba!
+
+                }
+            }
             Response.Redirect(MembershipHelper.GetNextStepURL(5));
         }
 

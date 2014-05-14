@@ -244,6 +244,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\SearchResults.ascx.cs">
       <DependentUpon>SearchResults.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\SearchResults.ascx.designer.cs">
       <DependentUpon>SearchResults.ascx</DependentUpon>
