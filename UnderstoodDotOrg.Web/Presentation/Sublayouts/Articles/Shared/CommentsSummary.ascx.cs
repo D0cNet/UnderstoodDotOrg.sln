@@ -20,10 +20,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             int numComments = 0;
             if (ObjBasicArticle != null)
             {
-                int blogID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Raw);
-                int blogPostID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw);
                 try
                 {
+                    int blogID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Raw);
+                    int blogPostID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw);
+                
                     List<Comment> comments = CommunityHelper.ReadComments(blogID, blogPostID);
 
                     if (comments != null)
