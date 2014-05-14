@@ -137,6 +137,32 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return commentList;
         }
 
+        public static int CommentCount(int blogId, int blogPostId)
+        {
+            var webClient = new WebClient();
+
+            // replace the "admin" and "Admin's API key" with your valid user and apikey!
+            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+            var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
+            var xml = webClient.DownloadString(requestUrl);
+
+            var xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+
+            XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+            List<Comment> commentList = new List<Comment>();
+            int nodecount = 0;
+            foreach (XmlNode xn in nodes)
+            {
+                nodecount++;
+            }
+            return nodecount;
+        }
+
         public static BlogPost ReadBlogBody(int blogId, int blogPostId)
         {
             var webClient = new WebClient();
