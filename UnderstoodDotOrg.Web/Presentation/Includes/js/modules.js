@@ -208,6 +208,7 @@ the callbacks passed to the module.
 
       self.$previousFocus = null;
 
+      self.setModel();
       self.breakpointActions();
       // Secondary menu starts off hidden while we adjust it for the current size, so now we have to show it.
       self.$navsecondary.css('visibility', 'visible');
@@ -230,6 +231,15 @@ the callbacks passed to the module.
         e.stopPropagation();
         e.preventDefault();
       });
+    };
+
+    self.setModel = function() {
+      self.model = {};
+      self.model.itemsInNav = 5;
+
+      if ($('.community-main-header').length) {
+        self.model.itemsInNav = 6;
+      }
     };
 
     self.breakpointActions = function() {
@@ -294,7 +304,7 @@ the callbacks passed to the module.
         // page opened at desktop size or resized from moblie
         // move items from submenu to top level, attach events
         if (self.viewport_size == 'small' || self.viewport_size === null) {
-          self.itemsUp(6);
+          self.itemsUp(self.model.itemsInNav);
           self.attachSubmenuEvents();
         }
 
@@ -1198,10 +1208,13 @@ the callbacks passed to the module.
         responsiveSliderChange( parentsAreSayingSliderArr, true, jQuery('.parents-are-saying-container'), 3, true, 700, 150, 2);
       }, 500, 'parentsAreSayingSlider');
 
-      waitForFinalEvent(function(){
-        responsiveSliderChange( forYouSliderArr, true, jQuery('.recos-for-you'), 4, false, false, false );
-        new U.Recos();
-      }, 500, 'forYouSlider');
+      /* SG - this is dependent on page specific JS - checking if U.Recos exists before firing */
+      if (typeof(U.Recos) !== 'undefined') {
+        waitForFinalEvent(function(){
+          responsiveSliderChange( forYouSliderArr, true, jQuery('.recos-for-you'), 4, false, false, false );
+          new U.Recos();
+        }, 500, 'forYouSlider');
+      }
 
       waitForFinalEvent(function(){
         responsiveSliderChange( partnersSliderArr, true, jQuery('#partners-slides-container'), 6, false, 1000, false, 4, 2);
@@ -1672,8 +1685,7 @@ the callbacks passed to the module.
 
       // Attach events.
       $(window).resize(function() { self.resizeElements(); });
-
-      $html.on('equalHeights', self.resizeElements);
+      $html.on('equalHeights', function() { self.resizeElements(); });
     };
 
     /**
@@ -2252,91 +2264,92 @@ jQuery(document).ready(function(){
   });
 
   U.skipLink = function() {
-      var self = this;
+    var self = this;
 
-      self.pageSections = ['Dashboard', 'Feature', 'Toolbar', 'Sidebar', 'Content', 'Comments'];
+    self.pageSections = ['Dashboard', 'Feature', 'Toolbar', 'Sidebar', 'Content', 'Comments'];
 
-      self.init = function() {
-        self.cacheDom();
-        self.setModel();
-        self.buildSkipList();
-        self.cacheDelegatedDom();
-        self.attachHandlers();
-      };
-
-      self.setModel = function() {
-        selectors = [];
-        self.model = {};
-        self.model.skipLinks = [];
-
-        for (var i = 0; i < self.pageSections.length; i++) {
-          var item = {};
-
-          item.contentType = self.pageSections[i];
-          item.selector = '.skiplink-' + item.contentType.toLowerCase();
-          item.element = $(item.selector);
-          item.linkId = item.contentType + 'link';
-          item.linkHref = '#' + item.linkId;
-          item.subNavText = 'Skip to ' + item.contentType;
-
-          /* Storing index on element so we can quickly find skiplink data for each element when building list */
-          item.element.data('skipLinkIndex', i);
-          self.model.skipLinks.push(item);
-
-          if (item.element.length) {
-            selectors.push(item.selector);
-          }
-        }
-
-        /* Building separate query for collected skip link elements on page */
-        /* This guarantees order will match order that items appear in the DOM */
-        self.model.skipLinkCollection = $(selectors.join(','));
-      };
-
-      self.cacheDom = function() {
-        self.dom = {};
-        self.dom.body = $(document.body);
-      };
-
-      self.cacheDelegatedDom = function() {
-        self.dom.skipList = $('.skip-list');
-      };
-
-      self.attachHandlers = function() {
-        self.dom.body.on('click', '.skip-link', self.firefoxFocusWorkaround);
-        self.dom.body.on('click', '.secondary-navigation-link', self.skipBackToMainLinkMenu);
-      };
-
-      self.buildSkipList = function() {
-        var skipList = $('<ul class="skip-list"></ul>');
-
-        self.dom.body.prepend(skipList);
-
-
-        self.model.skipLinkCollection.each(function(i) {
-          var el = $(this),
-              index = el.data('skipLinkIndex'),
-              item = self.model.skipLinks[index];
-
-          skipList.append('<li><a class="skip-link" href="'+ item.linkHref +'" tabindex="1">' + item.subNavText + '</li>');
-          item.element.prepend('<div class="skip-link-secondary"><a href="#" class="skip-link secondary-navigation-link rs_skip" id="'+ item.linkId +'">Back to Navigation</a></div>');
-        });
-      };
-
-    self.firefoxFocusWorkaround = function(e) {
-      var clicked = $(e.currentTarget),
-          selector = clicked.attr('href');
-
-      setTimeout(function() {
-        $(selector).focus();
-      }, 100);
+    self.init = function() {
+      self.cacheDom();
+      self.setModel();
+      self.buildSkipList();
+      self.cacheDelegatedDom();
+      self.attachHandlers();
     };
 
-      self.skipBackToMainLinkMenu = function(e) {
-          self.dom.skipList.find(':focusable').eq(0).focus();
-      };
+    self.setModel = function() {
+      selectors = [];
+      self.model = {};
+      self.model.skipLinks = [];
 
-      self.init();
+      for (var i = 0; i < self.pageSections.length; i++) {
+        var item = {};
+
+        item.contentType = self.pageSections[i];
+        item.selector = '.skiplink-' + item.contentType.toLowerCase();
+        item.element = $(item.selector);
+        item.linkId = item.contentType + 'link';
+        item.linkHref = '#' + item.linkId;
+        item.subNavText = 'Skip to ' + item.contentType;
+
+        /* Storing index on element so we can quickly find skiplink data for each element when building list */
+        item.element.data('skipLinkIndex', i);
+        self.model.skipLinks.push(item);
+
+        if (item.element.length) {
+          selectors.push(item.selector);
+        }
+      }
+
+      /* Building separate query for collected skip link elements on page */
+      /* This guarantees order will match order that items appear in the DOM */
+      self.model.skipLinkCollection = $(selectors.join(','));
+    };
+
+    self.cacheDom = function() {
+      self.dom = {};
+      self.dom.body = $(document.body);
+    };
+
+    self.cacheDelegatedDom = function() {
+      self.dom.skipList = $('.skip-list');
+    };
+
+    self.attachHandlers = function() {
+      self.dom.body.on('click', '.skip-link', self.firefoxFocusWorkaround());
+      self.dom.body.on('click', '.secondary-navigation-link', self.skipBackToMainLinkMenu);
+    };
+
+    self.buildSkipList = function() {
+      var skipList = $('<ul class="skip-list"></ul>');
+
+      self.dom.body.prepend(skipList);
+
+      self.model.skipLinkCollection.each(function(i) {
+        var el = $(this),
+            index = el.data('skipLinkIndex'),
+            item = self.model.skipLinks[index];
+
+        skipList.append('<li><a class="skip-link" href="'+ item.linkHref +'" tabindex="0">' + item.subNavText + '</li>');
+        item.element.prepend('<div class="skip-link-secondary"><a href="#" class="skip-link secondary-navigation-link rs_skip" id="'+ item.linkId +'">Back to Navigation</a></div>');
+      });
+    };
+
+    self.firefoxFocusWorkaround = function(e) {
+      return function(e) {
+        var clicked = $(e.currentTarget),
+            selector = clicked.attr('href');
+
+        setTimeout(function() {
+          $(selector).focus();
+        }, 100);
+      };
+    };
+
+    self.skipBackToMainLinkMenu = function(e) {
+      self.dom.skipList.find(':focusable').eq(0).focus();
+    };
+
+    self.init();
   };
 
 })(jQuery);
