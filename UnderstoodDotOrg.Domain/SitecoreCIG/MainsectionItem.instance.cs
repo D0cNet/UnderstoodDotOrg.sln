@@ -7,19 +7,24 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG {
-    public partial class MainsectionItem {
+namespace UnderstoodDotOrg.Domain.SitecoreCIG
+{
+    public partial class MainsectionItem
+    {
 
         /// <summary>
         /// Get website root item
         /// </summary>
         /// <returns></returns>
-        public static MainsectionItem GetSiteRoot() {
+        public static MainsectionItem GetSiteRoot()
+        {
             MainsectionItem objSiteItem = Sitecore.Context.Database.GetItem(Sitecore.Context.Site.RootPath);
-            if (objSiteItem != null && objSiteItem.InnerItem.HasContextLanguageVersion()) {
+            if (objSiteItem != null && objSiteItem.InnerItem.HasContextLanguageVersion())
+            {
                 return objSiteItem;
             }
-            else {
+            else
+            {
                 Sitecore.Context.Database.GetItem(Sitecore.Context.Site.RootPath, Sitecore.Data.Managers.LanguageManager.GetLanguage("en"));
                 return objSiteItem;
             }
@@ -29,24 +34,28 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG {
         /// Get first instance(item) of GlobalsItem template under the site root
         /// </summary>
         /// <returns></returns>
-        public static GlobalsItem GetGlobals() {
+        public static GlobalsItem GetGlobals()
+        {
             GlobalsItem firstGlobals = null;
             var siteChildren = GetSiteRoot().InnerItem.GetChildren();
-            if (siteChildren != null) {
+            if (siteChildren != null)
+            {
                 firstGlobals = siteChildren.Where(i => i.IsOfType(GlobalsItem.TemplateId)).FirstOrDefault();
             }
             return (GlobalsItem)firstGlobals;
         }
 
-       
+
         /// <summary>
         /// Get First Globals item
         /// </summary>
         /// <returns></returns>
-        public static GlobalsItem GetGlobalItem() {
+        public static GlobalsItem GetGlobalItem()
+        {
             MainsectionItem objSiteItem = GetSiteRoot();
             GlobalsItem objGlobalItem = null;
-            if (objSiteItem != null) {
+            if (objSiteItem != null)
+            {
                 objGlobalItem = GetGlobals();
             }
             return objGlobalItem;
@@ -56,10 +65,12 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG {
         /// Get home page item
         /// </summary>
         /// <returns></returns>
-        public static HomePageItem GetHomePageItem() {
+        public static HomePageItem GetHomePageItem()
+        {
             MainsectionItem objSiteItem = GetSiteRoot();
             HomePageItem objHomepageItem = null;
-            if (objSiteItem != null) {
+            if (objSiteItem != null)
+            {
                 objHomepageItem = GetHomeItem();
             }
             return objHomepageItem;
@@ -69,12 +80,15 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG {
         /// Get first instance(item) of Homepage Item under the site root
         /// </summary>
         /// <returns></returns>
-        public static HomePageItem GetHomeItem() {
+        public static HomePageItem GetHomeItem()
+        {
             var homeItem = Sitecore.Context.Database.GetItem(Sitecore.Context.Site.StartPath);
-            if (homeItem != null) {
+            if (homeItem != null)
+            {
                 return (HomePageItem)homeItem;
             }
-            else {
+            else
+            {
                 homeItem = Sitecore.Context.Database.GetItem(Sitecore.Context.Site.StartPath, Sitecore.Data.Managers.LanguageManager.GetLanguage("en"));
                 return homeItem;
             }

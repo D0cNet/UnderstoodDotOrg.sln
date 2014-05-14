@@ -9,24 +9,37 @@ using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Common;
 
-namespace UnderstoodDotOrg.Common.Extensions {
-    public static class ItemExtensions {
+namespace UnderstoodDotOrg.Common.Extensions
+{
+    public static class ItemExtensions
+    {
         /// <summary>
         /// Resolve the item URL
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static string GetUrl(this Item item) {
+        public static string GetUrl(this Item item)
+        {
             return Sitecore.Links.LinkManager.GetItemUrl(item);
         }
 
+        /// <summary>
+        /// Resolve the item URL
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
+        public static string GetUrl(this CustomItem item)
+        {
+            return Sitecore.Links.LinkManager.GetItemUrl(item.InnerItem);
+        }
 
         /// <summary>
         /// Check if item has context language version
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static bool VersionExists(this Item item) {
+        public static bool VersionExists(this Item item)
+        {
             return item != null && item.Versions.Count > 0;
         }
 
@@ -36,7 +49,8 @@ namespace UnderstoodDotOrg.Common.Extensions {
         /// <param name="item"></param>
         /// <param name="templateId"></param>
         /// <returns></returns>
-        public static bool IsOfType(this Item item, string templateId) {
+        public static bool IsOfType(this Item item, string templateId)
+        {
             return item.TemplateID.ToString().Equals(templateId, System.StringComparison.InvariantCultureIgnoreCase);
         }
 
@@ -46,19 +60,23 @@ namespace UnderstoodDotOrg.Common.Extensions {
         /// <param name="item"></param>
         /// <param name="templateId"></param>
         /// <returns></returns>
-        public static bool IsOfType(this Item item, ID templateId) {
+        public static bool IsOfType(this Item item, ID templateId)
+        {
             return item.TemplateID.Equals(templateId);
         }
 
-        public static bool InheritsFromType(this Item item, string templateId) {
+        public static bool InheritsFromType(this Item item, string templateId)
+        {
             return InheritsFromType(item, ID.Parse(templateId));
         }
 
-        public static bool InheritsFromType(this Item item, ID templateId) {
+        public static bool InheritsFromType(this Item item, ID templateId)
+        {
             return GetTemplate(item).InheritsFrom(templateId);
         }
 
-        public static bool InheritsTemplate(this Item item, string templateID) {
+        public static bool InheritsTemplate(this Item item, string templateID)
+        {
             return item.GetTemplate().InheritsFrom(new ID(templateID));
         }
 
@@ -67,7 +85,8 @@ namespace UnderstoodDotOrg.Common.Extensions {
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static Template GetTemplate(this Item item) {
+        public static Template GetTemplate(this Item item)
+        {
             return TemplateManager.GetTemplate(item);
         }
         /// <summary>
@@ -75,7 +94,8 @@ namespace UnderstoodDotOrg.Common.Extensions {
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static IEnumerable<Item> FilterByContextLanguageVersion(this IEnumerable<Item> collection) {
+        public static IEnumerable<Item> FilterByContextLanguageVersion(this IEnumerable<Item> collection)
+        {
             return collection.Where(i => i != null && i.Versions.Count > 0);
         }
         /// <summary>
@@ -83,7 +103,8 @@ namespace UnderstoodDotOrg.Common.Extensions {
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static bool HasContextLanguageVersion(this Item item) {
+        public static bool HasContextLanguageVersion(this Item item)
+        {
             return item != null && item.Versions.Count > 0;
         }
 
@@ -103,12 +124,17 @@ namespace UnderstoodDotOrg.Common.Extensions {
         /// <returns>
         /// Returns a list of items that match the templatenames provided
         /// </returns>
-        public static List<Item> ChildrenByTemplates(this Item Parent, List<string> Templatenames) {
+        public static List<Item> ChildrenByTemplates(this Item Parent, List<string> Templatenames)
+        {
 
-            try {
-                return (from child in Parent.GetChildren().ToArray() where Templatenames.Contains(child.TemplateName) select child).ToList();
+            try
+            {
+                return (from child in Parent.GetChildren().ToArray()
+                        where Templatenames.Contains(child.TemplateName)
+                        select child).ToList();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 return null;
             }
         }

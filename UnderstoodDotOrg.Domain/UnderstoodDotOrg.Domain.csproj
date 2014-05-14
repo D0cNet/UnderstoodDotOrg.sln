@@ -204,6 +204,7 @@
     <Compile Include="SitecoreCIG\Poses\Folders\UtilityNavigationFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\ChildLearningIssueItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\HeroImageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\HomeSliderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\LanguageLinkItem.base.cs" />
@@ -338,6 +339,11 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdviceVideoPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceBasePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceNextStepsPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceOverviewPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TycePlayerPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceQuestionsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildChallengeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildChallengeItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildChallengeItem.interface.cs" />
