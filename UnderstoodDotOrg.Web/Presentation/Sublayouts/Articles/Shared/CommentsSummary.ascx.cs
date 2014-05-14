@@ -20,33 +20,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             int numComments = 0;
             if (ObjBasicArticle != null)
             {
-                try
-                {
                     int blogID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Raw);
                     int blogPostID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw);
-                
-                    List<Comment> comments = CommunityHelper.ReadComments(blogID, blogPostID);
 
-                    if (comments != null)
+                    try
                     {
-                        numComments = comments.Count();
-                        if (numComments > 2)
+                        List<Comment> comments = CommunityHelper.ReadComments(blogID, blogPostID);
+
+                        if (comments != null)
                         {
-                            litNumComments.Text = "(" + numComments + ")";
+                            numComments = comments.Count();
+                            if (numComments > 2)
+                            {
+                                litNumComments.Text = "(" + numComments + ")";
+                            }
+
+                            Comment recentComment = comments.OrderByDescending(x => x._commentDate).First();
+                            litCommentblurb.Text = CommunityHelper.FormatString100(recentComment._body);// Take(100).ToString();
+                            litAuthorName.Text = recentComment._authorDisplayName;
+                            litTimeStamp.Text = recentComment._publishedDate;
+                            hlAddMyComment.HRef = "#" + recentComment._commentId; //Navigate to comment
                         }
 
-                    Comment recentComment = comments.OrderByDescending(x => x._commentDate).First();
-                    litCommentblurb.Text = CommunityHelper.FormatString100(recentComment._body);// Take(100).ToString();
-                    litAuthorName.Text = recentComment._authorDisplayName;
-                    litTimeStamp.Text = recentComment._publishedDate;
-                    hlAddMyComment.HRef = "#" + recentComment._commentId; //Navigate to comment
                     }
-
-                }
-                catch(Exception ex)
-                {
-                    Sitecore.Diagnostics.Log.Error(ex.Message, GetType());
-                }
+                    catch (Exception ex)
+                    {
+                        Sitecore.Diagnostics.Log.Error(ex.Message, GetType());
+                    }
 
             }
             hlAllComments.HRef = "#comment-list"; //Navigate to top of comment section
