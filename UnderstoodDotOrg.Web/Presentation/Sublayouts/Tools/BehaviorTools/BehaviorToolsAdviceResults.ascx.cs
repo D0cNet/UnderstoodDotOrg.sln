@@ -17,6 +17,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
+using UnderstoodDotOrg.Web.Handlers;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 {
@@ -95,21 +96,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         private void BindResults()
         {
             // TODO: Search articles based on grade and challenge
+            SearchResultsService srs = new SearchResultsService();
+            var result = srs.SearchBehaviorArticles(SelectedChallenge, SelectedGrade, 1);
 
-            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
-            using (var ctx = index.CreateSearchContext())
+            if (result.Matches.Any())
             {
-                var results = ctx.GetQueryable<BehaviorAdvice>()
-                                 .Where(i => i.TemplateId == Sitecore.Data.ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
-                                    || i.TemplateId == Sitecore.Data.ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
-                                 .Where(i => i.ChildChallenges.Contains(Sitecore.Data.ID.Parse(SelectedChallenge))
-                                        && i.ChildGrades.Contains(Sitecore.Data.ID.Parse(SelectedGrade)));
-
-                foreach (var r in results)
-                {
-
-                }
-            }  
+                rptResults.DataSource = result;
+                rptResults.DataBind();
+            }
         }
     }
 }

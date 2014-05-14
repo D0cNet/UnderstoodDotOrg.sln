@@ -46,11 +46,20 @@ public static implicit operator Item(BehaviorToolsAdviceVideoPageItem customItem
 #region Field Instance Methods
 
 
-public CustomTextField BrightcoveVideoURL
+public CustomTextField VideoEmbed
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Brightcove Video URL"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Video Embed"]);
+	}
+}
+
+
+public CustomTextField VideoDescription
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Video Description"]);
 	}
 }
 

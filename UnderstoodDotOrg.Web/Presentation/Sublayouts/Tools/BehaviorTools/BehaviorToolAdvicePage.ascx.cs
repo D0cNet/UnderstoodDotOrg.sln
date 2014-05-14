@@ -17,9 +17,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 
         private void BindContent()
         {
-            BehaviorToolsAdvicePageItem item = new BehaviorToolsAdvicePageItem(Sitecore.Context.Item);
             
-            frTitle.Item = frWhatYouCanDo.Item = frWhatYouCanSay.Item = frWhyThisWillHelp.Item = item;
         }
     }
 }

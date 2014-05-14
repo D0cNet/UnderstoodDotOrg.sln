@@ -81,6 +81,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
                     HyperLink hlArticleTitle = e.FindControlAs<HyperLink>("hlArticleTitle");
 
                     hlArticleImage.NavigateUrl = hlArticleTitle.NavigateUrl = item.InnerItem.GetUrl();
+
+                    Sitecore.Web.UI.WebControls.Image imgThumbnail = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("imgThumbnail");
+                    imgThumbnail.Field = item.GetArticleThumbnailField();
                 }
             }
         }

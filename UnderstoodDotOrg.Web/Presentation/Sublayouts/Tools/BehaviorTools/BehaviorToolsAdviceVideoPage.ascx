@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BehaviorToolsAdviceVideoPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.BehaviorToolsAdviceVideoPage" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="container article">
   <div class="row row-equal-heights">
     <!-- article -->
@@ -16,18 +17,16 @@
       <!-- BEGIN PARTIAL: in-this-video -->
 <div class="expert-advice-wrapper">
   <div class="expert-video">
-    <h2>Give at least 5 minutes advance warning</h2>
-    <img alt="589x348 Placeholder" src="http://placehold.it/589x348" />
+    <h2><sc:FieldRenderer runat="server" FieldName="Tip Title" /></h2>
+      <div class="player-container">
+        <div class="player">
+            <sc:FieldRenderer runat="server" FieldName="Video Embed" />
+        </div>
+      </div>
   </div> <!-- end expert-video -->
   <div class="in-this-video">
     <h2>In this video</h2>
-    <ul>
-      <li>quidem voluptatem quam voluptatem sunt voluptatibus aut nihil consequatur nihil</li>
-      <li>accusamus hic provident est architecto voluptatem magni eos sequi aliquam sed architecto</li>
-      <li>eligendi et voluptatem provident sunt ut nihil dignissimos voluptatem aut quod qui quo repudiandae</li>
-      <li>consequatur culpa porro possimus ut sint assumenda quo est eaque dolorem illo est unde provident in qui fuga</li>
-      <li>temporibus autem consectetur nostrum est sequi dolores dolorem aut nesciunt quia minima</li>
-    </ul>
+    <sc:FieldRenderer runat="server" FieldName="Video Description" />
   </div> <!-- end in-this-video -->
 </div> <!-- end expert-advice-wrapper -->
 
@@ -65,14 +64,20 @@
 </div>
 <!-- END PARTIAL: find-helpful -->
       <!-- BEGIN PARTIAL: keep-reading -->
-<div class="keep-reading">
-  <h3>Keep Reading</h3>
-  <ul>
-    <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
-    <li><a href="REPLACE">How to Build a Homework Plan</a></li>
-    <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
-  </ul>
-</div>
+        <asp:Repeater ID="rptRelatedArticles" runat="server">
+            <HeaderTemplate>
+                <div class="keep-reading">
+                  <h3><sc:FieldRenderer runat="server" FieldName="Related Articles Title" /></h3>
+                  <ul>
+            </HeaderTemplate>
+            <ItemTemplate>
+                       <li <%# (Container.ItemIndex + 1 == rptRelatedArticles.Items.Count) ? "last-child" : "" %>><asp:HyperLink ID="hlArticleLink" runat="server" /></li>
+            </ItemTemplate>
+            <FooterTemplate>
+                  </ul>
+                </div>
+            </FooterTemplate>
+        </asp:Repeater>
 <!-- END PARTIAL: keep-reading -->
     </div>
   </div><!-- .row -->

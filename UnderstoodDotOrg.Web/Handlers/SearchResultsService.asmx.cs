@@ -7,6 +7,8 @@ using System.Web.Services;
 using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using Sitecore.Resources.Media;
 
 namespace UnderstoodDotOrg.Web.Handlers
 {
@@ -36,7 +38,7 @@ namespace UnderstoodDotOrg.Web.Handlers
                         {
                             Title = i.Name,
                             Url = i.GetUrl(),
-                            Thumbnail = "http://placehold.it/230x129&text=230x129",
+                            Thumbnail = ((DefaultArticlePageItem)i).GetArticleThumbnailUrl(230, 129),
                             Blurb = "Lorem ipsum...",
                             Type = ""
                         };
@@ -44,9 +46,7 @@ namespace UnderstoodDotOrg.Web.Handlers
             results.Articles = query.ToList();
             results.TotalMatches = totalResults;
 
-            // Determine if there are more results to be paged
-            int currentResultTotal = ((page - 1) * Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE) + results.Articles.Count();
-            results.HasMoreResults = currentResultTotal < totalResults;
+            results.HasMoreResults = HasMoreResults(page, Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE, results.Articles.Count(), totalResults);
 
             return results;
         }
@@ -59,7 +59,18 @@ namespace UnderstoodDotOrg.Web.Handlers
 
             int totalResults = 0;
 
+            List<BehaviorAdvice> articles = SearchHelper.PerformBehaviorArticleSearch(challenge, grade, page, out totalResults);
+            //var query = from a in articles
+            //            let i = a.GetItem()
+            //            let ba = new BehaviorAdvicePageItem
+
             return results;
+        }
+
+        private bool HasMoreResults(int currentPage, int entriesPerPage, int currentEntriesTotal, int totalResults)
+        {
+            int currentResultTotal = ((currentPage - 1) * entriesPerPage) + currentEntriesTotal;
+            return currentResultTotal < totalResults;
         }
     }
 }
