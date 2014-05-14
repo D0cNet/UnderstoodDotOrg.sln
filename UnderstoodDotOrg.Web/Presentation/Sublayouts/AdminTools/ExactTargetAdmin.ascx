@@ -1,19 +1,18 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ExactTargetAdmin.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools.ExactTargetAdmin" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ExactTargetAdmin.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools.ExactTargetAdmin" ValidateRequestMode="Disabled" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 
 <h2>This is a test area for ExactTarget</h2>
 <br />
 <hr />
-<h4>Email Information From ExactTarget</h4>
-<br />
-<asp:Label ID="lblEmailID" runat="server" Text="Email ID"></asp:Label><asp:TextBox ID="tbxEmailID" runat="server"></asp:TextBox>  Available in the ET UI [Content > My Emails > Properties] 
-<br />
-<br />
-<hr />
 <asp:Label ID="LabelHtmlContent" runat="server" Text="HTML content for Emails without predefined content"></asp:Label>
 <br />
-<asp:TextBox ID="txtHtmlContent" runat="server" TextMode="multiline" rows="10" Width="450px"></asp:TextBox>
+<asp:TextBox ID="txtHtmlContent" runat="server" TextMode="multiline" rows="10" Width="450px" validateRequest="false"></asp:TextBox>
+<br />
+<br />
+<asp:Label ID="Label1" runat="server" Text="HTML for webinar module"></asp:Label>
+<br />
+<asp:TextBox ID="txtWebinarCode" runat="server" TextMode="multiline" rows="10" Width="450px" validateRequest="false"></asp:TextBox>
 <br />
 <br />
 <h4>Subscriber 1:</h4>
@@ -26,8 +25,7 @@
 <br />
 <hr />
 <asp:Button ID="btnETTests" runat="server" Text="Invoke Trigger Send Email" OnClick="btnETTests_Click" />
-<br /><br /><!-- 
-<asp:Button ID="Button1" runat="server" Text="Send welcome Email" OnClick="btnSendEmail_Click" />-->
+<br /><br />
 <br />
 <br />
 <h4>Results:</h4>

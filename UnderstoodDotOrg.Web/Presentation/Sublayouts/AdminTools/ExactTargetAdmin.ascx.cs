@@ -17,18 +17,20 @@
 				tbxSubscriberEmail1.Text = "jtesta@agencyoasis.com";
 				tbxSubscriberKey1.Text = "jtesta@agencyoasis.com";
 				tbxSubscriberFN1.Text = "Joe";
-
-				tbxEmailID.Text = "177";   // This is the "Text Only Test Email" configured within NCLD's ExactTarget system ....  Available in the ET UI [Content > My Emails > Properties]
-
 				lblMessage.Text = "Email Test has not started ...";
 				txtHtmlContent.Text = "<p><b>This is a test!</b></p>";
+				txtWebinarCode.Text = "<p><b>This is a test!</b></p>";
 			}
 		}
 
 		protected void btnETTests_Click(object sender, EventArgs e)
 		{
 			//InvokeEM2ParentToolkitReply reply = ExactTargetService.InvokeEM2ParentToolkit(new InvokeEM2ParentToolkitRequest { ToEmail = tbxSubscriberEmail1.Text });
-			InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = tbxSubscriberEmail1.Text, FirstName = tbxSubscriberFN1.Text });
+			//InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = tbxSubscriberEmail1.Text, FirstName = tbxSubscriberFN1.Text });
+
+			InvokeEM10WebinarConfirmationReply reply = ExactTargetService.InvokeEM10WebinarConfirmation(new InvokeEM10WebinarConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, WebinarModule = txtWebinarCode.Text });
+			
+			
 			lblMessage.Text = reply.Message;
 		}
 

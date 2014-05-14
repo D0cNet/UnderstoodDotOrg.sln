@@ -31,8 +31,8 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			SoapClient client = new SoapClient(binding, endpoint);
 
 			// Set the username and password
-			client.ClientCredentials.UserName.UserName = "bmedulan@agencyoasis.com";
-			client.ClientCredentials.UserName.Password = "Hm6@5G!tT";
+			client.ClientCredentials.UserName.UserName = "bmedulan@agencyoasis.com";//ConfigurationManager.AppSettings["ExactTargetUserName"]; 
+			client.ClientCredentials.UserName.Password = "Hm6@5G!tT";//ConfigurationManager.AppSettings["ExactTargetPassword"];
 
 			return client;
 		}
@@ -71,8 +71,8 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			//Create SendClassification
 			tsd.SendClassification = new SendClassification();
-			// tsd.SendClassification.CustomerKey = "4201";//required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
-			tsd.SendClassification.CustomerKey = ConfigurationManager.AppSettings["ExactTargetCustomerKey"]; // triggeredSendEmail.ETEmail.CustomerKey;//required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
+			// tsd.SendClassification.CustomerKey = "201";//required //Available in the ET UI [Admin > Send Management > Send Classifications > Edit Item > External Key]
+			tsd.SendClassification.CustomerKey = "201"; //ConfigurationManager.AppSettings["ExactTargetCustomerKey"]; //"201";
 
 			return tsd;
 		}
@@ -112,7 +112,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			catch (Exception exCreate)
 			{
 				//Set Message
-				Log.Error("[EXACTTARGET] CREATE TSD ERROR: " + exCreate.Message.ToString(), exCreate, "");
+				Log.Error("[EXACTTARGET] CREATE TSD ERROR: " + exCreate.Message.ToString(), exCreate, "something went wrong");
 				//lblMessage.Text += "<br/><br/>CREATE TSD ERROR:<br/>" + exCreate.Message;
 				// sbReturnString.Append("[EXACTTARGET] CREATE TSD ERROR: " + exCreate.Message.ToString()).AppendLine();
 				throw;
@@ -153,7 +153,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			catch (Exception exCreate)
 			{
 				//Set Message
-				Log.Error("[EXACTTARGET] UPDATE TSD ERROR: " + exCreate.Message.ToString(), exCreate, "");
+				Log.Error("[EXACTTARGET] UPDATE TSD ERROR: " + exCreate.Message.ToString(), exCreate, "something went wrong");
 				throw;
 				//sbReturnString.Append("[EXACTTARGET] UPDATE TSD ERROR: " + exCreate.Message).AppendLine();
 				//lblMessage.Text += "<br/><br/>UPDATE TSD ERROR:<br/>" + exCreate.Message;
@@ -199,14 +199,13 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			catch (Exception exCreate)
 			{
 
-				Log.Error("<br />[EXACTTARGET] CREATE TS ERROR: " + exCreate.Message.ToString(), exCreate, "");
+				Log.Error("<br />[EXACTTARGET] CREATE TS ERROR: " + exCreate.Message.ToString(), exCreate, "something went wrong");
 				//sbReturnString.Append("[EXACTTARGET] CREATE TS ERROR: " + exCreate.Message).AppendLine();
 				//lblMessage.Text += "<br/><br/>CREATE TS ERROR:<br/>" + exCreate.Message;
 				throw;
 			}
 		}
 
-		//triggers send of test email based on Email ID
 		public static string InvokeTriggeredSendEmail(string toEmail, string fullName, string htmlContent)
 		{
 			SoapClient client = ExactTargetService.GetInstance();
@@ -240,7 +239,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			}
 			catch (Exception exc)
 			{
-				Log.Error("[EXACTTARGET] ERROR: " + exc.Message.ToString(), exc, "");
+				Log.Error("[EXACTTARGET] ERROR: " + exc.Message.ToString(), exc, "something went wrong");
 			}
 
 			return (sbReturnString.ToString());
@@ -276,6 +275,8 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
+
+
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
 						reply.Successful = true;
@@ -289,12 +290,11 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 				reply.Successful = false;
 				reply.Message = message;
 
-				Log.Error(exc.ToString(), "");
+				Log.Error(exc.ToString(), "something went wrong");
 			}
 
 			return reply;
 		}
-
 		public static InvokeWelcomeToUnderstoodReply InvokeWelcomeToUnderstood(InvokeWelcomeToUnderstoodRequest request)
 		{
 			InvokeWelcomeToUnderstoodReply reply = new InvokeWelcomeToUnderstoodReply();
@@ -306,7 +306,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 312);
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 352);
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -342,22 +342,65 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 				reply.Successful = false;
 				reply.Message = message;
 
-				Log.Error(exc.ToString(), "");
+				Log.Error(exc.ToString(), "something went wrong");
 			}
 
 			return reply;
 		}
-
-		public static void InvokeEM10WebinarCinfirmation(string EmailAddress)
+		public static InvokeEM10WebinarConfirmationReply InvokeEM10WebinarConfirmation(InvokeEM10WebinarConfirmationRequest request)
 		{
+			InvokeEM10WebinarConfirmationReply reply = new InvokeEM10WebinarConfirmationReply();
+
 			SoapClient client = ExactTargetService.GetInstance();
 
-			string customerKey = ExactTargetService.GetCustomerKey();
+			StringBuilder sbReturnString = new StringBuilder();
 
-			// ID of email in ExactTarget (ETEmail.EmailID): 216
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
 
-			//client.
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+						newSub.Attributes = new etAPI.Attribute[1];
+						newSub.Attributes[0] = new etAPI.Attribute();
+						newSub.Attributes[0].Name = "webinar_module";
+						newSub.Attributes[0].Value = request.WebinarModule;
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
 		}
+		
+
 		public static void InvokeEM11DonationAcknowledgement(string EmailAddress)
 		{
 			SoapClient client = ExactTargetService.GetInstance();

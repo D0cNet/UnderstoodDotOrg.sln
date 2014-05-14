@@ -88,6 +88,8 @@
     <Compile Include="ExactTarget\ETBaseConfig.cs" />
     <Compile Include="ExactTarget\ETEmail.cs" />
     <Compile Include="ExactTarget\ETSubscriber.cs" />
+    <Compile Include="ExactTarget\InvokeEM10WebinarConfirmationReply.cs" />
+    <Compile Include="ExactTarget\InvokeEM10WebinarConfirmationRequest.cs" />
     <Compile Include="ExactTarget\InvokeEM2ParentToolkitReply.cs" />
     <Compile Include="ExactTarget\InvokeEM2ParentToolkitRequest.cs" />
     <Compile Include="ExactTarget\InvokeWelcomeToUnderstoodReply.cs" />
