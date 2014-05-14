@@ -15,6 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     public partial class Glossary_Article : System.Web.UI.UserControl
     {
         GlossaryPageItem ObjGlossrayArticle;
+        protected string CurrentAnchorName;
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjGlossrayArticle = new GlossaryPageItem(Sitecore.Context.Item);
@@ -35,16 +36,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     sbSidebarPromo.Visible = false;
                 }
                 //Get list of selected item
-                IEnumerable<string> FinalRelatedArticles = GlossaryPageItem.GetTermAnchorList(ObjGlossrayArticle);
-                if (FinalRelatedArticles != null)
-                {
-                    rptTermCollection.DataSource = FinalRelatedArticles;
-                    rptTermCollection.DataBind();
-                    rptAlphabet.DataSource = FinalRelatedArticles;
-                    rptAlphabet.DataBind();
-                }
-
-
+                
+                    IEnumerable<string> FinalRelatedArticles = GlossaryPageItem.GetTermAnchorList(ObjGlossrayArticle);
+                    if (FinalRelatedArticles != null)
+                    {
+                        rptTermCollection.DataSource = FinalRelatedArticles;
+                        rptTermCollection.DataBind();
+                        rptAlphabet.DataSource = FinalRelatedArticles;
+                        rptAlphabet.DataBind();
+                    }
+               
             }
         }
 
@@ -55,6 +56,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 string DistinctTerm = e.Item.DataItem as string;
                 if (DistinctTerm != null)
                 {
+                    CurrentAnchorName =  DistinctTerm;
                     Repeater rptListTermbyAnchor = e.FindControlAs<Repeater>("rptListTermbyAnchor");
                     IEnumerable<GlossaryTermItem> FinalRelatedArticles = GlossaryPageItem.GetRelatedTermsInfo(ObjGlossrayArticle, DistinctTerm);
                     if (FinalRelatedArticles != null)
@@ -101,14 +103,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             if (e.CommandName == "AlphabetClick")
             {
-                string DistinctTerm = e.Item.DataItem as string;
-                IEnumerable<GlossaryTermItem> FinalRelatedArticles = GlossaryPageItem.GetRelatedTermsInfo(ObjGlossrayArticle, DistinctTerm);
-                if (FinalRelatedArticles != null)
-                {
-                    rptTermCollection.DataSource = FinalRelatedArticles;
-                    rptTermCollection.DataBind();
-                }
+                string DistinctTerm = e.CommandArgument.ToString();
+                Response.Redirect(string.Concat(Request.Url.ToString(),"#", DistinctTerm));
+                //IEnumerable<GlossaryTermItem> FinalRelatedArticles = GlossaryPageItem.GetRelatedTermsInfo(ObjGlossrayArticle, DistinctTerm);
+                //if (FinalRelatedArticles != null)
+                //{
+                //    rptTermCollection.DataSource = FinalRelatedArticles;
+                //    rptTermCollection.DataBind();
+                //}
             }
         }
+
+
     }
 }

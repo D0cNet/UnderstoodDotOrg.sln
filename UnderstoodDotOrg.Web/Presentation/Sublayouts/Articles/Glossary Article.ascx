@@ -27,7 +27,7 @@
       </a>
                     </li>
                 </ul>
-                <div id="glossary-browse">
+                <div id="glossary-browse" id="top">
                     <%--<a href="#A" class="active">A</a>
                     <a href="#B">B</a>
                     <a href="#C">C</a>
@@ -56,11 +56,9 @@
                     <a href="#Z">Z</a> --%>
                     <asp:Repeater ID="rptAlphabet" runat="server" OnItemCommand="rptAlphabet_ItemCommand">
                         <ItemTemplate>
-                            <a>
-                                <asp:LinkButton ID="btnTermAnchor" runat="server" CommandName="AlphabetClick">
+                            <asp:LinkButton ID="btnTermAnchor" runat="server" CommandName="AlphabetClick" CommandArgument="<%#Container.DataItem%>">
                                     <%#Container.DataItem %>
                                 </asp:LinkButton>
-                            </a>
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
@@ -79,20 +77,22 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <div class="glossary-container">
-                            <div class="glossary-anchor">
-                                <asp:LinkButton ID="btnTermAnchor" runat="server">
+                             <a class="glossary-anchor" name="<%#Container.DataItem %>">
+                              <%#Container.DataItem %>
+                            </a>
+                                <%--<asp:LinkButton CssClass="glossary-anchor" ID="btnTermAnchor" runat="server">
                                     <%#Container.DataItem %>
-                                </asp:LinkButton>
-                            </div>
+                                </asp:LinkButton>--%>
+                            
                             <%--<a class="glossary-anchor">
                                 <asp:LinkButton ID="btnTermAnchor" runat="server">
                                     <%#Container.DataItem %>
                                 </asp:LinkButton>
-                            </a>--%>
-                            <a class="glossary-anchor"><%-- name="A">A--%>
-                              
                             </a>
-                            <a class="back-to-top" href="#">Back to Top</a>
+                            <a class="glossary-anchor"><%-- name="A">A--
+                              
+                            </a>--%>
+                            <a class="back-to-top" href="#top">Back to Top</a>
                         </div>
                         <asp:Repeater ID="rptListTermbyAnchor" runat="server" OnItemDataBound="rptListTermbyAnchor_ItemDataBound">
                             <HeaderTemplate></HeaderTemplate>
