@@ -137,6 +137,13 @@
     <Compile Include="Presentation\AjaxData\WelcomeTour.aspx.designer.cs">
       <DependentUpon>WelcomeTour.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Layouts\Blank.aspx.cs">
+      <DependentUpon>Blank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Layouts\Blank.aspx.designer.cs">
+      <DependentUpon>Blank.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Layouts\Browser.aspx.cs">
       <DependentUpon>Browser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -837,6 +844,13 @@
     <Compile Include="Presentation\Sublayouts\Community\Parents Recommended.ascx.designer.cs">
       <DependentUpon>Parents Recommended.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\QandA\FeaturedQuestions.ascx.cs">
+      <DependentUpon>FeaturedQuestions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\QandA\FeaturedQuestions.ascx.designer.cs">
+      <DependentUpon>FeaturedQuestions.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\QandA\QandA.ascx.cs">
       <DependentUpon>QandA.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -948,6 +962,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx.designer.cs">
       <DependentUpon>YourParentToolkit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Modals\CommunityQAQuestionAsked.ascx.cs">
+      <DependentUpon>CommunityQAQuestionAsked.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Modals\CommunityQAQuestionAsked.ascx.designer.cs">
+      <DependentUpon>CommunityQAQuestionAsked.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx.cs">
       <DependentUpon>Back To Home.ascx</DependentUpon>
@@ -1842,6 +1863,7 @@
     <Content Include="Presentation\Includes\js\vendor\selectivizr.js" />
     <Content Include="Presentation\Includes\js\vendor\selectivizr.min.js" />
     <Content Include="Presentation\Includes\js\vendor\ZeroClipboard.swf" />
+    <Content Include="Presentation\Layouts\Blank.aspx" />
     <Content Include="Presentation\Layouts\Browser.aspx" />
     <Content Include="Presentation\MembershipTest.aspx" />
     <Content Include="Presentation\Sublayouts\About\404Page.ascx" />
@@ -1942,6 +1964,7 @@
     <Content Include="Presentation\Sublayouts\Community\Parent Group Boards.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Like Me.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Recommended.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\QandA\FeaturedQuestions.ascx" />
     <Content Include="Presentation\Sublayouts\Community\QandA\QandA.ascx" />
     <Content Include="Presentation\Sublayouts\Community\QandA\QandADetails.ascx" />
     <Content Include="Presentation\Sublayouts\Community\QandA\QuestionAnswers.ascx" />
@@ -1958,6 +1981,7 @@
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
+    <Content Include="Presentation\Sublayouts\Modals\CommunityQAQuestionAsked.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Forgot Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx" />

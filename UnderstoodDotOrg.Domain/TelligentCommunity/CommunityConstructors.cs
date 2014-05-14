@@ -124,13 +124,16 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string _publishedDate { get; set; }
         public string _author { get; set; }
         public string _group { get; set; }
+        public string _commentCount { get; set; }
 
-        public Question(string title, string body, string publishedDate, string author, string group)
+        public Question(string title, string body, string publishedDate, string author, string group, string commentCount)
         {
             _title = title;
             _body = body;
             _publishedDate = publishedDate;
             _author = author;
+            _group = group;
+            _commentCount = commentCount;
         }
     }
 

@@ -1511,7 +1511,7 @@
         e.preventDefault();
       }
 
-      $.get('community.qa.question-asked.html').done(self.renderLightbox);
+      $.get('/modals/community-qa-question-asked').done(self.renderLightbox);
     };
 
     self.renderLightbox = function(res) {

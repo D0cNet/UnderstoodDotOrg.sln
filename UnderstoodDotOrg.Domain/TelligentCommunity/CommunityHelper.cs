@@ -260,6 +260,43 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
+        public static List<Question> GetQuestions(string wikiId)
+        {
+            var webClient = new WebClient();
+
+            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId);
+
+            var xml = webClient.DownloadString(requestUrl);
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+
+            XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPages/WikiPage");
+            XmlNodeList nodes2 = xmlDoc.SelectNodes("Response/WikiPages/WikiPage/User");
+            XmlNodeList nodes3 = xmlDoc.SelectNodes("Response/WikiPages/WikiPage/Content/Application");
+            List<Question> questionList = new List<Question>();
+            int count = 0;
+            foreach (XmlNode xn in nodes)
+            {
+                string title = xn["Title"].InnerText;
+                string publishedDate = FormatDate(xn["CreatedDate"].InnerText);
+                string body = xn["Body"].InnerText;
+                string author = nodes2[count]["Username"].InnerText;
+                string group = nodes3[count]["HtmlName"].InnerText;
+                string commentCount = xn["CommentCount"].InnerText;
+
+                Question question = new Question(title, body, publishedDate, author, group, commentCount);
+                questionList.Add(question);
+                count++;
+            }
+
+            return questionList;
+        }
+
         public static List<Answer> GetAnswers(string wikiId, string wikiPageId)
         {
             var webClient = new WebClient();
