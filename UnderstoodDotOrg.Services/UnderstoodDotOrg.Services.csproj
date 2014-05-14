@@ -36,7 +36,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -52,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExactTarget\ExactTargetService.cs" />
+    <Compile Include="ExactTarget\IExactTargetService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ExactTarget.etAPI\Reference.cs">
       <AutoGen>True</AutoGen>
