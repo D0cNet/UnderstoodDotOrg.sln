@@ -42,7 +42,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 if (ObjBasicArticle.ShowComment.Checked == true) sbCommentsSummary.Visible = true; else sbCommentsSummary.Visible = false;
 
                 litHelpfulLikes.Text = litHelpfulLikes2.Text = CommunityHelper.ReadLikes(ObjBasicArticle.DefaultArticlePage.ContentId);
-                litCommentCount.Text = litCommentCount2.Text = CommunityHelper.ReadComments(Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Text), Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Text)).Count.ToString();
+                litCommentCount.Text = litCommentCount2.Text = CommunityHelper.CommentCount(Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Text), Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Text)).ToString();
                 //if (ObjBasicArticle.DefaultArticlePage.HideRelatedActiveLinks.Checked == false) // Show Articles
                 //{
                 //    DefaultArticlePageItem ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;
