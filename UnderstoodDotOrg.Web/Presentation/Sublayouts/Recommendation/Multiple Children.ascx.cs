@@ -35,14 +35,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
         private void BindChildren()
         {
             // Temp proxy - use CurrentMember for final implementation
-            var mmp = new MembershipManager();
-            var member = mmp.GetMember(Guid.Parse("{2FC0FD53-CD17-4A9F-9D24-AD2B17852ECB}"));
-            if (member != null)
+            if (CurrentMember != null)
             {
-                var children = member.Children;
+                var children = CurrentMember.Children;
                 if (children.Any())
                 {
-                    rptChildBasicInfo.DataSource = member.Children;
+                    rptChildBasicInfo.DataSource = children;
                     rptChildBasicInfo.DataBind();
                 }
             }
