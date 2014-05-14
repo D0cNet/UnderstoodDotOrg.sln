@@ -184,23 +184,30 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
         public static string ReadLikes(string contentId)
         {
-            var webClient = new WebClient();
+            try
+            {
+                var webClient = new WebClient();
 
-            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+                var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}api.ashx/v2/likes.xml?ContentId={1}", Settings.GetSetting(Constants.Settings.TelligentConfig), contentId);
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                var requestUrl = string.Format("{0}api.ashx/v2/likes.xml?ContentId={1}", Settings.GetSetting(Constants.Settings.TelligentConfig), contentId);
 
-            var xml = webClient.DownloadString(requestUrl);
+                var xml = webClient.DownloadString(requestUrl);
 
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/Likes/Like");
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                XmlNodeList nodes = xmlDoc.SelectNodes("Response/Likes/Like");
 
-            string likes = nodes.Count.ToString();
+                string likes = nodes.Count.ToString();
 
-            return likes;
+                return likes;
+            }
+            catch (Exception ex)
+            {
+                return "0";
+            }
         }
         /// <summary>
         /// 
