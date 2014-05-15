@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TyceOverview.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages.TyceOverview" %>
+<%@ Import Namespace="UnderstoodDotOrg.Common.Extensions" %>
 <div class="container tyce-personalize">
     <div class="row">
         <div class="content">
@@ -35,7 +36,7 @@
                 <asp:Repeater ID="rptrSimulations" runat="server">
                     <ItemTemplate>
                         <li>
-                            <a href="REPLACE">
+                            <a href="<%= PlayerPageItem.GetUrl() %>">
                                 <h4>
                                     <%# Eval("ChildDemographic.NavigationTitle.Rendered") %>
                                 </h4>
@@ -49,42 +50,3 @@
     </div>
 </div>
 <!-- .tyce-on-demand-container -->
-
-<%--<div class="modal fade modal-standard tyce-modal-select-child tyce-modal-move" id="tyce-modal-select-child" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <button type="button" class="close-overlay" data-dismiss="modal" aria-hidden="true">Close</button>
-            <div class="modal-body">
-                <h2>Select your Child</h2>
-                <p>Your profile contains three children. Please select the child you'd like to base this experience on.</p>
-
-                <fieldset>
-                    <legend class="visuallyhidden">Select your Child</legend>
-                    <ul class="input-buttons">
-                        <li>
-                            <input type="radio" name="tyce-child" id="tyce-child-01">
-                            <label for="tyce-child-01">David, 7</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="tyce-child" id="tyce-child-02">
-                            <label for="tyce-child-02">Cara, 8</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="tyce-child" id="tyce-child-03">
-                            <label for="tyce-child-03">Stephanie, 11</label>
-                        </li>
-                    </ul>
-                </fieldset>
-                <div class="actions">
-                    <asp:LinkButton ID="lbLetsGo" runat="server" CssClass="button">Ok let's go</asp:LinkButton>
-                    <a href="REPLACE" class="button gray">Let Me Customize</a>
-                </div>
-
-            </div>
-            <!-- /.modal-body -->
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->--%>
