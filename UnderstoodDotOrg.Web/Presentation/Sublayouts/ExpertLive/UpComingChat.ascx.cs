@@ -25,6 +25,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             BaseEventDetailPageItem baseEventDetailpage = new BaseEventDetailPageItem(contextItem);
             ExpertDetailPageItem expert = baseEventDetailpage.Expert.Item;
 
+            if (ContextItem != null) {
+                if (IsArchiveItem(ContextItem)) {
+                    this.Visible = false;
+                }
+                else {
+                    this.Visible = true;
+                }
+            }
+
             if (contextItem != null) {
                 if (frPageTitle != null) {
 

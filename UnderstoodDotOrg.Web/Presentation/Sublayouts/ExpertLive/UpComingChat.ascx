@@ -42,8 +42,6 @@
                 <!-- end .event-image -->
 
                 <p class="event-date-time"><%--Fri Nov 3 at 12am EST--%>
-
-                    <%--<sc:Date ID="scDate" runat="server" Field="Event Date" Format="dd MMM yy" />--%>
                     <asp:Literal runat="server" ID="ltEventDate"></asp:Literal>
                 </p>
                 <p class="event-host-name"> <sc:FieldRenderer ID="frHeading" runat="server" FieldName="Heading" /></p>
