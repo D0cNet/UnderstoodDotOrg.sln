@@ -194,6 +194,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                             }
 
                         }
+                        else {
+                            imgExpertDefault.Visible = true;
+                            pnlExpertImageLabel.Visible = true;
+                        }
                     }
 
                     if (frPageTitle != null && contentPageItem != null) {
