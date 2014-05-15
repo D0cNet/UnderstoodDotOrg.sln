@@ -46,6 +46,15 @@ public static implicit operator Item(BehaviorAdvicePageItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField BlogId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["BlogId"]);
+	}
+}
+
+
 public CustomTreeListField ChildChallenges
 {
 	get
@@ -73,6 +82,15 @@ public CustomTextField RelatedArticlesTitle
 }
 
 
+public CustomTextField BlogPostId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["BlogPostId"]);
+	}
+}
+
+
 public CustomTreeListField ChildGrades
 {
 	get
@@ -87,6 +105,15 @@ public CustomTreeListField RelatedArticlesItems
 	get
 	{
 		return new CustomTreeListField(InnerItem, InnerItem.Fields["Related Articles Items"]);
+	}
+}
+
+
+public CustomTextField ContentId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["ContentId"]);
 	}
 }
 

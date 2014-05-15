@@ -310,6 +310,14 @@ namespace UnderstoodDotOrg.Common
             Blogger,
             Member
         }
+
+        public static class TelligentFieldNames
+        {
+            public const string BlogId = "BlogId";
+            public const string BlogPostId = "BlogPostId";
+            public const string ContentId = "ContentId";
+        }
+
         public static class Settings
         {
             public static string TelligentConfig = "TelligentConfig";

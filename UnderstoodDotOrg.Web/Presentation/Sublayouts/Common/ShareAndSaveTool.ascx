@@ -63,11 +63,11 @@
         <!-- leave no white space for layout consistency -->
         <a href="REPLACE" class="icon icon-share">Share</a><span class="tools">
             <span class="tools">
-                <a href="REPLACE" class="icon icon-email">Email</a>
-                <a href="REPLACE" class="icon icon-save">Save</a><%--<a href="javascript:saveIt()" class="icon icon-save">Save</a>--%>
-                <a href="REPLACE" class="icon icon-print" onclick="window.print()">Print</a>
-                <a href="REPLACE" class="icon icon-remind">Remind</a>
-                <a href="REPLACE" class="icon icon-rss">RSS</a></span>
+                <a href="#" class="icon icon-email">Email</a>
+                <a href="#" class="icon icon-save">Save</a><%--<a href="javascript:saveIt()" class="icon icon-save">Save</a>--%>
+                <a href="#" class="icon icon-print" onclick="window.print()">Print</a>
+                <a href="#" class="icon icon-remind">Remind</a>
+                <a href="#" class="icon icon-rss">RSS</a></span>
         </span>
 
     </div>

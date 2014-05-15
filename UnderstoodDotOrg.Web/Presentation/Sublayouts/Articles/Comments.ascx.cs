@@ -9,45 +9,50 @@ using Sitecore.Configuration;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
     public partial class Comments : System.Web.UI.UserControl
     {
+        private int _blogId = 0;
+        private int _blogPostId = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            int blogId;
-            int blogPostId;
             SubmitButton.Text = DictionaryConstants.SubmitButtonText;
-            try
-            {
-                var blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
-                blogId = Convert.ToInt32(blogCig.BlogId.Raw);
-                blogPostId = Convert.ToInt32(blogCig.BlogPostId.Raw);
-            }
-            catch
-            {
-                blogId = 1;
-                blogPostId = 1;
-            }
-            List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
-            CommentRepeater.DataSource = dataSource;
-            CommentRepeater.DataBind();
-            CommentCountDisplay.Text = "Comments (" + dataSource.Count + ")";
 
-            if (!IsPostBack)
+            Item currentItem = Sitecore.Context.Item;
+            string blogId = currentItem.Fields[Constants.TelligentFieldNames.BlogId].Value ?? String.Empty;
+            string blogPostId = currentItem.Fields[Constants.TelligentFieldNames.BlogPostId].Value ?? String.Empty;
+
+            if (String.IsNullOrEmpty(blogId) || String.IsNullOrEmpty(blogPostId))
             {
-                CommentEntryTextField.Text = "Add your comment...";
+                // TODO: hide entire control or elements 
+                return;
+            }
+
+            if (Int32.TryParse(blogId, out _blogId) && Int32.TryParse(blogPostId, out _blogPostId))
+            {
+                List<Comment> dataSource = CommunityHelper.ReadComments(_blogId, _blogPostId);
+                CommentRepeater.DataSource = dataSource;
+                CommentRepeater.DataBind();
+                CommentCountDisplay.Text = "Comments (" + dataSource.Count + ")";
+
+                if (!IsPostBack)
+                {
+                    CommentEntryTextField.Text = "Add your comment...";
+                }
             }
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            int blogId = Convert.ToInt32(Sitecore.Context.Item["BlogId"]);
-            int blogPostId = Convert.ToInt32(Sitecore.Context.Item["BlogPostId"]);
             string body = CommentEntryTextField.Text;
-            CommunityHelper.PostComment(blogId, blogPostId, body);
-            List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
+            CommunityHelper.PostComment(_blogId, _blogPostId, body);
+            List<Comment> dataSource = CommunityHelper.ReadComments(_blogId, _blogPostId);
 
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
@@ -84,8 +89,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void LikeButton_Click(object sender, EventArgs e)
         {
-            int blogId = Convert.ToInt32(Sitecore.Context.Item["BlogId"]);
-            int blogPostId = Convert.ToInt32(Sitecore.Context.Item["BlogPostId"]);
             LinkButton btn = (LinkButton)(sender);
             string ids = btn.CommandArgument;
             string[] s = ids.Split('&');
@@ -110,7 +113,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             Console.WriteLine(xml);
 
-            List<Comment> dataSource = CommunityHelper.ReadComments(blogId, blogPostId);
+            List<Comment> dataSource = CommunityHelper.ReadComments(_blogId, _blogPostId);
 
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
