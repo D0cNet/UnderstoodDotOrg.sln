@@ -8,7 +8,7 @@
     {
         private void Page_Load(object sender, EventArgs e)
         {
-            List<Question> dataSource = CommunityHelper.GetQuestions("3");
+            List<Question> dataSource = CommunityHelper.GetQuestions("2");
             questionsRepeater.DataSource = dataSource;
             questionsRepeater.DataBind();
         }
