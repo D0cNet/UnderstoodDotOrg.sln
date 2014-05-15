@@ -52,15 +52,11 @@
 
                 <div class="comment-footer">
                     <div class="comment-more-wrapper">
-                        <a class="comment-more" href="REPLACE">More Comments<i class="icon-comment-more"></i></a>
+                        <a class="comment-more" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-comment-more"></i></a>
                     </div>
                     <div class="comment-form">
-                        <form>
-                            <asp:TextBox onfocus="if (this.value == 'Add your comment...') this.value = '';" onblur="if (this.value == '') this.value = 'Add your comment...';"
-                                name="comment-form-reply" class="comment-form-reply" ID="CommentEntryTextField" Style="color: #555; text-align: left; font-size: 15px;"
-                                runat="server" />
-                            <asp:Button ID="SubmitButton" OnClick="SubmitButton_Click" class="button" runat="server" />
-                        </form>
+                        <asp:TextBox CssClass="comment-form-reply" ID="CommentEntryTextField" runat="server" />
+                        <asp:Button ID="SubmitButton" OnClick="SubmitButton_Click" class="button" runat="server" />
                         <div class="clearfix"></div>
                     </div>
                 </div>

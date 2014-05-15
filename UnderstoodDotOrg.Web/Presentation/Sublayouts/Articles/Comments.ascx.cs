@@ -24,6 +24,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             SubmitButton.Text = DictionaryConstants.SubmitButtonText;
 
+            // TODO: convert to dictionary
+            CommentEntryTextField.Attributes.Add("placeholder", "Add your comment...");
+
             Item currentItem = Sitecore.Context.Item;
             string blogId = currentItem.Fields[Constants.TelligentFieldNames.BlogId].Value ?? String.Empty;
             string blogPostId = currentItem.Fields[Constants.TelligentFieldNames.BlogPostId].Value ?? String.Empty;
@@ -31,31 +34,35 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (String.IsNullOrEmpty(blogId) || String.IsNullOrEmpty(blogPostId))
             {
                 // TODO: hide entire control or elements 
+                this.Visible = false;
                 return;
             }
 
             if (Int32.TryParse(blogId, out _blogId) && Int32.TryParse(blogPostId, out _blogPostId))
             {
-                List<Comment> dataSource = CommunityHelper.ReadComments(_blogId, _blogPostId);
-                CommentRepeater.DataSource = dataSource;
-                CommentRepeater.DataBind();
-                CommentCountDisplay.Text = "Comments (" + dataSource.Count + ")";
-
-                if (!IsPostBack)
-                {
-                    CommentEntryTextField.Text = "Add your comment...";
-                }
+                PopulateComments();
             }
+        }
+
+        private void PopulateComments()
+        {
+            List<Comment> dataSource = CommunityHelper.ReadComments(_blogId, _blogPostId);
+            CommentRepeater.DataSource = dataSource;
+            CommentRepeater.DataBind();
+
+            // TODO: use dictionary
+            CommentCountDisplay.Text = String.Format("Comments ({0})", dataSource.Count);
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
             string body = CommentEntryTextField.Text;
             CommunityHelper.PostComment(_blogId, _blogPostId, body);
-            List<Comment> dataSource = CommunityHelper.ReadComments(_blogId, _blogPostId);
 
-            CommentRepeater.DataSource = dataSource;
-            CommentRepeater.DataBind();
+            PopulateComments();
+
+            // Clear postback value
+            CommentEntryTextField.Text = String.Empty;
         }
 
         protected void FlagButton_Click(object sender, EventArgs e)
@@ -113,10 +120,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             Console.WriteLine(xml);
 
-            List<Comment> dataSource = CommunityHelper.ReadComments(_blogId, _blogPostId);
-
-            CommentRepeater.DataSource = dataSource;
-            CommentRepeater.DataBind();
+            PopulateComments();
         }       
     }
 }
