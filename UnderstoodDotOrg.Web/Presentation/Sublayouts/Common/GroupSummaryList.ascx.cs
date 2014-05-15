@@ -109,8 +109,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             }
             else
             {
-                //Join the group using telligent group id
-                if(CommunityHelper.JoinGroup(btn.CommandArgument,UserID))
+                try
+                {
+                    //Join the group using telligent group id
+                    if (CommunityHelper.JoinGroup(btn.CommandArgument, UserID))
+                    {
+
+                    }
+                }catch(Exception ex)
                 {
                     
                 }

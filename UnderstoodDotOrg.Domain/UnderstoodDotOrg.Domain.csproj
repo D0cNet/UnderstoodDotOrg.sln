@@ -340,6 +340,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\CommunityBaseTemplateItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\GroupsTemplate\ForumItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\GroupsTemplate\ForumItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\GroupsTemplate\GroupDiscussionItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\GroupsTemplate\GroupDiscussionItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\GroupsTemplate\GroupItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\GroupsTemplate\GroupItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\QandA\QandADetailsItem.base.cs" />
@@ -415,12 +417,12 @@
     <Compile Include="TelligentCommunity\CommunityManager.cs" />
     <Compile Include="Understood\Common\ChildCardModel.cs" />
     <Compile Include="Understood\Common\ChildExtensions.cs" />
+    <Compile Include="Understood\Common\ContributorModel.cs" />
     <Compile Include="Understood\Common\ForumModel.cs" />
     <Compile Include="Understood\Common\GradeModel.cs" />
     <Compile Include="Understood\Common\GroupCardModel.cs" />
     <Compile Include="Understood\Common\IssueModel.cs" />
     <Compile Include="Understood\Common\MemberCardModel.cs" />
-    <Compile Include="Understood\Common\MemberManagerProxy.cs" />
     <Compile Include="Understood\Common\ReplyModel.cs" />
     <Compile Include="Understood\Common\ThreadModel.cs" />
     <Compile Include="Understood\Content\ContentItemModel.cs" />

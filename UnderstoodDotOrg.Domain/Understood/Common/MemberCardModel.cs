@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
+using System.Web.Security;
 
 namespace UnderstoodDotOrg.Domain.Understood.Common
 {
@@ -13,7 +14,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
     {
         public  MemberCardModel()
         {
-            this.AvatarUrl = Constants.Settings.AnonymousAvatar;
+            this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
             this.Children = new List<ChildCardModel>();
             this.UserLabel = String.Empty; //TODO: find role                                                                                   
             this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
@@ -24,7 +25,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         {
             
                                                 
-            this.AvatarUrl = Constants.Settings.AnonymousAvatar;
+            this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
             this.Children = m.Children.ConvertToChildCardModelList();
             this.UserLabel = "Blogger"; //TODO: find role                                                                                   
             this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
@@ -32,7 +33,24 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             
                                                  
         }
-        
+
+        public MemberCardModel(string username)
+        {
+            MembershipManager memMan = new MembershipManager();
+
+            MembershipUser mUser = memMan.GetUser(username);
+            if (mUser != null)
+            {
+                Member m = memMan.GetMember(new Guid(mUser.ProviderUserKey.ToString()));
+
+                this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
+                this.Children = m.Children.ConvertToChildCardModelList();
+                this.UserLabel = "Blogger"; //TODO: find role                                                                                   
+                this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
+                this.UserName = m.ScreenName;
+            }
+            
+        }
         public string AvatarUrl { get; set; }
         public string UserName { get; set; }
         public string UserLocation { get; set; }

@@ -76,7 +76,7 @@
 							                    </div>
 							                    <div class="col replies">
 								                    <h4>Replies</h4>
-								                    <p><%# Eval("Replies") %></p>
+								                    <p><%# Eval("ReplyCount") %></p>
 							                    </div>
 							                    <div class="col latest-post">
 								                    <h4>Latest Post</h4>

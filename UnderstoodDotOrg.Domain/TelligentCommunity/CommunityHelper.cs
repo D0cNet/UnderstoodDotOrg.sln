@@ -532,14 +532,19 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
                 WebClient webClient = new WebClient();
                 string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    var xmlDoc = new XmlDocument();
+                    var requestUrl = String.Format("{0}api.ashx/v2/groups/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
+                    var xml = webClient.DownloadString(requestUrl);
 
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                var xmlDoc = new XmlDocument();
-                var requestUrl = String.Format("{0}api.ashx/v2/groups/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
-                var xml = webClient.DownloadString(requestUrl);
-
-                xmlDoc.LoadXml(xml);
-                node = xmlDoc.SelectSingleNode("Response/Group");
+                    xmlDoc.LoadXml(xml);
+                    node = xmlDoc.SelectSingleNode("Response/Group");
+                }catch(Exception ex)
+                {
+                    node = null;
+                }
             }
             return node;
            
@@ -601,20 +606,63 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public static XmlNode ReadThread(string forumID,string threadID)
         {
             XmlNode node = null;
-            if (!String.IsNullOrEmpty(forumID))
+            if (!String.IsNullOrEmpty(forumID) && !String.IsNullOrEmpty(threadID))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                try
+                {
+                    var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}/threads/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID, threadID);
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    node = xmlDoc.SelectSingleNode("Response/Thread");
+                }catch(Exception ex)
+                {
+                    node = null;
+                }
+            }
+            return node;
+        }
+        public static XmlNode ReadReply(string replyID)
+        {
+            XmlNode node = null;
+            if (!String.IsNullOrEmpty(replyID) )
             {
                 WebClient webClient = new WebClient();
                 string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
                 webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-                var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}/threads/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID,threadID);
+                var requestUrl = String.Format("{0}api.ashx/v2/forums/threads/replies/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), replyID);
                 var xml = webClient.DownloadString(requestUrl);
                 var xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(xml);
-                node = xmlDoc.SelectSingleNode("Response/Thread");
+                 node = xmlDoc.SelectSingleNode("Response/Reply");
             }
             return node;
+        }
+        public static void PostReply(string forumID,string threadID,string body)
+        {
+            
+
+            WebClient webClient = new WebClient();
+            string adminKeyBase64 = CommunityHelper.TelligentAuth();
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+            try
+            {
+                var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}/threads/{2}/replies.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID, threadID);
+                var values = new NameValueCollection();
+                values["Body"] = body;
+
+                var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+            }catch(Exception ex)
+            {
+                
+            }
         }
         public static List<ReplyModel> ReadReplies(string forumID, string threadID)
         {
@@ -636,11 +684,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     foreach (XmlNode reply in node)
                     {
-                        ReplyModel rpm = new ReplyModel();
-                        rpm.Author = reply.SelectSingleNode("Author/Username").InnerText;
-                        rpm.Body = CommunityHelper.FormatString100(reply.SelectSingleNode("Body").InnerText);
-                        rpm.ReplyDate=CommunityHelper.FormatDate(reply.SelectSingleNode("Date").InnerText);
-                        rpm.Date = Convert.ToDateTime((reply.SelectSingleNode("Date").InnerText));
+                        ReplyModel rpm = new ReplyModel(reply);
+                        
                         replies.Add(rpm);
                         rpm = null;
                     }
@@ -719,21 +764,28 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             bool success = false;
             if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID))
             {
-                WebClient webClient = new WebClient();
-                string adminKeyBase64 = CommunityHelper.TelligentAuth();
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                var requestUrl = string.Format("{0}api.ashx/v2/groups/{1}/members/users.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
+                try
+                {
+                    WebClient webClient = new WebClient();
+                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    var requestUrl = string.Format("{0}api.ashx/v2/groups/{1}/members/users.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
 
-                var values = new NameValueCollection();
-                values["username"] = userScreenName;
+                    var values = new NameValueCollection();
+                    values["username"] = userScreenName;
 
 
-                var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
-                var xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-                XmlNode node = xmlDoc.SelectSingleNode("Response/Errors");
-                if(node!=null || !node.HasChildNodes)
-                    success = true;
+                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/Errors");
+                    if (node != null || !node.HasChildNodes)
+                        success = true;
+                }
+                catch(Exception ex)
+                {
+                    return false;
+                }
             }
             return success;
         }

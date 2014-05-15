@@ -17,7 +17,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             
 
             
-            if (Page.Request.QueryString != null)
+            if (Page.Request.QueryString["groupsearch"] != null)
             {
                 pnlDefaultSection.Visible = false;
                 pnlSearchSection.Visible = true;

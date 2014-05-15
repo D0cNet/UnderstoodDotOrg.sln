@@ -669,6 +669,13 @@
     <Compile Include="Presentation\Sublayouts\Common\GroupCardModelView.ascx.designer.cs">
       <DependentUpon>GroupCardModelView.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\GroupDiscussionList.ascx.cs">
+      <DependentUpon>GroupDiscussionList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\GroupDiscussionList.ascx.designer.cs">
+      <DependentUpon>GroupDiscussionList.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\GroupSummaryList.ascx.cs">
       <DependentUpon>GroupSummaryList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1967,6 +1974,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\SearchBlogsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Footer.ascx" />
     <Content Include="Presentation\Sublayouts\Common\GroupCardModelView.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\GroupDiscussionList.ascx" />
     <Content Include="Presentation\Sublayouts\Common\GroupSummaryList.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Header.ascx" />
     <Content Include="Presentation\Sublayouts\Common\More Carousel.ascx" />

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
@@ -17,6 +18,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
         {
             Item currItem = Sitecore.Context.Item;
            // scImage.Item = currItem;
+           // MembershipManager mem = new MembershipManager();
             
         }
     }

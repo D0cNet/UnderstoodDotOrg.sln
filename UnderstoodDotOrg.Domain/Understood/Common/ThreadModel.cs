@@ -10,35 +10,42 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
 {
    public class ThreadModel
     {
-       private object childNode;
+
 
        public ThreadModel(XmlNode childNode){
+           
+              
+               Initialize(childNode);
+         
+        }
+       public  ThreadModel(string forumID,string threadID)
+       {
+          
+           XmlNode node = CommunityHelper.ReadThread(forumID, threadID);
+           Initialize(node);
+
+        }
+       public void Initialize(XmlNode childNode)
+       {
            if (childNode != null)
            {
                ThreadID = childNode.SelectSingleNode("Id").InnerText;
                ForumID = childNode.SelectSingleNode("ForumId").InnerText;
-               Initialize(childNode);
+               // TODO: Complete member initialization
+               //this.childNode = childNode;
+               Subject = childNode.SelectSingleNode("Subject").InnerText;
+               ReplyCount = childNode.SelectSingleNode("ReplyCount").InnerText;
+               LastPostTime = CommunityHelper.FormatDate(childNode.SelectSingleNode("LatestPostDate").InnerText);
+               LastPostUser = Replies.OrderByDescending(x => x.Date).First().AuthorName;
+               LastPostBody = Replies.OrderByDescending(x => x.Date).First().Body;
+               StartedBy = childNode.SelectSingleNode("Author/Username").InnerText;
+               Snippet = CommunityHelper.FormatString100(childNode.SelectSingleNode("Body").InnerText);
+               Body = childNode.SelectSingleNode("Body").InnerText;
            }
-        }
-       public ThreadModel(string forumID,string threadID)
-       {
-           ForumID = forumID;
-           ThreadID = threadID;
-           XmlNode node = CommunityHelper.ReadThread(forumID, threadID);
-           Initialize(node);
-        }
-       public void Initialize(XmlNode childNode)
-       {
-           // TODO: Complete member initialization
-           //this.childNode = childNode;
-           Subject = childNode.SelectSingleNode("Subject").InnerText;
-           ReplyCount = childNode.SelectSingleNode("ReplyCount").InnerText;
-           LastPostTime=CommunityHelper.FormatDate(childNode.SelectSingleNode("LatestPostDate").InnerText);
-           LastPostUser = Replies.OrderByDescending(x => x.Date).First().Author;
-           LastPostBody = Replies.OrderByDescending(x => x.Date).First().Body;
-           StartedBy = childNode.SelectSingleNode("Author/Username").InnerText;
-           Snippet = CommunityHelper.FormatString100(childNode.SelectSingleNode("Body").InnerText);
-           
+           else
+           {
+               throw new Exception("Null object");
+           }
        }
 
        public string Subject { get; set; }
@@ -50,6 +57,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
        public string ForumID { get; set; }
        public string ReplyCount { get; set; }
        private List<ReplyModel> _replies =null;
+       private MemberCardModel _author = null;
        public List<ReplyModel> Replies
        {
            get
@@ -62,7 +70,20 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                     return _replies;
             }
        }
-
+       public MemberCardModel Author
+       {
+           get
+           {
+               if (_author == null)
+               {
+                   _author = new MemberCardModel(StartedBy);
+                   return _author;
+               }
+               else return _author;
+            }
+        }
        public string LastPostBody { get; set; }
+
+       public string Body { get; set; }
     }
 }

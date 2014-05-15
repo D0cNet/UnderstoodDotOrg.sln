@@ -36,8 +36,8 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
 
                 GroupID = groupItem.GroupID.Text;
                 XmlNode node = CommunityHelper.ReadGroup(GroupID);
-               
-                Initialize(node);
+               if(node!=null)
+                 Initialize(node);
               
             }
 
