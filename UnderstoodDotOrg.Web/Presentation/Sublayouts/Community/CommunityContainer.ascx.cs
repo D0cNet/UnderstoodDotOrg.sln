@@ -33,6 +33,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
             else if (ContextItem.IsOfType(WebinarEventPageItem.TemplateId) && IsArchiveItem(ContextItem)) {
                 ContainerClass = "experts-page webinar past ";
             }
+            else {
+                ContainerClass = string.Empty;
+            }
         }
 
         private bool IsArchiveItem(Item item) {
