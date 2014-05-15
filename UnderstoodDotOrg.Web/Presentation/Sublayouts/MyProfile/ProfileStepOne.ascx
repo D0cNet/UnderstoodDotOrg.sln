@@ -11,7 +11,6 @@
                     <p class="subtitle">
                         <sc:text id="Text1" field="Header Text" runat="server" />
                     </p>
-
                     <!-- END PARTIAL: profile-questions-header-left -->
                 </div>
                 <div class="column-right">
