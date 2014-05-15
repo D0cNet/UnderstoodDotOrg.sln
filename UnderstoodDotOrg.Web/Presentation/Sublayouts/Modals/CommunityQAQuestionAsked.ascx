@@ -126,7 +126,7 @@
     <h4 class="subhead">Give your Question a Title</h4>
     <p>Write a short title that will help others understand what the question is about. e.g. Lorem ipsum dolor sit amet?</p>
     
-    <asp:TextBox ID="QuestionTitleTextBox" runat="server" class="question-title" minlength="100" maxlength="100" aria-required="required required placeholder="Enter your question's title..."></asp:TextBox>
+    <asp:TextBox ID="QuestionTitleTextBox" runat="server" class="question-title" minlength="100" maxlength="100" aria-required="required" required placeholder="Enter your question's title..." />
     <p class="legend">Your title can be up to 100 characters</p>
 
     <fieldset class="related-issues">
