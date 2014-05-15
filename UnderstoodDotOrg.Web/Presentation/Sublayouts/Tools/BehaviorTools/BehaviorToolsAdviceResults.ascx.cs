@@ -69,14 +69,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         }
 
         // TODO: create helper function?
-        private Item FindChildById(Guid containerGuid, string id)
+        private Item FindChildById(Guid containerGuid, string selectedId)
         {
             Item child = null;
 
             Item container = Sitecore.Context.Database.GetItem(containerGuid.ToString());
             if (null != container)
             {
-                var result = container.GetChildren().FirstOrDefault(x => x.ID.ToString() == SelectedChallenge);
+                var result = container.GetChildren().FirstOrDefault(x => x.ID.ToString() == selectedId);
                 if (result != null)
                 {
                     child = result;
@@ -101,7 +101,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 
             if (result.Matches.Any())
             {
-                rptResults.DataSource = result;
+                rptResults.DataSource = result.Matches;
                 rptResults.DataBind();
             }
         }

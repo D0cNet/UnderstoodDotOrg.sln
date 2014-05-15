@@ -67,7 +67,7 @@
     <div class="row">
     <div class="col col-24">
 
-    <asp:Repeater ID="rptResults" runat="server" ItemType="UnderstoodDotOrg.Domain.Search.SearchArticle">
+    <asp:Repeater ID="rptResults" runat="server" ItemType="UnderstoodDotOrg.Domain.Search.JSON.SearchArticle">
         <HeaderTemplate>
             <div class="about-search-results skiplink-content" aria-role="main">
         </HeaderTemplate>

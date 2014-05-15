@@ -186,12 +186,14 @@
     <Compile Include="Salesforce\SforceService.cs" />
     <Compile Include="Search\Article.cs" />
     <Compile Include="Search\BehaviorAdvice.cs" />
-    <Compile Include="Search\BehaviorResultSet.cs" />
+    <Compile Include="Search\Fields\BehaviorArticleMappingField.cs" />
+    <Compile Include="Search\JSON\BehaviorResultSet.cs" />
     <Compile Include="Search\Fields\AllTemplatesField.cs" />
     <Compile Include="Search\Fields\ArticleMappingField.cs" />
-    <Compile Include="Search\SearchArticle.cs" />
+    <Compile Include="Search\JSON\SearchBehaviorArticle.cs" />
+    <Compile Include="Search\JSON\SearchArticle.cs" />
     <Compile Include="Search\SearchHelper.cs" />
-    <Compile Include="Search\ResultSet.cs" />
+    <Compile Include="Search\JSON\ResultSet.cs" />
     <Compile Include="SitecoreCIG\FolderItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.instance.cs" />

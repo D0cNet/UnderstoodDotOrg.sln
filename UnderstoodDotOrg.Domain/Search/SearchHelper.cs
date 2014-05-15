@@ -437,16 +437,19 @@ namespace UnderstoodDotOrg.Domain.Search
             using (var ctx = index.CreateSearchContext())
             {
                 var query = ctx.GetQueryable<BehaviorAdvice>()
-                                     .Where(i => i.TemplateId == Sitecore.Data.ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
-                                        || i.TemplateId == Sitecore.Data.ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
-                                     .Where(i => i.ChildChallenges.Contains(Sitecore.Data.ID.Parse(challenge))
-                                            && i.ChildGrades.Contains(Sitecore.Data.ID.Parse(grade)));
+                                     .Where(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
+                                        || i.TemplateId == ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
+                                     .Where(i => i.ChildChallenges.Contains(ID.Parse(Guid.Empty))
+                                            || i.ChildChallenges.Contains(ID.Parse(challenge)))
+                                     .Where(i => i.ChildGrades.Contains(ID.Parse(Guid.Empty))
+                                            || i.ChildGrades.Contains(ID.Parse(grade)))
+                                     .Where(i => i.Language == "en");
 
                 totalResults = query.Take(1).GetResults().TotalSearchResults;
 
-                int offset = (page - 1) * Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE;
+                int offset = (page - 1) * Constants.BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE;
 
-                return query.Skip(offset).Take(Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE).ToList();
+                return query.Skip(offset).Take(Constants.BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE).ToList();
             }   
         }
 

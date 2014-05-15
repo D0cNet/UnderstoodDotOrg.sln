@@ -11,6 +11,7 @@ namespace UnderstoodDotOrg.Common
         public const int PERSONALIZATION_ARTICLES_PER_USER = 40;
         public const int PERSONALIZATION_ARTICLES_PER_BUCKET = 8;
         public const int SEARCH_RESULTS_ENTRIES_PER_PAGE = 5;
+        public const int BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE = 9;
 
         #region Query Strings
 
@@ -272,6 +273,8 @@ namespace UnderstoodDotOrg.Common
             public const string ImportanceLevels = "_importance_level";
             public const string ApplicableEvaluations = "_other_applicable_evaluations";
             public const string DiagnosedConditions = "_diagnosed_condition";
+            public const string ChildChallenges = "_child_challenges";
+            public const string ChildBehaviorGrades = "_child_behavior_grades";
         }
 
         public static class ArticleTags

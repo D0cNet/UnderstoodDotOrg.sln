@@ -13,10 +13,10 @@ namespace UnderstoodDotOrg.Domain.Search
 {
     public class BehaviorAdvice : SearchResultItem
     {
-        [IndexField(Constants.SolrFields.ChildGrades)]
+        [IndexField(Constants.SolrFields.ChildBehaviorGrades)]
         public IEnumerable<ID> ChildGrades { get; set; }
 
-        [IndexField("child_challenges")]
+        [IndexField(Constants.SolrFields.ChildChallenges)]
         public IEnumerable<ID> ChildChallenges { get; set; }
     }
 }

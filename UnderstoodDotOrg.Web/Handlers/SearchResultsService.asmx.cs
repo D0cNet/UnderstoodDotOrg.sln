@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.Resources.Media;
+using UnderstoodDotOrg.Domain.Search.JSON;
 
 namespace UnderstoodDotOrg.Web.Handlers
 {
@@ -33,12 +34,12 @@ namespace UnderstoodDotOrg.Web.Handlers
             int totalResults = 0;
             List<Article> articles = SearchHelper.PerformArticleSearch(terms, type, page, out totalResults);
             var query = from a in articles
-                        let i = a.GetItem()
+                        let i = new DefaultArticlePageItem(a.GetItem())
                         select new SearchArticle
                         {
-                            Title = i.Name,
+                            Title = i.ContentPage.PageTitle,
                             Url = i.GetUrl(),
-                            Thumbnail = ((DefaultArticlePageItem)i).GetArticleThumbnailUrl(230, 129),
+                            Thumbnail = i.GetArticleThumbnailUrl(230, 129),
                             Blurb = "Lorem ipsum...",
                             Type = ""
                         };
@@ -60,9 +61,20 @@ namespace UnderstoodDotOrg.Web.Handlers
             int totalResults = 0;
 
             List<BehaviorAdvice> articles = SearchHelper.PerformBehaviorArticleSearch(challenge, grade, page, out totalResults);
-            //var query = from a in articles
-            //            let i = a.GetItem()
-            //            let ba = new BehaviorAdvicePageItem
+            var query = from a in articles
+                        let i = new BehaviorAdvicePageItem(a.GetItem())
+                        select new SearchBehaviorArticle
+                        {
+                            Title = i.TipTitle,
+                            Url = i.GetUrl(),
+                            CommentCount = 0,
+                            HelpfulCount = 0
+                        };
+
+            results.Matches = query.ToList();
+            results.TotalMatches = totalResults;
+
+            results.HasMoreResults = HasMoreResults(page, Constants.BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE, results.Matches.Count(), totalResults);
 
             return results;
         }
