@@ -262,6 +262,24 @@ public CustomTextField ContentId
 }
 
 
+public CustomCheckboxField ShowCommentTeaser
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Comment Teaser"]);
+	}
+}
+
+
+public CustomTextField CommentTeaserOverrideID
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Comment Teaser Override ID"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
