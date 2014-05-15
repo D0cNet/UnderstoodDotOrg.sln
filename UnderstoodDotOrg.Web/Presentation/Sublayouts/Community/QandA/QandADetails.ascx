@@ -11,11 +11,11 @@
                 </div>
                 <div class="question-answer-info">
                     <span class="question-status">Open Question:</span>
-                    <h2 class="title"><sc:Text ID="QuestionTitle" Field="Question Title" runat="server" /></h2>
+                    <h2 class="title"><asp:Label ID="QuestionTitleLabel" runat="server" /></h2>
                     <div class="description">
-                        <sc:Text ID="QuestionBody" Field="Question Body" runat="server" />
+                        <asp:Label ID="QuestionBodyLabel" runat="server" />
                     </div>
-                    <span class="details">In <a href="REPLACE" class="topic">ipsam velit</a> - Asked by <a href="REPLACE" class="author"><sc:Text ID="Author" Field="Question Author" runat="server" /></a> <span class="bullet">&bull;</span> 6 hours ago</span>
+                    <span class="details">In <a href="REPLACE" class="topic"><asp:Label ID="GroupLabel" runat="server" /></a> - Asked by <a href="REPLACE" class="author"><asp:Label ID="AuthorLabel" runat="server" /></a> <span class="bullet">&bull;</span> <asp:Label ID="DateLabel" runat="server" /></span>
                     <div class="buttons">
                         <a class="button answer" href="REPLACE">Answer Question</a>
                         <a class="button follow" href="REPLACE"><span>Follow This Question</span></a>

@@ -9,13 +9,15 @@
     {
         private void Page_Load(object sender, EventArgs e)
         {
-            var wikiId = "";
-            var wikiPageId = "";
+            string wikiId;
+            string wikiPageId;
+            string contentId;
             try
             {
-                var blogCig = new QandADetailsItem(Sitecore.Context.Item);
-                wikiId = blogCig.WikiId.Raw;
-                wikiPageId = blogCig.WikiPageId.Raw;
+                wikiId = Request.QueryString["wikiId"];
+                wikiPageId = Request.QueryString["wikiPageId"];
+                contentId = Request.QueryString["contentId"];
+
             }
             catch
             {

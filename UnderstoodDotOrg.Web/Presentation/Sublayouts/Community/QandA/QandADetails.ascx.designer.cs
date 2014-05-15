@@ -13,30 +13,48 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A {
     public partial class QandADetails {
         
         /// <summary>
-        /// QuestionTitle control.
+        /// QuestionTitleLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text QuestionTitle;
+        protected global::System.Web.UI.WebControls.Label QuestionTitleLabel;
         
         /// <summary>
-        /// QuestionBody control.
+        /// QuestionBodyLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text QuestionBody;
+        protected global::System.Web.UI.WebControls.Label QuestionBodyLabel;
         
         /// <summary>
-        /// Author control.
+        /// GroupLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Author;
+        protected global::System.Web.UI.WebControls.Label GroupLabel;
+        
+        /// <summary>
+        /// AuthorLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AuthorLabel;
+        
+        /// <summary>
+        /// DateLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DateLabel;
     }
 }

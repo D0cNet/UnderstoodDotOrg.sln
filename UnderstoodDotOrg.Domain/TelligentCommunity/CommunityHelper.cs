@@ -208,6 +208,41 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             webClient.UploadData(postUrl, "POST", Encoding.ASCII.GetBytes(data));
         }
 
+        public static string CreateQuestion(string title, string body)
+        {
+            try
+            {
+                var webClient = new WebClient();
+
+                var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), "2");
+
+                var values = new NameValueCollection();
+                values["Title"] = title;
+                values["Body"] = body;
+
+                var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+
+                Console.WriteLine(xml);
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+
+                XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPages/WikiPage");
+                string contentId = nodes[0]["ContentId"].InnerText;
+                string wikiPageId = nodes[0]["Id"].InnerText;
+                string queryString = "?wikiId=2&wikiPageId=" + wikiPageId + "&contentId=" + contentId;
+                return queryString;
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+
         public static string ReadLikes(string contentId)
         {
             try
@@ -293,7 +328,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
-        public static List<Question> GetQuestions(string wikiId)
+        public static List<Question> GetQuestionsList(string wikiId)
         {
             var webClient = new WebClient();
 
@@ -332,6 +367,37 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return questionList;
         }
 
+        public static Question GetQuestion(string wikiId, string wikiPageId, string contentId)
+        {
+            var webClient = new WebClient();
+
+            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId, wikiPageId);
+
+            var xml = webClient.DownloadString(requestUrl);
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+
+            XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPage");
+            XmlNodeList nodes2 = xmlDoc.SelectNodes("Response/WikiPage/User");
+            XmlNodeList nodes3 = xmlDoc.SelectNodes("Response/WikiPage/Content/Application");
+
+            string title = nodes[0]["Title"].InnerText;
+            string publishedDate = FormatDate(nodes[0]["CreatedDate"].InnerText);
+            string body = nodes[0]["Body"].InnerText;
+            string author = nodes2[0]["Username"].InnerText;
+            string group = nodes3[0]["HtmlName"].InnerText;
+            string commentCount = nodes[0]["CommentCount"].InnerText;
+
+            Question question = new Question(title, body, publishedDate, author, group, commentCount, wikiId, wikiPageId, contentId);
+
+            return question;
+        }
+
         public static List<Answer> GetAnswers(string wikiId, string wikiPageId)
         {
             var webClient = new WebClient();
@@ -363,31 +429,6 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
 
             return answerList;
-        }
-
-        /// <summary>
-        /// Creates a new Question(Wiki) in Telligent
-        /// </summary>
-        /// <param name="questionGroupId">The group that the question should be created in in Telligent</param>
-        /// <param name="questionText"></param>
-        public static void CreateQuestion(string questionGroupId, string questionText)
-        {
-            var webClient = new WebClient();
-
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = String.Format("{0}:{1}", "Admin's API Key", "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), questionGroupId);
-
-            var values = new NameValueCollection();
-            values["GroupId"] = questionGroupId;
-            values["Name"] = questionText;
-
-            var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
-
-            Console.WriteLine(xml);
         }
 
         public static string BlogNameById(string blogId)
