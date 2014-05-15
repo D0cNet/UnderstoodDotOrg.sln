@@ -61,7 +61,7 @@
                                 
                                 
                                 
-                                <li><span><a href="/en/Community/Whats%20Happening%20Logged%20In.aspx">What's Happening Now</a></span></li>
+                                <li><span><a href="/en/Community/Whats%20Happening.aspx">What's Happening Now</a></span></li>
                                 
                                 
                                 

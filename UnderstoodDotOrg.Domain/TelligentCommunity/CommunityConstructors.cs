@@ -69,7 +69,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
                 string[] url = Regex.Split(body.ToLower(), "/sitecore/content/home");
                 string[] u = url[1].Split('<');
-                _sitecoreUrl = u[0].Replace(' ', '-');
+                _sitecoreUrl = u[0];
             }
             catch
             {

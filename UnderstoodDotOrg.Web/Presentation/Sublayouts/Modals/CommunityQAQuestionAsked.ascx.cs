@@ -13,5 +13,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
         {
 
         }
+
+        protected void SubmitQuestionButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
