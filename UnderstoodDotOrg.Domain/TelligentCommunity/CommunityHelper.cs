@@ -713,6 +713,39 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return th;
         }
+        public static string ReadUserId(string username)
+        {
+            string Userid = null;
+            if (!String.IsNullOrEmpty(username))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+               
+                try
+                {
+                    var requestUrl = String.Format("{0}api.ashx/v2/users/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), username);
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/User");
+                    if(node!=null)
+                    {
+                        //Read user id
+                         Userid = node.SelectSingleNode("Id").InnerText;
+                         //return Userid;
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Userid = null;
+                }
+               
+
+            }
+            return Userid;
+        }
         public static List<ForumModel> ReadForumsList(string groupID)
         {
             List<ForumModel> fm = new List<ForumModel>();
@@ -764,27 +797,31 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             bool success = false;
             if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID))
             {
-                try
+                string userid = ReadUserId(userScreenName);
+                if (userid != null)
                 {
-                    WebClient webClient = new WebClient();
-                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
-                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                    var requestUrl = string.Format("{0}api.ashx/v2/groups/{1}/members/users.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
+                    try
+                    {
+                        WebClient webClient = new WebClient();
+                        string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                        webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                        var requestUrl = string.Format("{0}api.ashx/v2/groups/{1}/members/users.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
 
-                    var values = new NameValueCollection();
-                    values["username"] = userScreenName;
+                        var values = new NameValueCollection();
+                        values["userid"] = userid;
 
 
-                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
-                    var xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xml);
-                    XmlNode node = xmlDoc.SelectSingleNode("Response/Errors");
-                    if (node != null || !node.HasChildNodes)
-                        success = true;
-                }
-                catch(Exception ex)
-                {
-                    return false;
+                        var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+                        var xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(xml);
+                        XmlNode node = xmlDoc.SelectSingleNode("Response/Errors");
+                        if (node != null || !node.HasChildNodes)
+                            success = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        return false;
+                    }
                 }
             }
             return success;

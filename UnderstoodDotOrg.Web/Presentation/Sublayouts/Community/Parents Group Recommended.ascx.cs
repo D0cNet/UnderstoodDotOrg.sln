@@ -43,7 +43,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
         private List<GroupCardModel> FindRecommendedGroups(List<GroupCardModel> grpItems)
         {
-            throw new NotImplementedException();
+            grpItems = Session["groupItems"] as List<GroupCardModel>;
+
+
+            return grpItems;
+           // throw new NotImplementedException();
         }
     }
 }

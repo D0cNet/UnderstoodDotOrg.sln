@@ -9,10 +9,11 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Common;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
-    public partial class GroupSummaryList : System.Web.UI.UserControl
+    public partial class GroupSummaryList : BaseSublayout//System.Web.UI.UserControl
     {
         protected override void OnInit(EventArgs e)
         {
@@ -50,15 +51,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             get
             {
-                if (Session["username"] == null)
-                {
-                    MembershipManagerProxy mem = new MembershipManagerProxy();
-                    Member member = mem.GetMember(Guid.Empty);
-                    Session["username"] = member.ScreenName;
-                    return member.ScreenName;
-                }
+                if (CurrentMember != null)
+                    return CurrentMember.ScreenName;
                 else
-                    return Session["username"].ToString();
+                    throw new Exception("No current user available");
+                //if (Session["username"] == null)
+                //{
+                //    MembershipManager mem = new MembershipManager();
+                //    Member member = mem.GetMember("myName");
+
+                //   // Member member = mem.GetMember(Guid.Empty);
+                //    Session["username"] = member.ScreenName;
+                //    return member.ScreenName;
+                //}
+                //else
+                //    return Session["username"].ToString();
+              // return CurrentMember.ScreenName;
             }
         }
 

@@ -76,15 +76,18 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         {
             get
             {
-                if (HttpContext.Current.Session["username"] == null)
+                var mem = (Member)HttpContext.Current.Session[Constants.currentMemberKey];
+                if (mem != null)
+                    return mem.ScreenName;
+                else
                 {
-                    MembershipManagerProxy mem = new MembershipManagerProxy();
-                    Member member = mem.GetMember(Guid.Empty);
+
+                    MembershipManagerProxy memprov = new MembershipManagerProxy();
+                    Member member = memprov.GetMember(Guid.Empty);
                     HttpContext.Current.Session["username"] = member.ScreenName;
                     return member.ScreenName;
+                    
                 }
-                else
-                    return HttpContext.Current.Session["username"].ToString();
             }
         }
         List<Child> ChildrenWithIssues { get; set; } //TODO:Related through Group issues
