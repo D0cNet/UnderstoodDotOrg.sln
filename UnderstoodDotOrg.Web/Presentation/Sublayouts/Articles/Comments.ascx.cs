@@ -18,6 +18,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             int blogId;
             int blogPostId;
+            SubmitButton.Text = DictionaryConstants.SubmitButtonText;
             try
             {
                 var blogCig = new BlogsPostPageItem(Sitecore.Context.Item);

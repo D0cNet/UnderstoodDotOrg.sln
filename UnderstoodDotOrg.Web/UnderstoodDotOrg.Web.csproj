@@ -830,6 +830,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\QandA\FeaturedQuestions.ascx.cs">
       <DependentUpon>FeaturedQuestions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\QandA\FeaturedQuestions.ascx.designer.cs">
       <DependentUpon>FeaturedQuestions.ascx</DependentUpon>

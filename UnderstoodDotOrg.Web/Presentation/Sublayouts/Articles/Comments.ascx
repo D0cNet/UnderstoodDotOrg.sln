@@ -59,7 +59,7 @@
                             <asp:TextBox onfocus="if (this.value == 'Add your comment...') this.value = '';" onblur="if (this.value == '') this.value = 'Add your comment...';"
                                 name="comment-form-reply" class="comment-form-reply" ID="CommentEntryTextField" Style="color: #555; text-align: left; font-size: 15px;"
                                 runat="server" />
-                            <asp:Button ID="SubmitButton" OnClick="SubmitButton_Click" class="comment-form-submit submit-button" runat="server" />
+                            <asp:Button ID="SubmitButton" OnClick="SubmitButton_Click" class="button" runat="server" />
                         </form>
                         <div class="clearfix"></div>
                     </div>
