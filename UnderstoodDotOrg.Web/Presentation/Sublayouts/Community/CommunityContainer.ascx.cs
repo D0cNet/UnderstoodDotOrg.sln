@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
@@ -36,16 +37,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
 
         private bool IsArchiveItem(Item item) {
             bool isArchiveItem = false;
-            Item contextItem = item;
-            Item topicLandingPageItem = contextItem;
-            while (contextItem != null && !contextItem.IsOfType(ArchiveItem.TemplateId)) {
-
-                if (contextItem.Parent != null && contextItem.Parent.IsOfType(ArchiveItem.TemplateId)) {
-                    topicLandingPageItem = contextItem.Parent;
+            BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(item);
+            if (baseEventPageItem != null) {
+                if (baseEventPageItem.EventDate.DateTime < DateTime.Today) {
                     isArchiveItem = true;
-                    break;
                 }
-                contextItem = contextItem.Parent;
             }
 
             return isArchiveItem;
