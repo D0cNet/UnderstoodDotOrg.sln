@@ -26,18 +26,28 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         private ChildChallengeItem _challenge;
         private GradeLevelItem _grade;
 
-        private string SelectedGrade
+        protected string SelectedGrade
         {
             get { return Request.QueryString[Constants.GRADE_QUERY_STRING] ?? String.Empty; }
         }
 
-        private string SelectedChallenge
+        protected string SelectedChallenge
         {
             get { return Request.QueryString[Constants.CHALLENGE_QUERY_STRING] ?? String.Empty; }
         }
 
+        protected string AjaxPath
+        {
+            get
+            {
+                return Sitecore.Configuration.Settings.GetSetting(Constants.Settings.BehaviorSearchResultsEndpoint);
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            // TODO: refactor - similar code
+            
             // Validate challenge
             if (!String.IsNullOrEmpty(SelectedChallenge)) 
             {
@@ -76,7 +86,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
             Item container = Sitecore.Context.Database.GetItem(containerGuid.ToString());
             if (null != container)
             {
-                var result = container.GetChildren().FirstOrDefault(x => x.ID.ToString() == selectedId);
+                var result = container.GetChildren().FirstOrDefault(x => x.ID.ToString() == selectedId 
+                    && x.HasContextLanguageVersion());
                 if (result != null)
                 {
                     child = result;
@@ -90,12 +101,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         {
             BehaviorToolsResultsPageItem resultsPage = new BehaviorToolsResultsPageItem(Sitecore.Context.Item);
 
-
+            litChallenge.Text = _challenge.ChallengeName;
         }
 
         private void BindResults()
         {
-            // TODO: Search articles based on grade and challenge
             SearchResultsService srs = new SearchResultsService();
             var result = srs.SearchBehaviorArticles(SelectedChallenge, SelectedGrade, 1);
 
@@ -103,6 +113,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
             {
                 rptResults.DataSource = result.Matches;
                 rptResults.DataBind();
+
+                phMoreResults.Visible = result.HasMoreResults;
             }
         }
     }

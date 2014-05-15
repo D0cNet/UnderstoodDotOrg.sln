@@ -437,13 +437,14 @@ namespace UnderstoodDotOrg.Domain.Search
             using (var ctx = index.CreateSearchContext())
             {
                 var query = ctx.GetQueryable<BehaviorAdvice>()
-                                     .Where(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
+                                .Where(i => i.Language == "en")
+                                .Where(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
                                         || i.TemplateId == ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
-                                     .Where(i => i.ChildChallenges.Contains(ID.Parse(Guid.Empty))
-                                            || i.ChildChallenges.Contains(ID.Parse(challenge)))
-                                     .Where(i => i.ChildGrades.Contains(ID.Parse(Guid.Empty))
-                                            || i.ChildGrades.Contains(ID.Parse(grade)))
-                                     .Where(i => i.Language == "en");
+                                .Where(i => i.ChildChallenges.Contains(ID.Parse(Guid.Empty))
+                                        || i.ChildChallenges.Contains(ID.Parse(challenge)))
+                                .Where(i => i.ChildGrades.Contains(ID.Parse(Guid.Empty))
+                                        || i.ChildGrades.Contains(ID.Parse(grade))
+                                        || i.ChildGrades.Contains(ID.Parse(Constants.ArticleTags.AllChildGrades)));
 
                 totalResults = query.Take(1).GetResults().TotalSearchResults;
 

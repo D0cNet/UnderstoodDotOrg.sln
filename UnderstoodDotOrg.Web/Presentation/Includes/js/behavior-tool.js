@@ -579,8 +579,92 @@ jQuery(document).ready(function(){
 
 })(jQuery);
 
+/**
+ * Definition for the behaviorSearch javascript module.
+ */
+(function($){
+  // Initialize the module on page load.
+  $(document).ready(function() {
+    new U.behaviorSearch();
+  });
 
+  U.behaviorSearch = function() {
+    var self = this;
+	var inProgress = false;
+	var page = 1;
+	var $trigger = $("a.show-more-behavior-results-link");
+	
+	if ($trigger.length == 0) {
+		return;
+	}
+	
+	var dataPath = $trigger.data('path'),
+		dataGrade = $trigger.data('grade'),
+		dataChallenge = $trigger.data('challenge'),
+		dataContainer = $trigger.data('container'),
+		dataTemplate = $trigger.data('template');
+	
+	var $container = $("#" + dataContainer);
+	var $showMoreContainer = $trigger.closest(".show-more");
+	
+	var templateSource = $("#" + dataTemplate).html();
+	var template = Handlebars.compile(templateSource);	
+	
+	self.trigger_clickHandler = function(e) {
+		e.preventDefault();
+		
+		if (inProgress) {
+			return;
+		}
+		
+		inProgress = true;
+		
+		// scroll to top of newly loaded items
+		$('html,body').animate({scrollTop: $showMoreContainer.offset().top - 40}, 500);
+		
+		var data = {
+			grade: dataGrade,
+			challenge: dataChallenge,
+			page: page + 1
+		};
+		
+		$.ajax({
+			url: dataPath,
+			dataType: 'json',
+			contentType: 'application/json; charset=utf-8',
+			data: JSON.stringify(data),
+			method: 'POST'
+		}).done(function (data) {
+			
+			var result = data.d;
+			
+			if (!result.HasMoreResults) {
+				$trigger.hide();
+			}
+			
+			var entries = result.Matches;
+			
+			for (var i = 0, j = entries.length; i < j; i++) {
+				$container.append(template(entries[i]));
+			}
+			
+			page++;
+		
+		}).always(function() {
+			inProgress = false;
+		});
+	};
 
+    self.init = function() {
+		$trigger.on("click", self.trigger_clickHandler);
+	};
+	
+	self.init();
+
+    return this;
+  };
+
+})(jQuery);
 
 
 

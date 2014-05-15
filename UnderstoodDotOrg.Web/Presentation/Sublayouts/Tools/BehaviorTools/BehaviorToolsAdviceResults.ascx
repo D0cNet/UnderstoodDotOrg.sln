@@ -7,36 +7,57 @@
   <div class="row">
     <div class="col col-24">
     <header>
-      <h3>Work on task-to-task transitions</h3>
+      <h3 class="rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.WorkOnFragment %> <asp:Literal ID="litChallenge" runat="server" /></h3>
       <i class="icon-tooltip"></i>
       <a class="how-to-use" href="REPLACE">How to use these strategies</a>
     </header>
       </div>
   </div>
 
-<asp:Repeater ID="rptResults" runat="server">
+<script id="behavior-search-result" type="text/template">
+    <div class="search-result skiplink-content rs_read_this" aria-role="main">
+        <div class="result-body">
+            <div class="result-tip">{{Title}}</div>
+            <div class="result-info">
+            <span class="tip-comment">{{CommentCount}}<span class="visuallyhidden">comments</span></span>
+            <span class="tip-like" href="#"><i class="icon-advice-like"></i>{{HelpfulCount}}<span class="visuallyhidden">likes</span></span>
+            </div>
+            <div class="result-hover rs_skip">
+            <div class="hover-link-wrapper">
+                <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.SaveThisButtonText %></span></a>
+            </div>
+            <div class="hover-link-wrapper">
+                <a class="tip-remind-me" href="REPLACE"><i class="icon-advice-bell"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.RemindMeButtonText %></span></a>
+            </div>
+            </div>
+        </div>
+        <a class="tip-view rs_skip" href="{{Url}}"><%= UnderstoodDotOrg.Common.DictionaryConstants.ViewTipButtonText %></a>
+    </div>
+</script>
+
+<asp:Repeater ID="rptResults" runat="server" ItemType="UnderstoodDotOrg.Domain.Search.JSON.SearchBehaviorArticle">
     <HeaderTemplate>
         <div class="results-outer-wrapper">
-            <div class="results-wrapper">
+            <div id="behavior-search-results" class="results-wrapper">
     </HeaderTemplate>
     <ItemTemplate>
-        <div class="search-result">
+        <div class="search-result skiplink-content rs_read_this" aria-role="main">
             <div class="result-body">
-                <div class="result-tip">Make a picture schedule</div>
+                <div class="result-tip"><%# Item.Title %></div>
                 <div class="result-info">
-                <span class="tip-comment">19</span>
-                <span class="tip-like" href="REPLACE"><i class="icon-advice-like"></i>3</span>
+                <span class="tip-comment"><%# Item.CommentCount %><span class="visuallyhidden">comments</span></span>
+                <span class="tip-like" href="#"><i class="icon-advice-like"></i><%# Item.HelpfulCount %><span class="visuallyhidden">likes</span></span>
                 </div>
-                <div class="result-hover">
+                <div class="result-hover rs_skip">
                 <div class="hover-link-wrapper">
-                    <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i>Save This</a>
+                    <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.SaveThisButtonText %></span></a>
                 </div>
                 <div class="hover-link-wrapper">
-                    <a class="tip-print" href="REPLACE"><i class="icon-advice-print"></i>Print This</a>
+                    <a class="tip-remind-me" href="REPLACE"><i class="icon-advice-bell"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.RemindMeButtonText %></span></a>
                 </div>
                 </div>
             </div>
-            <a class="tip-view" href="REPLACE">View Tip</a>
+            <a class="tip-view rs_skip" href="<%# Item.Url %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ViewTipButtonText %></a>
         </div>
     </ItemTemplate>
     <FooterTemplate>
@@ -45,7 +66,15 @@
     </FooterTemplate>
 </asp:Repeater>
 
-  <a class="results-more-link" href="#" data-path="" data-challenge="" data-grade=""><span>More Results</span><i class="icon-results-more"></i></a>
+    <asp:PlaceHolder ID="phMoreResults" runat="server" Visible="false">
+    <div class="container show-more rs_skip">
+      <div class="row">
+        <div class="col col-24">
+            <a class="show-more-behavior-results-link" href="#" data-container="behavior-search-results" data-template="behavior-search-result" data-path="<%= AjaxPath %>" data-challenge="<%= SelectedChallenge %>" data-grade="<%= SelectedGrade %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
+        </div>
+      </div>
+    </div>
+    </asp:PlaceHolder>
 </section>
 
 <!-- END PARTIAL: advice-results -->

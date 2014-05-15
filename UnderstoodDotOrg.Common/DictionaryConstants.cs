@@ -149,6 +149,38 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string SaveThisButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Save This Button Text");
+            }
+        }
+
+        public static string RemindMeButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Remind Me Button Text");
+            }
+        }
+
+        public static string ViewTipButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "View Tip Button Text");
+            }
+        }
+
+        public static string ShowMoreButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Show More Button Text");
+            }
+        }
+
         #endregion
 
         #region Input Placeholders
@@ -498,6 +530,14 @@ namespace UnderstoodDotOrg.Common
             get
             {
                 return Translate.TextByDomain(PosesDictionary, "Recommendations Match Fragment");
+            }
+        }
+
+        public static string WorkOnFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Work On Fragment");
             }
         }
 

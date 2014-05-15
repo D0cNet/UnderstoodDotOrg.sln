@@ -67,7 +67,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="EnvironmentSpecifics\DEV01\Web.config" />
-    <None Include="EnvironmentSpecifics\Local\App_Config\Include\SitecoreSettings.config" />
+    <None Include="EnvironmentSpecifics\Local\App_Config\Include\SitecoreSettings.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
