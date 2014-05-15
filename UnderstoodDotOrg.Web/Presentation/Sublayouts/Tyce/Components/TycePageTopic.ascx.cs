@@ -20,6 +20,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //TODO: Look into and/or implement mobile version of header
             PreviousPageItem = Sitecore.Context.Item.IsOfType(TyceOverviewPageItem.TemplateId) ?
                 MainsectionItem.GetHomeItem().InnerItem :
                 Sitecore.Context.Item.Parent;
