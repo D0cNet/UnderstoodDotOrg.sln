@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UpComingChat.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve.UpComingChat" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <div class="container event">
     <header class="row">
@@ -8,7 +9,7 @@
                     <li><a href="REPLACE">Back to Sit Nobis 1</a></li>
             </ul>
 
-            <h2 class="rs_read_this">Chat: <em>Vel Consectetur Consequatur</em></h2>
+            <h2 class="rs_read_this"><sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" /></h2>
         </div>
     </header>
 
@@ -17,13 +18,12 @@
             <div class="col-18 col event-content rs_read_this">
                 <div class="event-image">
                     <div class="thumbnail">
-                        <a href="REPLACE">
-                            <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                        <asp:HyperLink ID="hlLink" runat="server">
+                            <sc:FieldRenderer ID="scThumbImg" runat="server" FieldName="Expert Image" />
                             <div class="image-label">
-                                Guest Expert
-                           
+                                <asp:Literal ID="litGuest" runat="server"></asp:Literal>
                             </div>
-                        </a>
+                        </asp:HyperLink>
                     </div>
 
                     <!-- BEGIN PARTIAL: community/experts_recommended_for -->
@@ -41,13 +41,17 @@
                 </div>
                 <!-- end .event-image -->
 
-                <p class="event-date-time">Fri Nov 3 at 12am EST</p>
-                <p class="event-host-name">Minus Voluptatem Quia</p>
-                <p class="event-host-title">Molestiae Et Velit Libero Voluptatibus</p>
-                <p>Dolore nihil voluptas fugiat est quaerat perspiciatis sed adipisci. ut doloribus at placeat rerum et cumque rerum amet magnam in soluta. nihil temporibus sunt saepe dolor sed voluptas error et qui nihil quisquam veniam. iste accusamus totam dicta eum ab. velit molestiae alias eum vitae veritatis quas recusandae voluptatem pariatur aut omnis ut aut itaque</p>
+                <p class="event-date-time"><%--Fri Nov 3 at 12am EST--%>
 
-                <a class="button event-rsvp rs_skip" href="REPLACE">RSVP for This Event</a>
-                <a class="button event-calendar rs_skip" href="REPLACE">Add to My Calendar</a>
+                    <%--<sc:Date ID="scDate" runat="server" Field="Event Date" Format="dd MMM yy" />--%>
+                    <asp:Literal runat="server" ID="ltEventDate"></asp:Literal>
+                </p>
+                <p class="event-host-name"> <sc:FieldRenderer ID="frHeading" runat="server" FieldName="Heading" /></p>
+                <p class="event-host-title"><sc:FieldRenderer ID="frSubHeading" runat="server" FieldName="SubHeading" /></p>
+               <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
+
+               <sc:Link ID="scLinkRSVP" runat="server" Field="RSVP for Event" CssClass="button event-rsvp rs_skip"></sc:Link>
+                <sc:Link ID="scLinkCalendar" runat="server" Field="Add to My Calendar" CssClass="button event-calendar rs_skip"></sc:Link>
 
             </div>
             <!-- end .event-content -->
