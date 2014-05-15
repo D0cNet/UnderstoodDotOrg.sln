@@ -116,6 +116,9 @@
         <script src="/Presentation/includes/js/modules.js"></script>
         <asp:literal runat="server" id="footerSectionJS"></asp:literal>
         <script src="/Presentation/includes/js/global.js"></script>
+
+        <sc:Placeholder runat="server" Key="AfterResources" />
+
         <!-- END PARTIAL: footerjs -->
 
     </form>

@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components {
     
     
-    public partial class TyceOverview {
+    public partial class TyceModals {
         
         /// <summary>
-        /// rptrSimulations control.
+        /// lbLetsGo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptrSimulations;
+        protected global::System.Web.UI.WebControls.LinkButton lbLetsGo;
     }
 }

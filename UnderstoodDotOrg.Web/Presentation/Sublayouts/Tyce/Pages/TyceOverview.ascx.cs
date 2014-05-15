@@ -31,20 +31,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 
             rptrSimulations.DataSource = tyceIssues;
             rptrSimulations.DataBind();
-
-            lbLetsGo.Click += lbLetsGo_Click;
-        }
-
-        protected void lbLetsGo_Click(object sender, EventArgs e)
-        {
-            var questionsPageItem = Sitecore.Context.Item.Children
-                .FirstOrDefault(i => i.IsOfType(TyceQuestionsPageItem.TemplateId));
-
-            if (questionsPageItem != null)
-            {
-                Response.Redirect(questionsPageItem.GetUrl());
-                //TODO: Add logic for handling passing selected child to questions page
-            }
         }
     }
 }

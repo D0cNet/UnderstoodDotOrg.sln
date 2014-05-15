@@ -159,16 +159,143 @@ $(document).ready(function () {
         tabs: '.tab-controls li'
     });
 
-    var $tyceModalSelectChild = $("#tyce-modal-select-child");
-    if ($tyceModalSelectChild.length) {
-        var html = $tyceModalSelectChild.html();
-        $tyceModalSelectChild.remove();
-        //$("form").append(html);
-        $(html).appendTo("form").hide();
+    var $tyceStepOne = $("#tyce-step-1");
+    var $tyceStepTwo = $("#tyce-step-2");
 
-        $(".button.button-select-children").off(".button");
-        $('.tyce-personalize').find('.button-select-children').on('click', function () {
-            $tyceModalSelectChild.modal('show');
+    if ($tyceStepOne.length && $tyceStepTwo.length) {
+        function TyceQuestion(ele, canSelectMultiple) {
+            this.element = ele instanceof jQuery ? ele : $(ele);
+            this.questionEle = this.element.find(".tyce-step-question");
+            this.instructionsEle = this.element.find(".instructions");
+            this.answerEle = this.element.find(".tyce-step-answer");
+            this.bodyEle = this.element.children("div.body").first();
+            this.bodyNextEle = this.bodyEle.next();
+            this.whyEle = this.element.find(".tyce-step-why");
+            this.changeEle = this.element.find(".tyce-step-change");
+            this.completeAnswerEle = this.element.find(".complete-answer");
+
+            this.answerEle.html(this.answerEle.html().replace("{{answer}}", "<b class='answer-placeholder'></b>"));
+            this.answerPlaceholderEle = this.answerEle.children("b.answer-placeholder").first();
+
+            this.multipleAnswersEnabled = canSelectMultiple;
+            this.isAnswered = false;
+            this.answerText = "";
+
+            this.doPartialAnswer = function (partialAnswerText) {
+                this.answerText = this.answerText.length ? this.answerText + ", " : this.answerText;
+                this.answerText += partialAnswerText;
+                this.completeAnswerEle.show();
+            }
+
+            this.doRemovePartialAnswer = function (partialAnswerText) {
+                if (this.answerText.indexOf(partialAnswerText)) {
+                    this.answerText = this.answerText.replace(", " + partialAnswerText, "");
+                } else {
+                    this.answerText = this.answerText.replace(partialAnswerText + ", ", "");
+                    this.answerText = this.answerText.replace(partialAnswerText, "");
+                }
+                if (!this.answerText) {
+                    this.completeAnswerEle.hide();
+                }
+            }
+
+            this.doAnswer = function (answer) {
+                if (this.bodyNextEle.length) {
+                    this.bodyNextEle.show();
+                }
+
+                this.answerText = answer;
+                this.bodyEle.hide();
+                this.questionEle.hide();
+                this.instructionsEle.hide();
+                this.whyEle.hide();
+
+                this.answerPlaceholderEle.text(answer);
+
+                this.answerEle.show();
+                this.changeEle.show();
+
+                this.isAnswered = true;
+            };
+
+            this.doChange = function () {
+                this.completeAnswerEle.hide();
+                this.changeEle.hide();
+                this.answerEle.hide();
+
+                this.answerPlaceholderEle.text("");
+
+                this.whyEle.show();
+                this.instructionsEle.show();
+                this.questionEle.show();
+                this.bodyEle.show();
+                this.answerText = "";
+
+                this.bodyNextEle.hide();
+            }
+        };
+
+        var $submitAnswersButton = $tyceStepTwo.find("button.submit-answers-button");
+
+        var tyceQuestion1 = new TyceQuestion($tyceStepOne);
+        var tyceQuestion2 = new TyceQuestion($tyceStepTwo);
+
+
+        var $gradeQuestionButton = $tyceStepOne.find(".grade-question-button");
+        $gradeQuestionButton.on("click", function () {
+            tyceQuestion1.doAnswer($(this).text());
+
+            if (tyceQuestion1.isAnswered && tyceQuestion2.isAnswered) {
+                $submitAnswersButton.show();
+            }
+        });
+
+        tyceQuestion1.changeEle.on("click", function () {
+            tyceQuestion1.doChange();
+            $submitAnswersButton.hide();
+        });
+
+        var selectedIssueIds = [];
+        var $tyceIssue = $tyceStepTwo.find(".tyce-issue");
+        $tyceIssue.on("change", function () {
+            var $this = $(this);
+            var issueText = $this.next().text();
+            var issueId = $this.attr("data-issue-id");
+
+            if ($this.is(":checked")) {
+                selectedIssueIds.push(issueId);
+                tyceQuestion2.doPartialAnswer(issueText);
+            } else {
+                tyceQuestion2.doRemovePartialAnswer(issueText);
+                selectedIssueIds.splice(selectedIssueIds.indexOf(issueId), 1);
+            }
+        });
+
+        var $tyceIssueSummaries = tyceQuestion2.bodyNextEle.find(".issue");
+
+        tyceQuestion2.completeAnswerEle.on("click", function () {
+            tyceQuestion2.doAnswer(tyceQuestion2.answerText);
+            $tyceIssueSummaries
+                .filter(function () { return selectedIssueIds.indexOf($(this).attr("data-issue-id")) >= 0 })
+                .show();
+
+            if (tyceQuestion1.isAnswered && tyceQuestion2.isAnswered) {
+                $submitAnswersButton.show();
+            }
+        });
+
+        tyceQuestion2.changeEle.on("click", function () {
+            $tyceIssue.removeAttr("checked")
+            tyceQuestion2.answerText = "";
+            selectedIssueIds = [];
+            $tyceIssueSummaries.hide();
+            tyceQuestion2.doChange();
+            $submitAnswersButton.hide();
+        });
+
+        var $tyceModalBegin = $("#tyce-modal-begin");
+        $tyceStepTwo.find('.submit-answers-button').on('click', function () {
+            $tyceModalBegin.modal('show');
             //$(window).trigger('resize');
         });
     }

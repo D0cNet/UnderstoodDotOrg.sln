@@ -46,11 +46,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
                 {
                     Id = issueItem.ID.Guid,
                     Title = issueItem.ChildDemographic.Title.Rendered,
+                    Abstract = issueItem.ChildDemographic.Abstract.Rendered,
                     CssClass = issueItem.ChildDemographic.CssClass.Raw
                 }).ToList();
 
             rptrChildIssues.DataSource = tyceIssues;
             rptrChildIssues.DataBind();
+
+            rptrIssueSummaries.DataSource = tyceIssues;
+            rptrIssueSummaries.DataBind();
         }
     }
 }
