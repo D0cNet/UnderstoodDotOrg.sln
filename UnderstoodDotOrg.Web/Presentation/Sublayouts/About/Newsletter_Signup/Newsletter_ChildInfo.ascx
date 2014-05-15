@@ -58,28 +58,30 @@
                         <!-- .col -->
                     </div>
                     <!-- .row -->
+                    <fieldset class="row needs-help-with-options">
+                        <asp:Repeater ID="rptChildIssue" runat="server" OnItemDataBound="rptChildIssue_ItemDataBound">
+                            <ItemTemplate>
 
-                    <asp:Repeater ID="rptChildIssue" runat="server" OnItemDataBound="rptChildIssue_ItemDataBound">
-                        <ItemTemplate>
-                            <fieldset class="row needs-help-with-options">
-                                <asp:Panel ID="pnlRow1" runat="server" Visible="false">
-                                    <div class="col col-12">
-                                        <div class="checkbox-wrapper">
-                                            <label>
-                                                <asp:CheckBox ID="chkIssue1" runat="server"></asp:CheckBox>
-                                                <span>
-                                                    <sc:FieldRenderer runat="server" ID="frCheckItem1" FieldName="Issue Name" />
-                                                </span>
+                                <div class="col col-12">
+                                    <asp:Repeater ID="rptIssueCol" runat="server" OnItemDataBound="rptIssueCol_ItemDataBound">
+                                        <ItemTemplate>
+                                            <div class="checkbox-wrapper">
+                                                <label>
+                                                    <asp:CheckBox ID="chkIssue1" runat="server"></asp:CheckBox>
+                                                    <span>
+                                                        <sc:FieldRenderer runat="server" ID="frCheckItem1" FieldName="Issue Name" />
+                                                    </span>
 
-                                                <%-- <input type="checkbox" name="aqi1">
+                                                    <%-- <input type="checkbox" name="aqi1">
                                             <span>Reading</span>--%>
-                                            </label>
-                                        </div>
+                                                </label>
+                                            </div>
 
-                                    </div>
-                                </asp:Panel>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </div>
                                 <!-- .col -->
-                                <asp:Panel ID="pnlRow2" runat="server" Visible="false">
+                                <%-- <asp:Panel ID="pnlRow2" runat="server" Visible="false">
                                     <div class="col col-12">
                                         <div class="checkbox-wrapper">
                                             <label>
@@ -88,16 +90,18 @@
                                                     <sc:FieldRenderer runat="server" ID="frCheckItem2" FieldName="Issue Name" />
                                                 </span>
                                                 <%--  <input type="checkbox" name="aqi6">
-                                            <span>Oral expression</span>--%>
+                                            <span>Oral expression</span>
                                             </label>
                                         </div>
 
                                     </div>
-                                </asp:Panel>
+                                </asp:Panel>--%>
                                 <!-- .col -->
-                            </fieldset>
-                        </ItemTemplate>
-                    </asp:Repeater>
+
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+                    </fieldset>
                     <!-- .row.needs-help-with-options -->
 
                 </div>
@@ -164,9 +168,9 @@
 
                     <div class="checkbox-wrap">
                         <label>
-                            <asp:CheckBox ID="chkAnotherChild" runat="server" Text="I have another child who is struggling" />
-                            <%--<input type="checkbox" name="aqi10">
-                            <span>I have another child who is struggling</span>--%>
+                            <asp:CheckBox ID="chkAnotherChild" runat="server" />
+                            <%--<input type="checkbox" name="aqi10">--%>
+                            <span>I have another child who is struggling</span>
                         </label>
                     </div>
 

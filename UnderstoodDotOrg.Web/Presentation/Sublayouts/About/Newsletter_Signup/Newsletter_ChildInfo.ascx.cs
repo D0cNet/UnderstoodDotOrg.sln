@@ -33,16 +33,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 
                     int TotalRows = GetRowCount(_allIssues, 2);
                     TwoRowdata = GetTwoRowData(_allIssues, 2);
-                    if (TwoRowdata != null)
-                    {
-                        for (int i = 0; i < TotalRows; i++)
-                        {
-                            _checkboxLocation = 0;
-                            rptChildIssue.DataSource = TwoRowdata[i];
-                            rptChildIssue.DataBind();
-                        }
+                    string[] Rows = new string[2];
+                    Rows[0] = "One";
+                    Rows[1] = "Two";
 
-                    }
+                    rptChildIssue.DataSource = Rows;
+                    rptChildIssue.DataBind();
+
+
 
                 }
                 if (!string.IsNullOrEmpty(ObjChildInfo.NextpagetoShow.Url.ToString()))
@@ -56,7 +54,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                     ddlGrades.Items.Add(new ListItem("Select Grade", ""));
                     foreach (Item _grade in _allGrades)
                     {
-                        ddlGrades.Items.Add(new ListItem(_grade.Name, _grade.Name));
+                        if (_grade.Name.ToLower() != "all")
+                        {
+                            ddlGrades.Items.Add(new ListItem(_grade.Name, _grade.Name));
+                        }
                     }
 
                 }
@@ -95,14 +96,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
             int _objectat = 0;
             if (RowCounter != 0)
             {
-                _jaggedArray = new object[RowCounter][];
 
-                for (int i = 0; i < RowCounter; i++)
+                _jaggedArray = new object[ItemPerRow][];
+
+                for (int i = 0; i < ItemPerRow; i++)
                 {
-                    _jaggedArray[i] = new object[ItemPerRow];
-                    for (int j = 0; j < ItemPerRow; j++)
+                    _jaggedArray[i] = new object[RowCounter];
+                    for (int j = 0; j < RowCounter; j++)
                     {
-                        if (_objectat< _listData.Count())
+                        if (_objectat < _listData.Count())
                         {
                             _jaggedArray[i][j] = _listData[_objectat];
                             _objectat++;
@@ -117,48 +119,52 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 
         protected void rptChildIssue_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
+
+            string Num = e.Item.DataItem as string;
+            if (Num != "")
+            {
+                Repeater rptIssueCol = e.FindControlAs<Repeater>("rptIssueCol");
+                if (rptIssueCol != null)
+                {
+                    if (Num == "One")
+                    {
+
+                        rptIssueCol.DataSource = TwoRowdata[0];
+                        rptIssueCol.DataBind();
+                    }
+                    else
+                    {
+                        rptIssueCol.DataSource = TwoRowdata[1];
+                        rptIssueCol.DataBind();
+                    }
+                }
+
+            }
+
+
+        }
+
+
+
+        protected void rptIssueCol_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
             if (e.IsItem())
             {
                 Item _issue = e.Item.DataItem as Item;
                 if (_issue != null)
                 {
-                    if (_checkboxLocation == 0)
+
+                    CheckBox chkIssue1 = e.FindControlAs<CheckBox>("chkIssue1");
+                    if (chkIssue1 != null)
                     {
-                        Panel pnlRow1 = e.FindControlAs<Panel>("pnlRow1");
-                        if (pnlRow1 != null)
+                        FieldRenderer frCheckItem1 = e.FindControlAs<FieldRenderer>("frCheckItem1");
+                        if (frCheckItem1 != null)
                         {
-                            CheckBox chkIssue1 = e.FindControlAs<CheckBox>("chkIssue1");
-                            if (chkIssue1 != null)
-                            {
-                                FieldRenderer frCheckItem1 = e.FindControlAs<FieldRenderer>("frCheckItem1");
-                                if (frCheckItem1 != null)
-                                {
-                                    frCheckItem1.Item = _issue;
-                                }
-                            }
-                            pnlRow1.Visible = true;
+                            frCheckItem1.Item = _issue;
                         }
-                        
                     }
-                    else
-                    {
-                        Panel pnlRow2 = e.FindControlAs<Panel>("pnlRow2");
-                        if (pnlRow2 != null)
-                        {
-                            CheckBox chkIssue2 = e.FindControlAs<CheckBox>("chkIssue2");
-                            if (chkIssue2 != null)
-                            {
-                                FieldRenderer frCheckItem2 = e.FindControlAs<FieldRenderer>("frCheckItem2");
-                                if (frCheckItem2 != null)
-                                {
-                                    frCheckItem2.Item = _issue;
-                                }
-                            }
-                            pnlRow2.Visible = true;
-                        }
-                        
-                    }
-                    _checkboxLocation++;
+
+
                 }
             }
         }
