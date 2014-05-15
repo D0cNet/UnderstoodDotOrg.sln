@@ -158,7 +158,7 @@
 <!-- Show More -->
 <!-- BEGIN PARTIAL: community/show_more -->
 <!--Show More-->
-<div class="container show-more rs_skip">
+<div class="container show-more rs_skip"  style="display:none;">
     <div class="row">
         <div class="col col-24">
             <a class="show-more-link " href="#" data-path="community/event-cards" data-container="event-cards-container" data-item="event-cards" data-count="4">Show More<i class="icon-arrow-down-blue"></i></a>
