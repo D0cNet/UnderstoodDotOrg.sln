@@ -387,9 +387,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                             scExpertImage.Item = expertItem;
                             pnlExpertImageLabel.Visible = true;
                         }
+                        else {
+                            imgExpertDefault.Visible = true;
+                        }
                         if (ltExpertType != null) {
                             ltExpertType.Text = expertItem.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;
                         }
+                    }
+                    else {
+                        imgExpertDefault.Visible = true;
+                        pnlExpertImageLabel.Visible = true;
                     }
 
                     if (ltEventDate != null && !webinarItem.EventDate.Raw.IsNullOrEmpty()) {
@@ -458,6 +465,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                             if (ltExpertType != null) {
                                 ltExpertType.Text = expertItem.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;
                             }
+                        }
+                        else {
+                            imgExpertDefault.Visible = true;
+                            pnlExpertImageLabel.Visible = true;
                         }
                     }
 
