@@ -142,6 +142,12 @@
     <Compile Include="Presentation\AjaxData\WelcomeTour.aspx.designer.cs">
       <DependentUpon>WelcomeTour.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Layouts\Blank.aspx.cs">
+      <DependentUpon>Blank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Layouts\Blank.aspx.designer.cs">
+      <DependentUpon>Blank.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Layouts\Browser.aspx.cs">
       <DependentUpon>Browser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1938,6 +1944,7 @@
     <Content Include="Presentation\Includes\js\vendor\selectivizr.js" />
     <Content Include="Presentation\Includes\js\vendor\selectivizr.min.js" />
     <Content Include="Presentation\Includes\js\vendor\ZeroClipboard.swf" />
+    <Content Include="Presentation\Layouts\Blank.aspx" />
     <Content Include="Presentation\Layouts\Browser.aspx" />
     <Content Include="Presentation\MembershipTest.aspx" />
     <Content Include="Presentation\Sublayouts\About\404Page.ascx" />
