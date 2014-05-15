@@ -7,63 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
     
     
-    public partial class Page_Topic {
+    public partial class ArchiveListing {
         
         /// <summary>
-        /// hlSectionTitle control.
+        /// pnlSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlSectionTitle;
+        protected global::System.Web.UI.WebControls.Panel pnlSearch;
         
         /// <summary>
-        /// frSectionTitle control.
+        /// rptFilter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSectionTitle;
+        protected global::System.Web.UI.WebControls.Repeater rptFilter;
         
         /// <summary>
-        /// rfTitle control.
+        /// ddlIssue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer rfTitle;
+        protected global::System.Web.UI.WebControls.DropDownList ddlIssue;
         
         /// <summary>
-        /// hlAuthorName control.
+        /// ddlGrade control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlAuthorName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGrade;
         
         /// <summary>
-        /// frAuthorName control.
+        /// ddlTopics control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTopics;
         
         /// <summary>
-        /// sbShareNSave control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbShareNSave;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSearch;
+        
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        
+        /// <summary>
+        /// rptEventCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptEventCard;
     }
 }

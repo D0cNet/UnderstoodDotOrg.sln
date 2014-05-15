@@ -257,11 +257,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             }
 
             //send an email through exact target 
-            InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
+            //InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
 
-            //run personalization for this user
-            Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
-            rps.UpdateMember(CurrentMember);
+            ////run personalization for this user
+            //Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
+            //rps.UpdateMember(CurrentMember);
 
             //pulling this out of membership manager for now until we find the best place. 
             //It had been in AddMember berfore but there is no screen name available when we Add a member.

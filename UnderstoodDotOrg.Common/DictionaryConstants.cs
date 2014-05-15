@@ -616,6 +616,79 @@ namespace UnderstoodDotOrg.Common
                 }
             }
 
+            
         }
+
+        #region Expert Live
+        public static string GuestExpertLabel {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Guest Expert Label");
+            }
+        }
+
+        public static string ExpertLabel {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Expert Label");
+            }
+        }
+
+        public static string WebniarLabel {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Webniar Label");
+            }
+        }
+
+        public static string ChatLabel {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Chat Label");
+            }
+        }
+
+        public static string DaysagoLabel {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Days ago Label");
+            }
+        }
+
+        public static string SeeArchiveLabel {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "See Archive Label");
+            }
+        }
+
+        public static string OfficeHoursWithLabel {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Office hours with Label");
+            }
+        }
+
+        public static string SeeHerOfficeHoursLabel {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "See her office hours Label");
+            }
+
+        }
+
+        public static string MeetLabel {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Meet Label");
+            }
+
+        }
+
+        public static string OnlineOfficeHours {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Online Office Hours:");
+            }
+        }
+
+        public static string ShowMoreLabel {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Show More");
+            }
+        }
+
+
+        #endregion
     }
 }

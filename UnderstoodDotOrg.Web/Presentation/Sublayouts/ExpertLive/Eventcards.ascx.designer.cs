@@ -7,63 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
     
     
-    public partial class Page_Topic {
+    public partial class Eventcards {
         
         /// <summary>
-        /// hlSectionTitle control.
+        /// frUpcomingWebniarsHeading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlSectionTitle;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frUpcomingWebniarsHeading;
         
         /// <summary>
-        /// frSectionTitle control.
+        /// frUpcomingWebniarsSubheading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSectionTitle;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frUpcomingWebniarsSubheading;
         
         /// <summary>
-        /// rfTitle control.
+        /// rptUpcomingWebinars control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer rfTitle;
+        protected global::System.Web.UI.WebControls.Repeater rptUpcomingWebinars;
         
         /// <summary>
-        /// hlAuthorName control.
+        /// frChatHeading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlAuthorName;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frChatHeading;
         
         /// <summary>
-        /// frAuthorName control.
+        /// frChatSubheading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorName;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frChatSubheading;
         
         /// <summary>
-        /// sbShareNSave control.
+        /// rptExpertChat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbShareNSave;
+        protected global::System.Web.UI.WebControls.Repeater rptExpertChat;
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TopicPageHeader.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic.TopicPageHeader" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CommunitySubHeader.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve.CommunitySubHeader" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN PARTIAL: pagetopic -->
 <!-- Page Title -->
@@ -46,47 +46,39 @@
 
 
     <nav class="container nav-secondary">
-    <div class="row">
-        <div class="col col-24">
+        <div class="row">
+            <div class="col col-24">
 
-            <!-- BEGIN ELEMENT: Menu -->
+                <!-- BEGIN ELEMENT: Menu -->
 
-            <div class="label-menu"><span>Menu</span></div>
-            <ul class="menu" aria-label="secondary-navigation" aria-role="navigation">
-                <li class="title"><span>Overview</span> <i class="icon-hide-show-fff"></i></li>
-                <li class="submenu">
-                    <div class="inner">
-                        <div class="label-more"><span>More <i class="icon-hide-show-fff"></i></span></div>
-                        <ul>
-                            <asp:Repeater runat="server" ID="rptTopicHeader" OnItemDataBound="rptTopicHeader_ItemDataBound">
-                                <ItemTemplate>
-                            <li><span><%--<a href="REPLACE" class="selected">Overview</a>--%>
-                                        <asp:HyperLink runat="server" ID="hlNavigationTitle"></asp:HyperLink>
-                                    </span></li>
-                                </ItemTemplate>
-                            </asp:Repeater>
+                <div class="label-menu"><span>Menu</span></div>
+                <ul class="menu" aria-label="secondary-navigation" aria-role="navigation">
+                    <li class="title"><span>Overview</span> <i class="icon-hide-show-fff"></i></li>
+                    <li class="submenu">
+                        <div class="inner">
+                            <div class="label-more"><span>More <i class="icon-hide-show-fff"></i></span></div>
+                            <ul>
+                                <asp:Repeater runat="server" ID="rptTopicHeader" OnItemDataBound="rptTopicHeader_ItemDataBound">
+                                    <ItemTemplate>
+                                        <li id="listItem" runat="server"><span><%--<a href="REPLACE" class="selected">Overview</a>--%>
+                                            <asp:HyperLink runat="server" ID="hlNavigationTitle"></asp:HyperLink>
+                                        </span></li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
 
-                        </ul>
-                    </div>
-                    <!-- .inner -->
-                </li>
-                <!-- .submenu -->
-            </ul>
-            <!-- .menu -->
+                            </ul>
+                        </div>
+                        <!-- .inner -->
+                    </li>
+                    <!-- .submenu -->
+                </ul>
+                <!-- .menu -->
 
-            <!-- END ELEMENT: Menu -->
+                <!-- END ELEMENT: Menu -->
 
+            </div>
+            <!-- .col -->
         </div>
-        <!-- .col -->
-    </div>
-    <!-- .row -->
-</nav>
+        <!-- .row -->
+    </nav>
 </div>
-<!-- .container -->
-
-<!-- END PARTIAL: pagetopic -->
-<!-- BEGIN MODULE: Secondary Nav -->
-
-<!-- .container.nav-secondary -->
-
-<!-- END MODULE: Secondary Nav -->

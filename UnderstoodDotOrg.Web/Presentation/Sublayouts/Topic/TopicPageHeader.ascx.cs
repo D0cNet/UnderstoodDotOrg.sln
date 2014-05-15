@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.Data.Items;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
     public partial class TopicPageHeader : System.Web.UI.UserControl {
@@ -16,20 +17,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
             TopicLandingPageItem topicPage = GetTopicLandingPageItem();
             
             //Page Title
-            scTopicTitle.Text = topicPage.DisplayName;
+            scTopicTitle.Text = topicPage.ContentPage.PageTitle.Rendered;
             
             Item parentItem = topicPage.InnerItem.Parent;
 
             //Parent Item Navigation
-            hlBreadcrumbNav.NavigateUrl = parentItem.GetUrl();
-            txtBreadcrumbNav.Text = parentItem.DisplayName;
+            if (!parentItem.IsOfType(FolderItem.TemplateId))
+            {
+                hlBreadcrumbNav.NavigateUrl = parentItem.GetUrl();
+                txtBreadcrumbNav.Text = parentItem.DisplayName;
+            }
+            else {
+                hlBreadcrumbNav.Visible = false;
+                txtBreadcrumbNav.Visible = false;
+            }
 
             if (topicPage != null) {
 
                 var subTopicItems = topicPage.GetSubTopicLandingPageItem();
                 if (subTopicItems != null && subTopicItems.Any()) {
-                    rptTopicHeader.DataSource = subTopicItems;
-                    rptTopicHeader.DataBind();
+                   rptTopicHeader.DataSource = subTopicItems;
+                   rptTopicHeader.DataBind();
                 }
             }
         }

@@ -26,12 +26,12 @@
 		protected void btnETTests_Click(object sender, EventArgs e)
 		{
 			//InvokeEM2ParentToolkitReply reply = ExactTargetService.InvokeEM2ParentToolkit(new InvokeEM2ParentToolkitRequest { ToEmail = tbxSubscriberEmail1.Text });
-			InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = tbxSubscriberEmail1.Text, FirstName = tbxSubscriberFN1.Text });
+            //InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = tbxSubscriberEmail1.Text, FirstName = tbxSubscriberFN1.Text });
 
-			//InvokeEM10WebinarConfirmationReply reply = ExactTargetService.InvokeEM10WebinarConfirmation(new InvokeEM10WebinarConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, WebinarModule = txtWebinarCode.Text });
+            ////InvokeEM10WebinarConfirmationReply reply = ExactTargetService.InvokeEM10WebinarConfirmation(new InvokeEM10WebinarConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, WebinarModule = txtWebinarCode.Text });
 			
 			
-			lblMessage.Text = reply.Message;
+            //lblMessage.Text = reply.Message;
 		}
 
 		protected void btnEM2_Click(object sender, EventArgs e)

@@ -7,63 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
     
     
-    public partial class Page_Topic {
+    public partial class EventArchive {
         
         /// <summary>
-        /// hlSectionTitle control.
+        /// frHeading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlSectionTitle;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frHeading;
         
         /// <summary>
-        /// frSectionTitle control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSectionTitle;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSearch;
         
         /// <summary>
-        /// rfTitle control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer rfTitle;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// hlAuthorName control.
+        /// rptEventCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlAuthorName;
+        protected global::System.Web.UI.WebControls.Repeater rptEventCard;
         
         /// <summary>
-        /// frAuthorName control.
+        /// hlSeeArchive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorName;
-        
-        /// <summary>
-        /// sbShareNSave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbShareNSave;
+        protected global::System.Web.UI.WebControls.HyperLink hlSeeArchive;
     }
 }

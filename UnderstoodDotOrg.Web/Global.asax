@@ -1,7 +1,8 @@
-<%@Application Language='C#' Inherits="Sitecore.ContentSearch.SolrProvider.CastleWindsorIntegration.WindsorApplication" %>
+<%@Application Language='C#'  %>
 
 <script runat="server">
   public void Application_Start() {
+  //Inherits="Sitecore.ContentSearch.SolrProvider.CastleWindsorIntegration.WindsorApplication"
   }
 
   public void Application_End() {

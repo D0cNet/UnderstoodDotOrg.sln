@@ -29,8 +29,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PublishDatabases>false</PublishDatabases>
-    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -70,6 +68,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq.Solr">
       <HintPath>..\Libraries\Sitecore.ContentSearch.Linq.Solr.dll</HintPath>
     </Reference>
@@ -83,6 +85,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Sharedsource.NewsMover">
+      <HintPath>..\Libraries\Sitecore.Sharedsource.NewsMover.dll</HintPath>
     </Reference>
     <Reference Include="SolrNet">
       <HintPath>..\Libraries\SolrNet.dll</HintPath>
@@ -136,13 +141,6 @@
     </Compile>
     <Compile Include="Presentation\AjaxData\WelcomeTour.aspx.designer.cs">
       <DependentUpon>WelcomeTour.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Layouts\Blank.aspx.cs">
-      <DependentUpon>Blank.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Layouts\Blank.aspx.designer.cs">
-      <DependentUpon>Blank.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Layouts\Browser.aspx.cs">
       <DependentUpon>Browser.aspx</DependentUpon>
@@ -213,34 +211,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\Donation Thank you.ascx.designer.cs">
       <DependentUpon>Donation Thank you.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx.cs">
-      <DependentUpon>Newsletter_ChildInfo.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx.designer.cs">
-      <DependentUpon>Newsletter_ChildInfo.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ParentInterest.ascx.cs">
-      <DependentUpon>Newsletter_ParentInterest.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ParentInterest.ascx.designer.cs">
-      <DependentUpon>Newsletter_ParentInterest.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_SignUp.ascx.cs">
-      <DependentUpon>Newsletter_SignUp.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_SignUp.ascx.designer.cs">
-      <DependentUpon>Newsletter_SignUp.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_Thankyou.ascx.cs">
-      <DependentUpon>Newsletter_Thankyou.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_Thankyou.ascx.designer.cs">
-      <DependentUpon>Newsletter_Thankyou.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\SearchResults.ascx.cs">
       <DependentUpon>SearchResults.ascx</DependentUpon>
@@ -669,13 +639,6 @@
     <Compile Include="Presentation\Sublayouts\Common\GroupCardModelView.ascx.designer.cs">
       <DependentUpon>GroupCardModelView.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Common\GroupDiscussionList.ascx.cs">
-      <DependentUpon>GroupDiscussionList.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Common\GroupDiscussionList.ascx.designer.cs">
-      <DependentUpon>GroupDiscussionList.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\GroupSummaryList.ascx.cs">
       <DependentUpon>GroupSummaryList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -745,6 +708,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\All Parents Search.ascx.designer.cs">
       <DependentUpon>All Parents Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\CommunityContainer.ascx.cs">
+      <DependentUpon>CommunityContainer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\CommunityContainer.ascx.designer.cs">
+      <DependentUpon>CommunityContainer.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Experts\ExpertsCalendarListView.ascx.cs">
       <DependentUpon>ExpertsCalendarListView.ascx</DependentUpon>
@@ -823,27 +793,6 @@
     <Compile Include="Presentation\Sublayouts\Community\Moderators.ascx.designer.cs">
       <DependentUpon>Moderators.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Community\Parent Group Board.ascx.cs">
-      <DependentUpon>Parent Group Board.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Community\Parent Group Board.ascx.designer.cs">
-      <DependentUpon>Parent Group Board.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Community\Parent Group Discussion.ascx.cs">
-      <DependentUpon>Parent Group Discussion.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Community\Parent Group Discussion.ascx.designer.cs">
-      <DependentUpon>Parent Group Discussion.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Community\Parent Group Search Result.ascx.cs">
-      <DependentUpon>Parent Group Search Result.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Community\Parent Group Search Result.ascx.designer.cs">
-      <DependentUpon>Parent Group Search Result.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Parent Groups.ascx.cs">
       <DependentUpon>Parent Groups.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -878,13 +827,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Parents Recommended.ascx.designer.cs">
       <DependentUpon>Parents Recommended.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Community\QandA\FeaturedQuestions.ascx.cs">
-      <DependentUpon>FeaturedQuestions.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Community\QandA\FeaturedQuestions.ascx.designer.cs">
-      <DependentUpon>FeaturedQuestions.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\QandA\QandA.ascx.cs">
       <DependentUpon>QandA.ascx</DependentUpon>
@@ -970,6 +912,90 @@
     <Compile Include="Presentation\Sublayouts\Containers\TwoRow.ascx.designer.cs">
       <DependentUpon>TwoRow.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx.cs">
+      <DependentUpon>ArchiveListing.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx.designer.cs">
+      <DependentUpon>ArchiveListing.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\CommunitySubHeader.ascx.cs">
+      <DependentUpon>CommunitySubHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\CommunitySubHeader.ascx.designer.cs">
+      <DependentUpon>CommunitySubHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\EventArchive.ascx.cs">
+      <DependentUpon>EventArchive.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\EventArchive.ascx.designer.cs">
+      <DependentUpon>EventArchive.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\Eventcards.ascx.cs">
+      <DependentUpon>Eventcards.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\Eventcards.ascx.designer.cs">
+      <DependentUpon>Eventcards.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertDetailPage.ascx.cs">
+      <DependentUpon>ExpertDetailPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertDetailPage.ascx.designer.cs">
+      <DependentUpon>ExpertDetailPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertLandingPage.ascx.cs">
+      <DependentUpon>ExpertLandingPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertLandingPage.ascx.designer.cs">
+      <DependentUpon>ExpertLandingPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertLiveDetail.ascx.cs">
+      <DependentUpon>ExpertLiveDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertLiveDetail.ascx.designer.cs">
+      <DependentUpon>ExpertLiveDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\LiveChat.ascx.cs">
+      <DependentUpon>LiveChat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\LiveChat.ascx.designer.cs">
+      <DependentUpon>LiveChat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\PastChat.ascx.cs">
+      <DependentUpon>PastChat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\PastChat.ascx.designer.cs">
+      <DependentUpon>PastChat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\PastWebinar.ascx.cs">
+      <DependentUpon>PastWebinar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\PastWebinar.ascx.designer.cs">
+      <DependentUpon>PastWebinar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\UpComingChat.ascx.cs">
+      <DependentUpon>UpComingChat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\UpComingChat.ascx.designer.cs">
+      <DependentUpon>UpComingChat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\UpComingWebinar.ascx.cs">
+      <DependentUpon>UpComingWebinar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\UpComingWebinar.ascx.designer.cs">
+      <DependentUpon>UpComingWebinar.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Home\GuideMe.ascx.cs">
       <DependentUpon>GuideMe.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -998,13 +1024,6 @@
     <Compile Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx.designer.cs">
       <DependentUpon>YourParentToolkit.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Modals\CommunityQAQuestionAsked.ascx.cs">
-      <DependentUpon>CommunityQAQuestionAsked.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Modals\CommunityQAQuestionAsked.ascx.designer.cs">
-      <DependentUpon>CommunityQAQuestionAsked.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx.cs">
       <DependentUpon>Back To Home.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1032,13 +1051,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx.designer.cs">
       <DependentUpon>MyAccount.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\MyAccount\MyCommentsTest.ascx.cs">
-      <DependentUpon>MyCommentsTest.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\MyAccount\MyCommentsTest.ascx.designer.cs">
-      <DependentUpon>MyCommentsTest.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx.cs">
       <DependentUpon>Reset Password.ascx</DependentUpon>
@@ -1081,13 +1093,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx.designer.cs">
       <DependentUpon>ProfileStepFive.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFour.ascx.cs">
-      <DependentUpon>ProfileStepFour.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFour.ascx.designer.cs">
-      <DependentUpon>ProfileStepFour.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepOne.ascx.cs">
       <DependentUpon>ProfileStepOne.ascx</DependentUpon>
@@ -1353,41 +1358,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Topic\TopicPageHeader.ascx.designer.cs">
       <DependentUpon>TopicPageHeader.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Components\TycePageTopic.ascx.cs">
-      <DependentUpon>TycePageTopic.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Components\TycePageTopic.ascx.designer.cs">
-      <DependentUpon>TycePageTopic.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Pages\TyceNextSteps.ascx.cs">
-      <DependentUpon>TyceNextSteps.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Pages\TyceNextSteps.ascx.designer.cs">
-      <DependentUpon>TyceNextSteps.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Pages\TyceOverview.ascx.cs">
-      <DependentUpon>TyceOverview.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Pages\TyceOverview.ascx.designer.cs">
-      <DependentUpon>TyceOverview.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Pages\TycePlayer.ascx.cs">
-      <DependentUpon>TycePlayer.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Pages\TycePlayer.ascx.designer.cs">
-      <DependentUpon>TycePlayer.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Pages\TyceQuestions.ascx.cs">
-      <DependentUpon>TyceQuestions.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Pages\TyceQuestions.ascx.designer.cs">
-      <DependentUpon>TyceQuestions.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdvicePage.ascx.cs">
@@ -1898,7 +1868,6 @@
     <Content Include="Presentation\Includes\js\vendor\selectivizr.js" />
     <Content Include="Presentation\Includes\js\vendor\selectivizr.min.js" />
     <Content Include="Presentation\Includes\js\vendor\ZeroClipboard.swf" />
-    <Content Include="Presentation\Layouts\Blank.aspx" />
     <Content Include="Presentation\Layouts\Browser.aspx" />
     <Content Include="Presentation\MembershipTest.aspx" />
     <Content Include="Presentation\Sublayouts\About\404Page.ascx" />
@@ -1909,10 +1878,6 @@
     <Content Include="Presentation\Sublayouts\About\AboutUnderstood.ascx" />
     <Content Include="Presentation\Sublayouts\About\Donate Page.ascx" />
     <Content Include="Presentation\Sublayouts\About\Donation Thank you.ascx" />
-    <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx" />
-    <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ParentInterest.ascx" />
-    <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_SignUp.ascx" />
-    <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_Thankyou.ascx" />
     <Content Include="Presentation\Sublayouts\About\SearchResults.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
@@ -1974,7 +1939,6 @@
     <Content Include="Presentation\Sublayouts\Blogs\SearchBlogsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Footer.ascx" />
     <Content Include="Presentation\Sublayouts\Common\GroupCardModelView.ascx" />
-    <Content Include="Presentation\Sublayouts\Common\GroupDiscussionList.ascx" />
     <Content Include="Presentation\Sublayouts\Common\GroupSummaryList.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Header.ascx" />
     <Content Include="Presentation\Sublayouts\Common\More Carousel.ascx" />
@@ -1984,6 +1948,7 @@
     <Content Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx" />
     <Content Include="Presentation\Sublayouts\Community\All Parents Search.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\CommunityContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsCalendarListView.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsLive.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsLiveArchive.ascx" />
@@ -1996,15 +1961,11 @@
     <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsUpcomingWebinar.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Moderators.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx" />
-    <Content Include="Presentation\Sublayouts\Community\Parent Group Board.ascx" />
-    <Content Include="Presentation\Sublayouts\Community\Parent Group Discussion.ascx" />
-    <Content Include="Presentation\Sublayouts\Community\Parent Group Search Result.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parent Groups.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Group Recommended.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parent Group Boards.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Like Me.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Recommended.ascx" />
-    <Content Include="Presentation\Sublayouts\Community\QandA\FeaturedQuestions.ascx" />
     <Content Include="Presentation\Sublayouts\Community\QandA\QandA.ascx" />
     <Content Include="Presentation\Sublayouts\Community\QandA\QandADetails.ascx" />
     <Content Include="Presentation\Sublayouts\Community\QandA\QuestionAnswers.ascx" />
@@ -2017,23 +1978,32 @@
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningLoggedIn.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningLoggedOut.ascx" />
     <Content Include="Presentation\Sublayouts\Containers\TwoRow.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\CommunitySubHeader.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\EventArchive.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\Eventcards.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\ExpertDetailPage.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\ExpertLandingPage.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\ExpertLiveDetail.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\LiveChat.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\PastChat.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\PastWebinar.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\UpComingChat.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\UpComingWebinar.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
-    <Content Include="Presentation\Sublayouts\Modals\CommunityQAQuestionAsked.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Forgot Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx" />
-    <Content Include="Presentation\Sublayouts\MyAccount\MyCommentsTest.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Terms and Conditions.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\My Profile.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx" />
-    <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFour.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepOne.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepThree.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepTwo.ascx" />
@@ -2073,11 +2043,6 @@
     <Content Include="Presentation\Sublayouts\Topic\CalloutContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\TopicCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\TopicPageHeader.ascx" />
-    <Content Include="Presentation\Sublayouts\Tyce\Components\TycePageTopic.ascx" />
-    <Content Include="Presentation\Sublayouts\Tyce\Pages\TyceNextSteps.ascx" />
-    <Content Include="Presentation\Sublayouts\Tyce\Pages\TyceOverview.ascx" />
-    <Content Include="Presentation\Sublayouts\Tyce\Pages\TycePlayer.ascx" />
-    <Content Include="Presentation\Sublayouts\Tyce\Pages\TyceQuestions.ascx" />
     <Content Include="zforce-deploy-on-build-always.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -2166,7 +2131,16 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54252</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3032/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

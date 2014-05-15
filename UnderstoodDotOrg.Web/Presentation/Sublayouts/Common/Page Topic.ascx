@@ -3,7 +3,7 @@
 
 <!-- BEGIN PARTIAL: pagetopic -->
 <!-- Page Title -->
-<div class="container page-topic <%= AdditionalCssClass %>">
+<div class="container community-main-header <%= AdditionalCssClass %>">
     <div class="row">
         <div class="col col-14 offset-1">
             <%--<a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Lorem Ipsum Dolar</a>--%>

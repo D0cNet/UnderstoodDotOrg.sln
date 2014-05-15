@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CommunityHeader.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogHeader" %>
     <!-- BEGIN PARTIAL: community/main_header -->
-<div class="container community-main-header ">
+<div class="container page-topic ">
     <header>
         <div class="row header-wrapper">
             <div class="col col-14 offset-1 header-title">
