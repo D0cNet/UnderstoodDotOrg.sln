@@ -31,13 +31,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSectionTitle;
         
         /// <summary>
-        /// rfTitle control.
+        /// frTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer rfTitle;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frTitle;
+        
+        /// <summary>
+        /// phAuthorInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phAuthorInfo;
         
         /// <summary>
         /// hlAuthorName control.
@@ -56,6 +65,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorName;
+        
+        /// <summary>
+        /// phBehaviorArticleInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phBehaviorArticleInfo;
+        
+        /// <summary>
+        /// frBehaviorSubtitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBehaviorSubtitle;
         
         /// <summary>
         /// sbShareNSave control.

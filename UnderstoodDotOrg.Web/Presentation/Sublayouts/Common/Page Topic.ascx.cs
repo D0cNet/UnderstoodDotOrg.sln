@@ -9,6 +9,8 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
+using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -16,24 +18,71 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // HylkByline.Visible = false;
-            hlAuthorName.Visible = false;
-            // For Basic ARticle , show link to Author Bio if author have bio
+            BindContent();
+        }
+
+        private void BindContent()
+        {
             if (Sitecore.Context.Item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
             {
-                DefaultArticlePageItem ObjDefArticle = (DefaultArticlePageItem)Sitecore.Context.Item;
-                if (ObjDefArticle != null && ObjDefArticle.AuthorName.Item != null)
+                PopulateArticleInfo();
+            }
+            else if (Sitecore.Context.Item.InheritsTemplate(BehaviorAdvicePageItem.TemplateId)
+                    || Sitecore.Context.Item.TemplateID == Sitecore.Data.ID.Parse(BehaviorToolsResultsPageItem.TemplateId))
+            {
+                PopulateBehaviorInfo();
+            }
+        }
+
+        private void PopulateArticleInfo()
+        {
+            phAuthorInfo.Visible = false;
+
+            DefaultArticlePageItem ObjDefArticle = (DefaultArticlePageItem)Sitecore.Context.Item;
+            if (ObjDefArticle.AuthorName.Item != null)
+            {
+                frAuthorName.Item = ObjDefArticle.AuthorName.Item;
+                hlAuthorName.NavigateUrl = ObjDefArticle.AuthorName.Item.GetUrl();
+                hlAuthorName.Text = ObjDefArticle.AuthorName.Item.Name;
+                phAuthorInfo.Visible = true;
+            }
+            frSectionTitle.Item = Sitecore.Context.Item.Parent;
+            hlSectionTitle.Text = Sitecore.Context.Item.Parent.Name;
+            hlSectionTitle.NavigateUrl = Sitecore.Context.Item.Parent.GetUrl();
+        }
+
+        private void PopulateBehaviorInfo()
+        {
+            phBehaviorArticleInfo.Visible = true;
+            hlSectionTitle.Visible = false;
+
+            frTitle.FieldName = "Hero Heading";
+
+            Item dataSource = null;
+
+            // TEMP: look up parent item until DataSource is updated
+            if (this.DataSource != null && this.DataSource != Sitecore.Context.Item)
+            {
+                dataSource = this.DataSource;
+            }
+            else
+            {
+                Item parent = Sitecore.Context.Item.Parent;
+                while (parent != null)
                 {
-                    frAuthorName.Item = ObjDefArticle.AuthorName.Item;
-                    hlAuthorName.NavigateUrl = ObjDefArticle.AuthorName.Item.GetUrl();
-                    hlAuthorName.Text = ObjDefArticle.AuthorName.Item.Name;
-                    hlAuthorName.Visible = true;
+                    if (parent.TemplateID == Sitecore.Data.ID.Parse(BehaviorToolsLandingPageItem.TemplateId))
+                    {
+                        dataSource = ((BehaviorToolsLandingPageItem)parent).HeroImageDatasource.Item;
+                        break;
+                    }
+                    parent = parent.Parent;
                 }
-                frSectionTitle.Item = Sitecore.Context.Item.Parent;
-                hlSectionTitle.Text = Sitecore.Context.Item.Parent.Name;
-                hlSectionTitle.NavigateUrl = Sitecore.Context.Item.Parent.GetUrl();
             }
 
+            if (dataSource != null)
+            {
+                frTitle.Item = frBehaviorSubtitle.Item = dataSource;
+            }
         }
     }
 }

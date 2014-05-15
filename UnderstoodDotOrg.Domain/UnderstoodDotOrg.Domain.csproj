@@ -413,6 +413,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdvicePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdviceVideoPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdviceVideoPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsLandingPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\SimulationItem.base.cs" />

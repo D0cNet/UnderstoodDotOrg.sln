@@ -437,7 +437,7 @@ namespace UnderstoodDotOrg.Domain.Search
             using (var ctx = index.CreateSearchContext())
             {
                 var query = ctx.GetQueryable<BehaviorAdvice>()
-                                .Where(i => i.Language == "en")
+                                .Where(i => i.Language == "en" && i.Fullpath.Contains("/sitecore/content/"))
                                 .Where(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
                                         || i.TemplateId == ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
                                 .Where(i => i.ChildChallenges.Contains(ID.Parse(Guid.Empty))

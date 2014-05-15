@@ -12,47 +12,27 @@
                 <i class="icon-arrow-left-blue"></i>
             </asp:HyperLink>
             <div>
-                <h1><%--Technology that Can Help--%>
-                    <sc:FieldRenderer ID="rfTitle" runat="server" FieldName="Page Title" />
+                <h1>
+                    <sc:FieldRenderer ID="frTitle" runat="server" FieldName="Page Title" />
                 </h1>
-                <p class="page-subtitle">
-                    <%--Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas --%>
-                    <%--<sc:FieldRenderer ID="frSummary" runat="server" FieldName="Page Summary" />--%>
-                    <asp:HyperLink ID="hlAuthorName" runat="server">
-                        <sc:FieldRenderer ID="frAuthorName" runat="server" FieldName="Author Name" />
-                    </asp:HyperLink>
-                </p>
+                <asp:PlaceHolder ID="phAuthorInfo" runat="server" Visible="false">
+                    <p class="page-subtitle">
+                        <%--Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas --%>
+                        <%--<sc:FieldRenderer ID="frSummary" runat="server" FieldName="Page Summary" />--%>
+                        <asp:HyperLink ID="hlAuthorName" runat="server">
+                            <sc:FieldRenderer ID="frAuthorName" runat="server" FieldName="Author Name" />
+                        </asp:HyperLink>
+                    </p>
+                </asp:PlaceHolder>
+                <asp:PlaceHolder ID="phBehaviorArticleInfo" runat="server" Visible="false">
+                    <p class="page-subtitle behavior-subtitle">
+                        <sc:FieldRenderer ID="frBehaviorSubtitle" runat="server" FieldName="Hero Subheading" />
+                    </p>
+                </asp:PlaceHolder>
             </div>
         </div>
 
         <sc:Sublayout ID="sbShareNSave" runat="server" Path="~/Presentation/Sublayouts/Common/ShareAndSaveTool.ascx" />
-     <%--   <div class="col col-9">
-            <!-- BEGIN PARTIAL: share-save -->
-            <div class="share-save-container">
-                <div class="share-save-social-icon">
-                    <div class="toggle">
-                        <a href="REPLACE" class="socicon icon-facebook">Facebook</a><br />
-                        <a href="REPLACE" class="socicon icon-twitter">Twitter</a><br />
-                        <a href="REPLACE" class="socicon icon-googleplus">Google&#43;</a><br />
-                        <a href="REPLACE" class="socicon icon-pinterest">Pinterest</a><br />
-                    </div>
-                </div>
-                <div class="share-save-icon">
-                    <h3>Share &amp; Save</h3>
-                    <!-- leave no white space for layout consistency -->
-                    <a href="REPLACE" class="icon icon-share">Share</a>
-                    <span class="tools">
-                        <a href="REPLACE" class="icon icon-email">Email</a>
-                        <a href="REPLACE" class="icon icon-save">Save</a>
-                        <a href="REPLACE" class="icon icon-print">Print</a>
-                        <a href="REPLACE" class="icon icon-remind">Remind</a>
-                        <a href="REPLACE" class="icon icon-rss">RSS</a>
-                    </span>
-                </div>
-            </div>
-
-            <!-- END PARTIAL: share-save -->
-        </div>--%>
 
     </div>
 </div>

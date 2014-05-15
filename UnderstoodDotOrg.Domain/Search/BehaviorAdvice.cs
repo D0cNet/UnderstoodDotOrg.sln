@@ -18,5 +18,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
         [IndexField(Constants.SolrFields.ChildChallenges)]
         public IEnumerable<ID> ChildChallenges { get; set; }
+
+        [IndexField("_fullpath")]
+        public string Fullpath { get; set; }
     }
 }
