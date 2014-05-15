@@ -121,12 +121,12 @@
 <div class="community-ask-question submit-question">
     <h1>Submit Your Question</h1>
     <h4 class="subhead">Add Your Question</h4>
-    <asp:TextBox ID="EnterQuestionTextBox" runat="server" class="question" minlength="100" maxlength="1000" aria-required="required" required placeholder="Enter your question..."></asp:TextBox>
+    <asp:TextBox ID="EnterQuestionTextBox" runat="server" class="question" minlength="100" maxlength="1000" aria-required="required" required="required" placeholder="Enter your question..."></asp:TextBox>
 
     <h4 class="subhead">Give your Question a Title</h4>
     <p>Write a short title that will help others understand what the question is about. e.g. Lorem ipsum dolor sit amet?</p>
     
-    <asp:TextBox ID="QuestionTitleTextBox" runat="server" class="question-title" minlength="100" maxlength="100" aria-required="required" required placeholder="Enter your question's title..." />
+    <asp:TextBox ID="QuestionTitleTextBox" runat="server" class="question-title" minlength="100" maxlength="100" aria-required="required" required="required" placeholder="Enter your question's title..." />
     <p class="legend">Your title can be up to 100 characters</p>
 
     <fieldset class="related-issues">
