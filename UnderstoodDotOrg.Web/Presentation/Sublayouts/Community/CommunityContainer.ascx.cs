@@ -25,7 +25,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
                 ContainerClass = "experts-page chat upcoming";
             }
             else if (ContextItem.IsOfType(WebinarEventPageItem.TemplateId) && !IsArchiveItem(ContextItem)) {
-                ContainerClass = "experts-page webinar upcoming ";
+                ContainerClass = "experts-page webinar upcoming";
             }
             else if (ContextItem.IsOfType(ChatEventPageItem.TemplateId) && IsArchiveItem(ContextItem)) {
                 ContainerClass = "experts-page chat past";
