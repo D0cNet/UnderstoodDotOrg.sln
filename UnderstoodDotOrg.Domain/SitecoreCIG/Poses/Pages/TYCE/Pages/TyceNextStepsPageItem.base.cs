@@ -46,6 +46,51 @@ public static implicit operator Item(TyceNextStepsPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomImageField Image
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Image"]);
+	}
+}
+
+
+public CustomTextField PersonalizationBoxTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Personalization Box Title"]);
+	}
+}
+
+
+public CustomTextField SpecialThanksHeader
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Special Thanks Header"]);
+	}
+}
+
+
+public CustomTextField PersonalizationBoxAbstract
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Personalization Box Abstract"]);
+	}
+}
+
+
+public CustomMultiListField SchoolContributions
+{
+	get
+	{
+		return new CustomMultiListField(InnerItem, InnerItem.Fields["School Contributions"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

@@ -3,8 +3,8 @@
     <div class="row">
         <div class="content">
             <div class="text">
-                <h2><%= PageItem.ChildSelectionBoxTitle.Rendered %></h2>
-                <%= PageItem.ChildSelectionBoxAbstract.Rendered %>
+                <h2><%= PageItem.PersonalizationBoxTitle.Rendered %></h2>
+                <%= PageItem.PersonalizationBoxAbstract.Rendered %>
             </div>
             <div class="button-wrap">
                 <a href="REPLACE" class="button button-select-children">Go</a>

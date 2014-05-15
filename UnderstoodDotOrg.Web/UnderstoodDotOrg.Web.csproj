@@ -1381,14 +1381,12 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tyce\Components\TyceModals.ascx.cs">
       <DependentUpon>TyceModals.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tyce\Components\TyceModals.ascx.designer.cs">
       <DependentUpon>TyceModals.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tyce\Components\TycePageTopic.ascx.cs">
       <DependentUpon>TycePageTopic.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tyce\Components\TycePageTopic.ascx.designer.cs">
       <DependentUpon>TycePageTopic.ascx</DependentUpon>
@@ -1402,21 +1400,18 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tyce\Pages\TyceOverview.ascx.cs">
       <DependentUpon>TyceOverview.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tyce\Pages\TyceOverview.ascx.designer.cs">
       <DependentUpon>TyceOverview.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tyce\Pages\TycePlayer.ascx.cs">
       <DependentUpon>TycePlayer.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tyce\Pages\TycePlayer.ascx.designer.cs">
       <DependentUpon>TycePlayer.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tyce\Pages\TyceQuestions.ascx.cs">
       <DependentUpon>TyceQuestions.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tyce\Pages\TyceQuestions.ascx.designer.cs">
       <DependentUpon>TyceQuestions.ascx</DependentUpon>

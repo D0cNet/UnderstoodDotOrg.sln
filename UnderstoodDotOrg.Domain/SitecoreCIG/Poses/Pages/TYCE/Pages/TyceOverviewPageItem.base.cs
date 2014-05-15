@@ -46,11 +46,11 @@ public static implicit operator Item(TyceOverviewPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField ChildSelectionBoxTitle
+public CustomTextField PersonalizationBoxTitle
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Child Selection Box Title"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Personalization Box Title"]);
 	}
 }
 
@@ -64,11 +64,11 @@ public CustomTextField SimulationListingTitle
 }
 
 
-public CustomTextField ChildSelectionBoxAbstract
+public CustomTextField PersonalizationBoxAbstract
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Child Selection Box Abstract"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Personalization Box Abstract"]);
 	}
 }
 
@@ -78,15 +78,6 @@ public CustomTextField SimulationListingAbstract
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Simulation Listing Abstract"]);
-	}
-}
-
-
-public CustomTextField ChildSelectionModalTitle
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Child Selection Modal Title"]);
 	}
 }
 
