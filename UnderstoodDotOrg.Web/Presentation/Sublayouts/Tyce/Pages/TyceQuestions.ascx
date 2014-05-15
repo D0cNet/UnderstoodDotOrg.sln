@@ -30,7 +30,8 @@
                         <asp:Repeater ID="rptrGradeButtons" runat="server">
                             <ItemTemplate>
                                 <li>
-                                    <button type="button" class="grade <%# Eval("CssClass") %> grade-question-button" data-grade-id="<%# Eval("Id") %>">
+                                    <button type="button" class="grade <%# Eval("CssClass") %> grade-question-button" data-grade-id="<%# Eval("Id") %>"
+                                        data-video-id="<%# Eval("VideoId") %>">
                                         <%# Eval("Title") %>
                                     </button>
                                 </li>
@@ -84,10 +85,13 @@
                             </ItemTemplate>
                         </asp:Repeater>
                     </ul>
-                    <button type="button" class="button submit-answers-button tyce-before-begin-button" style="display:none;">Lets's Get Started</button>
+                    <button type="button" class="button submit-answers-button tyce-before-begin-button" style="display:none;" runat="server"
+                        onserverclick="btnStartSimulation_Click">Lets's Get Started</button>
                 </div>
             </div>
             <!-- #tyce-step-2 -->
+            <input type="hidden" id="hfVideoId" runat="server" class="hfVideoId" />
+            <input type="hidden" id="hfIssueIds" runat="server" class="hfIssueIds" />
         </div>
     </div>
 </div>

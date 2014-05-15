@@ -24,11 +24,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
             var tyceGrades = tyceGradesFolder.Children
                 .Where(i => i != null && i.IsOfType(ChildGradeItem.TemplateId))
                 .Select(i => (ChildGradeItem)i)
-                .Select(gradeItem => new
-                {
-                    Id = gradeItem.ID.Guid,
-                    Title = gradeItem.ChildDemographic.Title.Rendered,
-                    CssClass = gradeItem.ChildDemographic.CssClass.Raw
+                .Select(gradeItem => { 
+                    var video = gradeItem.Video.Item;
+                    var videoId = video != null ? video.ID.Guid.ToString() : string.Empty;
+
+                    return new
+                    {
+                        Id = gradeItem.ID.Guid,
+                        Title = gradeItem.ChildDemographic.Title.Rendered,
+                        CssClass = gradeItem.ChildDemographic.CssClass.Raw,
+                        VideoId = videoId
+                    };
                 }).ToList();
 
             rptrGradeOptions.DataSource = tyceGrades;
@@ -55,6 +61,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 
             rptrIssueSummaries.DataSource = tyceIssues;
             rptrIssueSummaries.DataBind();
+        }
+
+        protected void btnStartSimulation_Click(object sender, EventArgs e)
+        {
+            var playerItem = Sitecore.Context.Item.Parent.Children
+                .First(i => i.IsOfType(TycePlayerPageItem.TemplateId));
+            var url = playerItem.GetUrl() + "?simq=" + hfIssueIds.Value + "&videoId=" + hfVideoId.Value;
+
+            Response.Redirect(url);
         }
     }
 }

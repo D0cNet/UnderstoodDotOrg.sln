@@ -240,10 +240,13 @@ $(document).ready(function () {
         var tyceQuestion1 = new TyceQuestion($tyceStepOne);
         var tyceQuestion2 = new TyceQuestion($tyceStepTwo);
 
-
+        var $hfVideoId = $(".hfVideoId");
         var $gradeQuestionButton = $tyceStepOne.find(".grade-question-button");
         $gradeQuestionButton.on("click", function () {
-            tyceQuestion1.doAnswer($(this).text());
+            var $this = $(this);
+
+            $hfVideoId.val($this.attr("data-video-id"));
+            tyceQuestion1.doAnswer($this.text());
 
             if (tyceQuestion1.isAnswered && tyceQuestion2.isAnswered) {
                 $submitAnswersButton.show();
@@ -252,15 +255,18 @@ $(document).ready(function () {
 
         tyceQuestion1.changeEle.on("click", function () {
             tyceQuestion1.doChange();
+            $hfVideoId.val("");
             $submitAnswersButton.hide();
         });
 
         var selectedIssueIds = [];
+        var $hfIssueIds = $(".hfIssueIds");
         var $tyceIssue = $tyceStepTwo.find(".tyce-issue");
         $tyceIssue.on("change", function () {
             var $this = $(this);
             var issueText = $this.next().text();
             var issueId = $this.attr("data-issue-id");
+            $hfIssueIds.val("");
 
             if ($this.is(":checked")) {
                 selectedIssueIds.push(issueId);
@@ -271,13 +277,14 @@ $(document).ready(function () {
             }
         });
 
-        var $tyceIssueSummaries = tyceQuestion2.bodyNextEle.find(".issue");
+        var $tyceIssueSummaries = tyceQuestion2.bodyNextEle.find(".issue");      
 
         tyceQuestion2.completeAnswerEle.on("click", function () {
             tyceQuestion2.doAnswer(tyceQuestion2.answerText);
             $tyceIssueSummaries
                 .filter(function () { return selectedIssueIds.indexOf($(this).attr("data-issue-id")) >= 0 })
                 .show();
+            $hfIssueIds.val(selectedIssueIds.join("&simq="));
 
             if (tyceQuestion1.isAnswered && tyceQuestion2.isAnswered) {
                 $submitAnswersButton.show();

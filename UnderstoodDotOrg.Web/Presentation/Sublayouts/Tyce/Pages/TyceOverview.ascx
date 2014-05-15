@@ -33,14 +33,14 @@
     <div class="row">
         <div class="col col-23 offset-1">
             <ul class="item-5">
-                <asp:Repeater ID="rptrSimulations" runat="server">
+                <asp:Repeater ID="rptrSimulations" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.ChildLearningIssueItem">
                     <ItemTemplate>
                         <li>
-                            <a href="<%= PlayerPageItem.GetUrl() %>">
+                            <a href="<%= PlayerPageItem.GetUrl() %>?simq=<%# Item.ID.Guid %>">
                                 <h4>
-                                    <%# Eval("ChildDemographic.NavigationTitle.Rendered") %>
+                                    <%# Item.ChildDemographic.NavigationTitle.Rendered %>
                                 </h4>
-                                <i class="icon-block <%# Eval("ChildDemographic.CssClass.Raw") %>"><b></b></i>
+                                <i class="icon-block <%# Item.ChildDemographic.CssClass.Raw %>"><b></b></i>
                             </a>
                         </li>
                     </ItemTemplate>

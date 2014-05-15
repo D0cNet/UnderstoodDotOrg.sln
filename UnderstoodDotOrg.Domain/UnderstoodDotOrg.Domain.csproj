@@ -417,8 +417,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\SimulationItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\SimulationsFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\TyceVideoItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceBasePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceNextStepsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceOverviewPageItem.base.cs" />

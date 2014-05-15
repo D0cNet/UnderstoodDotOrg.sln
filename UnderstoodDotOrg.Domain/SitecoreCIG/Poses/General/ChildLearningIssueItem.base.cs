@@ -46,6 +46,24 @@ public static implicit operator Item(ChildLearningIssueItem customItem)
 #region Field Instance Methods
 
 
+public CustomTreeListField SimulationJS
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Simulation JS"]);
+	}
+}
+
+
+public CustomTreeListField SimulationCSS
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Simulation CSS"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

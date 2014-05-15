@@ -9,25 +9,25 @@ using CustomItemGenerator.Fields.SimpleTypes;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components
 {
-public partial class SimulationItem : CustomItem
+public partial class TyceVideoItem : CustomItem
 {
 
-public static readonly string TemplateId = "{47C41593-0BF6-49F2-8288-089329541CA8}";
+public static readonly string TemplateId = "{F9EE6BB1-B790-4042-BEDF-E4E58CEAE2DD}";
 
 
 #region Boilerplate CustomItem Code
 
-public SimulationItem(Item innerItem) : base(innerItem)
+public TyceVideoItem(Item innerItem) : base(innerItem)
 {
 
 }
 
-public static implicit operator SimulationItem(Item innerItem)
+public static implicit operator TyceVideoItem(Item innerItem)
 {
-	return innerItem != null ? new SimulationItem(innerItem) : null;
+	return innerItem != null ? new TyceVideoItem(innerItem) : null;
 }
 
-public static implicit operator Item(SimulationItem customItem)
+public static implicit operator Item(TyceVideoItem customItem)
 {
 	return customItem != null ? customItem.InnerItem : null;
 }
@@ -38,20 +38,11 @@ public static implicit operator Item(SimulationItem customItem)
 #region Field Instance Methods
 
 
-public CustomTreeListField GameJS
+public CustomTextField Video
 {
 	get
 	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Game JS"]);
-	}
-}
-
-
-public CustomTreeListField GameCSS
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Game CSS"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Video"]);
 	}
 }
 

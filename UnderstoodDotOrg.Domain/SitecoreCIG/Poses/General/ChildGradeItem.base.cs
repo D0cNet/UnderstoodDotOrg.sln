@@ -46,6 +46,15 @@ public static implicit operator Item(ChildGradeItem customItem)
 #region Field Instance Methods
 
 
+public CustomLookupField Video
+{
+	get
+	{
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Video"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
