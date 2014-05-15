@@ -39,7 +39,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                 if (ObjBasicArticle.ShowPromotionalControl.Checked == true) sbSidebarPromo.Visible = true; else sbSidebarPromo.Visible = false;
 
-                if (ObjBasicArticle.ShowComment.Checked == true) sbCommentsSummary.Visible = true; else sbCommentsSummary.Visible = false;
+                if (ObjBasicArticle.DefaultArticlePage.ShowCommentTeaser.Checked == true) sbCommentsSummary.Visible = true; else sbCommentsSummary.Visible = false;
 
                 litHelpfulLikes.Text = litHelpfulLikes2.Text = CommunityHelper.ReadLikes(ObjBasicArticle.DefaultArticlePage.ContentId);
                 try
