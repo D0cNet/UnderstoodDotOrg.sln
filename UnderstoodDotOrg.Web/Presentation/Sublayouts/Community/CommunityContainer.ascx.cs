@@ -42,7 +42,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
             bool isArchiveItem = false;
             BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(item);
             if (baseEventPageItem != null) {
-                if (baseEventPageItem.EventDate.DateTime < DateTime.Today) {
+                if (baseEventPageItem.EventDate.DateTime.Equals(DateTime.MinValue) || baseEventPageItem.EventDate.DateTime < DateTime.Today) {
                     isArchiveItem = true;
                 }
             }
