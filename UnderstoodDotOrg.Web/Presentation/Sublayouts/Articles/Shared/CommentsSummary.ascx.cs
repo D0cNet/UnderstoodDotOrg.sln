@@ -18,37 +18,41 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
             int numComments = 0;
-            if (ObjBasicArticle != null)
+
+            if (String.IsNullOrEmpty(ObjBasicArticle.DefaultArticlePage.BlogId.Raw)
+                || String.IsNullOrEmpty(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw))
             {
-                    int blogID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Raw);
-                    int blogPostID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw);
+                return;
+            }
 
-                    try
+            int blogID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Raw);
+            int blogPostID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw);
+
+            try
+            {
+                List<Comment> comments = CommunityHelper.ReadComments(blogID, blogPostID);
+
+                if (comments != null)
+                {
+                    numComments = comments.Count();
+                    if (numComments > 2)
                     {
-                        List<Comment> comments = CommunityHelper.ReadComments(blogID, blogPostID);
-
-                        if (comments != null)
-                        {
-                            numComments = comments.Count();
-                            if (numComments > 2)
-                            {
-                                litNumComments.Text = "(" + numComments + ")";
-                            }
-
-                            Comment recentComment = comments.OrderByDescending(x => x._commentDate).First();
-                            litCommentblurb.Text = CommunityHelper.FormatString100(recentComment._body);// Take(100).ToString();
-                            litAuthorName.Text = recentComment._authorDisplayName;
-                            litTimeStamp.Text = recentComment._publishedDate;
-                            hlAddMyComment.HRef = "#" + recentComment._commentId; //Navigate to comment
-                        }
-
+                        litNumComments.Text = "(" + numComments + ")";
                     }
-                    catch (Exception ex)
-                    {
-                        Sitecore.Diagnostics.Log.Error(ex.Message, GetType());
-                    }
+
+                    Comment recentComment = comments.OrderByDescending(x => x._commentDate).First();
+                    litCommentblurb.Text = CommunityHelper.FormatString100(recentComment._body);// Take(100).ToString();
+                    litAuthorName.Text = recentComment._authorDisplayName;
+                    litTimeStamp.Text = recentComment._publishedDate;
+                    hlAddMyComment.HRef = "#" + recentComment._commentId; //Navigate to comment
+                }
 
             }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error(ex.Message, GetType());
+            }
+
             hlAllComments.HRef = "#comment-list"; //Navigate to top of comment section
             hlAllComments.InnerText = "See All Comments";
             hlAddMyComment.InnerText = "Add My Comment";
