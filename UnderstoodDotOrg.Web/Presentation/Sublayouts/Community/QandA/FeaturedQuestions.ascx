@@ -11,7 +11,7 @@
                         <img alt="70x70 Placeholder" src="http://placehold.it/70x70" />
                     </div>
                     <div class="question-info">
-                        <a href="REPLACE" class="title"><%# Eval("_title") %></a>
+                        <a href="/en/Q%20and%20A/Q%20and%20A%20Details.aspx<%# Eval("_queryString") %>" class="title"><%# Eval("_title") %></a>
                         <span class="details">In <a href="REPLACE" class="topic"><%# Eval("_group") %></a> - Asked by <a href="REPLACE" class="author"><%# Eval("_author") %></a> <span class="bullet">&bull;</span> <%# Eval("_publishedDate") %></span>
                         <a class="button" href="REPLACE">Follow This Question</a>
                     </div>

@@ -125,8 +125,12 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string _author { get; set; }
         public string _group { get; set; }
         public string _commentCount { get; set; }
+        public string _wikiId { get; set; }
+        public string _wikiPageId { get; set; }
+        public string _contentId { get; set; }
+        public string _queryString { get; set; }
 
-        public Question(string title, string body, string publishedDate, string author, string group, string commentCount)
+        public Question(string title, string body, string publishedDate, string author, string group, string commentCount, string wikiId, string wikiPageId, string contentId)
         {
             _title = title;
             _body = body;
@@ -134,6 +138,10 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             _author = author;
             _group = group;
             _commentCount = commentCount;
+            _wikiId = wikiId;
+            _wikiPageId = wikiPageId;
+            _contentId = contentId;
+            _queryString = "?wikiId=" + _wikiId + "&wikiPageId=" + _wikiPageId + "&contentId=" + _contentId;
         }
     }
 

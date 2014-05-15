@@ -318,11 +318,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string title = xn["Title"].InnerText;
                 string publishedDate = FormatDate(xn["CreatedDate"].InnerText);
                 string body = xn["Body"].InnerText;
+                string wikiPageId = xn["Id"].InnerText;
+                string contentId = xn["ContentId"].InnerText;
                 string author = nodes2[count]["Username"].InnerText;
                 string group = nodes3[count]["HtmlName"].InnerText;
                 string commentCount = xn["CommentCount"].InnerText;
 
-                Question question = new Question(title, body, publishedDate, author, group, commentCount);
+                Question question = new Question(title, body, publishedDate, author, group, commentCount, wikiId, wikiPageId, contentId);
                 questionList.Add(question);
                 count++;
             }
