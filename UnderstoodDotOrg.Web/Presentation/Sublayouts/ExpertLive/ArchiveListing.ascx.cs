@@ -348,10 +348,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                                 scExpertImage.Item = expertItem;
                                 pnlExpertImageLabel.Visible = true;
                             }
+                            else {
+                                imgExpertDefault.Visible = true;
+                            }
                             if (ltExpertType != null) {
                                 ltExpertType.Text = expertItem.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;
                             }
 
+                        }
+                        else {
+                            imgExpertDefault.Visible = true;
+                            pnlExpertImageLabel.Visible = true;
                         }
                     }
 
