@@ -138,7 +138,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                         if (expertItem != null) {
                             if (hlMeetExpert != null) {
                                 hlMeetExpert.NavigateUrl = expertItem.InnerItem.GetUrl();
-                                hlMeetExpert.Text = String.Format("{0} {1}",DictionaryConstants.MeetLabel ,expertItem.ExpertName.Rendered);
+                                hlMeetExpert.Text = String.Format("{0} {1}", DictionaryConstants.MeetLabel, expertItem.ExpertName.Rendered);
                             }
 
                             if (hlOfficeHours != null) {
@@ -164,6 +164,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                             if (hlLInkCardImage != null) {
                                 hlLInkCardImage.NavigateUrl = expertItem.InnerItem.GetUrl();
                             }
+                        }
+                        else {
+                            imgExpertDefault.Visible = true;
+                            pnlExpertImageLabel.Visible = true;
                         }
 
                     }
