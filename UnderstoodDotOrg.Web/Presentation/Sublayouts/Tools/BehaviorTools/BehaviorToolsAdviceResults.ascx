@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BehaviorToolsAdviceResults.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.BehaviorToolsAdviceResults" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+
 <div class="container behavior-results flush">
   <div class="row">
     <div class="col col-24">
@@ -9,44 +11,19 @@
     <header>
       <h3 class="rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.WorkOnFragment %> <asp:Literal ID="litChallenge" runat="server" /></h3>
       <i class="icon-tooltip"></i>
-      <a class="how-to-use" href="REPLACE">How to use these strategies</a>
+      
     </header>
       </div>
   </div>
 
-<script id="behavior-search-result" type="text/template">
-    <div class="search-result skiplink-content rs_read_this" aria-role="main">
-        <div class="result-body">
-            <div class="result-tip">{{Title}}</div>
-            <div class="result-info">
-            <span class="tip-comment">{{CommentCount}}<span class="visuallyhidden">comments</span></span>
-            <span class="tip-like" href="#"><i class="icon-advice-like"></i>{{HelpfulCount}}<span class="visuallyhidden">likes</span></span>
-            </div>
-            <div class="result-hover rs_skip">
-            <div class="hover-link-wrapper">
-                <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.SaveThisButtonText %></span></a>
-            </div>
-            <div class="hover-link-wrapper">
-                <a class="tip-remind-me" href="REPLACE"><i class="icon-advice-bell"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.RemindMeButtonText %></span></a>
-            </div>
-            </div>
-        </div>
-        <a class="tip-view rs_skip" href="{{Url}}"><%= UnderstoodDotOrg.Common.DictionaryConstants.ViewTipButtonText %></a>
-    </div>
-</script>
-
-<asp:Repeater ID="rptResults" runat="server" ItemType="UnderstoodDotOrg.Domain.Search.JSON.SearchBehaviorArticle">
-    <HeaderTemplate>
-        <div class="results-outer-wrapper">
-            <div id="behavior-search-results" class="results-wrapper">
-    </HeaderTemplate>
-    <ItemTemplate>
+<asp:PlaceHolder ID="phSearchResults" runat="server" Visible="false">
+    <script id="behavior-search-result" type="text/template">
         <div class="search-result skiplink-content rs_read_this" aria-role="main">
             <div class="result-body">
-                <div class="result-tip"><%# Item.Title %></div>
+                <div class="result-tip">{{Title}}</div>
                 <div class="result-info">
-                <span class="tip-comment"><%# Item.CommentCount %><span class="visuallyhidden">comments</span></span>
-                <span class="tip-like" href="#"><i class="icon-advice-like"></i><%# Item.HelpfulCount %><span class="visuallyhidden">likes</span></span>
+                <span class="tip-comment">{{CommentCount}}<span class="visuallyhidden">comments</span></span>
+                <span class="tip-like" href="#"><i class="icon-advice-like"></i>{{HelpfulCount}}<span class="visuallyhidden">likes</span></span>
                 </div>
                 <div class="result-hover rs_skip">
                 <div class="hover-link-wrapper">
@@ -57,14 +34,40 @@
                 </div>
                 </div>
             </div>
-            <a class="tip-view rs_skip" href="<%# Item.Url %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ViewTipButtonText %></a>
+            <a class="tip-view rs_skip" href="{{Url}}"><%= UnderstoodDotOrg.Common.DictionaryConstants.ViewTipButtonText %></a>
         </div>
-    </ItemTemplate>
-    <FooterTemplate>
+    </script>
+
+    <asp:Repeater ID="rptResults" runat="server" ItemType="UnderstoodDotOrg.Domain.Search.JSON.SearchBehaviorArticle">
+        <HeaderTemplate>
+            <div class="results-outer-wrapper">
+                <div id="behavior-search-results" class="results-wrapper">
+        </HeaderTemplate>
+        <ItemTemplate>
+            <div class="search-result skiplink-content rs_read_this" aria-role="main">
+                <div class="result-body">
+                    <div class="result-tip"><%# Item.Title %></div>
+                    <div class="result-info">
+                    <span class="tip-comment"><%# Item.CommentCount %><span class="visuallyhidden">comments</span></span>
+                    <span class="tip-like" href="#"><i class="icon-advice-like"></i><%# Item.HelpfulCount %><span class="visuallyhidden">likes</span></span>
+                    </div>
+                    <div class="result-hover rs_skip">
+                    <div class="hover-link-wrapper">
+                        <a class="tip-save" href="REPLACE"><i class="icon-advice-save"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.SaveThisButtonText %></span></a>
+                    </div>
+                    <div class="hover-link-wrapper">
+                        <a class="tip-remind-me" href="REPLACE"><i class="icon-advice-bell"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.RemindMeButtonText %></span></a>
+                    </div>
+                    </div>
+                </div>
+                <a class="tip-view rs_skip" href="<%# Item.Url %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ViewTipButtonText %></a>
             </div>
-        </div>
-    </FooterTemplate>
-</asp:Repeater>
+        </ItemTemplate>
+        <FooterTemplate>
+                </div>
+            </div>
+        </FooterTemplate>
+    </asp:Repeater>
 
     <asp:PlaceHolder ID="phMoreResults" runat="server" Visible="false">
     <div class="container show-more rs_skip">
@@ -75,6 +78,14 @@
       </div>
     </div>
     </asp:PlaceHolder>
+
+</asp:PlaceHolder>
+
+<asp:PlaceHolder ID="phNoResults" runat="server" Visible="false">
+    <sc:FieldRenderer runat="server" FieldName="No Results Message" />
+</asp:PlaceHolder>
+
+
 </section>
 
 <!-- END PARTIAL: advice-results -->

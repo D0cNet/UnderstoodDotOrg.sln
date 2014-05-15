@@ -111,10 +111,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 
             if (result.Matches.Any())
             {
+                phSearchResults.Visible = true;
+                phNoResults.Visible = false;
+
                 rptResults.DataSource = result.Matches;
                 rptResults.DataBind();
 
                 phMoreResults.Visible = result.HasMoreResults;
+            }
+            else
+            {
+                phSearchResults.Visible = false;
+                phNoResults.Visible = true;
             }
         }
     }
