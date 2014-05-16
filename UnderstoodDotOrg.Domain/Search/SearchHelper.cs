@@ -430,21 +430,40 @@ namespace UnderstoodDotOrg.Domain.Search
             }
         }
 
+        private static IQueryable<BehaviorAdvice> GetBehaviorSearchQuery(IProviderSearchContext context, string challenge, string grade)
+        {
+            return context.GetQueryable<BehaviorAdvice>()
+                        .Where(i => i.Language == "en" && i.Fullpath.Contains("/sitecore/content/"))
+                        .Where(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
+                                || i.TemplateId == ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
+                        .Where(i => i.ChildChallenges.Contains(ID.Parse(Guid.Empty))
+                                || i.ChildChallenges.Contains(ID.Parse(challenge)))
+                        .Where(i => i.ChildGrades.Contains(ID.Parse(Guid.Empty))
+                                || i.ChildGrades.Contains(ID.Parse(grade))
+                                || i.ChildGrades.Contains(ID.Parse(Constants.ArticleTags.AllChildGrades)));
+        }
+
+        public static List<BehaviorAdvice> GetAllBehaviorArticles(string challenge, string grade)
+        {
+            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+
+            using (var ctx = index.CreateSearchContext())
+            {
+                var query = GetBehaviorSearchQuery(ctx, challenge, grade);
+
+                int totalResults = query.Take(1).GetResults().TotalSearchResults;
+
+                return query.Take(totalResults).ToList();
+            }
+        }
+
         public static List<BehaviorAdvice> PerformBehaviorArticleSearch(string challenge, string grade, int page, out int totalResults)
         {
             var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
 
             using (var ctx = index.CreateSearchContext())
             {
-                var query = ctx.GetQueryable<BehaviorAdvice>()
-                                .Where(i => i.Language == "en" && i.Fullpath.Contains("/sitecore/content/"))
-                                .Where(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
-                                        || i.TemplateId == ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
-                                .Where(i => i.ChildChallenges.Contains(ID.Parse(Guid.Empty))
-                                        || i.ChildChallenges.Contains(ID.Parse(challenge)))
-                                .Where(i => i.ChildGrades.Contains(ID.Parse(Guid.Empty))
-                                        || i.ChildGrades.Contains(ID.Parse(grade))
-                                        || i.ChildGrades.Contains(ID.Parse(Constants.ArticleTags.AllChildGrades)));
+                var query = GetBehaviorSearchQuery(ctx, challenge, grade);
 
                 totalResults = query.Take(1).GetResults().TotalSearchResults;
 

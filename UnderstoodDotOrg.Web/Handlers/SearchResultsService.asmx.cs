@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.Resources.Media;
 using UnderstoodDotOrg.Domain.Search.JSON;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 
 namespace UnderstoodDotOrg.Web.Handlers
 {
@@ -59,16 +60,29 @@ namespace UnderstoodDotOrg.Web.Handlers
             BehaviorResultSet results = new BehaviorResultSet();
 
             int totalResults = 0;
+            List<BehaviorAdvice> articles;
 
-            List<BehaviorAdvice> articles = SearchHelper.PerformBehaviorArticleSearch(challenge, grade, page, out totalResults);
-            var query = from a in articles
+            // Populate all results into session for article pages
+            if (Session[Constants.BehaviorSearchKey] != null || page == 1)
+            {
+                articles = SearchHelper.GetAllBehaviorArticles(challenge, grade);
+                Session[Constants.BehaviorSearchKey] = articles;
+            }
+            else
+            {
+                articles = (List<BehaviorAdvice>)Session[Constants.BehaviorSearchKey];
+            }
+
+            var pagedArticles = articles.Skip(page - 1).Take(Constants.BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE);
+
+            var query = from a in pagedArticles
                         let i = new BehaviorAdvicePageItem(a.GetItem())
                         select new SearchBehaviorArticle
                         {
                             Title = i.TipTitle,
                             Url = i.GetUrl(),
-                            CommentCount = 0,
-                            HelpfulCount = 0
+                            CommentCount = CommunityHelper.GetTotalComments(i.BlogId, i.BlogPostId),
+                            HelpfulCount = CommunityHelper.GetTotalLikes(i.ContentId)
                         };
 
             results.Matches = query.ToList();
