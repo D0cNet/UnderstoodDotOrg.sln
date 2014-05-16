@@ -19,6 +19,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
         {
             PageItem = (TyceNextStepsPageItem)Sitecore.Context.Item;
 
+            var simhist = Request.QueryString["simhist"];
+            if (!string.IsNullOrEmpty(simhist))
+            {
+                var issueIds = simhist.Split(',');
+                var issues = issueIds
+                    .Select(id => Sitecore.Context.Database.GetItem(id))
+                    .Where(i => i != null)
+                    .Select(i => (ChildLearningIssueItem)i).ToList();
+
+                rptrIssuesSeen.DataSource = issues;
+                rptrIssuesSeen.DataBind();
+            }
+
             var schools = PageItem.SchoolContributions.ListItems
                 .Where(i => i != null)
                 .Select(i => (EducationalInstitutionItem)i).ToList();

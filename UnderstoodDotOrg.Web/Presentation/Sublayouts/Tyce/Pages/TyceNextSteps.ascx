@@ -36,10 +36,13 @@
             <div class="module">
                 <h2>Explore More</h2>
                 <p>Explore the issues you've just seen...</p>
-                <p class="link">
-                    <a href="REPLACE">Learn About Dyslexia</a></p>
-                <p class="link">
-                    <a href="REPLACE">Learn About Attention Issues</a></p>
+                <asp:Repeater ID="rptrIssuesSeen" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.ChildLearningIssueItem">
+                    <ItemTemplate>
+                        <p class="link">
+                            <a href="REPLACE">Learn About <%# Item.ChildDemographic.NavigationTitle.Rendered %></a>
+                        </p>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
             <div class="module">
                 <h2>Share It</h2>
