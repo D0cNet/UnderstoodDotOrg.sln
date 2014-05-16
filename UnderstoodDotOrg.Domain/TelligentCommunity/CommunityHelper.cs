@@ -73,7 +73,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                 int index = myString.LastIndexOf(' ');
                 //Have to check the value for index
-                if(index>-1)
+                if (index > -1)
                     myString = myString.Substring(0, index);
 
                 return myString;
@@ -231,13 +231,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(xml);
 
-                XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPages/WikiPage");
+                XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPage");
                 string contentId = nodes[0]["ContentId"].InnerText;
                 string wikiPageId = nodes[0]["Id"].InnerText;
                 string queryString = "?wikiId=2&wikiPageId=" + wikiPageId + "&contentId=" + contentId;
                 return queryString;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return null;
             }
@@ -401,13 +401,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public static List<Answer> GetAnswers(string wikiId, string wikiPageId)
         {
             var webClient = new WebClient();
- 
+
             var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
- 
+
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
             var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId, wikiPageId);
- 
+
             var xml = webClient.DownloadString(requestUrl);
 
             XmlDocument xmlDoc = new XmlDocument();
@@ -423,7 +423,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string body = xn["Body"].InnerText;
                 string author = nodes2[count]["Username"].InnerText;
 
-                Answer answer = new Answer(body,publishedDate,author);
+                Answer answer = new Answer(body, publishedDate, author);
                 answerList.Add(answer);
                 count++;
             }
@@ -434,16 +434,16 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public static string BlogNameById(string blogId)
         {
             var webClient = new WebClient();
- 
+
             // replace the "admin" and "Admin's API key" with your valid user and apikey!
             var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
- 
+
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
             var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
- 
+
             var xml = webClient.DownloadString(requestUrl);
- 
+
             Console.WriteLine(xml);
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xml);
@@ -531,7 +531,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
             }
             return blogPosts;
-        
+
         }
 
         public static List<Blog> ListBlogs()
@@ -570,7 +570,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public static XmlNode ReadGroup(string groupID)
         {
             XmlNode node = null;
-           
+
             if (!String.IsNullOrEmpty(groupID))
             {
                 WebClient webClient = new WebClient();
@@ -584,13 +584,14 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                     xmlDoc.LoadXml(xml);
                     node = xmlDoc.SelectSingleNode("Response/Group");
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     node = null;
                 }
             }
             return node;
-           
+
         }
         public static XmlNode ReadForum(string forumID)
         {
@@ -646,7 +647,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return node;
         }
-        public static XmlNode ReadThread(string forumID,string threadID)
+        public static XmlNode ReadThread(string forumID, string threadID)
         {
             XmlNode node = null;
             if (!String.IsNullOrEmpty(forumID) && !String.IsNullOrEmpty(threadID))
@@ -662,7 +663,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     var xmlDoc = new XmlDocument();
                     xmlDoc.LoadXml(xml);
                     node = xmlDoc.SelectSingleNode("Response/Thread");
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     node = null;
                 }
@@ -672,7 +674,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public static XmlNode ReadReply(string replyID)
         {
             XmlNode node = null;
-            if (!String.IsNullOrEmpty(replyID) )
+            if (!String.IsNullOrEmpty(replyID))
             {
                 WebClient webClient = new WebClient();
                 string adminKeyBase64 = CommunityHelper.TelligentAuth();
@@ -683,13 +685,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 var xml = webClient.DownloadString(requestUrl);
                 var xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(xml);
-                 node = xmlDoc.SelectSingleNode("Response/Reply");
+                node = xmlDoc.SelectSingleNode("Response/Reply");
             }
             return node;
         }
-        public static void PostReply(string forumID,string threadID,string body)
+        public static void PostReply(string forumID, string threadID, string body)
         {
-            
+
 
             WebClient webClient = new WebClient();
             string adminKeyBase64 = CommunityHelper.TelligentAuth();
@@ -702,9 +704,10 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 values["Body"] = body;
 
                 var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                
+
             }
         }
         public static List<ReplyModel> ReadReplies(string forumID, string threadID)
@@ -723,12 +726,12 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 xmlDoc.LoadXml(xml);
                 XmlNode node = xmlDoc.SelectSingleNode("Response/Replies");
 
-                if(node!=null)
+                if (node != null)
                 {
                     foreach (XmlNode reply in node)
                     {
                         ReplyModel rpm = new ReplyModel(reply);
-                        
+
                         replies.Add(rpm);
                         rpm = null;
                     }
@@ -750,7 +753,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     ThreadModel t = new ThreadModel(childNode);
                     th.Add(t);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 //Bth = null;
             }
@@ -765,7 +769,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
                 webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-               
+
                 try
                 {
                     var requestUrl = String.Format("{0}api.ashx/v2/users/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), username);
@@ -773,18 +777,18 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     var xmlDoc = new XmlDocument();
                     xmlDoc.LoadXml(xml);
                     XmlNode node = xmlDoc.SelectSingleNode("Response/User");
-                    if(node!=null)
+                    if (node != null)
                     {
                         //Read user id
-                         Userid = node.SelectSingleNode("Id").InnerText;
-                         //return Userid;
+                        Userid = node.SelectSingleNode("Id").InnerText;
+                        //return Userid;
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Userid = null;
                 }
-               
+
 
             }
             return Userid;
@@ -807,7 +811,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return fm;
         }
-        public static bool IsUserInGroup(string userScreenName,string groupID)
+        public static bool IsUserInGroup(string userScreenName, string groupID)
         {
             bool val = false;
             if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID))
@@ -835,7 +839,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return val;
 
         }
-        public static bool JoinGroup(string groupID,string userScreenName)
+        public static bool JoinGroup(string groupID, string userScreenName)
         {
             bool success = false;
             if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID))

@@ -12,14 +12,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void SubmitQuestionButton_Click(object sender, EventArgs e)
         {
             string title = QuestionTitleTextBox.Text;
             string body = EnterQuestionTextBox.Text;
-            string queryString = CommunityHelper.CreateQuestion(title, body);
+            string url = "/en/Q%20and%20A/Q%20and%20A%20Details.aspx" + CommunityHelper.CreateQuestion(title, body);
+            Response.Redirect(url);
+
         }
     }
 }
