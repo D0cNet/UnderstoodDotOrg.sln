@@ -54,7 +54,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 if (CurrentMember != null)
                     return CurrentMember.ScreenName;
                 else
-                    throw new Exception("No current user available");
+                    return String.Empty;
+                    //throw new Exception("No current user available");
                 //if (Session["username"] == null)
                 //{
                 //    MembershipManager mem = new MembershipManager();

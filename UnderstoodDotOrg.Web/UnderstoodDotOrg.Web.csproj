@@ -646,6 +646,13 @@
     <Compile Include="Presentation\Sublayouts\Common\GroupCardModelView.ascx.designer.cs">
       <DependentUpon>GroupCardModelView.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\GroupDiscussionList.ascx.cs">
+      <DependentUpon>GroupDiscussionList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\GroupDiscussionList.ascx.designer.cs">
+      <DependentUpon>GroupDiscussionList.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\GroupSummaryList.ascx.cs">
       <DependentUpon>GroupSummaryList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -799,6 +806,27 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Moderators.ascx.designer.cs">
       <DependentUpon>Moderators.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Group Board.ascx.cs">
+      <DependentUpon>Parent Group Board.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Group Board.ascx.designer.cs">
+      <DependentUpon>Parent Group Board.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Group Discussion.ascx.cs">
+      <DependentUpon>Parent Group Discussion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Group Discussion.ascx.designer.cs">
+      <DependentUpon>Parent Group Discussion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Group Search Result.ascx.cs">
+      <DependentUpon>Parent Group Search Result.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Group Search Result.ascx.designer.cs">
+      <DependentUpon>Parent Group Search Result.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Parent Groups.ascx.cs">
       <DependentUpon>Parent Groups.ascx</DependentUpon>
@@ -1072,6 +1100,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx.designer.cs">
       <DependentUpon>MyAccount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyCommentsTest.ascx.cs">
+      <DependentUpon>MyCommentsTest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyCommentsTest.ascx.designer.cs">
+      <DependentUpon>MyCommentsTest.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx.cs">
       <DependentUpon>Reset Password.ascx</DependentUpon>
@@ -2017,6 +2052,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\SearchBlogsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Footer.ascx" />
     <Content Include="Presentation\Sublayouts\Common\GroupCardModelView.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\GroupDiscussionList.ascx" />
     <Content Include="Presentation\Sublayouts\Common\GroupSummaryList.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Header.ascx" />
     <Content Include="Presentation\Sublayouts\Common\More Carousel.ascx" />
@@ -2039,6 +2075,9 @@
     <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsUpcomingWebinar.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Moderators.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Parent Group Board.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Parent Group Discussion.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Parent Group Search Result.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parent Groups.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Group Recommended.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parent Group Boards.ascx" />
@@ -2078,6 +2117,7 @@
     <Content Include="Presentation\Sublayouts\MyAccount\Forgot Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\MyCommentsTest.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />

@@ -106,9 +106,11 @@
          </div>
         </div>
     </asp:Panel>
-    <asp:Panel ID="pnlSearchSection" runat="server">
-        <sc:Sublayout ID="sbSearchResults" runat="server" Path="~/Presentation/SubLayouts/Community/Parent Group Search Result.ascx" />
-    </asp:Panel>
+   <asp:Panel ID="pnlSearchSection" runat="server"> 
+        <sc:Placeholder ID="searchResults" runat="server" />
+        <%-- <sc:Sublayout ID="sbSearchResults" runat="server" Path="~/Presentation/SubLayouts/Community/Parent Group Search Result.ascx" />--%>
+   </asp:Panel>
+   
        <!-- Show More -->
     <!-- BEGIN PARTIAL: community/show_more -->
 <!--Show More-->
