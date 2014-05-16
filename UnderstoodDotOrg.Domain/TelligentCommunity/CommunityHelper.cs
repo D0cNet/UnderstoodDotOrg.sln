@@ -122,7 +122,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string authorDisplayName = nodes2[nodecount]["DisplayName"].InnerText;
                 string authorProfileUrl = nodes2[nodecount]["ProfileUrl"].InnerText;
                 string authorUsername = nodes2[nodecount]["Username"].InnerText;
-                string likesCount = ReadLikes(commentId);
+                string likesCount = GetTotalLikes(commentId).ToString();
                 string commentDate = xn["PublishedDate"].InnerText;
                 string[] t = commentDate.Split('T');
                 commentDate = t[0];
@@ -137,30 +137,44 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return commentList;
         }
 
-        public static string CommentCount(int blogId, int blogPostId)
+        public static int GetTotalComments(string blogId, string blogPostId)
         {
-            var webClient = new WebClient();
+            int count = 0;
+            int id = 0;
+            int postId = 0;
 
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-
-            var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
-            var xml = webClient.DownloadString(requestUrl);
-
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
-            List<Comment> commentList = new List<Comment>();
-            int nodecount = 0;
-            foreach (XmlNode xn in nodes)
+            if (String.IsNullOrEmpty(blogId) || String.IsNullOrEmpty(blogPostId)
+                || !Int32.TryParse(blogId, out id) || !Int32.TryParse(blogPostId, out postId))
             {
-                nodecount++;
+                return count;
             }
-            return nodecount.ToString();
+
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    // replace the "admin" and "Admin's API key" with your valid user and apikey!
+                    var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                    // TODO: Add error handling for invalid ids
+
+                    var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+
+                    count = nodes.Count;
+                }
+                catch { }
+            }
+
+            return count;
         }
 
         public static BlogPost ReadBlogBody(int blogId, int blogPostId)
@@ -243,32 +257,39 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
-        public static string ReadLikes(string contentId)
+        public static int GetTotalLikes(string contentId)
         {
-            try
+            int count = 0;
+            Guid guid = Guid.Empty;
+
+            if (Guid.TryParse(contentId, out guid))
             {
-                var webClient = new WebClient();
+                using (var webClient = new WebClient())
+                {
+                    try
+                    {
+                        // TODO: add validation for invalid content id
+                        var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                        var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
-                var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+                        webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                        var requestUrl = string.Format("{0}api.ashx/v2/likes.xml?ContentId={1}", 
+                            Settings.GetSetting(Constants.Settings.TelligentConfig), 
+                            guid.ToString());
 
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                var requestUrl = string.Format("{0}api.ashx/v2/likes.xml?ContentId={1}", Settings.GetSetting(Constants.Settings.TelligentConfig), contentId);
+                        var xml = webClient.DownloadString(requestUrl);
 
-                var xml = webClient.DownloadString(requestUrl);
+                        var xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(xml);
+                        XmlNodeList nodes = xmlDoc.SelectNodes("Response/Likes/Like");
 
-                var xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-                XmlNodeList nodes = xmlDoc.SelectNodes("Response/Likes/Like");
-
-                string likes = nodes.Count.ToString();
-
-                return likes;
+                        count = nodes.Count;
+                    }
+                    catch { }
+                }
             }
-            catch (Exception ex)
-            {
-                return "0";
-            }
+
+            return count;
         }
         /// <summary>
         /// 

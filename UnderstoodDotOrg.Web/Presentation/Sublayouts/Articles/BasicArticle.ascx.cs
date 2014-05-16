@@ -41,10 +41,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                 if (ObjBasicArticle.DefaultArticlePage.ShowCommentTeaser.Checked == true) sbCommentsSummary.Visible = true; else sbCommentsSummary.Visible = false;
 
-                litHelpfulLikes.Text = litHelpfulLikes2.Text = CommunityHelper.ReadLikes(ObjBasicArticle.DefaultArticlePage.ContentId);
+                litHelpfulLikes.Text = litHelpfulLikes2.Text = CommunityHelper.GetTotalLikes(ObjBasicArticle.DefaultArticlePage.ContentId).ToString();
                 try
                 {
-                    litCommentCount.Text = litCommentCount2.Text = CommunityHelper.CommentCount(Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Raw), Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw));
+                    litCommentCount.Text = litCommentCount2.Text = CommunityHelper.GetTotalComments(ObjBasicArticle.DefaultArticlePage.BlogId.Raw, ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw).ToString();
                 }
                 catch
                 {

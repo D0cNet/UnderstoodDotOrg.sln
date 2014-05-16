@@ -13,30 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                var blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
-                var contentId = blogCig.ContentId.Raw;
-                var likesCount = CommunityHelper.ReadLikes(contentId);
-                LikeCount.Text = likesCount;
-            }
-            catch
-            {
-                LikeCount.Text = "0";
-            }
-            
-            try
-            {
-                var blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
-                var blogId = Convert.ToInt32(blogCig.BlogId.Raw);
-                var blogPostId = Convert.ToInt32(blogCig.BlogPostId.Raw);
-                List<Comment> comments = CommunityHelper.ReadComments(blogId, blogPostId);
-                CommentCount.Text = comments.Count.ToString();
-            }
-            catch
-            {
-                CommentCount.Text = "0";
-            }
+            var blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
+            var contentId = blogCig.ContentId.Raw;
+
+            LikeCount.Text = CommunityHelper.GetTotalLikes(contentId).ToString();
+
+            var blogId = blogCig.BlogId.Raw;
+            var blogPostId = blogCig.BlogPostId.Raw;
+
+            CommentCount.Text = CommunityHelper.GetTotalComments(blogId, blogPostId).ToString();
         }
     }
 }
