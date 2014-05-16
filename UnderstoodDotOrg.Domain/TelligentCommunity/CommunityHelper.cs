@@ -153,15 +153,12 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
                 try
                 {
-                    // replace the "admin" and "Admin's API key" with your valid user and apikey!
-                    var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
 
                     // TODO: Add error handling for invalid ids
 
-                    var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
+                    var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", 
+                        blogId, blogPostId));
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
@@ -257,6 +254,19 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
+        private static string GetApiEndPoint(string path)
+        {
+            // Normalize path
+            if (path.StartsWith("/"))
+            {
+                path = path.TrimStart('/');
+            }
+
+            return String.Format("{0}api.ashx/v2/{1}",
+                            Settings.GetSetting(Constants.Settings.TelligentConfig),
+                            path);
+        }
+
         public static int GetTotalLikes(string contentId)
         {
             int count = 0;
@@ -269,13 +279,10 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     try
                     {
                         // TODO: add validation for invalid content id
-                        var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                        var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-                        webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                        var requestUrl = string.Format("{0}api.ashx/v2/likes.xml?ContentId={1}", 
-                            Settings.GetSetting(Constants.Settings.TelligentConfig), 
-                            guid.ToString());
+                        
+                        webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
+                        var requestUrl = GetApiEndPoint(string.Format("likes.xml?ContentId={0}", 
+                            guid.ToString()));
 
                         var xml = webClient.DownloadString(requestUrl);
 
@@ -563,7 +570,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
             var requestUrl = string.Format("{0}api.ashx/v2/blogs.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
 
             var xml = webClient.DownloadString(requestUrl);
