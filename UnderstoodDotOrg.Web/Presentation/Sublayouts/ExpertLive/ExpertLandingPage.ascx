@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ExpertLandingPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive.ExpertLandingPage" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+
+
 <!-- styling for .about-pagetopic can be found in about-partners -->
 
 <div class="container flush l-about-experts-intro-carousel">
@@ -11,52 +13,17 @@
             </div>
             <!-- END PARTIAL: about/about-experts-introduction -->
         </div>
-        <div class="col col-11 offset-1">
-            <!-- BEGIN PARTIAL: about/about-experts-event-carousel -->
-            <div class="about-experts-event-carousel">
-                <h3 class="rs_read_this">Coming up on Experts Live</h3>
+        
+        <!-- my HTML  -->
 
-                <%--<div class="event-carousel">
-                        <asp:Repeater ID="rptEventCarousel" runat="server" OnItemDataBound="rptEventCarousel_ItemDataBound">
-                            <HeaderTemplate>
-                                <div class="about-expert">
-                                    <div class="about-expert-data rs_read_this">
-                            </HeaderTemplate>
-                            <ItemTemplate>
-                                <div class="event-carousel-image">
-                                    <sc:Image ID="scExpertImage" runat="server" Field="Expert Image" />
-                                    <div class="caption">
-                                        <asp:Literal ID="litExpert" runat="server"></asp:Literal>
-                                    </div>
-                                </div>
-                                <div class="event-carousel-details">
-                                    <p class="date">
-                                        <sc:Date ID="scDate" runat="server" Field="Event Date" Format="dd MMM yy" />
-                                    </p>
-                                    <p class="chat-with">Chat with</p>
-                                    <h4>
-                                       <sc:FieldRenderer ID="frHeading" runat="server" FieldName="Heading" />
-                                    </h4>
-                                    <p class="credentials">
-                                        <sc:FieldRenderer ID="frSubHeading" runat="server" FieldName="SubHeading" />
-                                    </p>
-                                </div>
-                            </ItemTemplate>
-                            <FooterTemplate>
-                                </div>
-                            </div>
-                                </div>
-                            </FooterTemplate>
-                        </asp:Repeater>
-                    </div>--%>
 
-                <!-- /.event-carousel -->
+        <sc:Sublayout runat="server" ID="slLiveChat" Path="~/Presentation/Sublayouts/ExpertLive/SingleLiveChat.ascx" />
 
-            </div>
-            <!-- /.about-experts-event-carousel -->
 
-            <!-- END PARTIAL: about/about-experts-event-carousel -->
-        </div>
+
+        <!-- my html -->
+
+
     </div>
     <!-- end .row -->
 </div>
@@ -122,12 +89,8 @@
 <!--Show More-->
 <div class="container show-more rs_skip">
     <div class="row">
-        <div class="col col-24">       
-            <a data-count="3" data-item="about-expert" data-container="about-experts-listing" data-path="about/about-experts-listing" href="#" class="show-more-link ">
-                <asp:Literal id="litShowMore" runat="server"></asp:Literal>
-                <i class="icon-arrow-down-blue"></i>
-         </a>
-          
+        <div class="col col-24">
+            <a class="show-more-link " href="#" data-path="about/about-experts-listing" data-container="about-experts-listing" data-item="about-expert" data-count="3">Show More<i class="icon-arrow-down-blue"></i></a>
         </div>
     </div>
 </div>

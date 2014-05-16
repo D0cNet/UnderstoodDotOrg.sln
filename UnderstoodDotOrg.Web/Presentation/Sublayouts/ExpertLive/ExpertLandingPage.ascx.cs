@@ -1,37 +1,29 @@
-﻿using Sitecore.Data.Items;
-using Sitecore.Web.UI.WebControls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
+using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 {
     public partial class ExpertLandingPage : System.Web.UI.UserControl
     {
-        ExpertLandingPageItem contextItem = Sitecore.Context.Item;
-
-        /// <summary>
-        /// Get topic landing page iTems.
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<ExpertDetailPageItem> GetExpertDetailPages(Item item) {
-            return item.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(ExpertDetailPageItem.TemplateId)).Select(i => (ExpertDetailPageItem)i);
-        }
-
+        ExpertLandingPageItem contextItem = Sitecore.Context.Item;     
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                frBodyContent.Item = contextItem;               
-                litShowMore.Text = DictionaryConstants.ShowMoreLabel;
-                var expertDetailItems = GetExpertDetailPages(contextItem.InnerItem);
-              
+                frBodyContent.Item = contextItem;
+                var expertDetailItems = contextItem.GetExpertDetailPages();
+               // BaseEventDetailPageItem baseEventDetailpage = new BaseEventDetailPageItem(contextItem);
+                //ExpertLivePageItem livePageItem = baseEventDetailpage.Expert.Item;
+
               //  var expertLiveChatItems =GetExpertLivePages
                 if (expertDetailItems.Any())
                 {
