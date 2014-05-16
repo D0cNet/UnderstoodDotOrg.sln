@@ -17,6 +17,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         AssessmentQuizArticlePage1Item ObjAssessmentQuizPage1;
         IEnumerable<QuizQuestionItem> _allQuestion;
         List<AssessmentQuizScorePage1> _AssessmentQuiz_Page1Score;
+        //override protected void OnInit(EventArgs e)
+        //{
+        //    base.OnInit(e);
+        //    rptQuestion.ItemCommand += new RepeaterCommandEventHandler(rptQuestion_ItemCommand);
+        //}
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjAssessmentQuizPage1 = new AssessmentQuizArticlePage1Item(Sitecore.Context.Item);
@@ -38,6 +44,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 }
                 btnNext.OnClientClick += new EventHandler(btnNext_Click);
 
+
             }
         }
 
@@ -58,10 +65,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         {
                             PlaceHolder phOption = e.FindControlAs<PlaceHolder>("phOption");
                             PlaceHolder phDropdown = e.FindControlAs<PlaceHolder>("phDropdown");
+                            PlaceHolder phBoolean = e.FindControlAs<PlaceHolder>("phBoolean");
+                            if (_currentQ.QuestionType.Raw == "Boolean Style")
+                            {
+                                phOption.Visible = false;
+                                phDropdown.Visible = false;
+                                phBoolean.Visible = true;
+
+                            }
                             if (_currentQ.QuestionType.Raw == "Option List Style")
                             {
                                 phOption.Visible = true;
                                 phDropdown.Visible = false;
+                                phBoolean.Visible = false;
                                 RadioButtonList rblAnswer = e.FindControlAs<RadioButtonList>("rblAnswer");
                                 if (rblAnswer != null)
                                 {
@@ -79,6 +95,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                             {
                                 phDropdown.Visible = true;
                                 phOption.Visible = false;
+                                phBoolean.Visible = false;
                                 DropDownList ddlAnswer = e.FindControlAs<DropDownList>("ddlAnswer");
                                 if (ddlAnswer != null)
                                 {
@@ -100,7 +117,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected void btnNext_Click(object sender, EventArgs e)
         {
             //btnNext.PostBackUrl = string.Concat(Request.Url.Host.ToString(), ObjAssessmentQuizPage1.LinktoNextPage);
-            Response.Redirect(string.Concat("http://",Request.Url.Host.ToString(), ObjAssessmentQuizPage1.LinktoNextPage));
+            Response.Redirect(string.Concat("http://", Request.Url.Host.ToString(), ObjAssessmentQuizPage1.LinktoNextPage));
         }
         public bool UpdateScore(AssessmentQuizArticlePage1Item ObjQuizPage1, string SelectedAnswer)
         {
@@ -113,12 +130,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     if (s.Question.ID == _SelectedAns[0].ID)
                     {
-                        s.Score = _ScoreA.Score;
-                        _Isdone = true;
+                        QuizQuestionItem QItem = (QuizQuestionItem)_SelectedAns[0].Parent;
+                        if (QItem != null)
+                        {
+                            if (QItem.QuestionType.Raw == "Boolean Style")
+                            {
+                                if (SelectedAnswer != "False")
+                                {
+                                    s.Score = _ScoreA.Score;//boolean style and user answer is correct
+                                    _Isdone = true;
+                                }
+                                
+                            }
+                            else
+                            {
+                                s.Score = _ScoreA.Score;
+                                _Isdone = true;
+                            }
+                        }
+                       
                         //Response.Write(s.Question.Name + "<=>" + s.Score.ToString());
                     }
                 }
             }
+
             return _Isdone;
         }
 
@@ -155,15 +190,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             }
         }
 
-        protected void btnTrue_Click(object sender, EventArgs e)
+
+        protected void rptQuestion_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            if (e.CommandName == "True")
+            {
+                //Response.Write("true");
+                //UserBoolInput = "True";
+                if (UpdateScore(ObjAssessmentQuizPage1, "True") == true)
+                {
+
+                    Session["_AssessmentQuiz_Page1Score"] = _AssessmentQuiz_Page1Score;
+                }
+            }
+            if (e.CommandName == "False")
+            {
+                //Response.Write("false"); //UserBoolInput = "False";
+                if (UpdateScore(ObjAssessmentQuizPage1, "False") == true)
+                {
+
+                    Session["_AssessmentQuiz_Page1Score"] = _AssessmentQuiz_Page1Score;
+                }
+            }
 
         }
 
-        protected void btnFalse_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 
     public class AssessmentQuizScorePage1

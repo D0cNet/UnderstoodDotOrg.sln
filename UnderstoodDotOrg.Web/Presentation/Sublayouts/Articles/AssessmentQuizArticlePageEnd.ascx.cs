@@ -26,7 +26,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     SBReviewedBy.Visible = true;
                 else
                     SBReviewedBy.Visible = false;
-
+                frQuizIntro.Item = ObjAssessmentEndPage;
                 IEnumerable<QuizResultItem> _allResults = AssessmentQuizArticlePageEndItem.GetAllResults(ObjAssessmentEndPage);
                 if (_allResults != null)
                 {
@@ -48,7 +48,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     {
                         if (Session["AssessmentPage2Item"] != null)
                         {
-                            AssessmentQuizArticlePage2Item ObjPage2 = (AssessmentQuizArticlePage2Item)Session["AssessmentPage1Item"];
+                            AssessmentQuizArticlePage2Item ObjPage2 = (AssessmentQuizArticlePage2Item)Session["AssessmentPage2Item"];
                             if (ObjPage2 != null)
                             {
                                 Response.Redirect(string.Concat( "http://",Request.Url.Host.ToString(),ObjPage2.InnerItem.GetUrl()));
@@ -87,7 +87,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     {
                         if (_FinalScore <= r.MaximumScore && _FinalScore >= r.MinimumScore)
                         {
-                            frQuizIntro.Item = r;
+                           // frQuizIntro.Item = r;
                             frResultTitle.Item = r;
                             frResultDesc.Item = r;
                         }

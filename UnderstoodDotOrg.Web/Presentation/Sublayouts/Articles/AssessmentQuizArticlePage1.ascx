@@ -72,17 +72,19 @@
                     </p>
                     <div class="assessment-questions">
                         <div class="assessment-question-wrapper">
-                            <asp:Repeater ID="rptQuestion" runat="server" OnItemDataBound="rptQuestion_ItemDataBound">
+                            <asp:Repeater ID="rptQuestion" runat="server" OnItemDataBound="rptQuestion_ItemDataBound" OnItemCommand="rptQuestion_ItemCommand">
                                 <ItemTemplate>
                                     <p class="assessment-question">
                                         <%--My child's favorite activity is:--%>
                                         <sc:FieldRenderer ID="frQuestion" runat="server" FieldName="Question Title" />
                                     </p>
-                                    <asp:PlaceHolder ID="phBoolean" runat="server">
+                                    <asp:PlaceHolder ID="phBoolean" runat="server" Visible="false">
                                         <%--<button type="button" class="answer-choice-true">True</button>
                     <button type="button" class="answer-choice-false">False</button>--%>
-                                        <asp:Button ID="btnTrue" runat="server" Text="True" CssClass="answer-choice-true" OnClick="btnTrue_Click" />
-                                        <asp:Button ID="btnFalse" runat="server" Text="False" CssClass="answer-choice-false" OnClick="btnFalse_Click" />
+
+                                        <asp:LinkButton ID="lbTrue" runat="server" Text="True" Width="50" CommandName="True"></asp:LinkButton>
+                                        <asp:LinkButton ID="lbFalse" runat="server" Text="False" Width="50" CommandName="False"></asp:LinkButton>
+
                                     </asp:PlaceHolder>
                                     <asp:PlaceHolder ID="phOption" runat="server" Visible="false">
                                         <asp:RadioButtonList ID="rblAnswer" runat="server" OnSelectedIndexChanged="rblAnswer_SelectedIndexChanged">
@@ -103,6 +105,7 @@
                                         </asp:DropDownList>
 
                                     </asp:PlaceHolder>
+                                    <hr />
                                 </ItemTemplate>
                             </asp:Repeater>
                             <%--<asp:Literal ID="opresult" runat="server"></asp:Literal>
@@ -233,8 +236,43 @@
         <div class="col col-1 sidebar-spacer">
         </div>
         <!-- right bar -->
-        <div class="col col-5 offset-1">
-            <sc:Placeholder ID="Placeholder1" Key="Quiz-Sidebar" runat="server" />
+        <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
+
+            <%-- <sc:Placeholder ID="Placeholder1" Key="Quiz-Sidebar" runat="server" />--%>
+
+            <div class="count-helpful">
+                <a href="#count-helpful-sidebar"><span>34</span>Found this helpful</a>
+            </div>
+            <!-- END PARTIAL: helpful-count -->
+            <!-- BEGIN PARTIAL: find-helpful -->
+            <div class="find-this-helpful sidebar" id="count-helpful-sidebar rs_read_this">
+                <h4>Did you find this helpful?</h4>
+                <ul>
+                    <li>
+                        <button class="button yes rs_skip">Yes</button>
+                    </li>
+                    <li>
+                        <button class="button no gray rs_skip">No</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+
+            </div>
+
+            <!-- END PARTIAL: find-helpful -->
+            <!-- BEGIN PARTIAL: keep-reading -->
+            <div class="keep-reading">
+                  <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
+               <%-- <h3>Keep Reading</h3>
+                <ul>
+                    <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
+                    <li><a href="REPLACE">How to Build a Homework Plan</a></li>
+                    <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
+                </ul>--%>
+            </div>
+            <!-- END PARTIAL: keep-reading -->
+
+
         </div>
     </div>
     <!-- .row -->
