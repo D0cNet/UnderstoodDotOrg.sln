@@ -385,9 +385,13 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyAccountBaseItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyAccountBaseItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFiveItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFiveItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFiveItem.interface.cs" />

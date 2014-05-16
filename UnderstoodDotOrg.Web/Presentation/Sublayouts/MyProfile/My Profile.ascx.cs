@@ -1,16 +1,17 @@
 ﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
 	using Sitecore.Data;
-	using Sitecore.Data.Items;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Web;
-	using System.Web.Services;
-	using System.Web.UI.WebControls;
-	using UnderstoodDotOrg.Common;
-	using UnderstoodDotOrg.Domain.Membership;
-	using UnderstoodDotOrg.Framework.UI;
+using Sitecore.Data.Items;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Services;
+using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Framework.UI;
 
     public partial class My_Profile : BaseSublayout
     {
@@ -28,11 +29,32 @@
 			}
 		}
 
+		private MyProfileItem _currentPage;
+		private MyProfileItem CurrentPage
+		{
+			get
+			{
+				if (_currentPage == null)
+				{
+					_currentPage = new MyProfileItem(Sitecore.Context.Item);
+				}
+
+				return _currentPage;
+			}
+		}
+
         private void Page_Load(object sender, EventArgs e)
         {
 			if (this.CurrentMember == null && this.CurrentUser == null)
 			{
-				Response.Redirect("/my account/signin");
+				if (!string.IsNullOrEmpty(CurrentPage.SignInPage.Url))
+				{
+					Response.Redirect(CurrentPage.SignInPage.Url);
+				}
+				else
+				{
+					Response.Redirect("/");
+				}
 			}
 
 			if (!IsPostBack)
