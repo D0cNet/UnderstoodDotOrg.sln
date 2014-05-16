@@ -128,6 +128,13 @@
     <Compile Include="Handlers\RunSalesforceUpsert.ashx.cs">
       <DependentUpon>RunSalesforceUpsert.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\AjaxData\ArchiveEvents.aspx.cs">
+      <DependentUpon>ArchiveEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\ArchiveEvents.aspx.designer.cs">
+      <DependentUpon>ArchiveEvents.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\AjaxData\GetArticles.aspx.cs">
       <DependentUpon>GetArticles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1485,6 +1492,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Handlers\FormSubmissionsService.asmx" />
     <Content Include="Handlers\SearchResultsService.asmx" />
+    <Content Include="Presentation\AjaxData\ArchiveEvents.aspx" />
     <Content Include="Presentation\AjaxData\GetArticles.aspx" />
     <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />
     <Content Include="Presentation\Includes\css\about-nonresponsive.css" />

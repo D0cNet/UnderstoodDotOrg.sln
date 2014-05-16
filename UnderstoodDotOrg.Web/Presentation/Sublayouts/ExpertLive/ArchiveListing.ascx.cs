@@ -49,6 +49,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                     SearchKey = Request.QueryString["q"].ToString();
                     if (!IsPostBack) {
                         txtSearch.Value = SearchKey;
+                        hfSearchKey.Value = SearchKey;
                     }
                 }
 
@@ -65,16 +66,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                 if (Request.QueryString["issue"] != null && !Request.QueryString["issue"].ToString().IsNullOrEmpty()) {
                     this.ChildIssue = Request.QueryString["issue"].ToString();
                     IsTagged = true;
+                    hfChildIssue.Value = this.ChildIssue;
                 }
 
                 if (Request.QueryString["grade"] != null && !Request.QueryString["grade"].ToString().IsNullOrEmpty()) {
                     this.Grade = Request.QueryString["grade"].ToString();
                     IsTagged = true;
+                    hfGrade.Value = this.Grade;
                 }
 
                 if (Request.QueryString["topic"] != null && !Request.QueryString["topic"].ToString().IsNullOrEmpty()) {
                     this.Topic = Request.QueryString["topic"].ToString();
                     IsTagged = true;
+                    hfTopic.Value = this.Topic;
                 }
 
                 if (!IsPostBack) {
@@ -111,8 +115,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
 
                         var results = GetFilters();
                         if (results != null && results.Any()) {
-                            rptEventCard.DataSource = results.Take(6);
+                            rptEventCard.DataSource = results.Take(2);
                             rptEventCard.DataBind();
+                            if (results.Count() > 2) {
+                                pnlMoreArticle.Visible = true;
+                            }
+                            hfGUID.Value = Sitecore.Context.Item.ID.ToString();
+                            hfResultsPerClick.Value ="2";
                         }
                         else {
                             this.Visible = false;

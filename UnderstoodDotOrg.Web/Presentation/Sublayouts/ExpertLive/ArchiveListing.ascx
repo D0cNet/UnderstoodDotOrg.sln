@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ArchiveListing.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive.ArchiveListing" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN PARTIAL: community/experts_sub_nav -->
 <div class="container">
     <div class="row">
@@ -106,8 +107,10 @@
                         </div>
                         <!-- end .event-card -->
                     </div>
+                   
                 </ItemTemplate>
             </asp:Repeater>
+            
             <%--<div class="row">
                 <div class="event-card rs_read_this">
                     <div class="event-card-info group">
@@ -158,13 +161,13 @@
 <!-- Show More -->
 <!-- BEGIN PARTIAL: community/show_more -->
 <!--Show More-->
-<div class="container show-more rs_skip"  style="display:none;">
+<asp:Panel ID="pnlMoreArticle" runat="server" ClientIDMode="Static"  CssClass="container show-more rs_skip" Visible="false">
     <div class="row">
         <div class="col col-24">
-            <a class="show-more-link " href="#" data-path="community/event-cards" data-container="event-cards-container" data-item="event-cards" data-count="4">Show More<i class="icon-arrow-down-blue"></i></a>
+            <a class="show-more-link " id="archivelisting" href="#" data-path="community/event-cards" data-container="event-cards-container" data-item="event-cards" data-count="4">Show More<i class="icon-arrow-down-blue"></i></a>
         </div>
     </div>
-</div>
+</asp:Panel>
 <!-- .show-more -->
 <!-- END PARTIAL: community/show_more -->
 <!-- .show-more -->
@@ -209,4 +212,11 @@
         </div>
     </div>
 </div>
+<asp:HiddenField runat="server" ID="hfTopic" ClientIDMode="Static" />
+<asp:HiddenField runat="server" ID="hfGrade" ClientIDMode="Static" />
+<asp:HiddenField runat="server" ID="hfChildIssue" ClientIDMode="Static" />
+<asp:HiddenField runat="server" ID="hfSearchKey" ClientIDMode="Static" />
+<asp:HiddenField runat="server" ID="hfResultsPerClick" ClientIDMode="Static" />
+<asp:HiddenField runat="server" ID="hfGUID" ClientIDMode="Static" />
+
 <!-- END PARTIAL: community/experts_suggest_webinar -->

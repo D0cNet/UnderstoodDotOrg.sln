@@ -41,16 +41,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
 
        
         protected void Page_Load(object sender, EventArgs e) {
-            //if (!Sitecore.Context.Item.IsOfType(ExpertLivePageItem.TemplateId)) {
-            //    if (!IsArchiveItem(Sitecore.Context.Item)) {
-            //        expertLivePageItem = GetExpertLivePageItem();
-            //        pnlFilter.Visible = false;
-            //    }
-            //    else {
-            //        this.Visible = false;
-            //    }
-            //}
-
+            
             if (Request.QueryString["featured"] != null && !Request.QueryString["featured"].ToString().IsNullOrEmpty()) {
                 if (Request.QueryString["featured"].ToString() == "true") {
                     IsFeatured = true;
@@ -221,7 +212,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                 }
 
                 result = context.GetQueryable<EventArchiveSearch>().Where(predicate).Select(i => i.GetItem()).ToList();
-                searchResultItems = result.Select(t => new BaseEventDetailPageItem(t)).Where(t => t.EventDate.DateTime >= DateTime.Today).OrderByDescending(t => t.EventDate.DateTime).ToList();
+                searchResultItems = result.Select(t => new BaseEventDetailPageItem(t)).Where(t => t.EventDate != null && t.EventDate.DateTime >= DateTime.Today).OrderByDescending(t => t.EventDate.DateTime).ToList();
                 if (IsTagged) {
                     result = result.Where(t => !IsArchiveItem(t) && IsTaggedItem(t)).ToList();
                 }

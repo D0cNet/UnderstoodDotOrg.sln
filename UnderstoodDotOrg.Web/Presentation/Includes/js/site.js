@@ -753,6 +753,66 @@ U.readSpeaker = function () {
   return self;
 };
 
+U.articleListing = function () {
+    /*View more article*/
+    var vcount = 1;
+    $('.show-more-link').click(function () {
+        var itemId = $('#hfGUID').val();
+        var resultsPerClick = $('#hfResultsPerClick').val();
+
+        var getQuery = '/Presentation/AjaxData/GetArticles.aspx?' + 'itemID=' + itemId + "&count=" + vcount + "&rpc=" + resultsPerClick;
+        $.ajax({
+
+            cache: false, url: getQuery,
+            success: function (data) {
+                try {
+
+
+                }
+                catch (ex)
+                { }
+            }
+        });
+        return false;
+    });
+
+};
+
+U.archiveEventListing = function () {
+    /*View more article*/
+    var vcount = 1;
+    $('#archivelisting').click(function () {
+        var itemId = $('#hfGUID').val();
+        var searchkey = $('#hfSearchKey').val();
+        var topic = $('#hfTopic').val();
+        var issue = $('#hfChildIssue').val();
+        var grade = $('#hfGrade').val();
+        var resultsPerClick = $('#hfResultsPerClick').val();
+
+        var getQuery = '/Presentation/AjaxData/ArchiveEvents.aspx?' + 'q=' + searchkey + "&itemid=" + itemId + "&grade=" + grade + "&issue=" + issue + "&topic=" + topic + "&count=" + vcount + "&rpc=" + resultsPerClick;
+       
+        
+        $.ajax({
+
+            cache: false, url: getQuery,
+            success: function (data) {
+                try {
+                   
+                    $('.event-cards').append(data);
+                   
+                    if ($(data).filter("#lblmoreArticle").text() == "false") {
+                        $('.view-more').hide();
+                    }
+                    vcount = vcount + 1;
+                }
+                catch (ex)
+                { }
+            }
+        });
+        return false;
+    });
+};
+
 $(document).ready(function() {
 
   var drawerMenu = new U.drawerMenu();
@@ -771,6 +831,9 @@ $(document).ready(function() {
 
   new U.uniformStyling();
 
+  //var articleListing = new U.articleListing();
+
+  var archiveEventListing = new U.archiveEventListing();
   //new U.readSpeaker().init();
 
   // input placeholder fix for IE
