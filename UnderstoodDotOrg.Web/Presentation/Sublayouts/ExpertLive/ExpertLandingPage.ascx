@@ -70,7 +70,6 @@
                         </div>
                     </div>
                     <!-- .about-expert -->
-
                 </asp:Panel>
             </ItemTemplate>
             <FooterTemplate>
@@ -87,13 +86,16 @@
 <!-- Show More -->
 <!-- BEGIN PARTIAL: community/show_more -->
 <!--Show More-->
-<div class="container show-more rs_skip">
+<asp:Panel runat="server" ID="pnlShowMore" ClientIDMode="Static" CssClass="container show-more rs_skip" Visible="false">
     <div class="row">
         <div class="col col-24">
-            <a class="show-more-link " href="#" data-path="about/about-experts-listing" data-container="about-experts-listing" data-item="about-expert" data-count="3">Show More<i class="icon-arrow-down-blue"></i></a>
+            <a class="show-more-link" id="expertListing"  href="#" data-path="about/about-experts-listing" data-container="about-experts-listing" data-item="about-expert" data-count="3">Show More<i class="icon-arrow-down-blue"></i></a>
         </div>
     </div>
-</div>
+</asp:Panel>
+<asp:HiddenField runat="server" ID="hfResultsPerClick" ClientIDMode="Static" />
+<asp:HiddenField runat="server" ID="hfGUID" ClientIDMode="Static" />
+
 <!-- .show-more -->
 <!-- END PARTIAL: community/show_more -->
 <!-- .show-more -->
