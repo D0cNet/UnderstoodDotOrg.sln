@@ -961,6 +961,21 @@
     <Compile Include="Presentation\Sublayouts\Containers\TwoRow.ascx.designer.cs">
       <DependentUpon>TwoRow.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\DecisionTool\Basesublayout.cs" />
+    <Compile Include="Presentation\Sublayouts\DecisionTool\DecisionToolLandingPage.ascx.cs">
+      <DependentUpon>DecisionToolLandingPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\DecisionTool\DecisionToolLandingPage.ascx.designer.cs">
+      <DependentUpon>DecisionToolLandingPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\DecisionTool\DecisionToolQuestionPage.ascx.cs">
+      <DependentUpon>DecisionToolQuestionPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\DecisionTool\DecisionToolQuestionPage.ascx.designer.cs">
+      <DependentUpon>DecisionToolQuestionPage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx.cs">
       <DependentUpon>ArchiveListing.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2148,6 +2163,8 @@
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningLoggedIn.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningLoggedOut.ascx" />
     <Content Include="Presentation\Sublayouts\Containers\TwoRow.ascx" />
+    <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolLandingPage.ascx" />
+    <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolQuestionPage.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\CommunitySubHeader.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\EventArchive.ascx" />
@@ -2273,6 +2290,13 @@
     <Content Include="Handlers\DownloadFile.ashx" />
     <None Include="Properties\PublishProfiles\Local.pubxml">
       <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
