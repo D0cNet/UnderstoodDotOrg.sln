@@ -73,11 +73,7 @@
 
 				uxEmailAddress.Text = this.CurrentUser.UserName;
 
-				var journeyInterests = this.CurrentMember.Journeys;
-				if (journeyInterests != null && journeyInterests.Count > 0)
-				{
-					uxJourney.Text = string.Join(", ", journeyInterests.Select(i => i.Value));
-				}
+				SetJourney();
 
 				uxPassword.Text = replacePassword("digitalpulp!");
 
@@ -118,6 +114,33 @@
 				}
 			}
         }
+
+		private void SetJourney()
+		{
+			var journeyInterests = this.CurrentMember.Journeys;
+			if (journeyInterests != null && journeyInterests.Count > 0)
+			{
+				uxJourney.Text = string.Join(", ", journeyInterests.Select(i => i.Value));
+			}
+
+			IEnumerable<ParentInterestItem> parentJournies = GlobalsItem.GetParentJournies();
+
+			IEnumerable<Guid> currentMemberJourneyIDs = this.CurrentMember.Journeys.Select(i => i.Key);
+
+			foreach (ParentInterestItem pi in parentJournies)
+			{
+				Guid guid = pi.ID.Guid;
+
+				ListItem li = new ListItem(pi.InterestName.Raw, pi.ID.Guid.ToString());
+
+				if (currentMemberJourneyIDs.Contains(guid))
+				{
+					li.Selected = true;
+				}
+
+				ddlJourney.Items.Add(li);
+			}
+		}
 
 		private void SetRole()
 		{
@@ -250,6 +273,8 @@
 		protected void lbSave_AboutMe_Click(object sender, EventArgs e)
 		{
 			this.CurrentMember.Role = new Guid(ddlRole.SelectedValue);
+			this.CurrentMember.Journeys = new List<Journey>() { new Journey { Key = new Guid(ddlJourney.SelectedValue), Value = ddlJourney.SelectedItem.Text } };
+
 			ReloadPage();
 		}
 

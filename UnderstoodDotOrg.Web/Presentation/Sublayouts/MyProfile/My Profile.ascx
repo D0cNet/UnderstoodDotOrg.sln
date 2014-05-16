@@ -46,7 +46,7 @@
                                 <div class="col col-18 profile-detail-information">
                                     <span class="cnt">
                                         <asp:Literal ID="uxRole" runat="server"></asp:Literal></span>
-									<span class="txtBox">
+									<span class="form-field">
 										<asp:DropDownList ID="ddlRole" runat="server"></asp:DropDownList>
 									</span>
                                 </div>
@@ -57,9 +57,11 @@
                                     <h3><asp:Literal ID="ltlMyJourneyLabel" runat="server"></asp:Literal></h3>
                                 </div>
                                 <div class="col col-18 profile-detail-information">
-                                    <%--<span>I'm just starting to work on my child's issues</span>--%>
-                                    <span>
+                                    <span class="cnt">
                                         <asp:Literal ID="uxJourney" runat="server"></asp:Literal></span>
+									<span class="form-field">
+										<asp:DropDownList ID="ddlJourney" runat="server"></asp:DropDownList>
+									</span>
                                 </div>
                             </div>
                             <!-- .row -->
@@ -173,7 +175,7 @@
                                 </div>
                                 <div class="col col-18 profile-detail-information">
                                     <span class="cnt"><asp:Literal ID="uxZipcode" runat="server"></asp:Literal></span>
-									<span class="txtBox"><asp:TextBox ID="txtZipcode" CssClass="txtZipcode" runat="server"></asp:TextBox></span>
+									<span class="form-field"><asp:TextBox ID="txtZipcode" CssClass="txtZipcode" runat="server"></asp:TextBox></span>
                                 </div>
                             </div>
                             <!-- .row -->
@@ -264,7 +266,7 @@
                                 </div>
                                 <div class="col col-18 profile-detail-information">
                                     <span class="cnt"><asp:Literal runat="server" ID="uxPhoneNumber"></asp:Literal></span>
-									<span class="txtBox"><asp:TextBox ID="txtPhoneNumber" runat="server"></asp:TextBox></span>
+									<span class="form-field"><asp:TextBox ID="txtPhoneNumber" runat="server"></asp:TextBox></span>
                                 </div>
                             </div>
                             <!-- .row -->

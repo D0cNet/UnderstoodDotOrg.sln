@@ -16,5 +16,12 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
 											.Where(i => i.TemplateID.ToString() == ParentRoleItem.TemplateId)
 											.Select(i => new ParentRoleItem(i));
 		}
+
+		public static IEnumerable<ParentInterestItem> GetParentJournies()
+		{
+			return Sitecore.Context.Database.SelectItems("sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Journey/*")
+											.Where(i => i.TemplateID.ToString() == ParentInterestItem.TemplateId)
+											.Select(i => new ParentInterestItem(i));
+		}
 	}
 }
