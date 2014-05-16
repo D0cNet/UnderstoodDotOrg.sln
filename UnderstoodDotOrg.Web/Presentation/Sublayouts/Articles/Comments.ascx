@@ -18,28 +18,28 @@
                 </header>
 
                 <div class="comment-list-wrapper">
-                    <asp:Repeater runat="server" ID="CommentRepeater">
+                    <asp:Repeater runat="server" ID="CommentRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Comment">
                         <ItemTemplate>
                             <div class="comment-wrapper">
-                                <div class="comment-header" id="<%# Eval("_commentId") %>">
+                                <div class="comment-header" id="<%# Item.CommentId %>">
                                     <span class="comment-avatar">
-                                        <img style="height: 60px; width: 60px;" alt="60x60 Placeholder" src='<%# Eval("_authorAvatarUrl") %>' />
+                                        <img style="height: 60px; width: 60px;" alt="60x60 Placeholder" src='<%# Item.AuthorAvatarUrl %>' />
                                     </span>
                                     <span class="comment-info">
-                                        <span class="comment-username"><%# Eval("_authorUsername") %></span>
-                                        <span class="comment-date"><%# Eval("_publishedDate") %></span>
+                                        <span class="comment-username"><%# Item.AuthorUsername %></span>
+                                        <span class="comment-date"><%# Item.PublishedDate %></span>
                                     </span>
-                                    <a class="comment-like"><i class="icon-comment-like"></i><%# Eval("_likes") %></a>
+                                    <a class="comment-like"><i class="icon-comment-like"></i><%# Item.Likes %></a>
                                 </div>
                                 <div class="comment-body">
                                     <p>
-                                        <%# Eval("_body")  %>
+                                        <%# Item.Body  %>
                                     </p>
                                 </div>
                                 <div class="comment-actions">
                                     <asp:LinkButton CssClass="comment-reply" OnClick="ReplyButton_Click" ID="ReplyButton" runat="server"><i class="icon-comment-reply"></i>Reply</asp:LinkButton>
-                                    <asp:LinkButton OnClick="LikeButton_Click" ID="LikeButton" CommandArgument='<%# Eval("_commentId") + "&" + Eval("_commentContentTypeId") %>' class="comment-like" runat="server"><i class="icon-comment-like"></i>This Helped</asp:LinkButton>
-                                    <asp:LinkButton CssClass="comment-flag" CommandArgument='<%# Eval("_commentId") %>' OnClick="FlagButton_Click" ID="FlagButton" runat="server">
+                                    <asp:LinkButton OnClick="LikeButton_Click" ID="LikeButton" CommandArgument='<%# Item.CommentId + "&" + Item.CommentContentTypeId %>' class="comment-like" runat="server"><i class="icon-comment-like"></i>This Helped</asp:LinkButton>
+                                    <asp:LinkButton CssClass="comment-flag" CommandArgument='<%# Item.CommentId %>' OnClick="FlagButton_Click" ID="FlagButton" runat="server">
                                         <i class="icon-comment-flag"></i>Report as inappropriate</asp:LinkButton>
                                     <!--<a class="comment-flag" href="REPLACE"><i class="icon-comment-flag"></i>Report as inappropriate</--a>-->
                                 </div>

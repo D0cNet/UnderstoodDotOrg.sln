@@ -25,12 +25,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 return;
             }
 
-            int blogID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogId.Raw);
-            int blogPostID = Convert.ToInt32(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw);
-
             try
             {
-                List<Comment> comments = CommunityHelper.ReadComments(blogID, blogPostID);
+                List<Comment> comments = CommunityHelper.ReadComments(
+                    ObjBasicArticle.DefaultArticlePage.BlogId.Raw,
+                    ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw);
 
                 if (comments != null)
                 {
@@ -40,11 +39,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         litNumComments.Text = "(" + numComments + ")";
                     }
 
-                    Comment recentComment = comments.OrderByDescending(x => x._commentDate).First();
-                    litCommentblurb.Text = CommunityHelper.FormatString100(recentComment._body);// Take(100).ToString();
-                    litAuthorName.Text = recentComment._authorDisplayName;
-                    litTimeStamp.Text = recentComment._publishedDate;
-                    hlAddMyComment.HRef = "#" + recentComment._commentId; //Navigate to comment
+                    Comment recentComment = comments.OrderByDescending(x => x.CommentDate).First();
+                    litCommentblurb.Text = CommunityHelper.FormatString100(recentComment.Body);// Take(100).ToString();
+                    litAuthorName.Text = recentComment.AuthorDisplayName;
+                    litTimeStamp.Text = recentComment.PublishedDate;
+                    hlAddMyComment.HRef = "#" + recentComment.CommentId; //Navigate to comment
                 }
 
             }

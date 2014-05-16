@@ -9,47 +9,48 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 {
     public class Comment
     {
-        public string _id { get; set; }
-        public string _url { get; set; }
-        public string _body { get; set; }
-        public string _parentId { get; set; }
-        public string _publishedDate { get; set; }
-        public string _likes { get; set; }
-        public string _commentId { get; set; }
-        public string _contentId { get; set; }
-        public string _commentContentTypeId { get; set; }
-        public string _authorId { get; set; }
-        public string _authorAvatarUrl { get; set; }
-        public string _authorDisplayName { get; set; }
-        public string _authorProfileUrl { get; set; }
-        public string _replyCount { get; set; }
-        public string _isApproved { get; set; }
-        public string _authorUsername { get; set; }
+        public string Id { get; set; }
+        public string Url { get; set; }
+        public string Body { get; set; }
+        public string ParentId { get; set; }
+        public string PublishedDate { get; set; }
+        public string Likes { get; set; }
+        public string CommentId { get; set; }
+        public string ContentId { get; set; }
+        public string CommentContentTypeId { get; set; }
+        public string AuthorId { get; set; }
+        public string AuthorAvatarUrl { get; set; }
+        public string AuthorDisplayName { get; set; }
+        public string AuthorProfileUrl { get; set; }
+        public string ReplyCount { get; set; }
+        public string IsApproved { get; set; }
+        public string AuthorUsername { get; set; }
+        public DateTime CommentDate { get; set; }
+
+        public Comment() { }
 
         public Comment(string id, string url, string body, string parentId, string contentId, string isApproved, string replyCount,
             string commentId, string commentContentTypeId, string authorId, string authorAvatarUrl, string authorUsername, string publishedDate,
                 string authorDisplayName, string authorProfileUrl, string likes, string commentDate)
         {
-            _id = id;
-            _url = url;
-            _body = body;
-            _parentId = parentId;
-            _contentId = contentId;
-            _isApproved = isApproved;
-            _replyCount = replyCount;
-            _commentId = commentId;
-            _commentContentTypeId = commentContentTypeId;
-            _publishedDate = publishedDate;
-            _authorId = authorId;
-            _authorAvatarUrl = authorAvatarUrl;
-            _authorDisplayName = authorDisplayName;
-            _authorProfileUrl = authorProfileUrl;
-            _authorUsername = authorUsername;
-            _likes = likes;
-            _commentDate = DateTime.Parse(commentDate);
+            Id = id;
+            Url = url;
+            Body = body;
+            ParentId = parentId;
+            ContentId = contentId;
+            IsApproved = isApproved;
+            ReplyCount = replyCount;
+            CommentId = commentId;
+            CommentContentTypeId = commentContentTypeId;
+            PublishedDate = publishedDate;
+            AuthorId = authorId;
+            AuthorAvatarUrl = authorAvatarUrl;
+            AuthorDisplayName = authorDisplayName;
+            AuthorProfileUrl = authorProfileUrl;
+            AuthorUsername = authorUsername;
+            Likes = likes;
+            CommentDate = DateTime.Parse(commentDate);
         }
-
-        public DateTime _commentDate { get; set; }
     }
 
     public class BlogPost

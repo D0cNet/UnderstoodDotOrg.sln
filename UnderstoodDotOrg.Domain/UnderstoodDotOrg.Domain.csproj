@@ -195,6 +195,7 @@
     <Compile Include="Search\JSON\SearchArticle.cs" />
     <Compile Include="Search\SearchHelper.cs" />
     <Compile Include="Search\JSON\ResultSet.cs" />
+    <Compile Include="Search\SessionSearchResult.cs" />
     <Compile Include="SitecoreCIG\FolderItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.instance.cs" />

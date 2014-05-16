@@ -58,19 +58,27 @@ namespace UnderstoodDotOrg.Web.Handlers
         public BehaviorResultSet SearchBehaviorArticles(string challenge, string grade, int page)
         {
             BehaviorResultSet results = new BehaviorResultSet();
+            List<BehaviorAdvice> articles;
 
             int totalResults = 0;
-            List<BehaviorAdvice> articles;
+            SessionSearchResult srs = new SessionSearchResult
+            {
+                Challenge = challenge,
+                Grade = grade
+            };
+
+            // Look up challenge
 
             // Populate all results into session for article pages
             if (Session[Constants.BehaviorSearchKey] != null || page == 1)
             {
                 articles = SearchHelper.GetAllBehaviorArticles(challenge, grade);
-                Session[Constants.BehaviorSearchKey] = articles;
+                srs.Results = articles;
+                Session[Constants.BehaviorSearchKey] = srs;
             }
             else
             {
-                articles = (List<BehaviorAdvice>)Session[Constants.BehaviorSearchKey];
+                articles = ((SessionSearchResult)Session[Constants.BehaviorSearchKey]).Results;
             }
 
             var pagedArticles = articles.Skip(page - 1).Take(Constants.BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE);

@@ -46,7 +46,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         private void PopulateComments()
         {
-            List<Comment> dataSource = CommunityHelper.ReadComments(_blogId, _blogPostId);
+            List<Comment> dataSource = CommunityHelper.ReadComments(_blogId.ToString(), _blogPostId.ToString());
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
 
