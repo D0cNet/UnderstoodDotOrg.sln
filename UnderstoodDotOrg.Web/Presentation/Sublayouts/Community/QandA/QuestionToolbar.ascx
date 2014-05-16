@@ -5,8 +5,8 @@
         <label class="description" for="ask">
             Get answers to<br />
             your questions.</label>
-        <asp:TextBox type="text" ID="AskTextBox" name="ask" placeholder="Enter a question" runat="server" />
-        <asp:Button ID="AskQuestionButton" OnClick="AskQuestionButton_Click" runat="server" Text="Submit Your Question" class="button" />
+        <input name="main_0$questiontoolbar_0$AskTextBox" id="main_0_questiontoolbar_0_AskTextBox" type="text" name="ask" placeholder="Enter a question" />
+        <input type="submit" name="main_0$questiontoolbar_0$AskQuestionButton" value="Submit Your Question" id="main_0_questiontoolbar_0_AskQuestionButton" class="button" />
     </div>
     <div class="card card-answer">
         <h2>Answer</h2>
@@ -20,4 +20,4 @@
             the answers</span>
         <a class="button" href="REPLACE">See Answered Questions</a>
     </div>
-</div>
+</div>

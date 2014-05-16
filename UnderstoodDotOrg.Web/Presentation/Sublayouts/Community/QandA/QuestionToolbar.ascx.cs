@@ -15,11 +15,5 @@
         {
             // Put user code to initialize the page here
         }
-
-        protected void AskQuestionButton_Click(object sender, EventArgs e)
-        {
-            string textBoxText = AskTextBox.Text;
-            CommunityHelper.CreateQuestion("3", textBoxText);
-        }
     }
 }

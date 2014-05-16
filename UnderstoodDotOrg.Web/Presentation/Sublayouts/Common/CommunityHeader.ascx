@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CommunityHeader.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogHeader" %>
-    <!-- BEGIN PARTIAL: community/main_header -->
-<div class="container page-topic ">
+<!-- BEGIN PARTIAL: community/main_header -->
+<div class="container community-main-header ">
     <header>
         <div class="row header-wrapper">
             <div class="col col-14 offset-1 header-title">
@@ -35,60 +35,62 @@
             <div class="col col-24">
                 <div class="label-menu"><span>Menu</span></div>
                 <ul class="menu" aria-role="navigation" aria-label="secondary-navigation">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+
+
                     <li class="title">
-                      <p class="select-topic">Select a topic:</p>
-                      <button>Blogs</button>
-                      <i class="icon-hide-show-fff"></i>
+                        <p class="select-topic">Select a topic:</p>
+                        <button>What's Happening Now</button>
+                        <i class="icon-hide-show-fff"></i>
                     </li>
-                    
-                    
+
+
+
+
+
+
+
+
+
+
+
+
                     <li class="submenu">
                         <div class="inner">
-                            <div class="label-more"><button>More <i class="icon-hide-show-fff"></i></button></div>
+                            <div class="label-more">
+                                <button>More <i class="icon-hide-show-fff"></i></button>
+                            </div>
                             <ul>
-                                
-                                
-                                
+
+
+
                                 <li><span><a href="/en/Community/Whats%20Happening.aspx">What's Happening Now</a></span></li>
-                                
-                                
-                                
-                                
+
+
+
+
                                 <li><span><a href="/en/Community/Experts%20Live/Experts%20Live">Experts Live</a></span></li>
-                                
-                                
-                                
-                                
+
+
+
+
                                 <li><span><a href="/en/Q%20and%20A.aspx">Q&nbsp;&amp;&nbsp;A</a></span></li>
-                                
-                                
-                                
-                                
+
+
+
+
                                 <li><span><a href="REPLACE">Parents Like Me</a></span></li>
-                                
-                                
-                                
-                                
+
+
+
+
                                 <li><span><a href="REPLACE">Groups</a></span></li>
-                                
-                                
-                                
+
+
+
                                 <li><span><a href="/en/Blogs/All%20Blogs%20Page.aspx" class="selected">Blogs</a></span></li>
-                                
-                                
-                                
+
+
+
                             </ul>
                         </div>
                     </li>
