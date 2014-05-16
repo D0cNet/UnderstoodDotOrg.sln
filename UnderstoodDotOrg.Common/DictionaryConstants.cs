@@ -674,7 +674,7 @@ namespace UnderstoodDotOrg.Common
 
         public static string WebniarLabel {
             get {
-                return Translate.TextByDomain(PosesDictionary, "Webniar Label");
+                return Translate.TextByDomain(PosesDictionary, "Webinar Label");
             }
         }
 
@@ -728,6 +728,11 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+       public static string CloseTranscriptLabel {
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Close Transcript Label");
+            }
+        }
 
         #endregion
     }

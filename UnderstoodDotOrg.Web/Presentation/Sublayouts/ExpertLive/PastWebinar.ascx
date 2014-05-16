@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PastWebinar.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve.PastWebinar" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <div class="container event">
     <header class="row">
@@ -8,7 +9,7 @@
                     <li><a href="REPLACE">Back to Ducimus Quia</a></li>
             </ul>
 
-            <h2 class="rs_read_this">Webinar: <em>Iure Ipsam Officia</em></h2>
+            <h2 class="rs_read_this"> <sc:FieldRenderer ID="frPageTItle" runat="server" FieldName="Page Title" /></h2>
         </div>
     </header>
 
@@ -17,13 +18,13 @@
             <div class="col-18 col event-content rs_read_this">
                 <div class="event-image">
                     <div class="thumbnail">
-                        <a href="REPLACE">
-                            <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                       <asp:HyperLink ID="hlLink" runat="server">
+                            <sc:FieldRenderer ID="scThumbImg" runat="server" FieldName="Expert Image" />
+                            <asp:Image runat="server" ID="imgExpertDefault" ImageUrl="http://placehold.it/150x150" Visible="false" />
                             <div class="image-label">
-                                Expert
-                           
+                                <asp:Literal ID="litGuest" runat="server"></asp:Literal>
                             </div>
-                        </a>
+                        </asp:HyperLink>
                     </div>
 
                     <!-- BEGIN PARTIAL: community/experts_recommended_for -->
@@ -41,13 +42,13 @@
                 </div>
                 <!-- end .event-image -->
 
-                <p class="event-date-time">2 days ago</p>
-                <p class="event-host-name">Necessitatibus Assumenda Sapiente</p>
-                <p class="event-host-title">Repudiandae Quia Voluptates Aperiam Eaque</p>
-                <p class="event-topics-subhead">Topics Covered</p>
-                <p class="event-topics">Eaque Distinctio Mollitia Vel Molestiae Doloribus Et Perspiciatis Ducimus Corporis</p>
-
-                <p>Earum fuga quia porro unde libero. laudantium natus quis fugit sed eum distinctio esse fugit sequi corporis molestias. aut dolorum ut voluptatum ipsum in iure minus quae</p>
+                <p class="event-date-time"><asp:Literal runat="server" ID="ltEventDate"></asp:Literal></p>
+                <p class="event-host-name"><sc:FieldRenderer ID="frExpertName" runat="server" FieldName="Expert Name" /></p>
+                <p class="event-host-title"><sc:FieldRenderer ID="frHeading" runat="server" FieldName="Heading" /></p>
+                <p class="event-topics-subhead"><sc:FieldRenderer ID="frSubHeading" runat="server" FieldName="Subheading" /></p>
+                <p class="event-topics"><sc:FieldRenderer ID="frEventHeading" runat="server" FieldName="Heading" /></p>
+                <sc:FieldRenderer ID="frbody" runat="server" FieldName="Body Content" />
+                <%--<p>Earum fuga quia porro unde libero. laudantium natus quis fugit sed eum distinctio esse fugit sequi corporis molestias. aut dolorum ut voluptatum ipsum in iure minus quae</p>--%>
 
             </div>
             <!-- end .event-content -->
@@ -80,7 +81,7 @@
         </div>
     </div>
 
-    <div class="row webinar-video">
+    <asp:Panel runat="server" ID="pnlVideo" CssClass="row webinar-video" Visible="false">
         <div class="container">
             <!-- BEGIN PARTIAL: video-player -->
             <div class="player-container">
@@ -106,10 +107,11 @@
                 <!-- BEGIN PARTIAL: transcript-control -->
                 <div class="transcript-container Video">
                     <div class="read-more mobile-close">
-                        <a href="REMOVE">Close Transcript<i class="icon-arrow-up-blue"></i></a>
+                        <a href="REMOVE"><asp:Literal runat="server" ID="ltVideoDetailShow" ></asp:Literal><i class="icon-arrow-up-blue"></i></a>
                     </div>
                     <div class="transcript-wrap clearfix rs_read_this">
-                        <div>
+                          <sc:FieldRenderer ID="frVideoTranscript" runat="server" FieldName="Video Transcript" />
+                        <%--<div>
                             <h2>Video Transcript</h2>
 
                             <h3>Dr.Richard Nightengale:</h3>
@@ -129,7 +131,7 @@
 
                             <h3>Parent:</h3>
                             <p>Deserunt itaque et ea placeat iusto magnam labore aperiam consequatur inventore est corrupti neque qui. quisquam quo fugit est quis nihil in aperiam dolorum quos ducimus. qui impedit distinctio atque quia. maxime quod quis at deleniti dicta officia recusandae. qui rerum illo architecto aspernatur dolorum quidem aperiam nobis. laudantium non voluptate ut. sint voluptatem quas aut ut sit qui nesciunt odit quis</p>
-                        </div>
+                        </div>--%>
                     </div>
                     <div class="read-more read-more-bottom"></div>
                 </div>
@@ -148,5 +150,5 @@
             </div>
             <!-- END PARTIAL: community/experts_was_this_helpful -->
         </div>
-    </div>
+    </asp:Panel>
 </div>
