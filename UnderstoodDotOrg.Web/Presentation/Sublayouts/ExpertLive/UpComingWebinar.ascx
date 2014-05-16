@@ -23,6 +23,7 @@
                     <div class="thumbnail">
                         <asp:HyperLink ID="hlLink" runat="server">
                             <sc:FieldRenderer ID="scThumbImg" runat="server" FieldName="Expert Image" />
+                            <asp:Image runat="server" ID="imgExpertDefault" ImageUrl="http://placehold.it/150x150" Visible="false" />
                             <div class="image-label">
                                 <asp:Literal ID="litGuest" runat="server"></asp:Literal>
                             </div>

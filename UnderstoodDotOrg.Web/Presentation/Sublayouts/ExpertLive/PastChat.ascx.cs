@@ -38,8 +38,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                         hlLink.NavigateUrl = expert.InnerItem.GetUrl();
                     }
                     FieldRenderer scThumbImg = FindControl("scThumbImg") as FieldRenderer;
-                    if (scThumbImg != null) {
+                    if (expert != null && expert.ExpertImage.MediaItem != null && scThumbImg != null) {
                         scThumbImg.Item = expert.InnerItem;
+                    }
+                    else {
+                        imgExpertDefault.Visible = true;
                     }
                     if (litGuest != null) {
                         litGuest.Text = expert.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;

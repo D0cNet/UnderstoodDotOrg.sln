@@ -52,8 +52,8 @@
 
             <div class="col col-11 offset-1 event-cards">
                 <div class="rs_read_this event-card-heading-wrapper">
-                    <h2><sc:FieldRenderer ID="frChatHeading" runat="server" FieldName="Chat Heading" Visible="false" /></h2>
-                    <p class="subhead"> <sc:FieldRenderer ID="frChatSubheading" runat="server" FieldName="Chat SubHeading" Visible="false" /></p>
+                    <h2><sc:FieldRenderer ID="frChatHeading" runat="server" FieldName="Chat Heading" /></h2>
+                    <p class="subhead"> <sc:FieldRenderer ID="frChatSubheading" runat="server" FieldName="Chat SubHeading" /></p>
                 </div>
                 <!-- BEGIN PARTIAL: community/experts_chat_card -->
                 <asp:Repeater runat="server" ID="rptExpertChat" OnItemDataBound="rptExpertChat_ItemDataBound">

@@ -40,6 +40,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer scThumbImg;
         
         /// <summary>
+        /// imgExpertDefault control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgExpertDefault;
+        
+        /// <summary>
         /// litGuest control.
         /// </summary>
         /// <remarks>

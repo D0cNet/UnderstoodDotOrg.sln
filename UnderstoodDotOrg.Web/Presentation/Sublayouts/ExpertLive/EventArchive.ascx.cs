@@ -46,6 +46,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
             }
             ExpertLivePageItem ContextItem = GetExpertLivePageItem();
             if (ContextItem != null) {
+                frHeading.Item = ContextItem;
                 ArchiveItem archivePage = ContextItem.GetArchiveItem();
 
                 if (archivePage != null) {
