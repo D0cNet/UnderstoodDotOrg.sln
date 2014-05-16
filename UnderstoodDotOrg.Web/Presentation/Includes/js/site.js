@@ -830,6 +830,7 @@ $(document).ready(function() {
   var languageSelector = new U.languageSelector();
 
   new U.uniformStyling();
+  DivideDetailPages();
 
   //var articleListing = new U.articleListing();
 
@@ -847,6 +848,25 @@ $(document).ready(function() {
 
   
 });
+
+function DivideDetailPages() {
+    var $exp_nav = $('.about-experts-listing'),
+        $boxes = $exp_nav.find('.col-6'),
+        per_row_box = 3;
+
+    var i = 0;
+
+    // Loop through and for every 7 list items, move them into a new list
+    for (; i < $boxes.length; i++) {
+        if (i % 3 == 0) {
+            $exp_nav.append('<div class="row about-expert-row expertrow' + i + '"></div>');
+            $('.expertrow' + i).append($boxes.slice(i, i + per_row_box));
+            if (i == 0) {
+                $('.expertrow' + i).addClass("skiplink-content");
+            }
+        }
+    }
+}
 
 
 
