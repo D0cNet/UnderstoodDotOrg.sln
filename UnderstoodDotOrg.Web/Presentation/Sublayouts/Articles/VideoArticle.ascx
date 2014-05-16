@@ -1,49 +1,52 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="VideoArticle.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.VideoArticle" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="container article-intro">
-  <div class="row">
-    <!-- helpful count -->
-    <div class="col col-10 article-intro-count multiple">
-      <!-- BEGIN PARTIAL: helpful-count -->
-<div class="count-helpful">
-  <a href="REPLACE"><span>34</span>Found this helpful</a>
-</div>
-<!-- END PARTIAL: helpful-count -->
-      <!-- BEGIN PARTIAL: comments-count -->
-<div class="count-comments">
-  <a href="REPLACE"><span>19</span>Comments</a>
-</div>
-<!-- END PARTIAL: comments-count -->
-    </div>
+    <div class="row">
+        <!-- helpful count -->
+        <div class="col col-10 article-intro-count multiple">
+            <!-- BEGIN PARTIAL: helpful-count -->
+            <div class="count-helpful">
+                <a href="REPLACE"><span>34</span>Found this helpful</a>
+            </div>
+            <!-- END PARTIAL: helpful-count -->
+            <!-- BEGIN PARTIAL: comments-count -->
+            <div class="count-comments">
+                <a href="REPLACE"><span>19</span>Comments</a>
+            </div>
+            <!-- END PARTIAL: comments-count -->
+        </div>
 
-    <!-- intro-text -->
-    <div class="col col-13 offset-1">
-      <!-- BEGIN PARTIAL: article-intro-text -->
-<div class="article-intro-text">
-  <p><%-- This would be the intro text to the slideshow. It should run about 35 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum convallis risus id felis.--%>
-     <sc:FieldRenderer ID="FieldRenderer1" fr="frIntroText"  runat="server" FieldName="Intro Text"/>
-  </p>
-</div>
-<!-- END PARTIAL: article-intro-text -->
-    </div>
+        <!-- intro-text -->
+        <div class="col col-13 offset-1">
+            <!-- BEGIN PARTIAL: article-intro-text -->
+            <div class="article-intro-text">
+                <p>
+                    <%-- This would be the intro text to the slideshow. It should run about 35 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum convallis risus id felis.--%>
+                    <sc:FieldRenderer ID="FieldRenderer1" fr="frIntroText" runat="server" FieldName="Intro Text" />
+                </p>
+            </div>
+            <!-- END PARTIAL: article-intro-text -->
+        </div>
 
-  </div><!-- .row -->
-</div><!-- .container -->
+    </div>
+    <!-- .row -->
+</div>
+<!-- .container -->
 
 <div class="container article">
-  <div class="row">
-    <!-- article -->
-    <div class="col col-22 offset-1">
-      <!-- BEGIN PARTIAL: article-video-container -->
-<div class="article-video-container">
-	<img class="foo" alt="FPO content image" src="http://placehold.it/870x489&amp;text=870x489" />
-</div>
-<!-- END PARTIAL: article-video-container -->
-      <!-- BEGIN PARTIAL: transcript-control -->
-<div class="transcript-container Video">
-  <div class="transcript-wrap">
-      <sc:FieldRenderer ID="frTranscript" runat="server" FieldName="Transcript"/>
-   <%-- <div>
+    <div class="row">
+        <!-- article -->
+        <div class="col col-22 offset-1">
+            <!-- BEGIN PARTIAL: article-video-container -->
+            <div class="article-video-container">
+                <img class="foo" alt="FPO content image" src="http://placehold.it/870x489&amp;text=870x489" />
+            </div>
+            <!-- END PARTIAL: article-video-container -->
+            <!-- BEGIN PARTIAL: transcript-control -->
+            <div class="transcript-container Video">
+                <div class="transcript-wrap clearfix rs_read_this">
+                    <sc:FieldRenderer ID="frTranscript" runat="server" FieldName="Transcript" />
+                    <%-- <div>
       <h2>Video Transcript</h2>
 
       <h3>Dr.Richard Nightengale:</h3>
@@ -64,19 +67,20 @@
       <h3>Parent:</h3>
       <p>Nihil rem illo nulla eligendi asperiores magni libero numquam ipsum a voluptatem. ullam quo mollitia unde blanditiis est qui eius nostrum enim provident rerum rerum. quia neque error occaecati et. a tenetur nisi ipsum perferendis fugit cupiditate necessitatibus. laborum quos ex qui ipsam blanditiis nemo ut voluptatem harum earum sed qui est</p>
     </div> --%>
-  </div>
-  <div class="read-more"></div>
-</div>
-<!-- END PARTIAL: transcript-control -->
+                </div>
+                <div class="read-more read-more-bottom"></div>
+            </div>
+            <!-- END PARTIAL: transcript-control -->
+        </div>
     </div>
-  </div>
-</div><!-- .container -->
+</div>
+<!-- .container -->
 
 <div class="container">
-  <div class="row">
-    <div class="col col-15">
-    
-    <!-- BEGIN PARTIAL: reviewed-by -->
+    <div class="row">
+        <div class="col col-15">
+
+            <!-- BEGIN PARTIAL: reviewed-by -->
             <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
             <%--<p class="reviewed-by">
                 <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
@@ -90,27 +94,29 @@
                 </span>
             </p>--%>
             <!-- END PARTIAL: reviewed-by -->
-    <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful content">
-   
-  <h4>Did you find this helpful?</h4>
-  <ul>
-    <li>
-      <button class="helpful-yes">Yes</button>
-    </li>
-    <li>
-      <button class="helpful-no">No</button>
-    </li>
-  </ul>
-  <div class="clearfix"></div>
-   
-</div>
-<!-- END PARTIAL: find-helpful -->
-    </div>
-  </div><!-- .row -->
-</div><!-- .container -->
+            <!-- BEGIN PARTIAL: find-helpful -->
+            <div class="find-this-helpful content">
 
- 
+                <h4>Did you find this helpful?</h4>
+                <ul>
+                    <li>
+                        <button class="helpful-yes">Yes</button>
+                    </li>
+                    <li>
+                        <button class="helpful-no">No</button>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- END PARTIAL: find-helpful -->
+        </div>
+    </div>
+    <!-- .row -->
+</div>
+<!-- .container -->
+
+
 <%--<div class="container more-carousel">
   <div class="row">
     <div class="col col-24 offset-1">
