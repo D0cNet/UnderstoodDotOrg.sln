@@ -17,8 +17,18 @@ namespace UnderstoodDotOrg.Framework.UI
             get
             {
                 if (_dataSource == null)
+                {
                     if (Parent is Sublayout)
+                    {
                         _dataSource = Sitecore.Context.Database.GetItem(((Sublayout)Parent).DataSource);
+                    }
+                }
+
+                // if we're still null, fall back to the context item
+                if (_dataSource == null)
+                {
+                    _dataSource = Sitecore.Context.Item;
+                }
 
                 return _dataSource;
             }
