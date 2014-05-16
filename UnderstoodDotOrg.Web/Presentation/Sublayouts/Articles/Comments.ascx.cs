@@ -50,6 +50,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
 
+            // TODO: If paging is added, revise this to use TotalCount attribute in XML response
             // TODO: use dictionary
             CommentCountDisplay.Text = String.Format("Comments ({0})", dataSource.Count);
         }

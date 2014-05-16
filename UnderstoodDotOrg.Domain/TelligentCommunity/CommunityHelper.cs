@@ -157,16 +157,19 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                     // TODO: Add error handling for invalid ids
 
-                    var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", 
+                    var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml?PageSize=1", 
                         blogId, blogPostId));
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
                     xmlDoc.LoadXml(xml);
 
-                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/Comments");
 
-                    count = nodes.Count;
+                    if (node != null)
+                    {
+                        count = Convert.ToInt32(node.Attributes["TotalCount"].Value);
+                    }
                 }
                 catch { }
             }
@@ -281,16 +284,20 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         // TODO: add validation for invalid content id
                         
                         webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
-                        var requestUrl = GetApiEndPoint(string.Format("likes.xml?ContentId={0}", 
+                        var requestUrl = GetApiEndPoint(string.Format("likes.xml?ContentId={0}&PageSize=1", 
                             guid.ToString()));
 
                         var xml = webClient.DownloadString(requestUrl);
 
                         var xmlDoc = new XmlDocument();
                         xmlDoc.LoadXml(xml);
-                        XmlNodeList nodes = xmlDoc.SelectNodes("Response/Likes/Like");
+                        XmlNode node = xmlDoc.SelectSingleNode("Response/Likes");
 
-                        count = nodes.Count;
+                        if (node != null)
+                        {
+                            count = Convert.ToInt32(node.Attributes["TotalCount"].Value);
+                        }
+                            
                     }
                     catch { }
                 }
