@@ -39,20 +39,20 @@
             $tyceModalNoChallenge.modal('hide');
         });
 
-        var $tyceModalBegin = $('#tyce-modal-begin');
-        $(".tyce-before-begin-button").on("click", function() {
-            $tyceModalBegin
-                .modal('show')
-                .css('visibility', 'hidden')
-                .on('shown.bs.modal', function () {
-                    $(window).trigger('resize');
-                    $tyceModalBegin.css('visibility', 'visible');
-                });
-        });
+        //var $tyceModalBegin = $('#tyce-modal-begin');
+        //$(".tyce-before-begin-button").on("click", function() {
+        //    $tyceModalBegin
+        //        .modal('show')
+        //        .css('visibility', 'hidden')
+        //        .on('shown.bs.modal', function () {
+        //            $(window).trigger('resize');
+        //            $tyceModalBegin.css('visibility', 'visible');
+        //        });
+        //});
 
-        $tyceModalBegin.find('.button-close').on('click', function () {
-            $tyceModalBegin.modal('hide');
-        });
+        //$tyceModalBegin.find('.button-close').on('click', function () {
+        //    $tyceModalBegin.modal('hide');
+        //});
     });
 </script>
 

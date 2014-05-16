@@ -1,4 +1,7 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TycePlayerModals.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components.TycePlayerModals" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TycePlayerResources.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components.TycePlayerResources" %>
+
+<%= JSResources %>
+
 <div id="rotation-overlay">
     <div>
         <img alt="Turn Your Phone" src="Presentation/includes/images/icon.turn.phone.png" />

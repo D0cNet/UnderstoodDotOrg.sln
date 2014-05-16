@@ -1033,6 +1033,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx.cs">
       <DependentUpon>SingleLiveChat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx.designer.cs">
       <DependentUpon>SingleLiveChat.ascx</DependentUpon>
@@ -1449,12 +1450,12 @@
     <Compile Include="Presentation\Sublayouts\Tyce\Components\TycePageTopic.ascx.designer.cs">
       <DependentUpon>TycePageTopic.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Components\TycePlayerModals.ascx.cs">
-      <DependentUpon>TycePlayerModals.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\Tyce\Components\TycePlayerResources.ascx.cs">
+      <DependentUpon>TycePlayerResources.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tyce\Components\TycePlayerModals.ascx.designer.cs">
-      <DependentUpon>TycePlayerModals.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\Tyce\Components\TycePlayerResources.ascx.designer.cs">
+      <DependentUpon>TycePlayerResources.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tyce\Pages\TyceNextSteps.ascx.cs">
       <DependentUpon>TyceNextSteps.ascx</DependentUpon>
@@ -2181,7 +2182,7 @@
     <Content Include="Presentation\Sublayouts\Topic\TopicPageHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Tyce\Components\TyceModals.ascx" />
     <Content Include="Presentation\Sublayouts\Tyce\Components\TycePageTopic.ascx" />
-    <Content Include="Presentation\Sublayouts\Tyce\Components\TycePlayerModals.ascx" />
+    <Content Include="Presentation\Sublayouts\Tyce\Components\TycePlayerResources.ascx" />
     <Content Include="Presentation\Sublayouts\Tyce\Pages\TyceNextSteps.ascx" />
     <Content Include="Presentation\Sublayouts\Tyce\Pages\TyceOverview.ascx" />
     <Content Include="Presentation\Sublayouts\Tyce\Pages\TycePlayer.ascx" />
