@@ -11,6 +11,12 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages
 {
     public partial class ExpertLandingPageItem
     {
-       
+        /// <summary>
+        /// Get topic landing page iTems.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<ExpertDetailPageItem> GetExpertDetailPages(Item item) {
+            return item.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(ExpertDetailPageItem.TemplateId)).Select(i => (ExpertDetailPageItem)i);
+        }
     }
 }

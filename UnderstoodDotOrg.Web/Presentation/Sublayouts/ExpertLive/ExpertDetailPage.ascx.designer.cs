@@ -22,6 +22,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::Sitecore.Web.UI.WebControls.Image scBioImage;
         
         /// <summary>
+        /// imgExpertDefault control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgExpertDefault;
+        
+        /// <summary>
         /// litHours control.
         /// </summary>
         /// <remarks>
@@ -76,21 +85,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBodyContent;
         
         /// <summary>
-        /// hlImageLink control.
+        /// ltEventListHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlImageLink;
+        protected global::System.Web.UI.WebControls.Literal ltEventListHeader;
         
         /// <summary>
-        /// scFPOImage control.
+        /// rptEventDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Image scFPOImage;
+        protected global::System.Web.UI.WebControls.Repeater rptEventDetails;
     }
 }

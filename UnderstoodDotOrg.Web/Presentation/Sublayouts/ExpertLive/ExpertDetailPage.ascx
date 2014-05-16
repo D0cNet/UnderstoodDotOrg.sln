@@ -12,9 +12,10 @@
                 <div class="expert-bio-details">
                     <div class="expert-bio-image">
                         <sc:Image ID="scBioImage" runat="server" Field="Expert Image" />
+                        <asp:Image runat="server" ID="imgExpertDefault" ImageUrl="http://placehold.it/150x150" Visible="false" />
                     </div>
                     <div class="expert-bio-detail">
-                        <p class="hours-intro">                         
+                        <p class="hours-intro">
                             <asp:Literal ID="litHours" runat="server"></asp:Literal>
                         </p>
                         <p class="hours">
@@ -34,7 +35,7 @@
             <div class="col col-16 offset-1">
 
                 <div class="expert-bio-text">
-                   <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
+                    <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
                 </div>
                 <!-- .expert-bio-text -->
 
@@ -57,7 +58,9 @@
         <div class="row expert-events-title">
 
             <div class="col col-18 offset-1">
-                <h3 class="rs_read_this">Robert&apos;s Events</h3>
+                <h3 class="rs_read_this"><%--Robert&apos;s Events--%>
+                    <asp:Literal runat="server" ID="ltEventListHeader"></asp:Literal>
+                </h3>
             </div>
             <div class="col col-3 offset-1 expert-events-see-more">
                 <a href="REPLACE" class="see-more">See more</a>
@@ -68,57 +71,61 @@
         <!-- /.row /.expert-events-title -->
 
         <div class="expert-event-container">
+            <asp:Repeater runat="server" ID="rptEventDetails" OnItemDataBound="rptEventDetails_ItemDataBound">
+                <ItemTemplate>
+                    <div class="row expert-event rs_read_this">
 
-            <div class="row expert-event rs_read_this">
-
-                <div class="col col-6 offset-1">
-                    <div class="expert-event-image">
-                       <%-- <a href="REPLACE">
-                            <img alt="FPO content image" src="http://placehold.it/230x129&amp;text=230x129" />
-
-                        </a>--%>
-                        <asp:HyperLink ID="hlImageLink" runat="server">
-                            <sc:Image ID="scFPOImage" runat="server" Field="Expert Image" />
-                        </asp:HyperLink>
-                    </div>
-                    <!-- /.expert-event-image -->
-                </div>
-                <!-- /.col -->
-
-                <div class="col col-3 push-13">
-                    <div class="expert-event-type">
-                        <h4>Webinar</h4>
-                        <p class="time-past"><span>8</span> days ago</p>
-                    </div>
-                    <!-- /.expert-event-type -->
-                </div>
-                <!-- /.col -->
-
-                <div class="col col-1 push-9 border-col">
-                    <div>&nbsp;</div>
-                </div>
-
-                <div class="col col-11 offset-1 pull-4">
-                    <div class="expert-event-details">
-                        <p class="date-future">Tue Aug 23 at 8pm EST</p>
-                        <p class="date-past">Tue Aug 23 at 8pm EST</p>
-                        <a href="REPLACE" class="event-title">Time-Blindness and ADHD: Strategies for Becoming More Aware of Time</a>
-                        <h5>Topics Covered</h5>
-                        <p class="topics-covered">Learning Disability, Homework, Organization, Dyslexia, Social Contact, Lorem, Ipsum, Dorem</p>
-                        <div class="links-future">
-                            <a href="REPLACE">Event Details</a>
-                            <a href="REPLACE">RSVP for this event</a>
-                            <a href="REPLACE">Add to my calendar</a>
+                        <div class="col col-6 offset-1">
+                            <asp:HyperLink runat="server" ID="hlExpertBio">
+                                <sc:Image ID="scExpertImage" runat="server" Field="Expert Image" />
+                                <asp:Image runat="server" ID="imgExpertDefault" ImageUrl="http://placehold.it/150x150" Visible="false" />
+                                <asp:Panel runat="server" ID="pnlExpertImageLabel" Visible="false" CssClass="image-label">
+                                    <asp:Literal runat="server" ID="ltExpertType"></asp:Literal>
+                                    <%--Expert--%>
+                                </asp:Panel>
+                            </asp:HyperLink>
+                            <!-- /.expert-event-image -->
                         </div>
-                    </div>
-                    <!-- /.expert-event-details -->
-                </div>
-                <!-- /.col -->
+                        <!-- /.col -->
 
-            </div>
+                        <div class="col col-3 push-13">
+                            <div class="expert-event-type">
+                                <h4><asp:Literal runat="server" ID="ltEventType" ></asp:Literal></h4>
+                                <p class="time-past"><span><asp:Literal runat="server" ID="ltEventDate" ></asp:Literal></span> <asp:Literal runat="server" ID="ltEventSubDate" ></asp:Literal></p>
+                            </div>
+                            <!-- /.expert-event-type -->
+                        </div>
+                        <!-- /.col -->
+
+                        <div class="col col-1 push-9 border-col">
+                            <div>&nbsp;</div>
+                        </div>
+
+                        <div class="col col-11 offset-1 pull-4">
+                            <div class="expert-event-details">
+                                <p class="date-future"><asp:Literal runat="server" ID="ltFEventDate"></asp:Literal></p>
+                               <%-- <p class="date-past">Tue Aug 23 at 8pm EST</p>--%>
+                                <a href="REPLACE" class="event-title"><sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" /></a>
+                                <h5><sc:FieldRenderer ID="frHeading" runat="server" FieldName="Heading" /></h5>
+                                <p class="topics-covered"><sc:FieldRenderer ID="frSubHeading" runat="server" FieldName="SubHeading" /></p>
+                                <div class="links-future">
+                                    
+                                    <asp:HyperLink runat="server" ID="hlEventLine" >Event Details</asp:HyperLink> 
+                                    <%--<a href="REPLACE">RSVP for this event</a>--%>
+                                    <sc:FieldRenderer runat="server" ID="frRSVNLink" FieldName="RSVP for Event" />
+                                    <sc:FieldRenderer runat="server" ID="frAddToMyCalendar" FieldName="Add to My Calendar" />
+                                </div>
+                            </div>
+                            <!-- /.expert-event-details -->
+                        </div>
+                        <!-- /.col -->
+
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
             <!-- /.row -->
 
-            <div class="row expert-event rs_read_this">
+            <%--<div class="row expert-event rs_read_this">
 
                 <div class="col col-6 offset-1">
                     <div class="expert-event-image">
@@ -158,7 +165,7 @@
                 </div>
                 <!-- /.col -->
 
-            </div>
+            </div>--%>
             <!-- /.row -->
 
         </div>
