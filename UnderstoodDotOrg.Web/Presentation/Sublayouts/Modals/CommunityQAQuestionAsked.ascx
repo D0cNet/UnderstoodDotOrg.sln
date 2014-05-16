@@ -1,6 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CommunityQAQuestionAsked.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals.CommunityQAQuestionAsked" %>
-
-
 <div class="submit-question-modal modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
