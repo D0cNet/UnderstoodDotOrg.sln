@@ -135,13 +135,6 @@
     <Compile Include="Presentation\AjaxData\ArchiveEvents.aspx.designer.cs">
       <DependentUpon>ArchiveEvents.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\AjaxData\ExpertListing.aspx.cs">
-      <DependentUpon>ExpertListing.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\AjaxData\ExpertListing.aspx.designer.cs">
-      <DependentUpon>ExpertListing.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\AjaxData\GetArticles.aspx.cs">
       <DependentUpon>GetArticles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1507,7 +1500,6 @@
     <Content Include="Handlers\FormSubmissionsService.asmx" />
     <Content Include="Handlers\SearchResultsService.asmx" />
     <Content Include="Presentation\AjaxData\ArchiveEvents.aspx" />
-    <Content Include="Presentation\AjaxData\ExpertListing.aspx" />
     <Content Include="Presentation\AjaxData\GetArticles.aspx" />
     <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />
     <Content Include="Presentation\Includes\css\about-nonresponsive.css" />
@@ -1534,6 +1526,7 @@
     <Content Include="Presentation\Includes\css\homepage.css" />
     <Content Include="Presentation\Includes\css\layout-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\modules-nonresponsive.css" />
+    <Content Include="Presentation\Includes\css\oasis.css" />
     <Content Include="Presentation\Includes\css\recommendations-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\recommendations.css" />
     <Content Include="Presentation\Includes\css\simulations\common\common.css" />
@@ -1938,6 +1931,7 @@
     <Content Include="Presentation\Includes\js\global.js" />
     <Content Include="Presentation\Includes\js\homepage.js" />
     <Content Include="Presentation\Includes\js\modules.js" />
+    <Content Include="Presentation\Includes\js\oasis.js" />
     <Content Include="Presentation\Includes\js\recommendations.js" />
     <Content Include="Presentation\Includes\js\search.js" />
     <Content Include="Presentation\Includes\js\simulations\common\framework.js" />
@@ -2239,13 +2233,6 @@
     <Content Include="Handlers\DownloadFile.ashx" />
     <None Include="Properties\PublishProfiles\Local.pubxml">
       <SubType>Designer</SubType>
-    </None>
-    <Content Include="Web.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

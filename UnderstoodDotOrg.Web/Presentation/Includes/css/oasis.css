@@ -1,0 +1,18 @@
+﻿.btnCancel,
+.lbSave,
+.btnSave,
+.txtBox {
+	display: none;
+}
+
+.editMode .btnEdit,
+.editMode .cnt {
+	display: none;
+}
+
+.editMode .btnCancel,
+.editMode .lbSave,
+.editMode .btnSave,
+.editMode .txtBox {
+	display: block;
+}

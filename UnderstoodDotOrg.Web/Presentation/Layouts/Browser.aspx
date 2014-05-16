@@ -39,6 +39,7 @@
     <link href="/Presentation/includes/css/modules.css" rel="stylesheet" />
     <asp:Literal ID="headerSectionCSS" runat="server"></asp:Literal>
     <link href="/Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
+	<link href="/Presentation/includes/css/oasis.css" rel="stylesheet" />
     <!--<![endif]-->
 
 
@@ -116,6 +117,7 @@
         <script src="/Presentation/includes/js/modules.js"></script>
         <asp:literal runat="server" id="footerSectionJS"></asp:literal>
         <script src="/Presentation/includes/js/global.js"></script>
+		<script src="/Presentation/includes/js/oasis.js"></script>
 
         <sc:Placeholder runat="server" Key="AfterResources" />
 
