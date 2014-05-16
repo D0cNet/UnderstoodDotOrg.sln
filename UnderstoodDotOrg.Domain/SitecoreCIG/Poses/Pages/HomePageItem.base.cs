@@ -55,11 +55,38 @@ public CustomTextField Title
 }
 
 
+public CustomTextField YourParentToolkitHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Your Parent Toolkit Heading"]);
+	}
+}
+
+
 public CustomTextField Description
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Description"]);
+	}
+}
+
+
+public CustomTextField YourParentToolkitDetails
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Your Parent Toolkit Details"]);
+	}
+}
+
+
+public CustomLookupField YourParentToolkitList
+{
+	get
+	{
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Your Parent Toolkit List"]);
 	}
 }
 

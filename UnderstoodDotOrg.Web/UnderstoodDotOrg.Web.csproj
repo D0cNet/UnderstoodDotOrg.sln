@@ -1031,6 +1031,12 @@
     <Compile Include="Presentation\Sublayouts\ExpertLive\PastWebinar.ascx.designer.cs">
       <DependentUpon>PastWebinar.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx.cs">
+      <DependentUpon>SingleLiveChat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx.designer.cs">
+      <DependentUpon>SingleLiveChat.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\UpComingChat.ascx.cs">
       <DependentUpon>UpComingChat.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2114,6 +2120,7 @@
     <Content Include="Presentation\Sublayouts\ExpertLive\LiveChat.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\PastChat.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\PastWebinar.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\UpComingChat.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\UpComingWebinar.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
