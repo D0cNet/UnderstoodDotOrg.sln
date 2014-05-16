@@ -70,15 +70,15 @@ namespace UnderstoodDotOrg.Web.Handlers
             // Look up challenge
 
             // Populate all results into session for article pages
-            if (Session[Constants.BehaviorSearchKey] != null || page == 1)
+            if (Session[Constants.SessionBehaviorSearchKey] != null || page == 1)
             {
                 articles = SearchHelper.GetAllBehaviorArticles(challenge, grade);
                 srs.Results = articles;
-                Session[Constants.BehaviorSearchKey] = srs;
+                Session[Constants.SessionBehaviorSearchKey] = srs;
             }
             else
             {
-                articles = ((SessionSearchResult)Session[Constants.BehaviorSearchKey]).Results;
+                articles = ((SessionSearchResult)Session[Constants.SessionBehaviorSearchKey]).Results;
             }
 
             var pagedArticles = articles.Skip(page - 1).Take(Constants.BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE);

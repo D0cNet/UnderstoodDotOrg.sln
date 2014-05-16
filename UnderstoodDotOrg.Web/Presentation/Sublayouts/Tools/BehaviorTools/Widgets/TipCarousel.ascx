@@ -1,10 +1,16 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TipCarousel.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.Widgets.TipCarousel" %>
 
-<div class="second-next-prev-menu arrows-gray">
-  <span class="next-prev-text">Next Tip</span>
-  <div class="second-next-prev-menu-slider">
-    <p class="next-prev-title">Start by demonstrating, then shift to supervising</p>
-    <p class="next-prev-title">Start by demonstrating, then shift to supervising</p>
-    <p class="next-prev-title">Start by demonstrating, then shift to supervising</p>
-  </div>
-</div>
+<asp:Repeater ID="rptTips" runat="server">
+<HeaderTemplate>
+    <div class="second-next-prev-menu arrows-gray">
+        <span class="next-prev-text"><%= UnderstoodDotOrg.Common.DictionaryConstants.NextTipButtonText %></span>
+        <div class="second-next-prev-menu-slider">
+</HeaderTemplate>
+<ItemTemplate>
+    <p class="next-prev-title"><asp:HyperLink ID="hlTip" runat="server" /></p>
+</ItemTemplate>
+<FooterTemplate>
+        </div>
+    </div>
+</FooterTemplate>
+</asp:Repeater>

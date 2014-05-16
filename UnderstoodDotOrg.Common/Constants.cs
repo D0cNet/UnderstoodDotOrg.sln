@@ -49,7 +49,7 @@ namespace UnderstoodDotOrg.Common
         #region Session Keys
         public static string currentUserKey { get { return "_understood_org_current_user"; } }
         public static string currentMemberKey { get { return "_understood_org_current_member"; } }
-        public static string BehaviorSearchKey { get { return "_understood_org_behavior_search"; } }
+        public static string SessionBehaviorSearchKey { get { return "_understood_org_behavior_search"; } }
         #endregion
 
         #region Container Guid

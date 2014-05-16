@@ -41,7 +41,7 @@ namespace UnderstoodDotOrg.Domain.Search
             return Results.FindIndex(x => x.ItemId == id);
         }
 
-        private List<BehaviorAdvice> GetResultsExcluding(ID id)
+        public List<BehaviorAdvice> GetResultsExcluding(ID id)
         {
             return Results.Where(x => x.ItemId != id).ToList();
         }

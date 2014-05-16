@@ -181,6 +181,22 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string NextTipButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Next Tip Button Text");
+            }
+        }
+
+        public static string PrevTipButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Prev Tip Button Text");
+            }
+        }
+
         #endregion
 
         #region Input Placeholders
@@ -538,6 +554,14 @@ namespace UnderstoodDotOrg.Common
             get
             {
                 return Translate.TextByDomain(PosesDictionary, "Work On Fragment");
+            }
+        }
+
+        public static string BackToFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Back To Fragment");
             }
         }
 
