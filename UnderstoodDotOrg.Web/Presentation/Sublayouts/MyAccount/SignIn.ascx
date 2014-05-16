@@ -14,15 +14,15 @@
         <div class="col col-14 centered">
             <h1>Sign In</h1>
             <a class="fb-sign-in" href="REPLACE">
-                <img alt="" src="Presentation/includes/img/icon.fb-sign-in@2x.png" />
+                  <sc:image id="scFacebookSigninImage" runat="server" field="FacebookSigninImage" /> 
             </a>
             <p>
                 <%--Or sign in with your email address--%>
                 <sc:Text id="directions" runat="server" Field="Directions" ></sc:Text>
             </p>
             <label>
-                <%--<input type="text" placeholder="Enter email address" --%>>
-          <asp:TextBox ID="uxEmailAddress" runat="server"></asp:TextBox>
+                <%--<input type="text" placeholder="Enter email address"> --%>
+                 <asp:TextBox ID="uxEmailAddress" runat="server"></asp:TextBox>
             </label>
             <label>
                 <%--<input type="text" placeholder="Enter Password" >--%>

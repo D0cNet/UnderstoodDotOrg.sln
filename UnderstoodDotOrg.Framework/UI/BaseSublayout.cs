@@ -76,6 +76,11 @@ namespace UnderstoodDotOrg.Framework.UI
             get { return (Member)Session[Constants.currentMemberKey]; }
             set { Session[Constants.currentMemberKey] = value; }
         }
+        public void FlushCurrentMemberUser()
+        {
+           this.CurrentMember = null;
+           this.CurrentUser = null; 
+        }
 
         public BaseSublayout() : base() { }
 

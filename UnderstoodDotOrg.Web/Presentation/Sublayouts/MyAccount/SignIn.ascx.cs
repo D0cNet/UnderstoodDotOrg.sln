@@ -24,8 +24,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
         protected void uxSignIn_Click(object sender, EventArgs e)
         {
+            //blow out any existing member when someone tries to sign in
+            
+            
             try
             {
+                //lets make sure to reset all user&member info before we start inflating it
+                this.FlushCurrentMemberUser();
+
                 var membershipManager = new MembershipManager();
 
                 var currentMember = membershipManager.AuthenticateUser(uxEmailAddress.Text, uxPassword.Text);
