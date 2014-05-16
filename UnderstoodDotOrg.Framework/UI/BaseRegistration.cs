@@ -24,5 +24,10 @@ namespace UnderstoodDotOrg.Framework.UI
             get { return (Member)(Session[sessionKey]); }
             set { Session[sessionKey] = value; }
         }
+        public void FlushRegisteringUser()
+        {
+            Session[sessionKey] = null;
+        }
     }
+
 }

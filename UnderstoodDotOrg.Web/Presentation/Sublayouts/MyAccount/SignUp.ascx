@@ -5,7 +5,7 @@
 <div class="container sign-in-link flush">
     <div class="row">
         <div class="col col-23">
-            <p>Already signed up? <a href="\SignIn.aspx">Sign In</a></p>
+            <p>Already signed up? <a href="\My Account\SignIn.aspx">Sign In</a></p>
         </div>
     </div>
 </div>

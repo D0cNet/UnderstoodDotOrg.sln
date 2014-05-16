@@ -57,7 +57,7 @@
         <div class="col col-22 offset-1">
             <!-- BEGIN PARTIAL: profile-questions-step1 -->
             <div class="profile-questions step-1">
-
+                <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red" Visible="false"></asp:Label>
                 <div class="profile-questions-child-wrapper">
                     <!-- BEGIN PARTIAL: profile-questions-child -->
                     <div class="question-wrapper clearfix">

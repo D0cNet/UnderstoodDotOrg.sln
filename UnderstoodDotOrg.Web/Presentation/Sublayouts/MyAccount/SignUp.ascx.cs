@@ -50,6 +50,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
             if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
             {
+                //damnit barry, this is how you get ants. 
+                // the site keeps breaking when we test, and its breaking ugly.
+                // if someone clicks to create a new user, we have to blow up the existing user or we're going to have a problem.
+                this.FlushRegisteringUser();
+
                 //everything's cool
                 if (this.registeringUser == null)
                 {
