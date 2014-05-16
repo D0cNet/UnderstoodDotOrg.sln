@@ -4,9 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
 {
@@ -15,6 +19,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
         protected void Page_Load(object sender, EventArgs e)
         {
             WebinarEventPageItem contextItem = Sitecore.Context.Item;
+            BaseEventDetailPageItem baseEventDetailpage = new BaseEventDetailPageItem(contextItem);
+            ExpertDetailPageItem expert = baseEventDetailpage.Expert.Item;
+            
             if (!Page.IsPostBack)
             {
 
@@ -28,8 +35,46 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
                     }
                     if (hlLink != null)
                     {
-                        hlLink.NavigateUrl = contextItem.InnerItem.GetUrl();
-                        //hlLink.Text=contextItem.
+                        hlLink.NavigateUrl = expert.InnerItem.GetUrl();
+                    }
+                    FieldRenderer scThumbImg = FindControl("scThumbImg") as FieldRenderer;
+                    if (scThumbImg != null)
+                    {
+                        scThumbImg.Item = expert.InnerItem;
+                    }
+                    if (litGuest != null)
+                    {
+                        litGuest.Text = expert.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;                            
+                    }
+                    if (frHeading != null)
+                    {
+                        frHeading.Item = contextItem;
+                    }
+                    if (frSubHeading != null)
+                    {
+                        frSubHeading.Item = contextItem;
+                    }
+                    if (ltEventDate != null && !baseEventDetailpage.EventDate.Raw.IsNullOrEmpty()) {
+                        TimeZoneItem timezone = baseEventDetailpage.Timezone.Item;
+                        string timeZoneText = string.Empty;
+
+                        if (timezone != null) {
+                            timeZoneText = timezone.Timezone.Rendered;
+                        }
+
+                        ltEventDate.Text = String.Format("{0} at {1} {2}", baseEventDetailpage.EventDate.DateTime.ToString("ddd MMM dd"), baseEventDetailpage.EventDate.DateTime.ToString("hh:mm tt").ToLower(), timeZoneText);
+                    }
+                    if (frBodyContent != null)
+                    {
+                        frBodyContent.Item = contextItem;
+                    }
+                    if (scLinkCalendar != null)
+                    {                      
+                        scLinkCalendar.Item = contextItem;
+                    }
+                    if (scLinkRSVP != null)
+                    {                       
+                        scLinkRSVP.Item = contextItem;
                     }
 
                 }

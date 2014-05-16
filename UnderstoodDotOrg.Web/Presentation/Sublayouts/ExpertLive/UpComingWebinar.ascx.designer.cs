@@ -37,7 +37,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Image scThumbImg;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer scThumbImg;
         
         /// <summary>
         /// litGuest control.
@@ -49,13 +49,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::System.Web.UI.WebControls.Literal litGuest;
         
         /// <summary>
-        /// scDate control.
+        /// ltEventDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Date scDate;
+        protected global::System.Web.UI.WebControls.Literal ltEventDate;
         
         /// <summary>
         /// frHeading control.
@@ -85,21 +85,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBodyContent;
         
         /// <summary>
-        /// hlRSVPLink control.
+        /// scLinkRSVP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlRSVPLink;
+        protected global::Sitecore.Web.UI.WebControls.Link scLinkRSVP;
         
         /// <summary>
-        /// hlCalendarLink control.
+        /// scLinkCalendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlCalendarLink;
+        protected global::Sitecore.Web.UI.WebControls.Link scLinkCalendar;
     }
 }
