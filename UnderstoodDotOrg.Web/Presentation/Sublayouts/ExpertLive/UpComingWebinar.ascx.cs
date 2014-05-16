@@ -11,17 +11,37 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
 {
     public partial class UpComingWebinar : System.Web.UI.UserControl
     {
+        private bool IsArchiveItem(Item item) {
+            bool isArchiveItem = false;
+            BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(item);
+            if (baseEventPageItem != null) {
+                if (baseEventPageItem.EventDate.DateTime < DateTime.Today) {
+                    isArchiveItem = true;
+                }
+            }
+
+            return isArchiveItem;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             WebinarEventPageItem contextItem = Sitecore.Context.Item;
             BaseEventDetailPageItem baseEventDetailpage = new BaseEventDetailPageItem(contextItem);
             ExpertDetailPageItem expert = baseEventDetailpage.Expert.Item;
-            
+            if (contextItem != null) {
+                if (IsArchiveItem(contextItem)) {
+                    this.Visible = false;
+                }
+                else {
+                    this.Visible = true;
+                }
+            }
             if (!Page.IsPostBack)
             {
 
