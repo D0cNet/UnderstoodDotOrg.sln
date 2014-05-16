@@ -13,12 +13,57 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools {
     public partial class BehaviorToolsAdviceVideoPage {
         
         /// <summary>
-        /// rptRelatedArticles control.
+        /// slTopNavigation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptRelatedArticles;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout slTopNavigation;
+        
+        /// <summary>
+        /// slSocialCounter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout slSocialCounter;
+        
+        /// <summary>
+        /// slHelpfulVote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout slHelpfulVote;
+        
+        /// <summary>
+        /// slKeepReading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout slKeepReading;
+        
+        /// <summary>
+        /// slHelpfulVoteWide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout slHelpfulVoteWide;
+        
+        /// <summary>
+        /// slTipCarousel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout slTipCarousel;
     }
 }

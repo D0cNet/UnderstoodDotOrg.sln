@@ -1335,6 +1335,13 @@
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceVideoPage.ascx.designer.cs">
       <DependentUpon>BehaviorToolsAdviceVideoPage.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsArticleTopNavigation.ascx.cs">
+      <DependentUpon>BehaviorToolsArticleTopNavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsArticleTopNavigation.ascx.designer.cs">
+      <DependentUpon>BehaviorToolsArticleTopNavigation.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdvice.ascx.cs">
       <DependentUpon>BehaviorToolsBehaviorAdvice.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1407,6 +1414,34 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx.designer.cs">
       <DependentUpon>BehaviorToolsResultsWrapper.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\HelpfulVote.ascx.cs">
+      <DependentUpon>HelpfulVote.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\HelpfulVote.ascx.designer.cs">
+      <DependentUpon>HelpfulVote.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\KeepReading.ascx.cs">
+      <DependentUpon>KeepReading.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\KeepReading.ascx.designer.cs">
+      <DependentUpon>KeepReading.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\SocialCounter.ascx.cs">
+      <DependentUpon>SocialCounter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\SocialCounter.ascx.designer.cs">
+      <DependentUpon>SocialCounter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\TipCarousel.ascx.cs">
+      <DependentUpon>TipCarousel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\TipCarousel.ascx.designer.cs">
+      <DependentUpon>TipCarousel.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Topic\ArticleListing.ascx.cs">
       <DependentUpon>ArticleListing.ascx</DependentUpon>
@@ -2167,6 +2202,7 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdvicePage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceResults.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceVideoPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsArticleTopNavigation.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdvice.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsCommentGallery.ascx" />
@@ -2178,6 +2214,10 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsRelatedArticles.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\HelpfulVote.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\KeepReading.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\SocialCounter.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\TipCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\ArticleListing.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\CalloutContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\TopicCarousel.ascx" />

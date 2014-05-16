@@ -225,12 +225,18 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var webClient = new WebClient();
 
             webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-            webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+            
+            var postUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", blogId, blogPostId));
 
-            var postUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}/comments.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
-            var data = "Body=" + body + "&PublishedDate=" + DateTime.Now + "&IsApproved=true&BlogId=" + blogId;
+            var data = new NameValueCollection()
+            {
+                { "Body", body },
+                { "PublishedDate", DateTime.Now.ToString() },
+                { "IsApproved", "true" },
+                { "BlogId", blogId.ToString() }
+            };
 
-            byte[] result = webClient.UploadData(postUrl, "POST", Encoding.ASCII.GetBytes(data));
+            byte[] result = webClient.UploadValues(postUrl, data);
 
             // TODO: handle errors
             string response = webClient.Encoding.GetString(result);
