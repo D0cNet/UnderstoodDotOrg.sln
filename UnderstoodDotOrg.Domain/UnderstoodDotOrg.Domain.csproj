@@ -227,6 +227,7 @@
     <Compile Include="SitecoreCIG\Poses\Folders\ExpertliveFilterFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\FooterFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\GlobalsItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\GlobalsItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\HeaderFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\HeaderFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\HomeSliderFolderItem.base.cs" />
@@ -443,6 +444,7 @@
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\CSS\CSSItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\JS\JSItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Parent\ParentInterestItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Parent\ParentRoleItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Tools\BehaviorTool\BehaviorSearchCalloutItem.base.cs" />
     <Compile Include="TelligentCommunity\CommunityConstructors.cs" />
     <Compile Include="TelligentCommunity\CommunityHelper.cs">

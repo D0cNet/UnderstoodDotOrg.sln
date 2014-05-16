@@ -47,7 +47,7 @@
                                     <span class="cnt">
                                         <asp:Literal ID="uxRole" runat="server"></asp:Literal></span>
 									<span class="txtBox">
-										<asp:TextBox ID="txtRole" runat="server"></asp:TextBox>
+										<asp:DropDownList ID="ddlRole" runat="server"></asp:DropDownList>
 									</span>
                                 </div>
                             </div>

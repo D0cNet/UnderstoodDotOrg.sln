@@ -1,17 +1,19 @@
 ﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
 	using Sitecore.Data;
-using Sitecore.Data.Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Services;
-using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Domain.Membership;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
-using UnderstoodDotOrg.Framework.UI;
+	using Sitecore.Data.Items;
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Web;
+	using System.Web.Services;
+	using System.Web.UI.WebControls;
+	using UnderstoodDotOrg.Common;
+	using UnderstoodDotOrg.Domain.Membership;
+	using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+	using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+	using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
+	using UnderstoodDotOrg.Framework.UI;
 
     public partial class My_Profile : BaseSublayout
     {
@@ -61,6 +63,8 @@ using UnderstoodDotOrg.Framework.UI;
 			{
 				SetLabels();
 
+				SetRole();
+
 				uxChildList.DataSource = this.CurrentMember.Children;
 				uxChildList.DataBind();
 
@@ -94,12 +98,6 @@ using UnderstoodDotOrg.Framework.UI;
 
 				uxPrivacyLevel.Text = this.CurrentMember.allowConnections ? DictionaryConstants.OpenToConnect : DictionaryConstants.NotOpenToConnect;
 
-				string role = getItemName(this.CurrentMember.Role);
-
-				uxRole.Text = role;
-
-				txtRole.Text = role;
-
 				uxScreenname.Text = this.CurrentMember.ScreenName;
 
 				uxZipcode.Text = this.CurrentMember.ZipCode.Trim();
@@ -120,6 +118,29 @@ using UnderstoodDotOrg.Framework.UI;
 				}
 			}
         }
+
+		private void SetRole()
+		{
+			string role = getItemName(this.CurrentMember.Role);
+
+			uxRole.Text = role;
+
+			IEnumerable<ParentRoleItem> parentRoles = GlobalsItem.GetParentRoles();
+
+			foreach (ParentRoleItem pr in parentRoles)
+			{
+				Guid guid = pr.ID.Guid;
+
+				ListItem li = new ListItem(pr.RoleName.Raw, guid.ToString());
+
+				if (guid == this.CurrentMember.Role)
+				{
+					li.Selected = true;
+				}
+
+				ddlRole.Items.Add(li);
+			}
+		}
 
 		private void SetLabels()
 		{
@@ -221,19 +242,24 @@ using UnderstoodDotOrg.Framework.UI;
 			return "";
         }
 
+		private void ReloadPage()
+		{
+			Response.Redirect(Request.RawUrl);
+		}
+
 		protected void lbSave_AboutMe_Click(object sender, EventArgs e)
 		{
-
+			this.CurrentMember.Role = new Guid(ddlRole.SelectedValue);
+			ReloadPage();
 		}
 
 		protected void lbSave_Community_Click(object sender, EventArgs e)
 		{
 			this.CurrentMember.ZipCode = txtZipcode.Text;
-			this.CurrentMember = MembershipManager.UpdateMember(this.CurrentMember);
 
 			Session["PostReloadScript"] = "scrollToSelector('.profile-section.community-section')";
 
-			Response.Redirect(Request.RawUrl);
+			ReloadPage();
 		}
 
 		protected void lbSave_PhoneNumber_Click(object sender, EventArgs e)
