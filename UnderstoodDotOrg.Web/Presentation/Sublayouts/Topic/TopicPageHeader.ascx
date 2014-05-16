@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN PARTIAL: pagetopic -->
 <!-- Page Title -->
-<div class="container community-main-header">
+<div class="container community-main-header" runat="server" id="outerDiv">
     <header>
         <div class="row  header-wrapper">
 

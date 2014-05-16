@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
     public partial class TopicPageHeader : System.Web.UI.UserControl {
@@ -39,6 +40,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
                    rptTopicHeader.DataSource = subTopicItems;
                    rptTopicHeader.DataBind();
                 }
+            }
+
+            //apply css class to outerDiv in case of expert landing and detail page
+            if (Sitecore.Context.Item.IsOfType(ExpertLandingPageItem.TemplateId) || Sitecore.Context.Item.IsOfType(ExpertDetailPageItem.TemplateId)) {
+                outerDiv.Attributes.Add("class", "container page-topic about-back-pagetopic");
             }
         }
 
