@@ -1,6 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Header" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN PARTIAL: header -->
+<sc:FieldRenderer ID="frGlobalGoogleAnalytics" runat="server" FieldName="Google Analytics"/>
+<sc:FieldRenderer ID="frPageGoogleAnalytics" runat="server" FieldName="Google Analytics" />
+
 <header id="header-page" class="container">
     <div class="row">
         <div class="col col-24">
@@ -29,7 +32,7 @@
             <div class="l-bar">
                 <asp:Repeater runat="server" ID="rptNavUtility" OnItemDataBound="rptNavUtility_ItemDataBound">
                     <HeaderTemplate>
-                        <nav class="nav-utility">
+                          <nav class="nav-utility">
                             <ul role="menu">
                     </HeaderTemplate>
                     <ItemTemplate>

@@ -6,6 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
 {
@@ -14,11 +15,21 @@ public partial class BasePageNEWItem : CustomItem
 
 public static readonly string TemplateId = "{B79E8EA0-5501-4C46-A002-033BEE6D209D}";
 
+#region Inherited Base Templates
+
+private readonly CSSTemplateItem _CSSTemplateItem;
+public CSSTemplateItem CSSTemplate { get { return _CSSTemplateItem; } }
+private readonly JSTemplateItem _JSTemplateItem;
+public JSTemplateItem JSTemplate { get { return _JSTemplateItem; } }
+
+#endregion
 
 #region Boilerplate CustomItem Code
 
 public BasePageNEWItem(Item innerItem) : base(innerItem)
 {
+	_CSSTemplateItem = new CSSTemplateItem(innerItem);
+	_JSTemplateItem = new JSTemplateItem(innerItem);
 
 }
 

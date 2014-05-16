@@ -45,7 +45,13 @@ public static implicit operator Item(GlobalsItem customItem)
 
 #region Field Instance Methods
 
-
+public CustomTextField GoogleAnalytics
+{
+    get
+    {
+        return new CustomTextField(InnerItem, InnerItem.Fields["Google Analytics"]);
+    }
+}
 #endregion //Field Instance Methods
 }
 }
