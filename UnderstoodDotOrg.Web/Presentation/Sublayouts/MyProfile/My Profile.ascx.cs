@@ -30,16 +30,10 @@
 
         private void Page_Load(object sender, EventArgs e)
         {
-			/* TEMPORARY */
-			/* START FORCE LOGIN USER */
-			var currentMember = MembershipManager.GetMember(new Guid("4CA98D77-F780-419A-863E-CE98E4A45C36"));
-
-			if (currentMember != null)
+			if (this.CurrentMember == null && this.CurrentUser == null)
 			{
-				this.CurrentMember = currentMember;
-				this.CurrentUser = MembershipManager.GetUser(new Guid("4CA98D77-F780-419A-863E-CE98E4A45C36"), true);
+				Response.Redirect("/my account/signin");
 			}
-			/* END FORCE LOGIN USER */
 
 			if (!IsPostBack)
 			{
