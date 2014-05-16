@@ -138,6 +138,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                             AuthorProfileUrl = author["ProfileUrl"].InnerText,
                             AuthorUsername = author["Username"].InnerText,
                             Likes = GetTotalLikes(commentId).ToString(),
+                            CommentDate = parsedDate
                         };
 
                         commentList.Add(comment);
