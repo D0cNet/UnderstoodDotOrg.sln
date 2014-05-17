@@ -961,7 +961,6 @@
     <Compile Include="Presentation\Sublayouts\Containers\TwoRow.ascx.designer.cs">
       <DependentUpon>TwoRow.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\DecisionTool\Basesublayout.cs" />
     <Compile Include="Presentation\Sublayouts\DecisionTool\DecisionToolLandingPage.ascx.cs">
       <DependentUpon>DecisionToolLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
