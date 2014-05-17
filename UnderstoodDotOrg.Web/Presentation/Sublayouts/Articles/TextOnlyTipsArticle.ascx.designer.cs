@@ -13,30 +13,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     public partial class TextOnlyTipsArticle {
         
         /// <summary>
-        /// frArticleIntro control.
+        /// rptSlides control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frArticleIntro;
+        protected global::System.Web.UI.WebControls.Repeater rptSlides;
         
         /// <summary>
-        /// rptAllTips control.
+        /// rptSlideButtons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptAllTips;
-        
-        /// <summary>
-        /// uxSliderButtonGroup control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView uxSliderButtonGroup;
+        protected global::System.Web.UI.WebControls.Repeater rptSlideButtons;
     }
 }

@@ -56,20 +56,20 @@ public CustomTextField Tiptext
 }
 
 
-public CustomMultiListField Backgroundcolor
+public CustomLookupField Backgroundcolor
 {
 	get
 	{
-		return new CustomMultiListField(InnerItem, InnerItem.Fields["Background color"]);
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Background color"]);
 	}
 }
 
 
-public CustomCheckboxField ShowasEndSlide
+public CustomLookupField Circlecolor
 {
 	get
 	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show as End Slide"]);
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Circle color"]);
 	}
 }
 

@@ -1,164 +1,194 @@
-﻿using System;
+﻿using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.Linq;
+using Sitecore.ContentSearch.Linq.Utilities;
+using Sitecore.ContentSearch.SearchTypes;
+using Sitecore.Data;
+using Sitecore.Data.Items;
+using Sitecore.Web.UI.WebControls;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
+using System.Linq.Expressions;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
-using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.SearchTypes;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
-using Sitecore.Data.Fields;
-using Sitecore.Web.UI.WebControls;
-using Sitecore.Data.Items;
+using UnderstoodDotOrg.Domain.Search;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
-    public partial class TextOnlyTipsArticle : System.Web.UI.UserControl
+    public partial class TextOnlyTipsArticle : BaseSublayout
     {
-        TextOnlyTipsArticlePageItem ObjTextTipsArticle;
-        IEnumerable<TextTipPageItem> AllChildSlides;
-        int _CurrentTipNo, _totalTipsCount;
+        int count = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Set Slide Counter value and binda data accordinly
-            ObjTextTipsArticle = new TextOnlyTipsArticlePageItem(Sitecore.Context.Item);
-            if (ObjTextTipsArticle != null)
+            if (DataSource != null && DataSource.IsOfType(TextOnlyTipsArticlePageItem.TemplateId))
             {
-                RptDataBind();
+                BindData((TextOnlyTipsArticlePageItem)DataSource);
             }
-
         }
-        public void RptDataBind()
+
+        private void BindData(TextOnlyTipsArticlePageItem page)
         {
-            AllChildSlides = TextOnlyTipsArticlePageItem.GetAllSlides(ObjTextTipsArticle);
-            if (AllChildSlides != null)
+            var slides = page.GetSlides();
+
+            if (slides.Any())
             {
-                // _totalSlide = AllChildSlides.Count();
-                _CurrentTipNo = 0;
-                _totalTipsCount = AllChildSlides.Count();
-                rptAllTips.DataSource = AllChildSlides;
-                rptAllTips.DataBind();
+                count = slides.Count();
 
-                uxSliderButtonGroup.DataSource = AllChildSlides;
-                uxSliderButtonGroup.DataBind();
+                rptSlides.DataSource = slides;
+                rptSlides.ItemDataBound += rptSlides_ItemDataBound;
+                rptSlides.DataBind();
+                rptSlides.Visible = true;
 
+                rptSlideButtons.DataSource = slides;
+                rptSlideButtons.ItemDataBound += rptSlideButtons_ItemDataBound;
+                rptSlideButtons.DataBind();
+                rptSlideButtons.Visible = true;
             }
-
         }
-        public static IEnumerable<Item> GetRandom2TipsArticles(TextOnlyTipsArticlePageItem _CurrnetTipsArtcle)
+
+        void rptSlideButtons_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            IEnumerable<Item> _RandomTipsArticle;
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-            using (var context = index.CreateSearchContext())
+            if (e.Item.ItemType == ListItemType.Header)
             {
-                _RandomTipsArticle =(IEnumerable<Item>) context.GetQueryable<SearchResultItem>()
-                     .Where(i => i.ItemId != _CurrnetTipsArtcle.ID);
+                Literal ltlPrev = e.FindControlAs<Literal>("ltlPrev");
+                ltlPrev.Text = DictionaryConstants.PrevTipButtonText;
+            }
+            
+            if (e.IsItem())
+            {
+                string buttonNumber = (e.Item.ItemIndex + 1).ToString();
+                HtmlButton hgcButton = e.FindControlAs<HtmlButton>("hgcButton");
                 
-                if (_RandomTipsArticle != null)
-                {
-                    if (_RandomTipsArticle.Count() > 2) _RandomTipsArticle = _RandomTipsArticle.Take(2);
-                }
+                hgcButton.InnerText = buttonNumber;
+                hgcButton.Attributes["data-target"] = buttonNumber;
             }
-            return _RandomTipsArticle;
+
+            if (e.Item.ItemType == ListItemType.Footer)
+            {
+                Literal ltlNext = e.FindControlAs<Literal>("ltlNext");
+                Literal ltlLast = e.FindControlAs<Literal>("ltlLast");
+                
+                ltlNext.Text = DictionaryConstants.NextTipButtonText;
+                ltlLast.Text = DictionaryConstants.LastTipButtonText;
+            }
         }
 
-        protected void rptAllTips_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        void rptSlides_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.IsItem())
             {
-                TextTipPageItem _currentTip = e.Item.DataItem as TextTipPageItem;
-                if (_currentTip != null)
+                TextTipPageItem dataItem = e.Item.DataItem as TextTipPageItem;
+                Panel pnlSlide = e.FindControlAs<Panel>("pnlSlide");
+                Literal ltlSlideNumber = e.FindControlAs<Literal>("ltlSlideNumber");
+                Literal ltlSlideCount = e.FindControlAs<Literal>("ltlSlideCount");
+                Label lblCircle = e.FindControlAs<Label>("lblCircle");
+                FieldRenderer frTipTitle = e.FindControlAs<FieldRenderer>("frTipTitle");
+                FieldRenderer frTipText = e.FindControlAs<FieldRenderer>("frTipText");
+
+                ltlSlideNumber.Text = (e.Item.ItemIndex + 1).ToString();
+                ltlSlideCount.Text = count.ToString();
+                frTipTitle.Item = dataItem;
+                frTipText.Item = dataItem;
+
+                if (dataItem.Backgroundcolor.Item != null)
                 {
-                    Panel pnlTips = e.FindControlAs<Panel>("pnlTips");
-                    PlaceHolder phEnd = e.FindControlAs<PlaceHolder>("phEnd");
-                    PlaceHolder phSlide = e.FindControlAs<PlaceHolder>("phSlide");
-                    _CurrentTipNo++;
-                    if (pnlTips != null)
+                    if (dataItem.Backgroundcolor.Item.IsOfType(MetadataItem.TemplateId))
                     {
-                        //check for tip type(end slide) open phend
-                        if (_currentTip.ShowasEndSlide.Checked == true)
-                        {
-                            // open end slide ph
-                            //set end slide css
-                            pnlTips.CssClass += " end";
-                            if (phEnd != null)
-                            {
-                                phEnd.Visible = true;
-                                phSlide.Visible = false;
-                                //IEnumerable<TextOnlyTipsArticlePageItem> RandomTipsArticle =(IEnumerable<TextOnlyTipsArticlePageItem>) GetRandom2TipsArticles(ObjTextTipsArticle);
-                                //if (RandomTipsArticle != null)
-                                //{
-                                    
-                                //    HyperLink hlRandomArticle1 = e.FindControlAs<HyperLink>("hlRandomArticle1");
-                                //    if (hlRandomArticle1 != null && RandomTipsArticle.ElementAt(0)!=null )
-                                //    {
-                                //        FieldRenderer frRandomTipArticleTitle1 = e.FindControlAs<FieldRenderer>("frRandomTipArticleTitle1");
-                                //        if (frRandomTipArticleTitle1 != null)
-                                //        {
-                                //            frRandomTipArticleTitle1.Item = RandomTipsArticle.ElementAt(0);
-                                //        }
-                                //        FieldRenderer frRandomTipsArticleIntro1 = e.FindControlAs<FieldRenderer>("frRandomTipsArticleIntro1");
-                                //        if (frRandomTipsArticleIntro1 != null)
-                                //        {
-                                //            frRandomTipsArticleIntro1.Item = RandomTipsArticle.ElementAt(0);
-                                //        }
-                                //        hlRandomArticle1.NavigateUrl = RandomTipsArticle.ElementAt(0).InnerItem.GetUrl().ToString();
-                                //    }
-                                //     HyperLink hlRandomArticle2 = e.FindControlAs<HyperLink>("hlRandomArticle2");
-                                //     if (hlRandomArticle2 != null && RandomTipsArticle.ElementAt(1)!=null)
-                                //     {
-                                //         FieldRenderer frRandomTipArticleTitle2 = e.FindControlAs<FieldRenderer>("frRandomTipArticleTitle2");
-                                //         if (frRandomTipArticleTitle2 != null)
-                                //         {
-                                //             frRandomTipArticleTitle2.Item = RandomTipsArticle.ElementAt(1);
-                                //         }
-                                //         FieldRenderer frRandomTipsArticleIntro2 = e.FindControlAs<FieldRenderer>("frRandomTipsArticleIntro2");
-                                //         if (frRandomTipsArticleIntro2 != null)
-                                //         {
-                                //             frRandomTipsArticleIntro2.Item = RandomTipsArticle.ElementAt(1);
-                                //         }
-                                //         hlRandomArticle2.NavigateUrl = RandomTipsArticle.ElementAt(1).InnerItem.GetUrl().ToString();
-                                //     }
-                                //}
-                            }
+                        MetadataItem color = dataItem.Backgroundcolor.Item;
 
-                        }
-                        else
+                        if (!string.IsNullOrEmpty(color.ContentTitle.Raw))
                         {
-                            // set Slide based color css class
-                            pnlTips.CssClass += " text-slide " + _currentTip.Backgroundcolor.Raw + "-background";
-                            if (phSlide != null)
-                            {
-                                phEnd.Visible = false;
-                                phSlide.Visible = true;
-                                FieldRenderer frTipTitle = e.FindControlAs<FieldRenderer>("frTipTitle");
-                                if (frTipTitle != null)
-                                {
-                                    frTipTitle.Item = _currentTip;
-                                }
-                                FieldRenderer frTipText = e.FindControlAs<FieldRenderer>("frTipText");
-                                if (frTipText != null)
-                                {
-                                    frTipText.Item = _currentTip;
-                                }
-                                Label lblCurrentTip = e.FindControlAs<Label>("lblCurrentTip");
-                                if (lblCurrentTip != null)
-                                {
-                                    lblCurrentTip.Text=_CurrentTipNo.ToString();
-                                }
-                                Label lblTotalTips = e.FindControlAs<Label>("lblTotalTips");
-                                if (lblTotalTips != null)
-                                {
-                                    lblTotalTips.Text = _totalTipsCount.ToString();
-                                }
-                            }
-
+                            pnlSlide.CssClass += " " + color.ContentTitle.Raw;
                         }
-                        //else open ph slide and set css accordingly
+                    }
+                }
+
+                if (dataItem.Circlecolor.Item != null)
+                {
+                    if (dataItem.Circlecolor.Item.IsOfType(MetadataItem.TemplateId))
+                    {
+                        MetadataItem color = dataItem.Circlecolor.Item;
+
+                        if (!string.IsNullOrEmpty(color.ContentTitle.Raw))
+                        {
+                            lblCircle.CssClass = color.ContentTitle.Raw;
+                        }
                     }
                 }
             }
+
+            if (e.Item.ItemType == ListItemType.Footer)
+            {
+                var parent = DataSource.Parent;
+                List<Item> parents = new List<Item>();
+
+                while (parent != null)
+                {
+                    parents.Add(parent);
+                    parent = parent.Parent;
+                }
+
+                string subtopic = "";
+                string topic = "";
+
+                foreach (var p in parents)
+                {
+                    if (p.IsOfType(SubtopicLandingPageItem.TemplateId))
+                    {
+                        subtopic = p.Paths.FullPath;
+                    }
+                    else if (p.IsOfType(TopicLandingPageItem.TemplateId))
+                    {
+                        topic = p.Paths.FullPath;
+                    }
+                }
+                
+                var randomSlides = SearchHelper.GetLastSlideTextOnlyTips(DataSource.ID, subtopic, topic);
+
+                FieldRenderer frPageSummary1 = e.FindControlAs<FieldRenderer>("frPageSummary1");
+                FieldRenderer frPageSummary2 = e.FindControlAs<FieldRenderer>("frPageSummary2");
+                FieldRenderer frPageTitle1 = e.FindControlAs<FieldRenderer>("frPageTitle1");
+                FieldRenderer frPageTitle2 = e.FindControlAs<FieldRenderer>("frPageTitle2");
+
+                if (randomSlides.Count >= 2)
+                {
+                    var slide = randomSlides[1];
+                    frPageTitle2.Item = frPageSummary2.Item = slide;
+                    Panel pnlThumbnail2 = e.FindControlAs<Panel>("pnlThumbnail2");
+                    //string url = slide.DefaultArticlePage.GetArticleThumbnailUrl(380, 220);
+                    //string style = string.Format("background-image: url('{0}')", url);
+                    //pnlThumbnail2.Attributes.Add("style", style);
+                    e.FindControlAs<Placeholder>("phSlideshow2").Visible = true;
+                }
+
+                if (randomSlides.Count >= 1)
+                {
+                    var slide = randomSlides[0];
+                    frPageTitle1.Item = frPageSummary1.Item = slide;
+                    Panel pnlThumbnail1 = e.FindControlAs<Panel>("pnlThumbnail2");
+                    //string url = slide.DefaultArticlePage.GetArticleThumbnailUrl(380, 220);
+                    //string style = string.Format("background-image: url('{0}')", url);
+                    //pnlThumbnail1.Attributes.Add("style", style);
+                    e.FindControlAs<Placeholder>("phSlideshow1").Visible = true;
+                }
+            }
+        }
+    }
+
+    public class CustomResultItem : SearchResultItem
+    {
+        public string AllTemplates
+        {
+            get;
+            set;
         }
     }
 }
