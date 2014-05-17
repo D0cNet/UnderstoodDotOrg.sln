@@ -197,6 +197,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string LastTipButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Last Tip Button Text");
+            }
+        }
+
         #endregion
 
         #region Input Placeholders
