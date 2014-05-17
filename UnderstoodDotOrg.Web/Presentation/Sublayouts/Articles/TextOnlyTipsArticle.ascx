@@ -107,10 +107,10 @@
                                             <div class="slide-count-text">
                                                 <span class="light-blue-span"><%--1--%><asp:Label ID="lblCurrentTip" runat="server"></asp:Label></span> of <%--9--%><asp:Label ID="lblTotalTips" runat="server"></asp:Label>
                                             </div>
-                                            <h3>
+                                            <h3 style="color:#696969">
                                                 <sc:FieldRenderer ID="frTipTitle" runat="server" FieldName="Tip Title" />
                                             </h3>
-                                            <p>
+                                            <p style="color:#696969">
                                                 <sc:FieldRenderer ID="frTipText" runat="server" FieldName="Tip Text" />
                                             </p>
                                         </div>
