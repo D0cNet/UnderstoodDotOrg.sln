@@ -11,10 +11,14 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
+using UnderstoodDotOrg.Framework.UI;
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
-    public partial class TopicPageHeader : System.Web.UI.UserControl {
-        protected void Page_Load(object sender, EventArgs e) {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic 
+{
+    public partial class TopicPageHeader : BaseSublayout<TopicLandingPageItem> 
+    {
+        protected void Page_Load(object sender, EventArgs e) 
+        {
             TopicLandingPageItem topicPage = GetTopicLandingPageItem();
             
             //Page Title
@@ -28,25 +32,43 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
                 hlBreadcrumbNav.NavigateUrl = parentItem.GetUrl();
                 txtBreadcrumbNav.Text = parentItem.DisplayName;
             }
-            else {
+            else 
+            {
                 hlBreadcrumbNav.Visible = false;
                 txtBreadcrumbNav.Visible = false;
             }
 
             // Navigation should only display on Experts Live and Subtopic pages
-            if (topicPage != null
-                && (IsExpertsLivePage() || Sitecore.Context.Item.IsOfType(TopicLandingPageItem.TemplateId)))
+            if (topicPage != null)
             {
-                var subTopicItems = topicPage.GetSubTopicLandingPageItem();
-                if (subTopicItems != null && subTopicItems.Any()) {
-                   rptTopicHeader.DataSource = subTopicItems;
-                   rptTopicHeader.DataBind();
+                // Display nav for Topic page
+                if (Sitecore.Context.Item.IsOfType(TopicLandingPageItem.TemplateId))
+                {
+                    var subTopicItems = topicPage.GetSubTopicLandingPageItem().ToList();
+                    if (subTopicItems != null && subTopicItems.Any())
+                    {
+                        // Add overview
+                        subTopicItems.Insert(0, new SubtopicLandingPageItem(Sitecore.Context.Item));
+                    
+                        rptTopicHeader.DataSource = subTopicItems;
+                        rptTopicHeader.DataBind();
+                    }
                 }
-            }
 
-            //apply css class to outerDiv in case of expert landing and detail page
-            if (IsExpertsLivePage()) {
-                outerDiv.Attributes.Add("class", "container page-topic about-back-pagetopic");
+                // NOTE: This control is primarily meant for Articles section
+                // It's being reused in Community which appears to be displaying the wrong nav elements
+                // DP HTML shows that Experts Live page should show navigation matching the Community landing page
+                // Current function is pulling links from children below, this should probably be corrected.
+
+                if (IsExpertsLivePage()) 
+                {
+                    var subTopicItems = topicPage.GetSubTopicLandingPageItem();
+                    if (subTopicItems != null && subTopicItems.Any()) 
+                    {
+                       rptTopicHeader.DataSource = subTopicItems;
+                       rptTopicHeader.DataBind();
+                    }
+                }
             }
         }
 
@@ -56,12 +78,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
                 || Sitecore.Context.Item.IsOfType(ExpertDetailPageItem.TemplateId);
         }
 
-        protected TopicLandingPageItem GetTopicLandingPageItem() {
+        protected TopicLandingPageItem GetTopicLandingPageItem() 
+        {
             Item contextItem = Sitecore.Context.Item;
             Item topicLandingPageItem = contextItem;
-            while (contextItem != null && !contextItem.IsOfType(TopicLandingPageItem.TemplateId)) {
-
-                if (contextItem.Parent != null && contextItem.Parent.IsOfType(TopicLandingPageItem.TemplateId)) {
+            while (contextItem != null && !contextItem.IsOfType(TopicLandingPageItem.TemplateId)) 
+            {
+                if (contextItem.Parent != null && contextItem.Parent.IsOfType(TopicLandingPageItem.TemplateId)) 
+                {
                     topicLandingPageItem = contextItem.Parent;
                     break;
                 }
@@ -71,15 +95,28 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
             return topicLandingPageItem;
         }
 
-        protected void rptTopicHeader_ItemDataBound(object sender, RepeaterItemEventArgs e) {
-            if (e.IsItem()) {
+        protected void rptTopicHeader_ItemDataBound(object sender, RepeaterItemEventArgs e) 
+        {
+            if (e.IsItem()) 
+            {
                 SubtopicLandingPageItem subTopicItem = e.Item.DataItem as SubtopicLandingPageItem;
-                if (subTopicItem != null) {
+                if (subTopicItem != null) 
+                {
                     HyperLink hlNavigationTitle = e.FindControlAs<HyperLink>("hlNavigationTitle");
                     BasePageNEWItem basePageNewItem = new BasePageNEWItem(subTopicItem);
-                    if (hlNavigationTitle != null) {
+                    if (hlNavigationTitle != null) 
+                    {
                         hlNavigationTitle.NavigateUrl = subTopicItem.InnerItem.GetUrl();
-                        hlNavigationTitle.Text = basePageNewItem.NavigationTitle.Rendered;
+                        
+                        // Handle overview link
+                        if (subTopicItem.InnerItem == Sitecore.Context.Item)
+                        {
+                            hlNavigationTitle.Text = UnderstoodDotOrg.Common.DictionaryConstants.OverviewButtonText;
+                        }
+                        else
+                        {
+                            hlNavigationTitle.Text = basePageNewItem.NavigationTitle.Rendered;
+                        }
                     }
                 }
             }

@@ -13,15 +13,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
     public partial class TopicPageHeader {
         
         /// <summary>
-        /// outerDiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl outerDiv;
-        
-        /// <summary>
         /// hlBreadcrumbNav control.
         /// </summary>
         /// <remarks>

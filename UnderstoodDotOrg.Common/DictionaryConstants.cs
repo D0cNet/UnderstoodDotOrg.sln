@@ -205,6 +205,30 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string OverviewButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Overview Button Text");
+            }
+        }
+
+        public static string MenuButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Menu Button Text");
+            }
+        }
+
+        public static string MoreButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "More Button Text");
+            }
+        }
+
         #endregion
 
         #region Input Placeholders

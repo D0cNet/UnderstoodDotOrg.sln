@@ -2,8 +2,8 @@
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN PARTIAL: pagetopic -->
 <!-- Page Title -->
-<div class="container community-main-header" runat="server" id="outerDiv">
-    <header>
+<div class="container <%= AdditionalCssClass %>">
+    
         <div class="row  header-wrapper">
 
             <div class="col col-14 offset-1 header-title rs_read_this">
@@ -11,7 +11,6 @@
                 <asp:HyperLink runat="server" ID="hlBreadcrumbNav" CssClass="back-to-previous">
                     <i class="icon-arrow-left-blue"></i>
                     <asp:Literal runat="server" ID="txtBreadcrumbNav"></asp:Literal>
-                    <!--School & Learning-->
                 </asp:HyperLink>
 
                 <h1><%--Grade School--%>
@@ -42,21 +41,23 @@
             </div>
 
         </div>
-    </header>
+    
 
 
-    <nav class="container nav-secondary">
+    
+</div>
+<nav class="container nav-secondary">
     <div class="row">
         <div class="col col-24">
 
             <!-- BEGIN ELEMENT: Menu -->
 
-            <div class="label-menu"><span>Menu</span></div>
+            <div class="label-menu"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.MenuButtonText %></span></div>
             <ul class="menu" aria-label="secondary-navigation" aria-role="navigation">
-                <li class="title"><span>Overview</span> <i class="icon-hide-show-fff"></i></li>
+                <li class="title"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.OverviewButtonText %></span> <i class="icon-hide-show-fff"></i></li>
                 <li class="submenu">
                     <div class="inner">
-                        <div class="label-more"><span>More <i class="icon-hide-show-fff"></i></span></div>
+                        <div class="label-more"><button><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreButtonText %> <i class="icon-hide-show-fff"></i></button></div>
                         <ul>
                             <asp:Repeater runat="server" ID="rptTopicHeader" OnItemDataBound="rptTopicHeader_ItemDataBound">
                                 <ItemTemplate>
@@ -81,12 +82,4 @@
     </div>
     <!-- .row -->
 </nav>
-</div>
-<!-- .container -->
 
-<!-- END PARTIAL: pagetopic -->
-<!-- BEGIN MODULE: Secondary Nav -->
-
-<!-- .container.nav-secondary -->
-
-<!-- END MODULE: Secondary Nav -->

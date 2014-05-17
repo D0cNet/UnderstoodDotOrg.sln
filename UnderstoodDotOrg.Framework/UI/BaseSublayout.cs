@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Web.Security;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Common;
+using System;
 
 namespace UnderstoodDotOrg.Framework.UI
 {
@@ -62,7 +63,7 @@ namespace UnderstoodDotOrg.Framework.UI
         {
             string rawParameters = this.Parameters;
             NameValueCollection parameters = Sitecore.Web.WebUtil.ParseUrlParameters(rawParameters);
-            return parameters[key];
+            return (parameters[key] != null) ? System.Web.HttpUtility.UrlDecode(parameters[key]) : String.Empty;
         }
 
         public MembershipUser CurrentUser
