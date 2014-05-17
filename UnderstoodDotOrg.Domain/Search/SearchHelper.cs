@@ -23,6 +23,8 @@ using SolrNet.Commands.Parameters;
 using SolrNet.Impl;
 using SolrNet.Impl.QuerySerializers;
 using SolrNet.Impl.FieldSerializers;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
+using Sitecore.ContentSearch.SearchTypes;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
@@ -594,6 +596,55 @@ namespace UnderstoodDotOrg.Domain.Search
             return results;
         }
 
+        public static List<TextOnlyTipsArticlePageItem> GetLastSlideTextOnlyTips(ID dataSourceId, string subtopicPath = "", string topicPath = "", int maxItemsToGet = 2)
+        {
+
+            subtopicPath = subtopicPath.ToLower();
+            topicPath = topicPath.ToLower();
+
+            string templateFilter = TextOnlyTipsArticlePageItem.TemplateId;
+            var finalResults = new List<CustomResultItem>();
+            var result = Enumerable.Empty<CustomResultItem>();
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            var templateId = templateFilter.ToLower().Replace("{", "").Replace("}", "").Replace("-", "");
+
+            using (var context = index.CreateSearchContext())
+            {
+                var query = context.GetQueryable<CustomResultItem>()
+                                   .Where(i => i.AllTemplates.Contains(templateId));
+
+                var results = query.GetResults();
+
+                result = results.Hits.Select(h => h.Document).Where(i => !i.ItemId.Equals(dataSourceId));
+
+                if (!string.IsNullOrEmpty(subtopicPath))
+                {
+                    finalResults = result.Where(i => i.Path.Contains(subtopicPath)).ToList();
+                }
+
+                if (finalResults.Count < maxItemsToGet)
+                {
+                    int toTake = maxItemsToGet - finalResults.Count;
+                    var topicResults = result.Where(i => i.Path.Contains(topicPath))
+                                             .Where(i => !finalResults.Select(r => r.ItemId).Contains(i.ItemId))
+                                             .Take(toTake).ToList();
+
+                    finalResults.AddRange(topicResults);
+                }
+            }
+
+            return finalResults.Select(r => r.GetItem()).Select(i => (TextOnlyTipsArticlePageItem)i).ToList();
+        }
+
         #endregion
+    }
+
+    public class CustomResultItem : SearchResultItem
+    {
+        public string AllTemplates
+        {
+            get;
+            set;
+        }
     }
 }
