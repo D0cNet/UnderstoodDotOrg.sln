@@ -17,5 +17,11 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Pages
                 .Where(i => i.IsOfType(DecisionQuestionCategoryFolderItem.TemplateId))
                 .Select(i => (DecisionQuestionCategoryFolderItem)i);
         }
+
+        public DecisionToolResultsPageItem GetDecisionToolResultsPage()
+        {
+            return InnerItem.Children
+                .FirstOrDefault(i => i.IsOfType(DecisionToolResultsPageItem.TemplateId));
+        }
     }
 }

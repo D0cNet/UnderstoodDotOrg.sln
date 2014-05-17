@@ -996,6 +996,13 @@
     <Compile Include="Presentation\Sublayouts\DecisionTool\DecisionToolQuestionPage.ascx.designer.cs">
       <DependentUpon>DecisionToolQuestionPage.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\DecisionTool\DecisionToolResultsPage.ascx.cs">
+      <DependentUpon>DecisionToolResultsPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\DecisionTool\DecisionToolResultsPage.ascx.designer.cs">
+      <DependentUpon>DecisionToolResultsPage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx.cs">
       <DependentUpon>ArchiveListing.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2195,6 +2202,7 @@
     <Content Include="Presentation\Sublayouts\Containers\TwoRow.ascx" />
     <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolQuestionPage.ascx" />
+    <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolResultsPage.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\CommunitySubHeader.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\EventArchive.ascx" />
@@ -2321,6 +2329,13 @@
     <Content Include="Handlers\DownloadFile.ashx" />
     <None Include="Properties\PublishProfiles\Local.pubxml">
       <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
