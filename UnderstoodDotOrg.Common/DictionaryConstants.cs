@@ -599,6 +599,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string DidYouFindThisHelpful
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Did You Find This Helpful");
+            }
+        }
+
         public static string SearchLabel
         {
             get
