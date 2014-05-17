@@ -575,6 +575,30 @@ namespace UnderstoodDotOrg.Common
 
         #endregion
 
+        public static string PluralCommentLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Plural Comment Label");
+            }
+        }
+
+        public static string SingleCommentLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Single Comment Label");
+            }
+        }
+
+        public static string FoundThisHelpful
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Found This Helpful");
+            }
+        }
+
         public static string SearchLabel
         {
             get
