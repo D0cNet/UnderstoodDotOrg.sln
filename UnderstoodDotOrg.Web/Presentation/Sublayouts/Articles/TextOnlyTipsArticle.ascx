@@ -79,7 +79,7 @@
                         <FooterTemplate>
                             <div class="slide end">
                                 <div class="slide-inner rs_read_this">
-                                    <h3><a href="#" class="restart-slideshow">&lt; See Slideshow from the Beginning</a> or explore more:</h3>
+                                    <h3><a href="#" class="restart-slideshow"><asp:Literal ID="ltlSlideshowRestartLabel" runat="server"></asp:Literal></a> <asp:Literal ID="ltlSlideshowRestartAlternateLabel" runat="server"></asp:Literal></h3>
                                     <asp:Placeholder ID="phSlideshow1" Visible="false" runat="server">
                                         <asp:Panel ID="pnlThumbnail1" CssClass="thumbnail" runat="server"></asp:Panel>
                                         <div class="text">

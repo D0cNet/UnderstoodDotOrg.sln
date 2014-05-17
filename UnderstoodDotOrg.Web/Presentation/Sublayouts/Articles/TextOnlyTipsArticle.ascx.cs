@@ -157,6 +157,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 FieldRenderer frPageSummary2 = e.FindControlAs<FieldRenderer>("frPageSummary2");
                 FieldRenderer frPageTitle1 = e.FindControlAs<FieldRenderer>("frPageTitle1");
                 FieldRenderer frPageTitle2 = e.FindControlAs<FieldRenderer>("frPageTitle2");
+                Literal ltlSlideshowRestartLabel = e.FindControlAs<Literal>("ltlSlideshowRestartLabel");
+                Literal ltlSlideshowRestartAlternateLabel = e.FindControlAs<Literal>("ltlSlideshowRestartAlternateLabel");
 
                 if (randomSlides.Count >= 2)
                 {
@@ -179,6 +181,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     //pnlThumbnail1.Attributes.Add("style", style);
                     e.FindControlAs<System.Web.UI.WebControls.PlaceHolder>("phSlideshow1").Visible = true;
                 }
+
+                ltlSlideshowRestartLabel.Text = DictionaryConstants.SlideshowRestartLabel;
+                ltlSlideshowRestartAlternateLabel.Text = DictionaryConstants.SlideshowRestartAlternateLabel;
             }
         }
     }
