@@ -166,7 +166,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     //string url = slide.DefaultArticlePage.GetArticleThumbnailUrl(380, 220);
                     //string style = string.Format("background-image: url('{0}')", url);
                     //pnlThumbnail2.Attributes.Add("style", style);
-                    e.FindControlAs<Placeholder>("phSlideshow2").Visible = true;
+                    e.FindControlAs<System.Web.UI.WebControls.PlaceHolder>("phSlideshow2").Visible = true;
                 }
 
                 if (randomSlides.Count >= 1)
@@ -177,7 +177,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     //string url = slide.DefaultArticlePage.GetArticleThumbnailUrl(380, 220);
                     //string style = string.Format("background-image: url('{0}')", url);
                     //pnlThumbnail1.Attributes.Add("style", style);
-                    e.FindControlAs<Placeholder>("phSlideshow1").Visible = true;
+                    e.FindControlAs<System.Web.UI.WebControls.PlaceHolder>("phSlideshow1").Visible = true;
                 }
             }
         }
