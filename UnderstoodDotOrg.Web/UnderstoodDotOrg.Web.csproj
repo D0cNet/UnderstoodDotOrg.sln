@@ -436,6 +436,12 @@
     <Compile Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx.designer.cs">
       <DependentUpon>QuizTryMoreQuizzes.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulAndCommentCounts.ascx.cs">
+      <DependentUpon>FoundHelpfulAndCommentCounts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulAndCommentCounts.ascx.designer.cs">
+      <DependentUpon>FoundHelpfulAndCommentCounts.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx.cs">
       <DependentUpon>Promotionals List.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2087,6 +2093,7 @@
     <Content Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulAndCommentCounts.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\ReviewerInfo.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx" />
