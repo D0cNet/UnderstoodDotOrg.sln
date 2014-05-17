@@ -123,6 +123,5 @@
     </div>
 </div>
 <!-- .container -->
-mark1
+
 <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" runat="server"></sc:Sublayout>
-mark2
