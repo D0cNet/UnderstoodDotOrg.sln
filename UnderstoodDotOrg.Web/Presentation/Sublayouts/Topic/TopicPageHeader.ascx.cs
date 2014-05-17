@@ -33,8 +33,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
                 txtBreadcrumbNav.Visible = false;
             }
 
-            if (topicPage != null) {
-
+            // Navigation should only display on Experts Live and Subtopic pages
+            if (topicPage != null
+                && (IsExpertsLivePage() || Sitecore.Context.Item.IsOfType(TopicLandingPageItem.TemplateId)))
+            {
                 var subTopicItems = topicPage.GetSubTopicLandingPageItem();
                 if (subTopicItems != null && subTopicItems.Any()) {
                    rptTopicHeader.DataSource = subTopicItems;
@@ -43,9 +45,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
             }
 
             //apply css class to outerDiv in case of expert landing and detail page
-            if (Sitecore.Context.Item.IsOfType(ExpertLandingPageItem.TemplateId) || Sitecore.Context.Item.IsOfType(ExpertDetailPageItem.TemplateId)) {
+            if (IsExpertsLivePage()) {
                 outerDiv.Attributes.Add("class", "container page-topic about-back-pagetopic");
             }
+        }
+
+        private bool IsExpertsLivePage()
+        {
+            return Sitecore.Context.Item.IsOfType(ExpertLandingPageItem.TemplateId)
+                || Sitecore.Context.Item.IsOfType(ExpertDetailPageItem.TemplateId);
         }
 
         protected TopicLandingPageItem GetTopicLandingPageItem() {

@@ -40,16 +40,16 @@
             </div>
 
             <div class="row listing-row">
-                <div class="col col-5 offset-1">
-                    <sc:image id="scThumbnailImage" runat="server" field="Content Thumbnail" />
-                    <asp:Image runat="server" ID="defaultImage" Visible="false" ImageUrl="http://placehold.it/190x107" />
-                </div>
                 <asp:Repeater runat="server" ID="rptTopicListItems" OnItemDataBound="rptTopicListItems_ItemDataBound">
                     <ItemTemplate>
+                        <asp:PlaceHolder ID="phThumbnail" runat="server" Visible="false">
+                        <div class="col col-5 offset-1">
+                            <asp:Image id="imgThumbnail" runat="server" />
+                        </div>
+                        </asp:PlaceHolder>
                         <div class="col col-5 offset-1">
                             <h3>
-                                <asp:HyperLink ID="hlTopicTitle" runat="server">
-                                </asp:HyperLink>
+                                <asp:HyperLink ID="hlTopicTitle" runat="server" />
                             </h3>
                             <div class="children">
                                 <i class="child-a" title="CHILD NAME HERE"></i><i class="child-c" title="CHILD NAME HERE"></i><i class="child-e" title="CHILD NAME HERE"></i>
@@ -58,19 +58,7 @@
                     </ItemTemplate>
 
                 </asp:Repeater>
-                <%--  <div class="col col-5 offset-1">
-                    <h3><a href="REPLACE">Corporis Voluptas Et Ipsum Consequatur Recusandae Praesentium Modi Sapiente Sint Labore Rerum</a></h3>
-                    <div class="children">
-                        <i class="child-a" title="CHILD NAME HERE"></i><i class="child-c" title="CHILD NAME HERE"></i><i class="child-e" title="CHILD NAME HERE"></i>
-                    </div>
-                </div>
 
-                <div class="col col-5 offset-1">
-                    <h3><a href="REPLACE">Et Iste Reiciendis Et Laborum Eligendi</a></h3>
-                    <div class="children">
-                        <i class="child-a" title="CHILD NAME HERE"></i>
-                    </div>
-                </div>--%>
             </div>
             <!-- .row -->
         </div>

@@ -25,6 +25,7 @@ using SolrNet.Impl.QuerySerializers;
 using SolrNet.Impl.FieldSerializers;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
 using Sitecore.ContentSearch.SearchTypes;
+using System.Globalization;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
@@ -329,6 +330,25 @@ namespace UnderstoodDotOrg.Domain.Search
 
 
         #region Public methods
+
+        public static List<Article> GetMostRecentArticlesWithin(ID container, int numEntries)
+        {
+            List<Article> results = new List<Article>();
+
+            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            using (var ctx = index.CreateSearchContext()) 
+            {
+                var entries = ctx.GetQueryable<Article>(new CultureExecutionContext(CultureInfo.CurrentCulture))
+                                .Filter(i => i.Paths.Contains(container))
+                                .Filter(i => i.Templates.Contains(ID.Parse(DefaultArticlePageItem.TemplateId)))
+                                .OrderByDescending(i => i.CreatedDate)
+                                .Take(numEntries);
+
+                results = entries.ToList();
+            }
+
+            return results;
+        }
 
         public static List<Article> GetRandomMustReadArticles(int numberOfArticles)
         {
