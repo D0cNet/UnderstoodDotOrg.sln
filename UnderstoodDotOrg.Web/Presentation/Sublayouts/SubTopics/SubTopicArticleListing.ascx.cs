@@ -44,7 +44,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.SubTopics
         {
             SubtopicLandingPageItem item = Sitecore.Context.Item;
             IEnumerable<DefaultArticlePageItem> articles = item.GetArticles();
-            if (articles.Any())
+
+            bool hasArticles = articles.Any();
+
+            pnlShowMore.Visible = hasArticles;
+
+            if (hasArticles)
             {
                 rptArticles.DataSource = articles;
                 rptArticles.DataBind();

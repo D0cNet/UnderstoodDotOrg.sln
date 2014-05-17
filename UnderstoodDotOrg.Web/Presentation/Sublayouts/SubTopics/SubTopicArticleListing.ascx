@@ -23,8 +23,8 @@
     </asp:Repeater>
 
 
-    <div class="show-more">
+    <asp:Panel ID="pnlShowMore" runat="server" CssClass="show-more">
         <a href="REPLACE" class="show-more-link" data-path="articles/g4" data-container="article-listing" data-item="article" data-count="6">More Articles<i class="icon-arrow-down-blue"></i></a>
-    </div>
+    </asp:Panel>
 
  </div>

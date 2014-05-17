@@ -40,7 +40,8 @@ namespace UnderstoodDotOrg.Domain.Search
             pred = pred.And(a => a.Language == "en");
 
             // Exclude templates
-            pred = pred.And(a => !a.Fullpath.Contains("/sitecore/templates/"));
+            pred = pred.And(a => a.Path.Contains("/sitecore/content/home/")
+                            && !a.Paths.Contains(ID.Parse(Constants.QATestDataContainer)));
 
             // Include only articles
             pred = pred.And(GetInheritsArticlePredicate());
@@ -381,7 +382,9 @@ namespace UnderstoodDotOrg.Domain.Search
             using (var ctx = index.CreateSearchContext())
             {
                 var query = ctx.GetQueryable<Article>()
-                                .Filter(a => a.Language == "en");
+                                .Filter(a => a.Language == "en"
+                                    && a.Path.Contains("/sitecore/content/home/")
+                                    && !a.Paths.Contains(ID.Parse(Constants.QATestDataContainer)));
 
                 bool hasTemplateMappings = false;
 
@@ -435,7 +438,9 @@ namespace UnderstoodDotOrg.Domain.Search
         private static IQueryable<BehaviorAdvice> GetBehaviorSearchQuery(IProviderSearchContext context, string challenge, string grade)
         {
             return context.GetQueryable<BehaviorAdvice>()
-                        .Where(i => i.Language == "en" && i.Fullpath.Contains("/sitecore/content/"))
+                        .Where(i => i.Language == "en" 
+                            && i.Fullpath.Contains("/sitecore/content/Home/")
+                            && !i.Fullpath.Contains("/sitecore/content/Home/QA Test Data/"))
                         .Where(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
                                 || i.TemplateId == ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
                         .Where(i => i.ChildChallenges.Contains(ID.Parse(Guid.Empty))

@@ -69,7 +69,7 @@
                 </fieldset>
 
                 <div class="submit-button-wrap">
-                    <input class="submit-button" type="submit" value="Submit">
+                    <input class="button" type="submit" value="Submit">
                 </div>
 
             </div>
@@ -122,7 +122,7 @@
                 </fieldset>
 
                 <div class="submit-button-wrap">
-                    <input class="submit-button" type="submit" value="Submit">
+                    <input class="button" type="submit" value="Submit">
                 </div>
 
             </div>
