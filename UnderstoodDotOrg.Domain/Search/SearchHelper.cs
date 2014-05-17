@@ -439,8 +439,8 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             return context.GetQueryable<BehaviorAdvice>()
                         .Where(i => i.Language == "en" 
-                            && i.Fullpath.Contains("/sitecore/content/Home/")
-                            && !i.Fullpath.Contains("/sitecore/content/Home/QA Test Data/"))
+                            && i.Path.Contains("/sitecore/content/home/")
+                            && !i.Paths.Contains(ID.Parse(Constants.QATestDataContainer)))
                         .Where(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
                                 || i.TemplateId == ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
                         .Where(i => i.ChildChallenges.Contains(ID.Parse(Guid.Empty))
