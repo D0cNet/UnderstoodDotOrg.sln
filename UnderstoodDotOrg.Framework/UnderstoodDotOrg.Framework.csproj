@@ -53,6 +53,9 @@
     <Compile Include="UI\BaseSublayout.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="UI\BaseSublayoutT.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnderstoodDotOrg.Common\UnderstoodDotOrg.Common.csproj">

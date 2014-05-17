@@ -46,15 +46,6 @@ public static implicit operator Item(DecisionQuestionPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField DisplayText
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Display Text"]);
-	}
-}
-
-
 #endregion //Field Instance Methods
 }
 }

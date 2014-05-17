@@ -225,8 +225,11 @@
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\ContentPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\DefaultArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\DecisionTool\DecisionAnswersFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\DecisionTool\DecisionAnswersFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\DecisionTool\DecisionIndicationQuestionsFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\DecisionTool\DecisionIndicationQuestionsFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\DecisionTool\DecisionQuestionCategoryFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\DecisionTool\DecisionQuestionCategoryFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\ExpertliveFilterFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\FooterFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\GlobalsItem.base.cs" />
@@ -362,7 +365,9 @@
     <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Components\DecisionIndicationAnswerItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Components\DecisionIndicationQuestionItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Pages\DecisionQuestionPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Pages\DecisionQuestionPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Pages\DecisionToolLandingPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Pages\DecisionToolLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\Base\BaseEventDetailPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\Base\BaseEventDetailPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\ChatEventPageItem.base.cs" />
