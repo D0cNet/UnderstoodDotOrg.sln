@@ -607,6 +607,22 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string SlideshowRestartLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Slideshow Restart Label");
+            }
+        }
+
+        public static string SlideshowRestartAlternateLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Slideshow Restart Alternate Label");
+            }
+        }
+
         public static string SearchLabel
         {
             get
