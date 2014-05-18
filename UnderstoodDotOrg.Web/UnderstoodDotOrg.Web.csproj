@@ -1136,6 +1136,13 @@
     <Compile Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx.designer.cs">
       <DependentUpon>Back To Home.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\EmailAndAlertsPreferences.ascx.cs">
+      <DependentUpon>EmailAndAlertsPreferences.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\EmailAndAlertsPreferences.ascx.designer.cs">
+      <DependentUpon>EmailAndAlertsPreferences.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Forgot Password.ascx.cs">
       <DependentUpon>Forgot Password.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1164,12 +1171,33 @@
     <Compile Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx.designer.cs">
       <DependentUpon>MyAccount.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyAccountSubheader.ascx.cs">
+      <DependentUpon>MyAccountSubheader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyAccountSubheader.ascx.designer.cs">
+      <DependentUpon>MyAccountSubheader.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\MyCommentsTest.ascx.cs">
       <DependentUpon>MyCommentsTest.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\MyCommentsTest.ascx.designer.cs">
       <DependentUpon>MyCommentsTest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyNotificationsContainer.ascx.cs">
+      <DependentUpon>MyNotificationsContainer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyNotificationsContainer.ascx.designer.cs">
+      <DependentUpon>MyNotificationsContainer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyNotificationsTabs.ascx.cs">
+      <DependentUpon>MyNotificationsTabs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyNotificationsTabs.ascx.designer.cs">
+      <DependentUpon>MyNotificationsTabs.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx.cs">
       <DependentUpon>Reset Password.ascx</DependentUpon>
@@ -2222,11 +2250,15 @@
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
     <Content Include="Presentation\Sublayouts\Modals\CommunityQAQuestionAsked.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\EmailAndAlertsPreferences.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Forgot Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\InternationalUserDisclaimer.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\MyAccountSubheader.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyCommentsTest.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\MyNotificationsContainer.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\MyNotificationsTabs.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />
