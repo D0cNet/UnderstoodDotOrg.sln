@@ -19,6 +19,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     public partial class VideoArticle : System.Web.UI.UserControl
     {
         VideoArticlePageItem ObjVideoArticle;
+        protected string VideoFile="";
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjVideoArticle = new VideoArticlePageItem(Sitecore.Context.Item);
@@ -30,6 +31,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 else
                     SBReviewedBy.Visible = false;
 
+
+                // sow video file
+                VideoFile = ObjVideoArticle.VideoFile.MediaItem;
+                MediaItem VideoItem = ObjVideoArticle.VideoFile.MediaItem;
+                
             }
         }
     }
