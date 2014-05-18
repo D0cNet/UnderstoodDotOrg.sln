@@ -42,15 +42,22 @@
                 <%--<img class="foo" alt="FPO content image" src="http://placehold.it/870x489&amp;text=870x489" />--%>
                 <%--/sitecore/media library/Files/Poses/Video/Wildlife--%>
                 <%--<source type="video/mp4; codecs=avc1.42E01E, mp4a.40.2" src="~/media/Files/Poses/Video/Wildlife.ashx?ext=.mp4">VIDEO FILE</source>--%>
-                <video width="320" height="240" controls>
+                <%--<source type="video/mp4; codecs=avc1.42E01E, mp4a.40.2" src="~/media/Files/Poses/Video/SD.ashx?ext=.mp4">aa</source>--%>
+                <video  Width="870" Height="489" controls>
+                    <source  src="<%= VideoFile %>?ext.mp4"
+                        type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'  />
+                    <sc:FieldRenderer ID="frVideo" runat="server" FieldName="Video File" />
+                </video>
+
+                <%--<video src="video.webm" width="320" height="240" controls>
                     <source src="movie.mp4" type="video/mp4">
                     <source src="movie.ogg" type="video/ogg">
                     <source src="movie.webm" type="video/webm">
                     <source src="movie.wmv" type="video/wmv">
                     <object data="movie.mp4" width="320" height="240">
-                        <embed src="<%= VideoFile %>" width="320" height="240">
+                        <embed src="<%= VideoFile %>?ext.mp4" width="320" height="240">
                     </object>
-                </video>
+                </video>--%>
             </div>
             <!-- END PARTIAL: article-video-container -->
             <!-- BEGIN PARTIAL: transcript-control -->

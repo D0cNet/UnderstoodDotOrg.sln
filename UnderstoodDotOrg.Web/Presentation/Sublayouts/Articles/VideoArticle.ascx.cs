@@ -33,9 +33,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
 
                 // sow video file
-                VideoFile = ObjVideoArticle.VideoFile.MediaItem;
-                MediaItem VideoItem = ObjVideoArticle.VideoFile.MediaItem;
-                
+                VideoFile = ObjVideoArticle.VideoFile.MediaUrl;
             }
         }
     }
