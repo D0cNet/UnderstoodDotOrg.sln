@@ -44,6 +44,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 ExpertDetailPageItem detailItem = e.Item.DataItem as ExpertDetailPageItem;
                 Panel rowSubParentPanel = e.FindControlAs<Panel>("rowSubParentPanel");
                 Sitecore.Web.UI.WebControls.Image scExpertImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scExpertImage");
+                System.Web.UI.WebControls.Image imgDefaultImage = e.FindControlAs<System.Web.UI.WebControls.Image>("imgDefaultImage");
                 FieldRenderer frHeading = e.FindControlAs<FieldRenderer>("frHeading");
                 FieldRenderer frSubHeading = e.FindControlAs<FieldRenderer>("frSubHeading");
                 Link scFollowTwittLink = e.FindControlAs<Link>("scFollowTwittLink");
@@ -63,9 +64,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                         else
                             rowSubParentPanel.CssClass = "col col-6 " + "offset-2";
                     }
-                    if (scExpertImage != null)
-                    {
+                    if (scExpertImage != null && detailItem.ExpertImage.MediaItem != null) {
                         scExpertImage.Item = detailItem;
+                        imgDefaultImage.Visible = false;
+                    }
+                    else {
+                        imgDefaultImage.Visible = true;
                     }
                     if (frHeading != null)
                     {
