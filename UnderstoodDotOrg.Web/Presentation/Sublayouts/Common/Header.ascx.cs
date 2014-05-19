@@ -15,9 +15,10 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Framework.UI;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
-    public partial class Header : System.Web.UI.UserControl
+    public partial class Header : BaseSublayout
     {
         HeaderFolderItem headerFolderItem = GetHeader();
 
@@ -150,16 +151,40 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             if (e.IsItem())
             {
-                NavigationLinkItem item = e.Item.DataItem as NavigationLinkItem;
-                if (item != null)
-                {
-                    FieldRenderer frUtilityLink = e.FindControlAs<FieldRenderer>("frUtilityLink");
+                Item item = e.Item.DataItem as Item;
 
-                    if (frUtilityLink != null)
-                    {
-                        frUtilityLink.Item = item;
-                    }
-                }
+				if (item.IsOfType(AuthenticationNavigationLinkItem.TemplateId))
+				{
+					AuthenticationNavigationLinkItem authenticationItem = new AuthenticationNavigationLinkItem(item);
+
+					if (IsUserLoggedIn)
+					{
+						LinkButton lbSignout = e.FindControlAs<LinkButton>("lbSignout");
+						lbSignout.Text = authenticationItem.LogoutText.Rendered;
+						lbSignout.Visible = true;
+					}
+					else
+					{
+						FieldRenderer frUtilityLink = e.FindControlAs<FieldRenderer>("frUtilityLink");
+
+						if (frUtilityLink != null)
+						{
+							frUtilityLink.Item = item;
+							frUtilityLink.FieldName = authenticationItem.LoginLink.Field.InnerField.Name;
+							frUtilityLink.Visible = true;
+						}
+					}
+				}
+				else
+				{
+					FieldRenderer frUtilityLink = e.FindControlAs<FieldRenderer>("frUtilityLink");
+
+					if (frUtilityLink != null)
+					{
+						frUtilityLink.Item = item;
+						frUtilityLink.Visible = true;
+					}
+				}
             }
         }
 
@@ -282,5 +307,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 }
             }
         }
+
+		protected void lbSignout_Click(object sender, EventArgs e)
+		{
+			Logout();
+		}
     }
 }

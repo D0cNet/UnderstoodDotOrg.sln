@@ -110,6 +110,12 @@ namespace UnderstoodDotOrg.Framework.UI
            CurrentUser = null; 
         }
 
+		protected void Logout()
+		{
+			FlushCurrentMemberUser();
+			Response.Redirect(Request.RawUrl);
+		}
+
         public BaseSublayout() : base() { }
 
     }

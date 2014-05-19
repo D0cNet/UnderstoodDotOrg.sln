@@ -37,7 +37,8 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <li role="menuitem" aria-haspopup="true">
-                            <sc:FieldRenderer ID="frUtilityLink" runat="server" FieldName="Link" />
+                            <sc:FieldRenderer ID="frUtilityLink" runat="server" Visible="false" FieldName="Link" />
+							<asp:LinkButton ID="lbSignout" OnClick="lbSignout_Click" Visible="false" runat="server"></asp:LinkButton>
                         </li>
                     </ItemTemplate>
                     <FooterTemplate>
