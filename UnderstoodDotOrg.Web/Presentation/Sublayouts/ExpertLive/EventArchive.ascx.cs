@@ -160,7 +160,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                     FieldRenderer frSubheading = e.FindControlAs<FieldRenderer>("frSubheading");
                     HyperLink hlWebniearDetail = e.FindControlAs<HyperLink>("hlWebniearDetail");
                     Panel pnlExpertImageLabel = e.FindControlAs<Panel>("pnlExpertImageLabel");
-
+                    imgExpertDefault.Visible = true;
                     if (baseEventItem.InnerItem.IsOfType(ChatEventPageItem.TemplateId)) {
                         ltEventType.Text = DictionaryConstants.ChatLabel;
                     }
@@ -193,6 +193,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                             if (scExpertImage != null && expertItem.ExpertImage.MediaItem != null) {
                                 scExpertImage.Item = expertItem;
                                 pnlExpertImageLabel.Visible = true;
+                                imgExpertDefault.Visible = false;
                             }
                             if (ltExpertType != null) {
                                 ltExpertType.Text = expertItem.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;
@@ -200,7 +201,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
 
                         }
                         else {
-                            imgExpertDefault.Visible = true;
+                           
                             pnlExpertImageLabel.Visible = true;
                         }
                     }
