@@ -236,6 +236,7 @@
     <Compile Include="SitecoreCIG\Poses\Folders\GlobalsItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\HeaderFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\HeaderFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\HeaderFolderItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\HomeSliderFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\HomeSliderFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\LanguageNavigationFolderItem.base.cs" />
@@ -273,6 +274,7 @@
     <Compile Include="SitecoreCIG\Poses\General\MetadataItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\MoreExploreItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\NavigationLinkItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\NavigationLinkItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\PromoItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\SocialMediaItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\TimeZoneItem.base.cs" />

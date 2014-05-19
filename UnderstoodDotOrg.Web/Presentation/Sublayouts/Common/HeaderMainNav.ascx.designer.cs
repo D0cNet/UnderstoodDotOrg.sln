@@ -10,24 +10,24 @@
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     
     
-    public partial class Header {
+    public partial class HeaderMainNav {
         
         /// <summary>
-        /// frGlobalGoogleAnalytics control.
+        /// rptMainNavigation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frGlobalGoogleAnalytics;
+        protected global::System.Web.UI.WebControls.Repeater rptMainNavigation;
         
         /// <summary>
-        /// frPageGoogleAnalytics control.
+        /// frParentToolKitHeading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPageGoogleAnalytics;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frParentToolKitHeading;
     }
 }

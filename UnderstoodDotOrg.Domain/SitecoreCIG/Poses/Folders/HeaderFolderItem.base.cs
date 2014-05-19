@@ -100,6 +100,24 @@ public CustomGeneralLinkField SignIn
 }
 
 
+public CustomImageField MobileCompanyLogo
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Mobile Company Logo"]);
+	}
+}
+
+
+public CustomTextField MobileLogoTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Mobile Logo Title"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
