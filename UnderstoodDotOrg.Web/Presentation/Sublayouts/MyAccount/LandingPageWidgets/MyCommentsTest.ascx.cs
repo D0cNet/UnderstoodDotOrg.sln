@@ -75,9 +75,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
                 {
 
                     CommentSnippet cm = new CommentSnippet();
-                    cm.Desc = item.SelectSingleNode("//Content/HtmlDescription").InnerText;
-                    cm.Title = item.SelectSingleNode("//Content/HtmlName").InnerText;
-                    cm.Url = item.SelectSingleNode("//Content/Url").InnerText;
+
+                    var descNode = item.SelectSingleNode("//Content/HtmlDescription");
+                    cm.Desc = descNode != null ? descNode.InnerText : string.Empty;
+
+                    var titleNode = item.SelectSingleNode("//Content/HtmlName");
+                    cm.Title = titleNode != null ? titleNode.InnerText : string.Empty;
+
+                    var urlNode = item.SelectSingleNode("//Content/Url");
+                    cm.Url = urlNode != null ? urlNode.InnerText : string.Empty;
+
                     commentSource.Add(cm);
                 }
 
