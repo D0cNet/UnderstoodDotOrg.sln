@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Pages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Components;
 using System.Web.UI.HtmlControls;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.DecisionTool
 {
@@ -21,7 +22,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.DecisionTool
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var rawCurrentIndicationQuestionIndex = Request.QueryString["q"];
+            var rawCurrentIndicationQuestionIndex = Request.QueryString[Constants.QueryStrings.DecisionTool.IndicationQuestion];
             if (!string.IsNullOrEmpty(rawCurrentIndicationQuestionIndex))
             {
                 List<DecisionIndicationQuestionItem> indQuestions;
@@ -82,8 +83,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.DecisionTool
         {
             if (CurrentIndicationQuestionIndex.HasValue)
             {
-                var indQuestionHistory = Request.QueryString["qh"] ?? string.Empty;
-                var indAnswerHistory = Request.QueryString["ah"] ?? string.Empty;
+                var indQuestionHistory = Request.QueryString[Constants.QueryStrings.DecisionTool.IndicationQuestionHistory] ?? string.Empty;
+                var indAnswerHistory = Request.QueryString[Constants.QueryStrings.DecisionTool.IndicationAnswerHistory] ?? string.Empty;
                 if (!string.IsNullOrEmpty(indQuestionHistory) && !string.IsNullOrEmpty(indAnswerHistory))
                 {
                         indQuestionHistory += ",";
@@ -93,12 +94,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.DecisionTool
                 indQuestionHistory += CurrentIndicationQuestionIndex;
                 indAnswerHistory += hfAnswerIndex.Value;
 
-                var qs = "?qh=" + indQuestionHistory + "&ah=" + indAnswerHistory + "&q=" + (CurrentIndicationQuestionIndex + 1);
-                Response.Redirect(Model.GetUrl() + qs);
+                var qs = 
+                    "?" + Constants.QueryStrings.DecisionTool.IndicationQuestionHistory + "=" + indQuestionHistory + 
+                    "&" + Constants.QueryStrings.DecisionTool.IndicationAnswerHistory + "=" + indAnswerHistory;
+                
+                CurrentIndicationQuestionIndex++;
+                if (CurrentIndicationQuestionIndex != IndicationQuestionsCount) {
+                    qs += "&" + Constants.QueryStrings.DecisionTool.IndicationQuestion + "=" + CurrentIndicationQuestionIndex;
+                    Response.Redirect(Model.GetUrl() + qs);
+                }
+                else
+                {
+                    qs += "&" + Constants.QueryStrings.DecisionTool.QuestionId + "=" + Model.ID.Guid.ToString();
+                    Response.Redirect(Model.GetDecisionToolLandingPage().GetDecisionToolResultsPage().GetUrl() + qs);
+                }
             }
             else
             {
-                Response.Redirect(Sitecore.Context.Item.Parent.Parent.GetUrl());
+                Response.Redirect(Model.GetDecisionToolLandingPage().GetUrl());
             }
         }
     }

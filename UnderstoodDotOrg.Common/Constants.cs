@@ -268,6 +268,17 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static class QueryStrings
+        {
+            public static class DecisionTool
+            {
+                public const string IndicationQuestion = "iq";
+                public const string IndicationQuestionHistory = "iqh";
+                public const string IndicationAnswerHistory = "iah";
+                public const string QuestionId = "qid";
+            }
+        }
+
         public static class SolrFields
         {
             public const string ChildGrades = "_child_grades";

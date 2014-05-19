@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col col-23 offset-1 dl-quiz-wrapper rs_read_this">
             <div class="dl-quiz skiplink-content">
-                <h2><%= Question.ContentPage.PageTitle %></h2>
+                <h2><%= QuestionPage.ContentPage.PageTitle %></h2>
                 <h3>You Answered:</h3>
                 <%--<p class="correctness-headline ready">6 Ready</p>
                 <p class="correctness-headline">4 Not Ready</p>--%>
@@ -15,11 +15,12 @@
                         </p>
                     </ItemTemplate>
                 </asp:Repeater>
-                <p class="explanation">Culpa architecto at sit errorSapiente fugiat quod velit omnis sit quia est sed sintSit repudiandae labore molestias qui culpa adipisci sapiente aut id estDolorum in et velit saepe voluptates ad inventore voluptate expedita veniam error omnis
-                    <a href="REPLACE">Text link goes here</a>
-                    Eius tempora sunt est autIpsum enim dignissimos est cum perspiciatisDicta eum et optio ex necessitatibus autem quidem animi natusOptio minus qui blanditiis ex perspiciatis harum quibusdam inventore rerum sunt omnis</p>
+                <div class="explanation-wrapper">
+                    <%= IndicatedAnswerAbstract %>
+                </div>
+                <br />
                 <div class="next-question">
-                    <button type="button" class="button rs_skip">Start Over</button>
+                    <button type="button" runat="server" onserverclick="StartOver_Click" class="button rs_skip">Start Over</button>
                 </div>
             </div>
         </div>

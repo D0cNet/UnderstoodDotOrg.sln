@@ -374,6 +374,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Pages\DecisionToolLandingPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Pages\DecisionToolLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Pages\DecisionToolResultsPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Pages\DecisionToolResultsPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\Base\BaseEventDetailPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\Base\BaseEventDetailPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\ChatEventPageItem.base.cs" />

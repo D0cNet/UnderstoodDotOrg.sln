@@ -7,6 +7,7 @@ using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders.DecisionTool;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Components;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Pages
 {
@@ -39,6 +40,11 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Pages
         public DecisionToolLandingPageItem GetDecisionToolLandingPage()
         {
             return Sitecore.Context.Item.Parent.Parent;
+        }
+
+        public string GetStartUrl()
+        {
+            return InnerItem.GetUrl() + "?" + Constants.QueryStrings.DecisionTool.IndicationQuestion + "=0";
         }
     }
 }

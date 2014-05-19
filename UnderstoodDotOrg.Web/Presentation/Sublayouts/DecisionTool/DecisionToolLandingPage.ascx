@@ -84,7 +84,7 @@
                                                     <div class="result-topic"><%# Item.ContentPage.PageTitle.Rendered %></div>
                                                     <div class="result-hover">
                                                         <div class="hover-link-wrapper">
-                                                            <a href="<%# Item.GetUrl() %>?q=0" class="topic-question"><%# Item.ContentPage.PageTitle.Rendered %></a>
+                                                            <a href="<%# Item.GetStartUrl() %>" class="topic-question"><%# Item.ContentPage.PageTitle.Rendered %></a>
                                                         </div>
                                                     </div>
                                                 </button>
