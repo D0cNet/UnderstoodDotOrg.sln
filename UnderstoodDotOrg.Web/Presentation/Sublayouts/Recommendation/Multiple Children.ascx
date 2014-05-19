@@ -51,7 +51,7 @@
                                                                     <img alt="150x85 Placeholder" src="http://placehold.it/150x85" /></a>--%>
                                                         <%--<sc:FieldRenderer ID="frArticleImage" runat="server" FieldName="Thumbnail Image" />--%>
                                                         <asp:HyperLink ID="hlArticleImage" CssClass="article-photo" runat="server">
-                                                            <sc:Image ID="imgThumbnail" runat="server" Parameters="mw=150&mh=85" Field="x" />
+                                                            <asp:Image ID="imgThumbnail" runat="server" />
                                                         </asp:HyperLink>
                                                         <div class="article-title">
                                                             <h3>

@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Recommendation;
-using Sitecore.Web.UI.WebControls;
 using Sitecore.Data.Items;
 using Sitecore.ContentSearch;
 using UnderstoodDotOrg.Common.Extensions;
@@ -82,8 +81,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 
                     hlArticleImage.NavigateUrl = hlArticleTitle.NavigateUrl = item.InnerItem.GetUrl();
 
-                    Sitecore.Web.UI.WebControls.Image imgThumbnail = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("imgThumbnail");
-                    imgThumbnail.Field = item.GetArticleThumbnailField();
+                    Image imgThumbnail = e.FindControlAs<Image>("imgThumbnail");
+                    imgThumbnail.ImageUrl = item.GetArticleThumbnailUrl(150, 85);
                 }
             }
         }

@@ -11,16 +11,6 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
     public partial class DefaultArticlePageItem 
     {
         /// <summary>
-        /// Gets Media URL to use for image thumbnails, falls back to Featured Image if Content Thumbnail is not set
-        /// </summary>
-        /// <returns></returns>
-        public string GetArticleThumbnailField()
-        {
-            return (!String.IsNullOrEmpty(ContentThumbnail.MediaUrl)) 
-                ? "Content Thumbnail" : "Featured Image";
-        }
-
-        /// <summary>
         /// Get Content Thumbnail URL, with fallback to Featured Image
         /// </summary>
         /// <param name="maxWidth"></param>
@@ -58,7 +48,8 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
                         }));
             }
 
-            return String.Empty;
+            // TODO: remove placehold
+            return String.Format("http://placehold.it/{0}x{1}", maxWidth, maxHeight);
         }
     }
 }

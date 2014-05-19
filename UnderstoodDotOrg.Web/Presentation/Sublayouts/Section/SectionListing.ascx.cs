@@ -83,12 +83,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
                 hlTopicTitle.NavigateUrl = item.GetUrl();
                 hlTopicTitle.Text = item.ContentPage.PageTitle.Rendered;
 
+                PlaceHolder phThumbnail = e.FindControlAs<PlaceHolder>("phThumbnail");
+                
                 // Handle first image
                 if (e.Item.ItemIndex == 0)
                 {
                     Image imgThumbnail = e.FindControlAs<Image>("imgThumbnail");
-                    imgThumbnail.ImageUrl = item.GetArticleFeaturedThumbnailUrl(190, 107);
-                    imgThumbnail.Visible = !String.IsNullOrEmpty(imgThumbnail.ImageUrl);
+                    string source = item.GetArticleFeaturedThumbnailUrl(190, 107);
+                    imgThumbnail.ImageUrl = source;
+                    phThumbnail.Visible = !String.IsNullOrEmpty(source);
+                }
+                else
+                {
+                    phThumbnail.Visible = false;
                 }
             }
         }
