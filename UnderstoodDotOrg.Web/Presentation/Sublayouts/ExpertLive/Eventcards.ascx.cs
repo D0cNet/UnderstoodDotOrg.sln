@@ -43,6 +43,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         }
         
         protected void Page_Load(object sender, EventArgs e) {
+            // show event card on upcoming chat
+            if (IsArchiveItem(Sitecore.Context.Item)) {
+                this.Visible = false;
+            }
+            else {
+                this.Visible = true;
+            }
+
             if (!Sitecore.Context.Item.IsOfType(ExpertLivePageItem.TemplateId)) {
                 expertLivePageItem = GetExpertLivePageItem();
             }
