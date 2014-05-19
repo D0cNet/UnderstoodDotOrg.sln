@@ -64,7 +64,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 this.registeringUser.FirstName = name;
                 
                 //bg: adding in zip code
-                this.registeringUser.ZipCode = zip;
+                this.registeringUser.ZipCode = zip.Trim(); 
                 
 
 

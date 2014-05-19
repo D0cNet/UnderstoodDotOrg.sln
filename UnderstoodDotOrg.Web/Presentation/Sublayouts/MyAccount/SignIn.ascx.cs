@@ -43,6 +43,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                     var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyProfile.ToString());
                     Response.Redirect(Sitecore.Links.LinkManager.GetItemUrl(item));
+
+                    
+
                 }
             }
             catch (Exception ex)

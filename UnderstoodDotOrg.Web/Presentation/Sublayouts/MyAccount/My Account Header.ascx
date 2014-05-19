@@ -11,8 +11,10 @@
                 <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
             </div>
             <div class="account-info">
-                <h1 class="account-username">SonyasMom65</h1>
-                <p class="account-location">Colorado</p>
+                <h1 class="account-username">1<asp:Literal ID="uxMemberFirstName" runat="server"></asp:Literal></h1>
+                <p class="account-location">2<asp:Literal ID="uxMemberState" runat="server"></asp:Literal>
+                    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                </p>
             </div>
             <div class="account-links">
                 <a class="profile-link button" href="REPLACE">My Profile</a>
