@@ -55,7 +55,7 @@
                         </div>
                         <div class="expert-listing-details">
                             <h4>
-                                <sc:FieldRenderer ID="frHeading" runat="server" FieldName="Heading" />
+                                <sc:FieldRenderer ID="frHeading" runat="server" FieldName="Expert Name" />
                             </h4>
                             <p class="credentials">
                                 <sc:FieldRenderer ID="frSubHeading" runat="server" FieldName="SubHeading" />
