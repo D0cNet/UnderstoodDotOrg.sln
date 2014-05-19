@@ -53,6 +53,7 @@ namespace UnderstoodDotOrg.Common
         public static string currentUserKey { get { return "_understood_org_current_user"; } }
         public static string currentMemberKey { get { return "_understood_org_current_member"; } }
         public static string SessionBehaviorSearchKey { get { return "_understood_org_behavior_search"; } }
+        public static string SessionNewsletterKey { get { return "_understood_org_newsletter"; } }
         #endregion
 
         #region Container Guid
@@ -185,7 +186,39 @@ namespace UnderstoodDotOrg.Common
                 get
                 {
                     return new Guid("{A6EFCE43-84B2-4D04-BCF3-A2850801D72D}");
-        }
+                }
+            }
+
+            public static Guid NewsletterSignup
+            {
+                get
+                {
+                    return new Guid("{7EBACCF7-B1A1-4729-A8CF-5E2892BDFF69}");
+                }
+            }
+
+            public static Guid NewsletterChildInfo
+            {
+                get
+                {
+                    return new Guid("{77F9B7B9-C273-4BAD-B74A-D6C209740E67}");
+                }
+            }
+
+            public static Guid NewsletterParentInterests
+            {
+                get
+                {
+                    return new Guid("{A10D484B-4DF1-47FB-BAA3-CD49C0E6CF77}");
+                }
+            }
+
+            public static Guid NewsletterConfirmation
+            {
+                get
+                {
+                    return new Guid("{F356744C-54F1-4CC5-B8F9-FA8B297AC60C}");
+                }
             }
         }
 

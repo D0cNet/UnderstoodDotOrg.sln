@@ -8,12 +8,12 @@ using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.NewsLetter
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.Newsletter
 {
-public partial class Newsletter_SignUpItem : CustomItem
+public partial class SignUpPageItem : CustomItem
 {
 
-public static readonly string TemplateId = "{0FE31FBA-0C5D-494C-ADBA-22F7FB1C311C}";
+public static readonly string TemplateId = "{1BA824D7-5F27-4E1A-97E5-070C52AC00B3}";
 
 #region Inherited Base Templates
 
@@ -24,18 +24,18 @@ public ContentPageItem ContentPage { get { return _ContentPageItem; } }
 
 #region Boilerplate CustomItem Code
 
-public Newsletter_SignUpItem(Item innerItem) : base(innerItem)
+public SignUpPageItem(Item innerItem) : base(innerItem)
 {
 	_ContentPageItem = new ContentPageItem(innerItem);
 
 }
 
-public static implicit operator Newsletter_SignUpItem(Item innerItem)
+public static implicit operator SignUpPageItem(Item innerItem)
 {
-	return innerItem != null ? new Newsletter_SignUpItem(innerItem) : null;
+	return innerItem != null ? new SignUpPageItem(innerItem) : null;
 }
 
-public static implicit operator Item(Newsletter_SignUpItem customItem)
+public static implicit operator Item(SignUpPageItem customItem)
 {
 	return customItem != null ? customItem.InnerItem : null;
 }
@@ -46,11 +46,11 @@ public static implicit operator Item(Newsletter_SignUpItem customItem)
 #region Field Instance Methods
 
 
-public CustomGeneralLinkField NextpagetoShow
+public CustomTextField RequiredEmailError
 {
 	get
 	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Next page to Show"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Required Email Error"]);
 	}
 }
 
@@ -69,15 +69,6 @@ public CustomTextField SecureDataDetails
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Secure Data Details"]);
-	}
-}
-
-
-public CustomGeneralLinkField LinktoPrivacyPage
-{
-	get
-	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Link to Privacy Page"]);
 	}
 }
 

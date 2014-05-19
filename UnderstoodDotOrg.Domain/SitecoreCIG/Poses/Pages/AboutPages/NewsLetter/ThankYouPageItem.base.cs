@@ -8,12 +8,12 @@ using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.NewsLetter
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.Newsletter
 {
-public partial class Newsletter_ChildInfoItem : CustomItem
+public partial class ThankYouPageItem : CustomItem
 {
 
-public static readonly string TemplateId = "{0255C952-5F53-4C74-A6A3-F002640F7518}";
+public static readonly string TemplateId = "{A58B31C6-791C-4712-B404-BFC91B000B2B}";
 
 #region Inherited Base Templates
 
@@ -24,18 +24,18 @@ public ContentPageItem ContentPage { get { return _ContentPageItem; } }
 
 #region Boilerplate CustomItem Code
 
-public Newsletter_ChildInfoItem(Item innerItem) : base(innerItem)
+public ThankYouPageItem(Item innerItem) : base(innerItem)
 {
 	_ContentPageItem = new ContentPageItem(innerItem);
 
 }
 
-public static implicit operator Newsletter_ChildInfoItem(Item innerItem)
+public static implicit operator ThankYouPageItem(Item innerItem)
 {
-	return innerItem != null ? new Newsletter_ChildInfoItem(innerItem) : null;
+	return innerItem != null ? new ThankYouPageItem(innerItem) : null;
 }
 
-public static implicit operator Item(Newsletter_ChildInfoItem customItem)
+public static implicit operator Item(ThankYouPageItem customItem)
 {
 	return customItem != null ? customItem.InnerItem : null;
 }
@@ -44,15 +44,6 @@ public static implicit operator Item(Newsletter_ChildInfoItem customItem)
 
 
 #region Field Instance Methods
-
-
-public CustomGeneralLinkField NextpagetoShow
-{
-	get
-	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Next page to Show"]);
-	}
-}
 
 
 #endregion //Field Instance Methods

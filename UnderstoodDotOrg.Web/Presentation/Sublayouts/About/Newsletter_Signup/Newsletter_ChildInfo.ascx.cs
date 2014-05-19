@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.NewsLetter;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.Newsletter;
 using Sitecore.Data.Items;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
@@ -13,56 +13,49 @@ using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 {
-    public partial class Newsletter_ChildInfo : System.Web.UI.UserControl
+    public partial class Newsletter_ChildInfo : BaseSublayout<ChildInformationPageItem>
     {
-        Newsletter_ChildInfoItem ObjChildInfo;
         IEnumerable<Item> _allIssues, _allGrades;
         int _checkboxLocation = 0;
         object[][] TwoRowdata;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjChildInfo = new Newsletter_ChildInfoItem(Sitecore.Context.Item);
-            if (ObjChildInfo != null)
+            _allIssues = ChildInformationPageItem.GetAllIssues();
+            if (_allIssues != null)
             {
-                _allIssues = Newsletter_ChildInfoItem.GetAllIssues();
-                if (_allIssues != null)
+
+                int TotalRows = GetRowCount(_allIssues, 2);
+                TwoRowdata = GetTwoRowData(_allIssues, 2);
+                string[] Rows = new string[2];
+                Rows[0] = "One";
+                Rows[1] = "Two";
+
+                rptChildIssue.DataSource = Rows;
+                rptChildIssue.DataBind();
+
+
+
+            }
+
+            _allGrades = ChildInformationPageItem.GetAllGrades();
+            if (_allGrades != null)
+            {
+                ddlGrades.Items.Clear();
+                ddlGrades.Items.Add(new ListItem("Select Grade", ""));
+                foreach (Item _grade in _allGrades)
                 {
-
-                    int TotalRows = GetRowCount(_allIssues, 2);
-                    TwoRowdata = GetTwoRowData(_allIssues, 2);
-                    string[] Rows = new string[2];
-                    Rows[0] = "One";
-                    Rows[1] = "Two";
-
-                    rptChildIssue.DataSource = Rows;
-                    rptChildIssue.DataBind();
-
-
-
-                }
-                if (!string.IsNullOrEmpty(ObjChildInfo.NextpagetoShow.Url.ToString()))
-                {
-                    btnNext.PostBackUrl = ObjChildInfo.NextpagetoShow.Url;
-                }
-                _allGrades = Newsletter_ChildInfoItem.GetAllGrades();
-                if (_allGrades != null)
-                {
-                    ddlGrades.Items.Clear();
-                    ddlGrades.Items.Add(new ListItem("Select Grade", ""));
-                    foreach (Item _grade in _allGrades)
+                    if (_grade.Name.ToLower() != "all")
                     {
-                        if (_grade.Name.ToLower() != "all")
-                        {
-                            ddlGrades.Items.Add(new ListItem(_grade.Name, _grade.Name));
-                        }
+                        ddlGrades.Items.Add(new ListItem(_grade.Name, _grade.Name));
                     }
-
                 }
 
             }
+
         }
 
         protected int GetRowCount(IEnumerable<Item> ListData1, int ItemPerRow1)

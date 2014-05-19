@@ -8,12 +8,12 @@ using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.NewsLetter
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.Newsletter
 {
-public partial class Newsletter_ThankYouItem : CustomItem
+public partial class ChildInformationPageItem : CustomItem
 {
 
-public static readonly string TemplateId = "{A58B31C6-791C-4712-B404-BFC91B000B2B}";
+public static readonly string TemplateId = "{0255C952-5F53-4C74-A6A3-F002640F7518}";
 
 #region Inherited Base Templates
 
@@ -24,18 +24,18 @@ public ContentPageItem ContentPage { get { return _ContentPageItem; } }
 
 #region Boilerplate CustomItem Code
 
-public Newsletter_ThankYouItem(Item innerItem) : base(innerItem)
+public ChildInformationPageItem(Item innerItem) : base(innerItem)
 {
 	_ContentPageItem = new ContentPageItem(innerItem);
 
 }
 
-public static implicit operator Newsletter_ThankYouItem(Item innerItem)
+public static implicit operator ChildInformationPageItem(Item innerItem)
 {
-	return innerItem != null ? new Newsletter_ThankYouItem(innerItem) : null;
+	return innerItem != null ? new ChildInformationPageItem(innerItem) : null;
 }
 
-public static implicit operator Item(Newsletter_ThankYouItem customItem)
+public static implicit operator Item(ChildInformationPageItem customItem)
 {
 	return customItem != null ? customItem.InnerItem : null;
 }
