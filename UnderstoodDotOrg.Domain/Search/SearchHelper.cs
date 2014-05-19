@@ -634,55 +634,71 @@ namespace UnderstoodDotOrg.Domain.Search
             return results;
         }
 
-        public static List<TextOnlyTipsArticlePageItem> GetLastSlideTextOnlyTips(ID dataSourceId, string subtopicPath = "", string topicPath = "", int maxItemsToGet = 2)
+        public static List<TextOnlyTipsArticlePageItem> GetLastSlideTextOnlyTips(ID dataSourceId, Item subtopic = null, Item topic = null, int maxItemsToGet = 2)
         {
-
-            subtopicPath = subtopicPath.ToLower();
-            topicPath = topicPath.ToLower();
-
-            string templateFilter = TextOnlyTipsArticlePageItem.TemplateId;
-            var finalResults = new List<CustomResultItem>();
-            var result = Enumerable.Empty<CustomResultItem>();
+            var finalResults = new List<SearchResultItem>();
+            var result = Enumerable.Empty<SearchResultItem>();
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-            var templateId = templateFilter.ToLower().Replace("{", "").Replace("}", "").Replace("-", "");
 
             using (var context = index.CreateSearchContext())
             {
-                var query = context.GetQueryable<CustomResultItem>()
-                                   .Where(i => i.AllTemplates.Contains(templateId));
+                var baseQuery = context.GetQueryable<SearchResultItem>()
+                                   .Where(i => i.TemplateId == ID.Parse(TextOnlyTipsArticlePageItem.TemplateId)) // get only Text Only Tips Article Pages
+                                   .Where(i => i.ItemId != dataSourceId); // don't get the context item
 
-                var results = query.GetResults();
+                int counter = 0;
 
-                result = results.Hits.Select(h => h.Document).Where(i => !i.ItemId.Equals(dataSourceId));
-
-                if (!string.IsNullOrEmpty(subtopicPath))
+                // subtopic filter
+                if (subtopic != null)
                 {
-                    finalResults = result.Where(i => i.Path.Contains(subtopicPath)).ToList();
+                    var subTopicQuery = baseQuery.Where(i => i.Paths.Contains(subtopic.ID));
+                    int totalResults = subTopicQuery.Take(1).GetResults().TotalSearchResults;
+                    var res = subTopicQuery.Take(totalResults).ToList();
+                    finalResults.AddRange(res);
+                    counter += res.Count;
                 }
 
-                if (finalResults.Count < maxItemsToGet)
+                // topic filter
+                if (maxItemsToGet > counter && topic != null)
                 {
-                    int toTake = maxItemsToGet - finalResults.Count;
-                    var topicResults = result.Where(i => i.Path.Contains(topicPath))
-                                             .Where(i => !finalResults.Select(r => r.ItemId).Contains(i.ItemId))
-                                             .Take(toTake).ToList();
-
-                    finalResults.AddRange(topicResults);
+                    var foundIds = finalResults.Select(r => r.ItemId);
+                    var topicQuery = baseQuery.Where(i => i.Paths.Contains(topic.ID));
+                    
+                    int totalResults = topicQuery.Take(1).GetResults().TotalSearchResults;
+                    var res = topicQuery.Take(totalResults).ToList();
+                    int take = maxItemsToGet - counter;
+                    res = res.Where(r => !foundIds.Contains(r.ItemId)).Take(take).ToList();
+                    finalResults.AddRange(res);
+                    counter += res.Count;
                 }
+
+                // global site filter
+                if (maxItemsToGet > counter)
+                {
+                    Expression<Func<SearchResultItem, bool>> notMatchingIdPredicate = PredicateBuilder.True<SearchResultItem>();
+
+                    // Workaround Sitecore bug - require a single true condition
+                    notMatchingIdPredicate = notMatchingIdPredicate.And((a => a.Paths.Contains(Sitecore.ItemIDs.RootID)));
+
+                    var foundIds = finalResults.Select(r => r.ItemId);
+
+                    foreach (var id in foundIds)
+                    {
+                        notMatchingIdPredicate = notMatchingIdPredicate.And(r => id != r.ItemId);
+                    }
+                    
+                    int totalResults = baseQuery.Take(1).GetResults().TotalSearchResults;
+                    int randomSeed = new Random().Next(totalResults);
+                    int take = maxItemsToGet - counter;
+                    var res = baseQuery.Where(notMatchingIdPredicate).Skip(randomSeed).Take(take);
+                    finalResults.AddRange(res);
+                }
+
+                return finalResults.Select(r => r.GetItem()).Select(i => (TextOnlyTipsArticlePageItem)i).ToList();
             }
 
-            return finalResults.Select(r => r.GetItem()).Select(i => (TextOnlyTipsArticlePageItem)i).ToList();
         }
 
         #endregion
-    }
-
-    public class CustomResultItem : SearchResultItem
-    {
-        public string AllTemplates
-        {
-            get;
-            set;
-        }
     }
 }

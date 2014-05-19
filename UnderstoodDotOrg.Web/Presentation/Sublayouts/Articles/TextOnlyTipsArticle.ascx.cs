@@ -136,18 +136,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     parent = parent.Parent;
                 }
 
-                string subtopic = "";
-                string topic = "";
+
+                Item subtopic = null;
+                Item topic = null;
 
                 foreach (var p in parents)
                 {
                     if (p.IsOfType(SubtopicLandingPageItem.TemplateId))
                     {
-                        subtopic = p.Paths.FullPath;
+                        subtopic = p;
                     }
                     else if (p.IsOfType(TopicLandingPageItem.TemplateId))
                     {
-                        topic = p.Paths.FullPath;
+                        topic = p;
                     }
                 }
                 
