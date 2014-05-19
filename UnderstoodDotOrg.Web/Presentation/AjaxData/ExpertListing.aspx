@@ -10,6 +10,7 @@
                     <div class="about-expert rs_read_this">
                         <div class="expert-listing-image">
                             <sc:Image ID="scExpertImage" runat="server" Field="Expert Image" />
+                            <asp:Image runat="server" ID="imgDefaultImage" src="http://placehold.it/230x230&amp;text=230x230" alt="FPO content image" />
                         </div>
                         <div class="expert-listing-details">
                             <h4>
