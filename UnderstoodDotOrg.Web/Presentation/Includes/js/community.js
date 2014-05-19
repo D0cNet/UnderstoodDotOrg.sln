@@ -249,7 +249,8 @@
 
         self.fetch = function() {
             if (self.model.tourEnabled) {
-                $.get('/modal.welcome-tour.c1a.html').done(self.renderLightbox);
+                ///modal.welcome-tour.c1a.html
+                $.get('/Presentation/AjaxData/WelcomeTour.aspx').done(self.renderLightbox);
             }
         };
 
