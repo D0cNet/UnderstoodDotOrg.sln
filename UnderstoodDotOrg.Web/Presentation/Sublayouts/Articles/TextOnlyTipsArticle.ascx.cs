@@ -166,9 +166,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     var slide = randomSlides[1];
                     frPageTitle2.Item = frPageSummary2.Item = slide;
                     Panel pnlThumbnail2 = e.FindControlAs<Panel>("pnlThumbnail2");
-                    //string url = slide.DefaultArticlePage.GetArticleThumbnailUrl(380, 220);
-                    //string style = string.Format("background-image: url('{0}')", url);
-                    //pnlThumbnail2.Attributes.Add("style", style);
+                    string url = slide.DefaultArticlePage.GetArticleThumbnailUrl(380, 220);
+                    string style = string.Format("background-image: url('{0}')", url);
+                    pnlThumbnail2.Attributes.Add("style", style);
                     e.FindControlAs<System.Web.UI.WebControls.PlaceHolder>("phSlideshow2").Visible = true;
                 }
 
@@ -177,9 +177,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     var slide = randomSlides[0];
                     frPageTitle1.Item = frPageSummary1.Item = slide;
                     Panel pnlThumbnail1 = e.FindControlAs<Panel>("pnlThumbnail2");
-                    //string url = slide.DefaultArticlePage.GetArticleThumbnailUrl(380, 220);
-                    //string style = string.Format("background-image: url('{0}')", url);
-                    //pnlThumbnail1.Attributes.Add("style", style);
+                    string url = slide.DefaultArticlePage.GetArticleThumbnailUrl(380, 220);
+                    string style = string.Format("background-image: url('{0}')", url);
+                    pnlThumbnail1.Attributes.Add("style", style);
                     e.FindControlAs<System.Web.UI.WebControls.PlaceHolder>("phSlideshow1").Visible = true;
                 }
 
