@@ -17,7 +17,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages {
         /// Get sub topic landing page iTems.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<SubtopicLandingPageItem> GetSubTopicLandingPageItem() {
+        public IEnumerable<SubtopicLandingPageItem> GetSubTopicLandingPages() {
             return InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(SubtopicLandingPageItem.TemplateId)).Select(i => (SubtopicLandingPageItem)i);
         }
 

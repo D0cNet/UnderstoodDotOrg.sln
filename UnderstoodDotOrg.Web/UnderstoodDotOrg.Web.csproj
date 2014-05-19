@@ -1360,6 +1360,13 @@
     <Compile Include="Presentation\Sublayouts\SubTopics\SubTopicArticleListing.ascx.designer.cs">
       <DependentUpon>SubTopicArticleListing.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\SubTopics\SubTopicHeader.ascx.cs">
+      <DependentUpon>SubTopicHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\SubTopics\SubTopicHeader.ascx.designer.cs">
+      <DependentUpon>SubTopicHeader.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx.cs">
       <DependentUpon>TwoColumnContainer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2296,6 +2303,7 @@
     <Content Include="Presentation\Sublayouts\Section\SectionTools.ascx" />
     <Content Include="Presentation\Sublayouts\SubTopics\RightCalloutContainer.ascx" />
     <Content Include="Presentation\Sublayouts\SubTopics\SubTopicArticleListing.ascx" />
+    <Content Include="Presentation\Sublayouts\SubTopics\SubTopicHeader.ascx" />
     <Content Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Common\MemberCardList.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx" />

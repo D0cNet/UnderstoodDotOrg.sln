@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.SubTopics {
     
     
-    public partial class TopicPageHeader {
+    public partial class SubTopicHeader {
         
         /// <summary>
         /// hlBreadcrumbNav control.
@@ -38,14 +38,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litTitle;
-        
-        /// <summary>
-        /// rptTopicHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTopicHeader;
     }
 }

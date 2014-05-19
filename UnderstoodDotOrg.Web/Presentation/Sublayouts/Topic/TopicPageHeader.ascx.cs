@@ -19,104 +19,55 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic
     {
         protected void Page_Load(object sender, EventArgs e) 
         {
-            TopicLandingPageItem topicPage = GetTopicLandingPageItem();
-            
-            //Page Title
-            scTopicTitle.Text = topicPage.ContentPage.PageTitle.Rendered;
-            
-            Item parentItem = topicPage.InnerItem.Parent;
+            BindContent();
+            BindControls();
+        }
 
-            //Parent Item Navigation
-            if (!parentItem.IsOfType(FolderItem.TemplateId))
+        private void BindContent()
+        {
+            litTitle.Text = Model.ContentPage.PageTitle.Rendered;
+
+            if (Model.InnerItem.Parent != null)
             {
-                hlBreadcrumbNav.NavigateUrl = parentItem.GetUrl();
-                txtBreadcrumbNav.Text = parentItem.DisplayName;
-            }
-            else 
-            {
-                hlBreadcrumbNav.Visible = false;
-                txtBreadcrumbNav.Visible = false;
-            }
-
-            // Navigation should only display on Experts Live and Subtopic pages
-            if (topicPage != null)
-            {
-                // Display nav for Topic page
-                if (Sitecore.Context.Item.IsOfType(TopicLandingPageItem.TemplateId))
-                {
-                    var subTopicItems = topicPage.GetSubTopicLandingPageItem().ToList();
-                    if (subTopicItems != null && subTopicItems.Any())
-                    {
-                        // Add overview
-                        subTopicItems.Insert(0, new SubtopicLandingPageItem(Sitecore.Context.Item));
-                    
-                        rptTopicHeader.DataSource = subTopicItems;
-                        rptTopicHeader.DataBind();
-                    }
-                }
-
-                // NOTE: This control is primarily meant for Articles section
-                // It's being reused in Community which appears to be displaying the wrong nav elements
-                // DP HTML shows that Experts Live page should show navigation matching the Community landing page
-                // Current function is pulling links from children below, this should probably be corrected.
-
-                if (IsExpertsLivePage()) 
-                {
-                    var subTopicItems = topicPage.GetSubTopicLandingPageItem();
-                    if (subTopicItems != null && subTopicItems.Any()) 
-                    {
-                       rptTopicHeader.DataSource = subTopicItems;
-                       rptTopicHeader.DataBind();
-                    }
-                }
+                SectionLandingPageItem parent = Model.InnerItem.Parent;
+                hlBreadcrumbNav.NavigateUrl = parent.GetUrl();
+                litPreviousLink.Text = parent.ContentPage.BasePageNEW.NavigationTitle.Rendered;
             }
         }
 
-        private bool IsExpertsLivePage()
+        private void BindControls()
         {
-            return Sitecore.Context.Item.IsOfType(ExpertLandingPageItem.TemplateId)
-                || Sitecore.Context.Item.IsOfType(ExpertDetailPageItem.TemplateId);
-        }
-
-        protected TopicLandingPageItem GetTopicLandingPageItem() 
-        {
-            Item contextItem = Sitecore.Context.Item;
-            Item topicLandingPageItem = contextItem;
-            while (contextItem != null && !contextItem.IsOfType(TopicLandingPageItem.TemplateId)) 
+            var subTopicItems = Model.GetSubTopicLandingPages().ToList();
+            if (subTopicItems != null && subTopicItems.Any())
             {
-                if (contextItem.Parent != null && contextItem.Parent.IsOfType(TopicLandingPageItem.TemplateId)) 
-                {
-                    topicLandingPageItem = contextItem.Parent;
-                    break;
-                }
-                contextItem = contextItem.Parent;
-            }
+                // Add overview
+                subTopicItems.Insert(0, new SubtopicLandingPageItem(Sitecore.Context.Item));
 
-            return topicLandingPageItem;
+                rptTopicHeader.DataSource = subTopicItems;
+                rptTopicHeader.DataBind();
+            }
         }
 
-        protected void rptTopicHeader_ItemDataBound(object sender, RepeaterItemEventArgs e) 
+        protected void rptTopicHeader_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            if (e.IsItem()) 
+            if (e.IsItem())
             {
                 SubtopicLandingPageItem subTopicItem = e.Item.DataItem as SubtopicLandingPageItem;
-                if (subTopicItem != null) 
+                HyperLink hlNavigationTitle = e.FindControlAs<HyperLink>("hlNavigationTitle");
+                BasePageNEWItem basePageNewItem = new BasePageNEWItem(subTopicItem);
+                if (hlNavigationTitle != null)
                 {
-                    HyperLink hlNavigationTitle = e.FindControlAs<HyperLink>("hlNavigationTitle");
-                    BasePageNEWItem basePageNewItem = new BasePageNEWItem(subTopicItem);
-                    if (hlNavigationTitle != null) 
+                    hlNavigationTitle.NavigateUrl = subTopicItem.InnerItem.GetUrl();
+
+                    // Handle overview link
+                    if (subTopicItem.InnerItem == Sitecore.Context.Item)
                     {
-                        hlNavigationTitle.NavigateUrl = subTopicItem.InnerItem.GetUrl();
-                        
-                        // Handle overview link
-                        if (subTopicItem.InnerItem == Sitecore.Context.Item)
-                        {
-                            hlNavigationTitle.Text = UnderstoodDotOrg.Common.DictionaryConstants.OverviewButtonText;
-                        }
-                        else
-                        {
-                            hlNavigationTitle.Text = basePageNewItem.NavigationTitle.Rendered;
-                        }
+                        hlNavigationTitle.Text = UnderstoodDotOrg.Common.DictionaryConstants.OverviewButtonText;
+                        hlNavigationTitle.CssClass = "selected";
+                    }
+                    else
+                    {
+                        hlNavigationTitle.Text = basePageNewItem.NavigationTitle.Rendered;
                     }
                 }
             }
