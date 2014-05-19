@@ -62,9 +62,9 @@
                     <asp:Literal runat="server" ID="ltEventListHeader"></asp:Literal>
                 </h3>
             </div>
-            <div class="col col-3 offset-1 expert-events-see-more">
-                <a href="REPLACE" class="see-more">See more</a>
-            </div>
+            <asp:Panel runat="server" ID="pnlSeeMoreExpertEvent" Visible="false" CssClass="col col-3 offset-1 expert-events-see-more">
+                <asp:HyperLink runat="server" ID="hlExpertEventSeeMore" CssClass="see-more">See more</asp:HyperLink>
+            </asp:Panel>
             <!-- /.col -->
 
         </div>

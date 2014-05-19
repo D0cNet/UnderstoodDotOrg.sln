@@ -68,6 +68,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                 if (expertEvents != null && expertEvents.Any()) {
                     rptEventDetails.DataSource = expertEvents;
                     rptEventDetails.DataBind();
+                    pnlSeeMoreExpertEvent.Visible = true;
                 }
             }
 
