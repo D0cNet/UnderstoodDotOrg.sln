@@ -6,8 +6,6 @@
             <div class="dl-quiz skiplink-content">
                 <h2><%= QuestionPage.ContentPage.PageTitle %></h2>
                 <h3>You Answered:</h3>
-                <%--<p class="correctness-headline ready">6 Ready</p>
-                <p class="correctness-headline">4 Not Ready</p>--%>
                 <asp:Repeater ID="rptrAnswers" runat="server">
                     <ItemTemplate>
                         <p class="correctness-headline<%# Container.ItemIndex < (Answers.Count - 1) ? " ready" : string.Empty %>">
@@ -35,60 +33,28 @@
                 </div>
                 <div class="results-outer-wrapper">
                     <div class="results-wrapper">
-                        <!-- BEGIN PARTIAL: decision-lite/dl-list-item -->
-                        <div class="search-result rs_read_this item-one" aria-role="main">
-                            <button class="result-body rs_preserve">
-                                <div class="result-topic">Should I consider alternatives to my public school?</div>
-                                <div class="result-hover">
-                                    <div class="hover-link-wrapper">
-                                        <a href="REPLACE" class="topic-question">Should my child repeat a grade?</a>
-                                    </div>
+                        <asp:Repeater ID="rptrQuestions" runat="server" 
+                            ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Pages.DecisionQuestionPageItem">
+                            <ItemTemplate>
+                                <!-- BEGIN PARTIAL: decision-lite/dl-list-item -->
+                                <div class="search-result rs_read_this" aria-role="main">
+                                    <button class="result-body rs_preserve">
+                                        <div class="result-topic"><%# Item.ContentPage.PageTitle.Rendered %></div>
+                                        <div class="result-hover">
+                                            <div class="hover-link-wrapper">
+                                                <a href="<%# Item.GetStartUrl() %>" class="topic-question"><%# Item.ContentPage.PageTitle.Rendered %></a>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <span class="children-key">
+                                        <ul>
+                                            <li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                                        </ul>
+                                    </span>
                                 </div>
-                            </button>
-                            <span class="children-key">
-                                <ul>
-                                    <li><i class='child-b' title='CHILD NAME HERE'></i></li>
-                                </ul>
-                            </span>
-                        </div>
-                        <!-- END PARTIAL: decision-lite/dl-list-item -->
-                        <!-- BEGIN PARTIAL: decision-lite/dl-list-item -->
-                        <div class="search-result rs_read_this item-two" aria-role="main">
-                            <button class="result-body rs_preserve">
-                                <div class="result-topic">Am I ready to have my child evaluated?</div>
-                                <div class="result-hover">
-                                    <div class="hover-link-wrapper">
-                                        <a href="REPLACE" class="topic-question">Should my child repeat a grade?</a>
-                                    </div>
-                                </div>
-                            </button>
-                            <span class="children-key">
-                                <ul>
-                                    <li><i class='child-d' title='CHILD NAME HERE'></i></li>
-                                    <li><i class='child-e' title='CHILD NAME HERE'></i></li>
-                                </ul>
-                            </span>
-                        </div>
-                        <!-- END PARTIAL: decision-lite/dl-list-item -->
-                        <!-- BEGIN PARTIAL: decision-lite/dl-list-item -->
-                        <div class="search-result rs_read_this item-three" aria-role="main">
-                            <button class="result-body rs_preserve">
-                                <div class="result-topic">Am I ready to have my child evaluated?</div>
-                                <div class="result-hover">
-                                    <div class="hover-link-wrapper">
-                                        <a href="REPLACE" class="topic-question">Should my child repeat a grade?</a>
-                                    </div>
-                                </div>
-                            </button>
-                            <span class="children-key">
-                                <ul>
-                                    <li><i class='child-a' title='CHILD NAME HERE'></i></li>
-                                    <li><i class='child-b' title='CHILD NAME HERE'></i></li>
-                                    <li><i class='child-e' title='CHILD NAME HERE'></i></li>
-                                </ul>
-                            </span>
-                        </div>
-                        <!-- END PARTIAL: decision-lite/dl-list-item -->
+                                <!-- END PARTIAL: decision-lite/dl-list-item -->
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </div>
                     <!-- .results-wrapper -->
                 </div>

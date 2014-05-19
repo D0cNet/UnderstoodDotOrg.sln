@@ -50,6 +50,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.DecisionTool
                             .TakeWhile(am => am.IndicatorCount == maximumIndications)
                             .Select(am => am.Abstract));
                 }
+
+                var questions = LandingPage.GetDecisionQuestionCategories()
+                    .SelectMany(category => category.GetDecisionQuestions())
+                    .OrderBy(question => Guid.NewGuid())
+                    .Take(3);
+
+                rptrQuestions.DataSource = questions;
+                rptrQuestions.DataBind();
             }
             else
             {
