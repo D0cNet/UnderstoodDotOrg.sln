@@ -72,10 +72,10 @@
 <asp:Button ID="btne1a" runat="server" Text="e1a" OnClick="btne1a_Click" />
 <br /><br />
 <hr />
-<asp:Button ID="btne1b" runat="server" Text="e1b" OnClick="btne1b_Click" />
+<asp:Button ID="btne1b1" runat="server" Text="e1b" OnClick="btne1b1_Click" />
 <br /><br />
 <hr />
-<asp:Button ID="btne1B" runat="server" Text="e1B" OnClick="btne1B_Click1" />
+<asp:Button ID="btne1B2" runat="server" Text="e1B" OnClick="btne1B2_Click1" />
 <br /><br />
 <hr />
 <asp:Button ID="btne1c" runat="server" Text="e1c" OnClick="btne1c_Click" />

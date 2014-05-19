@@ -1,7 +1,6 @@
 ﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
 {
 	using System;
-
 	using UnderstoodDotOrg.Services.ExactTarget;
 	using UnderstoodDotOrg.Domain.ExactTarget;
 	using System.Collections.Generic;
@@ -28,7 +27,7 @@
 			//InvokeEM2ParentToolkitReply reply = ExactTargetService.InvokeEM2ParentToolkit(new InvokeEM2ParentToolkitRequest { ToEmail = tbxSubscriberEmail1.Text });
             //InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = tbxSubscriberEmail1.Text, FirstName = tbxSubscriberFN1.Text });
 
-            ////InvokeEM10WebinarConfirmationReply reply = ExactTargetService.InvokeEM10WebinarConfirmation(new InvokeEM10WebinarConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, WebinarModule = txtWebinarCode.Text });
+            InvokeEM10WebinarConfirmationReply reply = ExactTargetService.InvokeEM10WebinarConfirmation(new InvokeEM10WebinarConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, WebinarModule = txtWebinarCode.Text });
 			
 			
             //lblMessage.Text = reply.Message;
@@ -61,7 +60,8 @@
 
 		protected void btnEM7_Click(object sender, EventArgs e)
 		{
-
+			InvokeEM7NewsletterConfirmationReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday"});
+			lblMessage.Text = reply.Message;
 		}
 
 		protected void btnEM8_Click(object sender, EventArgs e)
@@ -109,12 +109,12 @@
 
 		}
 
-		protected void btne1b_Click(object sender, EventArgs e)
+		protected void btne1b1_Click(object sender, EventArgs e)
 		{
 
 		}
 
-		protected void btne1B_Click1(object sender, EventArgs e)
+		protected void btne1B2_Click1(object sender, EventArgs e)
 		{
 
 		}

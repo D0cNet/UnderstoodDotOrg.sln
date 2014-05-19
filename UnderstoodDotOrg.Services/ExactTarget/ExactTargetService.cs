@@ -445,7 +445,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			}
 
 			return reply;
-		}
+		}//This email will be sent from Convio/Luminate.
 		public static InvokeEM12ThankYouForContactingUsReply InvokeEM12ThankYouForContactingUs(InvokeEM12ThankYouForContactingUsRequest request) {
 			InvokeEM12ThankYouForContactingUsReply reply = new InvokeEM12ThankYouForContactingUsReply();
 
@@ -741,7 +741,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 447);
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -759,7 +759,16 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
+						newSub.Attributes = new etAPI.Attribute[2];
+						newSub.Attributes[0] = new etAPI.Attribute();
+						newSub.Attributes[0].Name = "week_day";
+						newSub.Attributes[0].Value = request.WeekDay;
 
+						newSub.Attributes[1] = new etAPI.Attribute();
+						newSub.Attributes[1].Name = "confirm_subscription_link";
+						newSub.Attributes[1].Value = request.WeekDay;
+
+						
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -873,9 +882,732 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			return reply;
 		}
+		
+		//#region
+		//public static InvokeEM16ContentReminderReply InvokeEM16ContentReminder(InvokeEM16ContentReminderRequest request)
+		//{
+		//	InvokeEM16ContentReminderReply reply = new InvokeEM16ContentReminderReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM17ObservationLogReminderReply InvokeEM17ObservationLogReminder(InvokeEM17ObservationLogReminderRequest request)
+		//{
+		//	InvokeEM17ObservationLogReminderReply reply = new InvokeEM17ObservationLogReminderReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM18UpdateProfileReminderReply InvokeEM18UpdateProfileReminder(InvokeEM18UpdateProfileReminderRequest request)
+		//{
+		//	InvokeEM18UpdateProfileReminderReply reply = new InvokeEM18UpdateProfileReminderReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM19WebinarReminderReply InvokeEM19WebinarReminder(InvokeEM19WebinarReminderRequest request)
+		//{
+		//	InvokeEM19WebinarReminderReply reply = new InvokeEM19WebinarReminderReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM20SupportPlanReminderReply InvokeEM20SupportPlanReminder(InvokeEM20SupportPlanReminderRequest request)
+		//{
+		//	InvokeEM20SupportPlanReminderReply reply = new InvokeEM20SupportPlanReminderReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM21PrivateMessageReply InvokeEM21PrivateMessage(InvokeEM21PrivateMessageRequest request)
+		//{
+		//	InvokeEM21PrivateMessageReply reply = new InvokeEM21PrivateMessageReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM22ForgotPasswordReply InvokeEM22ForgotPassword(InvokeEM22ForgotPasswordRequest request)
+		//{
+		//	InvokeEM22ForgotPasswordReply reply = new InvokeEM22ForgotPasswordReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM23PasswordResetConfirmationReply InvokeEM23PasswordResetConfirmation(InvokeEM23PasswordResetConfirmationRequest request)
+		//{
+		//	InvokeEM23PasswordResetConfirmationReply reply = new InvokeEM23PasswordResetConfirmationReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM24ContentSharedWithAFriendReply InvokeEM24ContentSharedWithAFriend(InvokeEM24ContentSharedWithAFriendRequest request)
+		//{
+		//	InvokeEM24ContentSharedWithAFriendReply reply = new InvokeEM24ContentSharedWithAFriendReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM25WebinarSharedWithAFriendReply InvokeEM25WebinarSharedWithAFriend(InvokeEM25WebinarSharedWithAFriendRequest request)
+		//{
+		//	InvokeEM25WebinarSharedWithAFriendReply reply = new InvokeEM25WebinarSharedWithAFriendReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM26JournalSharedWithAFriendReply InvokeEM26JournalSharedWithAFriend(InvokeEM26JournalSharedWithAFriendRequest request)
+		//{
+		//	InvokeEM26JournalSharedWithAFriendReply reply = new InvokeEM26JournalSharedWithAFriendReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM27SupportPlanReply InvokeEM27SupportPlan(InvokeEM27SupportPlanRequest request)
+		//{
+		//	InvokeEM27SupportPlanReply reply = new InvokeEM27SupportPlanReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM28AppsTechnologySharedWithAFriendReply InvokeEM28AppsTechnologySharedWithAFriend(InvokeEM28AppsTechnologySharedWithAFriendRequest request)
+		//{
+		//	InvokeEM28AppsTechnologySharedWithAFriendReply reply = new InvokeEM28AppsTechnologySharedWithAFriendReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM29SchoolSharedWithAFriendReply InvokeEM29SchoolSharedWithAFriend(InvokeEM29SchoolSharedWithAFriendRequest request)
+		//{
+		//	InvokeEM29SchoolSharedWithAFriendReply reply = new InvokeEM29SchoolSharedWithAFriendReply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
+		//public static InvokeEM30ReengagementStream1Reply InvokeEM30ReengagementStream1(InvokeEM30ReengagementStream1Request request)
+		//{
+		//	InvokeEM30ReengagementStream1Reply reply = new InvokeEM30ReengagementStream1Reply();
+
+		//	SoapClient client = ExactTargetService.GetInstance();
+
+		//	StringBuilder sbReturnString = new StringBuilder();
+
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335);
+
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
+
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
+
+
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
+
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}
 
 
 		//Newsletter Email methods
+
 		public static InvokeE1ATurnAroundBullyingReply InvokeE1ATurnAroundBullying(InvokeE1ATurnAroundBullyingRequest request) {
 			InvokeE1ATurnAroundBullyingReply reply = new InvokeE1ATurnAroundBullyingReply();
 

@@ -247,22 +247,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         protected global::System.Web.UI.WebControls.Button btne1a;
         
         /// <summary>
-        /// btne1b control.
+        /// btne1b1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btne1b;
+        protected global::System.Web.UI.WebControls.Button btne1b1;
         
         /// <summary>
-        /// btne1B control.
+        /// btne1B2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btne1B;
+        protected global::System.Web.UI.WebControls.Button btne1B2;
         
         /// <summary>
         /// btne1c control.
