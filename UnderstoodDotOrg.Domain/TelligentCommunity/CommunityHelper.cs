@@ -151,6 +151,36 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return commentList;
         }
 
+        public static XmlNode ReadUserComments(string username)
+        {
+            var webClient = new WebClient();
+            XmlNode node = null;
+            username = username.Trim();
+            string adminKeyBase64 = CommunityHelper.TelligentAuth();
+            try
+            {
+                //TODO: retrieve current logged in user
+                var userId = ReadUserId(username);
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                //webClient.Headers.Add("Rest-Impersonate-User", userId);
+                var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "api.ashx/v2/comments.xml?UserId=" + userId;
+
+
+
+                var xml = webClient.DownloadString(requestUrl);
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                node = xmlDoc.SelectSingleNode("Response");
+            }
+            catch (Exception ex)
+            {
+                node = null;
+            }
+            return node;
+                
+        }
+
         public static int GetTotalComments(string blogId, string blogPostId)
         {
             int count = 0;

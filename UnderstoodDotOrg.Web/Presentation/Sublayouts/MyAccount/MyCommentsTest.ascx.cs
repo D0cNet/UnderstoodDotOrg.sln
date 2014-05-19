@@ -10,9 +10,10 @@ using System.Collections.Specialized;
 using System.Xml;
 using Sitecore.Configuration;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Framework.UI;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 {
-    public partial class MyCommentsTest : System.Web.UI.UserControl
+    public partial class MyCommentsTest : BaseSublayout //System.Web.UI.UserControl
     {
         private class CommentSnippet
         {
@@ -59,42 +60,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
         protected void Page_Load(object sender, EventArgs e)
         {
          
-            var webClient = new WebClient();
-            string keyTest = Sitecore.Configuration.Settings.GetSetting("TelligentAdminApiKey");
-            var apiKey = String.IsNullOrEmpty(keyTest) ? "d956up05xiu5l8fn7wpgmwj4ohgslp" : keyTest;
            
-            var adminKey = String.Format("{0}:{1}", apiKey, "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+           
+            var nodes = CommunityHelper.ReadUserComments(CurrentMember.ScreenName);
 
-            //TODO: retrieve current logged in user
-            var userId ="admin";
-            //Todo: ID value should come from some inprocess maintained session of currently logged on user
-            var id = "2100";
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            webClient.Headers.Add("Rest-Impersonate-User", userId);
-            var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig")+"api.ashx/v2/comments.xml?UserId="+id;
-              
-            
-           
-            var xml = webClient.DownloadString(requestUrl);
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-            var nodes = xmlDoc.SelectNodes("Response/Comments[position()<=2] ");
-         // PagedList<Comment> commentList = PublicApi.Comments.Get(new CommentGetOptions() { UserId = 2100 });
-            lblCount.Text = nodes.Count.ToString();
-            List<CommentSnippet> commentSource = new List<CommentSnippet>();
-            foreach (XmlNode item in nodes)
+            if (nodes != null)
             {
-                
-                CommentSnippet cm = new CommentSnippet();
-                cm.Desc = item.SelectSingleNode("//Content/HtmlDescription").InnerText;
-                cm.Title = item.SelectSingleNode("//Content/HtmlName").InnerText;
-                cm.Url = item.SelectSingleNode("//Content/Url").InnerText;
-                commentSource.Add(cm);
-            }
+                //Accept XmlNode of comments for now, because of special requirement of just the last two
+                var comments = nodes.SelectNodes("Comments[position()<=2] ");
+                // PagedList<Comment> commentList = PublicApi.Comments.Get(new CommentGetOptions() { UserId = 2100 });
+                lblCount.Text = comments.Count.ToString();
+                List<CommentSnippet> commentSource = new List<CommentSnippet>();
+                foreach (XmlNode item in comments)
+                {
 
-            topComments.DataSource = commentSource;
-            topComments.DataBind();
+                    CommentSnippet cm = new CommentSnippet();
+                    cm.Desc = item.SelectSingleNode("//Content/HtmlDescription").InnerText;
+                    cm.Title = item.SelectSingleNode("//Content/HtmlName").InnerText;
+                    cm.Url = item.SelectSingleNode("//Content/Url").InnerText;
+                    commentSource.Add(cm);
+                }
+
+                topComments.DataSource = commentSource;
+                topComments.DataBind();
+            }
 
         }
 
