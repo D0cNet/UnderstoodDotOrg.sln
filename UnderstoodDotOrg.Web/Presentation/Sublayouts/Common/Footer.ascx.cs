@@ -141,7 +141,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     Sitecore.Web.UI.WebControls.Image scImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scImage");
                     if (hlLink != null)
                     {
-                        hlLink.NavigateUrl = navItem.InnerItem.GetUrl();
+                        hlLink.NavigateUrl = navItem.Link.Url;
                     }
 
                     if (scImage != null)
