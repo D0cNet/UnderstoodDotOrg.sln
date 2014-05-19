@@ -57,7 +57,7 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
                 FieldRenderer frSubHeading = e.FindControlAs<FieldRenderer>("frSubHeading");
                 Link scFollowTwittLink = e.FindControlAs<Link>("scFollowTwittLink");
                 Link scFollowBlogLink = e.FindControlAs<Link>("scFollowBlogLink");
-                Link scBioLink = e.FindControlAs<Link>("scBioLink");
+                HyperLink hlBioLink = e.FindControlAs<HyperLink>("hlBioLink");
                 if (detailItem != null) {
                     FieldRenderer frParticipation = e.FindControlAs<FieldRenderer>("frParticipation");
                     if (frParticipation != null) {
@@ -88,8 +88,9 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
                     if (scFollowBlogLink != null) {
                         scFollowBlogLink.Item = detailItem;
                     }
-                    if (scBioLink != null) {
-                        scBioLink.Item = detailItem;
+                    if (hlBioLink != null) {
+                        hlBioLink.NavigateUrl = detailItem.GetUrl();
+                        hlBioLink.Text = "See my bio";
                     }
                 }
             }

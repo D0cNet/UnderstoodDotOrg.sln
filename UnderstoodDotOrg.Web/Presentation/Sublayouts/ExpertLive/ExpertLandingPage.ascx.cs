@@ -49,7 +49,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 FieldRenderer frSubHeading = e.FindControlAs<FieldRenderer>("frSubHeading");
                 Link scFollowTwittLink = e.FindControlAs<Link>("scFollowTwittLink");
                 Link scFollowBlogLink = e.FindControlAs<Link>("scFollowBlogLink");
-                Link scBioLink = e.FindControlAs<Link>("scBioLink");
+                HyperLink hlBioLink = e.FindControlAs<HyperLink>("hlBioLink");
                 if (detailItem != null)
                 {
                     FieldRenderer frParticipation = e.FindControlAs<FieldRenderer>("frParticipation");
@@ -87,9 +87,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                     {
                         scFollowBlogLink.Item = detailItem;
                     }
-                    if (scBioLink != null)
+                    if (hlBioLink != null)
                     {
-                        scBioLink.Item = detailItem;
+                        hlBioLink.NavigateUrl = detailItem.GetUrl();
+                        hlBioLink.Text = "See my bio";
                     }
                 }
             }
