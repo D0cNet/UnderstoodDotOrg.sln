@@ -193,7 +193,7 @@ namespace UnderstoodDotOrg.Common
             {
                 get
                 {
-                    return new Guid("{7EBACCF7-B1A1-4729-A8CF-5E2892BDFF69}");
+                    return new Guid("{AF084775-566F-4340-88FD-411F28AEC8C1}");
                 }
             }
 

@@ -229,6 +229,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string SubscribeButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Subscribe Button Text");
+            }
+        }
+
         #endregion
 
         #region Input Placeholders

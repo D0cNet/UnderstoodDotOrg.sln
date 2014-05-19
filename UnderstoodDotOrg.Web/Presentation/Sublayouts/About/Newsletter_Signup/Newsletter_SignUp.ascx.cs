@@ -24,6 +24,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
         {
             txtEmail.Attributes["placeholder"] = DictionaryConstants.EnterEmailAddressWatermark;
             rfvEMail.Text = Model.RequiredEmailError.Raw;
+            btnSignup.Text = DictionaryConstants.SubscribeButtonText;
         }
 
         private void BindEvents()
