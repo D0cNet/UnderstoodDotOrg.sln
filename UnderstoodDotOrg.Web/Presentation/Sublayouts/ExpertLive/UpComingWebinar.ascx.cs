@@ -63,21 +63,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
 
                         frPageTItle.Item = contextItem;
                     }
-                    if (hlLink != null)
-                    {
-                        hlLink.NavigateUrl = expert.InnerItem.GetUrl();
+                    if (expert != null) {
+                        if (hlLink != null) {
+                            hlLink.NavigateUrl = expert.InnerItem.GetUrl();
+                        }
+                        FieldRenderer scThumbImg = FindControl("scThumbImg") as FieldRenderer;
+                        if (expert != null && expert.ExpertImage.MediaItem != null && scThumbImg != null) {
+                            scThumbImg.Item = expert.InnerItem;
+                        }
+                        else {
+                            imgExpertDefault.Visible = true;
+                        }
+                        if (litGuest != null) {
+                            litGuest.Text = expert.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;
+                        }
                     }
-                    FieldRenderer scThumbImg = FindControl("scThumbImg") as FieldRenderer;
-                    if (expert != null && expert.ExpertImage.MediaItem != null && scThumbImg != null) {
-                        scThumbImg.Item = expert.InnerItem;
-                    }
-                    else {
-                        imgExpertDefault.Visible = true;
-                    }
-                    if (litGuest != null)
-                    {
-                        litGuest.Text = expert.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;                            
-                    }
+
                     if (frHeading != null)
                     {
                         frHeading.Item = contextItem;
