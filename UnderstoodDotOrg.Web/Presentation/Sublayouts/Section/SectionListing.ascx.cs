@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
@@ -50,11 +51,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
                     // Check curated first, fallback to most recent articles
                     if (curated.Any())
                     {
-                        topicArticles = curated.Take(3).Select(x => new DefaultArticlePageItem(x));
+                        topicArticles = curated.Take(Constants.SECTION_LANDING_ARTICLES_PER_ROW).Select(x => new DefaultArticlePageItem(x));
                     }
                     else
                     {
-                        var recent = SearchHelper.GetMostRecentArticlesWithin(topic.ID, 3);
+                        var recent = SearchHelper.GetMostRecentArticlesWithin(topic.ID, Constants.SECTION_LANDING_ARTICLES_PER_ROW);
                         if (recent.Any())
                         {
                             topicArticles = from r in recent

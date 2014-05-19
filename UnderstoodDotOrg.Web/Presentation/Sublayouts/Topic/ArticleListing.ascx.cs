@@ -1,84 +1,54 @@
 ﻿using Sitecore.Data.Items;
-using Sitecore.Web.UI.WebControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
+using UnderstoodDotOrg.Framework.UI;
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
-    public partial class ArticleListing : System.Web.UI.UserControl {
-        protected void Page_Load(object sender, EventArgs e) {
-            TopicLandingPageItem topicPage = Sitecore.Context.Item;
-            if (topicPage != null && topicPage.SliderCuratedFeaturedcontent != null) {
-                List<Item> sliderCuratedFeatured = topicPage.CuratedFeaturedcontent.ListItems;
-                if (sliderCuratedFeatured != null && sliderCuratedFeatured.Any()) {
-
-                    rptArticleListing.DataSource = sliderCuratedFeatured.Take(6);
-                    rptArticleListing.DataBind();
-                    if (sliderCuratedFeatured.Count() > 6) {
-                        pnlMoreArticle.Visible = true;
-                    }
-                    hfGUID.Value = Sitecore.Context.Item.ID.ToString();
-                    hfResultsPerClick.Value = "6";
-                }
-                else {
-                    this.Visible = false;
-                }
-            }
-            else {
-                this.Visible = false;
-            }
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic 
+{
+    public partial class ArticleListing : BaseSublayout<TopicLandingPageItem>
+    {
+        protected void Page_Load(object sender, EventArgs e) 
+        {
+            BindEvents();
+            BindControls();
         }
 
-        protected void rptArticleListing_ItemDataBound(object sender, RepeaterItemEventArgs e) {
-            if (e.IsItem()) {
-                Item subTopicItem = e.Item.DataItem as Item;
-                if (subTopicItem != null) {
-                    Literal ltRowListingStart = e.FindControlAs<Literal>("ltRowListingStart");
-                    Literal ltRowListingEnd = e.FindControlAs<Literal>("ltRowListingEnd");
-                    HyperLink hlNavLink = e.FindControlAs<HyperLink>("hlNavLink");
-                    HyperLink hlLinkText = e.FindControlAs<HyperLink>("hlLinkText");
-                    System.Web.UI.WebControls.Image defaultImage = e.FindControlAs<System.Web.UI.WebControls.Image>("defaultImage");
-                    FieldRenderer scThumbnailImage = e.FindControlAs<FieldRenderer>("scThumbnailImage");
-                    if (e.Item.ItemIndex % 2 != 1) {
-                        if (ltRowListingStart != null) {
-                            ltRowListingStart.Text = "<div class=\"row listing-row\">";
-                        }
-                    }
-                    else {
-                        if (ltRowListingEnd != null) {
-                            ltRowListingEnd.Text = "</div>";
-                        }
-                    }
+        private void BindEvents()
+        {
+            lvArticles.ItemDataBound += lvArticles_ItemDataBound;
+        }
 
-                    ContentPageItem content = new ContentPageItem(subTopicItem);
-                    if (hlLinkText != null) {
-                        hlLinkText.Text = content.PageTitle.Rendered;
-                        hlLinkText.NavigateUrl = subTopicItem.GetUrl();
-                    }
+        private void BindControls() 
+        {
+            bool hasMoreResults = false;
+            IEnumerable<DefaultArticlePageItem> topicArticles = Model.GetTopicArticles(1, out hasMoreResults);
+            pnlMoreArticle.Visible = hasMoreResults;
 
-                    if (hlNavLink != null) {
-                        hlNavLink.NavigateUrl = subTopicItem.GetUrl();
-                    }
+            lvArticles.DataSource = topicArticles;
+            lvArticles.DataBind();
+        }
 
-                    if (subTopicItem.InheritsFromType(DefaultArticlePageItem.TemplateId)) {
-                        DefaultArticlePageItem contentPageItem = new DefaultArticlePageItem(subTopicItem);
-                        if (scThumbnailImage != null && contentPageItem != null && contentPageItem.ContentThumbnail.MediaItem != null) {
-                            scThumbnailImage.Item = contentPageItem;
-                            if (defaultImage != null) {
-                                defaultImage.Visible = false;
-                            }
-                        }
-                        else {
-                            if (defaultImage != null) {
-                                defaultImage.Visible = true;
-                            }
-                        }
-                    }
-                }
+        void lvArticles_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListViewItemType.DataItem)
+            {
+                DefaultArticlePageItem article = (DefaultArticlePageItem)e.Item.DataItem;
+
+                HyperLink hlThumbnail = (HyperLink)e.Item.FindControl("hlThumbnail");
+                HyperLink hlTitle = (HyperLink)e.Item.FindControl("hlTitle");
+
+                hlThumbnail.NavigateUrl = hlTitle.NavigateUrl = article.GetUrl();
+                hlTitle.Text = article.ContentPage.PageTitle;
+
+                Image imgThumbnail = (Image)e.Item.FindControl("imgThumbnail");
+                imgThumbnail.ImageUrl = article.GetArticleThumbnailUrl(190, 107);
+                imgThumbnail.Visible = !String.IsNullOrEmpty(imgThumbnail.ImageUrl);
             }
         }
     }

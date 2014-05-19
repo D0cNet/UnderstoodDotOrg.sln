@@ -331,23 +331,36 @@ namespace UnderstoodDotOrg.Domain.Search
 
         #region Public methods
 
-        public static List<Article> GetMostRecentArticlesWithin(ID container, int numEntries)
+        public static List<Article> GetMostRecentArticlesWithin(ID container, int page, int numEntries, out int totalEntries)
         {
             List<Article> results = new List<Article>();
 
             var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
-            using (var ctx = index.CreateSearchContext()) 
+            using (var ctx = index.CreateSearchContext())
             {
-                var entries = ctx.GetQueryable<Article>(new CultureExecutionContext(CultureInfo.CurrentCulture))
+                var query = ctx.GetQueryable<Article>(new CultureExecutionContext(CultureInfo.CurrentCulture))
                                 .Filter(i => i.Paths.Contains(container))
                                 .Filter(i => i.Templates.Contains(ID.Parse(DefaultArticlePageItem.TemplateId)))
                                 .OrderByDescending(i => i.CreatedDate)
-                                .Take(numEntries);
+                                .AsQueryable();
 
-                results = entries.ToList();
+                totalEntries = query.Take(1).GetResults().TotalSearchResults;
+
+                if (page > 1)
+                {
+                    query = query.Skip(page - 1);
+                }
+
+                results = query.Take(numEntries).ToList();
             }
 
             return results;
+        }
+
+        public static List<Article> GetMostRecentArticlesWithin(ID container, int numEntries)
+        {
+            int totalEntries;
+            return GetMostRecentArticlesWithin(container, 1, numEntries, out totalEntries);
         }
 
         public static List<Article> GetRandomMustReadArticles(int numberOfArticles)

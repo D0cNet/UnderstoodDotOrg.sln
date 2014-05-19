@@ -24,32 +24,31 @@
 <!-- END PARTIAL: children-key -->
 
 <!-- BEGIN MODULE: Article Listing -->
-<div class="container article-listing-container article-listing">
-    <asp:Repeater ID="rptArticleListing" runat="server" OnItemDataBound="rptArticleListing_ItemDataBound">
-        <ItemTemplate>
-            <asp:Literal runat="server" ID="ltRowListingStart" ></asp:Literal>
-            <div class="col col-11 offset-1">
-                <!-- BEGIN ELEMENT: Article -->
-                <div class="article">
-                    <asp:HyperLink runat="server" ID="hlNavLink">
-                        <sc:FieldRenderer id="scThumbnailImage" runat="server" Parameters="w=190&h=107&as=1" FieldName="Content Thumbnail" />
-                        <asp:Image runat="server" ID="defaultImage" Visible="false" ImageUrl="http://placehold.it/190x107" />
-                    </asp:HyperLink>
-                    <div class="article-title-container">
-                        <h3>
-                            <asp:HyperLink runat="server" ID="hlLinkText"></asp:HyperLink>
-                        </h3>
-                        <div class="children">
-                            <i class="child-a" title="CHILD NAME HERE"></i><i class="child-b" title="CHILD NAME HERE"></i><i class="child-c" title="CHILD NAME HERE"></i><i class="child-e" title="CHILD NAME HERE"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- END ELEMENT: Article -->
-            </div>
-            <asp:Literal runat="server" ID="ltRowListingEnd" ></asp:Literal>
-        </ItemTemplate>
-    </asp:Repeater>
-</div>
+<asp:ListView ID="lvArticles" GroupItemCount="2" runat="server">
+    <LayoutTemplate>
+        <div class="container article-listing-container article-listing">
+            <asp:PlaceHolder ID="groupPlaceholder" runat="server" />
+        </div>
+    </LayoutTemplate>
+    <GroupTemplate>
+        <div class="row listing-row">
+            <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+        </div>
+    </GroupTemplate>
+    <ItemTemplate>
+        <div class="col col-11 offset-1">
+          <div class="article skiplink-content rs_read_this" aria-role="main">
+              <asp:HyperLink ID="hlThumbnail" runat="server"><asp:Image ID="imgThumbnail" runat="server" /></asp:HyperLink>
+              <div class="article-title-container">
+                  <h3><asp:HyperLink ID="hlTitle" runat="server"></asp:HyperLink></h3>
+                  <div class="children">
+                    <i class="child-a" title="CHILD NAME HERE"></i><i class="child-b" title="CHILD NAME HERE"></i><i class="child-c" title="CHILD NAME HERE"></i><i class="child-e" title="CHILD NAME HERE"></i>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </ItemTemplate>
+</asp:ListView>
 <!-- .container -->
 
 <!-- END MODULE: Article Listing -->

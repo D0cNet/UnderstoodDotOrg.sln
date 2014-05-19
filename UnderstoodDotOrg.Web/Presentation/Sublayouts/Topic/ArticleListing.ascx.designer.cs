@@ -13,13 +13,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
     public partial class ArticleListing {
         
         /// <summary>
-        /// rptArticleListing control.
+        /// lvArticles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptArticleListing;
+        protected global::System.Web.UI.WebControls.ListView lvArticles;
         
         /// <summary>
         /// pnlMoreArticle control.
