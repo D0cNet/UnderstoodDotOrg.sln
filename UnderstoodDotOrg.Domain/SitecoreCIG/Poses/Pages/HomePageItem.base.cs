@@ -82,6 +82,15 @@ public CustomTextField YourParentToolkitDetails
 }
 
 
+public CustomTreeListField FeaturedArticles
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Featured Articles"]);
+	}
+}
+
+
 public CustomLookupField YourParentToolkitList
 {
 	get

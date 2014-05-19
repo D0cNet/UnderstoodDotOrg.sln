@@ -39,5 +39,13 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         public ExpertliveFilterFolderItem GetExpertliveFilterFolder() {
             return (ExpertliveFilterFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(ExpertliveFilterFolderItem.TemplateId)).FirstOrDefault();
         }
+
+        /// <summary>
+        /// Get More Explore folder Item.
+        /// </summary>
+        /// <returns></returns>
+        public MoreExploreFolderItem GetMoreExploreFolder() {
+            return (MoreExploreFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(MoreExploreFolderItem.TemplateId)).FirstOrDefault();
+        }
     }
 }

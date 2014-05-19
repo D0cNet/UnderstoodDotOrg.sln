@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HomeFeatured.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Home.HomeFeatured" %>
+
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN MODULE: Featured / Recommended -->
 <div class="container featured-recommended">
     <div class="row">
@@ -8,44 +10,22 @@
             <div class="featured-recommended-container">
                 <!-- BEGIN PARTIAL: featured-carousel -->
                 <div id="featured-slides-container" class="arrows-gray">
-                    <ul>
-                        <li>
-                            <a href="REPLACE.html">
-                                <p>Understand Your Child's Problem: Start a Log</p>
-                                <img alt="230x129 Placeholder" src="/Presentation/Includes/images/placefolder/230x129.gif" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="REPLACE.html">
-                                <p>Does my Child Have Dyslexia? Take the Quiz</p>
-                                <img alt="230x129 Placeholder" src="/Presentation/Includes/images/placefolder/230x129.gif" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="REPLACE.html">
-                                <p>Get Better Recommendations: Create a Profile</p>
-                                <img alt="230x129 Placeholder" src="/Presentation/Includes/images/placefolder/230x129.gif" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="REPLACE.html">
-                                <p>Understand Your Child's Problem: Start a Log</p>
-                                <img alt="230x129 Placeholder" src="/Presentation/Includes/images/placefolder/230x129.gif" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="REPLACE.html">
-                                <p>Does my Child Have Dyslexia? Take the Quiz</p>
-                                <img alt="230x129 Placeholder" src="/Presentation/Includes/images/placefolder/230x129.gif" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="REPLACE.html">
-                                <p>Get Better Recommendations: Create a Profile</p>
-                                <img alt="230x129 Placeholder" src="/Presentation/Includes/images/placefolder/230x129.gif" />
-                            </a>
-                        </li>
-                    </ul>
+                    <asp:Repeater ID="rptFeaturedArticles" runat="server" OnItemDataBound="rptFeaturedArticles_ItemDataBound">
+                        <HeaderTemplate>
+                            <ul>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <li>
+                                <asp:HyperLink ID="hypArticleLink" runat="server">
+                                    <sc:FieldRenderer ID="frArticleText" runat="server" FieldName="Navigation Title"></sc:FieldRenderer>
+                                    <sc:Image ID="frArticleImage" runat="server" Field="Featured Image" Parameters="mw=230&mh=129"></sc:Image>
+                                </asp:HyperLink>
+                            </li>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </ul>
+                        </FooterTemplate>
+                    </asp:Repeater>
                 </div>
                 <!-- #featured-slides-container-->
                 <!-- END PARTIAL: featured-carousel -->

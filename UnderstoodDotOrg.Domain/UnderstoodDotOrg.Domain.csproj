@@ -242,6 +242,8 @@
     <Compile Include="SitecoreCIG\Poses\Folders\LanguageNavigationFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\MainNavigationFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\MainNavigationFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\MoreExploreFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\MoreExploreFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PageResourceFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PageResourceFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\ParentToolkitFolderItem.base.cs" />
@@ -265,6 +267,7 @@
     <Compile Include="SitecoreCIG\Poses\General\LanguageLinkItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\MetadataItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\MetadataItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\MoreExploreItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\NavigationLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\PromoItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\SocialMediaItem.base.cs" />
