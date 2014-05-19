@@ -25,8 +25,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         protected void uxSignIn_Click(object sender, EventArgs e)
         {
             //blow out any existing member when someone tries to sign in
-            
-            
             try
             {
                 //lets make sure to reset all user&member info before we start inflating it
@@ -41,11 +39,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     this.CurrentMember = currentMember;
                     this.CurrentUser = membershipManager.GetUser(currentMember.MemberId, true);
 
-                    var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyProfile.ToString());
+                    var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccount.ToString());
                     Response.Redirect(Sitecore.Links.LinkManager.GetItemUrl(item));
-
-                    
-
                 }
             }
             catch (Exception ex)

@@ -1255,19 +1255,19 @@
     <Compile Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyUpcomingEvents.ascx.designer.cs">
       <DependentUpon>MyUpcomingEvents.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx.cs">
-      <DependentUpon>My Account Header.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx.designer.cs">
-      <DependentUpon>My Account Header.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx.cs">
       <DependentUpon>MyAccount.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx.designer.cs">
       <DependentUpon>MyAccount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyAccountHeader.ascx.cs">
+      <DependentUpon>MyAccountHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\MyAccountHeader.ascx.designer.cs">
+      <DependentUpon>MyAccountHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\MyAccountSubheader.ascx.cs">
       <DependentUpon>MyAccountSubheader.ascx</DependentUpon>
@@ -2372,8 +2372,8 @@
     <Content Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyGroups.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyNotifications.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyUpcomingEvents.ascx" />
-    <Content Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\MyAccountHeader.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccountSubheader.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyCommentsTest.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyNotificationsContainer.ascx" />

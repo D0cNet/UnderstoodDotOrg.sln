@@ -116,6 +116,14 @@ namespace UnderstoodDotOrg.Common
                 }
             }
 
+            public static Guid MyAccount
+            {
+                get
+                {
+                    return new Guid("{F4FEFD4B-0E01-48C3-9FDA-16B8576A68EC}");
+                }
+            }
+
             public static Guid SignIn
             {
                 get
