@@ -12,21 +12,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string blogId;
-            try
-            {
-                blogId = "1,2,3;";
-                List<BlogPost> dataSource = CommunityHelper.ListBlogPosts(blogId);
-                BlogPostsRepeater.DataSource = dataSource;
-                BlogPostsRepeater.DataBind();
-            }
-            catch
-            {
-                blogId = "1";
-                List<BlogPost> dataSource = CommunityHelper.ListBlogPosts(blogId);
-                BlogPostsRepeater.DataSource = dataSource;
-                BlogPostsRepeater.DataBind();
-            }
+            string blogId = "1,2,3;";
+            List<BlogPost> dataSource = CommunityHelper.ListBlogPosts(blogId);
+            BlogPostsRepeater.DataSource = dataSource;
+            BlogPostsRepeater.DataBind();
         }
     }
 }

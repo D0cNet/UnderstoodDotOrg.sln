@@ -27,7 +27,7 @@
                             <div class="question-card-info group">
                                 <div class="question-card-title-and-text">
                                     <div class="question-card-title">
-                                        <a href="/en/Community%20and%20Events/Q%20and%20A/Q%20and%20A%20Details.aspx<%# Item.QueryString %>"><%# Item.Title %></a>
+                                        <a href="<%#CurrentItemUrl + Item.QueryString %>"><%# Item.Title %></a>
                                     </div>
                                     <!-- end .question-card-title -->
                                     <div class="question-card-text">

@@ -61,23 +61,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Author { get; set; }
         public string BlogName { get; set; }
         public string ContentId { get; set; }
-        public string SitecoreUrl { get; set; }
+        public string ItemUrl { get; set; }
 
         public BlogPost() { }
 
         public BlogPost(string body, string title, string publishedDate, string author, string blogName, string contentId)
         {
             Body = body;
-            try
-            {
-                string[] url = Regex.Split(body.ToLower(), "/sitecore/content/home");
-                string[] u = url[1].Split('<');
-                SitecoreUrl = u[0];
-            }
-            catch
-            {
-
-            }
             Title = title;
             PublishedDate = publishedDate;
             Author = author;

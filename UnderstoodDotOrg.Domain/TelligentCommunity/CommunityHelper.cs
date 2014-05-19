@@ -8,6 +8,8 @@ using System.Xml;
 using Sitecore.Configuration;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Understood.Common;
+using Sitecore.Links;
+using System.Text.RegularExpressions;
 
 namespace UnderstoodDotOrg.Domain.TelligentCommunity
 {
@@ -460,7 +462,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         ContentId = xn["ContentId"].InnerText,
                         Author = user["Username"].InnerText,
                         Group = app["HtmlName"].InnerText,
-                        CommentCount = xn["CommentCount"].InnerText
+                        CommentCount = xn["CommentCount"].InnerText,
+                        QueryString = "?wikiId=" + wikiId + "&wikiPageId=" + xn["Id"].InnerText + "&contentId=" + xn["ContentId"].InnerText,
                     };
                     questionList.Add(question);
                 }
@@ -627,13 +630,16 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             int count = 0;
             foreach (XmlNode node in nodes)
             {
-                string title = node["Title"].InnerText;
-                string contentId = node["ContentId"].InnerText;
-                string body = FormatString100(node["Body"].InnerText);
-                string publishedDate = FormatDate(node["PublishedDate"].InnerText);
-                string blogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText);
-                string author = nodes1[count]["DisplayName"].InnerText;
-                BlogPost blogPost = new BlogPost(body, title, publishedDate, author, blogName, contentId);
+                BlogPost blogPost = new BlogPost(){
+                Title = node["Title"].InnerText,
+                ContentId = node["ContentId"].InnerText,
+                Body = FormatString100(node["Body"].InnerText),
+                PublishedDate = FormatDate(node["PublishedDate"].InnerText),
+                BlogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText),
+                Author = nodes1[count]["DisplayName"].InnerText,
+                // TODO: Fix this logic a lot
+                ItemUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + CommunityHelper.BlogNameById(node["BlogId"].InnerText) + "/" + node["Title"].InnerText, ".aspx", "")
+            };
                 blogPosts.Add(blogPost);
                 count++;
 

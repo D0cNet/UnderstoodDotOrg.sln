@@ -22,7 +22,8 @@
 
     <!-- END PARTIAL: community/question_sort -->
     <div class="answer-list">
-        <asp:Repeater ID="AnswerRepeater" runat="server">
+        <asp:Repeater ID="AnswerRepeater" runat="server"
+            ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Answer">
             <ItemTemplate>
         <!-- BEGIN PARTIAL: community/answer_card -->
         <div class="card-answer">
@@ -34,9 +35,9 @@
             </div>
             <div class="question-answer-info">
                 <div class="description">
-                    <%# Eval("_body") %>
+                    <%# Item.Body %>
                 </div>
-                <span class="details">In <a href="REPLACE" class="topic">aut molestias</a> - Answered by <a href="REPLACE" class="author"><%# Eval("_author") %></a>, Moderator <span class="bullet">&bull;</span> <%# Eval("_publishedDate") %></span>
+                <span class="details">In <a href="REPLACE" class="topic">aut molestias</a> - Answered by <a href="REPLACE" class="author"><%# Item.Author %></a>, Moderator <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
                 <div class="buttons">
                     <button class="helped"><i class="icon-comment-like"></i>This Helped</button>
                     <button class="report"><i class="icon-comment-flag"></i>Report as inappropriate</button>

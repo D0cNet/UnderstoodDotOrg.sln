@@ -1,15 +1,18 @@
-﻿using System;
+﻿using Sitecore.Links;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 {
-    public partial class RecentQuestions : System.Web.UI.UserControl
+    public partial class RecentQuestions : BaseSublayout
     {
+        protected string CurrentItemUrl { get { return LinkManager.GetItemUrl(this.DataSource); } }
         protected void Page_Load(object sender, EventArgs e)
         {
             List<Question> dataSource = CommunityHelper.GetQuestionsList("2");

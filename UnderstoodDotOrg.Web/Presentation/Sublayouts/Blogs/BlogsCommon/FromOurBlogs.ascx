@@ -15,14 +15,14 @@
                             <!-- end .group-card-image -->
                             <div class="blog-card-info group">
                                 <div class="blog-card-title">
-                                    <a href="<%# Item.SitecoreUrl %>"><%# Item.Title %></a>
+                                    <a href="<%# Item.ItemUrl %>"><%# Item.Title %></a>
                                 </div>
                                 <!-- end .blog-card-title -->
                                 <div class="blog-card-post-info">
                                     Posted by <a href="REPLACE"><%# Item.Author %></a> <%# Item.PublishedDate %>
                                 </div>
                                 <div class="blog-card-post-excerpt">
-                                    <!--<%# Item.Body %> --><a href="<%# Item.SitecoreUrl %>" class="link-see-more">See more</a>
+                                    <!--<%# Item.Body %> --><a href="<%# Item.ItemUrl %>" class="link-see-more">See more</a>
                                 </div>
                                 <span class="children-key clearfix">
                                     <ul>
