@@ -25,10 +25,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 if (expertDetailItems.Any())
                 {
                     rptListing.Visible = true;
-                    rptListing.DataSource = expertDetailItems.Take(3);
+                    rptListing.DataSource = expertDetailItems.Take(6);
                     rptListing.DataBind();
 
-                    if (expertDetailItems.Count() > 3) {
+                    if (expertDetailItems.Count() > 6) {
                         pnlShowMore.Visible = true;
                     }
                     hfGUID.Value = Sitecore.Context.Item.ID.ToString();
