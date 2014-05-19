@@ -122,6 +122,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                 Literal litExpert = e.FindControlAs<Literal>("litExpert");
                 Literal ltEventDate = e.FindControlAs<Literal>("ltEventDate");
                 Date scDate = e.FindControlAs<Date>("scDate");
+                imgExpertDefault.Visible = true;
                 if (detailItem != null) {
                     FieldRenderer frParticipation = e.FindControlAs<FieldRenderer>("frParticipation");
                     ExpertDetailPageItem expertItem = detailItem.Expert.Item;
@@ -129,6 +130,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                         if (scExpertImage != null) {
                             scExpertImage.Item = expertItem;
                             pnlExpertImageLabel.Visible = true;
+                            imgExpertDefault.Visible = false;
                         }
                         else {
                             imgExpertDefault.Visible = true;
