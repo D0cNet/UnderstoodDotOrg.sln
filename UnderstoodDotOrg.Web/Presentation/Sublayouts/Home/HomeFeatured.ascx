@@ -17,7 +17,7 @@
                         <ItemTemplate>
                             <li>
                                 <asp:HyperLink ID="hypArticleLink" runat="server">
-                                    <p><sc:FieldRenderer ID="frArticleText" runat="server" FieldName="Navigation Title"></sc:FieldRenderer></p>
+                                    <p><asp:Literal ID="ltArticleText" runat="server"></asp:Literal></p>
                                     <sc:Image ID="frArticleImage" runat="server" Field="Featured Image" Parameters="mw=230&mh=129"></sc:Image>
                                 </asp:HyperLink>
                             </li>

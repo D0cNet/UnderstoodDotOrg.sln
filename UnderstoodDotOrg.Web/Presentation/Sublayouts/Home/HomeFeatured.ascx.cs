@@ -8,6 +8,7 @@ using Sitecore.Data.Items;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
     public partial class HomeFeatured : System.Web.UI.UserControl {
@@ -31,14 +32,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                 Item article = e.Item.DataItem as Item;
                 if (article != null) {
                     HyperLink hypArticleLink = e.FindControlAs<HyperLink>("hypArticleLink");
-                    FieldRenderer frArticleText = e.FindControlAs<FieldRenderer>("frArticleText");
+                    Literal ltArticleText = e.FindControlAs<Literal>("ltArticleText");
                     Sitecore.Web.UI.WebControls.Image frArticleImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("frArticleImage");
 
                     if (hypArticleLink != null) {
                         hypArticleLink.NavigateUrl = article.GetUrl();
                     }
-                    if (frArticleText != null) {
-                        frArticleText.Item = article;
+                    if (ltArticleText != null && article.IsOfType(BasicArticlePageItem.TemplateId)) {
+                        BasicArticlePageItem articleItem = article;
+                        ltArticleText.Text = articleItem.DefaultArticlePage.ContentPage.BasePageNEW.NavigationTitle.Raw.Truncate(50, true, true);
                     }
                     if (frArticleImage != null) {
                         frArticleImage.Item = article;
