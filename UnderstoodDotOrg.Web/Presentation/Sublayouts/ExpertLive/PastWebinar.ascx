@@ -6,7 +6,9 @@
         <div class="event-container skiplink-feature">
             <ul class="breadcrumbs">
                 <p>
-                    <li><a href="REPLACE">Back to Ducimus Quia</a></li>
+                    <li><%--<a href="REPLACE">Back to Ducimus Quia</a>--%>
+                        <asp:HyperLink runat="server" ID="hlBackToLink" ></asp:HyperLink>
+                    </li>
             </ul>
 
             <h2 class="rs_read_this"> <sc:FieldRenderer ID="frPageTItle" runat="server" FieldName="Page Title" /></h2>
@@ -84,9 +86,9 @@
     <asp:Panel runat="server" ID="pnlVideo" CssClass="row webinar-video" Visible="false">
         <div class="container">
             <!-- BEGIN PARTIAL: video-player -->
-            <div class="player-container">
-                <div class="player">
-                    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+            
+            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/ExpertLive/VideoResources.ascx" Visible="true" />
+                    <%--<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
                     <object class="BrightcoveExperience">
                         <param name="bgcolor" value="#FFFFFF" />
                         <param name="width" value="480" />
@@ -98,45 +100,11 @@
                         <param name="dynamicStreaming" value="true" />
                         <param name="@videoPlayer" value="3203925031001" />
                         <param name="includeAPI" value="true" />
-                    </object>
-                </div>
-            </div>
+                    </object>--%>
+                
             <!-- END PARTIAL: video-player -->
 
-            <div class="col col-18 offset-3">
-                <!-- BEGIN PARTIAL: transcript-control -->
-                <div class="transcript-container Video">
-                    <div class="read-more mobile-close">
-                        <a href="REMOVE"><asp:Literal runat="server" ID="ltVideoDetailShow" ></asp:Literal><i class="icon-arrow-up-blue"></i></a>
-                    </div>
-                    <div class="transcript-wrap clearfix rs_read_this">
-                          <sc:FieldRenderer ID="frVideoTranscript" runat="server" FieldName="Video Transcript" />
-                        <%--<div>
-                            <h2>Video Transcript</h2>
-
-                            <h3>Dr.Richard Nightengale:</h3>
-                            <p>Esse optio voluptatem ut. aut et iusto doloremque et tempora voluptates provident laborum veniam maxime ab. nam quis sed eum. corrupti aliquam et et esse aut ab necessitatibus consectetur. animi et repudiandae quae voluptas fuga neque dolor unde doloremque praesentium aliquid excepturi voluptatum</p>
-
-                            <h3>Parent:</h3>
-                            <p>Quia maiores voluptatem fugit et corrupti impedit porro repellat dignissimos dolore sit nobis dolorum. vel quod et qui labore veniam. repudiandae eum et eaque sed consequatur esse ducimus. quidem illum voluptatem consectetur sit ipsa rerum dolores vel quis quo autem. omnis quasi qui tempora ut qui minus assumenda sint culpa qui mollitia. autem quo in sequi fugit rerum est molestiae itaque commodi aliquid nemo maiores et</p>
-
-                            <h3>Dr.Richard Nightengale:</h3>
-                            <p>Necessitatibus voluptate aspernatur eos itaque explicabo aut et. incidunt debitis suscipit earum blanditiis dolor voluptas laborum aut impedit repellat. aut qui vel nam similique vel. ut ex quibusdam est enim recusandae officiis et ducimus sed non impedit vel. vel minus similique numquam facilis aut voluptates quo sed. nobis laboriosam facilis quis et cum rerum. corporis asperiores vitae totam eum eaque praesentium repellat omnis quia enim</p>
-
-                            <h3>Parent:</h3>
-                            <p>Non dolorem dolorum voluptas eaque eveniet quisquam non sint enim expedita. maxime optio reiciendis et repellat. velit sapiente ea atque omnis. accusamus possimus ex velit corporis sed facilis ut. dolore earum explicabo mollitia quia debitis odit nihil sit. asperiores corporis aut sit sunt voluptatem cumque odio autem sed repellat deleniti libero eaque totam</p>
-
-                            <h3>Dr.Richard Nightengale:</h3>
-                            <p>Necessitatibus magnam hic et quas cumque vel voluptas iste reprehenderit vero aperiam perspiciatis quia. earum explicabo rerum accusantium rerum in quisquam dolorem eum rerum. dolor repellendus qui fugit voluptatem quia modi reprehenderit molestiae saepe laboriosam. excepturi reiciendis quas consectetur error. recusandae ab consequuntur ipsum consequatur sint vero excepturi rerum eum eaque molestiae porro ducimus ut</p>
-
-                            <h3>Parent:</h3>
-                            <p>Deserunt itaque et ea placeat iusto magnam labore aperiam consequatur inventore est corrupti neque qui. quisquam quo fugit est quis nihil in aperiam dolorum quos ducimus. qui impedit distinctio atque quia. maxime quod quis at deleniti dicta officia recusandae. qui rerum illo architecto aspernatur dolorum quidem aperiam nobis. laudantium non voluptate ut. sint voluptatem quas aut ut sit qui nesciunt odit quis</p>
-                        </div>--%>
-                    </div>
-                    <div class="read-more read-more-bottom"></div>
-                </div>
-                <!-- END PARTIAL: transcript-control -->
-            </div>
+            
         </div>
 
         <div class="webinar-actions clearfix">

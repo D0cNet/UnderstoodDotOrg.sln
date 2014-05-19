@@ -105,6 +105,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                     }
                 }
 
+                int resultsPeClick = Constants.DEFAULT_NEW_LIST_COUNT_PER_CLICK;
                 ExpertLivePageItem expertLivePage = GetExpertLivePageItem();
                 if (ContextItem != null) {
                     ArchiveItem archivePage = expertLivePage.GetArchiveItem();
@@ -115,13 +116,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
 
                         var results = GetFilters();
                         if (results != null && results.Any()) {
-                            rptEventCard.DataSource = results.Take(2);
+                            rptEventCard.DataSource = results.Take(resultsPeClick);
                             rptEventCard.DataBind();
-                            if (results.Count() > 2) {
+                            if (results.Count() > resultsPeClick) {
                                 pnlMoreArticle.Visible = true;
                             }
-                            hfGUID.Value = Sitecore.Context.Item.ID.ToString();
-                            hfResultsPerClick.Value ="2";
+                            hfGUID.Value = expertLivePage.ID.ToString();
+                            hfResultsPerClick.Value = resultsPeClick.ToString();
                         }
                         else {
                             this.Visible = false;
@@ -150,7 +151,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                 var predicate1 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate2 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate3 = PredicateBuilder.True<EventArchiveSearch>();
-
+                TemplateRestrictions.Clear();
                 TemplateRestrictions.Add(new ID(ChatEventPageItem.TemplateId));
                 TemplateRestrictions.Add(new ID(WebinarEventPageItem.TemplateId));
 

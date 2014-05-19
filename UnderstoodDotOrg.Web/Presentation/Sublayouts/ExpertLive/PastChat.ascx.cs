@@ -14,8 +14,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
     public partial class PastChat : System.Web.UI.UserControl {
         ChatEventPageItem ContextItem = Sitecore.Context.Item;
         protected void Page_Load(object sender, EventArgs e) {
+            Response.Write(Request.UrlReferrer);
             BaseEventDetailPageItem baseEventDetailpage = new BaseEventDetailPageItem(ContextItem);
             ExpertDetailPageItem expert = baseEventDetailpage.Expert.Item;
+
+            if (Request.UrlReferrer != null && !Request.UrlReferrer.ToString().IsNullOrEmpty()) {
+                hlBackToLink.NavigateUrl = Request.UrlReferrer.ToString();
+                string backto = Request.UrlReferrer.ToString().Substring(Request.UrlReferrer.ToString().LastIndexOf("/") + 1);
+                if (backto == string.Empty) {
+                    backto = Request.UrlReferrer.ToString().Substring(0, Request.UrlReferrer.ToString().Length - 1);
+                    backto = backto.Substring(backto.LastIndexOf("/") + 1);
+                }
+
+                hlBackToLink.Text = String.Format("{0} {1}", DictionaryConstants.BacktoLabel, backto);
+            }
 
             if (ContextItem != null) {
                 if (IsArchiveItem(ContextItem)) {
@@ -51,7 +63,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                             litGuest.Text = expert.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;
                         }
                     }
-                    
+
 
                     if (ltEventDate != null && !baseEventDetailpage.EventDate.Raw.IsNullOrEmpty()) {
                         TimeZoneItem timezone = baseEventDetailpage.Timezone.Item;
@@ -119,59 +131,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
             }
         }
 
-        //ChatEventPageItem ContextItem = Sitecore.Context.Item;
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
-        //    if (ContextItem != null) {
-        //        if (IsArchiveItem(ContextItem)) {
-        //            ShowCommentOnChat();
-        //            this.Visible = true;
-        //        }
-        //        else {
-        //            this.Visible = false;
-        //        }
-        //    }
-        //}
-
-        //private void ShowCommentOnChat() {
-        //    PageResourceFolderItem pageResourceFolder = ContextItem.GetPageResourceFolderItem();
-        //    if (pageResourceFolder != null) {
-        //        var results = pageResourceFolder.GetCommentItems();
-        //        if (results != null && results.Any()) {
-        //            rptComments.DataSource = results;
-        //            rptComments.DataBind();
-        //        }
-        //    }
-        //}
-
-        //private bool IsArchiveItem(Item item) {
-        //    bool isArchiveItem = false;
-        //    BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(item);
-        //    if (baseEventPageItem != null) {
-        //        if (baseEventPageItem.EventDate.DateTime < DateTime.Today) {
-        //            isArchiveItem = true;
-        //        }
-        //    }
-
-        //    return isArchiveItem;
-        //}
-
-        //protected void rptComments_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e) {
-        //    if (e.IsItem()) {
-        //        CommentItem commentItem = e.Item.DataItem as CommentItem;
-
-        //        if (commentItem != null) {
-        //            FieldRenderer frTitle = e.FindControlAs<FieldRenderer>("frTitle");
-        //            FieldRenderer frContent = e.FindControlAs<FieldRenderer>("frContent");
-        //            if (frTitle != null) {
-        //                frTitle.Item = commentItem;
-        //            }
-
-        //            if (frContent != null) {
-        //                frContent.Item = commentItem;
-        //            }
-        //        }
-        //    }
-        //}
     }
 }

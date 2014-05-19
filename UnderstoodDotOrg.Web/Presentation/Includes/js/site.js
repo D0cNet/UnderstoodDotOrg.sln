@@ -791,17 +791,16 @@ U.archiveEventListing = function () {
 
         var getQuery = '/Presentation/AjaxData/ArchiveEvents.aspx?' + 'q=' + searchkey + "&itemid=" + itemId + "&grade=" + grade + "&issue=" + issue + "&topic=" + topic + "&count=" + vcount + "&rpc=" + resultsPerClick;
 
-
         $.ajax({
 
             cache: false, url: getQuery,
             success: function (data) {
                 try {
-
+                   
                     $('.event-cards').append(data);
-
-                    if ($(data).filter("#lblmoreArticle").text() == "false") {
-                        $('.view-more').hide();
+                    
+                    if ($(data).filter("#lblmoreArticle").html() == "false") {
+                        $('#pnlMoreArticle').hide();
                     }
                     vcount = vcount + 1;
                 }
@@ -820,7 +819,7 @@ U.expertListing = function () {
 
         var itemId = $('#hfGUID').val();
         var resultsPerClick = $('#hfResultsPerClick').val();
-
+        
         var getQuery = '/Presentation/AjaxData/ExpertListing.aspx?' + "itemid=" + itemId + "&count=" + vcount + "&rpc=" + resultsPerClick;
 
 
@@ -832,7 +831,8 @@ U.expertListing = function () {
 
                     $('.about-experts-listing').append(data);
                     DivideDetailPages();
-                    if ($(data).filter("#lblmoreArticle").text() == "false") {
+                    
+                    if ($(data).filter("#lblmoreArticle").html() == "false") {
                         $('#pnlShowMore').hide();
                     }
                     vcount = vcount + 1;

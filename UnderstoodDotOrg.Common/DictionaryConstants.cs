@@ -764,6 +764,12 @@ namespace UnderstoodDotOrg.Common
         }
 
         #region Expert Live
+        public static string BacktoLabel{
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Back to Label");
+            }
+        }
+
         public static string GuestExpertLabel {
             get {
                 return Translate.TextByDomain(PosesDictionary, "Guest Expert Label");

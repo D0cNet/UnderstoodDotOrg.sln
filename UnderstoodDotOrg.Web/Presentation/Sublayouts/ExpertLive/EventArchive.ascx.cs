@@ -65,7 +65,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                         rptEventCard.DataBind();
                     }
                     else {
-                        this.Visible = false;
+                        // Show No webniars message
+                        pnlNoArchiveMessage.Visible = true;
+                        if (frNoArchiveMessage != null) {
+                            frNoArchiveMessage.Item = ContextItem;
+                        }
                     }
                 }
                 else {
@@ -89,7 +93,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                 var predicate1 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate2 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate3 = PredicateBuilder.True<EventArchiveSearch>();
-
+                TemplateRestrictions.Clear();
                 TemplateRestrictions.Add(new ID(ChatEventPageItem.TemplateId));
                 TemplateRestrictions.Add(new ID(WebinarEventPageItem.TemplateId));
                 

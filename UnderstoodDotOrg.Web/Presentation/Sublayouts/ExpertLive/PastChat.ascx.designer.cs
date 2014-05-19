@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
     public partial class PastChat {
         
         /// <summary>
+        /// hlBackToLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlBackToLink;
+        
+        /// <summary>
         /// frPageTitle control.
         /// </summary>
         /// <remarks>

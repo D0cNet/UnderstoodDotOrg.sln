@@ -34,7 +34,7 @@ using UnderstoodDotOrg.Domain.Search;
 namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
     public partial class ArchiveEvents : System.Web.UI.Page {
         Int32 clickCount = 1;
-        
+
         private List<ID> _templateRestrictions = new List<ID>();
 
         public List<ID> TemplateRestrictions {
@@ -64,7 +64,7 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
 
             if (Request.QueryString["itemid"] != null && !Request.QueryString["itemid"].ToString().IsNullOrEmpty()) {
                 this.ItemID = Request.QueryString["itemid"].ToString();
-               
+
             }
 
             if (Request.QueryString["issue"] != null && !Request.QueryString["issue"].ToString().IsNullOrEmpty()) {
@@ -85,35 +85,24 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
             int resultsPeClick = 2;
             if (Request.QueryString["rpc"] != null)
                 int.TryParse(Request.QueryString["rpc"], out resultsPeClick);
-            Item ContextItem = Sitecore.Context.Database.GetItem(ItemID);
-            if (ContextItem != null) {
-                ExpertLivePageItem expertLivePage = GetExpertLivePageItem(ContextItem);
-                if (expertLivePage != null) {
-                    ArchiveItem archivePage = expertLivePage.GetArchiveItem();
+            Item expertLivePage = Sitecore.Context.Database.GetItem(ItemID);
+            if (expertLivePage != null) {
 
-                    if (archivePage != null) {
-                        //hlSeeArchive.Text = DictionaryConstants.SeeArchiveLabel;
-                        //hlSeeArchive.NavigateUrl = archivePage.InnerItem.GetUrl();
-
-                        var results = GetFilters();
-                        if (results != null && results.Any()) {
-                            rptEventCard.DataSource = results.Skip(clickCount * resultsPeClick).Take(resultsPeClick).ToList();
-                            rptEventCard.DataBind();
+                var results = GetFilters();
+                if (results != null && results.Any()) {
+                    rptEventCard.DataSource = results.Skip(clickCount * resultsPeClick).Take(resultsPeClick).ToList();
+                    rptEventCard.DataBind();
 
 
-                            int itemCount = ((clickCount * resultsPeClick) + resultsPeClick);
-                            if (results.Count() <= itemCount) {
-                                lblmoreArticle.Text = "false";
-                            }
-                        }
-                        else {
-                            this.Visible = false;
-                        }
-                    }
-                    else {
-                        this.Visible = false;
+                    int itemCount = ((clickCount * resultsPeClick) + resultsPeClick);
+                    if (results.Count() <= itemCount) {
+                        lblmoreArticle.Text = "false";
                     }
                 }
+                else {
+                    this.Visible = false;
+                }
+
             }
         }
 
@@ -147,7 +136,7 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
                 var predicate1 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate2 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate3 = PredicateBuilder.True<EventArchiveSearch>();
-
+                TemplateRestrictions.Clear();
                 TemplateRestrictions.Add(new ID(ChatEventPageItem.TemplateId));
                 TemplateRestrictions.Add(new ID(WebinarEventPageItem.TemplateId));
 
@@ -259,13 +248,20 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
                         ExpertDetailPageItem expertItem = baseEventItem.Expert.Item;
 
                         if (expertItem != null) {
-                            hlExpertBio.NavigateUrl = expertItem.InnerItem.GetUrl();
+                            if (hlExpertBio != null) {
+                                hlExpertBio.NavigateUrl = expertItem.InnerItem.GetUrl();
+                            }
                             if (scExpertImage != null && expertItem.ExpertImage.MediaItem != null) {
                                 scExpertImage.Item = expertItem;
-                                pnlExpertImageLabel.Visible = true;
+                                scExpertImage.Visible = true;
+                                if (pnlExpertImageLabel != null) {
+                                    pnlExpertImageLabel.Visible = true;
+                                }
                             }
                             else {
-                                imgExpertDefault.Visible = true;
+                                if (imgExpertDefault != null) {
+                                    imgExpertDefault.Visible = true;
+                                }
                             }
                             if (ltExpertType != null) {
                                 ltExpertType.Text = expertItem.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;
@@ -273,8 +269,12 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
 
                         }
                         else {
-                            imgExpertDefault.Visible = true;
-                            pnlExpertImageLabel.Visible = true;
+                            if (imgExpertDefault != null) {
+                                imgExpertDefault.Visible = true;
+                            }
+                            if (pnlExpertImageLabel != null) {
+                                pnlExpertImageLabel.Visible = true;
+                            }
                         }
                     }
 

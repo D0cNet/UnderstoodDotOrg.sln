@@ -31,6 +31,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.UrlReferrer != null && !Request.UrlReferrer.ToString().IsNullOrEmpty()) {
+                hlBackToLink.NavigateUrl = Request.UrlReferrer.ToString();
+                string backto = Request.UrlReferrer.ToString().Substring(Request.UrlReferrer.ToString().LastIndexOf("/") + 1);
+                if(backto == string.Empty){
+                    backto = Request.UrlReferrer.ToString().Substring(0, Request.UrlReferrer.ToString().Length - 1);
+                    backto = backto.Substring(backto.LastIndexOf("/") + 1);
+                }
+
+                hlBackToLink.Text = String.Format("{0} {1}", DictionaryConstants.BacktoLabel, backto);
+            }
             WebinarEventPageItem contextItem = Sitecore.Context.Item;
             BaseEventDetailPageItem baseEventDetailpage = new BaseEventDetailPageItem(contextItem);
             ExpertDetailPageItem expert = baseEventDetailpage.Expert.Item;

@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
 {
@@ -28,14 +29,40 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             return isArchiveItem;
         }
 
+        protected ExpertLivePageItem GetExpertLivePageItem() {
+            Item contextItem = Sitecore.Context.Item;
+            Item topicLandingPageItem = contextItem;
+            while (contextItem != null && !contextItem.IsOfType(ExpertLivePageItem.TemplateId)) {
+
+                if (contextItem.Parent != null && contextItem.Parent.IsOfType(ExpertLivePageItem.TemplateId)) {
+                    topicLandingPageItem = contextItem.Parent;
+                    break;
+                }
+                contextItem = contextItem.Parent;
+            }
+
+            return topicLandingPageItem;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Write(Request.UrlReferrer);
+             ExpertLivePageItem expertLive = GetExpertLivePageItem();
+             if (expertLive != null) {
+                 
+                 ArchiveItem archivePage = expertLive.GetArchiveItem();
+
+                 if (archivePage != null) {
+                     hlBackToLink.NavigateUrl = archivePage.InnerItem.GetUrl();
+                     hlBackToLink.Text = String.Format("{0} {1}",DictionaryConstants.BacktoLabel,archivePage.DisplayName);
+                 }
+             }
             WebinarEventPageItem contextItem = Sitecore.Context.Item;
             BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(contextItem);
             ExpertDetailPageItem expert = baseEventPageItem.Expert.Item;
-            ltVideoDetailShow.Text = DictionaryConstants.CloseTranscriptLabel;
+            
             if (contextItem != null) {
-               frVideoTranscript.Item = contextItem;
+               
                if (!contextItem.VideoID.Raw.IsNullOrEmpty()) {
                    pnlVideo.Visible = true;
                }

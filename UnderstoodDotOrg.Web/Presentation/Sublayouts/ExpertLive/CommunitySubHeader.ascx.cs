@@ -68,12 +68,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
         protected void rptTopicHeader_ItemDataBound(object sender, RepeaterItemEventArgs e) {
             if (e.IsItem()) {
                 Item subTopicItem = e.Item.DataItem as Item;
+               
                 if (subTopicItem != null) {
                     HyperLink hlNavigationTitle = e.FindControlAs<HyperLink>("hlNavigationTitle");
                     HtmlGenericControl listItem = e.FindControlAs<HtmlGenericControl>("listItem");
                     listItem.Visible = false;
                     BasePageNEWItem basePageNewItem = new BasePageNEWItem(subTopicItem);
                     if (hlNavigationTitle != null) {
+                        if (subTopicItem.GetUrl().Contains(Request.RawUrl)) {
+                            hlNavigationTitle.Attributes.Add("class","selected");
+                        }
+
                         hlNavigationTitle.NavigateUrl = LinkManager.GetItemUrl(subTopicItem);
                         if (!basePageNewItem.IncludeinNavigation.Raw.IsNullOrEmpty()) {
                             hlNavigationTitle.Text = basePageNewItem.NavigationTitle.Rendered;

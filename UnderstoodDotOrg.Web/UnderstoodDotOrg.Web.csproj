@@ -135,6 +135,13 @@
     <Compile Include="Presentation\AjaxData\ArchiveEvents.aspx.designer.cs">
       <DependentUpon>ArchiveEvents.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\AjaxData\ExpertListing.aspx.cs">
+      <DependentUpon>ExpertListing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\ExpertListing.aspx.designer.cs">
+      <DependentUpon>ExpertListing.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\AjaxData\GetArticles.aspx.cs">
       <DependentUpon>GetArticles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1094,6 +1101,13 @@
     <Compile Include="Presentation\Sublayouts\ExpertLive\UpComingWebinar.ascx.designer.cs">
       <DependentUpon>UpComingWebinar.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\VideoResources.ascx.cs">
+      <DependentUpon>VideoResources.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\VideoResources.ascx.designer.cs">
+      <DependentUpon>VideoResources.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Home\GuideMe.ascx.cs">
       <DependentUpon>GuideMe.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1612,6 +1626,7 @@
     <Content Include="Handlers\FormSubmissionsService.asmx" />
     <Content Include="Handlers\SearchResultsService.asmx" />
     <Content Include="Presentation\AjaxData\ArchiveEvents.aspx" />
+    <Content Include="Presentation\AjaxData\ExpertListing.aspx" />
     <Content Include="Presentation\AjaxData\GetArticles.aspx" />
     <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />
     <Content Include="Presentation\Includes\css\about-nonresponsive.css" />
@@ -2244,6 +2259,7 @@
     <Content Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\UpComingChat.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\UpComingWebinar.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\VideoResources.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx" />

@@ -88,7 +88,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                 var predicate1 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate2 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate3 = PredicateBuilder.True<EventArchiveSearch>();
-
+                TemplateRestrictions.Clear();
                 TemplateRestrictions.Add(new ID(ChatEventPageItem.TemplateId));
                 TemplateRestrictions.Add(new ID(WebinarEventPageItem.TemplateId));
 
@@ -112,7 +112,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
 
         private bool IsEventOwner(Item item) {
             BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(item);
-            if (baseEventPageItem.Expert.Item.ID.ToString().Equals(ContextItem.ID.ToString())) {
+          
+            if (baseEventPageItem != null && baseEventPageItem.Expert.Item != null && baseEventPageItem.Expert.Item.ID.ToString().Equals(ContextItem.ID.ToString())) {
+                
                 return true;
             }
 

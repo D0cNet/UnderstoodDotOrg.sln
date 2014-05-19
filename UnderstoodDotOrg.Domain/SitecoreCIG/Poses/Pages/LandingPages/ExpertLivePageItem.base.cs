@@ -127,6 +127,24 @@ public CustomTextField WebinarsSubheading
 }
 
 
+public CustomTextField NoArchiveMessage
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["No Archive Message"]);
+	}
+}
+
+
+public CustomTextField NoChatMessage
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["No Chat Message"]);
+	}
+}
+
+
 public CustomTextField NoWebinarsMessage
 {
 	get

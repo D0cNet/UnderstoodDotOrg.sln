@@ -49,6 +49,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::System.Web.UI.WebControls.Repeater rptEventCard;
         
         /// <summary>
+        /// pnlNoArchiveMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNoArchiveMessage;
+        
+        /// <summary>
+        /// frNoArchiveMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoArchiveMessage;
+        
+        /// <summary>
         /// hlSeeArchive control.
         /// </summary>
         /// <remarks>

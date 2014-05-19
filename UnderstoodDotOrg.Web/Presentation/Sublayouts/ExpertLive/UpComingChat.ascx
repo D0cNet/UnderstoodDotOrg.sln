@@ -6,7 +6,7 @@
         <div class="event-container skiplink-feature">
             <ul class="breadcrumbs">
                 <p>
-                    <li><a href="REPLACE">Back to Sit Nobis 1</a></li>
+                    <li><asp:HyperLink runat="server" ID="hlBackToLink" ></asp:HyperLink></li>
             </ul>
 
             <h2 class="rs_read_this"><sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" /></h2>

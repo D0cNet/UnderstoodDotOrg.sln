@@ -7,7 +7,9 @@
         <div class="event-container skiplink-feature">
             <ul class="breadcrumbs">
                 <p>
-                    <li><a href="REPLACE">Back to Ut Fugit</a></li>
+                    <li>
+                        <asp:HyperLink runat="server" ID="hlBackToLink" ></asp:HyperLink>
+                    </li>
             </ul>
 
             <h2 class="rs_read_this">

@@ -6,7 +6,7 @@
         <div class="event-container">
             <ul class="breadcrumbs">
                 <p>
-                    <li><a href="REPLACE">Back to Blanditiis Aut</a></li>
+                    <li><asp:HyperLink runat="server" ID="hlBackToLink" ></asp:HyperLink></li>
             </ul>
 
             <h2 class="rs_read_this"><sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" /></h2>

@@ -22,7 +22,11 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
 
             }
 
-            int resultsPeClick = 6;
+            if (Request["count"] != null) {
+                clickCount = Int32.Parse(Request["count"]);
+            }
+
+            int resultsPeClick = 3;
             if (Request.QueryString["rpc"] != null)
                 int.TryParse(Request.QueryString["rpc"], out resultsPeClick);
 

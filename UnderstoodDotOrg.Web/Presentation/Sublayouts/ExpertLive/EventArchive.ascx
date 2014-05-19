@@ -18,7 +18,7 @@
             <fieldset class="archive-search-form">
                 <label aria-hidden="true" class="visuallyhidden" for="search-archive">Search Archive</label>
                 <input type="text" runat="server" id="txtSearch" placeholder="Search archive" name="search-archive" class="archive-search">
-                <asp:Button type="submit" runat="server" ClientIDMode="Static" OnClick="btnSubmit_Click" Id="btnSubmit" Text="Go" class="search-button" />
+                <asp:Button type="submit" runat="server" ClientIDMode="Static" OnClick="btnSubmit_Click" ID="btnSubmit" Text="Go" class="search-button" />
             </fieldset>
         </header>
     </asp:Panel>
@@ -54,8 +54,12 @@
                                     </asp:HyperLink>
                                 </div>
                                 <!-- end .event-card-title -->
-                                <p class="event-card-topics-head"><sc:FieldRenderer ID="frHeading" runat="server" FieldName="Heading" /></p>
-                                <p class="event-card-topics"><sc:FieldRenderer ID="frSubheading" runat="server" FieldName="SubHeading" /></p>
+                                <p class="event-card-topics-head">
+                                    <sc:FieldRenderer ID="frHeading" runat="server" FieldName="Heading" />
+                                </p>
+                                <p class="event-card-topics">
+                                    <sc:FieldRenderer ID="frSubheading" runat="server" FieldName="SubHeading" />
+                                </p>
                                 <span class="children-key">
                                     <ul>
                                         <li><i title="CHILD NAME HERE" class="child-a"></i></li>
@@ -65,9 +69,12 @@
                             </div>
                             <!-- end .event-card-details -->
                             <div class="event-card-date-details col equalize">
-                                <p class="event-type"><asp:Literal runat="server" ID="ltEventType" ></asp:Literal></p>
-                                <p class="event-date"><asp:Literal runat="server" ID="ltEventDate" ></asp:Literal></p>
-                                <p class="event-date-sub"><asp:Literal runat="server" ID="ltEventSubDate" ></asp:Literal></p>
+                                <p class="event-type">
+                                    <asp:Literal runat="server" ID="ltEventType"></asp:Literal></p>
+                                <p class="event-date">
+                                    <asp:Literal runat="server" ID="ltEventDate"></asp:Literal></p>
+                                <p class="event-date-sub">
+                                    <asp:Literal runat="server" ID="ltEventSubDate"></asp:Literal></p>
                             </div>
                         </div>
                         <!-- end .event-card-info -->
@@ -77,7 +84,9 @@
             </ItemTemplate>
         </asp:Repeater>
 
-
+        <asp:Panel runat="server" ID="pnlNoArchiveMessage" class="no-webinars rs_read_this" Visible="false">
+            <sc:FieldRenderer ID="frNoArchiveMessage" runat="server" FieldName="No Archive Message" />
+        </asp:Panel>
         <%--<div class="row">
             <div class="event-card rs_read_this" id="_d65f24d6-cda8-5e21-526f-5035e51aee89">
                 <div id="readspeaker_button17" class="rsbtn_player rs_skip rs_preserve rshidden">
@@ -133,7 +142,7 @@
             <!-- Key -->
             <div class="row">
                 <div class="col col-24">
-                    <asp:HyperLink runat="server" ID="hlSeeArchive" CssClass="button see-archive" ></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="hlSeeArchive" CssClass="button see-archive"></asp:HyperLink>
                     <%--<a class="button see-archive" href="REPLACE">See Archive</a>--%>
                     <div aria-hidden="true" class="children-key">
                         <ul>

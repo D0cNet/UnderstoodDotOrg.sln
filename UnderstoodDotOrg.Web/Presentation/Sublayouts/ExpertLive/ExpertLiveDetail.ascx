@@ -178,6 +178,9 @@
                     </ItemTemplate>
                 </asp:Repeater>
                 <!-- end .event-card -->
+                <asp:Panel runat="server" ID="pnlNoChatMessage" class="no-webinars rs_read_this" Visible="false">
+                    <sc:FieldRenderer ID="frNoChatMessage" runat="server" FieldName="No Chat Message" />
+                </asp:Panel>
                 <!-- END PARTIAL: community/experts_chat_card -->
             </div>
             <!-- end .event-cards -->

@@ -126,6 +126,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                 frChatHeading.Visible = true;
                 frChatSubheading.Visible = true;
             }
+            else {
+                // Show No webniars message
+                pnlNoChatMessage.Visible = true;
+                if (frNoChatMessage != null && expertLivePageItem != null) {
+                    frNoChatMessage.Item = expertLivePageItem;
+                }
+            }
         }
 
         private void GetUpcomingWebinars() {
@@ -185,7 +192,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                 var predicate1 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate2 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate3 = PredicateBuilder.True<EventArchiveSearch>();
-
+                TemplateRestrictions.Clear();
                 TemplateRestrictions.Add(new ID(WebinarEventPageItem.TemplateId));
 
                 predicate1 = predicate1.And(i => i.Path.Contains("/sitecore/content"));
@@ -214,10 +221,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                 result = context.GetQueryable<EventArchiveSearch>().Where(predicate).Select(i => i.GetItem()).ToList();
                 searchResultItems = result.Select(t => new BaseEventDetailPageItem(t)).Where(t => t.EventDate != null && t.EventDate.DateTime >= DateTime.Today).OrderByDescending(t => t.EventDate.DateTime).ToList();
                 if (IsTagged) {
-                    result = result.Where(t => !IsArchiveItem(t) && IsTaggedItem(t)).ToList();
+                    searchResultItems = searchResultItems.Where(t => !IsArchiveItem(t) && IsTaggedItem(t)).ToList();
                 }
                 else {
-                    result = result.Where(t => !IsArchiveItem(t)).ToList();
+                    searchResultItems = searchResultItems.Where(t => !IsArchiveItem(t)).ToList();
                 }
 
             }
@@ -225,6 +232,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         }
 
         private bool IsTaggedItem(BaseEventDetailPageItem baseEvent) {
+            //if (baseEventItem.InnerItem.IsOfType(ChatEventPageItem.TemplateId)) {
+            //    ltEventType.Text = DictionaryConstants.ChatLabel;
+            //}
+            //else if (baseEventItem.InnerItem.IsOfType(WebinarEventPageItem.TemplateId)) {
+            //    ltEventType.Text = DictionaryConstants.WebniarLabel;
+            //}
 
             if (baseEvent != null) {
                 if (!ChildIssue.IsNullOrEmpty()) {
@@ -298,7 +311,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                 var predicate1 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate2 = PredicateBuilder.True<EventArchiveSearch>();
                 var predicate3 = PredicateBuilder.True<EventArchiveSearch>();
-
+                TemplateRestrictions.Clear();
                 TemplateRestrictions.Add(new ID(ChatEventPageItem.TemplateId));
 
                 predicate1 = predicate1.And(i => i.Path.Contains("/sitecore/content"));
@@ -345,7 +358,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
 
         private bool IsLiveChat(BaseEventDetailPageItem t) {
             ChatEventPageItem chatEventPage = new ChatEventPageItem(t.InnerItem);
-            if (chatEventPage != null && !chatEventPage.OpenOfficeHour.Raw.IsNullOrEmpty()) {
+            if (chatEventPage != null && t.InnerItem.IsOfType(ChatEventPageItem.TemplateId) && !chatEventPage.OpenOfficeHour.Raw.IsNullOrEmpty()) {
                 return true;
             }
 

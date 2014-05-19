@@ -7,7 +7,7 @@
                 <div class="event-card-info group">
                     <div class="event-card-image col equalize   ">
                         <asp:HyperLink runat="server" ID="hlExpertBio">
-                            <sc:image id="scExpertImage" runat="server" field="Expert Image" />
+                            <sc:image id="scExpertImage" runat="server" Visible="false" field="Expert Image" />
                             <asp:Image runat="server" ID="imgExpertDefault" ImageUrl="http://placehold.it/150x150" Visible="false" />
                             <span class="visuallyhidden">play button</span>
                             <asp:Panel runat="server" ID="pnlExpertImageLabel" Visible="false" CssClass="image-label">
