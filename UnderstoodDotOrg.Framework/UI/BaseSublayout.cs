@@ -51,11 +51,12 @@ namespace UnderstoodDotOrg.Framework.UI
             }
         }
 
+        private string _additionalCssClass;
         public string AdditionalCssClass
         {
             get
             {
-                return this.GetParameter("AdditionalCSSClass");
+                return (_additionalCssClass = _additionalCssClass ?? GetParameter("AdditionalCSSClass"));
             }
         }
 
@@ -66,21 +67,47 @@ namespace UnderstoodDotOrg.Framework.UI
             return (parameters[key] != null) ? System.Web.HttpUtility.UrlDecode(parameters[key]) : String.Empty;
         }
 
+        private MembershipUser _currentUser;
         public MembershipUser CurrentUser
         {
-            get { return (MembershipUser)Session[Constants.currentUserKey]; }
-            set { Session[Constants.currentUserKey] = value; }
+            get
+            {
+                return (_currentUser = _currentUser ?? (MembershipUser)Session[Constants.currentUserKey]);
+            }
+            set
+            {
+                Session[Constants.currentUserKey] =
+                    _currentUser = value;
+            }
         }
 
+        private Member _currentMember;
         public Member CurrentMember
         {
-            get { return (Member)Session[Constants.currentMemberKey]; }
-            set { Session[Constants.currentMemberKey] = value; }
+            get
+            {
+                return (_currentMember = _currentMember ?? (Member)Session[Constants.currentMemberKey]);
+            }
+            set
+            {
+                Session[Constants.currentMemberKey] =
+                    _currentMember = value;
+            }
         }
+
+        private bool? _isUserLoggedIn;
+        public bool IsUserLoggedIn
+        {
+            get
+            {
+                return (_isUserLoggedIn = _isUserLoggedIn ?? CurrentMember != null && CurrentUser != null).Value;
+            }
+        }
+
         public void FlushCurrentMemberUser()
         {
-           this.CurrentMember = null;
-           this.CurrentUser = null; 
+           CurrentMember = null;
+           CurrentUser = null; 
         }
 
         public BaseSublayout() : base() { }
