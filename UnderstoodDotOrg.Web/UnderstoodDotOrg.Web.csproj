@@ -235,6 +235,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx.cs">
       <DependentUpon>Newsletter_ChildInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx.designer.cs">
       <DependentUpon>Newsletter_ChildInfo.ascx</DependentUpon>

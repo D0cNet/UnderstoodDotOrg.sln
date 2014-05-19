@@ -14,127 +14,61 @@ using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 {
     public partial class Newsletter_ChildInfo : BaseSublayout<ChildInformationPageItem>
     {
-        IEnumerable<Item> _allIssues, _allGrades;
-        int _checkboxLocation = 0;
-        object[][] TwoRowdata;
+        private decimal _columnCount = 2;
+        private int _entriesPerColumn;
+        private IEnumerable<Item> _issues;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            _allIssues = ChildInformationPageItem.GetAllIssues();
-            if (_allIssues != null)
+            BindContent();
+
+            if (!IsPostBack)
             {
-
-                int TotalRows = GetRowCount(_allIssues, 2);
-                TwoRowdata = GetTwoRowData(_allIssues, 2);
-                string[] Rows = new string[2];
-                Rows[0] = "One";
-                Rows[1] = "Two";
-
-                rptChildIssue.DataSource = Rows;
-                rptChildIssue.DataBind();
-
-
-
+                PopulateRepeaters();
             }
-
-            _allGrades = ChildInformationPageItem.GetAllGrades();
-            if (_allGrades != null)
-            {
-                ddlGrades.Items.Clear();
-                ddlGrades.Items.Add(new ListItem("Select Grade", ""));
-                foreach (Item _grade in _allGrades)
-                {
-                    if (_grade.Name.ToLower() != "all")
-                    {
-                        ddlGrades.Items.Add(new ListItem(_grade.Name, _grade.Name));
-                    }
-                }
-
-            }
-
         }
 
-        protected int GetRowCount(IEnumerable<Item> ListData1, int ItemPerRow1)
+        private void BindContent()
         {
-            int RowCounter = 0;
-            if (ListData1.Count() > ItemPerRow1)
-            {
-                if (ListData1.Count() % ItemPerRow1 != 0)
-                {
-                    RowCounter = (ListData1.Count() / ItemPerRow1) + 1;
-                }
-                else
-                {
-                    RowCounter = ListData1.Count() / ItemPerRow1;
-                }
-            }
-            return RowCounter;
+            btnNext.Text = DictionaryConstants.NextButtonText;
         }
-        protected object[][] GetTwoRowData(IEnumerable<Item> ListData, int ItemPerRow)
+
+        private void PopulateRepeaters()
         {
-            int RowCounter = 0;
-            object[][] _jaggedArray = null;
+            // Grades
+            ddlGrades.DataSource = FormHelper.GetGrades();
+            ddlGrades.DataBind();
 
-            RowCounter = GetRowCount(ListData, ItemPerRow);
-
-            List<Item> _listData = new List<Item>(ListData.Count());
-            foreach (Item expert in ListData)
+            // Create empty data set to create columns
+            List<string> columns = new List<string>();
+            for (int i = 0; i < _columnCount; i++)
             {
-                _listData.Add(expert);
-            }
-            int _objectat = 0;
-            if (RowCounter != 0)
-            {
-
-                _jaggedArray = new object[ItemPerRow][];
-
-                for (int i = 0; i < ItemPerRow; i++)
-                {
-                    _jaggedArray[i] = new object[RowCounter];
-                    for (int j = 0; j < RowCounter; j++)
-                    {
-                        if (_objectat < _listData.Count())
-                        {
-                            _jaggedArray[i][j] = _listData[_objectat];
-                            _objectat++;
-                        }
-                    }
-                }
+                columns.Add(String.Empty);
             }
 
-            return _jaggedArray;
+            _issues = ChildInformationPageItem.GetAllIssues();
+            _entriesPerColumn = (int)Math.Ceiling(_issues.Count() / _columnCount);
+
+            rptChildIssue.DataSource = columns;
+            rptChildIssue.DataBind();
         }
-
 
         protected void rptChildIssue_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-
-            string Num = e.Item.DataItem as string;
-            if (Num != "")
+            if (e.IsItem())
             {
+                int columnIndex = e.Item.ItemIndex * _entriesPerColumn;
+
                 Repeater rptIssueCol = e.FindControlAs<Repeater>("rptIssueCol");
-                if (rptIssueCol != null)
-                {
-                    if (Num == "One")
-                    {
-
-                        rptIssueCol.DataSource = TwoRowdata[0];
-                        rptIssueCol.DataBind();
-                    }
-                    else
-                    {
-                        rptIssueCol.DataSource = TwoRowdata[1];
-                        rptIssueCol.DataBind();
-                    }
-                }
-
+                rptIssueCol.DataSource = _issues.Skip(columnIndex).Take(_entriesPerColumn).ToList();
+                rptIssueCol.DataBind();
             }
-
-
         }
 
 
@@ -143,22 +77,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
         {
             if (e.IsItem())
             {
-                Item _issue = e.Item.DataItem as Item;
-                if (_issue != null)
-                {
-
-                    CheckBox chkIssue1 = e.FindControlAs<CheckBox>("chkIssue1");
-                    if (chkIssue1 != null)
-                    {
-                        FieldRenderer frCheckItem1 = e.FindControlAs<FieldRenderer>("frCheckItem1");
-                        if (frCheckItem1 != null)
-                        {
-                            frCheckItem1.Item = _issue;
-                        }
-                    }
-
-
-                }
+                ChildIssueItem issue = new ChildIssueItem((Item)e.Item.DataItem);
+                Literal litChildIssue = e.FindControlAs<Literal>("litChildIssue");
+                HiddenField hfChildIssue = e.FindControlAs<HiddenField>("hfChildIssue");
+                litChildIssue.Text = issue.DisplayName;
+                hfChildIssue.Value = issue.ID.ToString();
             }
         }
     }

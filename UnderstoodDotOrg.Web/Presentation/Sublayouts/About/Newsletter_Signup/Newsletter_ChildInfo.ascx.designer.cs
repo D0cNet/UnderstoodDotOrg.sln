@@ -49,13 +49,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup {
         protected global::System.Web.UI.WebControls.DropDownList ddlGrades;
         
         /// <summary>
-        /// btnChildNickName control.
+        /// txtNickname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox btnChildNickName;
+        protected global::System.Web.UI.WebControls.TextBox txtNickname;
         
         /// <summary>
         /// chkAnotherChild control.
