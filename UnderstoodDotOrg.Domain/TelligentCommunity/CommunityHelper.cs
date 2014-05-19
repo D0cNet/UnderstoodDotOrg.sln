@@ -510,12 +510,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public static List<MemberCardModel> GetModerators()
         {
             var webClient = new WebClient();
-            string keyTest = Sitecore.Configuration.Settings.GetSetting("TelligentAdminApiKey");
-            var apiKey = string.IsNullOrEmpty(keyTest) ? "d956up05xiu5l8fn7wpgmwj4ohgslp" : keyTest;
+            string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
-            var adminKey = string.Format("{0}:{1}", apiKey, "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
+     
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
             var roleid = Sitecore.Configuration.Settings.GetSetting("TelligentModeratorRoleID") ?? "3";
@@ -820,6 +817,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             string Userid = null;
             if (!String.IsNullOrEmpty(username))
             {
+                username = username.Trim();
                 WebClient webClient = new WebClient();
                 string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
@@ -869,6 +867,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public static bool IsUserInGroup(string userScreenName, string groupID)
         {
             bool val = false;
+            userScreenName = userScreenName.Trim();
+            groupID = groupID.Trim();
             if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID))
             {
                 WebClient webClient = new WebClient();
@@ -897,7 +897,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public static bool JoinGroup(string groupID, string userScreenName)
         {
             bool success = false;
-            if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID))
+            userScreenName = userScreenName.Trim();
+            groupID = groupID.Trim();
+            if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID.Trim()))
             {
                 string userid = ReadUserId(userScreenName);
                 if (userid != null)
@@ -910,7 +912,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         var requestUrl = string.Format("{0}api.ashx/v2/groups/{1}/members/users.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
 
                         var values = new NameValueCollection();
-                        values["userid"] = userid;
+                        values["UserId"] = userid;
 
 
                         var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));

@@ -59,7 +59,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                 ModeratorAvatarUrl = groupNode.SelectSingleNode("AvatarUrl").InnerText;//Constants.Settings.AnonymousAvatar;
 
                 ModeratorTitle = Constants.TelligentRole.Moderator.ToString();
-                ModeratorName = UserID;
+                ModeratorName = "Moderator Screen Name";
             }
         }
 
@@ -71,24 +71,28 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         //Poses
         public string ModeratorAvatarUrl { get; set; }
         public string ModeratorName { get; set; }
-        ///TODO:Get current user id in session
+        ///TODO:Get group moderator screen name
         private string UserID
         {
             get
             {
-                var mem = (Member)HttpContext.Current.Session[Constants.currentMemberKey];
-                if (mem != null)
-                    return mem.ScreenName;
-                else
-                {
-
-                    MembershipManagerProxy memprov = new MembershipManagerProxy();
-                    Member member = memprov.GetMember(Guid.Empty);
-                    HttpContext.Current.Session["username"] = member.ScreenName;
-                    return member.ScreenName;
-                    
-                }
+                return String.Empty;
             }
+            //get
+            //{
+            //    var mem = (Member)HttpContext.Current.Session[Constants.currentMemberKey];
+            //    if (mem != null)
+            //        return mem.ScreenName;
+            //    else
+            //    {
+
+            //        MembershipManagerProxy memprov = new MembershipManagerProxy();
+            //        Member member = memprov.GetMember(Guid.Empty);
+            //        HttpContext.Current.Session["username"] = member.ScreenName;
+            //        return member.ScreenName;
+                    
+            //    }
+            //}
         }
         List<Child> ChildrenWithIssues { get; set; } //TODO:Related through Group issues
         public string ModeratorTitle { get; set; }
