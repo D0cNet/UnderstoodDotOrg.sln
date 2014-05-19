@@ -28,8 +28,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             CommentEntryTextField.Attributes.Add("placeholder", "Add your comment...");
 
             Item currentItem = Sitecore.Context.Item;
-            string blogId = currentItem.Fields[Constants.TelligentFieldNames.BlogId].Value ?? String.Empty;
-            string blogPostId = currentItem.Fields[Constants.TelligentFieldNames.BlogPostId].Value ?? String.Empty;
+
+            // TODO: refactor so pages all inherit a shared template item type
+            var fieldBlogId = currentItem.Fields[Constants.TelligentFieldNames.BlogId];
+            var fieldBlogPostId = currentItem.Fields[Constants.TelligentFieldNames.BlogPostId];
+
+            if (fieldBlogId == null || fieldBlogPostId == null)
+            {
+                this.Visible = false;
+                return;
+            }
+
+            string blogId = fieldBlogId.Value ?? String.Empty;
+            string blogPostId = fieldBlogPostId.Value ?? String.Empty;
 
             if (String.IsNullOrEmpty(blogId) || String.IsNullOrEmpty(blogPostId))
             {
