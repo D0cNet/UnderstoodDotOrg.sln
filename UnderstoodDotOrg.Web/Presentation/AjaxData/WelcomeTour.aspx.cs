@@ -23,7 +23,10 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
             if (objSiteItem != null) {
                 GlobalsItem objGlobalItem = MainsectionItem.GetGlobals();
                 if (objGlobalItem != null) {
-                    objWelcomeTourFolderItem = objGlobalItem.GetWelcomeTourFolder();
+                    MetadataFolderFolderItem metaDataFolder = objGlobalItem.GetMetaDataFolder();
+                    if(metaDataFolder != null){
+                        objWelcomeTourFolderItem = metaDataFolder.GetWelcomeTourFolder();
+                    }
                 }
             }
             return objWelcomeTourFolderItem;

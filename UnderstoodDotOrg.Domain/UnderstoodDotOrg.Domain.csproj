@@ -242,6 +242,8 @@
     <Compile Include="SitecoreCIG\Poses\Folders\LanguageNavigationFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\MainNavigationFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\MainNavigationFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\MetadataFolderFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\MetadataFolderFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\MoreExploreFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\MoreExploreFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PageResourceFolderItem.base.cs" />

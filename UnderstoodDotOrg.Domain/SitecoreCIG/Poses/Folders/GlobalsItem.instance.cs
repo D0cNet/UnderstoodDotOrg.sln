@@ -25,11 +25,11 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         }
 
         /// <summary>
-        /// Get Welcome Tour folder Item.
+        /// Get meta data folder Item.
         /// </summary>
         /// <returns></returns>
-        public WelcomeTourFolderItem GetWelcomeTourFolder() {
-            return (WelcomeTourFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(WelcomeTourFolderItem.TemplateId)).FirstOrDefault();
+        public MetadataFolderFolderItem GetMetaDataFolder() {
+            return (MetadataFolderFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(MetadataFolderFolderItem.TemplateId)).FirstOrDefault();
         }
 
         /// <summary>
