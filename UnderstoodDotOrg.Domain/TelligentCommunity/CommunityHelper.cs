@@ -223,42 +223,62 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
         public static BlogPost ReadBlogBody(int blogId, int blogPostId)
         {
-            var webClient = new WebClient();
+            int id = 0;
+            int postId = 0;
+            BlogPost blogPost = new BlogPost();
 
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+            if (String.IsNullOrEmpty(blogId.ToString()) || String.IsNullOrEmpty(blogPostId.ToString())
+                || !Int32.TryParse(blogId.ToString(), out id) || !Int32.TryParse(blogPostId.ToString(), out postId))
+            {
+                return blogPost;
+            }
 
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    // replace the "admin" and "Admin's API key" with your valid user and apikey!
+                    var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
-            var xml = webClient.DownloadString(requestUrl);
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
 
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
+                    var xml = webClient.DownloadString(requestUrl);
 
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/BlogPost");
-            XmlNodeList nodes2 = xmlDoc.SelectNodes("Response/BlogPost/Author");
-            string body = nodes[0]["Body"].InnerText;
-            string title = nodes[0]["Title"].InnerText;
-            string contentId = nodes[0]["ContentId"].InnerText;
-            string dateTime = nodes[0]["PublishedDate"].InnerText;
-            string blogName = CommunityHelper.BlogNameById(nodes[0]["BlogId"].InnerText);
-            string publishedDate = CommunityHelper.FormatDate(dateTime);
-            string author = nodes2[0]["DisplayName"].InnerText;
-            BlogPost blogPost = new BlogPost(body, title, publishedDate, author, blogName, contentId);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/BlogPost");
+
+                    XmlNode auth = xmlDoc.SelectSingleNode("Response/BlogPost/Author");
+
+
+                    blogPost = new BlogPost
+                    {
+                        Body = node["Body"].InnerText,
+                        Title = node["Title"].InnerText,
+                        ContentId = node["ContentId"].InnerText,
+                        BlogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText),
+                        PublishedDate = CommunityHelper.FormatDate(node["PublishedDate"].InnerText),
+                        Author = auth["DisplayName"].InnerText
+                    };
+
+                }
+                catch { } // TODO: Add logging
+            }
             return blogPost;
         }
 
         public static void PostComment(int blogId, int blogPostId, string body)
         {
-            var webClient = new WebClient();
+            using (var webClient = new WebClient())
+            {
+                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
 
-            webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-            
-            var postUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", blogId, blogPostId));
+                var postUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", blogId, blogPostId));
 
-            var data = new NameValueCollection()
+                var data = new NameValueCollection()
             {
                 { "Body", body },
                 { "PublishedDate", DateTime.Now.ToString() },
@@ -266,44 +286,46 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 { "BlogId", blogId.ToString() }
             };
 
-            byte[] result = webClient.UploadValues(postUrl, data);
+                byte[] result = webClient.UploadValues(postUrl, data);
 
-            // TODO: handle errors
-            string response = webClient.Encoding.GetString(result);
+                // TODO: handle errors
+                string response = webClient.Encoding.GetString(result);
+            }
         }
 
         public static string CreateQuestion(string title, string body)
         {
-            try
+            using (var webClient = new WebClient())
             {
-                var webClient = new WebClient();
+                try
+                {
+                    var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
-                var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), "2");
 
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), "2");
+                    var values = new NameValueCollection();
+                    values["Title"] = title;
+                    values["Body"] = body;
 
-                var values = new NameValueCollection();
-                values["Title"] = title;
-                values["Body"] = body;
+                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
 
-                var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+                    Console.WriteLine(xml);
 
-                Console.WriteLine(xml);
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
 
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-
-                XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPage");
-                string contentId = nodes[0]["ContentId"].InnerText;
-                string wikiPageId = nodes[0]["Id"].InnerText;
-                string queryString = "?wikiId=2&wikiPageId=" + wikiPageId + "&contentId=" + contentId;
-                return queryString;
-            }
-            catch (Exception e)
-            {
-                return null;
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/WikiPage");
+                    string contentId = node["ContentId"].InnerText;
+                    string wikiPageId = node["Id"].InnerText;
+                    string queryString = "?wikiId=2&wikiPageId=" + wikiPageId + "&contentId=" + contentId;
+                    return queryString;
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
             }
         }
 
@@ -360,7 +382,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         /// </summary>
         /// <param name="username">Unique username to be used in the Telligent Community</param>
         /// <param name="email">Unique email to be used in the Telligent Community</param>
-        public static bool CreateUser(/*User user*/string username, string email)
+        public static bool CreateUser(string username, string email)
         {
             try
             {
@@ -373,38 +395,25 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     throw new Exception("Required value is missing: username");
                 }
 
-                var webClient = new WebClient();
+                using (var webClient = new WebClient())
+                {
 
+                    var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    var requestUrl = string.Format("{0}api.ashx/v2/users.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
 
-                // replace the "admin" and "Admin's API key" with your valid user and apikey!
-                var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+                    var values = new NameValueCollection()
+                {
+                { "UserName", username },
+                { "Password", Guid.NewGuid().ToString() },
+                { "PrivateEmail", email }
+                };
 
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                var requestUrl = string.Format("{0}api.ashx/v2/users.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
-
-                var values = new NameValueCollection();
-                values["Username"] = username;
-                values["Password"] = Guid.NewGuid().ToString();
-                values["PrivateEmail"] = email;
-                ////values["Username"] = user.username;
-                ////values["Password"] = user.password;
-                ////values["PrivateEmail"] = user.privateEmail;
-
-                ////PropertyInfo[] ps = user.GetType().GetProperties();
-                ////foreach (PropertyInfo pi in ps)
-                ////{
-                ////    string value = pi.GetValue(user, null).ToString();
-
-                ////    if (!string.IsNullOrEmpty(value))
-                ////    {
-                ////        values[pi.Name] = value;
-                ////    }
-                ////}
-
-                var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
-                return true;
+                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+                    return true;
+                }
             }
             catch (Exception)
             {
@@ -415,104 +424,121 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
         public static List<Question> GetQuestionsList(string wikiId)
         {
-            var webClient = new WebClient();
-
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId);
-
-            var xml = webClient.DownloadString(requestUrl);
-
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPages/WikiPage");
-            XmlNodeList nodes2 = xmlDoc.SelectNodes("Response/WikiPages/WikiPage/User");
-            XmlNodeList nodes3 = xmlDoc.SelectNodes("Response/WikiPages/WikiPage/Content/Application");
+            int id = 0;
             List<Question> questionList = new List<Question>();
-            int count = 0;
-            foreach (XmlNode xn in nodes)
-            {
-                string title = xn["Title"].InnerText;
-                string publishedDate = FormatDate(xn["CreatedDate"].InnerText);
-                string body = xn["Body"].InnerText;
-                string wikiPageId = xn["Id"].InnerText;
-                string contentId = xn["ContentId"].InnerText;
-                string author = nodes2[count]["Username"].InnerText;
-                string group = nodes3[count]["HtmlName"].InnerText;
-                string commentCount = xn["CommentCount"].InnerText;
 
-                Question question = new Question(title, body, publishedDate, author, group, commentCount, wikiId, wikiPageId, contentId);
-                questionList.Add(question);
-                count++;
+            if (String.IsNullOrEmpty(wikiId) || !Int32.TryParse(wikiId, out id))
+            {
+                return questionList;
             }
 
+            using (var webClient = new WebClient())
+            {
+
+                var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId);
+
+                var xml = webClient.DownloadString(requestUrl);
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+
+                XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPages/WikiPage");
+                foreach (XmlNode xn in nodes)
+                {
+                    XmlNode user = xmlDoc.SelectSingleNode("Response/WikiPages/WikiPage/User");
+                    XmlNode app = xmlDoc.SelectSingleNode("Response/WikiPages/WikiPage/Content/Application");
+                    Question question = new Question()
+                    {
+                        Title = xn["Title"].InnerText,
+                        PublishedDate = FormatDate(xn["CreatedDate"].InnerText),
+                        Body = xn["Body"].InnerText,
+                        WikiPageId = xn["Id"].InnerText,
+                        ContentId = xn["ContentId"].InnerText,
+                        Author = user["Username"].InnerText,
+                        Group = app["HtmlName"].InnerText,
+                        CommentCount = xn["CommentCount"].InnerText
+                    };
+                    questionList.Add(question);
+                }
+            }
             return questionList;
         }
 
         public static Question GetQuestion(string wikiId, string wikiPageId, string contentId)
         {
-            var webClient = new WebClient();
+            Question question = new Question();
 
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId, wikiPageId);
+            try
+            {
+                using (var webClient = new WebClient())
+                {
+                    var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
-            var xml = webClient.DownloadString(requestUrl);
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId, wikiPageId);
 
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
+                    var xml = webClient.DownloadString(requestUrl);
 
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPage");
-            XmlNodeList nodes2 = xmlDoc.SelectNodes("Response/WikiPage/User");
-            XmlNodeList nodes3 = xmlDoc.SelectNodes("Response/WikiPage/Content/Application");
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
 
-            string title = nodes[0]["Title"].InnerText;
-            string publishedDate = FormatDate(nodes[0]["CreatedDate"].InnerText);
-            string body = nodes[0]["Body"].InnerText;
-            string author = nodes2[0]["Username"].InnerText;
-            string group = nodes3[0]["HtmlName"].InnerText;
-            string commentCount = nodes[0]["CommentCount"].InnerText;
+                    XmlNode page = xmlDoc.SelectSingleNode("Response/WikiPage");
+                    XmlNode user = xmlDoc.SelectSingleNode("Response/WikiPage/User");
+                    XmlNode app = xmlDoc.SelectSingleNode("Response/WikiPage/Content/Application");
 
-            Question question = new Question(title, body, publishedDate, author, group, commentCount, wikiId, wikiPageId, contentId);
-
+                    question = new Question()
+                    {
+                        Title = page["Title"].InnerText,
+                        PublishedDate = FormatDate(page["CreatedDate"].InnerText),
+                        Body = page["Body"].InnerText,
+                        Author = user["Username"].InnerText,
+                        Group = app["HtmlName"].InnerText,
+                        CommentCount = page["CommentCount"].InnerText
+                    };
+                }
+            }
+            catch { } // TODO: Add Logging
             return question;
         }
 
         public static List<Answer> GetAnswers(string wikiId, string wikiPageId)
         {
-            var webClient = new WebClient();
-
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId, wikiPageId);
-
-            var xml = webClient.DownloadString(requestUrl);
-
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
-            XmlNodeList nodes2 = xmlDoc.SelectNodes("Response/Comments/Comment/Author");
             List<Answer> answerList = new List<Answer>();
-            int count = 0;
-            foreach (XmlNode xn in nodes)
+            using (var webClient = new WebClient())
             {
-                string publishedDate = FormatDate(xn["PublishedDate"].InnerText);
-                string body = xn["Body"].InnerText;
-                string author = nodes2[count]["Username"].InnerText;
 
-                Answer answer = new Answer(body, publishedDate, author);
-                answerList.Add(answer);
-                count++;
+                var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId, wikiPageId);
+
+                var xml = webClient.DownloadString(requestUrl);
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+
+                XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+                int count = 0;
+                foreach (XmlNode xn in nodes)
+                {
+                    XmlNode user = xmlDoc.SelectSingleNode("Response/Comments/Comment/Author");
+                    Answer answer = new Answer()
+                    {
+                        PublishedDate = FormatDate(xn["PublishedDate"].InnerText),
+                        Body = xn["Body"].InnerText,
+                        Author = user["Username"].InnerText
+                    };
+                    answerList.Add(answer);
+                    count++;
+                }
             }
-
             return answerList;
         }
 

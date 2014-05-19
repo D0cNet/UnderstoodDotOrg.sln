@@ -63,6 +63,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string ContentId { get; set; }
         public string SitecoreUrl { get; set; }
 
+        public BlogPost() { }
+
         public BlogPost(string body, string title, string publishedDate, string author, string blogName, string contentId)
         {
             Body = body;
@@ -131,6 +133,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string ContentId { get; set; }
         public string QueryString { get; set; }
 
+        public Question() { }
+
         public Question(string title, string body, string publishedDate, string author, string group, string commentCount, string wikiId, string wikiPageId, string contentId)
         {
             Title = title;
@@ -153,6 +157,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Author { get; set; }
         public string Likes { get; set; }
 
+        public Answer() { }
 
         public Answer(string body, string publishedDate, string author)
         {

@@ -35,62 +35,23 @@
             <div class="col col-24">
                 <div class="label-menu"><span>Menu</span></div>
                 <ul class="menu" aria-role="navigation" aria-label="secondary-navigation">
-
-
                     <li class="title">
                         <p class="select-topic">Select a topic:</p>
                         <button>What's Happening Now</button>
                         <i class="icon-hide-show-fff"></i>
                     </li>
-
-
-
-
-
-
-
-
-
-
-
-
                     <li class="submenu">
                         <div class="inner">
                             <div class="label-more">
                                 <button>More <i class="icon-hide-show-fff"></i></button>
                             </div>
                             <ul>
-
-
-
-                                <li><span><a href="/en/Community and Events/Whats Happening Now.aspx">What's Happening Now</a></span></li>
-
-
-
-
-                                <li><span><a href="/en/Community/Experts Live/Experts Live">Experts Live</a></span></li>
-
-
-
-
-                                <li><span><a href="/en/Community and Events/Q and A.aspx">Q&nbsp;&amp;&nbsp;A</a></span></li>
-
-
-
-
-                                <li><span><a href="/en/Community and Events/Parents like me">Parents Like Me</a></span></li>
-
-
-
-
-                                <li><span><a href="/en/Community and Events/Groups">Groups</a></span></li>
-
-
-
-                                <li><span><a href="/en/Community and Events/Blogs/All Blogs Page.aspx" class="selected">Blogs</a></span></li>
-
-
-
+                                <asp:Repeater ID="rptLinks" runat="server"
+                                    ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.NavigationLinkItem">
+                                    <ItemTemplate>
+                                        <li><span><%# Item.Link.Rendered %></span></li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </ul>
                         </div>
                     </li>

@@ -27,7 +27,7 @@
                             <div class="blog-card-info group">
                                 <div class="blog-card-contents">
                                     <div class="blog-card-title">
-                                        <a href="REPLACE"><%# Item.Title %></a>
+                                        <a href="/en/community-and-events/blogs/<%# Item.BlogName %>/<%# Item.Title %>"><%# Item.Title %></a>
                                     </div>
                                     <!-- end .blog-card-title -->
                                     <div class="blog-card-post-info">
