@@ -12,11 +12,11 @@
             string contentId = Request.QueryString["contentId"];
 
             Question question = CommunityHelper.GetQuestion(wikiId, wikiPageId, contentId);
-            QuestionTitleLabel.Text = question._title;
-            QuestionBodyLabel.Text = question._body;
-            GroupLabel.Text = question._group;
-            AuthorLabel.Text = question._author;
-            DateLabel.Text = question._publishedDate;
+            QuestionTitleLabel.Text = question.Title;
+            QuestionBodyLabel.Text = question.Body;
+            GroupLabel.Text = question.Group;
+            AuthorLabel.Text = question.Author;
+            DateLabel.Text = question.PublishedDate;
         }
     }
 }

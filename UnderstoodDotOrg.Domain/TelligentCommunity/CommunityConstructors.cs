@@ -55,110 +55,110 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
     public class BlogPost
     {
-        public string _body { get; set; }
-        public string _title { get; set; }
-        public string _publishedDate { get; set; }
-        public string _author { get; set; }
-        public string _blogName { get; set; }
-        public string _contentId { get; set; }
-        public string _sitecoreUrl { get; set; }
+        public string Body { get; set; }
+        public string Title { get; set; }
+        public string PublishedDate { get; set; }
+        public string Author { get; set; }
+        public string BlogName { get; set; }
+        public string ContentId { get; set; }
+        public string SitecoreUrl { get; set; }
 
         public BlogPost(string body, string title, string publishedDate, string author, string blogName, string contentId)
         {
-            _body = body;
+            Body = body;
             try
             {
                 string[] url = Regex.Split(body.ToLower(), "/sitecore/content/home");
                 string[] u = url[1].Split('<');
-                _sitecoreUrl = u[0];
+                SitecoreUrl = u[0];
             }
             catch
             {
 
             }
-            _title = title;
-            _publishedDate = publishedDate;
-            _author = author;
-            _blogName = blogName;
+            Title = title;
+            PublishedDate = publishedDate;
+            Author = author;
+            BlogName = blogName;
         }
     }
 
     public class Blog
     {
-        public string _description { get; set; }
-        public string _title { get; set; }
+        public string Description { get; set; }
+        public string Title { get; set; }
 
         public Blog(string description, string title)
         {
-            _description = description;
-            _title = title;
+            Description = description;
+            Title = title;
         }
     }
 
     public class User
     {
-        public string username { get; set; }
-        public string displayName { get; set; }
-        public string password { get; set; }
-        public string privateEmail { get; set; }
-        public bool allowSiteToContact { get; set; }
-        public DateTime birthday { get; set; }
-        public string editorType { get; set; }
-        public bool receiveEmails { get; set; }
-        public bool enableTracking { get; set; }
-        public string gender { get; set; }
-        public string language { get; set; }
-        public string location { get; set; }
-        public double timeZone { get; set; }
-        public string webUrl { get; set; }
+        public string Username { get; set; }
+        public string DisplayName { get; set; }
+        public string Password { get; set; }
+        public string PrivateEmail { get; set; }
+        public bool AllowSiteToContact { get; set; }
+        public DateTime Birthday { get; set; }
+        public string EditorType { get; set; }
+        public bool ReceiveEmails { get; set; }
+        public bool EnableTracking { get; set; }
+        public string Gender { get; set; }
+        public string Language { get; set; }
+        public string Location { get; set; }
+        public double TimeZone { get; set; }
+        public string WebUrl { get; set; }
 
         public User()
         {
-            this.password = Guid.NewGuid().ToString();
+
         }
     }
 
     public class Question
     {
-        public string _title { get; set; }
-        public string _body { get; set; }
-        public string _publishedDate { get; set; }
-        public string _author { get; set; }
-        public string _group { get; set; }
-        public string _commentCount { get; set; }
-        public string _wikiId { get; set; }
-        public string _wikiPageId { get; set; }
-        public string _contentId { get; set; }
-        public string _queryString { get; set; }
+        public string Title { get; set; }
+        public string Body { get; set; }
+        public string PublishedDate { get; set; }
+        public string Author { get; set; }
+        public string Group { get; set; }
+        public string CommentCount { get; set; }
+        public string WikiId { get; set; }
+        public string WikiPageId { get; set; }
+        public string ContentId { get; set; }
+        public string QueryString { get; set; }
 
         public Question(string title, string body, string publishedDate, string author, string group, string commentCount, string wikiId, string wikiPageId, string contentId)
         {
-            _title = title;
-            _body = body;
-            _publishedDate = publishedDate;
-            _author = author;
-            _group = group;
-            _commentCount = commentCount;
-            _wikiId = wikiId;
-            _wikiPageId = wikiPageId;
-            _contentId = contentId;
-            _queryString = "?wikiId=" + _wikiId + "&wikiPageId=" + _wikiPageId + "&contentId=" + _contentId;
+            Title = title;
+            Body = body;
+            PublishedDate = publishedDate;
+            Author = author;
+            Group = group;
+            CommentCount = commentCount;
+            WikiId = wikiId;
+            WikiPageId = wikiPageId;
+            ContentId = contentId;
+            QueryString = "?wikiId=" + WikiId + "&wikiPageId=" + WikiPageId + "&contentId=" + ContentId;
         }
     }
 
     public class Answer
     {
-        public string _body { get; set; }
-        public string _publishedDate { get; set; }
-        public string _author { get; set; }
-        public string _likes { get; set; }
+        public string Body { get; set; }
+        public string PublishedDate { get; set; }
+        public string Author { get; set; }
+        public string Likes { get; set; }
 
 
         public Answer(string body, string publishedDate, string author)
         {
-            _body = body;
-            _publishedDate = publishedDate;
-            _author = author;
+            Body = body;
+            PublishedDate = publishedDate;
+            Author = author;
         }
     }
 

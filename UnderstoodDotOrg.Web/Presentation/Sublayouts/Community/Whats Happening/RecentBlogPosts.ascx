@@ -20,18 +20,18 @@
                 <!-- END PARTIAL: community/carousel_arrows -->
             </div>
             <div class="row blog-cards">
-                <asp:Repeater ID="BlogsRepeater" runat="server">
+                <asp:Repeater ID="BlogsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost" runat="server">
                     <ItemTemplate>
                         <!-- BEGIN PARTIAL: community/blog_card -->
                         <div class="col col-12 blog-card">
                             <div class="blog-card-info group">
                                 <div class="blog-card-contents">
                                     <div class="blog-card-title">
-                                        <a href="REPLACE"><%# Eval("_title") %></a>
+                                        <a href="REPLACE"><%# Item.Title %></a>
                                     </div>
                                     <!-- end .blog-card-title -->
                                     <div class="blog-card-post-info">
-                                        <%# Eval("_publishedDate") %> from <a href="REPLACE"><%# Eval("_blogName") %></a>
+                                        <%# Item.PublishedDate %> from <a href="REPLACE"><%# Item.BlogName %></a>
                                     </div>
                                 </div>
                                 <div class="card-buttons">

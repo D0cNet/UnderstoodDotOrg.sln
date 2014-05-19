@@ -4,7 +4,7 @@
         <div class="col col-24 container skiplink-content" aria-role="main" aria-role="main">
             <h2>From Our Blogs</h2>
             <div class="row blogs-more">
-                <asp:Repeater ID="BlogPostsRepeater" runat="server">
+                <asp:Repeater ID="BlogPostsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost" runat="server">
                     <ItemTemplate>
                         <div class="col col-24 blog-card clearfix">
                             <div class="blog-card-image">
@@ -15,14 +15,14 @@
                             <!-- end .group-card-image -->
                             <div class="blog-card-info group">
                                 <div class="blog-card-title">
-                                    <a href="<%# Eval("_sitecoreUrl") %>"><%# Eval("_title") %></a>
+                                    <a href="<%# Item.SitecoreUrl %>"><%# Item.Title %></a>
                                 </div>
                                 <!-- end .blog-card-title -->
                                 <div class="blog-card-post-info">
-                                    Posted by <a href="REPLACE"><%# Eval("_author") %></a> <%# Eval("_publishedDate") %>
+                                    Posted by <a href="REPLACE"><%# Item.Author %></a> <%# Item.PublishedDate %>
                                 </div>
                                 <div class="blog-card-post-excerpt">
-                                    <!--<%# Eval("_body") %> --><a href="<%# Eval("_sitecoreUrl") %>" class="link-see-more">See more</a>
+                                    <!--<%# Item.Body %> --><a href="<%# Item.SitecoreUrl %>" class="link-see-more">See more</a>
                                 </div>
                                 <span class="children-key clearfix">
                                     <ul>

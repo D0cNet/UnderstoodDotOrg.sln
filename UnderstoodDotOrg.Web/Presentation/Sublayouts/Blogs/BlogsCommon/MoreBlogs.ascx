@@ -17,7 +17,7 @@
             <!-- END PARTIAL: community/carousel_arrows -->
             <div class="row blogs-more">
                 <!-- BEGIN PARTIAL: community/more_blogs_card -->
-                <asp:Repeater ID="BlogRepeater" runat="server">
+                <asp:Repeater ID="BlogRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Blog" runat="server">
                     <ItemTemplate>
                         <div class="col col-24 blog-card">
                             <div class="blog-card-wrapper">
@@ -29,11 +29,11 @@
                                 <!-- end .group-card-image -->
                                 <div class="blog-card-info group">
                                     <div class="blog-card-title">
-                                        <a href="REPLACE"><%# Eval("_title") %></a>
+                                        <a href="REPLACE"><%# Item.Title %></a>
                                     </div>
                                     <!-- end .blog-card-title -->
                                     <div class="blog-card-post-excerpt">
-                                        <%# Eval("_description") %>
+                                        <%# Item.Description %>
                                     </div>
                                     <a href="REPLACE" class="link-see-more">Read facere placeat</a>
                                 </div>

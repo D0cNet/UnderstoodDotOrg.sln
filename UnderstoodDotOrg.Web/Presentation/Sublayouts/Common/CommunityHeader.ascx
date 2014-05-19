@@ -63,31 +63,31 @@
 
 
 
-                                <li><span><a href="/en/Community/Whats%20Happening.aspx">What's Happening Now</a></span></li>
+                                <li><span><a href="/en/Community and Events/Whats Happening Now.aspx">What's Happening Now</a></span></li>
 
 
 
 
-                                <li><span><a href="/en/Community/Experts%20Live/Experts%20Live">Experts Live</a></span></li>
+                                <li><span><a href="/en/Community/Experts Live/Experts Live">Experts Live</a></span></li>
 
 
 
 
-                                <li><span><a href="/en/Q%20and%20A.aspx">Q&nbsp;&amp;&nbsp;A</a></span></li>
+                                <li><span><a href="/en/Community and Events/Q and A.aspx">Q&nbsp;&amp;&nbsp;A</a></span></li>
 
 
 
 
-                                <li><span><a href="REPLACE">Parents Like Me</a></span></li>
+                                <li><span><a href="/en/Community and Events/Parents like me">Parents Like Me</a></span></li>
 
 
 
 
-                                <li><span><a href="REPLACE">Groups</a></span></li>
+                                <li><span><a href="/en/Community and Events/Groups">Groups</a></span></li>
 
 
 
-                                <li><span><a href="/en/Blogs/All%20Blogs%20Page.aspx" class="selected">Blogs</a></span></li>
+                                <li><span><a href="/en/Community and Events/Blogs/All Blogs Page.aspx" class="selected">Blogs</a></span></li>
 
 
 
