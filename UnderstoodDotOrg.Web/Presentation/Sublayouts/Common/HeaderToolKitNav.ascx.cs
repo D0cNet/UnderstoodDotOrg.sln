@@ -19,6 +19,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         protected void Page_Load(object sender, EventArgs e)
         {
             HeaderFolder = HeaderFolderItem.GetHeader();
+            GetParentTookKitItems();
         }
 
         private void GetParentTookKitItems()
