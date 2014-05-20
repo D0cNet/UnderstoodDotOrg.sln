@@ -17,9 +17,9 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.Newsletter
             var children = Sitecore.Context.Database.GetItem(Constants.IssueContainer.ToString())
                 .GetChildren().FilterByContextLanguageVersion();
 
-            // TODO: exclude all
             return from c in children
                    let i = new ChildIssueItem(c)
+                   where !i.ExcludeFromWebsiteDisplay.Checked
                    select c;
         }
     }

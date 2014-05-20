@@ -29,13 +29,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 
                 bool hasResults = ssr.Results.Any();
 
-                hlBackToSearch.Visible = phResultNav.Visible = hasResults;
+                hlBackToSearch.Visible = hasResults;
+                phResultNav.Visible = ssr.Results.Count > 1;
 
                 if (hasResults)
                 {
                     Item item = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(ssr.Challenge));
                     ChildChallengeItem challenge = item;
-                    litSearchChallenge.Text = String.Format("{0} {1}", DictionaryConstants.BackToFragment, challenge.ChallengeName.Text.ToLower());
+                    litSearchChallenge.Text = String.Format("{0} {1}", DictionaryConstants.BackToFragment, challenge.ChallengeName.Text);
 
                     hlBackToSearch.Visible = true;
                     hlBackToSearch.NavigateUrl = FormHelper.GetBehaviorResultsUrl(ssr.Challenge, ssr.Grade);

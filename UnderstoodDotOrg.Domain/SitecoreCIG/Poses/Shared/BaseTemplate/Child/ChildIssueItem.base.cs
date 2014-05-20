@@ -56,6 +56,15 @@ public CustomTextField IssueDescription
 }
 
 
+public CustomCheckboxField ExcludeFromWebsiteDisplay
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Exclude From Website Display"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

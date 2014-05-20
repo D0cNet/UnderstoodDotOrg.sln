@@ -27,6 +27,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
         protected void Page_Load(object sender, EventArgs e)
         {
             BindContent();
+            BindEvents();
 
             if (!IsPostBack)
             {
@@ -34,15 +35,54 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
             }
         }
 
+        private void BindEvents()
+        {
+            cvChildIssues.ServerValidate += cvChildIssues_ServerValidate;
+            btnNext.Click += btnNext_Click;
+        }
+
         private void BindContent()
         {
             btnNext.Text = DictionaryConstants.NextButtonText;
+            rfvGrades.Text = Model.RequiredGradeError.Rendered;
+            rfvNickname.Text = Model.RequiredNicknameError.Rendered;
+            cvChildIssues.Text = Model.RequiredIssuesError.Rendered;
+        }
+
+        void btnNext_Click(object sender, EventArgs e)
+        {
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
+        }
+
+        void cvChildIssues_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            foreach (RepeaterItem ri in rptChildIssue.Items)
+            {
+                Repeater rptIssueCol = (Repeater)ri.FindControl("rptIssueCol");
+                foreach (RepeaterItem issue in rptIssueCol.Items)
+                {
+                    CheckBox cbChildIssue = (CheckBox)issue.FindControl("cbChildIssue");
+                    if (cbChildIssue.Checked)
+                    {
+                        args.IsValid = true;
+                        return;
+                    }
+                }
+            }
+
+            args.IsValid = false;
         }
 
         private void PopulateRepeaters()
         {
             // Grades
             ddlGrades.DataSource = FormHelper.GetGrades();
+            ddlGrades.DataTextField = "Text";
+            ddlGrades.DataValueField = "Value";
             ddlGrades.DataBind();
 
             // Create empty data set to create columns

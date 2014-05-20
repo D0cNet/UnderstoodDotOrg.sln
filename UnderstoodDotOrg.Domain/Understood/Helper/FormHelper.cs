@@ -33,14 +33,14 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
         public static List<ListItem> GetGrades()
         {
             var container = Sitecore.Context.Database.GetItem(Constants.GradeContainer.ToString());
-            var grades = from c in container.Children.Select(x => new GradeLevelItem(x))
-                         where !c.ExcludeFromWebsiteDisplay.Checked
-                         select new ListItem
-                         {
-                             Text = c.Name,
-                             Value = c.ID.ToString()
-                         };
-                         
+            var grades = container.Children.FilterByContextLanguageVersion()
+                            .Select(i => new GradeLevelItem(i))
+                            .Where(g => !g.ExcludeFromWebsiteDisplay.Checked)
+                            .Select(g => new ListItem
+                            {
+                                Text = g.Name,
+                                Value = g.ID.ToString()
+                            });
 
             return PopulateList(DictionaryConstants.Grades.SelectGrade, grades);
         }
@@ -52,12 +52,13 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
         public static List<ListItem> GetChallenges()
         {
             var container = Sitecore.Context.Database.GetItem(Constants.ChallengesContainer.ToString());
-            var challenges = from c in container.Children.Select(x => new ChildChallengeItem(x))
-                             select new ListItem
-                             {
-                                 Value = c.ID.ToString(),
-                                 Text = c.ChallengeName
-                             };
+            var challenges = container.Children.FilterByContextLanguageVersion()
+                                 .Select(i => new ChildChallengeItem(i))
+                                 .Select(c => new ListItem
+                                 {
+                                     Value = c.ID.ToString(),
+                                     Text = c.ChallengeName
+                                 });
 
             return PopulateList(DictionaryConstants.SelectChallenge, challenges);
         }
@@ -66,12 +67,13 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
         public static List<ListItem> GetSearchArticleTypes()
         {
             var container = Sitecore.Context.Database.GetItem(Constants.SearchFilterTypesContainer.ToString());
-            var types = from c in container.Children.Select(x => new SearchFilterTypeItem(x))
-                        select new ListItem
-                        {
-                            Value = c.ID.ToString(),
-                            Text = c.FilterLabel.Raw
-                        };
+            var types = container.Children.FilterByContextLanguageVersion()
+                            .Select(i => new SearchFilterTypeItem(i))
+                            .Select(f => new ListItem
+                            {
+                                Value = f.ID.ToString(),
+                                Text = f.FilterLabel.Raw
+                            });
 
             return PopulateList(DictionaryConstants.FilterByLabel, types);
         }

@@ -387,6 +387,7 @@ namespace UnderstoodDotOrg.Domain.Search
             var solr = ServiceLocator.Current.GetInstance<ISolrOperations<Article>>();
             var schema = solr.GetSchema();
 
+            // TODO: restrict to current language
             var templateId = ID.Parse(DefaultArticlePageItem.TemplateId).ToShortID().ToString().ToLower();
             var q = new SolrQuery(term)
                 && new SolrQueryByField("alltemplates_sm", templateId) { Quoted = false }
@@ -414,9 +415,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
             using (var ctx = index.CreateSearchContext())
             {
-                var query = ctx.GetQueryable<Article>()
-                                .Filter(a => a.Language == "en"
-                                    && a.Path.Contains("/sitecore/content/home/")
+                var query = ctx.GetQueryable<Article>(new CultureExecutionContext(CultureInfo.CurrentCulture))
+                                .Filter(a => a.Path.Contains("/sitecore/content/home/")
                                     && !a.Paths.Contains(ID.Parse(Constants.QATestDataContainer)));
 
                 bool hasTemplateMappings = false;
@@ -470,9 +470,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
         private static IQueryable<BehaviorAdvice> GetBehaviorSearchQuery(IProviderSearchContext context, string challenge, string grade)
         {
-            return context.GetQueryable<BehaviorAdvice>()
-                        .Where(i => i.Language == "en" 
-                            && i.Path.Contains("/sitecore/content/home/")
+            return context.GetQueryable<BehaviorAdvice>(new CultureExecutionContext(CultureInfo.CurrentCulture))
+                        .Where(i => i.Path.Contains("/sitecore/content/home/")
                             && !i.Paths.Contains(ID.Parse(Constants.QATestDataContainer)))
                         .Where(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
                                 || i.TemplateId == ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))

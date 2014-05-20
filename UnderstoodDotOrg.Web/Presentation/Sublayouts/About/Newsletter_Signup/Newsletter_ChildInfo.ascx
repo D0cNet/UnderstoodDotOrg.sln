@@ -29,7 +29,7 @@
 
                     <div class="row needs-help-with-title">
                         <div class="col col-22">
-                            <h3>My child needs help with</h3>
+                            <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.MyChildNeedsHelpLabel %></h3>
                         </div>
                         <!-- .col -->
                     </div>
@@ -64,12 +64,13 @@
                             </fieldset>
                         </FooterTemplate>
                     </asp:Repeater>
-
-
+                    
                     <!-- .row.needs-help-with-options -->
 
                 </div>
                 <!-- .needs-help-with -->
+
+                <asp:CustomValidator ID="cvChildIssues" runat="server" Display="Dynamic" />
 
             </div>
             <!-- .col -->
@@ -81,12 +82,15 @@
 
                 <div class="child-enrolled rs_read_this itemize-child-rs-wrapper">
 
-                    <h3>My child is enrolled in</h3>
+                    <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.MyChildEnrolledLabel %></h3>
 
                     <div class="form-action-select">
                         <asp:DropDownList ID="ddlGrades" runat="server" />
+
                     </div>
 
+                    <asp:RequiredFieldValidator ID="rfvGrades" runat="server" ControlToValidate="ddlGrades" Display="Dynamic" />
+                    
                 </div>
                 <!-- .child-enrolled -->
 
@@ -96,7 +100,7 @@
 
                 <div class="child-nickname rs_read_this itemize-child-rs-wrapper">
 
-                    <h3>My child&apos;s nickname is</h3>
+                    <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.MyChildNicknameLabel %></h3>
 
                     <div class="form-action-text">
                         <label>
@@ -104,7 +108,9 @@
                         </label>
                     </div>
 
-                    <p class="caption">This is private and only viewable by you</p>
+                    <asp:RequiredFieldValidator ID="rfvNickname" runat="server" ControlToValidate="txtNickname" Display="Dynamic" />
+
+                    <p class="caption"><%= UnderstoodDotOrg.Common.DictionaryConstants.ThisIsPrivateLabel %></p>
 
                 </div>
                 <!-- .child-nickname -->
@@ -122,12 +128,12 @@
                     <div class="checkbox-wrap">
                         <label>
                             <asp:CheckBox ID="chkAnotherChild" runat="server" />
-                            <span>I have another child who is struggling</span>
+                            <span><%= UnderstoodDotOrg.Common.DictionaryConstants.AnotherStrugglingChildLabel %></span>
                         </label>
                     </div>
 
                     <div class="form-action-next">
-                        <asp:Button CssClass="button" runat="server" ID="btnNext" Text="Next" />
+                        <asp:Button CssClass="button" runat="server" ID="btnNext" CausesValidation="true" />
                     </div>
 
                 </div>

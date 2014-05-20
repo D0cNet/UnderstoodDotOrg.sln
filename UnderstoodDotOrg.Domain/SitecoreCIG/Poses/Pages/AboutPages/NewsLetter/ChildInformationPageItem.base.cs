@@ -46,6 +46,33 @@ public static implicit operator Item(ChildInformationPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField RequiredIssuesError
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Required Issues Error"]);
+	}
+}
+
+
+public CustomTextField RequiredNicknameError
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Required Nickname Error"]);
+	}
+}
+
+
+public CustomTextField RequiredGradeError
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Required Grade Error"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
