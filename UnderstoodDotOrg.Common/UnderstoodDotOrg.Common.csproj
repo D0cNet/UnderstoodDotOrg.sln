@@ -53,6 +53,7 @@
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\RepeaterExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Helpers\DataFormatHelper.cs" />
     <Compile Include="Helpers\HttpHelper.cs" />
     <Compile Include="Helpers\TextHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
