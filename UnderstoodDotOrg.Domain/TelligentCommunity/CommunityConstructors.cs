@@ -148,13 +148,18 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Likes { get; set; }
 
         public Answer() { }
+    }
 
-        public Answer(string body, string publishedDate, string author)
-        {
-            Body = body;
-            PublishedDate = publishedDate;
-            Author = author;
-        }
+    public class Notification
+    {
+        public string Username { get; set; }
+        public string Author { get; set; }
+        public string NotificationId { get; set; }
+        public string ContentId { get; set; }
+        public string CreatedDate { get; set; }
+        public string UpdatedDate { get; set; }
+
+        public Notification() { }
     }
 
     //public class Group
