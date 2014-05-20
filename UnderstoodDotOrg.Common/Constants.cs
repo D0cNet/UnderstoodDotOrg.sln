@@ -54,6 +54,8 @@ namespace UnderstoodDotOrg.Common
         public static string currentMemberKey { get { return "_understood_org_current_member"; } }
         public static string SessionBehaviorSearchKey { get { return "_understood_org_behavior_search"; } }
         public static string SessionNewsletterKey { get { return "_understood_org_newsletter"; } }
+
+        public static string sessionUnauthenticatedMemberKey { get { return "_understood_org_unauthenticated_member"; } }
         #endregion
 
         #region Container Guid

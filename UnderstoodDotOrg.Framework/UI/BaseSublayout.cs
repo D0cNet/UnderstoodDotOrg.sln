@@ -103,6 +103,22 @@ namespace UnderstoodDotOrg.Framework.UI
                 return (_isUserLoggedIn = _isUserLoggedIn ?? CurrentMember != null && CurrentUser != null).Value;
             }
         }
+        private Member _unauthenticatedSessionMember;
+        /// <summary>
+        /// Use this as a container for temporary session based members who are not in our database
+        /// </summary>
+        public Member UnauthenticatedSessionMember
+        {
+            get
+            {
+                return (_unauthenticatedSessionMember = _unauthenticatedSessionMember ?? (Member)Session[Constants.sessionUnauthenticatedMemberKey]);
+            }
+            set
+            {
+                Session[Constants.sessionUnauthenticatedMemberKey] =
+                    _unauthenticatedSessionMember = value;
+            }
+        }
 
         public void FlushCurrentMemberUser()
         {

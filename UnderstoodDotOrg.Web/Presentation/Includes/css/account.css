@@ -5667,6 +5667,8 @@
 .profile-questions .radio-toggle-wrapper.no-margin {
   margin-bottom: 0;
 }
+
+
 /* line 322, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions .form-actions {
   display: block;
@@ -5816,6 +5818,12 @@
   .profile-questions.step-1 .button {
     max-width: 150px;
   }
+}
+@media (min-width: 960px) {
+    /* bg. I take no pride in this hack*/
+    .profile-questions.step-1 .button:checked ~ *{
+        background-color: purple;
+    }
 }
 /* line 414, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-1 label.inline {
@@ -6967,3 +6975,4 @@
 .my-account-subheader.connections-subheader .select-container {
   margin-bottom: 0px;
 }
+
