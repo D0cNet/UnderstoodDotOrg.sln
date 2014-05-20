@@ -47,9 +47,9 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			//Create TriggeredSendDefinition object [Messages > Email > Triggered]
 			TriggeredSendDefinition tsd = new TriggeredSendDefinition();
 			//tsd.Email.HTMLBody
-			tsd.Name = "TSD_Name_" + emailName;// + strGUID;//required
+			tsd.Name = emailName;// + strGUID;//required
 			tsd.CustomerKey = strGUID;//recommended or the application will assign a number
-			tsd.Description = "TSD_Description_" + toEmail;//recommended or the Description will default to the Name
+			tsd.Description = toEmail;//recommended or the Description will default to the Name
 
 			//Set to delivery both Text and HTML versions.
 			tsd.IsMultipart = true;//recommended as a best practice
