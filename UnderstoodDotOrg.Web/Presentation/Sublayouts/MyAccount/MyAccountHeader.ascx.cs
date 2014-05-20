@@ -15,6 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         {
             var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyProfile.ToString());
             hypMyProfile.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
+            litUserName.Text = CurrentUser.UserName;
         }
     }
 }

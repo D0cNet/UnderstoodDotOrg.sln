@@ -20,7 +20,9 @@
                 <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
             </div>
             <div class="account-info">
-                <h1 class="account-username">SonyasMom65</h1>
+                <h1 class="account-username">
+                    <asp:Literal ID="litUserName" runat="server"></asp:Literal>
+                </h1>
                 <p class="account-location">Colorado</p>
             </div>
             <div class="account-links">

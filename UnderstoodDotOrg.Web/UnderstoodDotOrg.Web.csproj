@@ -1276,12 +1276,12 @@
     <Compile Include="Presentation\Sublayouts\MyAccount\MyAccountSubheader.ascx.designer.cs">
       <DependentUpon>MyAccountSubheader.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyCommentsTest.ascx.cs">
-      <DependentUpon>MyCommentsTest.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyComments.ascx.cs">
+      <DependentUpon>MyComments.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyCommentsTest.ascx.designer.cs">
-      <DependentUpon>MyCommentsTest.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyComments.ascx.designer.cs">
+      <DependentUpon>MyComments.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\MyNotificationsContainer.ascx.cs">
       <DependentUpon>MyNotificationsContainer.ascx</DependentUpon>
@@ -1317,6 +1317,40 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\SignUp.ascx.designer.cs">
       <DependentUpon>SignUp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Comments.ascx.cs">
+      <DependentUpon>Comments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Comments.ascx.designer.cs">
+      <DependentUpon>Comments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Connections.ascx.cs">
+      <DependentUpon>Connections.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Connections.ascx.designer.cs">
+      <DependentUpon>Connections.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Events.ascx.cs">
+      <DependentUpon>Events.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Events.ascx.designer.cs">
+      <DependentUpon>Events.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Favorites.ascx.cs">
+      <DependentUpon>Favorites.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Favorites.ascx.designer.cs">
+      <DependentUpon>Favorites.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Groups.ascx.cs">
+      <DependentUpon>Groups.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Groups.ascx.designer.cs">
+      <DependentUpon>Groups.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Terms and Conditions.ascx.cs">
       <DependentUpon>Terms and Conditions.ascx</DependentUpon>
@@ -2375,12 +2409,17 @@
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccountHeader.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccountSubheader.ascx" />
-    <Content Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyCommentsTest.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyComments.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyNotificationsContainer.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyNotificationsTabs.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Tabs\Comments.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Tabs\Connections.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Tabs\Events.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Tabs\Favorites.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Tabs\Groups.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Terms and Conditions.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\My Profile.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx" />

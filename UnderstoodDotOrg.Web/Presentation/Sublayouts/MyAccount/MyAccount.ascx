@@ -22,7 +22,7 @@
 
             <div class="row">
                 <div class="col col-12">
-                    <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/MyAccount/LandingPageWidgets/MyCommentsTest.ascx" />
+                    <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/MyAccount/LandingPageWidgets/MyComments.ascx" />
                 </div>
                 <div class="col col-12">
                     <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/MyAccount/LandingPageWidgets/MyFavorites.ascx" />
