@@ -8,5 +8,6 @@ namespace UnderstoodDotOrg.Domain.ExactTarget
 {
 	public class InvokeEM4LearnActRequest : BaseRequest
 	{
+
 	}
 }

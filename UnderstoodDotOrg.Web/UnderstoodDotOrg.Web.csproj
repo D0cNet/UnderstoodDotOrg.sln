@@ -1341,6 +1341,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Favorites.ascx.cs">
       <DependentUpon>Favorites.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Favorites.ascx.designer.cs">
       <DependentUpon>Favorites.ascx</DependentUpon>

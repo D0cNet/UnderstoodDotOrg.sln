@@ -260,7 +260,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             // *BG: AIGHT STOP COMMENTING THIS OUT YOU HOUNDS*/
 
             //send an email through exact target 
-            InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
+			BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
 
             ////run personalization for this user
             Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();

@@ -27,10 +27,8 @@
 			//InvokeEM2ParentToolkitReply reply = ExactTargetService.InvokeEM2ParentToolkit(new InvokeEM2ParentToolkitRequest { ToEmail = tbxSubscriberEmail1.Text });
             //InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = tbxSubscriberEmail1.Text, FirstName = tbxSubscriberFN1.Text });
 
-            InvokeEM10WebinarConfirmationReply reply = ExactTargetService.InvokeEM10WebinarConfirmation(new InvokeEM10WebinarConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, WebinarModule = txtWebinarCode.Text });
-			
-			
-            //lblMessage.Text = reply.Message;
+			BaseReply reply = ExactTargetService.InvokeEM10WebinarConfirmation(new InvokeEM10WebinarConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, WebinarModule = txtWebinarCode.Text });
+			lblMessage.Text = reply.Message;
 		}
 
 		protected void btnEM2_Click(object sender, EventArgs e)
@@ -60,7 +58,7 @@
 
 		protected void btnEM7_Click(object sender, EventArgs e)
 		{
-			InvokeEM7NewsletterConfirmationReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday"});
+			BaseReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday" });
 			lblMessage.Text = reply.Message;
 		}
 

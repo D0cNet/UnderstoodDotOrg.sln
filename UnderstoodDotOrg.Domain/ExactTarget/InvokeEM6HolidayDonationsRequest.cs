@@ -8,5 +8,6 @@ namespace UnderstoodDotOrg.Domain.ExactTarget
 {
 	public class InvokeEM6HolidayDonationsRequest : BaseRequest
 	{
+		public string FullName { get; set; }
 	}
 }

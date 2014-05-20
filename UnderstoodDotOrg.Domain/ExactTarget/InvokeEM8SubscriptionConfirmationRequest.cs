@@ -8,5 +8,6 @@ namespace UnderstoodDotOrg.Domain.ExactTarget
 {
 	public class InvokeEM8SubscriptionConfirmationRequest : BaseRequest
 	{
+		public string ProfileCompletionBar { get; set; }//HTML table containing a profile completion bar
 	}
 }
