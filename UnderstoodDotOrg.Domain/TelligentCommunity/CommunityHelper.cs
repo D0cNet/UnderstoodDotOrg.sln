@@ -453,9 +453,10 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     return true;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                Exception createException = new Exception("An error occurred when creating the user. Username may already be in use");
+                Exception createException = new Exception("An error occurred when creating the Community User. Please see Inner Exception for details.",e);
+                createException.Source = "CommunityHelper.cs CreateUser(string username, string email)";
                 throw createException;
             }
         }

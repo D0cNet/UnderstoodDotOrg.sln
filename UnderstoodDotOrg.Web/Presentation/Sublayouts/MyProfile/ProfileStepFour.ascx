@@ -11,6 +11,7 @@
                     </h1>
                     <p class="subtitle">
                         <sc:text id="Text2" field="Header Text" runat="server" />
+                        <asp:Literal ID="uxErrorMessage" runat="server" Visible="false"></asp:Literal>
                     </p>
 
                     <!-- END PARTIAL: profile-questions-header-left -->

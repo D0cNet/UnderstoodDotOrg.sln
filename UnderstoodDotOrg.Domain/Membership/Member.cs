@@ -36,7 +36,17 @@ namespace UnderstoodDotOrg.Domain.Membership
         public Nullable<int> Phone { get; set; }
         public bool emailSubscription { get; set; }
         public bool isFacebookUser { get; set; }
-    
+        
+        // bg: added in to track our Unauthorized Member flag.
+        // .Net Membership already has a Comment column in the db.
+        public string Comment { get; set; }
+
+        //bg: needs an email address. Just a ph for now to pass it around
+        public string Email { get; set; }
+
+        //bg: a password would be helpful too :3
+        public string Password { get; set; }
+
         public virtual ICollection<Child> Children { get; set; }
         public virtual ICollection<Interest> Interests { get; set; }
         public virtual ICollection<Journey> Journeys { get; set; }

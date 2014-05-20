@@ -178,7 +178,6 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             return tChild;
         }
-
         /// <summary>
         /// Adds a new member to the database
         /// </summary>
@@ -327,7 +326,61 @@ namespace UnderstoodDotOrg.Domain.Membership
                 throw ex;
             }
         }
+        public Member AddUnauthorizedMember(Member Member)
+        {
+            //throw this out if there is no email 
+            if (string.IsNullOrEmpty (Member.Email))
+            {
+                throw new Exception("Error in MembershipManager.cs. An email address must be provided to add a member.");
+            }
+            //bg: Note. We are going to use the ASP.Net Membership database's comment field
+            //          to include a flag that can be used to identify users who only exist  in order 
+            //          for us to generate content sent for Nebased on "The Algorithim" 
+            //-- Setting up some values so that we know that this is not a standard website member
+                //this member is probably only ever going to be created just so that we can generate personalized emails
+            Member.Password  = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Password;
+            Member.Comment = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Flag;
+            Member.ScreenName = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Screename;
+            
+            Member m = new Member();
+            try
+            {
+                m = this.AddMember(Member, Member.Email, Member.Password); //Need to refactor some code to account for Member having an email and password
+            }
+           
+            catch (Exception e)
+            {
+                Exception e2 = new Exception("An Error occured when trying to create a new Unauthorized Member. Check InnerException", e);
+                e2.Source = "MembershiopManager.cs In AddUnauthorizedMember(Member Member)";
+                throw e2; //yur problem now
+            }
+           //now update the member to add the flag to let us know it is a unauthorized user
+            AddMemberComment(m, UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Flag);
 
+            return m;
+        }
+        /// <summary>
+        /// Updates the .Net member in our Membership Database to include a comment.
+        /// </summary>
+        /// <param name="member"></param>
+        /// <param name="Comment"></param>
+        /// <returns></returns>
+        private bool AddMemberComment(Member member, string Comment)
+        {
+            bool commentAdded = false;
+            try
+            {
+                MembershipUser mUsr = GetUser(member.MemberId);
+                mUsr.Comment = Comment;
+                var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
+                provider.UpdateUser(mUsr);
+                //comment added.
+            }
+            catch (Exception e)
+            { 
+            }
+            return commentAdded;
+        }
         /// <summary>
         /// Adds a new user to the authentication database, and then adds a new member to the membership database
         /// </summary>
@@ -341,7 +394,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             {
                 // use custom provider for authentication
                 var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
-
+        
                 var isExistingUser = provider.ValidateUser(Username, Password);
 
                 if (isExistingUser)
@@ -360,7 +413,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                     var status = new MembershipCreateStatus();
 
                     var user = provider.CreateUser(Username, Password, Username, null, null, true, Member.MemberId, out status);
-
+                    
                     if (status != MembershipCreateStatus.Success)
                     {
                         throw new Exception("Unable to create user. Reason: " + status);

@@ -13,6 +13,69 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
     public partial class ProfileStepFour {
         
         /// <summary>
+        /// Text1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text1;
+        
+        /// <summary>
+        /// Text2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text2;
+        
+        /// <summary>
+        /// uxErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal uxErrorMessage;
+        
+        /// <summary>
+        /// Text3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text3;
+        
+        /// <summary>
+        /// Text4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text4;
+        
+        /// <summary>
+        /// Text5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text5;
+        
+        /// <summary>
+        /// Text6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text6;
+        
+        /// <summary>
         /// uxSchoolLeft control.
         /// </summary>
         /// <remarks>
@@ -31,6 +94,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.ListView uxSchoolRight;
         
         /// <summary>
+        /// Text15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text15;
+        
+        /// <summary>
         /// uxWaysToHelp control.
         /// </summary>
         /// <remarks>
@@ -38,6 +110,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView uxWaysToHelp;
+        
+        /// <summary>
+        /// Text21 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text21;
         
         /// <summary>
         /// uxHomeLife control.
@@ -49,6 +130,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.ListView uxHomeLife;
         
         /// <summary>
+        /// Text26 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text26;
+        
+        /// <summary>
         /// uxGrowingUp control.
         /// </summary>
         /// <remarks>
@@ -56,6 +146,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView uxGrowingUp;
+        
+        /// <summary>
+        /// Text32 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text32;
         
         /// <summary>
         /// uxSocialEmotional control.
@@ -67,6 +166,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.ListView uxSocialEmotional;
         
         /// <summary>
+        /// Text36 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text36;
+        
+        /// <summary>
         /// uxJourney control.
         /// </summary>
         /// <remarks>
@@ -74,6 +182,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView uxJourney;
+        
+        /// <summary>
+        /// Text40 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text40;
         
         /// <summary>
         /// uxMother control.
@@ -121,6 +238,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.DropDownList uxParentList;
         
         /// <summary>
+        /// Text50 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text50;
+        
+        /// <summary>
+        /// Text51 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text51;
+        
+        /// <summary>
         /// ScreenNameTextField control.
         /// </summary>
         /// <remarks>
@@ -130,6 +265,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.TextBox ScreenNameTextField;
         
         /// <summary>
+        /// Text52 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text52;
+        
+        /// <summary>
+        /// Text53 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text53;
+        
+        /// <summary>
+        /// Text54 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text54;
+        
+        /// <summary>
         /// ZipCodeTextField control.
         /// </summary>
         /// <remarks>
@@ -137,6 +299,51 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ZipCodeTextField;
+        
+        /// <summary>
+        /// Text55 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text55;
+        
+        /// <summary>
+        /// Text56 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text56;
+        
+        /// <summary>
+        /// Text57 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text57;
+        
+        /// <summary>
+        /// Text58 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text58;
+        
+        /// <summary>
+        /// Text59 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text Text59;
         
         /// <summary>
         /// SubmitButton control.

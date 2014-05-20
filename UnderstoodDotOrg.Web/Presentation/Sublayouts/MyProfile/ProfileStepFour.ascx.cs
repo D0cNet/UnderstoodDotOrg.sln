@@ -255,12 +255,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             {
                 Response.Write("<!-- Error 601 -->");
             }
-
-            
-            // *BG: AIGHT STOP COMMENTING THIS OUT YOU HOUNDS*/
-
-            //send an email through exact target 
+     
+            //send an email through exact target.
 			BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
+            
 
             ////run personalization for this user
             Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
@@ -269,16 +267,41 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             //pulling this out of membership manager for now until we find the best place. 
             //It had been in AddMember berfore but there is no screen name available when we Add a member.
             //create Telligent user:
-            if (!string.IsNullOrEmpty(CurrentMember.ScreenName))
+            bool err = false;
+            if (!string.IsNullOrEmpty(CurrentMember.ScreenName)) //optional to the user
             {
-                bool communitySuccess = CommunityHelper.CreateUser(CurrentMember.ScreenName, CurrentUser.Email);
-                if (communitySuccess == false)
+                try
                 {
-                    // ¡Ay, caramba!
-
+                    bool communitySuccess = CommunityHelper.CreateUser(CurrentMember.ScreenName, CurrentUser.Email);
+                    if (communitySuccess == false)
+                    {
+                        // ¡Ay, caramba!
+                        // give them a nice "I'm sorry" please try again later message.
+                        uxErrorMessage.Text = "<font color=red>I'm sorry, the Community User failed to be created properly. </ font> ";
+                        uxErrorMessage.Visible = true;
+                        err = true; //dont progress. stop and display an error.
+                        
+                    }
+                  }
+                catch (Exception ex)
+                {
+                   //bg: we need a generic procedure for handling errors so that we can display important data properly without being gross  
+                    uxErrorMessage.Text = "<font color=red>I'm sorry, an error has occured while trying to create the Community User. <hr> " +
+                        "Message: " + ex.Message + Environment.NewLine +
+                        "Source: " + ex.Source + Environment.NewLine + "<hr>" +
+                        "Stack Trace: " + ex.StackTrace + Environment.NewLine +
+                        "Inner Message: " + ex.InnerException.Message + Environment.NewLine +
+                        "Inner Source: " + ex.InnerException.Source + Environment.NewLine +
+                        "Inner Stack Trace: " + ex.InnerException.StackTrace +
+                        "</font>";
+                    uxErrorMessage.Visible = true;
+                    err = true;
                 }
             }
-            Response.Redirect(MembershipHelper.GetNextStepURL(5));
+            if (!err)//no errors. Move the progression forward.
+            {
+                Response.Redirect(MembershipHelper.GetNextStepURL(5));
+            }
         }
 
         protected void ListItemDataBound(object sender, ListViewItemEventArgs e)

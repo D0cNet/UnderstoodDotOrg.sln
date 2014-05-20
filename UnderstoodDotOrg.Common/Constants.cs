@@ -58,6 +58,13 @@ namespace UnderstoodDotOrg.Common
         public static string sessionUnauthenticatedMemberKey { get { return "_understood_org_unauthenticated_member"; } }
         #endregion
 
+#region Unauthenticated Member Values
+        public static string UnauthenticatedMember_Screename { get { return "c5uSwuWruy2Q5NADejus"; } }
+        public static string UnauthenticatedMember_Password{ get { return "s6MuquVucReDE5R6"; } }
+        public static string UnauthenticatedMember_Flag { get { return "IsUnauthenticatedMember"; } }
+#endregion
+
+
         #region Container Guid
 
         public static Guid GradeContainer
