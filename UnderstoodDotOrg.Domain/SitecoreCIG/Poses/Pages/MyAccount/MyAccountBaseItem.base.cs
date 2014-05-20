@@ -46,6 +46,24 @@ public static implicit operator Item(MyAccountBaseItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField AccountNavigationTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Account Navigation Title"]);
+	}
+}
+
+
+public CustomTextField IconCssClass
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Icon CssClass"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

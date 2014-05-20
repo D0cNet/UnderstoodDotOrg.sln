@@ -34,12 +34,13 @@
     <div class="account-nav-wrapper">
         <div class="row">
             <nav class="account-nav">
-                <asp:Repeater ID="rptrAccountNav" runat="server">
+                <asp:Repeater ID="rptrAccountNav" runat="server" 
+                    ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount.MyAccountBaseItem">
                     <ItemTemplate>
-                        <a href="REPLACE">
+                        <a href="<%# Item.GetUrl() %>">
                             <div class="icon-wrapper">
-                                <i class="icon-account-groups"></i>
-                                <span>Groups</span>
+                                <i class="<%# Item.IconCssClass.Rendered %>"></i>
+                                <span><%# Item.AccountNavigationTitle.Rendered %></span>
                             </div>
                         </a>
                     </ItemTemplate>

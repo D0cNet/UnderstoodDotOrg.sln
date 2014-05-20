@@ -23,6 +23,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             {
                 MyProfilePage = MyProfileItem.GetMyProfilePage();
                 MyAccountPage = MyAccountItem.GetMyAccountPage();
+
+                var accountPages = MyAccountPage.GetAccountPages();
+
+                rptrAccountNav.DataSource = accountPages;
+                rptrAccountNav.DataBind();
             }
             else
             {

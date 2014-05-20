@@ -34,5 +34,12 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount
         {
             return InnerItem.Children.FirstOrDefault(i => i.IsOfType(AccountGroupsPageItem.TemplateId));
         }
+
+        public IEnumerable<MyAccountBaseItem> GetAccountPages()
+        {
+            return InnerItem.Children
+                .Where(i => i.InheritsFromType(MyAccountBaseItem.TemplateId))
+                .Select(i => (MyAccountBaseItem)i);
+        }
     }
 }
