@@ -11,5 +11,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     
     
     public partial class ShareAndSaveTool {
+        
+        /// <summary>
+        /// hlFacebook control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlFacebook;
+        
+        /// <summary>
+        /// hlTwitter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlTwitter;
+        
+        /// <summary>
+        /// hlGooglePlus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlGooglePlus;
     }
 }

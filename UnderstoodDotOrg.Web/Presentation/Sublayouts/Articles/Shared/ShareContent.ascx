@@ -10,16 +10,16 @@
 			<span class="social-share">Share <i class="icon-arrow"></i></span>
 			<ul>
 				<li class="clearfix">
-					<a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+					<asp:HyperLink ID="hlFacebook" CssClass="icon-facebook share-icon" runat="server"><i class="icon-facebook"></i><asp:Literal ID="ltlFacebook" runat="server"></asp:Literal></asp:HyperLink>
 				</li>
 				<li class="clearfix">
-					<a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+					<asp:HyperLink ID="hlTwitter" CssClass="icon-twitter share-icon" runat="server"><i class="icon-twitter"></i><asp:Literal ID="ltlTwitter" runat="server"></asp:Literal></asp:HyperLink>
 				</li>
 				<li class="clearfix">
-					<a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+					<asp:HyperLink ID="hlGooglePlus" CssClass="icon-google share-icon" runat="server"><i class="icon-google"></i><asp:Literal ID="ltlGooglePlus" runat="server"></asp:Literal></asp:HyperLink>
 				</li>
 				<li class="clearfix">
-					<a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+					<a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonPin"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" /></a>
 				</li>
 			</ul>
 		</div>
@@ -32,9 +32,10 @@
 
 		<button class="icon-plus">save this</button>
 
-		<button class="icon-print">print</button>
+		<button class="icon-print" onclick="window.print()">print</button>
 
-		<button class="icon-bell">remind me</button>
+        <%--OOS for this release--%>
+		<%--<button class="icon-bell">remind me</button>--%>
 
 	</div>
 

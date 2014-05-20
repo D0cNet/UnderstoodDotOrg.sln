@@ -607,6 +607,48 @@ namespace UnderstoodDotOrg.Common
 
         #endregion
 
+        public static string SocialSharingFacebook
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Social Sharing Facebook");
+            }
+        }
+
+        public static string SocialSharingGooglePlus
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Social Sharing Google Plus");
+            }
+        }
+
+        public static string SocialSharingShareAndSaveLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Social Sharing Share and Save Label");
+            }
+        }
+
+        public static string SocialSharingShareDropdown
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Social Sharing Share Dropdown");
+            }
+        }
+
+        public static string SocialSharingTwitter
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Social Sharing Twitter");
+            }
+        }
+
+
+        
         public static string PluralCommentLabel
         {
             get

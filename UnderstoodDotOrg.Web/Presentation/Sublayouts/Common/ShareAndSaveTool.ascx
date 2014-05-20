@@ -48,13 +48,10 @@
 <div class="share-save-container">
     <div class="share-save-social-icon">
         <div class="toggle">
-            <a href="https://facebook.com/sharer.php?u=<%= Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Item) %>" class="socicon icon-facebook">Facebook</a><br />
-            <!-- Facebook  href="https://facebook.com/sharer.php?u=YOURURLHERE"-->
-            <a href="https://twitter.com/intent/tweet?url=<%= Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Item) %>&text=<%= Sitecore.Context.Item.Name %>&via=YOURTWITTERNAMEHERE" class="socicon icon-twitter">Twitter</a><br />
-            <!-- Twitter href="https://twitter.com/intent/tweet?url=YOURURLHERE&text=YOURPOSTTITLEHERE&via=YOURTWITTERNAMEHERE"  -->
-            <a href="https://plus.google.com/share?url=<%= Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Item) %>" class="socicon icon-googleplus">Google&#43;</a><br />
-            <!-- Google +  href="https://plus.google.com/share?url=YOURURLHERE" -->
-            <a href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above" class="socicon icon-pinterest">Pinterest</a><br />
+            <asp:HyperLink ID="hlFacebook" CssClass="socicon icon-facebook" runat="server"></asp:HyperLink><br />
+            <asp:HyperLink ID="hlTwitter" CssClass="socicon icon-twitter" runat="server"></asp:HyperLink><br />
+            <asp:HyperLink ID="hlGooglePlus" CssClass="socicon icon-googleplus" runat="server"></asp:HyperLink><br />
+            <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonPin"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" /></a>
         </div>
     </div>
 
@@ -66,7 +63,8 @@
                 <a href="#" class="icon icon-email">Email</a>
                 <a href="#" class="icon icon-save">Save</a><%--<a href="javascript:saveIt()" class="icon icon-save">Save</a>--%>
                 <a href="#" class="icon icon-print" onclick="window.print()">Print</a>
-                <a href="#" class="icon icon-remind">Remind</a>
+                <%--OOS for this release--%>
+                <%--<a href="#" class="icon icon-remind">Remind</a>--%>
                 <a href="#" class="icon icon-rss">RSS</a></span>
         </span>
 

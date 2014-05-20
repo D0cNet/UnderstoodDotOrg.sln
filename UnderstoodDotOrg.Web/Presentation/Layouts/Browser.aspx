@@ -118,7 +118,7 @@
         <asp:literal runat="server" id="footerSectionJS"></asp:literal>
         <script src="/Presentation/includes/js/global.js"></script>
 		<script src="/Presentation/includes/js/oasis.js"></script>
-
+        <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
         <sc:Placeholder runat="server" Key="AfterResources" />
 
         <!-- END PARTIAL: footerjs -->
