@@ -424,7 +424,7 @@ namespace UnderstoodDotOrg.Domain.Search
                 // Filter types
                 if (!String.IsNullOrEmpty(template))
                 {
-                    Item container = Sitecore.Context.Database.GetItem(Constants.SearchFilterTypesContainer.ToString());
+                    Item container = Sitecore.Context.Database.GetItem(Constants.SearchFilterTypesContainer);
                     var child = from c in container.Children
                                 where c.ID.ToString() == template
                                 select new SearchFilterTypeItem(c);

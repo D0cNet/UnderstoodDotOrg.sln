@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common.Extensions;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -39,7 +40,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     this.CurrentMember = currentMember;
                     this.CurrentUser = membershipManager.GetUser(currentMember.MemberId, true);
 
-                    var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccount.ToString());
+                    var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccount);
                     Response.Redirect(Sitecore.Links.LinkManager.GetItemUrl(item));
                 }
             }

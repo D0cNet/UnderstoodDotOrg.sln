@@ -6,16 +6,28 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
     public partial class MyAccountHeader : BaseSublayout
     {
+        protected MyProfileItem MyProfilePage { get; set; }
+        protected MyAccountItem MyAccountPage { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyProfile.ToString());
-            hypMyProfile.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
-            litUserName.Text = CurrentUser.UserName;
+            if (IsUserLoggedIn)
+            {
+                MyProfilePage = MyProfileItem.GetMyProfilePage();
+                MyAccountPage = MyAccountItem.GetMyAccountPage();
+            }
+            else
+            {
+                Response.Redirect(MainsectionItem.GetHomePageItem().GetUrl());
+            }
         }
     }
 }

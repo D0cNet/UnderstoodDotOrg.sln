@@ -80,7 +80,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
 
         public static string GetBehaviorResultsUrl(string challengeGuid, string gradeGuid)
         {
-            Item item = Sitecore.Context.Database.GetItem(Constants.Pages.BehaviorToolsResults.ToString());
+            Item item = Sitecore.Context.Database.GetItem(Constants.Pages.BehaviorToolsResults);
             if (item != null)
             {
                 Dictionary<string, string> queryParams = new Dictionary<string, string>()
