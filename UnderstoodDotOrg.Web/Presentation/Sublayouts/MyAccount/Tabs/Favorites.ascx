@@ -41,7 +41,7 @@
                             <h3 class="favorite-type">Article</h3>
                         </div>
                         <div class="col col-12 offset1 favorite-title-wrap">
-                            <a href="REPLACE" class="favorite-title">deleniti reprehenderit ipsam veniam iusto in consequatur laboriosam voluptatum distinctio</a>
+                            <a href="REPLACE" class="favorite-title">id repellat tempora omnis praesentium distinctio excepturi quia dolore corporis</a>
                         </div>
                         <!-- /.col -->
                         <div class="col col-9 offset1 favorite-toolbar">
@@ -98,7 +98,7 @@
                             <h3 class="favorite-type">Video</h3>
                         </div>
                         <div class="col col-12 offset1 favorite-title-wrap">
-                            <a href="REPLACE" class="favorite-title">quibusdam et ipsum necessitatibus ut eveniet aut neque aliquid in</a>
+                            <a href="REPLACE" class="favorite-title">incidunt explicabo ut explicabo ut blanditiis eligendi doloribus at consequatur</a>
                         </div>
                         <!-- /.col -->
                         <div class="col col-9 offset1 favorite-toolbar">
@@ -154,7 +154,7 @@
                             <h3 class="favorite-type">Tips</h3>
                         </div>
                         <div class="col col-12 offset1 favorite-title-wrap">
-                            <a href="REPLACE" class="favorite-title">nihil iusto et sapiente aspernatur pariatur quo aliquid perspiciatis corporis</a>
+                            <a href="REPLACE" class="favorite-title">et est blanditiis nam ducimus commodi saepe aperiam ut molestias</a>
                         </div>
                         <!-- /.col -->
                         <div class="col col-9 offset1 favorite-toolbar">
@@ -210,7 +210,7 @@
                             <h3 class="favorite-type">Webinar</h3>
                         </div>
                         <div class="col col-12 offset1 favorite-title-wrap">
-                            <a href="REPLACE" class="favorite-title">quia suscipit sapiente quis nesciunt perspiciatis deserunt debitis deserunt necessitatibus</a>
+                            <a href="REPLACE" class="favorite-title">expedita quasi sapiente ratione ut quia dolorum dolores sint voluptatum</a>
                         </div>
                         <!-- /.col -->
                         <div class="col col-9 offset1 favorite-toolbar">
@@ -266,7 +266,7 @@
                             <h3 class="favorite-type">Video</h3>
                         </div>
                         <div class="col col-12 offset1 favorite-title-wrap">
-                            <a href="REPLACE" class="favorite-title">nobis non voluptatum assumenda minus nesciunt qui quidem minima consequuntur</a>
+                            <a href="REPLACE" class="favorite-title">totam quis neque porro repudiandae velit sunt quia excepturi et</a>
                         </div>
                         <!-- /.col -->
                         <div class="col col-9 offset1 favorite-toolbar">

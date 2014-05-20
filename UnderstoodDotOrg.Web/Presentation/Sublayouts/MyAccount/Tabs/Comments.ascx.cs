@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
 {
-    public partial class Comments : BaseSublayout
+    public partial class Comments : BaseSublayout<AccountCommentsPageItem>
     {
         protected void Page_Load(object sender, EventArgs e)
         {

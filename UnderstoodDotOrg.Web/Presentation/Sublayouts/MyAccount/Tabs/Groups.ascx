@@ -62,7 +62,7 @@
                 <div class="row mygroup-list clearfix">
 
                     <div class="row mygroup-item clearfix">
-                        <p class="col col-15 mygroup-title"><a href="REPLACE">Sed quia totam saepe natus tenetur ullam molestiae iure ut in. iusto odio voluptates amet veniam sed veniam iusto vero voluptatem rerum. eos eligendi qui necessitatibus. voluptatibus rerum totam a deleniti ipsum ex at. reprehenderit pariatur autem cupiditate suscipit hic non aut pariatur maxime fugiat ex ea dolor. at qui eos sunt cum nostrum. voluptatem illum non cum sed qui veniam ea autem cum totam doloremque</a></p>
+                        <p class="col col-15 mygroup-title"><a href="REPLACE">Harum cupiditate dolore sed dolor fuga. aut ea consequuntur quia libero occaecati unde autem atque occaecati dolores sapiente et. aspernatur quisquam fuga asperiores velit explicabo et velit molestias dignissimos. excepturi vel veritatis officia repudiandae eos rem pariatur quibusdam impedit quia ipsum. commodi ab nihil aut hic quas quas aut aut quibusdam qui optio. voluptas et rem qui eaque</a></p>
                         <div class="col col-3 offset-1 reply-count-wrapper">
                             <span class="reply-count">10</span> <span class="reply-label">Replies</span>
                         </div>
@@ -70,55 +70,55 @@
                             <p class="timestamp">
                                 <span class="lastest-post">Latest post </span>10 mins ago
                             </p>
-                            <p class="posted-by-name"><a href="REPLACE">Gretchen Boswell</a></p>
+                            <p class="posted-by-name"><a href="REPLACE">Vance Floyd</a></p>
                         </div>
                     </div>
                     <!-- .mygroup-item -->
 
                     <div class="row mygroup-item clearfix">
-                        <p class="col col-15 mygroup-title"><a href="REPLACE">Praesentium provident non nesciunt dolorum similique. minus optio magnam cupiditate adipisci dicta. et sint est alias hic et alias dolore aut ea. vero repudiandae et a modi enim sit ea rerum</a></p>
+                        <p class="col col-15 mygroup-title"><a href="REPLACE">Repellendus nostrum eligendi repellendus. voluptatem dolorum minus ipsam ad sint. omnis autem facilis ab voluptatibus voluptatem enim eos inventore a dolorem dolorum impedit</a></p>
                         <div class="col col-3 offset-1 reply-count-wrapper">
                             <span class="reply-count">10</span> <span class="reply-label">Replies</span>
                         </div>
                         <div class="col col-4 offset-1">
                             <p class="timestamp">10 mins ago</p>
-                            <p class="posted-by-name"><a href="REPLACE">Tonia Weiner</a></p>
+                            <p class="posted-by-name"><a href="REPLACE">inley Beasley</a></p>
                         </div>
                     </div>
                     <!-- .mygroup-item -->
 
                     <div class="row mygroup-item clearfix">
-                        <p class="col col-15 mygroup-title"><a href="REPLACE">Quod animi porro quo autem. iure quas quo dignissimos sed aperiam. doloribus alias nisi asperiores rerum dignissimos explicabo facere blanditiis rem accusantium. est dolores consequatur assumenda autem qui et. optio et corporis quia</a></p>
+                        <p class="col col-15 mygroup-title"><a href="REPLACE">Hic quaerat nihil blanditiis in hic culpa in nam. ut et hic ducimus eos est veritatis aspernatur fugit veniam voluptatem voluptatem ut. veniam officiis rerum est repudiandae dolorem exercitationem ea aut facere</a></p>
                         <div class="col col-3 offset-1 reply-count-wrapper">
                             <span class="reply-count">10</span> <span class="reply-label">Replies</span>
                         </div>
                         <div class="col col-4 offset-1">
                             <p class="timestamp">10 mins ago</p>
-                            <p class="posted-by-name"><a href="REPLACE">inn Nichols</a></p>
+                            <p class="posted-by-name"><a href="REPLACE">Samuel Stone</a></p>
                         </div>
                     </div>
                     <!-- .mygroup-item -->
 
                     <div class="row mygroup-item clearfix">
-                        <p class="col col-15 mygroup-title"><a href="REPLACE">Quo quam praesentium itaque ea earum delectus quibusdam. dolorem error nisi consequatur quae occaecati sed delectus ut. nihil temporibus dolorum et reprehenderit itaque voluptates similique eius et qui culpa itaque sint. voluptatem est consectetur odio dolor non voluptatibus</a></p>
+                        <p class="col col-15 mygroup-title"><a href="REPLACE">Exercitationem rerum eum odit odit consequatur. ea possimus tempora quae sunt alias assumenda blanditiis optio vel tempora quae. eligendi eveniet doloribus incidunt sint placeat ut quasi cupiditate ad dolores. dolorum voluptatum odio optio distinctio temporibus ullam velit odit corrupti officia non. hic similique itaque vitae et magnam cupiditate est qui nam. sit soluta quod aut vel iste voluptatem pariatur tenetur ab suscipit aut cum quis inventore</a></p>
                         <div class="col col-3 offset-1 reply-count-wrapper">
                             <span class="reply-count">10</span> <span class="reply-label">Replies</span>
                         </div>
                         <div class="col col-4 offset-1">
                             <p class="timestamp">10 mins ago</p>
-                            <p class="posted-by-name"><a href="REPLACE">Leland Watkins</a></p>
+                            <p class="posted-by-name"><a href="REPLACE">Bart Lloyd</a></p>
                         </div>
                     </div>
                     <!-- .mygroup-item -->
 
                     <div class="row mygroup-item clearfix">
-                        <p class="col col-15 mygroup-title"><a href="REPLACE">Temporibus vel placeat reiciendis. ad numquam cupiditate assumenda rem ut omnis velit est dolorem sint at tempora ut. eum voluptatem doloribus ullam voluptatem quis qui omnis quod nisi est fugiat doloribus asperiores est. qui omnis qui sed facilis assumenda illum. impedit omnis non maiores suscipit nostrum hic et consequatur qui exercitationem. dolores sint cupiditate repellat magni et pariatur adipisci dolores quia est blanditiis fugit facilis</a></p>
+                        <p class="col col-15 mygroup-title"><a href="REPLACE">Veritatis debitis optio omnis suscipit veritatis totam optio modi tenetur ullam. et sequi esse similique nemo fugiat qui inventore est et aliquid laboriosam quae velit. nam dolorum quo velit placeat non et. quia quae dolores quis quo molestiae quia autem ipsa. id eos aut perspiciatis ut molestiae accusantium enim quis</a></p>
                         <div class="col col-3 offset-1 reply-count-wrapper">
                             <span class="reply-count">10</span> <span class="reply-label">Replies</span>
                         </div>
                         <div class="col col-4 offset-1">
                             <p class="timestamp">10 mins ago</p>
-                            <p class="posted-by-name"><a href="REPLACE">Denis Barton</a></p>
+                            <p class="posted-by-name"><a href="REPLACE">Allen Abrams</a></p>
                         </div>
                     </div>
                     <!-- .mygroup-item -->
@@ -146,3 +146,31 @@
             <!-- .account-mygroups container -->
 
             <!-- END PARTIAL: account-mygroups -->
+        </div>
+    </div>
+    <!-- .row -->
+    <div class="row">
+        <div class="col col-15 offset-1">
+            <!-- BEGIN PARTIAL: my-groups-discussion-form -->
+            <section class="my-groups-discussion-form clearfix rs_read_this">
+                <header>
+                    <h2>Start a Discussion in Parents of Kids<br />
+                        with Attention Issues</h2>
+                </header>
+                <label>
+                    <span class="visuallyhidden">Title of discussion</span>
+                    <input type="text" placeholder="Title of discussion">
+                </label>
+                <label>
+                    <span class="visuallyhidden">More detail</span>
+                    <textarea placeholder="More detail"></textarea>
+                </label>
+                <button class="button rs_skip">Submit</button>
+            </section>
+
+            <!-- END PARTIAL: my-groups-discussion-form -->
+        </div>
+    </div>
+    <!-- .row -->
+</div>
+<!-- .container -->
