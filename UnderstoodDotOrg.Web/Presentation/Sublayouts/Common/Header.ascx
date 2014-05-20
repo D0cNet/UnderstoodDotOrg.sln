@@ -13,7 +13,7 @@
         <!-- .col -->
     </div>
     <!-- .row -->
-    <sc:Sublayout runat="server" Cacheable="true" Path="~/Presentation/Sublayouts/Common/HeaderToolKitNav.ascx" />
+    <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Common/HeaderToolKitNav.ascx" />
 </header>
 <!-- #header-page -->
 <!-- END PARTIAL: header -->
