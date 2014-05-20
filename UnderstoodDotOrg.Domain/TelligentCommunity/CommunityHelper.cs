@@ -143,7 +143,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                             Likes = GetTotalLikes(commentId).ToString(),
                             CommentDate = parsedDate
                         };
-                       // Comment comment = new Comment(xn);
+                        // Comment comment = new Comment(xn);
                         commentList.Add(comment);
 
                         nodecount++;
@@ -159,7 +159,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var webClient = new WebClient();
 
             Comment comment = null;
-           
+
             string adminKeyBase64 = CommunityHelper.TelligentAuth();
             if (!String.IsNullOrEmpty(commentId))
             {
@@ -211,7 +211,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 node = null;
             }
             return node;
-                
+
         }
 
         public static int GetTotalComments(string blogId, string blogPostId)
@@ -234,7 +234,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                     // TODO: Add error handling for invalid ids
 
-                    var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml?PageSize=1", 
+                    var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml?PageSize=1",
                         blogId, blogPostId));
                     var xml = webClient.DownloadString(requestUrl);
 
@@ -307,24 +307,27 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         {
             using (var webClient = new WebClient())
             {
-                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                currentUser = currentUser.Replace(" ", "");
-                webClient.Headers.Add("Rest-Impersonate-User", currentUser.ToLower());
+                if (!currentUser.Equals("admin"))
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                    currentUser = currentUser.Replace(" ", "");
+                    webClient.Headers.Add("Rest-Impersonate-User", currentUser.ToLower());
 
-                var postUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", blogId, blogPostId));
+                    var postUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", blogId, blogPostId));
 
-                var data = new NameValueCollection()
-            {
-                { "Body", body },
-                { "PublishedDate", DateTime.Now.ToString() },
-                { "IsApproved", "true" },
-                { "BlogId", blogId.ToString() }
-            };
+                    var data = new NameValueCollection()
+                    {
+                        { "Body", body },
+                        { "PublishedDate", DateTime.Now.ToString() },
+                        { "IsApproved", "true" },
+                        { "BlogId", blogId.ToString() }
+                    };
 
-                byte[] result = webClient.UploadValues(postUrl, data);
+                    byte[] result = webClient.UploadValues(postUrl, data);
 
-                // TODO: handle errors
-                string response = webClient.Encoding.GetString(result);
+                    // TODO: handle errors
+                    string response = webClient.Encoding.GetString(result);
+                }
             }
         }
 
@@ -389,9 +392,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     try
                     {
                         // TODO: add validation for invalid content id
-                        
+
                         webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
-                        var requestUrl = GetApiEndPoint(string.Format("likes.xml?ContentId={0}&PageSize=1", 
+                        var requestUrl = GetApiEndPoint(string.Format("likes.xml?ContentId={0}&PageSize=1",
                             guid.ToString()));
 
                         var xml = webClient.DownloadString(requestUrl);
@@ -404,7 +407,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         {
                             count = Convert.ToInt32(node.Attributes["TotalCount"].Value);
                         }
-                            
+
                     }
                     catch { }
                 }
@@ -604,7 +607,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var webClient = new WebClient();
             string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
-     
+
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
             var roleid = Sitecore.Configuration.Settings.GetSetting("TelligentModeratorRoleID") ?? "3";
@@ -663,16 +666,17 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             int count = 0;
             foreach (XmlNode node in nodes)
             {
-                BlogPost blogPost = new BlogPost(){
-                Title = node["Title"].InnerText,
-                ContentId = node["ContentId"].InnerText,
-                Body = FormatString100(node["Body"].InnerText),
-                PublishedDate = FormatDate(node["PublishedDate"].InnerText),
-                BlogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText),
-                Author = nodes1[count]["DisplayName"].InnerText,
-                // TODO: Fix this logic a lot
-                ItemUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + CommunityHelper.BlogNameById(node["BlogId"].InnerText) + "/" + node["Title"].InnerText, ".aspx", "")
-            };
+                BlogPost blogPost = new BlogPost()
+                {
+                    Title = node["Title"].InnerText,
+                    ContentId = node["ContentId"].InnerText,
+                    Body = FormatString100(node["Body"].InnerText),
+                    PublishedDate = FormatDate(node["PublishedDate"].InnerText),
+                    BlogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText),
+                    Author = nodes1[count]["DisplayName"].InnerText,
+                    // TODO: Fix this logic a lot
+                    ItemUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + CommunityHelper.BlogNameById(node["BlogId"].InnerText) + "/" + node["Title"].InnerText, ".aspx", "")
+                };
                 blogPosts.Add(blogPost);
                 count++;
 
@@ -1038,7 +1042,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return adminKeyBase64;
         }
 
-        public static List<Notification> GetNotifications(string username){
+        public static List<Notification> GetNotifications(string username)
+        {
 
             List<Notification> notificationList = new List<Notification>();
 
@@ -1090,58 +1095,51 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return notificationList;
         }
 
-        //public static List<Notification> GetNotifications(string username)
-        //{
+        public static List<FavoritesModel> GetFavorites(string userId)
+        {
+            List<FavoritesModel> favoritesList = new List<FavoritesModel>();
 
-        //    List<Notification> notificationList = new List<Notification>();
+            if (String.IsNullOrEmpty(userId))
+            {
+                return favoritesList;
+            }
 
-        //    if (String.IsNullOrEmpty(username))
-        //    {
-        //        return notificationList;
-        //    }
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
-        //    using (var webClient = new WebClient())
-        //    {
-        //        try
-        //        {
-        //            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-        //            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
 
-        //            webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                    var requestUrl = string.Format("{0}api.ashx/v2/users/{1}/favorites.xml?PageSize=100", Settings.GetSetting(Constants.Settings.TelligentConfig), userId);
+                    var xml = webClient.DownloadString(requestUrl);
 
-        //            var requestUrl = string.Format("{0}api.ashx/v2/notifications.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
-        //            var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
 
-        //            var xmlDoc = new XmlDocument();
-        //            xmlDoc.LoadXml(xml);
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Favorites/Favorite");
 
-        //            XmlNodeList nodes = xmlDoc.SelectNodes("Response/Notifications/RestNotification");
+                    foreach (XmlNode xn in nodes)
+                    {
+                        XmlNode userData = xmlDoc.SelectSingleNode("User");
+                        XmlNode statusData = xmlDoc.SelectSingleNode("User/CurrentStatus");
 
-        //            foreach (XmlNode xn in nodes)
-        //            {
-        //                XmlNode userData = xmlDoc.SelectSingleNode("Response/Notifications/RestNotification/User");
-        //                if (!username.Equals(userData["Username"].InnerText))
-        //                {
-        //                    XmlNode authorData = xmlDoc.SelectSingleNode("Response/Notifications/RestNotification/User/Author");
-        //                    XmlNode statusData = xmlDoc.SelectSingleNode("Response/Notifications/RestNotification/User/Author/CurrentStatus");
-
-        //                    Notification notification = new Notification()
-        //                    {
-        //                        Username = username,
-        //                        Author = authorData["Username"].InnerText,
-        //                        ContentId = xn["ContentId"].InnerText,
-        //                        CreatedDate = xn["CreatedDate"].InnerText,
-        //                        UpdatedDate = xn["LastUpdatedDate"].InnerText,
-        //                        NotificationId = xn["NotificationId"].InnerText
-        //                    };
-        //                    notificationList.Add(notification);
-        //                }
-        //            }
-        //        }
-        //        catch { } //TODO: Add Logging
-        //    }
-        //    return notificationList;
-        //}
-
+                        FavoritesModel favorite = new FavoritesModel()
+                        {
+                            Type = xn["Type"].InnerText,
+                            Title =  xn["Title"].InnerText,
+                            ReplyCount = statusData["ReplyCount"].InnerText,
+                            ContentId = statusData["ContentId"].InnerText,
+                            ContentTypeId = statusData["ContentType"].InnerText
+                        };
+                        favoritesList.Add(favorite);
+                    }
+                }
+                catch { } //TODO: Add Logging
+            }
+            return favoritesList;
+        }
     }
 }
