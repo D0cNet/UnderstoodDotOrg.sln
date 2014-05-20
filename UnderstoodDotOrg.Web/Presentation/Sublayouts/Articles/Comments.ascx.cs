@@ -12,10 +12,11 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.Data.Items;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
-    public partial class Comments : System.Web.UI.UserControl
+    public partial class Comments : BaseSublayout
     {
         private int _blogId = 0;
         private int _blogPostId = 0;
@@ -69,7 +70,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
             string body = CommentEntryTextField.Text;
-            CommunityHelper.PostComment(_blogId, _blogPostId, body);
+            string user = "";
+            try
+            {
+                if (!this.CurrentMember.ScreenName.IsNullOrEmpty())
+                {
+                    user = this.CurrentMember.ScreenName;
+                }
+            }
+            catch
+            {
+                user = "admin";
+            }
+            CommunityHelper.PostComment(_blogId, _blogPostId, body, user);
 
             PopulateComments();
 
