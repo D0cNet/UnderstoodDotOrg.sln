@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HeaderUtilityNav.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.HeaderUtilityNav" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-
+<%@ Import Namespace="UnderstoodDotOrg.Common.Extensions" %>
 <div class="logo-u-main">
     <asp:HyperLink runat="server" ID="hlLogoLink">
         <span class="visuallyhidden">Understood for learning and attention issues</span>
@@ -21,7 +21,30 @@
         </ul>
     </FooterTemplate>
 </asp:Repeater>
-
+<% if (IsUserLoggedIn) { %>
+<style type="text/css">
+    div.user-info-bar {
+        position: absolute;
+        right: 208px;
+        text-align: right;
+        max-width: 752px;
+        font-size: 0.875rem;
+        line-height: 1.429;
+        color: rgb(122, 65, 131);
+    }
+    div.user-info-bar > a:link,
+    div.user-info-bar > a:visited {        
+        color: rgb(105, 105, 105);
+    }
+    div.user-info-bar > a:hover,
+    div.user-info-bar > a:active {        
+        color: rgb(105, 105, 105);
+        text-decoration: none;
+        color: rgb(66, 109, 169);
+    }
+</style>
+<div class="user-info-bar">Welcome, <a href="<%= MyAccountPageItem.GetUrl() %>"><%= UserDisplayName %></a>!</div>
+<% } %>
 <div class="l-bar">
     <asp:Repeater runat="server" ID="rptNavUtility" OnItemDataBound="rptNavUtility_ItemDataBound">
         <HeaderTemplate>

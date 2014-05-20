@@ -11,12 +11,16 @@ using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.Understood.Helper;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
     public partial class HeaderUtilityNav : BaseSublayout
     {
         protected HeaderFolderItem HeaderFolder { get; set; }
+        protected MyAccountItem MyAccountPageItem { get; set; }
+        protected string UserDisplayName { get; set; }
+
         protected string SearchPath
         {
             get { return FormHelper.GetSearchResultsUrl(String.Empty, String.Empty); }
@@ -25,6 +29,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         protected void Page_Load(object sender, EventArgs e)
         {
             HeaderFolder = HeaderFolderItem.GetHeader();
+
+            if (IsUserLoggedIn)
+            {
+                MyAccountPageItem = MyAccountItem.GetMyAccountPage();
+
+                UserDisplayName = CurrentMember.FirstName != null ? CurrentMember.FirstName + " " : string.Empty;
+                UserDisplayName = CurrentMember.LastName != null ? UserDisplayName + CurrentMember.LastName : UserDisplayName;
+                UserDisplayName = UserDisplayName != string.Empty ? UserDisplayName.Trim() : CurrentMember.ScreenName;
+            }
+
             GetCompanyLogoDetail();
             SetLanguageItemsRepeater();
             GetUtilityNavigationItems();
