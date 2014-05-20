@@ -197,13 +197,22 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public Notification() { }
     }
 
-    public class Group
+    public class GroupModel
     {
-        public string TelligentGroupID { get; set; }
+        public string TopCommentTitle { get; set; }
         public string GroupID { get; set; }
         public string ModeratorID { get; set; }
         public string NumOfMembers { get; set; }
         public string NumOfDiscussions { get; set; }
         public string Description { get; set; }
+    }
+
+    public class FavoritesModel
+    {
+        public string Title { get; set; }
+        public string Type { get; set; }
+        public string ReplyCount { get; set; }
+        public string ContentId { get; set; }
+        public string ContentTypeId { get; set; }
     }
 }
