@@ -254,7 +254,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
             if (objSiteItem != null) {
                 GlobalsItem objGlobalItem = MainsectionItem.GetGlobals();
                 if (objGlobalItem != null) {
-                    objExpertliveFilterFolderItem = objGlobalItem.GetExpertliveFilterFolder();
+                    MetadataFolderFolderItem metaDataFolder = objGlobalItem.GetMetaDataFolder();
+                    if (metaDataFolder != null) {
+                        objExpertliveFilterFolderItem = metaDataFolder.GetExpertliveFilterFolder();
+                    }
                 }
             }
             return objExpertliveFilterFolderItem;
