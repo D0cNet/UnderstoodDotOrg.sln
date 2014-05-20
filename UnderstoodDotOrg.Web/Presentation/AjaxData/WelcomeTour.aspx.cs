@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
     public partial class WelcomeTour : System.Web.UI.Page {
@@ -60,7 +61,7 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
                     Sitecore.Web.UI.WebControls.Image scBackgroundImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scBackgroundImage");
                     FieldRenderer frContent = e.FindControlAs<FieldRenderer>("frContent");
                     Link scLinkJoin = e.FindControlAs<Link>("scLinkJoin");
-                    Link scLinkNotNow = e.FindControlAs<Link>("scLinkNotNow");
+                    HyperLink hlNotNow = e.FindControlAs<HyperLink>("hlNotNow");
 
                     if (frContent != null) {
                         frContent.Item = item;
@@ -74,8 +75,8 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
                         scLinkJoin.Item = item;
                     }
 
-                    if (scLinkNotNow != null) {
-                        scLinkNotNow.Item = item;
+                    if (hlNotNow != null) {
+                        hlNotNow.Text = DictionaryConstants.NotNowLabel;
                     }
                 }
             }

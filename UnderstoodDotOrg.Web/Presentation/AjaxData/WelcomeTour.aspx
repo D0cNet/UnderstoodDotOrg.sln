@@ -41,7 +41,8 @@
                                     <sc:FieldRenderer ID="frContent" runat="server" FieldName="Detail" />
                                 <div class="buttons rs_skip">
                                     <sc:Link ID="scLinkJoin" Parameters="class=button" runat="server" Field="Join The Community Button"></sc:Link>
-                                    <sc:Link ID="scLinkNotNow" Parameters="class=button gray close" runat="server" Field="Not Now"></sc:Link>
+                                    <asp:HyperLink runat="server" ID="hlNotNow" class="button gray close" href="#"></asp:HyperLink>
+                                    <%--<sc:Link ID="scLinkNotNow" Parameters="class=button gray close" runat="server" Field="Not Now"></sc:Link>--%>
                                 </div>
                             </div></ItemTemplate>
                                </asp:Repeater>

@@ -772,6 +772,12 @@ namespace UnderstoodDotOrg.Common
         }
 
         #region Expert Live
+        public static string NotNowLabel{
+            get {
+                return Translate.TextByDomain(PosesDictionary, "Not Now Label");
+            }
+        }
+
         public static string BacktoLabel{
             get {
                 return Translate.TextByDomain(PosesDictionary, "Back to Label");

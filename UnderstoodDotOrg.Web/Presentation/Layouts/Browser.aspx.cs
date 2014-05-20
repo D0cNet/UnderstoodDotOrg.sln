@@ -23,11 +23,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
 					BasePageNEWItem basePage = new BasePageNEWItem(ContextItem);
 					if (basePage != null)
 					{
-						if (!basePage.ShowWelcomeTour.Raw.IsNullOrEmpty())
-						{
-							ltWelcomeTour.Text = "<div data-show-welcome-tour=\"true\" id=\"community-page\"></div>";
-						}
-
+                        if (Request.Cookies["ShowWelcomeTour"] == null || string.IsNullOrEmpty(Request.Cookies["ShowWelcomeTour"].Value)) {
+                            Response.Cookies["ShowWelcomeTour"].Value = Guid.NewGuid().ToString();
+                            Response.Cookies["ShowWelcomeTour"].Expires = DateTime.MaxValue;
+                            if (!basePage.ShowWelcomeTour.Raw.IsNullOrEmpty()) {
+                                ltWelcomeTour.Text = "<div data-show-welcome-tour=\"true\" id=\"community-page\"></div>";
+                            }
+                        }
+						
 						if (!basePage.MetaTitle.Raw.IsNullOrEmpty())
 						{
 							this.Title = basePage.MetaTitle.Raw; // do not use Rendered since this will make the <title> a mess in Page Editor
