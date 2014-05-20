@@ -25,9 +25,9 @@
 		protected void btnETTests_Click(object sender, EventArgs e)
 		{
 			//InvokeEM2ParentToolkitReply reply = ExactTargetService.InvokeEM2ParentToolkit(new InvokeEM2ParentToolkitRequest { ToEmail = tbxSubscriberEmail1.Text });
-            //InvokeWelcomeToUnderstoodReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = tbxSubscriberEmail1.Text, FirstName = tbxSubscriberFN1.Text });
+			BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = tbxSubscriberEmail1.Text, FirstName = tbxSubscriberFN1.Text });
 
-			BaseReply reply = ExactTargetService.InvokeEM10WebinarConfirmation(new InvokeEM10WebinarConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, WebinarModule = txtWebinarCode.Text });
+			//BaseReply reply = ExactTargetService.InvokeEM10WebinarConfirmation(new InvokeEM10WebinarConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, WebinarModule = txtWebinarCode.Text });
 			lblMessage.Text = reply.Message;
 		}
 
@@ -58,8 +58,8 @@
 
 		protected void btnEM7_Click(object sender, EventArgs e)
 		{
-			BaseReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday" });
-			lblMessage.Text = reply.Message;
+			//InvokeEM7NewsletterConfirmationReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { ToEmail = tbxSubscriberEmail1.Text, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday" });
+			//lblMessage.Text = reply.Message;
 		}
 
 		protected void btnEM8_Click(object sender, EventArgs e)

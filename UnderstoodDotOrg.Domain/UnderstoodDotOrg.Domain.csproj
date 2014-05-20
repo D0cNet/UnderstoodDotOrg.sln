@@ -97,7 +97,16 @@
     <Compile Include="ExactTarget\InvokeEM12ThankYouForContactingUsRequest.cs" />
     <Compile Include="ExactTarget\InvokeEM13ActivityFromTodayRequest.cs" />
     <Compile Include="ExactTarget\InvokeEM14ThisWeeksActivityRequest.cs" />
-    <Compile Include="ExactTarget\InvokeEM15HappyHolidaysRequest.cs" />
+    <Compile Include="ExactTarget\InvokeEM16ContentReminderRequest.cs" />
+    <Compile Include="ExactTarget\InvokeEM17ObservationLogReminderRequest.cs" />
+    <Compile Include="ExactTarget\InvokeEM18UpdateProfileReminderRequest.cs" />
+    <Compile Include="ExactTarget\InvokeEM19WebinarReminderRequest.cs" />
+    <Compile Include="ExactTarget\InvokeEM21PrivateMessageRequest.cs" />
+    <Compile Include="ExactTarget\InvokeEM22ForgotPasswordRequest.cs" />
+    <Compile Include="ExactTarget\InvokeEM23PasswordResetConfirmationRequest.cs" />
+    <Compile Include="ExactTarget\InvokeEM24ContentSharedWithAFriendRequest.cs" />
+    <Compile Include="ExactTarget\InvokeEM25WebinarSharedWithAFriendRequest.cs" />
+    <Compile Include="ExactTarget\InvokeEM28AppsTechnologySharedWithAFriendRequest.cs" />
     <Compile Include="ExactTarget\InvokeEM2ParentToolkitRequest.cs" />
     <Compile Include="ExactTarget\InvokeEM3ExploreTheCommunityRequest.cs" />
     <Compile Include="ExactTarget\InvokeEM4LearnActRequest.cs" />
