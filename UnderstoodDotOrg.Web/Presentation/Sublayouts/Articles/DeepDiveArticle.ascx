@@ -6,18 +6,6 @@
         <!-- article -->
         <div class="col col-15 offset-1 skiplink-content" aria-role="main" aria-role="main">
             <div class="rs_read_this">
-                <div class="count-mobile">
-                    <!-- BEGIN PARTIAL: helpful-count -->
-                    <div class="count-helpful">
-                        <a href="REPLACE"><span>34</span>Found this helpful</a>
-                    </div>
-                    <!-- END PARTIAL: helpful-count -->
-                    <!-- BEGIN PARTIAL: comments-count -->
-                    <div class="count-comments">
-                        <a href="REPLACE"><span>19</span>Comments</a>
-                    </div>
-                    <!-- END PARTIAL: comments-count -->
-                </div>
 
                 <!-- BEGIN PARTIAL: article-deep-dive-copy -->
                 <div class="deep-dive-article-container">
@@ -233,15 +221,9 @@
 
         <!-- right bar -->
         <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
-            <!-- BEGIN PARTIAL: helpful-count -->
-            <div class="count-helpful">
-                <a href="REPLACE"><span>34</span>Found this helpful</a>
-            </div>
-            <!-- END PARTIAL: helpful-count -->
-            <!-- BEGIN PARTIAL: comments-count -->
-            <div class="count-comments">
-                <a href="REPLACE"><span>19</span>Comments</a>
-            </div>
+
+            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" runat="server"></sc:Sublayout>
+
             <!-- END PARTIAL: comments-count -->
             <div class="find-this-helpful-large">
                 <!-- Module within only appears in over 650px window width-->

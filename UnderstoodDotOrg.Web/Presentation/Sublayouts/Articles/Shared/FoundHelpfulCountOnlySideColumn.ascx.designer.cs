@@ -7,45 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
     
     
-    public partial class VideoArticle {
+    public partial class FoundHelpfulCountOnlySideColumn {
         
         /// <summary>
-        /// Sublayout1 control.
+        /// lblHelpfulCountMobile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout1;
+        protected global::System.Web.UI.WebControls.Label lblHelpfulCountMobile;
         
         /// <summary>
-        /// frVideo control.
+        /// ltlFoundThisHelpfulMobile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frVideo;
+        protected global::System.Web.UI.WebControls.Literal ltlFoundThisHelpfulMobile;
         
         /// <summary>
-        /// frTranscript control.
+        /// lblHelpfulCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frTranscript;
+        protected global::System.Web.UI.WebControls.Label lblHelpfulCount;
         
         /// <summary>
-        /// SBReviewedBy control.
+        /// ltlFoundThisHelpful control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout SBReviewedBy;
+        protected global::System.Web.UI.WebControls.Literal ltlFoundThisHelpful;
     }
 }

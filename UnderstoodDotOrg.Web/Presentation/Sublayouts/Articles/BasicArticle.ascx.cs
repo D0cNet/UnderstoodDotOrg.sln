@@ -40,16 +40,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 if (ObjBasicArticle.ShowPromotionalControl.Checked == true) sbSidebarPromo.Visible = true; else sbSidebarPromo.Visible = false;
 
                 if (ObjBasicArticle.DefaultArticlePage.ShowCommentTeaser.Checked == true) sbCommentsSummary.Visible = true; else sbCommentsSummary.Visible = false;
-
-                litHelpfulLikes.Text = litHelpfulLikes2.Text = CommunityHelper.GetTotalLikes(ObjBasicArticle.DefaultArticlePage.ContentId).ToString();
-                try
-                {
-                    litCommentCount.Text = litCommentCount2.Text = CommunityHelper.GetTotalComments(ObjBasicArticle.DefaultArticlePage.BlogId.Raw, ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw).ToString();
-                }
-                catch
-                {
-                    litCommentCount.Text = litCommentCount2.Text = "0";
-                }
                 //if (ObjBasicArticle.DefaultArticlePage.HideRelatedActiveLinks.Checked == false) // Show Articles
                 //{
                 //    DefaultArticlePageItem ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;

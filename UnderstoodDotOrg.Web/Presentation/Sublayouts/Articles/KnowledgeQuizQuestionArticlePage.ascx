@@ -16,17 +16,27 @@
                     <%--Question 1 of 10--%>
                 </div>
                 <h3><%--True or False? Kids with dyslexia can never learn what other kids learn.--%>
-                    <sc:FieldRenderer ID="frQuestionTitle" runat="server" FieldName="Question Title" />
+                    <sc:FieldRenderer ID="frQuestionTitle" runat="server" FieldName="Question" />
                 </h3>
                 <asp:Panel ID="pnlQuestion" runat="server" CssClass="answer-choices">
                     <%-- Two buttons for Boolean Question --%>
+                    <h4 class="question-counter">
+                    Question 1 of 10
+                    </h4>
+                    <h3>True or False? Kids with dyslexia can never learn what other kids learn.</h3>
                     <div class="answer-choices">
+                    <button type="button" class="button answer-choice-true rs_skip">True</button>
+                    <button type="button" class="button gray answer-choice-false rs_skip">False</button>
+                    </div>
+                    <asp:Panel ID="pnlTrueFalse" runat="server" CssClass="answer-choices" Visible="false">
                         <asp:PlaceHolder ID="phBoolean" runat="server">
                             <%--<button type="button" class="answer-choice-true">True</button>
                     <button type="button" class="answer-choice-false">False</button>--%>
-                            <asp:Button ID="btnTrue" runat="server" Text="True" CssClass="answer-choice-true" OnClick="btnTrue_Click" />
-                            <asp:Button ID="btnFalse" runat="server" Text="False" CssClass="answer-choice-false" OnClick="btnFalse_Click" />
+                            <asp:Button ID="btnTrue" runat="server" Text="True" CssClass="button answer-choice-true rs_skip" OnClick="btnTrue_Click" />
+                            <asp:Button ID="btnFalse" runat="server" Text="False" CssClass="button gray answer-choice-false rs_skip" OnClick="btnFalse_Click" />
                         </asp:PlaceHolder>
+                    </asp:Panel>
+                    <asp:Panel ID="pnlRadioQuestion" runat="server" Visible="false">
                         <%-- OR --%>
                         <%-- Options for list style Question --%>
                         <asp:PlaceHolder ID="phOption" runat="server">
@@ -37,27 +47,10 @@
                             <asp:DropDownList ID="ddlAnswer" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlAnswer_SelectedIndexChanged">
                             </asp:DropDownList>
                         </asp:PlaceHolder>
-                    </div>
-                    <%--  <ul>
-                        <li>
-                            <label>
-                                <input type="radio" name="example">
-                                <span>Doing crafts or art projects</span></label></li>
-                        <li>
-                            <label>
-                                <input type="radio" name="example">
-                                <span>Trying to solve mysteries, riddles, or crossword puzzles</span></label></li>
-                        <li>
-                            <label>
-                                <input type="radio" name="example">
-                                <span>Writing a journal or blogging</span></label></li>
-                        <li>
-                            <label>
-                                <input type="radio" name="example">
-                                <span>Reflecting on your life and your future</span></label></li>
-                    </ul>--%>
+                   </asp:Panel>
                 </asp:Panel>
-                <asp:Panel ID="pnlResult" runat="server">
+
+                <asp:Panel ID="pnlResult" runat="server" Visible="false">
                     <p class="correctness-headline">
                         <span class="correct-incorrect correct"></span>
                         <asp:Label ID="lblCorrect" runat="server" Text="Correct"></asp:Label>
@@ -74,7 +67,22 @@
                     </div>
                 </asp:Panel>
             </div>
-            <!-- END PARTIAL: knowledge-quiz-a13a -->
+            <div class="knowledge-quiz">
+              <h4 class="question-counter">
+                Question 4 of 10
+              </h4>
+              <fieldset>
+                <legend>Which of the following symptoms might signal dyslexia?</legend>
+                <div class="answer-choices">
+                  <ul>
+                    <li><label for="r1"><input type="radio" "id="r1" name="example"> <span>Doing crafts or art projects</span></label></li>
+                    <li><label for="r2"><input type="radio" "id="r2" name="example"> <span>Trying to solve mysteries, riddles, or crossword puzzles</span></label></li>
+                    <li><label for="r3"><input type="radio" "id="r3" name="example"> <span>Writing a journal or blogging</span></label></li>
+                    <li><label for="r4"><input type="radio" "id="r4" name="example"> <span>Reflecting on your life and your future</span></label></li>
+                  </ul>
+                </div>
+              <fieldset>
+            </fieldset></fieldset></div>
         </div>
 
         <div class="col col-1 sidebar-spacer"></div>
@@ -121,7 +129,7 @@
 <!-- BEGIN PARTIAL: tools -->
 <!-- Tools -->
 
-<div class="container mini-tools-wrap" style="background-image: url(http://understood.org.local/Presentation/includes/img/bg-subtopic-minitools.jpg)">
+<div runat="server" visible="false" class="container mini-tools-wrap" style="background-image: url(http://understood.org.local/Presentation/includes/img/bg-subtopic-minitools.jpg)">
 
     <div class="row">
 

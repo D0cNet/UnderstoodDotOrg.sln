@@ -7,72 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
     
     
-    public partial class Glossary_Article {
+    public partial class FoundHelpfulAndCommentCountsSideColumn {
         
         /// <summary>
-        /// frIntro control.
+        /// lblHelpfulCountMobile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frIntro;
+        protected global::System.Web.UI.WebControls.Label lblHelpfulCountMobile;
         
         /// <summary>
-        /// rptAlphabet control.
+        /// ltlFoundThisHelpfulMobile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptAlphabet;
+        protected global::System.Web.UI.WebControls.Literal ltlFoundThisHelpfulMobile;
         
         /// <summary>
-        /// rptTermCollection control.
+        /// lblCommentCountMobile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTermCollection;
+        protected global::System.Web.UI.WebControls.Label lblCommentCountMobile;
         
         /// <summary>
-        /// SBReviewedBy control.
+        /// ltlCommentsMobile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout SBReviewedBy;
+        protected global::System.Web.UI.WebControls.Literal ltlCommentsMobile;
         
         /// <summary>
-        /// Sublayout1 control.
+        /// lblHelpfulCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout1;
+        protected global::System.Web.UI.WebControls.Label lblHelpfulCount;
         
         /// <summary>
-        /// slKeepReading control.
+        /// ltlFoundThisHelpful control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout slKeepReading;
+        protected global::System.Web.UI.WebControls.Literal ltlFoundThisHelpful;
         
         /// <summary>
-        /// sbSidebarPromo control.
+        /// lblCommentCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbSidebarPromo;
+        protected global::System.Web.UI.WebControls.Label lblCommentCount;
+        
+        /// <summary>
+        /// ltlComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltlComments;
     }
 }

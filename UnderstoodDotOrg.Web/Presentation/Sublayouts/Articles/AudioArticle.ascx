@@ -1,35 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AudioArticle.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.AudioArticle" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-<div class="container article-intro">
-    <div class="row">
-        <!-- helpful count -->
-        <div class="col col-10 article-intro-count multiple">
-            <!-- BEGIN PARTIAL: helpful-count -->
-            <div class="count-helpful">
-                <a href="REPLACE"><span>34</span>Found this helpful</a>
-            </div>
-            <!-- END PARTIAL: helpful-count -->
-            <!-- BEGIN PARTIAL: comments-count -->
-            <div class="count-comments">
-                <a href="REPLACE"><span>19</span>Comments</a>
-            </div>
-            <!-- END PARTIAL: comments-count -->
-        </div>
 
-        <!-- intro-text -->
-        <div class="col col-13 offset-1">
-            <!-- BEGIN PARTIAL: article-intro-text -->
-            <div class="article-intro-text">
-                <%--<p>This would be the intro text to the slideshow. It should run about 35 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum convallis risus id felis.</p> --%>
-                <sc:FieldRenderer ID="frAudioIntro" runat="server" FieldName="Intro Text" />
-            </div>
-            <!-- END PARTIAL: article-intro-text -->
-        </div>
-
-    </div>
-    <!-- .row -->
-</div>
-<!-- .container -->
+<sc:Sublayout ID="Sublayout1" Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCounts.ascx" runat="server"></sc:Sublayout>
 
 <div class="container">
     <div class="row">

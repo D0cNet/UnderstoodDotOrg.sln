@@ -259,7 +259,18 @@
     <Compile Include="SitecoreCIG\Poses\General\PromoItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\SocialMediaItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\TimeZoneItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\ToolkitArticlePageTools\ArticleToolkitResourceItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\ToolkitArticlePageTools\AudioToolkitResourceItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\ToolkitArticlePageTools\PDFToolkitResourceItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\ToolkitArticlePageTools\VideoToolkitResourceItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\ToolkitArticlePageTools\WordToolkitResourceItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\WelcomeTourItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\PageResources\Folders\KnowledgeQuizArticlePage\KnowledgeQuizQuestionsFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\PageResources\Folders\KnowledgeQuizArticlePage\KnowledgeQuizResultsFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\PageResources\Items\KnowledgeQuizArticlePage\BaseKnowledgeQuizQuestionItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\PageResources\Items\KnowledgeQuizArticlePage\KnowledgeQuizResultItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\PageResources\Items\KnowledgeQuizArticlePage\MultipleChoiceQuestionItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\PageResources\Items\KnowledgeQuizArticlePage\TrueFalseQuestionItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutExpertsItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutExpertsItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutPartnersItem.base.cs" />
@@ -328,6 +339,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\KnowledgeQuizQuestionArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\KnowledgeQuizResultsArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\KnowledgeQuizResultsArticlePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\LandingPageResourceArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SimpleExpertArticle\SimpleExpertAddQuestionPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SimpleExpertArticle\SimpleExpertAddQuestionPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SimpleExpertArticle\SimpleExpertArticleItem.base.cs" />
@@ -340,6 +352,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\TextOnlyTipsArticle\TextOnlyTipsArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\TextOnlyTipsArticle\TextTipPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\TextOnlyTipsArticle\TextTipPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ToolkitArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\VideoArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\VideoArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\Blogs\BlogsPostPageItem.base.cs" />

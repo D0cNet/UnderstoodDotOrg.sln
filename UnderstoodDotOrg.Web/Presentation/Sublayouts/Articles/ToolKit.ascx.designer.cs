@@ -10,34 +10,25 @@
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     
     
-    public partial class VideoArticle {
+    public partial class ToolKit {
         
         /// <summary>
-        /// Sublayout1 control.
+        /// iconType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl iconType;
         
         /// <summary>
-        /// frVideo control.
+        /// rptDownloads control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frVideo;
-        
-        /// <summary>
-        /// frTranscript control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frTranscript;
+        protected global::System.Web.UI.WebControls.Repeater rptDownloads;
         
         /// <summary>
         /// SBReviewedBy control.
@@ -47,5 +38,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Sublayout SBReviewedBy;
+        
+        /// <summary>
+        /// Sublayout1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout1;
     }
 }

@@ -395,15 +395,9 @@
         </div>
         <!-- right bar -->
         <div class="col col-5 offset-1">
-            <!-- BEGIN PARTIAL: helpful-count -->
-            <div class="count-helpful">
-                <a href="REPLACE"><span> <asp:Literal Text="" ID="litHelpfulLikes" runat="server" /></span>Found this helpful</a>
-            </div>
-            <!-- END PARTIAL: helpful-count -->
-            <!-- BEGIN PARTIAL: comments-count -->
-            <div class="count-comments">
-                <a href="REPLACE"><span><asp:Literal Text="" ID="litCommentCount" runat="server" /></span>Comments</a>
-            </div>
+            
+            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" runat="server"></sc:Sublayout>
+
             <!-- END PARTIAL: comments-count -->
             <div class="find-this-helpful-large">
                 <!-- Module within only appears in over 650px window width-->

@@ -10,40 +10,8 @@
     }(document));
 </script>
 <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-<div class="count-mobile">
-    <!-- BEGIN PARTIAL: helpful-count -->
-    <div class="count-helpful">
-        <a href="REPLACE"><span>34</span>Found this helpful</a>
-    </div>
-    <!-- END PARTIAL: helpful-count -->
-</div>
-<div class="container article-intro">
-    <div class="row">
-        <!-- helpful count -->
-        <div class="col col-8 article-intro-count">
-            <!-- BEGIN PARTIAL: helpful-count -->
-            <div class="count-helpful">
-                <a href="REPLACE"><span>34</span>Found this helpful</a>
-            </div>
-            <!-- END PARTIAL: helpful-count -->
-        </div>
 
-        <!-- intro-text -->
-        <div class="col col-14 offset-1">
-            <!-- BEGIN PARTIAL: article-intro-text -->
-            <div class="article-intro-text">
-                <p>
-                    <%--This would be the intro text to the slideshow. It should run about 35 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum convallis risus id felis.--%>
-                    <sc:FieldRenderer ID="frIntroText" runat="server" FieldName="Body Content" />
-                </p>
-            </div>
-            <!-- END PARTIAL: article-intro-text -->
-        </div>
-
-    </div>
-    <!-- .row -->
-</div>
-<!-- .container -->
+<sc:Sublayout ID="Sublayout1" Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulCountOnly.ascx" runat="server"></sc:Sublayout>
 
 <div class="container article slideshow">
     <div class="row">

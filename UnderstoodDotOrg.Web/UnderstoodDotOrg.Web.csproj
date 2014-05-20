@@ -485,6 +485,27 @@
     <Compile Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulAndCommentCounts.ascx.designer.cs">
       <DependentUpon>FoundHelpfulAndCommentCounts.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulAndCommentCountsSideColumn.ascx.cs">
+      <DependentUpon>FoundHelpfulAndCommentCountsSideColumn.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulAndCommentCountsSideColumn.ascx.designer.cs">
+      <DependentUpon>FoundHelpfulAndCommentCountsSideColumn.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulCountOnly.ascx.cs">
+      <DependentUpon>FoundHelpfulCountOnly.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulCountOnly.ascx.designer.cs">
+      <DependentUpon>FoundHelpfulCountOnly.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulCountOnlySideColumn.ascx.cs">
+      <DependentUpon>FoundHelpfulCountOnlySideColumn.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulCountOnlySideColumn.ascx.designer.cs">
+      <DependentUpon>FoundHelpfulCountOnlySideColumn.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx.cs">
       <DependentUpon>Promotionals List.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -547,6 +568,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\TipsArticle.ascx.designer.cs">
       <DependentUpon>TipsArticle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\ToolKit.ascx.cs">
+      <DependentUpon>ToolKit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\ToolKit.ascx.designer.cs">
+      <DependentUpon>ToolKit.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\VideoArticle.ascx.cs">
       <DependentUpon>VideoArticle.ascx</DependentUpon>
@@ -2297,6 +2325,9 @@
     <Content Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\DidYouFindThisHelpful.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulAndCommentCounts.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulAndCommentCountsSideColumn.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulCountOnly.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulCountOnlySideColumn.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\ReviewerInfo.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\ShareContent.ascx" />
@@ -2306,6 +2337,7 @@
     <Content Include="Presentation\Sublayouts\Articles\SuggestArticlePageCarousal.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TextOnlyTipsArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TipsArticle.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\ToolKit.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\VideoArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\AllBlogsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\AllBlogsPageHeader.ascx" />

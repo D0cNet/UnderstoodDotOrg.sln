@@ -7,42 +7,57 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.BaseforQuiz;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.PageResources.Folders.KnowledgeQuizArticlePage;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.PageResources.Items.KnowledgeQuizArticlePage;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
 
     public partial class KnowledgeQuizQuestionrArticlePage : System.Web.UI.UserControl
     {
-        KnowledgeQuizQuestionArticlePageItem ObjKnowledgeQuiz;
+        private KnowledgeQuizQuestionArticlePageItem ObjKnowledgeQuiz = Sitecore.Context.Item;
+        private Item PageResources = Sitecore.Context.Item.Children.FirstOrDefault();
+        private int QuestionNumber;
+        private string type;
+        private int Answer;
+        List<Item> Questions;
+
         List<KnowledgeQuizQuestion> _KnowledgeQuizQuestions;
+
+
         string _panletoShow;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjKnowledgeQuiz = new KnowledgeQuizQuestionArticlePageItem(Sitecore.Context.Item);
-            if (ObjKnowledgeQuiz != null)
-            {
-                if (IsPostBack == false)
-                {
-                    if (Session["CurrentQ"] == null) // loading first time or error while quiz in progress
-                    {
-                        //Reset all session variables
-                        Session["QuizQs"] = null;
-                        Session["ShowPanel"] = null;
-                    }
-                    if (Session["QuizQs"] == null) //loading first time , load  all questions of quiz
-                    {
-                        GetAllQuizQuestions();//load all question and make 1st question as curent question
-                        pnlQuestion.Visible = true;
-                        pnlResult.Visible = false;
-                    }
-                    ShowPanel();
-                }
-                else
-                {
-                     // ShowPanel();
-                }
+            Item questionsFolder = PageResources.Children.ToList().Where(i => i.IsOfType(KnowledgeQuizQuestionsFolderItem.TemplateId)).FirstOrDefault();
+            if (questionsFolder != null)
+                Questions = questionsFolder.Children.ToList();
 
+            if (Request.QueryString["q"] != null)
+            {
+                QuestionNumber = Int32.Parse(Request.QueryString["q"].ToString());
+                lblQuestionCounter.Text = "Question " + QuestionNumber.ToString() + " of " + Questions.Count.ToString();
+
+                Item genericQuestion = Questions[QuestionNumber];
+                frQuestionTitle.Item = genericQuestion;
+
+                if (genericQuestion.IsOfType(TrueFalseQuestionItem.TemplateId))
+                {
+                    TrueFalseQuestionItem Question = (TrueFalseQuestionItem)genericQuestion;
+                    type = "bool";
+                    string stringAnswer = Question.CorrectAnswer.Item.Fields["Content Title"].ToString();
+                    if (stringAnswer == "True")
+                        Answer = 1;
+                    else
+                        Answer = 0;
+
+                    pnlTrueFalse.Visible = true;
+                }
+            }
+            else
+            { 
+            
             }
         }
 
@@ -271,35 +286,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         }
         protected void btnTrue_Click(object sender, EventArgs e)
         {
-            if (Session["CurrentQ"] != null)
-            {
-                KnowledgeQuizQuestion tempQ = (KnowledgeQuizQuestion)Session["CurrentQ"];
-                if (tempQ.Question.QuestionType.Raw.ToLower().Contains("boolean"))
-                {
-                    tempQ.UserAnswerBool = true;
-                }
-                UpdateUserSelectedAnswer(tempQ);
+            pnlResult.Visible = true;
 
-            }
-
-            Session["ShowPanel"] = "Result";
-            ShowPanel();
+            if (Answer == 1)
+                lblIncorrect.Visible = false;
+            else
+                lblCorrect.Visible = false;
         }
 
         protected void btnFalse_Click(object sender, EventArgs e)
         {
-            if (Session["CurrentQ"] != null)
-            {
-                KnowledgeQuizQuestion tempQ = (KnowledgeQuizQuestion)Session["CurrentQ"];
-                if (tempQ.Question.QuestionType.Raw.ToLower().Contains("boolean"))
-                {
-                    tempQ.UserAnswerBool = false;
-                }
-                UpdateUserSelectedAnswer(tempQ);
-            }
+            pnlResult.Visible = true;
 
-            Session["ShowPanel"] = "Result";
-            ShowPanel();
+            if (Answer == 0)
+                lblIncorrect.Visible = false;
+            else
+                lblCorrect.Visible = false;
         }
 
         protected void rblAnswer_SelectedIndexChanged(object sender, EventArgs e)

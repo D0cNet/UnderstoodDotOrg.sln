@@ -1,108 +1,47 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Articles Landing Page.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Articles_Landing_Page" %>
 
-<!-- END PARTIAL: pagetopic -->
-<div class="container article-intro">
-    <div class="row">
-        <!-- helpful count -->
-        <div class="col col-10 article-intro-count multiple">
-            <!-- BEGIN PARTIAL: helpful-count -->
-            <div class="count-helpful">
-                <a href="REPLACE"><span>34</span>Found this helpful</a>
-            </div>
-            <!-- END PARTIAL: helpful-count -->
-            <!-- BEGIN PARTIAL: comments-count -->
-            <div class="count-comments">
-                <a href="REPLACE"><span>19</span>Comments</a>
-            </div>
-            <!-- END PARTIAL: comments-count -->
-        </div>
+<sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCounts.ascx" runat="server"></sc:Sublayout>
 
-        <!-- intro-text -->
-        <div class="col col-13 offset-1 article-intro-left">
-            <!-- BEGIN PARTIAL: article-intro-text -->
-            <div class="article-intro-text">
-                <p>This would be the intro text to the slideshow. It should run about 35 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum convallis risus id felis.</p>
-            </div>
-            <!-- END PARTIAL: article-intro-text -->
-        </div>
+<asp:Repeater ID="rptFeaturedArticles" runat="server" OnItemDataBound="rptFeaturedArticles_ItemDataBound">
+    <ItemTemplate>
+        <asp:Repeater ID="rptRow" runat="server" OnItemDataBound="rptRow_ItemDataBound">
+            <HeaderTemplate>
+                <div class="container common-questions">
+                    <div class="row">
+            </HeaderTemplate>
+            <ItemTemplate>
+                <figure class="col col-5 offset-<%# Container.ItemIndex + 1 %>">
+                    <sc:FieldRenderer ID="frThumbnail" runat="server" FieldName="Content Thumbnail"></sc:FieldRenderer>
+                </figure>
+                <div class="col col-4 offset-1 question">
+                    <asp:HyperLink ID="hypArticleLink" runat="server"></asp:HyperLink>
+                </div>
+            </ItemTemplate>
+            <FooterTemplate>
+                    </div>
+                </div>
+            </FooterTemplate>
+        </asp:Repeater>
+    </ItemTemplate>
+</asp:Repeater>
 
-    </div>
-    <!-- .row -->
-</div>
-<!-- .container -->
 
-<!-- BEGIN PARTIAL: common-questions -->
-<div class="container common-questions">
-    <div class="row">
-        <!-- article -->
-        <figure class="col col-5 offset-1">
-            <img src="http://placehold.it/189x109" />
-        </figure>
-        <div class="col col-4 offset-1 question">
-            <a href="REPLACE">What is the difference between ADD and ADHD?</a>
-        </div>
-        <figure class="col col-5 offset-2">
-            <img src="http://placehold.it/189x109" />
-        </figure>
-        <div class="col col-4 offset-1 question">
-            <a href="REPLACE">Do boys and girls show the same ADD/ADHD symptoms?</a>
-        </div>
-    </div>
-</div>
-<!-- .container -->
-<div class="container common-questions">
-    <div class="row">
-        <!-- article -->
-        <figure class="col col-5 offset-1">
-            <img src="http://placehold.it/189x109" />
-        </figure>
-        <div class="col col-4 offset-1 question">
-            <a href="REPLACE">What is the difference between ADD and ADHD?</a>
-        </div>
-        <figure class="col col-5 offset-2">
-            <img src="http://placehold.it/189x109" />
-        </figure>
-        <div class="col col-4 offset-1 question">
-            <a href="REPLACE">Do boys and girls show the same ADD/ADHD symptoms?</a>
-        </div>
-    </div>
-</div>
-<!-- .container -->
-<div class="container common-questions">
-    <div class="row">
-        <!-- article -->
-        <figure class="col col-5 offset-1">
-            <img src="http://placehold.it/189x109" />
-        </figure>
-        <div class="col col-4 offset-1 question">
-            <a href="REPLACE">What is the difference between ADD and ADHD?</a>
-        </div>
-        <figure class="col col-5 offset-2">
-            <img src="http://placehold.it/189x109" />
-        </figure>
-        <div class="col col-4 offset-1 question">
-            <a href="REPLACE">Do boys and girls show the same ADD/ADHD symptoms?</a>
-        </div>
-    </div>
-</div>
-<!-- .container -->
-<!-- END PARTIAL: common-questions -->
 <div class="container article">
     <div class="row">
         <div class="col col-15 offset-1">
             <!-- BEGIN PARTIAL: reviewed-by -->
-            <p class="reviewed-by"><span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author"><a href="REPLACE">Dr. Samantha Frank</a></span><span class="dot"></span> <span class="reviewed-by-date">12&nbsp;Dec&nbsp;&apos;13</span></p>
+            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx"/>
             <!-- END PARTIAL: reviewed-by -->
             <!-- BEGIN PARTIAL: find-helpful -->
-            <div class="find-this-helpful content">
+            <div class="find-this-helpful content" id="count-helpful-content rs_read_this">
 
-                <h4>Did you find this helpful?</h4>
+                <h4><asp:Literal ID="ltlDidYouFindThisHelpful" runat="server"></asp:Literal></h4>
                 <ul>
                     <li>
-                        <button class="helpful-yes">Yes</button>
+                        <button class="button yes rs_skip"><asp:Literal ID="ltlYes" runat="server"></asp:Literal></button>
                     </li>
                     <li>
-                        <button class="helpful-no">No</button>
+                        <button class="button no gray rs_skip"><asp:Literal ID="ltlNo" runat="server"></asp:Literal></button>
                     </li>
                 </ul>
                 <div class="clearfix"></div>

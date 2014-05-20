@@ -124,14 +124,7 @@
         <!-- right bar -->
          <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
             <!-- BEGIN PARTIAL: helpful-count -->
-            <div class="count-helpful">
-                <a href="REPLACE"><span>34</span>Found this helpful</a>
-            </div>
-            <!-- END PARTIAL: helpful-count -->
-            <!-- BEGIN PARTIAL: comments-count -->
-            <div class="count-comments">
-                <a href="REPLACE"><span>19</span>Comments</a>
-            </div>
+            <sc:Sublayout ID="Sublayout1" Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" runat="server"></sc:Sublayout>
             <!-- END PARTIAL: comments-count -->
             <!-- BEGIN PARTIAL: find-helpful -->
             <div class="find-this-helpful sidebar">
