@@ -153,6 +153,46 @@ namespace UnderstoodDotOrg.Common
                 }
             }
 
+            public static Guid MyAccountFavorites
+            {
+                get
+                {
+                    return new Guid("{2A5936E4-1C1A-4F4C-8DDE-EB768BD43E81}");
+                }
+            }
+            
+            public static Guid MyAccountConnections
+            {
+                get
+                {
+                    return new Guid("{840AEEF4-5294-4A0D-8D1C-6839E39FE3FE}");
+                }
+            }
+
+            public static Guid MyAccountEvents
+            {
+                get
+                {
+                    return new Guid("{355E4A54-A133-4FD4-B796-8C515F194751}");
+                }
+            }
+
+            public static Guid MyAccountGroups
+            {
+                get
+                {
+                    return new Guid("{1041DF93-81A2-46FD-910F-8927F22DA4F1}");
+                }
+            }
+
+            public static Guid MyAccountComments
+            {
+                get
+                {
+                    return new Guid("{E092EB37-B488-4A42-97CC-7EA875CCF877}");
+                }
+            }
+
             public static Guid SignIn
             {
                 get

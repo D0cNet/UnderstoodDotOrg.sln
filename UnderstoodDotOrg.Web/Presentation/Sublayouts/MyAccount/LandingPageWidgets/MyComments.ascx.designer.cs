@@ -29,5 +29,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView topComments;
+        
+        /// <summary>
+        /// hypCommentsTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypCommentsTab;
     }
 }

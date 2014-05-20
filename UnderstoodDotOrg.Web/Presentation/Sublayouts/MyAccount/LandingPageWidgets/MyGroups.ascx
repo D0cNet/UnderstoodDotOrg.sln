@@ -2,15 +2,19 @@
 <!-- BEGIN PARTIAL: account-landing-mygroups -->
 <div class="landing-mygroups landing-modules rs_read_this">
     <header class="clearfix">
-        <h3>My Groups<span class="landing-module-count">100</span></h3>
+        <h3>My Groups<span class="landing-module-count"><asp:Literal ID="litCount" runat="server"></asp:Literal></span></h3>
     </header>
 
     <ul class="landing-module-items">
-        <li><a href="REPLACE">labore sed facere pariatur iure quasi rerum odio asperiores</a></li>
-        <li><a href="REPLACE">amet sint eum numquam ad et blanditiis sint in quisquam</a></li>
-        <li><a href="REPLACE">illo et ut at eos reprehenderit perferendis accusantium incidunt</a></li>
+        <asp:Repeater ID="rptGroups" runat="server" OnItemDataBound="rptGroups_ItemDataBound">
+            <ItemTemplate>
+                <li><asp:HyperLink ID="hypGroupsLink" runat="server">labore sed facere pariatur iure quasi rerum odio asperiores</asp:HyperLink></li>
+            </ItemTemplate>
+        </asp:Repeater>
     </ul>
-    <div class="bottom rs_skip"><a href="REPLACE">See All Groups</a></div>
+    <div class="bottom rs_skip">
+        <asp:HyperLink ID="hypGroupsTab" runat="server">See All Favorites</asp:HyperLink>
+    </div>
 
 </div>
 <!-- /.landing-notifications /.landing-modules -->

@@ -14,9 +14,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Url { get; set; }
         public string Body { get; set; }
         public string ParentId { get; set; }
+        public string ParentTitle { get; set; }
+        public string ParentTitleUrl { get; set; }
         public string PublishedDate { get; set; }
         public string Likes { get; set; }
         public string CommentId { get; set; }
+        public string CommentGroup { get; set; }
+        public string CommentGroupUrl { get; set; }
         public string ContentId { get; set; }
         public string CommentContentTypeId { get; set; }
         public string AuthorId { get; set; }
@@ -193,13 +197,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public Notification() { }
     }
 
-    //public class Group
-    //{
-    //    public string TelligentGroupID { get; set; }
-    //    public string GroupID { get; set; }
-    //    public string ModeratorID { get; set; }
-    //    public string NumOfMembers {get;set;}
-    //    public string NumOfDiscussions { get; set; }
-    //    public string Description { get; set; }
-    //}
+    public class Group
+    {
+        public string TelligentGroupID { get; set; }
+        public string GroupID { get; set; }
+        public string ModeratorID { get; set; }
+        public string NumOfMembers { get; set; }
+        public string NumOfDiscussions { get; set; }
+        public string Description { get; set; }
+    }
 }

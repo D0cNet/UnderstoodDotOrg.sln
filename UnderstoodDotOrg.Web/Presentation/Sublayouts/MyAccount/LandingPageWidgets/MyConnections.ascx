@@ -321,7 +321,9 @@
                 <!-- END PARTIAL: community/member_card -->
             </div>
         </section>
-        <div class="bottom rs_skip"><a href="REPLACE">See All Connections</a></div>
+        <div class="bottom rs_skip">
+            <asp:HyperLink ID="hypConnectionsTab" runat="server">See All Connections</asp:HyperLink>
+        </div>
     </div>
     <!-- /.landing-my-connections.landing-modules -->
 </div>

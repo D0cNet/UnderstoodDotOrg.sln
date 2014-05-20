@@ -23,32 +23,9 @@
                   </li>
         </ItemTemplate>
     </asp:ListView>
-
-        <%--<asp:Repeater ID="topComments" runat="server">
-            
-            <HeaderTemplate>
-              <ul class="landing-module-items">
-            </HeaderTemplate>
-            <ItemTemplate>
-                   <li>
-                    <span class="comment-wrap">
-                        <asp:HyperLink NavigateUrl="#" CssClass="comment-link" ID="cLink" runat="server" />
-
-                        <p class="comment-description"><asp:Literal ID="cDesc" runat="server"></asp:Literal></p>
-                    </span>
-                  </li>
-
-            </ItemTemplate>
-            
-            <FooterTemplate>
-             </ul>
-            </FooterTemplate>
-            
-        </asp:Repeater>--%>
-    
-  
-
-    <div class="bottom"><a href="REPLACE">See All Comments</a></div>
+    <div class="bottom">
+        <asp:HyperLink ID="hypCommentsTab" runat="server">See All Comments</asp:HyperLink>
+    </div>
   
 </div><!-- /.landing-notifications /.landing-modules -->
 <!-- END PARTIAL: account-landing-mycomments -->

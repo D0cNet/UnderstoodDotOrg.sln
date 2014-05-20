@@ -5,24 +5,23 @@
         <h3>Upcoming Events</h3>
     </header>
     <ul class="landing-module-items">
-        <li>
-            <span class="event-wrap">
-                <a href="REPLACE">excepturi illum aut ducimus nulla optio ad natus corrupti ut</a>
-                <a href="REPLACE" class="event-type">Webinar</a>
-                <span class="timestamp">Dec 12 2014 <span class="dot"></span>2:48PM
-                </span>
-            </span>
-        </li>
-        <li>
-            <span class="event-wrap">
-                <a href="REPLACE">corporis beatae dolorem aut quia dignissimos est similique et et</a>
-                <a href="REPLACE" class="event-type">Q&A</a>
-                <span class="timestamp">Dec 20 2014 <span class="dot"></span>2:48PM
-                </span>
-            </span>
-        </li>
+        <asp:Repeater ID="rptEvents" runat="server" OnItemDataBound="rptEvents_ItemDataBound">
+            <ItemTemplate>
+                <li>
+                    <span class="event-wrap">
+                        <asp:HyperLink ID="hypEventLink" runat="server"></asp:HyperLink>
+                        <asp:HyperLink ID="hypEventTypeLink" CssClass="event-type" runat="server">Webinar</asp:HyperLink>
+                        <span class="timestamp">
+                            <asp:Literal ID="litDate" runat="server"></asp:Literal> <span class="dot"></span><asp:Literal ID="litTime" runat="server"></asp:Literal>
+                        </span>
+                    </span>
+                </li>
+            </ItemTemplate>
+        </asp:Repeater>
     </ul>
-    <div class="bottom rs_skip"><a href="REPLACE">See All Upcoming Events</a></div>
+    <div class="bottom rs_skip">
+        <asp:HyperLink ID="hypEventsTab" runat="server">See All Upcoming Events</asp:HyperLink>
+    </div>
 </div>
 <!-- /.landing-notifications /.landing-modules -->
 <!-- END PARTIAL: account-landing-events -->

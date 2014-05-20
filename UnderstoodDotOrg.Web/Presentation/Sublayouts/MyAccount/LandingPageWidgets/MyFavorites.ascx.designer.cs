@@ -11,5 +11,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     
     
     public partial class MyFavorites {
+        
+        /// <summary>
+        /// litCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litCount;
+        
+        /// <summary>
+        /// rptFavorites control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptFavorites;
+        
+        /// <summary>
+        /// hypFavoritesTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypFavoritesTab;
     }
 }

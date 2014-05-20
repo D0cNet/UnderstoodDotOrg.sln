@@ -499,6 +499,7 @@
   <ItemGroup>
     <Folder Include="Facebook\" />
     <Folder Include="Luminate\" />
+    <Folder Include="Models\TelligentCommunity\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnderstoodDotOrg.Common\UnderstoodDotOrg.Common.csproj">
