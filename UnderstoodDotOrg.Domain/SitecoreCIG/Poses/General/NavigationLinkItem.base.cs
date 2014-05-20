@@ -65,6 +65,15 @@ public CustomImageField Image
 }
 
 
+public CustomCheckboxField DisplayOnlyForLoggedInUsers
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Display Only For Logged In Users"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

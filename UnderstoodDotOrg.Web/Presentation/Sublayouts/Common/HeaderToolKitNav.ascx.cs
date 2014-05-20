@@ -27,10 +27,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             var parentToolkitFolder = HeaderFolder.GetParentToolkitFolder();
             if (parentToolkitFolder != null)
             {
-                var result = parentToolkitFolder.GetNavigationLinkItems();
-                if (result != null)
+                var links = parentToolkitFolder.GetNavigationLinkItems();
+                if (links != null && links.Any())
                 {
-                    rptParentToolkit.DataSource = result;
+                    // TODO: add extension to filter out logged in links?
+                    if (!IsUserLoggedIn)
+                    {
+                        links = links.Where(x => !x.DisplayOnlyForLoggedInUsers.Checked);
+                    }
+                    rptParentToolkit.DataSource = links;
                     rptParentToolkit.DataBind();
                 }
             }
