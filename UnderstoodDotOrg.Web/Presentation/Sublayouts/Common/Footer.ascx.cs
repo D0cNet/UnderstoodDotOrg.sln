@@ -9,11 +9,27 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
+using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
     public partial class Footer : System.Web.UI.UserControl
     {
+        protected string NewsletterSignUpUrl
+        {
+            get
+            {
+                Item item = Sitecore.Context.Database.GetItem(Constants.Pages.NewsletterSignup);
+                if (item != null)
+                {
+                    return item.GetUrl();
+                }
+
+                return String.Empty;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             FooterFolderItem footerFolderItem = GetFooter();

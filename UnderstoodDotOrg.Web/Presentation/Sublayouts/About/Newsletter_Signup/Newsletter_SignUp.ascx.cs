@@ -16,8 +16,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Clear out session
+            Session[Constants.SessionNewsletterKey] = null;
+
             BindContent();
             BindEvents();
+
+            if (!IsPostBack)
+            {
+                string email = Request.QueryString["email"] ?? String.Empty;
+                if (!String.IsNullOrEmpty(email))
+                {
+                    txtEmail.Text = email;
+                    Page.Validate();
+                    ProcessEmail();
+                }
+            }
         }
 
         private void BindContent()
@@ -32,7 +46,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
             btnSignup.Click += btnSignup_Click;
         }
 
-        void btnSignup_Click(object sender, EventArgs e)
+        private void ProcessEmail()
         {
             if (Page.IsValid)
             {
@@ -49,6 +63,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                 var item = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.NewsletterChildInfo.ToString()));
                 Response.Redirect(item.GetUrl());
             }
+        }
+
+        void btnSignup_Click(object sender, EventArgs e)
+        {
+            ProcessEmail();
         }
     }
 }

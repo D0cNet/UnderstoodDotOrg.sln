@@ -50,3 +50,19 @@ jQuery(function () {
 		}
 	});
 });
+
+// Footer email
+(function($) {
+	function email_clickHandler(e) {
+		e.preventDefault();
+		$input = $(".personalized-email-form input[type='text']");
+		
+		if ($.trim($input.val()) !== "") {
+			location.href = $(this).data("path") + "?email=" + $input.val();
+		}
+	}
+	
+	$(document).ready(function() {
+		$(".personalized-email-form input[type='submit']").on("click", email_clickHandler);
+	});
+})(jQuery);

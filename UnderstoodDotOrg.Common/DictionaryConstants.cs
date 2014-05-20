@@ -525,7 +525,7 @@ namespace UnderstoodDotOrg.Common
         {
             get
             {
-                return Translate.TextByDomain(PosesDictionary, "First Name Error Message");
+                return Translate.TextByDomain(PosesDictionary, "Email Address Error Message");
             }
         }
 

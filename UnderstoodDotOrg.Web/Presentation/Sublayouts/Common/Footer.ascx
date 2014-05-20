@@ -26,11 +26,11 @@
 
                 <div class="form personalized-email-form">
                     <fieldset class="input-wrap">
-                        <label for="personalized-email-email" class="visuallyhidden">Enter Email Address</label>
-                        <input type="email" name="personalized-email" id="personalized-email-email" placeholder="Enter email address" aria-required="true">
+                        <label for="personalized-email-email" class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.EnterEmailAddressWatermark %></label>
+                        <input id="personalized-email-email" name="personalized-email-email" type="text" placeholder="<%= UnderstoodDotOrg.Common.DictionaryConstants.EnterEmailAddressWatermark %>" aria-required="true" />
                     </fieldset>
                     <div class="submit-button-wrap">
-                        <input type="submit" class="button" value="Sign Up">
+                        <input type="submit" class="button" data-path="<%= NewsletterSignUpUrl %>" value="<%= UnderstoodDotOrg.Common.DictionaryConstants.SubmitButtonText %>" />
                     </div>
                 </div>
 
