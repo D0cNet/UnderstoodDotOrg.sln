@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Services.Models.Telligent;
 using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.Understood.Common;
+
 using System.Text.RegularExpressions;
 using Sitecore.Links;
 using System.Collections.Specialized;
@@ -107,7 +108,10 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         nodecount++;
                     }
                 }
-                catch { } // TODO: add logging
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
             }
             return commentList;
         }
@@ -141,7 +145,10 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         }
 
                     }
-                    catch { }
+                    catch (Exception ex)
+                    {
+                        Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                    }
                 }
             }
 
@@ -159,9 +166,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 try
                 {
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-
                     var requestUrl = String.Format("{0}api.ashx/v2/comments/{1}.xml", Sitecore.Configuration.Settings.GetSetting("TelligentConfig"), commentId);
-
                     var xml = webClient.DownloadString(requestUrl);
                     var xmlDoc = new XmlDocument();
                     xmlDoc.LoadXml(xml);
@@ -172,6 +177,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 catch (Exception ex)
                 {
                     comment = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
                 }
             }
             return comment;
@@ -190,9 +196,6 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
                 //webClient.Headers.Add("Rest-Impersonate-User", userId);
                 var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "api.ashx/v2/comments.xml?UserId=" + userId;
-
-
-
                 var xml = webClient.DownloadString(requestUrl);
                 var xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(xml);
@@ -201,6 +204,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             catch (Exception ex)
             {
                 node = null;
+                Sitecore.Diagnostics.Log.Error(ex.Message, ex);
             }
             return node;
 
@@ -239,7 +243,10 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         count = Convert.ToInt32(node.Attributes["TotalCount"].Value);
                     }
                 }
-                catch { }
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
             }
 
             return count;
@@ -282,36 +289,20 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         Body = node["Body"].InnerText,
                         Title = node["Title"].InnerText,
                         ContentId = node["ContentId"].InnerText,
-                        BlogName = BlogNameById(node["BlogId"].InnerText),//Web service calling web service?  Do not like.
+                        BlogName = node["HtmlName"].InnerText,
                         PublishedDate = DataFormatHelper.FormatDate(node["PublishedDate"].InnerText),
                         Author = auth["DisplayName"].InnerText
                     };
 
                 }
-                catch { } // TODO: Add logging
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
             }
             return blogPost;
         }
-        public static string BlogNameById(string blogId)
-        {
-            var webClient = new WebClient();
 
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
-
-            var xml = webClient.DownloadString(requestUrl);
-
-            Console.WriteLine(xml);
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-            var nodes = xmlDoc.SelectNodes("/Response/Blog");
-            string blogName = nodes[0]["Name"].InnerText;
-            return blogName;
-        }
         public static List<Answer> GetAnswers(string wikiId, string wikiPageId)
         {
             List<Answer> answerList = new List<Answer>();
@@ -410,10 +401,10 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     ContentId = node["ContentId"].InnerText,
                     Body = DataFormatHelper.FormatString100(node["Body"].InnerText),
                     PublishedDate = DataFormatHelper.FormatDate(node["PublishedDate"].InnerText),
-                    BlogName = BlogNameById(node["BlogId"].InnerText),
+                    BlogName = node["HtmlName"].InnerText,
                     Author = nodes1[count]["DisplayName"].InnerText,
-                    // TODO: Fix this logic a lot.  Wow.  
-                    ItemUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + BlogNameById(node["BlogId"].InnerText) + "/" + node["Title"].InnerText, ".aspx", "")
+                      
+                    ItemUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" +  node["HtmlName"].InnerText +"/" + node["Title"].InnerText, ".aspx", "")
                 };
                 blogPosts.Add(blogPost);
                 count++;
@@ -476,6 +467,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 catch (Exception ex)
                 {
                     node = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
                 }
             }
             return node;
@@ -555,6 +547,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 catch (Exception ex)
                 {
                     node = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
                 }
             }
             return node;
@@ -595,7 +588,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             }
             catch (Exception ex)
             {
-
+                Sitecore.Diagnostics.Log.Error(ex.Message, ex);
             }
         }
         public static List<ReplyModel> ReadReplies(string forumID, string threadID)
@@ -619,14 +612,10 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     foreach (XmlNode reply in node)
                     {
                         ReplyModel rpm = new ReplyModel(reply);
-
                         replies.Add(rpm);
                         rpm = null;
                     }
-
-
                 }
-
             }
             return replies;
         }
@@ -644,7 +633,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
             }
             catch (Exception ex)
             {
-                //Bth = null;
+                th = null;
+                Sitecore.Diagnostics.Log.Error(ex.Message, ex);
             }
             return th;
         }
@@ -676,6 +666,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 catch (Exception ex)
                 {
                     Userid = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
                 }
 
 
@@ -697,6 +688,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             catch (Exception ex)
             {
                 fm = null;
+                Sitecore.Diagnostics.Log.Error(ex.Message, ex);
             }
             return fm;
         }
@@ -724,6 +716,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 }
                 catch (Exception ex)
                 {
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
                     return false;
                 }
             }
@@ -760,6 +753,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     }
                     catch (Exception ex)
                     {
+                        Sitecore.Diagnostics.Log.Error(ex.Message, ex);
                         return false;
                     }
                 }
