@@ -199,6 +199,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
     public class GroupModel
     {
+        public string Title { get; set; }
         public string LatestComment { get; set; }
         public string LatestCommentPoster { get; set; }
         public string LatestCommentLink { get; set; }
