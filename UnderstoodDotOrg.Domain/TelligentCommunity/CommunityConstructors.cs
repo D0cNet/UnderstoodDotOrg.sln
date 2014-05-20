@@ -199,12 +199,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
     public class GroupModel
     {
-        public string TopCommentTitle { get; set; }
-        public string GroupID { get; set; }
-        public string ModeratorID { get; set; }
-        public string NumOfMembers { get; set; }
-        public string NumOfDiscussions { get; set; }
-        public string Description { get; set; }
+        public string LatestComment { get; set; }
+        public string LatestCommentPoster { get; set; }
+        public string LatestCommentLink { get; set; }
+        public string NumberOfReplies { get; set; }
+        public string LatestCommentDateAndTime { get; set; }
     }
 
     public class FavoritesModel
