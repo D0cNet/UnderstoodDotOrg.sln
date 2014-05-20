@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace UnderstoodDotOrg.Domain.TelligentCommunity
 {
@@ -50,6 +51,36 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             AuthorUsername = authorUsername;
             Likes = likes;
             CommentDate = DateTime.Parse(commentDate);
+        }
+        public Comment(XmlNode xn)
+        {
+            if (xn != null)
+            {
+                XmlNode author = xn.SelectSingleNode("User");
+
+                string commentId = xn["CommentId"].InnerText;
+                string commentDate = xn["CreatedDate"].InnerText;
+                DateTime parsedDate = DateTime.Parse(commentDate);
+
+               // Id = xn["Id"].InnerText;
+                //Url = xn["Url"].InnerText;
+             //   ParentId = xn["ParentId"].InnerText;
+             //   ContentId = xn["ContentId"].InnerText;
+                IsApproved = xn["IsApproved"].InnerText;
+                ReplyCount = xn["ReplyCount"].InnerText;
+                CommentId = commentId;
+                CommentContentTypeId = xn["CommentContentTypeId"].InnerText;
+                Body = xn["Body"].InnerText;
+                PublishedDate = CommunityHelper.FormatDate(commentDate);
+                AuthorId = author["Id"].InnerText;
+                AuthorAvatarUrl = author["AvatarUrl"].InnerText;
+                AuthorDisplayName = author["DisplayName"].InnerText;
+                AuthorProfileUrl = author["ProfileUrl"].InnerText;
+                AuthorUsername = author["Username"].InnerText;
+                Likes = CommunityHelper.GetTotalLikes(commentId).ToString();
+                CommentDate = parsedDate;
+            }
+        
         }
     }
 

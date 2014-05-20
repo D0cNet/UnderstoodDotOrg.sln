@@ -116,6 +116,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     int nodecount = 0;
                     foreach (XmlNode xn in nodes)
                     {
+
                         XmlNode author = xn.SelectSingleNode("Author");
 
                         string commentId = xn["CommentId"].InnerText;
@@ -142,7 +143,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                             Likes = GetTotalLikes(commentId).ToString(),
                             CommentDate = parsedDate
                         };
-
+                       // Comment comment = new Comment(xn);
                         commentList.Add(comment);
 
                         nodecount++;
@@ -151,6 +152,36 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 catch { } // TODO: add logging
             }
             return commentList;
+        }
+
+        public static Comment ReadComment(string commentId)
+        {
+            var webClient = new WebClient();
+
+            Comment comment = null;
+           
+            string adminKeyBase64 = CommunityHelper.TelligentAuth();
+            if (!String.IsNullOrEmpty(commentId))
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                    var requestUrl = String.Format("{0}api.ashx/v2/comments/{1}.xml", Sitecore.Configuration.Settings.GetSetting("TelligentConfig"), commentId);
+
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    var node = xmlDoc.SelectSingleNode("Response/Comment");
+                    if (node != null)
+                        comment = new Comment(node);
+                }
+                catch (Exception ex)
+                {
+                    comment = null;
+                }
+            }
+            return comment;
         }
 
         public static XmlNode ReadUserComments(string username)

@@ -50,7 +50,7 @@
                 </div>
                 <!-- .comment-list-wrapper -->
 
-                <div class="comment-footer">
+                <div class="comment-footer" id="comment-submit">
                     <div class="comment-more-wrapper">
                         <a class="comment-more" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-comment-more"></i></a>
                     </div>
