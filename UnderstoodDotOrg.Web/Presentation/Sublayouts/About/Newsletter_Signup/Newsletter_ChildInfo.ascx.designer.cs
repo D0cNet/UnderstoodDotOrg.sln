@@ -31,13 +31,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSectionTitle;
         
         /// <summary>
-        /// rptChildIssue control.
+        /// rptColumns control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptChildIssue;
+        protected global::System.Web.UI.WebControls.Repeater rptColumns;
         
         /// <summary>
         /// cvChildIssues control.
@@ -85,13 +85,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNickname;
         
         /// <summary>
-        /// chkAnotherChild control.
+        /// cbAnotherChild control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAnotherChild;
+        protected global::System.Web.UI.WebControls.CheckBox cbAnotherChild;
         
         /// <summary>
         /// btnNext control.

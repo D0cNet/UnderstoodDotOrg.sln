@@ -25,7 +25,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
         {
             HomePageItem ContextItem = Sitecore.Context.Item;
             List<Item> toolKititems = null;
-            if (ContextItem.YourParentToolkitList != null)
+            if (ContextItem.YourParentToolkitList != null && ContextItem.YourParentToolkitList.Item != null)
             {
                 toolKititems = ContextItem.YourParentToolkitList.Item.GetChildren().ToList();
                 if (toolKititems.Any())

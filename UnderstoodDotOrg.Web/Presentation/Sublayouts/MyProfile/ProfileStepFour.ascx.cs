@@ -72,12 +72,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 SubmitButton.Text = DictionaryConstants.SubmitButtonText;
             }
             
-            string schoolIssueContainer = "{596757D6-B2DB-4819-AA25-95DC9BB2FD0E}";
-            string homeLifeContainer = "{18D5FA6B-32EC-476B-9194-3B18F7572D10}";
-            string growingUpContainer = "{E9194DCB-1A67-4CFF-A8A4-B799639AFADC}";
-            string socialEmotionalContainer = "{E8DF800B-1002-4EF6-AB46-825E70D968F5}";
-            string techAppsContainer = "{4836BBBB-3C01-4BBB-BC78-0DF1D36E32B6}";
-            string waysToHelpContainer = "{E4276D4E-71D7-4E5F-B9A2-B7DF3CA2990C}";
+            string schoolIssueContainer = Constants.SchoolIssueContainer.ToString();
+            string homeLifeContainer = Constants.HomeLifeContainer.ToString();
+            string growingUpContainer = Constants.GrowingUpContainer.ToString();
+            string socialEmotionalContainer = Constants.SocialEmotionalContainer.ToString();
+            string techAppsContainer = Constants.TechAppsContainer.ToString();
+            string waysToHelpContainer = Constants.WaysToHelpContainer.ToString();
             string parentRolesContainer = "{E5F45505-9153-4AA3-BFCC-04F3808E8AC5}";
             string parentJourneyContainer = "{40D1F458-746D-4649-A03E-E3729F6C9117}";
 

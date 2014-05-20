@@ -36,14 +36,14 @@
                     <!-- .row -->
 
                     
-                    <asp:Repeater ID="rptChildIssue" runat="server" OnItemDataBound="rptChildIssue_ItemDataBound">
+                    <asp:Repeater ID="rptColumns" runat="server" OnItemDataBound="rptColumns_ItemDataBound">
                         <HeaderTemplate>
                             <fieldset class="row needs-help-with-options">
                         </HeaderTemplate>
                         <ItemTemplate>
 
                             <div class="col col-12">
-                                <asp:Repeater ID="rptIssueCol" runat="server" OnItemDataBound="rptIssueCol_ItemDataBound">
+                                <asp:Repeater ID="rptChildIssues" runat="server" OnItemDataBound="rptChildIssues_ItemDataBound">
                                 <ItemTemplate>
                                     <div class="checkbox-wrapper">
                                         <label>
@@ -127,7 +127,7 @@
 
                     <div class="checkbox-wrap">
                         <label>
-                            <asp:CheckBox ID="chkAnotherChild" runat="server" />
+                            <asp:CheckBox ID="cbAnotherChild" runat="server" />
                             <span><%= UnderstoodDotOrg.Common.DictionaryConstants.AnotherStrugglingChildLabel %></span>
                         </label>
                     </div>

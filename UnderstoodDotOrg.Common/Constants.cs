@@ -97,6 +97,32 @@ namespace UnderstoodDotOrg.Common
             get { return new Guid("{AB712123-F130-455C-B445-79BB937BB33E}"); }
         }
 
+        // Parent Interests
+        public static Guid SchoolIssueContainer 
+        { 
+            get { return new Guid("{596757D6-B2DB-4819-AA25-95DC9BB2FD0E}"); } 
+        }
+        public static Guid HomeLifeContainer 
+        { 
+            get { return new Guid("{18D5FA6B-32EC-476B-9194-3B18F7572D10}"); } 
+        }
+        public static Guid GrowingUpContainer 
+        { 
+            get { return new Guid("{E9194DCB-1A67-4CFF-A8A4-B799639AFADC}"); } 
+        }
+        public static Guid SocialEmotionalContainer 
+        { 
+            get { return new Guid("{E8DF800B-1002-4EF6-AB46-825E70D968F5}"); } 
+        }
+        public static Guid TechAppsContainer 
+        { 
+            get { return new Guid("{4836BBBB-3C01-4BBB-BC78-0DF1D36E32B6}"); } 
+        }
+        public static Guid WaysToHelpContainer 
+        { 
+            get { return new Guid("{E4276D4E-71D7-4E5F-B9A2-B7DF3CA2990C}"); } 
+        }
+
         #endregion
 
         #region Page Guids

@@ -15,6 +15,7 @@ using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
+using UnderstoodDotOrg.Domain.Understood.Newsletter;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 {
@@ -23,9 +24,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
         private decimal _columnCount = 2;
         private int _entriesPerColumn;
         private IEnumerable<Item> _issues;
+        private Submission _submission;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!ChildInformationPageItem.HasValidSession(out _submission))
+            {
+                Item previous = Sitecore.Context.Database.GetItem(Constants.Pages.NewsletterSignup);
+                if (previous != null)
+                {
+                    Response.Redirect(previous.GetUrl());
+                }
+                // TODO: redirect elsewhere?
+                return;
+            }
             BindContent();
             BindEvents();
 
@@ -56,14 +68,47 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                 return;
             }
 
+            List<Guid> issues = new List<Guid>();
+            foreach (RepeaterItem ci in rptColumns.Items)
+            {
+                Repeater rptChildIssues = (Repeater)ci.FindControl("rptChildIssues");
+                foreach (RepeaterItem ic in rptChildIssues.Items)
+                {
+                    CheckBox cbChildIssue = (CheckBox)ic.FindControl("cbChildIssue");
+                    HiddenField hfChildIssue = (HiddenField)ic.FindControl("hfChildIssue");
+                    if (cbChildIssue.Checked)
+                    {
+                        issues.Add(Guid.Parse(hfChildIssue.Value));
+                    }
+                }
+            }
+
+            _submission.Children.Add(new Child
+            {
+                Nickname = txtNickname.Text.Trim(),
+                Grade = Guid.Parse(ddlGrades.SelectedValue),
+                Issues = issues
+            });
+
+            Item next = Sitecore.Context.Database.GetItem(Constants.Pages.NewsletterParentInterests);
+            if (next == null) 
+            {
+                // TODO: handle error
+                return;
+            }
+
+            // If another child, redirect to same form
+            string destination = cbAnotherChild.Checked ? Model.GetUrl() : next.GetUrl();
+
+            Response.Redirect(destination);
         }
 
         void cvChildIssues_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            foreach (RepeaterItem ri in rptChildIssue.Items)
+            foreach (RepeaterItem ri in rptColumns.Items)
             {
-                Repeater rptIssueCol = (Repeater)ri.FindControl("rptIssueCol");
-                foreach (RepeaterItem issue in rptIssueCol.Items)
+                Repeater rptChildIssues = (Repeater)ri.FindControl("rptChildIssues");
+                foreach (RepeaterItem issue in rptChildIssues.Items)
                 {
                     CheckBox cbChildIssue = (CheckBox)issue.FindControl("cbChildIssue");
                     if (cbChildIssue.Checked)
@@ -95,32 +140,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
             _issues = ChildInformationPageItem.GetAllIssues();
             _entriesPerColumn = (int)Math.Ceiling(_issues.Count() / _columnCount);
 
-            rptChildIssue.DataSource = columns;
-            rptChildIssue.DataBind();
+            rptColumns.DataSource = columns;
+            rptColumns.DataBind();
         }
 
-        protected void rptChildIssue_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        protected void rptColumns_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.IsItem())
             {
                 int columnIndex = e.Item.ItemIndex * _entriesPerColumn;
 
-                Repeater rptIssueCol = e.FindControlAs<Repeater>("rptIssueCol");
-                rptIssueCol.DataSource = _issues.Skip(columnIndex).Take(_entriesPerColumn).ToList();
-                rptIssueCol.DataBind();
+                Repeater rptChildIssues = e.FindControlAs<Repeater>("rptChildIssues");
+                rptChildIssues.DataSource = _issues.Skip(columnIndex).Take(_entriesPerColumn).ToList();
+                rptChildIssues.DataBind();
             }
         }
 
 
 
-        protected void rptIssueCol_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        protected void rptChildIssues_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.IsItem())
             {
                 ChildIssueItem issue = new ChildIssueItem((Item)e.Item.DataItem);
                 Literal litChildIssue = e.FindControlAs<Literal>("litChildIssue");
                 HiddenField hfChildIssue = e.FindControlAs<HiddenField>("hfChildIssue");
-                litChildIssue.Text = issue.DisplayName;
+                litChildIssue.Text = issue.IssueName;
                 hfChildIssue.Value = issue.ID.ToString();
             }
         }
