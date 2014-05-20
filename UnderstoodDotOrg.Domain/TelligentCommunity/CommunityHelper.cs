@@ -1047,39 +1047,43 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
             using (var webClient = new WebClient())
             {
-                var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-
-                var requestUrl = string.Format("{0}api.ashx/v2/notifications.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
-                var xml = webClient.DownloadString(requestUrl);
-
-                var xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-
-                XmlNodeList nodes = xmlDoc.SelectNodes("Response/Notifications/RestNotification");
-
-                foreach (XmlNode xn in nodes)
+                try
                 {
-                    XmlNode userData = xmlDoc.SelectSingleNode("Response/Notifications/RestNotification/User");
-                    if (!username.Equals(userData["Username"].InnerText))
-                    {
-                        XmlNode authorData = xmlDoc.SelectSingleNode("Response/Notifications/RestNotification/User/Author");
-                        XmlNode statusData = xmlDoc.SelectSingleNode("Response/Notifications/RestNotification/User/Author/CurrentStatus");
+                    var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
-                        Notification notification = new Notification()
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                    var requestUrl = string.Format("{0}api.ashx/v2/notifications.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Notifications/RestNotification");
+
+                    foreach (XmlNode xn in nodes)
+                    {
+                        XmlNode userData = xmlDoc.SelectSingleNode("Response/Notifications/RestNotification/User");
+                        if (!username.Equals(userData["Username"].InnerText))
                         {
-                            Username = username,
-                            Author = authorData["Username"].InnerText,
-                            ContentId = xn["ContentId"].InnerText,
-                            CreatedDate = xn["CreatedDate"].InnerText,
-                            UpdatedDate = xn["LastUpdatedDate"].InnerText,
-                            NotificationId = xn["NotificationId"].InnerText
-                        };
-                        notificationList.Add(notification);
+                            XmlNode authorData = xmlDoc.SelectSingleNode("Response/Notifications/RestNotification/User/Author");
+                            XmlNode statusData = xmlDoc.SelectSingleNode("Response/Notifications/RestNotification/User/Author/CurrentStatus");
+
+                            Notification notification = new Notification()
+                            {
+                                Username = username,
+                                Author = authorData["Username"].InnerText,
+                                ContentId = xn["ContentId"].InnerText,
+                                CreatedDate = xn["CreatedDate"].InnerText,
+                                UpdatedDate = xn["LastUpdatedDate"].InnerText,
+                                NotificationId = xn["NotificationId"].InnerText
+                            };
+                            notificationList.Add(notification);
+                        }
                     }
                 }
+                catch { } //TODO: Add Logging
             }
             return notificationList;
         }
