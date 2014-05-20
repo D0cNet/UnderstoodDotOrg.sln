@@ -18,5 +18,13 @@ public partial class MetadataFolderFolderItem
         return (WelcomeTourFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(WelcomeTourFolderItem.TemplateId)).FirstOrDefault();
     }
 
+    /// <summary>
+    /// Get expert live filter folder Item.
+    /// </summary>
+    /// <returns></returns>
+    public ExpertliveFilterFolderItem GetExpertliveFilterFolder() {
+        return (ExpertliveFilterFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(ExpertliveFilterFolderItem.TemplateId)).FirstOrDefault();
+    }
+
 }
 }

@@ -32,14 +32,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
             return (MetadataFolderFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(MetadataFolderFolderItem.TemplateId)).FirstOrDefault();
         }
 
-        /// <summary>
-        /// Get expert live filter folder Item.
-        /// </summary>
-        /// <returns></returns>
-        public ExpertliveFilterFolderItem GetExpertliveFilterFolder() {
-            return (ExpertliveFilterFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(ExpertliveFilterFolderItem.TemplateId)).FirstOrDefault();
-        }
-
+        
         /// <summary>
         /// Get More Explore folder Item.
         /// </summary>
