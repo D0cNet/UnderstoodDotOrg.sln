@@ -12,6 +12,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
+using UnderstoodDotOrg.Domain.Membership;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 {
@@ -66,9 +67,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
             }
         }
 
-        private List<Guid> GetSelectedItems(Repeater repeater)
+        private List<Interest> GetSelectedItems(Repeater repeater)
         {
-            List<Guid> selected = new List<Guid>();
+            List<Interest> selected = new List<Interest>();
             foreach (RepeaterItem ri in repeater.Items)
             {
                 CheckBox cbInterest = (CheckBox)ri.FindControl("cbInterest");
@@ -76,7 +77,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 
                 if (cbInterest.Checked)
                 {
-                    selected.Add(Guid.Parse(hfInterest.Value));
+                    selected.Add(new Interest 
+                    {
+                        Key = Guid.Parse(hfInterest.Value)
+                    });
                 }
             }
             return selected;
@@ -89,7 +93,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                 return;
             }
 
-            List<Guid> interests = new List<Guid>();
+            List<Interest> interests = new List<Interest>();
             interests.AddRange(GetSelectedItems(rptSchoolIssuesLeft));
             interests.AddRange(GetSelectedItems(rptSchoolIssuesRight));
             interests.AddRange(GetSelectedItems(rptGrowingUp));
@@ -97,12 +101,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
             interests.AddRange(GetSelectedItems(rptSocial));
             interests.AddRange(GetSelectedItems(rptWaysToHelp));
 
-            if (interests.Any())
+            // Map children
+            List<UnderstoodDotOrg.Domain.Membership.Child> children = new List<Domain.Membership.Child>();
+            foreach (var c in _submission.Children)
             {
-                _submission.Interests = interests;
+                var issues = c.Issues.Select(x => new Issue { Key = x }).ToList();
+                var grades = new List<Grade>() { new Grade { Key = c.Grade } };
+
+                children.Add(new Domain.Membership.Child
+                {
+                    Nickname = c.Nickname,
+                    Issues = issues,
+                    Grades = grades
+                });
             }
 
-            // TODO: save member info
+            Member member = new Member
+            {
+                Email = _submission.Email,
+                Children = children,
+                Interests = interests
+            };
+
+            // TODO: add error handling
+            MembershipManager mm = new MembershipManager();
+            mm.AddUnauthorizedMember(member);
 
             Item next = Sitecore.Context.Database.GetItem(Constants.Pages.NewsletterConfirmation);
             if (next != null) 
