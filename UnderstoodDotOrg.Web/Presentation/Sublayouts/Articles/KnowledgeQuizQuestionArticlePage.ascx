@@ -48,7 +48,7 @@
 
                 <asp:Panel ID="pnlResult" runat="server" Visible="false">
                     <p class="correctness-headline">
-                        <span class="correct-incorrect correct"></span>
+                        <span id="spanCurrentAnswerResult" runat="server" class="correct-incorrect correct"></span>
                         <asp:Label ID="lblCorrect" runat="server" Text="Correct"></asp:Label>
                         <asp:Label ID="lblIncorrect" runat="server" Text="Incorrect"></asp:Label>
                     </p>

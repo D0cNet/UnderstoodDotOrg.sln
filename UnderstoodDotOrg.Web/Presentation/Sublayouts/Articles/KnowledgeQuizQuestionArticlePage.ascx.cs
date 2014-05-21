@@ -132,17 +132,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         
         protected void btnTrue_Click(object sender, EventArgs e)
         {
-            pnlResult.Visible = true;
-
             if (Answer == "True")
             {
                 UpdateScore(1);
                 UpdateAnswers(true);
+                spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect correct");
                 lblIncorrect.Visible = false;
             }
             else
             {
                 UpdateAnswers(false);
+                spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect incorrect");
                 lblCorrect.Visible = false;
             }
 
@@ -151,17 +151,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void btnFalse_Click(object sender, EventArgs e)
         {
-            pnlResult.Visible = true;
-
             if (Answer == "False")
             {
                 UpdateScore(1);
                 UpdateAnswers(true);
+                spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect correct");
                 lblIncorrect.Visible = false;
             }
             else
             {
                 UpdateAnswers(false);
+                spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect incorrect");
                 lblCorrect.Visible = false;
             }
 
@@ -170,17 +170,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void rblAnswer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pnlResult.Visible = true;
-
             if (Answer == rblAnswer.SelectedValue)
             {
                 UpdateScore(1);
                 UpdateAnswers(true);
+                spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect correct");
                 lblIncorrect.Visible = false;
             }
             else
             {
                 UpdateAnswers(false);
+                spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect incorrect");
                 lblCorrect.Visible = false;
             }
 
