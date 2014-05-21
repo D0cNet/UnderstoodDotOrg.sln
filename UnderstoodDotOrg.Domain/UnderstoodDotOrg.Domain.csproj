@@ -257,6 +257,9 @@
     <Compile Include="SitecoreCIG\Poses\General\ChildGradeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ChildLearningIssueItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\EducationalInstitutionItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\ExploreEventTileItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\ExploreEventTileItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\ExplorePromoTileItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\HeroImageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\HomeSliderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\LanguageLinkItem.base.cs" />
