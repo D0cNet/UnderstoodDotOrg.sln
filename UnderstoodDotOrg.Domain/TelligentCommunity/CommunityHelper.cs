@@ -691,34 +691,40 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
         public static List<Blog> ListBlogs()
         {
-            var webClient = new WebClient();
-
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
-            var requestUrl = string.Format("{0}api.ashx/v2/blogs.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
-
-            var xml = webClient.DownloadString(requestUrl);
-
             List<Blog> blogs = new List<Blog>();
-
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/Blogs/Blog");
-            int count = 0;
-            foreach (XmlNode node in nodes)
+            try
             {
-                string title = node["Name"].InnerText;
-                string description = FormatString100(node["Description"].InnerText);
-                Blog blogPost = new Blog(description, title);
-                if (!title.Equals("Articles"))
+                using (var webClient = new WebClient())
                 {
-                    blogs.Add(blogPost);
+                    // replace the "admin" and "Admin's API key" with your valid user and apikey!
+                    var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+                    webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
+                    var requestUrl = string.Format("{0}api.ashx/v2/blogs.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    blogs = new List<Blog>();
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Blogs/Blog");
+                    int count = 0;
+                    foreach (XmlNode node in nodes)
+                    {
+                        string title = node["Name"].InnerText;
+                        string description = FormatString100(node["Description"].InnerText);
+                        Blog blogPost = new Blog(description, title);
+                        if (!title.Equals("Articles"))
+                        {
+                            blogs.Add(blogPost);
+                        }
+                        count++;
+                    }
                 }
-                count++;
             }
+            catch { } //TODO: Add Logging
             return blogs;
         }
 
@@ -1146,6 +1152,71 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 catch { } //TODO: Add Logging
             }
             return favoritesList;
+        }
+
+        public static List<Comment> ReadUserComments(string username)
+        {
+            List<Comment> commentsList = new List<Comment>();
+
+            using (var webClient = new WebClient())
+            {
+                username = username.Trim();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                try
+                {
+                    //TODO: retrieve current logged in user
+                    var userId = ReadUserId(username);
+
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    //webClient.Headers.Add("Rest-Impersonate-User", userId);
+                    var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "api.ashx/v2/comments.xml?UserId=" + userId;
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+
+                    int nodecount = 0;
+                    foreach (XmlNode xn in nodes)
+                    {
+
+                        XmlNode author = xn.SelectSingleNode("Author");
+
+                        string commentId = xn["CommentId"].InnerText;
+                        string commentDate = xn["PublishedDate"].InnerText;
+                        DateTime parsedDate = DateTime.Parse(commentDate);
+
+                        Comment comment = new Comment
+                        {
+                            Id = xn["Id"].InnerText,
+                            Url = xn["Url"].InnerText,
+                            ParentId = xn["ParentId"].InnerText,
+                            ContentId = xn["ContentId"].InnerText,
+                            IsApproved = xn["IsApproved"].InnerText,
+                            ReplyCount = xn["ReplyCount"].InnerText,
+                            CommentId = commentId,
+                            CommentContentTypeId = xn["CommentContentTypeId"].InnerText,
+                            Body = xn["Body"].InnerText,
+                            PublishedDate = CommunityHelper.FormatDate(commentDate),
+                            AuthorId = author["Id"].InnerText,
+                            AuthorAvatarUrl = author["AvatarUrl"].InnerText,
+                            AuthorDisplayName = author["DisplayName"].InnerText,
+                            AuthorProfileUrl = author["ProfileUrl"].InnerText,
+                            AuthorUsername = author["Username"].InnerText,
+                            Likes = GetTotalLikes(commentId).ToString(),
+                            CommentDate = parsedDate
+                        };
+                        // Comment comment = new Comment(xn);
+                        commentsList.Add(comment);
+
+                        nodecount++;
+                    }
+                }
+                catch { } // TODO: add logging
+            }
+            return commentsList;
+
         }
     }
 }
