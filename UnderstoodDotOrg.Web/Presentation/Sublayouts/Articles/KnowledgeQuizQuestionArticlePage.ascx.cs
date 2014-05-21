@@ -50,6 +50,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         if (range.MaximumCorrectAnswers.ToString().IsNullOrEmpty() || (correct <= range.MaximumCorrectAnswers))
                         {
                             frEndExplanation.Item = i;
+                            break;
                         }
                     }
                 }
