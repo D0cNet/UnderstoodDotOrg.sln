@@ -340,7 +340,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                 //this member is probably only ever going to be created just so that we can generate personalized emails
             Member.Password  = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Password;
             Member.Comment = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Flag;
-            Member.ScreenName = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Screename;
+            Member.ScreenName = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_ScreeName;
             
             Member m = new Member();
             try
@@ -352,7 +352,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             {
                 Exception e2 = new Exception("An Error occured when trying to create a new Unauthorized Member. Check InnerException", e);
                 e2.Source = "MembershiopManager.cs In AddUnauthorizedMember(Member Member)";
-                throw e2; //yur problem now
+                throw e2; 
             }
            //now update the member to add the flag to let us know it is a unauthorized user
             AddMemberComment(m, UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Flag);

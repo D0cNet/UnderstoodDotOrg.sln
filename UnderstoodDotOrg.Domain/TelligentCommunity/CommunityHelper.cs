@@ -447,9 +447,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                     var values = new NameValueCollection()
                     {
-                        { "Username", username },
-                        { "Password", Guid.NewGuid().ToString() },
-                        { "PrivateEmail", email }
+                    { "Username", username },
+                    { "Password", Guid.NewGuid().ToString() },
+                    { "PrivateEmail", email }
                     };
 
                     var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
@@ -913,7 +913,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     ThreadModel t = new ThreadModel(childNode);
                     th.Add(t);
-                    // Thread.Sleep(3000);
+                   // Thread.Sleep(3000);
                 }
             }
             catch (Exception ex)
@@ -1243,8 +1243,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         GroupModel group = new GroupModel
                         {
                             Title = xn["Name"].InnerText,
-                            Url = xn["Url"].InnerText,
-                            Id = xn["Id"].InnerText
+                            Url=xn["Url"].InnerText,
+                            Id=xn["Id"].InnerText                           
                         };
                         groupsList.Add(group);
                     }

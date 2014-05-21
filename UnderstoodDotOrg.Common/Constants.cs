@@ -59,9 +59,12 @@ namespace UnderstoodDotOrg.Common
         #endregion
 
 #region Unauthenticated Member Values
-        public static string UnauthenticatedMember_Screename { get { return "c5uSwuWruy2Q5NADejus"; } }
-        public static string UnauthenticatedMember_Password{ get { return "s6MuquVucReDE5R6"; } }
+        public static string UnauthenticatedMember_ScreeName { get { return "c5uSwuWruy2Q5NADejus"; } }
+        public static string UnauthenticatedMember_Password{ get { return "4Sf9suVucReD373HDS"; } }
+        public static string UnauthenticatedMember_FirstName { get { return "Unauthenticated"; } }
+        public static string UnauthenticatedMember_LastName { get { return "NotSpecified"; } }
         public static string UnauthenticatedMember_Flag { get { return "IsUnauthenticatedMember"; } }
+
 #endregion
 
 
