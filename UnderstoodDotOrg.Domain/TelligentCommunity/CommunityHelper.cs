@@ -1154,7 +1154,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return favoritesList;
         }
 
-        public static List<Comment> ReadUserComments(string username)
+        public static List<Comment> ListUserComments(string username)
         {
             List<Comment> commentsList = new List<Comment>();
 
