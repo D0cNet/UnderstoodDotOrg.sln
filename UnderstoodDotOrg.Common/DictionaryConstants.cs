@@ -899,6 +899,18 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+       public static string SelectChallengeLabel {
+           get {
+               return Translate.TextByDomain(PosesDictionary, "Select Challenge Label");
+           }
+       }
+
+       public static string SelectGradeLabel {
+           get {
+               return Translate.TextByDomain(PosesDictionary, "Select Grade Label");
+           }
+       }
+
         #endregion
     }
 }

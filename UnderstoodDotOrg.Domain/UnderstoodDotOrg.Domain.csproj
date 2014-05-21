@@ -250,6 +250,7 @@
     <Compile Include="SitecoreCIG\Poses\Folders\UtilityNavigationFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\WidgetFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AuthenticationNavigationLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AuthenticationNavigationLinkItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ChildDemographicItem.base.cs" />
@@ -274,6 +275,7 @@
     <Compile Include="SitecoreCIG\Poses\General\ToolkitArticlePageTools\VideoToolkitResourceItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ToolkitArticlePageTools\WordToolkitResourceItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\WelcomeTourItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\WidgetItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Folders\KnowledgeQuizArticlePage\KnowledgeQuizQuestionsFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Folders\KnowledgeQuizArticlePage\KnowledgeQuizResultsFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Items\KnowledgeQuizArticlePage\BaseKnowledgeQuizQuestionItem.base.cs" />

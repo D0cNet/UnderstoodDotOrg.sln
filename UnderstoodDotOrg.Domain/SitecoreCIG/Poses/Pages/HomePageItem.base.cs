@@ -100,6 +100,15 @@ public CustomLookupField YourParentToolkitList
 }
 
 
+public CustomLookupField WidgetLink
+{
+	get
+	{
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Widget Link"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
