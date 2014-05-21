@@ -36,8 +36,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 
         private void BindContent()
         {
+            revEmail.ValidationExpression = Sitecore.Configuration.Settings.GetSetting("EmailValidation");
+            revEmail.Text = Model.InvalidEmailError;
             txtEmail.Attributes["placeholder"] = DictionaryConstants.EnterEmailAddressWatermark;
-            rfvEMail.Text = Model.RequiredEmailError.Raw;
             btnSignup.Text = DictionaryConstants.SubscribeButtonText;
         }
 

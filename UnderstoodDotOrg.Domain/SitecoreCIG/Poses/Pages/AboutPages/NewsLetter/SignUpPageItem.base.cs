@@ -46,11 +46,11 @@ public static implicit operator Item(SignUpPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField RequiredEmailError
+public CustomTextField InvalidEmailError
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Required Email Error"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Invalid Email Error"]);
 	}
 }
 
