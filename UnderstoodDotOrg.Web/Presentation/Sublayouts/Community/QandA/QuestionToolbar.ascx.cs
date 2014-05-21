@@ -8,8 +8,9 @@
     using System.Web.UI.WebControls;
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
     using UnderstoodDotOrg.Domain.TelligentCommunity;
+    using UnderstoodDotOrg.Framework.UI;
 
-    public partial class QuestionToolbar : System.Web.UI.UserControl
+    public partial class QuestionToolbar : BaseSublayout
     {
         private void Page_Load(object sender, EventArgs e)
         {

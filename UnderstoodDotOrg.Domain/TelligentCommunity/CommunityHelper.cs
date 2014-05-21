@@ -338,7 +338,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                    currentUser = currentUser.Replace(" ", "");
+                    currentUser = currentUser.Trim().ToLower();
                     webClient.Headers.Add("Rest-Impersonate-User", currentUser.ToLower());
                     var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), "2");
 
@@ -487,8 +487,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPages/WikiPage");
                 foreach (XmlNode xn in nodes)
                 {
-                    XmlNode user = xmlDoc.SelectSingleNode("Response/WikiPages/WikiPage/User");
-                    XmlNode app = xmlDoc.SelectSingleNode("Response/WikiPages/WikiPage/Content/Application");
+                    XmlNode user = xn.SelectSingleNode("User");
+                    XmlNode app = xn.SelectSingleNode("Content/Application");
                     Question question = new Question()
                     {
                         Title = xn["Title"].InnerText,
