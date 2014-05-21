@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Web.Security;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using MembershipProvider = System.Web.Security.Membership;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 
 namespace UnderstoodDotOrg.Domain.Membership
 {
@@ -140,6 +142,13 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             tChild.EvaluationStatus = child.EvaluationStatus;
             tChild.Gender = child.Gender;
+
+            //gender is required, boy is now default if nothing is provided
+            if (string.IsNullOrEmpty(tChild.Gender))
+            {
+                tChild.Gender = "boy";
+            }
+
             tChild.HomeLife = child.HomeLife;
             tChild.IEPStatus = child.IEPStatus;
             tChild.Nickname = child.Nickname;
@@ -321,8 +330,18 @@ namespace UnderstoodDotOrg.Domain.Membership
                 return tMember;
                 //}
             }
-            catch (Exception ex)
+            catch (DbEntityValidationException ex)
             {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
                 throw ex;
             }
         }
