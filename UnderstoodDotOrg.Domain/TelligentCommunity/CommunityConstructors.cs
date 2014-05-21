@@ -201,6 +201,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
     {
         public string Title { get; set; }
         public string Url { get; set; }
+        
+        public GroupModel() { }
     }
 
     public class FavoritesModel
@@ -210,5 +212,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string ReplyCount { get; set; }
         public string ContentId { get; set; }
         public string ContentTypeId { get; set; }
+        public string Url { get; set; }
+        
+        public FavoritesModel() { }
     }
+    
 }

@@ -332,7 +332,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
-        public static string CreateQuestion(string title, string body)
+        public static string CreateQuestion(string title, string body, string currentUser)
         {
             using (var webClient = new WebClient())
             {
@@ -342,6 +342,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    currentUser = currentUser.Replace(" ", "");
+                    webClient.Headers.Add("Rest-Impersonate-User", currentUser.ToLower());
                     var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), "2");
 
                     var values = new NameValueCollection();
@@ -1127,8 +1129,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                     foreach (XmlNode xn in nodes)
                     {
-                        XmlNode userData = xmlDoc.SelectSingleNode("User");
-                        XmlNode statusData = xmlDoc.SelectSingleNode("User/CurrentStatus");
+                        XmlNode userData = xn.SelectSingleNode("User");
+                        XmlNode statusData = xn.SelectSingleNode("User/CurrentStatus");
 
                         FavoritesModel favorite = new FavoritesModel()
                         {
