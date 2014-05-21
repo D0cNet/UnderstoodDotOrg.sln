@@ -175,7 +175,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     Item thread = null;
                     HiddenField hdSub = (HiddenField)e.Item.FindControl("hdSubject");
                     if(hdSub !=null)
-                    {
+                    {
+
                         string subject = hdSub.Value;
                          thread = Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@Subject = '"+ subject +"']");
                        // ID = thread.ID.ToString();
