@@ -330,26 +330,12 @@
     <Compile Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx.designer.cs">
       <DependentUpon>Articles Landing Page.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage1.ascx.cs">
-      <DependentUpon>AssessmentQuizArticlePage1.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\Articles\Assessment Quiz.ascx.cs">
+      <DependentUpon>Assessment Quiz.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage1.ascx.designer.cs">
-      <DependentUpon>AssessmentQuizArticlePage1.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage2.ascx.cs">
-      <DependentUpon>AssessmentQuizArticlePage2.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage2.ascx.designer.cs">
-      <DependentUpon>AssessmentQuizArticlePage2.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePageEnd.ascx.cs">
-      <DependentUpon>AssessmentQuizArticlePageEnd.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePageEnd.ascx.designer.cs">
-      <DependentUpon>AssessmentQuizArticlePageEnd.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\Articles\Assessment Quiz.ascx.designer.cs">
+      <DependentUpon>Assessment Quiz.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\AudioArticle.ascx.cs">
       <DependentUpon>AudioArticle.ascx</DependentUpon>
@@ -2294,9 +2280,7 @@
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Article Entry Message Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage1.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePage2.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\AssessmentQuizArticlePageEnd.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Assessment Quiz.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\AudioArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\BasicArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Checklist Article Page.ascx" />

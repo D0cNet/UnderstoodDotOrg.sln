@@ -17,7 +17,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
     public partial class KnowledgeQuizQuestionrArticlePage : System.Web.UI.UserControl
     {
-        private KnowledgeQuizQuestionArticlePageItem ObjKnowledgeQuiz = Sitecore.Context.Item;
         private Item PageResources = Sitecore.Context.Item.Children.FirstOrDefault();
         private Item ResultsFolder;
         private int QuestionNumber;

@@ -10,60 +10,60 @@
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     
     
-    public partial class AssessmentQuizArticlePageEnd {
+    public partial class Assessment_Quiz {
         
         /// <summary>
-        /// frQuizIntro control.
+        /// lblPageCounter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frQuizIntro;
+        protected global::System.Web.UI.WebControls.Label lblPageCounter;
         
         /// <summary>
-        /// frResultTitle control.
+        /// rptPageQuestions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frResultTitle;
+        protected global::System.Web.UI.WebControls.Repeater rptPageQuestions;
         
         /// <summary>
-        /// frResultDesc control.
+        /// btnNextPage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frResultDesc;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnNextPage;
         
         /// <summary>
-        /// SBReviewedBy control.
+        /// btnShowResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout SBReviewedBy;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnShowResults;
         
         /// <summary>
-        /// Placeholder2 control.
+        /// btnTakeQuizAgain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder2;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnTakeQuizAgain;
         
         /// <summary>
-        /// Placeholder3 control.
+        /// Div1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
     }
 }
