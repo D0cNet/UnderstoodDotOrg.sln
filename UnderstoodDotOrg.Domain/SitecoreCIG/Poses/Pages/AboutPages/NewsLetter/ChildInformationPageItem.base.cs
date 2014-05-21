@@ -46,11 +46,29 @@ public static implicit operator Item(ChildInformationPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField ChildIssuesHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Child Issues Heading"]);
+	}
+}
+
+
 public CustomTextField RequiredIssuesError
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Required Issues Error"]);
+	}
+}
+
+
+public CustomTextField ChildEnrollmentHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Child Enrollment Heading"]);
 	}
 }
 
@@ -64,11 +82,38 @@ public CustomTextField RequiredNicknameError
 }
 
 
+public CustomTextField ChildNicknameHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Child Nickname Heading"]);
+	}
+}
+
+
 public CustomTextField RequiredGradeError
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Required Grade Error"]);
+	}
+}
+
+
+public CustomTextField ChildNicknameNote
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Child Nickname Note"]);
+	}
+}
+
+
+public CustomTextField AnotherChildLabel
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Another Child Label"]);
 	}
 }
 

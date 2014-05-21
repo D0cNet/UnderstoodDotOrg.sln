@@ -31,6 +31,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSectionTitle;
         
         /// <summary>
+        /// frSchoolIssuesHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSchoolIssuesHeading;
+        
+        /// <summary>
         /// rptSchoolIssuesLeft control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup {
         protected global::System.Web.UI.WebControls.Repeater rptSchoolIssuesRight;
         
         /// <summary>
+        /// frWaysToHelpHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frWaysToHelpHeading;
+        
+        /// <summary>
         /// rptWaysToHelp control.
         /// </summary>
         /// <remarks>
@@ -56,6 +74,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptWaysToHelp;
+        
+        /// <summary>
+        /// frHomeLifeHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frHomeLifeHeading;
         
         /// <summary>
         /// rptHomeLife control.
@@ -67,6 +94,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup {
         protected global::System.Web.UI.WebControls.Repeater rptHomeLife;
         
         /// <summary>
+        /// frGrowingUpHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frGrowingUpHeading;
+        
+        /// <summary>
         /// rptGrowingUp control.
         /// </summary>
         /// <remarks>
@@ -76,6 +112,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup {
         protected global::System.Web.UI.WebControls.Repeater rptGrowingUp;
         
         /// <summary>
+        /// frSocialEmotionalHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSocialEmotionalHeading;
+        
+        /// <summary>
         /// rptSocial control.
         /// </summary>
         /// <remarks>
@@ -83,6 +128,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptSocial;
+        
+        /// <summary>
+        /// frPreferredLanguage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPreferredLanguage;
         
         /// <summary>
         /// rbLanguageEnglish control.

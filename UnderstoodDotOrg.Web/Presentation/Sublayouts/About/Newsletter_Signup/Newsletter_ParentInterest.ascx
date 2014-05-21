@@ -25,7 +25,7 @@
 
                     <div class="row school-issues-title">
                         <div class="col col-22">
-                            <h3>School Issues</h3>
+                            <h3><sc:FieldRenderer ID="frSchoolIssuesHeading" runat="server" FieldName="School Issues Heading" /></h3>
                         </div>
                         <!-- .col -->
                     </div>
@@ -82,7 +82,7 @@
 
                 <fieldset class="ways-to-help">
 
-                    <h3>Ways to Help Your Child</h3>
+                    <h3><sc:FieldRenderer ID="frWaysToHelpHeading" runat="server" FieldName="Ways To Help Heading" /></h3>
 
                     <asp:Repeater ID="rptWaysToHelp" runat="server">
                         <ItemTemplate>
@@ -105,7 +105,7 @@
 
                 <fieldset class="home-life">
 
-                    <h3>Home Life</h3>
+                    <h3><sc:FieldRenderer ID="frHomeLifeHeading" runat="server" FieldName="Home Life Heading" /></h3>
 
                     <asp:Repeater ID="rptHomeLife" runat="server">
                         <ItemTemplate>
@@ -132,7 +132,7 @@
 
                 <fieldset class="growing-up">
 
-                    <h3>Growing Up</h3>
+                    <h3><sc:FieldRenderer ID="frGrowingUpHeading" runat="server" FieldName="Growing Up Heading" /></h3>
 
                     <asp:Repeater ID="rptGrowingUp" runat="server">
                         <ItemTemplate>
@@ -155,7 +155,7 @@
 
                 <fieldset class="social-emotional-issues">
 
-                    <h3>Social/Emotional Issues</h3>
+                    <h3><sc:FieldRenderer ID="frSocialEmotionalHeading" runat="server" FieldName="Social Emotional Heading" /></h3>
 
                     <asp:Repeater ID="rptSocial" runat="server">
                         <ItemTemplate>
@@ -182,7 +182,7 @@
 
                 <fieldset class="preferred-language">
 
-                    <h3>Preferred Language</h3>
+                    <h3><sc:FieldRenderer ID="frPreferredLanguage" runat="server" FieldName="Preferred Language Heading" /></h3>
 
                     <div class="radio-wrapper">
                         <label>

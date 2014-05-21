@@ -46,6 +46,69 @@ public static implicit operator Item(ParentInterestsPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField LanguageRequiredError
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Language Required Error"]);
+	}
+}
+
+
+public CustomTextField SchoolIssuesHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["School Issues Heading"]);
+	}
+}
+
+
+public CustomTextField WaysToHelpHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Ways To Help Heading"]);
+	}
+}
+
+
+public CustomTextField HomeLifeHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Home Life Heading"]);
+	}
+}
+
+
+public CustomTextField GrowingUpHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Growing Up Heading"]);
+	}
+}
+
+
+public CustomTextField SocialEmotionalHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Social Emotional Heading"]);
+	}
+}
+
+
+public CustomTextField PreferredLanguageHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Preferred Language Heading"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

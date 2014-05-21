@@ -29,7 +29,7 @@
 
                     <div class="row needs-help-with-title">
                         <div class="col col-22">
-                            <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.MyChildNeedsHelpLabel %></h3>
+                            <h3><sc:FieldRenderer ID="frChildIssuesHeading" runat="server" FieldName="Child Issues Heading" /></h3>
                         </div>
                         <!-- .col -->
                     </div>
@@ -82,11 +82,10 @@
 
                 <div class="child-enrolled rs_read_this itemize-child-rs-wrapper">
 
-                    <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.MyChildEnrolledLabel %></h3>
+                    <h3><sc:FieldRenderer ID="frChildEnrollmentHeading" runat="server" FieldName="Child Enrollment Heading" /></h3>
 
                     <div class="form-action-select">
                         <asp:DropDownList ID="ddlGrades" runat="server" />
-
                     </div>
 
                     <asp:RequiredFieldValidator ID="rfvGrades" runat="server" ControlToValidate="ddlGrades" Display="Dynamic" />
@@ -100,7 +99,7 @@
 
                 <div class="child-nickname rs_read_this itemize-child-rs-wrapper">
 
-                    <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.MyChildNicknameLabel %></h3>
+                    <h3><sc:FieldRenderer ID="frChildNicknameHeading" runat="server" FieldName="Child Nickname Heading" /></h3>
 
                     <div class="form-action-text">
                         <label>
@@ -110,7 +109,7 @@
 
                     <asp:RequiredFieldValidator ID="rfvNickname" runat="server" ControlToValidate="txtNickname" Display="Dynamic" />
 
-                    <p class="caption"><%= UnderstoodDotOrg.Common.DictionaryConstants.ThisIsPrivateLabel %></p>
+                    <p class="caption"><sc:FieldRenderer ID="frChildNicknameNote" runat="server" FieldName="Child Nickname Note" /></p>
 
                 </div>
                 <!-- .child-nickname -->
@@ -128,7 +127,7 @@
                     <div class="checkbox-wrap">
                         <label>
                             <asp:CheckBox ID="cbAnotherChild" runat="server" />
-                            <span><%= UnderstoodDotOrg.Common.DictionaryConstants.AnotherStrugglingChildLabel %></span>
+                            <span><sc:FieldRenderer ID="frAnotherChildLabel" runat="server" FieldName="Another Child Label" /></span>
                         </label>
                     </div>
 

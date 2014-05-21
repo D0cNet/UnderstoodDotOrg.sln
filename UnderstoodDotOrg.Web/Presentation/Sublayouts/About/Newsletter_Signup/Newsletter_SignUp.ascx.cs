@@ -22,6 +22,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
             BindContent();
             BindEvents();
 
+            // TODO: validate email doesn't exist
             if (!IsPostBack)
             {
                 string email = Request.QueryString["email"] ?? String.Empty;

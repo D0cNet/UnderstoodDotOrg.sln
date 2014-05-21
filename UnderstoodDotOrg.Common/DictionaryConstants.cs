@@ -711,49 +711,7 @@ namespace UnderstoodDotOrg.Common
             {
                 return Translate.TextByDomain(PosesDictionary, "Filter By Label");
             }
-        }
-
-        public static string MyChildEnrolledLabel
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "My Child Enrolled Label");
-            }
-        }
-
-        public static string MyChildNeedsHelpLabel
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "My Child Needs Help Label");
-            }
-        }
-
-        public static string MyChildNicknameLabel
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "My Child Nickname Label");
-            }
-        }
-
-        public static string ThisIsPrivateLabel
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "This Is Private Label");
-            }
-        }
-
-
-        public static string AnotherStrugglingChildLabel
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "Another Struggling Child Label");
-            }
-        }
-
+        } 
 
         public static class Grades
         {
