@@ -1216,7 +1216,42 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 catch { } // TODO: add logging
             }
             return commentsList;
+        }
 
+        public static List<GroupModel> GetUserGroups(string username)
+        {
+            List<GroupModel> groupsList = new List<GroupModel>();
+
+            using (var webClient = new WebClient())
+            {
+                username = username.Trim();
+                username = username.ToLower();
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    //webClient.Headers.Add("Rest-Impersonate-User", userId);
+                    var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "api.ashx/v2/groups.xml?Username=" + username;
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Groups/Group");
+                    foreach (XmlNode xn in nodes)
+                    {
+                        GroupModel group = new GroupModel
+                        {
+                            Title = xn["Name"].InnerText,
+                            Url=xn["Url"].InnerText,
+                            Id=xn["Id"].InnerText                           
+                        };
+                        groupsList.Add(group);
+                    }
+                }
+                catch { } // TODO: add logging
+            }
+            return groupsList;
         }
     }
 }
