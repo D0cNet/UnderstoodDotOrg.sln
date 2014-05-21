@@ -29,8 +29,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PublishDatabases>false</PublishDatabases>
-    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -2432,7 +2430,7 @@
     <Content Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyNotifications.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyUpcomingEvents.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccount.ascx" />
-    <Content Include="Presentation\Sublayouts\MyAccount\MyAccountHeader.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\My Account Header.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyAccountSubheader.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyComments.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyNotificationsContainer.ascx" />
@@ -2590,7 +2588,7 @@
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
-  </Target>
+  </Target>-->
   <Target Name="AfterBuild">
     <CallTarget Targets="DeployToWeb" Condition="Exists('output-path.txt')" />
   </Target>
@@ -2602,5 +2600,5 @@
       <Output ItemName="DeployFiles" TaskParameter="Include" />
     </CreateItem>
     <Copy SourceFiles="@(DeployFiles)" DestinationFiles="@(DeployFiles->'$(DeployPath)\%(RelativeDir)%(Filename)%(Extension)')" />
-  </Target>-->
+  </Target>
 </Project>
