@@ -37,20 +37,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             FooterFolderItem footerFolderItem = GetFooter();
             if (footerFolderItem != null)
             {
-                GetMainNavigationItems();
-                GetUtilityNavigationItems();
+                GetFooterDetails(footerFolderItem);
+                GetMainNavigationItems(footerFolderItem);
+                GetUtilityNavigationItems(footerFolderItem);
                 GetPartnerLinksItems();
-                GetSocialMediaItems();
+                GetSocialMediaItems(footerFolderItem);
             }
+        }
+
+        /// <summary>
+        /// Gets footer detail
+        /// </summary>
+        /// <param name="footerFolderItem"></param>
+        private void GetFooterDetails(FooterFolderItem footerFolderItem)
+        {
+            frPartnership.Item = frHeading.Item = frEmailAbstract.Item = frCopyrightText.Item = frAbstract.Item = scLogoImage.Item = footerFolderItem;
         }
 
         /// <summary>
         /// Gets social media item.
         /// </summary>
         /// <param name="footerFolderItem"></param>
-        private void GetSocialMediaItems()
+        private void GetSocialMediaItems(FooterFolderItem footerFolderItem)
         {
-            SocialMediaFolderItem socialMediaFolder = Model.GetSocialMediaFolder();
+            SocialMediaFolderItem socialMediaFolder = footerFolderItem.GetSocialMediaFolder();
             if (socialMediaFolder != null)
             {
                 var results = socialMediaFolder.GetSocialMediaItem();
@@ -106,9 +116,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         /// Get main navigation items.
         /// </summary>
         /// <param name="footerFolderItem"></param>
-        private void GetMainNavigationItems()
+        private void GetMainNavigationItems(FooterFolderItem footerFolderItem)
         {
-            MainNavigationFolderItem mainNavigationFolder = Model.GetMainNavigationFolder();
+            MainNavigationFolderItem mainNavigationFolder = footerFolderItem.GetMainNavigationFolder();
             if (mainNavigationFolder != null)
             {
                 var results = mainNavigationFolder.GetNavigationLinkItems();
@@ -124,10 +134,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         /// Get utility navigation items.
         /// </summary>
         /// <param name="headerFolderItem"></param>
-        private void GetUtilityNavigationItems()
+        private void GetUtilityNavigationItems(FooterFolderItem footerFolderItem)
         {
 
-            UtilityNavigationFolderItem utilityNavigationFolder = Model.GetUtilityNavigationFolder();
+            UtilityNavigationFolderItem utilityNavigationFolder = footerFolderItem.GetUtilityNavigationFolder();
             if (utilityNavigationFolder != null)
             {
                 var results = utilityNavigationFolder.GetNavigationLinkItems();

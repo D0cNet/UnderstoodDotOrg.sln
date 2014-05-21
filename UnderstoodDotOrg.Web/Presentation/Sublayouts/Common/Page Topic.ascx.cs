@@ -46,9 +46,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 hlAuthorName.Text = ObjDefArticle.AuthorName.Item.Name;
                 phAuthorInfo.Visible = true;
             }
-            frSectionTitle.Item = Sitecore.Context.Item.Parent;
-            hlSectionTitle.Text = Sitecore.Context.Item.Parent.Name;
-            hlSectionTitle.NavigateUrl = Sitecore.Context.Item.Parent.GetUrl();
+
+            // TODO: refactor to handle folder parent items
+            ContentPageItem parent = Sitecore.Context.Item.Parent;
+            if (parent != null)
+            {
+                frSectionTitle.Item = parent;
+                hlSectionTitle.NavigateUrl = parent.GetUrl();
+            }
         }
 
         private void PopulateBehaviorInfo()
