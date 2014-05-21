@@ -103,15 +103,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         protected global::System.Web.UI.WebControls.TextBox tbxSubscriberFN1;
         
         /// <summary>
-        /// btnEM1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEM1;
-        
-        /// <summary>
         /// btnEM2 control.
         /// </summary>
         /// <remarks>
@@ -137,15 +128,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEM4;
-        
-        /// <summary>
-        /// btnEM5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEM5;
         
         /// <summary>
         /// btnEM6 control.
@@ -193,15 +175,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         protected global::System.Web.UI.WebControls.Button btnEM10;
         
         /// <summary>
-        /// btnEM11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEM11;
-        
-        /// <summary>
         /// btnEM12 control.
         /// </summary>
         /// <remarks>
@@ -238,40 +211,94 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         protected global::System.Web.UI.WebControls.Button btnEM15;
         
         /// <summary>
-        /// btne1a control.
+        /// btnEM16 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btne1a;
+        protected global::System.Web.UI.WebControls.Button btnEM16;
         
         /// <summary>
-        /// btne1b1 control.
+        /// btnEM17 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btne1b1;
+        protected global::System.Web.UI.WebControls.Button btnEM17;
         
         /// <summary>
-        /// btne1B2 control.
+        /// btnEM18 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btne1B2;
+        protected global::System.Web.UI.WebControls.Button btnEM18;
         
         /// <summary>
-        /// btne1c control.
+        /// btnEM19 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btne1c;
+        protected global::System.Web.UI.WebControls.Button btnEM19;
+        
+        /// <summary>
+        /// btnEM21 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEM21;
+        
+        /// <summary>
+        /// btnEM22 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEM22;
+        
+        /// <summary>
+        /// btnEM23 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEM23;
+        
+        /// <summary>
+        /// btnEM24 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEM24;
+        
+        /// <summary>
+        /// btnEM25 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEM25;
+        
+        /// <summary>
+        /// btnEM28 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEM28;
         
         /// <summary>
         /// lblMessage control.

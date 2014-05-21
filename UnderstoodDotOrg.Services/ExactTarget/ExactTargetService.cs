@@ -256,7 +256,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 216, request.ToEmail, "Parent Toolkit");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 512, request.ToEmail, "Parent Toolkit");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -398,64 +398,66 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			return reply;
 		}
-		public static BaseReply InvokeEM11DonationAcknowledgement(InvokeEM11DonationAcknowledgementRequest request)
-		{
-			BaseReply reply = new BaseReply();
+		//public static BaseReply InvokeEM11DonationAcknowledgement(InvokeEM11DonationAcknowledgementRequest request)
+		//{
+		//	BaseReply reply = new BaseReply();
 
-			SoapClient client = ExactTargetService.GetInstance();
+		//	SoapClient client = ExactTargetService.GetInstance();
 
-			StringBuilder sbReturnString = new StringBuilder();
+		//	StringBuilder sbReturnString = new StringBuilder();
 
-			try
-			{
-				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Donation Acknowledgement");
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 513, request.ToEmail, "Donation Acknowledgement");
 
-				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
-				if (cStatus == "OK")
-				{
-					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
-					tsd.TriggeredSendStatusSpecified = true; //required
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
 
-					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
 
-					if (uStatus == "OK")
-					{
-						// *** SEND THE TRIGGER EMAIL
-						Subscriber newSub = new Subscriber();
-						newSub.EmailAddress = request.ToEmail;
-						newSub.SubscriberKey = request.ToEmail;
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[3];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "fullname";
-						newSub.Attributes[0].Value = request.FullName;
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "donation_amount";
-						newSub.Attributes[1].Value = request.DonationAmount;
-						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "print_donation_records_link";
-						newSub.Attributes[2].Value = request.PrintDonationRecordsLink;
+		//				newSub.Attributes = new etAPI.Attribute[3];
+		//				newSub.Attributes[0] = new etAPI.Attribute();
+		//				newSub.Attributes[0].Name = "fullname";
+		//				newSub.Attributes[0].Value = request.FullName;
 
-						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+		//				newSub.Attributes[1] = new etAPI.Attribute();
+		//				newSub.Attributes[1].Name = "donation_amount";
+		//				newSub.Attributes[1].Value = request.DonationAmount;
 
-						reply.Successful = true;
-					}
-				}
-			}
-			catch (Exception exc)
-			{
-				string message = "Unable to send welcome email.";
+		//				newSub.Attributes[2] = new etAPI.Attribute();
+		//				newSub.Attributes[2].Name = "print_donation_records_link";
+		//				newSub.Attributes[2].Value = request.PrintDonationRecordsLink;
 
-				reply.Successful = false;
-				reply.Message = message;
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
-				Log.Error(exc.ToString(), "something went wrong");
-			}
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
 
-			return reply;
-		}//This email will be sent from Convio/Luminate.
+		//		reply.Successful = false;
+		//		reply.Message = message;
+
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
+
+		//	return reply;
+		//}//This email will be sent from Convio/Luminate.
 		public static BaseReply InvokeEM12ThankYouForContactingUs(InvokeEM12ThankYouForContactingUsRequest request)
 		{
 			BaseReply reply = new BaseReply();
@@ -467,7 +469,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Thank you for contacting us");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 514, request.ToEmail, "Thank you for contacting us");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -522,7 +524,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Happy Holidays");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 515, request.ToEmail, "Happy Holidays");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -569,7 +571,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Explore the Community");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 516, request.ToEmail, "Explore the Community");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -627,7 +629,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Learn Act");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 517, request.ToEmail, "Learn Act");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -663,52 +665,53 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			return reply;
 		}//This email will be sent from Convio/Luminate.
-		public static BaseReply InvokeEM5KeepingAllStudentsSafe(InvokeEM5KeepingAllStudentsSafeRequest request)
-		{
-			BaseReply reply = new BaseReply();
+		//public static BaseReply InvokeEM5KeepingAllStudentsSafe(InvokeEM5KeepingAllStudentsSafeRequest request)
+		//{
+		//	BaseReply reply = new BaseReply();
 
-			SoapClient client = ExactTargetService.GetInstance();
+		//	SoapClient client = ExactTargetService.GetInstance();
 
-			StringBuilder sbReturnString = new StringBuilder();
+		//	StringBuilder sbReturnString = new StringBuilder();
 
-			try
-			{
-				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Keeping all Students Safe");
+		//	try
+		//	{
+		//		//Create a GUID for ESD to ensure a unique name and customer key
+		//		TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 518, request.ToEmail, "Keeping all Students Safe");
 
-				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+		//		string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
-				if (cStatus == "OK")
-				{
-					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
-					tsd.TriggeredSendStatusSpecified = true; //required
+		//		if (cStatus == "OK")
+		//		{
+		//			tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+		//			tsd.TriggeredSendStatusSpecified = true; //required
 
-					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+		//			string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
 
-					if (uStatus == "OK")
-					{
-						// *** SEND THE TRIGGER EMAIL
-						Subscriber newSub = new Subscriber();
-						newSub.EmailAddress = request.ToEmail;
+		//			if (uStatus == "OK")
+		//			{
+		//				// *** SEND THE TRIGGER EMAIL
+		//				Subscriber newSub = new Subscriber();
+		//				newSub.EmailAddress = request.ToEmail;
+		//				newSub.SubscriberKey = request.ToEmail;
 
-						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+		//				ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
-						reply.Successful = true;
-					}
-				}
-			}
-			catch (Exception exc)
-			{
-				string message = "Unable to send welcome email.";
+		//				reply.Successful = true;
+		//			}
+		//		}
+		//	}
+		//	catch (Exception exc)
+		//	{
+		//		string message = "Unable to send welcome email.";
 
-				reply.Successful = false;
-				reply.Message = message;
+		//		reply.Successful = false;
+		//		reply.Message = message;
 
-				Log.Error(exc.ToString(), "something went wrong");
-			}
+		//		Log.Error(exc.ToString(), "something went wrong");
+		//	}
 
-			return reply;
-		}//This email will be sent from Convio/Luminate.
+		//	return reply;
+		//}//This email will be sent from Convio/Luminate.
 		public static BaseReply InvokeEM6HolidayDonations(InvokeEM6HolidayDonationsRequest request)
 		{
 			BaseReply reply = new BaseReply();
@@ -720,7 +723,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Holiday Donations Request");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 519, request.ToEmail, "Holiday Donations Request");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -772,7 +775,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 447, request.ToEmail, "Newsletter Confirmation");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 520, request.ToEmail, "Newsletter Confirmation");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -830,7 +833,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Subscription confirmation");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 521, request.ToEmail, "Subscription confirmation");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -882,7 +885,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Group Welcome");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 522, request.ToEmail, "Group Welcome");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -943,7 +946,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Content Reminder");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 523, request.ToEmail, "Content Reminder");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1015,7 +1018,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Observation log reminder");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 524, request.ToEmail, "Observation log reminder");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1071,7 +1074,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Update profile reminder");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 525, request.ToEmail, "Update profile reminder");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1092,25 +1095,25 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[2];
+						newSub.Attributes = new etAPI.Attribute[5];
 						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "child_name";
+						newSub.Attributes[0].Name = "child_information_confirmation";
 						newSub.Attributes[0].Value = request.ChildInformationConfirmation;
 
 						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "observational_journal_link";
+						newSub.Attributes[1].Name = "information_confirmation_link";
 						newSub.Attributes[1].Value = request.InformationConfirmLink;
 
 						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "observational_journal_link";
+						newSub.Attributes[2].Name = "information_denied_link";
 						newSub.Attributes[2].Value = request.InformationDeniedLink;
 
 						newSub.Attributes[3] = new etAPI.Attribute();
-						newSub.Attributes[3].Name = "observational_journal_link";
+						newSub.Attributes[3].Name = "profile_image_link";
 						newSub.Attributes[3].Value = request.ProfileImageLink;
 
 						newSub.Attributes[4] = new etAPI.Attribute();
-						newSub.Attributes[4].Name = "observational_journal_link";
+						newSub.Attributes[4].Name = "user_profile_link";
 						newSub.Attributes[4].Value = request.UserProfileLink;
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
@@ -1142,7 +1145,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Webinar reminder");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 526, request.ToEmail, "Webinar reminder");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1194,7 +1197,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "private message");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 527, request.ToEmail, "private message");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1258,7 +1261,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "forgot password");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 528, request.ToEmail, "forgot password");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1314,7 +1317,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Password reset confirmation");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 529, request.ToEmail, "Password reset confirmation");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1332,7 +1335,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[2];
+						newSub.Attributes = new etAPI.Attribute[3];
 						newSub.Attributes[0] = new etAPI.Attribute();
 						newSub.Attributes[0].Name = "password_reset_link";
 						newSub.Attributes[0].Value = request.ReportChangedPasswordLink;
@@ -1341,9 +1344,9 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.Attributes[1].Name = "user_name";
 						newSub.Attributes[1].Value = request.EmailAddress;
 
-						newSub.Attributes[3] = new etAPI.Attribute();
-						newSub.Attributes[3].Name = "user_name";
-						newSub.Attributes[3].Value = request.UserPassword;
+						newSub.Attributes[2] = new etAPI.Attribute();
+						newSub.Attributes[2].Name = "user_password";
+						newSub.Attributes[2].Value = request.UserPassword;
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1374,7 +1377,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "content shared with a friend");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 530, request.ToEmail, "content shared with a friend");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1450,7 +1453,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "webinar shared with a friend");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 531, request.ToEmail, "webinar shared with a friend");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1510,7 +1513,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "apps technology shared with friend");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 538, request.ToEmail, "apps technology shared with friend");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1602,7 +1605,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Daily Digest");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 533, request.ToEmail, "Daily Digest");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1620,7 +1623,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[11];
+						newSub.Attributes = new etAPI.Attribute[5];
 						newSub.Attributes[0] = new etAPI.Attribute();
 						newSub.Attributes[0].Name = "activity_from_today_module";
 						newSub.Attributes[0].Value = request.ActivityFromTodayModule;
@@ -1670,7 +1673,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Weekly Digest");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 534, request.ToEmail, "Weekly Digest");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1688,6 +1691,26 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
+						newSub.Attributes = new etAPI.Attribute[11];
+						newSub.Attributes[0] = new etAPI.Attribute();
+						newSub.Attributes[0].Name = "activity_from_this_week_module";
+						newSub.Attributes[0].Value = request.ActivityFromThisWeekModule;
+
+						newSub.Attributes[1] = new etAPI.Attribute();
+						newSub.Attributes[1].Name = "contact_settings_link";
+						newSub.Attributes[1].Value = request.ContactSettingsLink;
+
+						newSub.Attributes[2] = new etAPI.Attribute();
+						newSub.Attributes[2].Name = "profile_image_link";
+						newSub.Attributes[2].Value = request.ProfileImageLink;
+
+						newSub.Attributes[3] = new etAPI.Attribute();
+						newSub.Attributes[3].Name = "user_profile_link";
+						newSub.Attributes[3].Value = request.UserProfileLink;
+
+						newSub.Attributes[4] = new etAPI.Attribute();
+						newSub.Attributes[4].Name = "view_messages_link";
+						newSub.Attributes[4].Value = request.ViewMessageLink;
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
