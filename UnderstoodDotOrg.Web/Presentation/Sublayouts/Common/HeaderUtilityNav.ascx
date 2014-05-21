@@ -37,8 +37,7 @@
         color: rgb(105, 105, 105);
     }
     div.user-info-bar > a:hover,
-    div.user-info-bar > a:active {        
-        color: rgb(105, 105, 105);
+    div.user-info-bar > a:active {   
         text-decoration: none;
         color: rgb(66, 109, 169);
     }
