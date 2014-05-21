@@ -124,7 +124,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                 Literal litDivEnd = e.FindControlAs<Literal>("litDivEnd");
                 HyperLink hlLink = e.FindControlAs<HyperLink>("hlLink");
                 HtmlGenericControl divIcon = e.FindControlAs<HtmlGenericControl>("divIcon");
-                HtmlGenericControl liItem = e.FindControlAs<HtmlGenericControl>("liItem");
 
                 if (litDevStart != null && litStartUL != null && litEndUL != null && litDivEnd != null) {
                     int cindex = e.Item.ItemIndex + 1;
@@ -168,11 +167,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                         litDivEnd.Visible = true;
                     }
 
-                    if ((toolsCount == cindex) && ((cindex) % 2 == 1)) {
-                        //LI PADDING ADD  
-                        liItem.Attributes.Add("style", "padding-right:25px;");
+                    //if ((toolsCount == cindex) && ((cindex) % 2 == 1)) {
+                    //    //LI PADDING ADD  
+                    //    liItem.Attributes.Add("style", "padding-right:25px;");
 
-                    }
+                    //}
 
                 }
                 if (divIcon != null && navItem.Image.MediaItem != null) {
