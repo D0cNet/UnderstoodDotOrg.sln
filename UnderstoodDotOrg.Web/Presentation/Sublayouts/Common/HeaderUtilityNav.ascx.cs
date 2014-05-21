@@ -34,9 +34,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             {
                 MyAccountPageItem = MyAccountItem.GetMyAccountPage();
 
-                UserDisplayName = CurrentMember.FirstName != null ? CurrentMember.FirstName + " " : string.Empty;
-                UserDisplayName = CurrentMember.LastName != null ? UserDisplayName + CurrentMember.LastName : UserDisplayName;
-                UserDisplayName = UserDisplayName != string.Empty ? UserDisplayName.Trim() : CurrentMember.ScreenName;
+                UserDisplayName = !string.IsNullOrWhiteSpace(CurrentMember.FirstName) ?
+                    CurrentMember.FirstName.Trim() :
+                    "Guest";
             }
 
             GetCompanyLogoDetail();

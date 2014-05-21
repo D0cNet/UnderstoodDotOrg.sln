@@ -95,12 +95,11 @@ namespace UnderstoodDotOrg.Framework.UI
             }
         }
 
-        private bool? _isUserLoggedIn;
         public bool IsUserLoggedIn
         {
             get
             {
-                return (_isUserLoggedIn = _isUserLoggedIn ?? CurrentMember != null && CurrentUser != null).Value;
+                return CurrentMember != null && CurrentUser != null;
             }
         }
         private Member _unauthenticatedSessionMember;
@@ -122,17 +121,19 @@ namespace UnderstoodDotOrg.Framework.UI
 
         public void FlushCurrentMemberUser()
         {
-           CurrentMember = null;
-           CurrentUser = null; 
+            CurrentMember = null;
+            CurrentUser = null;
         }
 
-		protected void Logout()
-		{
-			FlushCurrentMemberUser();
-			Response.Redirect(Request.RawUrl);
-		}
+        protected void Logout()
+        {
+            FlushCurrentMemberUser();
+            Response.Redirect(Request.RawUrl);
+        }
 
-        public BaseSublayout() : base() { }
+        public BaseSublayout() : base()
+        {
+        }
 
     }
 }
