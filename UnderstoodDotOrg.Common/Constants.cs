@@ -483,6 +483,10 @@ namespace UnderstoodDotOrg.Common
         {
             public static string GroupTemplateID { get { return "{92FB8D67-690A-45F1-B330-C4BBAE189AAF}"; } }
         }
+        public static class Threads
+        {
+            public static string ThreadTemplateID { get { return "{E230410F-77D7-4E8C-8E6C-0FF9F9335EE5}"; } }
+        }
         #region Salesforce Item Id to Sitecore Guid Mapping
         /// <summary>
         /// Pass in a Guid from Sitecore, get the corresponding ID that is used in Salesoforce to track the constant

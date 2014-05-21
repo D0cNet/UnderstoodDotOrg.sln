@@ -31,6 +31,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         protected global::System.Web.UI.WebControls.Panel pnlDefaultSection;
         
         /// <summary>
+        /// lvJumpto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lvJumpto;
+        
+        /// <summary>
         /// rptForums control.
         /// </summary>
         /// <remarks>
@@ -49,12 +58,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         protected global::System.Web.UI.WebControls.Panel pnlSearchSection;
         
         /// <summary>
-        /// searchResults control.
+        /// sbSearchResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder searchResults;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbSearchResults;
     }
 }

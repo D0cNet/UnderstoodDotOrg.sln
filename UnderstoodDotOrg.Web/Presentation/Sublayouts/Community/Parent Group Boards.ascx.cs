@@ -1,9 +1,11 @@
 ﻿using Sitecore.Data.Items;
+using Sitecore.Links;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.Understood.Common;
@@ -36,6 +38,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     {
                         rptForums.DataSource = grpModel.Forums;
                         rptForums.DataBind();
+
+                        lvJumpto.DataSource = grpModel.Forums;
+                        lvJumpto.DataBind();
                     }
                 }
 
@@ -58,7 +63,55 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
         protected void rptThreads_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
+            if (e.Item.DataItem != null)
+            {
+                if (e.Item.DataItem is ThreadModel)
+                {
+                    Item thread = null;
+                    HiddenField hdSub = (HiddenField)e.Item.FindControl("hdSubject");
+                    if (hdSub != null)
+                    {
 
+                        string subject = hdSub.Value;
+                        thread = Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@Subject = '" + subject + "']");
+                        // ID = thread.ID.ToString();
+                    }
+                    HtmlAnchor hrefDiscussions = (HtmlAnchor)e.Item.FindControl("hrefDiscussion");
+                    if (hrefDiscussions != null)
+                    {
+                        if (thread != null)
+                        {
+                            hrefDiscussions.HRef = LinkManager.GetItemUrl(thread);
+                        }
+                    }
+                }
+            }
+        }
+
+        protected void lvJumpto_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            if(e.Item.DataItem !=null)
+            {
+                if (e.Item.DataItem is ForumModel)
+                {
+                     Item forum = null;
+                    //HiddenField hdSub = (HiddenField)e.Item.FindControl("hdSubject");
+                    //if(hdSub !=null)
+                    //{
+                    //    string subject = hdSub.Value;
+                    //     thread = Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@Subject = '"+ subject +"']");
+                    //   // ID = thread.ID.ToString();
+                    //}
+                    HtmlAnchor forumHref = (HtmlAnchor)e.Item.FindControl("hrefForum");
+                    if(forumHref !=null)
+                    {
+                        var forumtext = forumHref.InnerText;
+                        forum =Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@Name = '"+ forumtext +"']");
+                        if(forum!=null)
+                            forumHref.HRef = LinkManager.GetItemUrl(forum);
+                    }
+                }
+            }
         }
     }
 }

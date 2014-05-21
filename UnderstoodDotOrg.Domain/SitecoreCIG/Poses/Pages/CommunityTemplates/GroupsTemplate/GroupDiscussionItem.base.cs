@@ -72,7 +72,13 @@ public CustomTextField ThreadID
 	}
 }
 
-
+public CustomTextField Subject
+{
+    get
+    {
+        return new CustomTextField(InnerItem, InnerItem.Fields["Subject"]);
+    }
+}
 #endregion //Field Instance Methods
 }
 }

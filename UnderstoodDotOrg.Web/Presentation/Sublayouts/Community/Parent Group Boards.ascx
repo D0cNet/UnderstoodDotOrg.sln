@@ -18,9 +18,23 @@
               <h3>Jump to</h3>
 
       
-
+                <asp:ListView GroupItemCount="3" OnItemDataBound="lvJumpto_ItemDataBound"  ID="lvJumpto" runat="server">
+                    <LayoutTemplate>
+                        <div class="col col-11 links">
+                            <a runat="server" id="groupPlaceholder"></a>
+                        </div>
+                    </LayoutTemplate>
+                    <GroupTemplate>
+                         <a runat="server" id="itemPlaceholder"></a>
+                    </GroupTemplate>
+                    <ItemTemplate>
+                         <asp:HiddenField Value='<%# Eval("Name") %>' runat="server" ID="hdSubject"/>
+                         <a href="REPLACE" runat="server" id="hrefForum" ><%# Eval("Name") %></a>
+                    </ItemTemplate>
+                
+                </asp:ListView>
       
-              <div class="col col-11 links">
+              <%--<div class="col col-11 links">
                 <a href="REPLACE">Title of Discussion Board</a>
                 <a href="REPLACE">Title of Discussion Board</a>
                 <a href="REPLACE">Title of Discussion Board</a>
@@ -29,7 +43,7 @@
                 <a href="REPLACE">Title of Discussion Board</a>
                 <a href="REPLACE">Title of Discussion Board</a>
                 <a href="REPLACE">Title of Discussion Board</a>
-              </div><!-- end .links and .additional-links -->
+              </div><!-- end .links and .additional-links -->--%>
       
 
             </div><!-- end .discussion-boards -->
@@ -66,9 +80,10 @@
                                             <ul class="discussions">
                                         </HeaderTemplate>
                                         <ItemTemplate>
+                                            <asp:HiddenField Value='<%# Eval("Subject") %>' runat="server" ID="hdSubject"/>
                                             <li>
 							                    <div class="col summary">
-								                    <a href="REPLACE">
+								                    <a href="REPLACE" id="hrefDiscussion" runat="server">
 									                    <h4 class="visuallyhidden">Discussion</h4>
                                                         <%# Eval("Subject") %>
 
@@ -107,8 +122,8 @@
         </div>
     </asp:Panel>
    <asp:Panel ID="pnlSearchSection" runat="server"> 
-        <sc:Placeholder ID="searchResults" runat="server" />
-        <%-- <sc:Sublayout ID="sbSearchResults" runat="server" Path="~/Presentation/SubLayouts/Community/Parent Group Search Result.ascx" />--%>
+      <%--  <sc:Placeholder ID="searchResults" runat="server" />--%>
+         <sc:Sublayout ID="sbSearchResults" runat="server" Path="~/Presentation/SubLayouts/Community/Parent Group Search Result.ascx" />
    </asp:Panel>
    
        <!-- Show More -->

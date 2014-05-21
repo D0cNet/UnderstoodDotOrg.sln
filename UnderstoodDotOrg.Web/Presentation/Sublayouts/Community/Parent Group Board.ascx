@@ -1,4 +1,123 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parent Group Board.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parent_Group_Board" %>
+<script language="javascript"  type="text/javascript">
+    function checkValidation() {
+        if (!Page_ClientValidate("newDiscussion")) {
+            return false;
+        }
+        else {
+            return confirm('Items created by end user cannot be modified until published. Are you sure you want to create a thread?');
+        }
+    }
+
+    jQuery(document).ready(function () {
+        
+        
+        jQuery("#btn_start_discussion").click(
+             function () {
+                 jQuery(".modal_discussion").toggle();
+                 //alert("Discussion button clicked");
+             });
+    });
+</script>
+
+<div class="container community-main-header ">
+    <header>
+        <div class="row header-wrapper">
+            <div class="col col-14 offset-1 header-title rs_read_this">
+                <h1>Welcome to the Understood Community</h1>
+                <p class="subhead">A private parent community with expert guidance and support</p>
+            </div>
+
+            <div class="col col-9 header-share-save">
+                <!-- BEGIN PARTIAL: share-save -->
+<div class="share-save-container">
+  <div class="share-save-social-icon">
+  	<div class="toggle">
+	    <a href="REPLACE" class="socicon icon-facebook">Facebook</a><br />
+	    <a href="REPLACE" class="socicon icon-twitter">Twitter</a><br />
+	    <a href="REPLACE" class="socicon icon-googleplus">Google&#43;</a><br />
+	    <a href="REPLACE" class="socicon icon-pinterest">Pinterest</a><br />
+	</div>
+  </div>
+  <div class="share-save-icon">
+    <h3>Share &amp; Save</h3>
+    <!-- leave no white space for layout consistency -->
+    <a href="REPLACE" class="icon icon-share">Share</a><span class="tools"><a href="REPLACE" class="icon icon-email">Email</a><a href="REPLACE" class="icon icon-save">Save</a><a href="REPLACE" class="icon icon-print">Print</a><a href="REPLACE" class="icon icon-remind">Remind</a><a href="REPLACE" class="icon icon-rss">RSS</a></span>
+  </div>
+</div>
+
+<!-- END PARTIAL: share-save -->
+            </div>
+        </div>
+    </header>
+    <nav class="container nav-secondary">
+        <div class="row">
+            <div class="col col-24">
+                <div class="label-menu"><span>Menu</span></div>
+                <ul class="menu" aria-role="navigation" aria-label="secondary-navigation">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="title">
+                      <p class="select-topic">Select a topic:</p>
+                      <button>Groups</button>
+                      <i class="icon-hide-show-fff"></i>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="submenu">
+                        <div class="inner">
+                            <div class="label-more"><button>More <i class="icon-hide-show-fff"></i></button></div>
+                            <ul>
+                                
+                                
+                                
+                                <li><span><a href="REPLACE">What's Happening Now</a></span></li>
+                                
+                                
+                                
+                                
+                                <li><span><a href="REPLACE">Experts Live</a></span></li>
+                                
+                                
+                                
+                                
+                                <li><span><a href="REPLACE">Q&nbsp;&amp;&nbsp;A</a></span></li>
+                                
+                                
+                                
+                                
+                                <li><span><a href="REPLACE">Parents Like Me</a></span></li>
+                                
+                                
+                                
+                                <li><span><a href="REPLACE" class="selected">Groups</a></span></li>
+                                
+                                
+                                
+                                
+                                
+                                <li><span><a href="REPLACE">Blogs</a></span></li>
+                                
+                                
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
     <div class="container">
         <div class="row">
             <div class="container">
@@ -40,23 +159,38 @@
                 </fieldset>
                 <!-- END PARTIAL: community/groups_search_form -->
       
-
-      
-
             </div><!-- end .discussion-boards -->
+
+
             <div class="col-6 start-discussion">
                 <p>Got a question?</p>
                 <p class="want-to-talk">Want to talk?</p>
-                <a href="REPLACE" class="button">Start a Discussion</a>
+                <a href="REPLACE" id="btn_start_discussion" class="button">Start a Discussion</a>
             </div><!-- end .start-discussion -->
           </div>
         </div><!-- end .discussion-board -->
         <!-- END PARTIAL: community/groups_start_discussion -->
 
-              <div class="col col-23 individual-group skiplink-content" aria-role="main">
+        <div class="modal_discussion" runat="server" id="modal_discussion" style="display:none;clear:both">
+
+
+            <asp:Label ID="lblSubject"  runat="server" Text="Subject:" />
+            <asp:TextBox ID="txtSubject" ValidationGroup="newDiscussion"  runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rqdSubject" ValidationGroup="newDiscussion" ControlToValidate="txtSubject" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
+            
+            <asp:Label ID="lblBody" runat="server"  Text="Body:" />
+            <asp:TextBox ID="txtBody" ValidationGroup="newDiscussion" runat="server" TextMode="MultiLine"></asp:TextBox>
+                <asp:RequiredFieldValidator ValidationGroup="newDiscussion" ID="rqdDiscussion" ControlToValidate="txtBody" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
+     
+            <asp:Button ID="btnSubmit" OnClick="btnSubmit_Click" OnClientClick="javascript:return checkValidation();" ClientIDMode="Static" ValidationGroup="newDiscussion" runat="server" Text="Create" />
+            <asp:Label Text="" CssClass="error" ID="error_msg"  ForeColor="Red" Visible="false" runat="server" />
+
+        </div>
+
+       <div class="col col-23 individual-group skiplink-content" aria-role="main">
                 <!-- BEGIN PARTIAL: community/groups_table -->
                 <div class="discussion-box col col-23 offset-1">
-                  <header class="rs_skip">
+            <%--      <header class="rs_skip">
 
     
 
@@ -67,9 +201,9 @@
                     <h4 class="col latest-post-tabular">Latest Post</h4>
     
 
-                  </header>
+                  </header>--%>
            
-            <asp:Repeater ID="rptThread" runat="server">
+           <asp:Repeater ID="rptThread" OnItemDataBound="rptThread_ItemDataBound" runat="server">
 
                 <HeaderTemplate>
                     <ul class="discussions table-discussions search-results rs_read_this">
@@ -78,8 +212,9 @@
                 <ItemTemplate>
                         <li>
                             <div class="col summary">
+                                <asp:HiddenField Value='<%# Eval("Subject") %>' runat="server" ID="hdSubject"/>
                                 <h4>Discussion:</h4>
-                                <a href="REPLACE"><%# Eval("Snippet") %></a>
+                                <a href="REPLACE" id="hrefDiscussion" runat="server"><%# Eval("Snippet") %></a>
                             </div>
                             <div class="col latest-post rs_skip">
                                 <h4>Latest Post:</h4>
@@ -108,7 +243,7 @@
                 <FooterTemplate>
                     </ul>
                 </FooterTemplate>
-            </asp:Repeater>
+            </asp:Repeater> <%--<%----%>
  <%--<ul class="discussions table-discussions search-results rs_read_this">
     
       <!-- BEGIN PARTIAL: community/individual_board_list_item -->
@@ -210,9 +345,6 @@
             </div>
         </div>
     </div>
-<!-- Show More -->
-<!-- BEGIN PARTIAL: community/show_more -->
-<!--Show More-->
 <div class="container show-more rs_skip">
     <div class="row">
         <div class="col col-24">
@@ -220,6 +352,6 @@
         </div>
     </div>
 </div>
-<!-- .show-more -->
-<!-- END PARTIAL: community/show_more -->
-<!-- .show-more -->
+
+
+<!-- END PARTIAL: community/main_header -->

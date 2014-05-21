@@ -28,8 +28,8 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
 
         }
 
-        private string ForumID { get; set; }
-        private string GroupID { get; set; }
+        public string ForumID { get; set; }
+        public string GroupID { get; set; }
         private List<ThreadModel> thModel=null;
         private System.Xml.XmlNode childNode;
         public string Description { get; set; }

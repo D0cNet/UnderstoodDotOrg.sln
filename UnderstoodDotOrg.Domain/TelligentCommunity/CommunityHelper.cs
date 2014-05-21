@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Understood.Common;
 using Sitecore.Links;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace UnderstoodDotOrg.Domain.TelligentCommunity
 {
@@ -904,11 +905,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     ThreadModel t = new ThreadModel(childNode);
                     th.Add(t);
+                   // Thread.Sleep(3000);
                 }
             }
             catch (Exception ex)
             {
                 //Bth = null;
+                Sitecore.Diagnostics.Error.LogError(ex.Message);
             }
             return th;
         }

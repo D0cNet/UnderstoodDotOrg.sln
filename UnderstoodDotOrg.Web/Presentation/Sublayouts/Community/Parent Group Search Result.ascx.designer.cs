@@ -11,23 +11,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
     
     
     public partial class Parent_Group_Search_Result {
-        
-        /// <summary>
-        /// litResultsCount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litResultsCount;
-        
-        /// <summary>
-        /// litSearchCriteria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litSearchCriteria;
     }
 }

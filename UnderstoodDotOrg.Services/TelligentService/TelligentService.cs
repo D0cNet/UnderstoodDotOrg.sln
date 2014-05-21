@@ -282,7 +282,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     XmlNode node = xmlDoc.SelectSingleNode("Response/BlogPost");
 
                     XmlNode auth = xmlDoc.SelectSingleNode("Response/BlogPost/Author");
-                    
+
 
                     blogPost = new BlogPost
                     {
@@ -403,8 +403,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     PublishedDate = DataFormatHelper.FormatDate(node["PublishedDate"].InnerText),
                     BlogName = node["HtmlName"].InnerText,
                     Author = nodes1[count]["DisplayName"].InnerText,
-                      
-                    ItemUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" +  node["HtmlName"].InnerText +"/" + node["Title"].InnerText, ".aspx", "")
+
+                    ItemUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + node["HtmlName"].InnerText + "/" + node["Title"].InnerText, ".aspx", "")
                 };
                 blogPosts.Add(blogPost);
                 count++;
@@ -761,6 +761,40 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return success;
         }
 
+        public static ThreadModel CreateForumThread(string forumID, string subject, string body)
+        {
+            ThreadModel model = null;
+            if ((!string.IsNullOrEmpty(forumID) && !string.IsNullOrEmpty(subject)) && !string.IsNullOrEmpty(body))
+            {
+                WebClient client = new WebClient();
+                try
+                {
+                    client.Headers.Add("Rest-User-Token", TelligentAuth());
+                    string address = string.Format(GetApiEndPoint("forums/{0}/threads.xml"), forumID);
+                    NameValueCollection data = new NameValueCollection();
+                    data["Subject"] = subject;
+                    data["Body"] = body;
+                    string xml = Encoding.UTF8.GetString(client.UploadValues(address, data));
+                    XmlDocument document = new XmlDocument();
+                    document.LoadXml(xml);
+                    XmlNode childNode = document.SelectSingleNode("Response/Thread");
+                    if (childNode != null)
+                    {
+                        model = new ThreadModel(childNode);
+                    }
+                }
+                catch
+                {
+                    model = null;
+                }
+
+                
+            }
+
+            return model;
+
+
+        }
     }
 
 }

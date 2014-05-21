@@ -34,10 +34,13 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                // TODO: Complete member initialization
                //this.childNode = childNode;
                Subject = childNode.SelectSingleNode("Subject").InnerText;
-               ReplyCount = childNode.SelectSingleNode("ReplyCount").InnerText;
+               ReplyCount = childNode.SelectSingleNode("ReplyCount").InnerText??"0";
                LastPostTime = CommunityHelper.FormatDate(childNode.SelectSingleNode("LatestPostDate").InnerText);
-               LastPostUser = Replies.OrderByDescending(x => x.Date).First().AuthorName;
-               LastPostBody = Replies.OrderByDescending(x => x.Date).First().Body;
+               if ( !ReplyCount.Equals("0"))
+               {
+                   LastPostUser = Replies.OrderByDescending(x => x.Date).First().AuthorName;
+                   LastPostBody = Replies.OrderByDescending(x => x.Date).First().Body;
+               }
                StartedBy = childNode.SelectSingleNode("Author/Username").InnerText;
                Snippet = CommunityHelper.FormatString100(childNode.SelectSingleNode("Body").InnerText);
                Body = childNode.SelectSingleNode("Body").InnerText;
@@ -83,7 +86,9 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             }
         }
        public string LastPostBody { get; set; }
-
+       public static string TemplateID { get { return UnderstoodDotOrg.Common.Constants.Threads.ThreadTemplateID; } }
        public string Body { get; set; }
+
+      
     }
 }

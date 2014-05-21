@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parent Group Search Result.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parent_Group_Search_Result" %>
-<div class="container">
+<%--<div class="container">
     <!-- BEGIN PARTIAL: community/featured_group -->
     <!--featured group header -->
 
@@ -141,4 +141,66 @@
             <!-- END PARTIAL: community/groups_table -->
           </div><!-- end .individual-group -->
     </div>
-</div><!-- .container -->
+</div>--%>
+
+#set($group = $core_v2_group.Current)
+
+<div class="field-list-header"></div>
+<fieldset class="field-list">
+	<ul class="field-list">
+		<li class="field-item">
+			<label class="field-item-header query" for="$core_v2_widget.UniqueId('query')">$core_v2_language.GetResource('Core_SiteSearch_QueryLabel')</label>
+			<span class="field-item-input"><input type="text" id="$core_v2_widget.UniqueId('query')" length="15" maxlength="64" class="search empty" /></span>
+		</li>
+		#if ($group.Id != $core_v2_group.Root.Id)
+			<li class="field-item">
+				<span class="field-item-input">
+					<a class="internal-link search-options" id="$core_v2_widget.UniqueId('options')" title="$core_v2_language.GetResource('Search_ChangeSearchScope')">&nbsp;</a>
+				</span>
+			</li>
+		#end
+	</ul>
+</fieldset>
+<div class="field-list-footer"></div>
+
+#if ($group.Id != $core_v2_group.Root.Id)
+	<div id="$core_v2_widget.UniqueId('filter-options')" style="display: none;">
+		<div class="field-list-header"></div>
+		<fieldset class="field-list">
+			<legend class="field-list-description">$core_v2_language.GetResource('Core_Header_SearchOptions')</legend>
+			<ul class="field-list">
+				<li class="field-item">
+					<label class="field-item-header" for="$core_v2_widget.UniqueId('filter')">$core_v2_language.GetResource('CF_Search_SearchFilter_Everything')</label>
+					<span class="field-item-input"><input type="radio" value="" name="$core_v2_widget.UniqueId('filter')" id="$core_v2_widget.UniqueId('filter')" /></span>
+				</li>
+				<li class="field-item">
+					<label class="field-item-header" for="$core_v2_widget.UniqueId('filter')">$core_v2_language.FormatString($core_v2_language.GetResource('CF_Search_SearchFilter'), $group.Name)</label>
+					<span class="field-item-input"><input type="radio" value="$group.Id" name="$core_v2_widget.UniqueId('filter')" id="Radio1" /></span>
+				</li>
+			</ul>
+		</fieldset>
+		<div class="field-list-footer"></div>
+	</div>
+#end
+
+#registerEndOfPageHtml('telligent.evolution.widgets.siteSearch')
+	<script type="text/javascript" src="$core_v2_encoding.HtmlAttributeEncode($core_v2_widget.GetFileUrl('ui.js'))"></script>
+#end
+#registerEndOfPageHtml()
+	<script type="text/javascript">
+	    jQuery(function(){
+	        jQuery.telligent.evolution.widgets.siteSearch.register({
+	            searchUrl: '$core_v2_encoding.JavascriptEncode($core_v2_widget.GetExecutedFileUrl('search.vm'))',
+	            searchResultsUrl: '$core_v2_encoding.JavascriptEncode($core_v2_urls.Search("%{ QueryString = '{0}' }"))',
+	        query: jQuery('#$core_v2_widget.UniqueId('query')'),
+	        optionsLink: jQuery('#$core_v2_widget.UniqueId('options')'),
+	        optionsContent: jQuery('#$core_v2_widget.UniqueId('filter-options')'),
+	        filterName: '$core_v2_widget.UniqueId('filter')',
+	        loading: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('CF_Search_Searching'))',
+	        error: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('CF_Search_Error'))',
+	        groupId: ''
+	    });
+	    });
+	</script>
+#end
+			
