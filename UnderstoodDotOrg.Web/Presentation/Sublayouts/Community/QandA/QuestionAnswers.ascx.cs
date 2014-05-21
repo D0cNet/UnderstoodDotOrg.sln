@@ -28,6 +28,14 @@
             List<Answer> dataSource = CommunityHelper.GetAnswers(wikiId, wikiPageId);
             AnswerRepeater.DataSource = dataSource;
             AnswerRepeater.DataBind();
+            try
+            {
+                lbAnswerCount.Text = dataSource[0].Count;
+            }
+            catch
+            {
+                lbAnswerCount.Text = "0";
+            }
         }
 
     }

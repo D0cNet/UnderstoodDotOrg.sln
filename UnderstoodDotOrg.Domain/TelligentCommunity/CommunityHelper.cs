@@ -572,7 +572,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     {
                         PublishedDate = FormatDate(xn["PublishedDate"].InnerText),
                         Body = xn["Body"].InnerText,
-                        Author = user["Username"].InnerText
+                        Author = user["Username"].InnerText,
+                        Count= nodes.Count.ToString(),
                     };
                     answerList.Add(answer);
                     count++;

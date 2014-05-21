@@ -179,6 +179,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string PublishedDate { get; set; }
         public string Author { get; set; }
         public string Likes { get; set; }
+        public string Count { get; set; }
 
         public Answer() { }
     }

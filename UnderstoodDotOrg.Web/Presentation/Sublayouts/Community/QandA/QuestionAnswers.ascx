@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="QuestionAnswers.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.QandA.QuestionAnswers" %>
 <div class="col col-24 skiplink-comments">
-    <h2>Answers (6)</h2>
+    <h2>Answers (<asp:Label ID=lbAnswerCount runat="server" />)</h2>
     <!-- BEGIN PARTIAL: community/question_sort -->
     <div class="question-sort clearfix">
         <div class="sort-options">
