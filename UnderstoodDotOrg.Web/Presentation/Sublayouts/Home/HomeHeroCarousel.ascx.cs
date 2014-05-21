@@ -211,8 +211,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
             List<Item> searchResultItems = new List<Item>();
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
             using (var context = index.CreateSearchContext()) {
-                searchResultItems = context.GetQueryable<SearchResultItem>().
-                   Where(i => i.TemplateId == Sitecore.Data.ID.Parse(templateId) && i.Path.Contains("/sitecore/content")).Select(i => (Item)i.GetItem()).ToList();
+                searchResultItems = context.GetQueryable<SearchResultItem>()
+                    .Where(i => i.TemplateId == Sitecore.Data.ID.Parse(templateId) && i.Path.Contains("/sitecore/content"))
+                    .Select(i => i.GetItem()).ToList();
             }
             return searchResultItems;
         }
