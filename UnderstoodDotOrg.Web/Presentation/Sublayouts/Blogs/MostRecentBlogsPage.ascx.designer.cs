@@ -13,30 +13,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
     public partial class MostRecentBlogsPage {
         
         /// <summary>
-        /// Placeholder1 control.
+        /// lbBlogName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder1;
+        protected global::System.Web.UI.WebControls.Label lbBlogName;
         
         /// <summary>
-        /// Placeholder2 control.
+        /// rptBlogInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder2;
-        
-        /// <summary>
-        /// Sidebar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder Sidebar;
+        protected global::System.Web.UI.WebControls.Repeater rptBlogInfo;
     }
 }

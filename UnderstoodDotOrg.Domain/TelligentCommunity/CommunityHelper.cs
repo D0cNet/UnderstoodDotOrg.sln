@@ -657,7 +657,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}api.ashx/v2/blogs/posts.xml?BlogIds={1};", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
+
+            var requestUrl = string.Format("{0}api.ashx/v2/blogs/posts.xml?BlogIds={1}&PageSize=100", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
+            
 
             var xml = webClient.DownloadString(requestUrl);
 
@@ -715,7 +717,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     {
                         string title = node["Name"].InnerText;
                         string description = FormatString100(node["Description"].InnerText);
-                        Blog blogPost = new Blog(description, title);
+                        string blogId = node["Id"].InnerText;
+                        Blog blogPost = new Blog()
+                        {
+                            Title = title,
+                            Description=description,
+                            BlogId= blogId
+                        };
                         if (!title.Equals("Articles"))
                         {
                             blogs.Add(blogPost);

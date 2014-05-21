@@ -114,12 +114,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
     {
         public string Description { get; set; }
         public string Title { get; set; }
+        public string BlogId { get; set; }
 
-        public Blog(string description, string title)
-        {
-            Description = description;
-            Title = title;
-        }
+        public Blog() { }
     }
 
     public class User

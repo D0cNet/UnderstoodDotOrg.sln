@@ -29,7 +29,7 @@
                                 <!-- end .group-card-image -->
                                 <div class="blog-card-info group">
                                     <div class="blog-card-title">
-                                        <a href="REPLACE"><%# Item.Title %></a>
+                                        <a href="/en/Community and Events/Blogs/BlogPosts?id=<%# Item.BlogId %>"><%# Item.Title %></a>
                                     </div>
                                     <!-- end .blog-card-title -->
                                     <div class="blog-card-post-excerpt">

@@ -27,11 +27,11 @@
                             <div class="blog-card-info group">
                                 <div class="blog-card-contents">
                                     <div class="blog-card-title">
-                                        <a href="/en/community-and-events/blogs/<%# Item.BlogName %>/<%# Item.Title %>"><%# Item.Title %></a>
+                                        <a href="<%# Item.ItemUrl %>"><%# Item.Title %></a>
                                     </div>
                                     <!-- end .blog-card-title -->
                                     <div class="blog-card-post-info">
-                                        <%# Item.PublishedDate %> from <a href="REPLACE"><%# Item.BlogName %></a>
+                                        <%# Item.PublishedDate %> from <a href="<%# Item.ItemUrl %>"><%# Item.BlogName %></a>
                                     </div>
                                 </div>
                                 <div class="card-buttons">
