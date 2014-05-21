@@ -25,7 +25,7 @@
                 wikiPageId = "1";
             }
 
-            List<Answer> dataSource = CommunityHelper.GetAnswers(wikiId, wikiPageId);
+            var dataSource = CommunityHelper.GetAnswers(wikiId, wikiPageId);
             AnswerRepeater.DataSource = dataSource;
             AnswerRepeater.DataBind();
             try
