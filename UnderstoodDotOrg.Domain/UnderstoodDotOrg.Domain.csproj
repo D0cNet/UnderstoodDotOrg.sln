@@ -250,6 +250,7 @@
     <Compile Include="SitecoreCIG\Poses\Folders\UtilityNavigationFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\WidgetFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AuthenticationNavigationLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AuthenticationNavigationLinkItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ChildDemographicItem.base.cs" />
@@ -277,14 +278,17 @@
     <Compile Include="SitecoreCIG\Poses\General\ToolkitArticlePageTools\VideoToolkitResourceItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ToolkitArticlePageTools\WordToolkitResourceItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\WelcomeTourItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\WidgetItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Folders\AssessmentQuizFolder\AssessmentQuizArticlePageResourcesFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Folders\AssessmentQuizFolder\AssessmentQuizQuestionsFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Folders\AssessmentQuizFolder\AssessmentQuizResultsFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\PageResources\Folders\KnowledgeQuizArticlePage\KnowledgeQuizArticlePageResourcesFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Folders\KnowledgeQuizArticlePage\KnowledgeQuizQuestionsFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Folders\KnowledgeQuizArticlePage\KnowledgeQuizResultsFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Items\AssessmentQuizArticlePage\AssessmentMultipleChoiceAnswerItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Items\AssessmentQuizArticlePage\AssessmentMultipleChoiceItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Items\AssessmentQuizArticlePage\AssessmentQuizQuestionPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\PageResources\Items\AssessmentQuizArticlePage\AssessmentQuizResultItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Items\AssessmentQuizArticlePage\AssessmentTrueFalseItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Items\AssessmentQuizArticlePage\BaseAssessmentQuizQuestionItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Items\KnowledgeQuizArticlePage\BaseKnowledgeQuizQuestionItem.base.cs" />

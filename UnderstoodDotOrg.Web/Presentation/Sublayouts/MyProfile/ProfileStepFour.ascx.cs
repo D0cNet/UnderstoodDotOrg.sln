@@ -221,16 +221,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             }
 
             var membershipManager = new MembershipManager();
-            //membershipManager.AddMember(registeringUser);
-            membershipManager.UpdateMember(this.registeringUser);
 
-
-
-            //set current user stuff
-            this.CurrentMember = this.registeringUser;
-            this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
-
-            
+            //set current user/member
+            this.CurrentMember = membershipManager.UpdateMember(this.registeringUser);
+            this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);            
             
             //updating salesforce
             SalesforceManager sfMgr = new SalesforceManager("brettgarnier@outlook.com", 
