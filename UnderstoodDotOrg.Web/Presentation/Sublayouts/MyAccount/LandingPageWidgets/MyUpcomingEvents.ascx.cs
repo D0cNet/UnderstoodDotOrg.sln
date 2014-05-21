@@ -34,10 +34,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             EventModel stubEvent = new EventModel();
             stubEvent.Title = "Event 1";
             stubEvent.TitleUrl = "/";
-            stubEvent.Type = "EventType 1";
+            stubEvent.Type = "Q&A";
             stubEvent.TitleUrl = "/";
             stubEvent.Date = "Dec 12 2014 ";
             stubEvent.Time = "2:48PM";
+            eventsDataSource.Add(stubEvent);
+
+            stubEvent = new EventModel();
+            stubEvent.Title = "Event 2";
+            stubEvent.TitleUrl = "/";
+            stubEvent.Type = "Webinar";
+            stubEvent.TitleUrl = "/";
+            stubEvent.Date = "Nov 13 2014 ";
+            stubEvent.Time = "8:30AM";
             eventsDataSource.Add(stubEvent);
 
             rptEvents.DataSource = eventsDataSource;

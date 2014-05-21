@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
@@ -13,7 +14,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var favoritesList = CommunityHelper.GetFavorites("2100");
+            rptFavorites.DataSource = favoritesList;
+            rptFavorites.DataBind();
+        }
 
+        protected void rptFavorites_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            var item = e.Item.DataItem as FavoritesModel;
+            HyperLink hypFavoriteTitle = (HyperLink)e.Item.FindControl("hypFavoriteTitle");
+            hypFavoriteTitle.NavigateUrl = "/";
+            hypFavoriteTitle.Text = item.Title;
+            Literal litType = (Literal)e.Item.FindControl("litType");
+            litType.Text = item.Type;
+            HyperLink hypReplyCount = (HyperLink)e.Item.FindControl("hypReplyCount");
+            hypReplyCount.NavigateUrl = "/";
+            hypReplyCount.Text = item.ReplyCount;
         }
     }
 }

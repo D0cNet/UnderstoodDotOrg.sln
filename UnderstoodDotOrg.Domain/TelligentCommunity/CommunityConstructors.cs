@@ -21,6 +21,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string CommentId { get; set; }
         public string CommentGroup { get; set; }
         public string CommentGroupUrl { get; set; }
+        public string CommentTitle { get; set; }
         public string ContentId { get; set; }
         public string CommentContentTypeId { get; set; }
         public string AuthorId { get; set; }

@@ -28,7 +28,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             //Stub for one link
             List<GroupModel> stubDataSource = new List<GroupModel>();
             GroupModel stubGroup = new GroupModel();
-            stubGroup.Title = "GroupLink1";
+            stubGroup.Title = "ADHD";
+            stubGroup.TitleUrl = "/";
+
+            stubDataSource.Add(stubGroup);
+
+            stubGroup = new GroupModel();
+            stubGroup.Title = "Parents of kids with Attention issues";
             stubGroup.TitleUrl = "/";
 
             stubDataSource.Add(stubGroup);

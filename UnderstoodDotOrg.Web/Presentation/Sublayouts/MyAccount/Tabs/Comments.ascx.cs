@@ -16,64 +16,75 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            var nodes = CommunityHelper.ReadUserComments(CurrentMember.ScreenName);
+            //var commentsList = CommunityHelper.ListUserComments(CurrentUser.UserName);
 
-            if (nodes != null)
+            Comment cmItem = new Comment();
+            cmItem.Body = "Autem ipsa quis quisquam cumque consequatur deleniti est sit autem ut cumque quis hic. aut aut sit autem ut magni at optio non quidem necessitatibus. maxime cupiditate sed mollitia et unde fugit sunt illo dolorem similique commodi quas modi. culpa magni amet eos sunt harum porro libero laborum. voluptas eius nemo quam aut eaque assumenda veritatis quam officia. inventore eius quibusdam et repellat veniam perferendis est provident. commodi dolorem sunt nam vero";
+            cmItem.ParentTitle = "Q&A";
+            cmItem.CommentDate = DateTime.Today;
+            cmItem.Likes = "31";
+            cmItem.CommentGroup = "Parent Questions";
+            cmItem.CommentTitle = "Est ducimus aut aut asperiores eveniet ut reprehenderit fuga corrupti quia quis neque minima ab quis dolorum consectetur dolore earum";
+            cmItem.CommentGroupUrl = "/";
+            cmItem.ReplyCount = "12";
+            cmItem.AuthorDisplayName = "Vance Floyd";
+            List<Comment> commentsList = new List<Comment>();
+            commentsList.Add(cmItem);
+
+            cmItem = new Comment();
+            cmItem.Body = "Natus quia voluptatem ea quaerat et saepe dolorum rerum dolore aut sit eaque illo ut. repudiandae magnam dignissimos et earum velit quia quidem quaerat. voluptate qui laudantium debitis non omnis molestiae et error vitae. officiis qui necessitatibus quae minima blanditiis qui totam esse expedita qui numquam saepe. harum vitae est minima ducimus voluptatibus modi veniam dolore ipsa tempora. mollitia cum nesciunt blanditiis nostrum quia";
+            cmItem.ParentTitle = "Article";
+            cmItem.CommentDate = DateTime.Today;
+            cmItem.Likes = "53";
+            cmItem.CommentTitle = "Repudiandae magnam dignissimos et earum velit quia quidem quaerat.";
+            cmItem.CommentGroup = "Parent Questions";
+            cmItem.CommentGroupUrl = "/";
+            cmItem.ReplyCount = "7";
+            cmItem.AuthorDisplayName = "Vance Floyd";
+            commentsList.Add(cmItem);
+
+            cmItem = new Comment();
+            cmItem.Body = "Natus quia voluptatem ea quaerat et saepe dolorum rerum dolore aut sit eaque illo ut. repudiandae magnam dignissimos et earum velit quia quidem quaerat. voluptate qui laudantium debitis non omnis molestiae et error vitae. officiis qui necessitatibus quae minima blanditiis qui totam esse expedita qui numquam saepe. harum vitae est minima ducimus voluptatibus modi veniam dolore ipsa tempora. mollitia cum nesciunt blanditiis nostrum quia";
+            cmItem.ParentTitle = "Slideshow";
+            cmItem.CommentDate = DateTime.Today;
+            cmItem.Likes = "8";
+            cmItem.CommentGroup = "Parent Questions";
+            cmItem.CommentGroupUrl = "/";
+            cmItem.CommentTitle = "Blanditiis qui totam esse expedita qui numquam saepe";
+            
+            cmItem.ReplyCount = "97";
+            cmItem.AuthorDisplayName = "Vance Floyd";
+            commentsList.Add(cmItem);
+
+            if (commentsList != null)
             {
-                var comments = nodes.SelectNodes("Comments[position()<=10] ");
-
-                List<Comment> commentsDataSource = new List<Comment>();
-                foreach (XmlNode item in comments)
-                {
-                    Comment cItem = new Comment();
-
-                    var descNode = item.SelectSingleNode("//Content/HtmlDescription");
-                    cItem.Body = descNode != null ? descNode.InnerText : string.Empty;
-
-                    var titleNode = item.SelectSingleNode("//Content/HtmlName");
-                    cItem.ParentTitle = titleNode != null ? titleNode.InnerText : string.Empty;
-
-                    var urlNode = item.SelectSingleNode("//Content/Url");
-                    cItem.Url = urlNode != null ? urlNode.InnerText : string.Empty;
-
-                    cItem.CommentDate = DateTime.Today;
-
-                    cItem.ParentTitle = "Q&A";
-
-                    cItem.CommentGroup = "Parent Questions";
-
-                    cItem.CommentGroupUrl = "/";
-
-                    commentsDataSource.Add(cItem);
-                }
-
-                rptComments.DataSource = commentsDataSource;
+                rptComments.DataSource = commentsList;
                 rptComments.DataBind();
             }
         }
         
         protected void rptComments_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            var item = (Comment)e.Item.DataItem as Comment;
+            var item = e.Item.DataItem as Comment;
             HyperLink hypCommentLink = (HyperLink)e.Item.FindControl("hypCommentLink");
-            hypCommentLink.NavigateUrl = ((Comment)e.Item.DataItem).ParentTitleUrl;
-            hypCommentLink.Text = ((Comment)e.Item.DataItem).ParentTitle;
+            hypCommentLink.NavigateUrl = "/";
+            hypCommentLink.Text = item.CommentTitle;
 
             Literal litSection = (Literal)e.Item.FindControl("litSection");
-            litSection.Text = ((Comment)e.Item.DataItem).ParentTitle;
+            litSection.Text = item.ParentTitle;
 
             Literal litCommentBody = (Literal)e.Item.FindControl("litCommentBody");
-            litCommentBody.Text = ((Comment)e.Item.DataItem).Body;
+            litCommentBody.Text = item.Body;
 
             Literal litCommentTime = (Literal)e.Item.FindControl("litCommentTime");
-            litCommentTime.Text = ((Comment)e.Item.DataItem).CommentDate.ToString();
+            litCommentTime.Text = item.CommentDate.ToString();
 
             Literal litLikes = (Literal)e.Item.FindControl("litLikes");
-            litLikes.Text = ((Comment)e.Item.DataItem).Likes.ToString();
+            litLikes.Text = item.Likes;
 
             HyperLink hypCommentGroup = (HyperLink)e.Item.FindControl("hypCommentGroup");
-            hypCommentGroup.NavigateUrl = ((Comment)e.Item.DataItem).CommentGroupUrl;
-            hypCommentGroup.Text = ((Comment)e.Item.DataItem).CommentGroup;
+            hypCommentGroup.NavigateUrl = "/";
+            hypCommentGroup.Text = item.CommentGroup;
         }
     }
 }

@@ -22,13 +22,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
         protected global::System.Web.UI.WebControls.Label lblCount;
         
         /// <summary>
-        /// topComments control.
+        /// rptComments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView topComments;
+        protected global::System.Web.UI.WebControls.Repeater rptComments;
         
         /// <summary>
         /// hypCommentsTab control.

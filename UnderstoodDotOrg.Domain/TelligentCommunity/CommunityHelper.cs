@@ -185,22 +185,18 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return comment;
         }
 
-        public static XmlNode ReadUserComments(string username)
+        public static XmlNode ReadUserComments(string userId)
         {
             var webClient = new WebClient();
             XmlNode node = null;
-            username = username.Trim();
+            
             string adminKeyBase64 = CommunityHelper.TelligentAuth();
             try
             {
                 //TODO: retrieve current logged in user
-                var userId = ReadUserId(username);
-
                 webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
                 //webClient.Headers.Add("Rest-Impersonate-User", userId);
                 var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "api.ashx/v2/comments.xml?UserId=" + userId;
-
-
 
                 var xml = webClient.DownloadString(requestUrl);
                 var xmlDoc = new XmlDocument();
@@ -1173,8 +1169,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 try
                 {
                     //TODO: retrieve current logged in user
-                    var userId = ReadUserId(username);
-
+                    //var userId = ReadUserId(username);
+                    var userId = "2100";
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
                     //webClient.Headers.Add("Rest-Impersonate-User", userId);
                     var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "api.ashx/v2/comments.xml?UserId=" + userId;
@@ -1192,27 +1188,27 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         XmlNode author = xn.SelectSingleNode("Author");
 
                         string commentId = xn["CommentId"].InnerText;
-                        string commentDate = xn["PublishedDate"].InnerText;
+                        string commentDate = xn["CreatedDate"].InnerText;
                         DateTime parsedDate = DateTime.Parse(commentDate);
 
                         Comment comment = new Comment
                         {
                             Id = xn["Id"].InnerText,
                             Url = xn["Url"].InnerText,
-                            ParentId = xn["ParentId"].InnerText,
-                            ContentId = xn["ContentId"].InnerText,
+                            //ParentId = xn["ParentId"].InnerText,
+                            //ContentId = xn["CurrentStatus/ContentId"].InnerText,
                             IsApproved = xn["IsApproved"].InnerText,
                             ReplyCount = xn["ReplyCount"].InnerText,
                             CommentId = commentId,
                             CommentContentTypeId = xn["CommentContentTypeId"].InnerText,
                             Body = xn["Body"].InnerText,
-                            PublishedDate = CommunityHelper.FormatDate(commentDate),
-                            AuthorId = author["Id"].InnerText,
-                            AuthorAvatarUrl = author["AvatarUrl"].InnerText,
-                            AuthorDisplayName = author["DisplayName"].InnerText,
-                            AuthorProfileUrl = author["ProfileUrl"].InnerText,
-                            AuthorUsername = author["Username"].InnerText,
-                            Likes = GetTotalLikes(commentId).ToString(),
+                            //PublishedDate = CommunityHelper.FormatDate(commentDate),
+                            //AuthorId = author["Id"].InnerText,
+                            //AuthorAvatarUrl = author["AvatarUrl"].InnerText,
+                            //AuthorDisplayName = author["DisplayName"].InnerText,
+                            //AuthorProfileUrl = author["ProfileUrl"].InnerText,
+                            //AuthorUsername = author["Username"].InnerText,
+                            //Likes = GetTotalLikes(commentId).ToString(),
                             CommentDate = parsedDate
                         };
                         // Comment comment = new Comment(xn);

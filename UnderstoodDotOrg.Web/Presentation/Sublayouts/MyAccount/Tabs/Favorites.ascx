@@ -34,286 +34,67 @@
         <div class="col col-23 offset-1 skiplink-content" aria-role="main">
             <!-- BEGIN PARTIAL: account-myfavorites -->
             <section class="account-myfavorites">
-                <div class="row myfavorites-list rs_read_this">
-
-                    <div class="myfavorites-item clearfix">
-                        <div class="col col-3">
-                            <h3 class="favorite-type">Article</h3>
-                        </div>
-                        <div class="col col-12 offset1 favorite-title-wrap">
-                            <a href="REPLACE" class="favorite-title">id repellat tempora omnis praesentium distinctio excepturi quia dolore corporis</a>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-9 offset1 favorite-toolbar">
-                            <div class="favorite-comment-count">
-                                <a href="REPLACE"><span>19</span></a>
-                                <span class="visuallyhidden">comments</span>
-                            </div>
-                            <div class="tools">
-                                <div class="buttons-container clearfix">
-
-                                    <button class="icon icon-plus rs_preserve">save this</button>
-                                    <button class="icon icon-print">print</button>
-                                    <button class="icon icon-bell rs_preserve">remind me</button>
+                <asp:Repeater ID="rptFavorites" runat="server" OnItemDataBound="rptFavorites_ItemDataBound">
+                    <ItemTemplate>
+                        <div class="row myfavorites-list rs_read_this">
+                            <div class="myfavorites-item clearfix">
+                                <div class="col col-3">
+                                    <h3 class="favorite-type">
+                                        <asp:Literal ID="litType" runat="server"></asp:Literal>
+                                    </h3>
                                 </div>
-                                <div class="share-dropdown-menu-wrap">
-                                    <!-- BEGIN PARTIAL: share-content-dropdown -->
-                                    <!-- This file shared on multiple pages -->
-
-                                    <div class="share-dropdown-menu rs_skip">
-                                        <button class="social-share-button rs_preserve">Share <i class="icon-arrow"></i></button>
-                                        <div class="share-menu">
-                                            <span class="social-share">Share <i class="icon-arrow"></i></span>
-                                            <ul>
-                                                <li class="clearfix">
-                                                    <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                <div class="col col-12 offset1 favorite-title-wrap">
+                                    <asp:HyperLink ID="hypFavoriteTitle" CssClass="favorite-title" runat="server"></asp:HyperLink>
+                                </div>
+                                <!-- /.col -->
+                                <div class="col col-9 offset1 favorite-toolbar">
+                                    <div class="favorite-comment-count">
+                                        <asp:HyperLink ID="hypReplyCount" runat="server"></asp:HyperLink>
+                                        <span class="visuallyhidden">comments</span>
                                     </div>
-                                    <!-- END PARTIAL: share-content-dropdown -->
-                                </div>
-                                <!-- /.share-dropdown-menu-wrap-->
-                            </div>
-                            <!-- /.icon tools -->
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.myfavorites-item -->
-                </div>
+                                    <div class="tools">
+                                        <div class="buttons-container clearfix">
 
-                <div class="row myfavorites-list rs_read_this">
-
-                    <div class="myfavorites-item clearfix">
-                        <div class="col col-3">
-                            <h3 class="favorite-type">Video</h3>
-                        </div>
-                        <div class="col col-12 offset1 favorite-title-wrap">
-                            <a href="REPLACE" class="favorite-title">incidunt explicabo ut explicabo ut blanditiis eligendi doloribus at consequatur</a>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-9 offset1 favorite-toolbar">
-                            <div class="favorite-comment-count">
-                                <a href="REPLACE"><span>19</span></a>
-                                <span class="visuallyhidden">comments</span>
-                            </div>
-                            <div class="tools">
-                                <div class="buttons-container clearfix">
-                                    <button class="icon icon-plus rs_preserve">save this</button>
-                                    <button class="icon icon-print">print</button>
-                                    <button class="icon icon-bell rs_preserve">remind me</button>
-                                </div>
-                                <div class="share-dropdown-menu-wrap">
-                                    <!-- BEGIN PARTIAL: share-content-dropdown -->
-                                    <!-- This file shared on multiple pages -->
-
-                                    <div class="share-dropdown-menu rs_skip">
-                                        <button class="social-share-button rs_preserve">Share <i class="icon-arrow"></i></button>
-                                        <div class="share-menu">
-                                            <span class="social-share">Share <i class="icon-arrow"></i></span>
-                                            <ul>
-                                                <li class="clearfix">
-                                                    <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
-                                                </li>
-                                            </ul>
+                                            <button class="icon icon-plus rs_preserve">save this</button>
+                                            <button class="icon icon-print">print</button>
+                                            <button class="icon icon-bell rs_preserve">remind me</button>
                                         </div>
-                                    </div>
-                                    <!-- END PARTIAL: share-content-dropdown -->
-                                </div>
-                                <!-- /.share-dropdown-menu-wrap-->
-                            </div>
-                            <!-- /.icon tools -->
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.myfavorites-item -->
-                </div>
+                                        <div class="share-dropdown-menu-wrap">
+                                            <!-- BEGIN PARTIAL: share-content-dropdown -->
+                                            <!-- This file shared on multiple pages -->
 
-                <div class="row myfavorites-list rs_read_this">
-
-                    <div class="myfavorites-item clearfix">
-                        <div class="col col-3">
-                            <h3 class="favorite-type">Tips</h3>
-                        </div>
-                        <div class="col col-12 offset1 favorite-title-wrap">
-                            <a href="REPLACE" class="favorite-title">et est blanditiis nam ducimus commodi saepe aperiam ut molestias</a>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-9 offset1 favorite-toolbar">
-                            <div class="favorite-comment-count">
-                                <a href="REPLACE"><span>19</span></a>
-                                <span class="visuallyhidden">comments</span>
-                            </div>
-                            <div class="tools">
-                                <div class="buttons-container clearfix">
-                                    <button class="icon icon-plus rs_preserve">save this</button>
-                                    <button class="icon icon-print">print</button>
-                                    <button class="icon icon-bell rs_preserve">remind me</button>
-                                </div>
-                                <div class="share-dropdown-menu-wrap">
-                                    <!-- BEGIN PARTIAL: share-content-dropdown -->
-                                    <!-- This file shared on multiple pages -->
-
-                                    <div class="share-dropdown-menu rs_skip">
-                                        <button class="social-share-button rs_preserve">Share <i class="icon-arrow"></i></button>
-                                        <div class="share-menu">
-                                            <span class="social-share">Share <i class="icon-arrow"></i></span>
-                                            <ul>
-                                                <li class="clearfix">
-                                                    <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
-                                                </li>
-                                            </ul>
+                                            <div class="share-dropdown-menu rs_skip">
+                                                <button class="social-share-button rs_preserve">Share <i class="icon-arrow"></i></button>
+                                                <div class="share-menu">
+                                                    <span class="social-share">Share <i class="icon-arrow"></i></span>
+                                                    <ul>
+                                                        <li class="clearfix">
+                                                            <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+                                                        </li>
+                                                        <li class="clearfix">
+                                                            <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+                                                        </li>
+                                                        <li class="clearfix">
+                                                            <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+                                                        </li>
+                                                        <li class="clearfix">
+                                                            <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- END PARTIAL: share-content-dropdown -->
                                         </div>
+                                        <!-- /.share-dropdown-menu-wrap-->
                                     </div>
-                                    <!-- END PARTIAL: share-content-dropdown -->
+                                    <!-- /.icon tools -->
                                 </div>
-                                <!-- /.share-dropdown-menu-wrap-->
+                                <!-- /.col -->
                             </div>
-                            <!-- /.icon tools -->
+                            <!-- /.myfavorites-item -->
                         </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.myfavorites-item -->
-                </div>
-
-                <div class="row myfavorites-list rs_read_this">
-
-                    <div class="myfavorites-item clearfix">
-                        <div class="col col-3">
-                            <h3 class="favorite-type">Webinar</h3>
-                        </div>
-                        <div class="col col-12 offset1 favorite-title-wrap">
-                            <a href="REPLACE" class="favorite-title">expedita quasi sapiente ratione ut quia dolorum dolores sint voluptatum</a>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-9 offset1 favorite-toolbar">
-                            <div class="favorite-comment-count">
-                                <a href="REPLACE"><span>19</span></a>
-                                <span class="visuallyhidden">comments</span>
-                            </div>
-                            <div class="tools">
-                                <div class="buttons-container clearfix">
-                                    <button class="icon icon-plus rs_preserve">save this</button>
-                                    <button class="icon icon-print">print</button>
-                                    <button class="icon icon-bell rs_preserve">remind me</button>
-                                </div>
-                                <div class="share-dropdown-menu-wrap">
-                                    <!-- BEGIN PARTIAL: share-content-dropdown -->
-                                    <!-- This file shared on multiple pages -->
-
-                                    <div class="share-dropdown-menu rs_skip">
-                                        <button class="social-share-button rs_preserve">Share <i class="icon-arrow"></i></button>
-                                        <div class="share-menu">
-                                            <span class="social-share">Share <i class="icon-arrow"></i></span>
-                                            <ul>
-                                                <li class="clearfix">
-                                                    <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- END PARTIAL: share-content-dropdown -->
-                                </div>
-                                <!-- /.share-dropdown-menu-wrap-->
-                            </div>
-                            <!-- /.icon tools -->
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.myfavorites-item -->
-                </div>
-
-                <div class="row myfavorites-list rs_read_this">
-
-                    <div class="myfavorites-item clearfix">
-                        <div class="col col-3">
-                            <h3 class="favorite-type">Video</h3>
-                        </div>
-                        <div class="col col-12 offset1 favorite-title-wrap">
-                            <a href="REPLACE" class="favorite-title">totam quis neque porro repudiandae velit sunt quia excepturi et</a>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col col-9 offset1 favorite-toolbar">
-                            <div class="favorite-comment-count">
-                                <a href="REPLACE"><span>19</span></a>
-                                <span class="visuallyhidden">comments</span>
-                            </div>
-                            <div class="tools">
-                                <div class="buttons-container clearfix">
-                                    <button class="icon icon-plus rs_preserve">save this</button>
-                                    <button class="icon icon-print">print</button>
-                                    <button class="icon icon-bell rs_preserve">remind me</button>
-                                </div>
-                                <div class="share-dropdown-menu-wrap">
-                                    <!-- BEGIN PARTIAL: share-content-dropdown -->
-                                    <!-- This file shared on multiple pages -->
-
-                                    <div class="share-dropdown-menu rs_skip">
-                                        <button class="social-share-button rs_preserve">Share <i class="icon-arrow"></i></button>
-                                        <div class="share-menu">
-                                            <span class="social-share">Share <i class="icon-arrow"></i></span>
-                                            <ul>
-                                                <li class="clearfix">
-                                                    <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- END PARTIAL: share-content-dropdown -->
-                                </div>
-                                <!-- /.share-dropdown-menu-wrap-->
-                            </div>
-                            <!-- /.icon tools -->
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.myfavorites-item -->
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </section>
             <div class="showmore-footer">
                 <!-- Show More -->
