@@ -48,146 +48,31 @@
 <!-- END MODULE: Newsletter Signup -->
 
 <!-- BEGIN MODULE: Partners Carousel -->
-
 <div class="container partners-carousel">
     <div class="row">
         <div class="col col-24">
 
             <!-- BEGIN PARTIAL: partners-carousel -->
-            <h2>In Partnership with</h2>
-            <div class="arrows-gray rsAutoHeight rsHor" id="partners-slides-container" style="height: 380px;">
-                <div class="rsOverflow" style="width: 950px; height: 186px; transition: height 600ms ease-in-out 0s;">
-                    <div class="rsContainer" style="transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-                        <%-- <div class="rsSlide " style="left: 0px;">
-                            <div class="m-featured-slide" style="visibility: visible; opacity: 1; transition: opacity 400ms ease-in-out 0s;">
-                                <div class="rsContent">
-                                    <ul>
-                                      
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>--%>
-                        <div class="rsSlide " style="left: 958px;">
-                            <%--<div class="m-featured-slide">
-                                <div class="rsContent">--%>
-                            <%--    <ul>
-                                          <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                        <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                        <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                        <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                        <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                        <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                        <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                        <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                        <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                        <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                        <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                        <li>
-                                            <a href="REPLACE">
-                                                <img src="Presentation/includes/img/icon.logo.partnership-carousel.png" alt="Partner Logo FPO"></a>
-                                        </li>
-                                    </ul>--%>
-                             <h2>
-                <sc:FieldRenderer ID="frPartnership" runat="server" FieldName="Partnership Label" />
-            </h2>
-                            <asp:Repeater ID="rptPartnerships" runat="server" OnItemDataBound="rptPartnerships_ItemDataBound">
-                                <HeaderTemplate>
-                                    <div class="m-featured-slide">
-                                        <div class="rsContent">
-                                            <ul>
-                                </HeaderTemplate>
-                                <ItemTemplate>
-                                    <li>
-                                        <asp:HyperLink ID="hlLink" runat="server">
-                                            <sc:Image ID="scImage" runat="server" Field="Image" />
-                                        </asp:HyperLink>
-                                    </li>
-                                </ItemTemplate>
-                                <FooterTemplate>
-                                    </ul>
-                                    </div>
-                                    </div>
-                                </FooterTemplate>
-                            </asp:Repeater>
-                            <%--   </div>
-                    </div>--%>
-                        </div>
-                    </div>
-                    <div class="rsArrow rsArrowLeft rsArrowDisabled" style="display: block;">
-                        <div class="rsArrowIcn"></div>
-                    </div>
-                    <div class="rsArrow rsArrowRight" style="display: block;">
-                        <div class="rsArrowIcn"></div>
-                    </div>
-                </div>
-                <div style="clear: both; float: none;"></div>
-            </div>
-            <!-- end partners-carousel-container -->
-            <a href="REPLACE" class="viewAll">View All</a>
-            <!-- END PARTIAL: partners-carousel -->
-
-        </div>
-    </div>
-</div>
-
-<div class="container partners-carousel" runat="server" id="sfds" visible="false">
-    <div class="row">
-        <div class="col col-24">
-
-            <!-- BEGIN PARTIAL: partners-carousel -->
             <h2><%--In Partnership with--%>
-               <%-- <sc:FieldRenderer ID="frPartnership" runat="server" FieldName="Partnership Label" />--%>
+               <sc:FieldRenderer ID="frPartnership" runat="server" FieldName="Partnership Label" />
             </h2>
-            <%--<asp:Repeater runat="server" ID="rptPartnerships" OnItemDataBound="rptPartnerships_ItemDataBound">
+            <asp:Repeater runat="server" ID="rptPartnerships" OnItemDataBound="rptPartnerships_ItemDataBound">
                 <HeaderTemplate>
                     <div id="partners-slides-container" class="arrows-gray">
                         <ul>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="hlLink">
-                        <sc:Image runat="server" ID="scImage" Field="Image" />
-                    </asp:HyperLink>
+                    <li><asp:HyperLink runat="server" ID="hlLink">
+                        <sc:Image runat="server" ID="scImage" Field="Logo" Parameters="mw=214&mh=100" />
+                    </asp:HyperLink></li>
                 </ItemTemplate>
                 <FooterTemplate>
                     </ul>
                     </div>
                 </FooterTemplate>
-            </asp:Repeater>--%>
+            </asp:Repeater>
             <!-- end partners-carousel-container -->
-            <a class="viewAll" href="REPLACE.html">View All</a>
+            <asp:HyperLink ID="hlViewAllPartners" CssClass="viewAll" runat="server">View All</asp:HyperLink>
             <!-- END PARTIAL: partners-carousel -->
 
         </div>

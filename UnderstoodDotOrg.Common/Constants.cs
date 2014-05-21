@@ -298,6 +298,14 @@ namespace UnderstoodDotOrg.Common
                     return new Guid("{F356744C-54F1-4CC5-B8F9-FA8B297AC60C}");
                 }
             }
+
+            public static Guid Partners
+            {
+                get
+                {
+                    return new Guid("{9D5C0F20-379E-4CC2-B9F0-EFFC93520D56}");
+                }
+            }
         }
 
         #endregion

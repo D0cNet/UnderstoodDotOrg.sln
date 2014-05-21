@@ -50,6 +50,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 SBReviewedBy.Visible = false;
             }
+
+            phPlayer.Visible = !String.IsNullOrEmpty(Model.CincopaID.Raw);
         }
 
         private void PopulatePlayer()

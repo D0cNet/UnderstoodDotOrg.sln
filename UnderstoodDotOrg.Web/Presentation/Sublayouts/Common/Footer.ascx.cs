@@ -11,10 +11,12 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using Sitecore.Data.Items;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
-    public partial class Footer : System.Web.UI.UserControl
+    public partial class Footer : BaseSublayout<FooterFolderItem>
     {
         protected string NewsletterSignUpUrl
         {
@@ -35,30 +37,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             FooterFolderItem footerFolderItem = GetFooter();
             if (footerFolderItem != null)
             {
-                GetFooterDetails(footerFolderItem);
-                GetMainNavigationItems(footerFolderItem);
-                GetUtilityNavigationItems(footerFolderItem);
-                GetPartnerLinksItems(footerFolderItem);
-                GetSocialMediaItems(footerFolderItem);
+                GetMainNavigationItems();
+                GetUtilityNavigationItems();
+                GetPartnerLinksItems();
+                GetSocialMediaItems();
             }
-        }
-
-        /// <summary>
-        /// Gets footer detail
-        /// </summary>
-        /// <param name="footerFolderItem"></param>
-        private void GetFooterDetails(FooterFolderItem footerFolderItem)
-        {
-            frPartnership.Item = frHeading.Item = frEmailAbstract.Item = frCopyrightText.Item = frAbstract.Item = scLogoImage.Item = footerFolderItem;
         }
 
         /// <summary>
         /// Gets social media item.
         /// </summary>
         /// <param name="footerFolderItem"></param>
-        private void GetSocialMediaItems(FooterFolderItem footerFolderItem)
+        private void GetSocialMediaItems()
         {
-            SocialMediaFolderItem socialMediaFolder = footerFolderItem.GetSocialMediaFolder();
+            SocialMediaFolderItem socialMediaFolder = Model.GetSocialMediaFolder();
             if (socialMediaFolder != null)
             {
                 var results = socialMediaFolder.GetSocialMediaItem();
@@ -74,17 +66,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         /// Gets partners link item
         /// </summary>
         /// <param name="footerFolderItem"></param>
-        private void GetPartnerLinksItems(FooterFolderItem footerFolderItem)
+        private void GetPartnerLinksItems()
         {
-            PartnerFolderItem partnerFolder = footerFolderItem.GetPartnerFolder();
-            if (partnerFolder != null)
+            Item item = Sitecore.Context.Database.GetItem(Constants.Pages.Partners);
+            hlViewAllPartners.Visible = item != null;
+            if (item != null)
             {
-                var results = partnerFolder.GetNavLinkItems();
-                if (results != null && results.Any())
-                {
-                    rptPartnerships.DataSource = results;
-                    rptPartnerships.DataBind();
-                }
+                hlViewAllPartners.NavigateUrl = item.GetUrl();
+            }
+            
+            List<PartnerInfoItem> partners = Model.GetPartnerLinks();
+            if (partners.Any())
+            {
+                rptPartnerships.DataSource = partners;
+                rptPartnerships.DataBind();
             }
         }
 
@@ -111,9 +106,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         /// Get main navigation items.
         /// </summary>
         /// <param name="footerFolderItem"></param>
-        private void GetMainNavigationItems(FooterFolderItem footerFolderItem)
+        private void GetMainNavigationItems()
         {
-            MainNavigationFolderItem mainNavigationFolder = footerFolderItem.GetMainNavigationFolder();
+            MainNavigationFolderItem mainNavigationFolder = Model.GetMainNavigationFolder();
             if (mainNavigationFolder != null)
             {
                 var results = mainNavigationFolder.GetNavigationLinkItems();
@@ -129,10 +124,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         /// Get utility navigation items.
         /// </summary>
         /// <param name="headerFolderItem"></param>
-        private void GetUtilityNavigationItems(FooterFolderItem footerFolderItem)
+        private void GetUtilityNavigationItems()
         {
 
-            UtilityNavigationFolderItem utilityNavigationFolder = footerFolderItem.GetUtilityNavigationFolder();
+            UtilityNavigationFolderItem utilityNavigationFolder = Model.GetUtilityNavigationFolder();
             if (utilityNavigationFolder != null)
             {
                 var results = utilityNavigationFolder.GetNavigationLinkItems();
@@ -149,22 +144,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             if (e.IsItem())
             {
-                NavigationLinkItem navItem = e.Item.DataItem as NavigationLinkItem;
+                PartnerInfoItem navItem = (PartnerInfoItem)e.Item.DataItem;
 
-                if (navItem != null)
-                {
-                    HyperLink hlLink = e.FindControlAs<HyperLink>("hlLink");
-                    Sitecore.Web.UI.WebControls.Image scImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scImage");
-                    if (hlLink != null)
-                    {
-                        hlLink.NavigateUrl = navItem.Link.Url;
-                    }
+                HyperLink hlLink = e.FindControlAs<HyperLink>("hlLink");
+                Sitecore.Web.UI.WebControls.Image scImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scImage");
+                hlLink.NavigateUrl = navItem.GetUrl();
 
-                    if (scImage != null)
-                    {
-                        scImage.Item = navItem;
-                    }
-                }
+                scImage.Item = navItem;
             }
         }
 

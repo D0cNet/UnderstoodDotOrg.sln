@@ -20,6 +20,7 @@
             </div>
             <!-- END PARTIAL: audio-pull-quote -->
             <!-- BEGIN PARTIAL: audio-player -->
+            <asp:PlaceHolder ID="phPlayer" runat="server">
             <div id="cp_widget_e25b28d3-8ee7-4271-a252-8a5f0b517223"></div>
             <script type="text/javascript">
             var cpo = []; cpo["_object"] = "cp_widget_e25b28d3-8ee7-4271-a252-8a5f0b517223"; cpo["_fid"] = "<%= Model.CincopaID.Raw %>";
@@ -30,6 +31,7 @@
                 var c = document.getElementsByTagName("script")[0];
                 c.parentNode.insertBefore(cp, c);
             })(); </script>
+                </asp:PlaceHolder>
             <!-- END PARTIAL: audio-player -->
         </div>
     </div>
