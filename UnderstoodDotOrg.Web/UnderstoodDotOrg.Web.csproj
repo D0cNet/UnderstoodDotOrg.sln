@@ -421,13 +421,6 @@
     <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx.designer.cs">
       <DependentUpon>KnowledgeQuizQuestionArticlePage.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizResultsArticlePage.ascx.cs">
-      <DependentUpon>KnowledgeQuizResultsArticlePage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizResultsArticlePage.ascx.designer.cs">
-      <DependentUpon>KnowledgeQuizResultsArticlePage.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx.cs">
       <DependentUpon>Parent Toolkit Page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2314,7 +2307,6 @@
     <Content Include="Presentation\Sublayouts\Articles\Glossary Article.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizResultsArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\AboutAuthor.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx" />

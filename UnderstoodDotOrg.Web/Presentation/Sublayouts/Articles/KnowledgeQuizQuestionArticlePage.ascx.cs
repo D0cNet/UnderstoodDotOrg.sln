@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.BaseforQuiz;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.PageResources.Folders.KnowledgeQuizArticlePage;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.PageResources.Items.KnowledgeQuizArticlePage;
+using System.Web.UI.HtmlControls;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -18,15 +19,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         private KnowledgeQuizQuestionArticlePageItem ObjKnowledgeQuiz = Sitecore.Context.Item;
         private Item PageResources = Sitecore.Context.Item.Children.FirstOrDefault();
+        private Item ResultsFolder;
         private int QuestionNumber;
-        private string type;
-        private int Answer;
+        private Item GenericQuestion;
+        private bool MoreQuestions = false;
+        private string Answer;
         List<Item> Questions;
-
-        List<KnowledgeQuizQuestion> _KnowledgeQuizQuestions;
-
-
-        string _panletoShow;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,436 +32,224 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (questionsFolder != null)
                 Questions = questionsFolder.Children.ToList();
 
-            if (Request.QueryString["q"] != null)
+            if (Session["done"] != null && (string)Session["done"] == "true")
             {
-                QuestionNumber = Int32.Parse(Request.QueryString["q"].ToString());
-                lblQuestionCounter.Text = "Question " + QuestionNumber.ToString() + " of " + Questions.Count.ToString();
+                string correctAnswers = Session["CorrectAnswers"].ToString();
+                litTextResults.Text = correctAnswers + " out of " + Questions.Count;
+                btnTakeQuizAgain.Visible = true;
 
-                Item genericQuestion = Questions[QuestionNumber];
-                frQuestionTitle.Item = genericQuestion;
+                ResultsFolder = PageResources.Children.Where(i => i.IsOfType(KnowledgeQuizResultsFolderItem.TemplateId)).FirstOrDefault();
 
-                if (genericQuestion.IsOfType(TrueFalseQuestionItem.TemplateId))
+                int correct = Int32.Parse(correctAnswers);
+
+                foreach (Item i in ResultsFolder.Children)
                 {
-                    TrueFalseQuestionItem Question = (TrueFalseQuestionItem)genericQuestion;
-                    type = "bool";
-                    string stringAnswer = Question.CorrectAnswer.Item.Fields["Content Title"].ToString();
-                    if (stringAnswer == "True")
-                        Answer = 1;
-                    else
-                        Answer = 0;
-
-                    pnlTrueFalse.Visible = true;
+                    KnowledgeQuizResultItem range = (KnowledgeQuizResultItem)i;
+                    if (correct >= range.MinimumCorrectAnswers)
+                    {
+                        if (range.MaximumCorrectAnswers.ToString().IsNullOrEmpty() || (correct <= range.MaximumCorrectAnswers))
+                        {
+                            frEndExplanation.Item = i;
+                        }
+                    }
                 }
+
+                rptCorrectAnswers.DataSource = Session["CorrectTracker"];
+                rptCorrectAnswers.DataBind();
+                divQuestionsRight.Visible = true;
+                Reset();
             }
             else
-            { 
-            
-            }
-        }
-
-        private void ShowPanel()
-        {
-            if (GetPaneltoShow() == "Question")
             {
-                KnowledgeQuizQuestion QuestiontoShow = (KnowledgeQuizQuestion)Session["CurrentQ"];
-                List<KnowledgeQuizQuestion> quizQsCnt = (List<KnowledgeQuizQuestion>)Session["QuizQs"];
-                if (quizQsCnt != null && QuestiontoShow != null) ShowQuestionDetails(QuestiontoShow, quizQsCnt.Count);
-
-            }
-            if (GetPaneltoShow() == "Result")
-            {
-                //check for last question result to show proper buttons
-                if ((string)Session["LastQ"] == "1")
+                if (Session["qNum"] != null)
                 {
-                    btnResult.Visible = true;
-                    btnNextQuestion.Visible = false;
+                    QuestionNumber = (int)Session["qNum"];
                 }
                 else
                 {
-                    btnResult.Visible = false;
-                    btnNextQuestion.Visible = true;
+                    if (!IsPostBack)
+                    {
+                        Reset();
+                    }
+                    QuestionNumber = 1;
                 }
-                ShowQuestionResult();
+
+                SetQuestion();
             }
         }
-        /// <summary>
-        /// According to User selected answer show respective answer details
-        /// </summary>
+
+        public void Reset()
+        {
+            Session["done"] = null;
+            Session["qNum"] = null;
+            Session["CorrectAnswers"] = null;
+            Session["CorrectTracker"] = null;
+        }
+
+        public void SetQuestion()
+        {
+            lblQuestionCounter.Text = "Question " + QuestionNumber.ToString() + " of " + Questions.Count.ToString();
+
+            GenericQuestion = Questions[QuestionNumber - 1];
+            if (Questions.Count > QuestionNumber)
+                MoreQuestions = true;
+
+            frQuestionTitle.Item = GenericQuestion;
+
+            if (GenericQuestion.IsOfType(TrueFalseQuestionItem.TemplateId))
+            {
+                TrueFalseQuestionItem Question = (TrueFalseQuestionItem)GenericQuestion;
+                Answer = Question.CorrectAnswer.Item.Fields["Content Title"].ToString();
+
+                pnlTrueFalse.Visible = true;
+            }
+            else if (GenericQuestion.IsOfType(MultipleChoiceQuestionItem.TemplateId))
+            {
+                MultipleChoiceQuestionItem Question = (MultipleChoiceQuestionItem)GenericQuestion;
+
+                Answer = Question.CorrectAnswer.Item.Fields["Answer"].ToString();
+
+                foreach (Item i in Question.InnerItem.Children)
+                {
+                    rblAnswer.Items.Add(new ListItem(i.Fields["Answer"].ToString()));
+                }
+
+                pnlRadioQuestion.Visible = true;
+            }
+        }
+
         private void ShowQuestionResult()
         {
-            if (Session["UserResult"] != null)
-            {
-                pnlQuestion.Visible = false;
-                pnlResult.Visible = true;
-                KnowledgeQuizQuestion tempQ = (KnowledgeQuizQuestion)Session["UserResult"];
-                if (tempQ != null)
-                {
-                    if (tempQ.Question.QuestionType.Raw.ToLower().Contains("boolean"))
-                    {
-                        if (tempQ.UserAnswerBool == tempQ.ActualAnsBool)
-                        {
-                            //Users answer is correct
-                            lblCorrect.Visible = true;
-                            lblIncorrect.Visible = false;
-                            frTrueAnsDetail.Item = tempQ.ActualAnswerObject;
-                            frTrueAnsDetail.Visible = true;
-                            frFalseAnsDetail.Visible = false;
-                        }
-                        else
-                        {
-                            //Users Answer is Incorrect
-                            lblCorrect.Visible = false;
-                            lblIncorrect.Visible = true;
-                            frTrueAnsDetail.Item = tempQ.ActualAnswerObject;
-                            frTrueAnsDetail.Visible = false;
-                            frFalseAnsDetail.Visible = true;
-                        }
-                    }
-                    else
-                    {
-                        if (tempQ.ActualAnswerObject == tempQ.UserdAnswerObject)
-                        {
-                            //user selected correct answer
-                            lblCorrect.Visible = true;
-                            lblIncorrect.Visible = false;
-                            frTrueAnsDetail.Item = tempQ.ActualAnswerObject;
-                            frTrueAnsDetail.Visible = true;
-                            frFalseAnsDetail.Visible = false;
-                        }
-                        else
-                        {
-                            //user selected wrong answer
-                            lblCorrect.Visible = false;
-                            lblIncorrect.Visible = true;
-                            frTrueAnsDetail.Item = tempQ.ActualAnswerObject;
-                            frTrueAnsDetail.Visible = false;
-                            frFalseAnsDetail.Visible = true;
-                        }
-                    }
-                }
-            }
+            pnlResult.Visible = true;
+            frExplanation.Item = GenericQuestion;
 
-        }
-        /// <summary>
-        /// set question layout with answer listing style as per question style. 
-        /// </summary>
-        /// <returns></returns>
-        private void ShowQuestionDetails(KnowledgeQuizQuestion Question, int TotalQuestionCount)
-        {
-            //Set Question Counter
-            if ((string)Session["LastQ"] == "1")
-            {
-                Session["ShowPanel"] = "Result";
-                ShowPanel();
-            }
+            if (MoreQuestions)
+                btnResult.Visible = false;
             else
-            {
-                lblQuestionCounter.Text = "Question " + (Question.QuestionIndex + 1) + " of " + TotalQuestionCount;
-                //set question title details
-                frQuestionTitle.Item = Question.Question;
-                //set Answer Listing style
-                pnlQuestion.Visible = true;
-                pnlResult.Visible = false;
-                phBoolean.Visible = false;
-                phOption.Visible = false;
-                phDropdown.Visible = false;
-                if (Question.Question.QuestionType.Raw.ToLower().Contains("boolean"))
-                {
-                    //show boolean button ph
-                    phBoolean.Visible = true;
-                }
-                else if (Question.Question.QuestionType.Raw.ToLower().Contains("option"))
-                {
-                    //show option ph
-                    rblAnswer.Items.Clear();
-                    IEnumerable<QuizAnswersItem> _allAns = QuizQuestionItem.GetAllAnswers(Question.Question);
-                    if (_allAns != null)
-                    {
-                        foreach (QuizAnswersItem a in _allAns)
-                        {
-                            rblAnswer.Items.Add(new ListItem(a.Answer));
-                        }
-                    }
-                    phOption.Visible = true;
-                }
-                else if (Question.Question.QuestionType.Raw.ToLower().Contains("drop down"))
-                {
-                    //show ddl ph
-                    ddlAnswer.Items.Clear();
-                    IEnumerable<QuizAnswersItem> _allAns = QuizQuestionItem.GetAllAnswers(Question.Question);
-                    if (_allAns != null)
-                    {
-                        ddlAnswer.Items.Clear();
-                        ddlAnswer.Items.Add(new ListItem("Plese Select Answer"));
-                        foreach (QuizAnswersItem a in _allAns)
-                        {
-                            ddlAnswer.Items.Add(new ListItem(a.Answer));
-                        }
-                    }
-                    phDropdown.Visible = true;
-                }
-            }
-            
-        }
-        private string GetPaneltoShow()
-        {
-            _panletoShow = (string)Session["ShowPanel"];
-            if (_panletoShow == null)
-            {
-                //show question panel with question 1.
-                _panletoShow = "Question";
-                Session["ShowPanel"] = "Question";
-            }
+                btnNextQuestion.Visible = false;
 
-            return _panletoShow;
         }
-        /// <summary>
-        /// If Sessiion[QuizQs"] is null, load all question details
-        /// </summary>
-        private void GetAllQuizQuestions()
-        {
-            //load all question details in array
-            IEnumerable<QuizQuestionItem> AllQs = KnowledgeQuizQuestionArticlePageItem.GetAllQuestions(ObjKnowledgeQuiz);
-            if (AllQs != null)
-            {
-                _KnowledgeQuizQuestions = new List<KnowledgeQuizQuestion>(AllQs.Count());
-                int i = 0;
-                foreach (QuizQuestionItem q in AllQs)
-                {
-                    _KnowledgeQuizQuestions.Add(new KnowledgeQuizQuestion(q, i));
-                    i++;
-                }
-                Session["QuizQs"] = _KnowledgeQuizQuestions;
-                Session["CurrentQ"] = _KnowledgeQuizQuestions[0];
-            }
-        }
-        /// <summary>
-        /// Update User selected answer in Quiz Question list and set current question as next quetsion
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UpdateUserSelectedAnswer(KnowledgeQuizQuestion UpdatedQuizQ)
-        {
-            _KnowledgeQuizQuestions = (List<KnowledgeQuizQuestion>)Session["QuizQs"];
-            if (_KnowledgeQuizQuestions != null)
-            {
-                bool UserAnsSaved = false;
-                for (int i = 0; i <= _KnowledgeQuizQuestions.Count() - 1; i++)
-                {
-
-                    KnowledgeQuizQuestion quizq = _KnowledgeQuizQuestions[i];
-                    if (quizq.Question == UpdatedQuizQ.Question)
-                    {
-                        if (quizq.Question.QuestionType.Raw.ToLower().Contains("boolean") && UserAnsSaved == false)
-                        {
-                            UserAnsSaved = true;
-                            quizq.UserAnswerBool = UpdatedQuizQ.UserAnswerBool;
-                            Session["UserResult"] = quizq;
-                            if (i + 1 <= _KnowledgeQuizQuestions.Count() - 1)
-                            {
-                                Session["NextQ"] = _KnowledgeQuizQuestions[i + 1];
-                            }
-                            else if (i  == _KnowledgeQuizQuestions.Count()-1 )
-                            { Session["LastQ"] = "1"; }
-                        }
-                        if (!quizq.Question.QuestionType.Raw.ToLower().Contains("boolean") && UserAnsSaved == false)
-                        {
-                            UserAnsSaved = true;
-                            quizq.UserdAnswerObject = UpdatedQuizQ.UserdAnswerObject;
-                            Session["UserResult"] = quizq;
-                            if (i + 1 <= _KnowledgeQuizQuestions.Count() - 1)
-                            {
-                                Session["NextQ"] = _KnowledgeQuizQuestions[i + 1];
-                            }
-                            else if (i  == _KnowledgeQuizQuestions.Count()-1)
-                            { Session["LastQ"] = "1"; }
-                        }
-                    }
-
-                }
-                Session["QuizQs"] = _KnowledgeQuizQuestions;
-            }
-        }
+        
         protected void btnTrue_Click(object sender, EventArgs e)
         {
             pnlResult.Visible = true;
 
-            if (Answer == 1)
+            if (Answer == "True")
+            {
+                UpdateScore(1);
+                UpdateAnswers(true);
                 lblIncorrect.Visible = false;
+            }
             else
+            {
+                UpdateAnswers(false);
                 lblCorrect.Visible = false;
+            }
+
+            ShowQuestionResult();
         }
 
         protected void btnFalse_Click(object sender, EventArgs e)
         {
             pnlResult.Visible = true;
 
-            if (Answer == 0)
+            if (Answer == "False")
+            {
+                UpdateScore(1);
+                UpdateAnswers(true);
                 lblIncorrect.Visible = false;
+            }
             else
+            {
+                UpdateAnswers(false);
                 lblCorrect.Visible = false;
+            }
+
+            ShowQuestionResult();
         }
 
         protected void rblAnswer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Session["CurrentQ"] != null)
+            pnlResult.Visible = true;
+
+            if (Answer == rblAnswer.SelectedValue)
             {
-                KnowledgeQuizQuestion tempQ = (KnowledgeQuizQuestion)Session["CurrentQ"];
-                if (!tempQ.Question.QuestionType.Raw.ToLower().Contains("boolean"))
-                {
-                    //Get All Answer and match selected answer
-                    IEnumerable<QuizAnswersItem> allans = QuizQuestionItem.GetAllAnswers(tempQ.Question);
-                    foreach (QuizAnswersItem a in allans)
-                    {
-                        if (a.Answer == rblAnswer.SelectedValue)
-                        {
-                            tempQ.UserdAnswerObject = a;
-                        }
-                    }
-                }
-                UpdateUserSelectedAnswer(tempQ);
+                UpdateScore(1);
+                UpdateAnswers(true);
+                lblIncorrect.Visible = false;
+            }
+            else
+            {
+                UpdateAnswers(false);
+                lblCorrect.Visible = false;
             }
 
-            Session["ShowPanel"] = "Result";
-            ShowPanel();
-        }
-
-        protected void ddlAnswer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Session["CurrentQ"] != null)
-            {
-                KnowledgeQuizQuestion tempQ = (KnowledgeQuizQuestion)Session["CurrentQ"];
-                if (!tempQ.Question.QuestionType.Raw.ToLower().Contains("boolean"))
-                {
-                    //Get All Answer and match selected answer
-                    IEnumerable<QuizAnswersItem> allans = QuizQuestionItem.GetAllAnswers(tempQ.Question);
-                    foreach (QuizAnswersItem a in allans)
-                    {
-                        if (a.Answer == ddlAnswer.SelectedValue)
-                        {
-                            tempQ.UserdAnswerObject = a;
-                        }
-                    }
-                }
-                UpdateUserSelectedAnswer(tempQ);
-            }
-
-            Session["ShowPanel"] = "Result";
-            ShowPanel();
+            rblAnswer.Items.Clear();
+            ShowQuestionResult();
         }
 
         protected void btnNextQuestion_Click(object sender, EventArgs e)
         {
-            if (Session["NextQ"] != null) Session["CurrentQ"] = Session["NextQ"];
-            else if ((string)Session["LastQ"] == "1")
-            {
-                btnNextQuestion.Visible = false;
-                btnResult.Visible = true;
-            }
-            Session["ShowPanel"] = "Question";
-            ShowPanel();
+            Session["qNum"] = (QuestionNumber + 1);
+            Response.Redirect(Request.CurrentExecutionFilePath);
+        }
+
+        protected void btnTakeQuizAgain_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Request.CurrentExecutionFilePath);
         }
 
         protected void btnResult_Click(object sender, EventArgs e)
         {
             //store all question values in session
-            Response.Redirect(string.Concat("http://",Request.Url.Host.ToString(), ObjKnowledgeQuiz.LinktoResultPage));
-        }
-    }
-    public class KnowledgeQuizQuestion
-    {
-        private int _qIndex;
-        private bool _score;
-        private QuizQuestionItem _question;
-        private QuizAnswersItem _UserAnsObj;
-        private QuizAnswersItem _ActualAnsObj;
-        private bool _userAnsBool;
-        private bool _actualAnsBool;
-
-        public int QuestionIndex
-        {
-            get { return _qIndex; }
-            set { _qIndex = value; }
-        }
-        public bool Score
-        {
-            get { return _score; }
-            set { _score = value; }
-        }
-        public QuizQuestionItem Question
-        {
-            get { return _question; }
-            set { _question = value; }
-        }
-        public QuizAnswersItem UserdAnswerObject
-        {
-            get { return _UserAnsObj; }
-            set { _UserAnsObj = value; }
-        }
-        public QuizAnswersItem ActualAnswerObject
-        {
-            get { return _ActualAnsObj; }
-            set { _ActualAnsObj = value; }
-        }
-        public bool UserAnswerBool
-        {
-            get { return _userAnsBool; }
-            set { _userAnsBool = value; }
-        }
-        public bool ActualAnsBool
-        {
-            get { return _actualAnsBool; }
-            set { _actualAnsBool = value; }
+            Session["done"] = "true";
+            Response.Redirect(Request.CurrentExecutionFilePath);
         }
 
-        private bool SetActualBoolAnswerDetails(QuizQuestionItem Questn)
+        public void UpdateScore(int value)
         {
-            bool ActualBoolAns = false;
-            if (Questn.QuestionType.Raw.ToLower().Contains("boolean"))
+            if (Session["CorrectAnswers"] != null)
             {
-                QuizAnswersItem _boolans = QuizQuestionItem.GetAllAnswers(Questn).FirstOrDefault();
-                ActualBoolAns = _boolans.SetCorrectAnswer.Checked;
+                Session["CorrectAnswers"] = (int)Session["CorrectAnswers"] + value;
             }
-            return ActualBoolAns;
-        }
-        private QuizAnswersItem SetActualAnswerDetails(QuizQuestionItem Questn)
-        {
-            QuizAnswersItem _ActualAnsObj = null;
-            if (Questn.QuestionType.Raw.ToLower().Contains("option") || Questn.QuestionType.Raw.ToLower().Contains("drop down"))
+            else
             {
-                IEnumerable<QuizAnswersItem> _allans = QuizQuestionItem.GetAllAnswers(Questn);
-                if (_allans != null)
+                Session["CorrectAnswers"] = value;
+            }
+        }
+
+        public void UpdateAnswers(bool result)
+        {
+            if (Session["CorrectTracker"] != null)
+            {
+                List<bool> answers = (List<bool>)Session["CorrectTracker"];
+                answers.Add(result);
+                Session["CorrectTracker"] = answers;
+            }
+            else
+            {
+                List<bool> answers = new List<bool>();
+                answers.Add(result);
+                Session["CorrectTracker"] = answers;
+            }
+        }
+
+        protected void rptCorrectAnswers_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                HtmlGenericControl spanResult = e.FindControlAs<HtmlGenericControl>("spanResult");
+
+                bool result = (bool)e.Item.DataItem;
+
+                if (spanResult != null)
                 {
-                    foreach (QuizAnswersItem q in _allans)
-                    {
-                        if (q.SetCorrectAnswer.Checked == true)
-                            _ActualAnsObj = q;
-                    }
+                    if (result)
+                        spanResult.Attributes.Add("class", "results-indicator correct");
+                    else
+                        spanResult.Attributes.Add("class", "results-indicator incorrect");
                 }
             }
-            else if (Questn.QuestionType.Raw.ToLower().Contains("boolean"))
-            {
-                _ActualAnsObj = QuizQuestionItem.GetAllAnswers(Questn).FirstOrDefault();
-            }
-            return _ActualAnsObj;
-        }
-
-        public KnowledgeQuizQuestion(QuizQuestionItem QuestionItem, int QuestionIndex)
-        {
-            _qIndex = QuestionIndex;
-            _score = false;
-            _question = QuestionItem;
-            _UserAnsObj = null;
-            _userAnsBool = false;
-            if (QuestionItem.QuestionType.Raw.ToLower().Contains("boolean"))
-            {
-                _actualAnsBool = SetActualBoolAnswerDetails(QuestionItem);
-                _ActualAnsObj = SetActualAnswerDetails(QuestionItem);
-            }
-
-            else
-                _ActualAnsObj = SetActualAnswerDetails(QuestionItem);
-
         }
     }
 }

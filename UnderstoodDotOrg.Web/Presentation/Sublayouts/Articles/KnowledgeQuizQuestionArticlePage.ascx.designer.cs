@@ -13,6 +13,42 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     public partial class KnowledgeQuizQuestionrArticlePage {
         
         /// <summary>
+        /// divQuestionsRight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divQuestionsRight;
+        
+        /// <summary>
+        /// rptCorrectAnswers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptCorrectAnswers;
+        
+        /// <summary>
+        /// litTextResults control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTextResults;
+        
+        /// <summary>
+        /// frEndExplanation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frEndExplanation;
+        
+        /// <summary>
         /// lblQuestionCounter control.
         /// </summary>
         /// <remarks>
@@ -49,22 +85,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.Panel pnlTrueFalse;
         
         /// <summary>
-        /// phBoolean control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phBoolean;
-        
-        /// <summary>
         /// btnTrue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTrue;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnTrue;
         
         /// <summary>
         /// btnFalse control.
@@ -73,7 +100,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFalse;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnFalse;
         
         /// <summary>
         /// pnlRadioQuestion control.
@@ -85,15 +112,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.Panel pnlRadioQuestion;
         
         /// <summary>
-        /// phOption control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phOption;
-        
-        /// <summary>
         /// rblAnswer control.
         /// </summary>
         /// <remarks>
@@ -101,24 +119,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblAnswer;
-        
-        /// <summary>
-        /// phDropdown control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phDropdown;
-        
-        /// <summary>
-        /// ddlAnswer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAnswer;
         
         /// <summary>
         /// pnlResult control.
@@ -148,22 +148,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.Label lblIncorrect;
         
         /// <summary>
-        /// frTrueAnsDetail control.
+        /// frExplanation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frTrueAnsDetail;
-        
-        /// <summary>
-        /// frFalseAnsDetail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frFalseAnsDetail;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frExplanation;
         
         /// <summary>
         /// btnResult control.
@@ -172,7 +163,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnResult;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnResult;
         
         /// <summary>
         /// btnNextQuestion control.
@@ -181,6 +172,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNextQuestion;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnNextQuestion;
+        
+        /// <summary>
+        /// btnTakeQuizAgain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnTakeQuizAgain;
     }
 }

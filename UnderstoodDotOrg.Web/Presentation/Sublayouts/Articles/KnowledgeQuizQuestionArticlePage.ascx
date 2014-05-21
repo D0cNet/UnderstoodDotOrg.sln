@@ -11,6 +11,21 @@
         <div class="col col-15 offset-1">
             <!-- BEGIN PARTIAL: knowledge-quiz-a13a -->
             <div class="knowledge-quiz">
+                <div id="divQuestionsRight" class="results-indicators" runat="server" visible="false">
+                    <asp:Repeater ID="rptCorrectAnswers" runat="server" OnItemDataBound="rptCorrectAnswers_ItemDataBound">
+                        <HeaderTemplate>
+
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <span id="spanResult" runat="server"></span>
+                        </ItemTemplate>
+                        <FooterTemplate>
+
+                        </FooterTemplate>
+                    </asp:Repeater>
+                </div>
+                <p class="correctness-headline"><asp:Literal ID="litTextResults" runat="server"></asp:Literal></p>
+                <p class="explanation"><sc:FieldRenderer ID="frEndExplanation" runat="server" FieldName="Explanation"></sc:FieldRenderer></p>
                 <div class="question-counter">
                     <asp:Label ID="lblQuestionCounter" runat="server"></asp:Label>
                     <%--Question 1 of 10--%>
@@ -19,34 +34,15 @@
                     <sc:FieldRenderer ID="frQuestionTitle" runat="server" FieldName="Question" />
                 </h3>
                 <asp:Panel ID="pnlQuestion" runat="server" CssClass="answer-choices">
-                    <%-- Two buttons for Boolean Question --%>
-                    <h4 class="question-counter">
-                    Question 1 of 10
-                    </h4>
-                    <h3>True or False? Kids with dyslexia can never learn what other kids learn.</h3>
-                    <div class="answer-choices">
-                    <button type="button" class="button answer-choice-true rs_skip">True</button>
-                    <button type="button" class="button gray answer-choice-false rs_skip">False</button>
-                    </div>
-                    <asp:Panel ID="pnlTrueFalse" runat="server" CssClass="answer-choices" Visible="false">
-                        <asp:PlaceHolder ID="phBoolean" runat="server">
-                            <%--<button type="button" class="answer-choice-true">True</button>
-                    <button type="button" class="answer-choice-false">False</button>--%>
-                            <asp:Button ID="btnTrue" runat="server" Text="True" CssClass="button answer-choice-true rs_skip" OnClick="btnTrue_Click" />
-                            <asp:Button ID="btnFalse" runat="server" Text="False" CssClass="button gray answer-choice-false rs_skip" OnClick="btnFalse_Click" />
-                        </asp:PlaceHolder>
+                    <asp:Panel ID="pnlTrueFalse" runat="server" Visible="false">
+                        <button type="button" id="btnTrue" runat="server" class="button answer-choice-true rs_skip" onserverclick="btnTrue_Click">True</button>
+                        <button type="button" id="btnFalse" runat="server" class="button gray answer-choice-false rs_skip" onserverclick="btnFalse_Click">False</button>
                     </asp:Panel>
-                    <asp:Panel ID="pnlRadioQuestion" runat="server" Visible="false">
+                    <asp:Panel ID="pnlRadioQuestion" CssClass="test" runat="server" Visible="false">
                         <%-- OR --%>
                         <%-- Options for list style Question --%>
-                        <asp:PlaceHolder ID="phOption" runat="server">
-                            <asp:RadioButtonList ID="rblAnswer" AutoPostBack="true" runat="server" OnSelectedIndexChanged="rblAnswer_SelectedIndexChanged">
-                            </asp:RadioButtonList>
-                        </asp:PlaceHolder>
-                        <asp:PlaceHolder ID="phDropdown" runat="server">
-                            <asp:DropDownList ID="ddlAnswer" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlAnswer_SelectedIndexChanged">
-                            </asp:DropDownList>
-                        </asp:PlaceHolder>
+                        <asp:RadioButtonList ID="rblAnswer" AutoPostBack="true" runat="server" OnSelectedIndexChanged="rblAnswer_SelectedIndexChanged" RepeatLayout="UnorderedList">
+                        </asp:RadioButtonList>
                    </asp:Panel>
                 </asp:Panel>
 
@@ -57,43 +53,26 @@
                         <asp:Label ID="lblIncorrect" runat="server" Text="Incorrect"></asp:Label>
                     </p>
                     <p class="explanation">
-                        <sc:FieldRenderer ID="frTrueAnsDetail" runat="server" FieldName="True Answer" />
-                        <sc:FieldRenderer ID="frFalseAnsDetail" runat="server" FieldName="False Answer" />
-
+                        <sc:FieldRenderer ID="frExplanation" runat="server" FieldName="Answer Explanation" />
                     </p>
                     <div class="next-question">
-                        <asp:Button runat="server" ID="btnResult" Text="Show Result" OnClick="btnResult_Click" />
-                        <asp:Button runat="server" ID="btnNextQuestion" Text="Next Question" OnClick="btnNextQuestion_Click" />
+                        <button type="button" runat="server" id="btnResult" onserverclick="btnResult_Click" class="button" >Show Result</button>
+                        <button type="button" runat="server" id="btnNextQuestion" onserverclick="btnNextQuestion_Click" class="button" >Next Question</button>
                     </div>
                 </asp:Panel>
-            </div>
-            <div class="knowledge-quiz">
-              <h4 class="question-counter">
-                Question 4 of 10
-              </h4>
-              <fieldset>
-                <legend>Which of the following symptoms might signal dyslexia?</legend>
-                <div class="answer-choices">
-                  <ul>
-                    <li><label for="r1"><input type="radio" "id="r1" name="example"> <span>Doing crafts or art projects</span></label></li>
-                    <li><label for="r2"><input type="radio" "id="r2" name="example"> <span>Trying to solve mysteries, riddles, or crossword puzzles</span></label></li>
-                    <li><label for="r3"><input type="radio" "id="r3" name="example"> <span>Writing a journal or blogging</span></label></li>
-                    <li><label for="r4"><input type="radio" "id="r4" name="example"> <span>Reflecting on your life and your future</span></label></li>
-                  </ul>
+                <div class="next-question">
+                    <button type="button" runat="server" id="btnTakeQuizAgain" onserverclick="btnTakeQuizAgain_Click" class="button" visible="false" >Take Quiz Again</button>
                 </div>
-              <fieldset>
-            </fieldset></fieldset></div>
+            </div>
         </div>
 
         <div class="col col-1 sidebar-spacer"></div>
 
         <!-- right bar -->
         <div class="col col-5 offset-1">
-            <!-- BEGIN PARTIAL: helpful-count -->
-            <div class="count-helpful">
-                <a href="REPLACE"><span>34</span>Found this helpful</a>
-            </div>
-            <!-- END PARTIAL: helpful-count -->
+            
+            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulCountOnlySideColumn.ascx" runat="server"></sc:Sublayout>
+
             <!-- BEGIN PARTIAL: find-helpful -->
             <div class="find-this-helpful sidebar">
 
