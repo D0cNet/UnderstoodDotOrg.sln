@@ -32,7 +32,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
             {
                 user = "admin";
             }
-            string url = "/en/Q%20and%20A/Q%20and%20A%20Details.aspx" + CommunityHelper.CreateQuestion(title, body, user);
+            string url = "/en/Community and Events/Q and A/Q and A Details.aspx" + CommunityHelper.CreateQuestion(title, body, user);
             Response.Redirect(url);
 
         }

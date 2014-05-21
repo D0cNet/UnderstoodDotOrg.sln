@@ -446,11 +446,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     var requestUrl = string.Format("{0}api.ashx/v2/users.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
 
                     var values = new NameValueCollection()
-                {
-                { "UserName", username },
-                { "Password", Guid.NewGuid().ToString() },
-                { "PrivateEmail", email }
-                };
+                    {
+                        { "Username", username },
+                        { "Password", Guid.NewGuid().ToString() },
+                        { "PrivateEmail", email }
+                    };
 
                     var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
                     return true;
@@ -458,7 +458,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             catch (Exception e)
             {
-                Exception createException = new Exception("An error occurred when creating the Community User. Please see Inner Exception for details.",e);
+                Exception createException = new Exception("An error occurred when creating the Community User. Please see Inner Exception for details.", e);
                 createException.Source = "CommunityHelper.cs CreateUser(string username, string email)";
                 throw createException;
             }
@@ -913,7 +913,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     ThreadModel t = new ThreadModel(childNode);
                     th.Add(t);
-                   // Thread.Sleep(3000);
+                    // Thread.Sleep(3000);
                 }
             }
             catch (Exception ex)
@@ -1141,7 +1141,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         FavoritesModel favorite = new FavoritesModel()
                         {
                             Type = xn["Type"].InnerText,
-                            Title =  xn["Title"].InnerText,
+                            Title = xn["Title"].InnerText,
                             ReplyCount = statusData["ReplyCount"].InnerText,
                             ContentId = statusData["ContentId"].InnerText,
                             ContentTypeId = statusData["ContentType"].InnerText
@@ -1243,8 +1243,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         GroupModel group = new GroupModel
                         {
                             Title = xn["Name"].InnerText,
-                            Url=xn["Url"].InnerText,
-                            Id=xn["Id"].InnerText                           
+                            Url = xn["Url"].InnerText,
+                            Id = xn["Id"].InnerText
                         };
                         groupsList.Add(group);
                     }
