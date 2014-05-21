@@ -306,13 +306,15 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
                 if (!currentUser.Equals("admin"))
                 {
-                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                    currentUser = currentUser.Replace(" ", "");
-                    webClient.Headers.Add("Rest-Impersonate-User", currentUser.ToLower());
+                    try
+                    {
+                        webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                        currentUser = currentUser.Trim().ToLower();
+                        webClient.Headers.Add("Rest-Impersonate-User", currentUser);
 
-                    var postUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", blogId, blogPostId));
+                        var postUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", blogId, blogPostId));
 
-                    var data = new NameValueCollection()
+                        var data = new NameValueCollection()
                     {
                         { "Body", body },
                         { "PublishedDate", DateTime.Now.ToString() },
@@ -320,10 +322,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         { "BlogId", blogId.ToString() }
                     };
 
-                    byte[] result = webClient.UploadValues(postUrl, data);
-
-                    // TODO: handle errors
-                    string response = webClient.Encoding.GetString(result);
+                        byte[] result = webClient.UploadValues(postUrl, data);
+                        // TODO: handle errors
+                        string response = webClient.Encoding.GetString(result);
+                    }
+                    catch { } //TODO: Add logging
                 }
             }
         }
