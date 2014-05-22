@@ -69,7 +69,7 @@
                                 <div class="col col-5 offset-1">
                                     <h3><asp:Literal ID="ltlMyInterestsLabel" runat="server"></asp:Literal></h3>
                                 </div>
-                                <div class="col col-18 profile-detail-information">
+                                <div class="col col-18 profile-detail-information cnt">
                                     <!-- end MyInterests ul -->
                                     <asp:ListView ID="uxInterestList" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Interest">
                                         <LayoutTemplate>
@@ -84,6 +84,9 @@
                                         </ItemTemplate>
                                     </asp:ListView>
                                 </div>
+								<div class="col col-18 profile-detail-information form-field">
+									<asp:CheckBoxList ID="cblInterests" runat="server"></asp:CheckBoxList>
+								</div>
                             </div>
                             <!-- .row -->
                         </div>

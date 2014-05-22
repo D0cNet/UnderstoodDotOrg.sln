@@ -19,9 +19,18 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
 
 		public static IEnumerable<ParentInterestItem> GetParentJournies()
 		{
-			return Sitecore.Context.Database.SelectItems("sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Journey/*")
+			return Sitecore.Context.Database.SelectItems("/sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Journey/*")
 											.Where(i => i.TemplateID.ToString() == ParentInterestItem.TemplateId)
-											.Select(i => new ParentInterestItem(i));
+											.Select(i => new ParentInterestItem(i))
+											.OrderBy(i => i.InterestName.Raw);
+		}
+
+		public static IEnumerable<ParentInterestItem> GetParentInterests()
+		{
+			return Sitecore.Context.Database.SelectItems("/sitecore/content/Globals/Content Taxonomies/#Parent Related#/#Parent Interest#//*")
+											.Where(i => i.TemplateID.ToString() == ParentInterestItem.TemplateId)
+											.Select(i => new ParentInterestItem(i))
+											.OrderBy(i => i.InterestName.Raw);
 		}
 	}
 }

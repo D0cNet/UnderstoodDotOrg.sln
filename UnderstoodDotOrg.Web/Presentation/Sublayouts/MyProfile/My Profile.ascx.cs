@@ -17,20 +17,6 @@
 
     public partial class My_Profile : BaseSublayout
     {
-		private MembershipManager _membershipManager;
-		private MembershipManager MembershipManager
-		{
-			get
-			{
-				if (_membershipManager == null)
-				{
-					_membershipManager = new MembershipManager();
-				}
-
-				return _membershipManager;
-			}
-		}
-
 		private MyProfileItem _currentPage;
 		private MyProfileItem CurrentPage
 		{
@@ -68,8 +54,7 @@
 				uxChildList.DataSource = this.CurrentMember.Children;
 				uxChildList.DataBind();
 
-				uxInterestList.DataSource = this.CurrentMember.Interests.Where(x => x.CategoryName != "Journey");
-				uxInterestList.DataBind();
+				SetInterests();
 
 				uxEmailAddress.Text = this.CurrentUser.UserName;
 
@@ -114,6 +99,30 @@
 				}
 			}
         }
+
+		private void SetInterests()
+		{
+			uxInterestList.DataSource = this.CurrentMember.Interests.Where(x => x.CategoryName != "Journey");
+			uxInterestList.DataBind();
+
+			IEnumerable<ParentInterestItem> parentInterests = GlobalsItem.GetParentInterests();
+
+			IEnumerable<Guid> currentMemberInterestIDs = this.CurrentMember.Interests.Where(i => i.CategoryName != "Journey").Select(i => i.Key);
+
+			foreach (ParentInterestItem pi in parentInterests)
+			{
+				Guid guid = pi.ID.Guid;
+
+				ListItem li = new ListItem(pi.InterestName.Raw, pi.ID.Guid.ToString());
+
+				if (currentMemberInterestIDs.Contains(guid))
+				{
+					li.Selected = true;
+				}
+
+				cblInterests.Items.Add(li);
+			}
+		}
 
 		private void SetJourney()
 		{
@@ -275,6 +284,20 @@
 			this.CurrentMember.Role = new Guid(ddlRole.SelectedValue);
 			this.CurrentMember.Journeys = new List<Journey>() { new Journey { Key = new Guid(ddlJourney.SelectedValue), Value = ddlJourney.SelectedItem.Text } };
             MembershipManager.UpdateMember(this.CurrentMember);
+			List<Interest> selectedInterests = new List<Interest>();
+
+			foreach (ListItem li in cblInterests.Items)
+			{
+				if (li.Selected)
+				{
+					selectedInterests.Add(new Interest() { Key = new Guid(li.Value) });
+				}
+			}
+
+			this.CurrentMember.Interests = selectedInterests;
+
+			new MembershipManager().UpdateMember(this.CurrentMember);
+
 			ReloadPage();
 		}
 
