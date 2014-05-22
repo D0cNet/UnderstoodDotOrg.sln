@@ -34,30 +34,43 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 FieldRenderer frTitle = e.FindControlAs<FieldRenderer>("frTitle");
                 HtmlGenericControl iconType = e.FindControlAs<HtmlGenericControl>("iconType");
                 HtmlGenericControl fileSize = e.FindControlAs<HtmlGenericControl>("fileSize");
-                HyperLink hypDownloadLink = e.FindControlAs<HyperLink>("hypDownloadLink");
+                HyperLink hypActionLink = e.FindControlAs<HyperLink>("hypActionLink");
+                HyperLink hypTitle = e.FindControlAs<HyperLink>("hypTitle");
+                LinkField lf = dataItem.Fields["Link"];
 
                 if (frTitle != null)
+                {
                     frTitle.Item = dataItem;
-                if(hypDownloadLink != null)
-                    hypDownloadLink.Text = dataItem.Fields["Action Text"].ToString();
+                }
+
+                if (hypActionLink != null)
+                {
+                    hypActionLink.Text = dataItem.Fields["Action Text"].ToString();
+                }
+
+                string itemLink = string.Empty;
 
                 if (dataItem.IsOfType(PDFToolkitResourceItem.TemplateId))
                 {
                     iconType.Attributes.Add("class", "pdf");
 
-                    hypDownloadLink.NavigateUrl = ResolveMediaURL(dataItem);
+                    itemLink = ResolveMediaURL(dataItem);
                 }
                 else if (dataItem.IsOfType(VideoToolkitResourceItem.TemplateId))
                 {
                     iconType.Attributes.Add("class", "video");
 
-                    hypDownloadLink.NavigateUrl = ResolveMediaURL(dataItem);
+                    //itemLink = ResolveMediaURL(dataItem);
+                    if (lf.TargetItem != null)
+                        itemLink = LinkManager.GetItemUrl(lf.TargetItem);
                 }
                 else if (dataItem.IsOfType(AudioToolkitResourceItem.TemplateId))
                 {
                     iconType.Attributes.Add("class", "audio");
 
-                    hypDownloadLink.NavigateUrl = ResolveMediaURL(dataItem);
+                    //itemLink = ResolveMediaURL(dataItem);
+                    if (lf.TargetItem != null)
+                        itemLink = LinkManager.GetItemUrl(lf.TargetItem);
                 }
                 else if (dataItem.IsOfType(WordToolkitResourceItem.TemplateId))
                 {
@@ -65,18 +78,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                     Sitecore.Data.Fields.FileField fileField = ((Sitecore.Data.Fields.FileField)dataItem.Fields["Link"]);
 
-                    hypDownloadLink.NavigateUrl = Sitecore.Resources.Media.MediaManager.GetMediaUrl(fileField.MediaItem);
+                    itemLink = ResolveMediaURL(fileField.MediaItem);
                 }
                 else if (dataItem.IsOfType(ArticleToolkitResourceItem.TemplateId))
                 {
                     iconType.Attributes.Add("class", "article");
                     fileSize.Visible = false;
 
-                    LinkField lf = dataItem.Fields["Link"];
+                    //LinkField lf = dataItem.Fields["Link"];
 
                     if (lf.TargetItem != null)
-                        hypDownloadLink.NavigateUrl = LinkManager.GetItemUrl(lf.TargetItem);
+                        itemLink = LinkManager.GetItemUrl(lf.TargetItem);
                 }
+
+                hypActionLink.NavigateUrl = hypTitle.NavigateUrl = itemLink;
             }
         }
 
@@ -87,7 +102,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (lf.TargetItem != null)
                 return Sitecore.Resources.Media.MediaManager.GetMediaUrl(lf.TargetItem);
             else
-                return "";
+                return "#";
         }
     }
 }
