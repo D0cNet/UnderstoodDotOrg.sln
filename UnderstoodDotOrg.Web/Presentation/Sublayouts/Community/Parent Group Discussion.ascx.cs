@@ -53,9 +53,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             rptGroupDiscussion.DataSource = thModel.Replies;
                             rptGroupDiscussion.DataBind();
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
-
+                            
                         }
 
                     }

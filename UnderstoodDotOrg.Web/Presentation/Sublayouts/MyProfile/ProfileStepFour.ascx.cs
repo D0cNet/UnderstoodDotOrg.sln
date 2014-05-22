@@ -240,7 +240,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                         Response.Write("<!-- Error 401 -->");
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     Response.Write("<!-- Error 501 -->");
                 }

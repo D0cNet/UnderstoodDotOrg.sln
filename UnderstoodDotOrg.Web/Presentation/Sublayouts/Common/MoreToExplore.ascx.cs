@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.SitecoreCIG;
-using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+﻿using Sitecore.Data.Items;
 using Sitecore.Web.UI.WebControls;
-using Sitecore.Data.Items;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
-using Sitecore.Data.Managers;
-using Sitecore.Data;
+using System;
+using System.Linq;
+using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {

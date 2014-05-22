@@ -111,7 +111,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     Item grpItem = Sitecore.Context.Database.GetItem(grpItemID);
                     string itemUrl = Sitecore.Links.LinkManager.GetItemUrl(grpItem);
                     Sitecore.Web.WebUtil.Redirect(itemUrl);
-                }catch(Exception ex)
+                }catch(Exception)
                 {
                     
                 }
@@ -125,7 +125,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     {
 
                     }
-                }catch(Exception ex)
+                }catch(Exception)
                 {
                     
                 }
