@@ -22,6 +22,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout1;
         
         /// <summary>
+        /// frBodyContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBodyContent;
+        
+        /// <summary>
         /// frInfographicImage control.
         /// </summary>
         /// <remarks>
@@ -38,15 +47,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox uxModalEmbed;
-        
-        /// <summary>
-        /// frBodyContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBodyContent;
         
         /// <summary>
         /// SBReviewedBy control.

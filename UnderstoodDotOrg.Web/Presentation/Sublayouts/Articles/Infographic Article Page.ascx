@@ -9,6 +9,9 @@
     <div class="row">
         <!-- article -->
         <div class="col col-22 offset-1">
+            <div class="article-copy">
+                <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
+            </div>
             <div class="infographic">
                 <%-- <img src="http://placehold.it/100x1000" width="100%" /> --%>
                 <sc:FieldRenderer ID="frInfographicImage" runat="server" FieldName="Image" />
@@ -73,9 +76,6 @@
 <!-- END PARTIAL: embed-overlay -->
 
                 <!-- END PARTIAL: infographic-zoom -->
-            </div>
-            <div class="article-copy">
-                <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
             </div>
             <!-- end infographic -->
             <!-- BEGIN PARTIAL: reviewed-by -->
