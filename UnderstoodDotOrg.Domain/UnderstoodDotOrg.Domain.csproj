@@ -477,9 +477,12 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepTwoItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepTwoItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepTwoItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ResetYourPasswordItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SignInPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SignUpPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\CreateAccountItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\CreateAccountItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\MultipleChildrenItem.base.cs" />
