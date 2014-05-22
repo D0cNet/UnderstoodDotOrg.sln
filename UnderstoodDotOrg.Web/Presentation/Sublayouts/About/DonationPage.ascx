@@ -328,7 +328,7 @@
                         Understood is a 501(c)(3) nonprofit recognized by the IRS, and all donations to Understood are tax-deductible in accordance with IRS regulations. 2014 Understood
                     </p>
                     <div class="logo-img-wrap">
-                        <img class="logo-img" alt="Verisign" src="Presentation/includes/images/logo.partner.verisign.png" />
+                        <img class="logo-img" alt="Verisign" src="/Presentation/includes/images/logo.partner.verisign.png" />
                     </div>
                 </div>
 
