@@ -1,31 +1,28 @@
-﻿using Sitecore.Data;
+﻿using Microsoft.Practices.ServiceLocation;
 using Sitecore.ContentSearch;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnderstoodDotOrg.Domain.Membership;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
-using UnderstoodDotOrg.Common;
 using Sitecore.ContentSearch.Linq;
-using Sitecore.ContentSearch.Linq.Solr;
 using Sitecore.ContentSearch.Linq.Utilities;
-using System.Linq.Expressions;
-using UnderstoodDotOrg.Common.Extensions;
+using Sitecore.ContentSearch.SearchTypes;
+using Sitecore.Data;
 using Sitecore.Data.Items;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
-using Microsoft.Practices.ServiceLocation;
 using SolrNet;
 using SolrNet.Commands.Parameters;
-using SolrNet.Impl;
-using SolrNet.Impl.QuerySerializers;
 using SolrNet.Impl.FieldSerializers;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
-using Sitecore.ContentSearch.SearchTypes;
+using SolrNet.Impl.QuerySerializers;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Linq.Expressions;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
@@ -694,6 +691,35 @@ namespace UnderstoodDotOrg.Domain.Search
                 }
 
                 return finalResults.Select(r => r.GetItem()).Select(i => (TextOnlyTipsArticlePageItem)i).ToList();
+            }
+
+        }
+
+        /// <summary>
+        /// Get the most upcoming event on the entire site
+        /// </summary>
+        /// <returns></returns>
+        public static BaseEventDetailPageItem GetUpcomingEvent()
+        {
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            BaseEventDetailPageItem result = null;
+
+            using (var context = index.CreateSearchContext())
+            {
+                var events = context.GetQueryable<EventPage>()
+                                    .Where(i => i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
+                                    .OrderByDescending(i => i.EventDate)
+                                    .Take(1)
+                                    .ToList();
+
+                var first = events.FirstOrDefault();
+
+                if (first != null)
+                {
+                    result = first.GetItem();
+                }
+
+                return result;
             }
 
         }
