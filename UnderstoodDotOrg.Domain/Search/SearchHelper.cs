@@ -335,7 +335,8 @@ namespace UnderstoodDotOrg.Domain.Search
             var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
             using (var ctx = index.CreateSearchContext())
             {
-                var query = ctx.GetQueryable<Article>(new CultureExecutionContext(CultureInfo.CurrentCulture))
+                var query = GetCurrentCultureQueryable<Article>(ctx)
+                                .Filter(i => i.Language == Sitecore.Context.Language.Name)
                                 .Filter(i => i.Paths.Contains(container))
                                 .Filter(i => i.Templates.Contains(ID.Parse(DefaultArticlePageItem.TemplateId)))
                                 .OrderByDescending(i => i.CreatedDate)
@@ -367,7 +368,7 @@ namespace UnderstoodDotOrg.Domain.Search
             var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
             using (var ctx = index.CreateSearchContext())
             {
-                 var allArticlesQuery = ctx.GetQueryable<Article>()
+                var allArticlesQuery = GetCurrentCultureQueryable<Article>(ctx)
                                     .Filter(GetBasePredicate())
                                     .Where(GetMustReadPredicate());
 
@@ -412,7 +413,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
             using (var ctx = index.CreateSearchContext())
             {
-                var query = ctx.GetQueryable<Article>(new CultureExecutionContext(CultureInfo.CurrentCulture))
+                var query = GetCurrentCultureQueryable<Article>(ctx)
+                                .Filter(i => i.Language == Sitecore.Context.Language.Name)
                                 .Filter(a => a.Path.Contains("/sitecore/content/home/")
                                     && !a.Paths.Contains(ID.Parse(Constants.QATestDataContainer)));
 
@@ -467,10 +469,11 @@ namespace UnderstoodDotOrg.Domain.Search
 
         private static IQueryable<BehaviorAdvice> GetBehaviorSearchQuery(IProviderSearchContext context, string challenge, string grade)
         {
-            return context.GetQueryable<BehaviorAdvice>(new CultureExecutionContext(CultureInfo.CurrentCulture))
-                        .Where(i => i.Path.Contains("/sitecore/content/home/")
+            return GetCurrentCultureQueryable<BehaviorAdvice>(context)
+                        .Filter(i => i.Language == Sitecore.Context.Language.Name)
+                        .Filter(i => i.Path.Contains("/sitecore/content/home/")
                             && !i.Paths.Contains(ID.Parse(Constants.QATestDataContainer)))
-                        .Where(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
+                        .Filter(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
                                 || i.TemplateId == ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
                         .Where(i => i.ChildChallenges.Contains(ID.Parse(Guid.Empty))
                                 || i.ChildChallenges.Contains(ID.Parse(challenge)))
@@ -518,7 +521,7 @@ namespace UnderstoodDotOrg.Domain.Search
             {
                 // Pre-process
                 // Filter performs no relevancy scoring
-                var allArticlesQuery = ctx.GetQueryable<Article>()
+                var allArticlesQuery = GetCurrentCultureQueryable<Article>(ctx)
                                     .Filter(GetBasePredicate(member));
 
                 // Inclusion/Exclusion processing based on member and child
@@ -638,7 +641,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
             using (var context = index.CreateSearchContext())
             {
-                var baseQuery = context.GetQueryable<SearchResultItem>()
+                var baseQuery = GetCurrentCultureQueryable<SearchResultItem>(context)
                                    .Where(i => i.TemplateId == ID.Parse(TextOnlyTipsArticlePageItem.TemplateId)) // get only Text Only Tips Article Pages
                                    .Where(i => i.ItemId != dataSourceId); // don't get the context item
 
@@ -706,7 +709,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
             using (var context = index.CreateSearchContext())
             {
-                var events = context.GetQueryable<EventPage>()
+                var events = GetCurrentCultureQueryable<EventPage>(context)
                                     .Where(i => i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
                                     .Where(i => i.EventDate >= DateTime.Now)
                                     .OrderBy(i => i.EventDate)
@@ -723,6 +726,11 @@ namespace UnderstoodDotOrg.Domain.Search
                 return result;
             }
 
+        }
+
+        private static IQueryable<T> GetCurrentCultureQueryable<T>(IProviderSearchContext context) where T : new()
+        {
+            return context.GetQueryable<T>(new CultureExecutionContext(CultureInfo.CurrentCulture));
         }
 
         #endregion
