@@ -72,12 +72,22 @@ namespace UnderstoodDotOrg.Common.Extensions
 
         public static bool InheritsFromType(this Item item, ID templateId)
         {
-            return GetTemplate(item).InheritsFrom(templateId);
+            Template template = item.GetTemplate();
+            if (template != null)
+            {
+                return template.InheritsFrom(templateId);
+            }
+            return false;
         }
 
         public static bool InheritsTemplate(this Item item, string templateID)
         {
-            return item.GetTemplate().InheritsFrom(new ID(templateID));
+            Template template = item.GetTemplate();
+            if (template != null)
+            {
+                return template.InheritsFrom(new ID(templateID));
+            }
+            return false;
         }
 
         /// <summary>

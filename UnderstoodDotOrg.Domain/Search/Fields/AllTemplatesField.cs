@@ -23,7 +23,10 @@ namespace UnderstoodDotOrg.Domain.Search.Fields
                 return null;
             }
             var item = (Sitecore.Data.Items.Item)indexItem.Item;
-
+            if (item == null || item.Template == null)
+            {
+                return null;
+            }
             var templates = new List<string>();
             this.GetAllTemplates(item.Template, templates);
             return templates;

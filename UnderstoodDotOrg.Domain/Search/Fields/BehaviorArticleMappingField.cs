@@ -27,6 +27,10 @@ namespace UnderstoodDotOrg.Domain.Search.Fields
                 return null;
             }
             var item = (Sitecore.Data.Items.Item)indexItem.Item;
+            if (item == null)
+            {
+                return null;
+            }
 
             // Skip non-behavior articles
             if (!item.InheritsTemplate(BehaviorAdvicePageItem.TemplateId))
