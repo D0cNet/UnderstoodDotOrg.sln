@@ -4,7 +4,7 @@
     <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
         <%--<a href="REPLACE">Dr. Samantha Frank</a>--%>
         <asp:HyperLink ID="hlReviewdby" runat="server">
-            <sc:FieldRenderer ID="frReviewedby" runat="server" FieldName="Revierwer Name" />
+            <sc:FieldRenderer ID="frReviewedby" runat="server" FieldName="Reviewer Name" />
         </asp:HyperLink>
     </span>
     <asp:Placeholder ID="uxReviewDate" runat="server" Visible="false">
