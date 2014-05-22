@@ -24,7 +24,8 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <li>
-                            <sc:FieldRenderer ID="frMoreExploreText" runat="server" FieldName="Explore Text"></sc:FieldRenderer>
+                            <sc:Sublayout ID="slTile" runat="server" />
+                            <%--<sc:FieldRenderer ID="frMoreExploreText" runat="server" FieldName="Explore Text"></sc:FieldRenderer>--%>
                         </li>
                     </ItemTemplate>
                     <FooterTemplate>
