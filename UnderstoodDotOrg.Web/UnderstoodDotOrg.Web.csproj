@@ -48,6 +48,9 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\Libraries\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\Libraries\CKEditor.NET.dll</HintPath>
+    </Reference>
     <Reference Include="CustomItemGenerator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\CustomItemGenerator.dll</HintPath>
@@ -103,6 +106,7 @@
       <HintPath>..\Libraries\SolrNet.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -1691,6 +1695,13 @@
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\TipCarousel.ascx.designer.cs">
       <DependentUpon>TipCarousel.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\MyAccount\Private Message Tool.ascx.cs">
+      <DependentUpon>Private Message Tool.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\MyAccount\Private Message Tool.ascx.designer.cs">
+      <DependentUpon>Private Message Tool.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Topic\ArticleListing.ascx.cs">
       <DependentUpon>ArticleListing.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2500,6 +2511,7 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\KeepReading.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\SocialCounter.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\TipCarousel.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\MyAccount\Private Message Tool.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\ArticleListing.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\CalloutContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Topic\TopicCarousel.ascx" />
