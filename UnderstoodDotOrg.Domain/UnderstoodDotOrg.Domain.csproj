@@ -240,6 +240,9 @@
     <Compile Include="SitecoreCIG\Poses\Folders\MetadataFolderFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\MoreExploreFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\MoreExploreFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\MyAccountFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\MyAccountFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\MyAccountFolderItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PageResourceFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PageResourceFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\ParentToolkitFolderItem.base.cs" />
