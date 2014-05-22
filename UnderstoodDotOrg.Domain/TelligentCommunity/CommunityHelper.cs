@@ -944,7 +944,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                 try
                 {
-                    var requestUrl = String.Format("{0}api.ashx/v2/users/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), username);
+                    var requestUrl = String.Format("{0}api.ashx/v2/users/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), username.ToLower());
                     var xml = webClient.DownloadString(requestUrl);
                     var xmlDoc = new XmlDocument();
                     xmlDoc.LoadXml(xml);

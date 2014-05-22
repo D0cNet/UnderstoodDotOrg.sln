@@ -3,7 +3,7 @@
 <div class="container community-q-a-details">
     <div class="row skiplink-feature">
         <div class="col col-24">
-            <a href="REPLACE" class="link-back"><i class="icon-arrow-left-blue"></i>Back to Q &amp; A</a>
+            <a href="/en/Community%20and%20Events/Q%20and%20A.aspx" class="link-back"><i class="icon-arrow-left-blue"></i>Back to Q &amp; A</a>
             <!-- BEGIN PARTIAL: community/question_detail_card -->
             <div class="card-question-detail clearfix">
                 <div class="question-image">
