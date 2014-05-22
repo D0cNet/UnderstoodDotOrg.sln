@@ -13,8 +13,10 @@
             <div class="knowledge-quiz">
                 <div class="question-counter">
                     <asp:Label ID="lblPageCounter" runat="server"></asp:Label>
+                    <asp:Literal ID="litTextResults" runat="server" Visible="false">Your childs learnng style is...</asp:Literal>
                     <%--Question 1 of 10--%>
                 </div>
+                <p class="explanation"><sc:FieldRenderer ID="frEndExplanation" runat="server" FieldName="Detail" Visible="false"></sc:FieldRenderer></p>
                 <asp:Repeater ID="rptPageQuestions" runat="server" OnItemDataBound="rptPageQuestions_ItemDataBound">
                     <HeaderTemplate>
 
@@ -31,18 +33,69 @@
                             <asp:Panel ID="pnlRadioQuestion" CssClass="test" runat="server" Visible="false">
                                 <%-- OR --%>
                                 <%-- Options for list style Question --%>
-                                <asp:RadioButtonList ID="rblAnswer" runat="server" RepeatLayout="UnorderedList">
+                                <asp:RadioButtonList ValidationGroup="vlgPageQuestions" ID="rblAnswer" runat="server" RepeatLayout="UnorderedList">
                                 </asp:RadioButtonList>
+                                <asp:RequiredFieldValidator id="rflRadioAnswer"
+                                    controltovalidate="rblAnswer"
+                                    validationgroup="vlgPageQuestions"
+                                    runat="server">
+                                </asp:RequiredFieldValidator>
                            </asp:Panel>
+                            <asp:Panel ID="pnlDropDown" runat="server" Visible="false">
+                                <asp:DropDownList ValidationGroup="vlgPageQuestions" ID="ddlQuestion" runat="server"/>
+                                <asp:RequiredFieldValidator id="rflDropDownAnswer"
+                                    controltovalidate="ddlQuestion"
+                                    validationgroup="vlgPageQuestions"
+                                    runat="server">
+                                </asp:RequiredFieldValidator>
+                                <br />
+                                <br />
+                            </asp:Panel>
                         </asp:Panel>
                     </ItemTemplate>
                     <FooterTemplate>
 
                     </FooterTemplate>
                 </asp:Repeater>
+                <asp:HiddenField ID="hfKeyValuePairs" runat="server" />
+                <script>
+                    var Answers = {};
+                    var hiddenField = $("[id*='hfKeyValuePairs']");
+
+                    $("ul[id*='rptPageQuestions_rblAnswer']").each(function () {
+                        $radioControl = $(this);
+
+                        $radioControl.find("li input").click(function () {
+
+                            Answers[$radioControl.data("id")] = $(this).val();
+                            hiddenField.val(JSON.stringify(Answers));
+                        })
+                    })
+
+                    $("select[id*='rptPageQuestions_ddlQuestion']").change(function () {
+                        Answers[$(this).data("id")] = $(this).val();
+                        hiddenField.val(JSON.stringify(Answers));
+                    })
+
+                    $("[id*='btnTrue'], [id*='btnFalse']").click(function () {
+                        Answers[$(this).data("id")] = $(this).html();
+                        hiddenField.val(JSON.stringify(Answers));
+                    })
+
+                    function checkValidation() {
+                        if (!Page_ClientValidate("vlgPageQuestions")) {
+                            alert("Plesae fill out all questions.");
+                        }
+                    }
+                </script>
+                <br />
+                <br />
+                <br />
+                <br />
                 <div class="next-question">
-                    <button type="button" runat="server" id="btnNextPage" onserverclick="btnNextPage_Click" class="button" >Next Page</button>
-                    <button type="button" runat="server" id="btnShowResults" onserverclick="btnResult_Click" class="button" visible="false" >Show Results</button>
+                    <button type="button" runat="server" id="btnPrevPage" onserverclick="btnPrevPage_Click" onclick="checkValidation();" class="button reload-page" visible="false">Back</button>
+                    <button type="button" runat="server" id="btnNextPage" onserverclick="btnNextPage_Click" onclick="checkValidation();" class="button reload-page" >Next</button>
+                    <button type="button" runat="server" id="btnShowResults" onserverclick="btnResult_Click" onclick="checkValidation();" class="button" visible="false" >Show Results</button>
                 </div>
                 <div class="next-question">
                     <button type="button" runat="server" id="btnTakeQuizAgain" onserverclick="btnTakeQuizAgain_Click" class="button" visible="false" >Take Quiz Again</button>

@@ -46,11 +46,11 @@ public static implicit operator Item(AssessmentMultipleChoiceItem customItem)
 #region Field Instance Methods
 
 
-public CustomLookupField CorrectAnswer
+public CustomCheckboxField IsDropDownList
 {
 	get
 	{
-		return new CustomLookupField(InnerItem, InnerItem.Fields["Correct Answer"]);
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Is Drop Down List"]);
 	}
 }
 

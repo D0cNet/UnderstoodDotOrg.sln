@@ -14,83 +14,199 @@ using System.Web.UI.HtmlControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.PageResources.Folders.AssessmentQuizFolder;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.PageResources.Items.AssessmentQuizArticlePage;
 using Sitecore.Web.UI.WebControls;
+using Newtonsoft.Json;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
     public partial class Assessment_Quiz : System.Web.UI.UserControl
     {
         private Item PageResources = Sitecore.Context.Item.Children.FirstOrDefault();
-        private Item ResultsFolder;
-        private int PageNumber;
+        private int PageNumber = 1;
         private List<Item> Pages;
-        private string Answer;
-        private List<Item> Questions;
+
+        public class QuestionAnswer {
+            public Item Question;
+            public string Answer;
+
+            public QuestionAnswer(Item Question, string Answer) {
+                this.Question = Question;
+                this.Answer = Answer;
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["pageNum"] != null)
-            {
                 PageNumber = (int)Session["pageNum"];
-            }
-            else
-            {
-                if (!IsPostBack)
-                {
-                    Reset();
-                }
-                PageNumber = 1;
-            }
 
             Item questionsFolder = PageResources.Children.ToList().Where(i => i.IsOfType(AssessmentQuizQuestionsFolderItem.TemplateId)).FirstOrDefault();
             if (questionsFolder != null)
             {
+                btnNextPage.CausesValidation = true;
+                btnNextPage.ValidationGroup = "vlgPageQuestions";
+                btnPrevPage.CausesValidation = true;
+                btnPrevPage.ValidationGroup = "vlgPageQuestions";
+                btnShowResults.CausesValidation = true;
+                btnShowResults.ValidationGroup = "vlgPageQuestions";
+
                 Pages = questionsFolder.Children.ToList();
-                Questions = Pages[PageNumber - 1].Children.ToList();
+                List<Item> pageQuestions = Pages[PageNumber - 1].Children.ToList();
                 lblPageCounter.Text = "Page " + PageNumber.ToString() + " of " + Pages.Count.ToString();
 
                 if (!(Pages.Count > PageNumber))
-
                 {
                     btnNextPage.Visible = false;
                     btnShowResults.Visible = true;
                 }
 
+                if (Session["AnsweredQuestions"] == null)
+                    SetUpQuestionsTracker();
 
                 if (Session["done"] != null && (string)Session["done"] == "true")
                 {
-                    btnTakeQuizAgain.Visible = true;
-                    btnShowResults.Visible = false;
-
-                    ResultsFolder = PageResources.Children.Where(i => i.IsOfType(AssessmentQuizResultsFolderItem.TemplateId)).FirstOrDefault();
-
-                    Reset();
+                    FinishQuiz();
                 }
                 else
                 {
-                    rptPageQuestions.DataSource = Questions;
+                    if (PageNumber != 1)
+                        btnPrevPage.Visible = true;
+
+                    rptPageQuestions.DataSource = pageQuestions;
                     rptPageQuestions.DataBind();
                 }
             }
         }
 
+        private void FinishQuiz()
+        {
+            btnTakeQuizAgain.Visible = true;
+            btnShowResults.Visible = false;
+            lblPageCounter.Visible = false;
+            btnPrevPage.Visible = false;
+
+            litTextResults.Visible = true;
+
+            Item resultsFolder = PageResources.Children.Where(i => i.IsOfType(AssessmentQuizResultsFolderItem.TemplateId)).FirstOrDefault();
+
+            int score = CalculateScore();
+
+            foreach (Item i in resultsFolder.Children)
+            {
+                AssessmentQuizResultItem range = (AssessmentQuizResultItem)i;
+                if (score >= range.MinimumValue)
+                {
+                    if (range.MaximumValue.ToString().IsNullOrEmpty() || (score <= range.MaximumValue))
+                    {
+                        frEndExplanation.Visible = true;
+                        frEndExplanation.Item = i;
+                        break;
+                    }
+                }
+            }
+
+            Reset();
+        }
+
+        private int CalculateScore()
+        {
+            Dictionary<string, QuestionAnswer> AnswerTracker = (Dictionary<string, QuestionAnswer>)Session["AnsweredQuestions"];
+            int totalPoints = 0;
+
+            foreach (KeyValuePair<string, QuestionAnswer> question in AnswerTracker)
+            {
+                Item genericQuestion = question.Value.Question;
+                if (question.Value.Question.IsOfType(AssessmentTrueFalseItem.TemplateId))
+                {
+                    AssessmentTrueFalseItem contextQuestion = (AssessmentTrueFalseItem)genericQuestion;
+                    if (question.Value.Answer == "True")
+                    {
+                        totalPoints += contextQuestion.TrueValue;
+                    }
+                    else if (question.Value.Answer == "True")
+                    {
+                        totalPoints += contextQuestion.FalseValue;
+                    }
+                }
+                else if (question.Value.Question.IsOfType(AssessmentMultipleChoiceItem.TemplateId))
+                {
+                    AssessmentMultipleChoiceItem contextQuestion = (AssessmentMultipleChoiceItem)genericQuestion;
+                    foreach (Item i in contextQuestion.InnerItem.Children)
+                    {
+                        AssessmentMultipleChoiceAnswerItem answerItem = (AssessmentMultipleChoiceAnswerItem)i;
+                        if(answerItem.Answer == question.Value.Answer)
+                            totalPoints += answerItem.Value;
+                    }
+                }
+            }
+
+            return totalPoints;
+        }
+
+        private void SetUpQuestionsTracker()
+        {
+            Dictionary<string, QuestionAnswer>  answeredQuestions = new Dictionary<string, QuestionAnswer>();
+
+            foreach (Item i in Pages)
+            {
+                foreach (Item j in i.Children)
+                {
+                    if (j.IsOfType(AssessmentTrueFalseItem.TemplateId))
+                    {
+                        AssessmentTrueFalseItem question = (AssessmentTrueFalseItem)j;
+                        answeredQuestions.Add(question.InnerItem.ID.ToString(), new QuestionAnswer(question, ""));
+                    }
+                    else if (j.IsOfType(AssessmentMultipleChoiceItem.TemplateId))
+                    {
+                        AssessmentMultipleChoiceItem question = (AssessmentMultipleChoiceItem)j;
+                        answeredQuestions.Add(question.InnerItem.ID.ToString(), new QuestionAnswer(question, ""));                     
+                    }
+                }
+            }
+
+            Session["AnsweredQuestions"] = answeredQuestions;
+        }
+
         public void Reset()
         {
             Session["done"] = null;
-            Session["pageNum"] = null;
+            Session["pageNum"] = 1;
+            Session["AnsweredQuestions"] = null;
         }
 
         protected void btnNextPage_Click(object sender, EventArgs e)
         {
             Session["pageNum"] = (PageNumber + 1);
 
-            EvaluateAnswers();
+            UpdateAnswerTracker();
 
             Response.Redirect(Request.CurrentExecutionFilePath);
         }
 
-        private void EvaluateAnswers()
+        protected void btnPrevPage_Click(object sender, EventArgs e)
         {
-            
+            Session["pageNum"] = (PageNumber - 1);
+
+            UpdateAnswerTracker();
+
+            Response.Redirect(Request.CurrentExecutionFilePath);
+        }
+
+        private void UpdateAnswerTracker()
+        {
+            string JSON = hfKeyValuePairs.Value;
+            Dictionary<string, string> values = JsonConvert.DeserializeObject<Dictionary<string, string>>(JSON);
+            Dictionary<string, QuestionAnswer> AnswerTracker = (Dictionary<string, QuestionAnswer>)Session["AnsweredQuestions"];
+
+            if (values != null)
+            {
+                foreach (KeyValuePair<string, string> entry in values)
+                {
+                    if (AnswerTracker.ContainsKey(entry.Key))
+                    {
+                        AnswerTracker[entry.Key] = new QuestionAnswer(AnswerTracker[entry.Key].Question, entry.Value);
+                    }
+                }
+            }
         }
 
         protected void btnTakeQuizAgain_Click(object sender, EventArgs e)
@@ -100,37 +216,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void btnResult_Click(object sender, EventArgs e)
         {
-            //store all question values in session
+            UpdateAnswerTracker();
             Session["done"] = "true";
             Response.Redirect(Request.CurrentExecutionFilePath);
-        }
-
-        public void UpdateScore(int value)
-        {
-            if (Session["CorrectAnswers"] != null)
-            {
-                Session["CorrectAnswers"] = (int)Session["CorrectAnswers"] + value;
-            }
-            else
-            {
-                Session["CorrectAnswers"] = value;
-            }
-        }
-
-        public void UpdateAnswers(bool result)
-        {
-            if (Session["CorrectTracker"] != null)
-            {
-                List<bool> answers = (List<bool>)Session["CorrectTracker"];
-                answers.Add(result);
-                Session["CorrectTracker"] = answers;
-            }
-            else
-            {
-                List<bool> answers = new List<bool>();
-                answers.Add(result);
-                Session["CorrectTracker"] = answers;
-            }
         }
 
         protected void rptPageQuestions_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -141,33 +229,83 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 Panel pnlQuestion = e.FindControlAs<Panel>("pnlQuestion");
                 Panel pnlTrueFalse = e.FindControlAs<Panel>("pnlTrueFalse");
                 Panel pnlRadioQuestion = e.FindControlAs<Panel>("pnlRadioQuestion");
+                Panel pnlDropDown = e.FindControlAs<Panel>("pnlDropDown");
+                HtmlButton btnTrue = e.FindControlAs<HtmlButton>("btnTrue");
+                HtmlButton btnFalse = e.FindControlAs<HtmlButton>("btnFalse");
+                DropDownList ddlQuestion = e.FindControlAs<DropDownList>("ddlQuestion");
                 RadioButtonList rblAnswer = e.FindControlAs<RadioButtonList>("rblAnswer");
 
+                Dictionary<string, QuestionAnswer> AnswerTracker = new Dictionary<string, QuestionAnswer>();
+
+                if (Session["AnsweredQuestions"] != null)
+                    AnswerTracker = (Dictionary<string, QuestionAnswer>)Session["AnsweredQuestions"];
+
                 Item question = (Item)e.Item.DataItem;
+
+                bool alreadyAnswered = AnswerTracker.ContainsKey(question.ID.ToString()) && AnswerTracker[question.ID.ToString()].Answer != "";
 
                 if(frQuestionTitle != null)
                     frQuestionTitle.Item = question;
 
                 if (question.IsOfType(AssessmentTrueFalseItem.TemplateId))
                 {
-                    AssessmentTrueFalseItem Question = (AssessmentTrueFalseItem)question;
-                    Answer = Question.CorrectAnswer.Item.Fields["Content Title"].ToString();
+                    btnTrue.Attributes.Add("data-id", question.ID.ToString());
+                    btnFalse.Attributes.Add("data-id", question.ID.ToString());
 
+                    if (alreadyAnswered)
+                    {
+                        string selected = "button answer-choice-true rs_skip selected";
+                        string not_selected = "button gray answer-choice-false rs_skip disabled";
+
+                        if (AnswerTracker[question.ID.ToString()].Answer == "True")
+                        {
+                            btnTrue.Attributes.Add("class", selected);
+                            btnFalse.Attributes.Add("class", not_selected);
+                        }
+                        else
+                        {
+                            btnTrue.Attributes.Add("class", not_selected);
+                            btnFalse.Attributes.Add("class", selected);
+                        }
+                    }
                     pnlTrueFalse.Visible = true;
                 }
                 else if (question.IsOfType(AssessmentMultipleChoiceItem.TemplateId))
                 {
                     AssessmentMultipleChoiceItem Question = (AssessmentMultipleChoiceItem)question;
-
-                    if(Question.CorrectAnswer != null)
-                        Answer = Question.CorrectAnswer.Item.Fields["Answer"].ToString();
-
-                    foreach (Item i in Question.InnerItem.Children)
+                    if (Question.IsDropDownList.Checked)
                     {
-                        rblAnswer.Items.Add(new ListItem(i.Fields["Answer"].ToString()));
-                    }
+                        ddlQuestion.Attributes.Add("data-id", question.ID.ToString());
+                        ddlQuestion.Items.Add(new ListItem(""));
 
-                    pnlRadioQuestion.Visible = true;
+                        foreach (Item i in Question.InnerItem.Children)
+                        {
+                            ddlQuestion.Items.Add(new ListItem(i.Fields["Answer"].ToString()));
+                        }
+
+                        if (alreadyAnswered)
+                        {
+                            ddlQuestion.Items.FindByText(AnswerTracker[question.ID.ToString()].Answer).Selected = true;
+                        }
+
+                        pnlDropDown.Visible = true;
+                    }
+                    else
+                    {
+                        rblAnswer.Attributes.Add("data-id", question.ID.ToString());
+
+                        foreach (Item i in Question.InnerItem.Children)
+                        {
+                            rblAnswer.Items.Add(new ListItem(i.Fields["Answer"].ToString()));
+                        }
+
+                        if (alreadyAnswered)
+                        {
+                            rblAnswer.Items.FindByText(AnswerTracker[question.ID.ToString()].Answer).Selected = true;
+                        }
+
+                        pnlRadioQuestion.Visible = true;
+                    }
                 }
                 
             }
