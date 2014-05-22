@@ -47,6 +47,15 @@ public CustomTextField MoreText
 }
 
 
+public CustomImageField EventImage
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Event Image"]);
+	}
+}
+
+
 public CustomLookupField OverrideEvent
 {
 	get
