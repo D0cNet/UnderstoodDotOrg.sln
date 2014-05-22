@@ -813,6 +813,18 @@
     <Compile Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx.designer.cs">
       <DependentUpon>ShareNSave_SendEmail.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Tiles\EventTile.ascx.cs">
+      <DependentUpon>EventTile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Tiles\EventTile.ascx.designer.cs">
+      <DependentUpon>EventTile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Tiles\PromoTile.ascx.cs">
+      <DependentUpon>PromoTile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Tiles\PromoTile.ascx.designer.cs">
+      <DependentUpon>PromoTile.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\All Parents Search.ascx.cs">
       <DependentUpon>All Parents Search.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2355,6 +2367,8 @@
     <Content Include="Presentation\Sublayouts\Common\Page Topic.ascx" />
     <Content Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Tiles\EventTile.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Tiles\PromoTile.ascx" />
     <Content Include="Presentation\Sublayouts\Community\All Parents Search.ascx" />
     <Content Include="Presentation\Sublayouts\Community\CommunityContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsCalendarListView.ascx" />
