@@ -708,7 +708,8 @@ namespace UnderstoodDotOrg.Domain.Search
             {
                 var events = context.GetQueryable<EventPage>()
                                     .Where(i => i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
-                                    .OrderByDescending(i => i.EventDate)
+                                    .Where(i => i.EventDate >= DateTime.Now)
+                                    .OrderBy(i => i.EventDate)
                                     .Take(1)
                                     .ToList();
 
