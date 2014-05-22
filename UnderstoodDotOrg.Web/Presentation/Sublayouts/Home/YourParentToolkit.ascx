@@ -45,7 +45,7 @@
                     </fieldset>
 
                     <div class="submit-button-wrap">
-                        <asp:Button ID="btnSubmit" runat="server" CssClass="submit-button" OnClick="btnSubmit_OnClick" Text="Submit" />
+                        <asp:Button ID="btnSubmit" runat="server" CssClass="button" OnClick="btnSubmit_OnClick" Text="Submit" />
                         <%--<input class="submit-button" type="submit" value="Submit">--%>
                     </div>
 

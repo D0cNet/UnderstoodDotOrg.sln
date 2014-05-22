@@ -197,7 +197,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             if (e.IsItem())
             {
-                NavigationLinkItem navItem = e.Item.DataItem as NavigationLinkItem;
+                Item navItem = (Item)e.Item.DataItem;
                 if (navItem != null)
                 {
                     FieldRenderer frLink = e.FindControlAs<FieldRenderer>("frLink");
