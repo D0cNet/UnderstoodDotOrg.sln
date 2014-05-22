@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -20,7 +21,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             uxSignIn.Text = DictionaryConstants.SignInButtonText;
             uxRegisterLink.Text = DictionaryConstants.SignUpButtonText;
 
-            uxRegisterLink.NavigateUrl = MembershipHelper.GetNextStepURL(0);
+            uxRegisterLink.NavigateUrl = MyAccountFolderItem.GetSignUpPage();
+
+            
         }
 
         protected void uxSignIn_Click(object sender, EventArgs e)
