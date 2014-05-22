@@ -20,6 +20,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Recommendation;
+
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
     public partial class HomeHeroCarousel : BaseSublayout {
 

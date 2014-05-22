@@ -99,7 +99,7 @@
                                     <ItemTemplate>
                                         <li>
                                             <span class="checkbox-wrap">
-                                                <input id="issueInput" class="input-checkbox-class" runat="server" onclick="checkSelction();" type="checkbox" name=""></span>
+                                                <input id="issueInput" class="input-checkbox-class" runat="server" type="checkbox" name=""></span>
                                             <label id="lblCheckbox" runat="server" for=""></label>
 
                                             <asp:HiddenField ID="hdnKeyValuePair" runat="server" ClientIDMode="Static" />
@@ -126,11 +126,11 @@
                             <asp:DropDownList ID="ddlGradeGroups" runat="server" CssClass="guideme-grade-mobile"
                                 RepeatLayout="unorderedlist" RepeatDirection="vertical">
                             </asp:DropDownList>
-                            
+
                             <nav>
                                 <asp:Repeater ID="rptGrades" runat="server" OnItemDataBound="rptGrades_ItemDataBound">
                                     <ItemTemplate>
-                                        <button id="gradeBtn" runat="server" onclick="checkSelction();" class="grade"></button>
+                                        <button id="gradeBtn" runat="server" class="grade"></button>
                                     </ItemTemplate>
                                 </asp:Repeater>
                             </nav>
@@ -213,6 +213,7 @@
 
     var $getCheckedIds;
     function GetAllCheckedInput() {
+
         $getCheckedIds = '';
         $('.container-guide-me-overlay .select-behavior ul li').each(function () {
             if ($(this).find('div.checker span').hasClass('checked')) {
@@ -232,6 +233,12 @@
                 return false;
             }
         });
+
+        var $deviceCheck = ((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase())));
+
+        if ($deviceCheck) {
+            $('#hdnGetAllCheckedGrades').val($('.container-guide-me-overlay .guideme-grade-mobile option:selected').val());
+        }
 
     }
 
