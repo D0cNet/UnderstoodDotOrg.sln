@@ -34,7 +34,7 @@
 
                     <fieldset>
                         <label for="behaviortool-issue" class="visuallyhidden">Select behavior issue</label>
-                        <asp:DropDownList ID="ddlChallengeGroups" runat="server"
+                        <asp:DropDownList ID="ddlIssuesGroups" runat="server"
                             RepeatLayout="unorderedlist" RepeatDirection="vertical" required="required" aria-required="true">
                         </asp:DropDownList>
 
@@ -46,7 +46,6 @@
 
                     <div class="submit-button-wrap">
                         <asp:Button ID="btnSubmit" runat="server" CssClass="button" OnClick="btnSubmit_OnClick" Text="Submit" />
-                        <%--<input class="submit-button" type="submit" value="Submit">--%>
                     </div>
 
                 </div>

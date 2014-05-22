@@ -899,9 +899,9 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
-       public static string SelectChallengeLabel {
+       public static string SelectBehaviorLabel {
            get {
-               return Translate.TextByDomain(PosesDictionary, "Select Challenge Label");
+               return Translate.TextByDomain(PosesDictionary, "Select Behavior Label");
            }
        }
 

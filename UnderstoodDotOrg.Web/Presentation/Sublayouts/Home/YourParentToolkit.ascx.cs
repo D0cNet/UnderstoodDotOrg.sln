@@ -20,6 +20,7 @@ using Sitecore.ContentSearch.SearchTypes;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Understood.Helper;
+using UnderstoodDotOrg.Domain.Membership;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
     public partial class YourParentToolkit : BaseSublayout<HomePageItem> {
@@ -55,17 +56,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
 
         public void BindDDL() {
 
-            var challenges = GetFilters(ChildChallengeItem.TemplateId).Select(i => (ChildChallengeItem)i);
-            if (challenges.Any()) {
-                 
-                ddlChallengeGroups.Items.Add(new ListItem(DictionaryConstants.SelectChallengeLabel, "0"));
+            var issues = GetFilters(ChildIssueItem.TemplateId).Select(i => (ChildIssueItem)i);
+            ddlIssuesGroups.Items.Clear();
+            ddlGradeGroups.Items.Clear();
+            if (issues.Any()) {
 
-                foreach (ChildChallengeItem challengeItem in challenges) {
-                    if (!string.IsNullOrEmpty(challengeItem.ChallengeName.Raw)) {
-                        ddlChallengeGroups.Items.Add(new ListItem(challengeItem.ChallengeName.Raw, challengeItem.ID.ToString()));
+                ddlIssuesGroups.Items.Add(new ListItem(DictionaryConstants.SelectBehaviorLabel, "0"));
+
+                foreach (ChildIssueItem issueItem in issues) {
+                    if (!string.IsNullOrEmpty(issueItem.IssueName.Raw)) {
+                        ddlIssuesGroups.Items.Add(new ListItem(issueItem.IssueName.Raw, issueItem.ID.ToString()));
                     }
                 }
-                ddlChallengeGroups.DataBind();
+
+                ddlIssuesGroups.DataBind();
             }
 
             var grades = GetFilters(GradeLevelItem.TemplateId).Select(i => (GradeLevelItem)i);
@@ -80,6 +84,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                 ddlGradeGroups.DataBind();
             }
 
+            if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Any()) {
+                foreach (Child child in CurrentMember.Children) {
+
+                    if (child.Issues != null && child.Issues.Any()) {
+                        Issue issueItem = child.Issues.FirstOrDefault();
+                        if (issueItem != null && ddlIssuesGroups.Items.FindByValue(string.Concat("{", issueItem.Key.ToString().ToUpper(), "}")) != null) {
+                            ddlIssuesGroups.Items.FindByValue(string.Concat("{", issueItem.Key.ToString().ToUpper(), "}")).Selected = true;
+                        }
+                    }
+
+                    if (child.Grades != null && child.Grades.Any()) {
+                        Grade gradeItem = child.Grades.FirstOrDefault();
+                        if (gradeItem != null && ddlGradeGroups.Items.FindByValue(string.Concat("{", gradeItem.Key.ToString().ToUpper(), "}")) != null) {
+                            ddlGradeGroups.Items.FindByValue(string.Concat("{", gradeItem.Key.ToString().ToUpper(), "}")).Selected = true;
+                        }
+                    }
+
+                }
+            }
         }
 
         /// Gets the search result based on keyword
@@ -102,15 +125,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
         /// <param name="e"></param>
         protected void btnSubmit_OnClick(object sender, EventArgs e) {
             if (btnSubmit != null) {
-
-                //Item resourceLanding = MainsectionItem.GetHomePageItem().b
-                //if (resourceLanding != null) {
-
-                //    string itemUrl = resourceLanding.GetUrl();
-                //    Response.Redirect(itemUrl + "?" + DictionaryConstants.SelectChallenge + "=" + queryText);
-
-                //}
-                Response.Redirect(FormHelper.GetBehaviorResultsUrl(ddlChallengeGroups.SelectedValue, ddlGradeGroups.SelectedValue));
+                Response.Redirect(FormHelper.GetBehaviorResultsUrl(ddlIssuesGroups.SelectedValue, ddlGradeGroups.SelectedValue));
             }
         }
 

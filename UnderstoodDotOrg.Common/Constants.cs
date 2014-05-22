@@ -267,6 +267,12 @@ namespace UnderstoodDotOrg.Common
                 }
             }
 
+            public static Guid Recommendation {
+                get {
+                    return new Guid("{FAC9E8A7-9BD0-452E-8DB0-9C58AE3378DF}");
+                }
+            }
+
             public static Guid NewsletterSignup
             {
                 get

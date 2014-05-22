@@ -110,6 +110,14 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
             return String.Empty;
         }
 
+        public static string GetRecommendationUrl() {
+            Item item = Sitecore.Context.Database.GetItem(Constants.Pages.Recommendation.ToString());
+            if (item != null) {
+                return item.GetUrl();
+            }
+            return String.Empty;
+        }
+
         /// <summary>
         /// Returns a formatted URL with query string variables appended
         /// </summary>

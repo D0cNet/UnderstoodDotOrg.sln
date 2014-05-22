@@ -99,57 +99,12 @@
                                     <ItemTemplate>
                                         <li>
                                             <span class="checkbox-wrap">
-                                                <input id="issueInput" class="input-checkbox-class" runat="server" type="checkbox" name=""></span>
+                                                <input id="issueInput" class="input-checkbox-class" runat="server" onclick="checkSelction();" type="checkbox" name=""></span>
                                             <label id="lblCheckbox" runat="server" for=""></label>
 
                                             <asp:HiddenField ID="hdnKeyValuePair" runat="server" ClientIDMode="Static" />
                                             <asp:HiddenField ID="hdnChecked" runat="server" ClientIDMode="Static" />
                                         </li>
-                                        <%-- <li>
-                                            <span class="checkbox-wrap">
-                                                <input type="checkbox" name="guideme-issue-writing" id="guideme-issue-writing"></span>
-                                            <label for="guideme-issue-writing">Writing</label>
-                                        </li>
-                                        <li>
-                                            <span class="checkbox-wrap">
-                                                <input type="checkbox" name="guideme-issue-math" id="guideme-issue-math"></span>
-                                            <label for="guideme-issue-math">Math</label>
-                                        </li>
-                                        <li>
-                                            <span class="checkbox-wrap">
-                                                <input type="checkbox" name="guideme-issue-listening" id="guideme-issue-listening"></span>
-                                            <label for="guideme-issue-listening">Listening comprehension</label>
-                                        </li>
-                                        <li>
-                                            <span class="checkbox-wrap">
-                                                <input type="checkbox" name="guideme-issue-spoken-languages" id="guideme-issue-spoken-languages"></span>
-                                            <label for="guideme-issue-spoken-languages">Spoken Language</label>
-                                        </li>
-                                        <li>
-                                            <span class="checkbox-wrap">
-                                                <input type="checkbox" name="guideme-issue-executive-function" id="guideme-issue-executive-function"></span>
-                                            <label for="guideme-issue-executive-function">Executive function (organization, planning, flexible thinking)</label>
-                                        </li>
-                                        <li>
-                                            <span class="checkbox-wrap">
-                                                <input type="checkbox" name="guideme-issue-hyperactivity" id="guideme-issue-hyperactivity"></span>
-                                            <label for="guideme-issue-hyperactivity">Hyperactivity or impulsiveity</label>
-                                        </li>
-                                        <li>
-                                            <span class="checkbox-wrap">
-                                                <input type="checkbox" name="guideme-issue-attention" id="guideme-issue-attention"></span>
-                                            <label for="guideme-issue-attention">Attention or staying focused</label>
-                                        </li>
-                                        <li>
-                                            <span class="checkbox-wrap">
-                                                <input type="checkbox" name="guideme-issue-social-skills" id="guideme-issue-social-skills"></span>
-                                            <label for="guideme-issue-social-skills">Social skills</label>
-                                        </li>
-                                        <li>
-                                            <span class="checkbox-wrap">
-                                                <input type="checkbox" name="guideme-issue-motor-skills" id="guideme-issue-motor-skills"></span>
-                                            <label for="guideme-issue-motor-skills">Motor skills</label>
-                                        </li>--%>
                                     </ItemTemplate>
                                     <FooterTemplate>
                                         </ul>
@@ -169,47 +124,14 @@
 
                             <label for="guideme-grade" class="visuallyhidden">My child is enrolled in:</label>
                             <asp:DropDownList ID="ddlGradeGroups" runat="server" CssClass="guideme-grade-mobile"
-                                RepeatLayout="unorderedlist" RepeatDirection="vertical" required="required" aria-required="true">
+                                RepeatLayout="unorderedlist" RepeatDirection="vertical">
                             </asp:DropDownList>
-                            <%--<select name="guideme-grade" id="guideme-grade" class="guideme-grade-mobile" aria-required="true">
-                                <option value="">Select grade</option>
-                                <option value="grade-preschool">Toddler Preschool</option>
-                                <option value="grade-kindergarten">Kindergarten</option>
-                                <option value="grade-grade1">Grade 1</option>
-                                <option value="grade-grade2">Grade 2</option>
-                                <option value="grade-grade3">Grade 3</option>
-                                <option value="grade-grade4">Grade 4</option>
-                                <option value="grade-grade5">Grade 5</option>
-                                <option value="grade-grade6">Grade 6</option>
-                                <option value="grade-grade7">Grade 7</option>
-                                <option value="grade-grade8">Grade 8</option>
-                                <option value="grade-grade9">Grade 9</option>
-                                <option value="grade-grade10">Grade 10</option>
-                                <option value="grade-grade11">Grade 11</option>
-                                <option value="grade-grade12">Grade 12</option>
-                                <option value="grade-after-highschool">After Highschool</option>
-                            </select>--%>
-
+                            
                             <nav>
                                 <asp:Repeater ID="rptGrades" runat="server" OnItemDataBound="rptGrades_ItemDataBound">
                                     <ItemTemplate>
-                                        <button id="gradeBtn" runat="server" onclick="" class="grade"></button>
+                                        <button id="gradeBtn" runat="server" onclick="checkSelction();" class="grade"></button>
                                     </ItemTemplate>
-                                    <%--<button class="grade" id="grade-preschool">Toddler Preschool</button>
-                                    <button class="grade" id="grade-kindergarten">Kindergarten</button>
-                                    <button class="grade" id="grade-grade1">Grade 1</button>
-                                    <button class="grade" id="grade-grade2">Grade 2</button>
-                                    <button class="grade" id="grade-grade3">Grade 3</button>
-                                    <button class="grade" id="grade-grade4">Grade 4</button>
-                                    <button class="grade" id="grade-grade5">Grade 5</button>
-                                    <button class="grade" id="grade-grade6">Grade 6</button>
-                                    <button class="grade" id="grade-grade7">Grade 7</button>
-                                    <button class="grade" id="grade-grade8">Grade 8</button>
-                                    <button class="grade" id="grade-grade9">Grade 9</button>
-                                    <button class="grade" id="grade-grade10">Grade 10</button>
-                                    <button class="grade" id="grade-grade11">Grade 11</button>
-                                    <button class="grade" id="grade-grade12">Grade 12</button>
-                                    <button class="grade" id="grade-after-highschool">After Highschool</button>--%>
                                 </asp:Repeater>
                             </nav>
 
@@ -228,8 +150,8 @@
 
                     <div class="submit-button-wrap">
                         <asp:Button ID="btnSubmit" runat="server" Text="See my recommendations" CssClass="button submit-button button-guide-me-recommendations" OnClientClick="GetAllCheckedInput();" OnClick="btnSubmit_OnClick" />
-                        <%--<input class="button submit-button button-guide-me-recommendations" type="submit" value="See my recommendations">--%>
-                        <asp:HiddenField ID="hdnGetAllChecked" runat="server" ClientIDMode="Static" />
+                        <asp:HiddenField ID="hdnGetAllCheckedIssues" runat="server" ClientIDMode="Static" />
+                        <asp:HiddenField ID="hdnGetAllCheckedGrades" runat="server" ClientIDMode="Static" />
                     </div>
 
                 </div>
@@ -281,12 +203,10 @@
 
 <script type="text/javascript">
 
-    $(document).ready(function () {
+    $(window).load(function () {
         $('.container-guide-me-overlay .select-behavior ul li').each(function () {
-            //alert('hiii');
-            //alert($(this).find('#hdnChecked').val());
-            if ($(this).find('#hdnKeyValuePair').val() != '' && $(this).find('#hdnChecked').val() == 'true') {
-                $(this).find('.input-checkbox-class').parent('span').addClass('checked');
+            if ($(this).find('#hdnChecked').val() == 'true') {
+                $(this).find('span').addClass('checked');
             }
         });
     });
@@ -295,16 +215,47 @@
     function GetAllCheckedInput() {
         $getCheckedIds = '';
         $('.container-guide-me-overlay .select-behavior ul li').each(function () {
-            if ($(this).find('.input-checkbox-class').parent('span').hasClass('checked')) {
+            if ($(this).find('div.checker span').hasClass('checked')) {
                 if ($getCheckedIds != null && $getCheckedIds != '') {
                     $getCheckedIds += "," + $(this).find('.input-checkbox-class').attr("data-value");
                 }
                 else {
                     $getCheckedIds = $(this).find('.input-checkbox-class').attr("data-value");
                 }
-                $('#hdnGetAllChecked').val($getCheckedIds);
+                $('#hdnGetAllCheckedIssues').val($getCheckedIds);
             }
         });
+
+        $('.container-guide-me-overlay .select-grade nav button').each(function () {
+            if ($(this).hasClass('active')) {
+                $('#hdnGetAllCheckedGrades').val($(this).attr("data-value"));
+                return false;
+            }
+        });
+
+    }
+
+    var $check = "false";
+    function checkSelction() {
+        $('.container-guide-me-overlay .select-behavior ul li').each(function () {
+            if ($(this).find('div.checker span').hasClass('checked')) {
+                $check = "true";
+            }
+        });
+
+        $('.container-guide-me-overlay .select-grade nav button').each(function () {
+            if ($(this).hasClass('active')) {
+                $check = "true";
+                return false;
+            }
+        });
+
+        if ($check == "true") {
+            $("input.button-guide-me-recommendations").removeAttr('disabled');
+        }
+        else {
+            $("input.button-guide-me-recommendations").attr('disabled', 'disabled');
+        }
     }
 
 </script>

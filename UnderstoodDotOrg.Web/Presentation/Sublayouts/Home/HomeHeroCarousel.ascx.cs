@@ -18,37 +18,46 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.Understood.Helper;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Recommendation;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
     public partial class HomeHeroCarousel : BaseSublayout {
-        string query = string.Empty;
+
         protected void Page_Load(object sender, EventArgs e) {
             HomePageItem ContextItem = Sitecore.Context.Item;
-            if (ContextItem != null) {
-                GetSliderItem(ContextItem);
+            if (!IsPostBack) {
+                if (ContextItem != null) {
+                    GetSliderItem(ContextItem);
 
-                var childIssues = GetFilters(ChildIssueItem.TemplateId).Select(i => (ChildIssueItem)i);
-                if (childIssues != null && childIssues.Any()) {
-                    rptChildIssues.Visible = true;
-                    rptChildIssues.DataSource = childIssues;
-                    rptChildIssues.DataBind();
-                }
-                else {
-                    rptChildIssues.Visible = false;
-                }
+                    var childIssues = GetFilters(ChildIssueItem.TemplateId).Select(i => (ChildIssueItem)i);
+                    if (childIssues != null && childIssues.Any()) {
+                        rptChildIssues.Visible = true;
+                        rptChildIssues.DataSource = childIssues;
+                        rptChildIssues.DataBind();
+                    }
+                    else {
+                        rptChildIssues.Visible = false;
+                    }
 
-                var grades = GetFilters(GradeLevelItem.TemplateId).Select(i => (GradeLevelItem)i);
-                if (grades != null && grades.Any()) {
-                    rptGrades.Visible = true;
-                    rptGrades.DataSource = grades;
-                    rptGrades.DataBind();
-                }
-                else {
-                    rptGrades.Visible = false;
-                }
+                    var grades = GetFilters(GradeLevelItem.TemplateId).Select(i => (GradeLevelItem)i);
+                    if (grades != null && grades.Any()) {
+                        rptGrades.Visible = true;
+                        rptGrades.DataSource = grades;
+                        rptGrades.DataBind();
+                    }
+                    else {
+                        rptGrades.Visible = false;
+                    }
 
-                BindGradesDDL();
-
+                    BindGradesDDL();
+                }
             }
+            //if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Any()) {
+            //    btnSubmit.Enabled = true;
+            //}
+            //else {
+            //    btnSubmit.Enabled = false;
+            //}
         }
 
         private void GetSliderItem(HomePageItem ContextItem) {
@@ -76,6 +85,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
 
             var grades = GetFilters(GradeLevelItem.TemplateId).Select(i => (GradeLevelItem)i);
             if (grades.Any()) {
+                ddlGradeGroups.Items.Clear();
                 ddlGradeGroups.Items.Add(new ListItem(DictionaryConstants.SelectGradeLabel, "0"));
 
                 foreach (GradeLevelItem gradeItem in grades) {
@@ -83,7 +93,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                         ddlGradeGroups.Items.Add(new ListItem(gradeItem.Name.Raw, gradeItem.ID.ToString()));
                     }
                 }
+
                 ddlGradeGroups.DataBind();
+
+                if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Any()) {
+                    foreach (Child child in CurrentMember.Children) {
+                        if (child.Grades != null && child.Grades.Any()) {
+                            foreach (Grade grade in child.Grades) {
+                                if (grade != null && ddlGradeGroups.Items.FindByValue(string.Concat("{", grade.Key.ToString().ToUpper(), "}")) != null) {
+                                    ddlGradeGroups.Items.FindByValue(string.Concat("{", grade.Key.ToString().ToUpper(), "}")).Selected = true;
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
         }
@@ -128,9 +151,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                             foreach (Child child in CurrentMember.Children) {
                                 if (child.Issues != null && child.Issues.Any()) {
                                     foreach (Issue issue in child.Issues) {
-                                        if (issue.Key.Equals(childIssueItem.ID.ToString().ToLower())) {
+                                        if (issue.Key.ToString().ToLower().Replace("{", "").Replace("}", "") == childIssueItem.ID.ToString().ToLower().Replace("{", "").Replace("}", "")) {
                                             hdnKeyValuePair.Value = childIssueItem.ID + "|" + childIssueItem.IssueName.Raw;
-                                            hdnChecked.Value = "checked";
+                                            hdnChecked.Value = "true";
                                         }
                                     }
                                 }
@@ -154,7 +177,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
 
                     if (gradeBtn != null) {
                         gradeBtn.InnerText = gradeItem.Name.Raw;
+                        gradeBtn.Attributes.Add("data-value", gradeItem.ID.ToString());
                         gradeBtn.ID = "grade-" + gradeItem.Name.Raw.Replace(" ", "-").Replace("/", "-");
+                        if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Any()) {
+                            foreach (Child child in CurrentMember.Children) {
+                                if (child.Grades != null && child.Grades.Any()) {
+                                    foreach (Grade grade in child.Grades) {
+                                        if (grade.Key.ToString().ToLower().Replace("{", "").Replace("}", "") == gradeItem.ID.ToString().ToLower().Replace("{", "").Replace("}", "")) {
+                                            gradeBtn.Attributes.Add("class", "grade active");
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -166,41 +201,97 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void btnSubmit_OnClick(object sender, EventArgs e) {
+
             if (btnSubmit != null) {
+
                 if (CurrentMember == null) {
-                    CurrentMember = new Member();
+                    Member member = new Member();
 
-                    string[] checkedIds = hdnGetAllChecked.Value.Split(',');
-                    if (checkedIds != null && checkedIds.Any()) {
+                    string[] checkedIds = hdnGetAllCheckedIssues.Value.Split(',');
+                    string activeGradeId = hdnGetAllCheckedGrades.Value;
+
+                    if (checkedIds != null && checkedIds.Any() || activeGradeId != null && !activeGradeId.IsNullOrEmpty()) {
                         Child child = new Child();
-                        foreach (string checkId in checkedIds) {
 
-                            ChildIssueItem issueItem = Sitecore.Context.Database.GetItem(checkId.Split('|')[0]);
-                            if (issueItem != null) {
+                        child.ChildId = new Guid();
 
-                                Issue _issue = new Issue();
-                                _issue.Key = System.Guid.Parse(issueItem.ID.ToString());
-                                _issue.Value = issueItem.IssueName.Raw;
-                                child.Issues.Add(_issue);
+                        if (checkedIds != null && checkedIds.Any()) {
+                            foreach (string checkId in checkedIds) {
+
+                                ChildIssueItem issueItem = Sitecore.Context.Database.GetItem(checkId.Split('|')[0]);
+                                if (issueItem != null) {
+
+                                    Issue _issue = new Issue();
+                                    _issue.Key = System.Guid.Parse(issueItem.ID.ToString());
+                                    _issue.Value = issueItem.IssueName.Raw;
+                                    child.Issues.Add(_issue);
+                                }
+                            }
+                        }
+
+                        if (activeGradeId != null && !activeGradeId.IsNullOrEmpty()) {
+
+                            GradeLevelItem gradeItem = Sitecore.Context.Database.GetItem(activeGradeId);
+                            if (gradeItem != null) {
+
+                                Grade _grade = new Grade();
+                                _grade.Key = System.Guid.Parse(gradeItem.ID.ToString());
+                                _grade.Value = gradeItem.Name.Raw;
+                                child.Grades.Add(_grade);
+                            }
+                        }
+
+                        member.Children.Add(child);
+                        Session[Constants.sessionUnauthenticatedMemberKey] = CurrentMember = member;
+
+                    }
+                }
+
+                else {
+
+                    if (CurrentMember.Children != null && CurrentMember.Children.Any()) {
+                        string[] checkedIds = hdnGetAllCheckedIssues.Value.Split(',');
+                        string activeGradeId = hdnGetAllCheckedGrades.Value;
+
+                        if (checkedIds != null && checkedIds.Any() || activeGradeId != null && !activeGradeId.IsNullOrEmpty()) {
+
+                            Child child = CurrentMember.Children.FirstOrDefault();
+
+                            if (checkedIds != null && checkedIds.Any()) {
+                                child.Issues.Clear();
+                                foreach (string checkId in checkedIds) {
+
+                                    ChildIssueItem issueItem = Sitecore.Context.Database.GetItem(checkId.Split('|')[0]);
+                                    if (issueItem != null) {
+
+                                        Issue _issue = new Issue();
+                                        _issue.Key = System.Guid.Parse(issueItem.ID.ToString());
+                                        _issue.Value = issueItem.IssueName.Raw;
+                                        child.Issues.Add(_issue);
+                                    }
+                                }
                             }
 
-                            //Grade x1 = new Grade();
-                            //x1.Key = "";
-                            //x1.Value = "";
-                            //child.Grades.Add(x1);
 
-                            CurrentMember.Children.Add(child);
+                            if (activeGradeId != null && !activeGradeId.IsNullOrEmpty()) {
+                                child.Grades.Clear();
+
+                                GradeLevelItem gradeItem = Sitecore.Context.Database.GetItem(activeGradeId);
+                                if (gradeItem != null) {
+
+                                    Grade _grade = new Grade();
+                                    _grade.Key = System.Guid.Parse(gradeItem.ID.ToString());
+                                    _grade.Value = gradeItem.Name.Raw;
+                                    child.Grades.Add(_grade);
+                                }
+                            }
+
+
                         }
                     }
                 }
 
-                //Item resourceLanding = MainsectionItem.GetHomePageItem();
-                //if (resourceLanding != null) {
-
-                //    string itemUrl = resourceLanding.GetUrl();
-                //    //Response.Redirect(itemUrl + "?" + DictionaryConstants.SelectChallenge + "=" + queryText);
-
-                //}
+                Response.Redirect(FormHelper.GetRecommendationUrl());
             }
         }
 

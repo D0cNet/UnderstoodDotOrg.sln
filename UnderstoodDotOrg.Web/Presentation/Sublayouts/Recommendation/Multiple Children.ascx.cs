@@ -14,55 +14,57 @@ using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Common.Helpers;
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
-{
-    public partial class Multiple_Children : BaseSublayout
-    {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation {
+    public partial class Multiple_Children : BaseSublayout {
         MultipleChildrenItem ObjMultipleChildren;
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        protected void Page_Load(object sender, EventArgs e) {
             ObjMultipleChildren = new MultipleChildrenItem(Sitecore.Context.Item);
 
             BindControls();
         }
 
-        private void BindControls()
-        {
+        private void BindControls() {
             BindChildren();
         }
 
-        private void BindChildren()
-        {
+        private void BindChildren() {
             // Temp proxy - use CurrentMember for final implementation
-            if (CurrentMember != null)
-            {
+            if (CurrentMember != null) {
                 var children = CurrentMember.Children;
-                if (children.Any())
-                {
+                if (children.Any()) {
                     rptChildBasicInfo.DataSource = children;
                     rptChildBasicInfo.DataBind();
                 }
             }
+            else {
+                if (UnauthenticatedSessionMember != null) {
+                    var children = UnauthenticatedSessionMember.Children;
+                    if (children.Any()) {
+                        rptChildBasicInfo.DataSource = children;
+                        rptChildBasicInfo.DataBind();
+                    }
+                }
+            }
         }
 
-        protected void rptChildBasicInfo_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.IsItem())
-            {
+        protected void rptChildBasicInfo_ItemDataBound(object sender, RepeaterItemEventArgs e) {
+            if (e.IsItem()) {
                 Child child = (Child)e.Item.DataItem;
 
                 Literal litChildGrade = e.FindControlAs<Literal>("litChildGrade");
-                litChildGrade.Text = child.Grades.First().Value;
+                if (child.Grades != null && child.Grades.Any()) {
+                    litChildGrade.Text = child.Grades.First().Value;
+                }
 
                 Literal litChildGender = e.FindControlAs<Literal>("litChildGender");
-                litChildGender.Text = TextHelper.ToTitleCase(child.Gender);
+                if (child.Gender != null) {
+                    litChildGender.Text = TextHelper.ToTitleCase(child.Gender);
+                }
 
                 Repeater rptChildRelatedArticles = e.FindControlAs<Repeater>("rptChildRelatedArticles");
-                if (rptChildRelatedArticles != null)
-                {
+                if (rptChildRelatedArticles != null) {
                     List<DefaultArticlePageItem> articles = UnderstoodDotOrg.Domain.Personalization.PersonalizationHelper.GetChildPersonalizedContents(child);
-                    if (articles.Any())
-                    {
+                    if (articles.Any()) {
                         rptChildRelatedArticles.DataSource = articles;
                         rptChildRelatedArticles.DataBind();
                     }
@@ -70,10 +72,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
             }
         }
 
-        protected void rptChildRelatedArticles_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if(e.IsItem())
-            {
+        protected void rptChildRelatedArticles_ItemDataBound(object sender, RepeaterItemEventArgs e) {
+            if (e.IsItem()) {
                 DefaultArticlePageItem item = (DefaultArticlePageItem)e.Item.DataItem;
                 {
                     HyperLink hlArticleImage = e.FindControlAs<HyperLink>("hlArticleImage");
@@ -87,21 +87,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
             }
         }
 
-        protected void rptChildIssuesList_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.IsItem())
-            {
+        protected void rptChildIssuesList_ItemDataBound(object sender, RepeaterItemEventArgs e) {
+            if (e.IsItem()) {
                 //ChildIssue ObjChildIssue = e.Item.DataItem as ChildIssue;
                 {
                     HyperLink hlReplaceMatchingIssues = e.FindControlAs<HyperLink>("hlReplaceMatchingIssues");
-                    if (hlReplaceMatchingIssues != null)
-                    {
+                    if (hlReplaceMatchingIssues != null) {
                         //hlReplaceMatchingIssues.NavigateUrl= Navigate to page where Usrer can edit childs related Info;
                     }
                 }
             }
         }
 
-     
+
     }
 }
