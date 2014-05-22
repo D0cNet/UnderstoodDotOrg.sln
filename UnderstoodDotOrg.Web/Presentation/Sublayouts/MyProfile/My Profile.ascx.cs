@@ -17,7 +17,7 @@
 
     public partial class My_Profile : BaseSublayout
     {
-		private MyProfileItem _currentPage;
+        private MyProfileItem _currentPage;
 		private MyProfileItem CurrentPage
 		{
 			get
@@ -102,7 +102,7 @@
 
 		private void SetInterests()
 		{
-			uxInterestList.DataSource = this.CurrentMember.Interests.Where(x => x.CategoryName != "Journey");
+			uxInterestList.DataSource = this.CurrentMember.Interests.Where(x => x.CategoryName != "Journey").ToList();
 			uxInterestList.DataBind();
 
 			IEnumerable<ParentInterestItem> parentInterests = GlobalsItem.GetParentInterests();
@@ -284,12 +284,12 @@
 			this.CurrentMember.Role = new Guid(ddlRole.SelectedValue);
 			this.CurrentMember.Journeys = new List<Journey>() { new Journey { Key = new Guid(ddlJourney.SelectedValue), Value = ddlJourney.SelectedItem.Text } };
 			List<Interest> selectedInterests = new List<Interest>();
-
+            
 			foreach (ListItem li in cblInterests.Items)
 			{
 				if (li.Selected)
 				{
-					selectedInterests.Add(new Interest() { Key = new Guid(li.Value) });
+                    selectedInterests.Add(new Interest() { Key = new Guid(li.Value), Value = li.Text });
 				}
 			}
 

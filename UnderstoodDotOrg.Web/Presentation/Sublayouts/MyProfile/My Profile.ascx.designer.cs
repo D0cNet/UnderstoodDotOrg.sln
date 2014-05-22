@@ -55,7 +55,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList ddlRole;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRole;
         
         /// <summary>
         /// ltlMyJourneyLabel control.
@@ -82,7 +82,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList ddlJourney;
+        protected global::System.Web.UI.WebControls.DropDownList ddlJourney;
         
         /// <summary>
         /// ltlMyInterestsLabel control.
