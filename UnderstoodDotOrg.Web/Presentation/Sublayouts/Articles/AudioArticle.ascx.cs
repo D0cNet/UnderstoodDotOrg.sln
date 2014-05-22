@@ -53,35 +53,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             phPlayer.Visible = !String.IsNullOrEmpty(Model.CincopaID.Raw);
         }
-
-        private void PopulatePlayer()
-        {
-            if (String.IsNullOrEmpty(Model.CincopaID.Raw)) 
-            {
-                return;
-            }
-            string baseUrl = Sitecore.Configuration.Settings.GetSetting(Constants.Settings.CincopaApiEndpoint);
-            using (var wc = new WebClient())
-            {
-                try
-                {
-                    string content = wc.DownloadString(String.Concat(baseUrl, Model.CincopaID.Raw));
-
-                    // Remove whitespace characters
-                    content = Regex.Replace(content, @"[\n\r\t]", "");
-
-                    // strip out wrapper ( "", )
-                    Regex regex = new Regex(@"^\(\s*"""",\s*(.+)\)$", RegexOptions.Multiline);
-
-                    Match m = regex.Match(content);
-
-                    content = m.Groups[1].Value;
-
-                    JavaScriptSerializer jss = new JavaScriptSerializer();
-                    CincopaResult result = jss.Deserialize<CincopaResult>(content);
-                }
-                catch { }
-            }
-        }
     }
 }

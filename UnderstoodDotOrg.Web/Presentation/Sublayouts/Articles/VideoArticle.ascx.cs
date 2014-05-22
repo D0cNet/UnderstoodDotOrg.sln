@@ -13,28 +13,17 @@ using Sitecore.ContentSearch.SearchTypes;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
-    public partial class VideoArticle : System.Web.UI.UserControl
+    public partial class VideoArticle : BaseSublayout<VideoArticlePageItem>
     {
-        VideoArticlePageItem ObjVideoArticle;
-        protected string VideoFile="";
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjVideoArticle = new VideoArticlePageItem(Sitecore.Context.Item);
-            if (ObjVideoArticle != null)
-            {
-                //Get Reviewer details
-                if (ObjVideoArticle.DefaultArticlePage.Reviewedby.Item != null && ObjVideoArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
-                    SBReviewedBy.Visible = true;
-                else
-                    SBReviewedBy.Visible = false;
-
-
-                // sow video file
-                VideoFile = ObjVideoArticle.VideoFile.MediaUrl;
-            }
+            //Get Reviewer details
+            SBReviewedBy.Visible = Model.DefaultArticlePage.Reviewedby.Item != null
+                && Model.DefaultArticlePage.ReviewedDate.DateTime != null;
         }
     }
 }

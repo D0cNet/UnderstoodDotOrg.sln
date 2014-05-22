@@ -46,29 +46,11 @@ public static implicit operator Item(VideoArticlePageItem customItem)
 #region Field Instance Methods
 
 
-public CustomImageField VideoFile
+public CustomTextField VideoEmbed
 {
 	get
 	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["Video File"]);
-	}
-}
-
-
-public CustomTextField IntroText
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Intro Text"]);
-	}
-}
-
-
-public CustomTextField Quote
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Quote"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Video Embed"]);
 	}
 }
 

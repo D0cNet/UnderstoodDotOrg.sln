@@ -46,15 +46,6 @@ public static implicit operator Item(AudioArticlePageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField IntroText
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Intro Text"]);
-	}
-}
-
-
 public CustomTextField Quote
 {
 	get
@@ -73,11 +64,11 @@ public CustomTextField Transcript
 }
 
 
-public CustomFileField AudioFile
+public CustomTextField AudioTitle
 {
 	get
 	{
-		return new CustomFileField(InnerItem, InnerItem.Fields["Audio File"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Audio Title"]);
 	}
 }
 
@@ -87,15 +78,6 @@ public CustomTextField CincopaID
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Cincopa ID"]);
-	}
-}
-
-
-public CustomTextField DescriptionAltText
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Description Alt Text"]);
 	}
 }
 
