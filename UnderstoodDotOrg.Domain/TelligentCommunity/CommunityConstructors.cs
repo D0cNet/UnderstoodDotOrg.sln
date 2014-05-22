@@ -32,7 +32,6 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string IsApproved { get; set; }
         public string AuthorUsername { get; set; }
         public DateTime CommentDate { get; set; }
-        public string url { get; set; }
 
         public Comment() { }
 
