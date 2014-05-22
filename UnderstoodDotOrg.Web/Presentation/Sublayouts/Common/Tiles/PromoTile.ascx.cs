@@ -28,7 +28,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Tiles
             frTileLink1.Item = 
             frTileLink2.Item = tile;
 
-            pnlImage.Visible = (tile.TileImage.MediaItem.InnerItem != null);
+            pnlImage.Visible = (tile.TileImage.MediaItem != null);
         }
     }
 }
