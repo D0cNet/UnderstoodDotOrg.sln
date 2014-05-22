@@ -8,21 +8,21 @@
                     <ItemTemplate>
                         <div class="col col-24 blog-card clearfix">
                             <div class="blog-card-image">
-                                <a href="REPLACE">
+                                <a href="<%# Item.Url %>">
                                     <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
                                 </a>
                             </div>
                             <!-- end .group-card-image -->
                             <div class="blog-card-info group">
                                 <div class="blog-card-title">
-                                    <a href="<%# Item.ItemUrl %>"><%# Item.Title %></a>
+                                    <a href="<%# Item.Url %>"><%# Item.Title %></a>
                                 </div>
                                 <!-- end .blog-card-title -->
                                 <div class="blog-card-post-info">
                                     Posted by <a href="REPLACE"><%# Item.Author %></a> <%# Item.PublishedDate %>
                                 </div>
                                 <div class="blog-card-post-excerpt">
-                                    <!--<%# Item.Body %> --><a href="<%# Item.ItemUrl %>" class="link-see-more">See more</a>
+                                    <!--<%# Item.Body %> --><a href="<%# Item.Url %>" class="link-see-more">See more</a>
                                 </div>
                                 <span class="children-key clearfix">
                                     <ul>
@@ -38,9 +38,9 @@
                                         <img alt="70x70 Placeholder" src="http://placehold.it/70x70" />
                                     </a>
                                     <div class="author-and-blog-name">
-                                        <a href="REPLACE" class="author-name">Lexi Morgan
+                                        <a href="REPLACE" class="author-name"><%# Item.Author %>
                                         </a>
-                                        <a href="REPLACE" class="blog-name">Tempore Sequi Blog
+                                        <a href="REPLACE" class="blog-name"><%# Item.BlogName %>
                                         </a>
                                     </div>
                                     <div class="blog-card-button">

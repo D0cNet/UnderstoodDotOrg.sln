@@ -681,7 +681,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     BlogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText),
                     Author = nodes1[count]["DisplayName"].InnerText,
                     // TODO: Fix this logic a lot
-                    ItemUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + CommunityHelper.BlogNameById(node["BlogId"].InnerText) + "/" + node["Title"].InnerText, ".aspx", "")
+                    Url = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + CommunityHelper.BlogNameById(node["BlogId"].InnerText) + "/" + node["Title"].InnerText, ".aspx", "")
                 };
                 blogPosts.Add(blogPost);
                 count++;
@@ -722,7 +722,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         {
                             Title = title,
                             Description=description,
-                            BlogId= blogId
+                            BlogId= blogId,
+                            Url = "/en/Community and Events/Blogs/BlogPosts?id=" + blogId
                         };
                         if (!title.Equals("Articles"))
                         {

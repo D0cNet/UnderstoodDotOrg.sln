@@ -81,7 +81,7 @@
 
                                 </div>
                                 <div class="blog-card-info group">
-                                    <h3 class="blog-card-title"><a href="<%# Item.ItemUrl %>"><%# Item.Title %></a></h3>
+                                    <h3 class="blog-card-title"><a href="<%# Item.Url %>"><%# Item.Title %></a></h3>
 
 
                                     <div class="blog-card-post-info">

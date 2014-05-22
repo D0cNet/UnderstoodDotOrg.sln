@@ -32,31 +32,10 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string IsApproved { get; set; }
         public string AuthorUsername { get; set; }
         public DateTime CommentDate { get; set; }
+        public string url { get; set; }
 
         public Comment() { }
 
-        public Comment(string id, string url, string body, string parentId, string contentId, string isApproved, string replyCount,
-            string commentId, string commentContentTypeId, string authorId, string authorAvatarUrl, string authorUsername, string publishedDate,
-                string authorDisplayName, string authorProfileUrl, string likes, string commentDate)
-        {
-            Id = id;
-            Url = url;
-            Body = body;
-            ParentId = parentId;
-            ContentId = contentId;
-            IsApproved = isApproved;
-            ReplyCount = replyCount;
-            CommentId = commentId;
-            CommentContentTypeId = commentContentTypeId;
-            PublishedDate = publishedDate;
-            AuthorId = authorId;
-            AuthorAvatarUrl = authorAvatarUrl;
-            AuthorDisplayName = authorDisplayName;
-            AuthorProfileUrl = authorProfileUrl;
-            AuthorUsername = authorUsername;
-            Likes = likes;
-            CommentDate = DateTime.Parse(commentDate);
-        }
         public Comment(XmlNode xn)
         {
             if (xn != null)
@@ -97,18 +76,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Author { get; set; }
         public string BlogName { get; set; }
         public string ContentId { get; set; }
-        public string ItemUrl { get; set; }
+        public string Url { get; set; }
 
         public BlogPost() { }
-
-        public BlogPost(string body, string title, string publishedDate, string author, string blogName, string contentId)
-        {
-            Body = body;
-            Title = title;
-            PublishedDate = publishedDate;
-            Author = author;
-            BlogName = blogName;
-        }
     }
 
     public class Blog
@@ -116,6 +86,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Description { get; set; }
         public string Title { get; set; }
         public string BlogId { get; set; }
+        public string Url { get; set; }
 
         public Blog() { }
     }
@@ -155,22 +126,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string WikiPageId { get; set; }
         public string ContentId { get; set; }
         public string QueryString { get; set; }
+        public string Url { get; set; }
 
         public Question() { }
-
-        public Question(string title, string body, string publishedDate, string author, string group, string commentCount, string wikiId, string wikiPageId, string contentId)
-        {
-            Title = title;
-            Body = body;
-            PublishedDate = publishedDate;
-            Author = author;
-            Group = group;
-            CommentCount = commentCount;
-            WikiId = wikiId;
-            WikiPageId = wikiPageId;
-            ContentId = contentId;
-            QueryString = "?wikiId=" + WikiId + "&wikiPageId=" + WikiPageId + "&contentId=" + ContentId;
-        }
     }
 
     public class Answer
@@ -192,6 +150,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string ContentId { get; set; }
         public string CreatedDate { get; set; }
         public string UpdatedDate { get; set; }
+        public string Url { get; set; }
 
         public Notification() { }
     }

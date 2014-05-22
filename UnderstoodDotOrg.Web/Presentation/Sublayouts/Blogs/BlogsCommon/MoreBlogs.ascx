@@ -22,20 +22,20 @@
                         <div class="col col-24 blog-card">
                             <div class="blog-card-wrapper">
                                 <div class="author-image">
-                                    <a href="REPLACE">
+                                    <a href="<%# Item.Url %>">
                                         <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
                                     </a>
                                 </div>
                                 <!-- end .group-card-image -->
                                 <div class="blog-card-info group">
                                     <div class="blog-card-title">
-                                        <a href="/en/Community and Events/Blogs/BlogPosts?id=<%# Item.BlogId %>"><%# Item.Title %></a>
+                                        <a href="<%# Item.Url %>"><%# Item.Title %></a>
                                     </div>
                                     <!-- end .blog-card-title -->
                                     <div class="blog-card-post-excerpt">
                                         <%# Item.Description %>
                                     </div>
-                                    <a href="REPLACE" class="link-see-more">Read facere placeat</a>
+                                    <a href="<%# Item.Url %>" class="link-see-more">Read <%# Item.Title %></a>
                                 </div>
                                 <!-- end .blog-card-info -->
                             </div>
