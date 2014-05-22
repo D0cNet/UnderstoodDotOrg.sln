@@ -229,19 +229,19 @@
     <Compile Include="Presentation\Sublayouts\About\AboutUnderstood.ascx.designer.cs">
       <DependentUpon>AboutUnderstood.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Donate Page.ascx.cs">
-      <DependentUpon>Donate Page.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\About\DonationConfirmationPage.ascx.cs">
+      <DependentUpon>DonationConfirmationPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Donate Page.ascx.designer.cs">
-      <DependentUpon>Donate Page.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\About\DonationConfirmationPage.ascx.designer.cs">
+      <DependentUpon>DonationConfirmationPage.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Donation Thank you.ascx.cs">
-      <DependentUpon>Donation Thank you.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\About\DonationPage.ascx.cs">
+      <DependentUpon>DonationPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\About\Donation Thank you.ascx.designer.cs">
-      <DependentUpon>Donation Thank you.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\About\DonationPage.ascx.designer.cs">
+      <DependentUpon>DonationPage.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx.cs">
       <DependentUpon>Newsletter_ChildInfo.ascx</DependentUpon>
@@ -2290,8 +2290,8 @@
     <Content Include="Presentation\Sublayouts\About\AboutPartners.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutPartner_Details.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutUnderstood.ascx" />
-    <Content Include="Presentation\Sublayouts\About\Donate Page.ascx" />
-    <Content Include="Presentation\Sublayouts\About\Donation Thank you.ascx" />
+    <Content Include="Presentation\Sublayouts\About\DonationConfirmationPage.ascx" />
+    <Content Include="Presentation\Sublayouts\About\DonationPage.ascx" />
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx" />
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ParentInterest.ascx" />
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_SignUp.ascx" />

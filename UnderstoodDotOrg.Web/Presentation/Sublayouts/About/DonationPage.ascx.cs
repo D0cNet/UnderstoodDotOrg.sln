@@ -4,22 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 {
-    public partial class Donate_Page : System.Web.UI.UserControl
+    public partial class DonationPage : BaseSublayout<DonatePageItem>
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
 
-        protected void btnDonate_Click(object sender, EventArgs e)
-        {
-            Response.Write(Request.Form["DonationAmount"].ToString());
-            //Response.Write(DonationAmount.Value);
         }
-
-        
     }
 }

@@ -10,10 +10,10 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages
 {
-public partial class DonationThankYouPageItem : CustomItem
+public partial class DonationConfirmationPageItem : CustomItem
 {
 
-public static readonly string TemplateId = "{C11B0CED-9542-4151-A703-555F7FE7F1B4}";
+public static readonly string TemplateId = "{6DD4AAD5-09CB-4A6B-A224-0346362BEDD4}";
 
 #region Inherited Base Templates
 
@@ -24,18 +24,18 @@ public ContentPageItem ContentPage { get { return _ContentPageItem; } }
 
 #region Boilerplate CustomItem Code
 
-public DonationThankYouPageItem(Item innerItem) : base(innerItem)
+public DonationConfirmationPageItem(Item innerItem) : base(innerItem)
 {
 	_ContentPageItem = new ContentPageItem(innerItem);
 
 }
 
-public static implicit operator DonationThankYouPageItem(Item innerItem)
+public static implicit operator DonationConfirmationPageItem(Item innerItem)
 {
-	return innerItem != null ? new DonationThankYouPageItem(innerItem) : null;
+	return innerItem != null ? new DonationConfirmationPageItem(innerItem) : null;
 }
 
-public static implicit operator Item(DonationThankYouPageItem customItem)
+public static implicit operator Item(DonationConfirmationPageItem customItem)
 {
 	return customItem != null ? customItem.InnerItem : null;
 }
@@ -44,24 +44,6 @@ public static implicit operator Item(DonationThankYouPageItem customItem)
 
 
 #region Field Instance Methods
-
-
-public CustomImageField Image
-{
-	get
-	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["Image"]);
-	}
-}
-
-
-public CustomTextField RecommendationHeader
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Recommendation Header"]);
-	}
-}
 
 
 #endregion //Field Instance Methods

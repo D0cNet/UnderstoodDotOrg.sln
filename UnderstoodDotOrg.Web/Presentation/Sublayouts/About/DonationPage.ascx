@@ -1,84 +1,49 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Donate Page.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Donate_Page" %>
-
-<!-- END PARTIAL: header -->
-<script>
-    function SetAmount(Amt) {
-        // alert(Amt);
-        if (Amt == 0) {
-            document.getElementsByName('DonationAmount').value = document.getElementsByName('donate-amount').value;
-        }
-        else {
-            document.getElementsByName('DonationAmount').value = Amt;
-        }
-    }
-    function GetAmount() {
-        var SAmt = document.getElementsByName('DonationAmount').value;
-        if (SAmt == null) {
-            SAmt = document.getElementById('donate-amount1').value;
-            alert(SAmt);
-        }
-        else
-            alert(SAmt);
-    }
-    function SetOtherAmount() {
-
-        document.getElementsByName('DonationAmount').value = document.getElementById('donate-amount').value;
-        // alert(document.getElementsByName('DonationAmount').value);
-        // alert(document.getElementById('donate-amount1').value);
-    }
-</script>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DonationPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.About.DonationPage" %>
 <div class="container flush donate-create-wrap">
     <div class="row">
         <div class="col col-24 skiplink-content" aria-role="main" aria-role="main">
             <!-- BEGIN PARTIAL: about-donate-create -->
             <div class="donate-choose-gift">
                 <header class="rs_read_this about-donate-rs-wrapper">
-                    <h1>Donate</h1>
-                    <p class="subtitle">
-                        Help us continue to educate, support and advocate for parents of kids with learning and attention issues.
-   
-                    </p>
-                    <p class="contact-us">
-                        For other ways to give, contact us at <a href="REPLACE">info@understood.org</a>
-                    </p>
+                    <h1><%= Model.ContentPage.PageTitle.Rendered %></h1>
+                    <%= Model.ContentPage.PageSummary.Rendered %>
                 </header>
-                <input type="hidden" runat="server" id="DonationAmount" />
                 <div class="choose-gift-section rs_read_this about-donate-rs-wrapper">
-                    <h2>1. Choose a Gift Amount</h2>
+                    <h2>1. <%= Model.AmountHeader.Rendered %></h2>
                     <div class="choose-gift-wrapper">
-                        <div class="gift-group clearfix">
+                        <div class="gift-group clearfix rs_preserve">
                             <label>
                                 <input type="radio" name="gift-amount" value="">
                                 <span>
-                                   <button onclick="Javascript:SetAmount(25);">
+                                    <button>
                                         <span class="number">$25</span>
                                         <span class="gift-description">Can provide education for 1 parents.</span>
                                         <span class="icon-check">
-                                            <img class="check-img" alt="Check mark" src="Presentation/includes/images/icon-check.png" /></span>
+                                            <img class="check-img" alt="Check mark" src="/Presentation/includes/images/icon-check.png" /></span>
                                     </button>
                                 </span>
                             </label>
                             <label>
                                 <input type="radio" name="gift-amount" value="">
                                 <span>
-                                    <button onclick="Javascript:SetAmount(50);">
+                                    <button>
                                         <span class="number">$50</span>
                                         <span class="gift-description">Can provide education for 2 parents.</span>
                                         <span class="icon-check">
-                                            <img class="check-img" alt="Check mark" src="Presentation/includes/images/icon-check.png" /></span>
+                                            <img class="check-img" alt="Check mark" src="/Presentation/includes/images/icon-check.png" /></span>
                                     </button>
                                 </span>
                             </label>
                         </div>
-                        <div class="gift-group clearfix">
+                        <div class="gift-group clearfix rs_preserve">
                             <label>
                                 <input type="radio" name="gift-amount" value="">
                                 <span>
-                                    <button onclick="Javascript:SetAmount(100);">
+                                    <button>
                                         <span class="number">$100</span>
                                         <span class="gift-description">Can provide education for 3 parents.</span>
                                         <span class="icon-check">
-                                            <img class="check-img" alt="Check mark" src="Presentation/includes/images/icon-check.png" /></span>
+                                            <img class="check-img" alt="Check mark" src="/Presentation/includes/images/icon-check.png" /></span>
                                     </button>
                                 </span>
                             </label>
@@ -89,7 +54,7 @@
                                         <span class="number">Other</span>
                                         <span class="gift-description">Can provide education for x parents.</span>
                                         <span class="icon-check">
-                                            <img class="check-img" alt="Check mark" src="Presentation/includes/images/icon-check.png" /></span>
+                                            <img class="check-img" alt="Check mark" src="/Presentation/includes/images/icon-check.png" /></span>
                                     </button>
                                 </span>
                             </label>
@@ -104,8 +69,7 @@
                             </div>
                             <div class="form-flex">
                                 <div class="dollar-prefix">$</div>
-                                <%--<input type="text" placeholder="" name="donate-amount" id="donate-amount" onmouseout="javascript:setmsg();">--%>
-                                <input type="text" id="donate-amount1" onmouseout="javascript:SetOtherAmount();">
+                                <input type="text" placeholder="" name="donate-amount" id="donate-amount">
                             </div>
                         </div>
                     </div>
@@ -116,10 +80,10 @@
 
                 <div class="gift-for-section">
                     <div class="rs_read_this about-donate-rs-wrapper">
-                        <h2>2. Is this a Gift for someone?</h2>
-                        <div class="gift-for-wrapper">
+                        <h2>2. <%= Model.GiftforSomeoneHeader.Rendered %></h2>
+                        <div class="gift-for-wrapper rs_preserve">
                             <label class="yes-send-card">
-                                <input type="radio" name="gift-card" data-e-card="true" value="">
+                                <input type="radio" class="radio" name="gift-card" data-e-card="true" value="">
                                 <span>
                                     <button>Yes, send an e-card</button></span>
                             </label>
@@ -155,7 +119,7 @@
                 <!-- .gift-for-section-->
 
                 <div class="gift-occurance-section rs_read_this about-donate-rs-wrapper">
-                    <h2>3. Would you consider making this gift monthly?</h2>
+                    <h2>3. <%= Model.RecurringGiftHeader.Rendered %></h2>
                     <div class="gift-occurance-wrapper">
                         <div class="radio-wrapper">
                             <label for="gift-occurrence-once">
@@ -173,8 +137,13 @@
                 <!-- .monthly-gift-section-->
 
                 <div class="how-pay-section">
-                    <div class="rs_read_this about-donate-rs-wrapper">
-                        <h2>4. How would you like to pay?</h2>
+                    <div class="about-donate-rs-wrapper">
+                        <div class="rs_read_this">
+                            <h2>4. <%= Model.PaymentInformationHeader.Rendered %></h2>
+                            <div class="visuallyhidden">Pay by</div>
+                            <span class="visuallyhidden">Credit Card</span>
+                            <span class="visuallyhidden">Check</span>
+                        </div>
                         <div class="how-pay-option-wrapper form-center">
                             <div class="pay-by">Pay by</div>
                             <div class="radio-wrapper">
@@ -196,8 +165,8 @@
 
                         <!-- BEGIN PARTIAL: about-donate-pay-by-check -->
                         <div class="pay-by-check rs_read_this about-donate-rs-wrapper">
-                            <h3>Where are my account numbers?</h3>
-                            <img class="pay-by-check" alt="Pay By Check Sample" src="Presentation/includes/images/pay-by-check-sample.gif" />
+                            <h3><%= Model.CheckHelpImageHeader.Rendered %></h3>
+                            <img class="pay-by-check" alt="Pay By Check Sample" src="<%= Model.CheckHelpImage.MediaUrl %>" />
                             <div class="form-group">
                                 <label for="donate-account-name">Name on Account</label>
                                 <input type="text" placeholder="" name="donate-account-name" id="donate-account-name" aria-required="true">
@@ -224,11 +193,10 @@
 
                                 <div class="cvv-info-wrapper rs_skip">
                                     <div class="popover-trigger-container">
-                                        <button class="popover-link" data-popover-placement="bottom"><i class="icon-tooltip-dark">&nbsp;</i></button>
-                                    </div>
+                                        <button class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip-dark">&nbsp;</i></button></div>
                                     <!-- BEGIN PARTIAL: popover-cvv-info -->
                                     <div class="cvv-tooltip popover-container">
-                                        laboriosam et officia ipsam in voluptas ut unde odio aut ullam aliquam enim pariatur nobis reprehenderit voluptas illum autem eum quod iste non unde ipsa voluptas qui porro est maxime
+                                        <%= Model.CVVHelpText.Rendered %>
                                     </div>
                                     <!-- .cvv-tooltip -->
                                     <!-- END PARTIAL: popover-cvv-info -->
@@ -350,17 +318,14 @@
                     </label>
                     <p class="donate-to-partners">
                         When you give to Understood you also give to our various partners
-   
                     </p>
                     <div class="button-wrap">
-                        <%--<button class="button about-donate rs_skip" onclick="javascript: GetAmount();">Donate</button>--%>
-                        <asp:Button CssClass="button about-donate rs_skip" OnClientClick="javascript: GetAmount();" ID="btnDonate" OnClick="btnDonate_Click"  Text="Donate" runat="server" />
+                        <button class="button about-donate rs_skip">Donate</button>
                     </div>
                 </div>
                 <div class="about-donate-notes clearfix">
                     <p class="small-note">
-                        Understood is a 501&#169;(3) nonprofit recognized by the IRS, and all donations to Understood are tax-deductible in accordance with IRS regulations. 2014 Understood
-   
+                        Understood is a 501(c)(3) nonprofit recognized by the IRS, and all donations to Understood are tax-deductible in accordance with IRS regulations. 2014 Understood
                     </p>
                     <div class="logo-img-wrap">
                         <img class="logo-img" alt="Verisign" src="Presentation/includes/images/logo.partner.verisign.png" />
@@ -375,6 +340,3 @@
     <!-- .row -->
 </div>
 <!-- .container -->
-
-<!-- BEGIN PARTIAL: footer -->
-

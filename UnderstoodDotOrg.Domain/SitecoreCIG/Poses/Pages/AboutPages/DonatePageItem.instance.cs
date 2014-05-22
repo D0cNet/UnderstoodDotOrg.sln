@@ -6,11 +6,8 @@ using Sitecore.Web.UI.WebControls;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages
 {
-
-public partial class DonationThankYouPageItem 
+public partial class DonatePageItem 
 {
-    
-    //Get Recommendated article List
 
 }
 }

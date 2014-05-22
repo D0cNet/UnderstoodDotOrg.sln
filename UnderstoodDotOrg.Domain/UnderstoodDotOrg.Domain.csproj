@@ -307,8 +307,9 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutPartnersItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonationThankYouPageItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonationThankYouPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonatePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonatePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonationConfirmationPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ChildInformationPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ChildInformationPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ChildInformationPageItem.static.cs" />
