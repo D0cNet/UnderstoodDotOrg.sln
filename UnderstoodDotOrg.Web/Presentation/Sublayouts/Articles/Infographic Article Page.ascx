@@ -24,9 +24,6 @@
                     <%--zoom out on infographic within viewport--%>
                     <a href="REPLACE" class="infographic-zoom-icon infographic-zoom-icon-zoom-out">Zoom Out</a>
                 </div>
-                <div class="article-copy">
-                    <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
-                </div>
                 <!-- end infographic-zoom -->
 
                 <%--<!-- BEGIN PARTIAL: embed-overlay -->
@@ -76,6 +73,9 @@
 <!-- END PARTIAL: embed-overlay -->
 
                 <!-- END PARTIAL: infographic-zoom -->
+            </div>
+            <div class="article-copy">
+                <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
             </div>
             <!-- end infographic -->
             <!-- BEGIN PARTIAL: reviewed-by -->
