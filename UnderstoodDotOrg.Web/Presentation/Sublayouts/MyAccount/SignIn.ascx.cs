@@ -22,7 +22,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             uxRegisterLink.Text = DictionaryConstants.SignUpButtonText;
 
             uxRegisterLink.NavigateUrl = MyAccountFolderItem.GetSignUpPage();
-
+            uxForgotPassword.NavigateUrl = MyAccountFolderItem.GetForgotPasswordPage();
             
         }
 

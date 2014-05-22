@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
@@ -21,6 +22,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             uxZipCode.Attributes["placeholder"] = DictionaryConstants.ZipCodeWatermark;
 
             uxSubmit.Text = DictionaryConstants.SubmitButtonText;
+
+            uxSignIn.Text = DictionaryConstants.SignInButtonText;
+            uxSignIn.NavigateUrl = MyAccountFolderItem.GetSignInPage();
         }
 
         protected void uxSubmit_Click(object sender, EventArgs e)

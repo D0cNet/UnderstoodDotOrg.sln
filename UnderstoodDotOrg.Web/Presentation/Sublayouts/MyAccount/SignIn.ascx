@@ -30,7 +30,8 @@
             </label>
             <%--<button class="button">Sign In</button>--%>
             <asp:Button CssClass="button" ID="uxSignIn" runat="server" OnClick="uxSignIn_Click" />
-            <a class="sign-in-forgot-password" href="REPLACE">Forgot Your Password?</a>
+            <%--<a class="sign-in-forgot-password" href="REPLACE">Forgot Your Password?</a>--%>
+            <asp:HyperLink runat="server" ID="uxForgotPassword" CssClass="sign-in-forgot-password">Forgot Your Password?</asp:HyperLink>
             <asp:Literal ID="uxError" runat="server"></asp:Literal>
         </div>
     </div>

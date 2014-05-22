@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
     public partial class SignUp {
         
         /// <summary>
+        /// uxSignIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink uxSignIn;
+        
+        /// <summary>
         /// pageTitle control.
         /// </summary>
         /// <remarks>
