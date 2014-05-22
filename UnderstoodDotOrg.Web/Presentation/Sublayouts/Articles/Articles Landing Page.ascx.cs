@@ -31,6 +31,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             ltlNo.Text = DictionaryConstants.NoButtonText;
             ltlYes.Text = DictionaryConstants.YesButtonText;
 
+            if (context.DefaultArticlePage.Reviewedby.Item != null && context.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
+                SBReviewedBy.Visible = true;
+            else
+                SBReviewedBy.Visible = false;
+
         }
 
         protected void rptFeaturedArticles_ItemDataBound(object sender, RepeaterItemEventArgs e)

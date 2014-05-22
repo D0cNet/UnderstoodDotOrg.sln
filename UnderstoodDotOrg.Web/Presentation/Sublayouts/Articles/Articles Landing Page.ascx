@@ -30,7 +30,7 @@
     <div class="row">
         <div class="col col-15 offset-1">
             <!-- BEGIN PARTIAL: reviewed-by -->
-            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx"/>
+            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false"/>
             <!-- END PARTIAL: reviewed-by -->
             <!-- BEGIN PARTIAL: find-helpful -->
             <div class="find-this-helpful content" id="count-helpful-content rs_read_this">
