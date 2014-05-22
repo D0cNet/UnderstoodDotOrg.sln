@@ -283,7 +283,6 @@
 		{
 			this.CurrentMember.Role = new Guid(ddlRole.SelectedValue);
 			this.CurrentMember.Journeys = new List<Journey>() { new Journey { Key = new Guid(ddlJourney.SelectedValue), Value = ddlJourney.SelectedItem.Text } };
-            MembershipManager.UpdateMember(this.CurrentMember);
 			List<Interest> selectedInterests = new List<Interest>();
 
 			foreach (ListItem li in cblInterests.Items)
@@ -304,7 +303,9 @@
 		protected void lbSave_Community_Click(object sender, EventArgs e)
 		{
 			this.CurrentMember.ZipCode = txtZipcode.Text;
-            MembershipManager.UpdateMember(this.CurrentMember);
+
+            new MembershipManager().UpdateMember(this.CurrentMember);
+			
 			Session["PostReloadScript"] = "scrollToSelector('.profile-section.community-section')";
 
 			ReloadPage();
