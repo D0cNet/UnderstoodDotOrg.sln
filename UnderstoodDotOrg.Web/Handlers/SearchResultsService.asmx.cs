@@ -38,11 +38,11 @@ namespace UnderstoodDotOrg.Web.Handlers
                         let i = new DefaultArticlePageItem(a.GetItem())
                         select new SearchArticle
                         {
-                            Title = i.ContentPage.PageTitle,
+                            Title = Common.Helpers.TextHelper.HighlightSearchTitle(terms, i.ContentPage.PageTitle.Rendered),
                             Url = i.GetUrl(),
                             Thumbnail = i.GetArticleThumbnailUrl(230, 129),
-                            Blurb = "Lorem ipsum...",
-                            Type = ""
+                            Blurb = Common.Helpers.TextHelper.TruncateText(i.ContentPage.PageSummary.Rendered, 150),
+                            Type = "" // TODO: determine type - lookup to sitecore
                         };
 
             results.Articles = query.ToList();

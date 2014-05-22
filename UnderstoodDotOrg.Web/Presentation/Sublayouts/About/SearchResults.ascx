@@ -53,7 +53,7 @@
         </div>
 
         <div class="col col-11 offset-1 search-content">
-        <h4><a href="{{Url}}">{{Title}}</a></h4>
+        <h4><a href="{{Url}}">{{{Title}}}</a></h4>
         <p>{{Blurb}}</p>
         </div>
 
@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="col col-11 offset-1 search-content">
-                <h4><a href="<%#: Item.Url %>"><%#: Item.Title%></a></h4>
+                <h4><a href="<%#: Item.Url %>"><%# Item.Title%></a></h4>
                 <p><%#: Item.Blurb %></p>
                 </div>
 

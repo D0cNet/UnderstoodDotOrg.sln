@@ -815,12 +815,14 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Tiles\EventTile.ascx.cs">
       <DependentUpon>EventTile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Tiles\EventTile.ascx.designer.cs">
       <DependentUpon>EventTile.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Tiles\PromoTile.ascx.cs">
       <DependentUpon>PromoTile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Tiles\PromoTile.ascx.designer.cs">
       <DependentUpon>PromoTile.ascx</DependentUpon>
