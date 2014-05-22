@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 
@@ -23,6 +24,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
             if (DataSource != null && TemplateManager.GetTemplate(DataSource).InheritsFrom(new ID(DefaultArticlePageItem.TemplateId)))
             {
                 BindData((DefaultArticlePageItem)DataSource);
+
+                if (DataSource.TemplateID.ToString() == ToolkitArticlePageItem.TemplateId)
+                {
+                    dvIntro.Attributes["class"] += "-toolkit";
+                }
             }
         }
 
