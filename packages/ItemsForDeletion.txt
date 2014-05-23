@@ -1,0 +1,35 @@
+Please use this file (and *update it*) when you have a Sitecore item 
+that needs to be deleted during the next release. This is a useful way
+to document all of the parts of the tree that we have deleted. 
+
+#### Release 5/23/14 ###################################################
+
+----- Templates --------------------------------------------------------
+
+master:/sitecore/templates/Branches/User Defined/Advocacy Main Folder/*
+master:/sitecore/templates/Branches/User Defined/Advocacy Main Folder
+
+master:/sitecore/templates/User Defined/Poses/Pages/Advocacy/*
+master:/sitecore/templates/User Defined/Poses/Pages/Advocacy
+
+----- Content ----------------------------------------------------------
+
+master:/sitecore/content/Home/About/Donate/*
+master:/sitecore/content/Home/About/Donate
+
+----- Media Library ----------------------------------------------------
+
+master:/sitecore/layout/Sublayouts/Poses/Advocacy/*
+master:/sitecore/layout/Sublayouts/Poses/Advocacy
+
+master:/sitecore/layout/Sublayouts/Poses/About/Donate Page
+master:/sitecore/layout/Sublayouts/Poses/About/Donation Thank you
+
+------------------------------------------------------------------------
+
+#### Release X/XX/14 ###################################################
+------------------------------------------------------------------------
+#### Release X/XX/14 ###################################################
+------------------------------------------------------------------------
+#### Release X/XX/14 ###################################################
+------------------------------------------------------------------------
