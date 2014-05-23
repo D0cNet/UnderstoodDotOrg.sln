@@ -58,31 +58,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         protected global::System.Web.UI.WebControls.Literal litErrorMessage;
         
         /// <summary>
-        /// uxEmailAddress control.
+        /// txtEmailAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxEmailAddress;
+        protected global::System.Web.UI.WebControls.TextBox txtEmailAddress;
         
         /// <summary>
-        /// uxSubmit control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button uxSubmit;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// uxCancel control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button uxCancel;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
         /// hint control.
@@ -112,12 +112,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         protected global::Sitecore.Web.UI.WebControls.Text PageHeadingConfirmation;
         
         /// <summary>
-        /// uxSuccessStory control.
+        /// litSuccessStory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal uxSuccessStory;
+        protected global::System.Web.UI.WebControls.Literal litSuccessStory;
     }
 }

@@ -18,12 +18,12 @@
                         <label>
                             <%--<span class="visuallyhidden">Enter email address</span>--%>
                             <%--<input type="text" placeholder="Enter email address">--%>
-                            <asp:TextBox runat="server" ID="uxEmailAddress"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtEmailAddress"></asp:TextBox>
                         </label>
                         <%--<button class="button submit">Submit</button>--%>
-                        <asp:Button runat="server" ID="uxSubmit" CssClass="button submit rs_skip" OnClick="uxSubmit_Click" />
+                        <asp:Button runat="server" ID="btnSubmit" CssClass="button submit rs_skip" OnClick="btnSubmit_Click" />
                         <%--<button class="button gray">Cancel</button>--%>
-                        <asp:Button runat="server" ID="uxCancel" CssClass="button gray rs_skip" OnClick="uxCancel_Click" />
+                        <asp:Button runat="server" ID="btnCancel" CssClass="button gray rs_skip" OnClick="btnCancel_Click" />
                         <%--<p>Hint: Understood passwords have 6 or more characters.</p>
                         <p>Remembered it? <a href="REPLACE">Go back to log in.</a></p>--%>
                         <sc:Text runat="server" id="hint" field="Hint Text"></sc:Text>
@@ -47,7 +47,7 @@
                     <div class="confirmation-message">
                         <%--<p class="message">We've sent an email to <strong>Johndoe@email.com</strong> with a link to reset your password.</p>
                         <p>If you need additional help, please <a href="REPLACE">contact us</a>.</p>--%>
-                        <asp:Literal ID="uxSuccessStory" runat="server"></asp:Literal>
+                        <asp:Literal ID="litSuccessStory" runat="server"></asp:Literal>
                         <!-- end .message -->
                     </div>
                     <!-- end .confirmation-message -->
