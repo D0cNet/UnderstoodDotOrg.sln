@@ -31,7 +31,7 @@
                                     </div>
                                     <!-- end .blog-card-title -->
                                     <div class="blog-card-post-info">
-                                        <%# Item.PublishedDate %> from <a href="<%# Item.ItemUrl %>"><%# Item.BlogName %></a>
+                                        <%# Item.PublishedDate %> from <a href="<%# Item.Url %>"><%# Item.BlogName %></a>
                                     </div>
                                 </div>
                                 <div class="card-buttons">
