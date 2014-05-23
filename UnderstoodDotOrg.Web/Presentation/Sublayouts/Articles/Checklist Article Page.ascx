@@ -8,7 +8,7 @@
             <div class="article-intro-text">
                 <p>
                     <%--This would be the intro text to the slideshow. It should run about 35 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum convallis risus id felis.--%>
-                    <sc:FieldRenderer ID="frSummary" runat="server" FieldName="Body Content" />
+                    <sc:fieldrenderer id="frSummary" runat="server" fieldname="Body Content" />
                 </p>
             </div>
             <!-- END PARTIAL: article-intro-text -->
@@ -17,13 +17,14 @@
                 <div class="checklist-form">
                     <div class="checklist-questions">
 
-                        <div class="checklist-question-wrapper">
-                            <fieldset>
-                                <asp:Repeater ID="rptHeaderChkbox" runat="server" OnItemDataBound="rptHeaderChkbox_ItemDataBound">
-                                    <ItemTemplate>
+
+                        <asp:Repeater ID="rptHeaderChkbox" runat="server" OnItemDataBound="rptHeaderChkbox_ItemDataBound">
+                            <ItemTemplate>
+                                <div class="checklist-question-wrapper">
+                                    <fieldset>
                                         <%--<div class="checklist-question">--%>
                                         <legend class="checklist-question">
-                                            <sc:FieldRenderer ID="frHeaderItem" runat="server" FieldName="Title" />
+                                            <sc:fieldrenderer id="frHeaderItem" runat="server" fieldname="Title" />
                                         </legend>
                                         <%--<asp:CheckBox ID="cbHeaderItem" runat="server"></asp:CheckBox>
                                         <sc:FieldRenderer ID="frHeaderItem" runat="server" FieldName="Title" />
@@ -35,18 +36,20 @@
                                                         <asp:Label ID="lblTopicItem" runat="server" AssociatedControlID="cbTopicItem">
                                                             <asp:CheckBox ID="cbTopicItem" runat="server"></asp:CheckBox>
                                                             <span>
-                                                                <sc:FieldRenderer runat="server" ID="frTopicItem" FieldName="Topic Title" />
+                                                                <sc:fieldrenderer runat="server" id="frTopicItem" fieldname="Topic Title" />
                                                             </span>
                                                         </asp:Label>
                                                     </div>
                                                 </ItemTemplate>
                                             </asp:Repeater>
                                         </div>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </fieldset>
-                        </div>
-                        <!-- .checkboxes-wrapper -->
+
+                                    </fieldset>
+                                </div>
+                                <!-- .checkboxes-wrapper -->
+                            </ItemTemplate>
+                        </asp:Repeater>
+
                     </div>
                     <!-- .checklist-question -->
 
@@ -68,7 +71,7 @@
 
             <!-- END PARTIAL: article-checklist -->
             <!-- BEGIN PARTIAL: reviewed-by -->
-            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
+            <sc:sublayout id="SBReviewedBy" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" visible="false" />
 
         </div>
 
@@ -76,15 +79,15 @@
 
         <!-- right bar -->
         <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
-            
-            <sc:Sublayout ID="Sublayout1" Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" runat="server"></sc:Sublayout>
+
+            <sc:sublayout id="Sublayout1" path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" runat="server"></sc:sublayout>
 
             <!-- BEGIN PARTIAL: find-helpful -->
-            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:Sublayout>
+            <sc:sublayout path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:sublayout>
             <!-- END PARTIAL: find-helpful -->
             <!-- BEGIN PARTIAL: keep-reading -->
 
-            <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
+            <sc:sublayout id="slKeepReading" runat="server" path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
             <!-- END PARTIAL: keep-reading -->
             <!-- BEGIN PARTIAL: comments-summary -->
             <section class="comments-summary">
@@ -107,7 +110,7 @@
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
             <div class="sidebar-promos rs_read_this vertical">
-                <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
+                <sc:sublayout id="sbSidebarPromo" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
             </div>
 
             <!-- end sidebar-promos -->
