@@ -29,30 +29,6 @@
                 </div>
                 <!-- end infographic-zoom -->
 
-                <%--<!-- BEGIN PARTIAL: embed-overlay -->
-                <!-- Embed Overlay Modal -->
-                <div class="modal fade" id="embed-overlay" tabindex="-1" role="dialog" aria-labelledby="embed-overlay-modal" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body embed-overlay">
-                                <div class="checklist-close" data-dismiss="modal"><i class="icon-close"></i><span>Close</span></div>
-                                <h3>Infographic Embed Tag</h3>
-                                <textarea name="" placeholder="Enter your suggestion&hellip;">
-                                    <%-- <iframe width="560" height="315" src="//www.youtube.com/embed/Z1BwhYKTv3c" frameborder="0" allowfullscreen></iframe>
-                                    <sc:FieldRenderer ID="frInfographEmbedtag" runat="server" FieldName="Body Content" />
-                                </textarea>
-                                <div class="copy-button-container">
-                                    <input type="submit" class="submit-button copy" value="Copy">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                </div>
-                <!-- /.modal -->
-                <!-- END PARTIAL: embed-overlay -->--%>
-
 <!-- BEGIN PARTIAL: embed-overlay -->
 <!-- Embed Overlay Modal -->
 <div class="modal fade" id="embed-overlay" tabindex="-1" role="dialog" aria-labelledby="embed-overlay-modal" aria-hidden="true">
@@ -80,36 +56,10 @@
             <!-- end infographic -->
             <!-- BEGIN PARTIAL: reviewed-by -->
             <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
-            <%--<p class="reviewed-by">
-                <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
-                   <%--<a href="REPLACE">Dr. Samantha Frank</a>
-                   <asp:HyperLink ID="hlReviewdby" runat="server">
-                       <sc:FieldRenderer ID="frReviewedby" runat="server" FieldName="Revierwer Name" />
-                    </asp:HyperLink>
-                </span><span class="dot"></span><span class="reviewed-by-date">
-                    <%--12&nbsp;Dec&nbsp;&apos;13
-                    <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />
-                </span>
-            </p>--%>
-            <!-- END PARTIAL: reviewed-by -->
-            <!-- BEGIN PARTIAL: find-helpful -->
-            <div class="find-this-helpful content">
-
-                <h4>Did you find this helpful?</h4>
-                <ul>
-                    <li>
-                        <button class="helpful-yes">Yes</button>
-                    </li>
-                    <li>
-                        <button class="helpful-no">No</button>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-
-            </div>
-            <!-- END PARTIAL: find-helpful -->
         </div>
     </div>
 </div>
 <!-- .container -->
+
+<sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" runat="server"></sc:Sublayout>
 

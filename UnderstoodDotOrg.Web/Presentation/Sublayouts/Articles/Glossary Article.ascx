@@ -28,32 +28,6 @@
                     </li>
                 </ul>
                 <div id="glossary-browse" id="top">
-                    <%--<a href="#A" class="active">A</a>
-                    <a href="#B">B</a>
-                    <a href="#C">C</a>
-                    <a href="#D">D</a>
-                    <a href="#E">E</a>
-                    <a href="#F">F</a>
-                    <a href="#G">G</a>
-                    <a href="#H">H</a>
-                    <a href="#I">I</a>
-                    <a href="#J">J</a>
-                    <a href="#K">K</a>
-                    <a href="#L">L</a>
-                    <a href="#M">M</a>
-                    <a href="#N">N</a>
-                    <a href="#O">O</a>
-                    <a href="#P">P</a>
-                    <a href="#Q">Q</a>
-                    <a href="#R">R</a>
-                    <a href="#S">S</a>
-                    <a href="#T">T</a>
-                    <a href="#U">U</a>
-                    <a href="#V">V</a>
-                    <a href="#W">W</a>
-                    <a href="#X">X</a>
-                    <a href="#Y">Y</a>
-                    <a href="#Z">Z</a> --%>
                     <asp:Repeater ID="rptAlphabet" runat="server" OnItemCommand="rptAlphabet_ItemCommand">
                         <ItemTemplate>
                             <asp:LinkButton ID="btnTermAnchor" runat="server" CommandName="AlphabetClick" CommandArgument="<%#Container.DataItem%>">
@@ -80,18 +54,6 @@
                              <a class="glossary-anchor" name="<%#Container.DataItem %>">
                               <%#Container.DataItem %>
                             </a>
-                                <%--<asp:LinkButton CssClass="glossary-anchor" ID="btnTermAnchor" runat="server">
-                                    <%#Container.DataItem %>
-                                </asp:LinkButton>--%>
-                            
-                            <%--<a class="glossary-anchor">
-                                <asp:LinkButton ID="btnTermAnchor" runat="server">
-                                    <%#Container.DataItem %>
-                                </asp:LinkButton>
-                            </a>
-                            <a class="glossary-anchor"><%-- name="A">A--
-                              
-                            </a>--%>
                             <a class="back-to-top" href="#top">Back to Top</a>
                         </div>
                         <asp:Repeater ID="rptListTermbyAnchor" runat="server" OnItemDataBound="rptListTermbyAnchor_ItemDataBound">
@@ -113,63 +75,12 @@
                     <FooterTemplate></FooterTemplate>
                 </asp:Repeater>
             </section>
-            <%--
-            <section class="glossary-listing">
-                <div class="glossary-container">
-                    <a class="glossary-anchor" name="A">A</a>
-                    <a class="back-to-top" href="#">Back to Top</a>
-                </div>
-                <div class="glossary-item">
-                    <h2>Academic Achievement Standards</h2>
-                    <p>Curabitur porta nunc egestas pulvinar elementum. Nam sollicitudin nibh pharetra vehicula rhoncus. Sed tristique neque a metus molestie, eget suscipit massa consequat. Morbi fringilla rhoncus felis, ac fringilla dolor elementum et. Vestibulum</p>
-                </div>
-                <div class="glossary-item">
-                    <h2>Academic Achievement Standards</h2>
-                    <p>Curabitur porta nunc egestas pulvinar elementum. Nam sollicitudin nibh pharetra vehicula rhoncus. Sed tristique neque a metus molestie, eget suscipit massa consequat. Morbi fringilla rhoncus felis, ac fringilla dolor elementum et. Vestibulum</p>
-                </div>
 
-                <div class="glossary-container">
-                    <a class="glossary-anchor" name="B">B</a>
-                    <a class="back-to-top" href="#">Back to Top</a>
-                </div>
-                <div class="glossary-item">
-                    <h2>Academic Achievement Standards</h2>
-                    <p>Curabitur porta nunc egestas pulvinar elementum. Nam sollicitudin nibh pharetra vehicula rhoncus. Sed tristique neque a metus molestie, eget suscipit massa consequat. Morbi fringilla rhoncus felis, ac fringilla dolor elementum et. Vestibulum</p>
-                </div>
-                <div class="glossary-item">
-                    <h2>Academic Achievement Standards</h2>
-                    <p>Curabitur porta nunc egestas pulvinar elementum. Nam sollicitudin nibh pharetra vehicula rhoncus. Sed tristique neque a metus molestie, eget suscipit massa consequat. Morbi fringilla rhoncus felis, ac fringilla dolor elementum et. Vestibulum</p>
-                </div>
-
-                <div class="glossary-container">
-                    <a class="glossary-anchor" name="C">C</a>
-                    <a class="back-to-top" href="#">Back to Top</a>
-                </div>
-                <div class="glossary-item">
-                    <h2>Academic Achievement Standards</h2>
-                    <p>Curabitur porta nunc egestas pulvinar elementum. Nam sollicitudin nibh pharetra vehicula rhoncus. Sed tristique neque a metus molestie, eget suscipit massa consequat. Morbi fringilla rhoncus felis, ac fringilla dolor elementum et. Vestibulum</p>
-                </div>
-                <div class="glossary-item">
-                    <h2>Academic Achievement Standards</h2>
-                    <p>Curabitur porta nunc egestas pulvinar elementum. Nam sollicitudin nibh pharetra vehicula rhoncus. Sed tristique neque a metus molestie, eget suscipit massa consequat. Morbi fringilla rhoncus felis, ac fringilla dolor elementum et. Vestibulum</p>
-                </div>
-
-            </section> --%>
 
             <!-- END PARTIAL: glossary -->
             <!-- BEGIN PARTIAL: reviewed-by -->
             <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
-            <%--<p class="reviewed-by">
-                <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
-                   <%--<a href="REPLACE">Dr. Samantha Frank</a>
-                   <asp:HyperLink ID="hlReviewdby" runat="server">
-                       <sc:FieldRenderer ID="frReviewedby" runat="server" FieldName="Revierwer Name" />
-                    </asp:HyperLink>
-                </span><span class="dot"></span><span class="reviewed-by-date">
-                    <%--12&nbsp;Dec&nbsp;&apos;13
-                    <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />
-                </span>
-            </p>--%>
+
             <!-- END PARTIAL: reviewed-by -->
             <!-- BEGIN PARTIAL: find-helpful -->
             <div class="find-this-helpful content">
@@ -197,30 +108,10 @@
             <sc:Sublayout ID="Sublayout1" Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulCountOnlySideColumn.ascx" runat="server"></sc:Sublayout>
 
             <!-- BEGIN PARTIAL: find-helpful -->
-            <div class="find-this-helpful sidebar">
-
-                <h4>Did you find this helpful?</h4>
-                <ul>
-                    <li>
-                        <button class="helpful-yes">Yes</button>
-                    </li>
-                    <li>
-                        <button class="helpful-no">No</button>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-
-            </div>
+            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:Sublayout>
             <!-- END PARTIAL: find-helpful -->
             <!-- BEGIN PARTIAL: keep-reading -->
-            <%--<div class="keep-reading">
-                <h3>Keep Reading</h3>
-                <ul>
-                    <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
-                    <li><a href="REPLACE">How to Build a Homework Plan</a></li>
-                    <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
-                </ul>
-            </div>--%>
+
             <div class="keep-reading keep-reading-lg">
                 <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
             </div>
@@ -229,31 +120,6 @@
             <div class="sidebar-promos rs_read_this vertical">
                 <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
             </div>
-            <%--<div class="sidebar-promos">
-                <div class="promo purple-dark">
-                    <a href="REPLACE">
-                        <span>Get advice</span>
-                        <i class="icon-arrow-promo"></i>
-                    </a>
-                </div>
-                <!-- end promo -->
-
-                <div class="promo purple-light">
-                    <a href="REPLACE">
-                        <span>Find Technology that can Help</span>
-                        <i class="icon-arrow-promo"></i>
-                    </a>
-                </div>
-                <!-- end promo -->
-
-                <div class="promo blue">
-                    <a href="REPLACE">
-                        <span>Navigating Your Child's Healthcare Needs</span>
-                        <i class="icon-arrow-promo"></i>
-                    </a>
-                </div>
-                <!-- end promo -->
-            </div>--%>
 
             <!-- end sidebar-promos -->
 

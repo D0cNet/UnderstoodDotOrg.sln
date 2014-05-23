@@ -99,7 +99,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             LinkField lf = item.Fields["Link"];
 
-            if (lf.TargetItem != null)
+            if (lf != null && lf.TargetItem != null)
                 return Sitecore.Resources.Media.MediaManager.GetMediaUrl(lf.TargetItem);
             else
                 return "#";

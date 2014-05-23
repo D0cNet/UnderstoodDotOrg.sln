@@ -27,16 +27,7 @@
                                 </li>
                             </ItemTemplate>
                         </asp:ListView>
-                        <%--<ul>
-    <li><a href="REPLACE">IEP Basics</a></li>
-    <li><a href="REPLACE">What is in an IEP?</a></li>
-    <li><a href="REPLACE">Who makes an IEP?</a></li>
-    <li><a href="REPLACE">What is the Parent&rsquo;s Role?</a></li>
-    <li><a href="REPLACE">IEP Basics</a></li>
-    <li><a href="REPLACE">What is in an IEP?</a></li>
-    <li><a href="REPLACE">Who makes an IEP?</a></li>
-    <li><a href="REPLACE">What is the Parent&rsquo;s Role?</a></li>
-  </ul> --%>
+
                     </div>
                     <!-- END whats-covered -->
                     <!-- END PARTIAL: whats-covered -->
@@ -59,55 +50,7 @@
                                 <div class="clearfix"></div>
                             </ItemSeparatorTemplate>
                         </asp:ListView>
-                        <%--
-                <p>
-                    Deserunt ut animi non quibusdam fugiat doloribus sed et. facilis est ipsam placeat omnis totam qui repudiandae maiores molestiae. quod voluptatibus cum minus et autem autem eveniet nam. non amet sequi unde dolorum repellendus id quos. dolores cupiditate veniam distinctio autem illum omnis cupiditate voluptates non. nam neque repellat voluptas ut ipsam corporis reiciendis dignissimos maiores sapiente quisquam sint
-   
-                    <span class="glossary-term-popover">
-                        <a href="REPLACE" class="glossary-term-link popover-link" data-popover-placement="top">glossaryTerm1</a>
-                    </span>
-                    Et sed occaecati sint. est tempora quisquam enim veniam quia quo ea illum similique. nihil consectetur ipsam consequatur facere incidunt culpa labore esse unde dolores dicta eaque velit esse. eaque ratione iure aperiam inventore aperiam quis molestiae eos sit eaque. fuga aut commodi aut nam saepe nisi est repudiandae sed omnis beatae ut. veritatis quia optio dicta blanditiis nisi qui molestiae accusantium velit sit repellat corrupti. sint iure aliquam ipsum
-                </p>
-                <p>Qui et quisquam quibusdam architecto voluptatem non voluptatem reiciendis veritatis doloremque animi vero. animi autem qui qui qui natus in natus quo. aspernatur et est perferendis qui hic odit ducimus expedita aliquid autem sequi soluta quia. necessitatibus dolores reiciendis dolorem nisi velit neque sit. hic et est ut quae laboriosam error fuga laudantium beatae nostrum quas libero quo. ullam et veniam delectus voluptas voluptatem praesentium tempora cum fugit. quidem libero incidunt ut assumenda laborum autem</p>
-                <p>Beatae voluptas aut id sint placeat voluptas veritatis est nulla maxime dolorem fugit omnis sed. excepturi temporibus qui cupiditate voluptatem ducimus sint consequatur rem praesentium inventore consectetur tempore est. quis vel a ratione odio</p>
-                <!-- BEGIN PARTIAL: quotes-layout-1 -->
-                <div class="quote-layout-1">
-                    <blockquote>"We have to expect the very best from our students and tell the truth about student performance, to prepare them for college and career."</blockquote>
-                    <img src="http://placehold.it/60x60" alt="REPLACE">
-                    <div class="quote-name">
-                        <h3>Rosemary Grifton,</h3>
-                        <p>Guidance Counselor</p>
-                    </div>
-                </div>
-                <!-- END PARTIAL: quotes-layout-1 -->
-                <p>Non aut odio enim est dolor. quibusdam in numquam aspernatur numquam sunt qui amet reiciendis harum dolores quas dolorum. earum cupiditate doloremque reiciendis quo ducimus et. et eos est praesentium eius in velit optio accusantium</p>
-                <p>Ducimus quisquam sint voluptatem repellat et temporibus dolorem est laboriosam vero voluptatem ut tenetur quo. molestiae aut aut odio facilis ratione sint. aspernatur tempora accusantium delectus voluptas incidunt nisi in qui id reiciendis autem vel. reiciendis qui harum quidem occaecati nesciunt magni occaecati fuga. voluptas molestias rerum dolores nesciunt sunt eos quam</p>
-                <!-- BEGIN PARTIAL: quotes-layout-2 -->
-                <div class="quote-layout-2">
-                    <blockquote>"We have to expect the very best from our students and tell the truth about student performance, to prepare them for college and career."</blockquote>
-                    <img src="http://placehold.it/60x60" alt="REPLACE">
-                    <div class="quote-name">
-                        <h3>Rosemary Grifton,</h3>
-                        <p>Guidance Counselor</p>
-                    </div>
-                </div>
-                <!-- END PARTIAL: quotes-layout-2 -->
-                <p>Sed praesentium ut est accusantium provident eius incidunt soluta quasi molestias porro. autem eos natus architecto eum nihil perferendis ullam et corrupti exercitationem. ullam eveniet iste maxime iure possimus reprehenderit. perferendis quia porro vitae qui et. dignissimos atque est assumenda voluptates quia accusantium consequatur magnam architecto ad voluptate eum culpa. velit assumenda aut laboriosam culpa consectetur deleniti quia</p>
-                <p>Voluptas doloribus ullam quo accusantium. dolorem facere dolorum ea est veritatis aperiam ex quidem dolorum molestiae ut. ea incidunt ut voluptas est</p>
-                <p>Aperiam amet in doloribus. ullam quisquam velit earum porro tempore vel. cupiditate qui minus autem qui porro dolorem ut consequatur nisi nostrum dolores ea pariatur corrupti. sit repudiandae nemo unde quia ut amet consectetur. sit saepe dolorem quo aliquam nihil ut dolorum doloremque unde. ut nam ut enim provident vitae ut deserunt deleniti</p>
-                <!-- BEGIN PARTIAL: quotes-layout-3 -->
-                <div class="quote-layout-3">
-                    <blockquote>"We have to expect the very best from our students and tell the truth about student performance, to prepare them for college and career."</blockquote>
-                    <img src="http://placehold.it/60x60" alt="REPLACE">
-                    <div class="quote-name">
-                        <h3>Rosemary Grifton,</h3>
-                        <p>Guidance Counselor</p>
-                    </div>
-                </div>
-                <!-- END PARTIAL: quotes-layout-3 -->
-                <p>Laboriosam est maxime quia explicabo placeat deserunt quam. vero fuga repellat nobis doloribus ut vitae eveniet earum unde quas. beatae aliquid quis voluptatum atque eaque omnis vel ut illum odio itaque ipsa iste</p>
-                <p>Dicta et voluptatem molestiae quae autem est voluptas aut quibusdam. non in ipsa reiciendis sint. id officia temporibus a. accusantium omnis blanditiis porro ullam deleniti nihil est nemo porro earum omnis nihil. corporis ut et sequi</p>
-                        --%>
+
                     </div>
                     <!-- END PARTIAL: article-copy -->
                 </div>
@@ -139,60 +82,12 @@
             <div class="rs_about_author rs_read_this">
                 <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" Visible="false" />
             </div>
-            <%--<section class="about-the-author">
-                <header>
-                    <h2>About the Author Main</h2>
-                </header>
-                <%--<img src="http://placehold.it/60x60" alt="REPLACE">
-                <asp:HyperLink ID="hlAuthorImage" runat="server">
-                    <sc:FieldRenderer ID="frAuthorImage" FieldName="Author Image" runat="server" Width="60px" Height="60px" />
-                </asp:HyperLink>
 
-                <div class="author-text">
-                    <h3><%-- Christine Flagler
-                        <!--<sc:Text ID="txAuthorName" runat="server" Field="Author Name" />-->
-                        <sc:FieldRenderer ID="frAuthorName" runat="server" FieldName="Author Name" />
-                    </h3>
-                    <p>
-                        <%--Lorem ipsum dolor sit amet, consectetuer laoreet dolore adipiscing elit, sed diam nonummy nibh euismod tincidunt ut dolore.
-                        <sc:FieldRenderer ID="frAuthorBio" runat="server" FieldName="Author Biodata" />
-                    </p>
-                    <asp:HyperLink ID="hlAuthorMorePost" runat="server" Text="More Posts by this Author">
-                    </asp:HyperLink>
-                    <%--<a href="REPLACE">More Posts by this Author</a>
-                </div>
-            </section>--%>
             <!-- END PARTIAL: about-the-author -->
             <!-- BEGIN PARTIAL: reviewed-by -->
             <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
-            <%--<p class="reviewed-by">
-                <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
-                   <%--<a href="REPLACE">Dr. Samantha Frank</a>
-                   <asp:HyperLink ID="hlReviewdby" runat="server">
-                       <sc:FieldRenderer ID="frReviewedby" runat="server" FieldName="Revierwer Name" />
-                    </asp:HyperLink>
-                </span><span class="dot"></span><span class="reviewed-by-date">
-                    <%--12&nbsp;Dec&nbsp;&apos;13
-                    <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />
-                </span>
-            </p>--%>
+
             <!-- END PARTIAL: reviewed-by -->
-            <!-- BEGIN PARTIAL: find-helpful -->
-            <div class="find-this-helpful content" id="count-helpful-content rs_read_this">
-
-                <h4>Did you find this helpful?</h4>
-                <ul>
-                    <li>
-                        <button class="helpful-yes">Yes</button>
-                    </li>
-                    <li>
-                        <button class="helpful-no">No</button>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-
-            </div>
-            <!-- END PARTIAL: find-helpful -->
             <div class="find-this-helpful-small">
                 <!-- Module within only appears in under 650px window width-->
             </div>
@@ -205,14 +100,7 @@
                     <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
                 </ul>
             </div>
-            <%--<div class="keep-reading keep-reading-mobile">
-                <h3>Keep Reading</h3>
-                <ul>
-                    <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
-                    <li><a href="REPLACE">How to Build a Homework Plan</a></li>
-                    <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
-                </ul>
-            </div>--%>
+
 
             <!-- END PARTIAL: keep-reading-mobile -->
         </div>
@@ -225,25 +113,7 @@
             <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" runat="server"></sc:Sublayout>
 
             <!-- END PARTIAL: comments-count -->
-            <div class="find-this-helpful-large">
-                <!-- Module within only appears in over 650px window width-->
-                <!-- BEGIN PARTIAL: find-helpful -->
-                <div class="find-this-helpful sidebar">
-
-                    <h4>Did you find this helpful?</h4>
-                    <ul>
-                        <li>
-                            <button class="helpful-yes">Yes</button>
-                        </li>
-                        <li>
-                            <button class="helpful-no">No</button>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
-
-                </div>
-                <!-- END PARTIAL: find-helpful -->
-            </div>
+            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:Sublayout>
             <!-- BEGIN PARTIAL: keep-reading-lg -->
             <div class="keep-reading keep-reading-lg">
                 <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
@@ -272,31 +142,7 @@
             <div class="sidebar-promos rs_read_this vertical">
                 <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
             </div>
-            <%--<div class="sidebar-promos">
-                <div class="promo purple-dark">
-                    <a href="REPLACE">
-                        <span>Get advice</span>
-                        <i class="icon-arrow-promo"></i>
-                    </a>
-                </div>
-                <!-- end promo -->
 
-                <div class="promo purple-light">
-                    <a href="REPLACE">
-                        <span>Find Technology that can Help</span>
-                        <i class="icon-arrow-promo"></i>
-                    </a>
-                </div>
-                <!-- end promo -->
-
-                <div class="promo blue">
-                    <a href="REPLACE">
-                        <span>Navigating Your Child's Healthcare Needs</span>
-                        <i class="icon-arrow-promo"></i>
-                    </a>
-                </div>
-                <!-- end promo -->
-            </div> --%>
             <!-- end sidebar-promos -->
 
             <!-- END PARTIAL: sidebar-promos -->

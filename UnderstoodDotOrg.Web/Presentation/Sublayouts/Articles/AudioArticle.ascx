@@ -64,27 +64,14 @@
 
             <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
 
-            <!-- BEGIN PARTIAL: find-helpful -->
-            <div class="find-this-helpful persist">
-                <hr>
-                <h4>Did you find this helpful?</h4>
-                <ul>
-                    <li>
-                        <button class="helpful-yes">Yes</button>
-                    </li>
-                    <li>
-                        <button class="helpful-no">No</button>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-                <hr>
-            </div>
             <!-- END PARTIAL: find-helpful -->
         </div>
     </div>
     <!-- .row -->
 </div>
 <!-- .container -->
+
+<sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" runat="server"></sc:Sublayout>
 
 
 

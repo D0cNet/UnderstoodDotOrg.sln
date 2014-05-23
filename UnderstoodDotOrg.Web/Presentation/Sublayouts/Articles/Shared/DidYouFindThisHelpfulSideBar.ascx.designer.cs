@@ -7,27 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
     
     
-    public partial class Articles_Landing_Page {
+    public partial class DidYouFindThisHelpfulSideBar {
         
         /// <summary>
-        /// rptFeaturedArticles control.
+        /// ltlDidYouFindThisHelpful control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptFeaturedArticles;
+        protected global::System.Web.UI.WebControls.Literal ltlDidYouFindThisHelpful;
         
         /// <summary>
-        /// SBReviewedBy control.
+        /// ltlYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout SBReviewedBy;
+        protected global::System.Web.UI.WebControls.Literal ltlYes;
+        
+        /// <summary>
+        /// ltlNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltlNo;
     }
 }

@@ -74,20 +74,7 @@
             <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulCountOnlySideColumn.ascx" runat="server"></sc:Sublayout>
 
             <!-- BEGIN PARTIAL: find-helpful -->
-            <div class="find-this-helpful sidebar">
-
-                <h4>Did you find this helpful?</h4>
-                <ul>
-                    <li>
-                        <button class="helpful-yes">Yes</button>
-                    </li>
-                    <li>
-                        <button class="helpful-no">No</button>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-
-            </div>
+            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:Sublayout>
             <!-- END PARTIAL: find-helpful -->
             <!-- BEGIN PARTIAL: keep-reading -->
             <div class="keep-reading">

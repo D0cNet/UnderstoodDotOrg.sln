@@ -32,22 +32,8 @@
             <!-- BEGIN PARTIAL: reviewed-by -->
             <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false"/>
             <!-- END PARTIAL: reviewed-by -->
-            <!-- BEGIN PARTIAL: find-helpful -->
-            <div class="find-this-helpful content" id="count-helpful-content rs_read_this">
-
-                <h4><asp:Literal ID="ltlDidYouFindThisHelpful" runat="server"></asp:Literal></h4>
-                <ul>
-                    <li>
-                        <button class="button yes rs_skip"><asp:Literal ID="ltlYes" runat="server"></asp:Literal></button>
-                    </li>
-                    <li>
-                        <button class="button no gray rs_skip"><asp:Literal ID="ltlNo" runat="server"></asp:Literal></button>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-
-            </div>
-            <!-- END PARTIAL: find-helpful -->
         </div>
     </div>
 </div>
+
+<sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" runat="server"></sc:Sublayout>
