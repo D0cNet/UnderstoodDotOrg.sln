@@ -1,6 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Forgot_Password.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Forgot_Password" %>
-<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Forgot Password.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Forgot_Password1" %>
 <asp:MultiView ID="uxView" runat="server" ActiveViewIndex="0">
     <asp:View ID="uxForgotPassword" runat="server">
         <!-- BEGIN PARTIAL: forgot-password -->
@@ -60,7 +58,3 @@
         <!-- END PARTIAL: forgot-password-confirmation -->
     </asp:View>
 </asp:MultiView>
-
-
-
-

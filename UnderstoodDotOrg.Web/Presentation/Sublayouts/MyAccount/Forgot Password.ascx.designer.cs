@@ -10,7 +10,7 @@
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
     
     
-    public partial class Forgot_Password {
+    public partial class Forgot_Password1 {
         
         /// <summary>
         /// uxView control.

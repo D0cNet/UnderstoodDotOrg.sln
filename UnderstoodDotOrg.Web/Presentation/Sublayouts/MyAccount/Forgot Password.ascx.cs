@@ -7,7 +7,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
-    public partial class Forgot_Password : System.Web.UI.UserControl
+    public partial class Forgot_Password1 : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
