@@ -29,19 +29,20 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages {
         {
             IEnumerable<DefaultArticlePageItem> results = Enumerable.Empty<DefaultArticlePageItem>();
             int totalResults = 0;
+            int offset = (page - 1) * Constants.TOPIC_LISTING_ARTICLES_PER_PAGE;
 
             var curated = CuratedFeaturedcontent.ListItems;
             if (curated.Any())
             {
                 totalResults = curated.Count;
                 results = curated
-                            .Skip(page - 1)
+                            .Skip(offset)
                             .Take(Constants.TOPIC_LISTING_ARTICLES_PER_PAGE)
                             .Select(i => new DefaultArticlePageItem(i));
             }
             else
             {
-                // TODO: refactor so all results are Article type to avoid null check
+                // TODO: Research way to retrieve media thumbnail without having to check for null item
                 List<Article> articles = SearchHelper.GetMostRecentArticlesWithin(InnerItem.ID, page, Constants.TOPIC_LISTING_ARTICLES_PER_PAGE, out totalResults);
                 results = from a in articles
                           let i = a.GetItem()

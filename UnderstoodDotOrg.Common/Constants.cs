@@ -484,6 +484,7 @@ namespace UnderstoodDotOrg.Common
             public static string BehaviorSearchResultsEndpoint = "BehaviorSearchResultsEndpoint";
             public static string BehaviorSuggestionEndpoint = "BehaviorSuggestionEndpoint";
             public static string CincopaApiEndpoint = "CincopaApiEndpoint";
+            public static string TopicArticlesEndpoint = "TopicArticlesEndpoint";
         }
 
         public static class ContentItem

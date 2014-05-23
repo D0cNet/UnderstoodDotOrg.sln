@@ -346,7 +346,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 if (page > 1)
                 {
-                    query = query.Skip(page - 1);
+                    query = query.Skip((page - 1) * numEntries);
                 }
 
                 results = query.Take(numEntries).ToList();

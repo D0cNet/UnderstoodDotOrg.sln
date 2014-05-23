@@ -67,8 +67,7 @@
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\Libraries\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Newtonsoft.Json">
       <HintPath>..\Libraries\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -162,6 +161,20 @@
     </Compile>
     <Compile Include="Presentation\AjaxData\GetArticles.aspx.designer.cs">
       <DependentUpon>GetArticles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\SubtopicArticles.aspx.cs">
+      <DependentUpon>SubtopicArticles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\SubtopicArticles.aspx.designer.cs">
+      <DependentUpon>SubtopicArticles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\TopicLandingArticles.aspx.cs">
+      <DependentUpon>TopicLandingArticles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\TopicLandingArticles.aspx.designer.cs">
+      <DependentUpon>TopicLandingArticles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\AjaxData\WelcomeTour.aspx.cs">
       <DependentUpon>WelcomeTour.aspx</DependentUpon>
@@ -624,6 +637,20 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx.designer.cs">
       <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ArticleListings\ArticleEntry.ascx.cs">
+      <DependentUpon>ArticleEntry.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ArticleListings\ArticleEntry.ascx.designer.cs">
+      <DependentUpon>ArticleEntry.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ArticleListings\TopicLandingArticles.ascx.cs">
+      <DependentUpon>TopicLandingArticles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ArticleListings\TopicLandingArticles.ascx.designer.cs">
+      <DependentUpon>TopicLandingArticles.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\CommunityHeader.ascx.cs">
       <DependentUpon>CommunityHeader.ascx</DependentUpon>
@@ -1803,6 +1830,8 @@
     <Content Include="Presentation\AjaxData\ArchiveEvents.aspx" />
     <Content Include="Presentation\AjaxData\ExpertListing.aspx" />
     <Content Include="Presentation\AjaxData\GetArticles.aspx" />
+    <Content Include="Presentation\AjaxData\SubtopicArticles.aspx" />
+    <Content Include="Presentation\AjaxData\TopicLandingArticles.aspx" />
     <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />
     <Content Include="Presentation\Includes\css\about-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\about.css" />
@@ -2364,6 +2393,8 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\ArticleListings\ArticleEntry.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\ArticleListings\TopicLandingArticles.ascx" />
     <Content Include="Presentation\Sublayouts\Common\CommunityHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsAuthorPage.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostRecentWidget.ascx" />

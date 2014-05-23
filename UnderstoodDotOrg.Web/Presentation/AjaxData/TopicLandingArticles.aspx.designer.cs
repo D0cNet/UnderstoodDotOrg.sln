@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
+namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
     
     
-    public partial class ArticleListing {
+    public partial class TopicLandingArticles {
         
         /// <summary>
         /// articleListing control.
@@ -22,12 +22,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
         protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ArticleListings.TopicLandingArticles articleListing;
         
         /// <summary>
-        /// pnlMoreArticle control.
+        /// hfMoreResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlMoreArticle;
+        protected global::System.Web.UI.WebControls.HiddenField hfMoreResults;
     }
 }

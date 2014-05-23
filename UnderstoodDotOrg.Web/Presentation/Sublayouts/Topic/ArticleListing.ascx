@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ArticleListing.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic.ArticleListing" %>
+<%@ Register TagPrefix="udo" TagName="ArticleListing" Src="~/Presentation/Sublayouts/Common/ArticleListings/TopicLandingArticles.ascx" %>
 
 <!-- BEGIN PARTIAL: children-key -->
 <div class="container child-content-indicator first">
@@ -24,46 +25,22 @@
 <!-- END PARTIAL: children-key -->
 
 <!-- BEGIN MODULE: Article Listing -->
-<asp:ListView ID="lvArticles" GroupItemCount="2" runat="server">
-    <LayoutTemplate>
-        <div class="container article-listing-container article-listing">
-            <asp:PlaceHolder ID="groupPlaceholder" runat="server" />
-        </div>
-    </LayoutTemplate>
-    <GroupTemplate>
-        <div class="row listing-row">
-            <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
-        </div>
-    </GroupTemplate>
-    <ItemTemplate>
-        <div class="col col-11 offset-1">
-          <div class="article skiplink-content rs_read_this" aria-role="main">
-              <asp:HyperLink ID="hlThumbnail" runat="server"><asp:Image ID="imgThumbnail" runat="server" /></asp:HyperLink>
-              <div class="article-title-container">
-                  <h3><asp:HyperLink ID="hlTitle" runat="server"></asp:HyperLink></h3>
-                  <div class="children">
-                    <i class="child-a" title="CHILD NAME HERE"></i><i class="child-b" title="CHILD NAME HERE"></i><i class="child-c" title="CHILD NAME HERE"></i><i class="child-e" title="CHILD NAME HERE"></i>
-                  </div>
-              </div>
-          </div>
-        </div>
-    </ItemTemplate>
-</asp:ListView>
+<div id="topic-articles-results" class="container article-listing-container article-listing">
+
+    <udo:ArticleListing ID="articleListing" runat="server" /> 
+
+</div>
 <!-- .container -->
 
 <!-- END MODULE: Article Listing -->
 
 <!-- BEGIN MODULE: More Articles -->
-<asp:Panel ID="pnlMoreArticle" runat="server" ClientIDMode="Static" CssClass="container show-more" Visible="false">
+<asp:Panel ID="pnlMoreArticle" runat="server" CssClass="container show-more" Visible="false">
     <div class="row">
         <div class="col col-24">
-            <a href="REPLACE" class="show-more-link" data-path="articles/g3" data-container="article-listing" data-item="article" data-count="6">More Articles<i class="icon-arrow-down-blue"></i></a>
+            <a href="#" class="topic-articles-show-more-link" data-path="<%= AjaxEndpoint %>" data-container="topic-articles-results" data-topic="<%= Model.ID.ToString() %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
         </div>
     </div>
 </asp:Panel>
 <!-- .show-more -->
-
-<!-- END MODULE: More Articles -->
-<asp:HiddenField runat="server" ID="hfResultsPerClick" ClientIDMode="Static" />
-<asp:HiddenField runat="server" ID="hfGUID" ClientIDMode="Static" />
 
