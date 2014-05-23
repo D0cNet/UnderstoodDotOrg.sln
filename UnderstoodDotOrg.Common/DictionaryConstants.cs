@@ -607,6 +607,14 @@ namespace UnderstoodDotOrg.Common
 
         #endregion
 
+        public static string EmailException
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Email Exception");
+            }
+        }
+
         public static string SocialSharingFacebook
         {
             get

@@ -36,7 +36,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     litSuccessStory.Text = currentItem.SuccessMessage.Rendered.Replace("$email$", email);
                     
                     var passwordReset = Sitecore.Configuration.Factory.GetDatabase("master").GetItem("{328F5121-EFF8-441B-AFB6-A3DF41F7BFA4}");
-                    var link = string.Format("{0}?guid={1}", Sitecore.Links.LinkManager.GetItemUrl(passwordReset), user.ProviderUserKey.ToString());
+                    var link = string.Format(Request.Url.Host + "{0}?guid={1}", Sitecore.Links.LinkManager.GetItemUrl(passwordReset), user.ProviderUserKey.ToString());
 
                     BaseReply reply = ExactTargetService.InvokeEM22ForgotPassword(new InvokeEM22ForgotPasswordRequest { PasswordResetLink = link, ToEmail = email, UserName = user.UserName });
                 }
@@ -48,7 +48,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             }
             catch (Exception ex)
             {
-                litErrorMessage.Text = ex.Message;
+                litErrorMessage.Visible = true;
+                litErrorMessage.Text = DictionaryConstants.EmailException;
             }
         }
 
