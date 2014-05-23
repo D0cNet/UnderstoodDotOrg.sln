@@ -15,6 +15,7 @@ namespace UnderstoodDotOrg.Common
         public const int DEFAULT_NEW_LIST_COUNT_PER_CLICK = 6;
         public const int TOPIC_LISTING_ARTICLES_PER_PAGE = 6;
         public const int SECTION_LANDING_ARTICLES_PER_ROW = 3;
+        public const int SUBTOPIC_LISTING_ARTICLES_PER_PAGE = 9;
 
         #region Query Strings
 
@@ -485,6 +486,7 @@ namespace UnderstoodDotOrg.Common
             public static string BehaviorSuggestionEndpoint = "BehaviorSuggestionEndpoint";
             public static string CincopaApiEndpoint = "CincopaApiEndpoint";
             public static string TopicArticlesEndpoint = "TopicArticlesEndpoint";
+            public static string SubtopicArticlesEndpoint = "SubtopicArticlesEndpoint";
         }
 
         public static class ContentItem

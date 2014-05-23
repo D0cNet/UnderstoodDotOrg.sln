@@ -13,12 +13,21 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
     public partial class SubtopicArticles {
         
         /// <summary>
-        /// hfMoreResults control.
+        /// articleListing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfMoreResults;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ArticleListings.SubtopicLandingArticles articleListing;
+        
+        /// <summary>
+        /// phMoreResults control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phMoreResults;
     }
 }

@@ -2,4 +2,4 @@
 <%@ Register TagPrefix="udo" TagName="ArticleListing" Src="~/Presentation/Sublayouts/Common/ArticleListings/TopicLandingArticles.ascx" %>
 
 <udo:ArticleListing ID="articleListing" runat="server" />
-<asp:HiddenField id="hfMoreResults" runat="server" Visible="false" />      
+<asp:Placeholder id="phMoreResults" runat="server"><input type="hidden" /></asp:Placeholder>    

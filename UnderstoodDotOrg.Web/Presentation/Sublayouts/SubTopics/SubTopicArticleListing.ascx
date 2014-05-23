@@ -1,22 +1,17 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SubTopicArticleListing.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.SubTopics.SubTopicArticleListing" %>
+<%@ Register TagPrefix="udo" TagName="ArticleListing" Src="~/Presentation/Sublayouts/Common/ArticleListings/SubtopicLandingArticles.ascx" %>
 
 <div class="col col-15 offset-1" aria-live="polite" aria-relevant="additions removals">
+    <div id="subtopic-article-listings" class="article-listing">
+        <udo:ArticleListing ID="articleListing" runat="server" />
+    </div>
 
-    <asp:Repeater ID="rptArticles" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems.DefaultArticlePageItem">
-        <HeaderTemplate>
-            <div class="article-listing">
-        </HeaderTemplate>
-        <ItemTemplate>
-                <sc:Sublayout id="sbArticleEntry" Cacheable="true" runat="server" Path="~/Presentation/Sublayouts/Common/ArticleListings/ArticleEntry.ascx" /> 
-        </ItemTemplate>
-        <FooterTemplate>
+    <asp:Panel ID="pnlShowMore" runat="server" CssClass="container show-more rs_skip">
+        <div class="row">
+            <div class="col col-24">
+                <a href="#" class="topic-subtopic-articles-show-more-link" data-path="<%= AjaxEndpoint %>" data-container="subtopic-article-listings" data-item="article" data-topic="<%= Model.ID.ToString() %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
             </div>
-        </FooterTemplate>
-    </asp:Repeater>
-
-
-    <asp:Panel ID="pnlShowMore" runat="server" CssClass="show-more">
-        <a href="REPLACE" class="show-more-link" data-path="articles/g4" data-container="article-listing" data-item="article" data-count="6">More Articles<i class="icon-arrow-down-blue"></i></a>
+        </div>
     </asp:Panel>
 
  </div>

@@ -34,7 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
                     TopicLandingPageItem topicItem = item;
                     bool hasMoreResults;
                     articleListing.Articles = topicItem.GetTopicArticles(page, out hasMoreResults);
-                    hfMoreResults.Visible = hasMoreResults;
+                    phMoreResults.Visible = hasMoreResults;
                 }
             }
             else

@@ -645,6 +645,13 @@
     <Compile Include="Presentation\Sublayouts\Common\ArticleListings\ArticleEntry.ascx.designer.cs">
       <DependentUpon>ArticleEntry.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ArticleListings\SubtopicLandingArticles.ascx.cs">
+      <DependentUpon>SubtopicLandingArticles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ArticleListings\SubtopicLandingArticles.ascx.designer.cs">
+      <DependentUpon>SubtopicLandingArticles.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\ArticleListings\TopicLandingArticles.ascx.cs">
       <DependentUpon>TopicLandingArticles.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2394,6 +2401,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ArticleListings\ArticleEntry.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\ArticleListings\SubtopicLandingArticles.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ArticleListings\TopicLandingArticles.ascx" />
     <Content Include="Presentation\Sublayouts\Common\CommunityHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsAuthorPage.ascx" />

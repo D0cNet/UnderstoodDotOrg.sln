@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ArticleListings {
     
     
-    public partial class TopicLandingArticles {
+    public partial class SubtopicLandingArticles {
         
         /// <summary>
-        /// articleListing control.
+        /// rptArticles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ArticleListings.TopicLandingArticles articleListing;
-        
-        /// <summary>
-        /// phMoreResults control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phMoreResults;
+        protected global::System.Web.UI.WebControls.Repeater rptArticles;
     }
 }

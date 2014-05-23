@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SubtopicArticles.aspx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.AjaxData.SubtopicArticles" %>
+<%@ Register TagPrefix="udo" TagName="ArticleListing" Src="~/Presentation/Sublayouts/Common/ArticleListings/SubtopicLandingArticles.ascx" %>
 
-<sc:Sublayout id="sbArticleEntry" Cacheable="true" runat="server" Path="~/Presentation/Sublayouts/Common/ArticleListings/ArticleEntry.ascx" />
-<asp:HiddenField id="hfMoreResults" runat="server" Visible="false" />      
+<udo:ArticleListing ID="articleListing" runat="server" />
+<asp:Placeholder id="phMoreResults" runat="server"><input type="hidden" /></asp:Placeholder>

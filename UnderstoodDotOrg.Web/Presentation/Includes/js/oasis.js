@@ -67,11 +67,11 @@ jQuery(function () {
 	});
 })(jQuery);
 
-// Topic Landing Page Articles
+// Topic/Subtopic Landing Page Articles
 (function($) {
 	var currentPage = 1;
 	var inProgress = false;
-	var $trigger = $(".topic-articles-show-more-link");
+	var $trigger = $(".topic-subtopic-articles-show-more-link");
 	var $container, $showMoreContainer, path, topic;
 	
 	function init() {
