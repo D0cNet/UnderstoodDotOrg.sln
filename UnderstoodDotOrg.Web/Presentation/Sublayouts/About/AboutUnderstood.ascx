@@ -164,133 +164,36 @@
                     <p>
                         <%--inventore rem nisi qui sit rerum minima culpa quia ratione vel facilis quis qui quisquam.--%>
                         <sc:FieldRenderer ID="frPartnerListSummary" runat="server" FieldName="Partner List Summary" />
-                        <%--<a href="REPLACE">Read&nbsp;more</a> --%>
-                        <asp:HyperLink ID="hlPartnersListPage" runat="server" Text="Read more"></asp:HyperLink>
-
                     </p>
                 </header>
-                <div class="founding-carousel-outer">
-                    <div class="founding-slides-wrapper arrows-gray">
-                        <div class="row">
-                            <asp:Repeater ID="rptPartnerList" runat="server" OnItemDataBound="rptPartnerList_ItemDataBound">
-                                <ItemTemplate>
-                                    <div class="col col-4">
-                                        <ul>
-                                            <li>
-                                                <asp:HyperLink ID="hlPartnerLogo" runat="server">
-                                                    <sc:FieldRenderer ID="frPartnerLogo" runat="server" FieldName="Logo" />
-                                                </asp:HyperLink>
-                                                <%-- <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a> --%>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </ItemTemplate>
-                            </asp:Repeater>
 
-                            <%-- <div class="col col-4">
+                <asp:Repeater ID="rptPartnerList" runat="server">
+                    <HeaderTemplate>
+                        <div class="founding-carousel-outer-rs-wrapper">
+                            <div class="founding-carousel-outer">
+                                <div class="founding-slides-wrapper arrows-gray">
+                                <div class="row">
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <div class="col col-4">
+                            <ul>
                                 <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
+                                    <asp:HyperLink ID="hlPartnerLogo" runat="server">
+                                        <sc:FieldRenderer ID="frPartnerLogo" runat="server" FieldName="Logo" Parameters="mw=150&mh=89" />
+                                    </asp:HyperLink>
                                 </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>
-                            <div class="col col-4">
-                                <li>
-                                    <a href="REPLACE">
-                                        <img alt="150x89 Placeholder" src="http://placehold.it/150x89" /></a>
-                                </li>
-                            </div>--%>
+                            </ul>
                         </div>
-                        <!-- end row -->
-                    </div>
-                    <!-- end founding-slides-wrapper -->
-                </div>
-                <!-- end founding-carousel-outer -->
-            </div>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </FooterTemplate>
+                </asp:Repeater>
+
+            </div>        
             <!-- end founding-container -->
             <!-- END PARTIAL: founding-carousel -->
         </div>

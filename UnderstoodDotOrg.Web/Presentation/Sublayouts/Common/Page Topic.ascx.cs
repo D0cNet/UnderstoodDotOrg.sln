@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using Sitecore.Data.Items;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -23,14 +24,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
         private void BindContent()
         {
-            if (Sitecore.Context.Item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
-            {
-                PopulateArticleInfo();
-            }
-            else if (Sitecore.Context.Item.InheritsTemplate(BehaviorAdvicePageItem.TemplateId)
+            if (Sitecore.Context.Item.InheritsTemplate(BehaviorAdvicePageItem.TemplateId)
                     || Sitecore.Context.Item.TemplateID == Sitecore.Data.ID.Parse(BehaviorToolsResultsPageItem.TemplateId))
             {
                 PopulateBehaviorInfo();
+            }
+            else
+            {
+                PopulateArticleInfo();
             }
         }
 
@@ -38,18 +39,26 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             phAuthorInfo.Visible = false;
 
-            DefaultArticlePageItem ObjDefArticle = (DefaultArticlePageItem)Sitecore.Context.Item;
-            if (ObjDefArticle.AuthorName.Item != null)
+            if (Sitecore.Context.Item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
             {
-                frAuthorName.Item = ObjDefArticle.AuthorName.Item;
-                hlAuthorName.NavigateUrl = ObjDefArticle.AuthorName.Item.GetUrl();
-                hlAuthorName.Text = ObjDefArticle.AuthorName.Item.Name;
-                phAuthorInfo.Visible = true;
+                DefaultArticlePageItem article = Sitecore.Context.Item;
+
+                if (article.AuthorName.Item != null)
+                {
+                    frAuthorName.Item = article.AuthorName.Item;
+                    hlAuthorName.NavigateUrl = article.AuthorName.Item.GetUrl();
+                    hlAuthorName.Text = article.AuthorName.Item.Name;
+                    phAuthorInfo.Visible = true;
+                }
             }
 
             // TODO: refactor to handle folder parent items
             ContentPageItem parent = Sitecore.Context.Item.Parent;
-            if (parent != null)
+            if (parent == null || parent.InnerItem.IsOfType(FolderItem.TemplateId))
+            {
+                hlSectionTitle.Visible = false;
+            }
+            else
             {
                 frSectionTitle.Item = parent;
                 hlSectionTitle.NavigateUrl = parent.GetUrl();
