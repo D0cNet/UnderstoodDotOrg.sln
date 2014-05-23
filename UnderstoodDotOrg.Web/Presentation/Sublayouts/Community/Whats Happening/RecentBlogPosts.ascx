@@ -8,7 +8,7 @@
                 <div class="arrows blogs next-prev-menu arrows">
 
                     <a class="view-all" href="REPLACE">See all blogs</a>
-
+                    
                     <div class="rsArrow rsArrowLeft">
                         <button class="rsArrowIcn"></button>
                     </div>
