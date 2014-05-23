@@ -1,18 +1,20 @@
-﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
-{
-    using System;
-    using System.Web.UI.WebControls;
-    using UnderstoodDotOrg.Common;
-    using UnderstoodDotOrg.Domain.Membership;
-    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+﻿using System;
+using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
+{
     public partial class Forgot_Password : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             uxSubmit.Text = DictionaryConstants.SubmitButtonText;
             uxCancel.Text = DictionaryConstants.CancelButtonText;
-
+            litErrorMessage.Visible = false;
+            litErrorMessage.Text = DictionaryConstants.EmailAddressErrorMessage;
             uxEmailAddress.Attributes["placeholder"] = DictionaryConstants.EnterEmailAddressWatermark;
         }
 
@@ -39,12 +41,14 @@
             else
             {
                 //user does not exist
+                litErrorMessage.Visible = true;
             }
         }
 
         protected void uxCancel_Click(object sender, EventArgs e)
         {
-            //no clue what to do here
+            var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.SignIn);
+            Response.Redirect(Sitecore.Links.LinkManager.GetItemUrl(item));
         }
     }
 }
