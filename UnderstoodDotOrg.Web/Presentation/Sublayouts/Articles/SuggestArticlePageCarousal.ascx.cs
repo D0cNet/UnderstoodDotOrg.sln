@@ -33,7 +33,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             }
             if (ObjDefaultArticle != null)
             {
-                if (ObjDefaultArticle.HideRelatedActiveLinks.Checked == false && ObjDefaultArticle.RelatedLink.ListItems.Count()>0) // Show Articles
+                if (ObjDefaultArticle.HideRelatedActiveLinks.Checked == false) // Show Articles
                 {
                     //Get list of selected item
                     FinalRelatedArticles = GetRelatedLinks(ObjDefaultArticle);

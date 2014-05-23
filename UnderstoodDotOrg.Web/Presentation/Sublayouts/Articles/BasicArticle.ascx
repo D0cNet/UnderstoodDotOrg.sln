@@ -251,7 +251,7 @@
             <!-- end key-takeaways -->
             <!-- END PARTIAL: key-takeaways -->
             <!-- BEGIN PARTIAL: about-the-author -->
-            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" Visible="false" />
+            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" Visible="false" />            
             <%--<section class="about-the-author">
                 <header>
                     <h2>About the Author Main</h2>
