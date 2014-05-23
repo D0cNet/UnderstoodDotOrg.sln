@@ -252,7 +252,7 @@
 
                 if (gender != null)
                 {
-                    gender.Text = g[e.Item.DataItemIndex];
+                    gender.Text = item.Gender;
                 }
 
                 if (evaluatedStatus != null)

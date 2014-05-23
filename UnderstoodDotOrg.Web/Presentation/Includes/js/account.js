@@ -648,7 +648,7 @@
         $.uniform.restore($($questionWrapper).find('select'));
         this.$childQuestion = $questionWrapper.html();
         $($questionWrapper).find('select').uniform({ selectAutoWidth: false });
-        $('.add-more-children').click(this.copyChildForm);
+        $('.add-more-children').click(this.showNextKid);
       }
 
       // For all toggle buttons.
@@ -788,7 +788,15 @@
 
       return false;
     };
-
+    var kidCount = 1;
+    this.showNextKid = function () {
+       $(".profile-questions-child-wrapper").eq(kidCount).removeClass("hidden");
+       kidCount++;
+        // Increment count and adjust wording on question.
+       self.childCount++;
+       $('.child-count-question span').html(self.numberAdjectives[self.childCount]);
+       return false;
+    }
     /**
      * Hide .info-link popover containers when
      */

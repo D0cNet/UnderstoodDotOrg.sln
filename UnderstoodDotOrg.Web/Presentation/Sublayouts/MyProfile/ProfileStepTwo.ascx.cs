@@ -174,7 +174,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 {
                     registeringUser.Children.ElementAt(index).EvaluationStatus = new Guid(Constants.ChildEvaluation.StatusEvaluationInProgress );  
                 }
-                if (this.registeringUser.Children.Where(x => x.Issues.Count == 0).Count() > 1)
+                if (this.registeringUser.Children.Where(x => x.Issues.Count == 0).Count() > 0)
                 {
                     redirect = MembershipHelper.GetNextStepURL(2);
                     //children.RemoveAt(0);
