@@ -23,73 +23,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
 
         DefaultArticlePageItem ObjDefaultArticle;
-        AudioArticlePageItem ObjAudioArticle;
-        ChecklistArticlePageItem ObjChecklistArticle;
-        SimpleExpertArticleItem ObjSimpleExpertArticle;
-        SlideshowArticlePageItem ObjSlideShowArticle;
-        VideoArticlePageItem ObjVideoArticle;
-        BasicArticlePageItem ObjBasicArticle;
-        TextOnlyTipsArticlePageItem ObjTextTipsArticle;
-        TakeActionPageItem ObjTakeActionPage;
         IEnumerable<DefaultArticlePageItem> FinalRelatedArticles = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             //ObjDefaultArticle = new DefaultArticlePageItem(Sitecore.Context.Item);
-            if (Sitecore.Context.Item.TemplateID.ToString() == AudioArticlePageItem.TemplateId.ToString())
+            if (Sitecore.Context.Item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
             {
-                ObjAudioArticle = new AudioArticlePageItem(Sitecore.Context.Item);
-                ObjDefaultArticle = ObjAudioArticle.DefaultArticlePage;
-            }
-            if (Sitecore.Context.Item.TemplateID.ToString() == TextOnlyTipsArticlePageItem.TemplateId.ToString())
-            {
-                ObjTextTipsArticle = new TextOnlyTipsArticlePageItem(Sitecore.Context.Item);
-                ObjDefaultArticle = ObjTextTipsArticle.DefaultArticlePage;
-            }
-
-            if (Sitecore.Context.Item.TemplateID.ToString() == VideoArticlePageItem.TemplateId.ToString())
-            {
-                ObjVideoArticle = new VideoArticlePageItem(Sitecore.Context.Item);
-                ObjDefaultArticle = ObjVideoArticle.DefaultArticlePage;
-            }
-
-            if (Sitecore.Context.Item.TemplateID.ToString() == ChecklistArticlePageItem.TemplateId.ToString())
-            {
-                ObjChecklistArticle = new ChecklistArticlePageItem(Sitecore.Context.Item);
-                ObjDefaultArticle = ObjChecklistArticle.DefaultArticlePage;
-            }
-
-            if (Sitecore.Context.Item.TemplateID.ToString() == SimpleExpertArticleItem.TemplateId.ToString())
-            {
-                ObjSimpleExpertArticle = new SimpleExpertArticleItem(Sitecore.Context.Item);
-                ObjDefaultArticle = ObjSimpleExpertArticle.DefaultArticlePage;
-            }
-
-            if (Sitecore.Context.Item.TemplateID.ToString() == SlideshowArticlePageItem.TemplateId.ToString())
-            {
-                ObjSlideShowArticle = new SlideshowArticlePageItem(Sitecore.Context.Item);
-                ObjDefaultArticle = ObjSlideShowArticle.DefaultArticlePage;
-            }
-
-            if (Sitecore.Context.Item.TemplateID.ToString() == BasicArticlePageItem.TemplateId.ToString())
-            {
-                ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
-                ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;
-            }
-            if (Sitecore.Context.Item.TemplateID.ToString() == TakeActionPageItem.TemplateId.ToString())
-            {
-                ObjTakeActionPage = new TakeActionPageItem(Sitecore.Context.Item);
-                ObjDefaultArticle = null;
-                if (ObjTakeActionPage.HideRelatedActiveLinks.Checked == false) // Show Articles
-                {
-                    //Get list of selected item
-                    FinalRelatedArticles = GetRelatedLinks(ObjTakeActionPage);
-                    if (FinalRelatedArticles != null)
-                    {
-                        rptMoreArticle.DataSource = FinalRelatedArticles;
-                        rptMoreArticle.DataBind();
-                    }
-
-                }
+                ObjDefaultArticle = new DefaultArticlePageItem(Sitecore.Context.Item);
             }
             if (ObjDefaultArticle != null)
             {
@@ -187,48 +127,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             return FinalArticles;
         }
-        //private System.Collections.Generic.IEnumerable<Item> GetRelatedItemsList(DefaultArticlePageItem ObjDefaultArt)
-        //{
-        //    System.Collections.Generic.IEnumerable<Item> ActualRelatedLinks = null;
-        //    // if (ObjDefaultArt.HideRelatedActiveLinks.Checked == false)
-        //    //{
-        //    if (ObjDefaultArt.RelatedLink.ListItems.ToList().Count >= 1) // Are Articles selected? Show first six if selected
-        //    {
-        //        System.Collections.Generic.IEnumerable<Item> AllRelatedLinks = ObjDefaultArt.RelatedLink.ListItems;
-        //        ActualRelatedLinks = from art in AllRelatedLinks
-        //                             where (art.InheritsTemplate(DefaultArticlePageItem.TemplateId))
-        //                             select art;
-        //        if (ActualRelatedLinks != null)
-        //        {
-        //            if (ActualRelatedLinks.Count() > 6)
-        //            {
-        //                ActualRelatedLinks = ActualRelatedLinks.Take(6);
-        //            }
-
-        //        }
-        //    }
-        //    else // Show random six articles
-        //    {
-        //        var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-        //        using (var context = index.CreateSearchContext())
-        //        {
-        //            var RandomRelatedLink = (System.Collections.Generic.IEnumerable<Item>)context.GetQueryable<SearchResultItem>()
-        //                 .Where(i => i.GetItem().InheritsTemplate(DefaultArticlePageItem.TemplateId));
-        //            //ActualRelatedLinks = (System.Collections.Generic.IEnumerable<Item>)RandomRelatedLink;
-        //            ActualRelatedLinks = RandomRelatedLink;
-        //            if (ActualRelatedLinks != null)
-        //            {
-        //                if (ActualRelatedLinks.Count() > 6)
-        //                {
-        //                    ActualRelatedLinks = ActualRelatedLinks.Take(6);
-        //                }
-
-        //            }
-        //        }
-        //        // }
-        //    }
-        //    return ActualRelatedLinks;
-        //}
 
         protected void rptMoreArticle_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
@@ -252,13 +150,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     if (frLinkImage != null)
                     {
                         frLinkImage.Item = RelatedLink.InnerItem;
-
                     }
                 }
-
             }
-
-
         }
 
     }
