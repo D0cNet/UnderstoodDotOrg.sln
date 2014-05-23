@@ -14,6 +14,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Common;
 
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
@@ -24,6 +25,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         // System.Collections.Generic.List<DefaultArticlePageItem> FinalRelatedArticles = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            litAtAGlanceHeader.Text = DictionaryConstants.AtAGlanceText;
+            litKeyTakeAwayText.Text = DictionaryConstants.KeyTakeAwayText;
 
             ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
             if (ObjBasicArticle != null)

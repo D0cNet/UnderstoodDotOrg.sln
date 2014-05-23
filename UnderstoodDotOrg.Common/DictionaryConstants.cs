@@ -711,7 +711,21 @@ namespace UnderstoodDotOrg.Common
             {
                 return Translate.TextByDomain(PosesDictionary, "Filter By Label");
             }
-        } 
+        }
+        public static string AtAGlanceText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "At a Glance");
+            }
+        }
+        public static string KeyTakeAwayText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Key take-away");
+            }
+        }
 
         public static class Grades
         {

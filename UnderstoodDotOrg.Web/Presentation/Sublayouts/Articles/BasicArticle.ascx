@@ -24,7 +24,7 @@
             <div class="at-a-glance">
                 <header class='header-at-a-glance'>
                     <h2><%--At-a-glance--%>
-                        <sc:FieldRenderer runat="server" ID="frHeadlineText" FieldName="At a glance Header" />
+                        <asp:Literal ID="litAtAGlanceHeader" runat="server"></asp:Literal>
                     </h2>
                 </header>
                 <sc:FieldRenderer runat="server" FieldName="At a glance Content" ID="frSubHeadlineText" />
@@ -38,7 +38,7 @@
             <div class="key-takeaways">
                 <header class='header-key-takeaways'>
                     <h2><%-- Key Takeaways--%>
-                        <sc:FieldRenderer ID="frKeyTakeawayTitle" runat="server" FieldName="Key Takeaway Title" />
+                        <asp:Literal ID="litKeyTakeAwayText" runat="server"></asp:Literal>
                     </h2>
                 </header>
            <sc:FieldRenderer ID="frKeyTakeawayData" runat="server" FieldName="Key Takeaway Data" />

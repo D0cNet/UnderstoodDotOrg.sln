@@ -31,13 +31,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.Literal litCommentCount2;
         
         /// <summary>
-        /// frHeadlineText control.
+        /// litAtAGlanceHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frHeadlineText;
+        protected global::System.Web.UI.WebControls.Literal litAtAGlanceHeader;
         
         /// <summary>
         /// frSubHeadlineText control.
@@ -58,13 +58,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBodyContent;
         
         /// <summary>
-        /// frKeyTakeawayTitle control.
+        /// litKeyTakeAwayText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frKeyTakeawayTitle;
+        protected global::System.Web.UI.WebControls.Literal litKeyTakeAwayText;
         
         /// <summary>
         /// frKeyTakeawayData control.
