@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using System.Web.UI.HtmlControls;
 using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
+using UnderstoodDotOrg.Services.TelligentService;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
    
@@ -26,11 +27,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             rptMemberCards.ID = "rptMemberCards";
             memberList.Controls.Add(rptMemberCards);
 
-            var webClient = new WebClient();
-            string keyTest = Sitecore.Configuration.Settings.GetSetting("TelligentAdminApiKey");
-            var apiKey = String.IsNullOrEmpty(keyTest) ? "2vptamj4g2m3jvb62y" : keyTest;
 
-            List<MemberCardModel> memberCardSrc = CommunityHelper.GetModerators();
+            List<MemberCardModel> memberCardSrc = TelligentService.GetModerators();
 
             rptMemberCards.DataSource = memberCardSrc;
             rptMemberCards.DataBind();

@@ -1,11 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parents Recommended.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parents_Recommended" %>
+    <!-- BEGIN PARTIAL: community/main_header -->
 
+<!-- END PARTIAL: community/main_header -->
  <div class="container community-parents community-parents-recommended">
         <div class="row">
             <div class="container">
                 <div class="col col-24 skiplink-content" aria-role="main">
                     <div class="community-parents-rs-wrapper rs_read_this">
-                      <a href="REPLACE" class="link-back"><i class="icon-arrow-left-blue"></i>Back to All Parents</a>
+                      <a href="REPLACE" id="ref_allParents" runat="server" class="link-back"><i class="icon-arrow-left-blue"></i>Back to All Parents</a>
                       <h2>Recommended for You</h2>
 
                       <div class="community-parents-recommended-wrapper">

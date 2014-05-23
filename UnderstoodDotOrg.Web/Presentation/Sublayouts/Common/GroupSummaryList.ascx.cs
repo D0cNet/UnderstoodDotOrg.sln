@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
@@ -29,7 +30,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             {
                 
                 ///
-                LinkButton joinView = (LinkButton)e.Item.FindControl("btnJoinGroup");
+                LinkButton joinView = e.FindControlAs<LinkButton>("btnJoinGroup");//(LinkButton)e.Item.FindControl("btnJoinGroup");
                 if (joinView != null)
                 {
                     bool viewDiscussions=CommunityHelper.IsUserInGroup(UserID, ((GroupCardModel)e.Item.DataItem).GroupID) ;

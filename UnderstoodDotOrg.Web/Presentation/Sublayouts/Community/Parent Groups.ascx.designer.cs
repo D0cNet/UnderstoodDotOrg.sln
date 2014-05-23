@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
     public partial class Parent_Groups {
         
         /// <summary>
+        /// ref_recommended_group control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ref_recommended_group;
+        
+        /// <summary>
         /// ddlChildIssues control.
         /// </summary>
         /// <remarks>

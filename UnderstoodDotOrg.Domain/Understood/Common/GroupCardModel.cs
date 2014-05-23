@@ -17,15 +17,15 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
 {
     public class GroupCardModel
     {
-       
-        public GroupCardModel(XmlNode grpNode)
-        {
-            if (grpNode != null)
-            {
-                GroupID = grpNode.SelectSingleNode("Id").InnerText;
-                Initialize(grpNode);
-            }
-        }
+        ///TODO: To populate sitecore object from Telligent XmlNode
+        //public GroupCardModel(XmlNode grpNode)
+        //{
+        //    if (grpNode != null)
+        //    {
+        //        GroupID = grpNode.SelectSingleNode("Id").InnerText;
+        //        Initialize(grpNode);
+        //    }
+        //}
 
         public GroupCardModel(GroupItem groupItem)
         {
@@ -119,6 +119,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         public  string GroupID { get; protected set; }
         public string GroupItemID { get { return GrpItem.ID.ToString(); } }
         private GroupItem GrpItem { get; set; }
+        public string ItemID { get { return GrpItem.ID.ToString(); } } 
        // List<Issue> RelatedIssues { get; set; }
     }
 

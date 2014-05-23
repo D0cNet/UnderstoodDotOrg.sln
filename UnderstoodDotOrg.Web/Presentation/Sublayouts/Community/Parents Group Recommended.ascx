@@ -5,7 +5,7 @@
             <header class="groups-heading">
               <!-- BEGIN PARTIAL: community/breadcrumb_menu -->
 <!--breadcrumb menu-->
-<a href="REPLACE" class="back-to-previous rs_skip">
+<a href="REPLACE" ID="ref_ParentGroup" runat="server" class="back-to-previous rs_skip">
   <i class="icon-arrow-left-blue"></i>back to parents page
 </a>
 <!-- END PARTIAL: community/breadcrumb_menu -->

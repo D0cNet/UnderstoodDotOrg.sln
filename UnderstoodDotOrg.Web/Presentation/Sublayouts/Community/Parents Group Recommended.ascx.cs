@@ -15,6 +15,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
     public partial class Parents_Group_Recommended : System.Web.UI.UserControl
     {
         GroupSummaryList rptGroupCards;
+        protected override void OnInit(EventArgs e)
+            {
+            Item parentItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.ParentsGroups));
+            string itemHref = Sitecore.Links.LinkManager.GetItemUrl(parentItem);
+            ref_ParentGroup.HRef = itemHref;
+            base.OnInit(e);
+            }
         protected void Page_Load(object sender, EventArgs e)
         {
             rptGroupCards = (GroupSummaryList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupSummaryList.ascx");

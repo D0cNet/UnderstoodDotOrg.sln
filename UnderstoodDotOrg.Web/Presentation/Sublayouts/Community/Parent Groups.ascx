@@ -7,7 +7,7 @@
                 <h2>Parent Groups<span></span></h2>
               </div>
               <div class="col show-groups rs_skip">
-                <a href="REPLACE">Show groups that match my profile</a>
+                <a href="REPLACE" id="ref_recommended_group" runat="server">Show groups that match my profile</a>
               </div>
               <!-- BEGIN PARTIAL: community/groups_private_heading -->
 <!--groups private partial-->

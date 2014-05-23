@@ -140,6 +140,49 @@ namespace UnderstoodDotOrg.Common
 
         public static class Pages
         {
+            public static Guid ParentsGroups
+                {
+                get
+                    {
+                    return new Guid("{40726696-1FD7-41CC-A662-A618C7BEEE0A}");
+                    }
+                }
+            //public static Guid ParentsGroupAll
+            //    {
+            //    get
+            //        {
+            //        return new Guid("{DEE83FC5-DB99-4FC8-875A-429F87BB3848}");
+            //        }
+            //    }
+            public static Guid ParentsGroupRecommended
+                {
+                get
+                    {
+                    return new Guid("{08B7AE83-F21D-474A-BA49-470AE71B2C12}");
+                    }
+                }
+            public static Guid ParentsLikeMeFeatured
+            {
+            get
+                {
+                return new Guid("{23D6A9BA-6C62-4AF8-A2E0-AD18843EB105}");
+                }
+            }
+            public static Guid ParentsLikeMeAll
+            {
+            get
+                {
+                return new Guid("{E88BE8FC-4272-4136-918E-47DFA4FF4EF5}");
+                }
+            }
+            public static Guid ParentsLikeMeRecommended
+            {
+            get
+                {
+                return new Guid("{87E601F6-EA02-4D89-A91A-C3DAE789120E}");
+                }
+            }
+
             public static Guid BehaviorToolsResults
             {
                 get

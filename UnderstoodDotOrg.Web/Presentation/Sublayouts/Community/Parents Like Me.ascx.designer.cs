@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
     public partial class Parents {
         
         /// <summary>
+        /// ref_allParents control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ref_allParents;
+        
+        /// <summary>
         /// scImage control.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer scCallOutDetails;
+        
+        /// <summary>
+        /// btnGo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGo;
     }
 }

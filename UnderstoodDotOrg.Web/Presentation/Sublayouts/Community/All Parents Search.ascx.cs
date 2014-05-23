@@ -51,7 +51,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                                               
                                 }
                 };
-      
+
+        protected override void OnInit(EventArgs e)
+            {
+                Item parentItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.ParentsLikeMeRecommended));
+                string itemHref = Sitecore.Links.LinkManager.GetItemUrl(parentItem);
+                refRecommended.HRef = itemHref; 
+                base.OnInit(e);
+            }
         protected void Page_Load(object sender, EventArgs e)
         {
             rptMemberCards = (MemberCardList)Page.LoadControl("~/Presentation/Sublayouts/Common/MemberCardList.ascx");

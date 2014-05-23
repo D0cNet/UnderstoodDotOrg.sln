@@ -1,10 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="All Parents Search.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.All_Parents_Search" %>
+    <!-- BEGIN PARTIAL: community/main_header -->
 
+<!-- END PARTIAL: community/main_header -->
  <div class="container community-parents">
         <div class="row">
             <div class="col col-24 skiplink-toolbar">
                 <h2 class="offset-1">All Parents</h2>
-                <a href="REPLACE" class="link-recommended">Just show parents like me</a>
+                <a href="REPLACE" id="refRecommended" runat="server" class="link-recommended">Just show parents like me</a>
 
                 <div class="options-search">
                     <div class="container-parents-search-zip">

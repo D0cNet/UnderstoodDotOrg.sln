@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
     public partial class All_Parents_Search {
         
         /// <summary>
+        /// refRecommended control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor refRecommended;
+        
+        /// <summary>
         /// txtZipCode control.
         /// </summary>
         /// <remarks>

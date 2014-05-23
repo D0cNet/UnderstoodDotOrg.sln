@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
     public partial class Parents_Recommended {
         
         /// <summary>
+        /// ref_allParents control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ref_allParents;
+        
+        /// <summary>
         /// memberList control.
         /// </summary>
         /// <remarks>
