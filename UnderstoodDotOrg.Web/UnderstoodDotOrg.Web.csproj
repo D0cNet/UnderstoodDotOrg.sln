@@ -316,13 +316,6 @@
     <Compile Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx.designer.cs">
       <DependentUpon>SalesforceContactAdmin.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx.cs">
-      <DependentUpon>Advocacy Article Page.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx.designer.cs">
-      <DependentUpon>Advocacy Article Page.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx.cs">
       <DependentUpon>AdvocacyLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
