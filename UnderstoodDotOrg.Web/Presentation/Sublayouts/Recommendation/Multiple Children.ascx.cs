@@ -32,6 +32,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation {
             if (CurrentMember != null) {
                 var children = CurrentMember.Children;
                 if (children.Any()) {
+                    Response.Write("logged in");
+                    Response.Write("child issue " + children.FirstOrDefault().Issues.Count() + "<br/>");
+                    Response.Write("grades " + children.FirstOrDefault().Grades.Count() + "<br/>");
                     rptChildBasicInfo.DataSource = children;
                     rptChildBasicInfo.DataBind();
                 }
@@ -40,6 +43,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation {
                 if (UnauthenticatedSessionMember != null) {
                     var children = UnauthenticatedSessionMember.Children;
                     if (children.Any()) {
+                        Response.Write("Not logged in");
+                        Response.Write("child issue " + children.FirstOrDefault().Issues.Count() + "<br/>");
+                        Response.Write("grades " + children.FirstOrDefault().Grades.Count() + "<br/>");
                         rptChildBasicInfo.DataSource = children;
                         rptChildBasicInfo.DataBind();
                     }
