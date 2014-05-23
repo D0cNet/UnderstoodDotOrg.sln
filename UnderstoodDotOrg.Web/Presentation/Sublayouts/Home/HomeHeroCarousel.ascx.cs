@@ -55,7 +55,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
 
                     BindGradesDDL();
 
-                    Response.End();
                 }
             }
             //if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Any()) {
