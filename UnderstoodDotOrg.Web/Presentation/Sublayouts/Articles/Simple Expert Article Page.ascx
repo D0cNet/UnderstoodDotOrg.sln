@@ -12,26 +12,30 @@
                 <ItemTemplate>
 
                     <div class="expert-question">
-                        <sc:FieldRenderer ID="frQuestion" runat="server" FieldName="Question" />
+                        <p>
+                            <sc:fieldrenderer id="frQuestion" runat="server" fieldname="Question" />
+                        </p>
                     </div>
                     <div class="expert-answer">
                         <div class="expert-author">
-                            <sc:FieldRenderer ID="frExpertImage" runat="server" FieldName="Expert Image" />
+                            <sc:fieldrenderer id="frExpertImage" runat="server" fieldname="Expert Image" />
                             <div class="expert-author-info">
                                 <p class="name">
                                     <strong>
-                                        <sc:FieldRenderer ID="frExpertName" runat="server" FieldName="Expert Name" />
+                                        <sc:fieldrenderer id="frExpertName" runat="server" fieldname="Expert Name" />
                                     </strong>
                                 </p>
                                 <p class="title">
-                                    <sc:FieldRenderer ID="frExpertTitle" runat="server" FieldName="Expert Title" />
+                                    <sc:fieldrenderer id="frExpertTitle" runat="server" fieldname="Expert Title" />
                                 </p>
                             </div>
                             <!-- end expert-author-info" -->
                         </div>
                         <!-- end expert-author -->
                         <div class="expert-content">
-                            <sc:FieldRenderer ID="frAnswer" runat="server" FieldName="Answer" />
+                            <p>
+                                <sc:fieldrenderer id="frAnswer" runat="server" fieldname="Answer" />
+                            </p>
                         </div>
                         <!-- end expert-content -->
                     </div>
@@ -45,7 +49,7 @@
 
             <!-- END PARTIAL: expert-answer -->
             <!-- BEGIN PARTIAL: about-the-author -->
-            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" Visible="false" />
+            <sc:sublayout id="sbAboutAuthor" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" visible="false" />
 
             <!-- END PARTIAL: about-the-author -->
             <!-- BEGIN PARTIAL: find-helpful -->
@@ -69,12 +73,12 @@
         <div class="col col-1 sidebar-spacer"></div>
 
         <!-- right bar -->
-         <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
+        <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
             <!-- BEGIN PARTIAL: helpful-count -->
-            <sc:Sublayout ID="Sublayout1" Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" runat="server"></sc:Sublayout>
+            <sc:sublayout id="Sublayout1" path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" runat="server"></sc:sublayout>
             <!-- END PARTIAL: comments-count -->
             <!-- BEGIN PARTIAL: find-helpful -->
-            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:Sublayout>
+            <sc:sublayout path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:sublayout>
             <!-- END PARTIAL: find-helpful -->
             <!-- BEGIN PARTIAL: keep-reading -->
             <%--<div class="keep-reading">
@@ -85,7 +89,7 @@
                 <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
             </ul>
         </div>--%>
-            <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
+            <sc:sublayout id="slKeepReading" runat="server" path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
             <!-- END PARTIAL: keep-reading -->
             <!-- BEGIN PARTIAL: comments-summary -->
             <section class="comments-summary">
@@ -108,7 +112,7 @@
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
             <div class="sidebar-promos rs_read_this vertical">
-                <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
+                <sc:sublayout id="sbSidebarPromo" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
             </div>
             <!-- end sidebar-promos -->
 
