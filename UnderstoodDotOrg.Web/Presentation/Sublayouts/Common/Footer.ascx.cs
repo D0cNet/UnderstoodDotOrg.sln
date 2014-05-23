@@ -186,9 +186,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             if (e.IsItem())
             {
                 SocialMediaItem socialMediaItem = e.Item.DataItem as SocialMediaItem;
+
+                HyperLink hypSocialLink = e.FindControlAs<HyperLink>("hypSocialLink");
+                FieldRenderer frSocialImage = e.FindControlAs<FieldRenderer>("frSocialImage");
+
                 if (socialMediaItem != null)
                 {
-
+                    hypSocialLink.NavigateUrl = socialMediaItem.Link.Url;
+                    hypSocialLink.Attributes.Add("class", "icon icon-" + socialMediaItem.MediaName.Text.ToLower());
                 }
             }
         }

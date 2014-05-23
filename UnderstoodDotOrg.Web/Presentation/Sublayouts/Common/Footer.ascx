@@ -129,7 +129,7 @@
             </HeaderTemplate>
             <ItemTemplate>
                 <li><%--<a href="REPLACE.html" class="icon icon-facebook">Facebook</a>--%>
-                    <sc:FieldRenderer runat="server" ID="frSocialMediaLink" FieldName="" />
+                    <asp:HyperLink ID="hypSocialLink" runat="server"></asp:HyperLink>
                 </li>
             </ItemTemplate>
             <FooterTemplate>

@@ -38,11 +38,11 @@ public static implicit operator Item(SocialMediaItem customItem)
 #region Field Instance Methods
 
 
-public CustomImageField Image
+public CustomTextField MediaName
 {
 	get
 	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["Image"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Media Name"]);
 	}
 }
 
@@ -52,6 +52,15 @@ public CustomTextField Script
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Script"]);
+	}
+}
+
+
+public CustomGeneralLinkField Link
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Link"]);
 	}
 }
 
