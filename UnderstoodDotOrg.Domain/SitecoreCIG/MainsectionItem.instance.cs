@@ -36,29 +36,16 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG
         /// <returns></returns>
         public static GlobalsItem GetGlobals()
         {
-            GlobalsItem firstGlobals = null;
-            var siteChildren = GetSiteRoot().InnerItem.GetChildren();
-            if (siteChildren != null)
-            {
-                firstGlobals = siteChildren.Where(i => i.IsOfType(GlobalsItem.TemplateId)).FirstOrDefault();
-            }
-            return (GlobalsItem)firstGlobals;
-        }
-
-
-        /// <summary>
-        /// Get First Globals item
-        /// </summary>
-        /// <returns></returns>
-        public static GlobalsItem GetGlobalItem()
-        {
             MainsectionItem objSiteItem = GetSiteRoot();
-            GlobalsItem objGlobalItem = null;
             if (objSiteItem != null)
             {
-                objGlobalItem = GetGlobals();
+                var children = objSiteItem.InnerItem.Children;
+                if (children != null)
+                {
+                    return children.FirstOrDefault(i => i.IsOfType(GlobalsItem.TemplateId));
+                }
             }
-            return objGlobalItem;
+            return null;
         }
 
         /// <summary>

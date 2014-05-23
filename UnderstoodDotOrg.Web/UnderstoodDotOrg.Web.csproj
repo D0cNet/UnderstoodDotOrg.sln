@@ -323,12 +323,19 @@
     <Compile Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx.designer.cs">
       <DependentUpon>Advocacy Article Page.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Advocacy\Take Action Page.ascx.cs">
-      <DependentUpon>Take Action Page.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx.cs">
+      <DependentUpon>AdvocacyLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Advocacy\Take Action Page.ascx.designer.cs">
-      <DependentUpon>Take Action Page.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx.designer.cs">
+      <DependentUpon>AdvocacyLandingPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyPageTopicHeader.ascx.cs">
+      <DependentUpon>AdvocacyPageTopicHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyPageTopicHeader.ascx.designer.cs">
+      <DependentUpon>AdvocacyPageTopicHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx.cs">
       <DependentUpon>Action Style List Page.ascx</DependentUpon>
@@ -2355,7 +2362,8 @@
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx" />
-    <Content Include="Presentation\Sublayouts\Advocacy\Take Action Page.ascx" />
+    <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyPageTopicHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Article Entry Message Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx" />

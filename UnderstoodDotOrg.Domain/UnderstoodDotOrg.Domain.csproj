@@ -208,6 +208,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\JSTemplateItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\AdvocacyLinkFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\AdvocacyLinkFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\AdvocacyMainFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\BasePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\BasePageItem.instance.cs" />
@@ -257,6 +259,7 @@
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WidgetFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\AdvocacyLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AuthenticationNavigationLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AuthenticationNavigationLinkItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ChildDemographicItem.base.cs" />
@@ -328,6 +331,9 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\SearchFilterTypeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyArticlePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyBasePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyLandingPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\CampaignItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\CampaignItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\TakeActionPageItem.base.cs" />

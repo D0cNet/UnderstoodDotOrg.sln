@@ -40,5 +40,15 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         public MoreExploreFolderItem GetMoreExploreFolder() {
             return (MoreExploreFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(MoreExploreFolderItem.TemplateId)).FirstOrDefault();
         }
+
+        /// <summary>
+        /// Gets the advocacy links folder item.
+        /// </summary>
+        /// <returns></returns>
+        public AdvocacyLinkFolderItem GetAdvocacyLinksFolder()
+        {
+            return InnerItem.Children
+                .FirstOrDefault(i => i.IsOfType(AdvocacyLinkFolderItem.TemplateId));
+        }
     }
 }
