@@ -267,7 +267,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                         }
 
                         member.Children.Add(child);
-                        Session[Constants.sessionUnauthenticatedMemberKey] = CurrentMember = member;
+                        Session[Constants.sessionUnauthenticatedMemberKey] = member;
 
                     }
                 }
