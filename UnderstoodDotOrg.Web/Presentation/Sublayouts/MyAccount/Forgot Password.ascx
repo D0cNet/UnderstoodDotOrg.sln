@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Forgot Password.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Forgot_Password1" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Forgot Password.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Forgot_Password" %>
 <asp:MultiView ID="uxView" runat="server" ActiveViewIndex="0">
     <asp:View ID="uxForgotPassword" runat="server">
         <!-- BEGIN PARTIAL: forgot-password -->
@@ -16,16 +16,10 @@
                         </p>
                         <asp:Literal ID="litErrorMessage" runat="server">User does not exist</asp:Literal>
                         <label>
-                            <%--<span class="visuallyhidden">Enter email address</span>--%>
-                            <%--<input type="text" placeholder="Enter email address">--%>
                             <asp:TextBox runat="server" ID="txtEmailAddress"></asp:TextBox>
                         </label>
-                        <%--<button class="button submit">Submit</button>--%>
                         <asp:Button runat="server" ID="btnSubmit" CssClass="button submit rs_skip" OnClick="btnSubmit_Click" />
-                        <%--<button class="button gray">Cancel</button>--%>
                         <asp:Button runat="server" ID="btnCancel" CssClass="button gray rs_skip" OnClick="btnCancel_Click" />
-                        <%--<p>Hint: Understood passwords have 6 or more characters.</p>
-                        <p>Remembered it? <a href="REPLACE">Go back to log in.</a></p>--%>
                         <sc:Text runat="server" id="hint" field="Hint Text"></sc:Text>
                     </section>
                 </div>
