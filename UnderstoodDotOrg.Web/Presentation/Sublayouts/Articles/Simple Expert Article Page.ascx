@@ -18,15 +18,16 @@
                     </div>
                     <div class="expert-answer">
                         <div class="expert-author">
-                            <sc:fieldrenderer id="frExpertImage" runat="server" fieldname="Expert Image" />
+                            <%--<sc:fieldrenderer id="frExpertImage" runat="server" fieldname="Photo" />--%>
+                            <sc:Image id="frExpertImage" runat="server" field="Photo" maxheight="187" maxwidth="294" width="294" height="187" />
                             <div class="expert-author-info">
                                 <p class="name">
                                     <strong>
-                                        <sc:fieldrenderer id="frExpertName" runat="server" fieldname="Expert Name" />
+                                        <sc:fieldrenderer id="frExpertName" runat="server" fieldname="Full Name" />
                                     </strong>
                                 </p>
                                 <p class="title">
-                                    <sc:fieldrenderer id="frExpertTitle" runat="server" fieldname="Expert Title" />
+                                    <sc:fieldrenderer id="frExpertTitle" runat="server" fieldname="Title and Institution" />
                                 </p>
                             </div>
                             <!-- end expert-author-info" -->

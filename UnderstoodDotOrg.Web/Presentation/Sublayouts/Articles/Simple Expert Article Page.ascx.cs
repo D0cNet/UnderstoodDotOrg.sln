@@ -71,7 +71,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     ExpertPersonItem ExpertPerson = QAItem.AnsweredExpertDetails.Item;
                     if (ExpertPerson != null)
                     {
-                        FieldRenderer frExpertImage = e.FindControlAs<FieldRenderer>("frExpertImage");
+                        Sitecore.Web.UI.WebControls.Image frExpertImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("frExpertImage");
                         if (frExpertImage != null)
                         {
                             frExpertImage.Item = ExpertPerson;
