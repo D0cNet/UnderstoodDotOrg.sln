@@ -11,7 +11,7 @@
                 <div class="deep-dive-article-container">
                     <div class="whats-covered-deep-dive" id="top">
                         <h2><%--What&rsquo;s covered--%>
-                            <sc:FieldRenderer ID="frContentBody" runat="server" FieldName="Body Content" />
+                            <sc:FieldRenderer ID="frContentBody" runat="server" FieldName="Section Title" />
                         </h2>
                         <asp:ListView ID="rptSectionList" runat="server" OnItemDataBound="rptSectionList_ItemDataBound" ItemPlaceholderID="itemPlaceholder" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
                             <LayoutTemplate>
