@@ -24,13 +24,35 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Recommendation;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
     public partial class HomeHeroCarousel : BaseSublayout {
 
+        public static IEnumerable<Item> GetAllIssues() {
+            var children = Sitecore.Context.Database.GetItem(Constants.IssueContainer.ToString())
+                .GetChildren().FilterByContextLanguageVersion();
+
+            return from c in children
+                   let i = new ChildIssueItem(c)
+                   select c;
+        }
+
+
+        /// <summary>
+        /// Returns a list of child grades defined in child taxonomy
+        /// </summary>
+        /// <returns>Collection of child grades where value is the respective Sitecore Guid</returns>
+        public static IEnumerable<Item> GetGrades() {
+            var children = Sitecore.Context.Database.GetItem(Constants.GradeContainer.ToString())
+                            .GetChildren().FilterByContextLanguageVersion();
+            return from c in children
+                   let i = new GradeLevelItem(c)
+                   select c;
+        }
+
         protected void Page_Load(object sender, EventArgs e) {
             HomePageItem ContextItem = Sitecore.Context.Item;
             if (!IsPostBack) {
                 if (ContextItem != null) {
                     GetSliderItem(ContextItem);
 
-                    var childIssues = GetFilters(ChildIssueItem.TemplateId).Select(i => (ChildIssueItem)i);
+                    var childIssues = GetAllIssues().Select(i => (ChildIssueItem)i);
                     
                     if (childIssues != null && childIssues.Any()) {
                         rptChildIssues.Visible = true;
@@ -41,7 +63,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                         rptChildIssues.Visible = false;
                     }
 
-                    var grades = GetFilters(GradeLevelItem.TemplateId).Select(i => (GradeLevelItem)i);
+                    var grades = GetGrades().Select(i => (GradeLevelItem)i);
                     
                     if (grades != null && grades.Any()) {
                         rptGrades.Visible = true;

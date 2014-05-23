@@ -26,6 +26,29 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
     public partial class YourParentToolkit : BaseSublayout<HomePageItem> {
         int toolsCount = 0;
 
+        public static IEnumerable<Item> GetAllIssues() {
+            var children = Sitecore.Context.Database.GetItem(Constants.IssueContainer.ToString())
+                .GetChildren().FilterByContextLanguageVersion();
+
+            return from c in children
+                   let i = new ChildIssueItem(c)
+                   select c;
+        }
+
+
+        /// <summary>
+        /// Returns a list of child grades defined in child taxonomy
+        /// </summary>
+        /// <returns>Collection of child grades where value is the respective Sitecore Guid</returns>
+        public static IEnumerable<Item> GetGrades() {
+            var children = Sitecore.Context.Database.GetItem(Constants.GradeContainer.ToString())
+                            .GetChildren().FilterByContextLanguageVersion();
+            return from c in children
+                   let i = new GradeLevelItem(c)
+                   select c;
+        }
+
+
         protected void Page_Load(object sender, EventArgs e) {
             IEnumerable<NavigationLinkItem> toolkitItems = Enumerable.Empty<NavigationLinkItem>();
             HomePageItem ContextItem = Sitecore.Context.Item;
@@ -56,7 +79,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
 
         public void BindDDL() {
 
-            var issues = GetFilters(ChildIssueItem.TemplateId).Select(i => (ChildIssueItem)i);
+            var issues = GetAllIssues().Select(i => (ChildIssueItem)i);
             ddlIssuesGroups.Items.Clear();
             ddlGradeGroups.Items.Clear();
             if (issues.Any()) {
@@ -72,7 +95,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                 ddlIssuesGroups.DataBind();
             }
 
-            var grades = GetFilters(GradeLevelItem.TemplateId).Select(i => (GradeLevelItem)i);
+            var grades = GetGrades().Select(i => (GradeLevelItem)i);
             if (grades.Any()) {
                 ddlGradeGroups.Items.Add(new ListItem(DictionaryConstants.SelectGradeLabel, "0"));
 
