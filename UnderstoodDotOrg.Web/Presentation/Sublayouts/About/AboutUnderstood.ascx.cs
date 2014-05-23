@@ -28,10 +28,36 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
         private void BindEvents()
         {
             rptPartnerList.ItemDataBound += rptPartnerList_ItemDataBound;
+            rptSectionPages.ItemDataBound += rptSectionPages_ItemDataBound;
+        }
+
+        private void rptSectionPages_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                AboutSectionPageItem page = (AboutSectionPageItem)e.Item.DataItem;
+                FieldRenderer frNavigationSectionTitle = e.FindControlAs<FieldRenderer>("frNavigationSectionTitle");
+                FieldRenderer frNavigationSectionSummary = e.FindControlAs<FieldRenderer>("frNavigationSectionSummary");
+                FieldRenderer frNavigationSectionImage = e.FindControlAs<FieldRenderer>("frNavigationSectionImage");
+
+                frNavigationSectionImage.Item = frNavigationSectionSummary.Item = frNavigationSectionTitle.Item = page;
+
+                HyperLink hlReadMore = e.FindControlAs<HyperLink>("hlReadMore");
+                hlReadMore.NavigateUrl = page.GetUrl();
+                hlReadMore.Text = UnderstoodDotOrg.Common.DictionaryConstants.ReadMoreLabel;
+            }
         }
 
         private void BindControls()
         {
+            // Section Pages
+            IEnumerable<AboutSectionPageItem> pages = Model.GetSectionPages();
+            if (pages.Any())
+            {
+                rptSectionPages.DataSource = pages;
+                rptSectionPages.DataBind();
+            }
+            
             // Partners list
             Item partnerPage = Sitecore.Context.Database.GetItem(Constants.Pages.Partners);
             if (partnerPage != null)
@@ -45,21 +71,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
                     rptPartnerList.DataBind();
                 }
             }
-        }
-
-        public IEnumerable<PartnerInfoItem> GetAllPArtners(AboutUnderstoodItem CurrentPage)
-        {
-            IEnumerable<Item> _allpartners;
-            List<PartnerInfoItem> _finalPartners;
-            _allpartners = CurrentPage.PartnersContent.ListItems.Where(t => t.TemplateID.ToString() == PartnerInfoItem.TemplateId);
-
-            _finalPartners = new List<PartnerInfoItem>(_allpartners.Count());
-            foreach (PartnerInfoItem DefItem in _allpartners)
-            {
-                _finalPartners.Add(DefItem);
-            }
-            return _finalPartners;
-
         }
 
         protected void rptPartnerList_ItemDataBound(object sender, RepeaterItemEventArgs e)

@@ -12,6 +12,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -54,7 +55,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
             // TODO: refactor to handle folder parent items
             ContentPageItem parent = Sitecore.Context.Item.Parent;
-            if (parent == null || parent.InnerItem.IsOfType(FolderItem.TemplateId))
+            if (parent == null 
+                || parent.InnerItem.IsOfType(FolderItem.TemplateId)
+                || parent.InnerItem.IsOfType(HomePageItem.TemplateId))
             {
                 hlSectionTitle.Visible = false;
             }

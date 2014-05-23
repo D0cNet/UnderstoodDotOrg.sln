@@ -2,18 +2,6 @@
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 
-<!-- BEGIN PARTIAL: pagetopic -->
-<!-- FIXME: Documentation needed to explain share on/off functionality in page topic module -->
-
-<!-- Determine variables present and change column width to fit the content available -->
-
-
-<!-- Page Title -->
-
-<!-- .container -->
-
-<!-- END PARTIAL: pagetopic -->
-<!-- styling for .about-pagetopic can be found in about-partners -->
 
 <div class="container">
     <div class="row">
@@ -48,7 +36,7 @@
                             <div class="partner-block rs_read_this">
                                 <div class="col col-14 push-8 partner-head">
                                     <div class="partner-block-head">
-                                        <h3><%--<a href="REPLACE">Common Sense Media</a>--%>
+                                        <h3>
                                             <asp:HyperLink ID="hlPartnerNameLink" runat="server">
                                                 <sc:FieldRenderer ID="frPartnerName" runat="server" FieldName="Partner Name" />
                                             </asp:HyperLink>
@@ -61,11 +49,8 @@
                                 <div class="col col-7 pull-15 partner-logo">
                                     <div class="partner-block-logo">
                                         <asp:HyperLink ID="hlPartnerLogo" runat="server">
-                                            <%--<sc:FieldRenderer ID="frPartnerLogo" runat="server" FieldName="Thumbnail Image" />--%>
-                                            <sc:Image ID="imgPartnerLogo" runat="server" Field="Thumbnail Image" Height="131" Width="271" />
+                                            <sc:Image ID="imgPartnerLogo" runat="server" Field="Logo" Parameters="mw=271&mh=131" />
                                         </asp:HyperLink>
-                                        <%--<a href="REPLACE">
-                                                <img alt="271x131 Placeholder" src="http://placehold.it/271x131" /></a>--%>
                                     </div>
                                     <!-- end partner-block-logo -->
                                 </div>

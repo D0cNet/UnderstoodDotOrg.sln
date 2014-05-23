@@ -10,31 +10,12 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages
 {
     public partial class AboutPartnersItem
     {
-        /// <summary>
-        /// Get All partners List
-        /// </summary>
-        /// <param name="ObjSlideArticle"></param>
-        /// <returns></returns>
-        public static IEnumerable<PartnerInfoItem> GetAllPartners(AboutPartnersItem ObjPartnerList)
-        {
-            IEnumerable<PartnerInfoItem> Allpartners = ObjPartnerList.AllPartners;
-            return Allpartners;
-        }
-        private IEnumerable<PartnerInfoItem> _allpartners;
-        private IEnumerable<PartnerInfoItem> AllPartners
-        {
-            get
-            {
-                if (_allpartners == null)
-                {
-                    _allpartners = this.InnerItem.GetChildren()
-                        .Where(t => t.TemplateID.ToString() == PartnerInfoItem.TemplateId.ToString())
-                        .Select(x => new PartnerInfoItem(x));
-                }
 
-                return _allpartners;
-            }
+        public IEnumerable<PartnerInfoItem> GetPartners()
+        {
+            return InnerItem.GetChildren().FilterByContextLanguageVersion()
+                            .Where(i => i.IsOfType(PartnerInfoItem.TemplateId))
+                            .Select(i => new PartnerInfoItem(i));
         }
-
     }
 }

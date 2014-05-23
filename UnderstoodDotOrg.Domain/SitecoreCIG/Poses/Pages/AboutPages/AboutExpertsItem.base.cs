@@ -6,7 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages
 {
@@ -17,8 +17,8 @@ public static readonly string TemplateId = "{ED82ED80-4C7B-4F05-853F-2C2D1A1B2D8
 
 #region Inherited Base Templates
 
-private readonly ContentPageItem _ContentPageItem;
-public ContentPageItem ContentPage { get { return _ContentPageItem; } }
+private readonly AboutSectionPageItem _AboutSectionPageItem;
+public AboutSectionPageItem AboutSectionPage { get { return _AboutSectionPageItem; } }
 
 #endregion
 
@@ -26,7 +26,7 @@ public ContentPageItem ContentPage { get { return _ContentPageItem; } }
 
 public AboutExpertsItem(Item innerItem) : base(innerItem)
 {
-	_ContentPageItem = new ContentPageItem(innerItem);
+	_AboutSectionPageItem = new AboutSectionPageItem(innerItem);
 
 }
 

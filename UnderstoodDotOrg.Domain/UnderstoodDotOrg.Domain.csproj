@@ -308,6 +308,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutExpertsItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutPartnersItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutPartnersItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutSectionPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonatePageItem.base.cs" />

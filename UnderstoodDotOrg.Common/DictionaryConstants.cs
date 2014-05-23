@@ -735,6 +735,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string ReadMoreLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Read More Label");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

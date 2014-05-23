@@ -4,14 +4,13 @@
     <div class="row">
         <div class="col col-15 offset-1 skiplink-content" aria-role="main">
             <!-- BEGIN PARTIAL: about-understood-video -->
-            <div class="about-video-container">
+            <div class="about-video-container rs_read_this about-understood-video-rs-wrapper">
                 <p>
                     <%--Et fugit consequatur explicabo quasi autem corrupti consequatur ab deserunt minima ea quas eum. et saepe omnis et dolorem distinctio tempore excepturi numquam et ut consequatur aut. qui aut facere nisi ut voluptas eveniet voluptates ea omnis. eligendi itaque architecto eum ut qui culpa fuga ratione ut nihil quia et aut quae. debitis minus commodi sapiente sit blanditiis--%>
                     <sc:FieldRenderer ID="frSummary" runat="server" FieldName="Page Summary" />
                 </p>
                 <div class="about-video-frame">
-                    <img alt="590x333 Placeholder" src="http://placehold.it/590x333" />
-                    <sc:FieldRenderer ID="frVideo" runat="server" FieldName="Video to Show" />
+                    <sc:FieldRenderer ID="frVideoEmbed" runat="server" FieldName="Video Embed" />
                 </div>
                 <!-- end about-video-frame -->
             </div>
@@ -26,81 +25,30 @@
                     <div>
 
                         <sc:FieldRenderer ID="FrVideoTranscript" runat="server" FieldName="Video Transcript" />
-                        <%-- <h2>Video Transcript</h2>
-
-                        <h3>Dr.Richard Nightengale:</h3>
-                        <p>Fugit maxime quisquam cum velit beatae quis aut qui fugit voluptatem. omnis maxime blanditiis assumenda in quia ducimus. inventore omnis quibusdam praesentium ab unde. rerum ut cumque aut enim. adipisci blanditiis dolorum voluptatem ea</p>
-
-                        <h3>Parent:</h3>
-                        <p>Magni consequatur et tenetur est fugiat sint rerum cumque officiis cumque. nam vitae et inventore dolorem qui iure provident distinctio beatae dolore est. et est qui laudantium suscipit eum nam animi veritatis vitae porro</p>
-
-                        <h3>Dr.Richard Nightengale:</h3>
-                        <p>Accusamus et odio iure iste eum vitae sapiente ut ut autem. ut aspernatur nisi corporis facere nihil fugiat. atque aut quis suscipit tempore neque qui. architecto id at pariatur voluptatem labore molestias facilis accusantium voluptatem animi consectetur eius omnis. et ab quia sed saepe neque ipsum veritatis quas nesciunt nulla saepe totam</p>
-
-                        <h3>Parent:</h3>
-                        <p>Provident eveniet dolores fuga sit maiores qui excepturi mollitia vero. aperiam consequatur beatae eligendi et. non non repellendus doloribus iusto esse veniam est</p>
-
-                        <h3>Dr.Richard Nightengale:</h3>
-                        <p>Beatae ipsum accusantium vel nam consequatur voluptatem nihil ea. accusamus aut unde velit sint laboriosam dolores maxime esse aperiam sed iure illum qui dolorem. earum amet aspernatur quod aspernatur illum. neque molestiae harum sed et. quis et provident voluptates doloribus sint consequatur molestiae pariatur sint sapiente voluptate quae doloribus quis</p>
-
-                        <h3>Parent:</h3>
-                        <p>Laboriosam unde sunt quis veritatis temporibus quis. aut odio mollitia rerum nemo in et eos repudiandae doloribus. est aut et blanditiis esse sit suscipit id eveniet vel eveniet modi quaerat</p>--%>
                     </div>
                 </div>
                 <div class="read-more read-more-bottom"></div>
             </div>
             <!-- END PARTIAL: transcript-control -->
             <!-- BEGIN PARTIAL: about-understood-listing -->
-            <div class="listing-container">
-                <div class="listing-content">
-                    <h2><%--Our Mission--%>
-                        <sc:FieldRenderer ID="frMissionHeadline" runat="server" FieldName="Mission Headline" />
-                    </h2>
-                    <sc:FieldRenderer ID="frMissionImage" runat="server" FieldName="Mission Thumbnail" />
-                    <%--<img alt="289x164 Placeholder" src="http://placehold.it/289x164" />--%>
-                    <p>
-                        <%--dolorum velit et libero illo asperiores ut rerum ad vel qui dignissimos asperiores qui dicta --%>
-                        <sc:FieldRenderer ID="frMissionSummary" runat="server" FieldName="Mission Summary" />
-                        <a href="REMOVE">Read&nbsp;More</a>
-                    </p>
-                </div>
-                <div class="listing-content">
-                    <h2><%--Our Story--%>
-                        <sc:FieldRenderer ID="frStoryHeadline" runat="server" FieldName="Story Headline" />
-                    </h2>
-                    <sc:FieldRenderer ID="frStoryImage" runat="server" FieldName="Story Thumbnail" />
-                    <%-- <img alt="289x164 Placeholder" src="http://placehold.it/289x164" />--%>
-                    <p>
-                        <%--sed molestiae modi reiciendis voluptas odit sed quia quia eum repellat deserunt aut dolorum omnis--%>
-                        <sc:FieldRenderer ID="frStorySummary" runat="server" FieldName="Story Summary" />
-                        <a href="REMOVE">Read&nbsp;More</a>
-                    </p>
-                </div>
-                <div class="listing-content">
-                    <h2><%--Our Team--%>
-                        <sc:FieldRenderer ID="frTeamHeadline" runat="server" FieldName="Team Headline" />
-                    </h2>
-                    <%--<img alt="289x164 Placeholder" src="http://placehold.it/289x164" />--%>
-                    <sc:FieldRenderer ID="frTeamImage" runat="server" FieldName="Team Thumbnail" />
-                    <p>
-                        <%--error aspernatur sapiente ab quis enim quos quam eos et ipsum quasi possimus aut aut--%>
-                        <sc:FieldRenderer ID="frTeamSummary" runat="server" FieldName="Team Summary" />
-                        <a href="REMOVE">Read&nbsp;More</a>
-                    </p>
-                </div>
-                <div class="listing-content">
-                    <h2><%--Experts &amp; Parents--%>
-                        <sc:FieldRenderer ID="frExpertPartnerHeadline" runat="server" FieldName="Expert Partner Headline" />
-                    </h2>
-                    <%--<img alt="289x164 Placeholder" src="http://placehold.it/289x164" />--%>
-                    <sc:FieldRenderer ID="frExpertpartnerImage" runat="server" FieldName="Expert Partner Thumbnail" />
-                    <p>
-                        <%--totam consequatur doloremque excepturi optio ut quaerat eos quo vel qui quia dolor dolore dolorem --%>
-                        <sc:FieldRenderer ID="frExpertpartnerSummary" runat="server" FieldName="Expert Partner Summary" />
-                        <a href="REMOVE">Read&nbsp;More</a>
-                    </p>
-                </div>
-            </div>
+            <asp:Repeater ID="rptSectionPages" runat="server">
+                <HeaderTemplate>
+                    <div class="listing-container">
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <div class="listing-content rs_read_this about-understood-rs-wrapper">
+                        <h2><sc:FieldRenderer ID="frNavigationSectionTitle" runat="server" FieldName="Navigation Section Title" /></h2>
+                        <sc:FieldRenderer ID="frNavigationSectionImage" FieldName="Navigation Section Image" runat="server" Parameters="mw=289&mh=164" />
+                        <p>
+                            <sc:FieldRenderer ID="frNavigationSectionSummary" runat="server" FieldName="Navigation Section Summary" />
+                            <asp:HyperLink ID="hlReadMore" runat="server" />
+                        </p>
+                    </div>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </div>
+                </FooterTemplate>
+            </asp:Repeater>
             <!-- end listing-container -->
             <!-- END PARTIAL: about-understood-listing -->
         </div>

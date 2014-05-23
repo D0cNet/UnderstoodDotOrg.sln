@@ -46,11 +46,47 @@ public static implicit operator Item(PartnerInfoItem customItem)
 #region Field Instance Methods
 
 
+public CustomTreeListField ArticlestoShow
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Articles to Show"]);
+	}
+}
+
+
+public CustomTextField NewsletterHeadLine
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Newsletter Head Line"]);
+	}
+}
+
+
 public CustomTextField PartnerName
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Partner Name"]);
+	}
+}
+
+
+public CustomTextField FeaturedHeadline
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Featured Headline"]);
+	}
+}
+
+
+public CustomGeneralLinkField NewsletterNavigantionpage
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Newsletter Navigantion page"]);
 	}
 }
 
@@ -64,6 +100,15 @@ public CustomTextField SubHeadline
 }
 
 
+public CustomTextField DonationHeadLine
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Donation Head Line"]);
+	}
+}
+
+
 public CustomTextField ShortDescription
 {
 	get
@@ -73,20 +118,20 @@ public CustomTextField ShortDescription
 }
 
 
+public CustomGeneralLinkField DonationNavigantionpage
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Donation Navigantion page"]);
+	}
+}
+
+
 public CustomTextField Link
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Link"]);
-	}
-}
-
-
-public CustomImageField ThumbnailImage
-{
-	get
-	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["Thumbnail Image"]);
 	}
 }
 
