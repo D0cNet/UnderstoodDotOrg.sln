@@ -241,6 +241,8 @@
 
             document.body.focus();
 
+            checkIssuesGrades();
+
         };
 
         self.init();
@@ -421,6 +423,33 @@
     };
 
 })(jQuery);
+
+function checkIssuesGrades() {
+    var $checkIssue = "false";
+    var $checkGrade = "false";
+    $('.container-guide-me-overlay .select-behavior ul li').each(function () {
+        if ($(this).find('div.checker span').hasClass('checked')) {
+            $checkIssue = "true";
+            return false;
+        }
+        return;
+    });
+
+    $('.container-guide-me-overlay .select-grade nav button').each(function () {
+        if ($(this).hasClass('active')) {
+            $checkGrade = "true";
+            return false;
+        }
+        return;
+    });
+
+    if ($checkIssue == "true" && $checkGrade == "true") {
+        $("input.button-guide-me-recommendations").removeAttr('disabled');
+    }
+    else {
+        $("input.button-guide-me-recommendations").attr('disabled', 'disabled');
+    }
+}
 
 
 

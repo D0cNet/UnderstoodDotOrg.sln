@@ -99,7 +99,7 @@
                                     <ItemTemplate>
                                         <li>
                                             <span class="checkbox-wrap">
-                                                <input id="issueInput" class="input-checkbox-class" runat="server" type="checkbox" name=""></span>
+                                                <input id="issueInput" class="input-checkbox-class" runat="server" onclick="CheckIssues($(this));" type="checkbox" name=""></span>
                                             <label id="lblCheckbox" runat="server" for=""></label>
 
                                             <asp:HiddenField ID="hdnKeyValuePair" runat="server" ClientIDMode="Static" />
@@ -130,7 +130,7 @@
                             <nav>
                                 <asp:Repeater ID="rptGrades" runat="server" OnItemDataBound="rptGrades_ItemDataBound">
                                     <ItemTemplate>
-                                        <button id="gradeBtn" runat="server" class="grade"></button>
+                                        <button id="gradeBtn" runat="server" class="grade" onclick="CheckGrades($(this));"></button>
                                     </ItemTemplate>
                                 </asp:Repeater>
                             </nav>
@@ -242,22 +242,47 @@
 
     }
 
-    var $check = "false";
-    function checkSelction() {
+    function CheckIssues($this) {
+        //alert($this.attr("checked"));
+        if ($this.attr('checked') == "checked") {
+            $this.removeAttr('checked');
+        }
+        else {
+            $this.attr('checked', 'checked');
+        }
+        checkSelection();
+    }
+
+    function CheckGrades($this) {
+        if ($this.attr('checked') == "checked") {
+            $this.removeAttr('checked');
+        }
+        else {
+            $this.attr('checked', 'checked');
+        }
+        checkSelection();
+    }
+
+    function checkSelection() {
+        var $checkIssue = "false";
+        var $checkGrade = "false";
         $('.container-guide-me-overlay .select-behavior ul li').each(function () {
-            if ($(this).find('div.checker span').hasClass('checked')) {
-                $check = "true";
+            if ($(this).find('input.input-checkbox-class').attr('checked') == "checked") {
+                $checkIssue = "true";
+                return false;
             }
+            return;
         });
 
         $('.container-guide-me-overlay .select-grade nav button').each(function () {
-            if ($(this).hasClass('active')) {
-                $check = "true";
+            if ($(this).attr('checked') == "checked") {
+                $checkGrade = "true";
                 return false;
             }
+            return;
         });
 
-        if ($check == "true") {
+        if ($checkIssue == "true" && $checkGrade == "true") {
             $("input.button-guide-me-recommendations").removeAttr('disabled');
         }
         else {
