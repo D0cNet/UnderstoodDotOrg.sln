@@ -1,0 +1,1 @@
+Please remember to replace the target database name at the begining of the create/alter scripts to target the correct db.
