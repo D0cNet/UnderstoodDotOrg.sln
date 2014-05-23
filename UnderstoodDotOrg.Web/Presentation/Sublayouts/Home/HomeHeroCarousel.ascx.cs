@@ -31,6 +31,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                     GetSliderItem(ContextItem);
 
                     var childIssues = GetFilters(ChildIssueItem.TemplateId).Select(i => (ChildIssueItem)i);
+                    Response.Write("ChildIssue " + childIssues.Count().ToString() + "<br/>");
                     if (childIssues != null && childIssues.Any()) {
                         rptChildIssues.Visible = true;
                         rptChildIssues.DataSource = childIssues;
@@ -41,6 +42,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                     }
 
                     var grades = GetFilters(GradeLevelItem.TemplateId).Select(i => (GradeLevelItem)i);
+                    Response.Write("Grades " + grades.Count().ToString() + "<br/>");
+
                     if (grades != null && grades.Any()) {
                         rptGrades.Visible = true;
                         rptGrades.DataSource = grades;
@@ -51,6 +54,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                     }
 
                     BindGradesDDL();
+
+                    Response.End();
                 }
             }
             //if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Any()) {
