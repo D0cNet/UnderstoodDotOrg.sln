@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Debug="true" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" %>
 
 <%@ Import Namespace="System" %>
 <%@ Import Namespace="System.Collections.Generic" %>
@@ -23,7 +23,8 @@
 
     Item siteItem = null;
     private void GetAllSitecoreItem() {
-        siteItem = Sitecore.Context.Database.GetItem(Sitecore.Context.Site.RootPath);
+        Sitecore.Data.Database db = Sitecore.Data.Database.GetDatabase("master");
+        siteItem = db.GetItem(Sitecore.Context.Site.RootPath);
         if (siteItem != null) {
             GetItems(siteItem);
         }
