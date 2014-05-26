@@ -47,6 +47,7 @@
             rptItems.DataBind();
         }
         else {
+            allItem.Clear();
             ltItemsCount.Text = "No Results Found";
         }
     }
