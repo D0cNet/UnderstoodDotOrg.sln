@@ -130,6 +130,9 @@
     <Compile Include="Handlers\DownloadFile.ashx.cs">
       <DependentUpon>DownloadFile.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\FacebookLogin.ashx.cs">
+      <DependentUpon>FacebookLogin.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Handlers\FormSubmissionsService.asmx.cs">
       <DependentUpon>FormSubmissionsService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -321,6 +324,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyArticlePage.ascx.cs">
       <DependentUpon>AdvocacyArticlePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyArticlePage.ascx.designer.cs">
       <DependentUpon>AdvocacyArticlePage.ascx</DependentUpon>
@@ -2622,6 +2626,7 @@
     <Content Include="Presentation\Includes\images\sprite.infographic-zoom.psd" />
     <Content Include="Presentation\Includes\js\vendor\jquery-1.10.2.min.map" />
     <Content Include="Handlers\DownloadFile.ashx" />
+    <Content Include="Handlers\FacebookLogin.ashx" />
     <None Include="Properties\PublishProfiles\Local.pubxml">
       <SubType>Designer</SubType>
     </None>
