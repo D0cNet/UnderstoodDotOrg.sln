@@ -318,7 +318,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyArticlePage.ascx.cs">
       <DependentUpon>AdvocacyArticlePage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyArticlePage.ascx.designer.cs">
       <DependentUpon>AdvocacyArticlePage.ascx</DependentUpon>
@@ -525,13 +524,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulCountOnlySideColumn.ascx.designer.cs">
       <DependentUpon>FoundHelpfulCountOnlySideColumn.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx.cs">
-      <DependentUpon>Promotionals List.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx.designer.cs">
-      <DependentUpon>Promotionals List.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\PromotionalsList.ascx.cs">
       <DependentUpon>PromotionalsList.ascx</DependentUpon>
@@ -2368,7 +2360,7 @@
     <Content Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx" />
-    <Content Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx" />
+    <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyPageTopicHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
@@ -2398,7 +2390,6 @@
     <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulAndCommentCountsSideColumn.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulCountOnly.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulCountOnlySideColumn.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\PromotionalsList.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\ReviewerInfo.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\ShareContent.ascx" />
