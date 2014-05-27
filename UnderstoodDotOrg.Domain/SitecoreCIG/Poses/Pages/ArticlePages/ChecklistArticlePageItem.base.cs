@@ -73,6 +73,15 @@ public CustomTreeListField KeepReadingContent
 }
 
 
+public CustomTextField Outrotext
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Outro text"]);
+	}
+}
+
+
 public CustomCheckboxField ShowPromotionalControl
 {
 	get
@@ -80,15 +89,6 @@ public CustomCheckboxField ShowPromotionalControl
 		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Promotional Control"]);
 	}
 }
-
-
-//public CustomTextField PromotionalHeadline
-//{
-//    get
-//    {
-//        return new CustomTextField(InnerItem, InnerItem.Fields["Promotional Headline"]);
-//    }
-//}
 
 
 public CustomTreeListField PromotionalContent

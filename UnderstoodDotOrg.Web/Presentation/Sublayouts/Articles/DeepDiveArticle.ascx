@@ -13,7 +13,8 @@
                         <h2><%--What&rsquo;s covered--%>
                             <sc:FieldRenderer ID="frContentBody" runat="server" FieldName="Section Title" />
                         </h2>
-                        <asp:ListView ID="rptSectionList" runat="server" OnItemDataBound="rptSectionList_ItemDataBound" ItemPlaceholderID="itemPlaceholder" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
+                        <asp:ListView ID="rptSectionList" runat="server" ItemPlaceholderID="itemPlaceholder" 
+                            ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
                             <LayoutTemplate>
                                 <ul>
                                     <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
@@ -21,9 +22,9 @@
                             </LayoutTemplate>
                             <ItemTemplate>
                                 <li>
-                                    <asp:HyperLink ID="uxItemLink" runat="server">
-                                    <%# Item.Title.Rendered %>
-                                    </asp:HyperLink>
+                                    <a href="#item<%# Container.DisplayIndex %>">
+                                        <%# Item.Title.Rendered %>
+                                    </a>
                                 </li>
                             </ItemTemplate>
                         </asp:ListView>
@@ -35,10 +36,11 @@
                     <!-- BEGIN PARTIAL: article-copy -->
                     <div class="deep-dive-copy">
 
-                        <asp:ListView ID="uxSections" runat="server" OnItemDataBound="uxSections_ItemDataBound" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
+                        <asp:ListView ID="uxSections" runat="server"
+                            ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
                             <ItemTemplate>
                                 <div class="deep-dive-block">
-                                    <asp:Literal runat="server" ID="uxJumpLink"></asp:Literal>
+                                    <a name="item<%# Container.DisplayIndex %>"></a>
                                     <h2>
                                         <%# Item.Title.Rendered %>
                                     </h2>
@@ -140,7 +142,7 @@
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
             <div class="sidebar-promos rs_read_this vertical">
-                <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
+                <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/PromotionalsList.ascx" />
             </div>
 
             <!-- end sidebar-promos -->

@@ -12,80 +12,55 @@ using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
-    public partial class Simple_Expert_Article_Page : System.Web.UI.UserControl
+    public partial class Simple_Expert_Article_Page : BaseSublayout<SimpleExpertArticleItem>
     {
-        SimpleExpertArticleItem ObjSimpleExpertArticle;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjSimpleExpertArticle = new SimpleExpertArticleItem(Sitecore.Context.Item);
-            if (ObjSimpleExpertArticle != null)
-            {
-                if (ObjSimpleExpertArticle.DefaultArticlePage.AuthorName.Item != null)
-                {
-                    sbAboutAuthor.Visible = true;
-                    ////Show Author details
-                    //frAuthorName.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                    //frAuthorBio.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                    //frAuthorImage.Item = ObjBasicArticle.DefaultArticlePage.AuthorName.Item;
-                    //frAuthorImage.FieldName = "Author Image";
-                    //hlAuthorImage.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.ContentPath;
-                    //hlAuthorMorePost.NavigateUrl = ObjBasicArticle.DefaultArticlePage.AuthorName.Item.Paths.FullPath;
-                }
-                if (ObjSimpleExpertArticle.ShowPromotionalControl.Checked == true)
-                {
-                    sbSidebarPromo.Visible = true;
-                }
-                else
-                {
-                    sbSidebarPromo.Visible = false;
-                }
-                IEnumerable<SimpleExpertAddQuestionPageItem> AllQAList = SimpleExpertArticleItem.GetSimpleExpertQAList(ObjSimpleExpertArticle);
-                if (AllQAList != null)
-                {
-                    rptExpertQA.DataSource = AllQAList;
-                    rptExpertQA.DataBind();
-                }
-            }
+            sbAboutAuthor.Visible = Model.DefaultArticlePage.AuthorName.Item != null;
+            sbSidebarPromo.Visible = Model.DefaultArticlePage.ShowPromotionalControl.Checked;
+
+            var allQAList = Model.GetSimpleExpertQAList();
+            rptExpertQA.DataSource = allQAList;
+            rptExpertQA.DataBind();
         }
 
         protected void rptExpertQA_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.IsItem())
             {
-                SimpleExpertAddQuestionPageItem QAItem = e.Item.DataItem as SimpleExpertAddQuestionPageItem;
-                if (QAItem != null)
+                var QAItem = e.Item.DataItem as SimpleExpertAddQuestionPageItem;
+
+                var frQuestion = e.FindControlAs<FieldRenderer>("frQuestion");
+                if (frQuestion != null)
                 {
-                    FieldRenderer frQuestion = e.FindControlAs<FieldRenderer>("frQuestion");
-                    if (frQuestion != null)
+                    frQuestion.Item = QAItem;
+                }
+                var frAnswer = e.FindControlAs<FieldRenderer>("frAnswer");
+                if (frAnswer != null)
+                {
+                    frAnswer.Item = QAItem;
+                }
+                var ExpertPerson = QAItem.AnsweredExpertDetails.Item;
+                if (ExpertPerson != null)
+                {
+                    var frExpertImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("frExpertImage");
+                    if (frExpertImage != null)
                     {
-                        frQuestion.Item = QAItem;
+                        frExpertImage.Item = ExpertPerson;
                     }
-                    FieldRenderer frAnswer = e.FindControlAs<FieldRenderer>("frAnswer");
-                    if (frAnswer != null)
+                    var frExpertName = e.FindControlAs<FieldRenderer>("frExpertName");
+                    if (frExpertName != null)
                     {
-                        frAnswer.Item = QAItem;
+                        frExpertName.Item = ExpertPerson;
                     }
-                    ExpertPersonItem ExpertPerson = QAItem.AnsweredExpertDetails.Item;
-                    if (ExpertPerson != null)
+                    var frExpertTitle = e.FindControlAs<FieldRenderer>("frExpertTitle");
+                    if (frExpertTitle != null)
                     {
-                        Sitecore.Web.UI.WebControls.Image frExpertImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("frExpertImage");
-                        if (frExpertImage != null)
-                        {
-                            frExpertImage.Item = ExpertPerson;
-                        }
-                        FieldRenderer frExpertName = e.FindControlAs<FieldRenderer>("frExpertName");
-                        if (frExpertName != null)
-                        {
-                            frExpertName.Item = ExpertPerson;
-                        }
-                        FieldRenderer frExpertTitle = e.FindControlAs<FieldRenderer>("frExpertTitle");
-                        if (frExpertTitle != null)
-                        {
-                            frExpertTitle.Item = ExpertPerson;
-                        }
+                        frExpertTitle.Item = ExpertPerson;
                     }
                 }
             }

@@ -10,43 +10,29 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.Glossarypage;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Items;
 using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Framework.UI;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
-    public partial class Glossary_Article : System.Web.UI.UserControl
+    public partial class Glossary_Article : BaseSublayout<GlossaryPageItem>
     {
-        GlossaryPageItem ObjGlossrayArticle;
         protected string CurrentAnchorName;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjGlossrayArticle = new GlossaryPageItem(Sitecore.Context.Item);
-            if (ObjGlossrayArticle != null)
-            {
 
-                if (ObjGlossrayArticle.DefaultArticlePage.Reviewedby.Item != null && ObjGlossrayArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
-                    SBReviewedBy.Visible = true;
-                else
-                    SBReviewedBy.Visible = false;
+            if (Model.DefaultArticlePage.Reviewedby.Item != null && Model.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
+                SBReviewedBy.Visible = true;
+            else
+                SBReviewedBy.Visible = false;
 
-                if (ObjGlossrayArticle.ShowPromotionalControl.Checked == true)
-                {
-                    sbSidebarPromo.Visible = true;
-                }
-                else
-                {
-                    sbSidebarPromo.Visible = false;
-                }
-                //Get list of selected item
-                
-                    IEnumerable<string> FinalRelatedArticles = GlossaryPageItem.GetTermAnchorList(ObjGlossrayArticle);
-                    if (FinalRelatedArticles != null)
-                    {
-                        rptTermCollection.DataSource = FinalRelatedArticles;
-                        rptTermCollection.DataBind();
-                        rptAlphabet.DataSource = FinalRelatedArticles;
-                        rptAlphabet.DataBind();
-                    }
-               
-            }
+            sbSidebarPromo.Visible = Model.DefaultArticlePage.ShowPromotionalControl.Checked;
+
+            var relatedArticles = Model.GetTermAnchorList();
+
+            rptTermCollection.DataSource = relatedArticles;
+            rptTermCollection.DataBind();
+
+            rptAlphabet.DataSource = relatedArticles;
+            rptAlphabet.DataBind();
         }
 
         protected void rptTermCollection_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -56,9 +42,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 string DistinctTerm = e.Item.DataItem as string;
                 if (DistinctTerm != null)
                 {
-                    CurrentAnchorName =  DistinctTerm;
+                    CurrentAnchorName = DistinctTerm;
                     Repeater rptListTermbyAnchor = e.FindControlAs<Repeater>("rptListTermbyAnchor");
-                    IEnumerable<GlossaryTermItem> FinalRelatedArticles = GlossaryPageItem.GetRelatedTermsInfo(ObjGlossrayArticle, DistinctTerm);
+                    IEnumerable<GlossaryTermItem> FinalRelatedArticles = GlossaryPageItem.GetRelatedTermsInfo(Model, DistinctTerm);
                     if (FinalRelatedArticles != null)
                     {
                         rptListTermbyAnchor.DataSource = FinalRelatedArticles;
@@ -104,7 +90,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (e.CommandName == "AlphabetClick")
             {
                 string DistinctTerm = e.CommandArgument.ToString();
-                Response.Redirect(string.Concat(Request.Url.ToString(),"#", DistinctTerm));
+                Response.Redirect(string.Concat(Request.Url.ToString(), "#", DistinctTerm));
                 //IEnumerable<GlossaryTermItem> FinalRelatedArticles = GlossaryPageItem.GetRelatedTermsInfo(ObjGlossrayArticle, DistinctTerm);
                 //if (FinalRelatedArticles != null)
                 //{

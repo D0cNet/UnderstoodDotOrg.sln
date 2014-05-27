@@ -46,51 +46,6 @@ public static implicit operator Item(ActionStyleListPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField KeepReadingHeadline
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Keep Reading Headline"]);
-	}
-}
-
-
-public CustomTreeListField KeepReadingContent
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Keep Reading Content"]);
-	}
-}
-
-
-public CustomCheckboxField ShowPromotionalControl
-{
-	get
-	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Promotional Control"]);
-	}
-}
-
-
-//public CustomTextField PromotionalHeadline
-//{
-//    get
-//    {
-//        return new CustomTextField(InnerItem, InnerItem.Fields["Promotional Headline"]);
-//    }
-//}
-
-
-public CustomTreeListField PromotionalContent
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Promotional Content"]);
-	}
-}
-
-
 #endregion //Field Instance Methods
 }
 }

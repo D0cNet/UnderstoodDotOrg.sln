@@ -113,7 +113,7 @@
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
             <div class="sidebar-promos rs_read_this vertical">
-                <sc:sublayout id="sbSidebarPromo" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
+                <sc:sublayout id="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/PromotionalsList.ascx" />
             </div>
             <!-- end sidebar-promos -->
 

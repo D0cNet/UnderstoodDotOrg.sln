@@ -6,10 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
 {
-    public partial class BlogHeader : System.Web.UI.UserControl
+    public partial class BlogHeader : BaseSublayout
     {
         protected void Page_Load(object sender, EventArgs e)
         {

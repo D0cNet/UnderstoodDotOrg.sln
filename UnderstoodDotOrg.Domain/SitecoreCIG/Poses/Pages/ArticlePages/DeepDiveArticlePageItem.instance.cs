@@ -10,18 +10,12 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
 {
 public partial class DeepDiveArticlePageItem 
 {
-    public static List<DeepDiveSectionInfoPageItem> GetSectionData(DeepDiveArticlePageItem ObjDeepDiveArt)
+    public List<DeepDiveSectionInfoPageItem> GetSectionData()
     {
-        IEnumerable<Item> AllSections = ObjDeepDiveArt.InnerItem.GetChildren().Where(t => t.TemplateID.ToString() == DeepDiveSectionInfoPageItem.TemplateId.ToString() && t.Parent.ID.ToString()==ObjDeepDiveArt.ID.ToString() );
-        List<DeepDiveSectionInfoPageItem> FinalSections = new List<DeepDiveSectionInfoPageItem>();
-        if (AllSections != null)
-        {
-            foreach (DeepDiveSectionInfoPageItem SectionItem in AllSections)
-            {
-                FinalSections.Add(SectionItem);
-            }
-        }
-        return FinalSections;
+        return InnerItem.GetChildren()
+            .Where(i => i.TemplateID.ToString() == DeepDiveSectionInfoPageItem.TemplateId.ToString() &&
+                i.Parent.ID.ToString() == ID.ToString())
+            .Select(i => (DeepDiveSectionInfoPageItem)i).ToList();
     }
 }
 }

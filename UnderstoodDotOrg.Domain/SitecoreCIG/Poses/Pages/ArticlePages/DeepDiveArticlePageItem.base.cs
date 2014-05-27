@@ -46,15 +46,6 @@ public static implicit operator Item(DeepDiveArticlePageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField KeepReadingHeadline
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Keep Reading Headline"]);
-	}
-}
-
-
 public CustomTextField KeyTakeawayTitle
 {
 	get
@@ -64,11 +55,11 @@ public CustomTextField KeyTakeawayTitle
 }
 
 
-public CustomTreeListField KeepReadingContent
+public CustomTextField SourcesHeader
 {
 	get
 	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Keep Reading Content"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Sources Header"]);
 	}
 }
 
@@ -82,29 +73,11 @@ public CustomTextField KeyTakeawayDetails
 }
 
 
-public CustomCheckboxField ShowPromotionalControl
+public CustomTextField SourcesContent
 {
 	get
 	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Promotional Control"]);
-	}
-}
-
-
-//public CustomTextField PromotionalHeadline
-//{
-//    get
-//    {
-//        return new CustomTextField(InnerItem, InnerItem.Fields["Promotional Headline"]);
-//    }
-//}
-
-
-public CustomTreeListField PromotionalContent
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Promotional Content"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Sources Content"]);
 	}
 }
 

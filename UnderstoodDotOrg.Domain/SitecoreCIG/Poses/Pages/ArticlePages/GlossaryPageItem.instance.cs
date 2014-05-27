@@ -12,19 +12,13 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
     public partial class GlossaryPageItem
     {
 
-        public static IEnumerable<string> GetTermAnchorList(GlossaryPageItem ObjGlossArt)
+        public IEnumerable<string> GetTermAnchorList()
         {
-            //IEnumerable<string> Allterms = ObjGlossArt.InnerItem.GetChildren()
-            //    .Where(t => t.TemplateID.ToString() == GlossaryTermItem.TemplateId)
-            //    .Select(x => new GlossaryTermItem(x))
-            //    .Select(x => x.GlossaryTermTitle.Text.Substring(0, 1))
-            //    .Distinct();
-            IEnumerable<string> Allterms = ObjGlossArt.AllGlossaryTerms
+            return AllGlossaryTerms
                .Select(x => x.GlossaryTermTitle.Text.Substring(0, 1))
                .Distinct();
-            return Allterms;
-
         }
+
         public static IEnumerable<GlossaryTermItem> GetRelatedTermsInfo(GlossaryPageItem ObjGlossaryArt, string Termletter)
         {
             IEnumerable<GlossaryTermItem> AllRelatedterms = ObjGlossaryArt.InnerItem.GetChildren()

@@ -10,26 +10,11 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.SimpleExp
 {
     public partial class SimpleExpertArticleItem
     {
-        public static  IEnumerable<SimpleExpertAddQuestionPageItem> GetSimpleExpertQAList(SimpleExpertArticleItem ObjExpertArt)
-    {
-        IEnumerable<SimpleExpertAddQuestionPageItem> AllExpertQAList = ObjExpertArt.AllExpertQA;
-        return AllExpertQAList;
-            
-    }
-        private IEnumerable<SimpleExpertAddQuestionPageItem> _allExpertQA;
-        private IEnumerable<SimpleExpertAddQuestionPageItem> AllExpertQA
+        public IEnumerable<SimpleExpertAddQuestionPageItem> GetSimpleExpertQAList()
         {
-            get
-            {
-                if (_allExpertQA == null)
-                {
-                    _allExpertQA = this.InnerItem.GetChildren()
-                        .Where(t => t.TemplateID.ToString() == SimpleExpertAddQuestionPageItem.TemplateId.ToString())
-                        .Select(x => new SimpleExpertAddQuestionPageItem(x));
-                }
-
-                return _allExpertQA;
-            }
+            return InnerItem.GetChildren()
+                .Where(t => t.TemplateID.ToString() == SimpleExpertAddQuestionPageItem.TemplateId.ToString())
+                .Select(x => new SimpleExpertAddQuestionPageItem(x));
         }
     }
 }

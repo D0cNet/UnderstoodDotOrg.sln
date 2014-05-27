@@ -19,20 +19,22 @@
             <div id="glossary-tab">
                 <ul>
                     <li class="glossary-tab-browse">
-                        <a href="#glossary-browse">Browse by Letter
-      </a>
+                        <a href="#glossary-browse">
+                            Browse by Letter
+                        </a>
                     </li>
                     <li class="glossary-tab-keyword">
-                        <a href="#glossary-search">Search by Keyword
-      </a>
+                        <a href="#glossary-search">
+                            Search by Keyword
+                        </a>
                     </li>
                 </ul>
                 <div id="glossary-browse" id="top">
                     <asp:Repeater ID="rptAlphabet" runat="server" OnItemCommand="rptAlphabet_ItemCommand">
                         <ItemTemplate>
                             <asp:LinkButton ID="btnTermAnchor" runat="server" CommandName="AlphabetClick" CommandArgument="<%#Container.DataItem%>">
-                                    <%#Container.DataItem %>
-                                </asp:LinkButton>
+                                    <%# Container.DataItem %>
+                            </asp:LinkButton>
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
@@ -51,8 +53,8 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <div class="glossary-container">
-                             <a class="glossary-anchor" name="<%#Container.DataItem %>">
-                              <%#Container.DataItem %>
+                            <a class="glossary-anchor" name="<%#Container.DataItem %>">
+                                <%# Container.DataItem %>
                             </a>
                             <a class="back-to-top" href="#top">Back to Top</a>
                         </div>
@@ -60,7 +62,8 @@
                             <HeaderTemplate></HeaderTemplate>
                             <ItemTemplate>
                                 <div class="glossary-item">
-                                    <h2><%--Academic Achievement Standards--%>
+                                    <h2>
+                                        <%--Academic Achievement Standards--%>
                                         <sc:FieldRenderer ID="frTermTitle" runat="server" FieldName="Glossary Term Title" />
                                     </h2>
                                     <p>
@@ -75,8 +78,6 @@
                     <FooterTemplate></FooterTemplate>
                 </asp:Repeater>
             </section>
-
-
             <!-- END PARTIAL: glossary -->
             <!-- BEGIN PARTIAL: reviewed-by -->
             <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
@@ -104,7 +105,7 @@
 
         <!-- right bar -->
         <div class="col col-5 offset-1 skiplink-sidebar rs_read_this">
-            
+
             <sc:Sublayout ID="Sublayout1" Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulCountOnlySideColumn.ascx" runat="server"></sc:Sublayout>
 
             <!-- BEGIN PARTIAL: find-helpful -->
@@ -118,11 +119,9 @@
             <!-- END PARTIAL: keep-reading -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
             <div class="sidebar-promos rs_read_this vertical">
-                <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/Promotionals List.ascx" />
+                <sc:Sublayout ID="sbSidebarPromo" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/PromotionalsList.ascx" />
             </div>
-
             <!-- end sidebar-promos -->
-
             <!-- END PARTIAL: sidebar-promos -->
         </div>
     </div>

@@ -46,11 +46,11 @@ public static implicit operator Item(BasicArticlePageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField KeepReadingHeadline
+public CustomTextField ArticleOriginalID
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Keep Reading Headline"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Article Original ID"]);
 	}
 }
 
@@ -64,20 +64,11 @@ public CustomCheckboxField ShowComment
 }
 
 
-public CustomTreeListField KeepReadingContent
+public CustomTextField CommentOverrideID
 {
 	get
 	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Keep Reading Content"]);
-	}
-}
-
-
-public CustomTextField KeyTakeawayTitle
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Key Takeaway Title"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Comment Override ID"]);
 	}
 }
 
@@ -91,38 +82,11 @@ public CustomTextField KeyTakeawayData
 }
 
 
-public CustomCheckboxField ShowPromotionalControl
-{
-	get
-	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Promotional Control"]);
-	}
-}
-
-
-public CustomTreeListField PromotionalContent
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Promotional Content"]);
-	}
-}
-
-
-public CustomTextField AtaglanceHeader
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["At-a-glance Header"]);
-	}
-}
-
-
 public CustomTextField AtaglanceContent
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["At-a-glance Content"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["At a glance Content"]);
 	}
 }
 

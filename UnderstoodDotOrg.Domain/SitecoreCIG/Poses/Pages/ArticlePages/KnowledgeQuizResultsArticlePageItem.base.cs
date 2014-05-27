@@ -17,8 +17,8 @@ public static readonly string TemplateId = "{A75612B8-9D45-4863-8B1A-FD8BC256562
 
 #region Inherited Base Templates
 
-private readonly ContentPageItem _ContentPageItem;
-public ContentPageItem ContentPage { get { return _ContentPageItem; } }
+private readonly DefaultArticlePageItem _DefaultArticlePageItem;
+public DefaultArticlePageItem DefaultArticlePage { get { return _DefaultArticlePageItem; } }
 
 #endregion
 
@@ -26,7 +26,7 @@ public ContentPageItem ContentPage { get { return _ContentPageItem; } }
 
 public KnowledgeQuizResultsArticlePageItem(Item innerItem) : base(innerItem)
 {
-	_ContentPageItem = new ContentPageItem(innerItem);
+	_DefaultArticlePageItem = new DefaultArticlePageItem(innerItem);
 
 }
 

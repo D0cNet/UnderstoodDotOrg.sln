@@ -17,8 +17,8 @@ public static readonly string TemplateId = "{DB6FA908-617D-4E57-94C2-48872C5908C
 
 #region Inherited Base Templates
 
-private readonly ContentPageItem _ContentPageItem;
-public ContentPageItem ContentPage { get { return _ContentPageItem; } }
+private readonly DefaultArticlePageItem _DefaultArticlePageItem;
+public DefaultArticlePageItem DefaultArticlePage { get { return _DefaultArticlePageItem; } }
 
 #endregion
 
@@ -26,7 +26,7 @@ public ContentPageItem ContentPage { get { return _ContentPageItem; } }
 
 public AssessmentQuizArticlePage2Item(Item innerItem) : base(innerItem)
 {
-	_ContentPageItem = new ContentPageItem(innerItem);
+	_DefaultArticlePageItem = new DefaultArticlePageItem(innerItem);
 
 }
 
@@ -46,55 +46,10 @@ public static implicit operator Item(AssessmentQuizArticlePage2Item customItem)
 #region Field Instance Methods
 
 
-public CustomTextField KeepReadingHeadline
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Keep Reading Headline"]);
-	}
-}
-
-
 //Could not find Field Type for Link to Back Page
 
 
-public CustomTreeListField KeepReadingContent
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Keep Reading Content"]);
-	}
-}
-
-
 //Could not find Field Type for Link to Result Page
-
-
-public CustomCheckboxField ShowPromotionalControl
-{
-	get
-	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Promotional Control"]);
-	}
-}
-
-
-public CustomTextField PromotionalHeadline
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Promotional Headline"]);
-	}
-}
-
-
-public CustomTreeListField PromotionalContent
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Promotional Content"]);
-	}
-}
 
 
 #endregion //Field Instance Methods

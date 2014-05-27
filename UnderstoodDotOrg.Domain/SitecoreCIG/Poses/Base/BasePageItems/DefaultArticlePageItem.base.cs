@@ -100,6 +100,24 @@ public CustomTreeListField ImportanceLevel
 }
 
 
+public CustomTextField KeepReadingHeadline
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Keep Reading Headline"]);
+	}
+}
+
+
+public CustomCheckboxField ShowPromotionalControl
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Promotional Control"]);
+	}
+}
+
+
 public CustomTreeListField ApplicablePersonalities
 {
 	get
@@ -145,11 +163,29 @@ public CustomDateField DateEnd
 }
 
 
+public CustomTreeListField KeepReadingContent
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Keep Reading Content"]);
+	}
+}
+
+
 public CustomTreeListField OverrideType
 {
 	get
 	{
 		return new CustomTreeListField(InnerItem, InnerItem.Fields["Override Type"]);
+	}
+}
+
+
+public CustomTextField PromotionalHeadline
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Promotional Headline"]);
 	}
 }
 
@@ -177,6 +213,15 @@ public CustomTreeListField OtherApplicableEvaluations
 	get
 	{
 		return new CustomTreeListField(InnerItem, InnerItem.Fields["Other Applicable Evaluations"]);
+	}
+}
+
+
+public CustomTreeListField PromotionalContent
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Promotional Content"]);
 	}
 }
 

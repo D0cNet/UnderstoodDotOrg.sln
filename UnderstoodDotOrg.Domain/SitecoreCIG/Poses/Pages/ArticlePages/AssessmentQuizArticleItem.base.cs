@@ -10,10 +10,10 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
 {
-public partial class KnowledgeQuizQuestionArticlePageItem : CustomItem
+public partial class AssessmentQuizArticleItem : CustomItem
 {
 
-public static readonly string TemplateId = "{28A9E7F1-9265-4F10-B288-19A254E0F64D}";
+public static readonly string TemplateId = "{6AC5B76A-6EC6-4561-868C-9A0EBC3190D3}";
 
 #region Inherited Base Templates
 
@@ -24,18 +24,18 @@ public DefaultArticlePageItem DefaultArticlePage { get { return _DefaultArticleP
 
 #region Boilerplate CustomItem Code
 
-public KnowledgeQuizQuestionArticlePageItem(Item innerItem) : base(innerItem)
+public AssessmentQuizArticleItem(Item innerItem) : base(innerItem)
 {
 	_DefaultArticlePageItem = new DefaultArticlePageItem(innerItem);
 
 }
 
-public static implicit operator KnowledgeQuizQuestionArticlePageItem(Item innerItem)
+public static implicit operator AssessmentQuizArticleItem(Item innerItem)
 {
-	return innerItem != null ? new KnowledgeQuizQuestionArticlePageItem(innerItem) : null;
+	return innerItem != null ? new AssessmentQuizArticleItem(innerItem) : null;
 }
 
-public static implicit operator Item(KnowledgeQuizQuestionArticlePageItem customItem)
+public static implicit operator Item(AssessmentQuizArticleItem customItem)
 {
 	return customItem != null ? customItem.InnerItem : null;
 }
@@ -46,7 +46,7 @@ public static implicit operator Item(KnowledgeQuizQuestionArticlePageItem custom
 #region Field Instance Methods
 
 
-//Could not find Field Type for Link to Result Page
+//Could not find Field Type for Link to Next page
 
 
 #endregion //Field Instance Methods

@@ -316,6 +316,13 @@
     <Compile Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx.designer.cs">
       <DependentUpon>SalesforceContactAdmin.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyArticlePage.ascx.cs">
+      <DependentUpon>AdvocacyArticlePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyArticlePage.ascx.designer.cs">
+      <DependentUpon>AdvocacyArticlePage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx.cs">
       <DependentUpon>AdvocacyLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -525,6 +532,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx.designer.cs">
       <DependentUpon>Promotionals List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\PromotionalsList.ascx.cs">
+      <DependentUpon>PromotionalsList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\PromotionalsList.ascx.designer.cs">
+      <DependentUpon>PromotionalsList.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\ReviewerInfo.ascx.cs">
       <DependentUpon>ReviewerInfo.ascx</DependentUpon>
@@ -2354,6 +2368,7 @@
     <Content Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx" />
+    <Content Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyPageTopicHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
@@ -2384,6 +2399,7 @@
     <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulCountOnly.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulCountOnlySideColumn.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\Promotionals List.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\PromotionalsList.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\ReviewerInfo.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\ShareContent.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx" />
