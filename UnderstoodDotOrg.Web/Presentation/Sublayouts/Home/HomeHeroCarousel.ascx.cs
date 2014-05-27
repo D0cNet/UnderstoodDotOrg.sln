@@ -30,6 +30,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
 
             return from c in children
                    let i = new ChildIssueItem(c)
+                   where !i.ExcludeFromWebsiteDisplay.Checked
                    select c;
         }
 
@@ -43,6 +44,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                             .GetChildren().FilterByContextLanguageVersion();
             return from c in children
                    let i = new GradeLevelItem(c)
+                   where !i.ExcludeFromWebsiteDisplay.Checked
                    select c;
         }
 
