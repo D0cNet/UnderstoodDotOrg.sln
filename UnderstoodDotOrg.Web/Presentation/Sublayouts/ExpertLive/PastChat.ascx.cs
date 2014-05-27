@@ -14,7 +14,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
     public partial class PastChat : System.Web.UI.UserControl {
         ChatEventPageItem ContextItem = Sitecore.Context.Item;
         protected void Page_Load(object sender, EventArgs e) {
-            Response.Write(Request.UrlReferrer);
+           
             BaseEventDetailPageItem baseEventDetailpage = new BaseEventDetailPageItem(ContextItem);
             ExpertDetailPageItem expert = baseEventDetailpage.Expert.Item;
 

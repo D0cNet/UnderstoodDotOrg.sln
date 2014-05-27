@@ -46,8 +46,7 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
             else {
                 this.Visible = true;
             }
-            //Response.Write(result.Count());
-            //Response.End();
+            
         }
 
         private IEnumerable<WelcomeTourItem> GetWelcomeTourItem(WelcomeTourFolderItem welcomeTourFolder) {

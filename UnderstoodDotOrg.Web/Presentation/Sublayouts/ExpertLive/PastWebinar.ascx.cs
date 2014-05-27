@@ -46,7 +46,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Write(Request.UrlReferrer);
              ExpertLivePageItem expertLive = GetExpertLivePageItem();
              if (expertLive != null) {
                  
