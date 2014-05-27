@@ -99,10 +99,10 @@
     }
 
     private void AddRequiredItem(Item child) {
-        if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && child.Source == null) {
+        if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && GetCloneItems(child).Count() == 0) {
             _realItems.Add(child);
         }
-        if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && child.Source != null) {
+        if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && GetCloneItems(child).Count() > 0) {
             _cloneItems.Add(child);
         }
     }
@@ -118,6 +118,7 @@
                 
                 if (ltItemName != null) {
                     ltItemName.Text = itm.Name + "<br/>" + itm.ID.ToString();
+
                 }
                 if (litUrl != null) {
                     litUrl.Text = itm.Paths.ContentPath.ToString();

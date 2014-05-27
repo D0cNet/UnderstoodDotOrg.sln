@@ -318,7 +318,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx.cs">
       <DependentUpon>AdvocacyLandingPage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx.designer.cs">
       <DependentUpon>AdvocacyLandingPage.ascx</DependentUpon>
@@ -1840,7 +1839,6 @@
     <Content Include="Presentation\AjaxData\SubtopicArticles.aspx" />
     <Content Include="Presentation\AjaxData\TopicLandingArticles.aspx" />
     <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />
-    <Content Include="Presentation\GetItemsByTemplate.aspx" />
     <Content Include="Presentation\Includes\css\about-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\about.css" />
     <Content Include="Presentation\Includes\css\account-nonresponsive.css" />
