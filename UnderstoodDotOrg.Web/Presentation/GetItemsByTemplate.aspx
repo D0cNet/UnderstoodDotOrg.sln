@@ -117,8 +117,7 @@
                 Literal ltClonesCount = (Literal)e.Item.FindControl("ltClonesCount");
                 
                 if (ltItemName != null) {
-                    ltItemName.Text = itm.Name;
-
+                    ltItemName.Text = itm.Name + "<br/>" + itm.ID.ToString();
                 }
                 if (litUrl != null) {
                     litUrl.Text = itm.Paths.ContentPath.ToString();
