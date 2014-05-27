@@ -8,15 +8,13 @@
 
 <%@ Import Namespace="Sitecore.Collections" %>
 <%@ Import Namespace="Sitecore.Data.Items" %>
-
-
 <script runat="server">
     
     string templateId = string.Empty;
-    List<Item> allItem = new List<Item>();
+    List<Item> _realItems = new List<Item>();
+    List<Item> _cloneItems = new List<Item>();
     protected void Page_Load(object sender, EventArgs e) {
         if (!IsPostBack) {
-   
             if (rbtLstOptions.SelectedItem != null && !rbtLstOptions.SelectedItem.ToString().IsNullOrEmpty()) {
                 Response.Write(rbtLstOptions.SelectedValue.ToString() + "check <br/>");
                 GetAllSitecoreItem();
@@ -38,27 +36,35 @@
         Item root;
         foreach (Item child in childList) {
             AddRequiredItem(child);
-
             root = BuildXmlNodesForChildren(child);
         }
-        if (allItem.Any()) {
-            ltItemsCount.Text = "Total Items Count - " + allItem.Count().ToString();
-            rptItems.DataSource = allItem;
+        if (_realItems.Any()) {
+            ltItemsCount.Text = "Real Items Count - " + _realItems.Count().ToString();
+            rptItems.Visible = true;
+            rptItems.DataSource = _realItems;
             rptItems.DataBind();
         }
         else {
-            allItem.Clear();
             ltItemsCount.Text = "No Results Found";
+            rptItems.Visible = false;
+        }
+
+        if (_cloneItems.Any()) {
+            ltItemsCount.Text += "<br>Clone Items Count - " + _cloneItems.Count().ToString();
+            rptCloneItems.Visible = true;
+            rptCloneItems.DataSource = _cloneItems;
+            rptCloneItems.DataBind();
+        }
+        else {
+            rptCloneItems.Visible = false;
         }
     }
+    
     private void btnSubmit_OnClick(object sender, EventArgs e) {
-        //if (!txtTemplateBox.Text.IsNullOrEmpty()) {
-        //    templateId = txtTemplateBox.Text;
         if (rbtLstOptions.SelectedItem != null && !rbtLstOptions.SelectedItem.ToString().IsNullOrEmpty()) {
             templateId = rbtLstOptions.SelectedValue.ToString();
             GetAllSitecoreItem();
         }
-        //}
     }
 
 
@@ -70,7 +76,6 @@
     /// <param name="root"></param>
     /// <param name="doc">Initial XML Document item.</param>
     private Item BuildXmlNodesForChildren(Item parentItem) {
-
         //Iterate though children
         Sitecore.Collections.ChildList childList = parentItem.Children;
         foreach (Item child in childList) {
@@ -83,8 +88,11 @@
     }
 
     private void AddRequiredItem(Item child) {
-        if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower())) {
-            allItem.Add(child);
+        if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && child.Source == null) {
+            _realItems.Add(child);
+        }
+        if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && child.Source != null) {
+            _cloneItems.Add(child);
         }
     }
     protected void rptItems_ItemDataBound(object sender, RepeaterItemEventArgs e) {
@@ -108,7 +116,6 @@
                 }
 
                 if (ltPath != null) {
-                    //ltPath.Text = itm.Paths.GetFriendlyUrl();
                     ltPath.Text = Sitecore.Links.LinkManager.GetItemUrl(itm);
                 }
             }
@@ -128,7 +135,6 @@
 
         <div>
             <asp:Label runat="server" ID="lblMessage" Text="Please select article type:"></asp:Label>
-            <%--<asp:TextBox ID="txtTemplateBox" runat="server" Width="300"></asp:TextBox> &nbsp;&nbsp;--%>
             <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_OnClick"></asp:Button>&nbsp;&nbsp;<br />
             <asp:RadioButtonList ID="rbtLstOptions" runat="server"
                 RepeatDirection="Vertical" RepeatLayout="Table">
@@ -147,16 +153,48 @@
                 <asp:ListItem Text="Toolkit Article Page" Value="{8A8EE8DC-7953-433A-B3B1-79E19B76A9A9}"></asp:ListItem>
             </asp:RadioButtonList>
 
+            <br />
             <asp:Literal ID="ltItemsCount" runat="server"></asp:Literal>
         </div>
 
         <br />
-        <br />
-
+        
         <div>
             <asp:Repeater ID="rptItems" runat="server" OnItemDataBound="rptItems_ItemDataBound">
 
                 <HeaderTemplate>
+                    <h2>Real Items Are:</h2>
+                    <br />
+                    <table style="border: 1px Black solid">
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr>
+                        <td style="border: 1px Black solid">
+                            <asp:Literal ID="ltItemName" runat="server"></asp:Literal>
+                        </td>
+                        <td style="border: 1px Black solid">
+                            <asp:Literal ID="ltTemplate" runat="server"></asp:Literal>
+                        </td>
+                        <td style="border: 1px Black solid">
+                            <asp:Literal ID="ltPath" runat="server"></asp:Literal>
+                        </td>
+                        <td style="border: 1px Black solid">
+                            <asp:Literal ID="litUrl" runat="server"></asp:Literal>
+                        </td>
+                    </tr>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </table>
+                </FooterTemplate>
+            </asp:Repeater>
+
+            <br />
+            
+            <asp:Repeater ID="rptCloneItems" runat="server" OnItemDataBound="rptItems_ItemDataBound">
+
+                <HeaderTemplate>
+                    <h2>Clone Items Are:</h2>
+                    <br />
                     <table style="border: 1px Black solid">
                 </HeaderTemplate>
                 <ItemTemplate>
