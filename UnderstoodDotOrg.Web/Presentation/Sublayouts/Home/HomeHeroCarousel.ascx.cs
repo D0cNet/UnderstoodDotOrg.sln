@@ -23,7 +23,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Recommendation;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
     public partial class HomeHeroCarousel : BaseSublayout {
-
+        Member ActiveMember = new Member();
         public static IEnumerable<Item> GetAllIssues() {
             var children = Sitecore.Context.Database.GetItem(Constants.IssueContainer.ToString())
                 .GetChildren().FilterByContextLanguageVersion();
@@ -48,6 +48,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
 
         protected void Page_Load(object sender, EventArgs e) {
             HomePageItem ContextItem = Sitecore.Context.Item;
+
+            if (UnauthenticatedSessionMember != null) {
+                ActiveMember = UnauthenticatedSessionMember;
+            }
+            else if (CurrentMember != null) {
+                ActiveMember = CurrentMember;
+            }
+
             if (!IsPostBack) {
                 if (ContextItem != null) {
                     GetSliderItem(ContextItem);
@@ -121,8 +129,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
 
                 ddlGradeGroups.DataBind();
 
-                if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Any()) {
-                    foreach (Child child in CurrentMember.Children) {
+                if (ActiveMember != null && ActiveMember.Children != null && ActiveMember.Children.Any()) {
+                    foreach (Child child in ActiveMember.Children) {
                         if (child.Grades != null && child.Grades.Any()) {
                             foreach (Grade grade in child.Grades) {
                                 if (grade != null && ddlGradeGroups.Items.FindByValue(string.Concat("{", grade.Key.ToString().ToUpper(), "}")) != null) {
@@ -172,8 +180,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                     if (issueInput != null) {
                         issueInput.Name = "guideme-issue-" + childIssueItem.IssueName.Raw;
                         issueInput.Attributes.Add("data-value", childIssueItem.ID + "|" + childIssueItem.IssueName.Raw);
-                        if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Any()) {
-                            foreach (Child child in CurrentMember.Children) {
+                        if (ActiveMember != null && ActiveMember.Children != null && ActiveMember.Children.Any()) {
+                            foreach (Child child in ActiveMember.Children) {
                                 if (child.Issues != null && child.Issues.Any()) {
                                     foreach (Issue issue in child.Issues) {
                                         if (issue.Key.ToString().ToLower().Replace("{", "").Replace("}", "") == childIssueItem.ID.ToString().ToLower().Replace("{", "").Replace("}", "")) {
@@ -204,8 +212,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                         gradeBtn.InnerText = gradeItem.Name.Raw;
                         gradeBtn.Attributes.Add("data-value", gradeItem.ID.ToString());
                         gradeBtn.ID = "grade-" + gradeItem.Name.Raw.Replace(" ", "-").Replace("/", "-");
-                        if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Any()) {
-                            foreach (Child child in CurrentMember.Children) {
+                        if (ActiveMember != null && ActiveMember.Children != null && ActiveMember.Children.Any()) {
+                            foreach (Child child in ActiveMember.Children) {
                                 if (child.Grades != null && child.Grades.Any()) {
                                     foreach (Grade grade in child.Grades) {
                                         if (grade.Key.ToString().ToLower().Replace("{", "").Replace("}", "") == gradeItem.ID.ToString().ToLower().Replace("{", "").Replace("}", "")) {
