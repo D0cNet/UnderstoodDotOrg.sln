@@ -330,15 +330,9 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Page404Item.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\PartnerInfoItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\SearchFilterTypeItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyArticlePageItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyBasePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyLandingPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyLandingPageItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\CampaignItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\CampaignItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\TakeActionPageItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\TakeActionPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ActionStyleListArticle\ActionPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ActionStyleListPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ActionStyleListPageItem.instance.cs" />
