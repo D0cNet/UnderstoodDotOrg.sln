@@ -8,6 +8,7 @@
 
 <%@ Import Namespace="Sitecore.Collections" %>
 <%@ Import Namespace="Sitecore.Data.Items" %>
+
 <script runat="server">
     
 
@@ -17,21 +18,19 @@
     protected void Page_Load(object sender, EventArgs e) {
         if (!IsPostBack) {
             if (rbtLstOptions.SelectedItem != null && !rbtLstOptions.SelectedItem.ToString().IsNullOrEmpty()) {
-                Response.Write(rbtLstOptions.SelectedValue.ToString() + "check <br/>");
                 GetAllSitecoreItem();
             }
         }
     }
-    
+
     public IEnumerable<Item> GetCloneItems(Item original) {
 
         return (from link in Sitecore.Globals.LinkDatabase.GetReferrers(original)
                 select link.GetSourceItem() into clone
                 where ((clone != null) && (clone.Source != null)) && (clone.Source.ID == original.ID)
                 select clone);
-        //var list = Globals.LinkDatabase.GetReferrers(original)
     }
-    
+
     Item siteItem = null;
     private void GetAllSitecoreItem() {
         Sitecore.Data.Database db = Sitecore.Data.Database.GetDatabase("master");
@@ -51,17 +50,19 @@
         if (_realItems.Any()) {
             ltItemsCount.Text = "Real Items Count - " + _realItems.Count().ToString();
             rptItems.Visible = true;
+            
             rptItems.DataSource = _realItems;
             rptItems.DataBind();
         }
         else {
-			rptItems.Visible = false;
+            rptItems.Visible = false;
             ltItemsCount.Text = "No Results Found";
             rptItems.Visible = false;
         }
 
         if (_cloneItems.Any()) {
             ltItemsCount.Text += "<br>Clone Items Count - " + _cloneItems.Count().ToString();
+           
             rptCloneItems.Visible = true;
             rptCloneItems.DataSource = _cloneItems;
             rptCloneItems.DataBind();
@@ -70,7 +71,7 @@
             rptCloneItems.Visible = false;
         }
     }
-    
+
     private void btnSubmit_OnClick(object sender, EventArgs e) {
         if (rbtLstOptions.SelectedItem != null && !rbtLstOptions.SelectedItem.ToString().IsNullOrEmpty()) {
             templateId = rbtLstOptions.SelectedValue.ToString();
@@ -99,11 +100,15 @@
     }
 
     private void AddRequiredItem(Item child) {
-        if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && GetCloneItems(child).Count() == 0) {
+
+        if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && child.Source == null) {
             _realItems.Add(child);
         }
         if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && GetCloneItems(child).Count() > 0) {
-            _cloneItems.Add(child);
+            var cloneItems = GetCloneItems(child);
+            foreach (var itm in cloneItems) {
+                _cloneItems.Add(itm);
+            }
         }
     }
     protected void rptItems_ItemDataBound(object sender, RepeaterItemEventArgs e) {
@@ -115,7 +120,7 @@
                 Literal ltPath = (Literal)e.Item.FindControl("ltPath");
                 Literal litUrl = (Literal)e.Item.FindControl("litUrl");
                 Literal ltClonesCount = (Literal)e.Item.FindControl("ltClonesCount");
-                
+
                 if (ltItemName != null) {
                     ltItemName.Text = itm.Name + "<br/>" + itm.ID.ToString();
 
@@ -177,7 +182,7 @@
         </div>
 
         <br />
-        
+
         <div>
             <asp:Repeater ID="rptItems" runat="server" OnItemDataBound="rptItems_ItemDataBound">
 
@@ -185,22 +190,17 @@
                     <h2>Real Items Are:</h2>
                     <br />
                     <table style="border: 1px Black solid">
-                         <thead>
+                        <thead>
                             <tr>
-                                <td style="border: 1px Black solid">
-                                    Item Name
+                                <td style="border: 1px Black solid">Item Name
                                 </td>
-                                <td style="border: 1px Black solid">
-                                    Template
+                                <td style="border: 1px Black solid">Template
                                 </td>
-                                <td style="border: 1px Black solid">
-                                    Path
+                                <td style="border: 1px Black solid">Path
                                 </td>
-                                <td style="border: 1px Black solid">
-                                    URl
+                                <td style="border: 1px Black solid">URl
                                 </td>
-                                <td style="border: 1px Black solid">
-                                    Clone Count
+                                <td style="border: 1px Black solid">Clone Count
                                 </td>
                             </tr>
                         </thead>
@@ -219,7 +219,7 @@
                         <td style="border: 1px Black solid">
                             <asp:Literal ID="litUrl" runat="server"></asp:Literal>
                         </td>
-                        <td style="border:1px Black solid" >
+                        <td style="border: 1px Black solid">
                             <asp:Literal ID="ltClonesCount" runat="server"></asp:Literal>
                         </td>
                     </tr>
@@ -230,7 +230,7 @@
             </asp:Repeater>
 
             <br />
-            
+
             <asp:Repeater ID="rptCloneItems" runat="server" OnItemDataBound="rptItems_ItemDataBound">
 
                 <HeaderTemplate>
@@ -239,17 +239,13 @@
                     <table style="border: 1px Black solid">
                         <thead>
                             <tr>
-                                <td style="border: 1px Black solid">
-                                    Item Name
+                                <td style="border: 1px Black solid">Item Name
                                 </td>
-                                <td style="border: 1px Black solid">
-                                    Template
+                                <td style="border: 1px Black solid">Template
                                 </td>
-                                <td style="border: 1px Black solid">
-                                    Path
+                                <td style="border: 1px Black solid">Path
                                 </td>
-                                <td style="border: 1px Black solid">
-                                    URl
+                                <td style="border: 1px Black solid">URl
                                 </td>
                             </tr>
                         </thead>
