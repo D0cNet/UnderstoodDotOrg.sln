@@ -56,7 +56,7 @@
                
               
         </asp:Panel>--%>
-            <sc:PlaceHolder ID="Tool" runat="server"></sc:PlaceHolder>
+            <sc:Placeholder Key="Tool" runat="server"></sc:Placeholder>
 		</section>
 
 <!-- END PARTIAL: account-notification-tab-messages -->
