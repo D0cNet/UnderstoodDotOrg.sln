@@ -336,6 +336,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ActionStyleListArticle\ActionPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ActionStyleListPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ActionStyleListPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AdvocacyArticlePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AdvocacyArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ArticleCalloutItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ArticleLandingPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AssessmentQuizArticleItem.base.cs" />
