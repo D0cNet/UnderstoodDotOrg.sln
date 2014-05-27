@@ -125,7 +125,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
         private void PopulateRepeaters()
         {
             // Grades
-            ddlGrades.DataSource = FormHelper.GetGrades();
+            ddlGrades.DataSource = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
             ddlGrades.DataTextField = "Text";
             ddlGrades.DataValueField = "Value";
             ddlGrades.DataBind();

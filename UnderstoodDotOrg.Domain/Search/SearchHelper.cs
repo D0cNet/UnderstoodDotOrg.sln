@@ -23,6 +23,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsA
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
@@ -726,6 +727,24 @@ namespace UnderstoodDotOrg.Domain.Search
                 return result;
             }
 
+        }
+
+        public static List<SearchResultItem> GetParentInterests()
+        {
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            ID container = ID.Parse(Constants.ParentInterestsContainer);
+
+            using (var context = index.CreateSearchContext())
+            {
+                var query = GetCurrentCultureQueryable<SearchResultItem>(context)
+                                .Filter(i => i.Paths.Contains(container)
+                                    && i.ItemId != container
+                                    && i.TemplateId == ID.Parse(ParentInterestItem.TemplateId));
+
+                int total = query.Take(1).GetResults().TotalSearchResults;
+
+                return query.Take(total).ToList();
+            }
         }
 
         private static IQueryable<T> GetCurrentCultureQueryable<T>(IProviderSearchContext context) where T : new()

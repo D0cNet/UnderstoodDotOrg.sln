@@ -133,6 +133,10 @@ namespace UnderstoodDotOrg.Common
         { 
             get { return new Guid("{E4276D4E-71D7-4E5F-B9A2-B7DF3CA2990C}"); } 
         }
+        public static Guid ParentInterestsContainer
+        {
+            get { return new Guid("{FEC014BB-77ED-4244-A33D-27644736D9F2}"); }
+        }
 
         #endregion
 

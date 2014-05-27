@@ -90,13 +90,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 
         private void BindControls()
         {
-            ddlGrades.DataSource = FormHelper.GetGrades();
+            ddlGrades.DataSource = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
             ddlGrades.DataTextField = "Text";
             ddlGrades.DataValueField = "Value";
             ddlGrades.DataBind();
             ddlGrades.SelectedIndex = ddlGrades.GetSelectedIndex(SelectedGrade);         
 
-            ddlChallenges.DataSource = FormHelper.GetChallenges();
+            ddlChallenges.DataSource = FormHelper.GetChallenges(DictionaryConstants.SelectChallenge);
             ddlChallenges.DataTextField = "Text";
             ddlChallenges.DataValueField = "Value";
             ddlChallenges.DataBind();

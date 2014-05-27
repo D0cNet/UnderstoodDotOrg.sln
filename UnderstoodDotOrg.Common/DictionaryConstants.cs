@@ -743,6 +743,30 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string GradeLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Grade Label");
+            }
+        }
+
+        public static string TopicLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Topic Label");
+            }
+        }
+
+        public static string ChildIssueLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Child Issue Label");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

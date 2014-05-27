@@ -12,6 +12,8 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using UnderstoodDotOrg.Domain.Search;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 
 namespace UnderstoodDotOrg.Domain.Understood.Helper
 {
@@ -26,11 +28,40 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
             return items;
         }
 
+        public static List<ListItem> GetParentInterests(string initialChoiceLabel)
+        {
+            var interests = SearchHelper.GetParentInterests()
+                                .Where(i => i.GetItem() != null)
+                                .Select(i => new ParentInterestItem(i.GetItem()))
+                                .Select(i => new ListItem
+                                {
+                                    Text = HttpUtility.HtmlDecode(i.InterestName.Raw),
+                                    Value = i.ID.ToString()
+                                });
+
+            return PopulateList(initialChoiceLabel, interests);
+        }
+
+        public static List<ListItem> GetIssues(string initialChoiceLabel)
+        {
+            var container = Sitecore.Context.Database.GetItem(Constants.IssueContainer.ToString());
+            var issues = container.Children.FilterByContextLanguageVersion()
+                            .Select(i => new ChildIssueItem(i))
+                            .Where(i => !i.ExcludeFromWebsiteDisplay.Checked)
+                            .Select(i => new ListItem
+                            {
+                                Text = i.IssueName.Raw,
+                                Value = i.ID.ToString()
+                            });
+
+            return PopulateList(initialChoiceLabel, issues);
+        }
+
         /// <summary>
         /// Returns a list of child grades defined in child taxonomy
         /// </summary>
         /// <returns>Collection of child grades where value is the respective Sitecore Guid</returns>
-        public static List<ListItem> GetGrades()
+        public static List<ListItem> GetGrades(string initialChoiceLabel)
         {
             var container = Sitecore.Context.Database.GetItem(Constants.GradeContainer.ToString());
             var grades = container.Children.FilterByContextLanguageVersion()
@@ -42,14 +73,14 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
                                 Value = g.ID.ToString()
                             });
 
-            return PopulateList(DictionaryConstants.Grades.SelectGrade, grades);
+            return PopulateList(initialChoiceLabel, grades);
         }
 
         /// <summary>
         /// Returns a list of child challenges
         /// </summary>
         /// <returns>Collection of child challenges where value is the respective Sitecore Guid</returns>
-        public static List<ListItem> GetChallenges()
+        public static List<ListItem> GetChallenges(string initialChoiceLabel)
         {
             var container = Sitecore.Context.Database.GetItem(Constants.ChallengesContainer.ToString());
             var challenges = container.Children.FilterByContextLanguageVersion()
@@ -60,7 +91,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
                                      Text = c.ChallengeName
                                  });
 
-            return PopulateList(DictionaryConstants.SelectChallenge, challenges);
+            return PopulateList(initialChoiceLabel, challenges);
         }
         #endregion
 
