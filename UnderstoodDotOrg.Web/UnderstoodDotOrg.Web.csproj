@@ -2353,7 +2353,6 @@
     <Content Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx" />
-    <Content Include="Presentation\Sublayouts\Advocacy\Advocacy Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyPageTopicHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Action Style List Page.ascx" />
