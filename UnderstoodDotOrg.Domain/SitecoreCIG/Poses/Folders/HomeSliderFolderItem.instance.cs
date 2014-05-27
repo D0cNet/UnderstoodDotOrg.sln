@@ -16,7 +16,7 @@ public partial class HomeSliderFolderItem
     /// </summary>
     /// <returns></returns>
     public IEnumerable<HomeSliderItem> GetHomeSliderItems() {
-        return InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(HomeSliderItem.TemplateId)).Select(i => (HomeSliderItem)i);
+        return InnerItem.GetChildren().Where(i => i.IsOfType(HomeSliderItem.TemplateId)).Select(i => (HomeSliderItem)i);
     }
 }
 }

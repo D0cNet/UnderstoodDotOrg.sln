@@ -142,7 +142,8 @@ namespace UnderstoodDotOrg.Common.Extensions
         /// <returns></returns>
         public static IEnumerable<Item> FilterByContextLanguageVersion(this IEnumerable<Item> collection)
         {
-            return collection.Where(i => i != null && i.Versions.Count > 0);
+            // TODO: Remove this method 
+            return collection;
         }
         /// <summary>
         /// Checks if item has version in context language or not
@@ -151,7 +152,8 @@ namespace UnderstoodDotOrg.Common.Extensions
         /// <returns></returns>
         public static bool HasContextLanguageVersion(this Item item)
         {
-            return item != null && item.Versions.Count > 0;
+            // TODO: Remove this method 
+            return true;
         }
 
         //public static string GetCroppedImageUrl(this Item currentItem, string fieldName, int width, int height) {
