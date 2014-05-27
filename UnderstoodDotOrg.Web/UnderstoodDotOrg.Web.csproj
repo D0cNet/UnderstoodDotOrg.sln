@@ -318,6 +318,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx.cs">
       <DependentUpon>AdvocacyLandingPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx.designer.cs">
       <DependentUpon>AdvocacyLandingPage.ascx</DependentUpon>
