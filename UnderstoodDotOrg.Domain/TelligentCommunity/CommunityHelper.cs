@@ -1148,15 +1148,40 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         XmlNode userData = xn.SelectSingleNode("User");
                         XmlNode statusData = xn.SelectSingleNode("User/CurrentStatus");
 
-                        FavoritesModel favorite = new FavoritesModel()
+                        var title = xn["Title"].InnerText;
+                        var url = string.Empty;
+                        var type = string.Empty;
+
+                        if (xn["Application"].InnerText.Equals("Articles"))
                         {
-                            Type = xn["Type"].InnerText,
-                            Title = xn["Title"].InnerText,
-                            ReplyCount = statusData["ReplyCount"].InnerText,
-                            ContentId = statusData["ContentId"].InnerText,
-                            ContentTypeId = statusData["ContentType"].InnerText
-                        };
-                        favoritesList.Add(favorite);
+                            type = "Article";
+                            url = "/";
+                        }
+                        else
+                        {
+                            type = xn["Type"].InnerText;
+                            if (type.Equals("BlogPost"))
+                            {
+                                url = "/Community and Events/Blogs/" + xn["Application"].InnerText + "/" + title;
+                            }
+                            else
+                            {
+                                url = "/";
+                            }
+                            }
+                        if (!title.Equals("Articles"))
+                        {
+                            FavoritesModel favorite = new FavoritesModel()
+                            {
+                                Type = type,
+                                Title = title,
+                                ReplyCount = statusData["ReplyCount"].InnerText,
+                                ContentId = statusData["ContentId"].InnerText,
+                                ContentTypeId = statusData["ContentType"].InnerText,
+                                Url = url
+                            };
+                            favoritesList.Add(favorite);
+                        }
                     }
                 }
                 catch { } //TODO: Add Logging

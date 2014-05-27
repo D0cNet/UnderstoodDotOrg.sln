@@ -23,7 +23,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
         {
             var item = e.Item.DataItem as FavoritesModel;
             HyperLink hypFavoriteTitle = (HyperLink)e.Item.FindControl("hypFavoriteTitle");
-            hypFavoriteTitle.NavigateUrl = "/";
+            hypFavoriteTitle.NavigateUrl = item.Url;
             hypFavoriteTitle.Text = item.Title;
             Literal litType = (Literal)e.Item.FindControl("litType");
             litType.Text = item.Type;

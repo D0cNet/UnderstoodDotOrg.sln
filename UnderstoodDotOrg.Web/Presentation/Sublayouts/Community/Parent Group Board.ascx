@@ -11,8 +11,8 @@
     }
 
     jQuery(document).ready(function () {
-        
-        
+
+
         jQuery("#btn_start_discussion").click(
              function () {
                  jQuery(".modal_discussion").toggle();
@@ -20,178 +20,83 @@
              });
     });
 </script>
-
-<div class="container community-main-header ">
-    <header>
-        <div class="row header-wrapper">
-            <div class="col col-14 offset-1 header-title rs_read_this">
-                <h1>Welcome to the Understood Community</h1>
-                <p class="subhead">A private parent community with expert guidance and support</p>
-            </div>
-
-            <div class="col col-9 header-share-save">
-                <!-- BEGIN PARTIAL: share-save -->
-<div class="share-save-container">
-  <div class="share-save-social-icon">
-  	<div class="toggle">
-	    <a href="REPLACE" class="socicon icon-facebook">Facebook</a><br />
-	    <a href="REPLACE" class="socicon icon-twitter">Twitter</a><br />
-	    <a href="REPLACE" class="socicon icon-googleplus">Google&#43;</a><br />
-	    <a href="REPLACE" class="socicon icon-pinterest">Pinterest</a><br />
-	</div>
-  </div>
-  <div class="share-save-icon">
-    <h3>Share &amp; Save</h3>
-    <!-- leave no white space for layout consistency -->
-    <a href="REPLACE" class="icon icon-share">Share</a><span class="tools"><a href="REPLACE" class="icon icon-email">Email</a><a href="REPLACE" class="icon icon-save">Save</a><a href="REPLACE" class="icon icon-print">Print</a><a href="REPLACE" class="icon icon-remind">Remind</a><a href="REPLACE" class="icon icon-rss">RSS</a></span>
-  </div>
-</div>
-
-<!-- END PARTIAL: share-save -->
-            </div>
-        </div>
-    </header>
-    <nav class="container nav-secondary">
-        <div class="row">
-            <div class="col col-24">
-                <div class="label-menu"><span>Menu</span></div>
-                <ul class="menu" aria-role="navigation" aria-label="secondary-navigation">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <li class="title">
-                      <p class="select-topic">Select a topic:</p>
-                      <button>Groups</button>
-                      <i class="icon-hide-show-fff"></i>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="submenu">
-                        <div class="inner">
-                            <div class="label-more"><button>More <i class="icon-hide-show-fff"></i></button></div>
-                            <ul>
-                                
-                                
-                                
-                                <li><span><a href="REPLACE">What's Happening Now</a></span></li>
-                                
-                                
-                                
-                                
-                                <li><span><a href="REPLACE">Experts Live</a></span></li>
-                                
-                                
-                                
-                                
-                                <li><span><a href="REPLACE">Q&nbsp;&amp;&nbsp;A</a></span></li>
-                                
-                                
-                                
-                                
-                                <li><span><a href="REPLACE">Parents Like Me</a></span></li>
-                                
-                                
-                                
-                                <li><span><a href="REPLACE" class="selected">Groups</a></span></li>
-                                
-                                
-                                
-                                
-                                
-                                <li><span><a href="REPLACE">Blogs</a></span></li>
-                                
-                                
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
-
-    <div class="container">
-        <div class="row">
-            <div class="container">
-              <header class="groups-heading rs_read_this">
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <header class="groups-heading rs_read_this">
                 <!-- BEGIN PARTIAL: community/breadcrumb_menu -->
                 <!--breadcrumb menu-->
                 <a href="REPLACE" class="back-to-previous rs_skip">
-                  <i class="icon-arrow-left-blue"></i>Back to Parents of Kids with Reading Issues
+                    <i class="icon-arrow-left-blue"></i>Back to Parents of Kids with Reading Issues
                 </a>
                 <!-- END PARTIAL: community/breadcrumb_menu -->
-              <div class="col col-24 title">
-                  <h2>
-                      <asp:Literal Text="" ID="litForumName" runat="server" /></h2>
+                <div class="col col-24 title">
+                    <h2>
+                        <asp:Literal Text="" ID="litForumName" runat="server" /></h2>
                 </div>
                 <!-- BEGIN PARTIAL: community/groups_private_heading -->
                 <!--groups private partial-->
                 <div class="col groups-private">
-                  <p class="col">Only members can see the conversations</p>
-                  <i class="icon"></i>
+                    <p class="col">Only members can see the conversations</p>
+                    <i class="icon"></i>
                 </div>
                 <!-- END PARTIAL: community/groups_private_heading -->
-              </header>
+            </header>
 
-              <!-- BEGIN PARTIAL: community/groups_start_discussion -->
-<!--discussion board-->
+            <!-- BEGIN PARTIAL: community/groups_start_discussion -->
+            <!--discussion board-->
 
-        <div class="col col-24 search-board">
-          <div class="rs_read_this discussion-board-rs-wrapper">
-            <div class="col-16 discussion-boards mobile-group-search-form offset-1 skiplink-toolbar">
-              <h3>Search this board</h3>
-
-      
-              <!-- BEGIN PARTIAL: community/groups_search_form -->
-                <!--groups search form-->
-                <fieldset class="group-search-form mobile-group-search-form">
-                  <label for="group-search-text" class="visuallyhidden" aria-hidden="true">Search</label>
-                  <input type="text" class="group-search" id="group-search-text" name="group-search" placeholder="Enter conversation">
-                  <input class="group-search-button" type="submit" value="Go">
-                </fieldset>
-                <!-- END PARTIAL: community/groups_search_form -->
-      
-            </div><!-- end .discussion-boards -->
+            <div class="col col-24 search-board">
+                <div class="rs_read_this discussion-board-rs-wrapper">
+                    <div class="col-16 discussion-boards mobile-group-search-form offset-1 skiplink-toolbar">
+                        <h3>Search this board</h3>
 
 
-            <div class="col-6 start-discussion">
-                <p>Got a question?</p>
-                <p class="want-to-talk">Want to talk?</p>
-                <a href="REPLACE" id="btn_start_discussion" class="button">Start a Discussion</a>
-            </div><!-- end .start-discussion -->
-          </div>
-        </div><!-- end .discussion-board -->
-        <!-- END PARTIAL: community/groups_start_discussion -->
-
-        <div class="modal_discussion" runat="server" id="modal_discussion" style="display:none;clear:both">
+                        <!-- BEGIN PARTIAL: community/groups_search_form -->
+                        <!--groups search form-->
+                        <fieldset class="group-search-form mobile-group-search-form">
+                            <label for="group-search-text" class="visuallyhidden" aria-hidden="true">Search</label>
+                            <input type="text" class="group-search" id="group-search-text" name="group-search" placeholder="Enter conversation">
+                            <input class="group-search-button" type="submit" value="Go">
+                        </fieldset>
+                        <!-- END PARTIAL: community/groups_search_form -->
 
 
-            <asp:Label ID="lblSubject"  runat="server" Text="Subject:" />
-            <asp:TextBox ID="txtSubject" ValidationGroup="newDiscussion"  runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rqdSubject" ValidationGroup="newDiscussion" ControlToValidate="txtSubject" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
-            
-            <asp:Label ID="lblBody" runat="server"  Text="Body:" />
-            <asp:TextBox ID="txtBody" ValidationGroup="newDiscussion" runat="server" TextMode="MultiLine"></asp:TextBox>
+
+
+                    </div>
+                    <!-- end .discussion-boards -->
+                    <div class="col-6 start-discussion">
+                        <p>Got a question?</p>
+                        <p class="want-to-talk">Want to talk?</p>
+                        <a href="REPLACE" class="button">Start a Discussion</a>
+                    </div>
+                    <!-- end .start-discussion -->
+                </div>
+            </div>
+            <!-- end .discussion-board -->
+            <!-- END PARTIAL: community/groups_start_discussion -->
+
+            <div class="modal_discussion" runat="server" id="modal_discussion" style="display: none; clear: both">
+
+
+                <asp:Label ID="lblSubject" runat="server" Text="Subject:" />
+                <asp:TextBox ID="txtSubject" ValidationGroup="newDiscussion" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rqdSubject" ValidationGroup="newDiscussion" ControlToValidate="txtSubject" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
+
+                <asp:Label ID="lblBody" runat="server" Text="Body:" />
+                <asp:TextBox ID="txtBody" ValidationGroup="newDiscussion" runat="server" TextMode="MultiLine"></asp:TextBox>
                 <asp:RequiredFieldValidator ValidationGroup="newDiscussion" ID="rqdDiscussion" ControlToValidate="txtBody" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
-     
-            <asp:Button ID="btnSubmit" OnClick="btnSubmit_Click" CssClass="button" OnClientClick="javascript:return checkValidation();" ClientIDMode="Static" ValidationGroup="newDiscussion" runat="server" Text="Create" />
-            <asp:Label Text="" CssClass="error" ID="error_msg"  ForeColor="Red" Visible="false" runat="server" />
 
-        </div>
+                <asp:Button ID="btnSubmit" OnClick="btnSubmit_Click" CssClass="button" OnClientClick="javascript:return checkValidation();" ClientIDMode="Static" ValidationGroup="newDiscussion" runat="server" Text="Create" />
+                <asp:Label Text="" CssClass="error" ID="error_msg" ForeColor="Red" Visible="false" runat="server" />
 
-       <div class="col col-23 individual-group skiplink-content" aria-role="main">
+            </div>
+
+            <div class="col col-23 individual-group skiplink-content" aria-role="main">
                 <!-- BEGIN PARTIAL: community/groups_table -->
                 <div class="discussion-box col col-23 offset-1">
-            <%--      <header class="rs_skip">
+                    <%--      <header class="rs_skip">
 
     
 
@@ -203,49 +108,49 @@
     
 
                   </header>--%>
-           
-           <asp:Repeater ID="rptThread" OnItemDataBound="rptThread_ItemDataBound" runat="server">
 
-                <HeaderTemplate>
-                    <ul class="discussions table-discussions search-results rs_read_this">
+                    <asp:Repeater ID="rptThread" OnItemDataBound="rptThread_ItemDataBound" runat="server">
 
-                </HeaderTemplate>
-                <ItemTemplate>
-                        <li>
-                            <div class="col summary">
-                                <asp:HiddenField Value='<%# Eval("Subject") %>' runat="server" ID="hdSubject"/>
-                                <h4>Discussion:</h4>
-                                <a href="REPLACE" id="hrefDiscussion" runat="server"><%# Eval("Snippet") %></a>
-                            </div>
-                            <div class="col latest-post rs_skip">
-                                <h4>Latest Post:</h4>
-                                <p class="mins-ago"><%# Eval("LastPostTime") %></p>
-                                <a href="REPLACE"><%# Eval("LastPostUser") %></a>
-                                <p><%# Eval("LastPostBody") %></p>
-                            </div>
-                            <div class="col started-by">
-                                <h4>Started by:</h4>
-                                <a href="REPLACE"><%# Eval("StartedBy") %></a>
-                            </div>
+                        <HeaderTemplate>
+                            <ul class="discussions table-discussions search-results rs_read_this">
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <li>
+                                <div class="col summary">
+                                    <asp:HiddenField Value='<%# Eval("Subject") %>' runat="server" ID="hdSubject" />
+                                    <h4>Discussion:</h4>
+                                    <a href="REPLACE" id="hrefDiscussion" runat="server"><%# Eval("Snippet") %></a>
+                                </div>
+                                <div class="col latest-post rs_skip">
+                                    <h4>Latest Post:</h4>
+                                    <p class="mins-ago"><%# Eval("LastPostTime") %></p>
+                                    <a href="REPLACE"><%# Eval("LastPostUser") %></a>
+                                    <p><%# Eval("LastPostBody") %></p>
+                                </div>
+                                <div class="col started-by">
+                                    <h4>Started by:</h4>
+                                    <a href="REPLACE"><%# Eval("StartedBy") %></a>
+                                </div>
 
-                            <div class="col replies">
-                                <h4>Replies:</h4>
-                                <p><%# Eval("ReplyCount") %></p>
-                            </div>
-                            <div class="col latest-post-tabular">
-                                <h4>Latest Post:</h4>
-                                <p>5<%# Eval("LastPostTime") %></p>
-                                <a href="REPLACE"><%# Eval("LastPostUser") %></a>
-                                <p><%# Eval("LastPostBody") %></p>
-                            </div>
+                                <div class="col replies">
+                                    <h4>Replies:</h4>
+                                    <p><%# Eval("ReplyCount") %></p>
+                                </div>
+                                <div class="col latest-post-tabular">
+                                    <h4>Latest Post:</h4>
+                                    <p>5<%# Eval("LastPostTime") %></p>
+                                    <a href="REPLACE"><%# Eval("LastPostUser") %></a>
+                                    <p><%# Eval("LastPostBody") %></p>
+                                </div>
 
-                        </li>
-                </ItemTemplate>
-                <FooterTemplate>
-                    </ul>
-                </FooterTemplate>
-            </asp:Repeater> <%--<%----%>
- <%--<ul class="discussions table-discussions search-results rs_read_this">
+                            </li>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </ul>
+                        </FooterTemplate>
+                    </asp:Repeater>
+                    <%--<%----%>
+                    <%--<ul class="discussions table-discussions search-results rs_read_this">
     
       <!-- BEGIN PARTIAL: community/individual_board_list_item -->
                 <!--individual board list item-->
@@ -339,13 +244,15 @@
                 <!-- END PARTIAL: community/individual_board_list_item -->
     
 
-             </ul>--%> <!-- end .discussions -->
-        </div>
-<!-- END PARTIAL: community/groups_table -->
-              </div><!-- end .individual-group -->
+             </ul>--%>
+                    <!-- end .discussions -->
+                </div>
+                <!-- END PARTIAL: community/groups_table -->
             </div>
+            <!-- end .individual-group -->
         </div>
     </div>
+</div>
 <div class="container show-more rs_skip">
     <div class="row">
         <div class="col col-24">
