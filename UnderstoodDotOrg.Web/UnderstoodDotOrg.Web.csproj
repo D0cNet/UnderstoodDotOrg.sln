@@ -322,6 +322,12 @@
     <Compile Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx.designer.cs">
       <DependentUpon>SalesforceContactAdmin.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\AdminTools\Sandbox.ascx.cs">
+      <DependentUpon>Sandbox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\AdminTools\Sandbox.ascx.designer.cs">
+      <DependentUpon>Sandbox.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Advocacy\AdvocacyArticlePage.ascx.cs">
       <DependentUpon>AdvocacyArticlePage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2367,6 +2373,7 @@
     <Content Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx" />
+    <Content Include="Presentation\Sublayouts\AdminTools\Sandbox.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Advocacy\AdvocacyPageTopicHeader.ascx" />
