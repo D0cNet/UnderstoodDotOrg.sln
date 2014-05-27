@@ -22,13 +22,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::System.Web.UI.WebControls.HyperLink hlBackToLink;
         
         /// <summary>
-        /// frPageTItle control.
+        /// frPageTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPageTItle;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPageTitle;
         
         /// <summary>
         /// hlLink control.
@@ -130,12 +130,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::System.Web.UI.WebControls.Panel pnlVideo;
         
         /// <summary>
-        /// sbAboutAuthor control.
+        /// frVideoEmbed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbAboutAuthor;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frVideoEmbed;
     }
 }

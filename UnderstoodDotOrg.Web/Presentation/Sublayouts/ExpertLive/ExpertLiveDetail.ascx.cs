@@ -25,18 +25,15 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Framework.UI;
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
-    public partial class ExpertLiveDetail : BaseSublayout<ExpertLivePageItem> {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve 
+{
+    public partial class ExpertLiveDetail : BaseSublayout<ExpertLivePageItem> 
+    {
         private List<ID> _templateRestrictions = new List<ID>();
-
-        public List<ID> TemplateRestrictions {
-            get { return _templateRestrictions; }
-            set { _templateRestrictions = value; }
-        }
 
         public bool IsFeatured { get; set; }
         public bool IsTagged { get; set; }
-        public string ChildIssue { get; set; }
+        public string Issue { get; set; }
         public string Grade { get; set; }
         public string Topic { get; set; }
 
@@ -45,24 +42,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
             // TODO: create constants for query string vars
             
             string featured = HttpHelper.GetQueryString("featured");
-            string issue = HttpHelper.GetQueryString("issue");
-            string grade = HttpHelper.GetQueryString("grade");
-            string topic = HttpHelper.GetQueryString("topic");
+            Issue = HttpHelper.GetQueryString("issue").Trim();
+            Grade = HttpHelper.GetQueryString("grade").Trim();
+            Topic = HttpHelper.GetQueryString("topic").Trim();
 
             IsFeatured = featured.ToLower() == "true";
-            IsTagged = !String.IsNullOrEmpty(issue) || !String.IsNullOrEmpty(grade) || !String.IsNullOrEmpty(topic);
-
-            //Get header detail for webniars and chat
-            frChatHeading.Item = frChatSubheading.Item = frUpcomingWebniarsHeading.Item 
-                 = frUpcomingWebniarsSubheading.Item = Model;
+            IsTagged = !String.IsNullOrEmpty(Issue) || !String.IsNullOrEmpty(Grade) || !String.IsNullOrEmpty(Topic);
 
             if (!IsPostBack)
             {
                 FillFilterOptions();
 
-                SetSelectedState(ddlIssue, issue);
-                SetSelectedState(ddlGrade, grade);
-                SetSelectedState(ddlTopics, topic);
+                SetSelectedState(ddlIssue, Issue);
+                SetSelectedState(ddlGrade, Grade);
+                SetSelectedState(ddlTopics, Topic);
             }
 
             ExpertliveFilterFolderItem expertLiveFilterFolder = GetExpertLiveFilterFolder();
@@ -76,8 +69,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                 }
             }
 
-            GetUpcomingWebinars();
-            GetExpertChat();
+            PopulateUpcomingEvents();
+        }
+
+        private void PopulateUpcomingEvents()
+        {
+            // Chats
+            var chats = SearchHelper.GetUpcomingChats(Grade, Issue, Topic);
+            bool hasChats = chats.Any();
+            pnlNoChatMessage.Visible = !hasChats;
+
+            if (hasChats)
+            {
+                rptExpertChat.DataSource = chats;
+                rptExpertChat.DataBind();
+            }
+
+            // Webinars
+            var webinars = SearchHelper.GetUpcomingWebinars(Grade, Issue, Topic);
+            bool hasWebinars = webinars.Any();
+            pnlNoWebinars.Visible = !hasWebinars;
+
+            if (hasWebinars)
+            {
+                rptUpcomingWebinars.DataSource = webinars;
+                rptUpcomingWebinars.DataBind();
+            }
         }
 
         private void SetSelectedState(DropDownList ddl, string value)
@@ -90,12 +107,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                     li.Selected = true;
                 }
             }
-        }
-
-        private bool HasTrueValue(string key)
-        {
-            string value = Request.QueryString[key] ?? String.Empty;
-            return value.ToLower() == "true";
         }
 
         /// <summary>
@@ -121,43 +132,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
             return expertLiveFolder.InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(NavigationLinkItem.TemplateId)).Select(i => (NavigationLinkItem)i);
         }
 
-        private void GetExpertChat() {
-            var expertChats = GetChat(ChatEventPageItem.TemplateId, false);
-            if (expertChats != null && expertChats.Any()) {
-                rptExpertChat.DataSource = expertChats;
-                rptExpertChat.DataBind();
-                frChatHeading.Visible = true;
-                frChatSubheading.Visible = true;
-            }
-            else {
-                // Show No webniars message
-                pnlNoChatMessage.Visible = true;
-                if (frNoChatMessage != null) {
-                    frNoChatMessage.Item = Model;
-                }
-            }
-        }
-
-        private void GetUpcomingWebinars() {
-            var webniars = GetWebinars(WebinarEventPageItem.TemplateId);
-            if (webniars != null && webniars.Any()) {
-                rptUpcomingWebinars.DataSource = webniars;
-                rptUpcomingWebinars.DataBind();
-            }
-            else { 
-                // Show No webniars message
-                pnlNoWebniars.Visible = true;
-                if (frNoWebniars != null) {
-                    frNoWebniars.Item = Model;
-                }
-            }
-        }
-
-        private void FillFilterOptions() {
+        private void FillFilterOptions() 
+        {
             var childIssues = FormHelper.GetIssues(DictionaryConstants.ChildIssueLabel);
             var grades = FormHelper.GetGrades(DictionaryConstants.GradeLabel);
             var topics = FormHelper.GetParentInterests(DictionaryConstants.TopicLabel);
 
+            // TODO: refactor to function
             if (childIssues.Any()) 
             {
                 ddlIssue.DataSource = childIssues;
@@ -181,251 +162,55 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
             }
         }
 
-        /// Gets the search result based on keyword
-        /// </summary>
-        /// <returns></returns>
-        public List<BaseEventDetailPageItem> GetWebinars(string templateId) {
-            List<BaseEventDetailPageItem> searchResultItems = new List<BaseEventDetailPageItem>();
-            List<Item> result = new List<Item>();
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-            
-            using (var context = index.CreateSearchContext()) {
-                var predicate = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate1 = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate2 = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate3 = PredicateBuilder.True<EventArchiveSearch>();
-                TemplateRestrictions.Clear();
-                TemplateRestrictions.Add(new ID(WebinarEventPageItem.TemplateId));
-
-                predicate1 = predicate1.And(i => i.Path.Contains("/sitecore/content"));
-                // Restrict search to limited number of templates (only person items) using an Or on the predicate
-                predicate2 = TemplateRestrictions.Aggregate(predicate2, (current, t) => current.Or(p => p.TemplateId == t));
-
-                if (IsFeatured) {
-
-                    if (Model.FeaturedEvent.ListItems != null)
-                    {
-                        var resultItems = Model.FeaturedEvent.ListItems.Where(t => t.TemplateID.ToString().Equals(WebinarEventPageItem.TemplateId)).ToList();
-                        if (resultItems != null && resultItems.Any()) {
-                            foreach (var categoryItem in resultItems) {
-                                predicate3 = predicate3.Or(p => p.ItemId == categoryItem.ID);
-                            }
-                        }
-                        else {
-                            return searchResultItems;
-                        }
-                    }
-                    predicate = predicate.And(predicate1).And(predicate2).And(predicate3);
-                }
-                else {
-                    predicate = predicate.And(predicate1).And(predicate2);
-                }
-
-                result = context.GetQueryable<EventArchiveSearch>().Where(predicate).Select(i => i.GetItem()).ToList();
-                searchResultItems = result.Select(t => new BaseEventDetailPageItem(t)).Where(t => t.EventDate != null && t.EventDate.DateTime >= DateTime.Today).OrderByDescending(t => t.EventDate.DateTime).ToList();
-                if (IsTagged) {
-                    searchResultItems = searchResultItems.Where(t => !IsArchiveItem(t) && IsTaggedItem(t)).ToList();
-                }
-                else {
-                    searchResultItems = searchResultItems.Where(t => !IsArchiveItem(t)).ToList();
-                }
-
-            }
-            return searchResultItems;
-        }
-
-        private bool IsTaggedItem(BaseEventDetailPageItem baseEvent) {
-            //if (baseEventItem.InnerItem.IsOfType(ChatEventPageItem.TemplateId)) {
-            //    ltEventType.Text = DictionaryConstants.ChatLabel;
-            //}
-            //else if (baseEventItem.InnerItem.IsOfType(WebinarEventPageItem.TemplateId)) {
-            //    ltEventType.Text = DictionaryConstants.WebniarLabel;
-            //}
-
-            if (baseEvent != null) {
-                if (!ChildIssue.IsNullOrEmpty()) {
-
-                    if (baseEvent.ChildIssue.ListItems.Any()) {
-                        foreach (var childIssue in baseEvent.ChildIssue.ListItems) {
-                            if (childIssue.DisplayName.ToString().Equals(ChildIssue)) {
-                                return true;
-                            }
-                        }
-                    }
-
-                }
-                else if (!Grade.IsNullOrEmpty()) {
-                    if (baseEvent.Grade.ListItems.Any()) {
-                        foreach (var grade in baseEvent.Grade.ListItems) {
-                            if (grade.DisplayName.ToString().Equals(Grade)) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-                else if (!Topic.IsNullOrEmpty()) {
-                    if (baseEvent.ParentInterest.ListItems.Any()) {
-                        foreach (var topic in baseEvent.ParentInterest.ListItems) {
-                            if (topic.DisplayName.ToString().Equals(Topic)) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        private bool IsArchiveItem(Item item) {
-            bool isArchiveItem = false;
-            BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(item);
-            if (baseEventPageItem != null) {
-                if (baseEventPageItem.EventDate.DateTime < DateTime.Today) {
-                    isArchiveItem = true;
-                }
-            }
-
-            return isArchiveItem;
-        }
-
-        /// Gets the search result based on keyword
-        /// </summary>
-        /// <returns></returns>
-        public List<Item> GetFilters(string templateId) {
-            List<Item> searchResultItems = new List<Item>();
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-            using (var context = index.CreateSearchContext()) {
-                searchResultItems = context.GetQueryable<SearchResultItem>().
-                   Where(i => i.TemplateId == Sitecore.Data.ID.Parse(templateId) && i.Path.Contains("/sitecore/content")).Select(i => (Item)i.GetItem()).ToList();
-            }
-            return searchResultItems;
-        }
-
-        /// Gets the search result based on keyword
-        /// </summary>
-        /// <returns></returns>
-        public List<BaseEventDetailPageItem> GetChat(string templateId, bool isLive) {
-            List<BaseEventDetailPageItem> searchResultItems = new List<BaseEventDetailPageItem>();
-            List<Item> result = new List<Item>();
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-            using (var context = index.CreateSearchContext()) {
-                var predicate = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate1 = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate2 = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate3 = PredicateBuilder.True<EventArchiveSearch>();
-                TemplateRestrictions.Clear();
-                TemplateRestrictions.Add(new ID(ChatEventPageItem.TemplateId));
-
-                predicate1 = predicate1.And(i => i.Path.Contains("/sitecore/content"));
-                // Restrict search to limited number of templates (only person items) using an Or on the predicate
-                predicate2 = TemplateRestrictions.Aggregate(predicate2, (current, t) => current.Or(p => p.TemplateId == t));
-
-                if (IsFeatured) {
-
-                    if (Model.FeaturedEvent.ListItems != null) {
-                        var resultItems = Model.FeaturedEvent.ListItems.Where(t => t.TemplateID.ToString().Equals(ChatEventPageItem.TemplateId)).ToList();
-                        if (resultItems != null && resultItems.Any()) {
-                            foreach (var categoryItem in resultItems) {
-                                predicate3 = predicate3.Or(p => p.ItemId == categoryItem.ID);
-                            }
-                        }
-                        else {
-                            return searchResultItems;
-                        }
-                    }
-                    predicate = predicate.And(predicate1).And(predicate2).And(predicate3);
-                }
-                else {
-                    predicate = predicate.And(predicate1).And(predicate2);
-                }
-
-                result = context.GetQueryable<EventArchiveSearch>().Where(predicate).Select(i => i.GetItem()).ToList();
-                if (isLive) {
-                    searchResultItems = result.Select(i => new BaseEventDetailPageItem(i)).Where(t => IsLiveChat(t)).Where(t => t.EventDate.DateTime >= DateTime.Today).OrderByDescending(t => t.EventDate.DateTime).ToList();
-                }
-                else {
-                    searchResultItems = result.Select(i => new BaseEventDetailPageItem(i)).Where(t => !IsLiveChat(t)).Where(t => t.EventDate.DateTime >= DateTime.Today).OrderByDescending(t => t.EventDate.DateTime).ToList();
-                }
-            }
-
-            if (IsTagged) {
-                searchResultItems = searchResultItems.Where(t => !IsArchiveItem(t.InnerItem) && IsTaggedItem(t)).ToList();
-            }
-            else {
-                searchResultItems = searchResultItems.Where(t => !IsArchiveItem(t.InnerItem)).ToList();
-            }
-
-            return searchResultItems;
-        }
-
-        private bool IsLiveChat(BaseEventDetailPageItem t) {
-            ChatEventPageItem chatEventPage = new ChatEventPageItem(t.InnerItem);
-            if (chatEventPage != null && t.InnerItem.IsOfType(ChatEventPageItem.TemplateId) && !chatEventPage.OpenOfficeHour.Raw.IsNullOrEmpty()) {
-                return true;
-            }
-
-            return false;
-        }
-
         
-        protected void rptUpcomingWebinars_ItemDataBound(object sender, RepeaterItemEventArgs e) {
-            if (e.IsItem()) {
-                BaseEventDetailPageItem webinarItem = e.Item.DataItem as BaseEventDetailPageItem;
-                ContentPageItem contentPageItem = new ContentPageItem(webinarItem.InnerItem);
+        protected void rptUpcomingWebinars_ItemDataBound(object sender, RepeaterItemEventArgs e) 
+        {
+            if (e.IsItem()) 
+            {
+                BaseEventDetailPageItem item = e.Item.DataItem as BaseEventDetailPageItem;
 
-                if (webinarItem != null) {
-                    Sitecore.Web.UI.WebControls.Image scExpertImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scExpertImage");
-                    System.Web.UI.WebControls.Image imgExpertDefault = e.FindControlAs<System.Web.UI.WebControls.Image>("imgExpertDefault");
-                    Literal ltExpertType = e.FindControlAs<Literal>("ltExpertType");
-                    Literal ltEventDate = e.FindControlAs<Literal>("ltEventDate");
-                    HyperLink hlExpertBio = e.FindControlAs<HyperLink>("hlExpertBio");
-                    FieldRenderer frPageTitle = e.FindControlAs<FieldRenderer>("frPageTitle");
-                    HyperLink hlWebniearDetail = e.FindControlAs<HyperLink>("hlWebniearDetail");
-                    Panel pnlExpertImageLabel = e.FindControlAs<Panel>("pnlExpertImageLabel");
-                    //BaseEventDetailPageItem webinarItem = new BaseEventDetailPageItem(item);
+                Sitecore.Web.UI.WebControls.Image scExpertImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scExpertImage");
+                System.Web.UI.WebControls.Image imgExpertDefault = e.FindControlAs<System.Web.UI.WebControls.Image>("imgExpertDefault");
+                Literal ltExpertType = e.FindControlAs<Literal>("ltExpertType");
+                Literal ltEventDate = e.FindControlAs<Literal>("ltEventDate");
+                HyperLink hlExpertBio = e.FindControlAs<HyperLink>("hlExpertBio");
+                FieldRenderer frPageTitle = e.FindControlAs<FieldRenderer>("frPageTitle");
+                HyperLink hlWebinarDetail = e.FindControlAs<HyperLink>("hlWebinarDetail");
+                Panel pnlExpertImageLabel = e.FindControlAs<Panel>("pnlExpertImageLabel");
 
+                ExpertDetailPageItem expertItem = item.Expert.Item;
 
-                    ExpertDetailPageItem expertItem = webinarItem.Expert.Item;
-
-                    if (expertItem != null) {
-                        hlExpertBio.NavigateUrl = expertItem.InnerItem.GetUrl();
-                        if (scExpertImage != null && expertItem.ExpertImage.MediaItem != null) {
-                            scExpertImage.Item = expertItem;
-                            pnlExpertImageLabel.Visible = true;
-                        }
-                        else {
-                            imgExpertDefault.Visible = true;
-                        }
-                        if (ltExpertType != null) {
-                            ltExpertType.Text = expertItem.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;
-                        }
-                    }
-                    else {
-                        imgExpertDefault.Visible = true;
+                if (expertItem != null)
+                {
+                    hlExpertBio.NavigateUrl = expertItem.GetUrl();
+                    if (expertItem.ExpertImage.MediaItem != null)
+                    {
+                        scExpertImage.Item = expertItem;
                         pnlExpertImageLabel.Visible = true;
                     }
-
-                    if (ltEventDate != null && !webinarItem.EventDate.Raw.IsNullOrEmpty()) {
-                        TimeZoneItem timezone = webinarItem.Timezone.Item;
-                        string timeZoneText = string.Empty;
-
-                        if (timezone != null) {
-                            timeZoneText = timezone.Timezone.Rendered;
-                        }
-
-                        ltEventDate.Text = String.Format("{0} at {1} {2}", webinarItem.EventDate.DateTime.ToString("ddd MMM dd"), webinarItem.EventDate.DateTime.ToString("hh:mm tt").ToLower(), timeZoneText);
+                    else
+                    {
+                        imgExpertDefault.Visible = true;
                     }
 
-                    if (frPageTitle != null && contentPageItem != null) {
-                        frPageTitle.Item = contentPageItem;
-                    }
-
-                    if (hlWebniearDetail != null) {
-                        hlWebniearDetail.NavigateUrl = webinarItem.InnerItem.GetUrl();
-                    }
-
+                    ltExpertType.Text = !expertItem.IsGuest.Checked ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;
                 }
+                else
+                {
+                    imgExpertDefault.Visible = true;
+                    pnlExpertImageLabel.Visible = false;
+                }
+
+                if (!item.EventDate.Raw.IsNullOrEmpty())
+                {
+                    TimeZoneItem timezone = item.Timezone.Item;
+                    string timeZoneText = (timezone != null) ? timezone.Timezone.Rendered : string.Empty;
+
+                    ltEventDate.Text = String.Format("{0} at {1} {2}", item.EventDate.DateTime.ToString("ddd MMM dd"), item.EventDate.DateTime.ToString("hh:mm tt").ToLower(), timeZoneText);
+                }
+
+                frPageTitle.Item = item;
+                hlWebinarDetail.NavigateUrl = item.GetUrl();
             }
         }
 
@@ -444,9 +229,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                     FieldRenderer frHostTitle = e.FindControlAs<FieldRenderer>("frHostTitle");
                     Panel pnlExpertImageLabel = e.FindControlAs<Panel>("pnlExpertImageLabel");
 
-                    if (hlChatDetail != null) {
-                        hlChatDetail.NavigateUrl = webinarItem.InnerItem.GetUrl();
-                    }
+                    hlChatDetail.NavigateUrl = webinarItem.InnerItem.GetUrl();
 
                     if (webinarItem != null) {
                         if (frHostTitle != null) {
@@ -470,12 +253,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                             }
 
                             if (ltExpertType != null) {
-                                ltExpertType.Text = expertItem.IsGuest.Rendered.IsNullOrEmpty() ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;
+                                ltExpertType.Text = expertItem.IsGuest.Checked ? DictionaryConstants.GuestExpertLabel : DictionaryConstants.ExpertLabel;
                             }
                         }
                         else {
                             imgExpertDefault.Visible = true;
-                            pnlExpertImageLabel.Visible = true;
+                            pnlExpertImageLabel.Visible = false;
                         }
                     }
 
@@ -507,15 +290,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
             }
         }
 
-        protected void ddlIssue_SelectedIndexChanged(object sender, EventArgs e) {
+        protected void ddlIssue_SelectedIndexChanged(object sender, EventArgs e) 
+        {
             Response.Redirect(Model.GetUrl() + "?issue=" + ddlIssue.SelectedItem.Value, true);
         }
 
-        protected void ddlGrade_SelectedIndexChanged(object sender, EventArgs e) {
+        protected void ddlGrade_SelectedIndexChanged(object sender, EventArgs e) 
+        {
             Response.Redirect(Model.GetUrl() + "?grade=" + ddlGrade.SelectedItem.Value, true);
         }
 
-        protected void ddlTopics_SelectedIndexChanged(object sender, EventArgs e) {
+        protected void ddlTopics_SelectedIndexChanged(object sender, EventArgs e) 
+        {
             Response.Redirect(Model.GetUrl() + "?topic=" + ddlTopics.SelectedItem.Value, true);
         }
     }

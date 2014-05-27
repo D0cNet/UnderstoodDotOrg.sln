@@ -490,6 +490,9 @@ namespace UnderstoodDotOrg.Common
             public const string DiagnosedConditions = "_diagnosed_condition";
             public const string ChildChallenges = "_child_challenges";
             public const string ChildBehaviorGrades = "_child_behavior_grades";
+            public const string EventIssues = "_event_child_issues";
+            public const string EventGrades = "_event_child_grades";
+            public const string EventTopics = "_event_parent_interests";
         }
 
         public static class ArticleTags

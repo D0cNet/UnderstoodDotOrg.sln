@@ -54,10 +54,10 @@
                         </a>
                     </div>
                     <h2 runat="server">
-                        <sc:FieldRenderer ID="frUpcomingWebniarsHeading" runat="server" FieldName="Webinars Heading" />
+                        <sc:FieldRenderer ID="frUpcomingWebinarsHeading" runat="server" FieldName="Webinars Heading" />
                     </h2>
                     <p class="subhead">
-                        <sc:FieldRenderer ID="frUpcomingWebniarsSubheading" runat="server" FieldName="Webinars Subheading" />
+                        <sc:FieldRenderer ID="frUpcomingWebinarsSubheading" runat="server" FieldName="Webinars Subheading" />
                     </p>
                 </div>
 
@@ -90,7 +90,7 @@
                                     </div>
                                     <!-- end .event-card-datetime -->
                                     <div class="event-card-title">
-                                        <asp:HyperLink runat="server" ID="hlWebniearDetail">
+                                        <asp:HyperLink runat="server" ID="hlWebinarDetail">
                                             <sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" />
                                         </asp:HyperLink>
                                     </div>
@@ -103,8 +103,8 @@
                     </ItemTemplate>
                 </asp:Repeater>
 
-                <asp:Panel runat="server" ID="pnlNoWebniars" class="no-webinars rs_read_this" Visible="false">
-                    <sc:FieldRenderer ID="frNoWebniars" runat="server" FieldName="No Webinars Message" />
+                <asp:Panel runat="server" ID="pnlNoWebinars" class="no-webinars rs_read_this" Visible="false">
+                    <sc:FieldRenderer ID="frNoWebinars" runat="server" FieldName="No Webinars Message" />
                 </asp:Panel>
                 <!-- end .event-card -->
                 <!-- END PARTIAL: community/experts_event_card -->

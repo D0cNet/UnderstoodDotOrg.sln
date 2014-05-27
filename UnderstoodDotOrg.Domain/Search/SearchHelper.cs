@@ -643,6 +643,7 @@ namespace UnderstoodDotOrg.Domain.Search
             using (var context = index.CreateSearchContext())
             {
                 var baseQuery = GetCurrentCultureQueryable<SearchResultItem>(context)
+                                   .Where(i => i.Language == Sitecore.Context.Language.Name)
                                    .Where(i => i.TemplateId == ID.Parse(TextOnlyTipsArticlePageItem.TemplateId)) // get only Text Only Tips Article Pages
                                    .Where(i => i.ItemId != dataSourceId); // don't get the context item
 
@@ -711,8 +712,9 @@ namespace UnderstoodDotOrg.Domain.Search
             using (var context = index.CreateSearchContext())
             {
                 var events = GetCurrentCultureQueryable<EventPage>(context)
-                                    .Where(i => i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
-                                    .Where(i => i.EventDate >= DateTime.Now)
+                                    .Filter(i => i.Language == Sitecore.Context.Language.Name)
+                                    .Filter(i => i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
+                                    .Filter(i => i.EventDate >= DateTime.Now)
                                     .OrderBy(i => i.EventDate)
                                     .Take(1)
                                     .ToList();
@@ -737,6 +739,7 @@ namespace UnderstoodDotOrg.Domain.Search
             using (var context = index.CreateSearchContext())
             {
                 var query = GetCurrentCultureQueryable<SearchResultItem>(context)
+                                .Filter(i => i.Language == Sitecore.Context.Language.Name)
                                 .Filter(i => i.Paths.Contains(container)
                                     && i.ItemId != container
                                     && i.TemplateId == ID.Parse(ParentInterestItem.TemplateId));
@@ -747,11 +750,81 @@ namespace UnderstoodDotOrg.Domain.Search
             }
         }
 
+        public static List<BaseEventDetailPageItem> GetUpcomingWebinars(string grade, string issue, string topic)
+        {
+            return GetUpcomingEvents(WebinarEventPageItem.TemplateId, GetEventFilterPredicate(grade, issue, topic));
+        }
+
+        public static List<BaseEventDetailPageItem> GetUpcomingChats(string grade, string issue, string topic)
+        {
+            return GetUpcomingEvents(ChatEventPageItem.TemplateId, GetEventFilterPredicate(grade, issue, topic));
+        }
+
+        #endregion
+
+        private static Expression<Func<EventPage, bool>> GetEventFilterPredicate(string grade, string issue, string topic)
+        {
+            Expression<Func<EventPage, bool>> pred = PredicateBuilder.True<EventPage>();
+            pred = pred.And(e => e.Paths.Contains(Sitecore.ItemIDs.RootID));
+
+            if (!String.IsNullOrEmpty(grade))
+            {
+                pred = pred.And(e => e.Grades.Contains(ID.Parse(grade))
+                                || e.Grades.Contains(ID.Parse(Constants.ArticleTags.AllChildGrades))
+                                || e.Grades.Contains(ID.Parse(Guid.Empty)));
+            }
+
+            if (!String.IsNullOrEmpty(issue))
+            {
+                pred = pred.And(e => e.Issues.Contains(ID.Parse(issue))
+                                || e.Issues.Contains(ID.Parse(Constants.ArticleTags.AllChildIssues))
+                                || e.Issues.Contains(ID.Parse(Guid.Empty)));
+            }
+
+            if (!String.IsNullOrEmpty(topic))
+            {
+                pred = pred.And(e => e.Topics.Contains(ID.Parse(topic))
+                                || e.Topics.Contains(ID.Parse(Guid.Empty)));
+            }
+
+            return pred;
+        }
+
+        private static List<BaseEventDetailPageItem> GetUpcomingEvents(string templateId, Expression<Func<EventPage, bool>> optionalPredicate = null)
+        {
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            ID container = ID.Parse(Constants.ParentInterestsContainer);
+
+            using (var context = index.CreateSearchContext())
+            {
+                var query = GetCurrentCultureQueryable<EventPage>(context)
+                                .Filter(i => i.Language == Sitecore.Context.Language.Name)
+                                .Filter(i => i.Path.Contains("/sitecore/content/home/"))
+                                .Filter(i => i.TemplateId == ID.Parse(templateId))
+                                .Filter(i => i.EventDate >= DateTime.Now);
+
+                if (optionalPredicate != null)
+                {
+                    query = query.Filter(optionalPredicate);
+                }
+
+                var ordered = query.OrderBy(i => i.EventDate);
+
+                int total = query.Take(1).GetResults().TotalSearchResults;
+
+                var results = query.Take(total).ToList();
+
+                return (from r in results
+                       let i = r.GetItem()
+                       where i != null
+                       select new BaseEventDetailPageItem(i)).ToList();
+            }
+        }
+
         private static IQueryable<T> GetCurrentCultureQueryable<T>(IProviderSearchContext context) where T : new()
         {
             return context.GetQueryable<T>(new CultureExecutionContext(CultureInfo.CurrentCulture));
         }
 
-        #endregion
     }
 }

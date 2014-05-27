@@ -67,22 +67,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::System.Web.UI.WebControls.DropDownList ddlTopics;
         
         /// <summary>
-        /// frUpcomingWebniarsHeading control.
+        /// frUpcomingWebinarsHeading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frUpcomingWebniarsHeading;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frUpcomingWebinarsHeading;
         
         /// <summary>
-        /// frUpcomingWebniarsSubheading control.
+        /// frUpcomingWebinarsSubheading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frUpcomingWebniarsSubheading;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frUpcomingWebinarsSubheading;
         
         /// <summary>
         /// rptUpcomingWebinars control.
@@ -94,22 +94,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::System.Web.UI.WebControls.Repeater rptUpcomingWebinars;
         
         /// <summary>
-        /// pnlNoWebniars control.
+        /// pnlNoWebinars control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNoWebniars;
+        protected global::System.Web.UI.WebControls.Panel pnlNoWebinars;
         
         /// <summary>
-        /// frNoWebniars control.
+        /// frNoWebinars control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoWebniars;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoWebinars;
         
         /// <summary>
         /// frChatHeading control.

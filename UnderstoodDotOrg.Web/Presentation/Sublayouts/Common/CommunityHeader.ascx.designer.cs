@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
     public partial class BlogHeader {
         
         /// <summary>
+        /// litInitialMenuChoice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litInitialMenuChoice;
+        
+        /// <summary>
         /// rptLinks control.
         /// </summary>
         /// <remarks>

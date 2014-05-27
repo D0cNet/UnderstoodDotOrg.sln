@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CommunityHeader.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogHeader" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+
 <!-- BEGIN PARTIAL: community/main_header -->
 <div class="container community-main-header ">
     <header>
@@ -37,7 +39,7 @@
                 <ul class="menu" aria-role="navigation" aria-label="secondary-navigation">
                     <li class="title">
                         <p class="select-topic">Select a topic:</p>
-                        <button>What's Happening Now</button>
+                        <button><asp:Literal ID="litInitialMenuChoice" runat="server" /></button>
                         <i class="icon-hide-show-fff"></i>
                     </li>
                     <li class="submenu">
@@ -46,10 +48,9 @@
                                 <button>More <i class="icon-hide-show-fff"></i></button>
                             </div>
                             <ul>
-                                <asp:Repeater ID="rptLinks" runat="server"
-                                    ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.NavigationLinkItem">
+                                <asp:Repeater ID="rptLinks" runat="server">
                                     <ItemTemplate>
-                                        <li><span><%# Item.Link.Rendered %></span></li>
+                                        <li><span><sc:FieldRenderer ID="frLink" runat="server" FieldName="Link" /></span></li>
                                     </ItemTemplate>
                                 </asp:Repeater>
                             </ul>

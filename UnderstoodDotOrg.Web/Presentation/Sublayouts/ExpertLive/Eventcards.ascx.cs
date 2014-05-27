@@ -89,10 +89,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
             List<Item> result = new List<Item>();
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
             using (var context = index.CreateSearchContext()) {
-                var predicate = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate1 = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate2 = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate3 = PredicateBuilder.True<EventArchiveSearch>();
+                var predicate = PredicateBuilder.True<EventPage>();
+                var predicate1 = PredicateBuilder.True<EventPage>();
+                var predicate2 = PredicateBuilder.True<EventPage>();
+                var predicate3 = PredicateBuilder.True<EventPage>();
                 TemplateRestrictions.Clear();
                 TemplateRestrictions.Add(new ID(ChatEventPageItem.TemplateId));
 
@@ -104,7 +104,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                     predicate = predicate.And(predicate1).And(predicate2);
                 
 
-                result = context.GetQueryable<EventArchiveSearch>().Where(predicate).Select(i => i.GetItem()).ToList();
+                result = context.GetQueryable<EventPage>().Where(predicate).Select(i => i.GetItem()).ToList();
                 if (isLive) {
                     searchResultItems = result.Select(i => new BaseEventDetailPageItem(i)).Where(t => IsLiveChat(t)).Where(t => t.EventDate.DateTime >= DateTime.Today).OrderByDescending(t => t.EventDate.DateTime).ToList();
                 }
@@ -150,10 +150,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
 
             using (var context = index.CreateSearchContext()) {
-                var predicate = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate1 = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate2 = PredicateBuilder.True<EventArchiveSearch>();
-                var predicate3 = PredicateBuilder.True<EventArchiveSearch>();
+                var predicate = PredicateBuilder.True<EventPage>();
+                var predicate1 = PredicateBuilder.True<EventPage>();
+                var predicate2 = PredicateBuilder.True<EventPage>();
+                var predicate3 = PredicateBuilder.True<EventPage>();
 
                 TemplateRestrictions.Add(new ID(WebinarEventPageItem.TemplateId));
 
@@ -165,7 +165,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                 predicate = predicate.And(predicate1).And(predicate2);
 
 
-                result = context.GetQueryable<EventArchiveSearch>().Where(predicate).Select(i => i.GetItem()).ToList();
+                result = context.GetQueryable<EventPage>().Where(predicate).Select(i => i.GetItem()).ToList();
                 searchResultItems = result.Select(t => new BaseEventDetailPageItem(t)).Where(t => t.EventDate.DateTime >= DateTime.Today).OrderByDescending(t => t.EventDate.DateTime).ToList();
 
                 result = result.Where(t => !IsArchiveItem(t)).ToList();

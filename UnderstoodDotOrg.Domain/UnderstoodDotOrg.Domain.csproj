@@ -178,9 +178,9 @@
     <Compile Include="Salesforce\SforceService.cs" />
     <Compile Include="Search\Article.cs" />
     <Compile Include="Search\BehaviorAdvice.cs" />
-    <Compile Include="Search\EventArchiveSearch.cs" />
     <Compile Include="Search\EventPage.cs" />
     <Compile Include="Search\Fields\BehaviorArticleMappingField.cs" />
+    <Compile Include="Search\Fields\EventDetailField.cs" />
     <Compile Include="Search\JSON\BehaviorResultSet.cs" />
     <Compile Include="Search\Fields\AllTemplatesField.cs" />
     <Compile Include="Search\Fields\ArticleMappingField.cs" />

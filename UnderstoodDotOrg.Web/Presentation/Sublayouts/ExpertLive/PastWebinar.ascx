@@ -5,13 +5,12 @@
     <header class="row">
         <div class="event-container skiplink-feature">
             <ul class="breadcrumbs">
-                <p>
                     <li><%--<a href="REPLACE">Back to Ducimus Quia</a>--%>
                         <asp:HyperLink runat="server" ID="hlBackToLink" ></asp:HyperLink>
                     </li>
             </ul>
 
-            <h2 class="rs_read_this"> <sc:FieldRenderer ID="frPageTItle" runat="server" FieldName="Page Title" /></h2>
+            <h2 class="rs_read_this"> <sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" /></h2>
         </div>
     </header>
 
@@ -86,37 +85,58 @@
     <asp:Panel runat="server" ID="pnlVideo" CssClass="row webinar-video" Visible="false">
         <div class="container">
             <!-- BEGIN PARTIAL: video-player -->
-            
-            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/ExpertLive/VideoResources.ascx" Visible="true" />
-                    <%--<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
-                    <object class="BrightcoveExperience">
-                        <param name="bgcolor" value="#FFFFFF" />
-                        <param name="width" value="480" />
-                        <param name="height" value="270" />
-                        <param name="playerID" value="3203925133001" />
-                        <param name="playerKey" value="AQ~~,AAAC6NDP1nE~,dOSiqHy89Sli4ZPOUFfVGW6O9wJ4rR6y" />
-                        <param name="isVid" value="true" />
-                        <param name="isUI" value="true" />
-                        <param name="dynamicStreaming" value="true" />
-                        <param name="@videoPlayer" value="3203925031001" />
-                        <param name="includeAPI" value="true" />
-                    </object>--%>
-                
+            <div class="player-container">
+              <div class="player">
+                <sc:FieldRenderer ID="frVideoEmbed" runat="server" FieldName="Video Embed" />
+              </div>
+            </div>
             <!-- END PARTIAL: video-player -->
 
-            
-        </div>
+            <div class="col col-18 offset-3">
+              <!-- BEGIN PARTIAL: transcript-control -->
+                <div class="transcript-container Video">
+                  <div class="read-more mobile-close">
+                    <a href="REMOVE">Close Transcript<i class="icon-arrow-up-blue"></i></a>
+                  </div>
+                  <div class="transcript-wrap clearfix rs_read_this">
+                    <div>
+                      <h2>Video Transcript</h2>
 
-        <div class="webinar-actions clearfix">
-            <!-- BEGIN PARTIAL: community/experts_was_this_helpful -->
-            <div class="was-this-helpful clearfix" id="Div1">
+                      <h3>Dr.Richard Nightengale:</h3>
+                      <p>Distinctio quas itaque molestiae doloremque beatae id neque eum voluptatem iure. dolores nihil ullam labore iusto et fugiat. officiis mollitia voluptatem quasi quis omnis in voluptatibus velit. qui a adipisci fugiat suscipit sed quas nulla tempore. ut qui iure ut quasi dolores id aliquam velit minima non. incidunt voluptatem quae et labore libero explicabo blanditiis velit</p>
 
+                      <h3>Parent:</h3>
+                      <p>Alias maxime et voluptatibus aut dolore et consequuntur eveniet. voluptatem quo sit ad tenetur vel et aliquid dolores. aliquam sed ipsam repellat laudantium architecto. molestias est eligendi fuga est ea ipsum. officiis voluptatem repudiandae est eos minima aut voluptas dolor molestiae. cum adipisci saepe omnis repellat. dolores quas expedita doloremque et</p>
 
-                <h4>Did you find this helpful?</h4>
-                <a class="button yes rs_skip" href="REPLACE">Yes</a>
-                <a class="button gray no rs_skip" href="REPLACE">No</a>
+                      <h3>Dr.Richard Nightengale:</h3>
+                      <p>A est velit et fugiat qui ducimus quia autem libero non ducimus. et praesentium enim omnis. temporibus qui consequatur dolor voluptatem repellendus inventore porro sint quasi quam</p>
+
+                      <h3>Parent:</h3>
+                      <p>Quam rerum eos recusandae vero veritatis ea aspernatur modi veritatis maxime similique quas amet. harum quaerat quae ratione molestiae ad. necessitatibus voluptatibus enim est explicabo est fugiat debitis ut non dolor eaque sunt. nisi perspiciatis repudiandae veniam. nulla ducimus ullam nulla. exercitationem dignissimos in voluptatibus necessitatibus rem et aperiam hic eius delectus sequi laboriosam qui laboriosam. itaque ad molestias occaecati consequatur veniam vero facilis accusantium sit ut nam est recusandae</p>
+
+                      <h3>Dr.Richard Nightengale:</h3>
+                      <p>Sed eius ea optio sit aut ut animi quia minus sed necessitatibus ut. placeat nesciunt nihil beatae laborum ratione. repellendus fugiat perferendis nihil libero repudiandae quibusdam ut distinctio nemo culpa architecto. ipsum explicabo voluptates in sunt nostrum consequatur dolor. rerum commodi deserunt vero deleniti velit ab facilis. earum rerum explicabo et autem maiores</p>
+
+                      <h3>Parent:</h3>
+                      <p>Velit reiciendis soluta itaque quaerat vel perferendis ad vitae doloribus nulla officia nostrum. consequatur maxime odit autem voluptas et voluptate ut aliquam. ducimus assumenda adipisci ducimus nam. fuga quam illo corporis porro et inventore totam sequi ut aut pariatur sed. aut et aut totam autem quaerat tempore sint aut nam. doloribus debitis nihil mollitia cupiditate eveniet nesciunt est voluptas autem atque tenetur aspernatur. et occaecati consequuntur et voluptate sint perferendis asperiores</p>
+                    </div>
+                  </div>
+                  <div class="read-more read-more-bottom"></div>
+                </div>
+                <!-- END PARTIAL: transcript-control -->
             </div>
-            <!-- END PARTIAL: community/experts_was_this_helpful -->
-        </div>
+          </div>
+
+            <div class="webinar-actions clearfix">
+                <!-- BEGIN PARTIAL: community/experts_was_this_helpful -->
+                <div class="was-this-helpful clearfix" id="Div1">
+    
+
+                    <h4>Did you find this helpful?</h4>
+                    <a class="button yes rs_skip" href="REPLACE">Yes</a>
+                    <a class="button gray no rs_skip" href="REPLACE">No</a>
+                </div>
+                <!-- END PARTIAL: community/experts_was_this_helpful -->
+            </div>
     </asp:Panel>
 </div>
