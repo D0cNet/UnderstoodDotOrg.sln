@@ -403,6 +403,14 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             return commentAdded;
         }
+        /// <summary>
+        /// Inserts a row into our member activity log table with information about what the specified user has just done
+        /// </summary>
+        /// <param name="MemberId"></param>
+        /// <param name="ContentId"></param>
+        /// <param name="Activity"></param>
+        /// <param name="ActivityType"></param>
+        /// <returns></returns>
         public bool LogMemberActivity(Guid MemberId, Guid ContentId, String Activity, int ActivityType)
         {
             bool success = false;
@@ -523,6 +531,22 @@ namespace UnderstoodDotOrg.Domain.Membership
         /// <returns>Member that was updated</returns>
         public Member UpdateMember(Member Member)
         {
+            //BG: Before we let entity do its thing we need to clear out some values. Entity is not checking for dirty flags, it is only doing inserts
+            //it is however doing full atomic inserts so as long as we reset some one to many sets of data we will end up with the desired results, 
+            //otherwise all we do is add to the list, and never can remove any itmes. blow them all out first, then let entity insert all of the values as it is.
+            string sql = "member_ClearAllMemberInterests";
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure; 
+                    cmd.Parameters.AddWithValue("@MemberId", Member.MemberId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            //
+
             try
             {
                 Member = this.mapMember(Member);

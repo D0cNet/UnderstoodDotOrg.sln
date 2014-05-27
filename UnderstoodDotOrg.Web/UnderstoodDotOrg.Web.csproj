@@ -324,6 +324,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\AdminTools\Sandbox.ascx.cs">
       <DependentUpon>Sandbox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\AdminTools\Sandbox.ascx.designer.cs">
       <DependentUpon>Sandbox.ascx</DependentUpon>
