@@ -12,22 +12,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount {
     
     public partial class Private_Message_Tool {
         
-        ///// <summary>
-        ///// CKEditor1 control.
-        ///// </summary>
-        ///// <remarks>
-        ///// Auto-generated field.
-        ///// To modify move field declaration from designer file to code-behind file.
-        ///// </remarks>
-        //protected global::CKEditor.NET.CKEditorControl CKEditor1;
-        
         /// <summary>
-        /// btnReply control.
+        /// Tool control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReply;
+        protected global::Sitecore.Web.UI.WebControls.Placeholder Tool;
     }
 }

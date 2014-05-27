@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Private Message Tool.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount.Private_Message_Tool" %>
 
-<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
+<%--<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 <header>
 			<div class="notification-tabs-wrapper select-inverted-mobile">
 			  <div class="notifications-section-dropdown tab-widget">
@@ -60,4 +60,6 @@
 		</section>
 
 <!-- END PARTIAL: account-notification-tab-messages -->
-</div><!-- .account-body-wrapper -->
+</div>--%><!-- .account-body-wrapper -->
+
+<sc:PlaceHolder ID="Tool" runat="server"></sc:PlaceHolder>
