@@ -6,8 +6,8 @@ using Sitecore.Web.UI.WebControls;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
 {
-public partial class AdvocacyArticlePageItem 
-{
+    public partial class AdvocacyArticlePageItem
+    {
 
-}
+    }
 }
