@@ -46,11 +46,11 @@ public static implicit operator Item(PromoItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField PromoURL
+public CustomGeneralLinkField PromoURL
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Promo URL"]);
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Promo URL"]);
 	}
 }
 

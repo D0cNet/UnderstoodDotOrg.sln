@@ -15,10 +15,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Model.ShowPromotionalControl)
+            if (Model.ShowPromotionalControl.Checked)
             {
                 var promoItems = Model.PromotionalContent.ListItems
                     .Where(i => i != null && i.InheritsTemplate(PromoItem.TemplateId))
+                    .Select(i => (PromoItem)i)
                     .Take(3);
 
                 rptPromoList.DataSource = promoItems;
