@@ -168,6 +168,8 @@
                 <asp:ListItem Text="Video Article Page" Value="{D84F2F6F-7B29-49B6-B940-5546CDBBE21B}"></asp:ListItem>
                 <asp:ListItem Text="Glossary Page" Value="{CE1AAFB1-90B3-44DF-8F09-38C9B3ACA9C1}"></asp:ListItem>
                 <asp:ListItem Text="Toolkit Article Page" Value="{8A8EE8DC-7953-433A-B3B1-79E19B76A9A9}"></asp:ListItem>
+                <asp:ListItem Text="Knowledge Quiz Question Article Page" Value="{28A9E7F1-9265-4F10-B288-19A254E0F64D}"></asp:ListItem>
+                <asp:ListItem Text="Assessment Quiz Article" Value="{6AC5B76A-6EC6-4561-868C-9A0EBC3190D3}"></asp:ListItem>
             </asp:RadioButtonList>
 
             <br />
