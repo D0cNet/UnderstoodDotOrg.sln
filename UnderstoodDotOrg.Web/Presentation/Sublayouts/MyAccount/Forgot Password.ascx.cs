@@ -2,15 +2,12 @@
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.ExactTarget;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
-using UnderstoodDotOrg.Framework.UI;
-using UnderstoodDotOrg.Services.ExactTarget;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
-    public partial class Forgot_Password : BaseSublayout
+    public partial class Forgot_Password1 : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,33 +20,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            try
+            var email = txtEmailAddress.Text;
+            var membershipManager = new MembershipManager();
+            var user = membershipManager.GetUser(email);
+            
+            if (user != null)
             {
-                var email = txtEmailAddress.Text;
-                var membershipManager = new MembershipManager();
-                var user = membershipManager.GetUser(email);
-                if (user != null)
-                {
-                    ForgotPasswordItem currentItem = Sitecore.Context.Database.GetItem(Sitecore.Context.Item.ID);
+                ForgotPasswordItem currentItem = Sitecore.Context.Database.GetItem(Sitecore.Context.Item.ID);
 
-                    uxView.ActiveViewIndex = 1;
-                    litSuccessStory.Text = currentItem.SuccessMessage.Rendered.Replace("$email$", email);
-                    
-                    var passwordReset = Sitecore.Configuration.Factory.GetDatabase("master").GetItem("{328F5121-EFF8-441B-AFB6-A3DF41F7BFA4}");
-                    var link = string.Format(Request.Url.Host + "{0}?guid={1}", Sitecore.Links.LinkManager.GetItemUrl(passwordReset), user.ProviderUserKey.ToString());
+                uxView.ActiveViewIndex = 1;
+                litSuccessStory.Text = currentItem.SuccessMessage.Rendered.Replace("$email$", email);
 
-                    BaseReply reply = ExactTargetService.InvokeEM22ForgotPassword(new InvokeEM22ForgotPasswordRequest { PasswordResetLink = link, ToEmail = email, UserName = user.UserName });
-                }
-                else
-                {
-                    //user does not exist
-                    litErrorMessage.Visible = true;
-                }
+                string emailMessage = "<br/><br/><br/>Hi {0},<br/>SMTP isn't setup yet, so this is your email.<br/>Please click this link to go to the password reset screen: <a href=\"{1}\">{2}</a>";
+
+                var passwordReset = Sitecore.Configuration.Factory.GetDatabase("master").GetItem("{328F5121-EFF8-441B-AFB6-A3DF41F7BFA4}");
+                var link = string.Format("{0}?guid={1}", Sitecore.Links.LinkManager.GetItemUrl(passwordReset), user.ProviderUserKey.ToString());
+
+
+
+
+                litSuccessStory.Text += string.Format(emailMessage, email, link, link);
             }
-            catch (Exception ex)
+            else
             {
+                //user does not exist
                 litErrorMessage.Visible = true;
-                litErrorMessage.Text = DictionaryConstants.EmailException;
             }
         }
 

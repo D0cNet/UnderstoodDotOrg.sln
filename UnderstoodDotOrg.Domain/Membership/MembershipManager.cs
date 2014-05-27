@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ using UnderstoodDotOrg.Domain.TelligentCommunity;
 using MembershipProvider = System.Web.Security.Membership;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
+
 
 namespace UnderstoodDotOrg.Domain.Membership
 {
@@ -394,11 +396,47 @@ namespace UnderstoodDotOrg.Domain.Membership
                 var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
                 provider.UpdateUser(mUsr);
                 //comment added.
+                commentAdded = true;
             }
             catch (Exception e)
             { 
             }
             return commentAdded;
+        }
+        public bool LogMemberActivity(Guid MemberId, Guid ContentId, String Activity, int ActivityType)
+        {
+            bool success = false;
+            try
+            {
+                
+                string sql = "INSERT INTO dbo.MemberActivity " + 
+                                        " ([Key], MemberId, ActivityType, Value) " +
+                                        " VALUES (@Key,@MemberId, @ActivityType, @Value)";
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {                     
+                        cmd.Parameters.AddWithValue("@Key", Guid.NewGuid()); //?:toteswatever.what
+                        cmd.Parameters.AddWithValue("@MemberId", MemberId);
+                        cmd.Parameters.AddWithValue("@ActivityType", ActivityType);
+                        cmd.Parameters.AddWithValue("@Value", Activity  ); //UnderstoodDotOrg.Common.Constants.UserActivityTypes.Favorited // - * example
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                string msg = "Insert Error:";
+                msg += ex.Message;
+                //bg: I would like to log this, need to find that log method again.
+                throw ex;
+            }
+            success = true;
+            
+
+            //push this up into salesforce... eventually....
+            return success;
         }
         /// <summary>
         /// Adds a new user to the authentication database, and then adds a new member to the membership database

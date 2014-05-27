@@ -65,6 +65,8 @@
                 <a href="#" class="icon icon-print" onclick="window.print()">Print</a>
                 <%--OOS for this release--%>
                 <%--<a href="#" class="icon icon-remind">Remind</a>--%>
+                <%--When You need it check MembershipManager.LogMemberActivity(x,y,z,q). Sample usage is in Sandbox.ascx.cs--%>
+
                 <a href="#" class="icon icon-rss">RSS</a></span>
         </span>
 

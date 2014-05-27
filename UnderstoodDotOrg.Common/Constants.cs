@@ -59,14 +59,15 @@ namespace UnderstoodDotOrg.Common
         public static string sessionUnauthenticatedMemberKey { get { return "_understood_org_unauthenticated_member"; } }
         #endregion
 
-#region Unauthenticated Member Values
+        #region Unauthenticated Member Values
         public static string UnauthenticatedMember_ScreeName { get { return "c5uSwuWruy2Q5NADejus"; } }
         public static string UnauthenticatedMember_Password{ get { return "4Sf9suVucReD373HDS"; } }
         public static string UnauthenticatedMember_FirstName { get { return "Unauthenticated"; } }
         public static string UnauthenticatedMember_LastName { get { return "NotSpecified"; } }
-        public static string UnauthenticatedMember_Flag { get { return "IsUnauthenticatedMember"; } }
+        
+        public static string UnauthenticatedMember_Flag { get { return "IsUnauthenticatedMember=true"; } }
 
-#endregion
+        #endregion
 
 
         #region Container Guid
@@ -461,7 +462,19 @@ namespace UnderstoodDotOrg.Common
                 public const string QuestionId = "qid";
             }
         }
-
+        public static class UserActivity_Values
+        {
+            public const string SetReminder = "Reminder Set";
+            public const string Favorited = "Item Favorited";
+            public const string  Shared = "Item Shared";
+        }
+        public static class UserActivity_Types
+        {
+            public const int Undefined = 0;
+            public const int ContentRelated = 1;
+            public const int Advocacy = 2;
+            public const int Advocacy_Donation = 3;
+        }
         public static class SolrFields
         {
             public const string ChildGrades = "_child_grades";
@@ -653,6 +666,9 @@ namespace UnderstoodDotOrg.Common
                 };
             }
         }
+                 
         #endregion
+
+
     }
 }
