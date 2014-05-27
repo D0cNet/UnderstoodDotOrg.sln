@@ -39,7 +39,7 @@
     <link href="/Presentation/includes/css/modules.css" rel="stylesheet" />
     <asp:Literal ID="headerSectionCSS" runat="server"></asp:Literal>
     <link href="/Presentation/includes/css/uniform-understood.css" rel="stylesheet" />
-    <link href="/Presentation/includes/css/oasis.css" rel="stylesheet" />
+	<link href="/Presentation/includes/css/oasis.css" rel="stylesheet" />
     <!--<![endif]-->
 
 
@@ -54,8 +54,6 @@
   <![endif]-->
 
     <script src="/Presentation/includes/js/vendor/modernizr.custom.js"></script>
-    <!-- BEGIN PARTIAL: footerjs -->
-    <script src="/Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>
 
 </head>
 
@@ -82,15 +80,15 @@
 
         <div id="wrapper">
 
-            <sc:placeholder id="Placeholder1" key="Header" runat="server" />
-            <sc:placeholder id="Placeholder2" key="Main" runat="server" />
-            <sc:placeholder id="Placeholder3" key="Footer" runat="server" />
+            <sc:Placeholder ID="Placeholder1" Key="Header" runat="server" />
+            <sc:Placeholder ID="Placeholder2" Key="Main" runat="server" />
+            <sc:Placeholder ID="Placeholder3" Key="Footer" runat="server" />
         </div>
         <!-- #wrapper -->
 
 
         <!-- BEGIN PARTIAL: footerjs -->
-        <%--<script src="/Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>--%>
+        <script src="/Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>
         <!--[if lte IE 8]>
 <script src="/Presentation/includes/js/vendor/selectivizr.js"></script><![endif]-->
 
@@ -117,11 +115,11 @@
         <%--<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>--%>
         <script src="/Presentation/includes/js/site.js"></script>
         <script src="/Presentation/includes/js/modules.js"></script>
-        <asp:Literal runat="server" ID="footerSectionJS"></asp:Literal>
+        <asp:literal runat="server" id="footerSectionJS"></asp:literal>
         <script src="/Presentation/includes/js/global.js"></script>
-        <script src="/Presentation/includes/js/oasis.js"></script>
+		<script src="/Presentation/includes/js/oasis.js"></script>
         <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
-        <sc:placeholder runat="server" key="AfterResources" />
+        <sc:Placeholder runat="server" Key="AfterResources" />
 
         <!-- END PARTIAL: footerjs -->
 
