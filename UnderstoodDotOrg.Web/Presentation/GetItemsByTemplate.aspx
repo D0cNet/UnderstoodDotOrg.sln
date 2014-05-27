@@ -10,6 +10,7 @@
 <%@ Import Namespace="Sitecore.Data.Items" %>
 <script runat="server">
     
+
     string templateId = string.Empty;
     List<Item> _realItems = new List<Item>();
     List<Item> _cloneItems = new List<Item>();
@@ -21,7 +22,16 @@
             }
         }
     }
+    
+    public IEnumerable<Item> GetCloneItems(Item original) {
 
+        return (from link in Sitecore.Globals.LinkDatabase.GetReferrers(original)
+                select link.GetSourceItem() into clone
+                where ((clone != null) && (clone.Source != null)) && (clone.Source.ID == original.ID)
+                select clone);
+        //var list = Globals.LinkDatabase.GetReferrers(original)
+    }
+    
     Item siteItem = null;
     private void GetAllSitecoreItem() {
         Sitecore.Data.Database db = Sitecore.Data.Database.GetDatabase("master");
@@ -45,6 +55,7 @@
             rptItems.DataBind();
         }
         else {
+			rptItems.Visible = false;
             ltItemsCount.Text = "No Results Found";
             rptItems.Visible = false;
         }
@@ -103,6 +114,8 @@
                 Literal ltTemplate = (Literal)e.Item.FindControl("ltTemplate");
                 Literal ltPath = (Literal)e.Item.FindControl("ltPath");
                 Literal litUrl = (Literal)e.Item.FindControl("litUrl");
+                Literal ltClonesCount = (Literal)e.Item.FindControl("ltClonesCount");
+                
                 if (ltItemName != null) {
                     ltItemName.Text = itm.Name;
 
@@ -117,6 +130,10 @@
 
                 if (ltPath != null) {
                     ltPath.Text = Sitecore.Links.LinkManager.GetItemUrl(itm);
+                }
+
+                if (ltClonesCount != null) {
+                    ltClonesCount.Text = GetCloneItems(itm).Count().ToString();
                 }
             }
         }
@@ -166,6 +183,25 @@
                     <h2>Real Items Are:</h2>
                     <br />
                     <table style="border: 1px Black solid">
+                         <thead>
+                            <tr>
+                                <td style="border: 1px Black solid">
+                                    Item Name
+                                </td>
+                                <td style="border: 1px Black solid">
+                                    Template
+                                </td>
+                                <td style="border: 1px Black solid">
+                                    Path
+                                </td>
+                                <td style="border: 1px Black solid">
+                                    URl
+                                </td>
+                                <td style="border: 1px Black solid">
+                                    Clone Count
+                                </td>
+                            </tr>
+                        </thead>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
@@ -180,6 +216,9 @@
                         </td>
                         <td style="border: 1px Black solid">
                             <asp:Literal ID="litUrl" runat="server"></asp:Literal>
+                        </td>
+                        <td style="border:1px Black solid" >
+                            <asp:Literal ID="ltClonesCount" runat="server"></asp:Literal>
                         </td>
                     </tr>
                 </ItemTemplate>
@@ -196,6 +235,22 @@
                     <h2>Clone Items Are:</h2>
                     <br />
                     <table style="border: 1px Black solid">
+                        <thead>
+                            <tr>
+                                <td style="border: 1px Black solid">
+                                    Item Name
+                                </td>
+                                <td style="border: 1px Black solid">
+                                    Template
+                                </td>
+                                <td style="border: 1px Black solid">
+                                    Path
+                                </td>
+                                <td style="border: 1px Black solid">
+                                    URl
+                                </td>
+                            </tr>
+                        </thead>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
