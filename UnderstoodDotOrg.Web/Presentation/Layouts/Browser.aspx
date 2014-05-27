@@ -52,8 +52,9 @@
 <link href="/Presentation/includes/css/homepage-nonresponsive.css" rel="stylesheet" />
 <link href="/Presentation/includes/css/uniform-understood-nonresponsive.css" rel="stylesheet" />
   <![endif]-->
-    <script src="/Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>
+
     <script src="/Presentation/includes/js/vendor/modernizr.custom.js"></script>
+    <script src="/Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>
 </head>
 
 <!-- END PARTIAL: head -->
