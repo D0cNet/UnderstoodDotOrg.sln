@@ -201,3 +201,95 @@
 <!-- END MODULE: Guide Me -->
 <asp:HiddenField runat="server" ID="hfRandomizeSlider" ClientIDMode="Static" />
 
+<script type="text/javascript" >
+    //$(window).load(function () {
+    //    // home page recommendation select or checked controls on page load or radio button and button click.
+    //    $('.container-guide-me-overlay .select-behavior ul li').each(function () {
+    //        if ($(this).find('#hdnChecked').val() == 'true') {
+    //            $(this).find('span').addClass('checked');
+    //        }
+    //    });
+
+    //    checkIssuesGrades();
+    //});
+
+    //var $getCheckedIds;
+    //function GetAllCheckedInput() {
+
+    //    $getCheckedIds = '';
+    //    $('.container-guide-me-overlay .select-behavior ul li').each(function () {
+    //        if ($(this).find('div.checker span').hasClass('checked')) {
+    //            if ($getCheckedIds != null && $getCheckedIds != '') {
+    //                $getCheckedIds += "," + $(this).find('.input-checkbox-class').attr("data-value");
+    //            }
+    //            else {
+    //                $getCheckedIds = $(this).find('.input-checkbox-class').attr("data-value");
+    //            }
+    //            $('#hdnGetAllCheckedIssues').val($getCheckedIds);
+    //        }
+    //    });
+
+    //    $('.container-guide-me-overlay .select-grade nav button').each(function () {
+    //        if ($(this).hasClass('active')) {
+    //            $('#hdnGetAllCheckedGrades').val($(this).attr("data-value"));
+    //            return false;
+    //        }
+    //    });
+
+    //    var $deviceCheck = ((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase())));
+
+    //    if ($deviceCheck) {
+    //        $('#hdnGetAllCheckedGrades').val($('.container-guide-me-overlay .guideme-grade-mobile option:selected').val());
+    //    }
+
+    //}
+
+    //function CheckIssues($this) {
+    //    //alert($this.attr("checked"));
+    //    if ($this.attr('checked') == "checked") {
+    //        $this.removeAttr('checked');
+    //    }
+    //    else {
+    //        $this.attr('checked', 'checked');
+    //    }
+    //    checkSelection();
+    //}
+
+    //function CheckGrades($this) {
+    //    if ($this.attr('checked') == "checked") {
+    //        $this.removeAttr('checked');
+    //    }
+    //    else {
+    //        $this.attr('checked', 'checked');
+    //    }
+    //    checkSelection();
+    //}
+
+    //function checkSelection() {
+    //    var $checkIssue = "false";
+    //    var $checkGrade = "false";
+    //    $('.container-guide-me-overlay .select-behavior ul li').each(function () {
+    //        if ($(this).find('input.input-checkbox-class').attr('checked') == "checked") {
+    //            $checkIssue = "true";
+    //            return false;
+    //        }
+    //        return;
+    //    });
+
+    //    $('.container-guide-me-overlay .select-grade nav button').each(function () {
+    //        if ($(this).attr('checked') == "checked") {
+    //            $checkGrade = "true";
+    //            return false;
+    //        }
+    //        return;
+    //    });
+
+    //    if ($checkIssue == "true" && $checkGrade == "true") {
+    //        $("input.button-guide-me-recommendations").removeAttr('disabled');
+    //    }
+    //    else {
+    //        $("input.button-guide-me-recommendations").attr('disabled', 'disabled');
+    //    }
+    //}
+
+</script>

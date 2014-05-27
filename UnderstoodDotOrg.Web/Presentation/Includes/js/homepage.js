@@ -241,7 +241,7 @@
 
             document.body.focus();
 
-            checkIssuesGrades();
+            //checkIssuesGrades();
 
         };
 
@@ -428,7 +428,7 @@ function checkIssuesGrades() {
     var $checkIssue = "false";
     var $checkGrade = "false";
     $('.container-guide-me-overlay .select-behavior ul li').each(function () {
-        if ($(this).find('div.checker span').hasClass('checked')) {
+        if ($(this).find('span').hasClass('checked')) {
             $checkIssue = "true";
             return false;
         }
@@ -451,6 +451,7 @@ function checkIssuesGrades() {
     }
 }
 
+
 $(window).load(function () {
     // home page recommendation select or checked controls on page load or radio button and button click.
     $('.container-guide-me-overlay .select-behavior ul li').each(function () {
@@ -458,6 +459,8 @@ $(window).load(function () {
             $(this).find('span').addClass('checked');
         }
     });
+
+    checkIssuesGrades();
 });
 
 var $getCheckedIds;
@@ -538,4 +541,3 @@ function checkSelection() {
         $("input.button-guide-me-recommendations").attr('disabled', 'disabled');
     }
 }
-

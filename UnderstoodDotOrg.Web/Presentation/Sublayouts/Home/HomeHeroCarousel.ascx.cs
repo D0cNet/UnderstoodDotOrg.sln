@@ -187,6 +187,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                                         if (issue.Key.ToString().ToLower().Replace("{", "").Replace("}", "") == childIssueItem.ID.ToString().ToLower().Replace("{", "").Replace("}", "")) {
                                             hdnKeyValuePair.Value = childIssueItem.ID + "|" + childIssueItem.IssueName.Raw;
                                             hdnChecked.Value = "true";
+                                            issueInput.Attributes.Add("checked", "checked");
                                         }
                                     }
                                 }
@@ -218,6 +219,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                                     foreach (Grade grade in child.Grades) {
                                         if (grade.Key.ToString().ToLower().Replace("{", "").Replace("}", "") == gradeItem.ID.ToString().ToLower().Replace("{", "").Replace("}", "")) {
                                             gradeBtn.Attributes.Add("class", "grade active");
+                                            gradeBtn.Attributes.Add("checked", "checked");
                                         }
                                     }
                                 }
