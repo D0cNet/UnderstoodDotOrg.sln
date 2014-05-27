@@ -18,17 +18,21 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsA
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Advocacy;
 using UnderstoodDotOrg.Framework.UI;
 using Sitecore.Data;
+using UnderstoodDotOrg.Domain.Search.JSON;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
     public partial class SuggestArticlePageCarousal : BaseSublayout
     {
         DefaultArticlePageItem ObjDefaultArticle;
-        List<DefaultArticlePageItem> FinalRelatedArticles = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ObjDefaultArticle = new DefaultArticlePageItem(Sitecore.Context.Item);
+            BindArticles();
+        }
+
+        public void BindArticles()
+        {
             if (Sitecore.Context.Item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
             {
                 ObjDefaultArticle = new DefaultArticlePageItem(Sitecore.Context.Item);
@@ -37,48 +41,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 if (!ObjDefaultArticle.HideRelatedActiveLinks.Checked) // Show Articles
                 {
-                    //Get list of selected item
-                    FinalRelatedArticles = GetRelatedLinks(ObjDefaultArticle);
-                    if (FinalRelatedArticles != null)
+                    var AllArticles = ObjDefaultArticle.RelatedLink.ListItems
+                        .Where(t => t.InheritsTemplate(DefaultArticlePageItem.TemplateId));
+                    if (AllArticles.Any())
                     {
-                        rptMoreArticle.DataSource = FinalRelatedArticles;
-                        rptMoreArticle.DataBind();
+                        rptDefaultArticles.DataSource = AllArticles
+                            .Select(i => (DefaultArticlePageItem)i)
+                            .Take(6).ToList();
+                        rptDefaultArticles.DataBind();
+                        frRelatedLinkTitle.Visible = true;
                     }
-                    frRelatedLinkTitle.Visible = true;
-                }
-                else
-                {
-                    frRelatedLinkTitle.Visible = false;
-                    rptMoreArticle.DataSource = null;
-                    rptMoreArticle.DataBind();
-                }
-            }
-        }
+                    else
+                    {
+                        Handlers.SearchResultsService svc = new Handlers.SearchResultsService();
 
-        public List<DefaultArticlePageItem> GetRelatedLinks(DefaultArticlePageItem ObjDefArt)
-        {
-            var AllArticles = ObjDefArt.RelatedLink.ListItems
-                .Where(t => t.InheritsTemplate(DefaultArticlePageItem.TemplateId));
-            if (AllArticles.Any())
-            {
-                return AllArticles
-                    .Select(i => (DefaultArticlePageItem)i)
-                    .Take(6).ToList();
-            }
-            else
-            {
-                //Select Random max 6 articles to show
-                var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-                using (var context = index.CreateSearchContext())
-                {
-                    var defaultArticlePageTemplateId = new ID(DefaultArticlePageItem.TemplateId);
-                    return context.GetQueryable<SearchResultItem>()
-                        .Where(sri => sri.TemplateId == defaultArticlePageTemplateId).ToList()
-                        .Select(i => i.GetItem())
-                        .Where(i => i != null)
-                        .OrderBy(i => Guid.NewGuid())
-                        .Take(6)
-                        .Select(i => (DefaultArticlePageItem)i).ToList();
+                        rptMoreArticle.DataSource = svc.SearchAllArticles("", "%7BC272C2C3-9405-49D0-9BC1-A64F76C750DC%7D", 1).Articles.Take(6);
+                        rptMoreArticle.DataBind();
+                        frRelatedLinkTitle.Visible = true;
+                    }
                 }
             }
         }
