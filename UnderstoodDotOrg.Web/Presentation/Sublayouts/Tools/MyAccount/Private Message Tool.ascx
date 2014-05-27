@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Private Message Tool.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount.Private_Message_Tool" %>
 
-<%--<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
+<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 <header>
 			<div class="notification-tabs-wrapper select-inverted-mobile">
 			  <div class="notifications-section-dropdown tab-widget">
@@ -35,7 +35,7 @@
 			<!-- BEGIN PARTIAL: account-notification-tab-messages -->
 		<section class="account-notifications-tab-messages">
 			
-            <asp:Panel Width="880" Height="700" runat="server">
+      <%--      <asp:Panel Width="880" Height="700" runat="server">
                 <div id="conversti"
                 <div class="header"> 
                     <span>Inbox (3)
@@ -55,11 +55,10 @@
                 <asp:Button Text="Submit Reply" CssClass="button" ID="btnReply" runat="server" OnClick="btnReply_Click" />
                
               
-        </asp:Panel>
-            
+        </asp:Panel>--%>
+            <sc:PlaceHolder ID="Tool" runat="server">Test Content</sc:PlaceHolder>
 		</section>
 
 <!-- END PARTIAL: account-notification-tab-messages -->
-</div>--%><!-- .account-body-wrapper -->
+</div><!-- .account-body-wrapper -->
 
-<sc:PlaceHolder ID="Tool" runat="server"></sc:PlaceHolder>
