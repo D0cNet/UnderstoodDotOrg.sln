@@ -6,42 +6,23 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidgets
 {
     public partial class MyGroups : BaseSublayout
     {
-        private class GroupModel
-        {
-            public string Title { get; set; }
-            public string TitleUrl { get; set; }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountGroups);
             hypGroupsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
 
-            //TO-DO Add call to get Groups and cast them as GroupModel objects
+            List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
 
-            //Stub for one link
-            List<GroupModel> stubDataSource = new List<GroupModel>();
-            GroupModel stubGroup = new GroupModel();
-            stubGroup.Title = "ADHD";
-            stubGroup.TitleUrl = "/";
+            litCount.Text = groupsList.Count.ToString();
 
-            stubDataSource.Add(stubGroup);
-
-            stubGroup = new GroupModel();
-            stubGroup.Title = "Parents of kids with Attention issues";
-            stubGroup.TitleUrl = "/";
-
-            stubDataSource.Add(stubGroup);
-
-            litCount.Text = stubDataSource.Count.ToString();
-
-            rptGroups.DataSource = stubDataSource;
+            rptGroups.DataSource = groupsList;
             rptGroups.DataBind();
         }
 
@@ -49,7 +30,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
         {
             var item = (GroupModel)e.Item.DataItem as GroupModel;
             HyperLink hypGroupsLink = (HyperLink)e.Item.FindControl("hypGroupsLink");
-            hypGroupsLink.NavigateUrl = ((GroupModel)e.Item.DataItem).TitleUrl;
+            hypGroupsLink.NavigateUrl = ((GroupModel)e.Item.DataItem).Url;
             hypGroupsLink.Text = ((GroupModel)e.Item.DataItem).Title;
         }
     }

@@ -13,13 +13,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
     public partial class Groups {
         
         /// <summary>
-        /// subheadergroups control.
+        /// ddlGroups control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList subheadergroups;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGroups;
         
         /// <summary>
         /// rptComments control.

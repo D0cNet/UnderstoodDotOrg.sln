@@ -20,7 +20,7 @@
                         <div class="col push-5">
                             <div class="select-container filter-group">
                                 <fieldset>
-                                   <asp:DropDownList name="my-groups-dropdown" ID="subheadergroups" runat="server" OnSelectedIndexChanged="subheadergroups_SelectedIndexChanged">
+                                   <asp:DropDownList name="my-groups-dropdown" ID="ddlGroups" runat="server" OnSelectedIndexChanged="ddlGroups_SelectedIndexChanged" AutoPostBack="true">
                                    </asp:DropDownList>
                                 </fieldset>
                             </div>

@@ -8,7 +8,7 @@
     <ul class="landing-module-items">
         <asp:Repeater ID="rptGroups" runat="server" OnItemDataBound="rptGroups_ItemDataBound">
             <ItemTemplate>
-                <li><asp:HyperLink ID="hypGroupsLink" runat="server">labore sed facere pariatur iure quasi rerum odio asperiores</asp:HyperLink></li>
+                <li><asp:HyperLink ID="hypGroupsLink" runat="server"></asp:HyperLink></li>
             </ItemTemplate>
         </asp:Repeater>
     </ul>

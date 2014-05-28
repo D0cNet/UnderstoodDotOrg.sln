@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,36 +15,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //var commentsList = CommunityHelper.ListUserComments(CurrentUser.UserName);
-            subheadergroups.Items.Add(new ListItem("ADHD"));
-
-            Comment cmItem = new Comment();
-            cmItem.Body = "Comment 1 From Group ADHD";
-            cmItem.ParentTitle = "Parent Title";
-            cmItem.CommentDate = DateTime.Today;
-            cmItem.Likes = "31";
-            cmItem.CommentGroup = "ADHD";
-            cmItem.CommentGroupUrl = "/";
-            cmItem.ReplyCount = "12";
-            cmItem.AuthorDisplayName = "Vance Floyd";
-            List<Comment> commentsList = new List<Comment>();
-            commentsList.Add(cmItem);
-
-            cmItem = new Comment();
-            cmItem.Body = "Comment 2 From Group ADHD";
-            cmItem.ParentTitle = "Parent Title";
-            cmItem.CommentDate = DateTime.Today;
-            cmItem.Likes = "53";
-            cmItem.CommentGroup = "ADHD";
-            cmItem.CommentGroupUrl = "/";
-            cmItem.ReplyCount = "7";
-            cmItem.AuthorDisplayName = "Vance Floyd";
-            commentsList.Add(cmItem);
-
-            if (commentsList != null)
+            if (!IsPostBack)
             {
-                rptComments.DataSource = commentsList;
-                rptComments.DataBind();
+                List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
+                ddlGroups.DataSource = groupsList;
+                ddlGroups.DataValueField = "Url";
+                ddlGroups.DataTextField = "Title";
+                ddlGroups.DataBind();
+
+                var commentsList = CommunityHelper.ReadComments();
+
+                if (commentsList != null)
+                {
+                    rptComments.DataSource = commentsList.Where(x => x.ParentTitle == ddlGroups.SelectedItem.Text);
+                    rptComments.DataBind();
+                }
             }
         }
 
@@ -52,7 +38,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             var item = e.Item.DataItem as Comment;
             HyperLink hypCommentLink = (HyperLink)e.Item.FindControl("hypCommentLink");
             hypCommentLink.NavigateUrl = "/";
-            hypCommentLink.Text = item.Body;
+            hypCommentLink.Text = Regex.Replace(Regex.Replace(item.Body, @"<[^>]+>|&nbsp;", "").Trim(), @"\s{2,}", " ");
 
             Literal litCommentTime = (Literal)e.Item.FindControl("litCommentTime");
             litCommentTime.Text = item.CommentDate.ToString();
@@ -65,9 +51,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             hypCommentAuthor.Text = item.AuthorDisplayName;
         }
 
-        protected void subheadergroups_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddlGroups_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var commentsList = CommunityHelper.ReadComments();
 
+            if (commentsList != null)
+            {
+                rptComments.DataSource = commentsList.Where(x => x.ParentTitle == ddlGroups.SelectedItem.Text);
+                rptComments.DataBind();
+            }
         }
     }
 }
