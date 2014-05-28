@@ -12,12 +12,11 @@
 <%@ Import Namespace="Telerik.Web.UI" %>
 <script runat="server">
     
-    StringBuilder sb = null;
-    int count = 0;
-    string Key = string.Empty;
     string templateId = string.Empty;
     List<Item> _realItems = new List<Item>();
+    List<Item> _realItemsWithAllVersions = new List<Item>();
     List<Item> _cloneItems = new List<Item>();
+    List<Item> _cloneItemsWithAllVersions = new List<Item>();
     protected void Page_Load(object sender, EventArgs e) {
         //if (!IsPostBack) {
             if (rbtLstOptions.SelectedItem != null && !rbtLstOptions.SelectedItem.ToString().IsNullOrEmpty()) {
@@ -27,7 +26,6 @@
     }
 
     public IEnumerable<Item> GetCloneItems(Item original) {
-
         return (from link in Sitecore.Globals.LinkDatabase.GetReferrers(original)
                 select link.GetSourceItem() into clone
                 where ((clone != null) && (clone.Source != null)) && (clone.Source.ID == original.ID)
@@ -52,19 +50,29 @@
         }
         if (_realItems.Any()) {
             ltItemsCount.Text = "Real Items Count - " + _realItems.Count().ToString();
+            realH2Tag.Visible = true;
             RadTreeListRealItems.Visible = true;
         }
         else {
             RadTreeListRealItems.Visible = false;
+            realH2Tag.Visible = false;
             ltItemsCount.Text = "No Results Found";
+        }
+        if (_realItemsWithAllVersions.Any()) {
+            ltItemsCount.Text += "      Real Items With All Versions Count - " + _realItemsWithAllVersions.Count().ToString();
         }
 
         if (_cloneItems.Any()) {
             ltItemsCount.Text += "<br>Clone Items Count - " + _cloneItems.Count().ToString();
+            cloneH2Tag.Visible = true;
             RadTreeListCloneItems.Visible = true;
         }
         else {
             RadTreeListCloneItems.Visible = false;
+            cloneH2Tag.Visible = false;
+        }
+        if (_cloneItemsWithAllVersions.Any()) {
+            ltItemsCount.Text += "      Clone Items With All Versions Count - " + _cloneItemsWithAllVersions.Count().ToString();
         }
     }
 
@@ -103,6 +111,16 @@
 
         if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && child.Source == null) {
             _realItems.Add(child);
+            if (child.Languages.Count() > 0) {
+                foreach (Sitecore.Globalization.Language language in child.Languages) {
+                    if (language.ToString() == "en") {
+                        _realItemsWithAllVersions.Add(child);
+                    }
+                    if (language.ToString() == "es-MX") {
+                        _realItemsWithAllVersions.Add(child);
+                    }
+                }
+            }
             RadTreeListRealItems.DataSource = _realItems;
             RadTreeListRealItems.DataBind();
             RadTreeListRealItems.AllowSorting = true;
@@ -111,6 +129,16 @@
             var cloneItems = GetCloneItems(child);
             foreach (var itm in cloneItems) {
                 _cloneItems.Add(itm);
+                if (itm.Languages.Count() > 0) {
+                    foreach (Sitecore.Globalization.Language language in itm.Languages) {
+                        if (language.ToString() == "en") {
+                            _cloneItemsWithAllVersions.Add(itm);
+                        }
+                        if (language.ToString() == "es-MX") {
+                            _cloneItemsWithAllVersions.Add(itm);
+                        }
+                    }
+                }
                 RadTreeListCloneItems.DataSource = _cloneItems;
                 RadTreeListCloneItems.DataBind();
                 RadTreeListCloneItems.AllowSorting = true;
@@ -179,8 +207,11 @@
         <br />
 
         <div>
-            <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanel1">
+            <telerik:radajaxpanel runat="server" id="RadAjaxPanel1">
                 <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
+
+                <h2 id="realH2Tag" runat="server" visible="false">Real Items Are:</h2>
+                <br />
                 <telerik:RadGrid ID="RadTreeListRealItems" runat="server" AllowSorting="True">
                     <MasterTableView AutoGenerateColumns="false" IsFilterItemExpanded="false" EditMode="InPlace"
                         AllowFilteringByColumn="True" ShowFooter="True" TableLayout="Auto" AllowAutomaticDeletes="true" AllowAutomaticInserts="true" AllowAutomaticUpdates="true">
@@ -189,14 +220,14 @@
                             <telerik:GridBoundColumn DataField="DisplayName" HeaderText="Display Name" SortExpression="DisplayName"
                                 UniqueName="DisplayName1" ReadOnly="true" Visible="true">
                             </telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn DataField="ID" HeaderText="Dsiplay ID" SortExpression="DisplayName" Visible="true"
+                            <telerik:GridBoundColumn DataField="ID" HeaderText="Item IDs" SortExpression="DisplayName" Visible="true"
                                 UniqueName="ItemID1" ReadOnly="true">
                             </telerik:GridBoundColumn>
                             <telerik:GridDateTimeColumn DataField="TemplateName" HeaderText="Template Name" SortExpression="TemplateName"
                                 UniqueName="TemplateName1" PickerType="None" DataFormatString="{0:d}">
                             </telerik:GridDateTimeColumn>
-                            <telerik:GridDateTimeColumn DataField="Name" HeaderText="Name" SortExpression="Name"
-                                UniqueName="Name1" PickerType="None" DataFormatString="{0:D}">
+                            <telerik:GridDateTimeColumn DataField="Paths.ContentPath" HeaderText="Path" SortExpression="Path"
+                                UniqueName="Path1" PickerType="None" DataFormatString="{0:D}">
                             </telerik:GridDateTimeColumn>
                         </Columns>
                     </MasterTableView>
@@ -205,6 +236,8 @@
                 <br />
                 <br />
 
+                <h2 id="cloneH2Tag" runat="server" visible="false">Clone Items Are:</h2>
+                <br />
                 <telerik:RadGrid ID="RadTreeListCloneItems" runat="server" AllowSorting="True">
                     <MasterTableView AutoGenerateColumns="false" IsFilterItemExpanded="false" EditMode="InPlace"
                         AllowFilteringByColumn="True" ShowFooter="True" TableLayout="Auto" AllowAutomaticDeletes="true" AllowAutomaticInserts="true" AllowAutomaticUpdates="true">
@@ -213,22 +246,21 @@
                             <telerik:GridBoundColumn DataField="DisplayName" HeaderText="Display Name" SortExpression="DisplayName"
                                 UniqueName="DisplayName2" ReadOnly="true" Visible="true">
                             </telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn DataField="ID" HeaderText="Dsiplay ID" SortExpression="DisplayName" Visible="true"
+                            <telerik:GridBoundColumn DataField="ID" HeaderText="Item IDs" SortExpression="DisplayName" Visible="true"
                                 UniqueName="ItemID2" ReadOnly="true">
                             </telerik:GridBoundColumn>
                             <telerik:GridDateTimeColumn DataField="TemplateName" HeaderText="Template Name" SortExpression="TemplateName"
                                 UniqueName="TemplateName2" PickerType="None" DataFormatString="{0:d}">
                             </telerik:GridDateTimeColumn>
-                            <telerik:GridDateTimeColumn DataField="Name" HeaderText="Name" SortExpression="Name"
-                                UniqueName="Name2" PickerType="None" DataFormatString="{0:D}">
+                            <telerik:GridDateTimeColumn DataField="Paths.ContentPath" HeaderText="Path" SortExpression="Path"
+                                UniqueName="Path2" PickerType="None" DataFormatString="{0:D}">
                             </telerik:GridDateTimeColumn>
                         </Columns>
                     </MasterTableView>
                 </telerik:RadGrid>
 
-            </telerik:RadAjaxPanel>
+            </telerik:radajaxpanel>
         </div>
     </form>
 </body>
 </html>
-
