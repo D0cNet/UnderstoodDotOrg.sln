@@ -121,3 +121,101 @@ jQuery(function () {
 	
 	
 })(jQuery);
+
+//Add a child module
+(function ($) {
+
+    // Initialize the module on page load.
+    $(document).ready(function () {
+        new U.communitySubmitQuestion();
+    });
+
+    U.communitySubmitQuestion = function () {
+
+        var self = this;
+
+        self.init = function () {
+            self.cacheSelectors();
+            self.attachHandlers();
+        };
+
+        self.cacheSelectors = function () {
+            self.dom = {};
+            self.dom.body = $(document.body);
+            self.dom.topLevel = $('html, body');
+            self.dom.questionButton = $('.addChildButton');
+        };
+
+        self.attachHandlers = function () {
+            self.dom.questionButton.on('click', self.fetch);
+        };
+
+        self.attachModalHandlers = function () {
+            self.dom.close.on('click', self.closeModal);
+            self.dom.modal.on('hide.bs.modal', self.onClose);
+            self.dom.continueButton.on('click', self.showQuestion);
+            self.dom.modal.on('show.bs.modal', function () {
+                $(this).find(':focusable').first().focus();
+            });
+        };
+
+        self.closeModal = function (e) {
+            if (typeof (e) !== 'undefined') {
+                e.preventDefault();
+            }
+
+            self.dom.modal.modal('hide');
+        };
+
+        self.onClose = function () {
+            self.dom.body.removeClass('modal-open');
+            self.dom.modal.remove();
+        };
+
+        self.fetch = function (e) {
+            if (typeof (e) !== 'undefined') {
+                e.preventDefault();
+            }
+
+            $.get('/modals/addachild').done(self.renderLightbox);
+        };
+
+        self.renderLightbox = function (res) {
+            var modal = $(res);
+
+            self.dom.close = modal.find('.close');
+            self.dom.body.append(modal);
+            self.dom.modal = $('.submit-question-modal');
+            self.dom.continueButton = modal.find('.continue');
+            self.dom.alreadyAsked = modal.find('.already-asked');
+            self.dom.submitQuestion = modal.find('.submit-question');
+            self.dom.modalSelects = modal.find('select');
+
+            modal.find('input[type=checkbox]').uniform();
+            U.uniformSelects(self.dom.modalSelects);
+
+            // vertically align modal
+            adjustModalMaxHeightAndPosition();
+
+            // only above 320 viewport or nonresponsive
+            if (Modernizr.mq('(min-width: 320px)') || !Modernizr.mq('only all')) {
+                $(window).resize(adjustModalMaxHeightAndPosition).trigger('resize');
+            }
+
+            self.attachModalHandlers();
+            self.dom.modal.modal('show');
+        };
+
+        self.showQuestion = function (e) {
+            e.preventDefault();
+
+            self.dom.alreadyAsked.fadeOut(300, function () {
+                self.dom.submitQuestion.fadeIn(300);
+                self.dom.modal.animate({ scrollTop: 0 }, 500);
+            });
+        };
+
+        self.init();
+    };
+
+})(jQuery);

@@ -443,6 +443,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\SubtopicLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\TopicLandingPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\TopicLandingPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Modals\AddAChildModalItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\AccountCommentsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\AccountCommentsPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\AccountConnectionsPageItem.base.cs" />

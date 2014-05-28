@@ -102,7 +102,7 @@
                         <div class="col col-4 section-label">
                             <h2><asp:Literal ID="ltlMyChildrenLabel" runat="server"></asp:Literal></h2>
                             <%--<a href="REPLACE">Add a Third Child</a>--%>
-                            <asp:HyperLink ID="uxAddChild" runat="server" NavigateUrl="#" Text="Add a {0} Child"></asp:HyperLink>
+                            <asp:HyperLink ID="uxAddChild" runat="server" NavigateUrl="#" CssClass="addChildButton" Text="Add a {0} Child"></asp:HyperLink>
                         </div>
                         <div class="col col-20 profile-details">
                             <asp:ListView runat="server" ID="uxChildList" ItemType="UnderstoodDotOrg.Domain.Membership.Child" OnItemDataBound="uxChildList_ItemDataBound" >
