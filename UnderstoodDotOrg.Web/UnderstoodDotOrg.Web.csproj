@@ -686,6 +686,20 @@
     <Compile Include="Presentation\Sublayouts\Common\ArticleListings\TopicLandingArticles.ascx.designer.cs">
       <DependentUpon>TopicLandingArticles.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Cards\ExpertChat.ascx.cs">
+      <DependentUpon>ExpertChat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Cards\ExpertChat.ascx.designer.cs">
+      <DependentUpon>ExpertChat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Cards\ExpertEvent.ascx.cs">
+      <DependentUpon>ExpertEvent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Cards\ExpertEvent.ascx.designer.cs">
+      <DependentUpon>ExpertEvent.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\CommunityHeader.ascx.cs">
       <DependentUpon>CommunityHeader.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2447,6 +2461,8 @@
     <Content Include="Presentation\Sublayouts\Common\ArticleListings\ArticleEntry.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ArticleListings\SubtopicLandingArticles.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ArticleListings\TopicLandingArticles.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Cards\ExpertChat.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Cards\ExpertEvent.ascx" />
     <Content Include="Presentation\Sublayouts\Common\CommunityHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsAuthorPage.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogMostRecentWidget.ascx" />

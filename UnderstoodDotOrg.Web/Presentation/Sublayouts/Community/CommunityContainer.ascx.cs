@@ -9,9 +9,10 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
-    public partial class CommunityContainer : System.Web.UI.UserControl {
+    public partial class CommunityContainer : BaseSublayout {
         Item ContextItem = Sitecore.Context.Item;
         public string ContainerClass { get; set; }
         protected void Page_Load(object sender, EventArgs e) {

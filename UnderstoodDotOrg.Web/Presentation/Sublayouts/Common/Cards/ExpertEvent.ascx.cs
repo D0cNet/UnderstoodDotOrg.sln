@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
+{
+    public partial class ExpertEvent : BaseSublayout
+    {
+        protected string EventUrl { get; set; }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            BindContent();
+        }
+
+        private void BindContent()
+        {
+            if (DataSource != null && DataSource.InheritsTemplate(BaseEventDetailPageItem.TemplateId))
+            {
+                BaseEventDetailPageItem item = (BaseEventDetailPageItem)DataSource;
+
+                frPageTitle.Item = item;
+
+                imgThumbnail.ImageUrl = item.GetExpertThumbnailUrl(150, 150);
+                EventUrl = item.GetUrl();
+                litEventDate.Text = item.GetFormattedEventDate();
+
+                ExpertDetailPageItem expert = item.Expert.Item;
+                if (expert != null)
+                {
+                    litExpertType.Text = expert.GetExpertType();
+                } 
+            }
+        }
+    }
+}

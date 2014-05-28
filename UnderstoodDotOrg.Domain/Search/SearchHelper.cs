@@ -812,12 +812,13 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 int total = query.Take(1).GetResults().TotalSearchResults;
 
-                var results = query.Take(total).ToList();
+                var results = ordered.Take(total).ToList();
 
                 return (from r in results
-                       let i = r.GetItem()
-                       where i != null
-                       select new BaseEventDetailPageItem(i)).ToList();
+                       let i = new BaseEventDetailPageItem(r.GetItem())
+                       where i.InnerItem != null
+                            && i.Expert.Item != null
+                       select i).ToList();
             }
         }
 

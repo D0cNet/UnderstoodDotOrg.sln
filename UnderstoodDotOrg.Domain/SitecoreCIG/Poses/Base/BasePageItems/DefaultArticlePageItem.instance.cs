@@ -5,6 +5,7 @@ using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.SimpleTypes;
 using Sitecore.Resources.Media;
+using UnderstoodDotOrg.Common.Extensions;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
 {
@@ -20,7 +21,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
         {
             MediaItem item = ContentThumbnail.MediaItem ?? FeaturedImage.MediaItem;
 
-            return GetMediaUrl(item, maxWidth, maxHeight);
+            return item.GetMediaUrlWithFallback(maxWidth, maxHeight);
         }
 
         /// <summary>
@@ -33,23 +34,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
         {
             MediaItem item = FeaturedImage.MediaItem ?? ContentThumbnail.MediaItem;
 
-            return GetMediaUrl(item, maxWidth, maxHeight);
-        }
-
-        private string GetMediaUrl(Item item, int maxWidth, int maxHeight)
-        {
-            if (item != null)
-            {
-                return Sitecore.StringUtil.EnsurePrefix('/',
-                        Sitecore.Resources.Media.MediaManager.GetMediaUrl(item, new MediaUrlOptions
-                        {
-                            MaxWidth = maxWidth,
-                            MaxHeight = maxHeight
-                        }));
-            }
-
-            // TODO: remove placehold
-            return String.Format("http://placehold.it/{0}x{1}", maxWidth, maxHeight);
+            return item.GetMediaUrlWithFallback(maxWidth, maxHeight);
         }
     }
 }

@@ -32,13 +32,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
         private List<ID> _templateRestrictions = new List<ID>();
 
         public bool IsFeatured { get; set; }
-        public bool IsTagged { get; set; }
         public string Issue { get; set; }
         public string Grade { get; set; }
         public string Topic { get; set; }
 
         protected void Page_Load(object sender, EventArgs e) 
         {
+            BindEvents();
+
             // TODO: create constants for query string vars
             
             string featured = HttpHelper.GetQueryString("featured");
@@ -47,8 +48,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             Topic = HttpHelper.GetQueryString("topic").Trim();
 
             IsFeatured = featured.ToLower() == "true";
-            IsTagged = !String.IsNullOrEmpty(Issue) || !String.IsNullOrEmpty(Grade) || !String.IsNullOrEmpty(Topic);
-
+            
             if (!IsPostBack)
             {
                 FillFilterOptions();
@@ -70,6 +70,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             }
 
             PopulateUpcomingEvents();
+        }
+
+        private void BindEvents()
+        {
+            rptUpcomingWebinars.ItemDataBound += rptUpcomingWebinars_ItemDataBound;
+            rptExpertChat.ItemDataBound += rptExpertChat_ItemDataBound;
         }
 
         private void PopulateUpcomingEvents()
@@ -113,14 +119,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
         /// Gets expert live filter folder
         /// </summary>
         /// <returns></returns>
-        public static ExpertliveFilterFolderItem GetExpertLiveFilterFolder() {
+        public static ExpertliveFilterFolderItem GetExpertLiveFilterFolder() 
+        {
             MainsectionItem objSiteItem = MainsectionItem.GetSiteRoot();
             ExpertliveFilterFolderItem objExpertliveFilterFolderItem = null;
-            if (objSiteItem != null) {
+            if (objSiteItem != null) 
+            {
                 GlobalsItem objGlobalItem = MainsectionItem.GetGlobals();
-                if (objGlobalItem != null) {
+                if (objGlobalItem != null) 
+                {
                    MetadataFolderFolderItem metaDataFolder = objGlobalItem.GetMetaDataFolder();
-                   if (metaDataFolder != null) {
+                   if (metaDataFolder != null) 
+                   {
                        objExpertliveFilterFolderItem = metaDataFolder.GetExpertliveFilterFolder();
                    }
                 }
@@ -128,7 +138,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             return objExpertliveFilterFolderItem;
         }
 
-        private IEnumerable<NavigationLinkItem> GetNavigationLinkItem(ExpertliveFilterFolderItem expertLiveFolder) {
+        private IEnumerable<NavigationLinkItem> GetNavigationLinkItem(ExpertliveFilterFolderItem expertLiveFolder) 
+        {
             return expertLiveFolder.InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(NavigationLinkItem.TemplateId)).Select(i => (NavigationLinkItem)i);
         }
 
@@ -169,123 +180,36 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             {
                 BaseEventDetailPageItem item = e.Item.DataItem as BaseEventDetailPageItem;
 
-                Sitecore.Web.UI.WebControls.Image scExpertImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scExpertImage");
-                System.Web.UI.WebControls.Image imgExpertDefault = e.FindControlAs<System.Web.UI.WebControls.Image>("imgExpertDefault");
-                Literal ltExpertType = e.FindControlAs<Literal>("ltExpertType");
-                Literal ltEventDate = e.FindControlAs<Literal>("ltEventDate");
-                HyperLink hlExpertBio = e.FindControlAs<HyperLink>("hlExpertBio");
-                FieldRenderer frPageTitle = e.FindControlAs<FieldRenderer>("frPageTitle");
-                HyperLink hlWebinarDetail = e.FindControlAs<HyperLink>("hlWebinarDetail");
-                Panel pnlExpertImageLabel = e.FindControlAs<Panel>("pnlExpertImageLabel");
-
-                ExpertDetailPageItem expertItem = item.Expert.Item;
-
-                if (expertItem != null)
-                {
-                    hlExpertBio.NavigateUrl = expertItem.GetUrl();
-                    if (expertItem.ExpertImage.MediaItem != null)
-                    {
-                        scExpertImage.Item = expertItem;
-                        pnlExpertImageLabel.Visible = true;
-                    }
-                    else
-                    {
-                        imgExpertDefault.Visible = true;
-                    }
-
-                    ltExpertType.Text = !expertItem.IsGuest.Checked ? DictionaryConstants.ExpertLabel : DictionaryConstants.GuestExpertLabel;
-                }
-                else
-                {
-                    imgExpertDefault.Visible = true;
-                    pnlExpertImageLabel.Visible = false;
-                }
-
-                if (!item.EventDate.Raw.IsNullOrEmpty())
-                {
-                    TimeZoneItem timezone = item.Timezone.Item;
-                    string timeZoneText = (timezone != null) ? timezone.Timezone.Rendered : string.Empty;
-
-                    ltEventDate.Text = String.Format("{0} at {1} {2}", item.EventDate.DateTime.ToString("ddd MMM dd"), item.EventDate.DateTime.ToString("hh:mm tt").ToLower(), timeZoneText);
-                }
-
-                frPageTitle.Item = item;
-                hlWebinarDetail.NavigateUrl = item.GetUrl();
+                Sublayout slExpertEvent = e.FindControlAs<Sublayout>("slExpertEvent");
+                slExpertEvent.DataSource = item.ID.ToString();
             }
         }
 
-        protected void rptExpertChat_ItemDataBound(object sender, RepeaterItemEventArgs e) {
-            if (e.IsItem()) {
-                BaseEventDetailPageItem webinarItem = e.Item.DataItem as BaseEventDetailPageItem;
-                ContentPageItem contentPageItem = new ContentPageItem(webinarItem.InnerItem);
-                if (webinarItem != null) {
-                    Sitecore.Web.UI.WebControls.Image scExpertImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scExpertImage");
-                    System.Web.UI.WebControls.Image imgExpertDefault = e.FindControlAs<System.Web.UI.WebControls.Image>("imgExpertDefault");
-                    Literal ltExpertType = e.FindControlAs<Literal>("ltExpertType");
-                    Literal ltEventDate = e.FindControlAs<Literal>("ltEventDate");
-                    HyperLink hlExpertBio = e.FindControlAs<HyperLink>("hlExpertBio");
-                    HyperLink hlChatDetail = e.FindControlAs<HyperLink>("hlChatDetail");
-                    FieldRenderer frExpertHeading = e.FindControlAs<FieldRenderer>("frExpertHeading");
-                    FieldRenderer frHostTitle = e.FindControlAs<FieldRenderer>("frHostTitle");
-                    Panel pnlExpertImageLabel = e.FindControlAs<Panel>("pnlExpertImageLabel");
+        protected void rptExpertChat_ItemDataBound(object sender, RepeaterItemEventArgs e) 
+        {
+            if (e.IsItem()) 
+            {
+                BaseEventDetailPageItem item = e.Item.DataItem as BaseEventDetailPageItem;
 
-                    hlChatDetail.NavigateUrl = webinarItem.InnerItem.GetUrl();
-
-                    if (webinarItem != null) {
-                        if (frHostTitle != null) {
-                            frHostTitle.Item = webinarItem;
-                        }
-
-                        ExpertDetailPageItem expertItem = webinarItem.Expert.Item;
-
-                        if (expertItem != null) {
-                            hlExpertBio.NavigateUrl = expertItem.InnerItem.GetUrl();
-                            if (scExpertImage != null && expertItem.ExpertImage.MediaItem != null) {
-                                scExpertImage.Item = expertItem;
-                                pnlExpertImageLabel.Visible = true;
-                            }
-                            else {
-                                imgExpertDefault.Visible = true;
-                            }
-
-                            if (frExpertHeading != null) {
-                                frExpertHeading.Item = expertItem;
-                            }
-
-                            if (ltExpertType != null) {
-                                ltExpertType.Text = expertItem.IsGuest.Checked ? DictionaryConstants.GuestExpertLabel : DictionaryConstants.ExpertLabel;
-                            }
-                        }
-                        else {
-                            imgExpertDefault.Visible = true;
-                            pnlExpertImageLabel.Visible = false;
-                        }
-                    }
-
-                    if (ltEventDate != null && !webinarItem.EventDate.Raw.IsNullOrEmpty()) {
-                        TimeZoneItem timezone = webinarItem.Timezone.Item;
-                        string timeZoneText = string.Empty;
-
-                        if (timezone != null) {
-                            timeZoneText = timezone.Timezone.Rendered;
-                        }
-                        ltEventDate.Text = String.Format("{0} at {1} {2}", webinarItem.EventDate.DateTime.ToString("ddd MMM dd"), webinarItem.EventDate.DateTime.ToString("hh:mm tt").ToLower(), timeZoneText);
-                    }
-                }
+                Sublayout slExpertChat = e.FindControlAs<Sublayout>("slExpertChat");
+                slExpertChat.DataSource = item.ID.ToString();
             }
         }
 
-        protected void rptFilter_ItemDataBound(object sender, RepeaterItemEventArgs e) {
-            if (e.IsItem()) {
+        protected void rptFilter_ItemDataBound(object sender, RepeaterItemEventArgs e) 
+        {
+            if (e.IsItem()) 
+            {
                 NavigationLinkItem navItem = e.Item.DataItem as NavigationLinkItem;
 
-                if (navItem != null) {
+                if (navItem != null) 
+                {
                     FieldRenderer frLink = e.FindControlAs<FieldRenderer>("frLink");
 
-                    if (frLink != null) {
+                    if (frLink != null) 
+                    {
                         frLink.Item = navItem;
                     }
-
                 }
             }
         }

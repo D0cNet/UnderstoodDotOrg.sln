@@ -62,44 +62,9 @@
                 </div>
 
                 <!-- BEGIN PARTIAL: community/experts_event_card -->
-                <asp:Repeater runat="server" ID="rptUpcomingWebinars" OnItemDataBound="rptUpcomingWebinars_ItemDataBound">
+                <asp:Repeater runat="server" ID="rptUpcomingWebinars">
                     <ItemTemplate>
-                        <asp:Panel runat="server" ID="pnlUpcomingWebinars" class="event-card  first col-22 offset-2" Style="height: 210px;">
-                            <div class="event-card-info group rs_read_this" id="_a2a7a28b-a9fb-50a4-38df-2f4d3fb937a0">
-                                <div id="readspeaker_button3" class="rsbtn_player rs_skip rs_preserve rshidden">
-                                    <a href="http://app.readspeaker.com/cgi-bin/rsent?customerid=74&amp;lang=en_us&amp;readid=_a2a7a28b-a9fb-50a4-38df-2f4d3fb937a0&amp;url=http%3A%2F%2Fun-qa-sprint7-20140425.herokuapp.com%2Fcommunity.experts.c3.html" title="Listen" accesskey="L" class="rsbtn_play" data-rsevent-id="rs_960077" role="button">
-                                        <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text">Listen<span></span></span></span>
-                                        <span class="rsbtn_right rsimg rsplay rspart"><i class="icon icon-play"></i></span>
-                                    </a>
-                                </div>
-                                <div class="event-card-image">
-                                    <asp:HyperLink runat="server" ID="hlExpertBio">
-                                        <sc:Image ID="scExpertImage" runat="server" Field="Expert Image" />
-                                        <asp:Image runat="server" ID="imgExpertDefault" ImageUrl="http://placehold.it/150x150" Visible="false" />
-                                        <asp:Panel runat="server" ID="pnlExpertImageLabel" Visible="false" CssClass="image-label">
-                                            <asp:Literal runat="server" ID="ltExpertType"></asp:Literal>
-                                            <%--Expert--%>
-                                        </asp:Panel>
-                                    </asp:HyperLink>
-                                </div>
-                                <!-- end .event-card-image -->
-                                <div class="event-card-details">
-                                    <div class="event-card-datetime">
-                                        <asp:Literal runat="server" ID="ltEventDate"></asp:Literal>
-                                        <%--Sun Mar 18 at 12am UTC--%>
-                                    </div>
-                                    <!-- end .event-card-datetime -->
-                                    <div class="event-card-title">
-                                        <asp:HyperLink runat="server" ID="hlWebinarDetail">
-                                            <sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" />
-                                        </asp:HyperLink>
-                                    </div>
-                                    <!-- end .event-card-title -->
-                                </div>
-                                <!-- end .event-card-details -->
-                            </div>
-                            <!-- end .event-card-info -->
-                        </asp:Panel>
+                        <sc:Sublayout ID="slExpertEvent" runat="server" Path="~/Presentation/Sublayouts/Common/Cards/ExpertEvent.ascx" />
                     </ItemTemplate>
                 </asp:Repeater>
 
@@ -127,54 +92,9 @@
                     </p>
                 </div>
                 <!-- BEGIN PARTIAL: community/experts_chat_card -->
-                <asp:Repeater runat="server" ID="rptExpertChat" OnItemDataBound="rptExpertChat_ItemDataBound">
+                <asp:Repeater runat="server" ID="rptExpertChat">
                     <ItemTemplate>
-                        <asp:Panel runat="server" CssClass="event-card first col-22 offset-2" Style="height: 210px;">
-                            <div class="event-card-info group rs_read_this" id="_1f67fd3c-a02a-f15a-6884-d642c13a5549">
-                                <div id="readspeaker_button6" class="rsbtn_player rs_skip rs_preserve rshidden">
-                                    <a href="http://app.readspeaker.com/cgi-bin/rsent?customerid=74&amp;lang=en_us&amp;readid=_1f67fd3c-a02a-f15a-6884-d642c13a5549&amp;url=http%3A%2F%2Fun-qa-sprint7-20140425.herokuapp.com%2Fcommunity.experts.c3.html" title="Listen" accesskey="L" class="rsbtn_play" data-rsevent-id="rs_610481" role="button">
-                                        <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text">Listen<span></span></span></span>
-                                        <span class="rsbtn_right rsimg rsplay rspart"><i class="icon icon-play"></i></span>
-                                    </a>
-                                </div>
-                                <div class="event-card-image">
-                                    <asp:HyperLink runat="server" ID="hlExpertBio">
-                                        <sc:Image ID="scExpertImage" runat="server" Field="Expert Image" />
-                                        <asp:Image runat="server" ID="imgExpertDefault" ImageUrl="http://placehold.it/150x150" Visible="false" />
-
-                                        <asp:Panel runat="server" ID="pnlExpertImageLabel" Visible="false" CssClass="image-label">
-                                            <asp:Literal runat="server" ID="ltExpertType"></asp:Literal>
-                                        </asp:Panel>
-                                    </asp:HyperLink>
-                                </div>
-                                <!-- end .event-card-image -->
-                                <div class="event-card-details">
-                                    <div class="event-card-datetime">
-                                        <asp:Literal runat="server" ID="ltEventDate"></asp:Literal>
-
-                                    </div>
-                                    <!-- end .event-card-datetime -->
-                                    <div class="event-card-title">
-                                        <%--<a href="REPLACE">Et Sit Totam Dolore</a>--%>
-                                        <asp:HyperLink runat="server" ID="hlChatDetail">
-                                            <sc:FieldRenderer ID="frExpertHeading" runat="server" FieldName="Heading" />
-                                        </asp:HyperLink>
-                                    </div>
-                                    <!-- end .event-card-title -->
-                                    <p class="event-host-title">
-                                        <%--eos consequatur voluptas ut laboriosam neque--%>
-                                        <sc:FieldRenderer ID="frHostTitle" runat="server" FieldName="Heading" />
-                                    </p>
-                                    <span class="children-key">
-                                        <ul>
-                                            <li><i title="CHILD NAME HERE" class="child-a"></i></li>
-                                        </ul>
-                                    </span>
-                                </div>
-                                <!-- end .event-card-details -->
-                            </div>
-                            <!-- end .event-card-info -->
-                        </asp:Panel>
+                        <sc:Sublayout ID="slExpertChat" runat="server" Path="~/Presentation/Sublayouts/Common/Cards/ExpertChat.ascx" />
                     </ItemTemplate>
                 </asp:Repeater>
                 <!-- end .event-card -->
