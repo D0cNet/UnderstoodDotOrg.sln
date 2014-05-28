@@ -11,44 +11,20 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 using UnderstoodDotOrg.Framework.UI;
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
-    public partial class CommunityContainer : BaseSublayout {
-        Item ContextItem = Sitecore.Context.Item;
-        public string ContainerClass { get; set; }
-        protected void Page_Load(object sender, EventArgs e) {
-            if (ContextItem.IsOfType(ExpertLivePageItem.TemplateId)) {
-                ContainerClass = "experts-page experts-landing";
-            }
-            else if (ContextItem.IsOfType(ArchiveItem.TemplateId)) {
-                ContainerClass = "experts-page archive-results";
-            }
-            else if (ContextItem.IsOfType(ChatEventPageItem.TemplateId) && !IsArchiveItem(ContextItem)) {
-                ContainerClass = "experts-page chat upcoming";
-            }
-            else if (ContextItem.IsOfType(WebinarEventPageItem.TemplateId) && !IsArchiveItem(ContextItem)) {
-                ContainerClass = "experts-page webinar upcoming";
-            }
-            else if (ContextItem.IsOfType(ChatEventPageItem.TemplateId) && IsArchiveItem(ContextItem)) {
-                ContainerClass = "experts-page chat past";
-            }
-            else if (ContextItem.IsOfType(WebinarEventPageItem.TemplateId) && IsArchiveItem(ContextItem)) {
-                ContainerClass = "experts-page webinar past ";
-            }
-            else {
-                ContainerClass = string.Empty;
-            }
-        }
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
+{
+    public partial class CommunityContainer : BaseSublayout
+    {
+        private Item model = Sitecore.Context.Item;
 
-        private bool IsArchiveItem(Item item) {
-            bool isArchiveItem = false;
-            BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(item);
-            if (baseEventPageItem != null) {
-                if (baseEventPageItem.EventDate.DateTime.Equals(DateTime.MinValue) || baseEventPageItem.EventDate.DateTime < DateTime.Today) {
-                    isArchiveItem = true;
-                }
-            }
+        protected string ArchiveCssClass { get; set; }
 
-            return isArchiveItem;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (model.InheritsTemplate(BaseEventDetailPageItem.TemplateId))
+            {
+                ArchiveCssClass = ((BaseEventDetailPageItem)model).IsUpcoming() ? "upcoming" : "past";
+            }
         }
     }
 

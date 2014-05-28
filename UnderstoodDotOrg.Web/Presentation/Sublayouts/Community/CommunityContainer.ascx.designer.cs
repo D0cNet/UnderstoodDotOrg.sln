@@ -13,12 +13,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
     public partial class CommunityContainer {
         
         /// <summary>
-        /// PhContainer control.
+        /// phContainer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder PhContainer;
+        protected global::Sitecore.Web.UI.WebControls.Placeholder phContainer;
     }
 }

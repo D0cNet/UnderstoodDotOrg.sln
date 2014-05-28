@@ -30,12 +30,51 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
             if (eventDate != DateTime.MinValue)
             {
                 TimeZoneItem timezone = Timezone.Item;
-                string timeZoneText = (timezone != null) ? timezone.Timezone.Rendered : string.Empty;
+                string zoneLabel = (timezone != null) ? timezone.Abbreviation.Rendered : string.Empty;
 
-                return String.Format("{0:ddd MMM dd} at {0:hh:mm tt} {1}", eventDate, timeZoneText);
+                string meridian = eventDate.ToString("tt").ToLower();
+
+                return String.Format("{0:ddd MMM dd} at {0:hh:mm}{1} {2}", eventDate, meridian, zoneLabel);
             }
 
             return String.Empty;
+        }
+
+        public bool IsUpcoming()
+        {
+            DateTime? utc = GetEventDateUtc();
+            if (utc.HasValue)
+            {
+                return utc.Value > DateTime.UtcNow;
+            }
+
+            return false;
+        }
+
+        public DateTime? GetEventDateUtc()
+        {
+            DateTime? result = null;
+
+            TimeZoneItem tz = Timezone.Item;
+            DateTime eventDate = EventDate.DateTime;
+
+            if (tz != null && eventDate != DateTime.MinValue)
+            {
+                // Ensure timezone is unspecified before converting to UTC
+                eventDate = DateTime.SpecifyKind(eventDate, DateTimeKind.Unspecified);
+
+                try
+                {
+                    TimeZoneInfo eventTimezone = TimeZoneInfo.FindSystemTimeZoneById(tz.Timezone.Raw);
+
+                    DateTime eventUtcDate = TimeZoneInfo.ConvertTimeToUtc(eventDate, eventTimezone);
+
+                    result = eventUtcDate;
+                }
+                catch { }
+            }
+
+            return result;
         }
     }
 }

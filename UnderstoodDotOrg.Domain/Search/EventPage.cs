@@ -15,6 +15,9 @@ namespace UnderstoodDotOrg.Domain.Search
         [IndexField("event_date")]
         public DateTime EventDate { get; set; }
 
+        [IndexField("_event_date_utc")]
+        public DateTime EventDateUtc { get; set; }
+
         [IndexField(Constants.SolrFields.EventIssues)]
         public IEnumerable<ID> Issues { get; set; }
 

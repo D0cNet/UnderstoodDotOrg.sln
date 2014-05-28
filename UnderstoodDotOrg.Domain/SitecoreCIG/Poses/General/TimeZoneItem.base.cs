@@ -47,6 +47,15 @@ public CustomTextField Timezone
 }
 
 
+public CustomTextField Abbreviation
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Abbreviation"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

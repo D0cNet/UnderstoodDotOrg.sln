@@ -706,29 +706,23 @@ namespace UnderstoodDotOrg.Domain.Search
         /// <returns></returns>
         public static BaseEventDetailPageItem GetUpcomingEvent()
         {
+            // TODO: refactor to use GetUpcomingEvents
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-            BaseEventDetailPageItem result = null;
-
+            
             using (var context = index.CreateSearchContext())
             {
                 var events = GetCurrentCultureQueryable<EventPage>(context)
-                                    .Filter(i => i.Language == Sitecore.Context.Language.Name)
+                                    .Filter(GetBaseEventPredicate())
                                     .Filter(i => i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
-                                    .Filter(i => i.EventDate >= DateTime.Now)
+                                    .Filter(i => i.EventDateUtc >= DateTime.UtcNow)
                                     .OrderBy(i => i.EventDate)
-                                    .Take(1)
                                     .ToList();
 
-                var first = events.FirstOrDefault();
-
-                if (first != null)
-                {
-                    result = first.GetItem();
-                }
-
-                return result;
+                // Handle out of synch indexed items
+                return events.Select(i => new BaseEventDetailPageItem(i.GetItem()))
+                                    .Where(i => i.InnerItem != null)
+                                    .FirstOrDefault();
             }
-
         }
 
         public static List<SearchResultItem> GetParentInterests()
@@ -758,6 +752,16 @@ namespace UnderstoodDotOrg.Domain.Search
         public static List<BaseEventDetailPageItem> GetUpcomingChats(string grade, string issue, string topic)
         {
             return GetUpcomingEvents(ChatEventPageItem.TemplateId, GetEventFilterPredicate(grade, issue, topic));
+        }
+
+        public static BaseEventDetailPageItem GetNextUpcomingWebinar()
+        {
+            return GetUpcomingEvents(WebinarEventPageItem.TemplateId).FirstOrDefault();
+        }
+
+        public static BaseEventDetailPageItem GetNextUpcomingChat()
+        {
+            return GetUpcomingEvents(ChatEventPageItem.TemplateId).FirstOrDefault();
         }
 
         #endregion
@@ -793,15 +797,13 @@ namespace UnderstoodDotOrg.Domain.Search
         private static List<BaseEventDetailPageItem> GetUpcomingEvents(string templateId, Expression<Func<EventPage, bool>> optionalPredicate = null)
         {
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-            ID container = ID.Parse(Constants.ParentInterestsContainer);
-
+            
             using (var context = index.CreateSearchContext())
             {
                 var query = GetCurrentCultureQueryable<EventPage>(context)
-                                .Filter(i => i.Language == Sitecore.Context.Language.Name)
-                                .Filter(i => i.Path.Contains("/sitecore/content/home/"))
+                                .Filter(GetBaseEventPredicate())
                                 .Filter(i => i.TemplateId == ID.Parse(templateId))
-                                .Filter(i => i.EventDate >= DateTime.Now);
+                                .Filter(i => i.EventDateUtc >= DateTime.UtcNow); 
 
                 if (optionalPredicate != null)
                 {
@@ -820,6 +822,16 @@ namespace UnderstoodDotOrg.Domain.Search
                             && i.Expert.Item != null
                        select i).ToList();
             }
+        }
+
+        private static Expression<Func<EventPage, bool>> GetBaseEventPredicate()
+        {
+            var pred = PredicateBuilder.True<EventPage>();
+
+            pred = pred.And(i => i.Language == Sitecore.Context.Language.Name
+                            && i.Path.Contains("/sitecore/content/home/"));
+
+            return pred;
         }
 
         private static IQueryable<T> GetCurrentCultureQueryable<T>(IProviderSearchContext context) where T : new()

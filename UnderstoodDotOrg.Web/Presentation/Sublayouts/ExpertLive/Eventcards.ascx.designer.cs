@@ -13,31 +13,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
     public partial class Eventcards {
         
         /// <summary>
-        /// frUpcomingWebniarsHeading control.
+        /// frUpcomingWebinarsHeading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frUpcomingWebniarsHeading;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frUpcomingWebinarsHeading;
         
         /// <summary>
-        /// frUpcomingWebniarsSubheading control.
+        /// frUpcomingWebinarsSubheading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frUpcomingWebniarsSubheading;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frUpcomingWebinarsSubheading;
         
         /// <summary>
-        /// rptUpcomingWebinars control.
+        /// slExpertEvent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptUpcomingWebinars;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout slExpertEvent;
         
         /// <summary>
         /// frChatHeading control.
@@ -58,12 +58,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frChatSubheading;
         
         /// <summary>
-        /// rptExpertChat control.
+        /// slExpertChat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptExpertChat;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout slExpertChat;
     }
 }
