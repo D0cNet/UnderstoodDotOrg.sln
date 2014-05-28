@@ -1260,5 +1260,64 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return groupsList;
         }
+
+        public static List<Comment> ReadComments()
+        {
+            List<Comment> commentList = new List<Comment>();
+
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                    var requestUrl = string.Format("{0}api.ashx/v2/comments.xml?PageSize=100", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+
+                    int nodecount = 0;
+                    foreach (XmlNode xn in nodes)
+                    {
+
+                        XmlNode author = xn.SelectSingleNode("Author");
+
+                        string commentId = xn["CommentId"].InnerText;
+                        string commentDate = xn["PublishedDate"].InnerText;
+                        DateTime parsedDate = DateTime.Parse(commentDate);
+
+                        Comment comment = new Comment
+                        {
+                            Id = xn["Id"].InnerText,
+                            Url = xn["Url"].InnerText,
+                            ParentId = xn["ParentId"].InnerText,
+                            ContentId = xn["ContentId"].InnerText,
+                            IsApproved = xn["IsApproved"].InnerText,
+                            ReplyCount = xn["ReplyCount"].InnerText,
+                            CommentId = commentId,
+                            CommentContentTypeId = xn["CommentContentTypeId"].InnerText,
+                            Body = xn["Body"].InnerText,
+                            PublishedDate = CommunityHelper.FormatDate(commentDate),
+                            AuthorId = author["Id"].InnerText,
+                            AuthorAvatarUrl = author["AvatarUrl"].InnerText,
+                            AuthorDisplayName = author["DisplayName"].InnerText,
+                            AuthorProfileUrl = author["ProfileUrl"].InnerText,
+                            AuthorUsername = author["Username"].InnerText,
+                            Likes = GetTotalLikes(commentId).ToString(),
+                            CommentDate = parsedDate
+                        };
+                        // Comment comment = new Comment(xn);
+                        commentList.Add(comment);
+
+                        nodecount++;
+                    }
+                }
+                catch { } // TODO: add logging
+            }
+            return commentList;
+        }
     }
 }
