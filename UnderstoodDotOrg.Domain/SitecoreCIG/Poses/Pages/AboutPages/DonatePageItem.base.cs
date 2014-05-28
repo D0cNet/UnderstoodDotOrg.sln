@@ -91,6 +91,15 @@ public CustomImageField CheckHelpImage
 }
 
 
+public CustomTextField ConvioDonationLevelID
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Convio Donation Level ID"]);
+	}
+}
+
+
 public CustomTextField GiftforSomeoneHeader
 {
 	get

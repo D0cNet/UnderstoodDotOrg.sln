@@ -13,9 +13,9 @@
                     <div class="choose-gift-wrapper">
                         <div class="gift-group clearfix rs_preserve">
                             <label>
-                                <input type="radio" name="gift-amount" value="">
+                                <input type="radio" name="gift-amount" data-other="false" value="">
                                 <span>
-                                    <button>
+                                    <button type="button" class="donate-amount-button" data-param-value="25">
                                         <span class="number">$25</span>
                                         <span class="gift-description">Can provide education for 1 parents.</span>
                                         <span class="icon-check">
@@ -24,9 +24,9 @@
                                 </span>
                             </label>
                             <label>
-                                <input type="radio" name="gift-amount" value="">
+                                <input type="radio" name="gift-amount" data-other="false" value="">
                                 <span>
-                                    <button>
+                                    <button type="button" class="donate-amount-button" data-param-value="50">
                                         <span class="number">$50</span>
                                         <span class="gift-description">Can provide education for 2 parents.</span>
                                         <span class="icon-check">
@@ -37,11 +37,11 @@
                         </div>
                         <div class="gift-group clearfix rs_preserve">
                             <label>
-                                <input type="radio" name="gift-amount" value="">
+                                <input type="radio" name="gift-amount" data-other="false" value="">
                                 <span>
-                                    <button>
+                                    <button type="button" class="donate-amount-button" data-param-value="100">
                                         <span class="number">$100</span>
-                                        <span class="gift-description">Can provide education for 3 parents.</span>
+                                        <span class="gift-description">Can provide education for 4 parents.</span>
                                         <span class="icon-check">
                                             <img class="check-img" alt="Check mark" src="/Presentation/includes/images/icon-check.png" /></span>
                                     </button>
@@ -50,7 +50,7 @@
                             <label>
                                 <input type="radio" name="gift-amount" data-other="true" value="">
                                 <span>
-                                    <button>
+                                    <button type="button" class="donate-amount-button" data-param-value="">
                                         <span class="number">Other</span>
                                         <span class="gift-description">Can provide education for x parents.</span>
                                         <span class="icon-check">
@@ -85,12 +85,12 @@
                             <label class="yes-send-card">
                                 <input type="radio" class="radio" name="gift-card" data-e-card="true" value="">
                                 <span>
-                                    <button>Yes, send an e-card</button></span>
+                                    <button type="button" class="ecard-button send-ecard-true">Yes, send an e-card</button></span>
                             </label>
                             <label class="no-card">
-                                <input type="radio" name="gift-card" value="">
+                                <input type="radio" name="gift-card" data-e-card="false" value="">
                                 <span>
-                                    <button>No Card</button></span>
+                                    <button type="button" class="ecard-button send-ecard-false">No Card</button></span>
                             </label>
                         </div>
                         <!-- .gift-for-wrapper -->
@@ -208,7 +208,7 @@
                                 <span class="label">Expiration Date</span>
                                 <div class="select-container select-inverted-mobile month-dropdown">
                                     <label for="month-dropdown" class="visuallyhidden">Month Dropdown</label>
-                                    <select name="month-dropdown" aria-required="true">
+                                    <select name="month-dropdown" id="month-dropdown" aria-required="true">
                                         <option value="">MM</option>
                                         <option>01</option>
                                         <option>02</option>
@@ -226,7 +226,7 @@
                                 </div>
                                 <div class="select-container select-inverted-mobile year-dropdown">
                                     <label for="year-dropdown" class="visuallyhidden">Select Year</label>
-                                    <select name="year-dropdown" aria-required="true">
+                                    <select name="year-dropdown" id="year-dropdown" aria-required="true">
                                         <option value="">YYYY</option>
                                         <option>2014</option>
                                         <option>2015</option>
@@ -320,7 +320,7 @@
                         When you give to Understood you also give to our various partners
                     </p>
                     <div class="button-wrap">
-                        <button class="button about-donate rs_skip">Donate</button>
+                        <button type="button" id="submit-donation" class="button about-donate rs_skip">Donate</button>
                     </div>
                 </div>
                 <div class="about-donate-notes clearfix">
