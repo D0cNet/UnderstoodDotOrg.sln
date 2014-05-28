@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -36,7 +37,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             litSection.Text = item.Type;
 
             Literal litCommentBody = (Literal)e.Item.FindControl("litCommentBody");
-            litCommentBody.Text = item.Body;
+            litCommentBody.Text = Regex.Replace(Regex.Replace(item.Body, @"<[^>]+>|&nbsp;", "").Trim(), @"\s{2,}", " ");
 
             Literal litCommentTime = (Literal)e.Item.FindControl("litCommentTime");
             litCommentTime.Text = item.PublishedDate;

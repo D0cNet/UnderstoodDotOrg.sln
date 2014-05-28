@@ -14,7 +14,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var favoritesList = CommunityHelper.GetFavorites(CommunityHelper.ReadUserId(CurrentMember.ScreenName));
+            var favoritesList = CommunityHelper.GetFavorites(CurrentMember.ScreenName);
             rptFavorites.DataSource = favoritesList;
             rptFavorites.DataBind();
         }

@@ -13,6 +13,7 @@ using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
+using System.Text.RegularExpressions;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 {
@@ -23,50 +24,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
             //var commentsList = CommunityHelper.ListUserComments(CurrentUser.UserName);
             var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountComments);
             hypCommentsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
-            
-            Comment cmItem = new Comment();
-            cmItem.Body = "Autem ipsa quis quisquam cumque consequatur deleniti est sit autem ut cumque quis hic. aut aut sit autem ut magni at optio non quidem necessitatibus. maxime cupiditate sed mollitia et unde fugit sunt illo dolorem similique commodi quas modi. culpa magni amet eos sunt harum porro libero laborum. voluptas eius nemo quam aut eaque assumenda veritatis quam officia. inventore eius quibusdam et repellat veniam perferendis est provident. commodi dolorem sunt nam vero";
-            cmItem.ParentTitle = "Q&A";
-            cmItem.CommentDate = DateTime.Today;
-            cmItem.Likes = "31";
-            cmItem.CommentGroup = "Parent Questions";
-            cmItem.CommentTitle = "Est ducimus aut aut asperiores eveniet ut reprehenderit fuga corrupti quia quis neque minima ab quis dolorum consectetur dolore earum";
-            cmItem.CommentGroupUrl = "/";
-            cmItem.ReplyCount = "12";
-            cmItem.AuthorDisplayName = "Vance Floyd";
-            List<Comment> commentsList = new List<Comment>();
-            commentsList.Add(cmItem);
 
-            cmItem = new Comment();
-            cmItem.Body = "Natus quia voluptatem ea quaerat et saepe dolorum rerum dolore aut sit eaque illo ut. repudiandae magnam dignissimos et earum velit quia quidem quaerat. voluptate qui laudantium debitis non omnis molestiae et error vitae. officiis qui necessitatibus quae minima blanditiis qui totam esse expedita qui numquam saepe. harum vitae est minima ducimus voluptatibus modi veniam dolore ipsa tempora. mollitia cum nesciunt blanditiis nostrum quia";
-            cmItem.ParentTitle = "Article";
-            cmItem.CommentDate = DateTime.Today;
-            cmItem.Likes = "53";
-            cmItem.CommentTitle = "Repudiandae magnam dignissimos et earum velit quia quidem quaerat.";
-            cmItem.CommentGroup = "Parent Questions";
-            cmItem.CommentGroupUrl = "/";
-            cmItem.ReplyCount = "7";
-            cmItem.AuthorDisplayName = "Vance Floyd";
-            commentsList.Add(cmItem);
-
-            cmItem = new Comment();
-            cmItem.Body = "Natus quia voluptatem ea quaerat et saepe dolorum rerum dolore aut sit eaque illo ut. repudiandae magnam dignissimos et earum velit quia quidem quaerat. voluptate qui laudantium debitis non omnis molestiae et error vitae. officiis qui necessitatibus quae minima blanditiis qui totam esse expedita qui numquam saepe. harum vitae est minima ducimus voluptatibus modi veniam dolore ipsa tempora. mollitia cum nesciunt blanditiis nostrum quia";
-            cmItem.ParentTitle = "Slideshow";
-            cmItem.CommentDate = DateTime.Today;
-            cmItem.Likes = "8";
-            cmItem.CommentGroup = "Parent Questions";
-            cmItem.CommentGroupUrl = "/";
-            cmItem.CommentTitle = "Blanditiis qui totam esse expedita qui numquam saepe";
-
-            cmItem.ReplyCount = "97";
-            cmItem.AuthorDisplayName = "Vance Floyd";
-            commentsList.Add(cmItem);
+            List<Comment> commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
 
             lblCount.Text = commentsList.Count.ToString();
 
             if (commentsList != null)
             {
-                rptComments.DataSource = commentsList;
+                rptComments.DataSource = commentsList.GetRange(0,2);
                 rptComments.DataBind();
             }
         }
@@ -75,12 +40,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
         {
             if (e.Item.DataItem != null)
             {
+                var item = e.Item.DataItem as Comment;
                 HyperLink hypCommentLink = (HyperLink)e.Item.FindControl("hypCommentLink");
                 hypCommentLink.NavigateUrl = "/";
-                hypCommentLink.Text = ((Comment)e.Item.DataItem).ParentTitle;
+                hypCommentLink.Text = item.CommentTitle;
 
                 Literal litCommentBody = (Literal)e.Item.FindControl("litCommentBody");
-                litCommentBody.Text = ((Comment)e.Item.DataItem).Body.Truncate(30, true, false);
+                litCommentBody.Text = Regex.Replace(Regex.Replace(item.Body, @"<[^>]+>|&nbsp;", "").Trim(), @"\s{2,}", " ").Truncate(30,true,false);
             }
         }
 

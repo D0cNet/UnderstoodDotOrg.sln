@@ -1117,19 +1117,19 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return notificationList;
         }
 
-        public static List<FavoritesModel> GetFavorites(string userId)
+        public static List<FavoritesModel> GetFavorites(string username)
         {
             List<FavoritesModel> favoritesList = new List<FavoritesModel>();
-
-            if (String.IsNullOrEmpty(userId))
-            {
-                return favoritesList;
-            }
 
             using (var webClient = new WebClient())
             {
                 try
                 {
+                    var userId = ReadUserId(username);
+                    if (String.IsNullOrEmpty(userId))
+                    {
+                        return favoritesList;
+                    }
                     var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
                     var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
