@@ -118,7 +118,7 @@
                     _realItemsWithAllVersions.Add(child);
                 }
             }
-            RadTreeListRealItems.DataSource = _realItems;
+            RadTreeListRealItems.DataSource = _realItemsWithAllVersions;
             RadTreeListRealItems.DataBind();
             RadTreeListRealItems.AllowSorting = true;
         }
@@ -133,7 +133,7 @@
                         _cloneItemsWithAllVersions.Add(itm);
                     }
                 }
-                RadTreeListCloneItems.DataSource = _cloneItems;
+                RadTreeListCloneItems.DataSource = _cloneItemsWithAllVersions;
                 RadTreeListCloneItems.DataBind();
                 RadTreeListCloneItems.AllowSorting = true;
             }
@@ -211,16 +211,21 @@
                         AllowFilteringByColumn="True" ShowFooter="True" TableLayout="Auto" AllowAutomaticDeletes="true" AllowAutomaticInserts="true" AllowAutomaticUpdates="true">
                         <Columns>
                             <telerik:GridEditCommandColumn UniqueName="EditCommandColumn1" Visible="false"></telerik:GridEditCommandColumn>
-                            <telerik:GridBoundColumn DataField="DisplayName" HeaderText="Display Name" SortExpression="DisplayName"
-                                UniqueName="DisplayName1" ReadOnly="true" Visible="true">
+                            <telerik:GridTemplateColumn UniqueName="TemplateColumn1" HeaderText="Serial No">
+                                <ItemTemplate>
+                                    <%#Container.DataSetIndex+1%>
+                                </ItemTemplate>
+                            </telerik:GridTemplateColumn>
+                            <telerik:GridBoundColumn DataField="Fields['Page Title']" HeaderText="Page Title" SortExpression="Fields['Page Title']"
+                                UniqueName="PageTitle1" ReadOnly="true" Visible="true">
                             </telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn DataField="ID" HeaderText="Item IDs" SortExpression="DisplayName" Visible="true"
+                            <telerik:GridDateTimeColumn DataField="DisplayName" HeaderText="Display Name" SortExpression="DisplayName"
+                                UniqueName="DisplayName1" PickerType="None" DataFormatString="{0:d}">
+                            </telerik:GridDateTimeColumn>
+                            <telerik:GridBoundColumn DataField="ID" HeaderText="Item IDs" SortExpression="ID" Visible="true"
                                 UniqueName="ItemID1" ReadOnly="true">
                             </telerik:GridBoundColumn>
-                            <telerik:GridDateTimeColumn DataField="TemplateName" HeaderText="Template Name" SortExpression="TemplateName"
-                                UniqueName="TemplateName1" PickerType="None" DataFormatString="{0:d}">
-                            </telerik:GridDateTimeColumn>
-                            <telerik:GridDateTimeColumn DataField="Paths.ContentPath" HeaderText="Path" SortExpression="Path"
+                            <telerik:GridDateTimeColumn DataField="Paths.ContentPath" HeaderText="Path" SortExpression="Paths.ContentPath"
                                 UniqueName="Path1" PickerType="None" DataFormatString="{0:D}">
                             </telerik:GridDateTimeColumn>
                         </Columns>
@@ -237,16 +242,21 @@
                         AllowFilteringByColumn="True" ShowFooter="True" TableLayout="Auto" AllowAutomaticDeletes="true" AllowAutomaticInserts="true" AllowAutomaticUpdates="true">
                         <Columns>
                             <telerik:GridEditCommandColumn UniqueName="EditCommandColumn2" Visible="false"></telerik:GridEditCommandColumn>
-                            <telerik:GridBoundColumn DataField="DisplayName" HeaderText="Display Name" SortExpression="DisplayName"
-                                UniqueName="DisplayName2" ReadOnly="true" Visible="true">
+                            <telerik:GridTemplateColumn UniqueName="TemplateColumn2" HeaderText="Serial No">
+                                <ItemTemplate>
+                                    <%#Container.DataSetIndex+1%>
+                                </ItemTemplate>
+                            </telerik:GridTemplateColumn>
+                            <telerik:GridBoundColumn DataField="Fields['Page Title']" HeaderText="Page Title" SortExpression="Fields['Page Title']"
+                                UniqueName="PageTitle2" ReadOnly="true" Visible="true">
                             </telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn DataField="ID" HeaderText="Item IDs" SortExpression="DisplayName" Visible="true"
+                            <telerik:GridDateTimeColumn DataField="DisplayName" HeaderText="Display Name" SortExpression="DisplayName"
+                                UniqueName="DisplayName2" PickerType="None" DataFormatString="{0:d}">
+                            </telerik:GridDateTimeColumn>
+                            <telerik:GridBoundColumn DataField="ID" HeaderText="Item IDs" SortExpression="ID" Visible="true"
                                 UniqueName="ItemID2" ReadOnly="true">
                             </telerik:GridBoundColumn>
-                            <telerik:GridDateTimeColumn DataField="TemplateName" HeaderText="Template Name" SortExpression="TemplateName"
-                                UniqueName="TemplateName2" PickerType="None" DataFormatString="{0:d}">
-                            </telerik:GridDateTimeColumn>
-                            <telerik:GridDateTimeColumn DataField="Paths.ContentPath" HeaderText="Path" SortExpression="Path"
+                            <telerik:GridDateTimeColumn DataField="Paths.ContentPath" HeaderText="Path" SortExpression="Paths.ContentPath"
                                 UniqueName="Path2" PickerType="None" DataFormatString="{0:D}">
                             </telerik:GridDateTimeColumn>
                         </Columns>
