@@ -10,7 +10,7 @@
                     <section class="article-header clearfix">
 
                         <div class="col col-9 push-15">
-                            <img width="100%" src="http://placehold.it/351x200" />
+                            <%= Model.DefaultArticlePage.FeaturedImage.Rendered %>
                             <div class="share-save-inline clearfix"></div>
                         </div>
 

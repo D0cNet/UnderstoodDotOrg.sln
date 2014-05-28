@@ -49,6 +49,28 @@ namespace UnderstoodDotOrg.Common.Extensions
         /// <param name="item"></param>
         /// <param name="templateId"></param>
         /// <returns></returns>
+        public static bool IsOfType(this CustomItem item, string templateId)
+        {
+            return item.InnerItem.TemplateID.ToString().Equals(templateId, System.StringComparison.InvariantCultureIgnoreCase);
+        }
+
+        /// <summary>
+        /// Determines if this item is of the provided TemplateId
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="templateId"></param>
+        /// <returns></returns>
+        public static bool IsOfType(this CustomItem item, ID templateId)
+        {
+            return item.InnerItem.TemplateID.Equals(templateId);
+        }
+
+        /// <summary>
+        /// Determines if this item is of the provided TemplateId
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="templateId"></param>
+        /// <returns></returns>
         public static bool IsOfType(this Item item, string templateId)
         {
             return item.TemplateID.ToString().Equals(templateId, System.StringComparison.InvariantCultureIgnoreCase);
