@@ -207,7 +207,7 @@
 
                     <div class="button-group">
                         <a href="REPLACE" class="button gray close desktop">Cancel</a>
-                        <asp:Button ID="SubmitQuestionButton" OnClick="SubmitQuestionButton_Click" type="submit" class="button" Text="Submit Your Question" runat="server" />
+                        <button onserverclick="SubmitQuestionButton_Click" class="button" runat="server">Submit Your Question</button>
                         <a href="REPLACE" class="button gray close mobile">Cancel</a>
                     </div>
                 </div>   

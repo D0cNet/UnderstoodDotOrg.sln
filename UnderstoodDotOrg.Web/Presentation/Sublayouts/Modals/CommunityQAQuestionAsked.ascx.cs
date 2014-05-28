@@ -18,9 +18,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
 
         protected void SubmitQuestionButton_Click(object sender, EventArgs e)
         {
-            string title = QuestionTitleTextBox.Text;
-            string body = EnterQuestionTextBox.Text;
-            string user = "";
+            var title = QuestionTitleTextBox.Text;
+            var body = EnterQuestionTextBox.Text;
+            var user = "";
             try
             {
                 if (this.CurrentMember.ScreenName != String.Empty || this.CurrentMember.ScreenName != null)
@@ -32,7 +32,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
             {
                 user = "admin";
             }
-            string url = "/en/Community and Events/Q and A/Q and A Details.aspx" + CommunityHelper.CreateQuestion(title, body, user);
+            var url = "/en/Community and Events/Q and A/Q and A Details.aspx" + CommunityHelper.CreateQuestion(title, body, user);
             Response.Redirect(url);
 
         }
