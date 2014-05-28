@@ -76,6 +76,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.Sublayout SBReviewedBy;
         
         /// <summary>
+        /// Sublayout1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout1;
+        
+        /// <summary>
         /// slKeepReading control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.Sublayout slKeepReading;
         
         /// <summary>
+        /// sbCommentsSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbCommentsSummary;
+        
+        /// <summary>
         /// sbSidebarPromo control.
         /// </summary>
         /// <remarks>
@@ -92,5 +110,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Sublayout sbSidebarPromo;
+        
+        /// <summary>
+        /// Placeholder1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder1;
     }
 }

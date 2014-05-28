@@ -504,6 +504,13 @@
     <Compile Include="Presentation\Sublayouts\Articles\Shared\DidYouFindThisHelpful.ascx.designer.cs">
       <DependentUpon>DidYouFindThisHelpful.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\DidYouFindThisHelpfulOther.ascx.cs">
+      <DependentUpon>DidYouFindThisHelpfulOther.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\DidYouFindThisHelpfulOther.ascx.designer.cs">
+      <DependentUpon>DidYouFindThisHelpfulOther.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\DidYouFindThisHelpfulSideBar.ascx.cs">
       <DependentUpon>DidYouFindThisHelpfulSideBar.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2414,6 +2421,7 @@
     <Content Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\DidYouFindThisHelpful.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\DidYouFindThisHelpfulOther.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\DidYouFindThisHelpfulSideBar.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulAndCommentCounts.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\FoundHelpfulAndCommentCountsSideColumn.ascx" />

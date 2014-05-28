@@ -2318,6 +2318,7 @@
 /* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_my-profile-content.scss */
 .profile-wrap .profile-section {
   border-bottom: 1px solid #e8e8e8;
+  min-height: 260px;
   border-width: 80%;
   padding: 30px 0 20px 0;
   position: relative;
@@ -2648,7 +2649,7 @@
   line-height: 18px;
   line-height: 1.125rem;
   padding: 0 !important;
-  height: 115px;
+  height: 75px;
   overflow: hidden;
   display: table-row;
 }

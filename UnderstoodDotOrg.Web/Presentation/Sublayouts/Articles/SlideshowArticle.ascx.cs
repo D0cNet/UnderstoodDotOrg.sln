@@ -31,7 +31,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 if (ObjSlideshowArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
                 {
                     lnkReviewedBy.Item = ObjSlideshowArticle.DefaultArticlePage.Reviewedby.Item;
-                    lnkReviewedBy.Field = "Revierwer Name";
+                    lnkReviewedBy.Field = "Reviewer Name";
                     HyplnkReviewedBy.Text = lnkReviewedBy.Text;
                 }
                 if (ObjSlideshowArticle.DefaultArticlePage.ReviewedDate.DateTime != null)// Reviewed date 

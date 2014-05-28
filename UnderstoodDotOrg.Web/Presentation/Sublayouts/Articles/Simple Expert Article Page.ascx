@@ -54,20 +54,7 @@
 
             <!-- END PARTIAL: about-the-author -->
             <!-- BEGIN PARTIAL: find-helpful -->
-            <div class="find-this-helpful content">
-
-                <h4>Did you find this helpful?</h4>
-                <ul>
-                    <li>
-                        <button class="helpful-yes">Yes</button>
-                    </li>
-                    <li>
-                        <button class="helpful-no">No</button>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-
-            </div>
+            <sc:Sublayout ID="Sublayout2" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
             <!-- END PARTIAL: find-helpful -->
         </div>
 
@@ -82,33 +69,12 @@
             <sc:sublayout path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:sublayout>
             <!-- END PARTIAL: find-helpful -->
             <!-- BEGIN PARTIAL: keep-reading -->
-            <%--<div class="keep-reading">
-            <h3>Keep Reading</h3>
-            <ul>
-                <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
-                <li><a href="REPLACE">How to Build a Homework Plan</a></li>
-                <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
-            </ul>
-        </div>--%>
+            <sc:Sublayout Path="~/Presentation/Sublayouts/Tools/BehaviorTools/Widgets/KeepReading.ascx" runat="server"></sc:Sublayout>
             <sc:sublayout id="slKeepReading" runat="server" path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
             <!-- END PARTIAL: keep-reading -->
             <!-- BEGIN PARTIAL: comments-summary -->
             <section class="comments-summary">
-                <header>
-                    <h3>Comments (19)</h3>
-                </header>
-                <div class="quote-container">
-                    <blockquote>
-                        <p>Maiores pariatur recusandae omnis sint provident fuga maxime non maiores consectetur. perferendis et suscipit sit ut dolor. commodi sunt qui ea harum molestiae autem nemo et incidunt sapiente molestias soluta ut voluptatem. exercitationem rerum minima quisquam sed veniam natus laudantium et sit molestiae. optio voluptatem exercitationem enim iusto ex ut delectus. asperiores est explicabo maiores et repudiandae dolore earum est praesentium quos vel officiis ut. rem autem ut vero sed voluptatem beatae alias ea</p>
-                        <i class="arrow-quote-bottom"></i>
-                    </blockquote>
-                    <span><strong>Carrie S</strong> &bull; 30 min ago</span>
-                </div>
-
-                <ul>
-                    <li><a href="REPLACE">See All Comments</a></li>
-                    <li><a href="REPLACE">Add My Comment</a></li>
-                </ul>
+                <sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/CommentsSummary.ascx" />
             </section>
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->

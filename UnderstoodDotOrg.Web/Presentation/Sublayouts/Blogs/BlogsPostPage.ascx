@@ -16,26 +16,7 @@
                     
                     <sc:Placeholder key="FoundHelpful" runat="server" />
 
-                <div class="keep-reading">
-                    <h4>Keep Reading</h4>
-
-                    <ul>
-                        <li>
-                            <a class="post-name" href="REPLACE">Et Ab Repudiandae Qui Omnis In Aut</a>
-                            <p class="date-time">Posted Aug 5, 1995</p>
-                        </li>
-
-                        <li>
-                            <a class="post-name" href="REPLACE">Sed Suscipit Beatae Numquam Consequatur Ut Eveniet</a>
-                            <p class="date-time">Posted Jun 7, 2000</p>
-                        </li>
-
-                        <li>
-                            <a class="post-name" href="REPLACE">Veritatis Ut Omnis Magni Libero Non Quis</a>
-                            <p class="date-time">Posted Dec 1, 1992</p>
-                        </li>
-                    </ul>
-                </div>
+                <sc:Sublayout Path="~/Presentation/Sublayouts/Tools/BehaviorTools/Widgets/KeepReading.ascx" runat="server"></sc:Sublayout>
             </div>
             <!-- END PARTIAL: community/blog-post-sidebar -->
         </div>

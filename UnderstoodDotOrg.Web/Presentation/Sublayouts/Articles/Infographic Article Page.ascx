@@ -29,27 +29,27 @@
                 </div>
                 <!-- end infographic-zoom -->
 
-<!-- BEGIN PARTIAL: embed-overlay -->
-<!-- Embed Overlay Modal -->
-<div class="modal fade" id="embed-overlay" tabindex="-1" role="dialog" aria-labelledby="embed-overlay-modal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body embed-overlay">
-        <i class="close-overlay" data-dismiss="modal">Close</i>
-        <h3>Infographic Embed Tag</h3>
-        <%--<textarea name="" placeholder="Enter your suggestion&hellip;">
-            <iframe width="560" height="315" src="//www.youtube.com/embed/Z1BwhYKTv3c" frameborder="0" allowfullscreen></iframe>
-        </textarea>--%>
-          <asp:TextBox runat="server" ID="uxModalEmbed" TextMode="MultiLine" ReadOnly="true"></asp:TextBox>
-        <div class="copy-button-container">
-          <a href="REPLACE" class="button submit-button copy">Copy</a> <%--TODO: implement click-to-copy--%>
-        </div>
-          <div id="copyAlert" class="alert success fade hidden" data-alert="alert">Embed code has been copied to your clipboard</div>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!-- END PARTIAL: embed-overlay -->
+                    <!-- BEGIN PARTIAL: embed-overlay -->
+                    <!-- Embed Overlay Modal -->
+                    <div class="modal fade" id="embed-overlay" tabindex="-1" role="dialog" aria-labelledby="embed-overlay-modal" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-body embed-overlay">
+                            <i class="close-overlay" data-dismiss="modal">Close</i>
+                            <h3>Infographic Embed Tag</h3>
+                            <%--<textarea name="" placeholder="Enter your suggestion&hellip;">
+                                <iframe width="560" height="315" src="//www.youtube.com/embed/Z1BwhYKTv3c" frameborder="0" allowfullscreen></iframe>
+                            </textarea>--%>
+                              <asp:TextBox runat="server" ID="uxModalEmbed" TextMode="MultiLine" ReadOnly="true"></asp:TextBox>
+                            <div class="copy-button-container">
+                              <a href="REPLACE" class="button submit-button copy">Copy</a> <%--TODO: implement click-to-copy--%>
+                            </div>
+                              <div id="copyAlert" class="alert success fade hidden" data-alert="alert">Embed code has been copied to your clipboard</div>
+                          </div>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <!-- END PARTIAL: embed-overlay -->
 
                 <!-- END PARTIAL: infographic-zoom -->
             </div>

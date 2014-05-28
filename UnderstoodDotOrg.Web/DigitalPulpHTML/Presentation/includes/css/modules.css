@@ -4650,7 +4650,7 @@
   }
   /* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_comment-list.scss */
   .comment-list .comment-info .comment-username:after {
-    content: " â€¢ ";
+    content: " • ";
   }
 }
 /* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_comment-list.scss */
@@ -11486,7 +11486,7 @@ header.about-donate-rs-wrapper .rsbtn_player {
 /* line 270, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_user-profiles.scss */
 .card-child-info li:before {
   color: #298fc2;
-  content: "â€¢";
+  content: "•";
   padding-right: 7px;
 }
 /* line 276, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_user-profiles.scss */

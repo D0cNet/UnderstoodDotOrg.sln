@@ -142,21 +142,7 @@
             <!-- END PARTIAL: keep-reading-lg -->
             <!-- BEGIN PARTIAL: comments-summary -->
             <section class="comments-summary">
-                <header>
-                    <h3>Comments (19)</h3>
-                </header>
-                <div class="quote-container">
-                    <blockquote>
-                        <p>Incidunt officia voluptate consectetur odit. optio culpa rem iure ut vitae numquam alias porro eos. mollitia voluptatem laborum sequi expedita</p>
-                        <i class="arrow-quote-bottom"></i>
-                    </blockquote>
-                    <span><strong>Carrie S</strong> &bull; 30 min ago</span>
-                </div>
-
-                <ul>
-                    <li><a href="REPLACE">See All Comments</a></li>
-                    <li><a href="REPLACE">Add My Comment</a></li>
-                </ul>
+                <sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/CommentsSummary.ascx" />
             </section>
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->

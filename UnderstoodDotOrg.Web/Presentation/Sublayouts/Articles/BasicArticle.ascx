@@ -54,21 +54,7 @@
 
             <!-- END PARTIAL: reviewed-by -->
             <!-- BEGIN PARTIAL: find-helpful -->
-            <div class="find-this-helpful content">
-                <h4>Did you find this helpful?</h4>
-                <ul>
-                    <li>
-                        <button class="helpful-yes">
-                            Yes</button>
-                    </li>
-                    <li>
-                        <button class="helpful-no">
-                            No</button>
-                    </li>
-                </ul>
-                <div class="clearfix">
-                </div>
-            </div>
+            <sc:Sublayout ID="Sublayout1" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
             <!-- END PARTIAL: find-helpful -->
             <div class="find-this-helpful-small">
                 <!-- Module within only appears in under 650px window width-->

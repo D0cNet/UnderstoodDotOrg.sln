@@ -81,20 +81,7 @@
 </section>
 <!-- END PARTIAL: about-the-author -->
       <!-- BEGIN PARTIAL: find-helpful -->
-<div class="find-this-helpful content">
-   
-  <h4>Did you find this helpful?</h4>
-  <ul>
-    <li>
-      <button class="helpful-yes">Yes</button>
-    </li>
-    <li>
-      <button class="helpful-no">No</button>
-    </li>
-  </ul>
-  <div class="clearfix"></div>
-   
-</div>
+<sc:Sublayout ID="Sublayout1" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
 <!-- END PARTIAL: find-helpful -->
     </div>
 
@@ -129,14 +116,7 @@
 </div>
 <!-- END PARTIAL: find-helpful -->
       <!-- BEGIN PARTIAL: keep-reading -->
-<div class="keep-reading">
-  <h3>Keep Reading</h3>
-  <ul>
-    <li><a href="REPLACE">10 Tips to Help Kids Get Organized</a></li>
-    <li><a href="REPLACE">How to Build a Homework Plan</a></li>
-    <li class="last-child"><a href="REPLACE">Make Space for Learning: The Perfect Study Nook</a></li>
-  </ul>
-</div>
+<sc:Sublayout Path="~/Presentation/Sublayouts/Tools/BehaviorTools/Widgets/KeepReading.ascx" runat="server"></sc:Sublayout>
 <!-- END PARTIAL: keep-reading -->
       <!-- BEGIN PARTIAL: comments-summary -->
 <section class="comments-summary">

@@ -2866,6 +2866,7 @@
 .profile-wrap .profile-section {
   border-bottom: 1px solid #e8e8e8;
   border-width: 80%;
+  min-height: 260px;
   padding: 30px 0 20px 0;
   position: relative;
 }
@@ -3309,7 +3310,7 @@
   line-height: 18px;
   line-height: 1.125rem;
   padding: 0 !important;
-  height: 115px;
+  height: 75px;
   overflow: hidden;
   display: table-row;
 }
@@ -5816,6 +5817,12 @@
   .profile-questions.step-1 .button {
     max-width: 150px;
   }
+}
+@media (min-width: 960px) {
+    /* bg. I take no pride in this hack*/
+    .profile-questions.step-1 .button:checked ~ *{
+        background-color: purple;
+    }
 }
 /* line 414, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_profile-questions.scss */
 .profile-questions.step-1 label.inline {
