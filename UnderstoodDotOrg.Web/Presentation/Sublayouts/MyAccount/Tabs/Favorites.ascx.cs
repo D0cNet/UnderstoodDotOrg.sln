@@ -14,7 +14,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var favoritesList = CommunityHelper.GetFavorites("2100");
+            var favoritesList = CommunityHelper.GetFavorites(CommunityHelper.ReadUserId(CurrentMember.ScreenName));
             rptFavorites.DataSource = favoritesList;
             rptFavorites.DataBind();
         }
@@ -28,7 +28,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             Literal litType = (Literal)e.Item.FindControl("litType");
             litType.Text = item.Type;
             HyperLink hypReplyCount = (HyperLink)e.Item.FindControl("hypReplyCount");
-            hypReplyCount.NavigateUrl = "/";
+            hypReplyCount.NavigateUrl = item.Url;
             hypReplyCount.Text = item.ReplyCount;
         }
     }

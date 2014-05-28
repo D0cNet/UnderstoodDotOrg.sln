@@ -32,6 +32,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string IsApproved { get; set; }
         public string AuthorUsername { get; set; }
         public DateTime CommentDate { get; set; }
+        public string Type { get; set; }
 
         public Comment() { }
 
@@ -45,7 +46,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 string commentDate = xn["CreatedDate"].InnerText;
                 DateTime parsedDate = DateTime.Parse(commentDate);
 
-               // Id = xn["Id"].InnerText;
+                Id = commentId;
                 //Url = xn["Url"].InnerText;
              //   ParentId = xn["ParentId"].InnerText;
              //   ContentId = xn["ContentId"].InnerText;
@@ -62,6 +63,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 AuthorUsername = author["Username"].InnerText;
                 Likes = CommunityHelper.GetTotalLikes(commentId).ToString();
                 CommentDate = parsedDate;
+                ParentTitle = xn["Content"]["Application"]["Container"]["HtmlName"].InnerText;
+                CommentTitle = xn["Content"]["HtmlName"].InnerText;
+                Type = xn["Content"]["Application"]["HtmlName"].InnerText;
             }
         
         }

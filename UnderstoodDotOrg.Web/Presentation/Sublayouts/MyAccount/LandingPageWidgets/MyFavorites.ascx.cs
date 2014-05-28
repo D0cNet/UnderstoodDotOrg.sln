@@ -17,16 +17,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountFavorites);
             hypFavoritesTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
 
-            var favoritesList = CommunityHelper.GetFavorites("2100");
+            var favoritesList = CommunityHelper.GetFavorites(CurrentMember.ScreenName);
             
-            //TO-DO Add call to get Favorites and cast them as FavoriteModel objects
-            //var favoritesList = CommunityHelper.GetFavorites(CommunityHelper.ReadUserId(CurrentUser.UserName));
-            //Stub for one link
-            //List<FavoriteModel> favoritesDataSource = new List<FavoriteModel>();
-            //FavoriteModel stubFavorite = new FavoriteModel();
-            //stubFavorite.Title = "FavoriteLink1";
-            //stubFavorite.TitleUrl = "/";
-            //favoritesDataSource.Add(stubFavorite);
             litCount.Text = favoritesList.Count.ToString();
 
             rptFavorites.DataSource = favoritesList;
@@ -37,7 +29,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
         {
             var item = e.Item.DataItem as FavoritesModel;
             HyperLink hypFavoritesLink = (HyperLink)e.Item.FindControl("hypFavoritesLink");
-            hypFavoritesLink.NavigateUrl = "/";
+            hypFavoritesLink.NavigateUrl = item.Url;
             hypFavoritesLink.Text = item.Title;
         }
     }
