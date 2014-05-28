@@ -63,8 +63,8 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
 
                 webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
                 var requestUrl = string.Format(
-                    "{0}api.ashx/v2/blogs/{1}/posts.xml", 
-                    Settings.GetSetting(Constants.Settings.TelligentConfig), 
+                    "{0}api.ashx/v2/blogs/{1}/posts.xml",
+                    Settings.GetSetting(Constants.Settings.TelligentConfig),
                     blogId);
 
                 var values = new NameValueCollection();
@@ -88,13 +88,16 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     item["ContentId"] = contentId;
                 }
                 catch
-                {        
+                {
                 }
                 item.Editing.EndEdit();
             }
             catch
             {
-                // do nothing for now
+                item.Delete();
+                var e = new Exception(@"Item Creation Failed:
+The title of the item you created matches the title of an item that already exists. Please rename the article that you've just created.");
+                throw e;
             }
         }
     }
