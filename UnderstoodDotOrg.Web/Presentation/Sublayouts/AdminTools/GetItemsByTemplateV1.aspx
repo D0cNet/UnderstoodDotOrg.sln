@@ -18,11 +18,11 @@
     List<Item> _cloneItems = new List<Item>();
     List<Item> _cloneItemsWithAllVersions = new List<Item>();
     protected void Page_Load(object sender, EventArgs e) {
-        //if (!IsPostBack) {
+        if (!IsPostBack) {
             if (rbtLstOptions.SelectedItem != null && !rbtLstOptions.SelectedItem.ToString().IsNullOrEmpty()) {
                 GetAllSitecoreItem();
             }
-        //}
+        }
     }
 
     public IEnumerable<Item> GetCloneItems(Item original) {
@@ -111,14 +111,11 @@
 
         if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && child.Source == null) {
             _realItems.Add(child);
-            if (child.Languages.Count() > 0) {
-                foreach (Sitecore.Globalization.Language language in child.Languages) {
-                    if (language.ToString() == "en") {
-                        _realItemsWithAllVersions.Add(child);
-                    }
-                    if (language.ToString() == "es-MX") {
-                        _realItemsWithAllVersions.Add(child);
-                    }
+            LanguageCollection collection = Sitecore.Data.Managers.ItemManager.GetContentLanguages(child);
+            foreach (var lang in collection) {
+                var itm = Sitecore.Data.Database.GetDatabase("master").GetItem(child.ID, lang);
+                if (itm.Versions.Count > 0) {
+                    _realItemsWithAllVersions.Add(child);
                 }
             }
             RadTreeListRealItems.DataSource = _realItems;
@@ -129,14 +126,11 @@
             var cloneItems = GetCloneItems(child);
             foreach (var itm in cloneItems) {
                 _cloneItems.Add(itm);
-                if (itm.Languages.Count() > 0) {
-                    foreach (Sitecore.Globalization.Language language in itm.Languages) {
-                        if (language.ToString() == "en") {
-                            _cloneItemsWithAllVersions.Add(itm);
-                        }
-                        if (language.ToString() == "es-MX") {
-                            _cloneItemsWithAllVersions.Add(itm);
-                        }
+                LanguageCollection collection = Sitecore.Data.Managers.ItemManager.GetContentLanguages(itm);
+                foreach (var lang in collection) {
+                    var cloneItem = Sitecore.Data.Database.GetDatabase("master").GetItem(itm.ID, lang);
+                    if (cloneItem.Versions.Count > 0) {
+                        _cloneItemsWithAllVersions.Add(itm);
                     }
                 }
                 RadTreeListCloneItems.DataSource = _cloneItems;
@@ -207,7 +201,7 @@
         <br />
 
         <div>
-            <telerik:radajaxpanel runat="server" id="RadAjaxPanel1">
+            <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanel1">
                 <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
 
                 <h2 id="realH2Tag" runat="server" visible="false">Real Items Are:</h2>
@@ -259,7 +253,7 @@
                     </MasterTableView>
                 </telerik:RadGrid>
 
-            </telerik:radajaxpanel>
+            </telerik:RadAjaxPanel>
         </div>
     </form>
 </body>
