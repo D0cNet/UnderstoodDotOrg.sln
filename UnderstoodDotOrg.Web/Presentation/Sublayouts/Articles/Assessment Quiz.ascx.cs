@@ -39,40 +39,43 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (Session["pageNum"] != null)
                 PageNumber = (int)Session["pageNum"];
 
-            Item questionsFolder = PageResources.Children.ToList().Where(i => i.IsOfType(AssessmentQuizQuestionsFolderItem.TemplateId)).FirstOrDefault();
-            if (questionsFolder != null)
+            if (PageResources != null)
             {
-                btnNextPage.CausesValidation = true;
-                btnNextPage.ValidationGroup = "vlgPageQuestions";
-                btnPrevPage.CausesValidation = true;
-                btnPrevPage.ValidationGroup = "vlgPageQuestions";
-                btnShowResults.CausesValidation = true;
-                btnShowResults.ValidationGroup = "vlgPageQuestions";
-
-                Pages = questionsFolder.Children.ToList();
-                List<Item> pageQuestions = Pages[PageNumber - 1].Children.ToList();
-                lblPageCounter.Text = "Page " + PageNumber.ToString() + " of " + Pages.Count.ToString();
-
-                if (!(Pages.Count > PageNumber))
+                Item questionsFolder = PageResources.Children.ToList().Where(i => i.IsOfType(AssessmentQuizQuestionsFolderItem.TemplateId)).FirstOrDefault();
+                if (questionsFolder != null)
                 {
-                    btnNextPage.Visible = false;
-                    btnShowResults.Visible = true;
-                }
+                    btnNextPage.CausesValidation = true;
+                    btnNextPage.ValidationGroup = "vlgPageQuestions";
+                    btnPrevPage.CausesValidation = true;
+                    btnPrevPage.ValidationGroup = "vlgPageQuestions";
+                    btnShowResults.CausesValidation = true;
+                    btnShowResults.ValidationGroup = "vlgPageQuestions";
 
-                if (Session["AnsweredQuestions"] == null)
-                    SetUpQuestionsTracker();
+                    Pages = questionsFolder.Children.ToList();
+                    List<Item> pageQuestions = Pages[PageNumber - 1].Children.ToList();
+                    lblPageCounter.Text = "Page " + PageNumber.ToString() + " of " + Pages.Count.ToString();
 
-                if (Session["done"] != null && (string)Session["done"] == "true")
-                {
-                    FinishQuiz();
-                }
-                else
-                {
-                    if (PageNumber != 1)
-                        btnPrevPage.Visible = true;
+                    if (!(Pages.Count > PageNumber))
+                    {
+                        btnNextPage.Visible = false;
+                        btnShowResults.Visible = true;
+                    }
 
-                    rptPageQuestions.DataSource = pageQuestions;
-                    rptPageQuestions.DataBind();
+                    if (Session["AnsweredQuestions"] == null)
+                        SetUpQuestionsTracker();
+
+                    if (Session["done"] != null && (string)Session["done"] == "true")
+                    {
+                        FinishQuiz();
+                    }
+                    else
+                    {
+                        if (PageNumber != 1)
+                            btnPrevPage.Visible = true;
+
+                        rptPageQuestions.DataSource = pageQuestions;
+                        rptPageQuestions.DataBind();
+                    }
                 }
             }
         }
