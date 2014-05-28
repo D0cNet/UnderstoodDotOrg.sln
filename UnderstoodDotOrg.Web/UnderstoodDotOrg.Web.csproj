@@ -1036,6 +1036,13 @@
     <Compile Include="Presentation\Sublayouts\Community\Parent Groups.ascx.designer.cs">
       <DependentUpon>Parent Groups.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Search Module.ascx.cs">
+      <DependentUpon>Parent Search Module.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Search Module.ascx.designer.cs">
+      <DependentUpon>Parent Search Module.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Parents Group Recommended.ascx.cs">
       <DependentUpon>Parents Group Recommended.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2511,6 +2518,7 @@
     <Content Include="Presentation\Sublayouts\Community\Parent Group Discussion.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parent Group Search Result.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parent Groups.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Parent Search Module.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Group Recommended.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parent Group Boards.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Parents Like Me.ascx" />

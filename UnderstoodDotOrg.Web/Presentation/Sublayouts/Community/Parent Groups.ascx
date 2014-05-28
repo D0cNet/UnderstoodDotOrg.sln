@@ -173,7 +173,7 @@
     <div class="group-summary-container">
       <div class="row skiplink-content">
         <!-- BEGIN PARTIAL: community/group_summary -->
-          <asp:PlaceHolder ID="groupList" runat="server"></asp:PlaceHolder>
+          <asp:PlaceHolder ID="groupList" runat="server"/>
        </div>
 <!-- END PARTIAL: community/group_summary -->
       </div>

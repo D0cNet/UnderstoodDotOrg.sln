@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parent Group Board.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parent_Group_Board" %>
-
 <script type="text/javascript">
     function checkValidation() {
         if (!Page_ClientValidate("newDiscussion")) {
