@@ -1281,6 +1281,13 @@
     <Compile Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx.designer.cs">
       <DependentUpon>YourParentToolkit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Modals\Assessment Quiz Modal.ascx.cs">
+      <DependentUpon>Assessment Quiz Modal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Modals\Assessment Quiz Modal.ascx.designer.cs">
+      <DependentUpon>Assessment Quiz Modal.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Modals\CommunityQAQuestionAsked.ascx.cs">
       <DependentUpon>CommunityQAQuestionAsked.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2511,6 +2518,7 @@
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Home\YourParentToolkit.ascx" />
+    <Content Include="Presentation\Sublayouts\Modals\Assessment Quiz Modal.ascx" />
     <Content Include="Presentation\Sublayouts\Modals\CommunityQAQuestionAsked.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\EmailAndAlertsPreferences.ascx" />

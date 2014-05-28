@@ -29,7 +29,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litTextResults;
-        
+
         /// <summary>
         /// frEndExplanation control.
         /// </summary>
