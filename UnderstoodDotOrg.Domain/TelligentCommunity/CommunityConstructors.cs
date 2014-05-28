@@ -47,6 +47,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 DateTime parsedDate = DateTime.Parse(commentDate);
 
                 Id = commentId;
+                
+                
+
                 //Url = xn["Url"].InnerText;
              //   ParentId = xn["ParentId"].InnerText;
              //   ContentId = xn["ContentId"].InnerText;
@@ -66,6 +69,15 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 ParentTitle = xn["Content"]["Application"]["Container"]["HtmlName"].InnerText;
                 CommentTitle = xn["Content"]["HtmlName"].InnerText;
                 Type = xn["Content"]["Application"]["HtmlName"].InnerText;
+
+                if (Type.Equals("Articles"))
+                {
+                    Url = "/";
+                }
+                else
+                {
+                    Url = "/Community and Events/Blogs/" + Type + "/" + CommentTitle;
+                }
             }
         
         }

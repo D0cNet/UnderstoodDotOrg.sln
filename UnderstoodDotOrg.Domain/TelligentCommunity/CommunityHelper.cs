@@ -1168,7 +1168,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                             {
                                 url = "/";
                             }
-                            }
+                        }
                         if (!title.Equals("Articles"))
                         {
                             FavoritesModel favorite = new FavoritesModel()

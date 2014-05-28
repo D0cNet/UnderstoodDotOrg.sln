@@ -29,7 +29,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
         {
             var item = e.Item.DataItem as Comment;
             HyperLink hypCommentLink = (HyperLink)e.Item.FindControl("hypCommentLink");
-            hypCommentLink.NavigateUrl = "/";
+            hypCommentLink.NavigateUrl = item.Url;
             hypCommentLink.Text = item.CommentTitle;
 
             Literal litSection = (Literal)e.Item.FindControl("litSection");
