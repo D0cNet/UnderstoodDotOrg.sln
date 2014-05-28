@@ -12,7 +12,6 @@ using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Framework.UI;
-using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About

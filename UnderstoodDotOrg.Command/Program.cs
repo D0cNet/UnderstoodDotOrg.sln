@@ -12,11 +12,11 @@ namespace UnderstoodDotOrg.Command
     {
         static void Main(string[] args)
         {
-            string name = "";
+            string name = string.Empty;
             string parentName = null;
-            string value = "";
+            string value = string.Empty;
             int id = 0;
-            string csmId = "";
+            string csmId = string.Empty;
             bool isChild = false;
             List<string> attributeList = new List<string>();
             int attributeCount = 0;
@@ -41,92 +41,71 @@ namespace UnderstoodDotOrg.Command
 
                         if (reader.Name == "id" && id != 0)
                         {
-
                             reader.Read();
                             csmId = reader.Value;
                             break;
-
                         }
 
                         if (parentCount == 0)
                         {
-
                             depth1 = reader.Depth;
-
                         }
 
                         if (parentCount != 0)
                         {
-
                             depth2 = reader.Depth;
-
-                        }                        
+                        }
 
                         if (depth1 < depth2)
                         {
-
                             depth1 = depth2;
                             parentName = name;
                             InsertToDB(name, null, csmId);
                             isChild = true;
-
                         }
 
                         if (depth2 < depth1)
                         {
-
                             depth1 = depth2;
 
                             if (depth1 != 1)
                             {
-
                                 isChild = false;
-
                             }
                         }
 
                         if (depth1 == depth2)
                         {
-
                             if (isChild == true)
                             {
-
                             }
-
                         }
 
                         if (reader.Name == "entry")
                         {
-
                             id++;
                             break;
-
                         }
 
                         name = reader.Name;
 
                         if (reader.HasAttributes && id != 0)
                         {
-
                             if (reader.IsEmptyElement)
                             {
-
                                 isEmpty = true;
                                 InsertToDB(name, null, csmId);
-
                             }
 
                             if (reader.HasValue == false)
                             {
-
                                 isEmpty = true;
                                 InsertToDB(name, null, csmId);
-
                             }
 
                             for (int i = 0; i < reader.AttributeCount; i++)
                             {
-                                attributeCount = ((reader.AttributeCount)*2);
+                                attributeCount = (reader.AttributeCount) * 2;
 
                                 reader.MoveToAttribute(i);
 
@@ -136,64 +115,49 @@ namespace UnderstoodDotOrg.Command
 
                                 if (isEmpty == true)
                                 {
-
                                     InsertAttrubuteToDB(reader.Name, reader.Value, GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", name, csmId));
                                     isEmpty = false;
-
                                 }
                             }
                         }
-
                         parentCount++;
-
                         break;
-                       
+
                     case XmlNodeType.Text:
 
                         value = reader.Value;
 
                         if (name == "id" && id != 0)
                         {
-
                             csmId = reader.Value;
-
                         }
 
                         if (id != 0 && name != null && isChild == false)
                         {
-
                             InsertToDB(name, value, csmId);
                             UpdateDB(name, value, csmId);
 
                             if (attributeList.Count != 0)
                             {
-
                                 int i = 0;
 
                                 while (i < attributeCount)
                                 {
-
                                     listCount++;
 
                                     if ((listCount % 2) != 0 || i == 0)
                                     {
-
                                         attName = attributeList[i];
-
                                     }
-                                    
+
                                     if ((listCount % 2) == 0 && i != 0)
                                     {
-
                                         attValue = attributeList[i];
                                         InsertAttrubuteToDB(attName, attValue, GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", name, csmId));
-                                    
                                     }
-
                                     i++;
                                 }
                             }
-
                             listCount = 0;
                             attributeCount = 0;
                             attributeList.Clear();
@@ -201,10 +165,8 @@ namespace UnderstoodDotOrg.Command
 
                         if (id != 0 && name != null && isChild == true)
                         {
-
                             string pItemId = GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", parentName, csmId);
-                            InsertChildToDB(pItemId,name,value, "A080CB47-D017-40C4-A6D9-6E86BAA1CD18");
-
+                            InsertChildToDB(pItemId, name, value, "A080CB47-D017-40C4-A6D9-6E86BAA1CD18");
                         }
 
                         break;
@@ -215,18 +177,14 @@ namespace UnderstoodDotOrg.Command
 
                         if (id != 0 && name != null)
                         {
-
                             InsertToDB(name, value, csmId);
                             UpdateDB(name, value, csmId);
-
                         }
 
                         if (id != 0 && name != null && isChild == true)
                         {
-
                             string pItemId = GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", parentName, csmId);
                             InsertChildToDB(pItemId, name, value, "A080CB47-D017-40C4-A6D9-6E86BAA1CD18");
-
                         }
 
                         if (attributeList.Count != 0)
@@ -237,21 +195,16 @@ namespace UnderstoodDotOrg.Command
 
                                 if ((listCount % 2) != 0 || i == 0)
                                 {
-
                                     attName = attributeList[i];
-
                                 }
 
                                 if ((listCount % 2) == 0 && i != 0)
                                 {
-
                                     attValue = attributeList[i];
                                     InsertAttrubuteToDB(attName, attValue, GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", name, csmId));
-
                                 }
                             }
                         }
-
                         listCount = 0;
                         attributeCount = 0;
                         attributeList.Clear();
@@ -267,7 +220,7 @@ namespace UnderstoodDotOrg.Command
             {
                 if (value == null)
                 {
-                    value = "";
+                    value = string.Empty;
                 }
                 conn.Open();
                 try
@@ -299,9 +252,10 @@ namespace UnderstoodDotOrg.Command
             {
                 if (attValue == null)
                 {
-                    attValue = "";
+                    attValue = string.Empty;
                 }
                 conn.Open();
+
                 try
                 {
                     using (SqlCommand cmd = new SqlCommand(@"INSERT tbl_MediaReviewItemAttribute_Temp (ParentItemID, AttributeName, AttributeValue, ImportStatusID) 
@@ -319,7 +273,6 @@ namespace UnderstoodDotOrg.Command
                 {
                     //Insert Failed
                 }
-
             }
         }
 
@@ -415,8 +368,7 @@ namespace UnderstoodDotOrg.Command
             using (SqlConnection conn =
                 new SqlConnection(@"Data Source=AODEV02\SQL2008R2;Initial Catalog=Poses_Understood_DataImport;User ID=sa;Password=OasisD8A"))
             {
-
-                string itemId = "";
+                string itemId = string.Empty;
 
                 conn.Open();
 
@@ -431,7 +383,7 @@ namespace UnderstoodDotOrg.Command
                         reader.Read();
 
                         itemId = reader["ItemID"].ToString();
-                        
+
                         reader.Close();
 
                         return itemId;
@@ -442,12 +394,8 @@ namespace UnderstoodDotOrg.Command
                     //Get Item Failed
                     return null;
                 }
-
-
-
             }
         }
-
     }
 }
 
