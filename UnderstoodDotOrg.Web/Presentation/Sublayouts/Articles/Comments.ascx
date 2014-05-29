@@ -55,7 +55,8 @@
                         <a class="comment-more" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-comment-more"></i></a>
                     </div>
                     <div class="comment-form">
-                        <asp:TextBox CssClass="comment-form-reply" ID="CommentEntryTextField" runat="server" />
+                        <textarea name="comment-form-reply" class="comment-form-reply uniform" id="CommentEntryTextField" placeholder="Add your comment..." runat="server"></textarea>
+                        <%--<asp:TextBox CssClass="comment-form-reply" ID="CommentEntryTextField" runat="server" />--%>
                         <asp:Button ID="SubmitButton" OnClick="SubmitButton_Click" class="button" runat="server" />
                         <div class="clearfix"></div>
                     </div>

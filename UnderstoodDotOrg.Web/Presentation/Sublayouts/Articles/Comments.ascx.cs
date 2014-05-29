@@ -69,7 +69,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            string body = CommentEntryTextField.Text;
+            string body = CommentEntryTextField.Value;
             string user = "";
             try
             {
@@ -87,7 +87,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             PopulateComments();
 
             // Clear postback value
-            CommentEntryTextField.Text = String.Empty;
+            CommentEntryTextField.Value = String.Empty;
         }
 
         protected void FlagButton_Click(object sender, EventArgs e)
