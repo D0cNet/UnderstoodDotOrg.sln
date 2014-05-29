@@ -23,8 +23,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
 
         public  MemberCardModel(Member m)
         {
-            
-                                                
+
             this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
             this.Children = m.Children.ConvertToChildCardModelList();
             this.UserLabel = "Blogger"; //TODO: find role                                                                                   

@@ -57,6 +57,8 @@
     <Compile Include="Models\Telligent\Blog.cs" />
     <Compile Include="Models\Telligent\BlogPost.cs" />
     <Compile Include="Models\Telligent\Comment.cs" />
+    <Compile Include="Models\Telligent\Conversation.cs" />
+    <Compile Include="Models\Telligent\Message.cs" />
     <Compile Include="Models\Telligent\Notification.cs" />
     <Compile Include="Models\Telligent\Question.cs" />
     <Compile Include="Models\Telligent\User.cs" />

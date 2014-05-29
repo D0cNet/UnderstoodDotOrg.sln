@@ -795,6 +795,200 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
 
         }
+
+
+        public static List<Message> GetMessages (string convID)
+        {
+            List<Message> messages = new List<Message>();
+            XmlNode node = null;
+
+            if (!String.IsNullOrEmpty(convID))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = TelligentAuth();
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    //webClient.Headers.Add("Rest-Impersonate-User", username);
+                    var xmlDoc = new XmlDocument();
+                    var requestUrl = String.Format("{0}api.ashx/v2/conversations/{1}/messages.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), convID);
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    xmlDoc.LoadXml(xml);
+                    node = xmlDoc.SelectSingleNode("Response/Messages");
+
+                    if (node != null)
+                    {
+                        foreach (XmlNode item in node)
+                        {
+                            Message msg = new Message(item);
+                            messages.Add(msg);
+
+                            msg = null;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    messages = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
+            }
+
+            return messages;
+        }
+
+        public static List<Conversation> GetConversations(string username)
+        {
+
+            List<Conversation> conversations = new List<Conversation>();
+
+            XmlNode node = null;
+
+            if (!String.IsNullOrEmpty(username))
+            {
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = TelligentAuth();
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    webClient.Headers.Add("Rest-Impersonate-User", username);
+                    var xmlDoc = new XmlDocument();
+                    var requestUrl = String.Format("{0}api.ashx/v2/conversations.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    xmlDoc.LoadXml(xml);
+                    node = xmlDoc.SelectSingleNode("Response/Conversations");
+
+                    if(node!=null)
+                    {
+                        foreach (XmlNode item in node)
+                        {
+                            Conversation conv = new Conversation(item);
+                            conversations.Add(conv);
+
+                            conv = null;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    conversations = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
+            }
+           // return node;
+            return conversations;
+        }
+
+        public static string CreateConversation(string username,string subject,string body,string userlist)
+        {
+            string convID = String.Empty;
+            if ((!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(subject)) && !string.IsNullOrEmpty(body) && !string.IsNullOrEmpty(userlist))
+            {
+                using (WebClient client = new WebClient())
+                {
+                    try
+                    {
+                        client.Headers.Add("Rest-User-Token", TelligentAuth());
+                        client.Headers.Add("Rest-Impersonate-User", username);
+                        string address = string.Format(GetApiEndPoint("conversations.xml"));
+                        NameValueCollection data = new NameValueCollection();
+
+                        data["Body"] = body;
+                        data["Subject"] = subject;
+                        data["Usernames"] = userlist;
+                        string xml = Encoding.UTF8.GetString(client.UploadValues(address, data));
+                        XmlDocument document = new XmlDocument();
+                        document.LoadXml(xml);
+                        XmlNode childNode = document.SelectSingleNode("Response/Conversation");
+                        if (childNode != null)
+                        {
+                            convID = childNode.SelectSingleNode("Id").Value ;
+                        }
+                    }
+                    catch
+                    {
+                        convID = String.Empty;
+                    }
+                }
+
+            }
+            return convID;
+        }
+
+        public static bool ReplyToMessage(string username,string convID,string body)
+        {
+            bool success = false;
+
+            if ((!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(convID)) && !string.IsNullOrEmpty(body))
+            {
+                using (WebClient client = new WebClient())
+                {
+                    try
+                    {
+                        client.Headers.Add("Rest-User-Token", TelligentAuth());
+                        client.Headers.Add("Rest-Impersonate-User", username);
+                        string address = string.Format(GetApiEndPoint("conversations/{0}/messages.xml "), convID);
+                        NameValueCollection data = new NameValueCollection();
+                     
+                        data["Body"] = body;
+                        string xml = Encoding.UTF8.GetString(client.UploadValues(address, data));
+                        XmlDocument document = new XmlDocument();
+                        document.LoadXml(xml);
+                        XmlNode childNode = document.SelectSingleNode("Response/ConversationMessage");
+                        if (childNode != null)
+                        {
+                            success = true;
+                        }
+                    }
+                    catch
+                    {
+                        success = false;
+                    }
+                }
+
+            }
+
+
+            return success;
+        }
+
+        public static bool DeleteConversation(string username,string convID)
+        {
+            bool success = false;
+            if ((!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(convID)) )
+            {
+                using (WebClient client = new WebClient())
+                {
+                    try
+                    {
+                        client.Headers.Add("Rest-User-Token", TelligentAuth());
+                        client.Headers.Add("Rest-Impersonate-User", username);
+                        client.Headers.Add("Rest-Method", "DELETE");
+                        string address = string.Format(GetApiEndPoint("conversations/{0}.xml "), convID);
+                        NameValueCollection data = new NameValueCollection();
+
+                    
+                        string xml = Encoding.UTF8.GetString(client.UploadValues(address, data));
+                        XmlDocument document = new XmlDocument();
+                        document.LoadXml(xml);
+                        XmlNode childNode = document.SelectSingleNode("Response/Errors").FirstChild;
+                        if (childNode == null)
+                        {
+                            success = true;
+                        }
+                    }
+                    catch
+                    {
+                        success = false;
+                    }
+                }
+
+            }
+            return success;
+        }
+
     }
 
 }
