@@ -27,7 +27,7 @@
                             <div class="question-card-info group">
                                 <div class="question-card-title-and-text">
                                     <div class="question-card-title">
-                                        <a href="<%#CurrentItemUrl + Item.QueryString %>"><%# Item.Title %></a>
+                                        <a href="<%# Item.Url %>"><%# Item.Title %></a>
                                     </div>
                                     <!-- end .question-card-title -->
                                     <div class="question-card-text">
@@ -36,8 +36,8 @@
                                     <!-- end .question-card-text -->
                                 </div>
                                 <ul class="question-card-links">
-                                    <li><a href="REPLACE"><%# Item.CommentCount %> answers</a></li>
-                                    <li><a href="REPLACE">Answer this Question</a></li>
+                                    <li><a href="<%# Item.Url %>"><%# Item.CommentCount %> answers</a></li>
+                                    <li><a href="<%# Item.Url %>">Answer this Question</a></li>
                                 </ul>
                                 <!-- end .question-card-links -->
                             </div>

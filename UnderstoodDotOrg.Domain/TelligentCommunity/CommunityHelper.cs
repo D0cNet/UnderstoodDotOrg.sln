@@ -492,6 +492,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     XmlNode user = xn.SelectSingleNode("User");
                     XmlNode app = xn.SelectSingleNode("Content/Application");
+
+                    var queryString = "?wikiId=" + wikiId + "&wikiPageId=" + xn["Id"].InnerText + "&contentId=" + xn["ContentId"].InnerText;
+
                     Question question = new Question()
                     {
                         Title = xn["Title"].InnerText,
@@ -502,7 +505,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         Author = user["Username"].InnerText,
                         Group = app["HtmlName"].InnerText,
                         CommentCount = xn["CommentCount"].InnerText,
-                        QueryString = "?wikiId=" + wikiId + "&wikiPageId=" + xn["Id"].InnerText + "&contentId=" + xn["ContentId"].InnerText,
+                        QueryString = queryString,
+                        Url = "/en/Community%20and%20Events/Q%20and%20A/Q%20and%20A%20Details.aspx" + queryString,
                     };
                     questionList.Add(question);
                 }

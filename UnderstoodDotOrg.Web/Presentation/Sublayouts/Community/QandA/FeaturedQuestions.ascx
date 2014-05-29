@@ -11,7 +11,7 @@
                         <img alt="70x70 Placeholder" src="http://placehold.it/70x70" />
                     </div>
                     <div class="question-info">
-                        <a href="/en/Community%20and%20Events/Q%20and%20A/Q%20and%20A%20Details.aspx<%# Item.QueryString %>" class="title"><%# Item.Title %></a>
+                        <a href="<%# Item.Url %>" class="title"><%# Item.Title %></a>
                         <span class="details">In <a href="REPLACE" class="topic"><%# Item.Group %></a> - Asked by <a href="REPLACE" class="author"><%# Item.Author %></a> <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
                         <a class="button" href="REPLACE">Follow This Question</a>
                     </div>
