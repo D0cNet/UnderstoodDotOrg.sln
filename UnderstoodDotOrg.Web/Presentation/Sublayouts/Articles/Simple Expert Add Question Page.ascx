@@ -116,7 +116,7 @@
 </div>
 <!-- END PARTIAL: find-helpful -->
       <!-- BEGIN PARTIAL: keep-reading -->
-<sc:Sublayout Path="~/Presentation/Sublayouts/Tools/BehaviorTools/Widgets/KeepReading.ascx" runat="server"></sc:Sublayout>
+<sc:Sublayout Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" runat="server"></sc:Sublayout>
 <!-- END PARTIAL: keep-reading -->
       <!-- BEGIN PARTIAL: comments-summary -->
 <section class="comments-summary">

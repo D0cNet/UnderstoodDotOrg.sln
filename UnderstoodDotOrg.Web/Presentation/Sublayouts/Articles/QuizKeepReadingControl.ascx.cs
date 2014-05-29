@@ -22,11 +22,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var keepRadingArticles = Model.KeepReadingContent.ListItems
-                .Where(i => i != null && i.InheritsTemplate(DefaultArticlePageItem.TemplateId))
-                .Take(3);
+            DefaultArticlePageItem context = (DefaultArticlePageItem)Sitecore.Context.Item;
 
-            rptKeepReading.DataSource = keepRadingArticles;
+            rptKeepReading.DataSource = context.KeepReadingContent.ListItems;
             rptKeepReading.DataBind();
         }
 
@@ -34,20 +32,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             if (e.IsItem())
             {
-                var RelatedLink = e.Item.DataItem as DefaultArticlePageItem;
+                Item RelatedLink = e.Item.DataItem as Item;
                 if (RelatedLink != null)
                 {
-                    var frPageTitle = e.FindControlAs<FieldRenderer>("frPageTitle");
-                    var hlPageTitle = e.FindControlAs<HyperLink>("hlPageTitle");
+                    FieldRenderer frPageTitle = e.FindControlAs<FieldRenderer>("frPageTitle");
+                    HyperLink hlPageTitle = e.FindControlAs<HyperLink>("hlPageTitle");
                     if (frPageTitle != null)
                     {
-                        frPageTitle.Item = RelatedLink.ContentPage.InnerItem;
-                        hlPageTitle.NavigateUrl = RelatedLink.ContentPage.InnerItem.GetUrl();
+                        frPageTitle.Item = RelatedLink;
+                        hlPageTitle.NavigateUrl = RelatedLink.GetUrl();
                         hlPageTitle.Visible = true;
                     }
-
                 }
-
             }
         }
     }

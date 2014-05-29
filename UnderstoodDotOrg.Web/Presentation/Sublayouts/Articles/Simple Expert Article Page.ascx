@@ -69,7 +69,6 @@
             <sc:sublayout path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:sublayout>
             <!-- END PARTIAL: find-helpful -->
             <!-- BEGIN PARTIAL: keep-reading -->
-            <sc:Sublayout Path="~/Presentation/Sublayouts/Tools/BehaviorTools/Widgets/KeepReading.ascx" runat="server"></sc:Sublayout>
             <sc:sublayout id="slKeepReading" runat="server" path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
             <!-- END PARTIAL: keep-reading -->
             <!-- BEGIN PARTIAL: comments-summary -->
