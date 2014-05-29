@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
+using Sitecore.Links;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -16,7 +17,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
     {
         protected MyProfileItem MyProfilePage { get; set; }
         protected MyAccountItem MyAccountPage { get; set; }
-
+        protected String PrivateMessageTool
+        {
+            get
+            {
+                var pmt = Sitecore.Context.Database.GetItem(Constants.Pages.PrivateMessageTool);
+                return LinkManager.GetItemUrl(pmt);
+            }
+        }   
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsUserLoggedIn)
@@ -28,6 +36,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                 rptrAccountNav.DataSource = accountPages;
                 rptrAccountNav.DataBind();
+
 
             }
             else

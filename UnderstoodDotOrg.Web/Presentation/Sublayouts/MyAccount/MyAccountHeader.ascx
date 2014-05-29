@@ -28,7 +28,7 @@
             <div class="account-links">
                 <a class="profile-link button" href="<%= MyProfilePage.GetUrl() %>"><%= MyProfilePage.MyAccountBase.ContentPage.BasePageNEW.NavigationTitle.Rendered %></a>
                 <span class="button-wrapper">
-                    <a class="notifications-link button" href="/My Account/My Notifications/Private Message Tool.aspx">Notifications<span class="notification-count">3</span></a>
+                    <a class="notifications-link button" href='<%= PrivateMessageTool %>' >Notifications<span class="notification-count">3</span></a>
                 </span>
             </div>
         </div>

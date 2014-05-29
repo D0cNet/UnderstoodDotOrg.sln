@@ -221,6 +221,14 @@ namespace UnderstoodDotOrg.Common
                 }
             }
 
+            public static Guid PrivateMessageTool
+            {
+                get
+                {
+                    return new Guid("{8314ED31-ABA9-4304-AEFB-A2C9D6CBB42B}");
+                }
+            }
+
             public static Guid MyAccountFavorites
             {
                 get
