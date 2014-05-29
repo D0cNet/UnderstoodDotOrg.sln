@@ -686,6 +686,20 @@
     <Compile Include="Presentation\Sublayouts\Common\ArticleListings\TopicLandingArticles.ascx.designer.cs">
       <DependentUpon>TopicLandingArticles.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Cards\EventArchive.ascx.cs">
+      <DependentUpon>EventArchive.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Cards\EventArchive.ascx.designer.cs">
+      <DependentUpon>EventArchive.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Cards\EventArchiveListing.ascx.cs">
+      <DependentUpon>EventArchiveListing.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Cards\EventArchiveListing.ascx.designer.cs">
+      <DependentUpon>EventArchiveListing.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Cards\ExpertChat.ascx.cs">
       <DependentUpon>ExpertChat.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2468,6 +2482,8 @@
     <Content Include="Presentation\Sublayouts\Common\ArticleListings\ArticleEntry.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ArticleListings\SubtopicLandingArticles.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ArticleListings\TopicLandingArticles.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Cards\EventArchive.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Cards\EventArchiveListing.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Cards\ExpertChat.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Cards\ExpertEvent.ascx" />
     <Content Include="Presentation\Sublayouts\Common\CommunityHeader.ascx" />

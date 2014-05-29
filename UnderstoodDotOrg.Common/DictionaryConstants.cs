@@ -891,7 +891,7 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
-        public static string WebniarLabel {
+        public static string WebinarLabel {
             get {
                 return Translate.TextByDomain(PosesDictionary, "Webinar Label");
             }
@@ -903,7 +903,7 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
-        public static string DaysagoLabel {
+        public static string DaysAgoLabel {
             get {
                 return Translate.TextByDomain(PosesDictionary, "Days ago Label");
             }

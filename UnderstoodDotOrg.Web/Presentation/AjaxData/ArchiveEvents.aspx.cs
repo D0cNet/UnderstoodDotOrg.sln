@@ -208,14 +208,14 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
                         ltEventType.Text = DictionaryConstants.ChatLabel;
                     }
                     else if (baseEventItem.InnerItem.IsOfType(WebinarEventPageItem.TemplateId)) {
-                        ltEventType.Text = DictionaryConstants.WebniarLabel;
+                        ltEventType.Text = DictionaryConstants.WebinarLabel;
                     }
 
                     if (baseEventItem != null) {
                         Double totalDays = (DateTime.Now - baseEventItem.EventDate.DateTime).TotalDays;
                         if (totalDays <= 30) {
                             ltEventDate.Text = Math.Floor(totalDays).ToString();
-                            ltEventSubDate.Text = DictionaryConstants.DaysagoLabel;
+                            ltEventSubDate.Text = DictionaryConstants.DaysAgoLabel;
                         }
                         else {
                             ltEventDate.Text = baseEventItem.EventDate.DateTime.ToString("MMM dd");

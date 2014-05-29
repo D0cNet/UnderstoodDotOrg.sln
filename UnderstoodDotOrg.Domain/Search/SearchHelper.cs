@@ -764,6 +764,45 @@ namespace UnderstoodDotOrg.Domain.Search
             return GetUpcomingEvents(ChatEventPageItem.TemplateId).FirstOrDefault();
         }
 
+        public static List<BaseEventDetailPageItem> GetArchivedEvents(int page, int pageSize, out int totalResults, string grade, string issue, string topic)
+        {
+            return GetArchivedEvents(page, pageSize, out totalResults, GetEventFilterPredicate(grade, issue, topic));
+        }
+
+        public static List<BaseEventDetailPageItem> GetArchivedEvents(int page, int pageSize, out int totalResults, Expression<Func<EventPage, bool>> optionalPredicate = null)
+        {
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+
+            using (var context = index.CreateSearchContext())
+            {
+                var query = GetCurrentCultureQueryable<EventPage>(context)
+                                .Filter(GetBaseEventPredicate())
+                                .Filter(i => i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) 
+                                        || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
+                                .Filter(i => i.EventDateUtc <= DateTime.UtcNow.AddDays(-1));
+
+                if (optionalPredicate != null)
+                {
+                    query = query.Filter(optionalPredicate);
+                }
+
+                totalResults = query.Take(1).GetResults().TotalSearchResults;
+
+                if (page > 1)
+                {
+                    query = query.Skip((page - 1) * pageSize);
+                }
+
+                query = query.Take(pageSize).OrderByDescending(i => i.EventDate);
+
+                var results = query.ToList();
+
+                return results.Select(i => new BaseEventDetailPageItem(i.GetItem()))
+                              .Where(i => i.InnerItem != null)
+                              .ToList();
+            }
+        }
+
         #endregion
 
         private static Expression<Func<EventPage, bool>> GetEventFilterPredicate(string grade, string issue, string topic)

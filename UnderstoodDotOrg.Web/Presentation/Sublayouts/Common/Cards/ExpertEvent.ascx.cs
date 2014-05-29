@@ -30,13 +30,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
 
                 frPageTitle.Item = item;
 
-                imgThumbnail.ImageUrl = item.GetExpertThumbnailUrl(150, 150);
                 EventUrl = item.GetUrl();
                 litEventDate.Text = item.GetFormattedEventDate();
 
                 ExpertDetailPageItem expert = item.Expert.Item;
                 if (expert != null)
                 {
+                    imgThumbnail.ImageUrl = expert.GetThumbnailUrl(150, 150);
                     litExpertType.Text = expert.GetExpertType();
                 } 
             }

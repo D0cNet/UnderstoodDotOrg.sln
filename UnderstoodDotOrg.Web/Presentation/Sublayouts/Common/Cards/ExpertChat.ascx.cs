@@ -25,13 +25,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
                 BaseEventDetailPageItem item = (BaseEventDetailPageItem)DataSource;
 
                 hlEventDetail.NavigateUrl = item.GetUrl();
-                imgThumbnail.ImageUrl = item.GetExpertThumbnailUrl(150, 150);
                 litEventDate.Text = item.GetFormattedEventDate();
 
                 // Expert details
                 ExpertDetailPageItem expert = item.Expert.Item;
                 if (expert != null)
                 {
+                    imgThumbnail.ImageUrl = expert.GetThumbnailUrl(150, 150);
+                
                     // TODO: verify Heading should be tied to expert or actual event page
                     frExpertHeading.Item = frExpertSubheading.Item = expert.InnerItem;
                     hlExpertDetail.NavigateUrl = expert.GetUrl();

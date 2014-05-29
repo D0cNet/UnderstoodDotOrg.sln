@@ -7,10 +7,37 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards {
     
     
     public partial class EventArchive {
+        
+        /// <summary>
+        /// imgExpert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgExpert;
+        
+        /// <summary>
+        /// litExpertType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litExpertType;
+        
+        /// <summary>
+        /// frPageTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPageTitle;
         
         /// <summary>
         /// frHeading control.
@@ -22,39 +49,39 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frHeading;
         
         /// <summary>
-        /// archiveEvents control.
+        /// frSubheading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards.EventArchiveListing archiveEvents;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSubheading;
         
         /// <summary>
-        /// pnlNoArchiveMessage control.
+        /// litEventType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNoArchiveMessage;
+        protected global::System.Web.UI.WebControls.Literal litEventType;
         
         /// <summary>
-        /// frNoArchiveMessage control.
+        /// litEventDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoArchiveMessage;
+        protected global::System.Web.UI.WebControls.Literal litEventDate;
         
         /// <summary>
-        /// hlSeeArchive control.
+        /// litEventSubDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlSeeArchive;
+        protected global::System.Web.UI.WebControls.Literal litEventSubDate;
     }
 }

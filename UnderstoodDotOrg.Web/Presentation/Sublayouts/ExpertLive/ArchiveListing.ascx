@@ -1,10 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ArchiveListing.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive.ArchiveListing" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+<%@ Register TagPrefix="udo" TagName="ArchiveListing" Src="~/Presentation/Sublayouts/Common/Cards/EventArchiveListing.ascx" %>
+
 <!-- BEGIN PARTIAL: community/experts_sub_nav -->
 <div class="container">
     <div class="row">
         <div class="container">
-            <asp:Panel runat="server" ID="pnlSearch" CssClass="experts-nav-form  rs_read_this clearfix skiplink-toolbar" DefaultButton="btnSubmit">
+            <div class="experts-nav-form  rs_read_this clearfix skiplink-toolbar">
                 <div class="dropdown">
                     <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
                         <span class="current-page">Archive</span>
@@ -29,13 +31,7 @@
                 <asp:DropDownList ID="ddlIssue" OnSelectedIndexChanged="ddlIssue_SelectedIndexChanged" runat="server" AutoPostBack="true" Width="150px" name="experts-nav-issue"></asp:DropDownList>
                 <asp:DropDownList ID="ddlGrade" OnSelectedIndexChanged="ddlGrade_SelectedIndexChanged" runat="server" AutoPostBack="true" Width="150px" name="experts-nav-grade"></asp:DropDownList>
                 <asp:DropDownList ID="ddlTopics" OnSelectedIndexChanged="ddlTopics_SelectedIndexChanged" runat="server" AutoPostBack="true" Width="150px" name="experts-nav-topic"></asp:DropDownList>
-
-                <fieldset class="archive-search-form">
-                    <label for="search-archive-text" class="visuallyhidden" aria-hidden="true">Search archive</label>
-                    <input runat="server" id="txtSearch" type="text" class="archive-search" name="search-archive" placeholder="Search archive" />
-                    <asp:Button type="submit" runat="server" ClientIDMode="Static" OnClick="btnSubmit_Click" ID="btnSubmit" Text="Go" class="search-button" />
-                </fieldset>
-            </asp:Panel>
+            </div>
             <!-- experts-nav-form -->
         </div>
     </div>
@@ -52,108 +48,10 @@
     <div class="event-cards-container">
         <!-- BEGIN PARTIAL: community/experts_archive_card -->
         <div class="event-cards">
-            <asp:Repeater runat="server" ID="rptEventCard" OnItemDataBound="rptEventCard_ItemDataBound">
-                <ItemTemplate>
-                    <div class="row">
-                        <div class="event-card rs_read_this">
-                            <div class="event-card-info group">
-                                <div class="event-card-image col equalize   ">
-                                    <asp:HyperLink runat="server" ID="hlExpertBio">
-                                        <sc:image id="scExpertImage" runat="server" field="Expert Image" />
-                                        <asp:Image runat="server" ID="imgExpertDefault" ImageUrl="http://placehold.it/150x150" Visible="false" />
-                                        <span class="visuallyhidden">play button</span>
-                                        <asp:Panel runat="server" ID="pnlExpertImageLabel" Visible="false" CssClass="image-label">
-                                            <asp:Literal runat="server" ID="ltExpertType"></asp:Literal>
-                                        </asp:Panel>
-                                    </asp:HyperLink>
-                                </div>
-                                <!-- end .event-card-image -->
-                                <div class="event-card-details col equalize">
-                                    <div class="event-card-title">
-                                        <asp:HyperLink runat="server" ID="hlWebniearDetail">
-                                            <sc:fieldrenderer id="frPageTitle" runat="server" fieldname="Page Title" />
-                                        </asp:HyperLink>
-                                    </div>
-                                    <!-- end .event-card-title -->
-                                    <p class="event-card-topics-head">
-                                        <sc:fieldrenderer id="frHeading" runat="server" fieldname="Heading" />
-                                    </p>
-                                    <p class="event-card-topics">
-                                        <sc:fieldrenderer id="frSubheading" runat="server" fieldname="SubHeading" />
-                                    </p>
-                                    <span class="children-key">
-                                        <ul>
-                                            <li><i class="child-a" title="CHILD NAME HERE"></i></li>
-                                            <li><i class="child-b" title="CHILD NAME HERE"></i></li>
-                                        </ul>
-                                    </span>
-                                </div>
-                                <!-- end .event-card-details -->
-                                <div class="event-card-date-details col equalize">
-                                    <p class="event-type">
-                                        <asp:Literal runat="server" ID="ltEventType"></asp:Literal>
-                                    </p>
-                                    <p class="event-date">
-                                        <asp:Literal runat="server" ID="ltEventDate"></asp:Literal>
-                                    </p>
-                                    <p class="event-date-sub">
-                                        <asp:Literal runat="server" ID="ltEventSubDate"></asp:Literal>
-                                    </p>
-                                </div>
-                                <!-- end .event-card-details -->
-
-                            </div>
-                            <!-- end .event-card-info -->
-                        </div>
-                        <!-- end .event-card -->
-                    </div>
-                   
-                </ItemTemplate>
-            </asp:Repeater>
-            
-            <%--<div class="row">
-                <div class="event-card rs_read_this">
-                    <div class="event-card-info group">
-                        <div class="event-card-image col equalize   ">
-                            <a href="REPLACE">
-                                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                                <span class="visuallyhidden">play button</span>
-                                <div class="image-label">
-                                    Guest Expert
-                       
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end .event-card-image -->
-                        <div class="event-card-details col equalize">
-                            <div class="event-card-title">
-                                <a href="REPLACE">Omnis Amet Enim Ullam Repellendus Pariatur Ea Adipisci Odit Eum</a>
-                            </div>
-                            <!-- end .event-card-title -->
-                            <p class="event-card-topics-head">Top Questions</p>
-                            <p class="event-card-topics">Sint Praesentium Consequatur Voluptatem Voluptatem Tenetur Non Magnam Impedit Id</p>
-                            <span class="children-key">
-                                <ul>
-                                    <li><i class="child-a" title="CHILD NAME HERE"></i></li>
-                                    <li><i class="child-b" title="CHILD NAME HERE"></i></li>
-                                </ul>
-                            </span>
-                        </div>
-                        <!-- end .event-card-details -->
-                        <div class="event-card-date-details col equalize">
-                            <p class="event-type">Chat</p>
-                            <p class="event-date">Sept 30</p>
-                            <p class="event-date-sub">2014</p>
-                        </div>
-                    </div>
-                    <!-- end .event-card-info -->
-                </div>
-                <!-- end .event-card -->
-            </div>--%>
+            <udo:ArchiveListing ID="archiveEvents" runat="server" />
         </div>
         <!-- end .event-cards -->
         <!-- END PARTIAL: community/experts_archive_card -->
-
     </div>
 </div>
 

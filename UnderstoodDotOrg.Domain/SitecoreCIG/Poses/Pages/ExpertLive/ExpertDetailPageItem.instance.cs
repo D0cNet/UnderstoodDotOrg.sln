@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive
 {
@@ -14,5 +15,11 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive
             return IsGuest.Checked 
                         ? DictionaryConstants.GuestExpertLabel : DictionaryConstants.ExpertLabel;
         }
+
+        public string GetThumbnailUrl(int maxWidth, int maxHeight)
+        {
+            return ExpertImage.MediaItem.GetMediaUrlWithFallback(maxWidth, maxHeight);
+        }
+
     }
 }

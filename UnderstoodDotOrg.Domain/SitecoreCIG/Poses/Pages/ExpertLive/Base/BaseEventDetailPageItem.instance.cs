@@ -11,19 +11,6 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
 {
     public partial class BaseEventDetailPageItem 
     {
-        public string GetExpertThumbnailUrl(int maxWidth, int maxHeight)
-        {
-            MediaItem item = null;
-            ExpertDetailPageItem expert = Expert.Item;
-
-            if (expert != null && expert.ExpertImage.MediaItem != null)
-            {
-                item = expert.ExpertImage.MediaItem;
-            }
-
-            return item.GetMediaUrlWithFallback(maxWidth, maxHeight);
-        }
-
         public string GetFormattedEventDate()
         {
             DateTime eventDate = EventDate.DateTime;

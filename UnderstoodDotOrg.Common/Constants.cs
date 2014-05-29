@@ -16,6 +16,7 @@ namespace UnderstoodDotOrg.Common
         public const int TOPIC_LISTING_ARTICLES_PER_PAGE = 6;
         public const int SECTION_LANDING_ARTICLES_PER_ROW = 3;
         public const int SUBTOPIC_LISTING_ARTICLES_PER_PAGE = 9;
+        public const int EVENT_ARCHIVE_ENTRIES_PER_PAGE = 6;
 
         #region Query Strings
 

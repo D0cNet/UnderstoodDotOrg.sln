@@ -13,15 +13,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
     public partial class ArchiveListing {
         
         /// <summary>
-        /// pnlSearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlSearch;
-        
-        /// <summary>
         /// rptFilter control.
         /// </summary>
         /// <remarks>
@@ -58,31 +49,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::System.Web.UI.WebControls.DropDownList ddlTopics;
         
         /// <summary>
-        /// txtSearch control.
+        /// archiveEvents control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSearch;
-        
-        /// <summary>
-        /// btnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
-        
-        /// <summary>
-        /// rptEventCard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptEventCard;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards.EventArchiveListing archiveEvents;
         
         /// <summary>
         /// pnlMoreArticle control.
