@@ -121,6 +121,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         private void ShowQuestionResult()
         {
             pnlResult.Visible = true;
+            btnTrue.Visible = false;
+            btnFalse.Visible = false;
             frExplanation.Item = GenericQuestion;
 
             if (MoreQuestions)
@@ -191,6 +193,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected void btnNextQuestion_Click(object sender, EventArgs e)
         {
             Session["qNum"] = (QuestionNumber + 1);
+            btnTrue.Visible = true;
+            btnFalse.Visible = true;
             Response.Redirect(Request.CurrentExecutionFilePath);
         }
 
