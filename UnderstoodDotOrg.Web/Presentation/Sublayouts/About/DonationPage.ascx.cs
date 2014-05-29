@@ -13,7 +13,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
         }
     }
 }

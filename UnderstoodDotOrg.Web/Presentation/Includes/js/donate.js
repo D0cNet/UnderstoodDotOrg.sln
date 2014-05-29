@@ -3,13 +3,13 @@
         //Constants
         this.requestBaseUrl = "https://secure2.convio.net/ncld/site/CRDonationAPI"
         this.method = "donate";
-        this.apiKey = "XXXXXX";
+        this.apiKey = "ncldopanapi";
         this.apiVersion = "1.0";
         this.responseFormat = "json";
 
         //Convio Form
-        this.convioFormId = "XXXXXX";
-        this.convioDonationLevelId = "XXXXXX";
+        this.convioFormId = "3440";
+        this.convioDonationLevelId = "4361";
 
         //Gift Amount
         this.amount = "";
@@ -58,13 +58,15 @@
             "routing_number": ""
         };
 
-        this.getRequestUrl = function () {
+        this.getRequestData = function () {
             var qs =
 				//Constants
-				"?method=" + this.method +
+				"method=" + this.method +
 				"&api_key=" + this.apiKey +
 				"&v=" + this.apiVersion +
 				"&response_format=" + this.responseFormat +
+                //DEBUGGING ONLY
+                "&df_preview=1" +
 				//Convio Form
 				"&form_id=" + this.convioFormId +
 				"&level_id=" + this.convioDonationLevelId +
@@ -75,8 +77,8 @@
 				//Payment 
 				"&billing.name.first=" + this.billingAddress.name.first +
 				"&billing.name.last=" + this.billingAddress.name.last +
-				"&billing.address.street1=" + this.billingAddress.street1 +
-				"&billing.address.street2=" + this.billingAddress.street2 +
+				"&billing.address.street1=" + this.billingAddress.street.street1 +
+				"&billing.address.street2=" + this.billingAddress.street.street2 +
 				"&billing.address.city=" + this.billingAddress.city +
 				"&billing.address.state=" + this.billingAddress.state +
 				"&billing.address.zip=" + this.billingAddress.zip +
@@ -101,9 +103,8 @@
                 //qs += "&ecard.send=true&"
             }
 
-            var url = this.requestBaseUrl + qs;
-            console.log(url);
-            return url;
+            console.log(qs);
+            return qs;
         };
     };
 
@@ -183,6 +184,8 @@
             donation.checkInfo.routing_number = $("#donate-account-routing").val();
         }
 
-        var requestUrl = donation.getRequestUrl();
+        var requestData = donation.getRequestData();
+        $.post(donation.requestBaseUrl, requestData, function (data) { console.log(data) });
     });
 });
+
