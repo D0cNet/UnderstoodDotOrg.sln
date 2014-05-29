@@ -9,8 +9,19 @@
 <%@ Import Namespace="Sitecore.Collections" %>
 <%@ Import Namespace="Sitecore.Data.Items" %>
 <%@ Import Namespace="Telerik.Web.UI" %>
+
 <script runat="server">
-    
+
+    public IEnumerable<TSource> DistinctBy<TSource, TKey>
+              (IEnumerable<TSource> source, Func<TSource, TKey> keySelector) {
+        HashSet<TKey> seenKeys = new HashSet<TKey>();
+        foreach (TSource element in source) {
+            if (seenKeys.Add(keySelector(element))) {
+                yield return element;
+            }
+        }
+    }
+
     string templateId = string.Empty;
     List<Item> _realItems = new List<Item>();
     List<Item> _realItemsWithAllVersions = new List<Item>();
@@ -124,7 +135,7 @@
         }
 
         if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && GetCloneItems(child).Count() > 0) {
-            var cloneItems = GetCloneItems(child).DistinctBy(x => x.ID.ToString());
+            var cloneItems = DistinctBy(GetCloneItems(child), x => x.ID.ToString());
             foreach (var itm in cloneItems) {
                 _cloneItems.Add(itm);
                 LanguageCollection collection = Sitecore.Data.Managers.ItemManager.GetContentLanguages(itm);
@@ -208,8 +219,8 @@
                 <h2 id="realH2Tag" runat="server" visible="false">Real Items Are:</h2>
                 <br />
                 <telerik:RadGrid ID="RadTreeListRealItems" runat="server" AllowSorting="True">
-                    <MasterTableView AutoGenerateColumns="false" IsFilterItemExpanded="false" EditMode="InPlace"
-                        AllowFilteringByColumn="True" ShowFooter="True" TableLayout="Auto" AllowAutomaticDeletes="true" AllowAutomaticInserts="true" AllowAutomaticUpdates="true">
+                    <mastertableview autogeneratecolumns="false" isfilteritemexpanded="false" editmode="InPlace"
+                        allowfilteringbycolumn="True" showfooter="True" tablelayout="Auto" allowautomaticdeletes="true" allowautomaticinserts="true" allowautomaticupdates="true">
                         <Columns>
                             <telerik:GridEditCommandColumn UniqueName="EditCommandColumn1" Visible="false"></telerik:GridEditCommandColumn>
                             <telerik:GridTemplateColumn UniqueName="TemplateColumn1" HeaderText="Serial No">
@@ -230,7 +241,7 @@
                                 UniqueName="Path1" PickerType="None" DataFormatString="{0:D}">
                             </telerik:GridDateTimeColumn>
                         </Columns>
-                    </MasterTableView>
+                    </mastertableview>
                 </telerik:RadGrid>
 
                 <br />
@@ -239,8 +250,8 @@
                 <h2 id="cloneH2Tag" runat="server" visible="false">Clone Items Are:</h2>
                 <br />
                 <telerik:RadGrid ID="RadTreeListCloneItems" runat="server" AllowSorting="True">
-                    <MasterTableView AutoGenerateColumns="false" IsFilterItemExpanded="false" EditMode="InPlace"
-                        AllowFilteringByColumn="True" ShowFooter="True" TableLayout="Auto" AllowAutomaticDeletes="true" AllowAutomaticInserts="true" AllowAutomaticUpdates="true">
+                    <mastertableview autogeneratecolumns="false" isfilteritemexpanded="false" editmode="InPlace"
+                        allowfilteringbycolumn="True" showfooter="True" tablelayout="Auto" allowautomaticdeletes="true" allowautomaticinserts="true" allowautomaticupdates="true">
                         <Columns>
                             <telerik:GridEditCommandColumn UniqueName="EditCommandColumn2" Visible="false"></telerik:GridEditCommandColumn>
                             <telerik:GridTemplateColumn UniqueName="TemplateColumn2" HeaderText="Serial No">
@@ -261,7 +272,7 @@
                                 UniqueName="Path2" PickerType="None" DataFormatString="{0:D}">
                             </telerik:GridDateTimeColumn>
                         </Columns>
-                    </MasterTableView>
+                    </mastertableview>
                 </telerik:RadGrid>
 
             </telerik:radajaxpanel>

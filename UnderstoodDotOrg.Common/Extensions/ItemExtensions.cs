@@ -196,7 +196,6 @@ namespace UnderstoodDotOrg.Common.Extensions
         /// </returns>
         public static List<Item> ChildrenByTemplates(this Item Parent, List<string> Templatenames)
         {
-
             try
             {
                 return (from child in Parent.GetChildren().ToArray()
@@ -206,15 +205,6 @@ namespace UnderstoodDotOrg.Common.Extensions
             catch (Exception ex)
             {
                 return null;
-            }
-        }
-        public static IEnumerable<TSource> DistinctBy<TSource, TKey>
-                  (this IEnumerable<TSource> source, Func<TSource, TKey> keySelector) {
-            HashSet<TKey> seenKeys = new HashSet<TKey>();
-            foreach (TSource element in source) {
-                if (seenKeys.Add(keySelector(element))) {
-                    yield return element;
-                }
             }
         }
     }

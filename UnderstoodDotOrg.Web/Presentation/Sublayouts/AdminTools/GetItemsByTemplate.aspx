@@ -11,7 +11,9 @@
 
 <script runat="server">
     
-
+    StringBuilder sb = null;
+    int count = 0;
+    string Key = string.Empty;
     string templateId = string.Empty;
     List<Item> _realItems = new List<Item>();
     List<Item> _cloneItems = new List<Item>();
@@ -49,36 +51,33 @@
         }
         if (_realItems.Any()) {
             ltItemsCount.Text = "Real Items Count - " + _realItems.Count().ToString();
-            rptItems.Visible = true;
-            
-            rptItems.DataSource = _realItems;
-            rptItems.DataBind();
+            RadTreeListRealItems.Visible = true;
         }
         else {
-            rptItems.Visible = false;
+            RadTreeListRealItems.Visible = false;
             ltItemsCount.Text = "No Results Found";
-            rptItems.Visible = false;
         }
 
         if (_cloneItems.Any()) {
             ltItemsCount.Text += "<br>Clone Items Count - " + _cloneItems.Count().ToString();
-           
-            rptCloneItems.Visible = true;
-            rptCloneItems.DataSource = _cloneItems;
-            rptCloneItems.DataBind();
+            RadTreeListCloneItems.Visible = true;
         }
         else {
-            rptCloneItems.Visible = false;
+            RadTreeListCloneItems.Visible = false;
         }
     }
 
+    /// <summary>
+    /// On submit button click
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void btnSubmit_OnClick(object sender, EventArgs e) {
         if (rbtLstOptions.SelectedItem != null && !rbtLstOptions.SelectedItem.ToString().IsNullOrEmpty()) {
             templateId = rbtLstOptions.SelectedValue.ToString();
             GetAllSitecoreItem();
         }
     }
-
 
     /// <summary>
     /// Recursive method to iterate through all child items and build
@@ -103,47 +102,43 @@
 
         if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && child.Source == null) {
             _realItems.Add(child);
+            RadTreeListRealItems.DataSource = _realItems;
+            RadTreeListRealItems.Columns.FindByUniqueName("CloneName1").CurrentFilterValue = GetCloneItems(child).Count().ToString();
+            RadTreeListRealItems.DataBind();
+            RadTreeListRealItems.AllowSorting = true;
         }
         if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && GetCloneItems(child).Count() > 0) {
             var cloneItems = GetCloneItems(child);
             foreach (var itm in cloneItems) {
                 _cloneItems.Add(itm);
-            }
-        }
-    }
-    protected void rptItems_ItemDataBound(object sender, RepeaterItemEventArgs e) {
-        if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem) {
-            Item itm = e.Item.DataItem as Item;
-            if (itm != null) {
-                Literal ltItemName = (Literal)e.Item.FindControl("ltItemName");
-                Literal ltTemplate = (Literal)e.Item.FindControl("ltTemplate");
-                Literal ltPath = (Literal)e.Item.FindControl("ltPath");
-                Literal litUrl = (Literal)e.Item.FindControl("litUrl");
-                Literal ltClonesCount = (Literal)e.Item.FindControl("ltClonesCount");
-
-                if (ltItemName != null) {
-                    ltItemName.Text = itm.Name + "<br/>" + itm.ID.ToString();
-
-                }
-                if (litUrl != null) {
-                    litUrl.Text = itm.Paths.ContentPath.ToString();
-                }
-                if (ltTemplate != null) {
-                    ltTemplate.Text = itm.TemplateName;
-
-                }
-
-                if (ltPath != null) {
-                    ltPath.Text = Sitecore.Links.LinkManager.GetItemUrl(itm);
-                }
-
-                if (ltClonesCount != null) {
-                    ltClonesCount.Text = GetCloneItems(itm).Count().ToString();
-                }
+                RadTreeListCloneItems.DataSource = _cloneItems;
+                RadTreeListCloneItems.DataBind();
+                RadTreeListCloneItems.AllowSorting = true;
             }
         }
     }
 
+    //protected void trReport_Sorting(object source, Telerik.Web.UI.GridSortCommandEventArgs e)
+    //{
+    //    //Default sort order Descending
+
+    //    if (!e.Item.OwnerTableView.SortExpressions.ContainsExpression(e.SortExpression))
+    //    {
+    //        GridSortExpression sortExpr = new GridSortExpression();
+    //        sortExpr.FieldName = e.SortExpression;
+    //        sortExpr.SortOrder = GridSortOrder.Ascending;
+
+    //        e.Item.OwnerTableView.SortExpressions.AddSortExpression(sortExpr);
+    //    }
+
+    //}
+
+    protected override void OnPreRender(EventArgs e) {
+        base.OnPreRender(e);
+        this.RadTreeListRealItems.DataBind();
+        this.RadTreeListCloneItems.DataBind();
+    }
+   
 </script>
 
 <!DOCTYPE html>
@@ -184,92 +179,57 @@
         <br />
 
         <div>
-            <asp:Repeater ID="rptItems" runat="server" OnItemDataBound="rptItems_ItemDataBound">
+            <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanel1">
+                <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
+                <telerik:RadGrid ID="RadTreeListRealItems" runat="server" AllowSorting="True">
+                    <MasterTableView AutoGenerateColumns="false" IsFilterItemExpanded="false" EditMode="InPlace"
+                        AllowFilteringByColumn="True" ShowFooter="True" TableLayout="Auto" AllowAutomaticDeletes="true" AllowAutomaticInserts="true" AllowAutomaticUpdates="true">
+                        <Columns>
+                            <telerik:GridEditCommandColumn UniqueName="EditCommandColumn1" Visible="false"></telerik:GridEditCommandColumn>
+                            <telerik:GridNumericColumn DataField="ID" HeaderText="Display Name" SortExpression="DisplayName"
+                                UniqueName="DisplayName1" ReadOnly="true">
+                            </telerik:GridNumericColumn>
+                            <telerik:GridBoundColumn DataField="Key" HeaderText="Key" SortExpression="Key"
+                                UniqueName="Key1">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridDateTimeColumn DataField="TemplateName" HeaderText="Template Name" SortExpression="TemplateName"
+                                UniqueName="TemplateName1" PickerType="None" DataFormatString="{0:d}">
+                            </telerik:GridDateTimeColumn>
+                            <telerik:GridDateTimeColumn DataField="Name" HeaderText="Name" SortExpression="Name"
+                                UniqueName="Name1" PickerType="None" DataFormatString="{0:D}">
+                            </telerik:GridDateTimeColumn>
+                            <telerik:GridDateTimeColumn HeaderText="Clones Count" 
+                                UniqueName="CloneName1" PickerType="None" DataFormatString="{0:D}">
+                            </telerik:GridDateTimeColumn>
+                        </Columns>
+                    </MasterTableView>
+                </telerik:RadGrid>
 
-                <HeaderTemplate>
-                    <h2>Real Items Are:</h2>
-                    <br />
-                    <table style="border: 1px Black solid">
-                        <thead>
-                            <tr>
-                                <td style="border: 1px Black solid">Item Name
-                                </td>
-                                <td style="border: 1px Black solid">Template
-                                </td>
-                                <td style="border: 1px Black solid">Path
-                                </td>
-                                <td style="border: 1px Black solid">URl
-                                </td>
-                                <td style="border: 1px Black solid">Clone Count
-                                </td>
-                            </tr>
-                        </thead>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <tr>
-                        <td style="border: 1px Black solid">
-                            <asp:Literal ID="ltItemName" runat="server"></asp:Literal>
-                        </td>
-                        <td style="border: 1px Black solid">
-                            <asp:Literal ID="ltTemplate" runat="server"></asp:Literal>
-                        </td>
-                        <td style="border: 1px Black solid">
-                            <asp:Literal ID="ltPath" runat="server"></asp:Literal>
-                        </td>
-                        <td style="border: 1px Black solid">
-                            <asp:Literal ID="litUrl" runat="server"></asp:Literal>
-                        </td>
-                        <td style="border: 1px Black solid">
-                            <asp:Literal ID="ltClonesCount" runat="server"></asp:Literal>
-                        </td>
-                    </tr>
-                </ItemTemplate>
-                <FooterTemplate>
-                    </table>
-                </FooterTemplate>
-            </asp:Repeater>
+                <telerik:RadGrid ID="RadTreeListCloneItems" runat="server" AllowSorting="True">
+                    <MasterTableView AutoGenerateColumns="false" IsFilterItemExpanded="false" EditMode="InPlace"
+                        AllowFilteringByColumn="True" ShowFooter="True" TableLayout="Auto" AllowAutomaticDeletes="true" AllowAutomaticInserts="true" AllowAutomaticUpdates="true">
+                        <Columns>
+                            <telerik:GridEditCommandColumn UniqueName="EditCommandColumn2" Visible="false"></telerik:GridEditCommandColumn>
+                            <telerik:GridNumericColumn DataField="ID" HeaderText="Display Name" SortExpression="DisplayName"
+                                UniqueName="DisplayName2" ReadOnly="true">
+                            </telerik:GridNumericColumn>
+                            <telerik:GridBoundColumn DataField="Key" HeaderText="Key" SortExpression="Key"
+                                UniqueName="Key2">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridDateTimeColumn DataField="TemplateName" HeaderText="Template Name" SortExpression="TemplateName"
+                                UniqueName="TemplateName2" PickerType="None" DataFormatString="{0:d}">
+                            </telerik:GridDateTimeColumn>
+                            <telerik:GridDateTimeColumn DataField="Name" HeaderText="Name" SortExpression="Name"
+                                UniqueName="Name2" PickerType="None" DataFormatString="{0:D}">
+                            </telerik:GridDateTimeColumn>
+                            <telerik:GridDateTimeColumn HeaderText="Clones Count" 
+                                UniqueName="CloneName2" PickerType="None" DataFormatString="{0:D}">
+                            </telerik:GridDateTimeColumn>
+                        </Columns>
+                    </MasterTableView>
+                </telerik:RadGrid>
 
-            <br />
-
-            <asp:Repeater ID="rptCloneItems" runat="server" OnItemDataBound="rptItems_ItemDataBound">
-
-                <HeaderTemplate>
-                    <h2>Clone Items Are:</h2>
-                    <br />
-                    <table style="border: 1px Black solid">
-                        <thead>
-                            <tr>
-                                <td style="border: 1px Black solid">Item Name
-                                </td>
-                                <td style="border: 1px Black solid">Template
-                                </td>
-                                <td style="border: 1px Black solid">Path
-                                </td>
-                                <td style="border: 1px Black solid">URl
-                                </td>
-                            </tr>
-                        </thead>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <tr>
-                        <td style="border: 1px Black solid">
-                            <asp:Literal ID="ltItemName" runat="server"></asp:Literal>
-                        </td>
-                        <td style="border: 1px Black solid">
-                            <asp:Literal ID="ltTemplate" runat="server"></asp:Literal>
-                        </td>
-                        <td style="border: 1px Black solid">
-                            <asp:Literal ID="ltPath" runat="server"></asp:Literal>
-                        </td>
-                        <td style="border: 1px Black solid">
-                            <asp:Literal ID="litUrl" runat="server"></asp:Literal>
-                        </td>
-                    </tr>
-                </ItemTemplate>
-                <FooterTemplate>
-                    </table>
-                </FooterTemplate>
-            </asp:Repeater>
+            </telerik:RadAjaxPanel>
         </div>
     </form>
 </body>
