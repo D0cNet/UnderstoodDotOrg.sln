@@ -1,4 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DonationPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.About.DonationPage" %>
+<input type="hidden" id="hfDonationApiKey" value="<%= Model.ConvioDonationAPIKey.Rendered %>" />
+<input type="hidden" id="hfDonationFormId" value="<%= Model.ConvioDonationFormID.Rendered %>" />
+<input type="hidden" id="hfDonationLevelId" value="<%= Model.ConvioDonationLevelID.Rendered %>" />
+<input type="hidden" id="hfDonationSuccessUrl" value="<%= ThankYouPageUrl %>" />
 <div class="container flush donate-create-wrap">
     <div class="row">
         <div class="col col-24 skiplink-content" aria-role="main" aria-role="main">

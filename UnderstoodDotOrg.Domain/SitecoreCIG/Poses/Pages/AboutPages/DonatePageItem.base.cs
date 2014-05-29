@@ -109,6 +109,15 @@ public CustomTextField GiftforSomeoneHeader
 }
 
 
+public CustomTextField ConvioDonationAPIKey
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Convio Donation API Key"]);
+	}
+}
+
+
 public CustomTextField RecurringGiftHeader
 {
 	get
