@@ -34,6 +34,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
         public string Issue { get; set; }
         public string Grade { get; set; }
         public string Topic { get; set; }
+        public string AjaxEndpoint
+        {
+            get { return Sitecore.Configuration.Settings.GetSetting("EventArchiveEndpoint"); }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {

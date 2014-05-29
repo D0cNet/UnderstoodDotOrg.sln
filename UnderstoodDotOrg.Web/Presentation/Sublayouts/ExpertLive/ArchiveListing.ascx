@@ -13,7 +13,7 @@
 
     <div class="event-cards-container">
         <!-- BEGIN PARTIAL: community/experts_archive_card -->
-        <div class="event-cards">
+        <div id="event-archive-results" class="event-cards">
             <udo:ArchiveListing ID="archiveEvents" runat="server" />
         </div>
         <!-- end .event-cards -->
@@ -28,7 +28,7 @@
 <asp:Panel ID="pnlMoreArticle" runat="server" ClientIDMode="Static"  CssClass="container show-more rs_skip" Visible="false">
     <div class="row">
         <div class="col col-24">
-            <a class="show-more-link " id="archivelisting" href="#" data-path="community/event-cards" data-container="event-cards-container" data-item="event-cards" data-count="4">Show More<i class="icon-arrow-down-blue"></i></a>
+            <a id="event-archive-show-more" href="#" data-path="<%= AjaxEndpoint %>" data-container="event-archive-results" data-topic="<%= Topic %>" data-issue="<%= Issue %>" data-grade="<%= Grade %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>
         </div>
     </div>
 </asp:Panel>
@@ -76,11 +76,5 @@
         </div>
     </div>
 </div>
-<asp:HiddenField runat="server" ID="hfTopic" ClientIDMode="Static" />
-<asp:HiddenField runat="server" ID="hfGrade" ClientIDMode="Static" />
-<asp:HiddenField runat="server" ID="hfChildIssue" ClientIDMode="Static" />
-<asp:HiddenField runat="server" ID="hfSearchKey" ClientIDMode="Static" />
-<asp:HiddenField runat="server" ID="hfResultsPerClick" ClientIDMode="Static" />
-<asp:HiddenField runat="server" ID="hfGUID" ClientIDMode="Static" />
 
 <!-- END PARTIAL: community/experts_suggest_webinar -->

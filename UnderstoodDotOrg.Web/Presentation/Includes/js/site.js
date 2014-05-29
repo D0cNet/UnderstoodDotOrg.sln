@@ -778,39 +778,7 @@ U.articleListing = function () {
 
 };
 
-U.archiveEventListing = function () {
-    /*View more article*/
-    var vcount = 1;
-    $('#archivelisting').click(function () {
-        var itemId = $('#hfGUID').val();
-        var searchkey = $('#hfSearchKey').val();
-        var topic = $('#hfTopic').val();
-        var issue = $('#hfChildIssue').val();
-        var grade = $('#hfGrade').val();
-        var resultsPerClick = $('#hfResultsPerClick').val();
 
-        var getQuery = '/Presentation/AjaxData/ArchiveEvents.aspx?' + 'q=' + searchkey + "&itemid=" + itemId + "&grade=" + grade + "&issue=" + issue + "&topic=" + topic + "&count=" + vcount + "&rpc=" + resultsPerClick;
-
-        $.ajax({
-
-            cache: false, url: getQuery,
-            success: function (data) {
-                try {
-                   
-                    $('.event-cards').append(data);
-                    
-                    if ($(data).filter("#lblmoreArticle").html() == "false") {
-                        $('#pnlMoreArticle').hide();
-                    }
-                    vcount = vcount + 1;
-                }
-                catch (ex)
-                { }
-            }
-        });
-        return false;
-    });
-};
 
 U.expertListing = function () {
     /*View more article*/
@@ -866,7 +834,6 @@ $(document).ready(function () {
 
     //var articleListing = new U.articleListing();
     var expertListing = new U.expertListing();
-    var archiveEventListing = new U.archiveEventListing();
     //new U.readSpeaker().init();
 
     // input placeholder fix for IE

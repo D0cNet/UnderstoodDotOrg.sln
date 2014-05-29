@@ -13,21 +13,21 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
     public partial class ArchiveEvents {
         
         /// <summary>
-        /// rptEventCard control.
+        /// eventListing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptEventCard;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards.EventArchiveListing eventListing;
         
         /// <summary>
-        /// lblmoreArticle control.
+        /// phMoreResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblmoreArticle;
+        protected global::System.Web.UI.WebControls.PlaceHolder phMoreResults;
     }
 }
