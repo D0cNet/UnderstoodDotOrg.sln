@@ -14,6 +14,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public DateTime CreatedDate { get; set; }
         
         public List<Message> Messages { get; set; }
+        public Message FirstMessage { get; set; }
         public List<MemberCardModel> Participants { get; set; }
         public Boolean HasMessages { get { return (Messages !=null && Messages.Count >0); } }
         public Conversation(XmlNode node)
@@ -25,7 +26,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
                     Messages = TelligentService.TelligentService.GetMessages( ID);
                    // var users = from u in node.SelectSingleNode("Participants").SelectNodes("User")
                     //            select new MemberCardModel(u.
-
+                    FirstMessage = new Message(node.SelectSingleNode("FirstMessage"));    
                     
                     }
             }

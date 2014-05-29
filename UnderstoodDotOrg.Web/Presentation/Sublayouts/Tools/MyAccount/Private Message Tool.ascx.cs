@@ -84,10 +84,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                     {
                         //Get the latest message
                         Message m = item.Messages.OrderByDescending(x => x.CreatedDate).First();
-
+                        ///messages.Add(item.FirstMessage);
                         messages.Add(m);
 
                         m = null;
+                    }
+                    else
+                    {
+                        messages.Add(item.FirstMessage);
                     }
                 }
 

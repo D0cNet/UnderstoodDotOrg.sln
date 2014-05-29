@@ -20,6 +20,10 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public DateTime CreatedDate { get; set; }
         public string HowLong { get; set; }
         public string Time { get; set; }
+        public Message ()
+        {
+            
+        }
         public Message(XmlNode node)
         {
             if (node != null)
