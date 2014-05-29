@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DonationConfirmationPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.About.DonationConfirmationPage" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="container flush l-about-hero-intro l-thank-you-intro skiplink-content" aria-role="main">
     <!-- This is a shared module -->
     <!-- BEGIN PARTIAL: about/about-hero-image -->
@@ -11,8 +12,8 @@
                 <div class="row">
                     <div class="col col-24">
                         <div class="text-wrap rs_read_this">
-                            <h1>Thank you for being so generous!</h1>
-                            <h2>Each donation makes a difference.</h2>
+                            <h1><sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" /></h1>
+                            <h2><sc:FieldRenderer ID="frPageSummary" runat="server" FieldName="Page Summary" /></h2>
                         </div>
                     </div>
                 </div>
