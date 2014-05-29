@@ -13,7 +13,7 @@
             <div class="knowledge-quiz">
                 <div class="question-counter">
                     <asp:Label ID="lblPageCounter" runat="server"></asp:Label>
-                    <asp:Literal ID="litTextResults" runat="server" Visible="false">Your childs learnng style is...</asp:Literal>
+                    <sc:FieldRenderer ID="frResultHeadline" runat="server" FieldName="Quiz Result Headline" Visible="false"></sc:FieldRenderer>
                     <%--Question 1 of 10--%>
                 </div>
                 <p class="explanation">

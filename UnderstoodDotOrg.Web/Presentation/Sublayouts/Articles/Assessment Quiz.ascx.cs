@@ -87,7 +87,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             lblPageCounter.Visible = false;
             btnPrevPage.Visible = false;
 
-            litTextResults.Visible = true;
+            frResultHeadline.Visible = true;
 
             Item resultsFolder = PageResources.Children.Where(i => i.IsOfType(AssessmentQuizResultsFolderItem.TemplateId)).FirstOrDefault();
 
