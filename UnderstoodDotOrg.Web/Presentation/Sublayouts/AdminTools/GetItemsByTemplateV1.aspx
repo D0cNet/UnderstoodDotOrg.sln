@@ -6,7 +6,6 @@
 <%@ Import Namespace="System.Linq" %>
 <%@ Import Namespace="System.Text" %>
 <%@ Import Namespace="UnderstoodDotOrg.Common.Extensions" %>
-
 <%@ Import Namespace="Sitecore.Collections" %>
 <%@ Import Namespace="Sitecore.Data.Items" %>
 <%@ Import Namespace="Telerik.Web.UI" %>
@@ -42,7 +41,7 @@
     }
 
     private void GetItems(Item siteItem) {
-        ChildList childList = siteItem.Children;
+        var childList = siteItem.Children;
         Item root;
         foreach (Item child in childList) {
             AddRequiredItem(child);
@@ -114,23 +113,25 @@
             LanguageCollection collection = Sitecore.Data.Managers.ItemManager.GetContentLanguages(child);
             foreach (var lang in collection) {
                 var itm = Sitecore.Data.Database.GetDatabase("master").GetItem(child.ID, lang);
+
                 if (itm.Versions.Count > 0) {
-                    _realItemsWithAllVersions.Add(child);
+                    _realItemsWithAllVersions.Add(itm);
                 }
             }
             RadTreeListRealItems.DataSource = _realItemsWithAllVersions;
             RadTreeListRealItems.DataBind();
             RadTreeListRealItems.AllowSorting = true;
         }
+
         if (child.TemplateID.ToString().ToLower().Equals(templateId.ToLower()) && GetCloneItems(child).Count() > 0) {
-            var cloneItems = GetCloneItems(child);
+            var cloneItems = GetCloneItems(child).DistinctBy(x => x.ID.ToString());
             foreach (var itm in cloneItems) {
                 _cloneItems.Add(itm);
                 LanguageCollection collection = Sitecore.Data.Managers.ItemManager.GetContentLanguages(itm);
                 foreach (var lang in collection) {
                     var cloneItem = Sitecore.Data.Database.GetDatabase("master").GetItem(itm.ID, lang);
                     if (cloneItem.Versions.Count > 0) {
-                        _cloneItemsWithAllVersions.Add(itm);
+                        _cloneItemsWithAllVersions.Add(cloneItem);
                     }
                 }
                 RadTreeListCloneItems.DataSource = _cloneItemsWithAllVersions;
@@ -201,7 +202,7 @@
         <br />
 
         <div>
-            <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanel1">
+            <telerik:radajaxpanel runat="server" id="RadAjaxPanel1">
                 <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
 
                 <h2 id="realH2Tag" runat="server" visible="false">Real Items Are:</h2>
@@ -216,13 +217,13 @@
                                     <%#Container.DataSetIndex+1%>
                                 </ItemTemplate>
                             </telerik:GridTemplateColumn>
-                            <telerik:GridBoundColumn DataField="Fields['Page Title']" HeaderText="Page Title" SortExpression="Fields['Page Title']"
-                                UniqueName="PageTitle1" ReadOnly="true" Visible="true">
-                            </telerik:GridBoundColumn>
                             <telerik:GridDateTimeColumn DataField="DisplayName" HeaderText="Display Name" SortExpression="DisplayName"
                                 UniqueName="DisplayName1" PickerType="None" DataFormatString="{0:d}">
                             </telerik:GridDateTimeColumn>
-                            <telerik:GridBoundColumn DataField="ID" HeaderText="Item IDs" SortExpression="ID" Visible="true"
+                            <telerik:GridBoundColumn DataField="Fields['Page Title']" HeaderText="Page Title" SortExpression="Fields['Page Title']"
+                                UniqueName="PageTitle1" ReadOnly="true" Visible="true" AllowSorting="false">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="ID" HeaderText="Item IDs" SortExpression="ID" Visible="true" AllowSorting="false"
                                 UniqueName="ItemID1" ReadOnly="true">
                             </telerik:GridBoundColumn>
                             <telerik:GridDateTimeColumn DataField="Paths.ContentPath" HeaderText="Path" SortExpression="Paths.ContentPath"
@@ -247,13 +248,13 @@
                                     <%#Container.DataSetIndex+1%>
                                 </ItemTemplate>
                             </telerik:GridTemplateColumn>
-                            <telerik:GridBoundColumn DataField="Fields['Page Title']" HeaderText="Page Title" SortExpression="Fields['Page Title']"
-                                UniqueName="PageTitle2" ReadOnly="true" Visible="true">
-                            </telerik:GridBoundColumn>
                             <telerik:GridDateTimeColumn DataField="DisplayName" HeaderText="Display Name" SortExpression="DisplayName"
                                 UniqueName="DisplayName2" PickerType="None" DataFormatString="{0:d}">
                             </telerik:GridDateTimeColumn>
-                            <telerik:GridBoundColumn DataField="ID" HeaderText="Item IDs" SortExpression="ID" Visible="true"
+                            <telerik:GridBoundColumn DataField="Fields['Page Title']" HeaderText="Page Title" SortExpression="Fields['Page Title']"
+                                UniqueName="PageTitle2" ReadOnly="true" Visible="true" AllowSorting="false">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="ID" HeaderText="Item IDs" SortExpression="ID" Visible="true" AllowSorting="false"
                                 UniqueName="ItemID2" ReadOnly="true">
                             </telerik:GridBoundColumn>
                             <telerik:GridDateTimeColumn DataField="Paths.ContentPath" HeaderText="Path" SortExpression="Paths.ContentPath"
@@ -263,7 +264,7 @@
                     </MasterTableView>
                 </telerik:RadGrid>
 
-            </telerik:RadAjaxPanel>
+            </telerik:radajaxpanel>
         </div>
     </form>
 </body>
