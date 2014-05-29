@@ -55,6 +55,15 @@ public CustomCheckboxField IsDropDownList
 }
 
 
+public CustomTextField DropDownDefaultText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Drop Down Default Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

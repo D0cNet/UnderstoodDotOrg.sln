@@ -279,7 +279,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     if (Question.IsDropDownList.Checked)
                     {
                         ddlQuestion.Attributes.Add("data-id", question.ID.ToString());
-                        ddlQuestion.Items.Add(new ListItem(""));
+                        ddlQuestion.Items.Add(new ListItem(Question.DropDownDefaultText));
 
                         foreach (Item i in Question.InnerItem.Children)
                         {
@@ -290,6 +290,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         {
                             ddlQuestion.Items.FindByText(AnswerTracker[question.ID.ToString()].Answer).Selected = true;
                         }
+
+                        ddlQuestion.Items.FindByText(Question.DropDownDefaultText).Value = "";
 
                         pnlDropDown.Visible = true;
                     }
