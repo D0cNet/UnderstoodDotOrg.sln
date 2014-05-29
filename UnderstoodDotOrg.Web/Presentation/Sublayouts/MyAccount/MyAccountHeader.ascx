@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MyAccountHeader.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.MyAccountHeader" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+<%@ Register Src="~/Presentation/Sublayouts/Tools/MyAccount/Private Message Tool.ascx" TagPrefix="uc1" TagName="PrivateMessageTool" %>
+
 <%@ Import Namespace="UnderstoodDotOrg.Common.Extensions" %>
 <div class="container">
     <div class="row back-to-previous-nav">
@@ -26,7 +28,7 @@
             <div class="account-links">
                 <a class="profile-link button" href="<%= MyProfilePage.GetUrl() %>"><%= MyProfilePage.MyAccountBase.ContentPage.BasePageNEW.NavigationTitle.Rendered %></a>
                 <span class="button-wrapper">
-                    <a class="notifications-link button" href="REPLACE">Notifications<span class="notification-count">3</span></a>
+                    <a class="notifications-link button" href="/My Account/My Notifications/Private Message Tool.aspx">Notifications<span class="notification-count">3</span></a>
                 </span>
             </div>
         </div>
