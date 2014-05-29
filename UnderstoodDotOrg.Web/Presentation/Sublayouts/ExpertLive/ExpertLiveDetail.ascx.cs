@@ -40,34 +40,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
         {
             BindEvents();
 
-            // TODO: create constants for query string vars
-            
-            string featured = HttpHelper.GetQueryString("featured");
-            Issue = HttpHelper.GetQueryString("issue").Trim();
-            Grade = HttpHelper.GetQueryString("grade").Trim();
-            Topic = HttpHelper.GetQueryString("topic").Trim();
+            string featured = HttpHelper.GetQueryString(Constants.EVENT_FEATURED_FILTER_QUERY_STRING);
+            Issue = HttpHelper.GetQueryString(Constants.EVENT_ISSUE_FILTER_QUERY_STRING).Trim();
+            Grade = HttpHelper.GetQueryString(Constants.EVENT_GRADE_FILTER_QUERY_STRING).Trim();
+            Topic = HttpHelper.GetQueryString(Constants.EVENT_TOPIC_FILTER_QUERY_STRING).Trim();
 
             IsFeatured = featured.ToLower() == "true";
-            
-            if (!IsPostBack)
-            {
-                FillFilterOptions();
-
-                SetSelectedState(ddlIssue, Issue);
-                SetSelectedState(ddlGrade, Grade);
-                SetSelectedState(ddlTopics, Topic);
-            }
-
-            ExpertliveFilterFolderItem expertLiveFilterFolder = GetExpertLiveFilterFolder();
-            if (expertLiveFilterFolder != null)
-            {
-                var result = GetNavigationLinkItem(expertLiveFilterFolder);
-                if (result != null && result.Any())
-                {
-                    rptFilter.DataSource = result;
-                    rptFilter.DataBind();
-                }
-            }
 
             PopulateUpcomingEvents();
         }
@@ -102,77 +80,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
                 rptUpcomingWebinars.DataBind();
             }
         }
-
-        private void SetSelectedState(DropDownList ddl, string value)
-        {
-            if (!String.IsNullOrEmpty(value))
-            {
-                ListItem li = ddl.Items.FindByValue(value);
-                if (li != null)
-                {
-                    li.Selected = true;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets expert live filter folder
-        /// </summary>
-        /// <returns></returns>
-        public static ExpertliveFilterFolderItem GetExpertLiveFilterFolder() 
-        {
-            MainsectionItem objSiteItem = MainsectionItem.GetSiteRoot();
-            ExpertliveFilterFolderItem objExpertliveFilterFolderItem = null;
-            if (objSiteItem != null) 
-            {
-                GlobalsItem objGlobalItem = MainsectionItem.GetGlobals();
-                if (objGlobalItem != null) 
-                {
-                   MetadataFolderFolderItem metaDataFolder = objGlobalItem.GetMetaDataFolder();
-                   if (metaDataFolder != null) 
-                   {
-                       objExpertliveFilterFolderItem = metaDataFolder.GetExpertliveFilterFolder();
-                   }
-                }
-            }
-            return objExpertliveFilterFolderItem;
-        }
-
-        private IEnumerable<NavigationLinkItem> GetNavigationLinkItem(ExpertliveFilterFolderItem expertLiveFolder) 
-        {
-            return expertLiveFolder.InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(NavigationLinkItem.TemplateId)).Select(i => (NavigationLinkItem)i);
-        }
-
-        private void FillFilterOptions() 
-        {
-            var childIssues = FormHelper.GetIssues(DictionaryConstants.ChildIssueLabel);
-            var grades = FormHelper.GetGrades(DictionaryConstants.GradeLabel);
-            var topics = FormHelper.GetParentInterests(DictionaryConstants.TopicLabel);
-
-            // TODO: refactor to function
-            if (childIssues.Any()) 
-            {
-                ddlIssue.DataSource = childIssues;
-                ddlIssue.DataTextField = "Text";
-                ddlIssue.DataValueField = "Value";
-                ddlIssue.DataBind();
-            }
-            if (grades.Any()) 
-            {
-                ddlGrade.DataSource = grades;
-                ddlGrade.DataTextField = "Text";
-                ddlGrade.DataValueField = "Value";
-                ddlGrade.DataBind();
-            }
-            if (topics.Any()) 
-            {
-                ddlTopics.DataSource = topics;
-                ddlTopics.DataTextField = "Text";
-                ddlTopics.DataValueField = "Value";
-                ddlTopics.DataBind();
-            }
-        }
-
         
         protected void rptUpcomingWebinars_ItemDataBound(object sender, RepeaterItemEventArgs e) 
         {
@@ -194,39 +101,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
                 Sublayout slExpertChat = e.FindControlAs<Sublayout>("slExpertChat");
                 slExpertChat.DataSource = item.ID.ToString();
             }
-        }
-
-        protected void rptFilter_ItemDataBound(object sender, RepeaterItemEventArgs e) 
-        {
-            if (e.IsItem()) 
-            {
-                NavigationLinkItem navItem = e.Item.DataItem as NavigationLinkItem;
-
-                if (navItem != null) 
-                {
-                    FieldRenderer frLink = e.FindControlAs<FieldRenderer>("frLink");
-
-                    if (frLink != null) 
-                    {
-                        frLink.Item = navItem;
-                    }
-                }
-            }
-        }
-
-        protected void ddlIssue_SelectedIndexChanged(object sender, EventArgs e) 
-        {
-            Response.Redirect(Model.GetUrl() + "?issue=" + ddlIssue.SelectedItem.Value, true);
-        }
-
-        protected void ddlGrade_SelectedIndexChanged(object sender, EventArgs e) 
-        {
-            Response.Redirect(Model.GetUrl() + "?grade=" + ddlGrade.SelectedItem.Value, true);
-        }
-
-        protected void ddlTopics_SelectedIndexChanged(object sender, EventArgs e) 
-        {
-            Response.Redirect(Model.GetUrl() + "?topic=" + ddlTopics.SelectedItem.Value, true);
         }
     }
 }

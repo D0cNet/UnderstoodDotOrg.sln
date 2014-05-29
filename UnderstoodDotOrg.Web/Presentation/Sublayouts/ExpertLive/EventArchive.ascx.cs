@@ -4,10 +4,11 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
 {
-    public partial class EventArchive : System.Web.UI.UserControl
+    public partial class EventArchive : BaseSublayout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,13 +24,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
 
         private void BindContent()
         {
-            // TODO: re-used in landing page modules - create central function
-            ExpertLivePageItem ContextItem = GetExpertLivePageItem();
+            ExpertLivePageItem item = Sitecore.Context.Database.GetItem(Constants.Pages.ExpertLive);
 
-            if (ContextItem != null)
+            if (item != null)
             {
-                frHeading.Item = ContextItem;
-                ArchiveItem archivePage = ContextItem.GetArchiveItem();
+                frHeading.Item = item;
+                ArchiveItem archivePage = item.GetArchiveItem();
 
                 if (archivePage != null)
                 {
@@ -41,24 +41,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
                     this.Visible = false;
                 }
             }
-        }
-
-        protected ExpertLivePageItem GetExpertLivePageItem()
-        {
-            Item contextItem = Sitecore.Context.Item;
-            Item topicLandingPageItem = contextItem;
-            while (contextItem != null && !contextItem.IsOfType(ExpertLivePageItem.TemplateId))
-            {
-
-                if (contextItem.Parent != null && contextItem.Parent.IsOfType(ExpertLivePageItem.TemplateId))
-                {
-                    topicLandingPageItem = contextItem.Parent;
-                    break;
-                }
-                contextItem = contextItem.Parent;
-            }
-
-            return topicLandingPageItem;
         }
     }
 }

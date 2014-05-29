@@ -1225,6 +1225,13 @@
     <Compile Include="Presentation\Sublayouts\ExpertLive\Eventcards.ascx.designer.cs">
       <DependentUpon>Eventcards.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\EventFilterNav.ascx.cs">
+      <DependentUpon>EventFilterNav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\EventFilterNav.ascx.designer.cs">
+      <DependentUpon>EventFilterNav.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertDetailPage.ascx.cs">
       <DependentUpon>ExpertDetailPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2559,6 +2566,7 @@
     <Content Include="Presentation\Sublayouts\ExpertLive\CommunitySubHeader.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\EventArchive.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\Eventcards.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\EventFilterNav.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertDetailPage.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertLiveDetail.ascx" />

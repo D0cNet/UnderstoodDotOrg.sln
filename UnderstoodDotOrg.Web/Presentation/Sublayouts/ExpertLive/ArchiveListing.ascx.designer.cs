@@ -13,42 +13,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
     public partial class ArchiveListing {
         
         /// <summary>
-        /// rptFilter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptFilter;
-        
-        /// <summary>
-        /// ddlIssue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlIssue;
-        
-        /// <summary>
-        /// ddlGrade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGrade;
-        
-        /// <summary>
-        /// ddlTopics control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTopics;
-        
-        /// <summary>
         /// archiveEvents control.
         /// </summary>
         /// <remarks>

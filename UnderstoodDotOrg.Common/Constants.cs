@@ -28,6 +28,10 @@ namespace UnderstoodDotOrg.Common
         public static readonly string HANDLER_TIMELY_DATE_QUERY_STRING = "date";
         public static readonly string SEARCH_TERM_QUERY_STRING = "q";
         public static readonly string SEARCH_TYPE_FILTER_QUERY_STRING = "t";
+        public static readonly string EVENT_GRADE_FILTER_QUERY_STRING = "grade";
+        public static readonly string EVENT_ISSUE_FILTER_QUERY_STRING = "issue";
+        public static readonly string EVENT_TOPIC_FILTER_QUERY_STRING = "topic";
+        public static readonly string EVENT_FEATURED_FILTER_QUERY_STRING = "featured";
 
         #endregion
 
@@ -138,6 +142,10 @@ namespace UnderstoodDotOrg.Common
         public static Guid ParentInterestsContainer
         {
             get { return new Guid("{FEC014BB-77ED-4244-A33D-27644736D9F2}"); }
+        }
+        public static Guid ExpertsLiveFilterContainer
+        {
+            get { return new Guid("{D65B262D-954C-4D3A-8D89-5E52FBA16363}"); }
         }
 
         #endregion
@@ -360,6 +368,14 @@ namespace UnderstoodDotOrg.Common
                 get
                 {
                     return new Guid("{9D5C0F20-379E-4CC2-B9F0-EFFC93520D56}");
+                }
+            }
+
+            public static Guid ExpertLive
+            {
+                get
+                {
+                    return new Guid("{404156BF-A471-41EA-B926-9C11D06381EF}");
                 }
             }
         }
