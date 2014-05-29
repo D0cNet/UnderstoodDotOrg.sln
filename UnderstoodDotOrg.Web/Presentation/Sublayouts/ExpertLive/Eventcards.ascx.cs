@@ -40,10 +40,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 
             // TODO: hide headings if no upcoming events
             var webinar = SearchHelper.GetNextUpcomingWebinar();
-            slExpertEvent.DataSource = webinar.ID.ToString();
+            if (webinar != null)
+            {
+                slExpertEvent.DataSource = webinar.ID.ToString();
+            }
 
             var chat = SearchHelper.GetNextUpcomingChat();
-            slExpertChat.DataSource = chat.ID.ToString();
+            if (chat != null)
+            {
+                slExpertChat.DataSource = chat.ID.ToString();
+            }
         }
 
         private ExpertLivePageItem GetExpertLiveLandingPage()

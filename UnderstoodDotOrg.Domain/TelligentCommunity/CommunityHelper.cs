@@ -106,7 +106,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     webClient.Headers.Add("Rest-User-Token", TelligentAuth());
 
-                    var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), id, postId);
+                    var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", id, postId));
+                    
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
@@ -168,7 +169,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-                    var requestUrl = String.Format("{0}api.ashx/v2/comments/{1}.xml", Sitecore.Configuration.Settings.GetSetting("TelligentConfig"), commentId);
+                    var requestUrl = GetApiEndPoint(String.Format("comments/{0}.xml", commentId));
 
                     var xml = webClient.DownloadString(requestUrl);
                     var xmlDoc = new XmlDocument();
@@ -196,7 +197,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 //TODO: retrieve current logged in user
                 webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
                 //webClient.Headers.Add("Rest-Impersonate-User", userId);
-                var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "api.ashx/v2/comments.xml?UserId=" + userId;
+
+                var requestUrl = GetApiEndPoint(String.Format("comments.xml?UserId={0}",userId));
 
                 var xml = webClient.DownloadString(requestUrl);
                 var xmlDoc = new XmlDocument();
@@ -267,13 +269,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
                 try
                 {
-                    // replace the "admin" and "Admin's API key" with your valid user and apikey!
-                    var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                    var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}/posts/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId, blogPostId);
-
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                    var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}.xml", blogId, blogPostId));
+                    
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
@@ -315,12 +313,12 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         var postUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", blogId, blogPostId));
 
                         var data = new NameValueCollection()
-                    {
-                        { "Body", body },
-                        { "PublishedDate", DateTime.Now.ToString() },
-                        { "IsApproved", "true" },
-                        { "BlogId", blogId.ToString() }
-                    };
+                        {
+                            { "Body", body },
+                            { "PublishedDate", DateTime.Now.ToString() },
+                            { "IsApproved", "true" },
+                            { "BlogId", blogId.ToString() }
+                        };
 
                         byte[] result = webClient.UploadValues(postUrl, data);
                         // TODO: handle errors
@@ -337,14 +335,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
                 try
                 {
-                    var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
                     currentUser = currentUser.Trim().ToLower();
                     webClient.Headers.Add("Rest-Impersonate-User", currentUser.ToLower());
-                    var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), "2");
 
+                    // TODO: change to constant
+                    var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", "2"));
+                    
                     var values = new NameValueCollection();
                     values["Title"] = title;
                     values["Body"] = body;
@@ -438,17 +435,14 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 using (var webClient = new WebClient())
                 {
 
-                    var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                    var requestUrl = string.Format("{0}api.ashx/v2/users.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                    var requestUrl = GetApiEndPoint("users.xml");
 
                     var values = new NameValueCollection()
                     {
-                    { "Username", username },
-                    { "Password", Guid.NewGuid().ToString() },
-                    { "PrivateEmail", email }
+                        { "Username", username },
+                        { "Password", Guid.NewGuid().ToString() },
+                        { "PrivateEmail", email }
                     };
 
                     var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
@@ -476,12 +470,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             using (var webClient = new WebClient())
             {
 
-                var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId);
-
+                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", wikiId));
+                
                 var xml = webClient.DownloadString(requestUrl);
 
                 XmlDocument xmlDoc = new XmlDocument();
@@ -523,11 +514,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
                 using (var webClient = new WebClient())
                 {
-                    var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                    var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId, wikiPageId);
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                    var requestUrl = GetApiEndPoint(string.Format("wikis/{0}/pages/{1}.xml", wikiId, wikiPageId));
 
                     var xml = webClient.DownloadString(requestUrl);
 
@@ -558,12 +546,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             List<Answer> answerList = new List<Answer>();
             using (var webClient = new WebClient())
             {
-
-                var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId, wikiPageId);
+                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                var requestUrl = GetApiEndPoint(string.Format("wikis/{0}/pages/{1}/comments.xml", wikiId, wikiPageId));
 
                 var xml = webClient.DownloadString(requestUrl);
 
@@ -591,60 +575,57 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
         public static string BlogNameById(string blogId)
         {
-            var webClient = new WebClient();
+            using (var webClient = new WebClient())
+            {
+                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                var requestUrl = GetApiEndPoint(string.Format("blogs/{0}.xml", blogId));
 
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+                var xml = webClient.DownloadString(requestUrl);
 
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
-
-            var xml = webClient.DownloadString(requestUrl);
-
-            Console.WriteLine(xml);
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-            var nodes = xmlDoc.SelectNodes("/Response/Blog");
-            string blogName = nodes[0]["Name"].InnerText;
-            return blogName;
+                Console.WriteLine(xml);
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                var nodes = xmlDoc.SelectNodes("/Response/Blog");
+                string blogName = nodes[0]["Name"].InnerText;
+                return blogName;
+            }
         }
 
         public static List<MemberCardModel> GetModerators()
         {
-            var webClient = new WebClient();
-            string adminKeyBase64 = CommunityHelper.TelligentAuth();
-
-
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-
-            var roleid = Sitecore.Configuration.Settings.GetSetting("TelligentModeratorRoleID") ?? "3";
-            var serverHost = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") ?? "localhost/telligent.com";
-            var requestUrl = serverHost + "/api.ashx/v2/roles/" + roleid + "/users.xml";
-
-            var xml = webClient.DownloadString(requestUrl);
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-            var nodes = xmlDoc.SelectNodes("/Response/Users/User");
-            //// PagedList<Comment> commentList = PublicApi.Comments.Get(new CommentGetOptions() { UserId = 2100 });
-            //// lblCount.Text = nodes.Count.ToString();
-            List<MemberCardModel> memberCardSrc = new List<MemberCardModel>();
-            foreach (XmlNode item in nodes)
+            using (var webClient = new WebClient())
             {
-                MemberCardModel cm = new MemberCardModel();
-                cm.AvatarUrl = item.SelectSingleNode("AvatarUrl").InnerText;
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
-                // TODO: This is to change once we figure out retrieving users by roleid
-                cm.UserLabel = "Moderator";
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-                cm.UserLocation = item.SelectSingleNode("Location").InnerText;
-                cm.UserName = item.SelectSingleNode("Username").InnerText;
+                var roleid = Sitecore.Configuration.Settings.GetSetting("TelligentModeratorRoleID") ?? "3";
+                var serverHost = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") ?? "localhost/telligent.com";
+                var requestUrl = serverHost + "/api.ashx/v2/roles/" + roleid + "/users.xml";
 
-                memberCardSrc.Add(cm);
-                cm = null;
+                var xml = webClient.DownloadString(requestUrl);
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                var nodes = xmlDoc.SelectNodes("/Response/Users/User");
+                //// PagedList<Comment> commentList = PublicApi.Comments.Get(new CommentGetOptions() { UserId = 2100 });
+                //// lblCount.Text = nodes.Count.ToString();
+                List<MemberCardModel> memberCardSrc = new List<MemberCardModel>();
+                foreach (XmlNode item in nodes)
+                {
+                    MemberCardModel cm = new MemberCardModel();
+                    cm.AvatarUrl = item.SelectSingleNode("AvatarUrl").InnerText;
+
+                    // TODO: This is to change once we figure out retrieving users by roleid
+                    cm.UserLabel = "Moderator";
+
+                    cm.UserLocation = item.SelectSingleNode("Location").InnerText;
+                    cm.UserName = item.SelectSingleNode("Username").InnerText;
+
+                    memberCardSrc.Add(cm);
+                    cm = null;
+                }
+                return memberCardSrc;
             }
-            return memberCardSrc;
-
         }
 
         /// <summary>
@@ -654,46 +635,42 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         /// <returns></returns>
         public static List<BlogPost> ListBlogPosts(string blogId)
         {
-            var webClient = new WebClient();
-
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-
-            var requestUrl = string.Format("{0}api.ashx/v2/blogs/posts.xml?BlogIds={1}&PageSize=100", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
-            
-
-            var xml = webClient.DownloadString(requestUrl);
-
-            List<BlogPost> blogPosts = new List<BlogPost>();
-
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost");
-            XmlNodeList nodes1 = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost/Author");
-            int count = 0;
-            foreach (XmlNode node in nodes)
+            using (var webClient = new WebClient())
             {
-                BlogPost blogPost = new BlogPost()
+
+                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                var requestUrl = GetApiEndPoint(string.Format("blogs/posts.xml?BlogIds={0}&PageSize=100", blogId));
+
+                var xml = webClient.DownloadString(requestUrl);
+
+                List<BlogPost> blogPosts = new List<BlogPost>();
+
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                XmlNodeList nodes = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost");
+                XmlNodeList nodes1 = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost/Author");
+                int count = 0;
+                foreach (XmlNode node in nodes)
                 {
-                    Title = node["Title"].InnerText,
-                    ContentId = node["ContentId"].InnerText,
-                    Body = FormatString100(node["Body"].InnerText),
-                    PublishedDate = FormatDate(node["PublishedDate"].InnerText),
-                    BlogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText),
-                    Author = nodes1[count]["DisplayName"].InnerText,
-                    // TODO: Fix this logic a lot
-                    Url = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + 
-                    "/" + CommunityHelper.BlogNameById(node["BlogId"].InnerText) + "/" + node["Title"].InnerText, ".aspx", "")
-                };
-                blogPosts.Add(blogPost);
-                count++;
+                    BlogPost blogPost = new BlogPost()
+                    {
+                        Title = node["Title"].InnerText,
+                        ContentId = node["ContentId"].InnerText,
+                        Body = FormatString100(node["Body"].InnerText),
+                        PublishedDate = FormatDate(node["PublishedDate"].InnerText),
+                        BlogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText),
+                        Author = nodes1[count]["DisplayName"].InnerText,
+                        // TODO: Fix this logic a lot
+                        Url = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
+                        "/" + CommunityHelper.BlogNameById(node["BlogId"].InnerText) + "/" + node["Title"].InnerText, ".aspx", "")
+                    };
+                    blogPosts.Add(blogPost);
+                    count++;
 
+                }
+                return blogPosts;
             }
-            return blogPosts;
-
         }
 
         public static List<Blog> ListBlogs()
@@ -703,12 +680,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
                 using (var webClient = new WebClient())
                 {
-                    // replace the "admin" and "Admin's API key" with your valid user and apikey!
-                    var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
                     webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
-                    var requestUrl = string.Format("{0}api.ashx/v2/blogs.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    var requestUrl = GetApiEndPoint("blogs.xml");
 
                     var xml = webClient.DownloadString(requestUrl);
 
@@ -754,7 +727,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
                     var xmlDoc = new XmlDocument();
-                    var requestUrl = String.Format("{0}api.ashx/v2/groups/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
+                    var requestUrl = GetApiEndPoint(String.Format("groups/{0}.xml", groupID));
                     var xml = webClient.DownloadString(requestUrl);
 
                     xmlDoc.LoadXml(xml);
@@ -773,16 +746,18 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             XmlNode node = null;
             if (!String.IsNullOrEmpty(forumID))
             {
-                WebClient webClient = new WebClient();
-                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                using (WebClient webClient = new WebClient())
+                {
+                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-                var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID);
-                var xml = webClient.DownloadString(requestUrl);
-                var xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-                node = xmlDoc.SelectSingleNode("Response/Forum");
+                    var requestUrl = GetApiEndPoint(String.Format("forums/{0}.xml", forumID));
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    node = xmlDoc.SelectSingleNode("Response/Forum");
+                }
             }
             return node;
         }
@@ -791,16 +766,18 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             XmlNode node = null;
             if (!String.IsNullOrEmpty(groupID))
             {
-                WebClient webClient = new WebClient();
-                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                using (WebClient webClient = new WebClient())
+                {
+                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-                var requestUrl = String.Format("{0}api.ashx/v2/groups/{1}/forums.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
-                var xml = webClient.DownloadString(requestUrl);
-                var xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-                node = xmlDoc.SelectSingleNode("Response/Forums");
+                    var requestUrl = GetApiEndPoint(String.Format("groups/{0}/forums.xml", groupID));
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    node = xmlDoc.SelectSingleNode("Response/Forums");
+                }
             }
             return node;
         }
@@ -809,16 +786,18 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             XmlNode node = null;
             if (!String.IsNullOrEmpty(forumID))
             {
-                WebClient webClient = new WebClient();
-                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                using (WebClient webClient = new WebClient())
+                {
+                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-                var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}/threads.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID);
-                var xml = webClient.DownloadString(requestUrl);
-                var xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-                node = xmlDoc.SelectSingleNode("Response/Threads");
+                    var requestUrl = GetApiEndPoint(String.Format("forums/{0}/threads.xml", forumID));
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    node = xmlDoc.SelectSingleNode("Response/Threads");
+                }
             }
             return node;
         }
@@ -827,21 +806,23 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             XmlNode node = null;
             if (!String.IsNullOrEmpty(forumID) && !String.IsNullOrEmpty(threadID))
             {
-                WebClient webClient = new WebClient();
-                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                using (WebClient webClient = new WebClient())
+                {
+                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                try
-                {
-                    var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}/threads/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID, threadID);
-                    var xml = webClient.DownloadString(requestUrl);
-                    var xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xml);
-                    node = xmlDoc.SelectSingleNode("Response/Thread");
-                }
-                catch (Exception ex)
-                {
-                    node = null;
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    try
+                    {
+                        var requestUrl = GetApiEndPoint(String.Format("forums/{0}/threads/{1}.xml", forumID, threadID));
+                        var xml = webClient.DownloadString(requestUrl);
+                        var xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(xml);
+                        node = xmlDoc.SelectSingleNode("Response/Thread");
+                    }
+                    catch (Exception ex)
+                    {
+                        node = null;
+                    }
                 }
             }
             return node;
@@ -851,38 +832,40 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             XmlNode node = null;
             if (!String.IsNullOrEmpty(replyID))
             {
-                WebClient webClient = new WebClient();
-                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                using (WebClient webClient = new WebClient())
+                {
+                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-                var requestUrl = String.Format("{0}api.ashx/v2/forums/threads/replies/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), replyID);
-                var xml = webClient.DownloadString(requestUrl);
-                var xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-                node = xmlDoc.SelectSingleNode("Response/Reply");
+                    var requestUrl = GetApiEndPoint(String.Format("forums/threads/replies/{0}.xml", replyID));
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    node = xmlDoc.SelectSingleNode("Response/Reply");
+                }
             }
             return node;
         }
         public static void PostReply(string forumID, string threadID, string body)
         {
-
-
-            WebClient webClient = new WebClient();
-            string adminKeyBase64 = CommunityHelper.TelligentAuth();
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
-            try
+            using (WebClient webClient = new WebClient())
             {
-                var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}/threads/{2}/replies.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID, threadID);
-                var values = new NameValueCollection();
-                values["Body"] = body;
+                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+                try
+                {
+                    var requestUrl = GetApiEndPoint(String.Format("forums/{0}/threads/{1}/replies.xml", forumID, threadID));
+                    var values = new NameValueCollection();
+                    values["Body"] = body;
 
-                var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
-            }
-            catch (Exception ex)
-            {
+                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+                }
+                catch (Exception ex)
+                {
 
+                }
             }
         }
         public static List<ReplyModel> ReadReplies(string forumID, string threadID)
@@ -890,30 +873,31 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             List<ReplyModel> replies = new List<ReplyModel>();
             if (!String.IsNullOrEmpty(forumID) && !String.IsNullOrEmpty(threadID))
             {
-                WebClient webClient = new WebClient();
-                string adminKeyBase64 = CommunityHelper.TelligentAuth();
-
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-
-                var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}/threads/{2}/replies.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID, threadID);
-                var xml = webClient.DownloadString(requestUrl);
-                var xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-                XmlNode node = xmlDoc.SelectSingleNode("Response/Replies");
-
-                if (node != null)
+                using (WebClient webClient = new WebClient())
                 {
-                    foreach (XmlNode reply in node)
+                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                    var requestUrl = GetApiEndPoint(String.Format("forums/{0}/threads/{1}/replies.xml", forumID, threadID));
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/Replies");
+
+                    if (node != null)
                     {
-                        ReplyModel rpm = new ReplyModel(reply);
+                        foreach (XmlNode reply in node)
+                        {
+                            ReplyModel rpm = new ReplyModel(reply);
 
-                        replies.Add(rpm);
-                        rpm = null;
+                            replies.Add(rpm);
+                            rpm = null;
+                        }
+
+
                     }
-
-
                 }
-
             }
             return replies;
         }
@@ -943,31 +927,32 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             if (!String.IsNullOrEmpty(username))
             {
                 username = username.Trim();
-                WebClient webClient = new WebClient();
-                string adminKeyBase64 = CommunityHelper.TelligentAuth();
-
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-
-                try
+                using (WebClient webClient = new WebClient())
                 {
-                    var requestUrl = String.Format("{0}api.ashx/v2/users/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), username.ToLower());
-                    var xml = webClient.DownloadString(requestUrl);
-                    var xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xml);
-                    XmlNode node = xmlDoc.SelectSingleNode("Response/User");
-                    if (node != null)
+                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                    try
                     {
-                        //Read user id
-                        Userid = node.SelectSingleNode("Id").InnerText;
-                        //return Userid;
+                        var requestUrl = GetApiEndPoint(String.Format("users/{0}.xml", username.ToLower()));
+                        var xml = webClient.DownloadString(requestUrl);
+                        var xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(xml);
+                        XmlNode node = xmlDoc.SelectSingleNode("Response/User");
+                        if (node != null)
+                        {
+                            //Read user id
+                            Userid = node.SelectSingleNode("Id").InnerText;
+                            //return Userid;
+                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    Userid = null;
-                }
+                    catch (Exception ex)
+                    {
+                        Userid = null;
+                    }
 
-
+                }
             }
             return Userid;
         }
@@ -996,24 +981,26 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             groupID = groupID.Trim();
             if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID))
             {
-                WebClient webClient = new WebClient();
-                string adminKeyBase64 = CommunityHelper.TelligentAuth();
-
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                try
+                using (WebClient webClient = new WebClient())
                 {
-                    var requestUrl = String.Format("{0}api.ashx/v2/groups/{1}/members/users/{2}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID, userScreenName);
-                    var xml = webClient.DownloadString(requestUrl);
-                    var xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xml);
-                    XmlNode node = xmlDoc.SelectSingleNode("Response/User/Group");
+                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
-                    if (node != null)
-                        val = true;
-                }
-                catch (Exception ex)
-                {
-                    return false;
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    try
+                    {
+                        var requestUrl = GetApiEndPoint(String.Format("groups/{0}/members/users/{1}.xml", groupID, userScreenName));
+                        var xml = webClient.DownloadString(requestUrl);
+                        var xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(xml);
+                        XmlNode node = xmlDoc.SelectSingleNode("Response/User/Group");
+
+                        if (node != null)
+                            val = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        return false;
+                    }
                 }
             }
             return val;
@@ -1031,21 +1018,24 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     try
                     {
-                        WebClient webClient = new WebClient();
-                        string adminKeyBase64 = CommunityHelper.TelligentAuth();
-                        webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                        var requestUrl = string.Format("{0}api.ashx/v2/groups/{1}/members/users.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), groupID);
+                        using (WebClient webClient = new WebClient())
+                        {
+                            string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                            var requestUrl = GetApiEndPoint(string.Format("groups/{0}/members/users.xml ", groupID));
 
-                        var values = new NameValueCollection();
-                        values["UserId"] = userid;
+                            var values = new NameValueCollection();
+                            values["UserId"] = userid;
 
-
-                        var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
-                        var xmlDoc = new XmlDocument();
-                        xmlDoc.LoadXml(xml);
-                        XmlNode node = xmlDoc.SelectSingleNode("Response/Errors");
-                        if (node != null || !node.HasChildNodes)
-                            success = true;
+                            var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+                            var xmlDoc = new XmlDocument();
+                            xmlDoc.LoadXml(xml);
+                            XmlNode node = xmlDoc.SelectSingleNode("Response/Errors");
+                            if (node != null || !node.HasChildNodes)
+                            {
+                                success = true;
+                            }
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -1082,12 +1072,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
                 try
                 {
-                    var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
                     webClient.Headers.Add("Rest-User-Token", TelligentAuth());
 
-                    var requestUrl = string.Format("{0}api.ashx/v2/notifications.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    var requestUrl = GetApiEndPoint("notifications.xml");
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
@@ -1134,12 +1121,10 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     {
                         return favoritesList;
                     }
-                    var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
+                    
                     webClient.Headers.Add("Rest-User-Token", TelligentAuth());
 
-                    var requestUrl = string.Format("{0}api.ashx/v2/users/{1}/favorites.xml?PageSize=100", Settings.GetSetting(Constants.Settings.TelligentConfig), userId);
+                    var requestUrl = GetApiEndPoint(string.Format("users/{0}/favorites.xml?PageSize=100", userId));
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
@@ -1206,7 +1191,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     var userId = ReadUserId(username);
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                    var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "api.ashx/v2/comments.xml?UserId=" + userId;
+                    var requestUrl = GetApiEndPoint(String.Format("comments.xml?UserId={0}", userId));
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
@@ -1241,7 +1226,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
                     //webClient.Headers.Add("Rest-Impersonate-User", userId);
-                    var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "api.ashx/v2/groups.xml?Username=" + username;
+                    var requestUrl = GetApiEndPoint(String.Format("groups.xml?Username={0}", username));
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
@@ -1274,7 +1259,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     webClient.Headers.Add("Rest-User-Token", TelligentAuth());
 
-                    var requestUrl = string.Format("{0}api.ashx/v2/comments.xml?PageSize=100", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    var requestUrl = GetApiEndPoint("comments.xml?PageSize=100");
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
