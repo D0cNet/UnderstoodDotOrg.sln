@@ -48,7 +48,7 @@
                         </header>
                     </div>
                     <div class="col col-6 offset-6">
-                        <a href="REPLACE" class="button start-discussion rs_skip">Start a Discussion</a>
+                        <asp:HyperLink CssClass="button start-discussion rs_skip" ID="hypStartADiscussion" runat="server">Start a Discussion</asp:HyperLink>
                     </div>
                 </div>
 
@@ -126,7 +126,7 @@
                     <span class="visuallyhidden">More detail</span>
                     <asp:TextBox ID="txtBody" ValidationGroup="newDiscussion" placeholder="More detail" runat="server" TextMode="MultiLine"></asp:TextBox>
                 </label>
-                <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+                <asp:Button ID="btnSubmit" CssClass="button start-discussion rs_skip" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
             </section>
 
             <!-- END PARTIAL: my-groups-discussion-form -->

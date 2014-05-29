@@ -62,7 +62,7 @@
                                             &quot;<asp:Literal ID="litCommentBody" runat="server"></asp:Literal>&quot;
                                         </p>
                                         <div class="comment-details">
-                                            <span class="comment-group">In <asp:HyperLink ID="hypCommentGroup" runat="server"></asp:HyperLink>
+                                            <span class="comment-group" id="commentGroupSpan" runat="server">In <asp:HyperLink ID="hypCommentGroup" runat="server"></asp:HyperLink>
                                             </span>
                                             <span class="dot">&middot;</span>
                                             <span class="timestamp">

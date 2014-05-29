@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Xml;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
@@ -17,9 +18,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            //var commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
-            
-            var commentsList = CommunityHelper.ListUserComments("admin");
+            var commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
             
             if (commentsList != null)
             {
@@ -46,10 +45,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
 
             Literal litLikes = (Literal)e.Item.FindControl("litLikes");
             litLikes.Text = item.Likes;
-
+            
+            HtmlGenericControl commentGroupSpan = (HtmlGenericControl)e.Item.FindControl("commentGroupSpan");
             HyperLink hypCommentGroup = (HyperLink)e.Item.FindControl("hypCommentGroup");
-            hypCommentGroup.NavigateUrl = "/Community and Events/Groups/" + item.ParentTitle;
-            hypCommentGroup.Text = item.ParentTitle;
+            if (item.ParentTitle.Equals("Site Root"))
+            {
+                commentGroupSpan.Visible = false;
+            }
+            else
+            {
+                hypCommentGroup.NavigateUrl = "/Community and Events/Groups/" + item.ParentTitle;
+                hypCommentGroup.Text = item.ParentTitle;
+            }
         }
     }
 }

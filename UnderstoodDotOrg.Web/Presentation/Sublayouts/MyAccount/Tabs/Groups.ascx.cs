@@ -29,7 +29,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
                 ddlGroups.DataValueField = "Url";
                 ddlGroups.DataTextField = "Title";
                 ddlGroups.DataBind();
-
+                hypStartADiscussion.NavigateUrl = ddlGroups.SelectedItem.Value + "/MyDiscussion%20Board";
                 var commentsList = CommunityHelper.ReadComments();
                 var commentsByGroup = commentsList.Where(x => x.ParentTitle == ddlGroups.SelectedItem.Text);
                 if (commentsList != null)
@@ -71,49 +71,36 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            
-                var frmItem = Session["forumItem"] as ForumItem;
-                if (frmItem != null)
+            var frmItem = Session["forumItem"] as ForumItem;
+            if (frmItem != null)
+            {
+                //Grab information from fields
+                string subject = txtSubject.Text;
+                string body = txtBody.Text;
+                string frmId = frmItem.ForumID.Text;
+
+                try
                 {
-                    //Grab information from fields
-                    string subject = txtSubject.Text;
-                    string body = txtBody.Text;
-                    string frmId = frmItem.ForumID.Text;
-
-                    try
+                    //Create item in Telligent
+                    ThreadModel thModel = TelligentService.CreateForumThread(frmId, subject, body);
+                    if (thModel != null)
                     {
-                        //Create item in Telligent
-                        ThreadModel thModel = TelligentService.CreateForumThread(frmId, subject, body);
-                        if (thModel != null)
+                        //Create item in sitecore with returned forumID and threadID
+                        if (CreateSitecoreForumThread(thModel, frmItem, Sitecore.Context.Language))
                         {
-                            ////Create item in sitecore with returned forumID and threadID
-                            //if (CreateSitecoreForumThread(thModel, frmItem, Sitecore.Context.Language))
-                            //{
-                            //    error_msg.Visible = false;
-                            //    ForumModel frmModel = new ForumModel(frmItem);
-
-                            //    if (frmModel != null)
-                            //    {
-                            //        rptThread.DataSource = frmModel.Threads;
-                            //        rptThread.DataBind();
-                            //    }
-
-                            //}
-                            //else
-                            //{
-                            //    error_msg.Text = "Failed to create discussion.";
-                            //    error_msg.Visible = true;
-                            //}
-
-
+                            Response.Redirect("/Community and Events/Groups/" + ddlGroups.SelectedItem.Value);
+                        }
+                        else
+                        {
+                            //error handling
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        Sitecore.Diagnostics.Error.LogError(ex.Message);
-                    }
                 }
-            
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Error.LogError(ex.Message);
+                }
+            }
         }
 
         private bool CreateSitecoreForumThread(ThreadModel thModel, ForumItem frmItem, Language lang)

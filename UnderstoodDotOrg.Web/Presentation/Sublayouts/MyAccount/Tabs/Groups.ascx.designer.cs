@@ -22,6 +22,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         protected global::System.Web.UI.WebControls.DropDownList ddlGroups;
         
         /// <summary>
+        /// hypStartADiscussion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypStartADiscussion;
+        
+        /// <summary>
         /// rptComments control.
         /// </summary>
         /// <remarks>
