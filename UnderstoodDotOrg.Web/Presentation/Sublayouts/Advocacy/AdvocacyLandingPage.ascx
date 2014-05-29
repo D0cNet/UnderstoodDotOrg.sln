@@ -96,78 +96,27 @@
             </div>
             <div class="container issues-grid">
                 <div class="row">
-                    <div class="col col-11 offset-1 issues-column">
-                        <div class="issues-item rs_read_this advocacy-issues-rs-wrapper clearfix">
-                            <div class="issues-image">
-                                <a href="REPLACE">
-                                    <img alt="190x105 Placeholder" src="http://placehold.it/190x105" /></a>
+                    <asp:Repeater ID="rptArticles" runat="server" OnItemDataBound="rptArticles_ItemDataBound">
+                        <ItemTemplate>
+                            <div class="col col-11 offset-1 issues-column">
+                                <div class="issues-item rs_read_this advocacy-issues-rs-wrapper clearfix">
+                                    <div class="issues-image">
+                                        <asp:HyperLink id="hypArticleThumbnailLink" runat="server">
+                                           <asp:Image id="articleThumbnail" runat="server" imageurl="..." />
+                                        </asp:HyperLink>
+                                        <%--<a href="REPLACE">
+                                            <img alt="190x105 Placeholder" src="http://placehold.it/190x105" /></a>--%>
+                                    </div>
+                                    <div class="issues-title">
+                                        <h3>
+                                            <asp:HyperLink id="hypArticleLink" runat="server"></asp:HyperLink>
+                                            <%--<a href="REPLACE">Quia Sed Delectus Dolor Atque</a>--%>
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="issues-title">
-                                <h3>
-                                    <a href="REPLACE">Quia Sed Delectus Dolor Atque</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-11 offset-1 issues-column">
-                        <div class="issues-item rs_read_this advocacy-issues-rs-wrapper clearfix">
-                            <div class="issues-image">
-                                <a href="REPLACE">
-                                    <img alt="190x105 Placeholder" src="http://placehold.it/190x105" /></a>
-                            </div>
-                            <div class="issues-title">
-                                <h3>
-                                    <a href="REPLACE">Qui Beatae Maxime Aut Ea</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-11 offset-1 issues-column">
-                        <div class="issues-item rs_read_this advocacy-issues-rs-wrapper clearfix">
-                            <div class="issues-image">
-                                <a href="REPLACE">
-                                    <img alt="190x105 Placeholder" src="http://placehold.it/190x105" /></a>
-                            </div>
-                            <div class="issues-title">
-                                <h3>
-                                    <a href="REPLACE">Quod Dignissimos Consequatur Ut Amet</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-11 offset-1 issues-column">
-                        <div class="issues-item rs_read_this advocacy-issues-rs-wrapper clearfix">
-                            <div class="issues-image">
-                                <a href="REPLACE">
-                                    <img alt="190x105 Placeholder" src="http://placehold.it/190x105" /></a>
-                            </div>
-                            <div class="issues-title">
-                                <h3>
-                                    <a href="REPLACE">Temporibus Eaque Dolorem Nisi Deserunt</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-11 offset-1 issues-column">
-                        <div class="issues-item rs_read_this advocacy-issues-rs-wrapper clearfix">
-                            <div class="issues-image">
-                                <a href="REPLACE">
-                                    <img alt="190x105 Placeholder" src="http://placehold.it/190x105" /></a>
-                            </div>
-                            <div class="issues-title">
-                                <h3>
-                                    <a href="REPLACE">Aliquid Deleniti Aut Delectus Laboriosam</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-11 offset-1 issues-column">
-                        <div class="issues-item rs_read_this advocacy-issues-rs-wrapper clearfix">
-                            <div class="issues-image">
-                                <a href="REPLACE">
-                                    <img alt="190x105 Placeholder" src="http://placehold.it/190x105" /></a>
-                            </div>
-                            <div class="issues-title">
-                                <h3>
-                                    <a href="REPLACE">Ipsa Inventore Laborum A Sed</a></h3>
-                            </div>
-                        </div>
-                    </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
             </div>
             <!-- END PARTIAL: advocacy/on-the-issues -->

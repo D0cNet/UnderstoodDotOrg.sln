@@ -7,7 +7,9 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Advocacy;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common.Extensions;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy
 {
@@ -17,6 +19,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy
         {
             var globalsItem = MainsectionItem.GetGlobals();
             var advocacyLinks = globalsItem.GetAdvocacyLinksFolder().GetAdvocacyLinks();
+            
+            rptArticles.DataSource = this.Model.GetAdvocacyArticles();
+            rptArticles.DataBind();
 
             rptrActionAlerts.DataSource = advocacyLinks;
             rptrActionAlerts.DataBind();
@@ -30,6 +35,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy
             {
                 Response.Redirect(url);
             }
+        }
+
+        protected void rptArticles_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            var item = e.Item.DataItem as AdvocacyArticlePageItem;
+
+            HyperLink hypArticleThumbnailLink = (HyperLink)e.Item.FindControl("hypArticleThumbnailLink");
+            hypArticleThumbnailLink.NavigateUrl = item.InnerItem.GetUrl();
+
+            HyperLink hypArticleLink = (HyperLink)e.Item.FindControl("hypArticleLink");
+            hypArticleLink.NavigateUrl = item.InnerItem.GetUrl();
+            hypArticleLink.Text = item.DefaultArticlePage.ContentPage.BasePageNEW.NavigationTitle.Rendered;
+            
+            Image articleThumbnail = (Image)e.Item.FindControl("articleThumbnail");
+            articleThumbnail.ImageUrl = item.DefaultArticlePage.ContentThumbnail.MediaItem != null ? item.DefaultArticlePage.ContentThumbnail.MediaUrl : item.DefaultArticlePage.FeaturedImage.MediaUrl;
         }
     }
 }
