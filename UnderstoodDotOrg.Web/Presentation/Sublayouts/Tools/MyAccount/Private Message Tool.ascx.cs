@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Services.Models.Telligent;
 using UnderstoodDotOrg.Services.TelligentService;
@@ -46,12 +47,26 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
 		{
 			if (!IsPostBack)
 			{
-                lblName.Text = Name;
-                litMsgs.Text = "0";
-                BindConversations(true);
+                try
+                {
+                    lblName.Text = Name;
+                    litMsgs.Text = "0";
+                    BindConversations(true);
 
+                    ///TODO:Enable multiuser selection
+                    //MembershipManager memMan = new MembershipManager();
+                    //var usernames = memMan.GetMembers().Where(x=>!String.IsNullOrEmpty(x.ScreenName)).Select(x => new { Username = x.ScreenName.Trim() }).ToList<object>();
+                    //ddlUserNames.Items.Add(new ListItem() { Text = "", Value = "" });
+                    var usernames = TelligentService.GetUserNames().Select(x=> new {Username=x});
+                    ddlUserNames.Items.Add(new ListItem() { Text = "", Value = "" });
+                    ddlUserNames.DataSource = usernames;
+                    ddlUserNames.DataBind();
+                }catch(Exception ex)
+                {
+                    Sitecore.Diagnostics.Error.LogError("Private Message Tool (PageLoad):\n" +ex.Message);
+                }
 			}
-            CKEditor1.Text = String.Empty;
+
 		}
 
         private void BindConversations(bool forceRefresh=false)
@@ -62,19 +77,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
             List<Message> messages = new List<Message>();
             if (Conversations != null)
             {
-                litMsgs.Text = Conversations.Count().ToString();
+                
                 foreach (Conversation item in Conversations)
                 {
-                    //Get the latest message
-                    Message m = item.Messages.OrderByDescending(x => x.CreatedDate).First();
+                    if (item.HasMessages)
+                    {
+                        //Get the latest message
+                        Message m = item.Messages.OrderByDescending(x => x.CreatedDate).First();
 
-                    messages.Add(m);
+                        messages.Add(m);
 
-                    m = null;
+                        m = null;
+                    }
                 }
 
 
             }
+            litMsgs.Text = messages.Count.ToString();
             //Display messages
             lvLastMessages.DataSource = messages;
             lvLastMessages.DataBind();
@@ -124,6 +143,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
 
                         rptMessages.DataSource = msgs;
                         rptMessages.DataBind();
+
                     }
 
 
@@ -143,7 +163,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                     if (hdfield != null)
                     {
                         if (TelligentService.ReplyToMessage(ScreenName, hdfield.Value, CKEditor1.Text))
+                        {
                             BindConversations(true);
+
+                            rptMessages.DataSource = new List<Message>();
+                            rptMessages.DataBind();
+                            CKEditor1.Text = String.Empty;
+                            lvLastMessages.SelectedIndex = -1;
+                            
+                        }
                     }
                 }
             }
@@ -153,6 +181,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
             //Call delete conversation API
              if (lvLastMessages.SelectedIndex > -1)
                 {
+                 
                     HiddenField hdfield = (HiddenField)lvLastMessages.Items[lvLastMessages.SelectedIndex].FindControl("hfConvID");
                     if (hdfield != null)
                     {
@@ -168,11 +197,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
            
         }
 
-        
 
-        protected void btnSendMessage_Click(object sender, EventArgs e)
+
+        protected void btnSendNewMessage_Click(object sender, EventArgs e)
         {
+            string newConvID = TelligentService.CreateConversation(ScreenName, txtSubject.Text, CKEditorControl1.Text, ddlUserNames.SelectedValue);
 
+            if (!String.IsNullOrEmpty(newConvID))
+            {
+                BindConversations(true);
+                rptMessages.DataSource = new List<Message>();
+                rptMessages.DataBind();
+                txtSubject.Text = String.Empty;
+                CKEditorControl1.Text = String.Empty;
+                ddlUserNames.SelectedIndex = -1;
+            }
         }
 
       

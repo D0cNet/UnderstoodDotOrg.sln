@@ -15,14 +15,14 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         
         public List<Message> Messages { get; set; }
         public List<MemberCardModel> Participants { get; set; }
-
+        public Boolean HasMessages { get { return (Messages !=null && Messages.Count >0); } }
         public Conversation(XmlNode node)
             {
                 if(node!=null)
                     {
                     ID = node.SelectSingleNode("Id").InnerText;
                     CreatedDate = Convert.ToDateTime(node.SelectSingleNode("CreatedDate").InnerText);
-                   Messages = TelligentService.TelligentService.GetMessages( ID);
+                    Messages = TelligentService.TelligentService.GetMessages( ID);
                    // var users = from u in node.SelectSingleNode("Participants").SelectNodes("User")
                     //            select new MemberCardModel(u.
 

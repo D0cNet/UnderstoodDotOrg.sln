@@ -1,50 +1,64 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Private Message Tool.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount.Private_Message_Tool" %>
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
+
+
+<%--<style>
+    .ui-dialog
+    {
+        z-index: 101;
+    }
+
+</style>--%>
 <script type="text/javascript">
+
     $(document).ready(function () {
        
-        $("#dialog-form").dialog({
+        loadDialog();
+        $(".messages-tab > ")
+    });
+
+    Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function () {
+
+        loadDialog();
+      
+    });
+
+    function loadDialog()
+    {
+        var dlg=$("#dialog-form").dialog({
             autoOpen: false,
-            height: 470,
+            height: 620,
             width: 600,
             modal: true,
+            resizable: false,
             buttons: {
-               
+
                 Cancel: function () {
                     $(this).dialog("close");
                 }
             },
-            close: function () {
-              //  allFields.val("").removeClass("ui-state-error");
-            }
+            appendTo: "form"
+            
+           
         });
-
-
-
-
-
-
+      
         $('#btn-new-message')
             .button()
             .click(function () {
                 $("#dialog-form").dialog("open");
-            
-        });
-    });
+                
+            });
+         
+
+
+    }
+
+
+  
 
 </script>
 
-<div id="dialog-form" title="Send Private Message">
-    <asp:Label ID="Label1" Text="Recipients" runat="server" /> <br />
-    <asp:DropDownList ID="ddlUserNames" runat="server">
-       
-    </asp:DropDownList><br />
-    <asp:Label ID="Label2" Text="Subject" runat="server" /><br />
-        <CKEditor:CKEditorControl ID="CKEditorControl1"  runat="server"  BasePath="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor" ContentsCss="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/contents.css" Height="127px" ResizeEnabled="False" TemplatesFiles="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/plugins/templates/templates/default.js" Toolbar="Basic">
-        </CKEditor:CKEditorControl><br />
-    <div><asp:Button Text="Send Message" style="margin-right:10px;" ID="Button1" OnClick="btnSendMessage_Click"  runat="server" /></div> 
-</div>
-
+      
 
 <header>
     <div class="notification-tabs-wrapper select-inverted-mobile">
@@ -76,10 +90,24 @@
 	    </div>
     </div><!-- .notification-tabs-wrapper -->
 </header>
+<asp:ScriptManager ID="ScriptManager1"  runat="server" />
 <div class="account-body-wrapper">
 			<!-- BEGIN PARTIAL: account-notification-tab-messages -->
 		<section class="account-notifications-tab-messages">
-			
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+            <div id="dialog-form" title="Send Private Message">
+                <asp:Label ID="Label1" Text="Recipients" runat="server" /><br />
+                <asp:DropDownList ID="ddlUserNames" AppendDataBoundItems="true" ValidationGroup="NewMessage" DataTextField="Username" DataValueField="Username" runat="server">
+        
+                </asp:DropDownList><asp:RequiredFieldValidator ID="RequiredFieldValidator1"  ValidationGroup="NewMessage" ControlToValidate="ddlUserNames" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator> <br />
+                <asp:Label ID="lblSubject" Text="Subject" runat="server" /><br />
+                <asp:TextBox runat="server"  ValidationGroup="NewMessage" ID="txtSubject"/><asp:RequiredFieldValidator  ValidationGroup="NewMessage" ID="RequiredFieldValidator2" ControlToValidate="txtSubject" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator> <br />
+                <asp:Label Text="Message" ID="lblMsg" runat="server" /><br />
+                <CKEditor:CKEditorControl ID="CKEditorControl1"  runat="server" Enabled="true"   ValidationGroup="NewMessage" BasePath="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor" ContentsCss="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/contents.css" Height="127px" ResizeEnabled="False" TemplatesFiles="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/plugins/templates/templates/default.js" Toolbar="Basic"></CKEditor:CKEditorControl><asp:RequiredFieldValidator ID="RequiredFieldValidator3"  ValidationGroup="NewMessage" ControlToValidate="CKEditorControl1" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
+                <div><asp:Button Text="Send Message"  UseSubmitBehavior="false" style="margin-right:10px;" ID="btnSendNewMessage"  ValidationGroup="NewMessage"  OnClick="btnSendNewMessage_Click"  runat="server" /></div> 
+            </div>  
+            
             <asp:Panel Width="880px" Height="620px" ID="pnlTool" runat="server">
           
                 <div id="left_pane" style="width:300px;height:615px; float:left;">
@@ -174,11 +202,16 @@
                         <CKEditor:CKEditorControl ID="CKEditor1"  runat="server"  BasePath="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor" ContentsCss="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/contents.css" Height="127px" ResizeEnabled="False" TemplatesFiles="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/plugins/templates/templates/default.js" Toolbar="Basic">
                         </CKEditor:CKEditorControl>
                    
-                </div>
-                     <asp:Button Text="Submit Reply" ID="btnReply" runat="server"  OnClick="btnReply_Click" />
+                    </div>
+                    <asp:Button Text="Submit Reply" ID="btnReply" runat="server"  OnClick="btnReply_Click" />
               </div>
         </asp:Panel>
-           
+           </ContentTemplate>
+            <Triggers>
+                <asp:PostBackTrigger ControlID="btnReply" />
+            </Triggers>
+            </asp:UpdatePanel>
+            
 		</section>
 
 <!-- END PARTIAL: account-notification-tab-messages -->

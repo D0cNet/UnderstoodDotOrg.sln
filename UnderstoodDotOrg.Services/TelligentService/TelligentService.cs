@@ -881,6 +881,46 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return conversations;
         }
 
+        public static List<String> GetUserNames()
+        {
+            List<String> usernames = new List<String>();
+
+            XmlNode node = null;
+
+            
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = TelligentAuth();
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    //webClient.Headers.Add("Rest-Impersonate-User", username);
+                    var xmlDoc = new XmlDocument();
+                    var requestUrl = String.Format("{0}api.ashx/v2/users.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    xmlDoc.LoadXml(xml);
+                    node = xmlDoc.SelectSingleNode("Response/Users");
+
+                    if (node != null)
+                    {
+                        foreach (XmlNode item in node)
+                        {
+                            
+                            usernames.Add(item.SelectSingleNode("Username").InnerText);
+
+                            
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    usernames = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
+           
+            // return node;
+            return usernames;
+        }
         public static string CreateConversation(string username,string subject,string body,string userlist)
         {
             string convID = String.Empty;
@@ -904,11 +944,12 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         XmlNode childNode = document.SelectSingleNode("Response/Conversation");
                         if (childNode != null)
                         {
-                            convID = childNode.SelectSingleNode("Id").Value ;
+                            convID = childNode.SelectSingleNode("Id").InnerText ;
                         }
                     }
-                    catch
+                    catch(Exception ex)
                     {
+                        Sitecore.Diagnostics.Error.LogError("CreateConversation Error:\n" + ex.Message);
                         convID = String.Empty;
                     }
                 }
