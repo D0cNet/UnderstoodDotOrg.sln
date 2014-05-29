@@ -7,7 +7,7 @@
     if (donationApiKey && donationFormId && donationLevelId && donationSuccessUrl) {
         function ConvioDonation() {
             //Constants
-            this.requestBaseUrl = "https://secure2.convio.net/ncld/site/CRDonationAPI"
+            this.requestBaseUrl = "https://secure2.convio.net/ncld/site/CRDonationAPI";
             this.method = "donate";
             this.apiVersion = "1.0";
             this.responseFormat = "json";
