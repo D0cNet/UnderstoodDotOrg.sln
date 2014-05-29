@@ -4,14 +4,7 @@
 <asp:Panel runat="server" ID="pnlFilter" CssClass="container">
     <div class="row">
         <div class="container">
-            <div class="experts-nav-form  rs_read_this clearfix skiplink-toolbar" id="_b4946f96-6e28-8774-d6b8-0f6a78be2ac1">
-                <div id="readspeaker_button1" class="rsbtn_player rs_skip rs_preserve rshidden">
-                    <a href="http://app.readspeaker.com/cgi-bin/rsent?customerid=74&amp;lang=en_us&amp;readid=_b4946f96-6e28-8774-d6b8-0f6a78be2ac1&amp;url=http%3A%2F%2Fun-qa-sprint7-20140425.herokuapp.com%2Fcommunity.experts.c3.html" title="Listen" accesskey="L" class="rsbtn_play" data-rsevent-id="rs_900278" role="button">
-                        <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text">Listen<span></span></span></span>
-                        <span class="rsbtn_right rsimg rsplay rspart"><i class="icon icon-play"></i></span>
-                    </a>
-                </div>
-                <div class="skip-link-secondary"><a id="Toolbarlink" class="skip-link secondary-navigation-link rs_skip" href="#">Back to Navigation</a></div>
+            <div class="experts-nav-form  rs_read_this clearfix skiplink-toolbar">
                 <asp:Panel runat="server" ID="pnlExpertLiveFilter" class="dropdown">
                     <a href="#" data-toggle="dropdown" role="button" class="dropdown-toggle">
                         <span class="current-page">Featured</span>
@@ -22,9 +15,8 @@
                             <ul role="menu" class="dropdown-menu rs_skip">
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <li class="current-page" role="presentation">
+                            <li class="" role="presentation">
                                 <sc:FieldRenderer runat="server" ID="frLink" FieldName="Link" />
-                                <%--<a href="REPLACE" role="menuitem">Featured</a>--%>
                             </li>
                         </ItemTemplate>
                         <FooterTemplate>
@@ -32,9 +24,9 @@
                         </FooterTemplate>
                     </asp:Repeater>
                 </asp:Panel>
-                <asp:DropDownList ID="ddlIssue" OnSelectedIndexChanged="ddlIssue_SelectedIndexChanged" runat="server" AutoPostBack="true" Width="150px" name="experts-nav-issue"></asp:DropDownList>
-                <asp:DropDownList ID="ddlGrade" OnSelectedIndexChanged="ddlGrade_SelectedIndexChanged" runat="server" AutoPostBack="true" Width="150px" name="experts-nav-grade"></asp:DropDownList>
-                <asp:DropDownList ID="ddlTopics" OnSelectedIndexChanged="ddlTopics_SelectedIndexChanged" runat="server" AutoPostBack="true" Width="150px" name="experts-nav-topic"></asp:DropDownList>
+                <asp:DropDownList ID="ddlIssue" OnSelectedIndexChanged="ddlIssue_SelectedIndexChanged" runat="server" AutoPostBack="true" name="experts-nav-issue"></asp:DropDownList>
+                <asp:DropDownList ID="ddlGrade" OnSelectedIndexChanged="ddlGrade_SelectedIndexChanged" runat="server" AutoPostBack="true" name="experts-nav-grade"></asp:DropDownList>
+                <asp:DropDownList ID="ddlTopics" OnSelectedIndexChanged="ddlTopics_SelectedIndexChanged" runat="server" AutoPostBack="true" name="experts-nav-topic"></asp:DropDownList>
 
             </div>
             <!-- experts-nav-form -->
@@ -45,15 +37,8 @@
     <div class="row">
         <div class="container">
             <div class="col col-12 event-cards skiplink-feature">
-                <div class="skip-link-secondary"><a id="Featurelink" class="skip-link secondary-navigation-link rs_skip" href="#">Back to Navigation</a></div>
-                <div class="rs_read_this" id="_752c0389-e844-9201-d7c6-05a07a9ff79c">
-                    <div id="readspeaker_button2" class="rsbtn_player rs_skip rs_preserve rshidden">
-                        <a href="http://app.readspeaker.com/cgi-bin/rsent?customerid=74&amp;lang=en_us&amp;readid=_752c0389-e844-9201-d7c6-05a07a9ff79c&amp;url=http%3A%2F%2Fun-qa-sprint7-20140425.herokuapp.com%2Fcommunity.experts.c3.html" title="Listen" accesskey="L" class="rsbtn_play" data-rsevent-id="rs_917397" role="button">
-                            <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text">Listen<span></span></span></span>
-                            <span class="rsbtn_right rsimg rsplay rspart"><i class="icon icon-play"></i></span>
-                        </a>
-                    </div>
-                    <h2 runat="server">
+                <div class="rs_read_this">
+                    <h2>
                         <sc:FieldRenderer ID="frUpcomingWebinarsHeading" runat="server" FieldName="Webinars Heading" />
                     </h2>
                     <p class="subhead">
@@ -77,13 +62,7 @@
             <!-- end .event-cards -->
 
             <div class="col col-12 event-cards">
-                <div class="rs_read_this" id="_35370f8f-d84d-a968-e978-1af2256f5ea1">
-                    <div id="readspeaker_button5" class="rsbtn_player rs_skip rs_preserve rshidden">
-                        <a href="http://app.readspeaker.com/cgi-bin/rsent?customerid=74&amp;lang=en_us&amp;readid=_35370f8f-d84d-a968-e978-1af2256f5ea1&amp;url=http%3A%2F%2Fun-qa-sprint7-20140425.herokuapp.com%2Fcommunity.experts.c3.html" title="Listen" accesskey="L" class="rsbtn_play" data-rsevent-id="rs_873588" role="button">
-                            <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text">Listen<span></span></span></span>
-                            <span class="rsbtn_right rsimg rsplay rspart"><i class="icon icon-play"></i></span>
-                        </a>
-                    </div>
+                <div class="rs_read_this">
                     <h2>
                         <sc:FieldRenderer ID="frChatHeading" runat="server" FieldName="Chat Heading"/>
                     </h2>
@@ -105,9 +84,5 @@
             </div>
             <!-- end .event-cards -->
         </div>
-    </div>
-
-    <div class="row">
-        <a href="REPLACE" class="col-4 button offset-20 rs_skip">See Calendar</a>
     </div>
 </div>
