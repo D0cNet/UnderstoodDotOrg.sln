@@ -104,13 +104,10 @@
                                         <asp:HyperLink id="hypArticleThumbnailLink" runat="server">
                                            <asp:Image id="articleThumbnail" runat="server" imageurl="..." />
                                         </asp:HyperLink>
-                                        <%--<a href="REPLACE">
-                                            <img alt="190x105 Placeholder" src="http://placehold.it/190x105" /></a>--%>
                                     </div>
                                     <div class="issues-title">
                                         <h3>
                                             <asp:HyperLink id="hypArticleLink" runat="server"></asp:HyperLink>
-                                            <%--<a href="REPLACE">Quia Sed Delectus Dolor Atque</a>--%>
                                         </h3>
                                     </div>
                                 </div>

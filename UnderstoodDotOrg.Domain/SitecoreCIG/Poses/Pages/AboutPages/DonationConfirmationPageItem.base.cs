@@ -46,6 +46,15 @@ public static implicit operator Item(DonationConfirmationPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomImageField BannerImage
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Banner Image"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
