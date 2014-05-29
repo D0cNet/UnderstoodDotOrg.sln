@@ -36,7 +36,7 @@
             <section class="account-myfavorites">
                 <asp:Repeater ID="rptFavorites" runat="server" OnItemDataBound="rptFavorites_ItemDataBound">
                     <ItemTemplate>
-                        <div class="row myfavorites-list rs_read_this">
+                        <div class="row myfavorites-list rs_read_this repeater-item">
                             <div class="myfavorites-item clearfix">
                                 <div class="col col-3">
                                     <h3 class="favorite-type">

@@ -1249,7 +1249,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         GroupModel group = new GroupModel
                         {
                             Title = xn["Name"].InnerText,
-                            Url="/",
+                            Url = "/Community and Events/Groups/" + xn["Name"].InnerText,
                             Id=xn["Id"].InnerText                           
                         };
                         groupsList.Add(group);

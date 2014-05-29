@@ -13,7 +13,7 @@
         </asp:Repeater>
     </ul>
     <div class="bottom rs_skip">
-        <asp:HyperLink ID="hypGroupsTab" runat="server">See All Favorites</asp:HyperLink>
+        <asp:HyperLink ID="hypGroupsTab" runat="server">See All Groups</asp:HyperLink>
     </div>
 
 </div>

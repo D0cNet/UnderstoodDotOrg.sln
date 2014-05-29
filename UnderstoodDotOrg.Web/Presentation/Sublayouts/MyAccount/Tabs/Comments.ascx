@@ -47,7 +47,7 @@
                     
                     <asp:Repeater ID="rptComments" runat="server" OnItemDataBound="rptComments_ItemDataBound">
                         <ItemTemplate>
-                            <div class="mycomment-item clearfix rs_read_this">
+                            <div class="mycomment-item clearfix rs_read_this repeater-item">
                                 <div class="col col-3">
                                     <h3 class="comment-type">
                                         <asp:Literal ID="litSection" runat="server"></asp:Literal>

@@ -219,3 +219,17 @@ jQuery(function () {
     };
 
 })(jQuery);
+
+//"Show More" functionality for repeaters
+var showCount = 3;
+$(document).ready(function () {
+    for (var i = showCount; i < $(".repeater-item").length; i++) {
+        $(".repeater-item").eq(i).hide();
+    }
+});
+$(".show-more-link").click(function () {
+    for (var i = showCount; i < showCount + 3; i++) {
+        $(".repeater-item").eq(i).show();
+    }
+    showCount += 3;
+})

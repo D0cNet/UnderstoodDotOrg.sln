@@ -17,8 +17,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            var commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
-           
+            //var commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
+            
+            var commentsList = CommunityHelper.ListUserComments("admin");
+            
             if (commentsList != null)
             {
                 rptComments.DataSource = commentsList;
@@ -46,7 +48,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             litLikes.Text = item.Likes;
 
             HyperLink hypCommentGroup = (HyperLink)e.Item.FindControl("hypCommentGroup");
-            hypCommentGroup.NavigateUrl = "/";
+            hypCommentGroup.NavigateUrl = "/Community and Events/Groups/" + item.ParentTitle;
             hypCommentGroup.Text = item.ParentTitle;
         }
     }

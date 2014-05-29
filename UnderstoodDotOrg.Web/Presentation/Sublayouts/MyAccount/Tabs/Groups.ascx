@@ -61,7 +61,7 @@
                 <div class="row mygroup-list clearfix">
                     <asp:Repeater ID="rptComments" runat="server" OnItemDataBound="rptComments_ItemDataBound">
                         <ItemTemplate>
-                            <div class="row mygroup-item clearfix">
+                            <div class="row mygroup-item clearfix repeater-item">
                                 <p class="col col-15 mygroup-title">
                                     <asp:HyperLink ID="hypCommentLink" runat="server"></asp:HyperLink>
                                 </p>
@@ -120,13 +120,13 @@
                 </header>
                 <label>
                     <span class="visuallyhidden">Title of discussion</span>
-                    <input type="text" placeholder="Title of discussion">
+                    <asp:TextBox ID="txtSubject" ValidationGroup="newDiscussion" placholder="Title of discussion" runat="server"></asp:TextBox>
                 </label>
                 <label>
                     <span class="visuallyhidden">More detail</span>
-                    <textarea placeholder="More detail"></textarea>
+                    <asp:TextBox ID="txtBody" ValidationGroup="newDiscussion" placeholder="More detail" runat="server" TextMode="MultiLine"></asp:TextBox>
                 </label>
-                <button class="button rs_skip">Submit</button>
+                <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
             </section>
 
             <!-- END PARTIAL: my-groups-discussion-form -->
@@ -135,3 +135,17 @@
     <!-- .row -->
 </div>
 <!-- .container -->
+<script type="text/javascript">
+    var showCount = 3;
+    $(document).ready(function () {
+        for (var i = showCount; i < $(".repeater-item").length; i++) {
+            $(".repeater-item").eq(i).hide();
+        }
+    });
+    $(".show-more-link").click(function () {
+        for (var i = showCount; i < showCount + 3; i++) {
+            $(".repeater-item").eq(i).show();
+        }
+        showCount += 3;
+    })
+</script>
