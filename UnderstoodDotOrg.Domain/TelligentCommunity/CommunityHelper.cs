@@ -1151,11 +1151,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         var title = xn["Title"].InnerText;
                         var url = string.Empty;
                         var type = string.Empty;
+                        var body = xn["Body"].InnerText;
+                        string[] urlSplit = Regex.Split(body, "/sitecore/content/Home");
 
                         if (xn["Application"].InnerText.Equals("Articles"))
                         {
                             type = "Article";
-                            url = "/";
+                            url = urlSplit[1];
                         }
                         else
                         {
