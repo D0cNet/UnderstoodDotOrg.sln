@@ -28,7 +28,7 @@
                         </h3>
                         <asp:Panel ID="pnlQuestion" runat="server" CssClass="answer-choices">
                             <asp:Panel ID="pnlTrueFalse" runat="server" Visible="false">
-                                <button type="button" id="btnTrue" runat="server" class="button answer-choice-true rs_skip" >True</button>
+                                <button type="button" id="btnTrue" runat="server" class="button gray answer-choice-true rs_skip" >True</button>
                                 <button type="button" id="btnFalse" runat="server" class="button gray answer-choice-false rs_skip" >False</button>
                             </asp:Panel>
                             <asp:Panel ID="pnlRadioQuestion" CssClass="test" runat="server" Visible="false">
