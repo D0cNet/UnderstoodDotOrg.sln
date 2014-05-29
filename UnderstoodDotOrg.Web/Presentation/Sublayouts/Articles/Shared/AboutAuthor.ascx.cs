@@ -58,16 +58,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 
 
 
-            if (ObjDefaultArticle.AuthorName.Item!= null)
+            if (ObjDefaultArticle.AuthorName.Item != null)
             {
                 //Show Author details
                 frAuthorName.Item = ObjDefaultArticle.AuthorName.Item;
                 frAuthorBio.Item = ObjDefaultArticle.AuthorName.Item;
                 frAuthorImage.Item = ObjDefaultArticle.AuthorName.Item;
                 //frAuthorImage.FieldName = "Author Image";
+                hlAuthorImage.Visible = true;
                 hlAuthorImage.NavigateUrl = ObjDefaultArticle.AuthorName.Item.Paths.ContentPath;
+                hlAuthorMorePost.Visible = true;
                 hlAuthorMorePost.NavigateUrl = ObjDefaultArticle.AuthorName.Item.Paths.FullPath;
+            }
+            else
+            {
+                this.Visible = false;        
             }
         }
     }
-}
+}   
