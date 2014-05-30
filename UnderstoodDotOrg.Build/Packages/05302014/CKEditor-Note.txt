@@ -1,0 +1,3 @@
+Please place in 
+~/Presentation/Sublayouts/Tools/MyAccount/
+of the QA deployment
