@@ -106,8 +106,8 @@
                                 <p class="date-future"><asp:Literal runat="server" ID="ltFEventDate"></asp:Literal></p>
                                <%-- <p class="date-past">Tue Aug 23 at 8pm EST</p>--%>
                                 <a href="REPLACE" class="event-title"><sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" /></a>
-                                <h5><sc:FieldRenderer ID="frHeading" runat="server" FieldName="Heading" /></h5>
-                                <p class="topics-covered"><sc:FieldRenderer ID="frSubHeading" runat="server" FieldName="SubHeading" /></p>
+                                <h5><sc:FieldRenderer ID="frHeading" runat="server" FieldName="Event Heading" /></h5>
+                                <p class="topics-covered"><sc:FieldRenderer ID="frSubHeading" runat="server" FieldName="Event Subheading" /></p>
                                 <div class="links-future">
                                     
                                     <asp:HyperLink runat="server" ID="hlEventLine" >Event Details</asp:HyperLink> 

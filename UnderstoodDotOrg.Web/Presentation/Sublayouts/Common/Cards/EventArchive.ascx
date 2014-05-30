@@ -24,10 +24,10 @@
                 </div>
                 <!-- end .event-card-title -->
                 <p class="event-card-topics-head">
-                    <sc:FieldRenderer ID="frHeading" runat="server" FieldName="Heading" />
+                    <sc:FieldRenderer ID="frHeading" runat="server" FieldName="Event Heading" />
                 </p>
                 <p class="event-card-topics">
-                    <sc:FieldRenderer ID="frSubheading" runat="server" FieldName="SubHeading" />
+                    <sc:FieldRenderer ID="frSubheading" runat="server" FieldName="Event Subheading" />
                 </p>
                 <span class="children-key">
                     <ul>

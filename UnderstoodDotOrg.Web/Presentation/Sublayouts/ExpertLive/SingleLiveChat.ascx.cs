@@ -144,7 +144,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                     }
 
                     if (ltEventDate != null && !detailItem.EventDate.Raw.IsNullOrEmpty()) {
-                        TimeZoneItem timezone = detailItem.Timezone.Item;
+                        TimeZoneItem timezone = detailItem.EventTimezone.Item;
                         string timeZoneText = string.Empty;
 
                         if (timezone != null) {

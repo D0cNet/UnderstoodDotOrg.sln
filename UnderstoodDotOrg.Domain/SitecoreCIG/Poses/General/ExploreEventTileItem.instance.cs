@@ -28,7 +28,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General
 
         public string GetSubhead(BaseEventDetailPageItem eventItem)
         {
-            string subhead = eventItem.SubHeading.Rendered;
+            string subhead = eventItem.EventSubheading.Rendered;
 
             var date = eventItem.EventDate.DateTime;
             string month = date.ToString("MMM");

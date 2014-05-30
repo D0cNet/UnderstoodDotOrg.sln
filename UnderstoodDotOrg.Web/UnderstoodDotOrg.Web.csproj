@@ -1267,13 +1267,6 @@
     <Compile Include="Presentation\Sublayouts\ExpertLive\PastChat.ascx.designer.cs">
       <DependentUpon>PastChat.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\PastWebinar.ascx.cs">
-      <DependentUpon>PastWebinar.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\PastWebinar.ascx.designer.cs">
-      <DependentUpon>PastWebinar.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx.cs">
       <DependentUpon>SingleLiveChat.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1288,19 +1281,19 @@
     <Compile Include="Presentation\Sublayouts\ExpertLive\UpComingChat.ascx.designer.cs">
       <DependentUpon>UpComingChat.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\UpComingWebinar.ascx.cs">
-      <DependentUpon>UpComingWebinar.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\UpComingWebinar.ascx.designer.cs">
-      <DependentUpon>UpComingWebinar.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\VideoResources.ascx.cs">
       <DependentUpon>VideoResources.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\VideoResources.ascx.designer.cs">
       <DependentUpon>VideoResources.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\WebinarDetails.ascx.cs">
+      <DependentUpon>WebinarDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\WebinarDetails.ascx.designer.cs">
+      <DependentUpon>WebinarDetails.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Home\GuideMe.ascx.cs">
       <DependentUpon>GuideMe.ascx</DependentUpon>
@@ -2572,11 +2565,10 @@
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertLiveDetail.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\LiveChat.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\PastChat.ascx" />
-    <Content Include="Presentation\Sublayouts\ExpertLive\PastWebinar.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\UpComingChat.ascx" />
-    <Content Include="Presentation\Sublayouts\ExpertLive\UpComingWebinar.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\VideoResources.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\WebinarDetails.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeFeatured.ascx" />
     <Content Include="Presentation\Sublayouts\Home\HomeHeroCarousel.ascx" />

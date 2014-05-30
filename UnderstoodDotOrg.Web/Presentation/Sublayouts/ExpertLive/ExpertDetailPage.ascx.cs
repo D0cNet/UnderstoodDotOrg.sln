@@ -199,7 +199,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                     }
 
                     if (ltEventDate != null && !baseEventItem.EventDate.Raw.IsNullOrEmpty()) {
-                        TimeZoneItem timezone = baseEventItem.Timezone.Item;
+                        TimeZoneItem timezone = baseEventItem.EventTimezone.Item;
                         string timeZoneText = string.Empty;
 
                         if (timezone != null) {

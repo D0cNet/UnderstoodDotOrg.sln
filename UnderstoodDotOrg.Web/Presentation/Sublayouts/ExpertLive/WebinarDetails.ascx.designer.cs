@@ -7,19 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
     
     
-    public partial class UpComingWebinar {
-        
-        /// <summary>
-        /// hlBackToLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlBackToLink;
+    public partial class WebinarDetails {
         
         /// <summary>
         /// frPageTItle control.
@@ -31,67 +22,76 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPageTItle;
         
         /// <summary>
-        /// hlLink control.
+        /// hlExpertDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlLink;
+        protected global::System.Web.UI.WebControls.HyperLink hlExpertDetail;
         
         /// <summary>
-        /// scThumbImg control.
+        /// imgExpert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer scThumbImg;
+        protected global::System.Web.UI.WebControls.Image imgExpert;
         
         /// <summary>
-        /// imgExpertDefault control.
+        /// litExpertType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgExpertDefault;
+        protected global::System.Web.UI.WebControls.Literal litExpertType;
         
         /// <summary>
-        /// litGuest control.
+        /// litEventDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litGuest;
+        protected global::System.Web.UI.WebControls.Literal litEventDate;
         
         /// <summary>
-        /// ltEventDate control.
+        /// frExpertName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltEventDate;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frExpertName;
         
         /// <summary>
-        /// frHeading control.
+        /// frHostTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frHeading;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frHostTitle;
         
         /// <summary>
-        /// frSubHeading control.
+        /// frTopicsHeading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSubHeading;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frTopicsHeading;
+        
+        /// <summary>
+        /// frTopics control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frTopics;
         
         /// <summary>
         /// frBodyContent control.
@@ -103,21 +103,39 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBodyContent;
         
         /// <summary>
-        /// scLinkRSVP control.
+        /// phHelpful control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Link scLinkRSVP;
+        protected global::System.Web.UI.WebControls.PlaceHolder phHelpful;
         
         /// <summary>
-        /// scLinkCalendar control.
+        /// phVideoDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Link scLinkCalendar;
+        protected global::System.Web.UI.WebControls.PlaceHolder phVideoDetails;
+        
+        /// <summary>
+        /// frVideoEmbed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frVideoEmbed;
+        
+        /// <summary>
+        /// frVideoTranscript control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frVideoTranscript;
     }
 }

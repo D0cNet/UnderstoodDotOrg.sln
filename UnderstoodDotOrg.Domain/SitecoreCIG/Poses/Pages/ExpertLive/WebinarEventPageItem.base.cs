@@ -46,11 +46,11 @@ public static implicit operator Item(WebinarEventPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField VideoID
+public CustomTextField VideoEmbed
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Video ID"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Video Embed"]);
 	}
 }
 

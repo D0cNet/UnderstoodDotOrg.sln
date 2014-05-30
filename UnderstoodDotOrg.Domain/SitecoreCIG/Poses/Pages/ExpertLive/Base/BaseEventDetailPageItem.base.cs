@@ -46,11 +46,38 @@ public static implicit operator Item(BaseEventDetailPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomLookupField Timezone
+public CustomTextField EventSubheading
 {
 	get
 	{
-		return new CustomLookupField(InnerItem, InnerItem.Fields["Timezone"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Event Subheading"]);
+	}
+}
+
+
+public CustomTextField EventHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Event Heading"]);
+	}
+}
+
+
+public CustomLookupField Expert
+{
+	get
+	{
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Expert"]);
+	}
+}
+
+
+public CustomLookupField EventTimezone
+{
+	get
+	{
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Event Timezone"]);
 	}
 }
 
@@ -91,47 +118,11 @@ public CustomTreeListField ParentInterest
 }
 
 
-public CustomLookupField Expert
-{
-	get
-	{
-		return new CustomLookupField(InnerItem, InnerItem.Fields["Expert"]);
-	}
-}
-
-
 public CustomGeneralLinkField RSVPforEvent
 {
 	get
 	{
 		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["RSVP for Event"]);
-	}
-}
-
-
-public CustomGeneralLinkField AddtoMyCalendar
-{
-	get
-	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Add to My Calendar"]);
-	}
-}
-
-
-public CustomTextField Heading
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Heading"]);
-	}
-}
-
-
-public CustomTextField SubHeading
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["SubHeading"]);
 	}
 }
 

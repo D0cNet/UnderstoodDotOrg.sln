@@ -69,7 +69,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
                 }
 
                 if (ltEventDate != null && !baseEventDetailpage.EventDate.Raw.IsNullOrEmpty()) {
-                    TimeZoneItem timezone = baseEventDetailpage.Timezone.Item;
+                    TimeZoneItem timezone = baseEventDetailpage.EventTimezone.Item;
                     string timeZoneText = string.Empty;
 
                     if (timezone != null) {

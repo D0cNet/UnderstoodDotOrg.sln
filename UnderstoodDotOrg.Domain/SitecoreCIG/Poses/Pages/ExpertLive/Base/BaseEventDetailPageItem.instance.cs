@@ -6,6 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using Sitecore.Resources.Media;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
 {
@@ -16,12 +17,31 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
             DateTime eventDate = EventDate.DateTime;
             if (eventDate != DateTime.MinValue)
             {
-                TimeZoneItem timezone = Timezone.Item;
+                TimeZoneItem timezone = EventTimezone.Item;
                 string zoneLabel = (timezone != null) ? timezone.Abbreviation.Rendered : string.Empty;
 
                 string meridian = eventDate.ToString("tt").ToLower();
 
                 return String.Format("{0:ddd MMM dd} at {0:hh:mm}{1} {2}", eventDate, meridian, zoneLabel);
+            }
+
+            return String.Empty;
+        }
+
+        public string GetFormattedArchiveEventDate()
+        {
+            DateTime? eventDate = GetEventDateUtc();
+            if (eventDate.HasValue && eventDate.Value != DateTime.MinValue)
+            {
+                int daysElapsed = (DateTime.UtcNow - eventDate.Value).Days;
+                if (daysElapsed > 0 && daysElapsed <= 30)
+                {
+                    return String.Format("{0} {1}", daysElapsed, DictionaryConstants.DaysAgoLabel);
+                }
+                else
+                {
+                    return eventDate.Value.ToString("MMM dd yyyy");
+                }
             }
 
             return String.Empty;
@@ -42,7 +62,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
         {
             DateTime? result = null;
 
-            TimeZoneItem tz = Timezone.Item;
+            TimeZoneItem tz = EventTimezone.Item;
             DateTime eventDate = EventDate.DateTime;
 
             if (tz != null && eventDate != DateTime.MinValue)

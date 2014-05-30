@@ -17,7 +17,7 @@
                                 <sc:FieldRenderer ID="frHeading" runat="server" FieldName="Expert Name" />
                             </h4>
                             <p class="credentials">
-                                <sc:FieldRenderer ID="frSubHeading" runat="server" FieldName="SubHeading" />
+                                <sc:FieldRenderer ID="frSubHeading" runat="server" FieldName="Event Subheading" />
                             </p>
                            <%-- <div class="all-tasks">
                                 <p class="tasks">Hosts Webinars</p>
