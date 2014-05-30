@@ -51,6 +51,9 @@
     <Compile Include="UI\BaseRegistration.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="UI\BaseRegistrationT.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="UI\BaseSublayout.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

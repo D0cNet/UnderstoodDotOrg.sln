@@ -1,25 +1,43 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TermsAndConditions.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.TermsAndConditions" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
-<!-- BEGIN PARTIAL: sign-up-terms -->
-<div class="terms-wrapper skiplink-content" aria-role="main">
-  <div class="terms-container">
-    <div class="terms-head">
-      <h1>Terms &amp; Conditions</h1>
-      <h2>Please agree to the site terms &amp; conditions so we can sign you up.</h2>
+<div class="container sign-up-link flush">
+    <div class="row">
+        <div class="col col-23">
+            <p class="signed-up">Already signed up? <a href="REPLACE">Sign In</a></p>
+        </div>
     </div>
-    <div class="terms-content" tabindex="0">
-      <p>Dolorem possimus velit asperiores dolore dolore fugiat non tempore accusamus repellat maxime dolor voluptatibus. nisi rem quia ut voluptatem corrupti id quibusdam qui qui repudiandae voluptatem. ab consequatur commodi sit excepturi ea aut et voluptas facere. magni perferendis et quia vero libero et distinctio qui sed velit numquam molestiae. non quibusdam earum aut architecto</p>
-      <p>Explicabo earum aspernatur ducimus voluptates. et et quas voluptas tenetur quod nihil labore consequuntur totam alias aut omnis. voluptatem at laboriosam cumque blanditiis est placeat eos. sapiente aut voluptatum in ea dolores rem ut. vero beatae quis ut ratione voluptatem enim ratione et dolorum animi vero eligendi</p>
-      <p>In laborum accusamus consequatur nihil voluptatem reiciendis. facilis distinctio amet culpa amet porro at voluptatum voluptatem iste doloribus. ut ex atque necessitatibus ut non optio dolor eum et. est id odit debitis in suscipit. porro perspiciatis vitae omnis quia nam commodi officiis voluptatem molestias ipsa aspernatur illum. doloremque rerum deserunt pariatur impedit non quod</p>
-      <p>Maiores omnis repellat nam qui maxime. ea mollitia in ab. quos dolorem aut recusandae incidunt ullam dicta aliquam ea praesentium et suscipit fugiat veritatis</p>
-      <p>Optio placeat pariatur nemo voluptatem natus sit. odio aut ut iusto consequatur ea dolores vero delectus minima nobis modi fugit. qui aut facere cumque quas corporis aperiam aut sunt sit omnis qui fugit. at eligendi omnis consequatur ut aut. quidem aliquam facere occaecati vero praesentium eius maxime aspernatur nobis dicta inventore ut voluptates quia</p>
-    </div>
-    <div class="terms-buttons">
-      <button type="button" class="button answer-agree">I Agree</button>
-      <button type="button" class="button gray answer-do-not-agree">I Do Not Agree</button>
-    </div>
-  </div>
 </div>
+<div class="container sign-up-terms flush">
+    <div class="row">
+        <!-- article -->
+        <div class="col col-24 centered">
+            <!-- BEGIN PARTIAL: sign-up-terms -->
+            <div class="terms-wrapper skiplink-content" aria-role="main">
+                <div class="terms-container">
+                    <div class="rs_read_this terms-container-rs-wrapper">
+                        <div class="terms-head">
+                            <h1>Terms &amp; Conditions</h1>
+                            <h2>Please agree to the site terms &amp; conditions so we can sign you up.</h2>
+                        </div>
+                        <div class="terms-content" tabindex="0">
+                            <p>Enim asperiores commodi itaque. consequatur aut sed sint labore voluptatum est alias. molestiae culpa distinctio similique natus hic quisquam eaque et. natus et sequi voluptas quia reprehenderit dolorum perspiciatis ab dolores qui sunt. voluptate ratione rerum necessitatibus ipsam eveniet. laudantium eos libero totam soluta sit maiores. nihil numquam consequatur consectetur quibusdam ipsa eos neque est hic cumque voluptas</p>
+                            <p>Voluptatibus odit ullam eveniet eius sint culpa dolor. consequatur modi rerum veritatis quas eum saepe voluptatum. aut omnis vitae ex natus eius. dolorem iure recusandae iure repellat dicta et. aliquam quam labore nihil voluptatem. sed qui dolor odio nobis nesciunt architecto minus maxime est voluptate veritatis dolor. unde accusantium ipsa eos quis aliquid voluptas eos aut et omnis</p>
+                            <p>Aperiam omnis totam aliquid ea quia qui perferendis quia est rerum possimus iure velit. nostrum ratione est quo reiciendis qui voluptates autem. aut perferendis repudiandae quidem minus illum eos iste quidem</p>
+                            <p>Nam quae provident beatae omnis sed qui architecto temporibus optio est. quas sit facilis sit est voluptatum modi quos voluptas et. dolorum dicta accusamus in laboriosam odio consequatur sunt ullam voluptates sit error porro</p>
+                            <p>Maxime ipsam corrupti necessitatibus in. corporis fugiat soluta culpa quae consequatur illum ipsum dolores cumque architecto rerum perspiciatis voluptates exercitationem. aliquam dicta nihil illo tenetur unde voluptate</p>
+                        </div>
+                        <div class="terms-buttons">
+                            <button type="button" class="button answer-agree rs_skip">I Agree</button>
+                            <button type="button" class="button gray answer-do-not-agree rs_skip">I Do Not Agree</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<!-- END PARTIAL: sign-up-terms -->
+            <!-- END PARTIAL: sign-up-terms -->
+        </div>
+    </div>
+    <!-- .row -->
+</div>
+<!-- .container -->
