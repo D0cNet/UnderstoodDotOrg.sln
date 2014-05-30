@@ -1505,12 +1505,12 @@
     <Compile Include="Presentation\Sublayouts\MyAccount\Tabs\Groups.ascx.designer.cs">
       <DependentUpon>Groups.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\MyAccount\Terms and Conditions.ascx.cs">
-      <DependentUpon>Terms and Conditions.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\MyAccount\TermsAndConditions.ascx.cs">
+      <DependentUpon>TermsAndConditions.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\MyAccount\Terms and Conditions.ascx.designer.cs">
-      <DependentUpon>Terms and Conditions.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\MyAccount\TermsAndConditions.ascx.designer.cs">
+      <DependentUpon>TermsAndConditions.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\My Profile.ascx.cs">
       <DependentUpon>My Profile.ascx</DependentUpon>
@@ -2599,7 +2599,7 @@
     <Content Include="Presentation\Sublayouts\MyAccount\Tabs\Events.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Tabs\Favorites.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Tabs\Groups.ascx" />
-    <Content Include="Presentation\Sublayouts\MyAccount\Terms and Conditions.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\TermsAndConditions.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\My Profile.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFour.ascx" />

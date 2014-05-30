@@ -11,7 +11,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
 
 
-    public partial class Terms_and_Conditions
+    public partial class TermsAndConditions
     {
     }
 }
