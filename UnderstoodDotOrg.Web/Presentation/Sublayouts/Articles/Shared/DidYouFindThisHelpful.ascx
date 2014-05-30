@@ -35,10 +35,10 @@
                     <h4><asp:Literal ID="ltlDidYouFindThisHelpfulSmall" runat="server"></asp:Literal></h4>
                     <ul>
                         <li>
-                            <button class="button yes rs_skip"><asp:Literal ID="ltlYesSmall" runat="server"></asp:Literal></button>
+                            <button class="helpful-yes button yes rs_skip"><asp:Literal ID="ltlYesSmall" runat="server"></asp:Literal></button>
                         </li>
                         <li>
-                            <button class="button no gray rs_skip"><asp:Literal ID="ltlNoSmall" runat="server"></asp:Literal></button>
+                            <button class="helpful-no button no gray rs_skip"><asp:Literal ID="ltlNoSmall" runat="server"></asp:Literal></button>
                         </li>
                     </ul>
                     <div class="clearfix"></div>
