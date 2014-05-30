@@ -16,6 +16,7 @@
         {
             // TODO: replace with correct check for archived state
             bool isUpcoming = Model.BaseEventDetailPage.IsUpcoming();
+            phCallToActions.Visible = isUpcoming;
             phVideoDetails.Visible = phHelpful.Visible = !isUpcoming;
 
             if (isUpcoming)
