@@ -19,11 +19,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             hypGroupsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
 
             List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
-            if (groupsList != null)
+            litCount.Text = groupsList != null ? groupsList.Count.ToString() : "0";
+            if ((groupsList != null)&&(groupsList.Count != 0))
             {
-                litCount.Text = groupsList.Count.ToString();
-
-                rptGroups.DataSource = groupsList;
+                rptGroups.DataSource = groupsList.Count == 1 ? groupsList.GetRange(0, 1) : groupsList.GetRange(0, 2); ;
                 rptGroups.DataBind();
             }
         }

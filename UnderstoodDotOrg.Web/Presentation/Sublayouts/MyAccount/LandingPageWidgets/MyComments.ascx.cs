@@ -29,9 +29,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 
             lblCount.Text = commentsList.Count.ToString();
 
-            if (commentsList != null)
+            if ((commentsList != null)&&(commentsList.Count != 0))
             {
-                rptComments.DataSource = commentsList.GetRange(0,2);
+                rptComments.DataSource = commentsList.Count == 1 ? commentsList.GetRange(0, 1) : commentsList.GetRange(0, 2);
                 rptComments.DataBind();
             }
         }

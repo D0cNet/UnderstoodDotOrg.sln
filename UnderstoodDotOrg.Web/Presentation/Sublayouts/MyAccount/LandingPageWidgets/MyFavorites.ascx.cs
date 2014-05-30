@@ -18,11 +18,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             hypFavoritesTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
 
             var favoritesList = CommunityHelper.GetFavorites(CurrentMember.ScreenName);
-            
-            litCount.Text = favoritesList.Count.ToString();
 
-            rptFavorites.DataSource = favoritesList;
-            rptFavorites.DataBind();
+            litCount.Text = favoritesList != null ? favoritesList.Count.ToString() : "0";
+
+            if ((favoritesList != null) && (favoritesList.Count != 0))
+            {
+                rptFavorites.DataSource = favoritesList.Count == 1 ? favoritesList.GetRange(0, 1) : favoritesList.GetRange(0, 2);
+                rptFavorites.DataBind();
+            }
         }
 
         protected void rptFavorites_ItemDataBound(object sender, RepeaterItemEventArgs e)

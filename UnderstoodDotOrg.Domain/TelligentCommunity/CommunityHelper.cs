@@ -1219,32 +1219,35 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
             using (var webClient = new WebClient())
             {
-                username = username.Trim();
-                username = username.ToLower();
-                string adminKeyBase64 = CommunityHelper.TelligentAuth();
-                try
+                if (!String.IsNullOrEmpty(username))
                 {
-                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                    //webClient.Headers.Add("Rest-Impersonate-User", userId);
-                    var requestUrl = GetApiEndPoint(String.Format("groups.xml?Username={0}", username));
-                    var xml = webClient.DownloadString(requestUrl);
-
-                    var xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xml);
-
-                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Groups/Group");
-                    foreach (XmlNode xn in nodes)
+                    username = username.Trim();
+                    username = username.ToLower();
+                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
+                    try
                     {
-                        GroupModel group = new GroupModel
+                        webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                        //webClient.Headers.Add("Rest-Impersonate-User", userId);
+                        var requestUrl = GetApiEndPoint(String.Format("groups.xml?Username={0}", username));
+                        var xml = webClient.DownloadString(requestUrl);
+
+                        var xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(xml);
+
+                        XmlNodeList nodes = xmlDoc.SelectNodes("Response/Groups/Group");
+                        foreach (XmlNode xn in nodes)
                         {
-                            Title = xn["Name"].InnerText,
-                            Url = "/Community and Events/Groups/" + xn["Name"].InnerText,
-                            Id=xn["Id"].InnerText                           
-                        };
-                        groupsList.Add(group);
+                            GroupModel group = new GroupModel
+                            {
+                                Title = xn["Name"].InnerText,
+                                Url = "/Community and Events/Groups/" + xn["Name"].InnerText,
+                                Id = xn["Id"].InnerText
+                            };
+                            groupsList.Add(group);
+                        }
                     }
+                    catch (Exception ex) { groupsList = null; Sitecore.Diagnostics.Error.LogError("GetuserGroups Error:\n" + ex.Message); } // TODO: add logging
                 }
-                catch (Exception ex) { groupsList = null; Sitecore.Diagnostics.Error.LogError("GetuserGroups Error:\n" + ex.Message); } // TODO: add logging
             }
             return groupsList;
         }
