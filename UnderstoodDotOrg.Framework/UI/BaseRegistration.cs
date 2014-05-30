@@ -54,7 +54,7 @@ namespace UnderstoodDotOrg.Framework.UI
         public void Page_Load(object sender, EventArgs e)
         {
             string facebookId = "var fbAppId = '{0}';";
-            string appId = ConfigurationManager.AppSettings["FacebookAppId"];
+            string appId = ConfigurationManager.AppSettings[Constants.Settings.FacebookAppId];
 
             Page.ClientScript.RegisterClientScriptBlock(GetType(), "fbAppId", string.Format(facebookId, appId), true);
         }

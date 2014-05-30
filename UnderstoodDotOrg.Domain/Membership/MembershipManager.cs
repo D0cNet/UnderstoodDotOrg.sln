@@ -62,7 +62,7 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             try
             {
-                member = this.GetMember(membershipUser.ProviderUserKey.ToString());
+                member = this.GetMember(Guid.Parse(membershipUser.ProviderUserKey.ToString()));
                 if (member == null)
                 {
                     throw new Exception("Membership User does not exist");
