@@ -1215,7 +1215,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
         public static List<GroupModel> GetUserGroups(string username)
         {
-            List<GroupModel> groupsList = new List<GroupModel>();
+            List<GroupModel> groupsList = null;
 
             using (var webClient = new WebClient())
             {
@@ -1244,7 +1244,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         groupsList.Add(group);
                     }
                 }
-                catch { } // TODO: add logging
+                catch (Exception ex) { groupsList = null; Sitecore.Diagnostics.Error.LogError("GetuserGroups Error:\n" + ex.Message); } // TODO: add logging
             }
             return groupsList;
         }
