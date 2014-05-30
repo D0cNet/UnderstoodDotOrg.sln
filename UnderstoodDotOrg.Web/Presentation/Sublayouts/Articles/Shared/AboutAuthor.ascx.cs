@@ -21,59 +21,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 {
     public partial class AboutAuthor : System.Web.UI.UserControl
     {
-        DefaultArticlePageItem ObjDefaultArticle;
-       
-       
-       
-        BasicArticlePageItem ObjBasicArticle;
-        SimpleExpertArticleItem ObjSimpleExpertArticle;
-        DeepDiveArticlePageItem ObjDeepDiveArticle;
-        ActionStyleListPageItem ObjActionStyleArticle;
-       
-       
+        DefaultArticlePageItem ObjDefaultArticle;    
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Sitecore.Context.Item.TemplateID.ToString() == BasicArticlePageItem.TemplateId.ToString())
-            {
-                ObjBasicArticle = new BasicArticlePageItem(Sitecore.Context.Item);
-                ObjDefaultArticle = ObjBasicArticle.DefaultArticlePage;
-            }
-            if (Sitecore.Context.Item.TemplateID.ToString() == SimpleExpertArticleItem.TemplateId.ToString())
-            {
-                ObjSimpleExpertArticle = new SimpleExpertArticleItem(Sitecore.Context.Item);
-                ObjDefaultArticle = ObjSimpleExpertArticle.DefaultArticlePage;
-            }
-            if (Sitecore.Context.Item.TemplateID.ToString() == DeepDiveArticlePageItem.TemplateId.ToString())
-            {
-                ObjDeepDiveArticle = new DeepDiveArticlePageItem(Sitecore.Context.Item);
-                ObjDefaultArticle = ObjDeepDiveArticle.DefaultArticlePage;
-            }
-            if (Sitecore.Context.Item.TemplateID.ToString() == ActionStyleListPageItem.TemplateId.ToString())
-            {
-                ObjActionStyleArticle = new ActionStyleListPageItem(Sitecore.Context.Item);
-                ObjDefaultArticle = ObjActionStyleArticle.DefaultArticlePage;
-            }
+            if (Sitecore.Context.Item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
+                ObjDefaultArticle = (DefaultArticlePageItem)Sitecore.Context.Item;
 
-
-
-
-            if (ObjDefaultArticle.AuthorName.Item != null)
+            if (ObjDefaultArticle != null)
             {
                 //Show Author details
-                frAuthorName.Item = ObjDefaultArticle.AuthorName.Item;
-                frAuthorBio.Item = ObjDefaultArticle.AuthorName.Item;
-                frAuthorImage.Item = ObjDefaultArticle.AuthorName.Item;
-                //frAuthorImage.FieldName = "Author Image";
-                hlAuthorImage.Visible = true;
-                hlAuthorImage.NavigateUrl = ObjDefaultArticle.AuthorName.Item.Paths.ContentPath;
-                hlAuthorMorePost.Visible = true;
-                hlAuthorMorePost.NavigateUrl = ObjDefaultArticle.AuthorName.Item.Paths.FullPath;
+                if (ObjDefaultArticle.AuthorName.Item != null)
+                {
+                    frAuthorName.Item = ObjDefaultArticle.AuthorName.Item;
+                    frAuthorBio.Item = ObjDefaultArticle.AuthorName.Item;
+                    frAuthorImage.Item = ObjDefaultArticle.AuthorName.Item;
+                    hlAuthorImage.Visible = true;
+                    hlAuthorImage.NavigateUrl = ObjDefaultArticle.AuthorName.Item.Paths.ContentPath;
+                    hlAuthorMorePost.Visible = true;
+                    hlAuthorMorePost.NavigateUrl = ObjDefaultArticle.AuthorName.Item.Paths.FullPath;
+                }
+                else
+                    this.Visible = false;
             }
             else
-            {
-                this.Visible = false;        
-            }
+                this.Visible = false;
         }
     }
 }   
