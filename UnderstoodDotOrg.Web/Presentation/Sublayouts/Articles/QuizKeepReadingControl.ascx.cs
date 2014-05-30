@@ -24,8 +24,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             DefaultArticlePageItem context = (DefaultArticlePageItem)Sitecore.Context.Item;
 
-            rptKeepReading.DataSource = context.KeepReadingContent.ListItems;
-            rptKeepReading.DataBind();
+            if (context.KeepReadingContent.ListItems.Count != 0)
+            {
+                rptKeepReading.DataSource = context.KeepReadingContent.ListItems;
+                rptKeepReading.DataBind();
+            }
+            else
+            {
+                this.Visible = false;
+            }
         }
 
         protected void rptKeepReading_ItemDataBound(object sender, RepeaterItemEventArgs e)

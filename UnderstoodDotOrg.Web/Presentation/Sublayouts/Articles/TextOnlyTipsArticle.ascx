@@ -78,6 +78,12 @@
                 </asp:Repeater>
             </div>
 
+            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />            
+
+            <!-- END PARTIAL: about-the-author -->
+            <!-- BEGIN PARTIAL: reviewed-by -->
+            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+
             <!-- END PARTIAL: text-slides -->
         </div>
     </div>

@@ -50,7 +50,9 @@
 
             <!-- END PARTIAL: expert-answer -->
             <!-- BEGIN PARTIAL: about-the-author -->
-            <sc:sublayout id="sbAboutAuthor" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" visible="false" />
+            <sc:sublayout id="sbAboutAuthor" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
+
+            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
 
             <!-- END PARTIAL: about-the-author -->
             <!-- BEGIN PARTIAL: find-helpful -->
