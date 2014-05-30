@@ -67,6 +67,8 @@ namespace UnderstoodDotOrg.Common
         public static string currentUserFacebookAccessToken { get { return "_understood_org_current_user_facebook_access_token"; } }
         #endregion
 
+
+
 #region Unauthenticated Member Values
         public static string UnauthenticatedMember_ScreeName { get { return "c5uSwuWruy2Q5NADejus"; } }
         public static string UnauthenticatedMember_Password{ get { return "4Sf9suVucReD373HDS"; } }
@@ -557,7 +559,12 @@ namespace UnderstoodDotOrg.Common
             Blogger,
             Member
         }
-
+        public static class TelligentConversationStatus
+        {
+            public const string NotSet = "NotSet";
+            public const string Read = "Read";
+            public const string Unread = "Unread";
+        }
         public static class TelligentFieldNames
         {
             public const string BlogId = "BlogId";

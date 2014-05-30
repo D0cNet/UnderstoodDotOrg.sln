@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parent Group Discussion.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parent_Group_Discussion" %>
-<div id="community-page" class="parent-groups individual-discussion">
+
     <!-- BEGIN PARTIAL: community/main_header -->
 
     <!-- END PARTIAL: community/main_header -->
@@ -185,4 +185,4 @@
             </div>
         </div>
     </div>
-</div>
+

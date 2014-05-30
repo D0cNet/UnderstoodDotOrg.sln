@@ -797,7 +797,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
         }
 
 
-        public static List<Message> GetMessages (string convID)
+        public static List<Message> GetMessages (string convID,string username=null)
         {
             List<Message> messages = new List<Message>();
             XmlNode node = null;
@@ -809,7 +809,10 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 try
                 {
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                    //webClient.Headers.Add("Rest-Impersonate-User", username);
+                    if(!String.IsNullOrEmpty(username))
+                        webClient.Headers.Add("Rest-Impersonate-User", username);
+                    
+
                     var xmlDoc = new XmlDocument();
                     var requestUrl = String.Format("{0}api.ashx/v2/conversations/{1}/messages.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), convID);
                     var xml = webClient.DownloadString(requestUrl);
@@ -830,7 +833,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 }
                 catch (Exception ex)
                 {
-                    messages = null;
+                    messages = new List<Message>();
                     Sitecore.Diagnostics.Log.Error(ex.Message, ex);
                 }
             }
@@ -838,7 +841,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return messages;
         }
 
-        public static List<Conversation> GetConversations(string username)
+        public static List<Conversation> GetConversations(string username,string read_status=null)
         {
 
             List<Conversation> conversations = new List<Conversation>();
@@ -854,7 +857,12 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
                     webClient.Headers.Add("Rest-Impersonate-User", username);
                     var xmlDoc = new XmlDocument();
-                    var requestUrl = String.Format("{0}api.ashx/v2/conversations.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    string requestUrl = String.Empty;
+                    if(String.IsNullOrEmpty(read_status))
+                         requestUrl = String.Format("{0}api.ashx/v2/conversations.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    else
+                        requestUrl = String.Format("{0}api.ashx/v2/conversations.xml?ReadStatus="+read_status, Settings.GetSetting(Constants.Settings.TelligentConfig));
+
                     var xml = webClient.DownloadString(requestUrl);
 
                     xmlDoc.LoadXml(xml);
@@ -864,7 +872,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     {
                         foreach (XmlNode item in node)
                         {
-                            Conversation conv = new Conversation(item);
+                            Conversation conv = new Conversation(item,username);
                             conversations.Add(conv);
 
                             conv = null;

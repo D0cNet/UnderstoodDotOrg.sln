@@ -95,7 +95,7 @@
             <div class="col col-23 individual-group skiplink-content" aria-role="main">
                 <!-- BEGIN PARTIAL: community/groups_table -->
                 <div class="discussion-box col col-23 offset-1">
-                    <%--      <header class="rs_skip">
+                          <header class="rs_skip">
 
     
 
@@ -106,7 +106,7 @@
                     <h4 class="col latest-post-tabular">Latest Post</h4>
     
 
-                  </header>--%>
+                  </header>
 
                     <asp:Repeater ID="rptThread" OnItemDataBound="rptThread_ItemDataBound" runat="server">
 

@@ -43,6 +43,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
 				return Settings.GetSetting(Constants.Settings.TelligentConfig);
 			}
 		}
+        public string UnreadMessages
+        {
+            get
+            {
+                string sessConv = Session["UnreadConversations"] as String;
+                if ( sessConv!= null)
+                    return sessConv;
+                else
+                {
+                  var test =  TelligentService.GetConversations(ScreenName, Constants.TelligentConversationStatus.Unread);
+                  if(test!=null){
+                      sessConv = test.Count().ToString();
+                    Session["UnreadConversations"]= sessConv;
+                  
+                  }
+                  return sessConv??"0";
+                }
+            }
+        }
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			if (!IsPostBack)
@@ -80,19 +99,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                 
                 foreach (Conversation item in Conversations)
                 {
-                    if (item.HasMessages)
-                    {
+                    //if (item.HasMessages)
+                    //{
                         //Get the latest message
                         Message m = item.Messages.OrderByDescending(x => x.CreatedDate).First();
                         ///messages.Add(item.FirstMessage);
                         messages.Add(m);
 
                         m = null;
-                    }
-                    else
-                    {
-                        messages.Add(item.FirstMessage);
-                    }
+                    //}
+                    //else
+                    //{
+                    //    messages.Add(item.FirstMessage);
+                    //}
                 }
 
 
