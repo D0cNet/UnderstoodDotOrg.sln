@@ -118,30 +118,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
 
         public void BindGradesDDL() {
 
-            var grades = GetFilters(GradeLevelItem.TemplateId).Select(i => (GradeLevelItem)i);
+            var grades = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
             if (grades.Any()) {
-                ddlGradeGroups.Items.Clear();
-                ddlGradeGroups.Items.Add(new ListItem(DictionaryConstants.SelectGradeLabel, "0"));
-
-                foreach (GradeLevelItem gradeItem in grades) {
-                    if (!string.IsNullOrEmpty(gradeItem.Name.Raw)) {
-                        ddlGradeGroups.Items.Add(new ListItem(gradeItem.Name.Raw, gradeItem.ID.ToString()));
-                    }
-                }
-
+                ddlGradeGroups.DataSource = grades;
                 ddlGradeGroups.DataBind();
-
-                if (ActiveMember != null && ActiveMember.Children != null && ActiveMember.Children.Any()) {
-                    foreach (Child child in ActiveMember.Children) {
-                        if (child.Grades != null && child.Grades.Any()) {
-                            foreach (Grade grade in child.Grades) {
-                                if (grade != null && ddlGradeGroups.Items.FindByValue(string.Concat("{", grade.Key.ToString().ToUpper(), "}")) != null) {
-                                    ddlGradeGroups.Items.FindByValue(string.Concat("{", grade.Key.ToString().ToUpper(), "}")).Selected = true;
-                                }
-                            }
-                        }
-                    }
-                }
             }
 
         }
@@ -180,7 +160,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                     HiddenField hdnChecked = e.FindControlAs<HiddenField>("hdnChecked");
 
                     if (issueInput != null) {
-                        issueInput.Name = "guideme-issue-" + childIssueItem.IssueName.Raw;
                         issueInput.Attributes.Add("data-value", childIssueItem.ID + "|" + childIssueItem.IssueName.Raw);
                         if (ActiveMember != null && ActiveMember.Children != null && ActiveMember.Children.Any()) {
                             foreach (Child child in ActiveMember.Children) {
@@ -198,7 +177,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
                     }
 
                     if (lblCheckbox != null) {
-                        lblCheckbox.Attributes.Add("for", "guideme-issue-" + childIssueItem.IssueName.Raw);
+                        lblCheckbox.Attributes.Add("for", issueInput.ClientID);
                         lblCheckbox.InnerText = childIssueItem.IssueName.Raw;
                     }
                 }
@@ -330,20 +309,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
 
                 Response.Redirect(FormHelper.GetRecommendationUrl());
             }
-        }
-
-        /// Gets the search result based on keyword
-        /// </summary>
-        /// <returns></returns>
-        public List<Item> GetFilters(string templateId) {
-            List<Item> searchResultItems = new List<Item>();
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
-            using (var context = index.CreateSearchContext()) {
-                searchResultItems = context.GetQueryable<SearchResultItem>()
-                    .Where(i => i.TemplateId == Sitecore.Data.ID.Parse(templateId) && i.Path.Contains("/sitecore/content"))
-                    .Select(i => i.GetItem()).ToList();
-            }
-            return searchResultItems;
         }
     }
 }

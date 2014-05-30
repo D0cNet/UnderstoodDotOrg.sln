@@ -68,7 +68,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
         public void BindDDL()
         {
 
-            var challenges = FormHelper.GetChallenges(DictionaryConstants.SelectBehaviorLabel);
+            var challenges = FormHelper.GetChallenges(DictionaryConstants.SelectChallenge);
             if (challenges.Any())
             {
                 ddlChallenges.DataSource = challenges;
