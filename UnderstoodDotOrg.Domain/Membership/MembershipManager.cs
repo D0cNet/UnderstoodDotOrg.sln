@@ -606,6 +606,13 @@ namespace UnderstoodDotOrg.Domain.Membership
             //}
         }
 
+        public Member GetMember(string EmailAddress)
+        {
+            var user = this.GetUser(EmailAddress, true);
+            // TODO: refactor this using LINQ once we add Email to entity model
+            return this.GetMember(Guid.Parse(user.ProviderUserKey.ToString()));
+        }
+
         /// <summary>
         /// Returns ASP.Net MembershipUser object by Member Guid
         /// </summary>
@@ -648,16 +655,6 @@ namespace UnderstoodDotOrg.Domain.Membership
                 throw ex;
             }
             
-        }
-
-        /// <summary>
-        /// Returns Member by Member Guid
-        /// </summary>
-        /// <param name="MemberId">Guid of member to return</param>
-        /// <returns>Member that was requested</returns>
-        public Member GetMember(string MemberId)
-        {
-            return this.GetMember(Guid.Parse(MemberId));
         }
 
         /// <summary>

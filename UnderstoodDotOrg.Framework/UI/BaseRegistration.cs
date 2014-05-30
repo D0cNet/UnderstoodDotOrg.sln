@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,11 @@ namespace UnderstoodDotOrg.Framework.UI
 {
     public class BaseRegistration : BaseSublayout
     {
+        public BaseRegistration()
+        {
+            this.Load += new EventHandler(this.Page_Load);
+        }
+
         private string sessionKey = "understood_org_registering_user";
 
         public static string YesButton { get { return DictionaryConstants.YesButtonText; } }
@@ -19,7 +25,22 @@ namespace UnderstoodDotOrg.Framework.UI
         public static string NextButtonText { get { return DictionaryConstants.NextButtonText; } }
         public static string InProgressText { get { return DictionaryConstants.InProgressButtonText; } }
 
-        public Member registeringUser 
+        public string AccessToken
+        {
+            get
+            {
+                if (Session[Constants.currentUserFacebookAccessToken] != null)
+                {
+                    return Session[Constants.currentUserFacebookAccessToken].ToString();
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+        }
+
+        public Member registeringUser
         {
             get { return (Member)(Session[sessionKey]); }
             set { Session[sessionKey] = value; }
@@ -27,6 +48,15 @@ namespace UnderstoodDotOrg.Framework.UI
         public void FlushRegisteringUser()
         {
             Session[sessionKey] = null;
+        }
+
+
+        public void Page_Load(object sender, EventArgs e)
+        {
+            string facebookId = "var fbAppId = '{0}';";
+            string appId = ConfigurationManager.AppSettings["FacebookAppId"];
+
+            Page.ClientScript.RegisterClientScriptBlock(GetType(), "fbAppId", string.Format(facebookId, appId), true);
         }
     }
 

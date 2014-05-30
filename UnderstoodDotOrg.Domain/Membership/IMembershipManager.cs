@@ -29,7 +29,7 @@ namespace UnderstoodDotOrg.Domain.Membership
 
         Member GetMember(Guid MemberId);
 
-        Member GetMember(string MemberId);
+        Member GetMember(string EmailAddress);
 
         Child GetChild(Guid ChildId);
     }

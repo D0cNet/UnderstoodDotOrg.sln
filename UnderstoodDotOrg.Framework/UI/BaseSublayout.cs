@@ -128,6 +128,10 @@ namespace UnderstoodDotOrg.Framework.UI
         protected void Logout()
         {
             FlushCurrentMemberUser();
+
+            // CH: don't want to put this in FlushCurrentMemberUser, because it's called a few times during signup
+            Session[Constants.currentUserFacebookAccessToken] = null;
+            
             Response.Redirect(Request.RawUrl);
         }
 

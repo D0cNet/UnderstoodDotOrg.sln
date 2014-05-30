@@ -120,9 +120,9 @@ namespace UnderstoodDotOrg.Domain.Membership
             return parent;
         }
 
-        public Member GetMember(string MemberId)
+        public Member GetMember(string EmailAddress)
         {
-            return this.GetMember(Guid.Parse(MemberId));
+            return this.GetMember(Guid.NewGuid());
         }
 
         public Member AddMember(Member Member, string Username, string Password)

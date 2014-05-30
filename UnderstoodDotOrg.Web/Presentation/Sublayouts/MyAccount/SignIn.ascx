@@ -16,6 +16,7 @@
             <a class="fb-sign-in" href="REPLACE">
                   <sc:image id="scFacebookSigninImage" runat="server" field="FacebookSigninImage" /> 
             </a>
+            <div id="fb-root"></div>
             <p>
                 <%--Or sign in with your email address--%>
                 <sc:Text id="directions" runat="server" Field="Directions" ></sc:Text>

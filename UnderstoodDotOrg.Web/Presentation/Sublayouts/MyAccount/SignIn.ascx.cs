@@ -12,7 +12,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
-    public partial class SignIn : BaseSublayout
+    public partial class SignIn : BaseRegistration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,10 +23,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
             uxRegisterLink.NavigateUrl = MyAccountFolderItem.GetSignUpPage();
             uxForgotPassword.NavigateUrl = MyAccountFolderItem.GetForgotPasswordPage();
-            
+
+            if (!string.IsNullOrEmpty(AccessToken))
+            {
+                doLogin();
+            }
         }
 
         protected void uxSignIn_Click(object sender, EventArgs e)
+        {
+            doLogin();
+        }
+
+        private void doLogin()
         {
             //blow out any existing member when someone tries to sign in
             try
@@ -36,7 +45,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                 var membershipManager = new MembershipManager();
 
-                var currentMember = membershipManager.AuthenticateUser(uxEmailAddress.Text, uxPassword.Text);
+                var currentMember = new Member();
+
+                if (!string.IsNullOrEmpty(AccessToken))
+                {
+                    var client = new Facebook.FacebookClient(AccessToken);
+                    dynamic me = client.Get("me", new { fields = "email" });
+
+                    currentMember = membershipManager.GetMember(me.email);
+                }
+                else
+                {
+                    currentMember = membershipManager.AuthenticateUser(uxEmailAddress.Text, uxPassword.Text);
+                }
 
                 if (currentMember != null)
                 {

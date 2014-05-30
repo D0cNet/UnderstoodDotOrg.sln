@@ -2,21 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.SessionState;
 
 namespace UnderstoodDotOrg.Web.Handlers
 {
     /// <summary>
     /// Summary description for FacebookLogin
     /// </summary>
-    public class FacebookLogin : IHttpHandler
+    public class FacebookLogin : IHttpHandler, IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)
         {
-            var accessToken = context.Request["accessToken"];
-            context.Session["AccessToken"] = accessToken;
+            if (context.Session != null)
+            {
+                var accessToken = context.Request["accessToken"];
+                context.Session[Common.Constants.currentUserFacebookAccessToken] = accessToken != null ? accessToken : null;
+            }
 
-            context.Response.Redirect(context.Request.UrlReferrer.ToString());
+            var returnUrl = context.Request.UrlReferrer;
+
+            context.Response.Redirect(returnUrl.ToString(), false);
         }
 
         public bool IsReusable
