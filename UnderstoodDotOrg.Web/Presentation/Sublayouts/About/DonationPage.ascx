@@ -5,7 +5,7 @@
 <input type="hidden" id="hfDonationSuccessUrl" value="<%= ThankYouPageUrl %>" />
 <div class="container flush donate-create-wrap">
     <div class="row">
-        <div class="col col-24 skiplink-content" aria-role="main" aria-role="main">
+        <div class="col col-24 skiplink-content" aria-role="main">
             <!-- BEGIN PARTIAL: about-donate-create -->
             <div class="donate-choose-gift">
                 <header class="rs_read_this about-donate-rs-wrapper">
@@ -81,7 +81,6 @@
                     <!-- END PARTIAL: about-donate-other-amount -->
                 </div>
                 <!-- .choose-gift-section -->
-
                 <div class="gift-for-section">
                     <div class="rs_read_this about-donate-rs-wrapper">
                         <h2>2. <%= Model.GiftforSomeoneHeader.Rendered %></h2>
@@ -99,7 +98,6 @@
                         </div>
                         <!-- .gift-for-wrapper -->
                     </div>
-
                     <!-- BEGIN PARTIAL: about-donate-ecard -->
                     <div class="ecard-form-wrapper form-center rs_read_this about-donate-rs-wrapper">
                         <div class="form-group">
@@ -117,11 +115,8 @@
                     </div>
                     <!-- .gift-for-wrapper -->
                     <!-- END PARTIAL: about-donate-ecard -->
-
-
                 </div>
                 <!-- .gift-for-section-->
-
                 <div class="gift-occurance-section rs_read_this about-donate-rs-wrapper">
                     <h2>3. <%= Model.RecurringGiftHeader.Rendered %></h2>
                     <div class="gift-occurance-wrapper">
@@ -139,7 +134,6 @@
                     <!-- .monthly-gift-wrapper -->
                 </div>
                 <!-- .monthly-gift-section-->
-
                 <div class="how-pay-section">
                     <div class="about-donate-rs-wrapper">
                         <div class="rs_read_this">
@@ -163,10 +157,8 @@
                         </div>
                         <!-- .how-pay-wrapper -->
                     </div>
-
                     <!-- START FORM -->
                     <div class="how-pay-form-wrapper form-center">
-
                         <!-- BEGIN PARTIAL: about-donate-pay-by-check -->
                         <div class="pay-by-check rs_read_this about-donate-rs-wrapper">
                             <h3><%= Model.CheckHelpImageHeader.Rendered %></h3>
@@ -205,7 +197,6 @@
                                     <!-- .cvv-tooltip -->
                                     <!-- END PARTIAL: popover-cvv-info -->
                                 </div>
-
                             </div>
                             <div class="form-group expiration-date-wrap">
                                 <!-- Uniform requires label tags to be in the select-container or the width will not be set properly -->
@@ -252,7 +243,6 @@
                             </div>
                         </div>
                         <!-- END PARTIAL: about-donate-pay-by-credit -->
-
                         <div class="rs_read_this form-group-rs-wrapper about-donate-rs-wrapper">
                             <div class="form-group">
                                 <label for="donate-first-name">First Name</label>
@@ -297,9 +287,57 @@
                                     <label for="state-dropdown" class="visuallyhidden">State/Province</label>
                                     <select name="state-dropdown" id="state-dropdown" aria-required="true">
                                         <option value="">Select</option>
-                                        <option value="NY">New York</option>
-                                        <option value="CT">Connecticut</option>
-                                        <option value="VT">Vermont</option>
+                                        <option value="AL">Alabama</option> 
+                                        <option value="AK">Alaska</option> 
+                                        <option value="AZ">Arizona</option> 
+                                        <option value="AR">Arkansas</option> 
+                                        <option value="CA">California</option> 
+                                        <option value="CO">Colorado</option> 
+                                        <option value="CT">Connecticut</option> 
+                                        <option value="DE">Delaware</option> 
+                                        <option value="DC">District Of Columbia</option> 
+                                        <option value="FL">Florida</option> 
+                                        <option value="GA">Georgia</option> 
+                                        <option value="HI">Hawaii</option> 
+                                        <option value="ID">Idaho</option> 
+                                        <option value="IL">Illinois</option> 
+                                        <option value="IN">Indiana</option> 
+                                        <option value="IA">Iowa</option> 
+                                        <option value="KS">Kansas</option> 
+                                        <option value="KY">Kentucky</option> 
+                                        <option value="LA">Louisiana</option> 
+                                        <option value="ME">Maine</option> 
+                                        <option value="MD">Maryland</option> 
+                                        <option value="MA">Massachusetts</option> 
+                                        <option value="MI">Michigan</option> 
+                                        <option value="MN">Minnesota</option> 
+                                        <option value="MS">Mississippi</option> 
+                                        <option value="MO">Missouri</option> 
+                                        <option value="MT">Montana</option> 
+                                        <option value="NE">Nebraska</option> 
+                                        <option value="NV">Nevada</option> 
+                                        <option value="NH">New Hampshire</option> 
+                                        <option value="NJ">New Jersey</option> 
+                                        <option value="NM">New Mexico</option> 
+                                        <option value="NY">New York</option> 
+                                        <option value="NC">North Carolina</option> 
+                                        <option value="ND">North Dakota</option> 
+                                        <option value="OH">Ohio</option> 
+                                        <option value="OK">Oklahoma</option> 
+                                        <option value="OR">Oregon</option> 
+                                        <option value="PA">Pennsylvania</option> 
+                                        <option value="RI">Rhode Island</option> 
+                                        <option value="SC">South Carolina</option> 
+                                        <option value="SD">South Dakota</option> 
+                                        <option value="TN">Tennessee</option> 
+                                        <option value="TX">Texas</option> 
+                                        <option value="UT">Utah</option> 
+                                        <option value="VT">Vermont</option> 
+                                        <option value="VA">Virginia</option> 
+                                        <option value="WA">Washington</option> 
+                                        <option value="WV">West Virginia</option> 
+                                        <option value="WI">Wisconsin</option> 
+                                        <option value="WY">Wyoming</option>
                                     </select>
                                 </div>
                             </div>
@@ -308,13 +346,11 @@
                                 <input type="text" placeholder="" class="zip-input" name="donate-zip" id="donate-zip" aria-required="true">
                             </div>
                         </div>
-
                     </div>
                     <!-- .how-pay-wrapper -->
                 </div>
                 <!-- .how-pay-section-->
                 <!-- END FORM -->
-
                 <div class="about-donate-footer form-center">
                     <label class="keep-posted-wrap" for="donate-keep-posted">
                         <input type="checkbox" name="donate-keep-posted" id="donate-keep-posted" checked>
@@ -335,7 +371,6 @@
                         <img class="logo-img" alt="Verisign" src="/Presentation/includes/images/logo.partner.verisign.png" />
                     </div>
                 </div>
-
             </div>
             <!-- .donate-choose-gift -->
             <!-- END PARTIAL: about-donate-create -->
