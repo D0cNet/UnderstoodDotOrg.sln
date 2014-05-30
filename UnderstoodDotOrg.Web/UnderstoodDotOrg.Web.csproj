@@ -1197,6 +1197,13 @@
     <Compile Include="Presentation\Sublayouts\DecisionTool\DecisionToolResultsPage.ascx.designer.cs">
       <DependentUpon>DecisionToolResultsPage.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ArchivedEventsModule.ascx.cs">
+      <DependentUpon>ArchivedEventsModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ArchivedEventsModule.ascx.designer.cs">
+      <DependentUpon>ArchivedEventsModule.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx.cs">
       <DependentUpon>ArchiveListing.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2555,6 +2562,7 @@
     <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolQuestionPage.ascx" />
     <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolResultsPage.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\ArchivedEventsModule.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\CommunitySubHeader.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\EventArchive.ascx" />

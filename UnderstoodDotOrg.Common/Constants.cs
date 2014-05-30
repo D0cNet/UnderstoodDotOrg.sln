@@ -387,7 +387,7 @@ namespace UnderstoodDotOrg.Common
             {
                 get
                 {
-                    return new Guid("{404156BF-A471-41EA-B926-9C11D06381EF}");
+                    return new Guid("{A2B11A1B-80C7-4154-8A3E-1632332C7F48}");
         }
             }
         }

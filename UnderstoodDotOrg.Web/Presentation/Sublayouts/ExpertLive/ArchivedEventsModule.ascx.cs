@@ -1,14 +1,13 @@
-﻿using Sitecore.Data.Items;
-using System;
-using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.Search;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
-using UnderstoodDotOrg.Framework.UI;
-
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
+﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 {
-    public partial class EventArchive : BaseSublayout
+    using System;
+    using UnderstoodDotOrg.Common;
+    using UnderstoodDotOrg.Common.Extensions;
+    using UnderstoodDotOrg.Domain.Search;
+    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
+    using UnderstoodDotOrg.Framework.UI;
+
+    public partial class ArchivedEventsModule : BaseSublayout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +24,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
         private void BindContent()
         {
             ExpertLivePageItem item = Sitecore.Context.Database.GetItem(Constants.Pages.ExpertLive);
-
+            // test
             if (item != null)
             {
                 frHeading.Item = item;

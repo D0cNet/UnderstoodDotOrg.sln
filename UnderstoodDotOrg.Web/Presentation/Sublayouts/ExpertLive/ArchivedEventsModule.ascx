@@ -1,5 +1,6 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="EventArchive.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve.EventArchive" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ArchivedEventsModule.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive.ArchivedEventsModule" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+
 <%@ Register TagPrefix="udo" TagName="ArchiveListing" Src="~/Presentation/Sublayouts/Common/Cards/EventArchiveListing.ascx" %>
 
 <div class="container archive">

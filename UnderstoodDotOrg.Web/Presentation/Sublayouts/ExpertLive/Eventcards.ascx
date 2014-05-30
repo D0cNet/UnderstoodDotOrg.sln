@@ -26,6 +26,11 @@
             </div>
             <!-- end .event-cards -->
         </div>
+    </div>
 
+    <div class="row calendar-button">
+        <%-- <a class="button rs_skip" href="REPLACE">See Calendar</a>--%>
     </div>
 </div>
+
+
