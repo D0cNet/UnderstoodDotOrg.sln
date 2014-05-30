@@ -1218,13 +1218,6 @@
     <Compile Include="Presentation\Sublayouts\ExpertLive\CommunitySubHeader.ascx.designer.cs">
       <DependentUpon>CommunitySubHeader.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\EventArchive.ascx.cs">
-      <DependentUpon>EventArchive.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\EventArchive.ascx.designer.cs">
-      <DependentUpon>EventArchive.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\Eventcards.ascx.cs">
       <DependentUpon>Eventcards.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2565,7 +2558,6 @@
     <Content Include="Presentation\Sublayouts\ExpertLive\ArchivedEventsModule.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\CommunitySubHeader.ascx" />
-    <Content Include="Presentation\Sublayouts\ExpertLive\EventArchive.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\Eventcards.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\EventFilterNav.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertDetailPage.ascx" />
