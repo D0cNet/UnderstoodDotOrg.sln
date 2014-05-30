@@ -44,23 +44,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     frAnswer.Item = QAItem;
                 }
-                var ExpertPerson = QAItem.AnsweredExpertDetails.Item;
+                ExpertPersonItem ExpertPerson = QAItem.AnsweredExpertDetails.Item;
                 if (ExpertPerson != null)
                 {
                     var frExpertImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("frExpertImage");
+                    HyperLink hypImageLink = e.FindControlAs<HyperLink>("hypImageLink");
+
+                    if (hypImageLink != null)
+                    {
+                        hypImageLink.ImageUrl = ExpertPerson.Photo.MediaUrl;
+                        hypImageLink.NavigateUrl = ExpertPerson.BlogPageLink.Url;
+                    }
+
                     if (frExpertImage != null)
                     {
-                        frExpertImage.Item = ExpertPerson;
+                        frExpertImage.Item = ExpertPerson.InnerItem;
                     }
                     var frExpertName = e.FindControlAs<FieldRenderer>("frExpertName");
                     if (frExpertName != null)
                     {
-                        frExpertName.Item = ExpertPerson;
+                        frExpertName.Item = ExpertPerson.InnerItem;
                     }
                     var frExpertTitle = e.FindControlAs<FieldRenderer>("frExpertTitle");
                     if (frExpertTitle != null)
                     {
-                        frExpertTitle.Item = ExpertPerson;
+                        frExpertTitle.Item = ExpertPerson.InnerItem;
                     }
                 }
             }

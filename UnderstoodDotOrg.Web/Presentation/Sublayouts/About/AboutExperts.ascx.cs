@@ -237,12 +237,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts
                 {
                     frTitleandInstitution.Item = _expertPerson;
                 }
-                if (string.IsNullOrEmpty(_expertPerson.TwitterLink.Text) == false)
+                if (string.IsNullOrEmpty(_expertPerson.TwitterLink.Url) == false)
                 {
                     HyperLink hlTwitterLink = e.FindControlAs<HyperLink>("hlTwitterLink");
                     if (hlTwitterLink != null)
                     {
-                        hlTwitterLink.NavigateUrl = _expertPerson.TwitterLink;
+                        hlTwitterLink.NavigateUrl = _expertPerson.TwitterLink.Url;
                         hlTwitterLink.Visible = true;
                     }
                 }

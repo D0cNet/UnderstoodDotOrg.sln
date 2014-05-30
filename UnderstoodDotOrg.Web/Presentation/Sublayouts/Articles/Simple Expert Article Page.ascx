@@ -19,7 +19,8 @@
                     <div class="expert-answer">
                         <div class="expert-author">
                             <%--<sc:fieldrenderer id="frExpertImage" runat="server" fieldname="Photo" />--%>
-                            <sc:Image id="frExpertImage" runat="server" field="Photo" maxheight="187" maxwidth="294" width="294" height="187" />
+                            <asp:HyperLink ID="hypImageLink" runat="server"></asp:HyperLink>
+                            <%--<sc:Image id="frExpertImage" runat="server" field="Photo" maxheight="187" maxwidth="294" width="294" height="187" />--%>
                             <div class="expert-author-info">
                                 <p class="name">
                                     <strong>
