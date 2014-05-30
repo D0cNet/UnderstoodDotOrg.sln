@@ -939,16 +939,17 @@
         $(".fb-sign-in").click(
             function () {
                 FB.getLoginStatus(function (response) {
-                    if (response != undefined) {
+                    if (typeof response !== "undefined") {
                         if (response.status == "connected") {
                             U.handleResponse(response);
-                        }
-                        else {
-                            FB.login(function (response) {
-                                if (response != undefined) {
-                                    U.handleResponse(reponse);
-                                }
-                            }, { scope: 'email' });
+                        } else {
+                            FB.login(
+                                function (response) {
+                                    if (typeof response !== "undefined") {
+                                        U.handleResponse(reponse);
+                                    }
+                                },
+                                { scope: 'email' });
                         }
                     }
                 });
