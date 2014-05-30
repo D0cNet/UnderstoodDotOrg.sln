@@ -46,11 +46,29 @@ public static implicit operator Item(TermsandConditionsItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField Agree
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Agree"]);
+	}
+}
+
+
 public CustomTextField TermsandConditionsText
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Terms and Conditions Text"]);
+	}
+}
+
+
+public CustomTextField NotAgree
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Not Agree"]);
 	}
 }
 

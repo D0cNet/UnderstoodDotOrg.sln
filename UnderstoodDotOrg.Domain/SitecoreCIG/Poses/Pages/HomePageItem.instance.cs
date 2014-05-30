@@ -14,7 +14,9 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages {
             return InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(PageResourceFolderItem.TemplateId)).Select(i => (PageResourceFolderItem)i).FirstOrDefault();
         }
 
-
-
+        public MyAccountFolderItem GetMyAccountFolder()
+        {
+            return InnerItem.Children.FirstOrDefault(i => i.IsOfType(MyAccountFolderItem.TemplateId));
+        }
     }
 }
