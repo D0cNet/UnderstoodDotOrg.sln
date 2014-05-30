@@ -32,6 +32,7 @@ namespace UnderstoodDotOrg.Common
         public static readonly string EVENT_ISSUE_FILTER_QUERY_STRING = "issue";
         public static readonly string EVENT_TOPIC_FILTER_QUERY_STRING = "topic";
         public static readonly string EVENT_FEATURED_FILTER_QUERY_STRING = "featured";
+        public static readonly string FACEBOOK_LOGIN_STATUS = "fb_status";
 
         #endregion
 
@@ -62,9 +63,11 @@ namespace UnderstoodDotOrg.Common
         public static string SessionNewsletterKey { get { return "_understood_org_newsletter"; } }
 
         public static string sessionUnauthenticatedMemberKey { get { return "_understood_org_unauthenticated_member"; } }
+
+        public static string currentUserFacebookAccessToken { get { return "_understood_org_current_user_facebook_access_token"; } }
         #endregion
 
-        #region Unauthenticated Member Values
+#region Unauthenticated Member Values
         public static string UnauthenticatedMember_ScreeName { get { return "c5uSwuWruy2Q5NADejus"; } }
         public static string UnauthenticatedMember_Password{ get { return "4Sf9suVucReD373HDS"; } }
         public static string UnauthenticatedMember_FirstName { get { return "Unauthenticated"; } }
@@ -72,7 +75,8 @@ namespace UnderstoodDotOrg.Common
         
         public static string UnauthenticatedMember_Flag { get { return "IsUnauthenticatedMember=true"; } }
 
-        #endregion
+        public static string FacebookMember_Password { get { return "4Sf9suVucReD373HDS!asdxz443#"; } }
+#endregion
 
 
         #region Container Guid
@@ -384,7 +388,7 @@ namespace UnderstoodDotOrg.Common
                 get
                 {
                     return new Guid("{404156BF-A471-41EA-B926-9C11D06381EF}");
-                }
+        }
             }
         }
 
@@ -576,6 +580,7 @@ namespace UnderstoodDotOrg.Common
             public static string TopicArticlesEndpoint = "TopicArticlesEndpoint";
             public static string SubtopicArticlesEndpoint = "SubtopicArticlesEndpoint";
             public static string EventArchiveEndpoint = "EventArchiveEndpoint";
+            public static string FacebookAppId = "FacebookAppId";
         }
 
         public static class ContentItem
