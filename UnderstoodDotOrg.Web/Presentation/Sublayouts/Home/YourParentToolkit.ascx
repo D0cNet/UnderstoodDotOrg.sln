@@ -33,13 +33,13 @@
                     </p>
 
                     <fieldset>
-                        <label for="behaviortool-issue" class="visuallyhidden">Select behavior issue</label>
-                        <asp:DropDownList ID="ddlIssuesGroups" runat="server"
+                        <label for="behaviortool-issue" class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SelectBehaviorLabel %></label>
+                        <asp:DropDownList ID="ddlChallenges" runat="server"
                             RepeatLayout="unorderedlist" RepeatDirection="vertical" required="required" aria-required="true">
                         </asp:DropDownList>
 
-                        <label for="behaviortool-grade" class="visuallyhidden">Select grade</label>
-                        <asp:DropDownList ID="ddlGradeGroups" runat="server"
+                        <label for="behaviortool-grade" class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SelectGradeLabel %></label>
+                        <asp:DropDownList ID="ddlGrades" runat="server"
                             RepeatLayout="unorderedlist" RepeatDirection="vertical" required="required" aria-required="true">
                         </asp:DropDownList>
                     </fieldset>

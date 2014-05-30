@@ -49,22 +49,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frWidgetDetail;
         
         /// <summary>
-        /// ddlIssuesGroups control.
+        /// ddlChallenges control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlIssuesGroups;
+        protected global::System.Web.UI.WebControls.DropDownList ddlChallenges;
         
         /// <summary>
-        /// ddlGradeGroups control.
+        /// ddlGrades control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGradeGroups;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGrades;
         
         /// <summary>
         /// btnSubmit control.
