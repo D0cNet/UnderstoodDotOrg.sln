@@ -85,11 +85,11 @@
 			lblMessage.Text = reply.Message;
 		}
 
-		//protected void btnEM11_Click(object sender, EventArgs e)
-		//{
-		//	BaseReply reply = ExactTargetService.InvokeEM11DonationAcknowledgement(new InvokeEM11DonationAcknowledgementRequest { ToEmail = tbxSubscriberEmail1.Text, DonationAmount = "1 Billion Dollars", FullName = tbxSubscriberFN1.Text, PrintDonationRecordsLink = "www.google.com" });
-		//	lblMessage.Text = reply.Message;
-		//}
+		protected void btnEM11_Click(object sender, EventArgs e)
+		{
+			BaseReply reply = ExactTargetService.InvokeEM11DonationAcknowledgement(new InvokeEM11DonationAcknowledgementRequest { ToEmail = tbxSubscriberEmail1.Text, DonationAmount = "1 Billion Dollars", FullName = tbxSubscriberFN1.Text, PrintDonationRecordsLink = "www.google.com" });
+			lblMessage.Text = reply.Message;
+		}
 
 		protected void btnEM12_Click(object sender, EventArgs e)
 		{

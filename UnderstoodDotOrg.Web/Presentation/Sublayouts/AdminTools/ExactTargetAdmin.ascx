@@ -51,9 +51,9 @@
 <asp:Button ID="btnEM10" runat="server" Text="EM10" OnClick="btnEM10_Click" />
 <br /><br />
 <hr />
-<%--<asp:Button ID="btnEM11" runat="server" Text="EM11" OnClick="btnEM11_Click" />
+<asp:Button ID="btnEM11" runat="server" Text="EM11" OnClick="btnEM11_Click" />
 <br /><br />
-<hr />--%>
+<hr />
 <asp:Button ID="btnEM12" runat="server" Text="EM12" OnClick="btnEM12_Click" />
 <br /><br />
 <hr />
