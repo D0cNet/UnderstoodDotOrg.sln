@@ -11,14 +11,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
     
     
     public partial class CommunityMembers {
-        
-        /// <summary>
-        /// rptModerators control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptModerators;
     }
 }

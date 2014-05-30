@@ -20,40 +20,40 @@
                 <!-- END PARTIAL: community/carousel_arrows -->
             </div>
             <div class="row member-cards">
-                <asp:Repeater ID="rptModerators" runat="server"
+                <%--<asp:Repeater ID="rptModerators" runat="server"
                      ItemType="UnderstoodDotOrg.Domain.Understood.Common.MemberCardModel">
-                    <ItemTemplate>
-                        <!-- BEGIN PARTIAL: community/member_card -->
-                        <div class="member-card-container">
-                            <div class="rs_read_this col member-card">
-                                <div class="member-card-info group">
-                                    <div class="member-card-image">
-                                        <a href="REPLACE">
-                                            <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                                            <div class="image-label">Moderator</div>
-                                        </a>
-                                    </div>
-                                    <!-- end .member-card-image -->
-                                    <div class="member-card-name hyphenate Moderator">
+                    <ItemTemplate>--%>
+                <!-- BEGIN PARTIAL: community/member_card -->
+                <div class="member-card-container">
+                    <div class="rs_read_this col member-card">
+                        <div class="member-card-info group">
+                            <div class="member-card-image">
+                                <a href="REPLACE">
+                                    <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                                    <div class="image-label">Moderator</div>
+                                </a>
+                            </div>
+                            <!-- end .member-card-image -->
+                            <div class="member-card-name hyphenate Moderator">
 
-                                        <a href="REPLACE" class="name-member"><%# Item.UserName %></a>
-                                        <p class="location"><%# Item.UserLocation %></p>
+                                <a href="REPLACE" class="name-member">UserName</a>
+                                <p class="location">Location</p>
 
-                                    </div>
-                                    <!-- end .member-card-name -->
+                            </div>
+                            <!-- end .member-card-name -->
 
-                                    <div class="card-buttons member">
+                            <div class="card-buttons member">
 
-                                        <button type="button" class="button rs_skip">Connect</button>
+                                <button type="button" class="button rs_skip">Connect</button>
 
-                                    </div>
-                                    <!-- end .member.card-buttons -->
+                            </div>
+                            <!-- end .member.card-buttons -->
 
-                                </div>
-                                <!-- end .member-card-info -->
-                                <div class="member-card-specialties">
-                                    <ul>
-                                        <span class="visuallyhidden">grade level/span>
+                        </div>
+                        <!-- end .member-card-info -->
+                        <div class="member-card-specialties">
+                            <ul>
+                                <span class="visuallyhidden">grade level/span>
                 <li class='specialty-long'><a href='REPLACE'>PreK</a><!-- BEGIN PARTIAL: community/child_info_card -->
 
                     <div class="card-child-info popover rs_skip">
@@ -89,19 +89,19 @@
                     <!-- END PARTIAL: community/child_info_card -->
                 </li>
 
-                                        <li class="specialty specialty-final">
-                                            <span class="visuallyhidden">additional information</span>
-                                            <span tabindex='0' data-tabbable='true'>&nbsp;</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- end .member-card -->
+                                <li class="specialty specialty-final">
+                                    <span class="visuallyhidden">additional information</span>
+                                    <span tabindex='0' data-tabbable='true'>&nbsp;</span>
+                                </li>
+                            </ul>
                         </div>
-                        <!-- end .member-card-container  -->
-                        <!-- END PARTIAL: community/member_card -->
-                    </ItemTemplate>
-                </asp:Repeater>
+                    </div>
+                    <!-- end .member-card -->
+                </div>
+                <!-- end .member-card-container  -->
+                <!-- END PARTIAL: community/member_card -->
+                <%--</ItemTemplate>
+                </asp:Repeater>--%>
             </div>
             <!-- end .member-cards -->
         </div>
