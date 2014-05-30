@@ -524,6 +524,8 @@ namespace UnderstoodDotOrg.Common
             public const string EventIssues = "_event_child_issues";
             public const string EventGrades = "_event_child_grades";
             public const string EventTopics = "_event_parent_interests";
+            public const string EventStartDateUtc = "_event_start_date_utc";
+            public const string EventEndDateUtc = "_event_end_date_utc";
         }
 
         public static class ArticleTags

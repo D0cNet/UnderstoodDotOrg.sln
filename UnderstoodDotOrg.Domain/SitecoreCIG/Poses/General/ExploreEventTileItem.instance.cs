@@ -30,7 +30,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General
         {
             string subhead = eventItem.EventSubheading.Rendered;
 
-            var date = eventItem.EventDate.DateTime;
+            var date = eventItem.EventStartDate.DateTime;
             string month = date.ToString("MMM");
             string day = date.ToString("%d");
             string hour = date.ToString("h:m");

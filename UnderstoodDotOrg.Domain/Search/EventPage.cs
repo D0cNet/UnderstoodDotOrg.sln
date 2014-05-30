@@ -12,11 +12,17 @@ namespace UnderstoodDotOrg.Domain.Search
 {
     public class EventPage : SearchResultItem
     {
-        [IndexField("event_date")]
-        public DateTime EventDate { get; set; }
+        [IndexField("event_start_date")]
+        public DateTime EventStartDate { get; set; }
+        
+        [IndexField("event_end_date")]
+        public DateTime EventEndDate { get; set; }
 
-        [IndexField("_event_date_utc")]
-        public DateTime EventDateUtc { get; set; }
+        [IndexField(Constants.SolrFields.EventEndDateUtc)]
+        public DateTime EventEndDateUtc { get; set; }
+
+        [IndexField(Constants.SolrFields.EventStartDateUtc)]
+        public DateTime EventStartDateUtc { get; set; }
 
         [IndexField(Constants.SolrFields.EventIssues)]
         public IEnumerable<ID> Issues { get; set; }

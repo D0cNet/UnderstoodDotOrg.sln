@@ -98,7 +98,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
             bool isArchiveItem = false;
             BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(item);
             if (baseEventPageItem != null) {
-                if (baseEventPageItem.EventDate.DateTime < DateTime.Today) {
+                if (baseEventPageItem.EventStartDate.DateTime < DateTime.Today) {
                     isArchiveItem = true;
                 }
             }

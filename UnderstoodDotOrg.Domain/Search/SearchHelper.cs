@@ -714,8 +714,8 @@ namespace UnderstoodDotOrg.Domain.Search
                 var events = GetCurrentCultureQueryable<EventPage>(context)
                                     .Filter(GetBaseEventPredicate())
                                     .Filter(i => i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
-                                    .Filter(i => i.EventDateUtc >= DateTime.UtcNow)
-                                    .OrderBy(i => i.EventDate)
+                                    .Filter(i => i.EventEndDateUtc >= DateTime.UtcNow)
+                                    .OrderBy(i => i.EventStartDate)
                                     .ToList();
 
                 // Handle out of synch indexed items
@@ -779,7 +779,8 @@ namespace UnderstoodDotOrg.Domain.Search
                                 .Filter(GetBaseEventPredicate())
                                 .Filter(i => i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) 
                                         || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
-                                .Filter(i => i.EventDateUtc <= DateTime.UtcNow.AddDays(-1));
+                                .Filter(i => i.EventEndDateUtc < DateTime.UtcNow
+                                        && i.EventEndDateUtc != DateTime.MinValue);
 
                 if (optionalPredicate != null)
                 {
@@ -793,7 +794,7 @@ namespace UnderstoodDotOrg.Domain.Search
                     query = query.Skip((page - 1) * pageSize);
                 }
 
-                query = query.Take(pageSize).OrderByDescending(i => i.EventDate);
+                query = query.Take(pageSize).OrderByDescending(i => i.EventStartDate);
 
                 var results = query.ToList();
 
@@ -842,14 +843,14 @@ namespace UnderstoodDotOrg.Domain.Search
                 var query = GetCurrentCultureQueryable<EventPage>(context)
                                 .Filter(GetBaseEventPredicate())
                                 .Filter(i => i.TemplateId == ID.Parse(templateId))
-                                .Filter(i => i.EventDateUtc >= DateTime.UtcNow); 
+                                .Filter(i => i.EventStartDateUtc >= DateTime.UtcNow); 
 
                 if (optionalPredicate != null)
                 {
                     query = query.Filter(optionalPredicate);
                 }
 
-                var ordered = query.OrderBy(i => i.EventDate);
+                var ordered = query.OrderBy(i => i.EventStartDate);
 
                 int total = query.Take(1).GetResults().TotalSearchResults;
 

@@ -7,14 +7,15 @@ using Sitecore.Resources.Media;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using UnderstoodDotOrg.Common;
+using CustomItemGenerator.Fields.SimpleTypes;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
 {
     public partial class BaseEventDetailPageItem 
     {
-        public string GetFormattedEventDate()
+        public string GetFormattedEventStartDate()
         {
-            DateTime eventDate = EventDate.DateTime;
+            DateTime eventDate = EventStartDate.DateTime;
             if (eventDate != DateTime.MinValue)
             {
                 TimeZoneItem timezone = EventTimezone.Item;
@@ -30,7 +31,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
 
         public string GetFormattedArchiveEventDate()
         {
-            DateTime? eventDate = GetEventDateUtc();
+            DateTime? eventDate = GetEventStartDateUtc();
             if (eventDate.HasValue && eventDate.Value != DateTime.MinValue)
             {
                 int daysElapsed = (DateTime.UtcNow - eventDate.Value).Days;
@@ -49,7 +50,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
 
         public bool IsUpcoming()
         {
-            DateTime? utc = GetEventDateUtc();
+            DateTime? utc = GetEventEndDateUtc();
             if (utc.HasValue)
             {
                 return utc.Value > DateTime.UtcNow;
@@ -58,12 +59,22 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
             return false;
         }
 
-        public DateTime? GetEventDateUtc()
+        public DateTime? GetEventStartDateUtc()
+        {
+            return GetUtcDate(EventStartDate);
+        }
+
+        public DateTime? GetEventEndDateUtc()
+        {
+            return GetUtcDate(EventEndDate);
+        }
+
+        private DateTime? GetUtcDate(CustomDateField dateField)
         {
             DateTime? result = null;
 
             TimeZoneItem tz = EventTimezone.Item;
-            DateTime eventDate = EventDate.DateTime;
+            DateTime eventDate = dateField.DateTime;
 
             if (tz != null && eventDate != DateTime.MinValue)
             {

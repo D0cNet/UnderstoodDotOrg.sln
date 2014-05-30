@@ -82,11 +82,11 @@ public CustomLookupField EventTimezone
 }
 
 
-public CustomDateField EventDate
+public CustomDateField EventStartDate
 {
 	get
 	{
-		return new CustomDateField(InnerItem, InnerItem.Fields["Event Date"]);
+		return new CustomDateField(InnerItem, InnerItem.Fields["Event Start Date"]);
 	}
 }
 
@@ -114,6 +114,15 @@ public CustomTreeListField ParentInterest
 	get
 	{
 		return new CustomTreeListField(InnerItem, InnerItem.Fields["Parent Interest"]);
+	}
+}
+
+
+public CustomDateField EventEndDate
+{
+	get
+	{
+		return new CustomDateField(InnerItem, InnerItem.Fields["Event End Date"]);
 	}
 }
 

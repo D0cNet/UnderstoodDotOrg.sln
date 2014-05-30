@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 
@@ -34,8 +35,16 @@ namespace UnderstoodDotOrg.Domain.Search.Fields
             }
 
             BaseEventDetailPageItem eventPage = item;
-            
-            return eventPage.GetEventDateUtc() ?? DateTime.MinValue;
+
+            switch (FieldName)
+            {
+                case Constants.SolrFields.EventStartDateUtc:
+                    return eventPage.GetEventStartDateUtc() ?? DateTime.MinValue;
+                case Constants.SolrFields.EventEndDateUtc:
+                    return eventPage.GetEventEndDateUtc() ?? DateTime.MinValue;
+            }
+
+            return null;
         }
     }
 }

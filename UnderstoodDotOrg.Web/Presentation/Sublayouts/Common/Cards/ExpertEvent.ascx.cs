@@ -31,7 +31,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
                 frPageTitle.Item = item;
 
                 EventUrl = item.GetUrl();
-                litEventDate.Text = item.GetFormattedEventDate();
+                litEventDate.Text = item.GetFormattedEventStartDate();
 
                 ExpertDetailPageItem expert = item.Expert.Item;
                 if (expert != null)

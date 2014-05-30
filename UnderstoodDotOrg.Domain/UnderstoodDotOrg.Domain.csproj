@@ -424,8 +424,6 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\ExpertDetailPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\LiveChatEventPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\LiveChatEventPageItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\PastChatEventPageItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\PastWebinarEventPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\WebinarEventPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\WebinarEventPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.base.cs" />

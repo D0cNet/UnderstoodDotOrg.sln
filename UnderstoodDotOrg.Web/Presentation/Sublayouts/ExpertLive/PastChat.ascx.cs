@@ -65,7 +65,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                     }
 
 
-                    if (ltEventDate != null && !baseEventDetailpage.EventDate.Raw.IsNullOrEmpty()) {
+                    if (ltEventDate != null && !baseEventDetailpage.EventStartDate.Raw.IsNullOrEmpty()) {
                         TimeZoneItem timezone = baseEventDetailpage.EventTimezone.Item;
                         string timeZoneText = string.Empty;
 
@@ -73,7 +73,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                             timeZoneText = timezone.Timezone.Rendered;
                         }
 
-                        ltEventDate.Text = String.Format("{0} at {1} {2}", baseEventDetailpage.EventDate.DateTime.ToString("ddd MMM dd"), baseEventDetailpage.EventDate.DateTime.ToString("hh:mm tt").ToLower(), timeZoneText);
+                        ltEventDate.Text = String.Format("{0} at {1} {2}", baseEventDetailpage.EventStartDate.DateTime.ToString("ddd MMM dd"), baseEventDetailpage.EventStartDate.DateTime.ToString("hh:mm tt").ToLower(), timeZoneText);
                     }
 
                     if (frHeading != null) {
@@ -105,7 +105,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
             bool isArchiveItem = false;
             BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(item);
             if (baseEventPageItem != null) {
-                if (baseEventPageItem.EventDate.DateTime < DateTime.Today) {
+                if (baseEventPageItem.EventEndDate.DateTime < DateTime.Today) {
                     isArchiveItem = true;
                 }
             }

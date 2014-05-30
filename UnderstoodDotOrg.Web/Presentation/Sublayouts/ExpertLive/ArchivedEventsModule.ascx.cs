@@ -1,6 +1,7 @@
 ﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 {
     using System;
+    using System.Linq;
     using UnderstoodDotOrg.Common;
     using UnderstoodDotOrg.Common.Extensions;
     using UnderstoodDotOrg.Domain.Search;
@@ -19,12 +20,17 @@
         {
             int totalResults;
             archiveEvents.ArchivedEvents = SearchHelper.GetArchivedEvents(1, 2, out totalResults);
+
+            if (!archiveEvents.ArchivedEvents.Any())
+            {
+                pnlNoArchiveMessage.Visible = true;
+            }
         }
 
         private void BindContent()
         {
             ExpertLivePageItem item = Sitecore.Context.Database.GetItem(Constants.Pages.ExpertLive);
-            // test
+
             if (item != null)
             {
                 frHeading.Item = item;

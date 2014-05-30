@@ -55,7 +55,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
                 // Time elapsed
                 // TODO: consider moving into helper function
                 // TODO: verify documentation for display logic
-                DateTime? eventDate = item.GetEventDateUtc();
+                DateTime? eventDate = item.GetEventStartDateUtc();
                 if (eventDate.HasValue)
                 {
                     int daysElapsed = (DateTime.UtcNow - eventDate.Value).Days;

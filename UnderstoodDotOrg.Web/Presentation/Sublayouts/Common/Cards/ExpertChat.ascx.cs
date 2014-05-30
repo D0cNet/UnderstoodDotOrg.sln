@@ -25,7 +25,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
                 BaseEventDetailPageItem item = (BaseEventDetailPageItem)DataSource;
 
                 hlEventDetail.NavigateUrl = item.GetUrl();
-                litEventDate.Text = item.GetFormattedEventDate();
+                litEventDate.Text = item.GetFormattedEventStartDate();
 
                 // Expert details
                 ExpertDetailPageItem expert = item.Expert.Item;

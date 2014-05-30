@@ -101,10 +101,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                 searchItems = context.GetQueryable<EventPage>().Where(predicate).Select(i => (Item)i.GetItem()).ToList();
 
                 if (ShowPastEvent) {
-                    searchResultItems = searchItems.Where(t => IsArchiveItem(t) && IsEventOwner(t)).Select(t => new BaseEventDetailPageItem(t)).OrderByDescending(t => t.EventDate.DateTime).ToList();
+                    searchResultItems = searchItems.Where(t => IsArchiveItem(t) && IsEventOwner(t)).Select(t => new BaseEventDetailPageItem(t)).OrderByDescending(t => t.EventEndDate.DateTime).ToList();
                 }
                 else {
-                    searchResultItems = searchItems.Where(t => !IsArchiveItem(t) && IsEventOwner(t)).Select(t => new BaseEventDetailPageItem(t)).OrderByDescending(t => t.EventDate.DateTime).ToList();
+                    searchResultItems = searchItems.Where(t => !IsArchiveItem(t) && IsEventOwner(t)).Select(t => new BaseEventDetailPageItem(t)).OrderByDescending(t => t.EventEndDate.DateTime).ToList();
                 }
 
             }
@@ -126,7 +126,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
             bool isArchiveItem = false;
             BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(item);
             if (baseEventPageItem != null) {
-                if (baseEventPageItem.EventDate.DateTime < DateTime.Today) {
+                if (baseEventPageItem.EventEndDate.DateTime < DateTime.Today) {
                     isArchiveItem = true;
                 }
             }
@@ -188,17 +188,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                         ltEventType.Text = DictionaryConstants.WebinarLabel;
                     }
 
-                    Double totalDays = (DateTime.Now - baseEventItem.EventDate.DateTime).TotalDays;
+                    Double totalDays = (DateTime.Now - baseEventItem.EventStartDate.DateTime).TotalDays;
                     if (totalDays <= 30) {
                         ltEventDate.Text = Math.Floor(totalDays).ToString();
                         ltEventSubDate.Text = DictionaryConstants.DaysAgoLabel;
                     }
                     else {
-                        ltEventDate.Text = baseEventItem.EventDate.DateTime.ToString("MMM dd");
-                        ltEventSubDate.Text = baseEventItem.EventDate.DateTime.ToString("yyyy");
+                        ltEventDate.Text = baseEventItem.EventStartDate.DateTime.ToString("MMM dd");
+                        ltEventSubDate.Text = baseEventItem.EventStartDate.DateTime.ToString("yyyy");
                     }
 
-                    if (ltEventDate != null && !baseEventItem.EventDate.Raw.IsNullOrEmpty()) {
+                    if (ltEventDate != null && !baseEventItem.EventStartDate.Raw.IsNullOrEmpty()) {
                         TimeZoneItem timezone = baseEventItem.EventTimezone.Item;
                         string timeZoneText = string.Empty;
 
@@ -206,7 +206,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                             timeZoneText = timezone.Timezone.Rendered;
                         }
 
-                        ltEventDate.Text = String.Format("{0} at {1} {2}", baseEventItem.EventDate.DateTime.ToString("ddd MMM dd"), baseEventItem.EventDate.DateTime.ToString("hh:mm tt").ToLower(), timeZoneText);
+                        ltEventDate.Text = String.Format("{0} at {1} {2}", baseEventItem.EventStartDate.DateTime.ToString("ddd MMM dd"), baseEventItem.EventStartDate.DateTime.ToString("hh:mm tt").ToLower(), timeZoneText);
                     }
 
                     if (expertItem != null) {

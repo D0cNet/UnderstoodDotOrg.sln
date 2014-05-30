@@ -99,7 +99,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
             bool isArchiveItem = false;
             BaseEventDetailPageItem baseEventPageItem = new BaseEventDetailPageItem(item);
             if (baseEventPageItem != null) {
-                if (baseEventPageItem.EventDate.DateTime < DateTime.Today) {
+                if (baseEventPageItem.EventEndDate.DateTime < DateTime.Today) {
                     isArchiveItem = true;
                 }
             }
@@ -143,7 +143,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                         frSubHeading.Item = detailItem;
                     }
 
-                    if (ltEventDate != null && !detailItem.EventDate.Raw.IsNullOrEmpty()) {
+                    if (ltEventDate != null && !detailItem.EventStartDate.Raw.IsNullOrEmpty()) {
                         TimeZoneItem timezone = detailItem.EventTimezone.Item;
                         string timeZoneText = string.Empty;
 
@@ -151,7 +151,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
                             timeZoneText = timezone.Timezone.Rendered;
                         }
 
-                        ltEventDate.Text = String.Format("{0} at {1} {2}", detailItem.EventDate.DateTime.ToString("ddd MMM dd"), detailItem.EventDate.DateTime.ToString("hh:mm tt").ToLower(), timeZoneText);
+                        ltEventDate.Text = String.Format("{0} at {1} {2}", detailItem.EventStartDate.DateTime.ToString("ddd MMM dd"), detailItem.EventStartDate.DateTime.ToString("hh:mm tt").ToLower(), timeZoneText);
                     }
                     if (scFollowTwittLink != null) {
                         scFollowTwittLink.Item = detailItem;
