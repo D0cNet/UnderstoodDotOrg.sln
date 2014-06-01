@@ -503,8 +503,10 @@ namespace UnderstoodDotOrg.Common
         {
             public const int Undefined = 0;
             public const int ContentRelated = 1;
-            public const int Advocacy = 2;
-            public const int Advocacy_Donation = 3;
+            public const int Advocacy_Survey = 2;
+            public const int Advocacy_Page = 3;
+            public const int Advocacy_Donation = 4;
+
         }
         public static class SolrFields
         {

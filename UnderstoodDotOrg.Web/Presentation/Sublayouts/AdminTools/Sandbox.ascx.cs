@@ -13,9 +13,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtActivityValue.Text  = UnderstoodDotOrg.Common.Constants.UserActivity_Values.SetReminder  ;
-            txtActivityType.Text = UnderstoodDotOrg.Common.Constants.UserActivity_Types.ContentRelated.ToString() ;
-
+            string targetUrl = "http://www.somethinghostedonconvio.com/myarticle.php";
+            txtActivityValue.Text  = targetUrl  ;
+            txtActivityType.Text = UnderstoodDotOrg.Common.Constants.UserActivity_Types.Advocacy_Page.ToString();
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -113,9 +113,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
 
         protected void btnActivityInsert_Click(object sender, EventArgs e)
         {
-
+            // *** to log a user making a reminder request:
             //   txtActivityValue.Text  = UnderstoodDotOrg.Common.Constants.UserActivity_Values.SetReminder  ;
             //   txtActivityType.Text = UnderstoodDotOrg.Common.Constants.UserActivity_Types.ContentRelated.ToString();
+
+            // *** to log a user browsing to a convio luminate hosted page:
+            // string targetUrl = "http://www.somethinghostedonconvio.com/myarticle.php";
+            // txtActivityValue.Text = targetUrl;
+            // txtActivityType.Text = UnderstoodDotOrg.Common.Constants.UserActivity_Types.Advocacy_Page.ToString();
 
             MembershipManager mmgr = new MembershipManager();
             try
