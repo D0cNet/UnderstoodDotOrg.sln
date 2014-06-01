@@ -56,6 +56,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\DataFormatHelper.cs" />
     <Compile Include="Helpers\HttpHelper.cs" />
+    <Compile Include="Helpers\MembershipHelper.cs" />
     <Compile Include="Helpers\TextHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
