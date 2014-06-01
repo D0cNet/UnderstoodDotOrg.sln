@@ -524,14 +524,10 @@ namespace UnderstoodDotOrg.Domain.Membership
                 throw ex;
             }
         }
-
-        /// <summary>
-        /// Updates information about an existing member
-        /// </summary>
-        /// <param name="Member">Member to update</param>
-        /// <returns>Member that was updated</returns>
-        public Member UpdateMember(Member Member)
+        private bool ClearnAllMemberInterests(Guid MemberId)
         {
+            bool successFlag = false;
+
             //BG: Before we let entity do its thing we need to clear out some values. Entity is not checking for dirty flags, it is only doing inserts
             //it is however doing full atomic inserts so as long as we reset some one to many sets of data we will end up with the desired results, 
             //otherwise all we do is add to the list, and never can remove any itmes. blow them all out first, then let entity insert all of the values as it is.
@@ -541,13 +537,144 @@ namespace UnderstoodDotOrg.Domain.Membership
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure; 
-                    cmd.Parameters.AddWithValue("@MemberId", Member.MemberId);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@MemberId", MemberId);
                     cmd.ExecuteNonQuery();
                 }
             }
-            //
+            successFlag = true;
+            return successFlag;
+        }
 
+        /// <summary>
+        /// Fill the Member object with values from the database
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns></returns>
+        private Member FillMember_ExtendedPropertiesFromDb(Member member)
+        {
+            try
+            {
+                string sql = " SELECT  PreferedLanguage, AgreedToSignUpTerms, MobilePhoneNumber " +
+                             " FROM  dbo.Members " +
+                             " WHERE (MemberId = @MemberId)";
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                member.PreferedLanguage = reader.GetGuid (0);
+                                member.AgreedToSignUpTerms = reader.GetBoolean(1);
+                                member.MobilePhoneNumber = reader.GetString(2);
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return member;
+        }
+
+        /// <summary>
+        /// This will be depreciated after we update the edmx but until then we are going to have a way to update all of the values that have been added on in Membership 1.2
+        /// </summary>
+        /// <param name="member">The Website Member that we want to update the databse with.</param>
+        /// <returns></returns>
+        private bool UpdateMember_ExtendedProperties(Member member)
+        {
+            bool success = false;
+            //only update if any of the values in the member have been updated outside of the database
+            if (member.ExtendedPropertiesAreDirty)
+            {
+                try
+                {
+
+                    string sql = "UPDATE  dbo.Members " +
+                            " SET PreferedLanguage = @PreferedLanguage, " +
+                            " AgreedToSignUpTerms = @AgreedToSignUpTerms, " +
+                            " MobilePhoneNumber = @MobilePhoneNumber  " +
+                            " WHERE (MemberId = @MemberId)";
+                    using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
+                            cmd.Parameters.AddWithValue("@PreferedLanguage", member.PreferedLanguage.ToString());
+                            cmd.Parameters.AddWithValue("@AgreedToSignUpTerms", member.AgreedToSignUpTerms);
+                            cmd.Parameters.AddWithValue("@MobilePhoneNumber", member.MobilePhoneNumber);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    string msg = "Insert Error:";
+                    msg += ex.Message;
+                    //bg: I would like to log this, need to find that log method again.
+                    throw ex;
+                }
+            }
+            success = true;
+
+
+            //push this up into salesforce... eventually....
+            return success;
+        }
+        /// <summary>
+        /// Get the results of all of the quizes into the db
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns></returns>
+        public bool UpdateMember_AllQuizResults(Member member)
+        {
+            bool successFlag = false;
+
+            return successFlag;
+
+        }
+
+        /// <summary>
+        /// Updates information about an existing member
+        /// </summary>
+        /// <param name="Member">Member to update</param>
+        /// <returns>Member that was updated</returns>
+        public Member UpdateMember(Member Member)
+        {
+
+            //bg: Update member properties that are outside of entity:
+            //    UpdateMember_ExtendedProperties checks a dirty data flag on member, 
+            //    and does nothing if none of the new properties have been set outside of the database
+            if (!this.UpdateMember_ExtendedProperties(Member))
+            {
+                throw new Exception("An error occured when trying to update extended member proprerties.");
+            }
+
+
+            try
+            {
+                if (!ClearnAllMemberInterests(Member.MemberId))
+                {
+                    throw new Exception("An error occured when trying to update member interests.");
+                }
+            }
+            catch (Exception ex)
+            { 
+                //log the exception 
+                //bubble it up so the error can be displayed
+                throw ex;
+            }
             try
             {
                 Member = this.mapMember(Member);
@@ -560,6 +687,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             {
                 throw ex;
             }
+
         }
 
         /// <summary>
@@ -603,8 +731,10 @@ namespace UnderstoodDotOrg.Domain.Membership
                 .ToList()
                 .FirstOrDefault();
 
+            //bg: update the member with property values that are not included in entity
+            member = FillMember_ExtendedPropertiesFromDb(member);
             return member;
-            //}
+
         }
 
         public Member GetMember(string EmailAddress)
