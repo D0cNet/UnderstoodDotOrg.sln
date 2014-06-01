@@ -504,7 +504,7 @@
 <!-- END PARTIAL: community/show_more -->
 <!-- .show-more -->
 
-<!-- BEGIN PARTIAL: children-key -->
+<%--<!-- BEGIN PARTIAL: children-key -->
 <div class="container child-content-indicator ">
     <!-- Key -->
     <div class="row">
@@ -525,7 +525,8 @@
     <!-- .row -->
 </div>
 <!-- .child-content-indicator -->
-<!-- END PARTIAL: children-key -->
+<!-- END PARTIAL: children-key -->--%>
+<sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
 <!-- BEGIN PARTIAL: community/experts_suggest_webinar -->
 <div class="suggest-webinar-form">
     <div class="row">

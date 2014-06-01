@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TwoColumnContainer.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.SubTopics.TwoColumnContainer" %>
 
-<!-- BEGIN PARTIAL: children-key -->
+<%--<!-- BEGIN PARTIAL: children-key -->
 <div class="container child-content-indicator first">
     <!-- Key -->
     <div class="row">
@@ -21,7 +21,8 @@
     <!-- .row -->
 </div>
 <!-- .child-content-indicator -->
-<!-- END PARTIAL: children-key -->
+<!-- END PARTIAL: children-key -->--%>
+<sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
 
 <!-- BEGIN MODULE: Article Listing -->
 <div class="container article-listing-container single-col">

@@ -283,7 +283,7 @@
 </ul>
 <!-- END PARTIAL: community/calendar/list_view -->
 
-<!-- BEGIN PARTIAL: children-key -->
+<%--<!-- BEGIN PARTIAL: children-key -->
 <div class="container child-content-indicator ">
     <!-- Key -->
     <div class="row">
@@ -303,4 +303,5 @@
     </div>
     <!-- .row -->
 </div>
-<!-- .child-content-indicator -->
+<!-- .child-content-indicator -->--%>
+<sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />

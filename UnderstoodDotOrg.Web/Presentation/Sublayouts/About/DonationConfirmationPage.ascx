@@ -128,7 +128,7 @@
 
             </div>
 
-            <!-- BEGIN PARTIAL: children-key -->
+            <%--<!-- BEGIN PARTIAL: children-key -->
             <div class="container child-content-indicator first">
                 <!-- Key -->
                 <div class="row">
@@ -149,7 +149,8 @@
                 <!-- .row -->
             </div>
             <!-- .child-content-indicator -->
-            <!-- END PARTIAL: children-key -->
+            <!-- END PARTIAL: children-key -->--%>
+            <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
             <!-- END PARTIAL: about/thank-you-recommended -->
         </div>
     </div>

@@ -359,7 +359,7 @@
         </div>
         <!-- end .event-cards -->
 
-        <!-- BEGIN PARTIAL: children-key -->
+        <%--<!-- BEGIN PARTIAL: children-key -->
         <div class="container child-content-indicator ">
             <!-- Key -->
             <div class="row">
@@ -380,6 +380,7 @@
             <!-- .row -->
         </div>
         <!-- .child-content-indicator -->
-        <!-- END PARTIAL: children-key -->
+        <!-- END PARTIAL: children-key -->--%>
+        <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
     </div>
 </div>

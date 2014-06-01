@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ArticleListing.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic.ArticleListing" %>
 <%@ Register TagPrefix="udo" TagName="ArticleListing" Src="~/Presentation/Sublayouts/Common/ArticleListings/TopicLandingArticles.ascx" %>
 
-<!-- BEGIN PARTIAL: children-key -->
+<%--<!-- BEGIN PARTIAL: children-key -->
 <div class="container child-content-indicator first">
     <!-- Key -->
     <div class="row">
@@ -22,7 +22,8 @@
     <!-- .row -->
 </div>
 <!-- .child-content-indicator -->
-<!-- END PARTIAL: children-key -->
+<!-- END PARTIAL: children-key -->--%>
+<sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
 
 <!-- BEGIN MODULE: Article Listing -->
 <div id="topic-articles-results" class="container article-listing-container article-listing">

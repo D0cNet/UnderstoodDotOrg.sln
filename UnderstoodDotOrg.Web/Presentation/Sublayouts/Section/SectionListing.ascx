@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SectionListing.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Section.SectionListing" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
-<!-- BEGIN PARTIAL: children-key -->
+<%--<!-- BEGIN PARTIAL: children-key -->
 <div class="container child-content-indicator first">
     <!-- Key -->
     <div class="row">
@@ -22,7 +22,8 @@
     <!-- .row -->
 </div>
 <!-- .child-content-indicator -->
-<!-- END PARTIAL: children-key -->
+<!-- END PARTIAL: children-key -->--%>
+<sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
 
 <!-- FIXME: should all .listing elements on this page be combined into one? -->
 
@@ -70,7 +71,7 @@
 
 
 
-<!-- BEGIN PARTIAL: children-key -->
+<%--<!-- BEGIN PARTIAL: children-key -->
 <div class="container child-content-indicator second">
     <!-- Key -->
     <div class="row">
@@ -91,4 +92,5 @@
     <!-- .row -->
 </div>
 <!-- .child-content-indicator -->
-<!-- END PARTIAL: children-key -->
+<!-- END PARTIAL: children-key -->--%>
+<sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
