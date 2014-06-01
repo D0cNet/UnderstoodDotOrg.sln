@@ -37,10 +37,6 @@ namespace UnderstoodDotOrg.Domain.Membership
         public bool emailSubscription { get; set; }
         public bool isFacebookUser { get; set; }
         
- 
-
-
-
         public virtual ICollection<Child> Children { get; set; }
         public virtual ICollection<Interest> Interests { get; set; }
         public virtual ICollection<Journey> Journeys { get; set; }

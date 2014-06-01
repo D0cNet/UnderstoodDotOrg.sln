@@ -6,16 +6,32 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Domain.Understood.Quiz;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
 {
-    public partial class Sandbox : System.Web.UI.UserControl
+    public partial class Sandbox : BaseSublayout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             string targetUrl = "http://www.somethinghostedonconvio.com/myarticle.php";
             txtActivityValue.Text  = targetUrl  ;
             txtActivityType.Text = UnderstoodDotOrg.Common.Constants.UserActivity_Types.Advocacy_Page.ToString();
+
+            Quiz quiz = new Quiz();
+            QuizItem answer = new QuizItem();
+
+            answer.QuestionId = Guid.NewGuid();
+            answer.AnswerValue = "I am the answer.";
+            quiz.MemberAnswers.Add(answer);
+
+            quiz.MemberAnswers.Add(new QuizItem(Guid.NewGuid(), "I am also an answer"));
+            quiz.MemberAnswers.Add(new QuizItem(Guid.NewGuid(), "I am a third answer"));
+
+            this.CurrentMember.CompletedQuizes.Add(quiz);
+            //member contains data. member manager will save data.
+            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

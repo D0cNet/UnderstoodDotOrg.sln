@@ -546,6 +546,8 @@
     <Compile Include="Understood\Newsletter\Child.cs" />
     <Compile Include="Understood\Newsletter\Submission.cs" />
     <Compile Include="Understood\Personalization\PersonalizedItemModel.cs" />
+    <Compile Include="Understood\Quiz\Quiz.cs" />
+    <Compile Include="Understood\Quiz\QuizItem.cs" />
     <Compile Include="Understood\Submissions\SubmissionResult.cs" />
     <Compile Include="Understood\Users\ChildModel.cs" />
     <Compile Include="Understood\Users\ParentModel.cs" />

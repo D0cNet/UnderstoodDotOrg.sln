@@ -36,3 +36,8 @@ Email<asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
 <br /><br />
 
 <asp:Button ID="btnSubmit" runat="server" Text="Create Entry" OnClick="btnSubmit_Click" />
+<hr />
+Some quiz result tests<br />
+Quizid: <asp:TextBox runat="server" id="txtQuizId"></asp:TextBox><br />
+Selected Answer: <asp:TextBox runat="server" ID="txtAnswerId"></asp:TextBox><br />
+Selected Answer Value: <asp:TextBox runat="server" ID="txtAnswerValue"></asp:TextBox><br />

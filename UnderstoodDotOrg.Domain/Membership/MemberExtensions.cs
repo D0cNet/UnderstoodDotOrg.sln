@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnderstoodDotOrg.Domain.Understood.Quiz;
 
 namespace UnderstoodDotOrg.Domain.Membership
 {
@@ -43,6 +44,9 @@ namespace UnderstoodDotOrg.Domain.Membership
         /// Cell phone number
         /// </summary>
         public string MobilePhoneNumber { get; set; }
+
+        public virtual ICollection<Quiz> CompletedQuizes {get; set;}
+
 
         //new member properties keep popping up. 
         /* In case of emergency implement operation key/value them all
