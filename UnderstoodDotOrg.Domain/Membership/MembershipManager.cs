@@ -347,6 +347,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                 throw ex;
             }
         }
+
         public Member AddUnauthorizedMember(Member Member)
         {
             //throw this out if there is no email 
@@ -406,10 +407,10 @@ namespace UnderstoodDotOrg.Domain.Membership
         /// <summary>
         /// Inserts a row into our member activity log table with information about what the specified user has just done
         /// </summary>
-        /// <param name="MemberId"></param>
-        /// <param name="ContentId"></param>
-        /// <param name="Activity"></param>
-        /// <param name="ActivityType"></param>
+        /// <param name="MemberId">Member object's MemberId</param>
+        /// <param name="ContentId">Guid of the Sitecore Content Item involved </param>
+        /// <param name="Activity">Can be a constant for easy of implementation but you can also passs in a URL or serialized xml</param>
+        /// <param name="ActivityType">Constant Int for reporting purposes</param>
         /// <returns></returns>
         public bool LogMemberActivity(Guid MemberId, Guid ContentId, String Activity, int ActivityType)
         {
