@@ -5,7 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Framework.UI;
 
@@ -102,8 +104,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 
                 this.CurrentMember = this.registeringUser;
                 this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
+                var termsAndConditionsPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetTermsandConditionsPage();
 
-                Response.Redirect(MembershipHelper.GetNextStepURL(1));
+                Response.Redirect(termsAndConditionsPage.GetUrl());
             }
             else
             {
