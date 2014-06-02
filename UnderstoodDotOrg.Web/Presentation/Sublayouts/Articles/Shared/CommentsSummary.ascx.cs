@@ -26,6 +26,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 if (String.IsNullOrEmpty(ObjBasicArticle.DefaultArticlePage.BlogId.Raw)
                     || String.IsNullOrEmpty(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw))
                 {
+                    this.Visible = false;
                     return;
                 }
 
@@ -49,9 +50,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                                 litNumComments.Text = "(" + numComments + ")";
                             }
 
-                           recentComment = comments.OrderByDescending(x => x.CommentDate).First();
-                            
-
+                            recentComment = comments.OrderByDescending(x => x.CommentDate).First();
+                        }
+                        else
+                        {
+                            this.Visible = false;
                         }
                         
                     }
