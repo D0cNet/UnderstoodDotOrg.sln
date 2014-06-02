@@ -31,6 +31,42 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.Repeater rptAction;
         
         /// <summary>
+        /// litAtAGlanceHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litAtAGlanceHeader;
+        
+        /// <summary>
+        /// frSubHeadlineText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSubHeadlineText;
+        
+        /// <summary>
+        /// litKeyTakeAwayText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litKeyTakeAwayText;
+        
+        /// <summary>
+        /// frKeyTakeawayData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frKeyTakeawayData;
+        
+        /// <summary>
         /// sbAboutAuthor control.
         /// </summary>
         /// <remarks>

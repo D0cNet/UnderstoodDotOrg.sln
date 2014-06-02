@@ -13,6 +13,7 @@ using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.ActionStyleListArticle;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -47,6 +48,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             var allChildSlides = ActionStyleListPageItem.GetAllAction(Model);
             rptAction.DataSource = allChildSlides;
             rptAction.DataBind();
+
+            litAtAGlanceHeader.Text = DictionaryConstants.AtAGlanceText;
+            litKeyTakeAwayText.Text = DictionaryConstants.KeyTakeAwayText;
         }
 
         protected void rptAction_ItemDataBound(object sender, RepeaterItemEventArgs e)

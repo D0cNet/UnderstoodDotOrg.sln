@@ -41,6 +41,24 @@
                 </asp:Repeater>
 
             </div>
+
+            <div class="at-a-glance">
+                <header class='header-at-a-glance'>
+                    <h2><%--At-a-glance--%>
+                        <asp:Literal ID="litAtAGlanceHeader" runat="server"></asp:Literal>
+                    </h2>
+                </header>
+                <sc:FieldRenderer runat="server" FieldName="At a glance Content" ID="frSubHeadlineText" />
+            </div>
+
+            <div class="key-takeaways">
+                <header class='header-key-takeaways'>
+                    <h2><%-- Key Takeaways--%>
+                        <asp:Literal ID="litKeyTakeAwayText" runat="server"></asp:Literal>
+                    </h2>
+                </header>
+                <sc:FieldRenderer ID="frKeyTakeawayData" runat="server" FieldName="Key Takeaway Data" />
+            </div>
             <!-- END PARTIAL: article-actions-copy -->
             <!-- BEGIN PARTIAL: about-the-author -->
             <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" Visible="false" />
