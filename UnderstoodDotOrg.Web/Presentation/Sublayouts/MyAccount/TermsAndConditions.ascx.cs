@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -19,6 +20,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         {
             btnAgree.Text = Model.Agree.Rendered;
             btnNotAgree.Text = Model.NotAgree.Rendered;
+            hypSignIn.NavigateUrl = MyAccountFolderItem.GetSignInPage();
             if (CurrentMember == null)
             {
                 Response.Redirect(MainsectionItem.GetHomeItem().GetUrl());

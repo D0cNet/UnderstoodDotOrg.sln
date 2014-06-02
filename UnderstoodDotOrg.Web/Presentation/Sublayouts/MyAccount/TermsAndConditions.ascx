@@ -4,7 +4,7 @@
 <div class="container sign-up-link flush">
     <div class="row">
         <div class="col col-23">
-            <p class="signed-up">Already signed up?<asp:HyperLink ID="hypSignIn" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.SignInButtonText%></asp:HyperLink></p>
+            <p class="signed-up">Already signed up? <asp:HyperLink ID="hypSignIn" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.SignInButtonText%></asp:HyperLink></p>
         </div>
     </div>
 </div>
