@@ -13,10 +13,10 @@
                 <h4><asp:Literal ID="ltlDidYouFindThisHelpful" runat="server"></asp:Literal></h4>
                 <ul>
                     <li>
-                        <button class="button yes rs_skip"><asp:Literal ID="ltlYes" runat="server"></asp:Literal></button>
+                        <button class="helpful-yes"><asp:Literal ID="ltlYes" runat="server"></asp:Literal></button>
                     </li>
                     <li>
-                        <button class="button no gray rs_skip"><asp:Literal ID="ltlNo" runat="server"></asp:Literal></button>
+                        <button class="helpful-no"><asp:Literal ID="ltlNo" runat="server"></asp:Literal></button>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
