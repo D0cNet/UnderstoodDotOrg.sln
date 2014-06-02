@@ -8,7 +8,7 @@
             <div class="article-intro-text">
                 <p>
                     <%--This would be the intro text to the slideshow. It should run about 35 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum convallis risus id felis.--%>
-                    <sc:fieldrenderer id="frSummary" runat="server" fieldname="Body Content" />
+                    <sc:fieldrenderer id="frSummary" runat="server" fieldname="Intro Text" />
                 </p>
             </div>
             <!-- END PARTIAL: article-intro-text -->
@@ -67,6 +67,12 @@
                 </div>
                 <!-- .checklist-form -->
             </div>
+            <div class="article-copy">
+                <p>
+                    <sc:FieldRenderer ID="frOutro" runat="server" FieldName="Outro Text" />
+                </p>
+            </div>
+
             <!-- .article-checklist -->
 
             <!-- END PARTIAL: article-checklist -->
