@@ -40,11 +40,11 @@
                                     <div class="author-and-blog-name">
                                         <a href="REPLACE" class="author-name"><%# Item.Author %>
                                         </a>
-                                        <a href="REPLACE" class="blog-name"><%# Item.BlogName %>
+                                        <a href="<%# Item.ParentUrl %>" class="blog-name"><%# Item.BlogName %>
                                         </a>
                                     </div>
                                     <div class="blog-card-button">
-                                        <button class="button gray">Unfollow</button>
+                                        <asp:Button ID="btnFollow" CssClass="button gray" runat="server" />
                                     </div>
                                     <!-- end .blog-card-button -->
                                 </div>

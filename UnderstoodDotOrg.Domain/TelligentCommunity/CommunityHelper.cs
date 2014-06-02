@@ -287,6 +287,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         Body = node["Body"].InnerText,
                         Title = node["Title"].InnerText,
                         ContentId = node["ContentId"].InnerText,
+                        ContentTypeId = node["ContentTypeId"].InnerText,
+                        ContentUrl = node["Url"].InnerText,
                         BlogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText),
                         PublishedDate = CommunityHelper.FormatDate(node["PublishedDate"].InnerText),
                         Author = auth["DisplayName"].InnerText
@@ -649,25 +651,25 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 var xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(xml);
                 XmlNodeList nodes = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost");
-                XmlNodeList nodes1 = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost/Author");
-                int count = 0;
                 foreach (XmlNode node in nodes)
                 {
+                    XmlNode author = node.SelectSingleNode("Author");
+                    var blogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText);
                     BlogPost blogPost = new BlogPost()
                     {
                         Title = node["Title"].InnerText,
                         ContentId = node["ContentId"].InnerText,
                         Body = FormatString100(node["Body"].InnerText),
                         PublishedDate = FormatDate(node["PublishedDate"].InnerText),
-                        BlogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText),
-                        Author = nodes1[count]["DisplayName"].InnerText,
+                        BlogName = blogName,
+                        Author = author["DisplayName"].InnerText,
                         // TODO: Fix this logic a lot
                         Url = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
-                        "/" + CommunityHelper.BlogNameById(node["BlogId"].InnerText) + "/" + node["Title"].InnerText, ".aspx", "")
+                        "/" + blogName + "/" + node["Title"].InnerText, ".aspx", ""),
+                        ParentUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
+                        "/blogposts?BlogId=" + blogId , ".aspx", "")
                     };
                     blogPosts.Add(blogPost);
-                    count++;
-
                 }
                 return blogPosts;
             }
@@ -1288,6 +1290,45 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 catch { } // TODO: add logging
             }
             return commentList;
+        }
+
+        public static Like GetLike(string username, string contentId, string contentTypeId)
+        {
+            var like = new Like();
+
+            if (!string.IsNullOrEmpty(username) || !string.IsNullOrEmpty(contentId) || !string.IsNullOrEmpty(contentTypeId))
+            {
+                using (var webClient = new WebClient())
+                {
+                    try
+                    {
+                        webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                        var requestUrl = GetApiEndPoint("likes.xml?PageSize=100&ContentId=" + contentId + "&ContentTypeId=" + contentTypeId);
+                        var xml = webClient.DownloadString(requestUrl);
+
+                        var xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(xml);
+
+                        XmlNodeList nodes = xmlDoc.SelectNodes("Response/Likes/Like");
+
+                        foreach (XmlNode xn in nodes)
+                        {
+                            XmlNode authorInfo = xn.SelectSingleNode("User");
+                            if (authorInfo["Username"].InnerText.Equals(username))
+                            {
+                                like = new Like()
+                                {
+                                    ContentUrl = xn["Url"].InnerText
+                                };
+                            }
+                        }
+                        return like;
+                    }
+                    catch { } //TODO: Add Logging
+                }
+            }
+            return like;
         }
     }
 }

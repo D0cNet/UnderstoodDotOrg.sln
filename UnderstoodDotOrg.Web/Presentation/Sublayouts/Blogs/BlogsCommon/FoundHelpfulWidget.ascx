@@ -16,6 +16,6 @@
 
 <div class="was-this-helpful" id="count-helpful">
     <h5>Did you find this helpful?</h5>
-    <a href="REPLACE" class="button yes">Yes</a>
-    <a href="REPLACE" class="button gray no">No</a>
+    <asp:LinkButton ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button yes" runat="server">Yes</asp:LinkButton>
+    <asp:LinkButton ID="btnUnlike" OnClick="btnDidntHelp_Click" CssClass="button gray no" runat="server">No</asp:LinkButton>
 </div>

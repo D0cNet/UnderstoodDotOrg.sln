@@ -91,7 +91,10 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Author { get; set; }
         public string BlogName { get; set; }
         public string ContentId { get; set; }
+        public string ContentTypeId { get; set; }
+        public string ContentUrl { get; set; }
         public string Url { get; set; }
+        public string ParentUrl { get; set; }
 
         public BlogPost() { }
     }
@@ -189,6 +192,12 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Url { get; set; }
         
         public FavoritesModel() { }
+    }
+
+    public class Like
+    {
+        public string ContentUrl { get; set; }
+        public string ContentTypeId { get; set; }
     }
     
 }
