@@ -572,7 +572,10 @@ namespace UnderstoodDotOrg.Domain.Membership
                             {
                                 member.PreferedLanguage = reader.GetGuid (0);
                                 member.AgreedToSignUpTerms = reader.GetBoolean(1);
-                                member.MobilePhoneNumber = reader.GetString(2) ?? string.Empty ;
+                                if (!reader.IsDBNull(2))
+                                {
+                                    member.MobilePhoneNumber = reader.GetString(2) ?? string.Empty;
+                                }
                             }
                         }
                     }
