@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArtic
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -16,6 +17,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            litKeyTakeAwayText.Text = DictionaryConstants.KeyTakeAwayText;
             sbAboutAuthor.Visible = Model.DefaultArticlePage.AuthorName != null;
             SBReviewedBy.Visible = Model.DefaultArticlePage.Reviewedby.Item != null && Model.DefaultArticlePage.ReviewedDate.DateTime != null;
             sbSidebarPromo.Visible = Model.DefaultArticlePage.ShowPromotionalControl.Checked;

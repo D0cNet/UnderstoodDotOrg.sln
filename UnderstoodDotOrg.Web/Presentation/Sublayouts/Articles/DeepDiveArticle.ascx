@@ -60,10 +60,10 @@
                 <div class="key-takeaways">
                     <header class='header-key-takeaways'>
                         <h2><%--Key Takeaways--%>
-                            <sc:FieldRenderer ID="frKeyTakeawaytitle" runat="server" FieldName="KeyTake away Title" />
+                            <asp:Literal ID="litKeyTakeAwayText" runat="server"></asp:Literal>
                         </h2>
                     </header>
-                    <sc:FieldRenderer ID="frKeyTakeawayDesc" runat="server" FieldName="Key Take away Details" />
+                    <sc:FieldRenderer ID="frKeyTakeawayDesc" runat="server" FieldName="Key Takeaways Content" />
                     <%-- <ul>
                     <li>
                         <p>This article talks about lorem ipsum malesuada do</p>
