@@ -133,18 +133,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col col-15 offset-2">
+                            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx"/>  
                             <!-- BEGIN PARTIAL: reviewed-by -->
-                            <p class="reviewed-by">
-                                <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
-                                    <%--<a href="REPLACE">Dr. Samantha Frank</a>--%>
-                                    <sc:Link ID="lnkReviewedBy" runat="server" Field="Revierwer Name">
-                                    </sc:Link>
-                                    <asp:HyperLink ID="HyplnkReviewedBy" runat="server"></asp:HyperLink>
-                                </span><span class="dot"></span><span class="reviewed-by-date">
-                                    <%--12&nbsp;Dec&nbsp;&apos;13 --%>
-                                    <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />
-                                </span>
-                            </p>
+                            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
                             <!-- END PARTIAL: reviewed-by -->
                         </div>
                     </div>

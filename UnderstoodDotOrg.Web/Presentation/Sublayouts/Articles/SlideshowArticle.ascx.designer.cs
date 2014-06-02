@@ -40,30 +40,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.Repeater rptSlideButton;
         
         /// <summary>
-        /// lnkReviewedBy control.
+        /// sbAboutAuthor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Link lnkReviewedBy;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbAboutAuthor;
         
         /// <summary>
-        /// HyplnkReviewedBy control.
+        /// SBReviewedBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyplnkReviewedBy;
-        
-        /// <summary>
-        /// dtReviewdDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Date dtReviewdDate;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout SBReviewedBy;
     }
 }

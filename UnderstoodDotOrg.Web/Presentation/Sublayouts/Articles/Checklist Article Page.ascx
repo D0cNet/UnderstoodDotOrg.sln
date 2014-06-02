@@ -61,7 +61,7 @@
                             <button class="download button gray">Download as PDF</button>
                         </div>
                         <!--        <div class="button"><input class="checklist-form-save" type="submit" value="Save My Answers"></div>
-        <div class="button"><input class="submit-button" type="submit" value="Download as PDF"></div> -->
+                                    <div class="button"><input class="submit-button" type="submit" value="Download as PDF"></div> -->
                     </div>
                     <!-- .checklist-questions -->
                 </div>

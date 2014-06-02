@@ -27,21 +27,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             ObjSlideshowArticle = new SlideshowArticlePageItem(Sitecore.Context.Item);
             if (ObjSlideshowArticle != null)
             {
-               //Get Reviewer Details
-                if (ObjSlideshowArticle.DefaultArticlePage.Reviewedby.Item != null)//Reviwer Name
-                {
-                    lnkReviewedBy.Item = ObjSlideshowArticle.DefaultArticlePage.Reviewedby.Item;
-                    lnkReviewedBy.Field = "Reviewer Name";
-                    HyplnkReviewedBy.Text = lnkReviewedBy.Text;
-                }
-                if (ObjSlideshowArticle.DefaultArticlePage.ReviewedDate.DateTime != null)// Reviewed date 
-                {
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
                 //Set Slide Counter value and binda data accordinly
                  RptDataBind();
-                
             }
         }
 
