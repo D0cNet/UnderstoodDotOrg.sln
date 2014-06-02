@@ -18,6 +18,15 @@
                  jQuery(".modal_discussion").toggle();
                  //alert("Discussion button clicked");
              });
+        jQuery("a").click(
+            function (evt) {
+                if (jQuery(this).attr("href").indexOf("REPLACE") >-1)  {
+               
+                        alert("Link not implemented!");
+                        return false;
+               
+                }
+            });
     });
 </script>
 <div class="container">
@@ -46,7 +55,7 @@
                          <a runat="server" id="itemPlaceholder"></a>
                     </GroupTemplate>
                     <ItemTemplate>
-                         <asp:HiddenField Value='<%# Eval("Name") %>' runat="server" ID="hdSubject"/>
+                       <%--  <asp:HiddenField Value='<%# Eval("ID") %>' runat="server" ID="hdSubject"/>--%>
                          <a href="REPLACE" runat="server" id="hrefForum" ><%# Eval("Name") %></a>
                     </ItemTemplate>
                 

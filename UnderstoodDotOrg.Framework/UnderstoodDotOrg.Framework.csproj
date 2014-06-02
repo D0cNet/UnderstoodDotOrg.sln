@@ -60,6 +60,7 @@
     <Compile Include="UI\BaseSublayoutT.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="UI\Discussions\Discussion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnderstoodDotOrg.Common\UnderstoodDotOrg.Common.csproj">

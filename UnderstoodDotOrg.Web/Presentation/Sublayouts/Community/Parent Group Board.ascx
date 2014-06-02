@@ -17,6 +17,15 @@
                  jQuery(".modal_discussion").toggle();
                  //alert("Discussion button clicked");
              });
+        jQuery("a").click(
+          function (evt) {
+              if (jQuery(this).attr("href").indexOf("REPLACE") > -1) {
+
+                  alert("Link not implemented!");
+                  return false;
+
+              }
+          });
     });
 </script>
 <div class="container">
@@ -25,9 +34,10 @@
             <header class="groups-heading rs_read_this">
                 <!-- BEGIN PARTIAL: community/breadcrumb_menu -->
                 <!--breadcrumb menu-->
-                <a href="REPLACE" class="back-to-previous rs_skip">
-                    <i class="icon-arrow-left-blue"></i>Back to Parents of Kids with Reading Issues
-                </a>
+                <a href="REPLACE" runat="server" id="hrfBack" class="back-to-previous rs_skip">
+                        <i class="icon-arrow-left-blue"></i>
+                        <asp:Literal ID="litBack" Text="" runat="server" />
+                    </a>
                 <!-- END PARTIAL: community/breadcrumb_menu -->
                 <div class="col col-24 title">
                     <h2>

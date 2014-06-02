@@ -1,4 +1,5 @@
 ﻿using Sitecore.Configuration;
+using Sitecore.Links;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,10 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.ExactTarget;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.ExactTarget;
 using UnderstoodDotOrg.Services.Models.Telligent;
 using UnderstoodDotOrg.Services.TelligentService;
 
@@ -99,20 +102,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                 
                 foreach (Conversation item in Conversations)
                 {
-                    //if (item.HasMessages)
-                    //{
-                        //Get the latest message
-                        Message m = item.Messages.OrderByDescending(x => x.CreatedDate).First();
-                        ///messages.Add(item.FirstMessage);
-                        messages.Add(m);
+                    //Get the latest message
+                    Message m = item.Messages.OrderByDescending(x => x.CreatedDate).First();
+                    ///messages.Add(item.FirstMessage);
+                    messages.Add(m);
 
-                        m = null;
-                    //}
-                    //else
-                    //{
-                    //    messages.Add(item.FirstMessage);
-                    //}
-                }
+                    m = null;
+                   
+            }
 
 
             }
@@ -176,6 +173,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
 
             BindConversations(false);
         }
+
         protected void btnReply_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(CKEditor1.Text))
@@ -187,6 +185,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                     {
                         if (TelligentService.ReplyToMessage(ScreenName, hdfield.Value, CKEditor1.Text))
                         {
+                           
                             BindConversations(true);
 
                             rptMessages.DataSource = new List<Message>();
@@ -221,16 +220,54 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
         }
 
 
+        protected void sendExactTargetEmails(string conversationID,string usernames)
+        {
+            ////TODO: to implement refactoring
 
+           
+           
+
+        }
         protected void btnSendNewMessage_Click(object sender, EventArgs e)
         {
             string newConvID = TelligentService.CreateConversation(ScreenName, txtSubject.Text, CKEditorControl1.Text, ddlUserNames.SelectedValue);
-
+            string usernames = ddlUserNames.SelectedValue;
             if (!String.IsNullOrEmpty(newConvID))
             {
-                BindConversations(true);
-                rptMessages.DataSource = new List<Message>();
-                rptMessages.DataBind();
+                try
+                {
+                    BindConversations(true);
+                    rptMessages.DataSource = new List<Message>();
+                    rptMessages.DataBind();
+
+                    //Send ExactTarget Email
+                    MembershipManager memMan = new MembershipManager();
+                    string[] users = usernames.Split(',');
+                    foreach (string username in users)
+                    {
+                        string memberEmail = TelligentService.GetMemberEmail(username);
+                        string myAccountLink = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(Constants.Pages.MyAccount.ToString()));
+
+                        BaseReply reply = ExactTargetService.InvokeEM21PrivateMessage(
+                                                           new InvokeEM21PrivateMessageRequest
+                                                           {
+                                                               ///TODO: change url to profile setting link
+                                                               ContactSettingsLink = "www.google.com",
+                                                               ///TODO: change URL to message centre link
+                                                               MsgCenterLink = myAccountLink,
+                                                               PMText = CKEditorControl1.Text,
+                                                               ReportInappropriateLink = "flagged@understood.org",
+                                                               ToEmail = memberEmail
+                                                           });
+
+                    }
+
+                }catch(Exception ex)
+                {
+                    Sitecore.Diagnostics.Error.LogError("SendNewMessage Error:\n" + ex.Message);
+                }
+
+                
                 txtSubject.Text = String.Empty;
                 CKEditorControl1.Text = String.Empty;
                 ddlUserNames.SelectedIndex = -1;

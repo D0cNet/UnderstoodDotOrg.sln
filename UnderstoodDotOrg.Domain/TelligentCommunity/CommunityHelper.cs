@@ -864,6 +864,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 }
                 catch (Exception ex)
                 {
+                    Sitecore.Diagnostics.Error.LogError("Error PostReply:\n" + ex.Message);
 
                 }
             }
@@ -878,24 +879,30 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-
-                    var requestUrl = GetApiEndPoint(String.Format("forums/{0}/threads/{1}/replies.xml", forumID, threadID));
-                    var xml = webClient.DownloadString(requestUrl);
-                    var xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xml);
-                    XmlNode node = xmlDoc.SelectSingleNode("Response/Replies");
-
-                    if (node != null)
+                    try
                     {
-                        foreach (XmlNode reply in node)
+                        var requestUrl = GetApiEndPoint(String.Format("forums/{0}/threads/{1}/replies.xml", forumID, threadID));
+                        var xml = webClient.DownloadString(requestUrl);
+                        var xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(xml);
+                        XmlNode node = xmlDoc.SelectSingleNode("Response/Replies");
+
+                        if (node != null)
                         {
-                            ReplyModel rpm = new ReplyModel(reply);
+                            foreach (XmlNode reply in node)
+                            {
+                                ReplyModel rpm = new ReplyModel(reply);
 
-                            replies.Add(rpm);
-                            rpm = null;
+                                replies.Add(rpm);
+                                rpm = null;
+                            }
+
+
                         }
-
-
+                    }catch(Exception ex)
+                    {
+                        Sitecore.Diagnostics.Error.LogError("Error in ReadReplies CommunityHelper.\nError" + ex.Message);
+                        replies = null;
                     }
                 }
             }

@@ -3,15 +3,30 @@
     <!-- BEGIN PARTIAL: community/main_header -->
 
     <!-- END PARTIAL: community/main_header -->
+<script>
+    jQuery(document).ready(function () {
+        jQuery("a").click(
+               function (evt) {
+                   if (jQuery(this).attr("href").indexOf("REPLACE") > -1) {
 
+                       alert("Link not implemented!");
+                       return false;
+
+                   }
+               });
+
+    });
+
+</script>
     <div class="container">
         <div class="row">
             <div class="container">
                 <header class="groups-heading">
                     <!-- BEGIN PARTIAL: community/breadcrumb_menu -->
                     <!--breadcrumb menu-->
-                    <a href="REPLACE" class="back-to-previous rs_skip">
-                        <i class="icon-arrow-left-blue"></i>lorem ipsum
+                    <a href="REPLACE" runat="server" id="hrfBack" class="back-to-previous rs_skip">
+                        <i class="icon-arrow-left-blue"></i>
+                        <asp:Literal ID="litBack" Text="" runat="server" />
                     </a>
                     <!-- END PARTIAL: community/breadcrumb_menu -->
                     <!-- BEGIN PARTIAL: community/groups_private_heading -->
@@ -176,7 +191,7 @@
                     <fieldset>
                         <label for="join-discussion-text" class="visuallyhidden">Join the discussion</label>
                         <%--<textarea class="comment" id="join-discussion-text" placeholder="Join the discussion"></textarea>--%>
-                        <asp:TextBox CssClass="comment" Columns="40" Rows="40" ID="txtBody" runat="server"></asp:TextBox>
+                        <asp:TextBox CssClass="comment" Columns="40" Rows="40" ID="txtBody" runat="server" ViewStateMode="Enabled"></asp:TextBox>
                         <%--<a href="REPLACE" class="button rs_skip">Submit</a>--%>
                         <asp:LinkButton CssClass="button rs_skip" OnClick="lbSubmitReply_Click" Text="Submit" ID="lbSubmitReply" runat="server" />
                     </fieldset>

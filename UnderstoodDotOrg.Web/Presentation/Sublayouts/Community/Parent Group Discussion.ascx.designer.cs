@@ -13,6 +13,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
     public partial class Parent_Group_Discussion {
         
         /// <summary>
+        /// hrfBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor hrfBack;
+        
+        /// <summary>
+        /// litBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litBack;
+        
+        /// <summary>
         /// lblSubject control.
         /// </summary>
         /// <remarks>

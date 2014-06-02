@@ -1,4 +1,5 @@
 ﻿using Sitecore.Data.Items;
+using Sitecore.Links;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,11 +27,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 txtBody.Attributes.Add("placeholder", "Join the discussion");
                 txtBody.Attributes.Add("id", "join-discussion-text");
                
-            }
-                txtBody.Text = "";
+            
+               
                 Item currItem = Sitecore.Context.Item;
                 if (currItem != null)
                 {
+                    hrfBack.HRef = LinkManager.GetItemUrl(currItem.Parent);
+                    litBack.Text = currItem.Parent.Name;
                     GroupDiscussionItem grpDItem = new GroupDiscussionItem(currItem);
                     if (grpDItem != null)
                     {
@@ -53,13 +56,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             rptGroupDiscussion.DataSource = thModel.Replies;
                             rptGroupDiscussion.DataBind();
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
-                            
+                            Sitecore.Diagnostics.Error.LogError("Error Retrieving replies Page_Load Parent Group Discussions.\nError" + ex.Message);
                         }
 
                     }
-                
+                }
             }
                 //var grpDitem = Session["discussionItem"] as GroupDiscussionItem;
                 //if (grpDitem != null)
@@ -97,6 +100,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 var replies = CommunityHelper.ReadReplies(forumID, threadID);
                 rptGroupDiscussion.DataSource = replies;
                 rptGroupDiscussion.DataBind();
+                txtBody.Text = "";
 
             }
         }

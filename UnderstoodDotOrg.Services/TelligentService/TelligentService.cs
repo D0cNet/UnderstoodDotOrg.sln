@@ -14,7 +14,8 @@ using UnderstoodDotOrg.Domain.Understood.Common;
 using System.Text.RegularExpressions;
 using Sitecore.Links;
 using System.Collections.Specialized;
-
+using UnderstoodDotOrg.Domain.Membership;
+using System.Web.Security;
 namespace UnderstoodDotOrg.Services.TelligentService
 {
     public class TelligentService
@@ -928,6 +929,69 @@ namespace UnderstoodDotOrg.Services.TelligentService
            
             // return node;
             return usernames;
+        }
+
+        public static List<String> GetUserNames(string conversation)
+        {
+            ///TODO: Implement retrieving username from conversation
+            return null;
+        }
+
+        public static Member GetPosesMember(string screenName)
+        {
+            Member User = null;
+            string userEmail = String.Empty;
+            MembershipManager memMan = new MembershipManager();
+            if (!String.IsNullOrEmpty(screenName))
+            {
+                screenName = screenName.Trim();
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                try
+                {
+                    var requestUrl = String.Format("{0}api.ashx/v2/users/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), screenName);
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/User");
+                    if (node != null)
+                    {
+                        //Read user email
+                        userEmail = node.SelectSingleNode("PrivateEmail").InnerText;
+                        if(!String.IsNullOrEmpty(userEmail))
+                        {
+                            //Resolve User into Member
+                           User= memMan.GetMember(userEmail);
+                         
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    User = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
+
+
+            }
+            return User;
+        }
+
+        public static string GetMemberEmail(string screenName)
+        {
+            Member user = null;
+            String email = String.Empty;
+            user=GetPosesMember(screenName);
+            if (user != null)
+                email = user.Email;
+
+            return email;
+            
+            
         }
         public static string CreateConversation(string username,string subject,string body,string userlist)
         {
