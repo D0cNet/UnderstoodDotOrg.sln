@@ -15,7 +15,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
         public IEnumerable<string> GetTermAnchorList()
         {
             return AllGlossaryTerms
-               .Select(x => x.GlossaryTermTitle.Text.Substring(0, 1))
+               .Select(x => x.GlossaryTermTitle.Text.Substring(0, 1).ToUpper())
                .Distinct();
         }
 
@@ -24,7 +24,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
             IEnumerable<GlossaryTermItem> AllRelatedterms = ObjGlossaryArt.InnerItem.GetChildren()
                          .Where(t => t.TemplateID.ToString() == GlossaryTermItem.TemplateId.ToString())
                          .Select(x => new GlossaryTermItem(x))
-                         .Where(x => x.GlossaryTermTitle.Text.Substring(0, 1) == Termletter);
+                         .Where(x => x.GlossaryTermTitle.Text.Substring(0, 1).ToUpper() == Termletter);
             return AllRelatedterms;
         }
 
@@ -44,7 +44,4 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
             }
         }
     }
-
-
-
 }
