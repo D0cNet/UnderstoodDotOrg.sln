@@ -39,7 +39,7 @@
                         </div>
                         <!-- end .event-card-image -->
                         <div class="event-card-details">
-                            <p class="event-card-heading">Office hours with</p>
+                            <p class="event-card-heading"><%= UnderstoodDotOrg.Common.DictionaryConstants.OfficeHoursWithLabel %></p>
                             <p class="event-card-title"><sc:FieldRenderer ID="frExpertName" runat="server" FieldName="Expert Name" /></p>
                             <p><sc:FieldRenderer ID="frExpertSubheading" runat="server" FieldName="Expert Subheading" /></p>
 
@@ -51,7 +51,7 @@
 
                     <!-- Duplicate links for mobile to accomplish mobile layout -->
                     <p class="event-card-info-link"><asp:HyperLink ID="hlExpertDetailCtaMobile" runat="server" /></p>
-                    <p class="event-card-info-link"><asp:HyperLink ID="hlOfficeHoursMObile" runat="server" /></p>
+                    <p class="event-card-info-link"><asp:HyperLink ID="hlOfficeHoursMobile" runat="server" /></p>
                 </div>
                 <!-- end .event-card-info -->
             </div>

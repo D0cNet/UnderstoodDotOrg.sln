@@ -180,6 +180,7 @@
     <Compile Include="Search\Article.cs" />
     <Compile Include="Search\BehaviorAdvice.cs" />
     <Compile Include="Search\EventPage.cs" />
+    <Compile Include="Search\Expert.cs" />
     <Compile Include="Search\Fields\BehaviorArticleMappingField.cs" />
     <Compile Include="Search\Fields\EventDateUtcField.cs" />
     <Compile Include="Search\Fields\EventDetailField.cs" />

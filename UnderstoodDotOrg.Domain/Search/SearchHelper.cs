@@ -315,6 +315,29 @@ namespace UnderstoodDotOrg.Domain.Search
             return articles;
         }
 
+        private static IEnumerable<T> Shuffle<T>(IEnumerable<T> source, Random rng)
+        {
+            if (!source.Any())
+            {
+                yield break;
+            }
+
+            T[] elements = source.ToArray();
+            // Note i > 0 to avoid final pointless iteration
+            for (int i = elements.Length - 1; i > 0; i--)
+            {
+                // Swap element "i" with a random earlier element it (or itself)
+                int swapIndex = rng.Next(i + 1);
+                yield return elements[swapIndex];
+                elements[swapIndex] = elements[i];
+                // we don't actually perform the swap, we can forget about the
+                // swapped element because we already returned it.
+            }
+
+            // there is one item remaining that was not returned - we return it now
+            yield return elements[0];
+        }
+
         private static void AddFromBucket(IQueryable<Article> query, ref List<Article> result)
         {
             int currentEntries = result.Count();
@@ -801,6 +824,30 @@ namespace UnderstoodDotOrg.Domain.Search
                 return results.Select(i => new BaseEventDetailPageItem(i.GetItem()))
                               .Where(i => i.InnerItem != null)
                               .ToList();
+            }
+        }
+
+        public static IEnumerable<ExpertDetailPageItem> GetRandomizedExpertsWithOpenOfficeHours()
+        {
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+
+            using (var context = index.CreateSearchContext())
+            {
+                var query = GetCurrentCultureQueryable<Expert>(context)
+                                .Filter(i => i.Language == Sitecore.Context.Language.Name
+                                        && i.Path.Contains("/sitecore/content/home/"))
+                                .Filter(i => i.TemplateId == ID.Parse(ExpertDetailPageItem.TemplateId)
+                                        && i.EventParticipation.Contains(ID.Parse(Constants.Events.OpenOfficeHourChat)));
+
+                var total = query.Take(1).GetResults().TotalSearchResults;
+
+                var results = query.Take(total).ToList();
+
+                Random r = new Random();
+
+                return Shuffle(results.AsEnumerable(), r)
+                            .Select(i => new ExpertDetailPageItem(i.GetItem()))
+                            .Where(i => i.InnerItem != null);
             }
         }
 
