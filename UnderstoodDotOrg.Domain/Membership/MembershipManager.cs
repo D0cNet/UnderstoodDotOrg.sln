@@ -613,7 +613,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                             cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
                             cmd.Parameters.AddWithValue("@PreferedLanguage", member.PreferedLanguage.ToString());
                             cmd.Parameters.AddWithValue("@AgreedToSignUpTerms", member.AgreedToSignUpTerms);
-                            cmd.Parameters.AddWithValue("@MobilePhoneNumber", member.MobilePhoneNumber);
+                            cmd.Parameters.AddWithValue("@MobilePhoneNumber", member.MobilePhoneNumber != null ? member.MobilePhoneNumber : "");
                             cmd.ExecuteNonQuery();
                         }
                     }
