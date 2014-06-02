@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.Web.Security;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using System;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
 
 namespace UnderstoodDotOrg.Framework.UI
 {
@@ -143,6 +145,12 @@ namespace UnderstoodDotOrg.Framework.UI
         void BaseSublayout_Init(object sender, EventArgs e)
         {
             // Your code here
+            if ((Sitecore.Context.Item.TemplateID.ToString() != MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetTermsandConditionsPage().InnerItem.TemplateID.ToString()) && (CurrentMember != null) && (!CurrentMember.AgreedToSignUpTerms))
+            {
+                var termsAndConditionsPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetTermsandConditionsPage();
+                Session[Constants.SessionPreviousUrl] = Request.RawUrl;
+                Response.Redirect(termsAndConditionsPage.GetUrl());
+            }
         }
     }
 }

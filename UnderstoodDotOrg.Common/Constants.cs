@@ -65,6 +65,8 @@ namespace UnderstoodDotOrg.Common
         public static string sessionUnauthenticatedMemberKey { get { return "_understood_org_unauthenticated_member"; } }
 
         public static string currentUserFacebookAccessToken { get { return "_understood_org_current_user_facebook_access_token"; } }
+
+        public static string SessionPreviousUrl { get { return "_understood_url"; } }
         #endregion
 
 

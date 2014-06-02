@@ -17,6 +17,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            btnAgree.Text = Model.Agree.Rendered;
+            btnNotAgree.Text = Model.NotAgree.Rendered;
+            if (CurrentMember == null)
+            {
+                Response.Redirect(MainsectionItem.GetHomeItem().GetUrl());
+            }
         }
 
         protected void btnNotAgree_Click(object sender, EventArgs e)
@@ -30,7 +36,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             CurrentMember.AgreedToSignUpTerms = true;
             var membershipManager = new MembershipManager();
             membershipManager.UpdateMember(CurrentMember);
-            Response.Redirect(MembershipHelper.GetNextStepURL(1));
+            string url = MembershipHelper.GetNextStepURL(1);
+            if (Session[Constants.SessionPreviousUrl] != null)
+            {
+                url = Session[Constants.SessionPreviousUrl].ToString();
+            }
+            Response.Redirect(url);
         }
     }
 }
