@@ -20,7 +20,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         {
             btnAgree.Text = Model.Agree.Rendered;
             btnNotAgree.Text = Model.NotAgree.Rendered;
-            hypSignIn.NavigateUrl = MyAccountFolderItem.GetSignInPage();
             if (CurrentMember == null)
             {
                 Response.Redirect(MainsectionItem.GetHomeItem().GetUrl());
@@ -29,8 +28,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
         protected void btnNotAgree_Click(object sender, EventArgs e)
         {
-            Logout();
-            Response.Redirect(MainsectionItem.GetHomePageItem().GetUrl());
+            Logout(MainsectionItem.GetHomePageItem().GetUrl());
         }
 
         protected void btnAgree_Click(object sender, EventArgs e)
@@ -44,6 +42,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 url = Session[Constants.SessionPreviousUrl].ToString();
             }
             Response.Redirect(url);
+        }
+
+        protected void lbSignIn_Click(object sender, EventArgs e)
+        {
+            Logout(MyAccountFolderItem.GetSignInPage());
         }
     }
 }

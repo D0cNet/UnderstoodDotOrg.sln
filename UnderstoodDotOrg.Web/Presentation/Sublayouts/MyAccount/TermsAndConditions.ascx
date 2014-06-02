@@ -4,8 +4,9 @@
 <div class="container sign-up-link flush">
     <div class="row">
         <div class="col col-23">
-            <p class="signed-up">Already signed up? <asp:HyperLink ID="hypSignIn" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.SignInButtonText%></asp:HyperLink></p>
+            <p class="signed-up">Already signed up? <asp:LinkButton ID="lbSignIn" OnClick="lbSignIn_Click" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.SignInButtonText%></asp:LinkButton></p>
         </div>
+        
     </div>
 </div>
 <div class="container sign-up-terms flush">

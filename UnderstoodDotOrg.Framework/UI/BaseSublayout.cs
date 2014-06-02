@@ -137,6 +137,16 @@ namespace UnderstoodDotOrg.Framework.UI
             Response.Redirect(Request.RawUrl);
         }
 
+        protected void Logout(string url)
+        {
+            FlushCurrentMemberUser();
+
+            // CH: don't want to put this in FlushCurrentMemberUser, because it's called a few times during signup
+            Session[Constants.currentUserFacebookAccessToken] = null;
+
+            Response.Redirect(url);
+        }
+
         public BaseSublayout() : base()
         {
             this.Init += BaseSublayout_Init;

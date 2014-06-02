@@ -13,13 +13,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
     public partial class TermsAndConditions {
         
         /// <summary>
-        /// hypSignIn control.
+        /// lbSignIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypSignIn;
+        protected global::System.Web.UI.WebControls.LinkButton lbSignIn;
         
         /// <summary>
         /// frPageTitle control.
