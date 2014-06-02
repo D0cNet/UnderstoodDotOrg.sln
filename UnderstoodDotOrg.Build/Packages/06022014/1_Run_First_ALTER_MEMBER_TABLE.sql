@@ -16,7 +16,7 @@ ALTER TABLE dbo.Members ADD CONSTRAINT
 	PreferedLanguage DEFAULT (N'AF584191-45C9-4201-8740-5409F4CF8BDD') FOR PreferedLanguage
 go
 ALTER TABLE dbo.Members ADD
-	AgreedToSignUpTerms bit NOT NULL
+	AgreedToSignUpTerms bit  NULL
 GO
 ALTER TABLE dbo.Members ADD CONSTRAINT
 	AgreedToSignUpTerms DEFAULT 0 FOR AgreedToSignUpTerms
