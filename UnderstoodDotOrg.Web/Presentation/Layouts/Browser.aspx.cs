@@ -13,34 +13,39 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
 {
     public partial class Browser : System.Web.UI.Page
     {
+        private BasePageNEWItem _pageItem;
+        protected BasePageNEWItem PageItem
+        {
+            get
+            {
+                return (_pageItem = _pageItem ?? Sitecore.Context.Item);
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 			if (!IsPostBack)
 			{
-				Item ContextItem = Sitecore.Context.Item;
-				if (ContextItem != null && ContextItem.InheritsFromType(BasePageNEWItem.TemplateId))
-				{
-					BasePageNEWItem basePage = new BasePageNEWItem(ContextItem);
-					if (basePage != null)
-					{
-                        if (Request.Cookies["ShowWelcomeTour"] == null || string.IsNullOrEmpty(Request.Cookies["ShowWelcomeTour"].Value)) {
-                            Response.Cookies["ShowWelcomeTour"].Value = Guid.NewGuid().ToString();
-                            Response.Cookies["ShowWelcomeTour"].Expires = DateTime.MaxValue;
-                            if (!basePage.ShowWelcomeTour.Raw.IsNullOrEmpty()) {
-                                ltWelcomeTour.Text = "<div data-show-welcome-tour=\"true\" id=\"community-page\"></div>";
-                            }
-                        }
-						
-						if (!basePage.MetaTitle.Raw.IsNullOrEmpty())
-						{
-							this.Title = basePage.MetaTitle.Raw; // do not use Rendered since this will make the <title> a mess in Page Editor
-						}
-					}
-				}
+                RedirectIfRequiresSecure();
+
+                if (Request.Cookies["ShowWelcomeTour"] == null || string.IsNullOrEmpty(Request.Cookies["ShowWelcomeTour"].Value))
+                {
+                    Response.Cookies["ShowWelcomeTour"].Value = Guid.NewGuid().ToString();
+                    Response.Cookies["ShowWelcomeTour"].Expires = DateTime.MaxValue;
+                    if (!PageItem.ShowWelcomeTour.Raw.IsNullOrEmpty())
+                    {
+                        ltWelcomeTour.Text = "<div data-show-welcome-tour=\"true\" id=\"community-page\"></div>";
+                    }
+                }
+
+                if (!PageItem.MetaTitle.Raw.IsNullOrEmpty())
+                {
+                    this.Title = PageItem.MetaTitle.Raw; // do not use Rendered since this will make the <title> a mess in Page Editor
+                }
 
 				//if (ContextItem != null && ContextItem.InheritsTemplate(CSSTemplateItem.TemplateId))
 				//{
-				CSSTemplateItem cssTemplate = ContextItem;
+				CSSTemplateItem cssTemplate = PageItem.InnerItem;
 
 				string cssInsert = "<link href=\"{0}\" rel=\"stylesheet\" />";
 				var css = this.FindControl("headerSectionCSS") as Literal;
@@ -61,7 +66,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
 
 				//if (ContextItem != null && ContextItem.InheritsTemplate(JSTemplateItem.TemplateId))
 				//{
-				JSTemplateItem jsTemplate = ContextItem;
+				JSTemplateItem jsTemplate = PageItem.InnerItem;
 
 				string jsInsert = "<script src=\"{0}\"></script>";
 				var js = this.FindControl("footerSectionJS") as Literal;
@@ -81,6 +86,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
 			}
 
             //}
+        }
+
+        private void RedirectIfRequiresSecure()
+        {
+            if (PageItem.IsSecurePage.Checked)
+            {
+                if (!Request.IsLocal && !Request.IsSecureConnection)
+                {
+                    Response.Redirect(Uri.UriSchemeHttps + Uri.SchemeDelimiter + Request.Url.Authority + Request.Url.PathAndQuery, false);
+                    Context.ApplicationInstance.CompleteRequest();
+                }
+            }
         }
     }
 }

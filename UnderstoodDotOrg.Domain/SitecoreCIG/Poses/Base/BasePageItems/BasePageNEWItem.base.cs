@@ -58,11 +58,20 @@ public CustomTextField GoogleAnalytics
 }
 
 
-public CustomTextField IncludeInSitemap
+public CustomCheckboxField IncludeInSitemap
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Include In Sitemap"]);
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Include In Sitemap"]);
+	}
+}
+
+
+public CustomCheckboxField IsSecurePage
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Is Secure Page"]);
 	}
 }
 
