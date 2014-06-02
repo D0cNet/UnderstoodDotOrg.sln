@@ -53,6 +53,9 @@
 
                 <!-- END PARTIAL: infographic-zoom -->
             </div>
+            <div class="article-copy">
+                <sc:FieldRenderer ID="frOutro" runat="server" FieldName="Outro Text" />
+            </div>
             <!-- end infographic -->
             <!-- BEGIN PARTIAL: reviewed-by -->
             <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
