@@ -1,20 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BasicArticle.ascx.cs"
     Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.BasicArticle" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-<div class="count-mobile">
-    <!-- BEGIN PARTIAL: helpful-count -->
-    <div class="count-helpful">
-        <a href="REPLACE"><span><a href="REPLACE"><span> <asp:Literal Text="" ID="litHelpfulLikes2" runat="server" />
-           </span>Found this helpful</a>
-    </div>
-    <!-- END PARTIAL: helpful-count -->
-    <!-- BEGIN PARTIAL: comments-count -->
-    <div class="count-comments">
-        <a href="REPLACE"><span> <a href="REPLACE"><span><asp:Literal Text="" ID="litCommentCount2" runat="server" />
-            </span>Comments</a>
-    </div>
-    <!-- END PARTIAL: comments-count -->
-</div>
 <div class="container article">
     <div class="row row-equal-heights">
         <!-- article -->

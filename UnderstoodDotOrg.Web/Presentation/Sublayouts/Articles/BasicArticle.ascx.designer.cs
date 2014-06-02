@@ -13,24 +13,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     public partial class BasicArticle {
         
         /// <summary>
-        /// litHelpfulLikes2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litHelpfulLikes2;
-        
-        /// <summary>
-        /// litCommentCount2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litCommentCount2;
-        
-        /// <summary>
         /// litAtAGlanceHeader control.
         /// </summary>
         /// <remarks>
