@@ -1983,7 +1983,7 @@ jQuery(document).ready(function(){
     var self = this;
 
     jQuery('.find-this-helpful ul li button').click(function(){
-      var tempCount = parseInt(jQuery('.count-helpful a span').html(), 10);
+      var tempCount = parseInt(jQuery('.count-helpful a span').html());
 
       // disable sibling buttons when selected
       jQuery(this).removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
