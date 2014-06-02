@@ -58,14 +58,14 @@
                                 <sc:FieldRenderer ID="frHeading" runat="server" FieldName="Expert Name" />
                             </h4>
                             <p class="credentials">
-                                <sc:FieldRenderer ID="frSubHeading" runat="server" FieldName="SubHeading" />
+                                <sc:FieldRenderer ID="frSubHeading" runat="server" FieldName="Expert Subheading" />
                             </p>
                             <%--<div class="all-tasks">
                                 <p class="tasks">Hosts Webinars</p>
                                 <p class="tasks">Blogs</p>
                             </div>--%>
-                            <sc:Link ID="scFollowTwittLink" runat="server" Field="Follow on Twitter" CssClass="links rs_skip"></sc:Link>
-                            <sc:Link ID="scFollowBlogLink" runat="server" CssClass="links rs_skip" Field="Follow my blog"></sc:Link>
+                            <sc:Link ID="scFollowTwittLink" runat="server" Field="Twitter Link" CssClass="links rs_skip"></sc:Link>
+                            <sc:Link ID="scFollowBlogLink" runat="server" CssClass="links rs_skip" Field="Blog Link"></sc:Link>
                             <asp:HyperLink runat="server" CssClass="links rs_skip" ID="hlBioLink" ></asp:HyperLink>
                             <%--<sc:Link ID="scBioLink" runat="server" CssClass="links rs_skip" Field="See my bio"></sc:Link>--%>
 

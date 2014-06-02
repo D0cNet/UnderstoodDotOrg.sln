@@ -1211,6 +1211,13 @@
     <Compile Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx.designer.cs">
       <DependentUpon>ArchiveListing.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ChatDetails.ascx.cs">
+      <DependentUpon>ChatDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\ChatDetails.ascx.designer.cs">
+      <DependentUpon>ChatDetails.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\CommunitySubHeader.ascx.cs">
       <DependentUpon>CommunitySubHeader.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1253,19 +1260,12 @@
     <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertLiveDetail.ascx.designer.cs">
       <DependentUpon>ExpertLiveDetail.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\LiveChat.ascx.cs">
-      <DependentUpon>LiveChat.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\OpenOfficeHoursModule.ascx.cs">
+      <DependentUpon>OpenOfficeHoursModule.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\LiveChat.ascx.designer.cs">
-      <DependentUpon>LiveChat.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\PastChat.ascx.cs">
-      <DependentUpon>PastChat.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\PastChat.ascx.designer.cs">
-      <DependentUpon>PastChat.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\OpenOfficeHoursModule.ascx.designer.cs">
+      <DependentUpon>OpenOfficeHoursModule.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx.cs">
       <DependentUpon>SingleLiveChat.ascx</DependentUpon>
@@ -1273,13 +1273,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx.designer.cs">
       <DependentUpon>SingleLiveChat.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\UpComingChat.ascx.cs">
-      <DependentUpon>UpComingChat.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\UpComingChat.ascx.designer.cs">
-      <DependentUpon>UpComingChat.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\VideoResources.ascx.cs">
       <DependentUpon>VideoResources.ascx</DependentUpon>
@@ -2564,16 +2557,15 @@
     <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolResultsPage.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ArchivedEventsModule.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\ChatDetails.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\CommunitySubHeader.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\Eventcards.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\EventFilterNav.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertDetailPage.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertLiveDetail.ascx" />
-    <Content Include="Presentation\Sublayouts\ExpertLive\LiveChat.ascx" />
-    <Content Include="Presentation\Sublayouts\ExpertLive\PastChat.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\OpenOfficeHoursModule.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx" />
-    <Content Include="Presentation\Sublayouts\ExpertLive\UpComingChat.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\VideoResources.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\WebinarDetails.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />

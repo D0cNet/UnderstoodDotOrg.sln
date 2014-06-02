@@ -46,11 +46,11 @@ public static implicit operator Item(ChatEventPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomCheckboxField OpenOfficeHour
+public CustomTextField ChatTranscript
 {
 	get
 	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Open Office Hour"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Chat Transcript"]);
 	}
 }
 

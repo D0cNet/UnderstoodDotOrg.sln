@@ -87,10 +87,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         }
 
         private bool IsLiveChat(BaseEventDetailPageItem t) {
-            ChatEventPageItem chatEventPage = new ChatEventPageItem(t.InnerItem);
-            if (chatEventPage != null && !chatEventPage.OpenOfficeHour.Raw.IsNullOrEmpty()) {
-                return true;
-            }
+            //ChatEventPageItem chatEventPage = new ChatEventPageItem(t.InnerItem);
+            //if (chatEventPage != null && !chatEventPage.OpenOfficeHour.Raw.IsNullOrEmpty()) {
+            //    return true;
+            //}
 
             return false;
         }

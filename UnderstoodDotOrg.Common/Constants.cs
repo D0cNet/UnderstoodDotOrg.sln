@@ -556,6 +556,12 @@ namespace UnderstoodDotOrg.Common
             public static string StatusIEPYes = "{FBE464C6-0E52-45C5-A1E9-660CB3C6B688}";
         }
 
+        public static class Events
+        {
+            public static string OpenOfficeHourChat = "{0EE24E89-5DC8-42EF-8165-304BE63FC20E}";
+            public static string Webinar = "{EF7DB9F7-3FC2-4267-805F-1482CB94F40D}";
+        }
+
         public enum TelligentRole
         {
             Expert,

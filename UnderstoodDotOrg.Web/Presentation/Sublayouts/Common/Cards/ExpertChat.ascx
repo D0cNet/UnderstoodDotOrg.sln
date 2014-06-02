@@ -18,10 +18,10 @@
             </div><!-- end .event-card-datetime -->
             <div class="event-card-title">
                 <asp:HyperLink ID="hlEventDetail" runat="server">
-                    <sc:FieldRenderer ID="frExpertHeading" runat="server" FieldName="Heading" />
+                    <sc:FieldRenderer ID="frExpertHeading" runat="server" FieldName="Expert Heading" />
                 </asp:HyperLink>
             </div><!-- end .event-card-title -->
-            <p class="event-host-title"><sc:FieldRenderer ID="frExpertSubheading" runat="server" FieldName="Subheading" /></p>
+            <p class="event-host-title"><sc:FieldRenderer ID="frExpertSubheading" runat="server" FieldName="Expert Subheading" /></p>
             <span class="children-key">
               <ul>
                   <li><i class="child-a" title="CHILD NAME HERE"></i></li>

@@ -7,19 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
     
     
-    public partial class PastChat {
-        
-        /// <summary>
-        /// hlBackToLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlBackToLink;
+    public partial class ChatDetails {
         
         /// <summary>
         /// frPageTitle control.
@@ -31,67 +22,58 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPageTitle;
         
         /// <summary>
-        /// hlLink control.
+        /// hlExpertDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlLink;
+        protected global::System.Web.UI.WebControls.HyperLink hlExpertDetails;
         
         /// <summary>
-        /// scThumbImg control.
+        /// imgExpert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer scThumbImg;
+        protected global::System.Web.UI.WebControls.Image imgExpert;
         
         /// <summary>
-        /// imgExpertDefault control.
+        /// litExpertType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgExpertDefault;
+        protected global::System.Web.UI.WebControls.Literal litExpertType;
         
         /// <summary>
-        /// litGuest control.
+        /// litEventDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litGuest;
+        protected global::System.Web.UI.WebControls.Literal litEventDate;
         
         /// <summary>
-        /// ltEventDate control.
+        /// frExpertName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltEventDate;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frExpertName;
         
         /// <summary>
-        /// frHeading control.
+        /// frHostTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frHeading;
-        
-        /// <summary>
-        /// frSubHeading control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSubHeading;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frHostTitle;
         
         /// <summary>
         /// frBodyContent control.
@@ -103,12 +85,48 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBodyContent;
         
         /// <summary>
-        /// rptComments control.
+        /// phCallToActions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptComments;
+        protected global::System.Web.UI.WebControls.PlaceHolder phCallToActions;
+        
+        /// <summary>
+        /// frRsvp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frRsvp;
+        
+        /// <summary>
+        /// phPastChatDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phPastChatDetails;
+        
+        /// <summary>
+        /// frChatTranscript control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frChatTranscript;
+        
+        /// <summary>
+        /// phPastSidebarDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phPastSidebarDetails;
     }
 }

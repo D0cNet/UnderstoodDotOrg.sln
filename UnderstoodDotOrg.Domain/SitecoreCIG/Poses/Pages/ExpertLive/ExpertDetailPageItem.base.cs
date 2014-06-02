@@ -64,20 +64,20 @@ public CustomTextField ExpertName
 }
 
 
-public CustomTextField Heading
+public CustomTextField ExpertHeading
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Heading"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Expert Heading"]);
 	}
 }
 
 
-public CustomTextField Subheading
+public CustomTextField ExpertSubheading
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Subheading"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Expert Subheading"]);
 	}
 }
 
@@ -91,29 +91,29 @@ public CustomCheckboxField IsGuest
 }
 
 
-public CustomGeneralLinkField FollowonTwitter
+public CustomGeneralLinkField TwitterLink
 {
 	get
 	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Follow on Twitter"]);
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Twitter Link"]);
 	}
 }
 
 
-public CustomGeneralLinkField Followmyblog
+public CustomGeneralLinkField BlogLink
 {
 	get
 	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Follow my blog"]);
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Blog Link"]);
 	}
 }
 
 
-public CustomGeneralLinkField Seemybio
+public CustomGeneralLinkField BioLink
 {
 	get
 	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["See my bio"]);
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Bio Link"]);
 	}
 }
 

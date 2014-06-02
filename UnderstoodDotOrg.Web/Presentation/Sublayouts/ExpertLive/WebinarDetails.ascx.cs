@@ -19,6 +19,8 @@
             phCallToActions.Visible = isUpcoming;
             phVideoDetails.Visible = phHelpful.Visible = !isUpcoming;
 
+            litEventDate.Text = Model.BaseEventDetailPage.GetFormattedEventStartDate();
+
             if (isUpcoming)
             {
                 // TODO: add display logic to hide if no video/transcript present

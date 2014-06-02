@@ -5,6 +5,7 @@
     using UnderstoodDotOrg.Common;
     using UnderstoodDotOrg.Common.Extensions;
     using UnderstoodDotOrg.Domain.Search;
+    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
     using UnderstoodDotOrg.Framework.UI;
 
@@ -12,6 +13,16 @@
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Handle conditional display
+            if (Sitecore.Context.Item.InheritsTemplate(ChatEventPageItem.TemplateId))
+            {
+                ChatEventPageItem chat = Sitecore.Context.Item;
+                if (!chat.BaseEventDetailPage.IsUpcoming())
+                {
+                    this.Visible = false;
+                    return;
+                }
+            }
             BindContent();
             BindControls();
         }

@@ -23,6 +23,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Handle conditional display
+            if (Model.InnerItem.InheritsTemplate(ChatEventPageItem.TemplateId))
+            {
+                if (!Model.IsUpcoming())
+                {
+                    this.Visible = false;
+                    return;
+                }
+            }
+
             BindContent();
         }
 

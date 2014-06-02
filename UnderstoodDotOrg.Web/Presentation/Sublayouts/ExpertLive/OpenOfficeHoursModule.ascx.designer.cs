@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
     
     
-    public partial class LiveChat {
+    public partial class OpenOfficeHoursModule {
         
         /// <summary>
         /// frLiveChatHeading control.
@@ -31,12 +31,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frLiveChatSubHeading;
         
         /// <summary>
-        /// rptLiveChat control.
+        /// rptExperts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptLiveChat;
+        protected global::System.Web.UI.WebControls.Repeater rptExperts;
     }
 }
