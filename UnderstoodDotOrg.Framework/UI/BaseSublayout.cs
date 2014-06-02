@@ -137,12 +137,12 @@ namespace UnderstoodDotOrg.Framework.UI
 
         public BaseSublayout() : base()
         {
-            this.Load += new EventHandler(this.Page_Load);
+            this.Init += BaseSublayout_Init;
         }
 
-        public void Page_Load(object sender, EventArgs e)
+        void BaseSublayout_Init(object sender, EventArgs e)
         {
-            //your code here
+            // Your code here
         }
     }
 }
