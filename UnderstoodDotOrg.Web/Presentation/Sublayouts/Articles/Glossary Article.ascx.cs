@@ -28,7 +28,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             var relatedArticles = Model.GetTermAnchorList();
 
-            rptTermCollection.DataSource = relatedArticles;
+            rptTermCollection.DataSource = relatedArticles.OrderBy(x => x);
             rptTermCollection.DataBind();
 
             rptAlphabet.DataSource = relatedArticles;
