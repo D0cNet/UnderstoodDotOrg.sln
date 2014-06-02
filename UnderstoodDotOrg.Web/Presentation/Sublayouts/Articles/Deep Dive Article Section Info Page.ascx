@@ -123,24 +123,8 @@
             <!-- END PARTIAL: keep-reading-lg -->
             <!-- BEGIN PARTIAL: comments-summary -->
             <section class="comments-summary">
-                <header>
-                    <h3>Comments (19)</h3>
-                </header>
-                <div class="quote-container">
-                    <blockquote>
-                        <p>Inventore et qui quis quis veritatis. doloribus odio ut nam. rerum eos earum sed sed optio fugiat cupiditate atque velit id doloremque voluptatem</p>
-                        <i class="arrow-quote-bottom"></i>
-                    </blockquote>
-                    <span><strong>Carrie S</strong> &bull; 30 min ago</span>
-                </div>
-
-                <ul>
-                    <li>
-                        <a href="REPLACE">See All Comments</a></li>
-                    <li>
-                        <a href="REPLACE">Add My Comment</a></li>
-                </ul>
-            </section>
+               <sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/CommentsSummary.ascx" />
+             </section>
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
             <div class="sidebar-promos rs_read_this horizontal">
