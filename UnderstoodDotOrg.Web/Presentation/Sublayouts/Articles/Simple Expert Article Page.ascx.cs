@@ -13,6 +13,7 @@ using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article;
 using UnderstoodDotOrg.Framework.UI;
+using System.Web.UI.HtmlControls;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -44,6 +45,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     frAnswer.Item = QAItem;
                 }
+
+                HtmlGenericControl divAuthorInfo = e.FindControlAs<HtmlGenericControl>("divAuthorInfo");
+
                 ExpertPersonItem ExpertPerson = QAItem.AnsweredExpertDetails.Item;
                 if (ExpertPerson != null)
                 {
@@ -70,6 +74,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     {
                         frExpertTitle.Item = ExpertPerson.InnerItem;
                     }
+                }
+                else
+                {
+                    divAuthorInfo.Visible = false;
                 }
             }
         }
