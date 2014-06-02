@@ -613,6 +613,11 @@ namespace UnderstoodDotOrg.Common
         {
             public static string ThreadTemplateID { get { return "{E230410F-77D7-4E8C-8E6C-0FF9F9335EE5}"; } }
         }
+        public static class Forums
+        {
+            public static string ForumTemplateID { get { return "{F14D990C-8809-4C02-BCF7-AE6719C78CBB}"; } }
+        }
+
         #region Salesforce Item Id to Sitecore Guid Mapping
         /// <summary>
         /// Pass in a Guid from Sitecore, get the corresponding ID that is used in Salesoforce to track the constant

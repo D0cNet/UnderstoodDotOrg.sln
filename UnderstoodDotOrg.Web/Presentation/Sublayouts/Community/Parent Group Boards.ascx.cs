@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Services.TelligentService;
@@ -31,26 +32,28 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             }
             else
             {
-                Item currItem = Sitecore.Context.Item;
-                GroupItem grpItem = new GroupItem(currItem);
-                pnlDefaultSection.Visible = true;
-                pnlSearchSection.Visible = false;
-                if (grpItem != null)
+                if (!IsPostBack)
                 {
-                    GroupCardModel grpModel = new GroupCardModel(grpItem);
-                    if (grpModel != null)
+                    Item currItem = Sitecore.Context.Item;
+                    GroupItem grpItem = new GroupItem(currItem);
+                    pnlDefaultSection.Visible = true;
+                    pnlSearchSection.Visible = false;
+                    if (grpItem != null)
                     {
-                        rptForums.DataSource = grpModel.Forums;
-                        rptForums.DataBind();
+                        GroupCardModel grpModel = new GroupCardModel(grpItem);
+                        if (grpModel != null)
+                        {
+                            rptForums.DataSource = grpModel.Forums;
+                            rptForums.DataBind();
 
-                        lvJumpto.DataSource = grpModel.Forums;
-                        lvJumpto.DataBind();
+                            lvJumpto.DataSource = grpModel.Forums;
+                            lvJumpto.DataBind();
 
-                        ddlForums.DataSource = grpModel.Forums;
-                        ddlForums.DataBind();
+                            ddlForums.DataSource = grpModel.Forums;
+                            ddlForums.DataBind();
+                        }
                     }
                 }
-
               
             }
 
@@ -94,60 +97,72 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 }
             }
         }
+        protected Item ConvertForumIDtoSitecoreItem(string id)
+        {
+            Item forumItem = null;
+           
+            forumItem = Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '"+Constants.Forums.ForumTemplateID +"' and @ForumID = '" + id + "']");
+
+            return forumItem;
+        }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            //if (Page.IsValid)
-            //{
-            //     string frmItemID =String.Empty;
-            //     frmItemID = ddlForums.SelectedIndex > -1 ? ddlForums.SelectedValue : String.Empty;
-            //    if (!String.IsNullOrEmpty(frmItemID))
-            //    {
-            //        //Grab information from fields
-            //        string subject = txtSubject.Text;
-            //        string body = txtBody.Text;
-                   
+            if (Page.IsValid)
+            {
+                string frmItemID = String.Empty;
+                frmItemID = ddlForums.SelectedIndex > -1 ? ddlForums.SelectedValue : String.Empty;
+                if (!String.IsNullOrEmpty(frmItemID))
+                {
+                    //Grab information from fields
+                    string subject = txtSubject.Text;
+                    string body = txtBody.Text;
 
-            //        try
-            //        {
-            //            //Create item in Telligent
-            //            ThreadModel thModel = TelligentService.CreateForumThread(frmItemID, subject, body);
-            //            if (thModel != null)
-            //            {
-            //                //Create item in sitecore with returned forumID and threadID
-            //                if (CreateSitecoreForumThread(thModel, frmItemID, Sitecore.Context.Language))
-            //                {
-            //                    error_msg.Visible = false;
-            //                    ForumModel frmModel = new ForumModel(frmItem);
+                    var test = ConvertForumIDtoSitecoreItem(frmItemID);
+                    if (test != null)
+                    {
+                        ForumItem frmItem = new ForumItem(test);
 
+                        try
+                        {
+                            //Create item in Telligent
+                            ThreadModel thModel = TelligentService.CreateForumThread(frmItemID, subject, body);
+                            if (thModel != null)
+                            {
+                                //Create item in sitecore with returned forumID and threadID
+                                if (CreateSitecoreForumThread(thModel, frmItem, Sitecore.Context.Language))
+                                {
+                                    error_msg.Visible = false;
+                                    //ForumModel frmModel = new ForumModel(frmItem);
 
-            //                    if (frmModel != null)
-            //                    {
-            //                        rptThread.DataSource = frmModel.Threads;
-            //                        rptThread.DataBind();
-            //                    }
-
-            //                }
-            //                else
-            //                {
-            //                    error_msg.Text = "Failed to create discussion.";
-            //                    error_msg.Visible = true;
-            //                }
+                                    //Redirect to discussion
+                                    Sitecore.Web.WebUtil.Redirect(Sitecore.Links.LinkManager.GetItemUrl(frmItem.InnerItem));
 
 
-            //            }
+                                }
+                                else
+                                {
+                                    error_msg.Text = "Failed to create discussion.";
+                                    error_msg.Visible = true;
+                                }
 
 
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            Sitecore.Diagnostics.Error.LogError(ex.Message);
-            //        }
-            //    }
-            //}
-            //else
-            //    modal_discussion.Visible = true;
+                            }
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Sitecore.Diagnostics.Error.LogError(ex.Message);
+                        }
+                    }
+                }
+            }
+            else
+                modal_discussion.Visible = true;
 
         }
+
+        
 
         private bool CreateSitecoreForumThread(ThreadModel thModel, ForumItem frmItem, Language lang)
         {
