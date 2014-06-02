@@ -13,6 +13,7 @@ namespace UnderstoodDotOrg.Domain.Membership
     public partial class Member
     {
         private bool _dataIsDirty = false;
+        
         // private string _comment;
         // private string _email;
         // private string _password;
@@ -57,7 +58,10 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             set 
             {
+                //data is never dirty if it is *being intialized from the db*
+
                 _preferedLangugage = value;
+
                 _dataIsDirty = true;
             }
         }

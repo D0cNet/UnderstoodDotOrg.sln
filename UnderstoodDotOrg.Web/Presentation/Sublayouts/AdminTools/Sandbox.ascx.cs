@@ -20,6 +20,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             txtActivityType.Text = UnderstoodDotOrg.Common.Constants.UserActivity_Types.Advocacy_Page.ToString();
 
             Quiz quiz = new Quiz();
+            quiz.QuizID = new Guid();
+
             QuizItem answer = new QuizItem();
 
             answer.QuestionId = Guid.NewGuid();
@@ -31,6 +33,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
 
             this.CurrentMember.CompletedQuizes.Add(quiz);
             //member contains data. member manager will save data.
+
+ //           this.CurrentMember.AgreedToSignUpTerms;
+ 
+
             
         }
 

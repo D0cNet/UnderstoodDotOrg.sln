@@ -572,7 +572,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                             {
                                 member.PreferedLanguage = reader.GetGuid (0);
                                 member.AgreedToSignUpTerms = reader.GetBoolean(1);
-                                member.MobilePhoneNumber = reader.GetString(2);
+                                member.MobilePhoneNumber = reader.GetString(2) ?? string.Empty ;
                             }
                         }
                     }
@@ -654,7 +654,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
 
             //bg: Update member properties that are outside of entity:
-            //    UpdateMember_ExtendedProperties checks a dirty data flag on member, 
+            //    UpdateMember_ExtendedProperties checks a n data flag on member, 
             //    and does nothing if none of the new properties have been set outside of the database
             if (!this.UpdateMember_ExtendedProperties(Member))
             {
