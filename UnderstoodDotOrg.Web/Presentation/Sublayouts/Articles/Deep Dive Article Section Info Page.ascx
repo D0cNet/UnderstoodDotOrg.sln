@@ -143,30 +143,8 @@
             </section>
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
-            <div class="sidebar-promos">
-                <div class="promo purple-dark">
-                    <a href="REPLACE">
-                        <span>Get advice</span>
-                        <i class="icon-arrow-promo"></i>
-                    </a>
-                </div>
-                <!-- end promo -->
-
-                <div class="promo purple-light">
-                    <a href="REPLACE">
-                        <span>Find Technology that can Help</span>
-                        <i class="icon-arrow-promo"></i>
-                    </a>
-                </div>
-                <!-- end promo -->
-
-                <div class="promo blue">
-                    <a href="REPLACE">
-                        <span>Navigating Your Child's Healthcare Needs</span>
-                        <i class="icon-arrow-promo"></i>
-                    </a>
-                </div>
-                <!-- end promo -->
+            <div class="sidebar-promos rs_read_this horizontal">
+                <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/PromotionalsList.ascx" />
             </div>
             <!-- end sidebar-promos -->
 
