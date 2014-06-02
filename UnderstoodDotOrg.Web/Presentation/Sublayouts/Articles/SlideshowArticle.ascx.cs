@@ -54,14 +54,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 _currentSlideNo = 0;
                 rptSlides.DataSource = AllChildSlides;
                 rptSlides.DataBind();
-                
+                rptSlideButton.DataSource = AllChildSlides;
+                rptSlideButton.DataBind();   
             }
-          
         }
      
-
-      
-       
         protected void rptSlides_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.IsItem())
@@ -126,7 +123,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             }
         }
 
-     
-     
+        protected void rptSlideButton_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+        }
     }
 }

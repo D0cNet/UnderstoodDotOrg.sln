@@ -107,45 +107,26 @@
                     </asp:Repeater>
                 </div>
 
-                <div class="index-buttons-container">
-                    <div class="button prev gray">
-                        Prev
-                       
-                    </div>
-
-                    <div class="button gray" data-target="1">1</div>
-
-                    <div class="button gray" data-target="2">2</div>
-
-                    <div class="button gray" data-target="3">3</div>
-
-                    <div class="button gray" data-target="4">4</div>
-
-                    <div class="button gray" data-target="5">5</div>
-
-                    <div class="button gray" data-target="6">6</div>
-
-                    <div class="button gray" data-target="7">7</div>
-
-                    <div class="button gray" data-target="8">8</div>
-
-                    <div class="button gray" data-target="9">9</div>
-
-                    <div class="button gray" data-target="10">10</div>
-
-                    <%--<div class="button prev mobile">Prev</div>--%>
-                    <div class="button next gray">
-                        Next
-                     
-
-                    </div>
-                    <%-- To Jump On Last slide - Two Suggesion --%>
-                    <div class="button last gray">
-                        Last
-                        
-                    </div>
-
-                </div>
+                <asp:Repeater ID="rptSlideButton" runat="server" OnItemDataBound="rptSlideButton_ItemDataBound">
+                    <HeaderTemplate>
+                        <div class="index-buttons-container">
+                            <div class="button prev gray">
+                                Prev
+                            </div>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <div class="button gray" data-target="<%# Container.ItemIndex + 1 %>"><%# Container.ItemIndex + 1 %></div>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                            <div class="button next gray">
+                                Next
+                            </div>
+                            <div class="button last gray">
+                                Last
+                            </div>
+                        </div>
+                    </FooterTemplate>
+                </asp:Repeater>
             </div>
             <%-- Show Reviewer Info only on Last suggested article slide --%>
             <div class="slideshow-review">
