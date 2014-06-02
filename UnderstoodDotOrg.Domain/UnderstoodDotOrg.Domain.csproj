@@ -453,6 +453,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\AccountFavoritesPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\AccountGroupsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\AccountGroupsPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\EmailandAlertPreferencesPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.interface.cs" />
@@ -461,6 +462,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyAccountItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyAccountItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyAccountItem.static.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyNotificationsPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyNotificationsPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileBaseTemplateItem.interface.cs" />
@@ -482,6 +485,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepTwoItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepTwoItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepTwoItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PrivateMessageToolItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ResetYourPasswordItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.instance.cs" />

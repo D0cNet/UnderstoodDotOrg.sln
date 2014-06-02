@@ -15,5 +15,10 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         {
             return InnerItem.Children.FirstOrDefault(i => i.IsOfType(TermsandConditionsItem.TemplateId));
         }
+
+        public MyNotificationsPageItem GetMyNotificationsPage()
+        {
+            return InnerItem.Children.FirstOrDefault(i => i.IsOfType(MyNotificationsPageItem.TemplateId));
+        }
     }
 }
