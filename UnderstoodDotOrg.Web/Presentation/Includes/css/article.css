@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /**
  * Include SASS partials for account modules.
  */
@@ -2313,14 +2313,16 @@
 }
 /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-copy.scss */
 .article p {
-  font-family: arial, sans-serif;
-  color: #696969;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 27px;
-  line-height: 1.6875rem;
-  font-weight: normal;
-  margin-bottom: 2em;
+    font-family: arial, sans-serif;
+    color: #696969;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 27px;
+    line-height: 1.6875rem;
+    font-weight: normal;
+    margin-bottom: 2em;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
 }
 @media (min-width: 650px) {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-copy.scss */
