@@ -58,7 +58,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 Label lblActionCount = e.FindControlAs<Label>("lblActionCount");
                 if (lblActionCount != null)
                 {
-                    lblActionCount.Text = e.Item.ItemIndex.ToString();
+                    lblActionCount.Text = (e.Item.ItemIndex+1).ToString();
                 }
 
                 FieldRenderer frActionTitle = e.FindControlAs<FieldRenderer>("frActionTitle");
