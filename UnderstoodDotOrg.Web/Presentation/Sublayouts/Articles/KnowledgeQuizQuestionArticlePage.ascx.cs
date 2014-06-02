@@ -82,7 +82,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             Session["done"] = null;
             Session["qNum"] = null;
-            Session["CorrectAnswers"] = null;
+            Session["CorrectAnswers"] = 0;
             Session["CorrectTracker"] = null;
         }
 
