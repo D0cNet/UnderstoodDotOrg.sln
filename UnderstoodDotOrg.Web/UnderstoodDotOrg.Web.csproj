@@ -1645,13 +1645,6 @@
     <Compile Include="Presentation\Sublayouts\Common\MemberCardList.ascx.designer.cs">
       <DependentUpon>MemberCardList.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx.cs">
-      <DependentUpon>Assisitive Tools Search.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx.designer.cs">
-      <DependentUpon>Assisitive Tools Search.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx.cs">
       <DependentUpon>AssistiveToolsLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1679,6 +1672,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewResults.ascx.designer.cs">
       <DependentUpon>AssistiveToolsReviewResults.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsSearchBox.ascx.cs">
+      <DependentUpon>AssistiveToolsSearchBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsSearchBox.ascx.designer.cs">
+      <DependentUpon>AssistiveToolsSearchBox.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdvicePage.ascx.designer.cs">
       <DependentUpon>BehaviorToolAdvicePage.ascx</DependentUpon>
@@ -2335,6 +2335,7 @@
     <Content Include="Presentation\Includes\js\behavior-tool.js" />
     <Content Include="Presentation\Includes\js\community.js" />
     <Content Include="Presentation\Includes\js\decision-lite.js" />
+    <Content Include="Presentation\Includes\js\donate.js" />
     <Content Include="Presentation\Includes\js\global.js" />
     <Content Include="Presentation\Includes\js\homepage.js" />
     <Content Include="Presentation\Includes\js\modules.js" />
@@ -2612,11 +2613,11 @@
     <Content Include="Presentation\Sublayouts\SubTopics\SubTopicHeader.ascx" />
     <Content Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Common\MemberCardList.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\Assisitive Tools Search.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDetails.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewResults.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsSearchBox.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdvicePage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceResults.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceVideoPage.ascx" />

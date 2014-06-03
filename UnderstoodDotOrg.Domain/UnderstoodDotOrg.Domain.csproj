@@ -499,6 +499,13 @@
     <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\CreateAccountItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\MultipleChildrenItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\MultipleChildrenItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsBasePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsLandingPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsLandingPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsReviewPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsReviewPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsSearchResultsPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsSearchResultsPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdvicePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdvicePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsAdviceVideoPageItem.base.cs" />

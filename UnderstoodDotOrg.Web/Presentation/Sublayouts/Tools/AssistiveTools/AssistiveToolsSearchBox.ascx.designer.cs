@@ -11,7 +11,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
 
 
-    public partial class Assisitive_Tools_Search
+    public partial class AssistiveToolsSearchBox
     {
     }
 }
