@@ -669,7 +669,16 @@
                     $(this).find('.info-link').hide();
                 }
             });
-            
+
+            $('.radiobuttonJourney').on('click', function () {
+                $('.radiobuttonJourney').each(function (index) {
+                    $(this).find('span').removeClass('checked');
+                    $(this).find('input').prop('checked', false);
+                });
+                $(this).find('span').addClass('checked');
+                $(this).find('input').prop('checked', true);
+            });
+
             $('.role-question .button').each(function (index) {
                 if ($(this).find("input").attr('checked') == "checked")
                     $(this).addClass("checked");
