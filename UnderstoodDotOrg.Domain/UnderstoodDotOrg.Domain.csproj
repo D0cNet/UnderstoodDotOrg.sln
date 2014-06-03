@@ -435,8 +435,6 @@
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\ArchiveItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\EventLandingPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\EventLandingPageItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\ExpertLandingPageItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\ExpertLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\ExpertLivePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\ExpertLivePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\LandingPages\SectionLandingPageItem.base.cs" />
