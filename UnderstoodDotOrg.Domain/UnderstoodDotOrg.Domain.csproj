@@ -268,6 +268,7 @@
     <Compile Include="SitecoreCIG\Poses\General\ChildGradeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ChildLearningIssueItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\EducationalInstitutionItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\EventTypeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ExploreEventTileItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ExploreEventTileItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ExplorePromoTileItem.base.cs" />

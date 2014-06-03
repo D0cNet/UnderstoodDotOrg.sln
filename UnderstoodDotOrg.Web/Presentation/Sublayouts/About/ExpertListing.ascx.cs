@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 {
@@ -55,7 +57,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
                 hlExpertDetail.NavigateUrl = expert.GetUrl();
 
                 Repeater rptTasks = (Repeater)e.Item.FindControl("rptTasks");
+                var tasks = expert.GetTasks();
+                if (tasks.Any()) 
+                {
+                    rptTasks.DataSource = tasks;
+                    rptTasks.DataBind();
+                }
             }
-        } 
+        }
     }
 }

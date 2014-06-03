@@ -605,6 +605,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string HostsFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Hosts Fragment");
+            }
+        }
+
         #endregion
 
         public static string EmailException
