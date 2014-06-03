@@ -30,13 +30,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
                 ddlGroups.DataValueField = "Url";
                 ddlGroups.DataTextField = "Title";
                 ddlGroups.DataBind();
-                hypStartADiscussion.NavigateUrl = ddlGroups.SelectedItem.Value + "/MyDiscussion%20Board";
-                var commentsList = CommunityHelper.ReadComments();
-                var commentsByGroup = commentsList.Where(x => x.ParentTitle == ddlGroups.SelectedItem.Text);
-                if (commentsList != null)
+                if (ddlGroups.Items.Count != 0)
                 {
-                    rptComments.DataSource = commentsByGroup;
-                    rptComments.DataBind();
+                    hypStartADiscussion.NavigateUrl = ddlGroups.SelectedItem.Value + "/MyDiscussion%20Board";
+                    var commentsList = CommunityHelper.ReadComments();
+                    var commentsByGroup = commentsList.Where(x => x.ParentTitle == ddlGroups.SelectedItem.Text);
+                    if (commentsList != null)
+                    {
+                        rptComments.DataSource = commentsByGroup;
+                        rptComments.DataBind();
+                    }
                 }
             }
         }
