@@ -10,10 +10,10 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages
 {
-public partial class ExpertsLandingPageItem : CustomItem
+public partial class ExpertLandingPageItem : CustomItem
 {
 
-public static readonly string TemplateId = "{D05ECA63-49ED-40BD-91E4-3B70851C34E4}";
+public static readonly string TemplateId = "{B5C6DFF1-8BED-42F2-9313-C829DDDA426A}";
 
 #region Inherited Base Templates
 
@@ -24,18 +24,18 @@ public AboutSectionPageItem AboutSectionPage { get { return _AboutSectionPageIte
 
 #region Boilerplate CustomItem Code
 
-public ExpertsLandingPageItem(Item innerItem) : base(innerItem)
+public ExpertLandingPageItem(Item innerItem) : base(innerItem)
 {
 	_AboutSectionPageItem = new AboutSectionPageItem(innerItem);
 
 }
 
-public static implicit operator ExpertsLandingPageItem(Item innerItem)
+public static implicit operator ExpertLandingPageItem(Item innerItem)
 {
-	return innerItem != null ? new ExpertsLandingPageItem(innerItem) : null;
+	return innerItem != null ? new ExpertLandingPageItem(innerItem) : null;
 }
 
-public static implicit operator Item(ExpertsLandingPageItem customItem)
+public static implicit operator Item(ExpertLandingPageItem customItem)
 {
 	return customItem != null ? customItem.InnerItem : null;
 }
@@ -44,6 +44,24 @@ public static implicit operator Item(ExpertsLandingPageItem customItem)
 
 
 #region Field Instance Methods
+
+
+public CustomTextField EventCarouselHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Event Carousel Heading"]);
+	}
+}
+
+
+public CustomTextField ExpertListHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Expert List Heading"]);
+	}
+}
 
 
 #endregion //Field Instance Methods
