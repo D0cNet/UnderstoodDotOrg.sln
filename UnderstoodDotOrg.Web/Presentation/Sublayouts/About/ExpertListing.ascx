@@ -34,7 +34,7 @@
                     
                     <sc:FieldRenderer ID="frTwitterLink" runat="server" FieldName="Twitter Link" Parameters="class=links" />
                     <sc:FieldRenderer ID="frBlogLink" runat="server" FieldName="Blog Link" Parameters="class=links" />
-                    <asp:HyperLink ID="hlExpertDetail" runat="server">See my bio</asp:HyperLink>
+                    <asp:HyperLink ID="hlExpertDetail" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeMyBioLabel %></asp:HyperLink>
                 </div>
             </div><!-- .about-expert -->
 

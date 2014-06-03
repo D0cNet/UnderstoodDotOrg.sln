@@ -22,7 +22,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General
             }
             else
             {
-                return SearchHelper.GetUpcomingEvent();
+                return SearchHelper.GetNextUpcomingEvent();
             }
         }
 

@@ -2,81 +2,75 @@
 using System.Linq;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.Search;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
+using Sitecore.Web.UI.WebControls;
+using System.Web.UI.WebControls;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 {
     public partial class ExpertsLandingPage : BaseSublayout<ExpertLandingPageItem>
     {
-        ExpertLandingPageItem contextItem = Sitecore.Context.Item;
+        protected string AjaxEndpoint
+        {
+            get { return Sitecore.Configuration.Settings.GetSetting(Constants.Settings.ExpertListingEndpoint); }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindContent();
+            BindEvents();
+            BindControls();
         }
 
-        private void BindContent()
+        private void BindEvents()
         {
-
+            rptEvents.ItemDataBound += rptEvents_ItemDataBound;
         }
 
-        //protected void rptListing_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        //{
-        //    if (e.IsItem())
-        //    {
-        //        ExpertDetailPageItem detailItem = e.Item.DataItem as ExpertDetailPageItem;
-        //        Panel rowSubParentPanel = e.FindControlAs<Panel>("rowSubParentPanel");
-        //        Sitecore.Web.UI.WebControls.Image scExpertImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scExpertImage");
-        //        System.Web.UI.WebControls.Image imgDefaultImage = e.FindControlAs<System.Web.UI.WebControls.Image>("imgDefaultImage");
-        //        FieldRenderer frHeading = e.FindControlAs<FieldRenderer>("frHeading");
-        //        FieldRenderer frSubHeading = e.FindControlAs<FieldRenderer>("frSubHeading");
-        //        Link scFollowTwittLink = e.FindControlAs<Link>("scFollowTwittLink");
-        //        Link scFollowBlogLink = e.FindControlAs<Link>("scFollowBlogLink");
-        //        HyperLink hlBioLink = e.FindControlAs<HyperLink>("hlBioLink");
-        //        if (detailItem != null)
-        //        {
-        //            FieldRenderer frParticipation = e.FindControlAs<FieldRenderer>("frParticipation");
-        //            if (frParticipation != null)
-        //            {
-        //                frParticipation.Item = detailItem;
-        //            }
-        //            if (rowSubParentPanel != null)
-        //            {
-        //                if ((e.Item.ItemIndex + 1) % 3 == 1)
-        //                    rowSubParentPanel.CssClass = "col col-6 " + "offset-1";
-        //                else
-        //                    rowSubParentPanel.CssClass = "col col-6 " + "offset-2";
-        //            }
-        //            if (scExpertImage != null && detailItem.ExpertImage.MediaItem != null)
-        //            {
-        //                scExpertImage.Item = detailItem;
-        //                imgDefaultImage.Visible = false;
-        //            }
-        //            else
-        //            {
-        //                imgDefaultImage.Visible = true;
-        //            }
-        //            if (frHeading != null)
-        //            {
-        //                frHeading.Item = detailItem;
-        //            }
-        //            if (frSubHeading != null)
-        //            {
-        //                frSubHeading.Item = detailItem;
-        //            }
-        //            if (scFollowTwittLink != null)
-        //            {
-        //                scFollowTwittLink.Item = detailItem;
-        //            }
-        //            if (scFollowBlogLink != null)
-        //            {
-        //                scFollowBlogLink.Item = detailItem;
-        //            }
-        //            if (hlBioLink != null)
-        //            {
-        //                hlBioLink.NavigateUrl = detailItem.GetUrl();
-        //                hlBioLink.Text = "See my bio";
-        //            }
-        //        }
-        //    }
-        //}
+        void rptEvents_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                BaseEventDetailPageItem item = (BaseEventDetailPageItem)e.Item.DataItem;
+
+                FieldRenderer frExpertName = e.FindControlAs<FieldRenderer>("frExpertName");
+                FieldRenderer frExpertSubheading = e.FindControlAs<FieldRenderer>("frExpertSubheading");
+                System.Web.UI.WebControls.Image imgExpert = e.FindControlAs<System.Web.UI.WebControls.Image>("imgExpert");
+                HyperLink hlEventDetail = e.FindControlAs<HyperLink>("hlEventDetail");
+                Literal litExpertType = e.FindControlAs<Literal>("litExpertType");
+                Literal litEventDate = e.FindControlAs<Literal>("litEventDate");
+
+                litEventDate.Text = item.GetFormattedEventStartDate();
+                hlEventDetail.NavigateUrl = item.GetUrl();
+
+                // Expert details
+                ExpertDetailPageItem expert = item.Expert.Item;
+                frExpertName.Item = frExpertSubheading.Item = expert;
+
+                if (expert != null) 
+                {
+                    imgExpert.ImageUrl = expert.GetThumbnailUrl(150, 150);
+                    litExpertType.Text = expert.GetExpertType();
+                }
+            }
+        }
+
+        private void BindControls()
+        {
+            // Experts listing
+            bool hasMoreResults;
+            expertListing.Experts = ExpertLandingPageItem.GetExperts(1, out hasMoreResults);
+            phShowMore.Visible = hasMoreResults;
+
+            // Upcoming events
+            var events = SearchHelper.GetUpcomingEvents(6);
+            if (events.Any())
+            {
+                rptEvents.DataSource = events;
+                rptEvents.DataBind();
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ExpertsLandingPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.About.ExpertsLandingPage" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+<%@ Register TagPrefix="udo" TagName="ExpertListing" Src="~/Presentation/Sublayouts/About/ExpertListing.ascx" %>
 
 <div class="container flush l-about-experts-intro-carousel">
   <div class="row skiplink-feature">
@@ -17,25 +18,25 @@
 
 <asp:Repeater ID="rptEvents" runat="server">
     <HeaderTemplate>
-        <div class="event-carousel">
-            <div class="about-expert">
+        <div class="event-carousel">   
     </HeaderTemplate>
     <ItemTemplate>
-        <div class="about-expert-data rs_read_this">
-            <div class="event-carousel-image">
-              <asp:Image ID="imgExpert" runat="server" />
-              <div class="caption"><asp:Literal ID="litExpertType" runat="server" /></div>
-            </div>
-            <div class="event-carousel-details">
-              <p class="date"><asp:Literal ID="litEventDate" runat="server" /></p>
-              <p class="chat-with"><%= UnderstoodDotOrg.Common.DictionaryConstants.ChatWithLabel %></p>
-              <h4><sc:FieldRenderer ID="frExpertName" runat="server" /></h4>
-              <p class="credentials"><sc:FieldRenderer ID="frExpertSubheading" runat="server" /></p>
+        <div class="about-expert">
+            <div class="about-expert-data rs_read_this">
+                <div class="event-carousel-image">
+                  <asp:Image ID="imgExpert" runat="server" />
+                  <div class="caption"><asp:Literal ID="litExpertType" runat="server" /></div>
+                </div>
+                <div class="event-carousel-details">
+                  <p class="date"><asp:Literal ID="litEventDate" runat="server" /></p>
+                  <p class="chat-with"><%= UnderstoodDotOrg.Common.DictionaryConstants.ChatWithLabel %></p>
+                  <h4><asp:HyperLink ID="hlEventDetail" runat="server"><sc:FieldRenderer ID="frExpertName" FieldName="Expert Name" runat="server" /></asp:HyperLink></h4>
+                  <p class="credentials"><sc:FieldRenderer ID="frExpertSubheading" FieldName="Expert Subheading" runat="server" /></p>
+                </div>
             </div>
         </div>
     </ItemTemplate>
-    <FooterTemplate>
-            </div>
+    <FooterTemplate>      
         </div>
     </FooterTemplate>
 </asp:Repeater>
@@ -62,7 +63,7 @@
     </div><!-- .col -->
   </div><!-- .row -->
 
-    
+    <udo:ExpertListing ID="expertListing" runat="server" />
 
 </div><!-- .about-experts-listing -->
 <!-- END PARTIAL: about/about-experts-listing -->

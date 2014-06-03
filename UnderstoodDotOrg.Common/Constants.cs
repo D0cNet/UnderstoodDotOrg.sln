@@ -612,6 +612,7 @@ namespace UnderstoodDotOrg.Common
             public static string SubtopicArticlesEndpoint = "SubtopicArticlesEndpoint";
             public static string EventArchiveEndpoint = "EventArchiveEndpoint";
             public static string FacebookAppId = "FacebookAppId";
+            public static string ExpertListingEndpoint = "ExpertListingEndpoint";
         }
 
         public static class ContentItem

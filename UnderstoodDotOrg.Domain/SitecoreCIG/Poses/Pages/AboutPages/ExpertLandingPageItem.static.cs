@@ -28,10 +28,10 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages
                                 .Where(i => i.IsOfType(ExpertDetailPageItem.TemplateId))
                                 .Select(i => new ExpertDetailPageItem(i));
 
-                var filtered = all.Skip(offset).Take(pageSize);
+                results = all.Skip(offset).Take(pageSize);
 
                 int total = all.Count();
-                hasMoreResults = (offset) + filtered.Count() < total;
+                hasMoreResults = (offset) + results.Count() < total;
             }
 
             return results;

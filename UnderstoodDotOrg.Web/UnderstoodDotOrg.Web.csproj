@@ -1267,13 +1267,6 @@
     <Compile Include="Presentation\Sublayouts\ExpertLive\OpenOfficeHoursModule.ascx.designer.cs">
       <DependentUpon>OpenOfficeHoursModule.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx.cs">
-      <DependentUpon>SingleLiveChat.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx.designer.cs">
-      <DependentUpon>SingleLiveChat.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\VideoResources.ascx.cs">
       <DependentUpon>VideoResources.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2565,7 +2558,6 @@
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertDetailPage.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertLiveDetail.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\OpenOfficeHoursModule.ascx" />
-    <Content Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\VideoResources.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\WebinarDetails.ascx" />
     <Content Include="Presentation\Sublayouts\Home\GuideMe.ascx" />

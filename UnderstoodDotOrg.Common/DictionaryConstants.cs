@@ -973,6 +973,14 @@ namespace UnderstoodDotOrg.Common
            }
        }
 
+       public static string SeeMyBioLabel
+       {
+           get
+           {
+               return Translate.TextByDomain(PosesDictionary, "See My Bio Label");
+           }
+       }
+
         #endregion
     }
 }
