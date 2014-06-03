@@ -35,6 +35,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Tiles
                 frHeading.Item = eventItem;
                 ltlSubHeading.Text = tile.GetSubhead(eventItem);
             }
+            else
+            {
+                this.Visible = false;
+            }
         }
     }
 }
