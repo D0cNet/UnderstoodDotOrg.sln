@@ -53,7 +53,10 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             //}
             if (itm["TelligentUrl"] == string.Empty)
             {
-                AddTelligentUrl(itm, itm["BlogId"], itm["BlogPostId"]);
+                if (!string.IsNullOrEmpty(itm["BlogPostId"]) || !itm["BlogPostId"].Equals("1"))
+                {
+                    AddTelligentUrl(itm, itm["BlogId"], itm["BlogPostId"]);
+                }
             }
         }
 
