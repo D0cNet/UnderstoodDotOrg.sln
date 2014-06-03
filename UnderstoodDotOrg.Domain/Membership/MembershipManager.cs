@@ -11,7 +11,7 @@ using UnderstoodDotOrg.Domain.TelligentCommunity;
 using MembershipProvider = System.Web.Security.Membership;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
-
+using UnderstoodDotOrg.Domain.Understood.Quiz;
 
 namespace UnderstoodDotOrg.Domain.Membership
 {
@@ -32,8 +32,8 @@ namespace UnderstoodDotOrg.Domain.Membership
         /// Entity-specific connection string
         /// </summary>
         //private static string connString = string.Format("metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='{0}persist security info=True;MultipleActiveResultSets=True;App=EntityFramework'", "data source=162.209.22.3;initial catalog=Understood.org.DEV.membership;user id=understood_org;password=dahyeSDf;");
-        private static string connString = string.Format("metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='{0};persist security info=True;MultipleActiveResultSets=True;App=EntityFramework'", ConfigurationManager.ConnectionStrings["membership"].ConnectionString );
-        
+        private static string connString = string.Format("metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='{0};persist security info=True;MultipleActiveResultSets=True;App=EntityFramework'", ConfigurationManager.ConnectionStrings["membership"].ConnectionString);
+
 
         /// <summary>
         /// Verifies credentials and process login for the user. Uses ASP.Net Membership for authentication and sets the Sitecore Virtual User
@@ -110,7 +110,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                 var i = _db.Interests.Where(x => x.Key == interest.Key).FirstOrDefault();
                 if (i != null)
                 {
-                    tMember.Interests.Add(i);                    
+                    tMember.Interests.Add(i);
                 }
             }
 
@@ -119,7 +119,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                 var j = _db.Journeys.Where(x => x.Key == journey.Key).FirstOrDefault();
                 if (j != null)
                 {
-                    tMember.Journeys.Add(j);                    
+                    tMember.Journeys.Add(j);
                 }
             }
 
@@ -352,7 +352,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         public Member AddUnauthorizedMember(Member Member)
         {
             //throw this out if there is no email 
-            if (string.IsNullOrEmpty (Member.Email))
+            if (string.IsNullOrEmpty(Member.Email))
             {
                 throw new Exception("Error in MembershipManager.cs. An email address must be provided to add a member.");
             }
@@ -360,24 +360,24 @@ namespace UnderstoodDotOrg.Domain.Membership
             //          to include a flag that can be used to identify users who only exist  in order 
             //          for us to generate content sent for Nebased on "The Algorithim" 
             //-- Setting up some values so that we know that this is not a standard website member
-                //this member is probably only ever going to be created just so that we can generate personalized emails
-            Member.Password  = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Password;
+            //this member is probably only ever going to be created just so that we can generate personalized emails
+            Member.Password = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Password;
             Member.Comment = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Flag;
             Member.ScreenName = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_ScreeName;
-            
+
             Member m = new Member();
             try
             {
                 m = this.AddMember(Member, Member.Email, Member.Password); //Need to refactor some code to account for Member having an email and password
             }
-           
+
             catch (Exception e)
             {
                 Exception e2 = new Exception("An Error occured when trying to create a new Unauthorized Member. Check InnerException", e);
                 e2.Source = "MembershiopManager.cs In AddUnauthorizedMember(Member Member)";
-                throw e2; 
+                throw e2;
             }
-           //now update the member to add the flag to let us know it is a unauthorized user
+            //now update the member to add the flag to let us know it is a unauthorized user
             AddMemberComment(m, UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Flag);
 
             return m;
@@ -401,9 +401,93 @@ namespace UnderstoodDotOrg.Domain.Membership
                 commentAdded = true;
             }
             catch (Exception e)
-            { 
+            {
             }
             return commentAdded;
+        }
+
+
+        /// <summary>
+        /// We can come back to this later but right now we are going to blow out
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns></returns>
+        public bool SaveMemberQuizResults(Guid MemberId, Quiz quiz)
+        {
+            bool success = false;
+            //clear out the existing quiz
+            if (!DeleteQuizResults(MemberId, quiz.QuizID))
+            {
+                throw new Exception("An error occured when trying to clear existing quiz data.");
+            }
+            //save the member's results
+            string sql = " INSERT INTO QuizResults " +
+                                   " (MemberId, QuizId, QuestionId, AnswerValue) " +
+                           "  VALUES (@MemberId, @QuizId, @QuestionId, @AnswerValue) ";
+            Guid QuizId = quiz.QuizID;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    foreach (QuizItem memberAnswer in quiz.MemberAnswers)
+                    {
+                        //insert an answer row
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@MemberId", MemberId);
+                            cmd.Parameters.AddWithValue("@QuizId", QuizId);
+                            cmd.Parameters.AddWithValue("@QuestionId", memberAnswer.QuestionId);
+                            cmd.Parameters.AddWithValue("@AnswerValue", memberAnswer.AnswerValue);
+                            cmd.ExecuteNonQuery();
+                            success = true;
+                            cmd.Parameters.Clear();//clear out the existing params for the next iteration
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            success = true;
+
+            return success;
+        }
+
+        /// <summary>
+        /// Clears out the current database entries for the Member's quiz results
+        /// </summary>
+        /// <param name="MemberId"></param>
+        /// <param name="QuizId"></param>
+        /// <returns></returns>
+        private bool DeleteQuizResults(Guid MemberId, Guid QuizId)
+        {
+            bool success = false;
+            try
+            {
+                string sql = "DELETE FROM QuizResults " +
+                      " WHERE (MemberId = @MemberId) AND (QuizId = @QuizId)";
+
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MemberId", MemberId);
+                        cmd.Parameters.AddWithValue("@QuizId", QuizId);
+                        cmd.ExecuteNonQuery();
+                        success = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return success;
         }
         /// <summary>
         /// Inserts a row into our member activity log table with information about what the specified user has just done
@@ -418,19 +502,19 @@ namespace UnderstoodDotOrg.Domain.Membership
             bool success = false;
             try
             {
-                
-                string sql = "INSERT INTO dbo.MemberActivity " + 
+
+                string sql = "INSERT INTO dbo.MemberActivity " +
                                         " ([Key], MemberId, ActivityType, Value) " +
                                         " VALUES (@Key,@MemberId, @ActivityType, @Value)";
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
                 {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
-                    {                     
+                    {
                         cmd.Parameters.AddWithValue("@Key", Guid.NewGuid()); //?:toteswatever.what
                         cmd.Parameters.AddWithValue("@MemberId", MemberId);
                         cmd.Parameters.AddWithValue("@ActivityType", ActivityType);
-                        cmd.Parameters.AddWithValue("@Value", Activity  ); //UnderstoodDotOrg.Common.Constants.UserActivityTypes.Favorited // - * example
+                        cmd.Parameters.AddWithValue("@Value", Activity); //UnderstoodDotOrg.Common.Constants.UserActivityTypes.Favorited // - * example
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -443,7 +527,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                 throw ex;
             }
             success = true;
-            
+
 
             //push this up into salesforce... eventually....
             return success;
@@ -461,7 +545,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             {
                 // use custom provider for authentication
                 var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
-        
+
                 var isExistingUser = provider.ValidateUser(Username, Password);
 
                 if (isExistingUser)
@@ -480,7 +564,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                     var status = new MembershipCreateStatus();
 
                     var user = provider.CreateUser(Username, Password, Username, null, null, true, Member.MemberId, out status);
-                    
+
                     if (status != MembershipCreateStatus.Success)
                     {
                         throw new Exception("Unable to create user. Reason: " + status);
@@ -571,7 +655,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                         {
                             while (reader.Read())
                             {
-                                member.PreferedLanguage = reader.GetGuid (0);
+                                member.PreferedLanguage = reader.GetGuid(0);
                                 member.AgreedToSignUpTerms = reader.GetBoolean(1);
                                 if (!reader.IsDBNull(2))
                                 {
@@ -674,7 +758,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                 }
             }
             catch (Exception ex)
-            { 
+            {
                 //log the exception 
                 //bubble it up so the error can be displayed
                 throw ex;
@@ -789,7 +873,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             {
                 throw ex;
             }
-            
+
         }
 
         /// <summary>
@@ -821,7 +905,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             _db.Dispose();
         }
-     
+
         public List<Member> GetMembers()
         {
             //List<Member> members = null; 
