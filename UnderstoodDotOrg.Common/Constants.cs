@@ -17,6 +17,7 @@ namespace UnderstoodDotOrg.Common
         public const int SECTION_LANDING_ARTICLES_PER_ROW = 3;
         public const int SUBTOPIC_LISTING_ARTICLES_PER_PAGE = 9;
         public const int EVENT_ARCHIVE_ENTRIES_PER_PAGE = 6;
+        public const int EXPERT_LISTING_ENTRIES_PER_PAGE = 9;
 
         #region Query Strings
 
@@ -392,7 +393,12 @@ namespace UnderstoodDotOrg.Common
                 get
                 {
                     return new Guid("{A2B11A1B-80C7-4154-8A3E-1632332C7F48}");
-        }
+                }
+            }
+
+            public static Guid ExpertLanding
+            {
+                get { return new Guid("{BAD8FF7E-EDC1-4FC4-A48D-7BA85407C662}"); }
             }
         }
 

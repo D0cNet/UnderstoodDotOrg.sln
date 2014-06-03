@@ -10,25 +10,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
         ExpertLandingPageItem contextItem = Sitecore.Context.Item;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                frBodyContent.Item = contextItem;
-                var expertDetailItems = contextItem.GetExpertDetailPages();
+            BindContent();
+        }
 
-                if (expertDetailItems.Any())
-                {
-                    //rptListing.Visible = true;
-                    //rptListing.DataSource = expertDetailItems.Take(6);
-                    //rptListing.DataBind();
+        private void BindContent()
+        {
 
-                    //if (expertDetailItems.Count() > 6)
-                    //{
-                    //    pnlShowMore.Visible = true;
-                    //}
-                    //hfGUID.Value = Sitecore.Context.Item.ID.ToString();
-                    //hfResultsPerClick.Value = "3";
-                }
-            }
         }
 
         //protected void rptListing_ItemDataBound(object sender, RepeaterItemEventArgs e)

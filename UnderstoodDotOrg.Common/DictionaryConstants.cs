@@ -965,6 +965,14 @@ namespace UnderstoodDotOrg.Common
            }
        }
 
+       public static string ChatWithLabel
+       {
+           get
+           {
+               return Translate.TextByDomain(PosesDictionary, "Chat With Label");
+           }
+       }
+
         #endregion
     }
 }

@@ -259,6 +259,13 @@
     <Compile Include="Presentation\Sublayouts\About\DonationPage.ascx.designer.cs">
       <DependentUpon>DonationPage.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\About\ExpertListing.ascx.cs">
+      <DependentUpon>ExpertListing.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\ExpertListing.ascx.designer.cs">
+      <DependentUpon>ExpertListing.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\About\ExpertsLandingPage.ascx.cs">
       <DependentUpon>ExpertsLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1245,13 +1252,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertDetailPage.ascx.designer.cs">
       <DependentUpon>ExpertDetailPage.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertLandingPage.ascx.cs">
-      <DependentUpon>ExpertLandingPage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertLandingPage.ascx.designer.cs">
-      <DependentUpon>ExpertLandingPage.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\ExpertLiveDetail.ascx.cs">
       <DependentUpon>ExpertLiveDetail.ascx</DependentUpon>
@@ -2421,6 +2421,7 @@
     <Content Include="Presentation\Sublayouts\About\AboutUnderstood.ascx" />
     <Content Include="Presentation\Sublayouts\About\DonationConfirmationPage.ascx" />
     <Content Include="Presentation\Sublayouts\About\DonationPage.ascx" />
+    <Content Include="Presentation\Sublayouts\About\ExpertListing.ascx" />
     <Content Include="Presentation\Sublayouts\About\ExpertsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx" />
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ParentInterest.ascx" />
@@ -2562,7 +2563,6 @@
     <Content Include="Presentation\Sublayouts\ExpertLive\Eventcards.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\EventFilterNav.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertDetailPage.ascx" />
-    <Content Include="Presentation\Sublayouts\ExpertLive\ExpertLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ExpertLiveDetail.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\OpenOfficeHoursModule.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\SingleLiveChat.ascx" />

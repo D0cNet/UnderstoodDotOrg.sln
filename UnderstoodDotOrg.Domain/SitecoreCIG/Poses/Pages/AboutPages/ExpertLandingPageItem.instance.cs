@@ -10,9 +10,6 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages
 {
     public partial class ExpertLandingPageItem 
     {
-        public IEnumerable<ExpertDetailPageItem> GetExpertDetailPages()
-        {
-            return InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(ExpertDetailPageItem.TemplateId)).Select(i => (ExpertDetailPageItem)i);
-        }
+
     }
 }
