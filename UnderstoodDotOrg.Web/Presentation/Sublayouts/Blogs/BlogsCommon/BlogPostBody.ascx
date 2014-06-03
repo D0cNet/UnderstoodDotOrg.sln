@@ -4,7 +4,7 @@
         <h2><sc:FieldRenderer id="BlogTitle" runat="server" fieldname="Title" /></h2>
         <p class="byline">
             <sc:FieldRenderer id="BlogDate" runat="server" fieldname="Date" />
-            by <a href="REPLACE">
+            by <a id="linkAuthor" runat="server">
                 <sc:FieldRenderer id="BlogAuthor" runat="server" fieldname="Author" />
             </a>
         </p>

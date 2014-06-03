@@ -10,10 +10,10 @@
     <!-- END PARTIAL: community/blog_feature_post -->
             <div class="row">
               <div class=" col col-24 blog-featured-author clearfix skiplink-feature">
-                <div class="blog-author-image-card"><img alt="270x270 Placeholder" src="http://placehold.it/270x270" /></div>
+                <div class="blog-author-image-card"><sc:Image runat="server" field="avatar" /></div>
                 <div class="blog-author-details">
-                  <h2>Odit Deleniti</h2>
-                  <p class="blog-about-author">Harum Quasi Dicta Ea Consequuntur Quia Quidem Iste Eaque Aut Eos Repellendus Eos. Nihil Similique Sed Commodi Optio Omnis Animi Et Numquam. Earum Earum Id Vel Est Doloribus Qui Temporibus Quis Qui Quod Qui. Incidunt Voluptatem Magnam Et Dicta Et Eum Incidunt Dolorem Ut Ad Repellendus Doloremque. Fugit Assumenda Sed Voluptates Dolor Vel Et Placeat Architecto Quae Nihil Non Sunt Nesciunt Numquam</p>
+                  <h2><sc:FieldRenderer id="BlogBody" runat="server" fieldname="Name" /></h2>
+                  <p class="blog-about-author"><sc:FieldRenderer id="FieldRenderer2" runat="server" fieldname="Biography" /></p>
                 </div>
               </div>
             </div>
