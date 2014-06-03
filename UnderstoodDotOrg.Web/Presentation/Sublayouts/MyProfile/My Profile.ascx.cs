@@ -47,7 +47,7 @@
 
 			if (!IsPostBack)
 			{
-				SetLabels();
+                SetLabels();
 
 				SetRole();
 
@@ -83,8 +83,6 @@
 
 				uxZipcode.Text = this.CurrentMember.ZipCode.Trim();
 
-				txtZipcode.Text = this.CurrentMember.ZipCode.Trim();
-
 				uxAddChild.Text = string.Format(uxAddChild.Text, ((ChildCount)this.CurrentMember.Children.Count).ToString());
 
 				if (Session["PostReloadScript"] != null)
@@ -97,6 +95,8 @@
 						Session["PostReloadScript"] = null;
 					}
 				}
+
+                hypEditCommunityAboutMe.NavigateUrl = hypEditCommunity.NavigateUrl = String.Format(MembershipHelper.GetNextStepURL(4) + "?{0}={1}", Constants.QueryStrings.Registration.Mode, Constants.QueryStrings.Registration.ModeEdit);
 			}
         }
 
@@ -119,8 +119,6 @@
 				{
 					li.Selected = true;
 				}
-
-				cblInterests.Items.Add(li);
 			}
 		}
 
@@ -146,8 +144,6 @@
 				{
 					li.Selected = true;
 				}
-
-				ddlJourney.Items.Add(li);
 			}
 		}
 
@@ -169,8 +165,6 @@
 				{
 					li.Selected = true;
 				}
-
-				ddlRole.Items.Add(li);
 			}
 		}
 
@@ -277,38 +271,6 @@
 		private void ReloadPage()
 		{
 			Response.Redirect(Request.RawUrl);
-		}
-
-		protected void lbSave_AboutMe_Click(object sender, EventArgs e)
-		{
-			this.CurrentMember.Role = new Guid(ddlRole.SelectedValue);
-			this.CurrentMember.Journeys = new List<Journey>() { new Journey { Key = new Guid(ddlJourney.SelectedValue), Value = ddlJourney.SelectedItem.Text } };
-			List<Interest> selectedInterests = new List<Interest>();
-            
-			foreach (ListItem li in cblInterests.Items)
-			{
-				if (li.Selected)
-				{
-                    selectedInterests.Add(new Interest() { Key = new Guid(li.Value), Value = li.Text });
-				}
-			}
-
-			this.CurrentMember.Interests = selectedInterests;
-
-			new MembershipManager().UpdateMember(this.CurrentMember);
-
-			ReloadPage();
-		}
-
-		protected void lbSave_Community_Click(object sender, EventArgs e)
-		{
-			this.CurrentMember.ZipCode = txtZipcode.Text;
-
-            new MembershipManager().UpdateMember(this.CurrentMember);
-			
-			Session["PostReloadScript"] = "scrollToSelector('.profile-section.community-section')";
-
-			ReloadPage();
 		}
 
 		protected void lbSave_PhoneNumber_Click(object sender, EventArgs e)

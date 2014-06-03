@@ -20,7 +20,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
     public partial class ProfileStepFour : BaseRegistration
     {
         private string mode = "";
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             mode = Request.QueryString[Constants.QueryStrings.Registration.Mode];
@@ -47,6 +47,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                     if (!string.IsNullOrEmpty(registeringUser.ScreenName))
                     {
                         ScreenNameTextField.Text = this.registeringUser.ScreenName;
+                        ScreenNameTextField.Enabled = false;
                     }
                     if (!string.IsNullOrEmpty(registeringUser.ZipCode))
                     {
@@ -232,10 +233,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             {
                 this.registeringUser.allowNewsletter = true;
             }
-            //bg: verify that this is working:
-            this.registeringUser.ScreenName = ScreenNameTextField.Text;
 
-            if (string.IsNullOrEmpty(registeringUser.ZipCode) && !string.IsNullOrEmpty(ZipCodeTextField.Text))
+            //bg: verify that this is working:
+            if (mode != Constants.QueryStrings.Registration.ModeEdit)
+            {
+                this.registeringUser.ScreenName = ScreenNameTextField.Text;
+            }
+
+            if (!string.IsNullOrEmpty(ZipCodeTextField.Text))
             {
                 this.registeringUser.ZipCode = ZipCodeTextField.Text;
             }
@@ -244,35 +249,37 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             //set current user/member
             this.CurrentMember = membershipManager.UpdateMember(this.registeringUser);
-            this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
-
-            //updating salesforce
-            SalesforceManager sfMgr = new SalesforceManager("brettgarnier@outlook.com",
-                                                            "8f9C3Ayq",
-                                                            "hlY0jOIILtogz3sQlLUtmERlu");
-            if (sfMgr.LoggedIn)
+            if (mode != Constants.QueryStrings.Registration.ModeEdit)
             {
-                try
+                this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
+
+                //updating salesforce
+                SalesforceManager sfMgr = new SalesforceManager("brettgarnier@outlook.com",
+                                                                "8f9C3Ayq",
+                                                                "hlY0jOIILtogz3sQlLUtmERlu");
+                if (sfMgr.LoggedIn)
                 {
-                    SalesforceActionResult result = sfMgr.CreateWebsiteMemberAsContact(this.CurrentMember, CurrentUser.Email);
-                    if (result.Success == false)
+                    try
                     {
-                        Response.Write("<!-- Error 401 -->");
+                        SalesforceActionResult result = sfMgr.CreateWebsiteMemberAsContact(this.CurrentMember, CurrentUser.Email);
+                        if (result.Success == false)
+                        {
+                            Response.Write("<!-- Error 401 -->");
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        Response.Write("<!-- Error 501 -->");
                     }
                 }
-                catch (Exception)
+                else
                 {
-                    Response.Write("<!-- Error 501 -->");
+                    Response.Write("<!-- Error 601 -->");
                 }
-            }
-            else
-            {
-                Response.Write("<!-- Error 601 -->");
-            }
 
-            //send an email through exact target.
-            BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
-
+                //send an email through exact target.
+                BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
+            }
 
             ////run personalization for this user
             Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
@@ -286,7 +293,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             {
                 try
                 {
-                    if (mode == Constants.QueryStrings.Registration.ModeEdit)
+                    if (mode != Constants.QueryStrings.Registration.ModeEdit)
                     {
                         bool communitySuccess = CommunityHelper.CreateUser(CurrentMember.ScreenName, CurrentUser.Email);
                         if (communitySuccess == false)
@@ -318,7 +325,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             {
                 if (mode == Constants.QueryStrings.Registration.ModeEdit)
                 {
-                    Response.Redirect(MyAccountItem.GetMyAccountPage().GetUrl());
+                    Response.Redirect(MyProfileItem.GetMyProfilePage().GetUrl());
                 }
                 Response.Redirect(MembershipHelper.GetNextStepURL(5));
             }

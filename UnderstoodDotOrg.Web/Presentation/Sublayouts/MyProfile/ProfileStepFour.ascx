@@ -55,9 +55,6 @@
     </div>
 </div>
 
-
-
-
 <div class="container profile-questions flush">
     <div class="row">
         <div class="col col-22 offset-1">
@@ -88,38 +85,6 @@
                                     </div>
                                 </ItemTemplate>
                             </asp:ListView>
-                            <%--<div class="checkbox-wrapper">
-                                <label>
-                                    <input type="checkbox" name="q1a1">
-                                    <span>
-                                        <sc:text id="Text7" field="SI Area 1" runat="server" />
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="checkbox-wrapper">
-                                <label>
-                                    <input type="checkbox" name="q1a2">
-                                    <span>
-                                        <sc:text id="Text8" field="SI Area 2" runat="server" />
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="checkbox-wrapper">
-                                <label>
-                                    <input type="checkbox" name="q1a3">
-                                    <span>
-                                        <sc:text id="Text9" field="SI Area 3" runat="server" />
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="checkbox-wrapper">
-                                <label>
-                                    <input type="checkbox" name="q1a4">
-                                    <span>
-                                        <sc:text id="Text10" field="SI Area 4" runat="server" />
-                                    </span>
-                                </label>
-                            </div>--%>
                         </div>
                         <!-- .checkboxes-left -->
 
@@ -138,39 +103,6 @@
                                     </div>
                                 </ItemTemplate>
                             </asp:ListView>
-
-                            <%--<div class="checkbox-wrapper">
-                                <label>
-                                    <input type="checkbox" name="q1a8">
-                                    <span>
-                                        <sc:text id="Text11" field="SI Area 5" runat="server" />
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="checkbox-wrapper">
-                                <label>
-                                    <input type="checkbox" name="q1a9">
-                                    <span>
-                                        <sc:text id="Text12" field="SI Area 6" runat="server" />
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="checkbox-wrapper">
-                                <label>
-                                    <input type="checkbox" name="q1a10">
-                                    <span>
-                                        <sc:text id="Text13" field="SI Area 7" runat="server" />
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="checkbox-wrapper">
-                                <label>
-                                    <input type="checkbox" name="q1a11">
-                                    <span>
-                                        <sc:text id="Text14" field="SI Area 8" runat="server" />
-                                    </span>
-                                </label>
-                            </div>--%>
                         </div>
                         <!-- .checkboxes-right -->
                     </div>
@@ -199,47 +131,6 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:ListView>
-
-                                <%--<div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q2a1">
-                                        <span>
-                                            <sc:text id="Text16" field="WTH Area 1" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q2a2">
-                                        <span>
-                                            <sc:text id="Text17" field="WTH Area 2" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q2a3">
-                                        <span>
-                                            <sc:text id="Text18" field="WTH Area 3" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q2a4">
-                                        <span>
-                                            <sc:text id="Text19" field="WTH Area 4" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q2a5">
-                                        <span>
-                                            <sc:text id="Text20" field="WTH Area 5" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>--%>
                             </div>
                             <!-- .checkboxes-wrapper -->
                         </div>
@@ -267,38 +158,6 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:ListView>
-                                <%--<div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q3a1">
-                                        <span>
-                                            <sc:text id="Text22" field="HL Area 1" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q3a2">
-                                        <span>
-                                            <sc:text id="Text23" field="HL Area 2" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q3a3">
-                                        <span>
-                                            <sc:text id="Text24" field="HL Area 3" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q3a4">
-                                        <span>
-                                            <sc:text id="Text25" field="HL Area 4" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>--%>
                             </div>
                             <!-- .checkboxes-wrapper -->
                         </div>
@@ -329,46 +188,6 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:ListView>
-                                <%--<div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q4a1">
-                                        <span>
-                                            <sc:text id="Text27" field="GU Area 1" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q4a2">
-                                        <span>
-                                            <sc:text id="Text28" field="GU Area 2" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q4a3">
-                                        <span>
-                                            <sc:text id="Text29" field="GU Area 3" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q4a4">
-                                        <span>
-                                            <sc:text id="Text30" field="GU Area 4" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q4a5">
-                                        <span>
-                                            <sc:text id="Text31" field="GU Area 5" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>--%>
                             </div>
                             <!-- .checkboxes-wrapper -->
                         </div>
@@ -396,30 +215,6 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:ListView>
-                                <%--<div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q5a1">
-                                        <span>
-                                            <sc:text id="Text33" field="SEI Area 1" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q5a2">
-                                        <span>
-                                            <sc:text id="Text34" field="SEI Area 2" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="q5a3">
-                                        <span>
-                                            <sc:text id="Text35" field="SEI Area 3" runat="server" />
-                                        </span>
-                                    </label>
-                                </div>--%>
                             </div>
                             <!-- .checkboxes-wrapper -->
                         </div>
@@ -436,10 +231,10 @@
                     <div class="radios-wrapper">
                         <asp:ListView runat="server" ID="uxJourney" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListJourneyDataBound">
                             <ItemTemplate>
-                                <div class="radio-wrapper">
+                                <div class="radio-wrapper radiobuttonJourney">
                                     <label>
                                         <%--<input type="radio" name="q6" value="a1">--%>
-                                        <asp:RadioButton runat="server" ID="interest" GroupName="journey" />
+                                        <asp:RadioButton runat="server" ID="interest" GroupName="journey"/>
                                         <span>
                                             <%--<sc:text id="Text37" field="WAY Area 1" runat="server" />--%>
                                             <%# Eval("Fields[Interest Name]") %>
@@ -448,31 +243,6 @@
                                 </div>
                             </ItemTemplate>
                         </asp:ListView>
-
-                        <%--<div class="radio-wrapper">
-                            <label>
-                                <input type="radio" name="q6" value="a1">
-                                <span>
-                                    <sc:text id="Text37" field="WAY Area 1" runat="server" />
-                                </span>
-                            </label>
-                        </div>
-                        <div class="radio-wrapper">
-                            <label>
-                                <input type="radio" name="q6" value="a2">
-                                <span>
-                                    <sc:text id="Text38" field="WAY Area 2" runat="server" />
-                                </span>
-                            </label>
-                        </div>
-                        <div class="radio-wrapper">
-                            <label>
-                                <input type="radio" name="q6" value="a3">
-                                <span>
-                                    <sc:text id="Text39" field="WAY Area 3" runat="server" />
-                                </span>
-                            </label>
-                        </div>--%>
                     </div>
                     <!-- .radios-wrapper -->
                 </div>
@@ -499,29 +269,6 @@
                     <label class="inline">
                         <asp:DropDownList ID="uxParentList" runat="server">
                         </asp:DropDownList>
-                        <%--<select name="q7b">
-                            <option value="">
-                                <sc:text id="Text43" field="Other Field Default" runat="server" />
-                            </option>
-                            <option value="grandparent">
-                                <sc:text id="Text44" field="Other Field 1" runat="server" />
-                            </option>
-                            <option value="aunt_uncle">
-                                <sc:text id="Text45" field="Other Field 2" runat="server" />
-                            </option>
-                            <option value="teacher">
-                                <sc:text id="Text46" field="Other Field 3" runat="server" />
-                            </option>
-                            <option value="medical">
-                                <sc:text id="Text47" field="Other Field 4" runat="server" />
-                            </option>
-                            <option value="caregiver">
-                                <sc:text id="Text48" field="Other Field 5" runat="server" />
-                            </option>
-                            <option value="other">
-                                <sc:text id="Text49" field="Other Field 6" runat="server" />
-                            </option>
-                        </select>--%>
                     </label>
                 </div>
                 <!-- .question-wrapper -->

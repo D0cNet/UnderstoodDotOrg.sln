@@ -22,13 +22,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.Literal ltlAboutMeLabel;
         
         /// <summary>
-        /// lbSave_AboutMe control.
+        /// hypEditCommunityAboutMe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbSave_AboutMe;
+        protected global::System.Web.UI.WebControls.HyperLink hypEditCommunityAboutMe;
         
         /// <summary>
         /// ltlMyRoleLabel control.
@@ -49,15 +49,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.Literal uxRole;
         
         /// <summary>
-        /// ddlRole control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlRole;
-        
-        /// <summary>
         /// ltlMyJourneyLabel control.
         /// </summary>
         /// <remarks>
@@ -76,15 +67,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.Literal uxJourney;
         
         /// <summary>
-        /// ddlJourney control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlJourney;
-        
-        /// <summary>
         /// ltlMyInterestsLabel control.
         /// </summary>
         /// <remarks>
@@ -101,15 +83,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView uxInterestList;
-        
-        /// <summary>
-        /// cblInterests control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cblInterests;
         
         /// <summary>
         /// ltlMyChildrenLabel control.
@@ -157,13 +130,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.Literal ltlCommunityLabel;
         
         /// <summary>
-        /// lbSave_Community control.
+        /// hypEditCommunity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbSave_Community;
+        protected global::System.Web.UI.WebControls.HyperLink hypEditCommunity;
         
         /// <summary>
         /// ltlMyScreenNameLabel control.
@@ -218,15 +191,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal uxZipcode;
-        
-        /// <summary>
-        /// txtZipcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtZipcode;
         
         /// <summary>
         /// ltlZipcodeReminderText control.

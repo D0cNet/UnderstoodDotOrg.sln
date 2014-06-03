@@ -34,9 +34,7 @@
                     <div class="row profile-row">
                         <div class="col col-4">
                             <h2><asp:Literal ID="ltlAboutMeLabel" runat="server"></asp:Literal></h2>
-                            <a href="#" class="btnEdit">Edit</a>
-							<a href="#" class="btnCancel">Cancel</a>
-							<asp:LinkButton ID="lbSave_AboutMe" CssClass="lbSave" Text="Save" OnClick="lbSave_AboutMe_Click" runat="server"></asp:LinkButton>
+                            <asp:HyperLink ID="hypEditCommunityAboutMe" runat="server">Edit</asp:HyperLink>
                         </div>
                         <div class="col col-20 profile-details">
                             <div class="row">
@@ -46,9 +44,6 @@
                                 <div class="col col-18 profile-detail-information">
                                     <span class="cnt">
                                         <asp:Literal ID="uxRole" runat="server"></asp:Literal></span>
-									<span class="form-field">
-										<asp:DropDownList ID="ddlRole" runat="server"></asp:DropDownList>
-									</span>
                                 </div>
                             </div>
                             <!-- .row -->
@@ -59,9 +54,6 @@
                                 <div class="col col-18 profile-detail-information">
                                     <span class="cnt">
                                         <asp:Literal ID="uxJourney" runat="server"></asp:Literal></span>
-									<span class="form-field">
-										<asp:DropDownList ID="ddlJourney" runat="server"></asp:DropDownList>
-									</span>
                                 </div>
                             </div>
                             <!-- .row -->
@@ -84,9 +76,6 @@
                                         </ItemTemplate>
                                     </asp:ListView>
                                 </div>
-								<div class="col col-18 profile-detail-information form-field">
-									<asp:CheckBoxList ID="cblInterests" runat="server"></asp:CheckBoxList>
-								</div>
                             </div>
                             <!-- .row -->
                         </div>
@@ -147,10 +136,7 @@
                     <div class="row profile-row">
                         <div class="col col-4">
                             <h2><asp:Literal ID="ltlCommunityLabel" runat="server"></asp:Literal></h2>
-
-                            <a href="#" class="btnEdit">Edit</a>
-							<a href="#" class="btnCancel">Cancel</a>
-							<asp:LinkButton ID="lbSave_Community" CssClass="lbSave" Text="Save" OnClick="lbSave_Community_Click" runat="server"></asp:LinkButton>
+                            <asp:HyperLink ID="hypEditCommunity" runat="server">Edit</asp:HyperLink>
                         </div>
                         <div class="col col-20 profile-details">
                             <div class="row">
@@ -178,7 +164,6 @@
                                 </div>
                                 <div class="col col-18 profile-detail-information">
                                     <span class="cnt"><asp:Literal ID="uxZipcode" runat="server"></asp:Literal></span>
-									<span class="form-field"><asp:TextBox ID="txtZipcode" CssClass="txtZipcode" runat="server"></asp:TextBox></span>
                                 </div>
                             </div>
                             <!-- .row -->
