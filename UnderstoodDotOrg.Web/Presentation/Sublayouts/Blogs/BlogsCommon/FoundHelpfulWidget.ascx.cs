@@ -68,7 +68,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             string contentTypeId = s[1];
 
             var username = this.CurrentMember.ScreenName.Trim();
-            var like = new Like();
+            var like = new LikeModel();
             if (!string.IsNullOrEmpty(username))
             {
                 like = CommunityHelper.GetLike(this.CurrentMember.ScreenName.Trim(), contentId, contentTypeId);
