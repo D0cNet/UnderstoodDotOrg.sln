@@ -31,7 +31,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     CreateTelligentPost(itm, 4); //blog id should be 4
                 }
             }
-            else if (itm.InheritsFromType(BlogsPostPageItem.TemplateId))
+            else if (itm.InheritsFromType(BlogsPostPageItem.TemplateId) && itm.Name != "__StandardValues")
             {
                 if (itm["BlogId"] == string.Empty)
                 {
