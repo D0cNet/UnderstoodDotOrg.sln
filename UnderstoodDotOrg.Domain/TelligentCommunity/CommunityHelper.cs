@@ -368,7 +368,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
-        private static string GetApiEndPoint(string path)
+        public static string GetApiEndPoint(string path)
         {
             // Normalize path
             if (path.StartsWith("/"))
@@ -1292,9 +1292,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return commentList;
         }
 
-        public static Like GetLike(string username, string contentId, string contentTypeId)
+        public static LikeModel GetLike(string username, string contentId, string contentTypeId)
         {
-            var like = new Like();
+            var like = new LikeModel();
 
             if (!string.IsNullOrEmpty(username) || !string.IsNullOrEmpty(contentId) || !string.IsNullOrEmpty(contentTypeId))
             {
@@ -1317,7 +1317,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                             XmlNode authorInfo = xn.SelectSingleNode("User");
                             if (authorInfo["Username"].InnerText.Equals(username))
                             {
-                                like = new Like()
+                                like = new LikeModel()
                                 {
                                     ContentUrl = xn["Url"].InnerText
                                 };
@@ -1329,6 +1329,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 }
             }
             return like;
+        }
+
+        public static bool SaveItem(string username, string contentId)
+        {
+            return true;
         }
     }
 }

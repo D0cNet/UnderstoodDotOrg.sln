@@ -194,10 +194,19 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public FavoritesModel() { }
     }
 
-    public class Like
+    public class LikeModel
     {
         public string ContentUrl { get; set; }
         public string ContentTypeId { get; set; }
+
+        public LikeModel() { }
     }
-    
+
+    public class BookmarkModel
+    {
+        public string Username { get; set; }
+        public string TelligentUrl { get; set; }
+
+        public BookmarkModel() { }
+    }
 }

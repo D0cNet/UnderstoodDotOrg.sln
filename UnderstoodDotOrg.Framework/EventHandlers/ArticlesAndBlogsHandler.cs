@@ -51,6 +51,10 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     }
                 }
             }
+            if (itm["TelligentUrl"] == string.Empty)
+            {
+                AddTelligentUrl(itm, itm["BlogId"], itm["BlogPostId"]);
+            }
         }
 
         private void CreateTelligentPost(Item item, int blogId)
@@ -79,6 +83,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                 var node = xmlDoc.SelectSingleNode("Response/BlogPost");
                 var blogPostId = node["Id"].InnerText;
                 var contentId = node["ContentId"].InnerText;
+                var telligentUrl = node["Url"].InnerText;
 
                 item.Editing.BeginEdit();
                 try
@@ -86,6 +91,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     item["BlogPostId"] = blogPostId;
                     item["BlogId"] = blogId.ToString();
                     item["ContentId"] = contentId;
+                    item["TelligentUrl"] = telligentUrl;
                 }
                 catch
                 {
@@ -97,6 +103,40 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                 var e = new Exception(@"Item Creation Failed:
 The title of the item you created matches the title of an item that already exists. Please rename the article that you've just created.");
                 throw e;
+            }
+        }
+        private void AddTelligentUrl(Item item, string blogId, string blogPostId)
+        {
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
+                    var requestUrl = CommunityHelper.GetApiEndPoint(String.Format("blogs/{0}/posts/{1}.xml", blogId, blogPostId));
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/BlogPost");
+
+                    XmlNode auth = xmlDoc.SelectSingleNode("Response/BlogPost/Author");
+
+                    var telligentUrl = node["Url"].InnerText;
+
+                    item.Editing.BeginEdit();
+                    try
+                    {
+                        item["TelligentUrl"] = telligentUrl;
+                    }
+                    catch
+                    {
+                    }
+                    item.Editing.EndEdit();
+
+                }
+                catch { } // TODO: Add logging
             }
         }
     }
