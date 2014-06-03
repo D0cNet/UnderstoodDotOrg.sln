@@ -17,6 +17,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             litKeyTakeAwayText.Text = DictionaryConstants.KeyTakeAwayText;
             sbAboutAuthor.Visible = Model.DefaultArticlePage.AuthorName != null;
             SBReviewedBy.Visible = Model.DefaultArticlePage.Reviewedby.Item != null && Model.DefaultArticlePage.ReviewedDate.DateTime != null;

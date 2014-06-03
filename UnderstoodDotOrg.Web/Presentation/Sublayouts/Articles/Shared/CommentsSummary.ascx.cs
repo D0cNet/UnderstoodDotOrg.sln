@@ -58,14 +58,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         }
                         
                     }
-                    litCommentblurb.Text = CommunityHelper.FormatString100(recentComment.Body);// Take(100).ToString();
-                    litCommentblurb.Text = litCommentblurb.Text + "..." + "<a href='#" + recentComment.CommentId + "'> Read more </a>";
-                    litAuthorName.Text = recentComment.AuthorDisplayName;
-                    litTimeStamp.Text = recentComment.PublishedDate;
+                    if (recentComment != null)
+                    {
+                        litCommentblurb.Text = CommunityHelper.FormatString100(recentComment.Body);// Take(100).ToString();
+                        litCommentblurb.Text = litCommentblurb.Text + "..." + "<a href='#" + recentComment.CommentId + "'> Read more </a>";
+                        litAuthorName.Text = recentComment.AuthorDisplayName;
+                        litTimeStamp.Text = recentComment.PublishedDate;
+                    }
+                    else
+                        this.Visible = false;
 
                 }
                 catch (Exception ex)
                 {
+                    this.Visible = false;
                     Sitecore.Diagnostics.Log.Error(ex.Message, GetType());
                 }
 

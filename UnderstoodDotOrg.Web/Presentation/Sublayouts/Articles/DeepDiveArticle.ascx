@@ -11,7 +11,7 @@
                 <div class="deep-dive-article-container">
                     <div class="whats-covered-deep-dive" id="top">
                         <h2><%--What&rsquo;s covered--%>
-                            <sc:FieldRenderer ID="frContentBody" runat="server" FieldName="Section Title" />
+                            <sc:FieldRenderer ID="frContentBody" runat="server" FieldName="Appendix Title" />
                         </h2>
                         <asp:ListView ID="rptSectionList" runat="server" ItemPlaceholderID="itemPlaceholder" 
                             ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
@@ -57,24 +57,13 @@
                     <!-- END PARTIAL: article-copy -->
                 </div>
                 <!-- BEGIN PARTIAL: key-takeaways -->
-                <div class="key-takeaways">
+                <div id="divKeyTakeaways" runat="server" class="key-takeaways">
                     <header class='header-key-takeaways'>
                         <h2><%--Key Takeaways--%>
                             <asp:Literal ID="litKeyTakeAwayText" runat="server"></asp:Literal>
                         </h2>
                     </header>
-                    <sc:FieldRenderer ID="frKeyTakeawayDesc" runat="server" FieldName="Key Takeaways Content" />
-                    <%-- <ul>
-                    <li>
-                        <p>This article talks about lorem ipsum malesuada do</p>
-                    </li>
-                    <li>
-                        <p>This article talks about lorem ipsum malesuada</p>
-                    </li>
-                    <li>
-                        <p>This article talks about lorem ipsum</p>
-                    </li>
-                </ul> --%>
+                    <sc:FieldRenderer ID="frKeyTakeawayDesc" runat="server" FieldName="Key Takeaways Details" />
                 </div>
                 <!-- end key-takeaways -->
 
