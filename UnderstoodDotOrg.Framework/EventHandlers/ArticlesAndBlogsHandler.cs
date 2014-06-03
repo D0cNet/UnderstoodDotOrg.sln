@@ -23,34 +23,34 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
         {
             var itm = Sitecore.Events.Event.ExtractParameter(args, 0) as Item;
 
-            if (itm.InheritsFromType(DefaultArticlePageItem.TemplateId)
-                || itm.InheritsTemplate(BehaviorAdvicePageItem.TemplateId))
-            {
-                if (itm["BlogId"] == string.Empty)
-                {
-                    CreateTelligentPost(itm, 4); //blog id should be 4
-                }
-            }
-            else if (itm.InheritsFromType(BlogsPostPageItem.TemplateId))
-            {
-                if (itm["BlogId"] == string.Empty)
-                {
-                    switch (itm.Parent.ID.ToString())
-                    {
-                        case "{37478172-CCDF-454E-BABA-D56096EBE8F9}":
-                            CreateTelligentPost(itm, 1); //blog id should be 1
-                            break;
-                        case "{23DC4EBA-B296-46A7-AC68-D813C9931AF0}":
-                            CreateTelligentPost(itm, 2); //blog id should be 2
-                            break;
-                        case "{A720AAA9-8AC8-4851-A873-0E0F158C61BD}":
-                            CreateTelligentPost(itm, 3); //blog id should be 3
-                            break;
-                        default:
-                            return;
-                    }
-                }
-            }
+            //if (itm.InheritsFromType(DefaultArticlePageItem.TemplateId)
+            //    || itm.InheritsTemplate(BehaviorAdvicePageItem.TemplateId))
+            //{
+            //    if (itm["BlogId"] == string.Empty)
+            //    {
+            //        CreateTelligentPost(itm, 4); //blog id should be 4
+            //    }
+            //}
+            //else if (itm.InheritsFromType(BlogsPostPageItem.TemplateId))
+            //{
+            //    if (itm["BlogId"] == string.Empty)
+            //    {
+            //        switch (itm.Parent.ID.ToString())
+            //        {
+            //            case "{37478172-CCDF-454E-BABA-D56096EBE8F9}":
+            //                CreateTelligentPost(itm, 1); //blog id should be 1
+            //                break;
+            //            case "{23DC4EBA-B296-46A7-AC68-D813C9931AF0}":
+            //                CreateTelligentPost(itm, 2); //blog id should be 2
+            //                break;
+            //            case "{A720AAA9-8AC8-4851-A873-0E0F158C61BD}":
+            //                CreateTelligentPost(itm, 3); //blog id should be 3
+            //                break;
+            //            default:
+            //                return;
+            //        }
+            //    }
+            //}
             if (itm["TelligentUrl"] == string.Empty)
             {
                 AddTelligentUrl(itm, itm["BlogId"], itm["BlogPostId"]);
