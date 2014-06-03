@@ -6,13 +6,13 @@ using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages
 {
     public partial class ExpertDetailPageItem 
     {
         public string GetExpertType()
         {
-            return IsGuest.Checked 
+            return IsGuest.Checked
                         ? DictionaryConstants.GuestExpertLabel : DictionaryConstants.ExpertLabel;
         }
 
@@ -20,6 +20,5 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive
         {
             return ExpertImage.MediaItem.GetMediaUrlWithFallback(maxWidth, maxHeight);
         }
-
     }
 }

@@ -4,6 +4,7 @@
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
     using UnderstoodDotOrg.Framework.UI;
     using UnderstoodDotOrg.Common.Extensions;
+    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 
     public partial class WebinarDetails : BaseSublayout<WebinarEventPageItem>
     {

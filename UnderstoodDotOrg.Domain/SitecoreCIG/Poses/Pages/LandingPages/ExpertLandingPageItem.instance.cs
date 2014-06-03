@@ -3,9 +3,9 @@ using Sitecore.Data.Items;
 using System.Collections.Generic;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 using UnderstoodDotOrg.Common.Extensions;
 using System.Linq;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages
 {

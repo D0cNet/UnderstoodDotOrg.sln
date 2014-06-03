@@ -316,6 +316,10 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonatePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonatePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonationConfirmationPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\ExpertDetailPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\ExpertDetailPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\ExpertsLandingPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\ExpertsLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ChildInformationPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ChildInformationPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ChildInformationPageItem.static.cs" />
@@ -422,8 +426,6 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\ChatEventPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\ChatEventPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\CommentItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\ExpertDetailPageItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\ExpertDetailPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\LiveChatEventPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\LiveChatEventPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\WebinarEventPageItem.base.cs" />

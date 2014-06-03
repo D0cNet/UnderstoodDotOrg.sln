@@ -8,7 +8,7 @@ using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages
 {
 public partial class ExpertDetailPageItem : CustomItem
 {
@@ -87,6 +87,15 @@ public CustomCheckboxField IsGuest
 	get
 	{
 		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Is Guest"]);
+	}
+}
+
+
+public CustomMultiListField EventParticipation
+{
+	get
+	{
+		return new CustomMultiListField(InnerItem, InnerItem.Fields["Event Participation"]);
 	}
 }
 
