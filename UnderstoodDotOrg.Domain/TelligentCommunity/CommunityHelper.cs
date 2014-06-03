@@ -1331,10 +1331,10 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return like;
         }
 
-        public static bool SaveItem(string username, string telligentUrl)
+        public static bool SaveItem(string username, string contentId, string contentTypeId)
         {
             username.Trim();
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(telligentUrl))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(contentId) || string.IsNullOrEmpty(contentTypeId))
             {
                 return false;
             }
@@ -1348,7 +1348,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     var requestUrl = GetApiEndPoint("bookmark.xml");
 
                     var values = new NameValueCollection();
-                    values.Add("ContentUrl", telligentUrl);
+                    values.Add("ContentId", contentId);
+                    values.Add("ContentTypeId", contentTypeId);
 
                     var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
                     return true;

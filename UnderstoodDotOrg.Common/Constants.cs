@@ -594,6 +594,7 @@ namespace UnderstoodDotOrg.Common
             public const string BlogPostId = "BlogPostId";
             public const string ContentId = "ContentId";
             public const string TelligentUrl = "TelligentUrl";
+            public const string ContentTypeId = "ContentTypeId";
         }
 
         public static class Settings

@@ -51,11 +51,18 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     }
                 }
             }
-            if (itm["TelligentUrl"] == string.Empty)
+            if (itm["TelligentUrl"] == string.Empty && itm.Name != "__StandardValues")
             {
                 if (!string.IsNullOrEmpty(itm["BlogPostId"]) || !itm["BlogPostId"].Equals("1"))
                 {
                     AddTelligentUrl(itm, itm["BlogId"], itm["BlogPostId"]);
+                }
+            }
+            if (itm["ContentTypeId"] == string.Empty && itm.Name != "__StandardValues")
+            {
+                if (!string.IsNullOrEmpty(itm["BlogPostId"]) || !itm["BlogPostId"].Equals("1"))
+                {
+                    AddContentTypeId(itm, itm["BlogId"], itm["BlogPostId"]);
                 }
             }
         }
@@ -87,6 +94,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                 var blogPostId = node["Id"].InnerText;
                 var contentId = node["ContentId"].InnerText;
                 var telligentUrl = node["Url"].InnerText;
+                var contentTypeId = node["ContentTypeId"].InnerText;
 
                 item.Editing.BeginEdit();
                 try
@@ -95,6 +103,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     item["BlogId"] = blogId.ToString();
                     item["ContentId"] = contentId;
                     item["TelligentUrl"] = telligentUrl;
+                    item["ContentTypeId"] = contentTypeId;
                 }
                 catch
                 {
@@ -132,6 +141,40 @@ The title of the item you created matches the title of an item that already exis
                     try
                     {
                         item["TelligentUrl"] = telligentUrl;
+                    }
+                    catch
+                    {
+                    }
+                    item.Editing.EndEdit();
+
+                }
+                catch { } // TODO: Add logging
+            }
+        }
+        private void AddContentTypeId(Item item, string blogId, string blogPostId)
+        {
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
+                    var requestUrl = CommunityHelper.GetApiEndPoint(String.Format("blogs/{0}/posts/{1}.xml", blogId, blogPostId));
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/BlogPost");
+
+                    XmlNode auth = xmlDoc.SelectSingleNode("Response/BlogPost/Author");
+
+                    var contentTypeId = node["ContentTypeId"].InnerText;
+
+                    item.Editing.BeginEdit();
+                    try
+                    {
+                        item["ContentTypeId"] = contentTypeId;
                     }
                     catch
                     {

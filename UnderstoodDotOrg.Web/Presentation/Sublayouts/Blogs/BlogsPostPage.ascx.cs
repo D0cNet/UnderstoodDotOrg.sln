@@ -21,8 +21,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
             var fieldBlogId = currentItem.Fields[Constants.TelligentFieldNames.BlogId];
             var fieldBlogPostId = currentItem.Fields[Constants.TelligentFieldNames.BlogPostId];
             var fieldTelligentUrl = currentItem.Fields[Constants.TelligentFieldNames.TelligentUrl];
+            var fieldContentTypeId = currentItem.Fields[Constants.TelligentFieldNames.ContentTypeId];
 
             if (string.IsNullOrEmpty(fieldTelligentUrl.ToString()))
+            {
+                AddTelligentUrl(currentItem, fieldBlogId.ToString(), fieldBlogPostId.ToString());
+            }
+            if (string.IsNullOrEmpty(fieldContentTypeId.ToString()))
             {
                 AddTelligentUrl(currentItem, fieldBlogId.ToString(), fieldBlogPostId.ToString());
             }
@@ -51,6 +56,41 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
                     try
                     {
                         item["TelligentUrl"] = telligentUrl;
+                    }
+                    catch
+                    {
+                    }
+                    item.Editing.EndEdit();
+
+                }
+                catch { } // TODO: Add logging
+            }
+        }
+
+        private void AddContentTypeId(Item item, string blogId, string blogPostId)
+        {
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
+                    var requestUrl = CommunityHelper.GetApiEndPoint(String.Format("blogs/{0}/posts/{1}.xml", blogId, blogPostId));
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/BlogPost");
+
+                    XmlNode auth = xmlDoc.SelectSingleNode("Response/BlogPost/Author");
+
+                    var contentTypeId = node["ContentTypeId"].InnerText;
+
+                    item.Editing.BeginEdit();
+                    try
+                    {
+                        item["ContentTypeId"] = contentTypeId;
                     }
                     catch
                     {
