@@ -20,9 +20,9 @@ namespace UnderstoodDotOrg.Domain.Membership
         private Guid _preferedLangugage;
         private bool _agreedToSignUpTerms;
         private string _mobilePhoneNumber;
-        
-        //bg: i would like to be able to flag if values need to be updated, inserted, or ignored on a field by field basis but we're going to regenerate later anyways.. but entitiy doesn't do a great job either so.. review 
 
+     
+        //bg: i would like to be able to flag if values need to be updated, inserted, or ignored on a field by field basis but we're going to regenerate later anyways.. but entitiy doesn't do a great job either so.. review 
         public bool ExtendedPropertiesAreDirty
         {
             get

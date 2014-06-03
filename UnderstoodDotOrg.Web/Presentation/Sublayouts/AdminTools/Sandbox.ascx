@@ -41,3 +41,7 @@ Some quiz result tests<br />
 Quizid: <asp:TextBox runat="server" id="txtQuizId"></asp:TextBox><br />
 Selected Answer: <asp:TextBox runat="server" ID="txtAnswerId"></asp:TextBox><br />
 Selected Answer Value: <asp:TextBox runat="server" ID="txtAnswerValue"></asp:TextBox><br />
+
+<hr />
+Test Quiz reader
+<asp:Button ID="btnQuizReader" runat="server" Text="Read Quiz Results" OnClick="btnQuizReader_Click" />

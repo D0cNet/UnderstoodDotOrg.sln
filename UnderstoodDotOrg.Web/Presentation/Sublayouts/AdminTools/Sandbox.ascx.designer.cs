@@ -110,5 +110,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAnswerValue;
+        
+        /// <summary>
+        /// btnQuizReader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnQuizReader;
     }
 }

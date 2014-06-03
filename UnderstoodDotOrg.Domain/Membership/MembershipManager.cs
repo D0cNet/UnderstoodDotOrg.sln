@@ -405,14 +405,92 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             return commentAdded;
         }
+        /// <summary>
+        /// Used to inflate a member's quiz items and the responses that the user has saved to the db so far
+        /// </summary>
+        /// <param name="member">An inflated website Member</param>
+        /// <returns>The same member, but now with quiz results.</returns>
+        public Member QuizResults_FillMember(Member member)
+        {
+            string sql = "SELECT QuizId, QuestionId, AnswerValue " +
+                " FROM  QuizResults " +
+                " WHERE (MemberId = @MemberId) " +
+                " ORDER BY QuizId"; //ordering by QuizId will let us loop through rows and know when to make a new Quiz object. 
 
+            //each time we encounter a new quizid we need to populate a new set of quiz answers
+            //default guid is a throw away
+            Quiz quiz = new Quiz();
+            quiz.QuizID = Guid.NewGuid();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        
+                        if (reader.HasRows)
+                        {
+                            //first thing first. Clear out any existing items in the current member.
+                            if (member.CompletedQuizes.Any())
+                            {
+                                member.CompletedQuizes.Clear();
+                            }
+                            bool firstrow = true;
+                            while (reader.Read())
+                            {                               
+                                //see if we need a new quiz or of the existing quiz we are working with is still good.
+                                if (quiz.QuizID != reader.GetGuid(0))// 0=QuizId. True when a new quiz is found. Always true for the first row.
+                                {
+                                    if (!firstrow)//dont add a filled quiz if this is the first read from the reader. New quiz id, but first quiz
+                                    {
+                                        //save the last quiz to the member
+                                        member.CompletedQuizes.Add(quiz);//save the quiz that we were filling to the list.
+                                    }
+                                    else 
+                                    {
+                                        firstrow = false;//this was the first row, now its not
+                                    }                                    
+                                    quiz = new Quiz();//A new set of quiz answers was found. Setup a new quiz container
+                                    quiz.QuizID = reader.GetGuid(0);// (0)=QuizId.
+                                }
+                                //every single row is always a new QuizItem
+                                QuizItem quizItem = new QuizItem();
+                                quizItem.QuestionId = reader.GetGuid(1);//(1)=QuestionId
 
+                                //always check for nulls from a reader or it *will* eventually break.
+                                if (!reader.IsDBNull(2))//(2)=AnswerValue
+                                {
+                                    quizItem.AnswerValue = reader.GetString(2);//(2)=AnswerValue
+                                }
+                                else
+                                {
+                                    quizItem.AnswerValue = string.Empty;
+                                }
+                                quiz.MemberAnswers.Add(quizItem);
+                            }// * no matter what now, there is still a quiz that needs to still be added to member 
+                             // * reader stops when there are no more rows to read, but we still haven't added the last quiz                            
+                            member.CompletedQuizes.Add(quiz);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return member; //if the member had any quiz results in the db, it is now inflated with them
+
+        }
         /// <summary>
         /// We can come back to this later but right now we are going to blow out
         /// </summary>
         /// <param name="member"></param>
         /// <returns></returns>
-        public bool SaveMemberQuizResults(Guid MemberId, Quiz quiz)
+        public bool QuizResults_SaveToDb(Guid MemberId, Quiz quiz)
         {
             bool success = false;
             //clear out the existing quiz
@@ -719,18 +797,6 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             //push this up into salesforce... eventually....
             return success;
-        }
-        /// <summary>
-        /// Get the results of all of the quizes into the db
-        /// </summary>
-        /// <param name="member"></param>
-        /// <returns></returns>
-        public bool UpdateMember_AllQuizResults(Member member)
-        {
-            bool successFlag = false;
-
-            return successFlag;
-
         }
 
         /// <summary>

@@ -10,21 +10,12 @@ namespace UnderstoodDotOrg.Domain.Understood.Quiz
     {
         public Guid MemberId { get; set; }
         public Guid QuizID { get; set; }
-
-        public virtual ICollection<QuizItem > MemberAnswers { get; set; }
         
-        public bool SaveQuiz()
+        public virtual ICollection<QuizItem > MemberAnswers { get; set; }
+       
+        public Quiz()
         {
-            bool successFlag = false;
-            //update the db. 
-            foreach (QuizItem qi in MemberAnswers)
-            {
-              
-            }
-            successFlag = true;
-            return successFlag;
-
-            
+            this.MemberAnswers  = new HashSet<QuizItem>();
         }
     }
 

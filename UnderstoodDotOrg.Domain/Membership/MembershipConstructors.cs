@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
+using UnderstoodDotOrg.Domain.Understood.Quiz;
 
 namespace UnderstoodDotOrg.Domain.Membership
 {
@@ -41,6 +42,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             this.Children = new HashSet<Child>();
             this.Interests = new HashSet<Interest>();
             this.Journeys = new HashSet<Journey>();
+            this.CompletedQuizes = new HashSet<Quiz>();
         }
     }
 

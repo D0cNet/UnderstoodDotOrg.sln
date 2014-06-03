@@ -19,6 +19,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             txtActivityValue.Text  = targetUrl  ;
             txtActivityType.Text = UnderstoodDotOrg.Common.Constants.UserActivity_Types.Advocacy_Page.ToString();
 
+            /*
             Quiz quiz = new Quiz();
             quiz.QuizID = new Guid();
 
@@ -32,9 +33,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             quiz.MemberAnswers.Add(new QuizItem(Guid.NewGuid(), "I am a third answer"));
 
             this.CurrentMember.CompletedQuizes.Add(quiz);
-            //member contains data. member manager will save data.
+            */
+             //member contains data. member manager will save data.
 
- //           this.CurrentMember.AgreedToSignUpTerms;
+            //           this.CurrentMember.AgreedToSignUpTerms;
  
 
             
@@ -157,6 +159,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             {
                 lblSuccess.Text = "Exception! " + ex.Message ;
             }
+        }
+
+        protected void btnQuizReader_Click(object sender, EventArgs e)
+        {
+            Member m = new Member();
+            m.MemberId = Guid.Parse("93e4c02c-3d3d-4ccd-95a3-180bb513e543"); //throw away user
+            MembershipManager mgr = new MembershipManager();
+            
+            //to load up quizes and all of their answer values
+            m = mgr.QuizResults_FillMember(m);
+
+            Quiz quiz = new Quiz();
+            quiz.QuizID = Guid.NewGuid();
+            quiz.MemberAnswers.Add(new QuizItem(Guid.Parse("93e4c02c-3d3d-4ccd-95a3-180bb513e333"),"JUNKANSWER1"));
+            quiz.MemberAnswers.Add(new QuizItem(Guid.Parse("93e4c02c-3d3d-4ccd-95a3-180bb513e444"), "JUNKANSWER2"));
+            //to save a quiz to the db
+            mgr.QuizResults_SaveToDb(m.MemberId, quiz);
+
         }
     }
 }
