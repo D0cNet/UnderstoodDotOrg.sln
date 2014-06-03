@@ -1331,9 +1331,33 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return like;
         }
 
-        public static bool SaveItem(string username, string contentId)
+        public static bool SaveItem(string username, string telligentUrl)
         {
-            return true;
+            username.Trim();
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(telligentUrl))
+            {
+                return false;
+            }
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                    webClient.Headers.Add("Rest-Impersonate-User", username);
+
+                    var requestUrl = GetApiEndPoint("bookmark.xml");
+
+                    var values = new NameValueCollection();
+                    values.Add("ContentUrl", telligentUrl);
+
+                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
         }
     }
 }
