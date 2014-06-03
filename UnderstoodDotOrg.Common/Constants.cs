@@ -500,6 +500,11 @@ namespace UnderstoodDotOrg.Common
                 public const string IndicationAnswerHistory = "iah";
                 public const string QuestionId = "qid";
             }
+            public static class Registration
+            {
+                public const string Mode = "mode";
+                public const string ModeEdit = "edit";
+            }
         }
         public static class UserActivity_Values
         {

@@ -669,6 +669,11 @@
                     $(this).find('.info-link').hide();
                 }
             });
+            
+            $('.role-question .button').each(function (index) {
+                if ($(this).find("input").attr('checked') == "checked")
+                    $(this).addClass("checked");
+            });
 
             // For PP3 "what is your role?" question.
             $('.role-question select').on('change', function () {
@@ -677,11 +682,10 @@
                 return false;
             });
             $('.role-question .button').on('click', function (e) {
-                e.preventDefault();
-
+                $('.role-question .selected').find("input").trigger('click');
                 $('.role-question .selected').removeClass('selected');
                 $('.role-question option:selected').prop('selected', false);
-                $('.role-question select').val('').trigger('click');
+                $(this).find("input").trigger('click');
             });
 
             $(window).resize(function () {

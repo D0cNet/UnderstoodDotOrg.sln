@@ -86,6 +86,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                 tMember.MemberId = Member.MemberId;
             }
 
+            tMember.AgreedToSignUpTerms = Member.AgreedToSignUpTerms;
             tMember.allowConnections = Member.allowConnections;
             tMember.allowNewsletter = Member.allowNewsletter;
             tMember.emailSubscription = Member.emailSubscription;

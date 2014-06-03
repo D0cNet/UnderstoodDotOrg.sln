@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
     public partial class ProfileStepFour {
         
         /// <summary>
+        /// divProgressBar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divProgressBar;
+        
+        /// <summary>
         /// Text1 control.
         /// </summary>
         /// <remarks>
@@ -328,6 +337,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::Sitecore.Web.UI.WebControls.Text Text57;
         
         /// <summary>
+        /// cbConnections control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbConnections;
+        
+        /// <summary>
         /// Text58 control.
         /// </summary>
         /// <remarks>
@@ -335,6 +353,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Text Text58;
+        
+        /// <summary>
+        /// cbNewsLetter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbNewsLetter;
         
         /// <summary>
         /// Text59 control.

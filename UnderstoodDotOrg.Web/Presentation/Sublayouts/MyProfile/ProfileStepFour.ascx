@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProfileStepFour.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile.ProfileStepFour" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-<div class="container profile-questions flush">
+<div class="container profile-questions flush" id="divProgressBar" runat="server">
     <div class="row">
         <div class="col col-22 offset-1">
             <header class="profile-questions-header">
@@ -74,7 +74,7 @@
                     <div class="checkboxes-wrapper">
 
                         <div class="column-left">
-                            <asp:ListView runat="server" ID="uxSchoolLeft" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
+                            <asp:ListView runat="server" ID="uxSchoolLeft" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListInterestDataBound">
                                 <ItemTemplate>
                                     <div class="checkbox-wrapper">
                                         <label>
@@ -124,7 +124,7 @@
                         <!-- .checkboxes-left -->
 
                         <div class="column-right">
-                            <asp:ListView runat="server" ID="uxSchoolRight" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
+                            <asp:ListView runat="server" ID="uxSchoolRight" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListInterestDataBound">
                                 <ItemTemplate>
                                     <div class="checkbox-wrapper">
                                         <label>
@@ -185,7 +185,7 @@
                                 <sc:text id="Text15" field="Ways To Help Question Title" runat="server" />
                             </h3>
                             <div class="checkboxes-wrapper">
-                                <asp:ListView runat="server" ID="uxWaysToHelp" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
+                                <asp:ListView runat="server" ID="uxWaysToHelp" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListInterestDataBound">
                                     <ItemTemplate>
                                         <div class="checkbox-wrapper">
                                             <label>
@@ -253,7 +253,7 @@
                                 <sc:text id="Text21" field="Home Life Question Title" runat="server" />
                             </h3>
                             <div class="checkboxes-wrapper">
-                                <asp:ListView runat="server" ID="uxHomeLife" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
+                                <asp:ListView runat="server" ID="uxHomeLife" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListInterestDataBound">
                                     <ItemTemplate>
                                         <div class="checkbox-wrapper">
                                             <label>
@@ -315,7 +315,7 @@
                                 <sc:text id="Text26" field="Growing Up Question Title" runat="server" />
                             </h3>
                             <div class="checkboxes-wrapper">
-                                <asp:ListView runat="server" ID="uxGrowingUp" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
+                                <asp:ListView runat="server" ID="uxGrowingUp" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListInterestDataBound">
                                     <ItemTemplate>
                                         <div class="checkbox-wrapper">
                                             <label>
@@ -382,7 +382,7 @@
                                 <sc:text id="Text32" field="Social Emotional Issues Question Title" runat="server" />
                             </h3>
                             <div class="checkboxes-wrapper">
-                                <asp:ListView runat="server" ID="uxSocialEmotional" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
+                                <asp:ListView runat="server" ID="uxSocialEmotional" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListInterestDataBound">
                                     <ItemTemplate>
                                         <div class="checkbox-wrapper">
                                             <label>
@@ -434,7 +434,7 @@
                         <sc:text id="Text36" field="Where Are You Question Title" runat="server" />
                     </h3>
                     <div class="radios-wrapper">
-                        <asp:ListView runat="server" ID="uxJourney" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
+                        <asp:ListView runat="server" ID="uxJourney" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListJourneyDataBound">
                             <ItemTemplate>
                                 <div class="radio-wrapper">
                                     <label>
@@ -487,13 +487,13 @@
                             <%--<sc:text id="Text41" field="Mom Button Text" runat="server" />
                             <input name="q7" value="boy" type="radio">--%>
                             <asp:Literal ID="uxMother" runat="server"></asp:Literal>
-                            <asp:RadioButton ID="uxMotherButton" runat="server" GroupName="parent" />
+                            <asp:RadioButton ID="uxMotherButton" runat="server" GroupName="parent" EnableViewState="true"/>
                         </label>
                         <label class="button">
                             <%--<sc:text id="Text42" field="Dad Button Text" runat="server" />
                             <input name="q7" value="girl" type="radio">--%>
                             <asp:Literal ID="uxFather" runat="server"></asp:Literal>
-                            <asp:RadioButton ID="uxFatherButton" runat="server" GroupName="parent" />
+                            <asp:RadioButton ID="uxFatherButton" runat="server" GroupName="parent" EnableViewState="true" />
                         </label>
                     </div>
                     <label class="inline">
@@ -568,13 +568,13 @@
                     </div>
                     <div class="no-uniform-wrapper">
                         <label>
-                            <input class="no-uniform" type="checkbox">
+                            <asp:CheckBox ID="cbConnections" CssClass="no-uniform" runat="server" />
                             <span>
                                 <sc:text id="Text58" field="Interest Text" runat="server" />
                             </span>
                         </label>
                         <label>
-                            <input class="no-uniform" type="checkbox">
+                            <asp:CheckBox ID="cbNewsLetter" CssClass="no-uniform" runat="server" />
                             <span>
                                 <sc:text id="Text59" field="Personalized Newsletter Text" runat="server" />
                             </span>
