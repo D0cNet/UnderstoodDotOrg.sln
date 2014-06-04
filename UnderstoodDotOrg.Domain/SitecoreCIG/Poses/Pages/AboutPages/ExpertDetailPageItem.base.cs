@@ -118,20 +118,29 @@ public CustomGeneralLinkField BlogLink
 }
 
 
-public CustomGeneralLinkField BioLink
-{
-	get
-	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Bio Link"]);
-	}
-}
-
-
 public CustomTextField OnlineOfficeHours
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Online Office Hours"]);
+	}
+}
+
+
+public CustomTextField ExpertEventsHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Expert Events Heading"]);
+	}
+}
+
+
+public CustomTextField ExpertBlogsHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Expert Blogs Heading"]);
 	}
 }
 

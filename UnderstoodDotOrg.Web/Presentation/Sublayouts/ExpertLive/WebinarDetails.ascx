@@ -48,7 +48,7 @@
 
 
             <asp:PlaceHolder ID="phCallToActions" runat="server" Visible="false">
-                <sc:FieldRenderer ID="frRsvp" Parameters="class=button event-rsvp rs_skip" runat="server" />
+                <sc:FieldRenderer ID="frRsvp" Parameters="class=button event-rsvp rs_skip" runat="server" FieldName="RSVP for Event" />
                 <a class="button event-calendar rs_skip" href="REPLACE">Add to My Calendar</a>
             </asp:PlaceHolder>
 

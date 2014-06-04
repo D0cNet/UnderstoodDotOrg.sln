@@ -13,6 +13,20 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
 {
     public partial class BaseEventDetailPageItem 
     {
+        public string GetEventType()
+        {
+            // Webinar/chat
+            if (InnerItem.IsOfType(ChatEventPageItem.TemplateId))
+            {
+                return DictionaryConstants.ChatLabel;
+            }
+            else if (InnerItem.IsOfType(WebinarEventPageItem.TemplateId))
+            {
+                return DictionaryConstants.WebinarLabel;
+            }
+
+            return String.Empty;
+        }
         public string GetFormattedEventStartDate()
         {
             DateTime eventDate = EventStartDate.DateTime;
@@ -50,7 +64,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
 
         public bool IsUpcoming()
         {
-            DateTime? utc = GetEventEndDateUtc();
+            DateTime? utc = GetEventEndDateUtc() ?? GetEventStartDateUtc();
             if (utc.HasValue)
             {
                 return utc.Value > DateTime.UtcNow;

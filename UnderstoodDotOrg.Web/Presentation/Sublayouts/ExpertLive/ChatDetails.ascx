@@ -45,7 +45,7 @@
                 <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
 
                 <asp:PlaceHolder ID="phCallToActions" runat="server" Visible="false">
-                    <sc:FieldRenderer ID="frRsvp" Parameters="class=button event-rsvp rs_skip" runat="server" />
+                    <sc:FieldRenderer ID="frRsvp" Parameters="class=button event-rsvp rs_skip" FieldName="RSVP for Event" runat="server" />
                     <a class="button event-calendar rs_skip" href="REPLACE">Add to My Calendar</a>
                 </asp:PlaceHolder>
             </div>

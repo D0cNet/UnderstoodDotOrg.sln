@@ -43,18 +43,19 @@
 </div>
 <!-- end .container -->
 
+<asp:PlaceHolder ID="phEvents" runat="server">
 <div class="container skiplink-content" aria-role="main">
     <!-- BEGIN PARTIAL: about/expert-events -->
-    <div class="expert-events future">
+    <div class="expert-events <%= EventTimeframe %>">
 
         <div class="row expert-events-title">
 
             <div class="col col-18 offset-1">
-                <h3 class="rs_read_this">Robert’s Events</h3>
+                <h3 class="rs_read_this"><sc:FieldRenderer ID="frExpertEventsHeading" runat="server" FieldName="Expert Events Heading" /></h3>
             </div>
-            <div class="col col-3 offset-1 expert-events-see-more">
+            <%--<div class="col col-3 offset-1 expert-events-see-more">
                 <a href="REPLACE" class="see-more">See more</a>
-            </div>
+            </div>--%>
             <!-- /.col -->
 
         </div>
@@ -62,92 +63,56 @@
 
         <div class="expert-event-container">
 
-            <div class="row expert-event rs_read_this">
+            <asp:Repeater ID="rptEvents" runat="server">
+                <ItemTemplate>
+                    <div class="row expert-event rs_read_this">
 
-                <div class="col col-6 offset-1">
-                    <div class="expert-event-image">
-                        <a href="REPLACE">
-                            <img alt="FPO content image" src="http://placehold.it/230x129&amp;text=230x129" /></a>
-                    </div>
-                    <!-- /.expert-event-image -->
-                </div>
-                <!-- /.col -->
-
-                <div class="col col-3 push-13">
-                    <div class="expert-event-type">
-                        <h4>Webinar</h4>
-                        <p class="time-past"><span>8</span> days ago</p>
-                    </div>
-                    <!-- /.expert-event-type -->
-                </div>
-                <!-- /.col -->
-
-                <div class="col col-1 push-9 border-col">
-                    <div>&nbsp;</div>
-                </div>
-
-                <div class="col col-11 offset-1 pull-4">
-                    <div class="expert-event-details">
-                        <p class="date-future">Tue Aug 23 at 8pm EST</p>
-                        <p class="date-past">Tue Aug 23 at 8pm EST</p>
-                        <a href="REPLACE" class="event-title">Time-Blindness and ADHD: Strategies for Becoming More Aware of Time</a>
-                        <h5>Topics Covered</h5>
-                        <p class="topics-covered">Learning Disability, Homework, Organization, Dyslexia, Social Contact, Lorem, Ipsum, Dorem</p>
-                        <div class="links-future">
-                            <a href="REPLACE">Event Details</a>
-                            <a href="REPLACE">RSVP for this event</a>
-                            <a href="REPLACE">Add to my calendar</a>
+                        <div class="col col-6 offset-1">
+                            <div class="expert-event-image">
+                                <asp:HyperLink ID="hlExpertImage" runat="server">
+                                    <asp:Image ID="imgExpert" runat="server" />
+                                </asp:HyperLink>
+                            </div>
+                            <!-- /.expert-event-image -->
                         </div>
-                    </div>
-                    <!-- /.expert-event-details -->
-                </div>
-                <!-- /.col -->
+                        <!-- /.col -->
 
-            </div>
-            <!-- /.row -->
-
-            <div class="row expert-event rs_read_this">
-
-                <div class="col col-6 offset-1">
-                    <div class="expert-event-image">
-                        <a href="REPLACE">
-                            <img alt="FPO content image" src="http://placehold.it/230x129&amp;text=230x129" /></a>
-                    </div>
-                    <!-- /.expert-event-image -->
-                </div>
-                <!-- /.col -->
-
-                <div class="col col-3 push-13">
-                    <div class="expert-event-type">
-                        <h4>Live Chat</h4>
-                        <p class="time-past"><span>8</span> days ago</p>
-                    </div>
-                    <!-- /.expert-event-type -->
-                </div>
-                <!-- /.col -->
-
-                <div class="col col-1 push-9 border-col">
-                    <div>&nbsp;</div>
-                </div>
-
-                <div class="col col-11 offset-1 pull-4">
-                    <div class="expert-event-details">
-                        <p class="date-future">Tue Aug 23 at 8pm EST</p>
-                        <p class="date-past">Tue Aug 23 at 8pm EST</p>
-                        <a href="REPLACE" class="event-title">Live Chat with Dr. Janet Miller</a>
-                        <p class="topics-covered">Executive Director, Exceptional Children’s Assistance Center</p>
-                        <div class="links-future">
-                            <a href="REPLACE">Event Details</a>
-                            <a href="REPLACE">RSVP for this event</a>
-                            <a href="REPLACE">Add to my calendar</a>
+                        <div class="col col-3 push-13">
+                            <div class="expert-event-type">
+                                <h4><asp:Literal ID="litEventType" runat="server" /></h4>
+                                <p class="time-past"><asp:Literal ID="litEventDatePast" runat="server" /></p>
+                            </div>
+                            <!-- /.expert-event-type -->
                         </div>
-                    </div>
-                    <!-- /.expert-event-details -->
-                </div>
-                <!-- /.col -->
+                        <!-- /.col -->
 
-            </div>
-            <!-- /.row -->
+                        <div class="col col-1 push-9 border-col">
+                            <div>&nbsp;</div>
+                        </div>
+
+                        <div class="col col-11 offset-1 pull-4">
+                            <div class="expert-event-details">
+                                <p class="date-<%= EventTimeframe %>"><asp:Literal ID="litEventDate" runat="server" /></p>
+                                <asp:HyperLink ID="hlEventTitle" runat="server" CssClass="event-title">
+                                    <sc:FieldRenderer ID="frEventTitle" runat="server" FieldName="Page Title" />
+                                </asp:HyperLink>
+                                <h5><sc:FieldRenderer ID="frEventHeading" runat="server" FieldName="Event Heading" /></h5>
+                                <p class="topics-covered"><sc:FieldRenderer ID="frEventSubheading" runat="server" FieldName="Event Subheading" /></p>
+                                <asp:PlaceHolder ID="phLinksCta" runat="server" Visible="false">
+                                    <div class="links-future">
+                                        <asp:HyperLink ID="hlEventDetails" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.EventDetailsLabel %></asp:HyperLink>
+                                        <sc:FieldRenderer ID="frRsvpLink" runat="server" FieldName="RSVP for Event" />
+                                        <a href="REPLACE">Add to my calendar</a>
+                                    </div>
+                                </asp:PlaceHolder>
+                            </div>
+                            <!-- /.expert-event-details -->
+                        </div>
+                        <!-- /.col -->
+
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
 
         </div>
         <!-- /.expert-event-container -->
@@ -158,6 +123,7 @@
     <!-- END PARTIAL: about/expert-events -->
 </div>
 <!-- end .container -->
+</asp:PlaceHolder>
 
 <div class="container">
     <!-- BEGIN PARTIAL: about/expert-blog-posts -->
@@ -166,7 +132,7 @@
         <div class="row expert-blog-posts-title">
 
             <div class="col col-18 offset-1">
-                <h3 class="rs_read_this">Robert’s Blog Posts</h3>
+                <h3 class="rs_read_this"><sc:FieldRenderer ID="frExpertBlogsHeading" runat="server" FieldName="Expert Blogs Heading" /></h3>
             </div>
             <div class="col col-3 offset-1 expert-events-see-more">
                 <a href="REPLACE" class="see-more">See more</a>

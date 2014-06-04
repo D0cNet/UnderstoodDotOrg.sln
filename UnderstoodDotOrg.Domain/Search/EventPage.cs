@@ -12,6 +12,9 @@ namespace UnderstoodDotOrg.Domain.Search
 {
     public class EventPage : SearchResultItem
     {
+        [IndexField("expert")]
+        public ID Expert { get; set; }
+
         [IndexField("event_start_date")]
         public DateTime EventStartDate { get; set; }
         

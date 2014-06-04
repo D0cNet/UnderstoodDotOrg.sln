@@ -42,16 +42,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
                 }
 
                 // Webinar/chat
-                if (item.InnerItem.IsOfType(ChatEventPageItem.TemplateId))
-                {
-                    litEventType.Text = DictionaryConstants.ChatLabel;
-                    //phPlayIcon.Visible = false;
-                }
-                else if (item.InnerItem.IsOfType(WebinarEventPageItem.TemplateId))
-                {
-                    litEventType.Text = DictionaryConstants.WebinarLabel;
-                    //phPlayIcon.Visible = true;
-                }
+                litEventType.Text = item.GetEventType();
 
                 // Time elapsed
                 // TODO: consider moving into helper function

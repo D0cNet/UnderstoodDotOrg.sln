@@ -732,18 +732,47 @@ namespace UnderstoodDotOrg.Domain.Search
             {
                 var events = GetCurrentCultureQueryable<EventPage>(context)
                                     .Filter(GetBaseEventPredicate())
-                                    .Filter(i => i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) 
-                                            || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
-                                    .Filter(i => i.EventStartDateUtc >= DateTime.UtcNow)
+                                    .Filter(GetUpcomingEventPredicate())
                                     .OrderBy(i => i.EventStartDate)
+                                    .Take(totalResults)
                                     .ToList();
 
                 // Handle out of synch indexed items
                 return events.Select(i => new BaseEventDetailPageItem(i.GetItem()))
-                                    .Where(i => i.InnerItem != null)
-                                    .Take(totalResults);
+                                    .Where(i => i.InnerItem != null);
             }
         }
+
+        public static IEnumerable<BaseEventDetailPageItem> GetExpertsUpcomingEvents(ID expertId, int totalResults)
+        {
+            // TODO: refactor to use GetUpcomingEvents
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+
+            using (var context = index.CreateSearchContext())
+            {
+                var events = GetCurrentCultureQueryable<EventPage>(context)
+                                    .Filter(GetBaseEventPredicate())
+                                    .Filter(GetUpcomingEventPredicate())
+                                    .Filter(i => i.Expert == expertId)
+                                    .OrderBy(i => i.EventStartDate)
+                                    .Take(totalResults)
+                                    .ToList();
+
+                // Handle out of synch indexed items
+                return events.Select(i => new BaseEventDetailPageItem(i.GetItem()))
+                                    .Where(i => i.InnerItem != null);
+            }
+        }
+
+        public static List<BaseEventDetailPageItem> GetExpertsArchivedEvents(ID expertId, int numEntries)
+        {
+            var pred = PredicateBuilder.True<EventPage>();
+            pred = pred.And(i => i.Expert == expertId);
+
+            int totalResults;
+            return GetArchivedEvents(1, numEntries, out totalResults, pred);
+        }
+
 
         /// <summary>
         /// Get the most upcoming event on the entire site
@@ -858,6 +887,12 @@ namespace UnderstoodDotOrg.Domain.Search
         }
 
         #endregion
+        private static Expression<Func<EventPage, bool>> GetUpcomingEventPredicate()
+        {
+            return (i => (i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) 
+                            || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
+                    && i.EventStartDateUtc >= DateTime.UtcNow);
+        }
 
         private static Expression<Func<EventPage, bool>> GetEventFilterPredicate(string grade, string issue, string topic)
         {
@@ -919,12 +954,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
         private static Expression<Func<EventPage, bool>> GetBaseEventPredicate()
         {
-            var pred = PredicateBuilder.True<EventPage>();
-
-            pred = pred.And(i => i.Language == Sitecore.Context.Language.Name
-                            && i.Path.Contains("/sitecore/content/home/"));
-
-            return pred;
+            return (i => i.Language == Sitecore.Context.Language.Name
+                        && i.Path.Contains("/sitecore/content/home/"));
         }
 
         private static IQueryable<T> GetCurrentCultureQueryable<T>(IProviderSearchContext context) where T : new()
