@@ -22,8 +22,11 @@ using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Recommendation;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
+
     public partial class HomeHeroCarousel : BaseSublayout {
         Member ActiveMember = new Member();
+        protected string CompleteMyProfileUrl { get; set; }
+
         public static IEnumerable<Item> GetAllIssues() {
             var children = Sitecore.Context.Database.GetItem(Constants.IssueContainer.ToString())
                 .GetChildren().FilterByContextLanguageVersion();
@@ -50,6 +53,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
 
         protected void Page_Load(object sender, EventArgs e) {
             HomePageItem ContextItem = Sitecore.Context.Item;
+
+            CompleteMyProfileUrl = IsUserLoggedIn ? MyAccountFolderItem.GetMyProfileStepOnePage().GetUrl() : MyAccountFolderItem.GetSignInPage();
 
             if (UnauthenticatedSessionMember != null) {
                 ActiveMember = UnauthenticatedSessionMember;

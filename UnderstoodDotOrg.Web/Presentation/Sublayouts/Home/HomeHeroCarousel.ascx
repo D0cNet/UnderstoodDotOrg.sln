@@ -159,7 +159,7 @@
                 <div class="col col-6">
 
                     <div class="complete-profile">
-                        <a href="REPLACE">Complete my profile for<br>
+                        <a href="<%= CompleteMyProfileUrl %>">Complete my profile for<br>
                             even better recommendations</a>
                     </div>
 

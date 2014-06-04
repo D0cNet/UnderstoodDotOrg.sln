@@ -5,18 +5,29 @@ using System.Collections.Generic;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Links;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
 {
     public partial class MyAccountFolderItem
     {
-        private static Item MyAccountFolder 
+        private static MyAccountFolderItem MyAccountFolder 
         { 
             get 
             {
                 return Sitecore.Context.Database.GetItem(Sitecore.Context.Site.StartPath).GetChildren().FirstOrDefault(x => x.TemplateID.ToString() == MyAccountFolderItem.TemplateId);
             } 
+        }
+
+        public static MyProfileStepOneItem GetMyProfileStepOnePage()
+        {
+            if (MyAccountFolder != null)
+            {
+                return MyAccountFolder.InnerItem.Children
+                    .FirstOrDefault(i => i.IsOfType(MyProfileStepOneItem.TemplateId));
+            }
+            return null;
         }
 
         public static string GetSignUpPage()
@@ -26,7 +37,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
                 return string.Empty;
             }
             
-            return LinkManager.GetItemUrl(MyAccountFolder.Children.FirstOrDefault(x => x.TemplateID.ToString() == SignUpPageItem.TemplateId));
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == SignUpPageItem.TemplateId));
         }
 
         public static string GetSignInPage()
@@ -36,7 +47,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
                 return string.Empty;
             }
 
-            return LinkManager.GetItemUrl(MyAccountFolder.Children.FirstOrDefault(x => x.TemplateID.ToString() == SignInPageItem.TemplateId));
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == SignInPageItem.TemplateId));
         }
 
         public static string GetForgotPasswordPage()
@@ -46,7 +57,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
                 return string.Empty;
             }
 
-            return LinkManager.GetItemUrl(MyAccountFolder.Children.FirstOrDefault(x => x.TemplateID.ToString() == ForgotPasswordItem.TemplateId));
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == ForgotPasswordItem.TemplateId));
         }
 
         public static string GetResetPasswordPage()
@@ -56,7 +67,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
                 return string.Empty;
             }
 
-            return LinkManager.GetItemUrl(MyAccountFolder.Children.FirstOrDefault(x => x.TemplateID.ToString() == ResetYourPasswordItem.TemplateId));
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == ResetYourPasswordItem.TemplateId));
         }
 
         public static string GetMyAccountPage()
@@ -66,7 +77,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
                 return string.Empty;
             }
 
-            return LinkManager.GetItemUrl(MyAccountFolder.Children.FirstOrDefault(x => x.TemplateID.ToString() == MyAccountItem.TemplateId));
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == MyAccountItem.TemplateId));
         }
 
         public static string GetMyProfilePage()
@@ -76,7 +87,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
                 return string.Empty;
             }
 
-            return LinkManager.GetItemUrl(MyAccountFolder.Children.FirstOrDefault(x => x.TemplateID.ToString() == MyProfileItem.TemplateId));
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == MyProfileItem.TemplateId));
         }
     }
 }
