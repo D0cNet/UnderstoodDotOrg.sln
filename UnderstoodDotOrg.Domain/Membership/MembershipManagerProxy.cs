@@ -154,8 +154,8 @@ namespace UnderstoodDotOrg.Domain.Membership
                         },
                 Grades = new List<Grade>() {
                             new Grade() {
-                                Key = Constants.GradesByValue["3"],
-                                Value = "3",
+                                Key = Guid.Parse("{67AA2A29-E6FF-49B2-9F9E-D29F07C19C23}"),
+                                Value = "Grade 3",
                             }
                         },
             };

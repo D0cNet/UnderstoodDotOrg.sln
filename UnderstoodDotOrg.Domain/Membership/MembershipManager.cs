@@ -135,7 +135,8 @@ namespace UnderstoodDotOrg.Domain.Membership
 
         private Child mapChild(Child child)
         {
-            var tChild = _db.Children.Where(x => x.ChildId == child.ChildId).FirstOrDefault();
+            //var tChild = _db.Children.Where(x => x.ChildId == child.ChildId).FirstOrDefault();
+            var tChild = this.GetChild(child.ChildId);
 
             if (tChild == null)
             {
@@ -154,7 +155,13 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             tChild.HomeLife = child.HomeLife;
             tChild.IEPStatus = child.IEPStatus;
-            tChild.Nickname = child.Nickname;
+            tChild.Nickname = child.Nickname.Trim();
+
+            if (tChild.Nickname.Length > 20)
+            {
+                tChild.Nickname = tChild.Nickname.Substring(0, 20);
+            }
+
             tChild.Section504Status = child.Section504Status;
 
             tChild.Issues.Clear();
@@ -656,15 +663,10 @@ namespace UnderstoodDotOrg.Domain.Membership
                 // use custom provider for authentication
                 var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
 
-                var isExistingUser = provider.ValidateUser(Username, Password);
+                int existingUserCount;
+                var isExistingUser = provider.FindUsersByEmail(Username, 0, 1, out existingUserCount);
 
-                if (isExistingUser)
-                {
-                    Member.MemberId = Guid.Parse(provider.GetUser(Username, true).ProviderUserKey.ToString());
-
-                    return this.UpdateMember(Member);
-                }
-                else
+                if (existingUserCount == 0)
                 {
                     if (Member.MemberId == null || Member.MemberId == Guid.Empty)
                     {
@@ -684,6 +686,10 @@ namespace UnderstoodDotOrg.Domain.Membership
 
 
                     return Member;
+                }
+                else
+                {
+                    throw new Exception("Username is not unique");
                 }
 
             }
@@ -705,17 +711,27 @@ namespace UnderstoodDotOrg.Domain.Membership
             {
                 //using (_db)
                 //{
-                var tChild = mapChild(Child);
-                tChild.Members.Add(_db.Members.Where(x => x.MemberId == MemberId).First());
+                Child = mapChild(Child);
+                Child.Members.Add(_db.Members.Where(x => x.MemberId == MemberId).First());
 
                 _db.Children.Add(Child);
                 _db.SaveChanges();
 
-                return tChild;
+                return Child;
                 //}
             }
-            catch (Exception ex)
+            catch (DbEntityValidationException ex)
             {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
                 throw ex;
             }
         }
@@ -869,8 +885,18 @@ namespace UnderstoodDotOrg.Domain.Membership
 
                 return Member;
             }
-            catch (Exception ex)
+            catch (DbEntityValidationException ex)
             {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
                 throw ex;
             }
 
@@ -891,8 +917,18 @@ namespace UnderstoodDotOrg.Domain.Membership
 
                 return Child;
             }
-            catch (Exception ex)
+            catch (DbEntityValidationException ex)
             {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
                 throw ex;
             }
         }
