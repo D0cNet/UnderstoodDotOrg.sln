@@ -1200,7 +1200,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     var userId = ReadUserId(username);
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                    var requestUrl = GetApiEndPoint(String.Format("comments.xml?UserId={0}", userId));
+                    var requestUrl = GetApiEndPoint(String.Format("comments.xml?PageSize=100&SortBy=CreatedUtcDate&SortOrder=Descending&UserId={0}", userId));
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
