@@ -31,7 +31,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             }
             else
             {
-                this.Visible = false;
+                List<Item> relatedLinks = context.InnerItem.Parent.Children.Where(i => i.InheritsFromType(DefaultArticlePageItem.TemplateId)).Take(3).ToList();
+                rptKeepReading.DataSource = relatedLinks;
+                rptKeepReading.DataBind();
+                if (relatedLinks == null || !(relatedLinks.Count > 0))
+                    this.Visible = false;
             }
         }
 
