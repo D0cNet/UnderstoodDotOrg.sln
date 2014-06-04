@@ -163,6 +163,15 @@ public CustomTextField Summary
 }
 
 
+public CustomTextField Price
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Price"]);
+	}
+}
+
+
 public CustomGeneralLinkField ExternalLink
 {
 	get
@@ -186,6 +195,15 @@ public CustomImageField ThumbnailImage
 	get
 	{
 		return new CustomImageField(InnerItem, InnerItem.Fields["Thumbnail Image"]);
+	}
+}
+
+
+public CustomTextField WhatParentsNeedtoKnow
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["What Parents Need to Know"]);
 	}
 }
 
@@ -258,15 +276,6 @@ public CustomTextField HowParentsCanHelp
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["How Parents Can Help"]);
-	}
-}
-
-
-public CustomTextField Price
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Price"]);
 	}
 }
 

@@ -1673,6 +1673,20 @@
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsSearchBox.ascx.designer.cs">
       <DependentUpon>AssistiveToolsSearchBox.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\ReviewTabs\ParentReviewsTab.ascx.cs">
+      <DependentUpon>ParentReviewsTab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\ReviewTabs\ParentReviewsTab.ascx.designer.cs">
+      <DependentUpon>ParentReviewsTab.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\ReviewTabs\WhatYouNeedToKnowTab.ascx.cs">
+      <DependentUpon>WhatYouNeedToKnowTab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\ReviewTabs\WhatYouNeedToKnowTab.ascx.designer.cs">
+      <DependentUpon>WhatYouNeedToKnowTab.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdvicePage.ascx.designer.cs">
       <DependentUpon>BehaviorToolAdvicePage.ascx</DependentUpon>
     </Compile>
@@ -2610,6 +2624,8 @@
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDetails.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewResults.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsSearchBox.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\ReviewTabs\ParentReviewsTab.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\ReviewTabs\WhatYouNeedToKnowTab.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdvicePage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceResults.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsAdviceVideoPage.ascx" />
