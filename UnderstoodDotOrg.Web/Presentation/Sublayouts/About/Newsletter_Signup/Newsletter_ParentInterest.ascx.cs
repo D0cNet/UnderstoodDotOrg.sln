@@ -2,17 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.ExactTarget;
+using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.Newsletter;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 using UnderstoodDotOrg.Domain.Understood.Newsletter;
 using UnderstoodDotOrg.Framework.UI;
-using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
-using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Services.ExactTarget;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 {
@@ -127,6 +127,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
             MembershipManager mm = new MembershipManager();
             mm.AddUnauthorizedMember(member);
 
+			BaseReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { ToEmail = member.Email, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday" });
+			
             Item next = Sitecore.Context.Database.GetItem(Constants.Pages.NewsletterConfirmation);
             if (next != null) 
             {
