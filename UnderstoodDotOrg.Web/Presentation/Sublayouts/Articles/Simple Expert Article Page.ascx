@@ -46,6 +46,11 @@
                 <FooterTemplate></FooterTemplate>
 
             </asp:Repeater>
+            <style>
+                .expert-question{
+                    min-height: 66px;
+                }
+            </style>
 
 
 
