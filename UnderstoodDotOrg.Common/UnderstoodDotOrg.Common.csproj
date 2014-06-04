@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomItemGenerator">
+      <HintPath>..\Libraries\CustomItemGenerator.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\Libraries\Sitecore.Kernel.dll</HintPath>
     </Reference>

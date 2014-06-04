@@ -100,11 +100,11 @@ public CustomTreeListField Subjects
 }
 
 
-public CustomTextField TargetGrade
+public CustomIntegerField TargetGrade
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Target Grade"]);
+		return new CustomIntegerField(InnerItem, InnerItem.Fields["Target Grade"]);
 	}
 }
 
@@ -145,11 +145,11 @@ public CustomTextField GooglePlayStoreID
 }
 
 
-public CustomTextField OnGrade
+public CustomIntegerField OnGrade
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["On Grade"]);
+		return new CustomIntegerField(InnerItem, InnerItem.Fields["On Grade"]);
 	}
 }
 
@@ -172,11 +172,11 @@ public CustomGeneralLinkField ExternalLink
 }
 
 
-public CustomTextField OffGrade
+public CustomIntegerField OffGrade
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Off Grade"]);
+		return new CustomIntegerField(InnerItem, InnerItem.Fields["Off Grade"]);
 	}
 }
 
@@ -199,11 +199,11 @@ public CustomTextField Description
 }
 
 
-public CustomTextField Quality
+public CustomIntegerField Quality
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Quality"]);
+		return new CustomIntegerField(InnerItem, InnerItem.Fields["Quality"]);
 	}
 }
 
@@ -226,11 +226,11 @@ public CustomTextField CSMID
 }
 
 
-public CustomTextField Learning
+public CustomIntegerField Learning
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Learning"]);
+		return new CustomIntegerField(InnerItem, InnerItem.Fields["Learning"]);
 	}
 }
 
@@ -258,6 +258,15 @@ public CustomTextField HowParentsCanHelp
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["How Parents Can Help"]);
+	}
+}
+
+
+public CustomTextField Price
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Price"]);
 	}
 }
 

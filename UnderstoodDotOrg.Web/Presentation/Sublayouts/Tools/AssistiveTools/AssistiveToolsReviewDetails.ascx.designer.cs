@@ -13,12 +13,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools {
     public partial class AssistiveToolsReviewDetails {
         
         /// <summary>
-        /// rptrScreenshots1 control.
+        /// rptrScreenshots control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptrScreenshots1;
+        protected global::System.Web.UI.WebControls.Repeater rptrScreenshots;
+        
+        /// <summary>
+        /// rptrSubjects control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptrSubjects;
+        
+        /// <summary>
+        /// rptrAppropriateGrades control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptrAppropriateGrades;
     }
 }

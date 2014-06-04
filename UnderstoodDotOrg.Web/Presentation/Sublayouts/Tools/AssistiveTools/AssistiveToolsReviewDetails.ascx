@@ -58,22 +58,13 @@
                                             <div class="rsArrowIcn"></div>
                                         </div>
                                     </div>
-                                    <asp:Repeater ID="rptrScreenshots1" runat="server">
+                                    <asp:Repeater ID="rptrScreenshots" runat="server">
                                         <ItemTemplate>
-                                            <div class="slide active">
+                                            <div class="slide<%# Container.ItemIndex == 0 ? " active" : string.Empty %>">
                                                 <img alt="<%# Eval("Alt") %>" src="<%# Eval("Url") %>" />
                                             </div>
                                         </ItemTemplate>
                                     </asp:Repeater>
-                                    <%--<div class="slide active">
-                                        <img alt="270x180 Placeholder" src="http://placehold.it/270x180&amp;text=Shot+1" />
-                                    </div>
-                                    <div class="slide">
-                                        <img alt="270x180 Placeholder" src="http://placehold.it/270x180&amp;text=Shot+2" />
-                                    </div>
-                                    <div class="slide">
-                                        <img alt="270x180 Placeholder" src="http://placehold.it/270x180&amp;text=Shot+3" />
-                                    </div>--%>
                                 </section>
                             </div>
                             <!-- END PARTIAL: assistive-tech-screenshots-popover -->
@@ -83,14 +74,17 @@
                         <div class="result-ratings-wrap col col-11 offset-1">
                             <div class="result-ratings">
                                 <div class="result-details">
-                                    <h3 class="result-title">Read Me Stories</h3>
-                                    <div class="result-description">amet voluptatum fuga sed quaerat</div>
+                                    <h3 class="result-title"><%= Model.Title.Rendered %></h3>
+                                    <div class="result-description"><%= Model.Summary.Rendered %></div>
                                     <div class="result-keywords">
                                         <ul>
-                                            <li>
-                                                <a href="REPLACE">Reading</a></li>
-                                            <li>
-                                                <a href="REPLACE">Math</a></li>
+                                            <asp:Repeater ID="rptrSubjects" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.MetadataItem">
+                                                <ItemTemplate>
+                                                    <li>
+                                                        <a href="REPLACE"><%# Item.ContentTitle.Rendered %></a>
+                                                    </li>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
                                         </ul>
                                     </div>
                                 </div>
@@ -101,19 +95,13 @@
                                         <div class="grade-scale-wrapper">
                                             <span class="visuallyhidden">rating</span>
                                             <div class="grade-scale">
-                                                <div class="selection grade6">6</div>
-                                                <span class="grade1 grade red rs_skip" aria-hidden="true" role="presentation">1</span>
-                                                <span class="grade2 grade red rs_skip" aria-hidden="true" role="presentation">2</span>
-                                                <span class="grade3 grade yellow rs_skip" aria-hidden="true" role="presentation">3</span>
-                                                <span class="grade4 grade yellow rs_skip" aria-hidden="true" role="presentation">4</span>
-                                                <span class="grade5 grade yellow rs_skip" aria-hidden="true" role="presentation">5</span>
-                                                <span class="grade6 grade green rs_skip" aria-hidden="true" role="presentation">6</span>
-                                                <span class="grade7 grade green rs_skip" aria-hidden="true" role="presentation">7</span>
-                                                <span class="grade8 grade green rs_skip" aria-hidden="true" role="presentation">8</span>
-                                                <span class="grade9 grade green rs_skip" aria-hidden="true" role="presentation">9</span>
-                                                <span class="grade10 grade green rs_skip" aria-hidden="true" role="presentation">10</span>
-                                                <span class="grade11 grade green rs_skip" aria-hidden="true" role="presentation">11</span>
-                                                <span class="grade12 grade green rs_skip" aria-hidden="true" role="presentation">12</span>
+                                                <div class="selection grade<%= Model.TargetGrade.Rendered %>"><%= Model.TargetGrade.Rendered %></div>
+                                                <asp:Repeater ID="rptrAppropriateGrades" runat="server">
+                                                    <ItemTemplate>
+                                                        <span class="grade<%# Eval("Grade") %> grade <%# Eval("Color") %> rs_skip" aria-hidden="true" 
+                                                            role="presentation"><%# Eval("Grade") %></span>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
                                             </div>
                                         </div>
                                         <div class="grade-info-wrapper rs_skip">
@@ -158,7 +146,8 @@
                                                 <span class="visuallyhidden">rating</span>
                                                 <div class="quality-scale">
                                                     <!-- BEGIN PARTIAL: results-slider -->
-                                                    <div class="results-slider blue-four" aria-label="4">4</div>
+                                                    <div class="results-slider blue-<%= SpelledNumbers[Model.Quality.Integer] %>" 
+                                                        aria-label="<%= Model.Quality.Integer %>"><%= Model.Quality.Integer %></div>
                                                     <!-- END PARTIAL: results-slider -->
                                                 </div>
                                             </div>
@@ -224,7 +213,8 @@
                                             <div class="learning-scale-wrapper">
                                                 <div class="learning-scale">
                                                     <!-- BEGIN PARTIAL: results-slider -->
-                                                    <div class="results-slider purple-three" aria-label="3">3</div>
+                                                    <div class="results-slider purple-<%= SpelledNumbers[Model.Learning.Integer] %>" 
+                                                        aria-label="<%= Model.Learning.Integer %>"><%= Model.Learning.Integer %></div>
                                                     <!-- END PARTIAL: results-slider -->
                                                 </div>
                                                 <div class="learning-info-wrapper rs_skip">
@@ -303,13 +293,17 @@
                             <!-- BEGIN PARTIAL: get-this-app -->
                             <div class="get-this-app">
                                 <div class="purchase">Purchase</div>
-                                <div class="price">Price: $0.99</div>
-                                <a href="REPLACE">
+                                <div class="price">Price: <%= Model.Price.Rendered %></div>
+                                <% if (Model.AppleAppStoreID != string.Empty) { %>
+                                <a href="https://itunes.apple.com/app/<%= Model.AppleAppStoreID.Rendered %>">
                                     <img alt="Available in the app store" src="/Presentation/Includes/images/app-store.png" />
                                 </a>
-                                <a href="REPLACE">
+                                <% } 
+                                   if (Model.AppleAppStoreID != string.Empty) { %>
+                                <a href="https://play.google.com/store/apps/details?id=<%= Model.GooglePlayStoreID.Rendered %>">
                                     <img alt="Get it on Google Play" src="/Presentation/Includes/images/play-store.png" />
                                 </a>
+                                <% } %>
                             </div>
                             <!-- END PARTIAL: get-this-app -->
                         </div>
