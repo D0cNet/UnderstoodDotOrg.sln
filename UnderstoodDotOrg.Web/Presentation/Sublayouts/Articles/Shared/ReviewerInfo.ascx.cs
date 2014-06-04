@@ -31,13 +31,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                 {
                     frReviewedby.Item = item.Reviewedby.Item;
                     hlReviewdby.NavigateUrl = item.Reviewedby.Item.GetUrl();
-                }
-                if (item.ReviewedDate.DateTime != null && item.ReviewedDate.DateTime != DateTime.MinValue)// Reviewed date 
-                {
-                    uxReviewDate.Visible = true;
-                    dtReviewdDate.Field = "Reviewed Date";
-                    dtReviewdDate.Format = "dd MMM yy";
-                }
+					
+					if (item.ReviewedDate.DateTime != null && item.ReviewedDate.DateTime != DateTime.MinValue)// Reviewed date 
+					{
+						dtReviewdDate.Field = "Reviewed Date";
+						dtReviewdDate.Format = "dd MMM yy";
+
+						uxReviewDate.Visible = true;
+					}
+				}                
             }
         }
 

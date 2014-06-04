@@ -55,7 +55,7 @@
 
                     <div class="checklist-actions clearfix">
                         <div class="save-answers">
-                            <button class="submit button">Save My Answers</button>
+                            <asp:button runat="server" ID="btnSaveAnswers" class="submit button" Text="Save My Answers" OnClick="btnSaveAnswers_Click" />
                         </div>
                         <div class="download-pdf">
                             <button class="download button gray">Download as PDF</button>

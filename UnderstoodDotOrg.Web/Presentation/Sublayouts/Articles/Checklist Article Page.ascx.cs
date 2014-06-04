@@ -12,6 +12,7 @@ using Sitecore.ContentSearch.SearchTypes;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -97,5 +98,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 }
             }
         }
+
+		protected void btnSaveAnswers_Click(object sender, EventArgs e)
+		{
+			Item savedAnswersRegistration = Sitecore.Context.Database.GetItem(Constants.Pages.Registration1);
+			if (savedAnswersRegistration != null)
+			{
+				Response.Redirect(savedAnswersRegistration.GetUrl());
+			}
+		}
+
+		
     }
 }
