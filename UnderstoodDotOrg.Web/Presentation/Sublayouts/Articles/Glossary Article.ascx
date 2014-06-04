@@ -78,6 +78,7 @@
                     <FooterTemplate></FooterTemplate>
                 </asp:Repeater>
             </section>
+            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx"/>  
             <!-- END PARTIAL: glossary -->
             <!-- BEGIN PARTIAL: reviewed-by -->
             <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false" />
