@@ -224,15 +224,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 }
             }
 
-            if (cbConnections.Checked)
-            {
-                this.registeringUser.allowConnections = true;
-            }
+            this.registeringUser.allowConnections = cbConnections.Checked;
 
-            if (cbNewsLetter.Checked)
-            {
-                this.registeringUser.allowNewsletter = true;
-            }
+            this.registeringUser.allowNewsletter = cbNewsLetter.Checked;
 
             //bg: verify that this is working:
             if (mode != Constants.QueryStrings.Registration.ModeEdit)
