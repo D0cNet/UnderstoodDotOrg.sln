@@ -29,7 +29,7 @@
             <!-- END PARTIAL: helpful-count -->
             <!-- BEGIN PARTIAL: comments-count -->
             <div class="count-comments">
-                <a href="#count-comments">
+                <a href="#comment-submit">
                     <asp:Label ID="lblCommentCount" runat="server"></asp:Label><asp:Literal ID="ltlComments" runat="server"></asp:Literal></a>
             </div>
             <!-- END PARTIAL: comments-count -->
