@@ -504,6 +504,7 @@ namespace UnderstoodDotOrg.Common
             {
                 public const string Mode = "mode";
                 public const string ModeEdit = "edit";
+                public const string ModeAdd = "add";
             }
         }
         public static class UserActivity_Values
