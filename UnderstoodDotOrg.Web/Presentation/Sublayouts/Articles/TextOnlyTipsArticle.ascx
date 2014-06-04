@@ -60,6 +60,12 @@
                             </div>
                         </FooterTemplate>
                     </asp:Repeater>
+                    <style>
+                        .slide-inner img{
+                            width: 100%;
+                            height: auto;
+                        }
+                    </style>
                 </div>
 
                 <asp:Repeater ID="rptSlideButtons" Visible="false" runat="server">
