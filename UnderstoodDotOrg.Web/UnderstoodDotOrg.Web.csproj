@@ -259,6 +259,13 @@
     <Compile Include="Presentation\Sublayouts\About\ExpertListing.ascx.designer.cs">
       <DependentUpon>ExpertListing.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\About\ExpertsDetailPage.ascx.cs">
+      <DependentUpon>ExpertsDetailPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\ExpertsDetailPage.ascx.designer.cs">
+      <DependentUpon>ExpertsDetailPage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\About\ExpertsLandingPage.ascx.cs">
       <DependentUpon>ExpertsLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2408,6 +2415,7 @@
     <Content Include="Presentation\Sublayouts\About\DonationConfirmationPage.ascx" />
     <Content Include="Presentation\Sublayouts\About\DonationPage.ascx" />
     <Content Include="Presentation\Sublayouts\About\ExpertListing.ascx" />
+    <Content Include="Presentation\Sublayouts\About\ExpertsDetailPage.ascx" />
     <Content Include="Presentation\Sublayouts\About\ExpertsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ChildInfo.ascx" />
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_ParentInterest.ascx" />
