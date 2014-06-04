@@ -567,7 +567,37 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             return success;
         }
-      
+        public bool LogMemberActivity_AsDeleted(Guid MemberId, Guid ContentId, string Activity, int ActivityType)
+        {
+            bool successFlag = false;
+            string sql = " UPDATE dbo.MemberActivity " +
+                           " SET Deleted = 1 " +
+                           " WHERE (MemberId = @MemberId) AND " + 
+                                 " ([Key] = @ContentId) AND " + 
+                                 " (Value = @ActivityValue) AND " + 
+                                 " (ActivityType = @ActivityType)";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MemberId", MemberId);
+                        cmd.Parameters.AddWithValue("@ContentId", ContentId);
+                        cmd.Parameters.AddWithValue("@ActivityValue", Activity);
+                        cmd.Parameters.AddWithValue("@ActivityType", ActivityType);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return successFlag;
+        }
 
         /// <summary>
         /// Inserts a row into our member activity log table with information about what the specified user has just done
@@ -577,7 +607,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         /// <param name="Activity">Can be a constant for easy of implementation but you can also passs in a URL or serialized xml</param>
         /// <param name="ActivityType">Constant Int for reporting purposes</param>
         /// <returns></returns>
-        public bool LogMemberActivity(Guid MemberId, Guid ContentId, String Activity, int ActivityType)
+        public bool LogMemberActivity(Guid MemberId, Guid ContentId, string Activity, int ActivityType)
         {
             bool success = false;
             try

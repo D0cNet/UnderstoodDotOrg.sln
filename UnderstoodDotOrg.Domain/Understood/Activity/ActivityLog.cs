@@ -37,7 +37,9 @@ namespace UnderstoodDotOrg.Domain.Understood.Activity
         {
             string sql = " SELECT [Key] AS ContentId, Value AS ActivityValue, ActivityType, DateModified " +
                 " FROM  MemberActivity " +
-                " WHERE (MemberId = @MemberId) AND (Value = @ActivityValue)";
+                " WHERE (MemberId = @MemberId) AND " +
+                      " (Value = @ActivityValue) AND " + 
+                      " (Deleted=0) ";
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
