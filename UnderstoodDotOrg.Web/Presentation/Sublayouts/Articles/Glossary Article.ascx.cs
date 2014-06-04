@@ -26,9 +26,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             sbSidebarPromo.Visible = Model.DefaultArticlePage.ShowPromotionalControl.Checked;
 
-            var relatedArticles = Model.GetTermAnchorList();
+            List<string> relatedArticles = Model.GetTermAnchorList().ToList();
 
-            rptTermCollection.DataSource = relatedArticles.OrderBy(x => x);
+            relatedArticles.Sort((x, y) => string.Compare(x, y));
+
+            rptTermCollection.DataSource = relatedArticles;
             rptTermCollection.DataBind();
 
             rptAlphabet.DataSource = relatedArticles;
@@ -44,9 +46,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     CurrentAnchorName = DistinctTerm;
                     Repeater rptListTermbyAnchor = e.FindControlAs<Repeater>("rptListTermbyAnchor");
-                    IEnumerable<GlossaryTermItem> FinalRelatedArticles = GlossaryPageItem.GetRelatedTermsInfo(Model, DistinctTerm);
+                    List<GlossaryTermItem> FinalRelatedArticles = GlossaryPageItem.GetRelatedTermsInfo(Model, DistinctTerm).ToList();
                     if (FinalRelatedArticles != null)
                     {
+                        FinalRelatedArticles.Sort((x, y) => string.Compare(x.GlossaryTermTitle, y.GlossaryTermTitle));
                         rptListTermbyAnchor.DataSource = FinalRelatedArticles;
                         rptListTermbyAnchor.DataBind();
                     }
