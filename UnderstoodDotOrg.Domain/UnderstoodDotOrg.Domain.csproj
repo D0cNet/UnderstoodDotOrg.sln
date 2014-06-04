@@ -526,12 +526,15 @@
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildDiagnosisItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildDiagnosisItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildDiagnosisItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildDiagnosisItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildIssueItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildIssueItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildIssueItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildIssueItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\GradeLevelItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\GradeLevelItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\GradeLevelItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\GradeLevelItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\CSS\CSSItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\JS\JSItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Parent\ParentInterestItem.base.cs" />

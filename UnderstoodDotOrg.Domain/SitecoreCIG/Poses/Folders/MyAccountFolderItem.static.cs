@@ -89,5 +89,55 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
 
             return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == MyProfileItem.TemplateId));
         }
+
+        public static string GetCompleteMyProfileStepOne()
+        {
+            if (MyAccountFolder == null)
+            {
+                return string.Empty;
+            }
+
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == MyProfileStepOneItem.TemplateId));
+        }
+
+        public static string GetCompleteMyProfileStepTwo()
+        {
+            if (MyAccountFolder == null)
+            {
+                return string.Empty;
+            }
+
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == MyProfileStepTwoItem.TemplateId));
+        }
+
+        public static string GetCompleteMyProfileStepThree()
+        {
+            if (MyAccountFolder == null)
+            {
+                return string.Empty;
+            }
+
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == MyProfileStepThreeItem.TemplateId));
+        }
+
+        public static string GetCompleteMyProfileStepFour()
+        {
+            if (MyAccountFolder == null)
+            {
+                return string.Empty;
+            }
+
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == MyProfileStepFourItem.TemplateId));
+        }
+
+        public static string GetCompleteMyProfileStepFive()
+        {
+            if (MyAccountFolder == null)
+            {
+                return string.Empty;
+            }
+
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == MyProfileStepFiveItem.TemplateId));
+        }
     }
 }
