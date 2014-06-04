@@ -11,40 +11,14 @@
     }(document));
 </script>
 <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-<%--<script type="text/JavaScript">
-    function saveIt() {
-        //check for browser
-
-        if (hdnBrowser.value == 'InternetExplorer/') {
-            document.execCommand('SaveAs');
-        }
-        if (hdnBrowser.value == 'Firefox/') {
-            alert('Firefox');
-        }
-        if (hdnBrowser.value == 'Chrome/') {
-            alert('Chrome');
-        }
-        else {
-            alert(hdnBrowser.value);
-        }
-    }
-</script>--%>
 
 <%--<script >
     function sendemail()
     {
-        
-        window.open('~/Presentation/Sublayouts/Common/ShareNSave_SendEmail.ascx','1398860309009','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=0,left=0,top=0');return false;"
+        window.open('/sitecore/content/Home/Email to Friend.aspx', '1398860309009', 'width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=0,left=0,top=0');
     }
-</script>--%>
-<%--<script runat="server">
-    public void ImgbtnSave1_Click(object sender, ImageClickEventArgs e)
-    {
-        Response.Write(Request.Browser.Browser);
-    }
-</script>--%>
-<!-- BEGIN PARTIAL: share-save -->
-
+</script>
+<!-- BEGIN PARTIAL: share-save -->--%>
 <div class="share-save-container">
     <div class="share-save-social-icon">
         <div class="toggle">
@@ -54,20 +28,45 @@
             <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonPin"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" /></a>
         </div>
     </div>
-
+    <style>
+        .share-save-container div.share-save-icon .icon {
+            vertical-align: top;
+        }
+        .share-save-container div.share-save-icon .icon-save.active, .share-save-container div.share-save-icon .icon-save.active:hover {
+            background-position: -360px 0;
+        }
+    </style>
     <div class="share-save-icon">
         <h3>Share &amp; Save</h3>
         <!-- leave no white space for layout consistency -->
-        <a href="REPLACE" class="icon icon-share">Share</a><span class="tools">
+        <a href="REPLACE" class="icon icon-share">Share</a>
             <span class="tools">
                 <a href="#" class="icon icon-email">Email</a>
-                <a href="#" class="icon icon-save">Save</a><%--<a href="javascript:saveIt()" class="icon icon-save">Save</a>--%>
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:LinkButton ID="lbSave" runat="server" CssClass="icon icon-save" OnClick="lbSave_Click" OnClientClick="changeIcon();"></asp:LinkButton>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <script>
+                    function changeIcon() {
+                        if ("<%= this.LoggedInStatus %>" == "True")
+                            $(".icon-save").addClass("active");
+                    }
+
+                    $(".icon-email").click(function () {
+                        $(".email-a-friend-modal").show();
+                        $(".email-a-friend-modal").css({ "top": "-475px", "overflow": "hidden" });
+                        $(".email-a-friend-modal .modal-dialog").css("opacity", "1");
+                    })
+                </script>
                 <a href="#" class="icon icon-print" onclick="window.print()">Print</a>
                 <%--OOS for this release--%>
                 <%--<a href="#" class="icon icon-remind">Remind</a>--%>
                 <%--When You need it check MembershipManager.LogMemberActivity(x,y,z,q). Sample usage is in Sandbox.ascx.cs--%>
 
-                <a href="#" class="icon icon-rss">RSS</a></span>
+                <%--<a href="#" class="icon icon-rss">RSS</a></span>--%>
         </span>
 
     </div>
