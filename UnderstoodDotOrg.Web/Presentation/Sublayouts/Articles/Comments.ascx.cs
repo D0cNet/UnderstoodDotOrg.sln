@@ -30,6 +30,42 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             Item currentItem = Sitecore.Context.Item;
 
+            // Check to make sure the sitecore item has telligent fields populated
+            // If not, populate them
+            if (currentItem["BlogId"] == string.Empty || currentItem["ContentId"] == string.Empty
+                || currentItem["ContentTypeId"] == string.Empty || currentItem["TelligentUrl"] == string.Empty)
+            {
+                if ((currentItem.InheritsFromType(DefaultArticlePageItem.TemplateId)
+                    || currentItem.InheritsTemplate(BehaviorAdvicePageItem.TemplateId))
+                    && currentItem.Name != "__StandardValues")
+                {
+                    if (currentItem["BlogId"] == string.Empty)
+                    {
+                        PopulateTelligentFields(currentItem, 4, currentItem.Name); //blog id should be 4
+                    }
+                }
+                else if (currentItem.InheritsFromType(BlogsPostPageItem.TemplateId) && currentItem.Name != "__StandardValues")
+                {
+                    if (currentItem["BlogId"] == string.Empty)
+                    {
+                        switch (currentItem.Parent.ID.ToString())
+                        {
+                            case "{37478172-CCDF-454E-BABA-D56096EBE8F9}":
+                                PopulateTelligentFields(currentItem, 1, currentItem.Name); //blog id should be 1
+                                break;
+                            case "{23DC4EBA-B296-46A7-AC68-D813C9931AF0}":
+                                PopulateTelligentFields(currentItem, 2, currentItem.Name); //blog id should be 2
+                                break;
+                            case "{A720AAA9-8AC8-4851-A873-0E0F158C61BD}":
+                                PopulateTelligentFields(currentItem, 3, currentItem.Name); //blog id should be 3
+                                break;
+                            default:
+                                return;
+                        }
+                    }
+                }
+            }
+
             // TODO: refactor so pages all inherit a shared template item type
             var fieldBlogId = currentItem.Fields[Constants.TelligentFieldNames.BlogId];
             var fieldBlogPostId = currentItem.Fields[Constants.TelligentFieldNames.BlogPostId];
@@ -146,6 +182,50 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             Console.WriteLine(xml);
 
             PopulateComments();
-        }       
+        }
+        private void PopulateTelligentFields(Item item, int blogId, string title)
+        {
+            BlogPost blogPost = new BlogPost();
+
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
+                    var requestUrl = CommunityHelper.GetApiEndPoint(String.Format("blogs/{0}/posts/{1}.xml", blogId, title));
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/BlogPost");
+
+                        var contentId = node["ContentId"].InnerText;
+                        var contentTypeId = node["ContentTypeId"].InnerText;
+                        var contentUrl = node["Url"].InnerText;
+                        var blogPostId = node["Id"].InnerText;
+                        var telligentUrl = node["Url"].InnerText;
+
+                        string PublishedDate = CommunityHelper.FormatDate(node["PublishedDate"].InnerText);
+
+                    item.Editing.BeginEdit();
+                    try
+                    {
+                        item["BlogPostId"] = blogPostId;
+                        item["BlogId"] = blogId.ToString();
+                        item["ContentId"] = contentId;
+                        item["TelligentUrl"] = telligentUrl;
+                        item["ContentTypeId"] = contentTypeId;
+                    }
+                    catch
+                    {
+                    }
+                    item.Editing.EndEdit();
+
+                }
+                catch { } // TODO: Add logging
+            }
+        }
     }
 }

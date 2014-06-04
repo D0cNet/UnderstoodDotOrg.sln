@@ -5,7 +5,7 @@
         <p class="byline">
             <sc:FieldRenderer id="BlogDate" runat="server" fieldname="Date" />
             by <a id="linkAuthor" runat="server">
-                <sc:FieldRenderer id="BlogAuthor" runat="server" fieldname="Author" />
+                <sc:FieldRenderer id="frBlogAuthor" runat="server" fieldname="Author" />
             </a>
         </p>
     </header>
@@ -23,7 +23,7 @@
         </a>
 
         <div class="author-details">
-            <a class="author-name" href="REPLACE"><sc:FieldRenderer runat="server" fieldname="Author" /></a>
+            <a class="author-name" id="linkAuthor2" runat="server"><sc:FieldRenderer id="frBlogAuthor2" runat="server" fieldname="Author" /></a>
             <a class="author-more-posts" href="REPLACE">More Posts by this Author</a>
             <p class="author-description">Repellat labore magni placeat ea magnam quo veritatis laboriosam amet voluptas necessitatibus sed</p>
         </div>
