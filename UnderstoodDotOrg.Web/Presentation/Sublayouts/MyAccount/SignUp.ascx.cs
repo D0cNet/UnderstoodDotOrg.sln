@@ -77,7 +77,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             }
 
             if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
-            {
+            {                
                 // damnit barry, this is how you get ants. 
                 // the site keeps breaking when we test, and its breaking ugly.
                 // if someone clicks to create a new user, we have to blow up the existing user or we're going to have a problem.
@@ -99,9 +99,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                 var membershipManager = new MembershipManager();
 
-                // helps to call the right addMember method...
-                this.registeringUser = membershipManager.AddMember(this.registeringUser, email, password);
-                
+                try
+                {
+                    // helps to call the right addMember method...
+                    this.registeringUser = membershipManager.AddMember(this.registeringUser, email, password);
+                }
+                catch (Exception ex)
+                {
+                    uxErrorMessage.Text = ex.Message;
+                    return;
+                }
+
                 this.CurrentMember = this.registeringUser;
                 this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
                 var termsAndConditionsPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetTermsandConditionsPage();
@@ -111,6 +119,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             else
             {
                 //something failed...
+                uxErrorMessage.Text = "Please provide your name, email address, and a password to create your account";
             }
         }
     }

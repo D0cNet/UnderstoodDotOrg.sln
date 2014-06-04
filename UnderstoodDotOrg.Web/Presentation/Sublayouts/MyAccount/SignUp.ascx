@@ -78,6 +78,9 @@
                     </span>
                 </div>
             </div>
+            <div>
+                <asp:Literal ID="uxErrorMessage" runat="server"></asp:Literal>
+            </div>
 
             <div class="sign-up-newsletter">
                 <label for="email-checkbox">
