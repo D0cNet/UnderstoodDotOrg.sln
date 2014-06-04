@@ -585,13 +585,13 @@ namespace UnderstoodDotOrg.Domain.Membership
 
                 string sql = "INSERT INTO dbo.MemberActivity " +
                                         " ([Key], MemberId, ActivityType, Value) " +
-                                        " VALUES (@Key,@MemberId, @ActivityType, @Value)";
+                                        " VALUES (@Key, @MemberId, @ActivityType, @Value)";
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
                 {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Key", Guid.NewGuid()); //?:toteswatever.what
+                        cmd.Parameters.AddWithValue("@Key", ContentId);
                         cmd.Parameters.AddWithValue("@MemberId", MemberId);
                         cmd.Parameters.AddWithValue("@ActivityType", ActivityType);
                         cmd.Parameters.AddWithValue("@Value", Activity); //UnderstoodDotOrg.Common.Constants.UserActivityTypes.Favorited // - * example
