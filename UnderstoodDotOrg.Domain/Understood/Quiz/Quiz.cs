@@ -16,6 +16,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Quiz
         public Quiz()
         {
             this.MemberAnswers  = new HashSet<QuizItem>();
+
         }
     }
 

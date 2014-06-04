@@ -567,6 +567,8 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             return success;
         }
+      
+
         /// <summary>
         /// Inserts a row into our member activity log table with information about what the specified user has just done
         /// </summary>
@@ -985,5 +987,6 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             return _db.Members.ToList();
         }
+
     }
 }
