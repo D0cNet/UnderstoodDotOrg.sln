@@ -87,6 +87,7 @@
 
 <!-- BEGIN PARTIAL: tools -->
 <!-- Tools -->
+<sc:Sublayout Path="~/Presentation/Sublayouts/Articles/QuizTryMoreQuizzes.ascx" runat="server"></sc:Sublayout>
 
 <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/QuizMiniToolsContainer.ascx" runat="server"></sc:Sublayout>
 <!-- .container -->
