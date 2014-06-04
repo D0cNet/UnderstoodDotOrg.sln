@@ -217,13 +217,6 @@
     <Compile Include="Presentation\Sublayouts\About\404Page.ascx.designer.cs">
       <DependentUpon>404Page.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\About\AboutExpertDetail.ascx.cs">
-      <DependentUpon>AboutExpertDetail.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\About\AboutExpertDetail.ascx.designer.cs">
-      <DependentUpon>AboutExpertDetail.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\About\AboutPartners.ascx.cs">
       <DependentUpon>AboutPartners.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2409,7 +2402,6 @@
     <Content Include="Presentation\Layouts\Browser.aspx" />
     <Content Include="Presentation\MembershipTest.aspx" />
     <Content Include="Presentation\Sublayouts\About\404Page.ascx" />
-    <Content Include="Presentation\Sublayouts\About\AboutExpertDetail.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutPartners.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutPartner_Details.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutUnderstood.ascx" />

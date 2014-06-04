@@ -307,8 +307,6 @@
     <Compile Include="SitecoreCIG\Poses\PageResources\Items\KnowledgeQuizArticlePage\KnowledgeQuizResultItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Items\KnowledgeQuizArticlePage\MultipleChoiceQuestionItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\PageResources\Items\KnowledgeQuizArticlePage\TrueFalseQuestionItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutExpertsItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutExpertsItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutPartnersItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutPartnersItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutSectionPageItem.base.cs" />
