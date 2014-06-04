@@ -14,7 +14,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (CurrentMember == null)
+            if (CurrentMember.ScreenName == null)
             {
                 pnlNoProfile.Visible = true;
             }

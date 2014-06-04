@@ -25,7 +25,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
         {
             if (!IsPostBack)
             {
-                if (CurrentMember == null)
+                if (CurrentMember.ScreenName == null)
                 {
                     pnlNoProfile.Visible = true;
                 }
