@@ -16,6 +16,11 @@
                 <sc:fieldrenderer fieldname="Body Content" runat="server"></sc:fieldrenderer>
             </div>
         </div>
+        <style>
+            .toolkit-overlay .offset-1 img{
+                width: 100% !important;
+            }
+        </style>
         <!-- END toolkit-overlay -->
         <!-- END PARTIAL: article-toolkit-intro -->
     </div>
