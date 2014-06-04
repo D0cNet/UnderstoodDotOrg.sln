@@ -23,8 +23,9 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
         {
             var itm = Sitecore.Events.Event.ExtractParameter(args, 0) as Item;
 
-            if (itm.InheritsFromType(DefaultArticlePageItem.TemplateId)
+            if ((itm.InheritsFromType(DefaultArticlePageItem.TemplateId)
                 || itm.InheritsTemplate(BehaviorAdvicePageItem.TemplateId))
+                && itm.Name != "__StandardValues")
             {
                 if (itm["BlogId"] == string.Empty)
                 {
