@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnderstoodDotOrg.Domain.Understood.Activity
 {
-    class ActivityItem
+    public class ActivityItem
     {
         public Guid ContentId { get; set; }
         public Guid MemberId { get; set; }

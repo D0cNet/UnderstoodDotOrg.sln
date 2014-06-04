@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace UnderstoodDotOrg.Domain.Understood.Activity
 {
 
-    class ActivityLog
+    public class ActivityLog
     {
         public virtual ICollection<ActivityItem> Activities { get; set; }
        

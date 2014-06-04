@@ -9,12 +9,22 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.Understood.Quiz;
 
+using UnderstoodDotOrg.Domain.Understood.Activity;
+
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
 {
     public partial class Sandbox : BaseSublayout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ActivityLog log = new ActivityLog(new Guid("810EBB87-14E1-4DAF-8EAE-F69E1754C640"), Constants.UserActivity_Values.Favorited);
+
+            foreach (ActivityItem item in log.Activities)
+            {
+                Response.Write("ContentId: " + item.ContentId  + Environment.NewLine);
+                Response.Write("ActivityValue: " + item.ActivityValue + Environment.NewLine + "------------------" + Environment.NewLine);
+            }
+
             string targetUrl = "http://www.somethinghostedonconvio.com/myarticle.php";
             txtActivityValue.Text  = targetUrl  ;
             txtActivityType.Text = UnderstoodDotOrg.Common.Constants.UserActivity_Types.Advocacy_Page.ToString();
@@ -39,7 +49,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             //           this.CurrentMember.AgreedToSignUpTerms;
  
 
-            
+           
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
