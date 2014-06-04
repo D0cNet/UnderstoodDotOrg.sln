@@ -8,7 +8,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
     {
         private void Page_Load(object sender, EventArgs e)
         {
-            // Put user code to initialize the page here
+            BindEvents();
+            BindContent();
+            BindControls();
+        }
+
+        private void BindEvents()
+        {
+
+        }
+
+        private void BindContent()
+        {
+            imgExpert.ImageUrl = Model.GetThumbnailUrl(189, 189);
+        }
+
+        private void BindControls()
+        {
+
         }
     }
 }
