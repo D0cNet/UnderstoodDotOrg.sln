@@ -15,10 +15,13 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.PageResources.Folders.Assessment
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.PageResources.Items.AssessmentQuizArticlePage;
 using Sitecore.Web.UI.WebControls;
 using Newtonsoft.Json;
+using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Domain.Understood.Quiz;
+using UnderstoodDotOrg.Domain.Membership;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
-    public partial class Assessment_Quiz : System.Web.UI.UserControl
+    public partial class Assessment_Quiz : BaseSublayout
     {
         private Item PageResources = Sitecore.Context.Item.Children.FirstOrDefault();
         private int PageNumber = 1;
@@ -107,7 +110,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 }
             }
 
+            if (IsUserLoggedIn)
+                SaveQuiz();
+
             Reset();
+        }
+
+        private void SaveQuiz()
+        {
+            Guid thisGuid = Sitecore.Context.Item.ID.ToGuid();
+            Quiz quiz = new Quiz();
+            quiz.QuizID = thisGuid;
+            Dictionary<string, QuestionAnswer> AnswerTracker = (Dictionary<string, QuestionAnswer>)Session["AnsweredQuestions"];
+
+            foreach (KeyValuePair<string, QuestionAnswer> question in AnswerTracker)
+            {
+                quiz.MemberAnswers.Add(new QuizItem(new Guid(question.Key), question.Value.Answer));
+            }
+
+            try
+            {
+                MembershipManager mgr = new MembershipManager();
+                mgr.QuizResults_SaveToDb(CurrentMember.MemberId, quiz);
+            }
+            catch
+            { 
+            
+            }
         }
 
         private int CalculateScore()
@@ -147,21 +176,39 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         private void SetUpQuestionsTracker()
         {
+            Quiz savedQuiz = null;
+            if (CurrentMember != null)
+            {
+                try
+                {
+                    MembershipManager mgr = new MembershipManager();
+                    CurrentMember = mgr.QuizResults_FillMember(CurrentMember);
+                    savedQuiz = CurrentMember.CompletedQuizes.Where(i => i.QuizID == Sitecore.Context.Item.ID.ToGuid()).FirstOrDefault<Quiz>();
+                }
+                catch
+                { 
+                       
+                }
+            }
+
             Dictionary<string, QuestionAnswer>  answeredQuestions = new Dictionary<string, QuestionAnswer>();
 
             foreach (Item i in Pages)
             {
                 foreach (Item j in i.Children)
                 {
-                    if (j.IsOfType(AssessmentTrueFalseItem.TemplateId))
+                    QuizItem potentialPreviousAnswer = null;
+
+                    if (savedQuiz != null)
+                        potentialPreviousAnswer = savedQuiz.MemberAnswers.Where(k => k.QuestionId == j.ID.ToGuid()).FirstOrDefault();
+
+                    if (j.IsOfType(AssessmentTrueFalseItem.TemplateId) || j.IsOfType(AssessmentMultipleChoiceItem.TemplateId))
                     {
-                        AssessmentTrueFalseItem question = (AssessmentTrueFalseItem)j;
-                        answeredQuestions.Add(question.InnerItem.ID.ToString(), new QuestionAnswer(question, ""));
-                    }
-                    else if (j.IsOfType(AssessmentMultipleChoiceItem.TemplateId))
-                    {
-                        AssessmentMultipleChoiceItem question = (AssessmentMultipleChoiceItem)j;
-                        answeredQuestions.Add(question.InnerItem.ID.ToString(), new QuestionAnswer(question, ""));                     
+                        string answerValue = "";
+                        if (potentialPreviousAnswer != null)
+                            answerValue = potentialPreviousAnswer.AnswerValue;
+
+                        answeredQuestions.Add(j.ID.ToString(), new QuestionAnswer(j, answerValue));
                     }
                 }
             }
@@ -282,14 +329,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         ddlQuestion.Items.Add(new ListItem(Question.DropDownDefaultText));
 
                         foreach (Item i in Question.InnerItem.Children)
-                        {
                             ddlQuestion.Items.Add(new ListItem(i.Fields["Answer"].ToString()));
-                        }
 
                         if (alreadyAnswered)
-                        {
                             ddlQuestion.Items.FindByText(AnswerTracker[question.ID.ToString()].Answer).Selected = true;
-                        }
 
                         ddlQuestion.Items.FindByText(Question.DropDownDefaultText).Value = "";
 
@@ -300,14 +343,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         rblAnswer.Attributes.Add("data-id", question.ID.ToString());
 
                         foreach (Item i in Question.InnerItem.Children)
-                        {
                             rblAnswer.Items.Add(new ListItem(i.Fields["Answer"].ToString()));
-                        }
 
                         if (alreadyAnswered)
-                        {
                             rblAnswer.Items.FindByText(AnswerTracker[question.ID.ToString()].Answer).Selected = true;
-                        }
 
                         pnlRadioQuestion.Visible = true;
                     }
