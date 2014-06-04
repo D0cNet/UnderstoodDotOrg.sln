@@ -124,7 +124,7 @@
             </asp:Panel>
             <asp:Panel runat="server" ID="pnlNoProfile" Visible="false">
                 <p class="empty">
-                    You don't have a community profile, to create one please
+                    You don't have a community profile, to create one please 
                         <asp:HyperLink CssClass="comment-link" ID="hypCompleteYourProfile" runat="server">click here.</asp:HyperLink>
                 </p>
             </asp:Panel>
