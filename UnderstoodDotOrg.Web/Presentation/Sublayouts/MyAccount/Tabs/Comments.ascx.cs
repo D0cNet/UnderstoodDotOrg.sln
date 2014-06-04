@@ -15,18 +15,29 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
 {
     public partial class Comments : BaseSublayout<AccountCommentsPageItem>
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-            var commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
-            
-            if (commentsList != null)
+            if (CurrentMember == null)
             {
-                rptComments.DataSource = commentsList;
-                rptComments.DataBind();
+                pnlNoProfile.Visible = true;
+            }
+            else
+            {
+                var commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
+
+                if ((commentsList != null) && (commentsList.Count != 0))
+                {
+                    pnlComments.Visible = true;
+                    rptComments.DataSource = commentsList;
+                    rptComments.DataBind();
+                }
+                else
+                {
+                    pnlNoComments.Visible = true;
+                }
             }
         }
-        
+
         protected void rptComments_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             var item = e.Item.DataItem as Comment;
@@ -45,7 +56,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
 
             Literal litLikes = (Literal)e.Item.FindControl("litLikes");
             litLikes.Text = item.Likes;
-            
+
             HtmlGenericControl commentGroupSpan = (HtmlGenericControl)e.Item.FindControl("commentGroupSpan");
             HyperLink hypCommentGroup = (HyperLink)e.Item.FindControl("hypCommentGroup");
             if (item.ParentTitle.Equals("Site Root"))

@@ -22,6 +22,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
         protected global::System.Web.UI.WebControls.Label lblCount;
         
         /// <summary>
+        /// pnlComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlComments;
+        
+        /// <summary>
         /// rptComments control.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hypCommentsTab;
+        
+        /// <summary>
+        /// pnlNoComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNoComments;
+        
+        /// <summary>
+        /// pnlNoProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNoProfile;
+        
+        /// <summary>
+        /// hypCompleteYourProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypCompleteYourProfile;
     }
 }

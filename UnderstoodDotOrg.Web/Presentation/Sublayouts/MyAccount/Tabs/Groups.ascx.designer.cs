@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
     public partial class Groups {
         
         /// <summary>
+        /// divDdlGroups control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDdlGroups;
+        
+        /// <summary>
         /// ddlGroups control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlGroups;
+        
+        /// <summary>
+        /// pnlGroups control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlGroups;
         
         /// <summary>
         /// hypStartADiscussion control.
@@ -38,6 +56,51 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptComments;
+        
+        /// <summary>
+        /// pnlNoGroups control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNoGroups;
+        
+        /// <summary>
+        /// hypAllGroups control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypAllGroups;
+        
+        /// <summary>
+        /// pnlNoProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNoProfile;
+        
+        /// <summary>
+        /// hypCompleteYourProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypCompleteYourProfile;
+        
+        /// <summary>
+        /// divStartADiscussion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divStartADiscussion;
         
         /// <summary>
         /// txtSubject control.

@@ -25,20 +25,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
         {
             if (!IsPostBack)
             {
-                List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
-                ddlGroups.DataSource = groupsList;
-                ddlGroups.DataValueField = "Url";
-                ddlGroups.DataTextField = "Title";
-                ddlGroups.DataBind();
-                if (ddlGroups.Items.Count != 0)
+                if (CurrentMember == null)
                 {
-                    hypStartADiscussion.NavigateUrl = ddlGroups.SelectedItem.Value + "/MyDiscussion%20Board";
-                    var commentsList = CommunityHelper.ReadComments();
-                    var commentsByGroup = commentsList.Where(x => x.ParentTitle == ddlGroups.SelectedItem.Text);
-                    if (commentsList != null)
+                    pnlNoProfile.Visible = true;
+                }
+                else
+                {
+                    List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
+                    ddlGroups.DataSource = groupsList;
+                    ddlGroups.DataValueField = "Url";
+                    ddlGroups.DataTextField = "Title";
+                    ddlGroups.DataBind();
+                    if (ddlGroups.Items.Count != 0)
                     {
-                        rptComments.DataSource = commentsByGroup;
-                        rptComments.DataBind();
+                        pnlGroups.Visible = true;
+                        divStartADiscussion.Visible = true;
+                        hypStartADiscussion.NavigateUrl = ddlGroups.SelectedItem.Value + "/MyDiscussion%20Board";
+                        var commentsList = CommunityHelper.ReadComments();
+                        var commentsByGroup = commentsList.Where(x => x.ParentTitle == ddlGroups.SelectedItem.Text);
+                        if (commentsList != null)
+                        {
+                            rptComments.DataSource = commentsByGroup;
+                            rptComments.DataBind();
+                        }
+                    }
+                    else
+                    {
+                        pnlNoGroups.Visible = true;
                     }
                 }
             }

@@ -14,17 +14,29 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountFavorites);
-            hypFavoritesTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
-
-            var favoritesList = CommunityHelper.GetFavorites(CurrentMember.ScreenName);
-
-            litCount.Text = favoritesList != null ? favoritesList.Count.ToString() : "0";
-
-            if ((favoritesList != null) && (favoritesList.Count != 0))
+            if (CurrentMember == null)
             {
-                rptFavorites.DataSource = favoritesList.Count == 1 ? favoritesList.GetRange(0, 1) : favoritesList.GetRange(0, 2);
-                rptFavorites.DataBind();
+                pnlNoProfile.Visible = true;
+            }
+            else
+            {
+                var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountFavorites);
+                hypFavoritesTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
+
+                var favoritesList = CommunityHelper.GetFavorites(CurrentMember.ScreenName);
+
+                litCount.Text = favoritesList != null ? favoritesList.Count.ToString() : "0";
+
+                if ((favoritesList != null) && (favoritesList.Count != 0))
+                {
+                    pnlFavorites.Visible = true;
+                    rptFavorites.DataSource = favoritesList.Count < 3 ? favoritesList.GetRange(0, favoritesList.Count) : favoritesList.GetRange(0, 3);
+                    rptFavorites.DataBind();
+                }
+                else
+                {
+                    pnlNoProfile.Visible = true;
+                }
             }
         }
 

@@ -15,15 +15,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountGroups);
-            hypGroupsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
-
-            List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
-            litCount.Text = groupsList != null ? groupsList.Count.ToString() : "0";
-            if ((groupsList != null)&&(groupsList.Count != 0))
+            if (CurrentMember == null)
             {
-                rptGroups.DataSource = groupsList.Count == 1 ? groupsList.GetRange(0, 1) : groupsList.GetRange(0, 2); ;
-                rptGroups.DataBind();
+                pnlNoProfile.Visible = true;
+            }
+            else
+            {
+                var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountGroups);
+                hypGroupsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
+
+                List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
+                litCount.Text = groupsList != null ? groupsList.Count.ToString() : "0";
+                if ((groupsList != null) && (groupsList.Count != 0))
+                {
+                    pnlGroups.Visible = true;
+                    rptGroups.DataSource = groupsList.Count < 3 ? groupsList.GetRange(0, groupsList.Count) : groupsList.GetRange(0, 3); ;
+                    rptGroups.DataBind();
+                }
+                else
+                {
+                    pnlNoGroups.Visible = true;
+                }
             }
         }
 

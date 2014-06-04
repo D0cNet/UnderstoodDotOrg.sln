@@ -21,18 +21,29 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //var commentsList = CommunityHelper.ListUserComments(CurrentUser.UserName);
-            var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountComments);
-            hypCommentsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
-
-            List<Comment> commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
-
-            lblCount.Text = commentsList.Count.ToString();
-
-            if ((commentsList != null)&&(commentsList.Count != 0))
+            if (CurrentMember == null)
             {
-                rptComments.DataSource = commentsList.Count == 1 ? commentsList.GetRange(0, 1) : commentsList.GetRange(0, 2);
-                rptComments.DataBind();
+                pnlNoProfile.Visible = true;
+            }
+            else
+            {
+                var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountComments);
+                hypCommentsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
+
+                List<Comment> commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
+
+                lblCount.Text = commentsList.Count.ToString();
+
+                if ((commentsList != null) && (commentsList.Count != 0))
+                {
+                    pnlComments.Visible = true;
+                    rptComments.DataSource = commentsList.Count == 1 ? commentsList.GetRange(0, 1) : commentsList.GetRange(0, 2);
+                    rptComments.DataBind();
+                }
+                else
+                {
+                    pnlNoComments.Visible = true;
+                }
             }
         }
 

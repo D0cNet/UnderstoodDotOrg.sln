@@ -14,9 +14,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var favoritesList = CommunityHelper.GetFavorites(CurrentMember.ScreenName);
-            rptFavorites.DataSource = favoritesList;
-            rptFavorites.DataBind();
+            if (CurrentMember == null)
+            {
+                pnlNoProfile.Visible = true;
+            }
+            else
+            {
+                var favoritesList = CommunityHelper.GetFavorites(CurrentMember.ScreenName);
+                if ((favoritesList != null) && (favoritesList.Count != 0))
+                {
+                    pnlFavorites.Visible = true;
+                    rptFavorites.DataSource = favoritesList;
+                    rptFavorites.DataBind();
+                }
+                else
+                {
+                    pnlNoProfile.Visible = true;
+                }
+            }
         }
 
         protected void rptFavorites_ItemDataBound(object sender, RepeaterItemEventArgs e)
