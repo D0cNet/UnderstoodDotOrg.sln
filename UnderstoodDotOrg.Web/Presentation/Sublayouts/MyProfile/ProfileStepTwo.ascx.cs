@@ -6,188 +6,334 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.Users;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
-    public partial class ProfileStepTwo : BaseRegistration
+    public partial class ProfileStepTwo : BaseRegistration<MyProfileStepTwoItem>
     {
+        string status = "cmp"; //"cmp", "edit", "add"
+        string pronoun = "your child";
+        Child singleChild;
+
+        #region Page_Load support
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(Request.QueryString[Constants.QueryStrings.Registration.Mode]))
+            {
+                status = Request.QueryString[Constants.QueryStrings.Registration.Mode];
+            }
+
+            this.FillChild();
+
+            if (!IsPostBack)
+            {
+                //don't do this, and we won't have anything to save...
+                this.DoSetup();
+            }
+        }
+
+        protected void FillChild()
+        {
+            switch (status)
+            {
+                case Constants.QueryStrings.Registration.ModeEdit:
+                    //fill singleChild with selected child
+                    if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Count > 0)
+                    {
+                        singleChild = CurrentMember.Children.FirstOrDefault();
+                    }
+                    else
+                    {
+                        MembershipManagerProxy mmp = new MembershipManagerProxy();
+                        singleChild = mmp.GetChild(Guid.Empty);
+                    }
+
+                    break;
+                case Constants.QueryStrings.Registration.ModeAdd:
+                    //just new it up!
+                    singleChild = new Child();
+                    singleChild.Members.Add(new Member() { MemberId = this.CurrentMember.MemberId });
+
+                    break;
+                default:
+                    //fill singleChild with next child to work on
+                    foreach (var child in this.registeringUser.Children)
+                    {
+                        //has nickname and grade filled in, but no issues - next to work on
+                        if (string.IsNullOrEmpty(child.Nickname) && child.Issues.Count == 0)
+                        {
+                            singleChild = child;
+                            break;
+                        }
+                    }
+
+                    break;
+            }
+        }
+
+        protected void DoSetup()
+        {
+            //cast to ListItem so we can better map over fields for name/value
+            var grades = GradeLevelItem.GetGrades().Select(x => new ListItem(x.Name, x.ID.ToString()));
+            uxSelectGrade.DataSource = grades;
+            uxSelectGrade.DataTextField = "Text";
+            uxSelectGrade.DataValueField = "Value";
+            uxSelectGrade.DataBind();
+
+            switch (status)
+            {
+                case Constants.QueryStrings.Registration.ModeEdit:
+                    this.SetupChildEdit();
+
+                    break;
+                case Constants.QueryStrings.Registration.ModeAdd:
+                    this.SetupChildAdd();
+
+                    break;
+                default:
+                    this.SetupCompleteMyProfile();
+
+                    break;
+            }
+
             NextButton.Text = NextButtonText;
 
-            MyProfileStepTwoItem currentItem = Sitecore.Context.Item;
+            uxIssues.DataSource = ChildIssueItem.GetIssues();
+            uxIssues.DataBind();
 
+            uxTroubleAreasTitle.Text = Model.TroubleAreasQuestionTitle.Rendered.Replace("$pronoun$", pronoun);
+            uxEvaluatedTitle.Text = Model.FormallyEvaluatedQuestionTitle.Rendered.Replace("$pronoun$", pronoun);
+        }
+
+        private string setPronoun(string gender)
+        {
+            return gender == "boy" ? "he" : "she";
+        }
+
+        protected void SetupCompleteMyProfile()
+        {
             string grade = string.Empty;
             string gender = string.Empty;
 
-            var child = this.registeringUser.Children.Where(x => x.Issues.Count == 0).FirstOrDefault();
+            singleChild = this.registeringUser.Children.Where(x => x.Issues.Count == 0).FirstOrDefault();
 
-            if (child != null)
+            if (singleChild != null)
             {
-                grade = Constants.GradesByGuid[child.Grades.First().Key];
-                gender = child.Gender;
-            }
-            // testing code
-            //else
-            //{
-            //    grade = "3";
-            //    gender = "he";
-            //}
-
-            // testing code
-            //if (registeringUser == null)
-            //{
-            //    registeringUser = new Member()
-            //    {
-            //        FirstName = "Testing",
-            //        LastName = "User",
-            //        ScreenName = "JustTesting",
-            //        ZipCode = "12345",
-            //        //Role = Guid.Parse("{2BF9D7BE-2E40-432C-ADE7-A25C80B9B9EE}"),
-            //        //HomeLife = Guid.Parse("{8FFA90D9-F2DA-402D-9AC4-7C203769C810}"),
-            //        //PersonalityType = Guid.Parse("{8B7EB70D-64B2-45B9-B06E-6AA5CB6FE983}"),
-            //        //hasOtherChildren = false,
-            //        //allowConnections = false,
-            //        //allowNewsletter = false,
-            //        //isPrivate = false,
-            //        //Interests = new List<Interest>() {
-            //        //new Interest() {
-            //        //    Key = Guid.Parse("{26A98810-4539-4BB7-8D6F-43CFE075AED3}"),
-            //        //    CategoryName = "Technologies and Apps",
-            //        //    Value = "Apps",
-            //        //  }
-            //        //},
-            //        Children = new List<Child>() { 
-            //        new Child() {
-            //            //Nickname = "Bobby",
-            //            //IEPStatus = Guid.Parse("{73842143-B6CA-4B6A-A94F-BA59C475A6D7}"),
-            //            //Section504Status = Guid.Parse("{82102C70-B526-47FB-BD99-5F71A33C3C87}"),
-            //            //Grade = Guid.Parse("{DFF0FA84-B68E-4259-A107-274B5694247D}"),
-            //            //EvaluationStatus = Guid.Parse("{F6849A63-C841-4D79-BF53-AA68DA6D6EEB}"),
-            //            //Issues = new List<Issue>() { 
-            //            //    new Issue() {
-            //            //        Key = Guid.Parse("{FFB5F34E-5A5F-43C6-A987-9AFF713C66C9}"),
-            //            //        Value = "Attention or Staying Focused"
-            //            //    }  
-            //            //},
-            //            //Diagnoses = new List<Diagnosis>() { 
-            //            //    new Diagnosis() {
-            //            //        Key = Guid.Parse("{7A035CC2-D6BD-4332-9518-7AB22083F652}"),
-            //            //        Value = "ADHD"
-            //            //    }
-            //            //},                
-            //        }
-            //    },
-            //    };
-            //}
-
-            switch (grade)
-            {
-                case "1":
-                    grade += "st";
-                    break;
-                case "2":
-                    grade += "nd";
-                    break;
-                case "3":
-                    grade += "rd";
-                    break;
-                default:
-                    grade += "th";
-                    break;
+                grade = Constants.GradesByGuid[singleChild.Grades.First().Key];
             }
 
-            var pronoun = gender == "boy" ? "he" : "she";
+            grade = UnderstoodDotOrg.Common.Helpers.MembershipHelper.AddOrdinalIndicator(grade);
 
-            uxFormTitle.Text = currentItem.FormTitle.Rendered.Replace("$grade$", grade);
-            uxTroubleAreasTitle.Text = currentItem.TroubleAreasQuestionTitle.Rendered.Replace("$pronoun$", pronoun);
-            uxEvaluatedTitle.Text = currentItem.FormallyEvaluatedQuestionTitle.Rendered.Replace("$pronoun$", pronoun);
+            pronoun = setPronoun(singleChild.Gender);
 
-            uxQ1a1.Text = Constants.Issues.ElementAt(0).Value;
-            uxQ1a2.Text = Constants.Issues.ElementAt(1).Value;
-            uxQ1a3.Text = Constants.Issues.ElementAt(2).Value;
-            uxQ1a4.Text = Constants.Issues.ElementAt(3).Value;
-            uxQ1a5.Text = Constants.Issues.ElementAt(4).Value;
-            uxQ1a6.Text = Constants.Issues.ElementAt(5).Value;
-            uxQ1a7.Text = Constants.Issues.ElementAt(6).Value;
-            uxQ1a8.Text = Constants.Issues.ElementAt(7).Value;
-            uxQ1a9.Text = Constants.Issues.ElementAt(8).Value;
-            uxQ1a10.Text = Constants.Issues.ElementAt(9).Value;
+            uxFormTitle.Text = Model.FormTitle.Rendered.Replace("$grade$", grade);
         }
 
-        protected void NextButton_Click(object sender, EventArgs e)
+        protected void SetupChildEdit()
         {
-            //List<ChildModel> children = Session["temp_child"] as List<ChildModel>;
-            string redirect = "/";
+            this.ShowGradeAndGender();
 
-            // fill in child infomation
-            int index = 0;
-
-            for (int i = 0; i < registeringUser.Children.Count; i++)
+            //fill in gender
+            if (singleChild.Gender == "boy")
             {
-                if (registeringUser.Children.ElementAt(i).Issues.Count == 0)
-                {
-                    index = i;
-                    break;
-                }
+                uxBoy.Checked = true;
             }
-
-            var issues = new List<Issue>();
-
-            if (q1a1.Checked) { issues.Add(new Issue() { Key = Constants.Issues.ElementAt(0).Key, Value = Constants.Issues.ElementAt(0).Value }); }
-            if (q1a2.Checked) { issues.Add(new Issue() { Key = Constants.Issues.ElementAt(1).Key, Value = Constants.Issues.ElementAt(1).Value }); }
-            if (q1a3.Checked) { issues.Add(new Issue() { Key = Constants.Issues.ElementAt(2).Key, Value = Constants.Issues.ElementAt(2).Value }); }
-            if (q1a4.Checked) { issues.Add(new Issue() { Key = Constants.Issues.ElementAt(3).Key, Value = Constants.Issues.ElementAt(3).Value }); }
-            if (q1a5.Checked) { issues.Add(new Issue() { Key = Constants.Issues.ElementAt(4).Key, Value = Constants.Issues.ElementAt(4).Value }); }
-            if (q1a6.Checked) { issues.Add(new Issue() { Key = Constants.Issues.ElementAt(5).Key, Value = Constants.Issues.ElementAt(5).Value }); }
-            if (q1a7.Checked) { issues.Add(new Issue() { Key = Constants.Issues.ElementAt(6).Key, Value = Constants.Issues.ElementAt(6).Value }); }
-            if (q1a8.Checked) { issues.Add(new Issue() { Key = Constants.Issues.ElementAt(7).Key, Value = Constants.Issues.ElementAt(7).Value }); }
-            if (q1a9.Checked) { issues.Add(new Issue() { Key = Constants.Issues.ElementAt(8).Key, Value = Constants.Issues.ElementAt(8).Value }); }
-            if (q1a10.Checked) { issues.Add(new Issue() { Key = Constants.Issues.ElementAt(9).Key, Value = Constants.Issues.ElementAt(9).Value }); }
-
-            registeringUser.Children.ElementAt(index).Issues = issues;
-            registeringUser.Children.ElementAt(index).Nickname = ScreenNameTextBox.Text;
-            
-
-            // handle redirects
-            if (q2a1.Checked) // Has (child) been formally evauluated for ...
-            {
-                //BG: Set Evaulation status to the true value.
-                registeringUser.Children.ElementAt(index).EvaluationStatus = new Guid(Constants.ChildEvaluation.StatusEvaluationYes);
-            
-                redirect = MembershipHelper.GetNextStepURL(3);
-                //children[0].Nickname = ScreenNameTextBox.Text;
-                //Session["temp_child"] = children;
-            
-              }
             else
             {
-                //BG: Set alternative child evaulation status
+                uxGirl.Checked = true;
+            }
+
+            pronoun = setPronoun(singleChild.Gender);
+
+            uxBoy.Enabled = false;
+            uxGirl.Enabled = false;
+
+            //fill in grade
+            uxSelectGrade.ClearSelection();
+            //uxSelectGrade.SelectedValue = singleChild.Grades.FirstOrDefault().Key.ToString();
+            uxSelectGrade.Items.FindByText(singleChild.Grades.FirstOrDefault().Value).Selected = true;
+
+            //fill in nickname
+            ScreenNameTextBox.Text = singleChild.Nickname;
+        }
+
+        protected void SetupChildAdd()
+        {
+            this.ShowGradeAndGender();
+        }
+
+        protected void ShowGradeAndGender()
+        {
+            uxGenderAndGrade.Visible = true;
+        }
+        #endregion
+
+        #region Save support
+        protected void MapSingleChild()
+        {
+            //add gender, add/update grade
+            if (status != "cmp")
+            {
+                if (status == Constants.QueryStrings.Registration.ModeAdd)
+                {
+                    //save gender
+                    if (uxBoy.Checked)
+                    {
+                        singleChild.Gender = "boy";
+                    }
+                    else
+                    {
+                        singleChild.Gender = "girl";
+                    }
+                }
+
+                //clear grades
+                singleChild.Grades.Clear();
+
+                //save selected grade
+                singleChild.Grades.Add(new Grade() { Key = Guid.Parse(uxSelectGrade.SelectedValue) });
+            }
+
+            //save nickname
+            singleChild.Nickname = ScreenNameTextBox.Text;
+
+            //save eval status
+            if (q2a1.Checked)
+            {
+                singleChild.EvaluationStatus = new Guid(Constants.ChildEvaluation.StatusEvaluationYes);
+            }
+            else
+            {
                 if (q2a2.Checked)//BG: Child has not been evaluated
                 {
-                    registeringUser.Children.ElementAt(index).EvaluationStatus = new Guid(Constants.ChildEvaluation.StatusEvaluationNo );
+                    singleChild.EvaluationStatus = new Guid(Constants.ChildEvaluation.StatusEvaluationNo);
                 }
                 else if (q2a3.Checked)//BG: Child evaluation is in progress
                 {
-                    registeringUser.Children.ElementAt(index).EvaluationStatus = new Guid(Constants.ChildEvaluation.StatusEvaluationInProgress );  
+                    singleChild.EvaluationStatus = new Guid(Constants.ChildEvaluation.StatusEvaluationInProgress);
                 }
+            }
+
+            //clear issues
+            singleChild.Issues.Clear();
+
+            //save selected issues
+            foreach (var item in uxIssues.Items)
+            {
+                var checkbox = item.FindControl("uxIssueCheckbox") as CheckBox;
+
+                if (checkbox.Checked)
+                {
+                    singleChild.Issues.Add(new Issue() { Key = Guid.Parse(checkbox.Attributes["value"]) });
+                }
+            }
+
+            SaveSingleChild();
+        }
+
+        protected void SaveSingleChild()
+        {
+            MembershipManager membershipManager = new MembershipManager();
+            //MembershipManagerProxy membershipManager = new MembershipManagerProxy();
+            if (status == Constants.QueryStrings.Registration.ModeEdit)
+            {
+                membershipManager.UpdateChild(singleChild);
+            }
+            else
+            {
+                membershipManager.AddChild(singleChild, this.CurrentMember.MemberId);
+            }
+        }
+
+        //protected void SaveCompleteMyProfile()
+        //{
+        //    var c = this.registeringUser.Children.FirstOrDefault(x => x.ChildId == singleChild.ChildId);
+        //    c = singleChild;
+        //}
+
+        protected void SetRegisteringUser()
+        {
+            FlushRegisteringUser();
+            this.registeringUser = this.CurrentMember;
+            this.registeringUser.Children.Clear();
+            this.registeringUser.Children.Add(singleChild);
+        }
+
+        protected void DoNextStep()
+        {
+            string redirect = "/";
+
+            if (singleChild.EvaluationStatus == Guid.Parse(Constants.ChildEvaluation.StatusEvaluationYes))
+            {
+                //eval = yes, always show page 3
+                redirect = MyAccountFolderItem.GetCompleteMyProfileStepThree();
+
+                //add current status to query string if present
+                if (!string.IsNullOrEmpty(status))
+                {
+                    redirect += "?" + Constants.QueryStrings.Registration.Mode + "=" + status;
+                }
+            }
+            else if (status == Constants.QueryStrings.Registration.ModeEdit || status == Constants.QueryStrings.Registration.ModeAdd)
+            {
+                //go back to my profile
+                redirect = MyAccountFolderItem.GetMyProfilePage();
+            }
+            else
+            {
+                //CMP process
                 if (this.registeringUser.Children.Where(x => x.Issues.Count == 0).Count() > 0)
                 {
-                    redirect = MembershipHelper.GetNextStepURL(2);
-                    //children.RemoveAt(0);
-                    //Session["temp_child"] = children;
+                    //more children, go to step 2
+                    redirect = MyAccountFolderItem.GetCompleteMyProfileStepTwo();
                 }
                 else
                 {
-                    redirect = MembershipHelper.GetNextStepURL(4);
+                    //no more children to deal with, go to step 4
+                    redirect = MyAccountFolderItem.GetCompleteMyProfileStepFour();
                 }
             }
 
             Response.Redirect(redirect);
-            //Response.Write(redirect);
+        }
+
+        protected void NextButton_Click(object sender, EventArgs e)
+        {
+            this.MapSingleChild();
+
+            if (status == Constants.QueryStrings.Registration.ModeEdit || status == Constants.QueryStrings.Registration.ModeAdd)
+            {
+                this.SetRegisteringUser();
+            }
+
+            this.DoNextStep();
+        }
+        #endregion
+
+        protected void uxIssues_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            var checkbox = e.Item.FindControl("uxIssueCheckbox") as CheckBox;
+            var item = ((ChildIssueItem)e.Item.DataItem);
+
+            if (checkbox != null)
+            {
+                //if editing, check to see if this is already selected for the kid
+                if (status == Constants.QueryStrings.Registration.ModeEdit)
+                {
+                    if (singleChild.Issues.ToList().Exists(x => x.Key == Guid.Parse(item.ID.ToString())))
+                    {
+                        checkbox.Checked = true;
+                    }
+                }
+
+                checkbox.Attributes.Add("value", ((ChildIssueItem)e.Item.DataItem).ID.ToString());
+            }
+
         }
     }
 }

@@ -75,7 +75,7 @@
                     <div class="checkboxes-wrapper">
                         <div class="column-left">
 
-                            <asp:ListView ID="uxLeftList" runat="server" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
+                            <asp:ListView ID="uxLeftList" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildDiagnosisItem" OnItemDataBound="ListItemDataBound">
                                 <ItemTemplate>
                                     <div class="checkbox-wrapper">
                                         <label>
@@ -83,7 +83,7 @@
                                             <asp:CheckBox ID="diagnosis" runat="server" />
                                             <span class="description">
                                                 <%--<sc:text id="Text7" field="LD Area 1" runat="server" />--%>
-                                                <%# Eval("Fields[Diagnosis Name]") %>
+                                                <%# Item.DiagnosisName %>
                                             </span>
                                             <span class="info-link">
                                                 <div class="icon-wrapper popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></div>
@@ -91,11 +91,11 @@
                                             <span class="popover-container">
                                                 <span class="title title-block">
                                                     <%--<sc:text id="Text39" field="LD Area 1 Mouse Over Title" runat="server" />--%>
-                                                    <%# Eval("Fields[Diagnosis Name]") %>
+                                                    <%# Item.DiagnosisName %>
                                                 </span>
                                                 <%--<sc:text id="Text52" field="LD Area 1 Mouse Over" runat="server" />--%>
                                                 <%--<a href="REPLACE">Learn more</a>--%>
-                                                <%# Eval("Fields[Diagnosis Description]") %>
+                                                <%# Item.DiagnosisDescription %>
                                             </span>
                                         </label>
                                     </div>
@@ -218,7 +218,7 @@
                         <!-- .checkboxes-left -->
 
                         <div class="column-right">
-                            <asp:ListView ID="uxRightList" runat="server" ItemType="Sitecore.Data.Items.Item" OnItemDataBound="ListItemDataBound">
+                            <asp:ListView ID="uxRightList" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildDiagnosisItem"  OnItemDataBound="ListItemDataBound">
                                 <ItemTemplate>
                                     <div class="checkbox-wrapper">
                                         <label>
@@ -226,7 +226,7 @@
                                             <asp:CheckBox ID="diagnosis" runat="server" />
                                             <span class="description">
                                                 <%--<sc:text id="Text7" field="LD Area 1" runat="server" />--%>
-                                                <%# Eval("Fields[Diagnosis Name]") %>
+                                                <%# Item.DiagnosisName %>
                                             </span>
                                             <span class="info-link">
                                                 <div class="icon-wrapper popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></div>
@@ -234,11 +234,11 @@
                                             <span class="popover-container">
                                                 <span class="title title-block">
                                                     <%--<sc:text id="Text39" field="LD Area 1 Mouse Over Title" runat="server" />--%>
-                                                    <%# Eval("Fields[Diagnosis Name]") %>
+                                                    <%# Item.DiagnosisName %>
                                                 </span>
                                                 <%--<sc:text id="Text52" field="LD Area 1 Mouse Over" runat="server" />--%>
                                                 <%--<a href="REPLACE">Learn more</a>--%>
-                                                <%# Eval("Fields[Diagnosis Description]") %>
+                                                <%# Item.DiagnosisDescription %>
                                             </span>
                                         </label>
                                     </div>

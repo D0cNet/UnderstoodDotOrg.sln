@@ -44,6 +44,12 @@
 					Response.Redirect("/");
 				}
 			}
+            else
+            {
+                MembershipManager membershipManager = new MembershipManager();
+                this.CurrentMember = membershipManager.GetMember(this.CurrentMember.MemberId);
+                this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId, true);
+            }
 
 			if (!IsPostBack)
 			{
@@ -84,6 +90,7 @@
 				uxZipcode.Text = this.CurrentMember.ZipCode.Trim();
 
 				uxAddChild.Text = string.Format(uxAddChild.Text, ((ChildCount)this.CurrentMember.Children.Count).ToString());
+                uxAddChild.NavigateUrl = MyAccountFolderItem.GetCompleteMyProfileStepTwo() + "?" + Constants.QueryStrings.Registration.Mode + "=" + Constants.QueryStrings.Registration.ModeAdd;
 
 				if (Session["PostReloadScript"] != null)
 				{
