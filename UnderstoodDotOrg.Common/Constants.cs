@@ -628,6 +628,25 @@ namespace UnderstoodDotOrg.Common
                 }
             }
         }
+        
+        public static class TemplateIDs
+        {
+            public static string VideoArticlePage  { get { return "{D84F2F6F-7B29-49B6-B940-5546CDBBE21B}"; } }
+            public static string DefaultArticlePage { get { return "{2D5AF94C-1668-44C4-978A-E96E1F42CBFE}"; } }
+            public static string TextTipPage { get { return "{F70B81A5-1FD4-4345-BBDE-BE68F255170D}"; } }
+            public static string WebinarEventPage { get { return "{173A599B-2836-4A4B-B780-834DD515C701}"; } }
+
+            public static Dictionary<string, string> Dictionary =
+	            new Dictionary<string, string>()
+                {
+	                {VideoArticlePage, "Video"},
+	                {DefaultArticlePage, "Article"},
+	                {TextTipPage, "Tip"},
+	                {WebinarEventPage, "Webinar"}
+	            };
+	        
+        }
+
         public static class Groups
         {
             public static string GroupTemplateID { get { return "{92FB8D67-690A-45F1-B330-C4BBAE189AAF}"; } }

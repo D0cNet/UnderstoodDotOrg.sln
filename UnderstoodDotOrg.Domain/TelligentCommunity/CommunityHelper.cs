@@ -1132,7 +1132,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     FavoritesModel favorite = new FavoritesModel();
                     var sitecoreItem = Sitecore.Context.Database.GetItem(item.ContentId);
-                    favorite.Type = item.ActivityType.ToString();
+                    favorite.Type = DetermineItemType(sitecoreItem);
                     favorite.Title = sitecoreItem.DisplayName.ToString();
                     favorite.Url = sitecoreItem.GetUrl();
                     favorite.ContentId = item.ContentId;
@@ -1142,6 +1142,21 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             
             return favoritesList;
+        }
+
+        public static string DetermineItemType(Sitecore.Data.Items.Item item)
+        {
+            string templateId = item.TemplateID.ToString();
+            string itemType = item.TemplateName;
+            if (item.InheritsTemplate(Constants.TemplateIDs.DefaultArticlePage))
+            {
+                itemType = "Article";
+            }
+            if (Constants.TemplateIDs.Dictionary.ContainsKey(templateId))
+            {
+                itemType = Constants.TemplateIDs.Dictionary[templateId];
+            }
+            return itemType;
         }
 
         public static List<Comment> ListUserComments(string username)
