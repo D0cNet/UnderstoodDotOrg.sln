@@ -26,10 +26,6 @@
             yet. When you do, your favorites will appear here.
         </p>
     </asp:Panel>
-    <asp:Panel runat="server" ID="pnlNoProfile" Visible="false">
-        <p class="empty">You don't have a community profile, to create one please 
-            <asp:HyperLink CssClass="comment-link" ID="hypCompleteYourProfile" runat="server">click here.</asp:HyperLink></p>
-    </asp:Panel>
 </div>
 <!-- /.landing-notifications /.landing-modules -->
 <!-- END PARTIAL: account-landing-myfavorites -->

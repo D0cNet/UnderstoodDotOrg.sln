@@ -187,7 +187,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Title { get; set; }
         public string Type { get; set; }
         public string ReplyCount { get; set; }
-        public string ContentId { get; set; }
+        public Guid ContentId { get; set; }
         public string ContentTypeId { get; set; }
         public string Url { get; set; }
         

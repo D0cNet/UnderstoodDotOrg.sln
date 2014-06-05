@@ -7,10 +7,12 @@ using System.Text;
 using System.Xml;
 using Sitecore.Configuration;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Understood.Common;
 using Sitecore.Links;
 using System.Text.RegularExpressions;
 using System.Threading;
+using UnderstoodDotOrg.Domain.Understood.Activity;
 
 namespace UnderstoodDotOrg.Domain.TelligentCommunity
 {
@@ -1117,75 +1119,27 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return notificationList;
         }
 
-        public static List<FavoritesModel> GetFavorites(string username)
+        public static List<FavoritesModel> GetFavorites(Guid username)
         {
             List<FavoritesModel> favoritesList = new List<FavoritesModel>();
 
-            using (var webClient = new WebClient())
+            ActivityLog log = new ActivityLog(username, Constants.UserActivity_Values.Favorited);
+            
+            foreach (ActivityItem item in log.Activities)
             {
-                try
+                if ((item != null) && (Sitecore.Context.Database.GetItem(item.ContentId) != null))
                 {
-                    var userId = ReadUserId(username);
-                    if (String.IsNullOrEmpty(userId))
-                    {
-                        return favoritesList;
-                    }
-                    
-                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-
-                    var requestUrl = GetApiEndPoint(string.Format("users/{0}/favorites.xml?PageSize=100", userId));
-                    var xml = webClient.DownloadString(requestUrl);
-
-                    var xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xml);
-
-                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Favorites/Favorite");
-
-                    foreach (XmlNode xn in nodes)
-                    {
-                        XmlNode userData = xn.SelectSingleNode("User");
-                        XmlNode statusData = xn.SelectSingleNode("User/CurrentStatus");
-
-                        var title = xn["Title"].InnerText;
-                        var url = string.Empty;
-                        var type = string.Empty;
-                        //var body = xn["Body"].InnerText;
-                        //string[] urlSplit = Regex.Split(body, "/sitecore/content/Home");
-
-                        if (xn["Application"].InnerText.Equals("Articles"))
-                        {
-                            type = "Article";
-                            //url = urlSplit[1];
-                        }
-                        else
-                        {
-                            type = xn["Type"].InnerText;
-                            if (type.Equals("BlogPost"))
-                            {
-                                url = "/Community and Events/Blogs/" + xn["Application"].InnerText + "/" + title;
-                            }
-                            else
-                            {
-                                url = "/";
-                            }
-                        }
-                        if (!title.Equals("Articles"))
-                        {
-                            FavoritesModel favorite = new FavoritesModel()
-                            {
-                                Type = type,
-                                Title = title,
-                                ReplyCount = statusData["ReplyCount"].InnerText,
-                                ContentId = statusData["ContentId"].InnerText,
-                                ContentTypeId = statusData["ContentType"].InnerText,
-                                Url = url
-                            };
-                            favoritesList.Add(favorite);
-                        }
-                    }
+                    FavoritesModel favorite = new FavoritesModel();
+                    var sitecoreItem = Sitecore.Context.Database.GetItem(item.ContentId);
+                    favorite.Type = item.ActivityType.ToString();
+                    favorite.Title = sitecoreItem.DisplayName.ToString();
+                    favorite.Url = sitecoreItem.GetUrl();
+                    favorite.ContentId = item.ContentId;
+                    favorite.ReplyCount = "0";
+                    favoritesList.Add(favorite);
                 }
-                catch { } //TODO: Add Logging
             }
+            
             return favoritesList;
         }
 
