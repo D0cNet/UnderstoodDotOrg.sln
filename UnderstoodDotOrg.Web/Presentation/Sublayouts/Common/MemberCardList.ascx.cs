@@ -69,13 +69,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
 
                     }
+                    Button btnConnect = (Button)e.Item.FindControl("btnConnect");
+                    if (btnConnect != null)
+                    {
 
+                        btnConnect.Visible = ((MemberCardModel)e.Item.DataItem).Contactable;
+
+
+                    }
 
                     Repeater childModel_repeater = (Repeater)e.Item.FindControl("rptChildCard");
                     if (childModel_repeater != null)
                     {
                         childModel_repeater.DataSource = ((MemberCardModel)e.Item.DataItem).Children;
                         childModel_repeater.DataBind();
+                    }
+
+                    Repeater badgeModel_repeater = (Repeater)e.Item.FindControl("rptrBadges");
+                    if (badgeModel_repeater != null)
+                    {
+                        badgeModel_repeater.DataSource = ((MemberCardModel)e.Item.DataItem).Badges;
+                        badgeModel_repeater.DataBind();
                     }
 
                 }

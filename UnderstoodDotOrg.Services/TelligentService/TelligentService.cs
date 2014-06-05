@@ -645,18 +645,11 @@ namespace UnderstoodDotOrg.Services.TelligentService
             if (!String.IsNullOrEmpty(username))
             {
                 username = username.Trim();
-                WebClient webClient = new WebClient();
-                string adminKeyBase64 = TelligentAuth();
-
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-
+               
                 try
                 {
-                    var requestUrl = String.Format("{0}api.ashx/v2/users/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), username);
-                    var xml = webClient.DownloadString(requestUrl);
-                    var xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xml);
-                    XmlNode node = xmlDoc.SelectSingleNode("Response/User");
+                    
+                    XmlNode node = GetTelligentUserNode( username);
                     if (node != null)
                     {
                         //Read user id
@@ -673,6 +666,67 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
             }
             return Userid;
+        }
+        public static string ReadUserPoints(string username)
+        {
+            string strPoints = String.Empty;
+            if (!String.IsNullOrEmpty(username))
+            {
+                username = username.Trim();
+
+                try
+                {
+
+                    XmlNode node = GetTelligentUserNode(username);
+                    if (node != null)
+                    {
+                        //Read user id
+                        strPoints = node.SelectSingleNode("Points").InnerText;
+                        //return Userid;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    strPoints = String.Empty;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
+
+
+            }
+            return strPoints;
+        }
+        public static XmlNode GetTelligentUserNode(string username)
+        {
+            XmlNode User= null;
+            if (!String.IsNullOrEmpty(username))
+            {
+                username = username.Trim();
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                try
+                {
+                    var requestUrl = String.Format("{0}api.ashx/v2/users/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), username);
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/User");
+                    if (node != null)
+                    {
+                        User = node;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    User = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
+
+
+            }
+            return User;
         }
         public static List<ForumModel> ReadForumsList(string groupID)
         {
@@ -914,9 +968,13 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     {
                         foreach (XmlNode item in node)
                         {
-                            
-                            usernames.Add(item.SelectSingleNode("Username").InnerText);
+                           MembershipManager man = new MembershipManager();
+                           var user= man.GetMember( node.SelectSingleNode("PrivateEmail").InnerText);
+                           if (user.allowConnections)
+                           {
 
+                               usernames.Add(item.SelectSingleNode("Username").InnerText);
+                           }
                             
                         }
                     }

@@ -988,10 +988,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public static bool IsUserInGroup(string userScreenName, string groupID)
         {
             bool val = false;
-            userScreenName = userScreenName.Trim();
-            groupID = groupID.Trim();
+           
             if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID))
-            {
+            { 
+                userScreenName = userScreenName.Trim();
+                groupID = groupID.Trim();
                 using (WebClient webClient = new WebClient())
                 {
                     string adminKeyBase64 = CommunityHelper.TelligentAuth();

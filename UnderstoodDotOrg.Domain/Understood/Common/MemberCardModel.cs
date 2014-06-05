@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
 using System.Web.Security;
 
+
 namespace UnderstoodDotOrg.Domain.Understood.Common
 {
     public class MemberCardModel
@@ -21,19 +22,25 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             this.UserName = String.Empty;
         }
 
-        public  MemberCardModel(Member m)
+        public MemberCardModel(Member m, Func<string, List<UserBadgeModel>> badgesPop = null)
         {
-
-            this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
-            this.Children = m.Children.ConvertToChildCardModelList();
-            this.UserLabel = "Blogger"; //TODO: find role                                                                                   
-            this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
-            this.UserName = m.ScreenName;
-            
-                                                 
+            if (m != null)
+            {
+                if (!String.IsNullOrEmpty(m.ScreenName))
+                {
+                    this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
+                    this.Children = m.Children.ConvertToChildCardModelList();
+                    this.UserLabel = "Blogger"; //TODO: find role                                                                                   
+                    this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
+                    this.UserName = m.ScreenName;
+                    this.Contactable = m.allowConnections;
+                    if (badgesPop != null)
+                        Badges = badgesPop(m.ScreenName);
+                }
+            }                                 
         }
 
-        public MemberCardModel(string username)
+        public MemberCardModel(string username,Func<string,List<UserBadgeModel>> badgesPop=null)
         {
             MembershipManager memMan = new MembershipManager();
 
@@ -41,12 +48,17 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             if (mUser != null)
             {
                 Member m = memMan.GetMember(new Guid(mUser.ProviderUserKey.ToString()));
-
-                this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
-                this.Children = m.Children.ConvertToChildCardModelList();
-                this.UserLabel = "Blogger"; //TODO: find role                                                                                   
-                this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
-                this.UserName = m.ScreenName;
+                if (!String.IsNullOrEmpty(m.ScreenName))
+                {
+                    this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
+                    this.Children = m.Children.ConvertToChildCardModelList();
+                    this.UserLabel = "Blogger"; //TODO: find role                                                                                   
+                    this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
+                    this.UserName = m.ScreenName;
+                    this.Contactable = m.allowConnections;
+                    if (badgesPop != null)
+                        Badges = badgesPop(username);
+                }
             }
             
         }
@@ -56,5 +68,8 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         public string UserLabel { get; set; }
         public List<ChildCardModel> Children { get; set; }
         public List<Constants.TelligentRole> Roles { get; set; }
+        public List<UserBadgeModel> Badges{get;set;}
+
+        public bool Contactable { get; set; }
     }
 }

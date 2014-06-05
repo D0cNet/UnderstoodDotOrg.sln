@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="ExactTarget\ExactTargetService.cs" />
     <Compile Include="ExactTarget\IExactTargetService.cs" />
+    <Compile Include="MemberServices\User.cs" />
     <Compile Include="Models\Telligent\Answer.cs" />
     <Compile Include="Models\Telligent\Blog.cs" />
     <Compile Include="Models\Telligent\BlogPost.cs" />

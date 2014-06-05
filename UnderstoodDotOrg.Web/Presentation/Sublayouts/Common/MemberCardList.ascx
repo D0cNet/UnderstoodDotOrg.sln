@@ -1,4 +1,20 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MemberCardList.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.MemberCardList" %>
+<style type="text/css">
+   .community-badges ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+       .community-badges ul li {
+            display: inline;
+        }
+
+        .community-badges ul li a {
+            text-decoration: none;
+            padding: .2em 1em;
+        }
+</style>
 
 <%-- Used another repeater because of dynamic datasourcing--%>
 <asp:ListView ID="rptMemberCards" ClientIDMode="Static"  runat="server">
@@ -18,6 +34,25 @@
                                 <asp:Literal Text="" ID="UserLabel" runat="server" /></div>
                         </a>
                     </div><!-- end .member-card-image -->
+                   <div class="community-badges">
+                     <%--    <ul>
+                            <li>
+                                <img src="/Presentation/Includes/img/platinum.png"  width="20px" height="20px" alt="Alternate Text" />
+                            </li>
+                            <li>
+                                <img src="/Presentation/Includes/img/platinum.png"  width="20px" height="20px" alt="Alternate Text" />
+                            </li>
+                        </ul>--%>
+                        <asp:Repeater ID="rptrBadges" runat="server">
+                            <HeaderTemplate><ul class="user-badges"></HeaderTemplate>
+                            <ItemTemplate>
+                                <li>
+                                    <asp:Image ImageUrl='<%# Eval("ImageUrl") %>' Width="20px" Height="20px" ID="imgBadgeIcon" AlternateText='<%# Eval("Name")%> ' runat="server" />
+                                </li>
+                            </ItemTemplate>
+                            <FooterTemplate></ul></FooterTemplate>
+                        </asp:Repeater>
+                    </div>
                     <div class="member-card-name hyphenate Moderator">
                 
                         <a href="REPLACE" class="name-member"><asp:Literal Text="" ID="UserName" runat="server" /></a>
@@ -27,7 +62,8 @@
             
                     <div class="card-buttons member">
                 
-                        <button type="button" class="button">Connect</button>
+                        <%--<button type="button" runat="server" class="button">Connect</button>--%>
+                        <asp:Button Text="Connect" ID="btnConnect" CssClass="button" Visible="false"  runat="server" />
                 
                     </div><!-- end .member.card-buttons -->
             

@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
+using UnderstoodDotOrg.Services.MemberServices;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
 
@@ -21,7 +22,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     allowConnections = true,
                     FirstName = "adolph",
                     LastName = "rudolph",
-                    ScreenName = "AManJo",
+                    ScreenName = "PosesHoratio",
                     ZipCode="55555",
                      Interests = new List<Interest>(){
                           new Interest(){
@@ -101,24 +102,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 expertChkbx.Attributes.Add("value", Constants.TelligentRole.Expert.ToString());
                 moderatorChkbx.Attributes.Add("value", Constants.TelligentRole.Moderator.ToString());
 
-               // MembershipManager mem = new MembershipManager();
+                MembershipManager mem = new MembershipManager();
 
-               // List<Member> members = mem.GetMembers();
-              
-              // List<Member> members = new List<Member>();
-               // members.Add(member1);
+                List<Member> members = mem.GetMembers().Where(m => !String.IsNullOrEmpty(m.ScreenName)).ToList<Member>();
+
+                Session["members"] = members;
+
+                //List<Member> members = new List<Member>();
+                //members.Add(member1);
+                //Session["members"] = members;
 
                 //TODO: To replace with actual data for production
-                MembershipManagerProxy mem = new MembershipManagerProxy();
+                //MembershipManagerProxy mem = new MembershipManagerProxy();
 
-                List<Member> members = new List<Member>() { mem.GetMember(Guid.Empty) };
+                //List<Member> members = new List<Member>() { mem.GetMember(Guid.Empty) };
                 //////////////////////////////////////////////////////////
 
-                
-                List<MemberCardModel> memberCardSrc = members.Select(m => new MemberCardModel(m)).ToList<MemberCardModel>();
+
+                List<MemberCardModel> memberCardSrc = members.Select(m => new MemberCardModel(m,User.GetUserBadges)).ToList<MemberCardModel>();
 
                 Session["members_parents"] = memberCardSrc;
-                rptMemberCards.DataSource = memberCardSrc.Take(25).ToList<MemberCardModel>();
+                rptMemberCards.DataSource = memberCardSrc.Take(16).ToList<MemberCardModel>();
                 rptMemberCards.DataBind();
 
             }
@@ -169,47 +173,54 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             //MembershipManager mem = new MembershipManager();
 
             //List<Member> members = mem.GetMembers();
-            List<Member> members = new List<Member>();
+            //List<Member> members = new List<Member>();
             
-            members.Add(member1); 
-            IEnumerable <Member> workingSet = members;
+            //members.Add(member1); 
+            List<Member> members = Session["members"] as List<Member>;
 
-            //List<MemberCardModel> memberCards = null;
-
-            if(!String.IsNullOrEmpty(zipcode)){
-                workingSet = from m in workingSet
-                                    where m.ZipCode == zipcode
-                                    select m;
-              
-            }
-                                                 ///More criteria to be added
-            if(!String.IsNullOrEmpty(issue)){
-
-                workingSet = workingSet.Where(m =>
-                                                (from c in m.Children
-                                                 where c.Issues.Any(x => x.Key.ToString().Equals( new Guid(issue).ToString()))
-                                                 select c).Count() > 0);
-                      
-            }
-
-            if (!String.IsNullOrEmpty(topic))
+            if (members != null)
             {
-                workingSet = workingSet.Where(m => m.Interests.Any(x => x.Key.ToString().Equals(new Guid(topic).ToString())));
+                IEnumerable<Member> workingSet = members;
 
-                
-                                                    
+                //List<MemberCardModel> memberCards = null;
+
+                if (!String.IsNullOrEmpty(zipcode))
+                {
+                    workingSet = from m in workingSet
+                                 where m.ZipCode == zipcode
+                                 select m;
+
+                }
+                ///More criteria to be added
+                if (!String.IsNullOrEmpty(issue))
+                {
+
+                    workingSet = workingSet.Where(m =>
+                                                    (from c in m.Children
+                                                     where c.Issues.Any(x => x.Key.ToString().Equals(new Guid(issue).ToString()))
+                                                     select c).Count() > 0);
+
+                }
+
+                if (!String.IsNullOrEmpty(topic))
+                {
+                    workingSet = workingSet.Where(m => m.Interests.Any(x => x.Key.ToString().Equals(new Guid(topic).ToString())));
+
+
+
+                }
+
+                return workingSet.Select(m => new MemberCardModel(m)).ToList<MemberCardModel>();
+
             }
-
-            return workingSet.Select(m=> new MemberCardModel(m)).ToList<MemberCardModel>();
-
-
+            return null;
         }
 
         protected void ShowMore_ServerClick(object sender, EventArgs e)
         {
-            List<MemberCardModel> m = rptMemberCards.DataSource as List<MemberCardModel>;
-            if (m != null)
-            {
+            //List<MemberCardModel> m = rptMemberCards.DataSource as List<MemberCardModel>;
+            //if (m != null)
+            //{
                 var mems = (List<MemberCardModel>)Session["members_parents"];
 
                 if (mems != null)
@@ -219,7 +230,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
                     showmore.Visible = false;
                 }
-            }
         }
     }
 }
