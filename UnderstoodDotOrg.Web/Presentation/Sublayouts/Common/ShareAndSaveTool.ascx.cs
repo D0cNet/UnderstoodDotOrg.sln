@@ -42,7 +42,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 if (temp != null)
                 {
                     lbSave.CssClass = "icon icon-save active";
-                    lbSave.Enabled = false;
+                    lbSave.Click += lbUnsave_Click;
+                    lbSave.Click -= lbSave_Click;
                 }
             }
         }
@@ -74,12 +75,44 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     if(success)
                     {
                         lbSave.CssClass = "icon icon-save active";
-                        lbSave.Enabled = false;
+                        lbSave.Click += lbUnsave_Click;
+                        lbSave.Click -= lbSave_Click;
                     }
                 }
                 catch
                 {
                     
+                }
+            }
+            else
+            {
+                string url = MyAccountFolderItem.GetSignUpPage();
+                Response.Redirect(url);
+            }
+        }
+
+        protected void lbUnsave_Click(object sender, EventArgs e)
+        {
+            if (IsUserLoggedIn)
+            {
+                MembershipManager mmgr = new MembershipManager();
+                try
+                {
+                    bool success = mmgr.LogMemberActivity_AsDeleted(CurrentMember.MemberId,
+                        context.ID.ToGuid(),
+                        Constants.UserActivity_Values.Favorited,
+                        Constants.UserActivity_Types.ContentRelated);
+
+                    if (success)
+                    {
+                        lbSave.CssClass = "icon icon-save";
+                        lbSave.Click += lbSave_Click;
+                        lbSave.Click -= lbUnsave_Click;
+                    }
+                }
+                catch
+                {
+
                 }
             }
             else
