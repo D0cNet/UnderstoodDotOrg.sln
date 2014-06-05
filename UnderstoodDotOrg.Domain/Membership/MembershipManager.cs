@@ -603,6 +603,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             {
                 throw ex;
             }
+            successFlag = true;
             return successFlag;
         }
 
