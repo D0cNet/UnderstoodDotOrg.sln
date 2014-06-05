@@ -97,7 +97,13 @@ namespace UnderstoodDotOrg.Domain.Membership
                 _dataIsDirty = true;
             }
         }
-        
+        public bool SupportPlanReminders { get; set; }
+        public bool ObservationLogReminders { get; set; }
+        public bool EventReminders { get; set; }
+        public bool ContentReminders { get; set; }
+        public bool AdvocacyAlerts { get; set; }
+        public bool PrivateMessageAlerts { get; set; }
+        public bool NotificationsDigest { get; set; }
 
         public virtual ICollection<Quiz> CompletedQuizes {get; set;}
 

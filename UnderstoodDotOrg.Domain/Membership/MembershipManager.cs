@@ -336,6 +336,9 @@ namespace UnderstoodDotOrg.Domain.Membership
 
                 _db.Members.Add(tMember);
                 _db.SaveChanges();
+                //seed a row in the alert preferences table
+                SeedMemberAlertPrefernceTable(tMember.MemberId);
+
 
                 return tMember;
                 //}
@@ -356,6 +359,125 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
         }
 
+        /// <summary>
+        /// It will help if we pull the data back from the db so we can display it and use it.
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns></returns>
+        private Member FillMember_AlertPreferences(Member member)
+        {
+            string sql = " SELECT AdvocacyAlerts, " +
+                                " ContentReminders, " +
+                                " EventReminders, " +
+                                " ObservationLogReminders, " +
+                                " SupportPlanReminders, " +
+                                " PrivateMessageAlerts " +
+                                " FROM MemberAlertPreferences " +
+                                " WHERE (MemberId = @MemberId)";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                member.AdvocacyAlerts = reader.GetBoolean(0) ;
+                                member.ContentReminders = reader.GetBoolean(1);
+                                member.EventReminders = reader.GetBoolean(2);
+                                member.NotificationsDigest = false;//gotta check if this is in the db. bg: bug. think we might have dupe data
+                                member.ObservationLogReminders = reader.GetBoolean(3);
+                                member.SupportPlanReminders = reader.GetBoolean(4);
+                                member.PrivateMessageAlerts = reader.GetBoolean(5);
+                                //member.allowNewsletter; //set in entity
+            
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return member;
+        }
+        /// <summary>
+        /// Just used to add an entry into our pref table. Anything here on out is always an update
+        /// </summary>
+        /// <param name="MemberId"></param>
+        /// <returns></returns>
+        private bool SeedMemberAlertPrefernceTable(Guid MemberId)
+        {
+            bool success = false;
+            string sql = " INSERT INTO MemberAlertPreferences(MemberId) " +
+                         " VALUES (@MemberId) ";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MemberId", MemberId);
+                        cmd.ExecuteNonQuery();
+                        success = true;
+                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
+            success = true;
+            return success;
+        }
+        /// <summary>
+        /// Updates the MemberAlertPreferences 
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns></returns>
+        public bool UpdateMemberAlertPrefernces(Member member)
+        {
+            bool success = false;
+            string sql = " UPDATE MemberAlertPreferences " +
+                            "SET  SupportPlanReminders = @SupportPlanReminders, " + 
+                                " ObservationLogReminders = @ObservationLogReminders, " + 
+                                " EventReminders = @EventReminders, " + 
+                                " ContentReminders = @ContentReminders, " + 
+                                " AdvocacyAlerts = @AdvocacyAlerts, " + 
+                                " PrivateMessageAlerts = @PrivateMessageAlerts" +  
+                                " WHERE (MemberId = @MemberId)";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
+                        cmd.Parameters.AddWithValue("@SupportPlanReminders",member.SupportPlanReminders);
+                        cmd.Parameters.AddWithValue("@ObservationLogReminders", member.ObservationLogReminders);
+                        cmd.Parameters.AddWithValue("@EventReminders",member.EventReminders);
+                        cmd.Parameters.AddWithValue("@ContentReminders", member.ContentReminders);
+                        cmd.Parameters.AddWithValue("@AdvocacyAlerts", member.AdvocacyAlerts);
+                        cmd.Parameters.AddWithValue("@PrivateMessageAlerts", member.PrivateMessageAlerts);
+                        cmd.ExecuteNonQuery();
+                        success = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return success;
+        }
         public Member AddUnauthorizedMember(Member Member)
         {
             //throw this out if there is no email 
@@ -798,6 +920,47 @@ namespace UnderstoodDotOrg.Domain.Membership
             {
                 throw ex;
             }
+
+            //add in member alert preferences
+            try
+            {
+                string sql = " SELECT [SupportPlanReminders] " +
+                            " ,[ObservationLogReminders] " +
+                            " ,[EventReminders] " +
+                            " ,[ContentReminders] " +
+                            " ,[AdvocacyAlerts] " +
+                            " ,[PrivateMessageAlerts] " +
+                            " FROM [dbo].[MemberAlertPreferences] " +
+                            " Where MemberId =@MemberId" ;
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                member.SupportPlanReminders  = reader.GetBoolean(0);
+                                member.ObservationLogReminders = reader.GetBoolean(1);
+                                member.EventReminders = reader.GetBoolean(2);
+                                member.ContentReminders = reader.GetBoolean(3);
+                                member.AdvocacyAlerts = reader.GetBoolean(4);
+                                member.PrivateMessageAlerts = reader.GetBoolean(5);
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             return member;
         }
 
@@ -956,8 +1119,8 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             //bg: update the member with property values that are not included in entity
             member = FillMember_ExtendedPropertiesFromDb(member);
+            member = FillMember_AlertPreferences(member);
             return member;
-
         }
 
         public Member GetMember(string EmailAddress)

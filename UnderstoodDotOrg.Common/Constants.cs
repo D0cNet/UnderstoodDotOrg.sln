@@ -36,7 +36,9 @@ namespace UnderstoodDotOrg.Common
         public static readonly string FACEBOOK_LOGIN_STATUS = "fb_status";
 
         #endregion
+        #region Newsletter Subscriptions
 
+        #endregion
         public static string CURRENT_INDEX_NAME
         {
             get

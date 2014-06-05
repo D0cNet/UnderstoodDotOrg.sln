@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="EmailAndAlertsPreferences.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.EmailAndAlertsPreferences" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <div class="account-body-wrapper">
           <!-- BEGIN PARTIAL: account-notification-tab-email -->
@@ -8,14 +9,14 @@
     <div class="toggle-wrapper">
       <label>
         <span><sc:FieldRenderer ID="frWeeklyPersonalizedNewsletter" runat="server" FieldName="Weekly Personalized Newsletter" /></span>
-        <input class="toggle rs_preserve" type="checkbox" name="weekly-personalized-newsletter" id="weekly-personalized-newsletter" value="true" checked="checked">
+          <asp:CheckBox class="toggle rs_preserve" type="checkbox" id="ux_weekly_personalized_newsletter" value="true"   runat="server" />
       </label>
     </div>
     <fieldset>
       <div class="toggle-wrapper">
         <label>
           <span><sc:FieldRenderer ID="frNotificationsDigest" runat="server" FieldName="Notifications Digest" /></span>
-          <input class="toggle rs_preserve" type="checkbox" name="notifications-digest" id="notifications-digest" value="true" checked="checked">
+          <asp:CheckBox runat="server" class="toggle rs_preserve" type="checkbox"  id="ux_notifications_digest" checked="false"/>
         </label>
       </div>
       <div class="checkbox-wrapper">
@@ -32,38 +33,45 @@
     <div class="toggle-wrapper">
       <label>
         <span><sc:FieldRenderer ID="frSupportPlanReminders" runat="server" FieldName="Support Plan Reminders" /></span>
-        <input class="toggle rs_preserve" type="checkbox" value="true" checked="checked">
+        <asp:CheckBox runat="server" id="ux_support_plan_reminders" class="toggle rs_preserve" type="checkbox" value="true" />
       </label>
     </div>
     <div class="toggle-wrapper">
       <label>
         <span><sc:FieldRenderer ID="frObservationLogReminders" runat="server" FieldName="Observation Log Reminders" /></span>
-        <input class="toggle rs_preserve" type="checkbox" value="true" checked="checked">
+        <asp:CheckBox runat="server" id="ux_observation_log_reminders" class="toggle rs_preserve" type="checkbox" value="true"  />
       </label>
     </div>
     <div class="toggle-wrapper">
       <label>
         <span><sc:FieldRenderer ID="frEventReminders" runat="server" FieldName="Event Reminders" /></span>
-        <input class="toggle rs_preserve" type="checkbox" value="true" checked="checked">
+        <asp:CheckBox runat="server" id="ux_event_reminders" class="toggle rs_preserve" type="checkbox" value="true" />
       </label>
     </div>
     <div class="toggle-wrapper">
       <label>
         <span><sc:FieldRenderer ID="frContentReminders" runat="server" FieldName="Content Reminders" /></span>
-        <input class="toggle rs_preserve" type="checkbox" value="true" checked="checked">
+        <asp:CheckBox runat="server" id="ux_content_reminders" class="toggle rs_preserve" type="checkbox" value="true" />
       </label>
     </div>
     <div class="toggle-wrapper">
       <label>
         <span><sc:FieldRenderer ID="frAdvocacyAlerts" runat="server" FieldName="Advocacy Alerts" /></span>
-        <input class="toggle rs_preserve" type="checkbox" value="true" checked="checked">
+        <asp:CheckBox runat="server" id="ux_advocacy_alerts" class="toggle rs_preserve" type="checkbox" value="true" />
       </label>
     </div>
     <div class="toggle-wrapper">
       <label>
         <span><sc:FieldRenderer ID="frPrivateMessageAlerts" runat="server" FieldName="Private Message Alerts" /></span>
-        <input class="toggle rs_preserve" type="checkbox" value="true" checked="checked">
+        <asp:CheckBox runat="server" id="ux_private_message_alerts" class="toggle rs_preserve" type="checkbox" value="true" />
       </label>
-    </div>
+    </div>    
   </div><!-- .toggles-wrapper -->
+          
+
+</div>
+        <%--<button class="button">Save</button>--%>
+          <asp:Button runat="server" ID="uxSave" OnClick="uxSave_Click" CssClass="button" text="Submit"/>
+          <asp:Literal ID="uxMessage" runat="server"></asp:Literal>
+      
 </div>
