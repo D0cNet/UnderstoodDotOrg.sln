@@ -28,7 +28,7 @@
 	<!-- BEGIN PARTIAL: article-action-buttons -->
 	<div class="article-actions buttons-container rs_skip clearfix">
 		<button class="icon-email">email</button>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" class="update-panel">
             <ContentTemplate>
                 <button id="lbSave" runat="server" class="icon-plus" onserverclick="lbSave_Click"></button>
             </ContentTemplate>

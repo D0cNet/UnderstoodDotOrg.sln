@@ -35,8 +35,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             message.ToEmail = txtRecipentEMailID.Text.Trim();
             message.UserContactFirstName = txtYourname.Text.Trim();
 
+            string domain = new Uri(HttpContext.Current.Request.Url.AbsoluteUri).GetLeftPart(UriPartial.Authority);
+
             if (article != null)
-                message.ReminderLink = article.GetUrl();
+                message.ReminderLink = domain+article.GetUrl();
 
             BaseReply reply = ExactTargetService.InvokeEM24ContentSharedWithAFriend(message);
             MembershipManager mmgr = new MembershipManager();

@@ -31,47 +31,7 @@
                                         <%-- Slide Image --%>
                                         <sc:FieldRenderer ID="frSlideImage" runat="server" FieldName="Slide Image" />
                                         <div class="content">
-                                            <div class="top">
-                                                <div class="slide-count">
-                                                    <%--Slide 2 of 10--%>
-                                                    Slide
-                                                    <asp:Label ID="lblCurrentSlide" runat="server"></asp:Label>
-                                                    of
-                                                    <asp:Label ID="lblTotalSlide" runat="server"></asp:Label>
-                                                </div>
-                                                <!-- BEGIN PARTIAL: share-content-dropdown -->
-                                                <!-- This file shared on multiple pages -->
-                                                <div class="share-dropdown-menu rs_skip">
-                                                    <button class="social-share-button">Share<i class="icon-arrow"></i></button>
-                                                    <div class="share-menu">
-                                                        <span class="social-share">Share<i class="icon-arrow"></i></span>
-                                                        <ul>
-                                                            <li class="clearfix">
-                                                                <a class="icon-facebook share-icon" href="https://facebook.com/sharer.php?u=<%= Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Item) %>"><i class="icon-facebook"></i>Facebook</a>
-                                                            </li>
-                                                            <li class="clearfix">
-                                                                <a class="icon-twitter share-icon" href="https://twitter.com/intent/tweet?url=<%= Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Item) %>&text=<%= Sitecore.Context.Item.Name %>&via=YOURTWITTERNAMEHERE"><i class="icon-twitter"></i>Twitter</a>
-                                                            </li>
-                                                            <li class="clearfix">
-                                                                <a class="icon-google share-icon" href="https://plus.google.com/share?url=<%= Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Item) %>"><i class="icon-google"></i>Google +</a>
-                                                            </li>
-                                                            <li class="clearfix">
-                                                                <a class="icon-pinterest share-icon" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above" ><i class="icon-pinterest"></i>Pinterest</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <!-- END PARTIAL: share-content-dropdown -->
-                                                <!-- BEGIN PARTIAL: article-action-buttons -->
-                                                <div class="article-actions buttons-container rs_skip clearfix">
-                                                    <button class="icon-email">email</button>
-                                                    <button class="icon-plus">save this</button>
-                                                    <button class="icon-print" onclick="window.print()">print</button>
-                                                    <button class="icon-bell">remind me</button>
-                                                </div>
-                                                <!-- END PARTIAL: article-action-buttons -->
-                                                <div class="clearfix"></div>
-                                            </div>
+                                            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/ShareContent.ascx" runat="server"></sc:Sublayout>
                                             <%-- slide Intro--%>
                                             <h3>
                                                 <sc:FieldRenderer ID="frSlideTitle" runat="server" FieldName="Slide Title" />
@@ -110,7 +70,25 @@
                             width: 100%;
                             height: auto;
                         }
+
+                        .tall-image .update-panel {
+                            vertical-align: top;
+                        }
+
+                        .wide-image .update-panel {
+                            float: left;
+                            height: 20px;
+                        }
                     </style>
+                    <script>
+                        $(".icon-email").click(function (e) {
+                            e.preventDefault();
+
+                            $(".email-a-friend-modal").show();
+                            $(".email-a-friend-modal").css({ "top": "163px", "overflow": "hidden" });
+                            $(".email-a-friend-modal .modal-dialog").css("opacity", "1");
+                        })
+                    </script>
                 </div>
 
                 <asp:Repeater ID="rptSlideButton" runat="server" OnItemDataBound="rptSlideButton_ItemDataBound">
