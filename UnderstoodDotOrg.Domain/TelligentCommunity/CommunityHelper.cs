@@ -1233,12 +1233,68 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                     XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
 
-                    int nodecount = 0;
                     foreach (XmlNode xn in nodes)
                     {
                         Comment comment = new Comment(xn);
                         commentList.Add(comment);
-                        nodecount++;
+                    }
+                }
+                catch { } // TODO: add logging
+            }
+            return commentList;
+        }
+
+        public static List<Comment> ReadComments(string blogIds)
+        {
+            List<Comment> commentList = new List<Comment>();
+
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                    var requestUrl = GetApiEndPoint("comments.xml?PageSize=100");
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+
+                    foreach (XmlNode xn in nodes)
+                    {
+                        XmlNode author = xn.SelectSingleNode("Content/CreatedByUser");
+                        XmlNode app = xn.SelectSingleNode("Content/Application");
+                        var CommentId = xn["CommentId"].InnerText;
+                        var IsApproved = xn["IsApproved"].InnerText;
+                        var ReplyCount = xn["ReplyCount"].InnerText;
+                        var CommentContentTypeId = xn["CommentContentTypeId"].InnerText;
+                        var Body = xn["Body"].InnerText;
+                        var PublishedDate = CommunityHelper.FormatDate(xn["CreatedDate"].InnerText);
+                        var AuthorId = author["Id"].InnerText;
+                        var AuthorAvatarUrl = author["AvatarUrl"].InnerText;
+                        var AuthorDisplayName = author["DisplayName"].InnerText;
+                        var AuthorProfileUrl = author["ProfileUrl"].InnerText;
+                        var AuthorUsername = author["Username"].InnerText;
+                        if (app["HtmlName"].InnerText != "Articles")
+                        {
+                            Comment comment = new Comment() {
+                                CommentId = CommentId,
+                                IsApproved = IsApproved,
+                                ReplyCount = ReplyCount,
+                                CommentContentTypeId = CommentContentTypeId,
+                                Body = Body,
+                                PublishedDate = PublishedDate,
+                                AuthorId = AuthorId,
+                                AuthorAvatarUrl = AuthorAvatarUrl,
+                                AuthorDisplayName = AuthorDisplayName,
+                                AuthorProfileUrl = AuthorProfileUrl,
+                                AuthorUsername = AuthorUsername,
+                                ParentTitle = app["HtmlName"].InnerText,
+                            };
+                            commentList.Add(comment);
+                        }
                     }
                 }
                 catch { } // TODO: add logging

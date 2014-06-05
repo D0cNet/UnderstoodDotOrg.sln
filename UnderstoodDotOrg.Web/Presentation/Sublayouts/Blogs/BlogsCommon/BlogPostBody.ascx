@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BlogPostBody.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon.BlogPostBody" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="col col-17 blog-post-content skiplink-content" aria-role="main">
     <header class="comments-headers">
         <h2><sc:FieldRenderer id="BlogTitle" runat="server" fieldname="Title" /></h2>
