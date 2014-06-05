@@ -27,13 +27,13 @@
 	<!-- END PARTIAL: share-content-dropdown -->
 	<!-- BEGIN PARTIAL: article-action-buttons -->
 	<div class="article-actions buttons-container rs_skip clearfix">
-
 		<button class="icon-email">email</button>
-
-		<button class="icon-plus">save this</button>
-
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <button id="lbSave" runat="server" class="icon-plus" onserverclick="lbSave_Click"></button>
+            </ContentTemplate>
+        </asp:UpdatePanel>
 		<button class="icon-print" onclick="window.print()">print</button>
-
         <%--OOS for this release--%>
 		<%--<button class="icon-bell">remind me</button>--%>
         <%--When You need it check MembershipManager.LogMemberActivity(x,y,z,q). Sample usage is in Sandbox.ascx.cs--%>
