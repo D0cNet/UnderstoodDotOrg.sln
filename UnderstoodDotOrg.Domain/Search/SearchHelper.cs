@@ -433,6 +433,9 @@ namespace UnderstoodDotOrg.Domain.Search
 
         public static List<Article> PerformArticleSearch(string terms, string template, int page, out int totalResults)
         {
+            // Remove wildcard
+            terms = terms.Replace("*", "");
+
             var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
 
             using (var ctx = index.CreateSearchContext())

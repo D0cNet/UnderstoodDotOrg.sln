@@ -27,11 +27,18 @@ namespace UnderstoodDotOrg.Common.Helpers
 
         public static string HighlightSearchTitle(string terms, string title)
         {
+            string[] reserved = new [] { ".", "^", "$", "*", "+", "?", "(", ")", "[", "{", "|", "\\", "}" };
+            reserved = reserved.Select(x => @"\" + x).ToArray();
+
+            string reservedPattern = String.Format("({0})", String.Join("|", reserved));
+
             IEnumerable<string> words = terms.Trim().Split(' ').Select(x => x.Trim()).Distinct();
             foreach (string word in words)
             {
+                string regexWord = Regex.Replace(word, reservedPattern, @"\$1");
+
                 title = Regex.Replace(title, 
-                            String.Format(@"\b({0})\b", word), 
+                            String.Format(@"\b({0})\b", regexWord), 
                             String.Format("<span>$1</span>", word), 
                             RegexOptions.IgnoreCase);
             }

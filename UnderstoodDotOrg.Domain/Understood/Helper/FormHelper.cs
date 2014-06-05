@@ -169,11 +169,14 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
         {
             var pairs = (from qp in queryParams
                          where !String.IsNullOrEmpty(qp.Value) 
-                         select String.Format("{0}={1}", qp.Key, System.Net.WebUtility.UrlEncode(qp.Value))).ToArray();
+                         select String.Format("{0}={1}", qp.Key, Uri.EscapeDataString(qp.Value))).ToArray();
 
             string queryString = (pairs.Any()) ?
                 String.Concat("?", String.Join("&", pairs)) :
                 String.Empty;
+
+            // Handle parentheses
+            queryString = queryString.Replace("(", "%28").Replace(")", "%29");
 
             return String.Concat(baseUrl, queryString); 
         }

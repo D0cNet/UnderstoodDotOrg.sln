@@ -17,6 +17,8 @@
     using System.Web.UI;
     using System.Text;
     using UnderstoodDotOrg.Domain.Search.JSON;
+    using System.Collections.Specialized;
+    using System.Web;
 
     public partial class SearchResults : System.Web.UI.UserControl
     {

@@ -367,7 +367,7 @@ U.searchSite = function () {
     };
 
     self.redirectToSearch = function (base, term) {
-        location.href = base + "?q=" + term;
+        location.href = base + "?q=" + encodeURIComponent(term);
     };
 
     self.detectBreakpoint = function () {
