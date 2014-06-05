@@ -20,204 +20,43 @@
                 <!-- END PARTIAL: community/carousel_arrows -->
             </div>
             <div class="row event-cards">
-                <!-- BEGIN PARTIAL: community/event_card -->
-                <div class="col col-11 event-card">
-                    <div class="event-card-info group">
-                        <div class="event-card-image">
-                            <a href="REPLACE">
-                                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                                <div class="image-label">
-                                    Expert
+                <asp:Repeater ID="rptEvents" runat="server">
+                    <ItemTemplate>
+                        <!-- BEGIN PARTIAL: community/event_card -->
+                        <div class="col col-11 event-card">
+                            <div class="event-card-info group">
+                                <div class="event-card-image">
+                                    <a href="REPLACE">
+                                        <asp:Image ID="imgExpert" runat="server" />
+                                        <div class="image-label">
+                                            Expert
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                        <!-- end .event-card-image -->
-                        <div class="event-card-content">
-                            <div class="event-card-datetime">
-                                Sun Mar 18 at 12am UTC
-                            </div>
-                            <!-- end .event-card-datetime -->
-                            <div class="event-card-title">
-                                <a href="REPLACE">Qui Corporis Dolores Minus Laboriosam Dolorem Quia Quam Voluptas Est</a>
-                            </div>
-                            <!-- end .event-card-title -->
-                            <div class="card-buttons">
-                                <button type="button" class="button">RSVP</button>
-                                <button class="action-skip-this">Skip this</button>
-                            </div>
-                            <!-- end .card-buttons -->
-                        </div>
-                        <!-- end .event-card-content -->
-                    </div>
-                    <!-- end .event-card-info -->
-                </div>
-                <!-- end .event-card -->
-                <!-- END PARTIAL: community/event_card -->
-                <!-- BEGIN PARTIAL: community/event_card -->
-                <div class="col col-11 event-card">
-                    <div class="event-card-info group">
-                        <div class="event-card-image">
-                            <a href="REPLACE">
-                                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                                <div class="image-label">
-                                    Expert
+                                <!-- end .event-card-image -->
+                                <div class="event-card-content">
+                                    <div class="event-card-datetime">
+                                        <asp:Literal ID="litEventDate" runat="server" />
+                                    </div>
+                                    <!-- end .event-card-datetime -->
+                                    <div class="event-card-title">
+                                        <asp:HyperLink ID="hlEventDetail" runat="server">Chat with<br /><sc:FieldRenderer ID="frExpertName" FieldName="Expert Name" runat="server" /></asp:HyperLink>
+                                    </div>
+                                    <!-- end .event-card-title -->
+                                    <div class="card-buttons">
+                                        <button type="button" class="button">RSVP</button>
+                                        <button class="action-skip-this">Skip this</button>
+                                    </div>
+                                    <!-- end .card-buttons -->
                                 </div>
-                            </a>
+                                <!-- end .event-card-content -->
+                            </div>
+                            <!-- end .event-card-info -->
                         </div>
-                        <!-- end .event-card-image -->
-                        <div class="event-card-content">
-                            <div class="event-card-datetime">
-                                Mon Mar 31 at 12am UTC
-                            </div>
-                            <!-- end .event-card-datetime -->
-                            <div class="event-card-title">
-                                <a href="REPLACE">Et Iusto Voluptas Sequi Corporis Iste Architecto Ad Molestias Est</a>
-                            </div>
-                            <!-- end .event-card-title -->
-                            <div class="card-buttons">
-                                <button type="button" class="button">RSVP</button>
-                                <button class="action-skip-this">Skip this</button>
-                            </div>
-                            <!-- end .card-buttons -->
-                        </div>
-                        <!-- end .event-card-content -->
-                    </div>
-                    <!-- end .event-card-info -->
-                </div>
-                <!-- end .event-card -->
-                <!-- END PARTIAL: community/event_card -->
-                <!-- BEGIN PARTIAL: community/event_card -->
-                <div class="col col-11 event-card">
-                    <div class="event-card-info group">
-                        <div class="event-card-image">
-                            <a href="REPLACE">
-                                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                                <div class="image-label">
-                                    Expert
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end .event-card-image -->
-                        <div class="event-card-content">
-                            <div class="event-card-datetime">
-                                Fri Nov 19 at 12am UTC
-                            </div>
-                            <!-- end .event-card-datetime -->
-                            <div class="event-card-title">
-                                <a href="REPLACE">Est Placeat Maiores Itaque Blanditiis Suscipit Inventore Quo Voluptatem Expedita</a>
-                            </div>
-                            <!-- end .event-card-title -->
-                            <div class="card-buttons">
-                                <button type="button" class="button">RSVP</button>
-                                <button class="action-skip-this">Skip this</button>
-                            </div>
-                            <!-- end .card-buttons -->
-                        </div>
-                        <!-- end .event-card-content -->
-                    </div>
-                    <!-- end .event-card-info -->
-                </div>
-                <!-- end .event-card -->
-                <!-- END PARTIAL: community/event_card -->
-                <!-- BEGIN PARTIAL: community/event_card -->
-                <div class="col col-11 event-card">
-                    <div class="event-card-info group">
-                        <div class="event-card-image">
-                            <a href="REPLACE">
-                                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                                <div class="image-label">
-                                    Expert
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end .event-card-image -->
-                        <div class="event-card-content">
-                            <div class="event-card-datetime">
-                                Mon May 6 at 12am UTC
-                            </div>
-                            <!-- end .event-card-datetime -->
-                            <div class="event-card-title">
-                                <a href="REPLACE">Modi Aut Quas Libero Ea Natus Ducimus Aut Beatae Numquam</a>
-                            </div>
-                            <!-- end .event-card-title -->
-                            <div class="card-buttons">
-                                <button type="button" class="button">RSVP</button>
-                                <button class="action-skip-this">Skip this</button>
-                            </div>
-                            <!-- end .card-buttons -->
-                        </div>
-                        <!-- end .event-card-content -->
-                    </div>
-                    <!-- end .event-card-info -->
-                </div>
-                <!-- end .event-card -->
-                <!-- END PARTIAL: community/event_card -->
-                <!-- BEGIN PARTIAL: community/event_card -->
-                <div class="col col-11 event-card">
-                    <div class="event-card-info group">
-                        <div class="event-card-image">
-                            <a href="REPLACE">
-                                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                                <div class="image-label">
-                                    Guest Expert
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end .event-card-image -->
-                        <div class="event-card-content">
-                            <div class="event-card-datetime">
-                                Mon Jun 2 at 12am UTC
-                            </div>
-                            <!-- end .event-card-datetime -->
-                            <div class="event-card-title">
-                                <a href="REPLACE">Molestias Ut Perferendis Non Beatae Quasi Nostrum Ullam Maiores Non</a>
-                            </div>
-                            <!-- end .event-card-title -->
-                            <div class="card-buttons">
-                                <button type="button" class="button">RSVP</button>
-                                <button class="action-skip-this">Skip this</button>
-                            </div>
-                            <!-- end .card-buttons -->
-                        </div>
-                        <!-- end .event-card-content -->
-                    </div>
-                    <!-- end .event-card-info -->
-                </div>
-                <!-- end .event-card -->
-                <!-- END PARTIAL: community/event_card -->
-                <!-- BEGIN PARTIAL: community/event_card -->
-                <div class="col col-11 event-card">
-                    <div class="event-card-info group">
-                        <div class="event-card-image">
-                            <a href="REPLACE">
-                                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                                <div class="image-label">
-                                    Expert
-                                </div>
-                            </a>
-                        </div>
-                        <!-- end .event-card-image -->
-                        <div class="event-card-content">
-                            <div class="event-card-datetime">
-                                Mon Jul 5 at 12am UTC
-                            </div>
-                            <!-- end .event-card-datetime -->
-                            <div class="event-card-title">
-                                <a href="REPLACE">Blanditiis Numquam Ipsam Et Adipisci Voluptatibus Autem Architecto Exercitationem Debitis</a>
-                            </div>
-                            <!-- end .event-card-title -->
-                            <div class="card-buttons">
-                                <button type="button" class="button">RSVP</button>
-                                <button class="action-skip-this">Skip this</button>
-                            </div>
-                            <!-- end .card-buttons -->
-                        </div>
-                        <!-- end .event-card-content -->
-                    </div>
-                    <!-- end .event-card-info -->
-                </div>
-                <!-- end .event-card -->
-                <!-- END PARTIAL: community/event_card -->
+                        <!-- end .event-card -->
+                        <!-- END PARTIAL: community/event_card -->
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
             <!-- end .event-cards -->
         </div>
