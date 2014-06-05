@@ -58,22 +58,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
         protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// hdnGetAllCheckedIssues control.
+        /// hfGradeChoice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnGetAllCheckedIssues;
-        
-        /// <summary>
-        /// hdnGetAllCheckedGrades control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnGetAllCheckedGrades;
+        protected global::System.Web.UI.WebControls.HiddenField hfGradeChoice;
         
         /// <summary>
         /// hfRandomizeSlider control.

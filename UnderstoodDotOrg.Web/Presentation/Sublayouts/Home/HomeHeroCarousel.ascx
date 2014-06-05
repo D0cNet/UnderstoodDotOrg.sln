@@ -37,24 +37,6 @@
                             </asp:Panel>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <%-- <!-- .slide -->
-                    <div class="slide" style="background-image: url(Presentation/includes/images/temp.bg.slide.1200.02.jpg)">
-                        <div class="text text-color-white">
-                            <p>
-                                You can make a difference.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- .slide -->
-                    <div class="slide" style="background-image: url(Presentation/includes/images/temp.bg.slide.1200.03.jpg)">
-                        <div class="text text-color-purple">
-                            <p>
-                                Step 1:<br>
-                                Understand your child's struggles.
-                            </p>
-                        </div>
-                    </div>--%>
-                    <!-- .slide -->
                 </div>
                 <!-- #hero-carousel-wrapper -->
                 <!-- END PARTIAL: hero-carousel -->
@@ -99,11 +81,11 @@
                                     <ItemTemplate>
                                         <li>
                                             <span class="checkbox-wrap">
-                                                <input id="issueInput" class="input-checkbox-class" runat="server" onclick="CheckIssues($(this));" type="checkbox"></span>
-                                            <label id="lblCheckbox" runat="server" for=""></label>
+                                                <asp:CheckBox ID="cbIssue" runat="server" CssClass="input-checkbox-class" />
+                                            </span>
+                                            <asp:Label ID="lblIssue" runat="server" AssociatedControlID="cbIssue" />
 
-                                            <asp:HiddenField ID="hdnKeyValuePair" runat="server" ClientIDMode="Static" />
-                                            <asp:HiddenField ID="hdnChecked" runat="server" ClientIDMode="Static" />
+                                            <asp:HiddenField ID="hfIssue" runat="server" />
                                         </li>
                                     </ItemTemplate>
                                     <FooterTemplate>
@@ -123,14 +105,12 @@
                             <h4>My child is enrolled in:</h4>
 
                             <label for="guideme-grade" class="visuallyhidden">My child is enrolled in:</label>
-                            <asp:DropDownList ID="ddlGradeGroups" runat="server" CssClass="guideme-grade-mobile"
-                                RepeatLayout="unorderedlist" RepeatDirection="vertical">
-                            </asp:DropDownList>
+                            <asp:DropDownList ID="ddlGradeGroups" runat="server" CssClass="guideme-grade-mobile"/>
 
                             <nav>
                                 <asp:Repeater ID="rptGrades" runat="server" OnItemDataBound="rptGrades_ItemDataBound">
                                     <ItemTemplate>
-                                        <button id="gradeBtn" runat="server" class="grade" onclick="CheckGrades($(this));"></button>
+                                        <button id="gradeBtn" runat="server" class="grade"></button>
                                     </ItemTemplate>
                                 </asp:Repeater>
                             </nav>
@@ -149,9 +129,8 @@
                 <div class="col col-8 offset-8">
 
                     <div class="submit-button-wrap">
-                        <asp:Button ID="btnSubmit" runat="server" Text="See my recommendations" CssClass="button submit-button button-guide-me-recommendations" OnClientClick="GetAllCheckedInput();" OnClick="btnSubmit_OnClick" />
-                        <asp:HiddenField ID="hdnGetAllCheckedIssues" runat="server" ClientIDMode="Static" />
-                        <asp:HiddenField ID="hdnGetAllCheckedGrades" runat="server" ClientIDMode="Static" />
+                        <asp:Button ID="btnSubmit" runat="server" Text="See my recommendations" CssClass="button submit-button button-guide-me-recommendations" OnClick="btnSubmit_OnClick" />
+                        <asp:HiddenField ID="hfGradeChoice" runat="server" ClientIDMode="Static" />
                     </div>
 
                 </div>

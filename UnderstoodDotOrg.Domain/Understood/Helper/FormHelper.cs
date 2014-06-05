@@ -44,10 +44,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
 
         public static List<ListItem> GetIssues(string initialChoiceLabel)
         {
-            var container = Sitecore.Context.Database.GetItem(Constants.IssueContainer.ToString());
-            var issues = container.Children.FilterByContextLanguageVersion()
-                            .Select(i => new ChildIssueItem(i))
-                            .Where(i => !i.ExcludeFromWebsiteDisplay.Checked)
+            var issues = GetIssues()
                             .Select(i => new ListItem
                             {
                                 Text = i.IssueName.Raw,
@@ -57,16 +54,29 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
             return PopulateList(initialChoiceLabel, issues);
         }
 
+        public static IEnumerable<ChildIssueItem> GetIssues()
+        {
+            var container = Sitecore.Context.Database.GetItem(Constants.IssueContainer.ToString());
+            return container.Children.FilterByContextLanguageVersion()
+                            .Select(i => new ChildIssueItem(i))
+                            .Where(i => !i.ExcludeFromWebsiteDisplay.Checked);
+        }
+
+        public static IEnumerable<GradeLevelItem> GetGrades()
+        {
+            var container = Sitecore.Context.Database.GetItem(Constants.GradeContainer.ToString());
+            return container.Children.FilterByContextLanguageVersion()
+                            .Select(i => new GradeLevelItem(i))
+                            .Where(g => !g.ExcludeFromWebsiteDisplay.Checked);
+        }
+
         /// <summary>
         /// Returns a list of child grades defined in child taxonomy
         /// </summary>
         /// <returns>Collection of child grades where value is the respective Sitecore Guid</returns>
         public static List<ListItem> GetGrades(string initialChoiceLabel)
         {
-            var container = Sitecore.Context.Database.GetItem(Constants.GradeContainer.ToString());
-            var grades = container.Children.FilterByContextLanguageVersion()
-                            .Select(i => new GradeLevelItem(i))
-                            .Where(g => !g.ExcludeFromWebsiteDisplay.Checked)
+            var grades = GetGrades()
                             .Select(g => new ListItem
                             {
                                 Text = g.Name,

@@ -230,6 +230,24 @@ jQuery(function () {
 	$(document).ready(init);
 })(jQuery);
 
+
+// Homepage module
+(function ($) {
+	var $gradeInput = $("#hfGradeChoice");
+	
+	function gradeButton_clickHandler(e) {
+		$gradeInput.val($(this).data('value'));
+	}
+	
+	$(document).ready(function() {
+		if ($(".container-guide-me-overlay").length == 0) {
+			return;
+		}
+		$(".container-guide-me-overlay nav button").on("click", gradeButton_clickHandler);
+	});
+	
+})(jQuery);
+
 //"Show More" functionality for repeaters
 var showCount = 3;
 $(document).ready(function () {
