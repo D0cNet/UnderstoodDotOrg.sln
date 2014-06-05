@@ -5,12 +5,17 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.ExactTarget;
+using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.ExactTarget;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
-    public partial class ShareNSave_SendEmail : System.Web.UI.UserControl
+    public partial class ShareNSave_SendEmail : BaseSublayout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,19 +28,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         protected void btnSend_Click(object sender, EventArgs e)
         {
             DefaultArticlePageItem article = (DefaultArticlePageItem)Sitecore.Context.Item;
-            SmtpClient smtpClient = new SmtpClient();
-            MailMessage message = new MailMessage();
-            MailAddress fromAddress = new MailAddress(txtYourEMailID.Text.Trim(), txtYourname.Text.Trim(), System.Text.Encoding.Default);
-            message.From = fromAddress;
-            message.Subject = txtYourname.Text.Trim() + " has found this helpful information for you!";
+
+            InvokeEM24ContentSharedWithAFriendRequest message = new InvokeEM24ContentSharedWithAFriendRequest{};
+
+            message.PMText = txtThoughts.Text.Trim();
+            message.ToEmail = txtRecipentEMailID.Text.Trim();
+            message.UserContactFirstName = txtYourname.Text.Trim();
 
             if (article != null)
-                message.Body = txtThoughts.Text.Trim() + "</br></br>Here is the link<a href='" + article.GetUrl();
-            else
-                message.Body = txtThoughts.Text.Trim();
+                message.ReminderLink = article.GetUrl();
 
-            message.To.Add(txtRecipentEMailID.Text.Trim());
-            smtpClient.Send(message);
+            BaseReply reply = ExactTargetService.InvokeEM24ContentSharedWithAFriend(message);
+            MembershipManager mmgr = new MembershipManager();
+
+            if (IsUserLoggedIn)
+            {
+                try
+                {
+                    bool success = mmgr.LogMemberActivity(CurrentMember.MemberId,
+                            article.ID.ToGuid(),
+                            Constants.UserActivity_Values.Shared,
+                            Constants.UserActivity_Types.ContentRelated);
+                }
+                catch
+                {
+                    return;
+                }
+            }
         }
     }
 }
