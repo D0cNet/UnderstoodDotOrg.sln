@@ -156,15 +156,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                 FieldRenderer frPageSummary1 = e.FindControlAs<FieldRenderer>("frPageSummary1");
                 FieldRenderer frPageSummary2 = e.FindControlAs<FieldRenderer>("frPageSummary2");
-                FieldRenderer frPageTitle1 = e.FindControlAs<FieldRenderer>("frPageTitle1");
-                FieldRenderer frPageTitle2 = e.FindControlAs<FieldRenderer>("frPageTitle2");
+                HyperLink hypLink1 = e.FindControlAs<HyperLink>("hypLink1");
+                HyperLink hypLink2 = e.FindControlAs<HyperLink>("hypLink2");
                 Literal ltlSlideshowRestartLabel = e.FindControlAs<Literal>("ltlSlideshowRestartLabel");
                 Literal ltlSlideshowRestartAlternateLabel = e.FindControlAs<Literal>("ltlSlideshowRestartAlternateLabel");
 
                 if (randomSlides.Count >= 2)
                 {
                     var slide = randomSlides[1];
-                    frPageTitle2.Item = frPageSummary2.Item = slide;
+                    hypLink2.NavigateUrl = slide.GetUrl();
+                    hypLink2.Text = slide.Name;
+                    frPageSummary2.Item = slide;
                     Panel pnlThumbnail2 = e.FindControlAs<Panel>("pnlThumbnail2");
                     string url = slide.DefaultArticlePage.GetArticleThumbnailUrl(380, 220);
                     string style = string.Format("background-image: url('{0}')", url);
@@ -175,7 +177,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 if (randomSlides.Count >= 1)
                 {
                     var slide = randomSlides[0];
-                    frPageTitle1.Item = frPageSummary1.Item = slide;
+                    hypLink1.NavigateUrl = slide.GetUrl();
+                    hypLink1.Text = slide.Name;
+                    frPageSummary1.Item = slide;
                     Panel pnlThumbnail1 = e.FindControlAs<Panel>("pnlThumbnail2");
                     string url = slide.DefaultArticlePage.GetArticleThumbnailUrl(380, 220);
                     string style = string.Format("background-image: url('{0}')", url);

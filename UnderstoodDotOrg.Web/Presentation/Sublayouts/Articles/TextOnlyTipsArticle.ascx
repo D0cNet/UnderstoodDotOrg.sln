@@ -43,7 +43,7 @@
                                     <asp:Placeholder ID="phSlideshow1" Visible="false" runat="server">
                                         <asp:Panel ID="pnlThumbnail1" CssClass="thumbnail" runat="server"></asp:Panel>
                                         <div class="text">
-                                            <h4><sc:FieldRenderer ID="frPageTitle1" FieldName="Page Title" runat="server"></sc:FieldRenderer></h4>
+                                            <h4><asp:HyperLink ID="hypLink1" runat="server"></asp:HyperLink></h4>
                                             <sc:FieldRenderer ID="frPageSummary1" FieldName="Page Summary" runat="server"></sc:FieldRenderer>
                                         </div>
                                         <div class="clearfix"></div>
@@ -51,7 +51,7 @@
                                     <asp:Placeholder ID="phSlideshow2" Visible="false" runat="server">
                                         <asp:Panel ID="pnlThumbnail2" CssClass="thumbnail" runat="server"></asp:Panel>
                                         <div class="text">
-                                            <h4><sc:FieldRenderer ID="frPageTitle2" FieldName="Page Title" runat="server"></sc:FieldRenderer></h4>
+                                            <h4><asp:HyperLink ID="hypLink2" runat="server"></asp:HyperLink></sc:FieldRenderer></h4>
                                             <sc:FieldRenderer ID="frPageSummary2" FieldName="Page Summary" runat="server"></sc:FieldRenderer>
                                         </div>
                                         <div class="clearfix"></div>
