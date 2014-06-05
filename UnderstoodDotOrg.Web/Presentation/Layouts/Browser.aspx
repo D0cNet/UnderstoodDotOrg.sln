@@ -123,7 +123,7 @@
         <sc:Placeholder runat="server" Key="AfterResources" />
 
         <!-- END PARTIAL: footerjs -->
-        <sc:Placeholder runat="server" Key="EndFormModal" />
+        
     </form>
 
     <sc:Placeholder runat="server" Key="AfterFormModal" />

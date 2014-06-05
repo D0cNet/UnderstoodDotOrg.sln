@@ -71,5 +71,7 @@
     </div>
 </div>
 
+<sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Common/ShareNSave_SendEmail.ascx" />
+
 
 <!-- END PARTIAL: share-save -->
