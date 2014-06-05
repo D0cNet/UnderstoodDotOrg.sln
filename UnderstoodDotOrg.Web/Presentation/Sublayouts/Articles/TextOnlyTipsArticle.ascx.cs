@@ -188,7 +188,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 }
 
                 ltlSlideshowRestartLabel.Text = DictionaryConstants.SlideshowRestartLabel;
-                ltlSlideshowRestartAlternateLabel.Text = DictionaryConstants.SlideshowRestartAlternateLabel;
+                //ltlSlideshowRestartAlternateLabel.Text = DictionaryConstants.SlideshowRestartAlternateLabel;
             }
         }
     }
