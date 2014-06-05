@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace UnderstoodDotOrg.Common.Helpers
 {
     public static class MembershipHelper
     {
+        /// <summary>
+        /// Adds ordinal indicator (st, nd, rd, th) to provided string value
+        /// </summary>
+        /// <param name="Value">String representing current position</param>
+        /// <returns>Value with appropriate ordinal indicator appended</returns>
         public static string AddOrdinalIndicator(string Value)
         {
             switch (Value)
@@ -29,6 +35,11 @@ namespace UnderstoodDotOrg.Common.Helpers
             return Value;
         }
 
+        /// <summary>
+        /// Adds ordinal indicator (st, nd, rd, th) to provided integer value
+        /// </summary>
+        /// <param name="Value">Integer representing current position</param>
+        /// <returns>String of value with appropriate ordinal indicator appended</returns>
         public static string AddOrdinalIndicator(int Value)
         {
             return AddOrdinalIndicator(Value.ToString());
