@@ -1178,7 +1178,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
         public static List<GroupModel> GetUserGroups(string username)
         {
-            List<GroupModel> groupsList = null;
+            List<GroupModel> groupsList = new List<GroupModel>();
 
             using (var webClient = new WebClient())
             {
