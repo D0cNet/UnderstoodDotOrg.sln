@@ -33,7 +33,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
         {
             HomePageItem ContextItem = Sitecore.Context.Item;
 
-            CompleteMyProfileUrl = IsUserLoggedIn ? MyAccountFolderItem.GetMyProfileStepOnePage().GetUrl() : MyAccountFolderItem.GetSignInPage();
+            CompleteMyProfileUrl = IsUserLoggedIn 
+                ? MyAccountFolderItem.GetMyProfileStepOnePage().GetUrl() 
+                : MyAccountFolderItem.GetSignInPage();
 
             if (UnauthenticatedSessionMember != null)
             {
@@ -44,52 +46,57 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
             {
                 GetSliderItem(ContextItem);
 
-                var childIssues = FormHelper.GetIssues();
-                rptChildIssues.Visible = true;
-                rptChildIssues.DataSource = childIssues;
-                rptChildIssues.DataBind();
-
-                var grades = FormHelper.GetGrades();
-                rptGrades.Visible = true;
-                rptGrades.DataSource = grades;
-                rptGrades.DataBind();
-
-                var gradesList = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
-                if (gradesList.Any())
-                {
-                    ddlGradeGroups.DataSource = gradesList;
-                    ddlGradeGroups.DataTextField = "Text";
-                    ddlGradeGroups.DataValueField = "Value";
-                    ddlGradeGroups.DataBind();
-                }
-
-                // TODO: retrieve selected states from session
-                if (ActiveMember.Children.Any())
-                {
-                    Child child = ActiveMember.Children.First();
-                    foreach (RepeaterItem ri in rptChildIssues.Items)
-                    {
-                        CheckBox cbIssue = (CheckBox)ri.FindControl("cbIssue");
-                        HiddenField hfIssue = (HiddenField)ri.FindControl("hfIssue");
-                        var match = child.Issues.Where(i => i.Key == Guid.Parse(hfIssue.Value)).FirstOrDefault();
-                        if (match != null)
-                        {
-                            cbIssue.Checked = true;
-                        }
-                    }
-
-                    if (child.Grades.Any())
-                    {
-                        SetSelectedGrade(child.Grades.First().Key.ToString());
-                    }
-                }
+                InitGuideMe();
             }
             else
             {
-                // Handle selected state
+                // Non-standard controls used for grades, values stored in hidden field via JS
                 if (!String.IsNullOrEmpty(hfGradeChoice.Value))
                 {
                     SetSelectedGrade(hfGradeChoice.Value);
+                }
+            }
+        }
+
+        private void InitGuideMe()
+        {
+            var childIssues = FormHelper.GetIssues();
+            rptChildIssues.Visible = true;
+            rptChildIssues.DataSource = childIssues;
+            rptChildIssues.DataBind();
+
+            var grades = FormHelper.GetGrades();
+            rptGrades.Visible = true;
+            rptGrades.DataSource = grades;
+            rptGrades.DataBind();
+
+            var gradesList = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
+            if (gradesList.Any())
+            {
+                ddlGradeGroups.DataSource = gradesList;
+                ddlGradeGroups.DataTextField = "Text";
+                ddlGradeGroups.DataValueField = "Value";
+                ddlGradeGroups.DataBind();
+            }
+
+            // Pre-select unauthenticated user's choices
+            if (ActiveMember.Children.Any())
+            {
+                Child child = ActiveMember.Children.First();
+                foreach (RepeaterItem ri in rptChildIssues.Items)
+                {
+                    CheckBox cbIssue = (CheckBox)ri.FindControl("cbIssue");
+                    HiddenField hfIssue = (HiddenField)ri.FindControl("hfIssue");
+                    var match = child.Issues.Where(i => i.Key == Guid.Parse(hfIssue.Value)).FirstOrDefault();
+                    if (match != null)
+                    {
+                        cbIssue.Checked = true;
+                    }
+                }
+
+                if (child.Grades.Any())
+                {
+                    SetSelectedGrade(child.Grades.First().Key.ToString());
                 }
             }
         }
@@ -221,9 +228,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
                 return;
             }
 
+            // TODO: verify if it's ok to clear out unauthenticated user
             Member member = new Member();
 
             Child child = new Child();
+            // TODO: replace child name
+            child.Nickname = "Your Child";
 
             child.ChildId = Guid.NewGuid();
 
@@ -238,20 +248,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
                     {
                         child.Issues.Add(new Issue
                         {
-                            Key = Guid.Parse(cii.ID.ToString())
+                            Key = Guid.Parse(cii.ID.ToString()),
+                            Value = cii.IssueName.Rendered
                         });
                     }
                 }
             }
 
-            child.Grades.Add(new Grade
+            GradeLevelItem gradeItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(selectedGrade));
+            if (gradeItem != null)
             {
-                Key = Guid.Parse(selectedGrade)
-            });
+                child.Grades.Add(new Grade
+                {
+                    Key = Guid.Parse(selectedGrade),
+                    Value = gradeItem.Name
+                });
+            }
 
             member.Children.Add(child);
             UnauthenticatedSessionMember = member;
 
+            // TODO: return unauthenticated users to different results page
             Response.Redirect(FormHelper.GetRecommendationUrl());
         }
     }

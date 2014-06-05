@@ -536,6 +536,13 @@ namespace UnderstoodDotOrg.Domain.Search
             }   
         }
 
+        /// <summary>
+        /// Retrieves articles based on personalization flow
+        /// </summary>
+        /// <param name="member"></param>
+        /// <param name="child"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public static List<Article> GetArticles(Member member, Child child, DateTime date)
         {
             List<Article> results = new List<Article>();
@@ -639,7 +646,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 results = finalList;
 
-                var resp = System.Web.HttpContext.Current.Response;
+                /*var resp = System.Web.HttpContext.Current.Response;
                 resp.Write(String.Format("Member: {0} {1} | Child: {2}<br>", member.FirstName, member.LastName, child.Nickname));
                 resp.Write(String.Format("Total articles to search: {0}<br>", allArticlesQuery.Take(1).GetResults().TotalSearchResults));
                 resp.Write(String.Format("Matches: {0}<br><br>", totalMatches));
@@ -651,7 +658,7 @@ namespace UnderstoodDotOrg.Domain.Search
                     resp.Write(String.Format("{0} - {1} ({2})<br>", a.ItemId.ToString(), a.Name, a.Language));
                 }
 
-                resp.Write("<br><br>");
+                resp.Write("<br><br>");*/
             }  
 
             return results;
