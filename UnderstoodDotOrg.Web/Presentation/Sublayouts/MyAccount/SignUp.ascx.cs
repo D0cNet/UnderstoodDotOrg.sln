@@ -24,6 +24,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             uxZipCode.Attributes["placeholder"] = DictionaryConstants.ZipCodeWatermark;
 
             uxSubmit.Text = DictionaryConstants.SubmitButtonText;
+            this.Page.Form.DefaultButton = this.uxSubmit.UniqueID;
 
             uxSignIn.Text = DictionaryConstants.SignInButtonText;
             uxSignIn.NavigateUrl = MyAccountFolderItem.GetSignInPage();
