@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Favorites.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs.Favorites" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+
 <div class="container my-account-subheader saved-subheader">
     <div class="row">
         <!-- subheader -->
@@ -54,37 +56,51 @@
                                             <span class="visuallyhidden">comments</span>
                                         </div>
                                         <div class="tools">
-                                            <div class="buttons-container clearfix">
-
-                                                <button class="icon icon-plus rs_preserve">save this</button>
-                                                <button class="icon icon-print">print</button>
-                                                <button class="icon icon-bell rs_preserve">remind me</button>
-                                            </div>
-                                            <div class="share-dropdown-menu-wrap">
+                                            <div class="top">
                                                 <!-- BEGIN PARTIAL: share-content-dropdown -->
-                                                <!-- This file shared on multiple pages -->
-
                                                 <div class="share-dropdown-menu rs_skip">
-                                                    <button class="social-share-button rs_preserve">Share <i class="icon-arrow"></i></button>
+                                                    <button class="social-share-button">Share <i class="icon-arrow"></i></button>
                                                     <div class="share-menu">
                                                         <span class="social-share">Share <i class="icon-arrow"></i></span>
                                                         <ul>
                                                             <li class="clearfix">
-                                                                <a class="icon-facebook share-icon" href="REPLACE"><i class="icon-facebook"></i>Facebook</a>
+                                                                <asp:HyperLink ID="hlFacebook" CssClass="icon-facebook share-icon" runat="server">
+                                                                    <i class="icon-facebook"></i>
+                                                                    <asp:Literal ID="ltlFacebook" runat="server"></asp:Literal>
+                                                                </asp:HyperLink>
                                                             </li>
                                                             <li class="clearfix">
-                                                                <a class="icon-twitter share-icon" href="REPLACE"><i class="icon-twitter"></i>Twitter</a>
+                                                                <asp:HyperLink ID="hlTwitter" CssClass="icon-twitter share-icon" runat="server">
+                                                                    <i class="icon-twitter"></i>
+                                                                    <asp:Literal ID="ltlTwitter" runat="server"></asp:Literal>
+                                                                </asp:HyperLink>
                                                             </li>
                                                             <li class="clearfix">
-                                                                <a class="icon-google share-icon" href="REPLACE"><i class="icon-google"></i>Google +</a>
+                                                                <asp:HyperLink ID="hlGooglePlus" CssClass="icon-google share-icon" runat="server">
+                                                                    <i class="icon-google"></i>
+                                                                    <asp:Literal ID="ltlGooglePlus" runat="server"></asp:Literal>
+                                                                </asp:HyperLink>
                                                             </li>
                                                             <li class="clearfix">
-                                                                <a class="icon-pinterest share-icon" href="REPLACE"><i class="icon-pinterest"></i>Pinterest</a>
+                                                                <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonPin">
+                                                                    <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" /></a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <!-- END PARTIAL: share-content-dropdown -->
+                                                <!-- BEGIN PARTIAL: article-action-buttons -->
+                                                <div class="article-actions buttons-container rs_skip clearfix">
+                                                    <button class="icon-email">email</button>
+                                                    <button id="lbUnSave" runat="server" class="icon icon-plus rs_preserve active" onserverclick="lbUnsave_Click"></button>
+                                                    <button class="icon-print" onclick="window.print()">print</button>
+                                                    <%--OOS for this release--%>
+                                                    <%--<button class="icon-bell">remind me</button>--%>
+                                                    <%--When You need it check MembershipManager.LogMemberActivity(x,y,z,q). Sample usage is in Sandbox.ascx.cs--%>
+                                                </div>
+
+                                                <!-- END PARTIAL: article-action-buttons -->
+                                                <div class="clearfix"></div>
                                             </div>
                                             <!-- /.share-dropdown-menu-wrap-->
                                         </div>
@@ -128,3 +144,12 @@
     <!-- .row -->
 </div>
 <!-- .container -->
+<script>
+    $(".icon-email").click(function (e) {
+        e.preventDefault();
+        $(".email-a-friend-modal").show();
+        $(".email-a-friend-modal").css({ "top": "-475px", "overflow": "hidden" });
+        $(".email-a-friend-modal .modal-dialog").css("opacity", "1");
+    })
+</script>
+<sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Common/ShareNSave_SendEmail.ascx" />
