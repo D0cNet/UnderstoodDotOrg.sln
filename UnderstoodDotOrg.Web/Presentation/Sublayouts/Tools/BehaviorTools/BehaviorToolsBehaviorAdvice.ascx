@@ -1,8 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BehaviorToolsBehaviorAdvice.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.BehaviorToolsBehaviorAdvice" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
-<asp:ScriptManager runat="server" />
-
 <div class="col col-16 <%= HttpUtility.UrlDecode(AdditionalCssClass) %>">
 <!-- BEGIN PARTIAL: behavior-advice -->
 <div class="behavior-advice-wrapper">

@@ -58,7 +58,6 @@
 
 </script>
 
-<asp:ScriptManager ID="ScriptManager1"  runat="server" />
 <div class="account-body-wrapper">
 			<!-- BEGIN PARTIAL: account-notification-tab-messages -->
 		<section class="account-notifications-tab-messages">

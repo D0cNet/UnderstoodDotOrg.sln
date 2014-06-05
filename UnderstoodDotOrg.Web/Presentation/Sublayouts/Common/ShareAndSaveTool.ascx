@@ -42,8 +42,7 @@
         <a href="REPLACE" class="icon icon-share">Share</a>
             <span class="tools">
                 <a href="#" class="icon icon-email">Email</a>
-                <asp:ScriptManager ID="ScriptManager1" runat="server">
-                </asp:ScriptManager>
+
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
                         <asp:LinkButton ID="lbSave" runat="server" CssClass="icon icon-save" OnClick="lbSave_Click" OnClientClick="changeIcon();"></asp:LinkButton>

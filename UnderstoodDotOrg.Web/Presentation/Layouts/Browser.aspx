@@ -60,6 +60,7 @@
 <!-- END PARTIAL: head -->
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1"  runat="server" />
         <asp:Literal runat="server" ID="ltWelcomeTour"></asp:Literal>
 
 
