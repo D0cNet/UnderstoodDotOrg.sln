@@ -114,12 +114,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             if (status == Constants.QueryStrings.Registration.ModeEdit)
             {
-                uxIEPStatus.ClearSelection();
-                ux504Status.ClearSelection();
-
                 //trust me, I hate that I have to stringify this to make it work...
-                ux504Status.Items.FindByValue("{" + singleChild.Section504Status.ToString().ToUpper() + "}").Selected = true;
-                uxIEPStatus.Items.FindByValue("{" + singleChild.IEPStatus.ToString().ToUpper() + "}").Selected = true;
+                try
+                {
+                    var IEP = ux504Status.Items.FindByValue("{" + singleChild.Section504Status.ToString().ToUpper() + "}");
+                    if (IEP != null)
+                    {
+                        //only clear selection if we have a match
+                        uxIEPStatus.ClearSelection();
+                        IEP.Selected = true;
+                    }
+                }
+                catch (Exception)
+                { }
+
+                try
+                {
+                    var s504 = uxIEPStatus.Items.FindByValue("{" + singleChild.IEPStatus.ToString().ToUpper() + "}");
+                    if (s504 != null)
+                    {
+                        ux504Status.ClearSelection();
+                        s504.Selected = true;
+                    }
+                }
+                catch (Exception)
+                { }
+
             }
         }
 
