@@ -161,12 +161,13 @@
         <div class="col col-20 centered">
             <div class="row guide-me-inner skiplink-toolbar">
                 <div class="col col-12">
-                    <i class="icon"></i>How can we help?
+                    <i class="icon"></i>
+                    <asp:Literal Text="" ID="litHelpmsg" runat="server" />
                 </div>
                 <!-- .col -->
                 <div class="col col-12">
                     <button type="button" class="button button-guide-me">
-                        My child struggles with...</button>
+                        <asp:Literal Text="" ID="litStruggle" runat="server" /> </button>
                 </div>
                 <!-- .col -->
             </div>

@@ -615,6 +615,28 @@ namespace UnderstoodDotOrg.Common
 
         #endregion
 
+        public static string Featured
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Featured");
+            }
+        }
+
+        public static string HowCanHelp
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "How can we help");
+            }
+        }
+        public static string ChildStruggles
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "My child struggles");
+            }
+        }
         public static string EmailException
         {
             get

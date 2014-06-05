@@ -42,6 +42,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
                 ActiveMember = UnauthenticatedSessionMember;
             }
 
+            //Load Text
+            litHelpmsg.Text = DictionaryConstants.HowCanHelp;
+            litStruggle.Text = DictionaryConstants.ChildStruggles;
+            
+
             if (!IsPostBack)
             {
                 GetSliderItem(ContextItem);

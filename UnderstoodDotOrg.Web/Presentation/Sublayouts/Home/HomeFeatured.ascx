@@ -6,7 +6,9 @@
     <div class="row">
         <div class="col col-24">
 
-            <h2>Featured</h2>
+            <h2>
+                <asp:Literal Text="" ID="litFeatured" runat="server" />
+                </h2>
             <div class="featured-recommended-container">
                 <!-- BEGIN PARTIAL: featured-carousel -->
                 <div id="featured-slides-container" class="arrows-gray">

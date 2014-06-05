@@ -67,6 +67,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
         protected global::System.Web.UI.WebControls.HiddenField hfGradeChoice;
         
         /// <summary>
+        /// litHelpmsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litHelpmsg;
+        
+        /// <summary>
+        /// litStruggle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litStruggle;
+        
+        /// <summary>
         /// hfRandomizeSlider control.
         /// </summary>
         /// <remarks>

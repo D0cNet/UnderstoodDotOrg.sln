@@ -9,11 +9,16 @@ using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
     public partial class HomeFeatured : System.Web.UI.UserControl {
         protected void Page_Load(object sender, EventArgs e) {
+            //Load Text
+            litFeatured.Text = DictionaryConstants.Featured;
+            
             HomePageItem current = Sitecore.Context.Item;
+
             if (current != null) {
                 var articles = current.FeaturedArticles.ListItems;
                 if (articles.Any()) {
