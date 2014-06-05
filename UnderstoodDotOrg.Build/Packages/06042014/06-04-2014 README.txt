@@ -1,0 +1,4 @@
+Each of the sql alter scripts includes the target database in the USE statement:
+USE [Understood.org.DEV.membership]
+
+Please update this in each file to point to the correct database name in QA.
