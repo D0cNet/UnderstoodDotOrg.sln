@@ -7,7 +7,7 @@
         <p><asp:Literal ID="ltlSubHeading" runat="server"></asp:Literal></p>
     </div>
     <div class="image">
-        <sc:FieldRenderer ID="frEventImage" FieldName="Event Image" runat="server"></sc:FieldRenderer>
+        <sc:FieldRenderer ID="frEventImage" FieldName="Event Image" Parameters="mw=190&mh=106" runat="server"></sc:FieldRenderer>
     </div>
     <div class="footer">
         <asp:Hyperlink ID="hlLearnMore" runat="server"></asp:Hyperlink>
