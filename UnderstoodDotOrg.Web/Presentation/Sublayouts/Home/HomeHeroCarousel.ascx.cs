@@ -64,25 +64,58 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
                 }
 
                 // TODO: retrieve selected states from session
+                if (ActiveMember.Children.Any())
+                {
+                    Child child = ActiveMember.Children.First();
+                    foreach (RepeaterItem ri in rptChildIssues.Items)
+                    {
+                        CheckBox cbIssue = (CheckBox)ri.FindControl("cbIssue");
+                        HiddenField hfIssue = (HiddenField)ri.FindControl("hfIssue");
+                        var match = child.Issues.Where(i => i.Key == Guid.Parse(hfIssue.Value)).FirstOrDefault();
+                        if (match != null)
+                        {
+                            cbIssue.Checked = true;
+                        }
+                    }
+
+                    if (child.Grades.Any())
+                    {
+                        SetSelectedGrade(child.Grades.First().Key.ToString());
+                    }
+                }
             }
             else
             {
                 // Handle selected state
                 if (!String.IsNullOrEmpty(hfGradeChoice.Value))
                 {
-                    foreach (RepeaterItem ri in rptGrades.Items)
-                    {
-                        HtmlButton gradeBtn = (HtmlButton)ri.FindControl("gradeBtn");
-                        if (gradeBtn.Attributes["data-value"] == hfGradeChoice.Value)
-                        {
-                            gradeBtn.Attributes["class"] += " active";
-                        }
-                        else
-                        {
-                            gradeBtn.Attributes["class"] = gradeBtn.Attributes["class"].Replace("active", "").Trim();
-                        }
-                    }
+                    SetSelectedGrade(hfGradeChoice.Value);
                 }
+            }
+        }
+
+        private void SetSelectedGrade(string grade)
+        {
+            // Repeater
+            foreach (RepeaterItem ri in rptGrades.Items)
+            {
+                HtmlButton gradeBtn = (HtmlButton)ri.FindControl("gradeBtn");
+                string shortId = Sitecore.Data.ID.Parse(grade).ToShortID().ToString();
+
+                if (gradeBtn.Attributes["data-value"] == shortId)
+                {
+                    gradeBtn.Attributes["class"] += " active";
+                }
+                else
+                {
+                    gradeBtn.Attributes["class"] = gradeBtn.Attributes["class"].Replace("active", "").Trim();
+                }
+            }
+
+            var item = ddlGradeGroups.Items.FindByValue(Guid.Parse(grade).ToString());
+            if (item != null)
+            {
+                item.Selected = true;
             }
         }
 
