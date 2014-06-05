@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 {
@@ -20,9 +21,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                 var promoItems = Model.PromotionalContent.ListItems
                     .Where(i => i != null && i.InheritsTemplate(PromoItem.TemplateId))
                     .Select(i => (PromoItem)i)
-                    .Take(3);
+                    .Where(i => i.Active)
+                    .Take(3).ToList();
+                var additionalPromosNeeded = 3 - promoItems.Count();
+                var dtPromos = promoItems;
+                if (additionalPromosNeeded > 0)
+                {
+                    var additionalPromoItems = MainsectionItem.GetGlobals().GetPromosFolder().GetPromoItems()
+                        .OrderBy(emp => Guid.NewGuid()).Select(i => (PromoItem)i).ToList().Where(i => i.Active);
+                    dtPromos = promoItems.Union(additionalPromoItems).GroupBy(i => i.ID).Select(g => g.First()).ToList();
+                }
 
-                rptPromoList.DataSource = promoItems;
+                rptPromoList.DataSource = dtPromos.Take(3);
                 rptPromoList.DataBind();
             }
         }

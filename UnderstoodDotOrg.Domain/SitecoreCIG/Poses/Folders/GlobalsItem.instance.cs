@@ -50,5 +50,15 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
             return InnerItem.Children
                 .FirstOrDefault(i => i.IsOfType(AdvocacyLinkFolderItem.TemplateId));
         }
+
+        /// <summary>
+        /// Gets promos folder item.
+        /// </summary>
+        /// <returns></returns>
+        public PromosFolderItem GetPromosFolder()
+        {
+            return InnerItem.Children
+                .FirstOrDefault(i => i.IsOfType(PromosFolderItem.TemplateId));
+        }
     }
 }

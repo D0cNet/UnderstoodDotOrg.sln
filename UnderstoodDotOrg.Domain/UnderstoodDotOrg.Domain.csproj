@@ -253,6 +253,8 @@
     <Compile Include="SitecoreCIG\Poses\Folders\ParentToolkitFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PartnerFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PartnerFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\PromosFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\PromosFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\SocialMediaFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\SocialMediaFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\TimezoneFolderItem.base.cs" />

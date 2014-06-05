@@ -55,11 +55,11 @@ public CustomGeneralLinkField PromoURL
 }
 
 
-public CustomCheckboxField IncludeinPromoTool
+public CustomCheckboxField Active
 {
 	get
 	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Include in PromoTool"]);
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Active"]);
 	}
 }
 
