@@ -42,28 +42,33 @@
                                         </div>
                                         <div class="clearfix"></div>
                                     </asp:PlaceHolder>
-                                    <asp:PlaceHolder ID="phEnd" Visible="false" runat="server">
-                                        <%--  Show Other two SideShow Article Item to start--%>
-                                        <h3><a href="#" class="restart-slideshow">&lt; See Slideshow from the Beginning</a> or explore more:</h3>
-                                        <div class="thumbnail" style="background-image: url('http://placehold.it/380x220')"></div>
-                                        <div class="text">
-                                            <h4><a href="REPLACE">facere molestiae eligendi maiores quis voluptatum qui</a></h4>
-                                            <p>aspernatur ut impedit voluptatibus aperiam consequatur molestiae autem et eum perferendis provident sunt deleniti asperiores</p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="thumbnail" style="background-image: url('http://placehold.it/380x220')"></div>
-                                        <div class="text">
-                                            <h4><a href="REPLACE">nihil et et nulla qui molestias distinctio</a></h4>
-                                            <p>praesentium voluptates odio expedita alias deleniti aut maiores accusamus consequatur vitae asperiores sunt omnis eius</p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </asp:PlaceHolder>
                                 </div>
                             </asp:Panel>
                             <!-- END PARTIAL: article-slideshow-slide -->
-
                         </ItemTemplate>
-                        <FooterTemplate></FooterTemplate>
+                        <FooterTemplate>
+                            <div class="slide end">
+                                <div class="slide-inner rs_read_this">
+                                    <h3><a href="#" class="restart-slideshow"><asp:Literal ID="ltlSlideshowRestartLabel" runat="server"></asp:Literal></a> <asp:Literal ID="ltlSlideshowRestartAlternateLabel" runat="server"></asp:Literal></h3>
+                                    <asp:Placeholder ID="phSlideshow1" Visible="false" runat="server">
+                                        <asp:Panel ID="pnlThumbnail1" CssClass="thumbnail" runat="server"></asp:Panel>
+                                        <div class="text">
+                                            <h4><asp:HyperLink ID="hypLink1" runat="server"></asp:HyperLink></h4>
+                                            <sc:FieldRenderer ID="frPageSummary1" FieldName="Page Summary" runat="server"></sc:FieldRenderer>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </asp:Placeholder>
+                                    <asp:Placeholder ID="phSlideshow2" Visible="false" runat="server">
+                                        <asp:Panel ID="pnlThumbnail2" CssClass="thumbnail" runat="server"></asp:Panel>
+                                        <div class="text">
+                                            <h4><asp:HyperLink ID="hypLink2" runat="server"></asp:HyperLink></sc:FieldRenderer></h4>
+                                            <sc:FieldRenderer ID="frPageSummary2" FieldName="Page Summary" runat="server"></sc:FieldRenderer>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </asp:Placeholder>
+                                </div>
+                            </div>
+                        </FooterTemplate>
                     </asp:Repeater>
                     <style>
                         .slide-inner img{

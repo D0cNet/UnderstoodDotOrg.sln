@@ -664,7 +664,7 @@ namespace UnderstoodDotOrg.Domain.Search
             return results;
         }
 
-        public static List<TextOnlyTipsArticlePageItem> GetLastSlideTextOnlyTips(ID dataSourceId, Item subtopic = null, Item topic = null, int maxItemsToGet = 2)
+        public static List<DefaultArticlePageItem> GetLastSlide(ID dataSourceId, Item subtopic = null, Item topic = null, string theTemplateID = "", int maxItemsToGet = 2)
         {
             var finalResults = new List<SearchResultItem>();
             var result = Enumerable.Empty<SearchResultItem>();
@@ -674,7 +674,7 @@ namespace UnderstoodDotOrg.Domain.Search
             {
                 var baseQuery = GetCurrentCultureQueryable<SearchResultItem>(context)
                                    .Where(i => i.Language == Sitecore.Context.Language.Name)
-                                   .Where(i => i.TemplateId == ID.Parse(TextOnlyTipsArticlePageItem.TemplateId)) // get only Text Only Tips Article Pages
+                                   .Where(i => i.TemplateId == ID.Parse(theTemplateID)) // get only Text Only Tips Article Pages
                                    .Where(i => i.ItemId != dataSourceId); // don't get the context item
 
                 int counter = 0;
@@ -725,7 +725,7 @@ namespace UnderstoodDotOrg.Domain.Search
                     finalResults.AddRange(res);
                 }
 
-                return finalResults.Select(r => r.GetItem()).Select(i => (TextOnlyTipsArticlePageItem)i).ToList();
+                return finalResults.Select(r => r.GetItem()).Select(i => (DefaultArticlePageItem)i).ToList();
             }
 
         }
