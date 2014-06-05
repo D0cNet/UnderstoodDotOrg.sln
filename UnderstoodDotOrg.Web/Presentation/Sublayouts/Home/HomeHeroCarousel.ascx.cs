@@ -58,6 +58,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
                 if (gradesList.Any())
                 {
                     ddlGradeGroups.DataSource = gradesList;
+                    ddlGradeGroups.DataTextField = "Text";
+                    ddlGradeGroups.DataValueField = "Value";
                     ddlGradeGroups.DataBind();
                 }
 
