@@ -24,6 +24,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             uxRegisterLink.NavigateUrl = MyAccountFolderItem.GetSignUpPage();
             uxForgotPassword.NavigateUrl = MyAccountFolderItem.GetForgotPasswordPage();
 
+            this.Page.Form.DefaultButton = this.uxSignIn.UniqueID;
+
             if (!string.IsNullOrEmpty(AccessToken))
             {
                 doLogin();
