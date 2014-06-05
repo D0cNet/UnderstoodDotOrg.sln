@@ -16,13 +16,13 @@ body:before {
   background-image: -o-linear-gradient(left, #624a93 0%, #625298 30%, #595a9d 42%, #3c71ad 68%, #2088c6 89%, #1690d0 100%);
   background-image: linear-gradient(left, #624a93 0%, #625298 30%, #595a9d 42%, #3c71ad 68%, #2088c6 89%, #1690d0 100%);
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   body:before {
     height: 10px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   body:before {
     height: 5px;
@@ -44,13 +44,13 @@ body:after {
   background-image: -o-linear-gradient(left, #624a93 0%, #624a93 50%, #1690d0 50%, #1690d0 100%);
   background-image: linear-gradient(left, #624a93 0%, #624a93 50%, #1690d0 50%, #1690d0 100%);
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   body:after {
     height: 10px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   body:after {
     height: 5px;
@@ -79,7 +79,7 @@ body:after {
   font-size: 12px;
   font-size: 0.75rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #language-selector-bar {
     padding-top: 17px;
@@ -88,7 +88,7 @@ body:after {
     font-size: 1.5rem;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #language-selector-bar {
     display: none !important;
@@ -104,7 +104,7 @@ body:after {
   background-image: url("../images/icon.close.white.64.png");
   background-size: 16px 16px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #language-selector-bar .button-close {
     height: 32px;
@@ -156,7 +156,7 @@ body:after {
 .language-selector-visible #wrapper.is-offscreen {
   top: 50px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selector-visible #wrapper.is-offscreen {
     top: 100px;
@@ -181,14 +181,14 @@ body:after {
   display: table;
   clear: both;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection {
     font-size: 18px;
     font-size: 1.125rem;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection {
     font-size: 14px;
@@ -202,13 +202,13 @@ body:after {
 .language-selection li {
   float: left;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection li + li {
     border-left: 1px solid #f4f2f1;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection li + li a {
     padding-right: 0;
@@ -225,13 +225,13 @@ body:after {
   background-image: -o-linear-gradient(rgba(255, 255, 255, 0) 0%, #b7b6b5 2%, #dedcdb 4%, #f4f2f1 6%, #f4f2f1 98%, rgba(255, 255, 255, 0) 100%);
   background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, #b7b6b5 2%, #dedcdb 4%, #f4f2f1 6%, #f4f2f1 98%, rgba(255, 255, 255, 0) 100%);
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection a {
     color: transparent;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection a {
     padding: 0 10px;
@@ -249,13 +249,13 @@ body:after {
   cursor: default;
   border-radius: 1px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 189, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection .is-active {
     color: transparent;
   }
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection a[title]:after {
     display: block;
@@ -264,25 +264,25 @@ body:after {
     color: #696969;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection a[title]:after {
     margin-top: -1.429em;
   }
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection .is-active[title]:after {
     color: #fff;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection .is-active[title]:after {
     color: #7a4183;
   }
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 217, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selection a:hover {
     color: #fff;
@@ -297,7 +297,7 @@ body:after {
 .nav-utility {
   display: none;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 227, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .nav-utility {
     display: block;
@@ -307,7 +307,7 @@ body:after {
     font-size: 0.875rem;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .nav-utility li {
     display: inline;
@@ -332,7 +332,7 @@ body:after {
 .nav-main {
   display: none;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .nav-main {
     display: block;
@@ -354,13 +354,13 @@ body:after {
   position: relative;
   margin: 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 269, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page {
     height: 90px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 269, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page {
     height: auto;
@@ -379,13 +379,13 @@ body:after {
 #header-page .row {
   padding: 0;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .row {
     padding: 0 5px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 289, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .l-bar {
     float: right;
@@ -401,7 +401,7 @@ body:after {
   width: 45px;
   padding: 10px 0 0 10px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in {
     padding: 20px 0 0 20px;
@@ -409,7 +409,7 @@ body:after {
     width: 90px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in {
     padding: 0;
@@ -422,7 +422,7 @@ body:after {
     margin: 0 20px 0 18px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in {
     margin-right: 30px;
@@ -440,13 +440,13 @@ body:after {
 #header-page .sign-in .avatar {
   width: 25px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 328, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .avatar {
     width: 50px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 328, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .avatar {
     width: 30px;
@@ -456,7 +456,7 @@ body:after {
 #header-page .sign-in .user-name {
   display: none;
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 337, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .user-name {
     display: inline-block;
@@ -480,7 +480,7 @@ body:after {
   min-width: 12px;
   border-radius: 2px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .messages {
     top: 8px;
@@ -491,7 +491,7 @@ body:after {
     padding: 0 2px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .messages {
     top: -9px;
@@ -516,7 +516,7 @@ body:after {
   background-image: url("../images/avatar.signed-out.png");
   background-size: 25px 25px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 376, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .link-sign-in {
     width: 50px;
@@ -524,7 +524,7 @@ body:after {
     background-size: 50px 50px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 376, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .sign-in .link-sign-in {
     width: auto;
@@ -538,7 +538,7 @@ body:after {
 #header-page.is-search-active {
   height: 115px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 398, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page.is-search-active {
     height: 180px;
@@ -549,7 +549,7 @@ body:after {
   clear: both;
   width: 78%;
 }
-@media (min-width: 930px) {
+@media (min-width: 930px), print {
   /* line 405, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main {
     width: 81%;
@@ -569,13 +569,13 @@ body:after {
   height: 65px;
   padding: 12px 5px 0 12px;
 }
-@media (min-width: 820px) {
+@media (min-width: 820px), print {
   /* line 419, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main > ul > li > span a {
     padding-left: 20px;
   }
 }
-@media (min-width: 930px) {
+@media (min-width: 930px), print {
   /* line 419, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main > ul > li > span a {
     padding-left: 25px;
@@ -585,7 +585,7 @@ body:after {
 #header-page .nav-main > ul > li > span a br {
   display: none;
 }
-@media (min-width: 820px) {
+@media (min-width: 820px), print {
   /* line 430, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main > ul > li > span a br {
     display: block;
@@ -601,13 +601,13 @@ body:after {
   z-index: 99;
   padding: 13px 20px 16px 12px;
 }
-@media (min-width: 820px) {
+@media (min-width: 820px), print {
   /* line 437, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main > ul > li ul {
     padding-left: 20px;
   }
 }
-@media (min-width: 930px) {
+@media (min-width: 930px), print {
   /* line 437, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #header-page .nav-main > ul > li ul {
     padding-left: 25px;
@@ -657,19 +657,19 @@ body:after {
   float: left;
   padding: 12px 0 0 49px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .logo-u-main {
     padding: 24px 0 0 107px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .logo-u-main {
     padding: 20px 0 0;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .logo-u-main a {
     display: block;
@@ -683,13 +683,13 @@ body:after {
 .logo-u-main img {
   width: 90px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 506, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .logo-u-main img {
     width: 180px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 506, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .logo-u-main img {
     display: none;
@@ -708,13 +708,13 @@ body:after {
   width: 100%;
   background: #f4f2f1;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 521, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site {
     top: 90px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 521, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site {
     float: right;
@@ -723,7 +723,7 @@ body:after {
     border: 1px solid #f4f2f1;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 536, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site.is-focused {
     background: none;
@@ -744,7 +744,7 @@ body:after {
   background-size: 14px 14px;
   background-position: 50% 50%;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 542, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site legend {
     right: 155px;
@@ -754,7 +754,7 @@ body:after {
     background-size: 28px 28px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 542, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site legend {
     top: -9999px;
@@ -769,7 +769,7 @@ body:after {
 #search-site .field {
   display: none;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 569, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site .field {
     display: block;
@@ -783,7 +783,7 @@ body:after {
   height: 70px;
   padding: 10px 13px 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 576, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .is-search-active #search-site .field {
     height: 90px;
@@ -801,7 +801,7 @@ body:after {
   width: 108px;
   padding: 0;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 586, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site input[type="text"] {
     -webkit-transition: all .5s ease;
@@ -809,8 +809,8 @@ body:after {
     transition: all .5s ease;
   }
 }
-@media (min-width: 769px) {
-  /* line 601, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 605, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site input[type="text"]:focus {
     width: 150px;
     -webkit-transition: all .5s ease;
@@ -819,8 +819,8 @@ body:after {
     outline: 0;
   }
 }
-@media (min-width: 820px) {
-  /* line 601, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 820px), print {
+  /* line 605, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site input[type="text"]:focus {
     width: 188px;
   }
@@ -847,7 +847,7 @@ body:after {
 #search-site input[type="text"]::-webkit-input-placeholder {
   color: #696969;
 }
-/* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 620, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .is-search-active #search-site input[type="text"] {
   font-size: 12px;
   font-size: 0.75rem;
@@ -855,8 +855,8 @@ body:after {
   width: 77%;
   margin-top: 10px;
 }
-@media (min-width: 650px) {
-  /* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 620, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .is-search-active #search-site input[type="text"] {
     font-size: 24px;
     font-size: 1.5rem;
@@ -864,12 +864,12 @@ body:after {
     margin-top: 4px;
   }
 }
-/* line 628, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 632, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #search-site input[type="submit"] {
   padding: 0;
   color: inherit;
 }
-/* line 632, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 636, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #search-site input[type="submit"]:focus {
   border: solid 2px #99c2e7;
   width: 24px;
@@ -878,8 +878,8 @@ body:after {
   margin-right: -2px;
   outline: none;
 }
-@media (min-width: 769px) {
-  /* line 628, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 632, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #search-site input[type="submit"] {
     border: 0;
     width: 20px;
@@ -892,12 +892,12 @@ body:after {
     background-size: 16px 41px;
     text-indent: -999em;
   }
-  /* line 652, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+  /* line 656, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .no-backgroundsize #search-site input[type="submit"] {
     background-image: url("../images/sprite.icon.search.lo-res.png");
   }
 }
-/* line 656, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 660, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .is-search-active #search-site input[type="submit"] {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -909,8 +909,8 @@ body:after {
   border-radius: 1px;
   float: right;
 }
-@media (min-width: 650px) {
-  /* line 656, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 660, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .is-search-active #search-site input[type="submit"] {
     font-size: 18px;
     font-size: 1.125rem;
@@ -918,12 +918,12 @@ body:after {
     min-width: 122px;
   }
 }
-/* line 672, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 676, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #search-site.is-focused input[type="submit"] {
   background-position: 50% -23px;
 }
 
-/* line 679, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 683, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #toolkit > button {
   background-color: #7a4183;
   color: #fff;
@@ -943,8 +943,8 @@ body:after {
   font-weight: 300;
   text-align: left;
 }
-@media (min-width: 650px) {
-  /* line 679, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 683, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #toolkit > button {
     width: 155px;
     height: 90px;
@@ -955,8 +955,8 @@ body:after {
     background-position: 124px 41px;
   }
 }
-@media (min-width: 769px) {
-  /* line 679, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 683, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #toolkit > button {
     float: right;
     position: static;
@@ -970,18 +970,14 @@ body:after {
     cursor: pointer;
   }
 }
-/* line 719, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 723, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #toolkit > button:hover, #toolkit > button:focus {
   background-color: #298fc2;
   outline: none;
 }
-/* line 725, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
-.no-backgroundsize #toolkit > span {
+/* line 728, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+.no-backgroundsize #toolkit > button {
   background-image: url("../images/arrow.down.fff.12.png");
-}
-/* line 729, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
-.no-backgroundsize #toolkit.is-open > span {
-  background-image: url("../images/arrow.up.fff.12.png");
 }
 /* line 736, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #toolkit.is-open > span {
@@ -989,15 +985,19 @@ body:after {
   background-color: #fdfdfd;
   background-image: url("../images/arrow.up.fff.24.png");
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 736, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #toolkit.is-open > span {
     padding: 13px 35px 0 20px;
     border-top: 5px solid #7a4183;
   }
 }
+/* line 746, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+.no-backgroundsize #toolkit.is-open > span {
+  background-image: url("../images/arrow.up.fff.12.png");
+}
 
-/* line 751, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 755, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #button-drawermenu {
   position: absolute;
   z-index: 2;
@@ -1014,8 +1014,8 @@ body:after {
   background-position: 17px 14px;
   background-repeat: no-repeat;
 }
-@media (min-width: 650px) {
-  /* line 751, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 755, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #button-drawermenu {
     width: 44px;
     height: 34px;
@@ -1025,24 +1025,24 @@ body:after {
     background-position: 0 0;
   }
 }
-/* line 775, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 779, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #button-drawermenu.is-active {
   background-color: #f2af00;
   background-position: 14px -18px;
 }
-@media (min-width: 650px) {
-  /* line 775, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 779, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #button-drawermenu.is-active {
     background-position: 0 98%;
     background-color: transparent !important;
   }
 }
-/* line 782, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 786, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #button-drawermenu.is-active:hover {
   background-color: #ffbc0d;
 }
 
-/* line 790, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 794, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu {
   position: fixed;
   top: 0;
@@ -1051,47 +1051,47 @@ body:after {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-/* line 797, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 801, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu.is-wide {
   padding: 17px 19px 0 8px;
   width: 84.4%;
   border-right: 1px solid #dfdfdf;
 }
-@media (min-width: 650px) {
-  /* line 797, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 801, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu.is-wide {
     padding: 30px 43px 0 23px;
   }
 }
-/* line 804, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 808, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .language-selector-visible #drawermenu.is-wide {
   padding-top: 62px;
 }
-@media (min-width: 650px) {
-  /* line 804, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 808, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .language-selector-visible #drawermenu.is-wide {
     padding-top: 120px;
   }
 }
-/* line 811, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 815, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .content {
   overflow: hidden;
 }
-/* line 814, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 818, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .logo-u-main {
   padding: 4px 0 0 6px;
 }
-@media (min-width: 650px) {
-  /* line 814, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 818, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .logo-u-main {
     padding: 8px 0 0 9px;
   }
 }
-/* line 820, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 824, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .language-selection {
   display: block;
 }
-/* line 824, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 828, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility {
   display: block;
   overflow: hidden;
@@ -1100,49 +1100,49 @@ body:after {
   line-height: 1.786;
   padding-bottom: 20px;
 }
-/* line 830, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 834, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility ul {
   float: left;
   position: relative;
   left: 50%;
 }
-/* line 835, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 839, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility li {
   float: left;
   position: relative;
   right: 50%;
 }
-/* line 840, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 844, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility li + li {
   border-left: 1px solid #bcbdc0;
 }
-/* line 843, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 847, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility a {
   display: block;
   padding: 0 13px;
 }
-/* line 847, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 851, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility li:first-child a {
   padding-left: 0;
 }
-/* line 850, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 854, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-utility li:last-child a {
   padding-right: 0;
 }
-@media (min-width: 650px) {
-  /* line 824, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 828, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-utility {
     font-size: 18px;
     font-size: 1.125rem;
     line-height: 2.778;
     padding-bottom: 30px;
   }
-  /* line 857, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+  /* line 861, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-utility a {
     padding: 0 49px;
   }
 }
-/* line 863, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 867, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main {
   display: block;
   clear: both;
@@ -1153,8 +1153,8 @@ body:after {
   font-size: 1.125rem;
   line-height: 1.056;
 }
-@media (min-width: 650px) {
-  /* line 863, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 867, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main {
     font-size: 24px;
     font-size: 1.5rem;
@@ -1163,78 +1163,78 @@ body:after {
     padding-top: 38px;
   }
 }
-/* line 877, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 881, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main br {
   display: none;
 }
-/* line 880, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 884, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main li + li > span {
   border-top: 1px solid #bcbdc0;
 }
-/* line 883, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 887, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main ul {
   width: 50%;
   float: left;
   padding-left: 6px;
 }
-@media (min-width: 650px) {
-  /* line 883, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 887, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main ul {
     padding-left: 9px;
   }
 }
-/* line 891, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 895, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main li {
   position: relative;
 }
-/* line 894, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 898, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main li > span {
   display: block;
   padding-right: 35px;
   margin: 0 19px 0 8px;
 }
-@media (min-width: 650px) {
-  /* line 894, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 898, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main li > span {
     padding-right: 70px;
     margin: 0 43px 0 23px;
   }
 }
-/* line 904, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 908, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main a,
 #drawermenu .nav-main .title {
   display: block;
   padding: 23px 0 21px;
   text-decoration: none;
 }
-@media (min-width: 650px) {
-  /* line 904, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 908, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main a,
   #drawermenu .nav-main .title {
     padding: 28px 0 26px;
   }
 }
-/* line 912, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 916, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .level-2 {
   display: none;
 }
-/* line 914, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 918, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .level-2 li > span {
   padding-right: 0;
 }
-/* line 918, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 922, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .level-2 a,
 #drawermenu .nav-main .level-2 .title {
   padding-left: 27px;
 }
-@media (min-width: 650px) {
-  /* line 918, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 922, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main .level-2 a,
   #drawermenu .nav-main .level-2 .title {
     padding-left: 32px;
   }
 }
-/* line 924, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 928, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .level-2 .is-current:after {
   display: none;
   content: 'You are here';
@@ -1252,15 +1252,15 @@ body:after {
   font-size: 0.6875rem;
   line-height: 1.091;
 }
-@media (min-width: 650px) {
-  /* line 924, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 928, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main .level-2 .is-current:after {
     padding: 17px 0 0;
     font-size: 22px;
     font-size: 1.375rem;
   }
 }
-/* line 944, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 948, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .level-2 .is-current:before {
   display: none;
   content: '';
@@ -1272,14 +1272,14 @@ body:after {
   border-right: 9px solid #298fc2;
   border-bottom: 9px solid transparent;
 }
-@media (min-width: 650px) {
-  /* line 944, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 948, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main .level-2 .is-current:before {
     border-width: 18px 18px 18px 0;
     margin-top: -18px;
   }
 }
-/* line 960, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 964, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .button-more {
   width: 22px;
   height: 22px;
@@ -1289,8 +1289,8 @@ body:after {
   right: 19px;
   top: 20px;
 }
-@media (min-width: 650px) {
-  /* line 960, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 964, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main .button-more {
     width: 34px;
     height: 34px;
@@ -1299,7 +1299,7 @@ body:after {
     top: 24px;
   }
 }
-/* line 976, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 980, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .icon-back {
   width: 22px;
   height: 22px;
@@ -1310,8 +1310,8 @@ body:after {
   top: 21px;
   cursor: pointer;
 }
-@media (min-width: 650px) {
-  /* line 976, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 980, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #drawermenu .nav-main .icon-back {
     width: 34px;
     height: 34px;
@@ -1320,11 +1320,11 @@ body:after {
     top: 23px;
   }
 }
-/* line 992, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 996, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .icon-back:hover {
   background-position: 0 100%;
 }
-/* line 996, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1000, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu .nav-main .slider {
   width: 200%;
   position: relative;
@@ -1336,13 +1336,13 @@ body:after {
   display: table;
   clear: both;
 }
-/* line 1005, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1009, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #drawermenu.is-open .is-current:after,
 #drawermenu.is-open .is-current:before {
   display: block !important;
 }
 
-/* line 1014, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1018, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav {
   margin: 0;
   padding: 0;
@@ -1352,8 +1352,8 @@ body:after {
   font-size: 1.125rem;
   line-height: 1;
 }
-@media (min-width: 650px) {
-  /* line 1014, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1018, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav {
     display: table;
     width: 100%;
@@ -1364,20 +1364,20 @@ body:after {
     letter-spacing: -0.03125rem;
   }
 }
-@media (min-width: 769px) {
-  /* line 1014, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1018, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav {
     padding-left: 0;
     padding-right: 0;
   }
 }
-/* line 1035, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1039, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav li {
   border-bottom: 1px solid #bcbdc0;
   vertical-align: top;
 }
-@media (min-width: 650px) {
-  /* line 1035, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1039, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav li {
     display: table-cell;
     border-bottom: none;
@@ -1385,54 +1385,54 @@ body:after {
     border-right: 1px solid #f4f2f1;
   }
 }
-@media (min-width: 650px) {
-  /* line 1047, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1051, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav li:first-child a {
     padding-left: 0;
     text-align: left;
   }
 }
-/* line 1055, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1059, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav li:last-child {
   border-right: none;
   border-bottom: none;
 }
-@media (min-width: 650px) {
-  /* line 1058, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1062, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav li:last-child a {
     padding-right: 0;
     text-align: right;
   }
 }
-/* line 1066, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1070, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav li a {
   display: block;
   padding: 25px 0;
   color: #696969;
 }
-/* line 1071, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1075, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav li a:hover {
   color: #426da9;
 }
-@media (min-width: 650px) {
-  /* line 1066, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1070, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav li a {
     padding: 0 10px;
   }
 }
-/* line 1079, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1083, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 #footer-nav li a span {
   display: inline-block;
   text-align: left;
 }
-@media (min-width: 960px) {
-  /* line 1079, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 960px), print {
+  /* line 1083, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   #footer-nav li a span {
     line-height: 25px;
   }
 }
 
-/* line 1095, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1099, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page {
   font-family: Arial, sans-serif;
   background-color: #f4f2f1;
@@ -1445,8 +1445,8 @@ footer#footer-page {
   line-height: 16px;
   line-height: 1rem;
 }
-@media (min-width: 650px) {
-  /* line 1095, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1099, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page {
     font-size: 16px;
     font-size: 1rem;
@@ -1454,8 +1454,8 @@ footer#footer-page {
     line-height: 1.375rem;
   }
 }
-@media (min-width: 769px) {
-  /* line 1095, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1099, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page {
     font-size: 14px;
     font-size: 0.875rem;
@@ -1463,8 +1463,8 @@ footer#footer-page {
     line-height: 1.125rem;
   }
 }
-@media (min-width: 650px) and (max-width: 768px) {
-  /* line 1117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px) and (max-width: 768px), print {
+  /* line 1121, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .row .col {
     width: auto;
     float: none;
@@ -1473,42 +1473,42 @@ footer#footer-page {
     padding: 0;
   }
 }
-/* line 1128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .logo-u-footer {
   margin: 0 auto 0 auto;
   display: block;
   width: 25px;
 }
-@media (min-width: 650px) {
-  /* line 1128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .logo-u-footer {
     width: 37px;
   }
 }
-@media (min-width: 769px) {
-  /* line 1128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .logo-u-footer {
     width: 25px;
     margin: 0 auto;
   }
 }
-/* line 1145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .footer-social {
   padding: 50px 30px 20px 30px;
 }
-@media (min-width: 650px) {
-  /* line 1145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .footer-social {
     padding: 50px 6.5% 20px;
   }
 }
-@media (min-width: 769px) {
-  /* line 1145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .footer-social {
     padding: 50px 15px 36px;
   }
 }
-/* line 1158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul {
   display: table;
   margin: 0 auto 45px auto;
@@ -1516,95 +1516,95 @@ footer#footer-page ul {
   list-style: none;
   text-align: center;
 }
-@media (min-width: 769px) {
-  /* line 1158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul {
     margin: 0;
     float: right;
   }
 }
-/* line 1170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul li {
   display: block;
   float: left;
   padding: 0 16px 0 0;
 }
-@media (min-width: 650px) {
-  /* line 1170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul li {
     padding: 0 42px 0 0;
   }
 }
-@media (min-width: 769px) {
-  /* line 1170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul li {
     padding: 0 2px;
   }
 }
-/* line 1183, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul li:first-child {
   padding-left: 0;
 }
-/* line 1187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul li:last-child {
   padding-right: 0;
 }
-/* line 1193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul.footer-nav-utility {
   margin-bottom: 25px;
   float: none;
 }
-@media (min-width: 650px) {
-  /* line 1193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul.footer-nav-utility {
     margin-bottom: 40px;
   }
 }
-@media (min-width: 769px) {
-  /* line 1193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul.footer-nav-utility {
     margin-top: 18px;
     text-align: left;
   }
 }
-/* line 1206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul.footer-nav-utility li {
   display: table-cell;
   border-right: 1px solid #696969;
   padding: 0 5px;
   line-height: 1;
 }
-@media (min-width: 650px) {
-  /* line 1206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page ul.footer-nav-utility li {
     padding: 0 13px;
   }
 }
-/* line 1216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1220, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul.footer-nav-utility li:first-child {
   padding-left: 0;
 }
-/* line 1220, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1224, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page ul.footer-nav-utility li:last-child {
   padding-right: 0;
   border-right: none;
 }
-/* line 1231, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page a {
   color: #696969;
 }
-/* line 1235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1239, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page p {
   text-align: left;
   margin: 0;
 }
-@media (min-width: 769px) {
-  /* line 1235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1239, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page p {
     padding: 0;
   }
 }
-/* line 1245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1249, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon {
   width: 49px;
   height: 48px;
@@ -1616,230 +1616,230 @@ footer#footer-page .icon {
   overflow: hidden;
   text-align: left;
 }
-@media (min-width: 650px) {
-  /* line 1245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1249, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon {
     width: 64px;
     height: 64px;
     background-size: 291px 138px;
   }
 }
-@media (min-width: 769px) {
-  /* line 1245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1249, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon {
     width: 42px;
     height: 42px;
     background-size: 193px 93px;
   }
 }
-/* line 1266, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1270, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon {
   width: 42px;
   height: 42px;
   background: url("../images/sprite.social.footer.lo-res.png");
 }
-/* line 1274, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1278, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-facebook {
   background-position: 0 0;
 }
-/* line 1277, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-facebook {
   background-position: 0 0;
 }
-/* line 1281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1285, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-facebook:hover {
   background-position: 0 -56px;
 }
-@media (min-width: 650px) {
-  /* line 1281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1285, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-facebook:hover {
     background-position: 0 -74px;
   }
 }
-@media (min-width: 769px) {
-  /* line 1281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1285, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-facebook:hover {
     background-position: 0 -50px;
   }
 }
-/* line 1292, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-facebook:hover:hover {
   background-position: 0 -50px;
 }
-/* line 1300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1304, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-twitter {
   background-position: -56px 0;
 }
-/* line 1303, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1307, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-twitter {
   background-position: -50px 0;
 }
-@media (min-width: 650px) {
-  /* line 1300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1304, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-twitter {
     background-position: -75px 0;
   }
 }
-@media (min-width: 769px) {
-  /* line 1300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1304, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-twitter {
     background-position: -50px 0;
   }
 }
-/* line 1315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1319, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-twitter:hover {
   background-position: -56px -56px;
 }
-@media (min-width: 650px) {
-  /* line 1315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1319, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-twitter:hover {
     background-position: -75px -74px;
   }
 }
-@media (min-width: 769px) {
-  /* line 1315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1319, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-twitter:hover {
     background-position: -50px -50px;
   }
 }
-/* line 1326, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1330, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-twitter:hover:hover {
   background-position: -50px -50px;
 }
-/* line 1334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1338, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-google {
   background-position: -113px 0;
 }
-/* line 1337, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1341, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-google {
   background-position: -100px 0;
 }
-@media (min-width: 650px) {
-  /* line 1334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1338, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-google {
     background-position: -151px 0;
   }
 }
-@media (min-width: 769px) {
-  /* line 1334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1338, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-google {
     background-position: -100px 0;
   }
 }
-/* line 1349, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1353, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-google:hover {
   background-position: -113px -56px;
 }
-@media (min-width: 650px) {
-  /* line 1349, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1353, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-google:hover {
     background-position: -151px -74px;
   }
 }
-@media (min-width: 769px) {
-  /* line 1349, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1353, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-google:hover {
     background-position: -100px -50px;
   }
 }
-/* line 1360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1364, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-google:hover:hover {
   background-position: -100px -50px;
 }
-/* line 1368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1372, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-pinterest {
   background-position: -170px 0;
 }
-/* line 1371, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1375, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-pinterest {
   background-position: -150px 0;
 }
-@media (min-width: 650px) {
-  /* line 1368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1372, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-pinterest {
     background-position: -226px 0;
   }
 }
-@media (min-width: 769px) {
-  /* line 1368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1372, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-pinterest {
     background-position: -150px 0;
   }
 }
-/* line 1383, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1387, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 footer#footer-page .icon-pinterest:hover {
   background-position: -170px -56px;
 }
-@media (min-width: 650px) {
-  /* line 1383, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1387, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-pinterest:hover {
     background-position: -226px -74px;
   }
 }
-@media (min-width: 769px) {
-  /* line 1383, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1387, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   footer#footer-page .icon-pinterest:hover {
     background-position: -150px -50px;
   }
 }
-/* line 1394, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1398, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .no-backgroundsize footer#footer-page .icon-pinterest:hover:hover {
   background-position: -150px -50px;
 }
 
-/* line 1406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic {
   padding: 20px 15px 40px;
   background-color: #f4f2f1;
   margin: 0;
   margin-bottom: 20px;
 }
-/* line 1423, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1427, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.no-bottom-margin {
   margin-bottom: 0;
 }
-@media (min-width: 480px) {
-  /* line 1406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 480px), print {
+  /* line 1410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic {
     padding: 20px 15px 40px;
   }
 }
-@media (min-width: 650px) {
-  /* line 1406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic {
     padding: 25px 0 33px;
     margin-bottom: 45px;
     min-height: 175px;
   }
 }
-@media (min-width: 769px) {
-  /* line 1406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic {
     min-height: 183px;
     background-color: #f4f2f1;
   }
 }
-/* line 1441, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1445, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.has-recommendations {
   min-height: 270px;
   padding-top: 50px;
   margin-bottom: 20px;
 }
-/* line 1452, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.has-subhead {
   height: 211px;
   margin-bottom: 75px;
 }
-/* line 1456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1460, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.has-subhead .row:first-child {
   height: 185px;
   padding-bottom: 0;
 }
-/* line 1462, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1466, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic .row {
   position: relative;
 }
-/* line 1466, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1470, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic h1 {
   color: #7b3f84;
   font-size: 34px;
@@ -1847,8 +1847,8 @@ footer#footer-page .icon-pinterest:hover {
   line-height: 38px;
   line-height: 2.375rem;
 }
-@media (min-width: 650px) {
-  /* line 1466, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1470, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic h1 {
     font-size: 44px;
     font-size: 2.75rem;
@@ -1856,15 +1856,15 @@ footer#footer-page .icon-pinterest:hover {
     line-height: 3rem;
   }
 }
-/* line 1477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.logged-in h1 {
   font-size: 28px;
   font-size: 1.75rem;
   line-height: 32px;
   line-height: 2rem;
 }
-@media (min-width: 650px) {
-  /* line 1477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic.logged-in h1 {
     font-size: 36px;
     font-size: 2.25rem;
@@ -1872,39 +1872,39 @@ footer#footer-page .icon-pinterest:hover {
     line-height: 2.5rem;
   }
 }
-/* line 1487, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1491, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic .page-subtitle {
   margin: 20px 0 0 0;
   color: #696969;
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 1493, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.behavior-page-topic {
   padding-top: 40px;
 }
-/* line 1495, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1499, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic.behavior-page-topic .share-save-container div.share-save-icon {
   top: 40px;
 }
-@media (min-width: 650px) {
-  /* line 1493, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic.behavior-page-topic {
     padding: 45px 0;
   }
-  /* line 1501, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+  /* line 1505, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic.behavior-page-topic .share-save-container div.share-save-icon {
     top: 0;
   }
 }
-/* line 1507, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1511, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic .behavior-subtitle {
   color: #7a4183;
   font-size: 21px;
   font-size: 1.3125rem;
   margin-top: 15px;
 }
-/* line 1513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1517, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic a.back-to-previous {
   color: #426da9;
   margin-bottom: 10px;
@@ -1912,31 +1912,31 @@ footer#footer-page .icon-pinterest:hover {
   font-size: 14px;
   font-size: 0.875rem;
 }
-@media (min-width: 650px) {
-  /* line 1513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 650px), print {
+  /* line 1517, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic a.back-to-previous {
     margin-bottom: 10px;
   }
 }
-@media (min-width: 769px) {
-  /* line 1513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 769px), print {
+  /* line 1517, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic a.back-to-previous {
     margin-bottom: 17px;
   }
 }
-@media (min-width: 480px) {
-  /* line 1513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 480px), print {
+  /* line 1517, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic a.back-to-previous {
     margin-bottom: 18px;
   }
 }
-/* line 1529, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+/* line 1533, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
 .page-topic a.back-to-previous i {
   margin-right: 7px;
   margin-bottom: -1px;
 }
-@media (min-width: 480px) {
-  /* line 1529, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
+@media (min-width: 480px), print {
+  /* line 1533, /Users/justin/projects.dp/poses/source/Presentation/includes/css/layout.scss */
   .page-topic a.back-to-previous i {
     margin-right: 13px;
   }

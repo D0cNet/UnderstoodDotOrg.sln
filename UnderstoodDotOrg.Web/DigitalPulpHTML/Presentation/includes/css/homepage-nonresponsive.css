@@ -160,7 +160,7 @@
 }
 /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
 .old-ie .guide-me .guide-me-inner .button:focus {
-  border: solid 1px #dfdfdf;
+  outline: solid 1px #dfdfdf;
 }
 /* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .icon {
@@ -724,7 +724,7 @@
 .featured-recommended #featured-slides-container,
 .more-carousel #featured-slides-container {
   height: 235px !important;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 /* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container .rsOverflow,

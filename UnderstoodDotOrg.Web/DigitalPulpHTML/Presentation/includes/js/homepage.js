@@ -418,6 +418,20 @@
     };
 
 })(jQuery);
+(function($) {
+
+  $(document).ready(function() {
+    var uniformElements = [
+      '.selector',
+      '.radio'
+    ];
+
+    new U.Global.readspeakerUniform(uniformElements);
+  });
+
+
+})(jQuery);
+
 
 
 

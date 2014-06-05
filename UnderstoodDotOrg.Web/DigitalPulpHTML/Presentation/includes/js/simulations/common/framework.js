@@ -41,7 +41,7 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
          */
         breakpoints: [
             [950,534, 'desktop', [ 510, 330 ]], //Desktop
-            [768,432, 'tablet', [ 510, 330 ]], //Big tablet
+            [728,432, 'tablet', [ 510, 330 ]], //Big tablet
             [320,416, 'phone', [ 300, 400 ]]
         ],
         /**
@@ -76,17 +76,19 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                     );
             this.board.width(target[0]);
             this.board.height(target[1]);
+            /*
             //Do a little CSS vertical centering
             var vmarg = Math.floor((ctrsize[1] - target[1]) / 2) + 'px';
             this.board.css({ marginTop: vmarg, marginBottom: vmarg });
+            */
             var cls = 'breakpoint_' + target[2];
             this.board.removeClass(this.currentBreakpointClass);
             this.board.addClass(cls);
             this.currentBreakpointClass = cls;
 
             if(idx != this.currentBreakpointIndex) {
-                this.board.trigger('breakpointChange', [idx, target]);
                 this.currentBreakpointIndex = idx;
+                this.board.trigger('breakpointChange', [idx, target]);
             }
         },
         /**
@@ -117,6 +119,11 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
          * Named nodes important to the game's operation
          */
         nodes: null,
+        /**
+         * Sounds available to the current game
+         */
+        effects: null,
+        voices: null,
         /**
          * A pre-page-load list of subselectors to map out when the game first runs 
          */
@@ -153,6 +160,86 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                 ctr.append(this.nodes[key]);
             }, this));
         },
+        getLanguage: function() {
+            var lang = this.config.lang;
+            if(!lang) lang = 'en';
+            return lang;
+        },
+        getText: function(t) {
+            if(typeof t == 'string') return t;
+            var lang = this.getLanguage();
+            if(t[lang]) return t[lang];
+            else {
+                console.error('No string for language %s in %o', lang, t);
+                return '';
+            }
+        },
+        loadSounds: function(localEffectPaths, localVOPaths) {
+            var effectRoot = '/Presentation/includes/audio/simulations/common/effects/';
+            var effectPaths = {
+                buttonClick: effectRoot + 'General_ButtonClick',
+                gameOverFail: effectRoot + 'General_GameFailure',
+                gameOverSuccess: effectRoot + 'General_Game_Over_Success',
+                sentenceComplete: effectRoot + 'General_SentenceCompleted',
+                clockTick: effectRoot + 'General_clockTick'
+            };
+            effectPaths = $.extend({}, effectPaths, localEffectPaths);
+            this.sounds = {};
+            $.each(effectPaths, $.proxy(function(key, paths) {
+                if(!paths.push) paths = [paths];
+                this.sounds[key] = [];
+                for(var i = 0; i < paths.length; i ++) {
+                    this.sounds[key].push(new buzz.sound(paths[i], {
+                        formats: ['ogg', 'mp3']
+                    }));
+                }
+            }, this));
+            var lang = this.getLanguage();
+            if(!localVOPaths) localVOPaths = {};
+            this.voices = {};
+            $.each(localVOPaths, $.proxy(function(key, paths) {
+                if(!paths.push) paths = [paths];
+                this.voices[key] = [];
+                for(var i = 0; i < paths.length; i ++) {
+                    this.voices[key].push(new buzz.sound(paths[i].replace('%lang%', lang), {
+                        formats: ['ogg', 'mp3']
+                    }));
+                }
+            }, this));
+        },
+        playSound: function(key, cfg) {
+            if(this.sounds[key]) {
+                SSGame.pick(this.sounds[key], []).play();
+            } else {
+                console.error('No such sound "%s"', key);
+            }
+        },
+        playVO: function(key, events) {
+            if(!events) events = {};
+            if(this.voices[key]) {
+                var vo = SSGame.pick(this.voices[key], []);
+                $.each(events, function(ev, fn) {
+                    vo.bind(ev, fn);
+                });
+                vo.play();
+            } else {
+                console.error('No such voice "%s"', key);
+            }
+        },
+        startLoop: function(key) {
+            if(this.sounds[key]) {
+                this.sounds[key][0].play().loop();
+            } else {
+                console.error('No such sound "%s"', key);
+            }
+        },
+        stopLoop: function(key) {
+            if(this.sounds[key]) {
+                this.sounds[key][0].unloop();
+            } else {
+                console.error('No such sound "%s"', key);
+            }
+        },
         /**
          * Start the game
          */
@@ -161,6 +248,7 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             console.log('Running SSGame %s, local config %o', this.name, localCfg);
             this.board.sizeToFit();
             if(this.bindConfig(localCfg)) {
+                this.loadSounds();
                 this.canUse3d = has3d();
                 if(!this.nodeMap) {
                     this.draw(); //@TODO Get rid of the check once all games are converted
@@ -168,7 +256,7 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                     this.mapNodes();
                 }
                 this.board.board.css('visibility', '');
-                this.addCheat($('<button></button').text('Reset').click($.proxy(function(e) {
+                this.addCheat($('<button></button>').text('Reset').click($.proxy(function(e) {
                     e.preventDefault();
                     this.reset();
                 }, this)));
@@ -262,6 +350,64 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             }
 
             return array;
+        },
+        /**
+         * Get a random target position for a node in a container.
+         * Allow variable levels of tolerance based on the position and size
+         *   of its siblings.
+         * @param object toPlace The dimensions object to be placed { width: , height: }
+         * @param array siblings An array of sibling specs - [{ width: , height: , left: , top: }]
+         * @param object ctr Specs of the parent container - { width: , height: }
+         * @param string tolerance How much overlap should be allowed with placement - "none" or "some"
+         * @returns object New position information: { left: , top: }
+         */
+        getRandomPosition: function(toPlace, siblings, ctr, tolerance, rows, cols) {
+            //First figure out an absolute boundary for our container.
+            //Add some explicit padding...
+			var padding_horizontal = ctr.width * 0.02;
+			var padding_vertical = ctr.height * 0.02;
+            var ctrwidth = ctr.width - padding_horizontal;
+            var ctrheight = ctr.height - padding_vertical;
+            //Adjust for the size of the item...
+            ctrwidth -= toPlace.width;
+            ctrheight -= toPlace.height;
+            
+			//Based on that boundary, establish our scatter amounts
+			var scatterAmount = .07;
+			var scatterAmount_horizontal = ctr.width*scatterAmount;
+			var scatterAmount_vertical = ctr.height*scatterAmount;
+            if(cols == 1) {
+                //Total hack for attention
+                scatterAmount_vertical = ctr.height * 0.03;
+            }
+
+            //Now adjust our absolute boundaries to leave room for the scatter
+            ctrwidth -= scatterAmount_horizontal;
+            ctrheight -= scatterAmount_vertical;
+			
+            //Now we can figure out the size of our grid
+			var spacing_horizontal = ctrwidth / cols;
+			var spacing_vertical = ctrheight / rows;
+							
+            //Get the specific "cell" for this item
+			var row = Math.floor(siblings.length / cols);
+			var col = siblings.length % cols;
+
+            //Now the center point of our spot in the grid
+            var center_horizontal = (spacing_horizontal * col) + (spacing_horizontal / 2);
+            var center_vertical = (spacing_vertical * row) + (spacing_vertical / 2);
+
+            //And get our position
+            var pos_left = padding_horizontal + center_horizontal
+                + SSGame.rnd(scatterAmount_horizontal * -1, scatterAmount_horizontal);
+			var pos_top =  padding_vertical + center_vertical
+                + SSGame.rnd(scatterAmount_vertical * -1,   scatterAmount_vertical);
+			
+            return {
+                left: pos_left,
+                top: pos_top
+            };
+			
         }
     });
     
@@ -271,7 +417,9 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
     window.SSGameSuccess = Class.extend({
         responseUnknownClass: '',
         responseCorrectClass: 'correct',
+        responseIncorrectClass: 'incorrect',
         correct: 0,
+        incorrect: 0,
         count: 0,
         cfg: null,
         ctr: null,
@@ -304,6 +452,12 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             target.removeClass(this.responseUnknownClass).addClass(this.responseCorrectClass);
             this.correct ++;
         },
+        wrong: function() {
+            var target = this.ctr.find('.' + this.responseUnknownClass).first();
+            target.removeClass(this.responseUnknownClass).addClass(this.responseIncorrectClass);
+            this.incorrect ++;
+        },
+
         getScore: function() {
             return {
                 correct: this.correct,
@@ -322,7 +476,6 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
         paused: false,
         decrements: 0,
         init: function(cfg) {
-            console.log(cfg);
             if(cfg.useContainer) {
                 this.node = cfg.container;
             } else {
@@ -340,9 +493,11 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             this.lastTime = new Date().getTime();
             this.interval = setInterval($.proxy(this.tick, this), 1000);
             this.show(this.maxTime);
+            SSGame.current.startLoop('clockTick');
         },
         stop: function() {
             clearInterval(this.interval);
+            SSGame.current.stopLoop('clockTick');
             this.onStop.fire();
         },
         reset: function() {
@@ -350,9 +505,11 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             this.clear();
         },
         pause: function() {
+            SSGame.current.stopLoop('clockTick');
             this.paused = true;
         },
         resume: function() {
+            SSGame.current.startLoop('clockTick');
             this.lastTime = new Date().getTime();
             this.paused = false;
         },
@@ -399,7 +556,6 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                     autoOpen: false,
                     closeOnEscape: false,
                     draggable: false,
-                    //modal: true,
                     position: { my: 'center', at: 'center', of: defaultContainer },
                     resizable: false,
                     show: { effect: 'fade', duration: defaultFadeSpeed },
@@ -436,6 +592,17 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             t.css('marginTop', Math.floor((ph - th) / 2));
         },
         setButtons: function(buttons) {
+            var i, btn, oldClick;
+            for(i = 0; i < buttons.length; i ++) {
+                btn = buttons[i], oldClick = buttons[i]['click'];
+                if(oldClick) {
+                    btn.click = function(e) {
+                        console.log('Click');
+                        SSGame.current.playSound('buttonClick');
+                        oldClick(e);
+                    }
+                }
+            }
             this.body.dialog('option', 'buttons', buttons);
         },
         open: function() {

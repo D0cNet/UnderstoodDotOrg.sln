@@ -208,6 +208,7 @@ the callbacks passed to the module.
 
       self.$previousFocus = null;
 
+      self.setModel();
       self.breakpointActions();
       // Secondary menu starts off hidden while we adjust it for the current size, so now we have to show it.
       self.$navsecondary.css('visibility', 'visible');
@@ -230,6 +231,15 @@ the callbacks passed to the module.
         e.stopPropagation();
         e.preventDefault();
       });
+    };
+
+    self.setModel = function() {
+      self.model = {};
+      self.model.itemsInNav = 5;
+
+      if ($('.community-main-header').length) {
+        self.model.itemsInNav = 6;
+      }
     };
 
     self.breakpointActions = function() {
@@ -294,7 +304,7 @@ the callbacks passed to the module.
         // page opened at desktop size or resized from moblie
         // move items from submenu to top level, attach events
         if (self.viewport_size == 'small' || self.viewport_size === null) {
-          self.itemsUp(6);
+          self.itemsUp(self.model.itemsInNav);
           self.attachSubmenuEvents();
         }
 
@@ -634,6 +644,11 @@ the callbacks passed to the module.
  */
 
 (function($){
+
+  // Initialize the modules on page load.
+  $(document).ready(function() {
+    new U.carousels();
+  });
 
   U.carousels = function() {
     U.carousels.readSpeakerStarted = false;
@@ -1111,6 +1126,8 @@ the callbacks passed to the module.
 
       // Initializes Parents are Saying Slider
       responsiveSliderChange( parentsAreSayingSliderArr, false, jQuery('.parents-are-saying-container'), 3, true, 500, 150, 2);
+      $('.parents-are-saying-container li').equalHeights();
+
 
       ///////////////////////////////// End Parents are Saying Slider /////////////////////////////////
 
@@ -1132,6 +1149,15 @@ the callbacks passed to the module.
       // Initializes Partners Slider
       responsiveSliderChange( partnersSliderArr, false, jQuery('#partners-slides-container'), 6, false, 1000, false, 4, 2);
       jQuery("#partners-slides-container .rsArrowLeft").after(partnersAnchor);
+      // hovers from grayscale to color, todo: preload if necessary
+      self.partnersHover = function() {
+        $('#partners-slides-container img').hover(function () {
+            this.src = this.src.replace('.gray.png', '.png')
+        }, function () {
+            this.src = this.src.replace('.png', '.gray.png')
+        })
+      };
+      self.partnersHover();
 
       ///////////////////////////////// End Partners Slider /////////////////////////////////
 
@@ -1196,12 +1222,16 @@ the callbacks passed to the module.
 
       waitForFinalEvent(function(){
         responsiveSliderChange( parentsAreSayingSliderArr, true, jQuery('.parents-are-saying-container'), 3, true, 700, 150, 2);
+        $('.parents-are-saying-container li').equalHeights();
       }, 500, 'parentsAreSayingSlider');
 
-      waitForFinalEvent(function(){
-        responsiveSliderChange( forYouSliderArr, true, jQuery('.recos-for-you'), 4, false, false, false );
-        new U.Recos();
-      }, 500, 'forYouSlider');
+      /* SG - this is dependent on page specific JS - checking if U.Recos exists before firing */
+      if (typeof(U.Recos) !== 'undefined') {
+        waitForFinalEvent(function(){
+          responsiveSliderChange( forYouSliderArr, true, jQuery('.recos-for-you'), 4, false, false, false );
+          new U.Recos();
+        }, 500, 'forYouSlider');
+      }
 
       waitForFinalEvent(function(){
         responsiveSliderChange( partnersSliderArr, true, jQuery('#partners-slides-container'), 6, false, 1000, false, 4, 2);
@@ -1209,7 +1239,7 @@ the callbacks passed to the module.
         if(Modernizr.mq('(min-width: 960px)') || !Modernizr.mq('only all')){
           jQuery("#partners-slides-container .rsArrowLeft").after(partnersAnchor);
         }
-
+        self.partnersHover();
       }, 500, 'partnersSlider');
 
         for (var i = onResizeEvent.length - 1; i >= 0; i--) {
@@ -1305,11 +1335,6 @@ the callbacks passed to the module.
 
   };
   
-
-  // Initialize the module on page load.
-  // FIXME: this was moved to the bottom of the file and outside of a doc.ready context in order to fix UN-2281. it needs to be revisited.
-  new U.carousels();
-
 
 })(jQuery);
 
@@ -1661,7 +1686,6 @@ the callbacks passed to the module.
      */
     this.initialize = function() {
       var uniform_components = [
-        '.comment-sort',
         '.comment-form-reply'
       ].join(','),
           $html = $('html');
@@ -1671,8 +1695,7 @@ the callbacks passed to the module.
 
       // Attach events.
       $(window).resize(function() { self.resizeElements(); });
-
-      $html.on('equalHeights', self.resizeElements);
+      $html.on('equalHeights', function() { self.resizeElements(); });
     };
 
     /**
@@ -1680,27 +1703,7 @@ the callbacks passed to the module.
      * @return {object} this instance
      */
     this.resizeElements = function() {
-      return this.resizeSelect().resizeActions();
-    };
-
-    /**
-     * Dynamically resize "Sort By" select box.
-     * @return {object} this instance
-     */
-    this.resizeSelect = function() {
-      var resize_selectors = [
-        '.comment-list .selector',
-        '.comment-list .selector span'
-      ].join(',');
-
-      var MAX_SELECT_WIDTH = (Modernizr.mq('(min-width: 480px)')) ? 190 : 480;
-      var width = $('#wrapper').css('width').split('px')[0] * 0.833333;
-      $(resize_selectors).css({
-        'max-width': (width < MAX_SELECT_WIDTH) ? width : MAX_SELECT_WIDTH,
-        'width': '100%'
-      });
-
-      return this;
+      return this.resizeActions();
     };
 
     /**
@@ -1946,6 +1949,102 @@ function CommentsSummaryTextLimit(limitField, limitNum) {
     return this;
   };
 })(jQuery);
+/**
+ * Definition for the Share/Email javascript module.
+ */
+
+(function($){
+
+  // Initialize the module on page load.
+  $(document).ready(function() {
+    new U.shareEmail();
+  });
+
+  U.shareEmail = function(){
+
+    var self = this;
+
+    self.init = function(){
+      self.cacheSelectors();
+      self.attachHandlers();
+    };
+
+    self.cacheSelectors = function() {
+      self.dom = {};
+      self.dom.body = $(document.body);
+      self.dom.topLevel = $('html, body');
+      self.dom.emailButton = $('.share-save-container .icon-email');
+    };
+
+    self.attachHandlers = function() {
+      self.dom.emailButton.on('click', self.fetch);
+    };
+
+    self.attachModalHandlers = function() {
+      self.dom.close.on('click', self.closeModal);
+      self.dom.modal.on('hide.bs.modal', self.onClose);
+      self.dom.sendButton.on('click', self.showConfirm);
+      self.dom.modal.on('show.bs.modal', function() {
+        $(this).find(':focusable').first().focus();
+      });
+    };
+
+    self.closeModal= function(e) {
+      if (typeof(e) !== 'undefined') {
+        e.preventDefault();
+      }
+
+      self.dom.modal.modal('hide');
+    };
+
+    self.onClose = function() {
+      self.dom.body.removeClass('modal-open');
+      self.dom.modal.remove();
+    };
+
+    self.fetch = function(e) {
+      if (typeof(e) !== 'undefined') {
+        e.preventDefault();
+      }
+
+      $.get('share.email.friend.html').done(self.renderLightbox);
+    };
+
+    self.renderLightbox = function(res) {
+      var modal = $(res);
+
+      self.dom.close = modal.find('.close');
+      self.dom.body.find('form:first').append(modal);
+      self.dom.modal = $('.share-email-modal');
+      self.dom.sendButton = modal.find('.send');
+      self.dom.emailForm = modal.find('.share-email-form');
+      self.dom.emailConfirm = modal.find('.share-email-confirm');
+
+      adjustModalMaxHeightAndPosition();
+
+      // only above 320 viewport or nonresponsive
+      if( Modernizr.mq('(min-width: 320px)') || !Modernizr.mq('only all')){
+        $(window).resize(adjustModalMaxHeightAndPosition).trigger('resize');
+      }
+
+      self.attachModalHandlers();
+      self.dom.modal.modal('show');
+    };
+
+    self.showConfirm = function(e) {
+      e.preventDefault();
+
+      self.dom.emailForm.fadeOut(300, function() {
+        self.dom.emailConfirm.fadeIn(300);
+        // vertically align modal
+        adjustModalMaxHeightAndPosition();
+      });
+    };
+
+    self.init();
+  };
+
+})(jQuery);
 jQuery(document).ready(function(){
 
   //trigger for embed overlay modal
@@ -1964,56 +2063,137 @@ jQuery(document).ready(function(){
 // Initialize the module on page load.
   $(document).ready(function() {
     new U.findHelpful();
+    new U.findHelpfulAnchor();
   });
 
+  // Find Helpful Buttons (increase/descrease count, change state of buttons)
   U.findHelpful = function() {
     var self = this;
 
-    jQuery('.find-this-helpful ul li button').click(function(){
-      var tempCount = parseInt(jQuery('.count-helpful a span').html(), 10);
+    $helpfulContainer = $('.find-this-helpful')
+    $helpfulButton = $helpfulContainer.find('ul li button');
+
+    $helpfulButton.on( 'click', function() {
+      
+      $counter = $('.count-helpful a span');
+      $tempCount = parseInt($counter.html(), 10);
 
       // disable sibling buttons when selected
-      jQuery(this).removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
+      //$(this).removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
 
-      if( jQuery(this).hasClass('helpful-yes') ){ // Yes is clicked
-        if( !jQuery(this).hasClass('selected') ){
-          // Yes not selected
-          jQuery('.count-helpful a span').html( tempCount + 1 );
+      // populate counter yes/no  - remove vote if clicked twice
+      if( $(this).hasClass('yes') ){ // Yes is clicked
+        if( $(this).hasClass('selected') ){
+          $counter.html( $tempCount - 1 );
         }
-      }else{
-        if( jQuery('.helpful-yes').hasClass('selected') ){ // No is clicked
-          // No is clicked, yes is selected
-          jQuery('.count-helpful a span').html( tempCount - 1 );
+        else if( $(this).hasClass('disabled') ){
+          $counter.html( $tempCount + 2 );
+        }
+        else {
+          $counter.html( $tempCount + 1 );
+        }
+      }else{ // No is clicked
+        if( $(this).hasClass('selected') ){
+          $counter.html( $tempCount + 1 );
+        }
+        else if( $(this).hasClass('disabled') ){
+          $counter.html( $tempCount -2 );
+        }
+        else {
+          $counter.html( $tempCount - 1 );
         }
       }
 
-      jQuery('.find-this-helpful ul li button').removeClass('selected');
-      jQuery(this).addClass('selected');
+      // if button not selected, make button selected state, disable other button
+      if( !$(this).hasClass('selected') ){
+        $(this).addClass('selected').parent('li').siblings('li').find('button').addClass('disabled');
+      }
+      // if button selected, make button not selected, remove disabling of other button
+      else {
+        $(this).removeClass('selected').parent('li').siblings('li').find('button').removeClass('disabled');
+      }
+      // if button is disabled, remove disabled state, and remove selected state of other buttons
+      if( $(this).hasClass('disabled') ){
+        $(this).removeClass('disabled').parent('li').siblings('li').find('button').removeClass('selected');
+      }
+
       return false;
+
     });
 
     // Handle moving sidebar find-this-helpful module around depending on window width
-    var $module = $('.find-this-helpful.sidebar');
+    var $moduleSidebar = $('.find-this-helpful.sidebar');
+    var $modulePersist = $('.find-this-helpful.persist');
     // if module exists on the page
-    if(!$module.length) { return; }
+   
 
     var $findHelpfulLarge = $('.find-this-helpful-large');
     var $findHelpfulSmall = $('.find-this-helpful-small');
 
     // calls function on load and on resize
     detect();
-    jQuery(window).resize(detect);
+    $(window).resize(detect);
 
     function detect(){
       // only above 650 viewport or nonresponsive
       if(Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')){
-        $module.appendTo($findHelpfulLarge);
+        $moduleSidebar.appendTo($findHelpfulLarge);
       } else {
-        $module.appendTo($findHelpfulSmall);
+        $moduleSidebar.appendTo($findHelpfulSmall);
+      }
+
+      // remove persist class if mobile, to help with styling
+      if(Modernizr.mq('(max-width: 649px)')){
+        if ($modulePersist.hasClass('persist')) {
+          $modulePersist.removeClass('persist');
+        }
+      }
+      else {
+        $modulePersist.addClass('persist');
       }
     }
 
+    
+
     return this;
+  };
+
+
+  // Anchor links for Find Helpful counter, to send user to vote module at bottom of page 
+  U.findHelpfulAnchor = function() {
+    var self = this;
+
+    self.$helpfulAnchor = $('.count-helpful a');
+    self.$helpfulTarget = $('#count-helpful-content');
+    self.$helpfulTargetMobile = $('#count-helpful-sidebar');
+
+    self.$helpfulAnchor.on( 'click', function() {
+
+      // for desktop
+        // if there is not a second module at the end of the content, do not use anchor link
+        if(!self.$helpfulTarget.length) { return false; }
+        if(Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')){
+        // scroll to top of target when opened
+        $('html,body').animate({scrollTop: $(self.$helpfulTarget).offset().top -45}, 500);
+        //focus target
+        self.$helpfulTarget.find(':focusable:first').focus();
+
+      } else {
+      // for mobile
+        // if there is not a second module at the end of the content, do not use anchor link
+        if(!self.$helpfulTargetMobile.length) { return false; }
+        // scroll to top of target when opened
+        $('html,body').animate({scrollTop: $(self.$helpfulTargetMobile).offset().top -25}, 500);
+        //focus target
+        self.$helpfulTargetMobile.find(':focusable:first').focus();
+      }
+
+      return false;
+
+    });
+
+    return this;
+
   };
 
 })(jQuery);
@@ -2251,91 +2431,92 @@ jQuery(document).ready(function(){
   });
 
   U.skipLink = function() {
-      var self = this;
+    var self = this;
 
-      self.pageSections = ['Dashboard', 'Feature', 'Toolbar', 'Sidebar', 'Content', 'Comments'];
+    self.pageSections = ['Dashboard', 'Feature', 'Toolbar', 'Sidebar', 'Content', 'Comments'];
 
-      self.init = function() {
-        self.cacheDom();
-        self.setModel();
-        self.buildSkipList();
-        self.cacheDelegatedDom();
-        self.attachHandlers();
-      };
-
-      self.setModel = function() {
-        selectors = [];
-        self.model = {};
-        self.model.skipLinks = [];
-
-        for (var i = 0; i < self.pageSections.length; i++) {
-          var item = {};
-
-          item.contentType = self.pageSections[i];
-          item.selector = '.skiplink-' + item.contentType.toLowerCase();
-          item.element = $(item.selector);
-          item.linkId = item.contentType + 'link';
-          item.linkHref = '#' + item.linkId;
-          item.subNavText = 'Skip to ' + item.contentType;
-
-          /* Storing index on element so we can quickly find skiplink data for each element when building list */
-          item.element.data('skipLinkIndex', i);
-          self.model.skipLinks.push(item);
-
-          if (item.element.length) {
-            selectors.push(item.selector);
-          }
-        }
-
-        /* Building separate query for collected skip link elements on page */
-        /* This guarantees order will match order that items appear in the DOM */
-        self.model.skipLinkCollection = $(selectors.join(','));
-      };
-
-      self.cacheDom = function() {
-        self.dom = {};
-        self.dom.body = $(document.body);
-      };
-
-      self.cacheDelegatedDom = function() {
-        self.dom.skipList = $('.skip-list');
-      };
-
-      self.attachHandlers = function() {
-        self.dom.body.on('click', '.skip-link', self.firefoxFocusWorkaround);
-        self.dom.body.on('click', '.secondary-navigation-link', self.skipBackToMainLinkMenu);
-      };
-
-      self.buildSkipList = function() {
-        var skipList = $('<ul class="skip-list"></ul>');
-
-        self.dom.body.prepend(skipList);
-
-
-        self.model.skipLinkCollection.each(function(i) {
-          var el = $(this),
-              index = el.data('skipLinkIndex'),
-              item = self.model.skipLinks[index];
-
-          skipList.append('<li><a class="skip-link" href="'+ item.linkHref +'" tabindex="1">' + item.subNavText + '</li>');
-          item.element.prepend('<div class="skip-link-secondary"><a href="#" class="skip-link secondary-navigation-link rs_skip" id="'+ item.linkId +'">Back to Navigation</a></div>');
-        });
-      };
-
-    self.firefoxFocusWorkaround = function(e) {
-      var clicked = $(e.currentTarget),
-          selector = clicked.attr('href');
-
-      setTimeout(function() {
-        $(selector).focus();
-      }, 100);
+    self.init = function() {
+      self.cacheDom();
+      self.setModel();
+      self.buildSkipList();
+      self.cacheDelegatedDom();
+      self.attachHandlers();
     };
 
-      self.skipBackToMainLinkMenu = function(e) {
-          self.dom.skipList.find(':focusable').eq(0).focus();
-      };
+    self.setModel = function() {
+      selectors = [];
+      self.model = {};
+      self.model.skipLinks = [];
 
-      self.init();
+      for (var i = 0; i < self.pageSections.length; i++) {
+        var item = {};
+
+        item.contentType = self.pageSections[i];
+        item.selector = '.skiplink-' + item.contentType.toLowerCase();
+        item.element = $(item.selector);
+        item.linkId = item.contentType + 'link';
+        item.linkHref = '#' + item.linkId;
+        item.subNavText = 'Skip to ' + item.contentType;
+
+        /* Storing index on element so we can quickly find skiplink data for each element when building list */
+        item.element.data('skipLinkIndex', i);
+        self.model.skipLinks.push(item);
+
+        if (item.element.length) {
+          selectors.push(item.selector);
+        }
+      }
+
+      /* Building separate query for collected skip link elements on page */
+      /* This guarantees order will match order that items appear in the DOM */
+      self.model.skipLinkCollection = $(selectors.join(','));
+    };
+
+    self.cacheDom = function() {
+      self.dom = {};
+      self.dom.body = $(document.body);
+    };
+
+    self.cacheDelegatedDom = function() {
+      self.dom.skipList = $('.skip-list');
+    };
+
+    self.attachHandlers = function() {
+      self.dom.body.on('click', '.skip-link', self.firefoxFocusWorkaround());
+      self.dom.body.on('click', '.secondary-navigation-link', self.skipBackToMainLinkMenu);
+    };
+
+    self.buildSkipList = function() {
+      var skipList = $('<ul class="skip-list"></ul>');
+
+      self.dom.body.prepend(skipList);
+
+      self.model.skipLinkCollection.each(function(i) {
+        var el = $(this),
+            index = el.data('skipLinkIndex'),
+            item = self.model.skipLinks[index];
+
+        skipList.append('<li><a class="skip-link" href="'+ item.linkHref +'" tabindex="0">' + item.subNavText + '</li>');
+        item.element.prepend('<div class="skip-link-secondary"><a href="#" class="skip-link secondary-navigation-link rs_skip" id="'+ item.linkId +'">Back to Navigation</a></div>');
+      });
+    };
+
+    self.firefoxFocusWorkaround = function(e) {
+      return function(e) {
+        var clicked = $(e.currentTarget),
+            selector = clicked.attr('href');
+
+        setTimeout(function() {
+          $(selector).focus();
+        }, 100);
+      };
+    };
+
+    self.skipBackToMainLinkMenu = function(e) {
+      self.dom.skipList.find(':focusable').eq(0).focus();
+    };
+
+    self.init();
   };
 
 })(jQuery);
@@ -2567,6 +2748,7 @@ jQuery(document).ready(function(){
 
   };
 })(jQuery);
+
 
 
 

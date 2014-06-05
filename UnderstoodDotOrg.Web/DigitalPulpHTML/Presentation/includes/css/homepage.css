@@ -11,13 +11,13 @@
 .behavior-tool {
   padding: 0 26px 32px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
   .behavior-tool {
     padding: 0;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
   .behavior-tool:after {
     content: '';
@@ -35,20 +35,20 @@
   margin: 0 0px;
   padding: 20px 13px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
   .behavior-tool .behavior-form {
     height: 405px;
     padding: 26px 30px 40px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
   .behavior-tool .behavior-form {
     height: 410px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
   .behavior-tool .behavior-form {
     padding: 26px 40px 40px;
@@ -62,7 +62,7 @@
   font-weight: normal;
   margin-bottom: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
   .behavior-tool .behavior-form h3 {
     font-size: 24px;
@@ -79,7 +79,7 @@
   font-family: arial, sans-serif;
   margin-bottom: 16px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 60, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
   .behavior-tool .behavior-form p {
     font-size: 16px;
@@ -93,14 +93,14 @@
   font-size: 12px;
   font-size: 0.75rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
   .behavior-tool .behavior-form .selector {
     font-size: 15px;
     font-size: 0.9375rem;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
   .behavior-tool .behavior-form .selector {
     font-size: 16px;
@@ -113,7 +113,7 @@
   font-size: 0.9375rem;
   width: 100%;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
   .behavior-tool .behavior-form .submit-button {
     font-size: 18px;
@@ -151,7 +151,7 @@
   max-width: 710px;
   -webkit-transform: translate3d(0, 0, 0);
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner {
     font-size: 24px;
@@ -161,20 +161,20 @@
     padding: 20px 32px 30px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner {
     line-height: 55px;
     padding-top: 30px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner {
     padding: 30px 40px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner .col-12 {
     width: auto;
@@ -184,7 +184,7 @@
     padding: 0;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner .col-12 {
     width: 50%;
@@ -208,7 +208,7 @@
   height: 50px;
   line-height: 50px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner .button {
     padding: 0 22px;
@@ -219,7 +219,7 @@
     background-size: 10px 10px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner .button {
     display: inline-block;
@@ -241,7 +241,7 @@
 .guide-me .guide-me-inner .icon {
   display: none;
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner .icon {
     display: inline-block;
@@ -274,13 +274,13 @@
   background: #fff;
   -webkit-transform: translate3d(0, 0, 0);
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay {
     top: 90px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay {
     background-color: transparent;
@@ -290,7 +290,7 @@
     top: 200px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay {
     top: 0;
@@ -322,7 +322,7 @@
 .no-backgroundsize .container-guide-me-overlay .close-guide {
   background-image: url("../images/icon.close.overlay.16.png");
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .close-guide {
     font-size: 24px;
@@ -342,14 +342,14 @@
     background-image: url("../images/icon.close.overlay.22.png");
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .close-guide {
     top: 30px;
     right: 30%;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .close-guide {
     right: 60%;
@@ -366,7 +366,7 @@
   text-align: center;
   display: none;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay h3 {
     display: block;
@@ -376,19 +376,19 @@
 .container-guide-me-overlay .module {
   padding: 0 14px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .module {
     padding: 0 16px;
   }
 }
-@media (min-width: 769px) and (max-width: 830px) {
+@media (min-width: 769px) and (max-width: 830px), print {
   /* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .module {
     padding: 0 6px 0 6px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .module {
     padding: 0 40px;
@@ -404,7 +404,7 @@
   font-weight: normal;
   padding-right: 10%;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay h4, .container-guide-me-overlay legend {
     font-size: 30px;
@@ -416,7 +416,7 @@
 .container-guide-me-overlay h4.mobile, .container-guide-me-overlay legend.mobile {
   display: block;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay h4.mobile, .container-guide-me-overlay legend.mobile {
     display: none;
@@ -426,19 +426,19 @@
 .container-guide-me-overlay h4.desktop, .container-guide-me-overlay legend.desktop {
   display: none;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay h4.desktop, .container-guide-me-overlay legend.desktop {
     display: block;
   }
 }
-@media (min-width: 682px) and (max-width: 768px) {
+@media (min-width: 682px) and (max-width: 768px), print {
   /* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay h4, .container-guide-me-overlay legend {
     padding-right: 22%;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay h4, .container-guide-me-overlay legend {
     font-size: 18px;
@@ -460,20 +460,20 @@
   margin-bottom: 40px;
   padding-left: 14px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .select-behavior {
     border-right: solid 1px #c6c5c5;
     padding-left: 0;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .select-behavior {
     padding-left: 5%;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .select-behavior {
     padding-left: 20%;
@@ -484,13 +484,13 @@
   display: table;
   padding-bottom: 18px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .select-behavior li {
     padding-bottom: 24px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .select-behavior li {
     padding-bottom: 16px;
@@ -524,7 +524,7 @@
   position: relative;
   top: 2px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .select-behavior label {
     font-size: 16px;
@@ -539,7 +539,7 @@
 .container-guide-me-overlay .select-grade {
   margin-bottom: 30px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .select-grade {
     margin-bottom: 40px;
@@ -551,7 +551,7 @@
   font-size: 14px;
   font-size: 0.875rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 242, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .select-grade .selector {
     display: none;
@@ -563,7 +563,7 @@
   width: 100%;
   display: none;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 252, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .select-grade nav {
     display: block;
@@ -590,7 +590,7 @@
   padding: 0 10px;
   white-space: nowrap;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 262, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay .select-grade .grade {
     font-size: 16px;
@@ -624,13 +624,13 @@
 .container-guide-me-overlay footer {
   margin: 0 14px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 310, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay footer {
     margin: 0 auto;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 310, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay footer {
     margin: 0 auto 40px;
@@ -642,7 +642,7 @@
   text-align: center;
   margin-left: 0;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 321, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay footer .col {
     text-align: left;
@@ -650,7 +650,7 @@
     margin-left: 33.33333%;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 333, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay footer .col-6 {
     width: 25%;
@@ -662,7 +662,7 @@
   text-align: center;
   margin-bottom: 26px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 340, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay footer .submit-button-wrap {
     margin-bottom: 0px;
@@ -675,7 +675,7 @@
   font-size: 14px;
   font-size: 0.875rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 348, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay footer .submit-button-wrap input {
     font-size: 18px;
@@ -683,7 +683,7 @@
     width: auto;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 348, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay footer .submit-button-wrap input {
     font-size: 16px;
@@ -695,7 +695,7 @@
   text-align: center;
   margin-bottom: 32px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 364, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay footer .complete-profile {
     margin-bottom: 0px;
@@ -710,7 +710,7 @@
   color: #426da9;
   text-decoration: underline;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 372, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay footer .complete-profile a {
     font-size: 18px;
@@ -719,7 +719,7 @@
     line-height: 1.625rem;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 372, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
   .container-guide-me-overlay footer .complete-profile a {
     font-size: 16px;
@@ -740,7 +740,7 @@
 .hero-carousel {
   margin: 0;
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   .hero-carousel {
     position: relative;
@@ -782,7 +782,7 @@
   background-image: url("../images/sprite.btn.carousel.play-pause.png");
   background-color: transparent;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   .hero-carousel-inner .play-pause {
     bottom: 10px;
@@ -821,13 +821,13 @@
   position: absolute;
   display: none;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   .hero-carousel-inner .carousel-pagers {
     display: block;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   .hero-carousel-inner .carousel-pagers .rsArrow {
     position: absolute;
@@ -883,7 +883,7 @@
 .hero-carousel-inner .carousel-navigation {
   display: none;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   .hero-carousel-inner .carousel-navigation {
     display: block;
@@ -924,7 +924,7 @@
   width: 100%;
   height: 200px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   #hero-carousel-wrapper {
     height: 400px;
@@ -937,7 +937,7 @@
   background-repeat: no-repeat;
   height: 200px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   #hero-carousel-wrapper .slide {
     height: 400px;
@@ -953,7 +953,7 @@
   color: #298fc2;
   padding: 19px 0 0 27px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   #hero-carousel-wrapper .slide .text {
     font-size: 36px;
@@ -963,14 +963,14 @@
     padding: 36px 0 0 30px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   #hero-carousel-wrapper .slide .text {
     padding-left: 45px;
     max-width: 350px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
   #hero-carousel-wrapper .slide .text {
     position: absolute;
@@ -1010,7 +1010,7 @@
 .more-carousel h2 {
   margin-bottom: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended h2,
   .more-carousel h2 {
@@ -1018,22 +1018,22 @@
     margin-bottom: 40px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended h2,
   .more-carousel h2 {
     margin-left: 0;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container,
   .more-carousel #featured-slides-container {
     height: 235px !important;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container .rsOverflow,
   .more-carousel #featured-slides-container .rsOverflow {
@@ -1054,7 +1054,7 @@
   margin-right: 15px;
   z-index: 2;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container .rsArrowLeft .rsArrowIcn,
   .more-carousel #featured-slides-container .rsArrowLeft .rsArrowIcn {
@@ -1064,7 +1064,7 @@
     margin-right: 6.5%;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container .rsArrowLeft .rsArrowIcn,
   .more-carousel #featured-slides-container .rsArrowLeft .rsArrowIcn {
@@ -1081,7 +1081,7 @@
   left: 50%;
   z-index: 2;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container .rsArrowRight .rsArrowIcn,
   .more-carousel #featured-slides-container .rsArrowRight .rsArrowIcn {
@@ -1093,7 +1093,7 @@
     top: 0;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container .rsArrowRight .rsArrowIcn,
   .more-carousel #featured-slides-container .rsArrowRight .rsArrowIcn {
@@ -1110,7 +1110,7 @@
   white-space: nowrap;
   width: 100%;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container ul,
   .more-carousel #featured-slides-container ul {
@@ -1118,7 +1118,7 @@
     padding: 0 0 0 6.5%;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container ul,
   .more-carousel #featured-slides-container ul {
@@ -1134,7 +1134,7 @@
   white-space: normal;
   position: relative;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container ul li,
   .more-carousel #featured-slides-container ul li {
@@ -1144,7 +1144,7 @@
     height: 235px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container ul li,
   .more-carousel #featured-slides-container ul li {
@@ -1152,7 +1152,7 @@
     margin: 0 37px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container ul li,
   .more-carousel #featured-slides-container ul li {
@@ -1170,7 +1170,7 @@
 .more-carousel #featured-slides-container ul li img {
   width: 100%;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container ul li img,
   .more-carousel #featured-slides-container ul li img {
@@ -1190,7 +1190,7 @@
   color: #426da9;
   text-align: left;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .featured-recommended #featured-slides-container ul li p,
   .more-carousel #featured-slides-container ul li p {
@@ -1213,7 +1213,7 @@
   border-bottom: solid 1px #e2e2e2;
   padding-bottom: 20px;
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .more-carousel {
     border-bottom: none;
@@ -1221,7 +1221,7 @@
     margin-bottom: 0;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 190, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
   .more-carousel .col {
     border-bottom: solid 1px #e2e2e2;

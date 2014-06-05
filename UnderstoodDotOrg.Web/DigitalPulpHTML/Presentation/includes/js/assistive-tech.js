@@ -190,8 +190,6 @@
   $(document).ready(function() {
     new U.assistiveTech();
 
-    new U.SeeRating();
-
     //perform action on resize, but delay the amount of times this is called while resizing.
     var doTheAction;
     $(window).resize(function() {
@@ -200,28 +198,6 @@
     });
 
   });
-
-  U.SeeRating = function() {
-    var self = this;
-
-    //cache containers
-    var resultKeywords = $('.tech-search-results.multi .result-keywords');
-    var seeRating = $('.tech-search-results.multi .see-rating');
-    var resultRating = $('.tech-search-results.multi .result-ratings.show-popover');
-
-    // only above 650 viewport or nonresponsive
-    if(Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')){
-      seeRating.hide();
-      resultKeywords.show();
-      resultRating.show();
-    }else{
-      resultKeywords.hide();
-      resultRating.hide();
-      seeRating.show();
-    }
-
-    return this;
-  };
 
   U.assistiveTech = function(){
     var self = this;
@@ -468,6 +444,21 @@
   };
 
 })(jQuery);
+(function($) {
+
+  $(document).ready(function() {
+    var uniformElements = [
+      '.selector',
+      '.radio'
+    ];
+
+    new U.Global.readspeakerUniform(uniformElements);
+  });
+
+
+
+})(jQuery);
+
 
 
 

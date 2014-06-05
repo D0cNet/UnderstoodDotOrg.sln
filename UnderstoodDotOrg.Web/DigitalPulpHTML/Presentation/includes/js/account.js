@@ -79,6 +79,7 @@
 
         var $shownCard = $childInfoClone.eq(cardIndex);
         $shownCard.show();
+        $shownCard.find('.rsArrowLeft').addClass('rsArrowDisabled');
         addCloseEvent($shownCard);
 
         var windowWidth = Math.max($(window).width(), window.innerWidth);
@@ -120,29 +121,60 @@
         $childInfoClone.on('click', '.rsArrowLeft', function(e) {
           e.preventDefault();
           e.stopPropagation();
-          $childInfoClone.hide();
+          var currentElement = $(e.currentTarget);
+
+          currentElement.parents('.member-cards').find('.rsArrow').removeClass('rsArrowDisabled');
+
           cardIndex--;
-          if (cardIndex < 0) {
-            cardIndex = $childInfoClone.length-1;
-          }
+
           var $currentCard = $childInfoClone.eq(cardIndex);
-          $currentCard.show();
-          $currentCard.find(':focusable').first().focus();
-          addCloseEvent($childInfoClone.eq(cardIndex));
+
+          if ( cardIndex <= -1 ) {
+            cardIndex = 0;
+            $currentCard = $childInfoClone.eq(cardIndex);
+            currentElement.addClass('rsArrowDisabled');
+          }
+
+            $childInfoClone.hide();
+            $currentCard.show();
+            $currentCard.find(':focusable').first().focus();
+            addCloseEvent($childInfoClone.eq(cardIndex));
+
+          if ( cardIndex <= 0 ) {
+            $currentCard.find('.rsArrowLeft').addClass('rsArrowDisabled');
+          }
+
         });
 
         $childInfoClone.on('click', '.rsArrowRight', function(e) {
           e.preventDefault();
           e.stopPropagation();
-          $childInfoClone.eq(cardIndex).hide();
+          var currentElement = $(e.currentTarget);
+
+          currentElement.parents('.member-cards').find('.rsArrow').removeClass('rsArrowDisabled');
+
           cardIndex++;
+
           if (cardIndex >= $childInfoClone.length) {
-            cardIndex = 0;
+            cardIndex = $childInfoClone.length-1;
           }
+
           var $currentCard = $childInfoClone.eq(cardIndex);
+
+          if (cardIndex == $childInfoClone.length-1) {
+            cardIndex = $childInfoClone.length-1;
+            $currentCard = $childInfoClone.eq(cardIndex);
+          }
+
+          $childInfoClone.eq(cardIndex).hide();
           $currentCard.show();
           $currentCard.find(':focusable').eq(1).focus();
           addCloseEvent($childInfoClone.eq(cardIndex));
+
+          if (cardIndex == $childInfoClone.length-1) {
+            $currentCard.find('.rsArrowRight').addClass('rsArrowDisabled');
+          }
+
         });
       };
     };
@@ -233,18 +265,18 @@
      */
     this.initialize = function() {
 
-      //cache selector
-      var notificationsSectionDropdownSelect = $('.notifications-section-dropdown select');
-
       var uniform_elements = [
         '.account-notification-tabs input[type=textfield]',
-        '.account-notification-tabs select'
+        '.account-notification-tabs select',
+        '.account-notification-tabs input[type=radio]'
       ].join(',');
+
+      $(uniform_elements).uniform();
 
       var toggle_switch = $(
         '<div class="switch-wrapper">' +
-          '<span class="btn-toggle btn-left"><button>Off</button></span>' +
-          '<span class="btn-toggle btn-right"><button>On</button></span>' +
+          '<span class="btn-toggle btn-left"><button>No</button></span>' +
+          '<span class="btn-toggle btn-right"><button>Yes</button></span>' +
         '</div>'
       );
 
@@ -253,31 +285,18 @@
       $('.toggle-wrapper .ez-checkbox').append(toggle_switch);
 
       $('.toggle-wrapper .ez-checkbox').find('.btn-toggle').on('click', function(e) {
-          e.preventDefault();
-          $(this).parent().click();
+        e.preventDefault();
+
+        // This will work in all browsers except ie8
+        //$(this).parent().click();
+
+        // This will work in all browsers including ie8
+        $(this).parent().parent().toggleClass('ez-checked');
       });
 
-      // Navigate to new page (or swap content) on change of dropdown
-      notificationsSectionDropdownSelect.change(function() {
-        self.swapSelectCount();
-
-        // INTEGRATION: navigate to the HREF, or do something else
-        var className = '.' + $(this).val() + '-tab a';
-      });
-
-      return this.swapSelectCount();
     };
 
-    /**
-     * Overlay the correct counter over dropdown select.
-     * @return {object} this instance
-     */
-    this.swapSelectCount = function() {
-      $('.notifications-section-dropdown .circle').hide();
-      var activeOption = '.' + $('.notifications-section-dropdown select').val() + '-count';
-      $(activeOption).css('display', 'inline-block');
-      return this;
-    };
+
 
     return this.initialize();
   };
@@ -917,6 +936,21 @@
   };
 
 })(jQuery);
+(function($) {
+
+  $(document).ready(function() {
+    var uniformElements = [
+      '.selector',
+      '.radio',
+      '.btn-toggle',
+      '.checker'
+    ];
+
+    new U.Global.readspeakerUniform(uniformElements);
+  });
+
+})(jQuery);
+
 
 
 

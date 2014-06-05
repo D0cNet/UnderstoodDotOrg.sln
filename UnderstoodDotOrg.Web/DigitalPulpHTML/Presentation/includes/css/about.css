@@ -14,7 +14,7 @@
   background-color: #f4f2f1;
   margin: 0 15px 15px 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-contact-us.scss */
   .about-contact-block {
     margin: 0 0 40px 5px;
@@ -56,7 +56,7 @@
 /**
  * SASS partial for about-experts-introduction module.
  */
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-introduction.scss */
   .l-about-experts-intro-carousel .row {
     border-bottom: 1px solid #d2d2d2;
@@ -75,14 +75,14 @@
   line-height: 1.625rem;
   padding: 0px 14px 20px 14px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-introduction.scss */
   .about-experts-introduction {
     margin-bottom: 20px;
     padding: 60px 14px 20px 0px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-introduction.scss */
   .about-experts-introduction {
     padding-top: 44px;
@@ -92,7 +92,7 @@
 .about-experts-introduction p {
   margin: 0px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-introduction.scss */
   .about-experts-introduction p {
     margin-top: -6px;
@@ -110,7 +110,7 @@
   margin-bottom: 30px;
   margin-top: 2px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel {
     background-color: white;
@@ -131,7 +131,7 @@
   line-height: 28px;
   line-height: 1.75rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel h3 {
     top: 0;
@@ -145,64 +145,64 @@
   width: 100%;
   min-height: 268px;
 }
-/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel button.rsArrowIcn {
   z-index: 2;
 }
-/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert {
   margin-top: 60px;
 }
-@media (min-width: 960px) {
-  /* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 960px), print {
+  /* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .about-expert {
     margin-top: 44px;
   }
 }
-/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data {
   background-color: #f4f2f1;
 }
-@media (min-width: 650px) {
-  /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 650px), print {
+  /* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .about-expert .about-expert-data {
     padding: 20px;
     min-height: 190px;
   }
 }
-@media (min-width: 960px) {
-  /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 960px), print {
+  /* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .about-expert .about-expert-data {
     padding: 40px;
     min-height: 231px;
   }
 }
-/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-image {
   float: left;
   position: relative;
   width: 100px;
 }
-@media (min-width: 769px) {
-  /* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 769px), print {
+  /* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-image {
     width: 125px;
   }
 }
-@media (min-width: 960px) {
-  /* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 960px), print {
+  /* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-image {
     width: 150px;
   }
 }
-/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-image img {
   display: block;
   height: auto;
   max-width: 100%;
   -webkit-backface-visibility: visible;
 }
-/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-image .caption {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -218,23 +218,23 @@
   bottom: 0px;
   width: 100%;
 }
-/* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details {
   margin-left: 120px;
 }
-@media (min-width: 769px) {
-  /* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 769px), print {
+  /* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details {
     margin-left: 145px;
   }
 }
-@media (min-width: 960px) {
-  /* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 960px), print {
+  /* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details {
     margin-left: 170px;
   }
 }
-/* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details .date {
   margin: 0 0 18px 0;
   padding: 0;
@@ -245,7 +245,7 @@
   line-height: 16px;
   line-height: 1rem;
 }
-/* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details .chat-with {
   margin: 0 0 10px 0;
   padding: 0;
@@ -256,7 +256,7 @@
   line-height: 16px;
   line-height: 1rem;
 }
-/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details h4 {
   margin: 0 0 16px 0;
   padding: 0;
@@ -268,13 +268,13 @@
   line-height: 24px;
   line-height: 1.5rem;
 }
-@media (min-width: 650px) {
-  /* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 650px), print {
+  /* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details h4 {
     margin-bottom: 10px;
   }
 }
-/* line 147, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details .credentials {
   margin: 0;
   padding: 0;
@@ -285,37 +285,37 @@
   line-height: 21px;
   line-height: 1.3125rem;
 }
-/* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .rsArrow.rsArrowLeft .rsArrowIcn {
   top: 226px;
   right: 55%;
 }
-@media (min-width: 480px) {
-  /* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 480px), print {
+  /* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .rsArrow.rsArrowLeft .rsArrowIcn {
     right: 54%;
   }
 }
-@media (min-width: 650px) {
-  /* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 650px), print {
+  /* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .rsArrow.rsArrowLeft .rsArrowIcn {
     top: 0px;
     right: 44px;
   }
 }
-/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .rsArrow.rsArrowRight .rsArrowIcn {
   top: 226px;
   right: 30%;
 }
-@media (min-width: 480px) {
-  /* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 480px), print {
+  /* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .rsArrow.rsArrowRight .rsArrowIcn {
     right: 37%;
   }
 }
-@media (min-width: 650px) {
-  /* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+@media (min-width: 650px), print {
+  /* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
   .about-experts-event-carousel .event-carousel .rsArrow.rsArrowRight .rsArrowIcn {
     top: 0px;
     right: 0px;
@@ -339,7 +339,7 @@
   line-height: 1.75rem;
   margin-bottom: 30px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
   .about-experts-listing h3 {
     font-size: 36px;
@@ -355,7 +355,7 @@
   border-bottom: 1px solid #d2d2d2;
   padding-bottom: 22px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
   .about-experts-listing .about-expert {
     border: none;
@@ -368,20 +368,20 @@
   position: relative;
   width: 100px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
   .about-experts-listing .about-expert .expert-listing-image {
     float: none;
     width: 150px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
   .about-experts-listing .about-expert .expert-listing-image {
     width: 180px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
   .about-experts-listing .about-expert .expert-listing-image {
     width: 230px;
@@ -394,7 +394,7 @@
   max-width: 100%;
   -webkit-backface-visibility: visible;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
   .about-experts-listing .about-expert .expert-listing-image img {
     margin-bottom: 26px;
@@ -404,7 +404,7 @@
 .about-experts-listing .about-expert .expert-listing-details {
   margin-left: 120px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
   .about-experts-listing .about-expert .expert-listing-details {
     margin-left: 0px;
@@ -422,13 +422,14 @@
   line-height: 26px;
   line-height: 1.625rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
   .about-experts-listing .about-expert .expert-listing-details h4 {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    min-height: 58px;
   }
 }
-/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .credentials {
   margin: 0 0 14px 0;
   padding: 0;
@@ -439,8 +440,8 @@
   line-height: 21px;
   line-height: 1.3125rem;
 }
-@media (min-width: 650px) {
-  /* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+@media (min-width: 650px), print {
+  /* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
   .about-experts-listing .about-expert .expert-listing-details .credentials {
     font-size: 16px;
     font-size: 1rem;
@@ -448,11 +449,11 @@
     line-height: 1.25rem;
   }
 }
-/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .all-tasks {
   margin-bottom: 18px;
 }
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .all-tasks .tasks {
   margin-bottom: 0px;
   font-size: 15px;
@@ -462,8 +463,8 @@
   color: dimgrey;
   font-weight: normal;
 }
-@media (min-width: 650px) {
-  /* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+@media (min-width: 650px), print {
+  /* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
   .about-experts-listing .about-expert .expert-listing-details .all-tasks .tasks {
     margin-bottom: 14px;
     font-size: 16px;
@@ -472,11 +473,11 @@
     line-height: 1rem;
   }
 }
-/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 126, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .all-tasks .tasks:last-child {
   margin-bottom: 0px;
 }
-/* line 131, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .links {
   display: block;
   margin: 0 0 12px 0;
@@ -488,12 +489,12 @@
   line-height: 1rem;
   text-decoration: underline;
 }
-/* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .links:hover {
   text-decoration: none;
 }
-@media (min-width: 650px) {
-  /* line 131, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+@media (min-width: 650px), print {
+  /* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
   .about-experts-listing .about-expert .expert-listing-details .links {
     margin-bottom: 8px;
   }
@@ -512,7 +513,7 @@
   max-width: 185%;
   width: auto;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-hero-image.scss */
   .l-about-hero-intro .about-hero-container img {
     margin-left: 0%;
@@ -541,7 +542,7 @@
   padding-top: 18px;
   width: 150px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-hero-image.scss */
   .l-about-hero-intro .about-hero-container .text-container h1 {
     font-size: 36px;
@@ -565,7 +566,7 @@
   margin-left: 13px;
   width: 135px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-hero-image.scss */
   .l-about-hero-intro .about-hero-container .text-container h2 {
     font-size: 21px;
@@ -578,7 +579,7 @@
   }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-hero-image.scss */
   .l-thank-you-intro .text-wrap {
     margin-left: 40px;
@@ -590,7 +591,7 @@
   min-height: 158px;
   padding: 10px 16px 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners.scss */
   .about-back-pagetopic {
     padding: 24px 15px 40px;
@@ -601,7 +602,7 @@
 .about-back-pagetopic a.back-to-previous {
   margin-bottom: 21px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners.scss */
   .about-back-pagetopic a.back-to-previous {
     margin-bottom: 0px;
@@ -612,7 +613,7 @@
   font-size: 33px;
   font-size: 2.0625rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners.scss */
   .about-back-pagetopic h1 {
     font-size: 36px;
@@ -624,13 +625,13 @@
 .about-back-pagetopic .share-save-container {
   margin-top: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners.scss */
   .about-back-pagetopic .share-save-container {
     margin-top: 3px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners.scss */
   .about-back-pagetopic .share-save-container div.share-save-icon {
     margin-top: 24px;
@@ -645,7 +646,7 @@
   color: #7a4183;
   margin-bottom: 15px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners.scss */
   .our-partners-intro h2 {
     font-size: 36px;
@@ -672,7 +673,7 @@
 .about-partners-list {
   margin-bottom: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list {
     margin-bottom: 35px;
@@ -686,7 +687,7 @@
   color: #696969;
   margin-bottom: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list h2 {
     padding-top: 20px;
@@ -711,7 +712,7 @@
 .about-partners-list .clearfix:last-child {
   border: none;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list:first-child div.partner-block {
     padding-top: 20px;
@@ -726,20 +727,20 @@
 .about-partners-list .partner-block .partner-intro {
   padding: 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list .partner-block .partner-intro {
     margin-top: -39px;
     padding-left: 10px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list .partner-block .partner-intro {
     margin-top: -56px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list .partner-block .partner-intro {
     margin-top: -85px;
@@ -749,7 +750,7 @@
 .about-partners-list .partner-block .partner-logo {
   padding: 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list .partner-block .partner-logo {
     margin-top: 10px;
@@ -759,7 +760,7 @@
 .about-partners-list .partner-block .partner-block-logo {
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list .partner-block .partner-block-logo {
     margin-bottom: 0;
@@ -769,13 +770,13 @@
 .about-partners-list .partner-block .partner-block-logo img {
   width: 100%;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list .partner-block .partner-block-logo img {
     max-width: 271px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list .partner-block .partner-head {
     margin-top: 9px;
@@ -792,7 +793,7 @@
   line-height: 1.5rem;
   font-weight: normal;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list .partner-block .partner-block-head h3 {
     margin-bottom: 30px;
@@ -816,7 +817,7 @@
   display: block;
   vertical-align: bottom;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-partners-list.scss */
   .about-partners-list .partner-block .partner-block-text .partner-block-read-more {
     padding-bottom: 40px;
@@ -837,7 +838,7 @@
   border-bottom: solid 1px #e2e2e2;
   /* .row */
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
   .about-search-results {
     padding: 50px 0 0 0;
@@ -853,7 +854,7 @@
 .about-search-results .search-result-container:last-child {
   border: none;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
   .about-search-results .search-result-container {
     margin-bottom: 50px;
@@ -865,7 +866,7 @@
   margin-bottom: 20px;
   float: left;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
   .about-search-results .search-result-container .search-image {
     margin-bottom: 0;
@@ -876,7 +877,7 @@
   width: 100%;
   max-width: 130px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
   .about-search-results .search-result-container .search-image img {
     max-width: 100%;
@@ -886,13 +887,13 @@
 .about-search-results .search-result-container .search-content {
   margin-left: 150px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
   .about-search-results .search-result-container .search-content {
     margin-left: 4.16666666667%;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
   .about-search-results .search-result-container .search-content h4 {
     margin-bottom: 11px;
@@ -906,7 +907,7 @@
   line-height: 1.5rem;
   font-weight: normal;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
   .about-search-results .search-result-container .search-content h4 a {
     font-size: 24px;
@@ -929,7 +930,7 @@
   font-weight: normal;
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
   .about-search-results .search-result-container .search-content p {
     margin-bottom: 0;
@@ -940,7 +941,7 @@
 .about-search-results .search-result-container .search-category {
   margin-left: 150px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
   .about-search-results .search-result-container .search-category {
     border-left: solid 1px #e2e2e2;
@@ -949,7 +950,7 @@
     margin-left: 4.16666666667%;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
   .about-search-results .search-result-container .search-category {
     margin-right: -10px;
@@ -965,7 +966,7 @@
   line-height: 24px;
   line-height: 1.5rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
   .about-search-results .search-result-container .search-category span {
     padding: 50px 0;
@@ -1015,7 +1016,7 @@
   background-color: #fafafa;
   padding: 18px 15px 120px 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 2, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-intro-container {
     padding: 38px 0px 120px 0px;
@@ -1025,7 +1026,7 @@
 .signup-intro-container .about-signup-header {
   width: 240px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-intro-container .about-signup-header {
     width: 100%;
@@ -1033,7 +1034,7 @@
     top: 20px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-intro-container .about-signup-header {
     margin-left: 200px;
@@ -1050,7 +1051,7 @@
   line-height: 2.25rem;
   margin-bottom: 7px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-intro-container .about-signup-header h1 {
     font-size: 36px;
@@ -1065,7 +1066,7 @@
   float: left;
   margin-bottom: 6px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-intro-container .about-signup-intro {
     margin-left: 200px;
@@ -1081,7 +1082,7 @@
   font-weight: normal;
   margin-bottom: 16px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-intro-container .about-signup-intro h3 {
     font-size: 18px;
@@ -1122,7 +1123,7 @@
   float: left;
   margin: 13px 18px 0px 0px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-intro-container .icon-newsletter-wrap {
     margin: 10px 52px 0px 18px;
@@ -1139,7 +1140,7 @@
   height: 70px;
   width: 85px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-intro-container .icon-newsletter-wrap .icon-newsletter-signup {
     background-size: 131px 85px;
@@ -1153,7 +1154,7 @@
   background-color: #f4f2f1;
   padding: 40px 15px 17px 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-newsletter-container {
     padding: 40px 0px 4px 0px;
@@ -1168,7 +1169,7 @@
   top: -145px;
   max-width: 630px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-newsletter-container .form {
     padding: 48px 40px 45px;
@@ -1200,7 +1201,7 @@
   line-height: 22px;
   line-height: 1.375rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-newsletter-container .form .safe-information-wrapper .popover {
     max-width: 450px;
@@ -1222,7 +1223,7 @@
 .signup-newsletter-container .form fieldset .newsletter-input-wrap {
   margin-bottom: 10px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-newsletter-container .form fieldset .newsletter-input-wrap {
     float: left;
@@ -1230,7 +1231,7 @@
     width: 70.5%;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-newsletter-container .form fieldset .newsletter-button-wrap {
     float: right;
@@ -1244,7 +1245,7 @@
   line-height: 40px;
   line-height: 2.5rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 165, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up.scss */
   .signup-newsletter-container .form fieldset .newsletter-button-wrap input {
     font-size: 18px;
@@ -1260,7 +1261,7 @@
   margin: 0;
   padding: 0 15px 30px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up-confirm.scss */
   .l-sign-up-confirm {
     padding: 0 0 56px;
@@ -1277,7 +1278,7 @@
   margin-bottom: 21px;
   padding-top: 27px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up-confirm.scss */
   .l-sign-up-confirm header h1 {
     margin-bottom: 24px;
@@ -1294,7 +1295,7 @@
   margin-bottom: 21px;
   padding-right: 23px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up-confirm.scss */
   .l-sign-up-confirm header p {
     font-size: 18px;
@@ -1322,7 +1323,7 @@
 .l-sign-up-confirm .social-wrap {
   padding-bottom: 37px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up-confirm.scss */
   .l-sign-up-confirm .social-wrap {
     padding-bottom: 65px;
@@ -1344,7 +1345,7 @@
   line-height: 1.25rem;
   margin: 0px 0 28px 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up-recommended.scss */
   .l-sign-up-recommended h2 {
     font-size: 24px;
@@ -1370,7 +1371,7 @@
   min-height: 105px;
   padding-bottom: 40px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up-recommended.scss */
   .l-sign-up-recommended .recommended-item {
     min-height: 165px;
@@ -1386,7 +1387,7 @@
   line-height: 1.25rem;
   font-weight: normal;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up-recommended.scss */
   .l-sign-up-recommended .recommended-item h3 {
     margin: -5px 0 8px;
@@ -1396,7 +1397,7 @@
     line-height: 1.5rem;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up-recommended.scss */
   .l-sign-up-recommended .recommended-item h3 {
     font-size: 22px;
@@ -1412,13 +1413,13 @@
   padding-right: 12px;
   width: 50%;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 58, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up-recommended.scss */
   .l-sign-up-recommended .recommended-item .recommended-image {
     padding-right: 6%;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 58, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-sign-up-recommended.scss */
   .l-sign-up-recommended .recommended-item .recommended-image {
     padding-right: 6%;
@@ -1443,7 +1444,7 @@
 .listing-content {
   border-bottom: 1px solid #d2d2d2;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-listing.scss */
   .listing-content {
     min-height: 180px;
@@ -1454,7 +1455,7 @@
 .listing-content:last-child {
   border: 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-listing.scss */
   .listing-content:last-child {
     margin-bottom: 15px;
@@ -1480,7 +1481,7 @@
   color: #426da9;
   margin: 27px 0 14px 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-listing.scss */
   .listing-content h2 {
     margin: 30px 0 20px 0;
@@ -1492,7 +1493,7 @@
 .listing-content img {
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-listing.scss */
   .listing-content img {
     margin-bottom: 0;
@@ -1517,13 +1518,13 @@
 .listing-content p:last-child {
   margin-bottom: 30px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-listing.scss */
   .listing-content p:last-child {
     margin-bottom: 15px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-listing.scss */
   .listing-content p {
     margin-bottom: 30px;
@@ -1541,7 +1542,7 @@
   min-height: 160px;
   padding: 20px 13px 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-video.scss */
   .about-pagetopic {
     padding: 20px 15px 40px;
@@ -1553,7 +1554,7 @@
   font-size: 33px;
   font-size: 2.0625rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-video.scss */
   .about-pagetopic h1 {
     font-size: 36px;
@@ -1565,13 +1566,13 @@
 .about-pagetopic .share-save-container {
   margin-top: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-video.scss */
   .about-pagetopic .share-save-container {
     margin-top: 5px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-video.scss */
   .about-pagetopic .share-save-container div.share-save-icon {
     margin-top: 24px;
@@ -1588,7 +1589,7 @@
   line-height: 1.625rem;
   font-weight: normal;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-video.scss */
   .about-video-container p {
     margin-top: -2px;
@@ -1599,7 +1600,7 @@
 .about-video-container .about-video-frame {
   margin-bottom: 30px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-understood-video.scss */
   .about-video-container .about-video-frame {
     margin-bottom: 35px;
@@ -1615,7 +1616,7 @@
   padding: 20px 0 15px 0;
   border-bottom: solid 1px #e2e2e2;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-zero-results.scss */
   .l-about-zero-results .zero-results-inner {
     padding: 40px 0 20px 0;
@@ -1671,7 +1672,7 @@
 .donate-advice-sidebar {
   background-color: #fff;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate.scss */
   .donate-advice-sidebar {
     padding: 0 !important;
@@ -1685,13 +1686,13 @@
   background-color: #f4f2f1;
   margin: 15px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate.scss */
   .donate {
     display: block;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate.scss */
   .donate {
     margin: 4px 0 40px 5px;
@@ -1735,7 +1736,7 @@
 .donate ul.donation-amounts li:nth-child(3n) {
   clear: left;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate.scss */
   .donate ul.donation-amounts li:nth-child(3n) {
     clear: none;
@@ -1753,7 +1754,7 @@
   min-width: 120px;
   margin-right: 0;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate.scss */
   .donate ul.donation-amounts .button {
     min-width: 110px;
@@ -1781,7 +1782,7 @@
   font-weight: bold;
   margin: 23px 0 17px 0;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap h1 {
     font-size: 36px;
@@ -1799,7 +1800,7 @@
   font-weight: normal;
   margin-bottom: 19px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap h2 {
     margin-bottom: 37px;
@@ -1817,7 +1818,7 @@
 .donate-create-wrap p.contact-us {
   margin-bottom: 48px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap p.contact-us {
     margin-bottom: 42px;
@@ -1839,7 +1840,7 @@
   line-height: 1.625rem;
   margin-bottom: 28px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap p.subtitle {
     font-size: 24px;
@@ -1850,13 +1851,13 @@
     padding-right: 70px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap p.subtitle {
     padding-right: 140px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .about-donate-footer {
     padding-left: 208px;
@@ -1877,7 +1878,7 @@
   margin-bottom: 30px;
   width: 100%;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .about-donate-footer .button-wrap button.about-donate {
     height: 70px;
@@ -1885,7 +1886,7 @@
     width: 370px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .about-donate-footer .button-wrap button.about-donate {
     margin: 0 auto 40px;
@@ -1896,7 +1897,7 @@
   display: block;
   margin-bottom: 32px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .about-donate-footer .keep-posted-wrap {
     margin-bottom: 44px;
@@ -1923,7 +1924,7 @@
 .donate-create-wrap .about-donate-footer p.donate-to-partners {
   margin-bottom: 27px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .about-donate-footer p.donate-to-partners {
     margin-bottom: 36px;
@@ -1935,7 +1936,7 @@
   text-align: center;
   width: 140px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .about-donate-notes .logo-img-wrap {
     float: right;
@@ -1946,7 +1947,7 @@
 .donate-create-wrap .about-donate-notes .logo-img-wrap .logo-img {
   margin: 26px auto 32px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 126, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .about-donate-notes .logo-img-wrap .logo-img {
     margin: -28px auto 32px;
@@ -1960,20 +1961,20 @@
   line-height: 18px;
   line-height: 1.125rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .about-donate-notes p.small-note {
     float: left;
     max-width: 450px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .about-donate-notes p.small-note {
     max-width: 500px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .about-donate-notes p.small-note {
     max-width: 790px;
@@ -1983,7 +1984,7 @@
 .donate-create-wrap .choose-gift-section {
   margin-bottom: 25px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .choose-gift-section {
     margin-bottom: 38px;
@@ -1995,7 +1996,7 @@
   overflow: hidden;
   position: relative;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .choose-gift-section .choose-gift-wrapper .gift-group {
     float: left;
@@ -2045,7 +2046,7 @@
   line-height: 0.95313rem;
   display: block;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 194, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .choose-gift-section .choose-gift-wrapper label > span {
     font-size: 16px;
@@ -2067,7 +2068,7 @@
 .donate-create-wrap .choose-gift-section .choose-gift-wrapper label > span > button:focus {
   background-color: #bcbdc0;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 208, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .choose-gift-section .choose-gift-wrapper label > span > button {
     padding: 30px 16px;
@@ -2079,7 +2080,7 @@
   margin: 0 auto;
   width: 108px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 224, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .choose-gift-section .choose-gift-wrapper label > span span.gift-description {
     width: 125px;
@@ -2095,7 +2096,7 @@
   line-height: 1.3125rem;
   padding: 0 0 12px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 232, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .choose-gift-section .choose-gift-wrapper label > span span.number {
     font-size: 36px;
@@ -2116,35 +2117,35 @@
   display: none;
 }
 /* line 256, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span {
   background-color: #794382;
   color: #fff;
 }
 /* line 259, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span span.number {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span span.number {
   color: #fff;
 }
 /* line 262, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span button:focus {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span button:focus {
   background: transparent;
 }
 /* line 265, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span span.icon-check {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span span.icon-check {
   display: block;
 }
 /* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span span.icon-check .check-img {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span span.icon-check .check-img {
   height: auto;
   width: 20px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-  .donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span span.icon-check .check-img {
+  .donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span span.icon-check .check-img {
     width: 26px;
   }
 }
 /* line 276, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span span.gift-description {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span span.gift-description {
   color: #fff;
 }
 /* line 281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
@@ -2161,7 +2162,7 @@
   display: table;
   width: 100%;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .choose-gift-section .other-amount-form {
     padding-bottom: 45px;
@@ -2172,7 +2173,7 @@
   margin-bottom: 22px;
   display: table-row;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 303, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .choose-gift-section .other-amount-form .form-group .form-fit {
     display: table-cell;
@@ -2180,13 +2181,13 @@
     width: 195px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 303, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .choose-gift-section .other-amount-form .form-group .form-fit {
     width: 220px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 313, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .choose-gift-section .other-amount-form .form-group .form-flex {
     display: table-cell;
@@ -2198,7 +2199,7 @@
   line-height: 27px;
   line-height: 1.6875rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 319, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .choose-gift-section .other-amount-form .form-group label {
     padding-right: 10px;
@@ -2233,7 +2234,7 @@
 .donate-create-wrap .gift-for-section {
   margin-bottom: 25px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 355, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .gift-for-section {
     margin-bottom: 38px;
@@ -2243,7 +2244,7 @@
 .donate-create-wrap .gift-for-section h2 {
   margin-bottom: 14px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .gift-for-section h2 {
     margin-bottom: 34px;
@@ -2264,7 +2265,7 @@
 .donate-create-wrap .gift-for-section .gift-for-wrapper label span {
   height: 50px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 370, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .gift-for-section .gift-for-wrapper label {
     display: inline-block;
@@ -2320,7 +2321,7 @@
   display: none;
 }
 /* line 425, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .gift-for-section .gift-for-wrapper input:checked + span {
+.donate-create-wrap .gift-for-section .gift-for-wrapper input.checked + span {
   background-color: #794382;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -2331,7 +2332,7 @@
   display: block;
 }
 /* line 431, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .gift-for-section .gift-for-wrapper input:checked + span button {
+.donate-create-wrap .gift-for-section .gift-for-wrapper input.checked + span button {
   background: transparent;
   color: inherit;
 }
@@ -2339,7 +2340,7 @@
 .donate-create-wrap .gift-occurance-section {
   margin-bottom: 25px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 441, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .gift-occurance-section {
     margin-bottom: 46px;
@@ -2349,7 +2350,7 @@
 .donate-create-wrap .gift-occurance-section h2 {
   margin-bottom: 25px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 446, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .gift-occurance-section h2 {
     margin-bottom: 29px;
@@ -2366,13 +2367,13 @@
   position: relative;
   width: 100%;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 457, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .gift-occurance-section .radio-wrapper label, .donate-create-wrap .gift-occurance-section .radio-wrapper .label {
     width: 40%;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 457, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .gift-occurance-section .radio-wrapper label, .donate-create-wrap .gift-occurance-section .radio-wrapper .label {
     margin-bottom: 15px;
@@ -2399,13 +2400,13 @@
   margin-bottom: 18px;
   width: 190px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 484, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section h2 {
     width: 100%;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 484, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section h2 {
     margin-bottom: 27px;
@@ -2422,7 +2423,7 @@
   padding-top: 4px;
   margin-bottom: 6px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 500, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-option-wrapper .pay-by {
     display: inline-block;
@@ -2437,7 +2438,7 @@
   margin-bottom: 32px;
   position: relative;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-option-wrapper .radio-wrapper {
     display: inline-block;
@@ -2450,7 +2451,7 @@
   display: inline-block;
   width: 49%;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 521, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-option-wrapper .radio-wrapper label {
     width: 30%;
@@ -2465,13 +2466,13 @@
   line-height: 1rem;
   font-weight: bold;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 536, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper {
     margin-bottom: 29px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 536, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper {
     margin-bottom: 25px;
@@ -2483,7 +2484,7 @@
   line-height: 2.5rem;
   margin-bottom: 23px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 543, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group {
     margin-bottom: 20px;
@@ -2493,7 +2494,7 @@
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group.expiration-date-wrap {
   margin-bottom: 26px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 549, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group.expiration-date-wrap {
     margin-bottom: 25px;
@@ -2521,13 +2522,13 @@
   min-width: 320px;
   /* CSS hack to fix bad calculation by popover JS */
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 565, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .popover {
     min-width: 400px;
   }
 }
-@media (orientation: landscape) {
+@media (orientation: landscape), print {
   /* line 565, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .popover {
     left: 164px !important;
@@ -2548,14 +2549,18 @@
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .icon-tooltip-dark:hover {
   background-position: -22px 0px;
 }
-/* line 592, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 591, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+.no-backgroundsize .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .icon-tooltip-dark {
+  background-image: url("../images/sprite.tooltip.info-dark.lo-res.png");
+}
+/* line 597, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group label, .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .label {
   display: block;
   line-height: 27px;
   line-height: 1.6875rem;
 }
-@media (min-width: 769px) {
-  /* line 592, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+@media (min-width: 769px), print {
+  /* line 597, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group label, .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .label {
     display: inline-block;
     padding-right: 7px;
@@ -2563,90 +2568,90 @@
     width: 203px;
   }
 }
-/* line 602, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 607, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text] {
   display: block;
 }
-@media (min-width: 650px) {
-  /* line 602, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+@media (min-width: 650px), print {
+  /* line 607, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text] {
     display: inline-block;
     width: 470px;
   }
 }
-/* line 609, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 614, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text].cvv-input {
   display: inline-block;
   width: 89%;
 }
-@media (min-width: 650px) {
-  /* line 609, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+@media (min-width: 650px), print {
+  /* line 614, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text].cvv-input {
     width: 230px;
   }
 }
-/* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 621, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text].phone-input {
   margin-bottom: 17px;
 }
-@media (min-width: 650px) {
-  /* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+@media (min-width: 650px), print {
+  /* line 621, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text].phone-input {
     display: inline-block;
     width: 310px;
     margin-bottom: 0px;
   }
 }
-@media (min-width: 650px) {
-  /* line 624, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+@media (min-width: 650px), print {
+  /* line 629, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text].zip-input {
     display: inline-block;
     width: 150px;
   }
 }
-/* line 631, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 636, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container {
   display: block;
   width: auto;
   margin-bottom: 10px;
 }
-/* line 635, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 640, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.month-dropdown {
   margin-bottom: 15px;
 }
-@media (min-width: 650px) {
-  /* line 631, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+@media (min-width: 650px), print {
+  /* line 636, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container {
     display: inline-block;
     margin-bottom: 0px;
   }
-  /* line 642, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+  /* line 647, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.month-dropdown {
     width: 230px;
   }
-  /* line 645, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+  /* line 650, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.year-dropdown {
     margin-left: 4px;
     width: 230px;
   }
-  /* line 649, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+  /* line 654, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.cell-dropdown {
     margin-left: 7px;
     width: 150px;
   }
-  /* line 653, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+  /* line 658, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.state-dropdown {
     width: 470px;
   }
 }
-@media (min-width: 650px) {
-  /* line 664, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+@media (min-width: 650px), print {
+  /* line 669, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .form-center {
     width: 620px;
   }
 }
-@media (min-width: 769px) {
-  /* line 664, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+@media (min-width: 769px), print {
+  /* line 669, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
   .donate-create-wrap .form-center {
     margin-right: auto;
     margin-left: -8px;
@@ -2671,7 +2676,7 @@
   line-height: 1.75rem;
   margin-bottom: 15px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-pay-by-check.scss */
   .how-pay-section .pay-by-check h3 {
     margin-top: 10px;
@@ -2683,7 +2688,7 @@
   margin-bottom: 50px;
   max-width: 100%;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-pay-by-check.scss */
   .how-pay-section .pay-by-check img.pay-by-check {
     margin-left: 208px;
@@ -2703,13 +2708,13 @@
   margin-top: 17px;
   margin-bottom: 50px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-ecard.scss */
   .gift-for-section .ecard-form-wrapper {
     margin-bottom: 65px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-ecard.scss */
   .gift-for-section .ecard-form-wrapper.form-center {
     margin-right: auto;
@@ -2727,7 +2732,7 @@
   line-height: 27px;
   line-height: 1.6875rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-ecard.scss */
   .gift-for-section .ecard-form-wrapper .form-group label, .gift-for-section .ecard-form-wrapper .form-group .label {
     display: inline-block;
@@ -2741,7 +2746,7 @@
 .gift-for-section .ecard-form-wrapper .form-group input[type=text] {
   display: block;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-ecard.scss */
   .gift-for-section .ecard-form-wrapper .form-group textarea,
   .gift-for-section .ecard-form-wrapper .form-group input[type=text] {
@@ -2758,7 +2763,7 @@
 /**
  * SASS partial for founding-carousel module
  */
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_founding-carousel.scss */
   .l-founding-partners-carousel {
     background: #fafafa;
@@ -2770,14 +2775,14 @@
   background: #fafafa;
   padding: 0 15px 25px 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_founding-carousel.scss */
   .founding-container {
     margin: 0 0 50px 0;
     padding: 0 15px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_founding-carousel.scss */
   .founding-container {
     padding: 0;
@@ -2793,7 +2798,7 @@
   font-weight: normal;
   padding: 20px 0 10px 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_founding-carousel.scss */
   .founding-container header h2 {
     font-size: 32px;
@@ -2813,7 +2818,7 @@
   font-weight: normal;
   margin-bottom: 30px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_founding-carousel.scss */
   .founding-container header p {
     font-size: 18px;
@@ -2836,7 +2841,7 @@
 .founding-container header a:hover {
   text-decoration: none;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_founding-carousel.scss */
   .founding-container header a {
     font-size: 18px;
@@ -2850,7 +2855,7 @@
   overflow: hidden;
   text-align: center;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 69, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_founding-carousel.scss */
   .founding-container .founding-carousel-outer {
     text-align: left;
@@ -2861,7 +2866,7 @@
   height: 155px !important;
   margin: 0;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_founding-carousel.scss */
   .founding-container .founding-slides-wrapper {
     height: 100% !important;
@@ -2882,13 +2887,13 @@
 .founding-container .founding-slides-wrapper ul li:nth-child(2) {
   margin-right: 0;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_founding-carousel.scss */
   .founding-container .founding-slides-wrapper ul li:nth-child(2) {
     margin-right: 10px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_founding-carousel.scss */
   .founding-container .founding-slides-wrapper ul li:nth-child(6n) {
     margin-right: 0;
@@ -2899,7 +2904,7 @@
   width: 140px;
   height: 81px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 108, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_founding-carousel.scss */
   .founding-container .founding-slides-wrapper ul li a img {
     width: 150px;
@@ -2933,7 +2938,7 @@
   padding: 30px 0 30px 20px;
   background-color: #f4f2f1;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_get-advice.scss */
   .get-advice {
     margin: 0 0 40px 5px;
@@ -2950,7 +2955,7 @@
   line-height: 1.625rem;
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 16, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_get-advice.scss */
   .get-advice h4 {
     padding-top: 5px;
@@ -2979,20 +2984,20 @@
   margin-right: 4px;
   margin-bottom: 10px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_get-advice.scss */
   .get-advice li a {
     margin: 0 0 10px 0;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_get-advice.scss */
   .get-advice li {
     margin-right: 7px;
     margin-bottom: 0;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_get-advice.scss */
   .get-advice li {
     margin-bottom: 10px;
@@ -3010,7 +3015,7 @@
 .get-advice li.in-progress {
   margin-right: 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_get-advice.scss */
   .get-advice li.in-progress .button {
     font-size: 14px;
@@ -3060,7 +3065,7 @@
   font-weight: normal;
   margin-bottom: 17px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-promos.scss */
   .l-page-not-found-promos h2 {
     font-size: 24px;
@@ -3079,7 +3084,7 @@
   line-height: 24px;
   line-height: 1.5rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-promos.scss */
   .page-not-found-promos a {
     font-size: 22px;
@@ -3105,7 +3110,7 @@
 .page-not-found-promos .promo-single a {
   margin-bottom: 18px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-promos.scss */
   .page-not-found-promos .promo-single a {
     margin-bottom: 28px;
@@ -3118,7 +3123,7 @@
   max-width: 290px;
   height: auto;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-promos.scss */
   .page-not-found-promos .promo-single img {
     max-width: 230px;
@@ -3139,7 +3144,7 @@
   border-top: none;
   padding-top: 0px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-promos.scss */
   .page-not-found-promos .promo-list a {
     border-top: none;
@@ -3150,7 +3155,7 @@
 .page-not-found-promos .promo-list p {
   padding-bottom: 5px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-promos.scss */
   .page-not-found-promos .promo-list p {
     padding-bottom: 0px;
@@ -3164,14 +3169,14 @@
   margin-bottom: -32px;
   top: -32px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-search.scss */
   .l-page-not-found-search {
     margin-bottom: -25px;
     top: -25px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-search.scss */
   .l-page-not-found-search {
     margin-bottom: -87px;
@@ -3186,7 +3191,7 @@
   margin-bottom: 42px;
   padding: 30px 20px 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-search.scss */
   .page-not-found-search {
     padding: 35px 39px 13px;
@@ -3210,7 +3215,7 @@
 .page-not-found-search fieldset .search-input-wrap {
   margin-bottom: 10px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-search.scss */
   .page-not-found-search fieldset .search-input-wrap {
     float: left;
@@ -3218,7 +3223,7 @@
     width: 70.5%;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-search.scss */
   .page-not-found-search fieldset .search-button-wrap {
     float: right;
@@ -3232,7 +3237,7 @@
   line-height: 40px;
   line-height: 2.5rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_page-not-found-search.scss */
   .page-not-found-search fieldset .search-button-wrap input.search-button {
     font-size: 18px;
@@ -3245,7 +3250,7 @@
 /**
  * SASS partial for partners-detail-copy module.
  */
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-detail-copy.scss */
   .partner-copy {
     float: left;
@@ -3262,7 +3267,7 @@
   line-height: 1.625rem;
   font-weight: normal;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-detail-copy.scss */
   .partner-copy p {
     margin-bottom: 30px;
@@ -3276,7 +3281,7 @@
 /**
  * SASS partial for partners-detail-header module.
  */
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-detail-header.scss */
   .lower-border {
     margin-bottom: 50px !important;
@@ -3288,7 +3293,7 @@
 .partner-heading {
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-detail-header.scss */
   .partner-heading {
     float: left;
@@ -3306,7 +3311,7 @@
   font-weight: normal;
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-detail-header.scss */
   .partner-heading h1.partner-name {
     font-size: 36px;
@@ -3323,7 +3328,7 @@
   font-weight: normal;
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-detail-header.scss */
   .partner-heading h2.partner-tagline {
     font-size: 24px;
@@ -3340,7 +3345,7 @@
   font-weight: normal;
   margin-bottom: 5px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-detail-header.scss */
   .partner-heading span.return-all-partners {
     margin-bottom: 15px;
@@ -3379,7 +3384,7 @@
 .partner-logo {
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-detail-logo.scss */
   .partner-logo {
     float: right;
@@ -3391,7 +3396,7 @@
 .partner-logo img {
   width: 100%;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-detail-logo.scss */
   .partner-logo img {
     max-width: 270px;
@@ -3408,7 +3413,7 @@
   padding: 40px 34px 30px 34px;
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-donate.scss */
   .partner-donate {
     float: right;
@@ -3428,7 +3433,7 @@
   font-weight: normal;
   margin-bottom: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-donate.scss */
   .partner-donate h2 {
     margin-bottom: 20px;
@@ -3453,7 +3458,7 @@
   font-weight: normal;
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-facebook.scss */
   .partner-facebook-container h2 {
     font-size: 22px;
@@ -3468,7 +3473,7 @@
   border-bottom: 1px solid #d2d2d2;
   margin: 14px 0;
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-facebook.scss */
   .partner-facebook-container .partner-feed-single {
     min-width: 271px;
@@ -3563,7 +3568,7 @@
   line-height: 26px;
   line-height: 1.625rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-facebook.scss */
   .partner-facebook-container .facebook-follow-block {
     margin: 40px 0 60px 0;
@@ -3582,13 +3587,13 @@
 .partner-facebook-container .facebook-follow-block a:hover i.facebook-follow {
   background-position: 0px -36.5px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-facebook.scss */
   .partner-facebook-container .facebook-follow-block i {
     margin-bottom: 20px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-facebook.scss */
   .partner-facebook-container .facebook-follow-block i {
     margin: 0;
@@ -3606,17 +3611,21 @@
   width: 32px;
   background-position: 0px 0px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-facebook.scss */
   .partner-facebook-container .facebook-follow-block .facebook-follow {
     margin: 0 17px 0 0;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-facebook.scss */
   .partner-facebook-container .facebook-follow-block .facebook-follow {
     margin-top: 10px;
   }
+}
+/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-facebook.scss */
+.no-backgroundsize .partner-facebook-container .facebook-follow-block .facebook-follow {
+  background-image: url("../images/sprite.social.footer.141.png");
 }
 
 /**
@@ -3636,7 +3645,7 @@
   font-weight: normal;
   margin-bottom: 17px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-featured-content.scss */
   .featured-content-block h2 {
     font-size: 22px;
@@ -3648,7 +3657,7 @@
 .featured-content-block .featured-title {
   border-bottom: 1px solid #dedede;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-featured-content.scss */
   .featured-content-block .featured-title:last-child {
     border: none;
@@ -3663,7 +3672,7 @@
   line-height: 30px;
   line-height: 1.875rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-featured-content.scss */
   .featured-content-block .featured-title .title-link {
     margin: 30px 0;
@@ -3691,7 +3700,7 @@
   padding: 40px 34px 30px 34px;
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-newsletter-signup.scss */
   .partner-newsletter {
     float: right;
@@ -3712,7 +3721,7 @@
   font-weight: normal;
   margin-bottom: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-newsletter-signup.scss */
   .partner-newsletter h2 {
     margin-bottom: 20px;
@@ -3737,7 +3746,7 @@
   font-weight: normal;
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-twitter.scss */
   .partner-twitter-container h2 {
     font-size: 22px;
@@ -3752,7 +3761,7 @@
   border-bottom: 1px solid #d2d2d2;
   margin: 20px 0;
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-twitter.scss */
   .partner-twitter-container .partner-feed-single {
     min-width: 271px;
@@ -3827,7 +3836,7 @@
   line-height: 26px;
   line-height: 1.625rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-twitter.scss */
   .partner-twitter-container .twitter-follow-block {
     margin: 40px 0 60px 0;
@@ -3858,17 +3867,21 @@
   width: 32px;
   background-position: -36.5px 0px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-twitter.scss */
   .partner-twitter-container .twitter-follow-block .twitter-follow {
     margin: 0 17px 0 0;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-twitter.scss */
   .partner-twitter-container .twitter-follow-block .twitter-follow {
     margin-top: 10px;
   }
+}
+/* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-twitter.scss */
+.no-backgroundsize .partner-twitter-container .twitter-follow-block .twitter-follow {
+  background-image: url("../images/sprite.social.footer.141.png");
 }
 
 /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
@@ -3882,7 +3895,7 @@
   border-bottom: solid 1px #e2e2e2;
   /* .results */
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 2, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
   .l-results-and-filter .row {
     padding: 50px 5px 40px 5px;
@@ -3903,7 +3916,7 @@
   margin-bottom: 30px;
   font-weight: normal;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
   .l-results-and-filter .row .results h1 {
     margin-bottom: 0;
@@ -3918,7 +3931,7 @@
 .l-results-and-filter .row label {
   width: 190px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
   .l-results-and-filter .row label {
     float: right;
@@ -3934,7 +3947,7 @@
 .l-results-misspelling .row {
   padding: 30px 0 30px 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 2, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-misspelling.scss */
   .l-results-misspelling .row {
     padding: 40px 0 35px 0;
@@ -3944,7 +3957,7 @@
 .l-results-misspelling .row .results {
   float: left;
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-misspelling.scss */
   .l-results-misspelling .row .results {
     margin-left: 10px;
@@ -3988,7 +4001,7 @@
   font-weight: normal;
   margin-bottom: 30px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-misspelling.scss */
   .l-results-misspelling .row .results h3 {
     margin-bottom: 0;
@@ -4003,7 +4016,7 @@
 .l-results-misspelling .row label {
   width: 190px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-misspelling.scss */
   .l-results-misspelling .row label {
     float: right;
@@ -4021,7 +4034,7 @@
   padding: 30px 15px;
   background-color: #f4f2f1;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_search-box-module.scss */
   .l-search-box-container {
     padding: 50px 0;
@@ -4103,7 +4116,7 @@
   line-height: 1.875rem;
   margin: 25px 0 20px 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 2, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-recommended.scss */
   .l-thank-you-recommended h2 {
     font-size: 36px;
@@ -4126,7 +4139,7 @@
 .l-thank-you-recommended .children-key ul li {
   min-width: 140px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-recommended.scss */
   .l-thank-you-recommended .children-key ul li {
     margin-right: 20px;
@@ -4142,7 +4155,7 @@
   min-height: 105px;
   padding-bottom: 10px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-recommended.scss */
   .l-thank-you-recommended .recommended-item {
     min-height: 165px;
@@ -4157,7 +4170,7 @@
   line-height: 1.25rem;
   font-weight: normal;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-recommended.scss */
   .l-thank-you-recommended .recommended-item h3 {
     margin: -5px 0 8px;
@@ -4167,7 +4180,7 @@
     line-height: 1.5rem;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-recommended.scss */
   .l-thank-you-recommended .recommended-item h3 {
     font-size: 22px;
@@ -4183,13 +4196,13 @@
   padding-right: 16px;
   width: 50%;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-recommended.scss */
   .l-thank-you-recommended .recommended-item .recommended-image {
     padding-right: 6%;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-recommended.scss */
   .l-thank-you-recommended .recommended-item .recommended-image {
     padding-right: 6%;
@@ -4221,7 +4234,7 @@
   text-decoration: underline;
   width: 100%;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-social.scss */
   .thank-you-social a {
     margin: 9px 0 54px 0;
@@ -4230,7 +4243,7 @@
     width: 32.5%;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-social.scss */
   .thank-you-social a {
     border-left: 1px solid #d3d1d0;
@@ -4251,7 +4264,7 @@
 .thank-you-social a.facebook-link {
   height: 30px;
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-social.scss */
   .thank-you-social a.email-link {
     border-left: none;
@@ -4286,13 +4299,13 @@
   position: relative;
   top: -10px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-social.scss */
   .thank-you-social a span.circle {
     margin-right: 0;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-social.scss */
   .thank-you-social a span.circle {
     margin-right: 21px;
@@ -4330,7 +4343,7 @@
 .thank-you-social a span.text-link {
   text-decoration: inherit;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-social.scss */
   .thank-you-social a span.text-link {
     display: block;
@@ -4338,7 +4351,7 @@
     width: 100px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-social.scss */
   .thank-you-social a span.text-link {
     display: inline-block;
@@ -4352,14 +4365,14 @@
   margin-bottom: -32px;
   top: -32px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-social.scss */
   .l-thank-you-social {
     margin-bottom: -25px;
     top: -25px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-social.scss */
   .l-thank-you-social {
     margin-bottom: -87px;
@@ -4371,14 +4384,14 @@
   background-color: #f4f2f1;
   padding: 30px 0 30px 20px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-social.scss */
   .l-thank-you-social .thank-you-social {
     padding: 38px 0 37px 0px;
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_thank-you-social.scss */
   .l-sign-up-confirm a:first-child {
     margin-left: 0;
@@ -4397,7 +4410,7 @@
   color: #6c4282;
   padding: 30px 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_tools.scss */
   .about-tools-header h3 {
     padding: 47px 0 37px 0;
@@ -4415,7 +4428,7 @@
 .about-tools .mini-tool {
   background-color: #f4f2f1;
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_tools.scss */
   .about-tools .mini-tool {
     min-height: 602px;
@@ -4425,7 +4438,7 @@
 /**
  * SASS partial for expert-events module.
  */
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events.future .expert-event-type h4 {
     top: 56px;
@@ -4444,7 +4457,7 @@
   margin-bottom: 16px;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events.past .expert-event .expert-event-type h4 {
     top: 44px;
@@ -4463,7 +4476,7 @@
   margin-bottom: 0px;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-events-title {
     margin-bottom: 40px;
@@ -4479,7 +4492,7 @@
   font-weight: normal;
   margin-bottom: 16px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-events-title h3 {
     margin-bottom: 0px;
@@ -4511,7 +4524,7 @@
   text-decoration: none;
   background: #bcbdc0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-events-title .see-more {
     margin: 0px;
@@ -4521,7 +4534,7 @@
 .expert-events .expert-event-container .expert-event:first-child {
   margin-bottom: 40px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event:first-child {
     margin-bottom: 47px;
@@ -4533,7 +4546,7 @@
   margin-bottom: 40px;
   border-bottom: 1px solid #d2d2d2;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event:last-child {
     padding-bottom: 49px;
@@ -4544,7 +4557,7 @@
 .expert-events .expert-event-container .expert-event .border-col {
   display: none;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 107, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .border-col {
     display: block;
@@ -4559,14 +4572,14 @@
 .expert-events .expert-event-container .expert-event .col:nth-child(2) {
   clear: both;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .col:nth-child(2) {
     float: left;
     clear: none;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .col:last-child {
     margin-left: 4.16666666667%;
@@ -4576,7 +4589,7 @@
 .expert-events .expert-event-container .expert-event .expert-event-image {
   margin-bottom: 12px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 131, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .expert-event-image {
     width: auto;
@@ -4603,7 +4616,7 @@
   font-weight: normal;
   margin-bottom: 4px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .expert-event-type h4 {
     line-height: 16px;
@@ -4625,7 +4638,7 @@
   text-align: left;
   margin: 0 0 18px 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .expert-event-type .time-past {
     text-align: center;
@@ -4652,7 +4665,7 @@
   font-weight: bold;
   margin-bottom: 12px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .expert-event-details .date-future {
     font-size: 18px;
@@ -4672,7 +4685,7 @@
   margin-bottom: 12px;
   display: none;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 203, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .expert-event-details .date-past {
     display: block;
@@ -4693,7 +4706,7 @@
   margin-bottom: 10px;
   display: block;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 217, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .expert-event-details a.event-title {
     font-size: 24px;
@@ -4712,7 +4725,7 @@
   font-weight: bold;
   margin-bottom: 4px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 230, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .expert-event-details h5 {
     margin-bottom: 0px;
@@ -4727,7 +4740,7 @@
   line-height: 1.25rem;
   font-weight: normal;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 241, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .expert-event-details .topics-covered {
     line-height: 24px;
@@ -4754,7 +4767,7 @@
   padding-right: 0px;
   margin-right: 0px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 252, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .expert-event .expert-event-details .links-future a {
     display: inline-block;
@@ -4789,7 +4802,7 @@
   text-decoration: none;
   background: #bcbdc0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-events.scss */
   .expert-events .expert-event-container .see-more {
     margin: 0px;
@@ -4805,7 +4818,7 @@
   margin-bottom: 40px;
   border-bottom: 1px solid #d2d2d2;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-bio.scss */
   .expert-bio .row {
     padding-bottom: 70px;
@@ -4819,7 +4832,7 @@
   max-width: 100%;
   margin: 0 auto 24px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-bio.scss */
   .expert-bio .expert-bio-details .expert-bio-image img {
     margin: 0 0 24px 0;
@@ -4829,7 +4842,7 @@
 .expert-bio .expert-bio-details .expert-bio-detail {
   margin-bottom: 30px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-bio.scss */
   .expert-bio .expert-bio-details .expert-bio-detail {
     margin-bottom: 0px;
@@ -4892,7 +4905,7 @@
 /**
  * SASS partial for expert-blog-posts module.
  */
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-posts-title {
     margin-bottom: 40px;
@@ -4908,7 +4921,7 @@
   font-weight: normal;
   margin-bottom: 16px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-posts-title h3 {
     margin-bottom: 0px;
@@ -4940,7 +4953,7 @@
   text-decoration: none;
   background: #bcbdc0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-posts-title .see-more {
     margin: 0px;
@@ -4950,7 +4963,7 @@
 .expert-blog-posts .expert-blog-post-container .expert-blog-post:first-child {
   margin-bottom: 40px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-post-container .expert-blog-post:first-child {
     margin-bottom: 40px;
@@ -4960,7 +4973,7 @@
 .expert-blog-posts .expert-blog-post-container .expert-blog-post:last-child {
   margin-bottom: 50px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-post-container .expert-blog-post:last-child {
     margin-bottom: 58px;
@@ -4970,7 +4983,7 @@
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .border-col {
   display: none;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-post-container .expert-blog-post .border-col {
     display: block;
@@ -4981,14 +4994,14 @@
   height: 140px;
   border-right: 1px solid #c6c5c5;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-post-container .expert-blog-post .col:nth-child(2) {
     float: left;
     clear: none;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-post-container .expert-blog-post .col:last-child {
     margin-left: 4.16666666667%;
@@ -4998,7 +5011,7 @@
 .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-image {
   margin-bottom: 12px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-image {
     width: auto;
@@ -5024,7 +5037,7 @@
   line-height: 2.25rem;
   font-weight: normal;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-type h4 {
     display: block;
@@ -5049,14 +5062,14 @@
   font-weight: normal;
   margin: 0px;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-type .comments {
     font-size: 16px;
     font-size: 1rem;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-type .comments {
     display: block;
@@ -5065,7 +5078,7 @@
     top: 44px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-details {
     position: relative;
@@ -5083,7 +5096,7 @@
   margin-bottom: 14px;
   display: block;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .expert-blog-post-container .expert-blog-post .expert-blog-post-details a.event-title {
     font-size: 24px;
@@ -5159,7 +5172,7 @@
   text-decoration: none;
   background: #bcbdc0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .see-more {
     margin: 0px;
@@ -5169,7 +5182,7 @@
 .expert-blog-posts .blog-shapes .child-content-indicator {
   margin: 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 239, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_expert-blog-posts.scss */
   .expert-blog-posts .blog-shapes .children-key ul li {
     margin-right: 35px;
@@ -5187,7 +5200,7 @@
 .l-itemize-your-child-header .email-itemize-title {
   margin: 30px 15px 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-title.scss */
   .l-itemize-your-child-header .email-itemize-title {
     margin: 32px 0px 34px;
@@ -5203,7 +5216,7 @@
   font-weight: bold;
   margin-bottom: 13px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 16, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-title.scss */
   .l-itemize-your-child-header .email-itemize-title h1 {
     line-height: 48px;
@@ -5221,7 +5234,7 @@
   font-weight: normal;
   margin-bottom: 35px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-title.scss */
   .l-itemize-your-child-header .email-itemize-title p {
     line-height: 28px;
@@ -5243,7 +5256,7 @@
   padding: 40px 15px 25px;
   border-bottom: 1px solid #f4f2f1;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .needs-help-with {
     margin-bottom: 20px;
@@ -5276,7 +5289,7 @@
   position: relative;
   display: table;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .needs-help-with .needs-help-with-options .checkbox-wrapper {
     margin-bottom: 12px;
@@ -5296,7 +5309,7 @@
   display: table-cell;
   padding-left: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .needs-help-with .needs-help-with-options .checkbox-wrapper {
     font-size: 18px;
@@ -5305,7 +5318,7 @@
     line-height: 1.375rem;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .needs-help-with .needs-help-with-options .checkbox-wrapper:last-child {
     margin-bottom: 0px;
@@ -5317,7 +5330,7 @@
   padding: 39px 15px;
   border-bottom: 1px solid #f4f2f1;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .child-enrolled, .l-itemize-your-child .email-itemize-content .child-nickname {
     -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
@@ -5326,7 +5339,7 @@
     height: 240px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .child-enrolled, .l-itemize-your-child .email-itemize-content .child-nickname {
     height: 197px;
@@ -5343,7 +5356,7 @@
   margin-bottom: 35px;
   margin-top: -4px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .child-enrolled h3, .l-itemize-your-child .email-itemize-content .child-nickname h3 {
     margin-bottom: 25px;
@@ -5359,7 +5372,7 @@
   font-weight: normal;
   margin: 20px 0 0 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .child-enrolled {
     margin-right: 5px;
@@ -5370,7 +5383,7 @@
 .l-itemize-your-child .email-itemize-content .child-nickname {
   padding-bottom: 38px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 121, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .child-nickname {
     margin-left: 5px;
@@ -5382,7 +5395,7 @@
   text-align: left;
   margin: 35px 0 30px 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .email-itemize-next {
     margin: 39px 0 40px 0;
@@ -5393,7 +5406,7 @@
 .l-itemize-your-child .email-itemize-content .email-itemize-next .checkbox-wrap {
   margin-bottom: 30px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .email-itemize-next .checkbox-wrap {
     margin-bottom: 25px;
@@ -5403,7 +5416,7 @@
 .l-itemize-your-child .email-itemize-content .email-itemize-next .checkbox-wrap label {
   display: table;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
   .l-itemize-your-child .email-itemize-content .email-itemize-next .checkbox-wrap label {
     margin: 0 auto;
@@ -5427,11 +5440,11 @@
   position: relative;
   bottom: 2px;
 }
-/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
+/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .email-itemize-next .form-action-next {
   text-align: center;
 }
-/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
+/* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .email-itemize-next .form-action-next input[type=submit] {
   max-width: 150px;
 }
@@ -5447,7 +5460,7 @@
 .l-personalize-interests-header .personalize-interests-title {
   margin: 30px 15px 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-title.scss */
   .l-personalize-interests-header .personalize-interests-title {
     margin: 32px 0px 34px;
@@ -5463,7 +5476,7 @@
   font-weight: bold;
   margin-bottom: 13px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-title.scss */
   .l-personalize-interests-header .personalize-interests-title h1 {
     line-height: 48px;
@@ -5481,7 +5494,7 @@
   font-weight: normal;
   margin-bottom: 35px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-title.scss */
   .l-personalize-interests-header .personalize-interests-title p {
     line-height: 28px;
@@ -5503,7 +5516,7 @@
   padding: 40px 15px 25px;
   border-bottom: 1px solid #f4f2f1;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .school-issues {
     margin-bottom: 20px;
@@ -5524,7 +5537,7 @@
   margin-bottom: 34px;
   margin-top: -5px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 36, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .school-issues .school-issues-options .column-wrap {
     padding-left: 43px;
@@ -5542,7 +5555,7 @@
   position: relative;
   display: table;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .school-issues .school-issues-options .checkbox-wrapper {
     margin-bottom: 12px;
@@ -5562,7 +5575,7 @@
   display: table-cell;
   padding-left: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .school-issues .school-issues-options .checkbox-wrapper {
     font-size: 18px;
@@ -5571,7 +5584,7 @@
     line-height: 1.375rem;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .school-issues .school-issues-options .checkbox-wrapper:last-child {
     margin-bottom: 0px;
@@ -5583,7 +5596,7 @@
   padding: 39px 15px 19px;
   border-bottom: 1px solid #f4f2f1;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .ways-to-help, .l-personalize-interests .personalize-interests-content .home-life, .l-personalize-interests .personalize-interests-content .growing-up, .l-personalize-interests .personalize-interests-content .social-emotional-issues {
     font-size: 18px;
@@ -5602,13 +5615,13 @@
     margin-bottom: 0px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .ways-to-help, .l-personalize-interests .personalize-interests-content .home-life, .l-personalize-interests .personalize-interests-content .growing-up, .l-personalize-interests .personalize-interests-content .social-emotional-issues {
     height: 325px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .ways-to-help, .l-personalize-interests .personalize-interests-content .home-life, .l-personalize-interests .personalize-interests-content .growing-up, .l-personalize-interests .personalize-interests-content .social-emotional-issues {
     height: 308px;
@@ -5626,7 +5639,7 @@
   position: relative;
   display: table;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 108, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .ways-to-help .checkbox-wrapper, .l-personalize-interests .personalize-interests-content .home-life .checkbox-wrapper, .l-personalize-interests .personalize-interests-content .growing-up .checkbox-wrapper, .l-personalize-interests .personalize-interests-content .social-emotional-issues .checkbox-wrapper {
     margin-bottom: 12px;
@@ -5646,7 +5659,7 @@
   display: table-cell;
   padding-left: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 108, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .ways-to-help .checkbox-wrapper, .l-personalize-interests .personalize-interests-content .home-life .checkbox-wrapper, .l-personalize-interests .personalize-interests-content .growing-up .checkbox-wrapper, .l-personalize-interests .personalize-interests-content .social-emotional-issues .checkbox-wrapper {
     font-size: 18px;
@@ -5666,13 +5679,13 @@
   margin-bottom: 34px;
   margin-top: -4px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .ways-to-help, .l-personalize-interests .personalize-interests-content .growing-up {
     margin-right: 5px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .home-life, .l-personalize-interests .personalize-interests-content .social-emotional-issues {
     margin-left: 5px;
@@ -5684,7 +5697,7 @@
   padding: 39px 15px 19px;
   border-bottom: 1px solid #f4f2f1;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .preferred-language {
     font-size: 18px;
@@ -5718,7 +5731,7 @@
   position: relative;
   display: table;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .preferred-language .radio-wrapper {
     margin-bottom: 15px;
@@ -5729,7 +5742,7 @@
   display: table-row;
 }
 /* line 197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
-.l-personalize-interests .personalize-interests-content .preferred-language .radio-wrapper label .checker {
+.l-personalize-interests .personalize-interests-content .preferred-language .radio-wrapper label .radio {
   display: table-cell;
   vertical-align: top;
 }
@@ -5738,7 +5751,7 @@
   display: table-cell;
   padding-left: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .preferred-language .radio-wrapper {
     font-size: 18px;
@@ -5764,7 +5777,7 @@
   margin-bottom: 30px;
   margin-top: 50px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
   .l-personalize-interests .personalize-interests-content .personalize-interests-next {
     margin-top: 0px;

@@ -21,6 +21,12 @@
 
           label.click();
 
+        // add "checked" class
+        $(this).parent().siblings('input').addClass('checked');
+        // remove "checked" class
+        $(this).parents('label').siblings('label').find('input').removeClass('checked');
+        $(this).parents('.gift-group').siblings('.gift-group').find('input').removeClass('checked');
+
         // Hide/show functionality on click of "Other" gift amount
         if( $(this).parent().siblings('input').attr('name') === 'gift-amount' ){
           if( $(this).parent().siblings('input').data('other') ){
@@ -496,6 +502,20 @@
   };
 
 })(jQuery);
+(function($) {
+
+  $(document).ready(function() {
+    var uniformElements = [
+      '.selector',
+      '.radio',
+      '.checker'
+    ];
+
+    new U.Global.readspeakerUniform(uniformElements);
+  });
+
+})(jQuery);
+
 
 
 

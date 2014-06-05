@@ -190,6 +190,19 @@
     return this;
   };
 
+  U.Global.readspeakerUniform = function(uniformElements) {
+    var self = this;
+
+    self.init = function() {
+
+      uniformElements = $(uniformElements.join(', '));
+
+      uniformElements.addClass('rs_preserve');
+    };
+
+    self.init();
+  };
+
 
   /* From MDN -- https://developer.mozilla.org/en-US/docs/Web/API/document.cookie */
   U.Global.Cookies = (function() {
@@ -234,6 +247,38 @@
     return docCookies;
   })();
 
+  /* From MDN - Polyfill for array.prototype.indexOf in IE8 */
+  /* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf */
+  if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function (searchElement, fromIndex) {
+      if ( this === undefined || this === null ) {
+        throw new TypeError( '"this" is null or not defined' );
+      }
+
+      var length = this.length >>> 0;
+      fromIndex = +fromIndex || 0;
+
+      if (Math.abs(fromIndex) === Infinity) {
+        fromIndex = 0;
+      }
+
+      if (fromIndex < 0) {
+        fromIndex += length;
+        if (fromIndex < 0) {
+          fromIndex = 0;
+        }
+      }
+
+      for (;fromIndex < length; fromIndex++) {
+        if (this[fromIndex] === searchElement) {
+          return fromIndex;
+        }
+      }
+
+      return -1;
+    };
+  }
+
   U.Global.Readspeaker = function() {
     var self = this;
 
@@ -248,6 +293,7 @@
         self.firstLoad();
         self.attachHandlers();
       });
+      self.configureTooltips();
     };
 
     /* Set Defaults if Readspeaker Cookie Hasn't been set */
@@ -285,6 +331,21 @@
         self.dom.html.addClass(self.classes[2]).trigger('equalHeights');
       };
     };
+
+    self.configureTooltips = function() {
+      var selectors = $('.selector');
+      selectors.addClass('rs_preserve');
+    };
+
+    // UN-4512 - Reading Assist loses its fixed position on input focus
+    // this is a known iOS bug, not easily solved, this fix will work until we find a more elegant solution:
+    $('.touch input, .touch select, .touch textarea').on('focus',function() {
+      $('#rsToggle').hide()
+    });
+    $('.touch input, .touch select, .touch textarea').on('blur',function() {
+      $('#rsToggle').show()
+    });
+
 
     self.init();
   };

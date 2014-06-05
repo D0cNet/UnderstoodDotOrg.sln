@@ -27,8 +27,10 @@
       // only above 650 viewport or nonresponsive
       if(Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')){
         $module.appendTo($findHelpfulLarge);
+        jQuery('.l-take-action-share').prependTo($findHelpfulLarge);
       } else {
         $module.appendTo($findHelpfulSmall);
+        jQuery('.l-take-action-share').appendTo('.page-topic .row');
       }
     }
 
@@ -76,5 +78,18 @@
   };
 
 })(jQuery);
+(function($) {
+
+  $(document).ready(function() {
+    var uniformElements = [
+      '.selector',
+      '.radio'
+    ];
+
+    new U.Global.readspeakerUniform(uniformElements);
+  });
+
+})(jQuery);
+
 
 

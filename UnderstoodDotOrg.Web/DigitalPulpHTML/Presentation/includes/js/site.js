@@ -688,11 +688,11 @@ U.readSpeaker = function () {
 
   var self = {};
 
-  self.carousels = new Array();
+  self.carousels = [];
 
   self.queueCarousel = function(c) {
     self.carousels.push(c);
-  }
+  };
 
   self.renderCarouselFocusables = function() {
     ReadSpeaker.q(function() {
@@ -700,7 +700,7 @@ U.readSpeaker = function () {
         U.carousels.accessibleSlide(e);
       });
     });
-  }
+  };
 
   //Runs when the dom is ready
   self.init = function() {
@@ -726,7 +726,7 @@ U.readSpeaker = function () {
       }
 
     });
-  }
+  };
 
   return self;
 };

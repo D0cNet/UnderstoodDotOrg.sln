@@ -141,6 +141,16 @@ jQuery(document).ready(function(){
 
       $(window).resize(function() { self.resizeHandler(); });
 
+      // button hovers
+      $searchResultButton.on({
+        'mouseenter' : function(){
+          $(this).find('.result-hover').show();
+        },
+        'mouseleave' : function(){
+          $(this).find('.result-hover').hide();
+        }
+      });
+ 
 
       new U.keyboard_access ({
         focusElements: $searchResultButton,
@@ -181,7 +191,6 @@ jQuery(document).ready(function(){
           }
         }
       });
-
 
 
       this.adviceResultsIcons();
@@ -544,6 +553,19 @@ jQuery(document).ready(function(){
   };
 
 })(jQuery);
+(function($) {
+
+  $(document).ready(function() {
+    var uniformElements = [
+      '.selector',
+      '.radio'
+    ];
+
+    new U.Global.readspeakerUniform(uniformElements);
+  });
+
+})(jQuery);
+
 
 
 

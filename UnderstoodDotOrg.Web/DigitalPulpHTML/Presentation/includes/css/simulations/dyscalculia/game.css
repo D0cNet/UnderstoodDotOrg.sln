@@ -1,0 +1,712 @@
+/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_key {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 405px;
+  height: 130px;
+  background-color: #7a4183;
+  color: white;
+}
+
+/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_key {
+  width: 315px;
+}
+
+/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_key {
+  top: auto;
+  bottom: 0px;
+  height: 60px;
+  width: 320px;
+}
+
+/* line 19, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_key h2 {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 50px;
+  margin-left: 25px;
+  font-size: 30px;
+  width: 100px;
+}
+
+/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_key h2 {
+  margin-left: 5px;
+  width: 60px;
+}
+
+/* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_key h2 {
+  display: none;
+}
+
+/* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_key .coin {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 30px;
+  width: 65px;
+  background-position: center;
+}
+
+/* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_key .coin {
+  width: 60px;
+}
+
+/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_key .coin {
+  margin-top: 8px;
+  width: 77px;
+}
+
+/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_key .coin div {
+  float: left;
+  margin-top: 65px;
+  text-align: center;
+  font-size: 22px;
+  width: 100%;
+}
+
+/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_key .coin div {
+  float: none;
+  margin-top: 14px;
+  font-size: 16px;
+  width: 30px;
+  margin-left: 47px;
+}
+
+/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_key .penny {
+  background-position: 14px center;
+}
+
+/* line 65, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_key .nickel {
+  background-position: 10px center;
+}
+
+/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_key .dime {
+  background-position: 14px center;
+}
+
+/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_key .quarter {
+  background-position: 10px center;
+}
+
+/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_coins {
+  position: absolute;
+  top: 131px;
+  left: 0;
+  width: 405px;
+  height: 350px;
+  /* Can prob. go a little higher */
+  overflow: hidden;
+}
+
+/* line 82, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_coins {
+  height: 250px;
+  width: 315px;
+}
+
+/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_coins {
+  width: 100%;
+  height: 135px;
+  top: auto;
+  bottom: 60px;
+}
+
+/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_score {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 100%;
+}
+
+/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_score {
+  width: 325px;
+}
+
+/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_score {
+  display: none;
+}
+
+/* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_counter {
+  position: absolute;
+  top: 0;
+  left: 406px;
+  width: 320px;
+  height: 534px;
+  background-color: #F6F6F6;
+  color: #D2D2D2;
+}
+
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_counter {
+  left: 315px;
+  width: 230px;
+  height: 432px;
+}
+
+/* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_counter {
+  top: 105px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+}
+
+/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_counter h2 {
+  position: absolute;
+  top: 200px;
+  left: 85px;
+  width: 150px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_counter h2 {
+  top: 170px;
+  left: 40px;
+}
+
+/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_counter h2 {
+  top: 50px;
+  left: 40px;
+  font-size: 24px;
+  text-align: left;
+}
+
+/* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_coins_selected {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 370px;
+}
+
+/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_coins_selected {
+  height: 320px;
+}
+
+/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_coins_selected {
+  width: 200px;
+  height: 100%;
+}
+
+/* line 159, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_tally {
+  position: absolute;
+  bottom: 106px;
+  left: 93px;
+}
+
+/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_tally {
+  bottom: 53px;
+  left: 48px;
+}
+
+/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_tally {
+  top: 43px;
+  left: auto;
+  right: 20px;
+  width: 90px;
+  height: 30px;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 0;
+}
+
+/* line 178, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_store {
+  position: absolute;
+  background-color: #298FC2;
+  top: 0;
+  right: 0;
+  width: 223px;
+  height: 534px;
+  background-position: 40px 30px;
+  overflow: hidden;
+}
+
+/* line 189, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_store {
+  width: 183px;
+  height: 432px;
+  background-position: 10px 20px;
+}
+
+/* line 194, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_store {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 105px;
+}
+
+/* line 200, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_game #SSGame_timer {
+  top: 20px;
+  right: 30px;
+  width: 145px;
+  background-image: url("../../../images/simulations/dyscalculia/desktop/clock_clear.png");
+}
+
+/* line 206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_game.breakpoint_tablet #SSGame_timer {
+  top: 10px;
+  right: 20px;
+}
+
+/* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_game.breakpoint_phone #SSGame_timer {
+  top: 10px;
+  right: 0;
+  width: 115px;
+  background-image: url("../../../images/simulations/dyscalculia/phone/clock_clear.png");
+}
+
+/* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_game #SSGame_timer .timer {
+  position: absolute;
+  left: 50px;
+  font-size: 32px;
+  font-weight: normal;
+  text-align: left;
+}
+
+/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet.dyscalculia_game #SSGame_timer .timer {
+  top: 0;
+  left: 50px;
+}
+
+/* line 227, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone.dyscalculia_game #SSGame_timer .timer {
+  font-size: 24px;
+  left: 40px;
+}
+
+/* line 231, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_game #SSGame_timer .timer span {
+  width: 0.65em;
+}
+
+/* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_game #SSGame_timer span:nth-child(2) {
+  width: auto;
+}
+
+/* line 237, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item {
+  position: absolute;
+  top: 110px;
+  width: 100%;
+}
+
+/* line 242, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_item {
+  top: 60px;
+}
+
+/* line 245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item {
+  top: 0px;
+  left: 0px;
+  width: 180px;
+  height: 105px;
+}
+
+/* line 251, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .item {
+  text-align: center;
+}
+
+/* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .item_picture {
+  height: 205px;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* line 260, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item .item_picture {
+  height: 65px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* line 267, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .item_name,
+#dyscalculia_item .item_value {
+  margin: 0;
+  padding: 0;
+  line-height: auto;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  width: 100%;
+}
+
+/* line 277, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item .item_name,
+.breakpoint_phone #dyscalculia_item .item_value {
+  display: inline;
+  padding: 5px;
+  font-size: 16px;
+}
+
+/* line 282, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .item_name {
+  margin-top: 20px;
+}
+
+/* line 285, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_item .item_name {
+  margin-top: 10px;
+}
+
+/* line 288, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .item_value {
+  margin-top: 3px;
+}
+
+/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .icecream .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/icecream.png");
+}
+
+/* line 294, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item .icecream .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/phone/icecream.png");
+}
+
+/* line 297, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .apple .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/apple.png");
+}
+
+/* line 300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item .apple .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/phone/apple.png");
+}
+
+/* line 303, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .banana .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/banana.png");
+}
+
+/* line 306, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item .banana .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/phone/banana.png");
+}
+
+/* line 309, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .cherry .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/cherry.png");
+}
+
+/* line 312, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item .cherry .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/phone/cherry.png");
+}
+
+/* line 315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .milk .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/milk.png");
+}
+
+/* line 318, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item .milk .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/phone/milk.png");
+}
+
+/* line 321, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .pretzel .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/pretzel.png");
+}
+
+/* line 324, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item .pretzel .item_picture {
+  background-image: url("../../../images/simulations/dyscalculia/phone/pretzel.png");
+}
+
+/* line 327, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .paybuttontarget {
+  margin-top: 40px;
+  width: 100%;
+  height: 1px;
+}
+
+/* line 332, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_item .paybuttontarget {
+  margin-top: 10px;
+}
+
+/* line 336, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .paybutton,
+#dyscalculia_item .feedback {
+  margin-left: 45px;
+  width: 145px;
+  height: 60px;
+}
+
+/* line 342, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_tablet #dyscalculia_item .paybutton,
+.breakpoint_tablet #dyscalculia_item .feedback {
+  margin-left: 35px;
+  width: 120px;
+}
+
+/* line 347, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item .paybutton,
+.breakpoint_phone #dyscalculia_item .feedback {
+  float: right;
+  margin-right: -130px;
+  margin-top: -82px;
+  width: 110px;
+  height: 40px;
+}
+
+/* line 354, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .paybutton {
+  background-color: #F2AF00;
+  font-size: 24px;
+  line-height: 60px;
+  text-align: center;
+  color: black;
+}
+
+/* line 361, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item .paybutton {
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* line 366, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+#dyscalculia_item .feedback {
+  padding-top: 10px;
+  font-size: 32px;
+  color: white;
+}
+
+/* line 371, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone #dyscalculia_item .feedback {
+  padding-top: 0px;
+  font-size: 24px;
+}
+
+/* line 376, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_game .coin {
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* line 382, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone.dyscalculia_game .coin {
+  width: 45px;
+  height: 45px;
+}
+
+/* line 386, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_game .penny {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/coins/penny.png");
+}
+
+/* line 389, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone.dyscalculia_game .penny {
+  background-image: url("../../../images/simulations/dyscalculia/phone/coins/penny.png");
+}
+
+/* line 392, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_game .nickel {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/coins/nickel.png");
+}
+
+/* line 395, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone.dyscalculia_game .nickel {
+  background-image: url("../../../images/simulations/dyscalculia/phone/coins/nickel.png");
+}
+
+/* line 398, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_game .dime {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/coins/dime.png");
+}
+
+/* line 401, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone.dyscalculia_game .dime {
+  background-image: url("../../../images/simulations/dyscalculia/phone/coins/dime.png");
+}
+
+/* line 404, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_game .quarter {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/coins/quarter.png");
+}
+
+/* line 407, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone.dyscalculia_game .quarter {
+  background-image: url("../../../images/simulations/dyscalculia/phone/coins/quarter.png");
+}
+
+/* line 411, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.coin_anim {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  margin-top: -50px;
+  background-repeat: no-repeat;
+  background-position: left;
+  z-index: 70;
+  /* Coins start at 10 and get +1 for each, so this gives us room */
+}
+
+/* line 421, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.quarter_anim {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/coins/quarter_seq.png");
+}
+
+/* line 424, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dime_anim {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/coins/dime_seq.png");
+}
+
+/* line 427, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.nickel_anim {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/coins/nickel_seq.png");
+}
+
+/* line 430, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.penny_anim {
+  background-image: url("../../../images/simulations/dyscalculia/desktop/coins/penny_seq.png");
+}
+
+/* line 433, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone .quarter_anim {
+  background-image: url("../../../images/simulations/dyscalculia/phone/coins/quarter_seq.png");
+}
+
+/* line 436, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone .dime_anim {
+  background-image: url("../../../images/simulations/dyscalculia/phone/coins/dime_seq.png");
+}
+
+/* line 439, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone .nickel_anim {
+  background-image: url("../../../images/simulations/dyscalculia/phone/coins/nickel_seq.png");
+}
+
+/* line 442, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone .penny_anim {
+  background-image: url("../../../images/simulations/dyscalculia/phone/coins/penny_seq.png");
+}
+
+/* line 447, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_spinner {
+  background-color: white;
+  width: 136px;
+  height: 54px;
+  border: 2px solid #278DC1;
+  color: #278DC1;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* line 456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone .dyscalculia_spinner {
+  width: 90px;
+  height: 30px;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+/* line 462, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_spinner_right {
+  color: green;
+}
+
+/* line 465, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_spinner_wrong {
+  color: red;
+}
+
+/* line 468, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_spinner div {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: top;
+}
+
+/* line 474, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone .dyscalculia_spinner div {
+  height: 26px;
+  line-height: 26px;
+}
+
+/* line 478, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_spinner_static {
+  width: 20px;
+}
+
+/* line 481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone .dyscalculia_spinner_static {
+  width: 14px;
+}
+
+/* line 484, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_spinner_currency {
+  margin-left: 10px;
+}
+
+/* line 487, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone .dyscalculia_spinner_currency {
+  margin-left: 6px;
+}
+
+/* line 490, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_spinner_wheel {
+  width: 25px;
+  overflow: hidden;
+}
+
+/* line 494, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.breakpoint_phone .dyscalculia_spinner_wheel {
+  width: 16px;
+}
+
+/* line 497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyscalculia/game.scss */
+.dyscalculia_spinner_mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(39, 141, 193, 0.75);
+}

@@ -270,8 +270,12 @@
 (function($){
 
   $(document).ready(function() {
+
+    // IE8 doesn't support object.keys. This function is an IE8 fallback.
+    objectKeysIE();
+
     // Audio players
-    var $audioPlayers = jQuery(".audio-player");
+    var $audioPlayers = $(".audio-player");
     // Instantiate jPlayer
     if($audioPlayers.length){
       $audioPlayers.articleAudioPlayer();
@@ -289,13 +293,13 @@
     // Object of audio formats and their urls
     var audioPlayerSetMedia = {}; //object
 
-    jQuery.each($audioPlayerFormatData.find('a'), function() {
+    $.each($audioPlayerFormatData.find('a'), function() {
       audioPlayerSetMedia[$(this).attr('data-audio-format')] = this.href;
     });
 
     this.jPlayer({
       ready: function () {
-        jQuery(this).jPlayer("setMedia", audioPlayerSetMedia);
+        $(this).jPlayer("setMedia", audioPlayerSetMedia);
       },
       solution: "html, flash", //this is default. Switch to test swfPath
       cssSelectorAncestor: '.audio-player-interface',
@@ -306,6 +310,50 @@
       smoothPlayBar: false
     });
   };
+
+  var objectKeysIE = function(){
+    // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+    if (!Object.keys) {
+      Object.keys = (function () {
+        'use strict';
+        var hasOwnProperty = Object.prototype.hasOwnProperty,
+            hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+            dontEnums = [
+              'toString',
+              'toLocaleString',
+              'valueOf',
+              'hasOwnProperty',
+              'isPrototypeOf',
+              'propertyIsEnumerable',
+              'constructor'
+            ],
+            dontEnumsLength = dontEnums.length;
+
+        return function (obj) {
+          if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+            throw new TypeError('Object.keys called on non-object');
+          }
+
+          var result = [], prop, i;
+
+          for (prop in obj) {
+            if (hasOwnProperty.call(obj, prop)) {
+              result.push(prop);
+            }
+          }
+
+          if (hasDontEnumBug) {
+            for (i = 0; i < dontEnumsLength; i++) {
+              if (hasOwnProperty.call(obj, dontEnums[i])) {
+                result.push(dontEnums[i]);
+              }
+            }
+          }
+          return result;
+        };
+      }());
+    }
+  }
 
 })(jQuery);
 /**
@@ -806,6 +854,19 @@ $(document).ready(function() {
   };
 
 })(jQuery);
+(function($) {
+
+  $(document).ready(function() {
+    var uniformElements = [
+      '.selector',
+      '.radio'
+    ];
+
+    new U.Global.readspeakerUniform(uniformElements);
+  });
+
+})(jQuery);
+
 
 
 

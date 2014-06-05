@@ -1,0 +1,2430 @@
+/**
+ * SASS mixin for cross-platform border-radius.
+ */
+/**
+ * SASS partial for account-notification-tabs module.
+ */
+/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs-container {
+  margin: -50px 0 0 0;
+}
+
+/* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.my-notifications-page-header {
+  clear: both;
+  -webkit-box-shadow: inset 0px -5px 9px -9px #555555;
+  -moz-box-shadow: inset 0px -5px 9px -9px #555555;
+  box-shadow: inset 0px -5px 9px -9px #555555;
+  width: 100%;
+  height: 179px;
+  background: #f4f2f1;
+  margin: -20px 0 0 0;
+  margin-top: -60px;
+}
+/* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.my-notifications-page-header h1 {
+  background: #f4f2f1;
+  margin-left: 15px;
+  margin-left: 0px;
+  font-size: 36px;
+  font-size: 2.25rem;
+  color: #7a4183;
+  margin: 40px 0 23px 0;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs {
+  position: relative;
+  color: dimgrey;
+  /* .checkbox-wrapper */
+  /* .showmore-footer */
+}
+/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs header {
+  position: relative;
+  top: 0;
+}
+/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs h2, .account-notification-tabs h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  color: #7a4183;
+  font-weight: normal;
+  margin: 15px 0 0 0;
+  padding-bottom: 15px;
+  margin: 55px 0 20px 0;
+}
+/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs h3 {
+  border-bottom: 1px solid #d1d1d1;
+  margin-top: 15px;
+}
+/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs header {
+  background-color: #f4f2f1;
+}
+/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .header-wrapper {
+  margin: 20px 0px;
+  width: 100%;
+  display: table;
+}
+/* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs h2.inline, .account-notification-tabs .mobile-number {
+  display: inline-block;
+  display: table-cell;
+}
+/* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .mobile-number {
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-size: 18px;
+  font-size: 1.125rem;
+  text-align: right;
+}
+/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .mobile-number strong {
+  color: #000;
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin: 0 20px 0 15px;
+}
+/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .mobile-number a {
+  text-decoration: underline;
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .circle {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -ms-border-radius: 18px;
+  -o-border-radius: 18px;
+  border-radius: 18px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  background-color: #bcbdc0;
+  color: #fff;
+  display: inline-block;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  width: 18px;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  -webkit-border-radius: 26px;
+  -moz-border-radius: 26px;
+  -ms-border-radius: 26px;
+  -o-border-radius: 26px;
+  border-radius: 26px;
+  border-top-left-radius: 26px;
+  border-top-right-radius: 26px;
+  border-bottom-left-radius: 26px;
+  border-bottom-right-radius: 26px;
+  height: 26px;
+  line-height: 26px;
+  width: 26px;
+}
+/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .active .circle,
+.account-notification-tabs .circle.purple {
+  background-color: #7a4183;
+}
+/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs {
+  display: block;
+}
+/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs ul {
+  display: block;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li {
+  -webkit-box-shadow: inset 0px -5px 9px -9px #555555;
+  -moz-box-shadow: inset 0px -5px 9px -9px #555555;
+  box-shadow: inset 0px -5px 9px -9px #555555;
+  background-color: #e6e6e6;
+  border-top: 4px solid #f4f2f1;
+  display: table;
+  float: left;
+  height: 50px;
+  width: 33.3333333%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li a {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  line-height: 13px;
+  line-height: 0.8125rem;
+  min-height: 26px;
+  font-weight: bold;
+  color: dimgrey;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 46px;
+  padding: 0 30px 0 10px;
+  border-left: 1px solid #d1d1d1;
+  text-decoration: none;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 20px;
+  line-height: 1.25rem;
+  padding: 0 50px 0 20px;
+}
+/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li a:hover {
+  text-decoration: none;
+  background: #298fc2;
+  color: #fff;
+}
+/* line 169, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li a:hover span.circle {
+  background: #fff;
+  color: #298fc2;
+}
+/* line 184, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active {
+  -webkit-box-shadow: -5px 1px 1px -4px #d1d1d1;
+  -moz-box-shadow: -5px 1px 1px -4px #d1d1d1;
+  box-shadow: -5px 1px 1px -4px #d1d1d1;
+  background-color: #fff;
+  border-top: 4px solid #7a4183;
+}
+/* line 189, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active a {
+  color: #7a4183;
+  cursor: default;
+}
+/* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active a:hover {
+  background: #fff;
+}
+/* line 196, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active a:hover span.circle {
+  background: #7a4183;
+  color: #fff;
+}
+/* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active .circle {
+  background-color: #7a4183;
+}
+/* line 205, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active + li {
+  cursor: default;
+}
+/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li:first-child a {
+  border-left: none;
+}
+/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs .circle {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  right: 15px;
+  top: 10px;
+}
+/* line 228, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .account-body-wrapper {
+  clear: both;
+  padding: 15px;
+  padding: 40px 0;
+}
+/* line 238, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs i {
+  background-image: url("../images/sprite.icon.notifications.png");
+  background-size: 57px 19px;
+  display: inline-block;
+  height: 18px;
+}
+/* line 243, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.no-backgroundsize .account-notification-tabs i {
+  background-image: url("../images/sprite.icon.notifications.lo-res.png");
+}
+/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs i.icon-notification-comment {
+  width: 21px;
+}
+/* line 250, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs i.icon-notification-link {
+  background-position: -40px 0px;
+  width: 16px;
+}
+/* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs i.icon-notification-reminder {
+  background-position: -22px 0px;
+  width: 16px;
+}
+/* line 258, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs i.icon-results-more {
+  background-image: url("../images/sprite.icon.arrows.png");
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 150px 150px;
+  display: inline-block;
+  height: 11px;
+  margin-left: 20px;
+  width: 18px;
+}
+/* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .results-more-link {
+  font-size: 24px;
+  font-size: 1.5rem;
+  display: block;
+  position: relative;
+  top: 57px;
+  margin-bottom: 37px;
+  text-align: center;
+  top: 55px;
+  margin: 70px 0;
+}
+/* line 279, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .results-more-link span {
+  display: inline-block;
+}
+/* line 282, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-item {
+  border-bottom: 1px solid #d1d1d1;
+  padding: 15px 0px 30px 0px;
+  padding: 0px 0px 15px 0px;
+}
+/* line 285, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-item p {
+  margin: 1em 0 0 0;
+}
+/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header {
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+/* line 293, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header h4 {
+  font-weight: normal;
+}
+/* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label {
+  margin-bottom: 13px;
+}
+/* line 298, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label i {
+  margin-right: 10px;
+  position: relative;
+}
+/* line 301, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label i.icon-notification-comment {
+  top: 7px;
+}
+/* line 304, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label i.icon-notification-link {
+  top: 4px;
+}
+/* line 307, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label i.icon-notification-reminder {
+  top: 4px;
+}
+/* line 311, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label a.notification-link {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  margin-left: 35px;
+  display: inline;
+  margin-left: 0px;
+}
+/* line 321, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label .timestamp {
+  color: #bcbdc0;
+  display: none;
+  float: right;
+  font-size: 14px;
+  font-size: 0.875rem;
+  display: block;
+}
+/* line 334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-body .notification-action {
+  margin-top: 0px;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+/* line 337, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-body .notification-action a {
+  text-decoration: underline;
+}
+/* line 339, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-body .notification-action a:hover {
+  text-decoration: none;
+}
+/* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-body .button {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  max-width: 110px;
+  margin-bottom: 5px;
+}
+/* line 355, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .paragraph-widget {
+  display: block;
+  display: none;
+}
+/* line 359, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .textarea-widget {
+  display: none;
+  display: block;
+}
+/* line 364, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .checkbox-wrapper {
+  display: block;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 99%;
+  text-align: right;
+}
+/* line 373, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .checkbox-wrapper label {
+  display: inline-block;
+}
+/* line 375, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .checkbox-wrapper label:first-child {
+  margin-right: 42px;
+}
+/* line 377, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .checkbox-wrapper label span, .account-notification-tabs .checkbox-wrapper label .radio {
+  font-size: 18px;
+  font-size: 1.125rem;
+  display: block;
+  float: left;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+/* line 383, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .checkbox-wrapper label input {
+  margin-right: 10px;
+}
+/* line 388, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .account-notifications-tab-notifications-empty p {
+  color: #7a4183;
+  font-size: 24px;
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d1d1d1;
+}
+/* line 396, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .private-message-tool {
+  background: #f4f2f1;
+  text-align: center;
+  color: #7a4183;
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-size: 36px;
+  font-size: 2.25rem;
+  font-weight: bold;
+  line-height: 300px;
+  height: 300px;
+  height: 700px;
+  line-height: 700px;
+}
+/* line 413, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .showmore-footer {
+  border-top: none;
+  padding: 60px 0 0 0;
+  padding-top: 100px;
+}
+/* line 421, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .showmore-footer .show-more {
+  margin-bottom: -20px;
+  margin-bottom: 0;
+}
+/* line 428, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .showmore-footer a i {
+  width: 18px;
+  height: 11px;
+  background: url("/Presentation/includes/img/sprite.icon.arrows.png") 0 0 no-repeat;
+  background-size: 150px 150px;
+}
+
+/* line 439, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form p.instructions {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+/* line 442, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form p.please-read, .account-notifications-tab-text-form legend.please-read {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+/* line 448, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form legend.please-read {
+  margin-bottom: 1em;
+}
+/* line 452, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form input[type=text],
+.account-notifications-tab-text-form textarea {
+  max-width: 470px;
+}
+/* line 456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form input[type=text] {
+  margin-bottom: 30px;
+  margin-bottom: 40px;
+}
+/* line 465, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form textarea {
+  background-color: #f4f2f1 !important;
+  border: none !important;
+  height: 185px;
+  padding: 20px;
+}
+/* line 472, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form label {
+  display: block;
+  margin: 20px 0 40px 0;
+}
+/* line 477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form .mobile-phone-number {
+  display: inline;
+  margin: 0px;
+}
+/* line 482, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form .button {
+  margin-bottom: 40px;
+  margin-right: 0px;
+  max-width: 230px;
+}
+
+/* line 489, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggles-wrapper {
+  margin-bottom: 50px;
+}
+
+/* line 494, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper {
+  display: block;
+  margin-bottom: 20px;
+}
+/* line 498, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper label {
+  cursor: pointer;
+  display: table;
+  width: 100%;
+}
+/* line 503, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper label > span, .toggle-wrapper label .ez-checkbox {
+  display: table-cell;
+  vertical-align: top;
+  width: 48%;
+}
+/* line 507, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper label > span:first-child, .toggle-wrapper label .ez-checkbox:first-child {
+  padding-right: 20px;
+}
+/* line 511, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .ez-checkbox {
+  text-align: right;
+}
+/* line 512, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .ez-hide {
+  display: none;
+}
+/* line 513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .switch-wrapper {
+  display: inline-block;
+  width: 155px;
+}
+/* line 518, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .btn-toggle {
+  display: inline-block;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 30px;
+  height: 30px;
+  width: 75px;
+  position: relative;
+}
+/* line 527, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .btn-toggle button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+/* line 540, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .btn-right {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  -moz-box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  background-color: #f4f2f1;
+  color: dimgrey;
+}
+/* line 547, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .btn-left,
+.toggle-wrapper .ez-checked .btn-right {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #7a4183;
+  color: #fff;
+  height: 32px;
+  line-height: 32px;
+}
+/* line 555, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .ez-checked .btn-left {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  -moz-box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  background-color: #f4f2f1;
+  color: dimgrey;
+  height: 30px;
+  line-height: 30px;
+}
+
+/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic {
+  background: #f4f2f1;
+  margin: 0;
+  padding: 17px 15px 33px;
+  position: relative;
+  padding: 0 0 33px;
+  padding-bottom: 24px;
+}
+/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic .col {
+  position: static;
+}
+/* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic .back-to-previous {
+  display: none;
+  color: #426da9;
+  margin: 34px 0 10px;
+  display: inline-block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic .back-to-previous i {
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+/* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic .icon.globe {
+  ackground-size: 103px 103px;
+  width: 103px;
+  height: 103px;
+  margin-top: 22px;
+  float: none;
+}
+/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic .share-save-container {
+  margin: 5px auto 10px;
+  float: none;
+  z-index: 3;
+  margin-top: 0;
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  margin: 0 0 0 179px;
+}
+/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic .share-save-container h3 {
+  text-align: center;
+  visibility: hidden;
+}
+/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic .text {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.467;
+  color: #696969;
+  font-size: 21px;
+  font-size: 1.3125rem;
+  line-height: 1.333;
+  max-width: 790px;
+  padding: 17px 0 0 320px;
+  background: url("../images/icon.toolkit.childs.world.png") 70px 6px no-repeat;
+  background-size: 147px 147px;
+  min-height: 157px;
+}
+/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic .text p {
+  margin-bottom: 8px;
+}
+/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic .text-small {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.556;
+}
+/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic .text-small h1 {
+  margin-bottom: 6px;
+}
+/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-page-topic h1 {
+  font-weight: normal;
+  color: #794381;
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  padding-left: 98px;
+  background: url("../images/icon.toolkit.childs.world.png") -14px 0 no-repeat;
+  background-size: 103px 103px;
+  min-height: 100px;
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 1.333;
+  margin-bottom: 12px;
+  padding: 0;
+  background: none;
+  min-height: 0;
+}
+
+/* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-personalize {
+  margin: 0 0 35px;
+  position: relative;
+  padding: 0 15px;
+  margin-bottom: 45px;
+}
+/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-personalize:before {
+  content: '';
+  display: block;
+  height: 54px;
+  width: 100%;
+  background: #f4f2f1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 0;
+  height: 50px;
+}
+/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-personalize .row {
+  position: relative;
+  z-index: 2;
+  padding: 16px 20px 20px;
+  background-color: #426da9;
+  color: #FFF;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.467;
+  max-width: 950px;
+  padding: 30px 0 33px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.333;
+}
+/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-personalize .content {
+  display: table;
+  width: 100%;
+}
+/* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-personalize .content .text {
+  padding-bottom: 26px;
+  display: table-cell;
+  width: 58.9%;
+  padding: 0 1.6% 0 4.2%;
+  height: 91px;
+  vertical-align: middle;
+}
+/* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-personalize .content .text p {
+  margin: 0;
+}
+/* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-personalize .content .button-wrap {
+  display: table-cell;
+  width: 41.1%;
+  vertical-align: middle;
+  padding: 0 8.4%;
+}
+/* line 178, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-personalize .content .button-wrap .button {
+  width: 100%;
+}
+/* line 184, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-personalize h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-personalize .button {
+  font-weight: bold;
+}
+
+/* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.467;
+  line-height: 22px;
+  color: #696969;
+  margin-bottom: 25px;
+  margin-bottom: 20px;
+}
+/* line 208, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+  color: #7a4183;
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+
+/* line 218, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.467;
+  color: #696969;
+  margin-bottom: 35px;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.438;
+  margin-bottom: 40px;
+}
+/* line 228, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container h3 {
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: #7a4183;
+}
+/* line 236, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  *zoom: 1;
+  padding-right: 1.1%;
+}
+/* line 38, /Users/justin/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.tyce-on-demand-container .item-5:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li {
+  width: 46.4%;
+  float: left;
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding: 0 3.3% 0 0;
+  width: 20%;
+  float: left !important;
+  clear: none !important;
+}
+/* line 255, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li:nth-child(odd) {
+  float: left;
+  clear: both;
+}
+/* line 259, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li:nth-child(even) {
+  float: right;
+}
+/* line 263, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li h4 {
+  font-weight: normal;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.125;
+  min-height: 3.375em;
+  margin-bottom: 2px;
+  line-height: 1.375;
+  min-height: 3.5em;
+}
+/* line 276, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li h4 br {
+  display: none;
+  display: inline;
+}
+/* line 285, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li h4 abbr {
+  border: 0;
+}
+/* line 290, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li img {
+  width: 100%;
+}
+/* line 299, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations {
+  border-bottom: 1px solid #d7d7d7;
+  border: 0;
+}
+/* line 304, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .row {
+  background-color: #f4f2f1;
+}
+/* line 309, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations h3 {
+  margin-top: 35px;
+}
+/* line 314, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .item-5 {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  padding-top: 12px;
+  padding-bottom: 23px;
+}
+/* line 322, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations h4 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.111;
+  min-height: 2.222em;
+  margin-bottom: 15px;
+}
+/* line 328, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block {
+  display: block;
+  background: #7a4183;
+  padding-top: 56%;
+  position: relative;
+}
+/* line 334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block b {
+  display: block;
+  background: url("../images/sprite.icons.tyce.png") no-repeat;
+  background-size: 1000%;
+  width: 32%;
+  height: 52.4%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -14.7% 0 0 -16%;
+}
+/* line 346, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block.writing-issues b {
+  background-position: 11% 0;
+}
+/* line 350, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block.math-issues b {
+  background-position: 22% 0;
+}
+/* line 354, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block.organization-time b {
+  background-position: 33.33% 0;
+}
+/* line 358, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block.attention-issues b {
+  background-position: 44% 0;
+}
+/* line 362, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li {
+  margin-bottom: 17px;
+}
+/* line 365, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li:nth-child(2) .icon-block {
+  background: #6f5091;
+}
+/* line 368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li:nth-child(3) .icon-block {
+  background: #5a5d9c;
+}
+/* line 371, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li:nth-child(4) .icon-block {
+  background: #426da9;
+}
+/* line 374, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li:nth-child(5) .icon-block {
+  background: #298fc2;
+}
+/* line 378, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li > a {
+  display: block;
+}
+/* line 387, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories h3 {
+  float: left;
+  margin-top: 7px;
+}
+/* line 393, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories .row {
+  display: block !important;
+}
+/* line 399, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories .title {
+  color: #7a4183;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1;
+  margin-top: 10px;
+  display: none;
+}
+/* line 409, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories .item-5 {
+  margin-bottom: 12px;
+  padding-top: 15px;
+  padding-top: 40px;
+  margin: 0;
+}
+/* line 417, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories li {
+  margin-bottom: 21px;
+  margin: 0;
+}
+/* line 422, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories li > a {
+  display: block;
+  position: relative;
+}
+/* line 425, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories li > a img {
+  display: block;
+  border: 4px solid #7a4183;
+}
+/* line 429, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories li > a .icon.play {
+  width: 32px;
+  height: 32px;
+  display: block;
+  background: url("../images/sprite.icons.tyce.png") -450px 0 no-repeat;
+  background-size: 500px 100px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+/* line 441, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories li > a:hover .icon.play {
+  background-position: -400px 0;
+}
+/* line 448, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories li p {
+  color: #646464;
+  margin: 16px 0 0;
+  font-size: 16px;
+  font-size: 1rem;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+/* line 456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories li:nth-child(2) > a img {
+  border-color: #6f5091;
+}
+/* line 459, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories li:nth-child(3) > a img {
+  border-color: #5a5d9c;
+}
+/* line 462, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories li:nth-child(4) > a img {
+  border-color: #426da9;
+}
+/* line 465, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories li:nth-child(5) > a img {
+  border-color: #298fc2;
+}
+/* line 470, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container.stories h4 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.125;
+  min-height: 2.25em;
+  margin-bottom: 6px;
+}
+/* line 478, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .tab-controls {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: none;
+  display: block;
+  float: right;
+}
+/* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .tab-controls li {
+  display: inline-block;
+  min-width: 150px;
+  text-align: center;
+  margin-left: 6px;
+}
+/* line 494, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .tab-controls li a {
+  display: block;
+  background: #f4f2f1;
+  color: #696969;
+  line-height: 2.5;
+  padding: 0 2px;
+  border-radius: 4px;
+}
+/* line 502, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-on-demand-container .tab-controls li a.active, .tyce-on-demand-container .tab-controls li a:hover {
+  background: #7a4183;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 514, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header .row {
+  padding: 20px 0;
+}
+/* line 518, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header h1 {
+  color: #7b3f84;
+  font-size: 34px;
+  font-size: 2.125rem;
+  line-height: 38px;
+  line-height: 2.375rem;
+  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 48px;
+  line-height: 3rem;
+}
+/* line 529, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header a.back-to-previous {
+  color: #426da9;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin-bottom: 10px;
+  margin-bottom: 17px;
+  margin-bottom: 18px;
+}
+/* line 545, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header a.back-to-previous i {
+  margin-right: 7px;
+  margin-bottom: -1px;
+}
+
+/* line 554, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.captions {
+  display: inline-block;
+  margin-right: 30px;
+  vertical-align: top;
+}
+/* line 560, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.captions > span {
+  display: block;
+  margin-bottom: 16px;
+}
+/* line 565, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.captions .toggle-wrapper label .ez-checkbox {
+  width: auto;
+}
+/* line 569, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.captions .switch {
+  display: inline-block;
+  background-color: #f4f2f1;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  padding: 3px 0;
+  cursor: pointer;
+}
+/* line 577, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.captions .switch span {
+  padding: 6px 15px 4px 15px;
+}
+/* line 581, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.captions .switch .is-active {
+  color: #FFF;
+  background-color: #794382;
+  border-radius: 3px;
+  padding-bottom: 6px;
+  padding: 6px 20px 6px 20px;
+}
+
+/* line 593, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.help {
+  display: none;
+  vertical-align: top;
+  cursor: pointer;
+  display: inline-block;
+}
+/* line 602, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.help > span {
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* line 615, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header .icon,
+.tyce-player-container .icon {
+  display: inline-block;
+  background: url("../images/sprite.icons.tyce.png") 0 0 no-repeat;
+  background-size: 500px 100px;
+}
+/* line 620, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header .icon.globe,
+.tyce-player-container .icon.globe {
+  background: url("../images/icon.toolkit.childs.world.png") 0 0 no-repeat;
+  background-size: 100px 100px;
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+/* line 628, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header .icon.reading-issues,
+.tyce-player-container .icon.reading-issues {
+  width: 21px;
+  height: 21px;
+  background-position: -250px 0;
+  float: right;
+}
+/* line 635, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header .icon.writing-issues,
+.tyce-player-container .icon.writing-issues {
+  width: 18px;
+  height: 18px;
+  background-position: -275px 0;
+  float: right;
+}
+/* line 642, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header .icon.math-issues,
+.tyce-player-container .icon.math-issues {
+  width: 24px;
+  height: 22px;
+  background-position: -250px -25px;
+  float: right;
+}
+/* line 649, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header .icon.organization-time,
+.tyce-player-container .icon.organization-time {
+  width: 21px;
+  height: 21px;
+  background-position: -275px -25px;
+  float: right;
+}
+/* line 656, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header .icon.attention-issues,
+.tyce-player-container .icon.attention-issues {
+  width: 21px;
+  height: 22px;
+  background-position: -300px 0;
+  float: right;
+}
+/* line 663, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+.tyce-player-header .icon.help,
+.tyce-player-container .icon.help {
+  width: 30px;
+  height: 30px;
+  background-position: -400px -50px;
+}
+
+/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-main-feature {
+  color: #696969;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.333;
+  margin-bottom: 75px;
+}
+/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-main-feature img.pic {
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+  margin-top: 4px;
+}
+/* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-main-feature .col:first-of-type {
+  margin: 0 -15px;
+}
+/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-main-feature h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  margin-bottom: 9px;
+  color: #7a4183;
+  font-size: 30px;
+  font-size: 1.875rem;
+  margin-bottom: 19px;
+}
+/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-main-feature p a {
+  text-decoration: underline;
+}
+
+/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 {
+  background: #f4f2f1;
+  padding-top: 20px;
+  margin: 0;
+  margin-bottom: 66px;
+}
+/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 .row {
+  padding: 0 15px;
+  padding: 0;
+  margin: 0 -5px;
+  margin: 0 auto;
+}
+/* line 60, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 .module-wrap {
+  display: table;
+  width: 100%;
+}
+/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 .module {
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 17px 20px 10px;
+  color: #696969;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.467;
+  padding: 25px 2.2% 0;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.375;
+  display: table-cell;
+  width: 33.33%;
+  border-left: 5px solid #f4f2f1;
+  border-right: 5px solid #f4f2f1;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 .module p {
+  margin-bottom: 18px;
+}
+/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 .module p a {
+  text-decoration: underline;
+}
+/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 .module .link {
+  margin: 50px 0 16px;
+}
+/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 .module .link + .link {
+  margin-top: 0;
+}
+/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 .module .field {
+  margin-bottom: 20px;
+  margin-top: 37px;
+}
+/* line 107, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 .module .button {
+  margin-bottom: 20px;
+}
+/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 h2 {
+  font-weight: normal;
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #794382;
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-module-3 textarea {
+  background: #f4f2f1;
+  border: 0;
+  width: 100%;
+  padding: 15px 0 0 20px;
+  height: 9em;
+}
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+.tyce-module-3 textarea.placeholder {
+  color: #696969;
+}
+/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+.tyce-module-3 textarea:-moz-placeholder {
+  color: #696969;
+  opacity: 1;
+}
+/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+.tyce-module-3 textarea::-moz-placeholder {
+  color: #696969;
+  opacity: 1;
+}
+/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+.tyce-module-3 textarea:-ms-input-placeholder {
+  color: #696969;
+}
+/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+.tyce-module-3 textarea::-webkit-input-placeholder {
+  color: #696969;
+}
+
+/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools {
+  margin: 25px 0 5px -15px;
+  padding: 0;
+  list-style: none;
+  *zoom: 1;
+  margin-top: 34px;
+  margin-left: -5px;
+}
+/* line 38, /Users/justin/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.share-tools:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools li {
+  float: left;
+  margin: 0 0 15px 15px;
+  line-height: 0;
+  margin: 0 0 5px 5px;
+}
+/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools .icon {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  width: 36px;
+  height: 36px;
+  background-image: url("../images/sprite.social.footer.png");
+  background-repeat: no-repeat;
+  background-size: 165px 80px;
+  width: 42px;
+  height: 42px;
+  background-size: 193px 93px;
+}
+/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon {
+  background: url("../images/sprite.social.footer.lo-res.png");
+}
+/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools .icon-facebook {
+  background-position: 0 0;
+}
+/* line 174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon-facebook {
+  background-position: 0 0;
+}
+/* line 177, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools .icon-facebook:hover {
+  background-position: 0 -43px;
+  background-position: 0 -50px;
+}
+/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools .icon-twitter {
+  background-position: -43px 0;
+  background-position: -50px 0;
+}
+/* line 190, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon-twitter {
+  background-position: -50px 0;
+}
+/* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools .icon-twitter:hover {
+  background-position: -43px -43px;
+  background-position: -50px -50px;
+}
+/* line 201, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools .icon-google {
+  background-position: -86px 0;
+  background-position: -100px 0;
+}
+/* line 207, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon-google {
+  background-position: -100px 0;
+}
+/* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools .icon-google:hover {
+  background-position: -86px -43px;
+  background-position: -100px -50px;
+}
+/* line 218, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools .icon-pinterest {
+  background-position: -129px 0;
+  background-position: -150px 0;
+}
+/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon-pinterest {
+  background-position: -150px 0;
+}
+/* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools .icon-pinterest:hover {
+  background-position: -129px -43px;
+  background-position: -150px -50px;
+}
+/* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools .icon-email {
+  background: url("../images/sprite.icon.email.84.png");
+  background-size: 36px 79px;
+  background-size: 42px 92px;
+}
+/* line 240, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon-email {
+  background: url("../images/sprite.icon.email.42.png");
+}
+/* line 243, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.share-tools .icon-email:hover {
+  background-position: 0 100%;
+}
+
+/* line 250, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-addresses {
+  margin: 0;
+  padding: 7px 15px 0;
+  background: #F4F2F1;
+  color: #696969;
+  background: none;
+  padding: 0;
+}
+/* line 260, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-addresses .row {
+  background: #F4F2F1;
+  max-width: 950px;
+  padding: 0;
+}
+/* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-addresses .row:last-of-type {
+  padding-bottom: 10px;
+  padding-bottom: 4px;
+}
+/* line 272, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-addresses header {
+  padding-top: 25px;
+}
+/* line 278, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-addresses .message {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: #7b3f84;
+  margin-bottom: 22px;
+  font-size: 22px;
+  font-size: 1.375rem;
+}
+/* line 290, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-addresses p {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  margin-bottom: 23px;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+/* line 306, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step-wrap {
+  background: #F4F2F1;
+  margin: 0;
+  padding: 0 15px 30px;
+  padding: 0 0 55px;
+}
+
+/* line 315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step {
+  background: #fff;
+  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+/* line 323, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step.is-inactive header, .tyce-step.is-inactive .body {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+/* line 327, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step .button {
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #000;
+}
+/* line 335, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step header {
+  background: #fff;
+  padding: 20px 20px 15px;
+  padding: 25px 40px;
+  min-height: 46px;
+  *zoom: 1;
+}
+/* line 38, /Users/justin/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.tyce-step header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step header .button {
+  background: #f4f2f1;
+  margin: 25px 0 15px;
+  width: 150px;
+  float: right;
+  margin: 0 0 0 15px;
+}
+/* line 352, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step header .button:hover {
+  background: #ffbc0d;
+}
+/* line 356, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step header .button.active {
+  background: #f2af00;
+}
+/* line 362, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step .body {
+  background: #fff;
+  padding: 0 20px 30px;
+  padding: 0 40px 40px;
+}
+/* line 369, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step .body .button {
+  margin: 0;
+  width: 100%;
+  width: 230px;
+  margin: 0 auto;
+  display: block;
+}
+/* line 380, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step h2 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: normal;
+  color: #794382;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding-left: 57px;
+  position: relative;
+  float: left;
+  min-height: 39px;
+  margin-top: 6px;
+  max-width: 64%;
+  max-width: 71%;
+  font-size: 24px;
+  font-size: 1.5rem;
+  max-width: 600px;
+}
+/* line 402, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step h2 .num {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #f4f2f1;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 16px;
+  position: absolute;
+  left: 0;
+  top: -1px;
+  margin: 0;
+}
+/* line 419, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step h2 .instructions {
+  display: block;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1;
+  margin-top: 13px;
+  margin-top: 5px;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+/* line 431, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step .info {
+  text-align: center;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  padding-top: 15px;
+  font-size: 16px;
+  font-size: 1rem;
+  padding-top: 16px;
+  text-align: left;
+  float: right;
+  clear: none;
+}
+/* line 442, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step .info a {
+  text-decoration: underline;
+  white-space: nowrap;
+}
+/* line 451, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step .action {
+  text-align: center;
+  padding-top: 20px;
+  padding-top: 30px;
+  text-align: left;
+  width: 470px;
+  margin: 0 auto;
+  text-align: center;
+  width: auto;
+  padding-left: 6%;
+}
+/* line 465, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step .action .button {
+  margin-bottom: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 50px 0 0;
+}
+/* line 473, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-step .action a {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  text-decoration: underline;
+  font-size: 16px;
+  font-size: 1rem;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  max-width: 185px;
+}
+
+/* line 487, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.reponsive-select-mobile {
+  display: none;
+}
+
+/* line 492, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+#uniform-personalize-grade-mobile {
+  display: block !important;
+  display: none !important;
+}
+
+/* line 499, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.reponsive-select-full-options {
+  display: none;
+  display: block;
+  *zoom: 1;
+  padding: 4px 0 0;
+  margin: 0 auto;
+  list-style: none;
+  width: 480px;
+  width: 800px;
+  margin: 0 -5px;
+}
+/* line 38, /Users/justin/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.reponsive-select-full-options:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 514, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.reponsive-select-full-options li {
+  float: left;
+  margin: 0 5px 10px;
+}
+/* line 519, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.reponsive-select-full-options .grade {
+  display: table-cell;
+  vertical-align: middle;
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: #000;
+  background: #f4f2f1;
+  font-weight: bold;
+  border-radius: 2px;
+  border: 0;
+}
+/* line 535, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.reponsive-select-full-options .grade:hover, .reponsive-select-full-options .grade:focus {
+  background: #bcbdc0;
+  text-decoration: none;
+}
+/* line 540, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.reponsive-select-full-options .grade.active {
+  background: #7a4183;
+  color: #fff;
+}
+/* line 545, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.reponsive-select-full-options .grade.active:hover {
+  background: #9850a2;
+  color: #fff;
+}
+
+/* line 552, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.input-buttons {
+  margin: 0;
+  padding: 12px 0 0;
+  list-style: none;
+  *zoom: 1;
+  width: 480px;
+  margin: 0 auto;
+  width: auto;
+  margin: 0 -5px 0 35px;
+  padding-top: 22px;
+}
+/* line 38, /Users/justin/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.input-buttons:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 569, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.input-buttons input[type="checkbox"],
+.input-buttons input[type="radio"] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  position: absolute;
+}
+/* line 574, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.input-buttons li {
+  display: table;
+  width: 100%;
+  margin: 0 0 10px;
+  position: relative;
+  margin: 0 5px 10px;
+  float: left;
+  display: block;
+  width: auto;
+}
+/* line 587, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.input-buttons label {
+  display: table-cell;
+  vertical-align: middle;
+  height: 50px;
+  width: 100%;
+  padding: 0 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: #000;
+  background: #f4f2f1;
+  font-weight: bold;
+  border-radius: 4px;
+  width: 230px;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.125;
+}
+/* line 607, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.input-buttons label:hover {
+  background: #bcbdc0;
+  text-decoration: none;
+}
+/* line 612, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.input-buttons label br {
+  display: none;
+  display: inline;
+}
+/* line 622, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.input-buttons input[type="checkbox"]:checked + label,
+.input-buttons input[type="radio"]:checked + label {
+  background: #7a4183;
+  color: #fff;
+}
+/* line 625, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.input-buttons input[type="checkbox"]:checked + label:hover,
+.input-buttons input[type="radio"]:checked + label:hover {
+  background: #9850a2;
+}
+/* line 631, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.input-buttons input[type="checkbox"]:focus + label,
+.input-buttons input[type="radio"]:focus + label {
+  outline: thin dotted;
+  outline-offset: -2px;
+}
+/* line 636, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.modal .input-buttons {
+  padding: 0;
+  margin-bottom: 20px;
+  width: 400px;
+  padding-top: 20px;
+  margin: 0 -5px 30px;
+}
+/* line 644, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.modal .input-buttons label {
+  width: 190px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+/* line 655, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-issues {
+  margin: 0;
+  padding: 5px 0 0;
+  list-style: none;
+  *zoom: 1;
+  padding: 0;
+}
+/* line 38, /Users/justin/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.tyce-issues:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 663, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-issues .issue {
+  color: #696969;
+  border-bottom: 1px solid #d7d7d7;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  padding-bottom: 23px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.714;
+  border: 0;
+  padding: 20px 20px 10px;
+  min-height: 300px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  float: left;
+  width: 230px;
+  margin: 0 0 50px 50px;
+}
+/* line 671, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-issues .issue:last-child {
+  border: 0;
+  margin-bottom: 10px;
+}
+/* line 687, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.no-rgba .tyce-issues .issue, .no-box-shadow .tyce-issues .issue {
+  border: 1px solid #f2f2f2;
+}
+/* line 691, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-issues .issue:nth-child(3n+1) {
+  margin-left: 0;
+  clear: left;
+}
+/* line 697, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-issues .issue p {
+  margin: 0;
+}
+/* line 702, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.tyce-issues h3 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #7b3f84;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  min-height: 2.4em;
+  margin-bottom: 8px;
+}
+
+/* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+html.tyce #rotation-overlay {
+  display: none;
+}
+/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+html.tyce.landscape {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 16, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+html.tyce.landscape body {
+  height: auto;
+  overflow: hidden;
+}
+/* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+html.tyce.landscape #wrapper {
+  overflow: hidden;
+}
+/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+html.tyce.landscape form {
+  overflow: hidden;
+}
+/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+html.tyce.landscape #rotation-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #FFF;
+  color: #000;
+  z-index: 9999;
+  display: block;
+  text-align: center;
+}
+/* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+html.tyce.landscape #rotation-overlay div {
+  display: table-cell;
+  width: 50%;
+  vertical-align: middle;
+  padding: 0 20px;
+}
+/* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+html.tyce.landscape #rotation-overlay img {
+  display: inline;
+  width: 100%;
+}
+/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+html.tyce.landscape #rotation-overlay h2 {
+  display: inline;
+  color: #696969;
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+html.tyce.landscape .modal,
+html.tyce.landscape .modal-backdrop {
+  display: none !important;
+}
+
+/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.tyce-player-container {
+  margin-bottom: 150px;
+}
+/* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.tyce-player-container .player-content {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.tyce-player-container .player-content #player {
+  padding-bottom: 56.2%;
+}
+/* line 84, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.tyce-player-container .player-content #player .BrightcoveExperience {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.tyce-player-container .player-content .skip.button {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 70px;
+  height: 34px;
+  background: #dcdcde;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 34px;
+  line-height: 2.125rem;
+  margin: 0;
+}
+
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+#container-sim {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-bottom: 56.2%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  overflow: hidden;
+  background-color: #FFF;
+}
+/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+#container-sim.is-visible {
+  left: 0;
+}
+/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+#container-sim .sim-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls {
+  height: 50px;
+}
+/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: table;
+  width: 100%;
+}
+/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li {
+  display: table-cell;
+  background-color: #f2af00;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.steps li {
+  color: #696969;
+  background-color: #f4f2f1;
+}
+/* line 177, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.steps li:hover, .controls ul li.steps li.is-active {
+  background-color: #7a4183;
+  color: #FFF;
+}
+/* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.steps li.has-played {
+  background-color: #298fc2;
+  color: #FFF;
+}
+/* line 187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.steps li span {
+  display: none;
+}
+/* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.play-pause {
+  width: 50px;
+  overflow: hidden;
+}
+/* line 204, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.play-pause.is-playing .icon {
+  width: 16px;
+  height: 18px;
+  background-position: -300px -25px;
+  top: 4px;
+}
+/* line 213, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.play-pause.is-disabled {
+  opacity: 0.5;
+}
+/* line 219, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.volume {
+  width: 50px;
+  position: relative;
+}
+/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.volume:hover {
+  background-color: #FFF;
+}
+/* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.volume:hover i {
+  background-position: -350px -63px;
+}
+/* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.fullscreen {
+  width: 50px;
+}
+/* line 242, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls .icon {
+  display: inline-block;
+  position: relative;
+  background: url("../images/sprite.icons.tyce.png") no-repeat;
+  background-size: 500px 100px;
+}
+/* line 248, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls .icon.play {
+  width: 16px;
+  height: 18px;
+  background-position: -325px 0;
+  top: 4px;
+}
+/* line 255, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls .icon.pause {
+  width: 16px;
+  height: 18px;
+  background-position: -300px -25px;
+  top: 4px;
+}
+/* line 262, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls .icon.volume {
+  width: 26px;
+  height: 27px;
+  background-position: -350px -25px;
+  top: 8px;
+}
+/* line 269, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls .icon.fullscreen {
+  width: 25px;
+  height: 25px;
+  background-position: -325px -25px;
+  top: 7px;
+}
+
+/* line 282, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.volume-slider {
+  position: absolute;
+  top: -150px;
+  width: 100%;
+  height: 150px;
+  padding: 20px 0 10px 0;
+  background-color: #FFF;
+  display: none;
+}
+/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.volume-slider .ui-slider-vertical {
+  width: 8px;
+  height: 120px;
+  left: 50%;
+  margin-left: -4px;
+  background-color: #f4f2f1;
+}
+/* line 298, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.volume-slider .ui-slider-vertical .ui-slider-handle {
+  left: 50%;
+  margin-left: -10px;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: url("../images/sprite.icons.tyce.png") -375px 0;
+  background-size: 500px 100px;
+  outline: none;
+  border: none;
+}
+/* line 310, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.volume-slider .ui-slider-vertical .ui-slider-range {
+  left: 0;
+  width: 100%;
+}
+/* line 314, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.volume-slider .ui-slider-vertical .ui-slider-range-min {
+  background-color: #7a4183;
+}
+/* line 317, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.volume-slider .ui-widget-content {
+  border: none;
+}
+
+/* line 324, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.tyce-tooltip {
+  background-color: #426da9;
+}
+
+/* line 329, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.tyce-menu-container {
+  float: right;
+}
+/* line 332, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.tyce-menu-container .icon-tyce-menu {
+  width: 72px;
+  height: 30px;
+  background: url("../images/icon.tyce.menu.png") 0 0 no-repeat;
+  background-size: 72px 30px;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  border: none;
+}
+
+/* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.tyce #header-page {
+  display: none;
+}
+/* line 351, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.tyce #header-page.is-open {
+  display: block;
+}
+
+/* line 357, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+#header-tyce {
+  display: none;
+  padding-top: 15px;
+}
+/* line 365, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+#header-tyce .logo-u-main {
+  padding: 0 0 0 0;
+}
+/* line 369, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+#header-tyce.is-open .logo-u-main {
+  display: none;
+}
+/* line 373, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+#header-tyce .logo-u-main {
+  padding-top: 0;
+}
+/* line 376, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+#header-tyce .logo-u-main a {
+  background: none;
+}
+/* line 378, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+#header-tyce .logo-u-main img {
+  display: block;
+  width: 132px;
+}
+
+/* line 386, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+html.tyce #button-drawermenu {
+  display: block;
+}
+
+/* line 394, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay {
+  display: none;
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
+  zoom: 1;
+}
+/* line 403, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .instructions {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+/* line 410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .instructions h4 {
+  color: #794382;
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+/* line 416, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .instructions p {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  color: #696969;
+}
+/* line 422, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .instructions .button.close {
+  width: 192px;
+  display: inline-block;
+}
+/* line 428, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .bubble {
+  background: #426da9;
+  color: #fff;
+  position: absolute;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 22px;
+  line-height: 1.375rem;
+  width: 200px;
+  height: 100px;
+  padding: 0 20px;
+  font-weight: bold;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  padding: 16px 14px;
+}
+/* line 441, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .bubble:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+/* line 449, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .bubble.captions {
+  top: 24px;
+  right: 170px;
+}
+/* line 453, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .bubble.captions:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #426da9;
+  top: -6px;
+  right: 13px;
+}
+/* line 463, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .bubble.pause {
+  bottom: 24px;
+  left: 16px;
+}
+/* line 467, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .bubble.pause:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #426da9;
+  bottom: -6px;
+  left: 10px;
+}
+/* line 477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .bubble.progress {
+  bottom: 24px;
+  left: 316px;
+}
+/* line 481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .bubble.progress:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #426da9;
+  bottom: -6px;
+  left: 48%;
+}
+/* line 491, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .bubble.skip {
+  bottom: 100px;
+  right: 16px;
+  bottom: 24px;
+  right: 142px;
+}
+/* line 495, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .bubble.skip:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #426da9;
+  right: 44px;
+  bottom: -6px;
+}
+/* line 507, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.help-overlay .bubble.skip:after {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #426da9;
+  border-right: none;
+  right: -6px;
+  bottom: 25px;
+}

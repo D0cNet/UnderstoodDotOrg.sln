@@ -36,7 +36,7 @@ body,
   padding: 0;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/grid.scss */
   .row {
     max-width: 960px;

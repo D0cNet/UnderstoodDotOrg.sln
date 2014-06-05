@@ -267,8 +267,8 @@
         shown: [],
         idx: 0,
         init: function(game) {
-            this.sentences = game.config.sentences;
             this.display = game.config.display;
+            this.sentences = SSGame.pick(game.config.sentences, []);
         },
         reset: function() {
             var game = SSGame.current;
@@ -284,9 +284,15 @@
             return this.sentences.length;
         },
         getNext: function() {
+            /* Older random-from-bucket strategy
             if(this.sentences.length > this.idx) {
                 pool = this.sentences[this.idx];
                 return SSGame.pick(pool, []);
+            } else {
+                return null;
+            } */
+            if(this.sentences.length > this.idx) {
+                return this.sentences[this.idx];
             } else {
                 return null;
             }
@@ -322,19 +328,23 @@
                 if($this.hasClass('wrong')) {
                     $this.removeClass('wrong');
                     sentences.onCorrectLetter();
+                    SSGame.current.playSound('fixedclick');
                     transitions.phrases.unwronged($this, function() {
                     });
                 } else {
                     $this.addClass('wrong');
+                    SSGame.current.playSound('wrongclick');
                     transitions.phrases.wrong($this);
                 }
             } else {
                 //Swapped text either gets corrected or swapped back to the wrong text
                 if($this.text() == $this.data('real')) {
                     $this.removeClass('corrected');
+                    SSGame.current.playSound('wrongclick');
                     transitions.phrases.uncorrected($this);
                 } else {
                     $this.addClass('corrected');
+                    SSGame.current.playSound('correctclick');
                     sentences.onCorrectLetter();
                     transitions.phrases.correct($this, $.proxy(function() {
                     }, this));
@@ -369,7 +379,7 @@
             this.timer.reset();
             var intro = new SSGameModal({
                 showDuration: this.config.introDurationInSeconds * 1000,
-                title: 'Dyslexia',
+                title: this.getText(this.config.title),
                 text: SSGameModal.textToParagraphs(this.config.introText),
                 onClose: $.proxy(this.start, this)
             });
@@ -390,6 +400,14 @@
             });
             this.nodes.swapsContainer.append(this.nodes.swaps);
         },
+        loadSounds: function() {
+            var root = '/Presentation/includes/audio/simulations/dyslexia/effects/';
+            this._super({
+                wrongclick: root + 'Dyslexia_ThumbsDownBuzzer',
+                correctclick: root + 'Dyslexia_TileFlipClick',
+                fixedclick: root + 'Dyslexia_VerticalLetterFlip'
+            });
+        },
         start: function() {
             this.timer.start();
             sentences.showNext();
@@ -401,6 +419,11 @@
         stop: function() {
             var score = this.success.getScore();
             var scoreText = score.correct + '/' + score.max;
+            if(score.correct < score.max) {
+                this.playSound('gameOverFail');
+            } else {
+                this.playSound('gameOverSuccess');
+            }
             var done = new SSGameModal({
                 showDuration: 0,
                 text: this.config.finalText.replace('%score', scoreText)
@@ -440,6 +463,7 @@
             }, this)));
         },
         onSuccess: function() {
+            this.playSound('sentenceComplete');
             var b = this.nodes.sentence;
             this.success.increment();
             transitions.sentences.success($.proxy(function() {

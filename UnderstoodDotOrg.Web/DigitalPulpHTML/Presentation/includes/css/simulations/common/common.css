@@ -23,15 +23,22 @@
   font-size: 12px;
   line-height: 24px;
   color: #278DC1;
+  font-weight: bold;
 }
 
-/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .response.correct {
   background-image: url("../../../images/simulations/common/desktop/answer_correct.png");
   color: white;
 }
 
 /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+#gameboard .response.incorrect {
+  background-image: url("../../../images/simulations/common/desktop/answer_wrong.png");
+  color: white;
+}
+
+/* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog {
   border-width: 0;
   padding: 0;
@@ -42,14 +49,15 @@
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  z-index: 101;
 }
 
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog-titlebar {
   display: none;
 }
 
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .SSGame_modal_title {
   color: #7A4182;
   margin: 5px 0 30px 0;
@@ -57,12 +65,12 @@
   font-weight: bold;
 }
 
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard.breakpoint_phone .SSGame_modal_title {
   font-size: 24px;
 }
 
-/* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog-content {
   text-align: center;
   color: #248abf;
@@ -73,27 +81,27 @@
   color: #666;
 }
 
-/* line 58, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard.breakpoint_phone .ui-dialog-content {
   font-size: 18px;
 }
 
-/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog-content p {
   margin: 5px 0;
 }
 
-/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog-content p:first-child {
   margin-top: 0px;
 }
 
-/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog-content p:last-child {
   margin-bottom: 0px;
 }
 
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 76, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog .ui-dialog-buttonpane {
   border-width: 0;
   text-align: center;
@@ -104,12 +112,12 @@
   margin-bottom: 10px;
 }
 
-/* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
   float: none;
 }
 
-/* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button {
   background-image: none;
   background-color: #f0ae29;
@@ -127,22 +135,23 @@
   font-size: 18px;
 }
 
-/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard.breakpoint_phone {
   font-size: 16px;
 }
 
-/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover {
   background-color: #ffbc0d;
 }
 
-/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 108, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 .SSGameModalMask {
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
 }
 
-/* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #SSGame_timer {
   position: absolute;
   top: 30px;
@@ -156,7 +165,7 @@
   font-weight: bold;
 }
 
-/* line 117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 .breakpoint_phone #SSGame_timer {
   background-image: url("../../../images/simulations/common/phone/clock.png");
   top: 15px;
@@ -166,27 +175,27 @@
   line-height: 38px;
 }
 
-/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #SSGame_timer div {
   padding: 0 10px;
   margin-top: -2px;
 }
 
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 .breakpoint_phone #SSGame_timer div {
   padding: 0 5px;
   margin-top: 0px;
   font-size: 16px;
 }
 
-/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #SSGame_timer span {
   display: inline-block;
   width: .75em;
   text-align: center;
 }
 
-/* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #SSGame_timer span:nth-child(2) {
   width: auto;
 }

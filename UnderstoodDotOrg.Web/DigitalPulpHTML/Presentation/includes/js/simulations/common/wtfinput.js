@@ -17,6 +17,14 @@
         });
         return $me;
     };
+    function maxLength(el) {    
+        if (!('maxLength' in el)) {
+            var max = el.attributes.maxLength.value;
+            el.onkeypress = function () {
+                if (this.value.length >= max) return false;
+            };
+        }
+    }
     //http://stackoverflow.com/a/11077016
     function insertAtCursor(myField, myValue) {
         //IE support
@@ -47,11 +55,16 @@
         defaultConfig: {
             tweakOutputFunction: null,
             mirrorSelector: null,
-            onWrite: null
+            onWrite: null,
+            maxLength: null
         },
         setup: function(selector, cfg) {
             $(selector).addClass('wtfinput');
-            internal.input = $('<textarea></textarea>').autoresize();
+            internal.input = $('<textarea></textarea>').autoresize().attr({
+                autocomplete: 'off',
+                autocorrect: 'off',
+                spellcheck: false
+            });
             $(selector).append(internal.input); 
         }
     }
@@ -60,6 +73,9 @@
         internal.setup(inputSelector, cfg);
 
         var ui = {
+            setMaxLength: function(l) {
+                cfg.maxLength = l;
+            },
             getShownContent: function() {
                 return internal.input.val();
             },
@@ -81,10 +97,15 @@
             var retVal = true;
             var typedChr = String.fromCharCode(e.which);
             if(typedChr && typedChr.match(/\w/)) {
-                var shownChr = (cfg.tweakOutputFunction) ? cfg.tweakOutputFunction(typedChr) : typedChr;
-                if(shownChr != typedChr) {
-                    insertAtCursor(internal.input[0], shownChr);
+                console.log('Cfg: %o, maxLength: %s, len: %s', cfg, cfg.maxLength, internal.input.val());
+                if(cfg.maxLength && internal.input.val().length >= cfg.maxLength) {
                     retVal = false;
+                } else {
+                    var shownChr = (cfg.tweakOutputFunction) ? cfg.tweakOutputFunction(typedChr) : typedChr;
+                    if(shownChr != typedChr) {
+                        insertAtCursor(internal.input[0], shownChr);
+                        retVal = false;
+                    }
                 }
             }
             if(cfg.onWrite) {

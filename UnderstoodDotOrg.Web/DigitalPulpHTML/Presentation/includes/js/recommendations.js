@@ -79,6 +79,7 @@
 
         var $shownCard = $childInfoClone.eq(cardIndex);
         $shownCard.show();
+        $shownCard.find('.rsArrowLeft').addClass('rsArrowDisabled');
         addCloseEvent($shownCard);
 
         var windowWidth = Math.max($(window).width(), window.innerWidth);
@@ -120,29 +121,60 @@
         $childInfoClone.on('click', '.rsArrowLeft', function(e) {
           e.preventDefault();
           e.stopPropagation();
-          $childInfoClone.hide();
+          var currentElement = $(e.currentTarget);
+
+          currentElement.parents('.member-cards').find('.rsArrow').removeClass('rsArrowDisabled');
+
           cardIndex--;
-          if (cardIndex < 0) {
-            cardIndex = $childInfoClone.length-1;
-          }
+
           var $currentCard = $childInfoClone.eq(cardIndex);
-          $currentCard.show();
-          $currentCard.find(':focusable').first().focus();
-          addCloseEvent($childInfoClone.eq(cardIndex));
+
+          if ( cardIndex <= -1 ) {
+            cardIndex = 0;
+            $currentCard = $childInfoClone.eq(cardIndex);
+            currentElement.addClass('rsArrowDisabled');
+          }
+
+            $childInfoClone.hide();
+            $currentCard.show();
+            $currentCard.find(':focusable').first().focus();
+            addCloseEvent($childInfoClone.eq(cardIndex));
+
+          if ( cardIndex <= 0 ) {
+            $currentCard.find('.rsArrowLeft').addClass('rsArrowDisabled');
+          }
+
         });
 
         $childInfoClone.on('click', '.rsArrowRight', function(e) {
           e.preventDefault();
           e.stopPropagation();
-          $childInfoClone.eq(cardIndex).hide();
+          var currentElement = $(e.currentTarget);
+
+          currentElement.parents('.member-cards').find('.rsArrow').removeClass('rsArrowDisabled');
+
           cardIndex++;
+
           if (cardIndex >= $childInfoClone.length) {
-            cardIndex = 0;
+            cardIndex = $childInfoClone.length-1;
           }
+
           var $currentCard = $childInfoClone.eq(cardIndex);
+
+          if (cardIndex == $childInfoClone.length-1) {
+            cardIndex = $childInfoClone.length-1;
+            $currentCard = $childInfoClone.eq(cardIndex);
+          }
+
+          $childInfoClone.eq(cardIndex).hide();
           $currentCard.show();
           $currentCard.find(':focusable').eq(1).focus();
           addCloseEvent($childInfoClone.eq(cardIndex));
+
+          if (cardIndex == $childInfoClone.length-1) {
+            $currentCard.find('.rsArrowRight').addClass('rsArrowDisabled');
+          }
+
         });
       };
     };
@@ -229,11 +261,15 @@
 
     self.init = function() {
       self.$body = $(document.body);
+      self.$recosCarousels = $('.carousel-recos');
       self.attachHandlers();
+      self.applyKeyboardAccess();
     };
 
     self.attachHandlers = function() {
       self.$body.on('click', '.popover-content .close', self.closePopover);
+      self.$recosCarousels.on('click', '.icon-skip', self.skipRecommendation);
+      self.$body.on('click', '.group-cards .action-skip-this', self.skipGroup);
     };
 
     self.closePopover = function(e) {
@@ -243,22 +279,81 @@
       link.trigger('click');
     };
 
+    self.skipRecommendation = function(e) {
+      e.preventDefault();
+
+      var clicked = $(e.currentTarget),
+          item = clicked.parents('li');
+
+      $.get('/data/recommendations/recommendation-item.html', self.newRecommendationCallback(item), 'html');
+    };
+
+    self.skipGroup = function(e) {
+      e.preventDefault();
+
+      var clicked = $(e.currentTarget),
+          item = clicked.parents('.group-card');
+
+      $.get('/data/recommendations/group-item.html', self.newGroupItemCallback(item), 'html');
+    };
+
+    self.newGroupItemCallback = function(item) {
+      return function(res) {
+        var wrapper = item.wrap('<div />');
+
+        wrapper.fadeOut(function() {
+          item.replaceWith(res);
+
+          wrapper.fadeIn(function() {
+            wrapper.replaceWith(res);
+          });
+        });
+      };
+    };
+
+    self.newRecommendationCallback = function(item) {
+      return function(res) {
+        var parent = item.parents('ul');
+
+        item.fadeOut(function() {
+          item.remove();
+          parent.append(res);
+          var items = parent.children();
+
+          items.height('').equalHeights();
+        });
+      };
+    };
+
+    self.applyKeyboardAccess = function() {
+      new U.keyboard_access({
+        focusElements: '.carousel-recos .rsContainer a, .carousel-recos .rsContainer button',
+        blurElements: '.carousel-recos .rsContainer a, .carousel-recos .rsContainer button',
+        forceBlur: true,
+        focusHandler: function (e) {
+          var el = $(e.currentTarget),
+              item = el.parents('li');
+
+          item.addClass('focused');
+        },
+        blurHandler: function(e, newTarget) {
+          var el = $(e.currentTarget),
+              item = el.parents('li'),
+              targetParentItem = newTarget.parents('li');
+
+          if (!item.is(targetParentItem)) {
+            item.removeClass('focused');
+          }
+        }
+      });
+    };
+
     // carousel for you / turn on action buttons
     U.actionButtons($('.recos-for-you .buttons-container'));
 
     // carousel for you / make equal height items
     if (Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all') ){
       $('.recos-for-you li').equalHeights();
-
-      //  show/hide article tools on hover
-      $('.recos-for-you li').on({
-          mouseenter: function () {
-            $(this).find('.buttons-container').show();
-          },
-          mouseleave: function () {
-            $(this).find('.buttons-container').hide();
-          }
-      });
 
     } else {
       $('.recos-for-you li').height('');
@@ -462,7 +557,8 @@
       self.dom.container = $('.recos-blogs');
       self.dom.html = $('html');
 
-      if (self.dom.container.length === 0) {
+      // exit if module not existing, or IE8
+      if (self.dom.container.length === 0 || !Modernizr.mq('only all')) {
         return;
       }
 
@@ -479,7 +575,7 @@
         return;
       }
 
-      U.carousels.initializeSlider(container, slideSelector, navigation, 2, 2, 2, self.resize);
+      U.carousels.initializeSlider(container, slideSelector, navigation, 2, 2, 1, self.resize);
     };
 
     // on tab click, make sure Royalslider can calculate height/width of the slides.  Use delay.
@@ -502,7 +598,12 @@
 
   // Initialize the module on page load.
   $(document).ready(function() {
-    new U.tabToolkit();
+    
+    // no carousel for IE8
+    if ( Modernizr.mq('only all')) {
+      new U.tabToolkit();
+    }
+
   });
 
   /*
@@ -635,6 +736,19 @@
   };
 
 })(jQuery);
+(function($) {
+
+  $(document).ready(function() {
+    var uniformElements = [
+      '.selector',
+      '.radio'
+    ];
+
+    new U.Global.readspeakerUniform(uniformElements);
+  });
+
+})(jQuery);
+
 
 
 

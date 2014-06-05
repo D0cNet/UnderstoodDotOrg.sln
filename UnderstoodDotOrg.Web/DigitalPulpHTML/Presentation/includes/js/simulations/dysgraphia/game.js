@@ -17,7 +17,7 @@
             this._super();
             var intro = new SSGameModal({
                 showDuration: this.config.introDurationInSeconds * 1000,
-                title: 'Dysgraphia',
+                title: this.getText(this.config.title),
                 text: SSGameModal.textToParagraphs(this.config.introText),
                 onClose: $.proxy(this.start, this)
             });
@@ -44,6 +44,26 @@
             this.nodes.challenge.append(this.nodes.prompt);
             this.nodes.challenge.append(this.nodes.input);
         },
+        loadSounds: function() {
+            var root = '/Presentation/includes/audio/simulations/dysgraphia/effects/';
+            this._super({
+                keypress: [
+                    root + 'Dysgraphia_KeyType1',
+                    root + 'Dysgraphia_KeyType2',
+                    root + 'Dysgraphia_KeyType3',
+                    root + 'Dysgraphia_KeyType4',
+                    root + 'Dysgraphia_KeyType5',
+                    root + 'Dysgraphia_KeyType4',
+                    root + 'Dysgraphia_KeyType5',
+                    root + 'Dysgraphia_KeyType6',
+                    root + 'Dysgraphia_KeyType7',
+                    root + 'Dysgraphia_KeyType8',
+                    root + 'Dysgraphia_KeyType9',
+                    root + 'Dysgraphia_KeyType10',
+                    root + 'Dysgraphia_KeyType11'
+                ]
+            });
+        },
         start: function() {
             this.timer.start();
             this.showNextPrompt();
@@ -52,10 +72,19 @@
         },
         stop: function() {
             var score = this.success.getScore();
+            var finalText = '';
             var scoreText = score.correct + '/' + score.max;
+            if(score.correct < score.max) {
+                this.playSound('gameOverFail');
+                finalText = this.getText(this.config.finalText.onTimeout);
+            } else {
+                this.playSound('gameOverSuccess');
+                finalText = this.getText(this.config.finalText.onComplete);
+            }
+            finalText = finalText.replace('%score', scoreText);
             var done = new SSGameModal({
                 showDuration: 0,
-                text: this.config.finalText.replace('%score', scoreText)
+                text: finalText
             });
             done.setButtons([{
                 text: 'Try Again',
@@ -72,9 +101,15 @@
             done.open();
             this.events.trigger('stop');
         },
+        setMaxLength: function() {
+            var bp = this.board.getCurrentBreakpoint();
+            this.inputUI.setMaxLength(this.config.maxLength[bp[2]]);
+        },
         run: function(localCfg) {
             if(!this._super(localCfg)) return;
+            this.board.board.on('breakpointChange', $.proxy(this.setMaxLength, this));
             this.inputUI = new WTFInput(this.nodes.input, {
+                maxLength: this.config.maxLength[this.board.getCurrentBreakpoint()[2]],
                 tweakOutputFunction: $.proxy(function(typed) {
                     if(this.success.correct == 0) {
                         return this.initialTweak(typed);
@@ -88,7 +123,13 @@
             });
             this.board.board.find('textarea')
                 .on('focus', function() { SSGame.current.board.board.addClass('infocus'); })
-                .on('blur', function() { SSGame.current.board.board.removeClass('infocus'); });
+                .on('blur', function() { SSGame.current.board.board.removeClass('infocus'); })
+                .on('keydown', function(e) {
+                    var typedChr = String.fromCharCode(e.which);
+                    if(typedChr && typedChr.match(/\w/)) {
+                        //SSGame.current.playSound('keypress');
+                    }
+                });
             this.success = new SSGameSuccess({
                 node: this.nodes.score,
                 count: this.config.prompts.length,
@@ -140,12 +181,15 @@
         showNextPrompt: function() {
             this.currPromptIdx ++;
             var options = this.config.prompts[this.currPromptIdx];
-            var text = SSGame.pick(options, []);
-            if(!text) this.timer.stop();
+            if(!options) this.timer.stop();
             else {
-                this.currPrompt = text;
-                this.nodes.prompt.text(text);
-                this.inputUI.startInput();
+                var text = SSGame.pick(options, []);
+                if(!text) this.timer.stop();
+                else {
+                    this.currPrompt = text;
+                    this.nodes.prompt.text(text);
+                    this.inputUI.startInput();
+                }
             }
         },
         checkResponse: function() {
@@ -157,6 +201,7 @@
             }
         },
         onSuccess: function() {
+            this.playSound('sentenceComplete');
             this.success.increment();
             this.inputUI.stopInput();
             $('.wtfinput span').animate({
