@@ -22,21 +22,7 @@
 
             <div class="col col-9 header-share-save">
                 <!-- BEGIN PARTIAL: share-save -->
-                <div class="share-save-container">
-                    <div class="share-save-social-icon">
-                        <div class="toggle">
-                            <a class="socicon icon-facebook" href="REPLACE">Facebook</a><br>
-                            <a class="socicon icon-twitter" href="REPLACE">Twitter</a><br>
-                            <a class="socicon icon-googleplus" href="REPLACE">Google+</a><br>
-                            <a class="socicon icon-pinterest" href="REPLACE">Pinterest</a><br>
-                        </div>
-                    </div>
-                    <div class="share-save-icon">
-                        <h3>Share &amp; Save</h3>
-                        <!-- leave no white space for layout consistency -->
-                        <a class="icon icon-share" href="REPLACE">Share</a><span class="tools"><a class="icon icon-email" href="REPLACE">Email</a><a class="icon icon-save" href="REPLACE">Save</a><a class="icon icon-print" href="REPLACE">Print</a><a class="icon icon-remind" href="REPLACE">Remind</a><a class="icon icon-rss" href="REPLACE">RSS</a></span>
-                    </div>
-                </div>
+                <sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Common/ShareAndSaveTool.ascx" />
 
                 <!-- END PARTIAL: share-save -->
             </div>

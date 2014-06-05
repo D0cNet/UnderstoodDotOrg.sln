@@ -22,6 +22,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy {
         protected global::System.Web.UI.WebControls.Repeater rptrActionAlerts;
         
         /// <summary>
+        /// sbCommentsSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbCommentsSummary;
+        
+        /// <summary>
         /// rptArticles control.
         /// </summary>
         /// <remarks>

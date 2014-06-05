@@ -56,7 +56,7 @@
 
                     $(".icon-email").click(function () {
                         $(".email-a-friend-modal").show();
-                        $(".email-a-friend-modal").css({ "top": "-475px", "overflow": "hidden" });
+                        $(".email-a-friend-modal").css({ "top": "163px", "overflow": "hidden" });
                         $(".email-a-friend-modal .modal-dialog").css("opacity", "1");
                     })
                 </script>
