@@ -1120,6 +1120,19 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return notificationList;
         }
 
+        public static List<Comment> GetAllCommentsOnItem(Sitecore.Data.Items.Item item)
+        {
+            List<Comment> comments = new List<Comment>();
+            if (item.Fields["BlogId"] != null && item.Fields["BlogPostId"] != null)
+            {
+                comments = CommunityHelper.ReadComments(
+                                item.Fields["BlogId"].Value,
+                                item.Fields["BlogPostId"].Value);
+            }
+
+            return comments;
+        }
+
         public static List<FavoritesModel> GetFavorites(Guid username)
         {
             List<FavoritesModel> favoritesList = new List<FavoritesModel>();
@@ -1136,7 +1149,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     favorite.Title = sitecoreItem.DisplayName.ToString();
                     favorite.Url = sitecoreItem.GetUrl();
                     favorite.ContentId = item.ContentId;
-                    favorite.ReplyCount = "0";
+                    favorite.ReplyCount = GetAllCommentsOnItem(sitecoreItem).Count.ToString();
                     favoritesList.Add(favorite);
                 }
             }
