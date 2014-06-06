@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.Search;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidgets
@@ -25,29 +28,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
         protected void Page_Load(object sender, EventArgs e)
         {
             var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountEvents);
-            hypEventsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
 
-            //TO-DO Add call to get Favorites and cast them as FavoriteModel objects
-
-            //Stub for one link
+            hypEventsTab.NavigateUrl = Sitecore.Context.Database.GetItem(Constants.Pages.WhatsHappening).GetUrl();
+            
+            var events = SearchHelper.GetUpcomingEvents(2).ToList();
             List<EventModel> eventsDataSource = new List<EventModel>();
-            EventModel stubEvent = new EventModel();
-            stubEvent.Title = "Event 1";
-            stubEvent.TitleUrl = "/";
-            stubEvent.Type = "Q&A";
-            stubEvent.TitleUrl = "/";
-            stubEvent.Date = "Dec 12 2014 ";
-            stubEvent.Time = "2:48PM";
-            eventsDataSource.Add(stubEvent);
-
-            stubEvent = new EventModel();
-            stubEvent.Title = "Event 2";
-            stubEvent.TitleUrl = "/";
-            stubEvent.Type = "Webinar";
-            stubEvent.TitleUrl = "/";
-            stubEvent.Date = "Nov 13 2014 ";
-            stubEvent.Time = "8:30AM";
-            eventsDataSource.Add(stubEvent);
+            
+            foreach (BaseEventDetailPageItem eventItem in events.OrderByDescending(i => i.EventStartDate.DateTime.Date).ThenBy(i => i.EventStartDate.DateTime.TimeOfDay))
+            {
+                EventModel stubEvent = new EventModel();
+                stubEvent.Title = eventItem.EventHeading.Rendered;
+                stubEvent.TitleUrl = eventItem.InnerItem.GetUrl();
+                stubEvent.Type = CommunityHelper.DetermineItemType(eventItem.InnerItem);
+                stubEvent.TypeUrl = hypEventsTab.NavigateUrl;
+                stubEvent.Date = eventItem.EventStartDate.DateTime.ToShortDateString();
+                stubEvent.Time = eventItem.EventStartDate.DateTime.ToShortTimeString();
+                eventsDataSource.Add(stubEvent);
+            }
 
             rptEvents.DataSource = eventsDataSource;
             rptEvents.DataBind();

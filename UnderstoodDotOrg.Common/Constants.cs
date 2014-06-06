@@ -402,6 +402,11 @@ namespace UnderstoodDotOrg.Common
             {
                 get { return new Guid("{BAD8FF7E-EDC1-4FC4-A48D-7BA85407C662}"); }
             }
+
+            public static Guid WhatsHappening
+            {
+                get { return new Guid("{DEFA8570-6402-4FC8-A32E-D769F1F6EE0B}"); }
+            }
         }
 
         #endregion
@@ -637,6 +642,7 @@ namespace UnderstoodDotOrg.Common
             public static string DefaultArticlePage { get { return "{2D5AF94C-1668-44C4-978A-E96E1F42CBFE}"; } }
             public static string TextTipPage { get { return "{F70B81A5-1FD4-4345-BBDE-BE68F255170D}"; } }
             public static string WebinarEventPage { get { return "{173A599B-2836-4A4B-B780-834DD515C701}"; } }
+            public static string ChatEventPage { get { return "{F5D0D610-9E5B-4C28-B9D3-F6ADD8412E45}"; } }
 
             public static Dictionary<string, string> Dictionary =
 	            new Dictionary<string, string>()
@@ -644,7 +650,8 @@ namespace UnderstoodDotOrg.Common
 	                {VideoArticlePage, "Video"},
 	                {DefaultArticlePage, "Article"},
 	                {TextTipPage, "Tip"},
-	                {WebinarEventPage, "Webinar"}
+	                {WebinarEventPage, "Webinar"},
+                    {ChatEventPage, "Chat"}
 	            };
 	        
         }
