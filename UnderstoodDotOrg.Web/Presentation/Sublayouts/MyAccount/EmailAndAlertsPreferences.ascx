@@ -71,7 +71,8 @@
 
 </div>
         <%--<button class="button">Save</button>--%>
-          <asp:Button runat="server" ID="uxSave" OnClick="uxSave_Click" CssClass="button" text="Submit"/>
+	<div style="width:100%; text-align: center;">
+          <asp:Button runat="server" ID="uxSave" OnClick="uxSave_Click" CssClass="button" Width="30%" text="Submit"/>
           <asp:Literal ID="uxMessage" runat="server"></asp:Literal>
-      
+    </div>
 </div>

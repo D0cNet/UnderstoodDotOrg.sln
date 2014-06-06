@@ -1091,6 +1091,7 @@
   /* line 380, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
   .account-notification-tabs .checkbox-wrapper {
     text-align: right;
+	padding-right: 130px;
   }
 }
 /* line 389, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
