@@ -117,7 +117,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 //trust me, I hate that I have to stringify this to make it work...
                 try
                 {
-                    var IEP = ux504Status.Items.FindByValue("{" + singleChild.Section504Status.ToString().ToUpper() + "}");
+                    var IEP = uxIEPStatus.Items.FindByValue("{" + singleChild.IEPStatus.ToString().ToUpper() + "}");
                     if (IEP != null)
                     {
                         //only clear selection if we have a match
@@ -130,7 +130,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
                 try
                 {
-                    var s504 = uxIEPStatus.Items.FindByValue("{" + singleChild.IEPStatus.ToString().ToUpper() + "}");
+                    var s504 = ux504Status.Items.FindByValue("{" + singleChild.Section504Status.ToString().ToUpper() + "}");
                     if (s504 != null)
                     {
                         ux504Status.ClearSelection();
