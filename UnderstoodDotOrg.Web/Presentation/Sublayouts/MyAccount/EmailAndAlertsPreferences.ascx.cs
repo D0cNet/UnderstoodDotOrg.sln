@@ -24,6 +24,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 ux_private_message_alerts.Checked = CurrentMember.PrivateMessageAlerts;
                 ux_support_plan_reminders.Checked = CurrentMember.SupportPlanReminders;
                 ux_weekly_personalized_newsletter.Checked = CurrentMember.allowNewsletter;
+                
+                ux_digest_email_weekly.Checked = CurrentMember.Subscribed_WeeklyDigest;
+                ux_digest_email_daily.Checked = CurrentMember.Subscribed_DailyDigest;
             }
         }
 
@@ -38,6 +41,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             CurrentMember.PrivateMessageAlerts = ux_private_message_alerts.Checked;
             CurrentMember.SupportPlanReminders = ux_support_plan_reminders.Checked;
             CurrentMember.allowNewsletter = ux_weekly_personalized_newsletter.Checked;
+
+            CurrentMember.Subscribed_DailyDigest = ux_digest_email_daily.Checked;
+            CurrentMember.Subscribed_WeeklyDigest = ux_digest_email_weekly.Checked; 
+
+            
             MembershipManager mgr = new MembershipManager();
             try
             {

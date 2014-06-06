@@ -12,24 +12,9 @@ namespace UnderstoodDotOrg.Domain.Membership
 
     public partial class Member
     {
-        private bool _dataIsDirty = false;
+       //private bool _dataIsDirty = false;
         
-        // private string _comment;
-        // private string _email;
-        // private string _password;
-        private Guid _preferedLangugage;
-        private bool _agreedToSignUpTerms;
-        private string _mobilePhoneNumber;
 
-     
-        //bg: i would like to be able to flag if values need to be updated, inserted, or ignored on a field by field basis but we're going to regenerate later anyways.. but entitiy doesn't do a great job either so.. review 
-        public bool ExtendedPropertiesAreDirty
-        {
-            get
-            {
-                return _dataIsDirty;
-            }
-        }
 
         /// <summary>
         /// bg: added in to track our Unauthorized Member flag.
@@ -51,52 +36,9 @@ namespace UnderstoodDotOrg.Domain.Membership
         //    bg: sitecore GUID for english/spanish/etc.
         //    currently only being set when a user subscribes for a personalized newsletter
         /// </summary>
-        public Guid PreferedLanguage 
-        { 
-            get
-            {
-                return _preferedLangugage ;
-            }
-            set 
-            {
-                //data is never dirty if it is *being intialized from the db*
-                _preferedLangugage = value;
-                _dataIsDirty = true;
-            }
-        }
-
-        /// <summary>
-        /// Bool here, remember to save as bit to sql db
-        /// Used to track if a website member has agreed to the terms and services agreement
-        /// </summary>
-        public bool AgreedToSignUpTerms 
-        { 
-            get
-            {
-                return _agreedToSignUpTerms;
-            }
-            set 
-            {
-                _agreedToSignUpTerms = value;
-                _dataIsDirty = true;
-            }
-       }
-        
-        /// <summary>
-        /// Cell phone number
-        /// </summary>
-        public string MobilePhoneNumber 
-        {
-            get
-            {
-                return _mobilePhoneNumber;
-            }
-            set
-            {
-                _mobilePhoneNumber = value;
-                _dataIsDirty = true;
-            }
-        }
+        public Guid PreferedLanguage { get; set; }
+        public bool AgreedToSignUpTerms { get; set; }
+        public string MobilePhoneNumber { get; set; }
         public bool SupportPlanReminders { get; set; }
         public bool ObservationLogReminders { get; set; }
         public bool EventReminders { get; set; }
@@ -104,6 +46,9 @@ namespace UnderstoodDotOrg.Domain.Membership
         public bool AdvocacyAlerts { get; set; }
         public bool PrivateMessageAlerts { get; set; }
         public bool NotificationsDigest { get; set; }
+
+        public bool Subscribed_DailyDigest { get; set; }
+        public bool Subscribed_WeeklyDigest { get; set; }
 
         public virtual ICollection<Quiz> CompletedQuizes {get; set;}
 

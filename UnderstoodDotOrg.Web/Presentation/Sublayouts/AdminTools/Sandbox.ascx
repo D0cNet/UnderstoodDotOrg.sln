@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Sandbox.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools.Sandbox" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
-
+<h1> Activity Count: <asp:Label ID="lblActivityCount" runat="server"></asp:Label></h1>
 
     <h1>Test User Activity Logging</h1>
     User Guid:<asp:TextBox ID="txtMemberGuid" runat="server" Width="401px" ReadOnly="True">810EBB87-14E1-4DAF-8EAE-F69E1754C640</asp:TextBox>

@@ -58,6 +58,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         protected global::System.Web.UI.WebControls.CheckBox ux_notifications_digest;
         
         /// <summary>
+        /// ux_digest_email_daily control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton ux_digest_email_daily;
+        
+        /// <summary>
         /// frDaily control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frDaily;
+        
+        /// <summary>
+        /// ux_digest_email_weekly control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton ux_digest_email_weekly;
         
         /// <summary>
         /// frWeekly control.

@@ -17,6 +17,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ActivityLog throwawaylog = new ActivityLog();
+            //ContentId, ActivityValue
+            lblActivityCount.Text = throwawaylog.GetActivityCountByValue(new Guid("ECEFA524-93F5-4CE3-817B-A6DBBDA7640F"), 
+                                                                          Constants.UserActivity_Values.Favorited).ToString();
+
+
             ActivityLog log = new ActivityLog(new Guid("810EBB87-14E1-4DAF-8EAE-F69E1754C640"), Constants.UserActivity_Values.Favorited);
 
             foreach (ActivityItem item in log.Activities)
@@ -49,15 +55,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             //           this.CurrentMember.AgreedToSignUpTerms;
 
 
+            /*
+
             Checklist cl = new Checklist();
+            cl.MemberId = CurrentMember.MemberId ;
             ChecklistItem clItem  = new ChecklistItem();
+            
             clItem.QuestionId = Guid.NewGuid();
             clItem.Checked = true;
 
             cl.MemberAnswers.Add(clItem);
             MembershipManager mgr = new MembershipManager();
-            mgr.ChecklistResults_SaveToDb(Guid.NewGuid(), cl);
-
+            mgr.ChecklistResults_SaveToDb(cl.MemberId, cl);
+            */
             
         }
 

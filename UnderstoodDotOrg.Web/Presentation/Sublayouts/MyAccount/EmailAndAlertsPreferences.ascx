@@ -21,11 +21,12 @@
       </div>
       <div class="checkbox-wrapper">
         <label class="daily-digest" for="digest-email-daily">
-          <input type="radio" name="digest-email-option" id="digest-email-daily" value="" checked>
+          <asp:RadioButton runat="server"   name="digest-email-option" id="ux_digest_email_daily" value="true" GroupName="DigestButtons" />
           <span><sc:FieldRenderer ID="frDaily" runat="server" FieldName="Daily" /></span>
         </label>
         <label class="weekly-digest" for="digest-email-weekly">
-          <input type="radio" name="digest-email-option" id="digest-email-weekly" value="">
+          <asp:RadioButton runat="server" name="digest-email-option" id="ux_digest_email_weekly" value="true" GroupName="DigestButtons" />
+            
           <span><sc:FieldRenderer ID="frWeekly" runat="server" FieldName="Weekly" /></span>
         </label>
       </div>

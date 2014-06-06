@@ -534,6 +534,8 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             return commentAdded;
         }
+
+
         /// <summary>
         /// Used to inflate a member's quiz items and the responses that the user has saved to the db so far
         /// </summary>
@@ -980,38 +982,39 @@ namespace UnderstoodDotOrg.Domain.Membership
         private bool UpdateMember_ExtendedProperties(Member member)
         {
             bool success = false;
-            //only update if any of the values in the member have been updated outside of the database
-            if (member.ExtendedPropertiesAreDirty)
+            try
             {
-                try
-                {
 
-                    string sql = "UPDATE  dbo.Members " +
-                            " SET PreferedLanguage = @PreferedLanguage, " +
-                            " AgreedToSignUpTerms = @AgreedToSignUpTerms, " +
-                            " MobilePhoneNumber = @MobilePhoneNumber  " +
-                            " WHERE (MemberId = @MemberId)";
-                    using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                string sql = "UPDATE  dbo.Members " +
+                        " SET PreferedLanguage = @PreferedLanguage, " +
+                        " AgreedToSignUpTerms = @AgreedToSignUpTerms, " +
+                        " MobilePhoneNumber = @MobilePhoneNumber  " +
+                        " Subscribed_DailyDigest = @Subscribed_DailyDigest  " +
+                        " Subscribed_WeeklyDigest = @Subscribed_WeeklyDigest  " +
+                        " WHERE (MemberId = @MemberId)";
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
-                        conn.Open();
-                        using (SqlCommand cmd = new SqlCommand(sql, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
-                            cmd.Parameters.AddWithValue("@PreferedLanguage", member.PreferedLanguage.ToString());
-                            cmd.Parameters.AddWithValue("@AgreedToSignUpTerms", member.AgreedToSignUpTerms);
-                            cmd.Parameters.AddWithValue("@MobilePhoneNumber", member.MobilePhoneNumber != null ? member.MobilePhoneNumber : "");
-                            cmd.ExecuteNonQuery();
-                        }
+                        cmd.Parameters.AddWithValue("@PreferedLanguage", member.PreferedLanguage.ToString());
+                        cmd.Parameters.AddWithValue("@AgreedToSignUpTerms", member.AgreedToSignUpTerms);
+                        cmd.Parameters.AddWithValue("@MobilePhoneNumber", member.MobilePhoneNumber != null ? member.MobilePhoneNumber : "");
+                        cmd.Parameters.AddWithValue("@Subscribed_DailyDigest", member.Subscribed_DailyDigest);
+                        cmd.Parameters.AddWithValue("@Subscribed_WeeklyDigest", member.Subscribed_WeeklyDigest);
+                        cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
+                        cmd.ExecuteNonQuery();
                     }
                 }
-                catch (SqlException ex)
-                {
-                    string msg = "Insert Error:";
-                    msg += ex.Message;
-                    //bg: I would like to log this, need to find that log method again.
-                    throw ex;
-                }
             }
+            catch (SqlException ex)
+            {
+                string msg = "Insert Error:";
+                msg += ex.Message;
+                //bg: I would like to log this, need to find that log method again.
+                throw ex;
+            }
+            
             success = true;
 
 

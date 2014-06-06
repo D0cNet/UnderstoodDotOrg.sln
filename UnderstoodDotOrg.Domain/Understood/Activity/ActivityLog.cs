@@ -12,7 +12,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Activity
     public class ActivityLog
     {
         public virtual ICollection<ActivityItem> Activities { get; set; }
-       
+        
         /// <summary>
         /// Creates a new empty activity log
         /// </summary>
@@ -32,7 +32,48 @@ namespace UnderstoodDotOrg.Domain.Understood.Activity
             FillActivityLog(MemberId,ActivityValue );
      
         }
-        
+        /// <summary>
+        /// Pass in your search value (probably a constant) and get back a total count from the db.
+        /// </summary>
+        /// <param name="ActivityValue"></param>
+        /// <returns></returns>
+        public int GetActivityCountByValue(Guid ContentId, string ActivityValue)
+        {
+            int count = 0;
+            string sql = " SELECT Count([rowId]) " +
+                            " FROM [dbo].[MemberActivity] " +
+                            " WHERE Value = @ActivityValue " +
+                            " and [Key] = @ContentId " +
+                            " and [Deleted] = 0 ";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ActivityValue", ActivityValue);
+                        cmd.Parameters.AddWithValue("@ContentId", ContentId);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                             count = reader.GetInt32(0) ;//Count;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return count;
+        }
+
+
         private void FillActivityLog (Guid MemberId, string ActivityValue)
         {
             string sql = " SELECT [Key] AS ContentId, Value AS ActivityValue, ActivityType, DateModified " +
