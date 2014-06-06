@@ -34,13 +34,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         protected void btnAgree_Click(object sender, EventArgs e)
         {
             CurrentMember.AgreedToSignUpTerms = true;
+            
             var membershipManager = new MembershipManager();
             membershipManager.UpdateMember(CurrentMember);
-            string url = MembershipHelper.GetNextStepURL(1);
+            
+            //string url = MembershipHelper.GetNextStepURL(1);
+            // send them to My Account, not into CMP
+            string url = MyAccountFolderItem.GetMyAccountPage();
+            
             if (Session[Constants.SessionPreviousUrl] != null)
             {
                 url = Session[Constants.SessionPreviousUrl].ToString();
             }
+            
             Response.Redirect(url);
         }
 
