@@ -31,6 +31,20 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                 {
                     CreateTelligentPost(itm, 4); //blog id should be 4
                 }
+                if (itm["TelligentUrl"] == string.Empty && itm.Name != "__StandardValues")
+                {
+                    if (!string.IsNullOrEmpty(itm["BlogPostId"]) || !itm["BlogPostId"].Equals("1"))
+                    {
+                        AddTelligentUrl(itm, itm["BlogId"], itm["BlogPostId"]);
+                    }
+                }
+                if (itm["ContentTypeId"] == string.Empty && itm.Name != "__StandardValues")
+                {
+                    if (!string.IsNullOrEmpty(itm["BlogPostId"]) || !itm["BlogPostId"].Equals("1"))
+                    {
+                        AddContentTypeId(itm, itm["BlogId"], itm["BlogPostId"]);
+                    }
+                }
             }
             else if (itm.InheritsFromType(BlogsPostPageItem.TemplateId) && itm.Name != "__StandardValues")
             {
@@ -51,19 +65,19 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                             return;
                     }
                 }
-            }
-            if (itm["TelligentUrl"] == string.Empty && itm.Name != "__StandardValues")
-            {
-                if (!string.IsNullOrEmpty(itm["BlogPostId"]) || !itm["BlogPostId"].Equals("1"))
+                if (itm["TelligentUrl"] == string.Empty && itm.Name != "__StandardValues")
                 {
-                    AddTelligentUrl(itm, itm["BlogId"], itm["BlogPostId"]);
+                    if (!string.IsNullOrEmpty(itm["BlogPostId"]) || !itm["BlogPostId"].Equals("1"))
+                    {
+                        AddTelligentUrl(itm, itm["BlogId"], itm["BlogPostId"]);
+                    }
                 }
-            }
-            if (itm["ContentTypeId"] == string.Empty && itm.Name != "__StandardValues")
-            {
-                if (!string.IsNullOrEmpty(itm["BlogPostId"]) || !itm["BlogPostId"].Equals("1"))
+                if (itm["ContentTypeId"] == string.Empty && itm.Name != "__StandardValues")
                 {
-                    AddContentTypeId(itm, itm["BlogId"], itm["BlogPostId"]);
+                    if (!string.IsNullOrEmpty(itm["BlogPostId"]) || !itm["BlogPostId"].Equals("1"))
+                    {
+                        AddContentTypeId(itm, itm["BlogId"], itm["BlogPostId"]);
+                    }
                 }
             }
         }

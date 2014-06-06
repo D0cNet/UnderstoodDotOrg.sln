@@ -1283,7 +1283,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     webClient.Headers.Add("Rest-User-Token", TelligentAuth());
 
-                    var requestUrl = GetApiEndPoint("comments.xml?PageSize=100");
+                    var requestUrl = GetApiEndPoint("comments.xml?PageSize=100&SortOrder=Descending");
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
@@ -1294,33 +1294,37 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     foreach (XmlNode xn in nodes)
                     {
                         XmlNode author = xn.SelectSingleNode("Content/CreatedByUser");
-                        XmlNode app = xn.SelectSingleNode("Content/Application");
-                        var CommentId = xn["CommentId"].InnerText;
-                        var IsApproved = xn["IsApproved"].InnerText;
-                        var ReplyCount = xn["ReplyCount"].InnerText;
-                        var CommentContentTypeId = xn["CommentContentTypeId"].InnerText;
-                        var Body = xn["Body"].InnerText;
-                        var PublishedDate = CommunityHelper.FormatDate(xn["CreatedDate"].InnerText);
-                        var AuthorId = author["Id"].InnerText;
-                        var AuthorAvatarUrl = author["AvatarUrl"].InnerText;
-                        var AuthorDisplayName = author["DisplayName"].InnerText;
-                        var AuthorProfileUrl = author["ProfileUrl"].InnerText;
-                        var AuthorUsername = author["Username"].InnerText;
+                        XmlNode app = xn.SelectSingleNode("Content/Application");                        
+                        XmlNode content = xn.SelectSingleNode("Content");
+
+                        var commentId = xn["CommentId"].InnerText;
+                        var isApproved = xn["IsApproved"].InnerText;
+                        var replyCount = xn["ReplyCount"].InnerText;
+                        var commentContentTypeId = xn["CommentContentTypeId"].InnerText;
+                        var body = xn["Body"].InnerText;
+                        var publishedDate = CommunityHelper.FormatDate(xn["CreatedDate"].InnerText);
+                        var authorId = author["Id"].InnerText;
+                        var authorAvatarUrl = author["AvatarUrl"].InnerText;
+                        var authorDisplayName = author["DisplayName"].InnerText;
+                        var authorProfileUrl = author["ProfileUrl"].InnerText;
+                        var authorUsername = author["Username"].InnerText;
+                        var parentTitle = content["HtmlName"].InnerText;
                         if (app["HtmlName"].InnerText != "Articles")
                         {
                             Comment comment = new Comment() {
-                                CommentId = CommentId,
-                                IsApproved = IsApproved,
-                                ReplyCount = ReplyCount,
-                                CommentContentTypeId = CommentContentTypeId,
-                                Body = Body,
-                                PublishedDate = PublishedDate,
-                                AuthorId = AuthorId,
-                                AuthorAvatarUrl = AuthorAvatarUrl,
-                                AuthorDisplayName = AuthorDisplayName,
-                                AuthorProfileUrl = AuthorProfileUrl,
-                                AuthorUsername = AuthorUsername,
-                                ParentTitle = app["HtmlName"].InnerText,
+                                CommentId = commentId,
+                                IsApproved = isApproved,
+                                ReplyCount = replyCount,
+                                CommentContentTypeId = commentContentTypeId,
+                                Body = body,
+                                PublishedDate = publishedDate,
+                                AuthorId = authorId,
+                                AuthorAvatarUrl = authorAvatarUrl,
+                                AuthorDisplayName = authorDisplayName,
+                                AuthorProfileUrl = authorProfileUrl,
+                                AuthorUsername = authorUsername,
+                                ParentTitle = parentTitle,
+                                Url = "Community and Events/Blogs/" + app["HtmlName"].InnerText + "/" + parentTitle,
                             };
                             commentList.Add(comment);
                         }
