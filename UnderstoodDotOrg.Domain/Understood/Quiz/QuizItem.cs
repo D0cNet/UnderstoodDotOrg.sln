@@ -21,6 +21,15 @@ namespace UnderstoodDotOrg.Domain.Understood.Quiz
             this.AnsweredOn = DateTime.Now;
         }
 
+
     }
-    
+    public class ChecklistItem : QuizItem
+    {
+        public bool Checked
+        {
+            get { return bool.Parse(base.AnswerValue); }
+            set { base.AnswerValue = value.ToString(); }
+        }
+
+    }
 }

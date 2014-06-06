@@ -614,6 +614,14 @@ namespace UnderstoodDotOrg.Domain.Membership
             return member; //if the member had any quiz results in the db, it is now inflated with them
 
         }
+        public bool ChecklistResults_SaveToDb(Guid MemberId, Checklist checklist)
+        {
+            bool successFlag = false;
+            QuizResults_SaveToDb(MemberId, checklist );
+            successFlag = true;
+            return successFlag;
+        }
+
         /// <summary>
         /// We can come back to this later but right now we are going to blow out
         /// </summary>

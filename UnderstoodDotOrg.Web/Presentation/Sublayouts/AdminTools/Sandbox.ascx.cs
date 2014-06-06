@@ -47,9 +47,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
              //member contains data. member manager will save data.
 
             //           this.CurrentMember.AgreedToSignUpTerms;
- 
 
-           
+
+            Checklist cl = new Checklist();
+            ChecklistItem clItem  = new ChecklistItem();
+            clItem.QuestionId = Guid.NewGuid();
+            clItem.Checked = true;
+
+            cl.MemberAnswers.Add(clItem);
+            MembershipManager mgr = new MembershipManager();
+            mgr.ChecklistResults_SaveToDb(Guid.NewGuid(), cl);
+
+            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
