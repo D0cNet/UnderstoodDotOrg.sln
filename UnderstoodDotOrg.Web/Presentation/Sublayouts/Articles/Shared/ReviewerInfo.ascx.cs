@@ -27,19 +27,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 
             if (item != null)
             {
-                if (item.Reviewedby.Item != null)//Reviwer Name
-                {
-                    frReviewedby.Item = item.Reviewedby.Item;
-                    hlReviewdby.NavigateUrl = item.Reviewedby.Item.GetUrl();
-					
-					if (item.ReviewedDate.DateTime != null && item.ReviewedDate.DateTime != DateTime.MinValue)// Reviewed date 
-					{
-						dtReviewdDate.Field = "Reviewed Date";
-						dtReviewdDate.Format = "dd MMM yy";
+				if (item.Reviewedby.Item != null && item.ReviewedDate.DateTime != null && item.ReviewedDate.DateTime != DateTime.MinValue)//Reviwer Name and Reviewed date
+				{
+					frReviewedby.Item = item.Reviewedby.Item;
+					hlReviewdby.NavigateUrl = item.Reviewedby.Item.GetUrl();
 
-						uxReviewDate.Visible = true;
-					}
-				}                
+					dtReviewdDate.Field = "Reviewed Date";
+					dtReviewdDate.Format = "dd MMM yy";
+
+					uxReviewDate.Visible = true;
+					pnlReviewBy.Visible = true;
+				}
             }
         }
 

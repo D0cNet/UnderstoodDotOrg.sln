@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ReviewerInfo.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared.ReviewerInfo" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-<p class="reviewed-by">
+<asp:Panel runat="server" ID="pnlReviewBy" Visible="false">
+<p class="reviewed-by" runat="server">
     <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
         <%--<a href="REPLACE">Dr. Samantha Frank</a>--%>
         <asp:HyperLink ID="hlReviewdby" runat="server">
@@ -15,3 +16,4 @@
         </span>
     </asp:Placeholder>
 </p>
+</asp:Panel>

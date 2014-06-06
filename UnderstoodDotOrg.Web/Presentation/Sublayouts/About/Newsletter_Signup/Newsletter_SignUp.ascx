@@ -48,6 +48,9 @@
                         <div class="newsletter-button-wrap">
                             <asp:Button ID="btnSignup" runat="server" CssClass="button newsletter-button disabled" />
                         </div>
+						<div>
+							<asp:Label runat="server" ID="lblEmailFail" Text="" />
+						</div>
                     </fieldset>
 
                     <div class="safe-information-wrapper">
