@@ -33,6 +33,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                     txtEmail.Text = email;
                     Page.Validate();
                     ProcessEmail();
+					//Response.Redirect("/");
                 }
             }
         }
@@ -59,13 +60,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 				MembershipManager mbrShadowUser = new MembershipManager();
 				MembershipUser checkValidity = mbrShadowUser.GetUser(email);
 
-				if (checkValidity.Email != null && checkValidity.Email != "")
+				if (checkValidity != null && !string.IsNullOrEmpty(checkValidity.Email))
 				{
-					lblEmailFail.Text = "It appears you already have an Email with us, please sign in first.";
+					lblEmailFail.Text = "It appears you already have an Email with us, please sign in first.";								
 				}
 				else
 				{
-
+					
 					Submission submission = new Submission
 					{
 						Email = email
