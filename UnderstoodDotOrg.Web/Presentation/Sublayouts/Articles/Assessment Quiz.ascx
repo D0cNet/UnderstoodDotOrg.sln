@@ -30,6 +30,16 @@
                             <asp:Panel ID="pnlTrueFalse" runat="server" Visible="false">
                                 <button type="button" id="btnTrue" runat="server" class="button gray answer-choice-true rs_skip" >True</button>
                                 <button type="button" id="btnFalse" runat="server" class="button gray answer-choice-false rs_skip" >False</button>
+                                <asp:RadioButtonList ValidationGroup="vlgPageQuestions" ID="rblHiddenButtonList" runat="server" RepeatLayout="Flow">
+                                    <asp:ListItem Text="True" Value="True"></asp:ListItem>
+                                    <asp:ListItem Text="False" Value="False"></asp:ListItem>
+                                </asp:RadioButtonList>
+                                <asp:RequiredFieldValidator id="RequiredFieldValidator1"
+                                    controltovalidate="rblHiddenButtonList"
+                                    validationgroup="vlgPageQuestions"
+                                    runat="server">
+                                </asp:RequiredFieldValidator>
+
                             </asp:Panel>
                             <asp:Panel ID="pnlRadioQuestion" CssClass="test" runat="server" Visible="false">
                                 <%-- OR --%>
@@ -78,7 +88,14 @@
                         hiddenField.val(JSON.stringify(Answers));
                     })
 
-                    $("[id*='btnTrue'], [id*='btnFalse']").click(function () {
+                    $("[id*='btnFalse']").click(function () {
+                        $(this).parent().find("input[value='False']").prop("checked", true)
+                        Answers[$(this).data("id")] = $(this).html();
+                        hiddenField.val(JSON.stringify(Answers));
+                    })
+
+                    $("[id*='btnTrue']").click(function () {
+                        $(this).parent().find("input[value='True']").prop("checked", true)
                         Answers[$(this).data("id")] = $(this).html();
                         hiddenField.val(JSON.stringify(Answers));
                     })

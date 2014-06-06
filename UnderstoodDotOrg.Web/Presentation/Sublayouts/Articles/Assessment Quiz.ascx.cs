@@ -284,6 +284,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 HtmlButton btnFalse = e.FindControlAs<HtmlButton>("btnFalse");
                 DropDownList ddlQuestion = e.FindControlAs<DropDownList>("ddlQuestion");
                 RadioButtonList rblAnswer = e.FindControlAs<RadioButtonList>("rblAnswer");
+                RadioButtonList rblHiddenButtonList = e.FindControlAs<RadioButtonList>("rblHiddenButtonList");
+
+                foreach (ListItem l in rblHiddenButtonList.Items)
+                {
+                    l.Attributes.Add("hidden", "");
+                }
 
                 Dictionary<string, QuestionAnswer> AnswerTracker = new Dictionary<string, QuestionAnswer>();
 
@@ -309,11 +315,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                         if (AnswerTracker[question.ID.ToString()].Answer == "True")
                         {
+                            rblHiddenButtonList.Items.FindByText("True").Selected = true;
                             btnTrue.Attributes.Add("class", selected);
                             btnFalse.Attributes.Add("class", not_selected);
                         }
                         else
                         {
+                            rblHiddenButtonList.Items.FindByText("False").Selected = true;
                             btnTrue.Attributes.Add("class", not_selected);
                             btnFalse.Attributes.Add("class", selected);
                         }
