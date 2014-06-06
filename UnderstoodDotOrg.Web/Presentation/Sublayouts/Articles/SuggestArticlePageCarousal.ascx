@@ -10,24 +10,7 @@
             <div class="more-carousel-container">
                 <div id="featured-slides-container" class="arrows-gray">
                     <ul>
-                        <asp:Repeater ID="rptMoreArticle" runat="server" ItemType="UnderstoodDotOrg.Domain.Search.JSON.SearchArticle">
-                            <HeaderTemplate>
-                            </HeaderTemplate>
-                            <ItemTemplate>
-                                <li>
-                                    <div class="rs_read_this">
-                                        <a href="<%#: Item.Url %>">
-                                            <%# Item.Title%>
-                                            <img alt="" src="<%#: Item.Thumbnail %>" />
-                                        </a>
-                                    </div>
-                                </li>
-                            </ItemTemplate>
-                            <FooterTemplate>
-                            </FooterTemplate>
-                        </asp:Repeater>
-
-                        <asp:Repeater ID="rptDefaultArticles" runat="server" OnItemDataBound="rptMoreArticle_ItemDataBound">
+                       <asp:Repeater ID="rptDefaultArticles" runat="server" OnItemDataBound="rptMoreArticle_ItemDataBound">
                             <HeaderTemplate>
                             </HeaderTemplate>
                             <ItemTemplate>

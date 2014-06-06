@@ -19,11 +19,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     public partial class Checklist_Article_Page : System.Web.UI.UserControl
     {
         ChecklistArticlePageItem ObjChecklistArticle;
+        public string PageUrl = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjChecklistArticle = new ChecklistArticlePageItem(Sitecore.Context.Item);
             if (ObjChecklistArticle != null)
             {
+                PageUrl = ObjChecklistArticle.GetUrl();
                 if (ObjChecklistArticle.DefaultArticlePage.Reviewedby.Item != null && ObjChecklistArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
                     SBReviewedBy.Visible = true;
                 else

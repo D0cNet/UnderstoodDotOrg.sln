@@ -49,15 +49,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                             .Select(i => (DefaultArticlePageItem)i)
                             .Take(6).ToList();
                         rptDefaultArticles.DataBind();
-                        frRelatedLinkTitle.Visible = true;
                     }
                     else
                     {
-                        Handlers.SearchResultsService svc = new Handlers.SearchResultsService();
-
-                        rptMoreArticle.DataSource = svc.SearchAllArticles("", "%7BC272C2C3-9405-49D0-9BC1-A64F76C750DC%7D", 1).Articles.Take(6);
-                        rptMoreArticle.DataBind();
-                        frRelatedLinkTitle.Visible = true;
+                        List<DefaultArticlePageItem> related = ObjDefaultArticle.InnerItem.Parent.Children.Where(i => i.InheritsTemplate(DefaultArticlePageItem.TemplateId)).Select(x => new DefaultArticlePageItem(x)).Take(6).ToList();
+                        if (related.Count > 0)
+                        {
+                            rptDefaultArticles.DataSource = related;
+                            rptDefaultArticles.DataBind();
+                        }
+                        else
+                            this.Visible = false;
                     }
                 }
             }
@@ -67,9 +69,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             if (e.IsItem())
             {
-                DefaultArticlePageItem RelatedLink = e.Item.DataItem as DefaultArticlePageItem;
-                //CHECK FOR HEAR TEMPPLATE SET H2 TAG
-                //IF ITEM TEMPLATE, SET ALL ARTICLE DATA.
+                DefaultArticlePageItem RelatedLink = (DefaultArticlePageItem)e.Item.DataItem;
 
                 if (RelatedLink != null)
                 {
@@ -88,6 +88,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 }
             }
         }
-
     }
 }
