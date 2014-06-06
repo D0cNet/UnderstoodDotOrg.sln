@@ -540,7 +540,9 @@
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\CSS\CSSItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\JS\JSItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Parent\ParentInterestItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Parent\ParentInterestItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Parent\ParentRoleItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Parent\ParentRoleItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Tools\BehaviorTool\BehaviorSearchCalloutItem.base.cs" />
     <Compile Include="SocialHelper.cs" />
     <Compile Include="TelligentCommunity\CommunityConstructors.cs" />
