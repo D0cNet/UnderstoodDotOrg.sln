@@ -335,10 +335,10 @@ U.searchSite = function () {
         });
         self.input_submit.on("click", function (e) {
             // prevent .NET from triggering postback
-            if ($(this).is(":focus")) {
+            //if ($(this).is(":focus") || $(this) == $(document.activeElement)) {
                 e.preventDefault();
                 self.redirectToSearch($dataPath, self.input_text.val());
-            }
+            //}
         });
         // END - OASIS
 
