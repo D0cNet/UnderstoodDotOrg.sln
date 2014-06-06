@@ -308,6 +308,41 @@
     <Compile Include="Presentation\Sublayouts\About\SearchResults.ascx.designer.cs">
       <DependentUpon>SearchResults.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountBody.ascx.cs">
+      <DependentUpon>AccountBody.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountBody.ascx.designer.cs">
+      <DependentUpon>AccountBody.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountHeader.ascx.cs">
+      <DependentUpon>AccountHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountHeader.ascx.designer.cs">
+      <DependentUpon>AccountHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx.cs">
+      <DependentUpon>Comments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx.designer.cs">
+      <DependentUpon>Comments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Tabs\Connections.ascx.cs">
+      <DependentUpon>Connections.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Tabs\Connections.ascx.designer.cs">
+      <DependentUpon>Connections.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Tabs\Profile.ascx.cs">
+      <DependentUpon>Profile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Tabs\Profile.ascx.designer.cs">
+      <DependentUpon>Profile.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx.cs">
       <DependentUpon>ExactTargetAdmin.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2136,6 +2171,10 @@
     <Content Include="Presentation\Includes\images\sprite.btn.thinkingofyou.lo-res.png" />
     <Content Include="Presentation\Includes\images\sprite.btn.thinkingofyou.png" />
     <Content Include="Presentation\Includes\images\sprite.friends-view-tabs.comment-bg.png" />
+    <Content Include="Presentation\Includes\images\sprite.gray.ellipse.low-res.png" />
+    <Content Include="Presentation\Includes\images\sprite.gray.ellipse.png" />
+    <Content Include="Presentation\Includes\images\sprite.gray.ellipse.w.dropdown.low-res.png" />
+    <Content Include="Presentation\Includes\images\sprite.gray.ellipse.w.dropdown.png" />
     <Content Include="Presentation\Includes\images\sprite.helpful-count.lo-res.png" />
     <Content Include="Presentation\Includes\images\sprite.helpful-count.png" />
     <Content Include="Presentation\Includes\images\sprite.icon.account.nav.lo-res.png" />
@@ -2429,6 +2468,11 @@
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_SignUp.ascx" />
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_Thankyou.ascx" />
     <Content Include="Presentation\Sublayouts\About\SearchResults.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\AccountBody.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\AccountHeader.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\Tabs\Connections.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\Tabs\Profile.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx" />
