@@ -40,13 +40,40 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// ltWelcomeTour control.
+        /// phWelcomeTour control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltWelcomeTour;
+        protected global::System.Web.UI.WebControls.PlaceHolder phWelcomeTour;
+        
+        /// <summary>
+        /// litClose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litClose;
+        
+        /// <summary>
+        /// litLanguage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litLanguage;
+        
+        /// <summary>
+        /// rptLanguage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptLanguage;
         
         /// <summary>
         /// Placeholder1 control.

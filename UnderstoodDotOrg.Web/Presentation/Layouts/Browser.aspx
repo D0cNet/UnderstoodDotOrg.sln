@@ -61,19 +61,26 @@
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1"  runat="server" />
-        <asp:Literal runat="server" ID="ltWelcomeTour"></asp:Literal>
+        <asp:PlaceHolder ID="phWelcomeTour" runat="server" Visible="false">
+            <div data-show-welcome-tour="true" id="community-page"></div>
+        </asp:PlaceHolder>
 
 
         <%--<sc:sublayout id="scHeader" runat="server" path="~/Presentation/SubLayouts/Containers/Header.ascx" />--%>
         <!-- BEGIN PARTIAL: language-selector -->
         <div id="language-selector-bar">
 
-            <span class="button-close ir">Close</span>
+            <span class="button-close ir"><asp:Literal ID="litClose" runat="server" /></span>
 
             <dl>
-                <dt>Language?</dt>
-                <dd><a href="REPLACE.html" class="button">English</a></dd>
-                <dd><a href="REPLACE.html" class="button">Espa&ntilde;ol</a></dd>
+                <dt><asp:Literal ID="litLanguage" runat="server" /></dt>
+                <asp:Repeater runat="server" ID="rptLanguage">
+                    <ItemTemplate>
+                        <dd>
+                            <asp:HyperLink ID="hlLanguage" runat="server" CssClass="button" />
+                        </dd>
+                    </ItemTemplate>
+                </asp:Repeater>
             </dl>
 
         </div>

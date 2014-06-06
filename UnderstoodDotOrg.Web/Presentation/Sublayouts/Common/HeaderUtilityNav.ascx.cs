@@ -71,7 +71,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             var languageLinks = HeaderFolder.GetLanguageLinks();
 
-            if (languageLinks != null && languageLinks.Any())
+            if (languageLinks.Any())
             {
                 rptLanguage.DataSource = languageLinks;
                 rptLanguage.DataBind();
@@ -141,19 +141,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                             hypLanguageLink.Text = languageItem.LanguageName.Rendered;
                             hypLanguageLink.Attributes.Add("title", languageItem.LanguageName.Rendered);
 
-                            var currentUrlAndQS = Request.Url.PathAndQuery;
-                            var language = currentUrlAndQS;
-                            foreach (var langItem in HeaderFolder.GetLanguageLinks())
-                            {
-                                if (currentUrlAndQS.StartsWith("/" + langItem.IsoCode))
-                                {
-                                    currentUrlAndQS = new string(currentUrlAndQS.Skip(("/" + langItem.IsoCode).Length).ToArray());
-                                }
-                            }
+                            hypLanguageLink.NavigateUrl = languageItem.GetCurrentIsoAwareUrl();
 
-                            hypLanguageLink.NavigateUrl = string.Format("/{0}{1}", languageItem.IsoCode, currentUrlAndQS);
-
-                            if (hypLanguageLink.NavigateUrl.Contains(Sitecore.Context.Language.Name))
+                            if (languageItem.IsoCode == Sitecore.Context.Language.Name)
                             {
                                 hypLanguageLink.Attributes.Add("class", "is-active");
                             }
