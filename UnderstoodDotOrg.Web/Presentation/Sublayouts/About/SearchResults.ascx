@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchResults.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.About.SearchResults" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
-<div class="container l-search-box-container skiplink-toolbar">
+<asp:Panel runat="server" DefaultButton="btnSearch" CssClass="container l-search-box-container skiplink-toolbar">
   <div class="row">
     <div class="col col-22 offset-1">
       <!-- BEGIN PARTIAL: about/search-box-module -->
@@ -18,7 +18,7 @@
         <!-- END PARTIAL: about/search-box-module -->
     </div>
   </div>
-</div>
+</asp:Panel>
 
 <asp:PlaceHolder ID="phResults" runat="server">
 <div class="container l-results-and-filter l-results-misspelling">

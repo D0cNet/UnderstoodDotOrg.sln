@@ -1,38 +1,25 @@
-﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
-{
-    using Sitecore.Data.Items;
-    using System;
-    using System.Web.UI.WebControls;
-    using UnderstoodDotOrg.Common;
-    using UnderstoodDotOrg.Common.Helpers;
-    using UnderstoodDotOrg.Domain.Search;
-    using UnderstoodDotOrg.Common.Extensions;
-    using Sitecore.ContentSearch.Linq;
-    using Sitecore.ContentSearch.Linq.Solr;
-    using System.Web.Services;
-    using System.Collections.Generic;
-    using System.Linq;
-    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
-    using UnderstoodDotOrg.Domain.Understood.Helper;
-    using System.Web.UI;
-    using System.Text;
-    using UnderstoodDotOrg.Domain.Search.JSON;
-    using System.Collections.Specialized;
-    using System.Web;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Helpers;
+using UnderstoodDotOrg.Domain.Search;
+using UnderstoodDotOrg.Domain.Search.JSON;
+using UnderstoodDotOrg.Domain.Understood.Helper;
+using UnderstoodDotOrg.Framework.UI;
 
-    public partial class SearchResults : System.Web.UI.UserControl
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
+{
+    public partial class SearchResults : BaseSublayout
     {
-        private string _term;
         protected string SearchTerm { get; set; }
         protected string ResultCount { get; set; }
 
-        private void Page_Init(object sender, EventArgs e)
-        {
-            BindEvents();
-        }
-
         private void Page_Load(object sender, EventArgs e)
         {
+            BindEvents();
             BindCopy();
 
             // Parse query string
