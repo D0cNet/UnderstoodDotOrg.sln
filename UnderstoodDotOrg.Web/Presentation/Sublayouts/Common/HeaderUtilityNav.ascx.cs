@@ -52,7 +52,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 frSearchLabel2.Item = HeaderFolder;
             hlLogoLink.NavigateUrl = HeaderFolder.LogoLink.Url;
             MainLogoUrl = HeaderFolder.CompanyLogo.GetResponsiveImageUrl();
-            imgMobileLogo.ImageUrl = HeaderFolder.MobileCompanyLogo.GetResponsiveImageUrl();
+            string imgUrl = HeaderFolder.MobileCompanyLogo.GetResponsiveImageUrl();
+            imgMobileLogo.ImageUrl = imgUrl;
+            imgMobileLogo.Visible = !string.IsNullOrEmpty(imgUrl);
         }
 
         private void GetUtilityNavigationItems()
