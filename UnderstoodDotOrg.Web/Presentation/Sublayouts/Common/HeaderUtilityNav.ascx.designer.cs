@@ -22,13 +22,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.HyperLink hlLogoLink;
         
         /// <summary>
-        /// scLogoImage control.
+        /// imgMobileLogo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer scLogoImage;
+        protected global::System.Web.UI.WebControls.Image imgMobileLogo;
         
         /// <summary>
         /// rptLanguage control.
@@ -47,6 +47,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptNavUtility;
+        
+        /// <summary>
+        /// lbSignout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbSignout;
         
         /// <summary>
         /// scLinkSignIn control.

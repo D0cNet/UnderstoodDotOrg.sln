@@ -61,7 +61,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
                 LanguageLinkItem item = (LanguageLinkItem)e.Item.DataItem;
                 HyperLink hlLanguage = e.FindControlAs<HyperLink>("hlLanguage");
                 hlLanguage.NavigateUrl = item.GetCurrentIsoAwareUrl();
-                hlLanguage.Text = item.LanguageName.Rendered;
+                hlLanguage.Text = item.LanguageName.Raw;
             }
         }
 

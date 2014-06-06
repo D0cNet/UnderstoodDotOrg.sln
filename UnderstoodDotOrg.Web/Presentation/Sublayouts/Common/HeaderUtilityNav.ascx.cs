@@ -20,6 +20,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         protected HeaderFolderItem HeaderFolder { get; set; }
         protected MyAccountItem MyAccountPageItem { get; set; }
         protected string UserDisplayName { get; set; }
+        protected string MainLogoUrl { get; set; }
 
         protected string SearchPath
         {
@@ -48,9 +49,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             scLinkSignIn.Item = 
                 frSearchLabel1.Item = 
-                frSearchLabel2.Item = 
-                scLogoImage.Item = HeaderFolder;
+                frSearchLabel2.Item = HeaderFolder;
             hlLogoLink.NavigateUrl = HeaderFolder.LogoLink.Url;
+            MainLogoUrl = HeaderFolder.CompanyLogo.GetResponsiveImageUrl();
+            imgMobileLogo.ImageUrl = HeaderFolder.MobileCompanyLogo.GetResponsiveImageUrl();
         }
 
         private void GetUtilityNavigationItems()
@@ -59,10 +61,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             if (utilityNavigationFolder != null)
             {
                 var results = utilityNavigationFolder.GetNavigationLinkItems();
-                if (results != null && results.Any())
+                
+                if (results.Any())
                 {
-                    rptNavUtility.DataSource = results;
-                    rptNavUtility.DataBind();
+                    // NOTE: Signup/Signout link is contained in separate markup from utility nav
+                    
+                    // Utility nav
+                    var utility = results.Where(i => i.IsOfType(NavigationLinkItem.TemplateId));
+                    if (utility.Any())
+                    {
+                        rptNavUtility.DataSource = utility;
+                        rptNavUtility.DataBind();
+                    }
+
+                    // Sign-in/out
+                    var authenticated = results.Where(i => i.IsOfType(AuthenticationNavigationLinkItem.TemplateId))
+                                            .Select(i => new AuthenticationNavigationLinkItem(i))
+                                            .FirstOrDefault();
+
+                    if (authenticated != null)
+                    {
+                        scLinkSignIn.Visible = !IsUserLoggedIn;
+                        lbSignout.Visible = IsUserLoggedIn;
+
+                        scLinkSignIn.Item = authenticated;
+                        lbSignout.Text = authenticated.LogoutText.Rendered;
+                    }
                 }
             }
         }
@@ -84,38 +108,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             {
                 var item = e.Item.DataItem as Item;
 
-                if (item.IsOfType(AuthenticationNavigationLinkItem.TemplateId))
-                {
-                    var authenticationItem = new AuthenticationNavigationLinkItem(item);
+                Placeholder phMenuItem = e.FindControlAs<Placeholder>("phMenuItem");
 
-                    if (IsUserLoggedIn)
-                    {
-                        LinkButton lbSignout = e.FindControlAs<LinkButton>("lbSignout");
-                        lbSignout.Text = authenticationItem.LogoutText.Rendered;
-                        lbSignout.Visible = true;
-                    }
-                    else
-                    {
-                        var frUtilityLink = e.FindControlAs<FieldRenderer>("frUtilityLink");
+                var frUtilityLink = e.FindControlAs<FieldRenderer>("frUtilityLink");
 
-                        if (frUtilityLink != null)
-                        {
-                            frUtilityLink.Item = item;
-                            frUtilityLink.FieldName = authenticationItem.LoginLink.Field.InnerField.Name;
-                            frUtilityLink.Visible = true;
-                        }
-                    }
-                }
-                else
-                {
-                    var frUtilityLink = e.FindControlAs<FieldRenderer>("frUtilityLink");
-
-                    if (frUtilityLink != null)
-                    {
-                        frUtilityLink.Item = item;
-                        frUtilityLink.Visible = true;
-                    }
-                }
+                frUtilityLink.Item = item;
             }
         }
 
@@ -129,29 +126,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             if (e.IsItem())
             {
                 var languageItem = e.Item.DataItem as LanguageLinkItem;
-                if (languageItem != null)
+                var hypLanguageLink = e.FindControlAs<HyperLink>("hypLanguageLink");
+
+                if (!languageItem.LanguageName.Raw.IsNullOrEmpty() && !languageItem.SitecoreLanguage.Raw.IsNullOrEmpty())
                 {
-                    var hypLanguageLink = e.FindControlAs<HyperLink>("hypLanguageLink");
-                    if (hypLanguageLink != null)
+                    hypLanguageLink.Text = languageItem.MobileAbbreviation.Rendered;
+                    hypLanguageLink.Attributes.Add("title", languageItem.LanguageName.Raw);
+
+                    hypLanguageLink.NavigateUrl = languageItem.GetCurrentIsoAwareUrl();
+
+                    if (languageItem.IsoCode == Sitecore.Context.Language.Name)
                     {
-
-                        if (!languageItem.LanguageName.Raw.IsNullOrEmpty() && !languageItem.SitecoreLanguage.Raw.IsNullOrEmpty())
-                        {
-
-                            hypLanguageLink.Text = languageItem.LanguageName.Rendered;
-                            hypLanguageLink.Attributes.Add("title", languageItem.LanguageName.Rendered);
-
-                            hypLanguageLink.NavigateUrl = languageItem.GetCurrentIsoAwareUrl();
-
-                            if (languageItem.IsoCode == Sitecore.Context.Language.Name)
-                            {
-                                hypLanguageLink.Attributes.Add("class", "is-active");
-                            }
-                            else
-                            {
-                                hypLanguageLink.Attributes.Remove("class");
-                            }
-                        }
+                        hypLanguageLink.Attributes.Add("class", "is-active");
+                    }
+                    else
+                    {
+                        hypLanguageLink.Attributes.Remove("class");
                     }
                 }
             }

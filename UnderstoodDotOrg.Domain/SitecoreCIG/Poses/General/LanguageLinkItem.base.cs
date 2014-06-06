@@ -56,6 +56,15 @@ public CustomLookupField SitecoreLanguage
 }
 
 
+public CustomTextField MobileAbbreviation
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Mobile Abbreviation"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

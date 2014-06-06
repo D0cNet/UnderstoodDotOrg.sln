@@ -1,10 +1,19 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HeaderUtilityNav.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.HeaderUtilityNav" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <%@ Import Namespace="UnderstoodDotOrg.Common.Extensions" %>
+
+<%-- Logo is content managed, override default stylesheet with inline CSS block --%>
+<style type="text/css">
+    @media (min-width: 769px) {
+        .logo-u-main a {
+            background-image: (<%= MainLogoUrl %>) !important;
+        }
+    }
+</style>
 <div class="logo-u-main">
     <asp:HyperLink runat="server" ID="hlLogoLink">
         <span class="visuallyhidden">Understood for learning and attention issues</span>
-        <sc:FieldRenderer runat="server" ID="scLogoImage" FieldName="Company Logo" Parameters="w=230&h=73&as=1" />
+        <asp:Image ID="imgMobileLogo" runat="server" />
     </asp:HyperLink>
 </div>
 <!-- logo-u-main -->
@@ -52,8 +61,7 @@
         </HeaderTemplate>
         <ItemTemplate>
             <li role="menuitem" aria-haspopup="true">
-                <sc:FieldRenderer ID="frUtilityLink" runat="server" Visible="false" FieldName="Link" />
-                <asp:LinkButton ID="lbSignout" OnClick="lbSignout_Click" Visible="false" runat="server"></asp:LinkButton>
+                <sc:FieldRenderer ID="frUtilityLink" runat="server" FieldName="Link" />
             </li>
         </ItemTemplate>
         <FooterTemplate>
@@ -65,7 +73,8 @@
 
     <!-- BEGIN PARTIAL: user-state -->
     <div class="sign-in" aria-haspopup="true">
-        <sc:FieldRenderer runat="server" ID="scLinkSignIn" FieldName="Sign In" Parameters="class=link-sign-in" />
+        <asp:LinkButton ID="lbSignout" OnClick="lbSignout_Click" CssClass="link-sign-in" Visible="false" runat="server"/>
+        <sc:FieldRenderer runat="server" ID="scLinkSignIn" FieldName="Login Link" Parameters="class=link-sign-in" />
     </div>
 
     <!-- END PARTIAL: user-state -->
