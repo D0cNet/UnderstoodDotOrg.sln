@@ -70,30 +70,6 @@
                             </div>
                         </FooterTemplate>
                     </asp:Repeater>
-                    <style>
-                        .slide-inner img{
-                            width: 100%;
-                            height: auto;
-                        }
-
-                        .tall-image .update-panel {
-                            vertical-align: top;
-                        }
-
-                        .wide-image .update-panel {
-                            float: left;
-                            height: 20px;
-                        }
-                    </style>
-                    <script>
-                        $(".icon-email").click(function (e) {
-                            e.preventDefault();
-
-                            $(".email-a-friend-modal").show();
-                            $(".email-a-friend-modal").css({ "top": "163px", "overflow": "hidden" });
-                            $(".email-a-friend-modal .modal-dialog").css("opacity", "1");
-                        })
-                    </script>
                 </div>
 
                 <asp:Repeater ID="rptSlideButton" runat="server" OnItemDataBound="rptSlideButton_ItemDataBound">
@@ -117,6 +93,30 @@
                     </FooterTemplate>
                 </asp:Repeater>
             </div>
+            <style>
+                        .slide-inner img{
+                            width: 100%;
+                            height: auto;
+                        }
+
+                        .tall-image .update-panel {
+                            vertical-align: top;
+                        }
+
+                        .wide-image .update-panel {
+                            float: left;
+                            height: 20px;
+                        }
+                    </style>
+                    <script>
+                        $(".icon-email").click(function (e) {
+                            e.preventDefault();
+
+                            $(".email-a-friend-modal").show();
+                            $(".email-a-friend-modal").css({ "top": "163px", "overflow": "hidden" });
+                            $(".email-a-friend-modal .modal-dialog").css("opacity", "1");
+                        })
+                    </script>
             <%-- Show Reviewer Info only on Last suggested article slide --%>
             <div class="slideshow-review">
                 <div class="container">
