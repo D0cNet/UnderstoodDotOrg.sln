@@ -14,6 +14,7 @@ using UnderstoodDotOrg.Domain.ExactTarget;
 using UnderstoodDotOrg.Services.ExactTarget;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
@@ -25,14 +26,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
         {
             mode = Request.QueryString[Constants.QueryStrings.Registration.Mode];
 
-            string schoolIssueContainer = Constants.SchoolIssueContainer.ToString();
-            string homeLifeContainer = Constants.HomeLifeContainer.ToString();
-            string growingUpContainer = Constants.GrowingUpContainer.ToString();
-            string socialEmotionalContainer = Constants.SocialEmotionalContainer.ToString();
-            string techAppsContainer = Constants.TechAppsContainer.ToString();
-            string waysToHelpContainer = Constants.WaysToHelpContainer.ToString();
-            string parentRolesContainer = "{E5F45505-9153-4AA3-BFCC-04F3808E8AC5}";
-            string parentJourneyContainer = "{40D1F458-746D-4649-A03E-E3729F6C9117}";
+            //string schoolIssueContainer = Constants.SchoolIssueContainer.ToString();
+            //string homeLifeContainer = Constants.HomeLifeContainer.ToString();
+            //string growingUpContainer = Constants.GrowingUpContainer.ToString();
+            //string socialEmotionalContainer = Constants.SocialEmotionalContainer.ToString();
+            //string techAppsContainer = Constants.TechAppsContainer.ToString();
+            //string waysToHelpContainer = Constants.WaysToHelpContainer.ToString();
+            //string parentRolesContainer = "{E5F45505-9153-4AA3-BFCC-04F3808E8AC5}";
+            //string parentJourneyContainer = "{40D1F458-746D-4649-A03E-E3729F6C9117}";
 
             if (!IsPostBack)
             {
@@ -90,42 +91,53 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
 
 
-                var schoolIssues = Sitecore.Context.Database.GetItem(schoolIssueContainer).Children.ToList();
+                //var schoolIssues = Sitecore.Context.Database.GetItem(schoolIssueContainer).Children.ToList();
+                var schoolIssues = ParentInterestItem.GetParentInterests("/sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Interest/School Issues/");
 
-                uxSchoolLeft.DataSource = schoolIssues.Take(schoolIssues.Count / 2);
+                uxSchoolLeft.DataSource = schoolIssues.Take(schoolIssues.Count() / 2);
                 uxSchoolLeft.DataBind();
 
-                uxSchoolRight.DataSource = schoolIssues.Skip(schoolIssues.Count / 2);
+                uxSchoolRight.DataSource = schoolIssues.Skip(schoolIssues.Count() / 2);
                 uxSchoolRight.DataBind();
 
-                var homeLife = Sitecore.Context.Database.GetItem(homeLifeContainer).Children.ToList();
+                //var homeLife = Sitecore.Context.Database.GetItem(homeLifeContainer).Children.ToList();
+                var homeLife = ParentInterestItem.GetParentInterests("/sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Interest/Home Life/");
 
                 uxHomeLife.DataSource = homeLife;
                 uxHomeLife.DataBind();
 
-                var growingUp = Sitecore.Context.Database.GetItem(growingUpContainer).Children.ToList();
+                //var growingUp = Sitecore.Context.Database.GetItem(growingUpContainer).Children.ToList();
+                var growingUp = ParentInterestItem.GetParentInterests("/sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Interest/Growing Up/");
 
                 uxGrowingUp.DataSource = growingUp;
                 uxGrowingUp.DataBind();
 
-                var socialEmotional = Sitecore.Context.Database.GetItem(socialEmotionalContainer).Children.ToList();
+                //var socialEmotional = Sitecore.Context.Database.GetItem(socialEmotionalContainer).Children.ToList();
+                var socialEmotional = ParentInterestItem.GetParentInterests("/sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Interest/Social or Emotional Issues/");
 
                 uxSocialEmotional.DataSource = socialEmotional;
                 uxSocialEmotional.DataBind();
 
-                var techApps = Sitecore.Context.Database.GetItem(techAppsContainer).Children.ToList();
-                var waysToHelp = Sitecore.Context.Database.GetItem(waysToHelpContainer).Children.ToList();
+                //var techApps = Sitecore.Context.Database.GetItem(techAppsContainer).Children.ToList();
+                var techApps = ParentInterestItem.GetParentInterests("/sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Interest/Technologies and Apps/");
+
+                //var waysToHelp = Sitecore.Context.Database.GetItem(waysToHelpContainer).Children.ToList();
+                var waysToHelp = ParentInterestItem.GetParentInterests("/sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Interest/Ways to Help Your Child/");
 
                 uxWaysToHelp.DataSource = waysToHelp;
                 uxWaysToHelp.DataBind();
 
-                var parentJourney = Sitecore.Context.Database.GetItem(parentJourneyContainer).Children.ToList();
+                //var parentJourney = Sitecore.Context.Database.GetItem(parentJourneyContainer).Children.ToList();
+                var parentJourney = ParentInterestItem.GetParentInterests("/sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Journey/");
 
                 uxJourney.DataSource = parentJourney;
                 uxJourney.DataBind();
-                var parentRoles = Sitecore.Context.Database.GetItem(parentRolesContainer).Children.ToList();
-                uxFather.Text = parentRoles[0].Fields["Role Name"].Value;
-                uxMother.Text = parentRoles[1].Fields["Role Name"].Value;
+                
+                //var parentRoles = Sitecore.Context.Database.GetItem(parentRolesContainer).Children.ToList();
+                var parentRoles = ParentRoleItem.GetParentRoles();
+
+                uxFather.Text = parentRoles.ElementAt(0).Fields["Role Name"].Value; // RoleName.Rendered;
+                uxMother.Text = parentRoles.ElementAt(1).Fields["Role Name"].Value; // .RoleName.Rendered;
 
                 uxParentList.DataSource = parentRoles.Skip(2);
                 uxParentList.DataTextField = "Fields[Role Name]";
