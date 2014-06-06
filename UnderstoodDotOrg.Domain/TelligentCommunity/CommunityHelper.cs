@@ -501,7 +501,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         Group = app["HtmlName"].InnerText,
                         CommentCount = xn["CommentCount"].InnerText,
                         QueryString = queryString,
-                        Url = "/en/Community%20and%20Events/Q%20and%20A/Q%20and%20A%20Details.aspx" + queryString,
+                        // TODO: replace this with constant or guid lookup
+                        Url = "/en/community-and-events/q-and-a/q-and-a-details" + queryString,
                     };
                     questionList.Add(question);
                 }

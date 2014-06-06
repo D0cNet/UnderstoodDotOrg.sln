@@ -37,9 +37,9 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General
 
         public string GetCurrentIsoAwareUrl()
         {
-            string currentPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
-            string currentPath = HttpContext.Current.Request.Url.AbsolutePath;
-            string currentLang = Sitecore.Context.Language.Name;
+            string currentPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery.ToLower();
+            string currentPath = HttpContext.Current.Request.Url.AbsolutePath.ToLower();
+            string currentLang = Sitecore.Context.Language.Name.ToLower();
 
             // Strip existing iso code
             if (currentPath.EndsWith("/" + currentLang)
@@ -47,8 +47,8 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General
             {
                 currentPathAndQuery = currentPathAndQuery.TrimStart('/').Substring(currentLang.Length);
             }
-            
-            return string.Format("/{0}{1}", IsoCode, currentPathAndQuery);
+
+            return string.Format("/{0}{1}", IsoCode.ToLower(), currentPathAndQuery);
         }
 
     }
