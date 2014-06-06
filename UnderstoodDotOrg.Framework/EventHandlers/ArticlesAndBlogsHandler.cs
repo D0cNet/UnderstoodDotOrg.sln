@@ -127,9 +127,9 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             }
             catch
             {
-                var e = new Exception(@"Item Creation Failed:
-The title of the item you created matches the title of an item that already exists. Please rename the article that you've just created.");
-                throw e;
+//                var e = new Exception(@"Item Creation Failed:
+//The title of the item you created matches the title of an item that already exists. Please rename the article that you've just created.");
+//                throw e;
             }
         }
         private void AddTelligentUrl(Item item, string blogId, string blogPostId)
