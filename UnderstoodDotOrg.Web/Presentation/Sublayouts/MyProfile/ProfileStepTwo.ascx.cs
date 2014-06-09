@@ -228,10 +228,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             foreach (var item in uxIssues.Items)
             {
                 var checkbox = item.FindControl("uxIssueCheckbox") as CheckBox;
+                var hidden = item.FindControl("uxIssueHidden") as HiddenField;
 
                 if (checkbox.Checked)
                 {
-                    singleChild.Issues.Add(new Issue() { Key = Guid.Parse(checkbox.Attributes["value"]) });
+                    //singleChild.Issues.Add(new Issue() { Key = Guid.Parse(checkbox.Attributes["value"]) });
+                    singleChild.Issues.Add(new Issue() { Key = Guid.Parse(hidden.Value) });
                 }
             }
 
@@ -320,9 +322,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
         protected void uxIssues_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             var checkbox = e.Item.FindControl("uxIssueCheckbox") as CheckBox;
+            var hidden = e.Item.FindControl("uxIssueHidden") as HiddenField;
             var item = ((ChildIssueItem)e.Item.DataItem);
 
-            if (checkbox != null)
+            if (checkbox != null && hidden != null)
             {
                 //if editing, check to see if this is already selected for the kid
                 if (status == Constants.QueryStrings.Registration.ModeEdit)
@@ -333,7 +336,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                     }
                 }
 
-                checkbox.Attributes.Add("value", ((ChildIssueItem)e.Item.DataItem).ID.ToString());
+                //checkbox.Attributes.Add("value", ((ChildIssueItem)e.Item.DataItem).ID.ToString());
+                hidden.Value = item.ID.ToString();
             }
 
         }

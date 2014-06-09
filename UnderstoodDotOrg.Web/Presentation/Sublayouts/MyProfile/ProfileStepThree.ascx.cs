@@ -204,18 +204,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             foreach (var item in uxLeftList.Items)
             {
                 var check = item.FindControl("diagnosis") as CheckBox;
-                if (check != null && check.Checked)
+                var hidden = item.FindControl("diagnosisHidden") as HiddenField;
+                
+                if (check != null && check.Checked && hidden != null)
                 {
-                    singleChild.Diagnoses.Add(new Domain.Membership.Diagnosis() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    singleChild.Diagnoses.Add(new Domain.Membership.Diagnosis() { Key = Guid.Parse(hidden.Value) });
                 }
             }
 
             foreach (var item in uxRightList.Items)
             {
                 var check = item.FindControl("diagnosis") as CheckBox;
-                if (check != null && check.Checked)
+                var hidden = item.FindControl("diagnosisHidden") as HiddenField;
+
+                if (check != null && check.Checked && hidden != null)
                 {
-                    singleChild.Diagnoses.Add(new Domain.Membership.Diagnosis() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    singleChild.Diagnoses.Add(new Domain.Membership.Diagnosis() { Key = Guid.Parse(hidden.Value) });
                 }
             }
 
@@ -234,9 +238,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
         protected void ListItemDataBound(object sender, ListViewItemEventArgs e)
         {
             var check = e.Item.FindControl("diagnosis") as CheckBox;
+            var hidden = e.Item.FindControl("diagnosisHidden") as HiddenField;
             var item = e.Item.DataItem as UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildDiagnosisItem;
 
-            if (check != null && item != null)
+            if (check != null && item != null && hidden != null)
             {
                 if (status == Constants.QueryStrings.Registration.ModeEdit)
                 {
@@ -246,7 +251,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                     }
                 }
                 
-                check.Attributes.Add("guid", item.ID.ToString());
+                //check.Attributes.Add("guid", item.ID.ToString());
+                hidden.Value = item.ID.ToString();
             }
         }
     }

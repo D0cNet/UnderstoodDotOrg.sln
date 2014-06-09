@@ -81,6 +81,7 @@
                                                 <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                 <%# Eval("Fields[Interest Name]") %>
                                             </span>
+                                            <asp:HiddenField ID="interestHidden" runat="server" />
                                         </label>
                                     </div>
                                 </ItemTemplate>
@@ -99,6 +100,7 @@
                                                 <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                 <%# Eval("Fields[Interest Name]") %>
                                             </span>
+                                            <asp:HiddenField ID="interestHidden" runat="server" />
                                         </label>
                                     </div>
                                 </ItemTemplate>
@@ -127,6 +129,7 @@
                                                     <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                     <%# Eval("Fields[Interest Name]") %>
                                                 </span>
+                                                <asp:HiddenField ID="interestHidden" runat="server" />
                                             </label>
                                         </div>
                                     </ItemTemplate>
@@ -154,6 +157,7 @@
                                                     <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                     <%# Eval("Fields[Interest Name]") %>
                                                 </span>
+                                                <asp:HiddenField ID="interestHidden" runat="server" />
                                             </label>
                                         </div>
                                     </ItemTemplate>
@@ -184,6 +188,7 @@
                                                     <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                     <%# Eval("Fields[Interest Name]") %>
                                                 </span>
+                                                <asp:HiddenField ID="interestHidden" runat="server" />
                                             </label>
                                         </div>
                                     </ItemTemplate>
@@ -211,6 +216,7 @@
                                                     <%--<sc:text id="Text7" field="SI Area 1" runat="server" />--%>
                                                     <%# Eval("Fields[Interest Name]") %>
                                                 </span>
+                                                <asp:HiddenField ID="interestHidden" runat="server" />
                                             </label>
                                         </div>
                                     </ItemTemplate>
@@ -239,6 +245,7 @@
                                             <%--<sc:text id="Text37" field="WAY Area 1" runat="server" />--%>
                                             <%# Eval("Fields[Interest Name]") %>
                                         </span>
+                                        <asp:HiddenField ID="interestHidden" runat="server" />
                                     </label>
                                 </div>
                             </ItemTemplate>

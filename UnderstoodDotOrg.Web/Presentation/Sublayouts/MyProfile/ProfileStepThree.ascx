@@ -85,6 +85,7 @@
                                                 <%--<sc:text id="Text7" field="LD Area 1" runat="server" />--%>
                                                 <%# Item.DiagnosisName %>
                                             </span>
+                                            <asp:HiddenField ID="diagnosisHidden" runat="server" />
                                             <span class="info-link">
                                                 <div class="icon-wrapper popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></div>
                                             </span>
@@ -228,6 +229,7 @@
                                                 <%--<sc:text id="Text7" field="LD Area 1" runat="server" />--%>
                                                 <%# Item.DiagnosisName %>
                                             </span>
+                                            <asp:HiddenField ID="diagnosisHidden" runat="server" />
                                             <span class="info-link">
                                                 <div class="icon-wrapper popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></div>
                                             </span>

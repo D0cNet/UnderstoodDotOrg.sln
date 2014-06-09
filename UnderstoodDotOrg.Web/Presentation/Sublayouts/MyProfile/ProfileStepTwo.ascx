@@ -119,6 +119,8 @@
                                         <span>
                                             <%# Item.IssueName %>
                                         </span>
+                                        <asp:HiddenField ID="uxIssueHidden" runat="server" />
+
                                     </label>
                                 </div>
                             </ItemTemplate>

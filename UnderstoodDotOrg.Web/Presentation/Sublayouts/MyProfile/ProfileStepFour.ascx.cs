@@ -158,64 +158,71 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             foreach (var item in uxSchoolLeft.Items)
             {
                 var check = item.FindControl("interest") as CheckBox;
-                if (check != null && check.Checked)
+                var hidden = item.FindControl("interestHidden") as HiddenField;
+                if (check != null && check.Checked && hidden != null)
                 {
-                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(hidden.Value) });
                 }
             }
 
             foreach (var item in uxSchoolRight.Items)
             {
                 var check = item.FindControl("interest") as CheckBox;
-                if (check != null && check.Checked)
+                var hidden = item.FindControl("interestHidden") as HiddenField;
+                if (check != null && check.Checked && hidden != null)
                 {
-                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(hidden.Value) });
                 }
             }
 
             foreach (var item in uxWaysToHelp.Items)
             {
                 var check = item.FindControl("interest") as CheckBox;
-                if (check != null && check.Checked)
+                var hidden = item.FindControl("interestHidden") as HiddenField;
+                if (check != null && check.Checked && hidden != null)
                 {
-                    registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(hidden.Value) });
                 }
             }
 
             foreach (var item in uxGrowingUp.Items)
             {
                 var check = item.FindControl("interest") as CheckBox;
-                if (check != null && check.Checked)
+                var hidden = item.FindControl("interestHidden") as HiddenField;
+                if (check != null && check.Checked && hidden != null)
                 {
-                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(hidden.Value) });
                 }
             }
 
             foreach (var item in uxHomeLife.Items)
             {
                 var check = item.FindControl("interest") as CheckBox;
-                if (check != null && check.Checked)
+                var hidden = item.FindControl("interestHidden") as HiddenField;
+                if (check != null && check.Checked && hidden != null)
                 {
-                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(hidden.Value) });
                 }
             }
 
             foreach (var item in uxSocialEmotional.Items)
             {
                 var check = item.FindControl("interest") as CheckBox;
-                if (check != null && check.Checked)
+                var hidden = item.FindControl("interestHidden") as HiddenField;
+                if (check != null && check.Checked && hidden != null)
                 {
-                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(hidden.Value) });
                 }
             }
 
             foreach (var item in uxJourney.Items)
             {
                 var check = item.FindControl("interest") as RadioButton;
-                if (check != null && check.Checked)
+                var hidden = item.FindControl("interestHidden") as HiddenField;
+                if (check != null && check.Checked && hidden != null)
                 {
                     //registeringUser.Interests.Add(new Domain.Membership.Interest() { Key = Guid.Parse(check.Attributes["guid"]) });
-                    this.registeringUser.Journeys.Add(new Journey() { Key = Guid.Parse(check.Attributes["guid"]) });
+                    this.registeringUser.Journeys.Add(new Journey() { Key = Guid.Parse(hidden.Value) });
                 }
             }
 
@@ -342,9 +349,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
         protected void ListInterestDataBound(object sender, ListViewItemEventArgs e)
         {
             var check = e.Item.FindControl("interest") as CheckBox;
+            var hidden = e.Item.FindControl("interestHidden") as HiddenField;
             var item = e.Item.DataItem as Sitecore.Data.Items.Item;
 
-            if (check != null && item != null)
+            if (check != null && item != null && hidden != null)
             {
                 if (mode == Constants.QueryStrings.Registration.ModeEdit)
                 {
@@ -353,16 +361,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                         check.Checked = true;
                     }
                 }
-                check.Attributes.Add("guid", item.ID.ToString());
+                //check.Attributes.Add("guid", item.ID.ToString());
+                hidden.Value = item.ID.ToString();
             }
         }
 
         protected void ListJourneyDataBound(object sender, ListViewItemEventArgs e)
         {
             var check = e.Item.FindControl("interest") as CheckBox;
+            var hidden = e.Item.FindControl("interestHidden") as HiddenField;
             var item = e.Item.DataItem as Sitecore.Data.Items.Item;
 
-            if (check != null && item != null)
+            if (check != null && item != null && hidden != null)
             {
                 if (mode == Constants.QueryStrings.Registration.ModeEdit)
                 {
@@ -371,7 +381,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                         check.Checked = true;
                     }
                 }
-                check.Attributes.Add("guid", item.ID.ToString());
+                //check.Attributes.Add("guid", item.ID.ToString());
+                hidden.Value = item.ID.ToString();
             }
         }
 
