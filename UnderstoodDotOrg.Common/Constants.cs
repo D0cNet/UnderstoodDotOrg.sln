@@ -518,7 +518,8 @@ namespace UnderstoodDotOrg.Common
         {
             public const string SetReminder = "Reminder Set";
             public const string Favorited = "Item Favorited";
-            public const string  Shared = "Item Shared";
+            public const string Shared = "Item Shared";
+            public const string FoundHelpful = "Found Helpful";
         }
         public static class UserActivity_Types
         {

@@ -22,22 +22,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
         protected global::System.Web.UI.WebControls.Literal ltlDidYouFindThisHelpful;
         
         /// <summary>
-        /// ltlYes control.
+        /// UpdatePanel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlYes;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
         
         /// <summary>
-        /// ltlNo control.
+        /// btnYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlNo;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnYes;
+        
+        /// <summary>
+        /// btnNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnNo;
         
         /// <summary>
         /// ltlDidYouFindThisHelpfulSmall control.
@@ -49,21 +58,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
         protected global::System.Web.UI.WebControls.Literal ltlDidYouFindThisHelpfulSmall;
         
         /// <summary>
-        /// ltlYesSmall control.
+        /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlYesSmall;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// ltlNoSmall control.
+        /// btnSmallYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlNoSmall;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnSmallYes;
+        
+        /// <summary>
+        /// btnSmallNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnSmallNo;
     }
 }

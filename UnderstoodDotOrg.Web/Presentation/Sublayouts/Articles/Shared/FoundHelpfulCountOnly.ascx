@@ -25,7 +25,7 @@
         <div class="col col-13 offset-1 article-intro-text-wrapper rs_read_this">
             <!-- BEGIN PARTIAL: article-intro-text -->
             <div class="article-intro-text">
-                <sc:FieldRenderer FieldName="Page Summary" runat="server"></sc:FieldRenderer>
+                <sc:FieldRenderer FieldName="Body Content" runat="server"></sc:FieldRenderer>
             </div>
             <!-- END PARTIAL: article-intro-text -->
         </div>

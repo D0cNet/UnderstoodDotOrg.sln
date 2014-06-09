@@ -39,7 +39,7 @@
         <div class="col col-13 offset-1 article-intro-text-wrapper rs_read_this">
             <!-- BEGIN PARTIAL: article-intro-text -->
             <div class="article-intro-text" id="dvIntro" runat="server">
-                <sc:fieldrenderer fieldname="Page Summary" runat="server"></sc:fieldrenderer>
+                <sc:fieldrenderer fieldname="Body Content" runat="server"></sc:fieldrenderer>
             </div>
             <!-- END PARTIAL: article-intro-text -->
         </div>

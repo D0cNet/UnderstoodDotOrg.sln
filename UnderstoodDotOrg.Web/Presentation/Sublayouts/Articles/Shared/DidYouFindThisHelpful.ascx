@@ -13,10 +13,14 @@
                 <h4><asp:Literal ID="ltlDidYouFindThisHelpful" runat="server"></asp:Literal></h4>
                 <ul>
                     <li>
-                        <button class="helpful-yes"><asp:Literal ID="ltlYes" runat="server"></asp:Literal></button>
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" class="update-panel">
+                            <ContentTemplate>
+                                <button id="btnYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick"></button>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                     </li>
                     <li>
-                        <button class="helpful-no"><asp:Literal ID="ltlNo" runat="server"></asp:Literal></button>
+                        <button id="btnNo" runat="server" class="helpful-no"></button>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
@@ -28,17 +32,17 @@
                 <!-- Module within only appears in under 650px window width-->
                 <!-- BEGIN PARTIAL: find-helpful -->
                 <div class="find-this-helpful sidebar no-margin" id="count-helpful-sidebar rs_read_this">
-
-
-
-
                     <h4><asp:Literal ID="ltlDidYouFindThisHelpfulSmall" runat="server"></asp:Literal></h4>
                     <ul>
                         <li>
-                            <button class="helpful-yes button yes rs_skip"><asp:Literal ID="ltlYesSmall" runat="server"></asp:Literal></button>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server" class="update-panel">
+                                <ContentTemplate>
+                                    <button id="btnSmallYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick"></button>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                         </li>
                         <li>
-                            <button class="helpful-no button no gray rs_skip"><asp:Literal ID="ltlNoSmall" runat="server"></asp:Literal></button>
+                            <button id="btnSmallNo" runat="server" class="helpful-no"></button>
                         </li>
                     </ul>
                     <div class="clearfix"></div>

@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Domain.Understood.Activity;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
@@ -25,13 +26,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 
         private void BindData(DefaultArticlePageItem page)
         {
-            int helpfulCount = 0;
+            ActivityLog tempLog = new ActivityLog();
+            //ContentId, ActivityValue
+            int helpfulCount = tempLog.GetActivityCountByValue(new Guid(Sitecore.Context.Item.ID.ToString()), Constants.UserActivity_Values.FoundHelpful); 
             int commentCount = 0;
-
-            if (!string.IsNullOrEmpty(page.ContentId.Raw))
-            {
-                helpfulCount = CommunityHelper.GetTotalLikes(page.ContentId.Raw);
-            }
 
             if (!string.IsNullOrEmpty(page.BlogId.Raw) && !string.IsNullOrEmpty(page.BlogPostId.Raw))
             {

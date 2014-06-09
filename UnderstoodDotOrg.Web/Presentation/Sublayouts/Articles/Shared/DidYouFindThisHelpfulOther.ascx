@@ -5,10 +5,14 @@
     <h4><asp:Literal ID="ltlDidYouFindThisHelpful" runat="server"></asp:Literal></h4>
     <ul>
         <li>
-            <button class="helpful-yes"><asp:Literal ID="ltlYes" runat="server"></asp:Literal></button>
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server" class="update-panel">
+                <ContentTemplate>
+                    <button id="btnYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick"></button>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </li>
         <li>
-            <button class="helpful-no"><asp:Literal ID="ltlNo" runat="server"></asp:Literal></button>
+            <button id="btnNo" runat="server" class="helpful-no"></button>
         </li>
     </ul>
     <div class="clearfix"></div>
