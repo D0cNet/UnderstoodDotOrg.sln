@@ -988,8 +988,8 @@ namespace UnderstoodDotOrg.Domain.Membership
                 string sql = "UPDATE  dbo.Members " +
                         " SET PreferedLanguage = @PreferedLanguage, " +
                         " AgreedToSignUpTerms = @AgreedToSignUpTerms, " +
-                        " MobilePhoneNumber = @MobilePhoneNumber  " +
-                        " Subscribed_DailyDigest = @Subscribed_DailyDigest  " +
+                        " MobilePhoneNumber = @MobilePhoneNumber,  " +
+                        " Subscribed_DailyDigest = @Subscribed_DailyDigest,  " +
                         " Subscribed_WeeklyDigest = @Subscribed_WeeklyDigest  " +
                         " WHERE (MemberId = @MemberId)";
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
