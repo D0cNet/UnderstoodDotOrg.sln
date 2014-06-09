@@ -29,7 +29,9 @@
                 <div class="col col-24">
                     <asp:HyperLink runat="server" ID="hlSeeArchive" CssClass="button see-archive"></asp:HyperLink>
                     <%--<a class="button see-archive" href="REPLACE">See Archive</a>--%>
-                    <div aria-hidden="true" class="children-key">
+                    <%--
+                        Phase 2
+                        <div aria-hidden="true" class="children-key">
                         <ul>
                             <li><i class="child-a"></i>for Michael</li>
                             <li><i class="child-b"></i>for Elizabeth</li>
@@ -38,7 +40,7 @@
                             <li><i class="child-e"></i>for Franklin</li>
                         </ul>
                     </div>
-                    <!-- .children-key -->
+                    --%>
 
                 </div>
                 <!-- .col -->

@@ -29,12 +29,13 @@
                 <p class="event-card-topics">
                     <sc:FieldRenderer ID="frSubheading" runat="server" FieldName="Event Subheading" />
                 </p>
+                <%-- Phase 2
                 <span class="children-key">
                     <ul>
                         <li><i title="CHILD NAME HERE" class="child-a"></i></li>
                         <li><i title="CHILD NAME HERE" class="child-b"></i></li>
                     </ul>
-                </span>
+                </span> --%>
             </div>
             <!-- end .event-card-details -->
             <div class="event-card-date-details col equalize">
