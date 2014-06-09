@@ -13,7 +13,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string blogId = Request.QueryString["id"];
+            string blogId = Request.QueryString["BlogId"];
             List<BlogPost> dataSource = CommunityHelper.ListBlogPosts(blogId);
             rptBlogInfo.DataSource = dataSource;
             rptBlogInfo.DataBind();

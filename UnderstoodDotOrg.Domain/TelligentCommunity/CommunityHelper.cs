@@ -109,7 +109,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     webClient.Headers.Add("Rest-User-Token", TelligentAuth());
 
                     var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", id, postId));
-                    
+
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
@@ -192,7 +192,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         {
             var webClient = new WebClient();
             XmlNode node = null;
-            
+
             string adminKeyBase64 = CommunityHelper.TelligentAuth();
             try
             {
@@ -200,7 +200,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
                 //webClient.Headers.Add("Rest-Impersonate-User", userId);
 
-                var requestUrl = GetApiEndPoint(String.Format("comments.xml?UserId={0}",userId));
+                var requestUrl = GetApiEndPoint(String.Format("comments.xml?UserId={0}", userId));
 
                 var xml = webClient.DownloadString(requestUrl);
                 var xmlDoc = new XmlDocument();
@@ -273,7 +273,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     webClient.Headers.Add("Rest-User-Token", TelligentAuth());
                     var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}.xml", blogId, blogPostId));
-                    
+
                     var xml = webClient.DownloadString(requestUrl);
 
                     var xmlDoc = new XmlDocument();
@@ -345,7 +345,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                     // TODO: change to constant
                     var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", "2"));
-                    
+
                     var values = new NameValueCollection();
                     values["Title"] = title;
                     values["Body"] = body;
@@ -476,7 +476,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                 webClient.Headers.Add("Rest-User-Token", TelligentAuth());
                 var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", wikiId));
-                
+
                 var xml = webClient.DownloadString(requestUrl);
 
                 XmlDocument xmlDoc = new XmlDocument();
@@ -569,7 +569,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         PublishedDate = FormatDate(xn["PublishedDate"].InnerText),
                         Body = xn["Body"].InnerText,
                         Author = user["Username"].InnerText,
-                        Count= nodes.Count.ToString(),
+                        Count = nodes.Count.ToString(),
                     };
                     answerList.Add(answer);
                     count++;
@@ -670,7 +670,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         Url = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
                         "/" + blogName + "/" + node["Title"].InnerText, ".aspx", ""),
                         ParentUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
-                        "/blogposts?BlogId=" + blogId , ".aspx", "")
+                        "/blogposts?BlogId=" + node["BlogId"].InnerText, ".aspx", "")
                     };
                     blogPosts.Add(blogPost);
                 }
@@ -704,8 +704,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         Blog blogPost = new Blog()
                         {
                             Title = title,
-                            Description=description,
-                            BlogId= blogId,
+                            Description = description,
+                            BlogId = blogId,
                             Url = "/en/Community and Events/Blogs/BlogPosts?id=" + blogId
                         };
                         if (!title.Equals("Articles"))
@@ -904,7 +904,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
 
                         }
-                    }catch(Exception ex)
+                    }
+                    catch (Exception ex)
                     {
                         Sitecore.Diagnostics.Error.LogError("Error in ReadReplies CommunityHelper.\nError" + ex.Message);
                         replies = null;
@@ -923,7 +924,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     ThreadModel t = new ThreadModel(childNode);
                     th.Add(t);
-                   // Thread.Sleep(3000);
+                    // Thread.Sleep(3000);
                 }
             }
             catch (Exception ex)
@@ -989,9 +990,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public static bool IsUserInGroup(string userScreenName, string groupID)
         {
             bool val = false;
-           
+
             if (!String.IsNullOrEmpty(userScreenName) && !String.IsNullOrEmpty(groupID))
-            { 
+            {
                 userScreenName = userScreenName.Trim();
                 groupID = groupID.Trim();
                 using (WebClient webClient = new WebClient())
@@ -1139,7 +1140,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             List<FavoritesModel> favoritesList = new List<FavoritesModel>();
 
             ActivityLog log = new ActivityLog(username, Constants.UserActivity_Values.Favorited);
-            
+
             foreach (ActivityItem item in log.Activities)
             {
                 if ((item != null) && (Sitecore.Context.Database.GetItem(item.ContentId) != null))
@@ -1154,7 +1155,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     favoritesList.Add(favorite);
                 }
             }
-            
+
             return favoritesList;
         }
 
@@ -1295,7 +1296,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     foreach (XmlNode xn in nodes)
                     {
                         XmlNode author = xn.SelectSingleNode("Content/CreatedByUser");
-                        XmlNode app = xn.SelectSingleNode("Content/Application");                        
+                        XmlNode app = xn.SelectSingleNode("Content/Application");
                         XmlNode content = xn.SelectSingleNode("Content");
 
                         var commentId = xn["CommentId"].InnerText;
@@ -1312,7 +1313,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         var parentTitle = content["HtmlName"].InnerText;
                         if (app["HtmlName"].InnerText != "Articles")
                         {
-                            Comment comment = new Comment() {
+                            Comment comment = new Comment()
+                            {
                                 CommentId = commentId,
                                 IsApproved = isApproved,
                                 ReplyCount = replyCount,
@@ -1325,7 +1327,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                                 AuthorProfileUrl = authorProfileUrl,
                                 AuthorUsername = authorUsername,
                                 ParentTitle = parentTitle,
-                                Url = "Community and Events/Blogs/" + app["HtmlName"].InnerText + "/" + parentTitle,
+                                Url = "~/Community and Events/Blogs/" + app["HtmlName"].InnerText + "/" + parentTitle,
                             };
                             commentList.Add(comment);
                         }
@@ -1403,6 +1405,93 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     return false;
                 }
             }
+        }
+
+        public static bool CreateFriendship(string requesterUsername, string requesteeUsername)
+        {
+            string requesteeUserId = string.Empty;
+
+            if (requesterUsername.IsNullOrEmpty() || requesteeUsername.IsNullOrEmpty())
+            {
+                return false;
+            }
+            try
+            {
+                requesteeUserId = CommunityHelper.ReadUserId(requesteeUsername);
+            }
+            catch
+            {
+                return false;
+            }
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                    var requestUrl = GetApiEndPoint(String.Format("users/{1}/friends.xml", "http://telligent.dev01.rax.webstagesite.com/telligent/", requesterUsername.Trim()));
+
+                    var values = new NameValueCollection();
+                    values["RequesteeId"] = requesteeUserId.Trim();
+                    values["RequestMessage"] = "Lemme be yo friend";
+
+                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+
+                    Console.WriteLine(xml);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static bool CheckFriendship(string currentUsername, string checkedUsername)
+        {
+            string requesteeUserId = string.Empty;
+
+            if (currentUsername.IsNullOrEmpty() || checkedUsername.IsNullOrEmpty())
+            {
+                return false;
+            }
+            try
+            {
+                requesteeUserId = CommunityHelper.ReadUserId(checkedUsername);
+            }
+            catch
+            {
+                return false;
+            }
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                    var requestUrl = GetApiEndPoint(String.Format("users/{1}/friends.xml", "http://telligent.dev01.rax.webstagesite.com/telligent/", currentUsername.Trim()));
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Friendships/Friendship");
+                    foreach (XmlNode node in nodes)
+                    {
+                        XmlNode friend = node.SelectSingleNode("User");
+                        if (checkedUsername.Equals(friend["Username"].InnerText))
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }
