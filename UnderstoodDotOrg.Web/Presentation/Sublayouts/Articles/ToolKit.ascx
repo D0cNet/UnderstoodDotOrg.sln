@@ -13,12 +13,13 @@
                 </p>
             </div>
             <div class="col col-9  offset-1">
-                <sc:fieldrenderer fieldname="Body Content" runat="server"></sc:fieldrenderer>
+                <sc:fieldrenderer fieldname="Page Summary" runat="server"></sc:fieldrenderer>
             </div>
         </div>
         <style>
             .toolkit-overlay .offset-1 img{
                 width: 100% !important;
+                height: auto;
             }
         </style>
         <!-- END toolkit-overlay -->
