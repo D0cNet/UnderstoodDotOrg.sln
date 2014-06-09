@@ -622,7 +622,7 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "Featured");
             }
         }
-
+       
         public static string HowCanHelp
         {
             get
@@ -1028,5 +1028,7 @@ namespace UnderstoodDotOrg.Common
        }
 
         #endregion
+
+       public static string ViewAllLabel { get { return Translate.TextByDomain(PosesDictionary, "View All Label"); } }
     }
 }

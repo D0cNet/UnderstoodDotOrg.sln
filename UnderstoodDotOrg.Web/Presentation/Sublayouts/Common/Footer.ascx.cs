@@ -32,6 +32,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             }
         }
 
+        protected string ViewAllLabel
+        {
+            get { return DictionaryConstants.ViewAllLabel; }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             FooterFolderItem footerFolderItem = GetFooter();

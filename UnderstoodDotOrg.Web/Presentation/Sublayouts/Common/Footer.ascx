@@ -72,7 +72,7 @@
                 </FooterTemplate>
             </asp:Repeater>
             <!-- end partners-carousel-container -->
-            <asp:HyperLink ID="hlViewAllPartners" CssClass="viewAll" runat="server">View All</asp:HyperLink>
+            <asp:HyperLink ID="hlViewAllPartners" CssClass="viewAll" runat="server"><%= ViewAllLabel %></asp:HyperLink>
             <!-- END PARTIAL: partners-carousel -->
 
         </div>

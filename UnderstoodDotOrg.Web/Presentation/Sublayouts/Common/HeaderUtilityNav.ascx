@@ -87,7 +87,7 @@
                 <label for="search-term" class="visuallyhidden" aria-hidden="true">
                     <sc:FieldRenderer ID="frSearchLabel2" runat="server" FieldName="Link" />
                 </label>
-                <input type="text" id="search-term" placeholder="Enter Search Term" data-path="<%= SearchPath %>">
+                <input type="text" id="search-term" placeholder='<%= SearchLabel %>' data-path="<%= SearchPath %>">
                 <input type="submit" value="Go">
             </span>
         </fieldset>

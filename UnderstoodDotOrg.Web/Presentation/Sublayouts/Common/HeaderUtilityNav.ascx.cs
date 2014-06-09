@@ -12,6 +12,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -25,6 +26,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         protected string SearchPath
         {
             get { return FormHelper.GetSearchResultsUrl(String.Empty, String.Empty); }
+        }
+        protected string SearchLabel
+        {
+            get { return DictionaryConstants.SearchLabel; }
         }
 
         protected void Page_Load(object sender, EventArgs e)
