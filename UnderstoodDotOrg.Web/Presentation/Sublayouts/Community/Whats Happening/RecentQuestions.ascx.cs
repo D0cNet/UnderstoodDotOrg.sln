@@ -15,7 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
         protected string CurrentItemUrl { get { return LinkManager.GetItemUrl(this.DataSource); } }
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Question> dataSource = CommunityHelper.GetQuestionsList("2");
+            List<Question> dataSource = CommunityHelper.GetQuestionsList("2", 10);
             foreach (Question q in dataSource)
             {
                 if (q.Body.Length > 100)

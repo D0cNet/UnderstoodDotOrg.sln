@@ -475,7 +475,56 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             {
 
                 webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", wikiId));
+                var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml?PageSize=6", wikiId));
+
+                var xml = webClient.DownloadString(requestUrl);
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+
+                XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPages/WikiPage");
+                foreach (XmlNode xn in nodes)
+                {
+                    XmlNode user = xn.SelectSingleNode("User");
+                    XmlNode app = xn.SelectSingleNode("Content/Application");
+
+                    var queryString = "?wikiId=" + wikiId + "&wikiPageId=" + xn["Id"].InnerText + "&contentId=" + xn["ContentId"].InnerText;
+
+                    Question question = new Question()
+                    {
+                        Title = xn["Title"].InnerText,
+                        PublishedDate = FormatDate(xn["CreatedDate"].InnerText),
+                        Body = xn["Body"].InnerText,
+                        WikiPageId = xn["Id"].InnerText,
+                        ContentId = xn["ContentId"].InnerText,
+                        Author = user["Username"].InnerText,
+                        Group = app["HtmlName"].InnerText,
+                        CommentCount = xn["CommentCount"].InnerText,
+                        QueryString = queryString,
+                        // TODO: replace this with constant or guid lookup
+                        Url = "/en/community-and-events/q-and-a/q-and-a-details" + queryString,
+                    };
+                    questionList.Add(question);
+                }
+            }
+            return questionList;
+        }
+
+        public static List<Question> GetQuestionsList(string wikiId, int count)
+        {
+            int id = 0;
+            List<Question> questionList = new List<Question>();
+
+            if (String.IsNullOrEmpty(wikiId) || !Int32.TryParse(wikiId, out id))
+            {
+                return questionList;
+            }
+
+            using (var webClient = new WebClient())
+            {
+
+                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml?PageSize={1}", wikiId, count));
 
                 var xml = webClient.DownloadString(requestUrl);
 
@@ -707,7 +756,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                             Title = title,
                             Description = description,
                             BlogId = blogId,
-                            Url = "/en/Community and Events/Blogs/BlogPosts?id=" + blogId
+                            Url = "/en/Community and Events/Blogs/BlogPosts?BlogId=" + blogId
                         };
                         if (!title.Equals("Articles"))
                         {
@@ -1493,6 +1542,41 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 }
             }
             return false;
+        }
+        public static string ReadUserEmail(string username)
+        {
+            string email = null;
+            if (!String.IsNullOrEmpty(username))
+            {
+                username = username.Trim();
+                using (WebClient webClient = new WebClient())
+                {
+                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
+
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                    try
+                    {
+                        var requestUrl = GetApiEndPoint(String.Format("users/{0}.xml", username.ToLower()));
+                        var xml = webClient.DownloadString(requestUrl);
+                        var xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(xml);
+                        XmlNode node = xmlDoc.SelectSingleNode("Response/User");
+                        if (node != null)
+                        {
+                            //Read user id
+                            email = node.SelectSingleNode("PrivateEmail").InnerText;
+                            //return Userid;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        email = null;
+                    }
+
+                }
+            }
+            return email;
         }
     }
 }
