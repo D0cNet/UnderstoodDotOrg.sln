@@ -17,6 +17,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (this.CurrentMember != null && this.CurrentUser != null)
+            {
+                Response.Redirect(MyAccountFolderItem.GetMyProfilePage());
+            }
+
             uxEmailAddress.Attributes["placeholder"] = DictionaryConstants.EnterEmailAddressWatermark;
             uxFirstName.Attributes["placeholder"] = DictionaryConstants.FirstNameWatermark;
             uxPassword.Attributes["placeholder"] = DictionaryConstants.EnterPasswordWatermark;
