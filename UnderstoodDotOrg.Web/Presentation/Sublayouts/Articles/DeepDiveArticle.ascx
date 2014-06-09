@@ -36,11 +36,11 @@
                     <!-- BEGIN PARTIAL: article-copy -->
                     <div class="deep-dive-copy">
 
-                        <asp:ListView ID="uxSections" runat="server"
+                        <asp:Repeater ID="rptSections" runat="server"
                             ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
                             <ItemTemplate>
                                 <div class="deep-dive-block">
-                                    <a name="item<%# Container.DisplayIndex %>"></a>
+                                    <a name="item<%# Container.ItemIndex %>"></a>
                                     <h2>
                                         <%# Item.Title.Rendered %>
                                     </h2>
@@ -48,13 +48,41 @@
                                     <span class="back-to-top rs_skip"><a href="#top">Back to Top</a></span>
                                 </div>
                             </ItemTemplate>
-                            <ItemSeparatorTemplate>
+                            <SeparatorTemplate>
                                 <div class="clearfix"></div>
-                            </ItemSeparatorTemplate>
-                        </asp:ListView>
+                            </SeparatorTemplate>
+                        </asp:Repeater>
+
+                        <asp:Repeater ID="rptExtraSections" runat="server"
+                            ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.DeepDiveArticle.DeepDiveSectionInfoPageItem">
+                            <HeaderTemplate>
+                                <div class="deep-dive-extra">
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <div class="deep-dive-block">
+                                    <a name="item<%# Container.ItemIndex %>"></a>
+                                    <h2>
+                                        <%# Item.Title.Rendered %>
+                                    </h2>
+                                    <%# Item.Content.Rendered %>
+                                    <span class="back-to-top rs_skip"><a href="#top">Back to Top</a></span>
+                                </div>
+                            </ItemTemplate>
+                            <SeparatorTemplate>
+                                <div class="clearfix"></div>
+                            </SeparatorTemplate>
+                            <FooterTemplate>
+                                </div>
+                            </FooterTemplate>
+                        </asp:Repeater>
 
                     </div>
                     <!-- END PARTIAL: article-copy -->
+                    <div class="deep-dive-more">
+                    <a href="REMOVE">More
+                        <i class="icon-arrow-down-blue"></i>
+                    </a>
+                </div>
                 </div>
                 <!-- BEGIN PARTIAL: key-takeaways -->
                 <div id="divKeyTakeaways" runat="server" class="key-takeaways">

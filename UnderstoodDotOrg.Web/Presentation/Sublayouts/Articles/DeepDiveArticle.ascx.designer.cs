@@ -31,13 +31,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.ListView rptSectionList;
         
         /// <summary>
-        /// uxSections control.
+        /// rptSections control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView uxSections;
+        protected global::System.Web.UI.WebControls.Repeater rptSections;
+        
+        /// <summary>
+        /// rptExtraSections control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptExtraSections;
         
         /// <summary>
         /// divKeyTakeaways control.

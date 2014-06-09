@@ -29,8 +29,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             rptSectionList.DataSource = finalSectionList;
             rptSectionList.DataBind();
 
-            uxSections.DataSource = finalSectionList;
-            uxSections.DataBind();
+            rptSections.DataSource = finalSectionList.Take(3);
+            rptSections.DataBind();
+            if (finalSectionList.Count > 3)
+            {
+                rptExtraSections.DataSource = finalSectionList.Skip(3);
+                rptExtraSections.DataBind();
+            }
         }
     }
 }
