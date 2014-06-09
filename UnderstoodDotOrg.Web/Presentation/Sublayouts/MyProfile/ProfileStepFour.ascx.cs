@@ -38,8 +38,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             if (!IsPostBack)
             {
                 this.registeringUser = CurrentMember;
-                ScreenNameTextField.Text = DictionaryConstants.ScreenNameWatermark;
-                ZipCodeTextField.Text = DictionaryConstants.ZipCodeWatermark;
+                //ScreenNameTextField.Text = DictionaryConstants.ScreenNameWatermark;
+                ScreenNameTextField.Attributes["placeholder"] = DictionaryConstants.ScreenNameWatermark;
+                //ZipCodeTextField.Text = DictionaryConstants.ZipCodeWatermark;
+                ZipCodeTextField.Attributes["placeholder"] = DictionaryConstants.ZipCodeWatermark;
                 SubmitButton.Text = DictionaryConstants.SubmitButtonText;
 
                 if (mode == Constants.QueryStrings.Registration.ModeEdit)
