@@ -43,7 +43,6 @@
                                                 </ItemTemplate>
                                             </asp:Repeater>
                                         </div>
-
                                     </fieldset>
                                 </div>
                                 <!-- .checkboxes-wrapper -->
@@ -55,15 +54,15 @@
 
                     <asp:HiddenField ID="hfKeyValuePairs" runat="server" />
                     <script>
-                        var Answers = {};
-                        var hiddenField = $("[id*='hfKeyValuePairs']");
+                        $(function () {
+                            var Answers = {};
+                            var hiddenField = $("[id*='hfKeyValuePairs']");
 
-                        $("div[id*='rptHeaderChkbox_rptTopicChkbox'] .checkbox-item").each(function () {
-                            $radioControl = $(this);
-
-                            $radioControl.click(function () {
+                            $(".checkbox-item").click(function () {
+                                $this = $(this);
                                 console.log("here");
-                                Answers[$radioControl.data("id")] = $(this).find("span").hasClass("checked");
+                                //console.log($radioControl)
+                                Answers[$this.data("id")] = $this.find("span").hasClass("checked");
                                 hiddenField.val(JSON.stringify(Answers));
                             })
                         })
