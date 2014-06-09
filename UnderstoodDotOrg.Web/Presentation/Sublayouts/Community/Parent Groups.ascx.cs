@@ -1,7 +1,9 @@
-﻿using Sitecore.Data.Items;
+﻿using Sitecore.Data;
+using Sitecore.Data.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -18,12 +20,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
         GroupSummaryList rptGroupCards;
 
         protected override void OnInit(EventArgs e)
-            {
+        {
             Item parentItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.ParentsGroupRecommended));
             string itemHref = Sitecore.Links.LinkManager.GetItemUrl(parentItem);
             ref_recommended_group.HRef = itemHref;
             base.OnInit(e);
-            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             rptGroupCards = (GroupSummaryList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupSummaryList.ascx");
@@ -115,9 +117,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             else
             {
                 var grpItems = Session["groupItems"] as List<GroupCardModel>;
-                if (grpItems !=null)
+                if (grpItems != null)
                 {
-                   
+
                     rptGroupCards.DataSource = grpItems;
                     rptGroupCards.DataBind();
                 }
@@ -146,14 +148,59 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
         private List<GroupCardModel> FindGroups(string issue, string topic, string grade, string state, string partner)
         {
             List<GroupCardModel> results = new List<GroupCardModel>();
-            if (Session["groupItems"] is List<GroupCardModel>)
+            StringBuilder strb = new StringBuilder();
+            StringBuilder strValues = new StringBuilder();
+            //if (Session["groupItems"] is List<GroupCardModel>)
+            //{
+
+            //    //throw new NotImplementedException();
+            //    ///TODO: Implement search results
+            //    results=(List<GroupCardModel>)Session["groupItems"] ;
+            //}
+            strb.Append("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Groups.GroupTemplateID +"'");
+            string AndCondition = " and (";
+            string OrCondition = " or ";
+            if (!String.IsNullOrEmpty(issue) || !String.IsNullOrEmpty(topic) || !String.IsNullOrEmpty(grade) || !String.IsNullOrEmpty(state) || !String.IsNullOrEmpty(partner))
             {
+               
+                strb.Append(AndCondition);
 
-                //throw new NotImplementedException();
-                ///TODO: Implement search results
-                results=(List<GroupCardModel>)Session["groupItems"] ;
+                //Build search string based on parameters
+                //Order matters according to Speckle UN-595
+                if (!String.IsNullOrEmpty(issue))
+                {
+                    strValues.Append(!String.IsNullOrEmpty(strValues.ToString()) ? OrCondition : String.Empty).Append(" @Issues= '%" + issue + "%'");
+                }
+
+                if (!String.IsNullOrEmpty(grade))
+                {
+                    strValues.Append(!String.IsNullOrEmpty(strValues.ToString()) ? OrCondition : String.Empty).Append(" @Grades= '%" + grade + "%'");
+                }
+
+                if (!String.IsNullOrEmpty(topic))
+                {
+                    strValues.Append(!String.IsNullOrEmpty(strValues.ToString()) ? OrCondition : String.Empty).Append(" @Topic= '%" + topic + "%'");
+                }
+
+                if (!String.IsNullOrEmpty(state))
+                {
+                    strValues.Append(!String.IsNullOrEmpty(strValues.ToString()) ? OrCondition : String.Empty).Append(" @States= '%" + state + "%'");
+                }
+
+                
+                if (!String.IsNullOrEmpty(partner))
+                {
+                    strValues.Append(!String.IsNullOrEmpty(strValues.ToString()) ? OrCondition : String.Empty).Append(" @Partners= '%" + partner + "%'");
+                }
             }
+            strb.Append(strValues);
+            strb.Append(")]");
+            //Use sitecore fast query to perform search
+            Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("web");
+            Item[] grps = masterDb.SelectItems(strb.ToString());
+            results = grps.Select(x => new GroupCardModel(new GroupItem(x))).ToList<GroupCardModel>();
 
+            
             return results;
         }
     }
