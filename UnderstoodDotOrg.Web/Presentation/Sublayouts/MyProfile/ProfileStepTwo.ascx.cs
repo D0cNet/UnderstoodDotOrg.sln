@@ -154,9 +154,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             uxGirl.Enabled = false;
 
             //fill in grade
-            uxSelectGrade.ClearSelection();
-            //uxSelectGrade.SelectedValue = singleChild.Grades.FirstOrDefault().Key.ToString();
-            uxSelectGrade.Items.FindByText(singleChild.Grades.FirstOrDefault().Value).Selected = true;
+            if (uxSelectGrade.Items.FindByText(singleChild.Grades.FirstOrDefault().Value) != null)
+            {
+                uxSelectGrade.ClearSelection();
+                uxSelectGrade.Items.FindByText(singleChild.Grades.FirstOrDefault().Value).Selected = true;    
+            }
 
             //fill in nickname
             ScreenNameTextBox.Text = singleChild.Nickname;
