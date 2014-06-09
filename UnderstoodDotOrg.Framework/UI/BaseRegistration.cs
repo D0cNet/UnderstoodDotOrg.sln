@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 
 namespace UnderstoodDotOrg.Framework.UI
 {
@@ -57,6 +59,13 @@ namespace UnderstoodDotOrg.Framework.UI
             string appId = ConfigurationManager.AppSettings[Constants.Settings.FacebookAppId];
 
             Page.ClientScript.RegisterClientScriptBlock(GetType(), "fbAppId", string.Format(facebookId, appId), true);
+
+            var item = Sitecore.Context.Item;
+
+            if (this.CurrentMember == null && this.CurrentUser == null && item.TemplateID.ToGuid() != Guid.Parse(SignInPageItem.TemplateId) && item.TemplateID.ToGuid() != Guid.Parse(SignUpPageItem.TemplateId) )
+            {
+                Response.Redirect(MyAccountFolderItem.GetSignInPage());
+            }
         }
     }
 
