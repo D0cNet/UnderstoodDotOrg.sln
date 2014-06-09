@@ -7,9 +7,12 @@
             <div class="tab-container friends-view-tabs skiplink-content" aria-role="main">
                 <!-- BEGIN PARTIAL: friends-view-tabs -->
                 <ul class="etabs">
-                    <li class="tab profile-tab active"><a href="REPLACE">Profile</a></li>
-                    <li class="tab connections-tab "><a href="REPLACE">Connections</a></li>
-                    <li class="tab comments-tab "><a href="REPLACE">Comments <span class="comment-number">15</span></a></li>
+                    <li class="tab profile-tab active">
+                        <asp:HyperLink ID="hypProfileTab" runat="server">Profile</asp:HyperLink></li>
+                    <li class="tab connections-tab ">
+                        <asp:HyperLink ID="hypConnectionsTab" runat="server">Connections</asp:HyperLink></li>
+                    <li class="tab comments-tab ">
+                        <asp:HyperLink ID="hypCommentsTab" runat="server">Comments <span class="comment-number">15</span></asp:HyperLink></li>
                 </ul>
                 <div class="friends-view-tabs-select select-inverted-mobile">
                     <div class="etabs-dropdown">
@@ -29,50 +32,36 @@
                                 <h3>Children</h3>
                             </div>
                             <div class="col col-19">
-                                <div class="row">
-                                    <div class="col col-11 rs_read_this friends-view-rs-wrapper">
-                                        <h4>Grade 3, boy, evaluated:</h4>
-                                        <ul>
-                                            <li>Spoken Language</li>
-                                            <li>Listening comprehension</li>
-                                            <li>Social skills, including conversation</li>
-                                            <li>Motor skills</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col col-11 rs_read_this friends-view-rs-wrapper">
-                                        <h4>Grade 5, girl, evaluated:</h4>
-                                        <ul>
-                                            <li>Reading</li>
-                                            <li>Math</li>
-                                            <li>Writing</li>
-                                            <li>Attebtuib.hyperac</li>
-                                            <li>Organization, planning, time management</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- /. row -->
-                                <div class="row">
-                                    <div class="col col-11 rs_read_this friends-view-rs-wrapper">
-                                        <h4>Grade 6, boy, evaluated:</h4>
-                                        <ul>
-                                            <li>Spoken Language</li>
-                                            <li>Listening comprehension</li>
-                                            <li>Social skills, including conversation</li>
-                                            <li>Motor skills</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col col-11 rs_read_this friends-view-rs-wrapper">
-                                        <h4>Grade 12, girl, evaluated:</h4>
-                                        <ul>
-                                            <li>Reading</li>
-                                            <li>Math</li>
-                                            <li>Writing</li>
-                                            <li>Attebtuib.hyperac</li>
-                                            <li>Organization, planning, time management</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- /. row -->
+                                <asp:Repeater ID="rptChildren" runat="server" OnItemDataBound="rptChildren_ItemDataBound">
+                                    <ItemTemplate>
+                                        <asp:Repeater ID="rptRow" runat="server" OnItemDataBound="rptRow_ItemDataBound">
+                                            <HeaderTemplate>
+                                                <div class="row">
+                                            </HeaderTemplate>
+                                            <ItemTemplate>
+                                                <div class="col col-11 rs_read_this friends-view-rs-wrapper">
+                                                    <h4>
+                                                        <asp:Literal ID="litGrade" runat="server"></asp:Literal>, 
+                                                <asp:Literal ID="litGender" runat="server"></asp:Literal>, 
+                                                <asp:Literal ID="litEvaluationStatus" runat="server"></asp:Literal>:
+                                                    </h4>
+                                                    <ul>
+                                                        <asp:Repeater ID="rptChildIssues" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Issue">
+                                                            <ItemTemplate>
+                                                                <li>
+                                                                    <%# Eval("Value") %>
+                                                                </li>
+                                                            </ItemTemplate>
+                                                        </asp:Repeater>
+                                                    </ul>
+                                                </div>
+                                            </ItemTemplate>
+                                            <FooterTemplate>
+                                                </div>
+                                            </FooterTemplate>
+                                        </asp:Repeater>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </div>
                         </div>
                     </div>
@@ -83,13 +72,11 @@
                         </div>
                         <div class="col col-19">
                             <ul>
-                                <li>School services (IEPs/504 Plans)</li>
-                                <li>Homeschooling</li>
-                                <li>Bullying</li>
-                                <li>Evaluations</li>
-                                <li>Tutors</li>
-                                <li>Technologies/apps</li>
-                                <li>Advocating for your child’s rights</li>
+                                <asp:Repeater ID="rptInterests" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Interest">
+                                    <ItemTemplate>
+                                        <li><%# Eval("Value") %></li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </ul>
                         </div>
                     </div>
@@ -100,11 +87,13 @@
                         </div>
                         <div class="col col-19">
                             <ul>
-                                <li><a href="REPLACE">Parents of kids with attention issues</a></li>
-                                <li><a href="REPLACE">Parents of kids with ADD</a></li>
-                                <li><a href="REPLACE">Parents of kids in NJ</a></li>
-                                <li><a href="REPLACE">Parents of kids with ADD</a></li>
-                                <li><a href="REPLACE">Parents of kids in NJ</a></li>
+                                <asp:Repeater ID="rptGroups" runat="server" OnItemDataBound="rptGroups_ItemDataBound">
+                                    <ItemTemplate>
+                                        <li>
+                                            <asp:HyperLink ID="hypGroup" runat="server">Parents of kids with attention issues</asp:HyperLink><a href="REPLACE">
+                                        </li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </ul>
                         </div>
                     </div>

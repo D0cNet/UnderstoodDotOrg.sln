@@ -69,7 +69,7 @@
             <div class="col blog-post-list skiplink-content" aria-role="main" aria-role="main">
 
                 <div class="blog-post-list-inner">
-                    <asp:Repeater ID="rptBlogInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost">
+                    <asp:Repeater ID="rptBlogInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost" OnItemDataBound="rptBlogInfo_ItemDataBound">
                         <ItemTemplate>
                             <!-- BEGIN PARTIAL: community/blog_post -->
                             <div class="blog-post">
@@ -89,7 +89,7 @@
                                         <p class="blog-post-date"><%# Item.PublishedDate %></p>
                                         <p class="blog-by">
                                             by
-          <a href="REPLACE"><%# Item.Author %></a>
+          <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink>
                                         </p>
                                     </div>
 

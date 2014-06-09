@@ -10,7 +10,17 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount.PublicAccoun
 {
     public partial class PublicAccountItem
     {
-        public PublicAccountItem GetPublicAccountPage()
+        public PublicAccountProfileItem GetPublicAccountProfilePage()
+        {
+            return InnerItem.Children.FirstOrDefault(i => i.IsOfType(PublicAccountItem.TemplateId));
+        }
+
+        public PublicAccountCommentsItem GetPublicAccountCommentsPage()
+        {
+            return InnerItem.Children.FirstOrDefault(i => i.IsOfType(PublicAccountItem.TemplateId));
+        }
+
+        public PublicAccountConnectionsItem GetPublicAccountConnectionsPage()
         {
             return InnerItem.Children.FirstOrDefault(i => i.IsOfType(PublicAccountItem.TemplateId));
         }

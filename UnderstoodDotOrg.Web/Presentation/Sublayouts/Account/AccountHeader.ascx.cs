@@ -12,10 +12,12 @@ using UnderstoodDotOrg.Domain.SitecoreCIG;
 using Sitecore.Links;
 using UnderstoodDotOrg.Domain.Membership;
 using System.Text.RegularExpressions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount.PublicAccount;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 {
-    public partial class AccountHeader : BaseSublayout
+    public partial class AccountHeader : BaseSublayout<PublicAccountItem>
     {
         protected string screenName = "";
         protected void Page_Load(object sender, EventArgs e)
@@ -43,11 +45,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 Response.Redirect(MainsectionItem.GetHomeItem().GetUrl());
             }
 
-            if (thisMember != null)
+            if (thisMember.ScreenName != null)
             {
                 if (IsUserLoggedIn)
                 {
-
+                    pnlSignedIn.Visible = true;
+                    if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
+                    {
+                        divConnected.Visible = true;
+                    }
+                    else
+                    {
+                        divNotConnected.Visible = true;
+                    }
                 }
                 else
                 {
@@ -63,8 +73,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                     }
                 }
             }
+            else
+            {
+                pnlPrivateUser.Visible = true;
+            }
         }
-
 
         protected void rptChildren_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
@@ -108,7 +121,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 default:
                     return num + "th";
             }
-
         }
     }
 }

@@ -263,18 +263,6 @@
             }
         }
 
-        protected string getItemName(Guid guid)
-        {
-			Item item = Sitecore.Context.Database.GetItem(new ID(guid));
-
-			if (item != null)
-			{
-				return item.Name;
-			}
-
-			return "";
-        }
-
 		private void ReloadPage()
 		{
 			Response.Redirect(Request.RawUrl);

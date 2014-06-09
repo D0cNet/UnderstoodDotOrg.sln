@@ -129,7 +129,7 @@
     </div>
 </asp:Panel>
 
-<asp:Panel ID="pnlSignedInNotConnected" CssClass="container" runat="server" Visible="false">
+<asp:Panel ID="pnlSignedIn" CssClass="container" runat="server" Visible="false">
     <div class="row">
         <div class="col col-22 offset-1 skiplink-content" aria-role="main">
             <!-- BEGIN PARTIAL: account-view-header -->

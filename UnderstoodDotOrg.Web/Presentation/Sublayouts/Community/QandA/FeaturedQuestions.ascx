@@ -3,7 +3,7 @@
     <h2>Featured Parent Questions</h2>
 
     <div class="parent-questions">
-        <asp:Repeater ID="questionsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Question" runat="server">
+        <asp:Repeater ID="questionsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Question" runat="server" OnItemDataBound="questionsRepeater_ItemDataBound">
             <ItemTemplate>
                 <!-- BEGIN PARTIAL: community/parent_question_card -->
                 <div class="card-parent-question clearfix">
@@ -12,7 +12,7 @@
                     </div>
                     <div class="question-info">
                         <a href="<%# Item.Url %>" class="title"><%# Item.Title %></a>
-                        <span class="details">In <a href="REPLACE" class="topic"><%# Item.Group %></a> - Asked by <a href="REPLACE" class="author"><%# Item.Author %></a> <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
+                        <span class="details">In <a href="REPLACE" class="topic"><%# Item.Group %></a> - Asked by <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink> <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
                         <a class="button" href="REPLACE">Follow This Question</a>
                     </div>
                     <div class="question-reply-container">

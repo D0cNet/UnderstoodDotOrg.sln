@@ -31,7 +31,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 SBReviewedBy.Visible = true;
             else
                 SBReviewedBy.Visible = false;
-
         }
 
         protected void rptFeaturedArticles_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -81,7 +80,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         hypArticleLink.Text = article.Name;
                     }
                 }
-                    
             }
         }
     }

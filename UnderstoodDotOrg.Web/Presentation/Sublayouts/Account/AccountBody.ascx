@@ -3,7 +3,7 @@
 <!-- BEGIN PARTIAL: sign-in-prompt-links -->
 <div class="sign-in-prompt-links" id="divNotSignedIn" runat="server" visible="false">
     <div class="rs_read_this row">
-        <img alt=" " src="../images/icon.sign-in-prompt.lock.png" />
+        <img alt="Private Profile" src="/Presentation/Includes/images/icon.sign-in-prompt.lock.png" />
         <h3>This User&#39;s Profile is currently private</h3>
         <h5>Parent profiles are only visible to logged-in members</h5>
         <h4><a href="REPLACE">Sign in</a> or <a href="REPLACE">Sign up</a> to view more</h4>
@@ -13,7 +13,7 @@
 
 <!-- BEGIN PARTIAL: sign-in-prompt -->
 <div class="sign-in-prompt" id="divPrivateProfile" runat="server" visible="false">
-    <img alt=" " src="../images/icon.sign-in-prompt.lock.png" />
+    <img alt="Private Profile" src="/Presentation/Includes/images/icon.sign-in-prompt.lock.png" />
     <h3>This User&#39;s Profile is currently private</h3>
 </div>
 <!-- END PARTIAL: sign-in-prompt -->
@@ -31,32 +31,53 @@
                         </div>
                         <div class="col col-18">
                             <!-- START Template-->
-                            <asp:Repeater ID="rptChildren" runat="server">
+                            <asp:Repeater ID="rptChildren" runat="server" OnItemDataBound="rptChildren_ItemDataBound">
                                 <ItemTemplate>
-                                    <div class="row">
-                                        <div class="col col-12 rs_read_this">
-                                            <h4>Grade 3, boy, evaluated:</h4>
-                                            <ul>
-                                                <li>Spoken Language</li>
-                                                <li>Listening comprehension</li>
-                                                <li>Social skills, including conversation</li>
-                                                <li>Motor skills</li>
-                                            </ul>
-                                        </div>
+                                    <asp:Repeater ID="rptRow" runat="server" OnItemDataBound="rptRow_ItemDataBound">
+                                        <HeaderTemplate>
+                                            <div class="row">
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <div class="col col-12 rs_read_this">
+                                                <h4>
+                                                    <asp:Literal ID="litGrade" runat="server"></asp:Literal>, 
+                                                <asp:Literal ID="litGender" runat="server"></asp:Literal>, 
+                                                <asp:Literal ID="litEvaluationStatus" runat="server"></asp:Literal>:
+                                                </h4>
+                                                <ul>
+                                                    <asp:Repeater ID="rptChildIssues" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Issue">
+                                                        <ItemTemplate>
+                                                            <li>
+                                                                <%# Eval("Value") %>
+                                                            </li>
+                                                        </ItemTemplate>
+                                                    </asp:Repeater>
+                                                </ul>
+                                            </div>
+                                        </ItemTemplate>
+                                        <AlternatingItemTemplate>
+                                            <div class="col col-11 offset-1 rs_read_this">
+                                                <h4>
+                                                    <asp:Literal ID="litGrade" runat="server"></asp:Literal>,
+                                                    <asp:Literal ID="litGender" runat="server"></asp:Literal>,
+                                                    <asp:Literal ID="litEvaluationStatus" runat="server"></asp:Literal>:
+                                                </h4>
+                                                <ul>
+                                                    <asp:Repeater ID="rptChildIssues" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Issue">
+                                                        <ItemTemplate>
+                                                            <li>
+                                                                <%# Eval("Value") %>
+                                                            </li>
+                                                        </ItemTemplate>
+                                                    </asp:Repeater>
+                                                </ul>
+                                            </div>
+                                        </AlternatingItemTemplate>
+                                        <FooterTemplate>
+                                            </div>
+                                        </FooterTemplate>
+                                    </asp:Repeater>
                                 </ItemTemplate>
-                                <AlternatingItemTemplate>
-                                        <div class="col col-11 offset-1 rs_read_this">
-                                            <h4>Grade 5, girl, evaluated:</h4>
-                                            <ul>
-                                                <li>Reading</li>
-                                                <li>Math</li>
-                                                <li>Writing</li>
-                                                <li>Attebtuib.hyperac</li>
-                                                <li>Organization, planning, time management</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </AlternatingItemTemplate>
                             </asp:Repeater>
                             <!-- /. row -->
                             <!-- END Template-->
@@ -73,13 +94,11 @@
                     </div>
                     <div class="col col-18">
                         <ul>
-                            <li>School services (IEPs/504 Plans)</li>
-                            <li>Homeschooling</li>
-                            <li>Bullying</li>
-                            <li>Evaluations</li>
-                            <li>Tutors</li>
-                            <li>Technologies/apps</li>
-                            <li>Advocating for your child’s rights</li>
+                            <asp:Repeater ID="rptInterests" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Interest">
+                                <ItemTemplate>
+                                    <li><%# Eval("Value") %></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </ul>
                     </div>
                     <!-- /.col -->
@@ -92,11 +111,13 @@
                     </div>
                     <div class="col col-18">
                         <ul>
-                            <li><a href="REPLACE">Parents of kids with attention issues</a></li>
-                            <li><a href="REPLACE">Parents of kids with ADD</a></li>
-                            <li><a href="REPLACE">Parents of kids in NJ</a></li>
-                            <li><a href="REPLACE">Parents of kids with ADD</a></li>
-                            <li><a href="REPLACE">Parents of kids in NJ</a></li>
+                            <asp:Repeater ID="rptGroups" runat="server" OnItemDataBound="rptGroups_ItemDataBound">
+                                <ItemTemplate>
+                                    <li>
+                                        <asp:HyperLink ID="hypGroup" runat="server">Parents of kids with attention issues</asp:HyperLink><a href="REPLACE">
+                                    </li>
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </ul>
                     </div>
                 </div>

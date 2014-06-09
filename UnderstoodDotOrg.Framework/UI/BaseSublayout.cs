@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using System;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
+using Sitecore.Data;
 
 namespace UnderstoodDotOrg.Framework.UI
 {
@@ -161,6 +162,18 @@ namespace UnderstoodDotOrg.Framework.UI
                 Session[Constants.SessionPreviousUrl] = Request.RawUrl;
                 Response.Redirect(termsAndConditionsPage.GetUrl());
             }
+        }
+
+        protected string getItemName(Guid guid)
+        {
+            Item item = Sitecore.Context.Database.GetItem(new ID(guid));
+
+            if (item != null)
+            {
+                return item.Name;
+            }
+
+            return "";
         }
     }
 }

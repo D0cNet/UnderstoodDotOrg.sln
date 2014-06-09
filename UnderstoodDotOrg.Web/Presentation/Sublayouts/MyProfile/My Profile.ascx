@@ -190,9 +190,12 @@
                                 </div>
                                 <div class="col col-18 profile-detail-information">
                                     <ul>
-                                        <li><a href="REPLACE">Visitors &gt;</a></li>
-                                        <li><a href="REPLACE">Members &gt;</a></li>
-                                        <li><a href="REPLACE">Friends &gt;</a></li>
+                                        <li>
+                                            <asp:HyperLink ID="hypViewAsVisitors" runat="server">Visitors &gt;</asp:HyperLink></li>
+                                        <li>
+                                            <asp:HyperLink ID="hypViewAsMembers" runat="server">Members &gt;</asp:HyperLink></li>
+                                        <li>
+                                            <asp:HyperLink ID="hypViewAsFriends" runat="server">Friends &gt;</asp:HyperLink></li>
                                     </ul>
                                 </div>
                             </div>

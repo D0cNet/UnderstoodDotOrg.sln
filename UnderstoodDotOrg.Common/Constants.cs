@@ -34,7 +34,7 @@ namespace UnderstoodDotOrg.Common
         public static readonly string EVENT_TOPIC_FILTER_QUERY_STRING = "topic";
         public static readonly string EVENT_FEATURED_FILTER_QUERY_STRING = "featured";
         public static readonly string FACEBOOK_LOGIN_STATUS = "fb_status";
-
+        public static readonly string ACCOUNT_EMAIL = "account";
         #endregion
         #region Newsletter Subscriptions
 
