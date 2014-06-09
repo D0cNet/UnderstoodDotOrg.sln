@@ -502,7 +502,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         CommentCount = xn["CommentCount"].InnerText,
                         QueryString = queryString,
                         // TODO: replace this with constant or guid lookup
-                        Url = "/en/community-and-events/q-and-a/q-and-a-details" + queryString,
+                        Url = "/en/community and events/q and a/q and a details.aspx" + queryString,
                     };
                     questionList.Add(question);
                 }
