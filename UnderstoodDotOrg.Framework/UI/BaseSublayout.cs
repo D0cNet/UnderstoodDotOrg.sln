@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using System;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using Sitecore.Data;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
 namespace UnderstoodDotOrg.Framework.UI
 {
@@ -155,12 +156,30 @@ namespace UnderstoodDotOrg.Framework.UI
 
         void BaseSublayout_Init(object sender, EventArgs e)
         {
-            // Your code here
-            if ((Sitecore.Context.Item.TemplateID.ToString() != MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetTermsandConditionsPage().InnerItem.TemplateID.ToString()) && (CurrentMember != null) && (!CurrentMember.AgreedToSignUpTerms))
+            var contextItem = Sitecore.Context.Item;
+
+            if (contextItem == null)
             {
-                var termsAndConditionsPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetTermsandConditionsPage();
-                Session[Constants.SessionPreviousUrl] = Request.RawUrl;
-                Response.Redirect(termsAndConditionsPage.GetUrl());
+                return;
+            }
+
+            if (!contextItem.IsOfType(TermsandConditionsItem.TemplateId)
+                && CurrentMember != null
+                && !CurrentMember.AgreedToSignUpTerms)
+            {
+                // TODO: refactor to do direct page lookup
+                var home = MainsectionItem.GetHomePageItem();
+                if (home != null) 
+                {
+                    var myAccount = home.GetMyAccountFolder();
+                    if (myAccount != null) 
+                    {
+                        var terms = myAccount.GetTermsandConditionsPage();
+                        Session[Constants.SessionPreviousUrl] = Request.RawUrl;
+                        Response.Redirect(terms.GetUrl());
+                    }
+                }
+                
             }
         }
 
