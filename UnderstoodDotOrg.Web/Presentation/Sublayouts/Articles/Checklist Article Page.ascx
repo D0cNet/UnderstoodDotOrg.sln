@@ -34,7 +34,7 @@
                                                 <ItemTemplate>
                                                     <div class="checkbox-wrapper">
                                                         <asp:Label ID="lblTopicItem" runat="server" AssociatedControlID="cbTopicItem">
-                                                            <asp:CheckBox ID="cbTopicItem" runat="server"></asp:CheckBox>
+                                                            <asp:CheckBox CssClass="checkbox-item" ID="cbTopicItem" runat="server"></asp:CheckBox>
                                                             <span>
                                                                 <sc:fieldrenderer runat="server" id="frTopicItem" fieldname="Topic Title" />
                                                             </span>
@@ -53,6 +53,21 @@
                     </div>
                     <!-- .checklist-question -->
 
+                    <asp:HiddenField ID="hfKeyValuePairs" runat="server" />
+                    <script>
+                        var Answers = {};
+                        var hiddenField = $("[id*='hfKeyValuePairs']");
+
+                        $("div[id*='rptHeaderChkbox_rptTopicChkbox'] .checkbox-item").each(function () {
+                            $radioControl = $(this);
+
+                            $radioControl.click(function () {
+                                console.log("here");
+                                Answers[$radioControl.data("id")] = $(this).find("span").hasClass("checked");
+                                hiddenField.val(JSON.stringify(Answers));
+                            })
+                        })
+                    </script>
                     <div class="checklist-actions clearfix">
                         <div class="save-answers">
                             <asp:button runat="server" ID="btnSaveAnswers" class="submit button" Text="Save My Answers" OnClick="btnSaveAnswers_Click" />
