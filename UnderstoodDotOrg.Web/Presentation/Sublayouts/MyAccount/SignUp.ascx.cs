@@ -19,7 +19,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         {
             if (this.CurrentMember != null && this.CurrentUser != null)
             {
-                Response.Redirect(MyAccountFolderItem.GetMyProfilePage());
+                Response.Redirect(MyAccountFolderItem.GetMyAccountPage());
             }
 
             uxEmailAddress.Attributes["placeholder"] = DictionaryConstants.EnterEmailAddressWatermark;
