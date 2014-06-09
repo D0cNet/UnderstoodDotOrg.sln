@@ -14,7 +14,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
         protected void Page_Load(object sender, EventArgs e)
         {
             string blogId = "1,2,3;";
-            var dataSource = CommunityHelper.ListBlogPosts(blogId);
+            var dataSource = CommunityHelper.ListBlogPosts(blogId, "6");
             BlogPostsRepeater.DataSource = dataSource;
             BlogPostsRepeater.DataBind();
 

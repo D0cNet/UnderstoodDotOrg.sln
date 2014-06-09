@@ -637,15 +637,16 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         /// Gets a list of blog posts that a specified blog contains.
         /// </summary>
         /// <param name="blogId">As string, if multiple, separate with a comma. Ex:("1,2,4")</param>
+        /// <param name="count">As string, this is the number of records to be returned.</param>
         /// <returns></returns>
-        public static List<BlogPost> ListBlogPosts(string blogId)
+        public static List<BlogPost> ListBlogPosts(string blogId, string count)
         {
             using (var webClient = new WebClient())
             {
 
                 webClient.Headers.Add("Rest-User-Token", TelligentAuth());
 
-                var requestUrl = GetApiEndPoint(string.Format("blogs/posts.xml?BlogIds={0}&PageSize=100", blogId));
+                var requestUrl = GetApiEndPoint(string.Format("blogs/posts.xml?BlogIds={0}&PageSize={1}", blogId, count));
 
                 var xml = webClient.DownloadString(requestUrl);
 
