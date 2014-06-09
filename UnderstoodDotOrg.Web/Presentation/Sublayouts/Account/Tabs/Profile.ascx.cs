@@ -62,6 +62,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
                     rptGroups.DataSource = groupsList;
                     rptGroups.DataBind();
                 }
+                if ((CurrentMember.ScreenName == thisMember.ScreenName))
+                {
+                    hypCommentsTab.NavigateUrl = "/";
+                    hypCommentsTab.NavigateUrl = "/";
+                }
             }
             else
             {
