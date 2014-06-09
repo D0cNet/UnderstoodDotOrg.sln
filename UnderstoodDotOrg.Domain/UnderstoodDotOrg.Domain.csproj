@@ -255,6 +255,8 @@
     <Compile Include="SitecoreCIG\Poses\Folders\PartnerFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PromosFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PromosFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\PublicAccountFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\PublicAccountFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\SocialMediaFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\SocialMediaFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\TimezoneFolderItem.base.cs" />
@@ -489,6 +491,14 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepTwoItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepTwoItem.interface.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PrivateMessageToolItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PublicAccount\PublicAccountCommentsItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PublicAccount\PublicAccountCommentsItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PublicAccount\PublicAccountConnectionsItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PublicAccount\PublicAccountConnectionsItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PublicAccount\PublicAccountItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PublicAccount\PublicAccountItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PublicAccount\PublicAccountProfileItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PublicAccount\PublicAccountProfileItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ResetYourPasswordItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.instance.cs" />

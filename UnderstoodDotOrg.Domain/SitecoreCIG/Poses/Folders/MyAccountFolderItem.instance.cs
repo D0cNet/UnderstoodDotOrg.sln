@@ -20,5 +20,10 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         {
             return InnerItem.Children.FirstOrDefault(i => i.IsOfType(MyNotificationsPageItem.TemplateId));
         }
+
+        public PublicAccountFolderItem GetPublicAccountFolder()
+        {
+            return InnerItem.Children.FirstOrDefault(i => i.IsOfType(PublicAccountFolderItem.TemplateId));
+        }
     }
 }
