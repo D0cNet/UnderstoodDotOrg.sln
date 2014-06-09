@@ -22,15 +22,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
         protected global::System.Web.UI.WebControls.Panel pnlPrivateUser;
         
         /// <summary>
-        /// litAccountScreenNamePrivate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litAccountScreenNamePrivate;
-        
-        /// <summary>
         /// pnlNotSignedInView control.
         /// </summary>
         /// <remarks>
@@ -40,15 +31,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
         protected global::System.Web.UI.WebControls.Panel pnlNotSignedInView;
         
         /// <summary>
-        /// litAccountScreenName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litAccountScreenName;
-        
-        /// <summary>
         /// rptChildren control.
         /// </summary>
         /// <remarks>
@@ -56,5 +38,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptChildren;
+        
+        /// <summary>
+        /// pnlSignedInNotConnected control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlSignedInNotConnected;
+        
+        /// <summary>
+        /// divNotConnected control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNotConnected;
+        
+        /// <summary>
+        /// divConnected control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divConnected;
     }
 }

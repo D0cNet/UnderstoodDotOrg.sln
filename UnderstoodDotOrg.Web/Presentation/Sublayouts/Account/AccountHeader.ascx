@@ -21,7 +21,7 @@
                     </div>
                     <div class="account-info">
                         <h1 class="account-username">
-                            <asp:Literal ID="litAccountScreenNamePrivate" runat="server"></asp:Literal>
+                            <%= screenName %>
                         </h1>
                         <p class="account-location"></p>
                         <!-- BEGIN PARTIAL: account-view-header-connect -->
@@ -53,7 +53,7 @@
                         <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
                     </div>
                     <div class="account-info">
-                        <h1 class="account-username"><asp:Literal ID="litAccountScreenName" runat="server"></asp:Literal></h1>
+                        <h1 class="account-username"><%= screenName %></h1>
                         <p class="account-location"></p>
                         <div class="member-card-specialties">
                             <ul>
@@ -107,6 +107,50 @@
                         <button class="button">Connect</button>
                     </div>
                     <!-- END PARTIAL: account-view-header-connect -->
+                    <div class="clearfix"></div>
+                    <!-- BEGIN PARTIAL: account-view-header-support -->
+                    <div class="account-show-support">
+                        <p>Show your support</p>
+                        <div class="account-support-links">
+                            <a href="REPLACE"><i class="icon-account-smiley"></i><span>Thanks</span></a>
+                            <a href="REPLACE"><i class="icon-account-flower"></i><span>Thinking of You</span></a>
+                        </div>
+                    </div>
+                    <!-- END PARTIAL: account-view-header-support -->
+                    <!-- BEGIN PARTIAL: account-view-header-connect -->
+                    <div class="account-connect-links narrow">
+                        <button class="button">Connect</button>
+                    </div>
+                    <!-- END PARTIAL: account-view-header-connect -->
+                </div>
+            </div>
+            <!-- END PARTIAL: account-view-header -->
+        </div>
+    </div>
+</asp:Panel>
+
+<asp:Panel ID="pnlSignedInNotConnected" CssClass="container" runat="server" Visible="false">
+    <div class="row">
+        <div class="col col-22 offset-1 skiplink-content" aria-role="main">
+            <!-- BEGIN PARTIAL: account-view-header -->
+            <div class="account-view-header can-connect">
+                <div class="account-top-wrapper">
+                    <div class="account-photo">
+                        <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                    </div>
+                    <div class="account-info">
+                        <h1 class="account-username"><%= screenName %></h1>
+                        <p class="account-location"></p>
+                        <!-- BEGIN PARTIAL: account-view-header-connect -->
+                        <div class="account-connect-links wide no-margin" id="divNotConnected" runat="server" visible="false">
+                            <button class="button">Connect</button>
+                        </div>
+                        <div class="account-connect-links wide no-margin" id="divConnected" runat="server" visible="false">
+                            <button class="button gray unconnect">Unconnect</button>
+                            <button class="button">Private Message</button>
+                        </div>
+                        <!-- END PARTIAL: account-view-header-connect -->
+                    </div>
                     <div class="clearfix"></div>
                     <!-- BEGIN PARTIAL: account-view-header-support -->
                     <div class="account-show-support">

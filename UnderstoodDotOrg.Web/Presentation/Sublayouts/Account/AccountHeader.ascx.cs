@@ -17,6 +17,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 {
     public partial class AccountHeader : BaseSublayout
     {
+        protected string screenName = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             string userEmail = "";
@@ -32,9 +33,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             var thisMember = new Member();
             thisMember = membershipManager.GetMember(userEmail);
             var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
+
             if (!thisMember.ScreenName.IsNullOrEmpty())
             {
-                litAccountScreenName.Text = litAccountScreenNamePrivate.Text = thisMember.ScreenName;
+                screenName = thisMember.ScreenName;
             }
             else
             {
@@ -62,6 +64,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 }
             }
         }
+
 
         protected void rptChildren_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {

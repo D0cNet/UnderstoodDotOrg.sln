@@ -36,13 +36,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                 rptrAccountNav.DataSource = accountPages;
                 rptrAccountNav.DataBind();
-
-
             }
             else
             {
                 Response.Redirect(MainsectionItem.GetHomePageItem().GetUrl());
-           
             }
         }
     }
