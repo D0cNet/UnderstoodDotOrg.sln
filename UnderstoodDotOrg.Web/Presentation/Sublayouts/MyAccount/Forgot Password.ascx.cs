@@ -19,6 +19,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             litErrorMessage.Visible = false;
             litErrorMessage.Text = DictionaryConstants.EmailAddressErrorMessage;
             txtEmailAddress.Attributes["placeholder"] = DictionaryConstants.EnterEmailAddressWatermark;
+
+            Page.Form.DefaultButton = btnSubmit.UniqueID;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
