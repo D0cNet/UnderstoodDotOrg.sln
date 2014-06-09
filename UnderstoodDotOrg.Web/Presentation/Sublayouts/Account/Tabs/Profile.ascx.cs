@@ -23,7 +23,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
         protected void Page_Load(object sender, EventArgs e)
         {
             BindAccountMenu();
-            
+
+            var viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
+
             string userEmail = "";
             
             if (!Request.QueryString[Constants.ACCOUNT_EMAIL].IsNullOrEmpty())
@@ -40,7 +42,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
             thisMember = membershipManager.GetMember(userEmail);
             var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
 
-            if ((IsUserLoggedIn) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
+            if ((IsUserLoggedIn) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)) || (((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_FRIEND))))
             {
                 ListTotal = thisMember.Children.Count;
                 if (ListTotal != 0)

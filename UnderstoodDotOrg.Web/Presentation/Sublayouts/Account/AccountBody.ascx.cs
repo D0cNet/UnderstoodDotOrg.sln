@@ -23,6 +23,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            var viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
+            
             string userEmail = "";
             if (!Request.QueryString[Constants.ACCOUNT_EMAIL].IsNullOrEmpty())
             {
@@ -41,29 +43,54 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             {
                 if (IsUserLoggedIn)
                 {
-                    if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
+                    if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_VISITOR))
                     {
-                        Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl());
+                        divNotSignedIn.Visible = true;
                     }
-                    divNotConnected.Visible = true;
+                    else
+                    {
+                        if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_MEMBER))
+                        {
+                            if (CurrentMember.allowConnections)
+                            {
+                                divNotConnected.Visible = true;
+                            }
+                            else
+                            {
+                                divPrivateProfile.Visible = true;
+                            }
+                        }
+                        else
+                        {
+                            if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_MEMBER))
+                            {
+                                Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl());
+                            }
+                            if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
+                            {
+                                Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl());
+                            }
+                            divNotConnected.Visible = true;
 
-                    ListTotal = thisMember.Children.Count;
-                    if (ListTotal != 0)
-                    {
-                        rptChildren.DataSource = thisMember.Children;
-                        rptChildren.DataBind();
-                    }
-                    if ((thisMember.Interests != null) && (thisMember.Interests.Count != 0))
-                    {
-                        rptInterests.DataSource = thisMember.Interests;
-                        rptInterests.DataBind();
-                    }
-                    List<GroupModel> groupsList = CommunityHelper.GetUserGroups(thisMember.ScreenName);
+                            ListTotal = thisMember.Children.Count;
+                            if (ListTotal != 0)
+                            {
+                                rptChildren.DataSource = thisMember.Children;
+                                rptChildren.DataBind();
+                            }
+                            if ((thisMember.Interests != null) && (thisMember.Interests.Count != 0))
+                            {
+                                rptInterests.DataSource = thisMember.Interests;
+                                rptInterests.DataBind();
+                            }
+                            List<GroupModel> groupsList = CommunityHelper.GetUserGroups(thisMember.ScreenName);
 
-                    if (groupsList != null)
-                    {
-                        rptGroups.DataSource = groupsList;
-                        rptGroups.DataBind();
+                            if (groupsList != null)
+                            {
+                                rptGroups.DataSource = groupsList;
+                                rptGroups.DataBind();
+                            }
+                        }
                     }
                 }
                 else

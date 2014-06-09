@@ -1,19 +1,21 @@
 ﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
-	using Sitecore.Data;
-	using Sitecore.Data.Items;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Web;
-	using System.Web.Services;
-	using System.Web.UI.WebControls;
-	using UnderstoodDotOrg.Common;
-	using UnderstoodDotOrg.Domain.Membership;
-	using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
-	using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
-	using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
-	using UnderstoodDotOrg.Framework.UI;
+    using Sitecore.Data;
+    using Sitecore.Data.Items;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Services;
+    using System.Web.UI.WebControls;
+    using UnderstoodDotOrg.Common;
+    using UnderstoodDotOrg.Common.Extensions;
+    using UnderstoodDotOrg.Domain.Membership;
+    using UnderstoodDotOrg.Domain.SitecoreCIG;
+    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
+    using UnderstoodDotOrg.Framework.UI;
 
     public partial class My_Profile : BaseSublayout
     {
@@ -104,7 +106,12 @@
 				}
 
                 hypEditCommunityAboutMe.NavigateUrl = hypEditCommunity.NavigateUrl = String.Format(MembershipHelper.GetNextStepURL(4) + "?{0}={1}", Constants.QueryStrings.Registration.Mode, Constants.QueryStrings.Registration.ModeEdit);
-			}
+
+                var publicAccountPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage();
+                hypViewAsVisitors.NavigateUrl = string.Format(publicAccountPage.GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentUser.UserName, Constants.VIEW_MODE, Constants.VIEW_MODE_VISITOR);
+                hypViewAsMembers.NavigateUrl = string.Format(publicAccountPage.GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentUser.UserName, Constants.VIEW_MODE, Constants.VIEW_MODE_MEMBER);
+                hypViewAsFriends.NavigateUrl = string.Format(publicAccountPage.GetPublicAccountProfilePage().GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentUser.UserName, Constants.VIEW_MODE, Constants.VIEW_MODE_FRIEND);
+            }
         }
 
 		private void SetInterests()

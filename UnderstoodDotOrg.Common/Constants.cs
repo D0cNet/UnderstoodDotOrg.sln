@@ -35,6 +35,10 @@ namespace UnderstoodDotOrg.Common
         public static readonly string EVENT_FEATURED_FILTER_QUERY_STRING = "featured";
         public static readonly string FACEBOOK_LOGIN_STATUS = "fb_status";
         public static readonly string ACCOUNT_EMAIL = "account";
+        public static readonly string VIEW_MODE = "viewmode";
+        public static readonly string VIEW_MODE_VISITOR = "visitor";
+        public static readonly string VIEW_MODE_MEMBER = "member";
+        public static readonly string VIEW_MODE_FRIEND = "friend";
         #endregion
         #region Newsletter Subscriptions
 

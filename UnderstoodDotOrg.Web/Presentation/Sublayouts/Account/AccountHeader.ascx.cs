@@ -22,6 +22,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
         protected string screenName = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            var viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
+
             string userEmail = "";
             if (!Request.QueryString["account"].IsNullOrEmpty())
             {
@@ -44,19 +46,40 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             {
                 Response.Redirect(MainsectionItem.GetHomeItem().GetUrl());
             }
-
             if (thisMember.ScreenName != null)
             {
                 if (IsUserLoggedIn)
                 {
-                    pnlSignedIn.Visible = true;
-                    if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
+                    if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_VISITOR))
                     {
-                        divConnected.Visible = true;
+                         pnlSignedIn.Visible = true;
                     }
                     else
                     {
-                        divNotConnected.Visible = true;
+                        if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_MEMBER))
+                        {
+                            if (CurrentMember.allowConnections)
+                            {
+                                pnlSignedIn.Visible = true;
+                                divNotConnected.Visible = true;
+                            }
+                            else
+                            {
+                                pnlPrivateUser.Visible = true;
+                            }
+                            divNotConnected.Visible = true;
+                        }
+                        else
+                        {
+                            if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_FRIEND))
+                            {
+                                pnlSignedIn.Visible = true;
+                                divConnected.Visible = true;
+                            }
+                            pnlSignedIn.Visible = true;
+                            divConnected.Visible = true;
+                            
+                        }
                     }
                 }
                 else
