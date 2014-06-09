@@ -118,6 +118,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         public string JoinUrl { get; set; } //TODO: point create Group Item
         public  string GroupID { get; protected set; }
         public string GroupItemID { get { return GrpItem.ID.ToString(); } }
+        public string TemplateID { get { return Constants.Groups.GroupTemplateID; } }
         private GroupItem GrpItem { get; set; }
         public string ItemID { get { return GrpItem.ID.ToString(); } } 
        // List<Issue> RelatedIssues { get; set; }

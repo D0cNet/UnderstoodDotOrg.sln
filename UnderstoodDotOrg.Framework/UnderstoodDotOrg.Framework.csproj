@@ -61,6 +61,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI\Discussions\Discussion.cs" />
+    <Compile Include="UI\Forums\Forum.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnderstoodDotOrg.Common\UnderstoodDotOrg.Common.csproj">

@@ -9,11 +9,13 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Common;
+using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.TelligentService;
 using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
-    public partial class Parent_Group_Discussion : System.Web.UI.UserControl
+    public partial class Parent_Group_Discussion : BaseSublayout//System.Web.UI.UserControl
     {
         GroupDiscussionList rptGroupDiscussion;
         protected void Page_Load(object sender, EventArgs e)
@@ -90,14 +92,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
         protected void lbSubmitReply_Click(object sender, EventArgs e)
         {
             var grpDitem= Session["discussionItem"] as GroupDiscussionItem;
-            if( grpDitem !=null)
+            if( grpDitem !=null && CurrentMember!=null)
             {
                 string forumID = grpDitem.ForumID.Text;
                 string threadID = grpDitem.ThreadID.Text;
                 string body = txtBody.Text;
                 if(!String.IsNullOrEmpty(body))
-                    CommunityHelper.PostReply(forumID, threadID ,body);
-                var replies = CommunityHelper.ReadReplies(forumID, threadID);
+                    TelligentService.PostReply(forumID, threadID ,body,CurrentMember.ScreenName);
+                var replies = TelligentService.ReadReplies(forumID, threadID);
                 rptGroupDiscussion.DataSource = replies;
                 rptGroupDiscussion.DataBind();
                 txtBody.Text = "";

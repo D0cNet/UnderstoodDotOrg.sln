@@ -571,13 +571,14 @@ namespace UnderstoodDotOrg.Services.TelligentService
             }
             return node;
         }
-        public static void PostReply(string forumID, string threadID, string body)
+        public static void PostReply(string forumID, string threadID, string body,string username)
         {
 
 
             WebClient webClient = new WebClient();
             string adminKeyBase64 = TelligentAuth();
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            webClient.Headers.Add("Rest-Impersonate-User", username);
             webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
             try
             {
@@ -851,6 +852,38 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
         }
 
+        public static ForumModel CreateForum(string groupID,string name)
+        {
+            ForumModel model = null;
+            if ((!string.IsNullOrEmpty(groupID) && !string.IsNullOrEmpty(name)) )
+            {
+                WebClient client = new WebClient();
+                try
+                {
+                    client.Headers.Add("Rest-User-Token", TelligentAuth());
+                    string address = string.Format(GetApiEndPoint("forums.xml"));
+                    NameValueCollection data = new NameValueCollection();
+                    data["GroupId"] = groupID;
+                    data["Name"] = name;
+                    string xml = Encoding.UTF8.GetString(client.UploadValues(address, data));
+                    XmlDocument document = new XmlDocument();
+                    document.LoadXml(xml);
+                    XmlNode childNode = document.SelectSingleNode("Response/Forum");
+                    if (childNode != null)
+                    {
+                        model = new ForumModel(childNode);
+                    }
+                }
+                catch
+                {
+                    model = null;
+                }
+
+
+            }
+
+            return model;
+        }
 
         public static List<Message> GetMessages (string convID,string username=null)
         {

@@ -41,7 +41,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                    LastPostUser = Replies.OrderByDescending(x => x.Date).First().AuthorName;
                    LastPostBody = Replies.OrderByDescending(x => x.Date).First().Body;
                }
-               StartedBy = childNode.SelectSingleNode("Author/Username").InnerText;
+               StartedBy = childNode.SelectSingleNode("Author/Username").InnerText??"admin";
                Snippet = CommunityHelper.FormatString100(childNode.SelectSingleNode("Body").InnerText);
                Body = childNode.SelectSingleNode("Body").InnerText;
            }

@@ -7,7 +7,7 @@
         <div class="col-24 group-summary rs_read_this" aria-role="main">
         <div class="col col-18 topic clearfix">
             <header>
-            <h3><%#Eval("Title") %></h3>
+            <a id="titleLink" runat="server"><h3><%#Eval("Title") %></h3></a>
                 <span class="children-key">
                     <ul>
                     <li>

@@ -78,7 +78,7 @@
                     <div class="col-6 start-discussion">
                         <p>Got a question?</p>
                         <p class="want-to-talk">Want to talk?</p>
-                        <a href="REPLACE" class="button">Start a Discussion</a>
+                        <a href="#" class="button">Start a Discussion</a>
                     </div>
                     <!-- end .start-discussion -->
                 </div>

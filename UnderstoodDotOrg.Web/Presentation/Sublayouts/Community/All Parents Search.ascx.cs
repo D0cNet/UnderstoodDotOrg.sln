@@ -57,9 +57,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             {
                 Item parentItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.ParentsLikeMeRecommended));
                 string itemHref = Sitecore.Links.LinkManager.GetItemUrl(parentItem);
-                refRecommended.HRef = itemHref; 
+                refRecommended.HRef = itemHref;
+                showmore.Click += showmore_Click;
                 base.OnInit(e);
             }
+
+        void showmore_Click(object sender, EventArgs e)
+        {
+            ShowMore();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             rptMemberCards = (MemberCardList)Page.LoadControl("~/Presentation/Sublayouts/Common/MemberCardList.ascx");
@@ -216,7 +222,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             return null;
         }
 
-        protected void ShowMore_ServerClick(object sender, EventArgs e)
+        protected void ShowMore()
         {
             //List<MemberCardModel> m = rptMemberCards.DataSource as List<MemberCardModel>;
             //if (m != null)
@@ -231,5 +237,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     showmore.Visible = false;
                 }
         }
+
+      
     }
 }

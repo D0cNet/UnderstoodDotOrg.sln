@@ -49,6 +49,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl modal_discussion;
         
         /// <summary>
+        /// forumSelect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl forumSelect;
+        
+        /// <summary>
         /// ddlForums control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,42 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlForums;
+        
+        /// <summary>
+        /// rqdDropDownFName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqdDropDownFName;
+        
+        /// <summary>
+        /// forumName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl forumName;
+        
+        /// <summary>
+        /// txtFName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFName;
+        
+        /// <summary>
+        /// rqdFname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqdFname;
         
         /// <summary>
         /// lblSubject control.

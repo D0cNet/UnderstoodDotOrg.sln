@@ -14,7 +14,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             ForumID = forumItem.ForumID.Text;
             GroupID = forumItem.GroupID.Text;
             Description = forumItem.Description.Text;
-            Name = forumItem.Name.Text;
+            Name = forumItem.InnerItem.Name;// Name.Text;
         }
 
         public ForumModel(System.Xml.XmlNode childNode)
@@ -46,7 +46,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                     return thModel.Count.ToString();
             }
         }
-
+        public static string TemplateID { get { return UnderstoodDotOrg.Common.Constants.Forums.ForumTemplateID; } }
         public List<ThreadModel> Threads
         {
             get

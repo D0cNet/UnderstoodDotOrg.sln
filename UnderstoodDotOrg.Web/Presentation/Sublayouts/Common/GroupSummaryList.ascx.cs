@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Framework.UI;
+using Sitecore.Links;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -38,6 +39,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     //If the user is to join group, then use Telligent group id, else use sitecore item id
                     joinView.CommandArgument = viewDiscussions ? ((GroupCardModel)e.Item.DataItem).GroupItemID : ((GroupCardModel)e.Item.DataItem).GroupID;
                     joinView.Attributes.Add("name", viewDiscussions ? "view" : "join");
+                }
+
+                HtmlAnchor titleLink = e.FindControlAs<HtmlAnchor>("titleLink");
+                if(titleLink!=null)
+                {
+                    if (e.Item.DataItem is GroupCardModel)
+                    {
+                        Item grpItem = Sitecore.Context.Database.GetItem(((GroupCardModel)e.Item.DataItem).GroupItemID);
+                        var link = LinkManager.GetItemUrl(grpItem);
+                        titleLink.HRef = link;
+                    }
                 }
             }
 

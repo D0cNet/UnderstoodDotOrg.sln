@@ -2,11 +2,11 @@
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <script type="text/javascript">
     function checkValidation() {
-        if (!Page_ClientValidate("newDiscussion")) {
+        if (!Page_ClientValidate('<%= validation_group %>')) {
             return false;
         }
         else {
-            return confirm('Items created by end user cannot be modified until published. Are you sure you want to create a thread?');
+            return confirm('<%= confirmationMessage %>');
         }
     }
 
@@ -16,6 +16,7 @@
         jQuery("#btn_start_discussion").click(
              function () {
                  jQuery(".modal_discussion").toggle();
+                 return false;
                  //alert("Discussion button clicked");
              });
         jQuery("a").click(
@@ -26,6 +27,35 @@
                         return false;
                
                 }
+            });
+
+        jQuery('input:radio[name=forum_name]').click(
+            function () {
+                var txtfnameValidator = document.getElementById("<%=rqdFname.ClientID%>");
+                var ddlfnameValidator = document.getElementById("<%=rqdDropDownFName.ClientID%>");
+                var ddlist = jQuery("#<%=ddlForums.ClientID%>");
+                var txtname = jQuery("#<%=txtFName.ClientID%>");
+                if (jQuery(this).val() == 'rqdDropDownFName') {
+                   
+                  
+                    txtname.val("");
+                    txtname.prop("disabled", true);
+                    ddlist.prop("disabled", false);
+                    txtfnameValidator.enabled = false;
+                    ddlfnameValidator.enabled = true;
+                    
+                }
+                else {
+                   
+                
+                    ddlist.val("");
+                    ddlist.prop("disabled", true);
+                    txtname.prop("disabled", false);
+                    txtfnameValidator.enabled = true;
+                    ddlfnameValidator.enabled = false;
+                  
+                }
+
             });
     });
 </script>
@@ -77,27 +107,50 @@
             <div class="col-6 start-discussion">
             <p>Got a question?</p>
             <p class="want-to-talk">Want to talk?</p>
-            <a href="REPLACE" id="btn_start_discussion"  class="button">Start a Discussion</a>
+            <a href=""   id="btn_start_discussion"  class="button">Start a Discussion</a>
           </div><!-- end .start-discussion -->
           </div>
         </div><!-- end .discussion-board -->
              <div class="modal_discussion" runat="server" id="modal_discussion" style="display:none;clear:both">
+                 <asp:Panel GroupingText="Name" runat="server"> 
+                   
+                  <input type="radio"  id="rbddlFname" name="forum_name" value="rqdDropDownFName">
+                     <p id="forumSelect" runat="server">
+                        <%--   <asp:RadioButton ID="rbddlFname" AutoPostBack="true" OnCheckedChanged="rbddlFname_CheckedChanged" GroupName="forum_name" runat="server" />--%>
+                         <asp:DropDownList DataTextField="Name" AppendDataBoundItems="true"    DataValueField="ForumID" ID="ddlForums"  runat="server">
+                             <asp:ListItem Text="Select a Forum" Value="" />
+                         </asp:DropDownList> 
+                         <asp:RequiredFieldValidator ID="rqdDropDownFName" ControlToValidate="ddlForums" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>
+                     </p>
+                  </input>
+               
+               
+                <input type="radio" id="rbtxtFname" name="forum_name" value="rqdFname">
+                    <p runat="server" id="forumName" >
+                    <%-- <asp:RadioButton ID="rbtxtFname" AutoPostBack="true" OnCheckedChanged="rbtxtFname_CheckedChanged" GroupName="forum_name" runat="server" />--%>
+                        <%--<asp:Label ID="lblFName"  runat="server" Text="Name:" />--%>
+                    <asp:TextBox ID="txtFName"  placeholder="Create a new Forum"    runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rqdFname"  ControlToValidate="txtFName" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
 
-                 <asp:DropDownList DataTextField="Name" AppendDataBoundItems="true" DataValueField="ForumID" ID="ddlForums"  runat="server">
-                     <asp:ListItem Text="" Value=" " />
-                 </asp:DropDownList>
-            <asp:Label ID="lblSubject"  runat="server" Text="Subject:" />
-            <asp:TextBox ID="txtSubject" ValidationGroup="newDiscussion"  runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rqdSubject" ValidationGroup="newDiscussion" ControlToValidate="txtSubject" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
-            
-            <asp:Label ID="lblBody" runat="server"  Text="Body:" />
-            <asp:TextBox ID="txtBody" ValidationGroup="newDiscussion" runat="server" TextMode="MultiLine"></asp:TextBox>
-                <asp:RequiredFieldValidator ValidationGroup="newDiscussion" ID="rqdDiscussion" ControlToValidate="txtBody" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
-     
-            <asp:Button ID="btnSubmit" OnClick="btnSubmit_Click" CssClass="button" OnClientClick="javascript:return checkValidation();" ClientIDMode="Static" ValidationGroup="newDiscussion" runat="server" Text="Create" />
-            <asp:Label Text="" CssClass="error" ID="error_msg"  ForeColor="Red" Visible="false" runat="server" />
-
-        </div>
+                    </p>
+                 </input>
+                 <p>
+                 </asp:Panel>  
+                <asp:Label ID="lblSubject"  runat="server" Text="Subject:" />
+                <asp:TextBox ID="txtSubject"   runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rqdSubject" ControlToValidate="txtSubject" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
+                </p>
+                 <p>
+                <asp:Label ID="lblBody" runat="server"  Text="Body:" />
+                <asp:TextBox ID="txtBody"  runat="server" TextMode="MultiLine"></asp:TextBox>
+                    <asp:RequiredFieldValidator  ID="rqdDiscussion" ControlToValidate="txtBody" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
+                </p>
+                 <p>
+                <asp:Button ID="btnSubmit" OnClick="btnSubmit_Click" CssClass="button" OnClientClick="javascript:return checkValidation();" ClientIDMode="Static"  runat="server" Text="Create" />
+                <asp:Label Text="" CssClass="error" ID="error_msg"  ForeColor="Red" Visible="false" runat="server" />
+                 </p>
+                
+            </div>
     <!-- END PARTIAL: community/groups_start_discussion -->
         </div>
 
@@ -109,7 +162,7 @@
                     <ItemTemplate>
                         <header class="offset-1">
 			                <h3><%# Eval("Name") %></h3>
-			                <a href="REPLACE" class="rs_skip start-discussion">Start a Discussion</a>
+			                <%--<a href="REPLACE" class="rs_skip start-discussion">Start a Discussion</a>--%>
 		                </header>
 		                <div>
 			                <div class="discussion-box col col-23 offset-1">
