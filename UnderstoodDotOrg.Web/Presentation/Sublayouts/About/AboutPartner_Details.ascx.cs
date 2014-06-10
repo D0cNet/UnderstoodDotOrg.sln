@@ -13,24 +13,56 @@ using Sitecore.ContentSearch.SearchTypes;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Framework.UI;
+using System.Configuration;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 {
-    public partial class AboutPartner_Details : System.Web.UI.UserControl
+    public partial class AboutPartner_Details : BaseSublayout<PartnerInfoItem>
     {
-        PartnerInfoItem ObjPartnerInfo;
+        protected string FacebookUrl { get; set; }
+        protected string TwitterUrl { get; set; }
+        protected string TwitterLinkText { get; set; }
+        protected string FacebookLinkText { get; set; }
+        protected string FacebookAppId
+        {
+            get { return ConfigurationManager.AppSettings[Constants.Settings.FacebookAppId]; }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjPartnerInfo = new PartnerInfoItem(Sitecore.Context.Item);
-            if (ObjPartnerInfo != null)
+            BindContent();
+        }
+
+        private void BindContent()
+        {
+            AboutPartnersItem parent = Model.InnerItem.Parent;
+            if (parent != null) 
             {
-                if (string.IsNullOrEmpty(ObjPartnerInfo.Link) == false)
-                {
-                    hlPartnerSiteLink.Text = ObjPartnerInfo.Link.Text;
-                    hlPartnerSiteLink.NavigateUrl = ObjPartnerInfo.Link.Text;
-                    hlPartnerSiteLink.Visible = true;
-                }
+                hlPartnersLanding.NavigateUrl = parent.GetUrl();
+                hlPartnersLanding.Text = parent.ContentPage.PageTitle;
             }
+
+            InitFeaturedLink(hlFeaturedFirst, Model.FirstFeaturedItemLink.Url, Model.FirstFeaturedItemTitle.Rendered);
+            InitFeaturedLink(hlFeaturedSecond, Model.SecondFeaturedItemLink.Url, Model.SecondFeaturedItemTitle.Rendered);
+
+            FacebookUrl = Model.FacebookUrl.Url;
+            FacebookLinkText = Model.FacebookCallToAction.Rendered;
+            hlFacebook.NavigateUrl = FacebookUrl;
+            phFacebook.Visible = !string.IsNullOrEmpty(FacebookUrl);
+
+            TwitterUrl = Model.TwitterUrl.Url;
+            TwitterLinkText = Model.TwitterCallToAction.Rendered;
+            hlTwitter.NavigateUrl = TwitterUrl;
+            phTwitter.Visible = !string.IsNullOrEmpty(TwitterUrl);
+        }
+
+        private void InitFeaturedLink(HyperLink hl, string url, string title)
+        {
+            hl.NavigateUrl = url;
+            hl.Text = title;
+            hl.Visible = !string.IsNullOrEmpty(url);
         }
     }
 }

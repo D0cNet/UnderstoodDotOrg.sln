@@ -48,7 +48,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
                 return container.GetChildren().FilterByContextLanguageVersion()
                             .Where(i => i.IsOfType(PartnerInfoItem.TemplateId))
                             .Select(i => new PartnerInfoItem(i))
-                            .Where(i => i.Logo.MediaItem != null)
+                            .Where(i => i.PartnerLogo.MediaItem != null)
                             .ToList();
             }
             return results;

@@ -127,7 +127,7 @@
                             <ul>
                                 <li>
                                     <asp:HyperLink ID="hlPartnerLogo" runat="server">
-                                        <sc:FieldRenderer ID="frPartnerLogo" runat="server" FieldName="Logo" Parameters="mw=150&mh=89" />
+                                        <sc:FieldRenderer ID="frPartnerLogo" runat="server" FieldName="Partner Logo" Parameters="mw=150&mh=89" />
                                     </asp:HyperLink>
                                 </li>
                             </ul>

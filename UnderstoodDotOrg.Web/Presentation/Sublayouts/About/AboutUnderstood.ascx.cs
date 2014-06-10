@@ -81,7 +81,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 
                 HyperLink hlPartnerLogo = e.FindControlAs<HyperLink>("hlPartnerLogo");
                 hlPartnerLogo.NavigateUrl = item.GetUrl();
-                hlPartnerLogo.Visible = partner.Logo.MediaItem != null;
+                hlPartnerLogo.Visible = partner.PartnerLogo.MediaItem != null;
 
                 FieldRenderer frPartnerLogo = e.FindControlAs<FieldRenderer>("frPartnerLogo");
                 frPartnerLogo.Item = item;

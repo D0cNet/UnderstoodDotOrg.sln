@@ -46,20 +46,11 @@ public static implicit operator Item(PartnerInfoItem customItem)
 #region Field Instance Methods
 
 
-public CustomTreeListField ArticlestoShow
+public CustomTextField FirstFeaturedItemTitle
 {
 	get
 	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Articles to Show"]);
-	}
-}
-
-
-public CustomTextField NewsletterHeadLine
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Newsletter Head Line"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["First Featured Item Title"]);
 	}
 }
 
@@ -73,74 +64,155 @@ public CustomTextField PartnerName
 }
 
 
-public CustomTextField FeaturedHeadline
+public CustomTextField PartnerNewsletterHeading
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Featured Headline"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Partner Newsletter Heading"]);
 	}
 }
 
 
-public CustomGeneralLinkField NewsletterNavigantionpage
+public CustomGeneralLinkField FirstFeaturedItemLink
 {
 	get
 	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Newsletter Navigantion page"]);
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["First Featured Item Link"]);
 	}
 }
 
 
-public CustomTextField SubHeadline
+public CustomGeneralLinkField PartnerNewsletterLink
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Sub Headline"]);
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Partner Newsletter Link"]);
 	}
 }
 
 
-public CustomTextField DonationHeadLine
+public CustomTextField PartnerTagline
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Donation Head Line"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Partner Tagline"]);
 	}
 }
 
 
-public CustomTextField ShortDescription
+public CustomTextField PartnerBio
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Short Description"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Partner Bio"]);
 	}
 }
 
 
-public CustomGeneralLinkField DonationNavigantionpage
+public CustomTextField PartnerDonationHeading
 {
 	get
 	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Donation Navigantion page"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Partner Donation Heading"]);
 	}
 }
 
 
-public CustomTextField Link
+public CustomGeneralLinkField PartnerDonationLink
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Link"]);
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Partner Donation Link"]);
 	}
 }
 
 
-public CustomImageField Logo
+public CustomGeneralLinkField PartnerLink
 {
 	get
 	{
-		return new CustomImageField(InnerItem, InnerItem.Fields["Logo"]);
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Partner Link"]);
+	}
+}
+
+
+public CustomTextField SecondFeaturedItemTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Second Featured Item Title"]);
+	}
+}
+
+
+public CustomGeneralLinkField SecondFeaturedItemLink
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Second Featured Item Link"]);
+	}
+}
+
+
+public CustomImageField PartnerLogo
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Partner Logo"]);
+	}
+}
+
+
+public CustomGeneralLinkField TwitterUrl
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Twitter Url"]);
+	}
+}
+
+
+public CustomTextField TwitterHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Twitter Heading"]);
+	}
+}
+
+
+public CustomTextField TwitterCallToAction
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Twitter Call To Action"]);
+	}
+}
+
+
+public CustomGeneralLinkField FacebookUrl
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Facebook Url"]);
+	}
+}
+
+
+public CustomTextField FacebookHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Facebook Heading"]);
+	}
+}
+
+
+public CustomTextField FacebookCallToAction
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Facebook Call To Action"]);
 	}
 }
 

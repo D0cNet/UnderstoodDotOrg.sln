@@ -67,7 +67,7 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <li><asp:HyperLink runat="server" ID="hlLink">
-                        <sc:Image runat="server" ID="scImage" Field="Logo" Parameters="mw=214&mh=100" />
+                        <sc:Image runat="server" ID="scImage" Field="Partner Logo" Parameters="mw=214&mh=100" />
                     </asp:HyperLink></li>
                 </ItemTemplate>
                 <FooterTemplate>

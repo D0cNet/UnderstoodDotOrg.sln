@@ -1,8 +1,14 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AboutPartner_Details.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.About.AboutPartner_Details" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
-<!-- END PARTIAL: pagetopic -->
-<!-- styling for .about-pagetopic can be found in about-partners -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=<%= FacebookAppId %>&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="container l-partners-detail">
     <div class="row">
@@ -10,51 +16,35 @@
             <!-- added lower-border in partner-detail-header.scss to create hr -->
             <div class="col col-23 offset-1 skiplink-content" aria-role="main">
                 <!-- BEGIN PARTIAL: about/partners-detail-header -->
-                <div class="partner-heading">
-                    <span class="return-all-partners"><a href="REPLACE">Our Partners</a></span>
-                    <h1 class="partner-name"><%--Common Sense Media--%>
-                        <sc:FieldRenderer ID="frpartnerName" runat="server" FieldName="Partner Name" />
+                <div class="partner-heading rs_read_this">
+                    <span class="return-all-partners"><asp:HyperLink ID="hlPartnersLanding" runat="server" /></span>
+                    <h1 class="partner-name">
+                        <sc:FieldRenderer ID="frPartnerName" runat="server" FieldName="Partner Name" />
                     </h1>
-                   <h2 class="partner-tagline"><%--Providing technology and application recomendations to Understood.--%>
-                        <sc:FieldRenderer ID="frSubHeadline" runat="server" FieldName="Sub Headline" />
+                   <h2 class="partner-tagline">
+                        <sc:FieldRenderer ID="frSubHeadline" runat="server" FieldName="Partner Tagline" />
                     </h2>
-                    <span class="partner-link"><%--<a href="REPLACE">http://www.commonsensemedia.org</a>--%>
-                        <asp:HyperLink ID="hlPartnerSiteLink" runat="server">
-                            
-                        </asp:HyperLink>
+                    <span class="partner-link">
+                        <sc:Link ID="lnkPartner" runat="server" Field="Partner Link" />
                     </span>
                 </div>
-                <!-- end .partner-heading -->
-                <!-- END PARTIAL: about/partners-detail-header -->
-                <!-- BEGIN PARTIAL: about/partners-detail-logo -->
-                 <div class="partner-logo">
-                    <%--<sc:Image ID="ImgLogo" runat="server" Field="Thumbnail Image" />--%>
-                    <sc:FieldRenderer ID="frPartnerLogo" runat="server" FieldName="Thumbnail Image" />
-                    <%--<img alt="270x130 Placeholder" src="http://placehold.it/270x130" />--%>
-                </div>
-                <!-- END PARTIAL: about/partners-detail-logo -->
-                <!-- BEGIN PARTIAL: about/partners-detail-copy -->
-                <div class="partner-copy">
 
-                    <p>
-                        <%--Common Sense media is Sint et esse natus. qui aspernatur tempora labore. consectetur inventore doloremque non deserunt dolor repellendus unde reiciendis et deserunt ut. nihil alias quae aut numquam earum ut dolorem ut molestias et. consequatur nesciunt quod atque voluptate illo voluptates natus error et consectetur aperiam aperiam. aut voluptatum explicabo soluta ea quod. consequatur in soluta repellat at</p>
-                    <p>Voluptas aliquid voluptas quae non. iste facilis in ex. magnam cumque sint blanditiis repellat illo enim tempore esse qui</p>
-                    <p>Maiores voluptatum repellat reiciendis quo delectus ut suscipit eum ut corporis. minus delectus et ea optio quia veritatis. impedit qui sit quia et qui vitae at illum iusto deleniti dolor deserunt voluptate. ut sunt quia necessitatibus sunt sapiente eum qui dicta aliquam cupiditate eum mollitia incidunt. aut molestiae nesciunt aut possimus odio ea reprehenderit reiciendis placeat--%>
-                        <sc:FieldRenderer ID="frPartnerDescription" runat="server" FieldName="Short Description" />
-                    </p>
+                 <div class="partner-logo rs_read_this">
+                    <sc:FieldRenderer ID="frPartnerLogo" runat="server" FieldName="Partner Logo" Parameters="mw=270&mh=130" />
                 </div>
-                <!-- end .partner-copy -->
-                <!-- END PARTIAL: about/partners-detail-copy -->
-                <!-- BEGIN PARTIAL: about/partners-newsletter-signup -->
-                <div class="partner-newsletter skiplink-sidebar">
-                    <h2>Sign up for Common Sense Media Newsletter</h2>
-                    <a href="REPLACE" class="button">Sign Up</a>
+
+                <div class="partner-copy rs_read_this">
+                    <sc:FieldRenderer ID="frPartnerBio" runat="server" FieldName="Partner Bio" />
                 </div>
-                <!-- END PARTIAL: about/partners-newsletter-signup -->
-                <!-- BEGIN PARTIAL: about/partners-donate -->
+
+                <div class="partner-newsletter">
+                    <h2><sc:FieldRenderer ID="frNewsletterHeading" FieldName="Partner Newsletter Heading" runat="server" /></h2>
+                    <sc:FieldRenderer ID="frNewsletterLink" FieldName="Partner Newsletter Link" Parameters="class=button" runat="server" />
+                </div>
+
                 <div class="partner-donate">
-                    <h2>Donate to Common Sense Media</h2>
-                    <a href="REPLACE" class="button">Donate</a>
+                    <h2><sc:FieldRenderer ID="frDonationHeading" FieldName="Partner Donation Heading" runat="server" /></h2>
+                    <sc:FieldRenderer ID="frDonationLink" FieldName="Partner Donation Link" Parameters="class=button" runat="server" />
                 </div>
 
                 <!-- END PARTIAL: about/partners-donate -->
@@ -66,25 +56,26 @@
 <!-- end .container l-partners-detail -->
 <div class="container l-partners-social-columns">
     <div class="row">
-        <div class="col col-7 skiplink-feature">
+        <div class="col col-7 skiplink-feature rs_read_this partners-detail-rs-featured-wrapper">
             <!-- BEGIN PARTIAL: about/partners-featured-content -->
             <div class="featured-content-block">
                 <h2>Featured</h2>
                 <div class="featured-title">
-                    <span class="title-link"><a href="REPLACE">Find Technology that Can Help</a></span>
+                    <span class="title-link"><asp:HyperLink ID="hlFeaturedFirst" runat="server" /></span>
                 </div>
                 <div class="featured-title">
-                    <span class="title-link"><a href="REPLACE">What is Assistive Technology?</a></span>
+                    <span class="title-link"><asp:HyperLink ID="hlFeaturedSecond" runat="server" /></span>
                 </div>
             </div>
             <!-- end .featured-content-block -->
 
             <!-- END PARTIAL: about/partners-featured-content -->
         </div>
-        <div class="col col-7 offset-1">
+        <div class="col col-7 offset-1 rs_read_this partners-detail-rs-twitter-wrapper">
+            <asp:PlaceHolder ID="phTwitter" runat="server" Visible="false">
             <!-- BEGIN PARTIAL: about/partners-twitter -->
             <div class="partner-twitter-container">
-                <h2>Common Sense Media on Twitter</h2>
+                <h2><sc:FieldRenderer ID="frTwitterHeading" runat="server" FieldName="Twitter Heading" /></h2>
 
                 <div class="partner-feed-single">
                     <div class="avatar">
@@ -124,85 +115,27 @@
                 <!-- end .partner-feed-single -->
 
                 <div class="twitter-follow-block">
-                    <a href="REPLACE"><i class="twitter-follow"></i>Follow Common Sense Media on Twitter</a>
+                    <asp:HyperLink ID="hlTwitter" runat="server"><i class="twitter-follow"></i><%= TwitterLinkText %></asp:HyperLink>
                 </div>
                 <!-- end .twitter-follow-block -->
             </div>
             <!-- end .partner-twitter-container -->
 
-            <!-- END PARTIAL: about/partners-twitter -->
+            </asp:PlaceHolder>
         </div>
-        <div class="col col-7 offset-2">
-            <!-- BEGIN PARTIAL: about/partners-facebook -->
+        <div class="col col-7 offset-2 rs_read_this partners-detail-rs-facebook-wrapper">
+            <asp:PlaceHolder ID="phFacebook" runat="server" Visible="false">
             <div class="partner-facebook-container">
-                <h2>Common Sense Media on Facebook</h2>
+                <h2><sc:FieldRenderer ID="frFacebookHeading" runat="server" FieldName="Facebook Heading" /></h2>
 
-                <div class="partner-feed-single">
-                    <div class="avatar">
-                        <img alt="50x50 Placeholder" src="http://placehold.it/50x50" />
-                    </div>
-                    <div class="like-block">
-                        <div class="message-head">
-                            <span class="username">Rian Lee</span>
-                        </div>
-                        <!-- end div.message-head -->
-                        <div class="message-body">
-                            Amazing! Cool!
-     
-                        </div>
-                        <!-- end div.message-body -->
-                        <div class="link-bar">
-                            <ul>
-                                <li><a href="REPLACE">Reply</a></li>
-                                <li><a href="REPLACE">Like</a></li>
-                                <li><a href="REPLACE">Follow Post</a></li>
-                            </ul>
-                        </div>
-                        <div class="datestamp">
-                            24 December 2013 at 19:00
-     
-                        </div>
-                    </div>
-                    <!-- end div.like-block -->
-                </div>
-                <!-- end .partner-feed-single -->
-
-                <div class="partner-feed-single">
-                    <div class="avatar">
-                        <img alt="50x50 Placeholder" src="http://placehold.it/50x50" />
-                    </div>
-                    <div class="like-block">
-                        <div class="message-head">
-                            <span class="username">Rian Lee</span>
-                        </div>
-                        <!-- end div.message-head -->
-                        <div class="message-body">
-                            Amazing! carnivorous dinosaur tooth -- 76 vs 60 mil -- via 1200 shared data points lorem ipsum dolor.
-     
-                        </div>
-                        <!-- end div.message-body -->
-                        <div class="link-bar">
-                            <ul>
-                                <li><a href="REPLACE">Reply</a></li>
-                                <li><a href="REPLACE">Like</a></li>
-                                <li><a href="REPLACE">Follow Post</a></li>
-                            </ul>
-                        </div>
-                        <div class="datestamp">
-                            24 December 2013 at 19:00
-     
-                        </div>
-                    </div>
-                    <!-- end div.like-block -->
-                </div>
-                <!-- end .partner-feed-single -->
+                <div class="fb-like-box" data-href="<%= FacebookUrl %>" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false" data-width="292"></div>
 
                 <div class="facebook-follow-block">
-                    <a href="REPLACE"><i class="facebook-follow"></i>Follow Common Sense Media on Facebook</a>
+                    <asp:HyperLink ID="hlFacebook" runat="server"><i class="facebook-follow"></i><%= FacebookLinkText %></asp:HyperLink>
                 </div>
                 <!-- end .facebook-follow-block -->
             </div>
-            <!-- end .partner-facebook-container -->
+           </asp:PlaceHolder>
 
             <!-- END PARTIAL: about/partners-facebook -->
         </div>
