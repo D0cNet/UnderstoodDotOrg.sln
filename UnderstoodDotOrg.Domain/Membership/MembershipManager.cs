@@ -1131,14 +1131,15 @@ namespace UnderstoodDotOrg.Domain.Membership
             //bg: update the member with property values that are not included in entity
             member = FillMember_ExtendedPropertiesFromDb(member);
             member = FillMember_AlertPreferences(member);
-            return this.trimFields(member);
+
+            return trimFields(member);
         }
 
         public Member GetMember(string EmailAddress)
         {
             var user = this.GetUser(EmailAddress, true);
             // TODO: refactor this using LINQ once we add Email to entity model
-            return this.trimFields(this.GetMember(Guid.Parse(user.ProviderUserKey.ToString())));
+            return this.GetMember(Guid.Parse(user.ProviderUserKey.ToString()));
         }
 
         /// <summary>
@@ -1207,7 +1208,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                 .FirstOrDefault();
             //}
 
-            return child;
+            return trimFields(child);
         }
 
         public void Dispose()
@@ -1230,7 +1231,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         }
 
 
-        private Member trimFields(Member member)
+        public static Member trimFields(Member member)
         {
             member.FirstName = member.FirstName != null ? member.FirstName.Trim() : string.Empty;
             member.ScreenName = member.ScreenName != null ? member.ScreenName.Trim() : string.Empty;
@@ -1239,6 +1240,14 @@ namespace UnderstoodDotOrg.Domain.Membership
             member.MobilePhoneNumber = member.MobilePhoneNumber != null ? member.MobilePhoneNumber.Trim() : string.Empty;
 
             return member;
+        }
+
+        public static Child trimFields(Child child)
+        {
+            child.Nickname = child.Nickname != null ? child.Nickname.Trim() : string.Empty;
+            child.Gender = child.Gender != null ? child.Gender.Trim() : string.Empty;
+
+            return child;
         }
     }
 }
