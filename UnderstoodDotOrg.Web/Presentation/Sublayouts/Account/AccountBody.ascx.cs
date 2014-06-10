@@ -20,10 +20,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
     {
         public List<Child> TempList = new List<Child>();
         public int ListTotal;
-
+        private string viewMode = "";
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            var viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
+            viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
             
             string userEmail = "";
             if (!Request.QueryString[Constants.ACCOUNT_EMAIL].IsNullOrEmpty())
@@ -41,73 +42,75 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             
             if (thisMember.ScreenName != null)
             {
-                if (IsUserLoggedIn)
+                ListTotal = thisMember.Children.Count;
+                if (ListTotal != 0)
                 {
-                    if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_VISITOR))
+                    rptChildren.DataSource = thisMember.Children;
+                    rptChildren.DataBind();
+                }
+                if ((thisMember.Interests != null) && (thisMember.Interests.Count != 0))
+                {
+                    rptInterests.DataSource = thisMember.Interests;
+                    rptInterests.DataBind();
+                }
+                List<GroupModel> groupsList = CommunityHelper.GetUserGroups(thisMember.ScreenName);
+
+                if (groupsList != null)
+                {
+                    rptGroups.DataSource = groupsList;
+                    rptGroups.DataBind();
+                }
+
+                if (thisMember.allowConnections)
+                {
+                    if (IsUserLoggedIn)
                     {
-                        divNotSignedIn.Visible = true;
-                    }
-                    else
-                    {
-                        if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_MEMBER))
+                        if (CurrentMember.ScreenName == thisMember.ScreenName)
                         {
-                            if (CurrentMember.allowConnections)
-                            {
-                                divNotConnected.Visible = true;
-                            }
-                            else
-                            {
-                                divPrivateProfile.Visible = true;
-                            }
+                            SetVisibilityBasedOnViewMode();
                         }
                         else
                         {
-                            if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_MEMBER))
-                            {
-                                Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl());
-                            }
                             if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
                             {
                                 Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl());
                             }
                             divNotConnected.Visible = true;
-
-                            ListTotal = thisMember.Children.Count;
-                            if (ListTotal != 0)
-                            {
-                                rptChildren.DataSource = thisMember.Children;
-                                rptChildren.DataBind();
-                            }
-                            if ((thisMember.Interests != null) && (thisMember.Interests.Count != 0))
-                            {
-                                rptInterests.DataSource = thisMember.Interests;
-                                rptInterests.DataBind();
-                            }
-                            List<GroupModel> groupsList = CommunityHelper.GetUserGroups(thisMember.ScreenName);
-
-                            if (groupsList != null)
-                            {
-                                rptGroups.DataSource = groupsList;
-                                rptGroups.DataBind();
-                            }
                         }
+                    }
+                    else
+                    {
+                        divNotSignedIn.Visible = true;
                     }
                 }
                 else
                 {
-                    if (!thisMember.allowConnections)
-                    {
-                        divNotSignedIn.Visible = true;
-                    }
-                    else
-                    {
-                        divPrivateProfile.Visible = true;
-                    }
+                    divPrivateProfile.Visible = true;
                 }
             }
             else
             {
                 divPrivateProfile.Visible = true;
+            }
+        }
+
+        private void SetVisibilityBasedOnViewMode()
+        {
+            if (viewMode == Constants.VIEW_MODE_VISITOR)
+            {
+                divNotSignedIn.Visible = true;
+            }
+            if (viewMode == Constants.VIEW_MODE_MEMBER)
+            {
+                divNotConnected.Visible = true;
+            }
+            if (viewMode == Constants.VIEW_MODE_FRIEND)
+            {
+                Response.Redirect(string.Format(
+                    MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl()
+                    + "?{0}={1}",
+                    Constants.VIEW_MODE,
+                    Constants.VIEW_MODE_FRIEND));
             }
         }
 

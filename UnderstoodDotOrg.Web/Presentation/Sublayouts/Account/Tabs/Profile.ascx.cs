@@ -64,8 +64,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
                 }
                 if ((CurrentMember.ScreenName == thisMember.ScreenName))
                 {
-                    hypCommentsTab.NavigateUrl = "/";
-                    hypCommentsTab.NavigateUrl = "/";
+                    hypCommentsTab.NavigateUrl += Request.QueryString;
+                    hypCommentsTab.NavigateUrl += Request.QueryString;
                 }
             }
             else
@@ -98,7 +98,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
                         rptRow.DataBind();
                         TempList.Clear();
                     }
-                    if (e.Item.ItemIndex + 1 == ListTotal)
+                    else if (e.Item.ItemIndex + 1 == ListTotal)
                     {
                         rptRow.DataSource = TempList;
                         rptRow.DataBind();

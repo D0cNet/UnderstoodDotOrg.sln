@@ -50,7 +50,10 @@
 
             var membershipManager = new MembershipManager();
 
-            hypUserProfileLink.NavigateUrl = string.Format(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetUrl() + "?{0}={1}", Constants.ACCOUNT_EMAIL, CommunityHelper.ReadUserEmail(item.Author));
+            hypUserProfileLink.NavigateUrl = string.Format(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetUrl()
+                + "?{0}={1}",
+                Constants.ACCOUNT_EMAIL,
+                CommunityHelper.ReadUserEmail(item.Author));
         }
 
     }

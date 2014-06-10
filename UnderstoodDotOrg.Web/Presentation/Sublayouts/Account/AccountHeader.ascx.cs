@@ -20,9 +20,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
     public partial class AccountHeader : BaseSublayout<PublicAccountItem>
     {
         protected string screenName = "";
+        private string viewMode = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            var viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
+            viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
 
             string userEmail = "";
             if (!Request.QueryString["account"].IsNullOrEmpty())
@@ -50,36 +51,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             {
                 if (IsUserLoggedIn)
                 {
-                    if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_VISITOR))
+                    if ((CurrentMember.ScreenName == thisMember.ScreenName))
                     {
-                         pnlSignedIn.Visible = true;
-                    }
-                    else
-                    {
-                        if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_MEMBER))
-                        {
-                            if (CurrentMember.allowConnections)
-                            {
-                                pnlSignedIn.Visible = true;
-                                divNotConnected.Visible = true;
-                            }
-                            else
-                            {
-                                pnlPrivateUser.Visible = true;
-                            }
-                            divNotConnected.Visible = true;
-                        }
-                        else
-                        {
-                            if ((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_FRIEND))
-                            {
-                                pnlSignedIn.Visible = true;
-                                divConnected.Visible = true;
-                            }
-                            pnlSignedIn.Visible = true;
-                            divConnected.Visible = true;
-                            
-                        }
+                        SetVisibilityBasedOnViewMode();
                     }
                 }
                 else
@@ -99,6 +73,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             else
             {
                 pnlPrivateUser.Visible = true;
+            }
+        }
+
+        private void SetVisibilityBasedOnViewMode()
+        {
+            if (viewMode == Constants.VIEW_MODE_VISITOR)
+            {
+                pnlNotSignedInView.Visible = true;
+            }
+            if (viewMode == Constants.VIEW_MODE_MEMBER)
+            {
+                if (CurrentMember.allowConnections)
+                {
+                    pnlSignedIn.Visible = true;
+                    divNotConnected.Visible = true;
+                }
+                else
+                {
+                    pnlPrivateUser.Visible = true;
+                }
+            }
+            if (viewMode == Constants.VIEW_MODE_FRIEND)
+            {
+                pnlSignedIn.Visible = true;
+                divConnected.Visible = true;
             }
         }
 

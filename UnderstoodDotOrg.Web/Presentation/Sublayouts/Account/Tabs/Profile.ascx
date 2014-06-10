@@ -42,8 +42,8 @@
                                                 <div class="col col-11 rs_read_this friends-view-rs-wrapper">
                                                     <h4>
                                                         <asp:Literal ID="litGrade" runat="server"></asp:Literal>, 
-                                                <asp:Literal ID="litGender" runat="server"></asp:Literal>, 
-                                                <asp:Literal ID="litEvaluationStatus" runat="server"></asp:Literal>:
+                                                        <asp:Literal ID="litGender" runat="server"></asp:Literal>, 
+                                                        <asp:Literal ID="litEvaluationStatus" runat="server"></asp:Literal>:
                                                     </h4>
                                                     <ul>
                                                         <asp:Repeater ID="rptChildIssues" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Issue">
