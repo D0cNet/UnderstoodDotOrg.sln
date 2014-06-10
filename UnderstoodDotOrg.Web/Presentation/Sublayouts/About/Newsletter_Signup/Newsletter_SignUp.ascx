@@ -46,7 +46,7 @@
                             <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" Display="Static" />
                         </div>
                         <div class="newsletter-button-wrap">
-                            <asp:Button ID="btnSignup" runat="server" CssClass="button newsletter-button disabled" />
+                            <asp:Button ID="btnSignup" runat="server" OnClick="btnSignup_Click" CssClass="button newsletter-button disabled" />
 							<asp:Label runat="server" ID="lblEmailFail" Text="" />
                         </div>
                     </fieldset>

@@ -13,6 +13,9 @@ using UnderstoodDotOrg.Common;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Domain.Membership;
+using System.Web.Security;
+using UnderstoodDotOrg.Domain.Understood.Newsletter;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -47,6 +50,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 GetPartnerLinksItems();
                 GetSocialMediaItems(footerFolderItem);
             }
+			btnSubmitEmail.Text = UnderstoodDotOrg.Common.DictionaryConstants.SubmitButtonText;
+			//lblNewsletterLabel.Text = UnderstoodDotOrg.Common.DictionaryConstants.EnterEmailAddressWatermark;
+			//personalized_email_address.Text = UnderstoodDotOrg.Common.DictionaryConstants.EnterEmailAddressWatermark;
         }
 
         /// <summary>
@@ -217,5 +223,36 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 }
             }
         }
+
+		protected void btnSubmitEmail_Click(object sender, EventArgs e)
+		{
+		//	if (Page.IsValid)
+		//	{
+		//		// TODO: validate email
+		//		string email = personalized_email_address.Text.Trim();
+		//		MembershipManager mbrShadowUser = new MembershipManager();
+		//		MembershipUser checkValidity = mbrShadowUser.GetUser(email);
+
+		//		if (checkValidity != null && !string.IsNullOrEmpty(checkValidity.Email))
+		//		{
+		//			lblEmailFail.Text = "It appears you already have an Email with us, please sign in first.";
+		//		}
+		//		else
+		//		{
+
+		//			Submission submission = new Submission
+		//			{
+		//				Email = email
+		//			};
+
+		//			Session[Constants.SessionNewsletterKey] = submission;
+
+		//			var item = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.NewsletterChildInfo.ToString()));
+		//			Response.Redirect(item.GetUrl());
+		//		}
+		//	}
+		}
+
+		
     }
 }

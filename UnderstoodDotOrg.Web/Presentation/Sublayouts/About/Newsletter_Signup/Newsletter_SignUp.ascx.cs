@@ -80,9 +80,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
             }
         }
 
-        void btnSignup_Click(object sender, EventArgs e)
-        {
-				ProcessEmail();
-        }
+		protected void btnSignup_Click(object sender, EventArgs e)
+		{
+			ProcessEmail();
+		}
+
+       
     }
 }

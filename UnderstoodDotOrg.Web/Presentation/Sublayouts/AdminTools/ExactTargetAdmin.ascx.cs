@@ -194,9 +194,10 @@
         protected void btnE1_Click(object sender, EventArgs e)
         {
             MembershipManager mm = new MembershipManager();
+			Member mem = new Member();
             BaseReply reply = ExactTargetService.InvokeE1ATurnAroundBullying(new InvokeE1ATurnAroundBullyingRequest
             {
-                Child = mm.GetChild(Guid.Parse("E9467B39-E133-490E-ACB5-011A737A30B2"))
+                Child = mm.GetChild(Guid.Parse("E9467B39-E133-490E-ACB5-011A737A30B2")), ToEmail = tbxSubscriberEmail1.Text, Member = mem
             });
 
             lblMessage.Text = reply.Message;

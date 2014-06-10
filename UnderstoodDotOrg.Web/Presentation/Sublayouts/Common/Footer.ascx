@@ -24,15 +24,19 @@
 
             <div class="col col-12">
 
-                <div class="form personalized-email-form">
+                <asp:Panel CssClass="form personalized-email-form" DefaultButton="btnSubmitEmail" ID="pnlNewsletterSignup" runat="server">
                     <fieldset class="input-wrap">
                         <label for="personalized-email-email" class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.EnterEmailAddressWatermark %></label>
-                        <input id="personalized-email-email" name="personalized-email-email" type="text" placeholder="<%= UnderstoodDotOrg.Common.DictionaryConstants.EnterEmailAddressWatermark %>" aria-required="true" />
-                    </fieldset>
+                        <%--<asp:Label runat="server" id="lblNewsletterLabel" CssClass="visuallyhidden"></asp:Label>--%>
+						<input id="personalized_email_email" runat="server" name="personalized-email-email" type="text" placeholder="<%= UnderstoodDotOrg.Common.DictionaryConstants.EnterEmailAddressWatermark %>" aria-required="true" />
+						<%--<asp:Textbox id="personalized_email_address" runat="server" name="personalized-email-email" />--%>
+					</fieldset>
                     <div class="submit-button-wrap">
-                        <input type="submit" class="button" data-path="<%= NewsletterSignUpUrl %>" value="<%= UnderstoodDotOrg.Common.DictionaryConstants.SubmitButtonText %>" />
+                        <%--<input type="submit" class="button" data-path="<%= NewsletterSignUpUrl %>" value="<%= UnderstoodDotOrg.Common.DictionaryConstants.SubmitButtonText %>" />--%>
+						<asp:Button runat="server" ID="btnSubmitEmail" OnClick="btnSubmitEmail_Click" class="button" type="submit" />
+						<asp:Label runat="server" ID="lblEmailFail" Text="" />
                     </div>
-                </div>
+				</asp:Panel>
 
             </div>
             <!-- .col -->
