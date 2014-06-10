@@ -4,6 +4,7 @@
 	using UnderstoodDotOrg.Services.ExactTarget;
 	using UnderstoodDotOrg.Domain.ExactTarget;
 	using System.Collections.Generic;
+    using UnderstoodDotOrg.Domain.Membership;
 
 	public partial class ExactTargetAdmin : System.Web.UI.UserControl
 	{
@@ -189,6 +190,17 @@
 			BaseReply reply = ExactTargetService.InvokeEM28AppsTechnologySharedWithAFriend(new InvokeEM28AppsTechnologySharedWithAFriendRequest { UserContactFirstName = "user1", AppTitle = "app title", AppRatingModule = "app rating module", AppRatingLink = "www.google.com", AppQuality = "4.5 stars", AppLogo = "www.photobucket.com", AppLink = "www.google.com", AppLearningLink = "www.google.com", AppGrade = "6, 7, 8", AppGoodFor = "English | Math", AppDescription = "app description", ToEmail = tbxSubscriberEmail1.Text });
 			lblMessage.Text = reply.Message;
 		}
+
+        protected void btnE1_Click(object sender, EventArgs e)
+        {
+            MembershipManager mm = new MembershipManager();
+            BaseReply reply = ExactTargetService.InvokeE1ATurnAroundBullying(new InvokeE1ATurnAroundBullyingRequest
+            {
+                Child = mm.GetChild(Guid.Parse("E9467B39-E133-490E-ACB5-011A737A30B2"))
+            });
+
+            lblMessage.Text = reply.Message;
+        }
 
 
 

@@ -1,10 +1,15 @@
 ﻿using Sitecore.Diagnostics;
 using System;
+using System.Linq;
 using System.Configuration;
 using System.ServiceModel;
 using System.Text;
+using System.Xml.Linq;
 using UnderstoodDotOrg.Domain.ExactTarget;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.Personalization;
 using UnderstoodDotOrg.Services.ExactTarget.etAPI;
+using UnderstoodDotOrg.Common.Extensions;
 
 namespace UnderstoodDotOrg.Services.ExactTarget
 {
@@ -1826,6 +1831,14 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
+                        newSub.Attributes = new etAPI.Attribute[] 
+                        {
+                            new etAPI.Attribute
+                            {
+                                Name = "personalized_recommended_articles",
+                                Value = GetChildPersonalizedArticles(request.Child)
+                            }
+                        };
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1835,7 +1848,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			}
 			catch (Exception exc)
 			{
-				string message = "Unable to send welcome email.";
+				string message = "Unable to send email.";
 
 				reply.Successful = false;
 				reply.Message = message;
@@ -1845,6 +1858,30 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			return reply;
 		}
+
+        private static string GetChildPersonalizedArticles(Child child)
+        {
+            XElement root = new XElement("articles");
+
+            var articles = PersonalizationHelper.GetChildPersonalizedContents(child);
+            if (articles.Any())
+            {
+                var subset = articles.Take(3);
+                foreach (var s in subset)
+                {
+                    // TODO: add absolute url
+                    root.Add(new XElement("article",
+                            new XElement("title", s.ContentPage.PageTitle.Rendered),
+                            new XElement("url", s.GetUrl()),
+                            new XElement("img", s.GetArticleThumbnailUrl(160, 90))
+                        )
+                    );
+                }
+            }
+
+            return root.ToString();
+        }
+
 		public static BaseReply InvokeE1B1TurnAroundBullying(InvokeE1B1TurnAroundBullyingRequest request)
 		{
 			BaseReply reply = new BaseReply();

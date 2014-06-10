@@ -24,6 +24,9 @@
 <br />
 <br />
 <hr />
+<asp:Button ID="btnE1" runat="server" Text="E1" OnClick="btnE1_Click" />
+<br /><br />
+<hr />
 <asp:Button ID="btnEM2" runat="server" Text="EM2" OnClick="btnEM2_Click" />
 <br /><br />
 <hr />
