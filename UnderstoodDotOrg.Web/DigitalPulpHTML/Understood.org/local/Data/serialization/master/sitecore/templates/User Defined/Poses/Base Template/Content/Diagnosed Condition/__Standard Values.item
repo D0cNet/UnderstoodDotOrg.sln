@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {5C3F0D25-F2E3-4CF1-8E93-0B6C1B15709B}
+database: master
+path: /sitecore/templates/User Defined/Poses/Base Template/Content/Diagnosed Condition/__Standard Values
+parent: {921D963F-9F71-479A-82D5-520670B4B13C}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {921D963F-9F71-479A-82D5-520670B4B13C}
+templatekey: Diagnosed Condition
+
+----version----
+language: en
+version: 1
+revision: be5466df-56e0-4e78-88e3-00192a12586b
+
+----field----
+field: {2D929B5E-3240-4191-8CB0-7804E805477F}
+name: Evaluation Description
+key: evaluation description
+content-length: 30
+
+Description of Diagnosis Level
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140221T164305
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+be5466df-56e0-4e78-88e3-00192a12586b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140221T164327:635285978076828071
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

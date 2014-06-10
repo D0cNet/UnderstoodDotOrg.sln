@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <CommunityFromTemplate>
+    <FormDialog ID="Dialog" Icon="/sitecore modules/Shell/Telligent/a/images/icon.png" Header="Build Community from Template" 
+      Text="Select a template to populate the Telligent Community." OKButton="Build">
+
+      <CodeBeside Type="Telligent.Evolution.Extensions.SitecoreConnect.Dialogs.CommunityFromTemplate, Telligent.Evolution.Extensions.SitecoreConnect"/>
+
+      <Script Src="/sitecore/shell/applications/Templates/CommunityFromTemplate/CommunityFromTemplate.xml.js" />
+
+      <TemplateDataContext ID="TemplatesDataContext"/>
+
+      <GridPanel Width="100%" Height="100%" Style="table-layout:fixed">
+        <Scrollbox Width="100%" Height="100%" Background="white" Class="scScrollbox scFixSize scInsetBorder" Padding="0" GridPanel.Height="100%">
+          <TreeviewEx ID="Templates" Click="SelectTreeNode" DblClick="DoOK" DataContext="TemplatesDataContext" />
+        </Scrollbox>
+
+        <Border Padding="4px 0px 0px 0px">
+          <GridPanel Width="100%" Columns="2">
+
+            <Border Padding="0px 4px 0px 0px" GridPanel.Align="right" NoWrap="true">
+              <Literal Text="Template:"/>
+            </Border>
+
+            <Edit ID="TemplateName" Width="100%" GridPanel.Width="100%"/>
+
+          </GridPanel>
+        </Border>
+
+      </GridPanel>
+
+    </FormDialog>
+  </CommunityFromTemplate>
+</control>

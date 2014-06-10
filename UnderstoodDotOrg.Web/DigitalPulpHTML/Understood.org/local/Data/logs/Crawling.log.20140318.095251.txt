@@ -1,0 +1,33 @@
+6004 09:52:54 INFO  [Index=sitecore_core_index] Initializing IntervalAsynchronousUpdateStrategy with interval '00:01:00'.
+6004 09:52:54 INFO  [Index=sitecore_core_index] Initializing SitecoreItemCrawler. DB:core / Root:/sitecore
+6004 09:52:54 INFO  [Index=sitecore_master_index] Initializing SynchronousStrategy.
+6004 09:52:54 INFO  [Index=sitecore_master_index] Initializing SitecoreItemCrawler. DB:master / Root:/sitecore
+6004 09:52:54 INFO  [Index=sitecore_web_index] Initializing OnPublishEndAsynchronousStrategy.
+6004 09:52:54 INFO  [Index=sitecore_web_index] Initializing SitecoreItemCrawler. DB:web / Root:/sitecore
+6004 09:52:54 INFO  [Index=mediaframework_brightcove_index] Initializing SynchronousStrategy.
+6004 09:52:54 INFO  [Index=mediaframework_brightcove_index] Initializing SitecoreItemCrawler. DB:master / Root:{7150B2B1-EB68-40EE-991F-2AFEDB532C46}
+12704 09:53:55 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+12704 09:53:55 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+12884 09:54:57 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+12884 09:54:58 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+11052 09:55:32 INFO  [Index=sitecore_web_index] OnPublishEndAsynchronousStrategy triggered.
+11052 09:55:33 INFO  [Index=sitecore_web_index] Updating '2' items from Event Queue.
+11052 09:55:33 INFO  IndexCustodian. IncrementalUpdate triggered on index sitecore_web_index. Data=Count=2
+ManagedPoolThread #6 09:55:33 INFO  [Index=sitecore_web_index] Committing: Add: 0; Update:2; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #6 09:55:34 INFO  [Index=sitecore_web_index] Committed
+ManagedPoolThread #6 09:55:34 INFO  IndexDependentHtmlCacheManager triggered.
+ManagedPoolThread #6 09:55:34 INFO  Clearing index dependent cache for site 'shell'.
+ManagedPoolThread #6 09:55:34 INFO  Clearing index dependent cache for site 'login'.
+ManagedPoolThread #6 09:55:34 INFO  Clearing index dependent cache for site 'admin'.
+ManagedPoolThread #6 09:55:34 INFO  Clearing index dependent cache for site 'service'.
+ManagedPoolThread #6 09:55:34 INFO  Clearing index dependent cache for site 'modules_shell'.
+ManagedPoolThread #6 09:55:34 INFO  Clearing index dependent cache for site 'modules_website'.
+ManagedPoolThread #6 09:55:34 INFO  Clearing index dependent cache for site 'website'.
+ManagedPoolThread #6 09:55:34 INFO  Clearing index dependent cache for site 'scheduler'.
+ManagedPoolThread #6 09:55:34 INFO  Clearing index dependent cache for site 'system'.
+ManagedPoolThread #6 09:55:34 INFO  Clearing index dependent cache for site 'publisher'.
+ManagedPoolThread #6 09:55:34 INFO  IndexDependentHtmlCacheManager done.
+4296 09:55:57 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+4296 09:55:57 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9736 09:56:58 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9736 09:56:58 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns

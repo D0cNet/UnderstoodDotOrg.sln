@@ -1,0 +1,3 @@
+11024 16:56:29 INFO  Warming and Caching your search indexes
+11024 16:56:29 INFO  /******* Warming Queries ********/
+11024 16:56:29 INFO  /*************************/

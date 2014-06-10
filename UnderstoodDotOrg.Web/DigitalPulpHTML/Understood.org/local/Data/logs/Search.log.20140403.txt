@@ -1,0 +1,3 @@
+5968 07:55:16 INFO  Warming and Caching your search indexes
+5968 07:55:16 INFO  /******* Warming Queries ********/
+5968 07:55:16 INFO  /*************************/

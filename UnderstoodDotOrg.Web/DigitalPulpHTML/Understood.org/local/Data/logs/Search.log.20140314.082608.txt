@@ -1,0 +1,3 @@
+15412 08:26:21 INFO  Warming and Caching your search indexes
+15412 08:26:21 INFO  /******* Warming Queries ********/
+15412 08:26:21 INFO  /*************************/

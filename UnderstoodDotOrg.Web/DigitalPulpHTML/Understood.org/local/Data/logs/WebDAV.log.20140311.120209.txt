@@ -1,0 +1,1 @@
+13736 12:04:22 INFO  WebDAV feature is supported for Internet Explorer browser only.

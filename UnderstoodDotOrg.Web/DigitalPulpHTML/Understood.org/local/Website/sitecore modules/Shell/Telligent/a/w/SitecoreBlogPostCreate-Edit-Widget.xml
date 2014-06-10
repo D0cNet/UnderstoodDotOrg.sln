@@ -1,0 +1,96 @@
+<scriptedContentFragments><scriptedContentFragment name="Sitecore-Blog Post-Create/Edit" version="6.0.0.1" description="" instanceIdentifier="2f16e74762b04ca187391f09f72ccb8d" theme="" isCacheable="false" varyCacheByUser="false" showHeaderByDefault="true" cssClass="create-edit-post"><contentScript>## require non-anonymous user
+#if (!$core_v2_user.IsRegistered($core_v2_user.Accessing.Id))
+    $core_v2_authentication.RedirectToLogin()
+#end
+
+#set($blog = false)
+#set($blog = $core_v2_blog.Current)
+
+#if(!$blog)
+    $core_v2_widget.Hide()
+#end
+
+#set($post = false)
+#set($post = $core_v2_blogPost.Current)
+#set($canCreatePost = false)
+#set($canEditPost = false)
+#set($canCreatePost = $core_v2_nodePermission.Get('blogs',$blog.Id,'Blog_CreatePost').IsAllowed)
+#set($canEditPost = $core_v2_nodePermission.Get('blogs',$blog.Id,'Blog_ModifyPost').IsAllowed)
+
+
+#if(!$post)
+    #if(!$canCreatePost)
+         $core_v2_widget.Hide()
+    #end
+#else
+    #if(!$canEditPost)
+         $core_v2_widget.Hide()
+    #end
+#end
+
+&lt;div class="field-list-header"&gt;&lt;/div&gt;
+&lt;fieldset class="field-list"&gt;
+    &lt;legend class="field-list-description"&gt;&lt;/legend&gt;
+	&lt;ul class="field-list"&gt;
+		&lt;li class="field-item required post-subject"&gt;
+			&lt;label for="$core_v2_widget.UniqueId('subject')" class="field-item-header"&gt;$core_v2_language.GetResource('WeblogPost_Subject')&lt;/label&gt;		
+			&lt;span class="field-item-input"&gt;&lt;input name="$core_v2_widget.UniqueId('PostSubject')" value="#if($post)$!post.Title#end" type="text" size="40" id="$core_v2_widget.UniqueId('PostSubject')" /&gt;&lt;/span&gt;
+			&lt;span class="field-item-validation" style="display:none;"&gt;&lt;/span&gt;
+		&lt;/li&gt;
+		 &lt;li class="field-item post-body"&gt;
+            &lt;label for="$core_v2_widget.UniqueId('PostBody')" class="field-item-header"&gt;$core_v2_language.GetResource('CreateEditPost_Description')&lt;/label&gt;
+            &lt;span class="field-item-input"&gt;
+                #set($body = '')
+                #if($post)
+                	#set($body = $post.Body('raw'))
+        		#end
+            	$core_v2_editor.Render('PostBody', "%{Width='97%', Height='250px', Value=$body}")
+            &lt;/span&gt;
+            &lt;span class="field-item-validation" style="display: none;"&gt;&lt;/span&gt;
+        &lt;/li&gt;
+	    &lt;li class="field-item create-post"&gt;
+    	&lt;span class="field-item-input"&gt;
+    		&lt;a href="#" class="internal-link save-post disabled"&gt;
+    			&lt;span&gt;&lt;/span&gt;$core_v2_language.GetResource('CreateEditPost_PostButton')
+    		&lt;/a&gt;
+    		&lt;span class="processing" style="visibility: hidden;"&gt;&lt;/span&gt;
+    	&lt;/span&gt;
+    &lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/fieldset&gt;
+&lt;div class="field-list-footer"&gt;&lt;/div&gt;
+
+
+#registerEndOfPageHtml('telligent.evolution.widgets.createEditBlogPost')
+    &lt;script type="text/javascript" src="$core_v2_encoding.HtmlAttributeEncode($core_v2_widget.GetFileUrl("ui.js"))"&gt;&lt;/script&gt;
+#end
+#registerEndOfPageHtml()
+   
+	&lt;script type="text/javascript"&gt;
+		jQuery(function(j){
+			j.telligent.evolution.widgets.createEditBlogPost.register({
+				blogId: $blog.Id,
+				postId: #if($post) $post.Id#else -1#end,
+				wrapperId: '$core_v2_widget.WrapperElementId',
+				subjectId: '$core_v2_widget.UniqueId('PostSubject')',
+				subjectRequiredText: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('CreateEditPost_MissingSubject'))',
+				getBodyContent: function() { return $core_v2_editor.GetContentScript('PostBody') },
+				saveBodyBookmark: function() { $core_v2_editor.GetBookmarkScript('PostBody') },
+				insertBodyContent: function(html) { $core_v2_editor.GetInsertContentScript('PostBody', 'html') },
+				attachBodyChangeScript: function(f) { $core_v2_editor.GetAttachOnChangeScript('PostBody', 'f'); },
+				bodyRequiredText: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('CreateEditPost_MissingBody'))',
+				saveUrl: '$core_v2_encoding.JavascriptEncode($core_v2_widget.GetExecutedFileUrl('save.vm'))',
+				saveErrorText: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('CreateEditPost_SaveError'))'
+			});
+		});
+	&lt;/script&gt;
+#end</contentScript><headerScript>#set($blog = false)
+#set($blog = $core_v2_blog.Current)
+#if ($blog &amp;&amp; $core_v2_widget.GetBoolValue('showBlogInHeader', false))
+    &lt;a class="internal-link view-application blog" href="$core_v2_encoding.HtmlAttributeEncode($blog.Url)"&gt;$blog.Name&lt;/a&gt;
+#else
+	$core_v2_widget.ApplyTokens($core_v2_widget.GetStringValue('fragmentHeader', '${resource:Weblog_CreateEditPost_Name}'))
+#end</headerScript><configuration>&lt;propertyGroup id="options" resourceName="Options"&gt;
+    &lt;property id="fragmentHeader" resourceName="CF_Title" dataType="string" defaultValue="${resource:Weblog_CreateEditPost_Name}" controlType="Telligent.Evolution.Controls.ContentFragmentTokenStringControl, Telligent.Evolution.Extensions.SitecoreConnect" /&gt;
+	&lt;property id="showBlogInHeader" resourceName="CF_ShowBlogInHeader" dataType="bool" defaultValue="false" /&gt;
+&lt;/propertyGroup&gt;</configuration><languageResources><language key="en-us"><resource name="WeblogPost_Subject">Subject</resource><resource name="Weblog_CreateEditPost_Name">Create a Blog Post</resource><resource name="CreateEditPost_Description">Body</resource><resource name="CreateEditPost_PostButton">Publish</resource><resource name="CF_ShowBlogInHeader">Show the Blog Title in the Header(When Displayed)</resource><resource name="CreateEditPost_MissingSubject">Subject is required</resource><resource name="CreateEditPost_MissingBody">You must supply a post body</resource><resource name="CreateEditPost_SaveError">There was an error publishing this post, it may have a duplicate title.</resource></language></languageResources><requiredContext><context id="94b4a7db70934b0abcce06169b6f2272" /></requiredContext><files><file name="save.vm">JGNvcmVfdjJfcGFnZS5TZXRDb250ZW50VHlwZSgnYXBwbGljYXRpb24vanNvbicpDQoNCiNzZXQoJGJsb2dJZCA9ICRjb3JlX3YyX3V0aWxpdHkuUGFyc2VJbnQoJGNvcmVfdjJfcGFnZS5HZXRGb3JtVmFsdWUoJ2Jsb2dpZCcpKSkNCiNzZXQoJGJsb2cgPSBmYWxzZSkNCiNzZXQoJGJsb2cgPSAkY29yZV92Ml9mb3J1bS5HZXQoJGJsb2dJZCkpDQojaWYoISRibG9nKQ0KICAgICRjb3JlX3YyX3BhZ2UuU2VuZEpzb25FcnJvcignVGhlIHNwZWNpZmllZCBibG9nIGNvdWxkIG5vdCBiZSByZXRyaWV2ZWQnKQ0KI2VuZA0KDQojc2V0KCRib2R5ID0gJGNvcmVfdjJfcGFnZS5HZXRGb3JtVmFsdWUoJ0JvZHknKSkNCg0KI3NldCgkc3ViamVjdCA9IGZhbHNlKQ0KI3NldCgkc3ViamVjdCA9ICRjb3JlX3YyX3BhZ2UuR2V0Rm9ybVZhbHVlKCdTdWJqZWN0JykpDQoNCg0KDQoNCiNzZXQoJHBvc3RpZCA9IGZhbHNlKQ0KI3NldCgkcG9zdGlkID0gJGNvcmVfdjJfdXRpbGl0eS5QYXJzZUludCgkY29yZV92Ml9wYWdlLkdldEZvcm1WYWx1ZSgncG9zdGlkJykpKQ0KDQojaWYoJHBvc3RpZCAmJiAkcG9zdGlkID4gMCkNCiAgICAgI3NldCgkcmVzcG9uc2UgPSAkY29yZV92Ml9ibG9nUG9zdC5VcGRhdGUoJHBvc3RpZCwiJXtCb2R5PSRib2R5LFRpdGxlPSRzdWJqZWN0fSIpKQ0KI2Vsc2UNCiAgICAjc2V0KCRyZXNwb25zZSA9ICRjb3JlX3YyX2Jsb2dQb3N0LkNyZWF0ZSgkYmxvZy5JZCwgJHN1YmplY3QsICRib2R5KSkNCiNlbmQNCg0KI2lmICgkcmVzcG9uc2UuRXJyb3JzLkNvdW50ID4gMCkNCgkkY29yZV92Ml9wYWdlLlNlbmRKc29uRXJyb3IoJHJlc3BvbnNlLkVycm9ycykNCiNlbmQNCg0KDQp7InJlZGlyZWN0VXJsIjoiJGNvcmVfdjJfZW5jb2RpbmcuSmF2YXNjcmlwdEVuY29kZSgkcmVzcG9uc2UuVXJsKSJ9DQoNCg0K</file><file name="ui.js">KGZ1bmN0aW9uKCQpDQp7DQogICAgaWYgKHR5cGVvZiAkLnRlbGxpZ2VudCA9PT0gJ3VuZGVmaW5lZCcpIHsgJC50ZWxsaWdlbnQgPSB7fTsgfQ0KCWlmICh0eXBlb2YgJC50ZWxsaWdlbnQuZXZvbHV0aW9uID09PSAndW5kZWZpbmVkJykgeyAkLnRlbGxpZ2VudC5ldm9sdXRpb24gPSB7fTsgfQ0KCWlmICh0eXBlb2YgJC50ZWxsaWdlbnQuZXZvbHV0aW9uLndpZGdldHMgPT09ICd1bmRlZmluZWQnKSB7ICQudGVsbGlnZW50LmV2b2x1dGlvbi53aWRnZXRzID0ge307IH0NCg0KDQoJdmFyIF9zYXZlID0gZnVuY3Rpb24oY29udGV4dCkNCgl7DQoJCSQudGVsbGlnZW50LmV2b2x1dGlvbi5wb3N0KHsNCgkJCXVybDogY29udGV4dC5zYXZlVXJsLA0KCQkJZGF0YTogX3BvcHVsYXRlRGF0YShjb250ZXh0KSwNCgkJCXN1Y2Nlc3M6IGZ1bmN0aW9uKHJlc3BvbnNlKQ0KCQkJew0KCQkJCWlmIChyZXNwb25zZS5yZWRpcmVjdFVybCkgew0KCQkJCQl3aW5kb3cubG9jYXRpb24gPSByZXNwb25zZS5yZWRpcmVjdFVybDsNCgkJCQl9DQoJCQkJZWxzZSBpZiAocmVzcG9uc2UuZXJyb3JzKSB7DQoJCQkJCWFsZXJ0KGNvbnRleHQuc2F2ZUVycm9yVGV4dCArICdcblxuJyArIHJlc3BvbnNlLmVycm9yc1swXS5lcnJvcik7DQoNCgkJCQkJJCgnIycgKyBjb250ZXh0LndyYXBwZXJJZCArICcgYS5zYXZlLXBvc3QnKS5wYXJlbnQoKS5yZW1vdmVDbGFzcygncHJvY2Vzc2luZycpOw0KCQkJCQkkKCcjJyArIGNvbnRleHQud3JhcHBlcklkICsgJyBhLnNhdmUtcG9zdCcpLnJlbW92ZUNsYXNzKCdkaXNhYmxlZCcpOwkNCgkJCQl9DQoJCQl9LA0KCQkJZGVmYXVsdEVycm9yTWVzc2FnZTogY29udGV4dC5zYXZlRXJyb3JUZXh0LA0KCQkJZXJyb3I6IGZ1bmN0aW9uKHhociwgZGVzYywgZXgpDQoJCQl7DQoJCQkJJC50ZWxsaWdlbnQuZXZvbHV0aW9uLm5vdGlmaWNhdGlvbnMuc2hvdyhkZXNjLHt0eXBlOidlcnJvcid9KTsNCgkJCQkkKCcjJyArIGNvbnRleHQud3JhcHBlcklkICsgJyBhLnNhdmUtcG9zdCcpLnBhcmVudCgpLnJlbW92ZUNsYXNzKCdwcm9jZXNzaW5nJyk7DQoJCQkJJCgnIycgKyBjb250ZXh0LndyYXBwZXJJZCArICcgYS5zYXZlLXBvc3QnKS5yZW1vdmVDbGFzcygnZGlzYWJsZWQnKTsNCgkJCX0NCgkJfSk7DQoJfSwNCglfcG9wdWxhdGVEYXRhID0gZnVuY3Rpb24oY29udGV4dCkNCgl7DQoJCXZhciBkYXRhID0gew0KCQkJQm9keTogY29udGV4dC5nZXRCb2R5Q29udGVudCgpLA0KCQkJYmxvZ2lkOiBjb250ZXh0LmJsb2dJZA0KCQl9Ow0KCQ0KCQkJCQkNCgkJaWYgKCQoJyMnICsgY29udGV4dC5zdWJqZWN0SWQpLmxlbmd0aCA+IDApDQoJCXsNCgkJCWRhdGEuU3ViamVjdCA9ICAkKCcjJyArIGNvbnRleHQuc3ViamVjdElkKS52YWwoKTsNCgkJfQ0KICAgICAgICANCiAgICAgICAgaWYoY29udGV4dC5wb3N0SWQgJiYgY29udGV4dC5wb3N0SWQgPiAwKQ0KCSAgICAgICAgICAgZGF0YS5wb3N0aWQgPSBjb250ZXh0LnBvc3RJZDsNCiAgICAgICAgICAgICAgICANCgkJcmV0dXJuIGRhdGE7DQoJfQ0KCV9hdHRhY2hIYW5kbGVycyA9IGZ1bmN0aW9uKGNvbnRleHQpDQoJew0KCQkkLnRlbGxpZ2VudC5ldm9sdXRpb24ubmF2aWdhdGlvbkNvbmZpcm1hdGlvbi5lbmFibGUoKTsNCgkJdmFyIHNhdmVCdXR0b24gPSAkKCcjJyArIGNvbnRleHQud3JhcHBlcklkICsgJyBhLnNhdmUtcG9zdCcpOw0KCQkkLnRlbGxpZ2VudC5ldm9sdXRpb24ubmF2aWdhdGlvbkNvbmZpcm1hdGlvbi5lbmFibGUoKTsNCgkJJC50ZWxsaWdlbnQuZXZvbHV0aW9uLm5hdmlnYXRpb25Db25maXJtYXRpb24ucmVnaXN0ZXIoc2F2ZUJ1dHRvbik7DQoJDQoJDQoJCQ0KCX0sDQoJX2FkZFZhbGlkYXRpb24gPSBmdW5jdGlvbihjb250ZXh0KQ0KCXsNCgkJdmFyIHNhdmVCdXR0b24gPSAkKCcjJyArIGNvbnRleHQud3JhcHBlcklkICsgJyBhLnNhdmUtcG9zdCcpOw0KDQoJCXNhdmVCdXR0b24uZXZvbHV0aW9uVmFsaWRhdGlvbih7DQoJCQl2YWxpZGF0ZU9uTG9hZDogY29udGV4dC5tZWRpYUlkIDw9IDAgPyBmYWxzZSA6IG51bGwsDQoJCQlvblZhbGlkYXRlZDogZnVuY3Rpb24oaXNWYWxpZCwgYnV0dG9uQ2xpY2tlZCwgYykgew0KCQkJCWlmIChpc1ZhbGlkKSB7DQoJCQkJCXNhdmVCdXR0b24ucmVtb3ZlQ2xhc3MoJ2Rpc2FibGVkJyk7DQoJCQkJfSBlbHNlIHsNCgkJCQkJc2F2ZUJ1dHRvbi5hZGRDbGFzcygnZGlzYWJsZWQnKTsNCgkJCQkNCgkJCQl9DQoJCQl9LA0KCQkJb25TdWNjZXNzZnVsQ2xpY2s6IGZ1bmN0aW9uKGUpIHsNCgkJCQlpZiAoIXNhdmVCdXR0b24ucGFyZW50KCkuaGFzQ2xhc3MoJ3Byb2Nlc3NpbmcnKSkNCgkJCQl7DQoJCQkJCXNhdmVCdXR0b24ucGFyZW50KCkuYWRkQ2xhc3MoJ3Byb2Nlc3NpbmcnKTsNCgkJCQkJc2F2ZUJ1dHRvbi5hZGRDbGFzcygnZGlzYWJsZWQnKTsNCgkJCQkJX3NhdmUoY29udGV4dCk7DQoJCQkJfQ0KCQkJCQ0KCQkJCXJldHVybiBmYWxzZTsNCgkJCX0NCgkJfSk7DQoNCgkJaWYgKCQoJyMnICsgY29udGV4dC5zdWJqZWN0SWQpLmxlbmd0aCA+IDApDQoJCXsNCgkJCXNhdmVCdXR0b24uZXZvbHV0aW9uVmFsaWRhdGlvbignYWRkRmllbGQnLCAnIycgKyBjb250ZXh0LnN1YmplY3RJZCwNCgkJCQl7DQoJCQkJCXJlcXVpcmVkOiB0cnVlLA0KCQkJCQltZXNzYWdlczogeyByZXF1aXJlZDogY29udGV4dC5zdWJqZWN0UmVxdWlyZWRUZXh0IH0NCgkJCQl9LA0KCQkJCScjJyArIGNvbnRleHQud3JhcHBlcklkICsgJyAuZmllbGQtaXRlbS5wb3N0LXN1YmplY3QgLmZpZWxkLWl0ZW0tdmFsaWRhdGlvbicNCgkJCSk7DQoJCX0NCgkJDQoJCWNvbnRleHQuYXR0YWNoQm9keUNoYW5nZVNjcmlwdChzYXZlQnV0dG9uLmV2b2x1dGlvblZhbGlkYXRpb24oJ2FkZEN1c3RvbVZhbGlkYXRpb24nLCAnYm9keScsIGZ1bmN0aW9uKCkgDQoJCQl7IA0KCQkJCXZhciBib2R5ID0gY29udGV4dC5nZXRCb2R5Q29udGVudCgpOw0KCQkJCXZhciBiZWdpbm5pbmdNYXRjaGVzID0gYm9keS5tYXRjaCgvXFtxdW90ZSgoPzpccyopdXNlcj0oPzpcInwmcXVvdDt8JiMzNDspLio/KD86XCJ8JnF1b3Q7fCYjMzQ7KSk/XF0vZyk7IA0KICAgICAgICAJCXZhciBlbmRpbmdNYXRjaGVzID0gYm9keS5tYXRjaCgvXFtcL3F1b3RlKD86XHMqKVxdL2cpOyANCiAgICAgICAgCQlpZiAoKGJlZ2lubmluZ01hdGNoZXMgPT0gbnVsbCkgIT0gKGVuZGluZ01hdGNoZXMgPT0gbnVsbCkpDQogICAgICAgICAgICAJCXJldHVybiBmYWxzZTsNCiAgICAgICAgICAgIA0KCSAgICAJCXJldHVybiBib2R5Lmxlbmd0aCA+IDAgJiYgKChiZWdpbm5pbmdNYXRjaGVzID09IG51bGwgJiYgZW5kaW5nTWF0Y2hlcyA9PSBudWxsKSB8fCBiZWdpbm5pbmdNYXRjaGVzLmxlbmd0aCA9PSBlbmRpbmdNYXRjaGVzLmxlbmd0aCk7DQoJCQl9LCANCgkJCWNvbnRleHQuYm9keVJlcXVpcmVkVGV4dCwgJyMnICsgY29udGV4dC53cmFwcGVySWQgKyAnIC5maWVsZC1pdGVtLnBvc3QtYm9keSAuZmllbGQtaXRlbS12YWxpZGF0aW9uJw0KCQkpKTsJCQ0KCQ0KCX07DQoJCQ0KCSQudGVsbGlnZW50LmV2b2x1dGlvbi53aWRnZXRzLmNyZWF0ZUVkaXRCbG9nUG9zdCA9IHsNCgkJcmVnaXN0ZXI6IGZ1bmN0aW9uKGNvbnRleHQpIHsNCgkJDQoJCQlfYXR0YWNoSGFuZGxlcnMoY29udGV4dCk7DQoJCQlfYWRkVmFsaWRhdGlvbihjb250ZXh0KTsNCgkJfQ0KCX07DQp9KShqUXVlcnkpOw0K</file></files></scriptedContentFragment></scriptedContentFragments>

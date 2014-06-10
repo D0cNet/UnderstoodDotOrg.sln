@@ -1,0 +1,16 @@
+9904 16:52:16 INFO  [Index=sitecore_core_index] Initializing IntervalAsynchronousUpdateStrategy with interval '00:01:00'.
+9904 16:52:16 INFO  [Index=sitecore_core_index] Initializing SitecoreItemCrawler. DB:core / Root:/sitecore
+9904 16:52:16 INFO  [Index=sitecore_master_index] Initializing SynchronousStrategy.
+9904 16:52:16 INFO  [Index=sitecore_master_index] Initializing SitecoreItemCrawler. DB:master / Root:/sitecore
+9904 16:52:16 INFO  [Index=sitecore_web_index] Initializing OnPublishEndAsynchronousStrategy.
+9904 16:52:16 INFO  [Index=sitecore_web_index] Initializing SitecoreItemCrawler. DB:web / Root:/sitecore
+9904 16:52:16 INFO  [Index=mediaframework_brightcove_index] Initializing SynchronousStrategy.
+9904 16:52:16 INFO  [Index=mediaframework_brightcove_index] Initializing SitecoreItemCrawler. DB:master / Root:{7150B2B1-EB68-40EE-991F-2AFEDB532C46}
+ManagedPoolThread #9 16:52:42 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:3; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #19 16:52:42 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:3; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #9 16:52:42 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #19 16:52:42 INFO  [Index=mediaframework_brightcove_index] Committed
+10408 16:53:50 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10408 16:53:50 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+12004 16:54:55 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+12004 16:54:58 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns

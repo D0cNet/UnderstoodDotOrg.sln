@@ -1,0 +1,8 @@
+ManagedPoolThread #7 08:27:57 INFO  ExecuteQueryAgainstLucene : *:* - Filter : +(+_path:93f563aab69544359b5a7073e0a969f7 +_database:master) +(+_template:1f5cf62ddedc4712a8b6ccc36e27a3f8 +_name:sample)
+ManagedPoolThread #7 08:27:59 INFO  ExecuteQueryAgainstLucene : *:* - Filter : +(+_path:93f563aab69544359b5a7073e0a969f7 +_database:master) +(+_template:1f5cf62ddedc4712a8b6ccc36e27a3f8 +_name:sample)
+ManagedPoolThread #11 08:28:02 INFO  ExecuteQueryAgainstLucene : *:* - Filter : +(+_path:93f563aab69544359b5a7073e0a969f7 +_database:master) +(+_template:6a5c68356e114602a11db626e9255397 +id:3255360668001)
+ManagedPoolThread #11 08:28:02 INFO  ExecuteQueryAgainstLucene : *:* - Filter : +(+_path:93f563aab69544359b5a7073e0a969f7 +_database:master) +(+_template:6a5c68356e114602a11db626e9255397 +id:3255360669001)
+ManagedPoolThread #11 08:28:02 INFO  ExecuteQueryAgainstLucene : *:* - Filter : +(+_path:93f563aab69544359b5a7073e0a969f7 +_database:master) +(+_template:6a5c68356e114602a11db626e9255397 +id:3256052059001)
+ManagedPoolThread #1 08:28:04 INFO  ExecuteQueryAgainstLucene : *:* - Filter : +(+_path:93f563aab69544359b5a7073e0a969f7 +_database:master) +(+_template:0e24292fd7a54ba2bca0cd5f14a89634 +id:3252681942001)
+ManagedPoolThread #3 08:28:08 INFO  ExecuteQueryAgainstLucene : *:* - Filter : +(+_path:93f563aab69544359b5a7073e0a969f7 +_database:master) +_template:6a5c68356e114602a11db626e9255397
+ManagedPoolThread #16 08:28:09 INFO  ExecuteQueryAgainstLucene : *:* - Filter : +(+_path:93f563aab69544359b5a7073e0a969f7 +_database:master) +_template:0e24292fd7a54ba2bca0cd5f14a89634

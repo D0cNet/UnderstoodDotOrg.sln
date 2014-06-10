@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UnderstoodorgDEVmembershipModelStoreContainer" CdmEntityContainer="Membership">
+    <EntitySetMapping Name="Children">
+      <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.Child">
+        <MappingFragment StoreEntitySet="Children">
+          <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+          <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+          <ScalarProperty Name="IEPStatus" ColumnName="IEPStatus" />
+          <ScalarProperty Name="Section504Status" ColumnName="Section504Status" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="EvaluationStatus" ColumnName="EvaluationStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diagnoses">
+      <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.Diagnosis">
+        <MappingFragment StoreEntitySet="Diagnosis">
+          <ScalarProperty Name="rowId" ColumnName="rowId" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Interests">
+      <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.Interest">
+        <MappingFragment StoreEntitySet="Interests">
+          <ScalarProperty Name="rowId" ColumnName="rowId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Issues">
+      <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.Issue">
+        <MappingFragment StoreEntitySet="Issues">
+          <ScalarProperty Name="rowId" ColumnName="rowId" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="Understood.org.DEV.membershipModel.Member">
+        <MappingFragment StoreEntitySet="Members">
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ScreenName" ColumnName="ScreenName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="allowConnections" ColumnName="allowConnections" />
+          <ScalarProperty Name="allowNewsletter" ColumnName="allowNewsletter" />
+          <ScalarProperty Name="isPrivate" ColumnName="isPrivate" />
+          <ScalarProperty Name="hasOtherChildren" ColumnName="hasOtherChildren" />
+          <ScalarProperty Name="PersonalityType" ColumnName="PersonalityType" />
+          <ScalarProperty Name="HomeLife" ColumnName="HomeLife" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ChildToDiagnosis" TypeName="Understood.org.DEV.membershipModel.ChildToDiagnosis" StoreEntitySet="ChildToDiagnosis">
+      <EndProperty Name="Children">
+        <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+      </EndProperty>
+      <EndProperty Name="Diagnosis">
+        <ScalarProperty Name="rowId" ColumnName="DiagnosisId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ChildToIssues" TypeName="Understood.org.DEV.membershipModel.ChildToIssues" StoreEntitySet="ChildToIssues">
+      <EndProperty Name="Children">
+        <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+      </EndProperty>
+      <EndProperty Name="Issues">
+        <ScalarProperty Name="rowId" ColumnName="IssueId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MemberToChild" TypeName="Understood.org.DEV.membershipModel.MemberToChild" StoreEntitySet="MemberToChild">
+      <EndProperty Name="Children">
+        <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+      </EndProperty>
+      <EndProperty Name="Members">
+        <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MemberToInterests" TypeName="Understood.org.DEV.membershipModel.MemberToInterests" StoreEntitySet="MemberToInterests">
+      <EndProperty Name="Interests">
+        <ScalarProperty Name="rowId" ColumnName="InterestId" />
+      </EndProperty>
+      <EndProperty Name="Members">
+        <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

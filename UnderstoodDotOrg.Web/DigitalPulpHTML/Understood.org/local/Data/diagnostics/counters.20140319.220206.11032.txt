@@ -1,0 +1,115 @@
+<report date='20140319T220206'>
+  <category name='Sitecore.Caching'>
+    <counter name='CacheClearings' value='1800' category='Sitecore.Caching'/>
+    <counter name='CacheHits' value='793019' category='Sitecore.Caching'/>
+    <counter name='CacheMisses' value='33384' category='Sitecore.Caching'/>
+    <counter name='DataCacheClearings' value='0' category='Sitecore.Caching'/>
+    <counter name='DataCacheHits' value='467150' category='Sitecore.Caching'/>
+    <counter name='DataCacheMisses' value='17767' category='Sitecore.Caching'/>
+    <counter name='HtmlCacheClearings' value='4' category='Sitecore.Caching'/>
+    <counter name='HtmlCacheHits' value='0' category='Sitecore.Caching'/>
+    <counter name='HtmlCacheMisses' value='0' category='Sitecore.Caching'/>
+    <counter name='PathCacheClearings' value='0' category='Sitecore.Caching'/>
+    <counter name='PathCacheHits' value='32351' category='Sitecore.Caching'/>
+    <counter name='PathCacheMisses' value='128' category='Sitecore.Caching'/>
+    <counter name='RegistryCacheClearings' value='0' category='Sitecore.Caching'/>
+    <counter name='RegistryCacheHits' value='8487' category='Sitecore.Caching'/>
+    <counter name='RegistryCacheMisses' value='40' category='Sitecore.Caching'/>
+    <counter name='ViewStateCacheClearings' value='0' category='Sitecore.Caching'/>
+    <counter name='ViewStateCacheHits' value='84' category='Sitecore.Caching'/>
+    <counter name='ViewStateCacheMisses' value='2' category='Sitecore.Caching'/>
+    <counter name='XslCacheClearings' value='0' category='Sitecore.Caching'/>
+    <counter name='XslCacheHits' value='0' category='Sitecore.Caching'/>
+    <counter name='XslCacheMisses' value='0' category='Sitecore.Caching'/>
+  </category>
+  <category name='Sitecore.Data'>
+    <counter name='Data.ClientDataReads' value='7' category='Sitecore.Data'/>
+    <counter name='Data.ClientDataWrites' value='14' category='Sitecore.Data'/>
+    <counter name='Data.ItemsAccessed' value='238575' category='Sitecore.Data'/>
+    <counter name='Data.PhysicalReads' value='220336' category='Sitecore.Data'/>
+    <counter name='Data.PhysicalWrites' value='3010' category='Sitecore.Data'/>
+    <counter name='Globalization.TextsTranslated' value='0' category='Sitecore.Data'/>
+    <counter name='Globalization.TranslateFailed' value='28088' category='Sitecore.Data'/>
+    <counter name='Links.DataRead' value='294' category='Sitecore.Data'/>
+    <counter name='Links.DataUpdated' value='33' category='Sitecore.Data'/>
+    <counter name='Links.FieldsExamined' value='21336' category='Sitecore.Data'/>
+    <counter name='Shadows.DataRead' value='0' category='Sitecore.Data'/>
+    <counter name='Shadows.DataUpdated' value='0' category='Sitecore.Data'/>
+    <counter name='Workflow.ActionsExecuted' value='0' category='Sitecore.Data'/>
+    <counter name='Workflow.SecurityResolved' value='0' category='Sitecore.Data'/>
+    <counter name='Workflow.StateChanges' value='0' category='Sitecore.Data'/>
+  </category>
+  <category name='Sitecore.Jobs'>
+    <counter name='Jobs.JobsExecuted' value='1196' category='Sitecore.Jobs'/>
+    <counter name='Pipelines.PipelinesAborted' value='17829' category='Sitecore.Jobs'/>
+    <counter name='Pipelines.PipelinesExecuted' value='45053' category='Sitecore.Jobs'/>
+    <counter name='Pipelines.ProcessorsExecuted' value='143100' category='Sitecore.Jobs'/>
+    <counter name='Publishing.FullPublishings' value='0' category='Sitecore.Jobs'/>
+    <counter name='Publishing.IncrementalPublishings' value='0' category='Sitecore.Jobs'/>
+    <counter name='Publishing.ItemPublishings' value='0' category='Sitecore.Jobs'/>
+    <counter name='Publishing.ItemsExamined' value='0' category='Sitecore.Jobs'/>
+    <counter name='Publishing.ItemsPublished' value='0' category='Sitecore.Jobs'/>
+    <counter name='Publishing.ItemsQueued' value='60' category='Sitecore.Jobs'/>
+    <counter name='Publishing.Replacements' value='0' category='Sitecore.Jobs'/>
+    <counter name='Publishing.SmartPublishings' value='0' category='Sitecore.Jobs'/>
+    <counter name='Publishing.TotalPublishings' value='0' category='Sitecore.Jobs'/>
+    <counter name='Tasks.FileCleanups' value='2' category='Sitecore.Jobs'/>
+    <counter name='Tasks.HtmlCacheClearings' value='0' category='Sitecore.Jobs'/>
+    <counter name='Tasks.ItemsArchived' value='0' category='Sitecore.Jobs'/>
+    <counter name='Tasks.Publishings' value='0' category='Sitecore.Jobs'/>
+    <counter name='Tasks.RemindersSent' value='0' category='Sitecore.Jobs'/>
+    <counter name='Tasks.TasksExecuted' value='0' category='Sitecore.Jobs'/>
+  </category>
+  <category name='Sitecore.Presentation'>
+    <counter name='Context.SiteChanged' value='1201' category='Sitecore.Presentation'/>
+    <counter name='Context.ThreadDataAccessed' value='0' category='Sitecore.Presentation'/>
+    <counter name='Media.FastMediaCacheHits' value='0' category='Sitecore.Presentation'/>
+    <counter name='Media.FastMediaCacheMisses' value='0' category='Sitecore.Presentation'/>
+    <counter name='Media.StandardMediaCacheHits' value='0' category='Sitecore.Presentation'/>
+    <counter name='Media.StandardMediaCacheHits' value='0' category='Sitecore.Presentation'/>
+    <counter name='Media.StandardMediaCacheMisses' value='0' category='Sitecore.Presentation'/>
+    <counter name='Media.StandardMediaCacheMisses' value='0' category='Sitecore.Presentation'/>
+    <counter name='Rendering.ControlsRendered' value='1534' category='Sitecore.Presentation'/>
+    <counter name='Rendering.ControlsRenderedFromCache' value='0' category='Sitecore.Presentation'/>
+    <counter name='Rendering.PagesGenerated' value='210' category='Sitecore.Presentation'/>
+    <counter name='Rendering.RenderingsRendered' value='0' category='Sitecore.Presentation'/>
+    <counter name='Rendering.SublayoutsRendered' value='5' category='Sitecore.Presentation'/>
+    <counter name='Rendering.XamlControlsCompiled' value='3' category='Sitecore.Presentation'/>
+    <counter name='Rendering.XmlControlsCompiled' value='28' category='Sitecore.Presentation'/>
+    <counter name='Rendering.XslTransformsRendered' value='0' category='Sitecore.Presentation'/>
+  </category>
+  <category name='Sitecore.Security'>
+    <counter name='AccessDenied' value='0' category='Sitecore.Security'/>
+    <counter name='AccessGranted' value='134736' category='Sitecore.Security'/>
+    <counter name='AccessResolved' value='134751' category='Sitecore.Security'/>
+    <counter name='ModifyRequests' value='0' category='Sitecore.Security'/>
+    <counter name='ProgrammaticDisabling' value='0' category='Sitecore.Security'/>
+    <counter name='ProgrammaticEnabling' value='0' category='Sitecore.Security'/>
+    <counter name='ProgrammaticUserSwitch' value='0' category='Sitecore.Security'/>
+    <counter name='ReadRequests' value='0' category='Sitecore.Security'/>
+    <counter name='RolesResolved' value='0' category='Sitecore.Security'/>
+    <counter name='UsersResolved' value='0' category='Sitecore.Security'/>
+    <counter name='VirtualUsersBuilt' value='0' category='Sitecore.Security'/>
+  </category>
+  <category name='Sitecore.System'>
+    <counter name='Events.EventsRaised' value='11209' category='Sitecore.System'/>
+    <counter name='Exceptions.ExceptionsThrown' value='0' category='Sitecore.System'/>
+    <counter name='IO.FileWatcherEvents' value='0' category='Sitecore.System'/>
+    <counter name='Logging.AuditsLogged' value='19' category='Sitecore.System'/>
+    <counter name='Logging.ErrorsLogged' value='386' category='Sitecore.System'/>
+    <counter name='Logging.FatalsLogged' value='0' category='Sitecore.System'/>
+    <counter name='Logging.InformationsLogged' value='3511' category='Sitecore.System'/>
+    <counter name='Logging.WarningsLogged' value='11' category='Sitecore.System'/>
+    <counter name='Reflection.MethodsInvoked' value='4344' category='Sitecore.System'/>
+    <counter name='Reflection.ObjectsCreated' value='37530' category='Sitecore.System'/>
+    <counter name='Reflection.ObjectsNotCreated' value='0' category='Sitecore.System'/>
+    <counter name='Reflection.TypesNotResolved' value='198' category='Sitecore.System'/>
+    <counter name='Reflection.TypesResolved' value='3900' category='Sitecore.System'/>
+    <counter name='Threading.BackgroundThreadsStarted' value='1208' category='Sitecore.System'/>
+    <counter name='Threading.ThreadDataModified' value='0' category='Sitecore.System'/>
+    <counter name='Threading.ThreadDataRead' value='0' category='Sitecore.System'/>
+    <counter name='Xml.ItemNavigatorsCreated' value='0' category='Sitecore.System'/>
+    <counter name='Xml.PacketsCreated' value='33' category='Sitecore.System'/>
+  </category>
+</report>
+

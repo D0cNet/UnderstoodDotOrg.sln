@@ -1,0 +1,61 @@
+<scriptedContentFragments><scriptedContentFragment name="${resource:MediaGalleries_MediaGalleryPostDetails_Name}" version="6.0.0.1" description="${resource:MediaGalleries_MediaGalleryPostDetails_Description}" instanceIdentifier="9381478411c04f699afcb8102b1d37b3" theme="" isCacheable="true" varyCacheByUser="false" showHeaderByDefault="false" cssClass="media-gallery-post-details"><contentScript>
+#set($media = $core_v2_media.Current)
+#set($User = $media.Author)
+#if (!$media)
+	$core_v2_widget.Hide()
+#end
+&lt;div class="abbreviated-post-header"&gt;&lt;/div&gt;
+&lt;div class="abbreviated-post"&gt;
+	&lt;div class="post-author"&gt;
+		&lt;span class="avatar"&gt;
+			#if ($User.ProfileUrl)
+				&lt;a href="$core_v2_encoding.HtmlAttributeEncode($User.ProfileUrl)"&gt;
+					$core_v2_ui.GetResizedImageHtml($User.AvatarUrl, 32, 32, "%{border='0', alt=$User.DisplayName}")
+				&lt;/a&gt;
+			#else
+				$core_v2_ui.GetResizedImageHtml($User.AvatarUrl, 32, 32, "%{border='0', alt=$User.DisplayName}")
+			#end
+		&lt;/span&gt;
+		&lt;span class="user-name"&gt;
+			$core_v2_language.GetResource("Posted_by")
+			#if ($User.ProfileUrl)
+				&lt;a href="$core_v2_encoding.HtmlAttributeEncode($User.ProfileUrl)" class="internal-link view-user-profile"&gt;
+					&lt;span&gt;&lt;/span&gt;$User.DisplayName
+				&lt;/a&gt;
+			#else
+				&lt;span&gt;&lt;/span&gt;$User.DisplayName
+			#end
+		&lt;/span&gt;
+	&lt;/div&gt;
+
+	&lt;div class="post-date"&gt;
+		&lt;span class="label"&gt;$core_v2_language.GetResource("When"):&lt;/span&gt;
+		&lt;span class="value"&gt;$core_v2_language.FormatDate($media.Date)&lt;/span&gt;
+	&lt;/div&gt;
+
+	&lt;div class="post-attributes"&gt;
+		&lt;ul class="attribute-list"&gt;
+			&lt;li class="attribute-item post-attachment-download-count"&gt;
+				&lt;span class="attribute-name"&gt;$core_v2_language.GetResource("Downloads"):&lt;/span&gt;
+				&lt;span class="attribute-value"&gt;$media.Downloads&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li class="attribute-item post-attachment-size"&gt;
+				&lt;span class="attribute-name"&gt;$core_v2_language.GetResource("MediaGalleries_PostDetails_FileSize"):&lt;/span&gt;
+				&lt;span class="attribute-value"&gt;$core_v2_language.FormatDataSize($media.File.FileSize)&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li class="attribute-item post-view-count"&gt;
+				&lt;span class="attribute-name"&gt;$core_v2_language.GetResource("Views"):&lt;/span&gt;
+				&lt;span class="attribute-value"&gt;$media.Views&lt;/span&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+		&lt;div class="attribute-list-footer"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="abbreviated-post-footer"&gt;&lt;/div&gt;
+		</contentScript><headerScript>
+$core_v2_widget.ApplyTokens($core_v2_widget.GetStringValue('fragmentHeader', '${resource:MediaGalleries_MediaGalleryPostDetails_Title_Info}'))
+		</headerScript><configuration>
+&lt;propertyGroup id="options" resourceName="Options"&gt;
+	&lt;property id="fragmentHeader" resourceName="CF_Title" dataType="string" defaultValue="${resource:MediaGalleries_MediaGalleryPostDetails_Title_Info}" controlType="Telligent.Evolution.Controls.ContentFragmentTokenStringControl, Telligent.Evolution.Controls" /&gt;
+&lt;/propertyGroup&gt;
+			</configuration><languageResources><language key="en-us"><resource name="MediaGalleries_MediaGalleryPostDetails_Name">Media Gallery - File Details</resource><resource name="MediaGalleries_MediaGalleryPostDetails_Description">Displays details related to a media gallery file.</resource><resource name="MediaGalleries_MediaGalleryPostDetails_Title_Info">Info</resource><resource name="Options">Options</resource><resource name="CF_Title">Widget Title</resource><resource name="Posted_by">Posted by</resource><resource name="When">When</resource><resource name="Downloads">Downloads</resource><resource name="MediaGalleries_PostDetails_FileSize">File Size</resource><resource name="Views">Views</resource></language></languageResources><requiredContext><context id="a91f97494d81449ca3c3ec8d6eebaf25" /></requiredContext></scriptedContentFragment></scriptedContentFragments>

@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {A1354149-C308-4AEA-A74E-E31EA0B4142F}
+database: master
+path: /sitecore/content/Content Taxonomies/Child Related/Grade/After High School
+parent: {1106FF43-4C23-412E-A37D-E19C6A34CF8F}
+name: After High School
+master: {00000000-0000-0000-0000-000000000000}
+template: {8F66C22B-74C3-41C7-9250-78A84B80A114}
+templatekey: Grade Level
+
+----version----
+language: en
+version: 1
+revision: 733c8ed8-4dcf-4693-8250-b1e46f6caba7
+
+----field----
+field: {AD89AFFB-E046-42C7-9856-6B2899D15762}
+name: Name
+key: name
+content-length: 17
+
+After High School
+----field----
+field: {112EFCE9-04A3-4CD8-A066-F10C7A2B6B60}
+name: Description
+key: description
+content-length: 37
+
+Description&nbsp;of After High School
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140224T194024
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+733c8ed8-4dcf-4693-8250-b1e46f6caba7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140224T194024:635288676240926514
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,0 +1,14 @@
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\bin\Debug\UnderstoodDotOrg.Domain.dll.config
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\bin\Debug\UnderstoodDotOrg.Domain.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\bin\Debug\UnderstoodDotOrg.Domain.pdb
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\bin\Debug\CustomItemGenerator.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\bin\Debug\EntityFramework.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\bin\Debug\Sitecore.Kernel.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\bin\Debug\UnderstoodDotOrg.Common.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\bin\Debug\UnderstoodDotOrg.Common.pdb
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\bin\Debug\EntityFramework.xml
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\obj\Debug\UnderstoodDotOrg.Domain.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\obj\Debug\UnderstoodDotOrg.Domain.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Domain\obj\Debug\UnderstoodDotOrg.Domain.pdb

@@ -1,0 +1,6 @@
+6192 11:57:58 INFO  [Index=sitecore_core_index] Initializing IntervalAsynchronousUpdateStrategy with interval '00:01:00'.
+6192 11:57:58 INFO  [Index=sitecore_core_index] Initializing SitecoreItemCrawler. DB:core / Root:/sitecore
+6192 11:57:58 INFO  [Index=sitecore_master_index] Initializing SynchronousStrategy.
+6192 11:57:58 INFO  [Index=sitecore_master_index] Initializing SitecoreItemCrawler. DB:master / Root:/sitecore
+6192 11:57:58 INFO  [Index=sitecore_web_index] Initializing OnPublishEndAsynchronousStrategy.
+6192 11:57:58 INFO  [Index=sitecore_web_index] Initializing SitecoreItemCrawler. DB:web / Root:/sitecore

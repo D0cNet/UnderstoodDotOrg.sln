@@ -1,0 +1,3 @@
+6180 14:30:55 INFO  Warming and Caching your search indexes
+6180 14:30:55 INFO  /******* Warming Queries ********/
+6180 14:30:55 INFO  /*************************/

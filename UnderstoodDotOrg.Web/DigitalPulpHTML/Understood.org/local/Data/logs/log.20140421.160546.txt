@@ -1,0 +1,1200 @@
+1356 16:05:46 INFO  HttpModule is being initialized
+1356 16:05:46 INFO  
+1356 16:05:46 INFO  **********************************************************************
+1356 16:05:46 INFO  **********************************************************************
+1356 16:05:46 INFO  Sitecore started
+1356 16:05:46 INFO  Sitecore.NET 7.0 (rev. 140120)
+1356 16:05:46 INFO  
+1356 16:05:46 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Client.dll (Sitecore CMS, Sitecore Client Application, 7.0 rev. 140120)
+1356 16:05:46 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Kernel.dll (Sitecore CMS, Sitecore CMS Kernel Library, 7.0 rev. 140120)
+1356 16:05:46 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Nexus.dll (Sitecore.Nexus)
+1356 16:05:46 INFO  
+1356 16:05:46 INFO  Operating system Microsoft Windows NT 6.1.7601 Service Pack 1
+1356 16:05:46 INFO  
+1356 16:05:46 INFO  Microsoft.NET version 4.0.30319.18444
+1356 16:05:46 INFO  
+1356 16:05:46 INFO  Process id: 14360
+1356 16:05:46 INFO  Windows identity used by the process: NT AUTHORITY\NETWORK SERVICE. Impersonation: False
+1356 16:05:46 INFO  Managed pipeline mode: Integrated
+1356 16:05:46 INFO  
+1356 16:05:46 INFO  EventQueues enabled: True
+1356 16:05:46 INFO  Instance Name:CHADDADT-PC-understood.org.local
+1356 16:05:46 INFO  
+1356 16:05:46 INFO  Threshold settings
+1356 16:05:46 INFO    Show threshold warnings: False
+1356 16:05:46 INFO  
+1356 16:05:46 INFO  Databases
+1356 16:05:46 INFO    core
+1356 16:05:46 INFO    master
+1356 16:05:46 INFO    web
+1356 16:05:46 INFO    filesystem
+1356 16:05:46 INFO  
+1356 16:05:46 INFO  Domains
+1356 16:05:46 INFO  Heartbeat - Initializing
+1356 16:05:46 INFO  Heartbeat - Interval set to: 00:00:02
+1356 16:05:46 INFO  Heartbeat - Worker thread started
+1356 16:05:46 INFO  Trying to load XML configuration /App_Config/Security/Domains.config
+1356 16:05:46 INFO    sitecore
+1356 16:05:46 INFO    extranet
+1356 16:05:46 INFO    default
+1356 16:05:46 INFO  **********************************************************************
+1356 16:05:46 INFO  **********************************************************************
+1356 16:05:46 INFO  Attempting to get ASP.NET process history
+1356 16:05:46 WARN  No process history available
+1356 16:05:47 INFO  Cache created: 'LanguageProvider - Languages' (max size: 100KB, running total: 100KB)
+1356 16:05:47 INFO  Cache created: 'DeviceItemsCache' (max size: 10MB, running total: 10MB)
+1356 16:05:47 INFO  Cache created: 'core[data]' (max size: 20MB, running total: 30MB)
+1356 16:05:47 INFO  Cache created: 'core[items]' (max size: 10MB, running total: 40MB)
+1356 16:05:47 INFO  Cache created: 'core[paths]' (max size: 500KB, running total: 40MB)
+1356 16:05:47 INFO  Cache created: 'core[standardValues]' (max size: 500KB, running total: 41MB)
+1356 16:05:47 INFO  Cache created: 'core[itempaths]' (max size: 10MB, running total: 51MB)
+1356 16:05:47 INFO  Cache created: 'core[blobIDs]' (max size: 500KB, running total: 51MB)
+1356 16:05:47 INFO  Cache created: 'master[data]' (max size: 20MB, running total: 71MB)
+1356 16:05:47 INFO  Cache created: 'master[items]' (max size: 10MB, running total: 81MB)
+1356 16:05:47 INFO  Cache created: 'master[paths]' (max size: 500KB, running total: 82MB)
+1356 16:05:47 INFO  Cache created: 'master[standardValues]' (max size: 500KB, running total: 82MB)
+1356 16:05:47 INFO  Cache created: 'master[itempaths]' (max size: 10MB, running total: 92MB)
+1356 16:05:47 INFO  Cache created: 'master[blobIDs]' (max size: 500KB, running total: 93MB)
+1356 16:05:47 INFO  Cache created: 'web[data]' (max size: 20MB, running total: 113MB)
+1356 16:05:47 INFO  Cache created: 'web[items]' (max size: 10MB, running total: 123MB)
+1356 16:05:47 INFO  Cache created: 'web[paths]' (max size: 500KB, running total: 123MB)
+1356 16:05:47 INFO  Cache created: 'web[standardValues]' (max size: 500KB, running total: 124MB)
+1356 16:05:47 INFO  Cache created: 'web[itempaths]' (max size: 10MB, running total: 134MB)
+1356 16:05:47 INFO  Cache created: 'web[blobIDs]' (max size: 500KB, running total: 134MB)
+1356 16:05:47 INFO  Cache created: 'filesystem[data]' (max size: 0 bytes, running total: 134MB)
+1356 16:05:47 INFO  Cache created: 'filesystem[items]' (max size: 0 bytes, running total: 134MB)
+1356 16:05:47 INFO  Cache created: 'filesystem[paths]' (max size: 0 bytes, running total: 134MB)
+1356 16:05:47 INFO  Cache created: 'filesystem[standardValues]' (max size: 0 bytes, running total: 134MB)
+1356 16:05:47 INFO  Cache created: 'filesystem[itempaths]' (max size: 10MB, running total: 144MB)
+1356 16:05:47 INFO  Cache created: 'filesystem[blobIDs]' (max size: 500KB, running total: 144MB)
+ManagedPoolThread #10 16:05:48 INFO  Trying to load XML configuration /App_Config/Security/Domains.config
+Heartbeat 16:05:50 INFO  Cache created: 'SqlDataProvider - Property data(core)' (max size: 500KB, running total: 145MB)
+1356 16:05:51 INFO  Cache created: 'SqlDataProvider - Prefetch data(core)' (max size: 10MB, running total: 155MB)
+1356 16:05:51 INFO  Cache created: 'ItemCloningRelations' (max size: 10MB, running total: 165MB)
+1356 16:05:51 INFO  Cache created: 'AccessResultCache' (max size: 2MB, running total: 167MB)
+1356 16:05:51 INFO  Cache created: 'ProxyProvider' (max size: 500KB, running total: 167MB)
+1356 16:05:51 INFO  Loading Dictionary from cache
+Heartbeat 16:05:51 INFO  Cache created: 'SqlDataProvider - Property data(master)' (max size: 500KB, running total: 168MB)
+Heartbeat 16:05:51 INFO  Cache created: 'SqlDataProvider - Property data(web)' (max size: 500KB, running total: 168MB)
+1356 16:05:51 INFO  MemoryMonitor initialized. Threshold: 800 MB. Interval: 00:00:05
+1356 16:05:52 INFO  Scheduler - Initializing
+1356 16:05:52 INFO  Cache created: 'UserProfileCache' (max size: 1MB, running total: 169MB)
+1356 16:05:52 INFO  Cache created: 'clientData' (max size: 5MB, running total: 174MB)
+1356 16:05:53 INFO  Scheduler - Interval set to: 00:00:05
+1356 16:05:53 INFO  Scheduler - Worker thread started
+1212 16:05:53 INFO  HttpModule is being initialized
+1212 16:05:53 INFO  Cache created: 'shell[html]' (max size: 0 bytes, running total: 174MB)
+1212 16:05:56 INFO  Cache created: 'shell[registry]' (max size: 3MB, running total: 177MB)
+1212 16:05:56 INFO  Cache created: 'shell[viewstate]' (max size: 200KB, running total: 178MB)
+1212 16:05:56 INFO  Cache created: 'shell[xsl]' (max size: 5MB, running total: 183MB)
+1212 16:05:56 INFO  Cache created: 'shell[filtered items]' (max size: 2MB, running total: 185MB)
+1212 16:05:56 INFO  Cache created: 'login[html]' (max size: 0 bytes, running total: 185MB)
+1212 16:05:56 INFO  Cache created: 'login[registry]' (max size: 5MB, running total: 190MB)
+1212 16:05:56 INFO  Cache created: 'login[viewstate]' (max size: 5MB, running total: 195MB)
+1212 16:05:56 INFO  Cache created: 'login[xsl]' (max size: 10MB, running total: 205MB)
+1212 16:05:56 INFO  Cache created: 'login[filtered items]' (max size: 2MB, running total: 207MB)
+1212 16:05:56 INFO  Cache created: 'admin[html]' (max size: 0 bytes, running total: 207MB)
+1212 16:05:56 INFO  Cache created: 'admin[registry]' (max size: 5MB, running total: 212MB)
+1212 16:05:56 INFO  Cache created: 'admin[viewstate]' (max size: 5MB, running total: 217MB)
+1212 16:05:56 INFO  Cache created: 'admin[xsl]' (max size: 10MB, running total: 227MB)
+1212 16:05:56 INFO  Cache created: 'admin[filtered items]' (max size: 2MB, running total: 229MB)
+1212 16:05:56 INFO  Cache created: 'service[html]' (max size: 0 bytes, running total: 229MB)
+1212 16:05:56 INFO  Cache created: 'service[registry]' (max size: 5MB, running total: 234MB)
+1212 16:05:56 INFO  Cache created: 'service[viewstate]' (max size: 5MB, running total: 239MB)
+1212 16:05:56 INFO  Cache created: 'service[xsl]' (max size: 10MB, running total: 249MB)
+1212 16:05:56 INFO  Cache created: 'service[filtered items]' (max size: 2MB, running total: 251MB)
+1212 16:05:56 INFO  Cache created: 'modules_shell[html]' (max size: 0 bytes, running total: 251MB)
+1212 16:05:56 INFO  Cache created: 'modules_shell[registry]' (max size: 5MB, running total: 256MB)
+1212 16:05:56 INFO  Cache created: 'modules_shell[viewstate]' (max size: 5MB, running total: 261MB)
+1212 16:05:56 INFO  Cache created: 'modules_shell[xsl]' (max size: 10MB, running total: 271MB)
+1212 16:05:56 INFO  Cache created: 'modules_shell[filtered items]' (max size: 2MB, running total: 273MB)
+1212 16:05:56 INFO  Cache created: 'modules_website[html]' (max size: 5MB, running total: 278MB)
+1212 16:05:56 INFO  Cache created: 'modules_website[registry]' (max size: 5MB, running total: 283MB)
+1212 16:05:56 INFO  Cache created: 'modules_website[viewstate]' (max size: 5MB, running total: 288MB)
+1212 16:05:56 INFO  Cache created: 'modules_website[xsl]' (max size: 10MB, running total: 298MB)
+1212 16:05:56 INFO  Cache created: 'modules_website[filtered items]' (max size: 2MB, running total: 300MB)
+1212 16:05:56 INFO  Cache created: 'website[html]' (max size: 10MB, running total: 310MB)
+1212 16:05:56 INFO  Cache created: 'website[registry]' (max size: 0 bytes, running total: 310MB)
+1212 16:05:56 INFO  Cache created: 'website[viewstate]' (max size: 0 bytes, running total: 310MB)
+1212 16:05:56 INFO  Cache created: 'website[xsl]' (max size: 5MB, running total: 315MB)
+1212 16:05:56 INFO  Cache created: 'website[filtered items]' (max size: 2MB, running total: 317MB)
+1212 16:05:56 INFO  Cache created: 'scheduler[html]' (max size: 0 bytes, running total: 317MB)
+1212 16:05:56 INFO  Cache created: 'scheduler[registry]' (max size: 5MB, running total: 322MB)
+1212 16:05:56 INFO  Cache created: 'scheduler[viewstate]' (max size: 5MB, running total: 327MB)
+1212 16:05:56 INFO  Cache created: 'scheduler[xsl]' (max size: 10MB, running total: 337MB)
+1212 16:05:56 INFO  Cache created: 'scheduler[filtered items]' (max size: 2MB, running total: 339MB)
+1212 16:05:56 INFO  Cache created: 'system[html]' (max size: 0 bytes, running total: 339MB)
+1212 16:05:56 INFO  Cache created: 'system[registry]' (max size: 5MB, running total: 344MB)
+1212 16:05:56 INFO  Cache created: 'system[viewstate]' (max size: 5MB, running total: 349MB)
+1212 16:05:56 INFO  Cache created: 'system[xsl]' (max size: 10MB, running total: 359MB)
+1212 16:05:56 INFO  Cache created: 'system[filtered items]' (max size: 2MB, running total: 361MB)
+1212 16:05:56 INFO  Cache created: 'publisher[html]' (max size: 0 bytes, running total: 361MB)
+1212 16:05:56 INFO  Cache created: 'publisher[registry]' (max size: 5MB, running total: 366MB)
+1212 16:05:56 INFO  Cache created: 'publisher[viewstate]' (max size: 5MB, running total: 371MB)
+1212 16:05:56 INFO  Cache created: 'publisher[xsl]' (max size: 10MB, running total: 381MB)
+1212 16:05:56 INFO  Cache created: 'publisher[filtered items]' (max size: 2MB, running total: 383MB)
+5116 16:05:58 INFO  Scheduler - Adding agents
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.DatabaseAgent (interval: 00:10:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.DatabaseAgent (interval: 00:10:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.UrlAgent (interval: 00:15:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.TaskDatabaseAgent (interval: 00:10:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.CompactClientDataAgent (interval: 04:00:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupHistory (interval: 04:00:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupPublishQueue (interval: 04:00:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupEventQueue (interval: 04:00:00)
+5116 16:05:58 INFO  Scheduler - Skipping inactive agent: Sitecore.Tasks.HtmlCacheClearAgent
+5116 16:05:58 INFO  Scheduler - Skipping inactive agent: Sitecore.Tasks.PublishAgent
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupAgent (interval: 06:00:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.CounterDumpAgent (interval: 01:00:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.CloneNotificationsCleanupAgent (interval: 1.00:00:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.ContentSearch.Tasks.Optimize (interval: 01:00:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: MediaFramework_Import_Brightcove (interval: 04:00:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: MediaFramework_Cleanup_Brightcove (interval: 08:00:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupFDAObsoleteMediaData (interval: 1.00:00:00)
+5116 16:05:58 INFO  Scheduler - Adding agent: Sitecore.Tasks.WebDAVOptionsCleanupAgent (interval: 1.00:00:00)
+5116 16:05:58 INFO  Scheduler - Agents added
+1212 16:06:02 INFO  Cache created: 'SqlDataProvider - Prefetch data(master)' (max size: 20MB, running total: 403MB)
+1212 16:06:21 INFO  Cache created: 'rules' (max size: 800KB, running total: 403MB)
+1212 16:06:25 INFO  Cache created: 'WebUtil.QueryStringCache' (max size: 19KB, running total: 403MB)
+1212 16:06:27 INFO  HttpModule is being initialized
+8892 16:06:27 INFO  HttpModule is being initialized
+Heartbeat 16:06:38 INFO  Cache created: 'IsUserInRoleCache' (max size: 1MB, running total: 404MB)
+Heartbeat 16:06:38 INFO  Trying to load XML configuration /App_Config/Security/GlobalRoles.config
+ManagedPoolThread #4 16:06:39 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #5 16:06:39 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #4 16:06:40 INFO  Cache created: '[FieldReaderCache]' (max size: 5MB, running total: 409MB)
+ManagedPoolThread #6 16:06:41 INFO  Trying to load XML configuration /App_Config/Security/GlobalRoles.config
+ManagedPoolThread #5 16:06:42 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #4 16:06:42 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:06:48 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:06:48 WARN  Memory usage: 940,384,256
+Heartbeat 16:06:48 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #3 16:07:03 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #7 16:07:03 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #3 16:07:04 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #7 16:07:05 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+Heartbeat 16:07:53 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:07:53 WARN  Memory usage: 894,566,400
+Heartbeat 16:07:53 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:08:55 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:08:55 WARN  Memory usage: 900,538,368
+Heartbeat 16:08:55 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 16:09:59 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:09:59 WARN  Memory usage: 889,663,488
+Heartbeat 16:09:59 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #9 16:10:45 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #19 16:10:45 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #19 16:10:48 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #9 16:10:48 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #12 16:10:57 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #12 16:10:57 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #11 16:10:57 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #11 16:11:01 INFO  Update of index for the database 'master' done.
+Heartbeat 16:11:06 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:11:06 WARN  Memory usage: 912,973,824
+Heartbeat 16:11:06 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:12:07 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:12:07 WARN  Memory usage: 897,064,960
+Heartbeat 16:12:07 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #13 16:12:54 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #14 16:12:54 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #14 16:12:55 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #13 16:12:55 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #17 16:13:10 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 16:13:10 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #17 16:13:12 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #18 16:13:12 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 16:13:12 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #2 16:13:12 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+Heartbeat 16:13:13 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:13:13 WARN  Memory usage: 905,285,632
+Heartbeat 16:13:13 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #18 16:13:13 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #18 16:13:13 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 16:13:13 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #2 16:13:13 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #18 16:13:14 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #2 16:13:14 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #5 16:14:00 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #4 16:14:00 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #4 16:14:01 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #4 16:14:01 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #5 16:14:02 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #7 16:14:02 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #4 16:14:02 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #4 16:14:02 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #7 16:14:03 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #7 16:14:03 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #4 16:14:04 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #7 16:14:04 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:14:19 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:14:19 WARN  Memory usage: 897,441,792
+Heartbeat 16:14:19 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #15 16:14:58 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #16 16:14:58 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #15 16:15:01 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #15 16:15:01 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #16 16:15:01 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #16 16:15:01 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #15 16:15:01 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #0 16:15:01 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #16 16:15:01 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #16 16:15:01 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #0 16:15:02 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #16 16:15:02 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #13 16:15:18 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #17 16:15:18 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #17 16:15:20 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #17 16:15:20 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+Heartbeat 16:15:20 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:15:20 WARN  Memory usage: 889,352,192
+Heartbeat 16:15:20 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #13 16:15:20 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #13 16:15:20 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #17 16:15:20 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #17 16:15:20 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #13 16:15:20 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #18 16:15:20 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #17 16:15:21 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #18 16:15:21 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:15:49 INFO  Health.PrivateBytes: 899,272,704
+Heartbeat 16:15:49 INFO  Health.CacheInstances: 90
+Heartbeat 16:15:49 INFO  Health.CacheTotalCount: 10,043
+Heartbeat 16:15:49 INFO  Health.CacheTotalSize: 36,716,924
+Heartbeat 16:15:51 INFO  Health.Counter(w3wp, Process\Private Bytes): 893,485,056
+Heartbeat 16:15:51 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 19,127,435,264
+Heartbeat 16:15:51 INFO  Health.Counter(w3wp, Process\Page File Bytes): 899,072,000
+Heartbeat 16:15:51 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 393,789,960
+Heartbeat 16:15:51 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 588,716
+Heartbeat 16:15:51 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 58,353,752
+Heartbeat 16:15:51 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 80,494,592
+Heartbeat 16:15:51 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 535
+ManagedPoolThread #2 16:15:53 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #2 16:15:53 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #2 16:15:53 INFO  Examining schedules (count: 0)
+ManagedPoolThread #2 16:15:53 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #2 16:15:53 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #2 16:15:53 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #2 16:15:53 INFO  Examining schedules (count: 1)
+ManagedPoolThread #2 16:15:53 INFO  Starting: __Task Schedule
+ManagedPoolThread #2 16:15:53 INFO  Ended: __Task Schedule
+ManagedPoolThread #2 16:15:53 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #5 16:15:53 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #5 16:15:53 INFO  Processing tasks (count: 0)
+ManagedPoolThread #5 16:15:53 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #7 16:15:56 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #7 16:15:56 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #8 16:15:56 INFO  Starting update of index for the database 'master' (8 pending).
+ManagedPoolThread #8 16:15:59 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #9 16:16:20 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #12 16:16:20 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #9 16:16:22 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:16:23 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:16:23 WARN  Memory usage: 895,029,248
+Heartbeat 16:16:23 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #12 16:16:23 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #11 16:16:40 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #15 16:16:40 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #11 16:16:41 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #15 16:16:41 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #14 16:17:08 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #0 16:17:08 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #0 16:17:09 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #14 16:17:09 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #16 16:17:24 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #10 16:17:24 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #10 16:17:25 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #1 16:17:25 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #16 16:17:25 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #6 16:17:25 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #1 16:17:25 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #6 16:17:25 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:17:29 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:17:29 WARN  Memory usage: 888,659,968
+Heartbeat 16:17:29 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #18 16:18:17 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #17 16:18:17 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #17 16:18:17 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #18 16:18:17 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:18:21 INFO  Cache created: 'SqlDataProvider - Prefetch data(web)' (max size: 10MB, running total: 419MB)
+Heartbeat 16:18:38 INFO  HtmlCacheClearer clearing HTML caches for all sites (1).
+Heartbeat 16:18:38 INFO  HtmlCacheClearer done.
+Heartbeat 16:18:38 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:18:38 WARN  Memory usage: 919,330,816
+Heartbeat 16:18:38 WARN  Number of suppressed logs due to the minimum time between log entries: 8
+ManagedPoolThread #3 16:18:38 INFO  Job started: Index_Update_IndexName=sitecore_web_index
+ManagedPoolThread #3 16:18:39 INFO  Job ended: Index_Update_IndexName=sitecore_web_index (units processed: )
+Heartbeat 16:19:38 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:19:38 WARN  Memory usage: 917,852,160
+Heartbeat 16:19:38 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 16:20:39 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:20:39 WARN  Memory usage: 915,873,792
+Heartbeat 16:20:39 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #5 16:20:53 INFO  Job started: Sitecore.Tasks.UrlAgent
+ManagedPoolThread #5 16:20:53 INFO  Scheduling.UrlAgent started. Url: http://understood.org.local/sitecore/service/keepalive.aspx
+ManagedPoolThread #5 16:20:53 INFO  Scheduling.UrlAgent done (received: 1071 bytes)
+ManagedPoolThread #5 16:20:53 INFO  Job ended: Sitecore.Tasks.UrlAgent (units processed: )
+ManagedPoolThread #4 16:20:56 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #4 16:20:56 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #8 16:20:57 INFO  Starting update of index for the database 'master' (2 pending).
+ManagedPoolThread #8 16:20:57 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #12 16:20:58 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #9 16:20:58 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #9 16:21:00 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #12 16:21:00 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #11 16:21:30 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #15 16:21:30 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #15 16:21:31 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #11 16:21:31 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #0 16:21:42 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #14 16:21:42 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #14 16:21:43 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #0 16:21:43 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:21:44 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:21:44 WARN  Memory usage: 901,611,520
+Heartbeat 16:21:44 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #10 16:22:14 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #16 16:22:14 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #16 16:22:14 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #10 16:22:14 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #1 16:22:29 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #6 16:22:29 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #1 16:22:31 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #6 16:22:31 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #13 16:22:44 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #17 16:22:44 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #17 16:22:45 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #13 16:22:45 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:22:49 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:22:49 WARN  Memory usage: 895,762,432
+Heartbeat 16:22:49 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #18 16:23:13 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #3 16:23:13 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #3 16:23:13 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #18 16:23:13 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #2 16:23:31 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #5 16:23:31 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #5 16:23:33 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #5 16:23:33 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #2 16:23:33 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #2 16:23:33 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #5 16:23:34 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #5 16:23:34 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #5 16:23:34 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #2 16:23:34 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #2 16:23:34 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 16:23:35 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #9 16:23:43 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #12 16:23:43 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #12 16:23:43 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #9 16:23:43 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:23:51 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:23:51 WARN  Memory usage: 916,111,360
+Heartbeat 16:23:51 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #11 16:24:11 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #14 16:24:11 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #11 16:24:11 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #11 16:24:11 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #14 16:24:11 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #14 16:24:11 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #14 16:24:12 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #10 16:24:12 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #11 16:24:12 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #11 16:24:12 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #10 16:24:14 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #11 16:24:14 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #6 16:24:31 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #17 16:24:31 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #6 16:24:31 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #17 16:24:31 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #13 16:24:43 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #3 16:24:43 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #3 16:24:43 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #13 16:24:43 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:24:57 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:24:57 WARN  Memory usage: 893,829,120
+Heartbeat 16:24:57 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #18 16:25:07 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #4 16:25:07 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #18 16:25:07 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #4 16:25:07 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+Heartbeat 16:25:50 INFO  Health.PrivateBytes: 910,860,288
+Heartbeat 16:25:50 INFO  Health.CacheInstances: 91
+Heartbeat 16:25:50 INFO  Health.CacheTotalCount: 15,845
+Heartbeat 16:25:50 INFO  Health.CacheTotalSize: 49,438,512
+Heartbeat 16:25:50 INFO  Health.Counter(w3wp, Process\Private Bytes): 894,840,832
+Heartbeat 16:25:50 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 19,125,170,176
+Heartbeat 16:25:51 INFO  Health.Counter(w3wp, Process\Page File Bytes): 903,057,408
+Heartbeat 16:25:51 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 410,930,000
+Heartbeat 16:25:51 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 414,694
+Heartbeat 16:25:51 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 58,743,640
+Heartbeat 16:25:51 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 80,662,528
+Heartbeat 16:25:51 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 535
+ManagedPoolThread #19 16:25:53 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #19 16:25:53 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #19 16:25:53 INFO  Examining schedules (count: 0)
+ManagedPoolThread #19 16:25:53 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #19 16:25:53 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #19 16:25:53 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #19 16:25:53 INFO  Examining schedules (count: 1)
+ManagedPoolThread #19 16:25:53 INFO  Starting: __Task Schedule
+ManagedPoolThread #19 16:25:53 INFO  Ended: __Task Schedule
+ManagedPoolThread #19 16:25:53 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #5 16:25:53 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #5 16:25:55 INFO  Processing tasks (count: 0)
+ManagedPoolThread #5 16:25:55 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+Heartbeat 16:25:58 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:25:58 WARN  Memory usage: 906,887,168
+Heartbeat 16:25:58 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #8 16:25:59 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #8 16:25:59 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #12 16:25:59 INFO  Starting update of index for the database 'master' (32 pending).
+ManagedPoolThread #12 16:26:04 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #15 16:26:27 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #0 16:26:27 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #0 16:26:29 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #15 16:26:29 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:26:58 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:26:58 WARN  Memory usage: 898,117,632
+Heartbeat 16:26:58 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 16:28:05 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:28:05 WARN  Memory usage: 902,942,720
+Heartbeat 16:28:05 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #14 16:28:16 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #1 16:28:16 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #14 16:28:17 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #1 16:28:17 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+Heartbeat 16:29:06 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:29:06 WARN  Memory usage: 901,660,672
+Heartbeat 16:29:06 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #11 16:29:27 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #10 16:29:27 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #11 16:29:29 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #10 16:29:29 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #6 16:29:39 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #17 16:29:39 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #6 16:29:41 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #17 16:29:41 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+Heartbeat 16:30:06 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:30:06 WARN  Memory usage: 901,607,424
+Heartbeat 16:30:06 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #4 16:30:58 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #4 16:30:58 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #18 16:30:58 INFO  Starting update of index for the database 'master' (7 pending).
+ManagedPoolThread #18 16:31:02 INFO  Update of index for the database 'master' done.
+Heartbeat 16:31:12 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:31:12 WARN  Memory usage: 902,213,632
+Heartbeat 16:31:12 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:32:18 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:32:18 WARN  Memory usage: 897,916,928
+Heartbeat 16:32:18 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #19 16:32:36 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #5 16:32:36 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #5 16:32:37 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #19 16:32:37 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:33:25 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:33:25 WARN  Memory usage: 913,264,640
+Heartbeat 16:33:25 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:34:31 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:34:31 WARN  Memory usage: 892,661,760
+Heartbeat 16:34:31 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #9 16:34:38 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 16:34:38 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #9 16:34:39 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #9 16:34:39 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 16:34:39 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #2 16:34:39 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #9 16:34:39 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #9 16:34:39 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 16:34:40 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #2 16:34:40 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #9 16:34:41 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #2 16:34:41 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #14 16:35:27 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #1 16:35:27 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #1 16:35:28 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #1 16:35:28 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #14 16:35:28 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #14 16:35:28 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #1 16:35:29 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #1 16:35:29 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #14 16:35:29 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #14 16:35:29 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #1 16:35:31 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #14 16:35:31 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:35:37 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:35:37 WARN  Memory usage: 900,935,680
+Heartbeat 16:35:37 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:35:50 INFO  Health.PrivateBytes: 908,103,680
+Heartbeat 16:35:50 INFO  Health.CacheInstances: 91
+Heartbeat 16:35:50 INFO  Health.CacheTotalCount: 15,965
+Heartbeat 16:35:50 INFO  Health.CacheTotalSize: 49,883,496
+Heartbeat 16:35:51 INFO  Health.Counter(w3wp, Process\Private Bytes): 897,179,648
+Heartbeat 16:35:51 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 19,123,924,992
+Heartbeat 16:35:51 INFO  Health.Counter(w3wp, Process\Page File Bytes): 910,929,920
+Heartbeat 16:35:51 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 409,913,056
+Heartbeat 16:35:51 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 3,666
+Heartbeat 16:35:51 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 56,143,136
+Heartbeat 16:35:51 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 80,678,912
+Heartbeat 16:35:51 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 535
+ManagedPoolThread #3 16:35:55 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #3 16:35:55 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #3 16:35:55 INFO  Examining schedules (count: 0)
+ManagedPoolThread #3 16:35:55 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #4 16:35:55 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #4 16:35:55 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #4 16:35:55 INFO  Examining schedules (count: 1)
+ManagedPoolThread #4 16:35:55 INFO  Starting: __Task Schedule
+ManagedPoolThread #4 16:35:55 INFO  Ended: __Task Schedule
+ManagedPoolThread #4 16:35:55 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #13 16:35:55 INFO  Job started: Sitecore.Tasks.UrlAgent
+ManagedPoolThread #13 16:35:55 INFO  Scheduling.UrlAgent started. Url: http://understood.org.local/sitecore/service/keepalive.aspx
+ManagedPoolThread #13 16:35:55 INFO  Scheduling.UrlAgent done (received: 1071 bytes)
+ManagedPoolThread #13 16:35:55 INFO  Job ended: Sitecore.Tasks.UrlAgent (units processed: )
+ManagedPoolThread #7 16:35:55 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #7 16:35:56 INFO  Processing tasks (count: 0)
+ManagedPoolThread #7 16:35:56 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #5 16:35:58 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #5 16:35:58 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #8 16:36:00 INFO  Starting update of index for the database 'master' (7 pending).
+ManagedPoolThread #8 16:36:01 INFO  Update of index for the database 'master' done.
+Heartbeat 16:36:43 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:36:43 WARN  Memory usage: 917,094,400
+Heartbeat 16:36:43 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:37:49 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:37:49 WARN  Memory usage: 910,917,632
+Heartbeat 16:37:49 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #15 16:38:04 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #0 16:38:04 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #0 16:38:10 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #15 16:38:10 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #9 16:38:12 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #16 16:38:12 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #9 16:38:13 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #16 16:38:13 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #2 16:38:40 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #11 16:38:40 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #11 16:38:42 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #10 16:38:42 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #2 16:38:42 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #2 16:38:42 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 16:38:43 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #10 16:38:43 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+Heartbeat 16:38:49 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:38:49 WARN  Memory usage: 894,676,992
+Heartbeat 16:38:49 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 16:39:55 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:39:55 WARN  Memory usage: 912,404,480
+Heartbeat 16:39:55 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:40:57 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:40:57 WARN  Memory usage: 892,456,960
+Heartbeat 16:40:57 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+ManagedPoolThread #4 16:41:00 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #4 16:41:00 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #1 16:41:01 INFO  Starting update of index for the database 'master' (4 pending).
+ManagedPoolThread #1 16:41:02 INFO  Update of index for the database 'master' done.
+Heartbeat 16:42:03 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:42:03 WARN  Memory usage: 890,138,624
+Heartbeat 16:42:03 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:43:09 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:43:09 WARN  Memory usage: 892,973,056
+Heartbeat 16:43:09 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:44:14 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:44:14 WARN  Memory usage: 903,385,088
+Heartbeat 16:44:14 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:45:15 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:45:15 WARN  Memory usage: 914,046,976
+Heartbeat 16:45:15 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 16:45:51 INFO  Health.PrivateBytes: 892,592,128
+Heartbeat 16:45:51 INFO  Health.CacheInstances: 91
+Heartbeat 16:45:51 INFO  Health.CacheTotalCount: 15,845
+Heartbeat 16:45:51 INFO  Health.CacheTotalSize: 49,272,544
+Heartbeat 16:45:51 INFO  Health.Counter(w3wp, Process\Private Bytes): 903,876,608
+Heartbeat 16:45:51 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 19,123,662,848
+Heartbeat 16:45:52 INFO  Health.Counter(w3wp, Process\Page File Bytes): 900,915,200
+Heartbeat 16:45:52 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 410,696,384
+Heartbeat 16:45:52 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 3,882
+Heartbeat 16:45:52 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 56,403,248
+Heartbeat 16:45:52 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 80,678,912
+Heartbeat 16:45:52 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 535
+ManagedPoolThread #18 16:45:56 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #18 16:45:56 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #18 16:45:56 INFO  Examining schedules (count: 0)
+ManagedPoolThread #18 16:45:56 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #5 16:45:56 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #5 16:45:56 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #5 16:45:56 INFO  Examining schedules (count: 1)
+ManagedPoolThread #5 16:45:56 INFO  Starting: __Task Schedule
+ManagedPoolThread #5 16:45:56 INFO  Ended: __Task Schedule
+ManagedPoolThread #5 16:45:56 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #5 16:45:56 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #5 16:45:56 INFO  Processing tasks (count: 0)
+ManagedPoolThread #5 16:45:56 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #12 16:46:03 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #12 16:46:03 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #8 16:46:03 INFO  Starting update of index for the database 'master' (2 pending).
+ManagedPoolThread #8 16:46:03 INFO  Update of index for the database 'master' done.
+Heartbeat 16:46:17 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:46:17 WARN  Memory usage: 903,069,696
+Heartbeat 16:46:17 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 16:47:23 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:47:23 WARN  Memory usage: 896,143,360
+Heartbeat 16:47:23 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:47:28 INFO  HtmlCacheClearer clearing HTML caches for all sites (1).
+Heartbeat 16:47:28 INFO  HtmlCacheClearer done.
+ManagedPoolThread #9 16:47:29 INFO  Job started: Index_Update_IndexName=sitecore_web_index
+ManagedPoolThread #9 16:47:31 INFO  Job ended: Index_Update_IndexName=sitecore_web_index (units processed: )
+Heartbeat 16:48:30 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:48:30 WARN  Memory usage: 890,433,536
+Heartbeat 16:48:30 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #11 16:49:15 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #6 16:49:15 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #6 16:49:16 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #6 16:49:16 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #11 16:49:16 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #11 16:49:16 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #6 16:49:16 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #6 16:49:16 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #11 16:49:16 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #11 16:49:16 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #6 16:49:17 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #11 16:49:17 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 16:49:31 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:49:31 WARN  Memory usage: 899,981,312
+Heartbeat 16:49:31 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 16:50:37 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:50:37 WARN  Memory usage: 906,776,576
+Heartbeat 16:50:37 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #3 16:50:56 INFO  Job started: Sitecore.Tasks.UrlAgent
+ManagedPoolThread #3 16:50:56 INFO  Scheduling.UrlAgent started. Url: http://understood.org.local/sitecore/service/keepalive.aspx
+ManagedPoolThread #3 16:50:56 INFO  Scheduling.UrlAgent done (received: 1071 bytes)
+ManagedPoolThread #3 16:50:56 INFO  Job ended: Sitecore.Tasks.UrlAgent (units processed: )
+ManagedPoolThread #14 16:51:01 INFO  Starting update of index for the database 'master' (5 pending).
+ManagedPoolThread #7 16:51:01 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #7 16:51:01 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #14 16:51:03 INFO  Update of index for the database 'master' done.
+Heartbeat 16:51:40 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:51:40 WARN  Memory usage: 904,200,192
+Heartbeat 16:51:40 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 16:52:42 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:52:42 WARN  Memory usage: 894,652,416
+Heartbeat 16:52:42 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 16:53:49 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:53:49 WARN  Memory usage: 900,685,824
+Heartbeat 16:53:49 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:54:54 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:54:54 WARN  Memory usage: 904,581,120
+Heartbeat 16:54:54 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:55:52 INFO  Health.PrivateBytes: 898,883,584
+Heartbeat 16:55:52 INFO  Health.CacheInstances: 91
+Heartbeat 16:55:52 INFO  Health.CacheTotalCount: 15,868
+Heartbeat 16:55:52 INFO  Health.CacheTotalSize: 49,367,562
+Heartbeat 16:55:52 INFO  Health.Counter(w3wp, Process\Private Bytes): 903,311,360
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 19,123,138,560
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, Process\Page File Bytes): 906,952,704
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 415,695,472
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 3,162
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 60,824,424
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 80,678,912
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 535
+ManagedPoolThread #5 16:55:56 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #5 16:55:56 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #5 16:55:56 INFO  Examining schedules (count: 0)
+ManagedPoolThread #5 16:55:56 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #12 16:55:56 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #12 16:55:56 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #12 16:55:56 INFO  Examining schedules (count: 1)
+ManagedPoolThread #12 16:55:56 INFO  Starting: __Task Schedule
+ManagedPoolThread #12 16:55:56 INFO  Ended: __Task Schedule
+ManagedPoolThread #12 16:55:56 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #15 16:55:56 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #15 16:55:56 INFO  Processing tasks (count: 0)
+ManagedPoolThread #15 16:55:56 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+Heartbeat 16:56:01 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:56:01 WARN  Memory usage: 915,849,216
+Heartbeat 16:56:01 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #16 16:56:05 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #16 16:56:05 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #8 16:56:05 INFO  Starting update of index for the database 'master' (2 pending).
+ManagedPoolThread #8 16:56:06 INFO  Update of index for the database 'master' done.
+Heartbeat 16:57:05 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:57:05 WARN  Memory usage: 903,946,240
+Heartbeat 16:57:05 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 16:58:10 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:58:10 WARN  Memory usage: 911,831,040
+Heartbeat 16:58:10 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 16:59:11 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 16:59:11 WARN  Memory usage: 905,605,120
+Heartbeat 16:59:11 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 17:00:16 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:00:16 WARN  Memory usage: 919,859,200
+Heartbeat 17:00:16 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #4 17:01:05 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #4 17:01:05 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #6 17:01:05 INFO  Starting update of index for the database 'master' (2 pending).
+ManagedPoolThread #6 17:01:05 INFO  Update of index for the database 'master' done.
+Heartbeat 17:01:23 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:01:23 WARN  Memory usage: 903,360,512
+Heartbeat 17:01:23 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 17:02:28 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:02:28 WARN  Memory usage: 895,791,104
+Heartbeat 17:02:28 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 17:03:33 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:03:33 WARN  Memory usage: 911,396,864
+Heartbeat 17:03:33 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 17:04:36 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:04:36 WARN  Memory usage: 902,164,480
+Heartbeat 17:04:36 WARN  Number of suppressed logs due to the minimum time between log entries: 8
+Heartbeat 17:05:37 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:05:37 WARN  Memory usage: 914,288,640
+Heartbeat 17:05:37 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 17:05:52 INFO  Health.PrivateBytes: 905,236,480
+Heartbeat 17:05:52 INFO  Health.CacheInstances: 91
+Heartbeat 17:05:52 INFO  Health.CacheTotalCount: 15,877
+Heartbeat 17:05:52 INFO  Health.CacheTotalSize: 49,380,756
+Heartbeat 17:05:52 INFO  Health.Counter(w3wp, Process\Private Bytes): 906,797,056
+Heartbeat 17:05:53 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 19,124,056,064
+Heartbeat 17:05:53 INFO  Health.Counter(w3wp, Process\Page File Bytes): 904,716,288
+Heartbeat 17:05:53 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 415,380,344
+Heartbeat 17:05:53 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 3,221
+Heartbeat 17:05:53 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 59,784,144
+Heartbeat 17:05:53 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 80,715,776
+Heartbeat 17:05:53 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 536
+ManagedPoolThread #1 17:05:57 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #1 17:05:57 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #1 17:05:57 INFO  Examining schedules (count: 0)
+ManagedPoolThread #1 17:05:57 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #7 17:05:57 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #7 17:05:57 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #7 17:05:57 INFO  Examining schedules (count: 1)
+ManagedPoolThread #7 17:05:57 INFO  Starting: __Task Schedule
+ManagedPoolThread #7 17:05:57 INFO  Ended: __Task Schedule
+ManagedPoolThread #7 17:05:57 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #18 17:05:57 INFO  Job started: Sitecore.Tasks.UrlAgent
+ManagedPoolThread #18 17:05:57 INFO  Scheduling.UrlAgent started. Url: http://understood.org.local/sitecore/service/keepalive.aspx
+16124 17:05:57 INFO  HttpModule is being initialized
+ManagedPoolThread #18 17:05:57 INFO  Scheduling.UrlAgent done (received: 1071 bytes)
+ManagedPoolThread #18 17:05:57 INFO  Job ended: Sitecore.Tasks.UrlAgent (units processed: )
+ManagedPoolThread #13 17:05:57 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #13 17:05:58 INFO  Processing tasks (count: 0)
+ManagedPoolThread #13 17:05:58 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #14 17:05:58 INFO  Job started: Sitecore.Tasks.CounterDumpAgent
+11140 17:05:59 INFO  AUDIT (sitecore\chaddad): Logout
+11140 17:05:59 WARN  Protected page accessed with no current user
+ManagedPoolThread #14 17:06:01 INFO  Job ended: Sitecore.Tasks.CounterDumpAgent (units processed: )
+ManagedPoolThread #19 17:06:01 INFO  Job started: Sitecore.ContentSearch.Tasks.Optimize
+ManagedPoolThread #19 17:06:02 INFO  Job ended: Sitecore.ContentSearch.Tasks.Optimize (units processed: )
+ManagedPoolThread #12 17:06:04 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #12 17:06:04 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #5 17:06:04 INFO  Starting update of index for the database 'master' (2 pending).
+ManagedPoolThread #5 17:06:05 INFO  Update of index for the database 'master' done.
+16024 17:06:13 INFO  AUDIT (sitecore\chaddad): Login
+11140 17:06:36 INFO  HttpModule is being initialized
+Heartbeat 17:06:37 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:06:37 WARN  Memory usage: 913,911,808
+Heartbeat 17:06:37 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+16124 17:07:08 INFO  HttpModule is being initialized
+15300 17:07:23 WARN  Long running operation: getContentEditorFields pipeline[custom field set]
+15300 17:07:24 WARN  Long running operation: renderContentEditor pipeline[id=]
+Heartbeat 17:07:37 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:07:37 WARN  Memory usage: 935,092,224
+Heartbeat 17:07:37 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+16024 17:08:16 INFO  AUDIT (sitecore\chaddad): Remove user from role: sitecore\Administrator, user: sitecore\lchiao
+16024 17:08:16 INFO  AUDIT (sitecore\chaddad): Remove user from role: sitecore\Developer, user: sitecore\lchiao
+16024 17:08:16 INFO  AUDIT (sitecore\chaddad): Add user to role: sitecore\Sitecore Local Administrators, user: sitecore\lchiao
+Heartbeat 17:08:43 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:08:43 WARN  Memory usage: 908,832,768
+Heartbeat 17:08:43 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 17:09:43 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:09:43 WARN  Memory usage: 902,782,976
+Heartbeat 17:09:43 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 17:10:49 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:10:49 WARN  Memory usage: 915,464,192
+Heartbeat 17:10:49 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+ManagedPoolThread #2 17:11:05 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #2 17:11:05 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #8 17:11:05 INFO  Starting update of index for the database 'master' (2 pending).
+ManagedPoolThread #8 17:11:05 INFO  Update of index for the database 'master' done.
+Heartbeat 17:11:52 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:11:52 WARN  Memory usage: 907,182,080
+Heartbeat 17:11:52 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 17:12:59 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:12:59 WARN  Memory usage: 916,254,720
+Heartbeat 17:12:59 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 17:14:01 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:14:01 WARN  Memory usage: 915,038,208
+Heartbeat 17:14:01 WARN  Number of suppressed logs due to the minimum time between log entries: 9
+Heartbeat 17:15:07 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:15:07 WARN  Memory usage: 918,224,896
+Heartbeat 17:15:07 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 17:15:53 INFO  Health.PrivateBytes: 922,386,432
+Heartbeat 17:15:53 INFO  Health.CacheInstances: 91
+Heartbeat 17:15:53 INFO  Health.CacheTotalCount: 17,141
+Heartbeat 17:15:53 INFO  Health.CacheTotalSize: 53,257,774
+Heartbeat 17:15:53 INFO  Health.Counter(w3wp, Process\Private Bytes): 926,674,944
+Heartbeat 17:15:53 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 19,129,729,024
+Heartbeat 17:15:53 INFO  Health.Counter(w3wp, Process\Page File Bytes): 903,794,688
+Heartbeat 17:15:53 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 415,922,896
+Heartbeat 17:15:53 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 3,413
+Heartbeat 17:15:53 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 49,251,176
+Heartbeat 17:15:53 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 84,525,056
+Heartbeat 17:15:53 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 555
+ManagedPoolThread #17 17:15:57 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #17 17:15:57 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #17 17:15:57 INFO  Examining schedules (count: 0)
+ManagedPoolThread #17 17:15:57 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #17 17:15:57 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #17 17:15:57 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #17 17:15:57 INFO  Examining schedules (count: 1)
+ManagedPoolThread #17 17:15:57 INFO  Starting: __Task Schedule
+ManagedPoolThread #17 17:15:57 INFO  Ended: __Task Schedule
+ManagedPoolThread #17 17:15:57 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #1 17:16:02 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #1 17:16:03 INFO  Processing tasks (count: 0)
+ManagedPoolThread #1 17:16:03 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #18 17:16:07 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #18 17:16:07 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #13 17:16:07 INFO  Starting update of index for the database 'master' (2 pending).
+ManagedPoolThread #13 17:16:07 INFO  Update of index for the database 'master' done.
+Heartbeat 17:16:13 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:16:13 WARN  Memory usage: 905,678,848
+Heartbeat 17:16:13 WARN  Number of suppressed logs due to the minimum time between log entries: 10
+Heartbeat 17:17:06 ERROR Exception processing remote events from database: core
+Exception: System.Exception
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: Sitecore.Kernel
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.Data.DataException
+Message: Error executing SQL command: SELECT [EventType], [InstanceType], [InstanceData], [InstanceName], [UserName], [Stamp], [Created] FROM [EventQueue] WHERE ([InstanceName] <> @targetInstance AND [RaiseGlobally] = 1 OR [InstanceName] = @targetInstance AND [RaiseLocally] = 1) AND [Stamp] >= CAST(@fromTimestamp AS TIMESTAMP) ORDER BY [Stamp]
+
+Nested Exception
+
+Exception: System.Data.SqlClient.SqlException
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The semaphore timeout period has expired
+
+
+
+
+Heartbeat 17:17:37 ERROR Exception processing remote events from database: master
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:17:52 ERROR Exception processing remote events from database: web
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:17:54 WARN  Memory usage exceeded the MemoryMonitor threshold.
+Heartbeat 17:17:54 WARN  Memory usage: 908,615,680
+Heartbeat 17:17:54 WARN  Number of suppressed logs due to the minimum time between log entries: 5
+11684 17:18:09 ERROR A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.SqlServer.SqlServerHistoryStorage.GetHistory(DateTime from, DateTime to)
+   at Sitecore.ContentSearch.Maintenance.HistoryReader.GetHistory(Database database, DateTime from)
+   at Sitecore.ContentSearch.Maintenance.Strategies.IntervalAsynchronousStrategy.Run()
+   at Sitecore.ContentSearch.Maintenance.OperationMonitor.ExecuteAction()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:18:10 ERROR Exception processing remote events from database: core
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:18:25 ERROR Exception processing remote events from database: master
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:18:40 ERROR Exception processing remote events from database: web
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:18:55 ERROR Exception processing remote events from database: core
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:19:09 ERROR Exception processing remote events from database: master
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+

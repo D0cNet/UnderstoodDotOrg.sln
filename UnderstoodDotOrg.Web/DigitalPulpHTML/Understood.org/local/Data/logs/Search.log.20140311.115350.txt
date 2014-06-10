@@ -1,0 +1,3 @@
+7776 11:54:00 INFO  Warming and Caching your search indexes
+7776 11:54:00 INFO  /******* Warming Queries ********/
+7776 11:54:00 INFO  /*************************/

@@ -1,0 +1,3 @@
+14820 17:13:55 INFO  Warming and Caching your search indexes
+14820 17:13:55 INFO  /******* Warming Queries ********/
+14820 17:13:55 INFO  /*************************/

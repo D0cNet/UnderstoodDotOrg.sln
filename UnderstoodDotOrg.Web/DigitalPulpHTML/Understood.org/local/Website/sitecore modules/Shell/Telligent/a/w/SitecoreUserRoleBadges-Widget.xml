@@ -1,0 +1,95 @@
+<scriptedContentFragments><scriptedContentFragment name="Sitecore-UserRoleBadges" version="6.0.0.1" description="${resource:User_Badges_Description}" instanceIdentifier="2e8102c8d66c4ae28a4d411ff35d165f" theme="" isCacheable="true" varyCacheByUser="true" showHeaderByDefault="true" cssClass="user-badges"><contentScript>#set ($user = false)
+#set ($user = $core_v2_user.Current)
+#if (!$user)
+	$core_v2_widget.Hide()
+#end
+
+#set ($roles = false)
+#set ($roles = $core_v2_role.List("%{ UserId = $user.Id }"))
+
+#set ($ranks = false)
+#set ($ranks = $core_v2_rank.List("%{ UserId = $user.Id }"))
+
+#if ((!$roles || $roles.Count == 0) &amp;&amp; (!$ranks || $ranks.Count == 0))
+	$core_v2_widget.Hide()
+#end
+
+## show role badge icons
+#set ($hasRolesWithImages = false)
+#foreach ($role in $roles)
+	#if ($role.ImageUrl &amp;&amp; $role.ImageUrl.Length &gt; 0)
+		#set ($hasRolesWithImages = true)
+	#end
+#end
+#if ($hasRolesWithImages)
+	#foreach ($role in $roles)
+	#beforeall
+		&lt;h4&gt;$core_v2_language.GetResource('Role_Badges')&lt;/h4&gt;
+		&lt;div class="post-attributes badges"&gt;
+			&lt;div class="attribute-list-header"&gt;&lt;/div&gt;
+			&lt;ul class="attribute-list"&gt;
+	#odd
+		#set ($class = "odd")
+	#even
+		#set ($class = "even")
+	#each
+		#if ($role.ImageUrl &amp;&amp; $role.ImageUrl.Length &gt; 0)
+			&lt;li class="attribute-item badge $class" title="$core_v2_encoding.HtmlAttributeEncode($role.Name)"&gt;
+				&lt;span class="attribute-value"&gt;
+					$core_v2_ui.GetResizedImageHtml($role.ImageUrl, 75, 75, "%{border='0', alt=$role.Name}")
+				&lt;/span&gt;
+			&lt;/li&gt;
+		#end
+	#afterall
+			&lt;/ul&gt;
+			&lt;div class="attribute-list-footer"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	#end
+#end
+
+## show rank badge icons
+#foreach ($rank in $ranks)
+#beforeall
+	&lt;h4&gt;$core_v2_language.GetResource('Rank_Badges')&lt;/h4&gt;
+	&lt;div class="post-attributes badges"&gt;
+		&lt;div class="attribute-list-header"&gt;&lt;/div&gt;
+		&lt;ul class="attribute-list"&gt;
+#odd
+	#set ($class = "odd")
+#even
+	#set ($class = "even")
+#each
+	#if ($rank.ImageUrl &amp;&amp; $rank.ImageUrl.Length &gt; 0)
+		&lt;li class="attribute-item badge $class" title="$core_v2_encoding.HtmlAttributeEncode($rank.Name)"&gt;
+			&lt;span class="attribute-value"&gt;
+				$core_v2_ui.GetResizedImageHtml($rank.ImageUrl, 100, 100, "%{border='0', alt=$rank.Name}")
+			&lt;/span&gt;
+		&lt;/li&gt;
+	#else
+		&lt;li class="attribute-item badge text $class"&gt;
+			&lt;span class="attribute-value"&gt;$rank.Name&lt;/span&gt;
+		&lt;/li&gt;
+	#end
+#afterall
+		&lt;/ul&gt;
+		&lt;div class="attribute-list-footer"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+#end</contentScript><headerScript>#set ($defaultTitle = $core_v2_language.GetResource('User_Badges_Name'))
+#set ($title = $core_v2_widget.ApplyTokens($core_v2_widget.GetStringValue('fragmentHeader', '${resource:User_Badges_Name}')))
+## only attempt to set an automatic user-specific title if a default title is being used
+#if ($title == $defaultTitle)
+	#set ($currentUser = $core_v2_user.Current)
+	#set ($accessingUser = $core_v2_user.Accessing)
+	#if ($currentUser)
+		#if ($accessingUser &amp;&amp; $accessingUser.Id == $currentUser.Id)
+			## My Badges
+			#set ($title = $core_v2_language.GetResource('My_Badges'))
+		#else
+			## {Current User}'s Badges
+			#set ($title = $core_v2_language.FormatString($core_v2_language.GetResource('Users_Badges'), $currentUser.DisplayName))
+		#end
+	#end
+#end
+$title</headerScript><configuration>&lt;propertyGroup id="options" resourceName="Options"&gt;
+	&lt;property id="fragmentHeader" resourceName="CF_Title" dataType="string" defaultValue="${resource:User_Badges_Name}" controlType="Telligent.Evolution.Controls.ContentFragmentTokenStringControl, Telligent.Evolution.Extensions.SitecoreConnect" /&gt;
+&lt;/propertyGroup&gt;</configuration><languageResources><language key="en-us"><resource name="User_Badges_Name">User - Badges</resource><resource name="User_Badges_Description">Displays a user's role and rank badges</resource><resource name="Options">Options</resource><resource name="CF_Title">Widget Title</resource><resource name="Role_Badges">Role Badges</resource><resource name="Rank_Badges">Rank Badges</resource><resource name="My_Badges">My Badges</resource><resource name="Users_Badges">{0}'s Badges</resource></language><language key="ru"><resource name="User_Badges_Name" /><resource name="User_Badges_Description" /><resource name="Options" /><resource name="CF_Title" /><resource name="Role_Badges" /><resource name="Rank_Badges" /><resource name="My_Badges" /><resource name="Users_Badges" /></language></languageResources><requiredContext><context id="0233cbb383784e11a1e5e541f3b0a795" /></requiredContext></scriptedContentFragment></scriptedContentFragments>

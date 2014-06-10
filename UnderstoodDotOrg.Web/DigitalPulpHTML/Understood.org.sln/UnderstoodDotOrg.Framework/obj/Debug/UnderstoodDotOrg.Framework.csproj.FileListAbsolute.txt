@@ -1,0 +1,13 @@
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\bin\Debug\UnderstoodDotOrg.Framework.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\bin\Debug\UnderstoodDotOrg.Framework.pdb
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\bin\Debug\Sitecore.Kernel.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\bin\Debug\UnderstoodDotOrg.Common.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\bin\Debug\UnderstoodDotOrg.Domain.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\bin\Debug\EntityFramework.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\bin\Debug\CustomItemGenerator.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\bin\Debug\UnderstoodDotOrg.Common.pdb
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\bin\Debug\UnderstoodDotOrg.Domain.pdb
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\bin\Debug\EntityFramework.xml
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\obj\Debug\UnderstoodDotOrg.Framework.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\obj\Debug\UnderstoodDotOrg.Framework.dll
+C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Framework\obj\Debug\UnderstoodDotOrg.Framework.pdb

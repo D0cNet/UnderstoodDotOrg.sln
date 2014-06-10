@@ -1,0 +1,8 @@
+7776 14:29:37 INFO  [Index=sitecore_core_index] Initializing IntervalAsynchronousUpdateStrategy with interval '00:01:00'.
+7776 14:29:37 INFO  [Index=sitecore_core_index] Initializing SitecoreItemCrawler. DB:core / Root:/sitecore
+7776 14:29:37 INFO  [Index=sitecore_master_index] Initializing SynchronousStrategy.
+7776 14:29:37 INFO  [Index=sitecore_master_index] Initializing SitecoreItemCrawler. DB:master / Root:/sitecore
+7776 14:29:37 INFO  [Index=sitecore_web_index] Initializing OnPublishEndAsynchronousStrategy.
+7776 14:29:37 INFO  [Index=sitecore_web_index] Initializing SitecoreItemCrawler. DB:web / Root:/sitecore
+7776 14:29:37 INFO  [Index=mediaframework_brightcove_index] Initializing SynchronousStrategy.
+7776 14:29:37 INFO  [Index=mediaframework_brightcove_index] Initializing SitecoreItemCrawler. DB:master / Root:{7150B2B1-EB68-40EE-991F-2AFEDB532C46}

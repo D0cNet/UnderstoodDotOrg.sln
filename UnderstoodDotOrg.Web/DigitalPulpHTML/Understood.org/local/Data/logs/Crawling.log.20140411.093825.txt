@@ -1,0 +1,5 @@
+2488 09:38:25 WARN  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy triggered but muted. Indexing is paused.
+12116 09:39:30 WARN  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy triggered but muted. Indexing is paused.
+ManagedPoolThread #10 09:39:36 INFO  [Index=sitecore_master_index] Optimizing
+ManagedPoolThread #10 09:39:43 INFO  [Index=sitecore_master_index] Optimized
+6248 09:41:22 WARN  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy triggered but muted. Indexing is paused.

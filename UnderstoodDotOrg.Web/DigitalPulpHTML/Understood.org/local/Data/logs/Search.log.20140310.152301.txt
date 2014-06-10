@@ -1,0 +1,3 @@
+9268 15:23:09 INFO  Warming and Caching your search indexes
+9268 15:23:09 INFO  /******* Warming Queries ********/
+9268 15:23:09 INFO  /*************************/

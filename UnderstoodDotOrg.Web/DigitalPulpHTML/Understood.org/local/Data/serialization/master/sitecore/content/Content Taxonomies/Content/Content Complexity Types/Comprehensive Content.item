@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {37786EB9-7F8E-4443-8E9D-43F0C6F49D9E}
+database: master
+path: /sitecore/content/Content Taxonomies/Content/Content Complexity Types/Comprehensive Content
+parent: {705E9221-ADEC-419E-84E3-7EC7643416EB}
+name: Comprehensive Content
+master: {00000000-0000-0000-0000-000000000000}
+template: {80406B71-267C-4968-BE6D-C1F3BAF6E223}
+templatekey: Content Complexity
+
+----version----
+language: en
+version: 1
+revision: 707b8319-e0f8-4723-8b2b-472a289bac2d
+
+----field----
+field: {5DD96F59-BB7C-482C-9423-D9EB086B342B}
+name: Complexity Name
+key: complexity name
+content-length: 21
+
+Comprehensive Content
+----field----
+field: {A291B94F-3A74-4206-B60F-A844DC8B2FB3}
+name: Complexity  Description
+key: complexity  description
+content-length: 70
+
+<p>Description of Comprehensive Content (Deep dives &amp; primers)</p>
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140219T203038
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+707b8319-e0f8-4723-8b2b-472a289bac2d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140224T195200:635288683209386514
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

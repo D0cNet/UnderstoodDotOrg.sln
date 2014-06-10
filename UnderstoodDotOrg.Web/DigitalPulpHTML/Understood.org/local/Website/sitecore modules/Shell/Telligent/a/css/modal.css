@@ -1,0 +1,116 @@
+html, body { margin: 0; padding: 0; text-align: left; font-size: 12px; font-family:Arial; color: #333; background-color: #fff; background-image: none  }
+body { padding: 10px; }
+
+a:link, a:visited, a:active { color: #06d; }
+h2.description { margin: 0 0 12px 0; font-size: 12px; font-weight: bold; }
+
+/* $Tab-Set
+/******************************/
+.tab-set { background: url('../images/modal-tab-set.gif') repeat-x; height: 30px; list-style: none; margin: 0px; padding: 0; overflow: hidden; }
+	.tab-set .tab { background: url('../images/modal-tab-set.gif') repeat-x; height: 30px; margin: 0px; float: left; border: none; border-right: 1px solid #ddd; padding: 0 0 0 10px; }
+	.tab-set .tab div { background: url('../images/modal-tab-set.gif') repeat-x; padding: 8px 10px 0 0; overflow: hidden; }
+	.tab-set .tab a { color: #06d; display: block; line-height: 15px; font-weight: bold; float: left }
+	.tab-set .tab.selected { background: #fff; }
+	.tab-set .tab.selected div { background: #fff; }
+	.tab-set .tab.selected a { color: #000; }
+
+	.tab-pane { border: 0; padding-bottom: 0; }
+
+/* $Forms
+/*******************************/
+fieldset.field-list { border: none; margin: 0; padding: 0 }
+	.field-list-description { color: #000; }
+	ul.field-list { list-style-type: none; margin: 0; padding: 0 0 0 2px; }
+	.field-item { padding: 0; margin: 0 0 1em 0; line-height: 22px; position: relative; }
+	.field-item-description { display: block; color: #999; }
+	.field-item-header { font-weight: bold; display: block; }
+	.field-item-input { position: relative; line-height: 24px; height: 18px; }
+	.field-item-validation { color: #f00; }
+	.field-item-input textarea { font-family: Arial, Sans-Serif; font-size: 10pt }
+	.field-item-input label { margin-right: 8px; }
+
+	.field-item.save-form { margin-left: 10px; }
+	.field-item-input .internal-link { position: relative; line-height: 22px; height: 22px; margin: 12px 0 0 0; display: inline-table; display: -moz-inline-box; display: inline-block; font-weight: bold; font-size: 11px; }
+	.field-item-input .internal-link.add-post { color: #fff; padding: 0px 12px 0px 0px; z-index: 3; margin-left: 10px; background: Transparent url('../images/button-sprite.gif') no-repeat right -154px; }
+		.field-item-input .internal-link.add-post span { background: url('../images/button-sprite.gif') no-repeat 0px -132px; display: inline-table; display: -moz-inline-box; display: inline-block; position: absolute; left: -12px; top: 0; width: 12px; height: 22px; }
+	.field-item-input .internal-link.upload-file { color: #fff; padding: 0px 12px 0px 0px; z-index: 3; margin-left: 10px; background: Transparent url('../images/button-sprite.gif') no-repeat right -154px; }
+		.field-item-input .internal-link.upload-file span { background: url('../images/button-sprite.gif') no-repeat 0px -132px; display: inline-table; display: -moz-inline-box; display: inline-block; position: absolute; left: -12px; top: 0; width: 12px; height: 22px; }
+	.field-item-input .internal-link.delete-post { color: #fff; padding: 0px 12px 0px 0px; z-index: 3; margin-left: 10px; background: Transparent url('../images/button-sprite.gif') no-repeat right -154px; }
+		.field-item-input .internal-link.delete-post span { background: url('../images/button-sprite.gif') no-repeat 0px -132px; display: inline-table; display: -moz-inline-box; display: inline-block; position: absolute; left: -12px; top: 0; width: 12px; height: 22px; }
+	.field-item-input .internal-link.edit-reply { color: #fff; padding: 0px 12px 0px 0px; z-index: 3; margin-left: 10px; background: Transparent url('../images/button-sprite.gif') no-repeat right -154px; }
+		.field-item-input .internal-link.edit-reply span { background: url('../images/button-sprite.gif') no-repeat 0px -132px; display: inline-table; display: -moz-inline-box; display: inline-block; position: absolute; left: -12px; top: 0; width: 12px; height: 22px; }
+	.field-item-input .internal-link.capture-post { color: #fff; padding: 0px 12px 0px 0px; z-index: 3; margin-left: 10px; background: Transparent url('../images/button-sprite.gif') no-repeat right -154px; }
+		.field-item-input .internal-link.capture-post span { background: url('../images/button-sprite.gif') no-repeat 0px -132px; display: inline-table; display: -moz-inline-box; display: inline-block; position: absolute; left: -12px; top: 0; width: 12px; height: 22px; }
+	.field-item-input .internal-link.join-group { color: #fff; padding: 0px 12px 0px 0px; z-index: 3; margin-left: 10px; background: Transparent url('../images/button-sprite.gif') no-repeat right -154px; }
+		.field-item-input .internal-link.join-group span { background: url('../images/button-sprite.gif') no-repeat 0px -132px; display: inline-table; display: -moz-inline-box; display: inline-block; position: absolute; left: -12px; top: 0; width: 12px; height: 22px; }
+	.field-item-input .internal-link.upload-file { color: #fff; padding: 0px 12px 0px 0px; z-index: 3; margin-left: 10px; background: Transparent url('../images/button-sprite.gif') no-repeat right -154px; }
+		.field-item-input .internal-link.upload-file span { background: url('../images/button-sprite.gif') no-repeat 0px -132px; display: inline-table; display: -moz-inline-box; display: inline-block; position: absolute; left: -12px; top: 0; width: 12px; height: 22px; }
+	.field-item-input .internal-link.save-form { color: #fff; padding: 0px 12px 0px 0px; z-index: 3; margin-left: 10px; background: Transparent url('../images/button-sprite.gif') no-repeat right -154px; }
+		.field-item-input .internal-link.save-form span { background: url('../images/button-sprite.gif') no-repeat 0px -132px; display: inline-table; display: -moz-inline-box; display: inline-block; position: absolute; left: -12px; top: 0; width: 12px; height: 22px; }
+	.field-item-input .internal-link.submit-form { color: #fff; padding: 0px 12px 0px 0px; z-index: 3; margin-left: 10px; background: Transparent url('../images/button-sprite.gif') no-repeat right -154px; }
+		.field-item-input .internal-link.submit-form span { background: url('../images/button-sprite.gif') no-repeat 0px -132px; display: inline-table; display: -moz-inline-box; display: inline-block; position: absolute; left: -12px; top: 0; width: 12px; height: 22px; }
+	.field-item-input .internal-link.disabled { color: #fff; padding: 0px 12px 0px 0px; z-index: 3; margin-left: 10px; background: Transparent url('../images/button-sprite.gif') no-repeat right -198px; }
+		.field-item-input .internal-link.disabled span { background: url('../images/button-sprite.gif') no-repeat 0px -176px; display: inline-table; display: -moz-inline-box; display: inline-block; position: absolute; left: -12px; top: 0; width: 12px; height: 22px; }
+
+	.field-item-input .processing { background: #fff url('../images/spinner.gif') no-repeat top right; padding-left: 6px; width: 16px; height: 16px; position: relative; top: 1px; right: 0; display: inline-table; display: -moz-inline-box; display: inline-block; }
+    .field-item-input table { width: 55%; }
+	.field-item-input .internal-link.cancel { margin-left: 12px; }
+	.field-item-input .internal-link.upload-file.processing { overflow: hidden; height: 0; padding: 18px 0px 0px 0px; display: inline-table; display: -moz-inline-box; display: inline-block; background: url('../images/spinner.gif') center center no-repeat; }
+        .field-item-input .internal-link.upload-file.processing span { background: none; }
+        
+    .field-item-input select { margin-left: 0; }
+
+/* $Full Post
+/******************************/
+
+.full-post .post-name { display: none; }
+.full-post .post-date { color: #999; }
+.full-post .post-attributes { color: #999; }
+.full-post .post-content { padding: 1em 0; }
+ 
+/* $Page
+/******************************/
+.page { padding: 20px; }
+.page-name { font-size: 28px; font-weight: bold; letter-spacing: -2px; margin-bottom: 10px; }
+.page-description { color: #999; margin: 1em 0; }
+.page-content { margin: 1em 0; }
+
+.field-item.page { padding: 0; }
+
+/* $Hierarchy List
+/*******************************/
+.hierarchy-list { margin: 0; list-style-type: none; padding: 0; }
+	.hierarchy-list .hierarchy-list { margin-left: 10px; }
+	.hierarchy-list li, .hierarchy-list .hierarchy-item { margin: 3px 0; }
+
+/* $Content Selector
+/*******************************/
+.content-selector-item-wrapper { float: left; }
+.content-selector-item { font-size: 9px; border: solid 1px #ccc; cursor: pointer; padding: 3px;	width: 79px; height: 79px; overflow: hidden; margin: 6px 6px 0 6px;	text-align: center;	vertical-align: middle; }
+	.content-selector-item.selected { border: solid 3px #999; padding: 1px; }
+	.content-selector-item img { margin-top: auto; margin-bottom: auto; }
+.content-selector-item-name { font-size: 9px; font-weight: normal; text-align: center; cursor: pointer; padding: 2px; width: 83px; height: 12px; overflow: hidden; margin: 1px 6px 16px 6px; }
+	.content-selector-item-name.selected { background-color: #999; }
+	
+
+/* $Activity List Configuration Modal
+/*******************************/
+.modal .activity-message-list .field-item-input .internal-link.save-form { margin-left: 20px; }
+
+/* $Thread List Configuration Modal
+/*******************************/
+.modal .thread-list .field-list .field-item.popularOnly .field-item-header { display: inline; }
+.modal .thread-list .field-list .field-item.popularOnly .field-item-description { display: inline; }
+
+/* $Wiki Delete Page
+/******************************/
+.modal .field-list.delete-wiki-page .field-list-description { min-height: 18px; }
+
+/* $Edit User Avatar
+/******************************/
+.modal .field-list .field-item.avatar-upload .field-item-validation { display: block; }
+
+/* $Generic Content Configuration Modal
+/*******************************/
+.modal .html-content { min-height: 400px; }
+.message.error { display: none; padding: 12px; font-size: 11px; font-weight: bold; margin: 1em 0; border: 1px solid #600; color: #600; background: #ecc; word-wrap: break-word; max-width: 500px;}

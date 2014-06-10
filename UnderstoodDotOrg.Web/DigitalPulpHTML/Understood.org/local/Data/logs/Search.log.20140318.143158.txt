@@ -1,0 +1,3 @@
+12792 14:32:01 INFO  Warming and Caching your search indexes
+12792 14:32:01 INFO  /******* Warming Queries ********/
+12792 14:32:01 INFO  /*************************/

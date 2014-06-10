@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {6985927C-99FF-4EE9-B9F0-A543A368594C}
+database: master
+path: /sitecore/content/Content Taxonomies/Parent Related/Parent Personality Type/Conflicted Parent
+parent: {EB170D3B-BE33-44CF-9F89-F9E36E39EDAB}
+name: Conflicted Parent
+master: {00000000-0000-0000-0000-000000000000}
+template: {47A67037-5C69-4E77-8E24-0695638B0B62}
+templatekey: Personality Type
+
+----version----
+language: en
+version: 1
+revision: 45488c90-c57b-4770-a983-b698886ebb63
+
+----field----
+field: {B7A53ADC-BA71-4058-95BA-A7722F39756D}
+name: Personality Name
+key: personality name
+content-length: 17
+
+Conflicted Parent
+----field----
+field: {717776BF-6E8C-42C6-9A8E-BA600753BD2B}
+name: Personality Description
+key: personality description
+content-length: 29
+
+Conflicted Parent description
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140219T202404
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+45488c90-c57b-4770-a983-b698886ebb63
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140219T202420:635284382606848964
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

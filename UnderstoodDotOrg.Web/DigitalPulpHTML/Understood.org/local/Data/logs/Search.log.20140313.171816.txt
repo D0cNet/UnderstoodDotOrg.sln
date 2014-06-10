@@ -1,0 +1,3 @@
+20972 17:18:20 INFO  Warming and Caching your search indexes
+20972 17:18:20 INFO  /******* Warming Queries ********/
+20972 17:18:20 INFO  /*************************/

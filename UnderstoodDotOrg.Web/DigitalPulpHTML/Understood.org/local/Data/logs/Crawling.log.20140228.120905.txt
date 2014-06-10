@@ -1,0 +1,17 @@
+6384 12:09:18 INFO  [Index=sitecore_core_index] Initializing IntervalAsynchronousUpdateStrategy with interval '00:01:00'.
+6384 12:09:18 INFO  [Index=sitecore_core_index] Initializing SitecoreItemCrawler. DB:core / Root:/sitecore
+6384 12:09:18 INFO  [Index=sitecore_master_index] Initializing SynchronousStrategy.
+6384 12:09:18 INFO  [Index=sitecore_master_index] Initializing SitecoreItemCrawler. DB:master / Root:/sitecore
+6384 12:09:18 INFO  [Index=sitecore_web_index] Initializing OnPublishEndAsynchronousStrategy.
+6384 12:09:18 INFO  [Index=sitecore_web_index] Initializing SitecoreItemCrawler. DB:web / Root:/sitecore
+8256 12:10:19 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8256 12:10:19 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8300 12:11:20 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8300 12:11:20 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8300 12:12:22 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8300 12:12:22 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8468 12:12:48 WARN  Hosting Environment Stop Requested : immediate=False
+8468 12:12:48 WARN  [Index=sitecore_core_index] Crawling Stopped
+8468 12:12:48 WARN  [Index=sitecore_master_index] Crawling Stopped
+8468 12:12:48 WARN  [Index=sitecore_web_index] Crawling Stopped
+8468 12:13:18 WARN  Hosting Environment Stop Requested : immediate=True

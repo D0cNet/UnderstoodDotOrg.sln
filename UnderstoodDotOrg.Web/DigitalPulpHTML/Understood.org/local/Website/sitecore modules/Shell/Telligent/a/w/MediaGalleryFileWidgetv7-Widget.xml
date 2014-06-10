@@ -1,0 +1,186 @@
+<scriptedContentFragments><scriptedContentFragment name="MediaGalleryFile-Widget-v7" version="7.0.0.28679" description="${resource:MediaGalleries_MediaGalleryPost_Description}" instanceIdentifier="bf2ab2dec7c64a04becb023e5fd90669" theme="" isCacheable="true" varyCacheByUser="true" showHeaderByDefault="false" cssClass="media-gallery-post"><contentScript>#set ($media = false)
+#set ($media = $core_v2_media.Current)
+#set ($mediaType = $core_v2_ui.GetMediaType($media.File.FileUrl))
+#set ($hasRateMediaPermission = $core_v2_nodePermission.Get("mediagalleries", $media.MediaGalleryId, "MediaGallery_RatePost").IsAllowed)
+#set ($accessingUserIsRegistered = $core_v2_user.IsRegistered($core_v2_user.Accessing.Id))
+
+## if there is no current media, redirect to no-post page
+#if (!$media)
+	$core_v2_widget.Hide()
+#end
+
+##$core_v2_media.IncrementViewCount($media.Id)
+
+&lt;div class="full-post-header"&gt;&lt;/div&gt;
+&lt;div class="full-post"&gt;
+&lt;h3 class="post-name"&gt;
+	&lt;a href="$core_v2_encoding.HtmlAttributeEncode($core_v2_mediaUrls.DownloadMedia($media.Id, false))" class="internal-link download-attachment"&gt;&lt;span&gt;&lt;/span&gt;$media.Title&lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="post-author"&gt;
+	&lt;span class="avatar"&gt;
+		#if ($media.Author.ProfileUrl)
+			&lt;a href="$core_v2_encoding.HtmlAttributeEncode($media.Author.ProfileUrl)"&gt;
+				$core_v2_ui.GetResizedImageHtml($media.Author.AvatarUrl, 32, 32, "%{border='0', alt=$media.Author.DisplayName}")
+			&lt;/a&gt;
+		#else
+			$core_v2_ui.GetResizedImageHtml($media.Author.AvatarUrl, 32, 32, "%{border='0', alt=$media.Author.DisplayName}")
+		#end
+	&lt;/span&gt;
+	&lt;span class="user-name"&gt;
+		#if ($media.Author.ProfileUrl)
+			&lt;a href="$core_v2_encoding.HtmlAttributeEncode($media.Author.ProfileUrl)" class="internal-link view-user-profile"&gt;
+				&lt;span&gt;&lt;/span&gt;$media.Author.DisplayName
+			&lt;/a&gt;
+		#else
+			&lt;span&gt;&lt;/span&gt;$media.Author.DisplayName
+		#end
+	&lt;/span&gt;
+&lt;/div&gt;
+
+#if ($media.File &amp;&amp; $media.File.FileUrl &amp;&amp; $mediaType == "Video")
+	&lt;div class="post-attachment-viewer"&gt;
+		$!core_v2_ui.GetViewHtml($media.File.FileUrl)
+	&lt;/div&gt;
+#elseif ($media.File &amp;&amp; $media.File.FileUrl &amp;&amp; $mediaType == "Audio")
+	&lt;div class="post-attachment-viewer"&gt;
+		$!core_v2_ui.GetViewHtml($media.File.FileUrl, "%{Width = 500, Height = 400}")
+	&lt;/div&gt;
+#elseif ($media.File &amp;&amp; $media.File.FileUrl &amp;&amp; $mediaType == "Image")
+	&lt;a href="$core_v2_encoding.HtmlAttributeEncode($core_v2_mediaUrls.DownloadMedia($media.Id, false))" class="internal-link download-attachment"&gt;
+		&lt;div class="post-attachment-viewer"&gt;
+			$!core_v2_ui.GetViewHtml($media.File.FileUrl)
+		&lt;/div&gt;
+	&lt;/a&gt;
+#elseif ($media.File &amp;&amp; $media.File.FileUrl)
+	&lt;div class="post-preview"&gt;
+		$!core_v2_ui.GetPreviewHtml($media.File.FileUrl, "%{Width = 114, Height = 114}")
+	&lt;/div&gt;
+#end
+
+&lt;div class="post-actions"&gt;
+	&lt;div class="navigation-list-header"&gt;&lt;/div&gt;
+	&lt;ul class="navigation-list"&gt;
+		&lt;li class="navigation-item"&gt;
+			&lt;a href="$core_v2_encoding.HtmlAttributeEncode($core_v2_mediaUrls.DownloadMedia($media.Id, false))" class="internal-link download-attachment"&gt;&lt;span&gt;&lt;/span&gt;$core_v2_language.GetResource("MediaGalleries_Button_Download")&lt;/a&gt;
+		&lt;/li&gt;
+
+		#if ($core_v2_user.IsRegistered($core_v2_user.Accessing.Id))
+			&lt;li class="navigation-item"&gt;&lt;a id="$core_v2_widget.UniqueId('mediaSubscribe')" href="javascript:void(0)"&gt;&lt;/a&gt;&lt;/li&gt;
+		#end
+
+		&lt;li class="navigation-item"&gt;
+			#set($url = false)
+			#set($url = $core_v2_mediaUrls.ShareMedia($media.Id))
+			#if($url)
+				&lt;a href="#" onclick="Telligent_Modal.Open('$core_v2_encoding.HtmlEncode($core_v2_encoding.JavaScriptEncode($url))',550,300,null); return false;" class="internal-link send-email"&gt;&lt;span&gt;&lt;/span&gt;$core_v2_language.GetResource('MediaGallery_Share')&lt;/a&gt;
+			#else
+				&lt;a href="mailto:?subject=$media.Title&amp;body=$core_v2_page.AbsoluteUrl($media.Url)" class="internal-link send-email"&gt;&lt;span&gt;&lt;/span&gt;$core_v2_language.GetResource('MediaGallery_Share')&lt;/a&gt;
+			#end
+		&lt;/li&gt;
+
+		#if ($core_v2_mediaUrls.EditMedia($media.Id))
+			&lt;li class="navigation-item"&gt;
+				&lt;a href="$core_v2_encoding.HtmlAttributeEncode($core_v2_mediaUrls.EditMedia($media.Id))" class="internal-link edit-post"&gt;&lt;span&gt;&lt;/span&gt;$core_v2_language.GetResource("MediaGalleries_Button_Edit")&lt;/a&gt;
+			&lt;/li&gt;
+		#end
+
+		#if ($core_v2_mediaUrls.DeleteMedia($media.Id))
+			&lt;li class="navigation-item"&gt;
+				&lt;a href="$core_v2_encoding.HtmlAttributeEncode($core_v2_mediaUrls.DeleteMedia($media.Id))" class="internal-link delete-post"&gt;&lt;span&gt;&lt;/span&gt;$core_v2_language.GetResource("MediaGalleries_Button_Delete")&lt;/a&gt;
+			&lt;/li&gt;
+		#end
+	&lt;/ul&gt;
+	&lt;div class="navigation-list-footer"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="post-content user-defined-markup"&gt;$!media.Body()&lt;/div&gt;
+&lt;div class="post-date"&gt;
+	&lt;span class="label"&gt;$core_v2_language.GetResource("Posted"):&lt;/span&gt;
+	&lt;span class="value"&gt;$media.Date&lt;/span&gt;
+&lt;/div&gt;
+#if ($core_v2_user.IsRegistered($core_v2_user.Accessing.Id))
+	&lt;div class="favorite-post fiji-favorite-post evolution2-favorite-post"&gt;&lt;a id="$core_v2_widget.UniqueId('mediaFavorite')" href="javascript:void(0)"&gt;&lt;/a&gt;&lt;/div&gt;
+#end
+
+#if(!$sitecore_v2_configuration.AutoRedirectUsers)
+    #if ($media.Tags.Count &gt; 0 || $core_v2_tags.CanAddTags($media.ContentId, $core_v2_media.ContentTypeId))
+        &lt;div class="post-tags"&gt;
+            #set($tagUrlFormat = $core_v2_page.AbsoluteUrl($core_v2_mediaUrls.Tags($media.MediaGalleryId, $core_v2_utility.MakeList('TAGNAME')).Replace('TAGNAME','{tag}')))
+            $core_v2_ui.Tag($media.ContentId, $core_v2_media.ContentTypeId, "%{UrlFormat=$tagUrlFormat}")
+        &lt;/div&gt;
+    #end
+#end
+#if ($accessingUserIsRegistered)
+	#set ($likeFormat = '{toggle} &lt;span class="count"&gt;&lt;span class="icon"&gt;&lt;/span&gt;{count}&lt;/span&gt;')
+#else
+	#set ($likeFormat = '&lt;span class="count"&gt;&lt;span class="icon"&gt;&lt;/span&gt;{count}&lt;/span&gt;')
+#end
+&lt;div class="post-like"&gt;
+    $core_v2_ui.Like($media.ContentId, $core_v2_media.ContentTypeId, "%{ Format = $likeFormat }")
+&lt;/div&gt;
+#if ($core_v2_media.AreRatingsEnabled($media.Id))
+&lt;div class="post-rating"&gt;
+	$core_v2_language.GetResource("RateThis")
+	$core_v2_ui.Rate($media.ContentId, $core_v2_media.ContentTypeId)
+&lt;/div&gt;
+#end
+&lt;div class="post-moderate"&gt;
+    #if ($core_v2_user.IsRegistered($core_v2_user.Accessing.Id))
+        $core_v2_ui.Moderate($media.ContentId, $core_v2_media.ContentTypeId, "%{ CssClass = 'expanded' }")
+    #end
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="full-post-footer"&gt;&lt;/div&gt;
+#registerEndOfPageHtml()
+	&lt;script type="text/javascript"&gt;
+	//&lt;![CDATA[
+	jQuery(function(){
+	#if ($core_v2_user.IsRegistered($core_v2_user.Accessing.Id))
+		jQuery('#$core_v2_widget.UniqueId('mediaFavorite')').evolutionToggleLink({
+			onHtml: '&lt;span&gt;&lt;/span&gt;$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Weblog_RemovePostFromFavs'))',
+			offHtml: '&lt;span&gt;&lt;/span&gt;$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Blogs_BlogPost_FavoritePost'))',
+			processingHtml: '&lt;span&gt;&lt;/span&gt;...',
+			changeState: function(val) {
+				jQuery.telligent.evolution.post({
+					url: '$core_v2_encoding.JavascriptEncode($core_v2_widget.GetExecutedFileUrl('favorite.vm'))',
+					data: {type:'media',favorite:val,mediaId:$media.Id},
+					dataType: 'json',
+					success: function(response) { jQuery('#$core_v2_widget.UniqueId('mediaFavorite')').evolutionToggleLink('val', response.favorite); },
+					error: function(xhr, desc, ex) { jQuery('#$core_v2_widget.UniqueId('mediaFavorite')').evolutionToggleLink('val', !val); }
+				});
+			},
+			onCssClass: 'internal-link favorite-on',
+			offCssClass: 'internal-link favorite-off',
+			processingCssClass: 'internal-link processing',
+			val: #if($core_v2_media.IsFavorite($media.Id)) true#else false#end
+		});
+
+		jQuery('#$core_v2_widget.UniqueId('mediaSubscribe')').evolutionToggleLink({
+			onHtml: '&lt;span&gt;&lt;/span&gt;$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('StopEmailingReplies'))',
+			offHtml: '&lt;span&gt;&lt;/span&gt;$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('EmailReplies'))',
+			processingHtml: '&lt;span&gt;&lt;/span&gt;...',
+			changeState: function(val) {
+				jQuery.telligent.evolution.post({
+					url: '$core_v2_encoding.JavascriptEncode($core_v2_widget.GetExecutedFileUrl('subscribe.vm'))',
+					data: {type:'media',subscribe:val,mediaId:$media.Id},
+					dataType: 'json',
+					success: function(response) { jQuery('#$core_v2_widget.UniqueId('mediaSubscribe')').evolutionToggleLink('val', response.subscribe); },
+					error: function(xhr, desc, ex) { jQuery('#$core_v2_widget.UniqueId('mediaSubscribe')').evolutionToggleLink('val', !val); }
+				});
+			},
+			onCssClass: 'internal-link subscription-on',
+			offCssClass: 'internal-link subscription-off',
+			processingCssClass: 'internal-link processing',
+			val: #if($core_v2_media.IsSubscribed($media.Id)) true#else false#end
+		});
+	#end
+    });
+	//]]&gt;
+	&lt;/script&gt;
+#end</contentScript><headerScript>#set ($header = $core_v2_widget.GetStringValue('fragmentHeader', '${resource:MediaGalleries_MediaGalleryPost_Name}'))
+#if ($core_v2_gallery.Current &amp;&amp; ($header == '' || $header == '${resource:MediaGalleries_MediaGalleryPost_Name}'))
+	&lt;a class="internal-link view-application media-gallery" href="$core_v2_encoding.HtmlAttributeEncode($core_v2_mediaUrls.Gallery($core_v2_gallery.Current.Id))"&gt;&lt;span&gt;&lt;/span&gt;$core_v2_gallery.Current.Name&lt;/a&gt;
+#else
+	$core_v2_widget.ApplyTokens($header)
+#end</headerScript><configuration>&lt;propertyGroup id="options" resourceName="Options"&gt;
+	&lt;property id="fragmentHeader" resourceName="CF_Title" dataType="string" defaultValue="${resource:MediaGalleries_MediaGalleryPost_Name}" controlType="Telligent.Evolution.Controls.ContentFragmentTokenStringControl, Telligent.Evolution.Extensions.SitecoreConnect" /&gt;
+&lt;/propertyGroup&gt;</configuration><languageResources><language key="en-us"><resource name="MediaGalleries_MediaGalleryPost_Name">Media Gallery - File</resource><resource name="MediaGalleries_MediaGalleryPost_Description">Displays a file from the media gallery.</resource><resource name="Options">Options</resource><resource name="CF_Title">Widget Title</resource><resource name="MediaGalleries_Button_Download">Download</resource><resource name="MediaGallery_Share">Share</resource><resource name="MediaGalleries_Button_Edit">Edit</resource><resource name="MediaGalleries_Button_Delete">Delete</resource><resource name="Posted">Posted</resource><resource name="RateThis">Rate This</resource><resource name="Weblog_RemovePostFromFavs">Remove post from favorites</resource><resource name="Blogs_BlogPost_FavoritePost">Favorite this post</resource><resource name="StopEmailingReplies">Stop emailing replies</resource><resource name="EmailReplies">Email replies to me</resource><resource name="MediaGalleries_MediaGalleryPost_Title_File">File</resource></language></languageResources><requiredContext><context id="a91f97494d81449ca3c3ec8d6eebaf25" /></requiredContext><files><file name="favorite.vm">I2lmICgkY29yZV92Ml9wYWdlLklzUG9zdCkNCgkjc2V0KCR0eXBlID0gJGNvcmVfdjJfcGFnZS5HZXRGb3JtVmFsdWUoJ3R5cGUnKSkNCgkjc2V0KCRmYXZvcml0ZSA9ICRjb3JlX3YyX3V0aWxpdHkuUGFyc2VCb29sKCRjb3JlX3YyX3BhZ2UuR2V0Rm9ybVZhbHVlKCdmYXZvcml0ZScpKSkNCgkkY29yZV92Ml9wYWdlLlNldENvbnRlbnRUeXBlKCdhcHBsaWNhdGlvbi9qc29uJykNCg0KCSNpZiAoJHR5cGUgPT0gJ2dhbGxlcnknKQ0KCQkkY29yZV92Ml9nYWxsZXJ5LlNldEZhdm9yaXRlKCRjb3JlX3YyX3V0aWxpdHkuUGFyc2VJbnQoJGNvcmVfdjJfcGFnZS5HZXRGb3JtVmFsdWUoJ2dhbGxlcnlJZCcpKSwgJGZhdm9yaXRlKQ0KCQl7ImZhdm9yaXRlIjojaWYoJGZhdm9yaXRlKSB0cnVlI2Vsc2UgZmFsc2UjZW5kfQ0KCSNlbHNlaWYgKCR0eXBlID09ICdtZWRpYScpDQoJCSRjb3JlX3YyX21lZGlhLlNldEZhdm9yaXRlKCRjb3JlX3YyX3V0aWxpdHkuUGFyc2VJbnQoJGNvcmVfdjJfcGFnZS5HZXRGb3JtVmFsdWUoJ21lZGlhSWQnKSksICRmYXZvcml0ZSkNCgkJeyJmYXZvcml0ZSI6I2lmKCRmYXZvcml0ZSkgdHJ1ZSNlbHNlIGZhbHNlI2VuZH0NCgkjZWxzZQ0KCQkkY29yZV92Ml9wYWdlLlNlbmRKc29uRXJyb3IoJ1VucmVjb2duaXplZCBmYXZvcml0ZSB0eXBlLicpDQoJI2VuZA0KI2VuZA==</file><file name="rate.vm">I2lmICgkY29yZV92Ml9wYWdlLklzUG9zdCkNCgkkY29yZV92Ml9wYWdlLlNldENvbnRlbnRUeXBlKCdhcHBsaWNhdGlvbi9qc29uJykNCg0KCSRjb3JlX3YyX21lZGlhLlNldFJhdGluZygkY29yZV92Ml91dGlsaXR5LlBhcnNlSW50KCRjb3JlX3YyX3BhZ2UuR2V0Rm9ybVZhbHVlKCdtZWRpYUlkJykpLCAkY29yZV92Ml91dGlsaXR5LlBhcnNlSW50KCRjb3JlX3YyX3BhZ2UuR2V0Rm9ybVZhbHVlKCdyYXRpbmcnKSkpDQoJeyJyYXRpbmdBdmVyYWdlIjokY29yZV92Ml9tZWRpYS5HZXRSYXRpbmcoJGNvcmVfdjJfdXRpbGl0eS5QYXJzZUludCgkY29yZV92Ml9wYWdlLkdldEZvcm1WYWx1ZSgnbWVkaWFJZCcpKSkuQXZlcmFnZX0NCiNlbmQ=</file><file name="subscribe.vm">I2lmICgkY29yZV92Ml9wYWdlLklzUG9zdCkNCgkjc2V0KCR0eXBlID0gJGNvcmVfdjJfcGFnZS5HZXRGb3JtVmFsdWUoJ3R5cGUnKSkNCgkjc2V0KCRzdWJzY3JpYmUgPSAkY29yZV92Ml91dGlsaXR5LlBhcnNlQm9vbCgkY29yZV92Ml9wYWdlLkdldEZvcm1WYWx1ZSgnc3Vic2NyaWJlJykpKQ0KCSRjb3JlX3YyX3BhZ2UuU2V0Q29udGVudFR5cGUoJ2FwcGxpY2F0aW9uL2pzb24nKQ0KDQoJI2lmICgkdHlwZSA9PSAnbWVkaWEnKQ0KCQkkY29yZV92Ml9tZWRpYS5TZXRTdWJzY3JpYmVkKCRjb3JlX3YyX3V0aWxpdHkuUGFyc2VJbnQoJGNvcmVfdjJfcGFnZS5HZXRGb3JtVmFsdWUoJ21lZGlhSWQnKSksICRzdWJzY3JpYmUpDQoJCXsic3Vic2NyaWJlIjojaWYoJHN1YnNjcmliZSkgdHJ1ZSNlbHNlIGZhbHNlI2VuZH0NCgkjZWxzZQ0KCQkkY29yZV92Ml9wYWdlLlNlbmRKc29uRXJyb3IoJ1VucmVjb2duaXplZCBzdWJzY3JpcHRpb24gdHlwZS4nKQ0KCSNlbmQNCiNlbmQ=</file><file name="ui.js">KGZ1bmN0aW9uKCQpDQp7DQoJaWYgKHR5cGVvZiAkLnRlbGxpZ2VudCA9PT0gJ3VuZGVmaW5lZCcpDQoJICAgICAgICAkLnRlbGxpZ2VudCA9IHt9Ow0KDQoJaWYgKHR5cGVvZiAkLnRlbGxpZ2VudC5ldm9sdXRpb24gPT09ICd1bmRlZmluZWQnKQ0KCSAgICAkLnRlbGxpZ2VudC5ldm9sdXRpb24gPSB7fTsNCg0KCWlmICh0eXBlb2YgJC50ZWxsaWdlbnQuZXZvbHV0aW9uLndpZGdldHMgPT09ICd1bmRlZmluZWQnKQ0KCSAgICAkLnRlbGxpZ2VudC5ldm9sdXRpb24ud2lkZ2V0cyA9IHt9Ow0KDQoJdmFyIHNhdmVUYWdzID0gZnVuY3Rpb24oY29udGV4dCwgdGFncywgc3VjY2Vzc0ZuKQ0KCQl7DQoJCQl2YXIgZGF0YSA9IHsNCgkJCQlUYWdzOiB0YWdzLmxlbmd0aCA+IDAgPyB0YWdzLmpvaW4oJywnKSA6ICcnLA0KCQkJCUZpbGVJZDogY29udGV4dC5tZWRpYUlkLA0KCQkJCU1lZGlhR2FsbGVyeUlkOiBjb250ZXh0LmdhbGxlcnlJZA0KCQkJfTsNCg0KCQkJJC50ZWxsaWdlbnQuZXZvbHV0aW9uLnB1dCh7DQoJCQkJdXJsOiAkLnRlbGxpZ2VudC5ldm9sdXRpb24uc2l0ZS5nZXRCYXNlVXJsKCkgKyAnYXBpLmFzaHgvdjIvbWVkaWEvJyArIGNvbnRleHQuZ2FsbGVyeUlkICsgJy9maWxlcy8nICsgY29udGV4dC5tZWRpYUlkICsgJy5qc29uJywNCgkJCQlkYXRhOiBkYXRhLA0KCQkJCWRhdGFUeXBlOiAnanNvbicsDQoJCQkJc3VjY2VzczogZnVuY3Rpb24ocmVzcG9uc2UpDQoJCQkJew0KCQkJCQlzdWNjZXNzRm4oKTsNCgkJCQkJY29udGV4dC5jdXJyZW50VGFncyA9IHRhZ3M7DQoNCgkJCQkJdmFyIHRhZ3NIdG1sID0gJyc7DQoJCQkJCWZvcih2YXIgaSA9IDA7IGkgPCBjb250ZXh0LmN1cnJlbnRUYWdzLmxlbmd0aDsgaSsrKQ0KCQkJCQl7DQoJCQkJCQl2YXIgdGFnTmFtZSA9ICQudHJpbShjb250ZXh0LmN1cnJlbnRUYWdzW2ldKTsNCgkJCQkJCXZhciB0YWdVcmwgPSBjb250ZXh0LnRhZ1VybFRlbXBsYXRlLnJlcGxhY2UoL1RBR05BTUUvZywgZW5jb2RlVVJJQ29tcG9uZW50KHRhZ05hbWUucmVwbGFjZSgvIC9nLCAnKycpKSk7DQoJCQkJCQl0YWdzSHRtbCA9IHRhZ3NIdG1sICsgJzxhIGhyZWY9IicgKyB0YWdVcmwgKyAnIj4nICsgJCgnPGRpdi8+JykudGV4dCh0YWdOYW1lKS5odG1sKCkgKyAnPC9hPic7DQoJCQkJCQlpZiAoaSArIDEgPCBjb250ZXh0LmN1cnJlbnRUYWdzLmxlbmd0aCkNCgkJCQkJCQl0YWdzSHRtbCA9IHRhZ3NIdG1sICsgJywgJzsNCgkJCQkJfQ0KDQoJCQkJCWNvbnRleHQudGFnTGlzdENvbnRhaW5lci5odG1sKHRhZ3NIdG1sKTsNCgkJCQl9DQoJCQl9KTsNCgkJfSwNCgkJcmF0ZVBvc3QgPSBmdW5jdGlvbihjb250ZXh0LCB2YWx1ZSkNCgkJew0KCQkJJC50ZWxsaWdlbnQuZXZvbHV0aW9uLnBvc3Qoew0KCQkJCXVybDogY29udGV4dC5yYXRpbmdVcmwsDQoJCQkJZGF0YToge3JhdGluZzp2YWx1ZSxtZWRpYUlkOmNvbnRleHQubWVkaWFJZH0sDQoJCQkJZGF0YVR5cGU6ICdqc29uJywNCgkJCQlzdWNjZXNzOiBmdW5jdGlvbihyZXNwb25zZSkNCgkJCQl7DQoJCQkJCWNvbnRleHQucmF0aW5nQ29udHJvbC5ldm9sdXRpb25TdGFyUmF0aW5nKCd2YWwnLCByZXNwb25zZS5yYXRpbmdBdmVyYWdlKTsNCgkJCQl9DQoJCQl9KTsNCgkJfTsNCg0KCSQudGVsbGlnZW50LmV2b2x1dGlvbi53aWRnZXRzLm1lZGlhR2FsbGVyeVBvc3QgPQ0KCXsNCgkJcmVnaXN0ZXI6IGZ1bmN0aW9uKGNvbnRleHQpDQoJCXsNCgkJCWlmIChjb250ZXh0LnRhZ0VkaXRvckJ1dHRvbikNCgkJCQljb250ZXh0LnRhZ0VkaXRvckJ1dHRvbi5ldm9sdXRpb25JbmxpbmVUYWdFZGl0b3Ioew0KCQkJCQlhbGxUYWdzOiBjb250ZXh0LmFsbFRhZ3MsDQoJCQkJCWN1cnJlbnRUYWdzOiBjb250ZXh0LmN1cnJlbnRUYWdzLA0KCQkJCQlzZWxlY3RUYWdzVGV4dDogY29udGV4dC5zZWxlY3RUYWdzVGV4dCwNCgkJCQkJb25TYXZlOiBmdW5jdGlvbih0YWdzLCBzdWNjZXNzRm4pIHsNCgkJCQkJCXNhdmVUYWdzKGNvbnRleHQsIHRhZ3MsIHN1Y2Nlc3NGbik7DQoJCQkJCX0NCgkJCQl9KTsNCg0KCQkJaWYgKGNvbnRleHQucmF0aW5nQ29udHJvbCkNCgkJCQljb250ZXh0LnJhdGluZ0NvbnRyb2wuZXZvbHV0aW9uU3RhclJhdGluZyh7DQoJCQkJCQl2YWx1ZTogY29udGV4dC5hdmVyYWdlUmF0aW5nLA0KCQkJCQkJaXNSZWFkT25seTogY29udGV4dC5oYXNSYXRlUGVybWlzc2lvbiwNCgkJCQkJCW9uUmF0ZTogZnVuY3Rpb24odmFsdWUsIHN1Y2Nlc3MpIHsNCgkJCQkJCQlyYXRlUG9zdChjb250ZXh0LCB2YWx1ZSwgc3VjY2Vzcyk7DQoJCQkJCQl9DQoJCQkJfSk7DQoJCX0NCgl9Ow0KfSkoalF1ZXJ5KTsNCg==</file></files></scriptedContentFragment></scriptedContentFragments>

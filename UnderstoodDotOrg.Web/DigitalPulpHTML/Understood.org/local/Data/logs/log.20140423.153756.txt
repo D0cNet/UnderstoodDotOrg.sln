@@ -1,0 +1,481 @@
+11740 15:37:56 INFO  HttpModule is being initialized
+11740 15:37:56 INFO  
+11740 15:37:56 INFO  **********************************************************************
+11740 15:37:56 INFO  **********************************************************************
+11740 15:37:56 INFO  Sitecore started
+11740 15:37:56 INFO  Sitecore.NET 7.0 (rev. 140120)
+11740 15:37:56 INFO  
+11740 15:37:56 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Client.dll (Sitecore CMS, Sitecore Client Application, 7.0 rev. 140120)
+11740 15:37:56 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Kernel.dll (Sitecore CMS, Sitecore CMS Kernel Library, 7.0 rev. 140120)
+11740 15:37:56 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Nexus.dll (Sitecore.Nexus)
+11740 15:37:56 INFO  
+11740 15:37:56 INFO  Operating system Microsoft Windows NT 6.1.7601 Service Pack 1
+11740 15:37:56 INFO  
+11740 15:37:56 INFO  Microsoft.NET version 4.0.30319.18444
+11740 15:37:56 INFO  
+11740 15:37:56 INFO  Process id: 9612
+11740 15:37:56 INFO  Windows identity used by the process: NT AUTHORITY\NETWORK SERVICE. Impersonation: False
+11740 15:37:56 INFO  Managed pipeline mode: Integrated
+11740 15:37:56 INFO  
+11740 15:37:56 INFO  EventQueues enabled: True
+11740 15:37:56 INFO  Instance Name:CHADDADT-PC-understood.org.local
+11740 15:37:56 INFO  
+11740 15:37:56 INFO  Threshold settings
+11740 15:37:56 INFO    Show threshold warnings: False
+11740 15:37:56 INFO  
+11740 15:37:56 INFO  Databases
+11740 15:37:56 INFO    core
+11740 15:37:56 INFO    master
+11740 15:37:56 INFO    web
+11740 15:37:56 INFO    filesystem
+11740 15:37:56 INFO  
+11740 15:37:56 INFO  Domains
+11740 15:37:56 INFO  Heartbeat - Initializing
+11740 15:37:56 INFO  Heartbeat - Interval set to: 00:00:02
+11740 15:37:56 INFO  Heartbeat - Worker thread started
+11740 15:37:56 INFO  Trying to load XML configuration /App_Config/Security/Domains.config
+11740 15:37:56 INFO    sitecore
+11740 15:37:56 INFO    extranet
+11740 15:37:56 INFO    default
+11740 15:37:56 INFO  **********************************************************************
+11740 15:37:56 INFO  **********************************************************************
+11740 15:37:56 INFO  Attempting to get ASP.NET process history
+11740 15:37:56 WARN  No process history available
+11740 15:37:56 INFO  Cache created: 'LanguageProvider - Languages' (max size: 100KB, running total: 100KB)
+11740 15:37:56 INFO  Cache created: 'DeviceItemsCache' (max size: 10MB, running total: 10MB)
+11740 15:37:56 INFO  Cache created: 'core[data]' (max size: 20MB, running total: 30MB)
+11740 15:37:56 INFO  Cache created: 'core[items]' (max size: 10MB, running total: 40MB)
+11740 15:37:56 INFO  Cache created: 'core[paths]' (max size: 500KB, running total: 40MB)
+11740 15:37:56 INFO  Cache created: 'core[standardValues]' (max size: 500KB, running total: 41MB)
+11740 15:37:56 INFO  Cache created: 'core[itempaths]' (max size: 10MB, running total: 51MB)
+11740 15:37:56 INFO  Cache created: 'core[blobIDs]' (max size: 500KB, running total: 51MB)
+11740 15:37:56 INFO  Cache created: 'master[data]' (max size: 20MB, running total: 71MB)
+11740 15:37:56 INFO  Cache created: 'master[items]' (max size: 10MB, running total: 81MB)
+11740 15:37:56 INFO  Cache created: 'master[paths]' (max size: 500KB, running total: 82MB)
+11740 15:37:56 INFO  Cache created: 'master[standardValues]' (max size: 500KB, running total: 82MB)
+11740 15:37:56 INFO  Cache created: 'master[itempaths]' (max size: 10MB, running total: 92MB)
+11740 15:37:56 INFO  Cache created: 'master[blobIDs]' (max size: 500KB, running total: 93MB)
+11740 15:37:56 INFO  Cache created: 'web[data]' (max size: 20MB, running total: 113MB)
+11740 15:37:56 INFO  Cache created: 'web[items]' (max size: 10MB, running total: 123MB)
+11740 15:37:56 INFO  Cache created: 'web[paths]' (max size: 500KB, running total: 123MB)
+11740 15:37:56 INFO  Cache created: 'web[standardValues]' (max size: 500KB, running total: 124MB)
+11740 15:37:56 INFO  Cache created: 'web[itempaths]' (max size: 10MB, running total: 134MB)
+11740 15:37:56 INFO  Cache created: 'web[blobIDs]' (max size: 500KB, running total: 134MB)
+11740 15:37:56 INFO  Cache created: 'filesystem[data]' (max size: 0 bytes, running total: 134MB)
+11740 15:37:56 INFO  Cache created: 'filesystem[items]' (max size: 0 bytes, running total: 134MB)
+11740 15:37:56 INFO  Cache created: 'filesystem[paths]' (max size: 0 bytes, running total: 134MB)
+11740 15:37:56 INFO  Cache created: 'filesystem[standardValues]' (max size: 0 bytes, running total: 134MB)
+11740 15:37:56 INFO  Cache created: 'filesystem[itempaths]' (max size: 10MB, running total: 144MB)
+11740 15:37:56 INFO  Cache created: 'filesystem[blobIDs]' (max size: 500KB, running total: 144MB)
+ManagedPoolThread #14 15:37:58 INFO  Trying to load XML configuration /App_Config/Security/Domains.config
+Heartbeat 15:38:00 INFO  Cache created: 'SqlDataProvider - Property data(core)' (max size: 500KB, running total: 145MB)
+Heartbeat 15:38:04 INFO  Cache created: 'SqlDataProvider - Property data(master)' (max size: 500KB, running total: 145MB)
+Heartbeat 15:38:04 INFO  Cache created: 'SqlDataProvider - Property data(web)' (max size: 500KB, running total: 146MB)
+Heartbeat 15:38:04 INFO  Cache created: 'SqlDataProvider - Prefetch data(web)' (max size: 10MB, running total: 156MB)
+Heartbeat 15:38:04 INFO  Cache created: 'ItemCloningRelations' (max size: 10MB, running total: 166MB)
+Heartbeat 15:38:04 INFO  Cache created: 'shell[html]' (max size: 0 bytes, running total: 166MB)
+Heartbeat 15:38:04 INFO  Cache created: 'UserProfileCache' (max size: 1MB, running total: 167MB)
+Heartbeat 15:38:04 INFO  Cache created: 'clientData' (max size: 5MB, running total: 172MB)
+Heartbeat 15:38:04 INFO  Cache created: 'shell[registry]' (max size: 3MB, running total: 175MB)
+Heartbeat 15:38:04 INFO  Cache created: 'shell[viewstate]' (max size: 200KB, running total: 175MB)
+Heartbeat 15:38:04 INFO  Cache created: 'shell[xsl]' (max size: 5MB, running total: 180MB)
+Heartbeat 15:38:04 INFO  Cache created: 'shell[filtered items]' (max size: 2MB, running total: 182MB)
+Heartbeat 15:38:04 INFO  Cache created: 'login[html]' (max size: 0 bytes, running total: 182MB)
+Heartbeat 15:38:04 INFO  Cache created: 'login[registry]' (max size: 5MB, running total: 187MB)
+Heartbeat 15:38:04 INFO  Cache created: 'login[viewstate]' (max size: 5MB, running total: 192MB)
+Heartbeat 15:38:04 INFO  Cache created: 'login[xsl]' (max size: 10MB, running total: 202MB)
+Heartbeat 15:38:04 INFO  Cache created: 'login[filtered items]' (max size: 2MB, running total: 204MB)
+Heartbeat 15:38:04 INFO  Cache created: 'admin[html]' (max size: 0 bytes, running total: 204MB)
+Heartbeat 15:38:04 INFO  Cache created: 'admin[registry]' (max size: 5MB, running total: 209MB)
+Heartbeat 15:38:04 INFO  Cache created: 'admin[viewstate]' (max size: 5MB, running total: 214MB)
+Heartbeat 15:38:04 INFO  Cache created: 'admin[xsl]' (max size: 10MB, running total: 224MB)
+Heartbeat 15:38:04 INFO  Cache created: 'admin[filtered items]' (max size: 2MB, running total: 226MB)
+Heartbeat 15:38:04 INFO  Cache created: 'service[html]' (max size: 0 bytes, running total: 226MB)
+Heartbeat 15:38:04 INFO  Cache created: 'service[registry]' (max size: 5MB, running total: 231MB)
+Heartbeat 15:38:04 INFO  Cache created: 'service[viewstate]' (max size: 5MB, running total: 236MB)
+Heartbeat 15:38:04 INFO  Cache created: 'service[xsl]' (max size: 10MB, running total: 246MB)
+Heartbeat 15:38:04 INFO  Cache created: 'service[filtered items]' (max size: 2MB, running total: 248MB)
+Heartbeat 15:38:04 INFO  Cache created: 'modules_shell[html]' (max size: 0 bytes, running total: 248MB)
+Heartbeat 15:38:04 INFO  Cache created: 'modules_shell[registry]' (max size: 5MB, running total: 253MB)
+Heartbeat 15:38:04 INFO  Cache created: 'modules_shell[viewstate]' (max size: 5MB, running total: 258MB)
+Heartbeat 15:38:04 INFO  Cache created: 'modules_shell[xsl]' (max size: 10MB, running total: 268MB)
+Heartbeat 15:38:04 INFO  Cache created: 'modules_shell[filtered items]' (max size: 2MB, running total: 270MB)
+Heartbeat 15:38:04 INFO  Cache created: 'modules_website[html]' (max size: 5MB, running total: 275MB)
+Heartbeat 15:38:04 INFO  Cache created: 'modules_website[registry]' (max size: 5MB, running total: 280MB)
+Heartbeat 15:38:04 INFO  Cache created: 'modules_website[viewstate]' (max size: 5MB, running total: 285MB)
+Heartbeat 15:38:04 INFO  Cache created: 'modules_website[xsl]' (max size: 10MB, running total: 295MB)
+Heartbeat 15:38:04 INFO  Cache created: 'modules_website[filtered items]' (max size: 2MB, running total: 297MB)
+Heartbeat 15:38:04 INFO  Cache created: 'website[html]' (max size: 10MB, running total: 307MB)
+Heartbeat 15:38:04 INFO  Cache created: 'website[registry]' (max size: 0 bytes, running total: 307MB)
+Heartbeat 15:38:04 INFO  Cache created: 'website[viewstate]' (max size: 0 bytes, running total: 307MB)
+Heartbeat 15:38:04 INFO  Cache created: 'website[xsl]' (max size: 5MB, running total: 312MB)
+Heartbeat 15:38:04 INFO  Cache created: 'website[filtered items]' (max size: 2MB, running total: 314MB)
+Heartbeat 15:38:04 INFO  Cache created: 'scheduler[html]' (max size: 0 bytes, running total: 314MB)
+Heartbeat 15:38:04 INFO  Cache created: 'scheduler[registry]' (max size: 5MB, running total: 319MB)
+Heartbeat 15:38:04 INFO  Cache created: 'scheduler[viewstate]' (max size: 5MB, running total: 324MB)
+Heartbeat 15:38:04 INFO  Cache created: 'scheduler[xsl]' (max size: 10MB, running total: 334MB)
+Heartbeat 15:38:04 INFO  Cache created: 'scheduler[filtered items]' (max size: 2MB, running total: 336MB)
+Heartbeat 15:38:04 INFO  Cache created: 'system[html]' (max size: 0 bytes, running total: 336MB)
+Heartbeat 15:38:04 INFO  Cache created: 'system[registry]' (max size: 5MB, running total: 341MB)
+Heartbeat 15:38:04 INFO  Cache created: 'system[viewstate]' (max size: 5MB, running total: 346MB)
+Heartbeat 15:38:04 INFO  Cache created: 'system[xsl]' (max size: 10MB, running total: 356MB)
+Heartbeat 15:38:04 INFO  Cache created: 'system[filtered items]' (max size: 2MB, running total: 358MB)
+Heartbeat 15:38:04 INFO  Cache created: 'publisher[html]' (max size: 0 bytes, running total: 358MB)
+Heartbeat 15:38:04 INFO  Cache created: 'publisher[registry]' (max size: 5MB, running total: 363MB)
+Heartbeat 15:38:04 INFO  Cache created: 'publisher[viewstate]' (max size: 5MB, running total: 368MB)
+Heartbeat 15:38:04 INFO  Cache created: 'publisher[xsl]' (max size: 10MB, running total: 378MB)
+Heartbeat 15:38:04 INFO  Cache created: 'publisher[filtered items]' (max size: 2MB, running total: 380MB)
+Heartbeat 15:38:04 INFO  Cache created: 'ProxyProvider' (max size: 500KB, running total: 381MB)
+11740 15:38:05 INFO  Cache created: 'SqlDataProvider - Prefetch data(core)' (max size: 10MB, running total: 391MB)
+11740 15:38:05 INFO  Cache created: 'AccessResultCache' (max size: 2MB, running total: 393MB)
+11740 15:38:05 INFO  Loading Dictionary from cache
+11740 15:38:05 INFO  MemoryMonitor initialized. Threshold: 800 MB. Interval: 00:00:05
+Heartbeat 15:38:07 INFO  Cache created: 'rules' (max size: 800KB, running total: 393MB)
+Heartbeat 15:38:42 INFO  Cache created: 'IsUserInRoleCache' (max size: 1MB, running total: 394MB)
+Heartbeat 15:38:42 INFO  Trying to load XML configuration /App_Config/Security/GlobalRoles.config
+Heartbeat 15:38:43 INFO  HtmlCacheClearer clearing HTML caches for all sites (1).
+Heartbeat 15:38:43 INFO  HtmlCacheClearer done.
+11740 15:38:43 INFO  Scheduler - Initializing
+11740 15:38:43 INFO  Scheduler - Interval set to: 00:00:05
+11740 15:38:43 INFO  Scheduler - Worker thread started
+ManagedPoolThread #15 15:38:44 INFO  Trying to load XML configuration /App_Config/Security/GlobalRoles.config
+8756 15:38:45 INFO  HttpModule is being initialized
+ManagedPoolThread #5 15:38:45 INFO  Job started: Index_Update_IndexName=sitecore_web_index
+11996 15:38:45 INFO  Cache created: '[FieldReaderCache]' (max size: 5MB, running total: 399MB)
+ManagedPoolThread #5 15:38:46 INFO  Job ended: Index_Update_IndexName=sitecore_web_index (units processed: )
+11976 15:38:48 INFO  Scheduler - Adding agents
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.DatabaseAgent (interval: 00:10:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.DatabaseAgent (interval: 00:10:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.UrlAgent (interval: 00:15:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.TaskDatabaseAgent (interval: 00:10:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.CompactClientDataAgent (interval: 04:00:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupHistory (interval: 04:00:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupPublishQueue (interval: 04:00:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupEventQueue (interval: 04:00:00)
+11976 15:38:48 INFO  Scheduler - Skipping inactive agent: Sitecore.Tasks.HtmlCacheClearAgent
+11976 15:38:48 INFO  Scheduler - Skipping inactive agent: Sitecore.Tasks.PublishAgent
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupAgent (interval: 06:00:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.CounterDumpAgent (interval: 01:00:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.CloneNotificationsCleanupAgent (interval: 1.00:00:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.ContentSearch.Tasks.Optimize (interval: 01:00:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: MediaFramework_Import_Brightcove (interval: 04:00:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: MediaFramework_Cleanup_Brightcove (interval: 08:00:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupFDAObsoleteMediaData (interval: 1.00:00:00)
+11976 15:38:48 INFO  Scheduler - Adding agent: Sitecore.Tasks.WebDAVOptionsCleanupAgent (interval: 1.00:00:00)
+11976 15:38:48 INFO  Scheduler - Agents added
+8756 15:38:59 INFO  Cache created: 'SqlDataProvider - Prefetch data(master)' (max size: 20MB, running total: 419MB)
+Heartbeat 15:39:02 ERROR Exception processing remote events from database: master
+Exception: System.Data.SqlClient.SqlException
+Message: Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=1606; handshake=13481; 
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The wait operation timed out
+
+
+Heartbeat 15:39:04 ERROR Exception processing remote events from database: master
+Exception: System.Data.SqlClient.SqlException
+Message: Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=1606; handshake=13481; 
+Source: .Net SqlClient Data Provider
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The wait operation timed out
+
+
+11692 15:41:59 INFO  AUDIT (sitecore\chaddad): Login
+11996 15:42:15 INFO  HttpModule is being initialized
+10696 15:42:15 INFO  HttpModule is being initialized
+8756 15:42:15 INFO  HttpModule is being initialized
+12192 15:42:15 INFO  HttpModule is being initialized
+10400 15:42:15 INFO  HttpModule is being initialized
+12192 15:42:23 INFO  Cache created: 'WebUtil.QueryStringCache' (max size: 19KB, running total: 419MB)
+10400 15:42:28 WARN  Long running operation: GetContentEditorWarningsArgs pipeline
+10400 15:42:28 WARN  Long running operation: GetContentEditorSkin pipeline
+10400 15:42:29 WARN  Long running operation: renderContentEditor pipeline[id={110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}]
+10400 15:42:34 WARN  Long running operation: Running Validation Rules
+ManagedPoolThread #9 15:43:14 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #9 15:43:14 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #3 15:43:14 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #3 15:43:15 INFO  Update of index for the database 'master' done.
+9388 15:43:16 ERROR Application error.
+Exception: System.Web.HttpUnhandledException
+Message: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: System.Web
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+Nested Exception
+
+Exception: System.Web.HttpException
+Message: The file '/layouts/My Profile.ascx' does not exist.
+Source: System.Web
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   at System.Web.UI.TemplateControl.LoadControl(VirtualPath virtualPath)
+   at Sitecore.Web.UI.WebControls.Sublayout.GetUserControl(Page page)
+   at Sitecore.Web.UI.WebControls.Sublayout.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at Sitecore.Layouts.PageContext.Expander.Expand(Control control)
+   at Sitecore.Nexus.Web.NexusPlaceholderApi.(Placeholder )
+   at Sitecore.Nexus.Web.NexusPlaceholderApi.CreateChildControls(Placeholder placeholder)
+   at System.Web.UI.Control.EnsureChildControls()
+   at Sitecore.Layouts.PageContext.Expander.Expand(Control control)
+   at Sitecore.Layouts.PageContext.Expander.Expand(Control control)
+   at Sitecore.Layouts.PageContext.Expander.Expand(Control control)
+   at Sitecore.Layouts.PageContext.Build()
+   at (Object , Object[] )
+   at Sitecore.Pipelines.CorePipeline.Run(PipelineArgs args)
+   at Sitecore.Layouts.PageContext.BuildControlTree(Object sender, EventArgs e)
+   at System.Web.UI.Page.PerformPreInit()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+9412 15:44:09 WARN  Long running operation: renderContentEditor pipeline[id={11A5FC1D-95BB-47AE-B290-6DC63BFECA83}]
+10400 15:44:11 INFO  HttpModule is being initialized
+9928 15:44:14 INFO  Layout file modified: C:\inetpub\wwwroot\Poses\Understood.org\local\Website\layouts\My Profile.ascx
+12192 15:44:35 WARN  Long running operation: convertToDesignTimeHtml
+ManagedPoolThread #8 15:45:00 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #0 15:45:00 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+9412 15:45:01 INFO  AUDIT (sitecore\chaddad): Save item: master:/sitecore/layout/Sublayouts/Poses/My Profile/My Profile, language: en, version: 1, id: {11A5FC1D-95BB-47AE-B290-6DC63BFECA83}
+ManagedPoolThread #0 15:45:03 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #8 15:45:03 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #0 15:45:03 INFO  Starting update of index for the database 'master' (2 pending).
+ManagedPoolThread #0 15:45:03 INFO  Update of index for the database 'master' done.
+11692 15:45:05 WARN  Long running operation: renderContentEditor pipeline[id={DE6C0F28-F190-4CEE-AE7A-59E1B10403F7}]
+10112 15:45:19 INFO  HttpModule is being initialized
+11348 15:46:30 INFO  AUDIT (sitecore\chaddad): Logout
+11348 15:46:30 WARN  Protected page accessed with no current user
+ManagedPoolThread #13 15:47:14 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #11 15:47:14 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #13 15:47:32 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #13 15:47:32 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #13 15:47:33 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #11 15:47:38 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #11 15:47:38 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #11 15:47:38 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+Heartbeat 15:47:59 INFO  Health.PrivateBytes: 678,682,624
+Heartbeat 15:47:59 INFO  Health.CacheInstances: 91
+Heartbeat 15:47:59 INFO  Health.CacheTotalCount: 17,299
+Heartbeat 15:47:59 INFO  Health.CacheTotalSize: 49,566,370
+Heartbeat 15:47:59 INFO  Health.Counter(w3wp, Process\Private Bytes): 650,330,112
+Heartbeat 15:47:59 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 18,961,936,384
+Heartbeat 15:48:00 INFO  Health.Counter(w3wp, Process\Page File Bytes): 657,477,632
+Heartbeat 15:48:00 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 121,600,688
+Heartbeat 15:48:00 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 117,024
+Heartbeat 15:48:00 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 20,574,880
+Heartbeat 15:48:00 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 20,475,904
+Heartbeat 15:48:00 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 157
+ManagedPoolThread #18 15:48:15 INFO  Starting update of index for the database 'master' (3 pending).
+ManagedPoolThread #17 15:48:15 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #17 15:48:15 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #18 15:48:16 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #15 15:48:43 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #15 15:48:43 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #15 15:49:02 INFO  Examining schedules (count: 0)
+ManagedPoolThread #15 15:49:02 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #5 15:49:02 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #5 15:49:02 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #5 15:49:02 INFO  Examining schedules (count: 1)
+ManagedPoolThread #5 15:49:02 INFO  Starting: __Task Schedule
+ManagedPoolThread #5 15:49:02 INFO  Ended: __Task Schedule
+ManagedPoolThread #5 15:49:02 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #16 15:49:02 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #16 15:49:02 INFO  Processing tasks (count: 0)
+ManagedPoolThread #16 15:49:02 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #6 15:49:21 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #9 15:49:21 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #9 15:49:22 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #6 15:49:22 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #3 15:51:49 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #7 15:51:49 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #7 15:51:52 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #3 15:52:25 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #10 15:53:14 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #8 15:53:16 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #8 15:53:16 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #10 15:53:19 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #13 15:53:47 INFO  Job started: Sitecore.Tasks.UrlAgent
+ManagedPoolThread #13 15:53:47 INFO  Scheduling.UrlAgent started. Url: http://understood.org.local/sitecore/service/keepalive.aspx
+ManagedPoolThread #13 15:53:50 INFO  Scheduling.UrlAgent done (received: 1071 bytes)
+ManagedPoolThread #13 15:53:50 INFO  Job ended: Sitecore.Tasks.UrlAgent (units processed: )
+ManagedPoolThread #19 15:55:40 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #11 15:55:40 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #11 15:55:41 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #19 15:55:41 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #17 15:56:13 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #1 15:56:13 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #1 15:56:15 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #1 15:56:15 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #17 15:56:15 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #17 15:56:15 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #1 15:56:16 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #17 15:56:16 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #5 15:56:21 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #16 15:56:21 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #5 15:56:21 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #5 15:56:21 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #16 15:56:21 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #16 15:56:21 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #5 15:56:22 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #16 15:56:22 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #7 15:56:25 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #4 15:56:25 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #4 15:56:26 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #4 15:56:26 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #7 15:56:26 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #7 15:56:26 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #4 15:56:26 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #4 15:56:26 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #7 15:56:27 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #8 15:56:27 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #4 15:56:27 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #8 15:56:27 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #12 15:56:31 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #10 15:56:31 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #10 15:56:32 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #12 15:56:34 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #13 15:56:34 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #11 15:56:34 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #13 15:56:35 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #11 15:56:35 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #14 15:56:40 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #19 15:56:40 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #19 15:56:40 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #19 15:56:40 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #14 15:56:40 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #14 15:56:40 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #19 15:56:41 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #14 15:56:41 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #17 15:56:49 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #1 15:56:49 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #1 15:56:49 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #9 15:56:49 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #17 15:56:49 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #17 15:56:49 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #9 15:56:49 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #17 15:56:50 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #5 15:56:53 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #16 15:56:53 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #5 15:56:54 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #16 15:56:54 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #3 15:56:57 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 15:56:57 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #2 15:56:58 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #0 15:56:58 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #3 15:56:58 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #3 15:56:58 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #3 15:56:59 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #4 15:56:59 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #0 15:56:59 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #0 15:56:59 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #4 15:56:59 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #0 15:56:59 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #10 15:57:55 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #12 15:57:55 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #10 15:57:56 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #12 15:57:56 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #13 15:57:59 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #11 15:57:59 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+Heartbeat 15:58:00 INFO  Health.PrivateBytes: 657,547,264
+Heartbeat 15:58:00 INFO  Health.CacheInstances: 91
+Heartbeat 15:58:00 INFO  Health.CacheTotalCount: 16,850
+Heartbeat 15:58:00 INFO  Health.CacheTotalSize: 49,694,214
+Heartbeat 15:58:00 INFO  Health.Counter(w3wp, Process\Private Bytes): 658,628,608
+Heartbeat 15:58:00 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 18,962,325,504
+ManagedPoolThread #11 15:58:00 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #13 15:58:00 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+Heartbeat 15:58:00 INFO  Health.Counter(w3wp, Process\Page File Bytes): 653,295,616
+Heartbeat 15:58:00 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 117,350,072
+Heartbeat 15:58:00 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 136,536
+Heartbeat 15:58:00 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 14,203,032
+Heartbeat 15:58:00 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 20,582,400
+Heartbeat 15:58:00 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 158
+ManagedPoolThread #18 15:58:16 INFO  Starting update of index for the database 'master' (31 pending).
+ManagedPoolThread #19 15:58:17 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #19 15:58:17 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #18 15:58:22 INFO  Update of index for the database 'master' done.
+12192 15:59:00 INFO  **************************************************
+12192 15:59:00 WARN  Sitecore shutting down
+12192 15:59:00 WARN  Shutdown message: Change Notification for critical directories.
+bin dir change or directory rename
+HostingEnvironment initiated shutdown
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+ManagedPoolThread #1 15:59:05 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #1 15:59:05 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #1 15:59:05 INFO  Examining schedules (count: 0)
+ManagedPoolThread #1 15:59:05 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #6 15:59:05 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #6 15:59:05 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #6 15:59:05 INFO  Examining schedules (count: 1)
+ManagedPoolThread #6 15:59:05 INFO  Starting: __Task Schedule
+ManagedPoolThread #6 15:59:05 INFO  Ended: __Task Schedule
+ManagedPoolThread #6 15:59:05 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #9 15:59:05 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #9 15:59:05 INFO  Processing tasks (count: 0)
+ManagedPoolThread #9 15:59:05 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+Heartbeat 15:59:20 INFO  HtmlCacheClearer clearing HTML caches for all sites (1).
+Heartbeat 15:59:20 INFO  HtmlCacheClearer done.
+ManagedPoolThread #5 15:59:21 INFO  Job started: Index_Update_IndexName=sitecore_web_index
+ManagedPoolThread #5 15:59:21 INFO  Job ended: Index_Update_IndexName=sitecore_web_index (units processed: )

@@ -1,0 +1,109 @@
+<scriptedContentFragments><scriptedContentFragment name="${resource:Blogs_BlogPostCommentForm_Name}" version="6.0.0.1" description="${resource:Blogs_BlogPostCommentForm_Description}" instanceIdentifier="00def6bf983b470f9fb85e0f9948b9a5" theme="" isCacheable="true" varyCacheByUser="true" showHeaderByDefault="false" cssClass="blog-post-comment-form"><contentScript>
+
+#set ($post = $core_v2_blogPost.Current)
+## hide if no post
+#if (!$post)
+	$core_v2_widget.Hide()
+#end
+
+#set ($blog = $core_v2_blog.Current)
+#set ($group = $core_v2_group.Get("%{ Id = $post.GroupId }"))
+#set ($displayCommentThreshold = $core_v2_widget.GetIntValue('displayCommentThreshold', 0))
+
+## hide when no group
+#if (!$group)
+	$core_v2_widget.Hide()
+#end
+## hide if the post is external
+#if ($post.IsExternal)
+	$core_v2_widget.Hide()
+#end
+## hide the post if comments aren't enabled on the post
+#if ($post.IsLocked)
+	$core_v2_widget.Hide()
+#end
+## hide if no permission
+#if (!$core_v2_nodePermission.Get('blogs',$blog.Id,'Blog_CreateComment').IsAllowed)
+	$core_v2_widget.Hide()
+#end
+## support comment count threshholds when configured with a non-zero value
+#if ($displayCommentThreshold != 0 &amp;&amp; $post.CommentCount &lt; $displayCommentThreshold)
+	$core_v2_widget.Hide()
+#end
+
+&lt;div id="$core_v2_widget.UniqueId('successMessage')" class="message success"&gt;
+	$core_v2_language.GetResource('CF_Comment_SuccessMessage') &amp;nbsp;
+	&lt;a href="#" class="internal-link close-message" title="$core_v2_language.GetResource('Close')"&gt;&lt;span&gt;&lt;/span&gt;$core_v2_language.GetResource('Close')&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div id="$core_v2_widget.UniqueId('moderateMessage')" class="message warning"&gt;
+	$core_v2_language.GetResource('CF_Comment_ModeratedMessaage') &amp;nbsp;
+	&lt;a href="#" class="internal-link close-message" title="$core_v2_language.GetResource('Close')"&gt;&lt;span&gt;&lt;/span&gt;$core_v2_language.GetResource('Close')&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div id="$core_v2_widget.UniqueId('errorMessage')" class="message error" style="display: none;"&gt;&lt;/div&gt;
+
+&lt;div id="$core_v2_widget.UniqueId('form')"&gt;
+	&lt;div class="field-list-header"&gt;&lt;/div&gt;
+	&lt;fieldset class="field-list"&gt;
+		&lt;legend class="field-list-description"&gt;$core_v2_language.GetResource('Weblog_CommentForm_WhatDoYouThink')&lt;/legend&gt;
+		&lt;ul class="field-list"&gt;
+			&lt;li class="field-item post-body"&gt;
+				#if (!$core_v2_user.IsRegistered($core_v2_user.Accessing.Id))
+					&lt;label class="field-item-header" for="post-body"&gt;$core_v2_language.GetResource('Weblog_CommentForm_Comments')&lt;/label&gt;
+				#end
+				&lt;span class="field-item-input"&gt;
+					&lt;textarea id="$core_v2_widget.UniqueId('body')" rows="3" name="$core_v2_widget.UniqueId('body')" style="resize: none; overflow-y: hidden;"&gt;&lt;/textarea&gt;
+				&lt;/span&gt;
+				&lt;span class="field-item-validation" style="display: none;"&gt;&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li class="field-item post-submit"&gt;
+				&lt;span class="field-item-input"&gt;
+					&lt;a href="#" onclick="return false;" class="internal-link add-reply submit-button" id="$core_v2_widget.UniqueId('save')"&gt;
+						&lt;span&gt;&lt;/span&gt;$core_v2_language.GetResource('Weblog_CommentForm_PostComment')
+					&lt;/a&gt;
+					&lt;span class="processing" style="visibility: hidden;"&gt;&lt;/span&gt;
+				&lt;/span&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+	&lt;div class="field-list-footer"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+#registerEndOfPageHtml('autoresize.jquery.min.js')
+	&lt;script type="text/javascript" src="$core_v2_encoding.HtmlAttributeEncode($core_v2_widget.GetFileUrl('autoresize.jquery.min.js'))"&gt;&lt;/script&gt;
+#end
+#registerEndOfPageHtml('telligent.evolution.widgets.BlogPostCommentForm')
+	&lt;script type="text/javascript" src="$core_v2_encoding.HtmlAttributeEncode($core_v2_widget.GetFileUrl('ui.js'))"&gt;&lt;/script&gt;
+#end
+#registerEndOfPageHtml()
+	&lt;script type="text/javascript"&gt;
+	jQuery(document).ready(function(j){
+		j.telligent.evolution.widgets.blogPostCommentForm.register({
+			wrapperId: '$core_v2_widget.WrapperElementId',
+			blogId: $blog.Id,
+			postId: $post.Id,
+			publishErrorText: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Weblog_CommentForm_PublishError'))',
+			publishingText: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Weblog_CommentForm_Publishing'))',
+			publishText: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Weblog_CommentForm_PostComment'))',
+			bodyRequiredText: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Weblog_CommentForm_EnterCommentWarning'))',
+			save: j('#$core_v2_widget.UniqueId('save')'),
+			bodySelector: '#$core_v2_widget.UniqueId('body')',
+			successMessage: j('#$core_v2_widget.UniqueId('successMessage')'),
+			moderateMessage: j('#$core_v2_widget.UniqueId('moderateMessage')'),
+			errorMessage: j('#$core_v2_widget.UniqueId('errorMessage')')
+		});
+	});
+	&lt;/script&gt;
+#end
+
+			</contentScript><headerScript>
+$core_v2_widget.ApplyTokens($core_v2_widget.GetStringValue('fragmentHeader', '${resource:Blogs_BlogPostCommentForm_Name}'))
+	</headerScript><configuration>
+&lt;propertyGroup id="options" resourceName="Options"&gt;
+	&lt;property id="fragmentHeader" resourceName="CF_Title" dataType="string" defaultValue="${resource:Blogs_BlogPostCommentForm_Name}" controlType="Telligent.Evolution.Controls.ContentFragmentTokenStringControl, Telligent.Evolution.Controls" /&gt;
+	&lt;property id="displayCommentThreshold" resourceName="CF_BlogPostCommentForm_DisplayCommentThreshold" dataType="int" defaultValue="0"&gt;
+		&lt;propertyRule type="Telligent.Evolution.Controls.PropertyRules.MinMaxValueRule, Telligent.Evolution.Controls" minValue="0" maxValue="100" /&gt;
+	&lt;/property&gt;
+&lt;/propertyGroup&gt;
+	</configuration><languageResources><language key="en-us"><resource name="Blogs_BlogPostCommentForm_Name">Blog - Add Comment Form</resource><resource name="Blogs_BlogPostCommentForm_Description">Displays a form used to add comments to a blog post.</resource><resource name="Options">Options</resource><resource name="CF_Title">Widget Title</resource><resource name="CF_BlogPostCommentForm_DisplayCommentThreshold">Minimum number of comments required to display</resource><resource name="CF_Comment_SuccessMessage">Your comment has been posted.</resource><resource name="Close">Close</resource><resource name="CF_Comment_ModeratedMessaage">Thank you, your comment requires moderation so it may take a while to appear.</resource><resource name="Weblog_CommentForm_WhatDoYouThink">Leave a Comment</resource><resource name="Weblog_CommentForm_Comments">Comment</resource><resource name="Weblog_CommentForm_PostComment">Post</resource><resource name="Weblog_CommentForm_PublishError">There was an error saving your comment.</resource><resource name="Weblog_CommentForm_Publishing">Publishing</resource><resource name="Weblog_CommentForm_EnterCommentWarning">Please enter a comment</resource></language></languageResources><requiredContext><context id="24fa6951ab1244f5be3df20cc46b361b" /></requiredContext><files><file name="autoresize.jquery.min.js">LyoNCiogalF1ZXJ5IGF1dG9SZXNpemUgKHRleHRhcmVhIGF1dG8tcmVzaXplcikNCiogQGNvcHlyaWdodCBKYW1lcyBQYWRvbHNleSBodHRwOi8vamFtZXMucGFkb2xzZXkuY29tDQoqIEB2ZXJzaW9uIDEuMDQNCiovDQoNCihmdW5jdGlvbihhKXthLmZuLmF1dG9SZXNpemU9ZnVuY3Rpb24oail7dmFyIGI9YS5leHRlbmQoe29uUmVzaXplOmZ1bmN0aW9uKCl7fSxhbmltYXRlOnRydWUsYW5pbWF0ZUR1cmF0aW9uOjE1MCxhbmltYXRlQ2FsbGJhY2s6ZnVuY3Rpb24oKXt9LGV4dHJhU3BhY2U6MjAsbGltaXQ6MTAwMH0saik7dGhpcy5maWx0ZXIoJ3RleHRhcmVhJykuZWFjaChmdW5jdGlvbigpe3ZhciBjPWEodGhpcykuY3NzKHtyZXNpemU6J25vbmUnLCdvdmVyZmxvdy15JzonaGlkZGVuJ30pLGs9Yy5oZWlnaHQoKSxmPShmdW5jdGlvbigpe3ZhciBsPVsnaGVpZ2h0Jywnd2lkdGgnLCdsaW5lSGVpZ2h0JywndGV4dERlY29yYXRpb24nLCdsZXR0ZXJTcGFjaW5nJ10saD17fTthLmVhY2gobCxmdW5jdGlvbihkLGUpe2hbZV09Yy5jc3MoZSl9KTtyZXR1cm4gYy5jbG9uZSgpLnJlbW92ZUF0dHIoJ2lkJykucmVtb3ZlQXR0cignbmFtZScpLmNzcyh7cG9zaXRpb246J2Fic29sdXRlJyx0b3A6MCxsZWZ0Oi05OTk5fSkuY3NzKGgpLmF0dHIoJ3RhYkluZGV4JywnLTEnKS5pbnNlcnRCZWZvcmUoYyl9KSgpLGk9bnVsbCxnPWZ1bmN0aW9uKCl7aWYoaz09MCl7az1jLmhlaWdodCgpO31mLmhlaWdodCgwKS52YWwoYSh0aGlzKS52YWwoKSkuc2Nyb2xsVG9wKDEwMDAwKTtmLndpZHRoKGMud2lkdGgoKSk7dmFyIGQ9TWF0aC5tYXgoZi5zY3JvbGxUb3AoKStiLmV4dHJhU3BhY2UsayksZT1hKHRoaXMpLmFkZChmKTtpZihpPT09ZCl7cmV0dXJufWk9ZDtpZihkPj1iLmxpbWl0KXthKHRoaXMpLmNzcygnb3ZlcmZsb3cteScsJycpO3JldHVybn1iLm9uUmVzaXplLmNhbGwodGhpcyk7Yi5hbmltYXRlJiZjLmNzcygnZGlzcGxheScpPT09J2Jsb2NrJz9lLnN0b3AoKS5hbmltYXRlKHtoZWlnaHQ6ZH0sYi5hbmltYXRlRHVyYXRpb24sYi5hbmltYXRlQ2FsbGJhY2spOmUuaGVpZ2h0KGQpfTtjLnVuYmluZCgnLmR5blNpeicpLmJpbmQoJ2tleXVwLmR5blNpeicsZykuYmluZCgna2V5ZG93bi5keW5TaXonLGcpLmJpbmQoJ2NoYW5nZS5keW5TaXonLGcpIH0pO3JldHVybiB0aGlzfX0pKGpRdWVyeSk7</file><file name="ui.js">KGZ1bmN0aW9uKCQsIGdsb2JhbCkgewoKCWlmICh0eXBlb2YgJC50ZWxsaWdlbnQgPT09ICd1bmRlZmluZWQnKSB7ICQudGVsbGlnZW50ID0ge307IH0KCWlmICh0eXBlb2YgJC50ZWxsaWdlbnQuZXZvbHV0aW9uID09PSAndW5kZWZpbmVkJykgeyAkLnRlbGxpZ2VudC5ldm9sdXRpb24gPSB7fTsgfQoJaWYgKHR5cGVvZiAkLnRlbGxpZ2VudC5ldm9sdXRpb24ud2lkZ2V0cyA9PT0gJ3VuZGVmaW5lZCcpIHsgJC50ZWxsaWdlbnQuZXZvbHV0aW9uLndpZGdldHMgPSB7fTsgfQoKCXZhciBfc2F2ZSA9IGZ1bmN0aW9uKGNvbnRleHQpCgl7CgkJY29udGV4dC5zdWNjZXNzTWVzc2FnZS5oaWRlKCk7CgkJY29udGV4dC5tb2RlcmF0ZU1lc3NhZ2UuaGlkZSgpOwoJCWNvbnRleHQuZXJyb3JNZXNzYWdlLmhpZGUoKTsKCQl2YXIgdyA9ICQoJyMnICsgY29udGV4dC53cmFwcGVySWQpOwoKCQljb250ZXh0LnNhdmUKCQkJLmh0bWwoJzxzcGFuPjwvc3Bhbj4nICsgY29udGV4dC5wdWJsaXNoaW5nVGV4dCkKCQkJLmFkZENsYXNzKCdkaXNhYmxlZCcpOwoKCQkkLnRlbGxpZ2VudC5ldm9sdXRpb24ucG9zdCh7CgkJCXVybDogJC50ZWxsaWdlbnQuZXZvbHV0aW9uLnNpdGUuZ2V0QmFzZVVybCgpICsgJ2FwaS5hc2h4L3YyL2Jsb2dzL3tCbG9nSWR9L3Bvc3RzL3tQb3N0SWR9L2NvbW1lbnRzLmpzb24/SW5jbHVkZUZpZWxkcz1Db21tZW50LklkLENvbW1lbnQuSXNBcHByb3ZlZCcsCgkJCWRhdGE6IHsKCQkJCUJvZHk6ICQoY29udGV4dC5ib2R5U2VsZWN0b3IpLnZhbCgpLAoJCQkJQmxvZ0lkOiBjb250ZXh0LmJsb2dJZCwKCQkJCVBvc3RJZDogY29udGV4dC5wb3N0SWQKCQkJfSwKCQkJc3VjY2VzczogZnVuY3Rpb24ocmVzcG9uc2UpIHsKCQkJCSQoJy5wcm9jZXNzaW5nJywgdykuY3NzKCd2aXNpYmlsaXR5JywgJ2hpZGRlbicpOwoKCQkJCWlmKHJlc3BvbnNlLkNvbW1lbnQuSXNBcHByb3ZlZCkgewoJCQkJCWNvbnRleHQuc3VjY2Vzc01lc3NhZ2Uuc2xpZGVEb3duKCk7CgkJCQkJZ2xvYmFsLnNldFRpbWVvdXQoZnVuY3Rpb24oKSB7IGNvbnRleHQuc3VjY2Vzc01lc3NhZ2UuZmFkZU91dCgpLnNsaWRlVXAoKTsgfSwgOTk5OSk7CgkJCQkJJChkb2N1bWVudCkudHJpZ2dlcigndGVsbGlnZW50X2Jsb2dzX2NvbW1lbnRwb3N0ZWQnLCAnJyk7CgkJCQl9IGVsc2UgewoJCQkJCWNvbnRleHQubW9kZXJhdGVNZXNzYWdlLnNsaWRlRG93bigpOwoJCQkJCWdsb2JhbC5zZXRUaW1lb3V0KGZ1bmN0aW9uKCkgeyBjb250ZXh0Lm1vZGVyYXRlTWVzc2FnZS5mYWRlT3V0KCkuc2xpZGVVcCgpOyB9LCA5OTk5KTsKCQkJCX0KCgkJCQkkKGNvbnRleHQuYm9keVNlbGVjdG9yKS52YWwoJycpOwoJCQkJY29udGV4dC5zYXZlLmV2b2x1dGlvblZhbGlkYXRpb24oJ3Jlc2V0Jyk7CgkJCQljb250ZXh0LnNhdmUuaHRtbCgnPHNwYW4+PC9zcGFuPicgKyBjb250ZXh0LnB1Ymxpc2hUZXh0KS5yZW1vdmVDbGFzcygnZGlzYWJsZWQnKTsKCQkJfSwKCQkJZXJyb3I6IGZ1bmN0aW9uKHhociwgZGVzYywgZXgpIHsKCQkJCSQoJy5wcm9jZXNzaW5nJywgdykuY3NzKCJ2aXNpYmlsaXR5IiwgImhpZGRlbiIpOwoJCQkJY29udGV4dC5zYXZlLmh0bWwoJzxzcGFuPjwvc3Bhbj4nICsgY29udGV4dC5wdWJsaXNoVGV4dCkucmVtb3ZlQ2xhc3MoJ2Rpc2FibGVkJyk7CgkJCQljb250ZXh0LmVycm9yTWVzc2FnZS5odG1sKGNvbnRleHQucHVibGlzaEVycm9yVGV4dCArICcgKCcgKyBkZXNjICsgJyknKS5zbGlkZURvd24oKTsKCQkJfQoJCX0pOwoJfTsKCgkkLnRlbGxpZ2VudC5ldm9sdXRpb24ud2lkZ2V0cy5ibG9nUG9zdENvbW1lbnRGb3JtID0gewoJCXJlZ2lzdGVyOiBmdW5jdGlvbihjb250ZXh0KSB7CgkJCSQoY29udGV4dC5ib2R5U2VsZWN0b3IpLmF1dG9SZXNpemUoeyBhbmltYXRlOiBmYWxzZSwgbGltaXQ6IDMwMDAsIGV4dHJhU3BhY2U6IDE1IH0pOwoKCQkJaWYgKGRvY3VtZW50LlVSTC5pbmRleE9mKCcjYWRkY29tbWVudCcpID49IDApIHsKCQkJCSQoY29udGV4dC5ib2R5U2VsZWN0b3IpLmZvY3VzKCk7CgkJCX0KCgkJCSQoJy5pbnRlcm5hbC1saW5rLmNsb3NlLW1lc3NhZ2UnLCAkKCcjJyArIGNvbnRleHQud3JhcHBlcklkKSkuY2xpY2soZnVuY3Rpb24oKSB7CgkJCQkkKHRoaXMpLmJsdXIoKTsKCQkJCWNvbnRleHQuc3VjY2Vzc01lc3NhZ2UuZmFkZU91dCgpLnNsaWRlVXAoKTsKCQkJCXJldHVybiBmYWxzZTsKCQkJfSk7CgoJCQljb250ZXh0LnNhdmUKCQkJCS5ldm9sdXRpb25WYWxpZGF0aW9uKHsKCQkJCQlvblZhbGlkYXRlZDogZnVuY3Rpb24oaXNWYWxpZCwgYnV0dG9uQ2xpY2tlZCwgYykKCQkJCQl7CgkJCQkJCWlmIChpc1ZhbGlkKSB7CgkJCQkJCQljb250ZXh0LnNhdmUucmVtb3ZlQ2xhc3MoJ2Rpc2FibGVkJyk7CgkJCQkJCX0gZWxzZSB7CgkJCQkJCQljb250ZXh0LnNhdmUuYWRkQ2xhc3MoJ2Rpc2FibGVkJyk7CgkJCQkJCX0KCQkJCQl9LAoJCQkJCW9uU3VjY2Vzc2Z1bENsaWNrOiBmdW5jdGlvbihlKQoJCQkJCXsKCQkJCQkJZS5wcmV2ZW50RGVmYXVsdCgpOwoJCQkJCQkkKCcucHJvY2Vzc2luZycsIGNvbnRleHQuc2F2ZS5wYXJlbnQoKSkuY3NzKCJ2aXNpYmlsaXR5IiwgInZpc2libGUiKTsKCQkJCQkJY29udGV4dC5zYXZlLmFkZENsYXNzKCdkaXNhYmxlZCcpOwoJCQkJCQlfc2F2ZShjb250ZXh0KTsKCQkJCQl9CgkJCQl9KQoJCQkJLmV2b2x1dGlvblZhbGlkYXRpb24oJ2FkZEZpZWxkJyxjb250ZXh0LmJvZHlTZWxlY3RvciwgewoJCQkJCXJlcXVpcmVkOiB0cnVlLAoJCQkJCW1heGxlbmd0aDogMTAwMDAwMCwKCQkJCQltZXNzYWdlczoKCQkJCQl7CgkJCQkJCXJlcXVpcmVkOiBjb250ZXh0LmJvZHlSZXF1aXJlZFRleHQKCQkJCQl9CgkJCQl9LCAnIycgKyBjb250ZXh0LndyYXBwZXJJZCArICcgLmZpZWxkLWl0ZW0ucG9zdC1ib2R5IC5maWVsZC1pdGVtLXZhbGlkYXRpb24nLCBudWxsKTsKCQl9Cgl9OwoKfSkoalF1ZXJ5LCB3aW5kb3cpOwo=</file></files></scriptedContentFragment></scriptedContentFragments>

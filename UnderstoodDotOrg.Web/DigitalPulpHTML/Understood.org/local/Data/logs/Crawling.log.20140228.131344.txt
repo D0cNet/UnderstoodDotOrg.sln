@@ -1,0 +1,175 @@
+5852 13:13:45 INFO  [Index=sitecore_core_index] Initializing IntervalAsynchronousUpdateStrategy with interval '00:01:00'.
+5852 13:13:46 INFO  [Index=sitecore_core_index] Initializing SitecoreItemCrawler. DB:core / Root:/sitecore
+5852 13:13:46 INFO  [Index=sitecore_master_index] Initializing SynchronousStrategy.
+5852 13:13:46 INFO  [Index=sitecore_master_index] Initializing SitecoreItemCrawler. DB:master / Root:/sitecore
+5852 13:13:46 INFO  [Index=sitecore_web_index] Initializing OnPublishEndAsynchronousStrategy.
+5852 13:13:46 INFO  [Index=sitecore_web_index] Initializing SitecoreItemCrawler. DB:web / Root:/sitecore
+9260 13:14:46 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9260 13:14:46 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9260 13:15:48 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9260 13:15:48 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9552 13:16:50 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9552 13:16:50 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+3516 13:17:50 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+3516 13:17:50 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9552 13:18:52 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9552 13:18:52 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10028 13:19:54 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10028 13:19:54 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9592 13:20:56 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9592 13:20:56 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+6516 13:21:56 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+6516 13:21:56 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10028 13:22:58 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10028 13:22:58 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10028 13:23:59 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10028 13:23:59 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+2636 13:25:01 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+2636 13:25:01 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10028 13:26:03 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10028 13:26:03 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+2636 13:27:03 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+2636 13:27:03 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9552 13:28:03 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9552 13:28:03 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9604 13:29:05 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9604 13:29:05 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+2636 13:30:07 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+2636 13:30:07 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10144 13:31:09 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10144 13:31:09 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10148 13:32:09 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10148 13:32:09 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10144 13:33:11 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10144 13:33:11 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9988 13:34:13 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9988 13:34:13 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9016 13:35:15 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9016 13:35:15 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+2636 13:36:17 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+2636 13:36:17 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+6280 13:37:19 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+6280 13:37:19 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8876 13:38:21 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8876 13:38:21 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8372 13:39:23 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8372 13:39:23 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9188 13:40:25 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9188 13:40:25 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9360 13:41:27 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9360 13:41:27 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+2636 13:42:29 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+2636 13:42:29 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9760 13:43:31 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9760 13:43:31 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5460 13:44:31 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5460 13:44:31 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+2636 13:45:33 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+2636 13:45:33 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10072 13:46:35 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10072 13:46:35 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+2252 13:47:37 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+2252 13:47:37 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+2252 13:48:39 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+2252 13:48:39 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+2636 13:49:39 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+2636 13:49:39 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10072 13:50:41 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10072 13:50:41 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+2636 13:51:43 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+2636 13:51:43 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10072 13:52:45 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10072 13:52:45 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+1296 13:53:47 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+1296 13:53:47 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9372 13:54:48 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9372 13:54:48 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10072 13:55:49 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10072 13:55:49 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10152 13:56:51 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10152 13:56:51 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8772 13:57:54 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8772 13:57:54 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8160 13:58:55 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8160 13:58:55 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8772 13:59:57 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8772 13:59:57 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9652 14:00:59 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9652 14:00:59 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+7428 14:02:01 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+7428 14:02:01 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10156 14:03:03 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10156 14:03:03 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9424 14:04:04 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9424 14:04:04 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8708 14:05:07 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8708 14:05:07 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+3892 14:06:08 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+3892 14:06:08 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+6480 14:07:10 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+6480 14:07:10 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5176 14:08:12 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5176 14:08:12 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5444 14:09:12 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5444 14:09:12 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5176 14:10:14 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5176 14:10:14 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+4756 14:11:16 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+4756 14:11:16 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+3892 14:12:18 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+3892 14:12:18 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9512 14:13:18 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9512 14:13:18 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+ManagedPoolThread #4 14:13:47 INFO  [Index=sitecore_master_index] Optimizing
+ManagedPoolThread #4 14:13:48 INFO  [Index=sitecore_master_index] Optimized
+8284 14:14:19 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8284 14:14:19 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5548 14:15:20 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5548 14:15:20 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5548 14:16:22 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5548 14:16:22 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9652 14:17:25 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9652 14:17:25 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+4368 14:18:26 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+4368 14:18:26 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9076 14:19:28 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9076 14:19:28 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9684 14:20:31 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9684 14:20:31 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9540 14:21:31 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9540 14:21:31 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+10012 14:22:31 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+10012 14:22:31 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9076 14:23:32 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9076 14:23:32 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+ManagedPoolThread #18 14:23:44 WARN  Stopping indexing while package is being installed.
+ManagedPoolThread #18 14:23:44 WARN  [Index=sitecore_core_index] Crawling Stopped
+ManagedPoolThread #18 14:23:44 WARN  [Index=sitecore_master_index] Crawling Stopped
+ManagedPoolThread #18 14:23:44 WARN  [Index=sitecore_web_index] Crawling Stopped
+9684 14:24:32 WARN  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy triggered but muted. Indexing is paused.
+ManagedPoolThread #18 14:24:32 INFO  Updating '17' items from installed items.
+ManagedPoolThread #18 14:24:32 INFO  [Index=sitecore_core_index] Updating '17' items from installed items.
+ManagedPoolThread #18 14:24:32 INFO  IndexCustodian. ForcedIncrementalUpdate triggered on index sitecore_core_index. Data=Count=17
+ManagedPoolThread #14 14:24:33 INFO  [Index=sitecore_core_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=2/28/2014 1:13:45 PM, count=1
+ManagedPoolThread #14 14:24:33 INFO  [Index=sitecore_core_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #14 14:24:33 INFO  [Index=sitecore_core_index] Committed
+ManagedPoolThread #14 14:24:33 INFO  [Index=sitecore_core_index] Committing: Add: 0; Update:107; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #14 14:24:33 INFO  [Index=sitecore_core_index] Committed
+ManagedPoolThread #14 14:24:33 INFO  IndexDependentHtmlCacheManager triggered.
+ManagedPoolThread #14 14:24:33 INFO  Clearing index dependent cache for site 'shell'.
+ManagedPoolThread #14 14:24:33 INFO  Clearing index dependent cache for site 'login'.
+ManagedPoolThread #14 14:24:33 INFO  Clearing index dependent cache for site 'admin'.
+ManagedPoolThread #14 14:24:33 INFO  Clearing index dependent cache for site 'service'.
+ManagedPoolThread #14 14:24:33 INFO  Clearing index dependent cache for site 'modules_shell'.
+ManagedPoolThread #14 14:24:33 INFO  Clearing index dependent cache for site 'modules_website'.
+ManagedPoolThread #14 14:24:33 INFO  Clearing index dependent cache for site 'website'.
+ManagedPoolThread #14 14:24:33 INFO  Clearing index dependent cache for site 'scheduler'.
+ManagedPoolThread #14 14:24:33 INFO  Clearing index dependent cache for site 'system'.
+ManagedPoolThread #14 14:24:33 INFO  Clearing index dependent cache for site 'publisher'.
+ManagedPoolThread #14 14:24:33 INFO  IndexDependentHtmlCacheManager done.
+ManagedPoolThread #18 14:24:33 INFO  Items from installed items have been indexed.
+7040 14:24:34 WARN  Hosting Environment Stop Requested : immediate=False
+7040 14:24:34 WARN  [Index=sitecore_core_index] Crawling Stopped
+7040 14:24:34 WARN  [Index=sitecore_master_index] Crawling Stopped
+7040 14:24:34 WARN  [Index=sitecore_web_index] Crawling Stopped
+7040 14:25:04 WARN  Hosting Environment Stop Requested : immediate=True

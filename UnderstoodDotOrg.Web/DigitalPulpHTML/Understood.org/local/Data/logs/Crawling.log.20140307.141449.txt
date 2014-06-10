@@ -1,0 +1,456 @@
+13524 14:15:09 INFO  [Index=sitecore_core_index] Initializing IntervalAsynchronousUpdateStrategy with interval '00:01:00'.
+13524 14:15:09 INFO  [Index=sitecore_core_index] Initializing SitecoreItemCrawler. DB:core / Root:/sitecore
+13524 14:15:09 INFO  [Index=sitecore_master_index] Initializing SynchronousStrategy.
+13524 14:15:09 INFO  [Index=sitecore_master_index] Initializing SitecoreItemCrawler. DB:master / Root:/sitecore
+13524 14:15:09 INFO  [Index=sitecore_web_index] Initializing OnPublishEndAsynchronousStrategy.
+13524 14:15:09 INFO  [Index=sitecore_web_index] Initializing SitecoreItemCrawler. DB:web / Root:/sitecore
+13524 14:15:09 INFO  [Index=mediaframework_brightcove_index] Initializing SynchronousStrategy.
+13524 14:15:09 INFO  [Index=mediaframework_brightcove_index] Initializing SitecoreItemCrawler. DB:master / Root:{7150B2B1-EB68-40EE-991F-2AFEDB532C46}
+14856 14:16:10 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+14856 14:16:10 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8576 14:17:12 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8576 14:17:12 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8576 14:18:12 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8576 14:18:13 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17412 14:19:14 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17412 14:19:15 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17024 14:20:15 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17024 14:20:15 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8980 14:21:48 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8980 14:21:50 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9672 14:22:49 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9672 14:22:49 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9600 14:23:52 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9600 14:23:52 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17120 14:24:53 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17120 14:24:53 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+7008 14:25:54 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+7008 14:25:54 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8576 14:26:54 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8576 14:26:54 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17412 14:27:54 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17412 14:27:55 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+7544 14:28:56 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+7544 14:28:57 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+12936 14:29:56 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+12936 14:29:56 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17888 14:30:56 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17888 14:30:56 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+13500 14:31:56 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+13500 14:31:56 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8980 14:32:59 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8980 14:32:59 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17412 14:34:01 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17412 14:34:01 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9672 14:35:01 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9672 14:35:01 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5752 14:36:01 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5752 14:36:01 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9672 14:37:01 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9672 14:37:01 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17120 14:38:03 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17120 14:38:03 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+14856 14:39:06 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+14856 14:39:06 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8928 14:40:08 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8928 14:40:08 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+7544 14:41:08 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+7544 14:41:08 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17024 14:42:08 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17024 14:42:08 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17120 14:43:11 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17120 14:43:11 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17888 14:44:11 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17888 14:44:11 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5752 14:45:13 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5752 14:45:13 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+7544 14:46:14 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+7544 14:46:14 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17412 14:47:15 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17412 14:47:15 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9600 14:48:17 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9600 14:48:17 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5752 14:49:17 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5752 14:49:17 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+14856 14:50:18 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+14856 14:50:18 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+12936 14:51:19 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+12936 14:51:19 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17120 14:52:20 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17120 14:52:20 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5752 14:53:21 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5752 14:53:21 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17120 14:54:22 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17120 14:54:22 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17412 14:55:23 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17412 14:55:23 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+14856 14:56:23 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+14856 14:56:23 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9748 14:57:23 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9748 14:57:23 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+7008 14:58:26 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+7008 14:58:26 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17888 14:59:27 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17888 14:59:27 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8980 15:00:29 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8980 15:00:29 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9672 15:01:31 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9672 15:01:31 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17412 15:02:31 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17412 15:02:31 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+13500 15:03:31 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+13500 15:03:31 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+13944 15:04:33 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+13944 15:04:33 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17024 15:05:33 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17024 15:05:33 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17120 15:06:35 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17120 15:06:35 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+12936 15:07:35 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+12936 15:07:35 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+9672 15:08:37 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9672 15:08:37 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8980 15:09:37 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8980 15:09:37 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17120 15:10:39 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17120 15:10:39 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+13500 15:11:39 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+13500 15:11:39 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8968 15:12:40 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8968 15:12:40 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+14856 15:13:41 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+14856 15:13:41 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+13944 15:14:43 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+13944 15:14:43 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+ManagedPoolThread #7 15:15:17 INFO  [Index=sitecore_master_index] Optimizing
+ManagedPoolThread #7 15:15:19 INFO  [Index=sitecore_master_index] Optimized
+8928 15:15:43 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8928 15:15:43 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+13500 15:16:45 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+13500 15:16:45 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17888 15:17:47 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17888 15:17:47 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+13944 15:18:49 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+13944 15:18:49 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+13944 15:19:49 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+13944 15:19:49 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+13944 15:20:51 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+13944 15:20:51 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5752 15:21:52 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5752 15:21:52 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+5752 15:22:52 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5752 15:22:52 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8980 15:23:53 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8980 15:23:53 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+ManagedPoolThread #4 15:24:30 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #4 15:24:30 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #5 15:24:31 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #5 15:24:31 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #4 15:24:31 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #5 15:24:31 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #4 15:24:31 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #4 15:24:31 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #5 15:24:31 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #5 15:24:31 INFO  [Index=mediaframework_brightcove_index] Committed
+9600 15:24:54 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+9600 15:24:54 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17120 15:25:54 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17120 15:25:54 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+8968 15:26:54 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8968 15:26:54 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+ManagedPoolThread #11 15:27:23 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #11 15:27:23 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #14 15:27:23 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #14 15:27:23 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #11 15:27:23 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #14 15:27:23 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #11 15:27:23 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #11 15:27:23 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #14 15:27:23 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #14 15:27:23 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #19 15:27:38 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #19 15:27:38 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #15 15:27:38 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #15 15:27:38 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #19 15:27:38 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #15 15:27:38 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #19 15:27:38 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #19 15:27:38 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #15 15:27:39 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #15 15:27:39 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #2 15:27:46 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #2 15:27:46 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #17 15:27:46 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #17 15:27:46 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #17 15:27:46 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #2 15:27:46 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #17 15:27:46 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #17 15:27:46 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #2 15:27:46 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #2 15:27:46 INFO  [Index=sitecore_master_index] Committed
+17120 15:27:54 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17120 15:27:54 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+ManagedPoolThread #16 15:28:02 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #16 15:28:02 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #1 15:28:02 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #1 15:28:02 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #1 15:28:02 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #16 15:28:02 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #16 15:28:02 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #16 15:28:02 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #1 15:28:02 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #1 15:28:02 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #0 15:28:22 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #0 15:28:22 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #18 15:28:22 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #18 15:28:22 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #18 15:28:22 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #0 15:28:22 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #18 15:28:23 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #18 15:28:23 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #0 15:28:23 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #0 15:28:23 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #4 15:28:32 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #4 15:28:32 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #5 15:28:32 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #5 15:28:32 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #5 15:28:32 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #4 15:28:32 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #5 15:28:32 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #5 15:28:32 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #4 15:28:32 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #4 15:28:32 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #9 15:28:40 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #9 15:28:40 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #9 15:28:40 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #8 15:28:40 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #8 15:28:40 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #8 15:28:40 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #9 15:28:40 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #9 15:28:40 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #8 15:28:40 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #8 15:28:40 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #7 15:28:48 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #7 15:28:48 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #3 15:28:48 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #3 15:28:48 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #7 15:28:48 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #3 15:28:48 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #7 15:28:48 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #7 15:28:48 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #3 15:28:48 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #3 15:28:48 INFO  [Index=mediaframework_brightcove_index] Committed
+17888 15:28:56 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+ManagedPoolThread #6 15:28:56 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #6 15:28:56 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+17888 15:28:56 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+ManagedPoolThread #13 15:28:56 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #13 15:28:56 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #6 15:28:56 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #13 15:28:56 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #6 15:28:56 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #6 15:28:56 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #13 15:28:56 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #13 15:28:56 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #10 15:29:04 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #10 15:29:04 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #12 15:29:04 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #12 15:29:04 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #10 15:29:04 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #12 15:29:04 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #10 15:29:04 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #10 15:29:04 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #12 15:29:04 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #12 15:29:04 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #11 15:29:12 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #11 15:29:12 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #14 15:29:12 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #14 15:29:12 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #11 15:29:13 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #14 15:29:13 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #11 15:29:13 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #11 15:29:13 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #14 15:29:13 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #14 15:29:13 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #15 15:29:24 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #15 15:29:24 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #15 15:29:24 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #19 15:29:24 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #19 15:29:24 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #15 15:29:25 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #15 15:29:25 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #19 15:29:25 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #19 15:29:25 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #19 15:29:25 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #17 15:29:36 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #17 15:29:36 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #2 15:29:36 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #2 15:29:36 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #2 15:29:36 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #17 15:29:36 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #17 15:29:37 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #17 15:29:37 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #2 15:29:37 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #2 15:29:37 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #16 15:29:44 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #16 15:29:44 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #1 15:29:44 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #1 15:29:44 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #16 15:29:44 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #1 15:29:44 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #16 15:29:45 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #16 15:29:45 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #1 15:29:45 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #1 15:29:45 INFO  [Index=mediaframework_brightcove_index] Committed
+14856 15:29:56 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+14856 15:29:56 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+ManagedPoolThread #0 15:29:56 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #0 15:29:56 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #18 15:29:56 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #18 15:29:56 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #18 15:29:56 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #0 15:29:56 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #0 15:29:57 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #0 15:29:57 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #18 15:29:57 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #18 15:29:57 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #5 15:30:09 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #5 15:30:09 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #5 15:30:10 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #4 15:30:10 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #4 15:30:10 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #5 15:30:10 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #5 15:30:10 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #4 15:30:10 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #4 15:30:10 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #4 15:30:10 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #9 15:30:16 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #9 15:30:16 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #8 15:30:16 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #8 15:30:16 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #9 15:30:17 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #8 15:30:17 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #9 15:30:17 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #9 15:30:17 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #8 15:30:17 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #8 15:30:17 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #6 15:30:24 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #6 15:30:24 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #3 15:30:25 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #3 15:30:25 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #3 15:30:25 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #6 15:30:25 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #3 15:30:25 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #3 15:30:25 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #6 15:30:25 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #6 15:30:25 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #15 15:30:35 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #15 15:30:35 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #19 15:30:35 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #19 15:30:35 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #15 15:30:35 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #15 15:30:35 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #15 15:30:35 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #19 15:30:36 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #19 15:30:36 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #19 15:30:36 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #17 15:30:52 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #17 15:30:52 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #2 15:30:52 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #2 15:30:52 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #17 15:30:52 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #2 15:30:52 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #17 15:30:53 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #17 15:30:53 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #2 15:30:53 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #2 15:30:53 INFO  [Index=mediaframework_brightcove_index] Committed
+8576 15:30:58 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+8576 15:30:58 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+ManagedPoolThread #16 15:31:05 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #16 15:31:05 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #16 15:31:06 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #1 15:31:06 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #1 15:31:06 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #1 15:31:06 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #16 15:31:06 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #16 15:31:06 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #1 15:31:06 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #1 15:31:06 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #0 15:31:25 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #0 15:31:25 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #18 15:31:25 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #18 15:31:25 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #18 15:31:25 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #0 15:31:25 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #0 15:31:25 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #0 15:31:25 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #18 15:31:25 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #18 15:31:25 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #5 15:31:36 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #5 15:31:36 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #4 15:31:36 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #4 15:31:36 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #5 15:31:36 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #4 15:31:37 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #5 15:31:37 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #5 15:31:37 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #4 15:31:37 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #4 15:31:37 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #8 15:31:44 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #8 15:31:44 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #8 15:31:44 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #9 15:31:44 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #9 15:31:44 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #9 15:31:44 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #8 15:31:45 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #9 15:31:45 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #9 15:31:45 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #8 15:31:45 INFO  [Index=sitecore_master_index] Committed
+5752 15:31:58 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+5752 15:31:58 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+ManagedPoolThread #7 15:32:00 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #7 15:32:00 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #13 15:32:00 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #13 15:32:00 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #13 15:32:01 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #7 15:32:01 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #13 15:32:01 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #13 15:32:01 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #7 15:32:01 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #7 15:32:01 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #6 15:32:16 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #6 15:32:16 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #6 15:32:16 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #3 15:32:16 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #3 15:32:16 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #3 15:32:16 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #6 15:32:16 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #6 15:32:16 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #3 15:32:17 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #3 15:32:17 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #14 15:32:28 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #14 15:32:28 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #14 15:32:28 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #10 15:32:29 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #10 15:32:29 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #14 15:32:29 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #14 15:32:29 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #10 15:32:29 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #10 15:32:29 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #10 15:32:29 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #12 15:32:44 INFO  [Index=sitecore_master_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #12 15:32:44 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #15 15:32:44 INFO  [Index=mediaframework_brightcove_index] TimeIntervalCommitPolicy.ShouldCommit - Time Limit Exceeded, lastCommit=3/7/2014 2:15:09 PM, count=1
+ManagedPoolThread #15 15:32:44 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:0; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #12 15:32:44 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #15 15:32:44 INFO  [Index=mediaframework_brightcove_index] Committed
+ManagedPoolThread #12 15:32:44 INFO  [Index=sitecore_master_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #12 15:32:44 INFO  [Index=sitecore_master_index] Committed
+ManagedPoolThread #15 15:32:44 INFO  [Index=mediaframework_brightcove_index] Committing: Add: 0; Update:1; DeleteUnique: 0; DeleteGroup: 0
+ManagedPoolThread #15 15:32:44 INFO  [Index=mediaframework_brightcove_index] Committed
+14856 15:33:00 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+14856 15:33:00 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+17412 15:34:02 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+17412 15:34:02 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+14856 15:35:03 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+14856 15:35:03 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns

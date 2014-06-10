@@ -1,0 +1,91 @@
+﻿@using Sitecore.Data
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using Sitecore.Web.UI.Controls.Common.Texts
+@using Sitecore.Web.UI.Controls.Common.Buttons
+@using Sitecore.Web.UI.Controls.Common.Renderings
+@using Sitecore.Web.UI.Controls.Data.SearchDataSources
+@model RenderingModel    
+@{
+    var rendering = new ID("{ACE0AFD6-3DE0-42CF-8E62-4E68CD810A8D}").ToString();
+}
+
+<h3>Apperance</h3>
+<p>
+    List Control. DetailList view as a default ViewMode
+</p>
+@Html.Sitecore().Controls().SearchDataSource("SearchDataSource1", new { SearchConfigItemId = "{57AC916A-7162-41DA-B6A5-FC053254387B}", PageSize = 9, Language = "$context_language", Fields="__Created", Formatting="$convert_date_to_friendly_format", Database="$context_contentdatabase" })
+@Html.Sitecore().Controls().Rendering(this.Html, rendering, "ListControl1", "{CD471110-0BD6-4925-8107-A10BB27880D9}", new{ Items="{Binding SearchDataSource1.items}"})
+<br />
+<pre>
+&#64;Html.Sitecore().Controls().SearchDataSource("SearchDataSource1", new { SearchConfigItemId = "{57AC916A-7162-41DA-B6A5-FC053254387B}", PageSize = 9, Language = "$context_language", Fields="__Created", Formatting="$convert_date_to_friendly_format", Database="$context_contentdatabase" })
+&#64;Html.Sitecore().Controls().Rendering(this.Html, rendering, "ListControl1", "{CD471110-0BD6-4925-8107-A10BB27880D9}", new{ Items="{Binding SearchDataSource1.items}" })
+</pre>
+
+
+<p>IconList ViewMode</p>
+@Html.Sitecore().Controls().Rendering(this.Html, rendering, "ListControl2", "{CD471110-0BD6-4925-8107-A10BB27880D9}", new{ Items="{Binding SearchDataSource1.items}", ViewMode = "IconList"})
+<br />
+<pre>
+&#64;Html.Sitecore().Controls().Rendering(this.Html, rendering, "ListControl2", "{CD471110-0BD6-4925-8107-A10BB27880D9}", new{ Items="{Binding SearchDataSource1.items}" })
+</pre>
+
+<h2>List Control with static source</h2>
+
+<p>
+  @Html.Sitecore().Controls().Button("Button1", new { Text = "Click Me to fill List Control", Click = "javascript:app.ListControl3.set('items', items)" })
+  @Html.Sitecore().Controls().Rendering(this.Html, rendering, "ListControl3", "{CD471110-0BD6-4925-8107-A10BB27880D9}", new{  })
+</p>
+<pre>
+&#64;Html.Sitecore().Controls().Button("Button1", new { Text = "Click Me to fill List Control", Click = "javascript:app.ListControl11.set('items', items)" })
+&#64;Html.Sitecore().Controls().Rendering(this.Html, rendering, "ListControl3", "{CD471110-0BD6-4925-8107-A10BB27880D9}", new{  })
+</pre>
+<pre>
+var items = [
+    {
+        $displayName: "Item Buckets",
+        $templateName: "Template Folder",
+        __Created: "Thursday, October 27, 2011 2:37 PM",
+        itemId: "{AB323CEF-9997-47D7-A070-CDC1177D82B0}",
+        itemName: "Item Buckets"
+    },
+    {
+        $displayName: "Item Buckets",
+        $templateName: "Template Folder",
+        __Created: "Wednesday, October 26, 2011 2:37 PM",
+        itemId: "{AB323CEF-9997-47D7-A070-CDC1177D82BD}",
+        itemName: "Item Buckets"
+    }
+];
+</pre>
+<script id="MockDataSource" type="text/javascript">
+    var items = [
+        {
+            $displayName: "Item Buckets",
+            $templateName: "Template Folder",
+            __Created: "Thursday, October 27, 2011 2:37 PM",
+            itemId: "{AB323CEF-9997-47D7-A070-CDC1177D82B0}",
+            itemName: "Item Buckets"
+        },
+        {
+            $displayName: "Item Buckets",
+            $templateName: "Template Folder",
+            __Created: "Wednesday, October 26, 2011 2:37 PM",
+            itemId: "{AB323CEF-9997-47D7-A070-CDC1177D82BD}",
+            itemName: "Item Buckets"
+        }
+    ];
+</script>
+
+
+<h2>Events</h2>
+Selected item id: @Html.Sitecore().Controls().Text("Text1", "Select an option", new { Text = "{Binding ListControl4.selectedItemId}" })<br />
+@Html.Sitecore().Controls().Rendering(this.Html, rendering, "ListControl4", "{CD471110-0BD6-4925-8107-A10BB27880D9}", new{ Items="{Binding SearchDataSource1.items}"})<br />
+@Html.Sitecore().Controls().Button("Button2", new { Text = "Click Me to change ViewMode to IconList", Click = "javascript:app.ListControl4.set('view', 'IconList')" })
+<br /><br />
+<pre>
+&#64;Html.Sitecore().Controls().Text("Text1", "Select an option", new { Text = "{Binding ListControl3.selectedItemId}" })
+&#64;Html.Sitecore().Controls().Rendering(this.Html, rendering, "ListControl4", "{CD471110-0BD6-4925-8107-A10BB27880D9}", new{ Items="{Binding SearchDataSource1.items}" })
+&#64;Html.Sitecore().Controls().Button("Button2", new { Text = "Click Me to change ViewMode to IconList", Click = "javascript:app.ListControl4.set('view', 'IconList')" })
+</pre>
+

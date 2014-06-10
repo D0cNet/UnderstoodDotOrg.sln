@@ -1,0 +1,1130 @@
+12072 16:15:47 INFO  HttpModule is being initialized
+12072 16:15:47 INFO  
+12072 16:15:47 INFO  **********************************************************************
+12072 16:15:47 INFO  **********************************************************************
+12072 16:15:47 INFO  Sitecore started
+12072 16:15:47 INFO  Sitecore.NET 7.0 (rev. 140120)
+12072 16:15:47 INFO  
+12072 16:15:47 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Client.dll (Sitecore CMS, Sitecore Client Application, 7.0 rev. 140120)
+12072 16:15:47 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Kernel.dll (Sitecore CMS, Sitecore CMS Kernel Library, 7.0 rev. 140120)
+12072 16:15:47 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Nexus.dll (Sitecore.Nexus)
+12072 16:15:47 INFO  
+12072 16:15:47 INFO  Operating system Microsoft Windows NT 6.1.7601 Service Pack 1
+12072 16:15:47 INFO  
+12072 16:15:47 INFO  Microsoft.NET version 4.0.30319.18444
+12072 16:15:47 INFO  
+12072 16:15:47 INFO  Process id: 10244
+12072 16:15:47 INFO  Windows identity used by the process: NT AUTHORITY\NETWORK SERVICE. Impersonation: False
+12072 16:15:47 INFO  Managed pipeline mode: Integrated
+12072 16:15:47 INFO  
+12072 16:15:47 INFO  EventQueues enabled: True
+12072 16:15:47 INFO  Instance Name:CHADDADT-PC-understood.org.local
+12072 16:15:47 INFO  
+12072 16:15:47 INFO  Threshold settings
+12072 16:15:47 INFO    Show threshold warnings: False
+12072 16:15:47 INFO  
+12072 16:15:47 INFO  Databases
+12072 16:15:47 INFO    core
+12072 16:15:47 INFO    master
+12072 16:15:47 INFO    web
+12072 16:15:47 INFO    filesystem
+12072 16:15:47 INFO  
+12072 16:15:47 INFO  Domains
+12072 16:15:47 INFO  Heartbeat - Initializing
+12072 16:15:47 INFO  Heartbeat - Interval set to: 00:00:02
+12072 16:15:47 INFO  Heartbeat - Worker thread started
+12072 16:15:47 INFO  Trying to load XML configuration /App_Config/Security/Domains.config
+12072 16:15:48 INFO    sitecore
+12072 16:15:48 INFO    extranet
+12072 16:15:48 INFO    default
+12072 16:15:48 INFO  **********************************************************************
+12072 16:15:48 INFO  **********************************************************************
+12072 16:15:48 INFO  Attempting to get ASP.NET process history
+12072 16:15:48 WARN  No process history available
+12072 16:15:48 INFO  Cache created: 'LanguageProvider - Languages' (max size: 100KB, running total: 100KB)
+12072 16:15:48 INFO  Cache created: 'DeviceItemsCache' (max size: 10MB, running total: 10MB)
+12072 16:15:48 INFO  Cache created: 'core[data]' (max size: 20MB, running total: 30MB)
+12072 16:15:48 INFO  Cache created: 'core[items]' (max size: 10MB, running total: 40MB)
+12072 16:15:48 INFO  Cache created: 'core[paths]' (max size: 500KB, running total: 40MB)
+12072 16:15:48 INFO  Cache created: 'core[standardValues]' (max size: 500KB, running total: 41MB)
+12072 16:15:48 INFO  Cache created: 'core[itempaths]' (max size: 10MB, running total: 51MB)
+12072 16:15:48 INFO  Cache created: 'core[blobIDs]' (max size: 500KB, running total: 51MB)
+12072 16:15:48 INFO  Cache created: 'master[data]' (max size: 20MB, running total: 71MB)
+12072 16:15:48 INFO  Cache created: 'master[items]' (max size: 10MB, running total: 81MB)
+12072 16:15:48 INFO  Cache created: 'master[paths]' (max size: 500KB, running total: 82MB)
+12072 16:15:48 INFO  Cache created: 'master[standardValues]' (max size: 500KB, running total: 82MB)
+12072 16:15:48 INFO  Cache created: 'master[itempaths]' (max size: 10MB, running total: 92MB)
+12072 16:15:48 INFO  Cache created: 'master[blobIDs]' (max size: 500KB, running total: 93MB)
+12072 16:15:48 INFO  Cache created: 'web[data]' (max size: 20MB, running total: 113MB)
+12072 16:15:48 INFO  Cache created: 'web[items]' (max size: 10MB, running total: 123MB)
+12072 16:15:48 INFO  Cache created: 'web[paths]' (max size: 500KB, running total: 123MB)
+12072 16:15:48 INFO  Cache created: 'web[standardValues]' (max size: 500KB, running total: 124MB)
+12072 16:15:48 INFO  Cache created: 'web[itempaths]' (max size: 10MB, running total: 134MB)
+12072 16:15:48 INFO  Cache created: 'web[blobIDs]' (max size: 500KB, running total: 134MB)
+12072 16:15:48 INFO  Cache created: 'filesystem[data]' (max size: 0 bytes, running total: 134MB)
+12072 16:15:48 INFO  Cache created: 'filesystem[items]' (max size: 0 bytes, running total: 134MB)
+12072 16:15:48 INFO  Cache created: 'filesystem[paths]' (max size: 0 bytes, running total: 134MB)
+12072 16:15:48 INFO  Cache created: 'filesystem[standardValues]' (max size: 0 bytes, running total: 134MB)
+12072 16:15:48 INFO  Cache created: 'filesystem[itempaths]' (max size: 10MB, running total: 144MB)
+12072 16:15:48 INFO  Cache created: 'filesystem[blobIDs]' (max size: 500KB, running total: 144MB)
+12072 16:15:49 INFO  Cache created: 'SqlDataProvider - Prefetch data(core)' (max size: 10MB, running total: 154MB)
+12072 16:15:49 INFO  Cache created: 'ItemCloningRelations' (max size: 10MB, running total: 164MB)
+12072 16:15:49 INFO  Cache created: 'AccessResultCache' (max size: 2MB, running total: 166MB)
+12072 16:15:49 INFO  Cache created: 'ProxyProvider' (max size: 500KB, running total: 167MB)
+12072 16:15:49 INFO  Loading Dictionary from cache
+12072 16:15:49 INFO  MemoryMonitor initialized. Threshold: 800 MB. Interval: 00:00:05
+12072 16:15:49 INFO  Cache created: 'SqlDataProvider - Property data(core)' (max size: 500KB, running total: 167MB)
+ManagedPoolThread #1 16:15:50 INFO  Trying to load XML configuration /App_Config/Security/Domains.config
+12072 16:15:50 INFO  Cache created: 'SqlDataProvider - Property data(master)' (max size: 500KB, running total: 168MB)
+12072 16:15:50 INFO  Cache created: 'SqlDataProvider - Property data(web)' (max size: 500KB, running total: 168MB)
+12072 16:15:51 INFO  Cache created: 'SqlDataProvider - Prefetch data(master)' (max size: 20MB, running total: 188MB)
+12072 16:15:51 INFO  Cache created: 'shell[html]' (max size: 0 bytes, running total: 188MB)
+12072 16:15:51 INFO  Cache created: 'UserProfileCache' (max size: 1MB, running total: 189MB)
+12072 16:15:51 INFO  Cache created: 'clientData' (max size: 5MB, running total: 194MB)
+12072 16:15:52 INFO  Cache created: 'shell[registry]' (max size: 3MB, running total: 197MB)
+12072 16:15:52 INFO  Cache created: 'shell[viewstate]' (max size: 200KB, running total: 198MB)
+12072 16:15:52 INFO  Cache created: 'shell[xsl]' (max size: 5MB, running total: 203MB)
+12072 16:15:52 INFO  Cache created: 'shell[filtered items]' (max size: 2MB, running total: 205MB)
+12072 16:15:52 INFO  Cache created: 'login[html]' (max size: 0 bytes, running total: 205MB)
+12072 16:15:52 INFO  Cache created: 'login[registry]' (max size: 5MB, running total: 210MB)
+12072 16:15:52 INFO  Cache created: 'login[viewstate]' (max size: 5MB, running total: 215MB)
+12072 16:15:52 INFO  Cache created: 'login[xsl]' (max size: 10MB, running total: 225MB)
+12072 16:15:52 INFO  Cache created: 'login[filtered items]' (max size: 2MB, running total: 227MB)
+12072 16:15:52 INFO  Cache created: 'admin[html]' (max size: 0 bytes, running total: 227MB)
+12072 16:15:52 INFO  Cache created: 'admin[registry]' (max size: 5MB, running total: 232MB)
+12072 16:15:52 INFO  Cache created: 'admin[viewstate]' (max size: 5MB, running total: 237MB)
+12072 16:15:52 INFO  Cache created: 'admin[xsl]' (max size: 10MB, running total: 247MB)
+12072 16:15:52 INFO  Cache created: 'admin[filtered items]' (max size: 2MB, running total: 249MB)
+12072 16:15:52 INFO  Cache created: 'service[html]' (max size: 0 bytes, running total: 249MB)
+12072 16:15:52 INFO  Cache created: 'service[registry]' (max size: 5MB, running total: 254MB)
+12072 16:15:52 INFO  Cache created: 'service[viewstate]' (max size: 5MB, running total: 259MB)
+12072 16:15:52 INFO  Cache created: 'service[xsl]' (max size: 10MB, running total: 269MB)
+12072 16:15:52 INFO  Cache created: 'service[filtered items]' (max size: 2MB, running total: 271MB)
+12072 16:15:52 INFO  Cache created: 'modules_shell[html]' (max size: 0 bytes, running total: 271MB)
+12072 16:15:52 INFO  Cache created: 'modules_shell[registry]' (max size: 5MB, running total: 276MB)
+12072 16:15:52 INFO  Cache created: 'modules_shell[viewstate]' (max size: 5MB, running total: 281MB)
+12072 16:15:52 INFO  Cache created: 'modules_shell[xsl]' (max size: 10MB, running total: 291MB)
+12072 16:15:52 INFO  Cache created: 'modules_shell[filtered items]' (max size: 2MB, running total: 293MB)
+12072 16:15:52 INFO  Cache created: 'modules_website[html]' (max size: 5MB, running total: 298MB)
+12072 16:15:52 INFO  Cache created: 'modules_website[registry]' (max size: 5MB, running total: 303MB)
+12072 16:15:52 INFO  Cache created: 'modules_website[viewstate]' (max size: 5MB, running total: 308MB)
+12072 16:15:52 INFO  Cache created: 'modules_website[xsl]' (max size: 10MB, running total: 318MB)
+12072 16:15:52 INFO  Cache created: 'modules_website[filtered items]' (max size: 2MB, running total: 320MB)
+12072 16:15:52 INFO  Cache created: 'website[html]' (max size: 10MB, running total: 330MB)
+12072 16:15:52 INFO  Cache created: 'website[registry]' (max size: 0 bytes, running total: 330MB)
+12072 16:15:52 INFO  Cache created: 'website[viewstate]' (max size: 0 bytes, running total: 330MB)
+12072 16:15:52 INFO  Cache created: 'website[xsl]' (max size: 5MB, running total: 335MB)
+12072 16:15:52 INFO  Cache created: 'website[filtered items]' (max size: 2MB, running total: 337MB)
+12072 16:15:52 INFO  Cache created: 'scheduler[html]' (max size: 0 bytes, running total: 337MB)
+12072 16:15:52 INFO  Cache created: 'scheduler[registry]' (max size: 5MB, running total: 342MB)
+12072 16:15:52 INFO  Cache created: 'scheduler[viewstate]' (max size: 5MB, running total: 347MB)
+12072 16:15:52 INFO  Cache created: 'scheduler[xsl]' (max size: 10MB, running total: 357MB)
+12072 16:15:52 INFO  Cache created: 'scheduler[filtered items]' (max size: 2MB, running total: 359MB)
+12072 16:15:52 INFO  Cache created: 'system[html]' (max size: 0 bytes, running total: 359MB)
+12072 16:15:52 INFO  Cache created: 'system[registry]' (max size: 5MB, running total: 364MB)
+12072 16:15:52 INFO  Cache created: 'system[viewstate]' (max size: 5MB, running total: 369MB)
+12072 16:15:52 INFO  Cache created: 'system[xsl]' (max size: 10MB, running total: 379MB)
+12072 16:15:52 INFO  Cache created: 'system[filtered items]' (max size: 2MB, running total: 381MB)
+12072 16:15:52 INFO  Cache created: 'publisher[html]' (max size: 0 bytes, running total: 381MB)
+12072 16:15:52 INFO  Cache created: 'publisher[registry]' (max size: 5MB, running total: 386MB)
+12072 16:15:52 INFO  Cache created: 'publisher[viewstate]' (max size: 5MB, running total: 391MB)
+12072 16:15:52 INFO  Cache created: 'publisher[xsl]' (max size: 10MB, running total: 401MB)
+12072 16:15:52 INFO  Cache created: 'publisher[filtered items]' (max size: 2MB, running total: 403MB)
+12072 16:16:14 INFO  Cache created: 'rules' (max size: 800KB, running total: 403MB)
+12072 16:16:14 INFO  Cache created: 'IsUserInRoleCache' (max size: 1MB, running total: 404MB)
+12072 16:16:14 INFO  Trying to load XML configuration /App_Config/Security/GlobalRoles.config
+ManagedPoolThread #4 16:16:15 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #0 16:16:15 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #0 16:16:15 INFO  Cache created: '[FieldReaderCache]' (max size: 5MB, running total: 409MB)
+ManagedPoolThread #0 16:16:17 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #5 16:16:17 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+12072 16:16:17 INFO  Cache created: 'SqlDataProvider - Prefetch data(web)' (max size: 10MB, running total: 419MB)
+ManagedPoolThread #5 16:16:18 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #8 16:16:18 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #8 16:16:18 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #9 16:16:18 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #9 16:16:18 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #3 16:16:18 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #3 16:16:19 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #12 16:16:19 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #12 16:16:19 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #10 16:16:19 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #4 16:16:19 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #6 16:16:19 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #10 16:16:25 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #10 16:16:25 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #10 16:16:25 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #2 16:16:25 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 16:16:27 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #2 16:16:27 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 16:16:27 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #13 16:16:27 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #6 16:16:27 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #11 16:16:27 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #11 16:16:27 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #11 16:16:27 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #13 16:16:28 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #13 16:16:28 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #11 16:16:28 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #18 16:16:28 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #13 16:16:28 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #18 16:16:28 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #18 16:16:28 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #18 16:16:29 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #17 16:16:29 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #17 16:16:30 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #1 16:16:30 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #1 16:16:31 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #0 16:16:31 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #0 16:16:31 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #5 16:16:31 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #5 16:16:31 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #8 16:16:31 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #8 16:16:32 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #8 16:16:32 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #8 16:16:32 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+12072 16:16:49 INFO  HtmlCacheClearer clearing HTML caches for all sites (1).
+12072 16:16:49 INFO  HtmlCacheClearer done.
+12072 16:16:49 INFO  Scheduler - Initializing
+12072 16:16:49 INFO  Scheduler - Interval set to: 00:00:05
+12072 16:16:49 INFO  Scheduler - Worker thread started
+11676 16:16:50 INFO  HttpModule is being initialized
+ManagedPoolThread #3 16:16:50 INFO  Trying to load XML configuration /App_Config/Security/GlobalRoles.config
+ManagedPoolThread #12 16:16:53 INFO  Job started: Index_Update_IndexName=sitecore_web_index
+11932 16:16:54 INFO  Scheduler - Adding agents
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.DatabaseAgent (interval: 00:10:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.DatabaseAgent (interval: 00:10:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.UrlAgent (interval: 00:15:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.TaskDatabaseAgent (interval: 00:10:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.CompactClientDataAgent (interval: 04:00:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupHistory (interval: 04:00:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupPublishQueue (interval: 04:00:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupEventQueue (interval: 04:00:00)
+11932 16:16:54 INFO  Scheduler - Skipping inactive agent: Sitecore.Tasks.HtmlCacheClearAgent
+11932 16:16:54 INFO  Scheduler - Skipping inactive agent: Sitecore.Tasks.PublishAgent
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupAgent (interval: 06:00:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.CounterDumpAgent (interval: 01:00:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.CloneNotificationsCleanupAgent (interval: 1.00:00:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.ContentSearch.Tasks.Optimize (interval: 01:00:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: MediaFramework_Import_Brightcove (interval: 04:00:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: MediaFramework_Cleanup_Brightcove (interval: 08:00:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupFDAObsoleteMediaData (interval: 1.00:00:00)
+11932 16:16:54 INFO  Scheduler - Adding agent: Sitecore.Tasks.WebDAVOptionsCleanupAgent (interval: 1.00:00:00)
+11932 16:16:54 INFO  Scheduler - Agents added
+ManagedPoolThread #12 16:16:55 INFO  Job ended: Index_Update_IndexName=sitecore_web_index (units processed: )
+11676 16:16:58 INFO  Cache created: 'WebUtil.QueryStringCache' (max size: 19KB, running total: 419MB)
+11676 16:17:03 INFO  HttpModule is being initialized
+9748 16:17:03 INFO  HttpModule is being initialized
+10752 16:17:03 INFO  HttpModule is being initialized
+10804 16:17:03 INFO  HttpModule is being initialized
+2068 16:17:03 INFO  HttpModule is being initialized
+ManagedPoolThread #7 16:20:54 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #7 16:20:54 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #14 16:20:54 INFO  Starting update of index for the database 'master' (13 pending).
+ManagedPoolThread #14 16:20:58 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #16 16:23:54 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #15 16:23:54 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #16 16:23:54 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #15 16:23:54 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+12044 16:23:54 INFO  HttpModule is being initialized
+5500 16:23:54 INFO  HttpModule is being initialized
+11300 16:23:54 INFO  HttpModule is being initialized
+8796 16:23:56 INFO  HttpModule is being initialized
+11300 16:23:56 INFO  AUDIT (sitecore\chaddad): Logout
+11300 16:23:56 WARN  Protected page accessed with no current user
+Heartbeat 16:25:49 INFO  Health.PrivateBytes: 488,230,912
+Heartbeat 16:25:49 INFO  Health.CacheInstances: 91
+Heartbeat 16:25:49 INFO  Health.CacheTotalCount: 15,759
+Heartbeat 16:25:49 INFO  Health.CacheTotalSize: 48,608,884
+Heartbeat 16:25:49 INFO  Health.Counter(w3wp, Process\Private Bytes): 487,383,040
+Heartbeat 16:25:50 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 18,936,328,192
+Heartbeat 16:25:50 INFO  Health.Counter(w3wp, Process\Page File Bytes): 488,652,800
+Heartbeat 16:25:50 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 104,595,976
+Heartbeat 16:25:50 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 106,068
+Heartbeat 16:25:50 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 10,242,368
+Heartbeat 16:25:50 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 16,576,512
+Heartbeat 16:25:50 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 147
+ManagedPoolThread #13 16:25:55 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #13 16:25:55 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #19 16:25:55 INFO  Starting update of index for the database 'master' (2 pending).
+ManagedPoolThread #19 16:25:55 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #1 16:26:49 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #1 16:26:49 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #1 16:26:49 INFO  Examining schedules (count: 0)
+ManagedPoolThread #1 16:26:49 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #0 16:26:49 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #0 16:26:49 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #0 16:26:50 INFO  Examining schedules (count: 1)
+ManagedPoolThread #0 16:26:50 INFO  Starting: __Task Schedule
+ManagedPoolThread #0 16:26:50 INFO  Ended: __Task Schedule
+ManagedPoolThread #0 16:26:50 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #5 16:26:50 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #5 16:26:50 INFO  Processing tasks (count: 0)
+ManagedPoolThread #5 16:26:50 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #3 16:31:05 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #3 16:31:05 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #12 16:31:05 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #12 16:31:05 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #10 16:31:50 INFO  Job started: Sitecore.Tasks.UrlAgent
+ManagedPoolThread #10 16:31:50 INFO  Scheduling.UrlAgent started. Url: http://understood.org.local/sitecore/service/keepalive.aspx
+ManagedPoolThread #10 16:31:50 INFO  Scheduling.UrlAgent done (received: 1071 bytes)
+ManagedPoolThread #10 16:31:50 INFO  Job ended: Sitecore.Tasks.UrlAgent (units processed: )
+Heartbeat 16:35:51 INFO  Health.PrivateBytes: 489,472,000
+Heartbeat 16:35:51 INFO  Health.CacheInstances: 91
+Heartbeat 16:35:51 INFO  Health.CacheTotalCount: 15,787
+Heartbeat 16:35:51 INFO  Health.CacheTotalSize: 48,688,394
+Heartbeat 16:35:51 INFO  Health.Counter(w3wp, Process\Private Bytes): 490,901,504
+Heartbeat 16:35:52 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 18,935,214,080
+Heartbeat 16:35:53 INFO  Health.Counter(w3wp, Process\Page File Bytes): 486,322,176
+Heartbeat 16:35:53 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 103,945,808
+Heartbeat 16:35:53 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 0
+Heartbeat 16:35:53 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 9,592,200
+Heartbeat 16:35:53 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 16,826,368
+Heartbeat 16:35:53 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 149
+ManagedPoolThread #6 16:36:02 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #6 16:36:02 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #14 16:36:02 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #14 16:36:02 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #11 16:36:51 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #11 16:36:51 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #11 16:36:51 INFO  Examining schedules (count: 0)
+ManagedPoolThread #11 16:36:51 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #13 16:36:51 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #13 16:36:51 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #13 16:36:51 INFO  Examining schedules (count: 1)
+ManagedPoolThread #13 16:36:51 INFO  Starting: __Task Schedule
+ManagedPoolThread #13 16:36:51 INFO  Ended: __Task Schedule
+ManagedPoolThread #13 16:36:51 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #17 16:36:51 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #17 16:36:51 INFO  Processing tasks (count: 0)
+ManagedPoolThread #17 16:36:51 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #9 16:41:02 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #9 16:41:02 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #5 16:41:02 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #5 16:41:02 INFO  Update of index for the database 'core' done.
+Heartbeat 16:45:51 INFO  Health.PrivateBytes: 485,437,440
+Heartbeat 16:45:51 INFO  Health.CacheInstances: 91
+Heartbeat 16:45:51 INFO  Health.CacheTotalCount: 15,787
+Heartbeat 16:45:51 INFO  Health.CacheTotalSize: 48,688,394
+Heartbeat 16:45:51 INFO  Health.Counter(w3wp, Process\Private Bytes): 487,907,328
+Heartbeat 16:45:51 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 18,938,359,808
+Heartbeat 16:45:51 INFO  Health.Counter(w3wp, Process\Page File Bytes): 487,518,208
+Heartbeat 16:45:51 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 103,564,304
+Heartbeat 16:45:51 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 101,270
+Heartbeat 16:45:51 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 8,681,976
+Heartbeat 16:45:51 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 16,826,368
+Heartbeat 16:45:51 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 149
+ManagedPoolThread #3 16:46:04 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #3 16:46:04 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #12 16:46:04 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #12 16:46:04 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #7 16:46:51 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #7 16:46:51 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #7 16:46:51 INFO  Examining schedules (count: 0)
+ManagedPoolThread #7 16:46:51 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #7 16:46:51 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #7 16:46:51 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #7 16:46:51 INFO  Examining schedules (count: 1)
+ManagedPoolThread #7 16:46:51 INFO  Starting: __Task Schedule
+ManagedPoolThread #7 16:46:51 INFO  Ended: __Task Schedule
+ManagedPoolThread #7 16:46:51 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #7 16:46:51 INFO  Job started: Sitecore.Tasks.UrlAgent
+ManagedPoolThread #7 16:46:51 INFO  Scheduling.UrlAgent started. Url: http://understood.org.local/sitecore/service/keepalive.aspx
+ManagedPoolThread #7 16:46:51 INFO  Scheduling.UrlAgent done (received: 1071 bytes)
+ManagedPoolThread #7 16:46:51 INFO  Job ended: Sitecore.Tasks.UrlAgent (units processed: )
+ManagedPoolThread #15 16:46:51 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #15 16:46:51 INFO  Processing tasks (count: 0)
+ManagedPoolThread #15 16:46:51 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #13 16:51:07 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #13 16:51:07 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #18 16:51:07 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #18 16:51:07 INFO  Update of index for the database 'core' done.
+Heartbeat 16:55:53 INFO  Health.PrivateBytes: 491,003,904
+Heartbeat 16:55:53 INFO  Health.CacheInstances: 91
+Heartbeat 16:55:53 INFO  Health.CacheTotalCount: 15,786
+Heartbeat 16:55:53 INFO  Health.CacheTotalSize: 48,688,344
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, Process\Private Bytes): 490,356,736
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 18,938,097,664
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, Process\Page File Bytes): 492,797,952
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 106,555,144
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 95,905
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 11,672,816
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 16,830,464
+Heartbeat 16:55:53 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 149
+ManagedPoolThread #1 16:56:09 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #1 16:56:09 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #5 16:56:09 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #5 16:56:09 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #3 16:56:51 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #3 16:56:51 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #3 16:56:51 INFO  Examining schedules (count: 0)
+ManagedPoolThread #3 16:56:51 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #12 16:56:51 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #12 16:56:51 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #12 16:56:51 INFO  Examining schedules (count: 1)
+ManagedPoolThread #12 16:56:51 INFO  Starting: __Task Schedule
+ManagedPoolThread #12 16:56:51 INFO  Ended: __Task Schedule
+ManagedPoolThread #12 16:56:51 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #4 16:56:51 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #4 16:56:52 INFO  Processing tasks (count: 0)
+ManagedPoolThread #4 16:56:52 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #14 17:01:09 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #14 17:01:09 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #6 17:01:09 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #6 17:01:10 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #16 17:01:52 INFO  Job started: Sitecore.Tasks.UrlAgent
+ManagedPoolThread #16 17:01:52 INFO  Scheduling.UrlAgent started. Url: http://understood.org.local/sitecore/service/keepalive.aspx
+ManagedPoolThread #16 17:01:52 INFO  Scheduling.UrlAgent done (received: 1071 bytes)
+ManagedPoolThread #16 17:01:52 INFO  Job ended: Sitecore.Tasks.UrlAgent (units processed: )
+Heartbeat 17:05:54 INFO  Health.PrivateBytes: 490,418,176
+Heartbeat 17:05:54 INFO  Health.CacheInstances: 91
+Heartbeat 17:05:54 INFO  Health.CacheTotalCount: 15,786
+Heartbeat 17:05:54 INFO  Health.CacheTotalSize: 48,688,344
+Heartbeat 17:05:54 INFO  Health.Counter(w3wp, Process\Private Bytes): 489,635,840
+Heartbeat 17:05:55 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 18,936,262,656
+Heartbeat 17:05:55 INFO  Health.Counter(w3wp, Process\Page File Bytes): 487,034,880
+Heartbeat 17:05:55 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 104,474,528
+Heartbeat 17:05:55 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 103,035
+Heartbeat 17:05:55 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 9,592,200
+Heartbeat 17:05:55 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 16,830,464
+Heartbeat 17:05:55 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 149
+ManagedPoolThread #19 17:06:11 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #17 17:06:11 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #17 17:06:11 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #19 17:06:11 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #9 17:06:52 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #9 17:06:52 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #9 17:06:52 INFO  Examining schedules (count: 0)
+ManagedPoolThread #9 17:06:52 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #1 17:06:52 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #1 17:06:52 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #1 17:06:52 INFO  Examining schedules (count: 1)
+ManagedPoolThread #1 17:06:52 INFO  Starting: __Task Schedule
+ManagedPoolThread #1 17:06:52 INFO  Ended: __Task Schedule
+ManagedPoolThread #1 17:06:52 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #1 17:06:52 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #1 17:06:53 INFO  Processing tasks (count: 0)
+ManagedPoolThread #1 17:06:53 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #12 17:11:14 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #12 17:11:14 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #3 17:11:14 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #3 17:11:15 INFO  Update of index for the database 'master' done.
+Heartbeat 17:13:03 ERROR Exception processing remote events from database: core
+Exception: System.Exception
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: Sitecore.Kernel
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.Data.DataException
+Message: Error executing SQL command: SELECT [EventType], [InstanceType], [InstanceData], [InstanceName], [UserName], [Stamp], [Created] FROM [EventQueue] WHERE ([InstanceName] <> @targetInstance AND [RaiseGlobally] = 1 OR [InstanceName] = @targetInstance AND [RaiseLocally] = 1) AND [Stamp] >= CAST(@fromTimestamp AS TIMESTAMP) ORDER BY [Stamp]
+
+Nested Exception
+
+Exception: System.Data.SqlClient.SqlException
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The semaphore timeout period has expired
+
+
+
+
+Heartbeat 17:13:20 ERROR Exception processing remote events from database: master
+Exception: System.Exception
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: Sitecore.Kernel
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.Data.DataException
+Message: Error executing SQL command: SELECT [EventType], [InstanceType], [InstanceData], [InstanceName], [UserName], [Stamp], [Created] FROM [EventQueue] WHERE ([InstanceName] <> @targetInstance AND [RaiseGlobally] = 1 OR [InstanceName] = @targetInstance AND [RaiseLocally] = 1) AND [Stamp] >= CAST(@fromTimestamp AS TIMESTAMP) ORDER BY [Stamp]
+
+Nested Exception
+
+Exception: System.Data.SqlClient.SqlException
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The semaphore timeout period has expired
+
+
+
+
+Heartbeat 17:13:20 ERROR Exception processing remote events from database: web
+Exception: System.Exception
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: Sitecore.Kernel
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.Data.DataException
+Message: Error executing SQL command: SELECT [EventType], [InstanceType], [InstanceData], [InstanceName], [UserName], [Stamp], [Created] FROM [EventQueue] WHERE ([InstanceName] <> @targetInstance AND [RaiseGlobally] = 1 OR [InstanceName] = @targetInstance AND [RaiseLocally] = 1) AND [Stamp] >= CAST(@fromTimestamp AS TIMESTAMP) ORDER BY [Stamp]
+
+Nested Exception
+
+Exception: System.Data.SqlClient.SqlException
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The semaphore timeout period has expired
+
+
+
+
+11208 17:13:35 ERROR A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.SqlServer.SqlServerHistoryStorage.GetHistory(DateTime from, DateTime to)
+   at Sitecore.ContentSearch.Maintenance.HistoryReader.GetHistory(Database database, DateTime from)
+   at Sitecore.ContentSearch.Maintenance.Strategies.IntervalAsynchronousStrategy.Run()
+   at Sitecore.ContentSearch.Maintenance.OperationMonitor.ExecuteAction()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:13:35 ERROR Exception processing remote events from database: core
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:13:50 ERROR Exception processing remote events from database: master
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:14:04 ERROR Exception processing remote events from database: web
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:14:19 ERROR Exception processing remote events from database: core
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:14:33 ERROR Exception processing remote events from database: master
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:14:48 ERROR Exception processing remote events from database: web
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:15:02 ERROR Exception processing remote events from database: core
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+11524 17:15:02 ERROR A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.SqlServer.SqlServerHistoryStorage.GetHistory(DateTime from, DateTime to)
+   at Sitecore.ContentSearch.Maintenance.HistoryReader.GetHistory(Database database, DateTime from)
+   at Sitecore.ContentSearch.Maintenance.Strategies.IntervalAsynchronousStrategy.Run()
+   at Sitecore.ContentSearch.Maintenance.OperationMonitor.ExecuteAction()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:15:17 ERROR Exception processing remote events from database: master
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+
+Heartbeat 17:15:54 INFO  Health.PrivateBytes: 490,962,944
+Heartbeat 17:15:54 INFO  Health.CacheInstances: 91
+Heartbeat 17:15:54 INFO  Health.CacheTotalCount: 15,786
+Heartbeat 17:15:54 INFO  Health.CacheTotalSize: 48,688,344
+Heartbeat 17:15:55 INFO  Health.Counter(w3wp, Process\Private Bytes): 489,013,248
+Heartbeat 17:15:55 INFO  Health.Counter(w3wp, Process\Virtual Bytes): 18,937,348,096
+Heartbeat 17:15:55 INFO  Health.Counter(w3wp, Process\Page File Bytes): 491,610,112
+Heartbeat 17:15:55 INFO  Health.Counter(w3wp, .NET CLR Memory\# Bytes in all Heaps): 103,574,936
+Heartbeat 17:15:55 INFO  Health.Counter(w3wp, .NET CLR Memory\% Time in GC): 125,724
+Heartbeat 17:15:55 INFO  Health.Counter(w3wp, .NET CLR Memory\Large Object Heap size): 8,551,920
+Heartbeat 17:15:55 INFO  Health.Counter(w3wp, .NET CLR Loading\Bytes in Loader Heap): 16,850,944
+Heartbeat 17:15:55 INFO  Health.Counter(w3wp, .NET CLR Loading\Current Assemblies): 149
+ManagedPoolThread #7 17:16:13 INFO  Starting update of index for the database 'core' (6 pending).
+ManagedPoolThread #7 17:16:13 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #6 17:16:13 INFO  Starting update of index for the database 'master' (1 pending).
+ManagedPoolThread #6 17:16:14 INFO  Update of index for the database 'master' done.
+ManagedPoolThread #13 17:16:53 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #13 17:16:53 INFO  Scheduling.DatabaseAgent started. Database: core
+ManagedPoolThread #13 17:16:53 INFO  Examining schedules (count: 0)
+ManagedPoolThread #13 17:16:53 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: )
+ManagedPoolThread #18 17:16:53 INFO  Job started: Sitecore.Tasks.DatabaseAgent
+ManagedPoolThread #18 17:16:53 INFO  Scheduling.DatabaseAgent started. Database: master
+ManagedPoolThread #18 17:16:53 INFO  Examining schedules (count: 1)
+ManagedPoolThread #18 17:16:53 INFO  Starting: __Task Schedule
+ManagedPoolThread #18 17:16:53 INFO  Ended: __Task Schedule
+ManagedPoolThread #18 17:16:53 INFO  Job ended: Sitecore.Tasks.DatabaseAgent (units processed: 1)
+ManagedPoolThread #17 17:16:53 INFO  Job started: Sitecore.Tasks.UrlAgent
+ManagedPoolThread #17 17:16:53 INFO  Scheduling.UrlAgent started. Url: http://understood.org.local/sitecore/service/keepalive.aspx
+ManagedPoolThread #17 17:16:53 INFO  Scheduling.UrlAgent done (received: 1071 bytes)
+ManagedPoolThread #17 17:16:53 INFO  Job ended: Sitecore.Tasks.UrlAgent (units processed: )
+ManagedPoolThread #19 17:16:53 INFO  Job started: Sitecore.Tasks.TaskDatabaseAgent
+ManagedPoolThread #19 17:16:53 INFO  Processing tasks (count: 0)
+ManagedPoolThread #19 17:16:53 INFO  Job ended: Sitecore.Tasks.TaskDatabaseAgent (units processed: )
+ManagedPoolThread #11 17:16:53 INFO  Job started: Sitecore.Tasks.CounterDumpAgent
+ManagedPoolThread #11 17:16:53 INFO  Job ended: Sitecore.Tasks.CounterDumpAgent (units processed: )
+ManagedPoolThread #9 17:16:53 INFO  Job started: Sitecore.ContentSearch.Tasks.Optimize
+ManagedPoolThread #9 17:16:58 INFO  Job ended: Sitecore.ContentSearch.Tasks.Optimize (units processed: )
+Heartbeat 17:19:33 ERROR Exception processing remote events from database: core
+Exception: System.Exception
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: Sitecore.Kernel
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.Data.DataException
+Message: Error executing SQL command: SELECT [EventType], [InstanceType], [InstanceData], [InstanceName], [UserName], [Stamp], [Created] FROM [EventQueue] WHERE ([InstanceName] <> @targetInstance AND [RaiseGlobally] = 1 OR [InstanceName] = @targetInstance AND [RaiseLocally] = 1) AND [Stamp] >= CAST(@fromTimestamp AS TIMESTAMP) ORDER BY [Stamp]
+
+Nested Exception
+
+Exception: System.Data.SqlClient.SqlException
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The semaphore timeout period has expired
+
+
+
+
+Heartbeat 17:19:33 ERROR Exception processing remote events from database: master
+Exception: System.Exception
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: Sitecore.Kernel
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.Data.DataException
+Message: Error executing SQL command: SELECT [EventType], [InstanceType], [InstanceData], [InstanceName], [UserName], [Stamp], [Created] FROM [EventQueue] WHERE ([InstanceName] <> @targetInstance AND [RaiseGlobally] = 1 OR [InstanceName] = @targetInstance AND [RaiseLocally] = 1) AND [Stamp] >= CAST(@fromTimestamp AS TIMESTAMP) ORDER BY [Stamp]
+
+Nested Exception
+
+Exception: System.Data.SqlClient.SqlException
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The semaphore timeout period has expired
+
+
+
+
+Heartbeat 17:19:33 ERROR Exception processing remote events from database: web
+Exception: System.Exception
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: Sitecore.Kernel
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.Data.DataException
+Message: Error executing SQL command: SELECT [EventType], [InstanceType], [InstanceData], [InstanceName], [UserName], [Stamp], [Created] FROM [EventQueue] WHERE ([InstanceName] <> @targetInstance AND [RaiseGlobally] = 1 OR [InstanceName] = @targetInstance AND [RaiseLocally] = 1) AND [Stamp] >= CAST(@fromTimestamp AS TIMESTAMP) ORDER BY [Stamp]
+
+Nested Exception
+
+Exception: System.Data.SqlClient.SqlException
+Message: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at Sitecore.Data.DataProviders.Sql.DataProviderCommand.ExecuteReader()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The semaphore timeout period has expired
+
+
+
+
+Heartbeat 17:19:47 ERROR Exception processing remote events from database: core
+Exception: System.Data.SqlClient.SqlException
+Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+Source: .Net SqlClient Data Provider
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass4.<CreateCommand>b__3()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<>c__DisplayClass12.<CreateReader>b__10()
+   at Sitecore.Data.DataProviders.NullRetryer.Execute[T](Func`1 action, Action recover)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.CreateReader(String sql, Object[] parameters)
+   at Sitecore.Data.DataProviders.Sql.SqlDataApi.<CreateObjectReader>d__6`1.MoveNext()
+   at Sitecore.Eventing.EventQueue.ProcessEvents(Action`2 handler)
+   at Sitecore.Eventing.EventProvider.RaiseQueuedEvents()
+
+Nested Exception
+
+Exception: System.ComponentModel.Win32Exception
+Message: The network path was not found
+
+

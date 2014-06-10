@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Understood.org.DEV.membershipModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="UnderstoodorgDEVmembershipModelStoreContainer">
+    <EntitySet Name="Children" EntityType="Understood.org.DEV.membershipModel.Store.Children" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChildToDiagnosis" EntityType="Understood.org.DEV.membershipModel.Store.ChildToDiagnosis" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChildToIssues" EntityType="Understood.org.DEV.membershipModel.Store.ChildToIssues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Diagnosis" EntityType="Understood.org.DEV.membershipModel.Store.Diagnosis" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Interests" EntityType="Understood.org.DEV.membershipModel.Store.Interests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Issues" EntityType="Understood.org.DEV.membershipModel.Store.Issues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Members" EntityType="Understood.org.DEV.membershipModel.Store.Members" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MemberToChild" EntityType="Understood.org.DEV.membershipModel.Store.MemberToChild" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MemberToInterests" EntityType="Understood.org.DEV.membershipModel.Store.MemberToInterests" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ChildToDiagnosis_Children" Association="Understood.org.DEV.membershipModel.Store.FK_ChildToDiagnosis_Children">
+      <End Role="Children" EntitySet="Children" />
+      <End Role="ChildToDiagnosis" EntitySet="ChildToDiagnosis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildToDiagnosis_Diagnosis" Association="Understood.org.DEV.membershipModel.Store.FK_ChildToDiagnosis_Diagnosis">
+      <End Role="Diagnosis" EntitySet="Diagnosis" />
+      <End Role="ChildToDiagnosis" EntitySet="ChildToDiagnosis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildToIssues_Children" Association="Understood.org.DEV.membershipModel.Store.FK_ChildToIssues_Children">
+      <End Role="Children" EntitySet="Children" />
+      <End Role="ChildToIssues" EntitySet="ChildToIssues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildToIssues_Issues" Association="Understood.org.DEV.membershipModel.Store.FK_ChildToIssues_Issues">
+      <End Role="Issues" EntitySet="Issues" />
+      <End Role="ChildToIssues" EntitySet="ChildToIssues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MemberToChild_Children" Association="Understood.org.DEV.membershipModel.Store.FK_MemberToChild_Children">
+      <End Role="Children" EntitySet="Children" />
+      <End Role="MemberToChild" EntitySet="MemberToChild" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MemberToChild_Members" Association="Understood.org.DEV.membershipModel.Store.FK_MemberToChild_Members">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="MemberToChild" EntitySet="MemberToChild" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MemberToInterests_Interests" Association="Understood.org.DEV.membershipModel.Store.FK_MemberToInterests_Interests">
+      <End Role="Interests" EntitySet="Interests" />
+      <End Role="MemberToInterests" EntitySet="MemberToInterests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MemberToInterests_Members" Association="Understood.org.DEV.membershipModel.Store.FK_MemberToInterests_Members">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="MemberToInterests" EntitySet="MemberToInterests" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Children">
+    <Key>
+      <PropertyRef Name="ChildId" />
+    </Key>
+    <Property Name="ChildId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Nickname" Type="nchar" Nullable="false" MaxLength="20" />
+    <Property Name="IEPStatus" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Section504Status" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Grade" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EvaluationStatus" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChildToDiagnosis">
+    <Key>
+      <PropertyRef Name="ChildId" />
+      <PropertyRef Name="DiagnosisId" />
+    </Key>
+    <Property Name="ChildId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DiagnosisId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChildToIssues">
+    <Key>
+      <PropertyRef Name="ChildId" />
+      <PropertyRef Name="IssueId" />
+    </Key>
+    <Property Name="ChildId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IssueId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Diagnosis">
+    <Key>
+      <PropertyRef Name="rowId" />
+    </Key>
+    <Property Name="rowId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Interests">
+    <Key>
+      <PropertyRef Name="rowId" />
+    </Key>
+    <Property Name="rowId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Issues">
+    <Key>
+      <PropertyRef Name="rowId" />
+    </Key>
+    <Property Name="rowId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Members">
+    <Key>
+      <PropertyRef Name="MemberId" />
+    </Key>
+    <Property Name="MemberId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ScreenName" Type="nchar" MaxLength="20" />
+    <Property Name="FirstName" Type="nchar" MaxLength="20" />
+    <Property Name="LastName" Type="nchar" MaxLength="20" />
+    <Property Name="ZipCode" Type="nchar" MaxLength="20" />
+    <Property Name="allowConnections" Type="bit" Nullable="false" />
+    <Property Name="allowNewsletter" Type="bit" Nullable="false" />
+    <Property Name="isPrivate" Type="bit" Nullable="false" />
+    <Property Name="hasOtherChildren" Type="bit" Nullable="false" />
+    <Property Name="PersonalityType" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="HomeLife" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Role" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MemberToChild">
+    <Key>
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="ChildId" />
+    </Key>
+    <Property Name="MemberId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ChildId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MemberToInterests">
+    <Key>
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="InterestId" />
+    </Key>
+    <Property Name="MemberId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InterestId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ChildToDiagnosis_Children">
+    <End Role="Children" Type="Understood.org.DEV.membershipModel.Store.Children" Multiplicity="1" />
+    <End Role="ChildToDiagnosis" Type="Understood.org.DEV.membershipModel.Store.ChildToDiagnosis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Children">
+        <PropertyRef Name="ChildId" />
+      </Principal>
+      <Dependent Role="ChildToDiagnosis">
+        <PropertyRef Name="ChildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildToDiagnosis_Diagnosis">
+    <End Role="Diagnosis" Type="Understood.org.DEV.membershipModel.Store.Diagnosis" Multiplicity="1" />
+    <End Role="ChildToDiagnosis" Type="Understood.org.DEV.membershipModel.Store.ChildToDiagnosis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diagnosis">
+        <PropertyRef Name="rowId" />
+      </Principal>
+      <Dependent Role="ChildToDiagnosis">
+        <PropertyRef Name="DiagnosisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildToIssues_Children">
+    <End Role="Children" Type="Understood.org.DEV.membershipModel.Store.Children" Multiplicity="1" />
+    <End Role="ChildToIssues" Type="Understood.org.DEV.membershipModel.Store.ChildToIssues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Children">
+        <PropertyRef Name="ChildId" />
+      </Principal>
+      <Dependent Role="ChildToIssues">
+        <PropertyRef Name="ChildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildToIssues_Issues">
+    <End Role="Issues" Type="Understood.org.DEV.membershipModel.Store.Issues" Multiplicity="1" />
+    <End Role="ChildToIssues" Type="Understood.org.DEV.membershipModel.Store.ChildToIssues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Issues">
+        <PropertyRef Name="rowId" />
+      </Principal>
+      <Dependent Role="ChildToIssues">
+        <PropertyRef Name="IssueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MemberToChild_Children">
+    <End Role="Children" Type="Understood.org.DEV.membershipModel.Store.Children" Multiplicity="1" />
+    <End Role="MemberToChild" Type="Understood.org.DEV.membershipModel.Store.MemberToChild" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Children">
+        <PropertyRef Name="ChildId" />
+      </Principal>
+      <Dependent Role="MemberToChild">
+        <PropertyRef Name="ChildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MemberToChild_Members">
+    <End Role="Members" Type="Understood.org.DEV.membershipModel.Store.Members" Multiplicity="1" />
+    <End Role="MemberToChild" Type="Understood.org.DEV.membershipModel.Store.MemberToChild" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="MemberId" />
+      </Principal>
+      <Dependent Role="MemberToChild">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MemberToInterests_Interests">
+    <End Role="Interests" Type="Understood.org.DEV.membershipModel.Store.Interests" Multiplicity="1" />
+    <End Role="MemberToInterests" Type="Understood.org.DEV.membershipModel.Store.MemberToInterests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Interests">
+        <PropertyRef Name="rowId" />
+      </Principal>
+      <Dependent Role="MemberToInterests">
+        <PropertyRef Name="InterestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MemberToInterests_Members">
+    <End Role="Members" Type="Understood.org.DEV.membershipModel.Store.Members" Multiplicity="1" />
+    <End Role="MemberToInterests" Type="Understood.org.DEV.membershipModel.Store.MemberToInterests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="MemberId" />
+      </Principal>
+      <Dependent Role="MemberToInterests">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

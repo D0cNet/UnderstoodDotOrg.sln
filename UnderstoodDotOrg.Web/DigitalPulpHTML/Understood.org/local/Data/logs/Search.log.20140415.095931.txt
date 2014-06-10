@@ -1,0 +1,3 @@
+15460 09:59:41 INFO  Warming and Caching your search indexes
+15460 09:59:41 INFO  /******* Warming Queries ********/
+15460 09:59:41 INFO  /*************************/

@@ -1,0 +1,49 @@
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\app_config\include
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\App_Config\Include\Sitecore.ContentSearch.MediaFramework.Brightcove.config E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\app_config/include/sitecore.contentsearch.mediaframework.brightcove.config
+OK: MkDir  E:\wwwroot\Poses\Website\App_Config\Include
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\comrgcnm.ahf E:\wwwroot\Poses\Website\App_Config\Include\Sitecore.ContentSearch.MediaFramework.Brightcove.config
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\app_config\include
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\App_Config\Include\Sitecore.MediaFramework.Services.Brightcove.config E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\app_config/include/sitecore.mediaframework.services.brightcove.config
+OK: MkDir  E:\wwwroot\Poses\Website\App_Config\Include
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\y411qnko.fby E:\wwwroot\Poses\Website\App_Config\Include\Sitecore.MediaFramework.Services.Brightcove.config
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\app_config\include
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\App_Config\Include\Sitecore.RestSharp.Brightcove.config E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\app_config/include/sitecore.restsharp.brightcove.config
+OK: MkDir  E:\wwwroot\Poses\Website\App_Config\Include
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\hhx44xnt.2h4 E:\wwwroot\Poses\Website\App_Config\Include\Sitecore.RestSharp.Brightcove.config
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\RestSharp.dll E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\bin/restsharp.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\c5btlrs2.br2 E:\wwwroot\Poses\Website\bin\RestSharp.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\Sitecore.MediaFramework.Brightcove.dll E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\bin/sitecore.mediaframework.brightcove.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\k1r2hox4.lkw E:\wwwroot\Poses\Website\bin\Sitecore.MediaFramework.Brightcove.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\Sitecore.RestSharp.dll E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\bin/sitecore.restsharp.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\kjde4on1.htw E:\wwwroot\Poses\Website\bin\Sitecore.RestSharp.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore modules\web\mediaframework\js\analytics
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Analytics\brightcove.js E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore modules/web/mediaframework/js/analytics/brightcove.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Analytics
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\agpz0smm.2zs E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Analytics\brightcove.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore\shell\themes\standard\mediaframework\brightcove\128x128
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\128x128\logo.png E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore/shell/themes/standard/mediaframework/brightcove/128x128/logo.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\128x128
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\l0sdf2wr.im4 E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\128x128\logo.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore\shell\themes\standard\mediaframework\brightcove\16x16
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\16x16\logo.png E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore/shell/themes/standard/mediaframework/brightcove/16x16/logo.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\16x16
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\z0sl0nl1.b2e E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\16x16\logo.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore\shell\themes\standard\mediaframework\brightcove\24x24
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\24x24\logo.png E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore/shell/themes/standard/mediaframework/brightcove/24x24/logo.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\24x24
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\npfpc3qw.kf3 E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\24x24\logo.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore\shell\themes\standard\mediaframework\brightcove\32x32
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\32x32\logo.png E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore/shell/themes/standard/mediaframework/brightcove/32x32/logo.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\32x32
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\b24uk34c.2kp E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\32x32\logo.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore\shell\themes\standard\mediaframework\brightcove\48x48
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\48x48\logo.png E:\wwwroot\Poses\Website\temp\installation_history\256D7F20FD14442883350330073D98B4\sitecore/shell/themes/standard/mediaframework/brightcove/48x48/logo.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\48x48
+OK: Move E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4\hrgmo0ci.exh E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\MediaFramework\Brightcove\48x48\logo.png
+OK: Delete  E:\wwwroot\Poses\Website\temp\install\256D7F20FD14442883350330073D98B4-commit.bat

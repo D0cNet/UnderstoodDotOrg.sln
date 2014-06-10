@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {F13F4E53-0D4F-41AF-B191-26E985499FEF}
+database: master
+path: /sitecore/templates/User Defined/Poses/Base Template/Parent/Parent Interest/__Standard Values
+parent: {49DC2843-2B4B-4448-854E-811E73F02360}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {49DC2843-2B4B-4448-854E-811E73F02360}
+templatekey: Parent Interest
+
+----version----
+language: en
+version: 1
+revision: 807b7df4-8417-4cf2-83b3-23ecfcee8b77
+
+----field----
+field: {97D6B024-A513-45FE-8DA6-063BA590F59E}
+name: Interest Name
+key: interest name
+content-length: 5
+
+$name
+----field----
+field: {32822EBA-5E3F-42D2-8CC3-56777B1CA74E}
+name: Interest Description
+key: interest description
+content-length: 23
+
+Description about $name
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140219T145600
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+807b7df4-8417-4cf2-83b3-23ecfcee8b77
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140224T163736:635288566568960736
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

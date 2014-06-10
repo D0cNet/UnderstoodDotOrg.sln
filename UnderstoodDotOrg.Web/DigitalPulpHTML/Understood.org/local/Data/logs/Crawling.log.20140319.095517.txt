@@ -1,0 +1,23 @@
+8468 09:55:20 INFO  [Index=sitecore_core_index] Initializing IntervalAsynchronousUpdateStrategy with interval '00:01:00'.
+8468 09:55:20 INFO  [Index=sitecore_core_index] Initializing SitecoreItemCrawler. DB:core / Root:/sitecore
+8468 09:55:20 INFO  [Index=sitecore_master_index] Initializing SynchronousStrategy.
+8468 09:55:20 INFO  [Index=sitecore_master_index] Initializing SitecoreItemCrawler. DB:master / Root:/sitecore
+8468 09:55:20 INFO  [Index=sitecore_web_index] Initializing OnPublishEndAsynchronousStrategy.
+8468 09:55:20 INFO  [Index=sitecore_web_index] Initializing SitecoreItemCrawler. DB:web / Root:/sitecore
+8468 09:55:20 INFO  [Index=mediaframework_brightcove_index] Initializing SynchronousStrategy.
+8468 09:55:20 INFO  [Index=mediaframework_brightcove_index] Initializing SitecoreItemCrawler. DB:master / Root:{7150B2B1-EB68-40EE-991F-2AFEDB532C46}
+13708 09:56:22 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
+13708 09:56:22 INFO  [Index=sitecore_core_index] History engine is empty. Incremental rebuild returns
+14840 09:57:09 WARN  Hosting Environment Stop Requested : immediate=False
+14840 09:57:09 WARN  [Index=sitecore_core_index] Crawling Stopped
+14840 09:57:09 WARN  [Index=sitecore_master_index] Crawling Stopped
+14840 09:57:09 WARN  [Index=sitecore_web_index] Crawling Stopped
+14840 09:57:09 WARN  [Index=mediaframework_brightcove_index] Crawling Stopped
+15876 09:57:23 INFO  [Index=sitecore_web_index] OnPublishEndAsynchronousStrategy triggered.
+15876 09:57:26 INFO  [Index=sitecore_web_index] Updating '53' items from Event Queue.
+15876 09:57:26 INFO  IndexCustodian. IncrementalUpdate triggered on index sitecore_web_index. Data=Count=53
+15876 09:57:26 INFO  [Index=sitecore_web_index] OnPublishEndAsynchronousStrategy triggered.
+15876 09:57:26 INFO  [Index=sitecore_web_index] Updating '1' items from Event Queue.
+15876 09:57:26 INFO  IndexCustodian. IncrementalUpdate triggered on index sitecore_web_index. Data=Count=1
+15876 09:57:26 WARN  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy triggered but muted. Indexing is paused.
+14840 09:57:39 WARN  Hosting Environment Stop Requested : immediate=True

@@ -1,0 +1,25 @@
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\app_config\include
+OK: MoveIfNotExists E:\wwwroot\Poses\understood.org\DEV\Website\App_Config\Include\CustomItem.config E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\app_config/include/customitem.config
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\App_Config\Include
+OK: Move E:\wwwroot\Poses\understood.org\DEV\Website\temp\install\A203D56D959043D7A2152ECF45533094\dm3mlhdt.txy E:\wwwroot\Poses\understood.org\DEV\Website\App_Config\Include\CustomItem.config
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\understood.org\DEV\Website\bin\CustomItemGenerator.dll E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\bin/customitemgenerator.dll
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\bin
+OK: Move E:\wwwroot\Poses\understood.org\DEV\Website\temp\install\A203D56D959043D7A2152ECF45533094\lc42ibvy.0ua E:\wwwroot\Poses\understood.org\DEV\Website\bin\CustomItemGenerator.dll
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\sitecore modules\shell\customitemgenerator\nvelocity templates
+OK: MoveIfNotExists E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Nvelocity Templates\CustomItem.base.vm E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\sitecore modules/shell/customitemgenerator/nvelocity templates/customitem.base.vm
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Nvelocity Templates
+OK: Move E:\wwwroot\Poses\understood.org\DEV\Website\temp\install\A203D56D959043D7A2152ECF45533094\iuxm0h4c.v0m E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Nvelocity Templates\CustomItem.base.vm
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\sitecore modules\shell\customitemgenerator\nvelocity templates
+OK: MoveIfNotExists E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Nvelocity Templates\CustomItem.partial.vm E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\sitecore modules/shell/customitemgenerator/nvelocity templates/customitem.partial.vm
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Nvelocity Templates
+OK: Move E:\wwwroot\Poses\understood.org\DEV\Website\temp\install\A203D56D959043D7A2152ECF45533094\u4grlzrt.z41 E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Nvelocity Templates\CustomItem.partial.vm
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\sitecore modules\shell\customitemgenerator\sitecore xaml
+OK: MoveIfNotExists E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Sitecore Xaml\xmlGenerateCustomItem.xml E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\sitecore modules/shell/customitemgenerator/sitecore xaml/xmlgeneratecustomitem.xml
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Sitecore Xaml
+OK: Move E:\wwwroot\Poses\understood.org\DEV\Website\temp\install\A203D56D959043D7A2152ECF45533094\ofkdee3h.wgv E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Sitecore Xaml\xmlGenerateCustomItem.xml
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\sitecore modules\shell\customitemgenerator\sitecore xaml
+OK: MoveIfNotExists E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Sitecore Xaml\xmlGenerateCustomItemByFolder.xml E:\wwwroot\Poses\understood.org\DEV\Website\temp\installation_history\A203D56D959043D7A2152ECF45533094\sitecore modules/shell/customitemgenerator/sitecore xaml/xmlgeneratecustomitembyfolder.xml
+OK: MkDir  E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Sitecore Xaml
+OK: Move E:\wwwroot\Poses\understood.org\DEV\Website\temp\install\A203D56D959043D7A2152ECF45533094\xszh3pq0.fkg E:\wwwroot\Poses\understood.org\DEV\Website\sitecore modules\Shell\CustomItemGenerator\Sitecore Xaml\xmlGenerateCustomItemByFolder.xml
+OK: Delete  E:\wwwroot\Poses\understood.org\DEV\Website\temp\install\A203D56D959043D7A2152ECF45533094-commit.bat

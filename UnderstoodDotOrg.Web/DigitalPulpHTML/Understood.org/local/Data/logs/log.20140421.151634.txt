@@ -1,0 +1,322 @@
+3380 15:16:34 INFO  HttpModule is being initialized
+3380 15:16:35 INFO  
+3380 15:16:35 INFO  **********************************************************************
+3380 15:16:35 INFO  **********************************************************************
+3380 15:16:35 INFO  Sitecore started
+3380 15:16:35 INFO  Sitecore.NET 7.0 (rev. 140120)
+3380 15:16:35 INFO  
+3380 15:16:35 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Client.dll (Sitecore CMS, Sitecore Client Application, 7.0 rev. 140120)
+3380 15:16:35 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Kernel.dll (Sitecore CMS, Sitecore CMS Kernel Library, 7.0 rev. 140120)
+3380 15:16:35 INFO  C:\inetpub\wwwroot\Poses\Understood.org\local\Website\bin\Sitecore.Nexus.dll (Sitecore.Nexus)
+3380 15:16:35 INFO  
+3380 15:16:35 INFO  Operating system Microsoft Windows NT 6.1.7601 Service Pack 1
+3380 15:16:35 INFO  
+3380 15:16:35 INFO  Microsoft.NET version 4.0.30319.18444
+3380 15:16:35 INFO  
+3380 15:16:35 INFO  Process id: 14360
+3380 15:16:35 INFO  Windows identity used by the process: NT AUTHORITY\NETWORK SERVICE. Impersonation: False
+3380 15:16:35 INFO  Managed pipeline mode: Integrated
+3380 15:16:35 INFO  
+3380 15:16:35 INFO  EventQueues enabled: True
+3380 15:16:35 INFO  Instance Name:CHADDADT-PC-understood.org.local
+3380 15:16:35 INFO  
+3380 15:16:35 INFO  Threshold settings
+3380 15:16:35 INFO    Show threshold warnings: False
+3380 15:16:35 INFO  
+3380 15:16:35 INFO  Databases
+3380 15:16:35 INFO    core
+3380 15:16:35 INFO    master
+3380 15:16:35 INFO    web
+3380 15:16:35 INFO    filesystem
+3380 15:16:35 INFO  
+3380 15:16:35 INFO  Domains
+3380 15:16:36 INFO  Heartbeat - Initializing
+3380 15:16:36 INFO  Heartbeat - Interval set to: 00:00:02
+3380 15:16:36 INFO  Heartbeat - Worker thread started
+3380 15:16:36 INFO  Trying to load XML configuration /App_Config/Security/Domains.config
+3380 15:16:36 INFO    sitecore
+3380 15:16:36 INFO    extranet
+3380 15:16:36 INFO    default
+3380 15:16:36 INFO  **********************************************************************
+3380 15:16:36 INFO  **********************************************************************
+3380 15:16:36 INFO  Attempting to get ASP.NET process history
+3380 15:16:36 WARN  No process history available
+3380 15:16:38 INFO  Cache created: 'LanguageProvider - Languages' (max size: 100KB, running total: 100KB)
+ManagedPoolThread #17 15:16:38 INFO  Trying to load XML configuration /App_Config/Security/Domains.config
+3380 15:16:38 INFO  Cache created: 'DeviceItemsCache' (max size: 10MB, running total: 10MB)
+3380 15:16:38 INFO  Cache created: 'core[data]' (max size: 20MB, running total: 30MB)
+3380 15:16:38 INFO  Cache created: 'core[items]' (max size: 10MB, running total: 40MB)
+3380 15:16:38 INFO  Cache created: 'core[paths]' (max size: 500KB, running total: 40MB)
+3380 15:16:38 INFO  Cache created: 'core[standardValues]' (max size: 500KB, running total: 41MB)
+3380 15:16:38 INFO  Cache created: 'core[itempaths]' (max size: 10MB, running total: 51MB)
+3380 15:16:39 INFO  Cache created: 'core[blobIDs]' (max size: 500KB, running total: 51MB)
+Heartbeat 15:16:40 INFO  Cache created: 'core[blobIDs]' (max size: 500KB, running total: 52MB)
+Heartbeat 15:16:40 INFO  Cache created: 'master[data]' (max size: 20MB, running total: 72MB)
+Heartbeat 15:16:40 INFO  Cache created: 'master[items]' (max size: 10MB, running total: 82MB)
+Heartbeat 15:16:40 INFO  Cache created: 'master[paths]' (max size: 500KB, running total: 82MB)
+Heartbeat 15:16:40 INFO  Cache created: 'master[standardValues]' (max size: 500KB, running total: 83MB)
+Heartbeat 15:16:40 INFO  Cache created: 'master[itempaths]' (max size: 10MB, running total: 93MB)
+Heartbeat 15:16:40 INFO  Cache created: 'master[blobIDs]' (max size: 500KB, running total: 93MB)
+3380 15:16:40 INFO  Cache created: 'master[blobIDs]' (max size: 500KB, running total: 94MB)
+Heartbeat 15:16:40 INFO  Cache created: 'web[data]' (max size: 20MB, running total: 114MB)
+Heartbeat 15:16:40 INFO  Cache created: 'web[items]' (max size: 10MB, running total: 124MB)
+Heartbeat 15:16:40 INFO  Cache created: 'web[paths]' (max size: 500KB, running total: 124MB)
+Heartbeat 15:16:40 INFO  Cache created: 'web[standardValues]' (max size: 500KB, running total: 124MB)
+Heartbeat 15:16:40 INFO  Cache created: 'web[itempaths]' (max size: 10MB, running total: 134MB)
+Heartbeat 15:16:40 INFO  Cache created: 'web[blobIDs]' (max size: 500KB, running total: 135MB)
+3380 15:16:40 INFO  Cache created: 'filesystem[data]' (max size: 0 bytes, running total: 135MB)
+3380 15:16:40 INFO  Cache created: 'filesystem[items]' (max size: 0 bytes, running total: 135MB)
+Heartbeat 15:16:40 INFO  Cache created: 'filesystem[items]' (max size: 0 bytes, running total: 135MB)
+Heartbeat 15:16:40 INFO  Cache created: 'filesystem[paths]' (max size: 0 bytes, running total: 135MB)
+3380 15:16:40 INFO  Cache created: 'filesystem[paths]' (max size: 0 bytes, running total: 135MB)
+Heartbeat 15:16:40 INFO  Cache created: 'filesystem[standardValues]' (max size: 0 bytes, running total: 135MB)
+3380 15:16:40 INFO  Cache created: 'filesystem[itempaths]' (max size: 10MB, running total: 145MB)
+3380 15:16:40 INFO  Cache created: 'filesystem[blobIDs]' (max size: 500KB, running total: 146MB)
+Heartbeat 15:16:40 INFO  Cache created: 'filesystem[blobIDs]' (max size: 500KB, running total: 146MB)
+Heartbeat 15:16:40 INFO  Cache created: 'SqlDataProvider - Property data(core)' (max size: 500KB, running total: 146MB)
+Heartbeat 15:16:41 INFO  Cache created: 'SqlDataProvider - Property data(master)' (max size: 500KB, running total: 147MB)
+Heartbeat 15:16:41 INFO  Cache created: 'SqlDataProvider - Property data(web)' (max size: 500KB, running total: 147MB)
+3380 15:16:47 INFO  Cache created: 'SqlDataProvider - Prefetch data(core)' (max size: 10MB, running total: 157MB)
+3380 15:16:47 INFO  Cache created: 'ItemCloningRelations' (max size: 10MB, running total: 167MB)
+3380 15:16:48 INFO  Cache created: 'AccessResultCache' (max size: 2MB, running total: 169MB)
+3380 15:16:48 INFO  Cache created: 'ProxyProvider' (max size: 500KB, running total: 170MB)
+3380 15:16:49 INFO  Loading Dictionary from cache
+3380 15:16:49 INFO  MemoryMonitor initialized. Threshold: 800 MB. Interval: 00:00:05
+3380 15:16:51 INFO  Cache created: '[FieldReaderCache]' (max size: 5MB, running total: 175MB)
+3380 15:16:56 INFO  Scheduler - Initializing
+3380 15:16:56 INFO  Cache created: 'UserProfileCache' (max size: 1MB, running total: 176MB)
+3380 15:16:57 INFO  Cache created: 'clientData' (max size: 5MB, running total: 181MB)
+3380 15:16:57 INFO  Scheduler - Interval set to: 00:00:05
+3380 15:16:57 INFO  Scheduler - Worker thread started
+7424 15:17:01 INFO  HttpModule is being initialized
+11328 15:17:02 INFO  Scheduler - Adding agents
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.Tasks.DatabaseAgent (interval: 00:10:00)
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.Tasks.DatabaseAgent (interval: 00:10:00)
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.Tasks.UrlAgent (interval: 00:15:00)
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.Tasks.TaskDatabaseAgent (interval: 00:10:00)
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.Tasks.CompactClientDataAgent (interval: 04:00:00)
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupHistory (interval: 04:00:00)
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupPublishQueue (interval: 04:00:00)
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupEventQueue (interval: 04:00:00)
+11328 15:17:02 INFO  Scheduler - Skipping inactive agent: Sitecore.Tasks.HtmlCacheClearAgent
+7424 15:17:02 INFO  Cache created: 'shell[html]' (max size: 0 bytes, running total: 181MB)
+11328 15:17:02 INFO  Scheduler - Skipping inactive agent: Sitecore.Tasks.PublishAgent
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupAgent (interval: 06:00:00)
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.Tasks.CounterDumpAgent (interval: 01:00:00)
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.Tasks.CloneNotificationsCleanupAgent (interval: 1.00:00:00)
+11328 15:17:02 INFO  Scheduler - Adding agent: Sitecore.ContentSearch.Tasks.Optimize (interval: 01:00:00)
+11328 15:17:03 INFO  Scheduler - Adding agent: MediaFramework_Import_Brightcove (interval: 04:00:00)
+11328 15:17:03 INFO  Scheduler - Adding agent: MediaFramework_Cleanup_Brightcove (interval: 08:00:00)
+11328 15:17:03 INFO  Scheduler - Adding agent: Sitecore.Tasks.CleanupFDAObsoleteMediaData (interval: 1.00:00:00)
+11328 15:17:03 INFO  Scheduler - Adding agent: Sitecore.Tasks.WebDAVOptionsCleanupAgent (interval: 1.00:00:00)
+11328 15:17:03 INFO  Scheduler - Agents added
+7424 15:17:05 INFO  Cache created: 'shell[registry]' (max size: 3MB, running total: 184MB)
+7424 15:17:05 INFO  Cache created: 'shell[viewstate]' (max size: 200KB, running total: 184MB)
+7424 15:17:05 INFO  Cache created: 'shell[xsl]' (max size: 5MB, running total: 189MB)
+7424 15:17:05 INFO  Cache created: 'shell[filtered items]' (max size: 2MB, running total: 191MB)
+7424 15:17:05 INFO  Cache created: 'login[html]' (max size: 0 bytes, running total: 191MB)
+7424 15:17:05 INFO  Cache created: 'login[registry]' (max size: 5MB, running total: 196MB)
+7424 15:17:05 INFO  Cache created: 'login[viewstate]' (max size: 5MB, running total: 201MB)
+7424 15:17:05 INFO  Cache created: 'login[xsl]' (max size: 10MB, running total: 211MB)
+7424 15:17:05 INFO  Cache created: 'login[filtered items]' (max size: 2MB, running total: 213MB)
+7424 15:17:05 INFO  Cache created: 'admin[html]' (max size: 0 bytes, running total: 213MB)
+7424 15:17:05 INFO  Cache created: 'admin[registry]' (max size: 5MB, running total: 218MB)
+7424 15:17:05 INFO  Cache created: 'admin[viewstate]' (max size: 5MB, running total: 223MB)
+7424 15:17:05 INFO  Cache created: 'admin[xsl]' (max size: 10MB, running total: 233MB)
+7424 15:17:05 INFO  Cache created: 'admin[filtered items]' (max size: 2MB, running total: 235MB)
+7424 15:17:05 INFO  Cache created: 'service[html]' (max size: 0 bytes, running total: 235MB)
+7424 15:17:05 INFO  Cache created: 'service[registry]' (max size: 5MB, running total: 240MB)
+7424 15:17:05 INFO  Cache created: 'service[viewstate]' (max size: 5MB, running total: 245MB)
+7424 15:17:05 INFO  Cache created: 'service[xsl]' (max size: 10MB, running total: 255MB)
+7424 15:17:05 INFO  Cache created: 'service[filtered items]' (max size: 2MB, running total: 257MB)
+7424 15:17:05 INFO  Cache created: 'modules_shell[html]' (max size: 0 bytes, running total: 257MB)
+7424 15:17:05 INFO  Cache created: 'modules_shell[registry]' (max size: 5MB, running total: 262MB)
+7424 15:17:05 INFO  Cache created: 'modules_shell[viewstate]' (max size: 5MB, running total: 267MB)
+7424 15:17:05 INFO  Cache created: 'modules_shell[xsl]' (max size: 10MB, running total: 277MB)
+7424 15:17:05 INFO  Cache created: 'modules_shell[filtered items]' (max size: 2MB, running total: 279MB)
+7424 15:17:05 INFO  Cache created: 'modules_website[html]' (max size: 5MB, running total: 284MB)
+7424 15:17:05 INFO  Cache created: 'modules_website[registry]' (max size: 5MB, running total: 289MB)
+7424 15:17:05 INFO  Cache created: 'modules_website[viewstate]' (max size: 5MB, running total: 294MB)
+7424 15:17:05 INFO  Cache created: 'modules_website[xsl]' (max size: 10MB, running total: 304MB)
+7424 15:17:05 INFO  Cache created: 'modules_website[filtered items]' (max size: 2MB, running total: 306MB)
+7424 15:17:05 INFO  Cache created: 'website[html]' (max size: 10MB, running total: 316MB)
+7424 15:17:05 INFO  Cache created: 'website[registry]' (max size: 0 bytes, running total: 316MB)
+7424 15:17:05 INFO  Cache created: 'website[viewstate]' (max size: 0 bytes, running total: 316MB)
+7424 15:17:05 INFO  Cache created: 'website[xsl]' (max size: 5MB, running total: 321MB)
+7424 15:17:05 INFO  Cache created: 'website[filtered items]' (max size: 2MB, running total: 323MB)
+7424 15:17:05 INFO  Cache created: 'scheduler[html]' (max size: 0 bytes, running total: 323MB)
+7424 15:17:05 INFO  Cache created: 'scheduler[registry]' (max size: 5MB, running total: 328MB)
+7424 15:17:05 INFO  Cache created: 'scheduler[viewstate]' (max size: 5MB, running total: 333MB)
+7424 15:17:05 INFO  Cache created: 'scheduler[xsl]' (max size: 10MB, running total: 343MB)
+7424 15:17:05 INFO  Cache created: 'scheduler[filtered items]' (max size: 2MB, running total: 345MB)
+7424 15:17:05 INFO  Cache created: 'system[html]' (max size: 0 bytes, running total: 345MB)
+7424 15:17:05 INFO  Cache created: 'system[registry]' (max size: 5MB, running total: 350MB)
+7424 15:17:05 INFO  Cache created: 'system[viewstate]' (max size: 5MB, running total: 355MB)
+7424 15:17:05 INFO  Cache created: 'system[xsl]' (max size: 10MB, running total: 365MB)
+7424 15:17:05 INFO  Cache created: 'system[filtered items]' (max size: 2MB, running total: 367MB)
+7424 15:17:05 INFO  Cache created: 'publisher[html]' (max size: 0 bytes, running total: 367MB)
+7424 15:17:05 INFO  Cache created: 'publisher[registry]' (max size: 5MB, running total: 372MB)
+7424 15:17:05 INFO  Cache created: 'publisher[viewstate]' (max size: 5MB, running total: 377MB)
+7424 15:17:05 INFO  Cache created: 'publisher[xsl]' (max size: 10MB, running total: 387MB)
+7424 15:17:05 INFO  Cache created: 'publisher[filtered items]' (max size: 2MB, running total: 389MB)
+7424 15:17:10 INFO  Cache created: 'SqlDataProvider - Prefetch data(master)' (max size: 20MB, running total: 409MB)
+Heartbeat 15:17:33 INFO  Cache created: 'rules' (max size: 800KB, running total: 410MB)
+Heartbeat 15:17:34 INFO  Cache created: 'IsUserInRoleCache' (max size: 1MB, running total: 411MB)
+Heartbeat 15:17:34 INFO  Trying to load XML configuration /App_Config/Security/GlobalRoles.config
+ManagedPoolThread #4 15:17:36 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #19 15:17:36 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #0 15:17:37 INFO  Trying to load XML configuration /App_Config/Security/GlobalRoles.config
+7424 15:17:42 INFO  Cache created: 'WebUtil.QueryStringCache' (max size: 19KB, running total: 411MB)
+ManagedPoolThread #4 15:17:43 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #19 15:17:43 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #13 15:17:43 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #19 15:17:43 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #13 15:17:44 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #19 15:17:44 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+7568 15:17:47 INFO  HttpModule is being initialized
+ManagedPoolThread #17 15:20:34 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #1 15:20:34 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #1 15:20:39 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #17 15:20:40 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+13896 15:21:02 ERROR Application error.
+Exception: System.Web.HttpUnhandledException
+Message: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: System.Web
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.presentation_layouts_browser_aspx.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+Nested Exception
+
+Exception: System.FormatException
+Message: Unrecognized Guid format.
+Source: mscorlib
+   at System.Guid.GuidResult.SetFailure(ParseFailureKind failure, String failureMessageID, Object failureMessageFormatArgument, String failureArgumentName, Exception innerException)
+   at System.Guid.TryParseGuid(String g, GuidStyles flags, GuidResult& result)
+   at System.Guid.Parse(String input)
+   at UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile.ProfileStepThree.NextButton_Click(Object sender, EventArgs e) in c:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Web\Presentation\Sublayouts\MyProfile\ProfileStepThree.ascx.cs:line 167
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+ManagedPoolThread #14 15:21:24 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #10 15:21:24 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #10 15:21:26 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #14 15:21:28 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+15964 15:21:30 INFO  HttpModule is being initialized
+ManagedPoolThread #6 15:21:41 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #2 15:21:41 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #6 15:21:44 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #2 15:21:44 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #12 15:22:02 INFO  Starting update of index for the database 'master' (9 pending).
+ManagedPoolThread #16 15:22:02 INFO  Starting update of index for the database 'core' (1 pending).
+ManagedPoolThread #16 15:22:02 INFO  Update of index for the database 'core' done.
+ManagedPoolThread #12 15:22:06 INFO  Update of index for the database 'master' done.
+15964 15:22:36 ERROR Application error.
+Exception: System.Web.HttpUnhandledException
+Message: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: System.Web
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.presentation_layouts_browser_aspx.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+Nested Exception
+
+Exception: System.InvalidOperationException
+Message: Sequence contains no elements
+Source: System.Core
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile.ProfileStepTwo.Page_Load(Object sender, EventArgs e) in c:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Web\Presentation\Sublayouts\MyProfile\ProfileStepTwo.ascx.cs:line 29
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+ManagedPoolThread #11 15:23:19 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #7 15:23:19 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #7 15:23:20 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #11 15:23:20 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+ManagedPoolThread #3 15:23:45 INFO  Job started: Index_Update_IndexName=sitecore_master_index
+ManagedPoolThread #0 15:23:45 INFO  Job started: Index_Update_IndexName=mediaframework_brightcove_index
+ManagedPoolThread #0 15:23:46 INFO  Job ended: Index_Update_IndexName=mediaframework_brightcove_index (units processed: )
+ManagedPoolThread #3 15:23:46 INFO  Job ended: Index_Update_IndexName=sitecore_master_index (units processed: )
+3208 15:25:11 INFO  **************************************************
+3208 15:25:11 WARN  Sitecore shutting down
+3208 15:25:11 WARN  Shutdown message: Change Notification for critical directories.
+bin dir change or directory rename
+HostingEnvironment initiated shutdown
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename

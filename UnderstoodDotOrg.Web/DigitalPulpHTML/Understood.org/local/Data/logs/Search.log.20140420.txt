@@ -1,0 +1,3 @@
+11868 00:16:04 INFO  Warming and Caching your search indexes
+11868 00:16:04 INFO  /******* Warming Queries ********/
+11868 00:16:04 INFO  /*************************/

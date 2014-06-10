@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {3390C210-0B22-48FD-A411-881F956EDC0C}
+database: master
+path: /sitecore/content/Content Taxonomies/Child Related/Issues/Listening
+parent: {4B5B4ACE-6470-4E3D-A1F9-88F34CBC1A86}
+name: Listening
+master: {00000000-0000-0000-0000-000000000000}
+template: {FB6B3A57-321D-4223-9C2E-4549E87A7EF6}
+templatekey: Child Issue
+
+----version----
+language: en
+version: 1
+revision: 00deadd6-4ff2-427e-a858-7c2e1355349e
+
+----field----
+field: {16C0BE75-8866-4459-80D6-6B4B127507DB}
+name: Issue Name
+key: issue name
+content-length: 23
+
+Listening Comprehension
+----field----
+field: {A4507BFD-3F07-498D-997E-40117B25418B}
+name: Issue Description
+key: issue description
+content-length: 38
+
+Description of Listening Comprehension
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140224T194827
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+00deadd6-4ff2-427e-a858-7c2e1355349e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140224T194827:635288681070556514
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

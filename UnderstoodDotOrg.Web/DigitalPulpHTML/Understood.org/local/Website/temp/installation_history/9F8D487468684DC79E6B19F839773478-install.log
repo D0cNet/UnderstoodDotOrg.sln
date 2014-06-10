@@ -1,0 +1,969 @@
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\app_config\include
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\App_Config\Include\TelligentEvolution.config E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\app_config/include/telligentevolution.config
+OK: MkDir  E:\wwwroot\Poses\Website\App_Config\Include
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ibe0tnun.qps E:\wwwroot\Poses\Website\App_Config\Include\TelligentEvolution.config
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\NVelocity.dll E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin/nvelocity.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\nydv0xsg.0se E:\wwwroot\Poses\Website\bin\NVelocity.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\protobuf-net.dll E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin/protobuf-net.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qg2i44ed.3rw E:\wwwroot\Poses\Website\bin\protobuf-net.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\Telligent.Common.dll E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin/telligent.common.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\lifbghqq.mfq E:\wwwroot\Poses\Website\bin\Telligent.Common.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\Telligent.DynamicConfiguration.dll E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin/telligent.dynamicconfiguration.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ys4rivje.p4m E:\wwwroot\Poses\Website\bin\Telligent.DynamicConfiguration.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\Telligent.Evolution.Extensions.OAuthAuthentication.dll E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin/telligent.evolution.extensions.oauthauthentication.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\33phk3bz.yyo E:\wwwroot\Poses\Website\bin\Telligent.Evolution.Extensions.OAuthAuthentication.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\Telligent.Evolution.Extensions.SitecoreConnect.dll E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin/telligent.evolution.extensions.sitecoreconnect.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\pamddafa.dwg E:\wwwroot\Poses\Website\bin\Telligent.Evolution.Extensions.SitecoreConnect.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\Telligent.Evolution.RemoteScriptedContentFragments.dll E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin/telligent.evolution.remotescriptedcontentfragments.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qy5qbkjo.w5j E:\wwwroot\Poses\Website\bin\Telligent.Evolution.RemoteScriptedContentFragments.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\Telligent.Glow.dll E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\bin/telligent.glow.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\nanb5vrp.b2n E:\wwwroot\Poses\Website\bin\Telligent.Glow.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\rsw.ashx E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\rsw.ashx
+OK: MkDir  E:\wwwroot\Poses\Website
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\d24nbnnj.mpx E:\wwwroot\Poses\Website\rsw.ashx
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\css
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\css\modal.css E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/css/modal.css
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\css
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\tbhq1dmj.eut E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\css\modal.css
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\css
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\css\screen.css E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/css/screen.css
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\css
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\zdlcc1to.tm1 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\css\screen.css
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\css
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\css\utility.css E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/css/utility.css
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\css
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\mercegou.xvy E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\css\utility.css
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\add-friend.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/add-friend.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\45acp10y.pcv E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\add-friend.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\add-group-button.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/add-group-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\rk4lra4g.vq3 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\add-group-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\addpost-button.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/addpost-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ejc4uerc.iuf E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\addpost-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\admin-bar-bg.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/admin-bar-bg.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\3q0stzgv.nkl E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\admin-bar-bg.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\admin-bar-button.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/admin-bar-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\mre2futw.n4v E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\admin-bar-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\application-tabs.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/application-tabs.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\krfd21wa.ud0 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\application-tabs.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\application-tabset.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/application-tabset.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\0tbvie4t.v2k E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\application-tabset.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\application-title-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/application-title-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\0nyspoyi.rgn E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\application-title-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\app-search-field-input.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/app-search-field-input.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\wx02lg2p.p2a E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\app-search-field-input.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\ascending.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/ascending.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\fjwi42dh.trr E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\ascending.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\attachment-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/attachment-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\p5n3vasd.arg E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\attachment-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\back-arrow.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/back-arrow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\hrt45gz4.ch4 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\back-arrow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\blue_pencil_small.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/blue_pencil_small.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ha0yu05h.cjn E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\blue_pencil_small.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\body.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/body.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\b3r4cnn4.mtn E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\body.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\browse-app-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/browse-app-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\2w0pz5wx.m4y E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\browse-app-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\browse-apps-search-clear.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/browse-apps-search-clear.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\zwcurxyz.035 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\browse-apps-search-clear.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\browse-groups-search.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/browse-groups-search.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\tyzc5srt.yv0 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\browse-groups-search.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\browse-groups-search-clear.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/browse-groups-search-clear.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\5smt4hrs.hye E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\browse-groups-search-clear.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-arrows.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-arrows.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\wlmkga43.yr1 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-arrows.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-arrows.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-arrows.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\e4htefwc.bpd E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-arrows.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-bottom.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-bottom.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\s22i1f3u.k3q E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-bottom.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-bottom.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-bottom.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\g15exbpt.kfv E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-bottom.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-corners.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-corners.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\5hvol4gg.loy E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-corners.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-corners.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-corners.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\wovggzdj.z4r E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-corners.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-left.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-left.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\50quclsu.00w E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-left.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-left.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-left.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\bl2chwhb.u1q E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-left.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-right.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-right.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\g3eyhvi3.vod E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-right.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-right.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-right.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\flj0t2yo.3h1 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-right.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-top.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-top.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\1m2kiu35.lc5 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-top.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-top.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/bubble-top.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\xg5eiubo.2ev E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\bubble-top.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\button.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\dwxrfod0.gjh E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\button-sprite.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/button-sprite.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qhv33s4g.kyr E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\button-sprite.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\comment-author-quote-ml.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/comment-author-quote-ml.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\2evclwmk.0eg E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\comment-author-quote-ml.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\comment-author-quote-mr.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/comment-author-quote-mr.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\son3l4mg.jhu E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\comment-author-quote-mr.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\comment-hf-set.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/comment-hf-set.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\j44ubxgy.aok E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\comment-hf-set.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\comment-quote-ml.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/comment-quote-ml.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\cevv50od.crw E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\comment-quote-ml.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\comment-quote-mr.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/comment-quote-mr.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\syrxh4f5.szi E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\comment-quote-mr.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\configure.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/configure.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\nnfg3k1d.pgy E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\configure.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-header.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/content-fragment-header.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\x01fgumy.uf4 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-header.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-page-background.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/content-fragment-page-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\045ofs44.xyt E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-page-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-page-background-bottom-left.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/content-fragment-page-background-bottom-left.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\icfeetjk.rzm E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-page-background-bottom-left.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-page-background-bottom-right.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/content-fragment-page-background-bottom-right.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\4zvvgzyt.hv4 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-page-background-bottom-right.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-page-background-top-left.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/content-fragment-page-background-top-left.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\tts5valn.fd4 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-page-background-top-left.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-page-background-top-right.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/content-fragment-page-background-top-right.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\fuzvk4rv.lky E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-page-background-top-right.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-search.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/content-fragment-search.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\uwjya510.zex E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\content-fragment-search.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\cross-small.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/cross-small.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\nl4tgcb5.pin E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\cross-small.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\descending.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/descending.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\j45ro4kz.iwy E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\descending.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\down-arrow.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/down-arrow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\gvo5mwxc.esc E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\down-arrow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\editable-content-fragment-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/editable-content-fragment-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\0herrx40.0im E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\editable-content-fragment-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\fav-background.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/fav-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\icazj4sa.ror E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\fav-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\favicon.ico E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/favicon.ico
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\cek4xuzk.jyo E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\favicon.ico
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\featured-content-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/featured-content-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\t4h5yzbz.0my E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\featured-content-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\featured-content-bottom-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/featured-content-bottom-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\uac4c2tf.bi2 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\featured-content-bottom-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\fiji-footer.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/fiji-footer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ub5qda4g.uto E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\fiji-footer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\filter-background.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/filter-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\gofznmgi.dvl E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\filter-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\filter-separator-background.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/filter-separator-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\hsqrvmk0.o3r E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\filter-separator-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\folder-small.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/folder-small.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\hrpgvnaw.vjq E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\folder-small.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\follow.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/follow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\c3431wgr.xfk E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\follow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-addpost-button.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/group-addpost-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\xehthapa.iev E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-addpost-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-back-parent.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/group-nav-back-parent.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\tyj1kpay.shs E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-back-parent.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-bkg.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/group-nav-bkg.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ojfnsd0u.vac E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-bkg.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-bkg-selected.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/group-nav-bkg-selected.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\vll0ihbn.tey E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-bkg-selected.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-bkg-selected-with-children.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/group-nav-bkg-selected-with-children.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ebsumyg0.aza E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-bkg-selected-with-children.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-child-background-sep.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/group-nav-child-background-sep.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\mdttzlv4.x3r E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-child-background-sep.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-child-sep.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/group-nav-child-sep.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\n5okxwu2.52d E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-child-sep.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-popup-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/group-nav-popup-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\24rz3lmh.tb5 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-popup-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-sep.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/group-nav-sep.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\eonsnu2r.dhb E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-sep.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-sep-with-children.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/group-nav-sep-with-children.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\v2cayrdk.bbn E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-sep-with-children.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-sep-with-children-active.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/group-nav-sep-with-children-active.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\hfv2yqto.rj1 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\group-nav-sep-with-children-active.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\header-popup-background.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/header-popup-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\iq1sdcuy.g3v E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\header-popup-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\hoverclose.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/hoverclose.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\zrxplfb2.abg E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\hoverclose.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\0pxjvfxs.2bc E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-add.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-add.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\5futq0xu.ygy E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-add.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-blog-32.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-blog-32.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\xlfeoafm.qp5 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-blog-32.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-capture.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-capture.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\eojcq1rd.n2t E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-capture.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-close.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-close.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\yqbr2cww.ww0 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-close.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-cog.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-cog.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\yu3y5fnd.nbs E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-cog.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-delete.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-delete.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\pm4rwh5j.ykd E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-delete.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-down-arrow.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-down-arrow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qece0pqb.vm5 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-down-arrow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-download.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-download.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\x5m1zh12.au0 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-download.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-download-small.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-download-small.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\kl2o3xvh.s24 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-download-small.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-edit.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-edit.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\iz1gynsc.mxu E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-edit.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-files-32.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-files-32.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\wbwoxdc0.zfw E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-files-32.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-follow-off.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-follow-off.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ciy2eae1.aen E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-follow-off.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-follow-on.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-follow-on.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\i3l1rd1k.024 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-follow-on.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-forum-32.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-forum-32.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qmlr4bma.awa E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-forum-32.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-home.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-home.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\rldaplb2.ju5 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-home.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-info.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-info.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\chpnpl2a.z0i E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-info.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-ipaddress.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-ipaddress.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qzq50ga5.ucw E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-ipaddress.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-lock-page.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-lock-page.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\f0m3q4be.1cg E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-lock-page.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-mark-read.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-mark-read.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qizv1gpa.bpk E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-mark-read.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-moderate.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-moderate.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\bv0tci3a.uti E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-moderate.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-page-32.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-page-32.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\sejvykrg.msd E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-page-32.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-quote.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-quote.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qhdudvfi.bw4 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-quote.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-report-abuse.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-report-abuse.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ca3bq4ak.hqn E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-report-abuse.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-right-arrow.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-right-arrow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\hketb1fs.zty E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-right-arrow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-rss.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-rss.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\rqst5k3d.shh E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-rss.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-rss.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-rss.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ohslvj4d.3ea E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-rss.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-settings.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-settings.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\dpn5tfko.mmy E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-settings.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-share.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-share.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\o3wh0bvz.0f5 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-share.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-slideshow.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-slideshow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\gvqsahwa.wla E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-slideshow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-sprite.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-sprite.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ftmvon1l.j0l E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-sprite.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-suggest-answer.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-suggest-answer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\jvo1pvy0.b1v E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-suggest-answer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-tags.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-tags.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\dexmqket.0cf E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-tags.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-thumbnail-list.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-thumbnail-list.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\uh3fzbma.ggl E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-thumbnail-list.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-unlock-page.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-unlock-page.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\wqxqmaih.hfb E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-unlock-page.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-wiki-32.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-wiki-32.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\4nh0mekx.h4s E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-wiki-32.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-wiki-edit.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-wiki-edit.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\beleaaul.ylt E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-wiki-edit.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-wiki-history.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-wiki-history.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\lv4osbes.fan E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-wiki-history.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-wiki-page.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/icon-wiki-page.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\0tvb2gka.a0p E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\icon-wiki-page.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\join_group.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/join_group.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\okkz1wnz.jy5 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\join_group.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\leave_group.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/leave_group.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\0d5jleb5.wwq E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\leave_group.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\like.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/like.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\fyzwdchf.qlv E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\like.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\login-create-sprite-arrows.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/login-create-sprite-arrows.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\hr5dy4q4.kxu E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\login-create-sprite-arrows.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\messages-sprite.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/messages-sprite.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\3bdhozkw.4tm E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\messages-sprite.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-footer-left.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/modal-footer-left.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\y32oqh3i.ght E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-footer-left.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-footer-left.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/modal-footer-left.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\mlu2pvd0.dgg E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-footer-left.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-footer-right.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/modal-footer-right.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\uppjcmtx.t1d E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-footer-right.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-footer-right.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/modal-footer-right.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\41qoyxbh.4qw E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-footer-right.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-header-left.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/modal-header-left.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\fzqrxnr4.dzt E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-header-left.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-header-left.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/modal-header-left.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\sahaypjt.yul E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-header-left.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-header-right.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/modal-header-right.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\wqa3tchi.3c0 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-header-right.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-header-right.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/modal-header-right.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\frufn52x.ldu E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-header-right.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-tab-set.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/modal-tab-set.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\jvdelrf2.ckq E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\modal-tab-set.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\moderation.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/moderation.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ys1rlwqc.qrf E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\moderation.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\new-message-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/new-message-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\5yk05bch.cmw E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\new-message-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\new-message-reply-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/new-message-reply-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\p4hrgklo.2zb E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\new-message-reply-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\new-message-reply-processing-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/new-message-reply-processing-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\hchgx23g.wxr E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\new-message-reply-processing-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\no-button.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/no-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ccys2inb.avr E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\no-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\page-layout-welcome.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/page-layout-welcome.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\cl4n2hpn.cjm E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\page-layout-welcome.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\pager-item.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/pager-item.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\nzimd0bq.p4l E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\pager-item.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\pause_small.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/pause_small.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\2egdryjv.pbc E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\pause_small.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\play_small.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/play_small.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\zjxl2rm4.utc E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\play_small.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-answer-form.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/post-answer-form.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\cco11m34.4fa E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-answer-form.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-button.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/post-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\alsixrex.ypt E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-dropshadow-bottom.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/post-dropshadow-bottom.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\3yoyf15v.map E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-dropshadow-bottom.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-dropshadow-right.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/post-dropshadow-right.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\vwvx23be.1pa E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-dropshadow-right.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-starter-background.jpg E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/post-starter-background.jpg
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\lt5spf2e.ble E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-starter-background.jpg
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-status-noanswer.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/post-status-noanswer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\12r4idsb.lrq E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-status-noanswer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-status-suggestedanswer.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/post-status-suggestedanswer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\u10c42eb.w0h E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-status-suggestedanswer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-status-verifiedanswer.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/post-status-verifiedanswer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\pvr5f33v.jwj E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-status-verifiedanswer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-type-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/post-type-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\inift4v0.tvj E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\post-type-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\question-not-answered.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/question-not-answered.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\4zhcgmzm.wze E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\question-not-answered.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\question-suggested-answered.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/question-suggested-answered.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\v5clgfnk.4p4 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\question-suggested-answered.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\question-verified-answered.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/question-verified-answered.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\fefn0oed.5me E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\question-verified-answered.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\question-verified-answered.zip E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/question-verified-answered.zip
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\cgksljbn.utq E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\question-verified-answered.zip
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\quickpost-attach-button.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/quickpost-attach-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\augprq5s.yhd E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\quickpost-attach-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\quickpost-message-bkg.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/quickpost-message-bkg.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\0hv40q35.zw2 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\quickpost-message-bkg.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\quickpost-post-button.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/quickpost-post-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\d1d0hgn3.c5p E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\quickpost-post-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\quickpost-post-button-disabled.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/quickpost-post-button-disabled.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\jlvxc5f0.55t E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\quickpost-post-button-disabled.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\quickpost-post-button-hover.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/quickpost-post-button-hover.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\gxkcw1j0.0mx E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\quickpost-post-button-hover.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\remove-friend.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/remove-friend.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\kq23mjpr.0kk E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\remove-friend.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\reply-button.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/reply-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\br5co2nf.ave E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\reply-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\reply-button-hover.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/reply-button-hover.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\rc3f1ltx.l4c E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\reply-button-hover.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\reply-button-selected.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/reply-button-selected.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\z1sgahsi.n5v E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\reply-button-selected.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\S900.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/s900.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\1oqiq10h.qmr E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\S900.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\save-user-profile.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/save-user-profile.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ryrvvxwz.1m2 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\save-user-profile.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-button.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/search-field-button.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\u2vjf23a.3cn E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-button.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-button-active.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/search-field-button-active.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\1dsffjbp.wc0 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-button-active.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-button-page.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/search-field-button-page.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\gkmj3ina.e2t E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-button-page.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-button-page-grey.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/search-field-button-page-grey.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qj14byvm.egk E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-button-page-grey.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-input.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/search-field-input.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ef210sru.qgn E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-input.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-input-page.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/search-field-input-page.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\buz5gamh.xki E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-input-page.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-input-page-grey.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/search-field-input-page-grey.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qmbxse0a.r5h E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-field-input-page-grey.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-options-popup-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/search-options-popup-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\rlsepnca.hzw E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-options-popup-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-popup-background.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/search-popup-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\5pmiln5g.nbz E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\search-popup-background.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\send-message.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/send-message.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\1ieu4iin.w5q E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\send-message.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\serp-hover-faux-column.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/serp-hover-faux-column.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\f334aw55.yl3 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\serp-hover-faux-column.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\spinner.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/spinner.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\hfxmkear.d3h E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\spinner.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\spinner_ececec.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/spinner_ececec.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\phe5y15w.t0u E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\spinner_ececec.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-left-off.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/star-left-off.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\gkdr00r5.ree E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-left-off.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-left-off.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/star-left-off.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ladab1yr.kmw E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-left-off.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-left-on.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/star-left-on.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\xbw1y0uc.e13 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-left-on.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-left-on.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/star-left-on.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\2o5enctc.ryc E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-left-on.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-right-off.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/star-right-off.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\bbcn05z1.rgx E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-right-off.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-right-off.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/star-right-off.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qegaszyn.4qd E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-right-off.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-right-on.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/star-right-on.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qbcwvtm1.2hc E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-right-on.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-right-on.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/star-right-on.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\frvdkgi2.ivu E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\star-right-on.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\suggested-answer.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/suggested-answer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\3vsf25jk.4eq E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\suggested-answer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\tab-bar.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/tab-bar.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\212s4xj0.aer E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\tab-bar.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\tab-set.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/tab-set.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\2rwnp12z.ejq E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\tab-set.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\tags-editor-bkg.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/tags-editor-bkg.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\y1fvag1b.zha E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\tags-editor-bkg.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\telligent.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/telligent.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ctrbou3s.jpw E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\telligent.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\thumbnail-separator.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/thumbnail-separator.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\2omxn4bv.vfo E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\thumbnail-separator.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\Thumbs.db E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/thumbs.db
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\of0mrhyd.upc E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\Thumbs.db
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\up-arrow.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/up-arrow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\mlvylkcl.tby E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\up-arrow.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\user-banner-status-message-background.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/user-banner-status-message-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\sl4rlfja.25h E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\user-banner-status-message-background.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\user-status-bkg.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/user-status-bkg.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\1mwy3h42.fes E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\user-status-bkg.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\user-status-left.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/user-status-left.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\cgf10dfn.qqh E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\user-status-left.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images\utility
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\utility\box.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/utility/box.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\utility
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\xo4vlu3e.1i1 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\utility\box.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images\utility
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\utility\Thumbs.db E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/utility/thumbs.db
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\utility
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\n2vfptif.f1o E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\utility\Thumbs.db
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\verified-answer.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/verified-answer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ydyeinqd.q5v E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\verified-answer.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\who-likes-arrow.png E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/who-likes-arrow.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\5kwr34y2.fpt E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\who-likes-arrow.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\images
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\yes-button.gif E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/images/yes-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\coso3zd4.ssa E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\images\yes-button.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\script
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\script\ui.js E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/script/ui.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\script
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\p5uyfgvm.tx0 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\script\ui.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\ActivityStoryStream-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/activitystorystream-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\aqyaazn2.swt E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\ActivityStoryStream-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\Blog-AddCommentForm.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/blog-addcommentform.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\jlapya20.yeh E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\Blog-AddCommentForm.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\Blog-BrowseBlogs.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/blog-browseblogs.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\dmy2pakn.bfp E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\Blog-BrowseBlogs.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\BlogCommentListWidgetv7-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/blogcommentlistwidgetv7-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ssxb1au5.flc E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\BlogCommentListWidgetv7-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\BlogPostListWidgetv7-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/blogpostlistwidgetv7-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\uwidgru0.m3e E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\BlogPostListWidgetv7-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\BlogPostWidgetv7-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/blogpostwidgetv7-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\fe0gr1hf.pa0 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\BlogPostWidgetv7-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\Forums-BrowseForums.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/forums-browseforums.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\3wlijioo.mtu E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\Forums-BrowseForums.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\ForumsCreate-EditPost-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/forumscreate-editpost-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\uhoidlde.mj3 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\ForumsCreate-EditPost-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\ForumsPostModeratedInformation-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/forumspostmoderatedinformation-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ll5hzuwf.kqx E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\ForumsPostModeratedInformation-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\ForumThreadListWidgetv7-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/forumthreadlistwidgetv7-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\kl5dalan.rlx E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\ForumThreadListWidgetv7-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\ForumThreadWidgetv7-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/forumthreadwidgetv7-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\35wbgnse.vhj E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\ForumThreadWidgetv7-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\FriendshipListSitecore-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/friendshiplistsitecore-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\gho5ejfz.a1z E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\FriendshipListSitecore-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGallery-AddCommentForm.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/mediagallery-addcommentform.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\hwniqlvr.ojy E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGallery-AddCommentForm.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGallery-BrowseMediaGalleries.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/mediagallery-browsemediagalleries.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\v5l3kemz.wxf E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGallery-BrowseMediaGalleries.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGalleryCommentListWidgetv7-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/mediagallerycommentlistwidgetv7-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\rgpsrk14.yiy E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGalleryCommentListWidgetv7-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGallery-FileDetails.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/mediagallery-filedetails.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ajayms3x.4sz E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGallery-FileDetails.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGalleryFileListWidgetv7-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/mediagalleryfilelistwidgetv7-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\y10btnsz.ccm E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGalleryFileListWidgetv7-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGalleryFileWidgetv7-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/mediagalleryfilewidgetv7-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\bjsrsk5j.wdb E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGalleryFileWidgetv7-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGallery-Slideshow.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/mediagallery-slideshow.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\4ti4dhtq.trf E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGallery-Slideshow.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGalleryUpload-EditFileForm-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/mediagalleryupload-editfileform-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\izl4sekg.oa4 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\MediaGalleryUpload-EditFileForm-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\QuickPostStatusOnly-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/quickpoststatusonly-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\ubsrnz5y.ogb E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\QuickPostStatusOnly-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreBlogPostCreate-Edit-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/sitecoreblogpostcreate-edit-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\zx3sadkw.s22 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreBlogPostCreate-Edit-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreCommunitySearchResults-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/sitecorecommunitysearchresults-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\f4nizwmj.5bs E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreCommunitySearchResults-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreSocialContentWidget-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/sitecoresocialcontentwidget-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\4wn0zy2n.hln E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreSocialContentWidget-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreUserBanner-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/sitecoreuserbanner-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\mks4c5ye.qju E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreUserBanner-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreUserProfile-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/sitecoreuserprofile-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\lw5tucxp.cys E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreUserProfile-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreUserRoleBadges-Widget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/sitecoreuserrolebadges-widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\mtadwbzm.xv5 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\SitecoreUserRoleBadges-Widget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\a\w
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\testwidget.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/a/w/testwidget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\rmkpba0m.now E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\a\w\testwidget.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\c
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\c\CommunityFromTemplate.xml E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/c/communityfromtemplate.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\c
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\0rgeqfhj.r1q E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\c\CommunityFromTemplate.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\c
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\c\CommunityFromTemplate.xml.js E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/c/communityfromtemplate.xml.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\c
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\bq25bkoq.gl4 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\c\CommunityFromTemplate.xml.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\Configure.aspx E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/configure.aspx
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\qbscy44c.1z4 E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\Configure.aspx
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\h
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\h\connector.ashx E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/h/connector.ashx
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\h
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\l03tn3pq.0ud E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\h\connector.ashx
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent\h
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\h\oauth.ashx E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/h/oauth.ashx
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\h
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\2adq5wng.4gk E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\h\oauth.ashx
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules\shell\telligent
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\WidgetUploadUtility.aspx E:\wwwroot\Poses\Website\temp\installation_history\9F8D487468684DC79E6B19F839773478\sitecore modules/shell/telligent/widgetuploadutility.aspx
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent
+OK: Move E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478\xjfo4isz.g1d E:\wwwroot\Poses\Website\sitecore modules\Shell\Telligent\WidgetUploadUtility.aspx
+OK: Delete  E:\wwwroot\Poses\Website\temp\install\9F8D487468684DC79E6B19F839773478-commit.bat

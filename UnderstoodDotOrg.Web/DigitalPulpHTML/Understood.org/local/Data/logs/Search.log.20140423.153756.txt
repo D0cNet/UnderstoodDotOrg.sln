@@ -1,0 +1,3 @@
+11740 15:38:07 INFO  Warming and Caching your search indexes
+11740 15:38:07 INFO  /******* Warming Queries ********/
+11740 15:38:07 INFO  /*************************/

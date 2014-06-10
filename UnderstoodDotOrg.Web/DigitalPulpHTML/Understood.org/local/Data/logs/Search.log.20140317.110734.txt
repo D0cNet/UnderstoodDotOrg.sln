@@ -1,0 +1,85 @@
+6140 11:21:35 INFO  ExecuteQueryAgainstLucene : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*) - Filter : 
+6140 11:21:35 INFO  Search Query : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+6140 11:21:35 INFO  Search Index : sitecore_master_index
+6140 11:21:35 INFO  ExecuteQueryAgainstLucene : is_displayed_in_search_results:1 - Filter : 
+6140 11:21:37 INFO  Search Took : 4579ms
+9052 11:21:38 INFO  Facet Search Query : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9052 11:21:38 INFO  Facet Search Index : sitecore_master_index
+9052 11:21:39 INFO  GetFacets : _templatename : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9052 11:21:39 INFO  GetFacets : parsedlanguage : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9052 11:21:39 INFO  GetFacets : parsedcreatedby : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9052 11:21:39 INFO  GetFacets : __smallcreateddate : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9052 11:21:39 INFO  GetFacets : daterange_week : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9052 11:21:39 INFO  GetFacets : daterange_month : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9052 11:21:39 INFO  GetFacets : daterange_year : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9052 11:21:39 INFO  Facet Search Took : 857ms
+9052 11:21:54 INFO  ExecuteQueryAgainstLucene : +(+(_content:"assisitive tools landing page" _name:"assisitive tools landing page") +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*) - Filter : 
+9052 11:21:54 INFO  Search Query : +(+(_content:"assisitive tools landing page" _name:"assisitive tools landing page") +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9052 11:21:54 INFO  Search Index : sitecore_master_index
+9052 11:21:54 INFO  Search Took : 261ms
+9748 11:21:55 INFO  Facet Search Query : +(+(_content:"assisitive tools landing page" _name:"assisitive tools landing page") +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9748 11:21:55 INFO  Facet Search Index : sitecore_master_index
+9748 11:21:55 INFO  GetFacets : _templatename : +(+(_content:"assisitive tools landing page" _name:"assisitive tools landing page") +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9748 11:21:55 INFO  GetFacets : parsedlanguage : +(+(_content:"assisitive tools landing page" _name:"assisitive tools landing page") +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9748 11:21:55 INFO  GetFacets : parsedcreatedby : +(+(_content:"assisitive tools landing page" _name:"assisitive tools landing page") +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9748 11:21:55 INFO  GetFacets : __smallcreateddate : +(+(_content:"assisitive tools landing page" _name:"assisitive tools landing page") +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9748 11:21:55 INFO  GetFacets : daterange_week : +(+(_content:"assisitive tools landing page" _name:"assisitive tools landing page") +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9748 11:21:55 INFO  GetFacets : daterange_month : +(+(_content:"assisitive tools landing page" _name:"assisitive tools landing page") +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9748 11:21:55 INFO  GetFacets : daterange_year : +(+(_content:"assisitive tools landing page" _name:"assisitive tools landing page") +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9748 11:21:55 INFO  Facet Search Took : 15ms
+9748 11:22:01 INFO  ExecuteQueryAgainstLucene : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*) - Filter : 
+9748 11:22:01 INFO  Search Query : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9748 11:22:01 INFO  Search Index : sitecore_master_index
+9748 11:22:01 INFO  Search Took : 131ms
+6140 11:22:01 INFO  Facet Search Query : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+6140 11:22:01 INFO  Facet Search Index : sitecore_master_index
+6140 11:22:01 INFO  GetFacets : _templatename : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+6140 11:22:01 INFO  GetFacets : parsedlanguage : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+6140 11:22:01 INFO  GetFacets : parsedcreatedby : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+6140 11:22:01 INFO  GetFacets : __smallcreateddate : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+6140 11:22:01 INFO  GetFacets : daterange_week : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+6140 11:22:01 INFO  GetFacets : daterange_month : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+6140 11:22:01 INFO  GetFacets : daterange_year : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+6140 11:22:01 INFO  Facet Search Took : 12ms
+6140 11:22:04 INFO  ExecuteQueryAgainstLucene : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*) - Filter : 
+6140 11:22:04 INFO  Search Query : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+6140 11:22:04 INFO  Search Index : sitecore_master_index
+6140 11:22:04 INFO  Search Took : 5ms
+9228 11:22:04 INFO  Facet Search Query : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9228 11:22:04 INFO  Facet Search Index : sitecore_master_index
+9228 11:22:04 INFO  GetFacets : _templatename : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9228 11:22:05 INFO  GetFacets : parsedlanguage : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9228 11:22:05 INFO  GetFacets : parsedcreatedby : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9228 11:22:05 INFO  GetFacets : __smallcreateddate : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9228 11:22:05 INFO  GetFacets : daterange_week : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9228 11:22:05 INFO  GetFacets : daterange_month : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9228 11:22:05 INFO  GetFacets : daterange_year : +(+(_content:assisitive _name:assisitive) +_path:3c1715fe6a134fcf845fde308ba9741d) +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9228 11:22:05 INFO  Facet Search Took : 24ms
+6392 11:22:15 INFO  ExecuteQueryAgainstLucene : +_datasource:sitecore +(+(+_path:11111111111111111111111111111111 +_latestversion:1) +(_content:assisitive _name:assisitive)) - Filter : 
+6392 11:22:15 INFO  Search Query : +_datasource:sitecore +(+(+_path:11111111111111111111111111111111 +_latestversion:1) +(_content:assisitive _name:assisitive))
+6392 11:22:15 INFO  Search Index : sitecore_master_index
+6392 11:22:15 INFO  Search Took : 224ms
+3700 11:22:15 INFO  Facet Search Query : +_datasource:sitecore +(+(+_path:11111111111111111111111111111111 +_latestversion:1) +(_content:assisitive _name:assisitive))
+3700 11:22:15 INFO  Facet Search Index : sitecore_master_index
+3700 11:22:15 INFO  GetFacets : _templatename : +_datasource:sitecore +(+(+_path:11111111111111111111111111111111 +_latestversion:1) +(_content:assisitive _name:assisitive))
+3700 11:22:15 INFO  GetFacets : parsedlanguage : +_datasource:sitecore +(+(+_path:11111111111111111111111111111111 +_latestversion:1) +(_content:assisitive _name:assisitive))
+3700 11:22:15 INFO  GetFacets : parsedcreatedby : +_datasource:sitecore +(+(+_path:11111111111111111111111111111111 +_latestversion:1) +(_content:assisitive _name:assisitive))
+3700 11:22:15 INFO  GetFacets : __smallcreateddate : +_datasource:sitecore +(+(+_path:11111111111111111111111111111111 +_latestversion:1) +(_content:assisitive _name:assisitive))
+3700 11:22:15 INFO  GetFacets : daterange_week : +_datasource:sitecore +(+(+_path:11111111111111111111111111111111 +_latestversion:1) +(_content:assisitive _name:assisitive))
+3700 11:22:15 INFO  GetFacets : daterange_month : +_datasource:sitecore +(+(+_path:11111111111111111111111111111111 +_latestversion:1) +(_content:assisitive _name:assisitive))
+3700 11:22:15 INFO  GetFacets : daterange_year : +_datasource:sitecore +(+(+_path:11111111111111111111111111111111 +_latestversion:1) +(_content:assisitive _name:assisitive))
+3700 11:22:15 INFO  Facet Search Took : 26ms
+9748 11:22:53 INFO  ExecuteQueryAgainstLucene : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*) - Filter : 
+9748 11:22:53 INFO  Search Query : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+9748 11:22:53 INFO  Search Index : sitecore_master_index
+9748 11:22:53 INFO  Search Took : 84ms
+3700 11:22:54 INFO  Facet Search Query : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+3700 11:22:54 INFO  Facet Search Index : sitecore_master_index
+3700 11:22:54 INFO  GetFacets : _templatename : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+3700 11:22:54 INFO  GetFacets : parsedlanguage : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+3700 11:22:54 INFO  GetFacets : parsedcreatedby : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+3700 11:22:54 INFO  GetFacets : __smallcreateddate : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+3700 11:22:54 INFO  GetFacets : daterange_week : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+3700 11:22:54 INFO  GetFacets : daterange_month : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+3700 11:22:54 INFO  GetFacets : daterange_year : +_path:3c1715fe6a134fcf845fde308ba9741d +(-_template:0437fee244c946a6abe928858d9fee8c +*:*)
+3700 11:22:54 INFO  Facet Search Took : 24ms

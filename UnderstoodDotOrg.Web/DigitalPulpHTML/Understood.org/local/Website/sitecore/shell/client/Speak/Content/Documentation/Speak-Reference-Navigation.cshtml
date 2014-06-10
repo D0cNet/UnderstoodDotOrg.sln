@@ -1,0 +1,58 @@
+﻿@using Sitecore
+@using Sitecore.Data.Items
+@using Sitecore.Mvc.Presentation
+@model RenderingModel
+@{
+  var textPages = ClientHost.Items.GetItem("/sitecore/client/Speak/Content/Documentation");
+
+  var items = new List<Item>();
+  var roots = ClientHost.Databases.Database.SelectItems("fast://*[@@templateid='{BAAD9D10-19E7-4878-A96F-E290B914BF5F}']");
+  foreach (var root in roots)
+  {
+    items.AddRange(root.Children);
+  }
+}
+<div class="well well-small" style="margin-top:16px">
+  <ul class="nav nav-list">
+    <li class="nav-header">Documentation</li>
+    <li class="divider"></li>
+
+    @foreach (Item child in textPages.Children)
+    {
+      if (child.Name == "PageSettings")
+      {
+        continue;
+      }
+      if (child.Name == "Samples")
+      {
+        continue;
+      }
+      if (child.Name == "Component Library")
+      {
+        continue;
+      }
+      <li>
+        <a href="@child.Paths.Path">@child.DisplayName</a>
+      </li>
+    }          
+
+    <li class="nav-header">Component Reference</li>
+    <li class="divider"></li>
+    @foreach (Item folder in items.OrderBy(i => i.DisplayName))
+    {
+      <li>
+        @folder.DisplayName
+        <ul class="nav nav-list">
+          @foreach (Item component in folder.Children)
+          {
+            <li><a href="/sitecore/client/speak/content/documentation/component%20library?i=@component.ID">@component.DisplayName</a></li>
+          }   
+        </ul>
+      </li>
+    }                       
+
+    <li class="nav-header">Samples</li>
+    <li class="divider"></li>
+    <li><a href="/sitecore/client/Speak/Content/Documentation/Samples">Sample Browser</a></li>
+  </ul>
+</div>

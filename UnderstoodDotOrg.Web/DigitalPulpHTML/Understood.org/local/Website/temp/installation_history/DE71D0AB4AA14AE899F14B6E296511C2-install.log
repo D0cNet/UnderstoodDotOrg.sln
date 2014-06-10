@@ -1,0 +1,297 @@
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\app_config\include
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\App_Config\Include\Sitecore.MediaFramework.config E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\app_config/include/sitecore.mediaframework.config
+OK: MkDir  E:\wwwroot\Poses\Website\App_Config\Include
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\ru0nw2ez.k1u E:\wwwroot\Poses\Website\App_Config\Include\Sitecore.MediaFramework.config
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\Sitecore.Integration.Common.dll E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\bin/sitecore.integration.common.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\mtg044ms.5ej E:\wwwroot\Poses\Website\bin\Sitecore.Integration.Common.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\Sitecore.MediaFramework.dll E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\bin/sitecore.mediaframework.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\ajadspko.cll E:\wwwroot\Poses\Website\bin\Sitecore.MediaFramework.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\bin
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\bin\Sitecore.MediaFramework.Migration.dll E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\bin/sitecore.mediaframework.migration.dll
+OK: MkDir  E:\wwwroot\Poses\Website\bin
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\31o3x4cx.mzg E:\wwwroot\Poses\Website\bin\Sitecore.MediaFramework.Migration.dll
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\layouts\mediaframework\sublayouts
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\layouts\MediaFramework\Sublayouts\EmbedMediaPlayer.ascx E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\layouts/mediaframework/sublayouts/embedmediaplayer.ascx
+OK: MkDir  E:\wwwroot\Poses\Website\layouts\MediaFramework\Sublayouts
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\jm3bwcvs.ofh E:\wwwroot\Poses\Website\layouts\MediaFramework\Sublayouts\EmbedMediaPlayer.ascx
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\layouts\mediaframework\sublayouts
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\layouts\MediaFramework\Sublayouts\Player.aspx E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\layouts/mediaframework/sublayouts/player.aspx
+OK: MkDir  E:\wwwroot\Poses\Website\layouts\MediaFramework\Sublayouts
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\nhgz4xfd.53e E:\wwwroot\Poses\Website\layouts\MediaFramework\Sublayouts\Player.aspx
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\layouts\mediaframework
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\layouts\MediaFramework\Upload.aspx E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\layouts/mediaframework/upload.aspx
+OK: MkDir  E:\wwwroot\Poses\Website\layouts\MediaFramework
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\ydtlglz4.y30 E:\wwwroot\Poses\Website\layouts\MediaFramework\Upload.aspx
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\analytics
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\Analytics\PlayerEventsRecorder.asmx E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/analytics/playereventsrecorder.asmx
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\Analytics
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\modgvhji.p4o E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\Analytics\PlayerEventsRecorder.asmx
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\css
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\MF.css E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/css/mf.css
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\5a5dggef.uju E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\MF.css
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\css\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader\bootstrap.min.css E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/css/uploader/bootstrap.min.css
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\1hyfyefc.rzc E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader\bootstrap.min.css
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\css\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader\bootstrap-ie6.min.css E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/css/uploader/bootstrap-ie6.min.css
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\dse0n30k.bjd E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader\bootstrap-ie6.min.css
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\css\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader\bootstrap-responsive.min.css E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/css/uploader/bootstrap-responsive.min.css
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\ecs2skky.ndk E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader\bootstrap-responsive.min.css
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\css\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader\jquery.fileupload-ui.css E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/css/uploader/jquery.fileupload-ui.css
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\yblprywx.2dm E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader\jquery.fileupload-ui.css
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\css\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader\mfUploader.css E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/css/uploader/mfuploader.css
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\se4frtjr.w4a E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\CSS\Uploader\mfUploader.css
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\analytics
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Analytics\PlayerEventsListener.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/analytics/playereventslistener.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Analytics
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\zfsxezar.z2i E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Analytics\PlayerEventsListener.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\blank.gif E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/blank.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\uregcjzm.sjl E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\blank.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_close.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_close.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\rvnfdqbh.itl E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_close.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_loading.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_loading.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\met5r4yc.cs2 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_loading.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_nav_left.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_nav_left.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\hesuchgh.xs0 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_nav_left.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_nav_right.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_nav_right.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\1jhcdw10.kyl E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_nav_right.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_e.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_shadow_e.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\smhtsnlq.3ym E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_e.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_n.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_shadow_n.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\zassgsma.rmy E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_n.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_ne.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_shadow_ne.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\2qvmqojn.i2d E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_ne.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_nw.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_shadow_nw.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\bgvuj0yb.sas E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_nw.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_s.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_shadow_s.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\ghurhsr1.xi4 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_s.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_se.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_shadow_se.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\d4cihsjt.het E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_se.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_sw.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_shadow_sw.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\5me0xjnx.yyg E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_sw.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_w.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_shadow_w.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\qb5uwkar.nio E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_shadow_w.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_title_left.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_title_left.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\3hldyctj.hmn E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_title_left.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_title_main.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_title_main.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\pzs22gu0.tmn E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_title_main.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_title_over.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_title_over.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\wtefamzi.rdz E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_title_over.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_title_right.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancy_title_right.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\wxhlxx5d.w5n E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancy_title_right.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancybox.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancybox.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\jeguup4t.zgc E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancybox.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancybox-x.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancybox-x.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\s2v2uixw.bq2 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancybox-x.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancybox-y.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/fancybox-y.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\o3tkj4f3.k2g E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\fancybox-y.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\jquery.fancybox-1.3.4.css E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/jquery.fancybox-1.3.4.css
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\zrhcnnaq.jdj E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\jquery.fancybox-1.3.4.css
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\jquery.fancybox-1.3.4.pack.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/jquery.fancybox-1.3.4.pack.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\ixgksg3f.dmk E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\jquery.fancybox-1.3.4.pack.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\fancybox
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\jquery.mousewheel-3.0.4.pack.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/fancybox/jquery.mousewheel-3.0.4.pack.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\3dbeixci.jk3 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\fancybox\jquery.mousewheel-3.0.4.pack.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\jquery-ui-1.10.3.custom.draggable.min.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/jquery-ui-1.10.3.custom.draggable.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\tgshe145.x1q E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\jquery-ui-1.10.3.custom.draggable.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\mediaframework.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/mediaframework.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\w1mgkcmt.v1f E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\mediaframework.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\bootstrap.min.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/bootstrap.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\2howmp4n.ddi E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\bootstrap.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\canvas-to-blob.min.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/canvas-to-blob.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\nbrr43h2.mcf E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\canvas-to-blob.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.blueimp-gallery.min.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.blueimp-gallery.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\xpvxquuc.rv4 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.blueimp-gallery.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.fileupload.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\d2ayal3z.ynu E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-angular.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.fileupload-angular.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\btpgtdtv.kkl E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-angular.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-audio.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.fileupload-audio.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\dikd0331.t4d E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-audio.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-image.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.fileupload-image.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\150bfpll.33g E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-image.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-jquery-ui.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.fileupload-jquery-ui.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\u5tlawxl.je3 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-jquery-ui.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-process.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.fileupload-process.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\dw0gxjs5.n54 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-process.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-ui.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.fileupload-ui.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\mfaljeua.3y2 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-ui.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-validate.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.fileupload-validate.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\ktv4qlla.ngd E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-validate.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-video.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.fileupload-video.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\y0sfu03w.wi3 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.fileupload-video.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.iframe-transport.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.iframe-transport.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\iww1xydy.5hy E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.iframe-transport.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\csmcdmec.f43 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.ui.widget.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/jquery.ui.widget.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\0ckii4lz.yrb E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\jquery.ui.widget.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\load-image.min.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/load-image.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\efkduth4.0tr E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\load-image.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\main.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/main.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\gy14rrw2.utn E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\main.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\MFUpload.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/mfupload.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\sjkl2woi.r2f E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\MFUpload.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\tmpl.min.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/tmpl.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\52itmlxt.eb3 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\tmpl.min.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\js\uploader
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\underscore-min.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/js/uploader/underscore-min.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\1tfvqkfc.tt0 E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\js\Uploader\underscore-min.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules\web\mediaframework\upload
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\Upload\MediaUpload.ashx E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore modules/web/mediaframework/upload/mediaupload.ashx
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\Upload
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\25tfh1fa.vyo E:\wwwroot\Poses\Website\sitecore modules\Web\MediaFramework\Upload\MediaUpload.ashx
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\applications\analytics\reports\mediaframework
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Applications\Analytics\Reports\MediaFramework\MostCompletedVideos.mrt E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/applications/analytics/reports/mediaframework/mostcompletedvideos.mrt
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Applications\Analytics\Reports\MediaFramework
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\tdqzsha0.0jt E:\wwwroot\Poses\Website\sitecore\shell\Applications\Analytics\Reports\MediaFramework\MostCompletedVideos.mrt
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\applications\analytics\reports\mediaframework
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Applications\Analytics\Reports\MediaFramework\MostPopularVideosStartedButNotCompleted.mrt E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/applications/analytics/reports/mediaframework/mostpopularvideosstartedbutnotcompleted.mrt
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Applications\Analytics\Reports\MediaFramework
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\ebyhrvsg.uig E:\wwwroot\Poses\Website\sitecore\shell\Applications\Analytics\Reports\MediaFramework\MostPopularVideosStartedButNotCompleted.mrt
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\applications\analytics\reports\mediaframework
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Applications\Analytics\Reports\MediaFramework\MostStartedVideos.mrt E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/applications/analytics/reports/mediaframework/moststartedvideos.mrt
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Applications\Analytics\Reports\MediaFramework
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\gnrvymzd.teh E:\wwwroot\Poses\Website\sitecore\shell\Applications\Analytics\Reports\MediaFramework\MostStartedVideos.mrt
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\controls\rich text editor\embedlink
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedLink\EmbedLink.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/controls/rich text editor/embedlink/embedlink.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedLink
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\grrjl1g2.1lm E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedLink\EmbedLink.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\controls\rich text editor\embedlink
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedLink\EmbedLink.xml E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/controls/rich text editor/embedlink/embedlink.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedLink
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\o3jyddnt.zef E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedLink\EmbedLink.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\controls\rich text editor\embedmedia
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedMedia\EmbedMedia.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/controls/rich text editor/embedmedia/embedmedia.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedMedia
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\pljilxb2.qaq E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedMedia\EmbedMedia.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\controls\rich text editor\embedmedia
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedMedia\EmbedMedia.xml E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/controls/rich text editor/embedmedia/embedmedia.xml
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedMedia
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\rxawievb.4bu E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\EmbedMedia\EmbedMedia.xml
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\controls\rich text editor
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\MF RichText Commands.js E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/controls/rich text editor/mf richtext commands.js
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\odcbs2kx.4uh E:\wwwroot\Poses\Website\sitecore\shell\Controls\Rich Text Editor\MF RichText Commands.js
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\themes\standard\images\mediaframework\common
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common\gal.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/themes/standard/images/mediaframework/common/gal.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\lxaxreyw.by2 E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common\gal.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\themes\standard\images\mediaframework\common
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common\loading.gif E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/themes/standard/images/mediaframework/common/loading.gif
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\wjsth3se.jjn E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common\loading.gif
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\themes\standard\images\mediaframework\common
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common\Player.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/themes/standard/images/mediaframework/common/player.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\mpq1nlll.lng E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common\Player.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\themes\standard\images\mediaframework\common
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common\stop.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/themes/standard/images/mediaframework/common/stop.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\z5uopwvu.w52 E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common\stop.png
+OK: MkDir  E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore\shell\themes\standard\images\mediaframework\common
+OK: MoveIfNotExists E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common\stop_sign.png E:\wwwroot\Poses\Website\temp\installation_history\DE71D0AB4AA14AE899F14B6E296511C2\sitecore/shell/themes/standard/images/mediaframework/common/stop_sign.png
+OK: MkDir  E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common
+OK: Move E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2\heu0lt1y.phw E:\wwwroot\Poses\Website\sitecore\shell\Themes\Standard\Images\MediaFramework\Common\stop_sign.png
+OK: Delete  E:\wwwroot\Poses\Website\temp\install\DE71D0AB4AA14AE899F14B6E296511C2-commit.bat

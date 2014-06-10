@@ -1,0 +1,870 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Debug</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\inetpub\wwwroot\Poses\Understood.org\local\Website</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/ComponentArt.Web.UI.dll">
+      <publishTime>12/13/2013 06:48:08</publishTime>
+    </File>
+    <File Include="bin/CustomItemGenerator.dll">
+      <publishTime>02/28/2014 14:23:44</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.dll">
+      <publishTime>01/20/2014 13:35:16</publishTime>
+    </File>
+    <File Include="bin/ITHit.WebDAV.Server.dll">
+      <publishTime>01/20/2014 13:35:18</publishTime>
+    </File>
+    <File Include="bin/Lucene.Net.dll">
+      <publishTime>01/20/2014 13:35:30</publishTime>
+    </File>
+    <File Include="bin/Mvp.Xml.dll">
+      <publishTime>01/20/2014 13:35:32</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>01/20/2014 13:35:34</publishTime>
+    </File>
+    <File Include="bin/NVelocity.dll">
+      <publishTime>12/10/2010 13:29:30</publishTime>
+    </File>
+    <File Include="bin/RadEditor.Net2.dll">
+      <publishTime>01/20/2014 13:35:34</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Kernel.dll">
+      <publishTime>03/06/2014 13:43:13</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Logging.dll">
+      <publishTime>01/20/2014 13:35:50</publishTime>
+    </File>
+    <File Include="bin/Sitecore.NVelocity.dll">
+      <publishTime>01/20/2014 13:35:56</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Zip.dll">
+      <publishTime>01/20/2014 13:36:06</publishTime>
+    </File>
+    <File Include="bin/Telerik.Web.UI.dll">
+      <publishTime>01/20/2014 13:36:12</publishTime>
+    </File>
+    <File Include="bin/UnderstoodDotOrg.Domain.dll">
+      <publishTime>03/18/2014 09:52:10</publishTime>
+    </File>
+    <File Include="bin/UnderstoodDotOrg.Domain.pdb">
+      <publishTime>03/18/2014 09:52:09</publishTime>
+    </File>
+    <File Include="bin/UnderstoodDotOrg.Web.dll">
+      <publishTime>03/18/2014 09:52:32</publishTime>
+    </File>
+    <File Include="bin/UnderstoodDotOrg.Web.pdb">
+      <publishTime>03/18/2014 09:52:32</publishTime>
+    </File>
+    <File Include="bin/zforce-deploy-on-build-always.txt">
+      <publishTime>03/04/2014 16:52:16</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>03/14/2014 08:20:25</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/account.css">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/base.css">
+      <publishTime>03/13/2014 17:04:53</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bold.eot">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bold.svg">
+      <publishTime>03/14/2014 08:22:53</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bold.ttf">
+      <publishTime>03/14/2014 08:22:11</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bold.woff">
+      <publishTime>03/14/2014 08:12:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-boldd41d.eot">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bolditalic.eot">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bolditalic.svg">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bolditalic.ttf">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bolditalic.woff">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bolditalicd41d.eot">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-book.eot">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-book.svg">
+      <publishTime>03/14/2014 08:23:06</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-book.ttf">
+      <publishTime>03/14/2014 08:21:59</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-book.woff">
+      <publishTime>03/14/2014 08:12:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bookd41d.eot">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bookitalic.eot">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bookitalic.svg">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bookitalic.ttf">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bookitalic.woff">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/fonts/lineto-circular-bookitalicd41d.eot">
+      <publishTime>03/14/2014 13:22:54</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/globals.css">
+      <publishTime>03/13/2014 17:05:45</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/grid.css">
+      <publishTime>03/13/2014 17:05:57</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/layout.css">
+      <publishTime>03/13/2014 17:07:51</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/modules.css">
+      <publishTime>03/13/2014 17:08:04</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/StyleSheet1.css">
+      <publishTime>02/28/2014 13:13:22</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/uniform-understood.css">
+      <publishTime>03/13/2014 17:08:45</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/blank.html">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/boilerplate.css">
+      <publishTime>03/13/2014 17:05:18</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/bootstrap.css">
+      <publishTime>03/13/2014 17:05:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/grab.html">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/grabbing.html">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/jplayer.blue.monday.css">
+      <publishTime>03/13/2014 17:06:24</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/normalize.css">
+      <publishTime>03/13/2014 17:08:16</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/royalslider.css">
+      <publishTime>03/13/2014 17:08:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/animated-overlay.gif">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-bg_flat_10_000000_40x100.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-icons_222222_256x240.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-icons_228ef1_256x240.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-icons_ef8c08_256x240.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-icons_ffd27a_256x240.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/images/ui-icons_ffffff_256x240.png">
+      <publishTime>03/14/2014 13:22:55</publishTime>
+    </File>
+    <File Include="Presentation/Includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css">
+      <publishTime>03/13/2014 17:07:09</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/arrow.down.000.20.png">
+      <publishTime>03/14/2014 08:15:17</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/arrow.down.fff.24.png">
+      <publishTime>03/14/2014 08:15:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/bg-input-focus-retina.html">
+      <publishTime>03/14/2014 13:22:53</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/bg-input-focus.html">
+      <publishTime>03/14/2014 13:22:53</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/bg-input-retina.html">
+      <publishTime>03/14/2014 13:22:53</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/bg-input.html">
+      <publishTime>03/14/2014 13:22:53</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/icon.close.overlay.44.png">
+      <publishTime>03/14/2014 08:15:40</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/icon.footer.newsletter.68.png">
+      <publishTime>03/14/2014 08:15:49</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/icon.guide-me.86.png">
+      <publishTime>03/14/2014 08:15:58</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/icon.logo.partnership-carousel.png">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/icon.search.56.png">
+      <publishTime>03/14/2014 08:16:21</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/icon.toolkit.childs.world.png">
+      <publishTime>03/14/2014 08:16:30</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/icon.toolkit.observation.png">
+      <publishTime>03/14/2014 08:16:42</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/icon.toolkit.ratings.png">
+      <publishTime>03/14/2014 08:16:59</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/icon.toolkit.support.plan.png">
+      <publishTime>03/14/2014 08:17:08</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/logo.u.default.png">
+      <publishTime>03/13/2014 16:58:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/logo.u.footer.png">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/logo.u.large.png">
+      <publishTime>03/14/2014 08:17:21</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/100x1000.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/1200x475.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/1200x542.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/150x150&amp;text=150x150.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/150x150.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/150x60.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/150x84.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/1740x980.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/189x109.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/190x106.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/190x107&amp;text=190x107.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/190x107.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/230x129.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/270x180&amp;text=Shot+1.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/270x180&amp;text=Shot+2.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/270x180&amp;text=Shot+3.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/290x163&amp;text=290x163.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/290x384.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/294x187.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/380x220.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/510x288.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/510x292.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/589x348.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/60x60.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/630x354.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/70x70.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/870x489&amp;text=870x489.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/placefolder/980x1740.gif">
+      <publishTime>03/18/2014 07:55:27</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/sprite.arrows.carousel.png">
+      <publishTime>03/14/2014 08:17:29</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/sprite.icon.arrows.next-prev.24.png">
+      <publishTime>03/14/2014 08:18:16</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/sprite.icon.search.32.png">
+      <publishTime>03/14/2014 08:18:25</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/sprite.nav-bullets.parent-toolkit.png">
+      <publishTime>03/14/2014 08:18:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/sprite.social.footer.png">
+      <publishTime>03/14/2014 08:18:45</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/sprite.uniform.600.png">
+      <publishTime>03/14/2014 08:18:53</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/temp.bg.slide.1200.01.jpg">
+      <publishTime>03/14/2014 08:19:04</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/temp.bg.slide.1200.02.jpg">
+      <publishTime>03/14/2014 08:19:12</publishTime>
+    </File>
+    <File Include="Presentation/Includes/images/temp.bg.slide.1200.03.jpg">
+      <publishTime>03/14/2014 08:19:22</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/app-store.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/arrow.down.000.10.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/arrow.down.000.20.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/arrow.down.fff.12.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/arrow.down.fff.24.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/arrow.up.000.10.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/arrow.up.fff.12.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/arrow.up.fff.24.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/avatar.signed-out.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/bg-subtopic-minitools.jpg">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/child.content.indicator.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.arrow-promo.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.arrow.down.fff.9.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.book.read-me.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.close.overlay.16.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.close.overlay.22.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.close.overlay.44.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.close.parent-toolkit-lo-res.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.close.parent-toolkit.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.close.white.64.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.comments-summary.arrow-quote-bottom.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.expert-answer.lowres.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.expert-question.lowres.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.fb-sign-in%402x.png">
+      <publishTime>03/18/2014 07:55:37</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.footer.newsletter.34.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.footer.newsletter.68.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.guide-me.43.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.guide-me.86.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.logo.assistive-technology-search-tool.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.logo.partnership-carousel.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.nav-arrow.68.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.search.56.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.sign-in-prompt.lock.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.toolkit.childs.world.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.toolkit.decisions.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.toolkit.find.png">
+      <publishTime>03/18/2014 07:55:37</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.toolkit.observation.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.toolkit.ratings.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.toolkit.support.plan.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/icon.tools.related-articles.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/jplayer.blue.monday.jpg">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/jplayer.blue.monday.seeking.gif">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/jplayer.blue.monday.video.play.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/logo.partner.commonsense.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/logo.partner.commonsense2.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/logo.partner.greatschools.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/logo.u.default.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/logo.u.footer.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/logo.u.large.lo-res.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/logo.u.large.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/mid-dot.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/play-store.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/rating.slider.selection.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.advice.results.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.arrows.article-slideshow.lo-res.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.arrows.article-slideshow.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.arrows.carousel.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.assistive-technology.review-flag.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.friends-view-tabs.comment-bg.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.helpful-count%402x.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.account.nav.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.arrow-down.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.arrows.lo-res.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.arrows.next-prev.12.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.arrows.next-prev.24.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.arrows.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.comments.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.hide-show.fff.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.menu.88.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.notifications.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.search.32.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.search.lo-res.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icon.support.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icons.article-tips.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icons.lo-res.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icons.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icons.toolkit-thumbnails.lo-res.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.icons.toolkit-thumbnails.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.infographic-zoom.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.knowledge-quiz.correct-incorrect.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.knowledge-quiz.results-indicator.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.nav-arrows.carousel-grey.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.nav-back.68.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.nav-bullets.parent-toolkit.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.rating-sliders%402x.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.share-save.social.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.share.article-slideshow.lo-res.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.share.article-slideshow.png">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.social.footer.lo-res.png">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.social.footer.png">
+      <publishTime>03/18/2014 07:55:34</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.text-slides.save-and-share.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.tooltip.info.png">
+      <publishTime>03/18/2014 07:55:35</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.uniform.1200.png">
+      <publishTime>03/18/2014 07:55:31</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/sprite.uniform.600.png">
+      <publishTime>03/18/2014 07:55:32</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/temp.bg.slide.1200.01.jpg">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/temp.bg.slide.1200.02.jpg">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/temp.bg.slide.1200.03.jpg">
+      <publishTime>03/18/2014 07:55:36</publishTime>
+    </File>
+    <File Include="Presentation/Includes/img/temp.user.jpg">
+      <publishTime>03/18/2014 07:55:33</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/global.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/modules.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/site.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/bootstrap.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery-1.10.2.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery-ui-1.10.4.custom.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery.easytabs.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery.equalheights.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery.ezmark.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery.hoverIntent.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery.jplayer.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery.mobile.custom.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery.placeholder.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery.royalslider.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery.ui.touch-punch.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery.uniform.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/jquery.validate.min.js">
+      <publishTime>03/13/2014 16:58:28</publishTime>
+    </File>
+    <File Include="Presentation/Includes/js/vendor/modernizr.custom.js">
+      <publishTime>03/13/2014 16:58:27</publishTime>
+    </File>
+    <File Include="Presentation/Layouts/Browser.aspx">
+      <publishTime>03/14/2014 14:22:46</publishTime>
+    </File>
+    <File Include="Presentation/Layouts/Web.aspx">
+      <publishTime>03/18/2014 07:55:26</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/Action Style List Page.ascx">
+      <publishTime>03/17/2014 17:17:55</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/AudioArticle.ascx">
+      <publishTime>03/17/2014 17:17:56</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/BasicArticle.ascx">
+      <publishTime>03/17/2014 17:17:55</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/Comments.ascx">
+      <publishTime>03/17/2014 17:17:55</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/DeepDiveArticle.ascx">
+      <publishTime>03/17/2014 17:17:56</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/Glossary Article.ascx">
+      <publishTime>03/17/2014 17:17:56</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/Simple Expert Add Question Page.ascx">
+      <publishTime>03/18/2014 07:55:37</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/Simple Expert Article Page.ascx">
+      <publishTime>03/18/2014 07:55:37</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/SlideshowArticle.ascx">
+      <publishTime>03/17/2014 17:17:56</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/TextOnlyTipsArticle.ascx">
+      <publishTime>03/17/2014 17:17:55</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/TipsArticle.ascx">
+      <publishTime>03/17/2014 17:17:55</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Articles/VideoArticle.ascx">
+      <publishTime>03/17/2014 17:17:56</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Common/Footer.ascx">
+      <publishTime>03/14/2014 13:23:05</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Common/Header.ascx">
+      <publishTime>03/14/2014 13:23:04</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Common/More Carousel.ascx">
+      <publishTime>03/17/2014 16:15:55</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Common/MoreToExplore.ascx">
+      <publishTime>03/18/2014 07:55:37</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Common/NewsletterSignup.ascx">
+      <publishTime>03/17/2014 09:44:47</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Common/Page Topic.ascx">
+      <publishTime>03/17/2014 14:10:07</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Common/PartnersCarousel.ascx">
+      <publishTime>03/17/2014 09:44:47</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Containers/TwoRow.ascx">
+      <publishTime>03/13/2014 13:24:04</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Home/GuideMe.ascx">
+      <publishTime>03/17/2014 09:44:48</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Home/HomeFeatured.ascx">
+      <publishTime>03/18/2014 07:55:38</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Home/HomeHeroCarousel.ascx">
+      <publishTime>03/14/2014 13:23:05</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Home/YourParentToolkit.ascx">
+      <publishTime>03/14/2014 13:23:06</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/MyAccount/SignIn.ascx">
+      <publishTime>03/17/2014 09:44:46</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/MyAccount/SignUp.ascx">
+      <publishTime>03/17/2014 09:44:46</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Section/SectionPageTopic.ascx">
+      <publishTime>03/18/2014 07:55:37</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Tools/AssistiveTechnology/AssistiveToolsReviewDescription.ascx">
+      <publishTime>03/13/2014 13:15:07</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Tools/AssistiveTechnology/AssistiveToolsReviewDetails.ascx">
+      <publishTime>03/13/2014 13:14:56</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Tools/AssistiveTools/AssistiveToolsLandingPage.ascx">
+      <publishTime>03/18/2014 08:30:23</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Tools/AssistiveTools/AssistiveToolsReviewDescription.ascx">
+      <publishTime>03/17/2014 11:34:05</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Tools/AssistiveTools/AssistiveToolsReviewDetails.ascx">
+      <publishTime>03/17/2014 12:04:39</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Tools/AssistiveTools/AssistiveToolsReviewResults.ascx">
+      <publishTime>03/17/2014 14:09:44</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Tools/BehaviorTools/BehaviorToolAdvicePage.ascx">
+      <publishTime>03/17/2014 17:17:53</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Tools/BehaviorTools/BehaviorToolsLandingPage.ascx">
+      <publishTime>03/17/2014 16:11:23</publishTime>
+    </File>
+    <File Include="Presentation/Sublayouts/Tools/BehaviorTools/BehaviorToolsResultsPage.ascx">
+      <publishTime>03/17/2014 17:17:53</publishTime>
+    </File>
+    <File Include="test.aspx">
+      <publishTime>03/10/2014 14:00:48</publishTime>
+    </File>
+    <File Include="TestAdd.aspx">
+      <publishTime>03/18/2014 08:51:51</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/28/2014 13:03:19</publishTime>
+    </File>
+    <File Include="zforce-deploy-on-build-always.txt">
+      <publishTime>03/04/2014 16:52:16</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
