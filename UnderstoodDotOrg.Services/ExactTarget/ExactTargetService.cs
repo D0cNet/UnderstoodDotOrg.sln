@@ -192,12 +192,22 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 				//lblMessage.Text += "<br/>";
 
 				//Loop through each object returned and display the StatusMessage
-				foreach (CreateResult tscr in tsResults)
+				foreach (TriggeredSendCreateResult tscr in tsResults)
 				{
 					Log.Info("[EXACTTARGET] Status Message: " + tscr.StatusMessage.ToString(), "");
 					sbReturnString.Append("<br />[EXACTTARGET] Status Message: " + tscr.StatusMessage).AppendLine();
-					//lblMessage.Text += "Status Message: " + tscr.StatusMessage;
-					//lblMessage.Text += "<br/>";
+
+                    if (tscr.SubscriberFailures != null)
+                    {
+                        sbReturnString.Append("<br/>[EXACTTARGET] Subscriber failures: <br/>");
+
+                        foreach (SubscriberResult sr in tscr.SubscriberFailures)
+                        {
+                            Log.Info(String.Format("[EXACTTARGET] Subscriber failure : ({0}) {1}", sr.ErrorCode, sr.ErrorDescription), "");
+                            sbReturnString.Append("<br/>[EXACTTARGET] ErrorDescription: " + sr.ErrorDescription);
+                            sbReturnString.Append("<br/>[EXACTTARGET] Error Code: " + sr.ErrorCode + "<br />");
+                        }
+                    }
 				}
 			}
 			catch (Exception exCreate)
@@ -1810,7 +1820,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 1070, request.ToEmail, "Newsletter 1");
+                TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 1070, request.ToEmail, "Newsletter 1");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1828,6 +1838,15 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
+                        newSub.Attributes = new etAPI.Attribute[]
+                        {
+                            new etAPI.Attribute
+                            {
+                                Name = "personalized_recommended_articles",
+                                Value = GetChildPersonalizedArticles(request.Child)
+                            }
+                        };
+
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
 						reply.Successful = true;
@@ -1836,7 +1855,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			}
 			catch (Exception exc)
 			{
-				string message = "Unable to send welcome email.";
+				string message = "Unable to send e1a email.";
 
 				reply.Successful = false;
 				reply.Message = message;
@@ -1881,7 +1900,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 1058, request.ToEmail, "e1b newsletter (full profile and following 2 blogs)");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 1057, request.ToEmail, "e1b newsletter (full profile and following 2 blogs)");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
