@@ -1131,14 +1131,14 @@ namespace UnderstoodDotOrg.Domain.Membership
             //bg: update the member with property values that are not included in entity
             member = FillMember_ExtendedPropertiesFromDb(member);
             member = FillMember_AlertPreferences(member);
-            return member;
+            return this.trimFields(member);
         }
 
         public Member GetMember(string EmailAddress)
         {
             var user = this.GetUser(EmailAddress, true);
             // TODO: refactor this using LINQ once we add Email to entity model
-            return this.GetMember(Guid.Parse(user.ProviderUserKey.ToString()));
+            return this.trimFields(this.GetMember(Guid.Parse(user.ProviderUserKey.ToString())));
         }
 
         /// <summary>
@@ -1229,5 +1229,16 @@ namespace UnderstoodDotOrg.Domain.Membership
             return _db.Members.ToList();
         }
 
+
+        private Member trimFields(Member member)
+        {
+            member.FirstName = member.FirstName.Trim();
+            member.ScreenName = member.ScreenName.Trim();
+            member.LastName = member.LastName.Trim();
+            member.ZipCode = member.ZipCode.Trim();
+            member.MobilePhoneNumber = member.MobilePhoneNumber.Trim();
+
+            return member;
+        }
     }
 }
