@@ -387,7 +387,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                         {
                             while (reader.Read())
                             {
-                                member.AdvocacyAlerts = reader.GetBoolean(0) ;
+                                member.AdvocacyAlerts = reader.GetBoolean(0);
                                 member.ContentReminders = reader.GetBoolean(1);
                                 member.EventReminders = reader.GetBoolean(2);
                                 member.NotificationsDigest = false;//gotta check if this is in the db. bg: bug. think we might have dupe data
@@ -395,7 +395,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                                 member.SupportPlanReminders = reader.GetBoolean(4);
                                 member.PrivateMessageAlerts = reader.GetBoolean(5);
                                 //member.allowNewsletter; //set in entity
-            
+
                             }
                         }
                     }
@@ -427,13 +427,13 @@ namespace UnderstoodDotOrg.Domain.Membership
                         cmd.Parameters.AddWithValue("@MemberId", MemberId);
                         cmd.ExecuteNonQuery();
                         success = true;
-                     }
+                    }
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }            
+            }
             success = true;
             return success;
         }
@@ -446,12 +446,12 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             bool success = false;
             string sql = " UPDATE MemberAlertPreferences " +
-                            "SET  SupportPlanReminders = @SupportPlanReminders, " + 
-                                " ObservationLogReminders = @ObservationLogReminders, " + 
-                                " EventReminders = @EventReminders, " + 
-                                " ContentReminders = @ContentReminders, " + 
-                                " AdvocacyAlerts = @AdvocacyAlerts, " + 
-                                " PrivateMessageAlerts = @PrivateMessageAlerts" +  
+                            "SET  SupportPlanReminders = @SupportPlanReminders, " +
+                                " ObservationLogReminders = @ObservationLogReminders, " +
+                                " EventReminders = @EventReminders, " +
+                                " ContentReminders = @ContentReminders, " +
+                                " AdvocacyAlerts = @AdvocacyAlerts, " +
+                                " PrivateMessageAlerts = @PrivateMessageAlerts" +
                                 " WHERE (MemberId = @MemberId)";
             try
             {
@@ -461,9 +461,9 @@ namespace UnderstoodDotOrg.Domain.Membership
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
-                        cmd.Parameters.AddWithValue("@SupportPlanReminders",member.SupportPlanReminders);
+                        cmd.Parameters.AddWithValue("@SupportPlanReminders", member.SupportPlanReminders);
                         cmd.Parameters.AddWithValue("@ObservationLogReminders", member.ObservationLogReminders);
-                        cmd.Parameters.AddWithValue("@EventReminders",member.EventReminders);
+                        cmd.Parameters.AddWithValue("@EventReminders", member.EventReminders);
                         cmd.Parameters.AddWithValue("@ContentReminders", member.ContentReminders);
                         cmd.Parameters.AddWithValue("@AdvocacyAlerts", member.AdvocacyAlerts);
                         cmd.Parameters.AddWithValue("@PrivateMessageAlerts", member.PrivateMessageAlerts);
@@ -561,7 +561,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                     {
                         cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
                         SqlDataReader reader = cmd.ExecuteReader();
-                        
+
                         if (reader.HasRows)
                         {
                             //first thing first. Clear out any existing items in the current member.
@@ -571,7 +571,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                             }
                             bool firstrow = true;
                             while (reader.Read())
-                            {                               
+                            {
                                 //see if we need a new quiz or of the existing quiz we are working with is still good.
                                 if (quiz.QuizID != reader.GetGuid(0))// 0=QuizId. True when a new quiz is found. Always true for the first row.
                                 {
@@ -580,10 +580,10 @@ namespace UnderstoodDotOrg.Domain.Membership
                                         //save the last quiz to the member
                                         member.CompletedQuizes.Add(quiz);//save the quiz that we were filling to the list.
                                     }
-                                    else 
+                                    else
                                     {
                                         firstrow = false;//this was the first row, now its not
-                                    }                                    
+                                    }
                                     quiz = new Quiz();//A new set of quiz answers was found. Setup a new quiz container
                                     quiz.QuizID = reader.GetGuid(0);// (0)=QuizId.
                                 }
@@ -602,7 +602,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                                 }
                                 quiz.MemberAnswers.Add(quizItem);
                             }// * no matter what now, there is still a quiz that needs to still be added to member 
-                             // * reader stops when there are no more rows to read, but we still haven't added the last quiz                            
+                            // * reader stops when there are no more rows to read, but we still haven't added the last quiz                            
                             member.CompletedQuizes.Add(quiz);
                         }
                     }
@@ -619,7 +619,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         public bool ChecklistResults_SaveToDb(Guid MemberId, Checklist checklist)
         {
             bool successFlag = false;
-            QuizResults_SaveToDb(MemberId, checklist );
+            QuizResults_SaveToDb(MemberId, checklist);
             successFlag = true;
             return successFlag;
         }
@@ -711,9 +711,9 @@ namespace UnderstoodDotOrg.Domain.Membership
             bool successFlag = false;
             string sql = " UPDATE dbo.MemberActivity " +
                            " SET Deleted = 1 " +
-                           " WHERE (MemberId = @MemberId) AND " + 
-                                 " ([Key] = @ContentId) AND " + 
-                                 " (Value = @ActivityValue) AND " + 
+                           " WHERE (MemberId = @MemberId) AND " +
+                                 " ([Key] = @ContentId) AND " +
+                                 " (Value = @ActivityValue) AND " +
                                  " (ActivityType = @ActivityType)";
             try
             {
@@ -941,7 +941,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                             " ,[AdvocacyAlerts] " +
                             " ,[PrivateMessageAlerts] " +
                             " FROM [dbo].[MemberAlertPreferences] " +
-                            " Where MemberId =@MemberId" ;
+                            " Where MemberId =@MemberId";
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
                 {
                     conn.Open();
@@ -954,7 +954,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                         {
                             while (reader.Read())
                             {
-                                member.SupportPlanReminders  = reader.GetBoolean(0);
+                                member.SupportPlanReminders = reader.GetBoolean(0);
                                 member.ObservationLogReminders = reader.GetBoolean(1);
                                 member.EventReminders = reader.GetBoolean(2);
                                 member.ContentReminders = reader.GetBoolean(3);
@@ -1014,7 +1014,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                 //bg: I would like to log this, need to find that log method again.
                 throw ex;
             }
-            
+
             success = true;
 
 
@@ -1232,11 +1232,11 @@ namespace UnderstoodDotOrg.Domain.Membership
 
         private Member trimFields(Member member)
         {
-            member.FirstName = member.FirstName.Trim();
-            member.ScreenName = member.ScreenName.Trim();
-            member.LastName = member.LastName.Trim();
-            member.ZipCode = member.ZipCode.Trim();
-            member.MobilePhoneNumber = member.MobilePhoneNumber.Trim();
+            member.FirstName = member.FirstName != null ? member.FirstName.Trim() : string.Empty;
+            member.ScreenName = member.ScreenName != null ? member.ScreenName.Trim() : string.Empty;
+            member.LastName = member.LastName != null ? member.LastName.Trim() : string.Empty;
+            member.ZipCode = member.ZipCode != null ? member.ZipCode.Trim() : string.Empty;
+            member.MobilePhoneNumber = member.MobilePhoneNumber != null ? member.MobilePhoneNumber.Trim() : string.Empty;
 
             return member;
         }
