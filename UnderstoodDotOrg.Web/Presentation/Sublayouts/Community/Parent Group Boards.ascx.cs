@@ -15,8 +15,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Framework.UI;
-using UnderstoodDotOrg.Framework.UI.Discussions;
-using UnderstoodDotOrg.Framework.UI.Forums;
+using UnderstoodDotOrg.Services.CommunityServices;
 using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community

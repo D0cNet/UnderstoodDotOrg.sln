@@ -1030,5 +1030,18 @@ namespace UnderstoodDotOrg.Common
         #endregion
 
        public static string ViewAllLabel { get { return Translate.TextByDomain(PosesDictionary, "View All Label"); } }
+       #region Community Labels
+       public static string GroupRecommendedBackLink { get { return Translate.TextByDomain(PosesDictionary, "Group Recommended Back Link"); } }
+       public static string RecommendedHeader { get { return Translate.TextByDomain(PosesDictionary, "Recommended Header"); } }
+
+       public static string GroupPrivacyStatement { get { return Translate.TextByDomain(PosesDictionary, "Group Privacy Statement"); } }
+
+       public static string ViewProfileLink1 { get { return Translate.TextByDomain(PosesDictionary, "View Profile Link1"); } }
+       #endregion
+
+
+
+
+
     }
 }

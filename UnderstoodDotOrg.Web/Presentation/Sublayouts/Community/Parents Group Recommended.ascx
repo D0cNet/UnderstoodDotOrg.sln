@@ -6,20 +6,24 @@
               <!-- BEGIN PARTIAL: community/breadcrumb_menu -->
 <!--breadcrumb menu-->
 <a href="REPLACE" ID="ref_ParentGroup" runat="server" class="back-to-previous rs_skip">
-  <i class="icon-arrow-left-blue"></i>back to parents page
+  <i class="icon-arrow-left-blue"></i>
+    <asp:Literal Text="" ID="litBackLink" runat="server" /> 
 </a>
 <!-- END PARTIAL: community/breadcrumb_menu -->
-              <h2>Recommended For You</h2>
+              <h2>
+                  <asp:Literal Text="" ID="litRecommendHeader" runat="server" /></h2>
               <!-- BEGIN PARTIAL: community/groups_private_heading -->
 <!--groups private partial-->
 <div class="col groups-private">
-  <p class="col">Groups are private - only a member of the group can see your conversations</p>
+  <p class="col">
+      <asp:Literal Text="" ID="litGroupPrivacy" runat="server" /></p>
   <i class="icon"></i>
 </div>
 <!-- END PARTIAL: community/groups_private_heading -->
             </header>
             <div class="col col-24 message-box">
-              <p>For a list of group recommendations, <a href="REPLACE">complete your full profile</a>.</p>
+              <p>
+                  <asp:Literal Text="" ID="litViewProfileLink1" runat="server" /> </p>
             </div>
           </div>
     </div>
