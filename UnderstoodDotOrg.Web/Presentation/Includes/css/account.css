@@ -1503,8 +1503,12 @@
 .sign-up .sign-up-inputs .error input {
   border-color: #de5a02;
 }
+    .sign-up .sign-up-inputs .error span.valid {
+        display: none;
+    }
+
 /* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
-.sign-up .sign-up-inputs .error span {
+.sign-up .sign-up-inputs .error span.validationerror {
   color: #de5a02;
   font-family: Arial, sans-serif;
   display: inline;
