@@ -119,7 +119,7 @@
                     <!-- END PARTIAL: account-view-header-support -->
                     <!-- BEGIN PARTIAL: account-view-header-connect -->
                     <div class="account-connect-links narrow">
-                        <button class="button">Connect</button>
+                        <asp:Button ID="btnConnect" CssClass="button" OnClick="btnConnect_Click" runat="server" Text="Connect" />
                     </div>
                     <!-- END PARTIAL: account-view-header-connect -->
                 </div>

@@ -21,6 +21,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
     {
         protected string screenName = "";
         private string viewMode = "";
+        private MembershipManager membershipManager = new MembershipManager();
+        private Member thisMember = new Member();
+            
         protected void Page_Load(object sender, EventArgs e)
         {
             viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
@@ -34,8 +37,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             {
                 Response.Redirect(MainsectionItem.GetHomeItem().GetUrl());
             }
-            var membershipManager = new MembershipManager();
-            var thisMember = new Member();
+
             thisMember = membershipManager.GetMember(userEmail);
             var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
 
@@ -142,6 +144,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                     return num + "rd";
                 default:
                     return num + "th";
+            }
+        }
+
+        protected void btnConnect_Click(object sender, EventArgs e)
+        {
+            if (CurrentMember.ScreenName != thisMember.ScreenName)
+            {
+                CommunityHelper.CreateFriendship(CurrentMember.ScreenName, thisMember.ScreenName);
             }
         }
     }
