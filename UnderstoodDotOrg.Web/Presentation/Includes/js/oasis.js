@@ -52,39 +52,31 @@ jQuery(function () {
 });
 
 // Footer email
-(function($) {
-	var path;
-	
+(function ($) {
+    function email_clickHandler(e) {
+        e.preventDefault();
+        $input = $(".personalized-email-form input[type='text']");
+		
 	function redirectToSignUp() {
 		var $input = $(".personalized-email-form input[type='text']");
 		var email = $input.val();
 		
 		location.href = path + "?email=" + email;
-	}
+		}
 	
 	$(document).ready(function() {
 		var $submit = $(".personalized-email-form input[type='submit']");
 		if ($submit.length == 0) {
 			return;
-		}
-		
-		path = $submit.data('path');
-		
-		$submit.on("click", function(e) {
-			e.preventDefault();		
-			redirectToSignUp();
-		});
-		$(".personalized-email-form input[type='text']").on("keypress", function (e) {
-            if (e.which == 13) {
-                e.preventDefault();
-                redirectToSignUp();
-            }
-        });
+	}
+	
+    $(document).ready(function () {
+        $(".personalized-email-form input[type='submit']").on("click", email_clickHandler);
 	});
 })(jQuery);
 
 // Topic/Subtopic Landing Page Articles
-(function($) {
+(function ($) {
 	var currentPage = 1;
 	var inProgress = false;
 	var $trigger = $(".topic-subtopic-articles-show-more-link");
@@ -110,11 +102,11 @@ jQuery(function () {
 		
 		inProgress = true;
 
-		$('html,body').animate({scrollTop: $showMoreContainer.offset().top - 40}, 500);
+        $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
 		
 		var data = {
-			'topic' : topic,
-			'page' : currentPage + 1
+            'topic': topic,
+            'page': currentPage + 1
 		};
 		
 		$.ajax({
@@ -123,12 +115,11 @@ jQuery(function () {
 			method: 'GET'
 		}).done(function (data) {
 			currentPage++;
-			if ($(data).filter('input[type="hidden"]').length == 0) 
-			{
+            if ($(data).filter('input[type="hidden"]').length == 0) {
 				$showMoreContainer.hide();
 			}
 			$container.append(data);
-		}).always(function() {
+        }).always(function () {
 			inProgress = false;
 		});
 	}
@@ -167,13 +158,13 @@ jQuery(function () {
 		
 		inProgress = true;
 
-		$('html,body').animate({scrollTop: $showMoreContainer.offset().top - 40}, 500);
+        $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
 		
 		var data = {
-			'topic' : topic,
-			'grade' : grade,
-			'issue' : issue,
-			'page' : currentPage + 1
+            'topic': topic,
+            'grade': grade,
+            'issue': issue,
+            'page': currentPage + 1
 		};
 		
 		$.ajax({
@@ -182,12 +173,11 @@ jQuery(function () {
 			method: 'GET'
 		}).done(function (data) {
 			currentPage++;
-			if ($(data).filter('input[type="hidden"]').length == 0) 
-			{
+            if ($(data).filter('input[type="hidden"]').length == 0) {
 				$showMoreContainer.hide();
 			}
 			$container.append(data);
-		}).always(function() {
+        }).always(function () {
 			inProgress = false;
 		});
 	}
@@ -221,10 +211,10 @@ jQuery(function () {
 		
 		inProgress = true;
 
-		$('html,body').animate({scrollTop: $showMoreContainer.offset().top - 40}, 500);
+        $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
 		
 		var data = {
-			'page' : currentPage + 1
+            'page': currentPage + 1
 		};
 		
 		$.ajax({
@@ -233,12 +223,11 @@ jQuery(function () {
 			method: 'GET'
 		}).done(function (data) {
 			currentPage++;
-			if ($(data).filter('input[type="hidden"]').length == 0) 
-			{
+            if ($(data).filter('input[type="hidden"]').length == 0) {
 				$showMoreContainer.hide();
 			}
 			$container.append(data);
-		}).always(function() {
+        }).always(function () {
 			inProgress = false;
 		});
 	}
@@ -255,7 +244,7 @@ jQuery(function () {
 		$gradeInput.val($(this).data('value'));
 	}
 	
-	$(document).ready(function() {
+    $(document).ready(function () {
 		if ($(".container-guide-me-overlay").length == 0) {
 			return;
 		}
@@ -277,3 +266,28 @@ $(".show-more-link").click(function () {
     }
     showCount += 3;
 })
+
+//JS validation
+markInvalid = function () {
+    $.each(Page_Validators, function (index, validator) {
+        if (!validator.isvalid) {
+            $(validator).parents("label").addClass("error");
+            $(validator).removeClass("valid").addClass("validationerror");
+        }
+    });
+}
+
+validate = function () {
+    $("span.validationerror").removeClass("validationerror").addClass("valid");
+    $("label.error").removeClass("error");
+
+    var isValid = Page_ClientValidate("");
+    if (!isValid) {
+        markInvalid();
+    }
+    return isValid;
+}
+
+$(document).ready(function () {
+    $(".sign-up-inputs input").change(validate);
+});
