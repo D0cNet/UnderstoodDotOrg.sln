@@ -130,7 +130,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                         rptRow.DataBind();
                         TempList.Clear();
                     }
-                    if (e.Item.ItemIndex + 1 == ListTotal)
+                    else if (e.Item.ItemIndex + 1 == ListTotal)
                     {
                         rptRow.DataSource = TempList;
                         rptRow.DataBind();
