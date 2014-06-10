@@ -9,9 +9,9 @@
             <div class="tab-container friends-view-tabs friends-activity skiplink-content" aria-role="main">
                 <!-- BEGIN PARTIAL: friends-view-tabs -->
                 <ul class="etabs">
-                    <li class="tab profile-tab active"><asp:HyperLink ID="hypProfileTab" runat="server">Profile</asp:HyperLink></li>
+                    <li class="tab profile-tab "><asp:HyperLink ID="hypProfileTab" runat="server">Profile</asp:HyperLink></li>
                     <li class="tab connections-tab "><asp:HyperLink ID="hypConnectionsTab" runat="server">Connections</asp:HyperLink></li>
-                    <li class="tab comments-tab "><asp:HyperLink ID="hypCommentsTab" runat="server">Comments <span class="comment-number">15</span></asp:HyperLink></li>
+                    <li class="tab comments-tab active"><asp:HyperLink ID="hypCommentsTab" runat="server">Comments <span class="comment-number">15</span></asp:HyperLink></li>
                 </ul>
                 <div class="friends-view-tabs-select select-inverted-mobile">
                     <div class="etabs-dropdown">
@@ -25,61 +25,29 @@
                 <!-- END PARTIAL: friends-view-tabs -->
                 <div class="panel-container comments-panel profile-friend-activity-list">
                     <!-- BEGIN PARTIAL: friends-view-tabs-3 -->
-                    <div class="row">
-                        <div class="col col-6 comments-col-left">
-                            <h3>SonyasMom65</h3>
-                            <p>Last updated:</p>
-                            <p>4:35PM EST on Dec 24 2014:</p>
-                        </div>
-                        <div class="col col-18 comments-col-right">
-                            <div class="rs_read_this friends-view-rs-wrapper friends-view-three-rs-wrapper">
-                                <h5><a href="REPLACE">Ritalin Side Effects: What You Should Know</a></h5>
-                                <p>I’ve been there! Just trust sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim, quis nostrud exerci tation ullamcorper suscipit lobortis&hellip;</p>
-                                <footer>30 min ago
-                                    <button>15<span class="visuallyhidden">likes</span></button></footer>
+                    <asp:Repeater ID="rptComments" OnItemDataBound="rptComments_ItemDataBound" runat="server">
+                        <ItemTemplate>
+                            <div class="row repeater-item">
+                                <div class="col col-6 comments-col-left" id="divUserInfo" runat="server" visible="false">
+                                    <h3>
+                                        <asp:Literal ID="litUserName" runat="server"></asp:Literal></h3>
+                                    <p>Last updated:</p>
+                                    <p><asp:Literal ID="litLastUpdated" runat="server">4:35PM EST on Dec 24 2014</asp:Literal>:</p>
+                                </div>
+                                <div class="col col-18 comments-col-right" id="divComment" runat="server">
+                                    <div class="rs_read_this friends-view-rs-wrapper friends-view-three-rs-wrapper">
+                                        <h5>
+                                            <asp:HyperLink ID="hypTitle" runat="server">Ritalin Side Effects: What You Should Know</asp:HyperLink>
+                                        </h5>
+                                        <p>
+                                            <asp:Literal ID="litCommentBody" runat="server"></asp:Literal>&hellip;</p>
+                                        <footer><asp:Literal ID="litTime" runat="server">30 min ago</asp:Literal>
+                                            <button><asp:Literal ID="litLikes" runat="server"></asp:Literal><span class="visuallyhidden">likes</span></button></footer>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-18 offset-6 comments-col-right">
-                            <div class="rs_read_this friends-view-three-rs-wrapper">
-                                <h5><a href="REPLACE">My child has a learning disability and I’m concerned that the reading program her school uses is ineffective. Can you recommend a reading program?</a></h5>
-                                <p>&quot;Nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet&hellip;</p>
-                                <footer>2 days ago
-                                    <button>15<span class="visuallyhidden">likes</span></button></footer>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-18 offset-6 comments-col-right">
-                            <div class="rs_read_this friends-view-three-rs-wrapper">
-                                <h5><a href="REPLACE">Ritalin Side Effects: What You Should Know</a></h5>
-                                <p>I’ve been there! Just trust sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim, quis nostrud exerci tation ullamcorper suscipit lobortis&hellip;</p>
-                                <footer>6 days ago
-                                    <button>15<span class="visuallyhidden">likes</span></button></footer>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-18 offset-6 comments-col-right">
-                            <div class="rs_read_this friends-view-three-rs-wrapper">
-                                <h5><a href="REPLACE">My child has a learning disability and I’m concerned that the reading program her school uses is ineffective. Can you recommend a reading program?</a></h5>
-                                <p>&quot;Nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet&hellip;</p>
-                                <footer>12/21/13
-                                    <button>15<span class="visuallyhidden">likes</span></button></footer>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-18 offset-6 comments-col-right">
-                            <div class="rs_read_this friends-view-three-rs-wrapper">
-                                <h5><a href="REPLACE">My child has a learning disability and I’m concerned that the reading program her school uses is ineffective. Can you recommend a reading program?</a></h5>
-                                <p>&quot;Nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet&hellip;</p>
-                                <footer>12/9/13
-                                    <button>15<span class="visuallyhidden">likes</span></button></footer>
-                            </div>
-                        </div>
-                    </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                     <!-- END PARTIAL: friends-view-tabs-3 -->
                 </div>
                 <!-- end .comments-panel -->

@@ -265,7 +265,7 @@ jQuery(function () {
 })(jQuery);
 
 //"Show More" functionality for repeaters
-var showCount = 3;
+var showCount = 5;
 $(document).ready(function () {
     for (var i = showCount; i < $(".repeater-item").length; i++) {
         $(".repeater-item").eq(i).hide();

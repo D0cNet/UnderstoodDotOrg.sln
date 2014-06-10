@@ -22,9 +22,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindAccountMenu();
-
             var viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
+
+            BindAccountMenu();
 
             string userEmail = "";
             
@@ -62,11 +62,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
                     rptGroups.DataSource = groupsList;
                     rptGroups.DataBind();
                 }
-                if ((CurrentMember.ScreenName == thisMember.ScreenName))
-                {
-                    hypCommentsTab.NavigateUrl += Request.QueryString;
-                    hypCommentsTab.NavigateUrl += Request.QueryString;
-                }
             }
             else
             {
@@ -77,9 +72,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
         private void BindAccountMenu()
         {
             var publicAccountPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage();
-            hypCommentsTab.NavigateUrl = publicAccountPage.GetPublicAccountCommentsPage().GetUrl();
-            hypConnectionsTab.NavigateUrl = publicAccountPage.GetPublicAccountConnectionsPage().GetUrl();
-            hypProfileTab.NavigateUrl = publicAccountPage.GetPublicAccountProfilePage().GetUrl();
+            hypCommentsTab.NavigateUrl = publicAccountPage.GetPublicAccountCommentsPage().GetUrl() + "?" + Request.QueryString;
+            hypConnectionsTab.NavigateUrl = publicAccountPage.GetPublicAccountConnectionsPage().GetUrl() + "?" + Request.QueryString;
+            hypProfileTab.NavigateUrl = publicAccountPage.GetPublicAccountProfilePage().GetUrl() + "?" + Request.QueryString;
         }
 
         protected void rptChildren_ItemDataBound(object sender, RepeaterItemEventArgs e)

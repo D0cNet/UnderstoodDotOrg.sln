@@ -38,5 +38,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hypCommentsTab;
+        
+        /// <summary>
+        /// rptComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptComments;
     }
 }
