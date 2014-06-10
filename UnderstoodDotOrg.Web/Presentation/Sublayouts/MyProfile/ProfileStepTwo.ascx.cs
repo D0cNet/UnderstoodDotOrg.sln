@@ -45,7 +45,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                     //fill singleChild with selected child
                     if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Count > 0)
                     {
-                        singleChild = CurrentMember.Children.FirstOrDefault();
+                        singleChild = MembershipManager.trimFields(CurrentMember.Children.FirstOrDefault());
                     }
                     else
                     {
@@ -67,7 +67,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                         //has nickname and grade filled in, but no issues - next to work on
                         if (string.IsNullOrEmpty(child.Nickname) && child.Issues.Count == 0)
                         {
-                            singleChild = child;
+                            singleChild = MembershipManager.trimFields(child);
                             break;
                         }
                     }
