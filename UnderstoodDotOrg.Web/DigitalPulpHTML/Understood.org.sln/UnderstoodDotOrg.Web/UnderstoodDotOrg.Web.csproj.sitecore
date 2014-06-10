@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project>
-  <PropertyGroup>
-    <Site Server="understood.org.local" UserName="sitecore\chaddad" IsRemoteSitecore="True" />
-  </PropertyGroup>
-  <ItemGroup />
-</Project>

@@ -1,2 +1,0 @@
-16264 14:33:16 INFO  WebDAV feature is supported for Internet Explorer browser only.
-16264 14:33:16 INFO  WebDAV feature is supported for Internet Explorer browser only.

@@ -1,5 +1,0 @@
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Build\bin\Debug\UnderstoodDotOrg.Build.dll.config
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Build\bin\Debug\UnderstoodDotOrg.Build.dll
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Build\bin\Debug\UnderstoodDotOrg.Build.pdb
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Build\obj\Debug\UnderstoodDotOrg.Build.dll
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Build\obj\Debug\UnderstoodDotOrg.Build.pdb

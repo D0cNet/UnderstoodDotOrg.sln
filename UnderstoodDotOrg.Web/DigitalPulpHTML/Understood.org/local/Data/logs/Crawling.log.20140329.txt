@@ -1,7 +1,0 @@
-ManagedPoolThread #8 00:04:29 INFO  [Index=sitecore_master_index] Optimizing
-ManagedPoolThread #8 00:04:31 INFO  [Index=sitecore_master_index] Optimized
-12904 00:06:54 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
-13308 00:09:02 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
-17772 00:15:16 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
-10516 00:16:25 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.
-2560 00:18:34 INFO  [Index=sitecore_core_index] IntervalAsynchronousUpdateStrategy executing.

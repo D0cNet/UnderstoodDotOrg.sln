@@ -1,5 +1,0 @@
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Command\bin\Debug\PosesDBImport.exe
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Command\bin\Debug\PosesDBImport.pdb
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Command\obj\Debug\UnderstoodDotOrg.Command.csprojResolveAssemblyReference.cache
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Command\obj\Debug\PosesDBImport.exe
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Command\obj\Debug\PosesDBImport.pdb

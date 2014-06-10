@@ -1,3 +1,0 @@
-8600 15:26:48 INFO  Warming and Caching your search indexes
-8600 15:26:48 INFO  /******* Warming Queries ********/
-8600 15:26:48 INFO  /*************************/

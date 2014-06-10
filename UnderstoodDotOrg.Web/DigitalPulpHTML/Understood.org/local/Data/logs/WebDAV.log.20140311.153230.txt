@@ -1,5 +1,0 @@
-15676 15:37:27 INFO  WebDAV feature is supported for Internet Explorer browser only.
-15676 15:38:30 INFO  WebDAV feature is supported for Internet Explorer browser only.
-8812 15:38:38 INFO  WebDAV feature is supported for Internet Explorer browser only.
-9340 15:38:44 INFO  WebDAV feature is supported for Internet Explorer browser only.
-17468 15:55:00 INFO  WebDAV feature is supported for Internet Explorer browser only.

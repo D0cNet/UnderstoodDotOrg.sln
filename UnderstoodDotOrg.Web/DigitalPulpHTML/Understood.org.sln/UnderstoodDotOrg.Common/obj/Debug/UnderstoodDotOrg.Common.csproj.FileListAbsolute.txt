@@ -1,6 +1,0 @@
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Common\bin\Debug\UnderstoodDotOrg.Common.dll
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Common\bin\Debug\UnderstoodDotOrg.Common.pdb
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Common\bin\Debug\Sitecore.Kernel.dll
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Common\obj\Debug\UnderstoodDotOrg.Common.dll
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Common\obj\Debug\UnderstoodDotOrg.Common.pdb
-C:\inetpub\wwwroot\Poses\Understood.org.sln\UnderstoodDotOrg.Common\obj\Debug\UnderstoodDotOrg.Common.csprojResolveAssemblyReference.cache
