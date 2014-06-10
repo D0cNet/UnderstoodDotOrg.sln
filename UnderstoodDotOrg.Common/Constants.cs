@@ -775,6 +775,30 @@ namespace UnderstoodDotOrg.Common
                  
         #endregion
 
+        /// <summary>
+        /// Class to store regex validators for client-side validation of form submissions
+        /// </summary>
+        public static class Validators
+        {
+            /// <summary>
+            /// Built-in .Net Email validator
+            /// </summary>
+            public const string Email = @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
 
+            /// <summary>
+            /// Build=in .Net US phone number validator
+            /// </summary>
+            public const string PhoneNumber = @"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}";
+
+            /// <summary>
+            /// Built-in .Net US Zipcode validator
+            /// </summary>
+            public const string ZipCode = @"\d{5}(-\d{4})?";
+
+            /// <summary>
+            /// Minimum of 6 characters, no uppercase/special character restriction
+            /// </summary>
+            public const string Password = @"[\s\S]{6,}";
+        }
     }
 }
