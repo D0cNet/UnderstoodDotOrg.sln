@@ -319,6 +319,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         protected global::System.Web.UI.WebControls.Button btnEM28;
         
         /// <summary>
+        /// newsletter_sp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button newsletter_sp;
+        
+        /// <summary>
+        /// newsletter_en control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button newsletter_en;
+        
+        /// <summary>
         /// lblMessage control.
         /// </summary>
         /// <remarks>

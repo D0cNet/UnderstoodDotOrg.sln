@@ -203,6 +203,18 @@
             lblMessage.Text = reply.Message;
         }
 
+		protected void newsletter_sp_Click(object sender, EventArgs e)
+		{
+			BaseReply reply = ExactTargetService.InvokeNewsletterSendEN(new BaseRequest { ToEmail = tbxSubscriberEmail1.Text });
+			lblMessage.Text = reply.Message;
+		}
+
+		protected void newsletter_en_Click(object sender, EventArgs e)
+		{
+			BaseReply reply = ExactTargetService.InvokeNewsletterSendSP(new BaseRequest { ToEmail = tbxSubscriberEmail1.Text });
+			lblMessage.Text = reply.Message;
+		}
+
 
 
 	}

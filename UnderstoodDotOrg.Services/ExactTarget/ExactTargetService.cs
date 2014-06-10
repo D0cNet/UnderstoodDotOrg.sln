@@ -1808,6 +1808,105 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			return reply;
 		}
 
+
+
+		//test newsletter sends
+		public static BaseReply InvokeNewsletterSendEN(BaseRequest request)
+		{
+			BaseReply reply = new BaseReply();
+
+			SoapClient client = ExactTargetService.GetInstance();
+
+			StringBuilder sbReturnString = new StringBuilder();
+
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 1058, request.ToEmail, "newsletter test en");
+
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
+		}
+		public static BaseReply InvokeNewsletterSendSP(BaseRequest request)
+		{
+			BaseReply reply = new BaseReply();
+
+			SoapClient client = ExactTargetService.GetInstance();
+
+			StringBuilder sbReturnString = new StringBuilder();
+
+			try
+			{
+				//Create a GUID for ESD to ensure a unique name and customer key
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 1059, request.ToEmail, "newsletter send test sp");
+
+				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+				if (cStatus == "OK")
+				{
+					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+					tsd.TriggeredSendStatusSpecified = true; //required
+
+					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+					if (uStatus == "OK")
+					{
+						// *** SEND THE TRIGGER EMAIL
+						Subscriber newSub = new Subscriber();
+						newSub.EmailAddress = request.ToEmail;
+						newSub.SubscriberKey = request.ToEmail;
+
+						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+						reply.Successful = true;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				string message = "Unable to send welcome email.";
+
+				reply.Successful = false;
+				reply.Message = message;
+
+				Log.Error(exc.ToString(), "something went wrong");
+			}
+
+			return reply;
+		}
+
 		//Newsletter Email methods
 		public static BaseReply InvokeE1ATurnAroundBullying(InvokeE1ATurnAroundBullyingRequest request)
 		{

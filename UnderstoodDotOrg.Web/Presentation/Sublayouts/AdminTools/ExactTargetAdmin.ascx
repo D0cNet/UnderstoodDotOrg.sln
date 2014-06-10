@@ -106,6 +106,12 @@
 <br />
 <br />
 <hr />
+<asp:Button ID="newsletter_sp" runat="server" Text="newsletter spanish" OnClick="newsletter_sp_Click" />
+<br /><br />
+<hr />
+<asp:Button ID="newsletter_en" runat="server" Text="newsletter english" OnClick="newsletter_en_Click" />
+<br /><br />
+<hr />
 <br />
 <h4>Results:</h4>
 <asp:Label ID="lblMessage" runat="server" ></asp:Label>
