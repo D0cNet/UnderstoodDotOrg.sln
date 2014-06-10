@@ -153,13 +153,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                                 }
                                 else
                                 {
-                                    var msg = "Error creating forum item in btnSubmit_Click.";
+                                    var msg = "Error creating forum item in sitecore";
                                     Sitecore.Diagnostics.Error.LogError(msg);
                                     error_msg.Text = msg;
                                     error_msg.Visible = true;
                                     ShowClientSideForm();
                                     return;
                                 }
+                            }
+                            else
+                            {
+                                var msg = "Error creating forum item in Telligent.";
+                                Sitecore.Diagnostics.Error.LogError(msg);
+                                error_msg.Text = msg;
+                                error_msg.Visible = true;
+                                ShowClientSideForm();
+                                return;
                             }
                         }
                         else
