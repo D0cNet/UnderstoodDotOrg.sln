@@ -53,17 +53,33 @@ jQuery(function () {
 
 // Footer email
 (function($) {
-	function email_clickHandler(e) {
-		e.preventDefault();
-		$input = $(".personalized-email-form input[type='text']");
+	var path;
+	
+	function redirectToSignUp() {
+		var $input = $(".personalized-email-form input[type='text']");
+		var email = $input.val();
 		
-		if ($.trim($input.val()) !== "") {
-			location.href = $(this).data("path") + "?email=" + $input.val();
-		}
+		location.href = path + "?email=" + email;
 	}
 	
 	$(document).ready(function() {
-		$(".personalized-email-form input[type='submit']").on("click", email_clickHandler);
+		var $submit = $(".personalized-email-form input[type='submit']");
+		if ($submit.length == 0) {
+			return;
+		}
+		
+		path = $submit.data('path');
+		
+		$submit.on("click", function(e) {
+			e.preventDefault();		
+			redirectToSignUp();
+		});
+		$(".personalized-email-form input[type='text']").on("keypress", function (e) {
+            if (e.which == 13) {
+                e.preventDefault();
+                redirectToSignUp();
+            }
+        });
 	});
 })(jQuery);
 
