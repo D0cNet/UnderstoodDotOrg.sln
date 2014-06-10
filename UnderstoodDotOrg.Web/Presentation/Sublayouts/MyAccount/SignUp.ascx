@@ -16,7 +16,8 @@
                 <sc:Text ID="pageTitle" runat="server" Field="Page Title" />
             </h1>
             <a class="fb-sign-in" href="#">
-                <img alt="facebook" src="/Presentation/includes/images/icon.fb-sign-in@2x.png" /> <%--wire up to FB--%>
+                <img alt="facebook" src="/Presentation/includes/images/icon.fb-sign-in@2x.png" />
+                <%--wire up to FB--%>
             </a>
             <div id="fb-root"></div>
             <%--<p>Or create an account using your email address</p>--%>
@@ -28,9 +29,10 @@
                 <label class="first-name">
                     <%--<input type="text" placeholder="First name" aria-required="true">--%>
                     <asp:TextBox runat="server" ID="uxFirstName" aria-required="true"></asp:TextBox>
-                    <span><%--* Please enter your first name--%>
-                        <%= UnderstoodDotOrg.Common.DictionaryConstants.FirstNameErrorMessage %>
-                    </span>
+                    <asp:RequiredFieldValidator ID="valFirstName" ControlToValidate="uxFirstName" runat="server" CssClass="validationerror"></asp:RequiredFieldValidator>
+                    <%--<span>--%><%--* Please enter your first name--%>
+                    <%--<%= UnderstoodDotOrg.Common.DictionaryConstants.FirstNameErrorMessage %>--%>
+                    <%--</span>--%>
                 </label>
                 <%--<p>we only need your first name</p>--%>
                 <p>
@@ -39,31 +41,41 @@
                 <label class="email-address">
                     <%--<input type="text" placeholder="Enter email address" aria-required="true">--%>
                     <asp:TextBox runat="server" ID="uxEmailAddress" aria-required="true"></asp:TextBox>
-                    <span><%--* It looks like you mistyped your email address. Please try again.--%>
+                    <asp:RequiredFieldValidator ID="valEmail" runat="server" ControlToValidate="uxEmailAddress" CssClass="validationerror"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="valRegEmail" runat="server" ControlToValidate="uxEmailAddress" CssClass="validationerror"></asp:RegularExpressionValidator>
+                    <%--<span>* It looks like you mistyped your email address. Please try again.
                         <%= UnderstoodDotOrg.Common.DictionaryConstants.FirstNameErrorMessage %>
-                    </span>
+                    </span>--%>
                 </label>
                 <label class="enter-password">
                     <%--<input type="text" placeholder="Enter password" aria-required="true">--%>
                     <asp:TextBox runat="server" ID="uxPassword" aria-required="true" TextMode="Password"></asp:TextBox>
-                    <span><%--* Please create a password that has 6 or more characters. You can use letters and/or numbers.--%>
+                    <asp:RequiredFieldValidator ID="valPassword" runat="server" ControlToValidate="uxPassword" CssClass="validationerror"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="valRegPassword" runat="server" ControlToValidate="uxPassword" CssClass="validationerror"></asp:RegularExpressionValidator>
+                    <asp:CompareValidator ID="valCompPassword" runat="server" ControlToValidate="uxPassword" ControlToCompare="uxPasswordConfirm" CssClass="validationerror"></asp:CompareValidator>
+                    <%--<span>* Please create a password that has 6 or more characters. You can use letters and/or numbers.
                         <%= UnderstoodDotOrg.Common.DictionaryConstants.PasswordErrorMessage %>
-                    </span>
+                    </span>--%>
                 </label>
-                <p><%--password must be at least 6 characters--%>
+                <p>
+                    <%--password must be at least 6 characters--%>
                     <%= UnderstoodDotOrg.Common.DictionaryConstants.PasswordMessage %>
                 </p>
                 <label class="re-enter-password">
                     <%--<input type="text" placeholder="Re-enter Password" aria-required="true">--%>
                     <asp:TextBox runat="server" ID="uxPasswordConfirm" aria-required="true" TextMode="Password"></asp:TextBox>
-                    <span><%--* Please retype your password to match your password above--%>
+                    <asp:RequiredFieldValidator ID="valPasswordConfirm" runat="server" ControlToValidate="uxPasswordConfirm" CssClass="validationerror"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="valRegPasswordConfirm" runat="server" ControlToValidate="uxPasswordConfirm" CssClass="validationerror"></asp:RegularExpressionValidator>
+                    <asp:CompareValidator ID="valCompPasswordConfirm" runat="server" ControlToValidate="uxPasswordConfirm" ControlToCompare="uxPassword" CssClass="validationerror"></asp:CompareValidator>
+                    <%--<span>* Please retype your password to match your password above
                         <%= UnderstoodDotOrg.Common.DictionaryConstants.ConfirmPasswordErrorMessage %>
-                    </span>
+                    </span>--%>
                 </label>
                 <div class="zip-code">
                     <label>
                         <%--<input type="text" placeholder="Zip code (optional)">--%>
                         <asp:TextBox runat="server" ID="uxZipCode"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="valZipCode" runat="server" ControlToValidate="uxZipCode" CssClass="validationerror"></asp:RegularExpressionValidator>
                     </label>
                     <p class="why-do-we-ask-container"><%--optional--%><%= UnderstoodDotOrg.Common.DictionaryConstants.OptionalMessage %> <a class="why-do-we-ask popover-link" href="REPLACE" data-popover-placement="bottom">Why do we ask?</a></p>
 
@@ -73,13 +85,10 @@
                             Lorem Ipsum Insert Content About Zipcodes
                         </div>
                     </div>
-                    <span><%--* It looks like you mistyped your zip code. Please try again.--%>
+                    <%--<span>* It looks like you mistyped your zip code. Please try again.
                         <%= UnderstoodDotOrg.Common.DictionaryConstants.ZipCodeErrorMessage %>
-                    </span>
+                    </span>--%>
                 </div>
-            </div>
-            <div>
-                <asp:Literal ID="uxErrorMessage" runat="server"></asp:Literal>
             </div>
 
             <div class="sign-up-newsletter">
@@ -97,7 +106,12 @@
                 </p>
 
                 <%--<button class="button">Sign Up</button>--%>
-                <asp:Button runat="server" ID="uxSubmit" CssClass="button" OnClick="uxSubmit_Click" />
+                <asp:Button runat="server" ID="uxSubmit" CssClass="button" OnClick="uxSubmit_Click" CausesValidation="false" OnClientClick="return validate();" />
+
+                <div>
+                    <asp:Literal ID="uxErrorMessage" runat="server"></asp:Literal>
+                </div>
+
 
                 <div class="we-take-your-privacy-seriously-container">
                     <a class="we-take-your-privacy-seriously popover-link" href="REPLACE" data-popover-placement="bottom"><%--We take your privacy seriously--%>

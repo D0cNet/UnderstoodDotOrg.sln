@@ -22,17 +22,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 Response.Redirect(MyAccountFolderItem.GetMyAccountPage());
             }
 
+            //assign placeholders
             uxEmailAddress.Attributes["placeholder"] = DictionaryConstants.EnterEmailAddressWatermark;
             uxFirstName.Attributes["placeholder"] = DictionaryConstants.FirstNameWatermark;
             uxPassword.Attributes["placeholder"] = DictionaryConstants.EnterPasswordWatermark;
             uxPasswordConfirm.Attributes["placeholder"] = DictionaryConstants.ReEnterNewPasswordWatermark;
             uxZipCode.Attributes["placeholder"] = DictionaryConstants.ZipCodeWatermark;
 
+            //assign button text and mark as default button for form
             uxSubmit.Text = DictionaryConstants.SubmitButtonText;
             this.Page.Form.DefaultButton = this.uxSubmit.UniqueID;
 
+            //setup signup text and navigation
             uxSignIn.Text = DictionaryConstants.SignInButtonText;
             uxSignIn.NavigateUrl = MyAccountFolderItem.GetSignInPage();
+
+            //set validation
+            valFirstName.ErrorMessage = DictionaryConstants.FirstNameErrorMessage;
+            valEmail.ErrorMessage = valRegEmail.ErrorMessage = DictionaryConstants.EmailAddressErrorMessage;
+            valRegEmail.ValidationExpression = Constants.Validators.Email;
+            valPassword.ErrorMessage = valPasswordConfirm.ErrorMessage = DictionaryConstants.PasswordErrorMessage;
+            valRegPassword.ValidationExpression = valRegPasswordConfirm.ValidationExpression = Constants.Validators.Password;
+            //TODO: move to dictionary
+            valRegPassword.ErrorMessage = valRegPasswordConfirm.ErrorMessage = DictionaryConstants.PasswordErrorMessage;
+            //TODO: move to dictionary
+            valCompPassword.ErrorMessage = valCompPasswordConfirm.ErrorMessage = "It looks like your passwords don't match";
+            valZipCode.ErrorMessage = DictionaryConstants.ZipCodeErrorMessage;
+            valZipCode.ValidationExpression = Constants.Validators.ZipCode;            
 
             if (!string.IsNullOrEmpty(AccessToken))
             {
