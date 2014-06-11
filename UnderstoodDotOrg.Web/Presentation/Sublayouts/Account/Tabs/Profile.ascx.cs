@@ -24,8 +24,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
         {
             var viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
 
-            BindAccountMenu();
-
             string userEmail = "";
             
             if (!Request.QueryString[Constants.ACCOUNT_EMAIL].IsNullOrEmpty())
@@ -68,15 +66,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
                 Response.Redirect(string.Format(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetUrl() + "?{0}={1}", Constants.ACCOUNT_EMAIL, Request.QueryString[Constants.ACCOUNT_EMAIL]));
             }
         }
-
-        private void BindAccountMenu()
-        {
-            var publicAccountPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage();
-            hypCommentsTab.NavigateUrl = publicAccountPage.GetPublicAccountCommentsPage().GetUrl() + "?" + Request.QueryString;
-            hypConnectionsTab.NavigateUrl = publicAccountPage.GetPublicAccountConnectionsPage().GetUrl() + "?" + Request.QueryString;
-            hypProfileTab.NavigateUrl = publicAccountPage.GetPublicAccountProfilePage().GetUrl() + "?" + Request.QueryString;
-        }
-
+        
         protected void rptChildren_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.IsItem())

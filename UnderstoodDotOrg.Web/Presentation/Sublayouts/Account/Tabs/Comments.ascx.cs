@@ -38,7 +38,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
 
             var membershipManager = new MembershipManager();
             var thisMember = new Member();
-            BindAccountMenu();
             thisMember = membershipManager.GetMember(userEmail);
             var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
             if (IsUserLoggedIn)
@@ -53,7 +52,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
                         rptComments.DataBind();
                     }
 
-                    litCommentsCount.Text = commentsList != null ? commentsList.Count.ToString() : "0";
+                    
                 }
                 else
                 {
@@ -62,13 +61,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
             }
         }
 
-        private void BindAccountMenu()
-        {
-            var publicAccountPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage();
-            hypCommentsTab.NavigateUrl = publicAccountPage.GetPublicAccountCommentsPage().GetUrl() + "?" + Request.QueryString;
-            hypConnectionsTab.NavigateUrl = publicAccountPage.GetPublicAccountConnectionsPage().GetUrl() + "?" + Request.QueryString;
-            hypProfileTab.NavigateUrl = publicAccountPage.GetPublicAccountProfilePage().GetUrl() + "?" + Request.QueryString;
-        }
+        
 
         protected void rptComments_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {

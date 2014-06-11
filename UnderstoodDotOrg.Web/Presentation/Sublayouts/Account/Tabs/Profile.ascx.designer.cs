@@ -13,33 +13,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs {
     public partial class Profile {
         
         /// <summary>
-        /// hypProfileTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypProfileTab;
-        
-        /// <summary>
-        /// hypConnectionsTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypConnectionsTab;
-        
-        /// <summary>
-        /// hypCommentsTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypCommentsTab;
-        
-        /// <summary>
         /// rptChildren control.
         /// </summary>
         /// <remarks>

@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Comments.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs.Comments" %>
-
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="container flush friends-view-tabs-page-header">&nbsp;</div>
 
 <div class="container">
@@ -8,21 +8,7 @@
         <div class="col col-24 offset-1">
             <div class="tab-container friends-view-tabs friends-activity skiplink-content" aria-role="main">
                 <!-- BEGIN PARTIAL: friends-view-tabs -->
-                <ul class="etabs">
-                    <li class="tab profile-tab "><asp:HyperLink ID="hypProfileTab" runat="server">Profile</asp:HyperLink></li>
-                    <li class="tab connections-tab "><asp:HyperLink ID="hypConnectionsTab" runat="server">Connections</asp:HyperLink></li>
-                    <li class="tab comments-tab active"><asp:HyperLink ID="hypCommentsTab" runat="server">Comments <span class="comment-number">
-                        <asp:Literal ID="litCommentsCount" runat="server"></asp:Literal></span></asp:HyperLink></li>
-                </ul>
-                <div class="friends-view-tabs-select select-inverted-mobile">
-                    <div class="etabs-dropdown">
-                        <select class="">
-                            <option value="profile">Profile</option>
-                            <option value="connections">Connections</option>
-                            <option value="comments">Comments</option>
-                        </select>
-                    </div>
-                </div>
+                <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Account/Tabs/TabMenu.ascx" />
                 <!-- END PARTIAL: friends-view-tabs -->
                 <div class="panel-container comments-panel profile-friend-activity-list">
                     <!-- BEGIN PARTIAL: friends-view-tabs-3 -->

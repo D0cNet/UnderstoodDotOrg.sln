@@ -343,6 +343,13 @@
     <Compile Include="Presentation\Sublayouts\Account\Tabs\Profile.ascx.designer.cs">
       <DependentUpon>Profile.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Tabs\TabMenu.ascx.cs">
+      <DependentUpon>TabMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Tabs\TabMenu.ascx.designer.cs">
+      <DependentUpon>TabMenu.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx.cs">
       <DependentUpon>ExactTargetAdmin.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2473,6 +2480,7 @@
     <Content Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Tabs\Connections.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Tabs\Profile.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\Tabs\TabMenu.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx" />

@@ -15,15 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindAccountMenu();
-        }
 
-        private void BindAccountMenu()
-        {
-            var publicAccountPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage();
-            hypCommentsTab.NavigateUrl = publicAccountPage.GetPublicAccountCommentsPage().GetUrl();
-            hypConnectionsTab.NavigateUrl = publicAccountPage.GetPublicAccountConnectionsPage().GetUrl();
-            hypProfileTab.NavigateUrl = publicAccountPage.GetPublicAccountProfilePage().GetUrl();
         }
     }
 }
