@@ -163,20 +163,29 @@ public CustomImageField PartnerLogo
 }
 
 
-public CustomGeneralLinkField TwitterUrl
-{
-	get
-	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Twitter Url"]);
-	}
-}
-
-
 public CustomTextField TwitterHeading
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Twitter Heading"]);
+	}
+}
+
+
+public CustomTextField TwitterWidget
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Twitter Widget"]);
+	}
+}
+
+
+public CustomGeneralLinkField TwitterUrl
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Twitter Url"]);
 	}
 }
 
@@ -190,20 +199,29 @@ public CustomTextField TwitterCallToAction
 }
 
 
-public CustomGeneralLinkField FacebookUrl
-{
-	get
-	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Facebook Url"]);
-	}
-}
-
-
 public CustomTextField FacebookHeading
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Facebook Heading"]);
+	}
+}
+
+
+public CustomTextField FacebookWidget
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Facebook Widget"]);
+	}
+}
+
+
+public CustomGeneralLinkField FacebookUrl
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Facebook Url"]);
 	}
 }
 

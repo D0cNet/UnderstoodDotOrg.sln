@@ -77,42 +77,8 @@
             <div class="partner-twitter-container">
                 <h2><sc:FieldRenderer ID="frTwitterHeading" runat="server" FieldName="Twitter Heading" /></h2>
 
-                <div class="partner-feed-single">
-                    <div class="avatar">
-                        <img alt="50x50 Placeholder" src="http://placehold.it/50x50" />
-                    </div>
-                    <div class="tweet-block">
-                        <div class="message-head">
-                            <span class="username">PLOS</span><span class="handle">@PLOS</span><span class="timestamp">3h</span>
-                        </div>
-                        <!-- end div.message-head -->
-                        <div class="message-body">
-                            <a href="REPLACE">@PLOSONE</a> Discovering age of indiv carnivorous dinosaue tooth 76 vs 60 mil -- via 1200 shared data points <a href="REPLACE">@AndyFarke</a> <a href="REPLACE">http://bit.ly/WSICLn</a>
-                        </div>
-                        <!-- end div.message-body -->
-                    </div>
-                    <!-- end div.tweet-block -->
-                </div>
-                <!-- end .partner-feed-single -->
-
-                <div class="partner-feed-single">
-                    <div class="avatar">
-                        <img alt="50x50 Placeholder" src="http://placehold.it/50x50" />
-                    </div>
-                    <div class="tweet-block">
-                        <div class="message-head">
-                            <span class="username">James McInerney</span><span class="handle">@jomcinemey</span><span class="timestamp">3h</span>
-                        </div>
-                        <!-- end div.message-head -->
-                        <div class="message-body">
-                            Paper uses TIGER <a href="REPLACE">http://bioinf.nuim.ie/tiger</a> : Reconstruction of Family-Level Phylogenetic Relationships within
-     
-                        </div>
-                        <!-- end div.message-body -->
-                    </div>
-                    <!-- end div.tweet-block -->
-                </div>
-                <!-- end .partner-feed-single -->
+                <sc:FieldRenderer ID="frTwitterWidget" runat="server" FieldName="Twitter Widget" />
+                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
 
                 <div class="twitter-follow-block">
                     <asp:HyperLink ID="hlTwitter" runat="server"><i class="twitter-follow"></i><%= TwitterLinkText %></asp:HyperLink>
@@ -128,8 +94,8 @@
             <div class="partner-facebook-container">
                 <h2><sc:FieldRenderer ID="frFacebookHeading" runat="server" FieldName="Facebook Heading" /></h2>
 
-                <div class="fb-like-box" data-href="<%= FacebookUrl %>" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false" data-width="292"></div>
-
+                <sc:FieldRenderer ID="frFacebookWidget" runat="server" FieldName="Facebook Widget" />
+                
                 <div class="facebook-follow-block">
                     <asp:HyperLink ID="hlFacebook" runat="server"><i class="facebook-follow"></i><%= FacebookLinkText %></asp:HyperLink>
                 </div>
@@ -143,7 +109,5 @@
     <!-- end .row -->
 </div>
 <!-- end .container l-partners-social-columns -->
-
-<!-- BEGIN PARTIAL: footer -->
 
 

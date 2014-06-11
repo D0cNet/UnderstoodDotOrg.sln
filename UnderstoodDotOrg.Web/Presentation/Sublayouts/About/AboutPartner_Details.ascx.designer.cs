@@ -139,6 +139,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frTwitterHeading;
         
         /// <summary>
+        /// frTwitterWidget control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frTwitterWidget;
+        
+        /// <summary>
         /// hlTwitter control.
         /// </summary>
         /// <remarks>
@@ -164,6 +173,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frFacebookHeading;
+        
+        /// <summary>
+        /// frFacebookWidget control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frFacebookWidget;
         
         /// <summary>
         /// hlFacebook control.
