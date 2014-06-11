@@ -21,6 +21,8 @@ namespace UnderstoodDotOrg.Web.Presentation
         protected void Page_Load(object sender, EventArgs e)
         {
             ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=app&special_needs=1");
+            ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=game&special_needs=1");
+            ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1");
         }
 
         public void ImportCategory(string URL)
@@ -30,7 +32,7 @@ namespace UnderstoodDotOrg.Web.Presentation
 
             XmlReader reader = XmlReader.Create(URL);
             int count = 0;
-            while (reader.ReadToFollowing("entry") && count < 3)
+            while (reader.ReadToFollowing("entry"))
             {
                 if (reader.NodeType == XmlNodeType.Element)
                 {
