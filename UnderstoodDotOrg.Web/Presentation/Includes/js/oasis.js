@@ -53,25 +53,33 @@ jQuery(function () {
 
 // Footer email
 (function ($) {
-    function email_clickHandler(e) {
-        e.preventDefault();
-        $input = $(".personalized-email-form input[type='text']");
-		
+    var path;
+	
 	function redirectToSignUp() {
 		var $input = $(".personalized-email-form input[type='text']");
 		var email = $input.val();
 		
 		location.href = path + "?email=" + email;
-		}
+	}
 	
 	$(document).ready(function() {
 		var $submit = $(".personalized-email-form input[type='submit']");
 		if ($submit.length == 0) {
 			return;
-	}
-	
-    $(document).ready(function () {
-        $(".personalized-email-form input[type='submit']").on("click", email_clickHandler);
+		}
+		
+		path = $submit.data('path');
+		
+		$submit.on("click", function(e) {
+			e.preventDefault();		
+			redirectToSignUp();
+		});
+		$(".personalized-email-form input[type='text']").on("keypress", function (e) {
+            if (e.which == 13) {
+                e.preventDefault();
+                redirectToSignUp();
+            }
+        });
 	});
 })(jQuery);
 
@@ -189,10 +197,10 @@ jQuery(function () {
 (function ($) {
     var currentPage = 1;
 	var inProgress = false;
-	var $trigger = $("#experts-show-more-results");
 	var $container, $showMoreContainer, path, topic, grade, issue;
 	
 	function init() {
+		var $trigger = $("#experts-show-more-results");
 		if ($trigger.length > 0) {
 			path = $trigger.data('path');
 			$container = $("#" + $trigger.data('container'));
