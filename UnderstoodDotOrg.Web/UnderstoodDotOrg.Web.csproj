@@ -245,6 +245,13 @@
     <Compile Include="Presentation\Sublayouts\About\AboutUnderstood.ascx.designer.cs">
       <DependentUpon>AboutUnderstood.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Widgets\ContactUs.ascx.cs">
+      <DependentUpon>ContactUs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Widgets\ContactUs.ascx.designer.cs">
+      <DependentUpon>ContactUs.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\About\DonationConfirmationPage.ascx.cs">
       <DependentUpon>DonationConfirmationPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -314,6 +321,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\About\SearchResults.ascx.designer.cs">
       <DependentUpon>SearchResults.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Widgets\Donate.ascx.cs">
+      <DependentUpon>Donate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Widgets\Donate.ascx.designer.cs">
+      <DependentUpon>Donate.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Account\AccountBody.ascx.cs">
       <DependentUpon>AccountBody.ascx</DependentUpon>
@@ -2484,6 +2498,7 @@
     <Content Include="Presentation\Sublayouts\About\AboutPartners.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutPartner_Details.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutUnderstood.ascx" />
+    <Content Include="Presentation\Sublayouts\About\Widgets\ContactUs.ascx" />
     <Content Include="Presentation\Sublayouts\About\DonationConfirmationPage.ascx" />
     <Content Include="Presentation\Sublayouts\About\DonationPage.ascx" />
     <Content Include="Presentation\Sublayouts\About\ExpertListing.ascx" />
@@ -2494,6 +2509,7 @@
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_SignUp.ascx" />
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_Thankyou.ascx" />
     <Content Include="Presentation\Sublayouts\About\SearchResults.ascx" />
+    <Content Include="Presentation\Sublayouts\About\Widgets\Donate.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountBody.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx" />

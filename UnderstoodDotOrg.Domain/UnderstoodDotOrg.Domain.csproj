@@ -280,6 +280,7 @@
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WidgetFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\WidgetFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AdvocacyLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AuthenticationNavigationLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AuthenticationNavigationLinkItem.instance.cs" />
@@ -576,6 +577,8 @@
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Parent\ParentRoleItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Parent\ParentRoleItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Tools\BehaviorTool\BehaviorSearchCalloutItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\Widgets\DonateWidgetItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\Widgets\GenericWidgetItem.base.cs" />
     <Compile Include="SocialHelper.cs" />
     <Compile Include="TelligentCommunity\CommunityConstructors.cs" />
     <Compile Include="TelligentCommunity\CommunityHelper.cs">

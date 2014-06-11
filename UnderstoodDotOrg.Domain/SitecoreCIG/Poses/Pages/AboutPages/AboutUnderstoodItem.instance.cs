@@ -16,5 +16,10 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages
                         .Where(i => i.InheritsFromType(AboutSectionPageItem.TemplateId))
                         .Select(i => new AboutSectionPageItem(i));
         }
+
+        public DonatePageItem GetDonatePage()
+        {
+            return InnerItem.Children.FirstOrDefault(i => i.IsOfType(DonatePageItem.TemplateId));
+        }
     }
 }

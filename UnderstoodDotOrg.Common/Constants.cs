@@ -39,6 +39,7 @@ namespace UnderstoodDotOrg.Common
         public static readonly string VIEW_MODE_VISITOR = "visitor";
         public static readonly string VIEW_MODE_MEMBER = "member";
         public static readonly string VIEW_MODE_FRIEND = "friend";
+        public static readonly string DONATION_AMOUNT = "amount";
         #endregion
         #region Newsletter Subscriptions
 

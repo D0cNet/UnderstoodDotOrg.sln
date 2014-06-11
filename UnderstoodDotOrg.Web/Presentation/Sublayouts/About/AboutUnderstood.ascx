@@ -55,17 +55,7 @@
         <div class="about-large-block">
             <div class="col col-7 offset-1 donate-advice-sidebar skiplink-sidebar">
                 <!-- BEGIN PARTIAL: donate -->
-                <div class="donate rs_read_this">
-                    <h4>Please Donate</h4>
-                    <p>Vivamus feugiat congue augue, sit amet congue nisl mattis?</p>
-                    <ul class="donation-amounts group">
-                        <li><a href="REPLACE" class="button">$25</a></li>
-                        <li><a href="REPLACE" class="button">$50</a></li>
-                        <li><a href="REPLACE" class="button">$100</a></li>
-                        <li><a href="REPLACE" class="button">Other</a></li>
-                    </ul>
-                </div>
-                <!-- .donate -->
+                <sc:sublayout ID="Sublayout2" runat="server" path="~/Presentation/Sublayouts/About/Widgets/Donate.ascx" />
                 <!-- END PARTIAL: donate -->
                 <!-- BEGIN PARTIAL: get-advice -->
                 <div class="get-advice">
@@ -83,16 +73,7 @@
                 <!-- .get-advice -->
                 <!-- END PARTIAL: get-advice -->
                 <!-- BEGIN PARTIAL: about-contact-us -->
-                <div class="about-contact-block">
-                    <h2>Contact Us</h2>
-                    <h3>For general support</h3>
-                    <a href="REPLACE">info@Understood.org</a>
-                    <h3>Questions for experts</h3>
-                    <a href="REPLACE">experts@Understood.org</a>
-                    <h3>Media inquiries</h3>
-                    <a href="REPLACE">jsmith@Understood.org</a>
-                </div>
-                <!-- .about-contact-block -->
+                <sc:sublayout ID="Sublayout1" runat="server" path="~/Presentation/Sublayouts/About/Widgets/ContactUs.ascx" />
                 <!-- END PARTIAL: about-contact-us -->
             </div>
         </div>

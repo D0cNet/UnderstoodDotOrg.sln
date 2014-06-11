@@ -1,4 +1,29 @@
 ﻿$(document).ready(function () {
+
+    var vars = [], hash;
+    var q = document.URL.split('?')[1];
+    if (q != undefined) {
+        q = q.split('&');
+        for (var i = 0; i < q.length; i++) {
+            hash = q[i].split('=');
+            vars.push(hash[1]);
+            vars[hash[0]] = hash[1];
+        }
+    }
+
+    var amount = vars["amount"];
+
+    if (amount == "25" || amount == "50" || amount == "100") {
+        $buttonwithAmountFromQuerystring = $(".donate-amount-button[data-param-value*='" + amount + "']");
+        $("#donate-amount").val(amount);
+        $buttonwithAmountFromQuerystring.trigger("click");
+    }
+    else if (amount == "other")
+    {
+        $buttonwithAmountFromQuerystring = $(".donate-amount-button[data-param-value='']");
+        $buttonwithAmountFromQuerystring.trigger("click");
+    }
+
     var donationApiKey = $("#hfDonationApiKey").val();
     var donationFormId = $("#hfDonationFormId").val();
     var donationLevelId = $("#hfDonationLevelId").val();
