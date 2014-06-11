@@ -328,6 +328,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 				{
 					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
 					tsd.TriggeredSendStatusSpecified = true; //required
+					tsd.Priority = "High";
 
 					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
 
@@ -1346,6 +1347,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 				{
 					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
 					tsd.TriggeredSendStatusSpecified = true; //required
+					tsd.Priority = "High";
 
 					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
 
@@ -1927,6 +1929,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 				{
 					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
 					tsd.TriggeredSendStatusSpecified = true; //required
+					tsd.Priority = "High";
 
 					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
 
