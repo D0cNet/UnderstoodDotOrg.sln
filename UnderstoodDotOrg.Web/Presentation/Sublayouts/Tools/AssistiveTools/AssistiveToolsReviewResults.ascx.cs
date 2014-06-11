@@ -73,7 +73,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
         {
             if (e.IsItem())
             {
-                
+                var results = DataBinder.Eval(e.Item.DataItem, "SearchResults") as IEnumerable<AssistiveToolsReviewPageItem>;
+                var rptrResults = e.FindControlAs<Repeater>("rptrResults");
+                rptrResults.DataSource = results;
+                rptrResults.DataBind();
             }
         }
     }

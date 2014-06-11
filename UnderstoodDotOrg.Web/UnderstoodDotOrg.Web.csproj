@@ -1687,6 +1687,13 @@
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx.designer.cs">
       <DependentUpon>AssistiveToolsLandingPage.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsResultListing.ascx.cs">
+      <DependentUpon>AssistiveToolsResultListing.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsResultListing.ascx.designer.cs">
+      <DependentUpon>AssistiveToolsResultListing.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx.cs">
       <DependentUpon>AssistiveToolsReviewDescription.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2672,6 +2679,7 @@
     <Content Include="Presentation\Sublayouts\SubTopics\TwoColumnContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Common\MemberCardList.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsLandingPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsResultListing.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDescription.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewDetails.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\AssistiveTools\AssistiveToolsReviewResults.ascx" />

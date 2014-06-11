@@ -46,7 +46,7 @@
                             <div class="popover-container popover-content rs_skip">
                                 <!-- Borrows CSS class from other module -->
                                 <section class="user-child-details-popover">
-                                    <div class="tooltip-title rs_skip"><%= Model.Title.Rendered %> Play</div>
+                                    <div class="tooltip-title rs_skip"><%= Model.Title.Rendered %></div>
                                     <div class="change-slide-buttons arrows-gray rs_skip">
                                         <span class="count">
                                             <span class="curr">1</span>
