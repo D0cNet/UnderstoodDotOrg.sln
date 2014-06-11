@@ -33,7 +33,9 @@
             <asp:Button CssClass="button" ID="uxSignIn" runat="server" OnClick="uxSignIn_Click" />
             <%--<a class="sign-in-forgot-password" href="REPLACE">Forgot Your Password?</a>--%>
             <asp:HyperLink runat="server" ID="uxForgotPassword" CssClass="sign-in-forgot-password">Forgot Your Password?</asp:HyperLink>
-            <asp:Literal ID="uxError" runat="server"></asp:Literal>
+			<div style="text-align: center; width: 100%;">
+					<asp:Literal ID="uxError" runat="server"></asp:Literal>
+			</div>
         </div>
     </div>
 </div>

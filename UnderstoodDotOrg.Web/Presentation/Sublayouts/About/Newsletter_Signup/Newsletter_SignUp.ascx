@@ -47,7 +47,7 @@
                         </div>
                         <div class="newsletter-button-wrap">
                             <asp:Button ID="btnSignup" runat="server" OnClick="btnSignup_Click" CssClass="button newsletter-button disabled" />
-							<asp:Label runat="server" ID="lblEmailFail" Text="" />
+							<asp:Label runat="server" ID="lblEmailFail" ForeColor="#cc0000" Text="" />
                         </div>
                     </fieldset>
 
