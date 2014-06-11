@@ -54,7 +54,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
                 imgExpert.ImageUrl = expert.GetThumbnailUrl(230, 230);
 
                 HyperLink hlExpertDetail = (HyperLink)e.Item.FindControl("hlExpertDetail");
-                hlExpertDetail.NavigateUrl = expert.GetUrl();
+                HyperLink hlExpertName = (HyperLink)e.Item.FindControl("hlExpertName");
+                HyperLink hlExpertThumbnail = (HyperLink)e.Item.FindControl("hlExpertThumbnail");
+                
+                hlExpertDetail.NavigateUrl = hlExpertName.NavigateUrl 
+                    = hlExpertThumbnail.NavigateUrl = expert.GetUrl();
 
                 Repeater rptTasks = (Repeater)e.Item.FindControl("rptTasks");
                 var tasks = expert.GetTasks();
