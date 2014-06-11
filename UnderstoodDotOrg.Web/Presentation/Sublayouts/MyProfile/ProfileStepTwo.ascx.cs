@@ -17,6 +17,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
     public partial class ProfileStepTwo : BaseRegistration<MyProfileStepTwoItem>
     {
         string status = "cmp"; //"cmp", "edit", "add"
+        int index = 0;
         string pronoun = "your child";
         Child singleChild;
 
@@ -26,6 +27,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             if (!string.IsNullOrEmpty(Request.QueryString[Constants.QueryStrings.Registration.Mode]))
             {
                 status = Request.QueryString[Constants.QueryStrings.Registration.Mode];
+            }
+
+            if (!string.IsNullOrEmpty(Request.QueryString[Constants.QueryStrings.Registration.ChildIndex]))
+            {
+                index = int.Parse(Request.QueryString[Constants.QueryStrings.Registration.ChildIndex]);
             }
 
             this.FillChild();
@@ -45,7 +51,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                     //fill singleChild with selected child
                     if (CurrentMember != null && CurrentMember.Children != null && CurrentMember.Children.Count > 0)
                     {
-                        singleChild = MembershipManager.trimFields(CurrentMember.Children.FirstOrDefault());
+                        singleChild = MembershipManager.trimFields(CurrentMember.Children.ElementAt(index));
                     }
                     else
                     {

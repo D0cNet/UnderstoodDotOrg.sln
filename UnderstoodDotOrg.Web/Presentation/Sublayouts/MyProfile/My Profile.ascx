@@ -99,7 +99,7 @@
                                     <div class="row">
                                         <div class="col col-5 offset-1 clearfix">
                                             <h3><%# Eval("Nickname") %></h3>
-                                            <a href="<%: UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders.MyAccountFolderItem.GetCompleteMyProfileStepTwo() + '?' + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.Mode + '=' + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.ModeEdit %>" class="child-edit">Edit</a>
+                                            <a href="<%# getChildEditLink(Container) %>" class="child-edit">Edit</a>
                                         </div>
                                         <div class="col col-18 profile-detail-information">
                                             <div class="children-heading">

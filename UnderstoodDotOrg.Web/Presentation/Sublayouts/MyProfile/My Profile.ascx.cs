@@ -279,5 +279,14 @@
 		{
 
 		}
+
+        protected string getChildEditLink(ListViewDataItem Container)
+        {
+            string ret = UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders.MyAccountFolderItem.GetCompleteMyProfileStepTwo()
+                + '?' + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.Mode + '=' + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.ModeEdit
+                + "&" + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.ChildIndex + "=" + Container.DataItemIndex;
+
+            return ret;
+        }
     }
 }
