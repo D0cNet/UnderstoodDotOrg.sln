@@ -74,7 +74,7 @@
                         <label for="at-search-by" class="visuallyhidden">Search by</label>
                         <input type="text" name="at-search-by" id="at-search-by">
                         <div class="submit-button-container2 rs_skip">
-                            <input class="button" type="submit" value="Find"></div>
+                            <input id="btnFindSubmit" runat="server" onserverclick="" class="button" type="submit" value="Find"></div>
                     </fieldset>
                 </div>
                 <!-- .form -->

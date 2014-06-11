@@ -46,15 +46,6 @@ public static implicit operator Item(AssistiveToolsReviewPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField AppleAppStoreID
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Apple App Store ID"]);
-	}
-}
-
-
 public CustomTreeListField Categories
 {
 	get
@@ -73,15 +64,6 @@ public CustomTreeListField Platforms
 }
 
 
-public CustomTreeListField Screenshots
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Screenshots"]);
-	}
-}
-
-
 public CustomTreeListField Skills
 {
 	get
@@ -96,6 +78,24 @@ public CustomTreeListField Subjects
 	get
 	{
 		return new CustomTreeListField(InnerItem, InnerItem.Fields["Subjects"]);
+	}
+}
+
+
+public CustomTextField AppleAppStoreID
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Apple App Store ID"]);
+	}
+}
+
+
+public CustomTreeListField Screenshots
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Screenshots"]);
 	}
 }
 
@@ -177,6 +177,15 @@ public CustomGeneralLinkField ExternalLink
 	get
 	{
 		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["External Link"]);
+	}
+}
+
+
+public CustomTreeListField Issues
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Issues"]);
 	}
 }
 

@@ -517,6 +517,13 @@ namespace UnderstoodDotOrg.Common
                 public const string ModeEdit = "edit";
                 public const string ModeAdd = "add";
             }
+            public static class LearningTool
+            {
+                public const string IssueId = "iid";
+                public const string GradeLevel = "gl";
+                public const string TypeId = "tid";
+                public const string Keyword = "keyword";
+            }
         }
         public static class UserActivity_Values
         {
