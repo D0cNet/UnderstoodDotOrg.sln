@@ -6,7 +6,7 @@
         <div class="col col-24 offset-1">
             <div class="tab-container friends-view-tabs skiplink-content" aria-role="main">
                 <!-- BEGIN PARTIAL: friends-view-tabs -->
-                <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Account/Tabs/TabMenu.ascx" />
+                <sc:sublayout runat="server" path="~/Presentation/Sublayouts/Account/Tabs/TabMenu.ascx" />
                 <!-- END PARTIAL: friends-view-tabs -->
                 <div class="panel-container profile-panel">
                     <!-- BEGIN PARTIAL: friends-view-tabs-1 -->

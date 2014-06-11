@@ -51,8 +51,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
                         rptComments.DataSource = commentsList;
                         rptComments.DataBind();
                     }
-
-                    
                 }
                 else
                 {

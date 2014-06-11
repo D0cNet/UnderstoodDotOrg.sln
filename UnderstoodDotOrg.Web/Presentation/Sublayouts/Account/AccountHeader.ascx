@@ -2,13 +2,15 @@
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <div class="container back-to-previous-nav">
-  <div class="row">
-    <!-- article -->
-    <div class="col col-22 offset-1">
-      <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Back to Homepage</a>
+    <div class="row">
+        <!-- article -->
+        <div class="col col-22 offset-1">
+            <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Back to Homepage</a>
+        </div>
     </div>
-  </div><!-- .row -->
-</div><!-- .container -->
+    <!-- .row -->
+</div>
+<!-- .container -->
 
 <asp:Panel ID="pnlPrivateUser" CssClass="container" runat="server" Visible="false">
     <div class="row">
@@ -65,7 +67,8 @@
                                             <div class="card-child-info popover rs_skip">
                                                 <div class="popover-content">
                                                     <span class="caret"></span>
-                                                    <h3>Grade <asp:Literal ID="litGrade2" runat="server"></asp:Literal>, 
+                                                    <h3>Grade
+                                                        <asp:Literal ID="litGrade2" runat="server"></asp:Literal>, 
                                                         <asp:Literal ID="litGender" runat="server">Boy</asp:Literal>
                                                     </h3>
                                                     <!-- BEGIN PARTIAL: community/carousel_arrows -->

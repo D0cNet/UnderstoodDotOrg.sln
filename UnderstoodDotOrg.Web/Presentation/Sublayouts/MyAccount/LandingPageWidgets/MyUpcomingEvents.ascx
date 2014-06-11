@@ -12,7 +12,9 @@
                         <asp:HyperLink ID="hypEventLink" runat="server"></asp:HyperLink>
                         <asp:HyperLink ID="hypEventTypeLink" CssClass="event-type" runat="server">Webinar</asp:HyperLink>
                         <span class="timestamp">
-                            <asp:Literal ID="litDate" runat="server"></asp:Literal> <span class="dot"></span><asp:Literal ID="litTime" runat="server"></asp:Literal>
+                            <asp:Literal ID="litDate" runat="server"></asp:Literal>
+                            <span class="dot"></span>
+                            <asp:Literal ID="litTime" runat="server"></asp:Literal>
                         </span>
                     </span>
                 </li>

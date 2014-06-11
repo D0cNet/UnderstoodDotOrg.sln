@@ -5,7 +5,7 @@
         <!-- article -->
         <div class="col col-22 offset-1">
             <section class="account-notification-tabs skiplink-content" aria-role="main">
-                <sc:Placeholder Key="My Notifications" runat="server" />
+                <sc:placeholder key="My Notifications" runat="server" />
             </section>
         </div>
     </div>

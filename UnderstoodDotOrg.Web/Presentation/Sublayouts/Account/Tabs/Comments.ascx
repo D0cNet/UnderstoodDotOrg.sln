@@ -19,7 +19,8 @@
                                     <h3>
                                         <asp:Literal ID="litUserName" runat="server"></asp:Literal></h3>
                                     <p>Last updated:</p>
-                                    <p><asp:Literal ID="litLastUpdated" runat="server">4:35PM EST on Dec 24 2014</asp:Literal>:</p>
+                                    <p>
+                                        <asp:Literal ID="litLastUpdated" runat="server">4:35PM EST on Dec 24 2014</asp:Literal>:</p>
                                 </div>
                                 <div class="col col-18 comments-col-right" id="divComment" runat="server">
                                     <div class="rs_read_this friends-view-rs-wrapper friends-view-three-rs-wrapper">
@@ -27,9 +28,13 @@
                                             <asp:HyperLink ID="hypTitle" runat="server">Ritalin Side Effects: What You Should Know</asp:HyperLink>
                                         </h5>
                                         <p>
-                                            <asp:Literal ID="litCommentBody" runat="server"></asp:Literal>&hellip;</p>
-                                        <footer><asp:Literal ID="litTime" runat="server">30 min ago</asp:Literal>
-                                            <button><asp:Literal ID="litLikes" runat="server"></asp:Literal><span class="visuallyhidden">likes</span></button></footer>
+                                            <asp:Literal ID="litCommentBody" runat="server"></asp:Literal>&hellip;
+                                        </p>
+                                        <footer>
+                                            <asp:Literal ID="litTime" runat="server">30 min ago</asp:Literal>
+                                            <button>
+                                                <asp:Literal ID="litLikes" runat="server"></asp:Literal><span class="visuallyhidden">likes</span></button>
+                                        </footer>
                                     </div>
                                 </div>
                             </div>
