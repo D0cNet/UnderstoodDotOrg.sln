@@ -127,11 +127,20 @@ public CustomDateField EventEndDate
 }
 
 
-public CustomGeneralLinkField RSVPforEvent
+public CustomGeneralLinkField RSVPforEventLink
 {
 	get
 	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["RSVP for Event"]);
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["RSVP for Event Link"]);
+	}
+}
+
+
+public CustomGeneralLinkField AddToCalendarLink
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Add To Calendar Link"]);
 	}
 }
 

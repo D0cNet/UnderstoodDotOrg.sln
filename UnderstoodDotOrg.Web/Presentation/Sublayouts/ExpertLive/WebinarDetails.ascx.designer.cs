@@ -121,6 +121,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frRsvp;
         
         /// <summary>
+        /// frAddToCalendar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAddToCalendar;
+        
+        /// <summary>
         /// phHelpful control.
         /// </summary>
         /// <remarks>

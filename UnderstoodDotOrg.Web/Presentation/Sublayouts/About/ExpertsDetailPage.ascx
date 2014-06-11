@@ -101,8 +101,8 @@
                                 <asp:PlaceHolder ID="phLinksCta" runat="server" Visible="false">
                                     <div class="links-future">
                                         <asp:HyperLink ID="hlEventDetails" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.EventDetailsLabel %></asp:HyperLink>
-                                        <sc:FieldRenderer ID="frRsvpLink" runat="server" FieldName="RSVP for Event" />
-                                        <a href="REPLACE">Add to my calendar</a>
+                                        <sc:FieldRenderer ID="frRsvpLink" runat="server" FieldName="RSVP for Event Link" />
+                                        <sc:FieldRenderer ID="frAddToCalendar" runat="server" FieldName="Add To Calendar Link" />       
                                     </div>
                                 </asp:PlaceHolder>
                             </div>
