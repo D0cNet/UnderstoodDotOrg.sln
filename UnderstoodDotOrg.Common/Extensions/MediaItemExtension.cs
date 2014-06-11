@@ -70,22 +70,5 @@ namespace UnderstoodDotOrg.Common.Extensions
             }
             return imageUrl;
         }
-        
-        /// <summary>
-        /// Gets image url without any height/width specified
-        /// </summary>
-        /// <param name="customImageField"></param>
-        /// <returns></returns>
-        public static string GetResponsiveImageUrl(this CustomImageField customImageField)
-        {
-            string url = string.Empty;
-
-            if (customImageField.MediaItem != null)
-            {
-                url = Sitecore.StringUtil.EnsurePrefix('/', MediaManager.GetMediaUrl(customImageField.MediaItem));
-            }
-
-            return url;
-        }
     }
 }

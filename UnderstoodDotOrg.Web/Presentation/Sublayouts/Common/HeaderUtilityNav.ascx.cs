@@ -56,8 +56,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 frSearchLabel1.Item = 
                 frSearchLabel2.Item = HeaderFolder;
             hlLogoLink.NavigateUrl = HeaderFolder.LogoLink.Url;
-            MainLogoUrl = HeaderFolder.CompanyLogo.GetResponsiveImageUrl();
-            string imgUrl = HeaderFolder.MobileCompanyLogo.GetResponsiveImageUrl();
+            MainLogoUrl = HeaderFolder.CompanyLogo.MediaItem.GetImageUrl();
+            string imgUrl = HeaderFolder.MobileCompanyLogo.MediaItem.GetImageUrl();
             imgMobileLogo.ImageUrl = imgUrl;
             imgMobileLogo.Visible = !string.IsNullOrEmpty(imgUrl);
         }

@@ -6,7 +6,7 @@
 <style type="text/css">
     @media (min-width: 769px) {
         .logo-u-main a {
-            background-image: (<%= MainLogoUrl %>) !important;
+            background-image: url(<%= MainLogoUrl %>) !important;
         }
     }
 </style>
