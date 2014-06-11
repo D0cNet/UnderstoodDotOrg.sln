@@ -41,22 +41,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
             BindAccountMenu();
             thisMember = membershipManager.GetMember(userEmail);
             var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
-
-            if (!CurrentMember.ScreenName.IsNullOrEmpty())
+            if (IsUserLoggedIn)
             {
-                var commentsList = CommunityHelper.ListUserComments(thisMember.ScreenName);
-
-                if ((commentsList != null) && (commentsList.Count != 0))
+                if ((IsUserLoggedIn) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)) || (((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_FRIEND))))
                 {
-                    rptComments.DataSource = commentsList;
-                    rptComments.DataBind();
+                    var commentsList = CommunityHelper.ListUserComments(thisMember.ScreenName);
+
+                    if ((commentsList != null) && (commentsList.Count != 0))
+                    {
+                        rptComments.DataSource = commentsList;
+                        rptComments.DataBind();
+                    }
+
+                    litCommentsCount.Text = commentsList != null ? commentsList.Count.ToString() : "0";
+                }
+                else
+                {
+                    //redirect to home page
                 }
             }
-            else
-            {
-                //redirect to home page
-            }
-
         }
 
         private void BindAccountMenu()

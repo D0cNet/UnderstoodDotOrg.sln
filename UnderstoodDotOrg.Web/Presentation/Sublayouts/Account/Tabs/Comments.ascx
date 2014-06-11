@@ -11,7 +11,8 @@
                 <ul class="etabs">
                     <li class="tab profile-tab "><asp:HyperLink ID="hypProfileTab" runat="server">Profile</asp:HyperLink></li>
                     <li class="tab connections-tab "><asp:HyperLink ID="hypConnectionsTab" runat="server">Connections</asp:HyperLink></li>
-                    <li class="tab comments-tab active"><asp:HyperLink ID="hypCommentsTab" runat="server">Comments <span class="comment-number">15</span></asp:HyperLink></li>
+                    <li class="tab comments-tab active"><asp:HyperLink ID="hypCommentsTab" runat="server">Comments <span class="comment-number">
+                        <asp:Literal ID="litCommentsCount" runat="server"></asp:Literal></span></asp:HyperLink></li>
                 </ul>
                 <div class="friends-view-tabs-select select-inverted-mobile">
                     <div class="etabs-dropdown">

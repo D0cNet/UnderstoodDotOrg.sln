@@ -40,6 +40,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs {
         protected global::System.Web.UI.WebControls.HyperLink hypCommentsTab;
         
         /// <summary>
+        /// litCommentsCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litCommentsCount;
+        
+        /// <summary>
         /// rptComments control.
         /// </summary>
         /// <remarks>
