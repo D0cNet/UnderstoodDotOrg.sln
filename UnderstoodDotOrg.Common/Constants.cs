@@ -562,6 +562,7 @@ namespace UnderstoodDotOrg.Common
             public const string EventTopics = "_event_parent_interests";
             public const string EventStartDateUtc = "_event_start_date_utc";
             public const string EventEndDateUtc = "_event_end_date_utc";
+            public const string SourceItem = "source_item";
         }
 
         public static class ArticleTags

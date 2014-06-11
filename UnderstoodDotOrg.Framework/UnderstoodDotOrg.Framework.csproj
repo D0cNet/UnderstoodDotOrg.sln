@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomItemGenerator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\CustomItemGenerator.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\Libraries\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -47,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventHandlers\ArticlesAndBlogsHandler.cs" />
+    <Compile Include="Pipelines\IdentifyClone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\BaseRegistration.cs">
       <SubType>ASPXCodeBehind</SubType>

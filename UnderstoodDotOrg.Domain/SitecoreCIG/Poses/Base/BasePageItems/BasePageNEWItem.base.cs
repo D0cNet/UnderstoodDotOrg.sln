@@ -103,6 +103,15 @@ public CustomCheckboxField ShowWelcomeTour
 }
 
 
+public CustomLookupField SourceItem
+{
+	get
+	{
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Source Item"]);
+	}
+}
+
+
 public CustomCheckboxField IncludeinNavigation
 {
 	get

@@ -44,5 +44,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
         [IndexField(Constants.SolrFields.DiagnosedConditions)]
         public IEnumerable<ID> DiagnosedConditions { get; set; }
+
+        [IndexField(Constants.SolrFields.SourceItem)]
+        public ID SourceItem { get; set; }
     }
 }

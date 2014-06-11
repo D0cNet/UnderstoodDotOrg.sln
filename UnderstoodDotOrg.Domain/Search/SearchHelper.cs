@@ -48,6 +48,9 @@ namespace UnderstoodDotOrg.Domain.Search
             // Exclude articles marked for exclusion
             pred = pred.And(a => !a.OverrideTypes.Contains(ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization)));
 
+            // Include non cloned items
+            pred = pred.And(a => a.SourceItem == ID.Parse(Guid.Empty));
+
             // TODO: Exclude items interacted by member - MemberActivity table
             if (member != null)
             {
@@ -443,6 +446,7 @@ namespace UnderstoodDotOrg.Domain.Search
                 var query = GetCurrentCultureQueryable<Article>(ctx)
                                 .Filter(i => i.Language == Sitecore.Context.Language.Name)
                                 .Filter(a => a.Path.Contains("/sitecore/content/home/")
+                                    && a.SourceItem == ID.Parse(Guid.Empty)
                                     && !a.Paths.Contains(ID.Parse(Constants.QATestDataContainer)));
 
                 bool hasTemplateMappings = false;
