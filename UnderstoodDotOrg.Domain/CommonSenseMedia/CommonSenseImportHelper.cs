@@ -1,4 +1,12 @@
-﻿using Sitecore.SecurityModel;
+﻿using Sitecore.Collections;
+using Sitecore.Data;
+using Sitecore.Data.Items;
+using Sitecore.Data.Managers;
+using Sitecore.Globalization;
+using Sitecore.Publishing;
+using Sitecore.Resources.Media;
+using Sitecore.SecurityModel;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -221,34 +229,39 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// </summary>
         public Mapping Category { get; set; }
 
-        /// <summary>
-        /// Returns the pipe-deliminited list of GUIDs that match the provided list of names in the given mapping. If a value does not match, it will be created in Sitecore in the appropriate container
-        /// </summary>
-        /// <param name="Keys">Comma-seperated list of values to match in the Mapping</param>
-        /// <param name="Mapping">Use CommonSenseImportHelper.Instance Mappings to define the appropriate mapping</param>
-        /// <returns>Returns the pipe-deliminted list of GUIDs that match and/or were created</returns>
-        public string getRelatedIds(string Keys, Mapping Mapping)
+        public static string MatchCSV(string Keys, string folder)
         {
             List<string> ret = new List<string>();
 
-            foreach (var item in Keys.Split(','))
+            foreach (string s in Keys.Split(','))
             {
-                if (Mapping.Children.ContainsKey(item))
+                Item folderItem = Sitecore.Context.Database.GetItem(folder);
+                bool added = false;
+                string itemTemplateID = "";
+                ChildList children = folderItem.Children;
+                foreach (Item i in children)
                 {
-                    ret.Add(Mapping.Children[item]);
+                    itemTemplateID = i.TemplateID.ToString();
+                    if (i.Fields["Content Title"].ToString().ToLower().Trim() == s.ToLower().Trim())
+                    {
+                        ret.Add(i.ID.ToString());
+                        added = true;
+                    }
                 }
-                else
+                if (!added)
                 {
                     try
                     {
-                        string id = addMetadata(item, Mapping);
-                        ret.Add(id);
+                        if (!string.IsNullOrEmpty(itemTemplateID))
+                        {
+                            string id = addMetadata(s, folder, itemTemplateID);
+                            ret.Add(id);
+                        }
                     }
                     catch
                     {
                         // failed to add
                     }
-
                 }
             }
 
@@ -263,7 +276,7 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// <returns>Returns GUID of the image that was added to Sitecore</returns>
         public static string addMedia(ReviewImageModel image)
         {
-            return addMedia(image.URL, image.Name, image.AltText);
+            return addMedia(image.URL, image.Name, image.AltText).ID.ToString();
         }
 
         /// <summary>
@@ -290,30 +303,37 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// <param name="Name">Name to use for the image</param>
         /// <param name="alt">Alt text to use for the image</param>
         /// <returns>GUID of the new image</returns>
-        private static string addMedia(string URL, string Name, string alt = "")
+        private static MediaItem addMedia(string URL, string Name, string alt = "")
         {
-            using (new SecurityDisabler())
+            try
             {
-                Sitecore.Resources.Media.MediaCreatorOptions options = new Sitecore.Resources.Media.MediaCreatorOptions();
+                using (new SecurityDisabler())
+                {
+                    Sitecore.Resources.Media.MediaCreatorOptions options = new Sitecore.Resources.Media.MediaCreatorOptions();
 
-                options.Database = Sitecore.Configuration.Factory.GetDatabase(Instance.Settings.MasterDatabaseName);
-                options.Language = Sitecore.Globalization.Language.Parse(Sitecore.Configuration.Settings.DefaultLanguage);
-                options.Versioned = Sitecore.Configuration.Settings.Media.UploadAsVersionableByDefault;
-                options.Destination = Instance.Settings.ImagesPath;
-                options.FileBased = Sitecore.Configuration.Settings.Media.UploadAsFiles;
+                    options.Database = Sitecore.Configuration.Factory.GetDatabase("master");
+                    options.Language = Sitecore.Globalization.Language.Parse(Sitecore.Configuration.Settings.DefaultLanguage);
+                    options.Versioned = false;
+                    Item mediaFolder = Sitecore.Context.Database.GetItem("{FCADFDD3-CD28-48D8-8174-4E34A7ACAD30}");
+                    options.Destination = string.Format("{0}/{1}", mediaFolder.Paths.FullPath, Name);
+                    options.FileBased = Sitecore.Configuration.Settings.Media.UploadAsFiles;
 
-                Sitecore.Resources.Media.MediaCreator creator = new Sitecore.Resources.Media.MediaCreator();
-                Sitecore.Data.Items.MediaItem image = creator.CreateFromStream(getStream(URL), Name, options);
+                    MediaCreator creator = new MediaCreator();
+                    MediaItem image = creator.CreateFromStream(getStream(URL), Name + getExtension(URL), options);
 
-                image.InnerItem.Editing.BeginEdit();
+                    image.InnerItem.Editing.BeginEdit();
 
-                image.InnerItem.Name = removeExtensions(Name);
-                image.InnerItem["title"] = Name;
-                image.InnerItem["alt"] = !string.IsNullOrEmpty(alt) ? alt : Name;
+                    image.InnerItem["title"] = Name;
+                    image.InnerItem["alt"] = !string.IsNullOrEmpty(alt) ? alt : Name;
 
-                image.InnerItem.Editing.EndEdit();
+                    image.InnerItem.Editing.EndEdit();
 
-                return image.ID.ToString();
+                    return image;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
             }
         }
 
@@ -323,14 +343,15 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// <param name="Name">Name/title to use for content</param>
         /// <param name="Mapping">Mapping to relate the new metadata to</param>
         /// <returns>GUID of the new Metadata</returns>
-        private string addMetadata(string Name, Mapping Mapping)
+        public static string addMetadata(string Name, string folderID, string itemTemplateID)
         {
             using (new SecurityDisabler())
             {
-                Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(Instance.Settings.MasterDatabaseName);
-                Sitecore.Data.Items.Item container = master.GetItem(Mapping.Container);
-                Sitecore.Data.Items.TemplateItem metadataTemplate = master.Templates[Instance.Settings.MetadataTemplate];
-                Sitecore.Data.Items.Item newItem = container.Add(Name, metadataTemplate);
+                Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase("master");
+                Sitecore.Data.Database web = Sitecore.Configuration.Factory.GetDatabase("web");
+                Item container = master.GetItem(folderID);
+                TemplateItem metadataTemplate = master.Templates[itemTemplateID];
+                Item newItem = container.Add(Name, metadataTemplate);
 
                 newItem.Editing.BeginEdit();
 
@@ -338,7 +359,8 @@ namespace UnderstoodDotOrg.Domain.Importer
 
                 newItem.Editing.EndEdit();
 
-                Mapping.updateMapping();
+                PublishItem(newItem, master);
+                PublishItem(newItem, web);
 
                 return newItem.ID.ToString();
             }
@@ -366,6 +388,29 @@ namespace UnderstoodDotOrg.Domain.Importer
             return s.Remove(s.LastIndexOf('.'));
         }
 
+        private static string getExtension(string s)
+        {
+            String pattern = @"\.([^(\s|.)]+)$";
+
+            Regex r = new Regex(pattern);
+            Match m = r.Match(s);
+            if (m.Success)
+            {
+                string ext = m.Groups[1].Value;
+                //int questionMarkIndex = ext.IndexOf("?");
+                //if (questionMarkIndex != -1)
+                //{
+                //    if (questionMarkIndex == 3)
+                //        return ext.Substring(0, 3);
+                //    else
+                //        return ext.Substring(0, 4)
+                //}
+                return removeCertainCharacters("." + ext.Substring(0, 4));
+            }
+
+            return "";
+        }
+
         /// <summary>
         /// Revmoes invalid punctionation from potential Sitecore names
         /// </summary>
@@ -373,8 +418,28 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// <returns>string with invalid characters replaced</returns>
         public static string removePunctuation(string s)
         {
-            return Regex.Replace(s, @"[^\w\.@-]", "");
+            return Regex.Replace(s, @"[^\w\.@-]", " ");
         }
 
+        public static string removeCertainCharacters(string s)
+        {
+            return s.Replace("?", "").Replace("-", "");
+        }
+
+        private static void PublishItem(Item item, Database database)
+        {
+            PublishOptions publishOptions = new PublishOptions
+            (
+                item.Database,
+                database,
+                Sitecore.Publishing.PublishMode.SingleItem,
+                item.Language,
+                DateTime.Now
+            );
+
+            Publisher publisher = new Publisher(publishOptions);
+            publisher.Options.RootItem = item;
+            publisher.Publish();
+        }
     }
 }

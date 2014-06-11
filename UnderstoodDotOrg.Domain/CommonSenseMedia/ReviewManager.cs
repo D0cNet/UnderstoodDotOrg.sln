@@ -1,5 +1,11 @@
 ﻿using Sitecore.SecurityModel;
 using UnderstoodDotOrg.Domain.Importer;
+using Sitecore.Data.Items;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.AssistiveTools;
+using Sitecore.Configuration;
+using System;
+using Sitecore.Data.Fields;
+using Sitecore.Links;
 
 namespace UnderstoodDotOrg.Domain.CommonSenseMedia
 {
@@ -13,24 +19,31 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// </summary>
         /// <param name="Review">New review to add to Sitecore</param>
         /// <returns>Sitecore Item that was added</returns>
-        public Sitecore.Data.Items.Item Add(ReviewModel Review)
+        /// 
+
+        public Item Add(ReviewModel Review)
         {
-            //using (new Sitecore.Data.BulkUpdateContext()) //wrap a foreach with this bad larry
-            //{ }
-
-            using (new SecurityDisabler())
+            try
             {
-                Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(CommonSenseImportHelper.Instance.Settings.MasterDatabaseName);
-                Sitecore.Data.Items.TemplateItem reviewTemplate = master.Templates[CommonSenseImportHelper.Instance.Settings.ReviewTemplate];
-                Sitecore.Data.Items.Item newReview = Get(CommonSenseImportHelper.Instance.Settings.ReviewsContainer).Add(CommonSenseImportHelper.removePunctuation(Review.Title), reviewTemplate);
 
-                newReview.Editing.BeginEdit();
+                using (new SecurityDisabler())
+                {
+                    TemplateItem reviewTemplate = Sitecore.Configuration.Factory.GetDatabase("master").GetTemplate(ReviewItem.TemplateId);
 
-                newReview = Map(newReview, Review);
+                    Item newReview = Get("{397EE1E4-F4BB-448E-B3CC-D1ED0F6FEE3D}").Add(CommonSenseImportHelper.removePunctuation(Review.Title), reviewTemplate);
 
-                newReview.Editing.EndEdit();
+                    newReview.Editing.BeginEdit();
 
-                return newReview;
+                    newReview = Map(newReview, Review);
+
+                    newReview.Editing.EndEdit();
+
+                    return newReview;
+                }
+            }
+            catch(Exception e)
+            {
+                return null;
             }
         }
 
@@ -39,9 +52,9 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// </summary>
         /// <param name="GUID">Review to return</param>
         /// <returns>Desired Review</returns>
-        public Sitecore.Data.Items.Item Get(string GUID)
+        public Item Get(string GUID)
         {
-            Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase(CommonSenseImportHelper.Instance.Settings.MasterDatabaseName);
+            Sitecore.Data.Database master = Sitecore.Configuration.Factory.GetDatabase("master");
             return master.GetItem(GUID);
         }
 
@@ -50,9 +63,9 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// </summary>
         /// <param name="Review">ReviewModel instance to update</param>
         /// <returns>Updated Review</returns>
-        public Sitecore.Data.Items.Item Update(ReviewModel Review)
+        public Item Update(ReviewModel Review)
         {
-            Sitecore.Data.Items.Item updateReview = Get(CommonSenseImportHelper.Instance.Settings.ReviewsContainer);
+            Item updateReview = Get(CommonSenseImportHelper.Instance.Settings.ReviewsContainer);
 
             updateReview.Editing.BeginEdit();
 
@@ -69,52 +82,139 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// <param name="mappedReview">Destination Sitecore Item to map</param>
         /// <param name="Review">Values to map</param>
         /// <returns>Updated Sitecore item</returns>
-        private Sitecore.Data.Items.Item Map(Sitecore.Data.Items.Item mappedReview, ReviewModel Review)
+        private Item Map(Item mappedReview, ReviewModel Review)
         {          
             // Single-line text
             if (mappedReview["title"] != null && !string.IsNullOrEmpty(Review.Title))
             {
                 mappedReview["title"] = Review.Title;
             }
-            
-            // Multi-line text
-            if (mappedReview["what kids can learn"] != null && !string.IsNullOrEmpty(Review.WhatKidsCanLearn))
+
+            if (mappedReview["summary"] != null && !string.IsNullOrEmpty(Review.Summary))
             {
-                mappedReview["what kids can learn"] = Review.WhatKidsCanLearn;    
+                mappedReview["summary"] = Review.Summary;
             }
-            
-            mappedReview["any good"] = Review.AnyGood;
-            mappedReview["how parents can help"] = Review.HowParentsCanHelp;
-            mappedReview["description"] = Review.Description;
-            mappedReview["summary"] = Review.Summary;
 
-            // Links
-            mappedReview["external link"] = Review.ExternalLink;
-            mappedReview["apple app store id"] = Review.AppleAppStoreID;
-            mappedReview["google play store id"] = Review.GooglePlayStoreID;
-            mappedReview["telligent id"] = Review.TelligentID;
-            mappedReview["csm id"] = Review.CommonSenseMediaID;
+            if (mappedReview["description"] != null && !string.IsNullOrEmpty(Review.Description))
+            {
+                mappedReview["description"] = Review.Description;
+            }
 
-            // Numbers
-            mappedReview["quality"] = Review.QualityRank;
-            mappedReview["learning"] = Review.LearningRank;
-            mappedReview["target grade"] = Review.TargetGrade;
-            mappedReview["off grade"] = Review.OffGrade;
-            mappedReview["on grade"] = Review.OnGrade;
+            if (mappedReview["what parents need to know"] != null && !string.IsNullOrEmpty(Review.WhatKidsCanLearn))
+            {
+                mappedReview["what parents need to know"] = Review.WhatKidsCanLearn;
+            }
 
-            // Related to other items
-            //csv of names of related items, then pointer to mapping
-            mappedReview["genre"] = CommonSenseImportHelper.Instance.getRelatedIds(Review.Genres, CommonSenseImportHelper.Instance.Genre);
-            mappedReview["subjects"] = CommonSenseImportHelper.Instance.getRelatedIds(Review.Subjects, CommonSenseImportHelper.Instance.Subject);
-            mappedReview["skills"] = CommonSenseImportHelper.Instance.getRelatedIds(Review.Skills, CommonSenseImportHelper.Instance.Skill);
-            mappedReview["categories"] = CommonSenseImportHelper.Instance.getRelatedIds(Review.Categories, CommonSenseImportHelper.Instance.Category);
-            mappedReview["platforms"] = CommonSenseImportHelper.Instance.getRelatedIds(Review.Platforms, CommonSenseImportHelper.Instance.Platform);
-            mappedReview["type"] = CommonSenseImportHelper.Instance.getRelatedIds(Review.Type, CommonSenseImportHelper.Instance.Type);
+            if (mappedReview["what kids can learn"] != null && !string.IsNullOrEmpty(Review.ParentsNeedToKnow))
+            {
+                mappedReview["what kids can learn"] = Review.ParentsNeedToKnow;
+            }
 
-            // Related to Media
-            //URL to image file, name to use. If no alt text is supplied, re-uses the name               
-            mappedReview["screenshots"] = CommonSenseImportHelper.addMedia(Review.Screenshots);
-            mappedReview["thumbnail image"] = CommonSenseImportHelper.addMedia(Review.Thumbnail);
+            if (mappedReview["any good"] != null && !string.IsNullOrEmpty(Review.AnyGood))
+            {
+                mappedReview["any good"] = Review.AnyGood;
+            }
+
+            if (mappedReview["target grade"] != null && !string.IsNullOrEmpty(Review.TargetGrade))
+            {
+                mappedReview["target grade"] = Review.TargetGrade;
+            }
+
+            if (mappedReview["on grade"] != null && !string.IsNullOrEmpty(Review.OnGrade))
+            {
+                mappedReview["on grade"] = Review.OnGrade;
+            }
+
+            if (mappedReview["off grade"] != null && !string.IsNullOrEmpty(Review.OffGrade))
+            {
+                mappedReview["off grade"] = Review.OffGrade;
+            }
+
+            if (mappedReview["apple app store id"] != null && !string.IsNullOrEmpty(Review.AppleAppStoreID))
+            {
+                mappedReview["apple app store id"] = Review.AppleAppStoreID;
+            }
+
+            if (mappedReview["google play store id"] != null && !string.IsNullOrEmpty(Review.GooglePlayStoreID))
+            {
+                mappedReview["google play store id"] = Review.GooglePlayStoreID;
+            }
+
+            if (mappedReview["csm id"] != null && !string.IsNullOrEmpty(Review.CommonSenseMediaID))
+            {
+                mappedReview["csm id"] = Review.CommonSenseMediaID;
+            }
+
+            if (mappedReview["external link"] != null && !string.IsNullOrEmpty(Review.ExternalLink))
+            {
+                mappedReview["external link"] = "<link text=\"\" linktype=\"external\" url=\""+Review.ExternalLink+"\" target=\"\" />";
+            }
+
+            if (mappedReview["price"] != null && !string.IsNullOrEmpty(Review.Price))
+            {
+                mappedReview["price"] = Review.Price;
+            }
+
+            if (mappedReview["how parents can help"] != null && !string.IsNullOrEmpty(Review.HowParentsCanHelp))
+            {
+                mappedReview["how parents can help"] = Review.HowParentsCanHelp;
+            }
+
+            if (mappedReview["learning"] != null && !string.IsNullOrEmpty(Review.LearningRank))
+            {
+                mappedReview["learning"] = Review.LearningRank;
+            }
+
+            if (mappedReview["publish date"] != null && !string.IsNullOrEmpty(Review.Published))
+            {
+                mappedReview["publish date"] = Review.Published;
+            }
+
+            if (mappedReview["screenshots"] != null && Review.Screenshots != null)
+            {
+                mappedReview["screenshots"] = CommonSenseImportHelper.addMedia(Review.Screenshots);
+            }
+
+            if (mappedReview["platforms"] != null && !string.IsNullOrEmpty(Review.Platforms))
+            {
+                mappedReview["platforms"] = CommonSenseImportHelper.MatchCSV(Review.Platforms, "{042EBC5C-CCA0-4758-823D-A07213A72434}");
+            }
+
+            if (mappedReview["skills"] != null && !string.IsNullOrEmpty(Review.Skills))
+            {
+                mappedReview["skills"] = CommonSenseImportHelper.MatchCSV(Review.Skills, "{0AC054FE-599B-4B8A-B5A2-BA805260674B}");
+            }
+
+            if (mappedReview["subjects"] != null && !string.IsNullOrEmpty(Review.Subjects))
+            {
+                mappedReview["subjects"] = CommonSenseImportHelper.MatchCSV(Review.Subjects, "{11AAE042-9BFA-43C4-A971-0AF140108921}");
+            }
+
+            if (mappedReview["issues"] != null && !string.IsNullOrEmpty(Review.Issues))
+            {
+                mappedReview["issues"] = CommonSenseImportHelper.MatchCSV(Review.Issues, "{5CDC7D81-19CA-4CF6-8C58-A4D013823A05}");
+            }
+
+            if (mappedReview["genre"] != null && !string.IsNullOrEmpty(Review.Genres))
+            {
+                mappedReview["genre"] = CommonSenseImportHelper.MatchCSV(Review.Genres, "{97908446-B312-4183-915E-2E43BA5A7693}");
+            }
+
+            if (mappedReview["thumbnail image"] != null && Review.Thumbnail != null)
+            {
+                mappedReview["thumbnail image"] = CommonSenseImportHelper.addMedia(Review.Thumbnail);
+            }
+
+            if (mappedReview["type"] != null && !string.IsNullOrEmpty(Review.Type))
+            {
+                mappedReview["type"] = CommonSenseImportHelper.MatchCSV(Review.Type, "{88226E2B-BAFE-44E9-8EEE-95525458EA14}");
+            }
+
+            //// Links
+            //mappedReview["telligent id"] = Review.TelligentID;
+
+            //// Numbers
+            //mappedReview["quality"] = Review.QualityRank;
 
             return mappedReview;
         }

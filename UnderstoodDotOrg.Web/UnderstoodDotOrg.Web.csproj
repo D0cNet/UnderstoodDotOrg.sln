@@ -189,6 +189,13 @@
     <Compile Include="Presentation\AjaxData\WelcomeTour.aspx.designer.cs">
       <DependentUpon>WelcomeTour.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\DataImport.aspx.cs">
+      <DependentUpon>DataImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\DataImport.aspx.designer.cs">
+      <DependentUpon>DataImport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Layouts\Blank.aspx.cs">
       <DependentUpon>Blank.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1965,6 +1972,9 @@
     <Content Include="Presentation\AjaxData\SubtopicArticles.aspx" />
     <Content Include="Presentation\AjaxData\TopicLandingArticles.aspx" />
     <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />
+    <Content Include="Presentation\DataImport.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Presentation\Includes\css\about-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\about.css" />
     <Content Include="Presentation\Includes\css\account-nonresponsive.css" />
@@ -2398,6 +2408,8 @@
     <Content Include="Presentation\Includes\js\donate.js" />
     <Content Include="Presentation\Includes\js\global.js" />
     <Content Include="Presentation\Includes\js\homepage.js" />
+    <Content Include="Presentation\Includes\js\html2canvas.js" />
+    <Content Include="Presentation\Includes\js\jspdf.min.js" />
     <Content Include="Presentation\Includes\js\modules.js" />
     <Content Include="Presentation\Includes\js\oasis.js" />
     <Content Include="Presentation\Includes\js\recommendations.js" />

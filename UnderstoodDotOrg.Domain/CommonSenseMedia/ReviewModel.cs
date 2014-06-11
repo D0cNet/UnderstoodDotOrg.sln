@@ -12,6 +12,8 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// </summary>
         public string Title { get; set; }
 
+        public string Price { get; set; }
+
         /// <summary>
         /// What Kids Can Learn multi-line content
         /// </summary>
@@ -92,10 +94,16 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// </summary>
         public string Genres { get; set; }
 
+        public string ParentsNeedToKnow { get; set; }
+
+        public string Published { get; set; }
+
         /// <summary>
         /// CSV of Subjects to relate
         /// </summary>
         public string Subjects { get; set; }
+
+        public string Issues { get; set; }
 
         /// <summary>
         /// CSV of Skills to lookup and relate
