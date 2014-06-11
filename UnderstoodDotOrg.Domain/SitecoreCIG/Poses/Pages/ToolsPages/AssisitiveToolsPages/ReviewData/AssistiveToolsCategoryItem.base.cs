@@ -46,6 +46,15 @@ public static implicit operator Item(AssistiveToolsCategoryItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField HelpModalContent
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Help Modal Content"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

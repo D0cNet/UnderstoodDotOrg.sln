@@ -17,7 +17,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             var keyword = Request.QueryString[Constants.QueryStrings.LearningTool.Keyword];
             if (!string.IsNullOrEmpty(keyword))
             {
-                //perform keyword search
+                //TODO: set "search by" to active and populate textbox
             }
             else
             {
@@ -27,14 +27,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
                 if (!string.IsNullOrEmpty(issueId) && !string.IsNullOrEmpty(gradeLevel) && !string.IsNullOrEmpty(typeId))
                 {
-                    //perform browse search
+                    //TODO: set dropdown values
                 }
             }
         }
 
         protected void btnFindSubmit_Click(object sender, EventArgs e)
         {
-            
+            //TODO: wire up for response.redirect call
         }
     }
 }

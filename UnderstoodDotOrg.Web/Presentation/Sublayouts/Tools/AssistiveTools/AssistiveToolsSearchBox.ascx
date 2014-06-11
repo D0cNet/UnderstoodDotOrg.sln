@@ -2,7 +2,6 @@
 <!-- BEGIN PARTIAL: at-search-tool -->
 <div class="">
     <div class="">
-
         <div id="search-by-tool-tabs">
             <ul>
                 <li class="browse-by-tab">
@@ -17,7 +16,6 @@
                     </a>
                 </li>
             </ul>
-
             <div id="browse-by">
                 <div class="form rs_read_this">
                     <span class="visuallyhidden">Browse By</span>
@@ -44,7 +42,7 @@
                             <option value="at-browse-by-technology">Assistive Technology</option>
                         </select>
                         <select name="at-browse-by-app" id="at-browse-by-app" class="tech child small-width" style="display: none;">
-                            <option value>Select Platform</option>
+                            <option value="">Select Platform</option>
                             <option value="1">all platforms</option>
                             <option value="2">iPhone</option>
                             <option value="3">iPod Touch</option>
@@ -54,19 +52,18 @@
                             <option value="7">Nook HD</option>
                         </select>
                         <select name="at-browse-by-games" id="at-browse-by-games" class="tech child small-width" style="display: none;">
-                            <option value>Select Platform</option>
+                            <option value="">Select Platform</option>
                             <option value="1">[List of Games]</option>
                             <option value="2">
                                 <!-- retrive games from website -->
                             </option>
                         </select>
                         <div class="submit-button-container">
-                            <input class="button" type="submit" value="Find"></div>
+                            <input type="submit" runat="server" onserverclick="btnFindSubmit_Click" class="button" value="Find"></div>
                     </fieldset>
                 </div>
             </div>
             <!-- /.browse-by -->
-
             <div id="search-by">
                 <div class="form rs_read_this">
                     <span class="visuallyhidden">Browse By</span>
@@ -74,12 +71,12 @@
                         <label for="at-search-by" class="visuallyhidden">Search by</label>
                         <input type="text" name="at-search-by" id="at-search-by">
                         <div class="submit-button-container2 rs_skip">
-                            <input id="btnFindSubmit" runat="server" onserverclick="" class="button" type="submit" value="Find"></div>
+                            <input type="submit" runat="server" onserverclick="btnFindSubmit_Click" class="button" value="Find">
+                        </div>
                     </fieldset>
                 </div>
                 <!-- .form -->
             </div>
-
             <div class="powered-by-logo-container">
                 <div class="powered-by-logo">
                     <span>Powered by</span>
@@ -90,5 +87,4 @@
 
     </div>
 </div>
-
 <!-- END PARTIAL: at-search-tool -->
