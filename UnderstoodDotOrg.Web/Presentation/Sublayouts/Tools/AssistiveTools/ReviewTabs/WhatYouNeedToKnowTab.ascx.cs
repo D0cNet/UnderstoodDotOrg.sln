@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Framework.UI;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.ReviewTabs
 {
@@ -30,9 +31,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 }).ToList();
             rptrScreenshots.DataBind();
 
+            var platforms = Model.Platforms.ListItems
+                .Where(i => i != null && i.IsOfType(AssistiveToolsPlatformItem.TemplateId))
+                .Select(i => (AssistiveToolsPlatformItem)i).ToList();
+
+            rptrPlatforms.DataSource = platforms;
+            rptrPlatforms.DataBind();
+
             var subjects = Model.Subjects.ListItems
                 .Where(i => i != null)
-                .Select(i => (MetadataItem)i).ToList();
+                .Select(i => (AssistiveToolsSubjectItem)i).ToList();
 
             rptrSubjects.DataSource = subjects;
             rptrSubjects.DataBind();

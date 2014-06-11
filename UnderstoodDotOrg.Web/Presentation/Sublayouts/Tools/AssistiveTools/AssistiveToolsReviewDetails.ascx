@@ -78,10 +78,11 @@
                                     <div class="result-description"><%= Model.Summary.Rendered %></div>
                                     <div class="result-keywords">
                                         <ul>
-                                            <asp:Repeater ID="rptrSubjects" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.MetadataItem">
+                                            <asp:Repeater ID="rptrSubjects" runat="server" 
+                                                ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData.AssistiveToolsSubjectItem">
                                                 <ItemTemplate>
                                                     <li>
-                                                        <a href="REPLACE"><%# Item.ContentTitle.Rendered %></a>
+                                                        <a href="REPLACE"><%# Item.Metadata.ContentTitle.Rendered %></a>
                                                     </li>
                                                 </ItemTemplate>
                                             </asp:Repeater>

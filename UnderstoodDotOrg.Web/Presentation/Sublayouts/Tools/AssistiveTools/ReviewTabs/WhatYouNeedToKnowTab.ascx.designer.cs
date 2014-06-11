@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
     public partial class WhatYouNeedToKnowTab {
         
         /// <summary>
+        /// rptrPlatforms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptrPlatforms;
+        
+        /// <summary>
         /// rptrScreenshots control.
         /// </summary>
         /// <remarks>

@@ -289,6 +289,15 @@ public CustomTextField HowParentsCanHelp
 }
 
 
+public CustomDateField PublishDate
+{
+	get
+	{
+		return new CustomDateField(InnerItem, InnerItem.Fields["Publish Date"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

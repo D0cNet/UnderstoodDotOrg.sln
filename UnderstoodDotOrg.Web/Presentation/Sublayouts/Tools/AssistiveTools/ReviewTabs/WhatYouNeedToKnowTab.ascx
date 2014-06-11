@@ -8,8 +8,15 @@
                 <p><%= Model.WhatParentsNeedtoKnow.Rendered %></p>
                 <p class="skip_this">
                     <span class="platform-list">
-                        <a href="REPLACE">iPhone</a>,
-                                        <a href="REPLACE">Android</a></span>
+                        <asp:Repeater ID="rptrPlatforms" runat="server"
+                            ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData.AssistiveToolsPlatformItem">
+                            <ItemTemplate>
+                                <a href="REPLACE"><%# Item.Metadata.ContentTitle.Rendered %></a>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <%--<a href="REPLACE">iPhone</a>,
+                        <a href="REPLACE">Android</a>--%>
+                    </span>
                     <span class="about-platforms">
                         <a href="REPLACE">Learn about Platforms</a></span>
                 </p>
@@ -50,9 +57,10 @@
                 <p><%= Model.WhatKidsCanLearn.Rendered %></p>
                 <h5>Subjects</h5>
                 <ul class="kids-subjects">
-                    <asp:Repeater ID="rptrSubjects" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.MetadataItem">
+                    <asp:Repeater ID="rptrSubjects" runat="server" 
+                        ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData.AssistiveToolsSubjectItem">
                         <ItemTemplate>
-                            <li><%# Item.ContentTitle.Rendered %></li>
+                            <li><%# Item.Metadata.ContentTitle.Rendered %></li>
                         </ItemTemplate>
                     </asp:Repeater>
                 </ul>

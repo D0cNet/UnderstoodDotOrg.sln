@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveTools
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
@@ -37,8 +38,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             rptrAppropriateGrades.DataBind();
 
             var subjects = Model.Subjects.ListItems
-                .Where(i => i != null)
-                .Select(i => (MetadataItem)i).ToList();
+                .Where(i => i != null && i.IsOfType(AssistiveToolsSubjectItem.TemplateId))
+                .Select(i => (AssistiveToolsSubjectItem)i).ToList();
 
             rptrSubjects.DataSource = subjects;
             rptrSubjects.DataBind();
