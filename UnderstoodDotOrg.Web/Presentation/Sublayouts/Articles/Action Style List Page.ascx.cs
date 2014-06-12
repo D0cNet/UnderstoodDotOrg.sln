@@ -51,6 +51,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             litAtAGlanceHeader.Text = DictionaryConstants.AtAGlanceText;
             litKeyTakeAwayText.Text = DictionaryConstants.KeyTakeAwayText;
+
+            if (!Model.ShowAtaGlanceContent)
+            {
+                divAtAGlance.Visible = false;
+            }
+            if (!Model.ShowKeyTakeawayContent)
+            {
+                divKeyTakeAways.Visible = false;
+            }
         }
 
         protected void rptAction_ItemDataBound(object sender, RepeaterItemEventArgs e)

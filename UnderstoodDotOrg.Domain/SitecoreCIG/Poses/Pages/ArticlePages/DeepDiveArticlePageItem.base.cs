@@ -55,15 +55,6 @@ public CustomTextField AppendixTitle
 }
 
 
-public CustomTextField KeyTakeawaysTitle
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Key Takeaways Title"]);
-	}
-}
-
-
 public CustomTextField SourcesHeader
 {
 	get
@@ -87,6 +78,15 @@ public CustomTextField SourcesContent
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Sources Content"]);
+	}
+}
+
+
+public CustomCheckboxField ShowKeyTakeawayContent
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Key Takeaway Content"]);
 	}
 }
 

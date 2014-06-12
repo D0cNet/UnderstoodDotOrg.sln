@@ -7,7 +7,7 @@
         <div class="col col-15 offset-1 skiplink-content" aria-role="main" aria-role="main">
 
             <!-- BEGIN PARTIAL: at-a-glance -->
-            <div class="at-a-glance">
+            <div id="divAtAGlance" runat="server" class="at-a-glance">
                 <header class='header-at-a-glance'>
                     <h2><%--At-a-glance--%>
                         <asp:Literal ID="litAtAGlanceHeader" runat="server"></asp:Literal>
@@ -21,7 +21,7 @@
                 <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
             </div>
             <!-- BEGIN PARTIAL: key-takeaways -->
-            <div class="key-takeaways">
+            <div id="divKeyTakeAways" runat="server" class="key-takeaways">
                 <header class='header-key-takeaways'>
                     <h2><%-- Key Takeaways--%>
                         <asp:Literal ID="litKeyTakeAwayText" runat="server"></asp:Literal>

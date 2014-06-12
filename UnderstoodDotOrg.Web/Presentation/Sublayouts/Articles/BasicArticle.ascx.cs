@@ -32,6 +32,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             sbSidebarPromo.Visible = Model.DefaultArticlePage.ShowPromotionalControl.Checked;
             sbCommentsSummary.Visible = Model.DefaultArticlePage.ShowCommentTeaser.Checked;
+
+            if (!Model.ShowAtaGlanceContent)
+            {
+                divAtAGlance.Visible = false;
+            }
+            if (!Model.ShowKeyTakeawayContent)
+            {
+                divKeyTakeAways.Visible = false;
+            }
         }
     }
 }

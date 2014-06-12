@@ -7,7 +7,7 @@
 
         <div class="col col-15 offset-1">
 
-            <div class="at-a-glance">
+            <div id="divAtAGlance" runat="server" class="at-a-glance">
                 <header class='header-at-a-glance'>
                     <h2><%--At-a-glance--%>
                         <asp:Literal ID="litAtAGlanceHeader" runat="server"></asp:Literal>
@@ -51,7 +51,7 @@
 
             </div>
 
-            <div class="key-takeaways">
+            <div id="divKeyTakeAways" runat="server" class="key-takeaways">
                 <header class='header-key-takeaways'>
                     <h2><%-- Key Takeaways--%>
                         <asp:Literal ID="litKeyTakeAwayText" runat="server"></asp:Literal>

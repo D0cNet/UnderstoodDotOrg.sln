@@ -82,11 +82,29 @@ public CustomTextField KeyTakeawayData
 }
 
 
+public CustomCheckboxField ShowKeyTakeawayContent
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Key Takeaway Content"]);
+	}
+}
+
+
 public CustomTextField AtaglanceContent
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["At a glance Content"]);
+	}
+}
+
+
+public CustomCheckboxField ShowAtaGlanceContent
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show At a Glance Content"]);
 	}
 }
 

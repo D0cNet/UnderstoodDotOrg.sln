@@ -17,8 +17,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Sitecore.Context.Item.Fields["Key Takeaways Details"].ToString().IsNullOrEmpty())
+            if (!Model.ShowKeyTakeawayContent)
+            {
                 divKeyTakeaways.Visible = false;
+            }
 
             litKeyTakeAwayText.Text = DictionaryConstants.KeyTakeAwayText;
             sbAboutAuthor.Visible = Model.DefaultArticlePage.AuthorName != null;
