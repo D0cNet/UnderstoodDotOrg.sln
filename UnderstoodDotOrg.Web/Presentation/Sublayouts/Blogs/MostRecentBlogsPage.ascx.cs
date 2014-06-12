@@ -27,7 +27,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
 
         protected void rptBlogInfo_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            var item = (Question)e.Item.DataItem;
+            var item = (BlogPost)e.Item.DataItem;
             HyperLink hypUserProfileLink = (HyperLink)e.Item.FindControl("hypUserProfileLink");
 
             var membershipManager = new MembershipManager();
