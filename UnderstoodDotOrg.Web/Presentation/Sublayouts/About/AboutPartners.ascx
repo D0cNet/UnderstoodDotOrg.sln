@@ -49,7 +49,7 @@
                                 <div class="col col-7 pull-15 partner-logo">
                                     <div class="partner-block-logo">
                                         <asp:HyperLink ID="hlPartnerLogo" runat="server">
-                                            <sc:Image ID="imgPartnerLogo" runat="server" Field="Logo" Parameters="mw=271&mh=131" />
+                                            <sc:Image ID="imgPartnerLogo" runat="server" Field="Partner Logo" Parameters="mw=271&mh=131" />
                                         </asp:HyperLink>
                                     </div>
                                     <!-- end partner-block-logo -->

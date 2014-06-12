@@ -135,8 +135,9 @@
 					<td style="padding:0 18px 0 0;">
                         %%[
                         set @recommended_xml = personalized_recommended_articles
+                        set @content = TransformXML(@recommended_xml, GetPortfolioItem("personalized_article"))
                         ]%%
-						%%= TransformXML(GetPortfolioItem("personalzied_article"), @recommended_xml) =%%
+						%%= v(@content) =%%
 					</td>
 				</tr>
 				<tr><td height="1" style="font-size:0; line-height:0;" bgcolor="#d2d2d2">&nbsp;</td></tr>

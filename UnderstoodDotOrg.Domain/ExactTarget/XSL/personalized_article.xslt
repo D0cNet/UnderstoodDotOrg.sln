@@ -31,10 +31,11 @@
             <xsl:attribute name="href">
               <xsl:value-of select="url" />
             </xsl:attribute>
-            <img title="img-2" alt="img-2" width="160" height="90" border="0" hspace="0" vspace="0" mdid="96a56179-2441-4f48-936d-b7134b75e893"  />
-            <xsl:attribute name="src">
-              <xsl:value-of select="img"/>
-            </xsl:attribute>
+            <img title="img-2" alt="img-2" width="160" height="90" border="0" hspace="0" vspace="0" mdid="96a56179-2441-4f48-936d-b7134b75e893">
+              <xsl:attribute name="src">
+                <xsl:value-of select="img"/>
+              </xsl:attribute>
+            </img>
           </a>
         </td>
       </tr>
