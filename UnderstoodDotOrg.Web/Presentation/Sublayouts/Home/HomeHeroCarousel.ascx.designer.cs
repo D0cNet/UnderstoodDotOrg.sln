@@ -31,6 +31,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
         protected global::System.Web.UI.WebControls.Literal litStruggle2;
         
         /// <summary>
+        /// litStruggle3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litStruggle3;
+        
+        /// <summary>
+        /// litSelectAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litSelectAll;
+        
+        /// <summary>
         /// rptChildIssues control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptChildIssues;
+        
+        /// <summary>
+        /// litChildEnrolled2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litChildEnrolled2;
+        
+        /// <summary>
+        /// litChildEnrolled control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litChildEnrolled;
         
         /// <summary>
         /// ddlGradeGroups control.
@@ -74,6 +110,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hfGradeChoice;
+        
+        /// <summary>
+        /// litComplete1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litComplete1;
         
         /// <summary>
         /// litHelpmsg control.

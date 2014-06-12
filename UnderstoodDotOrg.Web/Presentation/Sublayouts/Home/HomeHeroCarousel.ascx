@@ -71,8 +71,8 @@
 
                         <article class="module select-behavior">
                             <fieldset>
-                                <h4 class="mobile">My child struggles with...</h4>
-                                <legend class="desktop">Select all that apply:</legend>
+                                <h4 class="mobile"><asp:Literal Text="" ID="litStruggle3" runat="server" /></h4>
+                                <legend class="desktop"><asp:Literal Text="" ID="litSelectAll" runat="server" /></legend>
 
                                 <asp:Repeater ID="rptChildIssues" runat="server" OnItemDataBound="rptChildIssues_ItemDataBound">
                                     <HeaderTemplate>
@@ -102,9 +102,9 @@
 
                         <article class="module select-grade">
 
-                            <h4>My child is enrolled in:</h4>
+                            <h4><asp:Literal Text="" ID="litChildEnrolled2" runat="server" /></h4>
 
-                            <label for="guideme-grade" class="visuallyhidden">My child is enrolled in:</label>
+                            <label for="guideme-grade" class="visuallyhidden"><asp:Literal Text="" ID="litChildEnrolled" runat="server" /></label>
                             <asp:DropDownList ID="ddlGradeGroups" runat="server" CssClass="guideme-grade-mobile"/>
 
                             <nav>
@@ -138,8 +138,7 @@
                 <div class="col col-6">
 
                     <div class="complete-profile">
-                        <a href="<%= CompleteMyProfileUrl %>">Complete my profile for<br>
-                            even better recommendations</a>
+                        <a href="<%= CompleteMyProfileUrl %>"><asp:Literal Text="" ID="litComplete1" runat="server" /></a>
                     </div>
 
                 </div>

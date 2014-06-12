@@ -46,6 +46,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
             litHelpmsg.Text = DictionaryConstants.HowCanHelp;
             litStruggle.Text = DictionaryConstants.ChildStruggles;
             litStruggle2.Text = DictionaryConstants.ChildStruggles;
+            litStruggle3.Text = DictionaryConstants.ChildStruggles;
+            litSelectAll.Text = DictionaryConstants.SelectAll;
+            litChildEnrolled.Text = DictionaryConstants.ChildEnrolled;
+            litChildEnrolled2.Text = DictionaryConstants.ChildEnrolled;
+            litComplete1.Text = DictionaryConstants.CompleteMyProfile;
 
             if (!IsPostBack)
             {
