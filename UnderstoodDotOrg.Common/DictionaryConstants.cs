@@ -1043,5 +1043,11 @@ namespace UnderstoodDotOrg.Common
 
 
 
+
+       public static string SelectAll { get { return Translate.TextByDomain(PosesDictionary, "SelectAll"); } }
+
+       public static string ChildEnrolled { get { return Translate.TextByDomain(PosesDictionary, "ChildEnrolled"); } }
+
+       public static string CompleteMyProfile { get { return Translate.TextByDomain(PosesDictionary, "CompleteMyProfile"); } }
     }
 }
