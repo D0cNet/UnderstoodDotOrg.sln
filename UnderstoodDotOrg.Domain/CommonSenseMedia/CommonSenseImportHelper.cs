@@ -274,9 +274,9 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// </summary>
         /// <param name="image">Image to add to Sitecore</param>
         /// <returns>Returns GUID of the image that was added to Sitecore</returns>
-        public static string addMedia(ReviewImageModel image)
+        public static MediaItem addMedia(ReviewImageModel image)
         {
-            return addMedia(image.URL, image.Name, image.AltText).ID.ToString();
+            return addMedia(image.URL, image.Name, image.AltText);
         }
 
         /// <summary>
@@ -290,7 +290,7 @@ namespace UnderstoodDotOrg.Domain.Importer
 
             foreach (var item in images)
             {
-                ret.Add(addMedia(item));
+                ret.Add(addMedia(item).ID.ToString());
             }
 
             return string.Join("|", ret.ToArray());

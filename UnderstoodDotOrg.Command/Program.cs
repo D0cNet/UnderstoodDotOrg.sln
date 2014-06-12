@@ -5,13 +5,33 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Configuration;
+//using Sitecore.SecurityModel;
+using System.IO;
+using System.Net;
+using System.Text.RegularExpressions;
+using UnderstoodDotOrg.Domain.CommonSenseMedia;
+
+
 
 namespace UnderstoodDotOrg.Command
 {
+
+    public class SitecoreInsertItem
+    {
+        public string Name;
+        public string Type;
+        public string id;
+    }
+
     public class Program
     {
+        public static string ConnectionString = "Data Source=AODEV02\\SQL2008R2;Initial Catalog=Poses_Understood_DataImport;User ID=sa;Password=OasisD8A";
+
         static void Main(string[] args)
         {
+            ReviewModel newItem = new ReviewModel();
+            ReviewManager reviewManager = new ReviewManager();
             string name = string.Empty;
             string parentName = null;
             string value = string.Empty;
@@ -27,196 +47,242 @@ namespace UnderstoodDotOrg.Command
             int depth1 = 0;
             int depth2 = 0;
             int parentCount = 1;
+            bool insideEntry = false;
 
             //string uri = "C:\\Users\\dallegrone\\Desktop\\Poses DB Project\\app2.xml";
             string uri = "http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=app&special_needs=1";
-            XmlTextReader reader = new XmlTextReader(uri);
+            XmlReader reader = XmlReader.Create(uri);
             while (reader.Read())
             {
                 XmlNodeType nodeType = reader.NodeType;
                 Console.Write("\r {0} Complete", id);
-                switch (nodeType)
+                if (reader.NodeType == XmlNodeType.Element)
                 {
-                    case XmlNodeType.Element:
+                    if (reader.Name == "entry")
+                    {
+                        insideEntry = true;
+                    }
 
-                        if (reader.Name == "id" && id != 0)
+                    if (insideEntry)
+                    {
+                        if (reader.Name == "id")
                         {
+                            newItem.CommonSenseMediaID = reader.ReadElementContentAsString();
+                            reader.ReadToNextSibling("category");
+                        }
+
+                        if (reader.Name == "category")
+                        {
+                            newItem.Type = reader.GetAttribute("term");
+                            reader.ReadToNextSibling("title");
+                        }
+
+                        if (reader.Name == "title")
+                        {
+                            newItem.Title = reader.ReadElementContentAsString();
                             reader.Read();
-                            csmId = reader.Value;
-                            break;
+                            reviewManager.Add(newItem);
                         }
-
-                        if (parentCount == 0)
-                        {
-                            depth1 = reader.Depth;
-                        }
-
-                        if (parentCount != 0)
-                        {
-                            depth2 = reader.Depth;
-                        }
-
-                        if (depth1 < depth2)
-                        {
-                            depth1 = depth2;
-                            parentName = name;
-                            InsertToDB(name, null, csmId);
-                            isChild = true;
-                        }
-
-                        if (depth2 < depth1)
-                        {
-                            depth1 = depth2;
-
-                            if (depth1 != 1)
-                            {
-                                isChild = false;
-                            }
-                        }
-
-                        if (depth1 == depth2)
-                        {
-                            if (isChild == true)
-                            {
-                            }
-                        }
-
-                        if (reader.Name == "entry")
-                        {
-                            id++;
-                            break;
-                        }
-
-                        name = reader.Name;
-
-                        if (reader.HasAttributes && id != 0)
-                        {
-                            if (reader.IsEmptyElement)
-                            {
-                                isEmpty = true;
-                                InsertToDB(name, null, csmId);
-                            }
-
-                            if (reader.HasValue == false)
-                            {
-                                isEmpty = true;
-                                InsertToDB(name, null, csmId);
-                            }
-
-                            for (int i = 0; i < reader.AttributeCount; i++)
-                            {
-                                attributeCount = (reader.AttributeCount) * 2;
-
-                                reader.MoveToAttribute(i);
-
-                                attributeList.Add(reader.Name);
-
-                                attributeList.Add(reader.Value);
-
-                                if (isEmpty == true)
-                                {
-                                    InsertAttrubuteToDB(reader.Name, reader.Value, GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", name, csmId));
-                                    isEmpty = false;
-                                }
-                            }
-                        }
-                        parentCount++;
-                        break;
-
-                    case XmlNodeType.Text:
-
-                        value = reader.Value;
-
-                        if (name == "id" && id != 0)
-                        {
-                            csmId = reader.Value;
-                        }
-
-                        if (id != 0 && name != null && isChild == false)
-                        {
-                            InsertToDB(name, value, csmId);
-                            UpdateDB(name, value, csmId);
-
-                            if (attributeList.Count != 0)
-                            {
-                                int i = 0;
-
-                                while (i < attributeCount)
-                                {
-                                    listCount++;
-
-                                    if ((listCount % 2) != 0 || i == 0)
-                                    {
-                                        attName = attributeList[i];
-                                    }
-
-                                    if ((listCount % 2) == 0 && i != 0)
-                                    {
-                                        attValue = attributeList[i];
-                                        InsertAttrubuteToDB(attName, attValue, GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", name, csmId));
-                                    }
-                                    i++;
-                                }
-                            }
-                            listCount = 0;
-                            attributeCount = 0;
-                            attributeList.Clear();
-                        }
-
-                        if (id != 0 && name != null && isChild == true)
-                        {
-                            string pItemId = GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", parentName, csmId);
-                            InsertChildToDB(pItemId, name, value, "A080CB47-D017-40C4-A6D9-6E86BAA1CD18");
-                        }
-
-                        break;
-
-                    case XmlNodeType.CDATA:
-
-                        value = reader.Value;
-
-                        if (id != 0 && name != null)
-                        {
-                            InsertToDB(name, value, csmId);
-                            UpdateDB(name, value, csmId);
-                        }
-
-                        if (id != 0 && name != null && isChild == true)
-                        {
-                            string pItemId = GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", parentName, csmId);
-                            InsertChildToDB(pItemId, name, value, "A080CB47-D017-40C4-A6D9-6E86BAA1CD18");
-                        }
-
-                        if (attributeList.Count != 0)
-                        {
-                            for (int i = 0; i < attributeCount; i++)
-                            {
-                                listCount++;
-
-                                if ((listCount % 2) != 0 || i == 0)
-                                {
-                                    attName = attributeList[i];
-                                }
-
-                                if ((listCount % 2) == 0 && i != 0)
-                                {
-                                    attValue = attributeList[i];
-                                    InsertAttrubuteToDB(attName, attValue, GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", name, csmId));
-                                }
-                            }
-                        }
-                        listCount = 0;
-                        attributeCount = 0;
-                        attributeList.Clear();
-                        break;
+                    }
                 }
             }
+
+
+
+
+
+
+
+
+
+
+
+            //while (reader.Read())
+            //{
+            //    XmlNodeType nodeType = reader.NodeType;
+            //    Console.Write("\r {0} Complete", id);
+            //    switch (nodeType)
+            //    {
+            //        case XmlNodeType.Element:
+
+            //            if (reader.Name == "id" && id != 0)
+            //            {
+            //                reader.Read();
+            //                csmId = reader.Value;
+            //                break;
+            //            }
+
+            //            if (parentCount == 0)
+            //            {
+            //                depth1 = reader.Depth;
+            //            }
+
+            //            if (parentCount != 0)
+            //            {
+            //                depth2 = reader.Depth;
+            //            }
+
+            //            if (depth1 < depth2)
+            //            {
+            //                depth1 = depth2;
+            //                parentName = name;
+            //                InsertToDB(name, null, csmId);
+            //                isChild = true;
+            //            }
+
+            //            if (depth2 < depth1)
+            //            {
+            //                depth1 = depth2;
+
+            //                if (depth1 != 1)
+            //                {
+            //                    isChild = false;
+            //                }
+            //            }
+
+            //            if (depth1 == depth2)
+            //            {
+            //                if (isChild == true)
+            //                {
+            //                }
+            //            }
+
+            //            if (reader.Name == "entry")
+            //            {
+            //                id++;
+            //                break;
+            //            }
+
+            //            name = reader.Name;
+
+            //            if (reader.HasAttributes && id != 0)
+            //            {
+            //                if (reader.IsEmptyElement)
+            //                {
+            //                    isEmpty = true;
+            //                    InsertToDB(name, null, csmId);
+            //                }
+
+            //                if (reader.HasValue == false)
+            //                {
+            //                    isEmpty = true;
+            //                    InsertToDB(name, null, csmId);
+            //                }
+
+            //                for (int i = 0; i < reader.AttributeCount; i++)
+            //                {
+            //                    attributeCount = (reader.AttributeCount) * 2;
+
+            //                    reader.MoveToAttribute(i);
+
+            //                    attributeList.Add(reader.Name);
+
+            //                    attributeList.Add(reader.Value);
+
+            //                    if (isEmpty == true)
+            //                    {
+            //                        InsertAttrubuteToDB(reader.Name, reader.Value, GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", name, csmId));
+            //                        isEmpty = false;
+            //                    }
+            //                }
+            //            }
+            //            parentCount++;
+            //            break;
+
+            //        case XmlNodeType.Text:
+
+            //            value = reader.Value;
+
+            //            if (name == "id" && id != 0)
+            //            {
+            //                csmId = reader.Value;
+            //            }
+
+            //            if (id != 0 && name != null && isChild == false)
+            //            {
+            //                InsertToDB(name, value, csmId);
+            //                UpdateDB(name, value, csmId);
+
+            //                if (attributeList.Count != 0)
+            //                {
+            //                    int i = 0;
+
+            //                    while (i < attributeCount)
+            //                    {
+            //                        listCount++;
+
+            //                        if ((listCount % 2) != 0 || i == 0)
+            //                        {
+            //                            attName = attributeList[i];
+            //                        }
+
+            //                        if ((listCount % 2) == 0 && i != 0)
+            //                        {
+            //                            attValue = attributeList[i];
+            //                            InsertAttrubuteToDB(attName, attValue, GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", name, csmId));
+            //                        }
+            //                        i++;
+            //                    }
+            //                }
+            //                listCount = 0;
+            //                attributeCount = 0;
+            //                attributeList.Clear();
+            //            }
+
+            //            if (id != 0 && name != null && isChild == true)
+            //            {
+            //                string pItemId = GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", parentName, csmId);
+            //                InsertChildToDB(pItemId, name, value, "A080CB47-D017-40C4-A6D9-6E86BAA1CD18");
+            //            }
+
+            //            break;
+
+            //        case XmlNodeType.CDATA:
+
+            //            value = reader.Value;
+
+            //            if (id != 0 && name != null)
+            //            {
+            //                InsertToDB(name, value, csmId);
+            //                UpdateDB(name, value, csmId);
+            //            }
+
+            //            if (id != 0 && name != null && isChild == true)
+            //            {
+            //                string pItemId = GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", parentName, csmId);
+            //                InsertChildToDB(pItemId, name, value, "A080CB47-D017-40C4-A6D9-6E86BAA1CD18");
+            //            }
+
+            //            if (attributeList.Count != 0)
+            //            {
+            //                for (int i = 0; i < attributeCount; i++)
+            //                {
+            //                    listCount++;
+
+            //                    if ((listCount % 2) != 0 || i == 0)
+            //                    {
+            //                        attName = attributeList[i];
+            //                    }
+
+            //                    if ((listCount % 2) == 0 && i != 0)
+            //                    {
+            //                        attValue = attributeList[i];
+            //                        InsertAttrubuteToDB(attName, attValue, GetDBItem("ItemID", "[Poses_Understood_DataImport].[dbo].[tbl_MediaReviewItem_Temp]", name, csmId));
+            //                    }
+            //                }
+            //            }
+            //            listCount = 0;
+            //            attributeCount = 0;
+            //            attributeList.Clear();
+            //            break;
+            //    }
+            //}
         }
 
         public static void InsertToDB(string name, string value, string csmId)
         {
             using (SqlConnection conn =
-                        new SqlConnection(@"Data Source=AODEV02\SQL2008R2;Initial Catalog=Poses_Understood_DataImport;User ID=sa;Password=OasisD8A"))
+                        new SqlConnection(@Program.ConnectionString))
             {
                 if (value == null)
                 {
