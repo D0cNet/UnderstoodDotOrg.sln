@@ -28,7 +28,10 @@
                             <asp:Panel ID="pnlSlide" CssClass="slide text-slide" runat="server">
                                 <div class="slide-inner">
                                     <div class="content rs_read_this">
-                                        <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/ShareContent.ascx" runat="server"></sc:Sublayout>
+                                        <div class="top">
+                                            <%--<div class="slide-count">Slide 1 of 10</div>--%>
+                                            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/ShareContent.ascx" runat="server"></sc:Sublayout>
+                                        </div>
                                         <div class="slide-count-text"><asp:Label ID="lblCircle" runat="server"><asp:Literal ID="ltlSlideNumber" runat="server"></asp:Literal></asp:Label> of <asp:Literal ID="ltlSlideCount" runat="server"></asp:Literal></div>
                                         <sc:FieldRenderer EnclosingTag="h3" FieldName="Tip title" ID="frTipTitle" runat="server"></sc:FieldRenderer>
                                         <sc:FieldRenderer EnclosingTag="p" FieldName="Tip text" ID="frTipText" runat="server"></sc:FieldRenderer>

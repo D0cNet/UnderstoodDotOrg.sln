@@ -31,7 +31,10 @@
                                         <%-- Slide Image --%>
                                         <sc:FieldRenderer ID="frSlideImage" runat="server" FieldName="Slide Image" />
                                         <div class="content">
-                                            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/ShareContent.ascx" runat="server"></sc:Sublayout>
+                                            <div class="top">
+                                                <div class="slide-count">Slide 1 of 10</div>
+                                                <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/ShareContent.ascx" runat="server"></sc:Sublayout>
+                                            </div>
                                             <%-- slide Intro--%>
                                             <h3>
                                                 <sc:FieldRenderer ID="frSlideTitle" runat="server" FieldName="Slide Title" />
