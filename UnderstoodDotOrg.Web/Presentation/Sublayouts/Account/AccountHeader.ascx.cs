@@ -53,6 +53,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             {
                 if (IsUserLoggedIn)
                 {
+                    if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
+                    {
+                        pnlSignedIn.Visible = true;
+                        divConnected.Visible = true;
+                    }
+
                     if ((CurrentMember.ScreenName == thisMember.ScreenName))
                     {
                         SetVisibilityBasedOnViewMode();
@@ -60,7 +66,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 }
                 else
                 {
-                    if (!thisMember.allowConnections)
+                    if (thisMember.allowConnections)
                     {
                         pnlNotSignedInView.Visible = true;
                         rptChildren.DataSource = thisMember.Children;

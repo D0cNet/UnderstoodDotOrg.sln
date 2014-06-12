@@ -73,7 +73,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                         {
                             if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
                             {
-                                Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl());
+                                Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl() + "?" + Request.QueryString);
                             }
                             divNotConnected.Visible = true;
                         }
@@ -85,6 +85,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 }
                 else
                 {
+                    if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
+                    {
+                        Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl() + "?" + Request.QueryString);
+                    }
                     divPrivateProfile.Visible = true;
                 }
             }
