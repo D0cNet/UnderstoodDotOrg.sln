@@ -31,42 +31,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frEmailAbstract;
         
         /// <summary>
-        /// pnlNewsletterSignup control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNewsletterSignup;
-        
-        /// <summary>
-        /// personalized_email_email control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText personalized_email_email;
-        
-        /// <summary>
-        /// btnSubmitEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmitEmail;
-        
-        /// <summary>
-        /// lblEmailFail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmailFail;
-        
-        /// <summary>
         /// frPartnership control.
         /// </summary>
         /// <remarks>

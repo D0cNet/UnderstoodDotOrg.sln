@@ -50,9 +50,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 GetPartnerLinksItems();
                 GetSocialMediaItems(footerFolderItem);
             }
-			btnSubmitEmail.Text = UnderstoodDotOrg.Common.DictionaryConstants.SubmitButtonText;
-			//lblNewsletterLabel.Text = UnderstoodDotOrg.Common.DictionaryConstants.EnterEmailAddressWatermark;
-			//personalized_email_address.Text = UnderstoodDotOrg.Common.DictionaryConstants.EnterEmailAddressWatermark;
         }
 
         /// <summary>
