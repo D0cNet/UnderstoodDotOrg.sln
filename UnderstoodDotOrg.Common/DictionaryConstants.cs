@@ -727,6 +727,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string TextTipsRestartLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Text Tips Restart Label");
+            }
+        }
+
         public static string SlideshowRestartAlternateLabel
         {
             get

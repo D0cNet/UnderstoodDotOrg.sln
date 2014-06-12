@@ -187,7 +187,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     e.FindControlAs<System.Web.UI.WebControls.PlaceHolder>("phSlideshow1").Visible = true;
                 }
 
-                ltlSlideshowRestartLabel.Text = DictionaryConstants.SlideshowRestartLabel;
+                ltlSlideshowRestartLabel.Text = DictionaryConstants.TextTipsRestartLabel;
                 //ltlSlideshowRestartAlternateLabel.Text = DictionaryConstants.SlideshowRestartAlternateLabel;
             }
         }
