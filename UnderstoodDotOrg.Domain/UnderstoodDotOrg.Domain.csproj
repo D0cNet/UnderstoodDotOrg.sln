@@ -243,6 +243,8 @@
     <Compile Include="SitecoreCIG\Poses\Folders\LearningTool\AssistiveToolsCategoryFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\LearningTool\AssistiveToolsGenreFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\LearningTool\AssistiveToolsGenreFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\LearningTool\AssistiveToolsGradesFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\LearningTool\AssistiveToolsGradesFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\LearningTool\AssistiveToolsIssueFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\LearningTool\AssistiveToolsIssueFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\LearningTool\AssistiveToolsPlatformFolderItem.base.cs" />
@@ -536,6 +538,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsSearchResultsPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\ReviewData\AssistiveToolsCategoryItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\ReviewData\AssistiveToolsGenreItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\ReviewData\AssistiveToolsGradeRangeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\ReviewData\AssistiveToolsIssueItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\ReviewData\AssistiveToolsPlatformItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\ReviewData\AssistiveToolsSkillItem.base.cs" />

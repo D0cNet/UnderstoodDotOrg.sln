@@ -21,45 +21,17 @@
                     <span class="visuallyhidden">Browse By</span>
                     <span class="visuallyhidden">Search By</span>
                     <fieldset>
-                        <select name="at-browse-by-issues" id="at-browse-by-issues" required aria-required="true">
-                            <option>Select Issue</option>
-                            <option>Issue Value 1</option>
-                            <option>Issue Value 2</option>
-                            <option>Issue Value 3</option>
-                        </select>
-                        <select name="at-browse-by-grade" id="at-browse-by-grade" required aria-required="true">
-                            <option>Select Grade</option>
-                            <option>Pre-K - K</option>
-                            <option>3 - 5</option>
-                            <option>6 - 8</option>
-                            <option>9 - 12</option>
-                        </select>
-                        <select name="at-browse-by-technology" id="at-browse-by-technology" class="tech parent small-width" required aria-required="true">
-                            <option>Select Technology</option>
-                            <option value="at-browse-by-app">Apps</option>
-                            <option value="at-browse-by-games">Games</option>
-                            <option value="at-browse-by-websites">Websites</option>
-                            <option value="at-browse-by-technology">Assistive Technology</option>
-                        </select>
-                        <select name="at-browse-by-app" id="at-browse-by-app" class="tech child small-width" style="display: none;">
-                            <option value="">Select Platform</option>
-                            <option value="1">all platforms</option>
-                            <option value="2">iPhone</option>
-                            <option value="3">iPod Touch</option>
-                            <option value="4">iPad</option>
-                            <option value="5">Android</option>
-                            <option value="6">Kindle Fire</option>
-                            <option value="7">Nook HD</option>
-                        </select>
-                        <select name="at-browse-by-games" id="at-browse-by-games" class="tech child small-width" style="display: none;">
-                            <option value="">Select Platform</option>
-                            <option value="1">[List of Games]</option>
-                            <option value="2">
-                                <!-- retrive games from website -->
-                            </option>
-                        </select>
+                        <asp:DropDownList ID="ddlIssues" runat="server" required aria-required="true">
+                        </asp:DropDownList>
+                        <asp:DropDownList ID="ddlGrades" runat="server" required aria-required="true">
+                        </asp:DropDownList>
+                        <asp:DropDownList ID="ddlTechTypes" runat="server" CssClass="tech parent small-width" required aria-required="true">
+                        </asp:DropDownList>
+                        <asp:DropDownList ID="ddlPlatforms" runat="server" CssClass="tech child small-width" style="display: none;">
+                        </asp:DropDownList>
                         <div class="submit-button-container">
-                            <input type="submit" runat="server" onserverclick="btnFindSubmit_Click" class="button" value="Find"></div>
+                            <input type="button" id="btnBrowseFind" runat="server" onserverclick="btnFindSubmit_Click" class="button" value="Find">
+                        </div>
                     </fieldset>
                 </div>
             </div>
@@ -69,9 +41,9 @@
                     <span class="visuallyhidden">Browse By</span>
                     <fieldset>
                         <label for="at-search-by" class="visuallyhidden">Search by</label>
-                        <input type="text" name="at-search-by" id="at-search-by">
+                        <input type="text" id="tbKeywordSearch" runat="server" name="at-search-by">
                         <div class="submit-button-container2 rs_skip">
-                            <input type="submit" runat="server" onserverclick="btnFindSubmit_Click" class="button" value="Find">
+                            <input type="button" id="btnSearchFind" runat="server" onserverclick="btnFindSubmit_Click" class="button" value="Find">
                         </div>
                     </fieldset>
                 </div>

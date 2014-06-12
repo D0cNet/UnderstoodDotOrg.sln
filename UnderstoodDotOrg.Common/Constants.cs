@@ -523,7 +523,7 @@ namespace UnderstoodDotOrg.Common
             public static class LearningTool
             {
                 public const string IssueId = "iid";
-                public const string GradeLevel = "gl";
+                public const string GradeId = "gid";
                 public const string TypeId = "tid";
                 public const string Keyword = "keyword";
             }

@@ -27,7 +27,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             else
             {
                 var issueId = Request.QueryString[Constants.QueryStrings.LearningTool.IssueId];
-                var gradeLevel = Request.QueryString[Constants.QueryStrings.LearningTool.GradeLevel];
+                var gradeLevel = Request.QueryString[Constants.QueryStrings.LearningTool.GradeId];
                 var typeId = Request.QueryString[Constants.QueryStrings.LearningTool.TypeId];
 
                 if (!string.IsNullOrEmpty(issueId) && !string.IsNullOrEmpty(gradeLevel) && !string.IsNullOrEmpty(typeId))
@@ -36,7 +36,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                 }
                 else
                 {
-                    //TODO: Hide results sections, then return
+                    rptrSearchResultsSections.Visible = false;
+                    return;
                 }
             }
 
