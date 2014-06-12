@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PosesDBImport.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="StoredDataDB" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=AODEV02\SQL2008R2;Initial Catalog=Poses_Understood_DataImport;User ID=sa;Password=OasisD8A</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>
