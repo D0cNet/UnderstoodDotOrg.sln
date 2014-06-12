@@ -3,10 +3,19 @@
 
 <!-- BEGIN PARTIAL: pagetopic -->
 <!-- Page Title -->
+
 <div class="container page-topic advocacy-pagetopic take-action-rs-wrapper">
     <div class="row">
         <div class="col col-14 offset-1">
             <div class="rs_read_this">
+                <a href="<%= PreviousPageItem.GetUrl() %>" class="back-to-previous">
+                    <i class="icon-arrow-left-blue"></i><%= PreviousPageItem.NavigationTitle.Rendered %>
+                </a>
+<%--                <asp:HyperLink ID="hlBackToPreviousPage" runat="server" CssClass="back-to-previous left-of-first-next-prev-menu">
+                    <i class="icon-arrow-left-blue"></i>
+                    <asp:Literal ID="litBackToPreviousPage" runat="server"></asp:Literal>
+                </asp:HyperLink>--%>
+
                 <h1><%= Model.ContentPage.PageTitle.Rendered %></h1>
                 <div class="page-subtitle"><%= Model.ContentPage.PageSummary.Rendered %></div>
             </div>
