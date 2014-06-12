@@ -761,7 +761,7 @@ namespace UnderstoodDotOrg.Common
         {
             get
             {
-                return Translate.TextByDomain(PosesDictionary, "Key take-away");
+                return Translate.TextByDomain(PosesDictionary, "Key Takeaways");
             }
         }
 

@@ -15,12 +15,14 @@
 <asp:TextBox ID="txtWebinarCode" runat="server" TextMode="multiline" rows="10" Width="450px" validateRequest="false"></asp:TextBox>
 <br />
 <br />
-<h4>Subscriber 1:</h4>
+<h4>Subscriber:</h4>
 <asp:Label ID="lblSubscriberEmail1" runat="server" Text="Subscriber Email 1"></asp:Label><asp:TextBox ID="tbxSubscriberEmail1" runat="server" Width="250px"></asp:TextBox>
 <br />
 <asp:Label ID="lblSubscriberKey1" runat="server" Text="Key 1"></asp:Label><asp:TextBox ID="tbxSubscriberKey1" runat="server" Width="250px"></asp:TextBox>
 <br />
 <asp:Label ID="lblSubscriberFN1" runat="server" Text="First Name 1"></asp:Label><asp:TextBox ID="tbxSubscriberFN1" runat="server" Width="250px"></asp:TextBox>
+<br />
+<asp:TextBox ID="tbxLanguage" runat="server" Text="Preferred Language (EN/SP)"></asp:TextBox>
 <br />
 <br />
 <hr />

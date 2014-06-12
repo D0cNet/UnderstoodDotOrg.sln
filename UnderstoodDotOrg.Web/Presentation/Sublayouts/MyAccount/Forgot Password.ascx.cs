@@ -40,7 +40,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     var passwordReset = Sitecore.Configuration.Factory.GetDatabase("master").GetItem("{328F5121-EFF8-441B-AFB6-A3DF41F7BFA4}");
                     var link = string.Format(Request.Url.Host + "{0}?guid={1}", Sitecore.Links.LinkManager.GetItemUrl(passwordReset), user.ProviderUserKey.ToString());
 
-                    BaseReply reply = ExactTargetService.InvokeEM22ForgotPassword(new InvokeEM22ForgotPasswordRequest { PasswordResetLink = link, ToEmail = email, UserName = user.UserName });
+					
+                    BaseReply reply = ExactTargetService.InvokeEM22ForgotPassword(new InvokeEM22ForgotPasswordRequest { PreferredLanguage = CurrentMember.PreferedLanguage, PasswordResetLink = link, ToEmail = email, UserName = user.UserName });
                 }
                 else
                 {

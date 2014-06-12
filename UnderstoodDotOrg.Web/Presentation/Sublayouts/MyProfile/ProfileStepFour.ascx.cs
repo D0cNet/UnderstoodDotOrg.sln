@@ -292,8 +292,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                     Response.Write("<!-- Error 601 -->");
                 }
 
-                //send an email through exact target.
-                BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
+                //TODO: get language and add it into the list of method parameters
+                BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { PreferredLanguage = CurrentMember.PreferedLanguage, ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
             }
 
             ////run personalization for this user

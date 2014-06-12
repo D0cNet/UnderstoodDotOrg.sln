@@ -123,11 +123,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                 Interests = interests
             };
 
+
+			if (rbLanguageSpanish.Checked)
+			{
+				CurrentMember.PreferedLanguage = new Guid("{32819E5E-8A88-4005-9B68-CE93807A9D0F}");
+			}
+			else
+			{
+				CurrentMember.PreferedLanguage = new Guid("{AF584191-45C9-4201-8740-5409F4CF8BDD}");
+			}
+			
+			Guid preferredLanguage = CurrentMember.PreferedLanguage;
             // TODO: add error handling
             MembershipManager mm = new MembershipManager();
             mm.AddUnauthorizedMember(member);
 
-			BaseReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { ToEmail = member.Email, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday" });
+			BaseReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { PreferredLanguage = preferredLanguage, ToEmail = member.Email, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday" });
 			
             Item next = Sitecore.Context.Database.GetItem(Constants.Pages.NewsletterConfirmation);
             if (next != null) 

@@ -9,5 +9,6 @@ namespace UnderstoodDotOrg.Domain.ExactTarget
     public class BaseRequest
     {
         public string ToEmail { get; set; }
+		public Guid PreferredLanguage { get; set; }
     }
 }

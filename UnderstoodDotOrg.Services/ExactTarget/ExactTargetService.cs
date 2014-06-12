@@ -268,10 +268,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 512;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 512, request.ToEmail, "Parent Toolkit");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Parent Toolkit");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -317,10 +328,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 352;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 352, request.ToEmail, "Welcome to Understood");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Welcome to Understood");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -370,10 +392,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 335;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "Webinar Confirmation");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Webinar Confirmation");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -423,10 +456,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 513;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 513, request.ToEmail, "Donation Acknowledgement");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Donation Acknowledgement");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -544,10 +588,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 514;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 514, request.ToEmail, "Thank you for contacting us");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Thank you for contacting us");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -599,10 +654,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 515;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 515, request.ToEmail, "Happy Holidays");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Happy Holidays");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -646,10 +712,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 516;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 516, request.ToEmail, "Explore the Community");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Explore the Community");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -704,10 +781,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 517;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 517, request.ToEmail, "Learn Act");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Learn Act");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -798,10 +886,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 519;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 519, request.ToEmail, "Holiday Donations Request");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Holiday Donations Request");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -850,10 +949,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 520;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 520, request.ToEmail, "Newsletter Confirmation");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Newsletter Confirmation");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -908,10 +1018,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 521;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 521, request.ToEmail, "Subscription confirmation");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Subscription confirmation");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -960,10 +1081,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 522;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 522, request.ToEmail, "Group Welcome");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Group Welcome");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1021,10 +1153,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 523;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 523, request.ToEmail, "Content Reminder");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Content Reminder");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1093,10 +1236,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 524;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 524, request.ToEmail, "Observation log reminder");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Observation log reminder");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1149,10 +1303,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 525;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 525, request.ToEmail, "Update profile reminder");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Update profile reminder");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1220,10 +1385,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 526;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 526, request.ToEmail, "Webinar reminder");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Webinar reminder");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1272,10 +1448,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 527;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 527, request.ToEmail, "private message");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "private message");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1336,10 +1523,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 844;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 844, request.ToEmail, "forgot password");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "forgot password");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1393,10 +1591,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 529;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 529, request.ToEmail, "Password reset confirmation");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Password reset confirmation");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1453,10 +1662,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 956;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 956, request.ToEmail, "content shared with a friend");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "content shared with a friend");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1529,10 +1749,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 531;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 531, request.ToEmail, "webinar shared with a friend");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "webinar shared with a friend");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1589,10 +1820,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 538;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 538, request.ToEmail, "apps technology shared with friend");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "apps technology shared with friend");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1681,10 +1923,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 533;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 533, request.ToEmail, "Daily Digest");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Daily Digest");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1749,10 +2002,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 534;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 534, request.ToEmail, "Weekly Digest");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Weekly Digest");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1918,10 +2182,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 1070;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-                TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 1070, request.ToEmail, "Newsletter 1");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Newsletter 1");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -1999,10 +2274,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 1057;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 1057, request.ToEmail, "e1b newsletter (full profile and following 2 blogs)");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "e1b newsletter (full profile and following 2 blogs)");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -2048,10 +2334,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 335;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "e1c newsletter (joined 2 groups)");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "e1c newsletter (joined 2 groups)");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
@@ -2097,10 +2394,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			StringBuilder sbReturnString = new StringBuilder();
 
+			Guid preferredLanguage = request.PreferredLanguage;
+			int emailTemplateID = 0;
+			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			{
+				emailTemplateID = 0;
+			}
+			else
+			{
+				emailTemplateID = 335;
+			}
+
 			try
 			{
 				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 335, request.ToEmail, "e2");
+				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "e2");
 
 				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
 
