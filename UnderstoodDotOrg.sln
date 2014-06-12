@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnderstoodDotOrg.Services",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnderstoodDotOrg.Build", "UnderstoodDotOrg.Build\UnderstoodDotOrg.Build.csproj", "{45584AC0-135A-486B-B7D4-1E6FA011BAC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnderstoodDotOrg.Command", "UnderstoodDotOrg.Command\UnderstoodDotOrg.Command.csproj", "{C4B19C44-2CCB-43CA-8BC6-35F6CEC0D53C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
