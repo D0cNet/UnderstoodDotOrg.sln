@@ -8,6 +8,9 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using UnderstoodDotOrg.Common;
+using Sitecore.Data.Items;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 {
@@ -20,6 +23,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 
         private void BindContent()
         {
+            ExpertLivePageItem landingPage = ExpertLivePageItem.GetLandingPage();
+            bool landingExists = landingPage != null;
+            hlBackExperts.Visible = landingExists;
+            if (landingExists)
+            {
+                hlBackExperts.NavigateUrl = landingPage.GetUrl();
+                hlBackExperts.Text = landingPage.ContentPage.BasePageNEW.NavigationTitle;
+            }
+
             bool isUpcoming = Model.BaseEventDetailPage.IsUpcoming();
             phCallToActions.Visible = isUpcoming;
 

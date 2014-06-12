@@ -5,7 +5,7 @@
     <header class="row">
         <div class="event-container">
             <ul class="breadcrumbs">
-                <li><a href="REPLACE">Back to Ipsum Aut</a></li>
+                <li><asp:HyperLink ID="hlBackExperts" runat="server" /></li>
             </ul>
 
             <h2 class="rs_read_this"><sc:FieldRenderer ID="frPageTitle" runat="server" /></h2>
@@ -27,6 +27,8 @@
                         </div>
 
                     <!-- BEGIN PARTIAL: community/experts_recommended_for -->
+                    <%--
+                    Phase 2 
                     <div class="recommended-for">
                         <p>Recommended for</p>
                         <span class="children-key">
@@ -34,7 +36,7 @@
                                 <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
                             </ul>
                         </span>
-                    </div>
+                    </div>--%>
                     <!-- END PARTIAL: community/experts_recommended_for -->
                 </div><!-- end .event-image -->
 
@@ -72,6 +74,8 @@
         
             <div class="col-5 col offset-1 event-sidebar skiplink-sidebar rs_read_this">
                 <!-- BEGIN PARTIAL: community/experts_recommended_for -->
+                <%--
+              Phase 2
                 <div class="recommended-for">
                     <p>Recommended for</p>
                     <span class="children-key">
@@ -79,7 +83,7 @@
                             <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
                         </ul>
                     </span>
-                </div>
+                </div>--%>
                 <!-- END PARTIAL: community/experts_recommended_for -->
                 
                 <asp:PlaceHolder ID="phPastSidebarDetails" runat="server" Visible="false">

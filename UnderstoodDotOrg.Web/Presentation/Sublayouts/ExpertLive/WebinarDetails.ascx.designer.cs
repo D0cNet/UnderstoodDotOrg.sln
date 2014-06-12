@@ -13,13 +13,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
     public partial class WebinarDetails {
         
         /// <summary>
-        /// frPageTItle control.
+        /// hlBackExperts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPageTItle;
+        protected global::System.Web.UI.WebControls.HyperLink hlBackExperts;
+        
+        /// <summary>
+        /// frPageTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPageTitle;
         
         /// <summary>
         /// hlExpertDetail control.

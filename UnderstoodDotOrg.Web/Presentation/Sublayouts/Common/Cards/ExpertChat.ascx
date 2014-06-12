@@ -22,11 +22,12 @@
                 </asp:HyperLink>
             </div><!-- end .event-card-title -->
             <p class="event-host-title"><sc:FieldRenderer ID="frExpertSubheading" runat="server" FieldName="Expert Subheading" /></p>
-            <span class="children-key">
+            <%-- Phase 2
+                <span class="children-key">
               <ul>
                   <li><i class="child-a" title="CHILD NAME HERE"></i></li>
               </ul>
-            </span>
+            </span>--%>
         </div><!-- end .event-card-details -->
     </div><!-- end .event-card-info -->
 </div><!-- end .event-card -->

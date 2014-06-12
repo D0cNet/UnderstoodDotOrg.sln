@@ -6,10 +6,10 @@
     <header class="row">
       <div class="event-container skiplink-feature">
         <ul class="breadcrumbs">
-          <li><a href="REPLACE">Back to Omnis Repudiandae</a></li>
+          <li><asp:HyperLink ID="hlBackExperts" runat="server" /></li>
         </ul>
 
-        <h2 class="rs_read_this"><sc:FieldRenderer ID="frPageTItle" runat="server" FieldName="Page Title" /></h2>
+        <h2 class="rs_read_this"><sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" /></h2>
       </div>
     </header>
 
@@ -27,6 +27,8 @@
             </div>
 
             <!-- BEGIN PARTIAL: community/experts_recommended_for -->
+            <%--
+              Phase 2
             <div class="recommended-for">
                 <p>Recommended for</p>
                 <span class="children-key">
@@ -35,6 +37,7 @@
                     </ul>
                 </span>
             </div>
+             --%>
             <!-- END PARTIAL: community/experts_recommended_for -->
           </div><!-- end .event-image -->
 
@@ -56,6 +59,8 @@
 
         <div class="col-5 col offset-1 event-sidebar rs_read_this">
             <!-- BEGIN PARTIAL: community/experts_recommended_for -->
+            <%--
+              Phase 2
             <div class="recommended-for">
                 <p>Recommended for</p>
                 <span class="children-key">
@@ -64,6 +69,7 @@
                     </ul>
                 </span>
             </div>
+                --%>
             <!-- END PARTIAL: community/experts_recommended_for -->
 
             <asp:PlaceHolder ID="phHelpful" runat="server" Visible="false">

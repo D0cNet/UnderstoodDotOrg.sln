@@ -5,6 +5,7 @@
     using UnderstoodDotOrg.Framework.UI;
     using UnderstoodDotOrg.Common.Extensions;
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 
     public partial class WebinarDetails : BaseSublayout<WebinarEventPageItem>
     {
@@ -15,6 +16,15 @@
 
         private void BindContent()
         {
+            ExpertLivePageItem landingPage = ExpertLivePageItem.GetLandingPage();
+            bool landingExists = landingPage != null;
+            hlBackExperts.Visible = landingExists;
+            if (landingExists)
+            {
+                hlBackExperts.NavigateUrl = landingPage.GetUrl();
+                hlBackExperts.Text = landingPage.ContentPage.BasePageNEW.NavigationTitle;
+            }
+
             // TODO: replace with correct check for archived state
             bool isUpcoming = Model.BaseEventDetailPage.IsUpcoming();
             phCallToActions.Visible = isUpcoming;
