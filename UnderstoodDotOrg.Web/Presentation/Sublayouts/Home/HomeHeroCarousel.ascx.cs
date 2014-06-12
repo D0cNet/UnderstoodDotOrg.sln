@@ -45,7 +45,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
             //Load Text
             litHelpmsg.Text = DictionaryConstants.HowCanHelp;
             litStruggle.Text = DictionaryConstants.ChildStruggles;
-            
+            litStruggle2.Text = DictionaryConstants.ChildStruggles;
 
             if (!IsPostBack)
             {

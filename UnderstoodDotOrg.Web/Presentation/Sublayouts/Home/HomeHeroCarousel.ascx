@@ -54,7 +54,7 @@
 
             <header class="row">
                 <div class="col col-16 offset-4">
-                    <h3>My child struggles with...</h3>
+                    <h3><asp:Literal Text="" ID="litStruggle2" runat="server" /></h3>
                 </div>
                 <!-- .col -->
                 <div class="col col-4">
