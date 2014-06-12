@@ -19,7 +19,7 @@
   <div class="row">
     <div class="col col-18 offset-3">
       <!-- BEGIN PARTIAL: transcript-control -->
-        <div class="transcript-container Video">
+        <div id="divTranscript" runat="server" class="transcript-container Video">
           <div class="read-more mobile-close">
             <a href="REMOVE">Close Transcript<i class="icon-arrow-up-blue"></i></a>
           </div>
