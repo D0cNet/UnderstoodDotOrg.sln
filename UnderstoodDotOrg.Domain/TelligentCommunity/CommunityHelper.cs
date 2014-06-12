@@ -1543,6 +1543,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return false;
         }
+
         public static string ReadUserEmail(string username)
         {
             string email = null;
@@ -1577,6 +1578,50 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 }
             }
             return email;
+        }
+
+        public static List<User> GetFriends(string currentUsername)
+        {
+            var friendsList = new List<User>();
+
+            if (currentUsername.IsNullOrEmpty())
+            {
+                return friendsList;
+            }
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                    var requestUrl = GetApiEndPoint(String.Format("users/{1}/friends.xml", "http://telligent.dev01.rax.webstagesite.com/telligent/", currentUsername.Trim()));
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Friendships/Friendship");
+                    foreach (XmlNode node in nodes)
+                    {
+                        XmlNode friend = node.SelectSingleNode("User");
+
+                        User user = new User()
+                        {
+                            AvatarUrl = friend["AvatarUrl"].InnerText,
+                            DisplayName = friend["DisplayName"].InnerText,
+                            Username = friend["Username"].InnerText,
+                        };
+                        friendsList.Add(user);
+                    }
+                    return friendsList;
+                }
+                catch
+                {
+                    //TODO: ADD LOGGING
+                }
+            }
+            return friendsList;
         }
     }
 }

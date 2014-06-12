@@ -1211,6 +1211,13 @@
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\MostActiveGroups.ascx.designer.cs">
       <DependentUpon>MostActiveGroups.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\MyFriends.ascx.cs">
+      <DependentUpon>MyFriends.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\MyFriends.ascx.designer.cs">
+      <DependentUpon>MyFriends.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\RecentBlogPosts.ascx.cs">
       <DependentUpon>RecentBlogPosts.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2643,6 +2650,7 @@
     <Content Include="Presentation\Sublayouts\Community\QandA\QuestionToolbar.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\CommunityMembers.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\MostActiveGroups.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Whats Happening\MyFriends.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\RecentBlogPosts.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\RecentQuestions.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\UpcomingEvents.ascx" />
