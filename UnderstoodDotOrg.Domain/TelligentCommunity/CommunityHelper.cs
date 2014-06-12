@@ -500,6 +500,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         Author = user["Username"].InnerText,
                         Group = app["HtmlName"].InnerText,
                         CommentCount = xn["CommentCount"].InnerText,
+                        AuthorAvatarUrl = user["AvatarUrl"].InnerText,
                         QueryString = queryString,
                         // TODO: replace this with constant or guid lookup
                         Url = "/en/community and events/q and a/q and a details.aspx" + queryString,

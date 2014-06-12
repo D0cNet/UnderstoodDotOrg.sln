@@ -139,6 +139,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Body { get; set; }
         public string PublishedDate { get; set; }
         public string Author { get; set; }
+        public string AuthorAvatarUrl { get; set; }
         public string Group { get; set; }
         public string CommentCount { get; set; }
         public string WikiId { get; set; }
