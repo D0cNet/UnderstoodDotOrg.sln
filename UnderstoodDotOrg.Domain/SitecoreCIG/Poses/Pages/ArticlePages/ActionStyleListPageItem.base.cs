@@ -46,42 +46,6 @@ public static implicit operator Item(ActionStyleListPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField AtaglanceContent
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["At a glance Content"]);
-	}
-}
-
-
-public CustomTextField KeyTakeawayData
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Key Takeaway Data"]);
-	}
-}
-
-
-public CustomCheckboxField ShowAtaGlanceContent
-{
-	get
-	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show At a Glance Content"]);
-	}
-}
-
-
-public CustomCheckboxField ShowKeyTakeawayContent
-{
-	get
-	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Key Takeaway Content"]);
-	}
-}
-
-
 #endregion //Field Instance Methods
 }
 }

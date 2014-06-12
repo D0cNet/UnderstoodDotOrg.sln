@@ -6,15 +6,6 @@
         <!-- article -->
 
         <div class="col col-15 offset-1">
-
-            <div id="divAtAGlance" runat="server" class="at-a-glance">
-                <header class='header-at-a-glance'>
-                    <h2><%--At-a-glance--%>
-                        <asp:Literal ID="litAtAGlanceHeader" runat="server"></asp:Literal>
-                    </h2>
-                </header>
-                <sc:FieldRenderer runat="server" FieldName="At a glance Content" ID="frSubHeadlineText" />
-            </div>
             <!-- BEGIN PARTIAL: article-actions-copy -->
             <div class="article-actions-copy">
                 <%--<h3>ea dolorem nam sint quia</h3>
@@ -49,15 +40,6 @@
                     <FooterTemplate></FooterTemplate>
                 </asp:Repeater>
 
-            </div>
-
-            <div id="divKeyTakeAways" runat="server" class="key-takeaways">
-                <header class='header-key-takeaways'>
-                    <h2><%-- Key Takeaways--%>
-                        <asp:Literal ID="litKeyTakeAwayText" runat="server"></asp:Literal>
-                    </h2>
-                </header>
-                <sc:FieldRenderer ID="frKeyTakeawayData" runat="server" FieldName="Key Takeaway Data" />
             </div>
             <!-- END PARTIAL: article-actions-copy -->
             <!-- BEGIN PARTIAL: about-the-author -->

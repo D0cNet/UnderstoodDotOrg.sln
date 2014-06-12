@@ -13,33 +13,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     public partial class Action_Style_List_Page {
         
         /// <summary>
-        /// divAtAGlance control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divAtAGlance;
-        
-        /// <summary>
-        /// litAtAGlanceHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litAtAGlanceHeader;
-        
-        /// <summary>
-        /// frSubHeadlineText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSubHeadlineText;
-        
-        /// <summary>
         /// frAtricleIntroText control.
         /// </summary>
         /// <remarks>
@@ -56,33 +29,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptAction;
-        
-        /// <summary>
-        /// divKeyTakeAways control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divKeyTakeAways;
-        
-        /// <summary>
-        /// litKeyTakeAwayText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litKeyTakeAwayText;
-        
-        /// <summary>
-        /// frKeyTakeawayData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frKeyTakeawayData;
         
         /// <summary>
         /// sbAboutAuthor control.
