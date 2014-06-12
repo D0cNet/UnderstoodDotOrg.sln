@@ -69,7 +69,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             if (e.IsItem()) {
                 Item subTopicItem = e.Item.DataItem as Item;
                
-                if (subTopicItem != null) {
+                if (subTopicItem != null && subTopicItem != Sitecore.Context.Item) {
                     HyperLink hlNavigationTitle = e.FindControlAs<HyperLink>("hlNavigationTitle");
                     HtmlGenericControl listItem = e.FindControlAs<HtmlGenericControl>("listItem");
                     listItem.Visible = false;

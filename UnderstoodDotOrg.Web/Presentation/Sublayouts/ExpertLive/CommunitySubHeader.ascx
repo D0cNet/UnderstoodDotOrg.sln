@@ -39,7 +39,6 @@
 
                 <div class="label-menu"><span>Menu</span></div>
                 <ul class="menu" aria-label="secondary-navigation" aria-role="navigation">
-                    <li class="title"><span>Overview</span> <i class="icon-hide-show-fff"></i></li>
                     <li class="submenu">
                         <div class="inner">
                             <div class="label-more"><span>More <i class="icon-hide-show-fff"></i></span></div>

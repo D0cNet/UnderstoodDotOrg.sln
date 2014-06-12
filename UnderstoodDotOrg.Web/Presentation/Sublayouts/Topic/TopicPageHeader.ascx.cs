@@ -12,6 +12,7 @@ using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 using UnderstoodDotOrg.Framework.UI;
+using System.Web.UI.HtmlControls;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic 
 {
@@ -57,17 +58,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic
                 BasePageNEWItem basePageNewItem = new BasePageNEWItem(subTopicItem);
                 if (hlNavigationTitle != null)
                 {
-                    hlNavigationTitle.NavigateUrl = subTopicItem.InnerItem.GetUrl();
-
                     // Handle overview link
-                    if (subTopicItem.InnerItem == Sitecore.Context.Item)
+                    if (subTopicItem.InnerItem != Sitecore.Context.Item)
                     {
-                        hlNavigationTitle.Text = UnderstoodDotOrg.Common.DictionaryConstants.OverviewButtonText;
-                        hlNavigationTitle.CssClass = "selected";
+                        hlNavigationTitle.NavigateUrl = subTopicItem.InnerItem.GetUrl();
+                        hlNavigationTitle.Text = basePageNewItem.NavigationTitle.Rendered;
                     }
                     else
                     {
-                        hlNavigationTitle.Text = basePageNewItem.NavigationTitle.Rendered;
+                        HtmlGenericControl liNav = e.FindControlAs<HtmlGenericControl>("liNav");
+                        liNav.Visible = false;
                     }
                 }
             }

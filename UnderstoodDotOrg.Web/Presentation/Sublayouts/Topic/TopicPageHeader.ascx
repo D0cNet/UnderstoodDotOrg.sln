@@ -32,14 +32,13 @@
                     <!-- BEGIN ELEMENT: Menu -->
                     <div class="label-menu"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.MenuButtonText %></span></div>
                     <ul class="menu" aria-label="secondary-navigation" aria-role="navigation">
-                        <li class="title"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.OverviewButtonText %></span> <i class="icon-hide-show-fff"></i></li>
                         <li class="submenu">
                             <div class="inner">
                                 <div class="label-more"><button><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreButtonText %> <i class="icon-hide-show-fff"></i></button></div>
                                 <ul>
     </HeaderTemplate>    
     <ItemTemplate>
-        <li><span>
+        <li id="liNav" runat="server"><span>
             <asp:HyperLink runat="server" ID="hlNavigationTitle"></asp:HyperLink>
         </span></li>
     </ItemTemplate>
