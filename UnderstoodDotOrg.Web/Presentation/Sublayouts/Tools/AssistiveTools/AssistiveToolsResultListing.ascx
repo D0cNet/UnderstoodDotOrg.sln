@@ -2,7 +2,7 @@
 <%@ Import Namespace="UnderstoodDotOrg.Common.Extensions" %>
 
 <div class="search-result row rs_read_this">
-    <div class="result-image screenshots-popover col col-4 offset-1">
+    <div class="result-image screenshots-popover col col-3 offset-1">
         <div class="result-image-inner">
             <!-- This hidden span's content matches the alt tag of the image which ReadSpeaker is ignoring -->
             <span class="visuallyhidden rs_read"><%= Model.ThumbnailImage.Field.Alt %></span>
@@ -13,10 +13,10 @@
         </div>
         <!-- BEGIN PARTIAL: assistive-tech-screenshots-popover -->
         <!-- popover hidden content -->
-        <div class="popover-container popover-content rs_skip">
+        <div class="popover-container popover-content rs_skip" style="display:none;">
             <!-- Borrows CSS class from other module -->
             <section class="user-child-details-popover">
-                <div class="tooltip-title rs_skip"><%= Model.Title.Rendered %></div>
+                <div class="tooltip-title"><%= Model.Title.Rendered %></div>
                 <div class="change-slide-buttons arrows-gray rs_skip">
                     <span class="count">
                         <span class="curr">1</span>
@@ -55,83 +55,72 @@
                 </asp:Repeater>
             </ul>
         </div>
-        <div class="see-rating rs_skip">
+        <div class="see-rating rs_skip" style="display: none;">
             <div class="popover-trigger-container">
                 <a href="REPLACE" class="popover-link rs_preserve rs_skip" data-popover-placement="bottom">See Rating</a>
             </div>
             <!-- BEGIN PARTIAL: popover-see-rating -->
-            <div class="search-result row popover-container">
+            <div class="search-result row popover-container" style="display: none;">
                 <div class="result-image">
                     <%= Model.ThumbnailImage.Rendered %>
                     <div class="result-type">(App, 2013)</div>
                 </div>
                 <div class="result-details">
-                    <div class="result-title"><%= Model.Title.Rendered %></div>
+                    <h3 class="result-title"><%= Model.Title.Rendered %></h3>
                     <div class="result-description"><%= Model.Summary.Rendered %></div>
                 </div>
 
                 <div class="result-ratings col col-11 offset-1">
                     <div class="rating-label">Grade</div>
                     <div class="grade-scale-wrapper">
+                        <span class="visuallyhidden">rating</span>
                         <div class="grade-scale">
                             <div class="selection grade<%= Model.TargetGrade.Rendered %>"><%= Model.TargetGrade.Rendered %></div>
                             <asp:Repeater ID="rptrAppropriateGrades" runat="server">
                                 <ItemTemplate>
-                                    <span class="grade<%# Eval("Grade") %> grade <%# Eval("Color") %> rs_skip" aria-hidden="true"
-                                        role="presentation">
-                                        <%# Eval("Grade") %></span>
+                                    <span class="grade<%# Eval("Grade") %> grade <%# Eval("Color") %> rs_skip"><%# Eval("Grade") %></span>
                                 </ItemTemplate>
                             </asp:Repeater>
                         </div>
                     </div>
 
                     <div class="rating-label">Quality</div>
-                    <div class="quality-scale-wrapper full-width">
+                    <div class="quality-scale-wrapper">
+                        <span class="visuallyhidden">rating</span>
                         <div class="quality-scale">
                             <!-- BEGIN PARTIAL: results-slider -->
-                            <div class="results-slider blue-<%= SpelledNumbers[Model.Quality.Integer] %>"
-                                aria-label="<%= Model.Quality.Integer %>">
-                                <%= Model.Quality.Integer %>
-                            </div>
+                            <div class="results-slider blue-<%= SpelledNumbers[Model.Quality.Integer] %>" aria-label="<%= Model.Quality.Integer %>"><%= Model.Quality.Integer %></div>
                             <!-- END PARTIAL: results-slider -->
-                            <a class="quality-review-link-see-rating" href="REPLACE">4 Reviews</a>
                         </div>
                     </div>
 
                     <div class="rating-label">Learning</div>
                     <div class="learning-scale-wrapper">
+                        <span class="visuallyhidden">rating</span>
                         <div class="learning-scale">
                             <!-- BEGIN PARTIAL: results-slider -->
-                            <div class="results-slider purple-<%= SpelledNumbers[Model.Learning.Integer] %>"
-                                aria-label="<%= Model.Learning.Integer %>">
-                                <%= Model.Learning.Integer %>
-                            </div>
+                            <div class="results-slider purple-<%= SpelledNumbers[Model.Learning.Integer] %>" aria-label="<%= Model.Learning.Integer %>"><%= Model.Learning.Integer %></div>
                             <!-- END PARTIAL: results-slider -->
                         </div>
                     </div>
                 </div>
-                <!-- /.result-ratings -->
-                <div class="view-full-detail">
-                    <a href="REPLACE" class="button">View Full Detail</a>
-                </div>
-                <!-- /.view-full-detail -->
+                <!-- .result-ratings -->
             </div>
             <!-- .search-result -->
             <!-- END PARTIAL: popover-see-rating -->
         </div>
     </div>
 
-    <div class="result-ratings show-popover col col-12">
+    <div class="result-ratings show-popover col col-10">
         <div class="rating-label">Grade</div>
+        <span class="visuallyhidden">rating</span>
         <div class="grade-scale-wrapper">
             <span class="visuallyhidden">rating</span>
             <div class="grade-scale">
                 <div class="selection grade<%= Model.TargetGrade.Rendered %>"><%= Model.TargetGrade.Rendered %></div>
                 <asp:Repeater ID="rptrAppropriateGrades2" runat="server">
                     <ItemTemplate>
-                        <span class="grade<%# Eval("Grade") %> grade <%# Eval("Color") %> rs_skip" aria-hidden="true"
-                            role="presentation">
-                            <%# Eval("Grade") %></span>
+                        <span class="grade<%# Eval("Grade") %> grade <%# Eval("Color") %> rs_skip" aria-hidden="true" role="presentation"><%# Eval("Grade") %></span>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
@@ -141,7 +130,7 @@
                 <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a>
             </div>
             <!-- BEGIN PARTIAL: popover-grade-info -->
-            <div class="grade-tooltip popover-container">
+            <div class="grade-tooltip popover-container" style="display: none;">
                 <div class="tooltip-title">About our rating system</div>
                 <div class="ratings-wrapper">
                     <div class="rating">
@@ -174,10 +163,7 @@
             <span class="visuallyhidden">rating</span>
             <div class="quality-scale">
                 <!-- BEGIN PARTIAL: results-slider -->
-                <div class="results-slider blue-<%= SpelledNumbers[Model.Quality.Integer] %>"
-                    aria-label="<%= Model.Quality.Integer %>">
-                    <%= Model.Quality.Integer %>
-                </div>
+                <div class="results-slider blue-<%= SpelledNumbers[Model.Quality.Integer] %>" aria-label="<%= Model.Quality.Integer %>"><%= Model.Quality.Integer %></div>
                 <!-- END PARTIAL: results-slider -->
             </div>
         </div>
@@ -185,7 +171,7 @@
             <span class="popover-trigger-container">
                 <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></span>
             <!-- BEGIN PARTIAL: popover-quality-info -->
-            <div class="quality-tooltip popover-container">
+            <div class="quality-tooltip popover-container" style="display: none;">
                 <div class="tooltip-title">Quality Rating</div>
                 <div class="ratings-wrapper">
                     <div class="rating">
@@ -241,10 +227,7 @@
             <span class="visuallyhidden">rating</span>
             <div class="learning-scale">
                 <!-- BEGIN PARTIAL: results-slider -->
-                <div class="results-slider purple-<%= SpelledNumbers[Model.Learning.Integer] %>"
-                    aria-label="<%= Model.Learning.Integer %>">
-                    <%= Model.Learning.Integer %>
-                </div>
+                <div class="results-slider purple-<%= SpelledNumbers[Model.Learning.Integer] %>" aria-label="<%= Model.Learning.Integer %>"><%= Model.Learning.Integer %></div>
                 <!-- END PARTIAL: results-slider -->
             </div>
             <div class="learning-info-wrapper rs_skip">
@@ -252,7 +235,7 @@
                     <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a>
                 </div>
                 <!-- BEGIN PARTIAL: popover-learning-info -->
-                <div class="learning-tooltip popover-container">
+                <div class="learning-tooltip popover-container" style="display: none;">
                     <div class="tooltip-title">Learning Rating</div>
                     <div class="ratings-wrapper">
                         <div class="rating">

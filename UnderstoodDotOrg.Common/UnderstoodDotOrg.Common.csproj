@@ -58,6 +58,7 @@
     <Compile Include="Extensions\MediaItemExtension.cs" />
     <Compile Include="Extensions\RepeaterExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\StringParseExtensions.cs" />
     <Compile Include="Helpers\DataFormatHelper.cs" />
     <Compile Include="Helpers\HttpHelper.cs" />
     <Compile Include="Helpers\MembershipHelper.cs" />

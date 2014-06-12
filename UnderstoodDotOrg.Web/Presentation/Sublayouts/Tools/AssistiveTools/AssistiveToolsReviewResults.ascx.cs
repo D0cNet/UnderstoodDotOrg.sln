@@ -51,16 +51,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                 .Select(categoryGroup => {
                     var helpModalContent = categoryGroup.Key.HelpModalContent.Rendered;
                     var results = categoryGroup.AsEnumerable();
-                    var categoryResultCount = results.Count();
+                    var resultTotalCount = results.Count();
+                    var resultDisplayCount = Math.Min(Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE, resultTotalCount);
 
                     return new 
                     {
+                        CategoryId = categoryGroup.Key.ID.Guid,
                         CategoryTitle = categoryGroup.Key.Metadata.ContentTitle.Rendered,
                         HelpModalContent = helpModalContent,
                         ShowHelpModal = helpModalContent != string.Empty,
-                        CategoryResultTotalCount = categoryResultCount,
-                        CategoryResultDisplayCount = Math.Min(3, categoryResultCount),
-                        SearchResults = results
+                        CategoryResultTotalCount = resultTotalCount,
+                        CategoryResultDisplayCount = resultDisplayCount,
+                        SearchResults = results.Take(resultDisplayCount),
+                        HasMoreResults = resultDisplayCount < resultTotalCount
                     };
                 });
 
