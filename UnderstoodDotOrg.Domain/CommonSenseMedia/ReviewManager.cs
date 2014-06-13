@@ -38,6 +38,10 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
 
                     newReview.Editing.EndEdit();
 
+                    // publish
+                    CommonSenseImportHelper.PublishItem(newReview, Sitecore.Configuration.Factory.GetDatabase("master"));
+                    CommonSenseImportHelper.PublishItem(newReview, Sitecore.Configuration.Factory.GetDatabase("web"));
+
                     return newReview;
                 }
             }
@@ -170,6 +174,11 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
                 if (mappedReview["publish date"] != null && Review.Published != null)
                 {
                     mappedReview["publish date"] = Review.Published.Trim();
+                }
+
+                if (mappedReview["quality"] != null && Review.QualityRank != null)
+                {
+                    mappedReview["quality"] = Review.QualityRank.Trim();
                 }
 
                 if (mappedReview["screenshots"] != null && Review.Screenshots != null)

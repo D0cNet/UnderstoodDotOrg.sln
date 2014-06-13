@@ -10,6 +10,8 @@ using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 using UnderstoodDotOrg.Domain.CommonSenseMedia;
+using Sitecore.ContentSearch;
+using Sitecore.Buckets;
 
 
 namespace UnderstoodDotOrg.Web.Presentation
@@ -31,6 +33,8 @@ namespace UnderstoodDotOrg.Web.Presentation
             totalEntries += ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1");
 
             litCount.Text = "Completed "+totalEntries.ToString()+" total imports.";
+
+            //Sitecore.Buckets
         }
 
         public int ImportCategory(string URL)
@@ -181,6 +185,7 @@ namespace UnderstoodDotOrg.Web.Presentation
 
                         if (reader.Name == "csm:review")
                         {
+                            newItem.QualityRank = reader.GetAttribute("star_rating");
                             reader.ReadToFollowing("csm:slider");
                         }
 
