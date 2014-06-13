@@ -11,7 +11,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using UnderstoodDotOrg.Domain.CommonSenseMedia;
 using Sitecore.ContentSearch;
-using Sitecore.Buckets;
+using Sitecore.Buckets.Client;
 
 
 namespace UnderstoodDotOrg.Web.Presentation
@@ -32,9 +32,7 @@ namespace UnderstoodDotOrg.Web.Presentation
             totalEntries += ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=game&special_needs=1");
             totalEntries += ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1");
 
-            litCount.Text = "Completed "+totalEntries.ToString()+" total imports.";
-
-            //Sitecore.Buckets
+            litCount.Text = "Completed " + totalEntries.ToString() + " total imports.";
         }
 
         public int ImportCategory(string URL)

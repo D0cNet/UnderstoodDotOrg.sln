@@ -316,7 +316,7 @@ namespace UnderstoodDotOrg.Domain.Importer
                     options.Database = Sitecore.Configuration.Factory.GetDatabase("master");
                     options.Language = Sitecore.Globalization.Language.Parse(Sitecore.Configuration.Settings.DefaultLanguage);
                     options.Versioned = false;
-                    Item mediaFolder = Sitecore.Context.Database.GetItem("{2D0D67F1-4600-4BD2-82D3-38E7FE4F7893}");
+                    Item mediaFolder = Sitecore.Context.Database.GetItem("{7B9F34AA-10FA-49B5-A6C3-DC8A440D1695}");
                     options.Destination = string.Format("{0}/{1}", mediaFolder.Paths.FullPath, Name);
                     options.FileBased = Sitecore.Configuration.Settings.Media.UploadAsFiles;
 
@@ -329,6 +329,9 @@ namespace UnderstoodDotOrg.Domain.Importer
                     image.InnerItem["alt"] = !string.IsNullOrEmpty(alt) ? alt : Name;
 
                     image.InnerItem.Editing.EndEdit();
+
+                    PublishItem(image, options.Database);
+                    PublishItem(image, Sitecore.Configuration.Factory.GetDatabase("web"));
 
                     return image;
                 }

@@ -77,6 +77,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Sitecore.Buckets.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Buckets.Client">
+      <HintPath>..\Libraries\Sitecore.Buckets.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Sitecore.ContentSearch.dll</HintPath>
