@@ -56,8 +56,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             // TODO: refactor to handle folder parent items
             ContentPageItem parent = Sitecore.Context.Item.Parent;
             if (parent == null 
-                || parent.InnerItem.IsOfType(FolderItem.TemplateId)
-                || parent.InnerItem.IsOfType(HomePageItem.TemplateId))
+                || parent.InnerItem.IsOfType(FolderItem.TemplateId))
             {
                 hlSectionTitle.Visible = false;
             }

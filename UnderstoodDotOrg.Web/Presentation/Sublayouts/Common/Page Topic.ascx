@@ -9,7 +9,7 @@
             <%--<a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Lorem Ipsum Dolar</a>--%>
             <asp:HyperLink ID="hlSectionTitle" runat="server" CssClass="back-to-previous">
                 <i class="icon-arrow-left-blue"></i>
-                <sc:FieldRenderer ID="frSectionTitle" runat="server" FieldName="Page Title" />      
+                <sc:FieldRenderer ID="frSectionTitle" runat="server" FieldName="Navigation Title" />      
             </asp:HyperLink>
             <div>
                 <h1>

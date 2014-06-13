@@ -3,7 +3,7 @@
 <div class="container page-topic no-share">
     <div class="row">
         <div class="col col-14">
-            <asp:HyperLink runat="server" ID="hlBackLink" CssClass="back-to-previous"><i class="icon-arrow-left-blue"></i>Homepage</asp:HyperLink>
+            <asp:HyperLink runat="server" ID="hlBackLink" CssClass="back-to-previous"><i class="icon-arrow-left-blue"></i><%= HomepageLink %></asp:HyperLink>
            <h1>
                 <asp:Literal runat="server" ID="scTopicTitle" ></asp:Literal>
             </h1>
