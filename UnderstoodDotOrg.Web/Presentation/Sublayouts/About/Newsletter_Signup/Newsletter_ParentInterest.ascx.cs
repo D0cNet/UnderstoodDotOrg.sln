@@ -116,29 +116,34 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                 });
             }
 
+			Guid preferredLanguage = new Guid();
+
+			if (rbLanguageSpanish.Checked)
+			{
+				preferredLanguage = new Guid("{32819E5E-8A88-4005-9B68-CE93807A9D0F}");
+			}
+			else
+			{
+				preferredLanguage = new Guid("{AF584191-45C9-4201-8740-5409F4CF8BDD}");
+			}
+
             Member member = new Member
             {
                 Email = _submission.Email,
                 Children = children,
-                Interests = interests
+                Interests = interests,
+				PreferedLanguage = preferredLanguage
             };
 
-
-			if (rbLanguageSpanish.Checked)
-			{
-				CurrentMember.PreferedLanguage = new Guid("{32819E5E-8A88-4005-9B68-CE93807A9D0F}");
-			}
-			else
-			{
-				CurrentMember.PreferedLanguage = new Guid("{AF584191-45C9-4201-8740-5409F4CF8BDD}");
-			}
-			
-			Guid preferredLanguage = CurrentMember.PreferedLanguage;
             // TODO: add error handling
             MembershipManager mm = new MembershipManager();
-            mm.AddUnauthorizedMember(member);
 
-			BaseReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { PreferredLanguage = preferredLanguage, ToEmail = member.Email, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday" });
+			if (member.Children.Count > 0)
+			{
+				mm.AddUnauthorizedMember(member);
+			}
+			
+			BaseReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { PreferredLanguage = new Guid(), ToEmail = member.Email, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday" });
 			
             Item next = Sitecore.Context.Database.GetItem(Constants.Pages.NewsletterConfirmation);
             if (next != null) 

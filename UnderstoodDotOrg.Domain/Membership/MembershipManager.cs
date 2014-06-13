@@ -1208,7 +1208,12 @@ namespace UnderstoodDotOrg.Domain.Membership
                 .FirstOrDefault();
             //}
 
-            return trimFields(child);
+			if (child != null)
+			{
+				child = trimFields(child);
+			}
+
+			return child;
         }
 
         public void Dispose()
