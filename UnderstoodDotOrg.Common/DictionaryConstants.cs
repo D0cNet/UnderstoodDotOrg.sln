@@ -529,6 +529,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string CommentErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Please enter a comment above.");
+            }
+        }
+
         public static string FirstNameErrorMessage
         {
             get

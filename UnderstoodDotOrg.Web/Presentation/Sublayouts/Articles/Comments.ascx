@@ -37,11 +37,12 @@
                                     </p>
                                 </div>
                                 <div class="comment-actions">
-                                    <asp:LinkButton CssClass="comment-reply" OnClick="ReplyButton_Click" ID="ReplyButton" runat="server"><i class="icon-comment-reply"></i>Reply</asp:LinkButton>
+                                    <a href="javascript:void" class="comment-reply" onclick="replyfocus();" id="ReplyButton"><i class="icon-comment-reply"></i>Reply</a>
                                     <asp:LinkButton OnClick="LikeButton_Click" ID="LikeButton" CommandArgument='<%# Item.CommentId + "&" + Item.CommentContentTypeId %>' class="comment-like" runat="server"><i class="icon-comment-like"></i>This Helped</asp:LinkButton>
                                     <asp:LinkButton CssClass="comment-flag" CommandArgument='<%# Item.CommentId %>' OnClick="FlagButton_Click" ID="FlagButton" runat="server">
                                         <i class="icon-comment-flag"></i>Report as inappropriate</asp:LinkButton>
                                     <!--<a class="comment-flag" href="REPLACE"><i class="icon-comment-flag"></i>Report as inappropriate</--a>-->
+
                                 </div>
                             </div>
                         </ItemTemplate>
@@ -56,6 +57,7 @@
                     </div>
                     <div class="comment-form">
                         <textarea name="comment-form-reply" class="comment-form-reply uniform" id="CommentEntryTextField" placeholder="Add your comment..." runat="server"></textarea>
+                        <asp:RequiredFieldValidator ID="valComment" runat="server" ControlToValidate="CommentEntryTextField" CssClass="validationerror"></asp:RequiredFieldValidator>
                         <%--<asp:TextBox CssClass="comment-form-reply" ID="CommentEntryTextField" runat="server" />--%>
                         <asp:Button ID="SubmitButton" OnClick="SubmitButton_Click" class="button" runat="server" />
                         <div class="clearfix"></div>
@@ -69,5 +71,10 @@
         </div>
     </div>
     <!-- .row -->
-</div><!-- .container -->
-
+</div>
+<!-- .container -->
+<script type="text/javascript">
+    function replyfocus() {
+        $('#<%=CommentEntryTextField.ClientID %>').focus();
+    }
+</script>

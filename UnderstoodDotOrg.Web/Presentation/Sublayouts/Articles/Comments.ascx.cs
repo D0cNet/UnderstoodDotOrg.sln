@@ -69,6 +69,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             // TODO: refactor so pages all inherit a shared template item type
             var fieldBlogId = currentItem.Fields[Constants.TelligentFieldNames.BlogId];
             var fieldBlogPostId = currentItem.Fields[Constants.TelligentFieldNames.BlogPostId];
+            valComment.ErrorMessage = DictionaryConstants.CommentErrorMessage;
 
             if (fieldBlogId == null || fieldBlogPostId == null)
             {
