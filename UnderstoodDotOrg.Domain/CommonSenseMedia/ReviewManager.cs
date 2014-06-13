@@ -100,14 +100,14 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
                 mappedReview["description"] = Review.Description;
             }
 
-            if (mappedReview["what parents need to know"] != null && !string.IsNullOrEmpty(Review.WhatKidsCanLearn))
+            if (mappedReview["what parents need to know"] != null && !string.IsNullOrEmpty(Review.ParentsNeedToKnow))
             {
-                mappedReview["what parents need to know"] = Review.WhatKidsCanLearn;
+                mappedReview["what parents need to know"] = Review.ParentsNeedToKnow;
             }
 
-            if (mappedReview["what kids can learn"] != null && !string.IsNullOrEmpty(Review.ParentsNeedToKnow))
+            if (mappedReview["what kids can learn"] != null && !string.IsNullOrEmpty(Review.WhatKidsCanLearn))
             {
-                mappedReview["what kids can learn"] = Review.ParentsNeedToKnow;
+                mappedReview["what kids can learn"] = Review.WhatKidsCanLearn;
             }
 
             if (mappedReview["any good"] != null && !string.IsNullOrEmpty(Review.AnyGood))

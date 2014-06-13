@@ -40,7 +40,7 @@ namespace UnderstoodDotOrg.Web.Presentation
 
             int count = 0;
             XmlReader reader = XmlReader.Create(URL);
-            while (reader.ReadToFollowing("entry"))
+            while (reader.ReadToFollowing("entry") && count < 3)
             {
                 if (reader.NodeType == XmlNodeType.Element)
                 {
