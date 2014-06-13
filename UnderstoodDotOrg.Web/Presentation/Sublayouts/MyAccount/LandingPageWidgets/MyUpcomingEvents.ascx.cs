@@ -39,7 +39,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
                 EventModel stubEvent = new EventModel();
                 stubEvent.Title = eventItem.EventHeading.Rendered;
                 stubEvent.TitleUrl = eventItem.InnerItem.GetUrl();
-                stubEvent.Type = CommunityHelper.DetermineItemType(eventItem.InnerItem);
+                stubEvent.Type = eventItem.GetEventType();
                 stubEvent.TypeUrl = hypEventsTab.NavigateUrl;
                 stubEvent.Date = eventItem.EventStartDate.DateTime.ToShortDateString();
                 stubEvent.Time = eventItem.EventStartDate.DateTime.ToShortTimeString();

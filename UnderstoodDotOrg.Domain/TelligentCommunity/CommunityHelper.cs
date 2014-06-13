@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Net;
@@ -13,6 +14,8 @@ using Sitecore.Links;
 using System.Text.RegularExpressions;
 using System.Threading;
 using UnderstoodDotOrg.Domain.Understood.Activity;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 
 namespace UnderstoodDotOrg.Domain.TelligentCommunity
 {
@@ -1173,17 +1176,17 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return notificationList;
         }
 
-        public static List<Comment> GetAllCommentsOnItem(Sitecore.Data.Items.Item item)
+        public static int GetTotalComments(Sitecore.Data.Items.Item item)
         {
-            List<Comment> comments = new List<Comment>();
+            int totalComments = 0;
             if (item.Fields["BlogId"] != null && item.Fields["BlogPostId"] != null)
             {
-                comments = CommunityHelper.ReadComments(
+                totalComments = CommunityHelper.GetTotalComments(
                                 item.Fields["BlogId"].Value,
                                 item.Fields["BlogPostId"].Value);
             }
 
-            return comments;
+            return totalComments;
         }
 
         public static List<FavoritesModel> GetFavorites(Guid username)
@@ -1192,37 +1195,38 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
             ActivityLog log = new ActivityLog(username, Constants.UserActivity_Values.Favorited);
 
-            foreach (ActivityItem item in log.Activities)
+            foreach (ActivityItem ai in log.Activities)
             {
-                if ((item != null) && (Sitecore.Context.Database.GetItem(item.ContentId) != null))
+                Sitecore.Data.Items.Item item = Sitecore.Context.Database.GetItem(ai.ContentId);
+                if (item != null)
                 {
-                    FavoritesModel favorite = new FavoritesModel();
-                    var sitecoreItem = Sitecore.Context.Database.GetItem(item.ContentId);
-                    favorite.Type = DetermineItemType(sitecoreItem);
-                    favorite.Title = sitecoreItem.DisplayName.ToString();
-                    favorite.Url = sitecoreItem.GetUrl();
-                    favorite.ContentId = item.ContentId;
-                    favorite.ReplyCount = GetAllCommentsOnItem(sitecoreItem).Count.ToString();
-                    favoritesList.Add(favorite);
+                    ContentPageItem contentPage = item;
+                    favoritesList.Add(new FavoritesModel
+                    {
+                        Title = contentPage.PageTitle,
+                        Url = item.GetUrl(),
+                        ContentId = ai.ContentId,
+                        ReplyCount = GetTotalComments(item).ToString(),
+                        Type = GetContentType(item)
+                    });
                 }
             }
 
             return favoritesList;
         }
 
-        public static string DetermineItemType(Sitecore.Data.Items.Item item)
+        private static string GetContentType(Sitecore.Data.Items.Item item)
         {
-            string templateId = item.TemplateID.ToString();
-            string itemType = item.TemplateName;
-            if (item.InheritsTemplate(Constants.TemplateIDs.DefaultArticlePage))
+            if (item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
             {
-                itemType = "Article";
+                return ((DefaultArticlePageItem)item).GetArticleType();
             }
-            if (Constants.TemplateIDs.Dictionary.ContainsKey(templateId))
+            else if (item.InheritsTemplate(BaseEventDetailPageItem.TemplateId))
             {
-                itemType = Constants.TemplateIDs.Dictionary[templateId];
+                return ((BaseEventDetailPageItem)item).GetEventType();
             }
-            return itemType;
+
+            return String.Empty;
         }
 
         public static List<Comment> ListUserComments(string username)
