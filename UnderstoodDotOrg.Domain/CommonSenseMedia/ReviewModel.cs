@@ -113,7 +113,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// <summary>
         /// CSV of Categories to lookup and relate
         /// </summary>
-        public string Categories { get; set; }
+        public string Category { get; set; }
 
         /// <summary>
         /// CSV of Platforms to lookup and relate

@@ -441,5 +441,15 @@ namespace UnderstoodDotOrg.Domain.Importer
             publisher.Options.RootItem = item;
             publisher.Publish();
         }
+
+        public static string GetCategory(string category)
+        {
+            ChildList categories = Sitecore.Context.Database.GetItem("{8DE67A64-0E64-47A5-87FD-5096F3979F55}").Children;
+
+            if (category == "1")
+                return categories[0].ID.ToString();
+            else
+                return categories[1].ID.ToString();
+        }
     }
 }

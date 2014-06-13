@@ -20,19 +20,26 @@ namespace UnderstoodDotOrg.Web.Presentation
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=app&special_needs=1");
-            //ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=game&special_needs=1");
-            //ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1");
+            int totalEntries = 0;
+
+            XmlTextReader apps = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=app&special_needs=1");
+            XmlTextReader games = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=game&special_needs=1");
+            XmlTextReader websites = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1");
+
+            totalEntries += ImportCategory(apps);
+            totalEntries += ImportCategory(games);
+            totalEntries += ImportCategory(websites);
+
+            litCount.Text = "Completed "+totalEntries.ToString()+" total imports.";
         }
 
-        public void ImportCategory(string URL)
+        public int ImportCategory(XmlTextReader reader)
         {
             ReviewManager reviewManager = new ReviewManager();
             bool insideEntry = false;
 
-            XmlReader reader = XmlReader.Create(URL);
             int count = 0;
-            while (reader.ReadToFollowing("entry") && count < 3)
+            while (reader.ReadToFollowing("entry"))
             {
                 if (reader.NodeType == XmlNodeType.Element)
                 {
@@ -178,9 +185,9 @@ namespace UnderstoodDotOrg.Web.Presentation
 
                         if (reader.Name == "csm:slider")
                         {
-                            newItem.TargetGrade = reader.GetAttribute("target_age");
-                            newItem.OffGrade = reader.GetAttribute("off_age");
-                            newItem.OnGrade = reader.GetAttribute("on_age");
+                            newItem.TargetGrade = ResolveGrade(reader.GetAttribute("target_age"));
+                            newItem.OffGrade = ResolveGrade(reader.GetAttribute("off_age"));
+                            newItem.OnGrade = ResolveGrade(reader.GetAttribute("on_age"));
 
                             reader.ReadToFollowing("csm:parents_need_to_know");
                         }
@@ -263,6 +270,7 @@ namespace UnderstoodDotOrg.Web.Presentation
 
                         if (reader.Name == "csm:special_needs")
                         {
+                            newItem.Category = reader.GetAttribute("assistive");
                             reader.ReadToDescendant("csm:category");
                             int depth = reader.Depth;
                             if (reader.Name == "csm:category")
@@ -283,7 +291,21 @@ namespace UnderstoodDotOrg.Web.Presentation
                 }
             }
 
-            litCount.Text = "Completed " + count.ToString() + " entries.";
+            return count;
+        }
+
+        private string ResolveGrade(string age)
+        {
+            int kidAge = Int32.Parse(age);
+
+            if (kidAge >= 2 && kidAge <= 4)
+                return "0";
+            else if (kidAge < 17)
+                return (kidAge - 5).ToString();
+            else if (kidAge <= 17 && kidAge >= 18)
+                return "12";
+
+            return "0";
         }
 
         public static void InsertToDB(string name, string value, string csmId)
