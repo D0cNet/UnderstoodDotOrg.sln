@@ -276,7 +276,7 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// <returns>Returns GUID of the image that was added to Sitecore</returns>
         public static MediaItem addMedia(ReviewImageModel image)
         {
-            return addMedia(image.URL, image.Name, image.AltText);
+            return addMedia(image.URL, removePunctuation(image.Name), image.AltText);
         }
 
         /// <summary>
@@ -290,7 +290,9 @@ namespace UnderstoodDotOrg.Domain.Importer
 
             foreach (var item in images)
             {
-                ret.Add(addMedia(item).ID.ToString());
+                MediaItem temp = addMedia(item);
+                if(temp != null)
+                    ret.Add(temp.ID.ToString());
             }
 
             return string.Join("|", ret.ToArray());
@@ -314,7 +316,7 @@ namespace UnderstoodDotOrg.Domain.Importer
                     options.Database = Sitecore.Configuration.Factory.GetDatabase("master");
                     options.Language = Sitecore.Globalization.Language.Parse(Sitecore.Configuration.Settings.DefaultLanguage);
                     options.Versioned = false;
-                    Item mediaFolder = Sitecore.Context.Database.GetItem("{7EEDCF55-DFC8-4BF1-8AD2-672B18E46763}");
+                    Item mediaFolder = Sitecore.Context.Database.GetItem("{96939AB5-F4A2-4C94-92C2-236B2CE44332}");
                     options.Destination = string.Format("{0}/{1}", mediaFolder.Paths.FullPath, Name);
                     options.FileBased = Sitecore.Configuration.Settings.Media.UploadAsFiles;
 
@@ -418,7 +420,7 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// <returns>string with invalid characters replaced</returns>
         public static string removePunctuation(string s)
         {
-            return Regex.Replace(s, @"[^\w\.@-]", " ");
+            return Regex.Replace(s, @"[^a-zA-Z0-9]", " ").Trim();
         }
 
         public static string removeCertainCharacters(string s)
