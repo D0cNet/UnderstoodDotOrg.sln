@@ -314,7 +314,7 @@ namespace UnderstoodDotOrg.Domain.Importer
                     options.Database = Sitecore.Configuration.Factory.GetDatabase("master");
                     options.Language = Sitecore.Globalization.Language.Parse(Sitecore.Configuration.Settings.DefaultLanguage);
                     options.Versioned = false;
-                    Item mediaFolder = Sitecore.Context.Database.GetItem("{FCADFDD3-CD28-48D8-8174-4E34A7ACAD30}");
+                    Item mediaFolder = Sitecore.Context.Database.GetItem("{7EEDCF55-DFC8-4BF1-8AD2-672B18E46763}");
                     options.Destination = string.Format("{0}/{1}", mediaFolder.Paths.FullPath, Name);
                     options.FileBased = Sitecore.Configuration.Settings.Media.UploadAsFiles;
 
