@@ -120,11 +120,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 
 			if (rbLanguageSpanish.Checked)
 			{
-				preferredLanguage = new Guid("{32819E5E-8A88-4005-9B68-CE93807A9D0F}");
+				preferredLanguage = Constants.Language_Spanish ;
 			}
 			else
 			{
-				preferredLanguage = new Guid("{AF584191-45C9-4201-8740-5409F4CF8BDD}");
+                preferredLanguage = Constants.Language_English_US; ;
 			}
 
             Member member = new Member
@@ -141,6 +141,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 			if (member.Children.Count > 0)
 			{
 				mm.AddUnauthorizedMember(member);
+                mm.UpdateMember_ExtendedProperties(member); //bg: Hereya go joe.
 			}
 			
 			BaseReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { PreferredLanguage = new Guid(), ToEmail = member.Email, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday" });

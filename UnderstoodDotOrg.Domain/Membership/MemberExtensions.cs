@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Domain.Understood.Quiz;
+using System.Data.Spatial; 
 
 namespace UnderstoodDotOrg.Domain.Membership
 {

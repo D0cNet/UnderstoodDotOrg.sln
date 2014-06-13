@@ -78,9 +78,14 @@ namespace UnderstoodDotOrg.Common
         public static string SessionPreviousUrl { get { return "_understood_url"; } }
         #endregion
 
+        #region Language
+        public static Guid Language_English_US { get { return Guid.Parse("AF584191-45C9-4201-8740-5409F4CF8BDD"); } }
+        public static Guid Language_Spanish { get { return Guid.Parse("32819E5E-8A88-4005-9B68-CE93807A9D0F"); } }
+        
+        #endregion
 
 
-#region Unauthenticated Member Values
+        #region Unauthenticated Member Values
         public static string UnauthenticatedMember_ScreeName { get { return "c5uSwuWruy2Q5NADejus"; } }
         public static string UnauthenticatedMember_Password{ get { return "4Sf9suVucReD373HDS"; } }
         public static string UnauthenticatedMember_FirstName { get { return "Unauthenticated"; } }

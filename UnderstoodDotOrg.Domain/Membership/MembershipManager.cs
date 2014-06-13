@@ -12,6 +12,8 @@ using MembershipProvider = System.Web.Security.Membership;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using UnderstoodDotOrg.Domain.Understood.Quiz;
+using System.Data.Spatial; 
+
 
 namespace UnderstoodDotOrg.Domain.Membership
 {
@@ -979,7 +981,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         /// </summary>
         /// <param name="member">The Website Member that we want to update the databse with.</param>
         /// <returns></returns>
-        private bool UpdateMember_ExtendedProperties(Member member)
+        public bool UpdateMember_ExtendedProperties(Member member)
         {
             bool success = false;
             try

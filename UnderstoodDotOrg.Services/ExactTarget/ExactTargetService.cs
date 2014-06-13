@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Domain.ExactTarget;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Personalization;
 using UnderstoodDotOrg.Services.ExactTarget.etAPI;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 
 namespace UnderstoodDotOrg.Services.ExactTarget
@@ -270,7 +271,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -330,7 +331,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -394,7 +395,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -458,7 +459,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -590,7 +591,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US ) 
 			{
 				emailTemplateID = 0;
 			}
@@ -656,7 +657,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -714,7 +715,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -783,7 +784,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -888,7 +889,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -951,7 +952,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1020,7 +1021,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1083,7 +1084,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1155,7 +1156,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1238,7 +1239,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1305,7 +1306,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1387,7 +1388,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1450,7 +1451,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1525,7 +1526,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1593,7 +1594,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1664,7 +1665,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1751,7 +1752,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1822,7 +1823,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -1925,7 +1926,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -2004,7 +2005,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -2184,7 +2185,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -2276,7 +2277,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -2336,7 +2337,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
@@ -2396,7 +2397,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			Guid preferredLanguage = request.PreferredLanguage;
 			int emailTemplateID = 0;
-			if (preferredLanguage.Equals("{32819E5E-8A88-4005-9B68-CE93807A9D0F}"))
+			if (preferredLanguage ==  Constants.Language_English_US)
 			{
 				emailTemplateID = 0;
 			}
