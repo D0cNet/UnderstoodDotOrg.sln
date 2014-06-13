@@ -14,28 +14,32 @@
         <div class="col col-14 centered">
             <h1>Sign In</h1>
             <a class="fb-sign-in" href="REPLACE">
-                  <sc:image id="scFacebookSigninImage" runat="server" field="FacebookSigninImage" /> 
+                <sc:Image ID="scFacebookSigninImage" runat="server" Field="FacebookSigninImage" />
             </a>
             <div id="fb-root"></div>
             <p>
                 <%--Or sign in with your email address--%>
-                <sc:Text id="directions" runat="server" Field="Directions" ></sc:Text>
+                <sc:Text ID="directions" runat="server" Field="Directions"></sc:Text>
             </p>
             <label>
                 <%--<input type="text" placeholder="Enter email address"> --%>
-                 <asp:TextBox ID="uxEmailAddress" runat="server"></asp:TextBox>
+                <asp:TextBox ID="uxEmailAddress" runat="server"></asp:TextBox>
             </label>
             <label>
                 <%--<input type="text" placeholder="Enter Password" >--%>
                 <asp:TextBox ID="uxPassword" runat="server" TextMode="Password"></asp:TextBox>
             </label>
+
+            <div>
+                <span class="validationerror">
+                    <asp:Literal ID="uxError" runat="server"></asp:Literal>
+                </span>
+            </div>
             <%--<button class="button">Sign In</button>--%>
             <asp:Button CssClass="button" ID="uxSignIn" runat="server" OnClick="uxSignIn_Click" />
             <%--<a class="sign-in-forgot-password" href="REPLACE">Forgot Your Password?</a>--%>
             <asp:HyperLink runat="server" ID="uxForgotPassword" CssClass="sign-in-forgot-password">Forgot Your Password?</asp:HyperLink>
-			<div style="text-align: center; width: 100%;">
-					<asp:Literal ID="uxError" runat="server"></asp:Literal>
-			</div>
+
         </div>
     </div>
 </div>

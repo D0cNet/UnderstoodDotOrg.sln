@@ -141,6 +141,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 { }
 
             }
+
+            //set validation
+            Page.ClientScript.RegisterExpandoAttribute(valDiagnosis.ClientID, "groupName", "diagnosis");
+            valDiagnosis.ErrorMessage = "Please select at least one diagnosis";
+
+            valIEP.ErrorMessage = "Please select your child's IEP status";
+            val504.ErrorMessage = "Please select your child's Section 504 status";
         }
 
         protected void DoNextStep()

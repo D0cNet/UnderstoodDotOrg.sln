@@ -55,9 +55,7 @@
 </div>
 
 <script>
-    ValidateRadioButtons = function (sender, args) {
-        args.IsValid = $("input[name*=" + sender.groupName + "]:checked").length > 0;
-    }
+
 </script>
 
 <div class="container profile-questions flush">

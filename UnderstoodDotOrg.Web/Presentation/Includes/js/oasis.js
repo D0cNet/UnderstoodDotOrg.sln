@@ -296,6 +296,10 @@ validate = function () {
     return isValid;
 }
 
+ValidateRadioButtons = function (sender, args) {
+    args.IsValid = $("input[name*=" + sender.groupName + "]:checked").length > 0;
+}
+
 $(document).ready(function () {
     $(".sign-up-inputs input").change(validate);
 });

@@ -49,6 +49,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.Literal uxFormTitle;
         
         /// <summary>
+        /// valDiagnosis control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator valDiagnosis;
+        
+        /// <summary>
         /// Text5 control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.DropDownList uxIEPStatus;
         
         /// <summary>
+        /// valIEP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valIEP;
+        
+        /// <summary>
         /// ux504question control.
         /// </summary>
         /// <remarks>
@@ -119,6 +137,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ux504Status;
+        
+        /// <summary>
+        /// val504 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator val504;
         
         /// <summary>
         /// NextButton control.

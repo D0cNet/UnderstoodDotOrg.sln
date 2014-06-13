@@ -182,6 +182,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             //fill in nickname
             ScreenNameTextBox.Text = singleChild.Nickname;
+
+            //fill in Eval status
+            if (singleChild.EvaluationStatus != null && singleChild.EvaluationStatus != Guid.Empty)
+            {
+                switch (singleChild.EvaluationStatus.ToString().ToUpper())
+                {
+                    case Constants.ChildEvaluation.StatusEvaluationYes:
+                        q2a1.Checked = true;
+                        break;
+                    case Constants.ChildEvaluation.StatusEvaluationInProgress:
+                        q2a3.Checked = true;
+                        break;
+                    case Constants.ChildEvaluation.StatusEvaluationNo:
+                    default:
+                        q2a2.Checked = true;
+                        break;
+                }
+            }
         }
 
         protected void SetupChildAdd()

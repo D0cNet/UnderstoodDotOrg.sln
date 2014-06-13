@@ -8,10 +8,10 @@
                 <div class="column-left">
                     <!-- BEGIN PARTIAL: profile-questions-header-left -->
                     <h1>
-                        <sc:text id="Text1" field="Header Title" runat="server" />
+                        <sc:Text ID="Text1" Field="Header Title" runat="server" />
                     </h1>
                     <p class="subtitle">
-                        <sc:text id="Text2" field="Header Text" runat="server" />
+                        <sc:Text ID="Text2" Field="Header Text" runat="server" />
                     </p>
 
                     <!-- END PARTIAL: profile-questions-header-left -->
@@ -20,7 +20,7 @@
                     <!-- BEGIN PARTIAL: profile-questions-header-right -->
                     <div class="progress-bar-wrapper">
                         <div class="progress-header">
-                            <sc:text id="Text3" field="Header Progress Bar Text" runat="server" />
+                            <sc:Text ID="Text3" Field="Header Progress Bar Text" runat="server" />
                         </div>
                         <div class="progress-bar step-2b">
                             <span class="step-1 step">1</span>
@@ -65,11 +65,13 @@
                 </h2>
 
                 <div class="question-wrapper clearfix difficulties-question">
+                    <asp:CustomValidator ID="valDiagnosis" runat="server" ClientValidationFunction="ValidateRadioButtons" CssClass="validationerror"></asp:CustomValidator>
+
                     <h3 class="question">
-                        <sc:text id="Text5" field="Learning Disorders Question Title" runat="server" />
+                        <sc:Text ID="Text5" Field="Learning Disorders Question Title" runat="server" />
                     </h3>
                     <p class="question-description">
-                        <sc:text id="Text6" field="Learning Disorders Question Text" runat="server" />
+                        <sc:Text ID="Text6" Field="Learning Disorders Question Text" runat="server" />
 
                     </p>
                     <div class="checkboxes-wrapper">
@@ -219,7 +221,7 @@
                         <!-- .checkboxes-left -->
 
                         <div class="column-right">
-                            <asp:ListView ID="uxRightList" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildDiagnosisItem"  OnItemDataBound="ListItemDataBound">
+                            <asp:ListView ID="uxRightList" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildDiagnosisItem" OnItemDataBound="ListItemDataBound">
                                 <ItemTemplate>
                                     <div class="checkbox-wrapper">
                                         <label>
@@ -247,7 +249,7 @@
                                 </ItemTemplate>
                             </asp:ListView>
 
-                           <%-- <div class="checkbox-wrapper">
+                            <%-- <div class="checkbox-wrapper">
                                 <label>
                                     <input type="checkbox" name="q1a8">
                                     <span class="description">
@@ -414,7 +416,7 @@
                 <div class="question-wrapper iep-question select-question clearfix">
                     <p class="question-inline">
                         <%--<sc:text id="Text26" field="IEP Question Title" runat="server" />--%>
-                        <asp:Literal id="uxIEPquestion" runat="server"></asp:Literal>
+                        <asp:Literal ID="uxIEPquestion" runat="server"></asp:Literal>
                     </p>
                     <div class="select-wrapper clearfix">
                         <div class="select-inner-wrapper clearfix">
@@ -442,10 +444,12 @@
                             <span>
                                 <a href="REPLACE" class="icon-wrapper popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></a>
                             </span>
+
                             <div class="iep-tooltip popover-container">
                                 <p><span class="title">lorem ipsum soged</span> Et beatae itaque quod est voluptatem eligendi. necessitatibus harum consectetur veritatis illum iste autem saepe. ducimus quasi eaque tempore qui natus fugiat id qui sit et ut</p>
                             </div>
                         </div>
+                        <asp:RequiredFieldValidator ID="valIEP" runat="server" ControlToValidate="uxIEPStatus" InitialValue="" CssClass="validationerror"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <!-- .question-wrapper -->
@@ -482,11 +486,12 @@
                                 <p><span class="title">lorem ipsum soged</span> Unde non repudiandae eum nobis blanditiis doloribus quae ea. voluptatem voluptas a qui eligendi et qui perferendis. nihil aut quo molestiae omnis sunt ducimus cum illo beatae accusamus. nostrum voluptates error numquam omnis eligendi minima aperiam. aperiam quis quo deserunt quae occaecati ut dolores autem et esse</p>
                             </div>
                         </div>
+                        <asp:RequiredFieldValidator ID="val504" runat="server" ControlToValidate="ux504Status" InitialValue="" CssClass="validationerror"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <!-- .question-wrapper -->
 
-                <div class="form-actions"> 
+                <div class="form-actions">
                     <asp:Button ID="NextButton" CssClass="button" runat="server" OnClick="NextButton_Click" />
                     <!--<input class="button" type="submit" value="Next" runat="server" />">-->
                 </div>

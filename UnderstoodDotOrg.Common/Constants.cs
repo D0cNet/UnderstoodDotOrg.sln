@@ -586,15 +586,15 @@ namespace UnderstoodDotOrg.Common
 
         public static class ChildEvaluation
         {
-            public static string Status504InProgress = "{55F38A58-7506-454E-95E5-0ECE22A3B99C}";
-            public static string Status504No = "{5754554A-D588-4EF9-8F9C-1E1DE66446F8}";
-            public static string Status504Yes = "{82102C70-B526-47FB-BD99-5F71A33C3C87}";
-            public static string StatusEvaluationInProgress = "{F6849A63-C841-4D79-BF53-AA68DA6D6EEB}";
-            public static string StatusEvaluationNo = "{992AB3CB-BAE7-47C6-B040-B674DC7FD29C}";
-            public static string StatusEvaluationYes = "{990FB117-F12E-4E3C-898B-8A9EB217FCFD}";
-            public static string StatusIEPInProgress = "{73842143-B6CA-4B6A-A94F-BA59C475A6D7}";
-            public static string StatusIEPNo = "{80CB7C44-F570-4991-B395-6A634C2DE1D5}";
-            public static string StatusIEPYes = "{FBE464C6-0E52-45C5-A1E9-660CB3C6B688}";
+            public const string Status504InProgress = "{55F38A58-7506-454E-95E5-0ECE22A3B99C}";
+            public const string Status504No = "{5754554A-D588-4EF9-8F9C-1E1DE66446F8}";
+            public const string Status504Yes = "{82102C70-B526-47FB-BD99-5F71A33C3C87}";
+            public const string StatusEvaluationInProgress = "F6849A63-C841-4D79-BF53-AA68DA6D6EEB";
+            public const string StatusEvaluationNo = "992AB3CB-BAE7-47C6-B040-B674DC7FD29C";
+            public const string StatusEvaluationYes = "990FB117-F12E-4E3C-898B-8A9EB217FCFD";
+            public const string StatusIEPInProgress = "{73842143-B6CA-4B6A-A94F-BA59C475A6D7}";
+            public const string StatusIEPNo = "{80CB7C44-F570-4991-B395-6A634C2DE1D5}";
+            public const string StatusIEPYes = "{FBE464C6-0E52-45C5-A1E9-660CB3C6B688}";
         }
 
         public static class Events
