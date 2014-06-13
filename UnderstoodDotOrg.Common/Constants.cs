@@ -164,6 +164,10 @@ namespace UnderstoodDotOrg.Common
         {
             get { return new Guid("{D65B262D-954C-4D3A-8D89-5E52FBA16363}"); }
         }
+        public static Guid ArticleTypesContainer
+        {
+            get { return new Guid("{1AC85469-381C-457F-8728-CFB1FE05169A}"); }
+        }
 
         #endregion
 

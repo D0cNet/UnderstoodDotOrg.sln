@@ -42,7 +42,7 @@ namespace UnderstoodDotOrg.Web.Handlers
                             Url = i.GetUrl(),
                             Thumbnail = i.GetArticleThumbnailUrl(230, 129),
                             Blurb = Common.Helpers.TextHelper.TruncateText(i.ContentPage.PageSummary.Rendered, 150),
-                            Type = "" // TODO: determine type - lookup to sitecore
+                            Type = i.GetArticleType()
                         };
 
             results.Articles = query.ToList();

@@ -285,6 +285,7 @@
     <Compile Include="SitecoreCIG\Poses\Folders\WidgetFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WidgetFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AdvocacyLinkItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\ArticleTypeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AuthenticationNavigationLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\AuthenticationNavigationLinkItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ChildDemographicItem.base.cs" />
