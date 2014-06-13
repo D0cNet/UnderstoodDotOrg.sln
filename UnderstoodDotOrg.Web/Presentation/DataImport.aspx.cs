@@ -22,23 +22,24 @@ namespace UnderstoodDotOrg.Web.Presentation
         {
             int totalEntries = 0;
 
-            XmlTextReader apps = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=app&special_needs=1");
-            XmlTextReader games = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=game&special_needs=1");
-            XmlTextReader websites = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1");
+            //XmlTextReader apps = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=app&special_needs=1");
+            //XmlTextReader games = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=game&special_needs=1");
+            //XmlTextReader websites = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1");
 
-            totalEntries += ImportCategory(apps);
-            totalEntries += ImportCategory(games);
-            totalEntries += ImportCategory(websites);
+            totalEntries += ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=app&special_needs=1");
+            //totalEntries += ImportCategory(games);
+            //totalEntries += ImportCategory(websites);
 
             litCount.Text = "Completed "+totalEntries.ToString()+" total imports.";
         }
 
-        public int ImportCategory(XmlTextReader reader)
+        public int ImportCategory(string URL)
         {
             ReviewManager reviewManager = new ReviewManager();
             bool insideEntry = false;
 
             int count = 0;
+            XmlReader reader = XmlReader.Create(URL);
             while (reader.ReadToFollowing("entry"))
             {
                 if (reader.NodeType == XmlNodeType.Element)
