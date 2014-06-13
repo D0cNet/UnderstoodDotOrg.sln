@@ -22,6 +22,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 
@@ -896,6 +897,43 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 return Shuffle(results.AsEnumerable(), r)
                             .Select(i => new ExpertDetailPageItem(i.GetItem()))
+                            .Where(i => i.InnerItem != null);
+            }
+        }
+
+        public static IEnumerable<AssistiveToolsReviewPageItem> GetAssitiveToolsReviewPages(Guid? issue, Guid? grade, Guid? technology, string searchTerm, int page)
+        {
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+
+            using (var context = index.CreateSearchContext())
+            {
+                var query = GetCurrentCultureQueryable<AssistiveToolReview>(context)
+                                .Filter(i => i.Language == Sitecore.Context.Language.Name
+                                        && i.Path.Contains("/sitecore/content/home/"))
+                                .Filter(i => i.TemplateId == ID.Parse(AssistiveToolsReviewPageItem.TemplateId));
+
+                // TODO: modify query based on guid values
+
+                if (!string.IsNullOrEmpty(searchTerm))
+                {
+                    // TODO: search against specific fields of content
+                    query = query.Where(i => i.Content.Contains(searchTerm));
+                }
+
+                var total = query.Take(1).GetResults().TotalSearchResults;
+
+                int pageSize = Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE;
+                int offset = (page - 1) * pageSize;
+
+                if (page > 1)
+                {
+                    query = query.Skip(offset);
+                }
+                
+                // Execute solr query
+                var results = query.Take(pageSize).ToList();
+
+                return results.Select(i => new AssistiveToolsReviewPageItem(i.GetItem()))
                             .Where(i => i.InnerItem != null);
             }
         }

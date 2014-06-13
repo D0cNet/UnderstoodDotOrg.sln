@@ -179,6 +179,7 @@
     <Compile Include="Salesforce\SalesforceSaveResult.cs" />
     <Compile Include="Salesforce\SforceService.cs" />
     <Compile Include="Search\Article.cs" />
+    <Compile Include="Search\AssistiveToolReview.cs" />
     <Compile Include="Search\BehaviorAdvice.cs" />
     <Compile Include="Search\EventPage.cs" />
     <Compile Include="Search\Expert.cs" />
@@ -536,6 +537,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsReviewPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsSearchResultsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsSearchResultsPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\AssistiveToolsSearchResultsPageItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\ReviewData\AssistiveToolsCategoryItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\ReviewData\AssistiveToolsGenreItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\AssisitiveToolsPages\ReviewData\AssistiveToolsGradeRangeItem.base.cs" />
