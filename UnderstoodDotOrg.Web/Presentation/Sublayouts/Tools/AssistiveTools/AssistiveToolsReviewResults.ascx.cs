@@ -42,7 +42,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             }
 
             //TEMPORARY PRE-SEARCH DEVELOPMENT ONLY
-            searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(Guid.Empty, Guid.Empty, Guid.Empty, string.Empty, 1);
+            searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(Guid.Empty, Guid.Empty, Guid.Empty, keyword, 1);
 
             var categoryResults = searchResults
                 .Where(i => i.Category.Item != null && i.Category.Item.IsOfType(AssistiveToolsCategoryItem.TemplateId))
