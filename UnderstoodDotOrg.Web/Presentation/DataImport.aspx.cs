@@ -27,8 +27,8 @@ namespace UnderstoodDotOrg.Web.Presentation
             //XmlTextReader websites = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1");
 
             totalEntries += ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=app&special_needs=1");
-            //totalEntries += ImportCategory(games);
-            //totalEntries += ImportCategory(websites);
+            totalEntries += ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=game&special_needs=1");
+            totalEntries += ImportCategory("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1");
 
             litCount.Text = "Completed "+totalEntries.ToString()+" total imports.";
         }
@@ -40,7 +40,7 @@ namespace UnderstoodDotOrg.Web.Presentation
 
             int count = 0;
             XmlReader reader = XmlReader.Create(URL);
-            while (reader.ReadToFollowing("entry") && count < 3)
+            while (reader.ReadToFollowing("entry"))
             {
                 if (reader.NodeType == XmlNodeType.Element)
                 {
