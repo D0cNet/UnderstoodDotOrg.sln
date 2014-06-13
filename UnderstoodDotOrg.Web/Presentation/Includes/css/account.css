@@ -6981,3 +6981,10 @@
   margin-bottom: 0px;
 }
 
+span.validationerror {
+    color: #de5a02;
+    font-family: Arial, sans-serif;
+    display: inline;
+    font-size: 14px;
+    font-size: 0.875rem;
+}

@@ -34,6 +34,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 index = int.Parse(Request.QueryString[Constants.QueryStrings.Registration.ChildIndex]);
             }
 
+
+
             this.FillChild();
 
             if (!IsPostBack)
@@ -91,6 +93,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             uxSelectGrade.DataValueField = "Value";
             uxSelectGrade.DataBind();
 
+            uxSelectGrade.Items.Insert(0, new ListItem() { Text = "Select Grade", Value = string.Empty, Selected = true });
+
             switch (status)
             {
                 case Constants.QueryStrings.Registration.ModeEdit:
@@ -114,6 +118,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             uxTroubleAreasTitle.Text = Model.TroubleAreasQuestionTitle.Rendered.Replace("$pronoun$", pronoun);
             uxEvaluatedTitle.Text = Model.FormallyEvaluatedQuestionTitle.Rendered.Replace("$pronoun$", pronoun);
+
+            //set validation
+            valGender.ErrorMessage = "Please tell us the gender of your child";
+            Page.ClientScript.RegisterExpandoAttribute(valGender.ClientID, "groupName", uxBoy.GroupName);
+
+            valEvalStatus.ErrorMessage = "Please tell us if your child has been formally evaluated";
+            Page.ClientScript.RegisterExpandoAttribute(valEvalStatus.ClientID, "groupName", q2a1.GroupName);
+
+            valNickname.ErrorMessage = "Please give your child a nickname";
+            valGrade.ErrorMessage = "Please select your child's grade";
         }
 
         private string setPronoun(string gender)
@@ -249,8 +263,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
         protected void SaveSingleChild()
         {
             MembershipManager membershipManager = new MembershipManager();
-            //MembershipManagerProxy membershipManager = new MembershipManagerProxy();
-            if (status == Constants.QueryStrings.Registration.ModeEdit)
+
+            //checking if existing child prevents yellow death screens
+            if (status == Constants.QueryStrings.Registration.ModeEdit || membershipManager.isExistingChild(singleChild.ChildId))
             {
                 membershipManager.UpdateChild(singleChild);
             }
@@ -259,12 +274,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 membershipManager.AddChild(singleChild, this.CurrentMember.MemberId);
             }
         }
-
-        //protected void SaveCompleteMyProfile()
-        //{
-        //    var c = this.registeringUser.Children.FirstOrDefault(x => x.ChildId == singleChild.ChildId);
-        //    c = singleChild;
-        //}
 
         protected void SetRegisteringUser()
         {

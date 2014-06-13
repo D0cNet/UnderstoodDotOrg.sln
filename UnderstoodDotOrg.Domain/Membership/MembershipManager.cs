@@ -1249,5 +1249,18 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             return child;
         }
+
+        public bool isExistingChild(Guid ChildId)
+        {
+            var child = _db.Children.FirstOrDefault(x => x.ChildId == ChildId);
+
+            if (child != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
     }
 }

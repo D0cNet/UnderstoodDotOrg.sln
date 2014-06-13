@@ -85,6 +85,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.RadioButton uxGirl;
         
         /// <summary>
+        /// valGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator valGender;
+        
+        /// <summary>
         /// Text7 control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.DropDownList uxSelectGrade;
         
         /// <summary>
+        /// valGrade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valGrade;
+        
+        /// <summary>
         /// ScreenNameTextBox control.
         /// </summary>
         /// <remarks>
@@ -110,6 +128,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ScreenNameTextBox;
+        
+        /// <summary>
+        /// valNickname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valNickname;
         
         /// <summary>
         /// uxTroubleAreasTitle control.
@@ -164,6 +191,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton q2a3;
+        
+        /// <summary>
+        /// valEvalStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator valEvalStatus;
         
         /// <summary>
         /// uxFamilyCircumstances control.

@@ -54,6 +54,12 @@
     </div>
 </div>
 
+<script>
+    ValidateRadioButtons = function (sender, args) {
+        args.IsValid = $("input[name*=" + sender.groupName + "]:checked").length > 0;
+    }
+</script>
+
 <div class="container profile-questions flush">
     <div class="row">
         <div class="col col-22 offset-1">
@@ -81,6 +87,7 @@
                                 <%= GirlButton %>
                                 <asp:RadioButton ID="uxGirl" runat="server" GroupName="q1a" />
                             </label>
+                            <asp:CustomValidator ID="valGender" runat="server" ClientValidationFunction="ValidateRadioButtons" CssClass="validationerror"></asp:CustomValidator>
                         </div>
 
                         <label class="inline">
@@ -89,6 +96,7 @@
                             </span>
                             <asp:DropDownList ID="uxSelectGrade" runat="server" name="q1b">
                             </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="valGrade" runat="server" ControlToValidate="uxSelectGrade" InitialValue="" CssClass="validationerror"></asp:RequiredFieldValidator>
                         </label>
                     </div>
                 </asp:PlaceHolder>
@@ -102,6 +110,7 @@
                         </span>
                     </h3>
                     <asp:TextBox ID="ScreenNameTextBox" type="textfield" runat="server" />
+                    <asp:RequiredFieldValidator ID="valNickname" runat="server" ControlToValidate="ScreenNameTextBox" CssClass="validationerror"></asp:RequiredFieldValidator>
                 </div>
                 <!-- .question-wrapper -->
 
@@ -154,6 +163,7 @@
                             <%--<input name="q2" value="progress" class="radio-toggle" type="radio">--%>
                             <asp:RadioButton ID="q2a3" runat="server" GroupName="q2" CssClass="radio-toggle" />
                         </label>
+                        <asp:CustomValidator ID="valEvalStatus" runat="server" ClientValidationFunction="ValidateRadioButtons" CssClass="validationerror"></asp:CustomValidator>
                     </div>
                 </div>
                 <!-- .question-wrapper -->
