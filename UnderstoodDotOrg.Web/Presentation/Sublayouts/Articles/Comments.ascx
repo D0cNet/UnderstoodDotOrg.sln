@@ -55,13 +55,15 @@
                     <div class="comment-more-wrapper">
                         <a class="comment-more" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-comment-more"></i></a>
                     </div>
+                    <form>
                     <div class="comment-form">
                         <textarea name="comment-form-reply" class="comment-form-reply uniform" id="CommentEntryTextField" placeholder="Add your comment..." runat="server"></textarea>
-                        <asp:RequiredFieldValidator ID="valComment" runat="server" ControlToValidate="CommentEntryTextField" CssClass="validationerror"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ValidationGroup="vgSubmitButton" ID="valComment" runat="server" ControlToValidate="CommentEntryTextField" CssClass="validationerror"></asp:RequiredFieldValidator>
                         <%--<asp:TextBox CssClass="comment-form-reply" ID="CommentEntryTextField" runat="server" />--%>
-                        <asp:Button ID="SubmitButton" OnClick="SubmitButton_Click" class="button" runat="server" />
+                        <asp:Button ValidationGroup="vgSubmitButton" ID="SubmitButton" OnClick="SubmitButton_Click" class="button" runat="server" />
                         <div class="clearfix"></div>
                     </div>
+                        </form>
                 </div>
 
             </section>

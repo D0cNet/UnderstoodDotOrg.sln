@@ -151,11 +151,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             Console.WriteLine(xml);
         }
 
-        protected void ReplyButton_Click(object sender, EventArgs e)
-        {
-            CommentEntryTextField.Focus();
-        }
-
         protected void LikeButton_Click(object sender, EventArgs e)
         {
             LinkButton btn = (LinkButton)(sender);
