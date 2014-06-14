@@ -375,6 +375,13 @@ namespace UnderstoodDotOrg.Domain.Membership
             return this.GetMember(Guid.Parse(user.ProviderUserKey.ToString()));
         }
 
+        public Member GetMemberByScreenName(string ScreenName)
+        {
+            var memberId = _db.Members.FirstOrDefault(x => x.ScreenName == ScreenName).MemberId;
+
+            return this.GetMember(memberId);
+        }
+
         /// <summary>
         /// Returns ASP.Net MembershipUser object by Member Guid
         /// </summary>
