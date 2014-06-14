@@ -6,7 +6,7 @@
         <img alt="Private Profile" src="/Presentation/Includes/images/icon.sign-in-prompt.lock.png" />
         <h3>This User&#39;s Profile is currently private</h3>
         <h5>Parent profiles are only visible to logged-in members</h5>
-        <h4><a href="REPLACE">Sign in</a> or <a href="REPLACE">Sign up</a> to view more</h4>
+        <h4><asp:Hyperlink ID="uxSignIn" runat="server"></asp:Hyperlink> or <asp:HyperLink ID="uxSignUp" runat="server"></asp:HyperLink> to view more</h4>
     </div>
 </div>
 <!-- END PARTIAL: sign-in-prompt-links -->

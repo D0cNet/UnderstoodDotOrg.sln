@@ -74,7 +74,7 @@
                                 <asp:Repeater ID="rptGroups" runat="server" OnItemDataBound="rptGroups_ItemDataBound">
                                     <ItemTemplate>
                                         <li>
-                                            <asp:HyperLink ID="hypGroup" runat="server">Parents of kids with attention issues</asp:HyperLink><a href="REPLACE">
+                                            <asp:HyperLink ID="hypGroup" runat="server">Parents of kids with attention issues</asp:HyperLink><%--<a href="REPLACE">--%>
                                         </li>
                                     </ItemTemplate>
                                 </asp:Repeater>

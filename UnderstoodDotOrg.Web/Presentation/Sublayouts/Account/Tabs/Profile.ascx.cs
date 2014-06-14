@@ -24,11 +24,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
         {
             var viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
 
-            string userEmail = "";
+            string userScreenName = "";
             
             if (!Request.QueryString[Constants.ACCOUNT_EMAIL].IsNullOrEmpty())
             {
-                userEmail = Request.QueryString[Constants.ACCOUNT_EMAIL];
+                userScreenName = Request.QueryString[Constants.ACCOUNT_EMAIL];
             }
             else
             {
@@ -37,8 +37,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
 
             var membershipManager = new MembershipManager();
             var thisMember = new Member();
-            thisMember = membershipManager.GetMember(userEmail);
-            var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
+            //thisMember = membershipManager.GetMember(userEmail);
+            thisMember = membershipManager.GetMemberByScreenName(userScreenName);
+            //var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
 
             if ((IsUserLoggedIn) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)) || (((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_FRIEND))))
             {

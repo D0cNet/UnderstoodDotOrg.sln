@@ -13,6 +13,7 @@ using Sitecore.Links;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount.PublicAccount;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 {
@@ -24,12 +25,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            uxSignIn.Text = "Sign In";
+            uxSignUp.Text = "Sign Up";
+
+            uxSignUp.NavigateUrl = MyAccountFolderItem.GetSignUpPage();
+            uxSignIn.NavigateUrl = MyAccountFolderItem.GetSignInPage();
+
             viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
             
-            string userEmail = "";
+            string userScreenName = "";
             if (!Request.QueryString[Constants.ACCOUNT_EMAIL].IsNullOrEmpty())
             {
-                userEmail = Request.QueryString[Constants.ACCOUNT_EMAIL];
+                userScreenName = Request.QueryString[Constants.ACCOUNT_EMAIL];
             }
             else
             {
@@ -37,8 +44,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             }
             var membershipManager = new MembershipManager();
             var thisMember = new Member();
-            thisMember = membershipManager.GetMember(userEmail);
-            var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
+            thisMember = membershipManager.GetMemberByScreenName(userScreenName);
+            //var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
             
             if (thisMember.ScreenName != null)
             {

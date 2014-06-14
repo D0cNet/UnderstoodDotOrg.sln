@@ -22,6 +22,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNotSignedIn;
         
         /// <summary>
+        /// uxSignIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink uxSignIn;
+        
+        /// <summary>
+        /// uxSignUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink uxSignUp;
+        
+        /// <summary>
         /// divPrivateProfile control.
         /// </summary>
         /// <remarks>

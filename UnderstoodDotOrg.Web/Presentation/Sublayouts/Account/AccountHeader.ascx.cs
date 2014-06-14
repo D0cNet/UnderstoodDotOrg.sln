@@ -28,18 +28,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
         {
             viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
 
-            string userEmail = "";
+            string userScreenName = "";
             if (!Request.QueryString["account"].IsNullOrEmpty())
             {
-                userEmail = Request.QueryString["account"];
+                userScreenName = Request.QueryString["account"];
             }
             else
             {
                 Response.Redirect(MainsectionItem.GetHomeItem().GetUrl());
             }
 
-            thisMember = membershipManager.GetMember(userEmail);
-            var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
+            thisMember = membershipManager.GetMemberByScreenName(userScreenName);
+            //var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
 
             if (!thisMember.ScreenName.IsNullOrEmpty())
             {
