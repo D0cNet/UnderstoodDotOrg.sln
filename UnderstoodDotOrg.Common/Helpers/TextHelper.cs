@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
+using System.Net;
 using System.Text.RegularExpressions;
-using System;
-using System.Threading.Tasks;
 
 namespace UnderstoodDotOrg.Common.Helpers
 {
-    public class TextHelper
+    public static class TextHelper
     {
         public static string ToTitleCase(string input)
         {
@@ -44,6 +42,16 @@ namespace UnderstoodDotOrg.Common.Helpers
             }
 
             return title;
+        }
+
+        /// <summary>
+        /// Removes HTML and whitespace from a string
+        /// </summary>
+        /// <param name="Source"></param>
+        /// <returns></returns>
+        public static string RemoveHTML(this string Source)
+        {
+            return WebUtility.HtmlDecode(Regex.Replace(Source, "<[^>]*(>|$)", string.Empty)).Trim();
         }
     }
 }
