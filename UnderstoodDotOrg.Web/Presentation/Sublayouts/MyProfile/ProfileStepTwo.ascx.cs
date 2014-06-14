@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.Users;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common.Helpers;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
@@ -240,7 +241,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             }
 
             //save nickname
-            singleChild.Nickname = ScreenNameTextBox.Text;
+            singleChild.Nickname = ScreenNameTextBox.Text.RemoveHTML();
 
             //save eval status
             if (q2a1.Checked)

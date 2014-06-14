@@ -15,6 +15,7 @@ using UnderstoodDotOrg.Services.ExactTarget;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
+using UnderstoodDotOrg.Common.Helpers;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
@@ -252,12 +253,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             //bg: verify that this is working:
             if (mode != Constants.QueryStrings.Registration.ModeEdit)
             {
-                this.registeringUser.ScreenName = ScreenNameTextField.Text;
+                this.registeringUser.ScreenName = ScreenNameTextField.Text.RemoveHTML();
             }
 
             if (!string.IsNullOrEmpty(ZipCodeTextField.Text))
             {
-                this.registeringUser.ZipCode = ZipCodeTextField.Text;
+                this.registeringUser.ZipCode = ZipCodeTextField.Text.RemoveHTML();
             }
 
             var membershipManager = new MembershipManager();

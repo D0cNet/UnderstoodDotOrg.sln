@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common.Helpers;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -75,13 +76,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             string email = string.Empty;
             string password = string.Empty;
             
-            string zip = uxZipCode.Text;
+            string zip = uxZipCode.Text.RemoveHTML();
             bool newsletter = uxNewsletterSignup.Checked;
             bool isFacebookUser = !string.IsNullOrEmpty(AccessToken);
 
             if (!string.IsNullOrEmpty(uxFirstName.Text))
             {
-                name = uxFirstName.Text;
+                name = uxFirstName.Text.RemoveHTML();
             }
 
             if (!string.IsNullOrEmpty(uxEmailAddress.Text))
