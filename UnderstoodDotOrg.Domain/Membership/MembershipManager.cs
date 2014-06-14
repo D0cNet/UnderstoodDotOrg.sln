@@ -1,26 +1,33 @@
 ﻿using System;
-using System.Configuration;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Security;
-using UnderstoodDotOrg.Domain.TelligentCommunity;
-using MembershipProvider = System.Web.Security.Membership;
 using System.Data.Entity.Validation;
+using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Linq;
+using System.Web.Security;
 using UnderstoodDotOrg.Domain.Understood.Quiz;
-using System.Data.Spatial; 
+using UnderstoodDotOrg.Common.Helpers;
+using MembershipProvider = System.Web.Security.Membership;
 
 
 namespace UnderstoodDotOrg.Domain.Membership
 {
     public class MembershipManager : IMembershipManager, IDisposable
     {
+        /// <summary>
+        /// Global reference to DB Context
+        /// </summary>
         Membership _db;
 
+        /// <summary>
+        /// Entity-specific connection string, injects in correct database from connectionstrings collection in settings
+        /// </summary>
+        //private static string connString = string.Format("metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='{0}persist security info=True;MultipleActiveResultSets=True;App=EntityFramework'", "data source=162.209.22.3;initial catalog=Understood.org.DEV.membership;user id=understood_org;password=dahyeSDf;");
+        private static string connString = string.Format("metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='{0};persist security info=True;MultipleActiveResultSets=True;App=EntityFramework'", ConfigurationManager.ConnectionStrings["membership"].ConnectionString);
+
+        #region Constructors
         public MembershipManager()
             : this(new Membership(connString))
         { }
@@ -30,175 +37,13 @@ namespace UnderstoodDotOrg.Domain.Membership
             _db = db;
         }
 
-        /// <summary>
-        /// Entity-specific connection string
-        /// </summary>
-        //private static string connString = string.Format("metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='{0}persist security info=True;MultipleActiveResultSets=True;App=EntityFramework'", "data source=162.209.22.3;initial catalog=Understood.org.DEV.membership;user id=understood_org;password=dahyeSDf;");
-        private static string connString = string.Format("metadata=res://*/Membership.MembershipModel.csdl|res://*/Membership.MembershipModel.ssdl|res://*/Membership.MembershipModel.msl;provider=System.Data.SqlClient;provider connection string='{0};persist security info=True;MultipleActiveResultSets=True;App=EntityFramework'", ConfigurationManager.ConnectionStrings["membership"].ConnectionString);
-
-
-        /// <summary>
-        /// Verifies credentials and process login for the user. Uses ASP.Net Membership for authentication and sets the Sitecore Virtual User
-        /// </summary>
-        /// <param name="Username">Email address of the user</param>
-        /// <param name="Password">User's password</param>
-        /// <returns>Returns an instance of the Member object filled with the current user, if authentication is successful</returns>
-        public Member AuthenticateUser(string Username, string Password)
+        public void Dispose()
         {
-            // use custom provider
-            var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
-
-            // authenticate against custom provider
-            var isAuthenticated = provider.ValidateUser(Username, Password);
-            if (!isAuthenticated)
-            {
-                throw new Exception("Invalid Username or Password");
-            }
-
-            // set SC virtual user
-
-            // set Telligent user
-
-            var membershipUser = provider.GetUser(Username, true);
-            Member member = new Member();
-
-            try
-            {
-                member = this.GetMember(Guid.Parse(membershipUser.ProviderUserKey.ToString()));
-                if (member == null)
-                {
-                    throw new Exception("Membership User does not exist");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            return member;
+            _db.Dispose();
         }
+        #endregion
 
-        private Member mapMember(Member Member)
-        {
-            var tMember = _db.Members.Where(x => x.MemberId == Member.MemberId).FirstOrDefault();
-
-            if (tMember == null)
-            {
-                tMember = new Member();
-                tMember.MemberId = Member.MemberId;
-            }
-
-            tMember.AgreedToSignUpTerms = Member.AgreedToSignUpTerms;
-            tMember.allowConnections = Member.allowConnections;
-            tMember.allowNewsletter = Member.allowNewsletter;
-            tMember.emailSubscription = Member.emailSubscription;
-            tMember.FirstName = Member.FirstName;
-            tMember.hasOtherChildren = Member.hasOtherChildren;
-            tMember.isFacebookUser = Member.isFacebookUser;
-            tMember.isPrivate = Member.isPrivate;
-            tMember.LastName = Member.LastName;
-            tMember.PersonalityType = Member.PersonalityType;
-            tMember.Phone = Member.Phone;
-            tMember.Role = Member.Role;
-            tMember.ScreenName = Member.ScreenName;
-            tMember.UserId = Member.UserId;
-            tMember.ZipCode = Member.ZipCode;
-
-            tMember.Interests.Clear();
-            tMember.Journeys.Clear();
-
-            foreach (var interest in Member.Interests)
-            {
-                var i = _db.Interests.Where(x => x.Key == interest.Key).FirstOrDefault();
-                if (i != null)
-                {
-                    tMember.Interests.Add(i);
-                }
-            }
-
-            foreach (var journey in Member.Journeys)
-            {
-                var j = _db.Journeys.Where(x => x.Key == journey.Key).FirstOrDefault();
-                if (j != null)
-                {
-                    tMember.Journeys.Add(j);
-                }
-            }
-
-            foreach (var child in Member.Children)
-            {
-                var tChild = mapChild(child);
-
-                tMember.Children.Add(tChild);
-            }
-
-            return tMember;
-        }
-
-        private Child mapChild(Child child)
-        {
-            //var tChild = _db.Children.Where(x => x.ChildId == child.ChildId).FirstOrDefault();
-            var tChild = this.GetChild(child.ChildId);
-
-            if (tChild == null)
-            {
-                tChild = new Child();
-                tChild.ChildId = child.ChildId;
-            }
-
-            tChild.EvaluationStatus = child.EvaluationStatus;
-            tChild.Gender = child.Gender;
-
-            //gender is required, boy is now default if nothing is provided
-            if (string.IsNullOrEmpty(tChild.Gender))
-            {
-                tChild.Gender = "boy";
-            }
-
-            tChild.HomeLife = child.HomeLife;
-            tChild.IEPStatus = child.IEPStatus;
-            tChild.Nickname = child.Nickname.Trim();
-
-            if (tChild.Nickname.Length > 20)
-            {
-                tChild.Nickname = tChild.Nickname.Substring(0, 20);
-            }
-
-            tChild.Section504Status = child.Section504Status;
-
-            tChild.Issues.Clear();
-            tChild.Grades.Clear();
-            tChild.Diagnoses.Clear();
-
-            foreach (var issue in child.Issues)
-            {
-                var i = _db.Issues.Where(x => x.Key == issue.Key).FirstOrDefault();
-                if (i != null)
-                {
-                    tChild.Issues.Add(i);
-                }
-            }
-
-            foreach (var diagnosis in child.Diagnoses)
-            {
-                var d = _db.Diagnoses.Where(x => x.Key == diagnosis.Key).FirstOrDefault();
-                if (d != null)
-                {
-                    tChild.Diagnoses.Add(d);
-                }
-            }
-
-            foreach (var grade in child.Grades)
-            {
-                var g = _db.Grades.Where(x => x.Key == grade.Key).FirstOrDefault();
-                if (g != null)
-                {
-                    tChild.Grades.Add(g);
-                }
-            }
-
-            return tChild;
-        }
+        #region Adds
         /// <summary>
         /// Adds a new member to the database
         /// </summary>
@@ -362,6 +207,594 @@ namespace UnderstoodDotOrg.Domain.Membership
         }
 
         /// <summary>
+        /// Adds a new "shadow user" to the database
+        /// </summary>
+        /// <param name="Member"></param>
+        /// <returns></returns>
+        public Member AddUnauthorizedMember(Member Member)
+        {
+            //throw this out if there is no email 
+            if (string.IsNullOrEmpty(Member.Email))
+            {
+                throw new Exception("Error in MembershipManager.cs. An email address must be provided to add a member.");
+            }
+            //bg: Note. We are going to use the ASP.Net Membership database's comment field
+            //          to include a flag that can be used to identify users who only exist  in order 
+            //          for us to generate content sent for Nebased on "The Algorithim" 
+            //-- Setting up some values so that we know that this is not a standard website member
+            //this member is probably only ever going to be created just so that we can generate personalized emails
+            Member.Password = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Password;
+            Member.Comment = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Flag;
+            Member.ScreenName = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_ScreeName;
+
+            Member m = new Member();
+            try
+            {
+                m = this.AddMember(Member, Member.Email, Member.Password); //Need to refactor some code to account for Member having an email and password
+            }
+
+            catch (Exception e)
+            {
+                Exception e2 = new Exception("An Error occured when trying to create a new Unauthorized Member. Check InnerException", e);
+                e2.Source = "MembershiopManager.cs In AddUnauthorizedMember(Member Member)";
+                throw e2;
+            }
+            //now update the member to add the flag to let us know it is a unauthorized user
+            AddMemberComment(m, UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Flag);
+
+            return m;
+        }
+
+        /// <summary>
+        /// Adds a new user to the authentication database, and then adds a new member to the membership database. 
+        /// When in doubt, you probably want to use this one
+        /// </summary>
+        /// <param name="Member">Member to add</param>
+        /// <param name="Username">Username (email addess) for ASP.Net Authentication</param>
+        /// <param name="Password">Password for the user</param>
+        /// <returns>Member that was added</returns>
+        public Member AddMember(Member Member, string Username, string Password)
+        {
+            try
+            {
+                // use custom provider for authentication
+                var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
+
+                int existingUserCount;
+                var isExistingUser = provider.FindUsersByEmail(Username, 0, 1, out existingUserCount);
+
+                if (existingUserCount == 0)
+                {
+                    if (Member.MemberId == null || Member.MemberId == Guid.Empty)
+                    {
+                        Member.MemberId = Guid.NewGuid();
+                    }
+
+                    var status = new MembershipCreateStatus();
+
+                    var user = provider.CreateUser(Username, Password, Username, null, null, true, Member.MemberId, out status);
+
+                    if (status != MembershipCreateStatus.Success)
+                    {
+                        throw new Exception("Unable to create user. Reason: " + status);
+                    }
+
+                    Member = this.AddMember(Member);
+
+
+                    return Member;
+                }
+                else
+                {
+                    throw new Exception("Username is not unique");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Adds a new child to the membership database
+        /// </summary>
+        /// <param name="Child">Child to add</param>
+        /// <param name="MemberId">Guid of Member that the child should be linked to</param>
+        /// <returns>Child that was added</returns>
+        public Child AddChild(Child Child, Guid MemberId)
+        {
+            try
+            {
+                //using (_db)
+                //{
+                Child = mapChild(Child);
+                Child.Members.Add(_db.Members.Where(x => x.MemberId == MemberId).First());
+
+                _db.Children.Add(Child);
+                _db.SaveChanges();
+
+                return Child;
+                //}
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Gets
+        /// <summary>
+        /// Returns custom Member object
+        /// </summary>
+        /// <param name="MemberId">Member ID of member</param>
+        /// <returns>Member object that was requested, or null</returns>
+        public Member GetMember(Guid MemberId)
+        {
+            //using (_db)
+            //{
+            var member = _db.Members
+                .Where(x => x.MemberId == MemberId)
+                .Include(x => x.Children)
+                .Include(x => x.Children.Select(c => c.Issues))
+                .Include(x => x.Children.Select(c => c.Diagnoses))
+                .Include(x => x.Children.Select(c => c.Grades))
+                .Include(x => x.Journeys)
+                .Include(x => x.Interests)
+                .ToList()
+                .FirstOrDefault();
+
+            //bg: update the member with property values that are not included in entity
+            member = FillMember_ExtendedPropertiesFromDb(member);
+            member = FillMember_AlertPreferences(member);
+
+            return trimFields(member);
+        }
+
+        /// <summary>
+        /// Returns custom Member object
+        /// </summary>
+        /// <param name="EmailAddress">Email address of member</param>
+        /// <returns>Member object that was requested, or null</returns>
+        public Member GetMember(string EmailAddress)
+        {
+            var user = this.GetUser(EmailAddress, true);
+            // TODO: refactor this using LINQ once we add Email to entity model
+            return this.GetMember(Guid.Parse(user.ProviderUserKey.ToString()));
+        }
+
+        /// <summary>
+        /// Returns ASP.Net MembershipUser object by Member Guid
+        /// </summary>
+        /// <param name="MemberId">Guid of member to return</param>
+        /// <param name="updateIsOnline">Tells ASP.Net Membership if it should modify the UserLastActive value</param>
+        /// <returns>MembershipUser that was requested</returns>
+        public MembershipUser GetUser(Guid MemberId, bool updateIsOnline = false)
+        {
+            var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
+
+            return provider.GetUser(MemberId, updateIsOnline);
+        }
+
+        /// <summary>
+        /// Returns the ASP.Net MembershipUser object by Email Address
+        /// </summary>
+        /// <param name="EmailAddress">Email Address (username) of the requested user</param>
+        /// <param name="updateIsOnline">Tells ASP.Net Membership if it should modify the UserLastActive value</param>
+        /// <returns></returns>
+        public MembershipUser GetUser(string EmailAddress, bool updateIsOnline = false)
+        {
+            var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
+
+            return provider.GetUser(EmailAddress, updateIsOnline);
+        }
+
+        /// <summary>
+        /// Returns Child by Child Guid
+        /// </summary>
+        /// <param name="ChildId">Guid of child to return</param>
+        /// <returns>Child that was requested</returns>
+        public Child GetChild(Guid ChildId)
+        {
+            Child child = new Child();
+
+            //using (_db)
+            //{
+            child = _db.Children
+                .Where(c => c.ChildId == ChildId)
+                .Include(c => c.Diagnoses)
+                .Include(c => c.Issues)
+                .Include(c => c.Members)
+                .Include(c => c.Members.Select(m => m.Interests))
+                .Include(c => c.Members.Select(m => m.Journeys))
+                .Include(c => c.Grades)
+                .FirstOrDefault();
+            //}
+
+            if (child != null)
+            {
+                child = trimFields(child);
+            }
+
+            return child;
+        }
+
+        /// <summary>
+        /// Returns a list of all Members
+        /// </summary>
+        /// <returns>List of all Members in the database</returns>
+        public List<Member> GetMembers()
+        {
+            //List<Member> members = null; 
+            //using (var db = new Membership(connString))
+            //{
+            //    var query = from m in db.Members
+            //                select m;
+            //    members = query.ToList<Member>();             
+            //}
+            //return members;
+
+            return _db.Members.ToList();
+        }
+
+        #endregion
+
+        #region Updats
+        /// <summary>
+        /// Updates information about an existing member
+        /// </summary>
+        /// <param name="Member">Member to update</param>
+        /// <returns>Member that was updated</returns>
+        public Member UpdateMember(Member Member)
+        {
+
+            //bg: Update member properties that are outside of entity:
+            //    UpdateMember_ExtendedProperties checks a n data flag on member, 
+            //    and does nothing if none of the new properties have been set outside of the database
+            if (!this.UpdateMember_ExtendedProperties(Member))
+            {
+                throw new Exception("An error occured when trying to update extended member proprerties.");
+            }
+
+
+            try
+            {
+                if (!ClearnAllMemberInterests(Member.MemberId))
+                {
+                    throw new Exception("An error occured when trying to update member interests.");
+                }
+            }
+            catch (Exception ex)
+            {
+                //log the exception 
+                //bubble it up so the error can be displayed
+                throw ex;
+            }
+            try
+            {
+                Member = this.mapMember(Member);
+
+                _db.SaveChanges();
+
+                return Member;
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw ex;
+            }
+
+        }
+
+        /// <summary>
+        /// Updates information about an existing child
+        /// </summary>
+        /// <param name="Child">Child to update</param>
+        /// <returns>Child that was updated</returns>
+        public Child UpdateChild(Child Child)
+        {
+            try
+            {
+                Child = this.mapChild(Child);
+
+                _db.SaveChanges();
+
+                return Child;
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Support Methods
+        
+        #region Private
+        /// <summary>
+        /// Private method that maps a potentially Entity-disconnected Member to a known-connected instance
+        /// </summary>
+        /// <param name="Member">Potentially disconnected Member</param>
+        /// <returns>Known connected Member</returns>
+        private Member mapMember(Member Member)
+        {
+            var tMember = _db.Members.Where(x => x.MemberId == Member.MemberId).FirstOrDefault();
+
+            if (tMember == null)
+            {
+                tMember = new Member();
+                tMember.MemberId = Member.MemberId;
+            }
+
+            tMember.AgreedToSignUpTerms = Member.AgreedToSignUpTerms;
+            tMember.allowConnections = Member.allowConnections;
+            tMember.allowNewsletter = Member.allowNewsletter;
+            tMember.emailSubscription = Member.emailSubscription;
+            tMember.FirstName = Member.FirstName.RemoveHTML();
+            tMember.hasOtherChildren = Member.hasOtherChildren;
+            tMember.isFacebookUser = Member.isFacebookUser;
+            tMember.isPrivate = Member.isPrivate;
+            tMember.LastName = Member.LastName.RemoveHTML();
+            tMember.PersonalityType = Member.PersonalityType;
+            tMember.Phone = Member.Phone;
+            tMember.Role = Member.Role;
+            tMember.ScreenName = Member.ScreenName.RemoveHTML();
+            tMember.UserId = Member.UserId;
+            tMember.ZipCode = Member.ZipCode.RemoveHTML();
+
+            tMember.Interests.Clear();
+            tMember.Journeys.Clear();
+
+            foreach (var interest in Member.Interests)
+            {
+                var i = _db.Interests.Where(x => x.Key == interest.Key).FirstOrDefault();
+                if (i != null)
+                {
+                    tMember.Interests.Add(i);
+                }
+            }
+
+            foreach (var journey in Member.Journeys)
+            {
+                var j = _db.Journeys.Where(x => x.Key == journey.Key).FirstOrDefault();
+                if (j != null)
+                {
+                    tMember.Journeys.Add(j);
+                }
+            }
+
+            foreach (var child in Member.Children)
+            {
+                var tChild = mapChild(child);
+
+                tMember.Children.Add(tChild);
+            }
+
+            return tMember;
+        }
+
+        /// <summary>
+        /// Private method that maps a potentially Entity-disconnected Child to a known-connected instance
+        /// </summary>
+        /// <param name="child">Potentially disconnected Child</param>
+        /// <returns>Known connected Child</returns>
+        private Child mapChild(Child child)
+        {
+            //var tChild = _db.Children.Where(x => x.ChildId == child.ChildId).FirstOrDefault();
+            var tChild = this.GetChild(child.ChildId);
+
+            if (tChild == null)
+            {
+                tChild = new Child();
+                tChild.ChildId = child.ChildId;
+            }
+
+            tChild.EvaluationStatus = child.EvaluationStatus;
+            tChild.Gender = child.Gender.RemoveHTML();
+
+            //gender is required, boy is now default if nothing is provided
+            if (string.IsNullOrEmpty(tChild.Gender))
+            {
+                tChild.Gender = "boy";
+            }
+
+            tChild.HomeLife = child.HomeLife;
+            tChild.IEPStatus = child.IEPStatus;
+            tChild.Nickname = child.Nickname.RemoveHTML();
+
+            //DB field limited to 20 characters, try to use more and this will puke
+            if (tChild.Nickname.Length > 20)
+            {
+                tChild.Nickname = tChild.Nickname.Substring(0, 20);
+            }
+
+            tChild.Section504Status = child.Section504Status;
+
+            tChild.Issues.Clear();
+            tChild.Grades.Clear();
+            tChild.Diagnoses.Clear();
+
+            foreach (var issue in child.Issues)
+            {
+                var i = _db.Issues.Where(x => x.Key == issue.Key).FirstOrDefault();
+                if (i != null)
+                {
+                    tChild.Issues.Add(i);
+                }
+            }
+
+            foreach (var diagnosis in child.Diagnoses)
+            {
+                var d = _db.Diagnoses.Where(x => x.Key == diagnosis.Key).FirstOrDefault();
+                if (d != null)
+                {
+                    tChild.Diagnoses.Add(d);
+                }
+            }
+
+            foreach (var grade in child.Grades)
+            {
+                var g = _db.Grades.Where(x => x.Key == grade.Key).FirstOrDefault();
+                if (g != null)
+                {
+                    tChild.Grades.Add(g);
+                }
+            }
+
+            return tChild;
+        }
+        
+        #endregion
+
+        #region Public
+        /// <summary>
+        /// Verifies credentials and process login for the user. Uses ASP.Net Membership for authentication and sets the Sitecore Virtual User
+        /// </summary>
+        /// <param name="Username">Email address of the user</param>
+        /// <param name="Password">User's password</param>
+        /// <returns>Returns an instance of the Member object filled with the current user, if authentication is successful</returns>
+        public Member AuthenticateUser(string Username, string Password)
+        {
+            // use custom provider
+            var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
+
+            // authenticate against custom provider
+            var isAuthenticated = provider.ValidateUser(Username, Password);
+            if (!isAuthenticated)
+            {
+                throw new Exception("Invalid Username or Password");
+            }
+
+            // set SC virtual user
+
+            // set Telligent user
+
+            var membershipUser = provider.GetUser(Username, true);
+            Member member = new Member();
+
+            try
+            {
+                member = this.GetMember(Guid.Parse(membershipUser.ProviderUserKey.ToString()));
+                if (member == null)
+                {
+                    throw new Exception("Membership User does not exist");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return member;
+        }
+
+        /// <summary>
+        /// Resets a member's password to the new password
+        /// </summary>
+        /// <param name="MemberId">MemberID to update</param>
+        /// <param name="NewPassword">New password</param>
+        /// <returns>True if password was successfully updated</returns>
+        public bool ResetPassword(Guid MemberId, string NewPassword)
+        {
+            try
+            {
+                var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
+                var user = provider.GetUser(MemberId, false);
+
+                user.ChangePassword(user.ResetPassword(), NewPassword);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        /// <summary>
+        /// Trims HTML and whitespace from Member string fields
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns></returns>
+        public static Member trimFields(Member member)
+        {
+            member.FirstName = member.FirstName != null ? member.FirstName.Trim() : string.Empty;
+            member.ScreenName = member.ScreenName != null ? member.ScreenName.Trim() : string.Empty;
+            member.LastName = member.LastName != null ? member.LastName.Trim() : string.Empty;
+            member.ZipCode = member.ZipCode != null ? member.ZipCode.Trim() : string.Empty;
+            member.MobilePhoneNumber = member.MobilePhoneNumber != null ? member.MobilePhoneNumber.Trim() : string.Empty;
+
+            return member;
+        }
+
+        /// <summary>
+        /// Trims HTML and whitespace from Child string fields
+        /// </summary>
+        /// <param name="child"></param>
+        /// <returns></returns>
+        public static Child trimFields(Child child)
+        {
+            child.Nickname = child.Nickname != null ? child.Nickname.Trim() : string.Empty;
+            child.Gender = child.Gender != null ? child.Gender.Trim() : string.Empty;
+
+            return child;
+        }
+
+        /// <summary>
+        /// Returns true or false if a Child ID already exists
+        /// </summary>
+        /// <param name="ChildId">Child ID to check</param>
+        /// <returns>True if child exists, false if not</returns>
+        public bool isExistingChild(Guid ChildId)
+        {
+            var child = _db.Children.FirstOrDefault(x => x.ChildId == ChildId);
+
+            if (child != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        #endregion
+
+        #endregion
+
+        /// <summary>
         /// It will help if we pull the data back from the db so we can display it and use it.
         /// </summary>
         /// <param name="member"></param>
@@ -409,6 +842,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             return member;
         }
+
         /// <summary>
         /// Just used to add an entry into our pref table. Anything here on out is always an update
         /// </summary>
@@ -439,6 +873,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             success = true;
             return success;
         }
+
         /// <summary>
         /// Updates the MemberAlertPreferences 
         /// </summary>
@@ -480,39 +915,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             return success;
         }
-        public Member AddUnauthorizedMember(Member Member)
-        {
-            //throw this out if there is no email 
-            if (string.IsNullOrEmpty(Member.Email))
-            {
-                throw new Exception("Error in MembershipManager.cs. An email address must be provided to add a member.");
-            }
-            //bg: Note. We are going to use the ASP.Net Membership database's comment field
-            //          to include a flag that can be used to identify users who only exist  in order 
-            //          for us to generate content sent for Nebased on "The Algorithim" 
-            //-- Setting up some values so that we know that this is not a standard website member
-            //this member is probably only ever going to be created just so that we can generate personalized emails
-            Member.Password = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Password;
-            Member.Comment = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Flag;
-            Member.ScreenName = UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_ScreeName;
 
-            Member m = new Member();
-            try
-            {
-                m = this.AddMember(Member, Member.Email, Member.Password); //Need to refactor some code to account for Member having an email and password
-            }
-
-            catch (Exception e)
-            {
-                Exception e2 = new Exception("An Error occured when trying to create a new Unauthorized Member. Check InnerException", e);
-                e2.Source = "MembershiopManager.cs In AddUnauthorizedMember(Member Member)";
-                throw e2;
-            }
-            //now update the member to add the flag to let us know it is a unauthorized user
-            AddMemberComment(m, UnderstoodDotOrg.Common.Constants.UnauthenticatedMember_Flag);
-
-            return m;
-        }
         /// <summary>
         /// Updates the .Net member in our Membership Database to include a comment.
         /// </summary>
@@ -536,7 +939,6 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             return commentAdded;
         }
-
 
         /// <summary>
         /// Used to inflate a member's quiz items and the responses that the user has saved to the db so far
@@ -618,6 +1020,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             return member; //if the member had any quiz results in the db, it is now inflated with them
 
         }
+
         public bool ChecklistResults_SaveToDb(Guid MemberId, Checklist checklist)
         {
             bool successFlag = false;
@@ -708,6 +1111,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             return success;
         }
+
         public bool LogMemberActivity_AsDeleted(Guid MemberId, Guid ContentId, string Activity, int ActivityType)
         {
             bool successFlag = false;
@@ -784,92 +1188,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             //push this up into salesforce... eventually....
             return success;
         }
-        /// <summary>
-        /// Adds a new user to the authentication database, and then adds a new member to the membership database
-        /// </summary>
-        /// <param name="Member">Member to add</param>
-        /// <param name="Username">Username (email addess) for ASP.Net Authentication</param>
-        /// <param name="Password">Password for the user</param>
-        /// <returns>Member that was added</returns>
-        public Member AddMember(Member Member, string Username, string Password)
-        {
-            try
-            {
-                // use custom provider for authentication
-                var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
 
-                int existingUserCount;
-                var isExistingUser = provider.FindUsersByEmail(Username, 0, 1, out existingUserCount);
-
-                if (existingUserCount == 0)
-                {
-                    if (Member.MemberId == null || Member.MemberId == Guid.Empty)
-                    {
-                        Member.MemberId = Guid.NewGuid();
-                    }
-
-                    var status = new MembershipCreateStatus();
-
-                    var user = provider.CreateUser(Username, Password, Username, null, null, true, Member.MemberId, out status);
-
-                    if (status != MembershipCreateStatus.Success)
-                    {
-                        throw new Exception("Unable to create user. Reason: " + status);
-                    }
-
-                    Member = this.AddMember(Member);
-
-
-                    return Member;
-                }
-                else
-                {
-                    throw new Exception("Username is not unique");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        /// <summary>
-        /// Adds a new child to the membership database
-        /// </summary>
-        /// <param name="Child">Child to add</param>
-        /// <param name="MemberId">Guid of Member that the child should be linked to</param>
-        /// <returns>Child that was added</returns>
-        public Child AddChild(Child Child, Guid MemberId)
-        {
-            try
-            {
-                //using (_db)
-                //{
-                Child = mapChild(Child);
-                Child.Members.Add(_db.Members.Where(x => x.MemberId == MemberId).First());
-
-                _db.Children.Add(Child);
-                _db.SaveChanges();
-
-                return Child;
-                //}
-            }
-            catch (DbEntityValidationException ex)
-            {
-                foreach (var eve in ex.EntityValidationErrors)
-                {
-                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
-                    foreach (var ve in eve.ValidationErrors)
-                    {
-                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                            ve.PropertyName, ve.ErrorMessage);
-                    }
-                }
-                throw ex;
-            }
-        }
         private bool ClearnAllMemberInterests(Guid MemberId)
         {
             bool successFlag = false;
@@ -1023,251 +1342,5 @@ namespace UnderstoodDotOrg.Domain.Membership
             //push this up into salesforce... eventually....
             return success;
         }
-
-        /// <summary>
-        /// Updates information about an existing member
-        /// </summary>
-        /// <param name="Member">Member to update</param>
-        /// <returns>Member that was updated</returns>
-        public Member UpdateMember(Member Member)
-        {
-
-            //bg: Update member properties that are outside of entity:
-            //    UpdateMember_ExtendedProperties checks a n data flag on member, 
-            //    and does nothing if none of the new properties have been set outside of the database
-            if (!this.UpdateMember_ExtendedProperties(Member))
-            {
-                throw new Exception("An error occured when trying to update extended member proprerties.");
-            }
-
-
-            try
-            {
-                if (!ClearnAllMemberInterests(Member.MemberId))
-                {
-                    throw new Exception("An error occured when trying to update member interests.");
-                }
-            }
-            catch (Exception ex)
-            {
-                //log the exception 
-                //bubble it up so the error can be displayed
-                throw ex;
-            }
-            try
-            {
-                Member = this.mapMember(Member);
-
-                _db.SaveChanges();
-
-                return Member;
-            }
-            catch (DbEntityValidationException ex)
-            {
-                foreach (var eve in ex.EntityValidationErrors)
-                {
-                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
-                    foreach (var ve in eve.ValidationErrors)
-                    {
-                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                            ve.PropertyName, ve.ErrorMessage);
-                    }
-                }
-                throw ex;
-            }
-
-        }
-
-        /// <summary>
-        /// Updates information about an existing child
-        /// </summary>
-        /// <param name="Child">Child to update</param>
-        /// <returns>Child that was updated</returns>
-        public Child UpdateChild(Child Child)
-        {
-            try
-            {
-                Child = this.mapChild(Child);
-
-                _db.SaveChanges();
-
-                return Child;
-            }
-            catch (DbEntityValidationException ex)
-            {
-                foreach (var eve in ex.EntityValidationErrors)
-                {
-                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
-                    foreach (var ve in eve.ValidationErrors)
-                    {
-                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                            ve.PropertyName, ve.ErrorMessage);
-                    }
-                }
-                throw ex;
-            }
-        }
-
-        /// <summary>
-        /// Returns custom Member object
-        /// </summary>
-        /// <param name="MemberId"></param>
-        /// <returns></returns>
-        public Member GetMember(Guid MemberId)
-        {
-            //using (_db)
-            //{
-            var member = _db.Members
-                .Where(x => x.MemberId == MemberId)
-                .Include(x => x.Children)
-                .Include(x => x.Children.Select(c => c.Issues))
-                .Include(x => x.Children.Select(c => c.Diagnoses))
-                .Include(x => x.Children.Select(c => c.Grades))
-                .Include(x => x.Journeys)
-                .Include(x => x.Interests)
-                .ToList()
-                .FirstOrDefault();
-
-            //bg: update the member with property values that are not included in entity
-            member = FillMember_ExtendedPropertiesFromDb(member);
-            member = FillMember_AlertPreferences(member);
-
-            return trimFields(member);
-        }
-
-        public Member GetMember(string EmailAddress)
-        {
-            var user = this.GetUser(EmailAddress, true);
-            // TODO: refactor this using LINQ once we add Email to entity model
-            return this.GetMember(Guid.Parse(user.ProviderUserKey.ToString()));
-        }
-
-        /// <summary>
-        /// Returns ASP.Net MembershipUser object by Member Guid
-        /// </summary>
-        /// <param name="MemberId">Guid of member to return</param>
-        /// <param name="updateIsOnline">Tells ASP.Net Membership if it should modify the UserLastActive value</param>
-        /// <returns>MembershipUser that was requested</returns>
-        public MembershipUser GetUser(Guid MemberId, bool updateIsOnline = false)
-        {
-            var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
-
-            return provider.GetUser(MemberId, updateIsOnline);
-        }
-
-        /// <summary>
-        /// Returns the ASP.Net MembershipUser object by Email Address
-        /// </summary>
-        /// <param name="EmailAddress">Email Address (username) of the requested user</param>
-        /// <param name="updateIsOnline">Tells ASP.Net Membership if it should modify the UserLastActive value</param>
-        /// <returns></returns>
-        public MembershipUser GetUser(string EmailAddress, bool updateIsOnline = false)
-        {
-            var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
-
-            return provider.GetUser(EmailAddress, updateIsOnline);
-        }
-
-        public bool ResetPassword(Guid MemberId, string NewPassword)
-        {
-            try
-            {
-                var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
-                var user = provider.GetUser(MemberId, false);
-
-                user.ChangePassword(user.ResetPassword(), NewPassword);
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-
-        /// <summary>
-        /// Returns Child by Child Guid
-        /// </summary>
-        /// <param name="ChildId">Guid of child to return</param>
-        /// <returns>Child that was requested</returns>
-        public Child GetChild(Guid ChildId)
-        {
-            Child child = new Child();
-
-            //using (_db)
-            //{
-            child = _db.Children
-                .Where(c => c.ChildId == ChildId)
-                .Include(c => c.Diagnoses)
-                .Include(c => c.Issues)
-                .Include(c => c.Members)
-                .Include(c => c.Members.Select(m => m.Interests))
-                .Include(c => c.Members.Select(m => m.Journeys))
-                .Include(c => c.Grades)
-                .FirstOrDefault();
-            //}
-
-			if (child != null)
-			{
-				child = trimFields(child);
-			}
-
-			return child;
-        }
-
-        public void Dispose()
-        {
-            _db.Dispose();
-        }
-
-        public List<Member> GetMembers()
-        {
-            //List<Member> members = null; 
-            //using (var db = new Membership(connString))
-            //{
-            //    var query = from m in db.Members
-            //                select m;
-            //    members = query.ToList<Member>();             
-            //}
-            //return members;
-
-            return _db.Members.ToList();
-        }
-
-
-        public static Member trimFields(Member member)
-        {
-            member.FirstName = member.FirstName != null ? member.FirstName.Trim() : string.Empty;
-            member.ScreenName = member.ScreenName != null ? member.ScreenName.Trim() : string.Empty;
-            member.LastName = member.LastName != null ? member.LastName.Trim() : string.Empty;
-            member.ZipCode = member.ZipCode != null ? member.ZipCode.Trim() : string.Empty;
-            member.MobilePhoneNumber = member.MobilePhoneNumber != null ? member.MobilePhoneNumber.Trim() : string.Empty;
-
-            return member;
-        }
-
-        public static Child trimFields(Child child)
-        {
-            child.Nickname = child.Nickname != null ? child.Nickname.Trim() : string.Empty;
-            child.Gender = child.Gender != null ? child.Gender.Trim() : string.Empty;
-
-            return child;
-        }
-
-        public bool isExistingChild(Guid ChildId)
-        {
-            var child = _db.Children.FirstOrDefault(x => x.ChildId == ChildId);
-
-            if (child != null)
-            {
-                return true;
-            }
-
-            return false;
-        }
-
     }
 }
