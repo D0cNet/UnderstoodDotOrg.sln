@@ -50,6 +50,13 @@
         text-decoration: none;
         color: rgb(66, 109, 169);
     }
+
+    @media (max-width: 769px) {
+        div.user-info-bar {
+            display:none;
+        }
+    }
+
 </style>
 <div class="user-info-bar">Welcome, <a href="<%= MyAccountPageItem.GetUrl() %>"><%= UserDisplayName %></a>!</div>
 <% } %>
