@@ -149,6 +149,7 @@
       <DependentUpon>MembershipModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Membership\MemberExtensions.cs" />
+    <Compile Include="Membership\MemberModelExtensions.cs" />
     <Compile Include="Membership\MembershipConstructors.cs">
       <SubType>Code</SubType>
     </Compile>
