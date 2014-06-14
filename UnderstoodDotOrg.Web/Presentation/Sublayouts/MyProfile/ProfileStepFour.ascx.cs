@@ -16,6 +16,7 @@ using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 using UnderstoodDotOrg.Common.Helpers;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
@@ -343,7 +344,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 {
                     Response.Redirect(MyProfileItem.GetMyProfilePage().GetUrl());
                 }
-                Response.Redirect(MembershipHelper.GetNextStepURL(5));
+                Response.Redirect(MyAccountFolderItem.GetCompleteMyProfileStepFive());
             }
         }
 
