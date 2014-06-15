@@ -1065,5 +1065,11 @@ namespace UnderstoodDotOrg.Common
        public static string ChildEnrolled { get { return Translate.TextByDomain(PosesDictionary, "ChildEnrolled"); } }
 
        public static string CompleteMyProfile { get { return Translate.TextByDomain(PosesDictionary, "CompleteMyProfile"); } }
+
+       #region Notification Labels
+       public static string ConnectAction { get { return "{0} <a href='{1}'>wants to connect</a> with you."; } }//{ get { return Translate.TextByDomain(PosesDictionary, "ConnectWith"); } }
+       public static string ConnectLink { get { return "Parent Connection <span class='timestamp'>{0}</span>"; } }//{ get { return Translate.TextByDomain(PosesDictionary, "ConnectHeader"); } }
+       public static string CommentAction { get { return "{0} <a href='{1}'>added&hellip;</a>"; } }
+       #endregion
     }
 }

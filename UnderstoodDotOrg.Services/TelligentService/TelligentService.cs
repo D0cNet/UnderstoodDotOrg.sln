@@ -16,6 +16,7 @@ using Sitecore.Links;
 using System.Collections.Specialized;
 using UnderstoodDotOrg.Domain.Membership;
 using System.Web.Security;
+using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
 namespace UnderstoodDotOrg.Services.TelligentService
 {
     public class TelligentService
@@ -570,6 +571,49 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 node = xmlDoc.SelectSingleNode("Response/Reply");
             }
             return node;
+        }
+
+        public static List<INotification> ReadFriendshipRequests(string username)
+        {
+            XmlNodeList node = null;
+            List<INotification> notifications = new List<INotification>();
+            if (!String.IsNullOrEmpty(username))
+            {
+                username = username.Trim();
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+                try
+                {
+                    var requestUrl = String.Format("{0}api.ashx/v2/users/{1}/friends/pending.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), username);
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                     node = xmlDoc.SelectNodes("Response/Friends");
+                    if (node != null)
+                    {
+                        foreach (XmlNode friend in node)
+                        {
+                            if(!friend.SelectSingleNode("RequestorId").InnerText.Equals(username))
+                            {
+                                notifications.Add(new ConnectNotification(friend));
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    notifications = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
+
+
+            }
+
+            return notifications;
+            
         }
         public static void PostReply(string forumID, string threadID, string body,string username)
         {

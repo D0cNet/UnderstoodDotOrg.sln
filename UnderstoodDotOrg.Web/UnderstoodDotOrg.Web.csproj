@@ -1512,6 +1512,20 @@
     <Compile Include="Presentation\Sublayouts\MyAccount\MyNotificationsTabs.ascx.designer.cs">
       <DependentUpon>MyNotificationsTabs.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\CommentTemplate.ascx.cs">
+      <DependentUpon>CommentTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\CommentTemplate.ascx.designer.cs">
+      <DependentUpon>CommentTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ConnectTemplate.ascx.cs">
+      <DependentUpon>ConnectTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ConnectTemplate.ascx.designer.cs">
+      <DependentUpon>ConnectTemplate.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx.cs">
       <DependentUpon>Reset Password.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1574,6 +1588,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\TermsAndConditions.ascx.designer.cs">
       <DependentUpon>TermsAndConditions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Whats Been Happening.ascx.cs">
+      <DependentUpon>Whats Been Happening.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Whats Been Happening.ascx.designer.cs">
+      <DependentUpon>Whats Been Happening.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\My Profile.ascx.cs">
       <DependentUpon>My Profile.ascx</DependentUpon>
@@ -2699,6 +2720,8 @@
     <Content Include="Presentation\Sublayouts\MyAccount\LandingPageWidgets\MyComments.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyNotificationsContainer.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyNotificationsTabs.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\CommentTemplate.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\ConnectTemplate.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />
@@ -2708,6 +2731,7 @@
     <Content Include="Presentation\Sublayouts\MyAccount\Tabs\Favorites.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Tabs\Groups.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\TermsAndConditions.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Whats Been Happening.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\My Profile.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepFour.ascx" />

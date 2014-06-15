@@ -615,6 +615,12 @@ namespace UnderstoodDotOrg.Common
             Blogger,
             Member
         }
+
+        public enum NotificationType
+        {
+            Comment,
+            Connection
+        }
         public static class TelligentConversationStatus
         {
             public const string NotSet = "NotSet";

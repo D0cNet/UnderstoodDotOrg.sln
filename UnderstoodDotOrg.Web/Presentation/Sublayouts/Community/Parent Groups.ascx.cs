@@ -109,22 +109,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 //List<GroupItem> groups = currItem.Children.Where(x => x.TemplateID.ToString().Equals(Constants.Groups.GroupTemplateID)).Select(x => new GroupItem(x)).ToList<GroupItem>();
                 
                 //Convert sitecore group items to GroupCardModels
-                var grpItems = Groups.FindGroups();// groups.Select(x => new GroupCardModel(x)).ToList<GroupCardModel>();
-                Session["groupItems"] = grpItems;
-                rptGroupCards.DataSource = grpItems;
-                rptGroupCards.DataBind();
+              
 
             }
-            else
-            {
-                var grpItems = Session["groupItems"] as List<GroupCardModel>;
-                if (grpItems != null)
-                {
+            var grpItems = Groups.FindGroups();// groups.Select(x => new GroupCardModel(x)).ToList<GroupCardModel>();
+            Session["groupItems"] = grpItems;
+            rptGroupCards.DataSource = grpItems;
+            rptGroupCards.DataBind();
+            //else
+            //{
+            //    var grpItems = Session["groupItems"] as List<GroupCardModel>;
+            //    if (grpItems != null)
+            //    {
 
-                    rptGroupCards.DataSource = grpItems;
-                    rptGroupCards.DataBind();
-                }
-            }
+            //        rptGroupCards.DataSource = grpItems;
+            //        rptGroupCards.DataBind();
+            //    }
+            //}
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)

@@ -17,12 +17,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
     {
         protected MyProfileItem MyProfilePage { get; set; }
         protected MyAccountItem MyAccountPage { get; set; }
-        protected String PrivateMessageTool
+        protected String MyNotifications
         {
             get
             {
-                var pmt = Sitecore.Context.Database.GetItem(Constants.Pages.PrivateMessageTool);
-                return LinkManager.GetItemUrl(pmt);
+                return MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetUrl();
             }
         }   
         protected void Page_Load(object sender, EventArgs e)

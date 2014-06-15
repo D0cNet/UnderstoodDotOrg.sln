@@ -19,5 +19,9 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount
         {
             return InnerItem.Children.FirstOrDefault(i => i.IsOfType(PrivateMessageToolItem.TemplateId));
         }
+        public WhatsBeenHappeningItem GetWhatsBeenHappening()
+        {
+            return InnerItem.Children.FirstOrDefault(i => i.IsOfType(WhatsBeenHappeningItem.TemplateId));
+        }
     }
 }

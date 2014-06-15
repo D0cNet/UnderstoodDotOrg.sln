@@ -172,6 +172,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MembershipModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\TelligentCommunity\CommentNotification.cs" />
+    <Compile Include="Models\TelligentCommunity\ConnectNotification.cs" />
+    <Compile Include="Models\TelligentCommunity\FeedsCollection.cs" />
+    <Compile Include="Models\TelligentCommunity\INotification.cs" />
+    <Compile Include="Models\TelligentCommunity\NotificationFeed.cs" />
     <Compile Include="Personalization\PersonalizationContext.cs" />
     <Compile Include="Personalization\PersonalizationHelper.cs" />
     <Compile Include="Personalization\PersonalizedContent.cs" />
@@ -528,6 +533,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SignInPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SignUpPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\TermsandConditionsItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\WhatsBeenHappeningItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\WhatsBeenHappeningItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\CreateAccountItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\CreateAccountItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\MultipleChildrenItem.base.cs" />
@@ -620,7 +627,6 @@
   <ItemGroup>
     <Folder Include="Facebook\" />
     <Folder Include="Luminate\" />
-    <Folder Include="Models\TelligentCommunity\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnderstoodDotOrg.Common\UnderstoodDotOrg.Common.csproj">

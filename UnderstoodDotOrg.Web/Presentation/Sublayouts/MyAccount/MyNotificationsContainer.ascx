@@ -7,6 +7,7 @@
             <section class="account-notification-tabs skiplink-content" aria-role="main">
                 <sc:placeholder key="My Notifications" runat="server" />
             </section>
+            
         </div>
     </div>
     <!-- .row -->

@@ -53,6 +53,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             lblLocation.Text = thModel.Author.UserLocation;
                             litComment.Text = thModel.Body;
                             litNumReplies.Text = thModel.ReplyCount;
+                            litMemberCount.Text = thModel.Members.Count.ToString();
                             rptChildCard.DataSource = thModel.Author.Children;
                             rptChildCard.DataBind();
                             rptGroupDiscussion.DataSource = thModel.Replies;
@@ -100,6 +101,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 if(!String.IsNullOrEmpty(body))
                     TelligentService.PostReply(forumID, threadID ,body,CurrentMember.ScreenName);
                 var replies = TelligentService.ReadReplies(forumID, threadID);
+                litNumReplies.Text = replies.Count.ToString();
                 rptGroupDiscussion.DataSource = replies;
                 rptGroupDiscussion.DataBind();
                 txtBody.Text = "";

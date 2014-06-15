@@ -170,7 +170,7 @@
                     <div class="col col-4 offset-1 discussion-sidebar rs_read_this">
                         <div class="discussion-meta skiplink-sidebar">
                             <div class="discussion">
-                                <i class="number-bubble-icon">3</i>
+                                <i class="number-bubble-icon"><asp:literal ID="litMemberCount" runat="server"></asp:literal></i>
                                 <p class="parents-in-discussion">Parents in this Discussion</p>
                             </div>
                             <!-- end .discussion -->

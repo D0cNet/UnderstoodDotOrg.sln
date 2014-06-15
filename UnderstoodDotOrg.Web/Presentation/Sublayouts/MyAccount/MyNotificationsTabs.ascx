@@ -7,7 +7,7 @@
       <div class="notifications-section-tabs tab-widget tab-container">
         <ul>
           <li id="liNotificationsTab" runat="server" class="notifications-tab ">
-            <a href="REPLACE">What's Been Happening</a>
+            <asp:HyperLink ID="hypWhatsHappening" runat="server" >What's Been Happening</asp:HyperLink>
             <span class="circle">0</span>
           </li>
           <li id="liMessagesTab" runat="server" class="messages-tab ">

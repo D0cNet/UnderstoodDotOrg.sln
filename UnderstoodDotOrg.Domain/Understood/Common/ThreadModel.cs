@@ -88,7 +88,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
        public string LastPostBody { get; set; }
        public static string TemplateID { get { return UnderstoodDotOrg.Common.Constants.Threads.ThreadTemplateID; } }
        public string Body { get; set; }
-
+       public List<MemberCardModel> Members { get; set; }
       
     }
 }
