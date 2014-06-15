@@ -591,7 +591,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     var xml = webClient.DownloadString(requestUrl);
                     var xmlDoc = new XmlDocument();
                     xmlDoc.LoadXml(xml);
-                     node = xmlDoc.SelectNodes("Response/Friends");
+                     node = xmlDoc.SelectNodes("Response/Friendships/Friendship");
                     if (node != null)
                     {
                         foreach (XmlNode friend in node)

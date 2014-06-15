@@ -636,6 +636,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Models\TelligentCommunity\Notifications Model.cd" />
     <None Include="Import.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Import.Designer.cs</LastGenOutput>
