@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="UnderstoodDotOrg.Domain.Models.TelligentCommunity.ConnectNotification">
+    <Position X="4.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAACQAAQAAAAAAAABAABAAAAAIQAAAAAACAQ=</HashCode>
+      <FileName>Models\TelligentCommunity\ConnectNotification.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UnderstoodDotOrg.Domain.Models.TelligentCommunity.CommentNotification">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAACAAAQAAAAAAAABAABAAAAAAQCACAAACAQ=</HashCode>
+      <FileName>Models\TelligentCommunity\CommentNotification.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UnderstoodDotOrg.Domain.Models.TelligentCommunity.NotificationFeed">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAIQAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TelligentCommunity\NotificationFeed.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UnderstoodDotOrg.Domain.Models.TelligentCommunity.FeedsCollection">
+    <Position X="6.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGIAAEAAAAAAABAQCAAIBAQAAAAAAAAASAAAAABQIAA=</HashCode>
+      <FileName>Models\TelligentCommunity\FeedsCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="UnderstoodDotOrg.Domain.Models.TelligentCommunity.INotification">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAACAAAAAAAAAAAABAABAAAAAAQAAAAAACAQ=</HashCode>
+      <FileName>Models\TelligentCommunity\INotification.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
