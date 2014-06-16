@@ -10,7 +10,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
 {
-public partial class DefaultArticlePageItem : CustomItem
+public partial class DefaultArticlePageItem : ContentPageItem
 {
 
 public static readonly string TemplateId = "{2D5AF94C-1668-44C4-978A-E96E1F42CBFE}";
