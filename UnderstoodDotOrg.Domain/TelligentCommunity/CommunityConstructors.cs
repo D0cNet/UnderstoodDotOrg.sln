@@ -156,6 +156,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Body { get; set; }
         public string PublishedDate { get; set; }
         public string Author { get; set; }
+        public string AuthorAvatar { get; set; }
         public string Likes { get; set; }
         public string Count { get; set; }
 

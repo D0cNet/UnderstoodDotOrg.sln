@@ -45,7 +45,7 @@
                                         </a>
                                     </div>
                                     <div class="blog-card-button">
-                                        <asp:Button ID="btnFollow" CssClass="button gray" runat="server" />
+                                        <asp:Button ID="btnFollow" CssClass="button gray" Text="Follow" runat="server" />
                                     </div>
                                     <!-- end .blog-card-button -->
                                 </div>

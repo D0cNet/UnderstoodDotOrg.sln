@@ -623,6 +623,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         PublishedDate = FormatDate(xn["PublishedDate"].InnerText),
                         Body = xn["Body"].InnerText,
                         Author = user["Username"].InnerText,
+                        AuthorAvatar = user["AvatarUrl"].InnerText,
                         Count = nodes.Count.ToString(),
                         Likes = likes,
                     };
@@ -1368,7 +1369,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         var authorProfileUrl = author["ProfileUrl"].InnerText;
                         var authorUsername = author["Username"].InnerText;
                         var parentTitle = content["HtmlName"].InnerText;
-                        if (app["HtmlName"].InnerText != "Articles")
+                        if (app["HtmlName"].InnerText != "Articles" && app["HtmlName"].InnerText != "General")
                         {
                             Comment comment = new Comment()
                             {

@@ -121,10 +121,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             }
             CommunityHelper.PostComment(_blogId, _blogPostId, body, user);
 
-            PopulateComments();
-
-            // Clear postback value
-            CommentEntryTextField.Value = String.Empty;
+            Response.Redirect(Request.RawUrl);
         }
 
         protected void FlagButton_Click(object sender, EventArgs e)
@@ -149,6 +146,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
 
             Console.WriteLine(xml);
+            Response.Redirect(Request.RawUrl);
         }
 
         protected void LikeButton_Click(object sender, EventArgs e)
@@ -176,8 +174,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
 
             Console.WriteLine(xml);
-
-            PopulateComments();
+            Response.Redirect(Request.RawUrl);
         }
         private void PopulateTelligentFields(Item item, int blogId, string title)
         {

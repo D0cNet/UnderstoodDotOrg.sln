@@ -28,7 +28,7 @@
         <!-- BEGIN PARTIAL: community/answer_card -->
         <div class="card-answer">
             <div class="answer-image">
-                <img alt="70x70 Placeholder" src="http://placehold.it/70x70" />
+                <img style="height: 70px; width: 70px;" alt="70x70 Placeholder" src="<%# Item.AuthorAvatar %>" />
 
                 <span class="badge moderator">M</span>
 
