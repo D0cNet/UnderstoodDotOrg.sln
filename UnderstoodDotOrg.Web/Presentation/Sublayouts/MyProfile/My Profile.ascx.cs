@@ -46,15 +46,14 @@
 					Response.Redirect("/");
 				}
 			}
-            else
-            {
+        
+			if (!IsPostBack)
+			{
+                //update member
                 MembershipManager membershipManager = new MembershipManager();
                 this.CurrentMember = membershipManager.GetMember(this.CurrentMember.MemberId);
                 this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId, true);
-            }
 
-			if (!IsPostBack)
-			{
                 SetLabels();
 
 				SetRole();
@@ -70,20 +69,26 @@
 
 				uxPassword.Text = replacePassword("digitalpulp!");
 
-				if (this.CurrentMember.Phone != null)
-				{
-					string phoneNumber = this.CurrentMember.Phone.Value.ToString().Trim();
+                string phoneNumber = string.Empty;
 
-					if (phoneNumber.Length == 10 && !phoneNumber.Contains("-"))
-					{
+				if (!string.IsNullOrEmpty(this.CurrentMember.MobilePhoneNumber))
+				{
+                    phoneNumber = this.CurrentMember.MobilePhoneNumber.Replace("-", string.Empty).Trim();
+
+                    //if (phoneNumber.Length == 10 && !phoneNumber.Contains("-"))
+                    //{
 						phoneNumber = phoneNumber.Insert(3, "-");
 						phoneNumber = phoneNumber.Insert(7, "-");
-					}
-
-					uxPhoneNumber.Text = phoneNumber;
-
-					txtPhoneNumber.Text = phoneNumber;
+                    //}
 				}
+                else
+                {
+                    //10 points to Gryffindor if you know where this phone number comes from
+                    txtPhoneNumber.Attributes["placeholder"] = "212-555-2368";    
+                }
+
+                uxPhoneNumber.Text = phoneNumber;
+                txtPhoneNumber.Text = phoneNumber;
 
 				uxPrivacyLevel.Text = this.CurrentMember.allowConnections ? DictionaryConstants.OpenToConnect : DictionaryConstants.NotOpenToConnect;
 
@@ -277,7 +282,12 @@
 
 		protected void lbSave_PhoneNumber_Click(object sender, EventArgs e)
 		{
+            this.CurrentMember.MobilePhoneNumber = txtPhoneNumber.Text.Replace("-", string.Empty);
 
+            var membershipmManager = new MembershipManager();
+            membershipmManager.UpdateMember(this.CurrentMember);
+
+            Response.Redirect(Request.Url.ToString());
 		}
 
         protected string getChildEditLink(ListViewDataItem Container)
