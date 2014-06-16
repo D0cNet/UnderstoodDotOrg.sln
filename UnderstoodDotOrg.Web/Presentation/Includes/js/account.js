@@ -615,13 +615,13 @@
         var self = this;
 
         // Maximum amount of children the user can add.
-        this.MAX_CHILDREN = 4;
+        this.MAX_CHILDREN = 6;
 
         // Current number of children added.
         this.childCount = 1;
 
         // Converts integers to an adjective.
-        this.numberAdjectives = ['', 'second', 'third', 'fourth'];
+        this.numberAdjectives = ['', 'second', 'third', 'fourth', 'fifth', 'sixth'];
 
         // Original child question, before cloning.
         this.$childQuestion = null;
@@ -943,7 +943,9 @@
 
     // Initialize the module on page load.
     $(document).ready(function () {
-        new U.facebook();
+        if (typeof fbAppId !== 'undefined' && fbAppId !== null) {
+            new U.facebook();
+        }
     });
 
     U.facebook = function () {
