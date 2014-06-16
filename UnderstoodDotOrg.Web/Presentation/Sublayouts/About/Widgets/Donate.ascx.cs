@@ -15,7 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Widgets
 {
     public partial class DonateWidget : BaseSublayout
     {
-        protected DonateWidgetItem Model = new DonateWidgetItem(MainsectionItem.GetGlobals().GetMetaDataFolder().GetWidgetFolder().GetDonateWidgetItem().InnerItem);
+        protected DonateWidgetItem Model = new DonateWidgetItem(MainsectionItem.GetGlobals().GetWidgetFolder().GetDonateWidgetItem().InnerItem);
         protected void Page_Load(object sender, EventArgs e)
         {
             var donatePage = MainsectionItem.GetHomePageItem().GetAboutPage().GetDonatePage();

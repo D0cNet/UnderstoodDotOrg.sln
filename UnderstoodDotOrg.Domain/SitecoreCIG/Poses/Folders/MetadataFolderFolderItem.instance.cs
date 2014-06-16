@@ -6,13 +6,16 @@ using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
 using System.Linq;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders {
-    public partial class MetadataFolderFolderItem {
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
+{
+    public partial class MetadataFolderFolderItem
+    {
         /// <summary>
         /// Get Welcome Tour folder Item.
         /// </summary>
         /// <returns></returns>
-        public WelcomeTourFolderItem GetWelcomeTourFolder() {
+        public WelcomeTourFolderItem GetWelcomeTourFolder()
+        {
             return (WelcomeTourFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(WelcomeTourFolderItem.TemplateId)).FirstOrDefault();
         }
 
@@ -20,17 +23,9 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders {
         /// Get expert live filter folder Item.
         /// </summary>
         /// <returns></returns>
-        public ExpertliveFilterFolderItem GetExpertliveFilterFolder() {
+        public ExpertliveFilterFolderItem GetExpertliveFilterFolder()
+        {
             return (ExpertliveFilterFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(ExpertliveFilterFolderItem.TemplateId)).FirstOrDefault();
         }
-
-        /// <summary>
-        /// Get Widget folder Item.
-        /// </summary>
-        /// <returns></returns>
-        public WidgetFolderItem GetWidgetFolder() {
-            return (WidgetFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(WidgetFolderItem.TemplateId)).FirstOrDefault();
-        }
-
     }
 }

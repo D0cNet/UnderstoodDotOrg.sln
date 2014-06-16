@@ -60,5 +60,14 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
             return InnerItem.Children
                 .FirstOrDefault(i => i.IsOfType(PromosFolderItem.TemplateId));
         }
+
+        /// <summary>
+        /// Get Widget folder Item.
+        /// </summary>
+        /// <returns></returns>
+        public WidgetFolderItem GetWidgetFolder()
+        {
+            return (WidgetFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(WidgetFolderItem.TemplateId)).FirstOrDefault();
+        }
     }
 }

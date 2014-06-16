@@ -12,7 +12,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 {
     public partial class ContactUsWidget : BaseSublayout
     {
-        protected GenericWidgetItem Model = new GenericWidgetItem(MainsectionItem.GetGlobals().GetMetaDataFolder().GetWidgetFolder().GetContactUsWidgetItem().InnerItem);
+        protected GenericWidgetItem Model = new GenericWidgetItem(MainsectionItem.GetGlobals().GetWidgetFolder().GetContactUsWidgetItem().InnerItem);
         protected void Page_Load(object sender, EventArgs e)
         {
 
