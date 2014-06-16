@@ -15,6 +15,65 @@
 	});
 }
 
+$(function () {
+    //plugin for generating mobile versions of responsive tables added to RTE
+    $.fn.responsiveTable = function () {
+        //options?
+        return this.each(function () {
+            var $this = $(this);
+            var rows = [];
+            var columnCount = 0;
+
+            var addToRows = function ($tdCollection) {
+                var isHeader = !columnCount;
+
+                $tdCollection.each(function (i) {
+                    if (isHeader) {
+                        rows[i] = ["<tr>" + this.outerHTML + "</tr>"];
+                        columnCount++;
+                    } else {
+                        rows[i].push("<tr>" + this.outerHTML + "</tr>");
+                    }
+                });
+            };
+
+            var $thead = $this.children("thead").first();
+            if ($thead.length) {
+                var $headers = $thead.children("tr").first().children("td");
+                addToRows($headers);
+            }
+
+            var $tbody = $this.children("tbody").first();
+            if ($tbody.length) {
+                var $bodyRows = $tbody.children("tr");
+                $bodyRows.each(function (i) {
+                    addToRows($(this).children("td"));
+                });
+            }
+            console.log(rows);
+            if (rows.length) {
+                var tables = [];
+                for (var i = 0; i < rows.length; i++) {
+                    var cap = "";
+                    if (i == 0) {
+                        $caption = $this.children("caption").first();
+                        if ($caption.length) {
+                            cap = $caption[0].outerHTML;
+                        }
+                    }
+                    tables[i] = "<table class='mobile-only'>" + cap + rows[i].join("") + "</table>";
+                }
+
+                $this.after(tables);
+            }
+        });
+    };
+}(jQuery));
+
+$(document).ready(function () {
+    $("table.original.responsive-enabled").responsiveTable();
+});
+
 function scrollToSelector(selector) {
 	jQuery(function () {
 		$('html, body').animate({
