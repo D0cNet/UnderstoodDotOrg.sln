@@ -40,9 +40,7 @@
                 user = "admin";
             }
             CommunityHelper.PostAnswer(wikiId, wikiPageId, body, user);
-
-            // Clear postback value
-            CommentEntryTextField.Value = String.Empty;
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

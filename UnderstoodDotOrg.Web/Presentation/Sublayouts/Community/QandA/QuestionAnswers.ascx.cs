@@ -37,10 +37,11 @@
             try
             {
                 lbAnswerCount.Text = dataSource[0].Count;
+                divSortAnswers.Visible = true;
+
                 if (dataSource[0].Count.AsInt() < 7)
                 {
                     divShowMore.Visible = false;
-                    divSortAnswers.Visible = false;
                 }
             }
             catch
