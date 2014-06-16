@@ -599,8 +599,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return question;
         }
 
-        public static List<Answer> GetAnswers(string wikiId, string wikiPageId)
+        public static List<Answer> GetAnswers(string wikiId, string wikiPageId, string contentId)
         {
+            string likes = GetTotalLikes(contentId).ToString();
             List<Answer> answerList = new List<Answer>();
             using (var webClient = new WebClient())
             {
@@ -623,6 +624,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         Body = xn["Body"].InnerText,
                         Author = user["Username"].InnerText,
                         Count = nodes.Count.ToString(),
+                        Likes = likes,
                     };
                     answerList.Add(answer);
                     count++;
@@ -1627,6 +1629,37 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 }
             }
             return friendsList;
+        }
+
+        public static void PostAnswer(string wikiId, string wikiPageId, string body, string currentUser)
+        {
+            using (var webClient = new WebClient())
+            {
+                if (!currentUser.Equals("admin"))
+                {
+                    try
+                    {
+                        webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                        currentUser = currentUser.Trim().ToLower();
+                        webClient.Headers.Add("Rest-Impersonate-User", currentUser);
+
+                        var postUrl = GetApiEndPoint(String.Format("wikis/{0}/pages/{1}/comments.xml", wikiId, wikiPageId));
+
+                        var data = new NameValueCollection()
+                        {
+                            { "Body", body },
+                            { "PublishedDate", DateTime.Now.ToString() },
+                            { "IsApproved", "true" },
+                            { "BlogId", wikiId }
+                        };
+
+                        byte[] result = webClient.UploadValues(postUrl, data);
+                        // TODO: handle errors
+                        string response = webClient.Encoding.GetString(result);
+                    }
+                    catch { } //TODO: Add logging
+                }
+            }
         }
     }
 }
