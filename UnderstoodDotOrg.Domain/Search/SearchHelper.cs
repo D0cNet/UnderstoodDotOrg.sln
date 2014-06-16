@@ -415,12 +415,12 @@ namespace UnderstoodDotOrg.Domain.Search
 
             // TODO: restrict to current language
             var templateId = ID.Parse(DefaultArticlePageItem.TemplateId).ToShortID().ToString().ToLower();
-            var q = new SolrQuery(term)
+            var q = new SolrQueryByField("_content", term)
                 && new SolrQueryByField("alltemplates_sm", templateId) { Quoted = false }
                 && new SolrQueryByField("_language", "en") { Quoted = false };
             
             var serializer = new DefaultQuerySerializer(new DefaultFieldSerializer());
-            var t = serializer.Serialize(q);
+            //var t = serializer.Serialize(q);
 
             var results = solr.Query(q, new QueryOptions
             {
@@ -437,8 +437,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
         public static List<Article> PerformArticleSearch(string terms, string template, int page, out int totalResults)
         {
-            // Remove wildcard
-            terms = terms.Replace("*", "");
+            // Sitecore implementation does not handle escaping reserved characters
+            terms = NormalizeSearchTerm(terms);
 
             var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
 
@@ -904,6 +904,7 @@ namespace UnderstoodDotOrg.Domain.Search
         public static IEnumerable<AssistiveToolsReviewPageItem> GetAssitiveToolsReviewPages(Guid? issue, Guid? grade, Guid? technology, string searchTerm, int page)
         {
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            searchTerm = NormalizeSearchTerm(searchTerm);
 
             using (var context = index.CreateSearchContext())
             {
@@ -1013,6 +1014,11 @@ namespace UnderstoodDotOrg.Domain.Search
         private static IQueryable<T> GetCurrentCultureQueryable<T>(IProviderSearchContext context) where T : new()
         {
             return context.GetQueryable<T>(new CultureExecutionContext(CultureInfo.CurrentCulture));
+        }
+
+        private static string NormalizeSearchTerm(string term)
+        {
+            return SolrNet.Impl.QuerySerializers.QueryByFieldSerializer.SpecialCharactersRx.Replace(term, "\\$1");
         }
 
     }

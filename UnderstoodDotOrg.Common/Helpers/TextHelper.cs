@@ -25,7 +25,7 @@ namespace UnderstoodDotOrg.Common.Helpers
 
         public static string HighlightSearchTitle(string terms, string title)
         {
-            string[] reserved = new [] { ".", "^", "$", "*", "+", "?", "(", ")", "[", "{", "|", "\\", "}" };
+            string[] reserved = new [] { ".", "^", "$", "*", "+", "?", "(", ")", "[", "{", "|", "\\", "}", ":", "-" };
             reserved = reserved.Select(x => @"\" + x).ToArray();
 
             string reservedPattern = String.Format("({0})", String.Join("|", reserved));
@@ -34,10 +34,27 @@ namespace UnderstoodDotOrg.Common.Helpers
             foreach (string word in words)
             {
                 string regexWord = Regex.Replace(word, reservedPattern, @"\$1");
+                
+                // TODO: refactor
+                // Cannot use word boundaries \b to match 
+                title = Regex.Replace(title,
+                            String.Format("^({0})$", regexWord),
+                            String.Format("<span>$1</span>", word),
+                            RegexOptions.IgnoreCase);
 
-                title = Regex.Replace(title, 
-                            String.Format(@"\b({0})\b", regexWord), 
-                            String.Format("<span>$1</span>", word), 
+                title = Regex.Replace(title,
+                            String.Format(@"(\s)({0})$", regexWord),
+                            String.Format("$1<span>$2</span>", word),
+                            RegexOptions.IgnoreCase);
+
+                title = Regex.Replace(title,
+                            String.Format(@"^({0})(\s)", regexWord),
+                            String.Format("<span>$1</span>$2", word),
+                            RegexOptions.IgnoreCase);
+
+                title = Regex.Replace(title,
+                            String.Format(@"(\s)({0})(\s)", regexWord), 
+                            String.Format("$1<span>$2</span>$3", word), 
                             RegexOptions.IgnoreCase);
             }
 
