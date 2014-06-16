@@ -27,6 +27,7 @@
                         </asp:DropDownList>
                         <asp:DropDownList ID="ddlTechTypes" runat="server" CssClass="tech parent small-width" required aria-required="true">
                         </asp:DropDownList>
+                        <input type="hidden" id="hfSelectedPlatform" runat="server" />
                         <asp:DropDownList ID="ddlPlatforms" runat="server" CssClass="tech child small-width" style="display: none;">
                         </asp:DropDownList>
                         <div class="submit-button-container">
