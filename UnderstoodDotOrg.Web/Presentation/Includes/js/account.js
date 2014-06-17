@@ -807,7 +807,13 @@
             kidCount++;
             // Increment count and adjust wording on question.
             self.childCount++;
-            $('.child-count-question span').html(self.numberAdjectives[self.childCount]);
+            //$('.child-count-question span').html(self.numberAdjectives[self.childCount]);
+            $('span.child-counter').html(self.numberAdjectives[self.childCount]);
+            
+            if (kidCount >= 6) {
+                $('div.child-count-question').addClass('hidden');
+            }
+
             return false;
         }
         /**
