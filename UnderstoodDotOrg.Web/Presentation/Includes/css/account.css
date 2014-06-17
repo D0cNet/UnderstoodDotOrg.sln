@@ -2874,6 +2874,10 @@
   margin-top: 30px;
   margin-bottom: 25px;
 }
+.profile-wrap .profile-section.children-section {
+    min-height: 235px;
+}
+
 @media (min-width: 650px), print {
   /* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_my-profile-content.scss */
   .profile-wrap .children-section .profile-details h3 {
