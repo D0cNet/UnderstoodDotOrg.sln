@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Services.TelligentService;
@@ -75,11 +76,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
            //                                                       Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
            //                                             }
            //};
-            //TODO: Pull data from notification aggregator
-             IList<INotification> cnNotifs = TelligentService.ReadFriendshipRequests(CurrentMember.ScreenName);
-             FeedsCollection lnf = new FeedsCollection(cnNotifs);
-             lvNotificationFeed.DataSource = lnf;
-             lvNotificationFeed.DataBind();
+            //if (!IsPostBack)
+            //{
+                //TODO: Pull data from notification aggregator
+                IList<INotification> cnNotifs = TelligentService.ReadFriendshipRequests(CurrentMember.ScreenName);
+                FeedsCollection lnf = new FeedsCollection(cnNotifs);
+                lvNotificationFeed.DataSource = lnf;
+                lvNotificationFeed.DataBind();
+            //}
         }
 
         protected void rptNotifications_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -91,21 +95,39 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                 if (dataItem is ConnectNotification)
                 {
-                    var connectionNotifUC = LoadControl("~/Presentation/Sublayouts/MyAccount/Notification Templates/ConnectTemplate.ascx") as ConnectTemplate;
+                    ConnectNotification conObj = (ConnectNotification)dataItem;
+                   
+                    var connectionNotifUC = LoadControl(Constants.NotificationElements.ConnectTemplatePath) as ConnectTemplate;
                    // connectionNotifUC. = (ConnectNotification)dataItem;
+                    //LinkButton lbtn = (LinkButton)connectionNotifUC.FindControl("btnAccept");
+                    //if (lbtn != null)
+                    //{
+                    //    lbtn.Click += (s, evt) =>
+                    //                    {
+                    //                        if (TelligentService.UpdateFriendRequest(conObj.UserName, CurrentMember.ScreenName, "Approved"))
+                    //                        {
+                    //                            //Push some Javascript notification that process complete
+                    //                            Page.ClientScript.RegisterStartupScript(this.GetType(), "ShowAcceptMessage", "alert('Request Accepted!');", true);
+                    //                        }
+                    //                    };
+                    //}
+                    connectionNotifUC.ConnectionObj = conObj;
                     aspxItem.Controls.Add(connectionNotifUC);
                    
                 }
                 else if (dataItem is CommentNotification)
                 {
-                    var connectionNotifUC = LoadControl("~/Presentation/Sublayouts/MyAccount/Notification Templates/CommentTemplate.ascx") as CommentTemplate;
-                    //connectionNotifUC.item = (ConnectNotification)dataItem;
-                    aspxItem.Controls.Add(connectionNotifUC);
+                    var commentNotifUC = LoadControl(Constants.NotificationElements.CommentTemplatePath) as CommentTemplate;
+                   
+                    aspxItem.Controls.Add(commentNotifUC);
                    
                 }
 
                 aspxItem.DataBind();
+               
             }
         }
+
+        
     }
 }

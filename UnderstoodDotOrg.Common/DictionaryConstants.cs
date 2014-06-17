@@ -1053,6 +1053,9 @@ namespace UnderstoodDotOrg.Common
        public static string GroupPrivacyStatement { get { return Translate.TextByDomain(PosesDictionary, "Group Privacy Statement"); } }
 
        public static string ViewProfileLink1 { get { return Translate.TextByDomain(PosesDictionary, "View Profile Link1"); } }
+
+       //Blog Labels
+       public static string BackToAllBlogs { get { return Translate.TextByDomain(PosesDictionary, "Blog Back Link"); } }
        #endregion
 
 
@@ -1065,11 +1068,18 @@ namespace UnderstoodDotOrg.Common
        public static string ChildEnrolled { get { return Translate.TextByDomain(PosesDictionary, "ChildEnrolled"); } }
 
        public static string CompleteMyProfile { get { return Translate.TextByDomain(PosesDictionary, "CompleteMyProfile"); } }
-
-       #region Notification Labels
+       
+       //TODO: create matching labels in sitecore
+       #region Notification Labels 
        public static string ConnectAction { get { return "{0} <a href='{1}'>wants to connect</a> with you."; } }//{ get { return Translate.TextByDomain(PosesDictionary, "ConnectWith"); } }
        public static string ConnectLink { get { return "Parent Connection <span class='timestamp'>{0}</span>"; } }//{ get { return Translate.TextByDomain(PosesDictionary, "ConnectHeader"); } }
        public static string CommentAction { get { return "{0} <a href='{1}'>added&hellip;</a>"; } }
+       public static string AcceptText { get { return "Accept"; } }
+
+       public static string DeclineText { get { return "Decline"; } }
        #endregion
+
+    
+      
     }
 }

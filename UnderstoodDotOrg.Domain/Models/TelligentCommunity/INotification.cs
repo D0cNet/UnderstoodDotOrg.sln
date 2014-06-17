@@ -26,7 +26,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
         #endregion
 
          DateTime NotificationDate { get; set; }
-         Constants.NotificationType Type { get; set; }
+         Constants.NotificationElements.NotificationType Type { get; set; }
         
 
     }

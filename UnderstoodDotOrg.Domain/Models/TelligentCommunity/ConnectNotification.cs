@@ -21,7 +21,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
             // throw new NotImplementedException(); 
              if(node!=null)
              {
-                 Type = Common.Constants.NotificationType.Connection;
+                 Type = Common.Constants.NotificationElements.NotificationType.Connection;
                  UserName = node.SelectSingleNode("User/Username").InnerText;
                  NotificationDate =Convert.ToDateTime(node.SelectSingleNode("CreatedDate").InnerText);
                  TimeStamp = NotificationDate.ToString("hh:mm");
@@ -32,7 +32,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
         public event EventHandler evtCancel;
 
         
-        protected virtual void OnAccept(object sender, EventArgs args)
+        public virtual void OnAccept(object sender, EventArgs args)
         {
             if(evtOk != null)
             {
@@ -40,7 +40,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
             }
         }
 
-        protected virtual void OnDecline(object sender, EventArgs args)
+        public virtual void OnDecline(object sender, EventArgs args)
         {
             if (evtCancel != null)
             {
@@ -77,7 +77,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
             set;
         }
 
-        public Common.Constants.NotificationType Type
+        public Common.Constants.NotificationElements.NotificationType Type
         {
             get;
             set;

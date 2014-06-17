@@ -24,7 +24,11 @@ namespace UnderstoodDotOrg.Common.Helpers
 
              if (timeSince.Equals("0"))
              {
-                 date = DateTime.Parse(d[1]);
+                 if(d.Count() <2)
+                    date = DateTime.Parse(d[0]);
+                 else
+                     date = DateTime.Parse(d[1]);
+
                  s = now.TimeOfDay.Subtract(date.TimeOfDay);
                  span = (int)s.TotalSeconds;
                  if (span < 60)

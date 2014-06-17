@@ -180,6 +180,14 @@ namespace UnderstoodDotOrg.Common
 
         public static class Pages
         {
+            public static Guid AllBlogs
+            {
+                get
+                {
+                    return new Guid("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}");
+                }
+            }
+
             public static Guid ParentsGroups
                 {
                 get
@@ -617,11 +625,32 @@ namespace UnderstoodDotOrg.Common
             Member
         }
 
-        public enum NotificationType
+        #region Notification templates and types
+        
+        public static class NotificationElements
         {
-            Comment,
-            Connection
+
+            public enum NotificationType
+            {
+                Comment,
+                Connection
+            }
+            public static string CommentTemplatePath
+            {
+                get
+                {
+                    return @"~/Presentation/Sublayouts/MyAccount/Notification Templates/CommentTemplate.ascx";
+                }
+            }
+            public static string ConnectTemplatePath
+            {
+                get
+                {
+                    return @"~/Presentation/Sublayouts/MyAccount/Notification Templates/ConnectTemplate.ascx";
+                }
+            }
         }
+        #endregion
         public static class TelligentConversationStatus
         {
             public const string NotSet = "NotSet";

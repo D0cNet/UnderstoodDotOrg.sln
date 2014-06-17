@@ -49,7 +49,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
             set;
         }
 
-        public Common.Constants.NotificationType Type
+        public Common.Constants.NotificationElements.NotificationType Type
         {
             get;
             set;

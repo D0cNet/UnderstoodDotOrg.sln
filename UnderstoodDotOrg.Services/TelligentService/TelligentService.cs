@@ -1237,6 +1237,85 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return success;
         }
 
+
+
+        public static bool CreateFriendRequest(string requestor,string requesteeID,string message)
+        {
+            bool success = false;
+
+            if ((!string.IsNullOrEmpty(requestor) && !string.IsNullOrEmpty(requesteeID)) && !string.IsNullOrEmpty(message))
+            {
+                using (WebClient client = new WebClient())
+                {
+                    try
+                    {
+                        client.Headers.Add("Rest-User-Token", TelligentAuth());
+                        client.Headers.Add("Rest-Impersonate-User", requestor);
+
+                        string address = string.Format(GetApiEndPoint("users/{0}/friends.xml"), requestor);
+                        NameValueCollection data = new NameValueCollection();
+
+                        data["RequesteeId"] = requesteeID;
+                        data["RequestMessage"] = message;
+                        string xml = Encoding.UTF8.GetString(client.UploadValues(address, data));
+                        XmlDocument document = new XmlDocument();
+                        document.LoadXml(xml);
+                        XmlNode childNode = document.SelectSingleNode("Response/Friendship");
+                        if (childNode != null)
+                        {
+                            success = true;
+                        }
+                    }
+                    catch
+                    {
+                        success = false;
+                    }
+                }
+
+            }
+
+
+            return success;
+        }
+        public static bool UpdateFriendRequest(string requestor, string requestee, string friendshipstate)
+        {
+            bool success = false;
+
+            if ((!string.IsNullOrEmpty(requestor) && !string.IsNullOrEmpty(requestee)) && !string.IsNullOrEmpty(friendshipstate))
+            {
+                var requestorID = ReadUserId(requestor);
+                var requesteeID = ReadUserId(requestee);
+                using (WebClient client = new WebClient())
+                {
+                    try
+                    {
+                        client.Headers.Add("Rest-User-Token", TelligentAuth());
+                        client.Headers.Add("Rest-Impersonate-User", requestor);
+                        client.Headers.Add("Rest-Method", "PUT");
+                        string address = string.Format(GetApiEndPoint("users/{0}/friends/{1}.xml "), requestorID,requesteeID);
+                        NameValueCollection data = new NameValueCollection();
+
+                        data["FriendshipState"] = friendshipstate;
+                        string xml = Encoding.UTF8.GetString(client.UploadValues(address, data));
+                        XmlDocument document = new XmlDocument();
+                        document.LoadXml(xml);
+                        XmlNode childNode = document.SelectSingleNode("Response/Friendship");
+                        if (childNode != null)
+                        {
+                            success = true;
+                        }
+                    }
+                    catch
+                    {
+                        success = false;
+                    }
+                }
+
+            }
+
+
+            return success;
+        }
     }
 
 }

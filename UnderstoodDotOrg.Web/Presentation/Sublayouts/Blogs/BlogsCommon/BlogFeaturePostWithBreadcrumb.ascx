@@ -20,8 +20,8 @@
         
         <!-- BEGIN PARTIAL: community/breadcrumb_menu -->
 <!--breadcrumb menu-->
-<a href="REPLACE" class="back-to-previous">
-  <i class="icon-arrow-left-blue"></i>back to parents
+<a href="REPLACE" ID="hrefBackLink" runat="server" class="back-to-previous">
+  <i class="icon-arrow-left-blue"></i><asp:Literal ID="litBackLink" runat="server"></asp:Literal>
 </a>
 <!-- END PARTIAL: community/breadcrumb_menu -->
         

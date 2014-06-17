@@ -3,7 +3,7 @@
           <!-- BEGIN PARTIAL: account-notification-tab-notifications -->
 <section class="account-notifications-tab-notifications">
 
-    <asp:ListView runat="server" ItemType="UnderstoodDotOrg.Domain.Models.TelligentCommunity.NotificationFeed" ID="lvNotificationFeed">
+    <asp:ListView runat="server"  ItemType="UnderstoodDotOrg.Domain.Models.TelligentCommunity.NotificationFeed" ID="lvNotificationFeed">
         
         <LayoutTemplate>
             <div class="notification-feed-wrapper">
@@ -13,7 +13,7 @@
         </LayoutTemplate>
         <ItemTemplate>
                           <h3><%# Eval("FriendlyDate") %></h3>
-                <asp:Repeater  ClientIDMode="Static" ID="rptNotifications"  OnItemDataBound="rptNotifications_ItemDataBound"  ItemType="INotification" runat="server">
+                <asp:Repeater  ClientIDMode="Static" ID="rptNotifications"    OnItemDataBound="rptNotifications_ItemDataBound"  ItemType="INotification" runat="server">
                     <HeaderTemplate>
                         <div class="notification-items">
                     </HeaderTemplate>
