@@ -548,6 +548,9 @@ the callbacks passed to the module.
             //data sort option (from button data attribute)
             var $dataSortOption = $showMore.data("sort-option");
 
+            //number visible to user, reflecting number of displayed results
+            var $categoryDisplayCount = $(".category-display-count").filter("[data-category-id='" + $dataCategoryId + "']");
+
             // scroll to top of newly loaded items
             $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
 
@@ -567,6 +570,8 @@ the callbacks passed to the module.
                 if (clickCount >= Math.ceil(maxResults / resultsPerClick)) {
                     $showMore.parent().parent().hide();
                 }
+
+                $categoryDisplayCount.html(Math.min(resultsPerClick * clickCount, maxResults));
 
                 /*
                 creates a readspeaker play button for all elements that have a cass of rs_read_this (only for elements that

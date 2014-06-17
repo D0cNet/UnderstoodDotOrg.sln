@@ -71,7 +71,10 @@
                                 </fieldset>
                             </div>
                             <div class="col col-4 pull-6">
-                                <span class="result-count"><%# Eval("CategoryResultDisplayCount") %> of <%# Eval("CategoryResultTotalCount") %> results</span>
+                                <span class="result-count"><span class="category-display-count" data-category-id="<%# Eval("CategoryId") %>">
+                                    <%# Eval("CategoryResultDisplayCount") %></span> 
+                                    of 
+                                    <%# Eval("CategoryResultTotalCount") %> results</span>
                             </div>
                         </header>
                         <div class="tech-results-wrapper at-bottom container<%# Eval("CategoryId") %>">
@@ -92,7 +95,7 @@
                                 <div class="row"<%# (bool)Eval("HasMoreResults") ? string.Empty : " style=\"display:none;\"" %>>
                                     <div class="col col-24">
                                         <a class="show-more-link " href="#" data-path="AssistiveTechResults" data-category-id="<%# Eval("CategoryId") %>" 
-                                            data-item="search-results" data-page-id="<%= Model.ID.Guid.ToString() %>" data-count="1"
+                                            data-item="search-results" data-page-id="<%= Model.ID.Guid.ToString() %>" data-count="1" data-sort-option="0"
                                             data-container="container<%# Eval("CategoryId") %>" data-max-results="<%# Eval("CategoryResultTotalCount") %>"
                                             data-results-per-click="<%= UnderstoodDotOrg.Common.Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE %>">
                                             Show More
