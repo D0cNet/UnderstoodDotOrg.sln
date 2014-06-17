@@ -61,6 +61,15 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                         case "{A720AAA9-8AC8-4851-A873-0E0F158C61BD}":
                             CreateTelligentPost(itm, 3); //blog id should be 3
                             break;
+                        case "{CEE7D06D-F14F-4A34-BA72-95381FFFCC75}":
+                            CreateTelligentPost(itm, 7); //blog id should be 3
+                            break;
+                        case "{A6B58A59-A00B-4F6D-BBA2-8ECB82CB0BBA}":
+                            CreateTelligentPost(itm, 8); //blog id should be 3
+                            break;
+                        case "{D882ED4F-4E03-4351-A764-36DA8EE82EF2}":
+                            CreateTelligentPost(itm, 9); //blog id should be 3
+                            break;
                         default:
                             return;
                     }
