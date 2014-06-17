@@ -21,6 +21,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Widgets.Base;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
 {
@@ -51,52 +52,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
                 }
             }
 
-            if (ContextItem.WidgetLink.Item != null && ContextItem.WidgetLink.Item.IsOfType(WidgetItem.TemplateId))
+            if (ContextItem.WidgetLink.Item != null && ContextItem.WidgetLink.Item.InheritsTemplate(ToolWidgetItem.TemplateId))
             {
-                Item widgetItem = ContextItem.WidgetLink.Item;
-                frWidgetTitle.Item = widgetItem;
-                frWidgetDetail.Item = widgetItem;
-
-                if (!IsPostBack)
-                {
-                    BindDDL();
-                }
+                slToolWidget.DataSource = ContextItem.WidgetLink.Item.ID.ToString();
             }
-            btnSubmit.Text = DictionaryConstants.SubmitButtonText;
-        }
-
-        public void BindDDL()
-        {
-
-            var challenges = FormHelper.GetChallenges(DictionaryConstants.SelectChallenge);
-            if (challenges.Any())
+            else
             {
-                ddlChallenges.DataSource = challenges;
-                ddlChallenges.DataTextField = "Text";
-                ddlChallenges.DataValueField = "Value";
-                ddlChallenges.DataBind();
-            }
-
-            var grades = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
-            if (grades.Any())
-            {
-                ddlGrades.DataSource = grades;
-                ddlGrades.DataTextField = "Text";
-                ddlGrades.DataValueField = "Value";
-                ddlGrades.DataBind();
-            }
-        }
-
-        /// <summary>
-        /// Search button click
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void btnSubmit_OnClick(object sender, EventArgs e)
-        {
-            if (btnSubmit != null)
-            {
-                Response.Redirect(FormHelper.GetBehaviorResultsUrl(ddlChallenges.SelectedValue, ddlGrades.SelectedValue));
+                slToolWidget.Visible = false;
             }
         }
 

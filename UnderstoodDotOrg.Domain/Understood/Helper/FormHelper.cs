@@ -126,14 +126,19 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
             Item item = Sitecore.Context.Database.GetItem(Constants.Pages.BehaviorToolsResults);
             if (item != null)
             {
-                Dictionary<string, string> queryParams = new Dictionary<string, string>()
+                return GetBehaviorResultsUrl(item.GetUrl(), challengeGuid, gradeGuid);
+            }
+            return String.Empty;
+        }
+
+        public static string GetBehaviorResultsUrl(string path, string challengeGuid, string gradeGuid)
+        {
+            Dictionary<string, string> queryParams = new Dictionary<string, string>()
                 {
                     { Constants.GRADE_QUERY_STRING, gradeGuid },
                     { Constants.CHALLENGE_QUERY_STRING, challengeGuid }
                 };
-                return AssembleUrl(item.GetUrl(), queryParams);
-            }
-            return String.Empty;
+            return AssembleUrl(path, queryParams);
         }
 
         public static string GetSearchResultsUrl(string term, string type)

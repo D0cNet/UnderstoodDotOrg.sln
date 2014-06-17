@@ -1015,6 +1015,27 @@
     <Compile Include="Presentation\Sublayouts\Common\Tiles\PromoTile.ascx.designer.cs">
       <DependentUpon>PromoTile.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Widgets\AssistiveTool.ascx.cs">
+      <DependentUpon>AssistiveTool.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Widgets\AssistiveTool.ascx.designer.cs">
+      <DependentUpon>AssistiveTool.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Widgets\BehaviorTool.ascx.cs">
+      <DependentUpon>BehaviorTool.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Widgets\BehaviorTool.ascx.designer.cs">
+      <DependentUpon>BehaviorTool.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Widgets\GenericTool.ascx.cs">
+      <DependentUpon>GenericTool.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Widgets\GenericTool.ascx.designer.cs">
+      <DependentUpon>GenericTool.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\All Parents Search.ascx.cs">
       <DependentUpon>All Parents Search.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2648,6 +2669,9 @@
     <Content Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Tiles\EventTile.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Tiles\PromoTile.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Widgets\AssistiveTool.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Widgets\BehaviorTool.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Widgets\GenericTool.ascx" />
     <Content Include="Presentation\Sublayouts\Community\All Parents Search.ascx" />
     <Content Include="Presentation\Sublayouts\Community\CommunityContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsCalendarListView.ascx" />

@@ -96,7 +96,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
             ddlGrades.DataBind();
             ddlGrades.SelectedIndex = ddlGrades.GetSelectedIndex(SelectedGrade);         
 
-            ddlChallenges.DataSource = FormHelper.GetChallenges(DictionaryConstants.SelectChallenge);
+            ddlChallenges.DataSource = FormHelper.GetChallenges(DictionaryConstants.SelectChallengeLabel);
             ddlChallenges.DataTextField = "Text";
             ddlChallenges.DataValueField = "Value";
             ddlChallenges.DataBind();

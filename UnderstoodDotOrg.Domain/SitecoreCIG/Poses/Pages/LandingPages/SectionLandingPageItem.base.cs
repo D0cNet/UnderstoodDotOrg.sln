@@ -46,6 +46,24 @@ public static implicit operator Item(SectionLandingPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomTreeListField ToolWidgets
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Tool Widgets"]);
+	}
+}
+
+
+public CustomImageField BackgroundImage
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Background Image"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

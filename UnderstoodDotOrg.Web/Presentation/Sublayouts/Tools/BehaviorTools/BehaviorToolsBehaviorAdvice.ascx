@@ -7,7 +7,7 @@
   <div class="behavior-advice">
     <div class="behavior-advice-title"><sc:FieldRenderer ID="frCalloutTitle" runat="server" FieldName="Callout Title" /></div>
     <div class="advice-question-wrapper">
-        <asp:Label AssociatedControlID="ddlChallenges" runat="server" CssClass="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SelectChallenge %></asp:Label>
+        <asp:Label AssociatedControlID="ddlChallenges" runat="server" CssClass="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SelectChallengeLabel %></asp:Label>
         <asp:DropDownList ID="ddlChallenges" runat="server" />
         <asp:RequiredFieldValidator ID="rfvChallenges" runat="server" ControlToValidate="ddlChallenges" Display="Dynamic" />
     </div>

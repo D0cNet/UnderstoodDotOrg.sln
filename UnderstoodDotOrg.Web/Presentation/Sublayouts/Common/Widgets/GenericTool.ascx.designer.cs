@@ -7,45 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets {
     
     
-    public partial class YourParentToolkit {
+    public partial class GenericTool {
         
         /// <summary>
-        /// frParentToolKitHeading control.
+        /// frWidgetTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frParentToolKitHeading;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frWidgetTitle;
         
         /// <summary>
-        /// frParentToolDetail control.
+        /// frWidgetCopy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frParentToolDetail;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frWidgetCopy;
         
         /// <summary>
-        /// slToolWidget control.
+        /// frWidgetContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout slToolWidget;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frWidgetContent;
         
         /// <summary>
-        /// rptEventCarousel control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptEventCarousel;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

@@ -265,11 +265,11 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
-        public static string SelectChallenge
+        public static string SelectChallengeLabel
         {
             get
             {
-                return Translate.TextByDomain(PosesDictionary, "Select Challenge");
+                return Translate.TextByDomain(PosesDictionary, "Select Challenge Label");
             }
         }
 

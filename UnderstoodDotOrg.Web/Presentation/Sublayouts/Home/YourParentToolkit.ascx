@@ -20,39 +20,11 @@
 
     <div class="row">
         <div class="col col-8 offset-3">
-
-            <!-- BEGIN PARTIAL: behavior-tool -->
             <div class="behavior-tool">
-                <div class="behavior-form select-container">
-
-                    <h3>
-                        <sc:FieldRenderer ID="frWidgetTitle" runat="server" FieldName="Widget Title" />
-                    </h3>
-                    <p>
-                        <sc:FieldRenderer ID="frWidgetDetail" runat="server" FieldName="Widget Detail" />
-                    </p>
-
-                    <fieldset>
-                        <label for="behaviortool-issue" class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SelectBehaviorLabel %></label>
-                        <asp:DropDownList ID="ddlChallenges" runat="server"
-                            RepeatLayout="unorderedlist" RepeatDirection="vertical" aria-required="true">
-                        </asp:DropDownList>
-
-                        <label for="behaviortool-grade" class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SelectGradeLabel %></label>
-                        <asp:DropDownList ID="ddlGrades" runat="server"
-                            RepeatLayout="unorderedlist" RepeatDirection="vertical" aria-required="true">
-                        </asp:DropDownList>
-                    </fieldset>
-
-                    <div class="submit-button-wrap">
-                        <asp:Button ID="btnSubmit" runat="server" CssClass="button" OnClick="btnSubmit_OnClick" Text="Submit" />
-                    </div>
-
+                <div class="behavior-form select-container rs_read_this">
+                    <sc:Sublayout ID="slToolWidget" runat="server" Path="~/Presentation/Sublayouts/Common/Widgets/BehaviorTool.ascx" />
                 </div>
             </div>
-
-            <!-- END PARTIAL: behavior-tool -->
-
         </div>
         <!-- .col -->
         <div class="col col-13">
