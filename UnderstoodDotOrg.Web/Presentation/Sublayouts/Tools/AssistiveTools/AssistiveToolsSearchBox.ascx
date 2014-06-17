@@ -25,11 +25,22 @@
                         </asp:DropDownList>
                         <asp:DropDownList ID="ddlGrades" runat="server" required aria-required="true">
                         </asp:DropDownList>
-                        <asp:DropDownList ID="ddlTechTypes" runat="server" CssClass="tech parent small-width" required aria-required="true">
+                        <asp:DropDownList ID="ddlTechTypes" runat="server" CssClass="tech parent small-width tech-type-select" required aria-required="true">
                         </asp:DropDownList>
-                        <input type="hidden" id="hfSelectedPlatform" runat="server" />
-                        <asp:DropDownList ID="ddlPlatforms" runat="server" CssClass="tech child small-width" style="display: none;">
-                        </asp:DropDownList>
+                        <input type="hidden" id="hfSelectedPlatform" class="hfSelectedPlatform" runat="server" />
+                        <asp:Repeater ID="rptrDynPlatformDropdowns" runat="server">
+                            <ItemTemplate>
+                                <select data-type-id="<%# Eval("TypeId") %>" class="tech child small-width platform-select" style="display:none;">
+                                    <option value="">Select Platform</option>
+                                    <asp:Repeater ID="rptrPlatformOptions" runat="server" 
+                                        ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData.AssistiveToolsPlatformItem">
+                                        <ItemTemplate>
+                                            <option value="<%# Item.ID.ToString() %>"><%# Item.Metadata.ContentTitle %></option>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </select>
+                            </ItemTemplate>
+                        </asp:Repeater>
                         <div class="submit-button-container">
                             <input type="button" id="btnBrowseFind" runat="server" onserverclick="btnFindSubmit_Click" class="button" value="Find">
                         </div>

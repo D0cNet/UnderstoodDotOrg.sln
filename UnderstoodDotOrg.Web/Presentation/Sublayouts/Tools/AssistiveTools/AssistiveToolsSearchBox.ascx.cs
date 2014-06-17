@@ -11,6 +11,8 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders.LearningTool;
 using Sitecore.Data.Items;
 using System.Web.UI.HtmlControls;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
+using UnderstoodDotOrg.Common.Comparers;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
@@ -35,22 +37,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                     var issueId = Request.QueryString[Constants.QueryStrings.LearningTool.IssueId];
                     var gradeId = Request.QueryString[Constants.QueryStrings.LearningTool.GradeId];
                     var typeId = Request.QueryString[Constants.QueryStrings.LearningTool.TypeId];
+                    var platformId = Request.QueryString[Constants.QueryStrings.LearningTool.PlatformId];
 
-                    if (!string.IsNullOrEmpty(issueId) && !string.IsNullOrEmpty(gradeId) && !string.IsNullOrEmpty(typeId))
+                    ListItem temp;
+                    if (!string.IsNullOrEmpty(issueId) && (temp = ddlIssues.Items.FindByValue(issueId)) != null)
                     {
-                        ListItem temp;
-                        if ((temp = ddlIssues.Items.FindByValue(issueId)) != null)
-                        {
-                            temp.Selected = true;
-                        }
-                        if ((temp = ddlGrades.Items.FindByValue(gradeId)) != null)
-                        {
-                            temp.Selected = true;
-                        }
-                        if ((temp = ddlTechTypes.Items.FindByValue(typeId)) != null)
-                        {
-                            temp.Selected = true;
-                        }
+                        temp.Selected = true;
+                    }
+                    if (!string.IsNullOrEmpty(gradeId) && (temp = ddlGrades.Items.FindByValue(gradeId)) != null)
+                    {
+                        temp.Selected = true;
+                    }
+                    if (!string.IsNullOrEmpty(typeId) && (temp = ddlTechTypes.Items.FindByValue(typeId)) != null)
+                    {
+                        temp.Selected = true;
+                    }
+
+                    if (!string.IsNullOrEmpty(platformId))
+                    {
+                        hfSelectedPlatform.Value = platformId;
                     }
                 }
             }
@@ -74,8 +79,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                 var issueId = ddlIssues.SelectedValue;
                 var gradeId = ddlGrades.SelectedValue;
                 var typeId = ddlTechTypes.SelectedValue;
+                var platformId = hfSelectedPlatform.Value;
 
-                if (issueId != string.Empty) 
+                if (issueId != string.Empty)
                 {
                     qs += Constants.QueryStrings.LearningTool.IssueId + "=" + issueId;
                 }
@@ -86,6 +92,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                 if (typeId != string.Empty)
                 {
                     qs += (qs != string.Empty ? "&" : string.Empty) + Constants.QueryStrings.LearningTool.TypeId + "=" + typeId;
+                }
+                if (platformId != string.Empty)
+                {
+                    qs += (qs != string.Empty ? "&" : string.Empty) + Constants.QueryStrings.LearningTool.PlatformId + "=" + platformId;
                 }
             }
 
@@ -163,16 +173,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             if (platformsFolder != null)
             {
                 var platforms = platformsFolder.GetPlatforms()
-                    .Select(grade => new
+                    .Where(i => i.IsOfType(AssistiveToolsPlatformItem.TemplateId))
+                    .Select(i => (AssistiveToolsPlatformItem)i)
+                    .Where(platform => platform.CorrespondingType.Item != null)
+                    .GroupBy(platform => platform.CorrespondingType.Item, new BaseItemComparer())
+                    .Select(group => new
                     {
-                        Text = grade.Metadata.ContentTitle.Rendered,
-                        Value = grade.ID.ToString()
+                        TypeId = group.Key.ID.ToString(),
+                        Platforms = group.AsEnumerable()
                     });
-                ddlPlatforms.DataSource = platforms;
-                ddlPlatforms.DataTextField = "Text";
-                ddlPlatforms.DataValueField = "Value";
-                ddlPlatforms.DataBind();
-                ddlPlatforms.Items.Insert(0, new ListItem("Select Platform", string.Empty));
+
+                rptrDynPlatformDropdowns.DataSource = platforms;
+                rptrDynPlatformDropdowns.ItemDataBound += rptrDynPlatformDropdowns_ItemDataBound;
+                rptrDynPlatformDropdowns.DataBind();
+            }
+        }
+
+        void rptrDynPlatformDropdowns_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                var platforms = DataBinder.Eval(e.Item.DataItem, "Platforms") as IEnumerable<AssistiveToolsPlatformItem>;
+                var rptrPlatformOptions = e.FindControlAs<Repeater>("rptrPlatformOptions");
+
+                rptrPlatformOptions.DataSource = platforms;
+                rptrPlatformOptions.DataBind();
             }
         }
     }

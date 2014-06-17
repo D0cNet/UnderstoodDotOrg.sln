@@ -22,40 +22,46 @@
         $('#search-by-tool-tabs input[type=text], #search-by-tool-tabs select').uniform({ 'selectedClass': 'selected' });
 
         // cache selectors
-        var searchByToolTabs = $('#search-by-tool-tabs');
-        var atBrowseByTechnology = $('#at-browse-by-technology');
-        var atBrowseByApp = $('#at-browse-by-app');
-        var uniformAtBrowseByApp = $('#uniform-at-browse-by-app');
-        var atBrowseByGames = $('#at-browse-by-games');
-        var uniformAtBrowseByGames = $('#uniform-at-browse-by-games');
+        var $searchByToolTabs = $('#search-by-tool-tabs');
+        var $techTypeSelect = $searchByToolTabs.find("select.tech-type-select");
+        var $platformSelects = $searchByToolTabs.find("select.platform-select");
+        var $uniformPlatformSelects = $platformSelects.parent();
+        var $hfSelectedPlatform = $searchByToolTabs.find(".hfSelectedPlatform");
 
         // initiate easytabs for the 'browse by', 'search by' buttons
-        searchByToolTabs.easytabs();
+        $searchByToolTabs.easytabs();
 
         self.atSearchSelect = $('#browse-by select');
 
         // make select boxes go 100%
         self.atSearchSelect.siblings('span').css('width', '100%').parent('.selector').css('width', '100%');
 
-        //NOTE - uniform will auto hide elements with inline display:none;
-
-        searchByToolTabs.on('change', function () {
-            if (atBrowseByTechnology.val() == "at-browse-by-app") {
-                atBrowseByGames.hide();
-                uniformAtBrowseByGames.hide();
-                atBrowseByApp.show();
-                uniformAtBrowseByApp.show();
-            } else if (atBrowseByTechnology.val() == "at-browse-by-games") {
-                atBrowseByApp.hide();
-                uniformAtBrowseByApp.hide();
-                atBrowseByGames.show();
-                uniformAtBrowseByGames.show();
+        if ($techTypeSelect.val()) {
+            var $initialPlatformSelect = showPlatformSelect($techTypeSelect.val());
+            
+            var selectedPlatform = $hfSelectedPlatform.val();
+            if (selectedPlatform && $initialPlatformSelect.has("option[value='" + selectedPlatform + "']")) {
+                $initialPlatformSelect.val(selectedPlatform);
             } else {
-                atBrowseByApp.hide();
-                uniformAtBrowseByApp.hide();
-                atBrowseByGames.hide();
-                uniformAtBrowseByGames.hide();
+                $hfSelectedPlatform.val("");
             }
+        }
+
+        $techTypeSelect.on("change", function () {
+            $uniformPlatformSelects.hide();
+            $platformSelects.val("").trigger("change");
+            var typeId = $(this).val();
+            if (typeId) {
+                showPlatformSelect(typeId);
+            }
+        });
+
+        function showPlatformSelect(typeId) {
+            var $platformSelect = $platformSelects.filter("[data-type-id='" + typeId + "']").first().show().parent().show();
+        }
+
+        $platformSelects.on("change", function () {
+            $hfSelectedPlatform.val($(this).val()).trigger("change");
         });
 
         return this;
@@ -325,7 +331,7 @@
         // On change of Select by Technology drop call equalHeights again
         // Function gets called but equalHeights does not update
         // Same issue happening on resize
-        $('#at-browse-by-technology').change(function () {
+        $("#search-by-tool-tabs select.tech-type-select").first().change(function () {
             $('.search-tool-layout-wrapper .col').css('height', 'auto');
             // Slight delay to fix race-condition bug with equalHeights.
             setTimeout(function () {

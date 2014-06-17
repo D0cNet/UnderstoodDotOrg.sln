@@ -534,6 +534,7 @@ namespace UnderstoodDotOrg.Common
                 public const string IssueId = "iid";
                 public const string GradeId = "gid";
                 public const string TypeId = "tid";
+                public const string PlatformId = "pid";
                 public const string Keyword = "keyword";
             }
         }

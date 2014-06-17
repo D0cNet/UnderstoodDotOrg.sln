@@ -47,9 +47,7 @@
   width: 100% !important;
 }
 /* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/assistive-tech/_at-search-tool.scss */
-#search-by-tool-tabs fieldset #uniform-at-browse-by-technology,
-#search-by-tool-tabs fieldset #uniform-at-browse-by-app,
-#search-by-tool-tabs fieldset #uniform-at-browse-by-games {
+#search-by-tool-tabs fieldset > div.selector[id^="uniform-"] {
   width: 76% !important;
 }
 /* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/assistive-tech/_at-search-tool.scss */
