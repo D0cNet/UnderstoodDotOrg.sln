@@ -1,30 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"
 >
-    <xsl:output method="xml" indent="yes"/>
+  <xsl:output method="html" indent="yes" omit-xml-declaration="yes"/>
 
-    <xsl:template match="/">
-      <td style="padding:0 18px 0 0;">
-        <xsl:for-each select="articles/article[position() = 1]">
-          <xsl:call-template name="article"/>
-        </xsl:for-each>
-        <xsl:if test="count(articles/article) > 1">
-          <table class="flexible" align="right" width="391" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
-            <tr>
-              <td>
-                <xsl:for-each select="articles/article[position() > 1]">
-                  <xsl:call-template name="article"/>
-                </xsl:for-each>
-              </td>
-            </tr>
-          </table>
-        </xsl:if>
-      </td>
-    </xsl:template>
+  <xsl:template match="/">
+    <xsl:for-each select="articles/article[position() = 1]">
+      <xsl:call-template name="article">
+        <xsl:with-param name="align">left</xsl:with-param>
+      </xsl:call-template>
+    </xsl:for-each>
+    <xsl:if test="count(articles/article) > 1">
+      <table class="flexible" align="right" width="391" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+        <tr>
+          <td>
+            <xsl:for-each select="articles/article[position() = 2]">
+              <xsl:call-template name="article">
+                <xsl:with-param name="align">left</xsl:with-param>
+              </xsl:call-template>
+            </xsl:for-each>
+            <xsl:for-each select="articles/article[position() = 3]">
+              <xsl:call-template name="article">
+                <xsl:with-param name="align">right</xsl:with-param>
+              </xsl:call-template>
+            </xsl:for-each>
+          </td>
+        </tr>
+      </table>
+    </xsl:if>
+  </xsl:template>
 
   <xsl:template name="article">
-    <table class="flexible" width="160" align="left" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+    <xsl:param name="align"/>
+    <table class="flexible" width="160" align="{$align}" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
       <tr>
         <td align="center" style="padding:0 0 29px;">
           <a>

@@ -103,13 +103,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         protected global::System.Web.UI.WebControls.TextBox tbxSubscriberFN1;
         
         /// <summary>
-        /// tbxLanguage control.
+        /// ddlLanguages control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxLanguage;
+        protected global::System.Web.UI.WebControls.DropDownList ddlLanguages;
         
         /// <summary>
         /// btnE1 control.

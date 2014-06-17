@@ -11,6 +11,8 @@ using UnderstoodDotOrg.Domain.Personalization;
 using UnderstoodDotOrg.Services.ExactTarget.etAPI;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
+using System.IO;
+using System.Xml;
 
 namespace UnderstoodDotOrg.Services.ExactTarget
 {
@@ -2221,7 +2223,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
                             new etAPI.Attribute
                             {
                                 Name = "personalized_recommended_articles",
-                                Value = GetChildPersonalizedArticles(request.Child)
+                                Value = GetChildPersonalizedArticles(request.Child)    
                             }
                         };
 
@@ -2246,25 +2248,38 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
         private static string GetChildPersonalizedArticles(Child child)
         {
-            XElement root = new XElement("articles");
+            StringBuilder sb = new StringBuilder();
 
-            var articles = PersonalizationHelper.GetChildPersonalizedContents(child);
-            if (articles.Any())
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Encoding = new UTF8Encoding(false);
+            //settings.OmitXmlDeclaration = true;
+            settings.Indent = false;
+            settings.NewLineHandling = NewLineHandling.None;
+
+            using (XmlWriter writer = XmlWriter.Create(sb, settings))
             {
-                var subset = articles.Take(3);
-                foreach (var s in subset)
+                XElement root = new XElement("articles");
+
+                var articles = PersonalizationHelper.GetChildPersonalizedContents(child);
+                if (articles.Any())
                 {
-                    // TODO: add absolute url
-                    root.Add(new XElement("article",
-                            new XElement("title", s.ContentPage.PageTitle.Rendered),
-                            new XElement("url", s.GetUrl()),
-                            new XElement("img", s.GetArticleThumbnailUrl(160, 90))
-                        )
-                    );
+                    var subset = articles.Take(3);
+                    foreach (var s in subset)
+                    {
+                        // TODO: add absolute url
+                        root.Add(new XElement("article",
+                                new XElement("title", s.ContentPage.PageTitle.Rendered),
+                                new XElement("url", s.GetUrl()),
+                                new XElement("img", s.GetArticleThumbnailUrl(160, 90))
+                            )
+                        );
+                    }
                 }
+
+                root.Save(writer);
             }
 
-            return root.ToString();
+            return sb.ToString();
         }
 
 		public static BaseReply InvokeE1B1TurnAroundBullying(InvokeE1B1TurnAroundBullyingRequest request)
