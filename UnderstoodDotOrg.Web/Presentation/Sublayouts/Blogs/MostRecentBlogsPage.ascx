@@ -77,7 +77,7 @@
                                     <a>
                                         <img alt="230x129 Placeholder" src="http://placehold.it/230x129" /></a>
 
-                                    <p class="blog-card-comments"><b class="number-of-comments">19</b>Comments</p>
+                                    <p class="blog-card-comments"><b class="number-of-comments"><%# Item.CommentCount %></b>Comments</p>
 
                                 </div>
                                 <div class="blog-card-info group">

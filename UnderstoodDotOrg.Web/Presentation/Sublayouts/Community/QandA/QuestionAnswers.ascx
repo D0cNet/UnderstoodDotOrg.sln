@@ -39,7 +39,7 @@
                 </div>
                 <span class="details">In <a href="REPLACE" class="topic">aut molestias</a> - Answered by <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink>, Moderator <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
                 <div class="buttons">
-                    <button class="helped"><i class="icon-comment-like"></i>This Helped</button>
+                    <button id="btnLike" onserverclick="LikeButton_Click" class="helped" runat="server"><i class="icon-comment-like"></i>This Helped</button>
                     <button class="report"><i class="icon-comment-flag"></i>Report as inappropriate</button>
                 </div>
                 <button class="count-helped"><i class="icon-comment-like"></i><%# Item.Likes %><span class="visuallyhidden">likes</span></button>

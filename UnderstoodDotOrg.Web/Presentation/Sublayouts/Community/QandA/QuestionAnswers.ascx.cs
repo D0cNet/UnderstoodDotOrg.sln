@@ -10,6 +10,10 @@
     using UnderstoodDotOrg.Domain.TelligentCommunity;
     using UnderstoodDotOrg.Common.Extensions;
     using UnderstoodDotOrg.Framework.UI;
+    using System.Net;
+    using Sitecore.Configuration;
+    using System.Text;
+    using System.Collections.Specialized;
 
     public partial class QuestionAnswers : BaseSublayout
     {
@@ -63,6 +67,34 @@
                 + "?{0}={1}",
                 Constants.ACCOUNT_EMAIL,
                 CommunityHelper.ReadUserEmail(item.Author));
+        }
+
+        protected void LikeButton_Click(object sender, EventArgs e)
+        {
+            string contentTypeId = Constants.Settings.TelligentCommentContentTypeId;
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    // replace the "admin" and "Admin's API key" with your valid user and apikey!
+                    var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    webClient.Headers.Add("Rest-Impersonate-User", this.CurrentMember.ScreenName.Trim());
+                    var requestUrl = String.Format("{0}api.ashx/v2/likes.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+
+                    var values = new NameValueCollection();
+                    values.Add("ContentId", contentId);
+                    values.Add("ContentTypeId", contentTypeId);
+
+                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+
+                    Console.WriteLine(xml);
+                }
+                catch { } //TODO: Add logging
+            }
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

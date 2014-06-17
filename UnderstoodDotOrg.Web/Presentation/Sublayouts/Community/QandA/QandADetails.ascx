@@ -30,7 +30,7 @@
     <div class="row">
         <sc:Placeholder Key="Answers" runat="server" />
         <div style="display: none; margin:40px;" id="commentsForm" class="comment-form" runat="server">
-            <textarea style="margin-top:20px;" name="comment-form-reply" class="comment-form-reply uniform" id="CommentEntryTextField" placeholder="Add your comment..." runat="server"></textarea>
+            <textarea style="margin-top:20px;" name="comment-form-reply" class="comment-form-reply uniform" id="CommentEntryTextField" placeholder="Add your answer..." runat="server"></textarea>
             <asp:RequiredFieldValidator ValidationGroup="vgSubmitButton" ID="valComment" runat="server" ControlToValidate="CommentEntryTextField" CssClass="validationerror"></asp:RequiredFieldValidator><br /><br />
             <%--<asp:TextBox CssClass="comment-form-reply" ID="CommentEntryTextField" runat="server" />--%>
             <asp:Button width="225px" ValidationGroup="vgSubmitButton" ID="SubmitButton" OnClick="SubmitButton_Click" class="button" Text="Submit Answer" runat="server" />

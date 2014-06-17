@@ -20,10 +20,10 @@
                                 </div>
                                 <!-- end .blog-card-title -->
                                 <div class="blog-card-post-info">
-                                    Posted by <a href="REPLACE"><%# Item.Author %></a> <%# Item.PublishedDate %>
+                                    Posted by <a href="<%# Item.AuthorUrl %>"><%# Item.Author %></a> <%# Item.PublishedDate %>
                                 </div>
                                 <div class="blog-card-post-excerpt">
-                                    <!--<%# Item.Body %> --><a href="<%# Item.Url %>" class="link-see-more">See more</a>
+                                    <%# Item.Body %> <a href="<%# Item.Url %>" class="link-see-more">See more</a>
                                 </div>
                                 <span class="children-key clearfix">
                                     <ul>
@@ -39,7 +39,7 @@
                                         <img alt="70x70 Placeholder" src="http://placehold.it/70x70" />
                                     </a>
                                     <div class="author-and-blog-name">
-                                        <a href="REPLACE" class="author-name"><%# Item.Author %>
+                                        <a href="<%# Item.AuthorUrl %>" class="author-name"><%# Item.Author %>
                                         </a>
                                         <a href="<%# Item.ParentUrl %>" class="blog-name"><%# Item.BlogName %>
                                         </a>

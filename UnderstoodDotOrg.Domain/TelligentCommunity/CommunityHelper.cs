@@ -92,6 +92,11 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
+        public static string FormatRemoveHtml(string source)
+        {
+            return Regex.Replace(source, "<.*?>", string.Empty);
+        }
+
         public static List<Comment> ReadComments(string blogId, string blogPostId)
         {
             List<Comment> commentList = new List<Comment>();
@@ -727,7 +732,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         Url = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
                         "/" + blogName + "/" + node["Title"].InnerText, ".aspx", ""),
                         ParentUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
-                        "/blogposts?BlogId=" + node["BlogId"].InnerText, ".aspx", "")
+                        "/blogposts?BlogId=" + node["BlogId"].InnerText, ".aspx", ""),
+                        CommentCount = node["CommentCount"].InnerText,
                     };
                     blogPosts.Add(blogPost);
                 }

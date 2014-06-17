@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 
@@ -19,6 +20,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
         {
             string blogId = Request.QueryString["BlogId"];
             List<BlogPost> dataSource = CommunityHelper.ListBlogPosts(blogId, "6");
+            foreach (var item in dataSource)
+            {
+                BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + item.Title);
+                item.Author = blogPost.Author;
+                item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
+                item.AuthorUrl = "/Community and Events/Blogs/Author/" + item.Author;
+            }
             rptBlogInfo.DataSource = dataSource;
             rptBlogInfo.DataBind();
 
