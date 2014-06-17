@@ -35,7 +35,9 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
                 SearchPageId = Request["pageId"].AsNGuid().Value;
                 CategoryId = Request["categoryId"].AsNGuid().Value;
                 ClickCount = Request["count"].AsInt();
-                SortOption = Request["sortOption"].AsEnum<SearchHelper.SortOptions.AssistiveToolsSortOptions>();
+
+                var defaultSortValue = (int)SearchHelper.SortOptions.AssistiveToolsSortOptions.Relevance;
+                SortOption = Request["sortOption"].AsEnum<SearchHelper.SortOptions.AssistiveToolsSortOptions>(defaultValue: defaultSortValue);
 
                 SearchResults = SearchPage.InnerItem.Parent.Children
                     .Where(i => i.IsOfType(AssistiveToolsReviewPageItem.TemplateId))

@@ -25,6 +25,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
+using System.ComponentModel;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
@@ -292,11 +293,15 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             public enum AssistiveToolsSortOptions
             {
-                Relevance = 0,
-                LearningRating = 1,
-                QualityRating = 2,
-                GradeLevel = 3,
-                MostRecent = 4
+                Relevance,
+                [Description("Learning Rating")]
+                LearningRating,
+                [Description("Quality Rating")]
+                QualityRating,
+                [Description("Grade Level")]
+                GradeLevel,
+                [Description("Most Recent")]
+                MostRecent
             }
         }
         #endregion Enums

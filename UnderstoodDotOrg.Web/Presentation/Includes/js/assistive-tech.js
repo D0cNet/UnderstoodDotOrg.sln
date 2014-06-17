@@ -87,10 +87,12 @@
         });
 
         function showPlatformSelect(typeId) {
-            var $platformSelect = $platformSelects.filter("[data-type-id='" + typeId + "']").first()
+            var $platformSelect = $platformSelects.filter("[data-type-id='" + typeId + "']").first();
+            $platformSelect
                 .show()
                 .addClass("active")
                 .parent().show();
+            return $platformSelect;
         }
 
         $platformSelects.on("change", function () {

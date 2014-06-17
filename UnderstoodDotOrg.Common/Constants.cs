@@ -544,6 +544,7 @@ namespace UnderstoodDotOrg.Common
                 public const string TypeId = "tid";
                 public const string PlatformId = "pid";
                 public const string Keyword = "keyword";
+                public const string SortOption = "sort";
             }
         }
         public static class UserActivity_Values

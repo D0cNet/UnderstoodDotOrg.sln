@@ -62,11 +62,8 @@
                                 <fieldset>
                                     <span class="select-container sort">
                                         <label class="visuallyhidden">Sort by</label>
-                                        <select name="tech-search-sort">
-                                            <option value="">Sort by</option>
-                                            <option>A-Z</option>
-                                            <option>Z-A</option>
-                                        </select>
+                                        <asp:DropDownList ID="ddlSortOptions" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlSortOptions_SelectedIndexChanged">
+                                        </asp:DropDownList>
                                     </span>
                                 </fieldset>
                             </div>
@@ -95,9 +92,10 @@
                                 <div class="row"<%# (bool)Eval("HasMoreResults") ? string.Empty : " style=\"display:none;\"" %>>
                                     <div class="col col-24">
                                         <a class="show-more-link " href="#" data-path="AssistiveTechResults" data-category-id="<%# Eval("CategoryId") %>" 
-                                            data-item="search-results" data-page-id="<%= Model.ID.Guid.ToString() %>" data-count="1" data-sort-option="0"
+                                            data-item="search-results" data-page-id="<%= Model.ID.Guid.ToString() %>" data-count="1" 
                                             data-container="container<%# Eval("CategoryId") %>" data-max-results="<%# Eval("CategoryResultTotalCount") %>"
-                                            data-results-per-click="<%= UnderstoodDotOrg.Common.Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE %>">
+                                            data-results-per-click="<%= UnderstoodDotOrg.Common.Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE %>"
+                                            data-sort-option="<%= SortOption %>">
                                             Show More
                                             <i class="icon-arrow-down-blue"></i>
                                         </a>

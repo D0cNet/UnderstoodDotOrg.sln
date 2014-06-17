@@ -10,19 +10,27 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 using UnderstoodDotOrg.Common.Comparers;
+using UnderstoodDotOrg.Domain.Search;
+using System.Collections.Specialized;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
     public partial class AssistiveToolsReviewResults : BaseSublayout<AssistiveToolsSearchResultsPageItem>
     {
+        protected SearchHelper.SortOptions.AssistiveToolsSortOptions SortOption { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            var defaultSortValue = (int)SearchHelper.SortOptions.AssistiveToolsSortOptions.Relevance;
+            SortOption = Request.QueryString[Constants.QueryStrings.LearningTool.SortOption]
+                .AsEnum<SearchHelper.SortOptions.AssistiveToolsSortOptions>(defaultValue: defaultSortValue);
+
             IEnumerable<AssistiveToolsReviewPageItem> searchResults;
 
             var keyword = Request.QueryString[Constants.QueryStrings.LearningTool.Keyword];
             if (!string.IsNullOrEmpty(keyword))
             {
-                searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(searchTerm: keyword);
+                searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(searchTerm: keyword, sortOption: SortOption);
             }
             else
             {
@@ -46,34 +54,38 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                     rptrSearchResultsSections.Visible = false;
                     return;
                 }
-            }            
+            }
 
-            var categoryResults = searchResults
-                .Where(i => i.Category.Item != null && i.Category.Item.IsOfType(AssistiveToolsCategoryItem.TemplateId))
-                .GroupBy(i => (AssistiveToolsCategoryItem)i.Category.Item, new CustomItemComparer<AssistiveToolsCategoryItem>())
-                .Select(categoryGroup => {
-                    var helpModalContent = categoryGroup.Key.HelpModalContent.Rendered;
-                    var results = categoryGroup.AsEnumerable();
-                    var resultTotalCount = results.Count();
-                    var resultDisplayCount = Math.Min(Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE, resultTotalCount);
-
-                    return new 
+            if (!Page.IsPostBack)
+            {
+                var categoryResults = searchResults
+                    .Where(i => i.Category.Item != null && i.Category.Item.IsOfType(AssistiveToolsCategoryItem.TemplateId))
+                    .GroupBy(i => (AssistiveToolsCategoryItem)i.Category.Item, new CustomItemComparer<AssistiveToolsCategoryItem>())
+                    .Select(categoryGroup =>
                     {
-                        CategoryId = categoryGroup.Key.ID.Guid,
-                        CategoryTitle = categoryGroup.Key.Metadata.ContentTitle.Rendered,
-                        HelpModalContent = helpModalContent,
-                        ShowHelpModal = helpModalContent != string.Empty,
-                        CategoryResultTotalCount = resultTotalCount,
-                        CategoryResultDisplayCount = resultDisplayCount,
-                        SearchResults = results.Take(resultDisplayCount),
-                        HasMoreResults = resultDisplayCount < resultTotalCount
-                    };
-                })
-                .OrderBy(cr => cr.CategoryTitle);
+                        var helpModalContent = categoryGroup.Key.HelpModalContent.Rendered;
+                        var results = categoryGroup.AsEnumerable();
+                        var resultTotalCount = results.Count();
+                        var resultDisplayCount = Math.Min(Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE, resultTotalCount);
 
-            rptrSearchResultsSections.DataSource = categoryResults;
-            rptrSearchResultsSections.ItemDataBound += rptrSearchResultsSections_ItemDataBound;
-            rptrSearchResultsSections.DataBind();
+                        return new
+                        {
+                            CategoryId = categoryGroup.Key.ID.Guid,
+                            CategoryTitle = categoryGroup.Key.Metadata.ContentTitle.Rendered,
+                            HelpModalContent = helpModalContent,
+                            ShowHelpModal = helpModalContent != string.Empty,
+                            CategoryResultTotalCount = resultTotalCount,
+                            CategoryResultDisplayCount = resultDisplayCount,
+                            SearchResults = results.Take(resultDisplayCount),
+                            HasMoreResults = resultDisplayCount < resultTotalCount
+                        };
+                    })
+                    .OrderBy(cr => cr.CategoryTitle);
+
+                rptrSearchResultsSections.DataSource = categoryResults;
+                rptrSearchResultsSections.ItemDataBound += rptrSearchResultsSections_ItemDataBound;
+                rptrSearchResultsSections.DataBind();
+            }
         }
 
         protected void rptrSearchResultsSections_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -84,7 +96,40 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                 var rptrResults = e.FindControlAs<Repeater>("rptrResults");
                 rptrResults.DataSource = results;
                 rptrResults.DataBind();
+
+                var sortOptions = EnumExtensions.GetAllItems<SearchHelper.SortOptions.AssistiveToolsSortOptions>()
+                    .Select(so => new
+                    {
+                        Text = so.GetDescription(),
+                        Value = so.ToString()
+                    });
+                var ddlSortOptions = e.FindControlAs<DropDownList>("ddlSortOptions");
+                ddlSortOptions.DataSource = sortOptions;
+                ddlSortOptions.DataTextField = "Text";
+                ddlSortOptions.DataValueField = "Value";
+                ddlSortOptions.DataBind();
+                ddlSortOptions.SelectedValue = SortOption.ToString();
             }
+        }
+
+        protected void ddlSortOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var ddlSender = sender as DropDownList;
+            var selectedVal = ddlSender.SelectedValue;
+
+            var qsCollection = new NameValueCollection(Request.QueryString);
+
+            var currentSort = qsCollection[Constants.QueryStrings.LearningTool.SortOption];
+            if (currentSort != null)
+            {
+                qsCollection.Remove(Constants.QueryStrings.LearningTool.SortOption);
+            }
+            qsCollection.Add(Constants.QueryStrings.LearningTool.SortOption, selectedVal);
+
+            var qs = string.Join("&", qsCollection.AllKeys.Select(k => k + "=" + qsCollection[k]));
+            qs = "?" + qs + (qsCollection[Constants.QueryStrings.LearningTool.Keyword] != null ? "#search-by" : string.Empty);
+
+            Response.Redirect(Model.GetUrl() + qs);
         }
     }
 }

@@ -15,14 +15,29 @@ namespace UnderstoodDotOrg.Common.Extensions
             return (int)number;
         }
 
-        public static T AsEnum<T>(this string value, bool ignoreCase = true) where T : struct, IConvertible
+        /// <summary>
+        /// Parses this string as an Enum of the specified type
+        /// </summary>
+        /// <typeparam name="T">An enumerated type</typeparam>
+        /// <param name="value">The value to parse.</param>
+        /// <param name="ignoreCase">if set to <c>true</c> [ignore case].</param>
+        /// <param name="defaultValue">The default value if the given value cannot be parsed.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentException">T must be an enumerated type.</exception>
+        public static T AsEnum<T>(this string value, bool ignoreCase = true, int defaultValue = 0) where T : struct, IConvertible
         {
             if (!typeof(T).IsEnum)
             {
                 throw new ArgumentException("T must be an enumerated type.");
             }
 
-            return (T)Enum.Parse(typeof(T), value, ignoreCase);
+            T parsed;
+            if (Enum.TryParse<T>(value, ignoreCase, out parsed))
+            {
+                return parsed;
+            }
+
+            return (T)Enum.ToObject(typeof(T), defaultValue);
         }
 
         public static Guid? AsNGuid(this string source)
