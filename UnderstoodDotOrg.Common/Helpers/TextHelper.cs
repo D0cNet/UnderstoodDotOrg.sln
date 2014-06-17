@@ -68,7 +68,12 @@ namespace UnderstoodDotOrg.Common.Helpers
         /// <returns></returns>
         public static string RemoveHTML(this string Source)
         {
-            return WebUtility.HtmlDecode(Regex.Replace(Source, "<[^>]*(>|$)", string.Empty)).Trim();
+            if (!string.IsNullOrEmpty(Source)) 
+            {
+                return WebUtility.HtmlDecode(Sitecore.StringUtil.RemoveTags(Source)).Trim();
+            }
+
+            return string.Empty;
         }
     }
 }
