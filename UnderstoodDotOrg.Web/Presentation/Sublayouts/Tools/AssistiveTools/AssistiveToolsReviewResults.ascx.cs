@@ -22,27 +22,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             var keyword = Request.QueryString[Constants.QueryStrings.LearningTool.Keyword];
             if (!string.IsNullOrEmpty(keyword))
             {
-                //TODO: perform keyword search
+                searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(searchTerm: keyword);
             }
             else
             {
-                var issueId = Request.QueryString[Constants.QueryStrings.LearningTool.IssueId];
-                var gradeLevel = Request.QueryString[Constants.QueryStrings.LearningTool.GradeId];
-                var typeId = Request.QueryString[Constants.QueryStrings.LearningTool.TypeId];
+                var issueId = Request.QueryString[Constants.QueryStrings.LearningTool.IssueId].AsNGuid();
+                var gradeId = Request.QueryString[Constants.QueryStrings.LearningTool.GradeId].AsNGuid();
+                var typeId = Request.QueryString[Constants.QueryStrings.LearningTool.TypeId].AsNGuid();
+                var platformId = Request.QueryString[Constants.QueryStrings.LearningTool.PlatformId].AsNGuid();
 
-                if (!string.IsNullOrEmpty(issueId) && !string.IsNullOrEmpty(gradeLevel) && !string.IsNullOrEmpty(typeId))
+                if (issueId.HasValue || gradeId.HasValue || typeId.HasValue || platformId.HasValue)
                 {
-                    //TODO: perform browse search
+                    //TODO: Uncomment after completion of GetSearchResults() implementation
+                    //searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(issueId, gradeId, typeId, platformId);
+                    
+                    //TEMPORARY PRE-SEARCH DEVELOPMENT ONLY
+                    searchResults = Model.InnerItem.Parent.Children
+                        .Where(i => i.IsOfType(AssistiveToolsReviewPageItem.TemplateId))
+                        .Select(i => (AssistiveToolsReviewPageItem)i);
                 }
                 else
                 {
                     rptrSearchResultsSections.Visible = false;
                     return;
                 }
-            }
-
-            //TEMPORARY PRE-SEARCH DEVELOPMENT ONLY
-            searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(Guid.Empty, Guid.Empty, Guid.Empty, keyword, 1);
+            }            
 
             var categoryResults = searchResults
                 .Where(i => i.Category.Item != null && i.Category.Item.IsOfType(AssistiveToolsCategoryItem.TemplateId))

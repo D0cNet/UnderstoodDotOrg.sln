@@ -901,7 +901,8 @@ namespace UnderstoodDotOrg.Domain.Search
             }
         }
 
-        public static IEnumerable<AssistiveToolsReviewPageItem> GetAssitiveToolsReviewPages(Guid? issue, Guid? grade, Guid? technology, string searchTerm, int page)
+        public static IEnumerable<AssistiveToolsReviewPageItem> GetAssitiveToolsReviewPages(Guid? issueId, Guid? gradeId, Guid? technologyId, 
+            Guid? platformId, string searchTerm, int page)
         {
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
             searchTerm = NormalizeSearchTerm(searchTerm);
@@ -914,11 +915,31 @@ namespace UnderstoodDotOrg.Domain.Search
                                 .Filter(i => i.TemplateId == ID.Parse(AssistiveToolsReviewPageItem.TemplateId));
 
                 // TODO: modify query based on guid values
+                if (issueId.HasValue)
+                {
+                    
+                }
+                if (gradeId.HasValue)
+                {
+                    
+                }
+                if (technologyId.HasValue)
+                {
+                    
+                }
+                if (platformId.HasValue)
+                {
+                    
+                }
+                if (issueId.HasValue || gradeId.HasValue || technologyId.HasValue || platformId.HasValue)
+                {
+                }
 
                 if (!string.IsNullOrEmpty(searchTerm))
                 {
                     // TODO: search against specific fields of content
-                    query = query.Where(i => i.Content.Contains(searchTerm));
+                    query = query
+                        .Where(i => i.Content.Contains(searchTerm));
                 }
 
                 var total = query.Take(1).GetResults().TotalSearchResults;
@@ -934,8 +955,9 @@ namespace UnderstoodDotOrg.Domain.Search
                 // Execute solr query
                 var results = query.Take(pageSize).ToList();
 
-                return results.Select(i => new AssistiveToolsReviewPageItem(i.GetItem()))
-                            .Where(i => i.InnerItem != null);
+                return results
+                    .Select(i => new AssistiveToolsReviewPageItem(i.GetItem()))
+                    .Where(i => i.InnerItem != null);
             }
         }
 

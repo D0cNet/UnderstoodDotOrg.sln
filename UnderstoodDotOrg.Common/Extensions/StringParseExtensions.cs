@@ -17,20 +17,26 @@ namespace UnderstoodDotOrg.Common.Extensions
 
         public static Guid? AsNGuid(this string source)
         {
-            Guid guid;
-            if (Guid.TryParse(source, out guid))
+            if (!string.IsNullOrEmpty(source))
             {
-                return guid;
+                Guid guid;
+                if (Guid.TryParse(source, out guid))
+                {
+                    return guid;
+                }
             }
             return null;
         }
 
         public static DateTime? AsNDateTime(this string source)
         {
-            DateTime dateTime;
-            if (DateTime.TryParse(source, out dateTime))
+            if (!string.IsNullOrEmpty(source))
             {
-                return dateTime;
+                DateTime dateTime;
+                if (DateTime.TryParse(source, out dateTime))
+                {
+                    return dateTime;
+                }
             }
             return null;
         }
