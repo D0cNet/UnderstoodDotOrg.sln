@@ -305,6 +305,10 @@
 
         // Run once on window load
         $html.on('equalHeights', repositionElement);
+        $(window).load(function () {
+            repositionElement();
+        });
+
         // Run on resize
         jQuery(window).resize(repositionElement);
 

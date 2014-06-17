@@ -16,16 +16,17 @@
                     </a>
                 </li>
             </ul>
-            <div id="browse-by">
-                <div class="form rs_read_this">
+            <div id="browse-by" >
+                <asp:Panel runat="server" CssClass="form rs_read_this" DefaultButton="btnBrowseFind">
                     <span class="visuallyhidden">Browse By</span>
                     <span class="visuallyhidden">Search By</span>
                     <fieldset>
-                        <asp:DropDownList ID="ddlIssues" runat="server" required aria-required="true">
+                        <asp:DropDownList ID="ddlIssues" runat="server" required aria-required="true" ValidationGroup="vgLearningToolSearch">
                         </asp:DropDownList>
-                        <asp:DropDownList ID="ddlGrades" runat="server" required aria-required="true">
+                        <asp:DropDownList ID="ddlGrades" runat="server" required aria-required="true" ValidationGroup="vgLearningToolSearch">
                         </asp:DropDownList>
-                        <asp:DropDownList ID="ddlTechTypes" runat="server" CssClass="tech parent small-width tech-type-select" required aria-required="true">
+                        <asp:DropDownList ID="ddlTechTypes" runat="server" CssClass="tech parent small-width tech-type-select" required 
+                            aria-required="true" ValidationGroup="vgLearningToolSearch">
                         </asp:DropDownList>
                         <input type="hidden" id="hfSelectedPlatform" class="hfSelectedPlatform" runat="server" />
                         <asp:Repeater ID="rptrDynPlatformDropdowns" runat="server">
@@ -42,10 +43,11 @@
                             </ItemTemplate>
                         </asp:Repeater>
                         <div class="submit-button-container">
-                            <input type="button" id="btnBrowseFind" runat="server" onserverclick="btnFindSubmit_Click" class="button" value="Find">
+                            <asp:Button ID="btnBrowseFind" runat="server" OnClick="btnFindSubmit_Click" CssClass="button" Text="Find"
+                                ValidationGroup="vgLearningToolSearch"></asp:Button>
                         </div>
                     </fieldset>
-                </div>
+                </asp:Panel>
             </div>
             <!-- /.browse-by -->
             <div id="search-by">

@@ -111,22 +111,18 @@
             </div>
             <!-- .row -->
         </div>
+        <!-- .container -->
     </ItemTemplate>
 </asp:Repeater>
-<!-- .container -->
 
 <div class="assistive-tool-related-articles-small">
     <!-- BEGIN PARTIAL: assistive-tool-related-articles -->
     <div class="assistive-tool-related-articles">
         <ul>
-            <li>
-                <a href="REPLACE">10 Questions to ask about behavior issues</a></li>
-            <li>
-                <a href="REPLACE">10 Questions to ask about behavior issues</a></li>
-            <li>
-                <a href="REPLACE">10 Questions to ask about behavior issues</a></li>
-            <li>
-                <a href="REPLACE">10 Questions to ask about behavior issues</a></li>
+            <li><a href="REPLACE">10 Questions to ask about behavior issues</a></li>
+            <li><a href="REPLACE">10 Questions to ask about behavior issues</a></li>
+            <li><a href="REPLACE">10 Questions to ask about behavior issues</a></li>
+            <li><a href="REPLACE">10 Questions to ask about behavior issues</a></li>
         </ul>
     </div>
     <!-- .tool-related-articles -->
