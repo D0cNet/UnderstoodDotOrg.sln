@@ -15,6 +15,16 @@ namespace UnderstoodDotOrg.Common.Extensions
             return (int)number;
         }
 
+        public static T AsEnum<T>(this string value, bool ignoreCase = true) where T : struct, IConvertible
+        {
+            if (!typeof(T).IsEnum)
+            {
+                throw new ArgumentException("T must be an enumerated type.");
+            }
+
+            return (T)Enum.Parse(typeof(T), value, ignoreCase);
+        }
+
         public static Guid? AsNGuid(this string source)
         {
             if (!string.IsNullOrEmpty(source))

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 
@@ -17,6 +18,7 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
         protected int ClickCount { get; set; }
         protected Guid SearchPageId { get; set; }
         protected Guid CategoryId { get; set; }
+        protected SearchHelper.SortOptions.AssistiveToolsSortOptions SortOption { get; set; }
 
         protected AssistiveToolsSearchResultsPageItem SearchPage
         {
@@ -33,6 +35,7 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
                 SearchPageId = Request["pageId"].AsNGuid().Value;
                 CategoryId = Request["categoryId"].AsNGuid().Value;
                 ClickCount = Request["count"].AsInt();
+                SortOption = Request["sortOption"].AsEnum<SearchHelper.SortOptions.AssistiveToolsSortOptions>();
 
                 SearchResults = SearchPage.InnerItem.Parent.Children
                     .Where(i => i.IsOfType(AssistiveToolsReviewPageItem.TemplateId))

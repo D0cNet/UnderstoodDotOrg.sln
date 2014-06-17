@@ -545,10 +545,13 @@ the callbacks passed to the module.
             // data results per click (from button data attribute)
             var $dataResultsPerClick = $showMore.data("results-per-click");
 
+            //data sort option (from button data attribute)
+            var $dataSortOption = $showMore.data("sort-option");
+
             // scroll to top of newly loaded items
             $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
 
-            var qs = "?count=" + $dataCount + "&pageId=" + $dataPageId + "&categoryId=" + $dataCategoryId;
+            var qs = "?count=" + $dataCount + "&pageId=" + $dataPageId + "&categoryId=" + $dataCategoryId + "&sortOption=" + $dataSortOption;
             // Ajax load items
             $.get($dataPath + $dataFile + '.aspx' + qs, function (data) {
                 var newContent = $(data);                

@@ -287,6 +287,20 @@ namespace UnderstoodDotOrg.Domain.Search
 
         #endregion
 
+        #region Enums
+        public partial class SortOptions
+        {
+            public enum AssistiveToolsSortOptions
+            {
+                Relevance = 0,
+                LearningRating = 1,
+                QualityRating = 2,
+                GradeLevel = 3,
+                MostRecent = 4
+            }
+        }
+        #endregion Enums
+
         private static List<int> GetRandomKeys(IQueryable<Article> query, int totalKeys)
         {
             List<int> keys = new List<int>();
@@ -902,7 +916,7 @@ namespace UnderstoodDotOrg.Domain.Search
         }
 
         public static IEnumerable<AssistiveToolsReviewPageItem> GetAssitiveToolsReviewPages(Guid? issueId, Guid? gradeId, Guid? technologyId, 
-            Guid? platformId, string searchTerm, int page)
+            Guid? platformId, string searchTerm, int page, SortOptions.AssistiveToolsSortOptions sortOption)
         {
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
             searchTerm = NormalizeSearchTerm(searchTerm);
