@@ -165,6 +165,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
 
             webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+            webClient.Headers.Add("Rest-Impersonate-User", this.CurrentMember.ScreenName.Trim());
             var requestUrl = String.Format("{0}api.ashx/v2/likes.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
 
             var values = new NameValueCollection();
