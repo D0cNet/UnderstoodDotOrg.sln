@@ -64,7 +64,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                         SearchResults = results.Take(resultDisplayCount),
                         HasMoreResults = resultDisplayCount < resultTotalCount
                     };
-                });
+                })
+                .OrderBy(cr => cr.CategoryTitle);
 
             rptrSearchResultsSections.DataSource = categoryResults;
             rptrSearchResultsSections.ItemDataBound += rptrSearchResultsSections_ItemDataBound;

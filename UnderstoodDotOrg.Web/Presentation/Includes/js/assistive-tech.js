@@ -24,9 +24,39 @@
         // cache selectors
         var $searchByToolTabs = $('#search-by-tool-tabs');
         var $techTypeSelect = $searchByToolTabs.find("select.tech-type-select");
+        var $issueSelect = $searchByToolTabs.find("select.issue-select");
+        var $gradeSelect = $searchByToolTabs.find("select.grade-select");
         var $platformSelects = $searchByToolTabs.find("select.platform-select");
         var $uniformPlatformSelects = $platformSelects.parent();
         var $hfSelectedPlatform = $searchByToolTabs.find(".hfSelectedPlatform");
+        var $tbKeywordSearch = $searchByToolTabs.find(".tbKeywordSearch");
+
+        //required aria-required="true" 
+        $searchByToolTabs.find(".search-by-tool-tab-links>li").on("click", function () {
+            var $browseRequiredControls =
+                $techTypeSelect
+                    .add($issueSelect)
+                    .add($gradeSelect)
+                    .add($platformSelects.filter(".active").first());
+            var $searchRequiredControls = $tbKeywordSearch;
+
+            if ($(this).hasClass("browse-by-tab")) {
+                $searchRequiredControls
+                    .removeAttr("required")
+                    .removeAttr("aria-required");
+                $browseRequiredControls
+                    .attr("required", "")
+                    .attr("aria-required", "true");
+            } else {
+                $browseRequiredControls
+                    .removeAttr("required")
+                    .removeAttr("aria-required");
+                $searchRequiredControls
+                    .attr("required", "")
+                    .attr("aria-required", "true");
+            }
+        });
+
 
         // initiate easytabs for the 'browse by', 'search by' buttons
         $searchByToolTabs.easytabs();
@@ -49,7 +79,7 @@
 
         $techTypeSelect.on("change", function () {
             $uniformPlatformSelects.hide();
-            $platformSelects.val("").trigger("change");
+            $platformSelects.val("").removeClass("active").trigger("change");
             var typeId = $(this).val();
             if (typeId) {
                 showPlatformSelect(typeId);
@@ -57,7 +87,10 @@
         });
 
         function showPlatformSelect(typeId) {
-            var $platformSelect = $platformSelects.filter("[data-type-id='" + typeId + "']").first().show().parent().show();
+            var $platformSelect = $platformSelects.filter("[data-type-id='" + typeId + "']").first()
+                .show()
+                .addClass("active")
+                .parent().show();
         }
 
         $platformSelects.on("change", function () {

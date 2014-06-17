@@ -63,7 +63,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
         protected void btnFindSubmit_Click(object sender, EventArgs e)
         {
-            var btnSender = sender as HtmlInputButton;
+            var btnSender = sender as Button;
             var qs = string.Empty;
 
             if (btnSender.ID == btnSearchFind.ID)
