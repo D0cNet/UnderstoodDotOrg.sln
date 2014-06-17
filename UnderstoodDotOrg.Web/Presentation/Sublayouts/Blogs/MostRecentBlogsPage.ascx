@@ -15,7 +15,8 @@
                             <img alt="150x150 Placeholder" src="http://placehold.it/150x150" /></a>
                     </div>
                     <div class="blog-feature-description">
-                        <h2><asp:label ID="lbBlogName" runat="server" /></h2>
+                        <h2>
+                            <asp:Label ID="lbBlogName" runat="server" /></h2>
                         <p class="blog-description-blurb">Ea Minus Odio Debitis Assumenda. Quia Quas Ipsa Non Quam. Ex Quam Ab Eligendi Quia Nam Numquam Eius Eaque Veritatis Necessitatibus Perferendis. Repellat Mollitia Veniam Necessitatibus Ipsa Non Qui Numquam Mollitia Officiis Sit Fuga Temporibus Praesentium</p>
                     </div>
                 </div>
@@ -69,7 +70,7 @@
             <div class="col blog-post-list skiplink-content" aria-role="main" aria-role="main">
 
                 <div class="blog-post-list-inner">
-                    <asp:Repeater ID="rptBlogInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost" OnItemDataBound="rptBlogInfo_ItemDataBound">
+                    <asp:Repeater ID="rptBlogInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost">
                         <ItemTemplate>
                             <!-- BEGIN PARTIAL: community/blog_post -->
                             <div class="blog-post">
@@ -89,7 +90,7 @@
                                         <p class="blog-post-date"><%# Item.PublishedDate %></p>
                                         <p class="blog-by">
                                             by
-          <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink>
+          <a href="<%# Item.AuthorUrl %>" class="author"><%# Item.Author %></a>
                                         </p>
                                     </div>
 
@@ -156,5 +157,5 @@
     </div>
     <!-- .child-content-indicator -->
     <!-- END PARTIAL: children-key -->--%>
-    <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
+    <sc:sublayout runat="server" path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
 </div>

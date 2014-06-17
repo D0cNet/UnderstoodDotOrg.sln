@@ -32,15 +32,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
 
             lbBlogName.Text = dataSource[0].BlogName;
         }
-
-        protected void rptBlogInfo_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            var item = (BlogPost)e.Item.DataItem;
-            HyperLink hypUserProfileLink = (HyperLink)e.Item.FindControl("hypUserProfileLink");
-
-            var membershipManager = new MembershipManager();
-
-            hypUserProfileLink.NavigateUrl = string.Format(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetUrl() + "?{0}={1}", Constants.ACCOUNT_EMAIL, CommunityHelper.ReadUserEmail(item.Author));
-        }
     }
 }
