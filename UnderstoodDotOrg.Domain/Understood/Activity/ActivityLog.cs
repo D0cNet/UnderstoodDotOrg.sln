@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Domain.Understood.Activity
 {
@@ -32,6 +33,61 @@ namespace UnderstoodDotOrg.Domain.Understood.Activity
             FillActivityLog(MemberId,ActivityValue );
      
         }
+        public bool FoundItemHelpful(Guid ContentId, Guid MemberId)
+        { 
+            bool result = false;
+            int i = GetActivityCountByValueAndUser(ContentId, MemberId, Constants.UserActivity_Values.FoundHelpful_True);
+            // i should be either 0 or 1 at this point
+            result = Convert.ToBoolean(i); //0 is false 1 is true
+            return result; 
+        }
+         public bool FoundItemNotHelpful(Guid ContentId, Guid MemberId)
+        {
+            bool result = false;
+            int i = GetActivityCountByValueAndUser(ContentId, MemberId, Constants.UserActivity_Values.FoundHelpful_False );
+            // i should be either 0 or 1 at this point
+            result = Convert.ToBoolean(i); //0 is false 1 is true
+             return result;
+        }
+        private int GetActivityCountByValueAndUser(Guid ContentId, Guid MemberId, string ActivityValue)
+        {
+                
+            int count = 0;
+            string sql = " SELECT Count([rowId]) " +
+                            " FROM [dbo].[MemberActivity] " +
+                            " WHERE Value = @ActivityValue " +
+                            " and [Key] = @ContentId " +
+                            " and MemberId = @Memberid " +
+                            " and [Deleted] = 0 ";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ActivityValue", ActivityValue);
+                        cmd.Parameters.AddWithValue("@ContentId", ContentId);
+                        cmd.Parameters.AddWithValue("@Memberid", MemberId);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                             count = reader.GetInt32(0) ;//Count;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return count;
+        }
+   
         /// <summary>
         /// Pass in your search value (probably a constant) and get back a total count from the db.
         /// </summary>

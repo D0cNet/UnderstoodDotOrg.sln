@@ -1131,7 +1131,6 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             return success;
         }
-
         public bool LogMemberActivity_AsDeleted(Guid MemberId, Guid ContentId, string Activity, int ActivityType)
         {
             bool successFlag = false;
@@ -1164,6 +1163,52 @@ namespace UnderstoodDotOrg.Domain.Membership
             successFlag = true;
             return successFlag;
         }
+        private bool ClearHelpfulVote(Guid MemberId, Guid ContentId, string Activity, int ActivityType)
+        {
+            bool success = false;
+            try
+            {
+                //delete any rows where this user had previously added in a helpful or not helpful vote for this content item
+                string sql = " DELETE FROM dbo.MemberActivity " +
+                                " WHERE (MemberId = @MemberId) AND " +
+                                 " ([Key] = @ContentId) AND " +
+                                 " (ActivityType = @FoundHelpfulVoteType)";
+
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MemberId", MemberId);
+                        cmd.Parameters.AddWithValue("@ContentId", ContentId);
+                        cmd.Parameters.AddWithValue("@FoundHelpfulVoteType", ActivityType);
+                        cmd.ExecuteNonQuery();
+                        success = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            success = true;
+            return success; 
+
+        }
+        public bool LogMemberHelpfulVote(Guid MemberId, Guid ContentId, string Activity, int ActivityType)
+        {
+            bool success = false;
+            //if the vote already exists then we drop the existing vote and insert a new one
+            ClearHelpfulVote(MemberId, ContentId, Activity, ActivityType);
+            
+            //insert the vote
+            LogMemberActivity(MemberId, ContentId, Activity, ActivityType);
+
+            success = true;
+            return success ;
+        }
+
 
         /// <summary>
         /// Inserts a row into our member activity log table with information about what the specified user has just done
@@ -1176,6 +1221,8 @@ namespace UnderstoodDotOrg.Domain.Membership
         public bool LogMemberActivity(Guid MemberId, Guid ContentId, string Activity, int ActivityType)
         {
             bool success = false;
+
+           
             try
             {
 

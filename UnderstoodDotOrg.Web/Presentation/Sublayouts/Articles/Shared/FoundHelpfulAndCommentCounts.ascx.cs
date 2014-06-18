@@ -37,7 +37,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
         {
             ActivityLog tempLog = new ActivityLog();
             //ContentId, ActivityValue
-            int helpfulCount = tempLog.GetActivityCountByValue(new Guid(Sitecore.Context.Item.ID.ToString()), Constants.UserActivity_Values.FoundHelpful);
+            int helpfulCount = tempLog.GetActivityCountByValue(new Guid(Sitecore.Context.Item.ID.ToString()), Constants.UserActivity_Values.FoundHelpful_True);
             int commentCount = 0;
 
             if (!string.IsNullOrEmpty(page.BlogId.Raw) && !string.IsNullOrEmpty(page.BlogPostId.Raw))

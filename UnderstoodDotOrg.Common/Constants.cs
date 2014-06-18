@@ -552,8 +552,8 @@ namespace UnderstoodDotOrg.Common
             public const string SetReminder = "Reminder Set";
             public const string Favorited = "Item Favorited";
             public const string Shared = "Item Shared";
-            public const string FoundHelpful = "Found Helpful";
-            public const string FoundNotHelpful = "Fond Not Helpful";
+            public const string FoundHelpful_True = "FoundHelpfulTrue";
+            public const string FoundHelpful_False = "FoundHelpfulFalse";
             public const string WasRead = "Item Read";
 
             public const string SharedWithEmail = "Shared Email";
@@ -577,6 +577,8 @@ namespace UnderstoodDotOrg.Common
             public const int Type_Board = 7;
             public const int Type_Discussion = 8;
             public const int Type_QuestionAndAnswer = 9;
+
+            public const int FoundHelpfulVote = 10;
         }
         public static class SolrFields
         {

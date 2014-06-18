@@ -19,7 +19,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
         {
             if (IsUserLoggedIn)
             {
-                ActivityLog log = new ActivityLog(CurrentMember.MemberId, Constants.UserActivity_Values.FoundHelpful);
+                ActivityLog log = new ActivityLog(CurrentMember.MemberId, Constants.UserActivity_Values.FoundHelpful_True );
                 ActivityItem temp = log.Activities.Where(i => i.ContentId == context.ID.ToGuid()).FirstOrDefault();
                 if (temp != null)
                 {
@@ -41,8 +41,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                 {
                     bool success = mmgr.LogMemberActivity(CurrentMember.MemberId,
                         context.ID.ToGuid(),
-                        Constants.UserActivity_Values.FoundHelpful,
-                        Constants.UserActivity_Types.ContentRelated);
+                        Constants.UserActivity_Values.FoundHelpful_True,
+                        Constants.UserActivity_Types.FoundHelpfulVote );
 
                     if (success)
                     {

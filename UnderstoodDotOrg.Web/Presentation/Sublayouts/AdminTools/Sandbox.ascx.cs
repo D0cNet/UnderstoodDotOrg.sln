@@ -28,9 +28,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.WasRead, Constants.UserActivity_Types.Type_Blog);
 
             mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.SharedWithTwitter, Constants.UserActivity_Types.Type_BlogPost);
-            
-
-
+            /*
+            mgr.LogMemberHelpfulVote(MemberIdValue, 
+                ContentIdValue, 
+                Constants.UserActivity_Values.FoundHelpful_True, 
+                Constants.UserActivity_Types.FoundHelpfulVote);
+            */
 
             ActivityLog log = new ActivityLog(new Guid("810EBB87-14E1-4DAF-8EAE-F69E1754C640"), Constants.UserActivity_Values.Favorited);
 
