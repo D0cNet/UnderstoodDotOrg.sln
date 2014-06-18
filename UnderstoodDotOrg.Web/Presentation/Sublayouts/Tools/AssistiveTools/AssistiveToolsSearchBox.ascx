@@ -36,7 +36,7 @@
                                     <asp:Repeater ID="rptrPlatformOptions" runat="server" 
                                         ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData.AssistiveToolsPlatformItem">
                                         <ItemTemplate>
-                                            <option value="<%# Item.ID.ToString() %>"><%# Item.Metadata.ContentTitle %></option>
+                                            <option value="<%# Item.ID.ToString() %>" <%#: (Item.ID.ToString() == PlatformId) ? "selected=\"selected\"" : "" %>><%# Item.Metadata.ContentTitle %></option>
                                         </ItemTemplate>
                                     </asp:Repeater>
                                 </select>

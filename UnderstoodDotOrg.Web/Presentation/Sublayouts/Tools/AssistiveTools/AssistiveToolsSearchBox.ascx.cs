@@ -20,11 +20,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
     {
         private static string AssistiveToolsGlobalsFolderId = "{493EB983-FDE9-46E4-85C8-EE45EABFE91B}";
         private Item AssistiveToolsGlobalsFolder { get; set; }
+        protected string PlatformId { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
+                // Set selected state of dynamic dropdown
+                PlatformId = Request.QueryString[Constants.QueryStrings.LearningTool.PlatformId];
+
                 PopulateDropDowns();
 
                 var keyword = Request.QueryString[Constants.QueryStrings.LearningTool.Keyword];
@@ -37,8 +41,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                     var issueId = Request.QueryString[Constants.QueryStrings.LearningTool.IssueId];
                     var gradeId = Request.QueryString[Constants.QueryStrings.LearningTool.GradeId];
                     var typeId = Request.QueryString[Constants.QueryStrings.LearningTool.TypeId];
-                    var platformId = Request.QueryString[Constants.QueryStrings.LearningTool.PlatformId];
-
+                    
                     ListItem temp;
                     if (!string.IsNullOrEmpty(issueId) && (temp = ddlIssues.Items.FindByValue(issueId)) != null)
                     {
@@ -53,9 +56,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                         temp.Selected = true;
                     }
 
-                    if (!string.IsNullOrEmpty(platformId))
+                    if (!string.IsNullOrEmpty(PlatformId))
                     {
-                        hfSelectedPlatform.Value = platformId;
+                        hfSelectedPlatform.Value = PlatformId;
                     }
                 }
             }
