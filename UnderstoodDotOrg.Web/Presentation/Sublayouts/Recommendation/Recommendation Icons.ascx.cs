@@ -39,8 +39,6 @@
             return string.Empty;
         }
 
-        // "why is this here?" you might ask
-        // "because fuck you"
         enum Letters
         {
             a = 0,
