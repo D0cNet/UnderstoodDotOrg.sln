@@ -13,22 +13,39 @@ using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
 {
-    public partial class SectionTools : BaseSublayout<SectionLandingPageItem>
+    public partial class SectionTools : BaseSublayout
     {
+        protected SectionLandingPageItem Model { get; set; }
         protected string BackgroundImage { get; set; }
-        protected string BaseWidgetPath = "~/Presentation/Sublayouts/Common/Widgets/";
+
+        protected string baseWidgetPath = "~/Presentation/Sublayouts/Common/Widgets/";
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            // NOTE: Populate repeater in Init event to prevent loss of viewstate in sublayouts
-            BindEvents();
+            Model = GetSectionPage();
 
-            BindControls();
+            if (Model != null)
+            {
+                BindEvents();
+                BindControls();
+                BindContent();
+            }
         }
 
-        protected void Page_Load(object sender, EventArgs e)
+        private SectionLandingPageItem GetSectionPage()
         {
-            BindContent();
+            Item item = Sitecore.Context.Item;
+
+            while (item != null)
+            {
+                if (item.InheritsTemplate(SectionLandingPageItem.TemplateId))
+                {
+                    return (SectionLandingPageItem)item;
+                }
+                item = item.Parent;
+            }
+
+            return null;
         }
 
         private void BindContent()
@@ -65,15 +82,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
 
                 if (item.IsOfType(GenericToolWidgetItem.TemplateId))
                 {
-                    slWidget.Path = String.Concat(BaseWidgetPath, "GenericTool.ascx");
+                    slWidget.Path = String.Concat(baseWidgetPath, "GenericTool.ascx");
                 }
                 else if (item.IsOfType(BehaviorToolWidgetItem.TemplateId))
                 {
-                    slWidget.Path = String.Concat(BaseWidgetPath, "BehaviorTool.ascx");
+                    slWidget.Path = String.Concat(baseWidgetPath, "BehaviorTool.ascx");
                 }
                 else if (item.IsOfType(AssistiveToolWidgetItem.TemplateId))
                 {
-                    slWidget.Path = String.Concat(BaseWidgetPath, "AssistiveTool.ascx");
+                    slWidget.Path = String.Concat(baseWidgetPath, "AssistiveTool.ascx");
                 }
             }
         }
