@@ -23,7 +23,7 @@
         <asp:Repeater ID="rptrDynPlatformDropdowns" runat="server">
             <ItemTemplate>
                 <select data-type-id="<%# Eval("TypeId") %>" class="platform-select" style="display:none;">
-                    <option value="">Select Platform</option>
+                    <option value=""><%= UnderstoodDotOrg.Common.DictionaryConstants.AllPlatformsLabel %></option>
                     <asp:Repeater ID="rptrPlatformOptions" runat="server" 
                         ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData.AssistiveToolsPlatformItem">
                         <ItemTemplate>

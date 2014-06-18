@@ -829,6 +829,22 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string AllTechnologyLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "All Technology Label");
+            }
+        }
+
+        public static string AllPlatformsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "All Platforms Label");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

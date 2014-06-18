@@ -67,7 +67,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
                 ddlIssues.DataTextField = "Text";
                 ddlIssues.DataValueField = "Value";
                 ddlIssues.DataBind();
-                ddlIssues.Items.Insert(0, new ListItem("Select Issue", string.Empty));
+                ddlIssues.Items.Insert(0, new ListItem(DictionaryConstants.SelectBehaviorLabel, string.Empty));
             }
 
             var gradesFolder = (AssistiveToolsGradesFolderItem)AssistiveToolsGlobalsFolder.Children
@@ -84,7 +84,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
                 ddlGrades.DataTextField = "Text";
                 ddlGrades.DataValueField = "Value";
                 ddlGrades.DataBind();
-                ddlGrades.Items.Insert(0, new ListItem("Select Grade", string.Empty));
+                ddlGrades.Items.Insert(0, new ListItem(DictionaryConstants.SelectGradeLabel, string.Empty));
             }
 
             var typesFolder = (AssistiveToolsTypeFolderItem)AssistiveToolsGlobalsFolder.Children
@@ -101,7 +101,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
                 ddlTechTypes.DataTextField = "Text";
                 ddlTechTypes.DataValueField = "Value";
                 ddlTechTypes.DataBind();
-                ddlTechTypes.Items.Insert(0, new ListItem("Select Technology", string.Empty));
+                ddlTechTypes.Items.Insert(0, new ListItem(DictionaryConstants.AllTechnologyLabel, string.Empty));
             }
 
             var platformsFolder = (AssistiveToolsPlatformFolderItem)AssistiveToolsGlobalsFolder.Children
