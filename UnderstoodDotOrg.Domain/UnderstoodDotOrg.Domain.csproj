@@ -598,6 +598,8 @@
     <Compile Include="SitecoreCIG\Poses\Shared\Widgets\DonateWidgetItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Widgets\GenericToolWidgetItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Widgets\GenericWidgetItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\Widgets\ImageWidgetItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\Widgets\UpcomingEventWidgetItem.base.cs" />
     <Compile Include="SocialHelper.cs" />
     <Compile Include="TelligentCommunity\CommunityConstructors.cs" />
     <Compile Include="TelligentCommunity\CommunityHelper.cs">
