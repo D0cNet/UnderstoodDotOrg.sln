@@ -9,11 +9,12 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent
 {
     public partial class ParentRoleItem
     {
-        public static IEnumerable<Sitecore.Data.Items.Item> GetParentRoles()
+        public static IEnumerable<ParentRoleItem> GetParentRoles()
         {
-            return Sitecore.Context.Database.SelectItems("/sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Roles/*")
-                .Where(x => x.TemplateID.ToString() == ParentRoleItem.TemplateId);
-                //.Select(x => new ParentRoleItem(x));
+            return Sitecore.Context.Database.GetItem("/sitecore/content/Globals/Content Taxonomies/Parent Related/Parent Roles/")
+                .GetChildren()
+                .Where(x => x.TemplateID.ToString() == ParentRoleItem.TemplateId)
+                .Select(x => new ParentRoleItem(x));
         }
     }
 }
