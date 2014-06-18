@@ -553,15 +553,30 @@ namespace UnderstoodDotOrg.Common
             public const string Favorited = "Item Favorited";
             public const string Shared = "Item Shared";
             public const string FoundHelpful = "Found Helpful";
+            public const string FoundNotHelpful = "Fond Not Helpful";
+            public const string WasRead = "Item Read";
+
+            public const string SharedWithEmail = "Shared Email";
+            public const string SharedWithFacebook = "Shared on Facebook";
+            public const string SharedWithPinterest = "Shared on Pinterest";
+            public const string SharedWithTwitter = "Shared on Twitter";
+            public const string SharedWithGooglePlus = "Shared on Google+";
+
         }
         public static class UserActivity_Types
         {
             public const int Undefined = 0;
             public const int ContentRelated = 1;
+            
             public const int Advocacy_Survey = 2;
             public const int Advocacy_Page = 3;
             public const int Advocacy_Donation = 4;
 
+            public const int Type_BlogPost = 5;
+            public const int Type_Blog = 6;
+            public const int Type_Board = 7;
+            public const int Type_Discussion = 8;
+            public const int Type_QuestionAndAnswer = 9;
         }
         public static class SolrFields
         {

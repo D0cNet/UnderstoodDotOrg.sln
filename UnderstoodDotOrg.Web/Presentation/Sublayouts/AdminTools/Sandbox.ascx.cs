@@ -19,8 +19,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
         {
             ActivityLog throwawaylog = new ActivityLog();
             //ContentId, ActivityValue
-            lblActivityCount.Text = throwawaylog.GetActivityCountByValue(new Guid("ECEFA524-93F5-4CE3-817B-A6DBBDA7640F"), 
+            lblActivityCount.Text = throwawaylog.GetActivityCountByValue(new Guid("ECEFA524-93F5-4CE3-817B-A6DBBDA7640F"),  
                                                                           Constants.UserActivity_Values.Favorited).ToString();
+
+            //i read this page. now record it.
+            MembershipManager mgr = new MembershipManager();
+            
+            mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.WasRead, Constants.UserActivity_Types.Type_Blog);
+
+            mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.SharedWithTwitter, Constants.UserActivity_Types.Type_BlogPost);
+            
+
 
 
             ActivityLog log = new ActivityLog(new Guid("810EBB87-14E1-4DAF-8EAE-F69E1754C640"), Constants.UserActivity_Values.Favorited);
@@ -65,7 +74,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             clItem.Checked = true;
 
             cl.MemberAnswers.Add(clItem);
-            MembershipManager mgr = new MembershipManager();
+            mgr = new MembershipManager();
             mgr.ChecklistResults_SaveToDb(cl.MemberId, cl);
             */
             
