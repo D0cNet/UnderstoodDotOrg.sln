@@ -13,21 +13,57 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
     public partial class MostRecentBlogsPage {
         
         /// <summary>
-        /// lbBlogName control.
+        /// Placeholder1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbBlogName;
+        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder1;
         
         /// <summary>
-        /// rptBlogInfo control.
+        /// sbMostRecent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptBlogInfo;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbMostRecent;
+        
+        /// <summary>
+        /// sbMostRead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbMostRead;
+        
+        /// <summary>
+        /// sbMostShared control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbMostShared;
+        
+        /// <summary>
+        /// sbMostTalkedAbout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbMostTalkedAbout;
+        
+        /// <summary>
+        /// Sidebar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Placeholder Sidebar;
     }
 }

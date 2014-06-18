@@ -1,33 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MostRecentBlogsPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.MostRecentBlogsPage" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div id="community-page" class="community-my-blogs community-blog-post-list author-specific ">
     <!-- BEGIN PARTIAL: community/main_header -->
     <sc:placeholder id="Placeholder1" key="BlogHeader" runat="server" />
     <!-- END PARTIAL: community/main_header -->
 
     <div class="container">
-        <!-- BEGIN PARTIAL: community/blog_feature_post -->
-        <!--blog feature post-->
-        <div class="row">
-            <div class="col-24 blog-feature skiplink-feature">
-                <div class="col col-20 blog-feature-info">
-                    <div class="blog-feature-image">
-                        <a href="REPLACE">
-                            <img alt="150x150 Placeholder" src="http://placehold.it/150x150" /></a>
-                    </div>
-                    <div class="blog-feature-description">
-                        <h2>
-                            <asp:Label ID="lbBlogName" runat="server" /></h2>
-                        <p class="blog-description-blurb">Ea Minus Odio Debitis Assumenda. Quia Quas Ipsa Non Quam. Ex Quam Ab Eligendi Quia Nam Numquam Eius Eaque Veritatis Necessitatibus Perferendis. Repellat Mollitia Veniam Necessitatibus Ipsa Non Qui Numquam Mollitia Officiis Sit Fuga Temporibus Praesentium</p>
-                    </div>
-                </div>
-                <div class="col col-4 blog-feature-follow-blog">
-                    <a href="REPLACE" class="button">Follow-blog</a>
-                    <a class="rss icon" href="REPLACE">RSS Feed</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- END PARTIAL: community/blog_feature_post -->
+        <sc:Placeholder Key="FeaturePost" runat="server" /> 
         <div class="container">
             <div class="row">
                 <div class="col blog-filter-wrapper col-24">
@@ -48,13 +27,13 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
 
-                                    <li role="presentation" class="filter selected" data-sort-by="date"><a role="menuitem" href="REPLACE">Most recent</a></li>
+                                    <li id="Recent" role="presentation" class="filter selected" data-sort-by="date"><a role="menuitem" onserverclick="MostRecent_Click" runat="server">Most recent</a></li>
 
-                                    <li role="presentation" class="filter " data-sort-by="read"><a role="menuitem" href="REPLACE">Most read</a></li>
+                                    <li id="Read" role="presentation" class="filter " data-sort-by="read"><a role="menuitem" onserverclick="MostRead_Click" runat="server">Most read</a></li>
 
-                                    <li role="presentation" class="filter " data-sort-by="shared"><a role="menuitem" href="REPLACE">Most shared</a></li>
+                                    <li id="Shared" role="presentation" class="filter " data-sort-by="shared"><a role="menuitem" onserverclick="MostShared_Click" runat="server">Most shared</a></li>
 
-                                    <li role="presentation" class="filter " data-sort-by="talkedabout"><a role="menuitem" href="REPLACE">Most talked about</a></li>
+                                    <li id="TalkedAbout" role="presentation" class="filter " data-sort-by="talkedabout"><a role="menuitem" onserverclick="MostTalkedAbout_Click" runat="server">Most talked about</a></li>
 
                                 </ul>
                             </div>
@@ -67,65 +46,10 @@
         </div>
 
         <div class="col-23 clearfix blog-post-list-wrapper">
-            <div class="col blog-post-list skiplink-content" aria-role="main" aria-role="main">
-
-                <div class="blog-post-list-inner">
-                    <asp:Repeater ID="rptBlogInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost">
-                        <ItemTemplate>
-                            <!-- BEGIN PARTIAL: community/blog_post -->
-                            <div class="blog-post">
-                                <div class="blog-card-image blog-card-total-comments">
-                                    <a>
-                                        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" /></a>
-
-                                    <p class="blog-card-comments"><b class="number-of-comments"><%# Item.CommentCount %></b>Comments</p>
-
-                                </div>
-                                <div class="blog-card-info group">
-                                    <h3 class="blog-card-title"><a href="<%# Item.Url %>"><%# Item.Title %></a></h3>
-
-
-                                    <div class="blog-card-post-info">
-                                        <p class="blog-posted">Posted</p>
-                                        <p class="blog-post-date"><%# Item.PublishedDate %></p>
-                                        <p class="blog-by">
-                                            by
-          <a href="<%# Item.AuthorUrl %>" class="author"><%# Item.Author %></a>
-                                        </p>
-                                    </div>
-
-
-                                    <p class="blog-card-post-excerpt"><%# Item.Body %></p>
-                                    <span class="children-key">
-                                        <ul>
-                                            <li><i class='child-b' title='CHILD NAME HERE'></i></li>
-                                            <li><i class='child-c' title='CHILD NAME HERE'></i></li>
-                                            <li><i class='child-e' title='CHILD NAME HERE'></i></li>
-                                        </ul>
-                                    </span>
-                                </div>
-
-                            </div>
-                            <!-- END PARTIAL: community/blog_post -->
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </div>
-
-                <!-- Show More -->
-                <!-- BEGIN PARTIAL: community/show_more -->
-                <!--Show More-->
-                <div class="container show-more">
-                    <div class="row">
-                        <div class="col col-24">
-                            <a class="show-more-link " href="#" data-path="blog/posts" data-container="blog-post-list-inner" data-item="blog-list" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- .show-more -->
-                <!-- END PARTIAL: community/show_more -->
-                <!-- .show-more -->
-
-            </div>
+            <sc:Sublayout Visible="true" ID="sbMostRecent" runat="server" Path="~/Presentation/SubLayouts/Blogs/SortBlogsRecent.ascx" />
+            <sc:Sublayout Visible="false" ID="sbMostRead" runat="server" Path="~/Presentation/SubLayouts/Blogs/SortBlogsRecent.ascx" />
+            <sc:Sublayout Visible="false" ID="sbMostShared" runat="server" Path="~/Presentation/SubLayouts/Blogs/SortBlogsRecent.ascx" />
+            <sc:Sublayout Visible="false" ID="sbMostTalkedAbout" runat="server" Path="~/Presentation/SubLayouts/Blogs/SortBlogsTalkedAbout.ascx" />
             <!-- BEGIN PARTIAL: community/blog_sidebar -->
             <div id="skipLinkSidebar" class="blog-post-list-sidebar skiplink-sidebar">
                 <sc:placeholder id="Sidebar" key="Blogs-Sidebar" runat="server" />
@@ -159,3 +83,61 @@
     <!-- END PARTIAL: children-key -->--%>
     <sc:sublayout runat="server" path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
 </div>
+<%--<script type="text/javascript">
+    var recent = document.getElementById("<%=sbMostRecent.ClientID%>");
+    var read = document.getElementById("<%=sbMostRead.ClientID%>");
+    var shared = document.getElementById("<%=sbMostShared.ClientID%>");
+    var talked = document.getElementById("<%=sbMostTalkedAbout.ClientID%>");
+    var recentSelect = document.getElementById("Recent");
+    var readSelect = document.getElementById("Read");
+    var sharedSelect = document.getElementById("Shared");
+    var talkedSelect = document.getElementById("TalkedAbout");
+    function ShowMostRecent() {
+        if (recent.getAttribute("Visible") == "false") {
+            recent.setAttribute("Visible", "true");
+            read.setAttribute("Visible", "false");
+            shared.setAttribute("Visible", "false");
+            talked.setAttribute("Visible", "false");
+            recentSelect.className = "filter selected";
+            readSelect.className = "filter ";
+            sharedSelect.className = "filter ";
+            talkedSelect.className = "filter ";
+        }
+    }
+    function ShowMostRead() {
+        if (read.getAttribute("Visible") == "false") {
+            recent.setAttribute("Visible", "false");
+            read.setAttribute("Visible", "true");
+            shared.setAttribute("Visible", "false");
+            talked.setAttribute("Visible", "false");
+            recentSelect.className = "filter ";
+            readSelect.className = "filter selected";
+            sharedSelect.className = "filter ";
+            talkedSelect.className = "filter ";
+        }
+    }
+    function ShowMostShared() {
+        if (shared.getAttribute("Visible") == "false") {
+            recent.setAttribute("Visible", "false");
+            read.setAttribute("Visible", "false");
+            shared.setAttribute("Visible", "false");
+            talked.setAttribute("Visible", "false");
+            recentSelect.className = "filter ";
+            readSelect.className = "filter ";
+            sharedSelect.className = "filter selected";
+            talkedSelect.className = "filter ";
+        }
+    }
+    function ShowMostTalkedAbout() {
+        if (talked.getAttribute("Visible") == "false") {
+            recent.setAttribute("Visible", "false");
+            read.setAttribute("Visible", "false");
+            shared.setAttribute("Visible", "false");
+            talked.setAttribute("Visible", "false");
+            recentSelect.className = "filter ";
+            readSelect.className = "filter ";
+            sharedSelect.className = "filter ";
+            talkedSelect.className = "filter selected";
+        }
+    }
+</script>--%>
