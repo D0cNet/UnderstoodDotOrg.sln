@@ -27,8 +27,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
                 item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
                 item.AuthorUrl = "/Community and Events/Blogs/Author/" + item.Author;
             }
-
-            lbBlogName.Text = dataSource[0].BlogName;
         }
 
         protected void MostRecent_Click(object sender, EventArgs e)

@@ -27,13 +27,13 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
 
-                                    <li id="Recent" role="presentation" class="filter selected" data-sort-by="date"><a role="menuitem" onserverclick="MostRecent_Click" runat="server">Most recent</a></li>
+                                    <li id="Recent" role="presentation" class="filter selected" data-sort-by="date"><a role="menuitem" onclick="ShowMostRecent();" runat="server">Most recent</a></li>
 
-                                    <li id="Read" role="presentation" class="filter " data-sort-by="read"><a role="menuitem" onserverclick="MostRead_Click" runat="server">Most read</a></li>
+                                    <li id="Read" role="presentation" class="filter " data-sort-by="read"><a role="menuitem" onclick="ShowMostRead();" runat="server">Most read</a></li>
 
-                                    <li id="Shared" role="presentation" class="filter " data-sort-by="shared"><a role="menuitem" onserverclick="MostShared_Click" runat="server">Most shared</a></li>
+                                    <li id="Shared" role="presentation" class="filter " data-sort-by="shared"><a role="menuitem" onclick="ShowMostShared();" runat="server">Most shared</a></li>
 
-                                    <li id="TalkedAbout" role="presentation" class="filter " data-sort-by="talkedabout"><a role="menuitem" onserverclick="MostTalkedAbout_Click" runat="server">Most talked about</a></li>
+                                    <li id="TalkedAbout" role="presentation" class="filter " data-sort-by="talkedabout"><a role="menuitem" onclick="ShowMostTalkedAbout();" runat="server">Most talked about</a></li>
 
                                 </ul>
                             </div>
@@ -83,7 +83,7 @@
     <!-- END PARTIAL: children-key -->--%>
     <sc:sublayout runat="server" path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
 </div>
-<%--<script type="text/javascript">
+<script type="text/javascript">
     var recent = document.getElementById("<%=sbMostRecent.ClientID%>");
     var read = document.getElementById("<%=sbMostRead.ClientID%>");
     var shared = document.getElementById("<%=sbMostShared.ClientID%>");
@@ -140,4 +140,4 @@
             talkedSelect.className = "filter selected";
         }
     }
-</script>--%>
+</script>
