@@ -569,17 +569,30 @@ namespace UnderstoodDotOrg.Domain.Membership
             tMember.allowConnections = Member.allowConnections;
             tMember.allowNewsletter = Member.allowNewsletter;
             tMember.emailSubscription = Member.emailSubscription;
-            tMember.FirstName = Member.FirstName.RemoveHTML();
             tMember.hasOtherChildren = Member.hasOtherChildren;
             tMember.isFacebookUser = Member.isFacebookUser;
             tMember.isPrivate = Member.isPrivate;
-            tMember.LastName = Member.LastName.RemoveHTML();
             tMember.PersonalityType = Member.PersonalityType;
-            tMember.Phone = Member.Phone;
             tMember.Role = Member.Role;
             tMember.ScreenName = Member.ScreenName.RemoveHTML();
             tMember.UserId = Member.UserId;
-            tMember.ZipCode = Member.ZipCode.RemoveHTML();
+
+			if (!string.IsNullOrEmpty(Member.FirstName))
+			{
+				tMember.FirstName = Member.FirstName.RemoveHTML();
+			}
+			if (!string.IsNullOrEmpty(Member.LastName))
+			{
+				tMember.LastName = Member.LastName.RemoveHTML();
+			}
+			if (Member.Phone != null)
+			{
+				tMember.Phone = Member.Phone;
+			}
+			if (!string.IsNullOrEmpty(Member.ZipCode))
+			{
+				tMember.ZipCode = Member.ZipCode.RemoveHTML();
+			}
 
             tMember.Interests.Clear();
             tMember.Journeys.Clear();
