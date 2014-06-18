@@ -100,6 +100,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Image imgFooterLogo;
+        protected global::System.Web.UI.WebControls.Image imgFooterLogo;
     }
 }

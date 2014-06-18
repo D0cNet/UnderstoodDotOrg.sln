@@ -936,7 +936,7 @@ namespace UnderstoodDotOrg.Domain.Search
                 // TODO: modify query based on guid values
                 if (issueId.HasValue)
                 {
-                    
+                    query = query.Where(i => i.Issues.Contains(ID.Parse(issueId.Value)));
                 }
                 if (gradeId.HasValue)
                 {
@@ -944,14 +944,16 @@ namespace UnderstoodDotOrg.Domain.Search
                 }
                 if (technologyId.HasValue)
                 {
-                    
+                    query = query.Where(i => i.Technology.Contains(ID.Parse(technologyId.Value)));
                 }
                 if (platformId.HasValue)
                 {
-                    
+                    query = query.Where(i => i.Platforms.Contains(ID.Parse(platformId)));
                 }
+
                 if (issueId.HasValue || gradeId.HasValue || technologyId.HasValue || platformId.HasValue)
                 {
+                    searchTerm = null;
                 }
 
                 if (!string.IsNullOrEmpty(searchTerm))

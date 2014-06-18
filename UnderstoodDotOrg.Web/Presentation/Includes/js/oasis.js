@@ -373,3 +373,47 @@ $(document).ready(function () {
             }
     });
 });
+
+// Assistive tool widget
+(function($) {
+
+	$(document).ready(function () {
+        new U.assistiveToolWidget();
+    });
+
+    U.assistiveToolWidget = function () {
+        var self = this;
+
+        // cache selectors
+        var $techTypeSelect = $("section.mini-tool select.tech-type-select");
+        var $issueSelect = $("section.mini-tool select.issue-select");
+        var $gradeSelect = $("section.mini-tool select.grade-select");
+        var $platformSelects = $("section.mini-tool select.platform-select");
+        var $uniformPlatformSelects = $platformSelects.parent();
+        var $hfSelectedPlatform = $("section.mini-tool .hfSelectedPlatform");
+
+        $techTypeSelect.on("change", function () {
+            $uniformPlatformSelects.hide();
+            $platformSelects.val("").removeClass("active").trigger("change");
+            var typeId = $(this).val();
+            if (typeId) {
+                showPlatformSelect(typeId);
+            }
+        });
+
+        function showPlatformSelect(typeId) {
+            var $platformSelect = $platformSelects.filter("[data-type-id='" + typeId + "']").first();
+            $platformSelect
+                .show()
+                .addClass("active")
+                .parent().show();
+            return $platformSelect;
+        }
+
+        $platformSelects.on("change", function () {
+            $hfSelectedPlatform.val($(this).val()).trigger("change");
+        });
+
+        return this;
+    };
+})(jQuery);

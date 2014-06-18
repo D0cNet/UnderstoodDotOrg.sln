@@ -45,6 +45,6 @@
   <footer class="powered-by">
     <h5><sc:FieldRenderer ID="frWidgetFooterHeading" runat="server" FieldName="Widget Footer Heading" /></h5>
     <div class="logo">
-      <sc:Image runat="server" ID="imgFooterLogo" Field="Widget Footer Logo" />
+      <asp:Image runat="server" ID="imgFooterLogo" CssClass="logo-img" />
     </div>
   </footer>

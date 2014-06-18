@@ -1,18 +1,15 @@
-﻿using System;
+﻿using Sitecore.Data.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sitecore.Data.Fields;
-using Sitecore.Data.Items;
 using System.Web;
 using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.Search;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 
 namespace UnderstoodDotOrg.Domain.Understood.Helper
@@ -138,7 +135,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
                     { Constants.GRADE_QUERY_STRING, gradeGuid },
                     { Constants.CHALLENGE_QUERY_STRING, challengeGuid }
                 };
-            return AssembleUrl(path, queryParams);
+            return HttpHelper.AssembleUrl(path, queryParams);
         }
 
         public static string GetSearchResultsUrl(string term, string type)
@@ -151,7 +148,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
                     { Constants.SEARCH_TERM_QUERY_STRING, term },
                     { Constants.SEARCH_TYPE_FILTER_QUERY_STRING, type }
                 };
-                return AssembleUrl(item.GetUrl(), queryParams);
+                return HttpHelper.AssembleUrl(item.GetUrl(), queryParams);
             }
             return String.Empty;
         }
@@ -163,29 +160,6 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
             }
             return String.Empty;
         }
-
-        /// <summary>
-        /// Returns a formatted URL with query string variables appended
-        /// </summary>
-        /// <param name="baseUrl">Base URL excluding any query string variables</param>
-        /// <param name="queryParams">Dictionary with key, value paris where key is the query string variable name</param>
-        /// <returns>Formatted URL string</returns>
-        private static string AssembleUrl(string baseUrl, Dictionary<string, string> queryParams)
-        {
-            var pairs = (from qp in queryParams
-                         where !String.IsNullOrEmpty(qp.Value) 
-                         select String.Format("{0}={1}", qp.Key, Uri.EscapeDataString(qp.Value))).ToArray();
-
-            string queryString = (pairs.Any()) ?
-                String.Concat("?", String.Join("&", pairs)) :
-                String.Empty;
-
-            // Handle parentheses
-            queryString = queryString.Replace("(", "%28").Replace(")", "%29");
-
-            return String.Concat(baseUrl, queryString); 
-        }
-
         #endregion
     }
 }
