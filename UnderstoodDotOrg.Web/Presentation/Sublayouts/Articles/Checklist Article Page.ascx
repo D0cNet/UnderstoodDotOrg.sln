@@ -72,7 +72,7 @@
                             <asp:button runat="server" ID="btnSaveAnswers" class="submit button" Text="Save My Answers" OnClick="btnSaveAnswers_Click" />
                         </div>
                         <div class="download-pdf">
-                            <a href="#" download class="download button gray">Download as PDF</a>
+                            <a href="#" class="download button gray">Download as PDF</a>
                         </div>
                         <!--        <div class="button"><input class="checklist-form-save" type="submit" value="Save My Answers"></div>
                                     <div class="button"><input class="submit-button" type="submit" value="Download as PDF"></div> -->
@@ -86,21 +86,13 @@
                             $(".download-pdf a").on("click", function (e) {
                                 if (!clicked)
                                 {
-                                    $this = $(this);
-                                    e.preventDefault();
-
-                                    html2canvas(document.body, {
-                                        onrendered: function (canvas) {
-                                            downloadPDF(canvas);
-                                        }
-                                    })
-                                }
-
-                                function downloadPDF(canvas)
-                                {
-                                    $this.attr("href", canvas.toDataURL("image/png"));
-                                    clicked = true;
-                                    $this[0].click();
+                                    var doc = new jsPDF();
+                                    doc.addHTML(
+                                        document.body,                                        
+                                        0,
+                                        0,
+                                        { 'pagesplit': true },
+                                        function () { doc.save('article-download.pdf'); });
                                 }
                             })
                         })
