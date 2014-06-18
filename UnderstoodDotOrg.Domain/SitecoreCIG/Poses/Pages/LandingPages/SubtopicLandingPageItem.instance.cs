@@ -21,12 +21,24 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages
             int pageSize = Constants.SUBTOPIC_LISTING_ARTICLES_PER_PAGE;
             int total = all.Count();
             int offset = (page - 1) * pageSize;
-
+            
             var results = all.Skip(offset)
                             .Take(pageSize)
                             .Select(i => new DefaultArticlePageItem(i));
 
             hasMoreResults = offset + results.Count() < total;
+
+            return results;
+        }
+
+        public IEnumerable<Item> GetWidgets()
+        {
+            IEnumerable<Item> results = Enumerable.Empty<Item>();
+
+            if (Widgets.ListItems.Any())
+            {
+                results = Widgets.ListItems.FilterByContextLanguageVersion().Take(Constants.SUBTOPIC_WIDGETS_ENTRIES);
+            }
 
             return results;
         }

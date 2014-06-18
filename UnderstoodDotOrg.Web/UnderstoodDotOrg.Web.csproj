@@ -1043,6 +1043,20 @@
     <Compile Include="Presentation\Sublayouts\Common\Widgets\GenericTool.ascx.designer.cs">
       <DependentUpon>GenericTool.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Widgets\ImageWidget.ascx.cs">
+      <DependentUpon>ImageWidget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Widgets\ImageWidget.ascx.designer.cs">
+      <DependentUpon>ImageWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Widgets\UpcomingEvent.ascx.cs">
+      <DependentUpon>UpcomingEvent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Widgets\UpcomingEvent.ascx.designer.cs">
+      <DependentUpon>UpcomingEvent.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\All Parents Search.ascx.cs">
       <DependentUpon>All Parents Search.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2680,6 +2694,8 @@
     <Content Include="Presentation\Sublayouts\Common\Widgets\AssistiveTool.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Widgets\BehaviorTool.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Widgets\GenericTool.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Widgets\ImageWidget.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Widgets\UpcomingEvent.ascx" />
     <Content Include="Presentation\Sublayouts\Community\All Parents Search.ascx" />
     <Content Include="Presentation\Sublayouts\Community\CommunityContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Experts\ExpertsCalendarListView.ascx" />

@@ -5,9 +5,9 @@
 
     <asp:Repeater ID="rptWidgets" runat="server">
         <ItemTemplate>
-            <asp:PlaceHolder ID="phToolWrapperStart" runat="server"><section class="mini-tool rs_read_this"></asp:PlaceHolder>
+            <asp:PlaceHolder ID="phToolWrapperStart" runat="server" Visible="false"><section class="mini-tool rs_read_this"></asp:PlaceHolder>
             <sc:Sublayout ID="slWidget" runat="server" />
-            <asp:PlaceHolder ID="phToolWrapperEnd" runat="server"></section></asp:PlaceHolder>
+            <asp:PlaceHolder ID="phToolWrapperEnd" runat="server" Visible="false"></section></asp:PlaceHolder>
         </ItemTemplate>
     </asp:Repeater>
 

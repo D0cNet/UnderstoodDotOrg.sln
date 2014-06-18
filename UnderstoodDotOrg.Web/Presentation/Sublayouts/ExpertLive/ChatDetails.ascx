@@ -8,7 +8,7 @@
                 <li><asp:HyperLink ID="hlBackExperts" runat="server" /></li>
             </ul>
 
-            <h2 class="rs_read_this"><sc:FieldRenderer ID="frPageTitle" runat="server" /></h2>
+            <h2 class="rs_read_this"><sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" /></h2>
         </div>
     </header>
 

@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Widgets;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Widgets.Base;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
@@ -80,18 +81,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
                 Sublayout slWidget = e.FindControlAs<Sublayout>("slWidget");
                 slWidget.DataSource = item.ID.ToString();
 
-                if (item.IsOfType(GenericToolWidgetItem.TemplateId))
-                {
-                    slWidget.Path = String.Concat(baseWidgetPath, "GenericTool.ascx");
-                }
-                else if (item.IsOfType(BehaviorToolWidgetItem.TemplateId))
-                {
-                    slWidget.Path = String.Concat(baseWidgetPath, "BehaviorTool.ascx");
-                }
-                else if (item.IsOfType(AssistiveToolWidgetItem.TemplateId))
-                {
-                    slWidget.Path = String.Concat(baseWidgetPath, "AssistiveTool.ascx");
-                }
+                slWidget.Path = ToolWidgetItem.GetWidgetSublayoutPath(item);
             }
         }
     }

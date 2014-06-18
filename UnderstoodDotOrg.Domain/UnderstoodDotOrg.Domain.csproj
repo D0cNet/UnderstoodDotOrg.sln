@@ -594,6 +594,7 @@
     <Compile Include="SitecoreCIG\Poses\Shared\Tools\BehaviorTool\BehaviorSearchCalloutItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Widgets\AssistiveToolWidgetItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Widgets\Base\ToolWidgetItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\Widgets\Base\ToolWidgetItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Widgets\BehaviorToolWidgetItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Widgets\DonateWidgetItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Widgets\GenericToolWidgetItem.base.cs" />

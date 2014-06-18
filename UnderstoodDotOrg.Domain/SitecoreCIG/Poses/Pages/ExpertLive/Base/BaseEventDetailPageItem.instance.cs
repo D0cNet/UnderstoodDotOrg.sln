@@ -27,7 +27,27 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
 
             return String.Empty;
         }
+
+        /// <summary>
+        /// Returns event start date in format Mon Aug 13 at 7:00pm EST
+        /// </summary>
+        /// <returns></returns>
         public string GetFormattedEventStartDate()
+        {
+            DateTime eventDate = EventStartDate.DateTime;
+            if (eventDate != DateTime.MinValue)
+            {
+                return String.Format("{0:ddd MMM dd} at {1}", eventDate, GetFormattedEventStartTime());
+            }
+
+            return String.Empty;
+        }
+
+        /// <summary>
+        /// Returns event start time in format 7:00pm EST
+        /// </summary>
+        /// <returns></returns>
+        public string GetFormattedEventStartTime()
         {
             DateTime eventDate = EventStartDate.DateTime;
             if (eventDate != DateTime.MinValue)
@@ -37,7 +57,23 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
 
                 string meridian = eventDate.ToString("tt").ToLower();
 
-                return String.Format("{0:ddd MMM dd} at {0:hh:mm}{1} {2}", eventDate, meridian, zoneLabel);
+                return String.Format("{0:h:mm}{1} {2}", eventDate, meridian, zoneLabel);
+            }
+
+            return String.Empty;
+        }
+
+        /// <summary>
+        /// Returns the start date with the format supplied
+        /// </summary>
+        /// <param name="format"></param>
+        /// <returns></returns>
+        public string GetFormattedEventStartDate(string format)
+        {
+            DateTime eventDate = EventStartDate.DateTime;
+            if (eventDate != DateTime.MinValue)
+            {
+                return eventDate.ToString(format);
             }
 
             return String.Empty;

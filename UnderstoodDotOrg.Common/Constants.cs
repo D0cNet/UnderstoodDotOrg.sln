@@ -20,6 +20,7 @@ namespace UnderstoodDotOrg.Common
         public const int EXPERT_LISTING_ENTRIES_PER_PAGE = 9;
         public const int ASSISTIVE_TECH_ENTRIES_PER_PAGE = 3;
         public const int FEATURED_TOPIC_GALLERY_ENTRIES = 4;
+        public const int SUBTOPIC_WIDGETS_ENTRIES = 3;
 
         #region Query Strings
 
