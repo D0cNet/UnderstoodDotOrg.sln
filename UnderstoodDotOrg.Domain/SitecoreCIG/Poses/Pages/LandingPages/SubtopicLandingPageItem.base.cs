@@ -46,11 +46,11 @@ public static implicit operator Item(SubtopicLandingPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTreeListField CuratedFeaturedcontent
+public CustomTreeListField Widgets
 {
 	get
 	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Curated Featured content"]);
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Widgets"]);
 	}
 }
 

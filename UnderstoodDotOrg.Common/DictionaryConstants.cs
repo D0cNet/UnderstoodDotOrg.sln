@@ -880,6 +880,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string PauseLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Pause Label");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

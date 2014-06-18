@@ -46,20 +46,29 @@ public static implicit operator Item(TopicLandingPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTreeListField CuratedFeaturedcontent
+public CustomTreeListField GalleryFeaturedArticles
 {
 	get
 	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Curated Featured content"]);
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Gallery Featured Articles"]);
 	}
 }
 
 
-public CustomTreeListField SliderCuratedFeaturedcontent
+public CustomTreeListField SectionFeaturedArticles
 {
 	get
 	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Slider Curated Featured content"]);
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Section Featured Articles"]);
+	}
+}
+
+
+public CustomTreeListField TopicFeaturedArticles
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Topic Featured Articles"]);
 	}
 }
 

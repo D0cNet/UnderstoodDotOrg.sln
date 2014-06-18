@@ -5,48 +5,40 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 using System.Linq;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Framework.UI;
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
-    public partial class TopicCarousel : System.Web.UI.UserControl {
-        protected void Page_Load(object sender, EventArgs e) {
-            TopicLandingPageItem contextItem = Sitecore.Context.Item;
-            if (contextItem != null && contextItem.SliderCuratedFeaturedcontent != null) {
-                var curatedFeaturedContent = contextItem.SliderCuratedFeaturedcontent.ListItems;
-                if (curatedFeaturedContent != null && curatedFeaturedContent.Count > 0) {
-                    rptTopicCarousel.DataSource = curatedFeaturedContent.Take(4);
-                    rptTopicCarousel.DataBind();
-                }
-                else {
-                    this.Visible = false;
-                }
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic
+{
+    public partial class TopicCarousel : BaseSublayout<TopicLandingPageItem>
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            var items = Model.GetGalleryArticles();
+            if (items.Any())
+            {
+                rptTopicCarousel.DataSource = items;
+                rptTopicCarousel.DataBind();
             }
-            else {
+            else
+            {
                 this.Visible = false;
             }
         }
 
-        protected void rptTopicCarousel_ItemDataBound(object sender, RepeaterItemEventArgs e) {
-            if (e.IsItem()) {
-                 Item item = e.Item.DataItem as Item;
-                 if (item != null && item.InheritsFromType(DefaultArticlePageItem.TemplateId)) {
-                     DefaultArticlePageItem content = new DefaultArticlePageItem(item);
-                     
-                     Sitecore.Web.UI.WebControls.Image scThumbnailImage = e.FindControlAs<Sitecore.Web.UI.WebControls.Image>("scThumbnailImage");
-                     Image defaultImage = e.FindControlAs<Image>("defaultImage");
-                     Literal ltNavigationTitle = e.FindControlAs<Literal>("ltNavigationTitle");
+        protected void rptTopicCarousel_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                DefaultArticlePageItem item = e.Item.DataItem as DefaultArticlePageItem;
 
-                     if (scThumbnailImage != null && content.FeaturedImage.MediaItem != null) {
-                         scThumbnailImage.Item = content;
-                     }
-                     else {
-                         defaultImage.Visible = true;
-                     }
+                System.Web.UI.WebControls.Image imgFeatured = e.FindControlAs<System.Web.UI.WebControls.Image>("imgFeatured");
+                imgFeatured.ImageUrl = item.GetArticleFeaturedThumbnailUrl(630, 354);
 
-                     
-                     if (ltNavigationTitle != null) {
-                         ltNavigationTitle.Text = item.DisplayName;
-                     }
-                 }
+                Literal litNavigationTitle = e.FindControlAs<Literal>("litNavigationTitle");
+                litNavigationTitle.Text = item.ContentPage.BasePageNEW.NavigationTitle.Rendered;
+
+                HyperLink hlImageLink = e.FindControlAs<HyperLink>("hlImageLink");
+                hlImageLink.NavigateUrl = item.GetUrl();
             }
         }
     }

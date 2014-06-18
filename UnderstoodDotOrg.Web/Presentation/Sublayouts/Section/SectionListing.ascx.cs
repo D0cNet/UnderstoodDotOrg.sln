@@ -46,7 +46,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
                     hlTopicLink.NavigateUrl = topic.InnerItem.GetUrl();
 
                     IEnumerable<DefaultArticlePageItem> topicArticles = Enumerable.Empty<DefaultArticlePageItem>();
-                    var curated = topic.CuratedFeaturedcontent.ListItems;
+                    var curated = topic.GetFeaturedSectionArticles();
 
                     // Check curated first, fallback to most recent articles
                     if (curated.Any())
@@ -58,10 +58,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
                         var recent = SearchHelper.GetMostRecentArticlesWithin(topic.ID, Constants.SECTION_LANDING_ARTICLES_PER_ROW);
                         if (recent.Any())
                         {
-                            topicArticles = from r in recent
-                                            let i = r.GetItem()
-                                            where i != null
-                                            select new DefaultArticlePageItem(i);
+                            topicArticles = recent.Select(i => new DefaultArticlePageItem(i.GetItem()))
+                                                .Where(i => i.InnerItem != null);
                         }
                     }
 

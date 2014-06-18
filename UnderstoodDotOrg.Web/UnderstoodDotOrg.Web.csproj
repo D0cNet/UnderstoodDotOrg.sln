@@ -175,13 +175,6 @@
     <Compile Include="Presentation\AjaxData\ExpertListing.aspx.designer.cs">
       <DependentUpon>ExpertListing.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\AjaxData\GetArticles.aspx.cs">
-      <DependentUpon>GetArticles.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\AjaxData\GetArticles.aspx.designer.cs">
-      <DependentUpon>GetArticles.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\AjaxData\SubtopicArticles.aspx.cs">
       <DependentUpon>SubtopicArticles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2060,7 +2053,6 @@
     <Content Include="Presentation\AjaxData\ArchiveEvents.aspx" />
     <Content Include="Presentation\AjaxData\AssistiveTechResults.aspx" />
     <Content Include="Presentation\AjaxData\ExpertListing.aspx" />
-    <Content Include="Presentation\AjaxData\GetArticles.aspx" />
     <Content Include="Presentation\AjaxData\SubtopicArticles.aspx" />
     <Content Include="Presentation\AjaxData\TopicLandingArticles.aspx" />
     <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />
