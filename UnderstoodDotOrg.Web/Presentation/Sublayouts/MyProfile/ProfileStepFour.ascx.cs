@@ -140,15 +140,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 //var parentRoles = Sitecore.Context.Database.GetItem(parentRolesContainer).Children.ToList();
                 var parentRoles = ParentRoleItem.GetParentRoles();
 
-                uxFather.Text = parentRoles.ElementAt(0).Fields["Role Name"].Value; // RoleName.Rendered;
-                uxMother.Text = parentRoles.ElementAt(1).Fields["Role Name"].Value; // .RoleName.Rendered;
+                uxFather.Text = parentRoles.ElementAt(0).RoleName.Rendered; // RoleName.Rendered;
+                uxMother.Text = parentRoles.ElementAt(1).RoleName.Rendered; // .RoleName.Rendered;
 
-                uxParentList.DataSource = parentRoles.Skip(2);
-                uxParentList.DataTextField = "Fields[Role Name]";
-                uxParentList.DataValueField = "Id";
+                var otherRoles = new List<ListItem>();
+
+                foreach (var item in parentRoles.Skip(2))
+                {
+                    otherRoles.Add(new ListItem() { Value = item.ID.ToString(), Text = item.RoleName.Text });
+                }
+
+                uxParentList.DataSource = otherRoles;
+                //uxParentList.DataTextField = "RoleName.Text";
+                //uxParentList.DataValueField = "Id";
                 uxParentList.DataBind();
 
-                uxParentList.Items.Insert(0, new ListItem() { Text = DictionaryConstants.ParentRoleDefault, Value = null });
+                uxParentList.Items.Insert(0, new ListItem() { Text = DictionaryConstants.ParentRoleDefault, Value = string.Empty });
             }
         }
 

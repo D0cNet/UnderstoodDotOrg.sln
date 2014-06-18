@@ -361,4 +361,15 @@ ValidateRadioButtons = function (sender, args) {
 
 $(document).ready(function () {
     $(".sign-up-inputs input").change(validate);
+
+    //updates labels that contain checked radio buttons after page load
+    $('input[type=radio]:checked').parents('label.button').addClass('checked');
+
+    //update containing divs for dropdowns with selected values
+    $('select').each(
+        function () {
+            if ($(this).val() != "") {
+                $(this).parents('div.selector').addClass('selected')
+            }
+    });
 });

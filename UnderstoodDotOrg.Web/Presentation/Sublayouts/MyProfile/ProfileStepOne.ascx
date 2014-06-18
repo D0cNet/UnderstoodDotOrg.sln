@@ -19,11 +19,7 @@
                     <div class="progress-bar-wrapper rs_read_this">
                         <div class="progress-header">
                             Progress
-    
-     
-
                             <span class="visuallyhidden">Step 1 of 4</span>
-
                         </div>
                         <div class="progress-bar step-1 rs_skip">
                             <span class="step-1 step" aria-hidden="true" role="presentation">1</span>

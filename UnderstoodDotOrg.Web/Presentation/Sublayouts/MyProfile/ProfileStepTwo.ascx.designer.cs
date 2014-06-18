@@ -58,13 +58,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.PlaceHolder uxGenderAndGrade;
         
         /// <summary>
-        /// Text4 control.
+        /// litGenderGradeQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text4;
+        protected global::System.Web.UI.WebControls.Literal litGenderGradeQuestion;
+        
+        /// <summary>
+        /// uxGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder uxGender;
         
         /// <summary>
         /// uxBoy control.
@@ -92,15 +101,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator valGender;
-        
-        /// <summary>
-        /// Text7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text7;
         
         /// <summary>
         /// uxSelectGrade control.

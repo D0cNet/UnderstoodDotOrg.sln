@@ -1,11 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProfileStepThree.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile.ProfileStepThree" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
-<div class="container profile-questions flush">
+<div class="container profile-questions-header-container flush">
     <div class="row">
         <div class="col col-22 offset-1">
             <header class="profile-questions-header">
-                <div class="column-left">
+                <div class="column-left rs_read_this">
                     <!-- BEGIN PARTIAL: profile-questions-header-left -->
                     <h1>
                         <sc:Text ID="Text1" Field="Header Title" runat="server" />
@@ -18,30 +18,30 @@
                 </div>
                 <div class="column-right">
                     <!-- BEGIN PARTIAL: profile-questions-header-right -->
-                    <div class="progress-bar-wrapper">
+                    <div class="progress-bar-wrapper rs_read_this">
                         <div class="progress-header">
                             <sc:Text ID="Text3" Field="Header Progress Bar Text" runat="server" />
                         </div>
-                        <div class="progress-bar step-2b">
-                            <span class="step-1 step">1</span>
+                        <div class="progress-bar step-2b rs_skip">
+                            <span class="step-1 step" aria-hidden="true" role="presentation">1</span>
                             <span class="step-1-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="step-2 step">2</span>
+                            <span class="step-2 step" aria-hidden="true" role="presentation">2</span>
                             <span class="step-2-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="step-3 step">3</span>
+                            <span class="step-3 step" aria-hidden="true" role="presentation">3</span>
                             <span class="step-3-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="done step">Done</span>
+                            <span class="done step" aria-hidden="true" role="presentation">Done</span>
                         </div>
                     </div>
                     <!-- .progress-bar-wrapper -->
@@ -54,58 +54,58 @@
 </div>
 
 
-<div class="container profile-questions flush">
+<div class="container profile-questions-container flush">
     <div class="row">
         <div class="col col-22 offset-1">
             <!-- BEGIN PARTIAL: profile-questions-step2b -->
-            <div class="profile-questions step-2b">
-                <h2>
+            <div class="profile-questions step-2b skiplink-content" aria-role="main">
+                <h2 class="rs_read_this">
                     <%--<sc:text id="Text4" field="Form Title" runat="server" />--%>
                     <asp:Literal ID="uxFormTitle" runat="server"></asp:Literal>
                 </h2>
 
-                <div class="question-wrapper clearfix difficulties-question">
+                <div class="question-wrapper clearfix difficulties-question rs_read_this">
                     <asp:CustomValidator ID="valDiagnosis" runat="server" ClientValidationFunction="ValidateRadioButtons" CssClass="validationerror"></asp:CustomValidator>
+                    <fieldset>
+                        <legend class="question">
+                            <sc:Text ID="Text5" Field="Learning Disorders Question Title" runat="server" />
+                        </legend>
+                        <p class="question-description">
+                            <sc:Text ID="Text6" Field="Learning Disorders Question Text" runat="server" />
 
-                    <h3 class="question">
-                        <sc:Text ID="Text5" Field="Learning Disorders Question Title" runat="server" />
-                    </h3>
-                    <p class="question-description">
-                        <sc:Text ID="Text6" Field="Learning Disorders Question Text" runat="server" />
+                        </p>
+                        <div class="checkboxes-wrapper">
+                            <div class="column-left">
 
-                    </p>
-                    <div class="checkboxes-wrapper">
-                        <div class="column-left">
-
-                            <asp:ListView ID="uxLeftList" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildDiagnosisItem" OnItemDataBound="ListItemDataBound">
-                                <ItemTemplate>
-                                    <div class="checkbox-wrapper">
-                                        <label>
-                                            <%--<input type="checkbox" name="q1a1">--%>
-                                            <asp:CheckBox ID="diagnosis" runat="server" />
-                                            <span class="description">
-                                                <%--<sc:text id="Text7" field="LD Area 1" runat="server" />--%>
-                                                <%# Item.DiagnosisName %>
-                                            </span>
-                                            <asp:HiddenField ID="diagnosisHidden" runat="server" />
-                                            <span class="info-link">
-                                                <div class="icon-wrapper popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></div>
-                                            </span>
-                                            <span class="popover-container">
-                                                <span class="title title-block">
-                                                    <%--<sc:text id="Text39" field="LD Area 1 Mouse Over Title" runat="server" />--%>
+                                <asp:ListView ID="uxLeftList" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildDiagnosisItem" OnItemDataBound="ListItemDataBound">
+                                    <ItemTemplate>
+                                        <div class="checkbox-wrapper toolTipPresent">
+                                            <label>
+                                                <%--<input type="checkbox" name="q1a1">--%>
+                                                <asp:CheckBox ID="diagnosis" runat="server" />
+                                                <span class="description">
+                                                    <%--<sc:text id="Text7" field="LD Area 1" runat="server" />--%>
                                                     <%# Item.DiagnosisName %>
                                                 </span>
-                                                <%--<sc:text id="Text52" field="LD Area 1 Mouse Over" runat="server" />--%>
-                                                <%--<a href="REPLACE">Learn more</a>--%>
-                                                <%# Item.DiagnosisDescription %>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </ItemTemplate>
-                            </asp:ListView>
+                                                <asp:HiddenField ID="diagnosisHidden" runat="server" />
+                                                <span class="info-link">
+                                                    <div class="icon-wrapper popover-link rs_preserve" data-popover-placement="bottom" tabindex="0"><i class="icon-tooltip">&nbsp;</i></div>
+                                                </span>
+                                                <span class="popover-container rs_skip">
+                                                    <span class="title title-block">
+                                                        <%--<sc:text id="Text39" field="LD Area 1 Mouse Over Title" runat="server" />--%>
+                                                        <%# Item.DiagnosisName %>
+                                                    </span>
+                                                    <%--<sc:text id="Text52" field="LD Area 1 Mouse Over" runat="server" />--%>
+                                                    <%--<a href="REPLACE">Learn more</a>--%>
+                                                    <%# Item.DiagnosisDescription %>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:ListView>
 
-                            <%--  <div class="checkbox-wrapper">
+                                <%--  <div class="checkbox-wrapper">
                                 <label>
                                     <input type="checkbox" name="q1a1">
                                     <span class="description">
@@ -217,39 +217,39 @@
                                         <a href="REPLACE">Learn more</a></span>
                                 </label>
                             </div>--%>
-                        </div>
-                        <!-- .checkboxes-left -->
+                            </div>
+                            <!-- .checkboxes-left -->
 
-                        <div class="column-right">
-                            <asp:ListView ID="uxRightList" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildDiagnosisItem" OnItemDataBound="ListItemDataBound">
-                                <ItemTemplate>
-                                    <div class="checkbox-wrapper">
-                                        <label>
-                                            <%--<input type="checkbox" name="q1a1">--%>
-                                            <asp:CheckBox ID="diagnosis" runat="server" />
-                                            <span class="description">
-                                                <%--<sc:text id="Text7" field="LD Area 1" runat="server" />--%>
-                                                <%# Item.DiagnosisName %>
-                                            </span>
-                                            <asp:HiddenField ID="diagnosisHidden" runat="server" />
-                                            <span class="info-link">
-                                                <div class="icon-wrapper popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></div>
-                                            </span>
-                                            <span class="popover-container">
-                                                <span class="title title-block">
-                                                    <%--<sc:text id="Text39" field="LD Area 1 Mouse Over Title" runat="server" />--%>
+                            <div class="column-right">
+                                <asp:ListView ID="uxRightList" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildDiagnosisItem" OnItemDataBound="ListItemDataBound">
+                                    <ItemTemplate>
+                                        <div class="checkbox-wrapper toolTipPresent">
+                                            <label>
+                                                <%--<input type="checkbox" name="q1a1">--%>
+                                                <asp:CheckBox ID="diagnosis" runat="server" />
+                                                <span class="description">
+                                                    <%--<sc:text id="Text7" field="LD Area 1" runat="server" />--%>
                                                     <%# Item.DiagnosisName %>
                                                 </span>
-                                                <%--<sc:text id="Text52" field="LD Area 1 Mouse Over" runat="server" />--%>
-                                                <%--<a href="REPLACE">Learn more</a>--%>
-                                                <%# Item.DiagnosisDescription %>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </ItemTemplate>
-                            </asp:ListView>
+                                                <asp:HiddenField ID="diagnosisHidden" runat="server" />
+                                                <span class="info-link">
+                                                    <div class="icon-wrapper popover-link rs_preserve" data-popover-placement="bottom" tabindex="0"><i class="icon-tooltip">&nbsp;</i></div>
+                                                </span>
+                                                <span class="popover-container rs_skip">
+                                                    <span class="title title-block">
+                                                        <%--<sc:text id="Text39" field="LD Area 1 Mouse Over Title" runat="server" />--%>
+                                                        <%# Item.DiagnosisName %>
+                                                    </span>
+                                                    <%--<sc:text id="Text52" field="LD Area 1 Mouse Over" runat="server" />--%>
+                                                    <%--<a href="REPLACE">Learn more</a>--%>
+                                                    <%# Item.DiagnosisDescription %>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:ListView>
 
-                            <%-- <div class="checkbox-wrapper">
+                                <%-- <div class="checkbox-wrapper">
                                 <label>
                                     <input type="checkbox" name="q1a8">
                                     <span class="description">
@@ -345,10 +345,11 @@
                                         <a href="REPLACE">Learn more</a></span>
                                 </label>
                             </div>--%>
+                            </div>
+                            <!-- .checkboxes-right -->
                         </div>
-                        <!-- .checkboxes-right -->
-                    </div>
-                    <!-- .checkboxes-wrapper -->
+                        <!-- .checkboxes-wrapper -->
+                    </fieldset>
                 </div>
                 <!-- .question-wrapper -->
 
@@ -413,11 +414,11 @@
                 </div>--%>
                 <!-- .column-wrapper -->
 
-                <div class="question-wrapper iep-question select-question clearfix">
-                    <p class="question-inline">
+                <div class="question-wrapper iep-question select-question clearfix rs_read_this">
+                    <label class="question-inline">
                         <%--<sc:text id="Text26" field="IEP Question Title" runat="server" />--%>
                         <asp:Literal ID="uxIEPquestion" runat="server"></asp:Literal>
-                    </p>
+                    </label>
                     <div class="select-wrapper clearfix">
                         <div class="select-inner-wrapper clearfix">
                             <%--<select>
@@ -442,11 +443,13 @@
                             </select>--%>
                             <asp:DropDownList ID="uxIEPStatus" runat="server" name="iepstatus"></asp:DropDownList>
                             <span>
-                                <a href="REPLACE" class="icon-wrapper popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></a>
+                                <div class="icon-wrapper popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></div>
                             </span>
 
-                            <div class="iep-tooltip popover-container">
-                                <p><span class="title">lorem ipsum soged</span> Et beatae itaque quod est voluptatem eligendi. necessitatibus harum consectetur veritatis illum iste autem saepe. ducimus quasi eaque tempore qui natus fugiat id qui sit et ut</p>
+                            <div class="iep-tooltip popover-container rs_skip">
+                                <p>
+                                    <span class="title">lorem ipsum soged</span> Et beatae itaque quod est voluptatem eligendi. necessitatibus harum consectetur veritatis illum iste autem saepe. ducimus quasi eaque tempore qui natus fugiat id qui sit et ut
+                                </p>
                             </div>
                         </div>
                         <asp:RequiredFieldValidator ID="valIEP" runat="server" ControlToValidate="uxIEPStatus" InitialValue="" CssClass="validationerror"></asp:RequiredFieldValidator>
@@ -454,7 +457,7 @@
                 </div>
                 <!-- .question-wrapper -->
 
-                <div class="question-wrapper iep-question select-question clearfix">
+                <div class="question-wrapper iep-question select-question clearfix rs_read_this">
                     <h3 class="question-inline">
                         <%--<sc:text id="Text33" field="Section 504 Plan Question Title" runat="server" />--%>
                         <asp:Literal ID="ux504question" runat="server"></asp:Literal>
@@ -480,10 +483,12 @@
                             </select>--%>
                             <asp:DropDownList ID="ux504Status" runat="server" name="iepstatus"></asp:DropDownList>
                             <span>
-                                <a href="REPLACE" class="icon-wrapper popover-link" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></a>
+                                <div class="icon-wrapper popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip">&nbsp;</i></div>
                             </span>
-                            <div class="504-tooltip popover-container">
-                                <p><span class="title">lorem ipsum soged</span> Unde non repudiandae eum nobis blanditiis doloribus quae ea. voluptatem voluptas a qui eligendi et qui perferendis. nihil aut quo molestiae omnis sunt ducimus cum illo beatae accusamus. nostrum voluptates error numquam omnis eligendi minima aperiam. aperiam quis quo deserunt quae occaecati ut dolores autem et esse</p>
+                            <div class="504-tooltip popover-container rs_skip">
+                                <p>
+                                    <span class="title">lorem ipsum soged</span> Unde non repudiandae eum nobis blanditiis doloribus quae ea. voluptatem voluptas a qui eligendi et qui perferendis. nihil aut quo molestiae omnis sunt ducimus cum illo beatae accusamus. nostrum voluptates error numquam omnis eligendi minima aperiam. aperiam quis quo deserunt quae occaecati ut dolores autem et esse
+                                </p>
                             </div>
                         </div>
                         <asp:RequiredFieldValidator ID="val504" runat="server" ControlToValidate="ux504Status" InitialValue="" CssClass="validationerror"></asp:RequiredFieldValidator>

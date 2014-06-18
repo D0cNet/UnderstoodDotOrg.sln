@@ -100,10 +100,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             {
                 case Constants.QueryStrings.Registration.ModeEdit:
                     this.SetupChildEdit();
+                    litGenderGradeQuestion.Text = string.Format("{0} is a {1} in:", singleChild.Nickname, singleChild.Gender);
+                    uxGender.Visible = false;
 
                     break;
                 case Constants.QueryStrings.Registration.ModeAdd:
                     this.SetupChildAdd();
+                    litGenderGradeQuestion.Text = "My child struggling with learning or attention issues is a:";
 
                     break;
                 default:
@@ -119,6 +122,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             uxTroubleAreasTitle.Text = Model.TroubleAreasQuestionTitle.Rendered.Replace("$pronoun$", pronoun);
             uxEvaluatedTitle.Text = Model.FormallyEvaluatedQuestionTitle.Rendered.Replace("$pronoun$", pronoun);
+
+            
+
 
             //set validation
             valGender.ErrorMessage = "Please tell us the gender of your child";
