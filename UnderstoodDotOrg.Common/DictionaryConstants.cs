@@ -236,6 +236,41 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "Subscribe Button Text");
             }
         }
+        public static string EmailSubscribeText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Email Subscribe Text");
+            }
+        }
+        public static string ShareandSaveText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Share and Save Text");
+            }
+        }
+        public static string ShareandSaveEmail
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Share and Save Email Text");
+            }
+        }
+        public static string ShareandSavePrint
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Share and Save Print Text");
+            }
+        }
+        public static string RecommendationIcons
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Recommended for");
+            }
+        }
 
         #endregion
 
