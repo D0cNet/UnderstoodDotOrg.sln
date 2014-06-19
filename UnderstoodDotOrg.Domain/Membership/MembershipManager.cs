@@ -377,14 +377,15 @@ namespace UnderstoodDotOrg.Domain.Membership
 
         public Member GetMemberByScreenName(string ScreenName)
         {
-            var memberId = _db.Members.FirstOrDefault(x => x.ScreenName == ScreenName).MemberId;
+            var member = _db.Members.FirstOrDefault(x => x.ScreenName == ScreenName);
 
-            if (memberId == null)
+            if (member == null)
             {
                 return null;
             }
 
-            return this.GetMember(memberId);
+            //might be able to shortcut by just returning the member we have...but what if...?
+            return this.GetMember(member.MemberId);
         }
 
         /// <summary>

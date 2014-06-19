@@ -196,7 +196,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             try
             {
-                this.checkUsername(this.registeringUser.ScreenName);
+                if (ScreenNameTextField.Enabled && !string.IsNullOrEmpty(this.registeringUser.ScreenName))
+                {
+                    this.checkUsername(this.registeringUser.ScreenName);
+                }
 
                 this.updateMember();
 
@@ -424,7 +427,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             this.registeringUser.allowNewsletter = cbNewsLetter.Checked;
 
             //bg: verify that this is working:            
-            if (mode != Constants.QueryStrings.Registration.ModeEdit || (mode == Constants.QueryStrings.Registration.ModeEdit && string.IsNullOrEmpty(this.registeringUser.ScreenName)))
+            if (mode != Constants.QueryStrings.Registration.ModeEdit || (mode == Constants.QueryStrings.Registration.ModeEdit && ScreenNameTextField.Enabled))
             {
                 this.registeringUser.ScreenName = ScreenNameTextField.Text.RemoveHTML();
             }
