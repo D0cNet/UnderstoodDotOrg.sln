@@ -114,18 +114,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             }
             var grpItems = Groups.FindGroups();// groups.Select(x => new GroupCardModel(x)).ToList<GroupCardModel>();
             Session["groupItems"] = grpItems;
-            rptGroupCards.DataSource = grpItems;
+            rptGroupCards.DataSource = grpItems.Take(10).OrderByDescending(x => x.NumOfMembers).ToList();
             rptGroupCards.DataBind();
-            //else
-            //{
-            //    var grpItems = Session["groupItems"] as List<GroupCardModel>;
-            //    if (grpItems != null)
-            //    {
-
-            //        rptGroupCards.DataSource = grpItems;
-            //        rptGroupCards.DataBind();
-            //    }
-            //}
+           
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -142,11 +133,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             string[] partner = String.IsNullOrEmpty(ddlPartners.SelectedValue.ToString()) ? new String[0] : new String[] { ddlPartners.SelectedValue.ToString() }; 
 
             //Perform search using criteria
-            var test = Groups.FindGroups( issue, topic, grade,state,partner); 
-            rptGroupCards.DataSource = test;
+            var groupResult = Groups.FindGroups( issue, topic, grade,state,partner);
+            rptGroupCards.DataSource = groupResult.Take(10).OrderByDescending(x=> x.NumOfMembers).ToList();
             rptGroupCards.DataBind();
         }
 
-       
+        protected void ShowMore(object sender, EventArgs e)
+        {
+            if (Session["groupItems"] is List<GroupCardModel>)
+            {
+                var grpItems =(List<GroupCardModel>) Session["groupItems"];
+                rptGroupCards.DataSource = grpItems;
+                rptGroupCards.DataBind();
+            }
+        }
     }
 }

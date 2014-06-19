@@ -47,6 +47,7 @@
     <Reference Include="System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.ServiceModel.DomainServices.Server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommunityServices\AccessControlService.cs" />
     <Compile Include="CommunityServices\Blogs.cs" />
     <Compile Include="CommunityServices\Discussion.cs" />
     <Compile Include="CommunityServices\Forum.cs" />
@@ -94,6 +96,10 @@
     <ProjectReference Include="..\UnderstoodDotOrg.Domain\UnderstoodDotOrg.Domain.csproj">
       <Project>{ba887ae1-f638-4b47-aa65-d3451f3d5cfe}</Project>
       <Name>UnderstoodDotOrg.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnderstoodDotOrg.Framework\UnderstoodDotOrg.Framework.csproj">
+      <Project>{ec2d5068-6aed-422b-a3fd-4b75ac0c247f}</Project>
+      <Name>UnderstoodDotOrg.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

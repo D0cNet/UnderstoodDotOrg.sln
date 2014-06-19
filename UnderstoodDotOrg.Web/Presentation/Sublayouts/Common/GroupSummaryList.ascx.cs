@@ -12,6 +12,9 @@ using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Framework.UI;
 using Sitecore.Links;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Helpers;
+using UnderstoodDotOrg.Services.CommunityServices;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -19,19 +22,34 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
     {
         protected override void OnInit(EventArgs e)
         {
-            rptGroupCards.ItemDataBound += rptGroupCards_ItemDataBound;
-
+            lvGroupCards.ItemDataBound += lvGroupCards_ItemDataBound;
+            lvGroupCards.ItemCreated += lvGroupCards_ItemCreated;
             base.OnInit(e);
         }
-        void rptGroupCards_ItemDataBound(object sender, RepeaterItemEventArgs e)
+
+        void lvGroupCards_ItemCreated(object sender, ListViewItemEventArgs e)
+        {
+            if(e.Item.ItemType == ListViewItemType.EmptyItem)
+            {
+                Literal emptyDataText = (Literal)e.Item.FindControl("litEmptyDataText");
+                if (emptyDataText != null)
+                {
+                    emptyDataText.Text = String.Format(DictionaryConstants.EmptyGroupsListText, UnderstoodDotOrg.Common.Helpers.MembershipHelper.SignUpLink());
+
+                }
+            }
+        }
+        void lvGroupCards_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
 
 
             if (e.Item.DataItem != null)
             {
+               
+               
                 
                 ///
-                LinkButton joinView = e.FindControlAs<LinkButton>("btnJoinGroup");//(LinkButton)e.Item.FindControl("btnJoinGroup");
+                LinkButton joinView = (LinkButton)e.Item.FindControl("btnJoinGroup");
                 if (joinView != null)
                 {
                     bool viewDiscussions=CommunityHelper.IsUserInGroup(UserID, ((GroupCardModel)e.Item.DataItem).GroupID) ;
@@ -41,7 +59,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     joinView.Attributes.Add("name", viewDiscussions ? "view" : "join");
                 }
 
-                HtmlAnchor titleLink = e.FindControlAs<HtmlAnchor>("titleLink");
+                HtmlAnchor titleLink =(HtmlAnchor) e.Item.FindControl("titleLink");
                 if(titleLink!=null)
                 {
                     if (e.Item.DataItem is GroupCardModel)
@@ -88,18 +106,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             set
             {
-                rptGroupCards.DataSource = value;
+                lvGroupCards.DataSource = value;
             }
             get
             {
-                return rptGroupCards.DataSource as List<GroupCardModel>;
+                return lvGroupCards.DataSource as List<GroupCardModel>;
             }
         }
 
         public string EmptyText { get; set; }
         public override void DataBind()
         {
-            rptGroupCards.DataBind();
+            try
+            {
+                lvGroupCards.DataBind();
+            }catch(Exception ex)
+            {
+                Sitecore.Diagnostics.Error.LogError("Error in DataBind() function of GroupSummaryList.ascx.cs. \nMessage:\n" + ex.Message);
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -119,6 +143,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             {
                 try
                 {
+                   
                     //Call view Discussion using sitecore group id
                     Sitecore.Data.ID grpItemID = Sitecore.Data.ID.Parse(btn.CommandArgument);
                     Item grpItem = Sitecore.Context.Database.GetItem(grpItemID);
@@ -133,6 +158,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             {
                 try
                 {
+                    //TODO: Get test Cases for this redirect
+                   // AccessControlService.ProfileRedirect(this);
                     //Join the group using telligent group id
                     if (CommunityHelper.JoinGroup(btn.CommandArgument, UserID))
                     {

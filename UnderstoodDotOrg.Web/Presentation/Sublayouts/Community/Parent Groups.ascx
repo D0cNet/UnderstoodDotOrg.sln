@@ -182,7 +182,7 @@
             <div class="container show-more rs_skip">
               <div class="row">
                 <div class="col col-24">
-                  <a class="show-more-link " href="#" data-path="community/group-summary" data-container="group-summary-container" data-item="row" data-count="6">Show More<i class="icon-arrow-down-blue"></i></a>
+                  <a  runat="server"  id="linkShowMore"  onserverClick="ShowMore"  href="#" data-path="community/group-summary" data-container="group-summary-container" data-item="row" data-count="6">Show More<i class="icon-arrow-down-blue"></i></a>
                 </div>
               </div>
             </div><!-- .show-more -->

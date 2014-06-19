@@ -83,5 +83,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder groupList;
+        
+        /// <summary>
+        /// linkShowMore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkShowMore;
     }
 }

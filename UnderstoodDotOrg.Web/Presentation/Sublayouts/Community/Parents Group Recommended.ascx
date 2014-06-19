@@ -44,7 +44,7 @@
     <div class="container show-more rs_skip">
         <div class="row">
             <div class="col col-24">
-                <a class="show-more-link " href="#" data-path="community/group-summary" data-container="group-summary-container" data-item="row" data-count="3">Show More<i class="icon-arrow-down-blue"></i></a>
+                <a runat="server" ID="ShowMoreLink" onserverclick="ShowMoreLink_ServerClick" href="#" data-path="community/group-summary" data-container="group-summary-container" data-item="row" data-count="3">Show More<i class="icon-arrow-down-blue"></i></a>
             </div>
         </div>
     </div>

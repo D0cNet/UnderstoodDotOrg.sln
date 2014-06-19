@@ -1,10 +1,18 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="GroupSummaryList.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.GroupSummaryList" %>
-<asp:Repeater ID="rptGroupCards" runat="server">
-    <HeaderTemplate>
+<asp:ListView ID="lvGroupCards" runat="server">
+    <EmptyDataTemplate>
         <div class="row">
-    </HeaderTemplate>
-    <ItemTemplate> 
-        <div class="col-24 group-summary rs_read_this" aria-role="main">
+         <p>
+             <asp:Literal Text="" ID="litEmptyDataText" runat="server" /></p>
+        </div>
+    </EmptyDataTemplate>
+    <LayoutTemplate>
+         <div class="row">
+             <asp:PlaceHolder runat="server"  ID="itemPlaceholder"/>
+         </div>
+    </LayoutTemplate>
+    <ItemTemplate>
+         <div class="col-24 group-summary rs_read_this" aria-role="main">
         <div class="col col-18 topic clearfix">
             <header>
             <a id="titleLink" runat="server"><h3><%#Eval("Title") %></h3></a>
@@ -42,8 +50,7 @@
         </div> 
 
     </ItemTemplate>
-    <FooterTemplate></div></FooterTemplate>
-
-</asp:Repeater>
+    
+</asp:ListView>
 
  

@@ -1,4 +1,5 @@
-﻿using Sitecore.Data.Items;
+﻿using Sitecore.Data;
+using Sitecore.Data.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.Understood.Common;
@@ -27,7 +29,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             litBackLink.Text = DictionaryConstants.GroupRecommendedBackLink;//back to parents page
             litRecommendHeader.Text = DictionaryConstants.RecommendedHeader;
             litGroupPrivacy.Text = DictionaryConstants.GroupPrivacyStatement;
-            litViewProfileLink1.Text = String.Format( DictionaryConstants.ViewProfileLink1,"REPLACE");
+            if (CurrentMember != null)
+            {
+                litViewProfileLink1.Text = String.Format(DictionaryConstants.ViewProfileLink1,
+                    CurrentMember != null ?
+                    CurrentMember.GetMemberPublicProfile() :
+                    UnderstoodDotOrg.Common.Helpers.MembershipHelper.SignUpLink()
+                    );
+            }
             
             base.OnInit(e);
         }
@@ -66,6 +75,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             }
             return grpItems;
            
+        }
+
+        protected void ShowMoreLink_ServerClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1144,5 +1144,13 @@ namespace UnderstoodDotOrg.Common
        public static string FollowBlog { get { return Translate.TextByDomain(PosesDictionary, "FollowBlog"); } }
 
        public static string FollowingBlog { get { return Translate.TextByDomain(PosesDictionary, "FollowingBlog"); } }
+
+       public static string EmptyGroupsListText
+       {
+           get
+           {
+               return @"We're sorry we don't know enough about your situation to make a recommendation. For a list of group recommendations, complete your full profile (link to profile process). Already a member? <a href='{0}'>Sign In</a>";
+           }
+       }
     }
 }

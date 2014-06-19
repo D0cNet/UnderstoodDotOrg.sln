@@ -11,7 +11,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             //Try to get the blog ID from querystring
             string id = Request.QueryString["BlogId"];
             if (id != null)
