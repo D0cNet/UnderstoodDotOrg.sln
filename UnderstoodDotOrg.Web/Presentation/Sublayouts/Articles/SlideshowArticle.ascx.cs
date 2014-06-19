@@ -66,10 +66,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     {
                         lblTotalSlide.Text = _totalSlide.ToString();
                     }
-                    Label lblCurrentSlide = e.FindControlAs<Label>("lblCurrentSlide");
+                    var lblCurrentSlide = e.FindControlAs<Literal>("lblCurrentSlide");
                     if (lblCurrentSlide != null)
                     {
-                        lblCurrentSlide.Text = _currentSlideNo.ToString();
+                        lblCurrentSlide.Text = string.Format("{0} of {1}", _currentSlideNo.ToString(), _totalSlide.ToString());
                     }
                     if (pnlSlide != null)
                     { //Set the css class based on slide type

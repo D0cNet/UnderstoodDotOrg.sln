@@ -32,7 +32,10 @@
                                         <sc:FieldRenderer ID="frSlideImage" runat="server" FieldName="Slide Image" />
                                         <div class="content">
                                             <div class="top">
-                                                <div class="slide-count">Slide 1 of 10</div>
+                                                <%--<div id="lblCurrentSlide" class="slide-count">test29292929</div>--%>
+                                                <div class="slide-count">
+                                                    <asp:Literal ID="lblCurrentSlide" runat="server"></asp:Literal>
+                                                </div>
                                                 <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/ShareContent.ascx" runat="server"></sc:Sublayout>
                                             </div>
                                             <%-- slide Intro--%>
@@ -52,23 +55,27 @@
                         <FooterTemplate>
                             <div class="slide end">
                                 <div class="slide-inner rs_read_this">
-                                    <h3><a href="#" class="restart-slideshow"><asp:Literal ID="ltlSlideshowRestartLabel" runat="server"></asp:Literal></a> <asp:Literal ID="ltlSlideshowRestartAlternateLabel" runat="server"></asp:Literal></h3>
-                                    <asp:Placeholder ID="phSlideshow1" Visible="false" runat="server">
+                                    <h3><a href="#" class="restart-slideshow">
+                                        <asp:Literal ID="ltlSlideshowRestartLabel" runat="server"></asp:Literal></a>
+                                        <asp:Literal ID="ltlSlideshowRestartAlternateLabel" runat="server"></asp:Literal></h3>
+                                    <asp:PlaceHolder ID="phSlideshow1" Visible="false" runat="server">
                                         <asp:Panel ID="pnlThumbnail1" CssClass="thumbnail" runat="server"></asp:Panel>
                                         <div class="text">
-                                            <h4><asp:HyperLink ID="hypLink1" runat="server"></asp:HyperLink></h4>
+                                            <h4>
+                                                <asp:HyperLink ID="hypLink1" runat="server"></asp:HyperLink></h4>
                                             <sc:FieldRenderer ID="frPageSummary1" FieldName="Page Summary" runat="server"></sc:FieldRenderer>
                                         </div>
                                         <div class="clearfix"></div>
-                                    </asp:Placeholder>
-                                    <asp:Placeholder ID="phSlideshow2" Visible="false" runat="server">
+                                    </asp:PlaceHolder>
+                                    <asp:PlaceHolder ID="phSlideshow2" Visible="false" runat="server">
                                         <asp:Panel ID="pnlThumbnail2" CssClass="thumbnail" runat="server"></asp:Panel>
                                         <div class="text">
-                                            <h4><asp:HyperLink ID="hypLink2" runat="server"></asp:HyperLink></sc:FieldRenderer></h4>
+                                            <h4>
+                                                <asp:HyperLink ID="hypLink2" runat="server"></asp:HyperLink></sc:FieldRenderer></h4>
                                             <sc:FieldRenderer ID="frPageSummary2" FieldName="Page Summary" runat="server"></sc:FieldRenderer>
                                         </div>
                                         <div class="clearfix"></div>
-                                    </asp:Placeholder>
+                                    </asp:PlaceHolder>
                                 </div>
                             </div>
                         </FooterTemplate>
@@ -86,12 +93,12 @@
                         <div class="button gray" data-target="<%# Container.ItemIndex + 1 %>"><%# Container.ItemIndex + 1 %></div>
                     </ItemTemplate>
                     <FooterTemplate>
-                            <div class="button next gray">
-                                Next
-                            </div>
-                            <div class="button last gray">
-                                Last
-                            </div>
+                        <div class="button next gray">
+                            Next
+                        </div>
+                        <div class="button last gray">
+                            Last
+                        </div>
                         </div>
                     </FooterTemplate>
                 </asp:Repeater>
@@ -101,7 +108,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col col-15 offset-2">
-                            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx"/>  
+                            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
                             <!-- BEGIN PARTIAL: reviewed-by -->
                             <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
                             <!-- END PARTIAL: reviewed-by -->
@@ -110,11 +117,11 @@
                 </div>
             </div>
             <!-- END PARTIAL: article-slideshow -->
-        </div>        
+        </div>
     </div>
 </div>
 <style>
-    .slide-inner img{
+    .slide-inner img {
         width: 100%;
         height: auto;
     }
