@@ -28,7 +28,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
             }
 
             ltlDidYouFindThisHelpful.Text = DictionaryConstants.DidYouFindThisHelpful;
-            btnNo.InnerText = DictionaryConstants.NoButtonText + "test";
+            btnNo.InnerText = DictionaryConstants.NoButtonText;
             btnYes.InnerText = DictionaryConstants.YesButtonText;
         }
 
