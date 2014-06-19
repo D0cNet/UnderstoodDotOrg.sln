@@ -13,33 +13,73 @@ namespace UnderstoodDotOrg.Services.CommunityServices
 {
     public static class AccessControlService
     {
-        static public void ProfileRedirect(UserControl currentPage)
+        static public string redirectSessionKey
+        {
+            get { return "URLReferrer"; }
+        }
+
+        /// <summary>
+        /// Function to save the current page reference in session and redirect to signup/signin page
+        /// </summary>
+        /// <param name="currentPage"></param>
+        static public void ProfileRedirect(UserControl currentPage,bool communityFunction=false)
+        {
+            ProfileRedirect(currentPage, null, communityFunction);
+        }
+
+        static public void ProfileRedirect(UserControl currentPage,string UrlToGoto=null,bool communityFunction=false)
         {
             //Check current user
             if (currentPage is BaseSublayout)
             {
-                ((BaseSublayout)currentPage).Session["URLReferrer"] = ((BaseSublayout)currentPage).Page.Request.UrlReferrer;
+                BaseSublayout page = ((BaseSublayout)currentPage);
+                page.Session[redirectSessionKey] = ((BaseSublayout)currentPage).Page.Request.UrlReferrer;
 
 
-                if (((BaseSublayout)currentPage).CurrentMember == null)
+                if (page.CurrentMember == null)
                 {
 
-                    ((BaseSublayout)currentPage).Page.Response.Redirect(UnderstoodDotOrg.Common.Helpers.MembershipHelper.SignInLink());
+                    page.Page.Response.Redirect(UnderstoodDotOrg.Common.Helpers.MembershipHelper.SignInLink());
+                  
                 }
                 else
                 {
-                    if (((BaseSublayout)currentPage).CurrentMember.ScreenName == null)
+                    //Is this context a community related function
+                    if (communityFunction)
                     {
-                        ((BaseSublayout)currentPage).Page.Response.Redirect(UnderstoodDotOrg.Common.Helpers.MembershipHelper.SignUpLink());
-                    }
-                    else
-                    {
-                      //  ((BaseSublayout)currentPage).Page.Response.Redirect(((BaseSublayout)currentPage).CurrentMember.GetMemberPublicProfile());
+                        if (page.CurrentMember.ScreenName == null)
+                        {
+                            //Redirect to complete profile
+                            page.Page.Response.Redirect(page.CurrentMember.GetMemberPublicProfile());
+                        }
+                        
                     }
                 }
-                //return ((BaseSublayout)currentPage).Page.Request.UrlReferrer.ToString();
+                if (!String.IsNullOrEmpty(UrlToGoto))
+                {
+                    //Reset the session reference
+                    page.Page.Session[redirectSessionKey] = null;
+                    page.Page.Response.Redirect(UrlToGoto);
+                }
             }
         }
-        
+        /// <summary>
+        /// Function to retrieve referral page from session
+        /// </summary>
+        /// <param name="contextPage"></param>
+        /// <returns></returns>
+        static public string GetReferrerUrl(UserControl contextPage)
+        {
+            string url = null;
+            if (contextPage.Page.Session[redirectSessionKey] != null)
+            {
+                url = contextPage.Page.Session[redirectSessionKey].ToString();
+
+                //Reset the session reference
+                contextPage.Page.Session[redirectSessionKey] = null;
+            }
+            return url;
+        }
     }
+    
 }

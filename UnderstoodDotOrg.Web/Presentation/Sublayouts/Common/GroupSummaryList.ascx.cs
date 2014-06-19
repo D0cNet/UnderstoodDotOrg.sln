@@ -45,14 +45,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
             if (e.Item.DataItem != null)
             {
-               
-               
+
+                bool viewDiscussions = CommunityHelper.IsUserInGroup(UserID, ((GroupCardModel)e.Item.DataItem).GroupID);
                 
                 ///
                 LinkButton joinView = (LinkButton)e.Item.FindControl("btnJoinGroup");
                 if (joinView != null)
                 {
-                    bool viewDiscussions=CommunityHelper.IsUserInGroup(UserID, ((GroupCardModel)e.Item.DataItem).GroupID) ;
+                   
                     joinView.Text = viewDiscussions ? "View Discussions" : "Join this Group";
                     //If the user is to join group, then use Telligent group id, else use sitecore item id
                     joinView.CommandArgument = viewDiscussions ? ((GroupCardModel)e.Item.DataItem).GroupItemID : ((GroupCardModel)e.Item.DataItem).GroupID;
@@ -62,11 +62,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 HtmlAnchor titleLink =(HtmlAnchor) e.Item.FindControl("titleLink");
                 if(titleLink!=null)
                 {
-                    if (e.Item.DataItem is GroupCardModel)
+                    if (viewDiscussions)
                     {
-                        Item grpItem = Sitecore.Context.Database.GetItem(((GroupCardModel)e.Item.DataItem).GroupItemID);
-                        var link = LinkManager.GetItemUrl(grpItem);
-                        titleLink.HRef = link;
+                        if (e.Item.DataItem is GroupCardModel)
+                        {
+                            Item grpItem = Sitecore.Context.Database.GetItem(((GroupCardModel)e.Item.DataItem).GroupItemID);
+                            var link = LinkManager.GetItemUrl(grpItem);
+
+                            titleLink.HRef = link;
+                        }
                     }
                 }
             }
@@ -159,7 +163,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 try
                 {
                     //TODO: Get test Cases for this redirect
-                   // AccessControlService.ProfileRedirect(this);
+                    AccessControlService.ProfileRedirect(this,true);
                     //Join the group using telligent group id
                     if (CommunityHelper.JoinGroup(btn.CommandArgument, UserID))
                     {

@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+using UnderstoodDotOrg.Services.CommunityServices;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -39,9 +40,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
         private void doLogin()
         {
+
             //blow out any existing member when someone tries to sign in
             try
             {
+               
                 //lets make sure to reset all user&member info before we start inflating it
                 this.FlushCurrentMemberUser();
 
@@ -67,7 +70,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     this.CurrentUser = membershipManager.GetUser(currentMember.MemberId, true);
 
                     var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccount);
-                    Response.Redirect(item.GetUrl());
+                    
+                    Response.Redirect(AccessControlService.GetReferrerUrl(this)?? Sitecore.Links.LinkManager.GetItemUrl(item));
                 }
             }
             catch (Exception ex)
