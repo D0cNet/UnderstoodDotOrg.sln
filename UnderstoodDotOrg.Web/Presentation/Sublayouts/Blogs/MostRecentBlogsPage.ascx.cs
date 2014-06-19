@@ -19,7 +19,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
         protected void Page_Load(object sender, EventArgs e)
         {
             string blogId = Request.QueryString["BlogId"];
-            List<UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost> dataSource = CommunityHelper.ListBlogPosts(blogId, "6");
+            List<UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost> dataSource = CommunityHelper.ListBlogPosts(blogId, "100");
             foreach (var item in dataSource)
             {
                 BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + item.Title);
@@ -27,31 +27,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
                 item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
                 item.AuthorUrl = "/Community and Events/Blogs/Author/" + item.Author;
             }
-        }
 
-        protected void MostRecent_Click(object sender, EventArgs e)
-        {
-            sbMostRecent.Visible = true;
-            sbMostRead.Visible = sbMostShared.Visible = sbMostTalkedAbout.Visible = false;
-            
-        }
+            //Bind most recent posts
+            rptRecentBlogInfo.DataSource = dataSource;
+            rptRecentBlogInfo.DataBind();
 
-        protected void MostRead_Click(object sender, EventArgs e)
-        {
-            sbMostRead.Visible = true;
-            sbMostRecent.Visible = sbMostShared.Visible = sbMostTalkedAbout.Visible = false;
-        }
-
-        protected void MostShared_Click(object sender, EventArgs e)
-        {
-            sbMostShared.Visible = true;
-            sbMostRead.Visible = sbMostRecent.Visible = sbMostTalkedAbout.Visible = false;
-        }
-
-        protected void MostTalkedAbout_Click(object sender, EventArgs e)
-        {
-            sbMostTalkedAbout.Visible = true;
-            sbMostRead.Visible = sbMostShared.Visible = sbMostRecent.Visible = false;
+            //Bind most talked about posts
+            var mostTalkedDataSource = dataSource;
+            mostTalkedDataSource.Sort((x, y) => -1 * x.CommentCount.CompareTo(y.CommentCount));
+            rptMostTalkedBlogInfo.DataSource = mostTalkedDataSource;
+            rptMostTalkedBlogInfo.DataBind();
         }
     }
 }

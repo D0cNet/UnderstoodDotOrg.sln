@@ -22,40 +22,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
         protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder1;
         
         /// <summary>
-        /// sbMostRecent control.
+        /// rptRecentBlogInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbMostRecent;
+        protected global::System.Web.UI.WebControls.Repeater rptRecentBlogInfo;
         
         /// <summary>
-        /// sbMostRead control.
+        /// rptMostTalkedBlogInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbMostRead;
-        
-        /// <summary>
-        /// sbMostShared control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbMostShared;
-        
-        /// <summary>
-        /// sbMostTalkedAbout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbMostTalkedAbout;
+        protected global::System.Web.UI.WebControls.Repeater rptMostTalkedBlogInfo;
         
         /// <summary>
         /// Sidebar control.

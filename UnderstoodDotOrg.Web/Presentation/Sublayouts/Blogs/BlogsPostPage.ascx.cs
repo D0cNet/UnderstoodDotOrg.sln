@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 
@@ -17,6 +18,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //i read this page. now record it.
+            MembershipManager mgr = new MembershipManager();
+
+            mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.WasRead, Constants.UserActivity_Types.Type_Blog);
+
             Item currentItem = Sitecore.Context.Item;
             var fieldBlogId = currentItem.Fields[Constants.TelligentFieldNames.BlogId];
             var fieldBlogPostId = currentItem.Fields[Constants.TelligentFieldNames.BlogPostId];
