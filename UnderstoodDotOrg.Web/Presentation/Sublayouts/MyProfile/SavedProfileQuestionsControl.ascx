@@ -4,7 +4,28 @@
     <div class="row">
         <div class="col col-24 centered rs_read_this">
             <ul class="profile-slide">
-                <li>
+                <asp:ListView runat="server" ID="lvParentTools" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.NavigationLinkItem">
+                    <ItemTemplate>
+                        <li>
+                            <div class="icon" style="background-image: url('<%# Item.Image.MediaUrl %>');background-repeat:no-repeat;">
+                                <%--<a href="REPLACE">
+                                </a>--%>
+                                <%--<sc:Link id="scIconLink" runat="server" Field="Link"></sc:Link>--%>
+                                <a href="<%# Item.Link.Url %>">
+                                    <%# Item.DisplayName %>
+                                </a>
+                            </div>
+                            <%--<a href="REPLACE" class="rs_skip">
+                            </a>--%>
+                            <%--<sc:Link id="scLink" runat="server" Field="Link"></sc:Link>--%>
+                            <a href="<%# Item.Link.Url %>" class="rs_skip">
+                                <%= GoNow %>
+                            </a>
+                        </li>
+                    </ItemTemplate>
+                </asp:ListView>
+                
+                <%--<li>
                     <div class="icon support-plan">
                         <a href="REPLACE">
                             <sc:text field="Question 1 Text" runat="server" />
@@ -33,7 +54,7 @@
                     <a href="REPLACE" class="rs_skip">
                         <sc:text id="Text5" field="Question 3 Link" runat="server" />
                     </a>
-                </li>
+                </li>--%>
             </ul>
         </div>
         <!-- .col col-24 -->
