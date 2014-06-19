@@ -34,7 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 Literal emptyDataText = (Literal)e.Item.FindControl("litEmptyDataText");
                 if (emptyDataText != null)
                 {
-                    emptyDataText.Text = String.Format(DictionaryConstants.EmptyGroupsListText, UnderstoodDotOrg.Common.Helpers.MembershipHelper.SignUpLink());
+                    emptyDataText.Text = String.Format(DictionaryConstants.EmptyGroupsListText, UnderstoodDotOrg.Common.Helpers.MembershipHelper.SignInLink());
 
                 }
             }
