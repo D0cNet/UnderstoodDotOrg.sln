@@ -272,15 +272,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 512;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 512, 0);
 
 			try
 			{
@@ -332,15 +324,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 352;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 352, 0);
 
 			try
 			{
@@ -396,15 +380,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 335;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 335, 0);
 
 			try
 			{
@@ -460,15 +436,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 513;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 513, 0);
 
 			try
 			{
@@ -592,15 +560,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US ) 
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 514;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 514, 0);
 
 			try
 			{
@@ -658,15 +618,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 515;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 515, 0);
 
 			try
 			{
@@ -716,15 +668,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 516;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 516, 0);
 
 			try
 			{
@@ -785,15 +729,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 517;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 517, 0);
 
 			try
 			{
@@ -890,15 +826,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 519;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 519, 0);
 
 			try
 			{
@@ -953,15 +881,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 520;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 520, 0);
 
 			try
 			{
@@ -1022,15 +942,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 521;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 521, 0);
 
 			try
 			{
@@ -1085,15 +997,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 522;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 522, 0);
 
 			try
 			{
@@ -1157,15 +1061,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 523;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 523, 0);
 
 			try
 			{
@@ -1240,15 +1136,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 524;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 524, 0);
 
 			try
 			{
@@ -1307,15 +1195,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 525;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 525, 0);
 
 			try
 			{
@@ -1389,15 +1269,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 526;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 526, 0);
 
 			try
 			{
@@ -1452,15 +1324,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 527;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 527, 0);
 
 			try
 			{
@@ -1527,15 +1391,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 844;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 844, 0);
 
 			try
 			{
@@ -1566,7 +1422,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 						newSub.Attributes[1] = new etAPI.Attribute();
 						newSub.Attributes[1].Name = "user_name";
-						newSub.Attributes[1].Value = request.UserName;
+						newSub.Attributes[1].Value = request.ToEmail;
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1595,15 +1451,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 529;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 529, 0);
 
 			try
 			{
@@ -1666,15 +1514,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 956;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 956, 0);
 
 			try
 			{
@@ -1753,15 +1593,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 531;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 531, 0);
 
 			try
 			{
@@ -1824,15 +1656,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 538;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 538, 0);
 
 			try
 			{
@@ -1927,15 +1751,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 533;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 533, 0);
 
 			try
 			{
@@ -2006,15 +1822,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 534;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 534, 0);
 
 			try
 			{
@@ -2186,15 +1994,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 1070;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 1070, 0);
 
 			try
 			{
@@ -2291,15 +2091,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 1057;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 1057, 0);
 
 			try
 			{
@@ -2351,15 +2143,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 335;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 335, 0);
 
 			try
 			{
@@ -2411,15 +2195,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-			int emailTemplateID = 0;
-			if (preferredLanguage ==  Constants.Language_English_US)
-			{
-				emailTemplateID = 0;
-			}
-			else
-			{
-				emailTemplateID = 335;
-			}
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, 335, 0);
 
 			try
 			{
@@ -2461,6 +2237,15 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			return reply;
 		}
+
+        private static int GetEmailTemplateId(Guid preferredLanguage, int defaultId, int spanishId)
+        {
+            if (preferredLanguage == Constants.Language_Spanish) 
+            {
+                return spanishId;
+            }
+            return defaultId;
+        }
 
 		#region phase 2
 		//public static BaseReply InvokeEM20SupportPlanReminder(InvokeEM20SupportPlanReminderRequest request)
