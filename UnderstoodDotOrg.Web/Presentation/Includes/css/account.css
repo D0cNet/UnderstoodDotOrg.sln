@@ -2875,7 +2875,7 @@
   margin-bottom: 25px;
 }
 .profile-wrap .profile-section.children-section {
-    min-height: 235px;
+    min-height: 300px;
 }
 
 @media (min-width: 650px), print {
