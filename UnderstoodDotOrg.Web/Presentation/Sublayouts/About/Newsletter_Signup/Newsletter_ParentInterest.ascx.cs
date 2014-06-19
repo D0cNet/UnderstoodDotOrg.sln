@@ -132,7 +132,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                 Email = _submission.Email,
                 Children = children,
                 Interests = interests,
-				PreferedLanguage = preferredLanguage
+				PreferredLanguage = preferredLanguage
             };
 
             // TODO: add error handling
