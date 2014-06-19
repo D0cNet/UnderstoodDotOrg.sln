@@ -1,0 +1,3 @@
+These are edits to Templates in sitecore to store more data about telligent pieces.
+
+Specifically, ContentTypeId and TelligentUrl were added to Base templates for Articles and Blogs.
