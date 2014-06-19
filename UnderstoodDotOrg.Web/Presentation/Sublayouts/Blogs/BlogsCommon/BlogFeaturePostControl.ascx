@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BlogFeaturePostControl.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogFeaturePostControl" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/FollowButton.ascx" TagName="FollowButton" TagPrefix="CommonUC" %>
 <!--blog feature post-->
 <div class="row">
     <div class="col-24 blog-feature skiplink-feature">
@@ -25,7 +26,8 @@
             </div>
         </div>
         <div class="col col-4 blog-feature-follow-blog">
-            <a href="REPLACE" class="button">Follow-blog</a>
+            <%--<a href="REPLACE" class="button">Follow-blog</a>--%>
+            <CommonUC:FollowButton ID="follBtn" runat="server" />
             <a class="rss icon" href="REPLACE">RSS Feed</a>
         </div>
     </div>

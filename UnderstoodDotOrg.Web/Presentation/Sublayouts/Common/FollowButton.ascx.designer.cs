@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     
     
-    public partial class BlogFeaturePostControl {
+    public partial class FollowButton {
         
         /// <summary>
-        /// follBtn control.
+        /// lbtnFollow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.FollowButton follBtn;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnFollow;
     }
 }

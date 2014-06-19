@@ -877,5 +877,15 @@ namespace UnderstoodDotOrg.Common
             /// </summary>
             public const string Password = @"[\s\S]{6,}";
         }
+
+        public enum TelligentContentType
+        {
+            BlogPost,
+            Forum,
+            Group,
+            Page,
+            Weblog,
+            Blog
+        }
     }
 }

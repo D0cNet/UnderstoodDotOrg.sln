@@ -1138,7 +1138,11 @@ namespace UnderstoodDotOrg.Common
        public static string DeclineText { get { return "Decline"; } }
        #endregion
 
-    
-      
+
+
+
+       public static string FollowBlog { get { return Translate.TextByDomain(PosesDictionary, "FollowBlog"); } }
+
+       public static string FollowingBlog { get { return Translate.TextByDomain(PosesDictionary, "FollowingBlog"); } }
     }
 }

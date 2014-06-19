@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FollowButton.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.FollowButton" %>
+<asp:LinkButton Text="" CssClass="button rs_skip" ID="lbtnFollow" runat="server" />

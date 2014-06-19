@@ -305,6 +305,46 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return blogPost;
         }
 
+        public static Blog ReadBlog(string blogId)
+        {
+            Blog blog = null;
+            XmlNode node = null;
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    // replace the "admin" and "Admin's API key" with your valid user and apikey!
+                    var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
+                    var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    var requestUrl = string.Format("{0}api.ashx/v2/blogs/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    node = xmlDoc.SelectSingleNode("Response/Blog");
+
+                   if(node!=null){
+
+                       blog = new Blog()
+                       {
+                           Description = node.SelectSingleNode("Description").InnerText,
+                           Id = node.SelectSingleNode("Id").InnerText,
+                           Title = node.SelectSingleNode("Name").InnerText
+
+                       };
+                   }
+                }
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
+            }
+            return blog;
+        }
         public static List<Answer> GetAnswers(string wikiId, string wikiPageId)
         {
             List<Answer> answerList = new List<Answer>();
@@ -1238,7 +1278,180 @@ namespace UnderstoodDotOrg.Services.TelligentService
         }
 
 
+        public static bool CreateFavorite(string username, string contentId, UnderstoodDotOrg.Common.Constants.TelligentContentType contentType,bool delete=false)
+        {
+            bool success = false;
+            string address = String.Empty;
+            if ((!string.IsNullOrEmpty(username) && contentId != null && contentType != null))
+            {
+                using (WebClient client = new WebClient())
+                {
+                    try
+                    {
+                        client.Headers.Add("Rest-User-Token", TelligentAuth());
+                        client.Headers.Add("Rest-Impersonate-User", username);
+                        if(delete)
+                            client.Headers.Add("Rest-Method", "DELETE");
+                        switch (contentType)
+                        {
+                            case Constants.TelligentContentType.Blog:
+                                address = string.Format(GetApiEndPoint("blogs/{0}/favorites.xml"), contentId);
+                                break;
+                            case Constants.TelligentContentType.BlogPost:
+                                
+                                break;
+                            case Constants.TelligentContentType.Forum:
+                                break;
+                            case Constants.TelligentContentType.Group:
+                                break;
+                            case Constants.TelligentContentType.Page:
+                                break;
+                            case Constants.TelligentContentType.Weblog:
+                                break;
+                            default:
+                                break;
+                        }
 
+                        NameValueCollection nv = new NameValueCollection();
+                        string xml = Encoding.UTF8.GetString(client.UploadValues(address,nv));
+                        XmlDocument document = new XmlDocument();
+                        document.LoadXml(xml);
+                        XmlNode childNode = document.SelectSingleNode("Response/Errors").FirstChild;
+                        if (childNode == null)
+                        {
+                            success = true;
+                        }
+                    }
+                    catch
+                    {
+                        success = false;
+                    }
+                }
+
+            }
+            return success;
+        }
+
+        public static bool RemoveFavorite(string username,string contentId,UnderstoodDotOrg.Common.Constants.TelligentContentType contentType)
+        {
+            bool success = false;
+            success = CreateFavorite(username, contentId, contentType, true);
+            return success;
+            
+        }
+
+        public static List<BookmarkModel> GetBookMarks(string username,UnderstoodDotOrg.Common.Constants.TelligentContentType contentType)
+        {
+            //GET api.ashx/v2/users/{id}/favorites.xml
+            List<BookmarkModel> bookmarks = new List<BookmarkModel>();
+            if (!String.IsNullOrEmpty(username) )
+            {
+                username = username.Trim();
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                webClient.Headers.Add("Rest-Impersonate-User", username);
+                string requestUrl = String.Empty;
+                try
+                {
+                    switch (contentType)
+                    {
+                        case Constants.TelligentContentType.Blog:
+                            requestUrl = String.Format("{0}api.ashx/v2/bookmarks.xml?ContentTypeIds=ca0e7c80-8686-4d2f-a5a8-63b9e212e922", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                            break;
+                        case Constants.TelligentContentType.Forum:
+                            break;
+                        case Constants.TelligentContentType.Group:
+                            break;
+                        case Constants.TelligentContentType.Page:
+                            break;
+                        case Constants.TelligentContentType.Weblog:
+                            break;
+                        case Constants.TelligentContentType.BlogPost:
+                            break;
+                        default:
+                            break;
+                    }
+                   
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/Bookmarks");
+                    if (node != null)
+                    {
+                        foreach (XmlNode item in node)
+                        {
+                            BookmarkModel b = new BookmarkModel(item,contentType);
+                            bookmarks.Add(b);
+                            b = null;
+                        }
+                        
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    bookmarks = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
+
+
+            }
+            return bookmarks;
+        }
+        public static bool IsBookmarked (string username,string contentId,UnderstoodDotOrg.Common.Constants.TelligentContentType contentType)
+        {
+            bool success = false;
+            string address = String.Empty;
+            if ((!string.IsNullOrEmpty(username) && contentId != null && contentType != null))
+            {
+                using (WebClient client = new WebClient())
+                {
+                    try
+                    {
+                        client.Headers.Add("Rest-User-Token", TelligentAuth());
+                        client.Headers.Add("Rest-Impersonate-User", username);
+                        
+                        switch (contentType)
+                        {
+                            case Constants.TelligentContentType.Blog:
+                                address = string.Format(GetApiEndPoint("blogs/{0}/favorites.xml"), contentId);
+                                break;
+                            case Constants.TelligentContentType.BlogPost:
+
+                                break;
+                            case Constants.TelligentContentType.Forum:
+                                break;
+                            case Constants.TelligentContentType.Group:
+                                break;
+                            case Constants.TelligentContentType.Page:
+                                break;
+                            case Constants.TelligentContentType.Weblog:
+                                break;
+                            default:
+                                break;
+                        }
+
+                        
+                        string xml = Encoding.UTF8.GetString(client.DownloadData(address));
+                        XmlDocument document = new XmlDocument();
+                        document.LoadXml(xml);
+                        XmlNode childNode = document.SelectSingleNode("Response/BlogFavorite").FirstChild;
+                        if (childNode != null)
+                        {
+                            success = true;
+                        }
+                    }
+                    catch
+                    {
+                        success = false;
+                    }
+                }
+
+            }
+            return success;
+        }
         public static bool CreateFriendRequest(string requestor,string requesteeID,string message)
         {
             bool success = false;

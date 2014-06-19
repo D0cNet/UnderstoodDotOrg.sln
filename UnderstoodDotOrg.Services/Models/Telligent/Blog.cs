@@ -10,11 +10,16 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
     {
         public string Description { get; set; }
         public string Title { get; set; }
-
-        public Blog(string description, string title)
+        public string Id { get; set; }
+        public Blog(string description, string title,string id=null)
         {
             Description = description;
             Title = title;
+            Id = id;
+        }
+        public Blog()
+        {
+            
         }
     }
 }

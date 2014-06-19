@@ -609,6 +609,7 @@
     <Compile Include="TelligentCommunity\CommunityManager.cs" />
     <Compile Include="Understood\Activity\ActivityItem.cs" />
     <Compile Include="Understood\Activity\ActivityLog.cs" />
+    <Compile Include="Understood\Common\BookmarkModel.cs" />
     <Compile Include="Understood\Common\ChildCardModel.cs" />
     <Compile Include="Understood\Common\ChildExtensions.cs" />
     <Compile Include="Understood\Common\ContributorModel.cs" />
