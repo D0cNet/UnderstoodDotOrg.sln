@@ -27,7 +27,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
             }
             else
             {
-                var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountComments);
+                var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountComments);
                 hypCommentsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
 
                 List<Comment> commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);

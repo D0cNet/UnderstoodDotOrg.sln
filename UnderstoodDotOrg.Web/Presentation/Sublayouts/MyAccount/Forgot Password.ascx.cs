@@ -10,7 +10,7 @@ using UnderstoodDotOrg.Services.ExactTarget;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
-    public partial class Forgot_Password : BaseSublayout
+    public partial class Forgot_Password : BaseSublayout<ForgotPasswordItem>
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,28 +29,39 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             {
                 var email = txtEmailAddress.Text;
                 var membershipManager = new MembershipManager();
-                var user = membershipManager.GetUser(email);
-                if (user != null)
+                var member = membershipManager.GetMember(email);
+                if (member != null)
                 {
-                    ForgotPasswordItem currentItem = Sitecore.Context.Database.GetItem(Sitecore.Context.Item.ID);
-
-                    uxView.ActiveViewIndex = 1;
-                    litSuccessStory.Text = currentItem.SuccessMessage.Rendered.Replace("$email$", email);
-
-                    var passwordReset = Sitecore.Configuration.Factory.GetDatabase("master").GetItem("{328F5121-EFF8-441B-AFB6-A3DF41F7BFA4}");
-                    var link = string.Format(Request.Url.Host + "{0}?guid={1}", Sitecore.Links.LinkManager.GetItemUrl(passwordReset), user.ProviderUserKey.ToString());
+                    // TODO: replace with constant
+                    var passwordReset = Sitecore.Context.Database.GetItem("{328F5121-EFF8-441B-AFB6-A3DF41F7BFA4}");
+                    var link = string.Format(Request.Url.Host + "{0}?guid={1}", passwordReset.GetUrl(), member.MemberId.ToString());
 
 					
-                    BaseReply reply = ExactTargetService.InvokeEM22ForgotPassword(new InvokeEM22ForgotPasswordRequest { PreferredLanguage = CurrentMember.PreferedLanguage, PasswordResetLink = link, ToEmail = email, UserName = user.UserName });
+                    BaseReply reply = ExactTargetService.InvokeEM22ForgotPassword(new InvokeEM22ForgotPasswordRequest { PreferredLanguage = member.PreferredLanguage, PasswordResetLink = link, ToEmail = email });
+
+                    if (reply.Successful)
+                    {
+                        uxView.ActiveViewIndex = 1;
+                        litSuccessStory.Text = Model.SuccessMessage.Rendered.Replace("$email$", email);
+                    }
+                    else
+                    {
+                        uxView.ActiveViewIndex = 0;
+                        litErrorMessage.Visible = true;
+                        litErrorMessage.Text = DictionaryConstants.EmailException;
+                    }
                 }
                 else
                 {
                     //user does not exist
+                    uxView.ActiveViewIndex = 0;
                     litErrorMessage.Visible = true;
                 }
             }
             catch (Exception ex)
             {
+                Sitecore.Diagnostics.Log.Error("Forgot password error", ex, this);
+                uxView.ActiveViewIndex = 0;
                 litErrorMessage.Visible = true;
                 litErrorMessage.Text = DictionaryConstants.EmailException;
             }
@@ -58,8 +69,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.SignIn);
-            Response.Redirect(Sitecore.Links.LinkManager.GetItemUrl(item));
+            var item = Sitecore.Context.Database.GetItem(Constants.Pages.SignIn);
+            Response.Redirect(item.GetUrl());
         }
     }
 }

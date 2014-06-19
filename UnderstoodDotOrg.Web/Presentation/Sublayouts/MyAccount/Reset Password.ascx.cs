@@ -15,13 +15,14 @@
             uxPasswordConfirm.Attributes["placeholder"] = DictionaryConstants.ReEnterNewPasswordWatermark;
             uxSave.Text = DictionaryConstants.SubmitButtonText;
 
+            // TODO: fix hardcoded text
             if (string.IsNullOrEmpty(guid))
             {
                 uxPassword.Enabled = false;
                 uxPasswordConfirm.Enabled = false;
                 string redirect = "Please start the process back on the forgot password screen: <a href=\"{0}\">{1}</a>";
 
-                var forgotPassword = Sitecore.Configuration.Factory.GetDatabase("master").GetItem("{06AC924E-D5D1-4CED-AF7A-EB2F631AE4C4}");
+                var forgotPassword = Sitecore.Context.Database.GetItem("{06AC924E-D5D1-4CED-AF7A-EB2F631AE4C4}");
                 var link = Sitecore.Links.LinkManager.GetItemUrl(forgotPassword);
 
                 uxMessage.Text = string.Format(redirect, link, link);
@@ -32,6 +33,8 @@
         {
             var guid = Request.QueryString["guid"].ToString();
             string password = string.Empty;
+
+            // TODO: Add validation that passwords match
 
             if (uxPassword.Text == uxPasswordConfirm.Text && !string.IsNullOrEmpty(uxPasswordConfirm.Text))
             {

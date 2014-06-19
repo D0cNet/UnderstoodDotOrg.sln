@@ -42,7 +42,7 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             if (id != string.Empty)
             {
-                var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(id);
+                var item = Sitecore.Context.Database.GetItem(id);
                 ret = Sitecore.Links.LinkManager.GetItemUrl(item);
             }
 

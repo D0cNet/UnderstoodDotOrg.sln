@@ -251,7 +251,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                         BaseReply reply = ExactTargetService.InvokeEM21PrivateMessage(
                                                            new InvokeEM21PrivateMessageRequest
                                                            {
-															   PreferredLanguage = CurrentMember.PreferedLanguage,
+															   PreferredLanguage = CurrentMember.PreferredLanguage,
                                                                ///TODO: change url to profile setting link
                                                                ContactSettingsLink = "www.google.com",
                                                                ///TODO: change URL to message centre link

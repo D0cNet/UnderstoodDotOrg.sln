@@ -27,7 +27,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountEvents);
+            var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountEvents);
 
             hypEventsTab.NavigateUrl = Sitecore.Context.Database.GetItem(Constants.Pages.WhatsHappening).GetUrl();
             

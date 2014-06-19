@@ -31,7 +31,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         //    bg: sitecore GUID for english/spanish/etc.
         //    currently only being set when a user subscribes for a personalized newsletter
         /// </summary>
-        public Guid PreferedLanguage { get; set; }
+        public Guid PreferredLanguage { get; set; }
         public bool AgreedToSignUpTerms { get; set; }
         public string MobilePhoneNumber { get; set; }
         public bool SupportPlanReminders { get; set; }

@@ -300,7 +300,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                     }
 
                     //TODO: get language and add it into the list of method parameters
-                    BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { PreferredLanguage = CurrentMember.PreferedLanguage, ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
+                    BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { PreferredLanguage = CurrentMember.PreferredLanguage, ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
                 }
             }
             catch (Exception ex)

@@ -66,8 +66,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     this.CurrentMember = currentMember;
                     this.CurrentUser = membershipManager.GetUser(currentMember.MemberId, true);
 
-                    var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccount);
-                    Response.Redirect(Sitecore.Links.LinkManager.GetItemUrl(item));
+                    var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccount);
+                    Response.Redirect(item.GetUrl());
                 }
             }
             catch (Exception ex)

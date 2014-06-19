@@ -15,7 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountFavorites);
+            var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountFavorites);
             hypFavoritesTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
 
             var favoritesList = CommunityHelper.GetFavorites(CurrentMember.MemberId);

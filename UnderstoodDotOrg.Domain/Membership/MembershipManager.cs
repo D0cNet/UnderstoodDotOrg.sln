@@ -356,11 +356,16 @@ namespace UnderstoodDotOrg.Domain.Membership
                 .ToList()
                 .FirstOrDefault();
 
-            //bg: update the member with property values that are not included in entity
-            member = FillMember_ExtendedPropertiesFromDb(member);
-            member = FillMember_AlertPreferences(member);
+            if (member != null)
+            {
+                //bg: update the member with property values that are not included in entity
+                member = FillMember_ExtendedPropertiesFromDb(member);
+                member = FillMember_AlertPreferences(member);
 
-            return trimFields(member);
+                return trimFields(member);
+            }
+
+            return member;
         }
 
         /// <summary>
@@ -1308,7 +1313,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                         {
                             while (reader.Read())
                             {
-                                member.PreferedLanguage = reader.GetGuid(0);
+                                member.PreferredLanguage = reader.GetGuid(0);
                                 member.AgreedToSignUpTerms = reader.GetBoolean(1);
                                 if (!reader.IsDBNull(2))
                                 {
@@ -1391,7 +1396,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
-                        cmd.Parameters.AddWithValue("@PreferedLanguage", member.PreferedLanguage.ToString());
+                        cmd.Parameters.AddWithValue("@PreferedLanguage", member.PreferredLanguage.ToString());
                         cmd.Parameters.AddWithValue("@AgreedToSignUpTerms", member.AgreedToSignUpTerms);
                         cmd.Parameters.AddWithValue("@MobilePhoneNumber", member.MobilePhoneNumber != null ? member.MobilePhoneNumber : "");
                         cmd.Parameters.AddWithValue("@Subscribed_DailyDigest", member.Subscribed_DailyDigest);

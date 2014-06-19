@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <!-- BEGIN PARTIAL: reset-password -->
-<div class="container reset-password flush">
+<asp:Panel runat="server" DefaultButton="uxSave" CssClass="container reset-password flush">
     <div class="row skiplink-content" aria-role="main">
         <div class="col col-12 centered">
             <header>
@@ -31,7 +31,7 @@
             <asp:Literal ID="uxMessage" runat="server"></asp:Literal>
         </div>
     </div>
-</div>
+</asp:Panel>
 <!-- end .forgot-password -->
 
 <!-- END PARTIAL: reset-password -->

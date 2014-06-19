@@ -14,7 +14,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountConnections);
+            var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountConnections);
             hypConnectionsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
         }
     }

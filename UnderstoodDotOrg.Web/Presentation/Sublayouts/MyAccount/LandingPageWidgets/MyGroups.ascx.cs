@@ -21,7 +21,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             }
             else
             {
-                var item = Sitecore.Configuration.Factory.GetDatabase("master").GetItem(Constants.Pages.MyAccountGroups);
+                var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountGroups);
                 hypGroupsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
 
                 List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
