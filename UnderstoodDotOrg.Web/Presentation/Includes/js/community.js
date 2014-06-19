@@ -1281,13 +1281,13 @@
         self.sortBy($closest.data('sort-by'));
       };
 
-      self.sortBy = function(sortBy) {
-        var $postList = $('.blog-post-list');
-        $postList.fadeOut(function() {
-          // TODO - Sort the blogs
-          $postList.fadeIn();
-        });
-      };
+      //self.sortBy = function(sortBy) {
+      //  var $postList = $('.blog-post-list');
+      //  $postList.fadeOut(function() {
+      //    // TODO - Sort the blogs
+      //    $postList.fadeIn();
+      //  });
+      //};
 
       self.init();
   };

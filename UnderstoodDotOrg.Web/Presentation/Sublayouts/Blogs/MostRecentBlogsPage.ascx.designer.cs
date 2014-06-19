@@ -31,15 +31,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
         protected global::System.Web.UI.WebControls.Repeater rptRecentBlogInfo;
         
         /// <summary>
-        /// rptMostTalkedBlogInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptMostTalkedBlogInfo;
-        
-        /// <summary>
         /// Sidebar control.
         /// </summary>
         /// <remarks>
@@ -47,5 +38,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Placeholder Sidebar;
+        
+        /// <summary>
+        /// rptMostTalkedBlogInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptMostTalkedBlogInfo;
     }
 }

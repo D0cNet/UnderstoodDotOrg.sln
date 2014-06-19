@@ -93,64 +93,6 @@
             <%--<sc:Sublayout CssStyle="display: none" ID="sbMostRead" runat="server" Path="~/Presentation/SubLayouts/Blogs/SortBlogsRecent.ascx" />
             <sc:Sublayout CssStyle="display: none" ID="sbMostShared" runat="server" Path="~/Presentation/SubLayouts/Blogs/SortBlogsRecent.ascx" />--%>
 
-            <div style="display: none" id="sbMostTalkedAbout" class="col blog-post-list skiplink-content" aria-role="main">
-                <div class="blog-post-list-inner">
-                    <asp:Repeater ID="rptMostTalkedBlogInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost">
-                        <ItemTemplate>
-                            <!-- BEGIN PARTIAL: community/blog_post -->
-                            <div class="blog-post">
-                                <div class="blog-card-image blog-card-total-comments">
-                                    <a>
-                                        <img alt="230x129 Placeholder" src="http://placehold.it/230x129" /></a>
-
-                                    <p class="blog-card-comments"><b class="number-of-comments"><%# Item.CommentCount %></b>Comments</p>
-
-                                </div>
-                                <div class="blog-card-info group">
-                                    <h3 class="blog-card-title"><a href="<%# Item.Url %>"><%# Item.Title %></a></h3>
-
-
-                                    <div class="blog-card-post-info">
-                                        <p class="blog-posted">Posted</p>
-                                        <p class="blog-post-date"><%# Item.PublishedDate %></p>
-                                        <p class="blog-by">
-                                            by
-          <a href="<%# Item.AuthorUrl %>" class="author"><%# Item.Author %></a>
-                                        </p>
-                                    </div>
-
-
-                                    <p class="blog-card-post-excerpt"><%# Item.Body %></p>
-                                    <span class="children-key">
-                                        <ul>
-                                            <li><i class='child-b' title='CHILD NAME HERE'></i></li>
-                                            <li><i class='child-c' title='CHILD NAME HERE'></i></li>
-                                            <li><i class='child-e' title='CHILD NAME HERE'></i></li>
-                                        </ul>
-                                    </span>
-                                </div>
-
-                            </div>
-                            <!-- END PARTIAL: community/blog_post -->
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </div>
-
-                <!-- Show More -->
-                <!-- BEGIN PARTIAL: community/show_more -->
-                <!--Show More-->
-                <div class="container show-more">
-                    <div class="row">
-                        <div class="col col-24">
-                            <a class="show-more-link " href="#" data-path="blog/posts" data-container="blog-post-list-inner" data-item="blog-list" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- .show-more -->
-                <!-- END PARTIAL: community/show_more -->
-                <!-- .show-more -->
-
-            </div>
             <!-- BEGIN PARTIAL: community/blog_sidebar -->
             <div id="skipLinkSidebar" class="blog-post-list-sidebar skiplink-sidebar">
                 <sc:Placeholder ID="Sidebar" Key="Blogs-Sidebar" runat="server" />
@@ -184,65 +126,66 @@
     <!-- END PARTIAL: children-key -->--%>
     <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
 </div>
-<div style="display:none" id="hide"></div>
-<%--<script type="text/javascript">
-    var recent = document.getElementById("sbMostRecent");
-    <%--var read = document.getElementById("<%=sbMostRead.ClientID%>");
-    var shared = document.getElementById("<%=sbMostShared.ClientID%>");-->
-    var talked = document.getElementById("sbMostTalkedAbout");
-    var recentSelect = document.getElementById("Recent");
-    var readSelect = document.getElementById("Read");
-    var sharedSelect = document.getElementById("Shared");
-    var talkedSelect = document.getElementById("TalkedAbout");
-    function ShowMostRecent() {
-        if (recent.style.display = "none") {
-            recent.style.display = "block";
-            //read.setAttribute("Visible", "false");
-            //shared.setAttribute("Visible", "false");
-            talked.style.display = "none";
-            recentSelect.className = "filter selected";
-            readSelect.className = "filter ";
-            sharedSelect.className = "filter ";
-            talkedSelect.className = "filter ";
-        }
-    }
-    //function ShowMostRead() {
-    //    if (read.getAttribute("Visible") == "false") {
-    //        recent.setAttribute("Visible", "false");
-    //        //read.setAttribute("Visible", "true");
-    //        //shared.setAttribute("Visible", "false");
-    //        talked.setAttribute("Visible", "false");
-    //        recentSelect.className = "filter ";
-    //        readSelect.className = "filter selected";
-    //        sharedSelect.className = "filter ";
-    //        talkedSelect.className = "filter ";
-    //    }
-    //}
-    //function ShowMostShared() {
-    //    if (shared.getAttribute("Visible") == "false") {
-    //        recent.setAttribute("Visible", "false");
-    //        //read.setAttribute("Visible", "false");
-    //        //shared.setAttribute("Visible", "false");
-    //        talked.setAttribute("Visible", "false");
-    //        recentSelect.className = "filter ";
-    //        readSelect.className = "filter ";
-    //        sharedSelect.className = "filter selected";
-    //        talkedSelect.className = "filter ";
-    //    }
-    //}
-    function ShowMostTalkedAbout() {
-        if (talked.style.display = "none") {
-            recent.style.display = "none";
-            //read.setAttribute("Visible", "false");
-            //shared.setAttribute("Visible", "false");
-            talked.style.display = "block";
-            recentSelect.className = "filter ";
-            readSelect.className = "filter ";
-            sharedSelect.className = "filter ";
-            talkedSelect.className = "filter selected";
-        }
-    }
-</script>--%>
+<div style="display: none" id="hide">
+    <div id="sbMostTalkedAbout" class="col blog-post-list skiplink-content" aria-role="main">
+        <div class="blog-post-list-inner">
+            <asp:Repeater ID="rptMostTalkedBlogInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost">
+                <ItemTemplate>
+                    <!-- BEGIN PARTIAL: community/blog_post -->
+                    <div class="blog-post">
+                        <div class="blog-card-image blog-card-total-comments">
+                            <a>
+                                <img alt="230x129 Placeholder" src="http://placehold.it/230x129" /></a>
+
+                            <p class="blog-card-comments"><b class="number-of-comments"><%# Item.CommentCount %></b>Comments</p>
+
+                        </div>
+                        <div class="blog-card-info group">
+                            <h3 class="blog-card-title"><a href="<%# Item.Url %>"><%# Item.Title %></a></h3>
+
+
+                            <div class="blog-card-post-info">
+                                <p class="blog-posted">Posted</p>
+                                <p class="blog-post-date"><%# Item.PublishedDate %></p>
+                                <p class="blog-by">
+                                    by
+          <a href="<%# Item.AuthorUrl %>" class="author"><%# Item.Author %></a>
+                                </p>
+                            </div>
+
+
+                            <p class="blog-card-post-excerpt"><%# Item.Body %></p>
+                            <span class="children-key">
+                                <ul>
+                                    <li><i class='child-b' title='CHILD NAME HERE'></i></li>
+                                    <li><i class='child-c' title='CHILD NAME HERE'></i></li>
+                                    <li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                                </ul>
+                            </span>
+                        </div>
+
+                    </div>
+                    <!-- END PARTIAL: community/blog_post -->
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+
+        <!-- Show More -->
+        <!-- BEGIN PARTIAL: community/show_more -->
+        <!--Show More-->
+        <div class="container show-more">
+            <div class="row">
+                <div class="col col-24">
+                    <a class="show-more-link " href="#" data-path="blog/posts" data-container="blog-post-list-inner" data-item="blog-list" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- .show-more -->
+        <!-- END PARTIAL: community/show_more -->
+        <!-- .show-more -->
+
+    </div>
+</div>
 
 <script type="text/javascript">
     function showRecent() {
