@@ -19,9 +19,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
         protected void Page_Load(object sender, EventArgs e)
         {
             //i read this page. now record it.
-            MembershipManager mgr = new MembershipManager();
+            //MembershipManager mgr = new MembershipManager();
 
-            mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.WasRead, Constants.UserActivity_Types.Type_Blog);
+            //mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.WasRead, Constants.UserActivity_Types.Type_Blog);
 
             Item currentItem = Sitecore.Context.Item;
             var fieldBlogId = currentItem.Fields[Constants.TelligentFieldNames.BlogId];
