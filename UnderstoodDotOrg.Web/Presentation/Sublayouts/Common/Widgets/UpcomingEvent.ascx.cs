@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Widgets;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
 {
@@ -24,7 +25,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
         {
             frWidgetTitle.Item = Model;
 
-            var upcoming = SearchHelper.GetNextUpcomingEvent();
+            BaseEventDetailPageItem upcoming;
+
+            var curated = Model.FeaturedEvent.Item;
+
+            if (curated != null && curated.InheritsTemplate(BaseEventDetailPageItem.TemplateId))
+            {
+                upcoming = curated;
+            }
+            else
+            {
+                // Fallback to next upcoming event
+                upcoming = SearchHelper.GetNextUpcomingEvent();
+            }
+
             if (upcoming != null)
             {
                 EventUrl = upcoming.GetUrl();

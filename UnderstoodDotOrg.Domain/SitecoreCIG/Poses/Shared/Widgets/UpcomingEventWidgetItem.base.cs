@@ -47,6 +47,15 @@ public CustomTextField WidgetTitle
 }
 
 
+public CustomLookupField FeaturedEvent
+{
+	get
+	{
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Featured Event"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

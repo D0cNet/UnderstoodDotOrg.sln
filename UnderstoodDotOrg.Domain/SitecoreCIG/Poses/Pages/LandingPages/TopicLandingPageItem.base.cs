@@ -46,6 +46,15 @@ public static implicit operator Item(TopicLandingPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomLookupField EventWidget
+{
+	get
+	{
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Event Widget"]);
+	}
+}
+
+
 public CustomTreeListField GalleryFeaturedArticles
 {
 	get

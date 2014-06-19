@@ -1,17 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CalloutContainer.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic.CalloutContainer" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <!-- BEGIN ELEMENT: Split Modules -->
 <div class="container split-modules">
   <div class="row">
     <div class="col col-12">
 
-      <!-- BEGIN PARTIAL: featured-event -->
-<div class="featured-event">
-  <h4>Experts Live!</h4>
-  <h3><a href="REPLACE">Time-Blindness and ADHD: Strategies for Becoming More Aware of Time</a></h3>
-  <p><strong>August 31, 2013</strong><br>7:00pm EST<br>Geraldine Markel, Ph.D.</p>
-</div><!-- .featured-event -->
-<!-- END PARTIAL: featured-event -->
+      <sc:Sublayout ID="slUpcomingEvent" Path="~/Presentation/Sublayouts/Common/Widgets/UpcomingEvent.ascx" runat="server" />
 
     </div>
     <div class="col col-12">
