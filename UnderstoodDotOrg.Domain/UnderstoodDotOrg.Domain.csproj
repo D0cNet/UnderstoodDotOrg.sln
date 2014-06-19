@@ -505,6 +505,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFiveItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFiveItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFiveItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFiveItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFourItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFourItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyProfileStepFourItem.interface.cs" />

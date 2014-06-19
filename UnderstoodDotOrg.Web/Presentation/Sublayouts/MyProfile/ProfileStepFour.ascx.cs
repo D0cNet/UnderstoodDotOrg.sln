@@ -136,7 +136,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
                 uxJourney.DataSource = parentJourney;
                 uxJourney.DataBind();
-                
+
                 //var parentRoles = Sitecore.Context.Database.GetItem(parentRolesContainer).Children.ToList();
                 var parentRoles = ParentRoleItem.GetParentRoles();
 
@@ -160,6 +160,171 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
+        {
+            this.SetRegisteringUser();
+
+            try
+            {
+                this.UpdateUser();
+                
+                this.NextStep();
+            }
+            catch (Exception ex)
+            {
+                uxErrorMessage.Visible = true;
+                uxErrorMessage.Text = string.Format("<span class='validationerror'>{0}</span>", ex.Message);
+            }
+
+        }
+
+        protected void NextStep()
+        {
+            //if (!err)//no errors. Move the progression forward.
+            //{
+                if (mode == Constants.QueryStrings.Registration.ModeEdit)
+                {
+                    Response.Redirect(MyProfileItem.GetMyProfilePage().GetUrl());
+                }
+
+                Response.Redirect(MyAccountFolderItem.GetCompleteMyProfileStepFive());
+            //}
+        }
+
+        protected void UpdateUser()
+        {
+            var membershipManager = new MembershipManager();
+
+            try
+            {
+                this.checkUsername(this.registeringUser.ScreenName);
+
+                this.updateMember();
+
+                this.runPersonalization();
+
+                this.createCommunityUser();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void createCommunityUser()
+        {
+            //pulling this out of membership manager for now until we find the best place. 
+            //It had been in AddMember berfore but there is no screen name available when we Add a member.
+            //create Telligent user:
+            if (!string.IsNullOrEmpty(CurrentMember.ScreenName)) //optional to the user
+            {
+                try
+                {
+                    if (mode != Constants.QueryStrings.Registration.ModeEdit)
+                    {
+                        bool communitySuccess = CommunityHelper.CreateUser(CurrentMember.ScreenName, CurrentUser.Email);
+                        if (communitySuccess == false)
+                        {
+                            // ¡Ay, caramba!
+                            // give them a nice "I'm sorry" please try again later message.
+                            //uxErrorMessage.Text = "<font color=red> </ font> ";
+                            //uxErrorMessage.Visible = true;
+                            //err = true; //dont progress. stop and display an error.
+
+                            throw new Exception("I'm sorry, the Community User failed to be created properly.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //bg: we need a generic procedure for handling errors so that we can display important data properly without being gross  
+                    //uxErrorMessage.Text = "<font color=red>I'm sorry, an error has occured while trying to create the Community User. <hr> " +
+                    //    "Message: " + ex.Message + Environment.NewLine +
+                    //    "Source: " + ex.Source + Environment.NewLine + "<hr>" +
+                    //    "Stack Trace: " + ex.StackTrace + Environment.NewLine +
+                    //    "Inner Message: " + ex.InnerException.Message + Environment.NewLine +
+                    //    "Inner Source: " + ex.InnerException.Source + Environment.NewLine +
+                    //    "Inner Stack Trace: " + ex.InnerException.StackTrace +
+                    //    "</font>";
+                    //uxErrorMessage.Visible = true;
+                    //err = true;
+
+                    throw ex;
+                }
+            }
+        }
+
+        private void runPersonalization()
+        {
+            ////run personalization for this user
+            Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
+            rps.UpdateMember(CurrentMember);
+        }
+
+        private void updateMember()
+        {
+            var membershipManager = new MembershipManager();
+
+            try
+            {
+                //set current user/member
+                this.CurrentMember = membershipManager.UpdateMember(this.registeringUser);
+                if (mode != Constants.QueryStrings.Registration.ModeEdit)
+                {
+                    this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
+
+                    //updating salesforce
+                    SalesforceManager sfMgr = new SalesforceManager("brettgarnier@outlook.com",
+                                                                    "8f9C3Ayq",
+                                                                    "hlY0jOIILtogz3sQlLUtmERlu");
+                    if (sfMgr.LoggedIn)
+                    {
+                        try
+                        {
+                            SalesforceActionResult result = sfMgr.CreateWebsiteMemberAsContact(this.CurrentMember, CurrentUser.Email);
+                            if (result.Success == false)
+                            {
+                                Response.Write("<!-- Error 401 -->");
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            Response.Write("<!-- Error 501 -->");
+                        }
+                    }
+                    else
+                    {
+                        Response.Write("<!-- Error 601 -->");
+                    }
+
+                    //TODO: get language and add it into the list of method parameters
+                    BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { PreferredLanguage = CurrentMember.PreferedLanguage, ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void checkUsername(string ScreenName)
+        {
+            try
+            {
+                var membershipManager = new MembershipManager();
+
+                //verify that screen name is unique
+                if (membershipManager.GetMemberByScreenName(ScreenName) != null)
+                {
+                    throw new Exception("Community Screen Name already taken");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void SetRegisteringUser()
         {
             this.registeringUser.Interests.Clear();
             this.registeringUser.Journeys.Clear();
@@ -258,8 +423,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             this.registeringUser.allowNewsletter = cbNewsLetter.Checked;
 
-            //bg: verify that this is working:
-            if (mode != Constants.QueryStrings.Registration.ModeEdit)
+            //bg: verify that this is working:            
+            if (mode != Constants.QueryStrings.Registration.ModeEdit || (mode == Constants.QueryStrings.Registration.ModeEdit && string.IsNullOrEmpty(this.registeringUser.ScreenName)))
             {
                 this.registeringUser.ScreenName = ScreenNameTextField.Text.RemoveHTML();
             }
@@ -267,91 +432,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             if (!string.IsNullOrEmpty(ZipCodeTextField.Text))
             {
                 this.registeringUser.ZipCode = ZipCodeTextField.Text.RemoveHTML();
-            }
-
-            var membershipManager = new MembershipManager();
-
-            //set current user/member
-            this.CurrentMember = membershipManager.UpdateMember(this.registeringUser);
-            if (mode != Constants.QueryStrings.Registration.ModeEdit)
-            {
-                this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
-
-                //updating salesforce
-                SalesforceManager sfMgr = new SalesforceManager("brettgarnier@outlook.com",
-                                                                "8f9C3Ayq",
-                                                                "hlY0jOIILtogz3sQlLUtmERlu");
-                if (sfMgr.LoggedIn)
-                {
-                    try
-                    {
-                        SalesforceActionResult result = sfMgr.CreateWebsiteMemberAsContact(this.CurrentMember, CurrentUser.Email);
-                        if (result.Success == false)
-                        {
-                            Response.Write("<!-- Error 401 -->");
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        Response.Write("<!-- Error 501 -->");
-                    }
-                }
-                else
-                {
-                    Response.Write("<!-- Error 601 -->");
-                }
-
-                //TODO: get language and add it into the list of method parameters
-                BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { PreferredLanguage = CurrentMember.PreferedLanguage, ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
-            }
-
-            ////run personalization for this user
-            Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
-            rps.UpdateMember(CurrentMember);
-
-            //pulling this out of membership manager for now until we find the best place. 
-            //It had been in AddMember berfore but there is no screen name available when we Add a member.
-            //create Telligent user:
-            bool err = false;
-            if (!string.IsNullOrEmpty(CurrentMember.ScreenName)) //optional to the user
-            {
-                try
-                {
-                    if (mode != Constants.QueryStrings.Registration.ModeEdit)
-                    {
-                        bool communitySuccess = CommunityHelper.CreateUser(CurrentMember.ScreenName, CurrentUser.Email);
-                        if (communitySuccess == false)
-                        {
-                            // ¡Ay, caramba!
-                            // give them a nice "I'm sorry" please try again later message.
-                            uxErrorMessage.Text = "<font color=red>I'm sorry, the Community User failed to be created properly. </ font> ";
-                            uxErrorMessage.Visible = true;
-                            err = true; //dont progress. stop and display an error.
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    //bg: we need a generic procedure for handling errors so that we can display important data properly without being gross  
-                    uxErrorMessage.Text = "<font color=red>I'm sorry, an error has occured while trying to create the Community User. <hr> " +
-                        "Message: " + ex.Message + Environment.NewLine +
-                        "Source: " + ex.Source + Environment.NewLine + "<hr>" +
-                        "Stack Trace: " + ex.StackTrace + Environment.NewLine +
-                        "Inner Message: " + ex.InnerException.Message + Environment.NewLine +
-                        "Inner Source: " + ex.InnerException.Source + Environment.NewLine +
-                        "Inner Stack Trace: " + ex.InnerException.StackTrace +
-                        "</font>";
-                    uxErrorMessage.Visible = true;
-                    err = true;
-                }
-            }
-            if (!err)//no errors. Move the progression forward.
-            {
-                if (mode == Constants.QueryStrings.Registration.ModeEdit)
-                {
-                    Response.Redirect(MyProfileItem.GetMyProfilePage().GetUrl());
-                }
-                Response.Redirect(MyAccountFolderItem.GetCompleteMyProfileStepFive());
             }
         }
 

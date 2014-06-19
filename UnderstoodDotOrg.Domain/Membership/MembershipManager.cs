@@ -379,6 +379,11 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             var memberId = _db.Members.FirstOrDefault(x => x.ScreenName == ScreenName).MemberId;
 
+            if (memberId == null)
+            {
+                return null;
+            }
+
             return this.GetMember(memberId);
         }
 

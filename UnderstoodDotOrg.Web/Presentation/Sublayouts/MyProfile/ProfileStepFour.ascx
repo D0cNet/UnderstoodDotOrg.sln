@@ -12,7 +12,7 @@
                     </h1>
                     <p class="subtitle">
                         <sc:Text ID="Text2" Field="Header Text" runat="server" />
-                        <asp:Literal ID="uxErrorMessage" runat="server" Visible="false"></asp:Literal>
+                        
                     </p>
 
                     <!-- END PARTIAL: profile-questions-header-left -->
@@ -293,7 +293,7 @@
                 </div>
                 <!-- .question-wrapper -->
 
-                <div class="question-wrapper connect-question rs_read_this">
+                <div id="community" class="question-wrapper connect-question rs_read_this">
                     <p class="question">
                         <sc:Text ID="Text50" Field="Connect Question Title" runat="server" />
                     </p>
@@ -304,7 +304,7 @@
                     <div class="textfields-wrapper">
                         <div class="textfield-wrapper">
                             <asp:Label AssociatedControlID="ScreenNameTextField" ID="lblScreenName" runat="server" CssClass="visuallyhidden" aria-hidden="true">Enter a Screen Name</asp:Label>
-                            <asp:TextBox type="textfield" ID="ScreenNameTextField" runat="server" />
+                            <asp:TextBox type="text" ID="ScreenNameTextField" runat="server" />
                             <!--input type="textfield" name="connect-1" placeholder="Screen Name"-->
                             <span class="popover-trigger-container">
                                 <div class="popover-link rs_preserve rs_skip">
@@ -322,7 +322,7 @@
                         </div>
                         <div class="textfield-wrapper">
                             <asp:Label AssociatedControlID="ZipCodeTextField" ID="lblZipCodes" runat="server" CssClass="visuallyhidden" aria-hidden="true">Zip Code</asp:Label>
-                            <asp:TextBox type="textfield" ID="ZipCodeTextField" runat="server" />
+                            <asp:TextBox type="text" ID="ZipCodeTextField" runat="server" />
                             <!--input type="textfield" name="connect-2" placeholder="Zip Code"-->
                             <span class="popover-trigger-container">
                                 <div class="popover-link rs_preserve rs_skip">
@@ -355,6 +355,8 @@
                     </div>
                 </div>
                 <!-- .connect-question -->
+
+                <asp:Literal ID="uxErrorMessage" runat="server" Visible="false"></asp:Literal>
 
                 <div class="form-actions">
                     <asp:Button CssClass="button" ID="SubmitButton" runat="server" OnClick="SubmitButton_Click" />

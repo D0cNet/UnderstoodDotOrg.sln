@@ -19,8 +19,6 @@ public static readonly string TemplateId = "{64F68167-5AC0-4A74-AF1E-5A02317DA86
 
 private readonly MyProfileBaseTemplateItem _MyProfileBaseTemplateItem;
 public MyProfileBaseTemplateItem MyProfileBaseTemplate { get { return _MyProfileBaseTemplateItem; } }
-private readonly SavedProfileQuestionsControlItem _SavedProfileQuestionsControlItem;
-public SavedProfileQuestionsControlItem SavedProfileQuestionsControl { get { return _SavedProfileQuestionsControlItem; } }
 
 #endregion
 
@@ -29,7 +27,6 @@ public SavedProfileQuestionsControlItem SavedProfileQuestionsControl { get { ret
 public MyProfileStepFiveItem(Item innerItem) : base(innerItem)
 {
 	_MyProfileBaseTemplateItem = new MyProfileBaseTemplateItem(innerItem);
-	_SavedProfileQuestionsControlItem = new SavedProfileQuestionsControlItem(innerItem);
 
 }
 
@@ -54,6 +51,24 @@ public CustomTextField TakeMeBackText
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Take Me Back Text"]);
+	}
+}
+
+
+public CustomTreeListField ToolkitItems
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Toolkit Items"]);
+	}
+}
+
+
+public CustomTextField GoNowText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Go Now Text"]);
 	}
 }
 

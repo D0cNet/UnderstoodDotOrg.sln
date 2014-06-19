@@ -40,15 +40,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::Sitecore.Web.UI.WebControls.Text Text2;
         
         /// <summary>
-        /// uxErrorMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal uxErrorMessage;
-        
-        /// <summary>
         /// Text3 control.
         /// </summary>
         /// <remarks>
@@ -380,6 +371,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Text Text59;
+        
+        /// <summary>
+        /// uxErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal uxErrorMessage;
         
         /// <summary>
         /// SubmitButton control.
