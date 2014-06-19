@@ -14,6 +14,8 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
+using System.Text;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -22,20 +24,29 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetGoogleAnalyticsDetails();
+            InitGoogleAnalytics();
         }
 
-        protected void GetGoogleAnalyticsDetails()
+        protected void InitGoogleAnalytics()
         {
-            var ObjGloalItem = new GlobalsItem(Sitecore.Context.Item);
-            if (ObjGloalItem != null)
+            StringBuilder sb = new StringBuilder();
+
+            GlobalsItem global = MainsectionItem.GetGlobals();
+            if (global != null)
             {
-                frGlobalGoogleAnalytics.Item = ObjGloalItem;
+                sb.AppendLine(global.GoogleAnalytics.Raw);
             }
-            var ObjBasePageNew = new BasePageNEWItem(Sitecore.Context.Item);
-            if (ObjBasePageNew != null)
+
+            BasePageNEWItem basePage = Sitecore.Context.Item;
+            if (basePage.GoogleAnalytics.Field != null)
             {
-                frPageGoogleAnalytics.Item = ObjBasePageNew;
+                sb.AppendLine(basePage.GoogleAnalytics.Raw);
+            }
+
+            string output = sb.ToString().Trim();
+            if (!string.IsNullOrEmpty(output))
+            {
+                litAnalytics.Text = String.Format(@"<script type=""text/javascript"">{0}</script>", output);
             }
         }
     }

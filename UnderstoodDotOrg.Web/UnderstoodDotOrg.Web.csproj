@@ -2514,6 +2514,7 @@
     <Content Include="Presentation\Includes\js\global.js" />
     <Content Include="Presentation\Includes\js\homepage.js" />
     <Content Include="Presentation\Includes\js\html2canvas.js" />
+    <Content Include="Presentation\Includes\js\jspdf.custom.js" />
     <Content Include="Presentation\Includes\js\jspdf.min.js" />
     <Content Include="Presentation\Includes\js\modules.js" />
     <Content Include="Presentation\Includes\js\oasis.js" />

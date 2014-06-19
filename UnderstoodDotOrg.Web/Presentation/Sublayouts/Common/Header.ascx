@@ -1,8 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Header" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-<!-- BEGIN PARTIAL: header -->
-<sc:FieldRenderer ID="frGlobalGoogleAnalytics" runat="server" FieldName="Google Analytics"/>
-<sc:FieldRenderer ID="frPageGoogleAnalytics" runat="server" FieldName="Google Analytics" />
+
+<asp:Literal ID="litAnalytics" runat="server" />
 
 <header id="header-page" class="container">
     <div class="row">

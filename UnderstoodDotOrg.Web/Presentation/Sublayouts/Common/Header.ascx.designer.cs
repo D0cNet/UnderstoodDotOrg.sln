@@ -13,21 +13,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     public partial class Header {
         
         /// <summary>
-        /// frGlobalGoogleAnalytics control.
+        /// litAnalytics control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frGlobalGoogleAnalytics;
-        
-        /// <summary>
-        /// frPageGoogleAnalytics control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPageGoogleAnalytics;
+        protected global::System.Web.UI.WebControls.Literal litAnalytics;
     }
 }
