@@ -160,7 +160,7 @@
 
 		protected void btnEM22_Click(object sender, EventArgs e)
 		{
-			BaseReply reply = ExactTargetService.InvokeEM22ForgotPassword(new InvokeEM22ForgotPasswordRequest { PreferredLanguage = new Guid(ddlLanguages.SelectedValue), PasswordResetLink = "www.google.com", ToEmail = tbxSubscriberEmail1.Text, UserName = "user1" });
+			BaseReply reply = ExactTargetService.InvokeEM22ForgotPassword(new InvokeEM22ForgotPasswordRequest { PreferredLanguage = new Guid(ddlLanguages.SelectedValue), PasswordResetLink = "www.google.com", ToEmail = tbxSubscriberEmail1.Text });
 			lblMessage.Text = reply.Message;
 		}
 
