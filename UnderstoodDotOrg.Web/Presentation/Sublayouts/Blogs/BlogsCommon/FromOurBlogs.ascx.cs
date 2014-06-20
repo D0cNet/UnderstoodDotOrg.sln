@@ -1,10 +1,12 @@
-﻿using Sitecore.Links;
+﻿using Sitecore.Configuration;
+using Sitecore.Links;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
@@ -15,7 +17,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string blogId = "1,2,3,7,8,9;";
+            string blogId = Settings.GetSetting(Constants.Settings.TelligentBlogIds);
             var dataSource = CommunityHelper.ListBlogPosts(blogId, "6");
             foreach (var item in dataSource)
             {

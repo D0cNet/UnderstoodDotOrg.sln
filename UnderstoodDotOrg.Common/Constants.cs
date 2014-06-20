@@ -689,6 +689,7 @@ namespace UnderstoodDotOrg.Common
         public static class Settings
         {
             public static string TelligentConfig = "TelligentConfig";
+            public static string TelligentBlogIds = "TelligentBlogIds";
             public static string TelligentCommentContentTypeId = "9262536b-49a3-4494-802f-04dff10424ed";
             public static string PersonalizationHandlerAllowedIps = "PersonalizationHandlerAllowedIps";
             public static string TelligentAdminApiKey = "TelligentAdminApiKey";

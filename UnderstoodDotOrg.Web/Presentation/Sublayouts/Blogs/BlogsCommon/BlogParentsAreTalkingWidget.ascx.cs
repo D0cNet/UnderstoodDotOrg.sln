@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Sitecore.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 
@@ -13,7 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var commentsList = CommunityHelper.ReadComments("1,2,3");
+            var commentsList = CommunityHelper.ReadComments(Settings.GetSetting(Constants.Settings.TelligentBlogIds));
             litAuthor.Text = commentsList[0].AuthorDisplayName;
             litCommentSnippet.Text = CommunityHelper.FormatString100(commentsList[0].Body);
             litDateTime.Text = commentsList[0].PublishedDate;

@@ -23,14 +23,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Guid ContentId = new Guid(blogCig.ContentId.Raw);
-            Guid MemberId = this.CurrentMember.MemberId;
-            ActivityLog log = new ActivityLog();
-
+                Guid ContentId = new Guid(blogCig.ContentId.Raw);
+                Guid MemberId = this.CurrentMember.MemberId;
+                ActivityLog log = new ActivityLog();
+            
             bool washelpful = log.FoundItemHelpful(ContentId, MemberId);
             int likeCount = log.GetActivityCountByValue(ContentId, Constants.UserActivity_Values.FoundHelpful_True);
             string commentCount = CommunityHelper.ReadComments(blogCig.BlogId, blogCig.BlogPostId).Count.ToString();
- 
+            
             //to get if the content was NOT helpful
             //bool wasNOThelpful = log.FoundItemNotHelpful(ContentId, MemberId);
             //LikeCount.Text = CommunityHelper.GetTotalLikes(ContentId.ToString()).ToString();
