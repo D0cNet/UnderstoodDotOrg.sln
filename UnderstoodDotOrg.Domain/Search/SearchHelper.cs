@@ -972,7 +972,24 @@ namespace UnderstoodDotOrg.Domain.Search
                 {
                     query = query.Skip(offset);
                 }
-                
+
+                // Sort
+                switch (sortOption)
+                {
+                    case SortOptions.AssistiveToolsSortOptions.GradeLevel:
+                        
+                        break;
+                    case SortOptions.AssistiveToolsSortOptions.LearningRating:
+                        query = query.OrderByDescending(i => i.LearningRating);
+                        break;
+                    case SortOptions.AssistiveToolsSortOptions.QualityRating:
+                        query = query.OrderByDescending(i => i.QualityRating);
+                        break;
+                    case SortOptions.AssistiveToolsSortOptions.MostRecent:
+                        query = query.OrderByDescending(i => i.PublishDate);
+                        break;
+                }
+
                 // Execute solr query
                 var results = query.Take(pageSize).ToList();
 
@@ -1061,7 +1078,12 @@ namespace UnderstoodDotOrg.Domain.Search
 
         private static string NormalizeSearchTerm(string term)
         {
-            return SolrNet.Impl.QuerySerializers.QueryByFieldSerializer.SpecialCharactersRx.Replace(term, "\\$1");
+            if (!string.IsNullOrEmpty(term))
+            {
+                return SolrNet.Impl.QuerySerializers.QueryByFieldSerializer.SpecialCharactersRx.Replace(term, "\\$1");
+            }
+
+            return term;
         }
 
     }

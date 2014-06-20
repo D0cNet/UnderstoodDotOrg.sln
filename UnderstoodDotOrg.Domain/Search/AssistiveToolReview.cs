@@ -19,5 +19,14 @@ namespace UnderstoodDotOrg.Domain.Search
 
         [IndexField("issues")]
         public IEnumerable<ID> Issues { get; set; }
+
+        [IndexField("quality")]
+        public int QualityRating { get; set; }
+
+        [IndexField("learning")]
+        public int LearningRating { get; set; }
+
+        [IndexField("publish_date")]
+        public DateTime PublishDate { get; set; }
     }
 }

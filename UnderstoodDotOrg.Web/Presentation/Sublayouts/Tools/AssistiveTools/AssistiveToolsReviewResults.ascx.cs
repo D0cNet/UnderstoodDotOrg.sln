@@ -41,13 +41,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
                 if (issueId.HasValue || gradeId.HasValue || typeId.HasValue || platformId.HasValue)
                 {
-                    //TODO: Uncomment after completion of GetSearchResults() implementation
-                    //searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(issueId, gradeId, typeId, platformId);
-                    
-                    //TEMPORARY PRE-SEARCH DEVELOPMENT ONLY
-                    searchResults = Model.InnerItem.Parent.Children
-                        .Where(i => i.IsOfType(AssistiveToolsReviewPageItem.TemplateId))
-                        .Select(i => (AssistiveToolsReviewPageItem)i);
+                    searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(issueId, gradeId, typeId, platformId);
                 }
                 else
                 {
