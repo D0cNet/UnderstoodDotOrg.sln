@@ -14,8 +14,8 @@
     </div>
 </div>
 
-<div class="was-this-helpful" id="count-helpful">
-    <h5>Did you find this helpful?</h5>
-    <asp:LinkButton ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button yes" runat="server">Yes</asp:LinkButton>
-    <asp:LinkButton ID="btnUnlike" OnClick="btnDidntHelp_Click" CssClass="button gray no" runat="server">No</asp:LinkButton>
+<div class="find-this-helpful sidebar rs_read_thi" id="count-helpful-sidebar">
+    <h4>Did you find this helpful?</h4>
+    <asp:LinkButton ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button yes rs_skip" runat="server">Yes</asp:LinkButton>
+    <asp:LinkButton ID="btnUnlike" OnClick="btnDidntHelp_Click" CssClass="button no gray rs_skip" runat="server">No</asp:LinkButton>
 </div>
