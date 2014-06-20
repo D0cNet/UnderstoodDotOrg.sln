@@ -224,13 +224,6 @@
     <Compile Include="Presentation\MembershipTest.aspx.designer.cs">
       <DependentUpon>MembershipTest.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\About\404Page.ascx.cs">
-      <DependentUpon>404Page.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\About\404Page.ascx.designer.cs">
-      <DependentUpon>404Page.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\About\AboutPartners.ascx.cs">
       <DependentUpon>AboutPartners.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1329,6 +1322,12 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\DecisionTool\DecisionToolResultsPage.ascx.designer.cs">
       <DependentUpon>DecisionToolResultsPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Errors\NotFoundPage.ascx.cs">
+      <DependentUpon>NotFoundPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Errors\NotFoundPage.ascx.designer.cs">
+      <DependentUpon>NotFoundPage.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\ArchivedEventsModule.ascx.cs">
       <DependentUpon>ArchivedEventsModule.ascx</DependentUpon>
@@ -2579,7 +2578,6 @@
     <Content Include="Presentation\Layouts\Blank.aspx" />
     <Content Include="Presentation\Layouts\Browser.aspx" />
     <Content Include="Presentation\MembershipTest.aspx" />
-    <Content Include="Presentation\Sublayouts\About\404Page.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutPartners.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutPartner_Details.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutUnderstood.ascx" />
@@ -2652,7 +2650,6 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogCallToActionWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
-    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Common\FollowButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Widgets\FoundHelpfulWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\SortBlogsRecent.ascx" />
@@ -2688,7 +2685,6 @@
     <Content Include="Presentation\Sublayouts\Common\HeaderUtilityNav.ascx" />
     <Content Include="Presentation\Sublayouts\Common\More Carousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\MoreToExplore.ascx" />
-    <Content Include="Presentation\Sublayouts\Common\NewsletterSignup.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Page Topic.ascx" />
     <Content Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx" />
@@ -2739,6 +2735,7 @@
     <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolQuestionPage.ascx" />
     <Content Include="Presentation\Sublayouts\DecisionTool\DecisionToolResultsPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Errors\NotFoundPage.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ArchivedEventsModule.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ArchiveListing.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\ChatDetails.ascx" />

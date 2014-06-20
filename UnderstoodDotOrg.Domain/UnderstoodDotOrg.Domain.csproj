@@ -363,8 +363,6 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ThankYouPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ThankYouPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ThankYouPageItem.static.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Page404Item.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Page404Item.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\PartnerInfoItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\SearchFilterTypeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyBasePageItem.base.cs" />
@@ -452,6 +450,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Pages\DecisionToolLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Pages\DecisionToolResultsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\DecisionTool\Pages\DecisionToolResultsPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\Errors\NotFoundPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\Base\BaseEventDetailPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\Base\BaseEventDetailPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\ChatEventPageItem.base.cs" />
