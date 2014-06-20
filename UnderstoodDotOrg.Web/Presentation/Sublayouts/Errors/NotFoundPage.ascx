@@ -13,8 +13,8 @@
                 <div class="row">
                     <div class="col col-24">
                         <div class="text-wrap rs_read_this">
-                            <h1>We are so sorry!</h1>
-                            <h2>The page you wanted can’t be found.</h2>
+                            <h1><sc:FieldRenderer ID="frHeroTitle" runat="server" FieldName="Hero Title" /></h1>
+                            <h2><sc:FieldRenderer ID="frHeroSubtitle" runat="server" FieldName="Hero Subtitle" /></h2>
                         </div>
                     </div>
                 </div>
@@ -30,18 +30,18 @@
     <div class="row">
         <div class="col col-16 centered rs_read_this">
             <!-- BEGIN PARTIAL: about/page-not-found-search -->
-            <div class="page-not-found-search skiplink-content" aria-role="main">
-                <h2>Looking for something specific?</h2>
+            <asp:Panel runat="server" DefaultButton="btnSubmit" CssClass="page-not-found-search skiplink-content" aria-role="main">
+                <h2><sc:FieldRenderer ID="frSearchBoxTitle" runat="server" FieldName="Search Box Title" /></h2>
                 <fieldset>
                     <div class="search-input-wrap">
-                        <label for="search-term" class="visuallyhidden"></label>
-                        <input type="text" name="search-term" id="search-term">
+                        <asp:Label AssociatedControlID="txtSearch" runat="server" CssClass="visuallyhidden" />
+                        <asp:TextBox ID="txtSearch" runat="server" />
                     </div>
                     <div class="search-button-wrap">
-                        <input id="search-term-button" class="button search-button" type="submit" value="Search">
+                        <asp:Button ID="btnSubmit" runat="server" CssClass="button search-button" />
                     </div>
                 </fieldset>
-            </div>
+            </asp:Panel>
             <!-- END PARTIAL: about/page-not-found-search -->
         </div>
     </div>
@@ -53,38 +53,30 @@
     <div class="row">
         <div class="col col-24 skiplink-feature rs_read_this">
             <!-- BEGIN PARTIAL: about/page-not-found-promos -->
-            <h2>We hope you’ll find what you’re looking for on one of these pages.
-            </h2>
+            <h2><sc:FieldRenderer ID="frPromoAreaHeading" runat="server" FieldName="Promo Area Heading" /></h2>
 
             <div class="container flush page-not-found-promos">
                 <div class="row">
                     <div class="col col-6 offset-1">
                         <!-- BEGIN PARTIAL: about/page-not-found-promo1 -->
                         <div class="promo-single">
-                            <a href="REPLACE">Labore Doloribus Sed Fugiat Eveniet Est Nobis</a>
-                            <img alt="292x164 Placeholder" src="http://placehold.it/292x164" />
+                            <sc:Link ID="scPromo1Link" runat="server" Field="Promo 1 Link"><sc:FieldRenderer ID="frPromo1Title" runat="server" FieldName="Promo 1 Title" /></sc:Link>
+                            <sc:FieldRenderer ID="frPromo1Image" runat="server" FieldName="Promo 1 Image" Parameters="mw=292&mh=164" />
                         </div>
                         <!-- END PARTIAL: about/page-not-found-promo1 -->
                     </div>
                     <div class="col col-6 offset-2">
                         <!-- BEGIN PARTIAL: about/page-not-found-promo2 -->
                         <div class="promo-single">
-                            <a href="REPLACE">Voluptatibus Enim Eos Debitis Qui</a>
-                            <img alt="292x164 Placeholder" src="http://placehold.it/292x164" />
+                            <sc:Link ID="scPromo2Link" runat="server" Field="Promo 2 Link"><sc:FieldRenderer ID="frPromo2Title" runat="server" FieldName="Promo 2 Title" /></sc:Link>
+                            <sc:FieldRenderer ID="frPromo2Image" runat="server" FieldName="Promo 2 Image" Parameters="mw=292&mh=164" />
                         </div>
                         <!-- END PARTIAL: about/page-not-found-promo2 -->
                     </div>
                     <div class="col col-7 offset-2">
                         <!-- BEGIN PARTIAL: about/page-not-found-promo-list -->
                         <div class="promo-list">
-                            <a href="REPLACE">At Aut</a>
-                            <p>Molestiae Quia Sed Autem Inventore Distinctio Optio</p>
-
-                            <a href="REPLACE">In Perferendis</a>
-                            <p>Sunt Consectetur Quo At Ut Eveniet Accusantium</p>
-
-                            <a href="REPLACE">Temporibus Iste</a>
-                            <p>Sunt Nisi Eveniet Cum Debitis Itaque Ipsam</p>
+                            <sc:FieldRenderer ID="frPromo3Content" runat="server" FieldName="Promo 3 Content" />
                         </div>
                         <!-- END PARTIAL: about/page-not-found-promo-list -->
                     </div>

@@ -46,6 +46,15 @@ public static implicit operator Item(NotFoundPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField PromoAreaHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Promo Area Heading"]);
+	}
+}
+
+
 public CustomTextField Promo1Title
 {
 	get
@@ -91,11 +100,11 @@ public CustomGeneralLinkField Promo1Link
 }
 
 
-public CustomTextField HeroContent
+public CustomTextField HeroSubtitle
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Hero Content"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Hero Subtitle"]);
 	}
 }
 

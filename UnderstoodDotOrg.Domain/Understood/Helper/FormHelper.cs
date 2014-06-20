@@ -138,7 +138,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
             return HttpHelper.AssembleUrl(path, queryParams);
         }
 
-        public static string GetSearchResultsUrl(string term, string type)
+        public static string GetSearchResultsUrl(string term, string type = null)
         {
             Item item = Sitecore.Context.Database.GetItem(Constants.Pages.SearchResults.ToString());
             if (item != null)
