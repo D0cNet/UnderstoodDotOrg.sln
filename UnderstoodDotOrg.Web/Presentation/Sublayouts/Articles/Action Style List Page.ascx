@@ -28,7 +28,7 @@
                                     <sc:FieldRenderer ID="frActionTitle" runat="server" FieldName="Title" />
                                 </h3>
                             </div>
-                            <!-- <div class="clearfix"></div> -->
+                            <div class="clearfix"></div>
                             <div class="action-copy">
                                 <p>
                                     <%--Exercitationem exercitationem soluta similique libero voluptas. occaecati et est optio ab ut blanditiis et consequatur vero optio. natus aperiam porro blanditiis. et ut consequuntur quam et. est blanditiis sed sit voluptas molestiae odit--%>
