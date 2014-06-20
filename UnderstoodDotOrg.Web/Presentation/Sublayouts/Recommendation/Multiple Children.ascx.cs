@@ -129,6 +129,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
             }
         }
 
+        protected void btnRunPersonalied_Click(object sender, EventArgs e)
+        {
+            runPersonalization();
+        }
 
+        private void runPersonalization()
+        {
+            //http://understood.org.local/handlers/runpersonalizationservice.ashx?memberid={BFF9BFC7-32F4-43BC-828B-98A7385E17A6}
+            // AS IT WAS FOROLD IN PROPHECY
+            //Constants.HANDLER_TIMELY_DATE_QUERY_STRING//
+            ////run personalization for this user
+            Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
+            rps.ImpersonateSearchDate = uxCal.SelectedDate;
+            rps.UpdateMember(CurrentMember);
+        }
     }
 }

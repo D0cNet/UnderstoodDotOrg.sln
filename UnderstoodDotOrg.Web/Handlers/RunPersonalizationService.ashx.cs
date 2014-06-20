@@ -23,6 +23,16 @@ namespace UnderstoodDotOrg.Web.Handlers
         private DateTime _searchDate;
         private MembershipManager _membershipManager = new MembershipManager();
 
+        /// <summary>
+        /// Set the datetime that you want to impersonate
+        /// </summary>
+        public DateTime ImpersonateSearchDate 
+        {
+            set 
+            {
+                _searchDate = value;
+            }
+        }
         public void ProcessRequest(HttpContext context)
         {
             if (!HasAccessPrivileges(context))

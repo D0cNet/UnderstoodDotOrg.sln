@@ -35,6 +35,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
                 Constants.UserActivity_Types.FoundHelpfulVote);
             */
 
+            //     MembershipManager mgr = new MembershipManager();
+      
+            ////to say something was helpful
+            //mgr.LogMemberHelpfulVote(MemberId, ContentId, Constants.UserActivity_Values.FoundHelpful_True, Constants.UserActivity_Types.FoundHelpfulVote);
+            //// to say something was not helpful
+            //mgr.LogMemberHelpfulVote(MemberId, ContentId, Constants.UserActivity_Values.FoundHelpful_False , Constants.UserActivity_Types.FoundHelpfulVote);
+
+            ////to get IF a content item was helpful to this user
+            //ActivityLog log = new ActivityLog();
+            //bool washelpful = log.FoundItemHelpful(ContentId, MemberId);
+            ////to get if the content was NOT helpful
+            //bool wasNOThelpful = log.FoundItemNotHelpful(ContentId, MemberId);
+
+
+
+
             ActivityLog log = new ActivityLog(new Guid("810EBB87-14E1-4DAF-8EAE-F69E1754C640"), Constants.UserActivity_Values.Favorited);
 
             foreach (ActivityItem item in log.Activities)

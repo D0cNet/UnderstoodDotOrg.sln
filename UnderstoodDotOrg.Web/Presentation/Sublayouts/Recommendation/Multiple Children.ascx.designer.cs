@@ -40,6 +40,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation {
         protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder1;
         
         /// <summary>
+        /// uxCal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar uxCal;
+        
+        /// <summary>
+        /// btnRunPersonalied control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRunPersonalied;
+        
+        /// <summary>
         /// rptChildBasicInfo control.
         /// </summary>
         /// <remarks>
