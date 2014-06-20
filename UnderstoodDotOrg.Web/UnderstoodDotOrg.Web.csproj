@@ -735,13 +735,6 @@
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx.designer.cs">
       <DependentUpon>BlogFeaturePostWithBreadcrumb.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx.cs">
-      <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx.designer.cs">
-      <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\FollowButton.ascx.cs">
       <DependentUpon>FollowButton.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
