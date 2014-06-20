@@ -2429,7 +2429,7 @@
   font-size: 1.5rem;
   font-weight: normal;
   color: #7a4183;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 /* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
 .article-actions-copy p {
@@ -2489,7 +2489,7 @@
 .article-actions-copy .action-head {
   padding-top: 15px;
   vertical-align: center;
-  min-height: 32px;
+  min-height: 64px;
 }
 /* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
 .article-actions-copy .action-head h3 {
@@ -2511,20 +2511,18 @@
   /* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
   .article-actions-copy .action-head {
     margin-left: 40px;
-    padding-top: 10px;
+    padding-top: 0;
   }
 }
 /* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
 .article-actions-copy .action-copy {
   float: none;
   display: block;
-
-
 }
 @media (min-width: 650px) {
   /* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
   .article-actions-copy .action-copy {
-   
+    margin-top: -32px;
     margin-left: 40px;
     padding: 0 0 0 116px;
   }
@@ -2532,7 +2530,7 @@
 @media (min-width: 769px) {
   /* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
   .article-actions-copy .action-copy {
-   
+    margin-top: -50px;
   }
 }
 
