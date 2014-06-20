@@ -30,7 +30,7 @@
                         <input id="personalized-email-email" name="personalized-email-email" type="text" placeholder="<%= UnderstoodDotOrg.Common.DictionaryConstants.EnterEmailAddressWatermark %>" aria-required="true" />
                     </fieldset>
                     <div class="submit-button-wrap">
-                        <input type="submit" class="button" data-path="<%= NewsletterSignUpUrl %>" value="<%= UnderstoodDotOrg.Common.DictionaryConstants.SubscribeButtonText %>" />
+                        <input type="submit" class="button" data-path="<%= NewsletterSignUpUrl %>" value="<%= UnderstoodDotOrg.Common.DictionaryConstants.FooterNewsletterButtonText %>" />
                     </div>
                 </div>
 

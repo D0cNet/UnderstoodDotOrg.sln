@@ -980,13 +980,6 @@
     <Compile Include="Presentation\Sublayouts\Common\MoreToExplore.ascx.designer.cs">
       <DependentUpon>MoreToExplore.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Common\NewsletterSignup.ascx.cs">
-      <DependentUpon>NewsletterSignup.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Common\NewsletterSignup.ascx.designer.cs">
-      <DependentUpon>NewsletterSignup.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Page Topic.ascx.cs">
       <DependentUpon>Page Topic.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2694,7 +2687,6 @@
     <Content Include="Presentation\Sublayouts\Common\HeaderUtilityNav.ascx" />
     <Content Include="Presentation\Sublayouts\Common\More Carousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\MoreToExplore.ascx" />
-    <Content Include="Presentation\Sublayouts\Common\NewsletterSignup.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Page Topic.ascx" />
     <Content Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx" />

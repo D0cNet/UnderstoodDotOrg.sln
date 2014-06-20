@@ -888,6 +888,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string FooterNewsletterButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Footer Newsletter Button Text");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade
