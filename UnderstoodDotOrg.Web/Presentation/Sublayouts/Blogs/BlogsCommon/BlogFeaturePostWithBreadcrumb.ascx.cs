@@ -37,19 +37,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             get
             {   
                 BlogsPostPageItem blogPostItem = null;
-                if (!(Session["current_item"] is BlogsPostPageItem))
-                {
+                //if (!(Session["current_item"] is BlogsPostPageItem))
+                //{
                     var currItem = Sitecore.Context.Item;
                     if (currItem != null)
                     {
                         blogPostItem = new BlogsPostPageItem(currItem);
-                        Session["current_item"] = blogPostItem;
+                    //    Session["current_item"] = blogPostItem;
                     }
-                }
-                else
-                {
-                    blogPostItem= Session["current_item"] as BlogsPostPageItem;
-                }
+                //}
+                //else
+                //{
+                //    blogPostItem= Session["current_item"] as BlogsPostPageItem;
+                //}
                 return blogPostItem;
             }
         }

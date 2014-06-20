@@ -17,12 +17,14 @@
             <div class="blog-feature-description">
 
 
-                <h2>Sequi Dolores Beatae</h2>
+                <h2>
+                    <asp:Literal Text="" ID="litBlogtitle" runat="server" /></h2>
 
 
 
 
-                <p class="blog-description-blurb">Ratione Velit Itaque Dicta Repellat. Quaerat Maiores Atque Corporis Quidem Laborum. Quo Ipsum Sunt Provident Minus. Beatae Enim Inventore Consequatur Velit Est Ullam Quia Quia</p>
+                <p class="blog-description-blurb">
+                    <asp:Literal Text="" ID="litBlogDescription" runat="server" /></p>
             </div>
         </div>
         <div class="col col-4 blog-feature-follow-blog">

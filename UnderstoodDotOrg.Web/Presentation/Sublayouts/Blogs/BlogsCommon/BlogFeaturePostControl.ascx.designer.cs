@@ -13,6 +13,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
     public partial class BlogFeaturePostControl {
         
         /// <summary>
+        /// litBlogtitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litBlogtitle;
+        
+        /// <summary>
+        /// litBlogDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litBlogDescription;
+        
+        /// <summary>
         /// follBtn control.
         /// </summary>
         /// <remarks>
