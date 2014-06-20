@@ -603,6 +603,7 @@ namespace UnderstoodDotOrg.Common
             public const string EventStartDateUtc = "_event_start_date_utc";
             public const string EventEndDateUtc = "_event_end_date_utc";
             public const string SourceItem = "source_item";
+            public const string GradeRating = "_grade_rating";
         }
 
         public static class ArticleTags
@@ -706,6 +707,9 @@ namespace UnderstoodDotOrg.Common
             public static string EventArchiveEndpoint = "EventArchiveEndpoint";
             public static string FacebookAppId = "FacebookAppId";
             public static string ExpertListingEndpoint = "ExpertListingEndpoint";
+            public static string GradeLevelOnMultiplier = "GradeLevelOnMultiplier";
+            public static string GradeLevelOffMultiplier = "GradeLevelOffMultiplier";
+            public static string GradeLevelTargetMultiplier = "GradeLevelTargetMultiplier";
         }
 
         public static class ContentItem

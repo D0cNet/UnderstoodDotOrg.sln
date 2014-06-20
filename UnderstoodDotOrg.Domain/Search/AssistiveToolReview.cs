@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
@@ -25,6 +26,9 @@ namespace UnderstoodDotOrg.Domain.Search
 
         [IndexField("learning")]
         public int LearningRating { get; set; }
+
+        [IndexField(Constants.SolrFields.GradeRating)]
+        public int GradeRating { get; set; }
 
         [IndexField("publish_date")]
         public DateTime PublishDate { get; set; }

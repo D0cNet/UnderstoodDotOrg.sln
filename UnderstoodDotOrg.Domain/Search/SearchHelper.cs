@@ -977,7 +977,7 @@ namespace UnderstoodDotOrg.Domain.Search
                 switch (sortOption)
                 {
                     case SortOptions.AssistiveToolsSortOptions.GradeLevel:
-                        
+                        query = query.OrderByDescending(i => i.GradeRating);
                         break;
                     case SortOptions.AssistiveToolsSortOptions.LearningRating:
                         query = query.OrderByDescending(i => i.LearningRating);
