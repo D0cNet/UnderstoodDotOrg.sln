@@ -67,14 +67,14 @@
                                             <!-- BEGIN PARTIAL: decision-lite/dl-list-item -->
                                             <div class="search-result rs_read_this<%# Container.ItemIndex % 3 == 0 ? " item-four" : string.Empty %>" 
                                                 aria-role="main">
-                                                <button class="result-body rs_preserve">
+                                                <div class="result-body rs_preserve" tabindex="0">
                                                     <div class="result-topic"><%# Item.ContentPage.PageTitle.Rendered %></div>
                                                     <div class="result-hover">
                                                         <div class="hover-link-wrapper">
                                                             <a href="<%# Item.GetStartUrl() %>" class="topic-question"><%# Item.ContentPage.PageTitle.Rendered %></a>
                                                         </div>
                                                     </div>
-                                                </button>
+                                                </div>
                                                 <span class="children-key">
                                                     <ul>
                                                         <li><i class='child-e' title='CHILD NAME HERE'></i></li>

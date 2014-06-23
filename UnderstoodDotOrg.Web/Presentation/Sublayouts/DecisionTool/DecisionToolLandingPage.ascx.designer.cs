@@ -13,15 +13,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.DecisionTool {
     public partial class DecisionToolLandingPage {
         
         /// <summary>
-        /// sbCommentsSummary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbCommentsSummary;
-        
-        /// <summary>
         /// rptrCategories control.
         /// </summary>
         /// <remarks>
