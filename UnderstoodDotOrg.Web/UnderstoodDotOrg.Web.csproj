@@ -2105,6 +2105,7 @@
     <Content Include="Presentation\Includes\css\layout-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\modules-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\oasis.css" />
+    <Content Include="Presentation\Includes\css\print.css" />
     <Content Include="Presentation\Includes\css\recommendations-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\recommendations.css" />
     <Content Include="Presentation\Includes\css\simulations\common\common.css" />
