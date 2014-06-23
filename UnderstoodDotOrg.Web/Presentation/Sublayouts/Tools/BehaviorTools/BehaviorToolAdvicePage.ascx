@@ -12,15 +12,15 @@
     <h2><sc:FieldRenderer ID="frTitle" runat="server" FieldName="Tip Title" /></h2>
   </header>
   <section class="tip-detail-content">
-    <h3 class="first-sub-header">What you can do</h3>
+    <h3 class="first-sub-header"><%= UnderstoodDotOrg.Common.DictionaryConstants.WhatYouCanDoLabel %></h3>
     <sc:FieldRenderer ID="frWhatYouCanDo" runat="server" FieldName="What You Can Do" />
   </section> <!-- end tip-detail-content -->
   <section class="tip-detail-content">
-    <h3>What you can say</h3>
+    <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.WhatYouCanSayLabel %></h3>
     <sc:FieldRenderer ID="frWhatYouCanSay" runat="server" FieldName="What You Can Say" />
   </section> <!-- end tip-detail-content -->
   <section class="tip-detail-content no-border">
-    <h3>Why this will help</h3>
+    <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.WhyThisWillHelpLabel %></h3>
     <sc:FieldRenderer ID="frWhyThisWillHelp" runat="server" FieldName="Why This Will Help" />
   </section> <!-- end tip-detail-content -->
 </div> <!-- end behavior-tip-detail -->

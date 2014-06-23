@@ -896,6 +896,46 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string MoreLikeThisLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "More Like This Label");
+            }
+        }
+
+        public static string InThisVideoLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "In This Video Label");
+            }
+        }
+
+        public static string WhatYouCanDoLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "What You Can Do Label");
+            }
+        }
+
+        public static string WhatYouCanSayLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "What You Can Say Label");
+            }
+        }
+
+        public static string WhyThisWillHelpLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Why This Will Help Label");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

@@ -17,7 +17,7 @@
       </div>
   </div> <!-- end expert-video -->
   <div class="in-this-video">
-    <h2>In this video</h2>
+    <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.InThisVideoLabel %></h2>
     <sc:FieldRenderer runat="server" FieldName="Video Description" />
   </div> <!-- end in-this-video -->
 </div> <!-- end expert-advice-wrapper -->
