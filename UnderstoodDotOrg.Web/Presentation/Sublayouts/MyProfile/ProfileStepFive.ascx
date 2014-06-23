@@ -14,7 +14,7 @@
                     </p>
                     <p class="subtitle">
                         <sc:text field="Take Me Back Text" runat="server" />
-                        <a href="REPLACE">
+                        <a href=""> <!-- session-based reference link -->
                             <sc:text field="Link Page Title Text" runat="server" />
                         </a>
                     </p>

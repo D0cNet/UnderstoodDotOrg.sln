@@ -21,9 +21,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (CurrentMember.ScreenName == null)
+            if (string.IsNullOrEmpty(CurrentMember.ScreenName))
             {
                 pnlNoProfile.Visible = true;
+                //TODO: add navigate URL for hypCompleteYourProfile
             }
             else
             {
