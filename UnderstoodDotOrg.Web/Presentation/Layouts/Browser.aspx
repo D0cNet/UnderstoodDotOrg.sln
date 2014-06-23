@@ -4,10 +4,8 @@
 
 <%@ OutputCache Location="None" VaryByParam="none" %>
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
-<!--[if gte IE 9]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="en"><![endif]-->
+<!--[if gte IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
 <head runat="server">
@@ -52,6 +50,8 @@
 <link href="/Presentation/includes/css/homepage-nonresponsive.css" rel="stylesheet" />
 <link href="/Presentation/includes/css/uniform-understood-nonresponsive.css" rel="stylesheet" />
   <![endif]-->
+
+    <link href="/Presentation/includes/css/print.css" media="print" rel="stylesheet" />
 
     <script src="/Presentation/includes/js/vendor/modernizr.custom.js"></script>
 </head>
@@ -116,10 +116,10 @@
         <script src="/Presentation/includes/js/vendor/jquery.placeholder.min.js"></script>
         <script src="/Presentation/includes/js/vendor/jquery.ellipsis.min.js"></script>
         <script src="/Presentation/includes/js/vendor/jquery.zclip.min.js"></script>
-        <%--<script src="Presentation/includes/js/vendor/hyphenate.min.js"></script>--%>
+        <script src="/Presentation/includes/js/vendor/hyphenate.min.js"></script>
         <script src="/Presentation/includes/js/vendor/json2.js"></script>
         <script src="/Presentation/includes/js/vendor/handlebars-v1.3.0.js"></script>
-        <%--<script src="http://misc.readspeaker.com/user/richard/customers/7171/_MIN/ReadSpeaker.js?pids=embhl,custom"></script>--%>
+        <script src="http://f1.na.readspeaker.com/script/7171/ReadSpeaker.js?pids=embhl,custom"></script>
         <script src="/Presentation/includes/js/site.js"></script>
         <script src="/Presentation/includes/js/modules.js"></script>
         <asp:literal runat="server" id="footerSectionJS"></asp:literal>
