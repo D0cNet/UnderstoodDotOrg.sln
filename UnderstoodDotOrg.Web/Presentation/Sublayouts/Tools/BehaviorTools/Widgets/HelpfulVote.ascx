@@ -5,10 +5,10 @@
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="helpful-yes">Yes</button>
+      <asp:Button ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button helpful-yes" runat="server"/>
     </li>
     <li>
-      <button class="helpful-no">No</button>
+      <asp:Button ID="btnUnlike" OnClick="btnDidntHelp_Click" CssClass="button helpful-no" runat="server"/>
     </li>
   </ul>
   <div class="clearfix"></div>
