@@ -22,22 +22,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
         protected global::System.Web.UI.WebControls.Panel pnlReviewBy;
         
         /// <summary>
-        /// hlReviewdby control.
+        /// hlReviewedBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlReviewdby;
+        protected global::System.Web.UI.WebControls.HyperLink hlReviewedBy;
         
         /// <summary>
-        /// frReviewedby control.
+        /// frReviewedBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frReviewedby;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frReviewedBy;
         
         /// <summary>
         /// uxReviewDate control.

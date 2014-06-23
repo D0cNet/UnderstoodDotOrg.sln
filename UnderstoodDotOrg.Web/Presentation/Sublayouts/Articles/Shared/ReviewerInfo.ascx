@@ -3,15 +3,13 @@
 <asp:Panel runat="server" ID="pnlReviewBy" Visible="false">
 <p class="reviewed-by" runat="server">
     <span class="reviewed-by-title">Reviewed&nbsp;by</span> <span class="reviewed-by-author">
-        <%--<a href="REPLACE">Dr. Samantha Frank</a>--%>
-        <asp:HyperLink ID="hlReviewdby" runat="server">
-            <sc:FieldRenderer ID="frReviewedby" runat="server" FieldName="Reviewer Name" />
+        <asp:HyperLink ID="hlReviewedBy" runat="server">
+            <sc:FieldRenderer ID="frReviewedBy" runat="server" FieldName="Expert Name" />
         </asp:HyperLink>
     </span>
     <asp:Placeholder ID="uxReviewDate" runat="server" Visible="false">
         <span class="dot"></span>
         <span class="reviewed-by-date">
-            <%--12&nbsp;Dec&nbsp;&apos;13 --%>
             <sc:Date ID="dtReviewdDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />
         </span>
     </asp:Placeholder>
