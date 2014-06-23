@@ -141,7 +141,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
             //Constants.HANDLER_TIMELY_DATE_QUERY_STRING//
             ////run personalization for this user
             Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
-            rps.ImpersonateSearchDate = uxCal.SelectedDate;
+
+            if (uxCal.SelectedDate != null)
+            {
+                rps.ImpersonateSearchDate = uxCal.SelectedDate;
+            }
             rps.UpdateMember(CurrentMember);
         }
     }
