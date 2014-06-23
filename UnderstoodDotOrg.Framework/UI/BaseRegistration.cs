@@ -13,9 +13,9 @@ namespace UnderstoodDotOrg.Framework.UI
 {
     public class BaseRegistration : BaseSublayout
     {
-        public BaseRegistration()
+        public BaseRegistration() : base()
         {
-            this.Load += new EventHandler(this.Page_Load);
+            this.Load += BaseRegistration_Load;
         }
 
         private string sessionKey = "understood_org_registering_user";
@@ -53,7 +53,7 @@ namespace UnderstoodDotOrg.Framework.UI
         }
 
 
-        public void Page_Load(object sender, EventArgs e)
+        public void BaseRegistration_Load(object sender, EventArgs e)
         {
             string facebookId = "var fbAppId = '{0}';";
             string appId = ConfigurationManager.AppSettings[Constants.Settings.FacebookAppId];
