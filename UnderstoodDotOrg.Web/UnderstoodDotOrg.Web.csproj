@@ -1325,6 +1325,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Errors\NotFoundPage.ascx.cs">
       <DependentUpon>NotFoundPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Errors\NotFoundPage.ascx.designer.cs">
       <DependentUpon>NotFoundPage.ascx</DependentUpon>
@@ -2886,6 +2887,7 @@
     <None Include="Properties\PublishProfiles\Local.pubxml">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DigitalPulpHTML\" />
