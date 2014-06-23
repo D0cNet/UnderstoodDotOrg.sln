@@ -26,12 +26,12 @@
                         <div class="col col-11 event-card">
                             <div class="event-card-info group">
                                 <div class="event-card-image">
-                                    <a href="REPLACE">
+                                    <asp:HyperLink ID="hlExpertPicture" runat="server">
                                         <asp:Image ID="imgExpert" runat="server" />
                                         <div class="image-label">
                                             Expert
                                         </div>
-                                    </a>
+                                    </asp:HyperLink>
                                 </div>
                                 <!-- end .event-card-image -->
                                 <div class="event-card-content">

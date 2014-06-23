@@ -28,7 +28,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             }
             BlogPostsRepeater.DataSource = dataSource;
             BlogPostsRepeater.DataBind();
-
         }
     }
 }
