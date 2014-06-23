@@ -461,6 +461,10 @@ namespace UnderstoodDotOrg.Common
             {
                 get { return new Guid("{DEFA8570-6402-4FC8-A32E-D769F1F6EE0B}"); }
             }
+            public static Guid CommunityRegistrationPage
+            {
+                get { return new Guid("{EE8EF105-6F7D-4389-B20D-4ECAD8703F70}"); }
+            }
         }
 
         #endregion

@@ -52,10 +52,10 @@ namespace UnderstoodDotOrg.Services.AccessControlServices
                         else
                         {
                             
-                            if (page.CurrentMember.ScreenName == null)
+                            if (String.IsNullOrEmpty (page.CurrentMember.ScreenName))
                             {
                                 //Redirect to complete profile
-                                page.Page.Response.Redirect(page.CurrentMember.GetMemberPublicProfile());
+                                page.Page.Response.Redirect(page.CurrentMember.GetCommuityRegistrationProfile());
                             }
 
 
