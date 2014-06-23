@@ -1160,5 +1160,11 @@ namespace UnderstoodDotOrg.Common
                return @"We're sorry we don't know enough about your situation to make a recommendation. For a list of group recommendations, complete your full profile (link to profile process). Already a member? <a href='{0}'>Sign In</a>";
            }
        }
+
+       public static string ConnectBtnText { get { return "Connect"; } }
+       public static string ViewActivity { get { return "View Activity"; } }
+       public static string RequestSent { get { return "Request Sent"; } }
+
+       
     }
 }

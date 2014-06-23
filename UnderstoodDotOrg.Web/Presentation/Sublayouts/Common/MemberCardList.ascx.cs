@@ -53,6 +53,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
                     }
 
+                    HtmlAnchor profileLink = (HtmlAnchor)e.Item.FindControl("hrefProfileLink");
+                    if(profileLink!=null)
+                    {
+                        profileLink.HRef = ((MemberCardModel)e.Item.DataItem).ProfileLink;
+                    }
+
                     HtmlControl divImg = (HtmlControl)e.Item.FindControl("lblImg");
                     Literal userlbl = (Literal)e.Item.FindControl("UserLabel");
                     if (userlbl != null)
@@ -69,12 +75,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
 
                     }
-                    Button btnConnect = (Button)e.Item.FindControl("btnConnect");
+                    ConnectButton btnConnect = (ConnectButton)e.Item.FindControl("connectBtn");
                     if (btnConnect != null)
                     {
 
-                        btnConnect.Visible = ((MemberCardModel)e.Item.DataItem).Contactable;
-
+                        if (((MemberCardModel)e.Item.DataItem).Contactable)
+                        {
+                            btnConnect.Visible = true;
+                            btnConnect.LoadState(((MemberCardModel)e.Item.DataItem).UserName);
+                        }
+                        else
+                            btnConnect.Visible = false;
 
                     }
 
@@ -130,5 +141,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             DataSource = new List<MemberCardModel>();
         }
+
+       
     }
 }

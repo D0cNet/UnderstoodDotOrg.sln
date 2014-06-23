@@ -42,6 +42,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+          
             rptGroupCards = (GroupSummaryList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupSummaryList.ascx");
             rptGroupCards.ID = "rptGroupCards";
             groupList.Controls.Add(rptGroupCards);

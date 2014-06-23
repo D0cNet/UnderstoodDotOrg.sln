@@ -34,6 +34,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                     this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
                     this.UserName = m.ScreenName;
                     this.Contactable = m.allowConnections;
+                    this.ProfileLink = m.GetMemberPublicProfile();
                     if (badgesPop != null)
                         Badges = badgesPop(m.ScreenName);
                 }
@@ -56,6 +57,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                     this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
                     this.UserName = m.ScreenName;
                     this.Contactable = m.allowConnections;
+                    this.ProfileLink = m.GetMemberPublicProfile();
                     if (badgesPop != null)
                         Badges = badgesPop(username);
                 }
@@ -71,5 +73,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         public List<UserBadgeModel> Badges{get;set;}
 
         public bool Contactable { get; set; }
+
+        public string ProfileLink { get; set; }
     }
 }

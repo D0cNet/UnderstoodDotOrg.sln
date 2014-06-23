@@ -78,7 +78,7 @@
     <div class="col col-24">
         
     <%--  <a class="show-more-link " runat="server" id="showmore"  onserverclick="ShowMore_ServerClick" href="#" data-path="community/member-cards" data-container="parents-member-cards" data-item="member-card" data-count="20">Show More<i class="icon-arrow-down-blue"></i></a>--%>
-        <asp:LinkButton  CssClass="show-more-link" ID="showmore"   ClientIDMode="Static" OnClientClick="return false;"  data-path="community/member-cards" data-container="parents-member-cards" data-item="member-card" data-count="20"  runat="server" >Show More<i class="icon-arrow-down-blue"></i></asp:LinkButton>
+        <asp:LinkButton   ID="showmore"  ClientIDMode="Static"  data-path="community/member-cards" data-container="parents-member-cards" data-item="member-card" data-count="20"  runat="server" >Show More<i class="icon-arrow-down-blue"></i></asp:LinkButton>
     </div>
   </div>
 </div><!-- .show-more -->

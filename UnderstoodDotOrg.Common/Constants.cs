@@ -638,12 +638,20 @@ namespace UnderstoodDotOrg.Common
             public static string Webinar = "{EF7DB9F7-3FC2-4267-805F-1482CB94F40D}";
         }
 
-        public enum TelligentRole
+       
+
+
+        public enum UserPermission
         {
-            Expert,
+            CommunityUser,
+            RegisteredUser,
+            AnonymousUser,
+            AdminUser,
             Moderator,
             Blogger,
-            Member
+            Expert
+
+
         }
 
         #region Notification templates and types
@@ -672,20 +680,7 @@ namespace UnderstoodDotOrg.Common
             }
         }
         #endregion
-        public static class TelligentConversationStatus
-        {
-            public const string NotSet = "NotSet";
-            public const string Read = "Read";
-            public const string Unread = "Unread";
-        }
-        public static class TelligentFieldNames
-        {
-            public const string BlogId = "BlogId";
-            public const string BlogPostId = "BlogPostId";
-            public const string ContentId = "ContentId";
-            public const string TelligentUrl = "TelligentUrl";
-            public const string ContentTypeId = "ContentTypeId";
-        }
+    
 
         public static class Settings
         {
@@ -892,6 +887,33 @@ namespace UnderstoodDotOrg.Common
             Page,
             Weblog,
             Blog
+        }
+        public static class TelligentConversationStatus
+        {
+            public const string NotSet = "NotSet";
+            public const string Read = "Read";
+            public const string Unread = "Unread";
+        }
+        public static class TelligentFieldNames
+        {
+            public const string BlogId = "BlogId";
+            public const string BlogPostId = "BlogPostId";
+            public const string ContentId = "ContentId";
+            public const string TelligentUrl = "TelligentUrl";
+            public const string ContentTypeId = "ContentTypeId";
+        }
+        public enum TelligentRole
+        {
+            Expert,
+            Moderator,
+            Blogger,
+            Member
+        }
+        public enum TelligentFriendStatus
+        {
+            NotSpecified,
+            Pending,
+            Approved
         }
     }
 }

@@ -67,14 +67,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                     rptGroups.DataSource = groupsList;
                     rptGroups.DataBind();
                 }
-
-                if (thisMember.allowConnections)
+                if (CurrentMember != null) //must check if a user is logged in
                 {
-                    if (IsUserLoggedIn)
+                    if (!String.IsNullOrEmpty(CurrentMember.ScreenName)) //Then check for a screenName, because it is used further down
                     {
-                        if (CurrentMember.ScreenName == thisMember.ScreenName)
+
+
+                        if (thisMember.allowConnections)
                         {
-                            SetVisibilityBasedOnViewMode();
+                            if (IsUserLoggedIn)
+                            {
+                                if (CurrentMember.ScreenName == thisMember.ScreenName)
+                                {
+                                    SetVisibilityBasedOnViewMode();
+                                }
+                                else
+                                {
+                                    if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
+                                    {
+                                        Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl() + "?" + Request.QueryString);
+                                    }
+                                    divNotConnected.Visible = true;
+                                }
+                            }
+                            else
+                            {
+                                divNotSignedIn.Visible = true;
+                            }
                         }
                         else
                         {
@@ -82,21 +101,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                             {
                                 Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl() + "?" + Request.QueryString);
                             }
-                            divNotConnected.Visible = true;
+                            divPrivateProfile.Visible = true;
                         }
                     }
-                    else
-                    {
-                        divNotSignedIn.Visible = true;
-                    }
-                }
-                else
-                {
-                    if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
-                    {
-                        Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl() + "?" + Request.QueryString);
-                    }
-                    divPrivateProfile.Visible = true;
                 }
             }
             else

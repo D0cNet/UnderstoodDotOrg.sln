@@ -1452,10 +1452,10 @@ namespace UnderstoodDotOrg.Services.TelligentService
             }
             return success;
         }
-        public static bool CreateFriendRequest(string requestor,string requesteeID,string message)
+        public static bool CreateFriendRequest(string requestor,string requestee,string message)
         {
             bool success = false;
-
+            string requesteeID = ReadUserId(requestee);
             if ((!string.IsNullOrEmpty(requestor) && !string.IsNullOrEmpty(requesteeID)) && !string.IsNullOrEmpty(message))
             {
                 using (WebClient client = new WebClient())
@@ -1476,6 +1476,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         XmlNode childNode = document.SelectSingleNode("Response/Friendship");
                         if (childNode != null)
                         {
+                            //Send mail to user 
                             success = true;
                         }
                     }
@@ -1529,6 +1530,81 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
             return success;
         }
+        public static Constants.TelligentFriendStatus IsFriend(string requestor, string requestee)
+        {
+            Constants.TelligentFriendStatus stat = Constants.TelligentFriendStatus.NotSpecified;
+            //Two API calls required: Friend or Pending, otherwise not connected as default
+            if ((!string.IsNullOrEmpty(requestor) && !string.IsNullOrEmpty(requestee)) )
+            {
+                var requestorID = ReadUserId(requestor);
+                var requesteeID = ReadUserId(requestee);
+                string address = String.Empty;
+                using (WebClient client = new WebClient())
+                {
+                    try
+                    {
+                        client.Headers.Add("Rest-User-Token", TelligentAuth());
+                        address = string.Format(GetApiEndPoint("users/{0}/friends.xml?FriendshipState={1}"), requestorID, Constants.TelligentFriendStatus.Approved.ToString());
+                       
+                        ///Approved??
+                        //data["FriendshipState"] = Constants.TelligentFriendStatus.Approved.ToString();
+                        string xml = Encoding.UTF8.GetString(client.DownloadData(address));
+                        XmlDocument document = new XmlDocument();
+                        document.LoadXml(xml);
+                        XmlNode childNode = document.SelectSingleNode("Response/Friendships");
+                        if (childNode != null)
+                        {
+                           //Check child node if requesteeID is in the list
+                            foreach (XmlNode friend in childNode)
+                            {
+                                if (friend.SelectSingleNode("RequestorId").InnerText.Trim() == requesteeID 
+                                    || friend.SelectSingleNode("RequesteeId").InnerText.Trim() == requesteeID)
+                                {
+                                    stat = Constants.TelligentFriendStatus.Approved;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (stat != Constants.TelligentFriendStatus.Approved)
+                        {
+                            ///Pending
+                            address = string.Format(GetApiEndPoint("users/{0}/friends.xml?FriendshipState={1}"), requestorID, Constants.TelligentFriendStatus.Pending.ToString());
+
+                            xml = Encoding.UTF8.GetString(client.DownloadData(address));
+                            document = new XmlDocument();
+                            document.LoadXml(xml);
+                            childNode = document.SelectSingleNode("Response/Friendships");
+                            if (childNode != null)
+                            {
+                                //Check child node if requesteeID is in the list
+                                foreach (XmlNode friend in childNode)
+                                {
+                                    if (friend.SelectSingleNode("RequestorId").InnerText.Trim() == requesteeID
+                                        || friend.SelectSingleNode("RequesteeId").InnerText.Trim() == requesteeID)
+                                    {
+                                        stat = Constants.TelligentFriendStatus.Pending;
+                                        break;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        //success = false;
+                        stat = Constants.TelligentFriendStatus.NotSpecified;
+                        Sitecore.Diagnostics.Error.LogError("Error in IsFriend function.\nError:\n" + ex.Message);
+                    }
+                }
+
+            }
+
+
+            return stat;
+        }
+
     }
 
 }

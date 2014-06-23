@@ -9,7 +9,7 @@ using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
-using UnderstoodDotOrg.Services.CommunityServices;
+using UnderstoodDotOrg.Services.AccessControlServices;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -69,9 +69,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     this.CurrentMember = currentMember;
                     this.CurrentUser = membershipManager.GetUser(currentMember.MemberId, true);
 
+                    //Redirect used here for profile??
+                    this.ReturnRedirect();
+
                     var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccount);
-                    
-                    Response.Redirect(AccessControlService.GetReferrerUrl(this)?? Sitecore.Links.LinkManager.GetItemUrl(item));
+
+                    Response.Redirect(Sitecore.Links.LinkManager.GetItemUrl(item));
                 }
             }
             catch (Exception ex)

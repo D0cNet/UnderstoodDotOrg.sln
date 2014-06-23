@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MemberCardList.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.MemberCardList" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/ConnectButton.ascx" TagName="ConnectButton" TagPrefix="CommonUC" %>
 <style type="text/css">
    .community-badges ul {
         margin: 0;
@@ -17,7 +18,7 @@
 </style>
 
 <%-- Used another repeater because of dynamic datasourcing--%>
-<asp:ListView ID="rptMemberCards" ClientIDMode="Static"  runat="server">
+<asp:ListView ID="rptMemberCards"  ClientIDMode="Static"  runat="server">
     <EmptyDataTemplate>
         <asp:Label  ID="txtEmpty" runat="server"></asp:Label>
     </EmptyDataTemplate>
@@ -27,7 +28,7 @@
             <div class="col member-card">
                 <div class="member-card-info group">
                     <div class="member-card-image">
-                        <a href="REPLACE">
+                        <a href="REPLACE"  id="hrefProfileLink" runat="server">
                             <%--<img alt="150x150 Placeholder" src="http://placehold.it/150x150" />--%>
                             <asp:Image ImageUrl="#" Width="126px" Height="126px" ID="UserAvatar" runat="server" />
                             <div class="image-label" id="lblImg" visible="false" runat="server">
@@ -47,7 +48,7 @@
                             <HeaderTemplate><ul class="user-badges"></HeaderTemplate>
                             <ItemTemplate>
                                 <li>
-                                    <asp:Image ImageUrl='<%# Eval("ImageUrl") %>' Width="20px" Height="20px" ID="imgBadgeIcon" AlternateText='<%# Eval("Name")%> ' runat="server" />
+                                   <a  title='<%# Eval("Name")%>' runat="server"><asp:Image ImageUrl='<%# Eval("ImageUrl") %>' Width="20px" Height="20px" ID="imgBadgeIcon"  AlternateText='<%# Eval("Name")%> ' runat="server" /> </a> 
                                 </li>
                             </ItemTemplate>
                             <FooterTemplate></ul></FooterTemplate>
@@ -63,8 +64,8 @@
                     <div class="card-buttons member">
                 
                         <%--<button type="button" runat="server" class="button">Connect</button>--%>
-                        <asp:Button Text="Connect" ID="btnConnect" CssClass="button" Visible="false"  runat="server" />
-                
+                        <%-- <asp:Button Text="Connect" ID="btnConnect" CommandName="Connect" CommandArgument='<%# Eval("UserName") %>' CssClass="button" Visible="false"  runat="server" />--%>
+                        <CommonUC:ConnectButton runat="server"  ID="connectBtn" />
                     </div><!-- end .member.card-buttons -->
             
                 </div><!-- end .member-card-info -->  

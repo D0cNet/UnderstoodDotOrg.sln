@@ -11,47 +11,61 @@ using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
 using UnderstoodDotOrg.Services.MemberServices;
+using UnderstoodDotOrg.Framework.UI;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
 
-    public partial class All_Parents_Search : System.Web.UI.UserControl
+    public partial class All_Parents_Search : BaseSublayout//System.Web.UI.UserControl
     {
+        private int ResultCount
+        {
+            get
+            {
+                return (Int32)ViewState["_resultCount"];
+            }
+            set
+            {
+                ViewState["_resultCount"] = value;
+            }
+        }
+        public int ResultSet { get { return 16; } }
+
         MemberCardList rptMemberCards;
-        Member member1 = new Member()
-                {
-                    allowConnections = true,
-                    FirstName = "adolph",
-                    LastName = "rudolph",
-                    ScreenName = "PosesHoratio",
-                    ZipCode="55555",
-                     Interests = new List<Interest>(){
-                          new Interest(){
-                               Key=new Guid("{E9194DCB-1A67-4CFF-A8A4-B799639AFADC}"),
-                               Value="Growing Up"
-                          }
-                     },
-                    Children = new List<Child>(){
-                                    new Child(){ 
-                                        Grades=new List<Grade>(){
-                                        new Grade(){Value="7", Key=Constants.GradesByValue["7"] },
-                                        }, 
-                                        Gender="Male",
-                                        Issues = new List<Issue>()
-                                        {
-                                            new Issue(){
-                                                 Key=new Guid("{28BB0311-D062-48F0-BEDF-C2D74EB6737E}"),
-                                                Value="Hyperactivity or Impulsivity"
-                                            },
-                                            new Issue(){
-                                                Key=new Guid("{1D338D37-CF4E-4C1C-9499-EBA6C0A2BBA0}"),
-                                                Value="Math"
-                                            }
-                                        }
+        //Member member1 = new Member()
+        //        {
+        //            allowConnections = true,
+        //            FirstName = "adolph",
+        //            LastName = "rudolph",
+        //            ScreenName = "PosesHoratio",
+        //            ZipCode="55555",
+        //             Interests = new List<Interest>(){
+        //                  new Interest(){
+        //                       Key=new Guid("{E9194DCB-1A67-4CFF-A8A4-B799639AFADC}"),
+        //                       Value="Growing Up"
+        //                  }
+        //             },
+        //            Children = new List<Child>(){
+        //                            new Child(){ 
+        //                                Grades=new List<Grade>(){
+        //                                new Grade(){Value="7", Key=Constants.GradesByValue["7"] },
+        //                                }, 
+        //                                Gender="Male",
+        //                                Issues = new List<Issue>()
+        //                                {
+        //                                    new Issue(){
+        //                                         Key=new Guid("{28BB0311-D062-48F0-BEDF-C2D74EB6737E}"),
+        //                                        Value="Hyperactivity or Impulsivity"
+        //                                    },
+        //                                    new Issue(){
+        //                                        Key=new Guid("{1D338D37-CF4E-4C1C-9499-EBA6C0A2BBA0}"),
+        //                                        Value="Math"
+        //                                    }
+        //                                }
                                                  
-                                    }
+        //                            }
                                               
-                                }
-                };
+        //                        }
+        //        };
 
         protected override void OnInit(EventArgs e)
             {
@@ -62,7 +76,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 base.OnInit(e);
             }
 
-        void showmore_Click(object sender, EventArgs e)
+        protected void showmore_Click(object sender, EventArgs e)
         {
             ShowMore();
         }
@@ -74,14 +88,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
             if (!IsPostBack)
             {
-         
+
                 Item currItem = Sitecore.Context.Item;
-                 Item[] items =null;
+                Item[] items = null;
+                ResultCount = 16;
                 //Child Issue Drop List
                 Sitecore.Data.Fields.MultilistField childIssues = currItem.Fields["Child Issues"];
                 if (childIssues != null)
                 {
-                   items= childIssues.GetItems();
+                    items = childIssues.GetItems();
 
                     foreach (var item in items)
                     {
@@ -110,7 +125,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
                 MembershipManager mem = new MembershipManager();
 
+                //Get all members
                 List<Member> members = mem.GetMembers().Where(m => !String.IsNullOrEmpty(m.ScreenName)).ToList<Member>();
+                if (CurrentMember != null)
+                {
+                    if (!String.IsNullOrEmpty(CurrentMember.ScreenName))
+                    {
+                        //All members except current logged in user
+                        members = mem.GetMembers().Where(m => !String.IsNullOrEmpty(m.ScreenName)).Where(m => m.ScreenName.Trim() != CurrentMember.ScreenName.Trim()).ToList<Member>();
+                    }
+                }
+
 
                 Session["members"] = members;
 
@@ -125,14 +150,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 //////////////////////////////////////////////////////////
 
 
-                List<MemberCardModel> memberCardSrc = members.Select(m => new MemberCardModel(m,User.GetUserBadges)).ToList<MemberCardModel>();
+                List<MemberCardModel> memberCardSrc = members.Select(m => new MemberCardModel(m, User.GetUserBadges)).ToList<MemberCardModel>();
 
                 Session["members_parents"] = memberCardSrc;
-                rptMemberCards.DataSource = memberCardSrc.Take(16).ToList<MemberCardModel>();
+                rptMemberCards.DataSource = memberCardSrc.Take(ResultCount).ToList<MemberCardModel>();
                 rptMemberCards.DataBind();
 
             }
-            
+         
         }
 
        
@@ -215,8 +240,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
 
                 }
-
-                return workingSet.Select(m => new MemberCardModel(m)).ToList<MemberCardModel>();
+                var memberModels = workingSet.Select(m => new MemberCardModel(m,User.GetUserBadges)).ToList<MemberCardModel>();
+                Session["members_parents"] = memberModels;
+                return memberModels;
 
             }
             return null;
@@ -231,10 +257,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
                 if (mems != null)
                 {
-                    rptMemberCards.DataSource = mems;
+                    ResultCount += ResultSet;
+                    rptMemberCards.DataSource = mems.Take(ResultCount).ToList();
                     rptMemberCards.DataBind();
 
-                    showmore.Visible = false;
+                    //If at the end of result set
+                    if(mems.Count()<= ResultCount)
+                        showmore.Visible = false;
                 }
         }
 

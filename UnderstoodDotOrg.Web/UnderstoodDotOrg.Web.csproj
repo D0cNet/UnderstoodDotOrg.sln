@@ -728,6 +728,13 @@
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx.designer.cs">
       <DependentUpon>BlogFeaturePostWithBreadcrumb.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ConnectButton.ascx.cs">
+      <DependentUpon>ConnectButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ConnectButton.ascx.designer.cs">
+      <DependentUpon>ConnectButton.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\FollowButton.ascx.cs">
       <DependentUpon>FollowButton.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2651,6 +2658,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogCallToActionWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\ConnectButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\FollowButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Widgets\FoundHelpfulWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\SortBlogsRecent.ascx" />
