@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /**
  * Include SASS partials for individual modules.
  */
@@ -4656,7 +4656,7 @@
   }
   /* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_comment-list.scss */
   .comment-list .comment-info .comment-username:after {
-    content: " • ";
+    content: " â€¢ ";
   }
 }
 /* line 174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_comment-list.scss */
@@ -12396,7 +12396,7 @@ header.about-donate-rs-wrapper .rsbtn_player,
 /* line 325, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_user-profiles.scss */
 .card-child-info li:before {
   color: #298fc2;
-  content: "•";
+  content: "â€¢";
   padding-right: 7px;
 }
 /* line 331, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_user-profiles.scss */
@@ -12653,7 +12653,7 @@ header.about-donate-rs-wrapper .rsbtn_player,
   }
 }
 /* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-.readspeaker-wrapper h1, .readspeaker-wrapper h2 {
+.readspeaker-wrapper h1, .readspeaker-wrapper h2{
   color: #7a4183;
 }
 /* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
@@ -13100,7 +13100,7 @@ header.about-donate-rs-wrapper .rsbtn_player,
 .more-to-explore h2,
 .partners-carousel h2,
 .newsletter-signup h2,
-.more-carousel h2 {
+.more-carousel h2{
   color: #7a4183;
   font-weight: normal;
   font-size: 18px;
@@ -13109,6 +13109,16 @@ header.about-donate-rs-wrapper .rsbtn_player,
   line-height: 1.75rem;
   text-align: center;
 }
+
+
+h2.register-community-profile{
+	font-size: 32px;
+	font-size: 2rem;
+	color: #7a4183;
+	margin-bottom: 32px;
+	font-weight: normal;
+}
+
 @media (min-width: 650px), print {
   /* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules.scss */
   .featured-recommended h2,

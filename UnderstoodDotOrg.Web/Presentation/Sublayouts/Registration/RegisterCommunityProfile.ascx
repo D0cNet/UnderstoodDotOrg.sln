@@ -4,7 +4,7 @@
         <div class="col col-16 offset-5 center">
             <!-- BEGIN PARTIAL: registration-profile-create -->
             <div class="registration-profile community-profile">
-                <h2>Create your community profile</h2>
+                <h2 class="register-community-profile">Create your community profile</h2>
                 <p class="subtitle">Our community is a safe place to share experiences and advice with people who understand.</p>
                 <div class="question-wrapper">
                     <div class="textfields-wrapper">

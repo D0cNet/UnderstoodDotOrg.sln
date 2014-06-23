@@ -64,6 +64,34 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+		public static class EmailIDs
+		{
+			public static int EM1WelcomeToUnderstoodENID = 352;
+			public static int EM2ParentToolkitTestENID = 512;
+			public static int EM3ExploreTheCommunityENID = 516;
+			public static int EM4LearnActENID = 517;
+			public static int EM6HolidayDonationsENID = 519;
+			public static int EM7NewsletterConfirmationENID = 520;
+			public static int EM8SubscriptionConfirmedENID = 521;
+			public static int EM9GroupWelcomeENID = 522;
+			public static int EM10WebinarConfirmationENID = 335;
+			public static int EM11DonationAcknowledgementENID = 513;
+			public static int EM12ThankYouForContactingUsENID = 514;
+			public static int EM13ActivityFromTodayENID = 533;
+			public static int EM14ActivityFromThisWeekENID = 534;
+			public static int EM15HappyHolidaysENID = 518;
+			public static int EM16ContentReminderENID = 523;
+			public static int EM17ObservationLogReminderENID = 524;
+			public static int EM18UpdateProfileReminderENID = 525;
+			public static int EM19WebinarReminderENID = 526;
+			public static int EM21PrivateMessageENID = 527;
+			public static int EM22ForgotPasswordENID = 844;
+			public static int EM23PasswordResetConfirmationENID = 529;
+			public static int EM24ContentSharedWithAFriendENID = 956;
+			public static int EM25WebinarSharedWithAFriendENID = 531;
+			public static int EM28AppsTechnologySharedWithAFriend = 538;
+		}
+
         public const string ARTICLE_SEARCH_INDEX_NAME = "sitecore_web_index";
 
         public const string ConnectionStringMembership = "membership";
@@ -752,6 +780,7 @@ namespace UnderstoodDotOrg.Common
         {
             public static string ForumTemplateID { get { return "{F14D990C-8809-4C02-BCF7-AE6719C78CBB}"; } }
         }
+
 
         #region Salesforce Item Id to Sitecore Guid Mapping
         /// <summary>
