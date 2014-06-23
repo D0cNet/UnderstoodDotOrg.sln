@@ -24,3 +24,26 @@
   width: 100%;
   height: 100%;
 }
+
+
+
+/*
+ * BEGIN: temporary override rules provided by DP.
+ * will be removed Real Soon Now.
+ */
+
+/* UN-4868 */
+#article-slideshow .slide.text-slide .content a {
+  color: #fff;
+  text-decoration: underline;
+}
+#article-slideshow .slide.text-slide .content a:hover {
+  text-decoration: none;
+}
+
+/* UN-4869 */
+.article li {
+  color: #696969;
+}
+
+/* END: temporary override rules provided by DP. */
