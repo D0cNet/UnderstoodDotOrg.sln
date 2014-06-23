@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+using UnderstoodDotOrg.Services.AccessControlServices;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -47,6 +48,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 url = Session[Constants.SessionPreviousUrl].ToString();
             }
             
+            //redirect based on interrupt
+            this.ReturnRedirect();
+
+            //if no sign-up interrupt was set, redirect as normal
             Response.Redirect(url);
         }
 
