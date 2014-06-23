@@ -330,9 +330,12 @@ namespace UnderstoodDotOrg.Domain.Search
 
             foreach (int i in GetRandomKeys(query, totalEntries))
             {
-                Article random = (i == 0) ? query.Take(1).First() : query.Skip(i).Take(1).First();
+                Article random = (i == 0) ? query.Take(1).FirstOrDefault() : query.Skip(i).Take(1).FirstOrDefault();
 
-                articles.Add(random);
+                if (random != null)
+                {
+                    articles.Add(random);
+                }
             }
 
             return articles;
@@ -374,6 +377,31 @@ namespace UnderstoodDotOrg.Domain.Search
 
 
         #region Public methods
+
+        /// <summary>
+        /// Retrieve articles for more like this
+        /// </summary>
+        /// <param name="subtopicId"></param>
+        /// <param name="articleId"></param>
+        /// <returns></returns>
+        public static List<Article> GetRandomMoreLikeThisArticles(ID subtopicId, ID articleId)
+        {
+            List<Article> results = new List<Article>();
+
+            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            using (var ctx = index.CreateSearchContext())
+            {
+                var articlesQuery = GetCurrentCultureQueryable<Article>(ctx)
+                                    .Filter(i => i.Language == Sitecore.Context.Language.Name)
+                                    .Filter(i => i.Paths.Contains(subtopicId)
+                                            && i.Templates.Contains(ID.Parse(DefaultArticlePageItem.TemplateId))
+                                            && i.ItemId != articleId);
+
+                results = GetRandomBucketArticles(articlesQuery, Constants.MORE_LIKE_THIS_ENTRIES);
+            }
+
+            return results;
+        }
 
         public static List<Article> GetMostRecentArticlesWithin(ID container, int page, int numEntries, out int totalEntries)
         {

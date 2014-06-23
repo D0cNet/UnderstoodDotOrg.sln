@@ -9,6 +9,8 @@ using Sitecore.Resources.Media;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
+using UnderstoodDotOrg.Domain.Search;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
 {
@@ -58,6 +60,36 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
             }
 
             return string.Empty;
+        }
+
+        public List<DefaultArticlePageItem> GetMoreLikeThisArticles()
+        {
+            var results = new List<DefaultArticlePageItem>();
+
+            if (CuratedMoreLikeThisArticles.ListItems.Any())
+            {
+                results = CuratedMoreLikeThisArticles.ListItems.FilterByContextLanguageVersion()
+                                .Where(i => i.InheritsTemplate(DefaultArticlePageItem.TemplateId))
+                                .Where(i => i.ID != InnerItem.ID)
+                                .Select(i => new DefaultArticlePageItem(i))
+                                .Take(Constants.MORE_LIKE_THIS_ENTRIES)
+                                .ToList();
+            }
+            else
+            {
+                // Look up to subtopic
+                var parent = InnerItem.Parent;
+                if (parent != null 
+                    && parent.InheritsTemplate(SubtopicLandingPageItem.TemplateId))
+                {
+                    results = SearchHelper.GetRandomMoreLikeThisArticles(parent.ID, InnerItem.ID)
+                                    .Select(i => new DefaultArticlePageItem(i.GetItem()))
+                                    .Where(i => i.InnerItem != null)
+                                    .ToList();
+                }
+            }
+
+            return results;
         }
     }
 }

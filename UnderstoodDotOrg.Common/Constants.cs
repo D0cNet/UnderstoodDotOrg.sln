@@ -21,6 +21,7 @@ namespace UnderstoodDotOrg.Common
         public const int ASSISTIVE_TECH_ENTRIES_PER_PAGE = 3;
         public const int FEATURED_TOPIC_GALLERY_ENTRIES = 4;
         public const int SUBTOPIC_WIDGETS_ENTRIES = 3;
+        public const int MORE_LIKE_THIS_ENTRIES = 6;
 
         #region Query Strings
 

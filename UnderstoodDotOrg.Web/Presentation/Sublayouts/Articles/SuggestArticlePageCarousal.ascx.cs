@@ -1,91 +1,60 @@
-﻿using System;
+﻿using Sitecore.Data.Items;
+using Sitecore.Web.UI.WebControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using Sitecore.Data.Items;
-using Sitecore.Data.Fields;
-using Sitecore.Web.UI.WebControls;
-using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.SearchTypes;
 using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.SimpleExpertArticle;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Advocacy;
 using UnderstoodDotOrg.Framework.UI;
-using Sitecore.Data;
-using UnderstoodDotOrg.Domain.Search.JSON;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
     public partial class SuggestArticlePageCarousal : BaseSublayout
     {
-        DefaultArticlePageItem ObjDefaultArticle;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindArticles();
+            BindEvents();
+            BindContent();
         }
 
-        public void BindArticles()
+        private void BindEvents()
         {
-            if (Sitecore.Context.Item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
+            rptArticles.ItemDataBound += rptArticles_ItemDataBound;
+        }
+
+        private void BindContent()
+        {
+            DefaultArticlePageItem item = Sitecore.Context.Item;
+            if (!item.InnerItem.InheritsTemplate(DefaultArticlePageItem.TemplateId)
+                || item.HideMoreLikeThisModule.Checked)
             {
-                ObjDefaultArticle = new DefaultArticlePageItem(Sitecore.Context.Item);
+                this.Visible = false;
+                return;
             }
-            if (ObjDefaultArticle != null)
+
+            var articles = item.GetMoreLikeThisArticles();
+            if (articles.Any())
             {
-                if (!ObjDefaultArticle.HideRelatedActiveLinks.Checked) // Show Articles
-                {
-                    var AllArticles = ObjDefaultArticle.RelatedLink.ListItems
-                        .Where(t => t.InheritsTemplate(DefaultArticlePageItem.TemplateId));
-                    if (AllArticles.Any())
-                    {
-                        rptDefaultArticles.DataSource = AllArticles
-                            .Select(i => (DefaultArticlePageItem)i)
-                            .Take(6).ToList();
-                        rptDefaultArticles.DataBind();
-                    }
-                    else
-                    {
-                        List<DefaultArticlePageItem> related = ObjDefaultArticle.InnerItem.Parent.Children.Where(i => i.InheritsTemplate(DefaultArticlePageItem.TemplateId)).Select(x => new DefaultArticlePageItem(x)).Take(6).ToList();
-                        if (related.Count > 0)
-                        {
-                            rptDefaultArticles.DataSource = related;
-                            rptDefaultArticles.DataBind();
-                        }
-                        else
-                            this.Visible = false;
-                    }
-                }
+                rptArticles.DataSource = articles;
+                rptArticles.DataBind();
             }
         }
 
-        protected void rptMoreArticle_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        void rptArticles_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.IsItem())
             {
-                DefaultArticlePageItem RelatedLink = (DefaultArticlePageItem)e.Item.DataItem;
+                DefaultArticlePageItem item = (DefaultArticlePageItem)e.Item.DataItem;
 
-                if (RelatedLink != null)
-                {
-                    var frLinkTitle = e.FindControlAs<FieldRenderer>("frLinkTitle");
-                    var hlLinkTitle = e.FindControlAs<HyperLink>("hlLinkTitle");
-                    if (frLinkTitle != null)
-                    {
-                        frLinkTitle.Item = RelatedLink.ContentPage.InnerItem;
-                        hlLinkTitle.NavigateUrl = frLinkTitle.Item.Paths.ContentPath;
-                    }
-                    var frLinkImage = e.FindControlAs<FieldRenderer>("frLinkImage");
-                    if (frLinkImage != null)
-                    {
-                        frLinkImage.Item = RelatedLink.InnerItem;
-                    }
-                }
+                HyperLink hlArticleDetail = e.FindControlAs<HyperLink>("hlArticleDetail");
+                hlArticleDetail.NavigateUrl = item.GetUrl();
+
+                System.Web.UI.WebControls.Image imgThumbnail = e.FindControlAs<System.Web.UI.WebControls.Image>("imgThumbnail");
+                imgThumbnail.ImageUrl = item.GetArticleThumbnailUrl(230, 129);
+
+                FieldRenderer frPageTitle = e.FindControlAs<FieldRenderer>("frPageTitle");
+                frPageTitle.Item = item;
             }
         }
     }

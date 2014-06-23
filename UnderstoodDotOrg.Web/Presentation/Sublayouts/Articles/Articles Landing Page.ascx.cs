@@ -77,7 +77,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     if (hypArticleLink != null)
                     {
                         hypArticleLink.NavigateUrl = article.GetUrl();
-                        hypArticleLink.Text = article.PageTitle;
+                        hypArticleLink.Text = article.ContentPage.PageTitle;
                     }
                 }
             }

@@ -10,7 +10,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
 {
-public partial class DefaultArticlePageItem : ContentPageItem
+public partial class DefaultArticlePageItem : CustomItem
 {
 
 public static readonly string TemplateId = "{2D5AF94C-1668-44C4-978A-E96E1F42CBFE}";
@@ -190,20 +190,20 @@ public CustomTextField PromotionalHeadline
 }
 
 
-public CustomTextField RelatedLinkHeaderTitle
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Related Link Header Title"]);
-	}
-}
-
-
 public CustomTreeListField ChildDiagnoses
 {
 	get
 	{
 		return new CustomTreeListField(InnerItem, InnerItem.Fields["Child Diagnoses"]);
+	}
+}
+
+
+public CustomTreeListField CuratedMoreLikeThisArticles
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Curated More Like This Articles"]);
 	}
 }
 
@@ -226,15 +226,6 @@ public CustomTreeListField PromotionalContent
 }
 
 
-public CustomTreeListField RelatedLink
-{
-	get
-	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Related Link"]);
-	}
-}
-
-
 public CustomLookupField Reviewedby
 {
 	get
@@ -253,11 +244,11 @@ public CustomTreeListField DiagnosedCondition
 }
 
 
-public CustomCheckboxField HideRelatedActiveLinks
+public CustomCheckboxField HideMoreLikeThisModule
 {
 	get
 	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Hide Related Active Links"]);
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Hide More Like This Module"]);
 	}
 }
 
@@ -276,6 +267,24 @@ public CustomImageField FeaturedImage
 	get
 	{
 		return new CustomImageField(InnerItem, InnerItem.Fields["Featured Image"]);
+	}
+}
+
+
+public CustomCheckboxField ShowCommentTeaser
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Comment Teaser"]);
+	}
+}
+
+
+public CustomTextField CommentTeaserOverrideID
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Comment Teaser Override ID"]);
 	}
 }
 
@@ -307,20 +316,20 @@ public CustomTextField ContentId
 }
 
 
-public CustomCheckboxField ShowCommentTeaser
+public CustomTextField ContentTypeId
 {
 	get
 	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Show Comment Teaser"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["ContentTypeId"]);
 	}
 }
 
 
-public CustomTextField CommentTeaserOverrideID
+public CustomTextField TelligentUrl
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Comment Teaser Override ID"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["TelligentUrl"]);
 	}
 }
 

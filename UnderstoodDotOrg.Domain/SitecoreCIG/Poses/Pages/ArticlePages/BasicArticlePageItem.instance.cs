@@ -12,25 +12,6 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages
 {
     public partial class BasicArticlePageItem
     {
-        public List<DefaultArticlePageItem> GetRelatedLinks(DefaultArticlePageItem ObjDefArt)
-        {
-            // Item SiteRoot=Sitecore.Context.Database.GetItem(Sitecore.Context.Site.RootPath, Sitecore.Data.Managers.LanguageManager.GetLanguage("en"));
-            IEnumerable<Item> AllArticles = ObjDefArt.RelatedLink.ListItems.Where(t => t.InheritsTemplate(DefaultArticlePageItem.TemplateId));
-            List<DefaultArticlePageItem> FinalArticles = null;
-            if (AllArticles != null)
-            {
-                if (AllArticles.Count() > 6) AllArticles.Take(6);
-                FinalArticles = new List<DefaultArticlePageItem>(AllArticles.Count());
-                foreach (DefaultArticlePageItem DefItem in AllArticles)
-                {
-                    
-                    FinalArticles.Add(DefItem);
-                }
-            }
 
-            return FinalArticles;
-        }
-
-       
     }
 }
