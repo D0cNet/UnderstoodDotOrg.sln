@@ -61,6 +61,12 @@
 				uxChildList.DataSource = this.CurrentMember.Children;
 				uxChildList.DataBind();
 
+                //disable new children if you already have 6 or more
+                if (this.CurrentMember.Children.Count >= 6)
+                {
+                    uxAddChild.Visible = false;
+                }
+
 				SetInterests();
 
 				uxEmailAddress.Text = this.CurrentUser.UserName;
