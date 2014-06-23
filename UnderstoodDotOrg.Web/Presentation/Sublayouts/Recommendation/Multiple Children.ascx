@@ -25,16 +25,23 @@
     <!-- END PARTIAL: pagetopic -->
 
     <div class="recos-for-you-carousels">
-        <!-- ***** Begin TestComponent - This Div is for Testing Purposes Only and must be removed after the feature is validated -->
 
-       <div style="border: 1px #8299a1 solid; width: 30%; background-color: #daf6fb; margin-left: auto; margin-right: auto; margin:0px; padding:0px; text-align: center;">
-            (For Testing) Date to Impersonate: 
+         <div class="container recos-for-you-container">
+                  <!-- ***** Begin TestComponent - This Div is for Testing Purposes Only and must be removed after the feature is validated -->
+            <div style="border: 1px #8299a1 solid; 
+                width: 250px; 
+                background-color: #daf6fb; 
+                margin-left:10px; 
+                margin-right:0; 
+                margin:0px; 
+                padding:0px; 
+                text-align: center;">            
+                (For Testing) Date to Impersonate: 
              <asp:Calendar ID="uxCal" runat="server"></asp:Calendar>
              <asp:Button ID="btnRunPersonalied" runat="server" OnClick="btnRunPersonalied_Click" Text="Recalculate Recomendations" />
         </div>
        <!-- ***** End TestComponent -->
-         <div class="container recos-for-you-container">
-            <asp:Repeater ID="rptChildBasicInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Child" OnItemDataBound="rptChildBasicInfo_ItemDataBound">
+               <asp:Repeater ID="rptChildBasicInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Child" OnItemDataBound="rptChildBasicInfo_ItemDataBound">
                 <ItemTemplate>
                     <div class="row">
                         <div class="col col-24">
