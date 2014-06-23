@@ -49,7 +49,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             }
             
             //redirect based on interrupt
-            this.ReturnRedirect();
+            //this.ReturnRedirect();
 
             //if no sign-up interrupt was set, redirect as normal
             Response.Redirect(url);
