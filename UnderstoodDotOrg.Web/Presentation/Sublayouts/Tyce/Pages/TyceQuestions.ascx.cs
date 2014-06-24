@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components;
+using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 {
@@ -26,7 +27,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
                 .Where(i => i != null && i.IsOfType(ChildGradeItem.TemplateId))
                 .Select(i => (ChildGradeItem)i)
                 .Select(gradeItem => {
-                    var video = null; //gradeItem.Video.Item; //TODO change with new TYCE structure
+                    var video = (Item)null; //gradeItem.Video.Item; //TODO change with new TYCE structure
                     var videoId = video != null ? video.ID.Guid.ToString() : string.Empty;
 
                     return new
