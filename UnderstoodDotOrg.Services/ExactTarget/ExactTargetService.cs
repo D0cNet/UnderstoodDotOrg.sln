@@ -1020,7 +1020,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[4];
+						newSub.Attributes = new etAPI.Attribute[7];
 						newSub.Attributes[0] = new etAPI.Attribute();
 						newSub.Attributes[0].Name = "group_leader_email";
 						newSub.Attributes[0].Value = request.GroupLeaderEmail;
@@ -1033,6 +1033,15 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.Attributes[3] = new etAPI.Attribute();
 						newSub.Attributes[3].Name = "group_title";
 						newSub.Attributes[3].Value = request.GroupTitle;
+						newSub.Attributes[4] = new etAPI.Attribute();
+						newSub.Attributes[4].Name = "group_mod_bio_link";
+						newSub.Attributes[4].Value = request.GroupModerator.groupModBioLink;
+						newSub.Attributes[5] = new etAPI.Attribute();
+						newSub.Attributes[5].Name = "group_mod_name";
+						newSub.Attributes[5].Value = request.GroupModerator.groupModName;
+						newSub.Attributes[6] = new etAPI.Attribute();
+						newSub.Attributes[6].Name = "group_mod_img_link";
+						newSub.Attributes[6].Value = request.GroupModerator.groupModImgLink;
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 

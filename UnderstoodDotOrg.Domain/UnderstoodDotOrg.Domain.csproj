@@ -119,6 +119,7 @@
     <Compile Include="ExactTarget\InvokeEM8SubscriptionConfirmationRequest.cs" />
     <Compile Include="ExactTarget\InvokeEM9GroupWelcomeRequest.cs" />
     <Compile Include="ExactTarget\InvokeWelcomeToUnderstoodRequest.cs" />
+    <Compile Include="ExactTarget\Moderator.cs" />
     <Compile Include="ExactTarget\TriggeredSendEmail.cs" />
     <Compile Include="Import.cs" />
     <Compile Include="Import.Designer.cs">

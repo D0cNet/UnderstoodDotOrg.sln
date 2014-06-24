@@ -83,7 +83,23 @@
 
 		protected void btnEM9_Click(object sender, EventArgs e)
 		{
-			BaseReply reply = ExactTargetService.InvokeEM9GroupWelcome(new InvokeEM9GroupWelcomeRequest { PreferredLanguage = new Guid(ddlLanguages.SelectedValue), GroupLeaderEmail = "groupleader@donotreply.com", GroupLeaderModule = "<table><tr><td><p>Test group leader module!</p></td></tr></table>", GroupLink = "www.google.com", GroupTitle = "People testing Emails", ToEmail = tbxSubscriberEmail1.Text });
+			BaseReply reply = ExactTargetService.InvokeEM9GroupWelcome(new InvokeEM9GroupWelcomeRequest
+			{
+				PreferredLanguage = new Guid(ddlLanguages.SelectedValue),
+				GroupLeaderEmail = "groupleader@donotreply.com",
+				GroupLeaderModule = "<table><tr><td><p>Test group leader module!</p></td></tr></table>",
+				GroupLink = "www.google.com",
+				GroupTitle = "People testing Emails",
+				ToEmail = tbxSubscriberEmail1.Text,
+
+				GroupModerator = new Moderator
+				{
+					groupModBioLink = "www.google.com",
+					groupModImgLink = "images.google.com",
+					groupModName = "Bob Smith"
+				}
+			});	
+		
 			lblMessage.Text = reply.Message;
 		}
 

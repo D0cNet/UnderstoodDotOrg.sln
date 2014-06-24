@@ -35,7 +35,8 @@
                 <!-- .question-wrapper -->
 
                 <div class="form-actions">
-                    <input type="submit" class="button" value="Join Group">
+                    <%--<input type="submit" CssClass="button" value="Join Group">--%>
+					<asp:Button runat="server" CssClass="button" Text="Join Group" ID="registerForCommunity" OnClick="registerForCommunity_Click" />
                     <div class="spacer"></div>
                     <a class="full-profile-link" href="REPLACE">or complete my full profile</a>
                 </div>
