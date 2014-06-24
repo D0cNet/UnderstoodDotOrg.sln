@@ -33,7 +33,6 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             if (item.InheritsFromType(DefaultArticlePageItem.TemplateId)
                 || item.InheritsTemplate(BehaviorAdvicePageItem.TemplateId))
             {
-                var t = item["BlogId"];
                 if (item["BlogId"] == string.Empty)
                 {
                     CreateTelligentPost(item, 4); //blog id should be 4
@@ -79,7 +78,8 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
 
             var values = new NameValueCollection
             {
-                { "Title", item.Name },
+                // Append ID to keep title unique
+                { "Title", String.Format("{0} {1}", item.Name, item.ID.ToString()) },
                 { "Body", item.Paths.Path }
             };
 
