@@ -64,10 +64,12 @@
                                 //console.log($radioControl)
                                 Answers[$this.data("id")] = $this.find("span").hasClass("checked");
                                 hiddenField.val(JSON.stringify(Answers));
+                                $("input[id*='btnSaveAnswers']").attr("class", "submit button").removeAttr("disabled");
                             })
                         })
                     </script>
                     <div class="checklist-actions clearfix">
+                        <p id="confirmationText" runat="server" class="confirmation" visible="false">Your answers have been saved! Simply sign in on your future visits to access your customized list.</p>
                         <div class="save-answers">
                             <asp:button runat="server" ID="btnSaveAnswers" class="submit button" Text="Save My Answers" OnClick="btnSaveAnswers_Click" />
                         </div>

@@ -17,6 +17,9 @@ using UnderstoodDotOrg.Domain.Understood.Quiz;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.Membership;
 using Newtonsoft.Json;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -28,6 +31,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!Page.IsPostBack)
             {
                 BindData();
@@ -163,7 +167,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     }
                     MembershipManager mgr = new MembershipManager();
                     mgr.ChecklistResults_SaveToDb(cl.MemberId, cl);
+
+                    btnSaveAnswers.Attributes.Add("class", "aspNetDisabled submit button");
+                    btnSaveAnswers.Attributes.Add("disabled", "disabled");
+                    confirmationText.Visible = true;
                 }
+            }
+            else
+            {
+                Response.Redirect(MyAccountFolderItem.GetSignUpPage());
             }
 
             BindData();
