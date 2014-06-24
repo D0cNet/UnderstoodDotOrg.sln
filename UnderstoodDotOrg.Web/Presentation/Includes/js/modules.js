@@ -2011,7 +2011,7 @@ jQuery(document).ready(function () {
     U.findHelpful = function () {
         var self = this;
 
-        jQuery('.find-this-helpful ul li button').click(function () {
+        /*jQuery('.find-this-helpful ul li button').click(function () {
             var tempCount = parseInt(jQuery('.count-helpful a span').html());
 
             // disable sibling buttons when selected
@@ -2032,7 +2032,7 @@ jQuery(document).ready(function () {
             jQuery('.find-this-helpful ul li button').removeClass('selected');
             jQuery(this).addClass('selected');
             return false;
-        });
+        });*/
 
         // Handle moving sidebar find-this-helpful module around depending on window width
         var $module = $('.find-this-helpful.sidebar');
