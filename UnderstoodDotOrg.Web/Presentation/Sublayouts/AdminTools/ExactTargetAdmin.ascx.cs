@@ -87,7 +87,6 @@
 			{
 				PreferredLanguage = new Guid(ddlLanguages.SelectedValue),
 				GroupLeaderEmail = "groupleader@donotreply.com",
-				GroupLeaderModule = "<table><tr><td><p>Test group leader module!</p></td></tr></table>",
 				GroupLink = "www.google.com",
 				GroupTitle = "People testing Emails",
 				ToEmail = tbxSubscriberEmail1.Text,
