@@ -163,7 +163,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 try
                 {
                     //TODO: Get test Cases for this redirect
-                    this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.CommunityUser);
+                    //this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.CommunityUser);
                     //Join the group using telligent group id
                     if (CommunityHelper.JoinGroup(btn.CommandArgument, UserID))
                     {

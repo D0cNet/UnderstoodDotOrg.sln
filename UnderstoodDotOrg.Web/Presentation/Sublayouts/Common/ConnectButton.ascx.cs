@@ -78,7 +78,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         protected void btnConnect_Click(object sender, EventArgs e)
         {
             //Check community permissions
-            this.ProfileRedirect(Constants.UserPermission.CommunityUser);
+            //this.ProfileRedirect(Constants.UserPermission.CommunityUser);
             //Check status and perform appropriate action
             switch (Status)
             {
