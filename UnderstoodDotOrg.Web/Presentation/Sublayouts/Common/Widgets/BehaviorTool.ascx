@@ -6,7 +6,7 @@
       <sc:FieldRenderer ID="frWidgetCopy" runat="server" FieldName="Widget Copy" />
     </header>
 
-    <div class="form select-container">
+    <div class="form select-container behavior-tool-widget">
 
       <fieldset>
 

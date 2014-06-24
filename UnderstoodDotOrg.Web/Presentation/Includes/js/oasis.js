@@ -417,3 +417,47 @@ $(document).ready(function () {
         return this;
     };
 })(jQuery);
+
+// Behavior tool widget
+(function($) {
+
+	$(document).ready(function () {
+        new U.behaviorToolWidget();
+    });
+
+    U.behaviorToolWidget = function () {
+        var self = this;
+		
+		function validateSelections(container) {
+			var isValid = true;
+			var $container = $(container);
+			var $submit = $container.find("input[type='submit']")
+			
+			$container.find("select").each(function() {
+				if ($(this).val() == "") {
+					isValid = false;
+					return false;
+				}
+			});
+			
+			if (isValid) {
+				$submit.removeAttr("disabled");
+			} else {
+				$submit.attr("disabled", "disabled");
+			}
+		}
+		
+		$(".behavior-tool-widget").each(function() {
+			var formContainer = this;
+			
+			// init change handlers
+			$(this).find("select").on("change", function() {
+				validateSelections(formContainer);
+			});
+			
+			validateSelections(formContainer);
+		});
+        
+        return this;
+    };
+})(jQuery);
