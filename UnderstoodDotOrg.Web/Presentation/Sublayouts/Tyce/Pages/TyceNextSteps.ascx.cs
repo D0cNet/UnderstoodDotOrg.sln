@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Pages;
 using UnderstoodDotOrg.Framework.UI;
 

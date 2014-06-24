@@ -86,7 +86,7 @@
           '.radio'
         ];
 
-        new U.Global.readspeakerUniform(uniformElements);
+        //new U.Global.readspeakerUniform(uniformElements);
     });
 
 })(jQuery);

@@ -298,7 +298,6 @@
     <Compile Include="SitecoreCIG\Poses\General\AuthenticationNavigationLinkItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ChildDemographicItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ChildGradeItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\General\ChildLearningIssueItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\EducationalInstitutionItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\EventTypeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ExploreEventTileItem.base.cs" />
@@ -565,7 +564,10 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\TyceVideoItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\ChildLearningIssueItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\ChildLearningIssueItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\TyceVideoGradeSetsItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\TyceVideoGradeSetsItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceBasePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceNextStepsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceOverviewPageItem.base.cs" />

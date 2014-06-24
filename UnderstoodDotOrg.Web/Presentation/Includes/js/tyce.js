@@ -18,18 +18,18 @@
          */
         this.initialize = function () {
 
-            //cache selector
-            var notificationsSectionDropdownSelect = $('.notifications-section-dropdown select');
-
             var uniform_elements = [
               '.account-notification-tabs input[type=textfield]',
-              '.account-notification-tabs select'
+              '.account-notification-tabs select',
+              '.account-notification-tabs input[type=radio]'
             ].join(',');
+
+            $(uniform_elements).uniform();
 
             var toggle_switch = $(
               '<div class="switch-wrapper">' +
-                '<span class="btn-toggle btn-left"><button>Off</button></span>' +
-                '<span class="btn-toggle btn-right"><button>On</button></span>' +
+                '<span class="btn-toggle btn-left"><button>No</button></span>' +
+                '<span class="btn-toggle btn-right"><button>Yes</button></span>' +
               '</div>'
             );
 
@@ -39,30 +39,17 @@
 
             $('.toggle-wrapper .ez-checkbox').find('.btn-toggle').on('click', function (e) {
                 e.preventDefault();
-                $(this).parent().click();
+
+                // This will work in all browsers except ie8
+                //$(this).parent().click();
+
+                // This will work in all browsers including ie8
+                $(this).parent().parent().toggleClass('ez-checked');
             });
 
-            // Navigate to new page (or swap content) on change of dropdown
-            notificationsSectionDropdownSelect.change(function () {
-                self.swapSelectCount();
-
-                // INTEGRATION: navigate to the HREF, or do something else
-                var className = '.' + $(this).val() + '-tab a';
-            });
-
-            return this.swapSelectCount();
         };
 
-        /**
-         * Overlay the correct counter over dropdown select.
-         * @return {object} this instance
-         */
-        this.swapSelectCount = function () {
-            $('.notifications-section-dropdown .circle').hide();
-            var activeOption = '.' + $('.notifications-section-dropdown select').val() + '-count';
-            $(activeOption).css('display', 'inline-block');
-            return this;
-        };
+
 
         return this.initialize();
     };
@@ -352,7 +339,7 @@ var TYCE = (function () {
 
         $tycemenu.on('click', function (e) {
             e.preventDefault();
-            $('#header-page').toggleClass('is-open');
+            $('#header-page, #header-tyce').toggleClass('is-open');
         })
 
         // add modals for begin and end
@@ -368,13 +355,15 @@ var TYCE = (function () {
         // player container 
         $tyceplayercontainer = $('.tyce-player-container');
         $player = $tyceplayercontainer.find('#player');
-
+        $playerContent = $('.player-content');
 
         // player controls and events
         $playpause = $('.play-pause');
         $volume = $('li.volume');
         $fullscreen = $('.fullscreen');
         $captionswitch = $('.captions .toggle');
+        $helpToggle = $('.icon.help');
+        $helpClose = $('.help-overlay .close');
 
         $('.slider').slider({
             orientation: "vertical",
@@ -416,7 +405,11 @@ var TYCE = (function () {
             }
         });
 
+        //helpOverlay init
+        helpOverlay();
 
+        //helpOverlay resize
+        $(window).on('resize.player', helpOverlayDetect);
 
         // click on fullscreen button
         $fullscreen.on('click', function () {
@@ -449,7 +442,7 @@ var TYCE = (function () {
 
 
             // attach event to begin modal to hide it and play the video
-            $modalbegin.find('.button').on('click.button', function (e) {
+            $modalbegin.find('.button').on('click', function (e) {
                 e.preventDefault();
                 $modalbegin.modal('hide');
                 isstarted = true;
@@ -465,6 +458,50 @@ var TYCE = (function () {
             window.onorientationchange = orientationChange;
         }
 
+    };
+
+
+    function helpOverlay() {
+
+        // detect for screen size, and give height to overlay.  Use this function for resize event.
+        helpOverlayDetect();
+
+        // help overlay toggle
+        $helpToggle.on('click', function () {
+            if (!$playerContent.hasClass('help-open')) {
+                $('.help-overlay').fadeIn();
+                $playerContent.addClass('help-open');
+                pauseVideo();
+            }
+            else {
+                $('.help-overlay').fadeOut();
+                $playerContent.removeClass('help-open');
+                playVideo();
+            }
+        });
+
+        // help overlay close button
+        $helpClose.on('click', function () {
+            $('.help-overlay').fadeOut();
+            $playerContent.removeClass('help-open');
+            playVideo();
+        });
+
+    };
+
+    function helpOverlayDetect() {
+        // only show help overlay over 768px
+        if (Modernizr.mq('(min-width: 769px)') || !Modernizr.mq('only all')) {
+            // give height to help overlay
+            $('.help-overlay').css('height', $playerContent.height());
+            // ensure overlay is open
+            if ($playerContent.hasClass('help-open')) {
+                $('.help-overlay').show();
+            }
+        }
+        else {
+            $('.help-overlay').hide();
+        }
     };
 
     // Determine what type of experience the step paseed is

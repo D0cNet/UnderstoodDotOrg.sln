@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Pages;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 {

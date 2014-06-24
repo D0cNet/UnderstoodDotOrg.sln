@@ -59,11 +59,17 @@
         isPersonalized: true,
         start: 0,
         steps: [
+          //{ type: 'video', init: '3203925031001' },
+          //{ type: 'sim' },
+          //{ type: 'video', init: '3203925030001' }
+          <% if (IssueItem != null) { %>
+
           { type: 'video', init: '3203925031001' },
           { type: 'sim' },
-          { type: 'video', init: '3203925030001' }
+          { type: 'video', init: '3203925031001' }
+          <% } %>
         ],
-        next: 'path/to/next/stage'
+        next: '<%= NextPagePath %>'
     }
 
     // on dom ready init the experience

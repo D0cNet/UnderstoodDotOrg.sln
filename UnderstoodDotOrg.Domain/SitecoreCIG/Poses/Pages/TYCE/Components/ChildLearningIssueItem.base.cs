@@ -8,7 +8,7 @@ using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components
 {
 public partial class ChildLearningIssueItem : CustomItem
 {
@@ -44,6 +44,12 @@ public static implicit operator Item(ChildLearningIssueItem customItem)
 
 
 #region Field Instance Methods
+
+
+//Could not find Field Type for Expert Summary With Subtitles
+
+
+//Could not find Field Type for Expert Summary Without Subtitles
 
 
 public CustomTreeListField SimulationJS
