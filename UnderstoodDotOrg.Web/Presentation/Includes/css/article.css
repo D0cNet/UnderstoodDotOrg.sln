@@ -2324,6 +2324,11 @@
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
+
+p.reviewed-by{
+    -ms-word-wrap: normal;
+    word-wrap: normal;
+}
 @media (min-width: 650px) {
   /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-copy.scss */
   .article p {
