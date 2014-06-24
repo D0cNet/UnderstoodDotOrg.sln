@@ -51,6 +51,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
             litChildEnrolled.Text = DictionaryConstants.ChildEnrolled;
             litChildEnrolled2.Text = DictionaryConstants.ChildEnrolled;
             litComplete1.Text = DictionaryConstants.CompleteMyProfile;
+            btnSubmit.Text = DictionaryConstants.SeeMyRecommendationsButtonText;
 
             if (!IsPostBack)
             {

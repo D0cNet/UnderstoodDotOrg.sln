@@ -13,6 +13,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 
 namespace UnderstoodDotOrg.Framework.EventHandlers
@@ -30,15 +31,16 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                 return;
             }
 
-            if (item.InheritsFromType(DefaultArticlePageItem.TemplateId)
-                || item.InheritsTemplate(BehaviorAdvicePageItem.TemplateId))
+            if (item.TemplateID == Sitecore.Data.ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
+                || item.TemplateID == Sitecore.Data.ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId)
+                || item.InheritsFromType(DefaultArticlePageItem.TemplateId))
             {
                 if (item["BlogId"] == string.Empty)
                 {
                     CreateTelligentPost(item, 4); //blog id should be 4
                 }
             }
-            else if (item.InheritsFromType(BlogsPostPageItem.TemplateId))
+            else if (item.TemplateID == Sitecore.Data.ID.Parse(BlogsPostPageItem.TemplateId))
             {
                 if (item["BlogId"] == string.Empty)
                 {

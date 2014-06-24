@@ -936,6 +936,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string SeeMyRecommendationsButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "See My Recommendations Button Text");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

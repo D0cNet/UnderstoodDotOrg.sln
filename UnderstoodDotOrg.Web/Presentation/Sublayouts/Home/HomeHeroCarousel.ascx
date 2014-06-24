@@ -130,7 +130,7 @@
                 <div class="col col-8 offset-8">
 
                     <div class="submit-button-wrap">
-                        <asp:Button ID="btnSubmit" runat="server" Text="See my recommendations" CssClass="button submit-button button-guide-me-recommendations" OnClick="btnSubmit_OnClick" />
+                        <asp:Button ID="btnSubmit" runat="server" CssClass="button submit-button button-guide-me-recommendations" OnClick="btnSubmit_OnClick" />
                         <asp:HiddenField ID="hfGradeChoice" runat="server" ClientIDMode="Static" />
                     </div>
 
