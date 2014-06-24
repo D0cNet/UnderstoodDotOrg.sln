@@ -13,15 +13,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
     public partial class ReviewerInfo {
         
         /// <summary>
-        /// pnlReviewBy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlReviewBy;
-        
-        /// <summary>
         /// hlReviewedBy control.
         /// </summary>
         /// <remarks>
@@ -49,12 +40,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
         protected global::System.Web.UI.WebControls.PlaceHolder uxReviewDate;
         
         /// <summary>
-        /// dtReviewdDate control.
+        /// dtReviewedDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Date dtReviewdDate;
+        protected global::Sitecore.Web.UI.WebControls.Date dtReviewedDate;
     }
 }
