@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HeaderToolKitNav.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.HeaderToolKitNav" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+
 <!-- toolkit header row -->
 <div class="row toolkit-row">
     <div class="col col-24">
@@ -27,7 +28,7 @@
                     <ItemTemplate>
                         <li>
                             <asp:Panel runat="server" ID="pnlParentToolKit" CssClass="icon">
-                                <sc:FieldRenderer ID="frNavLink" runat="server" FieldName="Link" />
+                                <sc:FieldRenderer ID="frNavLink" runat="server" FieldName="Link" Parameters="class=toolkit-element" />
                                 <%--<div class="coming-soon">Coming Soon</div>--%>
                             </asp:Panel>
                         </li>

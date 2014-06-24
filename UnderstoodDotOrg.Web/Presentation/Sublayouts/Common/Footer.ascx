@@ -7,7 +7,7 @@
         <!-- FIXME: discard this div and move the .newsletter-signup class to div.container element for consistency -->
         <div class="newsletter-signup">
 
-            <div class="col col-12">
+            <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
                 <header>
                     <h2><%--Personalized Email--%>

@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HomeHeroCarousel.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Home.HomeHeroCarousel" %>
+
 <!-- BEGIN MODULE: Hero Carousel -->
 <div class="container hero-carousel">
     <div class="row">

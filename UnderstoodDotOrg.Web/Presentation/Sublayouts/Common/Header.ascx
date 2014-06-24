@@ -3,6 +3,7 @@
 
 <asp:Literal ID="litAnalytics" runat="server" />
 
+<!-- BEGIN PARTIAL: header -->
 <header id="header-page" class="container">
     <div class="row">
         <div class="col col-24">

@@ -8,7 +8,7 @@
 
             <h2>
                 <asp:Literal Text="" ID="litFeatured" runat="server" />
-                </h2>
+            </h2>
             <div class="featured-recommended-container">
                 <!-- BEGIN PARTIAL: featured-carousel -->
                 <div id="featured-slides-container" class="arrows-gray">
@@ -18,10 +18,13 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <li>
-                                <asp:HyperLink ID="hypArticleLink" runat="server">
-                                    <p><asp:Literal ID="ltArticleText" runat="server"></asp:Literal></p>
-                                    <sc:Image ID="frArticleImage" runat="server" Field="Featured Image" Parameters="mw=230&mh=129"></sc:Image>
-                                </asp:HyperLink>
+                                <div class="rs_read_this">
+                                    <asp:HyperLink ID="hypArticleLink" runat="server">
+                                        <p>
+                                            <asp:Literal ID="ltArticleText" runat="server"></asp:Literal></p>
+                                        <sc:image id="frArticleImage" runat="server" field="Featured Image" parameters="mw=230&mh=129"></sc:image>
+                                    </asp:HyperLink>
+                                </div>
                             </li>
                         </ItemTemplate>
                         <FooterTemplate>

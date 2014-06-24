@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col col-24">
 
-            <h2>
+            <h2 class="rs_read_this">
                 <sc:FieldRenderer ID="frMoreExploreTitle" runat="server" FieldName="More Explore Title"></sc:FieldRenderer>
             </h2>
 
