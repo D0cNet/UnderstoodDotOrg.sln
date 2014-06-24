@@ -8,10 +8,7 @@
             <!-- BEGIN PARTIAL: about/about-sign-up-confirm -->
             <header>
                 <h1><sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" /></h1>
-                <p>
-                    <span class="confirm-title"><sc:FieldRenderer ID="frSectionTitle" runat="server" FieldName="Section Title" /></span>
-                    <span class="confirm-description"><sc:FieldRenderer ID="frPageBody" runat="server" FieldName="Page Body" /></span>
-                </p>
+                <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
             </header>
 
             <div class="social-wrap centered skiplink-content" aria-role="main">
@@ -19,9 +16,7 @@
                 <!-- Adding spaces or line breaks here will cause unwanted space between elements -->
                 <div class="thank-you-social">
                     <a href="REPLACE" class="email-link">
-                        <span class="circle">
-                            <span class="icon icon-envelope rs_skip" alt="envelope icon"></span>
-                        </span><span class="text-link">Tell a Friend</span>
+                        <span class="circle"><span class="icon icon-envelope rs_skip" alt="envelope icon"></span></span><span class="text-link">Tell a Friend</span>
                     </a>
                     <a href="REPLACE" class="twitter-link">
                         <span class="circle"><span class="icon icon-twitter rs_skip" alt="twitter icon"></span></span><span class="text-link">Follow us on Twitter</span>

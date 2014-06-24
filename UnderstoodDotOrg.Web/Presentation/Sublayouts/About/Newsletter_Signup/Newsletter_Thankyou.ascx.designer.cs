@@ -22,21 +22,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPageTitle;
         
         /// <summary>
-        /// frSectionTitle control.
+        /// frBodyContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSectionTitle;
-        
-        /// <summary>
-        /// frPageBody control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPageBody;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBodyContent;
     }
 }
