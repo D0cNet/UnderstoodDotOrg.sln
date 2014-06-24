@@ -9,14 +9,15 @@ using System.Linq;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
 {
-public partial class ParentToolkitFolderItem 
-{
-    /// <summary>
-    /// Get navigation link item
-    /// </summary>
-    /// <returns></returns>
-    public IEnumerable<NavigationLinkItem> GetNavigationLinkItems() {
-        return InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(NavigationLinkItem.TemplateId)).Select(i => (NavigationLinkItem)i);
+    public partial class ParentToolkitFolderItem
+    {
+        /// <summary>
+        /// Get navigation link item
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<NavigationLinkItem> GetNavigationLinkItems()
+        {
+            return InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(NavigationLinkItem.TemplateId)).Select(i => (NavigationLinkItem)i);
+        }
     }
-}
 }

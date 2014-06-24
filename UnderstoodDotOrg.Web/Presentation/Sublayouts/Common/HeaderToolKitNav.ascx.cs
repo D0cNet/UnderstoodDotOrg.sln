@@ -14,53 +14,62 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
     public partial class HeaderToolKitNav : BaseSublayout
     {
-        protected HeaderFolderItem HeaderFolder { get; set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            HeaderFolder = HeaderFolderItem.GetHeader();
-            GetParentTookKitItems();
+            BindEvents();
+            BindControls();
         }
 
-        private void GetParentTookKitItems()
+        private void BindEvents()
         {
-            var parentToolkitFolder = HeaderFolder.GetParentToolkitFolder();
-            if (parentToolkitFolder != null)
+            lvParentToolkit.ItemDataBound += lvParentToolkit_ItemDataBound;
+        }
+
+        private void BindControls()
+        {
+            var headerFolder = HeaderFolderItem.GetHeader();
+            if (headerFolder == null)
             {
-                var links = parentToolkitFolder.GetNavigationLinkItems();
-                if (links != null && links.Any())
+                return;
+            }
+            
+            var parentToolkitFolder = headerFolder.GetParentToolkitFolder();
+            if (parentToolkitFolder == null)
+            {
+                return;
+            }
+
+            var links = parentToolkitFolder.GetNavigationLinkItems();
+            if (links.Any())
+            {
+                // TODO: add extension to filter out logged in links?
+                if (!IsUserLoggedIn)
                 {
-                    // TODO: add extension to filter out logged in links?
-                    if (!IsUserLoggedIn)
-                    {
-                        links = links.Where(x => !x.DisplayOnlyForLoggedInUsers.Checked);
-                    }
-                    rptParentToolkit.DataSource = links;
-                    rptParentToolkit.DataBind();
+                    links = links.Where(x => !x.DisplayOnlyForLoggedInUsers.Checked);
                 }
+
+                lvParentToolkit.DataSource = links;
+                lvParentToolkit.DataBind();
             }
         }
 
-        protected void rptParentToolkit_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        void lvParentToolkit_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            if (e.IsItem())
+            if (e.Item.ItemType == ListViewItemType.DataItem)
             {
                 var item = e.Item.DataItem as NavigationLinkItem;
-                if (item != null)
-                {
-                    var frNavLink = e.FindControlAs<FieldRenderer>("frNavLink");
-                    var pnlParentToolKit = e.FindControlAs<Panel>("pnlParentToolKit");
-                    if (frNavLink != null)
-                    {
-                        frNavLink.Item = item;
-                    }
 
-                    if (pnlParentToolKit != null && item.Image != null && item.Image.MediaItem != null)
-                    {
-                        pnlParentToolKit.Style.Add(
-                            "background", 
-                            string.Format("url('{0}') no-repeat scroll 0 0 / 100px 100px rgba(0, 0, 0, 0); background-size:40px 40px; height:180px; background-color:#ffffff; background-position:50% 10px; position:relative;", item.Image.MediaUrl));
-                    }
+                var frNavLink = (FieldRenderer)e.Item.FindControl("frNavLink");
+                var pnlParentToolKit = (Panel)e.Item.FindControl("pnlParentToolKit");
+
+                frNavLink.Item = item;
+
+                if (item.Image.MediaItem != null)
+                {
+                    pnlParentToolKit.Style.Add(
+                        "background-image",
+                        string.Format("url({0})", item.Image.MediaUrl));
+                    pnlParentToolKit.Style.Add("background-repeat", "no-repeat");
                 }
             }
         }

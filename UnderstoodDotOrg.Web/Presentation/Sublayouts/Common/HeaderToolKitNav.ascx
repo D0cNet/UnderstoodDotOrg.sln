@@ -9,13 +9,21 @@
 
                 <h2>Your Parent Toolkit</h2>
 
-                <span class="button-close"><i class="icon-close-toolkit"></i>Close</span>
-                <asp:Repeater runat="server" ID="rptParentToolkit" OnItemDataBound="rptParentToolkit_ItemDataBound">
-                    <HeaderTemplate>
+                <span class="button-close"><i class="icon-close-toolkit"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.CloseButtonText %></span>
+
+                <asp:ListView ID="lvParentToolkit" runat="server" GroupItemCount="3">
+                    <LayoutTemplate>
                         <div class="slides-container">
-                            <div class="slide">
-                                <ul>
-                    </HeaderTemplate>
+                            <asp:PlaceHolder ID="groupPlaceholder" runat="server" />
+                        </div>
+                    </LayoutTemplate>
+                    <GroupTemplate>
+                        <div class="slide">
+                            <ul>
+                                <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+                            </ul>
+                        </div>
+                    </GroupTemplate>
                     <ItemTemplate>
                         <li>
                             <asp:Panel runat="server" ID="pnlParentToolKit" CssClass="icon">
@@ -24,12 +32,7 @@
                             </asp:Panel>
                         </li>
                     </ItemTemplate>
-                    <FooterTemplate>
-                        </ul>
-                            </div>
-                            </div>
-                    </FooterTemplate>
-                </asp:Repeater>
+                </asp:ListView>
             </div>
             <!-- .parent-toolkit-header-container -->
         </div>
