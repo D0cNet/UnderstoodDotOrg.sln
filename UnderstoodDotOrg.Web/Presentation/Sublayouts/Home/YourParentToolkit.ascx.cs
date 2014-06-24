@@ -138,8 +138,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
                 }
                 if (scLink != null)
                 {
-					scLink.Text = navItem.DisplayName;
-                    scLink.Item = navItem;
+					scLink.Item = navItem;
                 }
 
 
