@@ -15,12 +15,12 @@
                     <li>
                         <asp:UpdatePanel ID="UpdatePanel2" runat="server" class="update-panel">
                             <ContentTemplate>
-                                <button id="btnYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick"></button>
+                                <button id="btnYes" runat="server" class="helpful-yes" onclick="btnYes_ServerClick" ></button>
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </li>
                     <li>
-                        <button id="btnNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
+                        <button id="btnNo" runat="server" class="helpful-no" onclick="btnNo_ServerClick"></button>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
@@ -37,12 +37,12 @@
                         <li>
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server" class="update-panel">
                                 <ContentTemplate>
-                                    <button id="btnSmallYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick"></button>
+                                    <button id="btnSmallYes" runat="server" class="helpful-yes" onclick="btnYes_ServerClick"></button>
                                 </ContentTemplate>
                             </asp:UpdatePanel>
                         </li>
                         <li>
-                            <button id="btnSmallNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
+                            <button id="btnSmallNo" runat="server" class="helpful-no" onclick="btnNo_ServerClick"></button>
                         </li>
                     </ul>
                     <div class="clearfix"></div>

@@ -46,12 +46,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
             ActivityLog log = new ActivityLog();
             if (IsUserLoggedIn)
             {
+              
+
                
                 if (!log.FoundItemHelpful(context.ID.ToGuid(), CurrentMember.MemberId)) 
                 {
                     MembershipManager mmgr = new MembershipManager();
                     try
                     {
+                        //mmgr.LogMemberHelpfulVote
 
                         bool success = mmgr.LogMemberActivity(CurrentMember.MemberId,
                             context.ID.ToGuid(),
