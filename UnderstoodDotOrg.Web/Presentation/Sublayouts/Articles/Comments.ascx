@@ -9,7 +9,7 @@
             <section class="comment-list" id="count-comments">
 
                 <header>
-                    <h2 class="comment-count rs_read_this">(<asp:Literal ID="litCommentCount" runat="server" />)</h2>
+                    <h2 class="comment-count rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.CommentsLabel %>(<asp:Literal ID="litCommentCount" runat="server" />)</h2>
                     <div class="select-container select-inverted-mobile">
                       <select name="comment-sort-option" id="comment-sort-option-dropdown" class="comment-sort">
                         <option value="">Sort by</option>
@@ -39,10 +39,10 @@
                                     </p>
                                 </div>
                                 <div class="comment-actions rs_skip">
-                                    <a href="javascript:void" class="comment-reply" onclick="replyfocus();" id="ReplyButton"><i class="icon-comment-reply"></i>Reply</a>
-                                    <asp:LinkButton OnClick="LikeButton_Click" ID="LikeButton" CommandArgument='<%# Item.CommentId + "&" + Item.CommentContentTypeId %>' CssClass="comment-like" runat="server"><i class="icon-comment-like"></i>This Helped</asp:LinkButton>
+                                    <a href="javascript:void" class="comment-reply" onclick="replyfocus();" id="ReplyButton"><i class="icon-comment-reply"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ReplyLabel %></a>
+                                    <asp:LinkButton OnClick="LikeButton_Click" ID="LikeButton" CommandArgument='<%# Item.CommentId + "&" + Item.CommentContentTypeId %>' CssClass="comment-like" runat="server"><i class="icon-comment-like"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ThisHelpedLabel %></asp:LinkButton>
                                     <asp:LinkButton CssClass="comment-flag" CommandArgument='<%# Item.CommentId %>' OnClick="FlagButton_Click" ID="FlagButton" runat="server">
-                                        <i class="icon-comment-flag"></i>Report as inappropriate</asp:LinkButton>
+                                        <i class="icon-comment-flag"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ReportAsInappropriateLabel %></asp:LinkButton>
                                 </div>
                             </div>
                         </ItemTemplate>

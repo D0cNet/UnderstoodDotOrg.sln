@@ -993,6 +993,38 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string CommentsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Comments Label");
+            }
+        }
+
+        public static string ReplyLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Reply Label");
+            }
+        }
+
+        public static string ThisHelpedLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "This Helped Label");
+            }
+        }
+
+        public static string ReportAsInappropriateLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Report As Inappropriate Label");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade
