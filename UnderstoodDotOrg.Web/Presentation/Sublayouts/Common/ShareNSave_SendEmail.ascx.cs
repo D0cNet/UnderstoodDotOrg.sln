@@ -27,35 +27,47 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
-            DefaultArticlePageItem article = (DefaultArticlePageItem)Sitecore.Context.Item;
+            Page.Validate("vlgEmailForm");
 
-            InvokeEM24ContentSharedWithAFriendRequest message = new InvokeEM24ContentSharedWithAFriendRequest{};
-
-            message.PMText = txtThoughts.Text.Trim();
-            message.ToEmail = txtRecipentEMailID.Text.Trim();
-            message.UserContactFirstName = txtYourname.Text.Trim();
-
-            string domain = new Uri(HttpContext.Current.Request.Url.AbsoluteUri).GetLeftPart(UriPartial.Authority);
-
-            if (article != null)
-                message.ReminderLink = domain+article.GetUrl();
-
-            BaseReply reply = ExactTargetService.InvokeEM24ContentSharedWithAFriend(message);
-            MembershipManager mmgr = new MembershipManager();
-
-            if (IsUserLoggedIn)
+            if (Page.IsValid)
             {
-                try
+                DefaultArticlePageItem article = (DefaultArticlePageItem)Sitecore.Context.Item;
+
+                InvokeEM24ContentSharedWithAFriendRequest message = new InvokeEM24ContentSharedWithAFriendRequest { };
+
+                message.PMText = txtThoughts.Text.Trim();
+                message.ToEmail = txtRecipentEMailID.Text.Trim();
+                message.UserContactFirstName = txtYourname.Text.Trim();
+
+                string domain = new Uri(HttpContext.Current.Request.Url.AbsoluteUri).GetLeftPart(UriPartial.Authority);
+
+                if (article != null)
+                    message.ReminderLink = domain + article.GetUrl();
+
+                BaseReply reply = ExactTargetService.InvokeEM24ContentSharedWithAFriend(message);
+                MembershipManager mmgr = new MembershipManager();
+
+                if (IsUserLoggedIn)
                 {
-                    bool success = mmgr.LogMemberActivity(CurrentMember.MemberId,
-                            article.ID.ToGuid(),
-                            Constants.UserActivity_Values.Shared,
-                            Constants.UserActivity_Types.ContentRelated);
+                    try
+                    {
+                        bool success = mmgr.LogMemberActivity(CurrentMember.MemberId,
+                                article.ID.ToGuid(),
+                                Constants.UserActivity_Values.Shared,
+                                Constants.UserActivity_Types.ContentRelated);
+                    }
+                    catch
+                    {
+
+                    }
                 }
-                catch
-                {
-                    return;
-                }
+
+                pnlConfirmation.Visible = true;
+                pnlForm.Visible = false;
+            }
+            else
+            {
+                validWarning.Visible = true;
             }
         }
     }

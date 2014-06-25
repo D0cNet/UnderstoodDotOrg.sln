@@ -13,6 +13,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     public partial class ShareNSave_SendEmail {
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// pnlForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlForm;
+        
+        /// <summary>
+        /// validWarning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl validWarning;
+        
+        /// <summary>
         /// txtYourname control.
         /// </summary>
         /// <remarks>
@@ -20,6 +47,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtYourname;
+        
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// txtYourEMailID control.
@@ -31,6 +67,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.TextBox txtYourEMailID;
         
         /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        
+        /// <summary>
         /// txtRecipentEMailID control.
         /// </summary>
         /// <remarks>
@@ -38,6 +83,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRecipentEMailID;
+        
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
         /// txtThoughts control.
@@ -49,6 +103,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.TextBox txtThoughts;
         
         /// <summary>
+        /// RequiredFieldValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        
+        /// <summary>
         /// btnShowResults control.
         /// </summary>
         /// <remarks>
@@ -56,5 +119,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btnShowResults;
+        
+        /// <summary>
+        /// pnlConfirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlConfirmation;
     }
 }
