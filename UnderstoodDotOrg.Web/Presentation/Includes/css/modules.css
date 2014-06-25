@@ -4656,7 +4656,7 @@
   }
   /* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_comment-list.scss */
   .comment-list .comment-info .comment-username:after {
-    content: " â€¢ ";
+    content: " • ";
   }
 }
 /* line 174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_comment-list.scss */

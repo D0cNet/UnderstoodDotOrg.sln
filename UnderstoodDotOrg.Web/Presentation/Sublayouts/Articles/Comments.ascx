@@ -4,17 +4,19 @@
 <div class="container comments">
     <div class="row">
         <!-- comments col -->
-        <div class="col col-23 offset-1">
+        <div class="col col-22 offset-1 skiplink-comments">
             <!-- BEGIN PARTIAL: comment-list -->
-            <section class="comment-list" id="comment-list">
+            <section class="comment-list" id="count-comments">
 
                 <header>
-                    <asp:Label CssClass="comment-count" ID="CommentCountDisplay" runat="server" />
-                    <select name="comment-sort-option" class="comment-sort">
+                    <h2 class="comment-count rs_read_this">(<asp:Literal ID="litCommentCount" runat="server" />)</h2>
+                    <div class="select-container select-inverted-mobile">
+                      <select name="comment-sort-option" id="comment-sort-option-dropdown" class="comment-sort">
                         <option value="">Sort by</option>
                         <option>A-Z</option>
                         <option>Z-A</option>
-                    </select>
+                      </select>
+                    </div>
                 </header>
 
                 <div class="comment-list-wrapper">
@@ -23,26 +25,24 @@
                             <div class="comment-wrapper">
                                 <div class="comment-header" id="<%# Item.CommentId %>">
                                     <span class="comment-avatar">
-                                        <img style="height: 60px; width: 60px;" alt="60x60 Placeholder" src='<%# Item.AuthorAvatarUrl %>' />
+                                        <img src="<%# Item.AuthorAvatarUrl %>" width="60" height="60" />
                                     </span>
                                     <span class="comment-info">
                                         <span class="comment-username"><%# Item.AuthorUsername %></span>
                                         <span class="comment-date"><%# Item.PublishedDate %></span>
                                     </span>
-                                    <a class="comment-like"><i class="icon-comment-like"></i><%# Item.Likes %></a>
+                                    <a class="comment-like"><i class="icon-comment-like"></i><%# Item.Likes %> <span class="visuallyhidden">Likes</span></a>
                                 </div>
                                 <div class="comment-body">
                                     <p>
                                         <%# Item.Body  %>
                                     </p>
                                 </div>
-                                <div class="comment-actions">
+                                <div class="comment-actions rs_skip">
                                     <a href="javascript:void" class="comment-reply" onclick="replyfocus();" id="ReplyButton"><i class="icon-comment-reply"></i>Reply</a>
-                                    <asp:LinkButton OnClick="LikeButton_Click" ID="LikeButton" CommandArgument='<%# Item.CommentId + "&" + Item.CommentContentTypeId %>' class="comment-like" runat="server"><i class="icon-comment-like"></i>This Helped</asp:LinkButton>
+                                    <asp:LinkButton OnClick="LikeButton_Click" ID="LikeButton" CommandArgument='<%# Item.CommentId + "&" + Item.CommentContentTypeId %>' CssClass="comment-like" runat="server"><i class="icon-comment-like"></i>This Helped</asp:LinkButton>
                                     <asp:LinkButton CssClass="comment-flag" CommandArgument='<%# Item.CommentId %>' OnClick="FlagButton_Click" ID="FlagButton" runat="server">
                                         <i class="icon-comment-flag"></i>Report as inappropriate</asp:LinkButton>
-                                    <!--<a class="comment-flag" href="REPLACE"><i class="icon-comment-flag"></i>Report as inappropriate</--a>-->
-
                                 </div>
                             </div>
                         </ItemTemplate>
@@ -53,17 +53,26 @@
 
                 <div class="comment-footer" id="comment-submit">
                     <div class="comment-more-wrapper">
-                        <a class="comment-more" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-comment-more"></i></a>
+                        <!--Show More-->
+                        <div class="container show-more rs_skip">
+                          <div class="row">
+                            <div class="col col-24">
+                              <a class="show-more-link " href="#" data-path="articles/comments" data-container="comment-list-wrapper" data-item="comment-wrapper" data-count="2"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
+                            </div>
+                          </div>
+                        </div><!-- .show-more -->
                     </div>
-                    <form>
+
                     <div class="comment-form">
-                        <textarea name="comment-form-reply" class="comment-form-reply uniform" id="CommentEntryTextField" placeholder="Add your comment..." runat="server"></textarea>
-                        <asp:RequiredFieldValidator ForeColor="Red" ValidationGroup="vgSubmitButton" ID="valComment" runat="server" ControlToValidate="CommentEntryTextField" CssClass="validationerror"></asp:RequiredFieldValidator>
+                        <asp:Label runat="server" AssociatedControlID="txtComment"></asp:Label>
+                        <asp:TextBox ID="txtComment" runat="server" TextMode="MultiLine" MaxLength="1000" CssClass="comment-form-reply" />
+                        <label for="comment-form-reply-text" class="visuallyhidden">Add your comment</label>
+                        <asp:RequiredFieldValidator ForeColor="Red" ValidationGroup="vgSubmitButton" ID="rfvComment" runat="server" ControlToValidate="txtComment" CssClass="validationerror"></asp:RequiredFieldValidator>
                         <%--<asp:TextBox CssClass="comment-form-reply" ID="CommentEntryTextField" runat="server" />--%>
-                        <asp:Button ValidationGroup="vgSubmitButton" ID="SubmitButton" OnClick="SubmitButton_Click" class="button" runat="server" />
+                        <asp:Button ValidationGroup="vgSubmitButton" ID="btnSubmit" OnClick="SubmitButton_Click" CssClass="comment-form-submit button" runat="server" />
                         <div class="clearfix"></div>
                     </div>
-                        </form>
+ 
                 </div>
 
             </section>
@@ -77,6 +86,6 @@
 <!-- .container -->
 <script type="text/javascript">
     function replyfocus() {
-        $('#<%=CommentEntryTextField.ClientID %>').focus();
+        document.getElementById("txtComment.ClientID").focus();
     }
 </script>

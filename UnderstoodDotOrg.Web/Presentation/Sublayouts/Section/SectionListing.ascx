@@ -36,7 +36,7 @@
                 <!-- Listing Row -->
                 <div class="row">
                     <div class="col col-23 offset-1 skiplink-content" aria-role="main">
-                        ">
+
                     <h2><%--<a href="REPLACE">Early Learners <i class="icon-arrow-right-blue"></i></a>--%>
                         <asp:HyperLink ID="hlTopicLink" runat="server">
                         </asp:HyperLink><i class="icon-arrow-right-blue"></i>

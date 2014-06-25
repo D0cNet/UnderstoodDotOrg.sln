@@ -13,13 +13,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     public partial class Comments {
         
         /// <summary>
-        /// CommentCountDisplay control.
+        /// litCommentCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CommentCountDisplay;
+        protected global::System.Web.UI.WebControls.Literal litCommentCount;
         
         /// <summary>
         /// CommentRepeater control.
@@ -31,30 +31,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.Repeater CommentRepeater;
         
         /// <summary>
-        /// CommentEntryTextField control.
+        /// txtComment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea CommentEntryTextField;
+        protected global::System.Web.UI.WebControls.TextBox txtComment;
         
         /// <summary>
-        /// valComment control.
+        /// rfvComment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valComment;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvComment;
         
         /// <summary>
-        /// SubmitButton control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitButton;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

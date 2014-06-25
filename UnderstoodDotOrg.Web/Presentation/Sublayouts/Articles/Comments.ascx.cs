@@ -24,10 +24,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            SubmitButton.Text = DictionaryConstants.SubmitButtonText;
+            btnSubmit.Text = DictionaryConstants.SubmitButtonText;
 
             // TODO: convert to dictionary
-            CommentEntryTextField.Attributes.Add("placeholder", "Add your comment...");
+            txtComment.Attributes.Add("placeholder", "Add your comment...");
 
             Item currentItem = Sitecore.Context.Item;
 
@@ -70,7 +70,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             // TODO: refactor so pages all inherit a shared template item type
             var fieldBlogId = currentItem.Fields[Constants.TelligentFieldNames.BlogId];
             var fieldBlogPostId = currentItem.Fields[Constants.TelligentFieldNames.BlogPostId];
-            valComment.ErrorMessage = DictionaryConstants.CommentErrorMessage;
+            rfvComment.ErrorMessage = DictionaryConstants.CommentErrorMessage;
 
             if (fieldBlogId == null || fieldBlogPostId == null)
             {
@@ -100,14 +100,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             CommentRepeater.DataSource = dataSource;
             CommentRepeater.DataBind();
 
-            // TODO: If paging is added, revise this to use TotalCount attribute in XML response
-            // TODO: use dictionary
-            CommentCountDisplay.Text = String.Format("Comments ({0})", dataSource.Count);
+            litCommentCount.Text = CommunityHelper.GetTotalComments(_blogId.ToString(), _blogPostId.ToString()).ToString();
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            string body = CommentEntryTextField.Value;
+            if (!IsUserLoggedIn)
+            {
+                // TODO: redirect to sign in page
+                return;
+            }
+
+            string body = txtComment.Text;
             string user = "";
             try
             {
@@ -127,31 +131,45 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void FlagButton_Click(object sender, EventArgs e)
         {
+            if (!IsUserLoggedIn)
+            {
+                // TODO: redirect
+                return;
+            }
+
             LinkButton btn = (LinkButton)(sender);
             string id = btn.CommandArgument;
 
-            var webClient = new WebClient();
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    var adminKeyBase64 = CommunityHelper.TelligentAuth();
 
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-           // var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = CommunityHelper.TelligentAuth();//Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    webClient.Headers.Add("Rest-Method", "PUT");
+                    var requestUrl = String.Format("{0}api.ashx/v2/comments/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), id);
 
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            webClient.Headers.Add("Rest-Method", "PUT");
-            var requestUrl = String.Format("{0}api.ashx/v2/comments/{1}.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), id);
+                    var values = new NameValueCollection();
+                    values.Add("CommentId", id);
+                    values.Add("IsApproved", "false");
 
-            var values = new NameValueCollection();
-            values.Add("CommentId", id);
-            values.Add("IsApproved", "false");
+                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
 
-            var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
-
-            Console.WriteLine(xml);
-            Response.Redirect(Request.RawUrl);
+                    Response.Redirect(Request.RawUrl);
+                }
+                catch { } // TODO: add logging
+            }
         }
 
         protected void LikeButton_Click(object sender, EventArgs e)
         {
+            if (!IsUserLoggedIn)
+            {
+                // TODO: redirect
+                return;
+            }
+
             LinkButton btn = (LinkButton)(sender);
             string ids = btn.CommandArgument;
             string[] s = ids.Split('&');
@@ -159,24 +177,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             string contentId = s[0];
             string contentTypeId = s[1];
 
-            var webClient = new WebClient();
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", CommunityHelper.TelligentAuth());
+                    webClient.Headers.Add("Rest-Impersonate-User", this.CurrentMember.ScreenName.Trim());
+                    var requestUrl = String.Format("{0}api.ashx/v2/likes.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
 
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+                    var values = new NameValueCollection();
+                    values.Add("ContentId", contentId);
+                    values.Add("ContentTypeId", contentTypeId);
 
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            webClient.Headers.Add("Rest-Impersonate-User", this.CurrentMember.ScreenName.Trim());
-            var requestUrl = String.Format("{0}api.ashx/v2/likes.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
 
-            var values = new NameValueCollection();
-            values.Add("ContentId", contentId);
-            values.Add("ContentTypeId", contentTypeId);
-
-            var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
-
-            Console.WriteLine(xml);
-            Response.Redirect(Request.RawUrl);
+                    Response.Redirect(Request.RawUrl);
+                }
+                catch { } // TODO: add loggin
+            }
         }
         private void PopulateTelligentFields(Item item, int blogId, string title)
         {
@@ -196,16 +214,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                     XmlNode node = xmlDoc.SelectSingleNode("Response/BlogPost");
 
-                        var contentId = node["ContentId"].InnerText;
-                        var contentTypeId = node["ContentTypeId"].InnerText;
-                        var contentUrl = node["Url"].InnerText;
-                        var blogPostId = node["Id"].InnerText;
-                        var telligentUrl = node["Url"].InnerText;
+                    var contentId = node["ContentId"].InnerText;
+                    var contentTypeId = node["ContentTypeId"].InnerText;
+                    var blogPostId = node["Id"].InnerText;
+                    var telligentUrl = node["Url"].InnerText;
 
-                        string PublishedDate = CommunityHelper.FormatDate(node["PublishedDate"].InnerText);
-
-                    item.Editing.BeginEdit();
-                    try
+                    // TODO: revisit, this probably shouldn't be on page load
+                    using (new Sitecore.Data.Items.EditContext(item, updateStatistics: false, silent: true))
                     {
                         item["BlogPostId"] = blogPostId;
                         item["BlogId"] = blogId.ToString();
@@ -213,11 +228,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         item["TelligentUrl"] = telligentUrl;
                         item["ContentTypeId"] = contentTypeId;
                     }
-                    catch
-                    {
-                    }
-                    item.Editing.EndEdit();
-
                 }
                 catch { } // TODO: Add logging
             }
