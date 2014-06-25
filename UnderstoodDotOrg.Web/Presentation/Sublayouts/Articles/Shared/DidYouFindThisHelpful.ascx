@@ -7,24 +7,20 @@
             <!-- BEGIN PARTIAL: find-helpful -->
             <div class="find-this-helpful content" id="count-helpful-content rs_read_this">
 
-
-
-
                 <h4><asp:Literal ID="ltlDidYouFindThisHelpful" runat="server"></asp:Literal></h4>
-                <ul>
-                    <li>
-                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" class="update-panel">
-                            <ContentTemplate>
-                                <button id="btnYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick" ></button>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
-                    </li>
-                    <li>
-                        <button id="btnNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
-                    </li>
-                </ul>
+                    <asp:UpdatePanel ID="UpdatePanel3" runat="server" class="update-panel">
+                        <ContentTemplate>
+                            <ul>
+                                <li>
+                                    <button id="btnYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick" ></button>
+                                </li>
+                                <li>
+                                    <button id="btnNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
+                                </li>
+                            </ul>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 <div class="clearfix"></div>
-
             </div>
 
             <!-- END PARTIAL: find-helpful -->
@@ -42,7 +38,7 @@
                                 <li>
                                     <button id="btnSmallNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
                                 </li>
-                              </ul>
+                            </ul>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                     <div class="clearfix"></div>

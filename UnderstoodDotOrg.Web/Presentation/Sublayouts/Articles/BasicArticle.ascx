@@ -123,7 +123,7 @@
         <!-- right bar -->
         <div class="col col-5 offset-1">
             
-            <sc:Sublayout Path="~/Presentation/Sublayouts/Blogs/BlogsCommon/FoundHelpfulWidget.ascx" runat="server"></sc:Sublayout>
+            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" runat="server"></sc:Sublayout>
 
             <!-- END PARTIAL: comments-count -->
             <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:Sublayout>
