@@ -46,4 +46,31 @@
   color: #696969;
 }
 
+/* UN-4957 */
+.deep-dive-article-container .whats-covered-deep-dive ul li {
+  display: list-item;
+  width: auto;
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+}
+.old-ie .deep-dive-article-container .whats-covered-deep-dive ul li {
+  display: block;
+}
+@media (min-width: 769px) {
+  .deep-dive-article-container .whats-covered-deep-dive ul {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    column-count: 2;
+  }
+  .deep-dive-article-container .whats-covered-deep-dive ul li {
+    /*
+    inline-block prevents extra margin at top of second column.
+    see <http://stackoverflow.com/a/5315013/2284440>
+    */
+    display: inline-block;
+    width: auto;
+  }
+}
+
 /* END: temporary override rules provided by DP. */
