@@ -16,7 +16,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
         protected void Page_Load(object sender, EventArgs e)
         {
             BlogsPostPageItem blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
-            linkAuthor.HRef = linkAuthor2.HRef = "/Community and Events/Blogs/Author/" + blogCig.Author.Rendered;
+            BlogsAuthorPageItem author = Sitecore.Context.Database.GetItem("/sitecore/content/Home/Community and Events/Blogs/Author/" + blogCig.Author.Rendered);
+            linkAuthor.HRef = linkAuthor2.HRef = linkAuthor3.HRef = "/Community and Events/Blogs/Author/" + blogCig.Author.Rendered;
+            ltAuthorBio.Text = CommunityHelper.FormatString100(author.Biography.Text) + "...";
         }
     }
 }

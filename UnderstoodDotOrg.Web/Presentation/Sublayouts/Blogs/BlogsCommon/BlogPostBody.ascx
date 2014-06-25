@@ -25,8 +25,8 @@
 
         <div class="author-details">
             <a class="author-name" id="linkAuthor2" runat="server"><sc:FieldRenderer id="frBlogAuthor2" runat="server" fieldname="Author" /></a>
-            <a class="author-more-posts" href="REPLACE">More Posts by this Author</a>
-            <p class="author-description">Repellat labore magni placeat ea magnam quo veritatis laboriosam amet voluptas necessitatibus sed</p>
+            <a class="author-more-posts" id="linkAuthor3" runat="server">More Posts by this Author</a>
+            <p class="author-description"><asp:Literal ID="ltAuthorBio" runat="server" /></p>
         </div>
     </div>
 </div>
