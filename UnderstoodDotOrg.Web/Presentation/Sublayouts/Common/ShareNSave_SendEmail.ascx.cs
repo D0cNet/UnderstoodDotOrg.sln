@@ -23,6 +23,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             txtYourEMailID.Attributes.Add("placeholder", DictionaryConstants.EnterEmailLabel);
             txtRecipentEMailID.Attributes.Add("placeholder", DictionaryConstants.FriendsEmailLabel);
             txtThoughts.Attributes.Add("placeholder", DictionaryConstants.EmailTextPlaceholder);
+
+            litValidationMessage.Text = DictionaryConstants.EmailValidationMessage;
+            litThankYouMessage.Text = DictionaryConstants.EmailThankYouMessage;
         }
 
         protected void btnSend_Click(object sender, EventArgs e)

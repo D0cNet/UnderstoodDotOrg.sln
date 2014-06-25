@@ -40,6 +40,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl validWarning;
         
         /// <summary>
+        /// litValidationMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litValidationMessage;
+        
+        /// <summary>
         /// txtYourname control.
         /// </summary>
         /// <remarks>
@@ -128,5 +137,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlConfirmation;
+        
+        /// <summary>
+        /// litThankYouMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litThankYouMessage;
     }
 }

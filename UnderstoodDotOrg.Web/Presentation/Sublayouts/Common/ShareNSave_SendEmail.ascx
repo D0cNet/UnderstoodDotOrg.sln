@@ -8,7 +8,7 @@
             <ContentTemplate>
                 <asp:Panel ID="pnlForm" runat="server">
                     <h4 class="title">Send to a Friend</h4>
-                    <p id="validWarning" runat="server" visible="false" style="color: red;">Please fill out all fields</p>
+                    <p id="validWarning" runat="server" visible="false" style="color: red;"><asp:Literal ID="litValidationMessage" runat="server"></asp:Literal></p>
                     <p><asp:TextBox ID="txtYourname" runat="server"></asp:TextBox></p>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator1"
                         controltovalidate="txtYourname"
@@ -40,7 +40,7 @@
                 </asp:Panel>
                 <asp:Panel ID="pnlConfirmation" runat="server" Visible="false">
                     <h4 class="title">Email Sent!</h4>
-                    <p>Thank you for sharing this content with friends and family</p>
+                    <p><asp:Literal ID="litThankYouMessage" runat="server"></asp:Literal></p>
                     <div class="buttons">
                         <button type="button" class="button cancel-button" onclick="$('.email-a-friend-modal').hide();">Close Window</button> 
                     </div>

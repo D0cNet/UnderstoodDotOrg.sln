@@ -762,6 +762,22 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "Email Text Placeholder");
             }
         }
+
+        public static string EmailValidationMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Email Validation Message");
+            }
+        }
+
+        public static string EmailThankYouMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Email Thank You Message");
+            }
+        }
         
         public static string PluralCommentLabel
         {
