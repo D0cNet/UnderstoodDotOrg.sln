@@ -68,11 +68,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     DefaultArticlePageItem article = (DefaultArticlePageItem)dataItem;
 
-                    FieldRenderer frThumbnail = e.FindControlAs<FieldRenderer>("frThumbnail");
+                    System.Web.UI.WebControls.Image imgThumbnail = e.FindControlAs<System.Web.UI.WebControls.Image>("imgThumbnail");
                     HyperLink hypArticleLink = e.FindControlAs<HyperLink>("hypArticleLink");
 
-                    if (frThumbnail != null)
-                        frThumbnail.Item = article;
+                    if (imgThumbnail != null)
+                        imgThumbnail.ImageUrl = article.GetArticleThumbnailUrl(230, 129);
 
                     if (hypArticleLink != null)
                     {

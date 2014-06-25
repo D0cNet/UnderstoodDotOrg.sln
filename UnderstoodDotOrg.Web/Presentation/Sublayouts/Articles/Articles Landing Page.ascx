@@ -11,7 +11,7 @@
             </HeaderTemplate>
             <ItemTemplate>
                 <figure class="col col-5 offset-<%# Container.ItemIndex + 1 %>">
-                    <sc:FieldRenderer ID="frThumbnail" runat="server" FieldName="Content Thumbnail"></sc:FieldRenderer>
+                    <asp:Image ID="imgThumbnail" runat="server" />
                 </figure>
                 <div class="col col-4 offset-1 question">
                     <asp:HyperLink ID="hypArticleLink" runat="server"></asp:HyperLink>
