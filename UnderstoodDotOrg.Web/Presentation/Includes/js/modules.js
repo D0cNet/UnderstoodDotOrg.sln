@@ -2011,7 +2011,7 @@ jQuery(document).ready(function () {
     U.findHelpful = function () {
         var self = this;
 
-        /*jQuery('.find-this-helpful ul li button').click(function () {
+        jQuery('.find-this-helpful ul li button').click(function () {
             var tempCount = parseInt(jQuery('.count-helpful a span').html());
 
             // disable sibling buttons when selected
@@ -2020,19 +2020,19 @@ jQuery(document).ready(function () {
             if (jQuery(this).hasClass('helpful-yes')) { // Yes is clicked
                 if (!jQuery(this).hasClass('selected')) {
                     // Yes not selected
-                    jQuery('.count-helpful a span').html(tempCount + 1);
+                    //jQuery('.count-helpful a span').html(tempCount + 1);
                 }
             } else {
                 if (jQuery('.helpful-yes').hasClass('selected')) { // No is clicked
                     // No is clicked, yes is selected
-                    jQuery('.count-helpful a span').html(tempCount - 1);
+                    //jQuery('.count-helpful a span').html(tempCount - 1);
                 }
             }
 
             jQuery('.find-this-helpful ul li button').removeClass('selected');
             jQuery(this).addClass('selected');
             return false;
-        });*/
+        });
 
         // Handle moving sidebar find-this-helpful module around depending on window width
         var $module = $('.find-this-helpful.sidebar');
