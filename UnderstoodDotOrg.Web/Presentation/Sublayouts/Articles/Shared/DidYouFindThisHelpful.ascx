@@ -33,18 +33,18 @@
                 <!-- BEGIN PARTIAL: find-helpful -->
                 <div class="find-this-helpful sidebar no-margin" id="count-helpful-sidebar rs_read_this">
                     <h4><asp:Literal ID="ltlDidYouFindThisHelpfulSmall" runat="server"></asp:Literal></h4>
-                    <ul>
-                        <li>
-                            <asp:UpdatePanel ID="UpdatePanel1" runat="server" class="update-panel">
-                                <ContentTemplate>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server" class="update-panel">
+                        <ContentTemplate>
+                            <ul>
+                                <li>
                                     <button id="btnSmallYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick"></button>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-                        </li>
-                        <li>
-                            <button id="btnSmallNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
-                        </li>
-                    </ul>
+                                </li>
+                                <li>
+                                    <button id="btnSmallNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
+                                </li>
+                              </ul>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                     <div class="clearfix"></div>
 
                 </div>

@@ -28,11 +28,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                 {
                     btnYes.Attributes.Add("class", "helpful-yes selected");
                     btnSmallYes.Attributes.Add("class", "helpful-yes selected");
+                    btnNo.Attributes.Add("class", "helpful-no");
+                    btnSmallNo.Attributes.Add("class", "helpful-no");
                 }
                 else if (log.FoundItemNotHelpful(context.ID.ToGuid(), CurrentMember.MemberId))
                 {
                     btnNo.Attributes.Add("class", "helpful-no selected");
                     btnSmallNo.Attributes.Add("class", "helpful-no selected");
+                    btnYes.Attributes.Add("class", "helpful-yes");
+                    btnSmallYes.Attributes.Add("class", "helpful-yes");
                 }
                 else
                 {
@@ -40,6 +44,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                     btnSmallNo.Attributes.Add("class", "helpful-no");
                     btnYes.Attributes.Add("class", "helpful-yes");
                     btnSmallYes.Attributes.Add("class", "helpful-yes");
+           
                 }
 
             }
@@ -74,9 +79,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 
                         if (success)
                         {
-                        //    btnYes.Attributes.Add("class", "helpful-yes selected");
-                        //    btnSmallYes.Attributes.Add("class", "helpful-yes selected");
-                        Response.Redirect(Request.RawUrl);
+                            btnYes.Attributes.Add("class", "helpful-yes selected");
+                            btnSmallYes.Attributes.Add("class", "helpful-yes selected");
+                            btnNo.Attributes.Add("class", "helpful-no");
+                            btnSmallNo.Attributes.Add("class", "helpful-no");
+                            Response.Redirect(Request.RawUrl);
+                   
                         }
                     }
                     catch
@@ -111,8 +119,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 
                         if (success)
                         {
-                        //    btnNo.Attributes.Add("class", "helpful-no selected");
-                        //    btnSmallNo.Attributes.Add("class", "helpful-no selected");
+                            btnNo.Attributes.Add("class", "helpful-no selected");
+                            btnSmallNo.Attributes.Add("class", "helpful-no selected");
+                            btnYes.Attributes.Add("class", "helpful-yes");
+                            btnSmallYes.Attributes.Add("class", "helpful-yes");
                             Response.Redirect(Request.RawUrl);
                         }
                     }
