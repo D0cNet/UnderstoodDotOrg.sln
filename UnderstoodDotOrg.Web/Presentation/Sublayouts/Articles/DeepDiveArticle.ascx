@@ -96,6 +96,16 @@
                 <!-- end key-takeaways -->
 
                 <!-- END PARTIAL: key-takeaways -->
+
+                <!-- Sources -->
+                <div id="divSources" runat="server" class="key-takeaways">
+                    <header class='header-key-takeaways'>
+                        <h2>
+                            <sc:FieldRenderer ID="FieldRenderer2" runat="server" FieldName="Sources Header" />
+                        </h2>
+                    </header>
+                    <sc:FieldRenderer ID="FieldRenderer1" runat="server" FieldName="Sources Content" />
+                </div>
             </div>
             <!-- BEGIN PARTIAL: about-the-author -->
             <div class="rs_about_author rs_read_this">

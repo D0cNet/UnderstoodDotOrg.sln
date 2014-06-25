@@ -38,6 +38,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 rptExtraSections.DataSource = finalSectionList.Skip(3);
                 rptExtraSections.DataBind();
             }
+
+            if (string.IsNullOrEmpty(Model.SourcesContent))
+            {
+                divSources.Visible = false;
+            }
         }
     }
 }

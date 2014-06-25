@@ -76,6 +76,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frKeyTakeawayDesc;
         
         /// <summary>
+        /// divSources control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divSources;
+        
+        /// <summary>
+        /// FieldRenderer2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer FieldRenderer2;
+        
+        /// <summary>
+        /// FieldRenderer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer FieldRenderer1;
+        
+        /// <summary>
         /// sbAboutAuthor control.
         /// </summary>
         /// <remarks>
