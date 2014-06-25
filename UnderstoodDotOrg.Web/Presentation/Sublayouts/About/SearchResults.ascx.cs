@@ -1,34 +1,91 @@
-﻿using System;
+﻿using Sitecore.Data.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Domain.Search.JSON;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Widgets.Base;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 {
-    public partial class SearchResults : BaseSublayout
+    public partial class SearchResults : BaseSublayout<SearchResultsItem>
     {
         protected string SearchTerm { get; set; }
         protected string ResultCount { get; set; }
+        protected string AjaxUrl
+        {
+            get
+            {
+                return Sitecore.Configuration.Settings.GetSetting(Constants.Settings.SearchResultsEndpoint);
+            }
+        }
 
-        private void Page_Load(object sender, EventArgs e)
+        protected string AjaxTerm
+        {
+            get
+            {
+                return System.Web.HttpUtility.HtmlAttributeEncode(HttpHelper.GetQueryString(Constants.SEARCH_TERM_QUERY_STRING));
+            }
+        }
+
+        protected string AjaxType
+        {
+            get
+            {
+                return System.Web.HttpUtility.HtmlAttributeEncode(HttpHelper.GetQueryString(Constants.SEARCH_TYPE_FILTER_QUERY_STRING));
+            }
+        }
+
+        private void Page_Init(object sender, EventArgs e)
         {
             BindEvents();
             BindCopy();
+            BindControls();
+        }
 
+        private void Page_Load(object sender, EventArgs e)
+        {
             // Parse query string
             string query = HttpHelper.GetQueryString(Constants.SEARCH_TERM_QUERY_STRING);
             string type = HttpHelper.GetQueryString(Constants.SEARCH_TYPE_FILTER_QUERY_STRING);
 
+            // TODO: refactor
+            // Process postback due to article type filter
             if (IsPostBack)
             {
                 string target = Request.Params.Get("__EVENTTARGET") ?? String.Empty;
+
+                // Check controls
+                if (string.IsNullOrEmpty(target))
+                {
+                    Control sourceControl = null;
+                    foreach (string ctl in Request.Form)
+                    {
+                        Control foundControl = Page.FindControl(ctl);
+
+                        if (foundControl is Button)
+                        {
+                            sourceControl = foundControl;
+                            break;
+                        }
+                    }
+
+                    // Allow widget postback
+                    if ((sourceControl != null && sourceControl.ID != btnSearch.ID)
+                        || sourceControl == null)
+                    {
+                        return;
+                    }
+                }
 
                 if (!String.IsNullOrEmpty(txtSearch.Text.Trim()))
                 {
@@ -37,7 +94,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 
                 if (target == ddlSearchFilter.UniqueID)
                 {
-                    type = ddlSearchFilter.SelectedValue;      
+                    type = ddlSearchFilter.SelectedValue;
                 }
                 else
                 {
@@ -89,8 +146,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
             bool hasSuggestions = suggestions.Any();
             bool hasResults = searchResults.Articles.Any();
 
-            phResultsMisspelling.Visible = hasSuggestions;
-            phResultsNoMisspelling.Visible = !hasSuggestions;
+            pnlResultsMisspelling.Visible = hasSuggestions;
+            pnlResultsNoMisspelling.Visible = !hasSuggestions;
 
             if (hasResults || hasSuggestions) 
             {
@@ -108,8 +165,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
             } 
             else 
             {
-                phNoResults.Visible = true;
-                phResults.Visible = false;
+                pnlNoResults.Visible = true;
+                pnlResults.Visible = false;
             }
             SearchTerm = litSearchTermNoResults.Text = System.Net.WebUtility.HtmlEncode(query);
             ResultCount = searchResults.TotalMatches.ToString();
@@ -127,6 +184,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 
         private void BindEvents()
         {
+            rptWidgets.ItemDataBound += rptWidgets_ItemDataBound;
             btnSearch.Click += btnSearch_Click;
         }
 
@@ -150,27 +208,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
             
         }
 
-        protected string AjaxUrl
+        private void BindControls()
         {
-            get
+            IEnumerable<Item> items = Model.ToolWidgets.ListItems.FilterByContextLanguageVersion()
+                                        .Take(Constants.SUBTOPIC_WIDGETS_ENTRIES);
+            if (items.Any())
             {
-                return Sitecore.Configuration.Settings.GetSetting(Constants.Settings.SearchResultsEndpoint);
+                rptWidgets.DataSource = items;
+                rptWidgets.DataBind();
             }
         }
 
-        protected string AjaxTerm
+        void rptWidgets_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            get
+            if (e.IsItem())
             {
-                return System.Web.HttpUtility.HtmlAttributeEncode(HttpHelper.GetQueryString(Constants.SEARCH_TERM_QUERY_STRING));
-            }
-        }
+                Item item = (Item)e.Item.DataItem;
 
-        protected string AjaxType
-        {
-            get
-            {
-                return System.Web.HttpUtility.HtmlAttributeEncode(HttpHelper.GetQueryString(Constants.SEARCH_TYPE_FILTER_QUERY_STRING));
+                Sublayout slWidget = e.FindControlAs<Sublayout>("slWidget");
+                slWidget.DataSource = item.ID.ToString();
+
+                slWidget.Path = ToolWidgetItem.GetWidgetSublayoutPath(item);
             }
         }
     }

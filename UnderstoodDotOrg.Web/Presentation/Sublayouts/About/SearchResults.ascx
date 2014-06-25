@@ -20,23 +20,22 @@
   </div>
 </asp:Panel>
 
-<asp:PlaceHolder ID="phResults" runat="server">
+<asp:Panel ID="pnlResults" runat="server">
 <div class="container l-results-and-filter l-results-misspelling">
   <div class="row">
     <div class="col col-24 rs_read_this">
       <!-- UN-1741 - # of Results & Filter -->
       <!-- BEGIN PARTIAL: about/results-and-filter -->
-        <div class="results">
-          <asp:PlaceHolder ID="phResultsNoMisspelling" runat="server">
-              <h1><%= ResultCount %> Results for <span>&ldquo;<%= SearchTerm %>&rdquo;</span></h1>
-          </asp:PlaceHolder>
-            <asp:PlaceHolder ID="phResultsMisspelling" runat="server">
-                <h1>Showing results for <span>&ldquo;<%= SearchTerm %>&rdquo;</span></h1>
-                <h2>Search instead for <asp:Literal ID="litMisspellings" runat="server" /></h2>
-                <h3><%= ResultCount %> Results for <span>&ldquo;<%= SearchTerm %>&rdquo;</span></h3>
-            </asp:PlaceHolder>
+
+        <asp:Panel ID="pnlResultsNoMisspelling" runat="server" CssClass="results">
+            <h1><%= ResultCount %> <sc:FieldRenderer ID="frResultsFor" runat="server" FieldName="Results For Label" /> <span>&ldquo;<%= SearchTerm %>&rdquo;</span></h1>
+        </asp:Panel>
+        <asp:Panel ID="pnlResultsMisspelling" runat="server" CssClass="results">
+            <h1><sc:FieldRenderer ID="frShowingResultsFor" runat="server" FieldName="Showing Results For Label" /> <span>&ldquo;<%= SearchTerm %>&rdquo;</span></h1>
+            <h2><sc:FieldRenderer ID="frSearchInsteadFor" runat="server" FieldName="Search Instead For Label" /> <asp:Literal ID="litMisspellings" runat="server" /></h2>
+            <h3><%= ResultCount %> <sc:FieldRenderer ID="frResultsFor2" runat="server" FieldName="Results For Label" /> <span>&ldquo;<%= SearchTerm %>&rdquo;</span></h3>
+        </asp:Panel>
             
-        </div>
         <label>
           <asp:DropDownList ID="ddlSearchFilter" AutoPostBack="true" runat="server" />
         </label>
@@ -114,29 +113,55 @@
     </div><!-- .row -->
 </div> <!-- .container -->
 
-</asp:PlaceHolder>
+</asp:Panel>
 
-<asp:Placeholder id="phNoResults" runat="server" Visible="false">
+<asp:Panel id="pnlNoResults" runat="server" Visible="false">
     <div class="container l-about-zero-results">
-            <div class="row">
+        <div class="row">
             <div class="col col-24 zero-results-inner">
                 <div class="col col-22 offset-1 rs_read_this zero-results-inner-rs-wrapper">
                 <!-- UN-3289 - Zero Results -->
                 <!-- BEGIN PARTIAL: about/about-zero-results.erb -->
                 <div class="about-zero-results">
-                    <h1>0 Results for <span>&ldquo;<asp:Literal ID="litSearchTermNoResults" runat="server" />&rdquo;</span></h1>
-                    <p>We couldn't find any results that match your search words. Try these:</p>
-                    <ul>
-                    <li>Check your spelling</li>
-                    <li>Use different search words in the search bar above</li>
-                    </ul>
+                    <h1>0 <sc:FieldRenderer ID="frResultsFor3" runat="server" FieldName="Results For Label" /> <span>&ldquo;<asp:Literal ID="litSearchTermNoResults" runat="server" />&rdquo;</span></h1>
+                    <sc:FieldRenderer ID="frNoResultsMessage" runat="server" FieldName="No Results Message" />
                     <div class="clearfix"></div>
                 </div>
                 <!-- END PARTIAL: about/about-zero-results.erb -->
                 </div>
             </div>
-            </div>
         </div>
-</asp:Placeholder>
+    </div>
+
+    <div class="container about-tools-header">
+      <div class="row">
+        <div class="col col-22 offset-1">
+          <h3><sc:FieldRenderer ID="frToolWidgetsHeading" runat="server" FieldName="Tool Widgets Heading" /></h3>
+        </div>
+      </div>
+    </div>
+<!-- BEGIN PARTIAL: about/tools -->
+
+<asp:Repeater ID="rptWidgets" runat="server">
+    <HeaderTemplate>
+        <div class="about-tools select-inverted-mobile">
+            <div class="container mini-tools-wrap">
+                <div class="row">
+    </HeaderTemplate>
+    <ItemTemplate>
+        <div class="col col-8 <%# Container.ItemIndex == 0 ? "skiplink-content" : "" %>" <%# Container.ItemIndex == 0 ? "aria-role=\"main\"" : "" %>>
+            <section class="mini-tool rs_read_this">
+                <sc:Sublayout ID="slWidget" runat="server" />
+            </section>
+        </div>
+    </ItemTemplate>
+    <FooterTemplate>
+                </div><!-- .row --> 
+            </div><!-- .container --> 
+        </div>
+    </FooterTemplate>
+</asp:Repeater>
+<!-- END PARTIAL: tools -->
+</asp:Panel>
       
 

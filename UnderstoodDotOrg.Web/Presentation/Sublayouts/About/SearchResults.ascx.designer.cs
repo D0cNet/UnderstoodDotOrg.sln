@@ -31,31 +31,58 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
-        /// phResults control.
+        /// pnlResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phResults;
+        protected global::System.Web.UI.WebControls.Panel pnlResults;
         
         /// <summary>
-        /// phResultsNoMisspelling control.
+        /// pnlResultsNoMisspelling control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phResultsNoMisspelling;
+        protected global::System.Web.UI.WebControls.Panel pnlResultsNoMisspelling;
         
         /// <summary>
-        /// phResultsMisspelling control.
+        /// frResultsFor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phResultsMisspelling;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frResultsFor;
+        
+        /// <summary>
+        /// pnlResultsMisspelling control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlResultsMisspelling;
+        
+        /// <summary>
+        /// frShowingResultsFor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frShowingResultsFor;
+        
+        /// <summary>
+        /// frSearchInsteadFor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSearchInsteadFor;
         
         /// <summary>
         /// litMisspellings control.
@@ -65,6 +92,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litMisspellings;
+        
+        /// <summary>
+        /// frResultsFor2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frResultsFor2;
         
         /// <summary>
         /// ddlSearchFilter control.
@@ -94,13 +130,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         protected global::System.Web.UI.WebControls.PlaceHolder phMoreResults;
         
         /// <summary>
-        /// phNoResults control.
+        /// pnlNoResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phNoResults;
+        protected global::System.Web.UI.WebControls.Panel pnlNoResults;
+        
+        /// <summary>
+        /// frResultsFor3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frResultsFor3;
         
         /// <summary>
         /// litSearchTermNoResults control.
@@ -110,5 +155,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litSearchTermNoResults;
+        
+        /// <summary>
+        /// frNoResultsMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoResultsMessage;
+        
+        /// <summary>
+        /// frToolWidgetsHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frToolWidgetsHeading;
+        
+        /// <summary>
+        /// rptWidgets control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptWidgets;
     }
 }

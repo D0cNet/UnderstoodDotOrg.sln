@@ -365,6 +365,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ThankYouPageItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\PartnerInfoItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\SearchFilterTypeItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\SearchResultsItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyBasePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyLandingPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Advocacy\AdvocacyLandingPageItem.instance.cs" />
