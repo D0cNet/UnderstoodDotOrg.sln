@@ -47,7 +47,7 @@
                                         <asp:Panel ID="pnlThumbnail1" CssClass="thumbnail" runat="server"></asp:Panel>
                                         <div class="text">
                                             <h4><asp:HyperLink ID="hypLink1" runat="server"></asp:HyperLink></h4>
-                                            <sc:FieldRenderer ID="frPageSummary1" FieldName="Page Summary" runat="server"></sc:FieldRenderer>
+                                            <sc:FieldRenderer ID="frPageSummary1" FieldName="Body Content" runat="server"></sc:FieldRenderer>
                                         </div>
                                         <div class="clearfix"></div>
                                     </asp:Placeholder>
@@ -55,7 +55,7 @@
                                         <asp:Panel ID="pnlThumbnail2" CssClass="thumbnail" runat="server"></asp:Panel>
                                         <div class="text">
                                             <h4><asp:HyperLink ID="hypLink2" runat="server"></asp:HyperLink></sc:FieldRenderer></h4>
-                                            <sc:FieldRenderer ID="frPageSummary2" FieldName="Page Summary" runat="server"></sc:FieldRenderer>
+                                            <sc:FieldRenderer ID="frPageSummary2" FieldName="Body Content" runat="server"></sc:FieldRenderer>
                                         </div>
                                         <div class="clearfix"></div>
                                     </asp:Placeholder>

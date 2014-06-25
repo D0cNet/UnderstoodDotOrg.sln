@@ -7,7 +7,7 @@
             <div class="about-video-container rs_read_this about-understood-video-rs-wrapper">
                 <p>
                     <%--Et fugit consequatur explicabo quasi autem corrupti consequatur ab deserunt minima ea quas eum. et saepe omnis et dolorem distinctio tempore excepturi numquam et ut consequatur aut. qui aut facere nisi ut voluptas eveniet voluptates ea omnis. eligendi itaque architecto eum ut qui culpa fuga ratione ut nihil quia et aut quae. debitis minus commodi sapiente sit blanditiis--%>
-                    <sc:FieldRenderer ID="frSummary" runat="server" FieldName="Page Summary" />
+                    <sc:FieldRenderer ID="frSummary" runat="server" FieldName="Body Content" />
                 </p>
                 <div class="about-video-frame">
                     <sc:FieldRenderer ID="frVideoEmbed" runat="server" FieldName="Video Embed" />

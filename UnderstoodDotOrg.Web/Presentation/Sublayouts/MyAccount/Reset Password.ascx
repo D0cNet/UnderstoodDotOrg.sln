@@ -12,7 +12,7 @@
             </header>
 
             <%--<p>Please create a new password. Understood passwords must have 6 characters. You can use letters and/or numbers.</p>--%>
-            <sc:Text id="description" runat="server" Field="Page Summary"></sc:Text>
+            <sc:Text id="description" runat="server" Field="Body Content"></sc:Text>
 
             <label>
                 <span class="visuallyhidden">Enter new password</span>

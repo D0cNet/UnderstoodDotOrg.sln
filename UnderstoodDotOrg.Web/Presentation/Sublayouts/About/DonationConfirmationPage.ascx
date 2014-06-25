@@ -13,7 +13,7 @@
                     <div class="col col-24">
                         <div class="text-wrap rs_read_this">
                             <h1><sc:FieldRenderer ID="frPageTitle" runat="server" FieldName="Page Title" /></h1>
-                            <h2><sc:FieldRenderer ID="frPageSummary" runat="server" FieldName="Page Summary" /></h2>
+                            <h2><sc:FieldRenderer ID="frPageSummary" runat="server" FieldName="Body Content" /></h2>
                         </div>
                     </div>
                 </div>

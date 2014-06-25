@@ -21,7 +21,7 @@
 
                 <p class="page-subtitle">
                     <%--Customized advice and interactive tools--%>
-                    <sc:FieldRenderer ID="frPageSummary" runat="server" FieldName="Page Summary" />
+                    <sc:FieldRenderer ID="frPageSummary" runat="server" FieldName="Body Content" />
                 </p>
 
             </div>
