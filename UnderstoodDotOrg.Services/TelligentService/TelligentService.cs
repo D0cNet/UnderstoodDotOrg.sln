@@ -1332,6 +1332,64 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return success;
         }
 
+        public static bool CreateFavorite(string username, string contentId, string contentTypeId, UnderstoodDotOrg.Common.Constants.TelligentContentType contentType, bool delete = false)
+        {
+            bool success = false;
+            var values = new NameValueCollection();
+            string address = String.Empty;
+            if ((!string.IsNullOrEmpty(username) && contentId != null && contentType != null && contentTypeId != null))
+            {
+                using (WebClient client = new WebClient())
+                {
+                    try
+                    {
+                        client.Headers.Add("Rest-User-Token", TelligentAuth());
+                        client.Headers.Add("Rest-Impersonate-User", username);
+
+                        switch (contentType)
+                        {
+                            case Constants.TelligentContentType.Blog:
+                                address = string.Format(GetApiEndPoint("blogs/{0}/favorites.xml"), contentId);
+                                break;
+                            case Constants.TelligentContentType.BlogPost:
+                                address = string.Format(GetApiEndPoint("bookmark.xml"));
+                                values = new NameValueCollection()
+                                {
+                                    { "ContentId", contentId },
+                                    { "ContentTypeId", contentTypeId }
+                                };
+                                break;
+                            case Constants.TelligentContentType.Forum:
+                                break;
+                            case Constants.TelligentContentType.Group:
+                                break;
+                            case Constants.TelligentContentType.Page:
+                                break;
+                            case Constants.TelligentContentType.Weblog:
+                                break;
+                            default:
+                                break;
+                        }
+
+                        var xml = Encoding.UTF8.GetString(client.UploadValues(address, values));
+                        XmlDocument document = new XmlDocument();
+                        document.LoadXml(xml);
+                        XmlNode childNode = document.SelectSingleNode("Response/Bookmark").FirstChild;
+                        if (childNode != null)
+                        {
+                            success = true;
+                        }
+                    }
+                    catch
+                    {
+                        success = false;
+                    }
+                }
+
+            }
+            return success;
+        }
+
         public static bool RemoveFavorite(string username,string contentId,UnderstoodDotOrg.Common.Constants.TelligentContentType contentType)
         {
             bool success = false;
@@ -1400,7 +1458,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             }
             return bookmarks;
         }
-        public static bool IsBookmarked (string username,string contentId,UnderstoodDotOrg.Common.Constants.TelligentContentType contentType)
+        public static bool IsBookmarked (string username,string contentId, UnderstoodDotOrg.Common.Constants.TelligentContentType contentType)
         {
             bool success = false;
             string address = String.Empty;
@@ -1438,6 +1496,60 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         XmlDocument document = new XmlDocument();
                         document.LoadXml(xml);
                         XmlNode childNode = document.SelectSingleNode("Response/BlogFavorite").FirstChild;
+                        if (childNode != null)
+                        {
+                            success = true;
+                        }
+                    }
+                    catch
+                    {
+                        success = false;
+                    }
+                }
+
+            }
+            return success;
+        }
+
+        public static bool IsBookmarked(string username, string contentId, string contentTypeId, UnderstoodDotOrg.Common.Constants.TelligentContentType contentType)
+        {
+            bool success = false;
+            var values = new NameValueCollection();
+            string address = String.Empty;
+            if ((!string.IsNullOrEmpty(username) && contentId != null && contentType != null && contentTypeId != null))
+            {
+                using (WebClient client = new WebClient())
+                {
+                    try
+                    {
+                        client.Headers.Add("Rest-User-Token", TelligentAuth());
+                        client.Headers.Add("Rest-Impersonate-User", username);
+
+                        switch (contentType)
+                        {
+                            case Constants.TelligentContentType.Blog:
+                                address = string.Format(GetApiEndPoint("blogs/{0}/favorites.xml"), contentId);
+                                break;
+                            case Constants.TelligentContentType.BlogPost:
+                                address = string.Format(GetApiEndPoint("bookmark.xml?ContentId={0}"), contentId);
+                                break;
+                            case Constants.TelligentContentType.Forum:
+                                break;
+                            case Constants.TelligentContentType.Group:
+                                break;
+                            case Constants.TelligentContentType.Page:
+                                break;
+                            case Constants.TelligentContentType.Weblog:
+                                break;
+                            default:
+                                break;
+                        }
+
+
+                        var xml = client.DownloadString(address);
+                        XmlDocument document = new XmlDocument();
+                        document.LoadXml(xml);
+                        XmlNode childNode = document.SelectSingleNode("Response/Bookmark").FirstChild;
                         if (childNode != null)
                         {
                             success = true;

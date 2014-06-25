@@ -16,7 +16,7 @@ using UnderstoodDotOrg.Services.Models.Telligent;
             foreach (var item in dataSource)
             {
                 BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + item.Title);
-                item.Author = blogPost.Author;
+                item.Author = blogPost.Author.Rendered;
                 item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
                 item.AuthorUrl = "/Community and Events/Blogs/Author/" + item.Author;
             }

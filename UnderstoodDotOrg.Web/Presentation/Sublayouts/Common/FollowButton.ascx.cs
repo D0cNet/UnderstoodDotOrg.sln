@@ -33,6 +33,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             }
         }
 
+        private string ContentTypeId { get; set; }
+
         private UnderstoodDotOrg.Common.Constants.TelligentContentType Type { get; set; }
         public string Text
         {
@@ -45,13 +47,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
             //this.ProfileRedirect(Constants.UserPermission.CommunityUser);
 
-            //Call Bookmarking functions
-            if (TelligentService.CreateFavorite(CurrentMember.ScreenName, ContentId, Type))
+            if (Type.Equals(UnderstoodDotOrg.Common.Constants.TelligentContentType.BlogPost))
             {
-                //Change Follow text
-                Text = DictionaryConstants.FollowingBlog;
+                //Call Bookmarking functions
+                if (TelligentService.CreateFavorite(CurrentMember.ScreenName, ContentId, ContentTypeId, Type))
+                {
+                    //Change Follow text
+                    Text = DictionaryConstants.FollowingBlog;
+                }
             }
-            
+            else
+            {
+                //Call Bookmarking functions
+                if (TelligentService.CreateFavorite(CurrentMember.ScreenName, ContentId, Type))
+                {
+                    //Change Follow text
+                    Text = DictionaryConstants.FollowingBlog;
+                }
+            }
         }
 
         //Load control state based on whether current user has bookmarked this blog
@@ -68,6 +81,51 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     switch (type)
                     {
                         case Constants.TelligentContentType.BlogPost:
+                            break;
+                        case Constants.TelligentContentType.Forum:
+                            break;
+                        case Constants.TelligentContentType.Group:
+                            break;
+                        case Constants.TelligentContentType.Page:
+                            break;
+                        case Constants.TelligentContentType.Weblog:
+                            break;
+                        case Constants.TelligentContentType.Blog:
+                            //Check if blog is bookmarked
+                            if (TelligentService.IsBookmarked(CurrentMember.ScreenName, contentId, type))
+                            {
+                                Text = DictionaryConstants.FollowingBlog;
+                            }
+                            else
+                                Text = DictionaryConstants.FollowBlog;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+        public void LoadState(string contentId, string contentTypeId, Constants.TelligentContentType type)
+        {
+            ContentId = contentId;
+            ContentTypeId = contentTypeId;
+            Type = type;
+            Text = DictionaryConstants.FollowBlog;
+            if (CurrentMember != null)
+            {
+                if (CurrentMember.ScreenName != null) //Additional check in case user bypasses redirect
+                {
+                    //Should be called after properties are set
+                    switch (type)
+                    {
+                        case Constants.TelligentContentType.BlogPost:
+                            //Check if blog is bookmarked
+                            if (TelligentService.IsBookmarked(CurrentMember.ScreenName, contentId, contentTypeId, type))
+                            {
+                                Text = DictionaryConstants.FollowingBlogPost;
+                            }
+                            else
+                                Text = DictionaryConstants.FollowBlogPost;
                             break;
                         case Constants.TelligentContentType.Forum:
                             break;

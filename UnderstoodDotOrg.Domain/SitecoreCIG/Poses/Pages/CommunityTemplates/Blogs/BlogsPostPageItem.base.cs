@@ -100,11 +100,38 @@ public CustomDateField Date
 }
 
 
-public CustomTextField Author
+public CustomMultiListField Author
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Author"]);
+		return new CustomMultiListField(InnerItem, InnerItem.Fields["Author"]);
+	}
+}
+
+
+public CustomTextField TelligentUrl
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["TelligentUrl"]);
+	}
+}
+
+
+public CustomImageField BlogImage
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Blog Image"]);
+	}
+}
+
+
+public CustomTextField ContentTypeId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["ContentTypeId"]);
 	}
 }
 

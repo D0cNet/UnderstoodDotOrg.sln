@@ -1234,6 +1234,10 @@ namespace UnderstoodDotOrg.Common
 
        public static string FollowingBlog { get { return Translate.TextByDomain(PosesDictionary, "FollowingBlog"); } }
 
+       public static string FollowBlogPost { get { return Translate.TextByDomain(PosesDictionary, "FollowBlogPost"); } }
+
+       public static string FollowingBlogPost { get { return Translate.TextByDomain(PosesDictionary, "FollowingBlogPost"); } }
+
        public static string EmptyGroupsListText
        {
            get

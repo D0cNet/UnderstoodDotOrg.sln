@@ -98,6 +98,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string Url { get; set; }
         public string ParentUrl { get; set; }
         public string CommentCount { get; set; }
+        public bool IsFollowing { get; set; }
 
         public BlogPost() { }
     }

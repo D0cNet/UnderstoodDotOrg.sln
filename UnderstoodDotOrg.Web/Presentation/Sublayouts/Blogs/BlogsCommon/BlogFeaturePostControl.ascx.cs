@@ -25,8 +25,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
                 follBtn.LoadState(id, UnderstoodDotOrg.Common.Constants.TelligentContentType.Blog);
 
                 Blog b = TelligentService.ReadBlog(id);
-                 litBlogtitle.Text = b.Title;
-                 litBlogDescription.Text = b.Description;
+                litBlogtitle.Text = b.Title;
+                litBlogDescription.Text = b.Description;
 
         }
         

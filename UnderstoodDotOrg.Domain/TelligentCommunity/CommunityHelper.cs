@@ -1668,5 +1668,38 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 }
             }
         }
+
+        public static bool IsBookmarked(string username, string contentId)
+        {
+            if (!username.IsNullOrEmpty() || !contentId.IsNullOrEmpty())
+            {
+                using (var webClient = new WebClient())
+                {
+                    try
+                    {
+                        webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                        var requestUrl = "http://mysite.com/api.ashx/v2/bookmark.xml";
+
+                        var xml = webClient.DownloadString(requestUrl);
+
+                        var xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(xml);
+
+                        XmlNodeList nodes = xmlDoc.SelectNodes("Response/Bookmarks/Bookmarks");
+
+                        if (nodes.Count > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    catch { }
+                }
+            }
+            return false;
+        }
     }
 }

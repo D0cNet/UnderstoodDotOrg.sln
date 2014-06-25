@@ -1,11 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FromOurBlogs.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon.FromOurBlogs" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/FollowButton.ascx" TagName="FollowButton" TagPrefix="CommonUC" %>
 <div class="community-our-blogs">
     <div class="row">
-        <div class="col col-24 container skiplink-content" aria-role="main" aria-role="main">
+        <div class="col col-24 container skiplink-content" aria-role="main">
             <h2>From Our Blogs</h2>
             <div class="row blogs-more">
-                <asp:Repeater ID="BlogPostsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost" runat="server">
+                <asp:Repeater ID="BlogPostsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost" OnItemDataBound="BlogPostRepeater_OnItemDataBound" runat="server">
                     <ItemTemplate>
                         <div class="col col-24 blog-card clearfix">
                             <div class="blog-card-image">
@@ -45,7 +46,8 @@
                                         </a>
                                     </div>
                                     <div class="blog-card-button">
-                                        <asp:Button ID="btnFollow" CssClass="button gray" Text="Follow" runat="server" />
+                                        <CommonUC:FollowButton ID="follBtn" runat="server" />
+<%--                                        <asp:Button ID="btnFollow" CommandArgument="<%# Item.ContentId + '&' + Item.ContentTypeId %>" CssClass="button gray" Text="Follow" runat="server" />--%>
                                     </div>
                                     <!-- end .blog-card-button -->
                                 </div>
@@ -81,7 +83,7 @@
             </div>
             <!-- .child-content-indicator -->
             <!-- END PARTIAL: children-key -->--%>
-            <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
+            <sc:sublayout runat="server" path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
             <a href="REPLACE" class="button-view-all">See all blogs</a>
         </div>
     </div>
