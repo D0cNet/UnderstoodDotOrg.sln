@@ -19,10 +19,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtYourname.Attributes.Add("placeholder", "Enter your name");
-            txtYourEMailID.Attributes.Add("placeholder", "Enter your email");
-            txtRecipentEMailID.Attributes.Add("placeholder", "Friend's Email");
-            txtThoughts.Attributes.Add("placeholder", "I saw this and thought you might find it helpful");
+            txtYourname.Attributes.Add("placeholder", DictionaryConstants.EnterNameLabel);
+            txtYourEMailID.Attributes.Add("placeholder", DictionaryConstants.EnterEmailLabel);
+            txtRecipentEMailID.Attributes.Add("placeholder", DictionaryConstants.FriendsEmailLabel);
+            txtThoughts.Attributes.Add("placeholder", DictionaryConstants.EmailTextPlaceholder);
         }
 
         protected void btnSend_Click(object sender, EventArgs e)

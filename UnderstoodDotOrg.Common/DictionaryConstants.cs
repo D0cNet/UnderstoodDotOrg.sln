@@ -729,6 +729,39 @@ namespace UnderstoodDotOrg.Common
         }
 
 
+
+        // Share with a friend email
+        public static string EnterNameLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Enter Name Label");
+            }
+        }
+
+        public static string EnterEmailLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Enter Email Label");
+            }
+        }
+
+        public static string FriendsEmailLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Friends Email Label");
+            }
+        }
+
+        public static string EmailTextPlaceholder
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Email Text Placeholder");
+            }
+        }
         
         public static string PluralCommentLabel
         {
