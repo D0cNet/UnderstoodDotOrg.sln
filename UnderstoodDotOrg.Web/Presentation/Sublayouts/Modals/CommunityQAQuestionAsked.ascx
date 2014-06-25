@@ -100,7 +100,7 @@
                     <!-- Show More -->
                     <!-- BEGIN PARTIAL: community/show_more -->
                     <!--Show More-->
-                    <div class="container show-more">
+                    <div class="container show-more rs_skip">
                         <div class="row">
                             <div class="col col-24">
                                 <a class="show-more-link " href="#" data-path="community/questions-asked" data-container="similar-answers" data-item="question-number" data-count="3">Show More<i class="icon-arrow-down-blue"></i></a>

@@ -12,7 +12,9 @@
     </GroupTemplate>
     <ItemTemplate>
         <div class="col col-11 offset-1">
+            <!-- BEGIN ELEMENT: Article -->
             <sc:Sublayout id="sbArticleEntry" runat="server" Path="~/Presentation/Sublayouts/Common/ArticleListings/ArticleEntry.ascx" /> 
+            <!-- END ELEMENT: Article -->
         </div>
     </ItemTemplate>
 </asp:ListView>

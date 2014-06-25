@@ -73,7 +73,7 @@
               <!-- Show More -->
               <!-- BEGIN PARTIAL: community/show_more -->
 <!--Show More-->
-<div class="container show-more">
+<div class="container show-more rs_skip">
   <div class="row">
     <div class="col col-24">
         

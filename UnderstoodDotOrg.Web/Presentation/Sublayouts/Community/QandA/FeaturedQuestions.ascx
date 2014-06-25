@@ -27,7 +27,7 @@
     <!-- Show More -->
     <!-- BEGIN PARTIAL: community/show_more -->
     <!--Show More-->
-    <div class="container show-more">
+    <div class="container show-more rs_skip">
         <div class="row">
             <div class="col col-24">
                 <a class="show-more-link " href="#" data-path="community/parent-questions" data-container="parent-questions" data-item="card-parent-question" data-count="6">Show More<i class="icon-arrow-down-blue"></i></a>

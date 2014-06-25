@@ -108,7 +108,7 @@
       <!-- Show More -->
       <!-- BEGIN PARTIAL: community/show_more -->
     <!--Show More-->
-    <div class="container show-more">
+    <div class="container show-more rs_skip">
       <div class="row">
         <div class="col col-24">
           <a class="show-more-link " href="#" data-path="blog/recent-posts" data-container="blog-post-list" data-item="blog-list" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>

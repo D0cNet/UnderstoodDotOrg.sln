@@ -12,7 +12,7 @@
                 <sc:FieldRenderer ID="frSectionTitle" runat="server" FieldName="Navigation Title" />      
             </asp:HyperLink>
             <div>
-                <h1>
+                <h1 class="rs_read_this">
                     <sc:FieldRenderer ID="frTitle" runat="server" FieldName="Page Title" />
                 </h1>
                 <asp:PlaceHolder ID="phAuthorInfo" runat="server" Visible="false">

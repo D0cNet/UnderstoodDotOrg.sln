@@ -53,7 +53,7 @@
     <!-- Show More -->
     <!-- BEGIN PARTIAL: community/show_more -->
     <!--Show More-->
-    <div class="container show-more" id="divShowMore" runat="server">
+    <div class="container show-more rs_skip" id="divShowMore" runat="server">
         <div class="row">
             <div class="col col-24">
                 <a class="show-more-link " href="#" data-path="community/qa-answers" data-container="answer-list" data-item="card-answer" data-count="6">Show More<i class="icon-arrow-down-blue"></i></a>

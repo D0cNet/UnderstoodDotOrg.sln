@@ -1437,7 +1437,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Modals\AddAChild.ascx.cs">
       <DependentUpon>AddAChild.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Modals\AddAChild.ascx.designer.cs">
       <DependentUpon>AddAChild.ascx</DependentUpon>
@@ -1584,14 +1583,12 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\SignIn.ascx.cs">
       <DependentUpon>SignIn.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\SignIn.ascx.designer.cs">
       <DependentUpon>SignIn.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\SignUp.ascx.cs">
       <DependentUpon>SignUp.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\SignUp.ascx.designer.cs">
       <DependentUpon>SignUp.ascx</DependentUpon>
@@ -1633,7 +1630,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\TermsAndConditions.ascx.cs">
       <DependentUpon>TermsAndConditions.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\TermsAndConditions.ascx.designer.cs">
       <DependentUpon>TermsAndConditions.ascx</DependentUpon>
@@ -1654,35 +1650,30 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx.cs">
       <DependentUpon>ProfileStepFive.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFive.ascx.designer.cs">
       <DependentUpon>ProfileStepFive.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFour.ascx.cs">
       <DependentUpon>ProfileStepFour.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepFour.ascx.designer.cs">
       <DependentUpon>ProfileStepFour.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepOne.ascx.cs">
       <DependentUpon>ProfileStepOne.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepOne.ascx.designer.cs">
       <DependentUpon>ProfileStepOne.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepThree.ascx.cs">
       <DependentUpon>ProfileStepThree.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepThree.ascx.designer.cs">
       <DependentUpon>ProfileStepThree.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepTwo.ascx.cs">
       <DependentUpon>ProfileStepTwo.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyProfile\ProfileStepTwo.ascx.designer.cs">
       <DependentUpon>ProfileStepTwo.ascx</DependentUpon>
