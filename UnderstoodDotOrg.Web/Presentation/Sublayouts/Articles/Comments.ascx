@@ -39,7 +39,7 @@
                                     </p>
                                 </div>
                                 <div class="comment-actions rs_skip">
-                                    <a href="javascript:void" class="comment-reply" onclick="replyfocus();" id="ReplyButton"><i class="icon-comment-reply"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ReplyLabel %></a>
+                                    <a href="#" class="comment-reply" onclick="document.getElementById('<%= txtComment.ClientID %>').focus();return false;" id="ReplyButton"><i class="icon-comment-reply"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ReplyLabel %></a>
                                     <asp:LinkButton OnClick="LikeButton_Click" ID="LikeButton" CommandArgument='<%# Item.CommentId + "&" + Item.CommentContentTypeId %>' CssClass="comment-like" runat="server"><i class="icon-comment-like"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ThisHelpedLabel %></asp:LinkButton>
                                     <asp:LinkButton CssClass="comment-flag" CommandArgument='<%# Item.CommentId %>' OnClick="FlagButton_Click" ID="FlagButton" runat="server">
                                         <i class="icon-comment-flag"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ReportAsInappropriateLabel %></asp:LinkButton>
@@ -84,8 +84,3 @@
     <!-- .row -->
 </div>
 <!-- .container -->
-<script type="text/javascript">
-    function replyfocus() {
-        document.getElementById("txtComment.ClientID").focus();
-    }
-</script>
