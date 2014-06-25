@@ -20,35 +20,35 @@
     public partial class My_Profile : BaseSublayout
     {
         private MyProfileItem _currentPage;
-		private MyProfileItem CurrentPage
-		{
-			get
-			{
-				if (_currentPage == null)
-				{
-					_currentPage = new MyProfileItem(Sitecore.Context.Item);
-				}
+        private MyProfileItem CurrentPage
+        {
+            get
+            {
+                if (_currentPage == null)
+                {
+                    _currentPage = new MyProfileItem(Sitecore.Context.Item);
+                }
 
-				return _currentPage;
-			}
-		}
+                return _currentPage;
+            }
+        }
 
         private void Page_Load(object sender, EventArgs e)
         {
-			if (this.CurrentMember == null && this.CurrentUser == null)
-			{
-				if (!string.IsNullOrEmpty(CurrentPage.SignInPage.Url))
-				{
-					Response.Redirect(CurrentPage.SignInPage.Url);
-				}
-				else
-				{
-					Response.Redirect("/");
-				}
-			}
-        
-			if (!IsPostBack)
-			{
+            if (this.CurrentMember == null && this.CurrentUser == null)
+            {
+                if (!string.IsNullOrEmpty(CurrentPage.SignInPage.Url))
+                {
+                    Response.Redirect(CurrentPage.SignInPage.Url);
+                }
+                else
+                {
+                    Response.Redirect("/");
+                }
+            }
+
+            if (!IsPostBack)
+            {
                 //update member
                 MembershipManager membershipManager = new MembershipManager();
                 this.CurrentMember = membershipManager.GetMember(this.CurrentMember.MemberId);
@@ -56,10 +56,10 @@
 
                 SetLabels();
 
-				SetRole();
+                SetRole();
 
-				uxChildList.DataSource = this.CurrentMember.Children;
-				uxChildList.DataBind();
+                uxChildList.DataSource = this.CurrentMember.Children;
+                uxChildList.DataBind();
 
                 //disable new children if you already have 6 or more
                 if (this.CurrentMember.Children.Count >= 6)
@@ -67,159 +67,171 @@
                     uxAddChild.Visible = false;
                 }
 
-				SetInterests();
+                SetInterests();
 
-				uxEmailAddress.Text = this.CurrentUser.UserName;
+                uxEmailAddress.Text = this.CurrentUser.UserName;
 
-				SetJourney();
+                SetJourney();
 
-				uxPassword.Text = replacePassword("digitalpulp!");
+                uxPassword.Text = replacePassword("digitalpulp!");
 
                 string phoneNumber = string.Empty;
 
-				if (!string.IsNullOrEmpty(this.CurrentMember.MobilePhoneNumber))
-				{
+                if (!string.IsNullOrEmpty(this.CurrentMember.MobilePhoneNumber))
+                {
                     phoneNumber = this.CurrentMember.MobilePhoneNumber.Replace("-", string.Empty).Trim();
 
                     //if (phoneNumber.Length == 10 && !phoneNumber.Contains("-"))
                     //{
-						phoneNumber = phoneNumber.Insert(3, "-");
-						phoneNumber = phoneNumber.Insert(7, "-");
+                    phoneNumber = phoneNumber.Insert(3, "-");
+                    phoneNumber = phoneNumber.Insert(7, "-");
                     //}
-				}
+                }
                 else
                 {
                     //10 points to Gryffindor if you know where this phone number comes from
-                    txtPhoneNumber.Attributes["placeholder"] = "212-555-2368";    
+                    txtPhoneNumber.Attributes["placeholder"] = "212-555-2368";
                 }
 
                 uxPhoneNumber.Text = phoneNumber;
                 txtPhoneNumber.Text = phoneNumber;
 
-				uxPrivacyLevel.Text = this.CurrentMember.allowConnections ? DictionaryConstants.OpenToConnect : DictionaryConstants.NotOpenToConnect;
+                uxPrivacyLevel.Text = this.CurrentMember.allowConnections ? DictionaryConstants.OpenToConnect : DictionaryConstants.NotOpenToConnect;
 
-				uxScreenname.Text = this.CurrentMember.ScreenName;
+                uxScreenname.Text = this.CurrentMember.ScreenName;
 
-				uxZipcode.Text = this.CurrentMember.ZipCode.Trim();
+                uxZipcode.Text = this.CurrentMember.ZipCode.Trim();
 
-				uxAddChild.Text = string.Format(uxAddChild.Text, ((ChildCount)this.CurrentMember.Children.Count).ToString());
+                uxAddChild.Text = string.Format(uxAddChild.Text, ((ChildCount)this.CurrentMember.Children.Count).ToString());
                 uxAddChild.NavigateUrl = MyAccountFolderItem.GetCompleteMyProfileStepTwo() + "?" + Constants.QueryStrings.Registration.Mode + "=" + Constants.QueryStrings.Registration.ModeAdd;
 
-				if (Session["PostReloadScript"] != null)
-				{
-					string reloadScript = Session["PostReloadScript"].ToString();
+                if (Session["PostReloadScript"] != null)
+                {
+                    string reloadScript = Session["PostReloadScript"].ToString();
 
-					if (reloadScript != "")
-					{
-						ltlJS.Text = string.Format("<script type=\"text/javascript\">{0}</script>", reloadScript);
-						Session["PostReloadScript"] = null;
-					}
-				}
+                    if (reloadScript != "")
+                    {
+                        ltlJS.Text = string.Format("<script type=\"text/javascript\">{0}</script>", reloadScript);
+                        Session["PostReloadScript"] = null;
+                    }
+                }
 
-                hypEditCommunityAboutMe.NavigateUrl = hypEditCommunity.NavigateUrl = String.Format(MembershipHelper.GetNextStepURL(4) + "?{0}={1}#community", Constants.QueryStrings.Registration.Mode, Constants.QueryStrings.Registration.ModeEdit);
+                //top of edit interests
+                hypEditCommunityAboutMe.NavigateUrl = MyAccountFolderItem.GetCompleteMyProfileStepFour();
 
-                var publicAccountPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage();
-                hypViewAsVisitors.NavigateUrl = string.Format(publicAccountPage.GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentMember.ScreenName, Constants.VIEW_MODE, Constants.VIEW_MODE_VISITOR);
-                hypViewAsMembers.NavigateUrl = string.Format(publicAccountPage.GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentMember.ScreenName, Constants.VIEW_MODE, Constants.VIEW_MODE_MEMBER);
-                hypViewAsFriends.NavigateUrl = string.Format(publicAccountPage.GetPublicAccountProfilePage().GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentMember.ScreenName, Constants.VIEW_MODE, Constants.VIEW_MODE_FRIEND);
+                //jump to edit community
+                hypEditCommunity.NavigateUrl = hypCompleteYourProfile.NavigateUrl = String.Format(MyAccountFolderItem.GetCompleteMyProfileStepFour() + "?{0}={1}#community", Constants.QueryStrings.Registration.Mode, Constants.QueryStrings.Registration.ModeEdit);
+
+                if (!string.IsNullOrEmpty(this.CurrentMember.ScreenName))
+                {
+                    var publicAccountPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage();
+                    hypViewAsVisitors.NavigateUrl = string.Format(publicAccountPage.GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentMember.ScreenName, Constants.VIEW_MODE, Constants.VIEW_MODE_VISITOR);
+                    hypViewAsMembers.NavigateUrl = string.Format(publicAccountPage.GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentMember.ScreenName, Constants.VIEW_MODE, Constants.VIEW_MODE_MEMBER);
+                    hypViewAsFriends.NavigateUrl = string.Format(publicAccountPage.GetPublicAccountProfilePage().GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentMember.ScreenName, Constants.VIEW_MODE, Constants.VIEW_MODE_FRIEND);    
+                }
+                else
+                {
+                    uxNoProfile.Visible = true;
+                    uxPublicView.Visible = false;
+                }
             }
         }
 
-		private void SetInterests()
-		{
-			uxInterestList.DataSource = this.CurrentMember.Interests.Where(x => x.CategoryName != "Journey").ToList();
-			uxInterestList.DataBind();
+        private void SetInterests()
+        {
+            uxInterestList.DataSource = this.CurrentMember.Interests.Where(x => x.CategoryName != "Journey").ToList();
+            uxInterestList.DataBind();
 
-			IEnumerable<ParentInterestItem> parentInterests = GlobalsItem.GetParentInterests();
+            IEnumerable<ParentInterestItem> parentInterests = GlobalsItem.GetParentInterests();
 
-			IEnumerable<Guid> currentMemberInterestIDs = this.CurrentMember.Interests.Where(i => i.CategoryName != "Journey").Select(i => i.Key);
+            IEnumerable<Guid> currentMemberInterestIDs = this.CurrentMember.Interests.Where(i => i.CategoryName != "Journey").Select(i => i.Key);
 
-			foreach (ParentInterestItem pi in parentInterests)
-			{
-				Guid guid = pi.ID.Guid;
+            foreach (ParentInterestItem pi in parentInterests)
+            {
+                Guid guid = pi.ID.Guid;
 
-				ListItem li = new ListItem(pi.InterestName.Raw, pi.ID.Guid.ToString());
+                ListItem li = new ListItem(pi.InterestName.Raw, pi.ID.Guid.ToString());
 
-				if (currentMemberInterestIDs.Contains(guid))
-				{
-					li.Selected = true;
-				}
-			}
-		}
+                if (currentMemberInterestIDs.Contains(guid))
+                {
+                    li.Selected = true;
+                }
+            }
+        }
 
-		private void SetJourney()
-		{
-			var journeyInterests = this.CurrentMember.Journeys;
-			if (journeyInterests != null && journeyInterests.Count > 0)
-			{
-				uxJourney.Text = string.Join(", ", journeyInterests.Select(i => i.Value));
-			}
+        private void SetJourney()
+        {
+            var journeyInterests = this.CurrentMember.Journeys;
+            if (journeyInterests != null && journeyInterests.Count > 0)
+            {
+                uxJourney.Text = string.Join(", ", journeyInterests.Select(i => i.Value));
+            }
 
-			IEnumerable<ParentInterestItem> parentJournies = GlobalsItem.GetParentJournies();
+            IEnumerable<ParentInterestItem> parentJournies = GlobalsItem.GetParentJournies();
 
-			IEnumerable<Guid> currentMemberJourneyIDs = this.CurrentMember.Journeys.Select(i => i.Key);
+            IEnumerable<Guid> currentMemberJourneyIDs = this.CurrentMember.Journeys.Select(i => i.Key);
 
-			foreach (ParentInterestItem pi in parentJournies)
-			{
-				Guid guid = pi.ID.Guid;
+            foreach (ParentInterestItem pi in parentJournies)
+            {
+                Guid guid = pi.ID.Guid;
 
-				ListItem li = new ListItem(pi.InterestName.Raw, pi.ID.Guid.ToString());
+                ListItem li = new ListItem(pi.InterestName.Raw, pi.ID.Guid.ToString());
 
-				if (currentMemberJourneyIDs.Contains(guid))
-				{
-					li.Selected = true;
-				}
-			}
-		}
+                if (currentMemberJourneyIDs.Contains(guid))
+                {
+                    li.Selected = true;
+                }
+            }
+        }
 
-		private void SetRole()
-		{
-			string role = getItemName(this.CurrentMember.Role);
+        private void SetRole()
+        {
+            string role = getItemName(this.CurrentMember.Role);
 
-			uxRole.Text = role;
+            uxRole.Text = role;
 
-			IEnumerable<ParentRoleItem> parentRoles = GlobalsItem.GetParentRoles();
+            IEnumerable<ParentRoleItem> parentRoles = GlobalsItem.GetParentRoles();
 
-			foreach (ParentRoleItem pr in parentRoles)
-			{
-				Guid guid = pr.ID.Guid;
+            foreach (ParentRoleItem pr in parentRoles)
+            {
+                Guid guid = pr.ID.Guid;
 
-				ListItem li = new ListItem(pr.RoleName.Raw, guid.ToString());
+                ListItem li = new ListItem(pr.RoleName.Raw, guid.ToString());
 
-				if (guid == this.CurrentMember.Role)
-				{
-					li.Selected = true;
-				}
-			}
-		}
+                if (guid == this.CurrentMember.Role)
+                {
+                    li.Selected = true;
+                }
+            }
+        }
 
-		private void SetLabels()
-		{
-			ltlAboutMeLabel.Text = DictionaryConstants.AboutMeLabel;
-			ltlCommunityLabel.Text = DictionaryConstants.CommunityLabel;
-			ltlContactLabel.Text = DictionaryConstants.ContactLabel;
-			ltlContactReminderText.Text = DictionaryConstants.ContactReminderText;
-			ltlEmailAndPasswordLabel.Text = DictionaryConstants.EmailAndPasswordLabel;
-			ltlEmailLabel.Text = DictionaryConstants.EmailLabel;
-			ltlMobilePhoneLabel.Text = DictionaryConstants.MobilePhoneLabel;
-			ltlMyChildrenLabel.Text = DictionaryConstants.MyChildrenLabel;
-			ltlMyConnectionsLabel.Text = DictionaryConstants.MyConnectionsLabel;
-			ltlMyInterestsLabel.Text = DictionaryConstants.MyInterestsLabel;
-			ltlMyJourneyLabel.Text = DictionaryConstants.MyJourneyLabel;
-			ltlMyLocationLabel.Text = DictionaryConstants.MyLocationLabel;
-			ltlMyPublicViewLabel.Text = DictionaryConstants.MyPublicViewLabel;
-			ltlMyRoleLabel.Text = DictionaryConstants.MyRoleLabel;
-			ltlMyScreenNameLabel.Text = DictionaryConstants.MyScreenNameLabel;
-			ltlNicknameReminderText.Text = DictionaryConstants.NicknameReminderText;
-			ltlPasswordLabel.Text = DictionaryConstants.PasswordLabel;
-			ltlPrivacyLabel.Text = DictionaryConstants.PrivacyLabel;
-			ltlZipcodeReminderText.Text = DictionaryConstants.ZipcodeReminderText;
-		}
+        private void SetLabels()
+        {
+            ltlAboutMeLabel.Text = DictionaryConstants.AboutMeLabel;
+            ltlCommunityLabel.Text = DictionaryConstants.CommunityLabel;
+            ltlContactLabel.Text = DictionaryConstants.ContactLabel;
+            ltlContactReminderText.Text = DictionaryConstants.ContactReminderText;
+            ltlEmailAndPasswordLabel.Text = DictionaryConstants.EmailAndPasswordLabel;
+            ltlEmailLabel.Text = DictionaryConstants.EmailLabel;
+            ltlMobilePhoneLabel.Text = DictionaryConstants.MobilePhoneLabel;
+            ltlMyChildrenLabel.Text = DictionaryConstants.MyChildrenLabel;
+            ltlMyConnectionsLabel.Text = DictionaryConstants.MyConnectionsLabel;
+            ltlMyInterestsLabel.Text = DictionaryConstants.MyInterestsLabel;
+            ltlMyJourneyLabel.Text = DictionaryConstants.MyJourneyLabel;
+            ltlMyLocationLabel.Text = DictionaryConstants.MyLocationLabel;
+            ltlMyPublicViewLabel.Text = DictionaryConstants.MyPublicViewLabel;
+            ltlMyRoleLabel.Text = DictionaryConstants.MyRoleLabel;
+            ltlMyScreenNameLabel.Text = DictionaryConstants.MyScreenNameLabel;
+            ltlNicknameReminderText.Text = DictionaryConstants.NicknameReminderText;
+            ltlPasswordLabel.Text = DictionaryConstants.PasswordLabel;
+            ltlPrivacyLabel.Text = DictionaryConstants.PrivacyLabel;
+            ltlZipcodeReminderText.Text = DictionaryConstants.ZipcodeReminderText;
+        }
 
         private string replacePassword(string password)
         {
             string ret = string.Empty;
-            
+
             for (int i = 0; i < password.Length; i++)
             {
                 ret += "·";
@@ -259,14 +271,14 @@
                 if (uxGrade != null)
                 {
                     //grade.Text = getItemName(item.Grade); //lookup
-					//grade.Text = item.Grades.FirstOrDefault()
+                    //grade.Text = item.Grades.FirstOrDefault()
 
-					var grade = item.Grades.FirstOrDefault();
+                    var grade = item.Grades.FirstOrDefault();
 
-					if (grade != null)
-					{
-						uxGrade.Text = grade.Value;
-					}
+                    if (grade != null)
+                    {
+                        uxGrade.Text = grade.Value;
+                    }
                 }
 
                 if (gender != null)
@@ -281,20 +293,20 @@
             }
         }
 
-		private void ReloadPage()
-		{
-			Response.Redirect(Request.RawUrl);
-		}
+        private void ReloadPage()
+        {
+            Response.Redirect(Request.RawUrl);
+        }
 
-		protected void lbSave_PhoneNumber_Click(object sender, EventArgs e)
-		{
+        protected void lbSave_PhoneNumber_Click(object sender, EventArgs e)
+        {
             this.CurrentMember.MobilePhoneNumber = txtPhoneNumber.Text.Replace("-", string.Empty);
 
             var membershipmManager = new MembershipManager();
             membershipmManager.UpdateMember(this.CurrentMember);
 
             Response.Redirect(Request.Url.ToString());
-		}
+        }
 
         protected string getChildEditLink(ListViewDataItem Container)
         {

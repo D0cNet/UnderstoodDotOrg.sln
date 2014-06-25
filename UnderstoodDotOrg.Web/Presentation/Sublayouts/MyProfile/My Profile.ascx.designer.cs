@@ -211,6 +211,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.Literal ltlPrivacyLabel;
         
         /// <summary>
+        /// uxPublicView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder uxPublicView;
+        
+        /// <summary>
         /// ltlMyPublicViewLabel control.
         /// </summary>
         /// <remarks>
@@ -245,6 +254,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hypViewAsFriends;
+        
+        /// <summary>
+        /// uxNoProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel uxNoProfile;
+        
+        /// <summary>
+        /// hypCompleteYourProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypCompleteYourProfile;
         
         /// <summary>
         /// ltlEmailAndPasswordLabel control.
