@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets {
     
     
     public partial class FoundHelpfulWidget {

@@ -20,7 +20,7 @@
                         </asp:UpdatePanel>
                     </li>
                     <li>
-                        <button id="btnNo" runat="server" class="helpful-no"></button>
+                        <button id="btnNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
@@ -42,7 +42,7 @@
                             </asp:UpdatePanel>
                         </li>
                         <li>
-                            <button id="btnSmallNo" runat="server" class="helpful-no"></button>
+                            <button id="btnSmallNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
                         </li>
                     </ul>
                     <div class="clearfix"></div>

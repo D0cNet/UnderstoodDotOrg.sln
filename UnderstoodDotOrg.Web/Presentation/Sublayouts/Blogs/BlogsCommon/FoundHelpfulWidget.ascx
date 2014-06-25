@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FoundHelpfulWidget.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon.FoundHelpfulWidget" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FoundHelpfulWidget.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets.FoundHelpfulWidget" %>
 <!-- BEGIN PARTIAL: helpful-count -->
 <div class="post-meta">
     <div class="count-helpful">

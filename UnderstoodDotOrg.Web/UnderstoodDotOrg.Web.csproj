@@ -728,6 +728,13 @@
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx.designer.cs">
       <DependentUpon>BlogFeaturePostWithBreadcrumb.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx.cs">
+      <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx.designer.cs">
+      <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\ConnectButton.ascx.cs">
       <DependentUpon>ConnectButton.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -741,13 +748,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\FollowButton.ascx.designer.cs">
       <DependentUpon>FollowButton.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Common\Widgets\FoundHelpfulWidget.ascx.cs">
-      <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Common\Widgets\FoundHelpfulWidget.ascx.designer.cs">
-      <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Blogs\SortBlogsRecent.ascx.cs">
       <DependentUpon>SortBlogsRecent.ascx</DependentUpon>
@@ -2659,9 +2659,9 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogCallToActionWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
+    <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ConnectButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\FollowButton.ascx" />
-    <Content Include="Presentation\Sublayouts\Common\Widgets\FoundHelpfulWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\SortBlogsRecent.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\SortBlogsTalkedAbout.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ArticleListings\ArticleEntry.ascx" />
