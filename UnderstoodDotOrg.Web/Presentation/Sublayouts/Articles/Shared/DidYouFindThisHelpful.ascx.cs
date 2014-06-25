@@ -29,13 +29,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                     btnYes.Attributes.Add("class", "helpful-yes selected");
                     btnSmallYes.Attributes.Add("class", "helpful-yes selected");
                 }
-                else
+                else if (log.FoundItemNotHelpful(context.ID.ToGuid(), CurrentMember.MemberId))
                 {
                     btnNo.Attributes.Add("class", "helpful-no selected");
                     btnSmallNo.Attributes.Add("class", "helpful-no selected");
                 }
-            }
+                else
+                {
+                    btnNo.Attributes.Add("class", "helpful-no");
+                    btnSmallNo.Attributes.Add("class", "helpful-no");
+                    btnYes.Attributes.Add("class", "helpful-yes");
+                    btnSmallYes.Attributes.Add("class", "helpful-yes");
+                }
 
+            }
+            else
+            {
+                btnNo.Attributes.Add("class", "helpful-no");
+                btnSmallNo.Attributes.Add("class", "helpful-no");
+                btnYes.Attributes.Add("class", "helpful-yes");
+                btnSmallYes.Attributes.Add("class", "helpful-yes");
+            }
             ltlDidYouFindThisHelpful.Text = ltlDidYouFindThisHelpfulSmall.Text = DictionaryConstants.DidYouFindThisHelpful;
             btnNo.InnerText = btnSmallNo.InnerText = DictionaryConstants.NoButtonText;
             btnYes.InnerText = btnSmallYes.InnerText = DictionaryConstants.YesButtonText;
@@ -46,26 +60,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
             ActivityLog log = new ActivityLog();
             if (IsUserLoggedIn)
             {
-              
-
-               
-                if (!log.FoundItemHelpful(context.ID.ToGuid(), CurrentMember.MemberId)) 
+                if (!(log.FoundItemHelpful(context.ID.ToGuid(), CurrentMember.MemberId))) 
                 {
                     MembershipManager mmgr = new MembershipManager();
                     try
                     {
                         //mmgr.LogMemberHelpfulVote
 
-                        bool success = mmgr.LogMemberActivity(CurrentMember.MemberId,
+                        bool success = mmgr.LogMemberHelpfulVote(CurrentMember.MemberId,
                             context.ID.ToGuid(),
                             Constants.UserActivity_Values.FoundHelpful_True,
                             Constants.UserActivity_Types.FoundHelpfulVote);
 
                         if (success)
                         {
-                            btnYes.Attributes.Add("class", "helpful-yes selected");
-                            btnSmallYes.Attributes.Add("class", "helpful-yes selected");
-                            Response.Redirect(Request.RawUrl);
+                        //    btnYes.Attributes.Add("class", "helpful-yes selected");
+                        //    btnSmallYes.Attributes.Add("class", "helpful-yes selected");
+                        Response.Redirect(Request.RawUrl);
                         }
                     }
                     catch
@@ -82,26 +93,26 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 
         protected void btnNo_ServerClick(object sender, EventArgs e)
         {
+            
             ActivityLog log = new ActivityLog();
             if (IsUserLoggedIn)
             {
-                
-                if (!log.FoundItemNotHelpful(context.ID.ToGuid(), CurrentMember.MemberId))
+                if (!(log.FoundItemNotHelpful(context.ID.ToGuid(), CurrentMember.MemberId)))
                 {
 
                     MembershipManager mmgr = new MembershipManager();
                     try
                     {
-                        
-                        bool success = mmgr.LogMemberActivity(CurrentMember.MemberId,
+
+                        bool success = mmgr.LogMemberHelpfulVote(CurrentMember.MemberId,
                             context.ID.ToGuid(),
                             Constants.UserActivity_Values.FoundHelpful_False,
                             Constants.UserActivity_Types.FoundHelpfulVote);
 
                         if (success)
                         {
-                            btnNo.Attributes.Add("class", "helpful-no selected");
-                            btnSmallNo.Attributes.Add("class", "helpful-no selected");
+                        //    btnNo.Attributes.Add("class", "helpful-no selected");
+                        //    btnSmallNo.Attributes.Add("class", "helpful-no selected");
                             Response.Redirect(Request.RawUrl);
                         }
                     }
