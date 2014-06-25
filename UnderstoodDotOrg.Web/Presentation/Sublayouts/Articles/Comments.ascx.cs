@@ -164,6 +164,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void LikeButton_Click(object sender, EventArgs e)
         {
+            var obj = sender as LinkButton;
+
             if (!IsUserLoggedIn)
             {
                 // TODO: redirect
@@ -191,7 +193,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                     var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
 
-                    Response.Redirect(Request.RawUrl);
+                    Console.WriteLine(xml);
+                    Response.Redirect(Request.RawUrl + "#" + obj.ClientID);
                 }
                 catch { } // TODO: add loggin
             }
