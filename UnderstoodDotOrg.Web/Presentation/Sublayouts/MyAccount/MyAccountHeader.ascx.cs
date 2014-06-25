@@ -35,6 +35,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                 rptrAccountNav.DataSource = accountPages;
                 rptrAccountNav.DataBind();
+
+                hlSectionTitle.NavigateUrl = MainsectionItem.GetHomePageItem().GetUrl();
+                frSectionTitle.Item = MainsectionItem.GetHomePageItem();
             }
             else
             {
