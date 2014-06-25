@@ -13,31 +13,16 @@ using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 {
-    public partial class TyceQuestions : BaseSublayout
+    public partial class TyceQuestions : BaseSublayout<TyceQuestionsPageItem>
     {
-        protected TyceQuestionsPageItem PageItem { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            PageItem = (TyceQuestionsPageItem)Sitecore.Context.Item;
-
             //TODO: change the below to a CIG logical method after more appropriate folder templates are created
             var tyceGradesFolder = Sitecore.Context.Database.GetItem("{17BF4487-9EC2-4434-A86E-B27D41CC3BC7}");
             var tyceGrades = tyceGradesFolder.Children
                 .Where(i => i != null && i.IsOfType(ChildGradeItem.TemplateId))
-                .Select(i => (ChildGradeItem)i)
-                .Select(gradeItem => {
-                    var video = (Item)null; //gradeItem.Video.Item; //TODO change with new TYCE structure
-                    var videoId = video != null ? video.ID.Guid.ToString() : string.Empty;
-
-                    return new
-                    {
-                        Id = gradeItem.ID.Guid,
-                        Title = gradeItem.ChildDemographic.Title.Rendered,
-                        CssClass = gradeItem.ChildDemographic.CssClass.Raw,
-                        VideoId = videoId
-                    };
-                }).ToList();
+                .Select(i => (ChildGradeItem)i).ToList();
 
             rptrGradeOptions.DataSource = tyceGrades;
             rptrGradeOptions.DataBind();

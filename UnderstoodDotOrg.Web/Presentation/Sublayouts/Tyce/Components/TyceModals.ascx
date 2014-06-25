@@ -81,8 +81,8 @@
                     </ul>
                 </fieldset>
                 <div class="actions">
-                    <asp:LinkButton ID="lbLetsGo" runat="server" CssClass="button">Ok let's go</asp:LinkButton>
-                    <a href="REPLACE" class="button gray">Let Me Customize</a>
+                    <a href="<%= TyceQuestionsPageUrl %>" class="button">Ok let's go</a>
+                    <a href="<%= TyceQuestionsPageUrl %>" class="button gray">Let Me Customize</a>
                 </div>
             </div>
             <!-- /.modal-body -->

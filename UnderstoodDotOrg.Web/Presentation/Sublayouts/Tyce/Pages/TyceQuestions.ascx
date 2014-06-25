@@ -6,9 +6,9 @@
                 <header>
                     <h2>
                         <span class="num">1</span>
-                        <span class="tyce-step-question"><%= PageItem.QuestionOneText.Rendered %></span>
-                        <span class="tyce-step-answer" style="display: none;"><%= PageItem.QuestionOneAnswerText.Rendered %></span>
-                        <span class="instructions"><%= PageItem.QuestionOneInstructions.Rendered %></span>
+                        <span class="tyce-step-question"><%= Model.QuestionOneText.Rendered %></span>
+                        <span class="tyce-step-answer" style="display: none;"><%= Model.QuestionOneAnswerText.Rendered %></span>
+                        <span class="instructions"><%= Model.QuestionOneInstructions.Rendered %></span>
                     </h2>
                     <div class="info tyce-step-why">
                         <a href="REPLACE">Why are we asking this?</a>
@@ -17,22 +17,22 @@
                 </header>
                 <div class="body">
                     <label for="personalize-grade-mobile" class="visuallyhidden">
-                        <%= PageItem.QuestionOneText.Rendered %>:</label>
+                        <%= Model.QuestionOneText.Rendered %>:</label>
                     <select id="personalize-grade-mobile" class="responsive-select-mobile" required aria-required="true">
-                        <asp:Repeater ID="rptrGradeOptions" runat="server">
+                        <asp:Repeater ID="rptrGradeOptions" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.ChildGradeItem">
                             <ItemTemplate>
-                                <option value="<%# Eval("Id") %>"><%# Eval("Title") %></option>
+                                <option value="<%# Item.ID.ToString() %>"><%# Item.ChildDemographic.Title.Rendered %></option>
                             </ItemTemplate>
                         </asp:Repeater>
                     </select>
                     <input type="hidden" name="personalize-grade" class="reponsive-select-full-input" value="">
                     <ul id="personalize-grade-desktop-select" class="reponsive-select-full-options">
-                        <asp:Repeater ID="rptrGradeButtons" runat="server">
+                        <asp:Repeater ID="rptrGradeButtons" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.ChildGradeItem">
                             <ItemTemplate>
                                 <li>
-                                    <button type="button" class="grade <%# Eval("CssClass") %> grade-question-button" data-grade-id="<%# Eval("Id") %>"
-                                        data-video-id="<%# Eval("VideoId") %>">
-                                        <%# Eval("Title") %>
+                                    <button type="button" class="grade <%# Item.ChildDemographic.CssClass.Rendered %> grade-question-button" 
+                                        data-grade-id="<%# Item.ID.ToString() %>">
+                                        <%# Item.ChildDemographic.Title.Rendered %>
                                     </button>
                                 </li>
                             </ItemTemplate>
@@ -45,9 +45,9 @@
                 <header>
                     <h2>
                         <span class="num">2</span>
-                        <span class="tyce-step-question"><%= PageItem.QuestionTwoText.Rendered %></span>
-                        <span class="tyce-step-answer" style="display: none;"><%= PageItem.QuestionTwoAnswerText.Rendered %></span>
-                        <span class="instructions"><%= PageItem.QuestionTwoInstructions.Rendered %></span>
+                        <span class="tyce-step-question"><%= Model.QuestionTwoText.Rendered %></span>
+                        <span class="tyce-step-answer" style="display: none;"><%= Model.QuestionTwoAnswerText.Rendered %></span>
+                        <span class="instructions"><%= Model.QuestionTwoInstructions.Rendered %></span>
                     </h2>
                     <div class="info tyce-step-why">
                         <a href="REPLACE">Why are we asking this?</a>
@@ -57,7 +57,7 @@
                 <div class="body">
                     <fieldset>
                         <legend class="visuallyhidden">
-                            <%= PageItem.QuestionTwoText.Rendered %></legend>
+                            <%= Model.QuestionTwoText.Rendered %></legend>
                         <ul class="input-buttons">
                             <asp:Repeater ID="rptrChildIssues" runat="server">
                                 <ItemTemplate>

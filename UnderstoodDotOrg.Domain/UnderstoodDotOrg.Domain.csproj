@@ -567,9 +567,11 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\ChildLearningIssueItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\ChildLearningIssueItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\TYCEGradeGroupItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\TyceVideoGradeSetsItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\TyceVideoGradeSetsItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceBasePageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceBasePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceNextStepsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceOverviewPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TycePlayerPageItem.base.cs" />

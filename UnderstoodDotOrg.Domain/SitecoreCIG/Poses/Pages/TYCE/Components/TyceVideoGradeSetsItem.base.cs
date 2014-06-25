@@ -41,11 +41,11 @@ public static implicit operator Item(TyceVideoGradeSetsItem customItem)
 //Could not find Field Type for Introduction With Subtitles
 
 
-public CustomMultiListField Grades
+public CustomLookupField GradeGroup
 {
 	get
 	{
-		return new CustomMultiListField(InnerItem, InnerItem.Fields["Grades"]);
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Grade Group"]);
 	}
 }
 

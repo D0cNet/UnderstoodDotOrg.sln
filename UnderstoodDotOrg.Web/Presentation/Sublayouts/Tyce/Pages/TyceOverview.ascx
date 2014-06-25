@@ -4,8 +4,8 @@
     <div class="row">
         <div class="content">
             <div class="text">
-                <h2><%= PageItem.PersonalizationBoxTitle.Rendered %></h2>
-                <%= PageItem.PersonalizationBoxAbstract.Rendered %>
+                <h2><%= Model.PersonalizationBoxTitle.Rendered %></h2>
+                <%= Model.PersonalizationBoxAbstract.Rendered %>
             </div>
             <div class="button-wrap">
                 <a href="REPLACE" class="button button-select-children">Go</a>
@@ -17,8 +17,8 @@
 <div class="container tyce-on-demand">
     <div class="row">
         <div class="col col-22 offset-1">
-            <h2><%= PageItem.TyceBasePage.ContentPage.SectionTitle.Rendered %></h2>
-            <%= PageItem.TyceBasePage.ContentPage.BodyContent.Rendered %>
+            <h2><%= Model.TyceBasePage.ContentPage.SectionTitle.Rendered %></h2>
+            <%= Model.TyceBasePage.ContentPage.BodyContent.Rendered %>
         </div>
     </div>
 </div>
@@ -26,17 +26,18 @@
 <div class="container tyce-on-demand-container simulations">
     <div class="row">
         <div class="col col-23 offset-1">
-            <h3><%= PageItem.SimulationListingTitle.Rendered %></h3>
-            <%= PageItem.SimulationListingAbstract.Rendered %>
+            <h3><%= Model.SimulationListingTitle.Rendered %></h3>
+            <%= Model.SimulationListingAbstract.Rendered %>
         </div>
     </div>
     <div class="row">
         <div class="col col-23 offset-1">
             <ul class="item-5">
-                <asp:Repeater ID="rptrSimulations" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.ChildLearningIssueItem">
+                <asp:Repeater ID="rptrSimulations" runat="server" 
+                    ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components.ChildLearningIssueItem">
                     <ItemTemplate>
                         <li>
-                            <a href="<%= PlayerPageItem.GetUrl() %>?simq=<%# Item.ID.Guid %>">
+                            <a href="<%= QuestionsPageItem.GetUrl() %>?simq=<%# Item.ID.Guid %>">
                                 <h4>
                                     <%# Item.ChildDemographic.NavigationTitle.Rendered %>
                                 </h4>

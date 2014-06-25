@@ -12,16 +12,14 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 {
-    public partial class TyceOverview : BaseSublayout
+    public partial class TyceOverview : BaseSublayout<TyceOverviewPageItem>
     {
         protected TyceOverviewPageItem PageItem { get; set; }
-        protected TycePlayerPageItem PlayerPageItem { get; set; }
+        protected TyceQuestionsPageItem QuestionsPageItem { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            PageItem = (TyceOverviewPageItem)Sitecore.Context.Item;
-            PlayerPageItem = Sitecore.Context.Item.Children
-                .First(i => i.IsOfType(TycePlayerPageItem.TemplateId));
+            QuestionsPageItem = Model.TyceBasePage.GetQuestionsPage();
             
             //TODO: change the below to a CIG logical method after more appropriate folder templates are created
             var tyceIssuesFolder = Sitecore.Context.Database.GetItem("{FFC2C76F-4E6C-458F-9E70-4273F562D243}");
