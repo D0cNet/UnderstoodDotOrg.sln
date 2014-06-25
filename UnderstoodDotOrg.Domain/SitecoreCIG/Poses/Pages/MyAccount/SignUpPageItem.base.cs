@@ -91,6 +91,24 @@ public CustomTextField Acknowledgemessage
 }
 
 
+public CustomTextField ZipCodeLinkText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Zip Code Link Text"]);
+	}
+}
+
+
+public CustomTextField ZipCodeMessage
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Zip Code Message"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

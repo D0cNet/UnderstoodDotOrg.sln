@@ -13,7 +13,7 @@
     <div class="row skiplink-content" aria-role="main">
         <div class="col col-16 offset-5">
             <h1><%--Sign Up--%>
-                <sc:Text ID="pageTitle" runat="server" Field="Page Title" />
+                <sc:text id="pageTitle" runat="server" field="Page Title" />
             </h1>
             <a class="fb-sign-in" href="#">
                 <img alt="facebook" src="/Presentation/includes/images/icon.fb-sign-in@2x.png" />
@@ -22,7 +22,7 @@
             <div id="fb-root"></div>
             <%--<p>Or create an account using your email address</p>--%>
             <p>
-                <sc:Text ID="pageDirections" runat="server" Field="Directions" />
+                <sc:text id="pageDirections" runat="server" field="Directions" />
             </p>
             <div class="sign-up-inputs">
                 <%--TODO: add .error to the labels to show validation error messages--%>
@@ -77,12 +77,17 @@
                         <asp:TextBox runat="server" ID="uxZipCode"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="valZipCode" runat="server" ControlToValidate="uxZipCode" CssClass="validationerror"></asp:RegularExpressionValidator>
                     </label>
-                    <p class="why-do-we-ask-container"><%--optional--%><%= UnderstoodDotOrg.Common.DictionaryConstants.OptionalMessage %> <a class="why-do-we-ask popover-link" href="REPLACE" data-popover-placement="bottom">Why do we ask?</a></p>
+                    <p class="why-do-we-ask-container">
+                        <%--optional--%><%= UnderstoodDotOrg.Common.DictionaryConstants.OptionalMessage %> <a class="why-do-we-ask popover-link" href="REPLACE" data-popover-placement="bottom">
+                            <sc:text id="zipLinkText" runat="server" field="Zip Code Link Text" />
+                        </a>
+                    </p>
 
                     <div class="why-do-we-ask-popover popover-container">
                         <div class="why-do-we-ask-content">
                             <%--We ask for a screenname so other parents in the community can offer you support and get connected with you. You can always choose not to connect with other parents.--%>
-                            Lorem Ipsum Insert Content About Zipcodes
+                            <%--Lorem Ipsum Insert Content About Zipcodes--%>
+                            <sc:text id="zipMessage" runat="server" field="Zip Code Message" />
                         </div>
                     </div>
                     <%--<span>* It looks like you mistyped your zip code. Please try again.
@@ -96,13 +101,13 @@
                     <%--<input type="checkbox" id="email-checkbox" checked>--%>
                     <asp:CheckBox runat="server" ID="uxNewsletterSignup" Checked="true" />
                     <span><%--Yes, send me my email newsletter, customized for me and my family.--%>
-                        <sc:Text ID="newsletterDescription" runat="server" Field="Newsletter Description" />
+                        <sc:text id="newsletterDescription" runat="server" field="Newsletter Description" />
                     </span>
                 </label>
 
                 <p>
                     <%--By signing up for Understood.org I acknowledge that I reside in the United States and am at least 13 years old.--%>
-                    <sc:Text ID="acknowledgeMessage" runat="server" Field="Acknowledge message" />
+                    <sc:text id="acknowledgeMessage" runat="server" field="Acknowledge message" />
                 </p>
 
                 <%--<button class="button">Sign Up</button>--%>
@@ -115,7 +120,7 @@
 
                 <div class="we-take-your-privacy-seriously-container">
                     <a class="we-take-your-privacy-seriously popover-link" href="REPLACE" data-popover-placement="bottom"><%--We take your privacy seriously--%>
-                        <sc:Text ID="privacyLink" runat="server" Field="Privacy link text" />
+                        <sc:text id="privacyLink" runat="server" field="Privacy link text" />
                     </a>
                 </div>
 

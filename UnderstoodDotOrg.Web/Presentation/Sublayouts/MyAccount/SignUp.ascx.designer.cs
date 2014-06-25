@@ -175,6 +175,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator valZipCode;
         
         /// <summary>
+        /// zipLinkText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text zipLinkText;
+        
+        /// <summary>
+        /// zipMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Text zipMessage;
+        
+        /// <summary>
         /// uxNewsletterSignup control.
         /// </summary>
         /// <remarks>
