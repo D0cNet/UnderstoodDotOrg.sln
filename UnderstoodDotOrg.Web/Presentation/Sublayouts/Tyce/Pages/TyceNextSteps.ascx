@@ -5,8 +5,8 @@
     <div class="row">
         <div class="content">
             <div class="text">
-                <h2><%= PageItem.PersonalizationBoxTitle.Rendered %></h2>
-                <%= PageItem.PersonalizationBoxAbstract.Rendered %>
+                <h2><%= Model.PersonalizationBoxTitle.Rendered %></h2>
+                <%= Model.PersonalizationBoxAbstract.Rendered %>
             </div>
             <div class="button-wrap">
                 <button class="button">Save Settings</button>
@@ -23,8 +23,8 @@
             <sc:FieldRenderer runat="server" FieldName="Image" Parameters="class=pic&w=391&h=219" />
         </div>
         <div class="col col-10 offset-1">
-            <h2><%= PageItem.TyceBasePage.ContentPage.SectionTitle.Rendered %></h2>
-            <%= PageItem.TyceBasePage.ContentPage.BodyContent.Rendered %>
+            <h2>Talk with your Child</h2>
+            <%= Model.TyceBasePage.ContentPage.BodyContent.Rendered %>
         </div>
     </div>
 </div>
@@ -78,7 +78,7 @@
     <div class="row">
         <div class="col col-22 offset-1">
             <header>
-                <p class="message"><%= PageItem.SpecialThanksHeader.Rendered %></p>
+                <p class="message"><%= Model.SpecialThanksHeader.Rendered %></p>
             </header>
         </div>
     </div>

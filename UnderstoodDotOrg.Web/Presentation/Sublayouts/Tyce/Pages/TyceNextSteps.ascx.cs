@@ -12,14 +12,10 @@ using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 {
-    public partial class TyceNextSteps : BaseSublayout
+    public partial class TyceNextSteps : BaseSublayout<TyceNextStepsPageItem>
     {
-        protected TyceNextStepsPageItem PageItem { get; set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            PageItem = (TyceNextStepsPageItem)Sitecore.Context.Item;
-
             var simhist = Request.QueryString["simhist"];
             if (!string.IsNullOrEmpty(simhist))
             {
@@ -33,7 +29,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
                 rptrIssuesSeen.DataBind();
             }
 
-            var schools = PageItem.SchoolContributions.ListItems
+            var schools = Model.SchoolContributions.ListItems
                 .Where(i => i != null)
                 .Select(i => (EducationalInstitutionItem)i).ToList();
 

@@ -52,8 +52,9 @@
   <![endif]-->
 
     <link href="/Presentation/includes/css/print.css" media="print" rel="stylesheet" />
-
+    
     <script src="/Presentation/includes/js/vendor/modernizr.custom.js"></script>
+    <script src="/Presentation/includes/js/vendor/buzz.js"></script>
 </head>
 
 <!-- END PARTIAL: head -->
