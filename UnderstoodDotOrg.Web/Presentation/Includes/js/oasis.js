@@ -472,16 +472,28 @@ $(document).ready(function () {
 	var $container, $showMoreContainer, path, blog, post;
 	
 	function init() {
-		var $trigger = $("#show-more-comments");
-		if ($trigger.length > 0) {
-			path = $trigger.data('path');
-			blog = $trigger.data('blog');
-			post = $trigger.data('post');
-			$container = $("#" + $trigger.data('container'));
-			$showMoreContainer = $trigger.closest(".show-more");
-			
-			$trigger.on("click", showMore_clickHandler);
-		}
+	    initShowMore();
+	    initCommentActions();
+	}
+
+	function initShowMore() {
+	    var $trigger = $("#show-more-comments");
+	    if ($trigger.length > 0) {
+	        path = $trigger.data('path');
+	        blog = $trigger.data('blog');
+	        post = $trigger.data('post');
+	        $container = $("#" + $trigger.data('container'));
+	        $showMoreContainer = $trigger.closest(".show-more");
+
+	        $trigger.on("click", showMore_clickHandler);
+	    }
+	}
+
+	function initCommentActions() {
+	    $("#comment-list").on("click", "a.comment-reply", function (e) {
+	        e.preventDefault();
+	        $("#comment-list textarea").focus();
+	    });
 	}
 	
 	function showMore_clickHandler(e) {
