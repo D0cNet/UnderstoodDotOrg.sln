@@ -1,3 +1,15 @@
+/*
+ * jQuery UI Touch Punch 0.2.2
+ *
+ * Copyright 2011, Dave Furfero
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ *
+ * Depends:
+ *  jquery.ui.widget.js
+ *  jquery.ui.mouse.js
+ */
+
+(function(b){b.support.touch="ontouchend" in document;if(!b.support.touch){return;}var c=b.ui.mouse.prototype,e=c._mouseInit,a;function d(g,h){if(g.originalEvent.touches.length>1){return;}g.preventDefault();var i=g.originalEvent.changedTouches[0],f=document.createEvent("MouseEvents");f.initMouseEvent(h,true,true,window,1,i.screenX,i.screenY,i.clientX,i.clientY,false,false,false,false,0,null);g.target.dispatchEvent(f);}c._touchStart=function(g){var f=this;if(a||!f._mouseCapture(g.originalEvent.changedTouches[0])){return;}a=true;f._touchMoved=false;d(g,"mouseover");d(g,"mousemove");d(g,"mousedown");};c._touchMove=function(f){if(!a){return;}this._touchMoved=true;d(f,"mousemove");};c._touchEnd=function(f){if(!a){return;}d(f,"mouseup");d(f,"mouseout");if(!this._touchMoved){d(f,"click");}a=false;};c._mouseInit=function(){var f=this;f.element.bind("touchstart",b.proxy(f,"_touchStart")).bind("touchmove",b.proxy(f,"_touchMove")).bind("touchend",b.proxy(f,"_touchEnd"));e.call(f);};})(jQuery);
 (function() {
 
     var critters = {
@@ -66,15 +78,18 @@
             var bound = this.getBound(n);
             var d = this.cmpPoint(this.gridBoundary, bound);
 
+            //0 would make it need to be 100% inside to count.
+            var pslop = 50;
+            var nslop = pslop * -1;
             return true &&
                 //Top-left should both be +
-                d[0][0] >= 0 && d[0][1] >= 0 &&
+                d[0][0] >= nslop && d[0][1] >= nslop &&
                 //Top-right should be - +
-                d[1][0] <= 0 && d[1][1] >= 0 &&
+                d[1][0] <= pslop && d[1][1] >= nslop &&
                 //Bottom-left should be + -
-                d[2][0] >= 0 && d[2][1] <= 0 &&
+                d[2][0] >= nslop && d[2][1] <= pslop &&
                 //Bottom-right should both be -
-                d[3][0] <= 0 && d[3][1] <= 0
+                d[3][0] <= pslop && d[3][1] <= pslop
                 ;
         },
         deal: function() {
@@ -204,11 +219,14 @@
                 showDuration: this.config.introDurationInSeconds * 1000,
                 title: this.getText(this.config.title),
                 text: SSGameModal.textToParagraphs(this.config.introText),
-                onClose: $.proxy(this.start, this)
             });
             intro.setButtons([{
                 text: 'Start',
-                click: $.proxy(intro.close, intro)
+                click: function() {
+                    intro.close();
+                    SSGame.current.start();
+                }
+
             }]);
             intro.open();
             this.started = false;
@@ -237,23 +255,19 @@
             this.events.trigger('start');
             this.started = true;
             pieces.deal();
-            setTimeout($.proxy(function() {
-                this.playVO('instructions', {
-                    ended: $.proxy(function() {
-                        pieces.toggleFace();
-                        setTimeout($.proxy(function() {
-                            this.stop();
-                        }, this), this.config.timing.pauseBeforeStopDialog);
-                    }, this)
-                });
-            }, this), this.config.timing.pauseBeforeInstructions);
+            this.playVO('instructions', {
+                ended: $.proxy(function() {
+                    pieces.toggleFace();
+                    setTimeout($.proxy(function() {
+                        this.stop();
+                    }, this), this.config.timing.pauseBeforeStopDialog);
+                }, this)
+            });
         },
         stop: function() {
-            var score = this.success.getScore();
-            var scoreText = score.correct + '/' + score.max;
             var done = new SSGameModal({
                 showDuration: 0,
-                text: this.config.finalText.replace('%score', scoreText)
+                text: this.getText(this.config.finalText)
             });
             done.setButtons([{
                 text: 'Try Again',
@@ -268,6 +282,7 @@
                 }
             }]);
             done.open();
+            console.log('Stopped');
             this.events.trigger('stop');
         },
         run: function(localCfg) {

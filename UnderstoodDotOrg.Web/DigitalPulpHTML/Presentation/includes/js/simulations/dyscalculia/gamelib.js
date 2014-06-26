@@ -18,7 +18,7 @@
             var h = wheel.find('div').height();
             var newT = val * h + skew;
             //console.log('Was %s, skew %s, will be %s', wheel.scrollTop(), skew, newT);
-            wheel.stop().animate({ scrollTop: newT }, duration);
+            wheel.stop(true).animate({ scrollTop: newT }, duration);
         }
         function getSkew() {
             return skew = SSGame.rnd(3, 18) * SSGame.pick([-1,1], []);
@@ -38,7 +38,11 @@
             mask: null,
             disabled: false,
             setValue: function(val, skewResults) {
-                if(ui.disabled) return;
+                val = Math.round(val * 100) / 100;
+                if(ui.disabled) {
+                    ui.value = val;
+                    return;
+                }
                 if(val >= 10) {
                     console.error('Can only do 9.99 or less');
                     return;
@@ -53,7 +57,9 @@
                 setWheelTo(ui.dollar, dollars, skewResults);
                 setWheelTo(ui.tencent, tencents, skewResults);
                 setWheelTo(ui.cent, cents, skewResults);
-                ui.value = val;
+                if(!skewResults) {
+                    ui.value = val;
+                }
                 return ui;
             },
             getValue: function() {
@@ -265,6 +271,15 @@
             $('.coin_anim').stop().remove();
             SSGame.current.nodes.coins.append(SSGame.current.nodes.counter.find('.coin'));
         },
+        adjustZIndex: function(ctr) {
+            var coins = ctr.find('.coin');
+            console.log(coins);
+            var idx = 1;
+            coins.each(function() {
+                $(this).css('zIndex', idx);
+                idx ++;
+            });
+        },
         getStats: function(ctr) {
             var placedCoins = ctr.find('.coin');
             var coinStats = [];
@@ -378,10 +393,12 @@
                 var specs = coinTools.getLayoutSpecs(this, ctr);
                 var newPos = SSGame.getRandomPosition(specs.coinSize, specs.siblings, specs.container,
                         specs.siblings.length, specs.grid[0], specs.grid[1]);
-                newPos.zIndex = specs.siblings.length + 10;
+                coinTools.adjustZIndex(ctr);
+                newPos.zIndex = specs.siblings.length + 1;
                 //Stick the coin in the new ctr and hide it
                 ctr.append(this.body);
                 this.body.css(newPos).css('visibility', 'hidden');
+
                 //Stick a new animation dummy where the coin was
                 var newCoinPos = this.body.offset();
                 coinTools.dummyJump(this, specs.coinPosition, newCoinPos, 1, $.proxy(function() {
@@ -395,6 +412,8 @@
                 var specs = coinTools.getLayoutSpecs(this, ctr);
                 var newPos = SSGame.getRandomPosition(specs.coinSize, specs.siblings, specs.container,
                         specs.siblings.length, specs.grid[0], specs.grid[1]);
+                coinTools.adjustZIndex(ctr);
+                newPos.zIndex = specs.siblings.length + 1;
                 //Stick the coin in the new ctr and hide it
                 ctr.append(this.body);
                 this.body.css(newPos).css('visibility', 'hidden');

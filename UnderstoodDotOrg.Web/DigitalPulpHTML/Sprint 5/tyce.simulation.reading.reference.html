@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
+<!--[if lte IE 8]><html class="no-js nonresponsive" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js tyce" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
@@ -209,7 +209,7 @@
        
           <li>
             <div class="icon childs-world">
-              <a class="toolkit-element" href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Child's World</a>
             </div>
           </li>
         </ul>
@@ -317,26 +317,11 @@
 </div><!-- .tyce-player-container -->
 
 <script type="text/javascript">
-    //This is hacky and intentionally hacky for demonstration purposes.
-    //It should be removed from the code and done correctly as soon as you
-    //  finish screaming at the screen.  So.......now!
     window.onload = function() {
         if(SSGame && SSGame.current) {
             //At this point the game class has been initialized and all the non-DOM related stuff
             //should be set up.  So let's run it!
             SSGame.current.run();
-            //Just to be annoying...I mean, for demonstration purposes...let's reset the game after
-            //20 seconds
-            // setTimeout(function() {
-            //     SSGame.current.reset();
-            // }, 20000);
-            //Just a reminder, you can listen for start and stop, too:
-            SSGame.current.events.on('start', function() {
-                console.log('Reading simulation started');
-            });
-            SSGame.current.events.on('stop', function() {
-                console.log('Reading simulation stopped');
-            });
         } else {
             console.log('No game defined');
         }

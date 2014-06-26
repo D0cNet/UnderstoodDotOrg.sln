@@ -8,8 +8,8 @@
         currPrompt: null,
         inputUI: null,
         timer: null,
+        initialTweaks: null,
         initialTweakCounter: 0,
-        initialTweakMade: false,
         init: function() {
             this._super('DysgraphiaGame', null);
         },
@@ -27,11 +27,10 @@
             }]);
             intro.open();
             this.currPromptIdx = -1;
-            this.initialTweakCounter = 0;
-            this.initialTweakMade = false;
             this.nodes.prompt.text('');
             this.success.reset();
             this.timer.reset();
+            this.inputUI.clear();
         },
         draw: function() {
             this._super({
@@ -193,8 +192,8 @@
             }
         },
         checkResponse: function() {
-            var shouldBe = this.currPrompt.replace(/\s+/g, ' ');
-            var reallyIs = this.inputUI.getShownContent().replace(/\s+/g, ' ');
+            var shouldBe = this.currPrompt.trim().replace(/\s+/g, ' ');
+            var reallyIs = this.inputUI.getShownContent().trim().replace(/\s+/g, ' ');
             console.log('"%s" vs "%s"', shouldBe, reallyIs);
             if(shouldBe == reallyIs) {
                 this.onSuccess();
@@ -214,15 +213,13 @@
         },
         initialTweak: function(typed) {
             var cfg = this.config.tweaks.initial;
-            if(this.initialTweakMade) return typed;
+            if(!this.initialTweaks) {
+                this.initialTweaks = [];
+                for(var i = 0; i < cfg.length; i ++) this.initialTweaks.push(SSGame.rnd(cfg[i][0], cfg[i][1]));
+            }
             this.initialTweakCounter ++;
-            if(this.initialTweakCounter >= cfg.minimumCharacters) {
-                var chance = cfg.maximumCharacters - this.initialTweakCounter;
-                var show = SSGame.rnd(0, chance);
-                if(show == 0) {
-                    this.initialTweakMade = true;
-                    return this.tweaks.replaceRandomly.call(this, typed);
-                }
+            if($.inArray(this.initialTweakCounter, this.initialTweaks) >= 0) {
+                return this.tweaks.replaceRandomly.call(this, typed);
             }
             return typed;
         },

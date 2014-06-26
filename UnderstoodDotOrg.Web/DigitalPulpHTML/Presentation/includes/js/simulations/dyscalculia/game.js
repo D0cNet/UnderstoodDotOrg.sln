@@ -118,27 +118,35 @@
         },
         stop: function() {
             var score = this.success.getScore();
-            var scoreText = score.correct + '/' + score.max;
+            var finalText;
             if(score.correct < score.max) {
                 this.playSound('gameOverFail');
+                finalText = this.getText(this.config.finalText.onTimeout);
             } else {
                 this.playSound('gameOverSuccess');
+                finalText = this.getText(this.config.finalText.onComplete);
             }
             var done = new SSGameModal({
                 showDuration: 0,
-                text: this.config.finalText.replace('%score', scoreText)
+                text: finalText
             });
             done.setButtons([{
-                text: 'Go',
+                text: 'Try Again',
                 click: function() {
-                    window.location = window.location;
+                    SSGame.current.reset();
+                    done.close();
+                }
+            }, {
+                text: 'Continue',
+                click: function() {
+                    SSGame.current.events.trigger('moveon');
                 }
             }]);
             done.open();
             this.events.trigger('stop');
         },
-        run: function() {
-            if(!this._super()) return;
+        run: function(localCfg) {
+            if(!this._super(localCfg)) return;
             this.timer = new SSGameTimer({
                 container: this.nodes.timer,
                 maxTime: this.config.timeInSeconds
@@ -221,7 +229,6 @@
                     return SSGame.current.spinner.getValue();
                 },
                 payClick: function(e) {
-                    console.log('click');
                     this.setState('sleep');
                     var coins = this.nodes.counter.find('coin');
                     var total = Math.round(this.states.itemChosen.getTotal() * 100);

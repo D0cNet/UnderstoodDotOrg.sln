@@ -10,7 +10,7 @@
         ].join("\n"),
         finalText: {
             onComplete: {
-                en: 'Congrats!'
+                en: 'Well done—you beat the clock!'
             },
             onTimeout: {
                 en: [
@@ -27,18 +27,20 @@
             desktop: 96
         },
         tweaks: {
-            initial: {
-                minimumCharacters: 15,
-                maximumCharacters: 19
-            },
+            initial: [
+                //Ranges in which a replacement happens
+                [6,10],
+                [12,16],
+                [20,25]
+            ],
             chances: [
                 //lv1 (special)
                 {},
                 //lv2
                 {
-                    replaceRandomly: 5,
+                    replaceRandomly: 7,
                     extraRandom: 0,
-                    ignoreInput: 0,
+                    ignoreInput: 6,
                     changeCaps: 0,
                     repeatCharacters: 0
                 },
@@ -139,4 +141,6 @@
                                                                                 
                                                                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                                                 
+                
+                                
                 

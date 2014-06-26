@@ -226,7 +226,7 @@
        
           <li>
             <div class="icon childs-world">
-              <a class="toolkit-element" href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Child's World</a>
             </div>
           </li>
         </ul>
@@ -313,7 +313,7 @@
         <header>
           <h2><span class="num">2</span> What does your child seem to be struggling with? <span class="instructions">(select as many as are relevant)</span></h2>
           
-          <div class="info"><a href="REPLACE">Why are we asking this?</a></div>
+          <div class="info"><a href="REPLACE" id="why-we-ask-this">Why are we asking this?</a></div>
         </header>
 
         <div class="body">
@@ -460,6 +460,15 @@ $(document).ready(function() {
   $('#tyce-modal-no-challenge').find('.button-close').on('click', function() {
     $('#tyce-modal-no-challenge').modal('hide');
   });
+
+  $('#why-we-ask-this').on('click', function() {
+    $('#tyce-modal-why-are-we-asking-this').modal('show');
+    $(window).trigger('resize');
+  });
+
+  $('#tyce-modal-why-are-we-asking-this').find('.button-close').on('click', function() {
+    $('#tyce-modal-why-are-we-asking-this').modal('hide');
+  });
 });
 </script>
 
@@ -477,6 +486,21 @@ $(document).ready(function() {
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<div class="modal fade modal-standard" id="tyce-modal-why-are-we-asking-this" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2>Why are we asking this?</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="actions">
+          <a href="REPLACE" class="button button-close">OK</a>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
 
 

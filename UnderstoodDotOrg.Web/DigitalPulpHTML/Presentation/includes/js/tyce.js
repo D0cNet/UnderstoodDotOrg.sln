@@ -98,7 +98,7 @@
 
         // give selected grade active class
         if (!$this.hasClass('active')) {
-          self.$full_options.find('a.active').removeClass('active');
+          self.$full_options.find('button.active').removeClass('active');
           $this.addClass('active');
           // give hidden field the value from the grade ID
           self.$full_input.val($this.attr('id'));
@@ -151,7 +151,9 @@ var TYCE = (function(){
 
   // Create vars
   var opts,
+    videotype,
     currentstep,
+    currentlang,
     nextstep = 0,
     numberofsteps,
     steps,
@@ -179,6 +181,8 @@ var TYCE = (function(){
   // Initialize TYCE Experience
   function init(options){
     opts = options;
+    videotype = Modernizr.ishardcoded ? 'hardcoded' : 'default';
+    currentlang = $('html').attr('lang');
     currentstep = opts.start;
     numberofsteps = opts.steps.length;
     steps = opts.steps;
@@ -193,6 +197,8 @@ var TYCE = (function(){
     // add modals for begin and end
     $modalbegin = $('.modal-begin');
     $modalend = $('.modal-end');
+    // set end modal link to next url set in config
+    $modalend.find('.button-close').attr('href', opts.next);
 
     $modalbegin.modal({ backdrop: 'static', show: false });
     $modalend.modal({ backdrop: 'static', show: false });
@@ -208,7 +214,8 @@ var TYCE = (function(){
     // player controls and events
     $playpause = $('.play-pause');
     $volume = $('li.volume');
-    $fullscreen = $('.fullscreen');
+    $fullscreen = $('li.fullscreen');
+    $skip = $tyceplayercontainer.find('.btn-skip');
     $captionswitch = $('.captions .toggle');
     $helpToggle = $('.icon.help');
     $helpClose = $('.help-overlay .close');
@@ -243,9 +250,11 @@ var TYCE = (function(){
     // volume events
     $volume.on({
       'mouseenter': function(){
+        if($(this).hasClass('is-disabled')){ return false; };
         $('.volume-slider').show();
       },
       'mouseleave' : function(){
+        if($(this).hasClass('is-disabled')){ return false; };
         $('.volume-slider').hide();
       },
       'click' : function(){
@@ -253,16 +262,28 @@ var TYCE = (function(){
       }
     });
 
+    if($skip.length > 0){
+      $skip.on('click', function(e){
+        e.preventDefault();
+        VP.getIsPlaying(playPauseVideo);
+        nextStep();
+      })
+    }
+
     //helpOverlay init
     helpOverlay();
 
     //helpOverlay resize
     $(window).on('resize.player', helpOverlayDetect);
 
-    // click on fullscreen button
-    $fullscreen.on('click', function(){
-      // VP.goFullScreen();
+    // click on fullscreen button if browser supports it
+    if(Modernizr.fullscreen){
+    $fullscreen.on('click', function(e){
+      e.stopPropagation();
+      e.preventDefault();
+      toggleFullScreen();
     });
+    }
 
     $captionswitch.on('change', function(e){
       if($(this).prop('checked')){
@@ -362,12 +383,15 @@ var TYCE = (function(){
 
         // if video player isn't attached
         if(!videoloaded){
-          attachVideo(step.init);
+          attachVideo(step.vid[videotype]);
         } else {
-          loadNextVideo(step.init);
+          loadNextVideo(step.vid[videotype]);
         }
 
-        $playpause.attr('disabled', false);
+        $skip.show();
+
+        $playpause.removeClass('is-disabled');
+        $volume.removeClass('is-disabled');
 
         break;
 
@@ -380,6 +404,11 @@ var TYCE = (function(){
             'overflow' : 'hidden'
           });
         }
+
+        $playpause.addClass('is-disabled');
+        $volume.addClass('is-disabled');
+
+        $skip.hide();
 
         initSimulation();
       
@@ -587,7 +616,7 @@ var TYCE = (function(){
 
   // start the sim
   function startSimulation(){
-    simulation.run();
+    simulation.run({lang : currentlang});
   };
 
   // open the modal
@@ -649,6 +678,33 @@ var TYCE = (function(){
 
   };
 
+  // function to toggle browser fullscreen mode as see on MDN
+  // https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode
+  function toggleFullScreen() {
+    if (!document.fullscreenElement &&
+        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.msRequestFullscreen) {
+        document.documentElement.msRequestFullscreen();
+      } else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+      } else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
+  };
+
   return {
     init: init,
     onTemplateLoaded : onTemplateLoaded,
@@ -664,6 +720,11 @@ window.addEventListener('message', function(event) {
   if(event.data == 'mediaComplete') {
     TYCE.nextStep();
   }
+});
+
+//Add Modernizr test
+Modernizr.addTest('isHardCoded', function(){
+  return navigator.userAgent.match(/(iPhone|iPod)/i) ? true : false;
 });
 
 

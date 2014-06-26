@@ -450,14 +450,26 @@ textarea.uniform {
     font-size: 1rem;
   }
 }
+/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/uniform-base.scss */
+input.uniform-input.active,
+select.uniform-multiselect.active,
+textarea.uniform.active {
+  background: #fff;
+}
+
+/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+textarea.uniform {
+  line-height: 24px;
+  line-height: 1.5rem;
+}
 
 /* PRESENTATION */
 /* Buttons */
-/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 91, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.button {
   width: 100%;
 }
-/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.button span {
   font-weight: bold;
   font-family: "Circular", Arial, Helvetica, sans-serif;
@@ -467,43 +479,43 @@ div.button span {
   padding-left: 13px;
   background: #f6c74c;
 }
-/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.button.disabled span, div.button.disabled.active span {
   color: #4c4c4c;
 }
 
 /* Select */
-/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 121, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.selector.focused {
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
   box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
 }
-/* line 117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.selector span {
   color: #696969;
   text-shadow: 0 1px 0 white;
 }
-/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.selector select {
   font-family: "Circular", Arial, Helvetica, sans-serif;
   font-size: 12px;
   cursor: pointer;
   padding-left: 20px;
 }
-/* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.selector select:focus:before {
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
 }
-/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.selector.disabled span, div.selector.disabled.active span {
   color: #bbb;
 }
 
 /* Select Selected, add all inverted background wrappers */
-/* line 147, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.selector.selected,
 .select-inverted div.selector.selected,
 .select-inverted-mobile div.selector.selected,
@@ -512,7 +524,7 @@ div.selector.selected,
 .my-account-subheader div.selector.selected {
   background-position: 0 -450px;
 }
-/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 159, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.selector.selected span,
 .select-inverted div.selector.selected span,
 .select-inverted-mobile div.selector.selected span,
@@ -523,7 +535,7 @@ div.selector.selected span,
   text-shadow: none;
   background-position: right -200px;
 }
-/* line 157, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 165, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.selector.selected.active span,
 .select-inverted div.selector.selected.active span,
 .select-inverted-mobile div.selector.selected.active span,
@@ -535,19 +547,19 @@ div.selector.selected.active span,
 
 /* Sidebar Select Inverted for non-Mobile */
 @media (min-width: 650px), print {
-  /* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+  /* line 175, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
   .select-inverted div.selector,
   .comments div.selector {
     background-position: 0 -300px;
   }
-  /* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+  /* line 181, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
   .select-inverted div.selector span,
   .comments div.selector span {
     color: #696969;
     text-shadow: none;
     background-position: right -100px;
   }
-  /* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+  /* line 187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
   .select-inverted div.selector.active span,
   .comments div.selector.active span {
     color: #696969;
@@ -555,7 +567,7 @@ div.selector.selected.active span,
 }
 
 @media (min-width: 650px), print {
-  /* line 190, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+  /* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
   .select-inverted div.selector.selected.active span,
   .comments div.selector.selected.active span {
     color: #fff;
@@ -564,13 +576,13 @@ div.selector.selected.active span,
 }
 
 /* Sidebar Select Inverted - Mobile First */
-/* line 203, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 211, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 .select-inverted-mobile div.selector,
 .sidebar div.selector,
 .my-account-subheader div.selector {
   background-position: 0 -300px;
 }
-/* line 207, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 .select-inverted-mobile div.selector span,
 .sidebar div.selector span,
 .my-account-subheader div.selector span {
@@ -578,14 +590,14 @@ div.selector.selected.active span,
   text-shadow: none;
   background-position: right -100px;
 }
-/* line 213, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 221, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 .select-inverted-mobile div.selector.active span,
 .sidebar div.selector.active span,
 .my-account-subheader div.selector.active span {
   color: #696969;
 }
 
-/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 231, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 .select-inverted-mobile div.selector.selected.active span,
 .sidebar div.selector.selected.active span,
 .my-account-subheader div.selector.selected.active span {
@@ -594,11 +606,11 @@ div.selector.selected.active span,
 }
 
 /* Checker */
-/* line 232, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 240, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.checker {
   margin-right: 5px;
 }
-/* line 236, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 244, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.checker input:focus {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -606,7 +618,7 @@ div.checker input:focus {
   border: 1px solid rgba(0, 0, 0, 0.3);
   outline: 0 none;
 }
-/* line 241, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 249, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.checker input[type="checkbox"]:focus:before {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 3px;
@@ -614,18 +626,18 @@ div.checker input[type="checkbox"]:focus:before {
   content: " ";
   vertical-align: top;
 }
-/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 255, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.checker input[type="checkbox"]:focus:before {
   height: 21px;
   width: 20px;
 }
 
 /* Radio */
-/* line 255, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 263, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.radio {
   margin-right: 3px;
 }
-/* line 259, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 267, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.radio input[type="radio"]:focus:before {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 3px;
@@ -633,13 +645,13 @@ div.radio input[type="radio"]:focus:before {
   content: " ";
   vertical-align: top;
 }
-/* line 265, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 273, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.radio input[type="radio"]:focus:before {
   height: 21px;
   width: 20px;
 }
 
-/* line 272, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 280, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 .radio .focused {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -649,30 +661,30 @@ div.radio input[type="radio"]:focus:before {
 }
 
 /* Uploader */
-/* line 280, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 288, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.uploader span.action {
   text-shadow: #fff 0px 1px 0px;
   background-color: #fff;
   font-size: 11px;
   font-weight: bold;
 }
-/* line 287, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 295, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.uploader span.filename {
   color: #777;
   border-right: solid 1px #bbb;
   font-size: 11px;
 }
-/* line 294, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 302, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.uploader.disabled span.action, div.uploader.disabled.active span.action {
   color: #aaa;
 }
-/* line 298, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 306, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 div.uploader.disabled span.filename, div.uploader.disabled.active span.filename {
   border-color: #ddd;
   color: #aaa;
 }
 
-/* line 306, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
+/* line 314, /Users/justin/projects.dp/poses/source/Presentation/includes/css/uniform-understood.scss */
 input.uniform-input, input.uniform-input:focus {
   background-color: #fff;
 }

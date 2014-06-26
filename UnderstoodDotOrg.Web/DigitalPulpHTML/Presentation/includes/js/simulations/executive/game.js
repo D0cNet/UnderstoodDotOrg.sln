@@ -107,7 +107,6 @@
                 }
             }, this), 50);
             this.events.trigger('start');
-            this.lib.trap.fadeTo('red');
         },
         stop: function() {
             this.timer.stop();
@@ -117,9 +116,7 @@
                 this.playSound('gameOverSuccess');
             }
             this.lib.trap.node.remove();
-            for(var key in this.balls) {
-                this.balls[key].remove();
-            }
+            this.lib.balls.reset();
             clearInterval(this.interval);
             this.interval = null;
             var done = new SSGameModal({

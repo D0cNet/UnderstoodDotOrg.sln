@@ -445,7 +445,7 @@ input[type=email][type=text]:focus::-webkit-input-placeholder {
 
 /* line 300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 textarea {
-  background-color: #fff !important;
+  background-color: #fff;
   border: solid 2px #e9e9e9;
   padding: 14px !important;
   color: #696969;
@@ -520,95 +520,87 @@ textarea:focus::-webkit-input-placeholder {
   font-size: 1rem;
 }
 
-/* line 351, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
-.touch input[type=text]:focus, .touch
-input[type=password]:focus, .touch
-input[type=url]:focus, .touch
-input[type=tel]:focus, .touch
-input[type=number]:focus, .touch
-input[type=date]:focus, .touch
-input[type=email]:focus, .touch
-textarea:focus, .touch
-select:focus {
+/* line 343, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.touch select:focus {
   font-size: 16px;
   font-size: 1rem;
 }
 
-/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 352, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .support-plan {
   background: url("../images/icon.toolkit.support.plan.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 364, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 356, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .support-plan {
   background-image: url("../images/icon.toolkit.support.plan.100.png");
 }
-/* line 368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .support-plan .icon {
   background-image: url("../images/icon.toolkit.support.plan.60.png");
 }
 
-/* line 374, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 366, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .childs-world {
   background: url("../images/icon.toolkit.childs.world.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 378, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 370, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .childs-world {
   background-image: url("../images/icon.toolkit.childs.world.100.png");
 }
 
-/* line 384, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 376, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .observation-logs {
   background: url("../images/icon.toolkit.observation.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 388, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 380, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .observation-logs {
   background-image: url("../images/icon.toolkit.observation.100.png");
 }
 
-/* line 394, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 386, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .rate-schools {
   background: url("../images/icon.toolkit.ratings.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 398, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 390, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .rate-schools {
   background-image: url("../images/icon.toolkit.ratings.100.png");
 }
 
-/* line 404, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 396, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .decisions {
   background: url("../images/icon.toolkit.decisions.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 408, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 400, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .decisions {
   background-image: url("../images/icon.toolkit.decisions.100.png");
 }
 
-/* line 414, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .find {
   background: url("../images/icon.toolkit.find.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 418, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .find {
   background-image: url("../images/icon.toolkit.find.100.png");
 }
 
-/* line 425, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 417, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown {
   position: relative;
   float: left;
 }
-/* line 429, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 421, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown a {
   text-decoration: none;
 }
 
-/* line 434, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 426, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-toggle {
   display: block;
   height: 50px;
@@ -623,7 +615,7 @@ select:focus {
   box-sizing: border-box;
   position: regular;
 }
-/* line 446, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 438, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-toggle:after {
   content: "";
   position: absolute;
@@ -634,7 +626,7 @@ select:focus {
   background: url("../images/arrow.down.000.10.png") 0 0 no-repeat;
 }
 
-/* line 457, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 449, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-toggle:hover {
   background: #ffbc0d;
   color: #000;
@@ -642,7 +634,7 @@ select:focus {
   border: 1px solid #efefef;
 }
 
-/* line 464, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open .dropdown-toggle {
   background: #fff;
   text-decoration: none;
@@ -650,26 +642,26 @@ select:focus {
   color: #696969;
 }
 
-/* line 471, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 463, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open .dropdown-toggle {
   border-bottom: none;
 }
 
-/* line 475, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 467, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-title {
   display: none;
 }
 
-/* line 480, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 472, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open .dropdown-toggle .current-page {
   display: none;
 }
-/* line 484, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 476, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open .dropdown-toggle .dropdown-title {
   display: inline-block;
 }
 
-/* line 489, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-toggle:focus {
   outline: 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
@@ -681,7 +673,7 @@ select:focus {
   outline: solid 1px #dfdfdf;
 }
 
-/* line 493, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 485, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -696,7 +688,7 @@ select:focus {
   padding: 0;
   border: 1px solid #f4f2f1;
 }
-/* line 507, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 499, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu a {
   padding: 0 20px;
   height: 50px;
@@ -705,27 +697,27 @@ select:focus {
   color: #696969;
   background: #f4f2f1;
 }
-/* line 516, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 508, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu a:hover, .dropdown-menu a:active {
   background: #794381;
   color: #fff;
 }
-/* line 522, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 514, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu .current-page a {
   color: #794381;
 }
-/* line 525, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 517, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu .current-page a:hover {
   color: #fff;
 }
 
-/* line 530, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 522, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu.pull-right {
   right: 0;
   left: auto;
 }
 
-/* line 534, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 526, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu .divider {
   height: 1px;
   margin: 9px 0;
@@ -733,29 +725,29 @@ select:focus {
   background-color: #e5e5e5;
 }
 
-/* line 540, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 532, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open > .dropdown-menu {
   display: block;
 }
 
-/* line 543, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 535, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open > a {
   outline: 0;
 }
 
-/* line 546, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 538, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu-right {
   right: 0;
   left: auto;
 }
 
-/* line 550, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 542, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu-left {
   right: auto;
   left: 0;
 }
 
-/* line 554, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 546, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-header {
   display: block;
   padding: 3px 20px;
@@ -764,7 +756,7 @@ select:focus {
   color: #999;
 }
 
-/* line 561, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 553, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-backdrop {
   position: fixed;
   top: 0;
@@ -774,13 +766,13 @@ select:focus {
   z-index: 990;
 }
 
-/* line 569, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 561, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .pull-right > .dropdown-menu {
   right: 0;
   left: auto;
 }
 
-/* line 574, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 566, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropup .caret,
 .navbar-fixed-bottom .dropdown .caret {
   content: "";
@@ -788,7 +780,7 @@ select:focus {
   border-bottom: 4px solid;
 }
 
-/* line 580, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 572, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropup .dropdown-menu,
 .navbar-fixed-bottom .dropdown .dropdown-menu {
   top: auto;
@@ -796,19 +788,19 @@ select:focus {
   margin-bottom: 1px;
 }
 
-/* line 587, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 579, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 592, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 584, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 599, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 591, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .col.sidebar-spacer {
   border-right: 1px solid #f4f2f1;
   display: none;
@@ -817,10 +809,16 @@ select:focus {
   display: block;
 }
 
-/* line 611, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 604, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 body.modal-open {
-  overflow-y: scroll;
   margin: 0;
+}
+/* line 607, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+body.modal-open #wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 /* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */

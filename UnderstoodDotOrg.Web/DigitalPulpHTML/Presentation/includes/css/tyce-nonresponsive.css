@@ -1048,26 +1048,27 @@
   margin: 16px 0 0;
   font-size: 16px;
   font-size: 1rem;
+  font-weight: bold;
   font-size: 14px;
   font-size: 0.875rem;
 }
-/* line 456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 457, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-on-demand-container.stories li:nth-child(2) > a img {
   border-color: #6f5091;
 }
-/* line 459, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 460, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-on-demand-container.stories li:nth-child(3) > a img {
   border-color: #5a5d9c;
 }
-/* line 462, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 463, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-on-demand-container.stories li:nth-child(4) > a img {
   border-color: #426da9;
 }
-/* line 465, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 466, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-on-demand-container.stories li:nth-child(5) > a img {
   border-color: #298fc2;
 }
-/* line 470, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 471, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-on-demand-container.stories h4 {
   font-size: 16px;
   font-size: 1rem;
@@ -1075,7 +1076,7 @@
   min-height: 2.25em;
   margin-bottom: 6px;
 }
-/* line 478, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 479, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-on-demand-container .tab-controls {
   padding: 0;
   margin: 0;
@@ -1084,14 +1085,14 @@
   display: block;
   float: right;
 }
-/* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 489, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-on-demand-container .tab-controls li {
   display: inline-block;
   min-width: 150px;
   text-align: center;
   margin-left: 6px;
 }
-/* line 494, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 495, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-on-demand-container .tab-controls li a {
   display: block;
   background: #f4f2f1;
@@ -1100,18 +1101,18 @@
   padding: 0 2px;
   border-radius: 4px;
 }
-/* line 502, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 503, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-on-demand-container .tab-controls li a.active, .tyce-on-demand-container .tab-controls li a:hover {
   background: #7a4183;
   color: #fff;
   text-decoration: none;
 }
 
-/* line 514, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 515, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-player-header .row {
   padding: 20px 0;
 }
-/* line 518, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 519, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-player-header h1 {
   color: #7b3f84;
   font-size: 34px;
@@ -1123,7 +1124,7 @@
   line-height: 48px;
   line-height: 3rem;
 }
-/* line 529, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 530, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-player-header a.back-to-previous {
   color: #426da9;
   margin-bottom: 10px;
@@ -1134,28 +1135,28 @@
   margin-bottom: 17px;
   margin-bottom: 18px;
 }
-/* line 545, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 546, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .tyce-player-header a.back-to-previous i {
   margin-right: 7px;
   margin-bottom: -1px;
 }
 
-/* line 554, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 555, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .captions {
   display: inline-block;
   margin-right: 30px;
   vertical-align: top;
 }
-/* line 560, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 561, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .captions > span {
   display: block;
   margin-bottom: 16px;
 }
-/* line 565, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 566, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .captions .toggle-wrapper label .ez-checkbox {
   width: auto;
 }
-/* line 569, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 570, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .captions .switch {
   display: inline-block;
   background-color: #f4f2f1;
@@ -1164,11 +1165,11 @@
   padding: 3px 0;
   cursor: pointer;
 }
-/* line 577, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 578, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .captions .switch span {
   padding: 6px 15px 4px 15px;
 }
-/* line 581, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 582, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .captions .switch .is-active {
   color: #FFF;
   background-color: #794382;
@@ -1177,29 +1178,27 @@
   padding: 6px 20px 6px 20px;
 }
 
-/* line 593, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 594, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .help {
   display: none;
   vertical-align: top;
   cursor: pointer;
   display: inline-block;
 }
-/* line 602, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
+/* line 603, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
 .help > span {
   display: block;
   margin-bottom: 16px;
 }
 
 /* line 615, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
-.tyce-player-header .icon,
-.tyce-player-container .icon {
+.tyce-on-demand-container .icon {
   display: inline-block;
   background: url("../images/sprite.icons.tyce.png") 0 0 no-repeat;
   background-size: 500px 100px;
 }
 /* line 620, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
-.tyce-player-header .icon.globe,
-.tyce-player-container .icon.globe {
+.tyce-on-demand-container .icon.globe {
   background: url("../images/icon.toolkit.childs.world.png") 0 0 no-repeat;
   background-size: 100px 100px;
   width: 100px;
@@ -1207,48 +1206,42 @@
   float: left;
 }
 /* line 628, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
-.tyce-player-header .icon.reading-issues,
-.tyce-player-container .icon.reading-issues {
+.tyce-on-demand-container .icon.reading-issues {
   width: 21px;
   height: 21px;
   background-position: -250px 0;
   float: right;
 }
 /* line 635, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
-.tyce-player-header .icon.writing-issues,
-.tyce-player-container .icon.writing-issues {
+.tyce-on-demand-container .icon.writing-issues {
   width: 18px;
   height: 18px;
   background-position: -275px 0;
   float: right;
 }
 /* line 642, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
-.tyce-player-header .icon.math-issues,
-.tyce-player-container .icon.math-issues {
+.tyce-on-demand-container .icon.math-issues {
   width: 24px;
   height: 22px;
   background-position: -250px -25px;
   float: right;
 }
 /* line 649, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
-.tyce-player-header .icon.organization-time,
-.tyce-player-container .icon.organization-time {
+.tyce-on-demand-container .icon.organization-time {
   width: 21px;
   height: 21px;
   background-position: -275px -25px;
   float: right;
 }
 /* line 656, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
-.tyce-player-header .icon.attention-issues,
-.tyce-player-container .icon.attention-issues {
+.tyce-on-demand-container .icon.attention-issues {
   width: 21px;
   height: 22px;
   background-position: -300px 0;
   float: right;
 }
 /* line 663, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce.scss */
-.tyce-player-header .icon.help,
-.tyce-player-container .icon.help {
+.tyce-on-demand-container .icon.help {
   width: 30px;
   height: 30px;
   background-position: -400px -50px;
@@ -1339,24 +1332,16 @@
 .tyce-module-3 .module p a {
   text-decoration: underline;
 }
-/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
-.tyce-module-3 .module .link {
-  margin: 50px 0 16px;
-}
-/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
-.tyce-module-3 .module .link + .link {
-  margin-top: 0;
-}
-/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-module-3 .module .field {
   margin-bottom: 20px;
   margin-top: 37px;
 }
-/* line 107, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-module-3 .module .button {
   margin-bottom: 20px;
 }
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-module-3 h2 {
   font-weight: normal;
   font-size: 20px;
@@ -1367,7 +1352,7 @@
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
-/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-module-3 textarea {
   background: #f4f2f1;
   border: 0;
@@ -1398,7 +1383,7 @@
   color: #696969;
 }
 
-/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools {
   margin: 25px 0 5px -15px;
   padding: 0;
@@ -1413,20 +1398,21 @@
   display: table;
   clear: both;
 }
-/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools li {
   float: left;
   margin: 0 0 15px 15px;
   line-height: 0;
   margin: 0 0 5px 5px;
 }
-/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools .icon {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
   width: 36px;
   height: 36px;
+  display: block;
   background-image: url("../images/sprite.social.footer.png");
   background-repeat: no-repeat;
   background-size: 165px 80px;
@@ -1434,81 +1420,81 @@
   height: 42px;
   background-size: 193px 93px;
 }
-/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .no-backgroundsize .share-tools .icon {
   background: url("../images/sprite.social.footer.lo-res.png");
 }
-/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools .icon-facebook {
   background-position: 0 0;
 }
-/* line 174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .no-backgroundsize .share-tools .icon-facebook {
   background-position: 0 0;
 }
-/* line 177, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools .icon-facebook:hover {
   background-position: 0 -43px;
   background-position: 0 -50px;
 }
-/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 184, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools .icon-twitter {
   background-position: -43px 0;
   background-position: -50px 0;
 }
-/* line 190, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 189, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .no-backgroundsize .share-tools .icon-twitter {
   background-position: -50px 0;
 }
-/* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools .icon-twitter:hover {
   background-position: -43px -43px;
   background-position: -50px -50px;
 }
-/* line 201, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 200, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools .icon-google {
   background-position: -86px 0;
   background-position: -100px 0;
 }
-/* line 207, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .no-backgroundsize .share-tools .icon-google {
   background-position: -100px 0;
 }
-/* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools .icon-google:hover {
   background-position: -86px -43px;
   background-position: -100px -50px;
 }
-/* line 218, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 217, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools .icon-pinterest {
   background-position: -129px 0;
   background-position: -150px 0;
 }
-/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 222, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .no-backgroundsize .share-tools .icon-pinterest {
   background-position: -150px 0;
 }
-/* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 225, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools .icon-pinterest:hover {
   background-position: -129px -43px;
   background-position: -150px -50px;
 }
-/* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 233, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools .icon-email {
   background: url("../images/sprite.icon.email.84.png");
   background-size: 36px 79px;
   background-size: 42px 92px;
 }
-/* line 240, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 239, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .no-backgroundsize .share-tools .icon-email {
   background: url("../images/sprite.icon.email.42.png");
 }
-/* line 243, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 242, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .share-tools .icon-email:hover {
   background-position: 0 100%;
 }
 
-/* line 250, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 249, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-addresses {
   margin: 0;
   padding: 7px 15px 0;
@@ -1517,22 +1503,22 @@
   background: none;
   padding: 0;
 }
-/* line 260, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 259, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-addresses .row {
   background: #F4F2F1;
   max-width: 950px;
   padding: 0;
 }
-/* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 263, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-addresses .row:last-of-type {
   padding-bottom: 10px;
   padding-bottom: 4px;
 }
-/* line 272, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 271, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-addresses header {
   padding-top: 25px;
 }
-/* line 278, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 277, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-addresses .message {
   font-size: 20px;
   font-size: 1.25rem;
@@ -1542,7 +1528,7 @@
   font-size: 22px;
   font-size: 1.375rem;
 }
-/* line 290, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 289, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-addresses p {
   font-size: 18px;
   font-size: 1.125rem;
@@ -1556,7 +1542,7 @@
   font-size: 1rem;
 }
 
-/* line 306, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 305, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step-wrap {
   background: #F4F2F1;
   margin: 0;
@@ -1564,18 +1550,18 @@
   padding: 0 0 55px;
 }
 
-/* line 315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 314, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step {
   background: #fff;
   margin-bottom: 20px;
   margin-bottom: 15px;
 }
-/* line 323, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 322, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step.is-inactive header, .tyce-step.is-inactive .body {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2;
 }
-/* line 327, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 326, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step .button {
   height: 50px;
   line-height: 50px;
@@ -1584,7 +1570,7 @@
   font-weight: bold;
   color: #000;
 }
-/* line 335, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step header {
   background: #fff;
   padding: 20px 20px 15px;
@@ -1598,7 +1584,7 @@
   display: table;
   clear: both;
 }
-/* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 343, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step header .button {
   background: #f4f2f1;
   margin: 25px 0 15px;
@@ -1606,21 +1592,21 @@
   float: right;
   margin: 0 0 0 15px;
 }
-/* line 352, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 351, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step header .button:hover {
   background: #ffbc0d;
 }
-/* line 356, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 355, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step header .button.active {
   background: #f2af00;
 }
-/* line 362, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 361, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step .body {
   background: #fff;
   padding: 0 20px 30px;
   padding: 0 40px 40px;
 }
-/* line 369, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step .body .button {
   margin: 0;
   width: 100%;
@@ -1628,7 +1614,7 @@
   margin: 0 auto;
   display: block;
 }
-/* line 380, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 379, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step h2 {
   font-size: 20px;
   font-size: 1.25rem;
@@ -1649,7 +1635,7 @@
   font-size: 1.5rem;
   max-width: 600px;
 }
-/* line 402, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 401, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step h2 .num {
   font-size: 24px;
   font-size: 1.5rem;
@@ -1666,7 +1652,7 @@
   top: -1px;
   margin: 0;
 }
-/* line 419, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 418, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step h2 .instructions {
   display: block;
   font-size: 15px;
@@ -1677,7 +1663,7 @@
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 431, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 430, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step .info {
   text-align: center;
   font-size: 15px;
@@ -1690,12 +1676,12 @@
   float: right;
   clear: none;
 }
-/* line 442, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 441, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step .info a {
   text-decoration: underline;
   white-space: nowrap;
 }
-/* line 451, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 450, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step .action {
   text-align: center;
   padding-top: 20px;
@@ -1707,14 +1693,14 @@
   width: auto;
   padding-left: 6%;
 }
-/* line 465, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 464, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step .action .button {
   margin-bottom: 25px;
   display: inline-block;
   vertical-align: middle;
   margin: 0 50px 0 0;
 }
-/* line 473, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 472, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-step .action a {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -1727,18 +1713,25 @@
   max-width: 185px;
 }
 
-/* line 487, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 486, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .reponsive-select-mobile {
   display: none;
 }
 
-/* line 492, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 491, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 #uniform-personalize-grade-mobile {
   display: block !important;
   display: none !important;
 }
+/* line 493, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+#uniform-personalize-grade-mobile.selector {
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
 
-/* line 499, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 503, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .reponsive-select-full-options {
   display: none;
   display: block;
@@ -1756,12 +1749,12 @@
   display: table;
   clear: both;
 }
-/* line 514, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 518, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .reponsive-select-full-options li {
   float: left;
   margin: 0 5px 10px;
 }
-/* line 519, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 523, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .reponsive-select-full-options .grade {
   display: table-cell;
   vertical-align: middle;
@@ -1778,23 +1771,23 @@
   border-radius: 2px;
   border: 0;
 }
-/* line 535, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 539, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .reponsive-select-full-options .grade:hover, .reponsive-select-full-options .grade:focus {
   background: #bcbdc0;
   text-decoration: none;
 }
-/* line 540, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 544, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .reponsive-select-full-options .grade.active {
   background: #7a4183;
   color: #fff;
 }
-/* line 545, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 549, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .reponsive-select-full-options .grade.active:hover {
   background: #9850a2;
   color: #fff;
 }
 
-/* line 552, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 556, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .input-buttons {
   margin: 0;
   padding: 12px 0 0;
@@ -1812,14 +1805,14 @@
   display: table;
   clear: both;
 }
-/* line 569, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 573, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .input-buttons input[type="checkbox"],
 .input-buttons input[type="radio"] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   position: absolute;
 }
-/* line 574, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 578, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .input-buttons li {
   display: table;
   width: 100%;
@@ -1830,7 +1823,7 @@
   display: block;
   width: auto;
 }
-/* line 587, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 591, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .input-buttons label {
   display: table-cell;
   vertical-align: middle;
@@ -1851,34 +1844,34 @@
   font-size: 1rem;
   line-height: 1.125;
 }
-/* line 607, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
-.input-buttons label:hover {
+/* line 611, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+.no-touch .input-buttons label:hover {
   background: #bcbdc0;
   text-decoration: none;
 }
-/* line 612, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .input-buttons label br {
   display: none;
   display: inline;
 }
-/* line 622, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 626, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .input-buttons input[type="checkbox"]:checked + label,
 .input-buttons input[type="radio"]:checked + label {
   background: #7a4183;
   color: #fff;
 }
-/* line 625, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 629, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .input-buttons input[type="checkbox"]:checked + label:hover,
 .input-buttons input[type="radio"]:checked + label:hover {
   background: #9850a2;
 }
-/* line 631, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 635, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .input-buttons input[type="checkbox"]:focus + label,
 .input-buttons input[type="radio"]:focus + label {
   outline: thin dotted;
   outline-offset: -2px;
 }
-/* line 636, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 640, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .modal .input-buttons {
   padding: 0;
   margin-bottom: 20px;
@@ -1886,7 +1879,7 @@
   padding-top: 20px;
   margin: 0 -5px 30px;
 }
-/* line 644, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 648, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .modal .input-buttons label {
   width: 190px;
   font-size: 18px;
@@ -1894,7 +1887,7 @@
   line-height: 1;
 }
 
-/* line 655, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 659, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-issues {
   margin: 0;
   padding: 5px 0 0;
@@ -1908,7 +1901,7 @@
   display: table;
   clear: both;
 }
-/* line 663, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 667, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-issues .issue {
   color: #696969;
   border-bottom: 1px solid #d7d7d7;
@@ -1928,25 +1921,25 @@
   width: 230px;
   margin: 0 0 50px 50px;
 }
-/* line 671, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 675, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-issues .issue:last-child {
   border: 0;
   margin-bottom: 10px;
 }
-/* line 687, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 691, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .no-rgba .tyce-issues .issue, .no-box-shadow .tyce-issues .issue {
   border: 1px solid #f2f2f2;
 }
-/* line 691, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 695, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-issues .issue:nth-child(3n+1) {
   margin-left: 0;
   clear: left;
 }
-/* line 697, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 701, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-issues .issue p {
   margin: 0;
 }
-/* line 702, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
+/* line 706, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
 .tyce-issues h3 {
   font-size: 18px;
   font-size: 1.125rem;
@@ -2041,10 +2034,10 @@ html.tyce.landscape .modal-backdrop {
   width: 100%;
   height: 100%;
 }
-/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
-.tyce-player-container .player-content .skip.button {
+/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.tyce-player-container .btn-skip.button {
   position: absolute;
-  bottom: 40px;
+  bottom: 90px;
   right: 40px;
   width: 70px;
   height: 34px;
@@ -2134,62 +2127,91 @@ html.tyce.landscape .modal-backdrop {
 }
 /* line 213, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .controls ul li.play-pause.is-disabled {
-  opacity: 0.5;
+  cursor: default;
 }
-/* line 219, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.play-pause.is-disabled .icon {
+  opacity: 0.2;
+}
+/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .controls ul li.volume {
   width: 50px;
   position: relative;
 }
-/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 227, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .controls ul li.volume:hover {
   background-color: #FFF;
 }
-/* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 230, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .controls ul li.volume:hover i {
   background-position: -350px -63px;
 }
-/* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 236, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.volume.is-disabled {
+  cursor: default;
+}
+/* line 239, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.volume.is-disabled:hover {
+  background-color: #f2af00;
+}
+/* line 242, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.volume.is-disabled:hover i {
+  background-position: -350px -25px;
+}
+/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.controls ul li.volume.is-disabled i {
+  opacity: 0.2;
+}
+/* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .controls ul li.fullscreen {
   width: 50px;
 }
-/* line 242, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 257, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.no-fullscreen .controls ul li.fullscreen {
+  cursor: default;
+}
+/* line 267, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .controls .icon {
   display: inline-block;
   position: relative;
   background: url("../images/sprite.icons.tyce.png") no-repeat;
   background-size: 500px 100px;
 }
-/* line 248, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 273, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .controls .icon.play {
   width: 16px;
   height: 18px;
   background-position: -325px 0;
   top: 4px;
 }
-/* line 255, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 280, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .controls .icon.pause {
   width: 16px;
   height: 18px;
   background-position: -300px -25px;
   top: 4px;
 }
-/* line 262, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 287, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .controls .icon.volume {
   width: 26px;
   height: 27px;
   background-position: -350px -25px;
   top: 8px;
 }
-/* line 269, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 294, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .controls .icon.fullscreen {
   width: 25px;
   height: 25px;
   background-position: -325px -25px;
   top: 7px;
 }
+/* line 300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+.no-fullscreen .controls .icon.fullscreen {
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
 
-/* line 282, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 313, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .volume-slider {
   position: absolute;
   top: -150px;
@@ -2199,7 +2221,7 @@ html.tyce.landscape .modal-backdrop {
   background-color: #FFF;
   display: none;
 }
-/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 322, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .volume-slider .ui-slider-vertical {
   width: 8px;
   height: 120px;
@@ -2207,7 +2229,7 @@ html.tyce.landscape .modal-backdrop {
   margin-left: -4px;
   background-color: #f4f2f1;
 }
-/* line 298, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 329, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .volume-slider .ui-slider-vertical .ui-slider-handle {
   left: 50%;
   margin-left: -10px;
@@ -2220,30 +2242,30 @@ html.tyce.landscape .modal-backdrop {
   outline: none;
   border: none;
 }
-/* line 310, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 341, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .volume-slider .ui-slider-vertical .ui-slider-range {
   left: 0;
   width: 100%;
 }
-/* line 314, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 345, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .volume-slider .ui-slider-vertical .ui-slider-range-min {
   background-color: #7a4183;
 }
-/* line 317, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 348, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .volume-slider .ui-widget-content {
   border: none;
 }
 
-/* line 324, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 355, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .tyce-tooltip {
   background-color: #426da9;
 }
 
-/* line 329, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .tyce-menu-container {
   float: right;
 }
-/* line 332, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 363, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .tyce-menu-container .icon-tyce-menu {
   width: 72px;
   height: 30px;
@@ -2255,48 +2277,48 @@ html.tyce.landscape .modal-backdrop {
   border: none;
 }
 
-/* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 375, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .tyce #header-page {
   display: none;
 }
-/* line 351, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 382, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .tyce #header-page.is-open {
   display: block;
 }
 
-/* line 357, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 388, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 #header-tyce {
   display: none;
   padding-top: 15px;
 }
-/* line 365, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 396, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 #header-tyce .logo-u-main {
   padding: 0 0 0 0;
 }
-/* line 369, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 400, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 #header-tyce.is-open .logo-u-main {
   display: none;
 }
-/* line 373, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 404, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 #header-tyce .logo-u-main {
   padding-top: 0;
 }
-/* line 376, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 407, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 #header-tyce .logo-u-main a {
   background: none;
 }
-/* line 378, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 409, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 #header-tyce .logo-u-main img {
   display: block;
   width: 132px;
 }
 
-/* line 386, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 417, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 html.tyce #button-drawermenu {
   display: block;
 }
 
-/* line 394, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 425, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay {
   display: none;
   width: 100%;
@@ -2305,11 +2327,11 @@ html.tyce #button-drawermenu {
   top: 0;
   left: 0;
   background-color: transparent;
-  background-color: rgba(255, 255, 255, 0.8);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
+  background-color: rgba(255, 255, 255, 0.85);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D9FFFFFF,endColorstr=#D9FFFFFF);
   zoom: 1;
 }
-/* line 403, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 434, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .instructions {
   position: absolute;
   top: 35%;
@@ -2317,14 +2339,14 @@ html.tyce #button-drawermenu {
   width: 100%;
   text-align: center;
 }
-/* line 410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 441, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .instructions h4 {
   color: #794382;
   font-size: 24px;
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
-/* line 416, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 447, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .instructions p {
   font-size: 16px;
   font-size: 1rem;
@@ -2332,12 +2354,12 @@ html.tyce #button-drawermenu {
   line-height: 1.5rem;
   color: #696969;
 }
-/* line 422, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 453, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .instructions .button.close {
   width: 192px;
   display: inline-block;
 }
-/* line 428, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 459, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .bubble {
   background: #426da9;
   color: #fff;
@@ -2357,7 +2379,7 @@ html.tyce #button-drawermenu {
   border-radius: 4px;
   padding: 16px 14px;
 }
-/* line 441, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 472, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .bubble:after {
   content: "";
   display: block;
@@ -2365,12 +2387,12 @@ html.tyce #button-drawermenu {
   height: 0;
   position: absolute;
 }
-/* line 449, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 480, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .bubble.captions {
   top: 24px;
   right: 170px;
 }
-/* line 453, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 484, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .bubble.captions:after {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
@@ -2378,12 +2400,12 @@ html.tyce #button-drawermenu {
   top: -6px;
   right: 13px;
 }
-/* line 463, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 494, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .bubble.pause {
   bottom: 24px;
   left: 16px;
 }
-/* line 467, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 498, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .bubble.pause:after {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
@@ -2391,12 +2413,12 @@ html.tyce #button-drawermenu {
   bottom: -6px;
   left: 10px;
 }
-/* line 477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 508, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .bubble.progress {
   bottom: 24px;
   left: 316px;
 }
-/* line 481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 512, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .bubble.progress:after {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
@@ -2404,14 +2426,14 @@ html.tyce #button-drawermenu {
   bottom: -6px;
   left: 48%;
 }
-/* line 491, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 522, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .bubble.skip {
   bottom: 100px;
   right: 16px;
   bottom: 24px;
   right: 142px;
 }
-/* line 495, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 526, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .bubble.skip:after {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
@@ -2419,7 +2441,7 @@ html.tyce #button-drawermenu {
   right: 44px;
   bottom: -6px;
 }
-/* line 507, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
+/* line 538, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-player.scss */
 .help-overlay .bubble.skip:after {
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;

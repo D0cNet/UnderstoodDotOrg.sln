@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive"><![endif]-->
+<!--[if lte IE 8]><html class="no-js nonresponsive" lang="en"><![endif]-->
 <!--[if gte IE 9]><!--><html class="no-js tyce" lang="en"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
@@ -209,7 +209,7 @@
        
           <li>
             <div class="icon childs-world">
-              <a class="toolkit-element" href="REPLACE">A Childs World</a>
+              <a class="toolkit-element" href="REPLACE">A Child's World</a>
             </div>
           </li>
         </ul>
@@ -281,12 +281,12 @@
 <div class="container tyce-player-header skiplink-tyce-header">
   <div class="row">
 
-    <div class="col col-14">
+    <div class="col col-15 offset-1">
       <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Experience a Child's World</a>
       <h1>Personalized for Your Child</h1>
-    </div><!-- .col-14 --> 
+    </div><!-- .col-15 --> 
 
-    <div class="col col-10">
+    <div class="col col-8">
       <div class="captions">
         <span>Captions</span>
           <div class="toggle-wrapper">
@@ -295,11 +295,12 @@
             </label>
           </div>
       </div><!-- .captions --> 
-<!--
+
       <div class="help">
         <span>Help</span>
+        <a class="icon help"></a>
       </div>
---> 
+
     </div><!-- .col-10 --> 
 
   </div><!-- .row --> 
@@ -311,16 +312,39 @@
     <div class="col col-24">
 
       <!-- BEGIN PARTIAL: tyce-player-content -->
-      <div class="player-content">
-        <div id="player"></div>
-        <div id="container-sim">
-          <div class="sim-inner">
-            <div id="gameboard" class="attention_game">
-              
-            </div><!-- #gameboard -->
-          </div><!-- .sim-inner -->
-        </div><!-- #container-sim -->
-      </div><!-- .player-content -->
+<div class="player-content">
+  <div id="player"></div>
+  <div id="container-sim">
+    <div class="sim-inner">
+      <div id="gameboard" class="attention_game">
+        
+      </div><!-- #gameboard -->
+    </div><!-- .sim-inner -->
+  </div><!-- #container-sim -->
+</div><!-- .player-content -->
+
+<a class="button btn-skip">Skip</a>
+
+<div class="help-overlay">
+  <div class="instructions">
+    <h4>How this works</h4>
+    <p>Here are a few tips on how to manage the process.<br />
+    When you’re done reading, click OK.</p>
+    <a class="button close">OK</a>
+  </div>
+  <div class="bubble captions">
+    To read text along with the video, turn captions on.
+  </div>
+  <div class="bubble pause">
+    Pause and adjust the volume here.
+  </div>
+  <div class="bubble progress">
+    This shows progress and lets you jump between elements.
+  </div>
+  <div class="bubble skip">
+    To skip a section, click here.
+  </div>
+</div><!-- .help-overlay -->
 
 <!-- END PARTIAL: tyce-player-content -->
 
@@ -330,9 +354,23 @@
           isPersonalized : true,
           start : 0,
           steps : [
-            { type : 'video', init : '3203925031001' },
-            { type : 'sim' },
-            { type : 'video', init : '3203925030001' }
+            { 
+              type : 'video',
+              vid : { 
+                'default' : '3390839373001',
+                'hardcoded' : '3617642398001'
+              }
+            },
+            { 
+              type : 'sim'
+            },
+            {
+              type : 'video',
+              vid : {
+                'default' : '3390700184001',
+                'hardcoded' : '3617660650001'
+              }
+            }
           ],
           next : 'path/to/next/stage'
         };
@@ -494,7 +532,7 @@
           <h2>You're Done!</h2>
           <p>You're done!</p>
           <div class="actions">
-            <a href="REPLACE" class="button button-close">Go Somewhere</a>
+            <a href="#" class="button button-close">Go Somewhere</a>
           </div>
         </div><!-- /.modal-body -->
       </div><!-- /.modal-content -->

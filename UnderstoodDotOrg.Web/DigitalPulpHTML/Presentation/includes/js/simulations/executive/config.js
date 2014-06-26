@@ -4,7 +4,7 @@
         timeInSeconds: 140,
         introDurationInSeconds: 0, //0=open until closed
         introText: [
-            'Select columns to move the bucket and catch falling shapes. (Sound required.) Ready?'
+            'Catch the falling shapes in the bucket. Click once in any column to move the bucket there. Ready?'
         ].join("\n"),
         finalText: [
             'Time\'s up!'
@@ -43,7 +43,8 @@
         ballBounceConfig: {
             horizontalDistance: 100,
             rotationAmount: 180,
-            duration: 500
+            duration: 500,
+            verticalHeightMultiplier: 1.25 //this * height of ball = vertical height, <1.5 looks weird
         },
         trapFade: {
             red: {
@@ -100,52 +101,64 @@
                 //promptMethod is either "random" or "both", defaults to "random" (meaning just text, just audio, or both)
                 { start: 0, stop: 19, valid: [ 'circle', 'square' ],
                     text: {
-                        en: 'Are you ready? Use the bucket to catch the falling shapes'
+                        en: 'Are you ready? Use the bucket to catch the falling shapes',
+                        es: 'Está Listo? Use el cubo para atrapar las formas que caen…'
                     }, audio: 'catchAllShapes', promptMethod: 'both' },
                 { start: 20, stop: 34, valid: [ 'circle' ],
                     text: {
-                        en: 'Now, catch only circles'
-                    }, audio: 'catchOnlyCircles' },
+                        en: 'Now catch only circles',
+                        es: 'Ahora atrape sólo círculos'
+                    }, audio: 'catchOnlyCircles', promptMethod: 'both' },
                 { start: 35, stop: 44, valid: [ 'square' ],
                     text: {
-                        en: 'Now, catch only squares'
-                    }, audio: 'catchOnlySquares' },
+                        en: 'Now catch only squares',
+ es: 'Ahora atrape sólo cuadrados'
+                    }, audio: 'catchOnlySquares', promptMethod: 'both' },
                 { start: 45, stop: 59, valid: [ 'circle', 'square' ],
                     text: {
-                        en: 'Catch circles & squares'
-                    }, audio: 'catchOnlyCirclesAndSquares' },
+                        en: 'Catch circles and squares',
+ es: 'Atrape círculos y cuadrados'
+                    }, audio: 'catchOnlyCirclesAndSquares', promptMethod: 'both' },
                 { start: 60, stop: 69, valid: [ 'triangle', 'circle' ],
                     text: {
-                        en: 'Catch circles & triangles'
-                    }, audio: 'catchOnlyCirclesAndTriangles' },
+                        en: 'Catch circles and triangles',
+ es: 'Atrape círculos y triángulos'
+                    }, audio: 'catchOnlyCirclesAndTriangles', promptMethod: 'both' },
                 { start: 70, stop: 79, valid: [ 'square', 'circle' ],
                     text: {
-                        en: 'Catch circles & squares'
-                    }, audio: 'catchOnlyCirclesAndSquares' },
+                        en: 'Catch circles and squares',
+ es: 'Atrape círculos y cuadrados'
+                    }, audio: 'catchOnlyCirclesAndSquares', promptMethod: 'both' },
                 { start: 80, stop: 89, valid: [ 'triangle' ],
                     text: {
-                        en: 'Now, catch only triangles'
-                    }, audio: 'catchOnlyTriangles' },
+                        en: 'Now catch only triangles',
+ es: 'Ahora atrape sólo triángulos'
+                    }, audio: 'catchOnlyTriangles', promptMethod: 'both' },
                 { start: 90, stop: 94, valid: [ 'triangle', 'circle', 'square', 'star' ],
                     text: {
-                        en: 'Now catch everything'
-                    }, audio: 'catchEverything' },
+                        en: 'Now catch everything',
+ es: 'Ahora atrape todo'
+                    }, audio: 'catchEverything', promptMethod: 'both' },
                 { start: 95, stop: 99, valid: [ ], 
                     text: {
-                        en: 'Now avoid everything'
-                    }, audio: 'avoidEverything' },
+                        en: 'Now avoid everything',
+ es: 'Ahora evite atrapar algo'
+                    }, audio: 'avoidEverything', promptMethod: 'both' },
                 { start: 100, stop: 104, valid: [ 'circle' ], 
                     text: {
-                        en: 'Now, catch only circles'
-                    }, audio: 'catchOnlyCircles' },
+                        en: 'Now catch only circles',
+ es: 'Ahora atrape sólo círculos'
+                    }, audio: 'catchOnlyCircles', promptMethod: 'both' },
                 { start: 105, stop: 114, valid: [ 'square' ], 
                     text: {
-                        en: 'Now, catch only squares'
-                    }, audio: 'catchOnlySquares' },
+                        en: 'Now catch only squares',
+ es: 'Ahora atrape sólo cuadrados'
+                    }, audio: 'catchOnlySquares', promptMethod: 'both' },
                 { start: 115, stop: 140, valid: [ 'triangle' ], everyOther: true, 
                     text: {
-                        en: 'Catch every other triangle'
-                    }, audio: 'catchEveryOtherTriangle' }
+                        en: 'Catch every other triangle',
+ es: 'Atrape un triángulo si y uno no'
+                    }, audio: 'catchEveryOtherTriangle', promptMethod: 'both' }
             ]
         }
     };
@@ -160,3 +173,4 @@
                 
                                                                                                                                                                                                                                 
                                                                                                                                 
+                                                                

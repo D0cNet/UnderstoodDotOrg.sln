@@ -93,7 +93,10 @@
             }
         };
         internal.input.on('keypress', function(e) {
+            //If we're not accepting input, kill the event
             if(internal.disabled) return false;
+            //Ignore carriage returns
+            if(e.which == 13) return false;
             var retVal = true;
             var typedChr = String.fromCharCode(e.which);
             if(typedChr && typedChr.match(/\w/)) {

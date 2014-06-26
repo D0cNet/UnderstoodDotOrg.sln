@@ -6,9 +6,9 @@
         introText: [
             'Follow the teacher’s instructions. (Sound required.) Ready?'
         ].join("\n"),
-        finalText: [
-            'Time\'s up!',
-        ].join("\n"),
+        finalText: {
+            en: "Did you see the elephants?"
+        },
         title: {
             en: 'What a Zoo!'
         },

@@ -3,16 +3,17 @@
   margin: auto;
   position: relative;
   font-family: "Circular", helvetica, arial, sans-serif;
+  cursor: default;
 }
 
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog {
   border-width: 2px;
   border-color: #248abf;
   padding: 30px;
 }
 
-/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .response {
   display: inline-block;
   background: url("../../../images/simulations/common/desktop/answer.png") no-repeat;
@@ -26,19 +27,19 @@
   font-weight: bold;
 }
 
-/* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .response.correct {
   background-image: url("../../../images/simulations/common/desktop/answer_correct.png");
   color: white;
 }
 
-/* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .response.incorrect {
   background-image: url("../../../images/simulations/common/desktop/answer_wrong.png");
   color: white;
 }
 
-/* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 36, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog {
   border-width: 0;
   padding: 0;
@@ -52,12 +53,12 @@
   z-index: 101;
 }
 
-/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog-titlebar {
   display: none;
 }
 
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .SSGame_modal_title {
   color: #7A4182;
   margin: 5px 0 30px 0;
@@ -65,12 +66,12 @@
   font-weight: bold;
 }
 
-/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard.breakpoint_phone .SSGame_modal_title {
   font-size: 24px;
 }
 
-/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog-content {
   text-align: center;
   color: #248abf;
@@ -81,27 +82,27 @@
   color: #666;
 }
 
-/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 65, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard.breakpoint_phone .ui-dialog-content {
   font-size: 18px;
 }
 
-/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog-content p {
   margin: 5px 0;
 }
 
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog-content p:first-child {
   margin-top: 0px;
 }
 
-/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog-content p:last-child {
   margin-bottom: 0px;
 }
 
-/* line 76, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog .ui-dialog-buttonpane {
   border-width: 0;
   text-align: center;
@@ -112,12 +113,12 @@
   margin-bottom: 10px;
 }
 
-/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 84, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
   float: none;
 }
 
-/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button {
   background-image: none;
   background-color: #f0ae29;
@@ -135,23 +136,23 @@
   font-size: 18px;
 }
 
-/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard.breakpoint_phone {
   font-size: 16px;
 }
 
-/* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #gameboard .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover {
   background-color: #ffbc0d;
 }
 
-/* line 108, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 .SSGameModalMask {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
 }
 
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #SSGame_timer {
   position: absolute;
   top: 30px;
@@ -165,7 +166,7 @@
   font-weight: bold;
 }
 
-/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 .breakpoint_phone #SSGame_timer {
   background-image: url("../../../images/simulations/common/phone/clock.png");
   top: 15px;
@@ -175,27 +176,27 @@
   line-height: 38px;
 }
 
-/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #SSGame_timer div {
   padding: 0 10px;
   margin-top: -2px;
 }
 
-/* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 .breakpoint_phone #SSGame_timer div {
   padding: 0 5px;
   margin-top: 0px;
   font-size: 16px;
 }
 
-/* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #SSGame_timer span {
   display: inline-block;
   width: .75em;
   text-align: center;
 }
 
-/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
+/* line 147, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/common/common.scss */
 #SSGame_timer span:nth-child(2) {
   width: auto;
 }

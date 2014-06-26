@@ -1089,6 +1089,19 @@
 }
 
 /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-content-wrapper {
+  height: 100%;
+}
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-content-wrapper.resize {
+  -webkit-transition: height 50ms ease-in-out;
+  -moz-transition: height 50ms ease-in-out;
+  -ms-transition: height 50ms ease-in-out;
+  -o-transition: height 50ms ease-in-out;
+  transition: height 50ms ease-in-out;
+}
+
+/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
 .help-list {
   list-style: none;
   padding: 0;
@@ -1097,102 +1110,125 @@
   margin: 0 auto;
   width: 100%;
 }
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
 .help-list .list-element {
   border: none;
   background: transparent;
   position: absolute;
 }
-/* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
 .help-list .list-element .status, .help-list .list-element .start-over, .help-list .list-element .done-this, .help-list .list-element .skip-this {
   border: none;
   background: transparent;
 }
-/* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li {
+/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-outer-wrapper {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  float: left;
+  margin: 0px 0px 30px 30px;
+  margin: 0px 0px 30px 30px;
+}
+/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-outer-wrapper.first {
+  margin-left: 0;
+}
+/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-outer-wrapper.tablet-first {
+  margin: 0px 0px 30px 0px;
+  margin: 0px 0px 30px 30px;
+}
+/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-outer-wrapper.first.tablet-first {
+  margin-left: 0;
+}
+/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper {
   height: 290px;
   width: 270px;
   display: table;
   background-color: #f4f2f1;
   position: relative;
   padding: 30px;
-  margin: 0 auto 30px;
-  float: left;
-  margin: 0px 0px 30px 30px;
-  margin: 0px 0px 30px 30px;
+  margin: 0 auto;
+  opacity: 1;
+  margin: auto;
 }
-/* line 36, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.first {
-  margin-left: 0;
+/* line 65, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.fadeOutInitContent {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
-/* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.tablet-first {
-  margin: 0px 0px 30px 0px;
-  margin: 0px 0px 30px 30px;
+/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.animateaway {
+  height: 0;
 }
-/* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.first.tablet-first {
-  margin-left: 0;
+/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.animateaway h3, .help-list .list-element-wrapper.animateaway a, .help-list .list-element-wrapper.animateaway button {
+  display: none;
 }
-/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li h3, .help-list li .detail {
+/* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper h3, .help-list .list-element-wrapper .detail {
   margin: 0 auto;
   text-align: center;
 }
-/* line 58, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li h3 {
+/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper h3 {
   color: #7a4183;
   font-size: 24px;
   font-size: 1.5rem;
   margin: 50px 0 25px 0;
 }
-/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li:hover.done .status, .help-list li:hover.skipped .status, .help-list li.accessibility.done .status, .help-list li.accessibility.skipped .status {
+/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.accessibility.done .status, .help-list .list-element-wrapper.accessibility.skipped .status, .help-list .list-element-wrapper.hover.done .status, .help-list .list-element-wrapper.hover.skipped .status {
   display: none;
 }
-/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li:hover .detail, .help-list li:hover .done-this, .help-list li:hover .skip-this, .help-list li.accessibility .detail, .help-list li.accessibility .done-this, .help-list li.accessibility .skip-this {
+/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.accessibility .detail, .help-list .list-element-wrapper.accessibility .done-this, .help-list .list-element-wrapper.accessibility .skip-this, .help-list .list-element-wrapper.hover .detail, .help-list .list-element-wrapper.hover .done-this, .help-list .list-element-wrapper.hover .skip-this {
   display: block;
 }
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li:hover h3, .help-list li.accessibility h3 {
+/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.accessibility h3, .help-list .list-element-wrapper.hover h3 {
   margin: 0 0 17px 0;
 }
-/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .detail, .help-list li .done-this, .help-list li .skip-this, .help-list li .start-over {
+/* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .detail, .help-list .list-element-wrapper .done-this, .help-list .list-element-wrapper .skip-this, .help-list .list-element-wrapper .start-over {
   display: none;
 }
-/* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .detail {
+/* line 100, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .detail {
   color: #696969;
   font-size: 16px;
   font-size: 1rem;
   margin-bottom: 18px;
 }
-/* line 82, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .view-activity {
+/* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .activity-action {
   position: absolute;
   width: 210px;
   top: 157px;
 }
-/* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done h3, .help-list li.skipped h3 {
+/* line 111, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done h3, .help-list .list-element-wrapper.skipped h3 {
   color: #FFFFFF;
 }
-/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done .status, .help-list li.skipped .status {
+/* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done .status, .help-list .list-element-wrapper.skipped .status {
   display: block;
 }
-/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .status, .help-list li .list-element {
+/* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .status, .help-list .list-element-wrapper .list-element {
   text-indent: -9999px;
 }
-/* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .status:focus, .help-list li .list-element:focus {
+/* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .status:focus, .help-list .list-element-wrapper .list-element:focus {
   outline: none;
 }
-/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .status {
+/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .status {
   display: none;
   position: absolute;
   top: 20px;
@@ -1202,8 +1238,8 @@
   border: none;
   background: transparent;
 }
-/* line 111, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done .status:before, .help-list li.skipped .status:before {
+/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done .status:before, .help-list .list-element-wrapper.skipped .status:before {
   content: '';
   position: absolute;
   top: 0px;
@@ -1213,136 +1249,136 @@
   background-size: 31px 31px;
   background-repeat: no-repeat;
 }
-/* line 121, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done {
+/* line 144, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done {
   background-color: #7a4183;
 }
-/* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done .status:before {
+/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done .status:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
   background-position: -9px -4px;
   background-size: 168.5px;
 }
-/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li.done .status:before {
+/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper.done .status:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: 0px -4px;
 }
-/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done .view-activity {
+/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done .activity-action {
   opacity: .5;
 }
-/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done:hover .view-activity, .help-list li.done.accessibility .view-activity {
+/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done.accessibility .activity-action, .help-list .list-element-wrapper.done.hover .activity-action {
   opacity: 1;
 }
-/* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done:hover .status, .help-list li.done:hover .done-this, .help-list li.done.accessibility .status, .help-list li.done.accessibility .done-this {
+/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done.accessibility .status, .help-list .list-element-wrapper.done.accessibility .done-this, .help-list .list-element-wrapper.done.hover .status, .help-list .list-element-wrapper.done.hover .done-this {
   display: none;
 }
-/* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done:hover .detail, .help-list li.done:hover .skip-this, .help-list li.done.accessibility .detail, .help-list li.done.accessibility .skip-this {
+/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done.accessibility .detail, .help-list .list-element-wrapper.done.accessibility .skip-this, .help-list .list-element-wrapper.done.hover .detail, .help-list .list-element-wrapper.done.hover .skip-this {
   color: #FFFFFF;
 }
-/* line 147, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done:hover .skip-this:before, .help-list li.done.accessibility .skip-this:before {
+/* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done.accessibility .skip-this:before, .help-list .list-element-wrapper.done.hover .skip-this:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
-  background-position: -88px -84px;
+  background-position: -88px -83px;
   background-size: 168.5px;
 }
-/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li.done:hover .skip-this:before, .no-backgroundsize .help-list li.done.accessibility .skip-this:before {
+/* line 175, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper.done.accessibility .skip-this:before, .no-backgroundsize .help-list .list-element-wrapper.done.hover .skip-this:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: -80px -83px;
 }
-/* line 157, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done:hover .skip-this:hover, .help-list li.done.accessibility .skip-this:hover {
+/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done.accessibility .skip-this:hover, .help-list .list-element-wrapper.done.hover .skip-this:hover {
   color: #426da9;
 }
-/* line 159, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done:hover .skip-this:hover:before, .help-list li.done.accessibility .skip-this:hover:before {
+/* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done.accessibility .skip-this:hover:before, .help-list .list-element-wrapper.done.hover .skip-this:hover:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
   background-position: -88px -44px;
   background-size: 168.5px;
 }
-/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li.done:hover .skip-this:hover:before, .no-backgroundsize .help-list li.done.accessibility .skip-this:hover:before {
+/* line 187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper.done.accessibility .skip-this:hover:before, .no-backgroundsize .help-list .list-element-wrapper.done.hover .skip-this:hover:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: -80px -44px;
 }
-/* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done:hover .done-this, .help-list li.done.accessibility .done-this {
+/* line 194, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done.accessibility .done-this, .help-list .list-element-wrapper.done.hover .done-this {
   display: none;
 }
-/* line 174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.done:hover .start-over, .help-list li.done.accessibility .start-over {
+/* line 197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.done.accessibility .start-over, .help-list .list-element-wrapper.done.hover .start-over {
   display: block;
 }
-/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.skipped {
+/* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.skipped {
   background-color: #298fc2;
 }
-/* line 181, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.skipped .view-activity {
+/* line 204, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.skipped .activity-action {
   opacity: .5;
 }
-/* line 184, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.skipped .detail {
+/* line 207, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.skipped .detail {
   color: #FFFFFF;
 }
-/* line 187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.skipped .status:before {
+/* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.skipped .status:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
   background-position: -88px -4px;
   background-size: 168.5px;
 }
-/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li.skipped .status:before {
+/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper.skipped .status:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: -68px -4px;
 }
-/* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.skipped:hover .status, .help-list li.skipped:hover .skip-this, .help-list li.skipped.accessibility .status, .help-list li.skipped.accessibility .skip-this {
+/* line 221, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.skipped.hover .status, .help-list .list-element-wrapper.skipped.hover .skip-this, .help-list .list-element-wrapper.skipped.accessibility .status, .help-list .list-element-wrapper.skipped.accessibility .skip-this {
   display: none;
 }
-/* line 201, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.skipped:hover .view-activity, .help-list li.skipped.accessibility .view-activity {
+/* line 224, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.skipped.hover .activity-action, .help-list .list-element-wrapper.skipped.accessibility .activity-action {
   opacity: 1;
 }
-/* line 204, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.skipped:hover .done-this, .help-list li.skipped.accessibility .done-this {
+/* line 227, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.skipped.hover .done-this, .help-list .list-element-wrapper.skipped.accessibility .done-this {
   color: #FFFFFF;
 }
-/* line 206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.skipped:hover .done-this:before, .help-list li.skipped.accessibility .done-this:before {
+/* line 229, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.skipped.hover .done-this:before, .help-list .list-element-wrapper.skipped.accessibility .done-this:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
-  background-position: -48px -84px;
+  background-position: -48px -83px;
   background-size: 168.5px;
 }
-/* line 211, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li.skipped:hover .done-this:before, .no-backgroundsize .help-list li.skipped.accessibility .done-this:before {
+/* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper.skipped.hover .done-this:before, .no-backgroundsize .help-list .list-element-wrapper.skipped.accessibility .done-this:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: -42px -78px;
 }
-/* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li.skipped:hover .done-this:hover:before, .help-list li.skipped.accessibility .done-this:hover:before {
+/* line 239, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper.skipped.hover .done-this:hover:before, .help-list .list-element-wrapper.skipped.accessibility .done-this:hover:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
   background-position: -8px -44px;
   background-size: 168.5px;
 }
-/* line 221, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li.skipped:hover .done-this:hover:before, .no-backgroundsize .help-list li.skipped.accessibility .done-this:hover:before {
+/* line 244, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper.skipped.hover .done-this:hover:before, .no-backgroundsize .help-list .list-element-wrapper.skipped.accessibility .done-this:hover:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: -2px -38px;
 }
-/* line 229, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .done-this, .help-list li .skip-this, .help-list li .start-over {
+/* line 252, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .done-this, .help-list .list-element-wrapper .skip-this, .help-list .list-element-wrapper .start-over {
   font-size: 14px;
   font-size: 0.875rem;
   color: #696969;
@@ -1350,8 +1386,8 @@
   padding-left: 35px;
   height: 33px;
 }
-/* line 235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .done-this:before, .help-list li .skip-this:before, .help-list li .start-over:before {
+/* line 258, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .done-this:before, .help-list .list-element-wrapper .skip-this:before, .help-list .list-element-wrapper .start-over:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1359,74 +1395,74 @@
   height: 33px;
   width: 33px;
 }
-/* line 243, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .done-this:hover, .help-list li .skip-this:hover, .help-list li .start-over:hover {
+/* line 266, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .done-this:hover, .help-list .list-element-wrapper .skip-this:hover, .help-list .list-element-wrapper .start-over:hover {
   color: #426da9;
 }
-/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .done-this, .help-list li .start-over {
+/* line 270, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .done-this, .help-list .list-element-wrapper .start-over {
   position: absolute;
   left: 20px;
   bottom: 20px;
   border: none;
   background: transparent;
 }
-/* line 255, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .done-this:before {
+/* line 278, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .done-this:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
   background-position: -48px -4px;
   background-size: 168.5px;
 }
-/* line 260, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li .done-this:before {
+/* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper .done-this:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: -42px 4px;
 }
-/* line 265, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .done-this:hover:before {
+/* line 288, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .done-this:hover:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
   background-position: -48px -44px;
   background-size: 168.5px;
 }
-/* line 270, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li .done-this:hover:before {
+/* line 293, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper .done-this:hover:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: -43px -36px;
 }
-/* line 276, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .start-over {
-  width: 100px;
+/* line 299, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .start-over {
+  width: 110px;
   height: 34px;
   color: #FFFFFF;
 }
-/* line 280, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .start-over:before {
+/* line 303, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .start-over:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
   background-position: -128px -44px;
   background-size: 168.5px;
 }
-/* line 285, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li .start-over:before {
+/* line 308, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper .start-over:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: -125px -44px;
 }
-/* line 290, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .start-over:hover:before {
+/* line 313, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .start-over:hover:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
   background-position: -128px -4px;
   background-size: 168.5px;
 }
-/* line 295, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li .start-over:hover:before {
+/* line 318, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper .start-over:hover:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: -125px -4px;
 }
-/* line 301, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .skip-this {
+/* line 324, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .skip-this {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -1434,69 +1470,151 @@
   border: none;
   background: transparent;
 }
-/* line 308, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .skip-this:before {
+/* line 331, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .skip-this:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
   background-position: -88px -4px;
   background-size: 168.5px;
 }
-/* line 313, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li .skip-this:before {
+/* line 336, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper .skip-this:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: -83px -4px;
 }
-/* line 318, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .skip-this:hover {
+/* line 341, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .skip-this:hover {
   color: #426da9;
 }
-/* line 320, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.help-list li .skip-this:hover:before {
+/* line 343, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.help-list .list-element-wrapper .skip-this:hover:before {
   background: url("../images/sprite.support.plan.png");
   background-repeat: no-repeat;
   background-position: -88px -44px;
   background-size: 168.5px;
 }
-/* line 325, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
-.no-backgroundsize .help-list li .skip-this:hover:before {
+/* line 348, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+.no-backgroundsize .help-list .list-element-wrapper .skip-this:hover:before {
   background-image: url("../images/sprite.support.plan.lowres.png");
   background-position: -83px -44px;
 }
 
-/* line 337, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
 .old-ie .help-list li .done-this:before, .old-ie .help-list li .skip-this:before, .old-ie .help-list li .start-over:before {
   height: 41px;
   width: 38px;
 }
-/* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 367, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
 .old-ie .help-list li.done .skip-this:before, .old-ie .help-list li.done .done-this:before, .old-ie .help-list li.done .status:before {
   height: 41px;
   width: 38px;
 }
-/* line 350, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 373, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
 .old-ie .help-list li .status {
   height: 46px;
   width: 35px;
 }
-/* line 354, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 377, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
 .old-ie .help-list li .status:before {
   height: 46px;
   width: 48px;
 }
 
 /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
-.help-action-content {
+.help-action-content-wrapper {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   display: none;
+  opacity: 0;
+}
+/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content-wrapper.get-height {
+  display: block;
+}
+/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content-wrapper.get-height .help-action-content {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content-wrapper.get-height .new-content-section, .help-action-content-wrapper.get-height .new-content-section-heading {
+  display: block;
+}
+/* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content-wrapper .new-content-section {
+  display: none;
+  opacity: 0;
+}
+/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content-wrapper.initialize-animate {
+  -webkit-animation: show 500ms ease-in 0;
+  -moz-animation: show 500ms ease-in 0;
+  -ms-animation: show 500ms ease-in 0;
+  -o-animation: show 500ms ease-in 0;
+  animation: show 500ms ease-in 0;
+  opacity: 1;
+}
+/* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content-wrapper .new-content-section-heading {
+  opacity: 0;
+}
+/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content-wrapper.show {
+  -webkit-animation: show 400ms ease-in 0;
+  -moz-animation: show 400ms ease-in 0;
+  -ms-animation: show 400ms ease-in 0;
+  -o-animation: show 400ms ease-in 0;
+  animation: show 400ms ease-in 0;
+}
+/* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content-wrapper.show .new-content-section, .help-action-content-wrapper.show .new-content-section-heading {
+  opacity: 1;
+}
+/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content-wrapper.show .detail-initial, .help-action-content-wrapper.show .heading-initial {
+  opacity: 1;
+  display: none;
+}
+/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content-wrapper .new-content-section-heading {
+  opacity: 0;
+}
+
+/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content {
+  position: absolute;
   padding: 14px;
+  height: 290px;
+  width: 270px;
   background-color: #f4f2f1;
+  left: 0;
   padding: 20px;
   padding: 40px;
 }
-/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content.animateToTop {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  top: 0;
+  height: auto;
+}
+/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-heading {
   margin-bottom: 20px;
 }
-/* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content .container {
+  margin: 0;
+}
+/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content h3 {
   font-size: 21px;
   font-size: 1.3125rem;
@@ -1504,29 +1622,30 @@
   margin-bottom: 19px;
   color: #7a4183;
   display: block;
-  margin-left: 20px;
+  margin-left: 15px;
+  text-align: left;
   font-size: 24px;
   font-size: 1.5rem;
   float: left;
   margin-left: 0px;
   margin-bottom: 30px;
 }
-/* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content dl {
   display: table;
   margin-bottom: 20px;
   margin-bottom: 33px;
 }
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content dt, .help-action-content dd {
   display: table-cell;
   vertical-align: top;
 }
-/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content dt {
   width: 80px;
 }
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content dt .count {
   display: block;
   width: 45px;
@@ -1547,12 +1666,12 @@
   width: 90px;
   height: 90px;
 }
-/* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content dt .count {
   background-image: url("../images/icon.circle.white.90x90.png");
   background-color: transparent;
 }
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 126, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content dd {
   color: #696969;
   line-height: 20px;
@@ -1567,11 +1686,11 @@
   line-height: 1.5rem;
   padding: 0 0 0 28px;
 }
-/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content dd .highlight {
   font-weight: bold;
 }
-/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar {
   width: 100%;
   display: block;
@@ -1582,7 +1701,7 @@
   float: right;
   width: auto;
 }
-/* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li {
   float: left;
   position: relative;
@@ -1594,7 +1713,7 @@
   color: #696969;
   cursor: pointer;
 }
-/* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li:before {
   content: '';
   position: absolute;
@@ -1602,13 +1721,13 @@
   left: 0;
   height: 27px;
 }
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.done-this {
   padding-left: 33px;
   margin-right: 13px;
   margin-right: 28px;
 }
-/* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.done-this:before {
   background: url("../images/sprite.support.helptoolbar.png");
   background-repeat: no-repeat;
@@ -1616,34 +1735,34 @@
   background-size: 56px;
   width: 26px;
 }
-/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.done-this:before {
   background-image: url("../images/sprite.support.helptoolbar.lowres.png");
   background-position: -2px -4px;
 }
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.done-this:hover {
   color: #426da9;
 }
-/* line 131, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.done-this:hover:before {
   background: url("../images/sprite.support.helptoolbar.png");
   background-repeat: no-repeat;
   background-position: -2px -34px;
   background-size: 56px;
 }
-/* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.done-this:hover:before {
   background-image: url("../images/sprite.support.helptoolbar.lowres.png");
   background-position: -2px -34px;
 }
-/* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 199, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this {
   padding-left: 33px;
   margin-left: 13px;
   margin-left: 18px;
 }
-/* line 149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 205, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this:before {
   background: url("../images/sprite.support.helptoolbar.png");
   background-repeat: no-repeat;
@@ -1651,28 +1770,28 @@
   background-size: 56px;
   width: 30px;
 }
-/* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 211, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.skip-this:before {
   background-image: url("../images/sprite.support.helptoolbar.lowres.png");
   background-position: -28px -4px;
 }
-/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this:hover {
   color: #426da9;
 }
-/* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 218, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this:hover:before {
   background: url("../images/sprite.support.helptoolbar.png");
   background-repeat: no-repeat;
   background-position: -28px -34px;
   background-size: 56px;
 }
-/* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.skip-this:hover:before {
   background-image: url("../images/sprite.support.helptoolbar.lowres.png");
   background-position: -28px -34px;
 }
-/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 229, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this:after {
   content: '';
   position: absolute;
@@ -1683,18 +1802,18 @@
   background-color: #d3d1d0;
   left: -17px;
 }
-/* line 189, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content .help-action-strategies-wrapper {
   border-bottom: 1px solid #c6c5c5;
   clear: both;
 }
 
-/* line 195, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 251, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-topic-suggestions {
   padding-top: 24px;
   padding-top: 40px;
 }
-/* line 200, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 256, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-topic-suggestions .suggestion-wrapper {
   width: 344px;
   float: left;
@@ -1702,7 +1821,7 @@
   width: 311px;
   width: 344px;
 }
-/* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-topic-suggestions .suggestion-wrapper:first-child {
   margin-right: 77px;
   margin-bottom: 25px;
@@ -1710,23 +1829,23 @@
   margin-right: 20px;
   margin-right: 77px;
 }
-/* line 224, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 280, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-topic-suggestions .image, .help-topic-suggestions .description {
   float: left;
 }
-/* line 227, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-topic-suggestions .image {
   margin-right: 13px;
   margin-right: 20px;
 }
-/* line 232, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 288, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-topic-suggestions .image img {
   height: 74px;
   width: 130px;
   height: 106px;
   width: 190px;
 }
-/* line 241, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 297, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-topic-suggestions .description {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -1737,24 +1856,47 @@
   width: 132px;
 }
 
-/* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 310, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-list {
   display: block;
 }
 
-/* line 258, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
-.help-action-content.video {
-  display: none;
+/* line 315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content.animating, .help-action-content.video.animating {
+  -webkit-animation: growContentBox 500ms;
+  /* Safari 4+ */
+  -moz-animation: growContentBox 500ms;
+  /* Fx 5+ */
+  -o-animation: growContentBox 500ms;
+  /* Opera 12+ */
+  animation: growContentBox 500ms;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  height: 100%;
+  width: 100%;
+  left: 0;
 }
-/* line 260, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 328, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-action-content.animateToTop, .help-action-content.video.animateToTop {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  top: 0;
+  height: auto;
+}
+
+/* line 336, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content.video .get-help-toolbar {
   margin-bottom: 23px;
 }
-/* line 263, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 339, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content.video .description, .help-action-content.video .description-mobile {
   color: #696969;
 }
-/* line 266, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 342, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content.video .description {
   font-size: 16px;
   font-size: 1rem;
@@ -1763,7 +1905,7 @@
   display: none;
   display: block;
 }
-/* line 275, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 351, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content.video .description-mobile {
   font-size: 14px;
   font-size: 0.875rem;
@@ -1772,13 +1914,125 @@
   margin-bottom: 21px;
   display: none;
 }
-/* line 284, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content.video .read-more {
   background-color: transparent;
 }
-/* line 287, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 363, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
 .help-action-content.video .transcript-container {
   margin: 25px 0;
+}
+
+/* line 368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.content-outer-wrapper {
+  overflow: hidden;
+}
+
+/* line 373, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.webinar-video .transcript-container .transcript-wrap {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-family: Arial, sans-serif;
+  position: relative;
+  max-width: 550px;
+  display: none;
+}
+/* line 380, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.webinar-video .transcript-container .transcript-wrap .set-height {
+  display: block;
+  opacity: 0;
+  position: absolute;
+}
+/* line 385, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.webinar-video .transcript-container .transcript-wrap h3, .webinar-video .transcript-container .transcript-wrap h2, .webinar-video .transcript-container .transcript-wrap p {
+  text-align: left;
+}
+/* line 388, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.webinar-video .transcript-container .transcript-wrap p {
+  clear: both;
+}
+/* line 391, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.webinar-video .transcript-container .transcript-wrap h3 {
+  margin: 0 0 5px 0;
+}
+/* line 396, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.webinar-video .transcript-container.open .transcript-wrap {
+  display: block;
+}
+
+@-webkit-keyframes growContentBox {
+  /* line 402, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  0% {
+    height: 290px;
+    width: 270px;
+  }
+
+  /* line 404, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  100% {
+    height: 100%;
+    width: 100%;
+    left: 0;
+  }
+}
+
+@-moz-keyframes growContentBox {
+  /* line 410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  0% {
+    height: 290px;
+    width: 270px;
+  }
+
+  /* line 412, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  100% {
+    height: 100%;
+    width: 100%;
+    left: 0;
+  }
+}
+
+@-o-keyframes growContentBox {
+  /* line 418, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  0% {
+    height: 290px;
+    width: 270px;
+  }
+
+  /* line 420, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  100% {
+    height: 100%;
+    width: 100%;
+    left: 0;
+  }
+}
+
+@keyframes growContentBox {
+  /* line 426, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  0% {
+    height: 290px;
+    width: 270px;
+  }
+
+  /* line 428, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  100% {
+    height: 100%;
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* line 434, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-content-wrapper {
+  height: 100%;
+}
+/* line 436, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+.help-content-wrapper.resize {
+  -webkit-transition: height 20ms ease-in-out;
+  -moz-transition: height 20ms ease-in-out;
+  -ms-transition: height 20ms ease-in-out;
+  -o-transition: height 20ms ease-in-out;
+  transition: height 20ms ease-in-out;
 }
 
 /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
@@ -1821,7 +2075,7 @@
 }
 /* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .no-goals-toolbar .toolbar-wrapper .action-toolbar {
-  margin-top: 26px;
+  margin-top: 25px;
   margin-top: 11px;
 }
 /* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
@@ -1852,27 +2106,27 @@
   float: left;
   margin: 0;
 }
-/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .toolbar-heading h2 {
   color: #7b3f84;
   font-size: 21px;
   font-size: 1.3125rem;
   font-weight: bold;
-  width: 50%;
+  width: 65%;
   display: inline-block;
-  width: auto;
+  width: 100%;
   font-size: 32px;
   font-size: 2rem;
   font-weight: normal;
 }
-/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .toolbar-heading .heading-tag {
   color: #696969;
   font-size: 18px;
   font-size: 1.125rem;
   margin-bottom: 0px;
 }
-/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar {
   list-style: none;
   height: 19px;
@@ -1888,33 +2142,37 @@
   display: block;
   width: 320px;
 }
-/* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .my-progress {
   z-index: 1;
   position: relative;
 }
-/* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .my-progress h4 {
   color: #7b3f84;
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: normal;
 }
-/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
-.toolbar-wrapper .action-toolbar .my-progress:hover .progress-toggle-wrapper, .toolbar-wrapper .action-toolbar .my-progress.focus .progress-toggle-wrapper {
+/* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+.toolbar-wrapper .action-toolbar .my-progress.hover .progress-toggle-outer-wrapper, .toolbar-wrapper .action-toolbar .my-progress.hover .progress-toggle-wrapper, .toolbar-wrapper .action-toolbar .my-progress.focus .progress-toggle-outer-wrapper, .toolbar-wrapper .action-toolbar .my-progress.focus .progress-toggle-wrapper {
   display: block;
 }
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-outer-wrapper {
+  display: none;
   position: absolute;
   width: 100%;
   height: 150px;
-  top: 17px;
+  top: 77px;
   left: 0;
+  z-index: 1;
+  top: 120px;
   width: 450px;
+  top: 20px;
   left: -101%;
 }
-/* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper {
   display: none;
   width: 100%;
@@ -1925,7 +2183,7 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
   padding: 30px 36px;
   position: relative;
-  top: 59px;
+  top: 20px;
   width: 450px;
   top: 15px;
 }
@@ -1933,7 +2191,7 @@
 .old-ie .toolbar-wrapper .action-toolbar .progress-toggle-wrapper {
   outline: solid 1px #dfdfdf;
 }
-/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper:before {
   content: '';
   position: absolute;
@@ -1947,7 +2205,7 @@
   border-bottom: 13px solid white;
   left: 50%;
 }
-/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper:after {
   content: '';
   position: absolute;
@@ -1971,53 +2229,53 @@
 .old-ie .toolbar-wrapper .action-toolbar .progress-toggle-wrapper:after {
   outline: solid 1px #dfdfdf;
 }
-/* line 183, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper .choice-list {
   list-style: none;
 }
-/* line 187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper .toggle-wrapper .ez-checkbox {
   width: 100%;
 }
-/* line 190, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 195, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper .toggle-wrapper .switch-wrapper {
   display: block;
   margin: 0 auto;
 }
-/* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
-.toolbar-wrapper .action-toolbar .my-progress:hover .progress-toggle {
+/* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+.toolbar-wrapper .action-toolbar .my-progress.hover .progress-toggle {
   display: block;
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 205, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar.has-tagline {
   margin-top: 70px;
 }
-/* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 214, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li {
   float: left;
   padding: 0;
   height: 18px;
   width: 24px;
-  margin-left: 16px;
+  margin-left: 15px;
   padding: 0px 15px;
   position: relative;
   margin-left: 0;
   height: auto;
   width: auto;
 }
-/* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 220, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li:first-child {
   margin-left: 0px;
 }
-/* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 230, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.my-progress a, .toolbar-wrapper .action-toolbar li.print a, .toolbar-wrapper .action-toolbar li.email a {
   display: none;
   display: block;
 }
-/* line 232, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 236, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li:after {
   content: '';
   position: absolute;
@@ -2027,64 +2285,64 @@
   top: -2px;
   left: 0px;
 }
-/* line 243, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li:before {
   content: '';
   position: absolute;
-  top: 42px;
   width: 24px;
   height: 17px;
   background: url("../images/sprite.icons.article-tips.png");
   background-repeat: no-repeat;
-  top: 1px;
+  bottom: 0;
+  bottom: 4px;
 }
-/* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 260, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .no-backgroundsize .toolbar-wrapper .action-toolbar li:before {
   background-image: url("../images/sprite.icons.article-tips.145.png");
 }
-/* line 258, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.my-progress {
   padding-left: 0px;
 }
-/* line 260, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 266, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.my-progress:before {
   background-position: -119px -75px;
   background-size: 145px 145px;
 }
-/* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 270, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.my-progress:hover:before, .toolbar-wrapper .action-toolbar li.my-progress:focus:before, .toolbar-wrapper .action-toolbar li.my-progress.icon-email:focus:before {
   background-position: -119px -127px;
   background-size: 145px 145px;
 }
-/* line 270, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 276, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.print:before {
   background-position: -78px 0px;
   background-size: 145px 145px;
 }
-/* line 274, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 280, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.print:hover:before, .toolbar-wrapper .action-toolbar li.print:focus:before, .toolbar-wrapper .action-toolbar li.print.icon-print:focus:before {
   background-position: -78px -35px;
   background-size: 145px 145px;
 }
-/* line 279, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 285, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.email {
   padding-right: 0px;
 }
-/* line 281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 287, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.email:before {
   background-position: -77px -74px;
   background-size: 145px 145px;
 }
-/* line 285, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.email:hover:before, .toolbar-wrapper .action-toolbar li.email:focus:before, .toolbar-wrapper .action-toolbar li.email.icon-email:focus:before {
   background-position: -77px -126px;
   background-size: 145px 145px;
 }
-/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 297, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.first:after {
   display: none;
 }
-/* line 295, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 301, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li a {
   text-decoration: underline;
   font-size: 16px;
@@ -2092,25 +2350,25 @@
   color: #426da9;
   padding-left: 32px;
 }
-/* line 300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 306, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li a:hover {
   text-decoration: none;
 }
 
-/* line 309, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .print-plan-toolbar .toolbar-wrapper {
   border-bottom: 1px solid #c6c5c5;
 }
-/* line 311, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 317, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .print-plan-toolbar .toolbar-wrapper h2 {
   margin-bottom: 20px;
 }
 
-/* line 317, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 323, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal {
   padding: 40px;
 }
-/* line 319, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 325, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal h1 {
   font-size: 24px;
   font-size: 1.5rem;
@@ -2119,40 +2377,40 @@
   margin-bottom: 22px;
   margin-bottom: 34px;
 }
-/* line 328, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal .email-info {
   border: 2px solid #d2d2d2;
   margin-bottom: 10px;
 }
-/* line 332, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 338, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal .comment-box {
   height: 168px;
   width: 100%;
   margin-bottom: 25px;
   margin-bottom: 40px;
 }
-/* line 340, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 346, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal .modal-header {
   padding: 0;
   border: none;
   height: auto;
   min-height: 0;
 }
-/* line 346, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 352, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal .modal-body {
   overflow: hidden;
   padding: 22px 18px;
   padding: 20px;
   padding: 40px;
 }
-/* line 356, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 362, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal .button {
   padding: 0 66px;
   float: left;
   width: inherit;
 }
 
-/* line 363, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 369, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
 .goals-toolbar .skiplink-toolbar .secondary-navigation-link {
   left: 0;
 }

@@ -1,16 +1,15 @@
 /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 #gameboard.executive_game {
-  font-size: 24px;
   font-weight: bold;
   background-color: #FAFAFA;
 }
 
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 .breakpoint_phone #gameboard {
   font-size: 18px;
 }
 
-/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 #executive_board {
   position: absolute;
   top: 105px;
@@ -19,19 +18,19 @@
   z-index: 1;
 }
 
-/* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 16, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 .breakpoint_desktop #executive_board {
   left: 145px;
   height: 380px;
 }
 
-/* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 .breakpoint_tablet #executive_board {
   left: 34px;
   height: 286px;
 }
 
-/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 .breakpoint_phone #executive_board {
   top: 70px;
   left: 10px;
@@ -39,7 +38,7 @@
   width: 320px;
 }
 
-/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 .executive_game_prompt {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
@@ -54,18 +53,18 @@
   text-align: center;
 }
 
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 .breakpoint_tablet .executive_game_prompt {
   top: 10px;
 }
 
-/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 .breakpoint_phone .executive_game_prompt {
   width: 250px;
   left: 25px;
 }
 
-/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 .executive_game_prompt h3 {
   font-weight: normal;
   font-size: .75em;
@@ -73,13 +72,13 @@
   margin-bottom: 10px;
 }
 
-/* line 58, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 .executive_game_prompt p {
   font-size: 1.25em;
   color: #63428e;
 }
 
-/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
 #executive_board .channel {
   position: relative;
   display: inline-block;
@@ -87,6 +86,7 @@
   height: 352px;
   z-index: 3;
   overflow: hidden;
+  cursor: pointer;
 }
 
 /* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */

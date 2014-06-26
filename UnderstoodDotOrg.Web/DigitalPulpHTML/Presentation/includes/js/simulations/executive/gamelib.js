@@ -228,6 +228,31 @@
             });
         }
     };
+    var everyOther = {
+        isReady: {},
+        getType: function(n) {
+            return n.data('type');
+        },
+        missed: function(n) {
+            var type = this.getType(n);
+            if(!this.isReady[type]) this.isReady[type] = true;
+            else this.isReady[type] = !this.isReady[type];
+        },
+        caught: function(n) {
+            var type = this.getType(n);
+            if(!this.isReady[type]) this.isReady[type] = true;
+            else this.isReady[type] = !this.isReady[type];
+        },
+        catchable: function(n) {
+            var type = this.getType(n);
+            //Need to miss the first
+            if(!this.isReady[type]) return false;
+            else return this.isReady[type];
+        },
+        reset: function() {
+            this.isReady = {};
+        }
+    }
     var balls = {
         balls: [],
         firstDropped: false,
@@ -291,7 +316,7 @@
                 } else {
                     if(valid) {
                         balls.validMissed(ballNode);
-                    } else if(balls.hidden(ballNode)) {
+                    } else {
                         balls.invalidMissed(ballNode);
                     }
                 }
@@ -300,36 +325,36 @@
         validCatch: function(ballNode) {
             score.increment(ballNode);
             balls.animations.success(ballNode);
-            state.everyOtherToggle = false;
+            everyOther.caught(ballNode);
             SSGame.current.playSound('caughtright');
         },
         invalidCatch: function(ballNode) {
             score.decrement(ballNode, 'wrong');
             var txt = SSGame.current.config.channelText.copy[SSGame.current.getLanguage()].wrongCatch;
             balls.animations.error(ballNode, txt);
-            state.everyOtherToggle = true;
+            everyOther.missed(ballNode);
             SSGame.current.playSound('caughtwrong');
         },
         validTouchedTrap: function(ballNode, dir) {
             score.decrement(ballNode, 'contact');
             balls.animations.bounce(ballNode, true, dir);
-            state.everyOtherToggle = true;
+            everyOther.missed(ballNode);
             SSGame.current.playSound('bounce');
         },
         invalidTouchedTrap: function(ballNode, dir) {
             balls.animations.bounce(ballNode, false, dir);
-            state.everyOtherToggle = true;
+            everyOther.missed(ballNode);
             SSGame.current.playSound('bounce');
         },
         validMissed: function(ballNode) {
             score.decrement(ballNode, 'missed');
             var txt = SSGame.current.config.channelText.copy[SSGame.current.getLanguage()].missed;
             balls.animations.error(ballNode, txt);
-            state.everyOtherToggle = true;
+            everyOther.missed(ballNode);
             SSGame.current.playSound('missedright');
         },
         invalidMissed: function(ballNode) {
-            state.everyOtherToggle = true;
+            everyOther.missed(ballNode);
         },
         remove: function(ballNode) {
             var channel = ballNode.data('channel') * 1;
@@ -388,7 +413,7 @@
                 //Then roll it around
                 var t = channels.bottom - (ballHeight * 2) - 20;
                 var anim = {
-                    top: '-=' + (ballHeight * 3),
+                    top: '-=' + (ballHeight * cfg.verticalHeightMultiplier),
                     scale: 1.5,
                     opacity: 0,
                 };
@@ -516,7 +541,6 @@
         speed: null,
         scoring: null,
         everyOther: false,
-        everyOtherToggle: false,
         done: false,
         paused: false,
         init: function() {
@@ -587,17 +611,20 @@
 
                 //These used to be seperate configs, so this is a bit of a kludge
                 this.scoring = this.getLatest(this.rules.scoring);
-                //Only establish a prompt if it hasn't been shown and if there's one to show
-                if(this.scoring['prompted'] || (!this.scoring['text'] && !this.scoring['audio'])) {
-                    this.prompt = null;
-                } else {
-                    this.prompt = $.extend({}, this.scoring);
-                }
 
                 if(this.scoring) {
-                    //Special rule: every other valid must be missed, reset if false
-                    this.everyOther = this.scoring.everyOther === true;
-                    if(!this.everyOther) this.everyOtherToggle = false;
+                    //Only establish a prompt if it hasn't been shown and if there's one to show
+                    if(this.scoring['prompted'] || (!this.scoring['text'] && !this.scoring['audio'])) {
+                        this.prompt = null;
+                    } else {
+                        this.prompt = $.extend({}, this.scoring);
+                    }
+                    //Special rule: every other valid must be missed, reset if everyOther in enabled/disabled
+                    var nextEveryOther = this.scoring.everyOther === true;
+                    if(!this.everyOther && nextEveryOther) {
+                        everyOther.reset();
+                    }
+                    this.everyOther = nextEveryOther;
 
                     this.scoring = this.scoring.valid;
                 }
@@ -644,7 +671,7 @@
                     break;
                 }
             }
-            if(this.everyOther && valid && !this.everyOtherToggle) {
+            if(this.everyOther && valid && !everyOther.catchable(ballNode)) {
                 console.log('Every other rule break');
                 valid = false;
             }
@@ -657,13 +684,17 @@
         text = game.getText(text);
         if(audio) {
             var strategy = null;
-            switch(promptMethod) {
-                case 'both':
-                    strategy = 0;
-                    break;
-                case 'random':
-                    strategy = SSGame.rnd(0, 3);
-                    break;
+            if(game.isIOS) {
+                strategy = 2;
+            } else {
+                switch(promptMethod) {
+                    case 'both':
+                        strategy = 0;
+                        break;
+                    case 'random':
+                        strategy = SSGame.rnd(0, 3);
+                        break;
+                }
             }
             var play = false;
             switch(strategy) {

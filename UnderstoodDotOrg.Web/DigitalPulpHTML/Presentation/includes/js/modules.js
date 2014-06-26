@@ -1734,24 +1734,27 @@ the callbacks passed to the module.
     var self = this;
 
     if( $('.transcript-container').length ){
-      var $readMore = $('.transcript-container').find('.read-more-bottom');
-      var $wrap = $('.transcript-wrap');
-      var $tc = $('.transcript-container');
-      var $prevContainer = (function() {
-        var parentContainer = $tc.parents('.container'),
-            container = parentContainer.prev('.container');
 
-        return !container.is('.community-main-header') ? container : parentContainer;
-      })();
-      var $mobileClose = $('.mobile-close');
+      var $topLevel = $('body, html');
+      var $readMore = $('.transcript-container').find('.read-more-bottom');
+
 
       // Initially hide transcript and add read transcript button
-      $wrap.slideUp();
-      $readMore.append('<a href="REMOVE">Read Transcript<i class="icon-arrow-down-blue"></i></a>');
-      var $readMoreBtn = $readMore.children('a');
+      $('.transcript-wrap').slideUp();
+      $readMore.append('<p class="transcript-trigger-button">Read Transcript<i class="icon-arrow-down-blue"></i></p>');
+      var $readMoreBtn = $readMore.children('p');
 
       // click functionality for site
-      var transcriptClick = function(event) {
+      self.transcriptClick = function(event) {
+        // cache elements within function because an element using this is cloned on sp11, and used, again.
+        var $wrap = $('.transcript-wrap');
+        var $tc = $('.transcript-container');
+        var $prevContainer = (function() {
+          var parentContainer = $tc.parents('.container'),
+              container = parentContainer.prev('.container');
+
+          return !container.is('.community-main-header') ? container : parentContainer;
+        })();
 
         if( $tc.hasClass('open') ){
 
@@ -1762,15 +1765,16 @@ the callbacks passed to the module.
           $wrap.slideUp();
 
           // Add Read button
-          $readMoreBtn.html('Read Transcript<i class="icon-arrow-down-blue"></i>');
+          $('.read-more-bottom p').html('Read Transcript<i class="icon-arrow-down-blue"></i>');
 
           // Hide mobile close button just in case it's shown
-          $mobileClose.slideUp();
+          $('.mobile-close').slideUp();
 
           // Scroll to top of newly loaded items
           $('html,body').animate({scrollTop: $prevContainer.offset().top - 40}, 500);
 
         }else{
+
 
           // If it's open, it doesn't have class open, close transcript; make read transcripts
           $tc.addClass('open');
@@ -1779,11 +1783,11 @@ the callbacks passed to the module.
           $wrap.slideDown();
 
           // Add Close button(s)
-          $readMoreBtn.html('Close Transcript<i class="icon-arrow-up-blue"></i>');
+          $('.read-more-bottom p').html('Close Transcript<i class="icon-arrow-up-blue"></i>');
 
           // On mobile show close transcript on top as well
           if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            $mobileClose.slideDown();
+            $('.mobile-close').slideDown();
           }
 
           // Scroll to top of newly loaded items
@@ -1794,12 +1798,14 @@ the callbacks passed to the module.
         return false;
       };
 
+      // Delegating event handlers because they are being called on sp11 where the container element is cloned.
+      // The clone needs to have this functionality, too, so they are re-found, each time, in the DOM.
       // Bind transcriptClick to read-more-bottom button
-      $readMoreBtn.bind("click", transcriptClick);
+      $topLevel.on("click", '.read-more-bottom p', self.transcriptClick);
 
       // Bind transcriptClick to mobile-close button
-      $mobileClose.children("a").bind("click", transcriptClick);
-      $mobileClose.hide();
+      $topLevel.on("click touchstart", '.mobile-close', self.transcriptClick);
+      $('.mobile-close').hide();
     }
 
     return this;

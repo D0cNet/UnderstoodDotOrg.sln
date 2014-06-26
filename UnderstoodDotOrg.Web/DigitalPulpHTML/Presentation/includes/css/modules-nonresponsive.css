@@ -7716,18 +7716,18 @@ header.about-donate-rs-wrapper .rsbtn_player,
   font-family: Arial, sans-serif;
 }
 /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
-.transcript-container a {
+.transcript-container a, .transcript-container .transcript-trigger-button, .transcript-container .mobile-close p {
   font-size: 24px;
   font-size: 1.5rem;
   text-align: center;
   color: #446ea7;
 }
 /* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
-.transcript-container a .icon-arrow-down-blue {
+.transcript-container a .icon-arrow-down-blue, .transcript-container .transcript-trigger-button .icon-arrow-down-blue, .transcript-container .mobile-close p .icon-arrow-down-blue {
   margin-left: 18px;
 }
 /* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
-.transcript-container a .icon-arrow-up-blue {
+.transcript-container a .icon-arrow-up-blue, .transcript-container .transcript-trigger-button .icon-arrow-up-blue, .transcript-container .mobile-close p .icon-arrow-up-blue {
   margin-left: 15px;
 }
 /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
@@ -7740,15 +7740,19 @@ header.about-donate-rs-wrapper .rsbtn_player,
   position: relative;
   max-width: 550px;
 }
+/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+.transcript-container .transcript-trigger-button {
+  cursor: pointer;
+}
 
-/* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
 .read-more {
   background: #fff;
   color: #333;
   text-align: center;
 }
 
-/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
 .icon-arrow-up-blue {
   width: 18px;
   height: 15px;
@@ -7757,16 +7761,16 @@ header.about-donate-rs-wrapper .rsbtn_player,
   background-size: 150px 150px;
   background-position: -52px 0;
 }
-/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
 .no-backgroundsize .icon-arrow-up-blue {
   background-image: url("../images/sprite.icon.arrows.lo-res.png");
 }
-/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+/* line 69, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
 .no-backgroundsize .icon-arrow-up-blue {
   background-image: url("../images/sprite.icon.arrows.lo-res.png");
 }
 
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
 .l-about-understood .read-more {
   margin-bottom: 30px;
   margin-bottom: 35px;

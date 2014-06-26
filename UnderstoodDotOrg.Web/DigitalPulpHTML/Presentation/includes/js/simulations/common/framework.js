@@ -137,6 +137,14 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
          */
         canUse3d: false,
         /**
+         * Our available sounds
+         */
+        sounds:  null,
+        /**
+         * Sounds that have played or are playing
+         */
+        sounadsPlaying: null,
+        /**
          * Initialize the game.
          * Note that Class only uses init()...the child class must call this parent using init(name)
          */
@@ -151,6 +159,7 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             this.events.trigger('initialized');
             this.board.board.css('visibility', 'hidden');
             this.nodeMap = nodes;
+            this.isIOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
         },
         draw: function(newIds) {
             var ctr = $('#gameboard');
@@ -169,6 +178,7 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             if(typeof t == 'string') return t;
             var lang = this.getLanguage();
             if(t[lang]) return t[lang];
+            else if(t['en']) return t['en'];
             else {
                 console.error('No string for language %s in %o', lang, t);
                 return '';
@@ -185,15 +195,18 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             };
             effectPaths = $.extend({}, effectPaths, localEffectPaths);
             this.sounds = {};
-            $.each(effectPaths, $.proxy(function(key, paths) {
-                if(!paths.push) paths = [paths];
-                this.sounds[key] = [];
-                for(var i = 0; i < paths.length; i ++) {
-                    this.sounds[key].push(new buzz.sound(paths[i], {
-                        formats: ['ogg', 'mp3']
-                    }));
-                }
-            }, this));
+            this.soundsPlaying = {};
+            if(true || !this.isIOS) {
+                $.each(effectPaths, $.proxy(function(key, paths) {
+                    if(!paths.push) paths = [paths];
+                    this.sounds[key] = [];
+                    for(var i = 0; i < paths.length; i ++) {
+                        this.sounds[key].push(new buzz.sound(paths[i], {
+                            formats: ['ogg', 'mp3']
+                        }));
+                    }
+                }, this));
+            }
             var lang = this.getLanguage();
             if(!localVOPaths) localVOPaths = {};
             this.voices = {};
@@ -209,7 +222,30 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
         },
         playSound: function(key, cfg) {
             if(this.sounds[key]) {
-                SSGame.pick(this.sounds[key], []).play();
+                var sound = SSGame.pick(this.sounds[key], []);
+                this.soundsPlaying[key] = sound;
+                sound.play();
+            } else {
+                console.error('No such sound "%s"', key);
+            }
+        },
+        pauseSound: function(key) {
+            if(this.soundsPlaying[key]) {
+                this.soundsPlaying[key].pause();
+            } else {
+                console.error('No such sound "%s"', key);
+            }
+        },
+        resumeSound: function(key) {
+            if(this.soundsPlaying[key]) {
+                this.soundsPlaying[key].play();
+            } else {
+                console.error('No such sound "%s"', key);
+            }
+        },
+        stopSound: function(key) {
+            if(this.soundsPlaying[key]) {
+                this.soundsPlaying[key].stop();
             } else {
                 console.error('No such sound "%s"', key);
             }
@@ -493,11 +529,11 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             this.lastTime = new Date().getTime();
             this.interval = setInterval($.proxy(this.tick, this), 1000);
             this.show(this.maxTime);
-            SSGame.current.startLoop('clockTick');
+            SSGame.current.playSound('clockTick');
         },
         stop: function() {
             clearInterval(this.interval);
-            SSGame.current.stopLoop('clockTick');
+            SSGame.current.stopSound('clockTick');
             this.onStop.fire();
         },
         reset: function() {
@@ -505,11 +541,11 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             this.clear();
         },
         pause: function() {
-            SSGame.current.stopLoop('clockTick');
+            SSGame.current.pauseSound('clockTick');
             this.paused = true;
         },
         resume: function() {
-            SSGame.current.startLoop('clockTick');
+            SSGame.current.resumeSound('clockTick');
             this.lastTime = new Date().getTime();
             this.paused = false;
         },
@@ -566,9 +602,12 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             var html = [];
             if(this.settings.title) html.push('<div class="SSGame_modal_title">' + this.settings.title + '</div>');
             if(this.settings.text) html.push(this.settings.text);
+            //The ID and the rs_read_this class are for the ReadThis tool
+            var dummyID = SSGame.rnd(100000000, 200000000) + '_modal_text';
             this.body = $('<div></div>')
-                .html('<div class="dialog_text_wrapper">' + html.join('') + '</div>')
+                .html('<div class="dialog_text_wrapper rs_read_this" id="' + dummyID + '">' + html.join('') + '</div>')
                 .addClass('SSGame_dialog');
+            if(window.ReadSpeaker) ReadSpeaker.q(function() { rspkr.Toggle.createPlayer() });
             this.body.dialog(this.settings.dialog);
             this.watcher = $.proxy(function(e, idx, specs) {
                 this.body.dialog('option', 'width', specs[3][0]);
@@ -592,18 +631,22 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             t.css('marginTop', Math.floor((ph - th) / 2));
         },
         setButtons: function(buttons) {
+            /*
             var i, btn, oldClick;
             for(i = 0; i < buttons.length; i ++) {
                 btn = buttons[i], oldClick = buttons[i]['click'];
                 if(oldClick) {
                     btn.click = function(e) {
-                        console.log('Click');
                         SSGame.current.playSound('buttonClick');
                         oldClick(e);
                     }
                 }
             }
+            */
             this.body.dialog('option', 'buttons', buttons);
+            this.body.parents('.ui-dialog').find('.ui-button').click(function(e) {
+                SSGame.current.playSound('buttonClick');
+            });
         },
         open: function() {
             this.body.dialog('open');
@@ -626,6 +669,8 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             this.mask = mask;
         },
         close: function() {
+            //Make sure double clicks don't do anything
+            this.body.dialog('widget').find('.ui-button').attr('disabled', 'disabled');
             this.body.dialog('close');
             setTimeout($.proxy(function() {
                 if(typeof this.settings.onClose == 'function') this.settings.onClose();

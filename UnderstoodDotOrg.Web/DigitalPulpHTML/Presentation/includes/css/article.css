@@ -611,6 +611,15 @@
   }
 }
 /* line 439, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+#article-slideshow .slide.text-slide .content a {
+  color: #fff;
+  text-decoration: underline;
+}
+/* line 443, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+#article-slideshow .slide.text-slide .content a:hover {
+  text-decoration: none;
+}
+/* line 448, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .top {
   background-color: #fff;
   left: 0;
@@ -619,7 +628,7 @@
   width: 100%;
 }
 @media (min-width: 480px), print {
-  /* line 439, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+  /* line 448, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
   #article-slideshow .slide.text-slide .content .top {
     background-color: transparent;
     left: auto;
@@ -628,52 +637,52 @@
     width: auto;
   }
 }
-/* line 454, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 463, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .share-dropdown-menu {
   padding: 16px 5px;
   background-color: #fff;
   height: 50px;
 }
 @media (min-width: 480px), print {
-  /* line 454, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+  /* line 463, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
   #article-slideshow .slide.text-slide .content .share-dropdown-menu {
     padding: 16px 15px 0 15px;
   }
 }
-/* line 464, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 473, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .share-dropdown-menu .share-menu {
   margin: 16px 15px 0 15px;
 }
-/* line 465, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 474, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .share-dropdown-menu .social-share-button {
   border: none;
   background-color: transparent;
   color: inherit;
 }
-/* line 472, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content p, #article-slideshow .slide.text-slide .content h3 {
   color: #fff;
   float: none;
   width: 100%;
 }
-/* line 477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 486, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content h3 {
   margin-top: 20px;
 }
 @media (min-width: 650px), print {
-  /* line 477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+  /* line 486, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
   #article-slideshow .slide.text-slide .content h3 {
     font-size: 40px;
     font-size: 2.5rem;
     margin-top: 34px;
   }
 }
-/* line 484, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 493, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content p {
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text {
   font-size: 24px;
   font-size: 1.5rem;
@@ -684,12 +693,12 @@
   z-index: 10;
 }
 @media (min-width: 480px), print {
-  /* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+  /* line 497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
   #article-slideshow .slide.text-slide .content .slide-count-text {
     margin-top: 20px;
   }
 }
-/* line 497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 506, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text span {
   border-radius: 50%;
   display: inline-block;
@@ -698,42 +707,42 @@
   text-align: center;
   width: 37px;
 }
-/* line 504, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text span.light-blue-span {
   background-color: #426da9;
 }
-/* line 505, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 514, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text span.blue-span {
   background-color: #25569a;
 }
-/* line 506, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 515, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text span.light-purple-span {
   background-color: #692d72;
 }
-/* line 507, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 516, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide .content .slide-count-text span.purple-span {
   background-color: #5a3b7c;
 }
 @media (min-width: 560px), print {
-  /* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+  /* line 497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
   #article-slideshow .slide.text-slide .content .slide-count-text {
     position: absolute;
     top: 10px;
   }
 }
 @media (min-width: 650px), print {
-  /* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+  /* line 497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
   #article-slideshow .slide.text-slide .content .slide-count-text {
     left: 74px;
   }
 }
 @media (min-width: 720px), print {
-  /* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+  /* line 497, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
   #article-slideshow .slide.text-slide .content .slide-count-text {
     font-size: 48px;
     font-size: 3rem;
   }
-  /* line 516, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+  /* line 525, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
   #article-slideshow .slide.text-slide .content .slide-count-text span {
     margin-top: -25px;
     padding-top: 7px;
@@ -741,47 +750,47 @@
     height: 80px;
   }
 }
-/* line 526, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 535, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide.light-blue-background .content {
   background-color: #298fc2;
 }
-/* line 527, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 536, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide.blue-background .content {
   background-color: #426da9;
 }
-/* line 528, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 537, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide.light-purple-background .content {
   background-color: #7a4183;
 }
-/* line 529, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 538, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 #article-slideshow .slide.text-slide.purple-background .content {
   background-color: #6f5091;
 }
 
-/* line 535, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 544, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .container.article.slideshow.overflowToggleActions > .row {
   overflow: hidden;
 }
-/* line 537, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 546, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .container.article.slideshow.overflowToggleActions > .row .rsOverflow {
   overflow: visible;
 }
-/* line 539, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 548, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .container.article.slideshow.overflowToggleActions > .row .rsOverflow .rsSlide {
   display: none;
 }
-/* line 541, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 550, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .container.article.slideshow.overflowToggleActions > .row .rsOverflow .rsSlide.rsActiveSlide {
   display: block;
   overflow: visible;
 }
 
-/* line 550, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+/* line 559, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
 .text-tips #article-slideshow .slide .article-actions {
   float: none;
 }
 @media (min-width: 480px), print {
-  /* line 550, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
+  /* line 559, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-slideshow.scss */
   .text-tips #article-slideshow .slide .article-actions {
     float: right;
   }
@@ -2327,6 +2336,10 @@
     line-height: 1.625rem;
   }
 }
+/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-copy.scss */
+.article li {
+  color: #696969;
+}
 
 /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-table-source.scss */
 .article-table-source {
@@ -2446,10 +2459,20 @@
   }
 }
 /* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
+.article-actions-copy > div:not([class]):first-of-type {
+  margin-top: 20px;
+}
+@media (min-width: 650px), print {
+  /* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
+  .article-actions-copy > div:not([class]):first-of-type {
+    margin-top: 30px;
+  }
+}
+/* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
 .article-actions-copy .action-step {
   float: left;
 }
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
+/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
 .article-actions-copy .action-step span {
   font-size: 34px;
   font-size: 2.125rem;
@@ -2468,7 +2491,7 @@
   text-align: center;
 }
 @media (min-width: 650px), print {
-  /* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
+  /* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
   .article-actions-copy .action-step span {
     margin-left: 40px;
     display: block;
@@ -2479,22 +2502,22 @@
     height: 92px;
   }
 }
-/* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
+/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
 .article-actions-copy .action-head {
   padding-top: 15px;
   vertical-align: center;
-  min-height: 64px;
 }
-/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
+/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
 .article-actions-copy .action-head h3 {
   font-size: 24px;
   font-size: 1.5rem;
   font-weight: normal;
   color: #7a4183;
   padding-left: 85px;
+  margin-bottom: 10px;
 }
 @media (min-width: 650px), print {
-  /* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
+  /* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
   .article-actions-copy .action-head h3 {
     font-size: 28px;
     font-size: 1.75rem;
@@ -2502,29 +2525,28 @@
   }
 }
 @media (min-width: 650px), print {
-  /* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
+  /* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
   .article-actions-copy .action-head {
     margin-left: 40px;
     padding-top: 0;
   }
 }
-/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
+@media (min-width: 650px), print {
+  /* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
+  .article-actions-copy .clearfix {
+    display: none;
+  }
+}
+/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
 .article-actions-copy .action-copy {
   float: none;
   display: block;
 }
 @media (min-width: 650px), print {
-  /* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
+  /* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
   .article-actions-copy .action-copy {
-    margin-top: -32px;
     margin-left: 40px;
     padding: 0 0 0 116px;
-  }
-}
-@media (min-width: 769px), print {
-  /* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-actions-copy.scss */
-  .article-actions-copy .action-copy {
-    margin-top: -50px;
   }
 }
 
@@ -3519,38 +3541,48 @@ p.reviewed-by .reviewed-by-date {
   margin: 0;
   padding: 0;
 }
-/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
-.deep-dive-article-container .whats-covered-deep-dive ul li {
-  display: inline-block;
-  width: 100%;
-  margin-right: 25px;
-}
 @media (min-width: 769px), print {
-  /* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
-  .deep-dive-article-container .whats-covered-deep-dive ul li {
-    width: 44%;
+  /* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+  .deep-dive-article-container .whats-covered-deep-dive ul {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    -o-column-count: 2;
+    column-count: 2;
   }
 }
-/* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+.deep-dive-article-container .whats-covered-deep-dive ul li {
+  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 769px), print {
+  /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+  .deep-dive-article-container .whats-covered-deep-dive ul li {
+    display: inline-block;
+    width: auto;
+  }
+}
+/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .whats-covered-deep-dive ul a {
   text-decoration: underline;
   color: #426da9;
 }
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .whats-covered-deep-dive ul a:hover {
   text-decoration: none;
 }
-/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-block {
   padding-bottom: 40px;
   margin-bottom: 35px;
   border-bottom: 1px solid #d2d2d2;
 }
-/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 60, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-block:last-child {
   border: none;
 }
-/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-block h2 {
   font-size: 28px;
   font-size: 1.75rem;
@@ -3558,13 +3590,13 @@ p.reviewed-by .reviewed-by-date {
   color: #7a4183;
   margin-bottom: 20px;
 }
-/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-block ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 76, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-block ul li {
   font-family: arial, sans-serif;
   color: #696969;
@@ -3578,7 +3610,7 @@ p.reviewed-by .reviewed-by-date {
   padding: 12px 0 0 20px;
 }
 @media (min-width: 650px), print {
-  /* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+  /* line 76, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
   .deep-dive-article-container .deep-dive-block ul li {
     font-size: 15px;
     font-size: 0.9375rem;
@@ -3586,17 +3618,17 @@ p.reviewed-by .reviewed-by-date {
     line-height: 1.625rem;
   }
 }
-/* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 91, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-block ul li:first-child {
   border-top: 0;
   margin-top: 0;
   padding-top: 0;
 }
-/* line 84, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-block ul li:first-child:before {
   top: -1px;
 }
-/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-block ul li:before {
   font-family: Circular;
   content: "• ";
@@ -3607,31 +3639,31 @@ p.reviewed-by .reviewed-by-date {
   top: 11px;
   left: 0;
 }
-/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-block span.back-to-top {
   display: inline-block;
   text-align: right;
   float: right;
 }
-/* line 108, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-block span.back-to-top a {
   font-size: 14px;
   font-size: 0.875rem;
   color: #426da9;
   text-decoration: underline;
 }
-/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-block span.back-to-top a:hover {
   text-decoration: none;
 }
-/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 131, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-more {
   display: block;
   background: #fff;
   margin: 0 0 45px 0;
   text-align: center;
 }
-/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-more .icon-arrow-up-blue {
   width: 18px;
   height: 15px;
@@ -3641,42 +3673,42 @@ p.reviewed-by .reviewed-by-date {
   background-position: -52px 0;
 }
 @media (min-width: 650px), print {
-  /* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+  /* line 131, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
   .deep-dive-article-container .deep-dive-more {
     display: none;
   }
 }
-/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-more a {
   font-size: 24px;
   font-size: 1.5rem;
   color: #426da9;
   text-decoration: none;
 }
-/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 154, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-more a:hover {
   text-decoration: underline;
 }
-/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-more a i {
   margin-left: 18px;
 }
-/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .deep-dive-extra {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+  /* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
   .deep-dive-article-container .deep-dive-extra {
     display: block;
   }
 }
-/* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+/* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container #block3 {
   border: none;
 }
 @media (min-width: 650px), print {
-  /* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
+  /* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_article-deep-dive-copy.scss */
   .deep-dive-article-container #block3 {
     border-bottom: 1px solid #e8e8e8;
   }

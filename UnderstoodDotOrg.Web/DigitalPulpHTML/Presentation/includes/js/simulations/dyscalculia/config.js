@@ -40,11 +40,18 @@
             }
         },
         introText: [
-            'Select coins to pay for goodies. When you have the exact change, hit BUY.\n\nReady?'
+            'Click on coins to pay for goodies. When you have the exact change, hit Buy.\n\nReady?'
         ].join("\n"),
-        finalText: [
-            'Time\'s up!'
-        ].join("\n"),
+         finalText: {
+            onComplete: {
+                en: 'Well done--you beat the clock!'
+            },
+            onTimeout: {
+                en: [
+                    'Time\'s up!'
+                ].join("\n")
+            }
+        },
         title: {
             en: 'Exact Change'
         },
@@ -113,4 +120,4 @@
                                                                                                                                                                                                                                                                                 
                                                 
                                                                                 
-                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                

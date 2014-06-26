@@ -177,15 +177,16 @@
   background-position: 0 0;
   background-repeat: no-repeat;
   border: 1px solid #D3D3D3;
+  cursor: pointer;
 }
 
-/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece {
   width: 50px;
   height: 50px;
 }
 
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece.over_grid,
 .breakpoint_phone.attention_game .piece.ui-draggable-dragging {
   width: 90px;
@@ -193,187 +194,187 @@
   background-size: 100%;
 }
 
-/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_monkey {
   background-image: url("../../../images/simulations/attention/desktop/monkey.png");
 }
 
-/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_elephant {
   background-image: url("../../../images/simulations/attention/desktop/elephant.png");
 }
 
-/* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_shark {
   background-image: url("../../../images/simulations/attention/desktop/shark.png");
 }
 
-/* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 144, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_rhino {
   background-image: url("../../../images/simulations/attention/desktop/rhino.png");
 }
 
-/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 147, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_bird {
   background-image: url("../../../images/simulations/attention/desktop/bird.png");
 }
 
-/* line 149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_snake {
   background-image: url("../../../images/simulations/attention/desktop/snake.png");
 }
 
-/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_kangaroo {
   background-image: url("../../../images/simulations/attention/desktop/kangaroo.png");
 }
 
-/* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_octopus {
   background-image: url("../../../images/simulations/attention/desktop/octopus.png");
 }
 
-/* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 159, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_camel {
   background-image: url("../../../images/simulations/attention/desktop/camel.png");
 }
 
-/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_monkey.back_visible {
   background-image: url("../../../images/simulations/attention/desktop/monkey_back.png");
 }
 
-/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 165, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_elephant.back_visible {
   background-image: url("../../../images/simulations/attention/desktop/elephant_back.png");
 }
 
-/* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_shark.back_visible {
   background-image: url("../../../images/simulations/attention/desktop/shark_back.png");
 }
 
-/* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_rhino.back_visible {
   background-image: url("../../../images/simulations/attention/desktop/rhino_back.png");
 }
 
-/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_bird.back_visible {
   background-image: url("../../../images/simulations/attention/desktop/bird_back.png");
 }
 
-/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 177, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_snake.back_visible {
   background-image: url("../../../images/simulations/attention/desktop/snake_back.png");
 }
 
-/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_kangaroo.back_visible {
   background-image: url("../../../images/simulations/attention/desktop/kangaroo_back.png");
 }
 
-/* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 183, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_octopus.back_visible {
   background-image: url("../../../images/simulations/attention/desktop/octopus_back.png");
 }
 
-/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 186, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .attention_game .piece_camel.back_visible {
   background-image: url("../../../images/simulations/attention/desktop/camel_back.png");
 }
 
-/* line 189, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 190, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_monkey {
   background-image: url("../../../images/simulations/attention/phone/monkey.png");
 }
 
-/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_elephant {
   background-image: url("../../../images/simulations/attention/phone/elephant.png");
 }
 
-/* line 195, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 196, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_shark {
   background-image: url("../../../images/simulations/attention/phone/shark.png");
 }
 
-/* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 199, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_rhino {
   background-image: url("../../../images/simulations/attention/phone/rhino.png");
 }
 
-/* line 201, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_bird {
   background-image: url("../../../images/simulations/attention/phone/bird.png");
 }
 
-/* line 204, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 205, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_snake {
   background-image: url("../../../images/simulations/attention/phone/snake.png");
 }
 
-/* line 207, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 208, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_kangaroo {
   background-image: url("../../../images/simulations/attention/phone/kangaroo.png");
 }
 
-/* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 211, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_octopus {
   background-image: url("../../../images/simulations/attention/phone/octopus.png");
 }
 
-/* line 213, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 214, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_camel {
   background-image: url("../../../images/simulations/attention/phone/camel.png");
 }
 
-/* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 217, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_monkey.back_visible {
   background-image: url("../../../images/simulations/attention/phone/monkey_back.png");
 }
 
-/* line 219, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 220, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_elephant.back_visible {
   background-image: url("../../../images/simulations/attention/phone/elephant_back.png");
 }
 
-/* line 222, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_shark.back_visible {
   background-image: url("../../../images/simulations/attention/phone/shark_back.png");
 }
 
-/* line 225, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_rhino.back_visible {
   background-image: url("../../../images/simulations/attention/phone/rhino_back.png");
 }
 
-/* line 228, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 229, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_bird.back_visible {
   background-image: url("../../../images/simulations/attention/phone/bird_back.png");
 }
 
-/* line 231, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 232, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_snake.back_visible {
   background-image: url("../../../images/simulations/attention/phone/snake_back.png");
 }
 
-/* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_kangaroo.back_visible {
   background-image: url("../../../images/simulations/attention/phone/kangaroo_back.png");
 }
 
-/* line 237, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 238, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_octopus.back_visible {
   background-image: url("../../../images/simulations/attention/phone/octopus_back.png");
 }
 
-/* line 240, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 241, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .breakpoint_phone.attention_game .piece_camel.back_visible {
   background-image: url("../../../images/simulations/attention/phone/camel_back.png");
 }
 
-/* line 243, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
+/* line 244, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/attention/game.scss */
 .piece.ui-draggable-dragging {
   -moz-box-shadow: 0 0 5px 5px #D3D3D3;
   -webkit-box-shadow: 0 0 5px 5px #D3D3D3;

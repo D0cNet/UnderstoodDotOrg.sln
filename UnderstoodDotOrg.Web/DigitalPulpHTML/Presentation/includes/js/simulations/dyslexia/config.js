@@ -1,14 +1,21 @@
 (function() {
     //Reminder: the last element can't have a comma at the end!
     DyslexiaGameConfig = {
-        timeInSeconds: 90,
+        timeInSeconds: 75,
         introDurationInSeconds: 0, //0=open until closed
         introText: [
-            'We\'ve switched some letters. Press them to swap back. Ready?'
+            'We\'ve switched some letters. Click to swap them back. Ready?'
         ].join("\n"),
-        finalText: [
-            'Time\'s up!',
-        ].join("\n"),
+        finalText: {
+            onComplete: {
+                en: 'Well done--you beat the clock!'
+            },
+            onTimeout: {
+                en: [
+                    'Time\'s up!'
+                ].join("\n")
+            }
+        },
         title: {
             en: 'Scrambled Letters'
         },
@@ -35,6 +42,7 @@
             sentenceDoneFadeDuration: 800,
             sentenceDonePauseDuration: 400
         },
+        ignoredLetters: ['i', 'o', 'h'],
         //CAREFUL OF TRAILING COMMAS!!!
         sentences: [
             //Batch 1
@@ -100,30 +108,8 @@
                     l: 't',
                     d: 'b'
                 }
-            }, {
-                text: 'He played happily with his dog.',
-                rules: {
-                    b: 'h',
-                    when: 'with',
- 					d: 'p',
-                    o: 'e'
-                }
-            }, {
-                text: 'The middle child lay down to sleep.',
-                rules: {
-                    b: 'd',
-                    l: 'i',
-                    o: 'e'
-                }
-            }, {
-                text: 'The snow will melt when the sun shines.',
-                rules: {
-                    l: 'i',
-                    m: 'w',
-                    u: 'n',
-                    z: 's'
-                }
-            }],
+            }
+            ],
            //Batch 3
             [{
                 text: 'The boy had two big dogs.',
@@ -212,3 +198,5 @@
         ]
     };
 })();
+                
+                                                                

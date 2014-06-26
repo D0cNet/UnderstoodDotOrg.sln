@@ -193,6 +193,7 @@
       self.dom.listItem = $('li');
       self.dom.hiddenButton = $('.list-element');
       self.dom.helpCardButton = $('.help-card-button');
+      self.dom.listElementWrapper = $('.list-element-wrapper');
     };
 
     self.init = function() {
@@ -202,33 +203,50 @@
     };
 
     self.attachHandlers = function() {
-      self.dom.startOver.on('click', self.appendClass);
-      self.dom.doneThis.on('click', self.appendClass);
-      self.dom.skipThis.on('click', self.appendClass);
+      self.dom.startOver.on('click touchstart', self.appendClass);
+      self.dom.doneThis.on('click touchstart', self.appendClass);
+      self.dom.skipThis.on('click touchstart', self.appendClass);
+      self.dom.listElementWrapper.on('touchstart mouseenter mouseleave', self.toggleHover);
+    };
+
+    self.toggleHover = function(e) {
+      e.preventDefault();
+      var element = $(this);
+      if (element.hasClass('hover')) {
+        element.removeClass('hover');
+      } else {
+        element.addClass('hover');
+      }
     };
 
     self.appendClass = function(e) {
       e.preventDefault();
       var element = $(this),
-          parentContainer = element.parents('li'),
+          elementOuterWrapper = element.parents('li'),
+          parentContainer = elementOuterWrapper.find('.list-element-wrapper'),
+          elementButton = parentContainer.find('.activity-action'),
           hiddenButton = parentContainer.find('.list-element'),
           nextHiddenButton = parentContainer.nextAll(self.dom.listItem).find('.list-element').first();
 
       if (element.hasClass('start-over')) {
         parentContainer.removeClass('done');
+        elementButton.text('Start This Activity');
         hiddenButton.focus();
       }
       else if (element.hasClass('done-this')) {
+
         if (parentContainer.hasClass('skipped')) {
           parentContainer.removeClass('skipped');
         }
         parentContainer.addClass('done');
+        elementButton.text('View Activity');
         nextHiddenButton.focus();
       }
       else if (element.hasClass('skip-this')) {
         if (parentContainer.hasClass('done')) {
           parentContainer.removeClass('done');
         }
+        elementButton.text('Start This Activity');
         parentContainer.addClass('skipped');
         nextHiddenButton.focus();
       }
@@ -361,13 +379,11 @@
         focusHandler: function(e) {
           var element = $(e.currentTarget),
               parent = element.parents('.label');
-
           parent.addClass('focus');
         },
         blurHandler: function(e, newTarget) {
           var element = $(e.currentTarget),
               parent = element.parents('.label');
-
           parent.removeClass('focus');
         }
       });
@@ -378,7 +394,6 @@
           timelineListLength = self.dom.timelineListItems.length * listItemWidth,
           timelineWrapperWidth = self.dom.timelineWrapper.width(),
           maxLabelHeight = 0;
-
 
       self.dom.timeline.css({
              "width": timelineListLength,
@@ -401,7 +416,8 @@
     self.initializeTimelineDragging = function() {
       self.dom.timeline.draggable({
         axis: "x",
-        stop: self.setTimelineEndpoints
+        stop: self.setTimelineEndpoints,
+        handle: self.dom.timelineList
       });
     };
 
@@ -435,11 +451,17 @@
       self.dom.toolbarMenuItem = $('.action-toolbar li a');
       self.dom.progressToggleBox = $('.progress-toggle-wrapper');
       self.dom.emailButton = $('.email');
+      self.dom.myProgressButton = $('.my-progress');
+      self.dom.myProgressButtonLink = $('.my-progress a');
       self.dom.modal = $('.action-plan-email-modal');
     };
 
     self.attachHandlers = function() {
       self.dom.emailButton.on('click', self.renderLightbox);
+      self.dom.myProgressButton.on('touchstart mouseenter mouseleave', self.addHover);
+      self.dom.myProgressButtonLink.on('click touchstart', function(e) {
+        e.preventDefault();
+      });
     };
 
     self.init = function() {
@@ -506,6 +528,16 @@
 
         $(this).parent().parent().toggleClass('ez-checked');
       });
+    };
+
+    self.addHover = function(e) {
+      e.preventDefault();
+      var element = $(this);
+      if (element.hasClass('hover')) {
+        element.removeClass('hover');
+      } else {
+        element.addClass('hover');
+      }
     };
 
     self.renderLightbox = function(e) {
@@ -692,6 +724,249 @@
 })(jQuery);
 (function($){
 
+  $(document).ready(function(){
+    new U.helpAnimateContent();
+  });
+
+  U.helpAnimateContent = function() {
+    var self = this;
+
+    self.cacheSelectors = function() {
+      self.dom = {};
+      self.dom.topLevel = $('body, html');
+      self.dom.viewActivity = $('.activity-action');
+      self.dom.listElementWrapper = $('.list-element-wrapper');
+      self.dom.listElementOuterWrapper = $('.list-element-outer-wrapper');
+    };
+
+    self.init = function() {
+      self.cacheSelectors();
+      self.setModel();
+      self.attachHandlers();
+    };
+
+    self.setModel = function() {
+      self.model = {
+        indexSelected: undefined,
+        initListHeight: undefined,
+        newContentHeight: undefined,
+        transcriptHeight: undefined,
+        nextNewElement: undefined,
+        coordsTop: undefined
+      };
+    };
+
+    self.attachHandlers = function() {
+      self.dom.viewActivity.on('click touchstart', self.getPosition);
+    };
+
+    self.cacheTranscriptSelectors = function() {
+      self.dom.transcriptVideoContainer = $('.webinar-video');
+      self.dom.transcriptWrap = self.dom.transcriptVideoContainer.find('.transcript-wrap');
+      self.dom.transcriptContainer = self.dom.transcriptVideoContainer.find('.transcript-container');
+      self.dom.transcriptButton = self.dom.transcriptContainer.find('.read-more p');
+      self.dom.topLevel.on('click', '.read-more p', self.triggerTranscriptHeight);
+    };
+
+    self.cacheAnimationBlockSelectors = function() {
+      self.dom.outerContentWrapper = $('.help-content-wrapper');
+      self.dom.newContent = $('.help-action-content');
+      self.dom.newContentSubSection = self.dom.newContent.find('.new-content-section');
+      self.dom.newContentHeader = self.dom.newContent.find('header');
+      self.dom.newContentMain = self.dom.newContent.find('.new-content-main');
+      self.dom.newContentFooter = self.dom.newContent.find('footer');
+      self.dom.doneThisNew = self.dom.newContent.find('.done-this');
+      self.dom.skipThisNew = self.dom.newContent.find('.skip-this');
+    };
+
+    self.attachAnimationHandlers = function() {
+      self.dom.doneThisNew.on('click touchstart', self.returnToList);
+      self.dom.skipThisNew.on('click touchstart', self.returnToList);
+    };
+
+    self.getPosition = function(e) {
+      e.preventDefault();
+      var element = $(this),
+        initialParent = element.parents('.list-element-wrapper'),
+        parentOuterWrapper = element.parents('.list-element-outer-wrapper'),
+        offset = initialParent.position(),
+        coordsLeft = offset.left,
+        coordsTop = offset.top;
+
+      self.model.coordsTop = coordsTop;
+
+      self.cacheAnimationBlockSelectors();
+
+      self.setCurrentNewContent();
+      self.attachAnimationHandlers();
+
+      self.model.initListHeight = self.dom.outerContentWrapper.height();
+
+      self.model.indexSelected = self.dom.listElementOuterWrapper.index(parentOuterWrapper);
+
+      initialParent.addClass('fadeOutInitContent');
+      self.dom.newContent.css({"top": coordsTop, "left": coordsLeft});
+      self.dom.newContentWrapper.css({"display": "block"});
+    };
+
+    self.setCurrentNewContent = function() {
+      self.dom.newContentWrapper = $('.help-action-content-wrapper');
+      self.model.nextNewElement = self.dom.newContentWrapper.clone();
+      self.getNewContentHeight();
+      self.animateBlock();
+    };
+
+    self.getNewContentHeight = function() {
+      self.dom.newContentWrapper.addClass('get-height');
+      var subSectionHeight = self.dom.newContentMain.outerHeight(),
+          headerHeight = self.dom.newContentHeader.outerHeight(),
+          footerHeight = self.dom.newContentFooter.outerHeight(),
+          totalHeight = subSectionHeight + headerHeight + footerHeight + 80;
+
+      self.model.newContentHeight = totalHeight;
+      self.dom.newContentWrapper.removeClass('get-height');
+    };
+
+    self.animateBlock = function() {
+      var tempHeight = self.model.newContentHeight + self.model.coordsTop;
+
+      self.animateOuterWrapper();
+      self.dom.newContentWrapper.addClass('initialize-animate');
+      self.dom.outerContentWrapper.addClass('resize');
+      self.dom.outerContentWrapper.css({"height": tempHeight});
+      self.dom.newContent.addClass('animating');
+
+      $('.animating').on('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
+        self.setNewContentHeight();
+      });
+
+      setTimeout(function(){
+        self.dom.newContent.css({"left": 0});
+      }, 400);
+
+      self.bridgeToNewContentTransition();
+
+    };
+
+    self.animateOuterWrapper = function() {
+      self.dom.outerContentWrapper.addClass('resize');
+    };
+
+    self.setNewContentHeight = function() {
+      self.dom.outerContentWrapper.css({"height": self.model.newContentHeight});
+    };
+
+    self.bridgeToNewContentTransition = function() {
+      setTimeout(function() {
+        self.removeOldContent(); //after initial animation begins.
+      }, 500);
+
+      // new state.
+      self.setNewContentState();
+    };
+
+    self.removeOldContent = function() {
+
+      self.dom.listElementOuterWrapper.fadeOut('fast');
+
+      self.animateToTop();
+    };
+
+    self.setNewContentState = function() {
+      self.dom.newContentSubSection.css({"display": "block"});
+      self.cacheTranscriptSelectors();
+
+      setTimeout(function() {
+        self.setVisibility();
+      }, 500);
+    };
+
+    self.setVisibility = function() {
+      self.dom.newContentWrapper.addClass('show');
+      setTimeout(function() {
+        self.dom.newContentSubSection.css({"opacity": 1});
+      }, 500);
+    };
+
+    self.animateToTop = function() {
+      var position = self.dom.outerContentWrapper.offset(),
+          newPositionTop = position.top - 39;
+
+      self.dom.topLevel.animate({scrollTop: newPositionTop }, 50);
+      self.dom.newContent.css({"top": 0});
+      self.dom.newContent.addClass('animateToTop');
+    };
+
+    self.returnToList = function(e) {
+      e.preventDefault();
+      var element = $(this),
+          currentListItem = self.dom.listElementOuterWrapper[self.model.indexSelected],
+          currentItemWrapper = $(currentListItem).find('.list-element-wrapper'),
+          currentButton = $(currentItemWrapper).find('.activity-action');
+
+      self.dom.newContentWrapper.hide();
+      self.dom.listElementOuterWrapper.show();
+
+      if (element.hasClass('done-this')) {
+        $(currentItemWrapper).addClass('done');
+        currentButton.text('View Activity');
+        if ($(currentItemWrapper).hasClass('skipped')) {
+          $(currentItemWrapper).removeClass('skipped');
+        }
+      }
+
+      if (element.hasClass('skip-this')) {
+        $(currentItemWrapper).addClass('skipped');
+        currentButton.text('Start This Activity');
+        if ($(currentItemWrapper).hasClass('done')) {
+          $(currentItemWrapper).removeClass('done');
+        }
+      }
+
+      if ($(currentItemWrapper).hasClass('hover')) {
+        $(currentItemWrapper).removeClass('hover');
+      }
+
+      self.dom.outerContentWrapper.css({"height": self.model.initListHeight});
+
+      self.resetAnimationClasses();
+      self.replaceNewContentWithClone();
+    };
+
+    self.resetAnimationClasses = function() {
+      self.dom.listElementWrapper.removeClass('fadeOutInitContent');
+      self.dom.outerContentWrapper.removeClass('resize');
+    };
+
+    self.replaceNewContentWithClone = function() {
+      self.dom.newContentWrapper.replaceWith(self.model.nextNewElement);
+    };
+
+    self.triggerTranscriptHeight = function(e) {
+      e.preventDefault();
+      self.transcriptAnimateHeight();
+      var heightWithTranscript = self.model.newContentHeight + self.model.transcriptHeight;
+
+      if (self.dom.transcriptContainer.hasClass('open')) {
+        self.transcriptAnimateHeight();
+        self.dom.outerContentWrapper.css({"height": heightWithTranscript});
+      } else {
+        self.dom.outerContentWrapper.css({"height": self.model.newContentHeight});
+      }
+
+    };
+
+    self.transcriptAnimateHeight = function() {
+      var transcriptHeight = $(self.dom.transcriptWrap).height();
+      self.model.transcriptHeight = transcriptHeight;
+    };
+
+    self.init();
+  };
+
+})(jQuery);
+(function($){
+
   $(document).ready(function() {
     new U.supportHeading();
   });
@@ -730,6 +1005,7 @@
   });
 
 })(jQuery);
+
 
 
 
