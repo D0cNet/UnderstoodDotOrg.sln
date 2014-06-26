@@ -785,6 +785,10 @@ namespace UnderstoodDotOrg.Common
             public static string ForumTemplateID { get { return "{F14D990C-8809-4C02-BCF7-AE6719C78CBB}"; } }
         }
 
+        public static class BlogPost
+        {
+            public static string BlogPostTemplateID { get { return "{261A659C-F4D4-4788-BC26-FD0EF5ADE168}"; } }
+        }
 
         #region Salesforce Item Id to Sitecore Guid Mapping
         /// <summary>

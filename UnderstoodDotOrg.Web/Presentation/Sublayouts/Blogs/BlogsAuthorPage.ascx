@@ -1,9 +1,16 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BlogsAuthorPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsAuthorPage" %>
-        <div id="community-page" class="community-my-blogs community-blogs-main community-blog-post-list community-blog-posts-author-specific">
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>  
+      <div id="community-page" class="community-my-blogs community-blogs-main community-blog-post-list community-blog-posts-author-specific">
     <!-- BEGIN PARTIAL: community/main_header -->
-        <sc:Placeholder ID="Placeholder1" Key="BlogHeader" runat="server" />
+      <%--  <sc:Placeholder ID="Placeholder1" Key="BlogHeader" runat="server" />--%>
     <!-- END PARTIAL: community/main_header -->
-
+                   
+        <!-- BEGIN PARTIAL: community/breadcrumb_menu -->
+<!--breadcrumb menu-->
+<a href="REPLACE" ID="hrefBackLink" runat="server" class="back-to-previous">
+  <i class="icon-arrow-left-blue"></i><asp:Literal ID="litBackLink" runat="server"></asp:Literal>
+</a>
+<!-- END PARTIAL: community/breadcrumb_menu -->
         <div class="container">
             <!-- BEGIN PARTIAL: community/blog_feature_post -->
             <sc:Placeholder ID="BlogFeaturePost" Key="Feature-Post" runat="server" />
@@ -19,36 +26,44 @@
             </div>
             <div class="col-23 blog-post-list-wrapper blog-author-posts clearfix skiplink-content" aria-role="main" aria-role="main">
                 <h2>Recent Posts</h2>
-                <div class="col blog-post-list">
+               
                   <!-- BEGIN PARTIAL: community/blog_post -->
-    <div class="blog-post">
-        <div class="blog-card-image blog-card-total-comments">
-          <a><img alt="230x129 Placeholder" src="http://placehold.it/230x129" /></a>
+                <asp:Repeater ID="rptrBlogPosts" runat="server">
+                    <HeaderTemplate> <div class="col blog-post-list"></HeaderTemplate>
+                    <ItemTemplate>
+                         <div class="blog-post">
+                            <div class="blog-card-image blog-card-total-comments">
+                              <a> <sc:Image id="BlogImg" runat="server"  Field="Blog Image"  ></sc:Image>   <%--<img alt="230x129 Placeholder" src="http://placehold.it/230x129" />--%></a>
       
-        </div>
-        <div class="blog-card-info group">
-          <h3 class="blog-card-title"><a href="REPLACE">Natus Ut Quia Sint</a></h3>
+                            </div>
+                            <div class="blog-card-info group">
+                              <h3 class="blog-card-title"><a id="hrefBlogLink" runat="server" href="REPLACE"><asp:Literal ID="litBlogPostName" runat="server"></asp:Literal></a></h3>
 
       
 
-          <p class="blog-card-post-excerpt">Veritatis Pariatur Fugiat Velit Alias Expedita Iusto Non Rerum Nulla. Odio Quos Labore Voluptas</p>
-        <span class="children-key">
-          <ul>
-            <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
-          </ul>
-        </span>
-        </div>
+                              <p class="blog-card-post-excerpt"><asp:Literal ID="litBlogExcerpt" runat="server"></asp:Literal></p>
+                            <span class="children-key">
+                              <ul>
+                                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
+                              </ul>
+                            </span>
+                            </div>
     
-        <div class="blog-post-timestamp">
-          <p class="blog-posted">Posted</p>
-          <p class="blog-timestamp-posted">1</p>
-          <p class="blog-time-units">day ago</p>
-        </div>
+                            <div class="blog-post-timestamp">
+                              <p class="blog-posted">Posted</p>
+                              <p class="blog-timestamp-posted"><asp:Literal ID="litBlogPostTime" runat="server"></asp:Literal></p>
+                              <p class="blog-time-units"><asp:Literal ID="litBlogAge" runat="server"></asp:Literal></p>
+                            </div>
     
-    </div>
+                        </div>
+
+                    </ItemTemplate>
+                    <FooterTemplate></div></FooterTemplate>
+                </asp:Repeater>
+               
     <!-- END PARTIAL: community/blog_post -->
                   <!-- BEGIN PARTIAL: community/blog_post -->
-    <div class="blog-post">
+   <%-- <div class="blog-post">
         <div class="blog-card-image blog-card-total-comments">
           <a><img alt="230x129 Placeholder" src="http://placehold.it/230x129" /></a>
       
@@ -99,9 +114,9 @@
           <p class="blog-time-units">day ago</p>
         </div>
     
-    </div>
+    </div>--%>
     <!-- END PARTIAL: community/blog_post -->
-                </div>
+                
             </div>
         </div>
 
@@ -111,7 +126,7 @@
     <div class="container show-more rs_skip">
       <div class="row">
         <div class="col col-24">
-          <a class="show-more-link " href="#" data-path="blog/recent-posts" data-container="blog-post-list" data-item="blog-list" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
+          <asp:LinkButton id="showmore" runat="server"  data-path="blog/recent-posts" data-container="blog-post-list" data-item="blog-list" data-count="2">Show More<i class="icon-arrow-down-blue"></i></asp:LinkButton>
         </div>
       </div>
     </div><!-- .show-more -->

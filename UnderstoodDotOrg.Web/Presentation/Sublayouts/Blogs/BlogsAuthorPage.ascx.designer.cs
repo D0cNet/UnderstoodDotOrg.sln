@@ -13,13 +13,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
     public partial class BlogsAuthorPage {
         
         /// <summary>
-        /// Placeholder1 control.
+        /// hrefBackLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder1;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor hrefBackLink;
+        
+        /// <summary>
+        /// litBackLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litBackLink;
         
         /// <summary>
         /// BlogFeaturePost control.
@@ -47,5 +56,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer FieldRenderer2;
+        
+        /// <summary>
+        /// rptrBlogPosts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptrBlogPosts;
+        
+        /// <summary>
+        /// showmore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton showmore;
     }
 }

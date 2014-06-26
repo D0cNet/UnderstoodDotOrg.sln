@@ -44,8 +44,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         
         protected void lbtnFollow_Click(object sender, EventArgs e)
         {
-
-            //this.ProfileRedirect(Constants.UserPermission.CommunityUser);
+            this.ProfileRedirect(Constants.UserPermission.CommunityUser);
 
             if (Type.Equals(UnderstoodDotOrg.Common.Constants.TelligentContentType.BlogPost))
             {

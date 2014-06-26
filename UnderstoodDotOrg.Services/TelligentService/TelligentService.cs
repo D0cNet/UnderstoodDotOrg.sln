@@ -17,11 +17,12 @@ using System.Collections.Specialized;
 using UnderstoodDotOrg.Domain.Membership;
 using System.Web.Security;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 namespace UnderstoodDotOrg.Services.TelligentService
 {
     public class TelligentService
     {
-        private static string GetApiEndPoint(string path)
+        internal static string GetApiEndPoint(string path)
         {
             // Normalize path
             if (path.StartsWith("/"))
@@ -1716,7 +1717,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
             return stat;
         }
-
+       
+        
     }
 
 }
