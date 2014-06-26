@@ -132,9 +132,9 @@
             <sc:sublayout id="slKeepReading" runat="server" path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" />
             <!-- END PARTIAL: keep-reading -->
             <!-- BEGIN PARTIAL: comments-summary -->
-            <section class="comments-summary">
+
                 <sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/CommentsSummary.ascx" />
-            </section>
+
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
             <div class="sidebar-promos rs_read_this vertical">

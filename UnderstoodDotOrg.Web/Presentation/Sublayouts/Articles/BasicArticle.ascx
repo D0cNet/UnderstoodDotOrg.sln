@@ -135,9 +135,7 @@
             <!-- BEGIN PARTIAL: comments-summary -->
             
             
-            <section class="comments-summary">
                <sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/CommentsSummary.ascx" />
-             </section>
 
 
             <!-- END PARTIAL: comments-summary -->

@@ -141,9 +141,9 @@
             </div>
             <!-- END PARTIAL: keep-reading-lg -->
             <!-- BEGIN PARTIAL: comments-summary -->
-            <section class="comments-summary">
+            
                 <sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/CommentsSummary.ascx" />
-            </section>
+            
             <!-- END PARTIAL: comments-summary -->
             <!-- BEGIN PARTIAL: sidebar-promos -->
             <div class="sidebar-promos rs_read_this vertical">

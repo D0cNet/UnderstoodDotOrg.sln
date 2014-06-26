@@ -22,13 +22,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.Literal litCommentCount;
         
         /// <summary>
-        /// CommentRepeater control.
+        /// commentsControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater CommentRepeater;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Comments.Entries commentsControl;
+        
+        /// <summary>
+        /// pnlShowMore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlShowMore;
         
         /// <summary>
         /// txtComment control.

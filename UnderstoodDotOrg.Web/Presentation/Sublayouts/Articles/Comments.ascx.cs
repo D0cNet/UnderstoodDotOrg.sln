@@ -19,6 +19,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
     public partial class Comments : BaseSublayout
     {
+        protected string BlogId
+        {
+            get { return _blogId.ToString(); }
+        }
+        protected string BlogPostId
+        {
+            get { return _blogPostId.ToString(); }
+        }
+        protected string AjaxPath
+        {
+            get { return Sitecore.Configuration.Settings.GetSetting(Constants.Settings.CommentsListEndpoint); }
+        }
+
         private int _blogId = 0;
         private int _blogPostId = 0;
 
@@ -31,42 +44,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             Item currentItem = Sitecore.Context.Item;
 
-            // Check to make sure the sitecore item has telligent fields populated
-            // If not, populate them
-            if (currentItem["BlogId"] == string.Empty || currentItem["ContentId"] == string.Empty
-                || currentItem["ContentTypeId"] == string.Empty || currentItem["TelligentUrl"] == string.Empty)
-            {
-                if ((currentItem.InheritsFromType(DefaultArticlePageItem.TemplateId)
-                    || currentItem.InheritsTemplate(BehaviorAdvicePageItem.TemplateId))
-                    && currentItem.Name != "__StandardValues")
-                {
-                    if (currentItem["BlogId"] == string.Empty)
-                    {
-                        PopulateTelligentFields(currentItem, 4, currentItem.Name); //blog id should be 4
-                    }
-                }
-                else if (currentItem.InheritsFromType(BlogsPostPageItem.TemplateId) && currentItem.Name != "__StandardValues")
-                {
-                    if (currentItem["BlogId"] == string.Empty)
-                    {
-                        switch (currentItem.Parent.ID.ToString())
-                        {
-                            case "{37478172-CCDF-454E-BABA-D56096EBE8F9}":
-                                PopulateTelligentFields(currentItem, 1, currentItem.Name); //blog id should be 1
-                                break;
-                            case "{23DC4EBA-B296-46A7-AC68-D813C9931AF0}":
-                                PopulateTelligentFields(currentItem, 2, currentItem.Name); //blog id should be 2
-                                break;
-                            case "{A720AAA9-8AC8-4851-A873-0E0F158C61BD}":
-                                PopulateTelligentFields(currentItem, 3, currentItem.Name); //blog id should be 3
-                                break;
-                            default:
-                                return;
-                        }
-                    }
-                }
-            }
-
             // TODO: refactor so pages all inherit a shared template item type
             var fieldBlogId = currentItem.Fields[Constants.TelligentFieldNames.BlogId];
             var fieldBlogPostId = currentItem.Fields[Constants.TelligentFieldNames.BlogPostId];
@@ -74,6 +51,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             if (fieldBlogId == null || fieldBlogPostId == null)
             {
+                LogMissingCommentFields();
                 this.Visible = false;
                 return;
             }
@@ -83,24 +61,38 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             if (String.IsNullOrEmpty(blogId) || String.IsNullOrEmpty(blogPostId))
             {
-                // TODO: hide entire control or elements 
+                LogMissingCommentFields();
                 this.Visible = false;
                 return;
             }
 
             if (Int32.TryParse(blogId, out _blogId) && Int32.TryParse(blogPostId, out _blogPostId))
             {
-                PopulateComments();
+                if (!IsPostBack)
+                {
+                    PopulateComments();
+                }
             }
+        }
+
+        private void LogMissingCommentFields()
+        {
+            Sitecore.Diagnostics.Log.Info(
+                    String.Format("Item missing blog/blogpost values for comments, {0}", Sitecore.Context.Item.ID), this);
         }
 
         private void PopulateComments()
         {
-            List<Comment> dataSource = CommunityHelper.ReadComments(_blogId.ToString(), _blogPostId.ToString());
-            CommentRepeater.DataSource = dataSource;
-            CommentRepeater.DataBind();
+            bool hasMoreResults;
+            int totalComments;
 
-            litCommentCount.Text = CommunityHelper.GetTotalComments(_blogId.ToString(), _blogPostId.ToString()).ToString();
+            List<Comment> dataSource = CommunityHelper.ReadComments(
+                _blogId.ToString(), _blogPostId.ToString(), 1, Constants.ARTICLE_COMMENTS_PER_PAGE, "CreatedUtcDate", true, out totalComments, out hasMoreResults);
+            commentsControl.Comments = dataSource;
+
+            pnlShowMore.Visible = hasMoreResults;
+
+            litCommentCount.Text = totalComments.ToString();
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
@@ -111,20 +103,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 return;
             }
 
-            string body = txtComment.Text;
-            string user = "";
-            try
+
+            if (CurrentMember.ScreenName.IsNullOrEmpty())
             {
-                if (!this.CurrentMember.ScreenName.IsNullOrEmpty())
-                {
-                    user = this.CurrentMember.ScreenName;
-                }
+                Sitecore.Diagnostics.Log.Error(
+                    String.Format("Member has empty screen name, member id: {0}", CurrentMember.MemberId), this);
             }
-            catch
-            {
-                user = "admin";
-            }
-            CommunityHelper.PostComment(_blogId, _blogPostId, body, user);
+
+            CommunityHelper.PostComment(_blogId, _blogPostId, txtComment.Text.Trim(), CurrentMember.ScreenName);
 
             Response.Redirect(Request.RawUrl);
         }
@@ -137,7 +123,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 return;
             }
 
-            LinkButton btn = (LinkButton)(sender);
+            LinkButton btn = (LinkButton)sender;
             string id = btn.CommandArgument;
 
             using (var webClient = new WebClient())
@@ -164,8 +150,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void LikeButton_Click(object sender, EventArgs e)
         {
-            var obj = sender as LinkButton;
-
             if (!IsUserLoggedIn)
             {
                 // TODO: redirect
@@ -193,8 +177,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                     var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
 
-                    Console.WriteLine(xml);
-                    Response.Redirect(Request.RawUrl + "#" + obj.ClientID);
+                    Response.Redirect(Request.RawUrl);
                 }
                 catch { } // TODO: add loggin
             }

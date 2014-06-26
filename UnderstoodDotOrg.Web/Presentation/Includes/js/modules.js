@@ -1943,20 +1943,27 @@ jQuery(document).ready(function () {
 
     // cache comments summary text container
     var commentsSummary = jQuery('.comments-summary blockquote > p');
+    var readMoreLabel = commentsSummary.parent().data('read-more');
     //limit text to 100 characters.
-    CommentsSummaryTextLimit(commentsSummary, 100);
+    CommentsSummaryTextLimit(commentsSummary, 100, readMoreLabel);
 
 }); //end document ready
 
 /*
  * Limits the number of characters in a field
  */
-function CommentsSummaryTextLimit(limitField, limitNum) {
-    if (limitField.text().length > limitNum) {
-        limitField.html(limitField.text().substring(0, limitNum) + ' &hellip; <a href="REPLACE">Read more</a>');
-    }
-}
-;
+function CommentsSummaryTextLimit(limitField, limitNum, readMoreLabel) {
+    (function (fullValue) {
+        if (limitField.text().length > limitNum) {
+            limitField.html(limitField.text().substring(0, limitNum) + ' &hellip; <a href="#">' + readMoreLabel + '</a>');
+        }
+
+        limitField.find("a").on("click", function (e) {
+            e.preventDefault();
+            limitField.html(fullValue);
+        });
+    })(limitField.text());
+};
 /**
  * Definition for the shareSave javascript module.
  */

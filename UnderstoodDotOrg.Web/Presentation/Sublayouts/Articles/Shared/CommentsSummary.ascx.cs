@@ -10,76 +10,85 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using Sitecore.Links;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
+
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
     public partial class CommentsSummary : System.Web.UI.UserControl
     {
-        BasicArticlePageItem ObjBasicArticle;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Item currItem = Sitecore.Context.Item;
-            if (currItem != null)
+            BasicArticlePageItem article = new BasicArticlePageItem(Sitecore.Context.Item);
+
+            Comment recentComment = null;
+
+            if (String.IsNullOrEmpty(article.DefaultArticlePage.BlogId.Raw)
+                || String.IsNullOrEmpty(article.DefaultArticlePage.BlogPostId.Raw))
             {
-                ObjBasicArticle = new BasicArticlePageItem(currItem);
-                int numComments = 0;
-                Comment recentComment=null;
-                if (String.IsNullOrEmpty(ObjBasicArticle.DefaultArticlePage.BlogId.Raw)
-                    || String.IsNullOrEmpty(ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw))
-                {
-                    this.Visible = false;
-                    return;
-                }
-
-                try
-                {
-                    //Retrieve ovveride ID from field of current item
-                    string commentId=ObjBasicArticle.DefaultArticlePage.CommentTeaserOverrideID.Text;
-                    recentComment = CommunityHelper.ReadComment(commentId);
-                    //no override id?
-                    if (recentComment==null)
-                    {
-                        List<Comment> comments = CommunityHelper.ReadComments(
-                            ObjBasicArticle.DefaultArticlePage.BlogId.Raw,
-                            ObjBasicArticle.DefaultArticlePage.BlogPostId.Raw);
-
-                        if (comments != null)
-                        {
-                            numComments = comments.Count();
-                            if (numComments >= 2)
-                            {
-                                litNumComments.Text = "(" + numComments + ")";
-                            }
-
-                            recentComment = comments.OrderByDescending(x => x.CommentDate).First();
-                        }
-                        else
-                        {
-                            this.Visible = false;
-                        }
-                        
-                    }
-                    if (recentComment != null)
-                    {
-                        litCommentblurb.Text = CommunityHelper.FormatString100(recentComment.Body);// Take(100).ToString();
-                        litCommentblurb.Text = litCommentblurb.Text + "..." + "<a href='#" + recentComment.CommentId + "'> Read more </a>";
-                        litAuthorName.Text = recentComment.AuthorDisplayName;
-                        litTimeStamp.Text = recentComment.PublishedDate;
-                    }
-                    else
-                        this.Visible = false;
-
-                }
-                catch (Exception ex)
-                {
-                    this.Visible = false;
-                    Sitecore.Diagnostics.Log.Error(ex.Message, GetType());
-                }
-
-                hlAllComments.HRef = LinkManager.GetItemUrl(currItem)+ "#comment-list"; //Navigate to top of comment section
-                hlAllComments.InnerText = "See All Comments";
-                hlAddMyComment.HRef = LinkManager.GetItemUrl(currItem) + "#comment-submit"; 
-                hlAddMyComment.InnerText = "Add My Comment";
+                this.Visible = false;
+                return;
             }
+
+            try
+            {
+                //Retrieve ovveride ID from field of current item
+                string commentId = article.DefaultArticlePage.CommentTeaserOverrideID.Text;
+                if (!string.IsNullOrEmpty(commentId))
+                {
+                    recentComment = CommunityHelper.ReadComment(commentId);
+                }
+                
+                int totalComments;
+                bool hasMoreResults;
+
+                if (recentComment == null)
+                {
+                    List<Comment> comments = CommunityHelper.ReadComments(
+                        article.DefaultArticlePage.BlogId.Raw,
+                        article.DefaultArticlePage.BlogPostId.Raw,
+                        1,
+                        1,
+                        "CreatedUtcDate", // TODO: constant
+                        false,
+                        out totalComments,
+                        out hasMoreResults);
+
+                    if (comments.Any())
+                    {
+                        if (totalComments >= 2)
+                        {
+                            litNumComments.Text = String.Format("{0} ({1})", DictionaryConstants.CommentsLabel, totalComments);
+                        }
+
+                        recentComment = comments.First();
+                    }
+                }
+
+                if (recentComment != null)
+                {
+                    litCommentblurb.Text = recentComment.Body;
+                    litAuthorName.Text = recentComment.AuthorDisplayName;
+                    litTimeStamp.Text = recentComment.PublishedDate;
+                }
+                else
+                {
+                    this.Visible = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                this.Visible = false;
+                Sitecore.Diagnostics.Log.Error(ex.Message, GetType());
+            }
+
+            string url = Sitecore.Context.Item.GetUrl();
+
+            hlAllComments.HRef = url + "#comment-list"; //Navigate to top of comment section
+            hlAllComments.InnerText = "See All Comments";
+            hlAddMyComment.HRef = url + "#comment-submit";
+            hlAddMyComment.InnerText = "Add My Comment";
         }
     }
 }

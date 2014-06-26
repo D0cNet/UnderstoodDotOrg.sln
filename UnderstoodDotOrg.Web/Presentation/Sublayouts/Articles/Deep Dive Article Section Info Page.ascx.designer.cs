@@ -11,14 +11,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     
     
     public partial class Deep_Dive_Article_Section_Info_Page {
-        
-        /// <summary>
-        /// sbCommentsSummary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout sbCommentsSummary;
     }
 }

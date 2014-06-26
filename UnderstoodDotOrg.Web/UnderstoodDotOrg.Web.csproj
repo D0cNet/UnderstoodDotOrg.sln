@@ -168,6 +168,13 @@
     <Compile Include="Presentation\AjaxData\AssistiveTechResults.aspx.designer.cs">
       <DependentUpon>AssistiveTechResults.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\AjaxData\Comments.aspx.cs">
+      <DependentUpon>Comments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\Comments.aspx.designer.cs">
+      <DependentUpon>Comments.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\AjaxData\ExpertListing.aspx.cs">
       <DependentUpon>ExpertListing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -734,6 +741,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx.designer.cs">
       <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Comments\Entries.ascx.cs">
+      <DependentUpon>Entries.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Comments\Entries.ascx.designer.cs">
+      <DependentUpon>Entries.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\ConnectButton.ascx.cs">
       <DependentUpon>ConnectButton.ascx</DependentUpon>
@@ -2073,6 +2087,7 @@
     <Content Include="Handlers\SearchResultsService.asmx" />
     <Content Include="Presentation\AjaxData\ArchiveEvents.aspx" />
     <Content Include="Presentation\AjaxData\AssistiveTechResults.aspx" />
+    <Content Include="Presentation\AjaxData\Comments.aspx" />
     <Content Include="Presentation\AjaxData\ExpertListing.aspx" />
     <Content Include="Presentation\AjaxData\SubtopicArticles.aspx" />
     <Content Include="Presentation\AjaxData\TopicLandingArticles.aspx" />
@@ -2728,6 +2743,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Comments\Entries.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ConnectButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\FollowButton.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\SortBlogsRecent.ascx" />

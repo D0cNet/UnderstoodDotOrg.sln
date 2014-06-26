@@ -464,3 +464,59 @@ $(document).ready(function () {
         return this;
     };
 })(jQuery);
+
+// Comments
+(function ($) {
+    var currentPage = 1;
+	var inProgress = false;
+	var $container, $showMoreContainer, path, blog, post;
+	
+	function init() {
+		var $trigger = $("#show-more-comments");
+		if ($trigger.length > 0) {
+			path = $trigger.data('path');
+			blog = $trigger.data('blog');
+			post = $trigger.data('post');
+			$container = $("#" + $trigger.data('container'));
+			$showMoreContainer = $trigger.closest(".show-more");
+			
+			$trigger.on("click", showMore_clickHandler);
+		}
+	}
+	
+	function showMore_clickHandler(e) {
+		e.preventDefault();
+		
+		if (inProgress) {
+			return;
+		}
+		
+		inProgress = true;
+
+        $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
+		
+		var data = {
+            'page': currentPage + 1,
+			'blog': blog,
+			'post': post,
+			'sortBy': '',
+			'ascending': 1
+		};
+		
+		$.ajax({
+			url: path,
+			data: data,
+			method: 'GET'
+		}).done(function (data) {
+			currentPage++;
+            if ($(data).filter('input[type="hidden"]').length == 0) {
+				$showMoreContainer.hide();
+			}
+			$container.append(data);
+        }).always(function () {
+			inProgress = false;
+		});
+	}
+	
+	$(document).ready(init);
+})(jQuery);

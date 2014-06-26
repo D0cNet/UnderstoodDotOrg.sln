@@ -22,6 +22,7 @@ namespace UnderstoodDotOrg.Common
         public const int FEATURED_TOPIC_GALLERY_ENTRIES = 4;
         public const int SUBTOPIC_WIDGETS_ENTRIES = 3;
         public const int MORE_LIKE_THIS_ENTRIES = 6;
+        public const int ARTICLE_COMMENTS_PER_PAGE = 5;
 
         #region Query Strings
 
@@ -738,6 +739,7 @@ namespace UnderstoodDotOrg.Common
             public static string GradeLevelOnMultiplier = "GradeLevelOnMultiplier";
             public static string GradeLevelOffMultiplier = "GradeLevelOffMultiplier";
             public static string GradeLevelTargetMultiplier = "GradeLevelTargetMultiplier";
+            public static string CommentsListEndpoint = "CommentsListEndpoint";
         }
 
         public static class ContentItem
