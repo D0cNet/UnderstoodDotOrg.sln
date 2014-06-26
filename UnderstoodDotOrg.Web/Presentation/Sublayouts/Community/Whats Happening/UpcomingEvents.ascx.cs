@@ -44,12 +44,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 
                 // Expert details
                 ExpertDetailPageItem expert = item.Expert.Item;
-                frExpertName.Item = /*frExpertSubheading.Item = */expert;
 
                 if (expert != null)
                 {
                     imgExpert.ImageUrl = expert.GetThumbnailUrl(150, 150);
                     //litExpertType.Text = expert.GetExpertType();
+                    frExpertName.Item = /*frExpertSubheading.Item = */expert;
                 }
             }
         }
