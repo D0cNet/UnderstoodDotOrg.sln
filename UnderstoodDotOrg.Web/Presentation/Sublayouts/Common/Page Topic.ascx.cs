@@ -53,23 +53,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 }
             }
 
-            // TODO: refactor to handle folder parent items
-            ContentPageItem parent = Sitecore.Context.Item.Parent;
-            if (parent == null 
-                || parent.InnerItem.IsOfType(FolderItem.TemplateId))
+            //UNAO-434 - refactored to recursively go up the tree until it finds something to navigate back to
+            this.SetBreadcrumb(Sitecore.Context.Item.Parent);
+        }
+
+        private void SetBreadcrumb(BasePageNEWItem item)
+        {
+            if (!string.IsNullOrEmpty(item.NavigationTitle.Text) )
             {
-                hlSectionTitle.Visible = false;
+                frSectionTitle.Item = item;
+                hlSectionTitle.NavigateUrl = item.GetUrl();
+
+                return;
             }
             else
             {
-                //UNAO-434 - this is a haaaaaack and needs refactoring
-                if (parent.InnerItem.Fields["Navigation Title"] == null)
-                {
-                    parent = parent.InnerItem.Parent;
-                }
-
-                frSectionTitle.Item = parent;
-                hlSectionTitle.NavigateUrl = parent.GetUrl();
+                this.SetBreadcrumb(item.InnerItem.Parent);
             }
         }
 
