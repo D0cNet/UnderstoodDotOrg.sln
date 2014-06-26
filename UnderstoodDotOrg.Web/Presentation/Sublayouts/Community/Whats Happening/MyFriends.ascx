@@ -30,10 +30,9 @@
                     <div class="rs_read_this col member-card">
                         <div class="member-card-info group">
                             <div class="member-card-image">
-                                <a href="REPLACE">
-                                    <img alt="150x150 Placeholder" src="<%# Item.AvatarUrl %>" />
-
-                                </a>
+                                <%--<asp:HyperLink ID="hypUserAvatar" CssClass="name-member" runat="server">--%>
+                                    <asp:Image ID="imgUserAvatar" AlternateText="150x150 Placeholder" ImageUrl="<%# Item.AvatarUrl %>" runat="server" />
+                                <%--</asp:HyperLink>--%>
                             </div>
                             <!-- end .member-card-image -->
                             <div class="member-card-name hyphenate member">

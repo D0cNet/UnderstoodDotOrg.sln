@@ -13,6 +13,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     public partial class MyConnections {
         
         /// <summary>
+        /// ltFriendCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ltFriendCount;
+        
+        /// <summary>
+        /// rptFriends control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptFriends;
+        
+        /// <summary>
         /// hypConnectionsTab control.
         /// </summary>
         /// <remarks>
