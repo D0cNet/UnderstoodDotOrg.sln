@@ -97,13 +97,13 @@
             </div>
 
             <div class="sign-up-newsletter">
-                <label for="email-checkbox">
+                <asp:Label runat="server" AssociatedControlID="uxNewsletterSignup">
                     <%--<input type="checkbox" id="email-checkbox" checked>--%>
                     <asp:CheckBox runat="server" ID="uxNewsletterSignup" Checked="true" />
                     <span><%--Yes, send me my email newsletter, customized for me and my family.--%>
                         <sc:text id="newsletterDescription" runat="server" field="Newsletter Description" />
                     </span>
-                </label>
+                </asp:Label>
 
                 <p>
                     <%--By signing up for Understood.org I acknowledge that I reside in the United States and am at least 13 years old.--%>
