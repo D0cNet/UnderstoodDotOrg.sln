@@ -33,7 +33,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
 
             //bool washelpful = log.FoundItemHelpful(ContentId, MemberId);
             int likeCount = log.GetActivityCountByValue(new Guid(blogCig.ContentId.Raw), Constants.UserActivity_Values.FoundHelpful_True);
-            string commentCount = CommunityHelper.ReadComments(blogCig.BlogId, blogCig.BlogPostId).Count.ToString();
+            string commentCount = CommunityHelper.GetTotalComments(blogCig.BlogId, blogCig.BlogPostId).ToString();
 
             //to get if the content was NOT helpful
             //bool wasNOThelpful = log.FoundItemNotHelpful(ContentId, MemberId);
