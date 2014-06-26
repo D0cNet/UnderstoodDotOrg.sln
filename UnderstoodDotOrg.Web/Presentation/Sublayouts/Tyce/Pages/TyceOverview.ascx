@@ -17,7 +17,7 @@
 <div class="container tyce-on-demand">
     <div class="row">
         <div class="col col-22 offset-1">
-            <h2><%= Model.TyceBasePage.ContentPage.SectionTitle.Rendered %></h2>
+            <h2>On-Demand</h2>
             <%= Model.TyceBasePage.ContentPage.BodyContent.Rendered %>
         </div>
     </div>

@@ -36,7 +36,8 @@
             <div class="module">
                 <h2>Explore More</h2>
                 <p>Explore the issues you've just seen...</p>
-                <asp:Repeater ID="rptrIssuesSeen" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.ChildLearningIssueItem">
+                <asp:Repeater ID="rptrIssuesSeen" runat="server" 
+                    ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components.ChildLearningIssueItem">
                     <ItemTemplate>
                         <p class="link">
                             <a href="REPLACE">Learn About <%# Item.ChildDemographic.NavigationTitle.Rendered %></a>

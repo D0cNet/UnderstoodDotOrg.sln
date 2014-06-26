@@ -142,3 +142,8 @@
   </blockquote>
 </div>
 <!-- END PARTIAL: glossary-term -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("html").addClass("tyce");
+    });
+</script>

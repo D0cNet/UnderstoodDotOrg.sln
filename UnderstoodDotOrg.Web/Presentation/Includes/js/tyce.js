@@ -142,8 +142,6 @@ $(document).ready(function () {
         el: '#tyce-step-1'
     });
 
-    $("html").addClass("tyce");
-
     var $tyceStepOne = $("#tyce-step-1");
     var $tyceStepTwo = $("#tyce-step-2");
 
