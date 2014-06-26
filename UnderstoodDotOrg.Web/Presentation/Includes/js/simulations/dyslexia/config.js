@@ -1,14 +1,24 @@
 (function() {
     //Reminder: the last element can't have a comma at the end!
     DyslexiaGameConfig = {
-        timeInSeconds: 90,
+        timeInSeconds: 75,
         introDurationInSeconds: 0, //0=open until closed
         introText: [
-            'Some letters, letter pairs and whole words have been mixed up.\nUsing the key, click what\'s wrong to make it right.\n\nFix all the sentences before time runs out.'
+            'We\'ve switched some letters. Click to swap them back. Ready?'
         ].join("\n"),
-        finalText: [
-            'Time\'s up!',
-        ].join("\n"),
+        finalText: {
+            onComplete: {
+                en: 'Well done--you beat the clock!'
+            },
+            onTimeout: {
+                en: [
+                    'Time\'s up!'
+                ].join("\n")
+            }
+        },
+        title: {
+            en: 'Scrambled Letters'
+        },
         display: {
             letterStates: {
                 unknown: {
@@ -32,35 +42,27 @@
             sentenceDoneFadeDuration: 800,
             sentenceDonePauseDuration: 400
         },
-        //CAREFUL OF TRAINING COMMAS!!!
+        ignoredLetters: ['i', 'o', 'h'],
+        //CAREFUL OF TRAILING COMMAS!!!
         sentences: [
-            //Level 1
+            //Batch 1
             [{
                 text: 'I have a dog and his name is Mutt.',
                 rules: {
-                    b: 'd',
-                    w: 'm',
-                    n: 'u',
-                    e: 'a',
-                    q: 'g'
-                }
+                    e: 'a'
+            }
             }, {
                 text: 'My young son has been waiting.',
                 rules: {
-                    u: 'ou',
-                    w: 'm',
-                    q: 'g',
-                    e: 'a'
-                }
-            }],
-            //Level 2
-            [{
-                text: 'Pass the butter please.',
-                rules: {                
-                    n: 'u',
-                    ees: 'ease',                
-                    b: 'p',
-                    l: 't'
+                    e: 'a',
+                    w: 'm'                }
+            }, {
+                text: 'Will you pass the butter, please?',
+                rules: {
+                    u: 'n',
+                    ease: 'ees',
+                    p: 'b',
+                    t: 'l'
                 }
             }, {
                 text: 'Where did you put my funny picture?',
@@ -70,84 +72,131 @@
                     were: 'where',
                     b: 'd'
                 }
+            }, {
+                text: 'Go through the second door from the right.',
+                rules: {
+                    u: 'ou',
+                    for: 'from',
+                    f: 'gh',
+                    b: 'd'
+                }
+            }, {
+                text: 'We’ll play in the middle with Maggie.',
+                rules: {
+                    m: 'w',
+                    i: 'l',
+                    b: 'p',
+                    q: 'g'
+                }
             }],
-            //Level 3
+//Batch 2
             [{
-                text: 'Go through the fourth door from the right.',
+                text: 'The boy was one of five sons.',
                 rules: {
-                    u: 'ou',
-                    for: 'from',
-                    f: 'gh',
+                    a: 'o'
+            }
+            }, {
+                text: 'My mom is the best and my dad is too.',
+                rules: {
+                    w: 'm',
+                    a: 'e'                }
+            }, {
+                text: 'My big girl is getting her gold star.',
+                rules: {
+                    q: 'g',
+                    her: 'his',
+                    l: 't',
+                    d: 'b'
+                }
+            }
+            ],
+           //Batch 3
+            [{
+                text: 'The boy had two big dogs.',
+                rules: {
+                    a: 'o'
+            }
+            }, {
+                text: 'She plays well with her sister.',
+                rules: {
+                    z: 's',
+                    o: 'e'                }
+            }, {
+                text: 'Did you pass the cheese?',
+                rules: {
+                    i: 't',
+                    e: 'a',
+                    b: 'p',
+                    u: 'ou'
+                }
+            }, {
+                text: 'That was a very special day for me.',
+                rules: {
+                    from: 'for',
+                    is: 'was',
+                    e: 'a'
+                }
+            }, {
+                text: 'How did you make the cake so good?',
+                rules: {
+                    o: 'a',
+                    h: 'k',
                     b: 'd'
                 }
-              }, {
-                text: 'We’ll play in the middle with Maggie.',
+            }, {
+                text: 'Two happy pups played in the park today.',
                 rules: {
-                    m: 'w',
-                    i: 'l', 
-                    b: 'p',                
-                    q: 'g'
+                    b: 'p',
+                    t: 'l',
+                    too: 'two',
+                    g: 'y'
                 }
-            }]
- ,
-            //Level 4
+            }],
+ //Batch 4
             [{
-                text: 'Go through the fourth door from the right.',
+                text: 'He saw a big brown bear.',
                 rules: {
-                    u: 'ou',
-                    for: 'from',
-                    f: 'gh',
-                    b: 'd'
+                    e: 'a'
+            }
+            }, {
+                text: 'This is Phil’s sunny phase.',
+                rules: {
+                    n: 'u',
+                    l: 'i'                }
+            }, {
+                text: 'Where in the world is she now?',
+                rules: {
+                    a: 'o',
+                    the: 'then',
+                    is: 'as',
+                    w: 'm'
                 }
-              }, {
-                text: 'We’ll play in the middle with Maggie.',
+            }, {
+                text: 'We thought the day would be wet.',
                 rules: {
-                    m: 'w',
-                    i: 'l', 
-                    b: 'p',                
-                    q: 'g'
+                    o: 'ou',
+                    i: 't',
+                    ld: 'd',
+                    m: 'w'
                 }
-            }]
- ,
-            //Level 5
-            [{
-                text: 'Go through the fourth door from the right.',
+            }, {
+                text: 'It was in the middle of the night.',
                 rules: {
-                    u: 'ou',
-                    for: 'from',
-                    f: 'gh',
-                    b: 'd'
+                    t: 'i',
+                    p: 'd',
+                    for: 'of',
+                    b: 'h'
                 }
-              }, {
-                text: 'We’ll play in the middle with Maggie.',
+            }, {
+                text: 'I really like the color blue best of all.',
                 rules: {
-                    m: 'w',
-                    i: 'l', 
-                    b: 'p',                
-                    q: 'g'
-                }
-            }]
- ,
-            //Level 6
-            [{
-                text: 'Go through the fourth door from the right.',
-                rules: {
-                    u: 'ou',
-                    for: 'from',
-                    f: 'gh',
-                    b: 'd'
-                }
-              }, {
-                text: 'We’ll play in the middle with Maggie.',
-                rules: {
-                    m: 'w',
-                    i: 'l', 
-                    b: 'p',                
-                    q: 'g'
+                    t: 'l',
+                    p: 'b',
+                    o: 'e'
                 }
             }]
         ]
     };
 })();
-                                                                                                                
                 
+                                                                

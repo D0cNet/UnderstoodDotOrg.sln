@@ -202,6 +202,9 @@
     <Compile Include="Search\SearchHelper.cs" />
     <Compile Include="Search\JSON\ResultSet.cs" />
     <Compile Include="Search\SessionSearchResult.cs" />
+    <Compile Include="SitecoreCIG\Brightcove\BrightcoveMediaElementItem.base.cs" />
+    <Compile Include="SitecoreCIG\Brightcove\BrightcoveVideoItem.base.cs" />
+    <Compile Include="SitecoreCIG\Common\MediaElementItem.base.cs" />
     <Compile Include="SitecoreCIG\FolderItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.instance.cs" />

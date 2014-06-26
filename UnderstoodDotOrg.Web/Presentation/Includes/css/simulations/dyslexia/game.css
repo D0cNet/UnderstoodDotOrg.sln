@@ -140,3 +140,8 @@
   height: 52px;
   background: url("../../../images/simulations/dyslexia/desktop/thumbs_down.png") no-repeat;
 }
+
+/* line 116, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+#gameboard.breakpoint_phone .response {
+  margin: 0 3px;
+}

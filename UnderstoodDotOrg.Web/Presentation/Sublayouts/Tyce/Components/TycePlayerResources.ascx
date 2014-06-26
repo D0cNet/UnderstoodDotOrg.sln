@@ -31,14 +31,14 @@
 </div>
 <!-- /.modal -->
 
-<%--<div class="modal fade modal-standard modal-end" id="tyce-modal-begin" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade modal-standard modal-end" id="tyce-modal-begin" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
                 <h2>You're Done!</h2>
                 <p>You're done!</p>
                 <div class="actions">
-                    <a href="REPLACE" class="button button-close">Go Somewhere</a>
+                    <a href="#" class="button button-close">Go Somewhere</a>
                 </div>
             </div>
             <!-- /.modal-body -->
@@ -47,7 +47,8 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->--%>
+<!-- /.modal -->
+
 
 <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
 <script type="text/javascript" src="http://admin.brightcove.com/js/api/SmartPlayerAPI.js"></script>
@@ -55,22 +56,37 @@
 <script type="text/javascript">
 
     // config for experience
-    experienceConfig = {
+    var experienceConfig = {
         isPersonalized: true,
         start: 0,
         steps: [
-          //{ type: 'video', init: '3203925031001' },
-          //{ type: 'sim' },
-          //{ type: 'video', init: '3203925030001' }
-          <% if (IssueItem != null) { %>
-
-          { type: 'video', init: '3203925031001' },
-          { type: 'sim' },
-          { type: 'video', init: '3203925031001' }
-          <% } %>
+          {
+              type: 'video',
+              vid: {
+                  'default': '<%= IntroductionVideo.WithoutSubtitlesVideoId %>',
+                  'hardcoded': '<%= IntroductionVideo.WithSubtitlesVideoId %>'
+              }
+          },
+          {
+              type: 'sim'
+          },
+          {
+              type: 'video',
+              vid: {
+                  'default': '<%= ExpertSummaryVideo.WithoutSubtitlesVideoId %>',
+                  'hardcoded': '<%= ExpertSummaryVideo.WithSubtitlesVideoId %>'
+              }
+          },
+          {
+              type: 'video',
+              vid: {
+                  'default': '<%= ChildStoryVideo.WithoutSubtitlesVideoId %>',
+                  'hardcoded': '<%= ChildStoryVideo.WithSubtitlesVideoId %>'
+              }
+          }
         ],
         next: '<%= NextPagePath %>'
-    }
+    };
 
     // on dom ready init the experience
     $(function () {

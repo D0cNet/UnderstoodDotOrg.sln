@@ -8,8 +8,8 @@
         currPrompt: null,
         inputUI: null,
         timer: null,
+        initialTweaks: null,
         initialTweakCounter: 0,
-        initialTweakMade: false,
         init: function() {
             this._super('DysgraphiaGame', null);
         },
@@ -17,7 +17,7 @@
             this._super();
             var intro = new SSGameModal({
                 showDuration: this.config.introDurationInSeconds * 1000,
-                title: 'Dysgraphia',
+                title: this.getText(this.config.title),
                 text: SSGameModal.textToParagraphs(this.config.introText),
                 onClose: $.proxy(this.start, this)
             });
@@ -27,11 +27,10 @@
             }]);
             intro.open();
             this.currPromptIdx = -1;
-            this.initialTweakCounter = 0;
-            this.initialTweakMade = false;
             this.nodes.prompt.text('');
             this.success.reset();
             this.timer.reset();
+            this.inputUI.clear();
         },
         draw: function() {
             this._super({
@@ -44,6 +43,26 @@
             this.nodes.challenge.append(this.nodes.prompt);
             this.nodes.challenge.append(this.nodes.input);
         },
+        loadSounds: function() {
+            var root = '/Presentation/includes/audio/simulations/dysgraphia/effects/';
+            this._super({
+                keypress: [
+                    root + 'Dysgraphia_KeyType1',
+                    root + 'Dysgraphia_KeyType2',
+                    root + 'Dysgraphia_KeyType3',
+                    root + 'Dysgraphia_KeyType4',
+                    root + 'Dysgraphia_KeyType5',
+                    root + 'Dysgraphia_KeyType4',
+                    root + 'Dysgraphia_KeyType5',
+                    root + 'Dysgraphia_KeyType6',
+                    root + 'Dysgraphia_KeyType7',
+                    root + 'Dysgraphia_KeyType8',
+                    root + 'Dysgraphia_KeyType9',
+                    root + 'Dysgraphia_KeyType10',
+                    root + 'Dysgraphia_KeyType11'
+                ]
+            });
+        },
         start: function() {
             this.timer.start();
             this.showNextPrompt();
@@ -52,10 +71,19 @@
         },
         stop: function() {
             var score = this.success.getScore();
+            var finalText = '';
             var scoreText = score.correct + '/' + score.max;
+            if(score.correct < score.max) {
+                this.playSound('gameOverFail');
+                finalText = this.getText(this.config.finalText.onTimeout);
+            } else {
+                this.playSound('gameOverSuccess');
+                finalText = this.getText(this.config.finalText.onComplete);
+            }
+            finalText = finalText.replace('%score', scoreText);
             var done = new SSGameModal({
                 showDuration: 0,
-                text: this.config.finalText.replace('%score', scoreText)
+                text: finalText
             });
             done.setButtons([{
                 text: 'Try Again',
@@ -72,9 +100,15 @@
             done.open();
             this.events.trigger('stop');
         },
+        setMaxLength: function() {
+            var bp = this.board.getCurrentBreakpoint();
+            this.inputUI.setMaxLength(this.config.maxLength[bp[2]]);
+        },
         run: function(localCfg) {
             if(!this._super(localCfg)) return;
+            this.board.board.on('breakpointChange', $.proxy(this.setMaxLength, this));
             this.inputUI = new WTFInput(this.nodes.input, {
+                maxLength: this.config.maxLength[this.board.getCurrentBreakpoint()[2]],
                 tweakOutputFunction: $.proxy(function(typed) {
                     if(this.success.correct == 0) {
                         return this.initialTweak(typed);
@@ -88,7 +122,13 @@
             });
             this.board.board.find('textarea')
                 .on('focus', function() { SSGame.current.board.board.addClass('infocus'); })
-                .on('blur', function() { SSGame.current.board.board.removeClass('infocus'); });
+                .on('blur', function() { SSGame.current.board.board.removeClass('infocus'); })
+                .on('keydown', function(e) {
+                    var typedChr = String.fromCharCode(e.which);
+                    if(typedChr && typedChr.match(/\w/)) {
+                        //SSGame.current.playSound('keypress');
+                    }
+                });
             this.success = new SSGameSuccess({
                 node: this.nodes.score,
                 count: this.config.prompts.length,
@@ -140,23 +180,27 @@
         showNextPrompt: function() {
             this.currPromptIdx ++;
             var options = this.config.prompts[this.currPromptIdx];
-            var text = SSGame.pick(options, []);
-            if(!text) this.timer.stop();
+            if(!options) this.timer.stop();
             else {
-                this.currPrompt = text;
-                this.nodes.prompt.text(text);
-                this.inputUI.startInput();
+                var text = SSGame.pick(options, []);
+                if(!text) this.timer.stop();
+                else {
+                    this.currPrompt = text;
+                    this.nodes.prompt.text(text);
+                    this.inputUI.startInput();
+                }
             }
         },
         checkResponse: function() {
-            var shouldBe = this.currPrompt.replace(/\s+/g, ' ');
-            var reallyIs = this.inputUI.getShownContent().replace(/\s+/g, ' ');
+            var shouldBe = this.currPrompt.trim().replace(/\s+/g, ' ');
+            var reallyIs = this.inputUI.getShownContent().trim().replace(/\s+/g, ' ');
             console.log('"%s" vs "%s"', shouldBe, reallyIs);
             if(shouldBe == reallyIs) {
                 this.onSuccess();
             }
         },
         onSuccess: function() {
+            this.playSound('sentenceComplete');
             this.success.increment();
             this.inputUI.stopInput();
             $('.wtfinput span').animate({
@@ -169,15 +213,13 @@
         },
         initialTweak: function(typed) {
             var cfg = this.config.tweaks.initial;
-            if(this.initialTweakMade) return typed;
+            if(!this.initialTweaks) {
+                this.initialTweaks = [];
+                for(var i = 0; i < cfg.length; i ++) this.initialTweaks.push(SSGame.rnd(cfg[i][0], cfg[i][1]));
+            }
             this.initialTweakCounter ++;
-            if(this.initialTweakCounter >= cfg.minimumCharacters) {
-                var chance = cfg.maximumCharacters - this.initialTweakCounter;
-                var show = SSGame.rnd(0, chance);
-                if(show == 0) {
-                    this.initialTweakMade = true;
-                    return this.tweaks.replaceRandomly.call(this, typed);
-                }
+            if($.inArray(this.initialTweakCounter, this.initialTweaks) >= 0) {
+                return this.tweaks.replaceRandomly.call(this, typed);
             }
             return typed;
         },

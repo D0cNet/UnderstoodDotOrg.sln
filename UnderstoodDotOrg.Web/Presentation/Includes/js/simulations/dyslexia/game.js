@@ -23,7 +23,7 @@
                 //Then fix the phrase's min width at the size we're switching to so it doesn't jump oddly as the stuff inside moves around.
                 phrase.css('minWidth', newWidth);
                 //Now we animate!
-                phrase.find('.letter').transition(animations.out, pause);
+                phrase.find('.letter').stop(true, true).transition(animations.out, pause);
                 //When the animations are done (hopefully), swap the letters
                 setTimeout(function() {
                     phrase.find('.letter').remove();
@@ -33,6 +33,7 @@
                     phrase.find('.letter').css(animations.out).css(letterCss);
                     newLetters.transition(animations.in, pause);
                     setTimeout(function() {
+                        phrase.data('nohover', false);
                         if(typeof onComplete == 'function') onComplete();
                     }, pause);
                 }, pause);
@@ -55,7 +56,10 @@
                 thumbs.down(phrase);
             },
             rotate: function(phrase, to, css, onComplete) {
-                phrase.find('.letter').css(css).transit({'rotate': to}, 'fast',  onComplete);
+                phrase.find('.letter').stop(true, true).css(css).transit({'rotate': to}, 'fast',  function(e) {
+                    phrase.data('nohover', false);
+                    if(typeof onComplete == 'function') onComplete();
+                });
             },
             wrong: function(phrase, onComplete) {
                 phrase.data('wrong_visible', true);
@@ -85,18 +89,24 @@
                 phrase.hover(function() {
                     var $this = $(this);
                     //After a swap, we temporarily don't want hover, so make sure it's enabled
-                    if(!$this.data('nohover')) {
+                    if(!$this.data('nohover') && !$this.data('hovering')) {
+                        $this.data('hovering', true);
                         $this.find('.letter').transit(SSGame.current.config.display.letterStates.hover, 250);
+                    } else {
+                        $this.data('hovering', false);
                     }
                 }, function() {
                     var $this = $(this);
-                    if(!$this.data('nohover')) {
+                    if(!$this.data('nohover') && $this.data('hovering')) {
                         var to = SSGame.current.config.display.letterStates.unknown;
                         if($this.data('corrected_visible')) to = SSGame.current.config.display.letterStates.correct;
                         else if($this.data('wrong_visible')) to = SSGame.current.config.display.letterStates.wrong;
-                        $this.find('.letter').transit(to, 250);
+                        $this.find('.letter').transit(to, 250, function() {
+                            $this.data('hovering', false);
+                        });
+                    } else {
+                        $this.data('hovering', false);
                     }
-                    $this.data('nohover', false);
                 });
             }
         },
@@ -104,6 +114,7 @@
             success: function(onComplete) {
                 var game = SSGame.current;
                 game.nodes.sentence.data('successQueued', true);
+                game.nodes.sentence.find('.phrase').data('nohover', true);
                 game.nodes.sentence.find('.letter').transit(
                     { backgroundColor: '#8FAD15', color: '#FFFFFF' },
                     game.config.display.sentenceDoneFadeDuration
@@ -162,11 +173,16 @@
                     }, this), thumbs.pause);
                 });
             var board = SSGame.current.board.board;
-            var bg = board.css('backgroundColor');
-            var orig = board.css('backgroundColor');
-            board.css('backgroundColor', '#e84646');
-            board.transit({'backgroundColor': orig}, thumbs.speed + thumbs.pause, function() {
-            });
+            var orig = board.data('originalBackgroundColor');
+            if(!orig) {
+                orig = board.css('backgroundColor');
+                board.data('originalBackgroundColor', orig);
+            }
+            board
+                .stop(true, true)
+                .css('backgroundColor', '#e84646')
+                .transit({'backgroundColor': orig}, thumbs.speed + thumbs.pause, function() {
+                });
         }
     };
 
@@ -267,8 +283,8 @@
         shown: [],
         idx: 0,
         init: function(game) {
-            this.sentences = game.config.sentences;
             this.display = game.config.display;
+            this.sentences = SSGame.pick(game.config.sentences, []);
         },
         reset: function() {
             var game = SSGame.current;
@@ -280,13 +296,18 @@
             game.nodes.sentence.html('');
         },
         getCount: function() {
-            console.log(this);
             return this.sentences.length;
         },
         getNext: function() {
+            /* Older random-from-bucket strategy
             if(this.sentences.length > this.idx) {
                 pool = this.sentences[this.idx];
                 return SSGame.pick(pool, []);
+            } else {
+                return null;
+            } */
+            if(this.sentences.length > this.idx) {
+                return this.sentences[this.idx];
             } else {
                 return null;
             }
@@ -316,31 +337,40 @@
             if($this.is(':animated')) return;
             if($this.text().replace(/ /g, '') == '') return;
             if($this.find('.letter').length == 0) return;
+            var letter = $(this).text().toLowerCase();
 
             if($this.hasClass('real')) {
-                //Real, unswapped phrases get turned upsidedown, or restored to their original state
-                if($this.hasClass('wrong')) {
-                    $this.removeClass('wrong');
-                    sentences.onCorrectLetter();
-                    transitions.phrases.unwronged($this, function() {
-                    });
-                } else {
-                    $this.addClass('wrong');
-                    transitions.phrases.wrong($this);
+                //If the letter is of our special vertically symmetrical ones, ignore the error
+                if(SSGame.current.config.ignoredLetters.indexOf(letter) < 0) {
+                    //Real, unswapped phrases get turned upsidedown, or restored to their original state
+                    if($this.hasClass('wrong')) {
+                        $this.removeClass('wrong');
+                        if(!sentences.onCorrectLetter()) {
+                            SSGame.current.playSound('fixedclick');
+                            transitions.phrases.unwronged($this);
+                        }
+                    } else {
+                        $this.addClass('wrong');
+                        SSGame.current.playSound('wrongclick');
+                        transitions.phrases.wrong($this);
+                    }
+                    $this.data('nohover', true);
                 }
             } else {
                 //Swapped text either gets corrected or swapped back to the wrong text
                 if($this.text() == $this.data('real')) {
                     $this.removeClass('corrected');
+                    SSGame.current.playSound('wrongclick');
                     transitions.phrases.uncorrected($this);
                 } else {
                     $this.addClass('corrected');
+                    SSGame.current.playSound('correctclick');
                     sentences.onCorrectLetter();
                     transitions.phrases.correct($this, $.proxy(function() {
                     }, this));
                 }
+                $this.data('nohover', true);
             }
-            $this.data('nohover', true);
         },
         onCorrectLetter: function() {
             var b = SSGame.current.nodes.sentence;
@@ -350,6 +380,9 @@
             });
             if(stillWrong.length == 0) {
                 SSGame.current.onSuccess();
+                return true;
+            } else {
+                return false;
             }
         }
     };
@@ -369,7 +402,7 @@
             this.timer.reset();
             var intro = new SSGameModal({
                 showDuration: this.config.introDurationInSeconds * 1000,
-                title: 'Dyslexia',
+                title: this.getText(this.config.title),
                 text: SSGameModal.textToParagraphs(this.config.introText),
                 onClose: $.proxy(this.start, this)
             });
@@ -390,6 +423,14 @@
             });
             this.nodes.swapsContainer.append(this.nodes.swaps);
         },
+        loadSounds: function() {
+            var root = '/Presentation/includes/audio/simulations/dyslexia/effects/';
+            this._super({
+                wrongclick: root + 'Dyslexia_ThumbsDownBuzzer',
+                correctclick: root + 'Dyslexia_TileFlipClick',
+                fixedclick: root + 'Dyslexia_VerticalLetterFlip'
+            });
+        },
         start: function() {
             this.timer.start();
             sentences.showNext();
@@ -401,9 +442,17 @@
         stop: function() {
             var score = this.success.getScore();
             var scoreText = score.correct + '/' + score.max;
+            var finalText = '';
+            if(score.correct < score.max) {
+                this.playSound('gameOverFail');
+                finalText = this.getText(this.config.finalText.onTimeout);
+            } else {
+                this.playSound('gameOverSuccess');
+                finalText = this.getText(this.config.finalText.onComplete);
+            }
             var done = new SSGameModal({
                 showDuration: 0,
-                text: this.config.finalText.replace('%score', scoreText)
+                text: finalText
             });
             done.setButtons([{
                 text: 'Try Again',
@@ -440,11 +489,11 @@
             }, this)));
         },
         onSuccess: function() {
+            this.playSound('sentenceComplete');
             var b = this.nodes.sentence;
             this.success.increment();
             transitions.sentences.success($.proxy(function() {
                 if(!SSGame.current.started) return;
-                console.log('Next');
                 sentences.showNext();
             }, this));
         }

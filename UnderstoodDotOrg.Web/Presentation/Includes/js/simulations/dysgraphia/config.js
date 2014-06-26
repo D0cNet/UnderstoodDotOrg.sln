@@ -5,18 +5,34 @@
         timeInSeconds: 90,
         introDurationInSeconds: 0, //0=open until closed
         introText: [
-            'Simply type each sentence exactly as you see it.',
-            '',
-            'Type 4 sentences before time runs out.'
+            'Type exactly what you see. Be sure to fix mistakes. Ready?'
+            
         ].join("\n"),
-        finalText: [
-            'Sorry, time\'s up!'
-        ].join("\n"),
-        tweaks: {
-            initial: {
-                minimumCharacters: 15,
-                maximumCharacters: 19
+        finalText: {
+            onComplete: {
+                en: 'Well done—you beat the clock!'
             },
+            onTimeout: {
+                en: [
+                    'Time\'s up!'
+                ].join("\n")
+            }
+        },
+        title: {
+            en: 'Typing Test'
+        },
+        maxLength: {
+            phone: 48,
+            tablet: 74,
+            desktop: 96
+        },
+        tweaks: {
+            initial: [
+                //Ranges in which a replacement happens
+                [6,10],
+                [12,16],
+                [20,25]
+            ],
             chances: [
                 //lv1 (special)
                 {},
@@ -24,60 +40,107 @@
                 {
                     replaceRandomly: 7,
                     extraRandom: 0,
-                    ignoreInput: 0,
+                    ignoreInput: 6,
                     changeCaps: 0,
                     repeatCharacters: 0
                 },
                 //lv3
                 {
-                    replaceRandomly: 6,
-                    extraRandom: 3,
-                    ignoreInput: 3,
-                    changeCaps: 3,
-                    repeatCharacters: 6
+                    replaceRandomly: 5,
+                    extraRandom: 2,
+                    ignoreInput: 2,
+                    changeCaps: 2,
+                    repeatCharacters: 4
                 },
                 //lv4
                 {
-                    replaceRandomly: 10,
-                    extraRandom: 6,
-                    ignoreInput: 10,
-                    changeCaps: 3,
-                    repeatCharacters: 6
-                }
+                    replaceRandomly: 0,
+                    extraRandom: 0,
+                    ignoreInput: 20,
+                    changeCaps: 0,
+                    repeatCharacters: 20
+                },
+                //lv5
+                {
+                    replaceRandomly: 2,
+                    extraRandom: 2,
+                    ignoreInput: 2,
+                    changeCaps: 35,
+                    repeatCharacters: 4
+
+                },
+              //lv6
+                {
+                    replaceRandomly: 11,
+                    extraRandom: 7,
+                    ignoreInput: 11,
+                    changeCaps: 4,
+                    repeatCharacters: 7                }
             ],
                 
             rules: {
                 repeatCharacters: {
                     countMin: 2,
-                    countMax: 3
+                    countMax: 2
                 }
             }
         },
         prompts: [
             //lv1
             [
-                'Together, the three of them traveled due north.'
+                'Everyone was waiting for the day.',
+'They had a party in the backyard.',
+'It was a hot day with a breeze.',
+'This story was about two friends.'
+
             ],
             //lv2
             [
-                'Her brother Cranshaw was sweeter and apparently preferred Cincinnati.',
-                'His little boy was born on the eighth. The baby\'s three sisters were totally ecstatic.'
+                'His little boy was born on a Wednesday.',
+'Their friends brought a watermelon.',
+'The family drove to the seashore.',
+'The girl was a budding ballroom dancer.'
             ], 
+           
             //lv3
             [
-                'Great minds think alike.',
-                'Every cloud has a silver lining.'
+                'The baby\'s sisters were totally ecstatic.',
+'Twenty-five people came to celebrate.',
+'Their cones dripped vanilla ice cream.',
+              'She was always practicing fancy steps.'
+
             ], 
-            //lv4
+           //lv4
             [
-                'A bird in the hand is worth two in the bush.',
-                'Give a child a fish and you feed him for a day. Teach a child to fish and you feed him for a lifetime.'
-            ]
+                'They wanted to celebrate with balloons.',
+'Emma was excited. It was her tenth birthday.',
+'Madeline found seashells. She kept one.',
+'The boy liked adventure. He had a boat.'
+        ],
+             //lv5
+            [
+                'The cousins came too. They brought gifts.',
+'Suddenly, everyone stopped and looked over.',
+'They agreed all together to look for crabs.',
+'Their cat\'s name was hard to pronounce.'
+        ],
+          
+             //lv6
+            [
+                'The aunts performed quick waltzes and jigs.',
+'Chrissie was doing cartwheels across the grass.',
+'Instead, they built an enormous sandcastle.',
+'Together, the three of them traveled due north.'
         ]
+       ]
     };
 })();
 
                                                                                                                                 
                                 
                                                                                 
-                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                
+                
+                                
+                
