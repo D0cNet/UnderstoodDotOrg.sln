@@ -24,7 +24,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             //Page Title
             ContentPageItem contentPage = new ContentPageItem(parentItem);
             if (contentPage != null) {
-                scTopicTitle.Text = contentPage.SectionTitle.Rendered;
+                // TODO: section title removed, 
+                //scTopicTitle.Text
             }
             
             //Parent Item Navigation

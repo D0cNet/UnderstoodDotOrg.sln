@@ -101,12 +101,16 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     var node = xmlDoc.SelectSingleNode("Response/BlogPost");
                     var blogPostId = node["Id"].InnerText;
                     var contentId = node["ContentId"].InnerText;
+                    var contentTypeId = node["ContentTypeId"].InnerText;
+                    var telligentUrl = node["Url"].InnerText;
                     
                     using (new Sitecore.Data.Items.EditContext(item, updateStatistics: false, silent: true))
                     {
                         item["BlogPostId"] = blogPostId;
                         item["BlogId"] = blogId.ToString();
                         item["ContentId"] = contentId;
+                        item["ContentTypeId"] = contentTypeId;
+                        item["TelligentUrl"] = telligentUrl;
                     }
                 }
             }

@@ -47,10 +47,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 
                 // Expert details
                 ExpertDetailPageItem expert = item.Expert.Item;
-                frExpertName.Item = frExpertSubheading.Item = expert;
-
+                
                 if (expert != null) 
                 {
+                    frExpertName.Item = frExpertSubheading.Item = expert;
                     imgExpert.ImageUrl = expert.GetThumbnailUrl(150, 150);
                     litExpertType.Text = expert.GetExpertType();
                 }

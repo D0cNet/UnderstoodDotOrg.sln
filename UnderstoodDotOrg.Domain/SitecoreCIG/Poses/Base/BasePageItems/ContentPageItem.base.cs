@@ -46,29 +46,11 @@ public static implicit operator Item(ContentPageItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField SectionTitle
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Section Title"]);
-	}
-}
-
-
 public CustomTextField PageTitle
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Page Title"]);
-	}
-}
-
-
-public CustomTextField PageSummary
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Page Summary"]);
 	}
 }
 
