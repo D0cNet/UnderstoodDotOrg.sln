@@ -48,12 +48,12 @@ namespace UnderstoodDotOrg.Common.Helpers
                             RegexOptions.IgnoreCase);
 
                 title = Regex.Replace(title,
-                            String.Format(@"^({0})(\s)", regexWord),
+                            String.Format(@"^({0})(\s|[^a-z0-9])", regexWord),
                             String.Format("<span>$1</span>$2", word),
                             RegexOptions.IgnoreCase);
 
                 title = Regex.Replace(title,
-                            String.Format(@"(\s)({0})(\s)", regexWord), 
+                            String.Format(@"(\s)({0})(\s|[^a-z0-9])", regexWord), 
                             String.Format("$1<span>$2</span>$3", word), 
                             RegexOptions.IgnoreCase);
             }
