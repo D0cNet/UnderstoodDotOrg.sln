@@ -5,7 +5,7 @@
         <div class="col col-14 offset-1 skiplink-content">
             <div>
                 <h1 class="rs_read_this"><%= Model.ContentPage.PageTitle.Rendered %></h1>
-                <p class="dl-heading-detail"><%= Model.ContentPage.PageSummary.Rendered %></p>
+                <p class="dl-heading-detail"><%= Model.ContentPage.BodyContent.Rendered %></p>
             </div>
         </div>
 
