@@ -73,4 +73,35 @@
   }
 }
 
+/* UN-4887 */
+.article-actions-copy .action-head {
+  min-height: 0;
+}
+.article-actions-copy .action-head h3 {
+  margin-bottom: 10px;
+}
+@media (min-width: 650px), print {
+  .article-actions-copy .clearfix {
+    display: none;
+  }
+}
+.article-actions-copy > div:not([class]):first-of-type {
+  margin-top: 20px;
+}
+@media (min-width: 650px), print {
+  .article-actions-copy > div:not([class]):first-of-type {
+    margin-top: 30px;
+  }
+}
+@media (min-width: 650px), print {
+  .article-actions-copy .action-copy {
+    margin-top: 0;
+  }
+}
+@media (min-width: 769px), print {
+  .article-actions-copy .action-copy {
+    margin-top: 0;
+  }
+}
+
 /* END: temporary override rules provided by DP. */
