@@ -1359,7 +1359,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
 
                     foreach (XmlNode xn in nodes)
                     {
-                        XmlNode author = xn.SelectSingleNode("Content/CreatedByUser");
+                        XmlNode author = xn.SelectSingleNode("User");
                         XmlNode app = xn.SelectSingleNode("Content/Application");
                         XmlNode content = xn.SelectSingleNode("Content");
 

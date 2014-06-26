@@ -22,7 +22,7 @@
                 <div class="comment-list-wrapper">
                     <asp:Repeater runat="server" ID="CommentRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Comment">
                         <ItemTemplate>
-                            <div class="comment-wrapper">
+                            <div class="comment-wrapper repeater-item">
                                 <div class="comment-header" id="<%# Item.CommentId %>">
                                     <span class="comment-avatar">
                                         <img src="<%# Item.AuthorAvatarUrl %>" width="60" height="60" />

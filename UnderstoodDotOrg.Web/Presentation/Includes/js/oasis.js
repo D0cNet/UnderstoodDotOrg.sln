@@ -332,6 +332,9 @@ $(".show-more-link").click(function () {
         $(".repeater-item").eq(i).show();
     }
     showCount += 3;
+    if ($(".repeater-item").length <= showCount) {
+        $(".show-more-link").hide();
+    }
 })
 
 //JS validation

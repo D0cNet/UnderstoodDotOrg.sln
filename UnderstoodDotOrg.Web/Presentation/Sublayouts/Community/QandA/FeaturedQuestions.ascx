@@ -6,7 +6,7 @@
         <asp:Repeater ID="questionsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Question" runat="server" OnItemDataBound="questionsRepeater_ItemDataBound">
             <ItemTemplate>
                 <!-- BEGIN PARTIAL: community/parent_question_card -->
-                <div class="card-parent-question clearfix">
+                <div class="card-parent-question clearfix repeater-item">
                     <div class="question-image">
                         <img alt="70x70 Placeholder" src="http://placehold.it/70x70" />
                     </div>
