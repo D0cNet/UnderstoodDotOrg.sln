@@ -5,7 +5,7 @@ using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Errors
 {
-    public partial class NotFoundPage : BaseSublayout<NotFoundPageItem>
+    public partial class NotFoundPage : System.Web.UI.UserControl
     {
         private void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +24,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Errors
 
         private void BindContent()
         {
-            btnSubmit.Text = Model.SearchBoxButton.Rendered;
+            btnSubmit.Text = ((NotFoundPageItem)Sitecore.Context.Item).SearchBoxButton.Rendered;
         }
 
         void btnSubmit_Click(object sender, EventArgs e)
