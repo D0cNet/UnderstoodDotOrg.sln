@@ -142,8 +142,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
 
                     //Retrieve all BlogPosts with author 
                     List<BlogsPostPageItem> posts = Sitecore.Context.Database.SelectItems("fast:/sitecore/content/Home//*[@@templateid='" + Constants.BlogPost.BlogPostTemplateID + "' and @Author='" + authorItem.Name + "']").Select(x => new BlogsPostPageItem(x)).ToList();
-                    Session["_posts"] = posts.OrderByDescending(x => x.Date.DateTime).ToList();
-                    rptrBlogPosts.DataSource = posts.Take(ResultCount).ToList();
+                    var temp = posts.OrderByDescending(x => x.Date.DateTime).ToList();
+                    Session["_posts"] = temp;
+                    rptrBlogPosts.DataSource = temp.Take(ResultCount).ToList();
                     rptrBlogPosts.DataBind();
                 }
             }
