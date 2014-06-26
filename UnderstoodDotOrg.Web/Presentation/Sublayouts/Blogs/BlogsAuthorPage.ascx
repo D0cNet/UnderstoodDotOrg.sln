@@ -6,12 +6,15 @@
     <!-- END PARTIAL: community/main_header -->
                    
         <!-- BEGIN PARTIAL: community/breadcrumb_menu -->
-<!--breadcrumb menu-->
-<a href="REPLACE" ID="hrefBackLink" runat="server" class="back-to-previous">
-  <i class="icon-arrow-left-blue"></i><asp:Literal ID="litBackLink" runat="server"></asp:Literal>
-</a>
-<!-- END PARTIAL: community/breadcrumb_menu -->
+          <div class="row">
+                           <!--breadcrumb menu-->
+                        <a href="REPLACE" ID="hrefBackLink" runat="server" class="back-to-previous">
+                          <i class="icon-arrow-left-blue"></i><asp:Literal ID="litBackLink" runat="server"></asp:Literal>
+                        </a>
+                        <!-- END PARTIAL: community/breadcrumb_menu -->
+          </div>
         <div class="container">
+       
             <!-- BEGIN PARTIAL: community/blog_feature_post -->
             <sc:Placeholder ID="BlogFeaturePost" Key="Feature-Post" runat="server" />
     <!-- END PARTIAL: community/blog_feature_post -->

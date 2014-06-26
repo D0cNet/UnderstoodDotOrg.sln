@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
 using UnderstoodDotOrg.Common.Extensions;
 using System.Web.UI.HtmlControls;
 using Sitecore.Data.Fields;
+using Sitecore.Links;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
 {
@@ -130,6 +131,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
         protected void Page_Load(object sender, EventArgs e)
         {
             Item authorItem = Sitecore.Context.Item;
+            hrefBackLink.HRef = LinkManager.GetItemUrl( Sitecore.Context.Database.GetItem(Constants.Pages.AllBlogs));
+            litBackLink.Text = Sitecore.Context.Database.GetItem(Constants.Pages.AllBlogs).Name;
             if (!IsPostBack)
             {
                 ResultCount = 5;
