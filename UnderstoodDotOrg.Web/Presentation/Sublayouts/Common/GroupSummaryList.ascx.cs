@@ -15,6 +15,11 @@ using Sitecore.Links;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Services.AccessControlServices;
+using UnderstoodDotOrg.Domain.ExactTarget;
+using UnderstoodDotOrg.Services.ExactTarget;
+using UnderstoodDotOrg.Services.CommunityServices;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -55,7 +60,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                    
                     joinView.Text = viewDiscussions ? "View Discussions" : "Join this Group";
                     //If the user is to join group, then use Telligent group id, else use sitecore item id
-                    joinView.CommandArgument = viewDiscussions ? ((GroupCardModel)e.Item.DataItem).GroupItemID : ((GroupCardModel)e.Item.DataItem).GroupID;
+                    joinView.CommandArgument = viewDiscussions ? ((GroupCardModel)e.Item.DataItem).ItemID : ((GroupCardModel)e.Item.DataItem).GroupID;
                     joinView.Attributes.Add("name", viewDiscussions ? "view" : "join");
                 }
 
@@ -66,7 +71,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     {
                         if (e.Item.DataItem is GroupCardModel)
                         {
-                            Item grpItem = Sitecore.Context.Database.GetItem(((GroupCardModel)e.Item.DataItem).GroupItemID);
+                            Item grpItem = Sitecore.Context.Database.GetItem(((GroupCardModel)e.Item.DataItem).ItemID);
                             var link = LinkManager.GetItemUrl(grpItem);
 
                             titleLink.HRef = link;
@@ -153,9 +158,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     Item grpItem = Sitecore.Context.Database.GetItem(grpItemID);
                     string itemUrl = Sitecore.Links.LinkManager.GetItemUrl(grpItem);
                     Sitecore.Web.WebUtil.Redirect(itemUrl);
-                }catch(Exception)
+                }catch(Exception ex)
                 {
-                    
+                    Sitecore.Diagnostics.Error.LogError("Error in btnJoinGroup_Click for View Discussions function.\nError:\n" + ex.Message);
                 }
             }
             else
@@ -163,15 +168,37 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 try
                 {
                     //TODO: Get test Cases for this redirect
-                    //this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.CommunityUser);
+                    this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.CommunityUser);
                     //Join the group using telligent group id
                     if (CommunityHelper.JoinGroup(btn.CommandArgument, UserID))
                     {
+                        //Send Email
+                        GroupItem grpItem = new GroupItem( Groups.ConvertGroupIDtoSitecoreItem(btn.CommandArgument));
+                        GroupCardModel grpModel = Groups.GroupCardModelFactory(grpItem);
+                     
+                        BaseReply reply = ExactTargetService.InvokeEM9GroupWelcome(new InvokeEM9GroupWelcomeRequest
+                        {
+                            PreferredLanguage = CurrentMember.PreferredLanguage,
+                            GroupLeaderEmail = grpModel.ModeratorEmail,
+                            GroupLink = grpItem.GetUrl(),
+                            GroupTitle = grpItem.DisplayName,
+                            ToEmail = CurrentMember.Email,
+
+                            GroupModerator = new Moderator
+                            {
+                                groupModBioLink = grpModel.ModeratorBio,
+                                groupModImgLink =grpModel.ModeratorAvatarUrl, //owner.Avatar,
+                                groupModName = grpModel.ModeratorName
+                            }
+                        });  
+  
+                       
 
                     }
-                }catch(Exception)
+                }catch(Exception ex)
                 {
-                    
+                    Sitecore.Diagnostics.Error.LogError("Error in btnJoinGroup_Click for joining Group function.\nError:\n" + ex.Message);
+                   
                 }
 
             }

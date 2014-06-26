@@ -18,7 +18,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
 
         public static Item CreateSitecoreForum(ForumModel frmModel, string groupItemID, Language lang)
         {
-            Item grpItem = ConvertGroupIDtoSitecoreItem(groupItemID);
+            Item grpItem = Groups.ConvertGroupIDtoSitecoreItem(groupItemID);
             return CreateSitecoreForum(frmModel, grpItem, lang);
 
 
@@ -94,13 +94,13 @@ namespace UnderstoodDotOrg.Services.CommunityServices
 
             return newItem;
         }
-        public static Item ConvertGroupIDtoSitecoreItem(string id)
+        public static Item ConvertForumIDtoSitecoreItem(string id)
         {
-            Item groupItem = null;
+            Item forumItem = null;
             Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("master");
-            groupItem = masterDb.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Groups.GroupTemplateID + "' and @GroupID = '" + id + "']");
+            forumItem = masterDb.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Forums.ForumTemplateID + "' and @ForumID = '" + id + "']");
 
-            return groupItem;
+            return forumItem;
         }
     }
 }

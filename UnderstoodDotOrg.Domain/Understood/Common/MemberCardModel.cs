@@ -28,6 +28,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             {
                 if (!String.IsNullOrEmpty(m.ScreenName))
                 {
+                    
                     this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
                     this.Children = m.Children.ConvertToChildCardModelList();
                     this.UserLabel = "Blogger"; //TODO: find role                                                                                   

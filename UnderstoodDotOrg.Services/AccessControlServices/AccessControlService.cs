@@ -36,8 +36,8 @@ namespace UnderstoodDotOrg.Services.AccessControlServices
         /// <param name="UrlToGoto">Alternative URL to be redirected (Note: Session reference to previous page will be cleared).</param>
         static public void ProfileRedirect(this BaseSublayout page, UnderstoodDotOrg.Common.Constants.UserPermission permission, string UrlToGoto = null)
         {
-            
-               page.Session[redirectSessionKey] = page.Page.Request.UrlReferrer;
+
+            page.Session[redirectSessionKey] = page.Page.Request.Url;//Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Item);
 
 
                 switch (permission)

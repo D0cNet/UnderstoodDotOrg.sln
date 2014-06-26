@@ -3,12 +3,15 @@ using Sitecore.Data.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.Understood.Common;
-
+using UnderstoodDotOrg.Services.TelligentService;
 namespace UnderstoodDotOrg.Services.CommunityServices
 {
    public static class Groups
@@ -86,7 +89,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
            //Use sitecore fast query to perform search
            Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("web");
            Item[] grps = masterDb.SelectItems(strb.ToString());
-           results = grps.Select(x => new GroupCardModel(new GroupItem(x))).ToList<GroupCardModel>();
+           results = grps.Select(x => GroupCardModelFactory(new GroupItem(x))).ToList<GroupCardModel>();
 
 
            return results;
@@ -95,6 +98,73 @@ namespace UnderstoodDotOrg.Services.CommunityServices
        {
            return FindGroups(new string[0],new string[0],new string[0],new string[0],new string[0]);
        }
+       public static Item ConvertGroupIDtoSitecoreItem(string id)
+       {
+           Item groupItem = null;
+           Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("master");
+           groupItem = masterDb.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Groups.GroupTemplateID + "' and @GroupID = '" + id + "']");
 
+           return groupItem;
+       }
+       public static GroupCardModel GroupCardModelFactory(GroupItem grpItem)
+       {
+           Member owner = null;
+           GroupCardModel grpModel = new GroupCardModel();
+           if ((grpItem != null))
+           {
+
+               string address = String.Empty;
+                string xml=String.Empty;
+                   try
+                   {
+                       using (WebClient client = new WebClient())
+                       {
+                           client.Headers.Add("Rest-User-Token", TelligentService.TelligentService.TelligentAuth());
+                           address = string.Format(TelligentService.TelligentService.GetApiEndPoint("groups/{0}/members/users.xml?MembershipType=Owner"), grpItem.GroupID.Text);
+
+                           ///Approved??
+                           //data["FriendshipState"] = Constants.TelligentFriendStatus.Approved.ToString();
+                          xml = Encoding.UTF8.GetString(client.DownloadData(address));
+                       }
+                       XmlDocument document = new XmlDocument();
+                       document.LoadXml(xml);
+                       XmlNode childNode = document.SelectSingleNode("Response/Users");
+                       if (childNode != null)
+                       {
+                           //Select first owner
+                           string username = childNode.FirstChild.SelectSingleNode("Username").InnerText;
+                           MembershipManager mem = new MembershipManager();
+                           owner = mem.GetMemberByScreenName(username);
+                           if (owner != null)
+                           {
+                               grpModel.ModeratorAvatarUrl = childNode.FirstChild.SelectSingleNode("AvatarUrl").InnerText;
+                               grpModel.ModeratorName = owner.ScreenName;
+                               grpModel.ModeratorTitle = Constants.TelligentRole.Moderator.ToString();
+                               grpModel.Owner = owner;
+                           }
+                           else //Use default values
+                           {
+                               grpModel.ModeratorAvatarUrl = childNode.FirstChild.SelectSingleNode("AvatarUrl").InnerText;
+                               grpModel.ModeratorName = username;
+                               grpModel.ModeratorTitle = Constants.TelligentRole.Moderator.ToString();
+                            }
+                           grpModel.ForumFunc = TelligentService.TelligentService.ReadForumsList;
+                          
+                           grpModel.GrpItem = grpItem;
+                           grpModel.NumOfMembers = childNode.FirstChild.SelectSingleNode("Group/TotalMembers").InnerText;
+                           grpModel.Description = childNode.FirstChild.SelectSingleNode("Group/Description").InnerText;
+                           grpModel.Title = childNode.FirstChild.SelectSingleNode("Group/Name").InnerText;
+                           
+                       }
+                   }
+                   catch (Exception ex)
+                   {
+                       Sitecore.Diagnostics.Error.LogError("Error in GetGroupOwner function.\nError:\n" + ex.Message);
+                       grpModel = null;
+                   }
+              
+           }
+           return grpModel;
+       }
    }
 }

@@ -52,7 +52,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             List<GroupItem> groups =currItem.Parent.Children.Where(x => x.TemplateID.ToString().Equals(Constants.Groups.GroupTemplateID)).Select(x => new GroupItem(x)).ToList<GroupItem>();
 
             //Convert sitecore group items to GroupCardModels
-            var grpItems = groups.Select(x => new GroupCardModel(x)).ToList<GroupCardModel>();
+            var grpItems = groups.Select(x => Groups.GroupCardModelFactory(x)).ToList<GroupCardModel>();
             Session["groupItems"] = grpItems;
             rptGroupCards.DataSource = FindRecommendedGroups(); ///TODO: To decide on logic for finding recommendations
             rptGroupCards.DataBind();

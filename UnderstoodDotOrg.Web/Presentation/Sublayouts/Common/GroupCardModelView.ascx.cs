@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
-
+using UnderstoodDotOrg.Services.CommunityServices;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
     public partial class GroupCardModelView : System.Web.UI.UserControl
@@ -15,7 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             Item currItem = Sitecore.Context.Item;
             if(currItem !=null){
-                UnderstoodDotOrg.Domain.Understood.Common.GroupCardModel gm = new UnderstoodDotOrg.Domain.Understood.Common.GroupCardModel(new GroupItem(currItem));
+                UnderstoodDotOrg.Domain.Understood.Common.GroupCardModel gm = Groups.GroupCardModelFactory(new GroupItem(currItem));
                 InitializeView(gm);
             }
         }

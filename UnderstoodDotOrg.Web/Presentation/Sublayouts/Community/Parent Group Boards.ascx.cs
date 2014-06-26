@@ -60,7 +60,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     if (grpItem != null)
                     {
                         Session["groupitem"] = grpItem;
-                        GroupCardModel grpModel = new GroupCardModel(grpItem);
+                        GroupCardModel grpModel = Groups.GroupCardModelFactory(grpItem);
                        
                         if (grpModel != null)
                         {
@@ -260,7 +260,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     {
                         var forumtext = forumHref.InnerText;
                         //Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@Name = '"+ forumtext +"']");
-                        forum = Discussion.ConvertForumIDtoSitecoreItem(frmModel.ForumID);
+                        forum = Forum.ConvertForumIDtoSitecoreItem(frmModel.ForumID);
                         if(forum!=null)
                             forumHref.HRef = LinkManager.GetItemUrl(forum);
                     }

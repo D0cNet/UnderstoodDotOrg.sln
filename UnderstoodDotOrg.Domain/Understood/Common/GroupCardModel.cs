@@ -27,73 +27,84 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         //    }
         //}
 
-        public GroupCardModel(GroupItem groupItem)
+        public GroupCardModel()
         {
-
-            if (groupItem != null)
-            {
-                GrpItem = groupItem;
-
-                GroupID = groupItem.GroupID.Text;
-                XmlNode node = CommunityHelper.ReadGroup(GroupID);
-               if(node!=null)
-                 Initialize(node);
-              
-            }
-
+            ForumFunc = null;
+            Owner = null;
         }
+        //public GroupCardModel(GroupItem groupItem)
+        //{
 
-        private void Initialize(XmlNode groupNode)
-        {
+        //    if (groupItem != null)
+        //    {
+        //        GrpItem = groupItem;
+
+        //        GroupID = groupItem.GroupID.Text;
+        //        XmlNode node = CommunityHelper.ReadGroup(GroupID);
+        //       if(node!=null)
+        //         Initialize(node);
+              
+        //    }
+
+        //}
+
+        //private void Initialize(XmlNode groupNode)
+        //{
             
           
 
-            if (groupNode != null)
-            {
+        //    if (groupNode != null)
+        //    {
 
-                ///TODO: Further refactor to Forum Class
-                NumOfMembers = groupNode.SelectSingleNode("TotalMembers").InnerText;
-                NumOfDiscussions = CommunityHelper.ReadForums(GroupID).ChildNodes.Count.ToString(); //node.SelectSingleNode("ThreadCount").InnerText; ///TODO:Number of Forums
-                Description = groupNode.SelectSingleNode("Description").InnerText;
-                Title = groupNode.SelectSingleNode("Name").InnerText;
-                ModeratorAvatarUrl = groupNode.SelectSingleNode("AvatarUrl").InnerText;//Constants.Settings.AnonymousAvatar;
+        //        ///TODO: Further refactor to Forum Class
+        //        NumOfMembers = groupNode.SelectSingleNode("TotalMembers").InnerText;
+        //        NumOfDiscussions = CommunityHelper.ReadForums(GroupID).ChildNodes.Count.ToString(); //node.SelectSingleNode("ThreadCount").InnerText; ///TODO:Number of Forums
+        //        Description = groupNode.SelectSingleNode("Description").InnerText;
+        //        Title = groupNode.SelectSingleNode("Name").InnerText;
 
-                ModeratorTitle = Constants.TelligentRole.Moderator.ToString();
-                ModeratorName = "Moderator Screen Name";
-            }
-        }
+               
 
-        
+        //        ModeratorAvatarUrl =groupNode.SelectSingleNode("AvatarUrl").InnerText;//Constants.Settings.AnonymousAvatar;
 
-       
+        //        ModeratorTitle = Constants.TelligentRole.Moderator.ToString();
+        //        ModeratorName = "Moderator Screen Name";
+        //    }
+        //}
 
+
+
+        /// <summary>
+        /// Function to populate forums
+        /// </summary>
+        public Func<string, List<ForumModel>> ForumFunc { get; set; }
       
         //Poses
         public string ModeratorAvatarUrl { get; set; }
         public string ModeratorName { get; set; }
-        ///TODO:Get group moderator screen name
-        private string UserID
+        public string ModeratorEmail
         {
             get
             {
-                return String.Empty;
+                if (Owner != null)
+                    return Owner.Email;
+                else
+                    return String.Empty;
             }
-            //get
-            //{
-            //    var mem = (Member)HttpContext.Current.Session[Constants.currentMemberKey];
-            //    if (mem != null)
-            //        return mem.ScreenName;
-            //    else
-            //    {
-
-            //        MembershipManagerProxy memprov = new MembershipManagerProxy();
-            //        Member member = memprov.GetMember(Guid.Empty);
-            //        HttpContext.Current.Session["username"] = member.ScreenName;
-            //        return member.ScreenName;
-                    
-            //    }
-            //}
         }
+        public string ModeratorBio
+        {
+            get
+            {
+                if (Owner != null)
+                {
+                    return Owner.GetMemberPublicProfile();
+                }
+                else
+                    return String.Empty;
+            }
+        }
+        public Member Owner { get; set; }
+       
         List<Child> ChildrenWithIssues { get; set; } //TODO:Related through Group issues
         public string ModeratorTitle { get; set; }
         private List<ForumModel> fModel = null;
@@ -103,7 +114,8 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             {
                 if (fModel == null)
                 {
-                    fModel = CommunityHelper.ReadForumsList(GroupID);
+                    if (ForumFunc != null)
+                        fModel = ForumFunc(GroupID);//CommunityHelper.ReadForumsList(GroupID);
                 }
                 return fModel;
             }
@@ -114,12 +126,21 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         public string Title { get; set; }
         public string Description { get; set; } //Group Description
         public string NumOfMembers { get; set; }
-        public string NumOfDiscussions { get; set; }
+        public string NumOfDiscussions
+        {
+            get
+            {
+                if (Forums != null)
+                    return Forums.Select(x => x.Threads.Count()).Sum().ToString();
+                else
+                    return "0";
+            }
+        }
         public string JoinUrl { get; set; } //TODO: point create Group Item
-        public  string GroupID { get; protected set; }
-        public string GroupItemID { get { return GrpItem.ID.ToString(); } }
-        public string TemplateID { get { return Constants.Groups.GroupTemplateID; } }
-        private GroupItem GrpItem { get; set; }
+        public string GroupID { get { return GrpItem.GroupID; } }
+       // public string GroupItemID { get { return GrpItem.ID.ToString(); } }
+        public string TemplateID { get { return GrpItem.InnerItem.TemplateID.ToString(); } }
+        public GroupItem GrpItem { get; set; }
         public string ItemID { get { return GrpItem.ID.ToString(); } } 
        // List<Issue> RelatedIssues { get; set; }
     }

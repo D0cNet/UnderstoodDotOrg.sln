@@ -17,7 +17,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
     {
         public static Item CreateSitecoreForumThread(ThreadModel thModel, string frmItemID, Language lang)
         {
-            Item forumItem = ConvertForumIDtoSitecoreItem(frmItemID);
+            Item forumItem = Forum.ConvertForumIDtoSitecoreItem(frmItemID);
             return CreateSitecoreForumThread(thModel, forumItem, lang);
            
 
@@ -94,13 +94,6 @@ namespace UnderstoodDotOrg.Services.CommunityServices
 
             return  newItem ;
         }
-        public static Item ConvertForumIDtoSitecoreItem(string id)
-        {
-            Item forumItem = null;
-            Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("master");
-            forumItem = masterDb.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Forums.ForumTemplateID + "' and @ForumID = '" + id + "']");
-
-            return forumItem;
-        }
+        
     }
 }
