@@ -6,25 +6,21 @@
             <div class="take-action">
                 <h2 class="rs_read_this"><%= Model.ActionAlertsHeading.Rendered %></h2>
                 <div class="take-action-items">
-                    <asp:Repeater ID="rptrActionAlerts" runat="server" 
-                        ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.AdvocacyLinkItem">
+                    <asp:Repeater ID="rptrActionAlerts" runat="server" OnItemDataBound="rptrActionAlerts_ItemDataBound">
                         <ItemTemplate>
                             <div class="action-item rs_read_this take-action-rs-wrapper">
                                 <div class="action-header">
-                                    <a href="<%# Item.Link.Url %>" class="action-image">
-                                        <img alt="<%# Item.Image.Field.Alt %>" src="<%# Item.Image.MediaUrl %>" />
-                                    </a>
+                                    <asp:HyperLink ID="hypLink" runat="server" CssClass="action-image"></asp:HyperLink>
                                     <h3 class="action-title">
-                                        <a href="<%# Item.Link.Url %>"><%# Item.Heading.Rendered %></a>
+                                        <asp:HyperLink ID="hypActionTitleLink" runat="server"></asp:HyperLink>
                                     </h3>
                                     <div class="action-description">
-                                       <%# Item.Abstract.Rendered %> 
+                                        <sc:FieldRenderer ID="frAbstract" runat="server" FieldName="Abstract"></sc:FieldRenderer>
                                     </div>
                                 </div>
                                 <div class="action-button-wrap">
-                                    <button type="button" runat="server" class="button action-button" data-url="<%# Item.Link.Url %>" 
-                                        onserverclick="btnActNow_Click">
-                                        <%# Item.ActNowButtonText.Rendered %>
+                                    <button id="btnActNow" type="button" runat="server" class="button action-button" onserverclick="btnActNow_Click">
+                                        <sc:FieldRenderer ID="frButtonText" runat="server" FieldName="Act Now Button Text"></sc:FieldRenderer>
                                     </button>
                                 </div>
                             </div>
