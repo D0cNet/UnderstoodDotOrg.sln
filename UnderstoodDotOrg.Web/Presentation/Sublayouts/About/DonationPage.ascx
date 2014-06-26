@@ -10,7 +10,7 @@
             <div class="donate-choose-gift">
                 <header class="rs_read_this about-donate-rs-wrapper">
                     <h1><%= Model.ContentPage.PageTitle.Rendered %></h1>
-                    <%= Model.ContentPage.PageSummary.Rendered %>
+                    <%= Model.ContentPage.BodyContent.Rendered %>
                 </header>
                 <div class="choose-gift-section rs_read_this about-donate-rs-wrapper">
                     <h2>1. <%= Model.AmountHeader.Rendered %></h2>

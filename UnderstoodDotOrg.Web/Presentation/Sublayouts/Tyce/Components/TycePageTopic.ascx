@@ -12,7 +12,7 @@
         <div class="col col-22 offset-1">
             <div class="text text-small">
                 <h1><%= PageItem.ContentPage.PageTitle.Rendered %></h1>
-                <%= PageItem.ContentPage.PageSummary.Rendered %>
+                <%= PageItem.ContentPage.BodyContent.Rendered %>
             </div>
         </div>
     </div>

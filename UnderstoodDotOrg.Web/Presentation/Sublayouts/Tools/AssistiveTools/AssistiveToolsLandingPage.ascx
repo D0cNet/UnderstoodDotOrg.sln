@@ -10,7 +10,7 @@
                 <div class="col col-24">
                     <div class="hero-content rs_read_this">
                         <h1><%= Model.AssistiveToolsBasePage.ContentPage.PageTitle %></h1>
-                        <%= Model.AssistiveToolsBasePage.ContentPage.PageSummary %>
+                        <%= Model.AssistiveToolsBasePage.ContentPage.BodyContent %>
                     </div>
                 </div>
             </div>

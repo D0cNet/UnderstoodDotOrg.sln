@@ -13,7 +13,7 @@
         <div class="col col-14 offset-1">
             <div class="rs_read_this">
                 <h1><%= Model.AssistiveToolsBasePage.ContentPage.PageTitle %></h1>
-                <%= Model.AssistiveToolsBasePage.ContentPage.PageSummary %>
+                <%= Model.AssistiveToolsBasePage.ContentPage.BodyContent %>
             </div>
         </div>
         <div class="col col-9">
