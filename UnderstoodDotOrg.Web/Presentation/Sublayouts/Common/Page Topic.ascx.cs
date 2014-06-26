@@ -62,6 +62,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             }
             else
             {
+                //UNAO-434 - this is a haaaaaack and needs refactoring
+                if (parent.InnerItem.Fields["Navigation Title"] == null)
+                {
+                    parent = parent.InnerItem.Parent;
+                }
+
                 frSectionTitle.Item = parent;
                 hlSectionTitle.NavigateUrl = parent.GetUrl();
             }
