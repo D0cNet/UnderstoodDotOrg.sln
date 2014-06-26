@@ -83,8 +83,8 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
                     && parent.InheritsTemplate(SubtopicLandingPageItem.TemplateId))
                 {
                     results = SearchHelper.GetRandomMoreLikeThisArticles(parent.ID, InnerItem.ID)
+                                    .Where(i => i.GetItem() != null)
                                     .Select(i => new DefaultArticlePageItem(i.GetItem()))
-                                    .Where(i => i.InnerItem != null)
                                     .ToList();
                 }
             }

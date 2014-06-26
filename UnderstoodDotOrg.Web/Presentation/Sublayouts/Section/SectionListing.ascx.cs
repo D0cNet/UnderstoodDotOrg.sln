@@ -58,8 +58,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
                         var recent = SearchHelper.GetMostRecentArticlesWithin(topic.ID, Constants.SECTION_LANDING_ARTICLES_PER_ROW);
                         if (recent.Any())
                         {
-                            topicArticles = recent.Select(i => new DefaultArticlePageItem(i.GetItem()))
-                                                .Where(i => i.InnerItem != null);
+                            topicArticles = recent.Where(i => i.GetItem() != null)
+                                                .Select(i => new DefaultArticlePageItem(i.GetItem()));
                         }
                     }
 

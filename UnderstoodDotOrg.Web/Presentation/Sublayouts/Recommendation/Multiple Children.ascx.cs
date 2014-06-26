@@ -80,8 +80,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
                 if (this.useSearch)
                 {
                     articles = SearchHelper.GetArticles(UnauthenticatedSessionMember, child, DateTime.Now)
+                                    .Where(a => a.GetItem() != null)
                                     .Select(a => new DefaultArticlePageItem(a.GetItem()))
-                                    .Where(a => a.InnerItem != null)
                                     .ToList();     
                 }
                 else

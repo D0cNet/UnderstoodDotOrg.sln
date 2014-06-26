@@ -48,8 +48,8 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages
             else
             {
                 List<Article> articles = SearchHelper.GetMostRecentArticlesWithin(InnerItem.ID, page, Constants.TOPIC_LISTING_ARTICLES_PER_PAGE, out totalResults);
-                results = articles.Select(i => new DefaultArticlePageItem(i.GetItem()))
-                                .Where(i => i.InnerItem != null);
+                results = articles.Where(i => i.GetItem() != null)
+                                .Select(i => new DefaultArticlePageItem(i.GetItem()));
             }
 
             hasMoreResults = ((page - 1) * Constants.TOPIC_LISTING_ARTICLES_PER_PAGE) + results.Count() < totalResults;

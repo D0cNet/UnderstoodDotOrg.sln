@@ -800,8 +800,8 @@ namespace UnderstoodDotOrg.Domain.Search
                                     .ToList();
 
                 // Handle out of synch indexed items
-                return events.Select(i => new BaseEventDetailPageItem(i.GetItem()))
-                                    .Where(i => i.InnerItem != null);
+                return events.Where(i => i.GetItem() != null)
+                                    .Select(i => new BaseEventDetailPageItem(i.GetItem()));
             }
         }
 
@@ -821,8 +821,8 @@ namespace UnderstoodDotOrg.Domain.Search
                                     .ToList();
 
                 // Handle out of synch indexed items
-                return events.Select(i => new BaseEventDetailPageItem(i.GetItem()))
-                                    .Where(i => i.InnerItem != null);
+                return events.Where(i => i.GetItem() != null)
+                                    .Select(i => new BaseEventDetailPageItem(i.GetItem()));
             }
         }
 
@@ -918,8 +918,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 var results = query.ToList();
 
-                return results.Select(i => new BaseEventDetailPageItem(i.GetItem()))
-                              .Where(i => i.InnerItem != null)
+                return results.Where(i => i.GetItem() != null)
+                              .Select(i => new BaseEventDetailPageItem(i.GetItem()))
                               .ToList();
             }
         }
@@ -943,8 +943,8 @@ namespace UnderstoodDotOrg.Domain.Search
                 Random r = new Random();
 
                 return Shuffle(results.AsEnumerable(), r)
-                            .Select(i => new ExpertDetailPageItem(i.GetItem()))
-                            .Where(i => i.InnerItem != null);
+                            .Where(i => i.GetItem() != null)
+                            .Select(i => new ExpertDetailPageItem(i.GetItem()));
             }
         }
 
@@ -1022,8 +1022,8 @@ namespace UnderstoodDotOrg.Domain.Search
                 var results = query.Take(pageSize).ToList();
 
                 return results
-                    .Select(i => new AssistiveToolsReviewPageItem(i.GetItem()))
-                    .Where(i => i.InnerItem != null);
+                    .Where(i => i.GetItem() != null)
+                    .Select(i => new AssistiveToolsReviewPageItem(i.GetItem()));
             }
         }
 
@@ -1085,11 +1085,10 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 var results = ordered.Take(total).ToList();
 
-                return (from r in results
-                       let i = new BaseEventDetailPageItem(r.GetItem())
-                       where i.InnerItem != null
-                            && i.Expert.Item != null
-                       select i).ToList();
+                return results.Where(i => i.GetItem() != null)
+                                .Select(i => new BaseEventDetailPageItem(i.GetItem()))
+                                .Where(i => i.Expert.Item != null)
+                                .ToList();
             }
         }
 
