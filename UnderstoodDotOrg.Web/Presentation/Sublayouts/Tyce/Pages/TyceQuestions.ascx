@@ -31,7 +31,7 @@
                             <ItemTemplate>
                                 <li>
                                     <button type="button" class="grade <%# Item.ChildDemographic.CssClass.Rendered %> grade-question-button" 
-                                        data-grade-id="<%# Item.ID.ToString() %>">
+                                        data-grade-id="<%# Item.ID.Guid.ToString() %>">
                                         <%# Item.ChildDemographic.Title.Rendered %>
                                     </button>
                                 </li>
@@ -62,7 +62,8 @@
                             <asp:Repeater ID="rptrChildIssues" runat="server">
                                 <ItemTemplate>
                                     <li>
-                                        <input type="checkbox" id="tyce-issue-<%# Eval("Id") %>" data-issue-id="<%# Eval("Id") %>" class="tyce-issue">
+                                        <input type="checkbox" id="tyce-issue-<%# Eval("Id") %>" data-issue-id="<%# Eval("Id") %>" 
+                                            class="tyce-issue"<%# PresetIssues.Contains((Guid)Eval("Id")) ? "checked=\"checked\"" : string.Empty %>>
                                         <label for="tyce-issue-<%# Eval("Id") %>"><%# Eval("Title") %></label>
                                     </li>
                                 </ItemTemplate>
@@ -90,7 +91,7 @@
                 </div>
             </div>
             <!-- #tyce-step-2 -->
-            <input type="hidden" id="hfVideoId" runat="server" class="hfVideoId" />
+            <input type="hidden" id="hfGradeId" runat="server" class="hfGradeId" />
             <input type="hidden" id="hfIssueIds" runat="server" class="hfIssueIds" />
         </div>
     </div>

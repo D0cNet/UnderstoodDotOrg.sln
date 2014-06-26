@@ -15,9 +15,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 {
     public partial class TyceQuestions : BaseSublayout<TyceQuestionsPageItem>
     {
+        protected List<Guid> PresetIssues { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            var simq = Request.QueryString["simq"];
+            PresetIssues = string.IsNullOrEmpty(simq) ?
+                new List<Guid>() :
+                simq.Split(',')
+                    .Select(s => s.AsNGuid())
+                    .Where(ng => ng.HasValue)
+                    .Select(ng => ng.Value).ToList();
+
             //TODO: change the below to a CIG logical method after more appropriate folder templates are created
             var tyceGradesFolder = Sitecore.Context.Database.GetItem("{17BF4487-9EC2-4434-A86E-B27D41CC3BC7}");
             var tyceGrades = tyceGradesFolder.Children
@@ -54,7 +63,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
         {
             var playerItem = Sitecore.Context.Item.Parent.Children
                 .First(i => i.IsOfType(TycePlayerPageItem.TemplateId));
-            var url = playerItem.GetUrl() + "?simq=" + hfIssueIds.Value + "&videoId=" + hfVideoId.Value;
+            var url = playerItem.GetUrl() + "?simq=" + hfIssueIds.Value + "&gradeId=" + hfGradeId.Value;
 
             Response.Redirect(url);
         }

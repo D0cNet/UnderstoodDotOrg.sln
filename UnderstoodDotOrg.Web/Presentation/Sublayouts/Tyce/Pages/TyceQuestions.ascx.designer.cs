@@ -49,13 +49,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages {
         protected global::System.Web.UI.WebControls.Repeater rptrIssueSummaries;
         
         /// <summary>
-        /// hfVideoId control.
+        /// hfGradeId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfVideoId;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfGradeId;
         
         /// <summary>
         /// hfIssueIds control.

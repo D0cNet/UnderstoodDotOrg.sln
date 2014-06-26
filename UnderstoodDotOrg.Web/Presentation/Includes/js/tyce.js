@@ -150,8 +150,9 @@ $(document).ready(function () {
     var $tyceStepTwo = $("#tyce-step-2");
 
     if ($tyceStepOne.length && $tyceStepTwo.length) {
-        function TyceQuestion(ele, canSelectMultiple) {
+        function TyceQuestion(ele, completeAnswerEle) {
             this.element = ele instanceof jQuery ? ele : $(ele);
+            this.completeAnswerEle = completeAnswerEle instanceof jQuery ? completeAnswerEle : $(completeAnswerEle);
             this.questionEle = this.element.find(".tyce-step-question");
             this.instructionsEle = this.element.find(".instructions");
             this.answerEle = this.element.find(".tyce-step-answer");
@@ -159,18 +160,17 @@ $(document).ready(function () {
             this.bodyNextEle = this.bodyEle.next();
             this.whyEle = this.element.find(".tyce-step-why");
             this.changeEle = this.element.find(".tyce-step-change");
-            this.completeAnswerEle = this.element.find(".complete-answer");
 
             this.answerEle.html(this.answerEle.html().replace("{{answer}}", "<b class='answer-placeholder'></b>"));
             this.answerPlaceholderEle = this.answerEle.children("b.answer-placeholder").first();
 
-            this.multipleAnswersEnabled = canSelectMultiple;
             this.isAnswered = false;
             this.answerText = "";
 
             this.doPartialAnswer = function (partialAnswerText) {
                 this.answerText = this.answerText.length ? this.answerText + ", " : this.answerText;
                 this.answerText += partialAnswerText;
+                this.isAnswered = true;
                 this.completeAnswerEle.show();
             }
 
@@ -182,11 +182,12 @@ $(document).ready(function () {
                     this.answerText = this.answerText.replace(partialAnswerText, "");
                 }
                 if (!this.answerText) {
+                    this.isAnswered = false;
                     this.completeAnswerEle.hide();
                 }
             }
 
-            this.doAnswer = function (answer) {
+            this.doAnswer = function (answer, showCompleteAnswer) {
                 if (this.bodyNextEle.length) {
                     this.bodyNextEle.show();
                 }
@@ -203,9 +204,14 @@ $(document).ready(function () {
                 this.changeEle.show();
 
                 this.isAnswered = true;
+
+                if (showCompleteAnswer) {
+                    this.completeAnswerEle.show();
+                }
             };
 
             this.doChange = function () {
+                console.log(this.completeAnswerEle);
                 this.completeAnswerEle.hide();
                 this.changeEle.hide();
                 this.answerEle.hide();
@@ -223,26 +229,23 @@ $(document).ready(function () {
         };
 
         var $submitAnswersButton = $tyceStepTwo.find("button.submit-answers-button");
+        var $completeAnswerButton = $tyceStepTwo.find(".complete-answer");
 
-        var tyceQuestion1 = new TyceQuestion($tyceStepOne);
-        var tyceQuestion2 = new TyceQuestion($tyceStepTwo);
+        var tyceQuestion1 = new TyceQuestion($tyceStepOne, $completeAnswerButton);
+        var tyceQuestion2 = new TyceQuestion($tyceStepTwo, $completeAnswerButton);
 
-        var $hfVideoId = $(".hfVideoId");
+        var $hfGradeId = $(".hfGradeId");
         var $gradeQuestionButton = $tyceStepOne.find(".grade-question-button");
         $gradeQuestionButton.on("click", function () {
             var $this = $(this);
 
-            $hfVideoId.val($this.attr("data-video-id"));
-            tyceQuestion1.doAnswer($this.text());
-
-            if (tyceQuestion1.isAnswered && tyceQuestion2.isAnswered) {
-                $submitAnswersButton.show();
-            }
+            $hfGradeId.val($this.attr("data-grade-id"));
+            tyceQuestion1.doAnswer($this.text(), tyceQuestion2.isAnswered);
         });
 
         tyceQuestion1.changeEle.on("click", function () {
             tyceQuestion1.doChange();
-            $hfVideoId.val("");
+            $hfGradeId.val("");
             $submitAnswersButton.hide();
         });
 
@@ -286,6 +289,8 @@ $(document).ready(function () {
             tyceQuestion2.doChange();
             $submitAnswersButton.hide();
         });
+
+        $tyceIssue.filter(":checked").trigger("change");
 
         var $tyceModalBegin = $("#tyce-modal-begin");
         $tyceStepTwo.find('.submit-answers-button').on('click', function () {
