@@ -71,16 +71,18 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                        ",[RatedGradeId] " +
                        ",[GradeAppropriateness] " +
                        ",[Created] " +
-                       ",[LastModified]) " +
+                       ",[LastModified] " +
+                       ",[TelligentCommentId]) " +
                  "VALUES " +
                        "(newid(), " +
                        "@MemberId, " +
                        "@CSMId, " +
-                       review.Rating + ", " +
+                       "@ReviewRating, " +
                        "@GradeId, " +
-                       review.GradeAppropriateness + ", " +
+                       "@GradeNumber, " +
                        "CURRENT_TIMESTAMP, " +
-                       "CURRENT_TIMESTAMP)";
+                       "CURRENT_TIMESTAMP, " +
+                       "newid())";
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
@@ -91,6 +93,8 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                         cmd.Parameters.AddWithValue("@CSMId", review.CSMItemId);
                         cmd.Parameters.AddWithValue("@MemberId", review.MemberId);
                         cmd.Parameters.AddWithValue("@GradeId", review.RatedGradeId);
+                        cmd.Parameters.AddWithValue("@ReviewRating", review.Rating);
+                        cmd.Parameters.AddWithValue("@GradeNumber", review.GradeAppropriateness);
                         cmd.ExecuteNonQuery();
                         success = true;
                     }

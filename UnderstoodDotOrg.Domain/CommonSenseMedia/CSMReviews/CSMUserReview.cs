@@ -12,7 +12,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public Guid ReviewId { get; set; }
-        public Guid TelligentId { get; set; }
+        public Guid TelligentCommentId { get; set; }
 
         public Guid? MemberId { get; set; }
         public virtual UnderstoodDotOrg.Domain.Membership.Member Member { get; set; }
