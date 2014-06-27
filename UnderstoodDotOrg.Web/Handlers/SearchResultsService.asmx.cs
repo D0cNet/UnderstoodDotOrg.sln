@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.Resources.Media;
 using UnderstoodDotOrg.Domain.Search.JSON;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 
 namespace UnderstoodDotOrg.Web.Handlers
 {
@@ -32,6 +33,13 @@ namespace UnderstoodDotOrg.Web.Handlers
         {
             ResultSet results = new ResultSet();
 
+            int blurbLimit = 150;
+            SearchResultsItem item = Sitecore.Context.Database.GetItem(Constants.Pages.SearchResults);
+            if (item != null && !string.IsNullOrEmpty(item.SearchResultSummaryCharacterLimit.Raw))
+            {
+                blurbLimit = item.SearchResultSummaryCharacterLimit.Integer;
+            }
+
             int totalResults = 0;
             List<Article> articles = SearchHelper.PerformArticleSearch(terms, type, page, out totalResults);
             var query = from a in articles
@@ -42,7 +50,7 @@ namespace UnderstoodDotOrg.Web.Handlers
                             Url = i.GetUrl(),
                             Thumbnail = i.GetArticleThumbnailUrl(230, 129),
                             Blurb = Common.Helpers.TextHelper.TruncateText(
-                                Sitecore.StringUtil.RemoveTags(HttpUtility.HtmlDecode(i.ContentPage.BodyContent.Rendered)), 150),
+                                Sitecore.StringUtil.RemoveTags(HttpUtility.HtmlDecode(i.ContentPage.BodyContent.Rendered)), blurbLimit),
                             Type = i.GetArticleType()
                         };
 
