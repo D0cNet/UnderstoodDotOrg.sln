@@ -5,6 +5,7 @@ using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 
 namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
 {
@@ -26,11 +27,11 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
         public string ReviewTitle { get; set; }
         public string ReviewBody { get; set; }
 
-        public virtual ICollection<CSMUserReviewSkill> UserReviewSkills { get; set; }
+        public virtual List<AssistiveToolsSkillItem> UserReviewSkills { get; set; }
 
         public CSMUserReview()
         {
-            UserReviewSkills = new Collection<CSMUserReviewSkill>();
+            UserReviewSkills = new List<AssistiveToolsSkillItem>();
         }
     }
 }

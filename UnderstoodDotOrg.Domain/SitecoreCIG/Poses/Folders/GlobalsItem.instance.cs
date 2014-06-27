@@ -62,7 +62,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
                 .FirstOrDefault(i => i.IsOfType(PromosFolderItem.TemplateId));
         }
 
-        public AssistiveToolsSkillFolderItem GetToolsFolder()
+        public AssistiveToolsSkillFolderItem GetSkillsFolder()
         {
             return InnerItem.Children.FirstOrDefault(i => i.ID.ToString() == "{7E804EB1-88F4-44B9-937A-5D84FF892970}")
                 .Children.FirstOrDefault(i => i.ID.ToString() == "{493EB983-FDE9-46E4-85C8-EE45EABFE91B}")

@@ -85,7 +85,6 @@
     <Compile Include="CommonSenseMedia\CSMReviews\CSMReviewDBContext.cs" />
     <Compile Include="CommonSenseMedia\CSMReviews\CSMUserReview.cs" />
     <Compile Include="CommonSenseMedia\CSMReviews\CSMUserReviewExtensions.cs" />
-    <Compile Include="CommonSenseMedia\CSMReviews\CSMUserReviewSkill.cs" />
     <Compile Include="CommonSenseMedia\CSMReviews\CSMUserReviewSkillExtensions.cs" />
     <Compile Include="CommonSenseMedia\ReviewImageModel.cs" />
     <Compile Include="CommonSenseMedia\ReviewManager.cs" />

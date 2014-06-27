@@ -24,7 +24,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(new Guid("E6819FC9-8F50-4708-96F5-6737CC53BDA2"));
+            List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());
 
             rptReviews.DataSource = reviews;
             rptReviews.DataBind();
@@ -34,7 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             ddlGrades.DataValueField = "Value";
             ddlGrades.DataBind();
 
-            AssistiveToolsSkillFolderItem skillsFolder = MainsectionItem.GetGlobals().GetToolsFolder();
+            AssistiveToolsSkillFolderItem skillsFolder = MainsectionItem.GetGlobals().GetSkillsFolder();
             rptSkillsChecklist.DataSource = skillsFolder.InnerItem.Children;
             rptSkillsChecklist.DataBind();
         }
@@ -43,36 +43,52 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         {
             CSMUserReview review = e.Item.DataItem as CSMUserReview;
 
-            Literal litRating = e.FindControlAs<Literal>("litRating");
-            Literal litGrade = e.FindControlAs<Literal>("litGrade");
-            Literal litReviewDate = e.FindControlAs<Literal>("litReviewDate");
-
-            if (litRating != null)
+            if (review != null)
             {
-                if (review.Rating == 1)
-                    litRating.Text = "<div class='results-slider blue-one' aria-label='1'>1</div>";
-                else if (review.Rating == 2)
-                    litRating.Text = "<div class='results-slider blue-two' aria-label='2'>2</div>";
-                else if (review.Rating == 3)
-                    litRating.Text = "<div class='results-slider blue-three' aria-label='3'>3</div>";
-                else if (review.Rating == 4)
-                    litRating.Text = "<div class='results-slider blue-four' aria-label='4'>4</div>";
-                else
-                    litRating.Text = "<div class='results-slider blue-five' aria-label='5'>5</div>";
+
+                Literal litRating = e.FindControlAs<Literal>("litRating");
+                Literal litGrade = e.FindControlAs<Literal>("litGrade");
+                Literal litReviewDate = e.FindControlAs<Literal>("litReviewDate");
+                Repeater rptSkills = e.FindControlAs<Repeater>("rptSkills");
+
+                if (litRating != null)
+                {
+                    if (review.Rating == 1)
+                        litRating.Text = "<div class='results-slider blue-one' aria-label='1'>1</div>";
+                    else if (review.Rating == 2)
+                        litRating.Text = "<div class='results-slider blue-two' aria-label='2'>2</div>";
+                    else if (review.Rating == 3)
+                        litRating.Text = "<div class='results-slider blue-three' aria-label='3'>3</div>";
+                    else if (review.Rating == 4)
+                        litRating.Text = "<div class='results-slider blue-four' aria-label='4'>4</div>";
+                    else
+                        litRating.Text = "<div class='results-slider blue-five' aria-label='5'>5</div>";
+                }
+
+                if (litGrade != null)
+                    litGrade.Text = review.GradeAppropriateness.ToString();
+
+                if (litReviewDate != null)
+                    litReviewDate.Text = review.Created.ToString("MMMM dd, yyyy");
+
+                if (review.UserReviewSkills.Count > 0)
+                {
+                    rptSkills.DataSource = review.UserReviewSkills;
+                    rptSkills.DataBind();
+                }
             }
-
-            if (litGrade != null)
-                litGrade.Text = review.GradeAppropriateness.ToString();
-
-            if (litReviewDate != null)
-                litReviewDate.Text = review.Created.ToString("MMMM dd, yyyy");
-
-
         }
 
         protected void rptSkills_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
+            AssistiveToolsSkillItem skill = e.Item.DataItem as AssistiveToolsSkillItem;
 
+            if (skill != null)
+            {
+                Literal litSkill = e.FindControlAs<Literal>("litSkill");
+
+                litSkill.Text = skill.DisplayName;
+            }
         }
 
         protected void rptSkillsChecklist_ItemDataBound(object sender, RepeaterItemEventArgs e)

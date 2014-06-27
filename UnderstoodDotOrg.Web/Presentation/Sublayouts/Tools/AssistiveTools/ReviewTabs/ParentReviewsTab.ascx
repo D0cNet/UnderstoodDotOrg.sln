@@ -54,7 +54,7 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <span>
-                                <a class="link-separator" href="REPLACE">Reading</a>
+                                <a class="link-separator" href="REPLACE"><asp:Literal ID="litSkill" runat="server"></asp:Literal></a>
                             </span>
                         </ItemTemplate>
                         <FooterTemplate>

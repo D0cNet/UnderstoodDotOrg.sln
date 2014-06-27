@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 
 namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
 {
@@ -46,6 +47,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                                 review.GradeAppropriateness = reader.GetInt32(5);
                                 review.Created = reader.GetDateTime(6);
                                 review.LastModified = reader.GetDateTime(7);
+                                review.UserReviewSkills = GetSkills(review.ReviewId);
                             }
 
                             reviews.Add(review);
@@ -58,6 +60,41 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                 throw ex;
             }
             return reviews;
+        }
+
+        public static List<AssistiveToolsSkillItem> GetSkills(Guid reviewId)
+        {
+            List<AssistiveToolsSkillItem> skills = new List<AssistiveToolsSkillItem>();
+            string sql = " SELECT RowId, " +
+                                " ReviewId, " +
+                                " SkillId " +
+                                " FROM CSMReviewsToSkills " +
+                                " WHERE (ReviewId = @ReviewId)";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ReviewId", reviewId);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                AssistiveToolsSkillItem skill = Sitecore.Context.Database.GetItem(reader.GetGuid(2).ToString());
+                                skills.Add(skill);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return skills;
         }
 
         public static bool InsertNewReview(CSMUserReview review)
@@ -106,6 +143,65 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
             }
             success = true;
             return success;
+        }
+
+        public static bool InsertSkill(Guid skillId)
+        {
+            bool success = false;
+            string sql = "INSERT INTO [Understood.org.DEV.membership].[dbo].[CSMUserReviewSkills] " +
+                       "([SkillId]) " +
+                 "VALUES " +
+                       "(@SkillId)";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@SkillId", skillId);
+                        cmd.ExecuteNonQuery();
+                        success = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            success = true;
+            return success;
+        }
+
+        public static bool SkillExists(Guid skillId)
+        {
+            List<AssistiveToolsSkillItem> skills = new List<AssistiveToolsSkillItem>();
+            string sql = " SELECT SkillId " +
+                                " FROM CSMUserReviewSkills " +
+                                " WHERE (SkillId = @SkillId)";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@SkillId", skillId);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            return true;
+                        }
+                        else
+                            return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -13,6 +13,8 @@ using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 using UnderstoodDotOrg.Domain.CommonSenseMedia;
+using UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders.LearningTool;
 
 namespace UnderstoodDotOrg.Domain.Importer
 {
@@ -366,6 +368,12 @@ namespace UnderstoodDotOrg.Domain.Importer
 
                 PublishItem(newItem, master);
                 PublishItem(newItem, web);
+
+                if (container.TemplateID.ToString().ToLower() == AssistiveToolsSkillFolderItem.TemplateId.ToLower())
+                {
+                    if (!CSMUserReviewExtensions.SkillExists(newItem.ID.ToGuid()))
+                        CSMUserReviewExtensions.InsertSkill(newItem.ID.ToGuid());
+                }
 
                 return newItem.ID.ToString();
             }

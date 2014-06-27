@@ -29,6 +29,5 @@ namespace UnderstoodDotOrg.Domain.Membership
         }
 
         public DbSet<CSMUserReview> CSMUserReviews { get; set; }
-        public DbSet<CSMUserReviewSkill> CSMUserReviewSkills { get; set; }
     }
 }
