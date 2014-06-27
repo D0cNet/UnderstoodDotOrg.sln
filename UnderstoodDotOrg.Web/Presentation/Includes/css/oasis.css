@@ -125,5 +125,21 @@
   left: 0;
 }
 
+/* UN-4888*/
+#article-slideshow .slide.text-slide .content li {
+  color: #fff;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: arial, sans-serif;
+}
+#article-slideshow .slide.text-slide .content p {
+  margin-bottom: 1em;
+}
+#article-slideshow .slide.text-slide .content ol,
+#article-slideshow .slide.text-slide .content ul {
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
 
 /* END: temporary override rules provided by DP. */
