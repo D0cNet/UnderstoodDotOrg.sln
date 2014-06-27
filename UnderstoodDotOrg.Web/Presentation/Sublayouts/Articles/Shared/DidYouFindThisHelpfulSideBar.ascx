@@ -3,16 +3,16 @@
 <div class="find-this-helpful-large">
     <!-- Module within only appears in over 650px window width-->
     <!-- BEGIN PARTIAL: find-helpful -->
-    <div class="find-this-helpful sidebar">
+    <div class="find-this-helpful sidebar rs_read_this">
         <h4><asp:Literal ID="ltlDidYouFindThisHelpful" runat="server"></asp:Literal></h4>
             <asp:UpdatePanel ID="UpdatePanel2" runat="server" class="update-panel">
                 <ContentTemplate>
                     <ul>
                         <li>
-                            <button id="btnYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick"></button>
+                            <button id="btnYes" runat="server" class="button yes rs_skip" onserverclick="btnYes_ServerClick"></button>
                         </li>
                         <li>
-                            <button id="btnNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
+                            <button id="btnNo" runat="server" class="button no rs_skip" onserverclick="btnNo_ServerClick"></button>
                         </li>
                     </ul>
                 </ContentTemplate>

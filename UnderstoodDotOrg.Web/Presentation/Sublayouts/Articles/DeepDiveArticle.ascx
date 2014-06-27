@@ -108,9 +108,7 @@
                 </div>
             </div>
             <!-- BEGIN PARTIAL: about-the-author -->
-            <div class="rs_about_author rs_read_this">
                 <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" Visible="false" />
-            </div>
 
             <!-- END PARTIAL: about-the-author -->
             <!-- BEGIN PARTIAL: reviewed-by -->

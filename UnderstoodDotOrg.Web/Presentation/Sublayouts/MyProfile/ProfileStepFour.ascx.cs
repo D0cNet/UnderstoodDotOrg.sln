@@ -313,6 +313,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
         {
             try
             {
+                //check telligent, you dummy
                 var membershipManager = new MembershipManager();
 
                 //verify that screen name is unique

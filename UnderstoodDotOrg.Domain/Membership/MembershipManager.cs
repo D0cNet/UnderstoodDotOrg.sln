@@ -477,6 +477,9 @@ namespace UnderstoodDotOrg.Domain.Membership
         /// <returns>Member that was updated</returns>
         public Member UpdateMember(Member Member)
         {
+            //if screen != null && telligentuser.getusrbyscreenname != null -> create user
+            //TelligentService.GetPosesMember(string screenName)
+            //CommunityHelper.CreateUser(screenname, email)
 
             //bg: Update member properties that are outside of entity:
             //    UpdateMember_ExtendedProperties checks a n data flag on member, 
