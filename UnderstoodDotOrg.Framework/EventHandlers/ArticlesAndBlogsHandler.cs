@@ -69,6 +69,13 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     }
                 }
             }
+            else if (item.TemplateID == Sitecore.Data.ID.Parse("{C9DFC576-7750-4A84-9A79-61F16585E64E}"))
+            {
+                if (item["BlogId"] == string.Empty)
+                {
+                    CreateTelligentPost(item, 4); //blog id should be 4
+                }
+            }
         }
 
         private void CreateTelligentPost(Item item, int blogId)
