@@ -163,11 +163,14 @@ $(document).ready(function () {
             this.isAnswered = false;
             this.answerText = "";
 
-            this.doPartialAnswer = function (partialAnswerText) {
+            this.doPartialAnswer = function (partialAnswerText, showCompleteAnswer) {
                 this.answerText = this.answerText.length ? this.answerText + ", " : this.answerText;
                 this.answerText += partialAnswerText;
                 this.isAnswered = true;
-                this.completeAnswerEle.show();
+
+                if (showCompleteAnswer) {
+                    this.completeAnswerEle.show();
+                }
             }
 
             this.doRemovePartialAnswer = function (partialAnswerText) {
@@ -256,7 +259,7 @@ $(document).ready(function () {
 
             if ($this.is(":checked")) {
                 selectedIssueIds.push(issueId);
-                tyceQuestion2.doPartialAnswer(issueText);
+                tyceQuestion2.doPartialAnswer(issueText, tyceQuestion1.isAnswered);
             } else {
                 tyceQuestion2.doRemovePartialAnswer(issueText);
                 selectedIssueIds.splice(selectedIssueIds.indexOf(issueId), 1);

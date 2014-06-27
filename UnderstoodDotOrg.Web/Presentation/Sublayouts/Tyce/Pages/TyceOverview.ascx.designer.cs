@@ -20,5 +20,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptrSimulations;
+        
+        /// <summary>
+        /// rptrChildStoryTabs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptrChildStoryTabs;
+        
+        /// <summary>
+        /// rptrChildStories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptrChildStories;
     }
 }
