@@ -121,69 +121,96 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
         public static bool LikeComment(string screenName, string contentId, string contentTypeId)
         {
-            using (var webClient = new WebClient())
+            var requestUrl = GetApiEndPoint("likes.xml");
+            var values = new NameValueCollection
             {
-                try
+                { "ContentId", contentId },
+                { "ContentTypeId", contentTypeId }
+            };
+
+            try
+            {
+                MakeApiRequest(wc =>
                 {
-                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                    webClient.Headers.Add("Rest-Impersonate-User", screenName);
-                    var requestUrl = GetApiEndPoint("likes.xml");
+                    wc.Headers.Add("Rest-Impersonate-User", screenName);
 
-                    var values = new NameValueCollection
-                    {
-                        { "ContentId", contentId },
-                        { "ContentTypeId", contentTypeId }
-                    };
+                    string response = Encoding.UTF8.GetString(wc.UploadValues(requestUrl, values));
+                });
 
-                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error(String.Format("Error liking comment: {0}", contentId), ex);
+                return false;
+            }
+        }
 
-                    return true;
-                }
-                catch
+        public static bool FlagComment(string contentId)
+        {
+            var requestUrl = GetApiEndPoint(String.Format("comments/{0}.xml", contentId));
+            var values = new NameValueCollection
+            {
+                { "CommentId", contentId },
+                { "IsApproved", "false" }
+            };
+
+            try
+            {
+                MakeApiRequest(wc =>
                 {
-                    return false;
-                }
+                    string response = Encoding.UTF8.GetString(wc.UploadValues(requestUrl, values));
+                });
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error(String.Format("Error flagging comment: {0}", contentId), ex);
+                return false;
+            }
+        }
+
+        private static void MakeApiRequest(Action<WebClient> action)
+        {
+            using (var wc = new WebClient())
+            {
+                wc.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                action(wc);
             }
         }
 
         public static int GetTotalLikes(string contentId)
         {
             int count = 0;
-            Guid guid = Guid.Empty;
+            
+            var requestUrl = GetApiEndPoint(
+                string.Format("likes.xml?ContentId={0}&PageSize=1", contentId));
 
-            if (Guid.TryParse(contentId, out guid))
+            try
             {
-                using (var webClient = new WebClient())
+                MakeApiRequest(wc => 
                 {
-                    try
+                    var response = wc.DownloadString(requestUrl);
+                    var xml = new XmlDocument();
+                    xml.LoadXml(response);
+
+                    XmlNode node = xml.SelectSingleNode("Response/Likes");
+                    if (node != null)
                     {
-                        // TODO: add validation for invalid content id
-
-                        webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                        var requestUrl = GetApiEndPoint(string.Format("likes.xml?ContentId={0}&PageSize=1",
-                            guid.ToString()));
-
-                        var xml = webClient.DownloadString(requestUrl);
-
-                        var xmlDoc = new XmlDocument();
-                        xmlDoc.LoadXml(xml);
-                        XmlNode node = xmlDoc.SelectSingleNode("Response/Likes");
-
-                        if (node != null)
-                        {
-                            count = Convert.ToInt32(node.Attributes["TotalCount"].Value);
-                        }
-
+                        count = Convert.ToInt32(node.Attributes["TotalCount"].Value);
                     }
-                    catch (Exception ex)
-                    {
-                        Sitecore.Diagnostics.Log.Error(ex.Message, ex);
-                    }
-                }
+                });
+            }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error(String.Format("Error retrieving likes: {0}", contentId), ex);
             }
 
             return count;
         }
+
         public static Comment ReadComment(string commentId)
         {
             var webClient = new WebClient();
