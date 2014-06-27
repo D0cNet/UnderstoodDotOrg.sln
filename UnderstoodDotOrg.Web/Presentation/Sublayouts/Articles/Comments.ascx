@@ -13,9 +13,11 @@
                     <h2 class="comment-count rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.CommentsLabel %> (<asp:Literal ID="litCommentCount" runat="server" />)</h2>
                     <div class="select-container select-inverted-mobile">
                       <select name="comment-sort-option" id="comment-sort-option-dropdown" class="comment-sort">
-                        <option value="">Sort by</option>
-                        <option>A-Z</option>
-                        <option>Z-A</option>
+                        <asp:Repeater ID="rptSortOptions" runat="server" ItemType="UnderstoodDotOrg.Domain.Understood.Services.CommentSortOption">
+                            <ItemTemplate>
+                                <option value="<%# (Container.ItemIndex == 0) ? string.Empty : Container.ItemIndex.ToString() %>"><%# Item.Description %></option>
+                            </ItemTemplate>
+                        </asp:Repeater>
                       </select>
                     </div>
                 </header>

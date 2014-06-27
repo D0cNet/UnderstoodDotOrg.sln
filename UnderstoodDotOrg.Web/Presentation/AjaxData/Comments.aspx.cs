@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Domain.Understood.Services;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.AjaxData
 {
@@ -27,26 +29,30 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
         {
             get { return Request.QueryString["sortBy"] ?? String.Empty; }
         }
-        private string IsAscending
-        {
-            get { return Request.QueryString["ascending"] ?? String.Empty; }
-        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             int page;
-            bool isAscending = IsAscending == "1";
+            int sortBy;
 
-            // Temp
-            string sortBy = "CreatedUtcDate";
-
-            if (int.TryParse(ResultPage, out page))
+            if (int.TryParse(ResultPage, out page) && int.TryParse(SortBy, out sortBy))
             {
                 int pageSize = Constants.ARTICLE_COMMENTS_PER_PAGE;
                 int totalResults;
                 bool hasMoreResults;
 
-                var comments = CommunityHelper.ReadComments(BlogId, PostId, page, pageSize, sortBy, isAscending, out totalResults, out hasMoreResults);
+                var sortOptions = CommunityHelper.GetCommentSortOptions();
+                CommentSortOption sortOption = null;
+                try
+                {
+                    sortOption = sortOptions[sortBy];
+                }
+                catch
+                {
+                    return;
+                }
+
+                var comments = TelligentService.ReadComments(BlogId, PostId, page, pageSize, sortOption, out totalResults, out hasMoreResults);
 
                 if (comments.Any())
                 {

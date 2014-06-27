@@ -1041,6 +1041,30 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string SortByLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Sort By Label");
+            }
+        }
+
+        public static string MostRecentLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Most Recent Label");
+            }
+        }
+
+        public static string OldestToNewestLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Oldest To Newest Label");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

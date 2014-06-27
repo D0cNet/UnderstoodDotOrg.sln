@@ -920,6 +920,11 @@ namespace UnderstoodDotOrg.Common
             public const string Password = @"[\s\S]{6,}";
         }
 
+        public static class TelligentCommentSort
+        {
+            public const string CreateDate = "CreatedUtcDate";
+        }
+
         public enum TelligentContentType
         {
             BlogPost,

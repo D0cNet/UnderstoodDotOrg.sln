@@ -18,6 +18,7 @@ using UnderstoodDotOrg.Domain.Membership;
 using System.Web.Security;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
+using UnderstoodDotOrg.Domain.Understood.Services;
 namespace UnderstoodDotOrg.Services.TelligentService
 {
     public class TelligentService
@@ -46,6 +47,146 @@ namespace UnderstoodDotOrg.Services.TelligentService
             var adminKey = String.Format("{0}:{1}", apiKey, "admin");
             adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
             return adminKeyBase64;
+        }
+
+        public static bool PostComment(int blogId, int blogPostId, string body, string currentUser)
+        {
+            if (currentUser == "admin") 
+            {
+                return false;
+            }
+
+            var postUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", blogId, blogPostId));
+
+            var data = new NameValueCollection()
+            {
+                { "Body", body },
+                { "PublishedDate", DateTime.Now.ToString() },
+                { "IsApproved", "true" },
+                { "BlogId", blogId.ToString() }
+            };
+
+            try
+            {
+                MakeApiRequest(wc =>
+                {
+                    currentUser = currentUser.Trim().ToLower();
+                    wc.Headers.Add("Rest-Impersonate-User", currentUser);
+
+                    byte[] result = wc.UploadValues(postUrl, data);
+
+                    string response = wc.Encoding.GetString(result);
+                });
+
+                return true;
+            } 
+            catch (Exception ex) 
+            {
+                Sitecore.Diagnostics.Log.Error(String.Format("Error posting comment: {0}", postUrl), ex);
+                return false;
+            }
+        }
+
+        public static List<Comment> ReadComments(string blogId, string blogPostId, int page, int pageSize, CommentSortOption sortOption, out int totalComments, out bool hasMoreResults)
+        {
+            return ReadComments(blogId, blogPostId, page, pageSize, sortOption.Value, sortOption.SortAscending, out totalComments, out hasMoreResults);
+        }
+
+        public static List<Comment> ReadComments(string blogId, string blogPostId, int page, int pageSize, string sortBy, bool sortAscending, out int totalComments, out bool hasMoreResults)
+        {
+            List<Comment> commentList = new List<Comment>();
+
+            hasMoreResults = false;
+            totalComments = 0;
+
+            int id = 0;
+            int postId = 0;
+
+            int pageIndex = (page >= 1) ? page - 1 : 0;
+
+            if (String.IsNullOrEmpty(blogId) || String.IsNullOrEmpty(blogPostId)
+                || !Int32.TryParse(blogId, out id) || !Int32.TryParse(blogPostId, out postId))
+            {
+                return commentList;
+            }
+
+            string baseUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml",
+                            id, postId));
+
+            var sortOrder = sortAscending ? "Ascending" : "Descending";
+
+            var query = new Dictionary<string, string>
+            {
+                { "PageIndex", pageIndex.ToString() },
+                { "PageSize", pageSize.ToString() },
+                { "SortBy", sortBy },
+                { "SortOrder", sortOrder }
+            };
+
+            var requestUrl = HttpHelper.AssembleUrl(baseUrl, query);
+
+            int commentCount = 0;
+
+            try
+            {
+                MakeApiRequest(wc =>
+                {
+                    var xml = wc.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNode commentsNode = xmlDoc.SelectSingleNode("Response/Comments");
+
+                    if (commentsNode != null)
+                    {
+                        commentCount = Convert.ToInt32(commentsNode.Attributes["TotalCount"].Value);
+
+                        XmlNodeList nodes = commentsNode.SelectNodes("Comment");
+
+                        foreach (XmlNode xn in nodes)
+                        {
+                            XmlNode author = xn.SelectSingleNode("Author");
+
+                            string commentId = xn["CommentId"].InnerText;
+                            string commentDate = xn["PublishedDate"].InnerText;
+                            DateTime parsedDate = DateTime.Parse(commentDate);
+
+                            Comment comment = new Comment
+                            {
+                                Id = xn["Id"].InnerText,
+                                Url = xn["Url"].InnerText,
+                                ParentId = xn["ParentId"].InnerText,
+                                ContentId = xn["ContentId"].InnerText,
+                                IsApproved = xn["IsApproved"].InnerText,
+                                ReplyCount = xn["ReplyCount"].InnerText,
+                                CommentId = commentId,
+                                CommentContentTypeId = xn["CommentContentTypeId"].InnerText,
+                                Body = xn["Body"].InnerText,
+                                PublishedDate = DataFormatHelper.FormatDate(commentDate),
+                                AuthorId = author["Id"].InnerText,
+                                AuthorAvatarUrl = author["AvatarUrl"].InnerText,
+                                AuthorDisplayName = author["DisplayName"].InnerText,
+                                AuthorProfileUrl = author["ProfileUrl"].InnerText,
+                                AuthorUsername = author["Username"].InnerText,
+                                Likes = GetTotalLikes(commentId).ToString(),
+                                CommentDate = parsedDate
+                            };
+
+                            commentList.Add(comment);
+                        }
+                    }
+                });
+
+                totalComments = commentCount;
+                hasMoreResults = (pageIndex * pageSize) + commentList.Count() < totalComments;
+            }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error(String.Format("Error retrieving comments: {0}", requestUrl), ex);
+            }
+
+            return commentList;
         }
 
         public static List<Comment> ReadComments(string blogId, string blogPostId)

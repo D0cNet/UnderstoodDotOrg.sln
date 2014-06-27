@@ -471,7 +471,7 @@ $(document).ready(function () {
     var inProgress = false;
     var helpfulInProgress = false;
     var flagInProgress = false;
-	var $container, $showMoreContainer, path, blog, post;
+	var $container, $showMoreContainer, $sortOption, path, blog, post;
 	
 	function init() {
 	    initShowMore();
@@ -486,8 +486,19 @@ $(document).ready(function () {
 	        post = $trigger.data('post');
 	        $container = $("#" + $trigger.data('container'));
 	        $showMoreContainer = $trigger.closest(".show-more");
-
+			$sortOption = $("#comment-sort-option-dropdown");
+			
+			$sortOption.on("change", sortOption_changeHandler);
 	        $trigger.on("click", showMore_clickHandler);
+	    }
+	}
+	
+	function sortOption_changeHandler(e) {
+	    if ($(this).prop('selectedIndex') > 0) {
+	        currentPage = 0;
+	        $showMoreContainer.hide();
+	        $container.html('');
+	        loadNextPage();
 	    }
 	}
 
@@ -575,6 +586,10 @@ $(document).ready(function () {
 	function showMore_clickHandler(e) {
 		e.preventDefault();
 		
+		loadNextPage();
+	}
+	
+	function loadNextPage() {
 		if (inProgress) {
 			return;
 		}
@@ -587,7 +602,7 @@ $(document).ready(function () {
             'page': currentPage + 1,
 			'blog': blog,
 			'post': post,
-			'sortBy': '',
+			'sortBy': parseInt($sortOption.prop('selectedIndex'), 10),
 			'ascending': 1
 		};
 		
@@ -597,8 +612,10 @@ $(document).ready(function () {
 			method: 'GET'
 		}).done(function (data) {
 			currentPage++;
-            if ($(data).filter('input[type="hidden"]').length == 0) {
-				$showMoreContainer.hide();
+			if ($(data).filter('input[type="hidden"]').length == 0) {
+			    $showMoreContainer.hide();
+			} else {
+			    $showMoreContainer.show();
 			}
 			$container.append(data);
         }).always(function () {

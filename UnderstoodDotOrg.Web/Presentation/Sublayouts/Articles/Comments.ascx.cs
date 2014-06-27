@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Net;
@@ -7,7 +8,6 @@ using System.Web.UI.WebControls;
 using System.Xml;
 using Sitecore.Configuration;
 using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
@@ -15,6 +15,9 @@ using Sitecore.Data.Items;
 using UnderstoodDotOrg.Framework.UI;
 using System.Web.UI.HtmlControls;
 using UnderstoodDotOrg.Services.AccessControlServices;
+using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -75,8 +78,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 if (!IsPostBack)
                 {
+                    PopulateSortOptions();
                     PopulateComments();
                 }
+            }
+        }
+
+        private void PopulateSortOptions()
+        {
+            var options = CommunityHelper.GetCommentSortOptions();
+            if (options.Any())
+            {
+                rptSortOptions.DataSource = options;
+                rptSortOptions.DataBind();
             }
         }
 
@@ -91,7 +105,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             bool hasMoreResults;
             int totalComments;
 
-            List<Comment> dataSource = CommunityHelper.ReadComments(
+            List<UnderstoodDotOrg.Services.Models.Telligent.Comment> dataSource = TelligentService.ReadComments(
                 _blogId.ToString(), _blogPostId.ToString(), 1, Constants.ARTICLE_COMMENTS_PER_PAGE, "CreatedUtcDate", true, out totalComments, out hasMoreResults);
             commentsControl.Comments = dataSource;
 
@@ -110,9 +124,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     String.Format("Member has empty screen name, member id: {0}", CurrentMember.MemberId), this);
             }
 
-            CommunityHelper.PostComment(_blogId, _blogPostId, txtComment.Text.Trim(), CurrentMember.ScreenName);
-
-            Response.Redirect(Request.RawUrl);
+            if (TelligentService.PostComment(_blogId, _blogPostId, txtComment.Text.Trim(), CurrentMember.ScreenName))
+            {
+                Response.Redirect(Request.RawUrl);
+            }
+            else
+            {
+                // TODO: display error;
+            }
         }
     }
 }

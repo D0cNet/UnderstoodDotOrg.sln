@@ -645,6 +645,7 @@
     <Compile Include="Understood\Personalization\PersonalizedItemModel.cs" />
     <Compile Include="Understood\Quiz\Quiz.cs" />
     <Compile Include="Understood\Quiz\QuizItem.cs" />
+    <Compile Include="Understood\Services\CommentSortOption.cs" />
     <Compile Include="Understood\Services\ContentServiceResult.cs" />
     <Compile Include="Understood\Services\HelpfulContentResult.cs" />
     <Compile Include="Understood\Submissions\SubmissionResult.cs" />

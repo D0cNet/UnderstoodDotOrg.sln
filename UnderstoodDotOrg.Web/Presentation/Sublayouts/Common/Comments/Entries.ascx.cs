@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Services.Models.Telligent;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Comments
 {

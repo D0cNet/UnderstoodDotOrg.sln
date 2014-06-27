@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Entries.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Comments.Entries" %>
-<asp:Repeater runat="server" ID=rptComments ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Comment">
+<asp:Repeater runat="server" ID=rptComments ItemType="UnderstoodDotOrg.Services.Models.Telligent.Comment">
     <ItemTemplate>
         <div class="comment-wrapper" data-comment-id="<%# Item.CommentId %>">
             <div class="comment-header">

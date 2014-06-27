@@ -17,11 +17,37 @@ using UnderstoodDotOrg.Domain.Understood.Activity;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Common.Helpers;
+using UnderstoodDotOrg.Domain.Understood.Services;
 
 namespace UnderstoodDotOrg.Domain.TelligentCommunity
 {
     public class CommunityHelper
     {
+        public static List<CommentSortOption> GetCommentSortOptions()
+        {
+            return new List<CommentSortOption>
+            {
+                new CommentSortOption 
+                {
+                    Value = String.Empty,
+                    Description = DictionaryConstants.SortByLabel,
+                    SortAscending = false
+                },
+                new CommentSortOption 
+                {
+                    Value = Constants.TelligentCommentSort.CreateDate,
+                    Description = DictionaryConstants.MostRecentLabel,
+                    SortAscending = false
+                },
+                new CommentSortOption
+                {
+                    Value = Constants.TelligentCommentSort.CreateDate,
+                    Description = DictionaryConstants.OldestToNewestLabel,
+                    SortAscending = true
+                }
+            };
+        }
+
         public static string FormatDate(string dateTime)
         {
             string[] d = dateTime.Split('T');
@@ -96,100 +122,6 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public static string FormatRemoveHtml(string source)
         {
             return Regex.Replace(source, "<.*?>", string.Empty);
-        }
-
-        public static List<Comment> ReadComments(string blogId, string blogPostId, int page, int pageSize, string sortBy, bool sortAscending, out int totalComments, out bool hasMoreResults)
-        {
-            List<Comment> commentList = new List<Comment>();
-
-            hasMoreResults = false;
-            totalComments = 0;
-
-            int id = 0;
-            int postId = 0;
-
-            int pageIndex = (page >= 1) ? page - 1 : 0;
-
-            if (String.IsNullOrEmpty(blogId) || String.IsNullOrEmpty(blogPostId)
-                || !Int32.TryParse(blogId, out id) || !Int32.TryParse(blogPostId, out postId))
-            {
-                return commentList;
-            }
-
-            using (var webClient = new WebClient())
-            {
-                try
-                {
-                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-
-                    string baseUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", 
-                            id, postId));
-
-                    var sortOrder = sortAscending ? "Ascending" : "Descending";
-
-                    var query = new Dictionary<string, string>
-                    {
-                        { "PageIndex", pageIndex.ToString() },
-                        { "PageSize", pageSize.ToString() },
-                        { "SortBy", sortBy },
-                        { "SortOrder", sortOrder }
-                    };
-
-                    var requestUrl = HttpHelper.AssembleUrl(baseUrl, query);
-
-                    var xml = webClient.DownloadString(requestUrl);
-
-                    var xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xml);
-
-                    XmlNode commentsNode = xmlDoc.SelectSingleNode("Response/Comments");
-
-                    if (commentsNode != null)
-                    {
-                        totalComments = Convert.ToInt32(commentsNode.Attributes["TotalCount"].Value);
-
-                        XmlNodeList nodes = commentsNode.SelectNodes("Comment");
-
-                        foreach (XmlNode xn in nodes)
-                        {
-                            XmlNode author = xn.SelectSingleNode("Author");
-
-                            string commentId = xn["CommentId"].InnerText;
-                            string commentDate = xn["PublishedDate"].InnerText;
-                            DateTime parsedDate = DateTime.Parse(commentDate);
-
-                            Comment comment = new Comment
-                            {
-                                Id = xn["Id"].InnerText,
-                                Url = xn["Url"].InnerText,
-                                ParentId = xn["ParentId"].InnerText,
-                                ContentId = xn["ContentId"].InnerText,
-                                IsApproved = xn["IsApproved"].InnerText,
-                                ReplyCount = xn["ReplyCount"].InnerText,
-                                CommentId = commentId,
-                                CommentContentTypeId = xn["CommentContentTypeId"].InnerText,
-                                Body = xn["Body"].InnerText,
-                                PublishedDate = CommunityHelper.FormatDate(commentDate),
-                                AuthorId = author["Id"].InnerText,
-                                AuthorAvatarUrl = author["AvatarUrl"].InnerText,
-                                AuthorDisplayName = author["DisplayName"].InnerText,
-                                AuthorProfileUrl = author["ProfileUrl"].InnerText,
-                                AuthorUsername = author["Username"].InnerText,
-                                Likes = GetTotalLikes(commentId).ToString(),
-                                CommentDate = parsedDate
-                            };
-                            
-                            commentList.Add(comment);
-                        }
-
-                        hasMoreResults = (pageIndex * pageSize) + commentList.Count() < totalComments;
-                    }
-
-                    
-                }
-                catch { } // TODO: add logging
-            }
-            return commentList;
         }
 
         public static Comment ReadComment(string commentId)
@@ -334,37 +266,6 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 catch { } // TODO: Add logging
             }
             return blogPost;
-        }
-
-        public static void PostComment(int blogId, int blogPostId, string body, string currentUser)
-        {
-            using (var webClient = new WebClient())
-            {
-                if (!currentUser.Equals("admin"))
-                {
-                    try
-                    {
-                        webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                        currentUser = currentUser.Trim().ToLower();
-                        webClient.Headers.Add("Rest-Impersonate-User", currentUser);
-
-                        var postUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", blogId, blogPostId));
-
-                        var data = new NameValueCollection()
-                        {
-                            { "Body", body },
-                            { "PublishedDate", DateTime.Now.ToString() },
-                            { "IsApproved", "true" },
-                            { "BlogId", blogId.ToString() }
-                        };
-
-                        byte[] result = webClient.UploadValues(postUrl, data);
-                        // TODO: handle errors
-                        string response = webClient.Encoding.GetString(result);
-                    }
-                    catch { } //TODO: Add logging
-                }
-            }
         }
 
         public static string PostComment(string blogId, string blogPostId, string body, string currentUser)

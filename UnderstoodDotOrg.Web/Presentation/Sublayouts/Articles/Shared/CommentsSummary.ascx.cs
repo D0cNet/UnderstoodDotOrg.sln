@@ -8,10 +8,11 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.Data.Items;
-using UnderstoodDotOrg.Domain.TelligentCommunity;
 using Sitecore.Links;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Services.Models.Telligent;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -36,7 +37,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 string commentId = article.DefaultArticlePage.CommentTeaserOverrideID.Text;
                 if (!string.IsNullOrEmpty(commentId))
                 {
-                    recentComment = CommunityHelper.ReadComment(commentId);
+                    recentComment = TelligentService.ReadComment(commentId);
                 }
                 
                 int totalComments;
@@ -44,12 +45,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                 if (recentComment == null)
                 {
-                    List<Comment> comments = CommunityHelper.ReadComments(
+                    List<Comment> comments = TelligentService.ReadComments(
                         article.DefaultArticlePage.BlogId.Raw,
                         article.DefaultArticlePage.BlogPostId.Raw,
                         1,
                         1,
-                        "CreatedUtcDate", // TODO: constant
+                        Constants.TelligentCommentSort.CreateDate, 
                         false,
                         out totalComments,
                         out hasMoreResults);
