@@ -25,80 +25,42 @@
             </div>
             <!-- end .review-intro -->
             <div class="parent-reviews">
-                <section class="parent-review rs_read_this what-you-need-to-know-rs-wrapper">
-                    <div class="review-section-title">
-                        <div class="review-section grade">
-                            Grade
-                                            <span class="review-grade four">4</span>
+                <asp:Repeater ID="rptReviews" runat="server" OnItemDataBound="rptReviews_ItemDataBound">
+                    <HeaderTemplate>
+                        <section class="parent-review rs_read_this what-you-need-to-know-rs-wrapper">
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <div class="review-section-title">
+                            <div class="review-section grade">
+                                Grade
+                                <span class="review-grade four"><asp:Literal ID="litGrade" runat="server"></asp:Literal></span>
+                            </div>
+                            <div class="review-section quality">
+                                Quality
+                                <span class="visuallyhidden">rating</span>
+                                <span>
+                                    <asp:Literal ID="litRating" runat="server"></asp:Literal>
+                                </span>
+                            </div>
+                            <div class="review-section date"><asp:Literal ID="litReviewDate" runat="server"></asp:Literal></div>
                         </div>
-                        <div class="review-section quality">
-                            Quality
-                                            <span class="visuallyhidden">rating</span>
-                            <span>
-                                <!-- BEGIN PARTIAL: results-slider -->
-                                <div class="results-slider blue-four" aria-label="4">4</div>
-                                <!-- END PARTIAL: results-slider -->
-                            </span>
-                        </div>
-                        <div class="review-section date">February 9, 2013</div>
-                    </div>
                     <p>
                         <strong>aperiam minima exercitationem sapiente omnis.</strong> Quod debitis quos molestiae quo nemo sed tempora deserunt at distinctio aut. illo voluptatem iure qui. sed porro iure voluptate et reprehenderit vel dolores quam maxime consequatur rerum
                     </p>
-                    <p>
-                        <span>Good For</span>
-                        <span>
-                            <a class="link-separator" href="REPLACE">Reading</a>
-                        </span>
-                        <span>
-                            <a class="link-separator" href="REPLACE">Math</a>
-                        </span>
-                        <span>
-                            <a class="link-separator" href="REPLACE">Writing</a>
-                        </span>
-                        <span>
-                            <a class="link-separator" href="REPLACE">Listening Comprehension</a>
-                        </span>
-                    </p>
-                    <div class="review-report">
-                        <span class="write-review">
-                            <i></i>
-                            <a href="REPLACE">Write Your Own Review</a></span>
-                        <span class="review-report">
-                            <i></i>
-                            <a href="REPLACE">Report</a></span>
-                    </div>
-                    <!-- end review-report -->
-                </section>
-                <section class="parent-review rs_read_this what-you-need-to-know-rs-wrapper">
-                    <div class="review-section-title">
-                        <div class="review-section grade">
-                            Grade
-                                            <span class="review-grade four">4</span>
-                        </div>
-                        <div class="review-section quality">
-                            Quality
-                                            <span class="visuallyhidden">rating</span>
+                    <asp:Repeater ID="rptSkills" runat="server" OnItemDataBound="rptSkills_ItemDataBound">
+                        <HeaderTemplate>
+                            <p>
+                                <span>Good For</span>
+                        </HeaderTemplate>
+                        <ItemTemplate>
                             <span>
-                                <!-- BEGIN PARTIAL: results-slider -->
-                                <div class="results-slider blue-four" aria-label="4">4</div>
-                                <!-- END PARTIAL: results-slider -->
+                                <a class="link-separator" href="REPLACE">Reading</a>
                             </span>
-                        </div>
-                        <div class="review-section date">February 9, 2013</div>
-                    </div>
-                    <p><strong>consequatur ut et et ullam.</strong> Placeat iure delectus corporis velit neque id. ut sunt sit deserunt omnis dolorum dolores quia cupiditate consequatur minima id. excepturi modi ut quasi voluptatibus aut placeat et enim aut</p>
-                    <p>
-                        <span>Good For</span>
-                        <span>
-                            <a href="REPLACE">Reading</a></span>
-                        <span>
-                            <a href="REPLACE">Math</a></span>
-                        <span>
-                            <a href="REPLACE">Writing</a></span>
-                        <span>
-                            <a href="REPLACE">Listening Comprehension</a></span>
-                    </p>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </p>
+                        </FooterTemplate>
+                    </asp:Repeater>
                     <div class="review-report">
                         <span class="write-review">
                             <i></i>
@@ -108,47 +70,17 @@
                             <a href="REPLACE">Report</a></span>
                     </div>
                     <!-- end review-report -->
-                </section>
-                <section class="parent-review rs_read_this what-you-need-to-know-rs-wrapper">
-                    <div class="review-section-title">
-                        <div class="review-section grade">
-                            Grade
-                                            <span class="review-grade four">4</span>
-                        </div>
-                        <div class="review-section quality">
-                            Quality
-                                            <span class="visuallyhidden">rating</span>
-                            <span>
-                                <!-- BEGIN PARTIAL: results-slider -->
-                                <div class="results-slider blue-four" aria-label="4">4</div>
-                                <!-- END PARTIAL: results-slider -->
-                            </span>
-                        </div>
-                        <div class="review-section date">February 9, 2013</div>
-                    </div>
-                    <p><strong>ullam quia molestiae repellat excepturi.</strong> Quas distinctio vel eos. laudantium voluptas ipsa fugit qui asperiores eum recusandae nisi nisi nemo velit tempora ratione. deserunt tempore magni culpa reprehenderit distinctio quis esse. ut distinctio impedit eos consequuntur omnis quia nesciunt qui delectus ut nihil quis. veniam ratione eveniet dolorem architecto est ea et ad numquam et voluptate dolor eos</p>
-                    <p>
-                        <span>Good For</span>
-                        <span>
-                            <a href="REPLACE">Reading</a></span>
-                        <span>
-                            <a href="REPLACE">Math</a></span>
-                        <span>
-                            <a href="REPLACE">Writing</a></span>
-                        <span>
-                            <a href="REPLACE">Listening Comprehension</a></span>
-                    </p>
-                    <div class="review-report">
-                        <span class="write-review">
-                            <i></i>
-                            <a href="REPLACE">Write Your Own Review</a></span>
-                        <span class="review-report">
-                            <i></i>
-                            <a href="REPLACE">Report</a></span>
-                    </div>
-                    <!-- end review-report -->
-                </section>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </section>
+                    </FooterTemplate>
+                </asp:Repeater>
             </div>
+            <style>
+                .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-section.date{
+                    margin-left: 70px;
+                }
+            </style>
             <!-- .parent-reviews -->
             <!-- Show More -->
             <div class="show-more">
@@ -177,90 +109,107 @@
                 <div class="for-kids">
                     <h3>For kids</h3>
                     <label for="rate-for-kids">
-                        <select name="rate-for-kids" id="rate-for-kids" title="For kids in grade">
-                            <option value="">Select Grade</option>
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                        </select>
+                        <asp:DropDownList ID="ddlGrades" runat="server"></asp:DropDownList>
+                        <asp:RequiredFieldValidator id="RequiredFieldValidator3"
+                            controltovalidate="ddlGrades"
+                            validationgroup="vlgReviewInputs"
+                            runat="server">
+                        </asp:RequiredFieldValidator>
                     </label>
                 </div>
                 <div class="i-think-it-is">
                     <h3>I think it is</h3>
                     <label for="rate-i-think">
-                        <select name="rate-i-think" id="rate-i-think" title="I think it is">
-                            <option value="">Select on / pause / off</option>
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                        </select>
+                        <asp:DropDownList ID="ddlIThinkItIs" runat="server"></asp:DropDownList>
+                        <asp:RequiredFieldValidator id="RequiredFieldValidator4"
+                            controltovalidate="ddlIThinkItIs"
+                            validationgroup="vlgReviewInputs"
+                            runat="server">
+                        </asp:RequiredFieldValidator>
                     </label>
                 </div>
                 <div class="it-is-good-for">
                     <fieldset>
                         <legend>It is good for</legend>
-                        <ul>
-                            <li>
-                                <span class="checkbox-wrap">
-                                    <input type="checkbox" name="rate-goodfor-reading" id="rate-goodfor-reading" aria-required="true"></span>
-                                <label for="rate-goodfor-reading">Reading</label>
-                            </li>
-                            <li>
-                                <span class="checkbox-wrap">
-                                    <input type="checkbox" name="rate-goodfor-math" id="rate-goodfor-math" aria-required="true"></span>
-                                <label for="rate-goodfor-math">Math</label>
-                            </li>
-                            <li>
-                                <span class="checkbox-wrap">
-                                    <input type="checkbox" name="rate-goodfor-writing" id="rate-goodfor-writing" aria-required="true"></span>
-                                <label for="rate-goodfor-writing">Writing</label>
-                            </li>
-                            <li>
-                                <span class="checkbox-wrap">
-                                    <input type="checkbox" name="rate-goodfor-attention" id="rate-goodfor-attention" aria-required="true"></span>
-                                <label for="rate-goodfor-attention">Attention/hyperactivity/impulsiveity</label>
-                            </li>
-                            <li>
-                                <span class="checkbox-wrap">
-                                    <input type="checkbox" name="rate-goodfor-executive-function" id="rate-goodfor-executive-function" aria-required="true"></span>
-                                <label for="rate-goodfor-executive-function">Organization, planning, time management</label>
-                            </li>
-                            <li>
-                                <span class="checkbox-wrap">
-                                    <input type="checkbox" name="rate-goodfor-oral-expression" id="rate-goodfor-oral-expression" aria-required="true"></span>
-                                <label for="rate-goodfor-oral-expression">Oral expression</label>
-                            </li>
-                            <li>
-                                <span class="checkbox-wrap">
-                                    <input type="checkbox" name="rate-goodfor-listening" id="rate-goodfor-listening" aria-required="true"></span>
-                                <label for="rate-goodfor-listening">Listening comprehension</label>
-                            </li>
-                            <li>
-                                <span class="checkbox-wrap">
-                                    <input type="checkbox" name="rate-goodfor-social-skills" id="rate-goodfor-social-skills" aria-required="true"></span>
-                                <label for="rate-goodfor-social-skills">Social skills, including conversation</label>
-                            </li>
-                            <li>
-                                <span class="checkbox-wrap">
-                                    <input type="checkbox" name="rate-goodfor-motor-skills" id="rate-goodfor-motor-skills" aria-required="true"></span>
-                                <label for="rate-goodfor-motor-skills">Motor skills</label>
-                            </li>
-                        </ul>
+                        <asp:Repeater ID="rptSkillsChecklist" runat="server" OnItemDataBound="rptSkillsChecklist_ItemDataBound">
+                            <HeaderTemplate>
+                                <ul>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <li>
+                                    <span class="checkbox-wrap">
+                                        <input id="inputSkill" runat="server" type="checkbox" name="rate-goodfor-reading" aria-required="true"></span>
+                                    <label for="rate-goodfor-reading"><asp:Literal ID="litSkill" runat="server"></asp:Literal></label>
+                                </li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </ul>
+                            </FooterTemplate>
+                        </asp:Repeater>
                     </fieldset>
                 </div>
                 <div class="tell-other-families">
                     <label>
                         <span>Tell other families what you think</span>
-                        <textarea></textarea>
+                        <asp:TextBox ID="txbWhatYouThink" runat="server" TextMode="MultiLine"></asp:TextBox>
+                        <asp:RequiredFieldValidator id="RequiredFieldValidator2"
+                            controltovalidate="txbWhatYouThink"
+                            validationgroup="vlgReviewInputs"
+                            runat="server">
+                        </asp:RequiredFieldValidator>
                     </label>
                 </div>
                 <div class="give-your-review">
                     <label>
                         <span>Give your review a title</span>
-                        <textarea></textarea>
+                        <asp:TextBox ID="txbReviewTitle" runat="server" TextMode="MultiLine"></asp:TextBox>
+                        <asp:RequiredFieldValidator id="RequiredFieldValidator1"
+                            controltovalidate="txbReviewTitle"
+                            validationgroup="vlgReviewInputs"
+                            runat="server">
+                        </asp:RequiredFieldValidator>
                     </label>
                 </div>
-                <button>Submit</button>
+                <asp:HiddenField ID="hfKeyValuePairs" runat="server" />
+                <asp:HiddenField ID="hfRating" runat="server" />
+                <script>
+                    $(function () {
+                        var hiddenField = $("[id*='hfKeyValuePairs']");
+                        var hiddenField2 = $("[id*='hfRating']");
+
+                        $(".checkbox-wrap").click(function () {
+                            var values = "";
+                            var first = true;
+
+                            $(this).parent().parent().find(".checked").each(function () {
+                                if (first) {
+                                    values = $(this).find('input').data("id");
+                                    first = false;
+                                }
+                                else
+                                    values += "|" + $(this).find('input').data("id");
+                            })
+
+                            hiddenField.val(values);
+                        })
+
+                        $(".results-slider").click(function () {
+                            $this = $(this);
+
+                            if($this.hasClass("blue-one"))
+                                hiddenField2.val(1);
+                            else if ($this.hasClass("blue-two"))
+                                hiddenField2.val(2);
+                            else if ($this.hasClass("blue-three"))
+                                hiddenField2.val(3);
+                            else if ($this.hasClass("blue-four"))
+                                hiddenField2.val(4);
+                            else 
+                                hiddenField2.val(5);
+                        })
+                    })
+                </script>
+                <button ID="btnSubmit" class="review-submit" runat="server" type="button" onserverclick="btnSubmit_Click">Submit</button>
             </section>
             <!-- END PARTIAL: rate-this-app -->
         </div>

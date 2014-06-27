@@ -2939,6 +2939,9 @@
     <Content Include="Presentation\Sublayouts\Tyce\Pages\TyceOverview.ascx" />
     <Content Include="Presentation\Sublayouts\Tyce\Pages\TycePlayer.ascx" />
     <Content Include="Presentation\Sublayouts\Tyce\Pages\TyceQuestions.ascx" />
+    <Content Include="Presentation\XML\apps.xml" />
+    <Content Include="Presentation\XML\games.xml" />
+    <Content Include="Presentation\XML\websites.xml" />
     <Content Include="zforce-deploy-on-build-always.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

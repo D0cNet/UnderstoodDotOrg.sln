@@ -1,0 +1,1809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:csm="http://www.commonsensemedia.org/feed/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+  <title>Common Sense Media</title>
+  <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org"/>
+  <link rel="self" type="application/atom+xml" href="http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&amp;channel=website&amp;special_needs=1"/>
+  <updated>2014-06-13T10:38:48-07:00</updated>
+  <author>
+    <name>Common Sense Media</name>
+    <email>feeds@commonsensemedia.org</email>
+    <uri>http://www.commonsensemedia.org</uri>
+  </author>
+  <id>"http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&amp;channel=website&amp;special_needs=1"</id>
+  <entry>
+    <id>urn:nid:1263334</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/zisboombah"/>
+    <category term="website"/>
+    <published>2011-04-21T12:30:00-07:00</published>
+    <updated>2014-04-23T10:50:01-07:00</updated>
+    <author>
+      <name>Dana Villamagna</name>
+    </author>
+    <title><![CDATA[ZisBoomBah]]></title>
+    <summary><![CDATA[Healthy meal planning made fun and practical for kids.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/zisboombah2.png?itok=8icVeKZX</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>http://www.zisboombah.com</csm:url>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="7" off_age="2" on_age="6" rating="on">OK for kids 7+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that this colorful, kid-friendly nutrition education site helps kids create healthy, balanced meals. In the site's main game, called "Pick Chow!," kids drag foods to a plate to create a meal, which is then rated on nutrition values like protein, fat, sugar, salt, and more. Once the meal is complete, kids can send it to their parent's account, and the parent will receive a companion shopping list, recipes and coupons to help create that child's meal. You need to register for your child to use the site and your information is shared with third-party advertisers for coupons and other food-related advertising.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="2"><![CDATA[Once a meal is created, a shopping list and links to online coupon sites appear. There's an online store selling T shirts, bags, and more promoting the site's logo. Businesses such as Horizon Organic Milk can post logos or link to their website here. Logos from sponsors such as the beef industry appear prior to the videos. Players earn points to "buy" items for their "antvatars."]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="5"><![CDATA[Kids can plan healthy, delicious meals with the right information. Desserts can be a fun part of mealtime as long as the overall meal is healthy and the portion sizes are reasonable.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="3"><![CDATA[To register, parents and kids need to provide first and last name, email address, date of birth and gender. Parents are also asked to provide mailing address. The site does allow third-party companies to solicit and advertise to parent users and to children "only in the case of sponsoring content." Site complies with the Children's Online Privacy Protection Act (COPPA).Parents must approve a child's membership and sign up for a membership themselves. When a child "makes" a meal, they then can share it with parents to get approval.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[Kids can create a profile and "antvatar" and buy features for their antvatar with points earned from doing activities. In the main game, Pick Chow!, players select, add, and remove food items from an empty plate as simple meters show how they're doing (hint: all meters should point to green). With Flip It!, kids save foods, recipes, games, or printouts as favorites for later. Challenger Calendar lets kids and parents create and reward healthy goals. A robust recipe exchange section features reviews and recipes from kid chefs and kid-friendly recipes for budding foodies. Some adult chefs are featured too.]]></csm:description>
+      <csm:any_good><![CDATA[There's a reason why First Lady Michelle Obama gave a thumbs up to ZisBoomBah. It's fun, engaging, and teaches kids to make their own healthy meals from a wide variety of foods. The three little ant characters -- Zis, Boom, and Bah -- who anchor the site all have food personalities of their own (one's a vegetarian, another a fast food lover, and the third eats a little too much of everything). You (parents have to register for an account too) and your child create your own "antvatar," too. Kids can also participate in a "Meal of the Week" contest, where they win real-life prizes and other site members comment on their meal.Online interaction: Most online interaction here is between child and parent as kids send meal ideas to their parents for "approval." Parents must approve any online interaction with any other users. All "Five Star" meals are entered into the Meal of the Week contest and people can comment and vote on those meals. (If someone says something mean, there's a "Report User" button). There are links to outside sites of bloggers and sponsors, so kids need to be made aware that they may be routed to another site.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about how the media and advertising can affect their food choices. Read Common Sense Media's Junk Food Ad Tips, and discuss how healthy living sites like ZisBoomBah are a better source for discovering good food choices than commercial ads.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Talk about Internet safety and protecting personal information. This site sends prizes to kids' homes for the "Meal of the Week" contest, but it only collects home addresses from the winners' parents. Remind your kids why it's important that kids never give out that sort of information over the Internet and how you, as the parent, discern when and to whom it's acceptable to do so.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1260120">
+          <csm:title><![CDATA[Fizzy's Lunch Lab]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/fizzys-lunch-lab</csm:url>
+        </csm:item>
+        <csm:item id="1258710">
+          <csm:title><![CDATA[Playnormous]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/playnormous</csm:url>
+        </csm:item>
+        <csm:item id="1263257">
+          <csm:title><![CDATA[BodiMojo]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/bodimojo</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="4">
+        <csm:author>Michelle Kitt</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn about nutritional values as they find the right mix of foods to make balanced meals. Food selections lean toward a Western diet and some winning combinations may not make very tasty meals, but ZisBoomBah encourages scientific and realistic thinking about food. Celebrate balanced nutrition and creative cuisine combos in the service of practical cooking.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Involve kids in making the family grocery list. Discuss ways to bring balance to eating in general instead of focusing on each individual meal.Explore ZisBoomBah's Get Cooking section to find kid-friendly recipes for meals and snacks.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Hobbies" id="21640">
+            <csm:category name="cooking" id="21668"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Health &amp; Fitness" id="21649">
+            <csm:category name="balanced diet" id="21737"/>
+          </csm:category>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="collecting data" id="21743"/>
+            <csm:category name="decision-making" id="21751"/>
+            <csm:category name="making conclusions" id="21796"/>
+          </csm:category>
+          <csm:category name="Self-Direction" id="21651">
+            <csm:category name="goal-setting" id="21779"/>
+            <csm:category name="work to achieve goals" id="21830"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="5"><![CDATA[There's a reason why First Lady Michelle Obama gave a thumbs up to ZisBoomBah. It's fun, engaging, and design is bright and full of energy. Kids'll love making their own "antvatar."]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="4"><![CDATA[Lots of tips and guides, and immediate feedback help kids learn about eating healthy, balanced meals and connect learning to real-world actions. However, in-depth info about what makes a food nutritious is inconsistent.]]></csm:dimension>
+          <csm:dimension name="Support" rating="5"><![CDATA[Find great ways to connect on screen learning to what kids do off screen (like a meal builder that generates a shopping list). There's also advice on getting physically active and helpful info on a wide range of healthy lifestyle issues.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Executive functioning issue" id="21581">
+          <csm:category name="Planning" id="21587"/>
+          <csm:category name="Prioritizing" id="21586"/>
+        </csm:category>
+        <csm:category name="Receptive language disorder" id="21549">
+          <csm:category name="Auditory processing issues" id="21550"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:3293466</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/figure-this"/>
+    <category term="website"/>
+    <published>2012-07-30T19:41:00-07:00</published>
+    <updated>2014-04-23T10:30:01-07:00</updated>
+    <author>
+      <name>Erin Brereton</name>
+    </author>
+    <title><![CDATA[Figure This!]]></title>
+    <summary><![CDATA[Complex math concepts presented as real-world examples.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/figurethis.jpg?itok=90IOrogr</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>http://www.figurethis.org/index.html</csm:url>
+    </csm:product>
+    <csm:review star_rating="3">
+      <csm:slider not_for_kids="0" target_age="11" off_age="8" on_age="11" rating="on">OK for kids 11+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that kids should enjoy the very visual, real-life examples given in Figure This' math problems. From the probably of two kids at the same school having the same initials to how far a paper airplane can fly, there are over 76 challenges in all. The challenges cover topics from algebra and geometry to statistics and probability. There's no way to interact with other users on the site, so you don't have to worry about your child interacting with strangers.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[The site is ad-free.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Educational value" rating="4"><![CDATA[The site includes resources to help parents and teachers explain why math is important -- plus fun problems that teach kids a variety of math principles.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="3"><![CDATA[Kids are encouraged to challenge themselves and try additional math problems.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="4"><![CDATA[The additional resources listed for each item sometimes include links to external sites -- but most are family-friendly math sites.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sex" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[Figure This! features engaging math problems that illustrate concepts like projecting salary growth, estimating percentages, and graphing information to analyze trends. However, the National Council of Teachers of Mathematics-sponsored site's challenges are much more interesting than cut-and-dry number problems. Each involves a detailed example that kids can relate to, such as the probability of two people at the same school having the same initials.]]></csm:description>
+      <csm:any_good><![CDATA[Kids who aren't crazy about math may find a little integer, probability, and algebra inspiration on  FIGURE THIS! Sponsored by the National Council of Teachers of Mathematics (with governmental funding from groups like the National Science Foundation), the site features dozens of math problems that can help kids visualize how principles like fractions and geometric angles work.The challenges are listed by mathematical topic and by title. Each challenge contains a hint to help kids out, the correct answer (with an explanation), and extra questions and reading suggestions to extend learning. Adding age suggestions would make the site an even stronger learning resource. However, kids can likely gauge which math problems involve concepts they're familiar with -- or figure out new math theories using the site's detailed examples. Additional materials are also available to help teachers and parents with math instruction.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about why math is important -- why should kids learn more than just basic addition and subtraction? (The site has additional materials for parents to help illustrate math's many benefits.)]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Learning math also helps kids think logically. They may find some concepts easier to understand with a visual. Ask them if any of the problems on the site seemed more clear once they formed a picture in their head or drew one on paper.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[The site offers hints to give extra information about each math problem. Did your child find some problems easier to solve after seeing the additional clue?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1257128">
+          <csm:title><![CDATA[CoolMath]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/coolmath</csm:url>
+        </csm:item>
+        <csm:item id="1250620">
+          <csm:title><![CDATA[Hotmath]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/hotmath</csm:url>
+        </csm:item>
+        <csm:item id="1255430">
+          <csm:title><![CDATA[FactMonster]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/factmonster</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="4">
+        <csm:author>Erin Brereton</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn how to estimate surface area, compare fractions, and perform other math calculations. The challenges use everyday examples that range from judging how far you can drive on a tank of gas, using mileage-per-gallon estimates, to how distance and angles affect mirror reflections. Problems are listed by subject and by challenge name. Figure This! has several fun problems to help teach kids a variety of math principles, plus resources for parents and teachers.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Do some of the challenges with your child and compare answers.Use the additional "Did You Know?" information to teach your child more about math concepts.Head to the library for some of the books in the recommendation sections.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="following directions" id="21685"/>
+            <csm:category name="using supporting evidence" id="21765"/>
+          </csm:category>
+          <csm:category name="Math" id="21642">
+            <csm:category name="estimation" id="21680"/>
+            <csm:category name="probability" id="21724"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651">
+            <csm:category name="academic development" id="21722"/>
+            <csm:category name="self-assessment" id="21818"/>
+          </csm:category>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="problem solving" id="21814"/>
+            <csm:category name="thinking critically" id="21827"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="4"><![CDATA[Math story problems engage kids in problem-solving as well as rich discussions.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="4"><![CDATA[Figure This! offers fun math-inquiry activities, but responsiveness is limited to a single hint for all problems.]]></csm:dimension>
+          <csm:dimension name="Support" rating="4"><![CDATA[Each activity offers solutions and opportunities to extend learning. Resources are also available in Spanish.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dyscalculia" id="21538">
+          <csm:category name="Difficulty with abstract concepts like time and direction" id="21543"/>
+          <csm:category name="Difficulty with math operations (addition, subtraction, division, etc)" id="21544"/>
+          <csm:category name="Language of math issues" id="21541"/>
+          <csm:category name="Problem solving issues" id="21542"/>
+          <csm:category name="Visual/spatial reasoning issues" id="21539"/>
+        </csm:category>
+        <csm:category name="Receptive language disorder" id="21549">
+          <csm:category name="Difficulty with verbal memory" id="21552"/>
+          <csm:category name="Difficulty with verbal reasoning" id="21551"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:3654071</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/cast-udl-book-builder"/>
+    <category term="website"/>
+    <published>2012-12-07T01:40:00-08:00</published>
+    <updated>2014-04-23T10:00:01-07:00</updated>
+    <author>
+      <name>Polly Conway</name>
+    </author>
+    <title><![CDATA[CAST UDL Book Builder]]></title>
+    <summary><![CDATA[Read, write, share -- there's no wrong way to enjoy a book.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/cast-udl-web.jpeg?itok=-I45u-_8</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>http://bookbuilder.cast.org/</csm:url>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="10" off_age="5" on_age="10" rating="on">OK for kids 10+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Book Builder is a website that allows kids to read, create, and share their own books online. Some of the books are educational, written by adults to help kids learn in their own ways, and others, written and illustrated by kids of all ages, are just fun to read. Because it's a self-publishing tool, the quality varies, but kids should enjoy browsing titles and gathering inspiration for their own story or idea. They may need a parent's help with the more technical aspects of the site (scanning and uploading pictures, formatting pages), but the tool is pretty intuitive and kids will love being a "published" author.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="4"><![CDATA[Book Builder sends kids the message that there are lots of different learning styles, and that whatever works best (visual, auditory, etc.) for individual kids is A-OK and supported by their system. It also promotes self-esteem, which is created when a kid writes his or her own book and is able to share it with the public.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[The steps required to create your own book are pretty clear, but younger kids may need a grownup's help navigating the system and inputting their information.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="5"><![CDATA[An email is required to log in, and controls are in place to make sure all the books published on Book Builder follow site guidelines and are appropriate for young audiences.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sex" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[CAST UDL Book Builder is a free online tool that allows visitors "to create, share, publish, and read digital books that engage and support diverse learners according to their individual needs, interests, and skills." Many books include a learning guide that helps parents and teachers facilitate discussion and enhance the reading experience for kids. Kids can also use the tool to publish their own stories and lessons, including illustrations and photographs.]]></csm:description>
+      <csm:any_good><![CDATA[Kids will be thrilled to see their own book in the Book Builder Public Library (or use the option to share only with family members and friends). There aren't too many bells and whistles in Book Builder -- no fancy fonts or ways to resize photo, but kids will appreciate the straightforward, simple program. Parents should be pleased to see that many books in the Book Builder Library cater to various learning styles as UDL's mission is to make information easy for all students to understand.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about what inspires people to tell their own story and share it with the world.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Families can talk about what it means to publish something online. Who can see it? How does it feel to share your work?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Families can also talk about individual learning styles. What works best for your kid?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="3174781">
+          <csm:title><![CDATA[Storybird]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/storybird</csm:url>
+        </csm:item>
+        <csm:item id="1249615">
+          <csm:title><![CDATA[Story Time]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/book-reviews/story-time</csm:url>
+        </csm:item>
+        <csm:item id="1259335">
+          <csm:title><![CDATA[We Make Stories]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/we-make-stories</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="4">
+        <csm:author>Polly Conway</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn how to write their own book and pick up some online publishing skills as well. Book Builder shows kids that people learn in different ways, and offers its writers advice on how to reach the widest audience with their words using UDL (Universal Design for Learning). From page layout to learning styles, kids will gain practical experience with something to show at the end.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Parents can help by encouraging their child to write creatively. Sit down with kids and help them plot out a story, or transfer a tale into Book Builder.Take a look at the resources that UDL has to offer in terms of learning diversity and see what may be applicable to your own kid's experiences.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Arts" id="21639">
+            <csm:category name="drawing" id="21674"/>
+          </csm:category>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="presenting to others" id="21723"/>
+            <csm:category name="reading" id="21726"/>
+            <csm:category name="writing" id="21771"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651">
+            <csm:category name="academic development" id="21722"/>
+          </csm:category>
+          <csm:category name="Tech Skills" id="21652">
+            <csm:category name="digital creation" id="21761"/>
+            <csm:category name="using and applying technology" id="21829"/>
+          </csm:category>
+          <csm:category name="Creativity" id="21647">
+            <csm:category name="imagination" id="21787"/>
+            <csm:category name="making new creations" id="21797"/>
+            <csm:category name="producing new content" id="21815"/>
+          </csm:category>
+          <csm:category name="Communication" id="21646">
+            <csm:category name="multiple forms of expression" id="21806"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="3"><![CDATA[Kids will get engrossed in writing their own story within the site's simple format, and the ability to share their finished book and read the work of their peers will keep them engaged.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="4"><![CDATA[The combination of text, audio, and video caters to all types of learners, which is helpful in the classroom as well as at home. Kids learn the basics of storytelling when they create a book.]]></csm:dimension>
+          <csm:dimension name="Support" rating="4"><![CDATA[There's a lot of support for teachers along with information about UDL practices and how to implement them. Kid users will find step-by-step guidance through the book creation process.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Language processing" id="21536"/>
+          <csm:category name="Visual/spatial issues" id="21534"/>
+        </csm:category>
+        <csm:category name="Dyslexia" id="21525">
+          <csm:category name="Decoding issues" id="21527"/>
+        </csm:category>
+        <csm:category name="Expressive language disorder" id="21545">
+          <csm:category name="Organization of language issues" id="21548"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:1252333</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/starfallcom"/>
+    <category term="website"/>
+    <published>2011-05-16T14:26:00-07:00</published>
+    <updated>2014-04-23T08:30:01-07:00</updated>
+    <author>
+      <name>Dana Villamagna</name>
+    </author>
+    <title><![CDATA[Starfall.com]]></title>
+    <summary><![CDATA[Outstanding learn-to-read site sure to engage little ones.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/starfallmain.jpg?itok=LjCbilGh</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>http://www.starfall.com/</csm:url>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="4" off_age="2" on_age="3" rating="on">OK for kids 4+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that this free learn-to-read site is arranged in four different main sections to play, based on where your child is on the journey from reading readiness to independent reader. There is no advertising on this site, although supplemental educational materials may be purchased at the online store. And there's also a new "premium" paid version of the site called more.starfall.com.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Online store but no ads within kids' content.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="3"><![CDATA[Kids will get positive messages about reading through the names of sections (It's Fun to Read and I'm Reading), smiling faces, and the diversity of reading material.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="5"><![CDATA[No personal information is required or requested to view educational content.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[Kids progress through activities in four sections. They start with letter recognition activities in "Starfall ABCs." Next, kids play games, hear and read stories, and watch animated videos to apply letter sounds to words in the "Learn to Read" section. In the "It's Fun to Read" section, kids choose short reading selections to learn vocabulary. In the final section, "I'm Reading," kids choose to read from a collection of short online books to develop fluency and comprehension.]]></csm:description>
+      <csm:any_good><![CDATA[The phonics-based website STARFALL.COM offers an outstanding free learn-to-read method based on numerous studies and educational research. Practice letter sounds, word recognition, and reading comprehension through online books, songs, rhymes and other games. When kids read a storybook online, the site reads it back to them as if it was sounding it out like new readers do. The site also offers numerous resources for parents and teachers and a paid version geared toward use at home or school.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[This site is geared toward little kids just learning to use the computer. Learn how to set computer time limits now.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[There are numerous ways to encourage children of all ages to become and continue to be readers. Check out Common Sense Media's expert article on How to Get Your Kids Reading.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1254876">
+          <csm:title><![CDATA[PBSKids.org/Lions]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/pbskidsorglions</csm:url>
+        </csm:item>
+        <csm:item id="1257140">
+          <csm:title><![CDATA[KidsReads]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/kidsreads</csm:url>
+        </csm:item>
+        <csm:item id="1258177">
+          <csm:title><![CDATA[Ready to Learn Reading]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/ready-to-learn-reading</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="5">
+        <csm:author>Michelle Kitt</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn pre-reading skills that help them build toward reading short online books. Skill acquisition is appropriately gradual; kids begin simply by sounding out different combinations of letters. Research from the National Institute of Child Health seems to underlie Starfall's exercises, according to the site. Game graphics aren't very gripping, but a cornucopia of reading exercises will satisfy curious kids.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Read the Parents section for step-by-step advice about how to use the site.Extend learning with activities in the printable Writing Journal. The Journal can be printed from the Download Center on the site.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="letter or word recognition" id="21701"/>
+            <csm:category name="reading comprehension" id="21728"/>
+            <csm:category name="vocabulary" id="21767"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651">
+            <csm:category name="academic development" id="21722"/>
+          </csm:category>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="applying information" id="21730"/>
+            <csm:category name="solving puzzles" id="21823"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Auditory processing issue" id="21568">
+          <csm:category name="Auditory discrimination issues" id="21569"/>
+        </csm:category>
+        <csm:category name="Dyslexia" id="21525">
+          <csm:category name="Decoding issues" id="21527"/>
+          <csm:category name="Difficulties with automaticity" id="21528"/>
+          <csm:category name="Phonological processing issues (includes Phonemic awareness and other issues)" id="21526"/>
+        </csm:category>
+        <csm:category name="Receptive language disorder" id="21549">
+          <csm:category name="Auditory processing issues" id="21550"/>
+        </csm:category>
+        <csm:category name="Visual processing issue" id="21553">
+          <csm:category name="Letter and symbol reversal problems" id="21561"/>
+          <csm:category name="Visual closure" id="21560"/>
+          <csm:category name="Visual discrimination" id="21554"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:4839041</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/jaws"/>
+    <category term="website"/>
+    <published>2014-02-10T10:43:00-08:00</published>
+    <updated>2014-04-17T11:10:01-07:00</updated>
+    <author>
+      <name>ADK AccessAbility</name>
+    </author>
+    <title><![CDATA[JAWS]]></title>
+    <summary><![CDATA[Super screen reader a game changer for kids who are blind.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/ss1-jaws-splash-screen.png?itok=lMCl8Hw1</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss3-jaws-basic-settings.png?itok=MGM56Mub</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss5-jaws-training-materials.png?itok=-6amQ2gl</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>http://www.freedomscientific.com/products/fs/jaws-product-page.asp</csm:url>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="8" off_age="5" on_age="8" rating="on">OK for kids 8+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that JAWS is a downloadable "screen reader" application that can enable a kid with a visual disability or blindness to completely navigate and use almost all programs on a Windows-based computer. Although kids as young as 8 can learn basic commands fairly quickly, using JAWS to its full potential requires a steep learning curve. This includes lots of memorization, complex sets of simultaneous key commands, and customization. However, it's the most popular screen reader on the market these days, and the promise of complete computer access and control should be a strong motivator for most kids.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="3"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="5"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[An extremely powerful and versatile program, JAWS can read text and graphic information on a computer in almost any application, providing both speech and Braille output. The software is controlled with keyboard commands that make it possible for a kid with blindness to navigate a computer, create and edit documents, and read Web pages. You'll download the program onto your home computer, then set it up for your chosen Web browser (Firefox and Internet Explorer are currently supported). Kids can use JAWS's training program to learn the many keyboard commands required to use it and find out how to customize options for their own needs and preferences. Most kids will start out utilizing only the basic commands and add more as they need the additional power. Commands use combinations of keystrokes (for example, Insert + Control + F) to create actions such as "Move to Next Clickable Element" and "Show Recent Speech History." Other keys offer text narration in a male or female voice, plus the ability to customize pitch and speed.]]></csm:description>
+      <csm:any_good><![CDATA[This is an outstanding, accessible software application for Windows-based computers; it's the most popular program of its type on the market for a reason. But there's a lot of learning to be done to use JAWS. Kids will have to understand the commands and memorize them and know how to use the various pieces of software on a computer. Luckily, there are good, accessible guides available that read aloud to support beginning users.  Once kids get past the first hurdle of getting familiar with JAWS's layout and style, they should be browsing favorite websites and using their computers with ease in no time. Keep in mind that JAWS is designed for Windows, so if your family uses a Mac, you may want to look at other options.  A bonus: JAWS now comes with JAWS Tandem, an additional screen-sharing tool that allows for incredible tech support.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Pick a very basic subset of commands to begin with, such as navigating and listening to a short story once it's on the screen.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Support your kids by working with them to customize navigation commands.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Staying a step ahead of kids helps them pick up new skills without all the frustration of trial and error.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="5">
+        <csm:author>ADK AccessAbility</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids with blindness can learn to use a computer as well as navigate the internet. They'll use motor skills as well as patience and perseverance as they learn the many keyboard commands; there could be some frustration before they begin to experience success. Once that happens, though, they're on their way to complete access to the computer, the digital world and are learning a life-long skill, and they'll be motivated to learn even more. Kids familiar with JAWS will navigate Windows every bit as skillfully as their sighted peers.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
+        <csm:subjects>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Tech Skills" id="21652"/>
+          <csm:category name="Communication" id="21646"/>
+          <csm:category name="Emotional Development" id="21648"/>
+          <csm:category name="Self-Direction" id="21651"/>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="4"><![CDATA[The ability to use and navigate a computer will help students who are blind to engage with the digital world. They'll have access to anything online that interests them.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="5"><![CDATA[As they memorize a series of keyboard combinations, kids will become more efficient at accessing the digital world; fluency with JAWS will empower them and bring more access.]]></csm:dimension>
+          <csm:dimension name="Support" rating="5"><![CDATA[Support is available on a CD-ROM, on the developer's website, through webinars, and in a Tandem application that allows for incredible tech-support options.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="1">
+        <csm:category name="Visual processing issue" id="21553">
+          <csm:category name="Visual discrimination" id="21554"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:4841946</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/bookshare"/>
+    <category term="website"/>
+    <published>2014-02-14T12:59:00-08:00</published>
+    <updated>2014-04-17T11:10:01-07:00</updated>
+    <author>
+      <name>ADK AccessAbility</name>
+    </author>
+    <title><![CDATA[Bookshare]]></title>
+    <summary><![CDATA[Welcome kids with print disabilities to the world of books.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/bookshare-home-page.png?itok=MDlcpNIC</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-getting-started.png?itok=A1GuJzWZ</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-book-description.png?itok=ESFP1YKj</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-book-selection.png?itok=g_2Ixr0g</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-membership-options.png?itok=yBqoGyIS</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>https://www.bookshare.org/</csm:url>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="5" off_age="4" on_age="5" rating="on">OK for kids 5+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Bookshare is an outstanding online library of digital books for kids with print disabilities. Bookshare membership is available to kids who provide proof of their print disability, such as blindness or low vision, a learning disability, or a physical disability that makes it difficult or impossible to read standard print. Downloaded books (including textbooks, kid-friendly novels, and more) can be read with a Web browser, free computer applications, or mobile device apps. Used with these tools, Bookshare allows kids to independently read more than 200,000 titles that they may not have been able to access otherwise.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Bookshare is a digital library containing books of all types including those with violent content. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Bookshare is a digital library containing books of all types including those with sexual content. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Bookshare is a digital library containing books of all types including those with adult language. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[There's nothing for sale except Bookshare's initial membership, which is free for the majority of kids using it.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Bookshare is a library containing books of all types including those with adult content. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="5"><![CDATA[No personal data leaves the Bookshare website. Schools provide the roster of eligible students to Bookshare but have the option of using student pseudonyms or numbers.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[Bookshare is an online library of digital books for people with print disabilities. Once membership is set up (which is free for all qualifying kids), logging in and learning to use the Bookshare website is straightforward. Kids will use their mobile device or computer to browse a huge library of books and choose one to download to read or have it read to them when and how they want. Books come in two file formats, DAISY (Digital Accessible Information System) and BRF (Braille Refreshable Format); you'll need corresponding programs to read each type. There's a Getting Started section that covers how to find, download, and read books, as well as reading tools available.]]></csm:description>
+      <csm:any_good><![CDATA[Bookshare is a fantastic resource and the only digital library of its kind. There are other sources of digital textbooks and educational material out there, but Bookshare opens the door to all types of reading, even the fun stuff. New books and publications are added frequently, so kids won't feel behind their peers on the latest addition to the Percy Jackson or Diary of a Wimpy Kid series. Plus, thanks to a Department of Education grant, it's totally free for kids who qualify. This digital equivalent of the public library really levels the playing field for kids with print disabilities.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Turn your kid's school onto Bookshare so it can get an organizational membership.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Help your kid find books on their favorite subjects; they'll be excited to browse the wide selection.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="4395311">
+          <csm:title><![CDATA[LitPick]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/litpick</csm:url>
+        </csm:item>
+        <csm:item id="3186761">
+          <csm:title><![CDATA[Reading Rainbow]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/app-reviews/reading-rainbow</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="5">
+        <csm:author>ADK AccessAbility</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Once they qualify for a membership and have access to the entire library at their fingertips, kids can learn absolutely anything. Bookshare's selection has nearly everything a standard library does, from astronomy to zebras, and kids can explore their favorite subjects with ease. This level of accessibility can rekindle enthusiasm for many kids who struggle with reading traditionally, including those with learning disabilities, cognitive disabilities, physical limitations or vision-related issues. Bookshare is an incredible digital library service that provides a powerful sense of independence for many kids.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="reading" id="21726"/>
+            <csm:category name="reading comprehension" id="21728"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651"/>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="5"><![CDATA[It's as engaging as browsing in a library or bookstore  kids who love to read will be thrilled at the selection.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="5"><![CDATA[Kids can search the library by subject, author, or title, making choices and gaining a new sense of empowerment and equity with their peers.]]></csm:dimension>
+          <csm:dimension name="Support" rating="5"><![CDATA[Excellent online help and an FAQ page are available on the website, as well links to demonstration videos on membership, searching, downloading and reading.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="1">
+        <csm:category name="Visual processing issue" id="21553">
+          <csm:category name="Visual discrimination" id="21554"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:4839106</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/read-write-gold-11"/>
+    <category term="website"/>
+    <published>2014-02-10T11:32:00-08:00</published>
+    <updated>2014-03-27T15:41:19-07:00</updated>
+    <author>
+      <name>ADK AccessAbility</name>
+    </author>
+    <title><![CDATA[Read &amp; Write Gold 11]]></title>
+    <summary><![CDATA[A Swiss Army knife's worth of tools for reading support.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/screen-shot-2014-02-19-at-100845-am.png?itok=AEyYYJkE</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/screen-shot-2014-02-19-at-95614-am.png?itok=B0eeKm1V</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/screen-shot-2014-02-19-at-95752-am.png?itok=b2Ub5wDe</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/screen-shot-2014-02-19-at-95930-am.png?itok=eQa3CVOd</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>www.texthelp.com</csm:url>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="6" off_age="5" on_age="6" rating="on">OK for kids 6+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Read &amp; Write is a simple yet powerful program that goes above and beyond your standard text-to-speech tool: It helps kids read independently, comprehend more of what they're reading, see and listen to definitions of unfamiliar words, and highlight important sections. When they're writing, it can help them find the words they're looking for, hear and check their spelling, carry out and organize research, and even translate from Spanish or other chosen languages. Depending on where your kid needs the most support, they may only end up using a couple of the tools, but there's lots of great help available whenever they want it.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="5"><![CDATA[The developer has a clear and easy-to-understand privacy policy on its website. Data collected is limited to the sale and registration of software and not shared with third parties unless it's under subpoena or summons, and users can request to be completely removed from Texthelp's database.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[Read &amp; Write is a text-to-speech program that gives kids a set of tools to hear difficult words aloud, see corresponding pictures, listen to definitions, and better understand what they read. All options are accessible in a toolbar that works with any Windows application. You can choose from three sets of icons to identify the tools, each with or without text. Customized sets of tools are available for reading or writing. Additionally, tutorials and training curricula are available. Cool features include Screen Masking, which frees you from distraction by highlighting the exact part of the page you're focusing on while masking the rest of the screen.]]></csm:description>
+      <csm:any_good><![CDATA[It's excellent. More of a set of tools than a single application, it offers a wide variety of supports for any reader or writer. Although each separate utility is well integrated into the program as a whole, many kids will use only a few of the tools, so the toolbar can be customized to show only what they need. The spoken reading voices are clear and customizable, and the clean interface as well as super-accessible help videos for most tools make it very easy to learn. Read &amp; Write's tools are powerful for all kids, but they make a huge difference for those with disabilities who may have been really struggling with the whole reading experience. It enables kids to go ahead and access the important information they might be missing otherwise while improving actual reading skills at the same time.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Explore the different tools in the program together and figure out which ones will help your kid the most.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Encourage recreational reading (perhaps try a Bookshare.org subscription) to help them experience the fun of independent reading.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Use simple texts or emails to show your kids how they can correct their own errors with the writing tools.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="5">
+        <csm:author>ADK AccessAbility</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn to read and understand much more with Read &amp; Write as they listen, highlight, collect, and organize important concepts. Using its tools to conduct and organize their research, outline their writing, select the best words, and find the majority of their errors independently, kids can gain a newfound confidence.  "I can read this all by myself" is a powerful statement that kids struggling with reading often can't make. Since kids with these challenges also have trouble writing original work, Read &amp; Write also includes tools to help them plan, research, write and proofread their writing far more independently. Read &amp; Write has the potential to not only make a huge difference in specific skill areas but self-esteem as well.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="phonics" id="21716"/>
+            <csm:category name="reading" id="21726"/>
+            <csm:category name="reading comprehension" id="21728"/>
+            <csm:category name="spelling" id="21747"/>
+            <csm:category name="text analysis" id="21758"/>
+            <csm:category name="vocabulary" id="21767"/>
+            <csm:category name="writing" id="21771"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651"/>
+          <csm:category name="Communication" id="21646"/>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="collecting data" id="21743"/>
+            <csm:category name="logic" id="21795"/>
+            <csm:category name="prediction" id="21811"/>
+            <csm:category name="problem solving" id="21814"/>
+            <csm:category name="strategy" id="21825"/>
+            <csm:category name="thinking critically" id="21827"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="5"><![CDATA[Frustrated kids having difficulty reading and writing will be very excited to get their first experience of successful reading and a chance to keep up with their more skilled peers.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="5"><![CDATA[Read & Write empowers kids to independently find, read, and understand information with its supplementary tools. It will help them develop lifelong skills.]]></csm:dimension>
+          <csm:dimension name="Support" rating="5"><![CDATA[A quick-start guide is available for beginning users, as is a detailed FAQ and training guide in PDF form.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="1">
+        <csm:category name="ADD" id="21519">
+          <csm:category name="Distractability" id="21522"/>
+          <csm:category name="Inattention" id="21524"/>
+        </csm:category>
+        <csm:category name="ADHD" id="21512">
+          <csm:category name="Distractability" id="21515"/>
+          <csm:category name="Inattention" id="21517"/>
+        </csm:category>
+        <csm:category name="Auditory processing issue" id="21568">
+          <csm:category name="Auditory attention issues" id="21573"/>
+          <csm:category name="Auditory discrimination issues" id="21569"/>
+          <csm:category name="Auditory memory issues" id="21571"/>
+          <csm:category name="Auditory sequencing issues" id="21572"/>
+        </csm:category>
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Language processing" id="21536"/>
+          <csm:category name="Spelling issues" id="21537"/>
+          <csm:category name="Visual/spatial issues" id="21534"/>
+        </csm:category>
+        <csm:category name="Dyslexia" id="21525">
+          <csm:category name="Comprehension" id="21530"/>
+          <csm:category name="Decoding issues" id="21527"/>
+          <csm:category name="Difficulties with automaticity" id="21528"/>
+          <csm:category name="Fluency" id="21532"/>
+          <csm:category name="Phonological processing issues (includes Phonemic awareness and other issues)" id="21526"/>
+          <csm:category name="Poor spelling" id="21529"/>
+          <csm:category name="Vocabulary" id="21531"/>
+        </csm:category>
+        <csm:category name="Executive functioning issue" id="21581">
+          <csm:category name="Problems with attentional processing" id="21584"/>
+        </csm:category>
+        <csm:category name="Expressive language disorder" id="21545">
+          <csm:category name="Language memory issues" id="21547"/>
+          <csm:category name="Organization of language issues" id="21548"/>
+        </csm:category>
+        <csm:category name="Receptive language disorder" id="21549">
+          <csm:category name="Auditory processing issues" id="21550"/>
+        </csm:category>
+        <csm:category name="Sensory processing issue" id="21562">
+          <csm:category name="Fine and gross motor issues" id="21563"/>
+        </csm:category>
+        <csm:category name="Visual processing issue" id="21553">
+          <csm:category name="Letter and symbol reversal problems" id="21561"/>
+          <csm:category name="Visual discrimination" id="21554"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:4853771</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/wynn-wynn-wizard-and-wynn-reader"/>
+    <category term="website"/>
+    <published>2014-03-04T13:12:00-08:00</published>
+    <updated>2014-03-20T00:18:07-07:00</updated>
+    <author>
+      <name>ADK AccessAbility</name>
+    </author>
+    <title><![CDATA[WYNN (WYNN Wizard and WYNN Reader)]]></title>
+    <summary><![CDATA[Gives kids tools to read, write, and comprehend any text.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/wynn-product-sm2.jpg?itok=R3FEkomj</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss1-wynn-word-prediction.jpeg?itok=nMd3mAXr</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss2-wynn-main-tool-bar.jpeg?itok=gNyPz4fi</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss3-wynn-save-to-audio-file.jpeg?itok=OHWqCBjF</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss4-wynn-web-based-book-search.jpeg?itok=j8i_CDiP</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss5-wynn-color-overlay-and-reading-tools.jpeg?itok=3JRfDzCo</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>http://www.freedomscientific.com/LSG/products/wynn.asp</csm:url>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="10" off_age="7" on_age="10" rating="on">OK for kids 10+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that WYNN is a versatile software program that helps kids read, study, and comprehend text easily. You can upload any files from your computer or the Internet and quickly and easily import them into either version of WYNN (Wizard or Reader). Wizard has scanning and OCR capabilities, meaning that scanned printed pages can be converted to electronic text. Different toolbars (Web, File Management, Reading Styles, Study Tools, Writing Tools) are then used to read, edit, and study text. Reader has everything that Wizard does except scanning capability and OCR. Both use UDL (Universal Design for Learning) principles. Kids with learning difficulties that keep them from reading text should be able to pick up on the interface pretty quickly, and they'll benefit big-time from WYNN's helpful features.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Violence" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[Given its complexity, WYNN does a good job with its user-friendly toolbars and intuitive design. It makes sense, and the color-coding toolbars assist kids who rely on visual cues.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[WYNN is a downloadable program that supports kids who have reading and comprehension difficulties. It has two versions: Wizard, with more features, and Reader, a slightly pared-down program. Kids will use five rotating toolbars (Web, File Management, Reading Styles, Study Tools, Writing Tools) to read and/or hear any text, change the visual presentation or reading options, and study. Text can be downloaded from the Web in digital form or scanned with the WYNN Wizard version. Other features include overlays that can can be used to eliminate light sensitivity and masking to dim out extraneous material. Reference tools include the ability to find appropriate words through word prediction, understanding homophones, and spell-checking. Letter size, spacing, and margins all can be controlled, and the dictionary and phonetic spelling support English language learners.Text also can be modified to support individual needs: You can tweak things such as spacing and color scheme to help make reading easier. WYNN also offers a bimodal approach, letting you hear and see text at the same time.]]></csm:description>
+      <csm:any_good><![CDATA[WYNN is a great program to support kids who struggle with reading and comprehending text. It's pretty powerful and packed with options, including the ability to change the visual display, control the voice output, and highlight, bookmark, or use embedded writing tools. As with any comprehensive software, it takes time to learn all the capabilities and use it efficiently, so kids may feel overwhelmed at first. However, they can learn a few pertinent tools first and then learn as they go.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Get familiar with the options and controls so you can give your kid a simplified introduction.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Start kids off with recreational reading in their favorite fun subject.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="4841186">
+          <csm:title><![CDATA[Scan and Read Pro]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/scan-and-read-pro</csm:url>
+        </csm:item>
+        <csm:item id="4839041">
+          <csm:title><![CDATA[JAWS]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/jaws</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="4">
+        <csm:author>ADK AccessAbility</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn to independently transform printed text into understandable info using WYNN's toolkit. Text can be seen, heard out loud, or both, to improve comprehension and study skills. Kids will learn what works best for them in terms of learning as they explore the many options; they'll get the chance to read and enjoy books that may have been previously out of reach. It's a powerful program that supports different learning styles and needs, opening the door to reading and writing success.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="reading" id="21726"/>
+            <csm:category name="reading comprehension" id="21728"/>
+            <csm:category name="vocabulary" id="21767"/>
+            <csm:category name="writing" id="21771"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651"/>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="4"><![CDATA[As kids find themselves being able to read independently, they'll be able to engage with books, text, and study materials. The toolbar design is simple and easy to use.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="4"><![CDATA[WYNN empowers kids to read independently, recreationally, and educationally. They'll be able to work more efficiently and enjoy exploring the world of words.]]></csm:dimension>
+          <csm:dimension name="Support" rating="4"><![CDATA[Support includes an online manual, tutorials, and videos.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="1">
+        <csm:category name="ADD" id="21519">
+          <csm:category name="Distractability" id="21522"/>
+          <csm:category name="Inattention" id="21524"/>
+        </csm:category>
+        <csm:category name="ADHD" id="21512">
+          <csm:category name="Distractability" id="21515"/>
+          <csm:category name="Inattention" id="21517"/>
+        </csm:category>
+        <csm:category name="Auditory processing issue" id="21568">
+          <csm:category name="Auditory attention issues" id="21573"/>
+          <csm:category name="Auditory discrimination issues" id="21569"/>
+          <csm:category name="Auditory memory issues" id="21571"/>
+          <csm:category name="Auditory sequencing issues" id="21572"/>
+        </csm:category>
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Language processing" id="21536"/>
+          <csm:category name="Spelling issues" id="21537"/>
+          <csm:category name="Visual/spatial issues" id="21534"/>
+        </csm:category>
+        <csm:category name="Dyslexia" id="21525">
+          <csm:category name="Comprehension" id="21530"/>
+          <csm:category name="Decoding issues" id="21527"/>
+          <csm:category name="Difficulties with automaticity" id="21528"/>
+          <csm:category name="Fluency" id="21532"/>
+          <csm:category name="Phonological processing issues (includes Phonemic awareness and other issues)" id="21526"/>
+          <csm:category name="Poor spelling" id="21529"/>
+          <csm:category name="Vocabulary" id="21531"/>
+        </csm:category>
+        <csm:category name="Executive functioning issue" id="21581">
+          <csm:category name="Problems with attentional processing" id="21584"/>
+        </csm:category>
+        <csm:category name="Expressive language disorder" id="21545">
+          <csm:category name="Language memory issues" id="21547"/>
+          <csm:category name="Organization of language issues" id="21548"/>
+        </csm:category>
+        <csm:category name="Receptive language disorder" id="21549">
+          <csm:category name="Auditory processing issues" id="21550"/>
+        </csm:category>
+        <csm:category name="Sensory processing issue" id="21562">
+          <csm:category name="Fine and gross motor issues" id="21563"/>
+        </csm:category>
+        <csm:category name="Visual processing issue" id="21553">
+          <csm:category name="Letter and symbol reversal problems" id="21561"/>
+          <csm:category name="Visual discrimination" id="21554"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:4839001</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/dragon-naturallyspeaking-home-12"/>
+    <category term="website"/>
+    <published>2014-02-10T09:51:00-08:00</published>
+    <updated>2014-03-20T00:18:07-07:00</updated>
+    <author>
+      <name>ADK AccessAbility</name>
+    </author>
+    <title><![CDATA[Dragon NaturallySpeaking Home 12]]></title>
+    <summary><![CDATA[Talk instead of type with stellar speech-to-text tool.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/ss1-dns-logo.jpeg?itok=hRvt1eRk</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss2-dns-word-example.gif?itok=ZbVt3fxc</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss3-dns-help.gif?itok=SOFQq-E5</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss4-dns-formatting-choices.gif?itok=MJuP-xWZ</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss5-dns-dragon-bar.gif?itok=ttrJgE6r</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>www.Nuance.com</csm:url>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="8" off_age="5" on_age="8" rating="on">OK for kids 8+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Dragon NaturallySpeaking (DNS) is a very powerful program that can turn dictation into text with typing as fast as 60 words per minute with up to 98 percent accuracy. However, you'll want to be aware that these results depend on very careful and rigorous training in a very quiet environment. DNS can be really helpful for any kid who is having difficulty physically using a mouse and/or keyboard. It can replace those tools, is faster than any other alternate input method, and can rival or exceed typical typing speeds. Kids' success depends on very careful initial training, with all word and pronunciation errors fully corrected; otherwise the program will keep repeating its early mistakes. For this reason, kids can often find it frustrating, but the end result is worth the pain.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Consumerism" rating="1"><![CDATA[The program costs $99.99 (but discounts can be found at various outlets).]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="4"><![CDATA[Nuance requests to collect speech information for the purposes of improving their speech-recognition engine. They state that they do not collect or save any of the content. Users can opt out of any data collection.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[DRAGON NATURALLYSPEAKING (DNS) is a speech-to-text program that lets kids interact with the computer by voice. They can dictate or change documents, spreadsheets, and emails or browse online, often faster than by using the keyboard and mouse. Also, kids who have difficulty with the keyboard or mouse can completely control the computer via voice. It's software, so you'll install DNS onto your computer, then follow instructions for setup. Since we all speak uniquely, DNS asks kids to read passages into the microphone to "train" it to their voices. Recognition also continues to improve over time but only if corrected every time the software makes a mistake. There are training materials available including an online tutorial, videos, a sidebar with commands, a print manual, a workbook, and "cheat sheets."]]></csm:description>
+      <csm:any_good><![CDATA[DNS is very good and the most popular voice-recognition program available. It's a very powerful program that does require careful training and use in an environment that controls ambient noise for best results. It's a really valuable tool for any child having difficulty using a traditional keyboard or mouse, and it could also be of use to kids with learning disabilities. The controls work very well. DNS can be trained initially to a new user's voice in about half an hour, which is good enough for beginning dictation. It continues to "learn" a user's voice, however, so rigorous corrections are essential. (Parents will definitely have to help with this part.) Complete computer control by voice is possible with DNS, but it requires learning numerous commands and has a steeper learning curve. As with many sophisticated computer programs, kids will master the part of it that they use regularly and figure out the rest as needed.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Work with your child for the initial training session(s). Encourage them to talk in a normal voice. Make sure their voice profile isn't saved until all corrections have been made.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[If your kid has difficulty reading the training text, whisper it to them so they can repeat it in a normal voice.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="5">
+        <csm:author>ADK AccessAbility</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids will learn the power of controlling a computer by voice. Many will stop at being able to dictate, correct, format and print text, while others, including those with motor disabilities, will want or need to completely control the computer by voice. For this, they'll have to learn additional commands and strategies. Command options can be continuously displayed in a sidebar, so they don't have to memorize if they don't want to. It's also critical for kids to learn how to make voice corrections; otherwise accuracy is very quickly reduced to frustrating levels. Dragon Naturally Speaking is an outstanding tool that can suit lots of kids' needs, giving them more freedom on a computer and in the world.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="speaking" id="21745"/>
+            <csm:category name="spelling" id="21747"/>
+            <csm:category name="vocabulary" id="21767"/>
+            <csm:category name="writing" id="21771"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="5"><![CDATA[All kids are intrigued by the possibility of talking to the computer -- it's fun! Kids with disabilities who can't use a mouse and a keyboard are the most excited and the most likely to work through any early frustration.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="5"><![CDATA[After initial training, kids get immediate feedback on whether their speech was recognized correctly or not. For many, the first opportunity to control a computer is very empowering.]]></csm:dimension>
+          <csm:dimension name="Support" rating="5"><![CDATA[There are built-in tutorials as well as a wealth of online support. Kids can use a sidebar with command choices to increase dictation accuracy.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="1">
+        <csm:category name="ADHD" id="21512">
+          <csm:category name="Disinhibitions" id="21514"/>
+          <csm:category name="Disorganization" id="21516"/>
+          <csm:category name="Distractability" id="21515"/>
+          <csm:category name="Hyperactivity" id="21518"/>
+          <csm:category name="Impulsivity" id="21513"/>
+          <csm:category name="Inattention" id="21517"/>
+        </csm:category>
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Fine motor issues" id="21535"/>
+          <csm:category name="Language processing" id="21536"/>
+          <csm:category name="Spelling issues" id="21537"/>
+          <csm:category name="Visual/spatial issues" id="21534"/>
+        </csm:category>
+        <csm:category name="Dyspraxia" id="21574">
+          <csm:category name="Fine motor issues" id="21575"/>
+          <csm:category name="Gross motor issues" id="21576"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:4841146</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/voiceover"/>
+    <category term="website"/>
+    <published>2014-02-13T10:58:00-08:00</published>
+    <updated>2014-03-20T00:18:07-07:00</updated>
+    <author>
+      <name>ADK AccessAbility</name>
+    </author>
+    <title><![CDATA[VoiceOver]]></title>
+    <summary><![CDATA[Apple's built-in text-to-speech tool makes Macs accessible.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/ss4-voiceover-tutorial-adjusting-the-voice.png?itok=rDzwv4rM</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss1-voiceover-utility-speech-verbosity.png?itok=T_kOqfDj</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss2-voiceover-utility-navigation.png?itok=ye6bhtdP</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss3-voiceover-utility-voices.png?itok=oxn1F_-8</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss5-voiceover-tutorial-navigating-the-web.png?itok=kcwWOmje</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>http://www.apple.com/accessibility/osx/voiceover/</csm:url>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="7" off_age="5" on_age="7" rating="on">OK for kids 7+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that their kids with visual disabilities can use VoiceOver to interact completely with a Macintosh computer. This solid text-to-speech tool is free (so long as you've already purchased a Mac); it's a part of the operating system that comes with every Apple computer. Kids will have to spend a bit of time memorizing the commands, but they can be learned in steps. There's a lot of motivation to learn quickly, though, as the digital world really opens up to kids who haven't been able to experience it previously. Because VoiceOver is a free part of Apple's operating system, there are no competing or alternate screen readers for the Macintosh, so you're sort of stuck with it for now. However, it gets updated regularly and kids should be happy with its voice options and simplicity.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Consumerism" rating="1"><![CDATA[The program is free -- once you've purchased an Apple computer, that is.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="5"><![CDATA[This program is preloaded onto your computer, so there shouldn't be any privacy or safety issues.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[Kids with severe visual disabilities or blindness can use a Macintosh computer, play online, and do their homework with the use of VOICEOVER, Apple's text-to-speech tool. They'll learn commands using the keyboard or "gestures" that are created by different finger movements on the trackpad. Simple commands read text aloud while progressively more complex keyboard combinations let kids open and close applications, write documents, format text, and use the Internet freely. There's a talking tutorial and verbal help available at any time to help kids learn or to reinforce commands. Output is by voice and/or a refreshable Braille keyboard (purchased separately), enabling kids to work and play on a level comparable to their sighted peers.]]></csm:description>
+      <csm:any_good><![CDATA[VoiceOver is a great, free program that offers access to the Mac for those who are blind or have reading difficulties. Because it's a part of Apple's operating system, it works very smoothly with all Apple programs, but it's also compatible with an increasing number of outside applications. Some of the keyboard commands are complex, and there are a lot of them to memorize, but there are excellent built-in tutorials and help options. Kids can start using the basic functions fairly quickly and then learn the more complex ones as they have need for them.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Pick a very basic subset of commands to begin with, such as navigating and listening to a short story once it's on the screen.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Encourage kids to learn one or two new commands a day until they're successful enough to want to progress faster.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="4839041">
+          <csm:title><![CDATA[JAWS]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/jaws</csm:url>
+        </csm:item>
+        <csm:item id="4839001">
+          <csm:title><![CDATA[Dragon NaturallySpeaking Home 12]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/dragon-naturallyspeaking-home-12</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="5">
+        <csm:author>ADK AccessAbility</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn to navigate a Macintosh computer with a series of commands. Kids with blindness will need some initial training to begin using VoiceOver successfully, but once that happens, they can progress to more and more sophisticated control of and interaction with the digital world. They'll be able to communicate and express themselves online, which can bring a new sense of confidence and self-esteem. VoiceOver opens an important door for kids with visual disabilities, who can now navigate a Mac very much the same as their sighted peers.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="following directions" id="21685"/>
+            <csm:category name="reading" id="21726"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Tech Skills" id="21652"/>
+          <csm:category name="Communication" id="21646"/>
+          <csm:category name="Emotional Development" id="21648"/>
+          <csm:category name="Self-Direction" id="21651"/>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="4"><![CDATA[There's some training required to get started, but most kids become very engaged and excited once they begin to experience success.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="5"><![CDATA[Kids will have to persevere as they memorize commands, but they'll be very empowered by their new ability to navigate a computer.]]></csm:dimension>
+          <csm:dimension name="Support" rating="5"><![CDATA[Support is available in the form of audio tutorials and voiced help screens.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="1">
+        <csm:category name="Visual processing issue" id="21553">
+          <csm:category name="Visual discrimination" id="21554"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:4841186</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/scan-and-read-pro"/>
+    <category term="website"/>
+    <published>2014-02-13T12:27:00-08:00</published>
+    <updated>2014-03-20T00:18:07-07:00</updated>
+    <author>
+      <name>ADK AccessAbility</name>
+    </author>
+    <title><![CDATA[Scan and Read Pro]]></title>
+    <summary><![CDATA[Solid text-to-speech tool supports struggling readers.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/scan-and-read-pro-icon.png?itok=HBV3xspA</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss1-scan-read-blank-document-and-tool-bar.jpeg?itok=AFzLqheT</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss2-scan-read-dictionary-thesaurus.jpeg?itok=MaEHR7lA</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss3-scan-read-scanning-a-document.jpeg?itok=li7oCfhP</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss4-scan-read-mp3-creation.jpeg?itok=PolRdyCI</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss5-scan-read-reading-options.jpeg?itok=wc5eIc1u</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>http://www.readingmadeez.com/products/scanreadpro.html</csm:url>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="7" off_age="5" on_age="7" rating="on">OK for kids 7+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Scan and Read Pro is a downloadable text-to-speech tool. It can simplify reading printed text and support better comprehension for any kid with reading challenges. The tool bar is easy to use, you can scan and import text to MP3 files, and multiple languages are supported. It also allows kids who need to study written material to get the information they need without having to worry about reading level. Any text can be easily imported, read, and highlighted as well as copied and pasted to another program. This is an affordable, versatile tool that supports independence for kids with reading difficulties.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="5"><![CDATA[The program is downloaded directly onto your computer, so there are no information-sharing or privacy issues.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[SCAN AND READ PRO is a text-to-speech tool that allows scanned documents as well as on-screen text to be read aloud. Kids who have reading difficulties will be able to scan a text document (in color or black and white) onto their computer, then choose how they'd like to see and hear it. They can use tracking technology to highlight words, sentences, or paragraphs using customizable colors, or they can simply adjust the spacing for lines, words, or characters for easier reading. In addition, zoom capability is possible up to 400 percent, which could be helpful to those with low vision. It also includes a talking spelling checker, a dictionary, a thesaurus, word-prediction support for writing, and the option to create MP3 or WAV files to listen to and study for later. There's also a help button that contains videos and text.]]></csm:description>
+      <csm:any_good><![CDATA[Scan and Read Pro is a helpful, easy-to-use software program right out of the box. Its user-friendly toolbar contains both words and pictures, and kids can use its tools to help with reading comprehension. Scanning is easy and quick and works with any USB TWAIN-compatible scanner. The control you have over reading out loud or adjusting print to read independently also is excellent. You can select different voices for better understanding and customization, and speech is smooth. This program can give kids new confidence in their ability to access and process text from sources that may have been a challenge in the past.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Find a favorite book and use it as the first example when you're learning to use the program along with your child.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Help your kids customize the toolbars to best work with their specific needs.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="4">
+        <csm:author>ADK AccessAbility</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn how to independently read and write, even with significant reading and writing difficulties. They can customize tool bars to help them read printed text, explore the web, and capturing info to copy and paste to other applications. They can follow along with text as it's highlighted, and choose the spacing and visual output that's best for them as well. It's also possible to turn written text into MP3 or WAV files to listen to, which can help with studying on the go. Scan and Read Pro is a solid, reasonably priced software solution for anyone with reading difficulties.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="phonics" id="21716"/>
+            <csm:category name="reading" id="21726"/>
+            <csm:category name="reading comprehension" id="21728"/>
+            <csm:category name="spelling" id="21747"/>
+            <csm:category name="vocabulary" id="21767"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651"/>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="collecting data" id="21743"/>
+            <csm:category name="logic" id="21795"/>
+            <csm:category name="prediction" id="21811"/>
+            <csm:category name="problem solving" id="21814"/>
+            <csm:category name="strategy" id="21825"/>
+            <csm:category name="thinking critically" id="21827"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="3"><![CDATA[As kids find that they're able to access texts and process more information, they'll become increasingly enthusiastic about using the program.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="4"><![CDATA[Struggling readers and writers will feel empowered as they access texts using the program; with a bit of effort, they can reach new goals.]]></csm:dimension>
+          <csm:dimension name="Support" rating="4"><![CDATA[Help files are a combination of video and text and can easily be accessed at any point within the program. Five languages also are supported.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="1">
+        <csm:category name="ADD" id="21519">
+          <csm:category name="Distractability" id="21522"/>
+          <csm:category name="Inattention" id="21524"/>
+        </csm:category>
+        <csm:category name="ADHD" id="21512">
+          <csm:category name="Distractability" id="21515"/>
+          <csm:category name="Inattention" id="21517"/>
+        </csm:category>
+        <csm:category name="Auditory processing issue" id="21568">
+          <csm:category name="Auditory attention issues" id="21573"/>
+          <csm:category name="Auditory discrimination issues" id="21569"/>
+          <csm:category name="Auditory memory issues" id="21571"/>
+          <csm:category name="Auditory sequencing issues" id="21572"/>
+        </csm:category>
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Language processing" id="21536"/>
+          <csm:category name="Spelling issues" id="21537"/>
+          <csm:category name="Visual/spatial issues" id="21534"/>
+        </csm:category>
+        <csm:category name="Dyslexia" id="21525">
+          <csm:category name="Comprehension" id="21530"/>
+          <csm:category name="Decoding issues" id="21527"/>
+          <csm:category name="Difficulties with automaticity" id="21528"/>
+          <csm:category name="Fluency" id="21532"/>
+          <csm:category name="Phonological processing issues (includes Phonemic awareness and other issues)" id="21526"/>
+          <csm:category name="Poor spelling" id="21529"/>
+          <csm:category name="Vocabulary" id="21531"/>
+        </csm:category>
+        <csm:category name="Executive functioning issue" id="21581">
+          <csm:category name="Problems with attentional processing" id="21584"/>
+        </csm:category>
+        <csm:category name="Expressive language disorder" id="21545">
+          <csm:category name="Language memory issues" id="21547"/>
+          <csm:category name="Organization of language issues" id="21548"/>
+        </csm:category>
+        <csm:category name="Receptive language disorder" id="21549">
+          <csm:category name="Auditory processing issues" id="21550"/>
+        </csm:category>
+        <csm:category name="Sensory processing issue" id="21562">
+          <csm:category name="Fine and gross motor issues" id="21563"/>
+        </csm:category>
+        <csm:category name="Visual processing issue" id="21553">
+          <csm:category name="Letter and symbol reversal problems" id="21561"/>
+          <csm:category name="Visual discrimination" id="21554"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:4858101</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/universal-reader-plus"/>
+    <category term="website"/>
+    <published>2014-03-11T10:19:00-07:00</published>
+    <updated>2014-03-20T00:18:07-07:00</updated>
+    <author>
+      <name>ADK AccessAbility</name>
+    </author>
+    <title><![CDATA[Universal Reader Plus]]></title>
+    <summary><![CDATA[Read, translate, and summarize text with versatile tool.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/universal-plus-icon-64507-zoom.png?itok=MDTPyE0i</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/universalreader.png?itok=SfzLzfPN</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/universalreader1.png?itok=PnO2IZ2B</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/universalreader2.png?itok=XQIN1vgr</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>http://www.readingmadeez.com</csm:url>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="6" off_age="5" on_age="6" rating="on">OK for kids 6+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Universal Reader is a downloadable text-to-speech reader that also summarizes and translates text. It'll read selected text aloud, helping kids with comprehension and reading difficulties that would otherwise be a barrier. Even younger kids should find it easy to use; it'll make the online world and any text documents much more accessible.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="5"><![CDATA[Because it's a program you download onto your home computer, there are no privacy issues.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[UNIVERSAL READER PLUS is a downloadable program that can read any text found on a computer screen, including Flash and PDF files. After you've installed it onto your home computer or device, simply select the text you'd like to hear aloud. Not only can it read text, Universal Reader also can translate it into eight languages as well as summarize any-size chunk of text into key points. You'll do all this using a floating toolbar that moves with you from Word docs to websites. Highlight and select your chosen text with a pointer or through a series of keyboard commands.]]></csm:description>
+      <csm:any_good><![CDATA[With its simple tool bar, Universal Reader Plus delivers what it promises: universal access to text for kids who need it. There are other free readers, auto summarizers, and language translators out there, but Universal Reader Plus is the whole package. It uniquely reads Flash files, has a talking pointer that reads anything (even if the computer doesn't see it as print), can summarize a small chunk of information or a huge document, and can translate into eight languages. One of the coolest things about Universal Reader Plus is its summary tool. Using algorithmic language technology, it can solidly summarize any amount of text from a single paragraph to a full chapter. This awesome feature can help kids with comprehension issues as well as those trying to digest a ton of information in a short amount of time.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Encourage recreational reading through a Bookshare.org subscription.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Use texts and personal emails to show kids the fun side of the program.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="4">
+        <csm:author>ADK AccessAbility</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn to be independent readers, get support in learning another language, and see good examples of how to summarize text. They can improve their reading comprehension skills; the program has a few ways to make text easier to digest. Its various features can support struggling students, or just help kids who have a ton of reading to accomplish in a short amount of time. Universal Reader Plus opens lots of doors to the wonderful world of words.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="reading" id="21726"/>
+            <csm:category name="reading comprehension" id="21728"/>
+            <csm:category name="text analysis" id="21758"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651"/>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="investigation" id="21791"/>
+            <csm:category name="part-whole relationships" id="21807"/>
+            <csm:category name="thinking critically" id="21827"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="3"><![CDATA[Kids will enjoy engaging with content they may not have been able to access before. The toolbar is easy to use and visually appealing.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="4"><![CDATA[The Web site provides access to key learning materials, and interpreting texts in multiple ways (both seeing and listening) can be a great way for kids to improve their reading fluency and comprehension.]]></csm:dimension>
+          <csm:dimension name="Support" rating="4"><![CDATA[Within the help menu, short, simple, and specific videos assist while also keeping kids' attention. Also, there are support texts that can -- of course -- be read aloud.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="1">
+        <csm:category name="ADD" id="21519">
+          <csm:category name="Distractability" id="21522"/>
+          <csm:category name="Inattention" id="21524"/>
+        </csm:category>
+        <csm:category name="ADHD" id="21512">
+          <csm:category name="Distractability" id="21515"/>
+          <csm:category name="Inattention" id="21517"/>
+        </csm:category>
+        <csm:category name="Auditory processing issue" id="21568">
+          <csm:category name="Auditory attention issues" id="21573"/>
+          <csm:category name="Auditory discrimination issues" id="21569"/>
+          <csm:category name="Auditory memory issues" id="21571"/>
+          <csm:category name="Auditory sequencing issues" id="21572"/>
+        </csm:category>
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Language processing" id="21536"/>
+          <csm:category name="Spelling issues" id="21537"/>
+          <csm:category name="Visual/spatial issues" id="21534"/>
+        </csm:category>
+        <csm:category name="Dyslexia" id="21525">
+          <csm:category name="Comprehension" id="21530"/>
+          <csm:category name="Decoding issues" id="21527"/>
+          <csm:category name="Difficulties with automaticity" id="21528"/>
+          <csm:category name="Fluency" id="21532"/>
+          <csm:category name="Phonological processing issues (includes Phonemic awareness and other issues)" id="21526"/>
+          <csm:category name="Poor spelling" id="21529"/>
+          <csm:category name="Vocabulary" id="21531"/>
+        </csm:category>
+        <csm:category name="Executive functioning issue" id="21581">
+          <csm:category name="Problems with attentional processing" id="21584"/>
+        </csm:category>
+        <csm:category name="Expressive language disorder" id="21545">
+          <csm:category name="Language memory issues" id="21547"/>
+          <csm:category name="Organization of language issues" id="21548"/>
+        </csm:category>
+        <csm:category name="Receptive language disorder" id="21549">
+          <csm:category name="Auditory processing issues" id="21550"/>
+        </csm:category>
+        <csm:category name="Sensory processing issue" id="21562">
+          <csm:category name="Fine and gross motor issues" id="21563"/>
+        </csm:category>
+        <csm:category name="Visual processing issue" id="21553">
+          <csm:category name="Letter and symbol reversal problems" id="21561"/>
+          <csm:category name="Visual discrimination" id="21554"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:3647926</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/a-maths-dictionary-for-kids"/>
+    <category term="website"/>
+    <published>2012-12-05T07:51:00-08:00</published>
+    <updated>2014-03-20T00:05:22-07:00</updated>
+    <author>
+      <name>Dana Villamagna</name>
+    </author>
+    <title><![CDATA[A Maths Dictionary For Kids]]></title>
+    <summary><![CDATA[Hundreds of useful math definitions, examples, and charts.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/mathsdiction.jpg?itok=3JAZ9c4k</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>www.amathsdictionaryforkids.com</csm:url>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="10" off_age="5" on_age="10" rating="on">OK for kids 10+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that A Maths Dictionary for Kids is a dictionary and chart website for grade school to entry-level high school students that helps explain terms and concepts with words and visuals. As long as kids can read -- or have the content read to them -- they will find some helpful tips, from the basics of rounding numbers and math operations to fractions, ratios, and statistics. There is some interactivity here (move this shape here, insert a number there) but for the most part it's not as flashy as many of the popular sites geared for kids. Still, the printable charts are colorful and present concepts in alternative ways. Since this site is Australian-based, some of the vocabulary and spelling may be unfamiliar to non-Australian kids. A Maths Dictionary for Kids can be a helpful resource for kids seeking a better understanding of math terms and concepts.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[All of the content on this site may only be used and/or printed and copied for non-commercial, educational use.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="3"><![CDATA[There are many ways for kids to approach different math concepts (with visual charts, examples, definitions, interactive learning, all on this site). If kids persist, they can gain a better understanding of math.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sex" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[Enter the site from the main page and either search for definitions by words (A-Z) that you want to know their definition, or go to the charts main page and search charts by title (topics and subtopics). Once you click on a word, the definition will appear on the right side of the screen with some type of image or interactive feature, while the full word list remains on the left. If you're choosing the charts, same steps apply. Any of the definitions or charts can be printed by clicking the print icon at the bottom of the screen.]]></csm:description>
+      <csm:any_good><![CDATA[A Maths Dictionary for Kids can be very useful for kids, parents, and teachers to help supplement math lessons with definitions and charts on a wide variety of math concepts. Kids from grade school to early high school (as well as parents who have forgotten certain math concepts that kids bring home in their homework) will find useful definitions and interactive explanations, as well as colorful, creative charts to help clarify or reinforce school lessons. Even younger kids who can't yet read may be able to learn basic math concepts here with a parent's help. The charts on this no-ad (at the time of this review) site can also be printed for educational-only, non-commercial use. An excellent math (or maths, depending upon where you live) resource.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about why using A Maths Dictionary for Kids to approach math concepts they've not yet mastered in new ways may be helpful. How might a definition or a chart help you understand percentages or addition?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Ask your kid to talk about which math lessons they've been taught in school so far this year that have been most difficult to learn, or which ones they still aren't quite sure about. Then go to A Maths Dictionary for Kids and look up those specific topic definitions and charts together.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1257128">
+          <csm:title><![CDATA[CoolMath]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/coolmath</csm:url>
+        </csm:item>
+        <csm:item id="3404506">
+          <csm:title><![CDATA[Bedtime Math]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/bedtime-math</csm:url>
+        </csm:item>
+        <csm:item id="1251947">
+          <csm:title><![CDATA[StudyJams!]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/studyjams</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="3">
+        <csm:author>Dana Villamagna</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn many different math skills including, but not limited to: operations, numbers, fractions, decimals, ratios, time, measurement, geometry, and beginning algebra by using definitions, interactive activities, and charts. For example, to learn about rounding numbers, kids enter a number that gets rounded to the tens and hundreds places, and also shows them how that looks on a chart. Kids can also learn critical thinking skills and how to further their own academic progress using quality online, interactive resources such as "A Maths Dictionary for Kids." This is a jam-packed, multi-topic site for supplemental math help.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[If your kid needs extra reinforcement of a lesson or concept, print out a related chart and post it on your refrigerator or some other prominent place in your home.When your kid needs help with math homework and the lesson has you stumped, check out this site for a refresher.]]></csm:how_parents_help>
+        <csm:subjects>
+        </csm:subjects>
+        <csm:skills>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="3"><![CDATA[This is a jam-packed, multi-topic site for math help. Kids from grade school to early high school will find useful definitions, interactive explanations and colorful, creative charts.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="3"><![CDATA[As kids look through the terms and concepts and choose the ones they want to know more about, they're directed to a definition, interactive exercise, and perhaps a chart to help them learn the term or concept in different ways.]]></csm:dimension>
+          <csm:dimension name="Support" rating="3"><![CDATA[Kids must be able to read or have the content read to them to find the site helpful. Some of the vocabulary and spelling may be unfamiliar to non-Australian kids.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dyscalculia" id="21538">
+          <csm:category name="Language of math issues" id="21541"/>
+        </csm:category>
+        <csm:category name="Dyslexia" id="21525">
+          <csm:category name="Comprehension" id="21530"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:3750121</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/gcflearnfreeorg"/>
+    <category term="website"/>
+    <published>2013-01-21T20:57:00-08:00</published>
+    <updated>2014-03-20T00:05:22-07:00</updated>
+    <author>
+      <name>Erin Brereton</name>
+    </author>
+    <title><![CDATA[GCFLearnFree.org]]></title>
+    <summary><![CDATA[Educational site is packed with practical lessons and info.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/gcf_0.jpg?itok=ZnMrmBxN</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>http://www.gcflearnfree.org/</csm:url>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="10" off_age="7" on_age="10" rating="on">OK for kids 10+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that GCFLearnFree.org provides lessons and self-paced tutorials for reading, math, and computer skills. Though the site feels designed for older kids and adults, kids of all ages can find useful, educational activities and lessons to explore. Kids don't need to register to view the site's videos or other educational elements. However, to track learning history or register for one of the online courses, kids will need to enter an email address, username, and password.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Educational value" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="4"><![CDATA[The activities can make learning fun. Sections include lessons on using information correctly and avoiding plagiarism, Internet safety, and other helpful topics.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="4"><![CDATA[Kids can like or dislike items on the site but can't directly interact.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sex" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[GCFLEARNFREE.ORG offers clever, fun tutorials, activities, and quizzes to educate kids on computer use, math, and reading. The more than 750 lessons are grouped by general topic -- reading, computers, or math -- or available on a long page of links. In addition to school subjects, lessons also cover general lifestyle themes including writing a resume and applying for a job, using various software programs, and banking.]]></csm:description>
+      <csm:any_good><![CDATA[GCFLearnFree.org was created by Eastern North Carolina's Goodwill Industries and is funded, in part, by proceeds from area Goodwill stores. The site provides dozens of educationally based videos, tutorials, and activities to help kids and adults learn about reading, math, and computers. There's plenty for younger kids to do -- some activities specifically focus on learning letters and words. Older kids can delve into more in-depth material about computer software, tax documents, and other topics. Kids who speak another language can also get English instruction on the site; adults can also take a free online Microsoft Word, Excel, PowerPoint, or Access class for continuing education credit.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about social media and websites. How can your kids learn to be a good digital citizen? Check out our guide for tips and conversation starters.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Discuss the videos on GCFLearnFree.org that your kids find interesting -- and the ones that help them learn new concepts. Are there other school subjects that they want to learn more about?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[The site also includes information about creating a resume and applying for a job. What kinds of careers interest your kids? How could you help them start to learn more and prepare now to possibly enter those industries?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="3482701">
+          <csm:title><![CDATA[Imagination Cafe]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/imagination-cafe</csm:url>
+        </csm:item>
+        <csm:item id="3588461">
+          <csm:title><![CDATA[BrainPop]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/brainpop</csm:url>
+        </csm:item>
+        <csm:item id="3668341">
+          <csm:title><![CDATA[Karma's World]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/karmas-world</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="4">
+        <csm:author>Erin Brereton</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn a range of math, language, and computer skills. Activities help younger users recognize letters and words; kids who speak another language can also practice English. Other instruction focuses on money management, using the Internet, and everyday tasks like using a microwave or applying for a job. Kids can try again to answer questions they miss but don't really get much feedback. Adding clues to help them get it right might help drive the lesson home instead of just encouraging kids to guess. GCFLearnFree.org introduces useful academic and life lessons with engaging, interactive materials.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Ask your kids to pick an activity based on their toughest school subject and challenge them to finish all sections in a week.Play the Blast Off game together by reading the words aloud as your kids smash them.Use the site's Internet lessons as a jumping off point for a discussion about online safety.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Math" id="21642">
+            <csm:category name="addition" id="21655"/>
+            <csm:category name="fractions" id="21687"/>
+          </csm:category>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="letter or word recognition" id="21701"/>
+            <csm:category name="reading comprehension" id="21728"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651">
+            <csm:category name="academic development" id="21722"/>
+            <csm:category name="self-assessment" id="21818"/>
+          </csm:category>
+          <csm:category name="Tech Skills" id="21652">
+            <csm:category name="social media" id="21822"/>
+            <csm:category name="using and applying technology" id="21829"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="4"><![CDATA[The site does an excellent job of explaining topics with interactive materials. Kids can learn about addition, fractions, and other types of math; apply language skills; or find out how computers work.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="4"><![CDATA[Younger kids can practice their reading skills by listening to short stories, and then answering questions about the content; activities also help them match words to sounds and identify words that are read aloud in a game.]]></csm:dimension>
+          <csm:dimension name="Support" rating="3"><![CDATA[Kids can try again to answer questions they miss but don't really get much feedback. Adding clues to help them get it right might help drive the lesson home instead of just encouraging kids to guess.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Auditory processing issue" id="21568">
+          <csm:category name="Auditory discrimination issues" id="21569"/>
+        </csm:category>
+        <csm:category name="Dyscalculia" id="21538">
+          <csm:category name="Language of math issues" id="21541"/>
+          <csm:category name="Number sense issues" id="21540"/>
+          <csm:category name="Problem solving issues" id="21542"/>
+        </csm:category>
+        <csm:category name="Dyslexia" id="21525">
+          <csm:category name="Comprehension" id="21530"/>
+          <csm:category name="Phonological processing issues (includes Phonemic awareness and other issues)" id="21526"/>
+        </csm:category>
+        <csm:category name="Nonverbal Learning issues" id="21591">
+          <csm:category name="Trouble reading facial expressions" id="21592"/>
+        </csm:category>
+        <csm:category name="Receptive language disorder" id="21549">
+          <csm:category name="Auditory processing issues" id="21550"/>
+          <csm:category name="Difficulty with verbal memory" id="21552"/>
+          <csm:category name="Difficulty with verbal reasoning" id="21551"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:1255870</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/kidzworld"/>
+    <category term="website"/>
+    <published>2008-01-04T06:00:00-08:00</published>
+    <updated>2014-03-19T23:54:17-07:00</updated>
+    <author>
+      <name>Larisa Wiseman</name>
+    </author>
+    <title><![CDATA[Kidzworld]]></title>
+    <summary><![CDATA[Well-monitored site where kids uphold community standards.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/kidz.png?itok=3rfiCo0D</csm:image>
+      </csm:images>
+      <csm:genre id="20255">Social Networking</csm:genre>
+      <csm:url>http://kidzworld.com</csm:url>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="11" off_age="9" on_age="11" rating="on">OK for kids 11+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that this social networking site lets tweens and teens to communicate with people they don't know but uses humans and software to protect kids' privacy and safety. A live staff member moderates the chat room during the hours it's open. Staff moderators approve photos, videos, and articles kids post and write. Filtration software monitors comments, forums, and blogs and passes flagged content onto staff members for approval, but parents should bear in mind that no filtration software is perfect. Kids can send  e-cards to each other if they know the recipient's email address or username and the sender's email address is disguised.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="4"><![CDATA[The site has quite a few ads -- for video games, toys, products, and contests, in particular. Lots of flashy, animated banners.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="3"><![CDATA[Mild curse words such as "ass" and "damn" are often seen in users' comments and vaguely camouflaged as "@$$" and "d@m." That aside, the language and spelling skills of many tweens and teens who frequent these online communities are generally atrocious -- parents need to decide whether they want their child exposed to that.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="1"><![CDATA[Kids may learn proper online community etiquette if they stick with the site's rules for the chat room and message boards. Any offensive comments that may lead kids to think certain negative behavior is OK seem to get censored before they reach the site.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="4"><![CDATA[There are a lot of measures in place to protect privacy such as username approval, parent approval, and monitoring of content by either humans  or software.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sex" rating="3"><![CDATA[Some iffy and potentially offensive content can sneak through in personal profiles or in messages.  Asking directly for dates in the chat room will get you booted from chat, but that doesn't stop kids from flirting, saying they want a boyfriend or girlfriend, or trying to pick each other up to add as friends.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[KIDZWORLD is basically an online social network where kids can communicate in a presumably safe environment. (The privacy policy pledges the utmost safety and protection of personal information, and there are strict chat rules.) After the free registration process -- during which parents are notified of the child's intent to join -- kids can create a profile, chat, post messages to other members, send emails or e-cards, post articles or personal writings, upload photos or videos, play games, and enter contests. They can also read news and reviews, blogs, an advice column (to which they can also post a question), and short articles about health, personal style, and project ideas.]]></csm:description>
+      <csm:any_good><![CDATA[There's so much to look at on this busy, buzzing site that it feels a bit overwhelming right from the start. But, the short articles about celebrities, sports, and games are in line with teen and tween interests and the tools for self-expression through blogs, forums, and profiles gets kids personally invested in an online space of their own. Though the site's moderators seem to go to great lengths to ensure privacy and safety, teens and tweens still have their moments; they flirt, get mad, support and insult each other, are funny, express sadness, act cranky, and so on. So, it's no guarantee that certain comments or behavior won't be offensive or objectionable to certain kids -- or parents.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about online communities and the safety issues involved when you participate in them. What information did you include in your profile? Did you make sure not to include any personal information? Are you aware of the rules for the chat room? Do most of the users seem to stick to those rules?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Find out who kids are talking to online. Check out the kids on their friends list as you would their real life friends.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Encourage your kid to start a forum about their favorite hobby.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1260231">
+          <csm:title><![CDATA[GiantHello]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/gianthello</csm:url>
+        </csm:item>
+        <csm:item id="1252023">
+          <csm:title><![CDATA[YouthNoise]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/youthnoise</csm:url>
+        </csm:item>
+        <csm:item id="1257742">
+          <csm:title><![CDATA[New Moon Girls Online]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/new-moon-girls-online</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="3">
+        <csm:author>Michelle Kitt</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn to express themselves, collaborate with other, and explore online content in a safe, kids-only social network. KidzWorld provides a lot of content focused on the interests of 9-15 year olds -- including a homework help section with science experiments and crossword puzzles -- but kids get to create forums and write blogs and articles, too. Strict rules about behavior don't affect the fun factor; instead kids can stretch their writing skills as contributors or even take charge as rule-setting moderators of their own forums. This empowering site gets kids personally invested in creating great content that helps and entertains.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Review KidzWorld's safety guidelines which explain what and how the site is moderated.Encourage you kid to start a forum about their favorite hobby.Find out who kids are talking to online. Check out the kids on their friends list as you would their real life friends.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Hobbies" id="21640">
+            <csm:category name="collecting" id="21667"/>
+            <csm:category name="cooking" id="21668"/>
+            <csm:category name="fashion" id="21683"/>
+            <csm:category name="sports" id="21749"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Creativity" id="21647"/>
+          <csm:category name="Self-Direction" id="21651"/>
+          <csm:category name="Communication" id="21646"/>
+          <csm:category name="Collaboration" id="21645"/>
+          <csm:category name="Responsibility &amp; Ethics" id="21650">
+            <csm:category name="honoring the community" id="21783"/>
+            <csm:category name="respect for others" id="21816"/>
+          </csm:category>
+          <csm:category name="Tech Skills" id="21652">
+            <csm:category name="social media" id="21822"/>
+            <csm:category name="using and applying technology" id="21829"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="4"><![CDATA[The many short articles about celebrities, sports, and games are in line with teen and tween interests and the tools for self-expression through blogs, forums, and profiles get kids personally invested.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="3"><![CDATA[Kids are the creators here, so they are personally invested in helping to enforce rules so their content can stay. The freedom to create forums and write articles connects kids who are into the same stuff.]]></csm:dimension>
+          <csm:dimension name="Support" rating="2"><![CDATA[There's a resource section for parents and teachers and a companion site in Spanish.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Social pragmatic language disorder" id="21577">
+          <csm:category name="Missing social cues" id="21578"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:1249386</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/dltks-crafts-for-kids"/>
+    <category term="website"/>
+    <published>2007-06-14T10:00:00-07:00</published>
+    <updated>2014-03-19T23:44:51-07:00</updated>
+    <author>
+      <name>Jean Armour Polly</name>
+    </author>
+    <title><![CDATA[DLTK's Crafts for Kids]]></title>
+    <summary><![CDATA[A bounty of fun crafts for kids, but some iffy ads.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/crafts.jpg?itok=HcNfdCzQ</csm:image>
+      </csm:images>
+      <csm:genre id="20229">Creating</csm:genre>
+      <csm:url>http://www.dltk-kids.com/</csm:url>
+    </csm:product>
+    <csm:review star_rating="3">
+      <csm:slider not_for_kids="0" target_age="5" off_age="2" on_age="5" rating="on">OK for kids 5+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that DLTK's Crafts for Kids offers fun craft ideas for kids ages 2 and up. Some of the crafts need parental supervision, and many need a printer. The instructions are framed by a banner ad at the top, and there's another large ad that links to a fad diet site.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="3"><![CDATA[Several prominently placed ads, including one for a fad diet site.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="4"><![CDATA[Site features plenty of ideas for simple, wholesome fun.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[If you've ever wanted to know how to make a "Hello Kitty" cake or wondered where you could download some printable coloring pages, look no further -- DLTK'S CRAFTS FOR KIDS has all of these items and lots more. You can search by subject, the type of craft material you have on hand, or by the name of a favorite character, such as SpongeBob Squarepants. In addition to hands-on crafts, there are also activities like games and puzzles. Many of the crafts are educational, teaching basic concepts in math, reading, and other subjects.]]></csm:description>
+      <csm:any_good><![CDATA[With an abundance of printables and a wealth of ideas on how to put all those empty baby food jars (as well as other materials) you've kept "for someday" to good use, DLTK's Crafts for Kids offers users a seemingly limitless number of craft activites. There are many ways to find just the right activity, but it would be nice to be able to search by age group somehow, such as "Toddlers" or "Preschoolers." Still, it's easy enough to find something for everyone.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about what doing crafts teaches us. How can you apply what you learn from creating something -- patience, imagination, a sense of fun -- to other things in life, such as friendships and school?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[What materials can you find around the house -- that are usually thrown away or recycled -- that would be great for crafts?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="3174781">
+          <csm:title><![CDATA[Storybird]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/storybird</csm:url>
+        </csm:item>
+        <csm:item id="1256935">
+          <csm:title><![CDATA[PoissonRouge]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/poissonrouge</csm:url>
+        </csm:item>
+        <csm:item id="1259513">
+          <csm:title><![CDATA[Haring Kids]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/haring-kids</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="4">
+        <csm:author>Susan Yudt</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn lots of basic concepts on DLTK's Crafts for Kids, an educational site that's maintained by a mother of two. In addition to ABCs and 123s, kids will learn about holidays, cultures, animals, nutrition, weather, and much more. There are also more advanced activities for older kids -- like how to write checks and balance a checkbook -- that demonstrate how skills they learn in school are used in the "real world." Although the site is rather low-tech, there's no shortage of activities that combine learning with fun.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Add an extra dose of fun to the holidays and join the kids making turkeys out of handprints for Thanksgiving or creating homemade Halloween costumes.Pick a few cast-offs from around the house (wrapping paper roll, extra buttons, etc.) and challenge them to make something -- anything, using those materials.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="following directions" id="21685"/>
+            <csm:category name="letter or word recognition" id="21701"/>
+            <csm:category name="reading" id="21726"/>
+          </csm:category>
+          <csm:category name="Arts" id="21639">
+            <csm:category name="drawing" id="21674"/>
+            <csm:category name="painting" id="21713"/>
+          </csm:category>
+          <csm:category name="Math" id="21642">
+            <csm:category name="counting" id="21669"/>
+            <csm:category name="numbers" id="21712"/>
+            <csm:category name="shapes" id="21740"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Creativity" id="21647">
+            <csm:category name="imagination" id="21787"/>
+            <csm:category name="making new creations" id="21797"/>
+          </csm:category>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="solving puzzles" id="21823"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="3"><![CDATA[Fun site offers a seemingly limitless number of craft activities as well as games and puzzles. It would be nice to be able to search by age group somehow.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="4"><![CDATA[Kids learn by coloring, building, cooking, writing, doing puzzles, and other hands-on pursuits. The crafts help kids practice reading and following directions while giving them a creative outlet.]]></csm:dimension>
+          <csm:dimension name="Support" rating="5"><![CDATA[Parents and kids can download an abundance of printables. Some of the crafts need parental supervision, and many need a printer.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Fine motor issues" id="21535"/>
+          <csm:category name="Visual/spatial issues" id="21534"/>
+        </csm:category>
+        <csm:category name="Dyspraxia" id="21574">
+          <csm:category name="Fine motor issues" id="21575"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:1249195</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/the-toymaker"/>
+    <category term="website"/>
+    <published>2010-12-07T17:21:00-08:00</published>
+    <updated>2014-03-19T23:44:51-07:00</updated>
+    <author>
+      <name>Jean Armour Polly</name>
+    </author>
+    <title><![CDATA[The Toymaker]]></title>
+    <summary><![CDATA[Cheerful paper toys to print and assemble.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/2177-orig.jpg?itok=ezUle172</csm:image>
+      </csm:images>
+      <csm:genre id="20229">Creating</csm:genre>
+      <csm:url>http://www.thetoymaker.com/</csm:url>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="8" off_age="2" on_age="8" rating="on">OK for kids 8+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that this site features terrific, colorful content and no commercial messages, plus, it's free!]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="4"><![CDATA[The site's owner states on the home page that her goal is "to help grownups and kids spend time together making things."]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[If you have access to a color printer, you're just a few keystrokes away from a whole toy chest of fun. More than 30 paper toys can be printed, folded, and glued together. Some of the offerings include a "Tooth Fairy Gazebo" ("so she will have a place to rest when she visits your house"); "Marble Mice" ("cats love them"); and a "cootie catcher" ("to see if someone has a warm heart"). Besides the toys, there are decorations for many favorite holidays, including a Groundhog Day pop-up toy, a set of Halloween banners, and a New Year's penny box.]]></csm:description>
+      <csm:any_good><![CDATA[The great thing about crafts is that they're fun to create -- and fun to play with afterward. From paper doll pandas to printable puzzles, this site's wide range of hands-on activities will appeal to kids who like coloring, drawing, folding, building, animals, magic, holidays, and toys ... so, basically, any kid! The site's design is refreshingly clean and simple, and the craft illustrations are lovely.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about how playtime was different before the Internet and computers. Do you think the Internet encourages kids to be more creative, or does it interfere with creativity? What activities would you miss the most if you didn't have a computer or Internet access?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Families can also discuss which of this site's activities kids like best and can share some of their favorite childhood crafts]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="2107470">
+          <csm:title><![CDATA[Martha and Friends]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/martha-and-friends</csm:url>
+        </csm:item>
+        <csm:item id="1257775">
+          <csm:title><![CDATA[JrChefsofAmerica]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/jrchefsofamerica</csm:url>
+        </csm:item>
+        <csm:item id="1254503">
+          <csm:title><![CDATA[NASA's Space Place]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/nasas-space-place</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="2">
+        <csm:author>Michelle Kitt</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn to make paper toys to use in imaginative play. Instructions to fold, cut, and glue free, beautifully decorated paper designs help kids develop fine motor skills. Some projects include a foldable pattern while others start from scratch with paper. There are activity ideas, too. The ability for kids to share pictures of their creations would be a great addition to this site. Videos, art, and printables do a nice job of showing kids and parents how to make these cheerful paper toys.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Have kids help decorate at holiday time with some of the holiday themed projects.Help younger kids with projects that involve more complicated folding and cutting.Print some of the designs on heavier paper or cardstock for more durable toys.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Hobbies" id="21640">
+            <csm:category name="building" id="21662"/>
+          </csm:category>
+          <csm:category name="Arts" id="21639">
+            <csm:category name="playing" id="21720"/>
+            <csm:category name="sculpture" id="21736"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="4"><![CDATA[From paper doll pandas to printable puzzles, this site's wide range of hands-on activities will appeal to kids who like coloring, drawing, folding, building, animals, magic, holidays, and toys ... so, basically, any kid!]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="2"><![CDATA[Kids learn to make paper toys by either following printed directions or watching a short video. Activity suggestions like a paper turtle race or paper dog show give kids ideas about playing with their new toys.]]></csm:dimension>
+          <csm:dimension name="Support" rating="2"><![CDATA[Some projects include a foldable pattern while others start from scratch with paper. There are ideas for offline activities, too.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Fine motor issues" id="21535"/>
+          <csm:category name="Visual/spatial issues" id="21534"/>
+        </csm:category>
+        <csm:category name="Nonverbal Learning issues" id="21591">
+          <csm:category name="Trouble with spatial relationships" id="21595"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:1251005</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/funology"/>
+    <category term="website"/>
+    <published>2007-06-14T12:00:00-07:00</published>
+    <updated>2014-03-19T23:44:51-07:00</updated>
+    <author>
+      <name>Jean Armour Polly</name>
+    </author>
+    <title><![CDATA[Funology]]></title>
+    <summary><![CDATA[Full of ideas for crafts and experiments.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/funology.jpg?itok=JRaQLPwQ</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>http://www.funology.com/</csm:url>
+    </csm:product>
+    <csm:review star_rating="3">
+      <csm:slider not_for_kids="0" target_age="9" off_age="2" on_age="9" rating="on">OK for kids 9+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that there are numerous ads from sponsors such as The Disney Store, Toys R Us, Scholastic, and Hearthsong, among others. Two banner ads and seven smaller ads appear per page. On the plus side, most of these adorn the bottom of the page, and kids would have to scroll down to see them. The arcade games area has annoying bouncing ads warning that your computer could be infected by a virus.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="3"><![CDATA[Two banner ads and seven smaller ads appear per page.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sex" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[Did you know that when you cough, air moves through your windpipe at 1,000 feet per second? That's only one of the fun scientific facts found in the That's Odd area of this site. In the Boredom Buster section, kids learn to fashion coffee filters into butterflies, create a papier-mch dinosaur egg, and make tin can stilts. Ooze into the Laboratory for some science experiments involving household items, or visit the Kitchen to try out the easy recipes for breakfast, lunch, and dinner.]]></csm:description>
+      <csm:any_good><![CDATA[Funology abounds with wacky jokes, riddles, quizzes, magic tricks, and more, and refreshingly, the majority of the games at this site are not of the online variety. Kids are encouraged to find a few friends and try out such all-time great playground pastimes as Sharks and Minnows, Don't Wake Daddy, and more. There are also a few arcade games of varying quality.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about different kinds of online advertising. Which of this site's ads did you notice first? If you're playing a game that's sponsored by a cereal brand or features characters from its commercials, does that count as an ad? Why or why not?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[How much time to your kids think is ok to spend online.  Talk about setting screen limits with your kids and decide together what works best for your family.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1249059">
+          <csm:title><![CDATA[Lawrence Hall of Science: 24/7 Science]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/lawrence-hall-of-science-247-science</csm:url>
+        </csm:item>
+        <csm:item id="1257498">
+          <csm:title><![CDATA[Fbi.gov/fbikids.htm]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/fbigovfbikidshtm</csm:url>
+        </csm:item>
+        <csm:item id="1255547">
+          <csm:title><![CDATA[TheWeatherChannelKids]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/theweatherchannelkids</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="2">
+        <csm:author>Conny Coon</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can expand their knowledge about many different subjects (biology, weather, animals) by exploring the site's menu of crafts, recipes, science experiments, and more. They can learn to follow directions through step-by-step instructions to create something new, perform a magic trick, or play an outdoor game with friends. They can improve comprehension skills by reading fun facts, learning new jokes, or playing word games (both online and off). From arts and crafts to science experiments, Funology provides a variety of activities that can be done at home and away from the computer.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Ask kids to point out their favorite section and talk about why they are interested in that particular topic.Offer to help kids with a project from the site and let them be the guide through each of the steps.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Science" id="21643">
+            <csm:category name="animals" id="21657"/>
+            <csm:category name="biology" id="21660"/>
+            <csm:category name="chemistry" id="21664"/>
+            <csm:category name="physics" id="21718"/>
+            <csm:category name="weather" id="21769"/>
+          </csm:category>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="following directions" id="21685"/>
+            <csm:category name="reading" id="21726"/>
+            <csm:category name="reading comprehension" id="21728"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651">
+            <csm:category name="academic development" id="21722"/>
+            <csm:category name="personal growth" id="21809"/>
+            <csm:category name="work to achieve goals" id="21830"/>
+          </csm:category>
+          <csm:category name="Creativity" id="21647">
+            <csm:category name="imagination" id="21787"/>
+            <csm:category name="making new creations" id="21797"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="3"><![CDATA[Kids will enjoy the wacky jokes, riddles, quizzes, magic tricks, and more. Arcade games of varying quality will also appeal. Refreshingly, the majority of the games at this site are not of the online variety.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="2"><![CDATA[Kids can follow simple instructions for many of the activities, though they may need assorted household objects and parental help for some. They can work together to learn a new game, create a craft project, or conduct an experiment.]]></csm:dimension>
+          <csm:dimension name="Support" rating="1"><![CDATA[The activities are presented simply and clearly, though most require reading in order to follow the directions. Problem-solving has to be done individually because there isn't much in the way of tutorials.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Language processing" id="21536"/>
+        </csm:category>
+        <csm:category name="Dyslexia" id="21525">
+          <csm:category name="Comprehension" id="21530"/>
+          <csm:category name="Decoding issues" id="21527"/>
+          <csm:category name="Difficulties with automaticity" id="21528"/>
+          <csm:category name="Phonological processing issues (includes Phonemic awareness and other issues)" id="21526"/>
+          <csm:category name="Poor spelling" id="21529"/>
+          <csm:category name="Vocabulary" id="21531"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+</feed>

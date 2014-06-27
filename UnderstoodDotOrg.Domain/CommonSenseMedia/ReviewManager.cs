@@ -30,7 +30,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
                 {
                     TemplateItem reviewTemplate = Sitecore.Configuration.Factory.GetDatabase("master").GetTemplate(ReviewItem.TemplateId);
 
-                    Item newReview = Get("{397EE1E4-F4BB-448E-B3CC-D1ED0F6FEE3D}").Add(CommonSenseImportHelper.removePunctuation(Review.Title), reviewTemplate);
+                    Item newReview = Get("{CB74CA81-DC49-4731-8673-A45B591D9A5C}").Add(CommonSenseImportHelper.removePunctuation(Review.Title), reviewTemplate);
 
                     newReview.Editing.BeginEdit();
 

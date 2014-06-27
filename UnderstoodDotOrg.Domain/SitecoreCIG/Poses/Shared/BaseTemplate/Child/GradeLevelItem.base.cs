@@ -65,6 +65,15 @@ public CustomCheckboxField ExcludeFromWebsiteDisplay
 }
 
 
+public CustomIntegerField GradeNumber
+{
+	get
+	{
+		return new CustomIntegerField(InnerItem, InnerItem.Fields["Grade Number"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

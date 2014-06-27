@@ -1,0 +1,1345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:csm="http://www.commonsensemedia.org/feed/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+  <title>Common Sense Media</title>
+  <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org"/>
+  <link rel="self" type="application/atom+xml" href="http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&amp;channel=game&amp;special_needs=1"/>
+  <updated>2014-06-13T10:42:38-07:00</updated>
+  <author>
+    <name>Common Sense Media</name>
+    <email>feeds@commonsensemedia.org</email>
+    <uri>http://www.commonsensemedia.org</uri>
+  </author>
+  <id>"http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&amp;channel=game&amp;special_needs=1"</id>
+  <entry>
+    <id>urn:nid:3521206</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/game-reviews/gazillionaire"/>
+    <category term="game"/>
+    <published>2012-10-19T08:29:00-07:00</published>
+    <updated>2014-04-14T16:00:01-07:00</updated>
+    <author>
+      <name>Erin Bell</name>
+    </author>
+    <title><![CDATA[Gazillionaire!]]></title>
+    <summary><![CDATA[Econ becomes interesting when running interstellar company.]]></summary>
+    <csm:product xs:type="game">
+      <csm:references>
+        <csm:reference type="asinproduct">B0002SEFG0</csm:reference>
+        <csm:reference type="upc">085004401695</csm:reference>
+      </csm:references>
+      <csm:releases>
+        <csm:release type="product">2012-09-30T17:00:00-07:00</csm:release>
+      </csm:releases>
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-game/gazillionairetitle.jpg?itok=Ecegt-eu</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/gazillionaire1.jpg?itok=Y-8q6cfs</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/gazillionaire2.jpg?itok=OcBG1WyT</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/gazillionaire3.jpg?itok=sDEsGFAj</csm:image>
+      </csm:images>
+      <csm:genre id="4422">Simulation</csm:genre>
+      <csm:publishers type="developer">
+        <csm:name id="4910">LavaMind</csm:name>
+      </csm:publishers>
+      <csm:platforms>
+      </csm:platforms>
+      <csm:prices>
+        <csm:price type="purchase">14.99/year</csm:price>
+      </csm:prices>
+      <csm:industry_ratings>
+      </csm:industry_ratings>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="12" off_age="9" on_age="10" rating="on">OK for kids 12+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Gazillionaire! is a browser-based, outer space-themed business sim that teaches kids about economics in a fun way. Up to six real players can participate in a game (as well as the six computer-controlled characters) for a total of twelve. Kids can play up to 20 turns for free, then must pay a $14.99 per year subscription to unlock the full version.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="3"><![CDATA[Gazillionaire! has a capitalist message. Players are free to respond to random encounters however they wish, in the same spirit as The Oregon Trail. For example, players may encounter a smuggler who offers to sell them stolen goods at a discount price, and they must decide whether to accept the offer and risk getting caught, or refuse him.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[There are many layers of complexity that players can toggle on or off to suit their comfort level, in addition to a Tutorial mode to learn the ropes, and five levels of difficulty from Novice to Master. The game is menu-driven and requires no quick reflexes.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive role models" rating="2"><![CDATA[Players encounter a variety of personalities, from starving artists to con artists. Competitors range from ruthless and aggressive to naive and traditional. Most characters are motivated by profit and self-interest, but some are honest and will reward the player for helping them.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sex" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[As the president of a trading company in GAZILLIONAIRE!, players travel to different planets, buy up goods at low prices, then sell them on different planets at a profit. Through charts, players can monitor the demand of goods across the solar system to decide which planet to travel to next. Like The Oregon Trail, players frequently encounter random events that require them to make decisions, and the result can either be harmful or beneficial. The goal is to be the first company to achieve a predetermined amount of wealth (which changes depending on the game's difficulty level), while competing against computer opponents and, optionally, up to six real players.]]></csm:description>
+      <csm:any_good><![CDATA[Gazillionaire! isn't the most polished package, and kids will spend a lot of time looking at charts and menus. But the game tackles the potentially dry subject of economics with enthusiasm, humor, and creativity. The ability to adjust the difficulty by toggling specific features on and off is a huge plus. Players can opt for a relatively stress-free experience by sticking with the tutorial settings, or add features like fuelling, staffing, advertising, taxes, and stocks for a more complex and realistic business sim. Kids will have fun while learning about important principles of the economy.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about taxes. Why do we have to pay tax? What kinds of things are taxes used to pay for?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Families can also talk about loans and interest. Is it better to pay a loan down as quickly as possible? What can happen if a loan is not paid back on time?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[They can discuss what they like about playing simulation games.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+        <csm:theme id="21634">Space and aliens</csm:theme>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1254960">
+          <csm:title><![CDATA[Fairy Godmother Tycoon]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/fairy-godmother-tycoon</csm:url>
+        </csm:item>
+        <csm:item id="3363996">
+          <csm:title><![CDATA[The Political Machine 2012]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/the-political-machine-2012</csm:url>
+        </csm:item>
+        <csm:item id="3133306">
+          <csm:title><![CDATA[Counties Work]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/counties-work</csm:url>
+        </csm:item>
+        <csm:item id="3539051">
+          <csm:title><![CDATA[Style Savvy Trendsetters]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/style-savvy-trendsetters</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="3">
+        <csm:author>Erin Bell</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn about the economy and money management, including the concepts of loans and interest, percentages, wages, and profit margin. Kids also learn about fiscal responsibility, which includes paying loans back on time and paying crew wages. Kids use information from graphs and charts (such as which goods are selling for a good price on which planet) to plan the most efficient way to spend money, fuel, and time. Gazillionaire! is an in-depth economics sim disguised as wacky space-themed fun.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Help teach kids fiscal responsibility by opening a bank account for them and helping them invest their allowance wisely.Encourage kids to job-shadow a local business so they can see how it is run.Play games like Monopoly.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="reading" id="21726"/>
+          </csm:category>
+          <csm:category name="Math" id="21642">
+            <csm:category name="statistics" id="21750"/>
+          </csm:category>
+          <csm:category name="Social Studies" id="21644"/>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="applying information" id="21730"/>
+          </csm:category>
+          <csm:category name="Responsibility &amp; Ethics" id="21650"/>
+          <csm:category name="Collaboration" id="21645"/>
+          <csm:category name="Self-Direction" id="21651"/>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="3"><![CDATA[The graphics and sound are dated, but the game has a lot of depth and detail that could engage high achievers.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="3"><![CDATA[Entrepreneurship, fiscal responsibility, and management get taught in-depth, but there's too much piled on too quickly. Gritty kids who stick with it should be able to transfer learning to the real world.]]></csm:dimension>
+          <csm:dimension name="Support" rating="3"><![CDATA[There are tutorials, but they're not ramped as well as they could be. Players can monitor progress with charts and graphs. The developer's website links to teacher worksheets.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dyscalculia" id="21538">
+          <csm:category name="Language of math issues" id="21541"/>
+          <csm:category name="Number sense issues" id="21540"/>
+          <csm:category name="Problem solving issues" id="21542"/>
+          <csm:category name="Visual/spatial reasoning issues" id="21539"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:4574361</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/game-reviews/wii-party-u"/>
+    <category term="game"/>
+    <published>2013-10-25T10:59:00-07:00</published>
+    <updated>2014-03-20T00:18:07-07:00</updated>
+    <author>
+      <name>Mark Raby</name>
+    </author>
+    <title><![CDATA[Wii Party U]]></title>
+    <summary><![CDATA[Lots of group fun encapsulated in 80+ mini-games.]]></summary>
+    <csm:product xs:type="game">
+      <csm:references>
+        <csm:reference type="upc">045496903183</csm:reference>
+        <csm:reference type="asinproduct">B00DC7FWRE</csm:reference>
+      </csm:references>
+      <csm:releases>
+        <csm:release type="product">2013-10-24T17:00:00-07:00</csm:release>
+      </csm:releases>
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-game/partyu.jpg?itok=pvzwDyLY</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/partyu-1.jpg?itok=f5TRbCqy</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/partyu-2.jpg?itok=481WQBw-</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/partyu-3.jpg?itok=GrtO3pOW</csm:image>
+      </csm:images>
+      <csm:genre id="4400">Mini-games</csm:genre>
+      <csm:publishers type="developer">
+        <csm:name id="5072">Nintendo</csm:name>
+      </csm:publishers>
+      <csm:platforms>
+        <csm:platform id="4472">Nintendo Wii U</csm:platform>
+      </csm:platforms>
+      <csm:prices>
+        <csm:price type="purchase">49.99</csm:price>
+      </csm:prices>
+      <csm:industry_ratings>
+        <csm:industry_rating type="esrb" value="E" platform="Nintendo Wii U" platform_id="4472">Mild Cartoon Violence</csm:industry_rating>
+      </csm:industry_ratings>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="6" off_age="4" on_age="6" rating="on">OK for kids 6+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Wii Party U contains more than 80 mini-games. Players use a handful of modes and can use an interactive board game or a game show-type setting or just play one game at a time. Some of the mini-games involve minor cartoon violence like shooting cartoon cannons or lasers, but nothing about the content is gratuitous or overtly aggressive. No one is ever shown hurt. The app gives kids an opportunity to interact with others helping to increase socialization. Using the Wii remote can help kids who struggle with fine motor issues.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="4"><![CDATA[This collection of mini-games highly encourages players to interact with one another. It is not designed as a single-player game. Different types of mini-games encourage strong teamwork and/or communication skills. All the competition is presented in a very fun, non-intimidating fashion, which sets the stage for good sportsmanship all around, regardless of who wins or loses.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[Although some of the mini-games may be a bit more difficult to master than others, most players will have no problem enjoying this game for what it's designed to do: bring together a group of people to have fun. Even if there are players with differing game-playing skills, the various modes take that into account by adding other factors such as luck and strategy, giving everyone a fair shot.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive role models" rating="4"><![CDATA[Since the focus of the game is playing with other players, any characters within the game itself just help move the process along. However, they are all represented as good sports, and the crowd cheers you on.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="1"><![CDATA[There are some examples of very whimsical, cartoon-style violence in this game. Some of the mini-games may involve "attacking" opponents with cartoon tanks or lasers. These are always in the spirit of fun competition rather than any sort of display of aggression. Although characters occasionally land on their behinds and see stars, no one is ever hurt.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[WII PARTY U is a collection of more than 80 mini-games. The wildly varied mini-games include everything from a no-holds-barred animal-racing game to short sequences where the outcome is pure luck of the draw. There are several game modes that utilize these mini-games in differing ways. In addition to interactive board games in which players compete to determine their order, there are also modes wherein players try to see how well they know one another. There's also an option for players to ditch the TV entirely and play games with the Wii U's GamePad controller.]]></csm:description>
+      <csm:any_good><![CDATA[Wii Party U is one of the increasingly rare examples of a video game that works perfectly if you have four people together in the same room. It's just good old-fashioned fun. The game also is tailored to work with two or three players. Although it can be fun to play with the single-player options between multiplayer game sessions, that's not where the meat of the game is. The various game modes help keep the game fresh for a long time.There are also some very unique uses for the Wii U GamePad controller, including mini-games wherein one player looks at the GamePad screen while everyone else sees a different perspective on the TV, as well as mini-games that use the GamePad exclusively. The bottom line: When it comes to choosing a video game that a group of people can play at the same time, Wii Party U is an easy recommendation. It's not quite as good if you don't have four, as it will add a virtual player to many of the games. Regardless, it's a must-add to any Wii U library.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Parents can talk about the use of video games in social settings. Do you prefer games like this or games you play by yourself?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[When is competition a good thing? When can it be a bad thing? Is there a fine line between the two?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[What is an example of a time when you had to work with a team to accomplish a common goal?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+        <csm:theme id="21616">Friendship</csm:theme>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="3601946">
+          <csm:title><![CDATA[Nintendo Land]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/nintendo-land</csm:url>
+        </csm:item>
+        <csm:item id="1260478">
+          <csm:title><![CDATA[Wii Party]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/wii-party</csm:url>
+        </csm:item>
+        <csm:item id="2908841">
+          <csm:title><![CDATA[Mario Party 9]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/mario-party-9</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem selected="0"><![CDATA[Turn your living room into party central with this engaging social game.]]></csm:hidden_gem>
+      <csm:learning_rating value="3">
+        <csm:author>Mark Raby</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn about teamwork, solving problems, and communicating. The various mini-games test kids' abilities to work as a team at some points and to compete against each other in a friendly and nonconfrontational way at others. In addition, the mini-games are testing reflexes, hand-eye coordination, and basic puzzle-solving. Wii Party U is a fun way to let kids practice communicating and collaborating.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Try recreating some of the more simplistic mini-games in real life. For example, hide a coin under one of five cups, then remove one cup one at a time to demonstrate how the odds of choosing the right cup change.Play with your kids so you can be part of the experience and model good sportsmanship.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Hobbies" id="21640">
+            <csm:category name="board games" id="21661"/>
+            <csm:category name="building" id="21662"/>
+            <csm:category name="sports" id="21749"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Collaboration" id="21645">
+            <csm:category name="cooperation" id="21748"/>
+            <csm:category name="group projects" id="21781"/>
+            <csm:category name="meeting challenges together" id="21800"/>
+            <csm:category name="teamwork" id="21826"/>
+          </csm:category>
+          <csm:category name="Communication" id="21646">
+            <csm:category name="conveying messages effectively" id="21746"/>
+            <csm:category name="friendship building" id="21778"/>
+          </csm:category>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="memorization" id="21801"/>
+            <csm:category name="problem solving" id="21814"/>
+            <csm:category name="solving puzzles" id="21823"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="4"><![CDATA[In this fun social game, kids can practice their hand-eye coordination, puzzle-solving skills,  memorization, communication skills, and other brain-busting activities while exploring 80 mini-games with others.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="3"><![CDATA[This game is all about tackling fun, entertaining challenges as a group. The varied learning opportunities are presented seamlessly within the gameplay.]]></csm:dimension>
+          <csm:dimension name="Support" rating="3"><![CDATA[All the mini-games have brief explanations to help players understand the controls as well as the object of each game. Some allow kids to practice before the competition.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Fine motor issues" id="21535"/>
+        </csm:category>
+        <csm:category name="Dyspraxia" id="21574">
+          <csm:category name="Fine motor issues" id="21575"/>
+        </csm:category>
+        <csm:category name="Social pragmatic language disorder" id="21577"/>
+        <csm:category name="Nonverbal Learning issues" id="21591">
+          <csm:category name="Social issues" id="21594"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:3550036</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/game-reviews/just-dance-disney-party"/>
+    <category term="game"/>
+    <published>2012-10-30T05:35:00-07:00</published>
+    <updated>2014-03-20T00:05:22-07:00</updated>
+    <author>
+      <name>Chris Morris</name>
+    </author>
+    <title><![CDATA[Just Dance: Disney Party]]></title>
+    <summary><![CDATA[Popular dance game with a Magic Kingdom twist -- for kids.]]></summary>
+    <csm:product xs:type="game">
+      <csm:references>
+        <csm:reference type="asinproduct">B0088I8M10</csm:reference>
+        <csm:reference type="upc">008888177210</csm:reference>
+        <csm:reference type="upc">163120642342</csm:reference>
+        <csm:reference type="upc">071021142581</csm:reference>
+        <csm:reference type="upc">071021142611</csm:reference>
+        <csm:reference type="upc">072090767057</csm:reference>
+        <csm:reference type="upc">100177435640</csm:reference>
+        <csm:reference type="upc">071021148507</csm:reference>
+      </csm:references>
+      <csm:releases>
+        <csm:release type="product">2012-10-22T17:00:00-07:00</csm:release>
+      </csm:releases>
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-game/just-dance-disney-party-cover.jpg?itok=DPn26cmn</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/just-dance-disney-party1.jpg?itok=w6rLXlnX</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/just-dance-disney-party2.jpg?itok=qgbHci6H</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/just-dance-disney-party3.jpg?itok=8468Ei5i</csm:image>
+      </csm:images>
+      <csm:genre id="4403">Music</csm:genre>
+      <csm:publishers type="developer">
+        <csm:name id="5431">UbiSoft</csm:name>
+      </csm:publishers>
+      <csm:platforms>
+        <csm:platform id="4469">Nintendo Wii</csm:platform>
+        <csm:platform id="4525">Xbox 360</csm:platform>
+      </csm:platforms>
+      <csm:prices>
+        <csm:price type="purchase">29.99</csm:price>
+      </csm:prices>
+      <csm:industry_ratings>
+        <csm:industry_rating type="esrb" value="E" platform="Nintendo Wii" platform_id="4469">Mild Lyrics</csm:industry_rating>
+        <csm:industry_rating type="esrb" value="E" platform="Xbox 360" platform_id="4525">Mild Lyrics</csm:industry_rating>
+      </csm:industry_ratings>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="5" off_age="4" on_age="5" rating="on">OK for kids 5+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Just Dance: Disney Party is a music dance game specifically made for younger Disney fans and particularly dedicated adult fans. As in the other Just Dance games, players mimic the moves of onscreen dancers -- and can play against each other in the same room. One song mentions alcohol briefly and kids might be drawn to the commercial aspects of the game, but there is no real objectionable content.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="2"><![CDATA[The game features songs from Disney movies and tween stars (like Camp Rock and Hannah Montana), which might result in children asking for those movies or CDs by those artists -- or an increased interest in watching them on TV.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="1"><![CDATA[One song -- "Be Our Guest" -- mentions wine in the lyrics ("Wine's been poured and thank the Lord").]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="4"><![CDATA[The game makes exercise fun by encouraging players to dance, wiggle, and move in front of their TVs, rather than simply sitting there passively.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[Like its parent series for older audiences, Just Dance: Disney Party is easy to play, with none of the advanced moves found in other versions of the game. It's made specifically for a younger audience and is much more forgiving than other dance games.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive role models" rating="3"><![CDATA[Children (and adults) of different races, skin colors, and body types are shown on screen dancing to the music as players try to follow their moves.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[While its focus is on Disney songs and characters, Just Dance: Disney Party is very similar to previous Just Dance games. Players dance in front of the television, mimicking the moves of characters onscreen (typically kids or young adults dressed up as the characters from the film or show providing the music). The movements of Xbox 360 users are picked up by the Kinect sensor, while Wii players use the Wii remote to let the game track their movements. Kids can play songs in a non-stop shuffle or make their own playlists. Wii users have an added game mode, letting them pop onscreen balloons to earn more points.]]></csm:description>
+      <csm:any_good><![CDATA[Kids and parents alike will find something to enjoy with Just Dance: Disney Party. The music is a good blend of classic Disney tunes (ranging from "The Bare Necessities" to "Under the Sea" to "It's a Small World") and Disney Channel favorites from acts like Camp Rock and Wizards of Waverly Place. The game features 25 songs, which is notably lower than other installments in the franchise, but they're all tailored to younger players. The dance moves are easy and the game is forgiving with its scoring, which will keep young kids from getting frustrated.Veterans of the series might bemoan the lack of innovation, but it's a game meant to bring younger players into the fold -- and they're likely to be delighted with the familiar songs and the chance to dance around the living room with abandon.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about alternative ways to exercise -- and how to enjoy doing it. Kids might not realize that by dancing they're also getting healthier.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Which song is your favorite -- and why? Does listening and dancing to these songs make you want to watch Disney movies?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="2445076">
+          <csm:title><![CDATA[Nickelodeon Dance]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/nickelodeon-dance</csm:url>
+        </csm:item>
+        <csm:item id="1260822">
+          <csm:title><![CDATA[Just Dance Kids]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/just-dance-kids</csm:url>
+        </csm:item>
+        <csm:item id="3506961">
+          <csm:title><![CDATA[Dance Central 3]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/dance-central-3</csm:url>
+        </csm:item>
+        <csm:item id="2123822">
+          <csm:title><![CDATA[Just Dance Summer Party]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/just-dance-summer-party</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="3">
+        <csm:author>Chris Morris</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn how to dance and move to music. The game shows a number of routines that children mimic in order to score points -- although if they opt instead to simply dance to their own choreography, they're allowed to. Just Dance: Disney Party is a game that's social and encourages creativity while helping kids get in shape.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Encourage your kids to dance even when the game's not turned on.Consider enrolling children in dance classes to further build their skills and encourage their interest in the art.Take kids to a professional dance recital or musical to show how those skills can be used.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="following directions" id="21685"/>
+          </csm:category>
+          <csm:category name="Arts" id="21639">
+            <csm:category name="dance" id="21671"/>
+            <csm:category name="movement" id="21708"/>
+            <csm:category name="music" id="21710"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Health &amp; Fitness" id="21649">
+            <csm:category name="exercise" id="21772"/>
+            <csm:category name="fitness" id="21776"/>
+            <csm:category name="movement" id="21804"/>
+          </csm:category>
+          <csm:category name="Creativity" id="21647">
+            <csm:category name="imagination" id="21787"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dyspraxia" id="21574">
+          <csm:category name="Gross motor issues" id="21576"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:2831461</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/game-reviews/carmen-sandiego-adventures-in-math-the-great-gateway-grab"/>
+    <category term="game"/>
+    <published>2012-02-13T11:57:00-08:00</published>
+    <updated>2014-03-20T00:05:22-07:00</updated>
+    <author>
+      <name>Chad Sapieha</name>
+    </author>
+    <title><![CDATA[Carmen Sandiego Adventures in Math: The Great Gateway Grab]]></title>
+    <summary><![CDATA[Short, fun game has kids practicing fractions and symmetry.]]></summary>
+    <csm:product xs:type="game">
+      <csm:references>
+      </csm:references>
+      <csm:releases>
+        <csm:release type="product">2012-02-04T16:00:00-08:00</csm:release>
+      </csm:releases>
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-game/carmen-box.jpg?itok=0iD58DdU</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/i-32709.jpg?itok=PQ8ymChR</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/i-32713.jpg?itok=xiz3nC03</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/i-32710.jpg?itok=d5S9wkVA</csm:image>
+      </csm:images>
+      <csm:genre id="4378">Edutainment</csm:genre>
+      <csm:publishers type="developer">
+        <csm:name id="5385">The Learning Company</csm:name>
+      </csm:publishers>
+      <csm:platforms>
+        <csm:platform id="4469">Nintendo Wii</csm:platform>
+      </csm:platforms>
+      <csm:prices>
+        <csm:price type="purchase">6.00</csm:price>
+      </csm:prices>
+      <csm:industry_ratings>
+        <csm:industry_rating type="esrb" value="E" platform="Nintendo Wii" platform_id="4469">(No Descriptors)</csm:industry_rating>
+      </csm:industry_ratings>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="9" off_age="6" on_age="7" rating="on">OK for kids 9+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Carmen Sandiego Adventures in Math: The Great Gateway Grab is a short but fun educational game that will help kids practice math skills they're likely studying in school. Players will learn the basics about different kinds of angles, work on a couple of shape symmetry puzzles, and organize mixed decimals and fractions. They'll also learn a few essential facts about the landmarks and cultures of India, Brazil, and Greece, and eventually use logic to determine the identity of the game's villain. There is no offensive or contentious content.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="1"><![CDATA[This game is a part of an educational media franchise that includes books, games, television series, and films.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Educational value" rating="4"><![CDATA[This game challenges players with ten math-centric problems. The numbers change each time they're loaded, which means kids can try them again and again for practice without repetition. Problems range from adding fractions with like denominators to selecting numbers and operators to create a given solution. Players engage in a little logical reasoning as they compare clues to known facts to identify a perpetrator. They'll also learn some basic things about the countries of India, Brazil, and Greece, including greetings in native languages and simple facts about famous landmarks like the Acropolis and the Gateway of India.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="3"><![CDATA[This game makes math fun by challenging kids with problems that fit within the context of the adventure. It shows kids how math can be useful in real life situations.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[All of the puzzles are suitable for the game's intended audience of middle-elementary school kids. Instructions are clear, and hints offer guidance rather than just giving answers away. The investigation, meanwhile, is linear and without any significant obstacles that could lead to kids getting stuck.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive role models" rating="4"><![CDATA[Kids listen to and read dialogue from several helpful game characters, including ACME agents, subject matter experts, and civilians. The player's character, a male or female detective, focuses on chasing after his or her suspect and ensuring justice is served. Many different ethnicities are represented in the game.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[Carmen Sandiego's crew of V.I.L.E. villains are at it again in CARMEN SANDIEGO ADVENTURES IN MATH: THE GREAT GATEWAY GRAB. One of her henchmen (or henchwomen) has masterminded the theft of the Gateway of India, a 100-year-old monument in Mumbai, and it's up to the player to find out who. Kids start by selecting a one of the game's stock detectives (there are a few men and women of different ethnicities from which to choose), then head to India to begin questioning people and looking for clues. They'll encounter and solve ten contextual math problems -- connecting wires, bypassing fingerprint readers, weighing pineapples -- as they collect information that will eventually allow them to identify the culprit. Expect the whole adventure to last about an hour. A practice mode lets kids go back and retry the math problems again and again, with different numeric values inserted each time.]]></csm:description>
+      <csm:any_good><![CDATA[The Great Gateway Grab is a fine learning game for kids. Its math problems are well balanced, suitable for its target age group (middle-elementary school kids), and make sense within the context of the investigation. Plus, its story has some interesting twists and turns, not least of which is a dilemma concerning the containment of a solvent that can dissolve any container. (We'd still like to know whether the novel solution used in the game has any basis in reality!)You get what you pay for -- the production values are decidedly low, and it's no longer than an after-school special -- but the educational value is good and the mystery is compelling. The math problems are fun, and kids can replay them over and over again.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about how we use math in everyday situations. Try getting kids to do simple calculations for you when it comes to calculating tax or a tip at a restaurant. Ask them whether they prefer using fractions or decimals, and why.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Families can also discuss foreign cultures. Do you want to visit any of the countries in this game? Which country would you most like to see? What is it about different places that interests you? The food? The people and customs? The climate? The sports?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+        <csm:theme id="21607">Adventures</csm:theme>
+        <csm:theme id="21617">Great boy role models</csm:theme>
+        <csm:theme id="21618">Great girl role models</csm:theme>
+        <csm:theme id="21620">History</csm:theme>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="2722231">
+          <csm:title><![CDATA[Carmen Sandiego Adventures in Math: The Lady Liberty Larceny]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/carmen-sandiego-adventures-in-math-the-lady-liberty-larceny</csm:url>
+        </csm:item>
+        <csm:item id="2267476">
+          <csm:title><![CDATA[The Magic School Bus: Oceans]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/the-magic-school-bus-oceans</csm:url>
+        </csm:item>
+        <csm:item id="2384991">
+          <csm:title><![CDATA[Team Umizoomi]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/team-umizoomi</csm:url>
+        </csm:item>
+        <csm:item id="2621436">
+          <csm:title><![CDATA[National Geographic Challenge]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/national-geographic-challenge</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem selected="0"><![CDATA[Carmen Sandiego engages kids to use math to solve a mystery in this downloadable Wii game.]]></csm:hidden_gem>
+      <csm:learning_rating value="3">
+        <csm:author>Chad Sapieha</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn about math and explore the world in this entertaining adventure game, which features number problems suitable for middle-school students. Players get to practice their skills recognizing numerical patterns, calculating weight, and carrying out basic mathematical operations ranging from addition and subtraction to multiplication and division. In addition to playing mini-games that use middle school math, kids also visit locations ranging from the United States to India and absorb a bit about local cultures and landmarks. Like all Carmen Sandiego products, this game delivers on being educational -- and fun.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Play the game with your kids. It'll keep them working on the number games and give them a better feel for the mathematical concepts they employ.Get your kids to look up the countries mentioned in the game on a map and have them pinpoint the cities and landmarks they encountered.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Social Studies" id="21644">
+            <csm:category name="cultural understanding" id="21670"/>
+            <csm:category name="geography" id="21690"/>
+            <csm:category name="history" id="21699"/>
+          </csm:category>
+          <csm:category name="Math" id="21642">
+            <csm:category name="arithmetic" id="21658"/>
+            <csm:category name="geometry" id="21692"/>
+            <csm:category name="sequences" id="21738"/>
+          </csm:category>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="reading comprehension" id="21728"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651">
+            <csm:category name="goal-setting" id="21779"/>
+            <csm:category name="motivation" id="21803"/>
+          </csm:category>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="deduction" id="21753"/>
+            <csm:category name="investigation" id="21791"/>
+            <csm:category name="making conclusions" id="21796"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="3"><![CDATA[The story has some interesting twists and turns, and the core mystery is compelling. The production values are pretty low, but Carmen fans probably won't mind.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="4"><![CDATA[Players will get to practice their middle school math skills while exploring interesting cities, landmarks, and cultures around the world.]]></csm:dimension>
+          <csm:dimension name="Support" rating="2"><![CDATA[Instructions precede each of the mini-games, but some of the narrative puzzles are a bit tricky to figure out. And with little in the way of external support, some kids are bound to be left frustrated.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Receptive language disorder" id="21549"/>
+        <csm:category name="Dyscalculia" id="21538">
+          <csm:category name="Language of math issues" id="21541"/>
+          <csm:category name="Number sense issues" id="21540"/>
+          <csm:category name="Problem solving issues" id="21542"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:3542376</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/game-reviews/sports-champions-2"/>
+    <category term="game"/>
+    <published>2012-10-26T09:19:00-07:00</published>
+    <updated>2014-03-20T00:05:22-07:00</updated>
+    <author>
+      <name>Chad Sapieha</name>
+    </author>
+    <title><![CDATA[Sports Champions 2]]></title>
+    <summary><![CDATA[Fun sports compilation promotes healthy movement.]]></summary>
+    <csm:product xs:type="game">
+      <csm:references>
+        <csm:reference type="asinproduct">B0050SX1JO</csm:reference>
+        <csm:reference type="upc">711719982784</csm:reference>
+        <csm:reference type="upc">711719991472</csm:reference>
+        <csm:reference type="upc">072090785082</csm:reference>
+        <csm:reference type="upc">088020580825</csm:reference>
+      </csm:references>
+      <csm:releases>
+        <csm:release type="product">2012-10-29T17:00:00-07:00</csm:release>
+      </csm:releases>
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-game/sports-champions-2-box.jpg?itok=cBKoIXBb</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/sports-champions-1.jpg?itok=JhF1IVr9</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/sports-champions-2.jpg?itok=NCg7Wfx1</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/sports-champions-3.jpg?itok=V6TtfkHH</csm:image>
+      </csm:images>
+      <csm:genre id="4425">Sports</csm:genre>
+      <csm:publishers type="developer">
+        <csm:name id="5286">Sony Computer Entertainment</csm:name>
+      </csm:publishers>
+      <csm:platforms>
+        <csm:platform id="4480">PlayStation 3</csm:platform>
+      </csm:platforms>
+      <csm:prices>
+        <csm:price type="purchase">39.99</csm:price>
+      </csm:prices>
+      <csm:industry_ratings>
+        <csm:industry_rating type="esrb" value="E10+" platform="PlayStation 3" platform_id="4480">Mild Violence</csm:industry_rating>
+      </csm:industry_ratings>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="9" off_age="6" on_age="8" rating="on">OK for kids 9+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Sports Champions 2 is a collection of sports-themed mini-games. Players physically emulate several sports, which means kids are engaged in healthy, vigorous movement as well fun social interaction should they choose to play with friends. The only iffy content is a boxing game that has players swinging controller-wielding fists in hopes of making contact with their virtual opponent, who grunts when struck, sometimes looks dazed, and may fall to the ground unconscious. Note that this game can be played with just one PlayStation Move controller (even in multiplayer matches), but that it becomes a deeper and more authentic experience with two.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Educational value" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="3"><![CDATA[This game promotes a healthy lifestyle by having players physically emulate many actions required in real-world sports. It's also a platform for social interactivity and friendly competition, thanks to a multiplayer mode for up to four players in the same room.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[Controls are delightfully intuitive, and tutorials are broken into bite-sized bits to make them easy to digest. Things eventually become more challenging, but, as in real-world sport, bettering your performance just takes a bit of practice so your body knows how to move.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive role models" rating="1"><![CDATA[The customizable avatars don't talk much, but instead express themselves by jumping for joy and groaning with defeat. Players can select from a few simple personality options, some of which give avatars a bit of attitude in their poses and expressions.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sex" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence" rating="2"><![CDATA[A boxing mini-game involves throwing punches at characters who grunt, look dazed, and eventually fall down, apparently unconscious.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[The follow-up to one of PlayStation Move's most popular launch games, SPORTS CHAMPIONS 2 offers five new activities -- golf, bowling, tennis, skiing, and boxing -- and brings back archery, a favorite from the original. Each of the games requires players to make authentic movements, similar to those that they would use were they playing the sport in the real world. Boxing involves throwing punches, blocking, and dodging, golf requires strong straight swings with fluid wrist movements, and skiing has players pulling themselves forward by their poles and raising and lowering their hands to steer. The single-player mode allows kids to work through 18 events in each sport that also trains them in each activity's subtler techniques. A free mode lets players simply play or train however they like; and a party mode has up to four players working through regiments of activities in friendly competition. Regardless of mode, players can create and customize their own avatars, choosing gender and skin color and selecting from various clothing items they unlock throughout the game.]]></csm:description>
+      <csm:any_good><![CDATA[SPORTS CHAMPIONS 2 is a nice showcase for PlayStation Move. It demonstrates the technology's impressive precision and reliability, delivering true one-to-one control that virtually never fails. For example, it accurately and consistently detects speed, spin, aim, and loft when throwing bowling balls. And shooting arrows -- a process that involves drawing, notching, pulling back, and loosing -- is remarkably intuitive and feels very authentic.It's only real issue is a case of the "blands." Like most sports-themed game collections, it doesn't have much in the way of personality. Characters are generic, even with the ability to change outfits and hairstyles, and the prevailing visual aesthetic is very ACME in vibe. If the sequel adds a bit of panache while maintaining spot-on controls, Sony may have the motion-controlled sports compilation game to beat.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about healthy physical activity. What sports do you like most? Do you think active games such as this one gets your heart beating to the same degree as the real-world activities it depicts?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Families can also discuss real-world combat sports. What do you think of activities where the objective is to hurt someone else? At what age should kids be allowed to choose whether they want to participate in such competitions?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+        <csm:theme id="21635">Sports and martial arts</csm:theme>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="2537466">
+          <csm:title><![CDATA[Carnival Island]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/carnival-island</csm:url>
+        </csm:item>
+        <csm:item id="2092311">
+          <csm:title><![CDATA[Child of Eden]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/child-of-eden</csm:url>
+        </csm:item>
+        <csm:item id="1260344">
+          <csm:title><![CDATA[Sports Champions]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/sports-champions</csm:url>
+        </csm:item>
+        <csm:item id="3115281">
+          <csm:title><![CDATA[Sorcery]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/sorcery</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="3">
+        <csm:author>Chad Sapieha</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn about sports, healthy movement, and social interaction in this polished collection of quick sports simulations. Each of the six featured sports closely resembles its real-world counterpart, which means kids will become better acquainted with rules, strategies, and techniques as they perform movements that emulate those of actual athletes. Plus, multiplayer play lets kids work on their friendship skills in competitive situations. Sports Champions 2 wasn't designed as a tool for teaching, but it helps keep kids moving, introduces the sport, and maintains interest.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Watch your kids play to see which of the game's sports they like best, then encourage them to try those sports in real life.Get out a pen and paper and have your kids keep performance stats. Have them create a bar graph showing how their performance improves over time.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Hobbies" id="21640">
+            <csm:category name="sports" id="21749"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Health &amp; Fitness" id="21649">
+            <csm:category name="exercise" id="21772"/>
+            <csm:category name="movement" id="21804"/>
+          </csm:category>
+          <csm:category name="Communication" id="21646">
+            <csm:category name="friendship building" id="21778"/>
+          </csm:category>
+          <csm:category name="Collaboration" id="21645">
+            <csm:category name="meeting challenges together" id="21800"/>
+          </csm:category>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="strategy" id="21825"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="4"><![CDATA[True one-to-one control that virtually never fails will amaze most kids. However, it doesn't have much in the way of personality, thanks to generic characters and bland environments.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="3"><![CDATA[Kids will learn about sports and healthy movement as they physically emulate movements involved in the game's sports, which are good simulations of their real-world counterparts.]]></csm:dimension>
+          <csm:dimension name="Support" rating="3"><![CDATA[In-game instructions are provided for all activities, and players can adjust difficulty to suit their abilities.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Fine motor issues" id="21535"/>
+          <csm:category name="Visual/spatial issues" id="21534"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:1258504</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/game-reviews/cooking-mama-3-chop-shop"/>
+    <category term="game"/>
+    <published>2009-10-27T12:54:00-07:00</published>
+    <updated>2014-03-19T23:54:17-07:00</updated>
+    <author>
+      <name>Erin Bell</name>
+    </author>
+    <title><![CDATA[Cooking Mama 3: Chop &amp; Shop]]></title>
+    <summary><![CDATA[Cooking sim still fun, with new modes and 80 new recipes.]]></summary>
+    <csm:product xs:type="game">
+      <csm:references>
+        <csm:reference type="asinproduct">B002JCMYW4</csm:reference>
+        <csm:reference type="upc">096427016304</csm:reference>
+      </csm:references>
+      <csm:releases>
+        <csm:release type="product">2009-10-19T17:00:00-07:00</csm:release>
+      </csm:releases>
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-game/cooking-mama-3-shop-chop-box.jpg?itok=8ANyTC0v</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/2-bd344afe-7548-4943-afaa-baeda10e79ea-l.jpg?itok=n4QG74bN</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/2-cc1aaf41-7df0-4d10-9699-eda757cf9306-l.jpg?itok=5BzSFKNu</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/2-d17849b2-0d95-465f-8869-87c24821c9b0-l.jpg?itok=XUTObk3o</csm:image>
+      </csm:images>
+      <csm:genre id="4439">Time management</csm:genre>
+      <csm:publishers type="developer">
+        <csm:name id="4957">Majesco</csm:name>
+      </csm:publishers>
+      <csm:platforms>
+        <csm:platform id="4464">Nintendo DS</csm:platform>
+      </csm:platforms>
+      <csm:prices>
+        <csm:price type="purchase">29.99</csm:price>
+      </csm:prices>
+      <csm:industry_ratings>
+        <csm:industry_rating type="esrb" value="E" platform="Nintendo DS" platform_id="4464">Alcohol Reference</csm:industry_rating>
+      </csm:industry_ratings>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="8" off_age="6" on_age="8" rating="on">OK for kids 8+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that this latest collection of cooking-themed mini-games includes 80 brand new recipes. No prior knowledge of food or cooking is needed. Players who also have Gardening Mama can transfer ingredients to Cooking Mama 3. The "Alcohol Reference" refers to "cooking wine" that is occasionally used as an ingredient.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Educational value" rating="2"><![CDATA[Teaches some cooking techniques and food prep.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="2"><![CDATA[The game communicates the value of following recipes carefully, taking pride in what you cook, and the joy of cooking for others. Vegetarians might find it off-putting to prepare some of the meat dishes  such as slicing open a fish and cutting around its rib cage. One of the new modes, Let's Shop!, involves shopping for ingredients so it has a consumerism theme.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="3"><![CDATA[It's not always clear what to do in a mini-game, but the penalty for "failure" is not severe at all, and all mini-games are easily practiced and replayed.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive role models" rating="2"><![CDATA[Mama is a cheerful guide who doles out positive reinforcement.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[COOKING MAMA 3: SHOP AND CHOP is the newest title in the extremely successful Cooking Mama franchise of culinary-themed mini-games. In this version, players use the Nintendo DS stylus to slice, stir, chop, and plate their way through 80 new recipes including chilli con carne, mushroom quiche, and pumpkin gnocchi. The game's cheerful host walks the player through each recipe step-by-step and awards a score and medal based on how perfectly they're able to prepare each dish. There's also Let's Cook! mode where players run through the entire recipe without any pauses, Let's Match! Mode where players choose any two ingredients and create a custom recipe, and Let's Shop where players shop for ingredients by guiding Mama through a supermarket while avoiding obstacles.]]></csm:description>
+      <csm:any_good><![CDATA[Cooking Mama's gameplay suits the Nintendo DS particularly well. There's plenty to do and a ton of extra material to unlock  players can decorate a digital diary with stickers, dress up Mama in new outfits, and change in-game colors and backgrounds. For the first time, players can import food they've grown in the sister title Gardening Mama to use in recipes. The game also boasts a local multiplayer mode where friends can face off in 20 timed challenges.The one downside is that instructions aren't always clear the first time around, but it's a small complaint since the mini-games are easily and quickly replayed. Like its predecessors, Cooking Mama 3 is full of cute visual touches, like batter that is stirred too quickly slopping out of the pan and then has to be rubbed off the screen with the stylus. Cooking Mama 3 not only challenges kids and adults alike with clever, surprisingly detailed cooking minigames, but payers might actually learn a thing or two about food prep.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about whether you would like to try cooking any of the dishes found in the game in real life?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Families might also want to review important food safety tips to follow in the kitchen, such as being aware of hot pans or washing your hands after handling raw meat.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[What makes this series so popular? Is this the video game industry's equivalent to the popular cooking shows on TV?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1251731">
+          <csm:title><![CDATA[Cooking Mama]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/cooking-mama</csm:url>
+        </csm:item>
+        <csm:item id="1251703">
+          <csm:title><![CDATA[Cooking Mama: Cook Off]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/cooking-mama-cook-off</csm:url>
+        </csm:item>
+        <csm:item id="1257014">
+          <csm:title><![CDATA[Cooking Mama: World Kitchen]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/cooking-mama-world-kitchen</csm:url>
+        </csm:item>
+        <csm:item id="1257516">
+          <csm:title><![CDATA[Gardening Mama]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/gardening-mama</csm:url>
+        </csm:item>
+        <csm:item id="1251117">
+          <csm:title><![CDATA[WarioWare: Smooth Moves]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/warioware-smooth-moves</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:special_needs assistive="0">
+        <csm:category name="Auditory processing issue" id="21568">
+          <csm:category name="Auditory sequencing issues" id="21572"/>
+        </csm:category>
+        <csm:category name="Receptive language disorder" id="21549"/>
+        <csm:category name="Dyspraxia" id="21574">
+          <csm:category name="Fine motor issues" id="21575"/>
+        </csm:category>
+        <csm:category name="Executive functioning issue" id="21581">
+          <csm:category name="Planning" id="21587"/>
+          <csm:category name="Problems with attentional processing" id="21584"/>
+          <csm:category name="Problems with organization" id="21583"/>
+          <csm:category name="Problems with time management" id="21582"/>
+        </csm:category>
+        <csm:category name="Visual processing issue" id="21553"/>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:2553926</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/game-reviews/leapfrog-explorer-learning-game-pet-pals-2-best-of-friends"/>
+    <category term="game"/>
+    <published>2011-12-05T15:30:00-08:00</published>
+    <updated>2014-03-19T23:54:17-07:00</updated>
+    <author>
+      <name>Christy Matte</name>
+    </author>
+    <title><![CDATA[LeapFrog Explorer Learning Game: Pet Pals 2: Best of Friends!]]></title>
+    <summary><![CDATA[Learn tricks, make friends, and shop with a virtual puppy.]]></summary>
+    <csm:product xs:type="game">
+      <csm:references>
+        <csm:reference type="asinproduct">B004MWL07O</csm:reference>
+        <csm:reference type="upc">708431390874</csm:reference>
+      </csm:references>
+      <csm:releases>
+        <csm:release type="product">2011-10-31T17:00:00-07:00</csm:release>
+      </csm:releases>
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-game/pet-pals2-icon-pi-f.jpg?itok=e62KzDGt</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/petpals2.jpg?itok=gAFyVNii</csm:image>
+      </csm:images>
+      <csm:genre id="4378">Edutainment</csm:genre>
+      <csm:publishers type="developer">
+        <csm:name id="4912">LeapFrog</csm:name>
+      </csm:publishers>
+      <csm:platforms>
+      </csm:platforms>
+      <csm:prices>
+        <csm:price type="purchase">24.99</csm:price>
+      </csm:prices>
+      <csm:industry_ratings>
+      </csm:industry_ratings>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="4" off_age="2" on_age="3" rating="on">OK for kids 4+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that LeapFrog Explorer Learning Game: Pet Pals 2: Best of Friends! is a great introductory title for the Leapster Explorer and LeapPad Explorer. Unlike some of the other games, this one does not follow a set story line. Kids are free to explore, play games, and take care of their puppy. It does have an emphasis on consumer behavior, as you are given coins for doing certain tasks (including being a good friend) and are encouraged to buy clothes, toys, and premium food for your puppy. The game also supports Micromods, which allow kids to connect online and download additional game-related content, and the LeapFrog Learning Path where parents can track their kids' progress in the game.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[This game is part of a larger Pet Pals franchise, which primarily includes other games from the same publisher.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Educational value" rating="4"><![CDATA[This game teaches kids about caring for a pet and saving up for bigger purchases. It also teaches about emotions, addition, and subtraction. It has some fine motor skills activities that will help kids who are learning to write.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="4"><![CDATA[The game is all about nurturing your puppy and being good friends to other puppies.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="5"><![CDATA[This game has simple controls and very little skill-related challenge. The math problems that come up are multiple choice.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive role models" rating="4"><![CDATA[Your puppy notices if friends are sad or mad and helps cheer them up. He/she also cheers on a friend if something good happens.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[LEAPFROG EXPLORER LEARNING GAME: PET PALS 2: BEST OF FRIENDS! invites the player to adopt a puppy, name him/her, and then care for this new friend. Puppies need to be bathed, played with, fed, dressed, and entertained. Kids earn Puppy Points for nurturing their pets. As they earn more points, they increase in rank and are eventually able to adopt additional friends. Outside of the virtual house, there are plenty of other things to do. Kids can shop at the Pup Boutique or the Bark Mark for clothes, food, and toys. They can visit the training center to learn new tricks or the park to play with friends. There's a dog show where kids demonstrate their ability to bathe and dress their pet, and also show off their math skills (addition and subtraction).Kids can earn trophies and coins that they can use to shop. While walking around outside, they also have the chance to make friends with the 10 other puppies who live in town. If they can tell what emotion the puppies are feeling (from a multiple choice set of images), they can build up their friendship and possibly earn prizes. And if they're in need of more cash, they can try out the Treasure Hunt, where they can earn coins and collectible items. Much like other games, they earn badges for completing tasks and meeting goals.]]></csm:description>
+      <csm:any_good><![CDATA[Pet Pals 2: Best of Friends! is a cute game that will have a lot of appeal across gender lines in the target age range. Because it doesn't require a lot of special knowledge or gaming skill, it skews younger, but picking out your own puppy and playing with it does have universal appeal. Although there is no set storyline and no "end goal," kids may enjoy trying to become "best friends" with all of the puppies in town and finding all of the collectibles in the treasure hunt. Other kids will simply enjoy the day-to-day care of the puppies without being concerned about completing things. This one is a good staple for the library of Leapster Explorer/LeapPad Explorer owners, especially those on the younger side.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about caring for a pet. What does it take to care for a pet in the real world? How is that different from caring for a virtual pet in a game?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[They can also discuss what it means to be a good friend. How can you be a good friend? What can you do if one of your real friends is happy/angry/sad?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Families can talk about money. What does it mean to save money? Why would you choose to save your money rather than spend it right away?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+        <csm:theme id="21613">Cats, dogs, and mice</csm:theme>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1258912">
+          <csm:title><![CDATA[Dora Puppy]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/dora-puppy</csm:url>
+        </csm:item>
+        <csm:item id="1261402">
+          <csm:title><![CDATA[Nintendogs + Cats]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/nintendogs-cats</csm:url>
+        </csm:item>
+        <csm:item id="2597831">
+          <csm:title><![CDATA[Petz Puppyz &amp; Kittenz]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/petz-puppyz-kittenz</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem selected="0"><![CDATA[As kids play with virtual puppies, they learn about math and emotions.]]></csm:hidden_gem>
+      <csm:learning_rating value="3">
+        <csm:author>Christy Matte</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn the basics of caring for a pet, including addressing its physical and emotional needs. They can learn addition and subtraction through the dog show game, and basic money-saving and goal-setting as they work toward buying items at the store. Kids can start to develop empathy and an understanding of emotions by helping other friends' dogs. They can also work on fine motor skills as they draw the shapes needed to teach the puppies new tricks. This puppy sim balances math and emotion in a cute, fun package.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Use small objects (such as food, erasers, etc.) to help kids understand the concepts of addition and subtraction.Talk about emotions and encourage your kids to identify their own emotions, as well as those of characters in books, on TV shows, and in games.Engage your kids in caring for any pets you own.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Math" id="21642">
+            <csm:category name="addition" id="21655"/>
+            <csm:category name="money" id="21706"/>
+            <csm:category name="subtraction" id="21756"/>
+          </csm:category>
+          <csm:category name="Hobbies" id="21640">
+            <csm:category name="pets" id="21715"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651">
+            <csm:category name="achieving goals" id="21727"/>
+            <csm:category name="goal-setting" id="21779"/>
+          </csm:category>
+          <csm:category name="Emotional Development" id="21648">
+            <csm:category name="empathy" id="21768"/>
+            <csm:category name="identifying emotions" id="21785"/>
+            <csm:category name="labeling feelings" id="21792"/>
+          </csm:category>
+          <csm:category name="Communication" id="21646">
+            <csm:category name="friendship building" id="21778"/>
+            <csm:category name="listening" id="21794"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="4"><![CDATA[A cute game that will have a lot of appeal across gender lines in the pre-school age range. Picking out your own puppy and playing with it has universal appeal.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="3"><![CDATA[The activities on feelings and friendship can help connect kids to their own life experiences. The math sections feel forced, but do help kids with simple arithmetic skills. Nothing too deep, but all age appropriate.]]></csm:dimension>
+          <csm:dimension name="Support" rating="4"><![CDATA[Parents can track kids' progress through the LeapFrog Learning Path and will find additional tools and resources on the LeapFrog website to help reinforce the learning.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dyscalculia" id="21538">
+          <csm:category name="Number sense issues" id="21540"/>
+        </csm:category>
+        <csm:category name="Dyspraxia" id="21574">
+          <csm:category name="Fine motor issues" id="21575"/>
+        </csm:category>
+        <csm:category name="Nonverbal Learning issues" id="21591">
+          <csm:category name="Social issues" id="21594"/>
+        </csm:category>
+        <csm:category name="Social pragmatic language disorder" id="21577"/>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:2455666</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/game-reviews/udraw-studio-instant-artist"/>
+    <category term="game"/>
+    <published>2011-11-14T19:44:00-08:00</published>
+    <updated>2014-03-19T23:54:17-07:00</updated>
+    <author>
+      <name>Chris Morris</name>
+    </author>
+    <title><![CDATA[uDraw Studio: Instant Artist]]></title>
+    <summary><![CDATA[Art program uses tablet controller but has learning curve.]]></summary>
+    <csm:product xs:type="game">
+      <csm:references>
+        <csm:reference type="asinproduct">B0053BQJVA</csm:reference>
+        <csm:reference type="upc">785138305509</csm:reference>
+        <csm:reference type="upc">785138305356</csm:reference>
+        <csm:reference type="upc">752919553756</csm:reference>
+        <csm:reference type="upc">752919993453</csm:reference>
+        <csm:reference type="upc">072090442947</csm:reference>
+      </csm:references>
+      <csm:releases>
+        <csm:release type="product">2011-11-14T16:00:00-08:00</csm:release>
+      </csm:releases>
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-game/udraw-cover.jpg?itok=W5Xf2bI1</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/udraw1.jpg?itok=tjsGsa2e</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/udraw2.jpg?itok=zsnyPzjW</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/udraw3.jpg?itok=cFa6-iBj</csm:image>
+      </csm:images>
+      <csm:genre id="4371">Art</csm:genre>
+      <csm:publishers type="developer">
+        <csm:name id="5401">THQ</csm:name>
+      </csm:publishers>
+      <csm:platforms>
+        <csm:platform id="4469">Nintendo Wii</csm:platform>
+        <csm:platform id="4480">PlayStation 3</csm:platform>
+        <csm:platform id="4525">Xbox 360</csm:platform>
+      </csm:platforms>
+      <csm:prices>
+        <csm:price type="purchase">29.99-$79.99</csm:price>
+      </csm:prices>
+      <csm:industry_ratings>
+        <csm:industry_rating type="esrb" value="E" platform="Nintendo Wii" platform_id="4469">Animated Blood, Comic Mischief</csm:industry_rating>
+        <csm:industry_rating type="esrb" value="E" platform="PlayStation 3" platform_id="4480">Animated Blood, Comic Mischief</csm:industry_rating>
+        <csm:industry_rating type="esrb" value="E" platform="Xbox 360" platform_id="4525">Animated Blood, Comic Mischief</csm:industry_rating>
+      </csm:industry_ratings>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="8" off_age="4" on_age="6" rating="on">OK for kids 8+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that uDraw Studio: Instant Artist is an art software program that must be played on a uDraw GameTablet peripheral. For the PS3 and Xbox 360 versions, it ships with the uDraw GameTablet. It allows you to write or draw on the tablet with a thick stylus as lines, stamps, and other artistic swipes appear on the screen. Learning to look in one place while you write or draw in another doesn't come naturally, though, and the cord sometimes feels a bit short for the peripheral, resulting in the stylus not being where you want it to be on screen. The tablet can be used to play other games with the uDraw logo, but only on the system it was purchased for.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="1"><![CDATA[For the Xbox 360 and PS3 the game comes packaged with the uDraw tablet peripheral controller, which THQ is promoting by creating other, separate games.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Educational value" rating="4"><![CDATA[Kids will learn plenty about art, from the different palates and materials to more advanced techniques, like shading and warm/cold colors.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="3"><![CDATA[The game teaches players to embrace their artistic and creative sides.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="3"><![CDATA[It's not too difficult to learn the mechanics of the uDraw tablet, but there is a learning curve. The thick pencil-stylus is easy to grip and use, but it can be challenging to look at the screen while moving your hand on the tablet -- and the cord length sometimes feels a little short.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive role models" rating="3"><![CDATA[The onscreen instructor is patient and calming, encouraging players to express themselves and embrace their artistic side.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="4"><![CDATA[Minor privacy concerns. Art can be saved and uploaded directly to uDraw's online community, where it can be shared on Facebook or printed out. If you so choose, the artwork can be submitted to THQ to then be showcased in the public online community or you can choose to keep it private.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="1"><![CDATA[In one mini-game, players use a fly-swatter to smack alien creatures that flutter across the screen, resulting in squeak sounds and colorful splat marks.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[uDRAW STUDIO: INSTANT ARTIST is a virtual art studio for the Xbox 360, PS3, and the Wii (an earlier version for the Wii, with slightly different software, was released in 2010).  The program, which is more a tool of self-expression than a game, lets players create art with everything from paints and crayons to chalk and buckets of paint (for large areas), all of which appear on screen. There are also stamps (including some that animate) and other finishes to customize your art. You draw by using the uDraw stylus on the uDraw GameTablet, which, for the PS3 or Xbox 360 versions, has buttons built into it. The game comes with a detailed tutorial, which helps players to build their art skills and learn about color palates. It also has an area for creating your own art, as well as a series of art games (such as paint-by-numbers and dot-to-dot pictures) categorized as going to Art Camp.]]></csm:description>
+      <csm:any_good><![CDATA[The expansion of uDRAW to the PS3 and Xbox 360 brings a very family-friendly option to both systems and opens up the artistic side of both. This game (which is also available as a standalone title for the Wii) is broken into three parts, each of which emphasizes self-expression in a different way. Art Camp lets kids participate in a half-dozen activities, such as paint-by-numbers and dot-to-dot pictures -- as well as an arcade-like game where you whack aliens who fly across the canvas. (It's a cute idea, but not a lot of fun.)Art Studio is literally an open canvas, letting players use the game to create whatever they'd like via the peripheral. And Art School is a very thorough tutorial full of instructions on how to improve your art skills, covering all of the basics of art and design. The interface keeps tools on screen; and players can share and send images. While it's a wonderful artistic tool, the peripheral isn't perfect. The cord feels short and users will fight against it from time to time, which can be annoying -- and drawing on a peripheral in your lap, while watching it appear on screen isn't any easier than it was on the 2010 Wii game of a similar name. (Should you own that one, there's more to this game, but probably not enough to justify paying full price.)]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about the expressive qualities of art. When you draw, do you feel like you are putting your emotions on paper? What's more important to you? Realism or being more abstract?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Families can also discuss whether it's more fun to draw with a tablet or on paper, an easel, canvas, etc.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Is learning art by playing a video game fun? What other things have you learned by playing video games?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1251397">
+          <csm:title><![CDATA[Okami]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/okami</csm:url>
+        </csm:item>
+        <csm:item id="1260618">
+          <csm:title><![CDATA[Art Academy]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/art-academy</csm:url>
+        </csm:item>
+        <csm:item id="1256191">
+          <csm:title><![CDATA[Drawn to Life: SpongeBob SquarePants Edition]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/drawn-to-life-spongebob-squarepants-edition</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Fine motor issues" id="21535"/>
+          <csm:category name="Visual/spatial issues" id="21534"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:2396056</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/game-reviews/active-life-magical-carnival"/>
+    <category term="game"/>
+    <published>2011-11-03T09:30:00-07:00</published>
+    <updated>2014-03-19T23:54:17-07:00</updated>
+    <author>
+      <name>Christopher Healy</name>
+    </author>
+    <title><![CDATA[Active Life: Magical Carnival]]></title>
+    <summary><![CDATA[Active gaming in a collection of fun fantasy settings.]]></summary>
+    <csm:product xs:type="game">
+      <csm:references>
+        <csm:reference type="asinproduct">B005EEYB98</csm:reference>
+        <csm:reference type="upc">722674800341</csm:reference>
+        <csm:reference type="upc">722674800334</csm:reference>
+      </csm:references>
+      <csm:releases>
+        <csm:release type="product">2011-10-31T17:00:00-07:00</csm:release>
+      </csm:releases>
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-game/635503-218723-front.jpg?itok=3S6rGWit</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/635503-20110630-640screen001.jpg?itok=yWVT-nHU</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/635503-20110630-640screen003.jpg?itok=YsUa5pa1</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/635503-20110630-640screen004.jpg?itok=RBC5YQ2n</csm:image>
+      </csm:images>
+      <csm:genre id="4382">Exergaming</csm:genre>
+      <csm:publishers type="developer">
+        <csm:name id="5033">Namco Bandai</csm:name>
+      </csm:publishers>
+      <csm:platforms>
+        <csm:platform id="4469">Nintendo Wii</csm:platform>
+      </csm:platforms>
+      <csm:prices>
+        <csm:price type="purchase">29.99â€“$49.99</csm:price>
+      </csm:prices>
+      <csm:industry_ratings>
+        <csm:industry_rating type="esrb" value="E" platform="Nintendo Wii" platform_id="4469">Cartoon Violence</csm:industry_rating>
+      </csm:industry_ratings>
+    </csm:product>
+    <csm:review star_rating="4">
+      <csm:slider not_for_kids="0" target_age="8" off_age="5" on_age="8" rating="on">OK for kids 8+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Active Life Magical Carnival is a collection of fantasy-themed mini-games that are intended to keep kids up and active while playing. The game uses both the standard Wii remotes and a special floor mat that track their foot movements. One or two mini-games feature mild, very unrealistic cartoon violence. The games are set in themed worlds including circus, pirates, and wizards.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="2"><![CDATA[You need to play the game with the Active Life floor pad, which you can get packaged with the game disc for the higher listed price. If you have a previous Active Life game, you can always use the floor pad from that game and save $20.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Educational value" rating="1"><![CDATA[Encourages kids to engage in physical activities as part of a healthy lifestyle.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="2"><![CDATA[Despite these activities being unrealistic, fantasy-based challenges, the game's overarching theme is still one about being active and leading a physically fit lifestyle.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="3"><![CDATA[As long as you keep yourself centered on the floor pad, the controls generally work well.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive role models" rating="1"><![CDATA[There aren't characters here, but the game has a generally positive tone. Nothing is too harsh; no negative words thrown around.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="1"><![CDATA[There is one sword-fighting mini-game in which you duel a pirate by mimicking the steps and hand motions depicted in the corner of the screen. It's more about posing than real fighting, since the motions aren't realistic in terms of swordplay. Another mini-game requires you to zap ghosts and suck them into a vacuum.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[ACTIVE LIFE MAGICAL CARNIVAL invites families to step into a fantasy theme park full of motion-controlled mini-games. You will tame lions and walk tightropes under a circus big top; you'll ride broomsticks and chase ghosts in a wizard's castle; you'll climb masts and duel buccaneers on a pirate ship; and more. Games are played with both the Wii remote and the Active Life floor pad.]]></csm:description>
+      <csm:any_good><![CDATA[Active Life Magical Carnival, like the rest of the Active Life series, makes excellent use of its distinct, two-person floor pad. Having to step, jump, run, and hop throughout a game definitely increases the overall physicality of it. And most of the time, the actions fit well with the game's designated activity (pedaling, lunging, etc.). There are times, mostly when steering vehicles (including broomsticks), when leaning would have felt more natural, as opposed to stepping. But if the game used, say, the Wii balance board instead, then you wouldn't be able to jump on it. So nothing is perfect, but the developers here have done a great job with the hardware they chose to use. Plus, it's fun to see the kind of active gaming moves usually reserved for sports titles applied to a fantasy-adventure setting.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about active gaming. Is it a legitimate way to stay fit? In what ways can you supplement active gaming in order to lead a more physically fit lifestyle?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[How does it feel to play competitively with friends or family members? Are you able to be a good sport? Or does it sometimes cause arguments or resentments?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+        <csm:theme id="21623">Magic and fantasy</csm:theme>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1258042">
+          <csm:title><![CDATA[Active Life: Extreme Challenge]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/active-life-extreme-challenge</csm:url>
+        </csm:item>
+        <csm:item id="1256144">
+          <csm:title><![CDATA[Active Life: Outdoor Challenge]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/active-life-outdoor-challenge</csm:url>
+        </csm:item>
+        <csm:item id="1260597">
+          <csm:title><![CDATA[Active Life Explorer]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/active-life-explorer</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="3">
+        <csm:author>Christopher Healy</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn to think on their feet -- literally. As the name implies, this is an active game that requires players to get up and move around quite a lot. In addition to the general "let's get physical" aspect of the experience, kids will also get to test their short-term memory, their ability to follow instructions quickly, and their skill at matching colors, shapes, and patterns. Kids move and exercise by playing Active Life: Magical Carnival, but they also keep their minds sharp with thinking games.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Play with your kids -- many of these mini-games were built for cooperative two-player action.Exercise with your children and tell them it will help them improve their game scores.Help kids get creative by suggesting that they design their own fantasy theme parks.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Hobbies" id="21640">
+            <csm:category name="sports" id="21749"/>
+          </csm:category>
+          <csm:category name="Math" id="21642">
+            <csm:category name="shapes" id="21740"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Health &amp; Fitness" id="21649">
+            <csm:category name="body awareness" id="21739"/>
+            <csm:category name="gross motor skills" id="21780"/>
+            <csm:category name="movement" id="21804"/>
+          </csm:category>
+          <csm:category name="Thinking &amp; Reasoning" id="21653">
+            <csm:category name="memorization" id="21801"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Visual processing issue" id="21553"/>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:1258402</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/game-reviews/wii-fit-plus"/>
+    <category term="game"/>
+    <published>2009-10-13T07:58:00-07:00</published>
+    <updated>2014-03-19T23:54:17-07:00</updated>
+    <author>
+      <name>Jinny Gudmundsen</name>
+    </author>
+    <title><![CDATA[Wii Fit Plus]]></title>
+    <summary><![CDATA[Expanded version has great games and personalized workouts.]]></summary>
+    <csm:product xs:type="game">
+      <csm:references>
+        <csm:reference type="asinproduct">B002BS47JE</csm:reference>
+        <csm:reference type="upc">045496901707</csm:reference>
+        <csm:reference type="upc">045496901691</csm:reference>
+        <csm:reference type="upc">045496367794</csm:reference>
+        <csm:reference type="upc">778888327136</csm:reference>
+        <csm:reference type="upc">609465466996</csm:reference>
+        <csm:reference type="upc">045496901691</csm:reference>
+        <csm:reference type="upc">013964338102</csm:reference>
+        <csm:reference type="upc">072091646191</csm:reference>
+        <csm:reference type="upc">072090438360</csm:reference>
+        <csm:reference type="upc">837654763476</csm:reference>
+        <csm:reference type="upc">780332918470</csm:reference>
+        <csm:reference type="upc">013964338096</csm:reference>
+        <csm:reference type="upc">013964338201</csm:reference>
+        <csm:reference type="upc">710069213425</csm:reference>
+      </csm:references>
+      <csm:releases>
+        <csm:release type="product">2009-10-03T17:00:00-07:00</csm:release>
+      </csm:releases>
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-game/wiifitplusboxshot.jpg?itok=vQpyHUlD</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/skateboarding.jpg?itok=2wixPk0F</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/wiifitplus-obstacle-course-csm.jpg?itok=KdL1_XgD</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/aerobics-kidgirl-csm.jpg?itok=z-938tOu</csm:image>
+      </csm:images>
+      <csm:genre id="4382">Exergaming</csm:genre>
+      <csm:publishers type="developer">
+        <csm:name id="5072">Nintendo</csm:name>
+      </csm:publishers>
+      <csm:platforms>
+        <csm:platform id="4469">Nintendo Wii</csm:platform>
+      </csm:platforms>
+      <csm:prices>
+        <csm:price type="purchase">19.99 or $99.99</csm:price>
+      </csm:prices>
+      <csm:industry_ratings>
+        <csm:industry_rating type="esrb" value="E" platform="Nintendo Wii" platform_id="4469">Mild Cartoon Violence</csm:industry_rating>
+      </csm:industry_ratings>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="10" off_age="3" on_age="6" rating="on">OK for kids 10+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Wii Fit Plus contains the original Wii Fit and adds more content. It can be purchased with the Wii Balance Board or as a separate disc if you already own the Wii Balance Board. This upgraded version provides 15 new games bringing the total activities to over 60 covering yoga, strength training, aerobics, and balance games. New to this version is the ability to create your own workout and to play multiplayer. By providing you with your own virtual trainer and encouraging you to play every day, Wii Fit Plus helps to make working out fun for all ages. Parents with kids who are sensitive about their body image need to know that this program uses Body Mass Index (BMI) to label users who have created profiles as either underweight, normal, overweight, or obese. For children, that label may be inaccurate because they are growing so fast. Parents concerned about this labeling can avoid it by having their kids play in Trial mode or in Multiplayer mode.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Educational value" rating="4"><![CDATA[Teaches yoga positions and stength training exercises. The game also offers health advice in snippets throughout the game.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="3"><![CDATA[This game encourages players of all ages to exercise and makes it fun to do so. It delivers plenty of snippets about health and things to do to help you become fit. If you decide to create a user profile by entering your birth date and height, the program weighs you and then calculates your Body Mass Index (BMI) and labels you as underweight, normal, overweight, or obese. For children, that label may be inaccurate because they are growing so fast. Parents concerned about this labeling can avoid it by having their kids play in Trial mode or in Multiplayer mode.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[All activities come with a good visual tutorial. Creating your own workout would have been easier if you could have dragged-and-dropped individual exercises and games onto a timeline.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive role models" rating="4"><![CDATA[The virtual trainers are very supportive of you and model how to do the exercises. Even the animated Wii Balance Board offers a wealth of support and information about how to get in shape and the importance of exercise.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence" rating="0"><![CDATA[Very mild cartoon violence. In the obstacle course game, your avatar can get hit by giant swinging balls and knocked into the ocean. In another, you can throw and be hit by snowballs.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[WII FIT PLUS contains the original Wii Fit game with expanded content and a navigational face-lift. The expanded content gives you 15 more balance and aerobic games, as well as 3 new Yoga poses and 3 new strength training exercises. The original Wii Fit has 40 activities, while this new expanded version has 60. Also new is the ability to see your calories burned during your play session. In terms of navigation, you can now personalize your workout so that you can exercise your way through a series of activities without having to break in between to deal with navigation screens. You can select from a series of options to build your own workout, including deciding its intensity and length of time. Some of the fun new games include an obstacle course where you time your running to avoid giant swinging balls (ala the popular Japanese game shows), and one where you flap your arms while leaning forward to fly onto targets set in the ocean.]]></csm:description>
+      <csm:any_good><![CDATA[Yes, this is an improvement over the excellent Wii Fit. If you have been thinking about buying Wii Fit but haven't gotten around it yet, buy the Wii Fit Plus version that comes bundled with the Wii Balance Board for $99.99, which is only $10 more than the original. If you already own Wii Fit, you can buy just the new disc for $19.99. If you have kids, this decision is easy. $20 is a great price for the 15 additional games that will get your kids moving. Even adults will enjoy the games, although kids may be better at virtual skateboarding and snowball fighting. But don't get too keyed up over the multiplayer mode  it isn't head-to-head split screen. It is about taking turns and seeing whose score is better.The ability to create your own workout is also an improvement, but this personalization isn't completely open. You cannot simply choose to string a series of the zany games together as a workout (which is what kids would love). Instead you have to target a body part or a type of exercise. Nonetheless, this is better than the original Wii Fit where you had to stop between each activity. Wii Fit Plus makes doing exercises fun and motivates both kids and adults to get up and get moving.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Do you find Wii Fit Plus made it easier for you to exercise? Is it easier to exercise when encouraged by a virtual trainer than when you try to do it on your own? How does this workout compare to other forms of exercise?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Wii Fit Plus offers multiplayer ability by letting players take turns one after another and then comparing scores. Did this kind of multiplayer gameplay work for you or do you prefer split screen head-to-head competition?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[This game labels players that create a user profile as being underweight, normal, overweight, or obese based on the BMI Index, which may not be accurate for growing children. How does this labeling make you feel? Do you think girls or boys respond differently to this labeling?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+        <csm:theme id="21635">Sports and martial arts</csm:theme>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="1257676">
+          <csm:title><![CDATA[EA Sports Active]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/ea-sports-active</csm:url>
+        </csm:item>
+        <csm:item id="1256144">
+          <csm:title><![CDATA[Active Life: Outdoor Challenge]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/active-life-outdoor-challenge</csm:url>
+        </csm:item>
+        <csm:item id="1257971">
+          <csm:title><![CDATA[Wii Sports Resort]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/wii-sports-resort</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem selected="0"><![CDATA[Great games and personalized workouts offer tons of fun while the whole family gets in shape.]]></csm:hidden_gem>
+      <csm:learning_rating value="4">
+        <csm:author>Erin Bell</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn about movement and body awareness by playing exercises and activities that incorporate the Wii Fit balance board. In addition to tracking players' daily weight and BMI (Body Mass Index), Wii Fit Plus allows kids to create personalized time-based workouts targeting a specific body part or type of exercise. Wii Fit Plus encourages kids to play together by taking turns on each exercise to compete for a high score as they explore a series of fitness activities.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Use the momentum from Wii Fit Plus to engage children in even more rigorous activities like bike riding or jogging.Sign kids up for dancing lessons so they can enjoy movement to music.]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="following directions" id="21685"/>
+          </csm:category>
+          <csm:category name="Hobbies" id="21640">
+            <csm:category name="sports" id="21749"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Health &amp; Fitness" id="21649">
+            <csm:category name="body awareness" id="21739"/>
+            <csm:category name="exercise" id="21772"/>
+            <csm:category name="fitness" id="21776"/>
+            <csm:category name="movement" id="21804"/>
+          </csm:category>
+          <csm:category name="Self-Direction" id="21651">
+            <csm:category name="goal-setting" id="21779"/>
+            <csm:category name="motivation" id="21803"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="5"><![CDATA[Offering exciting games like skateboarding and snowball fighting, Wii Fit Plus is a terrific way to get your kids moving. They can also create their own workout.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="4"><![CDATA[Kids can learn about movement and body awareness by playing the exercises and activities. This game encourages kids to play together by taking turns on each exercise to compete for the higher score.]]></csm:dimension>
+          <csm:dimension name="Support" rating="4"><![CDATA[All activities come with a good visual tutorial. Creating your own workout would have been easier if you could have dragged-and-dropped individual exercises and games onto a timeline.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Dyspraxia" id="21574">
+          <csm:category name="Gross motor issues" id="21576"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:2151848</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/game-reviews/the-sims-social"/>
+    <category term="game"/>
+    <published>2011-09-02T09:52:00-07:00</published>
+    <updated>2014-03-19T23:54:17-07:00</updated>
+    <author>
+      <name>Erin Bell</name>
+    </author>
+    <title><![CDATA[The Sims Social]]></title>
+    <summary><![CDATA[Mature but lighthearted life sim with new social features.]]></summary>
+    <csm:product xs:type="game">
+      <csm:references>
+      </csm:references>
+      <csm:releases>
+        <csm:release type="product">2011-08-22T17:00:00-07:00</csm:release>
+      </csm:releases>
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-game/thesimssocialtitle.jpg?itok=6NKOSG3i</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/thesimssocial1.jpg?itok=mUOO2o7U</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/thesimssocial2.jpg?itok=I8f6R6m5</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-game/thesimssocial3.jpg?itok=AltF7xCx</csm:image>
+      </csm:images>
+      <csm:genre id="4422">Simulation</csm:genre>
+      <csm:publishers type="developer">
+        <csm:name id="4652">Electronic Arts</csm:name>
+      </csm:publishers>
+      <csm:platforms>
+      </csm:platforms>
+      <csm:prices>
+        <csm:price type="purchase">Free with Microtransactions</csm:price>
+      </csm:prices>
+      <csm:industry_ratings>
+      </csm:industry_ratings>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="15" off_age="14" on_age="15" rating="on">OK for kids 15+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that The Sims Social is a life simulation game in The Sims series that is played on the Facebook social network. Players create their own person, known as a "Sim," by customizing appearance and selecting personality traits including introvert, geek, socialite, tycoon, romantic, or villain. These traits influence the Sim's behavior. Sims can enter into friendships, rivalries, and both heterosexual and same-sex romantic relationships with other Sims, which are controlled by Facebook friends. These relationships statuses must be approved by both players before appearing in the game. Sims do not have children, age, or die. Players can spend real-world money to purchase special items or to speed up the game by instantly unlocking quests and building furniture. The game is more fun with more friends to visit, which might tempt players to "friend" strangers on Facebook to get more neighbors.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Consumerism" rating="2"><![CDATA[Players can buy a range of items for their Sim's house. The game encourages buying "nice" stuff, because it increases the value of the property. Sims can buy Dunkin' Donuts branded coffee and donuts.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Educational value" rating="0"><![CDATA[The game is meant to entertain rather than educate.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive messages" rating="2"><![CDATA[Sims can be as pleasant or nasty as the player chooses, and will cultivate friendly or confrontational relationships with other Sims through their actions. It's possible for Sims to pickpocket other Sims, steal their food, pee on their plants, play dozens of different pranks, and choose insulting or hurtful conversation topics like calling someone a bad friend or mocking their appearance. There are just as many positive interactions too, from playing music and dancing together to sharing jokes and small-talk.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[Gameplay is more streamlined than The Sims for PC and consoles, with fewer menu options and a fixed camera. Players learn more about the game through completing quests, but there's still plenty of room for open-ended discovery.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Positive role models" rating="2"><![CDATA[A Sim's behavior is influenced by its personality traits and its relationship status with other Sims. Sims with the villain personality trait will actually derive pleasure in causing other Sims distress. Sims in a romantic relationship can dump each other and become Ex-Lovers. However, there are many positive traits as well, and those serve as positive role models.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="3"><![CDATA[Some privacy concerns. Players will be prompted regularly to post game-related status updates on their Facebook wall, and on the walls of friends. Interacting with other Sims is a big part of the game, and players might be tempted to "friend" strangers on Facebook to increase their number of neighbors.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sex" rating="3"><![CDATA[A player's Sim can pursue both heterosexual and same-sex relationships with the Sims of Facebook friends, but both friends must approve changes in relationship status for it to take effect. Sims that are romantically involved can exchange passionate kisses and hugs, have "quickies" in the shower, or make "woohoo" (the game's long-standing euphemism for sexual intercourse). These interactions are accompanied by floating hearts, groans and giggles, but nothing graphic.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Violence" rating="1"><![CDATA[Sims can argue and get into catfights with each other, but these are handled humorously and there's no graphic violence.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[THE SIMS SOCIAL is The Sims streamlined for social networks. Players care for only one Sim in this version (as opposed to an entire family), by making sure that its personal needs such as hygiene, hunger, and fun are being met. Instead of having an entire neighborhood to explore, Sims are limited to their own house and yard -- which can be expanded with new rooms and outfitted with hundreds of furniture and decorative items purchased from the shop. Sims can also visit the houses of other Sims, which become available by inviting Facebook friends to become neighbors.]]></csm:description>
+      <csm:any_good><![CDATA[For all its pruning, The Sims Social still feels like a "Sims" game -- in fact, some players will even appreciate that there's less to micromanage. Some of the attempts to copy popular social game mechanics fall flat -- like the superficial crop-tending and weed-pulling tasks -- but overall the social features complement the gameplay. Watching the Sims interact with their environment, and with each other, is the highlight of the game. Players can earn money, learn new skills, and cultivate relationships with other Sims through interactions. Almost everything in the game environment can be clicked on, resulting in reactions from the Sims that range from adorable (two friendly Sims performing a piano duet), to quirky (a "crazy" Sim satisfying her social needs by talking to the plants in her yard). Some of these actions use energy, but many of them don't, so even after players have used up all their free energy there's still entertainment to be had. These features help make The Sims Social an engaging social game with depth and humor.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Families can talk about what personality traits they chose for their Sim. How much of an impact did that choice make on how you played the game?]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Families can also talk about the interpersonal relationships between different Sims. Was it fun to be mean to or play jokes on other Sims, or did you feel guilty about it? Were there any consequences for your antisocial actions?]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="2139848">
+          <csm:title><![CDATA[The Smurfs &amp; Co]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/the-smurfs-co</csm:url>
+        </csm:item>
+        <csm:item id="2144626">
+          <csm:title><![CDATA[GnomeTown]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/gnometown</csm:url>
+        </csm:item>
+        <csm:item id="1261084">
+          <csm:title><![CDATA[FrontierVille]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/frontierville</csm:url>
+        </csm:item>
+        <csm:item id="1261016">
+          <csm:title><![CDATA[CityVille]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/cityville</csm:url>
+        </csm:item>
+        <csm:item id="2085701">
+          <csm:title><![CDATA[My Superkid]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/my-superkid</csm:url>
+        </csm:item>
+        <csm:item id="1261563">
+          <csm:title><![CDATA[Family Village]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/game-reviews/family-village</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="3">
+        <csm:author>Erin Bell</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids can learn to set and achieve goals by learning new skills, completing jobs, and buying commodities. Social interaction is central; kids cultivate friendships and romantic relationships by interacting with other Sims and being mindful of feelings and emotions. There are consequences for treating other Sims poorly. Kids also learn about mental health and body awareness by meeting their Sim's needs for sleep, hygiene, hunger, and relaxation.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[Identify real-world people who embody each of the personality traits in the game.Help kids create a skills chart for themselves to mark their progress in something (such as practicing an instrument, or completing homework).]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Social Studies" id="21644">
+            <csm:category name="citizenship" id="21666"/>
+          </csm:category>
+          <csm:category name="Hobbies" id="21640">
+            <csm:category name="building" id="21662"/>
+            <csm:category name="fashion" id="21683"/>
+            <csm:category name="gardening" id="21689"/>
+          </csm:category>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="following directions" id="21685"/>
+          </csm:category>
+          <csm:category name="Math" id="21642">
+            <csm:category name="money" id="21706"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651">
+            <csm:category name="achieving goals" id="21727"/>
+            <csm:category name="personal growth" id="21809"/>
+          </csm:category>
+          <csm:category name="Health &amp; Fitness" id="21649">
+            <csm:category name="body awareness" id="21739"/>
+            <csm:category name="mental health" id="21802"/>
+          </csm:category>
+          <csm:category name="Emotional Development" id="21648">
+            <csm:category name="empathy" id="21768"/>
+            <csm:category name="identifying emotions" id="21785"/>
+            <csm:category name="labeling feelings" id="21792"/>
+          </csm:category>
+          <csm:category name="Communication" id="21646">
+            <csm:category name="friendship building" id="21778"/>
+          </csm:category>
+          <csm:category name="Responsibility &amp; Ethics" id="21650">
+            <csm:category name="learning from consequences" id="21793"/>
+            <csm:category name="respect for others" id="21816"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="4"><![CDATA[The Sims Social is playful and engaging. Kids will enjoy watching the Sims dance and paint, gossip and flirt, work out, cook, and more. Everything in the game is portrayed with an interesting and often humorous animation.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="4"><![CDATA[Kids complete quests, but there's room to discover things on their own too. Characters are realistic and diverse, and interacting with them has consequences, such as rude behavior causing others to dislike them.]]></csm:dimension>
+          <csm:dimension name="Support" rating="4"><![CDATA[The game tracks kids' progress as they build their Sim's skills, and displays this information to give kids a sense of accomplishment. Tutorials guide players through the game, but kids have leeway to discover things on their own as well.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="0">
+        <csm:category name="Executive functioning issue" id="21581">
+          <csm:category name="Goal-setting" id="21585"/>
+          <csm:category name="Planning" id="21587"/>
+          <csm:category name="Shifting flexibly" id="21588"/>
+        </csm:category>
+        <csm:category name="Social pragmatic language disorder" id="21577"/>
+        <csm:category name="Nonverbal Learning issues" id="21591">
+          <csm:category name="Social issues" id="21594"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+</feed>

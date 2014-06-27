@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews;
 
 
 namespace UnderstoodDotOrg.Domain.Membership
@@ -26,5 +27,8 @@ namespace UnderstoodDotOrg.Domain.Membership
             // on a per-lookup or per-object level
             this.Configuration.LazyLoadingEnabled = false;
         }
+
+        public DbSet<CSMUserReview> CSMUserReviews { get; set; }
+        public DbSet<CSMUserReviewSkill> CSMUserReviewSkills { get; set; }
     }
 }
