@@ -367,6 +367,44 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
+        public static string PostComment(int blogId, int blogPostId, string body, string currentUser)
+        {
+            using (var webClient = new WebClient())
+            {
+                if (!currentUser.Equals("admin"))
+                {
+                    try
+                    {
+                        webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                        currentUser = currentUser.Trim().ToLower();
+                        webClient.Headers.Add("Rest-Impersonate-User", currentUser);
+
+                        var postUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml", blogId, blogPostId));
+
+                        var data = new NameValueCollection()
+                        {
+                            { "Body", body },
+                            { "PublishedDate", DateTime.Now.ToString() },
+                            { "IsApproved", "true" },
+                            { "BlogId", blogId.ToString() }
+                        };
+
+                        byte[] result = webClient.UploadValues(postUrl, data);
+                        // TODO: handle errors
+                        string response = webClient.Encoding.GetString(result);
+
+                        XmlDocument xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(response);
+
+                        XmlNode node = xmlDoc.SelectSingleNode("Response/Comment");
+                        string contentId = node["ContentId"].InnerText;
+                        return contentId;
+                    }
+                    catch { } //TODO: Add logging
+                }
+            }
+        }
+
         public static string CreateQuestion(string title, string body, string currentUser)
         {
             using (var webClient = new WebClient())
