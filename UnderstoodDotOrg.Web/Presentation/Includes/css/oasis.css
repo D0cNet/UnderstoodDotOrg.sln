@@ -141,5 +141,13 @@
   margin-right: 35px;
 }
 
+/* UN-4995 */
+.behavior-tip-detail section {
+  padding-bottom: 24px;
+}
+.behavior-tip-detail section p {
+  margin-bottom: 1em;
+}
+
 
 /* END: temporary override rules provided by DP. */
