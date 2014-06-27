@@ -104,4 +104,26 @@
   }
 }
 
+/* UN-4958 */
+.at-a-glance ul li {
+  line-height: 27px;
+  line-height: 1.6875rem;
+  position: relative;
+  margin-top: 12px;
+  padding: 12px 0 0 20px;
+}
+.at-a-glance ul li:first-child {
+  margin-top: 0;
+}
+.at-a-glance ul li:before {
+  font-family: Circular, arial, sans-serif;
+  content: "• ";
+  color: #426da9;
+  font-size: 18px;
+  font-size: 1.125rem;
+  position: absolute;
+  left: 0;
+}
+
+
 /* END: temporary override rules provided by DP. */
