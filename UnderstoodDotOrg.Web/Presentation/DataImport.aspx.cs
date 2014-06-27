@@ -283,7 +283,7 @@ namespace UnderstoodDotOrg.Web.Presentation
                         }
 
                         count++;
-                        //reviewManager.Add(newItem);
+                        reviewManager.Add(newItem);
                         insideEntry = false;
                     }
                 }
