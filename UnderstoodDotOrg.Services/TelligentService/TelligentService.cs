@@ -119,6 +119,33 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return commentList;
         }
 
+        public static bool LikeComment(string screenName, string contentId, string contentTypeId)
+        {
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                    webClient.Headers.Add("Rest-Impersonate-User", screenName);
+                    var requestUrl = GetApiEndPoint("likes.xml");
+
+                    var values = new NameValueCollection
+                    {
+                        { "ContentId", contentId },
+                        { "ContentTypeId", contentTypeId }
+                    };
+
+                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
         public static int GetTotalLikes(string contentId)
         {
             int count = 0;

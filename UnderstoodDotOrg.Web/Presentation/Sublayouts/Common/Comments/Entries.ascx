@@ -2,7 +2,7 @@
 <asp:Repeater runat="server" ID=rptComments ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Comment">
     <ItemTemplate>
         <div class="comment-wrapper" data-comment-id="<%# Item.CommentId %>">
-            <div class="comment-header" id="<%# Item.CommentId %>">
+            <div class="comment-header">
                 <span class="comment-avatar">
                     <img src="<%# Item.AuthorAvatarUrl %>" width="60" height="60" />
                 </span>
@@ -10,7 +10,7 @@
                     <span class="comment-username"><%# Item.AuthorUsername %></span>
                     <span class="comment-date"><%# Item.PublishedDate %></span>
                 </span>
-                <a class="comment-like"><i class="icon-comment-like"></i><%# Item.Likes %> <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.LikesLabel %></span></a>
+                <a class="comment-like"><i class="icon-comment-like"></i><span class="comment-like-count"><%# Item.Likes %></span> <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.LikesLabel %></span></a>
             </div>
             <div class="comment-body">
                 <%# Item.Body  %>

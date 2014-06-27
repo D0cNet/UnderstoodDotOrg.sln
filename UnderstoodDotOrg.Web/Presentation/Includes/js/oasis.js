@@ -468,7 +468,9 @@ $(document).ready(function () {
 // Comments
 (function ($) {
     var currentPage = 1;
-	var inProgress = false;
+    var inProgress = false;
+    var helpfulInProgress = false;
+    var flagInProgress = false;
 	var $container, $showMoreContainer, path, blog, post;
 	
 	function init() {
@@ -494,6 +496,44 @@ $(document).ready(function () {
 	        e.preventDefault();
 	        $("#comment-list textarea").focus();
 	    });
+
+	    $("#comment-list").on("click", "a.comment-like", helpful_clickHandler);
+	}
+
+	function helpful_clickHandler(e) {
+	    e.preventDefault();
+		var self = this;
+
+	    if (helpfulInProgress) {
+	        return;
+	    }
+
+	    helpfulInProgress = true;
+
+	    var data = {
+	        'contentId' : $(this).closest(".comment-wrapper").data('comment-id'),
+	        'contentTypeId' : $(this).data('content-type-id')
+	    };
+
+	    $.ajax({
+	        url: $("#comment-list").data('endpoint') + 'FoundCommentHelpful',
+	        dataType: 'json',
+	        contentType: 'application/json; charset=utf-8',
+	        data: JSON.stringify(data),
+	        method: 'POST'
+	    }).done(function (data) {
+
+	        var result = data.d;
+
+	        if (result.IsSuccessful) {
+				$(self).closest('.comment-wrapper').find('span.comment-like-count').html(result.HelpfulCount.toString());
+			} else {
+				// TODO: display error or redirect to login?
+			}
+	    }).always(function () {
+	        helpfulInProgress = false;
+	    });
+
 	}
 	
 	function showMore_clickHandler(e) {

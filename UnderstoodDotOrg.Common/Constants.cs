@@ -740,6 +740,7 @@ namespace UnderstoodDotOrg.Common
             public static string GradeLevelOffMultiplier = "GradeLevelOffMultiplier";
             public static string GradeLevelTargetMultiplier = "GradeLevelTargetMultiplier";
             public static string CommentsListEndpoint = "CommentsListEndpoint";
+            public static string ContentServiceEndpoint = "ContentServiceEndpoint";
         }
 
         public static class ContentItem

@@ -7,7 +7,7 @@
         <!-- comments col -->
         <div class="col col-22 offset-1 skiplink-comments">
             <!-- BEGIN PARTIAL: comment-list -->
-            <section id="comment-list" class="comment-list" id="count-comments">
+            <section id="comment-list" class="comment-list" data-endpoint="<%= ContentServicePath %>">
 
                 <header>
                     <h2 class="comment-count rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.CommentsLabel %> (<asp:Literal ID="litCommentCount" runat="server" />)</h2>

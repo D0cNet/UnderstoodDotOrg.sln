@@ -134,6 +134,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\ContentService.asmx.cs">
+      <DependentUpon>ContentService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Handlers\DownloadFile.ashx.cs">
       <DependentUpon>DownloadFile.ashx</DependentUpon>
     </Compile>
@@ -2083,6 +2087,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Handlers\ContentService.asmx" />
     <Content Include="Handlers\FormSubmissionsService.asmx" />
     <Content Include="Handlers\SearchResultsService.asmx" />
     <Content Include="Presentation\AjaxData\ArchiveEvents.aspx" />
