@@ -471,7 +471,7 @@ $(document).ready(function () {
     var inProgress = false;
     var helpfulInProgress = false;
     var flagInProgress = false;
-	var $container, $showMoreContainer, $sortOption, path, blog, post;
+	var $container, $showMoreContainer, $scrollContainer, $sortOption, path, blog, post;
 	
 	function init() {
 	    initShowMore();
@@ -480,23 +480,30 @@ $(document).ready(function () {
 
 	function initShowMore() {
 	    var $trigger = $("#show-more-comments");
+	    var $list = $("#comment-list");
+	    path = $list.data('path');
+	    blog = $list.data('blog');
+	    post = $list.data('post');
+	    $container = $("#" + $list.data('container'));
+
 	    if ($trigger.length > 0) {
-	        path = $trigger.data('path');
-	        blog = $trigger.data('blog');
-	        post = $trigger.data('post');
-	        $container = $("#" + $trigger.data('container'));
-	        $showMoreContainer = $trigger.closest(".show-more");
-			$sortOption = $("#comment-sort-option-dropdown");
-			
-			$sortOption.on("change", sortOption_changeHandler);
-	        $trigger.on("click", showMore_clickHandler);
+	        $showMoreContainer = $trigger.closest('.show-more');
+	        $scrollContainer = $showMoreContainer;
+	    } else {
+	        $scrollContainer = $list;
 	    }
+
+	    $trigger.on("click", showMore_clickHandler);
+		$sortOption = $("#comment-sort-option-dropdown");	
+		$sortOption.on("change", sortOption_changeHandler);
 	}
 	
 	function sortOption_changeHandler(e) {
 	    if ($(this).prop('selectedIndex') > 0) {
 	        currentPage = 0;
-	        $showMoreContainer.hide();
+	        if (typeof $showMoreContainer != 'undefined') {
+	            $showMoreContainer.hide();
+	        }
 	        $container.html('');
 	        loadNextPage();
 	    }
@@ -596,7 +603,7 @@ $(document).ready(function () {
 		
 		inProgress = true;
 
-        $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
+        $('html,body').animate({ scrollTop: $scrollContainer.offset().top - 40 }, 500);
 		
 		var data = {
             'page': currentPage + 1,
@@ -611,12 +618,15 @@ $(document).ready(function () {
 			data: data,
 			method: 'GET'
 		}).done(function (data) {
-			currentPage++;
-			if ($(data).filter('input[type="hidden"]').length == 0) {
-			    $showMoreContainer.hide();
-			} else {
-			    $showMoreContainer.show();
-			}
+		    currentPage++;
+
+		    if (typeof $showMoreContainer != 'undefined') {
+		        if ($(data).filter('input[type="hidden"]').length == 0) {
+		            $showMoreContainer.hide();
+		        } else {
+		            $showMoreContainer.show();
+		        }
+		    }
 			$container.append(data);
         }).always(function () {
 			inProgress = false;

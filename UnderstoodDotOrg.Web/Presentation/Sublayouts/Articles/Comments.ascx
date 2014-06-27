@@ -7,7 +7,7 @@
         <!-- comments col -->
         <div class="col col-22 offset-1 skiplink-comments">
             <!-- BEGIN PARTIAL: comment-list -->
-            <section id="comment-list" class="comment-list" data-endpoint="<%= ContentServicePath %>">
+            <section id="comment-list" class="comment-list" data-endpoint="<%= ContentServicePath %>" data-path="<%= AjaxPath %>" data-blog="<%= BlogId %>" data-post="<%= BlogPostId %>" data-container="comment-listing-wrapper">
 
                 <header>
                     <h2 class="comment-count rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.CommentsLabel %> (<asp:Literal ID="litCommentCount" runat="server" />)</h2>
@@ -35,7 +35,7 @@
                         <div class="container show-more rs_skip">
                           <div class="row">
                             <div class="col col-24">
-                              <a id="show-more-comments" href="#" data-path="<%= AjaxPath %>" data-blog="<%= BlogId %>" data-post="<%= BlogPostId %>" data-container="comment-listing-wrapper"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
+                              <a id="show-more-comments" href="#"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
                             </div>
                           </div>
                         </div><!-- .show-more -->
