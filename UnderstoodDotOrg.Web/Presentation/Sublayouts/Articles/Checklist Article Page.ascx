@@ -58,14 +58,25 @@
                             var Answers = {};
                             var hiddenField = $("[id*='hfKeyValuePairs']");
 
-                            $(".checkbox-item").click(function () {
-                                $this = $(this);
-                                console.log("here");
-                                //console.log($radioControl)
-                                Answers[$this.data("id")] = $this.find("span").hasClass("checked");
-                                hiddenField.val(JSON.stringify(Answers));
-                                $("input[id*='btnSaveAnswers']").attr("class", "submit button").removeAttr("disabled");
+                            $(".checkbox-item, .checklist-question").click(function () {
+                                parseBoxes(true);
                             })
+
+                            function parseBoxes(changed) {
+                                $(".checklist-questions .checkbox-item").each(function () {
+                                    $this = $(this);
+                                    Answers[$this.data("id")] = $this.find("input").prop('checked');
+                                })
+
+                                if (changed)
+                                {
+                                    $("input[id*='btnSaveAnswers']").attr("class", "submit button").removeAttr("disabled");
+                                }
+
+                                hiddenField.val(JSON.stringify(Answers));
+                            }
+
+                            parseBoxes(false);
                         })
                     </script>
                     <div class="checklist-actions clearfix">
