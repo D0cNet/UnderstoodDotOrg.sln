@@ -147,30 +147,38 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 		{
             if (IsUserLoggedIn)
             {
-                string JSON = hfKeyValuePairs.Value;
-                Dictionary<string, string> values = JsonConvert.DeserializeObject<Dictionary<string, string>>(JSON);
-
-                Checklist cl = new Checklist();
-                cl.MemberId = CurrentMember.MemberId;
-                cl.ChecklistID = Sitecore.Context.Item.ID.ToGuid();
-
-                if (values != null)
+                try
                 {
-                    foreach (KeyValuePair<string, string> entry in values)
+
+                    string JSON = hfKeyValuePairs.Value;
+                    Dictionary<string, string> values = JsonConvert.DeserializeObject<Dictionary<string, string>>(JSON);
+
+                    Checklist cl = new Checklist();
+                    cl.MemberId = CurrentMember.MemberId;
+                    cl.ChecklistID = Sitecore.Context.Item.ID.ToGuid();
+
+                    if (values != null)
                     {
-                        ChecklistItem clItem = new ChecklistItem();
+                        foreach (KeyValuePair<string, string> entry in values)
+                        {
+                            ChecklistItem clItem = new ChecklistItem();
 
-                        clItem.QuestionId = new Guid(entry.Key);
-                        clItem.Checked = Convert.ToBoolean(entry.Value);
+                            clItem.QuestionId = new Guid(entry.Key);
+                            clItem.Checked = Convert.ToBoolean(entry.Value);
 
-                        cl.MemberAnswers.Add(clItem);
+                            cl.MemberAnswers.Add(clItem);
+                        }
+                        MembershipManager mgr = new MembershipManager();
+                        mgr.ChecklistResults_SaveToDb(cl.MemberId, cl);
+
+                        btnSaveAnswers.Attributes.Add("class", "aspNetDisabled submit button");
+                        btnSaveAnswers.Attributes.Add("disabled", "disabled");
+                        confirmationText.Visible = true;
                     }
-                    MembershipManager mgr = new MembershipManager();
-                    mgr.ChecklistResults_SaveToDb(cl.MemberId, cl);
-
-                    btnSaveAnswers.Attributes.Add("class", "aspNetDisabled submit button");
-                    btnSaveAnswers.Attributes.Add("disabled", "disabled");
-                    confirmationText.Visible = true;
+                }
+                catch
+                {
+                    errorText.Visible = true;  
                 }
             }
             else

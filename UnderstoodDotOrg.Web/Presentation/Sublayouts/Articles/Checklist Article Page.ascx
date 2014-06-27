@@ -81,6 +81,7 @@
                     </script>
                     <div class="checklist-actions clearfix">
                         <p id="confirmationText" runat="server" class="confirmation" visible="false">Your answers have been saved! Simply sign in on your future visits to access your customized list.</p>
+                        <p id="errorText" runat="server" visible="false">Something went wrong.</p>
                         <div class="save-answers">
                             <asp:button runat="server" ID="btnSaveAnswers" class="submit button" Text="Save My Answers" OnClick="btnSaveAnswers_Click" />
                         </div>
