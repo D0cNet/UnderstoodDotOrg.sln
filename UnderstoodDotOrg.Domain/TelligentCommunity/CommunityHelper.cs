@@ -367,8 +367,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
-        public static string PostComment(int blogId, int blogPostId, string body, string currentUser)
+        public static string PostComment(string blogId, string blogPostId, string body, string currentUser)
         {
+            string contentId = string.Empty;
             using (var webClient = new WebClient())
             {
                 if (!currentUser.Equals("admin"))
@@ -397,12 +398,13 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         xmlDoc.LoadXml(response);
 
                         XmlNode node = xmlDoc.SelectSingleNode("Response/Comment");
-                        string contentId = node["ContentId"].InnerText;
+                        contentId = node["ContentId"].InnerText;
                         return contentId;
                     }
                     catch { } //TODO: Add logging
                 }
             }
+            return contentId;
         }
 
         public static string CreateQuestion(string title, string body, string currentUser)
