@@ -498,6 +498,7 @@ $(document).ready(function () {
 	    });
 
 	    $("#comment-list").on("click", "a.comment-like", helpful_clickHandler);
+	    $("#comment-list").on("click", "a.comment-flag", flag_clickHandler);
 	}
 
 	function helpful_clickHandler(e) {
@@ -526,12 +527,47 @@ $(document).ready(function () {
 	        var result = data.d;
 
 	        if (result.IsSuccessful) {
-				$(self).closest('.comment-wrapper').find('span.comment-like-count').html(result.HelpfulCount.toString());
+	            $(self).closest('.comment-wrapper').find('span.comment-like-count').html(result.HelpfulCount.toString());
 			} else {
 				// TODO: display error or redirect to login?
 			}
 	    }).always(function () {
 	        helpfulInProgress = false;
+	    });
+
+	}
+
+	function flag_clickHandler(e) {
+	    e.preventDefault();
+	    var self = this;
+
+	    if (flagInProgress) {
+	        return;
+	    }
+
+	    flagInProgress = true;
+
+	    var data = {
+	        'contentId': $(this).closest(".comment-wrapper").data('comment-id')
+	    };
+
+	    $.ajax({
+	        url: $("#comment-list").data('endpoint') + 'FlagComment',
+	        dataType: 'json',
+	        contentType: 'application/json; charset=utf-8',
+	        data: JSON.stringify(data),
+	        method: 'POST'
+	    }).done(function (data) {
+
+	        var result = data.d;
+
+	        if (result.IsSuccessful) {
+	            $(self).closest('.comment-wrapper').find('span.comment-flag-label').html(result.Message);
+	        } else {
+	            // TODO: display error or redirect to login?
+	        }
+	    }).always(function () {
+	        flagInProgress = false;
 	    });
 
 	}

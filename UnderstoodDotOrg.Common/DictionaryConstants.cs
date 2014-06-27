@@ -1033,6 +1033,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string UnderReviewLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Under Review Label");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

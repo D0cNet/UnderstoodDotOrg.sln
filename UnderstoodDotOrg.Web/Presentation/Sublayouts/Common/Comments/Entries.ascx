@@ -18,7 +18,7 @@
             <div class="comment-actions rs_skip">
                 <a href="#" class="comment-reply"><i class="icon-comment-reply"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ReplyLabel %></a>
                 <a href="#" class="comment-like" data-content-type-id="<%# Item.CommentContentTypeId %>"><i class="icon-comment-like"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ThisHelpedLabel %></a>
-                <a href="#" class="comment-flag"><i class="icon-comment-flag"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ReportAsInappropriateLabel %></a>
+                <a href="#" class="comment-flag"><i class="icon-comment-flag"></i><span class="comment-flag-label"><%= UnderstoodDotOrg.Common.DictionaryConstants.ReportAsInappropriateLabel %></span></a>
             </div>
         </div>
     </ItemTemplate>

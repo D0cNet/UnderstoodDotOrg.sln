@@ -44,6 +44,28 @@ namespace UnderstoodDotOrg.Web.Handlers
             return result;
         }
 
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public ContentServiceResult FlagComment(string contentId)
+        {
+            var result = new ContentServiceResult
+            {
+                IsSuccessful = false,
+                IsLoggedIn = IsLoggedIn()
+            };
+
+            if (result.IsLoggedIn)
+            {
+                result.IsSuccessful = TelligentService.FlagComment(contentId);
+                if (result.IsSuccessful)
+                {
+                    result.Message = DictionaryConstants.UnderReviewLabel;
+                }
+            }
+
+            return result;
+        }
+
         private bool IsLoggedIn()
         {
             if (Session[Constants.currentUserKey] != null

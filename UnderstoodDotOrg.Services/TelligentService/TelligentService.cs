@@ -159,6 +159,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             {
                 MakeApiRequest(wc =>
                 {
+                    wc.Headers.Add("Rest-Method", "PUT");
                     string response = Encoding.UTF8.GetString(wc.UploadValues(requestUrl, values));
                 });
 
