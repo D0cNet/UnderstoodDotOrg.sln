@@ -149,5 +149,10 @@
   margin-bottom: 1em;
 }
 
+/* UNAO-464 */
+.article-feature-image {
+  margin-bottom: 2em;
+}
+
 
 /* END: temporary override rules provided by DP. */
