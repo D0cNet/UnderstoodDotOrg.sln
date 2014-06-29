@@ -49,7 +49,7 @@ namespace UnderstoodDotOrg.Web.Presentation
             bool insideEntry = false;
 
             int count = 0;
-            while (reader.ReadToFollowing("entry"))
+            while (reader.ReadToFollowing("entry") && count < 2)
             {
                 if (reader.NodeType == XmlNodeType.Element)
                 {

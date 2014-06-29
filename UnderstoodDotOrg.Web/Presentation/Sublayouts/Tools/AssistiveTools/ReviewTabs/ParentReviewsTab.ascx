@@ -45,7 +45,7 @@
                             <div class="review-section date"><asp:Literal ID="litReviewDate" runat="server"></asp:Literal></div>
                         </div>
                     <p>
-                        <strong>aperiam minima exercitationem sapiente omnis.</strong> Quod debitis quos molestiae quo nemo sed tempora deserunt at distinctio aut. illo voluptatem iure qui. sed porro iure voluptate et reprehenderit vel dolores quam maxime consequatur rerum
+                        <strong><asp:Literal ID="litTitle" runat="server"></asp:Literal></strong> <asp:Literal ID="litReviewContent" runat="server"></asp:Literal>
                     </p>
                     <asp:Repeater ID="rptSkills" runat="server" OnItemDataBound="rptSkills_ItemDataBound">
                         <HeaderTemplate>

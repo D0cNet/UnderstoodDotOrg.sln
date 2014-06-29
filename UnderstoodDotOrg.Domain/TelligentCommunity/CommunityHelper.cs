@@ -286,8 +286,6 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         var data = new NameValueCollection()
                         {
                             { "Body", body },
-                            { "PublishedDate", DateTime.Now.ToString() },
-                            { "IsApproved", "true" },
                             { "BlogId", blogId.ToString() }
                         };
 
@@ -299,7 +297,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         xmlDoc.LoadXml(response);
 
                         XmlNode node = xmlDoc.SelectSingleNode("Response/Comment");
-                        contentId = node["ContentId"].InnerText;
+                        contentId = node["CommentId"].InnerText;
                         return contentId;
                     }
                     catch { } //TODO: Add logging

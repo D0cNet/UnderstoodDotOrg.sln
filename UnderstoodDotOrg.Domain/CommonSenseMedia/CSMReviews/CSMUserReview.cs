@@ -26,6 +26,10 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
         public DateTime LastModified { get; set; }
         public string ReviewTitle { get; set; }
         public string ReviewBody { get; set; }
+        public string BlogId { get; set; }
+        public string BlogPostId { get; set; }
+        public string ContentId { get; set; }
+        public string UserScreenName { get; set; }
 
         public virtual List<AssistiveToolsSkillItem> UserReviewSkills { get; set; }
 

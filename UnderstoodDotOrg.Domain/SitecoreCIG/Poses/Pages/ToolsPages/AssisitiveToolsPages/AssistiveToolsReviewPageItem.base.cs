@@ -217,6 +217,15 @@ public CustomTextField WhatParentsNeedtoKnow
 }
 
 
+public CustomTextField BlogId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["BlogId"]);
+	}
+}
+
+
 public CustomTextField Description
 {
 	get
@@ -231,15 +240,6 @@ public CustomIntegerField Quality
 	get
 	{
 		return new CustomIntegerField(InnerItem, InnerItem.Fields["Quality"]);
-	}
-}
-
-
-public CustomTextField TelligentID
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Telligent ID"]);
 	}
 }
 
@@ -276,6 +276,24 @@ public CustomTextField AnyGood
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Any Good"]);
+	}
+}
+
+
+public CustomTextField BlogPostId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["BlogPostId"]);
+	}
+}
+
+
+public CustomTextField ContentId
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["ContentId"]);
 	}
 }
 

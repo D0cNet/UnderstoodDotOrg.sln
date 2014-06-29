@@ -17,22 +17,32 @@ using System.Web.UI.HtmlControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
+using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Services.Models.Telligent;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.ReviewTabs
 {
     public partial class ParentReviewsTab : BaseSublayout<AssistiveToolsReviewPageItem>
     {
+        public AssistiveToolsReviewPageItem pageItem = Sitecore.Context.Item;
+        public List<Comment> comments;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());
 
+            comments = TelligentService.ReadComments(pageItem.BlogId, pageItem.BlogPostId);
+
             rptReviews.DataSource = reviews;
             rptReviews.DataBind();
 
-            ddlGrades.DataSource = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
-            ddlGrades.DataTextField = "Text";
-            ddlGrades.DataValueField = "Value";
-            ddlGrades.DataBind();
+            if (!IsPostBack)
+            {
+                ddlGrades.DataSource = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
+                ddlGrades.DataTextField = "Text";
+                ddlGrades.DataValueField = "Value";
+                ddlGrades.DataBind();
+            }
 
             AssistiveToolsSkillFolderItem skillsFolder = MainsectionItem.GetGlobals().GetSkillsFolder();
             rptSkillsChecklist.DataSource = skillsFolder.InnerItem.Children;
@@ -49,7 +59,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 Literal litRating = e.FindControlAs<Literal>("litRating");
                 Literal litGrade = e.FindControlAs<Literal>("litGrade");
                 Literal litReviewDate = e.FindControlAs<Literal>("litReviewDate");
+                Literal litReviewContent = e.FindControlAs<Literal>("litReviewContent");
                 Repeater rptSkills = e.FindControlAs<Repeater>("rptSkills");
+                Literal litTitle = e.FindControlAs<Literal>("litTitle");
 
                 if (litRating != null)
                 {
@@ -70,6 +82,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
                 if (litReviewDate != null)
                     litReviewDate.Text = review.Created.ToString("MMMM dd, yyyy");
+
+                if (litReviewContent != null)
+                {
+                    litReviewContent.Text = comments.Where(i => new Guid(i.CommentId).ToString() == review.TelligentCommentId.ToString()).FirstOrDefault().Body;
+                }
+
+                if (litTitle != null)
+                    litTitle.Text = review.ReviewTitle;
 
                 if (review.UserReviewSkills.Count > 0)
                 {
@@ -110,10 +130,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             if (IsUserLoggedIn)
             {
                 CSMUserReview review = new CSMUserReview();
-                AssistiveToolsReviewPageItem page = Sitecore.Context.Item;
 
                 if (hfRating.Value != null)
                     review.Rating = Int32.Parse(hfRating.Value);
+
+                if (hfKeyValuePairs.Value != null)
+                {
+                    string[] IDs = hfKeyValuePairs.Value.Split('|');
+
+                    foreach (string s in IDs)
+                    {
+                        review.UserReviewSkills.Add(new AssistiveToolsSkillItem(Sitecore.Context.Database.GetItem(new Guid(s))));
+                    }
+                }
 
                 GradeLevelItem grade = Sitecore.Context.Database.GetItem(ddlGrades.SelectedValue);
 
@@ -129,10 +158,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 if (txbWhatYouThink != null)
                     review.ReviewBody = txbWhatYouThink.Text;
 
-                review.CSMItemId = page.ID.ToGuid();
+                review.CSMItemId = pageItem.ID.ToGuid();
                 review.MemberId = CurrentMember.MemberId;
+                review.BlogPostId = pageItem.BlogPostId;
+                review.BlogId = pageItem.BlogId;
+                review.ContentId = pageItem.ContentId;
+                review.UserScreenName = CurrentMember.ScreenName;
 
-                CSMUserReviewExtensions.InsertNewReview(review);
+                try
+                {
+                    CSMUserReviewExtensions.InsertNewReview(review);
+                }
+                catch
+                {
+                    string url = MyAccountFolderItem.GetSignUpPage();
+                    Response.Redirect(url);
+                }
             }
         }
     }

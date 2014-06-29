@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
 
 namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
 {
@@ -22,7 +23,8 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                                 " RatedGradeId, " +
                                 " GradeAppropriateness, " +
                                 " Created, " +
-                                " LastModified " +
+                                " LastModified, " +
+                                " TelligentCommentId " +
                                 " FROM CSMUserReviews " +
                                 " WHERE (CSMItemId = @CSMId)";
             try
@@ -36,9 +38,9 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                         SqlDataReader reader = cmd.ExecuteReader();
                         if (reader.HasRows)
                         {
-                            CSMUserReview review = new CSMUserReview();
                             while (reader.Read())
                             {
+                                CSMUserReview review = new CSMUserReview();
                                 review.ReviewId = reader.GetGuid(0);
                                 review.MemberId = reader.GetGuid(1);
                                 review.CSMItemId = reader.GetGuid(2);
@@ -47,10 +49,10 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                                 review.GradeAppropriateness = reader.GetInt32(5);
                                 review.Created = reader.GetDateTime(6);
                                 review.LastModified = reader.GetDateTime(7);
-                                review.UserReviewSkills = GetSkills(review.ReviewId);
+                                review.TelligentCommentId = reader.GetGuid(8);
+                                review.UserReviewSkills = GetSkills(review.ReviewId); 
+                                reviews.Add(review);
                             }
-
-                            reviews.Add(review);
                         }
                     }
                 }
@@ -100,6 +102,8 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
         public static bool InsertNewReview(CSMUserReview review)
         {
             bool success = false;
+            review.ReviewId = Guid.NewGuid();
+            string commentId = CommunityHelper.PostComment(review.BlogId, review.BlogPostId, review.ReviewBody, review.UserScreenName);
             string sql = "INSERT INTO [Understood.org.DEV.membership].[dbo].[CSMUserReviews] " +
                        "([ReviewId] " +
                        ",[MemberId] " +
@@ -109,9 +113,10 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                        ",[GradeAppropriateness] " +
                        ",[Created] " +
                        ",[LastModified] " +
-                       ",[TelligentCommentId]) " +
+                       ",[TelligentCommentId] " +
+                       ",[ReviewTitle]) " +
                  "VALUES " +
-                       "(newid(), " +
+                       "(@ReviewId, " +
                        "@MemberId, " +
                        "@CSMId, " +
                        "@ReviewRating, " +
@@ -119,7 +124,8 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                        "@GradeNumber, " +
                        "CURRENT_TIMESTAMP, " +
                        "CURRENT_TIMESTAMP, " +
-                       "newid())";
+                       "@CommentId, " +
+                       "@ReviewTitle) ";
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
@@ -131,9 +137,17 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                         cmd.Parameters.AddWithValue("@MemberId", review.MemberId);
                         cmd.Parameters.AddWithValue("@GradeId", review.RatedGradeId);
                         cmd.Parameters.AddWithValue("@ReviewRating", review.Rating);
+                        cmd.Parameters.AddWithValue("@CommentId", commentId);
+                        cmd.Parameters.AddWithValue("@ReviewId", review.ReviewId);
+                        cmd.Parameters.AddWithValue("@ReviewTitle", review.ReviewTitle);
                         cmd.Parameters.AddWithValue("@GradeNumber", review.GradeAppropriateness);
                         cmd.ExecuteNonQuery();
                         success = true;
+                    }
+
+                    if (success)
+                    {
+                        InsertAllSkills(review.UserReviewSkills, review.ReviewId);
                     }
                 }
             }
@@ -143,6 +157,14 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
             }
             success = true;
             return success;
+        }
+
+        private static void InsertAllSkills(List<AssistiveToolsSkillItem> skillList, Guid reviewId)
+        {
+            foreach (AssistiveToolsSkillItem skill in skillList)
+            {
+                InsertReviewSkill(skill.ID.ToGuid(), reviewId);
+            }
         }
 
         public static bool InsertSkill(Guid skillId)
@@ -168,6 +190,35 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
             catch (Exception ex)
             {
                 throw ex;
+            }
+            success = true;
+            return success;
+        }
+
+        public static bool InsertReviewSkill(Guid skillId, Guid reviewId)
+        {
+            bool success = false;
+            string sql = "INSERT INTO [Understood.org.DEV.membership].[dbo].[CSMReviewsToSkills] " +
+                       "([ReviewId], [SkillId]) " +
+                 "VALUES " +
+                       "(@ReviewId, @SkillId)";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@SkillId", skillId);
+                        cmd.Parameters.AddWithValue("@ReviewId", reviewId);
+                        cmd.ExecuteNonQuery();
+                        success = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
             success = true;
             return success;
