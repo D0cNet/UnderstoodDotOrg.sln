@@ -65,5 +65,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNotAgree;
+        
+        /// <summary>
+        /// uxError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder uxError;
     }
 }

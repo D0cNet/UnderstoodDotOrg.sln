@@ -29,7 +29,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
         protected void btnNotAgree_Click(object sender, EventArgs e)
         {
-            Logout(MainsectionItem.GetHomePageItem().GetUrl());
+            //Logout(MainsectionItem.GetHomePageItem().GetUrl());
+            uxError.Visible = true;
         }
 
         protected void btnAgree_Click(object sender, EventArgs e)

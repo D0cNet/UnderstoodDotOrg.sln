@@ -82,6 +82,15 @@ public CustomTextField TermsandConditionsTitle
 }
 
 
+public CustomTextField NotAgreeErrorMessage
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Not Agree Error Message"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

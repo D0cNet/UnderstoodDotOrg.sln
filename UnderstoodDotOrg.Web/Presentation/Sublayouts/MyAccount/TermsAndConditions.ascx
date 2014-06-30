@@ -32,6 +32,11 @@
                             <asp:Button ID="btnAgree" CssClass="button answer-agree rs_skip" runat="server" OnClick="btnAgree_Click" />
                             <asp:Button ID="btnNotAgree" CssClass="button gray answer-do-not-agree rs_skip" runat="server" OnClick="btnNotAgree_Click" />
                         </div>
+                        <asp:Placeholder runat="server" ID="uxError" Visible="false">
+                            <span class="validationerror">
+                                <sc:Text Field="Not Agree Error Message" runat="server"></sc:Text>
+                            </span>
+                        </asp:Placeholder>
                     </div>
                 </div>
             </div>
