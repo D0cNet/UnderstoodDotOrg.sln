@@ -40,14 +40,15 @@
         <div class="row">
             <nav class="account-nav">
                 <asp:Repeater ID="rptrAccountNav" runat="server" 
-                    ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount.MyAccountBaseItem">
+                    ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount.MyAccountBaseItem"
+                    OnItemDataBound="rptrAccountNav_ItemDataBound">
                     <ItemTemplate>
-                        <a href="<%# Item.GetUrl() %>">
+                        <asp:HyperLink ID="hlNavLink" runat="server" NavigateUrl="<%# Item.GetUrl() %>">
                             <div class="icon-wrapper">
                                 <i class="<%# Item.IconCssClass.Rendered %>"></i>
                                 <span><%# Item.AccountNavigationTitle.Rendered %></span>
                             </div>
-                        </a>
+                        </asp:HyperLink>
                     </ItemTemplate>
                 </asp:Repeater>
             </nav>
