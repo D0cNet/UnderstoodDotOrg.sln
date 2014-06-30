@@ -2,6 +2,7 @@ using System.Linq;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages
 {
@@ -24,6 +25,11 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages
         public AboutUnderstoodItem GetAboutPage()
         {
             return InnerItem.Children.FirstOrDefault(i => i.IsOfType(AboutUnderstoodItem.TemplateId));
+        }
+
+        public ToolsFolderItem GetToolsPage()
+        {
+            return InnerItem.Children.FirstOrDefault(i => i.IsOfType(ToolsFolderItem.TemplateId));
         }
     }
 }

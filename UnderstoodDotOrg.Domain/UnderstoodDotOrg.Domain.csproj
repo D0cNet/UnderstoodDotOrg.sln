@@ -293,6 +293,8 @@
     <Compile Include="SitecoreCIG\Poses\Folders\SocialMediaFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\SocialMediaFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\TimezoneFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\ToolsFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\ToolsFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\UtilityNavigationFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\UtilityNavigationFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\WelcomeTourFolderItem.base.cs" />
