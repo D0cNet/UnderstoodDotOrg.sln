@@ -7,9 +7,9 @@
                 <span class="visuallyhidden">review rating</span>
                 <div class="review-rating">
                     <!-- BEGIN PARTIAL: results-slider -->
-                    <div class="results-slider blue-four" aria-label="4">4</div>
+                    <asp:Literal ID="litAverageRating" runat="server"></asp:Literal>
                     <!-- END PARTIAL: results-slider -->
-                    <h4>7 Reviews of this App</h4>
+                    <h4><asp:Literal ID="litNumberOfReviews" runat="server"></asp:Literal></h4>
                     <p>For learning &amp; attention issues</p>
                 </div>
                 <!-- end review-rating -->
@@ -64,7 +64,7 @@
                     <div class="review-report">
                         <span class="write-review">
                             <i></i>
-                            <a href="REPLACE">Write Your Own Review</a></span>
+                            <a href="#write-review">Write Your Own Review</a></span>
                         <span class="review-report">
                             <i></i>
                             <a href="REPLACE">Report</a></span>
@@ -88,7 +88,7 @@
             </div>
             <!-- .show-more -->
             <!-- BEGIN PARTIAL: rate-this-app -->
-            <section class="rate-this-app">
+            <section id="write-review" class="rate-this-app">
                 <header>
                     <h2>Rate this App</h2>
                 </header>
@@ -196,17 +196,24 @@
                         $(".results-slider").click(function () {
                             $this = $(this);
 
-                            if($this.hasClass("blue-one"))
-                                hiddenField2.val(1);
-                            else if ($this.hasClass("blue-two"))
-                                hiddenField2.val(2);
-                            else if ($this.hasClass("blue-three"))
-                                hiddenField2.val(3);
-                            else if ($this.hasClass("blue-four"))
-                                hiddenField2.val(4);
-                            else 
-                                hiddenField2.val(5);
+                            setHiddenRatingValue($this);
                         })
+
+                        function setHiddenRatingValue($element)
+                        {
+                            if ($element.hasClass("blue-one"))
+                                hiddenField2.val(1);
+                            else if ($element.hasClass("blue-two"))
+                                hiddenField2.val(2);
+                            else if ($element.hasClass("blue-three"))
+                                hiddenField2.val(3);
+                            else if ($element.hasClass("blue-four"))
+                                hiddenField2.val(4);
+                            else
+                                hiddenField2.val(5);
+                        }
+
+                        setHiddenRatingValue($(".is-it-any-good .results-slider"));
                     })
                 </script>
                 <button ID="btnSubmit" class="review-submit" runat="server" type="button" onserverclick="btnSubmit_Click">Submit</button>

@@ -42,11 +42,41 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 ddlGrades.DataTextField = "Text";
                 ddlGrades.DataValueField = "Value";
                 ddlGrades.DataBind();
+                
+                List<ListItem> iThinkItIsItems = new List<ListItem>();
+
+                iThinkItIsItems.Add(new ListItem("Select", "", true));
+                iThinkItIsItems.Add(new ListItem("On", "On", true));
+                iThinkItIsItems.Add(new ListItem("Off", "Off", true));
+                iThinkItIsItems.Add(new ListItem("Middle", "Middle", true));
+
+                ddlIThinkItIs.DataSource = iThinkItIsItems;
+                ddlIThinkItIs.DataTextField = "Text";
+                ddlIThinkItIs.DataValueField = "Value";
+                ddlIThinkItIs.DataBind();
             }
 
             AssistiveToolsSkillFolderItem skillsFolder = MainsectionItem.GetGlobals().GetSkillsFolder();
             rptSkillsChecklist.DataSource = skillsFolder.InnerItem.Children;
             rptSkillsChecklist.DataBind();
+
+            litAverageRating.Text = GetRatingHTML(Int32.Parse(CSMUserReviewExtensions.GetAverageRating(pageItem.ID.ToGuid())));
+
+            litNumberOfReviews.Text = reviews.Count.ToString() + " Reviews of this App";
+        }
+
+        protected string GetRatingHTML(int rating)
+        {
+            if (rating == 1)
+                return "<div class='results-slider blue-one' aria-label='1'>1</div>";
+            else if (rating == 2)
+                return "<div class='results-slider blue-two' aria-label='2'>2</div>";
+            else if (rating == 3)
+                return "<div class='results-slider blue-three' aria-label='3'>3</div>";
+            else if (rating == 4)
+                return "<div class='results-slider blue-four' aria-label='4'>4</div>";
+            else
+                return "<div class='results-slider blue-five' aria-label='5'>5</div>";
         }
 
         protected void rptReviews_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -65,16 +95,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
                 if (litRating != null)
                 {
-                    if (review.Rating == 1)
-                        litRating.Text = "<div class='results-slider blue-one' aria-label='1'>1</div>";
-                    else if (review.Rating == 2)
-                        litRating.Text = "<div class='results-slider blue-two' aria-label='2'>2</div>";
-                    else if (review.Rating == 3)
-                        litRating.Text = "<div class='results-slider blue-three' aria-label='3'>3</div>";
-                    else if (review.Rating == 4)
-                        litRating.Text = "<div class='results-slider blue-four' aria-label='4'>4</div>";
-                    else
-                        litRating.Text = "<div class='results-slider blue-five' aria-label='5'>5</div>";
+                    litRating.Text = GetRatingHTML(review.Rating);
                 }
 
                 if (litGrade != null)
@@ -164,6 +185,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 review.BlogId = pageItem.BlogId;
                 review.ContentId = pageItem.ContentId;
                 review.UserScreenName = CurrentMember.ScreenName;
+                review.IThinkItIs = ddlIThinkItIs.SelectedValue;
 
                 try
                 {
@@ -171,9 +193,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 }
                 catch
                 {
-                    string url = MyAccountFolderItem.GetSignUpPage();
-                    Response.Redirect(url);
+                    //something went wrong
                 }
+            }
+            else
+            {
+                string url = MyAccountFolderItem.GetSignUpPage();
+                Response.Redirect(url);
             }
         }
     }

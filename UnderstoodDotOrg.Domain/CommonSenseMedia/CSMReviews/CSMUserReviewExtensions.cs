@@ -24,7 +24,8 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                                 " GradeAppropriateness, " +
                                 " Created, " +
                                 " LastModified, " +
-                                " TelligentCommentId " +
+                                " TelligentCommentId, " +
+                                " ReviewTitle " +
                                 " FROM CSMUserReviews " +
                                 " WHERE (CSMItemId = @CSMId)";
             try
@@ -50,6 +51,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                                 review.Created = reader.GetDateTime(6);
                                 review.LastModified = reader.GetDateTime(7);
                                 review.TelligentCommentId = reader.GetGuid(8);
+                                review.ReviewTitle = reader.GetString(9);
                                 review.UserReviewSkills = GetSkills(review.ReviewId); 
                                 reviews.Add(review);
                             }
@@ -114,7 +116,8 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                        ",[Created] " +
                        ",[LastModified] " +
                        ",[TelligentCommentId] " +
-                       ",[ReviewTitle]) " +
+                       ",[ReviewTitle] " +
+                       ",[IThinkItIs]) " +
                  "VALUES " +
                        "(@ReviewId, " +
                        "@MemberId, " +
@@ -125,7 +128,8 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                        "CURRENT_TIMESTAMP, " +
                        "CURRENT_TIMESTAMP, " +
                        "@CommentId, " +
-                       "@ReviewTitle) ";
+                       "@ReviewTitle, " +
+                       "@IThinkItIs) ";
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
@@ -140,6 +144,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                         cmd.Parameters.AddWithValue("@CommentId", commentId);
                         cmd.Parameters.AddWithValue("@ReviewId", review.ReviewId);
                         cmd.Parameters.AddWithValue("@ReviewTitle", review.ReviewTitle);
+                        cmd.Parameters.AddWithValue("@IThinkItIs", review.IThinkItIs);
                         cmd.Parameters.AddWithValue("@GradeNumber", review.GradeAppropriateness);
                         cmd.ExecuteNonQuery();
                         success = true;
@@ -252,7 +257,35 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
             {
                 return true;
             }
-            return false;
+        }
+
+        public static string GetAverageRating(Guid CSMId)
+        {
+            string sql = "SELECT AVG (Rating) as AverageRating" +
+                          "FROM CSMUserReviews " +
+                          "WHERE (CSMItemId = @CSMId)";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CSMId", CSMId);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            return reader.GetInt32(0).ToString();
+                        }
+                        else
+                            return "1";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return "1";
+            }
         }
     }
 }

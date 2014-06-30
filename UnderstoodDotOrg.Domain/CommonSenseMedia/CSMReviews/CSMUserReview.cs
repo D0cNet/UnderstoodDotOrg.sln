@@ -30,6 +30,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
         public string BlogPostId { get; set; }
         public string ContentId { get; set; }
         public string UserScreenName { get; set; }
+        public string IThinkItIs { get; set; }
 
         public virtual List<AssistiveToolsSkillItem> UserReviewSkills { get; set; }
 
