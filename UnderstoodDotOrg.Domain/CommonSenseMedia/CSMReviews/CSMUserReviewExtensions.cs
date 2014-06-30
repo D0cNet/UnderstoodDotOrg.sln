@@ -106,7 +106,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
             bool success = false;
             review.ReviewId = Guid.NewGuid();
             string commentId = CommunityHelper.PostComment(review.BlogId, review.BlogPostId, review.ReviewBody, review.UserScreenName);
-            string sql = "INSERT INTO [Understood.org.DEV.membership].[dbo].[CSMUserReviews] " +
+            string sql = "INSERT INTO [CSMUserReviews] " +
                        "([ReviewId] " +
                        ",[MemberId] " +
                        ",[CSMItemId] " +
@@ -175,7 +175,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
         public static bool InsertSkill(Guid skillId)
         {
             bool success = false;
-            string sql = "INSERT INTO [Understood.org.DEV.membership].[dbo].[CSMUserReviewSkills] " +
+            string sql = "INSERT INTO [CSMUserReviewSkills] " +
                        "([SkillId]) " +
                  "VALUES " +
                        "(@SkillId)";
@@ -203,7 +203,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
         public static bool InsertReviewSkill(Guid skillId, Guid reviewId)
         {
             bool success = false;
-            string sql = "INSERT INTO [Understood.org.DEV.membership].[dbo].[CSMReviewsToSkills] " +
+            string sql = "INSERT INTO [CSMReviewsToSkills] " +
                        "([ReviewId], [SkillId]) " +
                  "VALUES " +
                        "(@ReviewId, @SkillId)";
