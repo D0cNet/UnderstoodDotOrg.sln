@@ -31,7 +31,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
                 {
                     TemplateItem reviewTemplate = Sitecore.Configuration.Factory.GetDatabase("master").GetTemplate(ReviewItem.TemplateId);
 
-                    Item newReview = Get(MainsectionItem.GetHomePageItem().GetToolsPage().GetAssistiveToolsLandingPage().GetSearchPage().InnerItem.TemplateID.ToString()).Add(CommonSenseImportHelper.removePunctuation(Review.Title), reviewTemplate);
+                    Item newReview = Get(MainsectionItem.GetHomePageItem().GetToolsPage().GetAssistiveToolsLandingPage().GetSearchPage().ID.ToString()).Add(CommonSenseImportHelper.removePunctuation(Review.Title), reviewTemplate);
 
                     newReview.Editing.BeginEdit();
 

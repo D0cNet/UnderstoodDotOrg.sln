@@ -320,7 +320,7 @@ namespace UnderstoodDotOrg.Domain.Importer
                     options.Database = Sitecore.Configuration.Factory.GetDatabase("master");
                     options.Language = Sitecore.Globalization.Language.Parse(Sitecore.Configuration.Settings.DefaultLanguage);
                     options.Versioned = false;
-                    Item mediaFolder = Sitecore.Context.Database.GetItem("{7B9F34AA-10FA-49B5-A6C3-DC8A440D1695}");
+                    Item mediaFolder = Sitecore.Context.Database.GetItem("{42DFBB81-6182-4EB4-BC28-D6EF535D84F3}");
                     options.Destination = string.Format("{0}/{1}", mediaFolder.Paths.FullPath, Name);
                     options.FileBased = Sitecore.Configuration.Settings.Media.UploadAsFiles;
 
