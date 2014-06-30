@@ -52,6 +52,16 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
                     return;
                 }
 
+                // Fallback for no sorting
+                if (sortBy == 0)
+                {
+                    sortOption = new CommentSortOption
+                    {
+                        Value = Constants.TelligentCommentSort.CreateDate,
+                        SortAscending = true
+                    };
+                }
+
                 var comments = TelligentService.ReadComments(BlogId, PostId, page, pageSize, sortOption, out totalResults, out hasMoreResults);
 
                 if (comments.Any())

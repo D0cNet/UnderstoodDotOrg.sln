@@ -609,8 +609,7 @@ $(document).ready(function () {
             'page': currentPage + 1,
 			'blog': blog,
 			'post': post,
-			'sortBy': parseInt($sortOption.prop('selectedIndex'), 10),
-			'ascending': 1
+			'sortBy': parseInt($sortOption.prop('selectedIndex'), 10)
 		};
 		
 		$.ajax({
