@@ -6,6 +6,7 @@ using Sitecore.Configuration;
 using System;
 using Sitecore.Data.Fields;
 using Sitecore.Links;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
 
 namespace UnderstoodDotOrg.Domain.CommonSenseMedia
 {
@@ -193,7 +194,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
 
                 if (mappedReview["skills"] != null && Review.Skills != null)
                 {
-                    mappedReview["skills"] = CommonSenseImportHelper.MatchCSV(Review.Skills, "{0AC054FE-599B-4B8A-B5A2-BA805260674B}").Trim();
+                    mappedReview["skills"] = CommonSenseImportHelper.MatchCSV(Review.Skills, MainsectionItem.GetGlobals().GetSkillsFolder().ID.ToString()).Trim();
                 }
 
                 if (mappedReview["subjects"] != null && Review.Subjects != null)

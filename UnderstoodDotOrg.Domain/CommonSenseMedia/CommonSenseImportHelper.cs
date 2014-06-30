@@ -241,13 +241,15 @@ namespace UnderstoodDotOrg.Domain.Importer
                 bool added = false;
                 string itemTemplateID = "";
                 ChildList children = folderItem.Children;
+                string strippedString = removePunctuation(s);
                 foreach (Item i in children)
                 {
                     itemTemplateID = i.TemplateID.ToString();
-                    if (i.Fields["Content Title"].ToString().ToLower().Trim() == s.ToLower().Trim())
+                    if (i.Fields["Content Title"].ToString().ToLower().Trim() == strippedString.ToLower().Trim())
                     {
                         ret.Add(i.ID.ToString());
                         added = true;
+                        break;
                     }
                 }
                 if (!added)
@@ -256,7 +258,7 @@ namespace UnderstoodDotOrg.Domain.Importer
                     {
                         if (!string.IsNullOrEmpty(itemTemplateID))
                         {
-                            string id = addMetadata(s, folder, itemTemplateID);
+                            string id = addMetadata(strippedString, folder, itemTemplateID);
                             ret.Add(id);
                         }
                     }
