@@ -12,7 +12,6 @@ namespace UnderstoodDotOrg.Common
         public const int PERSONALIZATION_ARTICLES_PER_BUCKET = 8;
         public const int SEARCH_RESULTS_ENTRIES_PER_PAGE = 5;
         public const int BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE = 9;
-        public const int DEFAULT_NEW_LIST_COUNT_PER_CLICK = 6;
         public const int TOPIC_LISTING_ARTICLES_PER_PAGE = 6;
         public const int SECTION_LANDING_ARTICLES_PER_ROW = 3;
         public const int SUBTOPIC_LISTING_ARTICLES_PER_PAGE = 9;
@@ -23,6 +22,7 @@ namespace UnderstoodDotOrg.Common
         public const int SUBTOPIC_WIDGETS_ENTRIES = 3;
         public const int MORE_LIKE_THIS_ENTRIES = 6;
         public const int ARTICLE_COMMENTS_PER_PAGE = 5;
+        public const int HOMEPAGE_FEATURED_ARTICLES = 6;
 
         #region Query Strings
 

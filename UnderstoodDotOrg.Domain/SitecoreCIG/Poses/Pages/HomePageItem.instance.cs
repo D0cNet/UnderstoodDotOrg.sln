@@ -1,17 +1,18 @@
-using System.Collections.Generic;
+using System.Linq;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
-using System.Linq;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages {
-    public partial class HomePageItem {
-
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages
+{
+    public partial class HomePageItem
+    {
         /// <summary>
         /// Get Page Resource Folder Item.
         /// </summary>
         /// <returns></returns>
-        public PageResourceFolderItem GetPageResourceFolderItem() {
+        public PageResourceFolderItem GetPageResourceFolderItem()
+        {
             return InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(PageResourceFolderItem.TemplateId)).Select(i => (PageResourceFolderItem)i).FirstOrDefault();
         }
 

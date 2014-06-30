@@ -1065,6 +1065,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string RecommendedForYouLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Recommended For You Label");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

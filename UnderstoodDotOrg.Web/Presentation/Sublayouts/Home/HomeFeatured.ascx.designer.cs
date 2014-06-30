@@ -13,13 +13,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home {
     public partial class HomeFeatured {
         
         /// <summary>
-        /// litFeatured control.
+        /// litModuleTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litFeatured;
+        protected global::System.Web.UI.WebControls.Literal litModuleTitle;
         
         /// <summary>
         /// rptFeaturedArticles control.
