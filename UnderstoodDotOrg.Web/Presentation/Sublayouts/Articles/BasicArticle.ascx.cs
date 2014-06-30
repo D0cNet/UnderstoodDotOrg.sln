@@ -41,21 +41,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 divKeyTakeAways.Visible = false;
             }
-
-			imgFeaturedImage.ImageUrl = FeaturedImage(Sitecore.Context.Item);
-
         }
-
-		public static string FeaturedImage(Item currentItem)
-		{
-			string imageURL = string.Empty;
-			Sitecore.Data.Fields.ImageField imageField = currentItem.Fields["Featured Image"];
-			if (imageField != null && imageField.MediaItem != null)
-			{
-				Sitecore.Data.Items.MediaItem image = new Sitecore.Data.Items.MediaItem(imageField.MediaItem);
-				imageURL = Sitecore.StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(image));
-			}
-			return imageURL;
-		}
     }
 }

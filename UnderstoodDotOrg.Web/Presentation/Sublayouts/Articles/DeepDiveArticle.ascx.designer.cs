@@ -31,15 +31,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.ListView rptSectionList;
         
         /// <summary>
-        /// imgFeaturedImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgFeaturedImage;
-        
-        /// <summary>
         /// rptSections control.
         /// </summary>
         /// <remarks>

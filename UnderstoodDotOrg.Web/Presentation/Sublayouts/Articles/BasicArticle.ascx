@@ -8,9 +8,11 @@
             <div class="rs_read_this">
                 <!-- BEGIN PARTIAL: at-a-glance -->
                 <div id="divAtAGlance" runat="server" class="at-a-glance">
+
 					<div class="article-feature-image">
-						<asp:Image runat="server" Width="100%" ID="imgFeaturedImage" />
+						<sc:fieldrenderer runat="server" fieldname="Featured Image" Parameters="class=fullDimensions&mw=1178&mh=662" />
 					</div>
+
                     <header class='header-at-a-glance'>
                         <h2><%--At-a-glance--%>
                             <asp:Literal ID="litAtAGlanceHeader" runat="server"></asp:Literal>
