@@ -91,6 +91,7 @@ namespace UnderstoodDotOrg.Common
 			public static int EM24ContentSharedWithAFriendENID = 956;
 			public static int EM25WebinarSharedWithAFriendENID = 531;
 			public static int EM28AppsTechnologySharedWithAFriend = 538;
+            public static int BehaviorToolSuggestion = 1543;
 		}
 
         public const string ARTICLE_SEARCH_INDEX_NAME = "sitecore_web_index";
@@ -741,6 +742,7 @@ namespace UnderstoodDotOrg.Common
             public static string GradeLevelTargetMultiplier = "GradeLevelTargetMultiplier";
             public static string CommentsListEndpoint = "CommentsListEndpoint";
             public static string ContentServiceEndpoint = "ContentServiceEndpoint";
+            public static string BehaviorToolSuggestionEmail = "BehaviorToolSuggestionEmail";
         }
 
         public static class ContentItem

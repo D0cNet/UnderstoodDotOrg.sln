@@ -4,7 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Script.Services;
 using System.Web.Services;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.ExactTarget;
 using UnderstoodDotOrg.Domain.Understood.Submissions;
+using UnderstoodDotOrg.Services.ExactTarget;
 
 namespace UnderstoodDotOrg.Web.Handlers
 {
@@ -25,12 +28,17 @@ namespace UnderstoodDotOrg.Web.Handlers
             message = message.Trim();
 
             // TODO: Submit to salesforce
-
+            BaseRequest request = new BaseRequest
+            {
+                ToEmail = Sitecore.Configuration.Settings.GetSetting(Constants.Settings.BehaviorToolSuggestionEmail)
+            };
+            
+            var response = ExactTargetService.SendBehaviorToolSuggestion(request, message);
 
             return new SubmissionResult
             {
-                Message = String.Empty,
-                IsValid = !String.IsNullOrEmpty(message)
+                Message = response.Message,
+                IsValid = response.Successful
             };
         }
     }

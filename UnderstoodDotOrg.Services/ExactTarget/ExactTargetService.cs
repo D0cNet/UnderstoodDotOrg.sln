@@ -2243,6 +2243,66 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			return reply;
 		}
 
+        public static BaseReply SendBehaviorToolSuggestion(BaseRequest request, string message)
+        {
+            BaseReply reply = new BaseReply();
+
+            SoapClient client = ExactTargetService.GetInstance();
+
+            StringBuilder sbReturnString = new StringBuilder();
+
+            Guid preferredLanguage = request.PreferredLanguage;
+            int emailTemplateID = Constants.EmailIDs.BehaviorToolSuggestion;
+
+            try
+            {
+                //Create a GUID for ESD to ensure a unique name and customer key
+                TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Parent Toolkit");
+
+                string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+                if (cStatus == "OK")
+                {
+                    tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+                    tsd.TriggeredSendStatusSpecified = true; //required
+
+                    string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+                    if (uStatus == "OK")
+                    {
+                        // *** SEND THE TRIGGER EMAIL
+                        Subscriber sub = new Subscriber
+                        {
+                            EmailAddress = request.ToEmail,
+                            SubscriberKey = request.ToEmail,
+                        };
+
+                        sub.Attributes = new etAPI.Attribute[]
+                        {
+                            new etAPI.Attribute
+                            {
+                                Name = "HTML_CONTENT",
+                                Value = message   
+                            }
+                        };
+
+                        ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, sub);
+
+                        reply.Successful = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                reply.Successful = false;
+                reply.Message = "Unable to send Behavior Suggestion email."; ;
+
+                Log.Error("Error sending behavior suggestion", ex);
+            }
+
+            return reply;
+        }
+
         private static int GetEmailTemplateId(Guid preferredLanguage, int defaultId, int spanishId)
         {
             if (preferredLanguage == Constants.Language_Spanish) 
