@@ -25,7 +25,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic
         {
             bool hasMoreResults;
             articleListing.Articles = Model.GetTopicArticles(1, out hasMoreResults);
-            pnlMoreArticle.Visible = hasMoreResults;
+            if (articleListing.Articles.Any())
+            {
+                pnlMoreArticle.Visible = hasMoreResults;
+            }
         }
     }
 }

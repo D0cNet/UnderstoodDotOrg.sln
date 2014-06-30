@@ -11,14 +11,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     
     
     public partial class TipsArticle {
-        
-        /// <summary>
-        /// Sublayout1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout1;
     }
 }

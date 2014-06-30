@@ -564,13 +564,6 @@
     <Compile Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx.designer.cs">
       <DependentUpon>QuizKeepReadingControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx.cs">
-      <DependentUpon>QuizMiniToolsContainer.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx.designer.cs">
-      <DependentUpon>QuizMiniToolsContainer.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx.cs">
       <DependentUpon>QuizTryMoreQuizzes.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2722,7 +2715,6 @@
     <Content Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\QuizMiniToolsContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\DidYouFindThisHelpful.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\DidYouFindThisHelpfulOther.ascx" />
