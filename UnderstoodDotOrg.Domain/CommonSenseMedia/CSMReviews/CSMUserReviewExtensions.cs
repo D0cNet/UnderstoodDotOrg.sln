@@ -261,7 +261,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
 
         public static string GetAverageRating(Guid CSMId)
         {
-            string sql = "SELECT AVG (Rating) as AverageRating" +
+            string sql = "SELECT AVG (Rating) as AverageRating " +
                           "FROM CSMUserReviews " +
                           "WHERE (CSMItemId = @CSMId)";
             try
@@ -275,6 +275,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                         SqlDataReader reader = cmd.ExecuteReader();
                         if (reader.HasRows)
                         {
+                            reader.Read();
                             return reader.GetInt32(0).ToString();
                         }
                         else
