@@ -13,13 +13,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
     public partial class MyCommentsTest {
         
         /// <summary>
-        /// lblCount control.
+        /// litCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCount;
+        protected global::System.Web.UI.WebControls.Literal litCount;
         
         /// <summary>
         /// pnlComments control.
@@ -28,7 +28,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlComments;
+        protected global::System.Web.UI.WebControls.PlaceHolder pnlComments;
         
         /// <summary>
         /// rptComments control.
@@ -55,7 +55,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNoComments;
+        protected global::System.Web.UI.WebControls.PlaceHolder pnlNoComments;
         
         /// <summary>
         /// pnlNoProfile control.
@@ -64,7 +64,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNoProfile;
+        protected global::System.Web.UI.WebControls.PlaceHolder pnlNoProfile;
         
         /// <summary>
         /// hypCompleteYourProfile control.

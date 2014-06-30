@@ -33,7 +33,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 
                 List<Comment> commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
 
-                lblCount.Text = commentsList.Count.ToString();
+                litCount.Text = commentsList.Count.ToString();
 
                 if ((commentsList != null) && (commentsList.Count != 0))
                 {
