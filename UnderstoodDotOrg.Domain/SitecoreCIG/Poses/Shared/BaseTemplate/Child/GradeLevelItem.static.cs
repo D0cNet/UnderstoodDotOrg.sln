@@ -11,7 +11,8 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child
     {
         public static IEnumerable<GradeLevelItem> GetGrades(bool MakeDisplaySafe = true)
         {
-            var ret = Sitecore.Context.Database.SelectItems("/sitecore/content/Globals/Content Taxonomies/Child Related/Grade/*")
+            var ret = Sitecore.Context.Database.GetItem("/sitecore/content/Globals/Content Taxonomies/Child Related/Grade/")
+                .GetChildren()
                 .Where(x => x.TemplateID.ToString() == GradeLevelItem.TemplateId)
                 .Select(x => new GradeLevelItem(x));
 
