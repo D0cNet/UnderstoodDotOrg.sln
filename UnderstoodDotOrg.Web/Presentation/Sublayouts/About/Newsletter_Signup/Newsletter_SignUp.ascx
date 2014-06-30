@@ -43,11 +43,11 @@
                         <div class="newsletter-input-wrap">
                             <label for="signup-newsletter-email" class="visuallyhidden"></label>
                             <asp:TextBox ID="txtEmail" runat="server" />
+							<asp:Label runat="server" ID="lblEmailFail" Text="" />
                             <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" Display="Static" />
                         </div>
                         <div class="newsletter-button-wrap">
                             <asp:Button ID="btnSignup" runat="server" OnClick="btnSignup_Click" CssClass="button newsletter-button disabled" />
-							<asp:Label runat="server" ID="lblEmailFail" ForeColor="#cc0000" Text="" />
                         </div>
                     </fieldset>
 

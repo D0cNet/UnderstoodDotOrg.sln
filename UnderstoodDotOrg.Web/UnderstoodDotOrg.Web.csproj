@@ -2077,6 +2077,7 @@
       <DependentUpon>BehaviorToolsLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="XmlRTEControls\QuoteTag.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

@@ -30,6 +30,10 @@
                         </asp:ListView>
 
                     </div>
+
+					<div class="article-feature-image">
+						<asp:Image runat="server" Width="100%" ID="imgFeaturedImage" />
+					</div>
                     <!-- END whats-covered -->
                     <!-- END PARTIAL: whats-covered -->
                     <!-- FIXME: add correct article content for A8a here. see speckle. -->

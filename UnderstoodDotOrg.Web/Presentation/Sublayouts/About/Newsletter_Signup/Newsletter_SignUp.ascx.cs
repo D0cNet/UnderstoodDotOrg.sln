@@ -62,11 +62,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 
 				if (checkValidity != null && !string.IsNullOrEmpty(checkValidity.Email))
 				{
-					lblEmailFail.Text = "It appears you already have an Email with us, please sign in first.";								
+					lblEmailFail.Text = "It appears you already have an Email with us. Please sign in first.";								
 				}
 				else
 				{
-					
 					Submission submission = new Submission
 					{
 						Email = email
@@ -74,8 +73,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 
 					Session[Constants.SessionNewsletterKey] = submission;
 
-					var item = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.NewsletterChildInfo.ToString()));
-					Response.Redirect(item.GetUrl());
+					//if (string.IsNullOrEmpty(CurrentMember.MemberId.ToString()))
+					{
+						var item = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.NewsletterChildInfo.ToString()));
+						Response.Redirect(item.GetUrl());
+					}
 				}
             }
         }
