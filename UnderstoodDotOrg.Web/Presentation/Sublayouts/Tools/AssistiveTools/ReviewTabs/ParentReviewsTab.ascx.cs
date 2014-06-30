@@ -29,12 +29,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());
-
             comments = TelligentService.ReadComments(pageItem.BlogId, pageItem.BlogPostId);
-
-            rptReviews.DataSource = reviews;
-            rptReviews.DataBind();
 
             if (!IsPostBack)
             {
@@ -48,12 +43,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 iThinkItIsItems.Add(new ListItem("Select", "", true));
                 iThinkItIsItems.Add(new ListItem("On", "On", true));
                 iThinkItIsItems.Add(new ListItem("Off", "Off", true));
-                iThinkItIsItems.Add(new ListItem("Middle", "Middle", true));
+                iThinkItIsItems.Add(new ListItem("Pause", "Pause", true));
 
                 ddlIThinkItIs.DataSource = iThinkItIsItems;
                 ddlIThinkItIs.DataTextField = "Text";
                 ddlIThinkItIs.DataValueField = "Value";
                 ddlIThinkItIs.DataBind();
+
+                List<ListItem> sortingOptions = new List<ListItem>();
+
+                sortingOptions.Add(new ListItem("Date: Newest to Oldest", "1", true));
+                sortingOptions.Add(new ListItem("Date: Oldest to Newest", "2", true));
+                sortingOptions.Add(new ListItem("Rating: Highest to Lowest", "3", true));
+                sortingOptions.Add(new ListItem("Rating: Lowest to Highest", "4", true));
+
+                ddlSorting.DataSource = sortingOptions;
+                ddlSorting.DataBind();
+
+                BindReviews();
             }
 
             AssistiveToolsSkillFolderItem skillsFolder = MainsectionItem.GetGlobals().GetSkillsFolder();
@@ -61,8 +68,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             rptSkillsChecklist.DataBind();
 
             litAverageRating.Text = GetRatingHTML(Int32.Parse(CSMUserReviewExtensions.GetAverageRating(pageItem.ID.ToGuid())));
-
-            litNumberOfReviews.Text = reviews.Count.ToString() + " Reviews of this App";
         }
 
         protected string GetRatingHTML(int rating)
@@ -79,6 +84,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 return "<div class='results-slider blue-five' aria-label='5'>5</div>";
         }
 
+        protected void BindReviews()
+        {
+            List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());
+
+            if (ddlSorting.SelectedIndex == 0)
+            {
+                rptReviews.DataSource = reviews.OrderBy(i => i.Created);
+            }
+            else if (ddlSorting.SelectedIndex == 1)
+            {
+                rptReviews.DataSource = reviews.OrderBy(i => i.Created).Reverse();
+            }
+            else if (ddlSorting.SelectedIndex == 2)
+            {
+                rptReviews.DataSource = reviews.OrderBy(i => i.Rating).Reverse();
+            }
+            else
+            {
+                rptReviews.DataSource = reviews.OrderBy(i => i.Rating);
+            }
+
+            rptReviews.DataBind();
+
+            litNumberOfReviews.Text = reviews.Count.ToString() + " Reviews of this App";
+        }
+
         protected void rptReviews_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             CSMUserReview review = e.Item.DataItem as CSMUserReview;
@@ -92,6 +123,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 Literal litReviewContent = e.FindControlAs<Literal>("litReviewContent");
                 Repeater rptSkills = e.FindControlAs<Repeater>("rptSkills");
                 Literal litTitle = e.FindControlAs<Literal>("litTitle");
+                HtmlAnchor reportAnchor = e.FindControlAs<HtmlAnchor>("reportAnchor");
 
                 if (litRating != null)
                 {
@@ -106,7 +138,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
                 if (litReviewContent != null)
                 {
-                    litReviewContent.Text = comments.Where(i => new Guid(i.CommentId).ToString() == review.TelligentCommentId.ToString()).FirstOrDefault().Body;
+                    Comment comment = comments.Where(i => new Guid(i.CommentId).ToString() == review.TelligentCommentId.ToString()).FirstOrDefault();
+                    if(comment != null)
+                        litReviewContent.Text = comment.Body;
+                    else
+                        e.Item.Visible = false;
                 }
 
                 if (litTitle != null)
@@ -117,6 +153,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                     rptSkills.DataSource = review.UserReviewSkills;
                     rptSkills.DataBind();
                 }
+
+                reportAnchor.Attributes.Add("data-id", review.TelligentCommentId.ToString());
             }
         }
 
@@ -150,50 +188,59 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         {
             if (IsUserLoggedIn)
             {
-                CSMUserReview review = new CSMUserReview();
+                Page.Validate("vlgReviewInputs");
 
-                if (hfRating.Value != null)
-                    review.Rating = Int32.Parse(hfRating.Value);
-
-                if (hfKeyValuePairs.Value != null)
+                if (Page.IsValid)
                 {
-                    string[] IDs = hfKeyValuePairs.Value.Split('|');
+                    CSMUserReview review = new CSMUserReview();
 
-                    foreach (string s in IDs)
+                    if (hfRating.Value != null)
+                        review.Rating = Int32.Parse(hfRating.Value);
+
+                    if (hfKeyValuePairs.Value != null)
                     {
-                        review.UserReviewSkills.Add(new AssistiveToolsSkillItem(Sitecore.Context.Database.GetItem(new Guid(s))));
+                        string[] IDs = hfKeyValuePairs.Value.Split('|');
+
+                        foreach (string s in IDs)
+                        {
+                            review.UserReviewSkills.Add(new AssistiveToolsSkillItem(Sitecore.Context.Database.GetItem(new Guid(s))));
+                        }
                     }
-                }
 
-                GradeLevelItem grade = Sitecore.Context.Database.GetItem(ddlGrades.SelectedValue);
+                    GradeLevelItem grade = Sitecore.Context.Database.GetItem(ddlGrades.SelectedValue);
 
-                if (grade != null)
-                {
-                    review.GradeAppropriateness = grade.GradeNumber;
-                    review.RatedGradeId = grade.ID.ToGuid();
-                }
+                    if (grade != null)
+                    {
+                        review.GradeAppropriateness = grade.GradeNumber;
+                        review.RatedGradeId = grade.ID.ToGuid();
+                    }
 
-                if (txbReviewTitle.Text != null)
-                    review.ReviewTitle = txbReviewTitle.Text;
+                    if (txbReviewTitle.Text != null)
+                        review.ReviewTitle = txbReviewTitle.Text;
 
-                if (txbWhatYouThink != null)
-                    review.ReviewBody = txbWhatYouThink.Text;
+                    if (txbWhatYouThink != null)
+                        review.ReviewBody = txbWhatYouThink.Text;
 
-                review.CSMItemId = pageItem.ID.ToGuid();
-                review.MemberId = CurrentMember.MemberId;
-                review.BlogPostId = pageItem.BlogPostId;
-                review.BlogId = pageItem.BlogId;
-                review.ContentId = pageItem.ContentId;
-                review.UserScreenName = CurrentMember.ScreenName;
-                review.IThinkItIs = ddlIThinkItIs.SelectedValue;
+                    review.CSMItemId = pageItem.ID.ToGuid();
+                    review.MemberId = CurrentMember.MemberId;
+                    review.BlogPostId = pageItem.BlogPostId;
+                    review.BlogId = pageItem.BlogId;
+                    review.ContentId = pageItem.ContentId;
+                    review.UserScreenName = CurrentMember.ScreenName;
+                    review.IThinkItIs = ddlIThinkItIs.SelectedValue;
 
-                try
-                {
-                    CSMUserReviewExtensions.InsertNewReview(review);
-                }
-                catch
-                {
-                    //something went wrong
+                    try
+                    {
+                        CSMUserReviewExtensions.InsertNewReview(review);
+
+                        BindReviews();
+
+                        Response.Redirect(Request.RawUrl);
+                    }
+                    catch
+                    {
+                        //something went wrong
+                    }
                 }
             }
             else
@@ -201,6 +248,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 string url = MyAccountFolderItem.GetSignUpPage();
                 Response.Redirect(url);
             }
+        }
+
+        protected void reportAnchor_ServerClick(object sender, EventArgs e)
+        {
+            HtmlAnchor button = sender as HtmlAnchor;
+
+            TelligentService.FlagComment(button.Attributes["data-id"]);
+        }
+
+        protected void ddlSorting_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BindReviews();
         }
     }
 }

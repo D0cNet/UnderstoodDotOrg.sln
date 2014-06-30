@@ -31,6 +31,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         protected global::System.Web.UI.WebControls.Literal litNumberOfReviews;
         
         /// <summary>
+        /// ddlSorting control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSorting;
+        
+        /// <summary>
         /// rptReviews control.
         /// </summary>
         /// <remarks>

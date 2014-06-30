@@ -15,11 +15,7 @@
                 <!-- end review-rating -->
                 <div class="review-rating-sort select-inverted-mobile">
                     <label for="parent-review-comment-sort">Sort By:</label>
-                    <select name="comment-sort-option" class="comment-sort" id="parent-review-comment-sort">
-                        <option value="">Date: Newest to Oldest</option>
-                        <option>A-Z</option>
-                        <option>Z-A</option>
-                    </select>
+                    <asp:DropDownList ID="ddlSorting" runat="server" CssClass="comment-sort" AutoPostBack="true" OnSelectedIndexChanged="ddlSorting_SelectedIndexChanged"></asp:DropDownList>
                 </div>
                 <!-- end review-rating -->
             </div>
@@ -67,7 +63,7 @@
                             <a href="#write-review">Write Your Own Review</a></span>
                         <span class="review-report">
                             <i></i>
-                            <a href="REPLACE">Report</a></span>
+                            <a href="#" id="reportAnchor" runat="server" onserverclick="reportAnchor_ServerClick">Report</a></span>
                     </div>
                     <!-- end review-report -->
                     </ItemTemplate>
