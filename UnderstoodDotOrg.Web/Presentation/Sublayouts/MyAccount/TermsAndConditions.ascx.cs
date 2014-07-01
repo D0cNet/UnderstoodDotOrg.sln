@@ -44,10 +44,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             // send them to My Account, not into CMP
             string url = MyAccountFolderItem.GetMyAccountPage();
             
-            if (Session[Constants.SessionPreviousUrl] != null)
-            {
-                url = Session[Constants.SessionPreviousUrl].ToString();
-            }
+            // NOTE: temorarily commented out to prevent 404 redirect
+
+            //if (Session[Constants.SessionPreviousUrl] != null)
+            //{
+            //    url = Session[Constants.SessionPreviousUrl].ToString();
+            //}
             
             //redirect based on interrupt
             //this.ReturnRedirect();
