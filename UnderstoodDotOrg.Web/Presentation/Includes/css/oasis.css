@@ -154,10 +154,76 @@
   margin-bottom: 2em;
 }
 
+/* END: temporary override rules provided by DP. */
 
-.fullDimensions {
-	width: 100%;
-	height: 100%;
+
+/* BEGIN: temporary AO override rules: account.css */
+
+/* SVN rev 703 */
+@media (min-width: 960px) {
+  /* bg. I take no pride in this hack*/
+  .profile-questions.step-1 .button:checked ~ *{
+      background-color: purple;
+  }
 }
 
-/* END: temporary override rules provided by DP. */
+/* SVN rev 1354 */
+/* CH - added to collapse valid error validation spans */
+.sign-up .sign-up-inputs .error span.valid {
+  display: none;
+}
+span.validationerror {
+  color: #de5a02;
+  font-family: Arial, sans-serif;
+  display: inline;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+/* SVN rev 1374, 1423 */
+/* increase children row min-height, top-margin on notice text is 
+   interferring with the ability to click "add child" link
+ */
+.profile-wrap .profile-section.children-section {
+  min-height: 300px;
+}
+
+/* END: temporary AO override rules: account.css */
+
+
+/* BEGIN: temporary AO override rules: assistive-tech.css */
+
+/* SVN rev 1364 */
+/* Fixed css bug with dropdown widths */
+#search-by-tool-tabs fieldset > div[id^="uniform-"][id*="ddlTechTypes"],
+#search-by-tool-tabs fieldset > div[id^="uniform-"][id*="ddlTechTypes"] ~ div.selector {
+  width: 76% !important;
+}
+
+/* END: temporary AO override rules: assistive-tech.css */
+
+
+/* BEGIN: temporary AO override rules: modules.css */
+
+/* SVN rev 1521 */
+h2.register-community-profile {
+  font-size: 32px;
+  font-size: 2rem;
+  color: #7a4183;
+  margin-bottom: 32px;
+  font-weight: normal;
+}
+
+/* END: temporary AO override rules: modules.css */
+
+
+/* BEGIN: AO-created new rules to be ported back to DP CSS */
+
+/* UNAO-464 */
+/* SVN rev 1619 */
+.fullDimensions {
+  width: 100%;
+  height: 100%;
+}
+
+/* END: AO-created new rules to be ported back to DP CSS */
