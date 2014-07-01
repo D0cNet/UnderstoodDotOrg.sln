@@ -2336,12 +2336,8 @@
     <Content Include="Presentation\Includes\css\layout.css" />
     <Content Include="Presentation\Includes\css\modules.css" />
     <Content Include="Presentation\Includes\css\uniform-understood.css" />
-    <Content Include="Presentation\Includes\css\vendor\blank.html" />
     <Content Include="Presentation\Includes\css\vendor\boilerplate.css" />
     <Content Include="Presentation\Includes\css\vendor\bootstrap.css" />
-    <Content Include="Presentation\Includes\css\vendor\grab.html" />
-    <Content Include="Presentation\Includes\css\vendor\grabbing.html" />
-    <Content Include="Presentation\Includes\css\vendor\jplayer.blue.monday.css" />
     <Content Include="Presentation\Includes\css\vendor\normalize.css" />
     <Content Include="Presentation\Includes\css\vendor\royalslider.css" />
     <Content Include="Presentation\Includes\css\vendor\ui-lightness\images\animated-overlay.gif" />
