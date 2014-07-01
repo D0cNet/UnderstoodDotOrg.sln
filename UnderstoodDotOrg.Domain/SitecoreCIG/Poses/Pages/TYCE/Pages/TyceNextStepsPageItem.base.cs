@@ -46,6 +46,24 @@ public static implicit operator Item(TyceNextStepsPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField ExpertHeaderText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Expert Header Text"]);
+	}
+}
+
+
+public CustomTextField ExploreTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Explore Title"]);
+	}
+}
+
+
 public CustomImageField Image
 {
 	get
@@ -64,11 +82,38 @@ public CustomTextField PersonalizationBoxTitle
 }
 
 
+public CustomTextField ShareItTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Share It Title"]);
+	}
+}
+
+
 public CustomTextField SpecialThanksHeader
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Special Thanks Header"]);
+	}
+}
+
+
+public CustomTextField ExpertContentText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Expert Content Text"]);
+	}
+}
+
+
+public CustomTextField ExploreContent
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Explore Content"]);
 	}
 }
 
@@ -87,6 +132,24 @@ public CustomMultiListField SchoolContributions
 	get
 	{
 		return new CustomMultiListField(InnerItem, InnerItem.Fields["School Contributions"]);
+	}
+}
+
+
+public CustomTextField ShareItContent
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Share It Content"]);
+	}
+}
+
+
+public CustomTextField PlaceholderText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Placeholder Text"]);
 	}
 }
 

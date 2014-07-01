@@ -34,20 +34,20 @@
     <div class="row">
         <div class="module-wrap">
             <div class="module">
-                <h2>Explore More</h2>
-                <p>Explore the issues you've just seen...</p>
+                <h2><%= Model.ExploreTitle.Rendered %></h2>
+                <p><%= Model.ExploreContent.Rendered %></p>
                 <asp:Repeater ID="rptrIssuesSeen" runat="server" 
                     ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components.ChildLearningIssueItem">
                     <ItemTemplate>
                         <p class="link">
-                            <a href="REPLACE">Learn About <%# Item.ChildDemographic.NavigationTitle.Rendered %></a>
+                            <a href="<%# Item.ChildDemographic.InnerItem.Paths.Path %>">Learn About <%# Item.ChildDemographic.NavigationTitle.Rendered %></a>
                         </p>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
             <div class="module">
-                <h2>Share It</h2>
-                <p>Share this experience with someone else - a friend, a family member, a teacher, or your child</p>
+                <h2><%= Model.ShareItTitle.Rendered %></h2>
+                <p><%= Model.ShareItContent.Rendered %></p>
                 <ul class="share-tools">
                     <li>
                         <a href="REPLACE" class="icon icon-facebook">Facebook</a></li>
@@ -62,11 +62,11 @@
                 </ul>
             </div>
             <div class="module">
-                <h2>Ask an Expert</h2>
-                <p>Questions about what you just experienced? Reach out to one of our experts and get answers!</p>
+                <h2><%= Model.ExpertHeaderText.Rendered %></h2>
+                <p><%= Model.ExpertContentText.Rendered %></p>
                 <p class="field">
                     <label class="visuallyhidden" for="expert-q">Question for expert</label>
-                    <textarea placeholder="Type your question here" id="expert-q"></textarea>
+                    <textarea placeholder="<%= Model.PlaceholderText.Rendered %>" id="expert-q"></textarea>
                 </p>
                 <input type="submit" class="button" value="Submit">
             </div>

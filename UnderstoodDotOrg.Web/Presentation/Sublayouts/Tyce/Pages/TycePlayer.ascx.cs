@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Pages;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 {
@@ -14,7 +15,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            hypLogoLink.NavigateUrl = MainsectionItem.GetHomeItem().GetUrl();
+            hypLogoLink.ImageUrl = Model.HeaderLogo.GetImageUrl();
 
+            backLink.Attributes.Add("href", Model.InnerItem.Parent.GetUrl());
         }
     }
 }

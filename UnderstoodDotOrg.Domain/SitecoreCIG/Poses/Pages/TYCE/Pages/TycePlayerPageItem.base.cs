@@ -145,6 +145,15 @@ public CustomTextField VolumeBubbleText
 }
 
 
+public CustomImageField HeaderLogo
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Header Logo"]);
+	}
+}
+
+
 public CustomTextField ProgressBubbleText
 {
 	get

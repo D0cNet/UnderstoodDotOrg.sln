@@ -4,10 +4,14 @@
     <div class="row">
         <div class="col col-12">
             <div class="logo-u-main">
-                <a href="REPLACE" style="background: none !important;">
-                    <img alt="Understood Logo" src="/Presentation/includes/images/logo.u.default.png" /></a>
+                <asp:HyperLink ID="hypLogoLink" runat="server" CssClass="no-background"></asp:HyperLink>
             </div>
         </div>
+        <style>
+            .logo-u-main a.no-background{
+                background-image: none !important;
+            }
+        </style>
         <!-- .col -->
         <div class="col col-12">
             <div class="tyce-menu-container">
@@ -24,7 +28,7 @@
 <div class="container tyce-player-header skiplink-tyce-header">
     <div class="row">
         <div class="col col-15 offset-1">
-            <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i><%= Model.ExperienceChildsWorldText.Rendered %></a>
+            <a id="backLink" runat="server" class="back-to-previous"><i class="icon-arrow-left-blue"></i><%= Model.ExperienceChildsWorldText.Rendered %></a>
             <h1><%= Model.PersonalizedForChildText.Rendered %></h1>
         </div>
         <!-- .col-15 -->
@@ -57,7 +61,7 @@
                 <div id="player"></div>
                 <div id="container-sim">
                     <div class="sim-inner">
-                        <div id="gameboard">
+                        <div id="gameboard" class="dyslexia_game">
                             <header>Scrambled Letters</header>
                             <article>
                                 <div id="dyslexia_article_inner">
