@@ -55,6 +55,8 @@
 <script type="text/javascript" src="http://files.brightcove.com/markup.min.js"></script>
 <script type="text/javascript">
 
+    $("#gameboard").addClass("<%= IssueItem.SimulationCssClass.Raw %>");
+
     // config for experience
     var experienceConfig = {
         isPersonalized: true,

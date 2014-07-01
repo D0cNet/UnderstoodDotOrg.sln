@@ -54,7 +54,6 @@
     <link href="/Presentation/includes/css/print.css" media="print" rel="stylesheet" />
     
     <script src="/Presentation/includes/js/vendor/modernizr.custom.js"></script>
-    <script src="/Presentation/includes/js/vendor/buzz.js"></script>
 </head>
 
 <!-- END PARTIAL: head -->
@@ -110,6 +109,7 @@
         <script src="/Presentation/includes/js/vendor/jquery.easytabs.min.js"></script>
         <script src="/Presentation/includes/js/vendor/jquery.jplayer.min.js"></script>
         <script src="/Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="/Presentation/includes/js/vendor/jquery.ui.custom.js"></script>
         <script src="/Presentation/includes/js/vendor/jquery.ui.touch-punch.min.js"></script>
         <script src="/Presentation/includes/js/vendor/bootstrap.min.js"></script>
         <script src="/Presentation/includes/js/vendor/jquery.ezmark.min.js"></script>
@@ -130,6 +130,8 @@
         <script src="/Presentation/includes/js/html2canvas.js"></script>
         <script src="/Presentation/includes/js/jspdf.min.js"></script>
         <script src="/Presentation/includes/js/jspdf.custom.js"></script>
+    <script src="/Presentation/includes/js/vendor/buzz.js"></script>
+    <script src="/Presentation/includes/js/vendor/jquery.transit.min.js"></script>
         <sc:Placeholder runat="server" Key="AfterResources" />
 
         <!-- END PARTIAL: footerjs -->

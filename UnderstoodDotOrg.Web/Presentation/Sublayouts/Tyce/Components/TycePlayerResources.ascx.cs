@@ -94,7 +94,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
                     NextPagePath += "&" + string.Join("&", histIds.Select(hid => "simhist=" + hid));
                 }
 
-                NextPagePath += "&simhist=" + issueId;
+                NextPagePath += "&simhist=" + issueId + "&gradeId=" + gradeId;
             }
             else
             {

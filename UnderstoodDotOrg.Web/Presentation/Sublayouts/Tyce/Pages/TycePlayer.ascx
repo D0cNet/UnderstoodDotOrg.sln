@@ -57,7 +57,7 @@
                 <div id="player"></div>
                 <div id="container-sim">
                     <div class="sim-inner">
-                        <div id="gameboard" class="dyslexia_game">
+                        <div id="gameboard">
                             <header>Scrambled Letters</header>
                             <article>
                                 <div id="dyslexia_article_inner">

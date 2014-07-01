@@ -285,12 +285,6 @@ $(document).ready(function () {
         });
 
         $tyceIssue.filter(":checked").trigger("change");
-
-        var $tyceModalBegin = $("#tyce-modal-begin");
-        $tyceStepTwo.find('.submit-answers-button').on('click', function () {
-            $tyceModalBegin.modal('show');
-            //$(window).trigger('resize');
-        });
     }
 });
 /**

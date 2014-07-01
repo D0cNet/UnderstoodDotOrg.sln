@@ -70,6 +70,15 @@ public CustomTreeListField SimulationCSS
 }
 
 
+public CustomTextField SimulationCssClass
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Simulation CssClass"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
