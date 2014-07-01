@@ -67,6 +67,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPartnerBio;
         
         /// <summary>
+        /// pnlNewsletter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNewsletter;
+        
+        /// <summary>
         /// frNewsletterHeading control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNewsletterLink;
+        
+        /// <summary>
+        /// pnlDonate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlDonate;
         
         /// <summary>
         /// frDonationHeading control.
@@ -103,22 +121,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frDonationLink;
         
         /// <summary>
-        /// hlFeaturedFirst control.
+        /// rptFeatured control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlFeaturedFirst;
-        
-        /// <summary>
-        /// hlFeaturedSecond control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlFeaturedSecond;
+        protected global::System.Web.UI.WebControls.Repeater rptFeatured;
         
         /// <summary>
         /// phTwitter control.

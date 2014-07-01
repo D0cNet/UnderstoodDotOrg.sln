@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
-//using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
-using Sitecore.Data.Items;
-using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.SearchTypes;
-using UnderstoodDotOrg.Common.Extensions;
-using Sitecore.Data.Fields;
-using Sitecore.Web.UI.WebControls;
-using UnderstoodDotOrg.Framework.UI;
 using System.Configuration;
+using System.Collections;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 {
@@ -44,8 +36,26 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
                 hlPartnersLanding.Text = parent.ContentPage.PageTitle;
             }
 
-            InitFeaturedLink(hlFeaturedFirst, Model.FirstFeaturedItemLink.Url, Model.FirstFeaturedItemTitle.Rendered);
-            InitFeaturedLink(hlFeaturedSecond, Model.SecondFeaturedItemLink.Url, Model.SecondFeaturedItemTitle.Rendered);
+            pnlNewsletter.Visible = Model.PartnerNewsletterLink.Url.IsNullOrEmpty();
+            pnlDonate.Visible = Model.PartnerDonationLink.Url.IsNullOrEmpty();
+
+            // Featured links
+            var collections = new List<dynamic>();
+
+            if (!Model.FirstFeaturedItemLink.Url.IsNullOrEmpty())
+            {
+                collections.Add(new { Url = Model.FirstFeaturedItemLink.Url, Title = Model.FirstFeaturedItemTitle.Rendered });
+            }
+            if (!Model.SecondFeaturedItemLink.Url.IsNullOrEmpty())
+            {
+                collections.Add(new { Url = Model.SecondFeaturedItemLink.Url, Title = Model.SecondFeaturedItemTitle.Rendered });
+            }
+
+            if (collections.Any())
+            {
+                rptFeatured.DataSource = collections;
+                rptFeatured.DataBind();
+            }
 
             FacebookUrl = Model.FacebookUrl.Url;
             FacebookLinkText = Model.FacebookCallToAction.Rendered;
@@ -56,13 +66,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
             TwitterLinkText = Model.TwitterCallToAction.Rendered;
             hlTwitter.NavigateUrl = TwitterUrl;
             phTwitter.Visible = !string.IsNullOrEmpty(TwitterUrl);
-        }
-
-        private void InitFeaturedLink(HyperLink hl, string url, string title)
-        {
-            hl.NavigateUrl = url;
-            hl.Text = title;
-            hl.Visible = !string.IsNullOrEmpty(url);
         }
     }
 }

@@ -37,15 +37,15 @@
                     <sc:FieldRenderer ID="frPartnerBio" runat="server" FieldName="Partner Bio" />
                 </div>
 
-                <div class="partner-newsletter">
+                <asp:Panel ID="pnlNewsletter" runat="server" Visible="false" CssClass="partner-newsletter">
                     <h2><sc:FieldRenderer ID="frNewsletterHeading" FieldName="Partner Newsletter Heading" runat="server" /></h2>
                     <sc:FieldRenderer ID="frNewsletterLink" FieldName="Partner Newsletter Link" Parameters="class=button" runat="server" />
-                </div>
+                </asp:Panel>
 
-                <div class="partner-donate">
+                <asp:Panel ID="pnlDonate" runat="server" Visible="false" CssClass="partner-donate">
                     <h2><sc:FieldRenderer ID="frDonationHeading" FieldName="Partner Donation Heading" runat="server" /></h2>
                     <sc:FieldRenderer ID="frDonationLink" FieldName="Partner Donation Link" Parameters="class=button" runat="server" />
-                </div>
+                </asp:Panel>
 
                 <!-- END PARTIAL: about/partners-donate -->
             </div>
@@ -56,21 +56,24 @@
 <!-- end .container l-partners-detail -->
 <div class="container l-partners-social-columns">
     <div class="row">
-        <div class="col col-7 skiplink-feature rs_read_this partners-detail-rs-featured-wrapper">
-            <!-- BEGIN PARTIAL: about/partners-featured-content -->
-            <div class="featured-content-block">
-                <h2>Featured</h2>
+        <asp:Repeater ID="rptFeatured" runat="server">
+            <HeaderTemplate>
+                <div class="col col-7 skiplink-feature rs_read_this partners-detail-rs-featured-wrapper">
+                    <!-- BEGIN PARTIAL: about/partners-featured-content -->
+                    <div class="featured-content-block">
+                        <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.Featured %></h2>
+            </HeaderTemplate>
+            <ItemTemplate>
                 <div class="featured-title">
-                    <span class="title-link"><asp:HyperLink ID="hlFeaturedFirst" runat="server" /></span>
+                    <span class="title-link"><a href="<%# Eval("Url") %>"><%# Eval("Title") %></a></span>
                 </div>
-                <div class="featured-title">
-                    <span class="title-link"><asp:HyperLink ID="hlFeaturedSecond" runat="server" /></span>
+            </ItemTemplate>
+            <FooterTemplate>
+                    </div>
                 </div>
-            </div>
-            <!-- end .featured-content-block -->
+            </FooterTemplate>
+        </asp:Repeater>
 
-            <!-- END PARTIAL: about/partners-featured-content -->
-        </div>
         <div class="col col-7 offset-1 rs_read_this partners-detail-rs-twitter-wrapper">
             <asp:PlaceHolder ID="phTwitter" runat="server" Visible="false">
             <!-- BEGIN PARTIAL: about/partners-twitter -->
