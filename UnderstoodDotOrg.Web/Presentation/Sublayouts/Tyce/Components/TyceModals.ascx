@@ -62,7 +62,8 @@
             <button type="button" class="close-overlay" data-dismiss="modal" aria-hidden="true">Close</button>
             <div class="modal-body">
                 <h2>Select your Child</h2>
-                <p>Your profile contains three children. Please select the child you'd like to base this experience on.</p>
+                <p>Your profile contains <%= IsUserLoggedIn ? CurrentMember.Children.Count : 0 %> children. 
+                   Please select the child you'd like to base this experience on.</p>
                 <fieldset>
                     <legend class="visuallyhidden">Select your Child</legend>
                     <ul class="input-buttons">
