@@ -11,7 +11,7 @@
         <!-- .col -->
         <div class="col col-12">
             <div class="tyce-menu-container">
-                <button class="icon-tyce-menu">Menu</button>
+                <button class="icon-tyce-menu"><%= Model.MenuText.Rendered %></button>
             </div>
         </div>
         <!-- .col -->
@@ -24,8 +24,8 @@
 <div class="container tyce-player-header skiplink-tyce-header">
     <div class="row">
         <div class="col col-15 offset-1">
-            <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Experience a Child's World</a>
-            <h1>Personalized for Your Child</h1>
+            <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i><%= Model.ExperienceChildsWorldText.Rendered %></a>
+            <h1><%= Model.PersonalizedForChildText.Rendered %></h1>
         </div>
         <!-- .col-15 -->
         <div class="col col-8">
@@ -39,7 +39,7 @@
             </div>
             <!-- .captions -->
             <div class="help">
-                <span>Help</span>
+                <span><%= Model.HelpText.Rendered %></span>
                 <a class="icon help"></a>
             </div>
         </div>
@@ -79,24 +79,23 @@
             <a class="button btn-skip">Skip</a>
             <div class="help-overlay">
                 <div class="instructions">
-                    <h4>How this works</h4>
+                    <h4><%= Model.HowThisWorksTitle.Rendered %></h4>
                     <p>
-                        Here are a few tips on how to manage the process.<br />
-                        When you’re done reading, click OK.
+                        <%= Model.HowThisWorksBody.Rendered %>
                     </p>
                     <a class="button close">OK</a>
                 </div>
                 <div class="bubble captions">
-                    To read text along with the video, turn captions on.
+                    <%= Model.CaptionsBubbleText.Rendered %>
                 </div>
                 <div class="bubble pause">
-                    Pause and adjust the volume here.
+                    <%= Model.VolumeBubbleText.Rendered %>
                 </div>
                 <div class="bubble progress">
-                    This shows progress and lets you jump between elements.
+                    <%= Model.ProgressBubbleText.Rendered %>
                 </div>
                 <div class="bubble skip">
-                    To skip a section, click here.
+                    <%= Model.SkipBubbleText.Rendered %>
                 </div>
             </div>
             <!-- .help-overlay -->
@@ -113,11 +112,11 @@
                     <li class="steps">
                         <ul>
                             <li>
-                                <span id="step-1">Introduction</span></li>
+                                <span id="step-1"><%= Model.StepOneText.Rendered %></span></li>
                             <li>
-                                <span id="step-2">Simulation</span></li>
+                                <span id="step-2"><%= Model.StepTwoText.Rendered %></span></li>
                             <li>
-                                <span id="step-3">Expert Summary &amp; A Child's Perspective</span></li>
+                                <span id="step-3"><%= Model.StepThreeText.Rendered %></span></li>
                         </ul>
                     </li>
                     <li class="fullscreen" tabindex="0"><i class="icon fullscreen"></i></li>

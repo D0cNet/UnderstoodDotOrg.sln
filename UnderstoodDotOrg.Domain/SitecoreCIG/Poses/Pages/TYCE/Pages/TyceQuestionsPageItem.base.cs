@@ -100,6 +100,33 @@ public CustomTextField QuestionTwoAnswerText
 }
 
 
+public CustomTextField GetStartedButtonText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Get Started Button Text"]);
+	}
+}
+
+
+public CustomTextField DontSeeChildHereText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Dont See Child Here Text"]);
+	}
+}
+
+
+public CustomTextField WhyAreWeAskingText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Why Are We Asking Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

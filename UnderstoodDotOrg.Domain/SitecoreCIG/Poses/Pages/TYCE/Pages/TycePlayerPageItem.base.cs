@@ -46,6 +46,123 @@ public static implicit operator Item(TycePlayerPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField HowThisWorksTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["How This Works Title"]);
+	}
+}
+
+
+public CustomTextField MenuText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Menu Text"]);
+	}
+}
+
+
+public CustomTextField StepOneText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Step One Text"]);
+	}
+}
+
+
+public CustomTextField ExperienceChildsWorldText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Experience Childs World Text"]);
+	}
+}
+
+
+public CustomTextField HowThisWorksBody
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["How This Works Body"]);
+	}
+}
+
+
+public CustomTextField StepTwoText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Step Two Text"]);
+	}
+}
+
+
+public CustomTextField CaptionsBubbleText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Captions Bubble Text"]);
+	}
+}
+
+
+public CustomTextField PersonalizedForChildText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Personalized For Child Text"]);
+	}
+}
+
+
+public CustomTextField StepThreeText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Step Three Text"]);
+	}
+}
+
+
+public CustomTextField HelpText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Help Text"]);
+	}
+}
+
+
+public CustomTextField VolumeBubbleText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Volume Bubble Text"]);
+	}
+}
+
+
+public CustomTextField ProgressBubbleText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Progress Bubble Text"]);
+	}
+}
+
+
+public CustomTextField SkipBubbleText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Skip Bubble Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

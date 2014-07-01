@@ -11,7 +11,7 @@
                         <span class="instructions"><%= Model.QuestionOneInstructions.Rendered %></span>
                     </h2>
                     <div class="info tyce-step-why">
-                        <a href="REPLACE">Why are we asking this?</a>
+                        <a href="REPLACE"><%= Model.WhyAreWeAskingText.Rendered %></a>
                     </div>
                     <a href="REPLACE" class="button tyce-step-change" style="display: none;">Change</a>
                 </header>
@@ -50,7 +50,7 @@
                         <span class="instructions"><%= Model.QuestionTwoInstructions.Rendered %></span>
                     </h2>
                     <div class="info tyce-step-why">
-                        <a href="REPLACE">Why are we asking this?</a>
+                        <a href="REPLACE"><%= Model.WhyAreWeAskingText.Rendered %></a>
                     </div>
                     <a href="REPLACE" class="button tyce-step-change" style="display: none;">Change</a>
                 </header>
@@ -72,7 +72,7 @@
                     </fieldset>
                     <div class="action">
                         <button type="button" class="button complete-answer" style="display: none;">Continue</button>
-                        <a href="REPLACE" id="no-challenge">Don't see your child's challenge listed here?</a>
+                        <a href="REPLACE" id="no-challenge"><%= Model.DontSeeChildHereText.Rendered %></a>
                     </div>
                 </div>
                 <div class="body" style="display:none;">
@@ -87,7 +87,7 @@
                         </asp:Repeater>
                     </ul>
                     <button type="button" class="button submit-answers-button tyce-before-begin-button" style="display:none;" runat="server"
-                        onserverclick="btnStartSimulation_Click">Lets's Get Started</button>
+                        onserverclick="btnStartSimulation_Click"><%= Model.GetStartedButtonText.Rendered %></button>
                 </div>
             </div>
             <!-- #tyce-step-2 -->
