@@ -2151,6 +2151,7 @@
     <Content Include="Presentation\Includes\css\about-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\about.css" />
     <Content Include="Presentation\Includes\css\account-nonresponsive.css" />
+    <Content Include="Presentation\Includes\css\advocacy-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\advocacy.css" />
     <Content Include="Global.asax" />
     <Content Include="Presentation\Includes\css\article-nonresponsive.css" />
@@ -2161,6 +2162,7 @@
     <Content Include="Presentation\Includes\css\behavior-tool.css" />
     <Content Include="Presentation\Includes\css\community-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\community.css" />
+    <Content Include="Presentation\Includes\css\decision-lite-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\decision-lite.css" />
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-black.svg" />
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-blackitalic.svg" />
@@ -2182,6 +2184,8 @@
     <Content Include="Presentation\Includes\css\simulations\dysgraphia\game.css" />
     <Content Include="Presentation\Includes\css\simulations\dyslexia\game.css" />
     <Content Include="Presentation\Includes\css\simulations\executive\game.css" />
+    <Content Include="Presentation\Includes\css\support-nonresponsive.css" />
+    <Content Include="Presentation\Includes\css\support.css" />
     <Content Include="Presentation\Includes\css\tyce-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\tyce.css" />
     <Content Include="Presentation\Includes\css\uniform-understood-nonresponsive.css" />
