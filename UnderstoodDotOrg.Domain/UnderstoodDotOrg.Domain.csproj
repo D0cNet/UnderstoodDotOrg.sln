@@ -575,10 +575,13 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ToolsPages\BehaviorToolsPages\BehaviorToolsResultsPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\ChildDemographicItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\ChildGradeItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\ChildGradeItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\ChildLearningIssueItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\ChildLearningIssueItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\ChildLearningIssueItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\EducationalInstitutionItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\TYCEGradeGroupItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\TYCEGradeGroupItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\TyceVideoGradeSetsItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Components\TyceVideoGradeSetsItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceBasePageItem.base.cs" />

@@ -19,7 +19,8 @@
                     <label for="personalize-grade-mobile" class="visuallyhidden">
                         <%= Model.QuestionOneText.Rendered %>:</label>
                     <select id="personalize-grade-mobile" class="responsive-select-mobile" required aria-required="true">
-                        <asp:Repeater ID="rptrGradeOptions" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.ChildGradeItem">
+                        <asp:Repeater ID="rptrGradeOptions" runat="server" 
+                            ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components.ChildGradeItem">
                             <ItemTemplate>
                                 <option value="<%# Item.ID.ToString() %>"><%# Item.ChildDemographic.Title.Rendered %></option>
                             </ItemTemplate>
@@ -27,7 +28,8 @@
                     </select>
                     <input type="hidden" name="personalize-grade" class="reponsive-select-full-input" value="">
                     <ul id="personalize-grade-desktop-select" class="reponsive-select-full-options">
-                        <asp:Repeater ID="rptrGradeButtons" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.ChildGradeItem">
+                        <asp:Repeater ID="rptrGradeButtons" runat="server" 
+                            ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components.ChildGradeItem">
                             <ItemTemplate>
                                 <li>
                                     <button type="button" class="grade <%# Item.ChildDemographic.CssClass.Rendered %> grade-question-button" 
@@ -97,3 +99,12 @@
     </div>
 </div>
 <!-- .tyce-step-wrap -->
+<% if (PresetGrade.HasValue) { %>
+<script type="text/javascript">
+    $(window).load(function () {
+        $("#personalize-grade-desktop-select .grade-question-button").filter(function () {
+            return $(this).data("grade-id") == "<%= PresetGrade.Value.ToString() %>";
+        }).trigger("click");
+    });
+</script>
+<% } %>

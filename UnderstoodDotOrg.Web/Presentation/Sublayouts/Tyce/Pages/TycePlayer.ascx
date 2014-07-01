@@ -1,21 +1,18 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TycePlayer.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages.TycePlayer" %>
+<%@ Import Namespace="UnderstoodDotOrg.Common.Extensions" %>
 <!-- BEGIN PARTIAL: header-tyce-player -->
 <header id="header-tyce" class="container">
     <div class="row">
         <div class="col col-12">
             <div class="logo-u-main">
-                <asp:HyperLink ID="hypLogoLink" runat="server" CssClass="no-background"></asp:HyperLink>
+                <a href="REPLACE" style="background: none !important;">
+                    <img alt="Understood Logo" src="/Presentation/includes/images/logo.u.default.png" /></a>
             </div>
         </div>
-        <style>
-            .logo-u-main a.no-background{
-                background-image: none !important;
-            }
-        </style>
         <!-- .col -->
         <div class="col col-12">
             <div class="tyce-menu-container">
-                <button class="icon-tyce-menu"><%= Model.MenuText.Rendered %></button>
+                <button class="icon-tyce-menu">Menu</button>
             </div>
         </div>
         <!-- .col -->
@@ -28,8 +25,8 @@
 <div class="container tyce-player-header skiplink-tyce-header">
     <div class="row">
         <div class="col col-15 offset-1">
-            <a id="backLink" runat="server" class="back-to-previous"><i class="icon-arrow-left-blue"></i><%= Model.ExperienceChildsWorldText.Rendered %></a>
-            <h1><%= Model.PersonalizedForChildText.Rendered %></h1>
+            <a href="<%= Model.TyceBasePage.GetOverviewPage().GetUrl() %>" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Experience a Child's World</a>
+            <h1>Personalized for Your Child</h1>
         </div>
         <!-- .col-15 -->
         <div class="col col-8">
@@ -43,7 +40,7 @@
             </div>
             <!-- .captions -->
             <div class="help">
-                <span><%= Model.HelpText.Rendered %></span>
+                <span>Help</span>
                 <a class="icon help"></a>
             </div>
         </div>
@@ -61,7 +58,7 @@
                 <div id="player"></div>
                 <div id="container-sim">
                     <div class="sim-inner">
-                        <div id="gameboard" class="dyslexia_game">
+                        <div id="gameboard">
                             <header>Scrambled Letters</header>
                             <article>
                                 <div id="dyslexia_article_inner">
@@ -83,23 +80,24 @@
             <a class="button btn-skip">Skip</a>
             <div class="help-overlay">
                 <div class="instructions">
-                    <h4><%= Model.HowThisWorksTitle.Rendered %></h4>
+                    <h4>How this works</h4>
                     <p>
-                        <%= Model.HowThisWorksBody.Rendered %>
+                        Here are a few tips on how to manage the process.<br />
+                        When you’re done reading, click OK.
                     </p>
                     <a class="button close">OK</a>
                 </div>
                 <div class="bubble captions">
-                    <%= Model.CaptionsBubbleText.Rendered %>
+                    To read text along with the video, turn captions on.
                 </div>
                 <div class="bubble pause">
-                    <%= Model.VolumeBubbleText.Rendered %>
+                    Pause and adjust the volume here.
                 </div>
                 <div class="bubble progress">
-                    <%= Model.ProgressBubbleText.Rendered %>
+                    This shows progress and lets you jump between elements.
                 </div>
                 <div class="bubble skip">
-                    <%= Model.SkipBubbleText.Rendered %>
+                    To skip a section, click here.
                 </div>
             </div>
             <!-- .help-overlay -->
@@ -116,11 +114,11 @@
                     <li class="steps">
                         <ul>
                             <li>
-                                <span id="step-1"><%= Model.StepOneText.Rendered %></span></li>
+                                <span id="step-1">Introduction</span></li>
                             <li>
-                                <span id="step-2"><%= Model.StepTwoText.Rendered %></span></li>
+                                <span id="step-2">Simulation</span></li>
                             <li>
-                                <span id="step-3"><%= Model.StepThreeText.Rendered %></span></li>
+                                <span id="step-3">Expert Summary &amp; A Child's Perspective</span></li>
                         </ul>
                     </li>
                     <li class="fullscreen" tabindex="0"><i class="icon fullscreen"></i></li>

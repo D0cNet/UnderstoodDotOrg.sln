@@ -16,6 +16,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
     public partial class TyceQuestions : BaseSublayout<TyceQuestionsPageItem>
     {
         protected List<Guid> PresetIssues { get; set; }
+        protected Guid? PresetGrade { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,11 +28,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
                     .Where(ng => ng.HasValue)
                     .Select(ng => ng.Value).ToList();
 
-            //TODO: change the below to a CIG logical method after more appropriate folder templates are created
-            var tyceGradesFolder = Sitecore.Context.Database.GetItem("{17BF4487-9EC2-4434-A86E-B27D41CC3BC7}");
-            var tyceGrades = tyceGradesFolder.Children
-                .Where(i => i != null && i.IsOfType(ChildGradeItem.TemplateId))
-                .Select(i => (ChildGradeItem)i).ToList();
+            var gradeId = Request.QueryString["gradeId"];
+            PresetGrade = gradeId.AsNGuid();
+
+            var tyceGrades = ChildGradeItem.GetChildGrades();
 
             rptrGradeOptions.DataSource = tyceGrades;
             rptrGradeOptions.DataBind();
@@ -39,11 +39,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
             rptrGradeButtons.DataSource = tyceGrades;
             rptrGradeButtons.DataBind();
             
-            //TODO: change the below to a CIG logical method after more appropriate folder templates are created
-            var tyceIssuesFolder = Sitecore.Context.Database.GetItem("{FFC2C76F-4E6C-458F-9E70-4273F562D243}");
-            var tyceIssues = tyceIssuesFolder.Children
-                .Where(i => i != null && i.IsOfType(ChildLearningIssueItem.TemplateId))
-                .Select(i => (ChildLearningIssueItem)i)
+            var tyceIssues = ChildLearningIssueItem.GetChildLearningIssues()
                 .Select(issueItem => new
                 {
                     Id = issueItem.ID.Guid,

@@ -66,23 +66,30 @@
                 <fieldset>
                     <legend class="visuallyhidden">Select your Child</legend>
                     <ul class="input-buttons">
-                        <li>
-                            <input type="radio" name="tyce-child" id="tyce-child-01">
-                            <label for="tyce-child-01">David, 7</label>
-                        </li>
-                        <li>
+                        <asp:Repeater ID="rptrChildSelectionModal" runat="server">
+                            <ItemTemplate>
+                                <li>
+                                    <input type="radio" name="tyce-child" id="tyce-child-<%# Eval("Id") %>">
+                                    <label for="tyce-child-<%# Eval("Id") %>" data-grade-param="<%# Eval("GradeParam") %>"
+                                        data-issue-params="<%# Eval("IssueParams") %>" class="tyce-child-select-label">
+                                        <%# Eval("Label") %>
+                                    </label>
+                                </li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <%--<li>
                             <input type="radio" name="tyce-child" id="tyce-child-02">
                             <label for="tyce-child-02">Cara, 8</label>
                         </li>
                         <li>
                             <input type="radio" name="tyce-child" id="tyce-child-03">
                             <label for="tyce-child-03">Stephanie, 11</label>
-                        </li>
+                        </li>--%>
                     </ul>
                 </fieldset>
                 <div class="actions">
-                    <a href="<%= TyceQuestionsPageUrl %>" class="button">Ok let's go</a>
-                    <a href="<%= TyceQuestionsPageUrl %>" class="button gray">Let Me Customize</a>
+                    <a href="<%= TyceQuestionsPageUrl %>" class="button to-player-link">Ok let's go</a>
+                    <a href="<%= TyceQuestionsPageUrl %>" class="button gray to-questions-link">Let Me Customize</a>
                 </div>
             </div>
             <!-- /.modal-body -->
@@ -92,6 +99,36 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        var questionsPageUrl = "<%= TyceQuestionsPageUrl %>";
+        var playerPageUrl = "<%= TycePlayerPageUrl %>";
+
+        var $tyceModalSelectChild = $("#tyce-modal-select-child");
+        var $tyceChildSelectLabel = $tyceModalSelectChild.find(".tyce-child-select-label");
+        var $tyceModalActions = $tyceModalSelectChild.find(".modal-body>.actions");
+        var $toPlayerLink = $tyceModalActions.children(".to-player-link");
+        var $toQuestionsLink = $tyceModalActions.children(".to-questions-link");
+
+        $tyceChildSelectLabel.on("click", function () {
+            var $this = $(this);
+            var gradeParam = $this.data("grade-param");
+            var issueParams = $this.data("issue-params");
+
+            var qs = issueParams;
+            qs = gradeParam ? (qs ? qs + "&" + gradeParam : gradeParam) : qs;
+            qs = qs ? "?" + qs : qs;
+
+            if (gradeParam && issueParams) {
+                $toPlayerLink.attr("href", playerPageUrl + qs);
+                $toQuestionsLink.attr("href", questionsPageUrl + qs);
+            } else {
+                $toPlayerLink.attr("href", questionsPageUrl + qs);
+                $toQuestionsLink.attr("href", questionsPageUrl + qs);
+            }
+        });
+    });
+</script>
 
 <div class="modal fade modal-standard" id="tyce-modal-begin" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">

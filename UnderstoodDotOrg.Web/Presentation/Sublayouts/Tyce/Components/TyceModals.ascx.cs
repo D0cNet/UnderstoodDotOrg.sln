@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Pages;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components;
+using UnderstoodDotOrg.Common.Comparers;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 {
@@ -83,6 +85,40 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            PopulatePersonalizationModal();
+        }
+
+        private void PopulatePersonalizationModal()
+        {
+            if (IsUserLoggedIn)
+            {
+                var childrenModels = CurrentMember.Children
+                    .Select(c => 
+                    {
+                        var gradeItem = c.Grades.Any() ? ChildGradeItem.GetTyceGradeFromTaxonomy(c.Grades.First().Key) : null;
+                        var gradeParam = gradeItem != null ? "gradeId=" + gradeItem.ID.Guid.ToString() : string.Empty;
+                        var issueParams = c.Issues.Any() ? 
+                                string.Join("&", c.Issues                                
+                                    .SelectMany(issue => ChildLearningIssueItem.GetTyceIssuesFromTaxonomy(issue.Key))
+                                    .Where(tyceIssue => tyceIssue != null)
+                                    .Distinct(new CustomItemComparer<ChildLearningIssueItem>())
+                                    .Select(tyceIssue => "simq=" + tyceIssue.ID.Guid.ToString())) :
+                                string.Empty;
+
+                        return new
+                        {
+                            Id = c.ChildId,
+                            Label = gradeItem != null ? 
+                                c.Nickname + ", " + gradeItem.ChildDemographic.NavigationTitle.Rendered :
+                                c.Nickname,
+                            GradeParam = gradeParam,
+                            IssueParams = issueParams
+                        };
+                    });
+
+                rptrChildSelectionModal.DataSource = childrenModels;
+                rptrChildSelectionModal.DataBind();
+            }
         }
     }
 }
