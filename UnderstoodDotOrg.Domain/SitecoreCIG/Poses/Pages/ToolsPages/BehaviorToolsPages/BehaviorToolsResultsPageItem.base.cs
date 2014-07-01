@@ -17,10 +17,8 @@ public static readonly string TemplateId = "{B07AABF9-7B8A-4079-BF15-AF6B3D088C6
 
 #region Inherited Base Templates
 
-private readonly CSSTemplateItem _CSSTemplateItem;
-public CSSTemplateItem CSSTemplate { get { return _CSSTemplateItem; } }
-private readonly JSTemplateItem _JSTemplateItem;
-public JSTemplateItem JSTemplate { get { return _JSTemplateItem; } }
+private readonly BasePageNEWItem _BasePageNEWItem;
+public BasePageNEWItem BasePageNEW { get { return _BasePageNEWItem; } }
 
 #endregion
 
@@ -28,8 +26,7 @@ public JSTemplateItem JSTemplate { get { return _JSTemplateItem; } }
 
 public BehaviorToolsResultsPageItem(Item innerItem) : base(innerItem)
 {
-	_CSSTemplateItem = new CSSTemplateItem(innerItem);
-	_JSTemplateItem = new JSTemplateItem(innerItem);
+	_BasePageNEWItem = new BasePageNEWItem(innerItem);
 
 }
 
@@ -47,6 +44,33 @@ public static implicit operator Item(BehaviorToolsResultsPageItem customItem)
 
 
 #region Field Instance Methods
+
+
+public CustomTextField NoResultsMessage
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["No Results Message"]);
+	}
+}
+
+
+public CustomGeneralLinkField CallToActionLink
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Call To Action Link"]);
+	}
+}
+
+
+public CustomTreeListField RelatedArticles
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Related Articles"]);
+	}
+}
 
 
 #endregion //Field Instance Methods

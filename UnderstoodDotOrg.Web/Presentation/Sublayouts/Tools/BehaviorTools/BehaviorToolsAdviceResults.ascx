@@ -11,7 +11,7 @@
     <header>
       <h3 class="rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.WorkOnFragment %> <asp:Literal ID="litChallenge" runat="server" /></h3>
       <i class="icon-tooltip"></i>
-      
+        <sc:FieldRenderer ID="frCallToActionLink" Parameters="class=how-to-use" runat="server" FieldName="Call To Action Link" />
     </header>
       </div>
   </div>
@@ -92,3 +92,19 @@
     </div>
   </div>
 </div><!-- .container -->
+
+<asp:Repeater ID="rptLinks" runat="server">
+<HeaderTemplate>
+    <div class="behavior-tool-related-articles-small">
+        <div class="behavior-tool-related-articles">
+            <ul>
+</HeaderTemplate>
+<ItemTemplate>
+    <li><asp:HyperLink ID="hlArticleLink" runat="server" /></li>
+</ItemTemplate>
+<FooterTemplate>
+            </ul>
+        </div>
+    </div>
+</FooterTemplate>
+</asp:Repeater>

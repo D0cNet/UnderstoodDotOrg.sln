@@ -18,10 +18,11 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 using UnderstoodDotOrg.Web.Handlers;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 {
-    public partial class BehaviorToolsAdviceResults : System.Web.UI.UserControl
+    public partial class BehaviorToolsAdviceResults : BaseSublayout<BehaviorToolsResultsPageItem>
     {
         private ChildChallengeItem _challenge;
         private GradeLevelItem _grade;
@@ -74,8 +75,26 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
                 _grade = new GradeLevelItem(grade);
             }
 
+            BindEvents();
             BindContent();
             BindResults();
+        }
+
+        private void BindEvents()
+        {
+            rptLinks.ItemDataBound += rptLinks_ItemDataBound;
+        }
+
+        void rptLinks_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                BehaviorAdvicePageItem item = (BehaviorAdvicePageItem)e.Item.DataItem;
+
+                HyperLink hlArticleLink = e.FindControlAs<HyperLink>("hlArticleLink");
+                hlArticleLink.NavigateUrl = item.GetUrl();
+                hlArticleLink.Text = item.BasePageNEW.NavigationTitle.Rendered;
+            }
         }
 
         // TODO: create helper function?
@@ -99,9 +118,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 
         private void BindContent()
         {
-            BehaviorToolsResultsPageItem resultsPage = new BehaviorToolsResultsPageItem(Sitecore.Context.Item);
-
             litChallenge.Text = _challenge.ChallengeName;
+
+            var articles = Model.RelatedArticles.ListItems.FilterByContextLanguageVersion()
+                                .Where(i => i.InheritsTemplate(BehaviorAdvicePageItem.TemplateId))
+                                .Select(i => new BehaviorAdvicePageItem(i))
+                                .Take(3);
+
+            if (articles.Any())
+            {
+                rptLinks.DataSource = articles;
+                rptLinks.DataBind();
+            }
         }
 
         private void BindResults()
