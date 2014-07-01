@@ -6,7 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components
 {
@@ -47,6 +47,15 @@ public static implicit operator Item(ChildLearningIssueItem customItem)
 
 
 //Could not find Field Type for Expert Summary With Subtitles
+
+
+public CustomTreeListField IssueTaxonomies
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Issue Taxonomies"]);
+	}
+}
 
 
 //Could not find Field Type for Expert Summary Without Subtitles
