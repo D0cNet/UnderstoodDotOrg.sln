@@ -19,10 +19,11 @@
                     <label for="personalize-grade-mobile" class="visuallyhidden">
                         <%= Model.QuestionOneText.Rendered %>:</label>
                     <select id="personalize-grade-mobile" class="responsive-select-mobile" required aria-required="true">
+                        <option value="">Select a grade</option>
                         <asp:Repeater ID="rptrGradeOptions" runat="server" 
                             ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components.ChildGradeItem">
                             <ItemTemplate>
-                                <option value="<%# Item.ID.ToString() %>"><%# Item.ChildDemographic.Title.Rendered %></option>
+                                <option value="<%# Item.ID.Guid.ToString() %>"><%# Item.ChildDemographic.Title.Rendered %></option>
                             </ItemTemplate>
                         </asp:Repeater>
                     </select>

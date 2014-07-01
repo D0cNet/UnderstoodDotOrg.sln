@@ -198,7 +198,7 @@ $(document).ready(function () {
                 this.answerEle.show();
                 this.changeEle.show();
 
-                this.isAnswered = true;
+                this.isAnswered = answer.length;
             };
 
             this.doChange = function () {
@@ -225,23 +225,55 @@ $(document).ready(function () {
         var tyceQuestion2 = new TyceQuestion($tyceStepTwo);
 
         var $hfGradeId = $(".hfGradeId");
+        var $mobileGradeQuestionSelect = $tyceStepOne.find("#personalize-grade-mobile");
         var $gradeQuestionButton = $tyceStepOne.find(".grade-question-button");
+
         $gradeQuestionButton.on("click", function () {
             var $this = $(this);
+            var gradeId = $this.attr("data-grade-id");
 
-            $hfGradeId.val($this.attr("data-grade-id"));
+            $hfGradeId.val(gradeId);
             tyceQuestion1.doAnswer($this.text());
 
             if (tyceQuestion1.isAnswered && tyceQuestion2.isAnswered) {
                 $submitAnswersButton.show();
             }
+
+            updateMobileGradeQuestionSelect(gradeId);
         });
 
-        tyceQuestion1.changeEle.on("click", function () {
+        tyceQuestion1.changeEle.on("click", function (e, mobileAlreadyUpdated) {
             tyceQuestion1.doChange();
             $hfGradeId.val("");
             $submitAnswersButton.hide();
+
+            if (!mobileAlreadyUpdated) {
+                updateMobileGradeQuestionSelect("");
+            }
         });
+
+        function updateMobileGradeQuestionSelect(gradeId) {
+            $mobileGradeQuestionSelect.off("change.answer-mobile-grade");
+            $mobileGradeQuestionSelect.val(gradeId).trigger("change");
+            bindMobileGradeQuestionSelect();
+        }
+
+        function mobileGradeQuestionSelect($ele) {
+            var gradeId = $ele.val();
+
+            if (gradeId) {
+                $gradeQuestionButton.filter(function () { return $(this).data("grade-id") == gradeId; }).trigger("click");
+            } else {
+                tyceQuestion1.changeEle.trigger("click", [true]);
+            }
+        }
+
+        function bindMobileGradeQuestionSelect() {
+            $mobileGradeQuestionSelect.on("change.answer-mobile-grade", function () {
+                mobileGradeQuestionSelect($(this));
+            });
+        };
+        bindMobileGradeQuestionSelect();
 
         var selectedIssueIds = [];
         var $hfIssueIds = $(".hfIssueIds");
