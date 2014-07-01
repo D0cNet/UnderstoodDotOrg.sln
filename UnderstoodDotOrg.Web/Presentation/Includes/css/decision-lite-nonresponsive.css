@@ -14,12 +14,7 @@
 /* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .page-topic.landing {
   padding: 40px 15px;
-}
-@media (min-width: 650px), print {
-  /* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .page-topic.landing {
-    padding: 45px 15px;
-  }
+  padding: 45px 15px;
 }
 /* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .page-topic.landing h1 {
@@ -29,12 +24,7 @@
 /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .page-topic.landing .dl-heading-wrapper {
   margin: 0 27px 0;
-}
-@media (min-width: 650px), print {
-  /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .page-topic.landing .dl-heading-wrapper {
-    margin: 0 auto;
-  }
+  margin: 0 auto;
 }
 /* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .page-topic.landing .dl-heading-detail {
@@ -42,38 +32,24 @@
   line-height: 30px;
   line-height: 1.875rem;
   margin-bottom: 0px;
-}
-@media (min-width: 650px), print {
-  /* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .page-topic.landing .dl-heading-detail {
-    margin-bottom: 43px;
-  }
+  margin-bottom: 43px;
 }
 /* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .page-topic.landing .child-content-indicator {
   clear: both;
-}
-@media (min-width: 769px), print {
-  /* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .page-topic.landing .child-content-indicator {
-    margin-bottom: 0px;
-  }
+  margin-bottom: 0px;
 }
 /* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .page-topic.landing .child-content-indicator .col-23 {
   margin-left: 0px;
 }
-@media (min-width: 769px), print {
-  /* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .page-topic.landing .child-content-indicator .col-23 .children-key {
-    padding: 0px;
-  }
+/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
+.page-topic.landing .child-content-indicator .col-23 .children-key {
+  padding: 0px;
 }
-@media (min-width: 769px), print {
-  /* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .page-topic.landing .child-content-indicator .col-23 .children-key li {
-    margin-bottom: 0px;
-  }
+/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
+.page-topic.landing .child-content-indicator .col-23 .children-key li {
+  margin-bottom: 0px;
 }
 
 /* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
@@ -85,12 +61,7 @@
   position: relative;
   text-align: center;
   margin-bottom: 20px;
-}
-@media (min-width: 769px), print {
-  /* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results header {
-    text-align: left;
-  }
+  text-align: left;
 }
 /* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .dl-list-results header h2 {
@@ -100,22 +71,12 @@
   display: inline-block;
   font-weight: 200;
   margin-left: 0px;
-}
-@media (min-width: 769px), print {
-  /* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results header h2 {
-    font-size: 36px;
-    font-size: 2.25rem;
-    margin-left: 15px;
-    font-weight: normal;
-    margin-bottom: 0px;
-  }
-}
-@media (min-width: 960px), print {
-  /* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results header h2 {
-    margin-left: 0px;
-  }
+  font-size: 36px;
+  font-size: 2.25rem;
+  margin-left: 15px;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-left: 0px;
 }
 /* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .dl-list-results header .how-to-use {
@@ -125,12 +86,7 @@
   position: absolute;
   right: 20px;
   top: 0px;
-}
-@media (min-width: 769px), print {
-  /* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results header .how-to-use {
-    display: inline-block;
-  }
+  display: inline-block;
 }
 /* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .dl-list-results .children-key {
@@ -166,19 +122,9 @@
 .dl-list-results .results-wrapper {
   text-align: center;
   margin: 0 auto;
-}
-@media (min-width: 650px), print {
-  /* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results .results-wrapper {
-    margin: 0 auto;
-    text-align: left;
-  }
-}
-@media (min-width: 960px), print {
-  /* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results .results-wrapper {
-    text-align: center;
-  }
+  margin: 0 auto;
+  text-align: left;
+  text-align: center;
 }
 /* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .dl-list-results .search-result {
@@ -190,34 +136,20 @@
   max-width: 270px;
   width: 270px;
   padding: 19px 15px 25px;
+  display: block;
+  padding: 20px 20px 28px 20px;
+  margin-bottom: 35px;
+  margin-left: 30px;
+  float: left;
+  margin: 0px 0px 40px 50px;
 }
-@media (min-width: 960px), print {
-  /* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results .search-result:first-child {
-    margin-left: 0px;
-  }
+/* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
+.dl-list-results .search-result:first-child {
+  margin-left: 0px;
 }
-@media (min-width: 960px), print {
-  /* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results .search-result.item-four {
-    margin: 0px 0px 40px 0px;
-  }
-}
-@media (min-width: 650px), print {
-  /* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results .search-result {
-    display: block;
-    padding: 20px 20px 28px 20px;
-    margin-bottom: 35px;
-    margin-left: 30px;
-    float: left;
-  }
-}
-@media (min-width: 769px), print {
-  /* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results .search-result {
-    margin: 0px 0px 40px 50px;
-  }
+/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
+.dl-list-results .search-result.item-four {
+  margin: 0px 0px 40px 0px;
 }
 /* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .dl-list-results .result-body {
@@ -230,6 +162,8 @@
   text-align: center;
   border: none;
   display: table;
+  max-height: 190px;
+  min-height: 190px;
 }
 /* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .dl-list-results .result-body:hover, .dl-list-results .result-body.open {
@@ -242,13 +176,6 @@
 /* line 177, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .dl-list-results .result-body:hover .result-hover, .dl-list-results .result-body.open .result-hover {
   display: table-cell;
-}
-@media (min-width: 650px), print {
-  /* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results .result-body {
-    max-height: 190px;
-    min-height: 190px;
-  }
 }
 /* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .dl-list-results .result-body.open .result-hover {
@@ -266,13 +193,8 @@
   bottom: 15px;
   left: 0px;
   width: 100%;
-}
-@media (min-width: 650px), print {
-  /* line 201, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results .result-info {
-    position: relative;
-    margin-top: 15px;
-  }
+  position: relative;
+  margin-top: 15px;
 }
 /* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .dl-list-results .result-hover {
@@ -337,28 +259,18 @@
   color: #fff;
   vertical-align: middle;
   display: table-cell;
-}
-@media (min-width: 650px), print {
-  /* line 267, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results .result-topic {
-    font-size: 22px;
-    font-size: 1.375rem;
-    line-height: 32px;
-    line-height: 2rem;
-    margin-bottom: 0px;
-  }
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 32px;
+  line-height: 2rem;
+  margin-bottom: 0px;
 }
 /* line 281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .dl-list-results footer {
   display: none;
   position: relative;
   text-align: right;
-}
-@media (min-width: 769px), print {
-  /* line 281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
-  .dl-list-results footer {
-    display: block;
-  }
+  display: block;
 }
 /* line 287, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-landing.scss */
 .dl-list-results footer p {
@@ -380,12 +292,7 @@
   font-weight: normal;
   color: dimgrey;
   margin: 0;
-}
-@media (min-width: 650px), print {
-  /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .dl-quiz {
-    padding: 0 0 45px 0;
-  }
+  padding: 0 0 45px 0;
 }
 /* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz.question {
@@ -407,15 +314,10 @@
   margin-bottom: 10px;
   padding: 0 16px;
   font-weight: normal;
-}
-@media (min-width: 650px), print {
-  /* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .dl-quiz .question-counter, .dl-quiz .question-counter-results {
-    padding: 0;
-    font-size: 24px;
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-  }
+  padding: 0;
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin-bottom: 40px;
 }
 /* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz h2 {
@@ -436,16 +338,11 @@
   font-weight: bold;
   color: #7a4183;
   margin-bottom: 40px;
-}
-@media (min-width: 650px), print {
-  /* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .dl-quiz h3, .dl-quiz legend {
-    padding: 0;
-    font-size: 30px;
-    font-size: 1.875rem;
-    line-height: 40px;
-    line-height: 2.5rem;
-  }
+  padding: 0;
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 40px;
+  line-height: 2.5rem;
 }
 /* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz.answer.one h3, .dl-quiz.question.one h3 {
@@ -459,12 +356,7 @@
 .dl-quiz .answer-choices {
   text-align: left;
   margin-left: 20px;
-}
-@media (min-width: 650px), print {
-  /* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .dl-quiz .answer-choices {
-    margin-left: 0px;
-  }
+  margin-left: 0px;
 }
 /* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz .answer-choices.incorrect {
@@ -496,31 +388,14 @@
   min-width: 130px;
   max-width: 230px;
   margin-bottom: 15px;
-}
-@media (min-width: 650px), print {
-  /* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .dl-quiz .answer-choices .answer-choice-true,
-  .dl-quiz .answer-choices .answer-choice-false {
-    min-width: 180px;
-    height: 55px;
-  }
-}
-@media (min-width: 960px), print {
-  /* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .dl-quiz .answer-choices .answer-choice-true,
-  .dl-quiz .answer-choices .answer-choice-false {
-    min-width: 230px;
-  }
+  min-width: 180px;
+  height: 55px;
+  min-width: 230px;
 }
 /* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz .answer-choices .answer-choice-true {
   margin-right: 16px;
-}
-@media (min-width: 960px), print {
-  /* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .dl-quiz .answer-choices .answer-choice-true {
-    margin-right: 50px;
-  }
+  margin-right: 50px;
 }
 /* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz .answer-choices ul {
@@ -587,12 +462,7 @@
 .dl-quiz div.results-indicators {
   margin-bottom: 30px;
   max-width: 320px;
-}
-@media (min-width: 960px), print {
-  /* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .dl-quiz div.results-indicators {
-    max-width: 100%;
-  }
+  max-width: 100%;
 }
 /* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz div.results-indicators span.results-indicator {
@@ -625,19 +495,12 @@
 /* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz .next-question {
   text-align: center;
+  text-align: left;
+  height: 55px;
 }
-@media (min-width: 650px), print {
-  /* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .dl-quiz .next-question {
-    text-align: left;
-    height: 55px;
-  }
-}
-@media (min-width: 650px), print {
-  /* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .dl-quiz .next-question button {
-    width: 230px;
-  }
+/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
+.dl-quiz .next-question button {
+  width: 230px;
 }
 /* line 214, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz .radio-wrapper {
@@ -687,6 +550,10 @@
   height: 20px;
   background-position: -81px -521px;
 }
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+.old-ie .dl-quiz .radio-wrapper label .radio {
+  display: block;
+}
 
 /* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz-container.q-a .dl-quiz-wrapper {
@@ -730,13 +597,8 @@
 .dl-wrapper.landing .share-save-container {
   margin-top: 15px;
   margin-bottom: 40px;
-}
-@media (min-width: 650px), print {
-  /* line 301, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .dl-wrapper.landing .share-save-container {
-    margin-top: 32px;
-    margin-bottom: 0px;
-  }
+  margin-top: 32px;
+  margin-bottom: 0px;
 }
 
 /* line 312, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
@@ -747,12 +609,7 @@
 /* line 316, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
 .results-wrapper, .dl-list-results .results-outer-wrapper {
   height: 306px;
-}
-@media (min-width: 650px), print {
-  /* line 316, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */
-  .results-wrapper, .dl-list-results .results-outer-wrapper {
-    height: inherit;
-  }
+  height: inherit;
 }
 
 /* line 323, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/decision-lite/_dl-quiz.scss */

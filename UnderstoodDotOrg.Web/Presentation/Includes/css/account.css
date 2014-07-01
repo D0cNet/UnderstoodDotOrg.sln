@@ -1446,12 +1446,6 @@
   border-color: #de5a02;
 }
 /* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_sign-up.scss */
-
-/*CH - added to collapse valid error validation spans*/    
-.sign-up .sign-up-inputs .error span.valid {
-        display: none;
-    }
-
 .sign-up .sign-up-inputs .error span {
   color: #de5a02;
   font-family: Arial, sans-serif;
@@ -2874,10 +2868,6 @@
   margin-top: 30px;
   margin-bottom: 25px;
 }
-.profile-wrap .profile-section.children-section {
-    min-height: 300px;
-}
-
 @media (min-width: 650px), print {
   /* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_my-profile-content.scss */
   .profile-wrap .children-section .profile-details h3 {
@@ -6959,13 +6949,4 @@
 /* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_my-connections-subheader.scss */
 .my-account-subheader.connections-subheader .select-container {
   margin-bottom: 0px;
-}
-
-
-span.validationerror {
-    color: #de5a02;
-    font-family: Arial, sans-serif;
-    display: inline;
-    font-size: 14px;
-    font-size: 0.875rem;
 }

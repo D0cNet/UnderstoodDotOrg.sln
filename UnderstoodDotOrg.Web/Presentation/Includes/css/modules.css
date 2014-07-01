@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /**
  * Include SASS partials for individual modules.
  */
@@ -12396,7 +12396,7 @@ header.about-donate-rs-wrapper .rsbtn_player,
 /* line 325, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_user-profiles.scss */
 .card-child-info li:before {
   color: #298fc2;
-  content: "â€¢";
+  content: "•";
   padding-right: 7px;
 }
 /* line 331, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_user-profiles.scss */
@@ -12554,18 +12554,18 @@ header.about-donate-rs-wrapper .rsbtn_player,
   font-family: Arial, sans-serif;
 }
 /* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
-.transcript-container a {
+.transcript-container a, .transcript-container .transcript-trigger-button, .transcript-container .mobile-close p {
   font-size: 24px;
   font-size: 1.5rem;
   text-align: center;
   color: #446ea7;
 }
 /* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
-.transcript-container a .icon-arrow-down-blue {
+.transcript-container a .icon-arrow-down-blue, .transcript-container .transcript-trigger-button .icon-arrow-down-blue, .transcript-container .mobile-close p .icon-arrow-down-blue {
   margin-left: 18px;
 }
 /* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
-.transcript-container a .icon-arrow-up-blue {
+.transcript-container a .icon-arrow-up-blue, .transcript-container .transcript-trigger-button .icon-arrow-up-blue, .transcript-container .mobile-close p .icon-arrow-up-blue {
   margin-left: 15px;
 }
 /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
@@ -12578,15 +12578,19 @@ header.about-donate-rs-wrapper .rsbtn_player,
   position: relative;
   max-width: 550px;
 }
+/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+.transcript-container .transcript-trigger-button {
+  cursor: pointer;
+}
 
-/* line 51, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
 .read-more {
   background: #fff;
   color: #333;
   text-align: center;
 }
 
-/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
 .icon-arrow-up-blue {
   width: 18px;
   height: 15px;
@@ -12595,21 +12599,21 @@ header.about-donate-rs-wrapper .rsbtn_player,
   background-size: 150px 150px;
   background-position: -52px 0;
 }
-/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
 .no-backgroundsize .icon-arrow-up-blue {
   background-image: url("../images/sprite.icon.arrows.lo-res.png");
 }
-/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+/* line 69, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
 .no-backgroundsize .icon-arrow-up-blue {
   background-image: url("../images/sprite.icon.arrows.lo-res.png");
 }
 
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
 .l-about-understood .read-more {
   margin-bottom: 30px;
 }
 @media (min-width: 650px), print {
-  /* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
+  /* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_transcript-control.scss */
   .l-about-understood .read-more {
     margin-bottom: 35px;
   }
@@ -12653,7 +12657,7 @@ header.about-donate-rs-wrapper .rsbtn_player,
   }
 }
 /* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-.readspeaker-wrapper h1, .readspeaker-wrapper h2{
+.readspeaker-wrapper h1, .readspeaker-wrapper h2 {
   color: #7a4183;
 }
 /* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
@@ -13100,7 +13104,7 @@ header.about-donate-rs-wrapper .rsbtn_player,
 .more-to-explore h2,
 .partners-carousel h2,
 .newsletter-signup h2,
-.more-carousel h2{
+.more-carousel h2 {
   color: #7a4183;
   font-weight: normal;
   font-size: 18px;
@@ -13109,16 +13113,6 @@ header.about-donate-rs-wrapper .rsbtn_player,
   line-height: 1.75rem;
   text-align: center;
 }
-
-
-h2.register-community-profile{
-	font-size: 32px;
-	font-size: 2rem;
-	color: #7a4183;
-	margin-bottom: 32px;
-	font-weight: normal;
-}
-
 @media (min-width: 650px), print {
   /* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules.scss */
   .featured-recommended h2,
