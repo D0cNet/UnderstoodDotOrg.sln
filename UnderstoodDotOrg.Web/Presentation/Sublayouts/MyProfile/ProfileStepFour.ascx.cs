@@ -17,6 +17,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
@@ -166,7 +167,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             try
             {
                 this.UpdateUser();
-                
+
                 this.NextStep();
             }
             catch (Exception ex)
@@ -181,12 +182,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
         {
             //if (!err)//no errors. Move the progression forward.
             //{
-                if (mode == Constants.QueryStrings.Registration.ModeEdit)
-                {
-                    Response.Redirect(MyProfileItem.GetMyProfilePage().GetUrl());
-                }
+            if (mode == Constants.QueryStrings.Registration.ModeEdit)
+            {
+                Response.Redirect(MyProfileItem.GetMyProfilePage().GetUrl());
+            }
 
-                Response.Redirect(MyAccountFolderItem.GetCompleteMyProfileStepFive());
+            Response.Redirect(MyAccountFolderItem.GetCompleteMyProfileStepFive());
             //}
         }
 
@@ -218,23 +219,26 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             //pulling this out of membership manager for now until we find the best place. 
             //It had been in AddMember berfore but there is no screen name available when we Add a member.
             //create Telligent user:
-            if (!string.IsNullOrEmpty(CurrentMember.ScreenName)) //optional to the user
+
+            var tMember = TelligentService.GetPosesMember(this.CurrentMember.ScreenName);
+
+            //if we have a screen name and it doesn't exist in Telligent yet...
+            if (!string.IsNullOrEmpty(this.CurrentMember.ScreenName) && !string.IsNullOrEmpty(this.CurrentUser.Email) && tMember == null)
             {
                 try
                 {
-                    if (mode != Constants.QueryStrings.Registration.ModeEdit)
+                    bool communitySuccess = CommunityHelper.CreateUser(this.CurrentMember.ScreenName, this.CurrentUser.Email);
+                    //bool communitySuccess = CommunityHelper.CreateUser(CurrentMember.ScreenName, CurrentUser.Email);
+                    
+                    if (communitySuccess == false)
                     {
-                        bool communitySuccess = CommunityHelper.CreateUser(CurrentMember.ScreenName, CurrentUser.Email);
-                        if (communitySuccess == false)
-                        {
-                            // ¡Ay, caramba!
-                            // give them a nice "I'm sorry" please try again later message.
-                            //uxErrorMessage.Text = "<font color=red> </ font> ";
-                            //uxErrorMessage.Visible = true;
-                            //err = true; //dont progress. stop and display an error.
+                        // ¡Ay, caramba!
+                        // give them a nice "I'm sorry" please try again later message.
+                        //uxErrorMessage.Text = "<font color=red> </ font> ";
+                        //uxErrorMessage.Visible = true;
+                        //err = true; //dont progress. stop and display an error.
 
-                            throw new Exception("I'm sorry, the Community User failed to be created properly.");
-                        }
+                        throw new Exception("I'm sorry, the Community User failed to be created properly.");
                     }
                 }
                 catch (Exception ex)
@@ -254,6 +258,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                     throw ex;
                 }
             }
+
+            //if (!string.IsNullOrEmpty(CurrentMember.ScreenName)) //optional to the user
+            //{
+
+            //        if (mode != Constants.QueryStrings.Registration.ModeEdit)
+            //        {
+
+            //        }
+            //    }
+
+            //}
         }
 
         private void runPersonalization()
@@ -271,6 +286,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             {
                 //set current user/member
                 this.CurrentMember = membershipManager.UpdateMember(this.registeringUser);
+
                 if (mode != Constants.QueryStrings.Registration.ModeEdit)
                 {
                     this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
@@ -313,11 +329,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
         {
             try
             {
-                //check telligent, you dummy
-                var membershipManager = new MembershipManager();
+                var tMember = TelligentService.GetPosesMember(ScreenName);
 
                 //verify that screen name is unique
-                if (membershipManager.GetMemberByScreenName(ScreenName) != null)
+                if (tMember != null)
                 {
                     throw new Exception("Community Screen Name already taken");
                 }
