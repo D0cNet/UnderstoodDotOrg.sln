@@ -31,6 +31,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSectionTitle;
         
         /// <summary>
+        /// fuUserAvatar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuUserAvatar;
+        
+        /// <summary>
+        /// btnUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpload;
+        
+        /// <summary>
+        /// userAvatar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage userAvatar;
+        
+        /// <summary>
         /// rptrAccountNav control.
         /// </summary>
         /// <remarks>

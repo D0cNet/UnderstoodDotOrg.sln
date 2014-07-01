@@ -11,6 +11,12 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using Sitecore.Links;
 using Sitecore.Data.Items;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Collections.Specialized;
+using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Services.Models.Telligent;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -44,6 +50,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             {
                 Response.Redirect(MainsectionItem.GetHomePageItem().GetUrl());
             }
+            User user = TelligentService.GetUser(this.CurrentMember.ScreenName);
+            if (user != null)
+            {
+                userAvatar.Src = user.AvatarUrl;
+            }
         }
 
         protected void rptrAccountNav_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -55,6 +66,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
             if (currentItemId != null)
             {
+                // Highlight the selected tab
                 switch (currentItemId)
                 {
                     case "{1041DF93-81A2-46FD-910F-8927F22DA4F1}":
@@ -82,6 +94,29 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                         {
                             hlNavLink.CssClass = "active";
                         } break;
+                }
+            }
+        }
+
+        protected void FileUpload(object sender, EventArgs e)
+        {
+            FileUpload fuUserAvatar = (FileUpload)FindControl("fuUserAvatar");
+            if (fuUserAvatar.HasFile)
+            {
+                string imageTempLocation = Path.GetTempPath() + fuUserAvatar.PostedFile.FileName;
+                fuUserAvatar.PostedFile.SaveAs(imageTempLocation);
+
+                string userId = TelligentService.ReadUserId(this.CurrentMember.ScreenName);
+
+                using (var webClient = new WebClient())
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentService.TelligentAuth());
+                    webClient.Headers.Add("Rest-Method", "PUT");
+                    var requestUrl = String.Format("{0}api.ashx/v2/users/{1}/avatar.xml", Sitecore.Configuration.Settings.GetSetting("TelligentConfig"), userId);
+
+                    webClient.UploadFile(requestUrl, "POST", imageTempLocation);
+
+                    Response.Redirect(Request.RawUrl);
                 }
             }
         }

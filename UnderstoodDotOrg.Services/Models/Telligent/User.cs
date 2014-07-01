@@ -22,6 +22,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public string Location { get; set; }
         public double TimeZone { get; set; }
         public string WebUrl { get; set; }
+        public string AvatarUrl { get; set; }
 
         public User()
         {

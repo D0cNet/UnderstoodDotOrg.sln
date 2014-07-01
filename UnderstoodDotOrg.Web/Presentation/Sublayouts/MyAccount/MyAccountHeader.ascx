@@ -9,7 +9,8 @@
         <div class="col col-22 offset-1">
             <%--<a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Back to Homepage</a>--%>
             <asp:HyperLink ID="hlSectionTitle" runat="server" CssClass="back-to-previous">
-                <i class="icon-arrow-left-blue"></i>Back to <sc:FieldRenderer ID="frSectionTitle" runat="server" FieldName="Navigation Title" />      
+                <i class="icon-arrow-left-blue"></i>Back to
+                <sc:fieldrenderer id="frSectionTitle" runat="server" fieldname="Navigation Title" />
             </asp:HyperLink>
         </div>
     </div>
@@ -22,16 +23,20 @@
     <div class="row account-top-wrapper">
         <div class="col col-23 offset-1">
             <div class="account-photo skiplink-dashboard">
-                <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                <div style="display:none;" id="uploadAvatar">
+                <asp:FileUpload ID="fuUserAvatar" runat="server" AllowMultiple="false" />
+                <asp:Button ID="btnUpload" OnClick="FileUpload" Text="Upload Avatar" runat="server" />
+                    </div>
+                    <img style="height:150px; width:150px;" alt="150x150 Placeholder" id="userAvatar" runat="server" onclick="DisplayForm()" src="http://placehold.it/150x150" />
             </div>
             <div class="account-info">
                 <h1 class="account-username"><%= CurrentMember.ScreenName %></h1>
-                <p class="account-location"> </p>
+                <p class="account-location"></p>
             </div>
             <div class="account-links">
                 <a class="profile-link button" href="<%= MyProfilePage.GetUrl() %>"><%= MyProfilePage.MyAccountBase.ContentPage.BasePageNEW.NavigationTitle.Rendered %></a>
                 <span class="button-wrapper">
-                    <a class="notifications-link button" href='<%= MyNotifications %>' >Notifications<span class="notification-count">3</span></a>
+                    <a class="notifications-link button" href='<%= MyNotifications %>'>Notifications<span class="notification-count">3</span></a>
                 </span>
             </div>
         </div>
@@ -39,7 +44,7 @@
     <div class="account-nav-wrapper">
         <div class="row">
             <nav class="account-nav">
-                <asp:Repeater ID="rptrAccountNav" runat="server" 
+                <asp:Repeater ID="rptrAccountNav" runat="server"
                     ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount.MyAccountBaseItem"
                     OnItemDataBound="rptrAccountNav_ItemDataBound">
                     <ItemTemplate>
@@ -56,3 +61,13 @@
     </div>
 </div>
 <!-- END PARTIAL: my-account-nav -->
+<script>
+    function DisplayForm() {
+        var form = document.getElementById("uploadAvatar");
+        if (form.style.display == "none") {
+            form.style.display = "block";
+        }
+        else
+            form.style.display = "none";
+    }
+</script>
