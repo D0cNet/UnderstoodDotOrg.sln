@@ -7,7 +7,7 @@ using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components
 {
 public partial class ChildDemographicItem : CustomItem
 {
@@ -72,9 +72,6 @@ public CustomTextField CssClass
 		return new CustomTextField(InnerItem, InnerItem.Fields["CssClass"]);
 	}
 }
-
-
-//Could not find Field Type for Featured Stories
 
 
 #endregion //Field Instance Methods

@@ -6,9 +6,9 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components;
 
-namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General
+namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components
 {
 public partial class ChildGradeItem : CustomItem
 {
@@ -44,6 +44,15 @@ public static implicit operator Item(ChildGradeItem customItem)
 
 
 #region Field Instance Methods
+
+
+public CustomLookupField GradeTaxonomy
+{
+	get
+	{
+		return new CustomLookupField(InnerItem, InnerItem.Fields["Grade Taxonomy"]);
+	}
+}
 
 
 #endregion //Field Instance Methods
