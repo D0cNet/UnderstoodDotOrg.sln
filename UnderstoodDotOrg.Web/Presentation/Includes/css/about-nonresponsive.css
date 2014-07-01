@@ -113,16 +113,20 @@
   width: 100%;
   min-height: 268px;
 }
-/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+.old-ie .about-experts-event-carousel .event-carousel .rsOverflow {
+  height: 300px !important;
+}
+/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel button.rsArrowIcn {
   z-index: 2;
 }
-/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert {
   margin-top: 60px;
   margin-top: 44px;
 }
-/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data {
   background-color: #f4f2f1;
   padding: 20px;
@@ -130,7 +134,7 @@
   padding: 40px;
   min-height: 231px;
 }
-/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-image {
   float: left;
   position: relative;
@@ -138,14 +142,14 @@
   width: 125px;
   width: 150px;
 }
-/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-image img {
   display: block;
   height: auto;
   max-width: 100%;
   -webkit-backface-visibility: visible;
 }
-/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-image .caption {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -161,13 +165,13 @@
   bottom: 0px;
   width: 100%;
 }
-/* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details {
   margin-left: 120px;
   margin-left: 145px;
   margin-left: 170px;
 }
-/* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details .date {
   margin: 0 0 18px 0;
   padding: 0;
@@ -178,7 +182,7 @@
   line-height: 16px;
   line-height: 1rem;
 }
-/* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details .chat-with {
   margin: 0 0 10px 0;
   padding: 0;
@@ -189,7 +193,7 @@
   line-height: 16px;
   line-height: 1rem;
 }
-/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details h4 {
   margin: 0 0 16px 0;
   padding: 0;
@@ -202,7 +206,7 @@
   line-height: 1.5rem;
   margin-bottom: 10px;
 }
-/* line 147, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .about-expert .about-expert-data .event-carousel-details .credentials {
   margin: 0;
   padding: 0;
@@ -213,7 +217,7 @@
   line-height: 21px;
   line-height: 1.3125rem;
 }
-/* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .rsArrow.rsArrowLeft .rsArrowIcn {
   top: 226px;
   right: 55%;
@@ -221,7 +225,7 @@
   top: 0px;
   right: 44px;
 }
-/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
+/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .rsArrow.rsArrowRight .rsArrowIcn {
   top: 226px;
   right: 30%;
@@ -294,9 +298,10 @@
   font-size: 1.5rem;
   line-height: 26px;
   line-height: 1.625rem;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  min-height: 58px;
 }
-/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .credentials {
   margin: 0 0 14px 0;
   padding: 0;
@@ -311,11 +316,11 @@
   line-height: 20px;
   line-height: 1.25rem;
 }
-/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .all-tasks {
   margin-bottom: 18px;
 }
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .all-tasks .tasks {
   margin-bottom: 0px;
   font-size: 15px;
@@ -330,11 +335,11 @@
   line-height: 16px;
   line-height: 1rem;
 }
-/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 126, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .all-tasks .tasks:last-child {
   margin-bottom: 0px;
 }
-/* line 131, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .links {
   display: block;
   margin: 0 0 12px 0;
@@ -347,7 +352,7 @@
   text-decoration: underline;
   margin-bottom: 8px;
 }
-/* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
+/* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-experts-listing.scss */
 .about-experts-listing .about-expert .expert-listing-details .links:hover {
   text-decoration: none;
 }
@@ -1516,30 +1521,30 @@
   display: none;
 }
 /* line 256, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span {
   background-color: #794382;
   color: #fff;
 }
 /* line 259, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span span.number {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span span.number {
   color: #fff;
 }
 /* line 262, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span button:focus {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span button:focus {
   background: transparent;
 }
 /* line 265, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span span.icon-check {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span span.icon-check {
   display: block;
 }
 /* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span span.icon-check .check-img {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span span.icon-check .check-img {
   height: auto;
   width: 20px;
   width: 26px;
 }
 /* line 276, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .choose-gift-section .choose-gift-wrapper input:checked + span span.gift-description {
+.donate-create-wrap .choose-gift-section .choose-gift-wrapper input.checked + span span.gift-description {
   color: #fff;
 }
 /* line 281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
@@ -1681,7 +1686,7 @@
   display: none;
 }
 /* line 425, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .gift-for-section .gift-for-wrapper input:checked + span {
+.donate-create-wrap .gift-for-section .gift-for-wrapper input.checked + span {
   background-color: #794382;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1692,7 +1697,7 @@
   display: block;
 }
 /* line 431, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
-.donate-create-wrap .gift-for-section .gift-for-wrapper input:checked + span button {
+.donate-create-wrap .gift-for-section .gift-for-wrapper input.checked + span button {
   background: transparent;
   color: inherit;
 }
@@ -1837,7 +1842,11 @@
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .icon-tooltip-dark:hover {
   background-position: -22px 0px;
 }
-/* line 592, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 591, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+.no-backgroundsize .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .icon-tooltip-dark {
+  background-image: url("../images/sprite.tooltip.info-dark.lo-res.png");
+}
+/* line 597, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group label, .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .label {
   display: block;
   line-height: 27px;
@@ -1847,31 +1856,31 @@
   text-align: right;
   width: 203px;
 }
-/* line 602, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 607, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text] {
   display: block;
   display: inline-block;
   width: 470px;
 }
-/* line 609, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 614, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text].cvv-input {
   display: inline-block;
   width: 89%;
   width: 230px;
 }
-/* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 621, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text].phone-input {
   margin-bottom: 17px;
   display: inline-block;
   width: 310px;
   margin-bottom: 0px;
 }
-/* line 624, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 629, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group input[type=text].zip-input {
   display: inline-block;
   width: 150px;
 }
-/* line 631, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 636, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container {
   display: block;
   width: auto;
@@ -1879,29 +1888,29 @@
   display: inline-block;
   margin-bottom: 0px;
 }
-/* line 635, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 640, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.month-dropdown {
   margin-bottom: 15px;
 }
-/* line 642, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 647, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.month-dropdown {
   width: 230px;
 }
-/* line 645, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 650, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.year-dropdown {
   margin-left: 4px;
   width: 230px;
 }
-/* line 649, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 654, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.cell-dropdown {
   margin-left: 7px;
   width: 150px;
 }
-/* line 653, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 658, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .select-container.state-dropdown {
   width: 470px;
 }
-/* line 664, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
+/* line 669, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_donate-create.scss */
 .donate-create-wrap .form-center {
   width: 620px;
   margin-right: auto;
@@ -2634,6 +2643,10 @@
   margin: 0 17px 0 0;
   margin-top: 10px;
 }
+/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-facebook.scss */
+.no-backgroundsize .partner-facebook-container .facebook-follow-block .facebook-follow {
+  background-image: url("../images/sprite.social.footer.141.png");
+}
 
 /**
  * SASS partial for partners-featured-content module.
@@ -2838,6 +2851,10 @@
   background-position: -36.5px 0px;
   margin: 0 17px 0 0;
   margin-top: 10px;
+}
+/* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_partners-twitter.scss */
+.no-backgroundsize .partner-twitter-container .twitter-follow-block .twitter-follow {
+  background-image: url("../images/sprite.social.footer.141.png");
 }
 
 /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_results-and-filter.scss */
@@ -3902,7 +3919,7 @@
 }
 /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
 .old-ie .l-itemize-your-child .email-itemize-content .needs-help-with {
-  border: solid 1px #dfdfdf;
+  outline: solid 1px #dfdfdf;
 }
 /* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .needs-help-with .needs-help-with-title h3 {
@@ -3963,7 +3980,7 @@
 }
 /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
 .old-ie .l-itemize-your-child .email-itemize-content .child-enrolled, .old-ie .l-itemize-your-child .email-itemize-content .child-nickname {
-  border: solid 1px #dfdfdf;
+  outline: solid 1px #dfdfdf;
 }
 /* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .child-enrolled h3, .l-itemize-your-child .email-itemize-content .child-nickname h3 {
@@ -4033,11 +4050,15 @@
   position: relative;
   bottom: 2px;
 }
-/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
+/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+.old-ie .l-itemize-your-child .email-itemize-content .email-itemize-next .checkbox-wrap label input[type=checkbox] {
+  display: inline-block;
+}
+/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .email-itemize-next .form-action-next {
   text-align: center;
 }
-/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
+/* line 171, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_email-itemize-content.scss */
 .l-itemize-your-child .email-itemize-content .email-itemize-next .form-action-next input[type=submit] {
   max-width: 150px;
 }
@@ -4101,7 +4122,7 @@
 }
 /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
 .old-ie .l-personalize-interests .personalize-interests-content .school-issues {
-  border: solid 1px #dfdfdf;
+  outline: solid 1px #dfdfdf;
 }
 /* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
 .l-personalize-interests .personalize-interests-content .school-issues .school-issues-title h3 {
@@ -4173,7 +4194,7 @@
 }
 /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
 .old-ie .l-personalize-interests .personalize-interests-content .ways-to-help, .old-ie .l-personalize-interests .personalize-interests-content .home-life, .old-ie .l-personalize-interests .personalize-interests-content .growing-up, .old-ie .l-personalize-interests .personalize-interests-content .social-emotional-issues {
-  border: solid 1px #dfdfdf;
+  outline: solid 1px #dfdfdf;
 }
 /* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
 .l-personalize-interests .personalize-interests-content .ways-to-help .checkbox-wrapper:last-child, .l-personalize-interests .personalize-interests-content .home-life .checkbox-wrapper:last-child, .l-personalize-interests .personalize-interests-content .growing-up .checkbox-wrapper:last-child, .l-personalize-interests .personalize-interests-content .social-emotional-issues .checkbox-wrapper:last-child {
@@ -4246,7 +4267,7 @@
 }
 /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
 .old-ie .l-personalize-interests .personalize-interests-content .preferred-language {
-  border: solid 1px #dfdfdf;
+  outline: solid 1px #dfdfdf;
 }
 /* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
 .l-personalize-interests .personalize-interests-content .preferred-language .checkbox-wrapper:last-child {
@@ -4278,7 +4299,7 @@
   display: table-row;
 }
 /* line 197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_personalize-interests-content.scss */
-.l-personalize-interests .personalize-interests-content .preferred-language .radio-wrapper label .checker {
+.l-personalize-interests .personalize-interests-content .preferred-language .radio-wrapper label .radio {
   display: table-cell;
   vertical-align: top;
 }

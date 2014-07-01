@@ -17,7 +17,7 @@
   text-align: center;
   margin-bottom: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
   .recos-for-you-container h2,
   .recos-upcoming-events h2,
@@ -29,7 +29,7 @@
     padding: 0 6.5%;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
   .recos-for-you-container h2,
   .recos-upcoming-events h2,
@@ -39,17 +39,35 @@
 }
 
 /* R1 - Create Account */
-/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.page-topic.recommendations {
+  background: #f4f2f1;
+}
+/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
 .page-topic.recommendations h1 {
   padding-left: 100px;
   margin-top: 21px;
-  font-size: 36px;
-  font-size: 2.25rem;
-  line-height: 40px;
-  line-height: 2.5rem;
+  font-size: 28px;
+  font-size: 1.75rem;
+  line-height: 80px;
+  line-height: 5rem;
   position: relative;
 }
-/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+@media (min-width: 650px), print {
+  /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+  .page-topic.recommendations h1 {
+    font-size: 36px;
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+  .page-topic.recommendations h1 {
+    line-height: 40px;
+    line-height: 2.5rem;
+  }
+}
+/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
 .page-topic.recommendations h1:before {
   left: 0;
   position: absolute;
@@ -61,300 +79,173 @@
   background-size: 78px auto;
   background-repeat: no-repeat;
 }
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.no-backgroundsize .page-topic.recommendations h1:before {
+  background-image: url("../images/icon.recommendations.star.lo-res.png");
+}
+/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.page-topic.recommendations.has-progress-bar h1 {
+  margin-top: 15px;
+}
+@media (min-width: 650px), print {
+  /* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+  .page-topic.recommendations.has-progress-bar h1 {
+    margin-top: 53px;
+  }
+}
+/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
 .page-topic.recommendations .page-subtitle {
-  padding-left: 100px;
-  font-size: 21px;
-  font-size: 1.3125rem;
   color: #7a4183;
   margin-top: 12px;
+  text-align: center;
+  margin-bottom: 20px;
 }
-
-/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.col.recommendations-sample {
-  margin-bottom: 30px;
-}
-@media (min-width: 650px) {
-  /* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-  .col.recommendations-sample {
-    margin-right: 4.166666%;
+@media (min-width: 769px), print {
+  /* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+  .page-topic.recommendations .page-subtitle {
+    padding-left: 100px;
+    font-size: 21px;
+    font-size: 1.3125rem;
+    text-align: left;
     margin-bottom: 0;
   }
 }
-/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.col.recommendations-sample > img {
-  display: none;
+/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.page-topic.recommendations .progress {
+  width: 180px;
+  height: 38px;
+  background: #e5e5e4;
+  position: relative;
+  margin: 0 auto 25px;
+  -webkit-border-radius: 19px;
+  -moz-border-radius: 19px;
+  -ms-border-radius: 19px;
+  -o-border-radius: 19px;
+  border-radius: 19px;
 }
-@media (min-width: 650px) {
-  /* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-  .col.recommendations-sample > img {
-    display: block;
-    width: 100%;
-    max-width: 388px;
+@media (min-width: 769px), print {
+  /* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+  .page-topic.recommendations .progress {
+    margin: 0 0 25px;
   }
 }
-
-@media (min-width: 650px) {
-  /* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-  .col.recommendations-usage {
-    padding-left: 4.166666%;
-    border-left: 1px solid #e2e2e2;
-  }
-}
-/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.col.recommendations-usage h3 {
-  font-size: 24px;
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-bottom: 30px;
-  color: #7a4183;
-}
-/* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.col.recommendations-usage dl {
-  display: table;
-  margin-bottom: 33px;
-}
-/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.col.recommendations-usage dt, .col.recommendations-usage dd {
-  display: table-cell;
-  vertical-align: top;
-}
-/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.col.recommendations-usage dt {
-  width: 80px;
-}
-/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.col.recommendations-usage dt .count {
+/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.page-topic.recommendations .progress:before {
+  content: '';
+  position: absolute;
   display: block;
-  width: 55px;
-  height: 55px;
-  line-height: 56px;
-  line-height: 3.5rem;
-  font-size: 32px;
-  font-size: 2rem;
-  color: #7a4183;
+  width: 144px;
+  height: 20px;
+  background-image: url("../images/progress-marker.png");
+  left: 18px;
+  top: 9px;
+}
+/* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.page-topic.recommendations .progress .bar {
+  border: 4px solid #e5e5e4;
+  height: 38px;
+  background: #624c94;
+  position: relative;
+  -webkit-border-radius: 19px;
+  -moz-border-radius: 19px;
+  -ms-border-radius: 19px;
+  -o-border-radius: 19px;
+  border-radius: 19px;
+}
+/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.page-topic.recommendations .progress .completion {
+  position: absolute;
+  display: block;
+  width: 46px;
+  height: 46px;
+  line-height: 42px;
+  line-height: 2.625rem;
+  -webkit-border-radius: 23px;
+  -moz-border-radius: 23px;
+  -ms-border-radius: 23px;
+  -o-border-radius: 23px;
+  border-radius: 23px;
+  border: 2px solid #ddd;
+  background: #fff;
+  margin-left: -23px;
+  top: -4px;
   text-align: center;
-  background-image: url("../images/icon.circle.110x110.png");
-  background-size: 55px auto;
-  background-repeat: no-repeat;
-  font-weight: 700;
-}
-/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.col.recommendations-usage dd {
-  color: #696969;
-  line-height: 24px;
-  line-height: 1.5rem;
-  padding: 0;
-}
-/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.col.recommendations-usage .buttons {
-  padding-left: 80px;
-}
-/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.col.recommendations-usage .buttons .button {
-  display: inline-block;
-  width: 45%;
-  margin-bottom: 0;
 }
 /* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.col.recommendations-usage .buttons .sign-up {
-  margin-right: 0;
+.page-topic.recommendations .col-16,
+.page-topic.recommendations .col-6 {
+  width: 100%;
+  float: none;
 }
-
-/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations {
-  margin: 40px 0 0;
-  padding: 40px 0;
-  background: #f4f2f1;
+@media (min-width: 769px), print {
+  /* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+  .page-topic.recommendations .col-16,
+  .page-topic.recommendations .col-6 {
+    float: left;
+  }
 }
-/* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .recommendations-promos {
-  padding: 0;
+@media (min-width: 769px), print {
+  /* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+  .page-topic.recommendations .col-16 {
+    width: 66.6666666667%;
+  }
 }
-/* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .promo {
-  display: table;
-  margin-bottom: 45px;
-  padding: 0 15px;
-}
-@media (min-width: 650px) {
+@media (min-width: 769px), print {
   /* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-  .additional-recommendations .promo {
-    padding: 0;
+  .page-topic.recommendations .col-6 {
+    width: 25%;
   }
 }
-/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .promo a {
-  color: #426da9;
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-size: 1.25rem;
-}
-/* line 157, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .promo a:hover {
-  text-decoration: underline;
-}
-/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .recommendations-promos .thumb,
-.additional-recommendations .recommendations-promos .promo-content {
-  display: table-cell;
-  vertical-align: top;
-}
-/* line 169, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .recommendations-promos .thumb {
-  width: 135px;
-  padding-right: 15px;
-}
-/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .recommendations-promos .thumb.video {
-  position: relative;
-}
-/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .recommendations-promos .thumb.video:before {
-  content: "";
-  top: 0;
-  left: 0;
-  width: 120px;
-  height: 66px;
-  background: rgba(0, 0, 0, 0.3);
-  position: absolute;
-}
-@media (min-width: 650px) {
-  /* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-  .additional-recommendations .recommendations-promos .thumb.video:before {
-    width: 160px;
-    height: 88px;
-  }
-}
-/* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .recommendations-promos .thumb.video:after {
-  content: "";
-  width: 41px;
-  height: 41px;
-  top: 13px;
-  left: 40px;
-  background-image: url("../images/sprite.icon.reco.play-button.png");
-  background-size: 41px auto;
-  background-repeat: no-repeat;
-  display: block;
-  position: absolute;
-}
-@media (min-width: 650px) {
-  /* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-  .additional-recommendations .recommendations-promos .thumb.video:after {
-    top: 24px;
-    left: 60px;
-  }
-}
-/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .recommendations-promos .thumb.video:hover:after {
-  background-position: 0 -41px;
-}
-/* line 214, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .recommendations-promos .thumb img {
+/* line 149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.page-topic.recommendations .profile-progress {
   width: 100%;
+  float: none;
 }
-@media (min-width: 650px) {
-  /* line 169, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-  .additional-recommendations .recommendations-promos .thumb {
+@media (min-width: 769px), print {
+  /* line 149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+  .page-topic.recommendations .profile-progress {
     width: 190px;
-    padding-right: 30px;
-  }
-}
-/* line 225, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .children-key ul {
-  padding: 0;
-}
-/* line 229, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .children-key li {
-  display: inline-block;
-  width: 25px;
-}
-/* line 235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .related-tool-wrapper {
-  margin: 0 15px;
-}
-@media (min-width: 650px) {
-  /* line 235, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-  .additional-recommendations .related-tool-wrapper {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 30px;
-  }
-}
-/* line 245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .related-tool {
-  display: block;
-  background: #fff;
-  padding: 20px 40px 30px 40px;
-  color: #7a4183;
-  width: 100%;
-}
-@media (min-width: 650px) {
-  /* line 245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-  .additional-recommendations .related-tool {
-    max-width: 390px;
-    margin: 0;
     float: right;
   }
 }
-/* line 258, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .related-tool:hover {
-  text-decoration: none;
-}
-/* line 262, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .related-tool span {
+/* line 159, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+.page-topic.recommendations .complete-profile {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 40px;
+  line-height: 2.5rem;
+  height: 40px;
+  margin: 0 auto;
+  max-width: 280px;
   display: block;
-  width: 100%;
-  text-align: center;
 }
-/* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .related-tool .tool-intro {
-  border-bottom: 1px solid #e2e2e2;
-  font-size: 20px;
-  font-size: 1.25rem;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-}
-/* line 275, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .related-tool .tool-name {
-  font-size: 24px;
-  font-size: 1.5rem;
-  padding-top: 105px;
-  background-size: 114px auto;
-  background-image: url("../images/icon.recommendations.parenting.coach.png");
-  background-position: center top;
-  background-repeat: no-repeat;
-  margin-bottom: 10px;
-}
-/* line 286, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .child-content-indicator {
-  clear: both;
-  margin: 40px 0 0;
-  float: left;
-  width: 100%;
-  padding: 0 15px;
-}
-@media (min-width: 650px) {
-  /* line 286, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-  .additional-recommendations .child-content-indicator {
-    padding: 0;
-  }
-  /* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-  .additional-recommendations .child-content-indicator .children-key li {
-    margin-bottom: 0;
+@media (min-width: 650px), print {
+  /* line 159, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+  .page-topic.recommendations .complete-profile {
+    font-size: 13px;
+    font-size: 0.8125rem;
   }
 }
-/* line 301, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
-.additional-recommendations .child-content-indicator .children-key {
-  width: 100%;
+@media (min-width: 800px), print {
+  /* line 159, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+  .page-topic.recommendations .complete-profile {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 159, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos.scss */
+  .page-topic.recommendations .complete-profile {
+    font-size: 16px;
+    font-size: 1rem;
+  }
 }
 
 /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you-container {
   margin: 0 15px 25px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you-container {
     margin: 0 20px 45px;
@@ -365,7 +256,7 @@
   border-bottom: solid 1px #c6c5c5;
   padding-bottom: 25px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you-container .carousel-container {
     padding-bottom: 40px;
@@ -375,7 +266,7 @@
 .recos-for-you-container .why-link {
   text-align: center;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 19, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you-container .why-link {
     text-align: left;
@@ -421,7 +312,7 @@
   line-height: 1.25rem;
   margin: -5px 0 15px 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you-container .why-link .popover .col2 h4 {
     font-size: 20px;
@@ -444,7 +335,7 @@
   line-height: 16px;
   line-height: 1rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you-container .why-link .popover .col2 li {
     font-size: 16px;
@@ -482,42 +373,45 @@
   border-bottom: none;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you {
     margin-bottom: 20px;
   }
 }
-/* line 126, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 131, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you ul {
   list-style: none;
   padding: 0;
   margin: 0;
   padding: 80px 0 0 0;
 }
-/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you .rsOverflow {
   margin-top: -70px;
 }
-@media (min-width: 650px) {
-  /* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 650px), print {
+  /* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you .rsOverflow {
     margin-top: -95px;
   }
 }
-/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you li {
+  clear: both;
   width: 100%;
 }
-@media (min-width: 650px) {
-  /* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 650px), print {
+  /* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you li {
     width: 50%;
     float: left;
+    clear: none;
     margin-top: 25px;
+    padding-left: 40px;
   }
 }
-/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you li .article-photo {
   display: block;
   float: left;
@@ -525,50 +419,50 @@
   overflow: hidden;
   width: 45%;
 }
-@media (min-width: 650px) {
-  /* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 650px), print {
+  /* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you li .article-photo {
     margin-bottom: 45px;
     width: 45%;
   }
 }
-@media (min-width: 769px) {
-  /* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 769px), print {
+  /* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you li .article-photo {
     width: 32%;
   }
 }
-/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you li .article-photo img {
   width: 100%;
 }
-/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 184, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you li .article-title {
   float: left;
   padding-left: 20px;
   width: 55%;
   margin-bottom: 95px;
 }
-@media (min-width: 650px) {
-  /* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 650px), print {
+  /* line 184, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you li .article-title {
     margin-bottom: 45px;
     width: 49%;
   }
 }
-@media (min-width: 769px) {
-  /* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 769px), print {
+  /* line 184, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you li .article-title {
     width: 62%;
   }
 }
-/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 199, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you li .article-title h3 {
   margin: 0 0 .5em;
   font-weight: normal;
 }
-@media (min-width: 650px) {
-  /* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 650px), print {
+  /* line 199, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you li .article-title h3 {
     margin: -5px 0 .5em;
     font-size: 18px;
@@ -577,8 +471,8 @@
     line-height: 1.375rem;
   }
 }
-@media (min-width: 769px) {
-  /* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 769px), print {
+  /* line 199, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you li .article-title h3 {
     margin: -5px 0 .5em;
     font-size: 24px;
@@ -587,26 +481,26 @@
     line-height: 1.75rem;
   }
 }
-/* line 204, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
-.recos-for-you li .article-title h3:hover {
+/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li .article-title h3 a:hover {
   text-decoration: underline;
 }
-/* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 221, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you li .article-title p {
   line-height: 1.2em;
   color: #696969;
 }
-/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you li .article-title .buttons-container {
   display: block;
 }
-@media (min-width: 650px) {
-  /* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 650px), print {
+  /* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you li .article-title .buttons-container {
     display: none;
   }
 }
-/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 237, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you li .article-title .buttons-container button {
   float: left;
   width: 28px;
@@ -614,37 +508,41 @@
   border-right: solid 1px #d2d2d2;
   margin: 0 12px 0 0;
 }
-/* line 230, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 244, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you li .article-title .buttons-container button:last-child {
   border-right: none !important;
 }
-@media (min-width: 769px) {
-  /* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 769px), print {
+  /* line 237, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you li .article-title .buttons-container button {
     width: 35px;
     margin: 0 15px 0 0;
   }
 }
-/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 261, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+.recos-for-you li:hover .article-title .buttons-container, .recos-for-you li.focused .article-title .buttons-container {
+  display: block;
+}
+/* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you .rsArrowIcn {
   z-index: 2;
 }
-@media (min-width: 650px) {
-  /* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 650px), print {
+  /* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you .rsArrowIcn {
     top: 0;
     bottom: initial;
   }
 }
-/* line 257, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 278, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you .rsArrowLeft .rsArrowIcn {
   top: auto;
   bottom: 26px;
   right: 50%;
   margin-right: 15px;
 }
-@media (min-width: 650px) {
-  /* line 257, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 650px), print {
+  /* line 278, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you .rsArrowLeft .rsArrowIcn {
     margin-right: 0;
     bottom: 0;
@@ -652,13 +550,13 @@
     right: 54px;
   }
 }
-@media (min-width: 769px) {
-  /* line 257, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 769px), print {
+  /* line 278, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you .rsArrowLeft .rsArrowIcn {
     right: 44px;
   }
 }
-/* line 276, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+/* line 297, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
 .recos-for-you .rsArrowRight .rsArrowIcn {
   top: auto;
   bottom: 26px;
@@ -666,8 +564,8 @@
   left: 50%;
   margin-left: 15px;
 }
-@media (min-width: 650px) {
-  /* line 276, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
+@media (min-width: 650px), print {
+  /* line 297, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-for-you.scss */
   .recos-for-you .rsArrowRight .rsArrowIcn {
     left: auto;
     margin-left: 0;
@@ -684,7 +582,7 @@
   margin: 0;
   padding: 0 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events {
     padding: 0 20px;
@@ -695,13 +593,13 @@
   border-bottom: solid 1px #c6c5c5;
   padding: 25px 0 80px;
 }
-@media (min-width: 480px) {
+@media (min-width: 650px), print {
   /* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events > .row {
     padding-bottom: 25px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events > .row {
     padding: 45px 0 25px;
@@ -713,13 +611,13 @@
   margin: 0;
   padding: 0;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events .rsContent > ul > li {
     padding-bottom: 25px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events .rsContent > ul > li {
     float: left;
@@ -728,7 +626,7 @@
     padding-bottom: 0;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events .event-wrapper {
     padding: 0 20px 0 40px;
@@ -771,7 +669,7 @@
   line-height: 1.375rem;
   margin-bottom: 10px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events .event-wrapper .event-card-info .event-card-title {
     font-size: 24px;
@@ -788,7 +686,7 @@
   font-size: 16px;
   font-size: 1rem;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 91, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events .event-wrapper .event-card-info .event-card-date {
     font-size: 18px;
@@ -802,7 +700,7 @@
   font-size: 14px;
   font-size: 0.875rem;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events .event-wrapper .event-card-info .event-card-author {
     font-size: 16px;
@@ -813,7 +711,7 @@
 .recos-upcoming-events .rsArrowIcn {
   z-index: 2;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events .rsArrowIcn {
     top: 0;
@@ -827,7 +725,7 @@
   right: 50%;
   margin-right: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events .rsArrowLeft .rsArrowIcn {
     margin-right: 0;
@@ -836,7 +734,7 @@
     right: 54px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events .rsArrowLeft .rsArrowIcn {
     right: 44px;
@@ -850,7 +748,7 @@
   left: 50%;
   margin-left: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 147, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_upcoming-events.scss */
   .recos-upcoming-events .rsArrowRight .rsArrowIcn {
     left: auto;
@@ -868,7 +766,7 @@
   margin: 0;
   padding: 0 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents {
     padding: 0 20px;
@@ -878,13 +776,13 @@
 .recos-ask-parents > .row {
   padding: 25px 0 80px;
 }
-@media (min-width: 480px) {
+@media (min-width: 650px), print {
   /* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents > .row {
     padding-bottom: 25px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents > .row {
     padding: 45px 0 0;
@@ -896,7 +794,7 @@
   margin: 0;
   padding: 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents .rsContent > ul > li {
     float: left;
@@ -913,14 +811,22 @@
   background: #fff;
   float: left;
   padding: 25px;
+  margin: 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 480px), print {
   /* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents .parents-wrapper {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 650px), print {
+  /* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+  .recos-ask-parents .parents-wrapper {
+    margin: 0;
     padding: 35px 40px;
   }
 }
-/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .recos-ask-parents .parents-wrapper .parents-question h3 {
   font-weight: normal;
   color: #7a4183;
@@ -930,8 +836,8 @@
   line-height: 1.375rem;
   margin-bottom: 10px;
 }
-@media (min-width: 769px) {
-  /* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+@media (min-width: 769px), print {
+  /* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents .parents-wrapper .parents-question h3 {
     font-size: 24px;
     font-size: 1.5rem;
@@ -939,7 +845,7 @@
     line-height: 1.75rem;
   }
 }
-/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .recos-ask-parents .parents-wrapper .parents-question p {
   color: #696969;
   font-size: 14px;
@@ -948,19 +854,19 @@
   line-height: 1.125rem;
   margin-bottom: 20px;
 }
-@media (min-width: 769px) {
-  /* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+@media (min-width: 769px), print {
+  /* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents .parents-wrapper .parents-question p {
     line-height: 24px;
     line-height: 1.5rem;
   }
 }
-/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .recos-ask-parents .parents-wrapper .toolbar .links {
   margin-bottom: 15px;
   float: left;
 }
-/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .recos-ask-parents .parents-wrapper .toolbar .link {
   font-size: 14px;
   font-size: 0.875rem;
@@ -970,8 +876,8 @@
   margin-left: 4px;
   text-decoration: underline;
 }
-@media (min-width: 769px) {
-  /* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+@media (min-width: 769px), print {
+  /* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents .parents-wrapper .toolbar .link {
     font-size: 16px;
     font-size: 1rem;
@@ -979,40 +885,40 @@
     margin-left: 17px;
   }
 }
-/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .recos-ask-parents .parents-wrapper .toolbar .link:first-child {
   border-left: none;
   padding-left: 0;
   margin-left: 0;
 }
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .recos-ask-parents .parents-wrapper .toolbar .link:hover {
   text-decoration: none;
 }
-/* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .recos-ask-parents .parents-wrapper .toolbar .children {
   float: right;
 }
-/* line 126, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .recos-ask-parents .rsArrowIcn {
   z-index: 2;
 }
-@media (min-width: 650px) {
-  /* line 126, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+@media (min-width: 650px), print {
+  /* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents .rsArrowIcn {
     top: 0;
     bottom: initial;
   }
 }
-/* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .recos-ask-parents .rsArrowLeft .rsArrowIcn {
   top: auto;
   bottom: 20px;
   right: 50%;
   margin-right: 15px;
 }
-@media (min-width: 650px) {
-  /* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+@media (min-width: 650px), print {
+  /* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents .rsArrowLeft .rsArrowIcn {
     margin-right: 0;
     bottom: 26px;
@@ -1020,13 +926,13 @@
     right: 54px;
   }
 }
-@media (min-width: 769px) {
-  /* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+@media (min-width: 769px), print {
+  /* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents .rsArrowLeft .rsArrowIcn {
     right: 44px;
   }
 }
-/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .recos-ask-parents .rsArrowRight .rsArrowIcn {
   top: auto;
   bottom: 20px;
@@ -1034,8 +940,8 @@
   left: 50%;
   margin-left: 15px;
 }
-@media (min-width: 650px) {
-  /* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+@media (min-width: 650px), print {
+  /* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .recos-ask-parents .rsArrowRight .rsArrowIcn {
     left: auto;
     margin-left: 0;
@@ -1045,20 +951,20 @@
   }
 }
 
-/* line 175, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .child-content-indicator.recos {
   background: #f4f2f1;
   margin: 0 0 45px;
   padding: 0 15px;
 }
-@media (min-width: 650px) {
-  /* line 175, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+@media (min-width: 650px), print {
+  /* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
   .child-content-indicator.recos {
     margin-bottom: 45px;
     padding: 0 20px 20px;
   }
 }
-/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
+/* line 208, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_ask-parents.scss */
 .child-content-indicator.recos .col-23.offset-1 {
   width: 100%;
   margin-left: 0;
@@ -1068,7 +974,7 @@
 .recos-tab-content {
   margin: 0;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
   .recos-tab-content {
     margin: 0 15px;
@@ -1091,7 +997,7 @@
   list-style: none;
   margin: 0 0 25px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
   #recos-tabs > ul {
     margin-bottom: 40px;
@@ -1121,7 +1027,7 @@
   color: #696969;
   padding: 0 5%;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_recos-tabs.scss */
   #recos-tabs > ul > li a {
     font-size: 16px;
@@ -1151,7 +1057,7 @@
 .recos-tab-connect header {
   margin-bottom: 20px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
   .recos-tab-connect header {
     margin-bottom: 30px;
@@ -1167,7 +1073,7 @@
   color: #696969;
   margin-bottom: 15px;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
   .recos-tab-connect header h3 {
     font-size: 18px;
@@ -1182,14 +1088,14 @@
   font-size: 14px;
   font-size: 0.875rem;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
   .recos-tab-connect header .button {
     font-size: 15px;
     font-size: 0.9375rem;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
   .recos-tab-connect header .button {
     font-size: 16px;
@@ -1206,13 +1112,13 @@
   float: left;
   width: 50%;
 }
-@media (min-width: 480px) {
+@media (min-width: 480px), print {
   /* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
   .recos-tab-connect .parents-member-cards .member-card-container {
     width: 33.3333333%;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 650px), print {
   /* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
   .recos-tab-connect .parents-member-cards .member-card-container {
     width: 25%;
@@ -1222,16 +1128,16 @@
 .recos-tab-connect .member-card {
   float: none;
   height: 302px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   width: 128px;
 }
-@media (min-width: 769px) {
+@media (min-width: 769px), print {
   /* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
   .recos-tab-connect .member-card {
     margin-bottom: 25px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
   .recos-tab-connect .member-card {
     height: 323px;
@@ -1240,7 +1146,7 @@
     width: 160px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
   .recos-tab-connect .member-card .member-card-info {
     height: 273px;
@@ -1251,7 +1157,7 @@
 .recos-tab-connect .member-card .member-card-specialties {
   margin-top: 12px;
 }
-@media (min-width: 960px) {
+@media (min-width: 960px), print {
   /* line 82, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-connect.scss */
   .recos-tab-connect .member-card .member-card-specialties {
     width: 190px;
@@ -1272,66 +1178,55 @@
 .recos-groups .group-cards,
 .recos-blogs .group-cards {
   margin-top: 31px;
-  margin-bottom: 25px;
   height: auto !important;
 }
-@media (min-width: 769px) {
+@media (min-width: 650px), print {
   /* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards,
   .recos-blogs .group-cards {
     margin: 60px 0 50px 0;
   }
 }
-/* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .group-cards .group-card,
 .recos-blogs .group-cards .group-card {
-  margin-bottom: 40px;
-  padding: 0;
-  display: table;
+  float: left;
+  padding-bottom: 40px;
 }
-/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
-.recos-groups .group-cards .group-card-image,
-.recos-blogs .group-cards .group-card-image {
-  display: table-cell;
-  vertical-align: top;
-  padding-right: 16px;
-  width: 45%;
-}
-@media (min-width: 960px) {
-  /* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
-  .recos-groups .group-cards .group-card-image,
-  .recos-blogs .group-cards .group-card-image {
-    width: 36%;
+@media (min-width: 650px), print {
+  /* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+  .recos-groups .group-cards .group-card,
+  .recos-blogs .group-cards .group-card {
+    padding-bottom: 0;
   }
 }
-/* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card-image,
+.recos-blogs .group-cards .group-card-image {
+  float: left;
+  width: 38%;
+  padding-right: 20px;
+}
+/* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .group-cards .group-card-image img,
 .recos-blogs .group-cards .group-card-image img {
   width: 100%;
+  min-width: 100px;
 }
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .group-cards .group-card-info,
 .recos-blogs .group-cards .group-card-info {
-  display: table-cell;
-  vertical-align: top;
-  width: 55%;
-  float: none;
+  float: left;
+  width: 62%;
 }
-@media (min-width: 650px) {
-  /* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 650px), print {
+  /* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards .group-card-info,
   .recos-blogs .group-cards .group-card-info {
     padding-right: 40px;
   }
 }
-@media (min-width: 960px) {
-  /* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
-  .recos-groups .group-cards .group-card-info,
-  .recos-blogs .group-cards .group-card-info {
-    width: 64%;
-  }
-}
-/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .group-cards .group-card-info .group-card-name,
 .recos-blogs .group-cards .group-card-info .group-card-name {
   color: #7a4183;
@@ -1343,8 +1238,8 @@
   font-weight: normal;
   margin-bottom: 16px;
 }
-@media (min-width: 650px) {
-  /* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 650px), print {
+  /* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards .group-card-info .group-card-name,
   .recos-blogs .group-cards .group-card-info .group-card-name {
     margin-top: -5px;
@@ -1354,14 +1249,14 @@
     line-height: 1.875rem;
   }
 }
-@media (min-width: 960px) {
-  /* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 960px), print {
+  /* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards .group-card-info .group-card-name,
   .recos-blogs .group-cards .group-card-info .group-card-name {
     max-width: 240px;
   }
 }
-/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .group-cards .group-card-info .group-card-members, .recos-groups .group-cards .group-card-info .group-card-posts,
 .recos-blogs .group-cards .group-card-info .group-card-members,
 .recos-blogs .group-cards .group-card-info .group-card-posts {
@@ -1371,8 +1266,8 @@
   font-size: 0.875rem;
   height: 24px;
 }
-@media (min-width: 960px) {
-  /* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 960px), print {
+  /* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards .group-card-info .group-card-members, .recos-groups .group-cards .group-card-info .group-card-posts,
   .recos-blogs .group-cards .group-card-info .group-card-members,
   .recos-blogs .group-cards .group-card-info .group-card-posts {
@@ -1380,12 +1275,12 @@
     font-size: 1rem;
   }
 }
-/* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .group-cards .group-card-info .group-card-members,
 .recos-blogs .group-cards .group-card-info .group-card-members {
   border-bottom: 1px solid #d2d2d2;
 }
-/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .group-cards .group-card-info .group-card-date, .recos-groups .group-cards .group-card-info .group-card-source,
 .recos-blogs .group-cards .group-card-info .group-card-date,
 .recos-blogs .group-cards .group-card-info .group-card-source {
@@ -1394,85 +1289,85 @@
   font-size: 14px;
   font-size: 0.875rem;
 }
-/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .group-cards .group-card-info .card-buttons,
 .recos-blogs .group-cards .group-card-info .card-buttons {
   display: table;
   margin-top: 15px;
   padding: 0;
 }
-@media (min-width: 650px) {
-  /* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 650px), print {
+  /* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards .group-card-info .card-buttons,
   .recos-blogs .group-cards .group-card-info .card-buttons {
     margin-top: 30px;
   }
 }
-/* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .group-cards .group-card-info .card-buttons span,
 .recos-blogs .group-cards .group-card-info .card-buttons span {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .group-cards .group-card-info .card-buttons .button,
 .recos-blogs .group-cards .group-card-info .card-buttons .button {
   margin-right: 10px;
   width: 78px;
 }
-@media (min-width: 480px) {
-  /* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 480px), print {
+  /* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards .group-card-info .card-buttons .button,
   .recos-blogs .group-cards .group-card-info .card-buttons .button {
     margin-bottom: 12px;
     width: 135px;
   }
 }
-@media (min-width: 960px) {
-  /* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 960px), print {
+  /* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards .group-card-info .card-buttons .button,
   .recos-blogs .group-cards .group-card-info .card-buttons .button {
     margin-bottom: 0;
     margin-right: 26px;
     width: 90px;
   }
-  /* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+  /* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards .group-card-info .card-buttons .button:after,
   .recos-blogs .group-cards .group-card-info .card-buttons .button:after {
     content: '';
     white-space: normal;
   }
 }
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 121, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .group-cards .group-card-info .card-buttons a,
 .recos-blogs .group-cards .group-card-info .card-buttons a {
   cursor: pointer;
   font-size: 12px;
   font-size: 0.75rem;
 }
-@media (min-width: 480px) {
-  /* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 480px), print {
+  /* line 121, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards .group-card-info .card-buttons a,
   .recos-blogs .group-cards .group-card-info .card-buttons a {
     font-size: 16px;
     font-size: 1rem;
   }
-  /* line 136, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+  /* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards .group-card-info .card-buttons a:before,
   .recos-blogs .group-cards .group-card-info .card-buttons a:before {
     content: '\a';
     white-space: pre;
   }
 }
-@media (min-width: 960px) {
-  /* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 960px), print {
+  /* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards .group-card-info .card-buttons a:before,
   .recos-blogs .group-cards .group-card-info .card-buttons a:before {
     content: '';
     white-space: normal;
   }
 }
-/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .action-skip-this,
 .recos-blogs .action-skip-this {
   cursor: pointer;
@@ -1484,28 +1379,28 @@
   font-size: 14px;
   font-size: 0.875rem;
 }
-@media (min-width: 650px) {
-  /* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 769px), print {
+  /* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .action-skip-this,
   .recos-blogs .action-skip-this {
     font-size: 16px;
     font-size: 1rem;
   }
 }
-/* line 165, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 157, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .action-skip-this:hover, .recos-groups .action-skip-this:focus,
 .recos-blogs .action-skip-this:hover,
 .recos-blogs .action-skip-this:focus {
   text-decoration: none;
 }
-/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .rsContent > ul,
 .recos-blogs .rsContent > ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .carousel-arrow-wrapper,
 .recos-blogs .carousel-arrow-wrapper {
   height: 36px;
@@ -1514,27 +1409,35 @@
   top: 0;
   width: 100%;
 }
-@media (min-width: 480px) {
-  /* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 480px), print {
+  /* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .carousel-arrow-wrapper,
   .recos-blogs .carousel-arrow-wrapper {
     position: absolute;
+    top: -45px;
     width: 180px;
   }
 }
-@media (min-width: 769px) {
-  /* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 650px), print {
+  /* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+  .recos-groups .carousel-arrow-wrapper,
+  .recos-blogs .carousel-arrow-wrapper {
+    top: -10px;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .carousel-arrow-wrapper,
   .recos-blogs .carousel-arrow-wrapper {
     height: 31px;
   }
 }
-/* line 196, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .carousel-arrow-wrapper .next-prev-menu.arrows,
 .recos-blogs .carousel-arrow-wrapper .next-prev-menu.arrows {
   position: relative;
 }
-/* line 200, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .carousel-arrow-wrapper .rsArrow,
 .recos-blogs .carousel-arrow-wrapper .rsArrow {
   display: inline-block;
@@ -1543,20 +1446,20 @@
   right: 0;
   width: 36px;
 }
-@media (min-width: 769px) {
-  /* line 200, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 769px), print {
+  /* line 197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .carousel-arrow-wrapper .rsArrow,
   .recos-blogs .carousel-arrow-wrapper .rsArrow {
     height: 31px;
     width: 31px;
   }
 }
-/* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .carousel-arrow-wrapper .rsArrowLeft .rsArrowIcn,
 .recos-blogs .carousel-arrow-wrapper .rsArrowLeft .rsArrowIcn {
   left: 0;
 }
-/* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 213, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .carousel-arrow-wrapper .view-all,
 .recos-blogs .carousel-arrow-wrapper .view-all {
   color: #298fc2;
@@ -1573,8 +1476,8 @@
   height: 36px;
   text-align: center;
 }
-@media (min-width: 650px) {
-  /* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 650px), print {
+  /* line 213, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .carousel-arrow-wrapper .view-all,
   .recos-blogs .carousel-arrow-wrapper .view-all {
     font-size: 16px;
@@ -1582,8 +1485,8 @@
     left: 0px;
   }
 }
-@media (min-width: 769px) {
-  /* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 769px), print {
+  /* line 213, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .carousel-arrow-wrapper .view-all,
   .recos-blogs .carousel-arrow-wrapper .view-all {
     height: 31px;
@@ -1592,26 +1495,26 @@
   }
 }
 
-@media (min-width: 769px) {
-  /* line 248, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 769px), print {
+  /* line 245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .group-cards {
     margin-top: 40px;
   }
 }
-/* line 256, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 253, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .disclaimer {
   font-size: 14px;
   font-size: 0.875rem;
   color: #696969;
 }
-@media (min-width: 650px) {
-  /* line 256, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 650px), print {
+  /* line 253, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .disclaimer {
     font-size: 16px;
     font-size: 1rem;
   }
 }
-/* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+/* line 261, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
 .recos-groups .disclaimer i {
   display: inline-block;
   background: url("../images/icon.lock.lo-res.png") right 0 no-repeat;
@@ -1621,12 +1524,17 @@
   margin-left: 10px;
   position: absolute;
 }
-@media (min-width: 650px) {
-  /* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+@media (min-width: 650px), print {
+  /* line 261, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
   .recos-groups .disclaimer i {
     position: relative;
     top: 2px;
   }
+}
+
+/* line 280, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-blogs.scss */
+.recos-groups .group-cards .group-card {
+  margin-bottom: 0;
 }
 
 /* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/recommendations/_tab-toolkit.scss */
@@ -1643,4 +1551,307 @@
   background: none;
   padding: 0;
   position: static;
+}
+
+/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations {
+  margin: 40px 0 0;
+  padding: 40px 0;
+  background: #f4f2f1;
+}
+/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .recommendations-promos {
+  padding: 0 15px;
+}
+@media (min-width: 650px), print {
+  /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+  .additional-recommendations .recommendations-promos {
+    padding: 0;
+  }
+}
+/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .promo {
+  display: table;
+  margin-bottom: 45px;
+  padding: 0;
+}
+@media (min-width: 650px), print {
+  /* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+  .additional-recommendations .promo {
+    padding: 0;
+  }
+}
+/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .promo a {
+  color: #426da9;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+/* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .promo a:hover {
+  text-decoration: underline;
+}
+/* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .recommendations-promos .thumb,
+.additional-recommendations .recommendations-promos .promo-content {
+  display: table-cell;
+  vertical-align: top;
+}
+/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .recommendations-promos .thumb {
+  width: 135px;
+  padding-right: 15px;
+  position: relative;
+}
+/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .recommendations-promos .thumb .play {
+  position: absolute;
+  z-index: 10;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 66px;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+  zoom: 1;
+  position: absolute;
+  text-indent: -9999em;
+}
+@media (min-width: 650px), print {
+  /* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+  .additional-recommendations .recommendations-promos .thumb .play {
+    width: 160px;
+    height: 88px;
+  }
+}
+/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .recommendations-promos .thumb .play:after {
+  content: "";
+  width: 41px;
+  height: 41px;
+  top: 13px;
+  left: 40px;
+  background-image: url("../images/sprite.icon.reco.play-button.png");
+  background-size: 41px auto;
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+}
+/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.no-backgroundsize .additional-recommendations .recommendations-promos .thumb .play:after {
+  background-image: url("../images/sprite.icon.reco.play-button.lo-res.png");
+}
+@media (min-width: 650px), print {
+  /* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+  .additional-recommendations .recommendations-promos .thumb .play:after {
+    top: 24px;
+    left: 60px;
+  }
+}
+/* line 84, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .recommendations-promos .thumb .play:hover:after {
+  background-position: 0 -41px;
+}
+/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .recommendations-promos .thumb img {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 650px), print {
+  /* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+  .additional-recommendations .recommendations-promos .thumb {
+    width: 190px;
+    padding-right: 30px;
+  }
+}
+/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .children-key ul {
+  padding: 0;
+}
+/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .children-key li {
+  display: inline-block;
+  width: 25px;
+}
+/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .related-tool-wrapper {
+  margin: 0 15px;
+}
+@media (min-width: 650px), print {
+  /* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+  .additional-recommendations .related-tool-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 30px;
+  }
+}
+/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .related-tool {
+  display: block;
+  background: #fff;
+  padding: 20px 40px 30px 40px;
+  color: #7a4183;
+  width: 100%;
+}
+@media (min-width: 650px), print {
+  /* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+  .additional-recommendations .related-tool {
+    max-width: 390px;
+    margin: 0;
+    float: right;
+  }
+}
+/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .related-tool:hover {
+  text-decoration: none;
+}
+/* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .related-tool span {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .related-tool .tool-intro {
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 20px;
+  font-size: 1.25rem;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .related-tool .tool-name {
+  font-size: 24px;
+  font-size: 1.5rem;
+  padding-top: 105px;
+  background-size: 114px auto;
+  background-image: url("../images/icon.recommendations.parenting.coach.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.no-backgroundsize .additional-recommendations .related-tool .tool-name {
+  background-image: url("../images/icon.recommendations.parenting.coach.lo-res.png");
+}
+/* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .child-content-indicator {
+  clear: both;
+  margin: 40px 0 0;
+  float: left;
+  width: 100%;
+  padding: 0 15px;
+}
+@media (min-width: 650px) {
+  /* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+  .additional-recommendations .child-content-indicator {
+    padding: 0;
+  }
+  /* line 177, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+  .additional-recommendations .child-content-indicator .children-key li {
+    margin-bottom: 0;
+  }
+}
+/* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+.additional-recommendations .child-content-indicator .children-key {
+  width: 100%;
+}
+
+/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.col.recommendations-sample {
+  margin-bottom: 30px;
+}
+@media (min-width: 650px), print {
+  /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+  .col.recommendations-sample {
+    margin-right: 4.166666%;
+    margin-bottom: 0;
+  }
+}
+/* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.col.recommendations-sample > img {
+  display: none;
+}
+@media (min-width: 650px), print {
+  /* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+  .col.recommendations-sample > img {
+    display: block;
+    width: 100%;
+    max-width: 388px;
+  }
+}
+
+@media (min-width: 650px), print {
+  /* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+  .col.recommendations-usage {
+    padding-left: 4.166666%;
+    border-left: 1px solid #e2e2e2;
+  }
+}
+/* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.col.recommendations-usage h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: #7a4183;
+}
+/* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.col.recommendations-usage dl {
+  display: table;
+  margin-bottom: 33px;
+}
+/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.col.recommendations-usage dt, .col.recommendations-usage dd {
+  display: table-cell;
+  vertical-align: top;
+}
+/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.col.recommendations-usage dt {
+  width: 80px;
+}
+/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.col.recommendations-usage dt .count {
+  display: block;
+  width: 55px;
+  height: 55px;
+  line-height: 56px;
+  line-height: 3.5rem;
+  font-size: 32px;
+  font-size: 2rem;
+  color: #7a4183;
+  text-align: center;
+  background-image: url("../images/icon.circle.110x110.png");
+  background-size: 55px auto;
+  background-repeat: no-repeat;
+  font-weight: 700;
+}
+/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.no-backgroundsize .col.recommendations-usage dt .count {
+  background-image: url("../images/icon.circle.55x55.png");
+}
+/* line 65, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.col.recommendations-usage dd {
+  color: #696969;
+  line-height: 24px;
+  line-height: 1.5rem;
+  padding: 0;
+}
+/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.col.recommendations-usage .buttons {
+  padding-left: 80px;
+}
+/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.col.recommendations-usage .buttons .button {
+  display: inline-block;
+  width: 45%;
+  margin-bottom: 0;
+}
+/* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+.col.recommendations-usage .buttons .sign-up {
+  margin-right: 0;
 }

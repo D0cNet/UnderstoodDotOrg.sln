@@ -9,17 +9,17 @@
     margin: .5in .25in !important;
 }
 
-  /* line 14, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   body {
     width: 8in !important;
   }
 
-  /* line 18, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   a[href]:after {
     font-size: 10px;
   }
 
-  /* line 23, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .logo-u-main img {
     display: block !important;
     filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale");
@@ -33,7 +33,7 @@
     -o-filter: grayscale(100%);
   }
 
-  /* line 35, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .checker,
   .radio {
     display: inline-block !important;
@@ -43,13 +43,13 @@
     border-radius: 50%;
   }
 
-  /* line 43, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .selector,
   .button {
     border: solid 1px #d2d2d2 !important;
   }
 
-  /* line 78, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   #header-page .nav-main > ul > li ul,
   #rsToggle,
   .modal,
@@ -66,23 +66,23 @@
     display: none !important;
   }
 
-  /* line 86, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .row-equal-heights .col:first-child {
     height: auto !important;
   }
 
-  /* line 93, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .hero-carousel {
     height: 200px;
     overflow: hidden;
     background: #fff !important;
   }
 
-  /* line 99, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   #hero-carousel-wrapper .slide {
     background: none !important;
   }
-  /* line 102, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   #hero-carousel-wrapper .slide .text {
     position: static !important;
     margin-left: 30px !important;
@@ -90,271 +90,271 @@
     margin-top: 40px;
   }
 
-  /* line 111, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 111, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .guide-me {
     display: none !important;
     background: #fff !important;
   }
 
-  /* line 116, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 116, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .parent-toolkit {
     background: #fff !important;
   }
-  /* line 119, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .parent-toolkit .header-parent-toolkit {
     width: 100% !important;
   }
-  /* line 123, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .parent-toolkit .rsOverflow {
     width: 400px !important;
   }
 
-  /* line 135, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .page-topic .get-better-recommendations,
   .carousel-tertiary #topic-carousel {
     display: none !important;
   }
 
-  /* line 138, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .my-account-nav .account-nav-wrapper {
     height: 150px !important;
     top: 0 !important;
   }
 
-  /* line 143, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .my-account-nav .account-links {
     position: static !important;
     float: right !important;
     margin: 0 !important;
   }
 
-  /* line 150, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .terms-wrapper .terms-container .terms-content {
     height: auto !important;
   }
 
-  /* line 155, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .large-landing-module .landing-modules {
     height: auto !important;
     float: left !important;
   }
 
-  /* line 160, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .landing-events.landing-modules {
     width: 279px !important;
     float: left !important;
   }
 
-  /* line 166, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .account-notifications-tab-text-form textarea {
     height: 300px !important;
     max-width: 100% !important;
   }
 
-  /* line 172, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .member-card-info {
     height: auto !important;
   }
 
-  /* line 176, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .member-card-specialties a[href]:after {
     content: " " !important;
   }
 
-  /* line 183, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 183, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .upcoming-events .rsOverflow {
     width: 800px !important;
     overflow: visible !important;
   }
-  /* line 188, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .upcoming-events .event-cards {
     margin-left: 0 !important;
   }
-  /* line 192, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .upcoming-events .event-card {
     width: 360px !important;
   }
-  /* line 196, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 196, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .upcoming-events .event-card-title {
     height: auto !important;
   }
-  /* line 200, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 200, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .upcoming-events .event-card-image a[href]:after {
     content: " " !important;
   }
 
-  /* line 209, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .recent-questions .rsOverflow {
     width: 800px !important;
     overflow: visible !important;
   }
-  /* line 214, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 214, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .recent-questions .question-card-info {
     padding-left: 0 !important;
     height: auto !important;
   }
 
-  /* line 222, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 222, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-members {
     height: 500px !important;
     page-break-before: always;
   }
-  /* line 226, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-members .rsAutoHeight {
     height: auto !important;
   }
-  /* line 230, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 230, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-members .rsOverflow {
     height: auto !important;
     width: 800px !important;
     overflow: visible !important;
   }
-  /* line 236, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 236, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-members .member-cards .member-card-info {
     height: auto !important;
     page-break-after: always;
   }
 
-  /* line 246, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 246, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-groups .rsOverflow {
     width: 800px !important;
     overflow: visible !important;
   }
-  /* line 251, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 251, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-groups .group-cards {
     margin-left: 0 !important;
   }
-  /* line 255, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 255, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-groups .group-card-image a[href]:after {
     content: " " !important;
   }
 
-  /* line 264, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-blogs .rsOverflow {
     width: 800px !important;
     overflow: visible !important;
   }
-  /* line 269, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 269, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-blogs .blog-card-info {
     padding-left: 0 !important;
   }
 
-  /* line 278, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 278, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .live-chat .rsOverflow {
     width: 800px !important;
     overflow: visible !important;
   }
-  /* line 283, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .live-chat .event-card-info {
     height: auto !important;
   }
-  /* line 287, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 287, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .live-chat .event-card-upper {
     margin-left: 0 !important;
   }
 
-  /* line 294, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 294, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .calendar-grid .grid-row > .day {
     border: solid 1px #d2d2d2;
   }
 
-  /* line 299, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 299, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-parents .community-parents-carousel .member-cards .rsContent > ul > li:nth-child(4) {
     display: none !important;
   }
 
-  /* line 304, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 304, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .mobile-search-box {
     display: none !important;
   }
 
-  /* line 308, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 308, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .discussion-box {
     padding: 0 !important;
     border: none !important;
   }
-  /* line 312, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 312, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .discussion-box h4 {
     font-size: 20px !important;
   }
-  /* line 316, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 316, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .discussion-box .summary {
     width: 18% !important;
     min-width: 0 !important;
     clear: none !important;
   }
-  /* line 317, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 317, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .discussion-box .board {
     width: 10% !important;
     min-width: 0 !important;
     clear: none !important;
   }
-  /* line 318, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 318, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .discussion-box .started-by {
     width: 8% !important;
     min-width: 0 !important;
     clear: none !important;
   }
-  /* line 319, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 319, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .discussion-box .replies {
     width: 8% !important;
     min-width: 0 !important;
     clear: none !important;
   }
-  /* line 320, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 320, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .discussion-box .latest-post, .discussion-box .latest-post-tabular {
     width: 18% !important;
     min-width: 0 !important;
     clear: none !important;
   }
 
-  /* line 326, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 326, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .individual-discussion .discussion-contributer {
     margin-right: 0 !important;
   }
 
-  /* line 333, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 333, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-blogs-more .rsOverflow {
     width: 800px !important;
     overflow: visible !important;
   }
-  /* line 338, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 338, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-blogs-more .blog-card-wrapper {
     padding-left: 0 !important;
   }
-  /* line 342, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 342, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-blogs-more .author-image a[href]:after {
     content: " " !important;
   }
 
-  /* line 349, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 349, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .community-blog-post-list .blog-post-list {
     margin-left: 0 !important;
   }
 
-  /* line 354, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 354, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .partners-list-rs-wrapper {
     margin-bottom: 20px !important;
   }
 
-  /* line 357, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 357, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .about-partners-list .partner-block {
     clear: both !important;
     overflow: hidden !important;
   }
 
-  /* line 364, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 364, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .l-about-experts-intro-carousel .row .offset-1 {
     margin-left: 0 !important;
   }
 
-  /* line 371, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 371, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .dl-list-results .search-result,
   .advice-results .search-result {
     border: solid 1px #d2d2d2 !important;
   }
 
-  /* line 379, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 379, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .page-topic.support .title-wrapper h1,
   .page-topic.support .title-wrapper .page-subtitle,
   .page-topic.recommendations h1,
@@ -362,55 +362,55 @@
     padding-left: 0 !important;
   }
 
-  /* line 383, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 383, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .page-topic.support .title-wrapper:before,
   .page-topic.recommendations h1:before {
     width: 0 !important;
   }
 
-  /* line 390, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 390, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .recos-for-you .rsOverflow {
     width: 760px !important;
     overflow: visible !important;
   }
-  /* line 395, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 395, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .recos-for-you li {
     height: auto !important;
     padding-left: 0 !important;
   }
 
-  /* line 405, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 405, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .recos-upcoming-events .rsOverflow {
     width: 760px !important;
     overflow: visible !important;
     height: auto !important;
   }
-  /* line 411, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 411, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .recos-upcoming-events .rsAutoHeight {
     height: 500px !important;
   }
-  /* line 415, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 415, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .recos-upcoming-events li {
     height: auto !important;
     padding-right: 0 !important;
   }
-  /* line 420, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 420, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .recos-upcoming-events .event-wrapper {
     padding-left: 0 !important;
   }
 
-  /* line 429, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 429, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .recos-ask-parents .rsOverflow {
     width: 760px !important;
     overflow: visible !important;
     height: auto !important;
   }
-  /* line 435, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 435, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .recos-ask-parents li {
     height: auto !important;
     padding-right: 0 !important;
   }
-  /* line 440, /tmp/build_5a00897d-557d-4072-95b5-2827c9e45254/source/Presentation/includes/css/print.scss */
+  /* line 440, /Users/justin/projects.dp/poses/source/Presentation/includes/css/print.scss */
   .recos-ask-parents .parents-wrapper {
     padding-left: 0 !important;
   }
