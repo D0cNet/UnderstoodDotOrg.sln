@@ -3,7 +3,7 @@
 <asp:Repeater ID="rptRelatedArticles" runat="server">
     <HeaderTemplate>
         <div class="keep-reading">
-            <h3><sc:FieldRenderer runat="server" FieldName="Related Articles Title" /></h3>
+            <h3><sc:FieldRenderer runat="server" FieldName="Sidebar Related Articles Title" /></h3>
             <ul>
     </HeaderTemplate>
     <ItemTemplate>

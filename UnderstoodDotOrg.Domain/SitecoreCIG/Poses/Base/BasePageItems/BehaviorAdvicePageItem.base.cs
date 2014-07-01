@@ -73,11 +73,11 @@ public CustomTextField TipTitle
 }
 
 
-public CustomTextField RelatedArticlesTitle
+public CustomTextField SidebarRelatedArticlesTitle
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Related Articles Title"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Sidebar Related Articles Title"]);
 	}
 }
 
@@ -100,11 +100,20 @@ public CustomTreeListField ChildGrades
 }
 
 
-public CustomTreeListField RelatedArticlesItems
+public CustomTreeListField SidebarRelatedArticlesItems
 {
 	get
 	{
-		return new CustomTreeListField(InnerItem, InnerItem.Fields["Related Articles Items"]);
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Sidebar Related Articles Items"]);
+	}
+}
+
+
+public CustomTextField CarouselRelatedArticlesTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Carousel Related Articles Title"]);
 	}
 }
 
@@ -114,6 +123,24 @@ public CustomTextField ContentId
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["ContentId"]);
+	}
+}
+
+
+public CustomTreeListField CarouselRelatedArticlesItems
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Carousel Related Articles Items"]);
+	}
+}
+
+
+public CustomTextField ContentThumbnail
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Content Thumbnail"]);
 	}
 }
 

@@ -55,6 +55,24 @@ public CustomLookupField HeroImageDatasource
 }
 
 
+public CustomTextField CarouselRelatedArticlesTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Carousel Related Articles Title"]);
+	}
+}
+
+
+public CustomTreeListField CarouselRelatedArticlesItems
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Carousel Related Articles Items"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

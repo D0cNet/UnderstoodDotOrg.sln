@@ -41,7 +41,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.Widge
         private void BindContent()
         {
             BehaviorToolsAdviceVideoPageItem pageItem = new BehaviorToolsAdviceVideoPageItem(Sitecore.Context.Item);
-            var articles = pageItem.BehaviorAdvicePage.RelatedArticlesItems.ListItems;
+            var articles = pageItem.BehaviorAdvicePage.SidebarRelatedArticlesItems.ListItems.FilterByContextLanguageVersion()
+                                    .Take(3);
             if (articles.Any())
             {
                 rptRelatedArticles.DataSource = articles;

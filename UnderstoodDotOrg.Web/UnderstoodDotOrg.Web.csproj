@@ -1911,13 +1911,6 @@
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerComments.ascx.designer.cs">
       <DependentUpon>BehaviorToolsContainerComments.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerMore-Carousel.ascx.cs">
-      <DependentUpon>BehaviorToolsContainerMore-Carousel.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerMore-Carousel.ascx.designer.cs">
-      <DependentUpon>BehaviorToolsContainerMore-Carousel.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsHelpful-Count.ascx.cs">
       <DependentUpon>BehaviorToolsHelpful-Count.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1934,6 +1927,13 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx.designer.cs">
       <DependentUpon>BehaviorToolsLandingPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsMoreCarousel.ascx.cs">
+      <DependentUpon>BehaviorToolsMoreCarousel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsMoreCarousel.ascx.designer.cs">
+      <DependentUpon>BehaviorToolsMoreCarousel.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsRelatedArticles.ascx.cs">
       <DependentUpon>BehaviorToolsRelatedArticles.ascx</DependentUpon>
@@ -2896,10 +2896,10 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsCommentGallery.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerComments.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerMore-Carousel.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsHelpful-Count.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsHeroContainer.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx" />
+    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsMoreCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsRelatedArticles.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx" />

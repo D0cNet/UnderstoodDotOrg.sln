@@ -23,6 +23,7 @@ namespace UnderstoodDotOrg.Common
         public const int MORE_LIKE_THIS_ENTRIES = 6;
         public const int ARTICLE_COMMENTS_PER_PAGE = 5;
         public const int HOMEPAGE_FEATURED_ARTICLES = 6;
+        public const int BEHAVIOR_TOOLS_FEATURED_ARTICLES = 9;
 
         #region Query Strings
 
