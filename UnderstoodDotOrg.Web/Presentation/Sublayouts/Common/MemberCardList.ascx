@@ -38,10 +38,10 @@
                    <div class="community-badges">
                      <%--    <ul>
                             <li>
-                                <img src="/Presentation/Includes/img/platinum.png"  width="20px" height="20px" alt="Alternate Text" />
+                                <img src="/Presentation/Includes/images/platinum.png"  width="20px" height="20px" alt="Alternate Text" />
                             </li>
                             <li>
-                                <img src="/Presentation/Includes/img/platinum.png"  width="20px" height="20px" alt="Alternate Text" />
+                                <img src="/Presentation/Includes/images/platinum.png"  width="20px" height="20px" alt="Alternate Text" />
                             </li>
                         </ul>--%>
                         <asp:Repeater ID="rptrBadges" runat="server">
