@@ -120,7 +120,7 @@
         <script src="/Presentation/includes/js/vendor/hyphenate.min.js"></script>
         <script src="/Presentation/includes/js/vendor/json2.js"></script>
         <script src="/Presentation/includes/js/vendor/handlebars-v1.3.0.js"></script>
-        <script src="http://f1.na.readspeaker.com/script/7171/ReadSpeaker.js?pids=embhl,custom"></script>
+        <script src="/Presentation/includes/js/vendor/readspeaker/ReadSpeaker.js?pids=embhl,custom"></script>
         <script src="/Presentation/includes/js/site.js"></script>
         <script src="/Presentation/includes/js/modules.js"></script>
         <asp:literal runat="server" id="footerSectionJS"></asp:literal>
