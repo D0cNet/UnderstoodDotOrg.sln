@@ -26,7 +26,7 @@
                 </div>
                 <p class="correctness-headline"><asp:Literal ID="litTextResults" runat="server"></asp:Literal></p>
                 <p class="explanation"><sc:FieldRenderer ID="frEndExplanation" runat="server" FieldName="Explanation"></sc:FieldRenderer></p>
-                <div class="question-counter">
+                <div class="question-counter" id="question-count">
                     <asp:Label ID="lblQuestionCounter" runat="server"></asp:Label>
                     <%--Question 1 of 10--%>
                 </div>
@@ -92,3 +92,9 @@
 <sc:Sublayout Path="~/Presentation/Sublayouts/Section/SectionTools.ascx" runat="server"></sc:Sublayout>
 <!-- .container -->
 <!-- END PARTIAL: tools -->
+<script>
+    $(function () {
+        if(<%= JumpToAnswer.ToString().ToLower() %>)
+            location.href = "#question-count";
+    })
+</script>

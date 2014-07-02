@@ -14,9 +14,9 @@ using System.Web.UI.HtmlControls;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
-
     public partial class KnowledgeQuizQuestionrArticlePage : System.Web.UI.UserControl
     {
+        public bool JumpToAnswer;
         private Item PageResources = Sitecore.Context.Item.Children.FirstOrDefault();
         private Item ResultsFolder;
         private int QuestionNumber;
@@ -27,6 +27,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            JumpToAnswer = false;
+
             Item questionsFolder = PageResources.Children.ToList().Where(i => i.IsOfType(KnowledgeQuizQuestionsFolderItem.TemplateId)).FirstOrDefault();
             if (questionsFolder != null)
                 Questions = questionsFolder.Children.ToList();
@@ -149,6 +151,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             }
 
             ShowQuestionResult();
+            JumpToAnswer = true;
         }
 
         protected void btnFalse_Click(object sender, EventArgs e)
@@ -168,6 +171,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             }
 
             ShowQuestionResult();
+            JumpToAnswer = true;
         }
 
         protected void rblAnswer_SelectedIndexChanged(object sender, EventArgs e)
@@ -188,6 +192,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             rblAnswer.Items.Clear();
             ShowQuestionResult();
+            JumpToAnswer = true;
         }
 
         protected void btnNextQuestion_Click(object sender, EventArgs e)
