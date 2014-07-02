@@ -969,5 +969,12 @@ namespace UnderstoodDotOrg.Common
             Pending,
             Approved
         }
+
+        public static class GeoIPLookup
+        {
+            public const string GeoIPDatabaseName = "GeoIPDatabase";
+            public const string GeoIPUserId = "GeoIPUserId";
+            public const string GeoIPLicenseKey = "GeoIPLicenseKey";
+        }
     }
 }

@@ -41,7 +41,7 @@
       <HintPath>..\packages\MaxMind.GeoIP2.0.3.3.0\lib\net40\MaxMind.GeoIP2.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
@@ -75,6 +75,7 @@
     <Compile Include="CommunityServices\Groups.cs" />
     <Compile Include="ExactTarget\ExactTargetService.cs" />
     <Compile Include="ExactTarget\IExactTargetService.cs" />
+    <Compile Include="LocationServices\GeoIPLookup.cs" />
     <Compile Include="MemberServices\MemberExtensions.cs" />
     <Compile Include="MemberServices\User.cs" />
     <Compile Include="Models\Telligent\Answer.cs" />
@@ -97,7 +98,6 @@
   <ItemGroup>
     <Folder Include="CommonSenseMediaService\" />
     <Folder Include="FacebookService\" />
-    <Folder Include="LocationServices\" />
     <Folder Include="LuminateService\" />
     <Folder Include="ServiceReferences\" />
   </ItemGroup>

@@ -70,8 +70,9 @@
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\Libraries\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\Libraries\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Buckets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -227,6 +228,13 @@
     </Compile>
     <Compile Include="Presentation\Layouts\Browser.aspx.designer.cs">
       <DependentUpon>Browser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\LocationTest.aspx.cs">
+      <DependentUpon>LocationTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\LocationTest.aspx.designer.cs">
+      <DependentUpon>LocationTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\MembershipTest.aspx.cs">
       <DependentUpon>MembershipTest.aspx</DependentUpon>
@@ -2669,6 +2677,7 @@
     <Content Include="Presentation\Includes\js\vendor\ZeroClipboard.swf" />
     <Content Include="Presentation\Layouts\Blank.aspx" />
     <Content Include="Presentation\Layouts\Browser.aspx" />
+    <Content Include="Presentation\LocationTest.aspx" />
     <Content Include="Presentation\MembershipTest.aspx" />
     <Content Include="Presentation\Sublayouts\About\AboutPartners.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutPartner_Details.ascx" />
