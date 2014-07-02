@@ -314,9 +314,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                     {
                         Response.Write("<!-- Error 601 -->");
                     }
-
-                    //TODO: get language and add it into the list of method parameters
-                    BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { PreferredLanguage = CurrentMember.PreferredLanguage, ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
+                    
                 }
             }
             catch (Exception ex)

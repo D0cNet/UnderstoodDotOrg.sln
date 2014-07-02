@@ -12,6 +12,8 @@ using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Services.AccessControlServices;
+using UnderstoodDotOrg.Domain.ExactTarget;
+using UnderstoodDotOrg.Services.ExactTarget;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -39,6 +41,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             
             var membershipManager = new MembershipManager();
             membershipManager.UpdateMember(CurrentMember);
+
+			BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { PreferredLanguage = CurrentMember.PreferredLanguage, ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
             
             //string url = MembershipHelper.GetNextStepURL(1);
             // send them to My Account, not into CMP
