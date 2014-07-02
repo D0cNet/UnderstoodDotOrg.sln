@@ -74,8 +74,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     else
                     {
                         if (PageNumber != 1)
+                        {
                             btnPrevPage.Visible = true;
-
+                            frQuizIntro.Visible = false;
+                        }
                         rptPageQuestions.DataSource = pageQuestions;
                         rptPageQuestions.DataBind();
                     }
@@ -91,6 +93,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             btnPrevPage.Visible = false;
 
             frResultHeadline.Visible = true;
+            frQuizIntro.Visible = false;
 
             Item resultsFolder = PageResources.Children.Where(i => i.IsOfType(AssessmentQuizResultsFolderItem.TemplateId)).FirstOrDefault();
 
