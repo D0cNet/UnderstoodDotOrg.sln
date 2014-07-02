@@ -120,23 +120,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
         protected void FileUpload(object sender, EventArgs e)
         {
-            FileUpload fuUserAvatar = (FileUpload)FindControl("fuUserAvatar");
-            if (fuUserAvatar.HasFile)
+            if (!this.CurrentMember.ScreenName.IsNullOrEmpty())
             {
-                string imageTempLocation = Path.GetTempPath() + fuUserAvatar.PostedFile.FileName;
-                fuUserAvatar.PostedFile.SaveAs(imageTempLocation);
-
-                string userId = TelligentService.ReadUserId(this.CurrentMember.ScreenName);
-
-                using (var webClient = new WebClient())
+                FileUpload fuUserAvatar = (FileUpload)FindControl("fuUserAvatar");
+                if (fuUserAvatar.HasFile)
                 {
-                    webClient.Headers.Add("Rest-User-Token", TelligentService.TelligentAuth());
-                    webClient.Headers.Add("Rest-Method", "PUT");
-                    var requestUrl = String.Format("{0}api.ashx/v2/users/{1}/avatar.xml", Sitecore.Configuration.Settings.GetSetting("TelligentConfig"), userId);
+                    string imageTempLocation = Path.GetTempPath() + fuUserAvatar.PostedFile.FileName;
+                    fuUserAvatar.PostedFile.SaveAs(imageTempLocation);
 
-                    webClient.UploadFile(requestUrl, "POST", imageTempLocation);
+                    string userId = TelligentService.ReadUserId(this.CurrentMember.ScreenName);
 
+                    using (var webClient = new WebClient())
+                    {
+                        webClient.Headers.Add("Rest-User-Token", TelligentService.TelligentAuth());
+                        webClient.Headers.Add("Rest-Method", "PUT");
+                        var requestUrl = String.Format("{0}api.ashx/v2/users/{1}/avatar.xml", Sitecore.Configuration.Settings.GetSetting("TelligentConfig"), userId);
+
+                        webClient.UploadFile(requestUrl, "POST", imageTempLocation);
+
+                    }
                 }
+            }
+            else 
+            {
+                Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{907EAD93-A2AB-48ED-886C-2DF985375803}")));
             }
         }
     }
