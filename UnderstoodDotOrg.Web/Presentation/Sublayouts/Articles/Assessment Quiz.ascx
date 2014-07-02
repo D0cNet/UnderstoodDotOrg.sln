@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Assessment Quiz.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Assessment_Quiz" %>
-
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <!-- BEGIN PARTIAL: pagetopic -->
 
@@ -12,62 +12,64 @@
             <!-- BEGIN PARTIAL: knowledge-quiz-a13a -->
             <div class="knowledge-quiz">
                 <div class="question-counter">
-                    <asp:Label ID="lblPageCounter" runat="server"></asp:Label>
+                    <asp:Label CssClass="assessment-quiz-pager" ID="lblPageCounter" runat="server"></asp:Label><br /><br />
+                    <p class="assessment-quiz-intro">
+                        <sc:FieldRenderer ID="frQuizIntro" runat="server" FieldName="Body Content" />
+                    </p>
                     <sc:FieldRenderer ID="frResultHeadline" runat="server" FieldName="Quiz Result Headline" Visible="false"></sc:FieldRenderer>
                     <%--Question 1 of 10--%>
                 </div>
                 <p class="explanation">
-                    <sc:fieldrenderer id="frEndExplanation" runat="server" fieldname="Detail" visible="false"></sc:fieldrenderer></p>
-                    <asp:Repeater ID="rptPageQuestions" runat="server" OnItemDataBound="rptPageQuestions_ItemDataBound">
-                        <HeaderTemplate>
+                    <sc:FieldRenderer ID="frEndExplanation" runat="server" FieldName="Detail" Visible="false"></sc:FieldRenderer>
+                </p>
+                <asp:Repeater ID="rptPageQuestions" runat="server" OnItemDataBound="rptPageQuestions_ItemDataBound">
+                    <HeaderTemplate>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <h3><%--True or False? Kids with dyslexia can never learn what other kids learn.--%>
+                            <sc:FieldRenderer ID="frQuestionTitle" runat="server" FieldName="Question" />
+                        </h3>
+                        <asp:Panel ID="pnlQuestion" runat="server" CssClass="answer-choices">
+                            <asp:Panel ID="pnlTrueFalse" runat="server" Visible="false">
+                                <button type="button" id="btnTrue" runat="server" class="button gray answer-choice-true rs_skip">True</button>
+                                <button type="button" id="btnFalse" runat="server" class="button gray answer-choice-false rs_skip">False</button>
+                                <asp:RadioButtonList ValidationGroup="vlgPageQuestions" ID="rblHiddenButtonList" runat="server" RepeatLayout="Flow">
+                                    <asp:ListItem Text="True" Value="True"></asp:ListItem>
+                                    <asp:ListItem Text="False" Value="False"></asp:ListItem>
+                                </asp:RadioButtonList>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
+                                    ControlToValidate="rblHiddenButtonList"
+                                    ValidationGroup="vlgPageQuestions"
+                                    runat="server">
+                                </asp:RequiredFieldValidator>
 
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <h3><%--True or False? Kids with dyslexia can never learn what other kids learn.--%>
-                                <sc:FieldRenderer ID="frQuestionTitle" runat="server" FieldName="Question" />
-                            </h3>
-                            <asp:Panel ID="pnlQuestion" runat="server" CssClass="answer-choices">
-                                <asp:Panel ID="pnlTrueFalse" runat="server" Visible="false">
-                                    <button type="button" id="btnTrue" runat="server" class="button gray answer-choice-true rs_skip" >True</button>
-                                    <button type="button" id="btnFalse" runat="server" class="button gray answer-choice-false rs_skip" >False</button>
-                                    <asp:RadioButtonList ValidationGroup="vlgPageQuestions" ID="rblHiddenButtonList" runat="server" RepeatLayout="Flow">
-                                        <asp:ListItem Text="True" Value="True"></asp:ListItem>
-                                        <asp:ListItem Text="False" Value="False"></asp:ListItem>
-                                    </asp:RadioButtonList>
-                                    <asp:RequiredFieldValidator id="RequiredFieldValidator1"
-                                        controltovalidate="rblHiddenButtonList"
-                                        validationgroup="vlgPageQuestions"
-                                        runat="server">
-                                    </asp:RequiredFieldValidator>
-
-                                </asp:Panel>
-                                <asp:Panel ID="pnlRadioQuestion" CssClass="test" runat="server" Visible="false">
-                                    <%-- OR --%>
-                                    <%-- Options for list style Question --%>
-                                    <asp:RadioButtonList ValidationGroup="vlgPageQuestions" ID="rblAnswer" runat="server" RepeatLayout="UnorderedList">
-                                    </asp:RadioButtonList>
-                                    <asp:RequiredFieldValidator id="rflRadioAnswer"
-                                        controltovalidate="rblAnswer"
-                                        validationgroup="vlgPageQuestions"
-                                        runat="server">
-                                    </asp:RequiredFieldValidator>
-                               </asp:Panel>
-                                <asp:Panel ID="pnlDropDown" runat="server" Visible="false">
-                                    <asp:DropDownList ValidationGroup="vlgPageQuestions" ID="ddlQuestion" runat="server"/>
-                                    <asp:RequiredFieldValidator id="rflDropDownAnswer"
-                                        controltovalidate="ddlQuestion"
-                                        validationgroup="vlgPageQuestions"
-                                        runat="server">
-                                    </asp:RequiredFieldValidator>
-                                    <br />
-                                    <br />
-                                </asp:Panel>
                             </asp:Panel>
-                        </ItemTemplate>
-                        <FooterTemplate>
-
-                        </FooterTemplate>
-                    </asp:Repeater>
+                            <asp:Panel ID="pnlRadioQuestion" CssClass="test" runat="server" Visible="false">
+                                <%-- OR --%>
+                                <%-- Options for list style Question --%>
+                                <asp:RadioButtonList ValidationGroup="vlgPageQuestions" ID="rblAnswer" runat="server" RepeatLayout="UnorderedList">
+                                </asp:RadioButtonList>
+                                <asp:RequiredFieldValidator ID="rflRadioAnswer"
+                                    ControlToValidate="rblAnswer"
+                                    ValidationGroup="vlgPageQuestions"
+                                    runat="server">
+                                </asp:RequiredFieldValidator>
+                            </asp:Panel>
+                            <asp:Panel ID="pnlDropDown" runat="server" Visible="false">
+                                <asp:DropDownList ValidationGroup="vlgPageQuestions" ID="ddlQuestion" runat="server" />
+                                <asp:RequiredFieldValidator ID="rflDropDownAnswer"
+                                    ControlToValidate="ddlQuestion"
+                                    ValidationGroup="vlgPageQuestions"
+                                    runat="server">
+                                </asp:RequiredFieldValidator>
+                                <br />
+                                <br />
+                            </asp:Panel>
+                        </asp:Panel>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                    </FooterTemplate>
+                </asp:Repeater>
                 <asp:HiddenField ID="hfKeyValuePairs" runat="server" />
                 <script>
                     var Answers = {};
@@ -121,13 +123,13 @@
         <!-- right bar -->
         <div class="col col-5 offset-1">
             
-            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulCountOnlySideColumn.ascx" runat="server"></sc:Sublayout>
+            <sc:Sublayout ID="Sublayout1" Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulCountOnlySideColumn.ascx" runat="server"></sc:Sublayout>
 
             <!-- BEGIN PARTIAL: find-helpful -->
-            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:Sublayout>
+            <sc:Sublayout ID="Sublayout2" Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:Sublayout>
             <!-- END PARTIAL: find-helpful -->
             <!-- BEGIN PARTIAL: keep-reading -->
-            <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" runat="server"></sc:Sublayout>
+            <sc:Sublayout ID="Sublayout3" Path="~/Presentation/Sublayouts/Articles/QuizKeepReadingControl.ascx" runat="server"></sc:Sublayout>
             <!-- END PARTIAL: keep-reading -->
         </div>
     </div>
@@ -137,7 +139,7 @@
 
 <!-- BEGIN PARTIAL: tools -->
 <!-- Tools -->
-<sc:Sublayout Path="~/Presentation/Sublayouts/Articles/QuizTryMoreQuizzes.ascx" runat="server"></sc:Sublayout>
+<sc:Sublayout ID="Sublayout4" Path="~/Presentation/Sublayouts/Articles/QuizTryMoreQuizzes.ascx" runat="server"></sc:Sublayout>
 
-<sc:Sublayout Path="~/Presentation/Sublayouts/Section/SectionTools.ascx" runat="server"></sc:Sublayout>
+<sc:Sublayout ID="Sublayout5" Path="~/Presentation/Sublayouts/Section/SectionTools.ascx" runat="server"></sc:Sublayout>
 <!-- .container -->
