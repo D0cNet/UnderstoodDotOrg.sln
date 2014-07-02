@@ -26,7 +26,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             Sitecore.Diagnostics.Assert.IsNotNull(item, "item");
 
             if ((item.Database != null && item.Database.Name != "master")
-                || item.Name.ToLower() == "__standardvalues")
+                || item.Name.ToLower() == "__standard values")
             {
                 return;
             }
