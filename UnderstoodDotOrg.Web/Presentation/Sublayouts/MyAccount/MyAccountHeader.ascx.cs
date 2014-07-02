@@ -17,6 +17,7 @@ using System.Text;
 using System.Collections.Specialized;
 using UnderstoodDotOrg.Services.TelligentService;
 using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -30,7 +31,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             {
                 return MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetUrl();
             }
-        }
+        }   
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsUserLoggedIn)
@@ -45,6 +46,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                 hlSectionTitle.NavigateUrl = MainsectionItem.GetHomePageItem().GetUrl();
                 frSectionTitle.Item = MainsectionItem.GetHomePageItem();
+
+                if(!String.IsNullOrEmpty(CurrentMember.ScreenName))
+                {
+                    List<INotification> notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
+                    if (notifs != null)
+                    {
+                        spnCount.Visible = true;
+                        litNotifCount.Text = notifs.Count().ToString();
+                        Notifications = notifs;
+                    }
+                    else
+                    {
+                        spnCount.Visible = false;
+                    }
+                }
             }
             else
             {

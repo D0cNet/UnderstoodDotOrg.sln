@@ -7,11 +7,10 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
-using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Notification_Templates
 {
-    public partial class ConnectTemplate : BaseSublayout
+    public partial class ConnectTemplateFront : BaseSublayout
     {
         public ConnectNotification ConnectionObj
         {
@@ -23,8 +22,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Notification_Te
         {
             btnAccept.Text = DictionaryConstants.AcceptText;
             btnDecline.Text = DictionaryConstants.DeclineText;
-           // btnAccept.Click += ConnectionObj.OnAccept;
-           // btnDecline.Click += ConnectionObj.OnDecline;
+            // btnAccept.Click += ConnectionObj.OnAccept;
+            // btnDecline.Click += ConnectionObj.OnDecline;
             base.OnInit(e);
         }
 
@@ -42,12 +41,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Notification_Te
             ConnectionObj = null;
             Notifications = null;
             Page.Response.Redirect(Page.Request.Url.ToString(), false);
-           
+
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-           
            
         }
     }

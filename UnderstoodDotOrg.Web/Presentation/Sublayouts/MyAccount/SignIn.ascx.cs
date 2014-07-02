@@ -70,7 +70,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     this.CurrentUser = membershipManager.GetUser(currentMember.MemberId, true);
 
                     //Redirect used here for profile??
-                   // this.ReturnRedirect();
+                    this.ReturnRedirect();
 
                     var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccount);
 

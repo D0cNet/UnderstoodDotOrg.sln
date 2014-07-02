@@ -58,6 +58,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         protected global::System.Web.UI.HtmlControls.HtmlImage userAvatar;
         
         /// <summary>
+        /// spnCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spnCount;
+        
+        /// <summary>
+        /// litNotifCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litNotifCount;
+        
+        /// <summary>
         /// rptrAccountNav control.
         /// </summary>
         /// <remarks>

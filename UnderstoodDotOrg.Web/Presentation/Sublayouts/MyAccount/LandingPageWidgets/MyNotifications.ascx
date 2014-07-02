@@ -2,10 +2,29 @@
 <!-- BEGIN PARTIAL: account-landing-notifications -->
 <div class="landing-notifications landing-modules rs_read_this">
     <header class="clearfix">
-        <h3>Notifications<span class="landing-module-count">100</span></h3>
+        <h3>Notifications<span class="landing-module-count"><asp:Literal ID="litNotifCount" Text="0" runat="server"></asp:Literal></span></h3>
     </header>
+    <asp:ListView  ID="lvNotifications" OnItemDataBound="lvNotifications_ItemDataBound"  runat="server">
+        <LayoutTemplate>
+            <ul class="landing-module-items">
+                <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+            </ul>
+        </LayoutTemplate>
+        <ItemTemplate>
 
-    <ul class="landing-module-items">
+        </ItemTemplate>
+        <EmptyDataTemplate>
+           
+        </EmptyDataTemplate>
+       
+    </asp:ListView>
+    <asp:Panel ID="pnlEmptyText" Visible="false" runat="server">
+         <p>
+                <asp:Literal Text="" ID="litEmptyText" runat="server" />
+            </p>
+    </asp:Panel>
+
+   <%-- <ul class="landing-module-items">
         <!-- This template for new connections -->
         <li class="new-connection">
             <p class="timestamp">
@@ -42,8 +61,10 @@
                 Katie McKenzie <a href="REPLACE">added a comment</a> to a officia explicabo est eveniet aperiam minus omnis et inventore reiciendis optio quis qui et
             </p>
         </li>
-    </ul>
-    <div class="bottom rs_skip"><a href="REPLACE">See All Notifications</a></div>
+    </ul>--%>
+
+
+    <div class="bottom rs_skip"><a href="" id="hrefNotificationsLink" runat="server" >See All Notifications</a></div>
 </div>
 <!-- /.landing-notifications /.landing-modules -->
 

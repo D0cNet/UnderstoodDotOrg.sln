@@ -36,7 +36,9 @@
             <div class="account-links">
                 <a class="profile-link button" href="<%= MyProfilePage.GetUrl() %>"><%= MyProfilePage.MyAccountBase.ContentPage.BasePageNEW.NavigationTitle.Rendered %></a>
                 <span class="button-wrapper">
-                    <a class="notifications-link button" href='<%= MyNotifications %>'>Notifications<span class="notification-count">3</span></a>
+
+                    <a class="notifications-link button" href='<%= MyNotifications %>' >Notifications<span class="notification-count" runat="server" visible="false" id="spnCount"><asp:Literal ID="litNotifCount" runat="server"></asp:Literal></span></a>
+
                 </span>
             </div>
         </div>

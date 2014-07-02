@@ -27,7 +27,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
 
          DateTime NotificationDate { get; set; }
          Constants.NotificationElements.NotificationType Type { get; set; }
-        
+         
 
     }
 }

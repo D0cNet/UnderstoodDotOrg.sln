@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
 {
-    public class FeedsCollection :  IList<NotificationFeed>
+    public class FeedsCollection :  IList<INotificationFeed>
     {
-        private IList<NotificationFeed> _list = new List<NotificationFeed>();
+        private IList<INotificationFeed> _list = new List<INotificationFeed>();
 
-        private IList<NotificationFeed> ConvertToFeedList(IEnumerable<INotification> notifs)
+        private IList<INotificationFeed> ConvertToFeedList(IEnumerable<INotification> notifs)
         {
-            IList<NotificationFeed> lnf = new List<NotificationFeed>();
+            IList<INotificationFeed> lnf = new List<INotificationFeed>();
             //Sort list by notification date
             notifs.ToList().Sort();
             //Group sorted list and extract notification groups into feed then add feed to feed list
             foreach (var item in notifs.GroupBy(x=>x.NotificationDate).Select(x=>x).ToList()  )
             {
                 
-                NotificationFeed nf = new NotificationFeed(item.ToList(),item.Key);
+                INotificationFeed nf = new NotificationFeed(item.ToList(),item.Key);
                 lnf.Add(nf);
 
               
@@ -33,14 +33,14 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
         public FeedsCollection(IEnumerable<INotification> notifs)
         {
             ///Call some functionality to sort notifications and set the feed lists and the customDate fields of
-            ///NotificationFeeds
+            ///INotificationFeeds
             if(notifs!=null)
             {
                 _list = ConvertToFeedList(notifs);
             }
         }
 
-        public FeedsCollection(IEnumerable<NotificationFeed> notifeeds)
+        public FeedsCollection(IEnumerable<INotificationFeed> notifeeds)
         {
             if (notifeeds != null)
             {
@@ -49,13 +49,13 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
             
         }
         #region IList Implementation
-        public int IndexOf(NotificationFeed item)
+        public int IndexOf(INotificationFeed item)
         {
             return _list.IndexOf(item);
           
         }
 
-        public void Insert(int index, NotificationFeed item)
+        public void Insert(int index, INotificationFeed item)
         {
             _list.Insert(index, item);
         }
@@ -65,7 +65,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
             _list.RemoveAt(index);
         }
 
-        public NotificationFeed this[int index]
+        public INotificationFeed this[int index]
         {
             get
             {
@@ -77,7 +77,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
             }
         }
 
-        public void Add(NotificationFeed item)
+        public void Add(INotificationFeed item)
         {
             _list.Add(item);
         }
@@ -87,12 +87,12 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
             _list.Clear();
         }
 
-        public bool Contains(NotificationFeed item)
+        public bool Contains(INotificationFeed item)
         {
             return _list.Contains(item);
         }
 
-        public void CopyTo(NotificationFeed[] array, int arrayIndex)
+        public void CopyTo(INotificationFeed[] array, int arrayIndex)
         {
            _list.CopyTo(array,arrayIndex);
         }
@@ -107,12 +107,12 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
             get { return _list.IsReadOnly; }
         }
 
-        public bool Remove(NotificationFeed item)
+        public bool Remove(INotificationFeed item)
         {
             return _list.Remove(item);
         }
 
-        public IEnumerator<NotificationFeed> GetEnumerator()
+        public IEnumerator<INotificationFeed> GetEnumerator()
         {
             return _list.GetEnumerator();
         }

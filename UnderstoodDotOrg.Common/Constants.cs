@@ -698,7 +698,8 @@ namespace UnderstoodDotOrg.Common
             public enum NotificationType
             {
                 Comment,
-                Connection
+                Connection,
+                ForumReply
             }
             public static string CommentTemplatePath
             {
@@ -714,6 +715,10 @@ namespace UnderstoodDotOrg.Common
                     return @"~/Presentation/Sublayouts/MyAccount/Notification Templates/ConnectTemplate.ascx";
                 }
             }
+
+            public static string ConnectTemplateFrontPath { get { return @"~/Presentation/Sublayouts/MyAccount/Notification Templates/ConnectTemplateFront.ascx"; } }
+
+            public static string CommentTemplateFrontPath { get { return @"~/Presentation/Sublayouts/MyAccount/Notification Templates/CommentTemplateFront.ascx"; } }
         }
         #endregion
     

@@ -1,7 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ConnectTemplate.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Notification_Templates.ConnectTemplate" %>
-jQuery(document).ready( funtion(){
-        
-});
+
  <div class="notification-item rs_read_this">
         <div class="notification-header">
           <p class="notification-label">

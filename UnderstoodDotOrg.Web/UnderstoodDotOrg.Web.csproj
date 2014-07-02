@@ -1579,12 +1579,26 @@
     <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\CommentTemplate.ascx.designer.cs">
       <DependentUpon>CommentTemplate.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\CommentTemplateFront.ascx.cs">
+      <DependentUpon>CommentTemplateFront.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\CommentTemplateFront.ascx.designer.cs">
+      <DependentUpon>CommentTemplateFront.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ConnectTemplate.ascx.cs">
       <DependentUpon>ConnectTemplate.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ConnectTemplate.ascx.designer.cs">
       <DependentUpon>ConnectTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ConnectTemplateFront.ascx.cs">
+      <DependentUpon>ConnectTemplateFront.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ConnectTemplateFront.ascx.designer.cs">
+      <DependentUpon>ConnectTemplateFront.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx.cs">
       <DependentUpon>Reset Password.ascx</DependentUpon>
@@ -2848,7 +2862,9 @@
     <Content Include="Presentation\Sublayouts\MyAccount\MyNotificationsContainer.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\MyNotificationsTabs.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\CommentTemplate.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\CommentTemplateFront.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\ConnectTemplate.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\ConnectTemplateFront.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Reset Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignIn.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\SignUp.ascx" />

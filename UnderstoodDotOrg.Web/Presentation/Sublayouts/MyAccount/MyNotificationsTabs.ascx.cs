@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -14,6 +16,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<INotification> notifs = new List<INotification>();
+            if (Notifications != null)
+            {
+                notifs = Notifications;
+
+            }
+            else
+            {
+                if (IsUserLoggedIn)
+                {
+                    if (!String.IsNullOrEmpty(CurrentMember.ScreenName))
+                    {
+                        notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
+                        Notifications = notifs;
+                    }
+                }
+
+            }
+            litNotifsCount.Text = notifs.Count().ToString();
             if (!IsPostBack)
             {
                 if (Sitecore.Context.Item.TemplateID.ToString() == MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetEmailAndAlertPreferences().InnerItem.TemplateID.ToString())
@@ -33,6 +54,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 hypWhatsHappening.NavigateUrl = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetUrl();
                 hypEmailAndAlertPreferences.NavigateUrl = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetEmailAndAlertPreferences().InnerItem.GetUrl();
                 hypPrivateMessages.NavigateUrl = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetPrivateMessageTool().InnerItem.GetUrl();
+
+              
             }
         }
     }

@@ -8,13 +8,13 @@ using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
 {
-    public class ConnectNotification: INotification
+    public class ConnectNotification: BaseNotification
     {
 
-       
-         public ConnectNotification()
+
+        public ConnectNotification()
         {
-            
+
         }
          public ConnectNotification(XmlNode node)
         {
@@ -22,22 +22,25 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
              if(node!=null)
              {
                  Type = Common.Constants.NotificationElements.NotificationType.Connection;
-                 UserName = node.SelectSingleNode("User/Username").InnerText;
+                 UserName = node.SelectSingleNode("Actors/RestNotificationActor/User/DisplayName").InnerText;
                  NotificationDate =Convert.ToDateTime(node.SelectSingleNode("CreatedDate").InnerText);
-                 TimeStamp = NotificationDate.ToString("hh:mm");
+                
+                 TimeStamp = NotificationDate.ToString("hh:mm:tt");
+                 
              }
         }
-        public event EventHandler evtOk;
 
-        public event EventHandler evtCancel;
+         public string FriendlyDate { get { return NotificationDate.ToString("MMMM dd yyyy"); } }
+         public event EventHandler evtOk;
 
-        
+         public event EventHandler evtCancel;
         public virtual void OnAccept(object sender, EventArgs args)
         {
             if(evtOk != null)
             {
                evtOk(this, args);
             }
+            
         }
 
         public virtual void OnDecline(object sender, EventArgs args)
@@ -48,7 +51,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
             }
         }
 
-        public string Action
+        public override string Action
         {
             get
             {
@@ -59,42 +62,20 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
         }
 
 
-        public string TimeStamp
-        {
-            get;
-            set;
-        }
+        
 
-        public string NotificationLink
+        public override string NotificationLink
         {
             get { return String.Format(DictionaryConstants.ConnectLink, TimeStamp); }
             
         }
 
-        public DateTime NotificationDate
-        {
-            get;
-            set;
-        }
-
-        public Common.Constants.NotificationElements.NotificationType Type
-        {
-            get;
-            set;
-        }
+       
     
 
-        public string UserName
-        {
-	          get ;
-	          set ;
-        }
+        
 
 
 
-        public int CompareTo(INotification other)
-        {
-            return this.NotificationDate.CompareTo(other.NotificationDate);
-        }
     }
 }

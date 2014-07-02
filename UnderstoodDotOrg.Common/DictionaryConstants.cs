@@ -1335,8 +1335,10 @@ namespace UnderstoodDotOrg.Common
        public static string ConnectLink { get { return "Parent Connection <span class='timestamp'>{0}</span>"; } }//{ get { return Translate.TextByDomain(PosesDictionary, "ConnectHeader"); } }
        public static string CommentAction { get { return "{0} <a href='{1}'>added&hellip;</a>"; } }
        public static string AcceptText { get { return "Accept"; } }
-
+       public static string CommentFrontAction { get { return "{0} <a href='{1}'>added a comment</a> to {2}"; } }
        public static string DeclineText { get { return "Decline"; } }
+
+       public static string EmptyNotifications { get { return @"You have no new notifications. Check back soon."; } }
        #endregion
 
 
@@ -1396,6 +1398,9 @@ namespace UnderstoodDotOrg.Common
        public static string ViewActivity { get { return "View Activity"; } }
        public static string RequestSent { get { return "Request Sent"; } }
 
-       
+
+
+
+
     }
 }

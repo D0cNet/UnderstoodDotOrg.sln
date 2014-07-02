@@ -7,7 +7,7 @@ using UnderstoodDotOrg.Common.Helpers;
 
 namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
 {
-    public class NotificationFeed: IComparable<NotificationFeed>
+    public class NotificationFeed: IComparable<NotificationFeed>, UnderstoodDotOrg.Domain.Models.TelligentCommunity.INotificationFeed
     {
         public DateTime CustomDate { get; set; }
         public string FriendlyDate { get { return DataFormatHelper.FormatDate(CustomDate.ToString()); } }

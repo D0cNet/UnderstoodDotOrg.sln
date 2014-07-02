@@ -177,10 +177,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MembershipModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\TelligentCommunity\BaseNotification.cs" />
     <Compile Include="Models\TelligentCommunity\CommentNotification.cs" />
     <Compile Include="Models\TelligentCommunity\ConnectNotification.cs" />
     <Compile Include="Models\TelligentCommunity\FeedsCollection.cs" />
+    <Compile Include="Models\TelligentCommunity\ForumReplyNotification.cs" />
     <Compile Include="Models\TelligentCommunity\INotification.cs" />
+    <Compile Include="Models\TelligentCommunity\INotificationFeed.cs" />
     <Compile Include="Models\TelligentCommunity\NotificationFeed.cs" />
     <Compile Include="Personalization\PersonalizationContext.cs" />
     <Compile Include="Personalization\PersonalizationHelper.cs" />

@@ -31,6 +31,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         protected global::System.Web.UI.WebControls.HyperLink hypWhatsHappening;
         
         /// <summary>
+        /// litNotifsCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litNotifsCount;
+        
+        /// <summary>
         /// liMessagesTab control.
         /// </summary>
         /// <remarks>

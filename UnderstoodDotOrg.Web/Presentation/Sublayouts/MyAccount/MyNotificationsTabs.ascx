@@ -8,7 +8,7 @@
         <ul>
           <li id="liNotificationsTab" runat="server" class="notifications-tab ">
             <asp:HyperLink ID="hypWhatsHappening" runat="server" >What's Been Happening</asp:HyperLink>
-            <span class="circle">0</span>
+            <span class="circle"><asp:Literal ID="litNotifsCount" runat="server"></asp:Literal></span>
           </li>
           <li id="liMessagesTab" runat="server" class="messages-tab ">
             <asp:HyperLink ID="hypPrivateMessages" runat="server">Private Messages</asp:HyperLink>

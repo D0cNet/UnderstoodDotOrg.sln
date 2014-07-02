@@ -51,7 +51,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
         public static bool PostComment(int blogId, int blogPostId, string body, string currentUser)
         {
-            if (currentUser == "admin")
+            if (currentUser == "admin") 
             {
                 return false;
             }
@@ -79,8 +79,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 });
 
                 return true;
-            }
-            catch (Exception ex)
+            } 
+            catch (Exception ex) 
             {
                 Sitecore.Diagnostics.Log.Error(String.Format("Error posting comment: {0}", postUrl), ex);
                 return false;
@@ -326,13 +326,13 @@ namespace UnderstoodDotOrg.Services.TelligentService
         public static int GetTotalLikes(string contentId)
         {
             int count = 0;
-
+            
             var requestUrl = GetApiEndPoint(
                 string.Format("likes.xml?ContentId={0}&PageSize=1", contentId));
 
             try
             {
-                MakeApiRequest(wc =>
+                MakeApiRequest(wc => 
                 {
                     var response = wc.DownloadString(requestUrl);
                     var xml = new XmlDocument();
@@ -381,7 +381,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             }
             return comment;
         }
-        public static XmlNode ReadUserComments(string username)
+        public static XmlNode ReadUserComments(string username,string contentId=null,string commentUser=null)
         {
             var webClient = new WebClient();
             XmlNode node = null;
@@ -393,12 +393,22 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 var userId = ReadUserId(username);
 
                 webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                //webClient.Headers.Add("Rest-Impersonate-User", userId);
-                var requestUrl = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "api.ashx/v2/comments.xml?UserId=" + userId;
+                webClient.Headers.Add("Rest-Impersonate-User", username);
+                string requestUrl= Sitecore.Configuration.Settings.GetSetting("TelligentConfig") +"api.ashx/v2/comments.xml";
+
+                if(contentId!=null)
+                 requestUrl= Sitecore.Configuration.Settings.GetSetting("TelligentConfig") +"api.ashx/v2/comments.xml?ContentId="+contentId;
+            
+
                 var xml = webClient.DownloadString(requestUrl);
                 var xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(xml);
                 node = xmlDoc.SelectSingleNode("Response");
+                if( commentUser!=null)
+                {
+                    var selectedNode = node.SelectSingleNode("Comments/Comment[ User/Username='" + commentUser + "'][last()]");
+                    node = selectedNode;
+            }
             }
             catch (Exception ex)
             {
@@ -408,6 +418,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return node;
 
         }
+      
         public static int GetTotalComments(string blogId, string blogPostId)
         {
             int count = 0;
@@ -527,14 +538,14 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     if (node != null)
                     {
 
-                        blog = new Blog()
-                        {
-                            Description = node.SelectSingleNode("Description").InnerText,
-                            Id = node.SelectSingleNode("Id").InnerText,
-                            Title = node.SelectSingleNode("Name").InnerText
+                       blog = new Blog()
+                       {
+                           Description = node.SelectSingleNode("Description").InnerText,
+                           Id = node.SelectSingleNode("Id").InnerText,
+                           Title = node.SelectSingleNode("Name").InnerText
 
-                        };
-                    }
+                       };
+                   }
                 }
                 catch (Exception ex)
                 {
@@ -829,7 +840,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     var xml = webClient.DownloadString(requestUrl);
                     var xmlDoc = new XmlDocument();
                     xmlDoc.LoadXml(xml);
-                    node = xmlDoc.SelectNodes("Response/Friendships/Friendship");
+                     node = xmlDoc.SelectNodes("Response/Friendships/Friendship");
                     if (node != null)
                     {
                         foreach (XmlNode friend in node)
@@ -851,9 +862,112 @@ namespace UnderstoodDotOrg.Services.TelligentService
             }
 
             return notifications;
-
+            
         }
-        public static void PostReply(string forumID, string threadID, string body, string username)
+        public static List<INotification> GetNotifications(string username)
+        {
+            Dictionary<string, Constants.NotificationElements.NotificationType> NotificationTypes = new Dictionary<string, Constants.NotificationElements.NotificationType>()
+            {
+                {"d0e2bf58-74b3-4090-8ff0-0d9a11188f0b",Constants.NotificationElements.NotificationType.Comment}, //Also commented on
+                {"bb2f90fb-5630-4d0b-b1be-06e4a1307d35",Constants.NotificationElements.NotificationType.ForumReply},
+                {"bb196c30-fad3-4ad8-a644-2a0187fc5617",Constants.NotificationElements.NotificationType.Connection} //Connection request
+
+            };
+            List<INotification> notifList = new List<INotification>();
+            //Header info
+            
+            XmlNodeList node = null;
+           // List<INotification> notifications = new List<INotification>();
+            if (!String.IsNullOrEmpty(username))
+            {
+                username = username.Trim();
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                webClient.Headers.Add("Rest-Impersonate-User", username);
+                try
+                {
+                    var requestUrl = String.Format("{0}api.ashx/v2/notifications.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    node = xmlDoc.SelectNodes("Response/Notifications/RestNotification");
+                    if (node != null)
+                    {
+                        //Call last 5 Notifications for user
+
+                        //Determine the type of notification using dictionary
+                        foreach (XmlNode notification  in node)
+                        {
+                            INotification notif=null;
+                           if( NotificationTypes.ContainsKey( notification.SelectSingleNode("NotificationTypeId").InnerText))
+                           {
+                               Constants.NotificationElements.NotificationType notifType = NotificationTypes[notification.SelectSingleNode("NotificationTypeId").InnerText];
+                               switch (notifType)   
+                               {
+                                   case Constants.NotificationElements.NotificationType.ForumReply:
+
+                                       break;
+                                   case Constants.NotificationElements.NotificationType.Comment:
+                                       var contentId = notification.SelectSingleNode("Content/ContentId").InnerText;
+                                       var commentUser = notification.SelectSingleNode("Actors/RestNotificationActor[last()]/User/DisplayName").InnerText;
+                                       //var createdDate = notification.SelectSingleNode("Actors/RestNotificationActor[last()]/Date").InnerText.Split('.')[0];
+                                       var comment = ReadUserComments(username,  contentId, commentUser);
+                                       notif = new CommentNotification(notification);
+                                       if (comment != null)
+                                       {
+                                           ((CommentNotification)notif).Text = comment.SelectSingleNode("Body").InnerText;
+                                       }
+                                       notifList.Add(notif);
+                                       break;
+                                   case Constants.NotificationElements.NotificationType.Connection:
+                                       notif = new ConnectNotification(notification);
+                                       //Wire up Accept
+                                       ((ConnectNotification)notif).evtOk += (o, e) =>
+                                       {
+
+                                           string friendshipstate = "Approved";
+                                           if (TelligentService.UpdateFriendRequest(notif.UserName, username, friendshipstate))
+                                           {
+                                               //Push some Javascript notification that process complete
+                                               //Page.ClientScript.RegisterStartupScript(this.GetType(), "ShowAcceptMessage", "alert('Request Accepted!');", true);
+                                           }
+                                       };
+
+                                       //Wire up decline
+                                       ((ConnectNotification)notif).evtCancel += (o, e) =>
+                                           {
+                                               string friendshipstate = "NotSpecified";
+                                               if (TelligentService.UpdateFriendRequest(notif.UserName, username, friendshipstate))
+                                               {
+
+                                               }
+                                           };
+                                       notifList.Add(notif);
+                                       break;
+                                   default:
+                                       break;
+                               }
+                           }
+                        }
+
+                        //call respective notification type funtion and use contentid contenttypeid to get details of notification type
+
+                        //Populate notification list
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Sitecore.Diagnostics.Error.LogError("Error in GetNotifications.\nError:\n" + ex.Message);
+                    notifList = null;
+                }
+            }
+
+
+            return notifList;
+        }
+        public static void PostReply(string forumID, string threadID, string body,string username)
         {
 
 
@@ -928,10 +1042,10 @@ namespace UnderstoodDotOrg.Services.TelligentService
             if (!String.IsNullOrEmpty(username))
             {
                 username = username.Trim();
-
+               
                 try
                 {
-
+                    
                     XmlNode node = GetTelligentUserNode(username);
                     if (node != null)
                     {
@@ -1126,7 +1240,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     model = null;
                 }
 
-
+                
             }
 
             return model;
@@ -1181,7 +1295,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
                     if (!String.IsNullOrEmpty(username))
                         webClient.Headers.Add("Rest-Impersonate-User", username);
-
+                    
 
                     var xmlDoc = new XmlDocument();
                     var requestUrl = String.Format("{0}api.ashx/v2/conversations/{1}/messages.xml ", Settings.GetSetting(Constants.Settings.TelligentConfig), convID);
@@ -1229,7 +1343,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     var xmlDoc = new XmlDocument();
                     string requestUrl = String.Empty;
                     if (String.IsNullOrEmpty(read_status))
-                        requestUrl = String.Format("{0}api.ashx/v2/conversations.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                         requestUrl = String.Format("{0}api.ashx/v2/conversations.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
                     else
                         requestUrl = String.Format("{0}api.ashx/v2/conversations.xml?ReadStatus=" + read_status, Settings.GetSetting(Constants.Settings.TelligentConfig));
 
@@ -1255,7 +1369,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     Sitecore.Diagnostics.Log.Error(ex.Message, ex);
                 }
             }
-            // return node;
+           // return node;
             return conversations;
         }
 
@@ -1265,41 +1379,43 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
             XmlNode node = null;
 
-
-            WebClient webClient = new WebClient();
-            string adminKeyBase64 = TelligentAuth();
-            try
-            {
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                //webClient.Headers.Add("Rest-Impersonate-User", username);
-                var xmlDoc = new XmlDocument();
-                var requestUrl = String.Format("{0}api.ashx/v2/users.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
-                var xml = webClient.DownloadString(requestUrl);
-
-                xmlDoc.LoadXml(xml);
-                node = xmlDoc.SelectSingleNode("Response/Users");
-
-                if (node != null)
+            
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = TelligentAuth();
+                try
                 {
-                    foreach (XmlNode item in node)
+                    webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                    //webClient.Headers.Add("Rest-Impersonate-User", username);
+                    var xmlDoc = new XmlDocument();
+                    var requestUrl = String.Format("{0}api.ashx/v2/users.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    xmlDoc.LoadXml(xml);
+                    node = xmlDoc.SelectSingleNode("Response/Users");
+
+                    if (node != null)
                     {
-                        MembershipManager man = new MembershipManager();
-                        var user = man.GetMember(node.SelectSingleNode("PrivateEmail").InnerText);
-                        if (user.allowConnections)
+                        foreach (XmlNode item in node)
                         {
+                           MembershipManager man = new MembershipManager();
+                            var user = man.GetMember(item.SelectSingleNode("PrivateEmail").InnerText);
+                            if (user != null)
+                            {
+                                if (user.allowConnections)
+                                {
 
-                            usernames.Add(item.SelectSingleNode("Username").InnerText);
+                                    usernames.Add(item.SelectSingleNode("Username").InnerText);
+                                }
+                            }
                         }
-
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                usernames = null;
-                Sitecore.Diagnostics.Log.Error(ex.Message, ex);
-            }
-
+                catch (Exception ex)
+                {
+                    usernames = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
+           
             // return node;
             return usernames;
         }
@@ -1338,7 +1454,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         {
                             //Resolve User into Member
                             User = memMan.GetMember(userEmail);
-
+                         
 
                         }
                     }
@@ -1363,8 +1479,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 email = user.Email;
 
             return email;
-
-
+            
+            
         }
         public static string CreateConversation(string username, string subject, string body, string userlist)
         {
@@ -1417,7 +1533,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         client.Headers.Add("Rest-Impersonate-User", username);
                         string address = string.Format(GetApiEndPoint("conversations/{0}/messages.xml "), convID);
                         NameValueCollection data = new NameValueCollection();
-
+                     
                         data["Body"] = body;
                         string xml = Encoding.UTF8.GetString(client.UploadValues(address, data));
                         XmlDocument document = new XmlDocument();
@@ -1455,7 +1571,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         string address = string.Format(GetApiEndPoint("conversations/{0}.xml "), convID);
                         NameValueCollection data = new NameValueCollection();
 
-
+                    
                         string xml = Encoding.UTF8.GetString(client.UploadValues(address, data));
                         XmlDocument document = new XmlDocument();
                         document.LoadXml(xml);
@@ -1496,7 +1612,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                                 address = string.Format(GetApiEndPoint("blogs/{0}/favorites.xml"), contentId);
                                 break;
                             case Constants.TelligentContentType.BlogPost:
-
+                                
                                 break;
                             case Constants.TelligentContentType.Forum:
                                 break;
@@ -1593,7 +1709,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             bool success = false;
             success = CreateFavorite(username, contentId, contentType, true);
             return success;
-
+            
         }
 
         public static List<BookmarkModel> GetBookMarks(string username, UnderstoodDotOrg.Common.Constants.TelligentContentType contentType)
@@ -1629,7 +1745,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         default:
                             break;
                     }
-
+                   
                     var xml = webClient.DownloadString(requestUrl);
                     var xmlDoc = new XmlDocument();
                     xmlDoc.LoadXml(xml);
@@ -1642,7 +1758,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             bookmarks.Add(b);
                             b = null;
                         }
-
+                        
 
                     }
                 }
@@ -1668,7 +1784,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     {
                         client.Headers.Add("Rest-User-Token", TelligentAuth());
                         client.Headers.Add("Rest-Impersonate-User", username);
-
+                        
                         switch (contentType)
                         {
                             case Constants.TelligentContentType.Blog:
@@ -1689,7 +1805,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                                 break;
                         }
 
-
+                        
                         string xml = Encoding.UTF8.GetString(client.DownloadData(address));
                         XmlDocument document = new XmlDocument();
                         document.LoadXml(xml);
@@ -1809,14 +1925,15 @@ namespace UnderstoodDotOrg.Services.TelligentService
             {
                 var requestorID = ReadUserId(requestor);
                 var requesteeID = ReadUserId(requestee);
+                string address = String.Empty;
                 using (WebClient client = new WebClient())
                 {
                     try
                     {
                         client.Headers.Add("Rest-User-Token", TelligentAuth());
-                        client.Headers.Add("Rest-Impersonate-User", requestor);
+                        client.Headers.Add("Rest-Impersonate-User", requestee);
                         client.Headers.Add("Rest-Method", "PUT");
-                        string address = string.Format(GetApiEndPoint("users/{0}/friends/{1}.xml "), requestorID, requesteeID);
+                         address= string.Format(GetApiEndPoint("users/{0}/friends/{1}.xml"), requestorID,requesteeID);
                         NameValueCollection data = new NameValueCollection();
 
                         data["FriendshipState"] = friendshipstate;
@@ -1829,8 +1946,9 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             success = true;
                         }
                     }
-                    catch
+                    catch(Exception ex)
                     {
+                        Sitecore.Diagnostics.Error.LogError("Error in UpdateFriendRequest.\nError:\n" + ex.Message);
                         success = false;
                     }
                 }
@@ -1855,7 +1973,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     {
                         client.Headers.Add("Rest-User-Token", TelligentAuth());
                         address = string.Format(GetApiEndPoint("users/{0}/friends.xml?FriendshipState={1}"), requestorID, Constants.TelligentFriendStatus.Approved.ToString());
-
+                       
                         ///Approved??
                         //data["FriendshipState"] = Constants.TelligentFriendStatus.Approved.ToString();
                         string xml = Encoding.UTF8.GetString(client.DownloadData(address));
@@ -1864,10 +1982,10 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         XmlNode childNode = document.SelectSingleNode("Response/Friendships");
                         if (childNode != null)
                         {
-                            //Check child node if requesteeID is in the list
+                           //Check child node if requesteeID is in the list
                             foreach (XmlNode friend in childNode)
                             {
-                                if (friend.SelectSingleNode("RequestorId").InnerText.Trim() == requesteeID
+                                if (friend.SelectSingleNode("RequestorId").InnerText.Trim() == requesteeID 
                                     || friend.SelectSingleNode("RequesteeId").InnerText.Trim() == requesteeID)
                                 {
                                     stat = Constants.TelligentFriendStatus.Approved;
@@ -1914,7 +2032,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
             return stat;
         }
-
+       
         public static User GetUser(string username)
         {
             User user = new User();
@@ -1926,7 +2044,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 var xml = webClient.DownloadString(requestUrl);
                 var doc = new XmlDocument();
                 doc.LoadXml(xml);
-
+        
                 XmlNode node = doc.SelectSingleNode("Response/User");
                 user = new User()
                 {

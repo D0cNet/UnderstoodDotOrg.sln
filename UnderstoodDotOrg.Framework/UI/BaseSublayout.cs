@@ -10,11 +10,31 @@ using System;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using Sitecore.Data;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
-
+using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
 namespace UnderstoodDotOrg.Framework.UI
 {
     public class BaseSublayout : System.Web.UI.UserControl
     {
+        private List<INotification> _notifications;
+        public List<INotification> Notifications
+        {
+            get
+            {
+                
+               
+                  
+
+                return _notifications = _notifications??Session["_notifications"] as List<INotification>;
+            }
+
+            set
+            {
+
+
+
+                Session["_notifications"] = _notifications = value;
+            }
+        }
 
         private Item _dataSource = null;
         public Item DataSource
@@ -135,7 +155,8 @@ namespace UnderstoodDotOrg.Framework.UI
 
             // CH: don't want to put this in FlushCurrentMemberUser, because it's called a few times during signup
             Session[Constants.currentUserFacebookAccessToken] = null;
-            
+            Session.RemoveAll();
+            Session.Abandon();
             Response.Redirect(Request.RawUrl);
         }
 

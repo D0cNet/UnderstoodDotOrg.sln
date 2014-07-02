@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
     public partial class Whats_Been_Happening {
         
         /// <summary>
+        /// pnlPolulatedNotifs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlPolulatedNotifs;
+        
+        /// <summary>
         /// lvNotificationFeed control.
         /// </summary>
         /// <remarks>
@@ -20,5 +29,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lvNotificationFeed;
+        
+        /// <summary>
+        /// pnlEmptyNotifs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlEmptyNotifs;
+        
+        /// <summary>
+        /// litEmptyText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litEmptyText;
     }
 }
