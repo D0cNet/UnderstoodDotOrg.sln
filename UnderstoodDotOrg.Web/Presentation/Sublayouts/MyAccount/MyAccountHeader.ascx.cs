@@ -50,10 +50,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             {
                 Response.Redirect(MainsectionItem.GetHomePageItem().GetUrl());
             }
-            User user = TelligentService.GetUser(this.CurrentMember.ScreenName);
-            if (user != null)
+
+            if (CurrentMember != null)
             {
-                userAvatar.Src = user.AvatarUrl;
+                try
+                {
+                    User user = TelligentService.GetUser(this.CurrentMember.ScreenName);
+                    if (user != null)
+                    {
+                        userAvatar.Src = user.AvatarUrl;
+                    }
+                }
+                catch { }
+            }
+
+            if (!IsPostBack)
+            {
+                try
+                {
+                    if (CurrentMember.ScreenName != null)
+                    {
+                        userAvatar.Src = TelligentService.GetUser(this.CurrentMember.ScreenName).AvatarUrl;
+                    }
+                }
+                catch { }
             }
         }
 
@@ -116,7 +136,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                     webClient.UploadFile(requestUrl, "POST", imageTempLocation);
 
-                    Response.Redirect(Request.RawUrl);
                 }
             }
         }
