@@ -31,13 +31,20 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                 return;
             }
 
+            // Behavior Tools
             if (item.TemplateID == Sitecore.Data.ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
-                || item.TemplateID == Sitecore.Data.ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId)
-                || item.InheritsFromType(DefaultArticlePageItem.TemplateId))
+                || item.TemplateID == Sitecore.Data.ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
             {
                 if (item["BlogId"] == string.Empty)
                 {
-                    CreateTelligentPost(item, 4); //blog id should be 4
+                    CreateTelligentPost(item, 11);
+                }
+            }
+            else if (item.InheritsFromType(DefaultArticlePageItem.TemplateId))
+            {
+                if (item["BlogId"] == string.Empty)
+                {
+                    CreateTelligentPost(item, 4); 
                 }
             }
             else if (item.TemplateID == Sitecore.Data.ID.Parse(BlogsPostPageItem.TemplateId))
@@ -47,22 +54,22 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     switch (item.Parent.ID.ToString())
                     {
                         case "{37478172-CCDF-454E-BABA-D56096EBE8F9}":
-                            CreateTelligentPost(item, 1); //blog id should be 1
+                            CreateTelligentPost(item, 1); 
                             break;
                         case "{23DC4EBA-B296-46A7-AC68-D813C9931AF0}":
-                            CreateTelligentPost(item, 2); //blog id should be 2
+                            CreateTelligentPost(item, 2); 
                             break;
                         case "{A720AAA9-8AC8-4851-A873-0E0F158C61BD}":
-                            CreateTelligentPost(item, 3); //blog id should be 3
+                            CreateTelligentPost(item, 3);
                             break;
                         case "{CEE7D06D-F14F-4A34-BA72-95381FFFCC75}":
-                            CreateTelligentPost(item, 7); //blog id should be 3
+                            CreateTelligentPost(item, 7); 
                             break;
                         case "{A6B58A59-A00B-4F6D-BBA2-8ECB82CB0BBA}":
-                            CreateTelligentPost(item, 8); //blog id should be 3
+                            CreateTelligentPost(item, 8); 
                             break;
                         case "{D882ED4F-4E03-4351-A764-36DA8EE82EF2}":
-                            CreateTelligentPost(item, 9); //blog id should be 3
+                            CreateTelligentPost(item, 9); 
                             break;
                         default:
                             return;
@@ -73,7 +80,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             {
                 if (item["BlogId"] == string.Empty)
                 {
-                    CreateTelligentPost(item, 10); //blog id should be 4
+                    CreateTelligentPost(item, 10); 
                 }
             }
         }
