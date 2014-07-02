@@ -22,12 +22,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             ObjInfographArticle = new InfographicArticlePageItem(Sitecore.Context.Item);
             if(ObjInfographArticle!=null)
             {
-                //Get Reviewer Details
-                if (ObjInfographArticle.DefaultArticlePage.Reviewedby.Item != null && ObjInfographArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
-                    SBReviewedBy.Visible = true;
-                else
-                    SBReviewedBy.Visible = false;
-
                 uxModalEmbed.Text = ObjInfographArticle.Image.Rendered.Replace("src=\"", "src=\"" + Request.Url.Scheme + "://" + Request.Url.Host);
             }
 

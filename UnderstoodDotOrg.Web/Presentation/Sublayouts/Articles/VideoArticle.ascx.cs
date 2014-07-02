@@ -21,10 +21,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Get Reviewer details
-            SBReviewedBy.Visible = Model.DefaultArticlePage.Reviewedby.Item != null
-                && Model.DefaultArticlePage.ReviewedDate.DateTime != null;
-
             if (string.IsNullOrEmpty(Model.Transcript.Raw))
             {
                 divTranscript.Visible = false;

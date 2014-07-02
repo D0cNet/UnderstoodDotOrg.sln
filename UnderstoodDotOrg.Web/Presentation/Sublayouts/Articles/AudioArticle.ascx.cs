@@ -40,17 +40,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         private void BindContent()
         {
-            //Show Reviewer Details
-            if (Model.DefaultArticlePage.Reviewedby.Item != null 
-                && Model.DefaultArticlePage.ReviewedDate.DateTime != null)
-            {
-                SBReviewedBy.Visible = true;
-            }
-            else
-            {
-                SBReviewedBy.Visible = false;
-            }
-
             phPlayer.Visible = !String.IsNullOrEmpty(Model.CincopaID.Raw);
         }
     }

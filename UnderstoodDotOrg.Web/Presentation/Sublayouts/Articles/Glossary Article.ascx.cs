@@ -18,12 +18,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected string CurrentAnchorName;
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (Model.DefaultArticlePage.Reviewedby.Item != null && Model.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
-                SBReviewedBy.Visible = true;
-            else
-                SBReviewedBy.Visible = false;
-
             sbSidebarPromo.Visible = Model.DefaultArticlePage.ShowPromotionalControl.Checked;
 
             List<string> relatedArticles = Model.GetTermAnchorList().ToList();

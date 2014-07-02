@@ -28,8 +28,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             litKeyTakeAwayText.Text = DictionaryConstants.KeyTakeAwayText;
 
             sbAboutAuthor.Visible = Model.DefaultArticlePage.AuthorName.Item != null;
-            SBReviewedBy.Visible = Model.DefaultArticlePage.Reviewedby.Item != null && Model.DefaultArticlePage.ReviewedDate.DateTime != null;
-
+            
             sbSidebarPromo.Visible = Model.DefaultArticlePage.ShowPromotionalControl.Checked;
             sbCommentsSummary.Visible = Model.DefaultArticlePage.ShowCommentTeaser.Checked;
 

@@ -27,7 +27,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             litKeyTakeAwayText.Text = DictionaryConstants.KeyTakeAwayText;
             sbAboutAuthor.Visible = Model.DefaultArticlePage.AuthorName != null;
-            SBReviewedBy.Visible = Model.DefaultArticlePage.Reviewedby.Item != null && Model.DefaultArticlePage.ReviewedDate.DateTime != null;
+            
             sbSidebarPromo.Visible = Model.DefaultArticlePage.ShowPromotionalControl.Checked;
 
             var finalSectionList = Model.GetSectionData();

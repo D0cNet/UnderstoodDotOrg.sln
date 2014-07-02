@@ -83,10 +83,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (ObjChecklistArticle != null)
             {
                 PageUrl = ObjChecklistArticle.GetUrl();
-                if (ObjChecklistArticle.DefaultArticlePage.Reviewedby.Item != null && ObjChecklistArticle.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
-                    SBReviewedBy.Visible = true;
-                else
-                    SBReviewedBy.Visible = false;
+
                 if (ObjChecklistArticle.ShowPromotionalControl.Checked == true)
                 {
                     sbSidebarPromo.Visible = true;

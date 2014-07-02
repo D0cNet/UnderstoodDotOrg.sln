@@ -40,10 +40,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 sbSidebarPromo.Visible = false;
             }
-            if (Model.DefaultArticlePage.Reviewedby.Item != null && Model.DefaultArticlePage.ReviewedDate.DateTime != null)//Reviwer Name
-                SBReviewedBy.Visible = true;
-            else
-                SBReviewedBy.Visible = false;
 
             var allChildSlides = ActionStyleListPageItem.GetAllAction(Model);
             rptAction.DataSource = allChildSlides;
