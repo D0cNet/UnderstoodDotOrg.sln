@@ -159,7 +159,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             }
             else 
             {
-                Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{907EAD93-A2AB-48ED-886C-2DF985375803}")));
+                Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{907EAD93-A2AB-48ED-886C-2DF985375803}")) + "#community");
             }
         }
     }

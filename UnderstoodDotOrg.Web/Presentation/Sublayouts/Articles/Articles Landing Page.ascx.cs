@@ -70,13 +70,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                     System.Web.UI.WebControls.Image imgThumbnail = e.FindControlAs<System.Web.UI.WebControls.Image>("imgThumbnail");
                     HyperLink hypArticleLink = e.FindControlAs<HyperLink>("hypArticleLink");
+                    HyperLink hypThumbnail = e.FindControlAs<HyperLink>("hypThumbnail");
 
                     if (imgThumbnail != null)
                         imgThumbnail.ImageUrl = article.GetArticleThumbnailUrl(230, 129);
 
                     if (hypArticleLink != null)
                     {
-                        hypArticleLink.NavigateUrl = article.GetUrl();
+                        hypArticleLink.NavigateUrl = hypThumbnail.NavigateUrl = article.GetUrl();
                         hypArticleLink.Text = article.ContentPage.PageTitle;
                     }
                 }
