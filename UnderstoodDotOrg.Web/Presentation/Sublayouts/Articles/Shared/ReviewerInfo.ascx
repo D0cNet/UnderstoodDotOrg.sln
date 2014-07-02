@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ReviewerInfo.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared.ReviewerInfo" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <p class="reviewed-by">
-    <span class="reviewed-by-title">Reviewed by</span> <span class="reviewed-by-author">
+    <span class="reviewed-by-title"><%= UnderstoodDotOrg.Common.DictionaryConstants.ReviewedByLabel %></span> <span class="reviewed-by-author">
         <%--<a href="REPLACE">Dr. Samantha Frank</a>--%>
         <asp:HyperLink ID="hlReviewedBy" runat="server">
             <sc:FieldRenderer ID="frReviewedBy" runat="server" FieldName="Reviewer Name" />

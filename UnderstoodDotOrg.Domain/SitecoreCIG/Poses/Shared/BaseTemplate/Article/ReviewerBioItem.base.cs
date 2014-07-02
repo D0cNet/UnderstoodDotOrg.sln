@@ -38,11 +38,11 @@ public static implicit operator Item(ReviewerBioItem customItem)
 #region Field Instance Methods
 
 
-public CustomTextField RevierwerName
+public CustomTextField ReviewerName
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Revierwer Name"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Reviewer Name"]);
 	}
 }
 

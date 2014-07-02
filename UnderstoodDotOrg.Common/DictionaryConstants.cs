@@ -1089,6 +1089,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string ReviewedByLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Reviewed By Label");
+            }
+        }
+
         public static class Grades
         {
             public static string SelectGrade

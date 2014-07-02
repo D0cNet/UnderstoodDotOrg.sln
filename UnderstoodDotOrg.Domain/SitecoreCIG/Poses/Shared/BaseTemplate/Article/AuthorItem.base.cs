@@ -65,15 +65,6 @@ public CustomImageField AuthorImage
 }
 
 
-public CustomCheckboxField IsReviewer
-{
-	get
-	{
-		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Is Reviewer"]);
-	}
-}
-
-
 #endregion //Field Instance Methods
 }
 }

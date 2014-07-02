@@ -217,11 +217,6 @@
     <Compile Include="SitecoreCIG\MainsectionItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\AssistiveTools\ReviewItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\AssistiveTools\ReviewItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\AuthorItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\AuthorItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\ExpertPersonItem.instance.cs" />
-    <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\ReviewerBioItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\BaseTemplate\Article\ReviewerBioItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\ContentPageItem.base.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -593,7 +588,9 @@
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceOverviewPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TycePlayerPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceQuestionsPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Article\AuthorItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Article\ExpertPersonItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Article\ReviewerBioItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildChallengeItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildChallengeItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildChallengeItem.interface.cs" />

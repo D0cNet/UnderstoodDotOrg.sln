@@ -1,21 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Sitecore.Data.Items;
-using Sitecore.Data.Fields;
-using Sitecore.Web.UI.WebControls;
-using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.SearchTypes;
+﻿using Sitecore.Data.Items;
+using System;
 using UnderstoodDotOrg.Common.Extensions;
-
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.SimpleExpertArticle;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Advocacy;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 {
@@ -25,22 +12,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
         {
             var item = (DefaultArticlePageItem)Sitecore.Context.Item;
 
+            bool displayReviewerInfo = false;
+
             if (item != null)
             {
-                if (item.Reviewedby.Item != null
-                    && item.ReviewedDate.DateTime != null
-                    && item.ReviewedDate.DateTime != DateTime.MinValue)
+                ReviewerBioItem reviewer = item.Reviewedby.Item;
+                if (reviewer != null && !reviewer.ReviewerName.Rendered.IsNullOrEmpty())
                 {
-                    frReviewedBy.Item = item.Reviewedby.Item;
-                    hlReviewedBy.NavigateUrl = item.Reviewedby.Item.GetUrl();
+                    frReviewedBy.Item = reviewer;
+                    hlReviewedBy.NavigateUrl = reviewer.GetUrl();
 
-                    uxReviewDate.Visible = true;
+                    if (item.ReviewedDate.DateTime != null
+                        && item.ReviewedDate.DateTime != DateTime.MinValue)
+                    {
+                        uxReviewDate.Visible = true;
+                    }
+
+                    displayReviewerInfo = true;
                 }
             }
-            else
-            {
-                this.Visible = false;
-            }
+
+            this.Visible = displayReviewerInfo;
         }
     }
 }
