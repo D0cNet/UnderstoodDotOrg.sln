@@ -16,6 +16,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
     public partial class DeepDiveArticle : BaseSublayout<DeepDiveArticlePageItem>
     {
+        protected const int INITIAL_SECTION_ARTICLE_COUNT = 3;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Model.ShowKeyTakeawayContent)
@@ -32,11 +34,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             rptSectionList.DataSource = finalSectionList;
             rptSectionList.DataBind();
 
-            rptSections.DataSource = finalSectionList.Take(3);
+            rptSections.DataSource = finalSectionList.Take(INITIAL_SECTION_ARTICLE_COUNT);
             rptSections.DataBind();
-            if (finalSectionList.Count > 3)
+            if (finalSectionList.Count > INITIAL_SECTION_ARTICLE_COUNT)
             {
-                rptExtraSections.DataSource = finalSectionList.Skip(3);
+                rptExtraSections.DataSource = finalSectionList.Skip(INITIAL_SECTION_ARTICLE_COUNT);
                 rptExtraSections.DataBind();
             }
 

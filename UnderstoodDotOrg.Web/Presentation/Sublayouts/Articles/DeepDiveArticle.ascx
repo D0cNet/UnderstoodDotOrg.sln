@@ -60,7 +60,7 @@
                             </HeaderTemplate>
                             <ItemTemplate>
                                 <div class="deep-dive-block">
-                                    <a name="item<%# Container.ItemIndex %>"></a>
+                                    <a name="item<%# Container.ItemIndex + INITIAL_SECTION_ARTICLE_COUNT %>"></a>
                                     <h2>
                                         <%# Item.Title.Rendered %>
                                     </h2>
