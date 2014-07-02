@@ -1350,6 +1350,40 @@ namespace UnderstoodDotOrg.Common
 
        public static string FollowingBlogPost { get { return Translate.TextByDomain(PosesDictionary, "FollowingBlogPost"); } }
 
+       public static string AnswerQuestionLabel { get { return Translate.TextByDomain(PosesDictionary, "Answer Question Label"); } }
+
+       public static string FollowThisQuestionLabel { get { return Translate.TextByDomain(PosesDictionary, "Follow This Question Label"); } }
+
+       public static string AskedByLabel { get { return Translate.TextByDomain(PosesDictionary, "Asked By Label"); } }
+
+       public static string OpenQuestionLabel { get { return Translate.TextByDomain(PosesDictionary, "Open Question Label"); } }
+
+       public static string InLabel { get { return Translate.TextByDomain(PosesDictionary, "In Label"); } }
+
+       public static string AnsweredByLabel { get { return Translate.TextByDomain(PosesDictionary, "Answered By Label"); } }
+
+       public static string ModeratorLabel { get { return Translate.TextByDomain(PosesDictionary, "Moderator Label"); } }
+
+       public static string SubmitAnswerLabel { get { return Translate.TextByDomain(PosesDictionary, "Submit Answer Label"); } }
+
+       public static string AskLabel { get { return Translate.TextByDomain(PosesDictionary, "Ask Label"); } }
+
+       public static string AnswersLabel { get { return Translate.TextByDomain(PosesDictionary, "Answers Label"); } }
+
+       public static string AnswerLabel { get { return Translate.TextByDomain(PosesDictionary, "Answer Label"); } }
+
+       public static string DiscoverLabel { get { return Translate.TextByDomain(PosesDictionary, "Discover Label"); } }
+
+       public static string SubmitYourQuestionLabel { get { return Translate.TextByDomain(PosesDictionary, "Submit Your Question Label"); } }
+
+       public static string SeeOpenQuestionsLabel { get { return Translate.TextByDomain(PosesDictionary, "See Open Questions Label"); } }
+
+       public static string SeeAnsweredQuestionsLabel { get { return Translate.TextByDomain(PosesDictionary, "See Answered Questions Label"); } }
+
+       public static string FeaturedParentQuestionsLabel { get { return Translate.TextByDomain(PosesDictionary, "Featured Parent Questions Label"); } }
+
+       public static string RepliesLabel { get { return Translate.TextByDomain(PosesDictionary, "Replies Label"); } }
+
        public static string EmptyGroupsListText
        {
            get

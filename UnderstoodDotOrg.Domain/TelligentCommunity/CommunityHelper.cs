@@ -587,7 +587,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 int count = 0;
                 foreach (XmlNode xn in nodes)
                 {
-                    XmlNode user = xmlDoc.SelectSingleNode("Response/Comments/Comment/Author");
+                    XmlNode user = xn.SelectSingleNode("Author");
                     Answer answer = new Answer()
                     {
                         PublishedDate = FormatDate(xn["PublishedDate"].InnerText),

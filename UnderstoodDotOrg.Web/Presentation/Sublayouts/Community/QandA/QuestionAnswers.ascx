@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="QuestionAnswers.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.QandA.QuestionAnswers" %>
 <div class="col col-24 skiplink-comments">
-    <h2>Answers (<asp:Label ID=lbAnswerCount runat="server" />)</h2>
+    <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.AnswersLabel %> (<asp:Label ID=lbAnswerCount runat="server" />)</h2>
     <!-- BEGIN PARTIAL: community/question_sort -->
     <div id="divSortAnswers" class="question-sort clearfix" runat="server">
         <div class="sort-options">
@@ -37,10 +37,10 @@
                 <div class="description">
                     <%# Item.Body %>
                 </div>
-                <span class="details">In <a href="REPLACE" class="topic">aut molestias</a> - Answered by <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink>, Moderator <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
+                <span class="details">In <a href="REPLACE" class="topic"><asp:Literal ID="lbGroup" runat="server" /></a> - Answered by <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink>, <asp:Literal ID="lbModerator" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.ModeratorLabel %>" /> <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
                 <div class="buttons">
-                    <button id="btnLike" onserverclick="LikeButton_Click" class="helped" runat="server"><i class="icon-comment-like"></i>This Helped</button>
-                    <button class="report"><i class="icon-comment-flag"></i>Report as inappropriate</button>
+                    <button id="btnLike" onserverclick="LikeButton_Click" class="helped" runat="server"><i class="icon-comment-like"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ThisHelpedLabel %></button>
+                    <button class="report"><i class="icon-comment-flag"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ReportAsInappropriateLabel %></button>
                 </div>
                 <button class="count-helped"><i class="icon-comment-like"></i><%# Item.Likes %><span class="visuallyhidden">likes</span></button>
             </div>
@@ -56,7 +56,7 @@
     <div class="container show-more rs_skip" id="divShowMore" runat="server">
         <div class="row">
             <div class="col col-24">
-                <a class="show-more-link " href="#" data-path="community/qa-answers" data-container="answer-list" data-item="card-answer" data-count="6">Show More<i class="icon-arrow-down-blue"></i></a>
+                <a class="show-more-link " href="#" data-path="community/qa-answers" data-container="answer-list" data-item="card-answer" data-count="6"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>
             </div>
         </div>
     </div>

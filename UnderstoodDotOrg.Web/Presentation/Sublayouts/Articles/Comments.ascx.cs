@@ -126,7 +126,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             if (TelligentService.PostComment(_blogId, _blogPostId, txtComment.Text.Trim(), CurrentMember.ScreenName))
             {
-                Response.Redirect(Request.RawUrl);
+                PopulateComments();
             }
             else
             {
