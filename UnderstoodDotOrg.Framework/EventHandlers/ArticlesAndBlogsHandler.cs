@@ -73,7 +73,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             {
                 if (item["BlogId"] == string.Empty)
                 {
-                    CreateTelligentPost(item, 4); //blog id should be 4
+                    CreateTelligentPost(item, 10); //blog id should be 4
                 }
             }
         }
