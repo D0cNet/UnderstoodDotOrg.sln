@@ -144,12 +144,3 @@
     <!-- .row -->
 </div>
 <!-- .container -->
-<script>
-    $(".icon-email").click(function (e) {
-        e.preventDefault();
-        $(".email-a-friend-modal").show();
-        $(".email-a-friend-modal").css({ "top": "-475px", "overflow": "hidden" });
-        $(".email-a-friend-modal .modal-dialog").css("opacity", "1");
-    })
-</script>
-<sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Common/ShareNSave_SendEmail.ascx" />

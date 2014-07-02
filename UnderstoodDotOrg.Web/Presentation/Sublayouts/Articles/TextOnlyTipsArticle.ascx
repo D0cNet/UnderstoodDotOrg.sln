@@ -64,15 +64,7 @@
                         </FooterTemplate>
                     </asp:Repeater>
                 </div>
-                <script>
-                $(".icon-email").click(function (e) {
-                    e.preventDefault();
-
-                    $(".email-a-friend-modal").show();
-                    $(".email-a-friend-modal").css({ "top": "163px", "overflow": "hidden" });
-                    $(".email-a-friend-modal .modal-dialog").css("opacity", "1");
-                })
-                </script>   
+ 
                 <style>
                     .slide-inner img{
                         width: 100%;
@@ -95,8 +87,7 @@
                     </FooterTemplate>   
                 </asp:Repeater>
             </div>
-            <sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Common/ShareNSave_SendEmail.ascx" />
-
+            
             <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />            
 
             <!-- END PARTIAL: about-the-author -->

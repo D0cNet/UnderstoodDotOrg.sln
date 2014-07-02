@@ -53,12 +53,6 @@
                         if ("<%= this.LoggedInStatus %>" == "True")
                             $(".icon-save").addClass("active");
                     }
-
-                    $(".icon-email").click(function () {
-                        $(".email-a-friend-modal").show();
-                        $(".email-a-friend-modal").css({ "top": "163px", "overflow": "hidden" });
-                        $(".email-a-friend-modal .modal-dialog").css("opacity", "1");
-                    })
                 </script>
                 <a href="#" class="icon icon-print" onclick="window.print()">Print</a>
                 <%--OOS for this release--%>
@@ -71,7 +65,6 @@
     </div>
 </div>
 
-<sc:Sublayout ID="sbCommentsSummary" runat="server" Path="~/Presentation/Sublayouts/Common/ShareNSave_SendEmail.ascx" />
 
 
 <!-- END PARTIAL: share-save -->

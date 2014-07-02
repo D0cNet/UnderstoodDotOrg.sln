@@ -103,6 +103,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts {
         protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder3;
         
         /// <summary>
+        /// sbShareEmailModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbShareEmailModal;
+        
+        /// <summary>
         /// footerSectionJS control.
         /// </summary>
         /// <remarks>

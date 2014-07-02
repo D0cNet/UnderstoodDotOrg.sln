@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sitecore.Data.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
@@ -19,9 +20,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtYourname.Attributes.Add("placeholder", DictionaryConstants.EnterNameLabel);
-            txtYourEMailID.Attributes.Add("placeholder", DictionaryConstants.EnterEmailLabel);
-            txtRecipentEMailID.Attributes.Add("placeholder", DictionaryConstants.FriendsEmailLabel);
+            txtYourName.Attributes.Add("placeholder", DictionaryConstants.EnterNameLabel);
+            txtYourEmail.Attributes.Add("placeholder", DictionaryConstants.EnterEmailLabel);
+            txtRecipientEmail.Attributes.Add("placeholder", DictionaryConstants.FriendsEmailLabel);
             txtThoughts.Attributes.Add("placeholder", DictionaryConstants.EmailTextPlaceholder);
 
             litValidationMessage.Text = DictionaryConstants.EmailValidationMessage;
@@ -34,18 +35,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
             if (Page.IsValid)
             {
-                DefaultArticlePageItem article = (DefaultArticlePageItem)Sitecore.Context.Item;
+                Item currentItem = Sitecore.Context.Item;
 
                 InvokeEM24ContentSharedWithAFriendRequest message = new InvokeEM24ContentSharedWithAFriendRequest { };
 
                 message.PMText = txtThoughts.Text.Trim();
-                message.ToEmail = txtRecipentEMailID.Text.Trim();
-                message.UserContactFirstName = txtYourname.Text.Trim();
+                message.ToEmail = txtRecipientEmail.Text.Trim();
+                message.UserContactFirstName = txtYourName.Text.Trim();
 
                 string domain = new Uri(HttpContext.Current.Request.Url.AbsoluteUri).GetLeftPart(UriPartial.Authority);
 
-                if (article != null)
-                    message.ReminderLink = domain + article.GetUrl();
+                if (currentItem != null)
+                {
+                    message.ReminderLink = domain + currentItem.GetUrl();
+                }
 
                 BaseReply reply = ExactTargetService.InvokeEM24ContentSharedWithAFriend(message);
                 MembershipManager mmgr = new MembershipManager();
@@ -55,7 +58,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     try
                     {
                         bool success = mmgr.LogMemberActivity(CurrentMember.MemberId,
-                                article.ID.ToGuid(),
+                                currentItem.ID.ToGuid(),
                                 Constants.UserActivity_Values.Shared,
                                 Constants.UserActivity_Types.ContentRelated);
                     }

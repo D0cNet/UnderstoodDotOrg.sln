@@ -93,6 +93,8 @@
         </div>
         <!-- #wrapper -->
 
+        <%-- Currently update panel and requires to be on body to display properly --%>
+        <sc:Sublayout ID="sbShareEmailModal" runat="server" Path="~/Presentation/Sublayouts/Common/ShareNSave_SendEmail.ascx" />
 
         <!-- BEGIN PARTIAL: footerjs -->
         <script src="/Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>

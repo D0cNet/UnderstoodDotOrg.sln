@@ -135,15 +135,7 @@
         height: 20px;
     }
 </style>
-<script>
-    $(".icon-email").click(function (e) {
-        e.preventDefault();
 
-        $(".email-a-friend-modal").show();
-        $(".email-a-friend-modal").css({ "top": "163px", "overflow": "hidden" });
-        $(".email-a-friend-modal .modal-dialog").css("opacity", "1");
-    })
-</script>
 <!-- .container -->
 
 <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" runat="server"></sc:Sublayout>

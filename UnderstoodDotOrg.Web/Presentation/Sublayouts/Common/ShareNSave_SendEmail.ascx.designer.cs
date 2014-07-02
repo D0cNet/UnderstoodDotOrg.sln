@@ -49,13 +49,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.Literal litValidationMessage;
         
         /// <summary>
-        /// txtYourname control.
+        /// txtYourName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtYourname;
+        protected global::System.Web.UI.WebControls.TextBox txtYourName;
         
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -67,13 +67,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// txtYourEMailID control.
+        /// txtYourEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtYourEMailID;
+        protected global::System.Web.UI.WebControls.TextBox txtYourEmail;
         
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -85,13 +85,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// txtRecipentEMailID control.
+        /// txtRecipientEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRecipentEMailID;
+        protected global::System.Web.UI.WebControls.TextBox txtRecipientEmail;
         
         /// <summary>
         /// RequiredFieldValidator3 control.
