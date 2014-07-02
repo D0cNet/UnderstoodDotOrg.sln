@@ -46,6 +46,42 @@ public static implicit operator Item(MyAccountItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField UpcomingEventsLinkText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Upcoming Events Link Text"]);
+	}
+}
+
+
+public CustomTextField UpcomingEventsHeaderText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Upcoming Events Header Text"]);
+	}
+}
+
+
+public CustomTextField MyGroupsHeaderText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["My Groups Header Text"]);
+	}
+}
+
+
+public CustomTextField SeeAllGroupsLinkText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["See All Groups Link Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

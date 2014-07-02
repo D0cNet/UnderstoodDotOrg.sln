@@ -13,6 +13,22 @@ namespace UnderstoodDotOrg.Common
 
         #region Button Text
 
+        public static string Community_RSVPButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Community_RSVP Button Text");
+            }
+        }
+
+        public static string Community_SkipThisButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Community_Skip This Button Text");
+            }
+        }
+
         public static string YesButtonText
         {
             get
