@@ -34,6 +34,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\CustomItemGenerator.dll</HintPath>
     </Reference>
+    <Reference Include="MaxMind.Db">
+      <HintPath>..\packages\MaxMind.Db.0.2.3.0\lib\net40\MaxMind.Db.dll</HintPath>
+    </Reference>
+    <Reference Include="MaxMind.GeoIP2">
+      <HintPath>..\packages\MaxMind.GeoIP2.0.3.3.0\lib\net40\MaxMind.GeoIP2.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\Libraries\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
@@ -85,6 +97,7 @@
   <ItemGroup>
     <Folder Include="CommonSenseMediaService\" />
     <Folder Include="FacebookService\" />
+    <Folder Include="LocationServices\" />
     <Folder Include="LuminateService\" />
     <Folder Include="ServiceReferences\" />
   </ItemGroup>
@@ -107,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="SalesforceService\WSDL\Understood.wsdl" />
     <None Include="Service References\ExactTarget.etAPI\etframework.wsdl" />
     <None Include="Service References\ExactTarget.etAPI\ETFrameworkFault.xsd">
