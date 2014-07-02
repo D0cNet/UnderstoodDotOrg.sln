@@ -107,11 +107,11 @@
                 <br />
                 <div class="next-question">
                     <button type="button" runat="server" id="btnPrevPage" onserverclick="btnPrevPage_Click" onclick="checkValidation();" class="button no gray reload-page assessment-quiz-next" visible="false">Back</button>
-                    <button type="button" runat="server" id="btnNextPage" onserverclick="btnNextPage_Click" onclick="checkValidation();" class="button reload-page assessment-quiz-next" >Next</button>
-                    <button type="button" runat="server" id="btnShowResults" onserverclick="btnResult_Click" onclick="checkValidation();" class="button assessment-quiz-next" visible="false" >Show Results</button>
+                    <button type="button" runat="server" id="btnNextPage" onserverclick="btnNextPage_Click" onclick="checkValidation();" class="button reload-page assessment-quiz-next" ><%= UnderstoodDotOrg.Common.DictionaryConstants.NextButtonText %></button>
+                    <button type="button" runat="server" id="btnShowResults" onserverclick="btnResult_Click" onclick="checkValidation();" class="button assessment-quiz-next" visible="false" ><%= UnderstoodDotOrg.Common.DictionaryConstants.Quizzes_ShowResults %></button>
                 </div>
                 <div class="next-question">
-                    <button type="button" runat="server" id="btnTakeQuizAgain" onserverclick="btnTakeQuizAgain_Click" class="button" visible="false" >Take Quiz Again</button>
+                    <button type="button" runat="server" id="btnTakeQuizAgain" onserverclick="btnTakeQuizAgain_Click" class="button" visible="false" ><%= UnderstoodDotOrg.Common.DictionaryConstants.Quizzes_TakeQuizAgain %></button>
                 </div>
             </div>
         </div>

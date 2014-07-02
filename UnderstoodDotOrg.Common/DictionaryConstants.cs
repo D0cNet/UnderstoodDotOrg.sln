@@ -37,6 +37,30 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string Quizzes_ShowResults
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Quizzes_Show Results");
+            }
+        }
+
+        public static string Quizzes_TakeQuizAgain
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Quizzes_Take Quiz Again");
+            }
+        }
+
+        public static string Quizzes_NextQuestion
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Quizzes_Next Question");
+            }
+        }
+
         public static string NoButtonText
         {
             get
