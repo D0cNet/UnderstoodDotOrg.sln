@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FoundHelpfulCountOnly.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared.FoundHelpfulCountOnly" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <!-- END PARTIAL: pagetopic -->
 <div class="count-mobile rs_read_this">
@@ -25,7 +26,7 @@
         <div class="col col-13 offset-1 article-intro-text-wrapper rs_read_this">
             <!-- BEGIN PARTIAL: article-intro-text -->
             <div class="article-intro-text">
-                <sc:FieldRenderer FieldName="Body Content" runat="server"></sc:FieldRenderer>
+                <sc:FieldRenderer id="frIntroText" FieldName="Body Content" runat="server"></sc:FieldRenderer>
             </div>
             <!-- END PARTIAL: article-intro-text -->
         </div>

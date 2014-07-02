@@ -1,4 +1,5 @@
 ﻿using Sitecore.Data;
+using Sitecore.Data.Items;
 using Sitecore.Data.Managers;
 using System;
 using System.Collections.Generic;
@@ -11,24 +12,40 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Activity;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 {
     public partial class FoundHelpfulCountOnly : BaseSublayout
     {
+        private Item model;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (DataSource != null && TemplateManager.GetTemplate(DataSource).InheritsFrom(new ID(DefaultArticlePageItem.TemplateId)))
+            this.model = Sitecore.Context.Item;
+
+            BindContent();
+            PopulateCount();
+        }
+
+        private void BindContent()
+        {
+            if (this.model.TemplateID == Sitecore.Data.ID.Parse(InfographicArticlePageItem.TemplateId))
             {
-                BindData((DefaultArticlePageItem)DataSource);
+                frIntroText.FieldName = ((InfographicArticlePageItem)this.model).IntroText.Field.InnerField.Name;
+            }
+            else if (this.model.InheritsTemplate(DefaultArticlePageItem.TemplateId))
+            {
+                frIntroText.FieldName = ((DefaultArticlePageItem)this.model).ContentPage.BodyContent.Field.InnerField.Name;
             }
         }
 
-        private void BindData(DefaultArticlePageItem page)
+        private void PopulateCount()
         {
             ActivityLog tempLog = new ActivityLog();
-            //ContentId, ActivityValue
-            int helpfulCount = tempLog.GetActivityCountByValue(new Guid(Sitecore.Context.Item.ID.ToString()), Constants.UserActivity_Values.FoundHelpful_True);
+            
+            int helpfulCount = tempLog.GetActivityCountByValue(Guid.Parse(this.model.ID.ToString()), Constants.UserActivity_Values.FoundHelpful_True);
 
             lblHelpfulCount.Text = lblHelpfulCountMobile.Text = helpfulCount.ToString();
 
