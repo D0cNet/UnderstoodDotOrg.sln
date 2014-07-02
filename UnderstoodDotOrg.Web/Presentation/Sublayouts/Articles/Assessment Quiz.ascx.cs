@@ -90,7 +90,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             lblPageCounter.Visible = false;
             btnPrevPage.Visible = false;
 
-            //frResultHeadline.Visible = true;
+            frResultHeadline.Visible = true;
 
             Item resultsFolder = PageResources.Children.Where(i => i.IsOfType(AssessmentQuizResultsFolderItem.TemplateId)).FirstOrDefault();
 
@@ -103,8 +103,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     if (range.MaximumValue.ToString().IsNullOrEmpty() || (score <= range.MaximumValue))
                     {
-                        //frEndExplanation.Visible = true;
-                        //frEndExplanation.Item = i;
+                        frEndExplanation.Visible = true;
+                        frEndExplanation.Item = i;
                         break;
                     }
                 }
