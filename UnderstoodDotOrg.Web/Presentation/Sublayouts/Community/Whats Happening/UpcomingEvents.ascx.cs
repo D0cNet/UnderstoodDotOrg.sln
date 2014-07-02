@@ -37,6 +37,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                 HyperLink hlExpertPicture = e.FindControlAs<HyperLink>("hlExpertPicture");
                 Literal litExpertType = e.FindControlAs<Literal>("litExpertType");
                 Literal litEventDate = e.FindControlAs<Literal>("litEventDate");
+                Literal litRSVPText = e.FindControlAs<Literal>("litRSVPText");
+                Literal litSkipThisText = e.FindControlAs<Literal>("litSkipThisText");
+
+                litRSVPText.Text = DictionaryConstants.Community_RSVPButtonText;
+                litSkipThisText.Text = DictionaryConstants.Community_SkipThisButtonText;
 
                 litEventDate.Text = item.GetFormattedEventStartDate();
                 hlEventDetail.NavigateUrl = item.GetUrl();
