@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,9 +48,18 @@ namespace UnderstoodDotOrg.Common
         public static readonly string VIEW_MODE_FRIEND = "friend";
         public static readonly string DONATION_AMOUNT = "amount";
         #endregion
+
+        #region Salesforce
+        public static readonly string SALESFORCE_USERNAME = "SalesforceUsername";
+        public static readonly string SALESFORCE_PASSWORD = "SalesforcePassword";
+        public static readonly string SALESFORCE_TOKEN = "SalesforceToken";
+        public static readonly string SALESFORCE_SERVICE_URL = "SalesforceServiceURL";
+        #endregion
+
+
         #region Newsletter Subscriptions
 
-        #endregion
+
         public static string CURRENT_INDEX_NAME
         {
             get
@@ -98,6 +108,8 @@ namespace UnderstoodDotOrg.Common
         public const string ARTICLE_SEARCH_INDEX_NAME = "sitecore_web_index";
 
         public const string ConnectionStringMembership = "membership";
+
+        #endregion
 
         #region Session Keys
         public static string currentUserKey { get { return "_understood_org_current_user"; } }
@@ -749,6 +761,15 @@ namespace UnderstoodDotOrg.Common
             public static string CommentsListEndpoint = "CommentsListEndpoint";
             public static string ContentServiceEndpoint = "ContentServiceEndpoint";
             public static string BehaviorToolSuggestionEmail = "BehaviorToolSuggestionEmail";
+
+
+            private static string SalesforceUsername = ConfigurationManager.AppSettings[Constants.Settings.SalesforceUsername];
+            private static string SalesforcePassword = ConfigurationManager.AppSettings[Constants.Settings.SalesforcePassword];
+            private static string SalesforceToken = ConfigurationManager.AppSettings[Constants.Settings.SalesforceToken];
+            private static string SalesforceServiceURL = ConfigurationManager.AppSettings[Constants.Settings.SalesforceServiceURL];
+
+
+
         }
 
         public static class ContentItem

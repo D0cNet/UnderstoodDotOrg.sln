@@ -291,10 +291,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 {
                     this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
 
-                    //updating salesforce
-                    SalesforceManager sfMgr = new SalesforceManager("brettgarnier@outlook.com",
-                                                                    "8f9C3Ayq",
-                                                                    "hlY0jOIILtogz3sQlLUtmERlu");
+
+                    //SalesforceManager sfMgr = new SalesforceManager("brettgarnier@outlook.com",
+                    //                                                 "8f9C3Ayq",
+                    //                                                 "hlY0jOIILtogz3sQlLUtmERlu");
+
+                    SalesforceManager sfMgr = new SalesforceManager(Constants.SALESFORCE_USERNAME,
+                                                                    Constants.SALESFORCE_PASSWORD,
+                                                                    Constants.SALESFORCE_TOKEN);
                     if (sfMgr.LoggedIn)
                     {
                         try
