@@ -2,7 +2,7 @@
 <!-- BEGIN PARTIAL: account-landing-mygroups -->
 <div class="landing-mygroups landing-modules rs_read_this">
     <header class="clearfix">
-        <h3><sc:FieldRenderer ID="frMyGroupHeaderText" runat="server" FieldName="My Group Header Text"></sc:FieldRenderer><span class="landing-module-count"><asp:Literal ID="litCount" runat="server"></asp:Literal></span></h3>
+        <h3><sc:FieldRenderer ID="frMyGroupHeaderText" runat="server" FieldName="My Groups Header Text"></sc:FieldRenderer><span class="landing-module-count"><asp:Literal ID="litCount" runat="server"></asp:Literal></span></h3>
     </header>
     <asp:Panel runat="server" ID="pnlGroups" Visible="false">
         <ul class="landing-module-items">
