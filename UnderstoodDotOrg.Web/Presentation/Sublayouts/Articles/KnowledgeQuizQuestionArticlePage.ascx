@@ -56,7 +56,7 @@
                         <sc:FieldRenderer ID="frExplanation" runat="server" FieldName="Answer Explanation" />
                     </p>
                     <div class="next-question">
-                        <button type="button" runat="server" id="btnResult" onserverclick="btnResult_Click" class="button" >Show Result</button>
+                        <button type="button" runat="server" id="btnResult" onserverclick="btnResult_Click" class="button" >Show Results</button>
                         <button type="button" runat="server" id="btnNextQuestion" onserverclick="btnNextQuestion_Click" class="button" >Next Question</button>
                     </div>
                 </asp:Panel>
