@@ -8,11 +8,7 @@
 
             <div class="col col-14 offset-1 header-title rs_read_this">
 
-                <asp:HyperLink runat="server" ID="hlBreadcrumbNav" CssClass="back-to-previous">
-                    <i class="icon-arrow-left-blue"></i>
-                    <asp:Literal runat="server" ID="txtBreadcrumbNav"></asp:Literal>
-                    <!--School & Learning-->
-                </asp:HyperLink>
+                <asp:HyperLink runat="server" ID="hlBreadcrumbNav" CssClass="back-to-previous"><i class="icon-arrow-left-blue"></i><asp:Literal runat="server" ID="txtBreadcrumbNav"/></asp:HyperLink>
 
                 <h1><%--Grade School--%>
                     <asp:Literal runat="server" ID="scTopicTitle"></asp:Literal>

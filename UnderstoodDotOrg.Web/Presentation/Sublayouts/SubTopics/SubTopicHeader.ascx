@@ -4,10 +4,7 @@
 <div class="container page-topic with-share">
     <div class="row  header-wrapper">
         <div class="col col-14 offset-1 header-title rs_read_this">
-            <asp:HyperLink runat="server" ID="hlBreadcrumbNav" CssClass="back-to-previous">
-                <i class="icon-arrow-left-blue"></i>
-                <asp:Literal runat="server" ID="litPreviousLink"></asp:Literal>
-            </asp:HyperLink>
+            <asp:HyperLink runat="server" ID="hlBreadcrumbNav" CssClass="back-to-previous"><i class="icon-arrow-left-blue"></i><asp:Literal runat="server" ID="litPreviousLink"/></asp:HyperLink>
 
             <h1><asp:Literal runat="server" ID="litTitle" /></h1>
         </div>

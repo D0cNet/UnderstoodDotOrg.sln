@@ -7,11 +7,7 @@
     <div class="row back-to-previous-nav">
         <!-- article -->
         <div class="col col-22 offset-1">
-            <%--<a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Back to Homepage</a>--%>
-            <asp:HyperLink ID="hlSectionTitle" runat="server" CssClass="back-to-previous">
-                <i class="icon-arrow-left-blue"></i>Back to
-                <sc:fieldrenderer id="frSectionTitle" runat="server" fieldname="Navigation Title" />
-            </asp:HyperLink>
+            <asp:HyperLink ID="hlSectionTitle" runat="server" CssClass="back-to-previous"><i class="icon-arrow-left-blue"></i>Back to <sc:fieldrenderer id="frSectionTitle" runat="server" fieldname="Navigation Title" /></asp:HyperLink>
         </div>
     </div>
     <!-- .row -->

@@ -6,11 +6,7 @@
 <div class="container page-topic <%= AdditionalCssClass %>">
     <div class="row">
         <div class="col col-14 offset-1">
-            <%--<a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Lorem Ipsum Dolar</a>--%>
-            <asp:HyperLink ID="hlSectionTitle" runat="server" CssClass="back-to-previous">
-                <i class="icon-arrow-left-blue"></i>
-                <sc:FieldRenderer ID="frSectionTitle" runat="server" FieldName="Navigation Title" />      
-            </asp:HyperLink>
+            <asp:HyperLink ID="hlSectionTitle" runat="server" CssClass="back-to-previous"><i class="icon-arrow-left-blue"></i><sc:FieldRenderer ID="frSectionTitle" runat="server" FieldName="Navigation Title" /></asp:HyperLink>
             <div>
                 <h1 class="rs_read_this">
                     <sc:FieldRenderer ID="frTitle" runat="server" FieldName="Page Title" />
