@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 
@@ -22,7 +23,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             else
             {
                 var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountGroups);
+                MyAccountItem context = (MyAccountItem)Sitecore.Context.Item;
                 hypGroupsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
+                hypAllGroups.Text = context.SeeAllGroupsLinkText;
+                
 
                 List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
                 litCount.Text = groupsList != null ? groupsList.Count.ToString() : "0";
