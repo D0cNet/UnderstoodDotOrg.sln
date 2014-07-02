@@ -11,23 +11,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages {
     
     
     public partial class TycePlayer {
-        
-        /// <summary>
-        /// hypLogoLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypLogoLink;
-        
-        /// <summary>
-        /// backLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor backLink;
     }
 }

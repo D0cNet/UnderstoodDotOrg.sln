@@ -4,10 +4,10 @@
 
 <div id="rotation-overlay">
     <div>
-        <img alt="Turn Your Phone" src="Presentation/includes/images/icon.turn.phone.png" />
+        <sc:FieldRenderer ID="frRotationImage" runat="server" FieldName="Mobile Rotation Image"></sc:FieldRenderer>
     </div>
     <div>
-        <h2>Please turn your phone to portrait view to interact with your experience</h2>
+        <h2><sc:FieldRenderer ID="frRotationText" runat="server" FieldName="Mobile Rotation Text"></sc:FieldRenderer></h2>
     </div>
 </div>
 
@@ -16,9 +16,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <h2>Before You Begin&hellip;</h2>
-                <p>The interactive experiences you’re going to see are designed to be as relevant as possible – but as you know, every child is unique.</p>
-                <p>We would never assume that your child's nature or challenges and environment could be captured by a web site, but we believe that these interactives can give you some new perspectives and insights</p>
+                <h2><%= BeforeYouBeginTitle %></h2>
+                <%= BeforeYouBeginContent %>
                 <div class="actions">
                     <a href="REPLACE" class="button button-close">Continue</a>
                 </div>
@@ -35,10 +34,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <h2>You're Done!</h2>
-                <p>You're done!</p>
+                <h2><%= YourDoneHeader %></h2>
+                <%= YourDoneContent %>
                 <div class="actions">
-                    <a href="#" class="button button-close">Go Somewhere</a>
+                    <a href="#" class="button button-close"><%= YourDoneLinkText %></a>
                 </div>
             </div>
             <!-- /.modal-body -->

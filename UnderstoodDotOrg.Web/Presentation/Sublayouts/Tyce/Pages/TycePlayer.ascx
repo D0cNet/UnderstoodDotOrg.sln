@@ -7,7 +7,7 @@
         <div class="col col-12">
             <div class="logo-u-main">
                 <a href="<%= MainsectionItem.GetHomeItem().GetUrl() %>" class="no-background">
-                    <%= Model.HeaderLogo.GetImageUrl() %></a>
+                    <img src="<%= Model.HeaderLogo.GetImageUrl() %>" /></a>
             </div>
         </div>
         <style>

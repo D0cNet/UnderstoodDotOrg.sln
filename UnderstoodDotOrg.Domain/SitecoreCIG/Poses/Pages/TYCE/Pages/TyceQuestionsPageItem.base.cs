@@ -127,6 +127,42 @@ public CustomTextField WhyAreWeAskingText
 }
 
 
+public CustomTextField OtherChallengesModalHeaderText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Other Challenges Modal Header Text"]);
+	}
+}
+
+
+public CustomTextField OtherChallengesModalContent
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Other Challenges Modal Content"]);
+	}
+}
+
+
+public CustomTextField AfterHighSchoolModalHeaderText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["After High School Modal Header Text"]);
+	}
+}
+
+
+public CustomTextField AfterHighSchoolModalContent
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["After High School Modal Content"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

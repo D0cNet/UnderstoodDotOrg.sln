@@ -19,6 +19,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 {
     public partial class TycePlayerResources : BaseSublayout<TycePlayerPageItem>
     {
+        public string YourDoneHeader = "";
+        public string YourDoneContent = "";
+        public string YourDoneLinkText = "";
+        public string BeforeYouBeginTitle = "";
+        public string BeforeYouBeginContent = "";
+
         private string HomepageUrl { get; set; }
         protected string JSResources { get; set; }
         protected string NextPagePath { get; set; }
@@ -125,6 +131,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
             else
             {
                 Response.Redirect(HomepageUrl);
+            }
+
+            if (Sitecore.Context.Item.IsOfType(TycePlayerPageItem.TemplateId))
+            {
+                TycePlayerPageItem context = (TycePlayerPageItem)Sitecore.Context.Item;
+                YourDoneHeader = context.YourDoneModalHeaderText;
+                YourDoneContent = context.YourDoneModalContent;
+                YourDoneLinkText = context.YourDoneModalLinkText;
+                BeforeYouBeginTitle = context.BeforeYouBeginTitle;
+                BeforeYouBeginContent = context.BeforeYouBeginContent;
             }
         }
 

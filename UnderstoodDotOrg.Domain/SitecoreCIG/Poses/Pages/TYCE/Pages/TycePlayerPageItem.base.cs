@@ -190,6 +190,33 @@ public CustomTextField BeforeYouBeginContent
 }
 
 
+public CustomTextField YourDoneModalHeaderText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Your Done Modal Header Text"]);
+	}
+}
+
+
+public CustomTextField YourDoneModalContent
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Your Done Modal Content"]);
+	}
+}
+
+
+public CustomTextField YourDoneModalLinkText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Your Done Modal Link Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

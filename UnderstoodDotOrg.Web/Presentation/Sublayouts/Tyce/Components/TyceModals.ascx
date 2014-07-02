@@ -131,31 +131,12 @@
     });
 </script>
 
-<div class="modal fade modal-standard" id="tyce-modal-begin" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h2><%= BeforeYouBeginTitle %></h2>
-                <%= BeforeYouBeginContent %>
-                <div class="actions">
-                    <a href="REPLACE" class="button button-close">Continue</a>
-                </div>
-            </div>
-            <!-- /.modal-body -->
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
 <div class="modal fade modal-standard" id="tyce-modal-no-challenge" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
-        <h2>Other Challenges</h2>
-        <p>At this time, we have experiences for five common learning and attention issues. If you're looking for a specific issue you don't see here, we encourage you to explore our <a href="REPLACE">Learning &amp; Attention</a> Issues section - we have a wide array of content that explores the full spectrum of learning issues.</p>
-        <p>Also - make sure you check back soon. We're always adding more content. <a href="REPLACE">If you have any suggestions</a> for this tool, <a href="REPLACE">contact us and share your thoughts</a>.</p>
+        <h2><%= OtherChallengesHeader %></h2>
+        <%= OtherChallengesContent %>
         <div class="actions">
           <a href="REPLACE" class="button button-close">OK</a>
         </div>
@@ -168,9 +149,8 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
-        <h2>After High School</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non viverra turpis. Curabitur tristique porta purus nec tincidunt. Donec augue turpis, lobortis suscipit sagittis a, sodales a tellus. Sed neque tortor, consequat et ligula ac, venenatis facilisis neque. In porttitor congue magna, ut elementum massa semper.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non viverra turpis. Curabitur tristique porta purus nec tincidunt. Donec augue turpis.</p>
+        <h2><%= AfterHighSchoolHeader %></h2>
+        <%= AfterHighSchoolContent %>
         <div class="actions">
           <a href="REPLACE" class="button button-close">OK</a>
         </div>

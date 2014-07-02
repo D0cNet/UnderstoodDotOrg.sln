@@ -16,8 +16,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
     {
 
         public string PleaseSelectChild = "";
-        public string BeforeYouBeginTitle = "";
-        public string BeforeYouBeginContent = "";
+        public string OtherChallengesHeader = "";
+        public string OtherChallengesContent = "";
+        public string AfterHighSchoolHeader = "";
+        public string AfterHighSchoolContent = "";
 
         private TyceQuestionsPageItem _tyceQuestionsPage;
         private TycePlayerPageItem _tycePlayerPage;
@@ -122,19 +124,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 
                 rptrChildSelectionModal.DataSource = childrenModels;
                 rptrChildSelectionModal.DataBind();
+            }
 
-                if (Sitecore.Context.Item.IsOfType(TyceOverviewPageItem.TemplateId))
-                { 
-                    TyceOverviewPageItem context = (TyceOverviewPageItem)Sitecore.Context.Item;
-                    PleaseSelectChild = context.PleaseSelectChildModalText;
-                }
+            if (Sitecore.Context.Item.IsOfType(TyceOverviewPageItem.TemplateId))
+            {
+                TyceOverviewPageItem context = (TyceOverviewPageItem)Sitecore.Context.Item;
+                PleaseSelectChild = context.PleaseSelectChildModalText;
+            }
 
-                if (Sitecore.Context.Item.IsOfType(TycePlayerPageItem.TemplateId))
-                {
-                    TycePlayerPageItem context = (TycePlayerPageItem)Sitecore.Context.Item;
-                    BeforeYouBeginTitle = context.BeforeYouBeginTitle;
-                    BeforeYouBeginContent = context.BeforeYouBeginContent;
-                }
+            if (Sitecore.Context.Item.IsOfType(TyceQuestionsPageItem.TemplateId))
+            {
+                TyceQuestionsPageItem context = (TyceQuestionsPageItem)Sitecore.Context.Item;
+                OtherChallengesHeader = context.OtherChallengesModalHeaderText;
+                OtherChallengesContent = context.OtherChallengesModalContent;
+                AfterHighSchoolHeader = context.AfterHighSchoolModalHeaderText;
+                AfterHighSchoolContent = context.AfterHighSchoolModalContent;
             }
         }
     }
