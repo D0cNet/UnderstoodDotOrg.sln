@@ -63,7 +63,7 @@
             <div class="modal-body">
                 <h2>Select your Child</h2>
                 <p>Your profile contains <%= IsUserLoggedIn ? CurrentMember.Children.Count : 0 %> children. 
-                   Please select the child you'd like to base this experience on.</p>
+                   <%= PleaseSelectChild %></p>
                 <fieldset>
                     <legend class="visuallyhidden">Select your Child</legend>
                     <ul class="input-buttons">
@@ -135,9 +135,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <h2>Before You Begin&hellip;</h2>
-                <p>The interactive experiences you’re going to see are designed to be as relevant as possible – but as you know, every child is unique.</p>
-                <p>We would never assume that your child's nature or challenges and environment could be captured by a web site, but we believe that these interactives can give you some new perspectives and insights</p>
+                <h2><%= BeforeYouBeginTitle %></h2>
+                <%= BeforeYouBeginContent %>
                 <div class="actions">
                     <a href="REPLACE" class="button button-close">Continue</a>
                 </div>

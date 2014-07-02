@@ -9,7 +9,7 @@
                 <%= Model.PersonalizationBoxAbstract.Rendered %>
             </div>
             <div class="button-wrap">
-                <button class="button">Save Settings</button>
+                <button class="button"><%= Model.SaveSettingsButtonText.Rendered %></button>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
             <sc:FieldRenderer runat="server" FieldName="Image" Parameters="class=pic&w=391&h=219" />
         </div>
         <div class="col col-10 offset-1">
-            <h2>Talk with your Child</h2>
+            <h2><%= Model.TalkWithYouChildTitle.Rendered %></h2>
             <%= Model.TyceBasePage.ContentPage.BodyContent.Rendered %>
         </div>
     </div>
@@ -40,7 +40,7 @@
                     ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components.ChildLearningIssueItem">
                     <ItemTemplate>
                         <p class="link">
-                            <a href="<%# Item.ChildDemographic.InnerItem.Paths.Path %>">Learn About <%# Item.ChildDemographic.NavigationTitle.Rendered %></a>
+                            <a href="REPLACE">Learn About <%# Item.ChildDemographic.NavigationTitle.Rendered %></a>
                         </p>
                     </ItemTemplate>
                 </asp:Repeater>
@@ -48,15 +48,16 @@
             <div class="module">
                 <h2><%= Model.ShareItTitle.Rendered %></h2>
                 <p><%= Model.ShareItContent.Rendered %></p>
+
                 <ul class="share-tools">
                     <li>
-                        <a href="REPLACE" class="icon icon-facebook">Facebook</a></li>
+                        <a href="<%= UnderstoodDotOrg.Domain.SocialHelper.GetFacebookShareUrl(Sitecore.Context.Item) %>" class="icon icon-facebook">Facebook</a></li>
                     <li>
-                        <a href="REPLACE" class="icon icon-twitter">Twitter</a></li>
+                        <a href="<%= UnderstoodDotOrg.Domain.SocialHelper.GetTwitterShareUrl(Sitecore.Context.Item) %>" class="icon icon-twitter">Twitter</a></li>
                     <li>
-                        <a href="REPLACE" class="icon icon-google">Google +</a></li>
+                        <a href="<%= UnderstoodDotOrg.Domain.SocialHelper.GetGooglePlusShareUrl(Sitecore.Context.Item) %>" class="icon icon-google">Google +</a></li>
                     <li>
-                        <a href="REPLACE" class="icon icon-pinterest">Pinterest</a></li>
+                        <a href="<%= UnderstoodDotOrg.Domain.SocialHelper.GetPinterestShareUrl(Sitecore.Context.Item) %>" class="icon icon-pinterest">Pinterest</a></li>
                     <li>
                         <a href="REPLACE" class="icon icon-email">Email</a></li>
                 </ul>

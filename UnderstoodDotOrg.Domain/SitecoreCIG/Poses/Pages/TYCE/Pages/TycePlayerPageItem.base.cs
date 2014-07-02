@@ -172,6 +172,24 @@ public CustomTextField SkipBubbleText
 }
 
 
+public CustomTextField BeforeYouBeginTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Before You Begin Title"]);
+	}
+}
+
+
+public CustomTextField BeforeYouBeginContent
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Before You Begin Content"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

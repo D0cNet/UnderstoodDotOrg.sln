@@ -14,7 +14,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 {
     public partial class TyceModals : BaseSublayout<TyceBasePageItem>
     {
-        
+
+        public string PleaseSelectChild = "";
+        public string BeforeYouBeginTitle = "";
+        public string BeforeYouBeginContent = "";
+
         private TyceQuestionsPageItem _tyceQuestionsPage;
         private TycePlayerPageItem _tycePlayerPage;
         private TyceNextStepsPageItem _tyceNextStepsPage;
@@ -118,6 +122,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 
                 rptrChildSelectionModal.DataSource = childrenModels;
                 rptrChildSelectionModal.DataBind();
+
+                if (Sitecore.Context.Item.IsOfType(TyceOverviewPageItem.TemplateId))
+                { 
+                    TyceOverviewPageItem context = (TyceOverviewPageItem)Sitecore.Context.Item;
+                    PleaseSelectChild = context.PleaseSelectChildModalText;
+                }
+
+                if (Sitecore.Context.Item.IsOfType(TycePlayerPageItem.TemplateId))
+                {
+                    TycePlayerPageItem context = (TycePlayerPageItem)Sitecore.Context.Item;
+                    BeforeYouBeginTitle = context.BeforeYouBeginTitle;
+                    BeforeYouBeginContent = context.BeforeYouBeginContent;
+                }
             }
         }
     }

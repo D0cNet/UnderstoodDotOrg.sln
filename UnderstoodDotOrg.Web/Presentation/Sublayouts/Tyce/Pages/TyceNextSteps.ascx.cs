@@ -14,8 +14,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 {
     public partial class TyceNextSteps : BaseSublayout<TyceNextStepsPageItem>
     {
+        protected TycePlayerPageItem PlayerPageItem { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            PlayerPageItem = Model.TyceBasePage.GetPlayerPage();
             var simhist = Request.QueryString["simhist"];
             if (!string.IsNullOrEmpty(simhist))
             {

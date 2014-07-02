@@ -54,6 +54,12 @@ namespace UnderstoodDotOrg.Domain
             return url;
         }
 
+        public static string GetPinterestShareUrl(Item pageItem)
+        {
+            string pageUrl = GetContentPageSharingUrl(pageItem);
+            return string.Format("http://pinterest.com/pin/create/button/?url={0}", pageUrl);
+        }
+
         #endregion Public
 
         #region Private helpers

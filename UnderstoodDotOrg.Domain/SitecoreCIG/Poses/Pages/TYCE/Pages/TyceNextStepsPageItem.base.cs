@@ -100,6 +100,15 @@ public CustomTextField SpecialThanksHeader
 }
 
 
+public CustomTextField TalkWithYouChildTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Talk With You Child Title"]);
+	}
+}
+
+
 public CustomTextField ExpertContentText
 {
 	get
@@ -150,6 +159,15 @@ public CustomTextField PlaceholderText
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Placeholder Text"]);
+	}
+}
+
+
+public CustomTextField SaveSettingsButtonText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Save Settings Button Text"]);
 	}
 }
 

@@ -82,6 +82,15 @@ public CustomTextField SimulationListingAbstract
 }
 
 
+public CustomTextField PleaseSelectChildModalText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Please Select Child Modal Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
