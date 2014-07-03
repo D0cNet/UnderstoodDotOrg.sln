@@ -100,7 +100,6 @@
                             $(".download-pdf>div.download").on("click", function (e) {
                                 if (!clicked)
                                 {
-                                    //$downloadingModal.modal('show');
                                     var doc = new jsPDF();
                                     doc.addHTML(
                                         $("#form1"),                                        
@@ -109,7 +108,7 @@
                                         { 'pagesplit': true },
                                         function () {
                                             doc.save('article-download.pdf');
-                                            //$downloadingModal.modal("hide");
+                                            $downloadingModal.modal("hide");
                                         });
                                 }
                             })
