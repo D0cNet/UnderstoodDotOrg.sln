@@ -173,8 +173,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         confirmationText.Visible = true;
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
+                    Sitecore.Diagnostics.Log.Error("\n\nAn error occurred while attempting to save checklist answers", ex, this);
                     errorText.Visible = true;  
                 }
             }
