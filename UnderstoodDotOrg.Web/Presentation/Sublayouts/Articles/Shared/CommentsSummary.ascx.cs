@@ -34,7 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             try
             {
                 //Retrieve ovveride ID from field of current item
-                string commentId = article.DefaultArticlePage.CommentTeaserOverrideID.Text;
+                string commentId = article.CommentOverrideID;
                 if (!string.IsNullOrEmpty(commentId))
                 {
                     recentComment = TelligentService.ReadComment(commentId);
@@ -71,6 +71,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     litCommentblurb.Text = recentComment.Body;
                     litAuthorName.Text = recentComment.AuthorDisplayName;
                     litTimeStamp.Text = recentComment.PublishedDate;
+                    this.Visible = article.ShowComment.Checked;
                 }
                 else
                 {
