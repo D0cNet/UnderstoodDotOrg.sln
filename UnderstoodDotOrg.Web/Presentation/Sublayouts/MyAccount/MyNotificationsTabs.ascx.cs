@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
 using UnderstoodDotOrg.Services.TelligentService;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -39,22 +40,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             litwhatsHappeningLabel.Text = DictionaryConstants.WhatsHappeningLabel;
             litPrivateMsgsLabel.Text = DictionaryConstants.PrivateMessagesLabel;
             litEmailPrefLabel.Text = DictionaryConstants.EmailPreferencesLabel;
+
             if (!IsPostBack)
             {
-                if (Sitecore.Context.Item.TemplateID.ToString() == MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetEmailAndAlertPreferences().InnerItem.TemplateID.ToString())
+                if (Sitecore.Context.Item.TemplateID.ToString() == EmailandAlertPreferencesPageItem.TemplateId)
                 {
                     liEmailPreferencesTab.Attributes["class"] += "active";
                 }
 
-                if (Sitecore.Context.Item.TemplateID.ToString() == MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetPrivateMessageTool().InnerItem.TemplateID.ToString())
+                if (Sitecore.Context.Item.TemplateID.ToString() == PrivateMessageToolItem.TemplateId)
                 {
                     liMessagesTab.Attributes["class"] += "active";
                 }
 
-                if (Sitecore.Context.Item.TemplateID.ToString() == MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().InnerItem.TemplateID.ToString())
+                if (Sitecore.Context.Item.TemplateID.ToString() == MyNotificationsPageItem.TemplateId)
                 {
                     liNotificationsTab.Attributes["class"] += "active";
                 }
+
+                // TODO: refactor
                 hypWhatsHappening.NavigateUrl = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetUrl();
                 hypEmailAndAlertPreferences.NavigateUrl = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetEmailAndAlertPreferences().InnerItem.GetUrl();
                 hypPrivateMessages.NavigateUrl = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetPrivateMessageTool().InnerItem.GetUrl();
