@@ -17,7 +17,9 @@
                 </asp:HyperLink>--%>
 
                 <h1><%= Model.ContentPage.PageTitle.Rendered %></h1>
+                <% if (!IsArticlePage) { %>
                 <div class="page-subtitle"><%= Model.ContentPage.BodyContent.Rendered %></div>
+                <% } %>
             </div>
         </div>
         <div class="col col-9 partner-image-column">

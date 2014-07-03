@@ -50,6 +50,15 @@ public static implicit operator Item(AdvocacyArticlePageItem customItem)
 #region Field Instance Methods
 
 
+public CustomTextField ArticleContent
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Article Content"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

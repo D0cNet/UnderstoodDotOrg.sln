@@ -9,12 +9,23 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy
 {
     public partial class AdvocacyPageTopicHeader : BaseSublayout<AdvocacyBasePageItem>
     {
         protected BasePageNEWItem PreviousPageItem { get; set; }
+
+        private bool? _isArticlePage;
+        protected bool IsArticlePage
+        {
+            get
+            {
+                return (_isArticlePage = _isArticlePage ?? 
+                    Sitecore.Context.Item.IsOfType(AdvocacyArticlePageItem.TemplateId)).Value;
+            }
+        }
         
         protected void Page_Load(object sender, EventArgs e)
         {
