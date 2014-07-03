@@ -299,6 +299,12 @@ $(document).ready(function () {
             tyceQuestion2.doAnswer(tyceQuestion2.answerText);
             $tyceIssueSummaries
                 .filter(function () { return selectedIssueIds.indexOf($(this).attr("data-issue-id")) >= 0 })
+                .removeClass('row-start')
+                .each(function(idx, el){
+                    if ( (idx % 3) === 0 ) {
+                        $(this).addClass('row-start');
+                    }
+                })
                 .show();
             $hfIssueIds.val(selectedIssueIds.join("&simq="));
 

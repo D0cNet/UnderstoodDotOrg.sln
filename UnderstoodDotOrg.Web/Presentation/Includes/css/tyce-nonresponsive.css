@@ -1964,7 +1964,7 @@
   border: 1px solid #f2f2f2;
 }
 /* line 705, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_tyce-steps.scss */
-.tyce-issues .issue:nth-child(3n+1) {
+.tyce-issues .issue.row-start {
   margin-left: 0;
   clear: left;
 }
