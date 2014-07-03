@@ -340,6 +340,7 @@ $(".show-more-link-mycomments").click(function () {
     for (var i = showCount; i < showCount + 5; i++) {
         $(".repeater-item").eq(i).show();
     }
+    $(".repeater-item").eq(showCount).focus();
     showCount += 5;
     if ($(".repeater-item").length <= showCount) {
         $(".show-more-link-mycomments").hide();
