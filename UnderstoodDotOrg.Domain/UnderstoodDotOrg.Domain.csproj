@@ -317,6 +317,9 @@
     <Compile Include="SitecoreCIG\Poses\General\NavigationLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\NavigationLinkItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\PromoItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\SiteSettingsItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\SiteSettingsItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\SiteSettingsItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\General\SocialMediaItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\TimeZoneItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\ToolkitArticlePageTools\ArticleToolkitResourceItem.base.cs" />

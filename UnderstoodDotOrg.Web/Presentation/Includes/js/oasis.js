@@ -638,7 +638,7 @@ $(document).ready(function () {
 // Share e-mail modal
 (function($) {
 	$(document).ready(function() {
-		$(".icon-email").on("click", function(e) {
+		$(".icon-email,.thank-you-social .email-link").on("click", function(e) {
 			e.preventDefault();
 			$(".share-email-modal").modal("show");
 		});

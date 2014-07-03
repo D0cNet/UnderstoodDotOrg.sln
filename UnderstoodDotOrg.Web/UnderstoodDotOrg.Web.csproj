@@ -348,6 +348,13 @@
     <Compile Include="Presentation\Sublayouts\About\Widgets\Donate.ascx.designer.cs">
       <DependentUpon>Donate.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Widgets\ThankYouSocial.ascx.cs">
+      <DependentUpon>ThankYouSocial.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\Widgets\ThankYouSocial.ascx.designer.cs">
+      <DependentUpon>ThankYouSocial.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Account\AccountBody.ascx.cs">
       <DependentUpon>AccountBody.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2812,6 +2819,7 @@
     <Content Include="Presentation\Sublayouts\About\Newsletter_Signup\Newsletter_Thankyou.ascx" />
     <Content Include="Presentation\Sublayouts\About\SearchResults.ascx" />
     <Content Include="Presentation\Sublayouts\About\Widgets\Donate.ascx" />
+    <Content Include="Presentation\Sublayouts\About\Widgets\ThankYouSocial.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountBody.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx" />

@@ -30,19 +30,7 @@
         <div class="col col-22 centered rs_read_this skiplink-toolbar rs_read_this">
             <!-- BEGIN PARTIAL: about/about-thank-you-social -->
             <!-- Adding spaces or line breaks here will cause unwanted space between elements -->
-            <div class="thank-you-social">
-                <a href="REPLACE" class="email-link">
-                    <span class="circle">
-                        <span class="icon icon-envelope rs_skip" alt="envelope icon"></span>
-                    </span><span class="text-link">Tell a Friend</span>
-                </a>
-                <a href="REPLACE" class="twitter-link">
-                    <span class="circle"><span class="icon icon-twitter rs_skip" alt="twitter icon"></span></span><span class="text-link">Follow us on Twitter</span>
-                </a>
-                <a href="REPLACE" class="facebook-link">
-                    <span class="circle"><span class="icon icon-facebook rs_skip" alt="facebook icon"></span></span><span class="text-link">Friend us on Facebook</span>
-                </a>
-            </div>
+            <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/About/Widgets/ThankYouSocial.ascx" />
             <!-- END PARTIAL: about/about-thank-you-social -->
         </div>
     </div>
