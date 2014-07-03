@@ -73,8 +73,34 @@
     <None Include="EnvironmentSpecifics\Local\App_Config\Include\SitecoreSettings.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\ConnectionStrings.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\CustomEvents.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\DataFolder.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\LinkManager.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\NewsMover.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Pipeline.Publish.IdentifyClone.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Sitecore.Analytics.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Sitecore.Analytics.ExcludeRobots.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Sitecore.ContentSearch.Solr.Indexes.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Sitecore.ContentSearch.Solr.Indexes.MediaFramework.Brightcove.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Sitecore.MediaFramework.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Sitecore.MediaFramework.Services.Brightcove.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Sitecore.RestSharp.Brightcove.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Sitecore.SharedSource.PartialLanguageFallback.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\SitecoreSettings.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\SitemapXML.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\TelligentEvolution.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\robots.txt.bak" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\Web %282%29.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="EnvironmentSpecifics\QA_204.232.148.68\bin\Sitemap.XML.dll" />
+    <Content Include="EnvironmentSpecifics\QA_204.232.148.68\robots.txt" />
+    <Content Include="EnvironmentSpecifics\QA_204.232.148.68\sitecore modules\Shell\sitemap XML\SitemapManager.xml" />
+    <Content Include="EnvironmentSpecifics\QA_204.232.148.68\Sitemap1.xml" />
+    <Content Include="EnvironmentSpecifics\QA_204.232.148.68\solr\solrconfig.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
