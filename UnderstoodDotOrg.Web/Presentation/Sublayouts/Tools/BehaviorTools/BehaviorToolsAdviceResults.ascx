@@ -73,7 +73,7 @@
     <div class="container show-more rs_skip">
       <div class="row">
         <div class="col col-24">
-            <a class="show-more-behavior-results-link" href="#" data-container="behavior-search-results" data-template="behavior-search-result" data-path="<%= AjaxPath %>" data-challenge="<%= SelectedChallenge %>" data-grade="<%= SelectedGrade %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
+            <a class="show-more-behavior-results-link" href="#" data-container="behavior-search-results" data-template="behavior-search-result" data-path="<%= AjaxPath %>" data-challenge="<%= SelectedChallenge %>" data-grade="<%= SelectedGrade %>" data-lang="<%= Sitecore.Context.Language.Name %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
         </div>
       </div>
     </div>

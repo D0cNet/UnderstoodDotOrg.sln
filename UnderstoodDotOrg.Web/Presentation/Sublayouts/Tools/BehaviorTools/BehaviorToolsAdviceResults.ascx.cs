@@ -135,7 +135,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         private void BindResults()
         {
             SearchResultsService srs = new SearchResultsService();
-            var result = srs.SearchBehaviorArticles(SelectedChallenge, SelectedGrade, 1);
+            var result = srs.SearchBehaviorArticles(SelectedChallenge, SelectedGrade, 1, Sitecore.Context.Language.Name);
 
             if (result.Matches.Any())
             {

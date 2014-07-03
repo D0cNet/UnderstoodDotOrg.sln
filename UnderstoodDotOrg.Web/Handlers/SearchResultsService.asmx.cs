@@ -33,12 +33,7 @@ namespace UnderstoodDotOrg.Web.Handlers
         {
             ResultSet results = new ResultSet();
 
-            Sitecore.Globalization.Language language;
-
-            if (Sitecore.Globalization.Language.TryParse(lang, out language))
-            {
-                Sitecore.Context.SetLanguage(language, false);
-            }
+            SetContextLanguage(lang);
 
             int blurbLimit = 150;
             SearchResultsItem item = Sitecore.Context.Database.GetItem(Constants.Pages.SearchResults);
@@ -71,10 +66,12 @@ namespace UnderstoodDotOrg.Web.Handlers
 
         [WebMethod]
         [ScriptMethod(ResponseFormat=ResponseFormat.Json)]
-        public BehaviorResultSet SearchBehaviorArticles(string challenge, string grade, int page)
+        public BehaviorResultSet SearchBehaviorArticles(string challenge, string grade, int page, string lang)
         {
             BehaviorResultSet results = new BehaviorResultSet();
             List<BehaviorAdvice> articles;
+
+            SetContextLanguage(lang);
 
             int totalResults = 0;
             SessionSearchResult srs = new SessionSearchResult
@@ -121,6 +118,16 @@ namespace UnderstoodDotOrg.Web.Handlers
         {
             int currentResultTotal = ((currentPage - 1) * entriesPerPage) + currentEntriesTotal;
             return currentResultTotal < totalResults;
+        }
+
+        private void SetContextLanguage(string lang)
+        {
+            Sitecore.Globalization.Language language;
+
+            if (Sitecore.Globalization.Language.TryParse(lang, out language))
+            {
+                Sitecore.Context.SetLanguage(language, false);
+            }
         }
     }
 }

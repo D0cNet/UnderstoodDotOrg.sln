@@ -613,6 +613,7 @@ jQuery(document).ready(function(){
 	
 	var dataPath = $trigger.data('path'),
 		dataGrade = $trigger.data('grade'),
+        dataLang = $trigger.data('lang'),
 		dataChallenge = $trigger.data('challenge'),
 		dataContainer = $trigger.data('container'),
 		dataTemplate = $trigger.data('template');
@@ -638,7 +639,8 @@ jQuery(document).ready(function(){
 		var data = {
 			grade: dataGrade,
 			challenge: dataChallenge,
-			page: page + 1
+			page: page + 1,
+            lang: dataLang
 		};
 		
 		$.ajax({
