@@ -152,14 +152,12 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             this.name = name;
             this.board = new Gameboard();
             this.events = $({});
-            this.events.on('start', function() { console.log('Start triggered') });
-            this.events.on('stop', function() { console.log('Stop triggered') });
-            this.events.on('initialized', $.proxy(function() { console.log(this.name + ' initialized') }, this));
-            this.events.on('moveon', function() { console.log('Stop triggered') });
             this.events.trigger('initialized');
             this.board.board.css('visibility', 'hidden');
             this.nodeMap = nodes;
-            this.isIOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
+            //this.isIOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
+            this.isAudioLimited = /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/
+                .test(navigator.userAgent);
         },
         draw: function(newIds) {
             var ctr = $('#gameboard');
@@ -168,6 +166,11 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                 this.nodes[key] = $('<div></div>').attr('id', id);
                 ctr.append(this.nodes[key]);
             }, this));
+        },
+        getPresentationMode: function() {
+            var mode = this.config.presentationMode;
+            if(!mode) mode = 'normal';
+            return mode;
         },
         getLanguage: function() {
             var lang = this.config.lang;
@@ -196,17 +199,15 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             effectPaths = $.extend({}, effectPaths, localEffectPaths);
             this.sounds = {};
             this.soundsPlaying = {};
-            if(true || !this.isIOS) {
-                $.each(effectPaths, $.proxy(function(key, paths) {
-                    if(!paths.push) paths = [paths];
-                    this.sounds[key] = [];
-                    for(var i = 0; i < paths.length; i ++) {
-                        this.sounds[key].push(new buzz.sound(paths[i], {
-                            formats: ['ogg', 'mp3']
-                        }));
-                    }
-                }, this));
-            }
+            $.each(effectPaths, $.proxy(function(key, paths) {
+                if(!paths.push) paths = [paths];
+                this.sounds[key] = [];
+                for(var i = 0; i < paths.length; i ++) {
+                    this.sounds[key].push(new buzz.sound(paths[i], {
+                        formats: ['ogg', 'mp3']
+                    }));
+                }
+            }, this));
             var lang = this.getLanguage();
             if(!localVOPaths) localVOPaths = {};
             this.voices = {};
@@ -220,13 +221,15 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                 }
             }, this));
         },
-        playSound: function(key, cfg) {
-            if(this.sounds[key]) {
-                var sound = SSGame.pick(this.sounds[key], []);
-                this.soundsPlaying[key] = sound;
-                sound.play();
-            } else {
-                console.error('No such sound "%s"', key);
+        playSound: function(key, mobile, cfg) {
+            if(!this.isAudioLimited || mobile) {
+                if(this.sounds[key]) {
+                    var sound = SSGame.pick(this.sounds[key], []);
+                    this.soundsPlaying[key] = sound;
+                    sound.play();
+                } else {
+                    console.error('No such sound "%s"', key);
+                }
             }
         },
         pauseSound: function(key) {
@@ -250,16 +253,18 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                 console.error('No such sound "%s"', key);
             }
         },
-        playVO: function(key, events) {
-            if(!events) events = {};
-            if(this.voices[key]) {
-                var vo = SSGame.pick(this.voices[key], []);
-                $.each(events, function(ev, fn) {
-                    vo.bind(ev, fn);
-                });
-                vo.play();
-            } else {
-                console.error('No such voice "%s"', key);
+        playVO: function(key, mobile, events) {
+            if(!this.isAudioLimited || mobile) {
+                if(!events) events = {};
+                if(this.voices[key]) {
+                    var vo = SSGame.pick(this.voices[key], []);
+                    $.each(events, function(ev, fn) {
+                        vo.bind(ev, fn);
+                    });
+                    vo.play();
+                } else {
+                    console.error('No such voice "%s"', key);
+                }
             }
         },
         startLoop: function(key) {
@@ -322,7 +327,6 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
          */
         mapNodes: function() {
             if(!this.nodes) {
-                console.log('Napping nodes from %o', this.nodeMap);
                 this.nodes = {};
                 $.each(this.nodeMap, $.proxy(function(name, sel) {
                     this.nodes[name] = this.board.board.find(sel);
@@ -397,11 +401,12 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
          * @param string tolerance How much overlap should be allowed with placement - "none" or "some"
          * @returns object New position information: { left: , top: }
          */
-        getRandomPosition: function(toPlace, siblings, ctr, tolerance, rows, cols) {
+        getRandomPosition: function(toPlace, siblings, ctr, scatterAmount, rows, cols, padding) {
             //First figure out an absolute boundary for our container.
             //Add some explicit padding...
-			var padding_horizontal = ctr.width * 0.02;
-			var padding_vertical = ctr.height * 0.02;
+            if(!padding) padding = 0.02;
+			var padding_horizontal = ctr.width * padding;
+			var padding_vertical = ctr.height * padding;
             var ctrwidth = ctr.width - padding_horizontal;
             var ctrheight = ctr.height - padding_vertical;
             //Adjust for the size of the item...
@@ -409,7 +414,6 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             ctrheight -= toPlace.height;
             
 			//Based on that boundary, establish our scatter amounts
-			var scatterAmount = .07;
 			var scatterAmount_horizontal = ctr.width*scatterAmount;
 			var scatterAmount_vertical = ctr.height*scatterAmount;
             if(cols == 1) {
@@ -529,7 +533,7 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             this.lastTime = new Date().getTime();
             this.interval = setInterval($.proxy(this.tick, this), 1000);
             this.show(this.maxTime);
-            SSGame.current.playSound('clockTick');
+            SSGame.current.playSound('clockTick', false);
         },
         stop: function() {
             clearInterval(this.interval);
@@ -574,11 +578,32 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
         }
     });
 
+    var DialogPages = Class.extend({
+        pages: null,
+        idx: -1,
+        init: function(text, pageWrapper) {
+            this.pages = text.split('<pbr>');
+        },
+        next: function() {
+            this.idx ++;
+            return SSGameModal.textToParagraphs(this.pages[this.idx]);
+        },
+        isSingle: function() {
+            return this.pages.length == 1;
+        },
+        isFirst: function() {
+            return this.idx == 0;
+        },
+        isLast: function() {
+            return this.idx == this.pages.length - 1;
+        }
+    });
     window.SSGameModal = Class.extend({
         body: null,
         mask: null,
         settings: null,
         watcher: null,
+        alignQueued: false,
         init: function(cfg) {
             if(!cfg) cfg = {};
             var defaultFadeSpeed = 500;
@@ -601,13 +626,10 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             this.settings = $.extend(true, {}, defaults, cfg);
             var html = [];
             if(this.settings.title) html.push('<div class="SSGame_modal_title">' + this.settings.title + '</div>');
-            if(this.settings.text) html.push(this.settings.text);
+            if(this.settings.text) html.push('<div class="SSGame_modal_text">' + this.settings.text + '</div>');
             //The ID and the rs_read_this class are for the ReadThis tool
-            var dummyID = SSGame.rnd(100000000, 200000000) + '_modal_text';
             this.body = $('<div></div>')
-                .html('<div class="dialog_text_wrapper rs_read_this" id="' + dummyID + '">' + html.join('') + '</div>')
                 .addClass('SSGame_dialog');
-            if(window.ReadSpeaker) ReadSpeaker.q(function() { rspkr.Toggle.createPlayer() });
             this.body.dialog(this.settings.dialog);
             this.watcher = $.proxy(function(e, idx, specs) {
                 this.body.dialog('option', 'width', specs[3][0]);
@@ -623,6 +645,30 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             }, this);
             SSGame.current.board.board.on('breakpointChange', this.watcher);
         },
+        setBody: function(html, align) {
+            var dummyID = SSGame.rnd(100000000, 200000000) + '_modal_text';
+            this.body.html('<div class="dialog_text_wrapper rs_read_this" id="' + dummyID + '">' + html + '</div>')
+            if(window.ReadSpeaker) ReadSpeaker.q(function() { rspkr.Toggle.createPlayer() });
+            if(align) {
+                if(!this.body.dialog('isOpen')) {
+                    this.alignQueued = true;
+                } else {
+                    this.alignContent();
+                }
+            }
+        },
+        setButtons: function(buttons) {
+            this.body.dialog('option', 'buttons', buttons);
+            this.body.parents('.ui-dialog').find('.ui-button').click(function(e) {
+                SSGame.current.playSound('buttonClick', false);
+            });
+        },
+        setSize: function(mode) {
+            var bp = SSGame.current.board.getCurrentBreakpoint();
+            var size = SSGameModal.sizes[bp[2]][mode];
+            this.body.dialog('option', 'width', size[0]);
+            this.body.dialog('option', 'height', size[1]);
+        },
         alignContent: function() {
             var t = this.body.find('.dialog_text_wrapper');
             var p = t.parent();
@@ -630,27 +676,11 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             var ph = p.height();
             t.css('marginTop', Math.floor((ph - th) / 2));
         },
-        setButtons: function(buttons) {
-            /*
-            var i, btn, oldClick;
-            for(i = 0; i < buttons.length; i ++) {
-                btn = buttons[i], oldClick = buttons[i]['click'];
-                if(oldClick) {
-                    btn.click = function(e) {
-                        SSGame.current.playSound('buttonClick');
-                        oldClick(e);
-                    }
-                }
-            }
-            */
-            this.body.dialog('option', 'buttons', buttons);
-            this.body.parents('.ui-dialog').find('.ui-button').click(function(e) {
-                SSGame.current.playSound('buttonClick');
-            });
-        },
         open: function() {
             this.body.dialog('open');
-            this.alignContent();
+            if(this.alignQueued) {
+                this.alignContent();
+            }
             if(this.settings.showDuration) {
                 setTimeout($.proxy(this.close, this), this.settings.showDuration);
             }
@@ -680,18 +710,163 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             }, this), this.settings.dialog.hide.duration);
         },
         cleanup: function() {
-            console.log('Cleanup');
             this.body.dialog('destroy');
             SSGame.current.board.board.off('breakpointChange', this.watcher);
             this.watcher = null;
         }
     });
-    window.SSGameModal.textToParagraphs = function(s) {
-        return '<p>' + s.split("\n").join('</p><p>') + '</p>';
-    }
-    window.SSGameModal.destroyAll = function() {
-        $(".SSGame_dialog").dialog("close");
-    }
-
-
+    $.extend(window.SSGameModal, {
+        sizes: {
+            desktop: { normal: [ 510, 330 ], standalone: [ 475, 410 ] },
+            tablet: { normal: [ 510, 330 ], standalone: [ 475, 410 ] },
+            phone: { normal: [ 300, 400 ], standalone: [ 280, 350 ] }
+        },
+        textToParagraphs: function(s) {
+            return '<p>' + s.split("\n").join('</p><p>') + '</p>';
+        },
+        destroyAll: function() {
+            $(".SSGame_dialog").dialog("close");
+        },
+        intro: function(game, click) {
+            //Get our current configuration
+            var mode = game.getPresentationMode();
+            var cfg = game.config.intro;
+            //Put together our text and paginator
+            var text = game.getText(cfg.gameText);
+            if(mode == 'standalone') {
+                text = game.getText(cfg.standaloneText) + '<pbr>' + text;
+            }
+            var bodyPages = new DialogPages(text);
+            //Some helper functions to get our modal elements based on page and mode
+            var buttonText = function(p) {
+                var key = (mode == 'normal' || p.isLast()) ? 'go' : 'next';
+                return game.getText(cfg.buttons[key]);
+            }
+            var titleText = function(p) {
+                if(mode == 'normal' || p.isLast()) {
+                    return '<div class="SSGame_modal_game_title">' + game.getText(cfg['gameTitle']) + '</div>';
+                } else {
+                    return '<div class="SSGame_modal_standalone_title">'
+                        + '<div class="SSGame_modal_standalone_decoration"></div>'
+                        + game.getText(cfg['standaloneTitle']) + '</div>';
+                }
+            }
+            var bodyText = function(p) {
+                var s = p.next();
+                var t = titleText(p);
+                if(mode == 'normal' || p.isLast()) {
+                    s = '<div class="SSGame_modal_game_text">' + s + '</div>';
+                } else {
+                    s = '<div class="SSGame_modal_standalone_text">' + s + '</div>';
+                }
+                return t + s;
+            }
+            //Initialize the modal
+            var dlg = new SSGameModal({
+                showDuration: 0,
+                onClose: function() {
+                    game.start();
+                }
+            });
+            dlg.setSize(mode);
+            //Set up our first page of text, queueing up an adjustment if it's not a special standalone page
+            var autoAdjust = mode == 'normal';
+            dlg.setBody(bodyText(bodyPages), autoAdjust);
+            dlg.setButtons([{
+                text: buttonText(bodyPages),
+                click: $.proxy(function() {
+                    if(bodyPages.isLast()) {
+                        if(click) click();
+                        dlg.close();
+                    } else {
+                        dlg.setBody(bodyText(bodyPages), false);
+                        if(bodyPages.isLast()) {
+                            dlg.setSize('normal');
+                            dlg.alignContent();
+                        }
+                        dlg.body.dialog('widget').find('.ui-button-text').text(buttonText(bodyPages));
+                    }
+                })
+            }]);
+            dlg.open();
+        },
+        outro: function(game, success) {
+            //Get our current configuration
+            var mode = game.getPresentationMode();
+            var cfg = game.config.outro;
+            //Put together our text and paginator
+            var text = '';
+            if(success) {
+                text = game.getText(cfg.gameText.success);
+            } else {
+                text = game.getText(cfg.gameText.failure);
+            }
+            if(mode == 'standalone') {
+                text = text + '<pbr>' + game.getText(cfg.standaloneText);
+            }
+            var bodyPages = new DialogPages(text);
+            //Some helper functions to get our modal elements based on page and mode
+            var titleText = function(p) {
+                return '<div class="SSGame_modal_standalone_title">'
+                    + '<div class="SSGame_modal_standalone_decoration"></div>'
+                    + game.getText(cfg['standaloneTitle']) + '</div>';
+            }
+            var bodyText = function(p) {
+                var s = p.next();
+                if(mode == 'normal' || p.isFirst()) {
+                    s = '<div class="SSGame_modal_game_text">' + s + '</div>';
+                } else {
+                    s = '<div class="SSGame_modal_standalone_text">' + s + '</div>';
+                }
+                if(!p.isFirst()) {
+                    var t = titleText(p);
+                    s = t + s;
+                }
+                return s;
+            }
+            function fixButtons(p) {
+                var buttons = dlg.body.dialog('widget').find('.ui-button');
+                if(!p.isLast()) {
+                    //We don't need no steeenking first bootun
+                    buttons.eq(1).css('display', 'none');
+                    buttons.last().find('.ui-button-text').text(game.getText(cfg.buttons.next));
+                } else {
+                    buttons.last().find('.ui-button-text').text(game.getText(cfg.buttons.learn));
+                    buttons.parent().append(
+                        $('<a></a>').text(game.getText(cfg.buttons.beginning))
+                            .attr('href', cfg.standaloneLinks.beginning)
+                    );
+                }
+            }
+            //Initialize the modal
+            var dlg = new SSGameModal({
+                showDuration: 0
+            });
+            dlg.setButtons([{
+                text: game.getText(cfg.buttons.restart),
+                click: function() {
+                    SSGame.current.reset();
+                    dlg.close();
+                }
+            }, {
+                text: game.getText(cfg.buttons.continue),
+                click: function() {
+                    if(mode == 'normal') {
+                        SSGame.current.events.trigger('moveon');
+                    } else if(bodyPages.isLast()) {
+                        window.location.href = cfg.standaloneLinks.learn;
+                    } else {
+                        dlg.setBody(bodyText(bodyPages), false);
+                        fixButtons(bodyPages);
+                        dlg.setSize(mode);
+                    }
+                }
+            }]);
+            dlg.setSize('normal');
+            dlg.open();
+            //Set up our first page of text, queueing up an adjustment if it's not a special standalone page
+            dlg.setBody(bodyText(bodyPages), true);
+            dlg.open();
+        }
+    });
 })();

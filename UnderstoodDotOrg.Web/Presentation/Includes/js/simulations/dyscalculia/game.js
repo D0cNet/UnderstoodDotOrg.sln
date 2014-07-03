@@ -72,7 +72,7 @@
                 coinDim = { width: coinObj.body.width(), height: coinObj.body.height() };
                 //Figoure out a random position for the coin
                 var layoutGrid = coinCfg.scatterGrid;
-                coinPos = SSGame.getRandomPosition(coinDim, coinStats, ctrStats, i, layoutGrid[0], layoutGrid[1]);
+                coinPos = SSGame.getRandomPosition(coinDim, coinStats, ctrStats, coinCfg.scatterAmount, layoutGrid[1], layoutGrid[0], coinCfg.padding);
                 //Actually move the coin
                 coinObj.setPosition(coinPos.left, coinPos.top, coinStats.length + 1);
                 //Track our final stats for the next random placements
@@ -91,6 +91,7 @@
         },
         reset: function() {
             this._super();
+            SSGameModal.intro(this);
             if(this.spinner) this.spinner.setValue(0);
             this.lib.randomizer.reset();
             this.started = false;
@@ -100,17 +101,6 @@
             this.nodes.coins.empty();
             if(this.key) this.key.remove();
             this.setupElements();
-            var intro = new SSGameModal({
-                showDuration: this.config.introDurationInSeconds * 1000,
-                title: this.getText(this.config.title),
-                text: SSGameModal.textToParagraphs(this.config.introText),
-                onClose: $.proxy(this.start, this)
-            });
-            intro.setButtons([{
-                text: 'Start',
-                click: $.proxy(intro.close, intro)
-            }]);
-            intro.open();
         },
         start: function() {
             this.setState('needsItem');
@@ -118,31 +108,13 @@
         },
         stop: function() {
             var score = this.success.getScore();
-            var finalText;
-            if(score.correct < score.max) {
-                this.playSound('gameOverFail');
-                finalText = this.getText(this.config.finalText.onTimeout);
+            var success = (score.correct >= score.max);
+            if(success) {
+                this.playSound('gameOverSuccess', false);
             } else {
-                this.playSound('gameOverSuccess');
-                finalText = this.getText(this.config.finalText.onComplete);
+                this.playSound('gameOverFail', false);
             }
-            var done = new SSGameModal({
-                showDuration: 0,
-                text: finalText
-            });
-            done.setButtons([{
-                text: 'Try Again',
-                click: function() {
-                    SSGame.current.reset();
-                    done.close();
-                }
-            }, {
-                text: 'Continue',
-                click: function() {
-                    SSGame.current.events.trigger('moveon');
-                }
-            }]);
-            done.open();
+            SSGameModal.outro(this, success);
             this.events.trigger('stop');
         },
         run: function(localCfg) {
@@ -208,10 +180,8 @@
                         }
                     }, this);
                     if(this.currentItem) {
-                        console.log('Removing old item');
                         this.currentItem.remove(go);
                     } else {
-                        console.log('Showing first item');
                         go();
                     }
                 },
@@ -232,16 +202,15 @@
                     this.setState('sleep');
                     var coins = this.nodes.counter.find('coin');
                     var total = Math.round(this.states.itemChosen.getTotal() * 100);
-                    console.log('%s total, %s val', total, this.currentItem.value);
                     if(total != this.currentItem.value) {
-                        this.playSound('incorrect');
+                        this.playSound('incorrect', true);
                         this.spinner.setWrong();
                         this.currentItem.showWrong();
                         setTimeout($.proxy(function() {
                             this.setState('itemChosen');
                         }, this), this.config.warningDisplayTimeInMilliseconds);
                     } else {
-                        this.playSound('correct');
+                        this.playSound('correct', true);
                         this.success.increment();
                         this.spinner.setRight();
                         this.currentItem.showCorrect();

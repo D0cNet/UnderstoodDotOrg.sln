@@ -6,6 +6,74 @@
     //Item value and coin count arrays are ranges and can be duplicated
   // old values: [1, 4, 9, 17]
     DyscalculiaGameConfig = {
+        intro: {
+            buttons: {
+                go: {
+                    en: 'Begin'
+                },
+                next: {
+                    en: 'Next'
+                }
+            },
+            standaloneTitle: {
+                en: 'Through Your Child\'s Eyes: <b>Math Issues</b>'
+            },
+            standaloneText: {
+                en: [
+                    'Have you ever wondered why it’s so hard for some kids to work with numbers?',
+                    'Try this game to see what it feels like when you have to rely on memory instead of a solid understanding of math.'
+                ].join('<pbr>')
+            },
+            gameTitle: {
+                en: 'Exact Change'
+            },
+            gameText: {
+                en: 'Click on coins to pay for goodies. When you have the exact change, hit Buy.\n\nReady?'
+            }
+        },
+        outro: {
+            buttons: {
+                restart: {
+                    en: 'Try again'
+                },
+                continue: {
+                    en: 'Continue'
+                },
+                next: {
+                    en: 'Next'
+                },
+                learn: {
+                    en: 'Learn How'
+                },
+                beginning: {
+                    en: 'Go back to the beginning'
+                }
+            },
+            standaloneLinks: {
+                learn: 'http://wolframalpha.com',
+                beginning: 'http://archive.org'
+            },
+            standaloneTitle: {
+                en: 'Through Your Child\'s Eyes: <b>Math Issues</b>'
+            },
+            gameText: {
+                success: {
+                    en: 'Well done—you beat the clock!'
+                },
+                failure: {
+                    en: 'Time\'s up!'
+                }
+            },
+            standaloneText: {
+                en: [
+                  'You probably just experienced what kids with math issues feel every day: confusion and frustration. Here\'s why:',
+                    'The coins didn’t have the “right” values, so you had to calculate each purchase instead of being able to select the coins automatically.',
+                    'That’s how having a math issue can feel for a child or teen. And just when kids get the hang of it, the tasks get harder.',
+                    'Children don’t grow out of math issues. But here’s the good news: you can work with your child to develop strategies that will help.'
+
+                ].join('<pbr>')
+            }
+        },
         keyDisplayTimeInMilliseconds: 3000,
         warningDisplayTimeInMilliseconds: 1000,
         timeInSeconds: 90,
@@ -18,13 +86,17 @@
                 scatterGrid: [4,3], //[columns,rows]
                 jumpDuration: 750,
                 jumpFlips: 2,
-                stopFlippingAt: 65//%
+                stopFlippingAt: 65,//%
+                scatterAmount: 0.07,
+                padding: 0.0
             },
             phone: {
                 scatterGrid: [4,3], //[columns,rows]
                 jumpDuration: 500,
                 jumpFlips: 1,
-                stopFlippingAt: 60//%
+                stopFlippingAt: 60,//%
+                scatterAmount: 0.01,
+                padding: -0.05
             }
         },
         spinnerDurationNormal: 1000,
@@ -38,22 +110,6 @@
                 text: [0, 0],//[button fade speed, text appear speed]
                 color: [1000, 500]//[pause, to blue speed] (red appears instantaneously)
             }
-        },
-        introText: [
-            'Click on coins to pay for goodies. When you have the exact change, hit Buy.\n\nReady?'
-        ].join("\n"),
-         finalText: {
-            onComplete: {
-                en: 'Well done--you beat the clock!'
-            },
-            onTimeout: {
-                en: [
-                    'Time\'s up!'
-                ].join("\n")
-            }
-        },
-        title: {
-            en: 'Exact Change'
         },
         noTallyText: 'Counter out of order!',
         penalties: {
@@ -114,10 +170,3 @@
         ]
     };
 })();
-                                
-                
-                                                
-                                                                                                                                                                                                                                                                                
-                                                
-                                                                                
-                                                                                                                                                                                                                                                                

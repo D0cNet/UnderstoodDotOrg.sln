@@ -15,17 +15,7 @@
         },
         reset: function() {
             this._super();
-            var intro = new SSGameModal({
-                showDuration: this.config.introDurationInSeconds * 1000,
-                title: this.getText(this.config.title),
-                text: SSGameModal.textToParagraphs(this.config.introText),
-                onClose: $.proxy(this.start, this)
-            });
-            intro.setButtons([{
-                text: 'Start',
-                click: $.proxy(intro.close, intro)
-            }]);
-            intro.open();
+            SSGameModal.intro(this);
             this.currPromptIdx = -1;
             this.nodes.prompt.text('');
             this.success.reset();
@@ -71,33 +61,13 @@
         },
         stop: function() {
             var score = this.success.getScore();
-            var finalText = '';
-            var scoreText = score.correct + '/' + score.max;
-            if(score.correct < score.max) {
-                this.playSound('gameOverFail');
-                finalText = this.getText(this.config.finalText.onTimeout);
+            var success = (score.correct >= score.max);
+            if(success) {
+                this.playSound('gameOverSuccess', false);
             } else {
-                this.playSound('gameOverSuccess');
-                finalText = this.getText(this.config.finalText.onComplete);
+                this.playSound('gameOverFail', false);
             }
-            finalText = finalText.replace('%score', scoreText);
-            var done = new SSGameModal({
-                showDuration: 0,
-                text: finalText
-            });
-            done.setButtons([{
-                text: 'Try Again',
-                click: function() {
-                    SSGame.current.reset();
-                    done.close();
-                }
-            }, {
-                text: 'Continue',
-                click: function() {
-                    SSGame.current.events.trigger('moveon');
-                }
-            }]);
-            done.open();
+            SSGameModal.outro(this, success);
             this.events.trigger('stop');
         },
         setMaxLength: function() {
@@ -200,7 +170,7 @@
             }
         },
         onSuccess: function() {
-            this.playSound('sentenceComplete');
+            this.playSound('sentenceComplete', true);//Might need to be false
             this.success.increment();
             this.inputUI.stopInput();
             $('.wtfinput span').animate({

@@ -92,6 +92,17 @@
                 internal.input.focus();
             }
         };
+        internal.input.on('keyup', function(e) {
+            //Backspace doesn't trigger a keypress, so we handle it here
+            if(e.which == 8) {
+                if(cfg.onWrite) {
+                    //Textarea values don't update synchronously
+                    setTimeout(function() {
+                        cfg.onWrite();
+                    }, 0);
+                }
+            }
+        });
         internal.input.on('keypress', function(e) {
             //If we're not accepting input, kill the event
             if(internal.disabled) return false;

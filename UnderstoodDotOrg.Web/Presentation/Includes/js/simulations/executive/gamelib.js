@@ -63,7 +63,7 @@
                     .addClass('channel channel' + i)
                     .data('channel', i)
                     .click(function(e) {
-                        SSGame.current.playSound('pickcolumn');
+                        SSGame.current.playSound('pickcolumn', false);
                         trap.moveTo($(this).data('channel'));
                     });
                 inner = $('<div></div>').addClass('inner_channel');
@@ -326,32 +326,32 @@
             score.increment(ballNode);
             balls.animations.success(ballNode);
             everyOther.caught(ballNode);
-            SSGame.current.playSound('caughtright');
+            SSGame.current.playSound('caughtright', false);
         },
         invalidCatch: function(ballNode) {
             score.decrement(ballNode, 'wrong');
             var txt = SSGame.current.config.channelText.copy[SSGame.current.getLanguage()].wrongCatch;
             balls.animations.error(ballNode, txt);
             everyOther.missed(ballNode);
-            SSGame.current.playSound('caughtwrong');
+            SSGame.current.playSound('caughtwrong', false);
         },
         validTouchedTrap: function(ballNode, dir) {
             score.decrement(ballNode, 'contact');
             balls.animations.bounce(ballNode, true, dir);
             everyOther.missed(ballNode);
-            SSGame.current.playSound('bounce');
+            SSGame.current.playSound('bounce', false);
         },
         invalidTouchedTrap: function(ballNode, dir) {
             balls.animations.bounce(ballNode, false, dir);
             everyOther.missed(ballNode);
-            SSGame.current.playSound('bounce');
+            SSGame.current.playSound('bounce', false);
         },
         validMissed: function(ballNode) {
             score.decrement(ballNode, 'missed');
             var txt = SSGame.current.config.channelText.copy[SSGame.current.getLanguage()].missed;
             balls.animations.error(ballNode, txt);
             everyOther.missed(ballNode);
-            SSGame.current.playSound('missedright');
+            SSGame.current.playSound('missedright', false);
         },
         invalidMissed: function(ballNode) {
             everyOther.missed(ballNode);
@@ -712,7 +712,7 @@
                     break;
             }
             if(play) {
-                game.playVO(audio);
+                game.playVO(audio, false);
             }
         }
         var p = $('<div></div>').addClass('executive_game_prompt');

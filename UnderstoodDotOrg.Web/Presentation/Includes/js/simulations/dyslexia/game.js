@@ -7,12 +7,12 @@
                 //First, figure out what we're going to do, depending on the browser's 3d support
                 var animations = null;
                 if(SSGame.current.canUse3d) {
-                    animations = { out: { rotateY: (directionOut * 90) + 'deg' }, in: { rotateY: '0deg'}};
+                    animations = { out: { rotateY: (directionOut * 90) + 'deg' }, back: { rotateY: '0deg'}};
                 } else {
                     var letterExample = phrase.find('.letter').first();
                     var letterWidth = letterExample.width();
                     var resizeMargin = Math.floor(letterWidth / 2);
-                    animations = { out: { width: '0px', marginLeft: resizeMargin }, in: { width: letterWidth, marginLeft: 0 }};
+                    animations = { out: { width: '0px', marginLeft: resizeMargin }, back: { width: letterWidth, marginLeft: 0 }};
                 }
                 //Next, pre-render the new phrase in the sentence container so we can get its width
                 var dummyCtr = $('<div></div>').css({ visibility: 'hidden', position: 'absolute'}).html(newHtml);
@@ -31,7 +31,7 @@
                     phrase.append(newLetters);
                     dummyCtr.remove();
                     phrase.find('.letter').css(animations.out).css(letterCss);
-                    newLetters.transition(animations.in, pause);
+                    newLetters.transition(animations.back, pause);
                     setTimeout(function() {
                         phrase.data('nohover', false);
                         if(typeof onComplete == 'function') onComplete();
@@ -346,12 +346,12 @@
                     if($this.hasClass('wrong')) {
                         $this.removeClass('wrong');
                         if(!sentences.onCorrectLetter()) {
-                            SSGame.current.playSound('fixedclick');
+                            SSGame.current.playSound('fixedclick', true);
                             transitions.phrases.unwronged($this);
                         }
                     } else {
                         $this.addClass('wrong');
-                        SSGame.current.playSound('wrongclick');
+                        SSGame.current.playSound('wrongclick', true);
                         transitions.phrases.wrong($this);
                     }
                     $this.data('nohover', true);
@@ -360,11 +360,11 @@
                 //Swapped text either gets corrected or swapped back to the wrong text
                 if($this.text() == $this.data('real')) {
                     $this.removeClass('corrected');
-                    SSGame.current.playSound('wrongclick');
+                    SSGame.current.playSound('wrongclick', true);
                     transitions.phrases.uncorrected($this);
                 } else {
                     $this.addClass('corrected');
-                    SSGame.current.playSound('correctclick');
+                    SSGame.current.playSound('correctclick', true);
                     sentences.onCorrectLetter();
                     transitions.phrases.correct($this, $.proxy(function() {
                     }, this));
@@ -396,21 +396,11 @@
         },
         reset: function() {
             this._super();
+            SSGameModal.intro(this);
             swaps.reset();
             sentences.reset();
             this.success.reset();
             this.timer.reset();
-            var intro = new SSGameModal({
-                showDuration: this.config.introDurationInSeconds * 1000,
-                title: this.getText(this.config.title),
-                text: SSGameModal.textToParagraphs(this.config.introText),
-                onClose: $.proxy(this.start, this)
-            });
-            intro.setButtons([{
-                text: 'Start',
-                click: $.proxy(intro.close, intro)
-            }]);
-            intro.open();
             this.started = false;
         },
         draw: function() {
@@ -441,32 +431,13 @@
         },
         stop: function() {
             var score = this.success.getScore();
-            var scoreText = score.correct + '/' + score.max;
-            var finalText = '';
-            if(score.correct < score.max) {
-                this.playSound('gameOverFail');
-                finalText = this.getText(this.config.finalText.onTimeout);
+            var success = (score.correct >= score.max);
+            if(success) {
+                this.playSound('gameOverSuccess', false);
             } else {
-                this.playSound('gameOverSuccess');
-                finalText = this.getText(this.config.finalText.onComplete);
+                this.playSound('gameOverFail', false);
             }
-            var done = new SSGameModal({
-                showDuration: 0,
-                text: finalText
-            });
-            done.setButtons([{
-                text: 'Try Again',
-                click: function() {
-                    SSGame.current.reset();
-                    done.close();
-                }
-            }, {
-                text: 'Continue',
-                click: function() {
-                    SSGame.current.events.trigger('moveon');
-                }
-            }]);
-            done.open();
+            SSGameModal.outro(this, success);
             this.events.trigger('stop');
         },
         run: function(localCfg) {
@@ -489,7 +460,7 @@
             }, this)));
         },
         onSuccess: function() {
-            this.playSound('sentenceComplete');
+            this.playSound('sentenceComplete', true);
             var b = this.nodes.sentence;
             this.success.increment();
             transitions.sentences.success($.proxy(function() {

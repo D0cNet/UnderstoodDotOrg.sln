@@ -1,17 +1,74 @@
 (function() {
     //Reminder: the last element can't have a comma at the end!
     ExecutiveGameConfig = {
-        timeInSeconds: 140,
-        introDurationInSeconds: 0, //0=open until closed
-        introText: [
-            'Catch the falling shapes in the bucket. Click once in any column to move the bucket there. Ready?'
-        ].join("\n"),
-        finalText: [
-            'Time\'s up!'
-        ].join("\n"),
-        title: {
-            en: 'Catch Up'
+        timeInSeconds: 120,
+        intro: {
+            buttons: {
+                go: {
+                    en: 'Begin'
+                },
+                next: {
+                    en: 'Next'
+                }
+            },
+            standaloneTitle: {
+                en: 'Through Your Child\'s Eyes: <b>Organization and Time Management Issues</b>'
+            },
+            standaloneText: {
+                en: [
+                    'We can all be a little disorganized at times. But how does it feel to be a child or teen who has trouble planning and prioritizing?',
+                    'This game will help you understand. (Sound required.)'
+                ].join('<pbr>')
+            },
+            gameTitle: {
+                en: 'Catch Up'
+            },
+            gameText: {
+                en: 'Catch the falling shapes in the bucket. Click once in any column to move the bucket there. Ready?'
+            }
         },
+        outro: {
+            buttons: {
+                restart: {
+                    en: 'Try again'
+                },
+                continue: {
+                    en: 'Continue'
+                },
+                next: {
+                    en: 'Next'
+                },
+                learn: {
+                    en: 'Learn How'
+                },
+                beginning: {
+                    en: 'Go back to the beginning'
+                }
+            },
+            standaloneLinks: {
+                learn: 'http://wolframalpha.com',
+                beginning: 'http://archive.org'
+            },
+            standaloneTitle: {
+                en: 'Through Your Child\'s Eyes: <b>Organization and Time Management Issues</b>'
+            },
+            gameText: {
+                //No success here!
+                failure: {
+                    en: 'Time\'s up!'
+                }
+            },
+            standaloneText: {
+                en: [
+                    'Maybe you found this game fun, but it was frustrating, too. Why did you feel so slow?',
+                    'Each time you figured out how to catch the shapes, the rules changed and you had to come up with a new plan.',
+                    'That’s how daily life can seem for children who have trouble with organization and time management.',
+                    'The good news? You can work with your child to develop strategies that can help.'
+
+                ].join('<pbr>')
+            }
+        },
+        introDurationInSeconds: 0, //0=open until closed
         ruleChangePauseInSeconds: 2,
         resourcePath: '/img/simulations/executive/desktop',
         maxQueue: 2,
@@ -149,12 +206,7 @@
                         en: 'Now catch only circles',
  es: 'Ahora atrape sólo círculos'
                     }, audio: 'catchOnlyCircles', promptMethod: 'both' },
-                { start: 105, stop: 114, valid: [ 'square' ], 
-                    text: {
-                        en: 'Now catch only squares',
- es: 'Ahora atrape sólo cuadrados'
-                    }, audio: 'catchOnlySquares', promptMethod: 'both' },
-                { start: 115, stop: 140, valid: [ 'triangle' ], everyOther: true, 
+                { start: 105, stop: 120, valid: [ 'triangle' ], everyOther: true, 
                     text: {
                         en: 'Catch every other triangle',
  es: 'Atrape un triángulo si y uno no'
@@ -163,14 +215,5 @@
         }
     };
 })();
-                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                
-                                                                                                                                                                                                
-                                                                
                                 
-                
-                
-                                                                                                                                                                                                                                
-                                                                                                                                
-                                                                
+                                                                                                                                                                                

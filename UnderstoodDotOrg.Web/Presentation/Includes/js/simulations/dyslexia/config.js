@@ -2,22 +2,72 @@
     //Reminder: the last element can't have a comma at the end!
     DyslexiaGameConfig = {
         timeInSeconds: 75,
-        introDurationInSeconds: 0, //0=open until closed
-        introText: [
-            'We\'ve switched some letters. Click to swap them back. Ready?'
-        ].join("\n"),
-        finalText: {
-            onComplete: {
-                en: 'Well done--you beat the clock!'
+        intro: {
+            buttons: {
+                go: {
+                    en: 'Begin'
+                },
+                next: {
+                    en: 'Next'
+                }
             },
-            onTimeout: {
+            standaloneTitle: {
+                en: 'Through Your Child\'s Eyes: <b>Reading Issues</b>'
+            },
+            standaloneText: {
                 en: [
-                    'Time\'s up!'
-                ].join("\n")
+                    'Kids with reading issues often mix up the letters and words they’re trying to identify.<br/><br/>They have to work hard to sort out the confusion.',
+                    'Play a game to see how this feels.'
+                ].join('<pbr>')
+            },
+            gameTitle: {
+                en: 'Scrambled Letters'
+            },
+            gameText: {
+                en: 'We\'ve switched some letters. Click to swap them back. Ready?'
             }
         },
-        title: {
-            en: 'Scrambled Letters'
+        outro: {
+            buttons: {
+                restart: {
+                    en: 'Try again'
+                },
+                continue: {
+                    en: 'Continue'
+                },
+                next: {
+                    en: 'Next'
+                },
+                learn: {
+                    en: 'Learn How'
+                },
+                beginning: {
+                    en: 'Go back to the beginning'
+                }
+            },
+            standaloneLinks: {
+                learn: 'http://wolframalpha.com',
+                beginning: 'http://archive.org'
+            },
+            standaloneTitle: {
+                en: 'Through Your Child\'s Eyes: <b>Reading Issues</b>'
+            },
+            gameText: {
+                success: {
+                    en: 'Well done—you beat the clock!'
+                },
+                failure: {
+                    en: 'Time\'s up!'
+                }
+            },
+            standaloneText: {
+                en: [
+                  'Confusing? That was the idea. Here’s why:',
+                  'We switched some letters, so you had to slowly piece together the words by "decoding" them.',
+                  'That’s what kids with reading issues experience every day. Imagine how frustrating this must feel.<br/><br/>But there is good news.',
+				 'While kids won’t outgrow reading issues, you can work with your child to develop strategies that will help.'
+                ].join('<pbr>')
+            }
         },
         display: {
             letterStates: {
@@ -76,7 +126,7 @@
                 text: 'Go through the second door from the right.',
                 rules: {
                     u: 'ou',
-                    for: 'from',
+                    from: 'for',
                     f: 'gh',
                     b: 'd'
                 }
@@ -99,7 +149,9 @@
                 text: 'My mom is the best and my dad is too.',
                 rules: {
                     w: 'm',
-                    a: 'e'                }
+                    a: 'e',
+                    d: 'b'
+                }
             }, {
                 text: 'My big girl is getting her gold star.',
                 rules: {
@@ -107,6 +159,29 @@
                     her: 'his',
                     l: 't',
                     d: 'b'
+                }
+            }, {
+                text: 'He played happily with his dog.',
+                rules: {
+                    b: 'h',
+                    when: 'with',
+                    d: 'p',
+                    o: 'e'
+                }
+            }, {
+                text: 'The middle child lay down to sleep.',
+                rules: {
+                    b: 'd',
+                    l: 'i',
+                    o: 'e'
+                }
+            } , {
+                text: 'The snow will melt when the sun shines.',
+                rules: {                    
+                    l: 'i',
+                    m: 'w',
+                  u: 'n',
+                  z: 's'
                 }
             }
             ],
@@ -120,7 +195,9 @@
                 text: 'She plays well with her sister.',
                 rules: {
                     z: 's',
-                    o: 'e'                }
+                    o: 'e' ,
+                  m: 'w' 
+                }
             }, {
                 text: 'Did you pass the cheese?',
                 rules: {
@@ -161,6 +238,7 @@
             }, {
                 text: 'This is Phil’s sunny phase.',
                 rules: {
+                  f: 'ph',
                     n: 'u',
                     l: 'i'                }
             }, {
@@ -184,7 +262,7 @@
                 rules: {
                     t: 'i',
                     p: 'd',
-                    for: 'of',
+                    of: 'for',
                     b: 'h'
                 }
             }, {
@@ -200,3 +278,5 @@
 })();
                 
                                                                 
+                                                
+                                                                                                                                                                                                                                                                                                                

@@ -93,7 +93,7 @@
                 ;
         },
         deal: function() {
-            this.game.playSound('deal');
+            this.game.playSound('deal', false);
             var types = critters.types.slice();
             SSGame.shuffle(types);
             this.setGridBoundary();
@@ -146,7 +146,7 @@
 					activePieces = pieces2;
 					rows = 4;
                 }
-                moveTo = SSGame.getRandomPosition(pieceSpec, activePieces, ctrDim, 'some',rows,1);
+                moveTo = SSGame.getRandomPosition(pieceSpec, activePieces, ctrDim, 0.07, rows, 1);
 				activePieces.push(pieceSpec);
                 //Start 10x away in the same direction as the offset from center
                 moveFrom = {
@@ -167,10 +167,10 @@
                     stack: '.piece',
                     drag: $.proxy(this.phoneDragResize, this),
                     start: $.proxy(function(e) {
-                        this.game.playSound('pickup');
+                        this.game.playSound('pickup', false);
                     }, this),
                     stop: $.proxy(function(e) {
-                        this.game.playSound('placed');
+                        this.game.playSound('placed', false);
                         this.phoneDragResize(e);
                     }, this)
                 })
@@ -192,7 +192,7 @@
             }
         },
         toggleFace: function() {
-            this.game.playSound('solved');
+            this.game.playSound('solved', false);
             var pieceW = this.pieces.first().outerWidth();
             var animIn = (this.game.canUse3d) ? { rotateY: '90deg' } : { width: 0, marginLeft: (pieceW / 2) };
             var animOut = (this.game.canUse3d) ? { rotateY: '0deg' } : { width: pieceW, marginLeft: 0 };
@@ -215,20 +215,16 @@
         },
         reset: function() {
             this._super();
-            var intro = new SSGameModal({
-                showDuration: this.config.introDurationInSeconds * 1000,
-                title: this.getText(this.config.title),
-                text: SSGameModal.textToParagraphs(this.config.introText),
-            });
-            intro.setButtons([{
-                text: 'Start',
-                click: function() {
-                    intro.close();
-                    SSGame.current.start();
-                }
-
-            }]);
-            intro.open();
+            SSGameModal.intro(this, $.proxy(function() {
+                this.playVO('instructions', true, {
+                    ended: $.proxy(function() {
+                        pieces.toggleFace();
+                        setTimeout($.proxy(function() {
+                            this.stop();
+                        }, this), this.config.timing.pauseBeforeStopDialog);
+                    }, this)
+                });
+            }, this));
             this.started = false;
         },
         draw: function() {
@@ -255,34 +251,9 @@
             this.events.trigger('start');
             this.started = true;
             pieces.deal();
-            this.playVO('instructions', {
-                ended: $.proxy(function() {
-                    pieces.toggleFace();
-                    setTimeout($.proxy(function() {
-                        this.stop();
-                    }, this), this.config.timing.pauseBeforeStopDialog);
-                }, this)
-            });
         },
         stop: function() {
-            var done = new SSGameModal({
-                showDuration: 0,
-                text: this.getText(this.config.finalText)
-            });
-            done.setButtons([{
-                text: 'Try Again',
-                click: function() {
-                    SSGame.current.reset();
-                    done.close();
-                }
-            }, {
-                text: 'Continue',
-                click: function() {
-                    SSGame.current.events.trigger('moveon');
-                }
-            }]);
-            done.open();
-            console.log('Stopped');
+            SSGameModal.outro(this, true);
             this.events.trigger('stop');
         },
         run: function(localCfg) {

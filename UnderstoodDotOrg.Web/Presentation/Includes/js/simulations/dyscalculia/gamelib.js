@@ -387,12 +387,14 @@
                 });
             },
             onChoose: function() {
-                SSGame.current.playSound('coinClick');
+                SSGame.current.playSound('coinClick', true);
                 //Get our specs for finding a new random position
+                var coinCfgRoot = SSGame.current.board.getCurrentBreakpoint()[2] == 'phone' ? 'phone' : 'desktop';
+                var coinCfg = SSGame.current.config.coinUI[coinCfgRoot];
                 var ctr = SSGame.current.nodes.selectedCoins;
                 var specs = coinTools.getLayoutSpecs(this, ctr);
                 var newPos = SSGame.getRandomPosition(specs.coinSize, specs.siblings, specs.container,
-                        specs.siblings.length, specs.grid[0], specs.grid[1]);
+                        coinCfg.scatterAmount, specs.grid[0], specs.grid[1]);
                 coinTools.adjustZIndex(ctr);
                 newPos.zIndex = specs.siblings.length + 1;
                 //Stick the coin in the new ctr and hide it
@@ -406,12 +408,14 @@
                 }, this));
             },
             onUnChoose: function() {
-                SSGame.current.playSound('coinClick');
+                SSGame.current.playSound('coinClick', true);
                 //Get our specs for finding a new random position
+                var coinCfgRoot = SSGame.current.board.getCurrentBreakpoint()[2] == 'phone' ? 'phone' : 'desktop';
+                var coinCfg = SSGame.current.config.coinUI[coinCfgRoot];
                 var ctr = SSGame.current.nodes.coins;
                 var specs = coinTools.getLayoutSpecs(this, ctr);
                 var newPos = SSGame.getRandomPosition(specs.coinSize, specs.siblings, specs.container,
-                        specs.siblings.length, specs.grid[0], specs.grid[1]);
+                        coinCfg.scatterAmount, specs.grid[0], specs.grid[1]);
                 coinTools.adjustZIndex(ctr);
                 newPos.zIndex = specs.siblings.length + 1;
                 //Stick the coin in the new ctr and hide it

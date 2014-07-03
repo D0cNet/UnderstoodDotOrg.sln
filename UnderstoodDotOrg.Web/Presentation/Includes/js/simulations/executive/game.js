@@ -40,6 +40,7 @@
                 bounce: effectRoot + 'Executive_ObjectHitsBar',
                 caughtright: effectRoot + 'Executive_PointAwarded'
             }, {
+                backgroundTrack: voRoot + 'backgroundTrack',
                 avoidEverything: voRoot + 'avoidEverything',
                 catchAllShapes: voRoot + 'catchAllShapes',
                 catchEveryOtherCircle: voRoot + 'catchEveryOtherCircle',
@@ -73,6 +74,9 @@
         },
         reset: function() {
             this._super();
+            SSGameModal.intro(this, $.proxy(function() {
+                if(this.isAudioLimited) this.playVO('backgroundTrack', true);
+            }, this));
             this.lib.balls.reset();
             this.currentLevel = 0;
             this.firstDropped = false;
@@ -84,17 +88,6 @@
             this.started = new Date().getTime();
             clearInterval(this.interval);
             this.interval = null;
-            var intro = new SSGameModal({
-                showDuration: this.config.introDurationInSeconds * 1000,
-                title: this.getText(this.config.title),
-                text: SSGameModal.textToParagraphs(this.config.introText),
-                onClose: $.proxy(this.start, this)
-            });
-            intro.setButtons([{
-                text: 'Ready? Begin!',
-                click: $.proxy(intro.close, intro)
-            }]);
-            intro.open();
         },
         start: function() {
             this.timer.start();
@@ -110,32 +103,17 @@
         },
         stop: function() {
             this.timer.stop();
-            if(this.lib.score.val <= 0) {
-                this.playSound('gameOverFail');
+            var success = this.lib.score.val > 0;
+            if(success) {
+                this.playSound('gameOverSuccess', false)
             } else {
-                this.playSound('gameOverSuccess');
+                this.playSound('gameOverFail', false);
             }
-            this.lib.trap.node.remove();
+            SSGameModal.outro(this, false);
+            this.lib.trap.nodes.remove();
             this.lib.balls.reset();
             clearInterval(this.interval);
             this.interval = null;
-            var done = new SSGameModal({
-                showDuration: 0,
-                text: this.config.finalText
-            });
-            done.setButtons([{
-                text: 'Try Again',
-                click: function() {
-                    SSGame.current.reset();
-                    done.close();
-                }
-            }, {
-                text: 'Continue',
-                click: function() {
-                    SSGame.current.events.trigger('moveon');
-                }
-            }]);
-            done.open();
             this.events.trigger('stop');
         },
         run: function(localCfg) {

@@ -4,22 +4,72 @@
     DysgraphiaGameConfig = {
         timeInSeconds: 90,
         introDurationInSeconds: 0, //0=open until closed
-        introText: [
-            'Type exactly what you see. Be sure to fix mistakes. Ready?'
-            
-        ].join("\n"),
-        finalText: {
-            onComplete: {
-                en: 'Well done—you beat the clock!'
+        intro: {
+            buttons: {
+                go: {
+                    en: 'Begin'
+                },
+                next: {
+                    en: 'Next'
+                }
             },
-            onTimeout: {
+            standaloneTitle: {
+                en: 'Through Your Child\'s Eyes: <b>Writing Issues</b>'
+            },
+            standaloneText: {
                 en: [
-                    'Time\'s up!'
-                ].join("\n")
+                    'Why is writing so difficult for some kids, no matter how hard they try?', 
+                    'This game should give you a sense of what it feels like when your hand won’t write what your brain is telling it to write.'
+                ].join('<pbr>')
+            },
+            gameTitle: {
+                en: 'Typing Test'
+            },
+            gameText: {
+                en: 'Type exactly what you see. Be sure to fix mistakes. Ready?'
             }
         },
-        title: {
-            en: 'Typing Test'
+        outro: {
+            buttons: {
+                restart: {
+                    en: 'Try again'
+                },
+                continue: {
+                    en: 'Continue'
+                },
+                next: {
+                    en: 'Next'
+                },
+                learn: {
+                    en: 'Learn How'
+                },
+                beginning: {
+                    en: 'Go back to the beginning'
+                }
+            },
+            standaloneLinks: {
+                learn: 'http://wolframalpha.com',
+                beginning: 'http://archive.org'
+            },
+            standaloneTitle: {
+                en: 'Through Your Child\'s Eyes: <b>Writing Issues</b>'
+            },
+            gameText: {
+                success: {
+                    en: 'Well done—you beat the clock!'
+                },
+                failure: {
+                    en: 'Time\'s up!'
+                }
+            },
+            standaloneText: {
+                en: [
+                    'Was that frustrating? Even though you knew what to write, you couldn’t get it out correctly.<br/><br/>Children who have writing issues deal with this daily.', 
+                    'How would you feel if you experienced this frustration every day and nobody seemed to understand why?',
+					'Kids won’t outgrow a writing issue. But you can help your child develop strategies to make writing easier.'
+
+                ].join('<pbr>')
+            }
         },
         maxLength: {
             phone: 48,
@@ -144,3 +194,5 @@
                 
                                 
                 
+                
+                                                                                                                                                                                                                                                                                                                
