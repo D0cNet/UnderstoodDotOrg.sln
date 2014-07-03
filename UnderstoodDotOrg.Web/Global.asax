@@ -8,7 +8,20 @@
   public void Application_End() {
   }
 
-  public void Application_Error(object sender, EventArgs args) {
+  public void Application_Error(object sender, EventArgs args) 
+  {
+      Exception ex = Server.GetLastError();
+      Exception b = ex.GetBaseException();
+      if (b != null)
+      {
+          ex = b;
+      }
+
+      if (ex is System.Threading.ThreadAbortException)
+      {
+          return;
+      }
+      Sitecore.Diagnostics.Log.Error("Unhandled application error", ex, this);
   }
 
   public void FormsAuthentication_OnAuthenticate(object sender, FormsAuthenticationEventArgs args)
