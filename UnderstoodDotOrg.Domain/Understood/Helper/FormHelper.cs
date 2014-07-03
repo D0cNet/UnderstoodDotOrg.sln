@@ -76,7 +76,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
             var grades = GetGrades()
                             .Select(g => new ListItem
                             {
-                                Text = g.Name,
+                                Text = g.Name.Raw,
                                 Value = g.ID.ToString()
                             });
 
@@ -95,7 +95,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Helper
                                  .Select(c => new ListItem
                                  {
                                      Value = c.ID.ToString(),
-                                     Text = c.ChallengeName
+                                     Text = c.ChallengeName.Raw
                                  });
 
             return PopulateList(initialChoiceLabel, challenges);

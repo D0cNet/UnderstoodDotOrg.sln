@@ -203,7 +203,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
                 HiddenField hfIssue = e.FindControlAs<HiddenField>("hfIssue");
                 Label lblIssue = e.FindControlAs<Label>("lblIssue");
                 hfIssue.Value = childIssueItem.ID.ToShortID().ToString();
-                lblIssue.Text = childIssueItem.IssueName.Rendered;
+                lblIssue.Text = childIssueItem.IssueName.Raw;
             }
         }
 
@@ -215,7 +215,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
 
                 HtmlButton gradeBtn = e.FindControlAs<HtmlButton>("gradeBtn");
                 gradeBtn.Attributes.Add("data-value", gradeItem.ID.ToShortID().ToString());
-                gradeBtn.InnerText = gradeItem.Name.Rendered;
+                gradeBtn.InnerText = gradeItem.Name.Raw;
             }
         }
 
@@ -260,7 +260,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
                         child.Issues.Add(new Issue
                         {
                             Key = Guid.Parse(cii.ID.ToString()),
-                            Value = cii.IssueName.Rendered
+                            Value = cii.IssueName.Raw
                         });
                     }
                 }
@@ -272,7 +272,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
                 child.Grades.Add(new Grade
                 {
                     Key = Guid.Parse(selectedGrade),
-                    Value = gradeItem.Name
+                    Value = gradeItem.Name.Raw
                 });
             }
 
