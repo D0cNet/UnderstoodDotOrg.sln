@@ -929,14 +929,14 @@
   .nav-secondary .submenu {
     position: relative;
     z-index: 50;
-    width: 20.7%;
+    width: 21.9%;
     background: #426da9;
   }
 }
 @media (min-width: 960px), print {
   /* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
   .nav-secondary .submenu {
-    width: 141px;
+    width: 150px;
   }
 }
 /* line 169, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
@@ -957,36 +957,49 @@
     position: absolute;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 330px;
   }
 }
-/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+@media (min-width: 769px), print {
+  /* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+  .nav-secondary .submenu ul {
+    height: 380px;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+  .nav-secondary .submenu ul {
+    height: 460px;
+  }
+}
+/* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
 .nav-secondary .submenu li > span {
   display: block;
   height: auto;
 }
-/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+/* line 194, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
 .nav-secondary .submenu li > span a {
   padding: 15px 20px;
   line-height: 1.375;
   display: block;
+  overflow: hidden;
 }
 @media (min-width: 650px), print {
-  /* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+  /* line 194, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
   .nav-secondary .submenu li > span a {
-    padding: 14px 15px  11px 18px;
+    padding: 14px 12px  11px 15px;
     line-height: 1.125;
     position: relative;
   }
 }
 @media (min-width: 960px), print {
-  /* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+  /* line 194, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
   .nav-secondary .submenu li > span a {
-    padding-left: 15px;
+    padding-left: 12px;
   }
 }
 @media (min-width: 650px), print {
-  /* line 203, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+  /* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
   .nav-secondary .submenu li + li a:before {
     content: '';
     display: block;
@@ -1001,26 +1014,26 @@
   }
 }
 @media (min-width: 650px), print {
-  /* line 219, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+  /* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
   .nav-secondary .submenu li + li a:hover:before,
   .nav-secondary .submenu li + li a:focus:before,
   .nav-secondary .submenu li + li a.selected:before {
     content: none;
   }
 }
-/* line 227, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+/* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
 .nav-secondary .is-open .submenu {
   display: block;
 }
-/* line 230, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+/* line 237, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
 .nav-secondary .is-open .title button {
   visibility: hidden;
 }
-/* line 233, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+/* line 240, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
 .nav-secondary .is-open .icon-hide-show-fff {
   background-position: 0 100%;
 }
-/* line 238, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+/* line 245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
 .nav-secondary .icon-hide-show-fff {
   display: inline-block;
   width: 9px;
@@ -1028,7 +1041,7 @@
   background-image: url("../images/sprite.icon.hide-show.fff.png");
   background-size: 9px 12px;
 }
-/* line 244, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
+/* line 251, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_secondary-menu.scss */
 .no-backgroundsize .nav-secondary .icon-hide-show-fff {
   background-image: url("../images/icon.arrow.down.fff.9.png");
 }
@@ -2004,21 +2017,22 @@
 .more-to-explore .more-to-explore-container ul li .footer a:first-child {
   width: 50%;
   border-right: solid 1px #f4f2f1;
+  margin-left: 0;
 }
-/* line 259, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_more-to-explore.scss */
-.more-to-explore .more-to-explore-container ul li .footer a:last-child {
+/* line 260, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_more-to-explore.scss */
+.more-to-explore .more-to-explore-container ul li .footer a + a {
   margin-left: 8%;
 }
-/* line 263, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_more-to-explore.scss */
+/* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .footer a:hover {
   text-decoration: none;
 }
-/* line 271, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_more-to-explore.scss */
+/* line 272, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li input {
   width: 100%;
   margin-bottom: 10px;
 }
-/* line 276, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_more-to-explore.scss */
+/* line 277, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li fieldset {
   position: relative;
   z-index: 99999;
@@ -2141,6 +2155,7 @@
 .newsletter-signup {
   margin: 0 15px;
   padding: 25px 0;
+  position: relative;
 }
 @media (min-width: 650px), print {
   /* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
@@ -2155,33 +2170,33 @@
     padding: 48px 0 0;
   }
 }
-/* line 19, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
 .newsletter-signup .row {
   padding: 0;
   border-bottom: solid 1px #ccc;
 }
-/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
 .newsletter-signup header {
   text-align: center;
 }
 @media (min-width: 650px), print {
-  /* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup header {
     text-align: left;
   }
 }
-/* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
 .newsletter-signup header h2 {
   margin-bottom: 10px;
 }
 @media (min-width: 480px), print {
-  /* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup header h2 {
     margin-bottom: 8px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup header h2 {
     margin-bottom: 5px;
     padding: 5px 15px 20px 72px;
@@ -2190,11 +2205,11 @@
     background-repeat: no-repeat;
   }
 }
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
 .no-backgroundsize .newsletter-signup header h2 {
   background-image: url("../images/icon.footer.newsletter.34.png");
 }
-/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
 .newsletter-signup header p {
   font-size: 12px;
   font-size: 0.75rem;
@@ -2203,7 +2218,7 @@
   margin-bottom: 25px;
 }
 @media (min-width: 480px), print {
-  /* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup header p {
     font-size: 16px;
     font-size: 1rem;
@@ -2211,7 +2226,7 @@
   }
 }
 @media (min-width: 650px), print {
-  /* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup header p {
     font-size: 18px;
     font-size: 1.125rem;
@@ -2220,8 +2235,14 @@
     padding: 0;
   }
 }
+@media (min-width: 960px), print {
+  /* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  .newsletter-signup header p {
+    width: 50%;
+  }
+}
 @media (min-width: 480px), print {
-  /* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup .form.personalized-email-form {
     display: table;
     width: 100%;
@@ -2229,67 +2250,66 @@
   }
 }
 @media (min-width: 650px), print {
-  /* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup .form.personalized-email-form {
     margin-bottom: 40px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup .form.personalized-email-form {
-    display: table;
-    width: 100%;
-    margin: 46px 0 45px 0px;
+    position: absolute;
+    width: 50%;
+    right: 0;
+    top: 75px;
   }
 }
-/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
 .newsletter-signup .form.personalized-email-form input {
   margin-bottom: 10px;
 }
 @media (min-width: 480px), print {
-  /* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup .form.personalized-email-form .input-wrap {
     float: left;
     width: 70%;
     padding-right: 10px;
   }
 }
-/* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
 .newsletter-signup .form.personalized-email-form .submit-button-wrap {
   margin-bottom: 20px;
 }
 @media (min-width: 480px), print {
-  /* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup .form.personalized-email-form .submit-button-wrap {
     float: left;
     margin-bottom: 0;
     width: 30%;
   }
 }
-/* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
 .newsletter-signup .form.personalized-email-form .submit-button-wrap input {
   font-size: 15px;
   font-size: 0.9375rem;
 }
 @media (min-width: 480px), print {
-  /* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup .form.personalized-email-form .submit-button-wrap input {
     font-size: 18px;
     font-size: 1.125rem;
   }
 }
-@media (min-width: 480px), print {
-  /* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
-  .newsletter-signup .col.col-12 {
-    width: 100%;
-    padding: 0;
-  }
+/* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+.newsletter-signup .col.col-12 {
+  float: none;
+  width: auto;
+  padding: 0;
 }
 @media (min-width: 960px), print {
-  /* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
+  /* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_newsletter-signup.scss */
   .newsletter-signup .col.col-12 {
-    width: 50%;
-    padding: 0;
+    position: static;
   }
 }
 
@@ -6358,14 +6378,14 @@
   top: 10px;
   width: 16px;
   height: 16px;
-  color: #a8d226;
+  color: #426da9;
   content: "\e601";
   font-family: 'gcontroller';
 }
 
 /* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker.scss */
-#rsToggle.rsClosed .rsToggle_close_left:after {
-  color: #426da9;
+#rsToggle.rsActive .rsToggle_close_left:after {
+  color: #a8d226;
 }
 
 /* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker.scss */
@@ -6491,8 +6511,8 @@
 
 /* line 195, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker.scss */
 #rsToggle .rsToggleButton .rsToggleContainer.rsInfoHolder .rsTopFold .rsbtn_about .rsbtn_pill {
-  background: #f2af00;
-  color: #000000;
+  background: #7b3f84;
+  color: #FFFFFF;
   padding: 0;
 }
 
@@ -12622,45 +12642,40 @@ header.about-donate-rs-wrapper .rsbtn_player,
 /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper {
   overflow: hidden;
-  margin-top: 35px;
-}
-@media (min-width: 650px), print {
-  /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-  .readspeaker-wrapper {
-    margin-top: 25px;
-    margin-top: 1.5625rem;
-  }
+  margin-top: 0px;
+  z-index: 100000;
+  position: relative;
 }
 @media (min-width: 1024px), print {
   /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper {
-    margin-top: 20px;
-    margin-top: 1.25rem;
+    margin-top: 10px;
+    margin-top: 0.625rem;
   }
 }
-/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper header {
   width: 280px;
   margin: 0 auto;
 }
 @media (min-width: 650px), print {
-  /* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper header {
     width: 408px;
   }
 }
 @media (min-width: 1040px), print {
-  /* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper header {
     width: 480px;
     float: left;
   }
 }
-/* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-.readspeaker-wrapper h1, .readspeaker-wrapper h2 {
-  color: #7a4183;
+/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper h1, .readspeaker-wrapper h2, .readspeaker-wrapper h3 {
+  color: #794381;
 }
-/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper h1 {
   font-size: 20px;
   font-size: 1.25rem;
@@ -12670,7 +12685,7 @@ header.about-donate-rs-wrapper .rsbtn_player,
   margin-top: -0.1875rem;
 }
 @media (min-width: 650px), print {
-  /* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper h1 {
     font-size: 24px;
     font-size: 1.5rem;
@@ -12679,36 +12694,123 @@ header.about-donate-rs-wrapper .rsbtn_player,
   }
 }
 @media (min-width: 1040px), print {
-  /* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper h1 {
     margin-top: -6px;
     margin-top: -0.375rem;
   }
 }
-/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-.readspeaker-wrapper h2 {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 20px;
-  line-height: 1.25rem;
-  margin-bottom: 15px;
-  margin-bottom: 0.9375rem;
-  display: none;
+/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper h2, .readspeaker-wrapper h3 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
+  width: auto;
 }
 @media (min-width: 650px), print {
-  /* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-  .readspeaker-wrapper h2 {
+  /* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper h2, .readspeaker-wrapper h3 {
     display: block;
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 20px;
+    line-height: 1.25rem;
+    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
   }
 }
-/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+@media (min-width: 769px), print {
+  /* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper h2, .readspeaker-wrapper h3 {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 35px;
+    line-height: 2.1875rem;
+  }
+}
+/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper h2 {
+  font-weight: bold;
+  margin-top: 55px;
+  margin-bottom: 3px;
+  margin-bottom: 0.1875rem;
+}
+@media (min-width: 650px), print {
+  /* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper h2 {
+    margin-bottom: 11px;
+    margin-bottom: 0.6875rem;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper h2 {
+    margin-top: -9px;
+    margin-bottom: 7px;
+    margin-bottom: 0.4375rem;
+  }
+}
+/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper h3 {
+  font-weight: normal;
+  line-height: 27px;
+  line-height: 1.6875rem;
+}
+@media (min-width: 650px), print {
+  /* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper h3 {
+    line-height: 30px;
+    line-height: 1.875rem;
+  }
+}
+@media (min-width: 650px), print {
+  /* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper h3 {
+    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
+  }
+}
+/* line 76, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .first {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+@media (min-width: 650px), print {
+  /* line 76, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .first {
+    margin-bottom: 24px;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 76, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .first {
+    margin-bottom: 38px;
+  }
+}
+/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper ul,
 .readspeaker-wrapper li {
   list-style-type: none;
   padding: 0;
   position: relative;
 }
-/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .tip {
+  color: #446ea7;
+  margin-bottom: 0px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 25px;
+  line-height: 1.5625rem;
+}
+/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .bold {
+  font-weight: bold;
+}
+/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .readspeaker-info li:before {
   content: '';
   height: 7px;
@@ -12719,7 +12821,7 @@ header.about-donate-rs-wrapper .rsbtn_player,
   top: 4px;
   background: #757575;
 }
-/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .readspeaker-info li p {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -12728,85 +12830,234 @@ header.about-donate-rs-wrapper .rsbtn_player,
   color: #757575;
   padding-left: 13px;
 }
-/* line 76, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .subhead {
   color: #696969;
 }
 @media (min-width: 650px), print {
-  /* line 76, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .subhead {
     line-height: 30px;
     line-height: 1.875rem;
   }
 }
 @media (min-width: 769px), print {
-  /* line 76, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .subhead {
     font-size: 21px;
     font-size: 1.3125rem;
   }
 }
-/* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .paging-data {
   font-size: 21px;
   font-size: 1.3125rem;
 }
-/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .rs-navigation,
 .readspeaker-wrapper .rs-pagers {
   margin: 0 auto 10px auto;
   position: relative;
   height: 32px;
-  display: block;
+  display: none;
   margin-top: 18px;
 }
-@media (min-width: 650px), print {
-  /* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+@media (min-width: 769px), print {
+  /* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .rs-navigation,
   .readspeaker-wrapper .rs-pagers {
     display: block;
   }
 }
-/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-.readspeaker-wrapper .rs-pagers {
-  width: 480px;
+/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .pagination-container {
+  width: auto;
   text-align: center;
+  height: 16px;
 }
-/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-.readspeaker-wrapper .rs-pagers li {
+@media (min-width: 960px), print {
+  /* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .pagination-container {
+    width: 480px;
+  }
+}
+/* line 157, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .pagination-container li {
   display: inline-block;
   padding: 0px;
   margin-left: 26px;
   margin-left: 1.625rem;
 }
-/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-.readspeaker-wrapper .rs-pagers li:first-child {
+/* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .pagination-container li:first-child {
   margin-left: 0px;
 }
-/* line 116, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-.readspeaker-wrapper .rs-pagers li button {
+/* line 165, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .pagination-container li button {
   height: 14px;
   width: 14px;
   border: none;
   background: #e6e6e6;
   border-radius: 100%;
+  text-indent: -99999px;
 }
-/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-.readspeaker-wrapper .rs-pagers li button.active {
+/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .pagination-container li.selected button {
   background: #7a4183;
 }
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .navigation-outer-wrapper, .readspeaker-wrapper .slide {
+  width: 280px;
+  margin: 0 auto;
+}
+@media (min-width: 650px), print {
+  /* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .navigation-outer-wrapper, .readspeaker-wrapper .slide {
+    width: 408px;
+  }
+}
+@media (min-width: 959px), print {
+  /* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .navigation-outer-wrapper, .readspeaker-wrapper .slide {
+    width: 870px;
+  }
+}
+@media (min-width: 1041px), print {
+  /* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .navigation-outer-wrapper, .readspeaker-wrapper .slide {
+    width: 950px;
+  }
+}
+/* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .navigation-wrapper {
+  width: 280px;
+  margin-top: 20px;
+  position: absolute;
+  top: 174px;
+}
+@media (min-width: 650px), print {
+  /* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .navigation-wrapper {
+    width: 408px;
+    top: 252px;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .navigation-wrapper {
+    position: relative;
+    float: right;
+    width: 480px;
+    top: 0;
+  }
+}
+/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .rs-slides-container {
+  position: relative;
+}
+/* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .rs-image {
+  margin: 0 auto;
+}
+@media (min-width: 769px), print {
+  /* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .rs-image {
+    float: right;
+    margin: 0;
+  }
+}
+/* line 220, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .details {
+  width: auto;
+  margin: 0 auto;
+}
+@media (min-width: 769px), print {
+  /* line 220, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .details {
+    float: left;
+    width: 388px;
+  }
+}
+@media (min-width: 1041px), print {
+  /* line 220, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .details {
+    width: 415px;
+  }
+}
+@media (min-width: 1041px), print {
+  /* line 231, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .details.wide {
+    width: 445px;
+  }
+}
+/* line 236, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .details li {
+  color: #794381;
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1rem;
+}
+@media (min-width: 650px), print {
+  /* line 236, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .details li {
+    display: block;
+    padding-left: 34px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 18px;
+    line-height: 1.125rem;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 236, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .details li {
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 22px;
+    line-height: 1.375rem;
+  }
+}
+/* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .details li:before {
+  height: 7px;
+  width: 7px;
+  content: '';
+  position: absolute;
+  border-radius: 100%;
+  left: 0;
+  top: 5px;
+  background: #3090c0;
+}
+@media (min-width: 650px), print {
+  /* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .details li:before {
+    height: 8px;
+    width: 8px;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .details li:before {
+    height: 10px;
+    width: 10px;
+  }
+}
+/* line 275, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .rs-navigation {
   width: 81px;
-  display: none;
 }
 @media (min-width: 1040px), print {
-  /* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 275, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .rs-navigation {
     display: block;
   }
 }
-/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 282, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .paging-data {
   font-size: 21px;
   font-size: 1.3125rem;
@@ -12817,48 +13068,65 @@ header.about-donate-rs-wrapper .rsbtn_player,
   width: 100%;
   text-align: center;
 }
-/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .rsArrowLeft .rsArrowIcn {
   left: 0;
   right: auto;
 }
-/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .slides {
   height: auto !important;
 }
-/* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .slide {
   position: relative;
 }
-/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 302, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .slide img {
   display: block;
   height: 158px;
   width: 280px;
   margin: 0 auto;
+  border: 1px solid #e6e6e6;
 }
 @media (min-width: 650px), print {
-  /* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 302, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .slide img {
     height: 230px;
     width: 408px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 302, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .slide img {
     height: 270px;
     width: 480px;
     float: right;
   }
 }
-/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 321, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-wrapper .slide ul {
+  margin-bottom: 0px;
+}
+@media (min-width: 650px), print {
+  /* line 321, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .slide ul {
+    margin-bottom: 18px;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 321, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-wrapper .slide ul {
+    margin-bottom: 13px;
+  }
+}
+/* line 331, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .slide .welcome-highlights {
   padding-left: 18px;
   margin-bottom: 30px;
 }
 @media (min-width: 650px), print {
-  /* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 331, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .slide .welcome-highlights {
     position: absolute;
     top: 30px;
@@ -12868,7 +13136,7 @@ header.about-donate-rs-wrapper .rsbtn_player,
     width: 50%;
   }
 }
-/* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 343, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .slide .welcome-highlights li {
   list-style-type: disc;
   margin-bottom: 7px;
@@ -12878,51 +13146,51 @@ header.about-donate-rs-wrapper .rsbtn_player,
   line-height: 1.375rem;
 }
 @media (min-width: 650px), print {
-  /* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 343, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .slide .welcome-highlights li {
     color: #208ec4;
   }
 }
-/* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 354, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .slide .welcome-highlights li span {
   color: #696969;
 }
 @media (min-width: 650px), print {
-  /* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 354, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .slide .welcome-highlights li span {
     color: #fff;
   }
 }
 @media (min-width: 650px), print {
-  /* line 211, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 363, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .slide .welcome-highlights.dark-text span {
     color: #696969;
   }
 }
 @media (min-width: 650px), print {
-  /* line 219, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 371, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .slide .buttons {
     position: absolute;
     bottom: 30px;
     left: 30px;
   }
 }
-/* line 227, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 379, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .slide .buttons .button {
   width: 100%;
 }
-/* line 230, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 382, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-wrapper .slide .buttons .button:first-child {
   margin: 0 0 10px 0;
 }
 @media (min-width: 650px), print {
-  /* line 230, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 382, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .slide .buttons .button:first-child {
     margin: 0 10px 0 0;
   }
 }
 @media (min-width: 650px), print {
-  /* line 227, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 379, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-wrapper .slide .buttons .button {
     width: auto;
     float: left;
@@ -12930,47 +13198,74 @@ header.about-donate-rs-wrapper .rsbtn_player,
   }
 }
 
-/* line 248, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 400, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-modal {
   display: block;
 }
-/* line 251, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+@media (min-width: 960px), print {
+  /* line 400, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-modal {
+    padding: 125px;
+  }
+}
+/* line 406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-modal .modal-dialog {
   width: 100%;
   max-width: 350px;
   top: 50px;
 }
 @media (min-width: 650px), print {
-  /* line 251, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-modal .modal-dialog {
     max-width: 650px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 251, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-modal .modal-dialog {
     max-width: 1200px;
     max-height: 725px;
   }
 }
-/* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 419, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-modal .modal-body {
   padding: 15px;
 }
 @media (min-width: 650px), print {
-  /* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 419, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-modal .modal-body {
-    padding: 30px;
+    padding: 20px 30px 30px 30px;
   }
 }
-/* line 272, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 427, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-modal .modal-header {
   padding: 0;
   border: none;
   height: auto;
-  min-height: 0;
+  min-height: 30px;
+  position: relative;
+  margin: 0 auto;
+  width: 280px;
 }
-/* line 278, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+@media (min-width: 650px), print {
+  /* line 427, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-modal .modal-header {
+    width: 408px;
+  }
+}
+@media (min-width: 959px), print {
+  /* line 427, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-modal .modal-header {
+    width: 870px;
+  }
+}
+@media (min-width: 1041px), print {
+  /* line 427, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-modal .modal-header {
+    width: 950px;
+  }
+}
+/* line 445, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-modal .modal-body, .readspeaker-modal .modal-content {
   background-color: transparent;
   background-color: rgba(255, 255, 255, 0.8);
@@ -12980,85 +13275,96 @@ header.about-donate-rs-wrapper .rsbtn_player,
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 450, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-modal .modal-close {
-  background: url("../images/icon.close.overlay.44.png") 0 2px no-repeat;
-  background-size: 16px 36px;
-  color: #696969;
+  background-image: url("../images/sprite.modal.close.lite.mobile.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 15px;
+  color: #bcbdc0;
   cursor: pointer;
   display: inline-block;
   font-size: 15px;
   font-size: 0.9375rem;
   padding: 0 0 0 24px;
   position: absolute;
-  top: 15px;
-  right: 20px;
-  width: 65px;
-  height: 20px;
-  z-index: 101;
+  top: 17px;
+  right: 0px;
+  width: 68px;
+  height: 15px;
 }
-@media (min-width: 650px), print {
-  /* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-  .readspeaker-modal .modal-close {
-    top: 15px;
-    right: 20px;
-    height: 32px;
-  }
-}
-@media (min-width: 1040px), print {
-  /* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-  .readspeaker-modal .modal-close {
-    right: 38px;
-  }
-}
-/* line 306, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 466, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-modal .modal-close:hover {
   text-decoration: none;
   color: #426da9;
-  background-position: 0 -18px;
-}
-/* line 312, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
-.no-backgroundsize .readspeaker-modal .modal-close {
-  background-image: url("../images/icon.close.overlay.16.png");
+  background-position: 0 -16px;
 }
 @media (min-width: 650px), print {
-  /* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 450, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-modal .modal-close {
+    background-image: url("../images/sprite.modal.close.lite.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 22px;
+    padding: 0 0 0 34px;
+    top: 43px;
     font-size: 24px;
     font-size: 1.5rem;
-    background-size: 22px 50px;
-    background-position: 0 6px;
-    padding: 0 0 0 34px;
-    width: 95px;
+    top: 15px;
+    right: -92px;
+    height: 22px;
+    width: 102px;
   }
-  /* line 323, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 483, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-modal .modal-close:hover {
-    background-position: 0 -22px;
+    background-position: 0 -21px;
   }
-  /* line 327, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 487, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .no-backgroundsize .readspeaker-modal .modal-close {
-    background-image: url("../images/icon.close.overlay.22.png");
+    background-image: url("../images/sprite.modal.close.lite.lowres.png");
   }
 }
-/* line 335, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+@media (min-width: 769px), print {
+  /* line 450, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-modal .modal-close {
+    right: 0;
+    top: 20px;
+  }
+}
+/* line 496, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.readspeaker-modal .modal-close span {
+  display: block;
+  margin-top: -4px;
+}
+@media (min-width: 650px), print {
+  /* line 496, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  .readspeaker-modal .modal-close span {
+    margin-top: -7px;
+  }
+}
+/* line 505, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+.no-backgroundsize .readspeaker-modal .modal-close {
+  background-image: url("../images/sprite.modal.close.lite.mobile.lowres.png");
+}
+/* line 511, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-modal .rsContent > ul {
   margin-bottom: 0;
 }
 
-/* line 340, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 516, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .readspeaker-info {
   width: 280px;
   margin: 0 auto;
 }
 @media (min-width: 650px), print {
-  /* line 340, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 516, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-info {
     margin: 0 auto;
     width: 408px;
   }
 }
 @media (min-width: 1040px), print {
-  /* line 340, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 516, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .readspeaker-info {
     float: left;
     margin: auto;
@@ -13066,7 +13372,7 @@ header.about-donate-rs-wrapper .rsbtn_player,
   }
 }
 
-/* line 354, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+/* line 530, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
 .slides-container-wrapper {
   width: 280px;
   position: relative;
@@ -13074,13 +13380,13 @@ header.about-donate-rs-wrapper .rsbtn_player,
   margin: 0 auto;
 }
 @media (min-width: 650px), print {
-  /* line 354, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 530, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .slides-container-wrapper {
     width: 408px;
   }
 }
 @media (min-width: 1040px), print {
-  /* line 354, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
+  /* line 530, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_readspeaker-modal.scss */
   .slides-container-wrapper {
     float: right;
     margin: auto;

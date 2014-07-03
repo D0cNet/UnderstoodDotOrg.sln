@@ -913,7 +913,7 @@
 .account-notification-tabs .showmore-footer a i {
   width: 18px;
   height: 11px;
-  background: url("/Presentation/includes/images/sprite.icon.arrows.png") 0 0 no-repeat;
+  background: url("../images/sprite.icon.arrows.png") 0 0 no-repeat;
   background-size: 150px 150px;
 }
 

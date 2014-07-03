@@ -708,7 +708,7 @@
 }
 /* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/about/_about-search-results.scss */
 .about-search-results-more .show-more a i.icon-show-more {
-  background-image: url("/Presentation/includes/images/sprite.icon.arrows.png");
+  background-image: url("../images/sprite.icon.arrows.png");
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 150px 150px;

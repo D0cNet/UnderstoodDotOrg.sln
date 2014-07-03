@@ -38,7 +38,7 @@
 .behavior-tip-detail section {
   border-bottom: 1px solid #d2d2d2;
   margin-bottom: 38px;
-  padding-bottom: 38px;
+  padding-bottom: 24px;
 }
 /* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tip-detail.scss */
 .behavior-tip-detail section:last-child {
@@ -73,7 +73,6 @@
   font-weight: normal;
   line-height: 24px;
   line-height: 1.5rem;
-  margin-bottom: 0;
 }
 
 /**

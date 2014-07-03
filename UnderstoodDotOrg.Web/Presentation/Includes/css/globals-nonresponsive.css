@@ -54,20 +54,28 @@ a:focus {
 .old-ie .button:focus {
   outline: solid 1px #dfdfdf;
 }
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.touch .button:focus {
+  background-color: #f2af00;
+}
+/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button:hover {
   background-color: #ffbc0d;
   color: black;
   text-decoration: none;
 }
-/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+.touch .button:hover {
+  background-color: #f2af00;
+}
+/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.disabled, .button.disabled:hover, .button[disabled], .button[disabled]:hover {
   background-color: #f7c84c;
   color: #4c4c4c;
   cursor: default;
 }
 
-/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.blue {
   font-size: 16px;
   font-size: 1rem;
@@ -76,17 +84,17 @@ a:focus {
   line-height: 40px;
   height: 40px;
 }
-/* line 69, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.blue:hover {
   background-color: #20a6e9;
 }
 
-/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.gray {
   background-color: #bcbdc0;
   color: black;
 }
-/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.gray:hover, .button.gray:focus {
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
@@ -98,7 +106,7 @@ a:focus {
 .old-ie .button.gray:hover, .old-ie .button.gray:focus {
   outline: solid 1px #dfdfdf;
 }
-/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.gray.disabled, .button.gray.disabled:hover, .button.gray[disabled], .button.gray[disabled]:hover {
   -webkit-box-shadow: 0px 0px 0px 0px transparent;
   -moz-box-shadow: 0px 0px 0px 0px transparent;
@@ -106,13 +114,13 @@ a:focus {
   background-color: #d0d1d3;
   color: #4e4e4e;
 }
-/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.gray.selected, .button.gray.active, .button.gray.checked {
   background-color: #7a4183;
   color: white;
 }
 
-/* line 101, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.purple {
   font-size: 16px;
   font-size: 1rem;
@@ -132,39 +140,39 @@ a:focus {
   line-height: 70px;
   padding-right: 35px;
 }
-/* line 111, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.purple:hover {
   background-color: #208ec4;
 }
 
-/* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.white {
   font-size: 16px;
   font-size: 1rem;
   background-color: white;
   color: black;
 }
-/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.white:hover {
   background-color: #bcbdc0;
 }
-/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.white.selected, .button.white.active {
   background-color: #7a4183;
   color: white;
 }
-/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .button.white.selected:hover, .button.white.active:hover {
   background-color: #9850a2;
 }
 
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 button.rsArrowIcn {
   background: transparent;
   border: none;
 }
 
-/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .icon-arrow-down-blue {
   width: 18px;
   height: 11px;
@@ -172,12 +180,12 @@ button.rsArrowIcn {
   background: url("../images/sprite.icon.arrows.png") 0 0 no-repeat;
   background-size: 150px 150px;
 }
-/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .icon-arrow-down-blue {
   background-image: url("../images/sprite.icon.arrows.lo-res.png");
 }
 
-/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .icon-arrow-right-blue {
   width: 8px;
   height: 12px;
@@ -185,12 +193,12 @@ button.rsArrowIcn {
   background: url("../images/sprite.icon.arrows.png") -25px 0 no-repeat;
   background-size: 150px 150px;
 }
-/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .icon-arrow-right-blue {
   background-image: url("../images/sprite.icon.arrows.lo-res.png");
 }
 
-/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .icon-arrow-left-blue {
   width: 8px;
   height: 12px;
@@ -198,12 +206,12 @@ button.rsArrowIcn {
   background: url("../images/sprite.icon.arrows.png") -36px 0 no-repeat;
   background-size: 150px 150px;
 }
-/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 181, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .icon-arrow-left-blue {
   background-image: url("../images/sprite.icon.arrows.lo-res.png");
 }
 
-/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .icon-question-mark {
   width: 22px;
   height: 22px;
@@ -212,17 +220,17 @@ button.rsArrowIcn {
   background-size: 22px 22px;
   text-indent: -9999px;
 }
-/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 196, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .icon-question-mark {
   background-image: url("../images/icon.questionmark.lo-res.png");
 }
-/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 200, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .icon-question-mark.tooltip {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 199, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 207, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .icon-close-toolkit {
   width: 16px;
   height: 16px;
@@ -230,21 +238,21 @@ button.rsArrowIcn {
   background: url("../images/icon.close.parent-toolkit.png") no-repeat;
   background-size: 25px 25px;
 }
-/* line 206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 214, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .icon-close-toolkit {
   background-image: url("../images/icon.close.parent-toolkit-lo-res.png");
 }
 
-/* line 213, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 221, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .children-key {
   padding: 0;
 }
-/* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 224, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .children-key li {
   list-style-type: none;
 }
 
-/* line 225, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 233, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .child-a,
 .child-b,
 .child-c,
@@ -256,7 +264,7 @@ button.rsArrowIcn {
   background: url("../images/child.content.indicator.png") 0 0 no-repeat;
   background-size: 125px 25px;
 }
-/* line 232, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 240, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .child-a, .no-backgroundsize
 .child-b, .no-backgroundsize
 .child-c, .no-backgroundsize
@@ -265,36 +273,36 @@ button.rsArrowIcn {
   background-image: url("../images/child.content.indicator.lo-res.png");
 }
 
-/* line 237, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .child-a {
   background-position: 0 0;
 }
 
-/* line 240, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 248, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .child-b {
   background-position: -25px 0;
 }
 
-/* line 243, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 251, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .child-c {
   width: 16px;
   background-position: -50px 0;
 }
 
-/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 255, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .child-d {
   width: 16px;
   background-position: -75px 0;
 }
 
-/* line 251, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 259, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .child-e {
   width: 16px;
   height: 16px;
   background-position: -100px 0;
 }
 
-/* line 265, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 273, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 input[type=text],
 input[type=password],
 input[type=url],
@@ -328,7 +336,7 @@ input[type=date], .old-ie
 input[type=email] {
   line-height: 50px;
 }
-/* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 input[type=text]:focus,
 input[type=password]:focus,
 input[type=url]:focus,
@@ -443,7 +451,7 @@ input[type=email][type=text]:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-/* line 300, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 308, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 textarea {
   background-color: #fff;
   border: solid 2px #e9e9e9;
@@ -512,7 +520,7 @@ textarea:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-/* line 330, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 338, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .selector {
   font-size: 14px;
   font-size: 0.875rem;
@@ -520,87 +528,87 @@ textarea:focus::-webkit-input-placeholder {
   font-size: 1rem;
 }
 
-/* line 343, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 351, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .touch select:focus {
   font-size: 16px;
   font-size: 1rem;
 }
 
-/* line 352, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .support-plan {
   background: url("../images/icon.toolkit.support.plan.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 356, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 364, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .support-plan {
   background-image: url("../images/icon.toolkit.support.plan.100.png");
 }
-/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .support-plan .icon {
   background-image: url("../images/icon.toolkit.support.plan.60.png");
 }
 
-/* line 366, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 374, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .childs-world {
   background: url("../images/icon.toolkit.childs.world.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 370, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 378, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .childs-world {
   background-image: url("../images/icon.toolkit.childs.world.100.png");
 }
 
-/* line 376, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 384, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .observation-logs {
   background: url("../images/icon.toolkit.observation.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 380, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 388, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .observation-logs {
   background-image: url("../images/icon.toolkit.observation.100.png");
 }
 
-/* line 386, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 394, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .rate-schools {
   background: url("../images/icon.toolkit.ratings.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 390, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 398, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .rate-schools {
   background-image: url("../images/icon.toolkit.ratings.100.png");
 }
 
-/* line 396, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 404, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .decisions {
   background: url("../images/icon.toolkit.decisions.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 400, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 408, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .decisions {
   background-image: url("../images/icon.toolkit.decisions.100.png");
 }
 
-/* line 406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 414, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .find {
   background: url("../images/icon.toolkit.find.png") no-repeat;
   background-size: 100px 100px;
 }
-/* line 410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 418, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .find {
   background-image: url("../images/icon.toolkit.find.100.png");
 }
 
-/* line 417, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 425, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown {
   position: relative;
   float: left;
 }
-/* line 421, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 429, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown a {
   text-decoration: none;
 }
 
-/* line 426, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 434, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-toggle {
   display: block;
   height: 50px;
@@ -615,7 +623,7 @@ textarea:focus::-webkit-input-placeholder {
   box-sizing: border-box;
   position: regular;
 }
-/* line 438, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 446, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-toggle:after {
   content: "";
   position: absolute;
@@ -626,7 +634,7 @@ textarea:focus::-webkit-input-placeholder {
   background: url("../images/arrow.down.000.10.png") 0 0 no-repeat;
 }
 
-/* line 449, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 457, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-toggle:hover {
   background: #ffbc0d;
   color: #000;
@@ -634,7 +642,7 @@ textarea:focus::-webkit-input-placeholder {
   border: 1px solid #efefef;
 }
 
-/* line 456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 464, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open .dropdown-toggle {
   background: #fff;
   text-decoration: none;
@@ -642,26 +650,26 @@ textarea:focus::-webkit-input-placeholder {
   color: #696969;
 }
 
-/* line 463, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 471, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open .dropdown-toggle {
   border-bottom: none;
 }
 
-/* line 467, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 475, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-title {
   display: none;
 }
 
-/* line 472, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 480, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open .dropdown-toggle .current-page {
   display: none;
 }
-/* line 476, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 484, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open .dropdown-toggle .dropdown-title {
   display: inline-block;
 }
 
-/* line 481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 489, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-toggle:focus {
   outline: 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
@@ -673,7 +681,7 @@ textarea:focus::-webkit-input-placeholder {
   outline: solid 1px #dfdfdf;
 }
 
-/* line 485, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 493, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -688,7 +696,7 @@ textarea:focus::-webkit-input-placeholder {
   padding: 0;
   border: 1px solid #f4f2f1;
 }
-/* line 499, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 507, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu a {
   padding: 0 20px;
   height: 50px;
@@ -697,27 +705,27 @@ textarea:focus::-webkit-input-placeholder {
   color: #696969;
   background: #f4f2f1;
 }
-/* line 508, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 516, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu a:hover, .dropdown-menu a:active {
   background: #794381;
   color: #fff;
 }
-/* line 514, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 522, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu .current-page a {
   color: #794381;
 }
-/* line 517, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 525, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu .current-page a:hover {
   color: #fff;
 }
 
-/* line 522, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 530, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu.pull-right {
   right: 0;
   left: auto;
 }
 
-/* line 526, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 534, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu .divider {
   height: 1px;
   margin: 9px 0;
@@ -725,29 +733,29 @@ textarea:focus::-webkit-input-placeholder {
   background-color: #e5e5e5;
 }
 
-/* line 532, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 540, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open > .dropdown-menu {
   display: block;
 }
 
-/* line 535, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 543, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .open > a {
   outline: 0;
 }
 
-/* line 538, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 546, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu-right {
   right: 0;
   left: auto;
 }
 
-/* line 542, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 550, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-menu-left {
   right: auto;
   left: 0;
 }
 
-/* line 546, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 554, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-header {
   display: block;
   padding: 3px 20px;
@@ -756,7 +764,7 @@ textarea:focus::-webkit-input-placeholder {
   color: #999;
 }
 
-/* line 553, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 561, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropdown-backdrop {
   position: fixed;
   top: 0;
@@ -766,13 +774,13 @@ textarea:focus::-webkit-input-placeholder {
   z-index: 990;
 }
 
-/* line 561, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 569, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .pull-right > .dropdown-menu {
   right: 0;
   left: auto;
 }
 
-/* line 566, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 574, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropup .caret,
 .navbar-fixed-bottom .dropdown .caret {
   content: "";
@@ -780,7 +788,7 @@ textarea:focus::-webkit-input-placeholder {
   border-bottom: 4px solid;
 }
 
-/* line 572, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 580, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .dropup .dropdown-menu,
 .navbar-fixed-bottom .dropdown .dropdown-menu {
   top: auto;
@@ -788,19 +796,19 @@ textarea:focus::-webkit-input-placeholder {
   margin-bottom: 1px;
 }
 
-/* line 579, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 587, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 584, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 592, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 591, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 599, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .col.sidebar-spacer {
   border-right: 1px solid #f4f2f1;
   display: none;
@@ -809,11 +817,11 @@ textarea:focus::-webkit-input-placeholder {
   display: block;
 }
 
-/* line 604, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 612, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 body.modal-open {
   margin: 0;
 }
-/* line 607, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 615, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 body.modal-open #wrapper {
   position: fixed;
   width: 100%;
@@ -821,22 +829,22 @@ body.modal-open #wrapper {
   left: 0;
 }
 
-/* line 616, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 624, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .rsTextLarger {
   font-size: 1.1em;
 }
 
-/* line 620, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 628, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .rsTextLarge {
   font-size: 1.2em;
 }
 
-/* line 624, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 632, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal {
   overflow-x: hidden;
   overflow-y: auto;
 }
-/* line 629, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 637, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal .close-overlay,
 .modal .modal-close {
   font-style: normal;
@@ -855,7 +863,7 @@ body.modal-open #wrapper {
   border: 0;
   line-height: inherit;
 }
-/* line 645, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 653, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal .close-overlay:hover,
 .modal .modal-close:hover {
   color: #426da9;
@@ -870,19 +878,19 @@ body.modal-open #wrapper {
   line-height: 1.375rem;
   top: 5px;
 }
-/* line 669, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 677, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .modal .close-overlay, .no-backgroundsize
 .modal .modal-close {
   background-image: url("../images/icon.close.overlay.22.png");
   background-position: 0 -1px;
 }
-/* line 673, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 681, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .no-backgroundsize .modal .close-overlay:hover, .no-backgroundsize
 .modal .modal-close:hover {
   background-position: 0 -29px;
 }
 
-/* line 684, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 692, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal .modal-dialog,
 .modal.fade .modal-dialog {
   -webkit-transform: none;
@@ -896,7 +904,7 @@ body.modal-open #wrapper {
   transition: opacity .2s ease-in-out;
 }
 
-/* line 695, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 703, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal.in .modal-dialog {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -905,7 +913,7 @@ body.modal-open #wrapper {
   transform: none;
 }
 
-/* line 702, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 710, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal-dialog {
   margin: 15px;
   position: absolute;
@@ -915,7 +923,7 @@ body.modal-open #wrapper {
   width: 600px;
 }
 
-/* line 714, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 722, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal-content {
   border-radius: 0;
   border: 0;
@@ -929,7 +937,7 @@ body.modal-open #wrapper {
   overflow-x: hidden;
 }
 
-/* line 729, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 737, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal-backdrop {
   background-color: #f4f2f1;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -940,13 +948,13 @@ body.modal-open #wrapper {
   transition: opacity .2s ease-in-out;
 }
 
-/* line 738, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 746, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal-backdrop.in {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
 
-/* line 742, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 750, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal-body {
   overflow-y: visible;
   background: #fff;
@@ -959,12 +967,12 @@ body.modal-open #wrapper {
   outline: solid 1px #dfdfdf;
 }
 
-/* line 748, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 756, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal-footer {
   margin-top: 0;
 }
 
-/* line 752, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 760, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .popover {
   border: 1px solid #e9e9e9;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0 0 3px;
@@ -978,13 +986,13 @@ body.modal-open #wrapper {
   outline: solid 1px #dfdfdf;
 }
 
-/* line 759, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 767, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .popover-content {
   padding: 30px 20px;
   padding: 40px;
 }
 
-/* line 769, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 777, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal.modal-standard .modal-dialog {
   width: 96.875%;
   max-width: 500px;
@@ -992,11 +1000,11 @@ body.modal-open #wrapper {
   font-size: 0.9375rem;
   color: #696969;
 }
-/* line 780, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 788, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal.modal-standard .modal-body {
   padding: 27px 7.14% 20px;
 }
-/* line 787, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 795, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal.modal-standard h2 {
   font-weight: normal;
   font-size: 24px;
@@ -1004,17 +1012,17 @@ body.modal-open #wrapper {
   color: #794382;
   margin-bottom: 9px;
 }
-/* line 793, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 801, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal.modal-standard p {
   font-family: arial, sans-serif;
   line-height: 1.6;
   margin-bottom: 12px;
 }
-/* line 801, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 809, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal.modal-standard p a {
   text-decoration: underline;
 }
-/* line 806, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 814, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal.modal-standard .actions {
   *zoom: 1;
   margin-top: 23px;
@@ -1026,7 +1034,7 @@ body.modal-open #wrapper {
   display: table;
   clear: both;
 }
-/* line 813, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
+/* line 821, /Users/justin/projects.dp/poses/source/Presentation/includes/css/globals.scss */
 .modal.modal-standard .actions .button {
   margin-right: 0;
 }
