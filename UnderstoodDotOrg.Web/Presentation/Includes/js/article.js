@@ -16,7 +16,8 @@
   });
 
   U.articleSlideshow = function(){
-    var self = this;
+      var self = this;
+      var $articleIntroText = $(".article-intro-text");
 
     self.focusedElement = [];
     self.readSpeakerReady = false;
@@ -104,26 +105,34 @@
       e.preventDefault();
 
       var slider = self.$rs.data('royalSlider');
+      var $this = $(this);  
 
-      if ($(this).hasClass('disabled')) {
+      if ($this.hasClass('disabled')) {
         return;
       }
-      else if ($(this).hasClass('first')) {
-        slider.goTo(0);
+      else if ($this.hasClass('first')) {
+          slider.goTo(0);
+          $articleIntroText.show();
       }
-      else if ($(this).hasClass('last')) {
-        slider.goTo(slider.numSlides-1);
+      else if ($this.hasClass('last')) {
+          slider.goTo(slider.numSlides - 1);
+          $articleIntroText.hide();
       }
-      else if ($(this).hasClass('next')) {
-        slider.next();
+      else if ($this.hasClass('next')) {
+          slider.next();
+          if (slider.currSlideId == slider.numSlides - 1) {
+              $articleIntroText.hide();
+          }
       }
-      else if ($(this).hasClass('prev')) {
-        slider.prev();
+      else if ($this.hasClass('prev')) {
+          slider.prev();
+          $articleIntroText.show();
       }
       else {
-        var slideId = $(this).attr('data-target');
+        var slideId = $this.attr('data-target');
         if (slideId) {
-          slider.goTo(slideId-1);
+            slider.goTo(slideId - 1);
+            $articleIntroText.show();
         }
       }
     };
@@ -132,6 +141,7 @@
       e.preventDefault();
       var slider = self.$rs.data('royalSlider');
       slider.goTo(0);
+      $articleIntroText.show();
     };
 
     self.updateActiveSlide = function(event) {
