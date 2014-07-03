@@ -1,14 +1,20 @@
 /* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 #gameboard.dysgraphia_game {
   font-size: 24px;
+  background-color: #f3f1f1;
 }
 
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
+/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 .breakpoint_phone #gameboard {
   font-size: 18px;
 }
 
 /* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
+#gameboard.dysgraphia_game .SSGame_modal_standalone_decoration {
+  background-image: url("../../../images/simulations/dysgraphia/desktop/standalone_icon.png");
+}
+
+/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 #dysgraphia_challenge {
   position: absolute;
   top: 100px;
@@ -16,7 +22,7 @@
   width: 100%;
 }
 
-/* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
+/* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 #dysgraphia_prompt {
   margin: 0 50px;
   color: #288dc0;
@@ -24,14 +30,14 @@
   line-height: 60px;
 }
 
-/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
+/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 .breakpoint_phone #dysgraphia_prompt {
   font-size: 20px;
   line-height: 28px;
   margin: 0 10px;
 }
 
-/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
+/* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 #dysgraphia_input {
   margin: 20px 50px 0;
   font-size: 28px;
@@ -42,14 +48,14 @@
   background-color: #FFF;
 }
 
-/* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
+/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 .breakpoint_phone #dysgraphia_input {
   font-size: 18px;
   line-height: 24px;
   margin: 10px 10px 0;
 }
 
-/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
+/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 #dysgraphia_challenge textarea {
   font-size: inherit;
   line-height: inherit;
@@ -61,7 +67,7 @@
   width: 100%;
 }
 
-/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
+/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 #dysgraphia_score {
   position: absolute;
   bottom: 40px;
@@ -69,7 +75,7 @@
   text-align: center;
 }
 
-/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
+/* line 60, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 #gameboard.dysgraphia_game #wtfinput_mirror {
   border: 1px solid black;
   background-color: white;
@@ -77,12 +83,12 @@
 }
 
 /* Clear the board when the textarea is in focus on phones */
-/* line 63, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
+/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 .breakpoint_phone.infocus #dysgraphia_score, .breakpoint_phone.infocus #SSGame_timer {
   display: none;
 }
 
-/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
+/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dysgraphia/game.scss */
 .breakpoint_phone.infocus #dysgraphia_challenge {
   top: 10px;
 }
