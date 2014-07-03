@@ -258,12 +258,13 @@ jQuery(function () {
 (function ($) {
     var currentPage = 1;
 	var inProgress = false;
-	var $container, $showMoreContainer, path, topic, grade, issue;
+	var $container, $showMoreContainer, path, lang;
 	
 	function init() {
 		var $trigger = $("#experts-show-more-results");
 		if ($trigger.length > 0) {
-			path = $trigger.data('path');
+		    path = $trigger.data('path');
+		    lang = $trigger.data('lang');
 			$container = $("#" + $trigger.data('container'));
 			$showMoreContainer = $trigger.closest(".show-more");
 			
@@ -283,7 +284,8 @@ jQuery(function () {
         $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
 		
 		var data = {
-            'page': currentPage + 1
+		    'page': currentPage + 1,
+            'lang': lang
 		};
 		
 		$.ajax({

@@ -19,9 +19,20 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
             get { return Request.QueryString["page"] ?? String.Empty; }
         }
 
+        private string Lang
+        {
+            get { return Request.QueryString["lang"] ?? String.Empty; }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             int page;
+            Sitecore.Globalization.Language language;
+
+            if (Sitecore.Globalization.Language.TryParse(Lang, out language))
+            {
+                Sitecore.Context.SetLanguage(language, false);
+            }
 
             if (int.TryParse(ResultPage, out page))
             {

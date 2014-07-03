@@ -76,7 +76,7 @@
 <div class="container show-more rs_skip">
   <div class="row">
     <div class="col col-24">
-      <a id="experts-show-more-results" href="#" data-path="<%= AjaxEndpoint %>" data-container="about-experts-listing-results">Show More<i class="icon-arrow-down-blue"></i></a>
+      <a id="experts-show-more-results" href="#" data-path="<%= AjaxEndpoint %>" data-container="about-experts-listing-results" data-lang="<%= Sitecore.Context.Language.Name %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
     </div>
   </div>
 </div><!-- .show-more -->
