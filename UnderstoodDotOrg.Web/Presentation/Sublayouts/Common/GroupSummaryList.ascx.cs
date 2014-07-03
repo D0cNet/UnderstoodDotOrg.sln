@@ -14,7 +14,7 @@ using UnderstoodDotOrg.Framework.UI;
 using Sitecore.Links;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Helpers;
-using UnderstoodDotOrg.Services.AccessControlServices;
+//using UnderstoodDotOrg.Services.AccessControlServices;
 using UnderstoodDotOrg.Domain.ExactTarget;
 using UnderstoodDotOrg.Services.ExactTarget;
 using UnderstoodDotOrg.Services.CommunityServices;
@@ -168,7 +168,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 try
                 {
                     //TODO: Get test Cases for this redirect
-                    this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.CommunityUser);
+                    //this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.CommunityUser);
                     //Join the group using telligent group id
                     if (CommunityHelper.JoinGroup(btn.CommandArgument, UserID))
                     {

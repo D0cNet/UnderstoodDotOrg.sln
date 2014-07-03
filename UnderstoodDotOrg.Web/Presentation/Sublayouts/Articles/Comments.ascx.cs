@@ -14,7 +14,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Framework.UI;
 using System.Web.UI.HtmlControls;
-using UnderstoodDotOrg.Services.AccessControlServices;
+//using UnderstoodDotOrg.Services.AccessControlServices;
 using UnderstoodDotOrg.Services.TelligentService;
 using UnderstoodDotOrg.Services.Models.Telligent;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
@@ -116,7 +116,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            this.ProfileRedirect(Constants.UserPermission.CommunityUser);
+            //this.ProfileRedirect(Constants.UserPermission.CommunityUser);
 
             if (CurrentMember.ScreenName.IsNullOrEmpty())
             {

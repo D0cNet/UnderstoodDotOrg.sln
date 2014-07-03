@@ -20,18 +20,11 @@ namespace UnderstoodDotOrg.Framework.UI
         {
             get
             {
-                
-               
-                  
-
-                return _notifications = _notifications??Session["_notifications"] as List<INotification>;
+                return _notifications = _notifications ?? Session["_notifications"] as List<INotification>;
             }
 
             set
             {
-
-
-
                 Session["_notifications"] = _notifications = value;
             }
         }
@@ -170,7 +163,8 @@ namespace UnderstoodDotOrg.Framework.UI
             Response.Redirect(url);
         }
 
-        public BaseSublayout() : base()
+        public BaseSublayout()
+            : base()
         {
             this.Init += BaseSublayout_Init;
         }
@@ -190,17 +184,17 @@ namespace UnderstoodDotOrg.Framework.UI
             {
                 // TODO: refactor to do direct page lookup
                 var home = MainsectionItem.GetHomePageItem();
-                if (home != null) 
+                if (home != null)
                 {
                     var myAccount = home.GetMyAccountFolder();
-                    if (myAccount != null) 
+                    if (myAccount != null)
                     {
                         var terms = myAccount.GetTermsandConditionsPage();
                         Session[Constants.SessionPreviousUrl] = Request.RawUrl;
                         Response.Redirect(terms.GetUrl());
                     }
                 }
-                
+
             }
         }
 
@@ -214,6 +208,91 @@ namespace UnderstoodDotOrg.Framework.UI
             }
 
             return "";
+        }
+
+        /// <summary>
+        /// Set or overwrite cookie values, creates cookie that will expire in 10 years
+        /// </summary>
+        /// <param name="cookieName">Cookie to create / overwrite</param>
+        /// <param name="value">Value for cookie</param>
+        public void setCookie(string cookieName, string value)
+        {
+            Request.Cookies.Remove(cookieName);
+            Request.Cookies.Set(new System.Web.HttpCookie(cookieName, value) { Expires = DateTime.Now.AddYears(10) });
+        }
+
+        /// <summary>
+        /// Return value from desired cookie
+        /// </summary>
+        /// <param name="cookieName">Cookie to read</param>
+        /// <returns>Value stored in cookie or string.Empty</returns>
+        public string getCookie(string cookieName)
+        {
+            var cookie = Request.Cookies[cookieName];
+
+            if (cookie != null)
+            {
+                var cookieValue = cookie.Value;
+
+                if (!string.IsNullOrEmpty(cookieValue))
+                {
+                    return cookieValue;
+                }
+            }
+
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Returns true for international users or false for US users
+        /// </summary>
+        public bool isInternationalUser
+        {
+            get
+            {
+                var internationalCookie = this.getCookie(Constants.Cookies.IsInternationalUser);
+
+                bool isInternational = false;
+
+                if (!string.IsNullOrEmpty(internationalCookie))
+                {
+                    isInternational = bool.Parse(internationalCookie);
+                }
+                else
+                {
+                    //check IP
+                    var country = UnderstoodDotOrg.Services.LocationServices.GeoIPLookup.GetCountry(this.GetIPAddress());
+
+                    //set cookie with bool.true or bool.false
+                    if (country == "US")
+                    {
+                        this.setCookie(Constants.Cookies.IsInternationalUser, bool.FalseString);
+                    }
+                    else
+                    {
+                        this.setCookie(Constants.Cookies.IsInternationalUser, bool.TrueString);
+                    }
+                }
+
+                return isInternational;
+            }
+        }
+
+        protected string GetIPAddress()
+        {
+            System.Web.HttpContext context = System.Web.HttpContext.Current;
+            string ipAddress = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+            if (!string.IsNullOrEmpty(ipAddress))
+            {
+                string[] addresses = ipAddress.Split(',');
+                if (addresses.Length != 0)
+                {
+                    return addresses[0];
+                }
+            }
+
+            return context.Request.ServerVariables["REMOTE_ADDR"];
         }
     }
 }

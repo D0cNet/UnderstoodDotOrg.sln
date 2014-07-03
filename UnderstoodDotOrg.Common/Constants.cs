@@ -997,5 +997,10 @@ namespace UnderstoodDotOrg.Common
             public const string GeoIPUserId = "GeoIPUserId";
             public const string GeoIPLicenseKey = "GeoIPLicenseKey";
         }
+
+        public static class Cookies
+        {
+            public const string IsInternationalUser = "IsInternationalUser";
+        }
     }
 }

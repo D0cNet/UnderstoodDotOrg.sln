@@ -9,7 +9,7 @@ using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
-using UnderstoodDotOrg.Services.AccessControlServices;
+//using UnderstoodDotOrg.Services.AccessControlServices;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -70,7 +70,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     this.CurrentUser = membershipManager.GetUser(currentMember.MemberId, true);
 
                     //Redirect used here for profile??
-                    this.ReturnRedirect();
+                    //this.ReturnRedirect();
 
                     var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccount);
 
