@@ -31,6 +31,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         protected global::System.Web.UI.WebControls.HyperLink hypWhatsHappening;
         
         /// <summary>
+        /// litwhatsHappeningLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litwhatsHappeningLabel;
+        
+        /// <summary>
         /// litNotifsCount control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         protected global::System.Web.UI.WebControls.HyperLink hypPrivateMessages;
         
         /// <summary>
+        /// litPrivateMsgsLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litPrivateMsgsLabel;
+        
+        /// <summary>
         /// liEmailPreferencesTab control.
         /// </summary>
         /// <remarks>
@@ -74,5 +92,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hypEmailAndAlertPreferences;
+        
+        /// <summary>
+        /// litEmailPrefLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litEmailPrefLabel;
     }
 }

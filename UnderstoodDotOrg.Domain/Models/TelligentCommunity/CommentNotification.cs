@@ -32,6 +32,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
 
         public string FriendlyDate { get { return NotificationDate.ToString("MMMM dd yyyy"); } }
         public string BlogTitle {get;set;}
+        public string CommentHeading { get { return String.Format(DictionaryConstants.CommentHeader,BlogTitle); } }
         public string BlogUrl { get; set; }
         public override string Action
         {

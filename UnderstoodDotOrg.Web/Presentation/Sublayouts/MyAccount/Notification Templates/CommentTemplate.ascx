@@ -4,8 +4,7 @@
                               
     <p class="notification-label">
 
-    <i class="icon-notification-comment"></i> New comment added to
-    <span class="visuallyhidden" ><%# Eval("BlogTitle") %></span>
+    <i class="icon-notification-comment"></i> <%# Eval("CommentHeading") %>
     <span class="timestamp"><%# Eval("TimeStamp") %></span>
     <a class="notification-link rs_skip" href='<%# Eval("NotificationLink") %>'><%# Eval("BlogTitle") %></a>
                               

@@ -59,6 +59,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            litSeeAllNotificationsLabel.Text = DictionaryConstants.SeeAllNotificationsLabel;
             hrefNotificationsLink.HRef =   MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetUrl();
             if (Notifications != null)
             {
@@ -68,7 +69,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             else
                 pnlEmptyText.Visible = true;
 
-            lvNotifications.DataSource = Notifications.OrderByDescending(x=> x.NotificationDate).Take(3);
+             var filterNotifs = Notifications;
+            if (Notifications != null)
+            {
+                filterNotifs= Notifications.OrderByDescending(x => x.NotificationDate).Take(3).ToList();
+            }
+
+            lvNotifications.DataSource = filterNotifs;
             lvNotifications.DataBind();
            
         }

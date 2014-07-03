@@ -1345,9 +1345,11 @@ namespace UnderstoodDotOrg.Common
        public static string GroupPrivacyStatement { get { return Translate.TextByDomain(PosesDictionary, "Group Privacy Statement"); } }
 
        public static string ViewProfileLink1 { get { return Translate.TextByDomain(PosesDictionary, "View Profile Link1"); } }
-
+       public static string EmptyGroupsListText { get { return Translate.TextByDomain(PosesDictionary, "Empty Groups Text"); } }
+       
        //Blog Labels
        public static string BackToAllBlogs { get { return Translate.TextByDomain(PosesDictionary, "Blog Back Link"); } }
+       
        #endregion
 
 
@@ -1363,14 +1365,23 @@ namespace UnderstoodDotOrg.Common
        
        //TODO: create matching labels in sitecore
        #region Notification Labels 
-       public static string ConnectAction { get { return "{0} <a href='{1}'>wants to connect</a> with you."; } }//{ get { return Translate.TextByDomain(PosesDictionary, "ConnectWith"); } }
-       public static string ConnectLink { get { return "Parent Connection <span class='timestamp'>{0}</span>"; } }//{ get { return Translate.TextByDomain(PosesDictionary, "ConnectHeader"); } }
-       public static string CommentAction { get { return "{0} <a href='{1}'>added&hellip;</a>"; } }
-       public static string AcceptText { get { return "Accept"; } }
-       public static string CommentFrontAction { get { return "{0} <a href='{1}'>added a comment</a> to {2}"; } }
-       public static string DeclineText { get { return "Decline"; } }
+       public static string ConnectAction { get { return Translate.TextByDomain(PosesDictionary, "Wants To Connect Text"); } }
+       public static string ConnectLink { get { return Translate.TextByDomain(PosesDictionary, "Parent Connection Text"); } }
+       public static string CommentAction { get { return Translate.TextByDomain(PosesDictionary, "Comment Action Text"); } }
+       public static string AcceptText { get { return Translate.TextByDomain(PosesDictionary, "Accept Text"); } }
+       public static string CommentFrontAction { get { return Translate.TextByDomain(PosesDictionary, "Comment Action Landing Text"); } }
+       public static string DeclineText { get { return  Translate.TextByDomain(PosesDictionary, "Decline Text");  } }
+       public static string CommentHeader { get { return Translate.TextByDomain(PosesDictionary, "Comment Header Text"); } }
+       public static string EmptyNotifications { get { return Translate.TextByDomain(PosesDictionary, "Empty Notifications Text"); } }
+       public static string WhatsHappeningLabel { get { return Translate.TextByDomain(PosesDictionary, "Whats Happening Text"); } }
 
-       public static string EmptyNotifications { get { return @"You have no new notifications. Check back soon."; } }
+       public static string PrivateMessagesLabel { get { return Translate.TextByDomain(PosesDictionary, "Private Messages Text"); } }
+
+       public static string EmailPreferencesLabel { get { return Translate.TextByDomain(PosesDictionary, "Email Alert Preferences Text"); } }
+
+       public static string NotificationsButtonLabel { get { return Translate.TextByDomain(PosesDictionary, "Notifications Text"); } }
+
+       public static string SeeAllNotificationsLabel { get { return Translate.TextByDomain(PosesDictionary, "All Notifications Text"); } }
        #endregion
 
 
@@ -1418,17 +1429,15 @@ namespace UnderstoodDotOrg.Common
 
        public static string RepliesLabel { get { return Translate.TextByDomain(PosesDictionary, "Replies Label"); } }
 
-       public static string EmptyGroupsListText
-       {
-           get
-           {
-               return @"We're sorry we don't know enough about your situation to make a recommendation. For a list of group recommendations, complete your full profile (link to profile process). Already a member? <a href='{0}'>Sign In</a>";
-           }
-       }
 
-       public static string ConnectBtnText { get { return "Connect"; } }
-       public static string ViewActivity { get { return "View Activity"; } }
-       public static string RequestSent { get { return "Request Sent"; } }
+       #region Connect Button Labels
+       public static string ConnectBtnText { get { return Translate.TextByDomain(PosesDictionary, "Connect Button Text"); } }
+       public static string ViewActivity { get { return Translate.TextByDomain(PosesDictionary, "View Activity Button Text"); } }
+       public static string RequestSent { get { return Translate.TextByDomain(PosesDictionary, "Request Sent Button Text"); } }
+       #endregion
+
+
+
 
 
 

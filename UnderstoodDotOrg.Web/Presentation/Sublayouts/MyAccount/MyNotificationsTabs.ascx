@@ -7,15 +7,15 @@
       <div class="notifications-section-tabs tab-widget tab-container">
         <ul>
           <li id="liNotificationsTab" runat="server" class="notifications-tab ">
-            <asp:HyperLink ID="hypWhatsHappening" runat="server" >What's Been Happening</asp:HyperLink>
+            <asp:HyperLink ID="hypWhatsHappening" runat="server" ><asp:literal text="" ID="litwhatsHappeningLabel" runat="server" /> </asp:HyperLink>
             <span class="circle"><asp:Literal ID="litNotifsCount" runat="server"></asp:Literal></span>
           </li>
           <li id="liMessagesTab" runat="server" class="messages-tab ">
-            <asp:HyperLink ID="hypPrivateMessages" runat="server">Private Messages</asp:HyperLink>
+            <asp:HyperLink ID="hypPrivateMessages" runat="server"><asp:literal text="" ID="litPrivateMsgsLabel" runat="server" /></asp:HyperLink>
             <span class="circle">0</span>
           </li>
           <li id="liEmailPreferencesTab" runat="server" class="email-tab last ">
-            <asp:HyperLink ID="hypEmailAndAlertPreferences" runat="server">Email & Alert Preferences</asp:HyperLink>
+            <asp:HyperLink ID="hypEmailAndAlertPreferences" runat="server"><asp:literal text="" ID="litEmailPrefLabel" runat="server" /></asp:HyperLink>
           </li>
         </ul>
       </div>

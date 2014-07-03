@@ -64,7 +64,8 @@
     </ul>--%>
 
 
-    <div class="bottom rs_skip"><a href="" id="hrefNotificationsLink" runat="server" >See All Notifications</a></div>
+    <div class="bottom rs_skip"><a href="" id="hrefNotificationsLink" runat="server" >
+        <asp:Literal Text="" ID="litSeeAllNotificationsLabel" runat="server" /></a></div>
 </div>
 <!-- /.landing-notifications /.landing-modules -->
 

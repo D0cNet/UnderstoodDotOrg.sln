@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
 using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -35,6 +36,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
             }
             litNotifsCount.Text = notifs.Count().ToString();
+            litwhatsHappeningLabel.Text = DictionaryConstants.WhatsHappeningLabel;
+            litPrivateMsgsLabel.Text = DictionaryConstants.PrivateMessagesLabel;
+            litEmailPrefLabel.Text = DictionaryConstants.EmailPreferencesLabel;
             if (!IsPostBack)
             {
                 if (Sitecore.Context.Item.TemplateID.ToString() == MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetEmailAndAlertPreferences().InnerItem.TemplateID.ToString())

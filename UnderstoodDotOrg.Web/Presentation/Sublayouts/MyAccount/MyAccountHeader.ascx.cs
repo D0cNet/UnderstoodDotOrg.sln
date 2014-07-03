@@ -34,6 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         }   
         protected void Page_Load(object sender, EventArgs e)
         {
+            litNotificationsLabel.Text = DictionaryConstants.NotificationsButtonLabel;
             if (IsUserLoggedIn)
             {
                 MyProfilePage = MyProfileItem.GetMyProfilePage();
