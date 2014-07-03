@@ -188,6 +188,14 @@ span.validationerror {
   min-height: 300px;
 }
 
+/* UNAO-439 */
+/* SVN rev 1701 */
+@media (min-width: 960px), print {
+  .sign-up .sign-up-inputs p {
+    margin-top: 32px;
+  }
+}
+
 /* END: temporary AO override rules: account.css */
 
 
