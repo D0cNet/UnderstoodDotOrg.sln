@@ -1177,7 +1177,15 @@ namespace UnderstoodDotOrg.Domain.Membership
             successFlag = true;
             return successFlag;
         }
-        private bool ClearHelpfulVote(Guid MemberId, Guid ContentId, string Activity, int ActivityType)
+        /// <summary>
+        /// Method deletes activities from from the database. Was being used privately, now exposed.
+        /// </summary>
+        /// <param name="MemberId">The target member's guid</param>
+        /// <param name="ContentId">The content item's guid</param>
+        /// <param name="Activity"></param>
+        /// <param name="ActivityType">FoundHeplfulVoteType</param>
+        /// <returns></returns>
+        public bool ClearHelpfulVote(Guid MemberId, Guid ContentId, string Activity, int ActivityType)
         {
             bool success = false;
             try
@@ -1210,6 +1218,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             return success; 
 
         }
+
         public bool LogMemberHelpfulVote(Guid MemberId, Guid ContentId, string Activity, int ActivityType)
         {
             bool success = false;
