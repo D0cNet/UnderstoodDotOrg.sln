@@ -14,6 +14,12 @@ namespace UnderstoodDotOrg.Services.LocationServices
 
         public static string GetCountry(string ClientIP)
         {
+            //shortcut for local
+            if (ClientIP == "127.0.0.1")
+            {
+                return "US";
+            }
+
             // future licensed webservice call
             //int _userId = int.Parse(Sitecore.Configuration.Settings.GetSetting(Constants.GeoIPLookup.GeoIPUserId));
             //string _licenseKey = Sitecore.Configuration.Settings.GetSetting(Constants.GeoIPLookup.GeoIPLicenseKey);
@@ -28,9 +34,19 @@ namespace UnderstoodDotOrg.Services.LocationServices
             string _dataFolder = Sitecore.Configuration.Settings.DataFolder;
 
             var reader = new DatabaseReader(_dataFolder + "\\" + _database);
-            var country = reader.Country(ClientIP);
+
+            try
+            {
+                var country = reader.Country(ClientIP);
+                return country.Country.IsoCode;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
             
-            return country.Country.IsoCode;
         }
+
+
     }
 }
