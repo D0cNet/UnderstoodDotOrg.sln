@@ -60,7 +60,7 @@
                                 </header>
                             </div>
                             <div class="results-outer-wrapper">
-                                <div class="results-wrapper" data-section-number="carousel-1">
+                                <div class="results-wrapper" data-section-number="carousel-<%# Container.ItemIndex + 1 %>">
                                     <asp:Repeater ID="rptrQuestions" runat="server" 
                                         ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Pages.DecisionQuestionPageItem">
                                         <ItemTemplate>
