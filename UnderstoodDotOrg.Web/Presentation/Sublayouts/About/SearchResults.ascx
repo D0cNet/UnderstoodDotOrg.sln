@@ -100,7 +100,7 @@
         <div class="container show-more rs_skip">
             <div class="row">
             <div class="col col-24">
-                <a class="show-more-search-results-link" href="#" data-path="<%= AjaxUrl %>" data-type="<%= AjaxType %>" data-container="about-search-results" data-term="<%= AjaxTerm %>" data-item="search-result-entry"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
+                <a class="show-more-search-results-link" href="#" data-path="<%= AjaxUrl %>" data-type="<%= AjaxType %>" data-container="about-search-results" data-term="<%= AjaxTerm %>" data-item="search-result-entry" data-lang="<%= Sitecore.Context.Language.Name %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
             </div>
             </div>
         </div><!-- .show-more -->

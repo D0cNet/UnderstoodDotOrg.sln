@@ -29,7 +29,7 @@
 
 		// data file (from button data attribute)
 		var $dataFile = $showMore.data('path');
-		
+		var $dataLang = $showMore.data('lang');
 		var $dataType = $showMore.data('type');
 		
 		var $dataTerm = $showMore.data('term');
@@ -41,7 +41,8 @@
 		var data = {
 			terms: $dataTerm,
 			type: $dataType,
-			page: nextPage
+			page: nextPage,
+			lang: $dataLang
 		};
 
 		var templateSource = $("#search-result-entry").html();

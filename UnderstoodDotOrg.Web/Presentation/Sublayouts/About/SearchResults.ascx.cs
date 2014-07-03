@@ -138,7 +138,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 
             Handlers.SearchResultsService svc = new Handlers.SearchResultsService();
 
-            ResultSet searchResults = svc.SearchAllArticles(query, type, 1);
+            ResultSet searchResults = svc.SearchAllArticles(query, type, 1, Sitecore.Context.Language.Name);
 
             List<string> suggestions = SearchHelper.GetSpellCheckSuggestions(query);
             litMisspellings.Text = AssembleSuggestions(suggestions);

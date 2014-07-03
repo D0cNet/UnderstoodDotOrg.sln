@@ -29,9 +29,16 @@ namespace UnderstoodDotOrg.Web.Handlers
 
         [WebMethod]
         [ScriptMethod(ResponseFormat=ResponseFormat.Json)]
-        public ResultSet SearchAllArticles(string terms, string type, int page)
+        public ResultSet SearchAllArticles(string terms, string type, int page, string lang)
         {
             ResultSet results = new ResultSet();
+
+            Sitecore.Globalization.Language language;
+
+            if (Sitecore.Globalization.Language.TryParse(lang, out language))
+            {
+                Sitecore.Context.SetLanguage(language, false);
+            }
 
             int blurbLimit = 150;
             SearchResultsItem item = Sitecore.Context.Database.GetItem(Constants.Pages.SearchResults);
