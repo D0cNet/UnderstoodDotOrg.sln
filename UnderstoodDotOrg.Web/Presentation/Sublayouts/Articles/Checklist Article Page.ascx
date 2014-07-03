@@ -86,7 +86,7 @@
                             <asp:button runat="server" ID="btnSaveAnswers" class="submit button" Text="Save My Answers" OnClick="btnSaveAnswers_Click" />
                         </div>
                         <div class="download-pdf">
-                            <a href="#" class="download button gray">Download as PDF</a>
+                            <div class="download button gray">Download as PDF</div>
                         </div>
                         <!--        <div class="button"><input class="checklist-form-save" type="submit" value="Save My Answers"></div>
                                     <div class="button"><input class="submit-button" type="submit" value="Download as PDF"></div> -->
@@ -96,17 +96,21 @@
                         $(function () {
 
                             var clicked = false;
-
-                            $(".download-pdf a").on("click", function (e) {
+                            var $downloadingModal = $("#checklist-article-downloading-modal");
+                            $(".download-pdf>div.download").on("click", function (e) {
                                 if (!clicked)
                                 {
+                                    //$downloadingModal.modal('show');
                                     var doc = new jsPDF();
                                     doc.addHTML(
-                                        document.body,                                        
+                                        $("#form1"),                                        
                                         0,
                                         0,
                                         { 'pagesplit': true },
-                                        function () { doc.save('article-download.pdf'); });
+                                        function () {
+                                            doc.save('article-download.pdf');
+                                            //$downloadingModal.modal("hide");
+                                        });
                                 }
                             })
                         })
