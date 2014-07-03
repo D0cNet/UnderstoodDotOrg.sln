@@ -64,7 +64,7 @@ namespace UnderstoodDotOrg.Web.Handlers
             return results;
         }
 
-        [WebMethod]
+        [WebMethod(EnableSession=true)]
         [ScriptMethod(ResponseFormat=ResponseFormat.Json)]
         public BehaviorResultSet SearchBehaviorArticles(string challenge, string grade, int page, string lang)
         {
@@ -83,7 +83,7 @@ namespace UnderstoodDotOrg.Web.Handlers
             // Look up challenge
 
             // Populate all results into session for article pages
-            if (Session[Constants.SessionBehaviorSearchKey] != null || page == 1)
+            if ((Session != null && Session[Constants.SessionBehaviorSearchKey] != null) || page == 1)
             {
                 articles = SearchHelper.GetAllBehaviorArticles(challenge, grade);
                 srs.Results = articles;
@@ -93,6 +93,8 @@ namespace UnderstoodDotOrg.Web.Handlers
             {
                 articles = ((SessionSearchResult)Session[Constants.SessionBehaviorSearchKey]).Results;
             }
+
+            totalResults = srs.Results.Count();
 
             var pagedArticles = articles.Skip(page - 1).Take(Constants.BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE);
 

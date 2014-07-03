@@ -561,6 +561,12 @@ namespace UnderstoodDotOrg.Domain.Search
                                 || i.ChildGrades.Contains(ID.Parse(Constants.ArticleTags.AllChildGrades)));
         }
 
+        /// <summary>
+        /// Used to store search results in session
+        /// </summary>
+        /// <param name="challenge"></param>
+        /// <param name="grade"></param>
+        /// <returns></returns>
         public static List<BehaviorAdvice> GetAllBehaviorArticles(string challenge, string grade)
         {
             var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
