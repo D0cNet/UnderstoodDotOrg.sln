@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MyConnections.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidgets.MyConnections" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN PARTIAL: account-landing-my-connections -->
 <div class="row">
     <div class="landing-modules my-connections">
@@ -61,8 +62,8 @@
                                                         <li>Ducimus Consectetur</li>
                                                     </ul>
                                                     <div class="card-buttons">
-                                                        <button class="button gray">View Profile</button>
-                                                        <button class="button blue">See Activity</button>
+                                                        <button class="button gray"><sc:FieldRenderer ID="frSeeProfile" runat="server" FieldName="Connections See Profile Button Text" /></button>
+                                                        <button class="button blue"><sc:FieldRenderer ID="frSeeActivity" runat="server" FieldName="Connections See Activity Button Text" /></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -85,7 +86,7 @@
             </div>
         </section>
         <div class="bottom rs_skip">
-            <asp:HyperLink ID="hypConnectionsTab" runat="server">See All Connections</asp:HyperLink>
+            <asp:HyperLink ID="hypConnectionsTab" runat="server"></asp:HyperLink>
         </div>
     </div>
     <!-- /.landing-my-connections.landing-modules -->

@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MyNotifications.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidgets.MyNotifications" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN PARTIAL: account-landing-notifications -->
 <div class="landing-notifications landing-modules rs_read_this">
     <header class="clearfix">
@@ -64,7 +65,7 @@
     </ul>--%>
 
 
-    <div class="bottom rs_skip"><a href="" id="hrefNotificationsLink" runat="server" >
+    <div class="bottom rs_skip"><a id="hrefNotificationsLink" runat="server" >
         <asp:Literal Text="" ID="litSeeAllNotificationsLabel" runat="server" /></a></div>
 </div>
 <!-- /.landing-notifications /.landing-modules -->

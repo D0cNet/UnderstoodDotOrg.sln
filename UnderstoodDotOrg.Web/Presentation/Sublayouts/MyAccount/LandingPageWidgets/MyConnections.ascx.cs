@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 
@@ -17,8 +18,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            MyAccountItem context = (MyAccountItem)Sitecore.Context.Item;
             var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountConnections);
             hypConnectionsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
+            hypConnectionsTab.Text = context.SeeAllConnectionsText;
 
             var dataSource = CommunityHelper.GetFriends(this.CurrentMember.ScreenName);
             rptFriends.DataSource = dataSource;

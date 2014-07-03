@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 
@@ -29,8 +30,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
         {
             var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountEvents);
 
+            MyAccountItem context = (MyAccountItem)Sitecore.Context.Item;
+
             hypEventsTab.NavigateUrl = Sitecore.Context.Database.GetItem(Constants.Pages.WhatsHappening).GetUrl();
-            
+            hypEventsTab.Text = context.UpcomingEventsLinkText;
+
             var events = SearchHelper.GetUpcomingEvents(2).ToList();
             List<EventModel> eventsDataSource = new List<EventModel>();
             

@@ -8,15 +8,17 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidgets
 {
     public partial class MyFavorites : BaseSublayout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            MyAccountItem context = (MyAccountItem)Sitecore.Context.Item;
             var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountFavorites);
             hypFavoritesTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
+            hypFavoritesTab.Text = context.SeeAllFavoritesText;
 
             var favoritesList = CommunityHelper.GetFavorites(CurrentMember.MemberId);
 

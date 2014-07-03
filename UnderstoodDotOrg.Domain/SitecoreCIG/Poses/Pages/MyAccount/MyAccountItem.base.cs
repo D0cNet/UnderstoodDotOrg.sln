@@ -82,6 +82,123 @@ public CustomTextField SeeAllGroupsLinkText
 }
 
 
+public CustomTextField CompleteProfileText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Complete Profile Text"]);
+	}
+}
+
+
+public CustomGeneralLinkField CompleteProfileLink
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Complete Profile Link"]);
+	}
+}
+
+
+public CustomTextField NoGroupsText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["No Groups Text"]);
+	}
+}
+
+
+public CustomGeneralLinkField NoGroupsLink
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["No Groups Link"]);
+	}
+}
+
+
+public CustomTextField NoFavoritesText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["No Favorites Text"]);
+	}
+}
+
+
+public CustomTextField MyFavoritesText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["My Favorites Text"]);
+	}
+}
+
+
+public CustomTextField SeeAllFavoritesText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["See All Favorites Text"]);
+	}
+}
+
+
+public CustomTextField NoCommentsText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["No Comments Text"]);
+	}
+}
+
+
+public CustomTextField SeeAllCommentsText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["See All Comments Text"]);
+	}
+}
+
+
+public CustomTextField SeeAllConnectionsText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["See All Connections Text"]);
+	}
+}
+
+
+public CustomTextField ConnectionsSeeActivityButtonText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Connections See Activity Button Text"]);
+	}
+}
+
+
+public CustomTextField ConnectionsSeeProfileButtonText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Connections See Profile Button Text"]);
+	}
+}
+
+
+public CustomTextField SeeAllNotificationsText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["See All Notifications Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

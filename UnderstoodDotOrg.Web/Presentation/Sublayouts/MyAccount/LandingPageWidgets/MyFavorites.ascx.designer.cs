@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     public partial class MyFavorites {
         
         /// <summary>
+        /// frMyFavorites control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frMyFavorites;
+        
+        /// <summary>
         /// litCount control.
         /// </summary>
         /// <remarks>
@@ -58,30 +67,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
         protected global::System.Web.UI.WebControls.Panel pnlNoFavorites;
         
         /// <summary>
-        /// hypArticles control.
+        /// frNoFavorites control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypArticles;
-        
-        /// <summary>
-        /// hypBehaviourTool control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypBehaviourTool;
-        
-        /// <summary>
-        /// hypExpertsLive control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypExpertsLive;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoFavorites;
     }
 }

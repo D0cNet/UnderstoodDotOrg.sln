@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     public partial class MyGroups {
         
         /// <summary>
+        /// frMyGroupHeaderText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frMyGroupHeaderText;
+        
+        /// <summary>
         /// litCount control.
         /// </summary>
         /// <remarks>
@@ -58,13 +67,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
         protected global::System.Web.UI.WebControls.Panel pnlNoGroups;
         
         /// <summary>
-        /// hypAllGroups control.
+        /// frNoGroup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypAllGroups;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoGroup;
+        
+        /// <summary>
+        /// scAllGroups control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Link scAllGroups;
         
         /// <summary>
         /// pnlNoProfile control.
@@ -76,12 +94,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
         protected global::System.Web.UI.WebControls.Panel pnlNoProfile;
         
         /// <summary>
-        /// hypCompleteYourProfile control.
+        /// frNoProfileText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypCompleteYourProfile;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoProfileText;
+        
+        /// <summary>
+        /// scLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Link scLink;
     }
 }

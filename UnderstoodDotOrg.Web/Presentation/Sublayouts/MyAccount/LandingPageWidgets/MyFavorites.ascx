@@ -1,8 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MyFavorites.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidgets.MyFavorites" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN PARTIAL: account-landing-myfavorites -->
 <div class="landing-myfavorites landing-modules rs_read_this">
     <header class="clearfix">
-        <h3>My Favorites<span class="landing-module-count"><asp:Literal ID="litCount" runat="server"></asp:Literal></span></h3>
+        <h3><sc:FieldRenderer ID="frMyFavorites" runat="server" FieldName="My Favorites Text" /><span class="landing-module-count"><asp:Literal ID="litCount" runat="server"></asp:Literal></span></h3>
     </header>
     <asp:Panel runat="server" ID="pnlFavorites" Visible="false">
         <ul class="landing-module-items">
@@ -19,11 +20,7 @@
     </asp:Panel>
     <asp:Panel runat="server" ID="pnlNoFavorites" Visible="false">
         <p class="empty">
-            You have not saved any
-            <asp:HyperLink ID="hypArticles" runat="server">favorite articles</asp:HyperLink>,
-            <asp:HyperLink ID="hypBehaviourTool" runat="server">behavior tips</asp:HyperLink>, or
-            <asp:HyperLink ID="hypExpertsLive" runat="server">expert answers</asp:HyperLink>
-            yet. When you do, your favorites will appear here.
+            <sc:FieldRenderer ID="frNoFavorites" runat="server" FieldName="No Favorites Text" />
         </p>
     </asp:Panel>
 </div>

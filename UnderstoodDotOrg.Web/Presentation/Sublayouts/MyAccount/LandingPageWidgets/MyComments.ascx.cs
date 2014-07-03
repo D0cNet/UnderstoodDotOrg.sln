@@ -14,6 +14,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using System.Text.RegularExpressions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 {
@@ -28,8 +29,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
             }
             else
             {
+                MyAccountItem context = (MyAccountItem)Sitecore.Context.Item;
                 var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountComments);
                 hypCommentsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
+                hypCommentsTab.Text = context.SeeAllCommentsText;
 
                 List<Comment> commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
 

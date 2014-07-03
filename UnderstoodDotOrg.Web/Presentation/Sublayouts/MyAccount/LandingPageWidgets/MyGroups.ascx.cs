@@ -16,7 +16,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (CurrentMember.ScreenName == null)
+            List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
+            litCount.Text = groupsList != null ? groupsList.Count.ToString() : "0";
+
+            if (string.IsNullOrEmpty(CurrentMember.ScreenName))
             {
                 pnlNoProfile.Visible = true;
             }
@@ -25,11 +28,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
                 var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountGroups);
                 MyAccountItem context = (MyAccountItem)Sitecore.Context.Item;
                 hypGroupsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
-                hypAllGroups.Text = context.SeeAllGroupsLinkText;
+                hypGroupsTab.Text = context.SeeAllGroupsLinkText;
                 
-
-                List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
-                litCount.Text = groupsList != null ? groupsList.Count.ToString() : "0";
                 if ((groupsList != null) && (groupsList.Count != 0))
                 {
                     pnlGroups.Visible = true;

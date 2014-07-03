@@ -58,6 +58,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
         protected global::System.Web.UI.WebControls.PlaceHolder pnlNoComments;
         
         /// <summary>
+        /// frNoComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoComments;
+        
+        /// <summary>
         /// pnlNoProfile control.
         /// </summary>
         /// <remarks>
@@ -67,12 +76,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
         protected global::System.Web.UI.WebControls.PlaceHolder pnlNoProfile;
         
         /// <summary>
-        /// hypCompleteYourProfile control.
+        /// frNoProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypCompleteYourProfile;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoProfile;
+        
+        /// <summary>
+        /// Link1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Link Link1;
     }
 }

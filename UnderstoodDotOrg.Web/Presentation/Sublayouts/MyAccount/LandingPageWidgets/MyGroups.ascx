@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MyGroups.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidgets.MyGroups" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN PARTIAL: account-landing-mygroups -->
 <div class="landing-mygroups landing-modules rs_read_this">
     <header class="clearfix">
@@ -9,7 +10,8 @@
             <asp:Repeater ID="rptGroups" runat="server" OnItemDataBound="rptGroups_ItemDataBound">
                 <ItemTemplate>
                     <li>
-                        <asp:HyperLink ID="hypGroupsLink" runat="server"></asp:HyperLink></li>
+                        <asp:HyperLink ID="hypGroupsLink" runat="server"></asp:HyperLink>
+                    </li>
                 </ItemTemplate>
             </asp:Repeater>
         </ul>
@@ -18,14 +20,14 @@
         </div>
     </asp:Panel>
     <asp:Panel runat="server" ID="pnlNoGroups" Visible="false">
-        <p class="empty">
-            You have not yet joined any groups. Our private discussion groups are a great way to get advice for your situation and to help other parents in need.
-            <asp:HyperLink ID="hypAllGroups" runat="server">See all discussion groups.</asp:HyperLink>
+        <p class="empty">asd
+            <sc:FieldRenderer ID="frNoGroup" runat="server" FieldName="No Groups Text"></sc:FieldRenderer>
+            <sc:Link ID="scAllGroups" Field="No Groups Link" runat="server"></sc:Link>
         </p>
     </asp:Panel>
     <asp:Panel runat="server" ID="pnlNoProfile" Visible="false">
-        <p class="empty">You don't have a community profile, to create one please
-            <asp:HyperLink CssClass="comment-link" ID="hypCompleteYourProfile" runat="server">click here.</asp:HyperLink></p>
+        <p class="empty"><sc:FieldRenderer ID="frNoProfileText" runat="server" FieldName="Complete Profile Text"></sc:FieldRenderer>
+            <sc:Link ID="scLink" runat="server" Field="Complete Profile Link" CssClass="comment-link"></sc:Link>
     </asp:Panel>
 </div>
 <!-- /.landing-notifications /.landing-modules -->

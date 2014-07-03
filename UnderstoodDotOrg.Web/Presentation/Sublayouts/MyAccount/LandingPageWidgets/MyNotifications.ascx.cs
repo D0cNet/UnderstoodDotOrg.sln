@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Notification_Templates;
 
@@ -59,8 +60,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            MyAccountItem context = (MyAccountItem)Sitecore.Context.Item;
             litSeeAllNotificationsLabel.Text = DictionaryConstants.SeeAllNotificationsLabel;
             hrefNotificationsLink.HRef =   MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetUrl();
+            hrefNotificationsLink.InnerText = context.SeeAllNotificationsText;
             if (Notifications != null)
             {
                 litNotifCount.Text = Notifications.Count().ToString();
