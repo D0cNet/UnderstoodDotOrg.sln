@@ -36,8 +36,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
                 hlPartnersLanding.Text = parent.ContentPage.PageTitle;
             }
 
-            pnlNewsletter.Visible = Model.PartnerNewsletterLink.Url.IsNullOrEmpty();
-            pnlDonate.Visible = Model.PartnerDonationLink.Url.IsNullOrEmpty();
+            pnlNewsletter.Visible = !Model.PartnerNewsletterLink.Url.IsNullOrEmpty();
+            pnlDonate.Visible = !Model.PartnerDonationLink.Url.IsNullOrEmpty();
 
             // Featured links
             var collections = new List<dynamic>();
