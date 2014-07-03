@@ -28,7 +28,7 @@
 <asp:Panel ID="pnlMoreArticle" runat="server" ClientIDMode="Static"  CssClass="container show-more rs_skip" Visible="false">
     <div class="row">
         <div class="col col-24">
-            <a id="event-archive-show-more" href="#" data-path="<%= AjaxEndpoint %>" data-container="event-archive-results" data-topic="<%= Topic %>" data-issue="<%= Issue %>" data-grade="<%= Grade %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>
+            <a id="event-archive-show-more" href="#" data-path="<%= AjaxEndpoint %>" data-container="event-archive-results" data-topic="<%= Topic %>" data-issue="<%= Issue %>" data-grade="<%= Grade %>" data-lang="<%= Sitecore.Context.Language.Name %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>
         </div>
     </div>
 </asp:Panel>

@@ -147,12 +147,13 @@ jQuery(function () {
 	var currentPage = 1;
 	var inProgress = false;
 	var $trigger = $(".topic-subtopic-articles-show-more-link");
-	var $container, $showMoreContainer, path, topic;
+	var $container, $showMoreContainer, path, topic, lang;
 	
 	function init() {
 		if ($trigger.length > 0) {
 			path = $trigger.data('path');
 			topic = $trigger.data('topic');
+			lang = $trigger.data('lang');
 			$container = $("#" + $trigger.data('container'));
 			$showMoreContainer = $trigger.closest(".show-more");
 			
@@ -173,7 +174,8 @@ jQuery(function () {
 		
 		var data = {
             'topic': topic,
-            'page': currentPage + 1
+            'page': currentPage + 1,
+            'lang': lang
 		};
 		
 		$.ajax({

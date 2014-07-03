@@ -39,7 +39,7 @@
 <asp:Panel ID="pnlMoreArticle" runat="server" CssClass="container show-more" Visible="false">
     <div class="row">
         <div class="col col-24">
-            <a href="#" class="topic-subtopic-articles-show-more-link" data-path="<%= AjaxEndpoint %>" data-container="topic-articles-results" data-topic="<%= Model.ID.ToString() %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
+            <a href="#" class="topic-subtopic-articles-show-more-link" data-path="<%= AjaxEndpoint %>" data-container="topic-articles-results" data-topic="<%= Model.ID.ToString() %>" data-lang="<%= Sitecore.Context.Language.Name %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
         </div>
     </div>
 </asp:Panel>
