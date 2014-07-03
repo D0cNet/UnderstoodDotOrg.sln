@@ -154,8 +154,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                         var requestUrl = String.Format("{0}api.ashx/v2/users/{1}/avatar.xml", Sitecore.Configuration.Settings.GetSetting("TelligentConfig"), userId);
 
                         webClient.UploadFile(requestUrl, "POST", imageTempLocation);
-
                     }
+                    Response.Redirect(Request.RawUrl);
                 }
             }
             else 

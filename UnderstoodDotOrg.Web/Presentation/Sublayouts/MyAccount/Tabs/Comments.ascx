@@ -96,7 +96,7 @@
                             <div class="container show-more rs_skip">
                                 <div class="row">
                                     <div class="col col-24">
-                                        <a class="show-more-link show_more" href="#" data-path="my-account/my-comments" data-container="mycomment-list" data-item="mycomment-item" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
+                                        <a class="show-more-link-mycomments show_more" href="#" data-path="my-account/my-comments" data-container="mycomment-list" data-item="mycomment-item" data-count="2"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>
                                     </div>
                                 </div>
                             </div>
