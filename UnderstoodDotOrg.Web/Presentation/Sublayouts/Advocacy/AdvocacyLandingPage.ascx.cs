@@ -22,7 +22,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy
             var globalsItem = MainsectionItem.GetGlobals();
             var advocacyLinks = globalsItem.GetAdvocacyLinksFolder().GetAdvocacyLinks();
 
-            rptArticles.DataSource = this.Model.GetAdvocacyArticles().OrderByDescending(x => x.DefaultArticlePage.ReviewedDate.DateTime);
+            rptArticles.DataSource = this.Model.GetAdvocacyArticles();
             rptArticles.DataBind();
 
             rptrActionAlerts.DataSource = advocacyLinks;
