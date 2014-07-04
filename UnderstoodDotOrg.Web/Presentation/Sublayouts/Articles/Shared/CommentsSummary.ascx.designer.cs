@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     public partial class CommentsSummary {
         
         /// <summary>
+        /// pnlCommentTeaser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlCommentTeaser;
+        
+        /// <summary>
         /// litNumComments control.
         /// </summary>
         /// <remarks>

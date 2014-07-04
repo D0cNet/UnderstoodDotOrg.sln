@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CommentsSummary.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.CommentsSummary" %>
+<asp:Panel ID="pnlCommentTeaser" Visible="false" runat="server">
 <section class="comments-summary"> 
     <header>
         <h3><asp:Literal ID="litNumComments" runat="server" /></h3>
@@ -18,3 +19,5 @@
         <li><a ID="hlAddMyComment" runat="server"></a></li>
     </ul>
 </section>
+
+</asp:Panel>

@@ -27,7 +27,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (String.IsNullOrEmpty(article.DefaultArticlePage.BlogId.Raw)
                 || String.IsNullOrEmpty(article.DefaultArticlePage.BlogPostId.Raw))
             {
-                this.Visible = false;
+                 pnlCommentTeaser.Visible = false;
                 return;
             }
 
@@ -71,11 +71,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     litCommentblurb.Text = recentComment.Body;
                     litAuthorName.Text = recentComment.AuthorDisplayName;
                     litTimeStamp.Text = recentComment.PublishedDate;
-                    this.Visible = article.ShowComment.Checked;
+                    pnlCommentTeaser.Visible=  article.ShowComment.Checked;
                 }
                 else
                 {
-                    this.Visible = false;
+                    pnlCommentTeaser.Visible = false;
                 }
 
             }

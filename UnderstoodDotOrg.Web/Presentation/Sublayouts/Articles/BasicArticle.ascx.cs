@@ -30,7 +30,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             sbAboutAuthor.Visible = Model.DefaultArticlePage.AuthorName.Item != null;
             
             sbSidebarPromo.Visible = Model.DefaultArticlePage.ShowPromotionalControl.Checked;
-            sbCommentsSummary.Visible = Model.DefaultArticlePage.ShowCommentTeaser.Checked;
+          //  sbCommentsSummary.Visible = Model.DefaultArticlePage.ShowCommentTeaser.Checked;
 
             if (!Model.ShowAtaGlanceContent)
             {
