@@ -83,7 +83,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
                 hlTopicTitle.Text = item.ContentPage.PageTitle.Rendered;
 
                 PlaceHolder phThumbnail = e.FindControlAs<PlaceHolder>("phThumbnail");
-                
+
+                var icons = e.FindControlAs<UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation.ArticleRecommendationIcons>("ArticleRecommendationIcons");
+                if (icons != null)
+                {
+                    icons.matchingChildren = new List<bool>() { true, false, true, false, false, true };
+                }
+
                 // Handle first image
                 if (e.Item.ItemIndex == 0)
                 {

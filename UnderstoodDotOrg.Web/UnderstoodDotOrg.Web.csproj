@@ -768,6 +768,13 @@
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx.designer.cs">
       <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Recommendation\ArticleRecommendationIcons.ascx.cs">
+      <DependentUpon>ArticleRecommendationIcons.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Recommendation\ArticleRecommendationIcons.ascx.designer.cs">
+      <DependentUpon>ArticleRecommendationIcons.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Comments\Entries.ascx.cs">
       <DependentUpon>Entries.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2893,6 +2900,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx" />
+    <Content Include="Presentation\Sublayouts\Recommendation\ArticleRecommendationIcons.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Comments\Entries.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ConnectButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\FollowButton.ascx" />

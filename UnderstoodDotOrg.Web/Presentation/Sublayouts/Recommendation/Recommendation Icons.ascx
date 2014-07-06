@@ -10,7 +10,7 @@
         <ul>
             <asp:ListView runat="server" ID="lvChildren" ItemType="UnderstoodDotOrg.Domain.Membership.Child">
                 <ItemTemplate>
-                    <li><i class="child-<%# getLetter(Container.DisplayIndex) %>"></i>for <%# Item.Nickname %></li>
+                    <li><i class="child-<%# UnderstoodDotOrg.Common.Helpers.DataFormatHelper.getLetter(Container.DisplayIndex) %>"></i>for <%# Item.Nickname %></li>
                 </ItemTemplate>
             </asp:ListView>
           <%--<li><i class="child-a"></i>for Michael</li>

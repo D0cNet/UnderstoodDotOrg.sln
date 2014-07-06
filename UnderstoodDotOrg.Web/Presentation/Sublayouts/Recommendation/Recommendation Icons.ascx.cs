@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
     using UnderstoodDotOrg.Domain.Membership;
-    using UnderstoodDotOrg.Framework.UI;
+    using UnderstoodDotOrg.Framework.UI;    
 
     public partial class Recommendation_Icons : BaseSublayout
     {
@@ -27,26 +27,6 @@
                 //lvChildren.DataSource = children;
                 lvChildren.DataBind();
             }
-        }
-
-        protected string getLetter(int index)
-        {
-            if (Enum.IsDefined(typeof (Letters), index))
-            {
-                return ((Letters)index).ToString();
-            }
-
-            return string.Empty;
-        }
-
-        enum Letters
-        {
-            a = 0,
-            b = 1,
-            c = 2,
-            d = 3,
-            e = 4,
-            f = 5
         }
     }
 }
