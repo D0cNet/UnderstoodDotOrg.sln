@@ -499,6 +499,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ForgotPasswordItem.interface.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\InternationalUserPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyAccountBaseItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyAccountBaseItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\MyAccountItem.base.cs" />

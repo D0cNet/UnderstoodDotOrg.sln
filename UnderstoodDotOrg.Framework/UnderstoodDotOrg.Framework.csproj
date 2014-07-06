@@ -62,6 +62,7 @@
     <Compile Include="UI\BaseSublayout.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="UI\BaseSublayoutExtension.cs" />
     <Compile Include="UI\BaseSublayoutT.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

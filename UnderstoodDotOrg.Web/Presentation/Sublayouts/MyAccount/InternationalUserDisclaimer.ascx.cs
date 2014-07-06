@@ -1,4 +1,6 @@
 ﻿using System;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
@@ -7,7 +9,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+            //OrFragment
+            uxOr.Text = DictionaryConstants.OrFragment;
 		}
+
+        protected void lnkSignUp_Click(object sender, EventArgs e)
+        {
+            AuthorizeInternationalUser();
+
+            Response.Redirect(MyAccountFolderItem.GetSignUpPage());
+        }
+
+        protected void lnkSignIn_Click(object sender, EventArgs e)
+        {
+            AuthorizeInternationalUser();
+
+            Response.Redirect(MyAccountFolderItem.GetSignInPage());
+        }
+
+        protected void AuthorizeInternationalUser()
+        {
+            this.SetAuthorizedInternationalUser();
+        }
 	}
 }

@@ -68,6 +68,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessControlServices\AccessControlService.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CommunityServices\Blogs.cs" />
     <Compile Include="CommunityServices\Discussion.cs" />
     <Compile Include="CommunityServices\Forum.cs" />
@@ -95,7 +98,6 @@
     <Compile Include="TelligentService\TelligentService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AccessControlServices\" />
     <Folder Include="CommonSenseMediaService\" />
     <Folder Include="FacebookService\" />
     <Folder Include="LuminateService\" />

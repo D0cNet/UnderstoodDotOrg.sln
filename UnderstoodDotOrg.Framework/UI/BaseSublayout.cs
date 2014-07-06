@@ -146,10 +146,24 @@ namespace UnderstoodDotOrg.Framework.UI
         {
             FlushCurrentMemberUser();
 
-            // CH: don't want to put this in FlushCurrentMemberUser, because it's called a few times during signup
-            Session[Constants.currentUserFacebookAccessToken] = null;
+            string url = string.Empty;
+
+            // preserve redirect before clearing Session
+            if (Session[Constants.SessionPreviousUrl] != null)
+            {
+                url = Session[Constants.SessionPreviousUrl].ToString();
+            }
+
+            //clear session
             Session.RemoveAll();
             Session.Abandon();
+
+            // return to URL on logout, if put there by permission check.
+            if (!string.IsNullOrEmpty(url))
+            {
+                Response.Redirect(url);
+            }
+
             Response.Redirect(Request.RawUrl);
         }
 
@@ -157,8 +171,9 @@ namespace UnderstoodDotOrg.Framework.UI
         {
             FlushCurrentMemberUser();
 
-            // CH: don't want to put this in FlushCurrentMemberUser, because it's called a few times during signup
-            Session[Constants.currentUserFacebookAccessToken] = null;
+            //clear session
+            Session.RemoveAll();
+            Session.Abandon();
 
             Response.Redirect(url);
         }
@@ -178,24 +193,25 @@ namespace UnderstoodDotOrg.Framework.UI
                 return;
             }
 
-            if (!contextItem.IsOfType(TermsandConditionsItem.TemplateId)
-                && CurrentMember != null
-                && !CurrentMember.AgreedToSignUpTerms)
-            {
-                // TODO: refactor to do direct page lookup
-                var home = MainsectionItem.GetHomePageItem();
-                if (home != null)
-                {
-                    var myAccount = home.GetMyAccountFolder();
-                    if (myAccount != null)
-                    {
-                        var terms = myAccount.GetTermsandConditionsPage();
-                        Session[Constants.SessionPreviousUrl] = Request.RawUrl;
-                        Response.Redirect(terms.GetUrl());
-                    }
-                }
+            //checking for T&C on sign-in page instead of every page vtrfc 
+            //if (!contextItem.IsOfType(TermsandConditionsItem.TemplateId)
+            //    && CurrentMember != null
+            //    && !CurrentMember.AgreedToSignUpTerms)
+            //{
+            //    // TODO: refactor to do direct page lookup
+            //    var home = MainsectionItem.GetHomePageItem();
+            //    if (home != null)
+            //    {
+            //        var myAccount = home.GetMyAccountFolder();
+            //        if (myAccount != null)
+            //        {
+            //            var terms = myAccount.GetTermsandConditionsPage();
+            //            Session[Constants.SessionPreviousUrl] = Request.RawUrl;
+            //            Response.Redirect(terms.GetUrl());
+            //        }
+            //    }
 
-            }
+            //}
         }
 
         protected string getItemName(Guid guid)
@@ -246,17 +262,25 @@ namespace UnderstoodDotOrg.Framework.UI
         /// <summary>
         /// Returns true for international users or false for US users
         /// </summary>
-        public bool isInternationalUser
+        public Constants.GeoIPLookup.InternationalStatus isInternationalUser
         {
             get
             {
                 var internationalCookie = this.getCookie(Constants.Cookies.IsInternationalUser);
 
-                bool isInternational = false;
-
+                //give this a try, maybe have to flip to storing the string value of the enum?
                 if (!string.IsNullOrEmpty(internationalCookie))
                 {
-                    isInternational = bool.Parse(internationalCookie);
+                    var value = bool.Parse(internationalCookie);
+
+                    if (value)
+                    {
+                        return Constants.GeoIPLookup.InternationalStatus.AcceptedInternationalUser;
+                    }
+                    else
+                    {
+                        return Constants.GeoIPLookup.InternationalStatus.USUser;
+                    }
                 }
                 else
                 {
@@ -267,15 +291,19 @@ namespace UnderstoodDotOrg.Framework.UI
                     if (country == "US")
                     {
                         this.setCookie(Constants.Cookies.IsInternationalUser, bool.FalseString);
+                        return Constants.GeoIPLookup.InternationalStatus.USUser;
                     }
                     else
                     {
-                        this.setCookie(Constants.Cookies.IsInternationalUser, bool.TrueString);
+                        return Constants.GeoIPLookup.InternationalStatus.UnknownInternationalUser;
                     }
                 }
-
-                return isInternational;
             }
+        }
+
+        public void SetAuthorizedInternationalUser()
+        {
+            this.setCookie(Constants.Cookies.IsInternationalUser, bool.TrueString);
         }
 
         protected string GetIPAddress()

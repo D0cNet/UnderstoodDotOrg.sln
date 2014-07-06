@@ -17,6 +17,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                this.ProfileRedirect(Constants.UserPermission.InternationalUser);
+            }
+            else
+            {
+                //this.ReturnRedirect();
+            }
+
             uxEmailAddress.Attributes["placeholder"] = DictionaryConstants.EnterEmailAddressWatermark;
             uxPassword.Attributes["placeholder"] = DictionaryConstants.EnterPasswordWatermark;
             uxSignIn.Text = DictionaryConstants.SignInButtonText;
@@ -31,6 +40,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             {
                 doLogin();
             }
+
+            
         }
 
         protected void uxSignIn_Click(object sender, EventArgs e)
@@ -69,8 +80,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     this.CurrentMember = currentMember;
                     this.CurrentUser = membershipManager.GetUser(currentMember.MemberId, true);
 
+                    this.ProfileRedirect(Constants.UserPermission.AgreedToTerms);
+
                     //Redirect used here for profile??
-                    //this.ReturnRedirect();
+                    this.ReturnRedirect();
 
                     var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccount);
 

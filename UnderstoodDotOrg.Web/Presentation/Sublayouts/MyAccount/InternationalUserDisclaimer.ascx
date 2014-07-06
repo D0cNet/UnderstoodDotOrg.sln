@@ -8,6 +8,9 @@
 				<h1><sc:FieldRenderer FieldName="Page Title" runat="server" /></h1>
 			</header>
 			<sc:FieldRenderer FieldName="Body Content" runat="server" />
+            <asp:LinkButton runat="server" ID="lnkSignUp" OnClick="lnkSignUp_Click"></asp:LinkButton>
+            &nbsp;<asp:Literal runat="server" ID="uxOr"></asp:Literal>&nbsp;
+            <asp:LinkButton runat="server" ID="lnkSignIn" OnClick="lnkSignIn_Click"></asp:LinkButton>
 		</div>
 		<!-- .col-->
 	</div>

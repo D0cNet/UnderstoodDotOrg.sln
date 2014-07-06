@@ -159,6 +159,20 @@
     <Compile Include="Handlers\RunSalesforceUpsert.ashx.cs">
       <DependentUpon>RunSalesforceUpsert.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\AccessControlTestControl.ascx.cs">
+      <DependentUpon>AccessControlTestControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AccessControlTestControl.ascx.designer.cs">
+      <DependentUpon>AccessControlTestControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AccessControlTest.aspx.cs">
+      <DependentUpon>AccessControlTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AccessControlTest.aspx.designer.cs">
+      <DependentUpon>AccessControlTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\AjaxData\ArchiveEvents.aspx.cs">
       <DependentUpon>ArchiveEvents.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2113,6 +2127,8 @@
     <Content Include="Handlers\ContentService.asmx" />
     <Content Include="Handlers\FormSubmissionsService.asmx" />
     <Content Include="Handlers\SearchResultsService.asmx" />
+    <Content Include="Presentation\AccessControlTestControl.ascx" />
+    <Content Include="Presentation\AccessControlTest.aspx" />
     <Content Include="Presentation\AjaxData\ArchiveEvents.aspx" />
     <Content Include="Presentation\AjaxData\AssistiveTechResults.aspx" />
     <Content Include="Presentation\AjaxData\Comments.aspx" />

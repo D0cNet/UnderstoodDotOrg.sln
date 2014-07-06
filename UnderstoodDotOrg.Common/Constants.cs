@@ -697,9 +697,9 @@ namespace UnderstoodDotOrg.Common
             AdminUser,
             Moderator,
             Blogger,
-            Expert
-
-
+            Expert,
+            InternationalUser,
+            AgreedToTerms
         }
 
         #region Notification templates and types
@@ -996,6 +996,13 @@ namespace UnderstoodDotOrg.Common
             public const string GeoIPDatabaseName = "GeoIPDatabase";
             public const string GeoIPUserId = "GeoIPUserId";
             public const string GeoIPLicenseKey = "GeoIPLicenseKey";
+
+            public enum InternationalStatus
+            {
+                USUser,
+                AcceptedInternationalUser,
+                UnknownInternationalUser
+            }
         }
 
         public static class Cookies

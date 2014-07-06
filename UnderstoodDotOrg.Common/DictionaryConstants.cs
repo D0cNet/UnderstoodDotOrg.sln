@@ -696,6 +696,15 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        
+        public static string OrFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Or Fragment");
+            }
+        }
+
         #endregion
 
         public static string Featured
@@ -1221,100 +1230,132 @@ namespace UnderstoodDotOrg.Common
         }
 
         #region Expert Live
-        public static string NotNowLabel{
-            get {
+        public static string NotNowLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Not Now Label");
             }
         }
 
-        public static string BacktoLabel{
-            get {
+        public static string BacktoLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Back to Label");
             }
         }
 
-        public static string GuestExpertLabel {
-            get {
+        public static string GuestExpertLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Guest Expert Label");
             }
         }
 
-        public static string ExpertLabel {
-            get {
+        public static string ExpertLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Expert Label");
             }
         }
 
-        public static string WebinarLabel {
-            get {
+        public static string WebinarLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Webinar Label");
             }
         }
 
-        public static string ChatLabel {
-            get {
+        public static string ChatLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Chat Label");
             }
         }
 
-        public static string DaysAgoLabel {
-            get {
+        public static string DaysAgoLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Days ago Label");
             }
         }
 
-        public static string SeeArchiveLabel {
-            get {
+        public static string SeeArchiveLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "See Archive Label");
             }
         }
 
-        public static string OfficeHoursWithLabel {
-            get {
+        public static string OfficeHoursWithLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Office hours with Label");
             }
         }
 
-        public static string SeeHerOfficeHoursLabel {
-            get {
+        public static string SeeHerOfficeHoursLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "See her office hours Label");
             }
 
         }
 
-        public static string MeetLabel {
-            get {
+        public static string MeetLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Meet Label");
             }
 
         }
 
-        public static string OnlineOfficeHours {
-            get {
+        public static string OnlineOfficeHours
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Online Office Hours:");
             }
         }
 
-        public static string ShowMoreLabel {
-            get {
+        public static string ShowMoreLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Show More");
             }
         }
 
-       public static string CloseTranscriptLabel {
-            get {
+        public static string CloseTranscriptLabel
+        {
+            get
+            {
                 return Translate.TextByDomain(PosesDictionary, "Close Transcript Label");
             }
         }
 
-       public static string SelectBehaviorLabel {
-           get {
+        public static string SelectBehaviorLabel
+        {
+            get
+            {
                return Translate.TextByDomain(PosesDictionary, "Select Behavior Label");
            }
        }
 
-       public static string SelectGradeLabel {
-           get {
+        public static string SelectGradeLabel
+        {
+            get
+            {
                return Translate.TextByDomain(PosesDictionary, "Select Grade Label");
            }
        }
@@ -1346,7 +1387,7 @@ namespace UnderstoodDotOrg.Common
 
        public static string ViewProfileLink1 { get { return Translate.TextByDomain(PosesDictionary, "View Profile Link1"); } }
        public static string EmptyGroupsListText { get { return Translate.TextByDomain(PosesDictionary, "Empty Groups Text"); } }
-       
+
        //Blog Labels
        public static string BackToAllBlogs { get { return Translate.TextByDomain(PosesDictionary, "Blog Back Link"); } }
        

@@ -16,18 +16,21 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         { 
             get 
             {
-                return Sitecore.Context.Database.GetItem(Sitecore.Context.Site.StartPath).GetChildren().FirstOrDefault(x => x.TemplateID.ToString() == MyAccountFolderItem.TemplateId);
+                return Sitecore.Context.Database.GetItem(Sitecore.Context.Site.StartPath)
+                    .GetChildren()
+                    .FirstOrDefault(x => x.TemplateID.ToString() == MyAccountFolderItem.TemplateId);
             } 
         }
 
         public static MyProfileStepOneItem GetMyProfileStepOnePage()
         {
-            if (MyAccountFolder != null)
+            if (MyAccountFolder == null)
             {
-                return MyAccountFolder.InnerItem.Children
-                    .FirstOrDefault(i => i.IsOfType(MyProfileStepOneItem.TemplateId));
+                return null;
             }
-            return null;
+
+            return MyAccountFolder.InnerItem.Children
+                    .FirstOrDefault(i => i.IsOfType(MyProfileStepOneItem.TemplateId));
         }
 
         public static string GetSignUpPage()
@@ -138,6 +141,26 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
             }
 
             return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == MyProfileStepFiveItem.TemplateId));
+        }
+
+        public static string GetInternationalUserDisclaimer()
+        {
+            if (MyAccountFolder == null)
+            {
+                return string.Empty;
+            }
+
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == InternationalUserPageItem.TemplateId));
+        }
+
+        public static string GetTermsAndConditions()
+        {
+            if (MyAccountFolder == null)
+            {
+                return string.Empty;
+            }
+
+            return LinkManager.GetItemUrl(MyAccountFolder.InnerItem.Children.FirstOrDefault(x => x.TemplateID.ToString() == TermsandConditionsItem.TemplateId));
         }
     }
 }
