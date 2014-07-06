@@ -11,6 +11,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 		{
             //OrFragment
             uxOr.Text = DictionaryConstants.OrFragment;
+            
+            //set link text
+            lnkSignIn.Text = DictionaryConstants.SignInButtonText;
+            lnkSignUp.Text = DictionaryConstants.SignUpButtonText;
+            
 		}
 
         protected void lnkSignUp_Click(object sender, EventArgs e)

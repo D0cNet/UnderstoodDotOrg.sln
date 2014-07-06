@@ -306,7 +306,7 @@ namespace UnderstoodDotOrg.Framework.UI
             this.setCookie(Constants.Cookies.IsInternationalUser, bool.TrueString);
         }
 
-        protected string GetIPAddress()
+        public string GetIPAddress()
         {
             System.Web.HttpContext context = System.Web.HttpContext.Current;
             string ipAddress = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
@@ -318,6 +318,11 @@ namespace UnderstoodDotOrg.Framework.UI
                 {
                     return addresses[0];
                 }
+            }
+
+            if (!string.IsNullOrEmpty(Request.QueryString["ip"]))
+            {
+                return Request.QueryString["ip"];
             }
 
             return context.Request.ServerVariables["REMOTE_ADDR"];

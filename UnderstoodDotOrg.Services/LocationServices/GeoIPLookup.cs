@@ -17,7 +17,7 @@ namespace UnderstoodDotOrg.Services.LocationServices
             //shortcut for local
             if (ClientIP == "127.0.0.1")
             {
-                return "UK";
+                return "US";
             }
 
             // future licensed webservice call
