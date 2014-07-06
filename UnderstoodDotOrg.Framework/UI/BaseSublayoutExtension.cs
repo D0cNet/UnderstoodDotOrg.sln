@@ -83,14 +83,13 @@ namespace UnderstoodDotOrg.Framework.UI
                     break;
             }
 
+            //everything's fine, redirect to page if it was passed
+            page.Page.Session[Constants.SessionPreviousUrl] = null;
 
             if (!String.IsNullOrEmpty(UrlToGoto))
             {
-                //Reset the session reference
-                page.Page.Session[Constants.SessionPreviousUrl] = null;
                 page.Page.Response.Redirect(UrlToGoto);
             }
-
         }
 
         /// <summary>
