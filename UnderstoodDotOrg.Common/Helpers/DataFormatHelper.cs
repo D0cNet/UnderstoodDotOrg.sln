@@ -101,5 +101,30 @@ namespace UnderstoodDotOrg.Common.Helpers
              }
 
          }
+         
+         /// <summary>
+         /// 
+         /// </summary>
+         /// <param name="index"></param>
+         /// <returns></returns>
+         public static string getLetter(int index)
+         {
+             if (Enum.IsDefined(typeof(Letters), index))
+             {
+                 return ((Letters)index).ToString();
+             }
+
+             return string.Empty;
+         }
+
+         enum Letters
+         {
+             a = 0,
+             b = 1,
+             c = 2,
+             d = 3,
+             e = 4,
+             f = 5
+         }
     }
 }
