@@ -28,14 +28,26 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             try
             {
                 var email = txtEmailAddress.Text;
-                var membershipManager = new MembershipManager();
-                var member = membershipManager.GetMember(email);
+                Member member;
+  
+                try
+                {
+                    // verify email exists
+                    MembershipManager membershipManager = new MembershipManager();
+                    member = membershipManager.GetMember(email);
+                }
+                catch (Exception ex)
+                {
+                                       
+                    litErrorMessage.Text = DictionaryConstants.EmailInvalidUser;
+                    member = null;
+                }
+
                 if (member != null)
                 {
-                    // TODO: replace with constant
-                    var passwordReset = Sitecore.Context.Database.GetItem("{328F5121-EFF8-441B-AFB6-A3DF41F7BFA4}");
+                                        
+                    var passwordReset = Sitecore.Context.Database.GetItem(Constants.TemplateIDs.ForgotPasswordPage);
                     var link = string.Format(Request.Url.Host + "{0}?guid={1}", passwordReset.GetUrl(), member.MemberId.ToString());
-
 					
                     BaseReply reply = ExactTargetService.InvokeEM22ForgotPassword(new InvokeEM22ForgotPasswordRequest { PreferredLanguage = member.PreferredLanguage, PasswordResetLink = link, ToEmail = email });
 

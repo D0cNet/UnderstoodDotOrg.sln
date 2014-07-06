@@ -729,6 +729,15 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "My child struggles");
             }
         }
+
+        public static string EmailInvalidUser
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Invalid User Email");
+            }
+        }
+
         public static string EmailException
         {
             get

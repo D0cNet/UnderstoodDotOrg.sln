@@ -56,6 +56,13 @@ namespace UnderstoodDotOrg.Common
         public static readonly string SALESFORCE_SERVICE_URL = "SalesforceServiceURL";
         #endregion
 
+        #region Exact Target
+        public static readonly string EXACT_TARGET_USERNAME = "ExactTargetUsername";
+        public static readonly string EXACT_TARGET_PASSWORD = "ExactTargetPassword";
+        public static readonly string EXACT_TARGET_TOKEN = "ExactTargetToken";
+        public static readonly string EXACT_TARGET_SERVICE_URL = "ExactTargetServiceURL";
+        #endregion
+
 
         #region Newsletter Subscriptions
 
@@ -762,12 +769,20 @@ namespace UnderstoodDotOrg.Common
             public static string ContentServiceEndpoint = "ContentServiceEndpoint";
             public static string BehaviorToolSuggestionEmail = "BehaviorToolSuggestionEmail";
 
-
+            #region Salesforce
             private static string SalesforceUsername = ConfigurationManager.AppSettings[Constants.Settings.SalesforceUsername];
             private static string SalesforcePassword = ConfigurationManager.AppSettings[Constants.Settings.SalesforcePassword];
             private static string SalesforceToken = ConfigurationManager.AppSettings[Constants.Settings.SalesforceToken];
             private static string SalesforceServiceURL = ConfigurationManager.AppSettings[Constants.Settings.SalesforceServiceURL];
+            #endregion
 
+            #region Exact Target
+            //private static string EmailReminderFromAddress = ConfigurationManager.AppSettings[Constants.Settings.EmailReminder.FromAddress];
+            private static string ExactTargetUserName = ConfigurationManager.AppSettings[Constants.Settings.ExactTargetUserName];
+            private static string ExactTargetPassword = ConfigurationManager.AppSettings[Constants.Settings.ExactTargetPassword];
+            private static string ExactTargetCustomerKey = ConfigurationManager.AppSettings[Constants.Settings.ExactTargetCustomerKey];
+            private static string ExactTargetServiceURL = ConfigurationManager.AppSettings[Constants.Settings.ExactTargetServiceURL];
+            #endregion
 
 
         }
@@ -791,6 +806,8 @@ namespace UnderstoodDotOrg.Common
             public static string TextTipPage { get { return "{F70B81A5-1FD4-4345-BBDE-BE68F255170D}"; } }
             public static string WebinarEventPage { get { return "{173A599B-2836-4A4B-B780-834DD515C701}"; } }
             public static string ChatEventPage { get { return "{F5D0D610-9E5B-4C28-B9D3-F6ADD8412E45}"; } }
+
+            public static string ForgotPasswordPage { get { return "{328F5121-EFF8-441B-AFB6-A3DF41F7BFA4}"; } }
 
             public static Dictionary<string, string> Dictionary =
 	            new Dictionary<string, string>()
