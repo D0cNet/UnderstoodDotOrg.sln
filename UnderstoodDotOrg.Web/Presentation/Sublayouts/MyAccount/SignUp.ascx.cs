@@ -135,9 +135,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                 this.CurrentMember = this.registeringUser;
                 this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
-                var termsAndConditionsPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetTermsandConditionsPage();
 
-                Response.Redirect(termsAndConditionsPage.GetUrl());
+                Response.Redirect(MyAccountFolderItem.GetTermsAndConditions());
             }
             else
             {
