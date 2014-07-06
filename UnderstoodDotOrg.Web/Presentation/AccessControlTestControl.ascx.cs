@@ -30,6 +30,9 @@ namespace UnderstoodDotOrg.Web.Presentation
             {
                 uxLoggedInState.Text = bool.FalseString;
             }
+
+            uxIPAddress.Text = this.GetIPAddress();
+            uxCountry.Text = UnderstoodDotOrg.Services.LocationServices.GeoIPLookup.GetCountry(this.GetIPAddress());
         }
 
         protected void btnLoggedIn_Click(object sender, EventArgs e)

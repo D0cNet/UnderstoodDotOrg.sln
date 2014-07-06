@@ -23,3 +23,12 @@
     <asp:Button ID="btnInternational" runat="server" OnClick="btnInternational_Click" Text="Check International" />
     <asp:Button ID="btnTermsAndConditions" runat="server" OnClick="btnTermsAndConditions_Click" Text="Check T&Cs" />
 </div>
+
+<div>
+    IP address: 
+    <asp:Literal ID="uxIPAddress" runat="server"></asp:Literal>
+</div>
+<div>
+    GeoIP thinks: 
+    <asp:Label ID="uxCountry" runat="server"></asp:Label>
+</div>
