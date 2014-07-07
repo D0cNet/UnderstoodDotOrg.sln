@@ -19,6 +19,7 @@ using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Services.TelligentService;
 using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.ReviewTabs
 {
@@ -165,13 +166,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
         protected void rptSkills_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            AssistiveToolsSkillItem skill = e.Item.DataItem as AssistiveToolsSkillItem;
+            MetadataItem issue = e.Item.DataItem as MetadataItem;
 
-            if (skill != null)
+            if (issue != null)
             {
                 Literal litSkill = e.FindControlAs<Literal>("litSkill");
 
-                litSkill.Text = skill.DisplayName;
+                litSkill.Text = issue.ContentTitle;
             }
         }
 
@@ -208,7 +209,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
                         foreach (string s in IDs)
                         {
-                            review.UserReviewIssues.Add(new AssistiveToolsIssueItem(Sitecore.Context.Database.GetItem(new Guid(s))));
+                            review.UserReviewIssues.Add(new MetadataItem(Sitecore.Context.Database.GetItem(new Guid(s))));
                         }
                     }
 

@@ -5,6 +5,7 @@ using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 
 namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
@@ -32,11 +33,11 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
         public string UserScreenName { get; set; }
         public string IThinkItIs { get; set; }
 
-        public virtual List<AssistiveToolsIssueItem> UserReviewIssues { get; set; }
+        public virtual List<MetadataItem> UserReviewIssues { get; set; }
 
         public CSMUserReview()
         {
-            UserReviewIssues = new List<AssistiveToolsIssueItem>();
+            UserReviewIssues = new List<MetadataItem>();
         }
     }
 }

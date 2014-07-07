@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 
@@ -66,9 +67,9 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
             return reviews;
         }
 
-        public static List<AssistiveToolsIssueItem> GetSkills(Guid reviewId)
+        public static List<MetadataItem> GetSkills(Guid reviewId)
         {
-            List<AssistiveToolsIssueItem> skills = new List<AssistiveToolsIssueItem>();
+            List<MetadataItem> skills = new List<MetadataItem>();
             string sql = " SELECT RowId, " +
                                 " ReviewId, " +
                                 " SkillId " +
@@ -87,7 +88,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                         {
                             while (reader.Read())
                             {
-                                AssistiveToolsIssueItem skill = Sitecore.Context.Database.GetItem(reader.GetGuid(2).ToString());
+                                MetadataItem skill = Sitecore.Context.Database.GetItem(reader.GetGuid(2).ToString());
                                 skills.Add(skill);
                             }
                         }
@@ -164,9 +165,9 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
             return success;
         }
 
-        private static void InsertAllIssues(List<AssistiveToolsIssueItem> skillList, Guid reviewId)
+        private static void InsertAllIssues(List<MetadataItem> skillList, Guid reviewId)
         {
-            foreach (AssistiveToolsIssueItem skill in skillList)
+            foreach (MetadataItem skill in skillList)
             {
                 InsertReviewSkill(skill.ID.ToGuid(), reviewId);
             }
