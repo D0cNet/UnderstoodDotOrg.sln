@@ -52,7 +52,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                                 review.LastModified = reader.GetDateTime(7);
                                 review.TelligentCommentId = reader.GetGuid(8);
                                 review.ReviewTitle = reader.GetString(9);
-                                review.UserReviewSkills = GetSkills(review.ReviewId); 
+                                review.UserReviewIssues = GetSkills(review.ReviewId); 
                                 reviews.Add(review);
                             }
                         }
@@ -66,9 +66,9 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
             return reviews;
         }
 
-        public static List<AssistiveToolsSkillItem> GetSkills(Guid reviewId)
+        public static List<AssistiveToolsIssueItem> GetSkills(Guid reviewId)
         {
-            List<AssistiveToolsSkillItem> skills = new List<AssistiveToolsSkillItem>();
+            List<AssistiveToolsIssueItem> skills = new List<AssistiveToolsIssueItem>();
             string sql = " SELECT RowId, " +
                                 " ReviewId, " +
                                 " SkillId " +
@@ -87,7 +87,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
                         {
                             while (reader.Read())
                             {
-                                AssistiveToolsSkillItem skill = Sitecore.Context.Database.GetItem(reader.GetGuid(2).ToString());
+                                AssistiveToolsIssueItem skill = Sitecore.Context.Database.GetItem(reader.GetGuid(2).ToString());
                                 skills.Add(skill);
                             }
                         }
@@ -152,7 +152,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
 
                     if (success)
                     {
-                        InsertAllSkills(review.UserReviewSkills, review.ReviewId);
+                        InsertAllIssues(review.UserReviewIssues, review.ReviewId);
                     }
                 }
             }
@@ -164,9 +164,9 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
             return success;
         }
 
-        private static void InsertAllSkills(List<AssistiveToolsSkillItem> skillList, Guid reviewId)
+        private static void InsertAllIssues(List<AssistiveToolsIssueItem> skillList, Guid reviewId)
         {
-            foreach (AssistiveToolsSkillItem skill in skillList)
+            foreach (AssistiveToolsIssueItem skill in skillList)
             {
                 InsertReviewSkill(skill.ID.ToGuid(), reviewId);
             }

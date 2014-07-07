@@ -204,7 +204,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
 
                 if (mappedReview["issues"] != null && Review.Issues != null)
                 {
-                    mappedReview["issues"] = CommonSenseImportHelper.MatchCSV(Review.Issues, "{5CDC7D81-19CA-4CF6-8C58-A4D013823A05}").Trim();
+                    mappedReview["issues"] = CommonSenseImportHelper.MatchCSVIssues(Review.Issues, "{5CDC7D81-19CA-4CF6-8C58-A4D013823A05}").Trim();
                 }
 
                 if (mappedReview["genre"] != null && Review.Genres != null)

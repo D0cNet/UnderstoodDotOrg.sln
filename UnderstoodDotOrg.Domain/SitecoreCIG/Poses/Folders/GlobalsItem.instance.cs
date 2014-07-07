@@ -69,6 +69,13 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
                 .Children.FirstOrDefault(i => i.IsOfType(AssistiveToolsSkillFolderItem.TemplateId));
         }
 
+        public AssistiveToolsSkillFolderItem GetIssuesFolder()
+        {
+            return InnerItem.Children.FirstOrDefault(i => i.ID.ToString() == "{7E804EB1-88F4-44B9-937A-5D84FF892970}")
+                .Children.FirstOrDefault(i => i.ID.ToString() == "{493EB983-FDE9-46E4-85C8-EE45EABFE91B}")
+                .Children.FirstOrDefault(i => i.IsOfType(AssistiveToolsIssueFolderItem.TemplateId));
+        }
+
         /// <summary>
         /// Get Widget folder Item.
         /// </summary>

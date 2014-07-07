@@ -38,9 +38,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 BindReviews();
             }
 
-            AssistiveToolsSkillFolderItem skillsFolder = MainsectionItem.GetGlobals().GetSkillsFolder();
-            rptSkillsChecklist.DataSource = skillsFolder.InnerItem.Children;
-            rptSkillsChecklist.DataBind();
+            AssistiveToolsSkillFolderItem issuesFolder = MainsectionItem.GetGlobals().GetIssuesFolder();
+            rptIssuesChecklist.DataSource = issuesFolder.InnerItem.Children;
+            rptIssuesChecklist.DataBind();
 
             litAverageRating.Text = GetRatingHTML(Int32.Parse(CSMUserReviewExtensions.GetAverageRating(pageItem.ID.ToGuid())));
         }
@@ -153,9 +153,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 if (litTitle != null)
                     litTitle.Text = review.ReviewTitle;
 
-                if (review.UserReviewSkills.Count > 0)
+                if (review.UserReviewIssues.Count > 0)
                 {
-                    rptSkills.DataSource = review.UserReviewSkills;
+                    rptSkills.DataSource = review.UserReviewIssues;
                     rptSkills.DataBind();
                 }
 
@@ -208,7 +208,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
                         foreach (string s in IDs)
                         {
-                            review.UserReviewSkills.Add(new AssistiveToolsSkillItem(Sitecore.Context.Database.GetItem(new Guid(s))));
+                            review.UserReviewIssues.Add(new AssistiveToolsIssueItem(Sitecore.Context.Database.GetItem(new Guid(s))));
                         }
                     }
 

@@ -273,6 +273,68 @@ namespace UnderstoodDotOrg.Domain.Importer
             return string.Join("|", ret.ToArray());
         }
 
+
+        public static string MatchCSVIssues(string Keys, string folder)
+        {
+            List<string> ret = new List<string>();
+
+            foreach (string s in Keys.Split(','))
+            {
+                Item folderItem = Sitecore.Context.Database.GetItem(folder);
+                ChildList children = folderItem.Children;
+                string strippedString = removePunctuation(s);
+                string MappedValue = MapCSMIssue(strippedString);
+                foreach (Item i in children)
+                {
+                    if (i.Fields["Content Title"].ToString().ToLower().Trim() == MappedValue.ToLower())
+                    {
+                        ret.Add(i.ID.ToString());
+                        break;
+                    }
+                }
+            }
+
+            // Sitecore loves it's pipe-deliminated lists...
+            return string.Join("|", ret.ToArray());
+        }
+
+        private static string MapCSMIssue(string strippedString)
+        {
+            switch (strippedString.ToLower())
+            {
+                case "adhd":
+                    return "Hyperactivity/Impulsivity";
+                case "add":
+                    return "Attention/Staying Focused";
+                case "dyslexia":
+                    return "Reading";
+                case "dysgraphia":
+                    return "Writing";
+                case "dyscalculia":
+                    return "Math";
+                case "expressive language disorder":
+                    return "Spoken Language";
+                case "receptive language disorder":
+                    return "Listening Comprehension";
+                case "sensory processing issue":
+                    return "Motor Skills";
+                case "auditory processing issue":
+                    return "Listening Comprehension";
+                case "dyspraxia":
+                    return "Motor Skills";
+                case "social pragmatic language disorder":
+                    return "Social Skills";
+                case "executive functioning issue":
+                    return "Executive Funtcion";
+                case "nonverbal learning issues":
+                    return "Reading";
+                case "visual processing issue":
+                    return "Reading";
+                default:
+                    return "";
+            }
+        }
+
         /// <summary>
         /// Adds a single instace of ReviewImage to Sitecore. Inserts into the container defined in Settings.ImagePath
         /// </summary>
@@ -320,7 +382,7 @@ namespace UnderstoodDotOrg.Domain.Importer
                     options.Database = Sitecore.Configuration.Factory.GetDatabase("master");
                     options.Language = Sitecore.Globalization.Language.Parse(Sitecore.Configuration.Settings.DefaultLanguage);
                     options.Versioned = false;
-                    Item mediaFolder = Sitecore.Context.Database.GetItem("{42DFBB81-6182-4EB4-BC28-D6EF535D84F3}");
+                    Item mediaFolder = Sitecore.Context.Database.GetItem("{7B9F34AA-10FA-49B5-A6C3-DC8A440D1695}");
                     options.Destination = string.Format("{0}/{1}", mediaFolder.Paths.FullPath, Name);
                     options.FileBased = Sitecore.Configuration.Settings.Media.UploadAsFiles;
 
@@ -371,11 +433,11 @@ namespace UnderstoodDotOrg.Domain.Importer
                 PublishItem(newItem, master);
                 PublishItem(newItem, web);
 
-                if (container.TemplateID.ToString().ToLower() == AssistiveToolsSkillFolderItem.TemplateId.ToLower())
-                {
-                    if (!CSMUserReviewExtensions.SkillExists(newItem.ID.ToGuid()))
-                        CSMUserReviewExtensions.InsertSkill(newItem.ID.ToGuid());
-                }
+                //if (container.TemplateID.ToString().ToLower() == AssistiveToolsSkillFolderItem.TemplateId.ToLower())
+                //{
+                //    if (!CSMUserReviewExtensions.SkillExists(newItem.ID.ToGuid()))
+                //        CSMUserReviewExtensions.InsertSkill(newItem.ID.ToGuid());
+                //}
 
                 return newItem.ID.ToString();
             }

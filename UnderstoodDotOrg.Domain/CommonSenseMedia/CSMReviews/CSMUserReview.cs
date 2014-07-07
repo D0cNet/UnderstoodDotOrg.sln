@@ -32,11 +32,11 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
         public string UserScreenName { get; set; }
         public string IThinkItIs { get; set; }
 
-        public virtual List<AssistiveToolsSkillItem> UserReviewSkills { get; set; }
+        public virtual List<AssistiveToolsIssueItem> UserReviewIssues { get; set; }
 
         public CSMUserReview()
         {
-            UserReviewSkills = new List<AssistiveToolsSkillItem>();
+            UserReviewIssues = new List<AssistiveToolsIssueItem>();
         }
     }
 }

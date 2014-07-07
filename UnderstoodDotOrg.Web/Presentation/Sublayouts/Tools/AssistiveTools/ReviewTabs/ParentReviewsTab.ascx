@@ -176,7 +176,7 @@
                 <div class="it-is-good-for">
                     <fieldset>
                         <legend>It is good for</legend>
-                        <asp:Repeater ID="rptSkillsChecklist" runat="server" OnItemDataBound="rptSkillsChecklist_ItemDataBound">
+                        <asp:Repeater ID="rptIssuesChecklist" runat="server" OnItemDataBound="rptSkillsChecklist_ItemDataBound">
                             <HeaderTemplate>
                                 <ul>
                             </HeaderTemplate>
