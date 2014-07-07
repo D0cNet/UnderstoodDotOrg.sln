@@ -11,10 +11,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 {
     public partial class ArticleRecommendationIcons : BaseSublayout //System.Web.UI.UserControl
     {
-        public List<bool> matchingChildren { get; set; }
+        public List<Guid> MatchingChildrenIds { get; set; }
         private string child = @"<i class=""child-{1}"" title=""{0}""></i>";
-
-        //testing with: matchingChildren = new List<bool>() { true, false, true, false, false, true };
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +20,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
             {
                 for (int i = 0; i < this.CurrentMember.Children.Count(); i++)
                 {
-                    if (matchingChildren[i])
+                    if (MatchingChildrenIds.Contains(this.CurrentMember.Children.ElementAt(i).ChildId))
                     {
                         var c = this.CurrentMember.Children.ElementAt(i);
 

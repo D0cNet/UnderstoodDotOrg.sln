@@ -87,7 +87,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
                 var icons = e.FindControlAs<UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation.ArticleRecommendationIcons>("ArticleRecommendationIcons");
                 if (icons != null)
                 {
-                    icons.matchingChildren = new List<bool>() { true, false, true, false, false, true };
+                    icons.MatchingChildrenIds = item.GetMatchingChildrenIds(CurrentMember);
                 }
 
                 // Handle first image

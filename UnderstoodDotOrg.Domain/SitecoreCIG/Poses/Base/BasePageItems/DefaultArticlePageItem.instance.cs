@@ -17,6 +17,39 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
     public partial class DefaultArticlePageItem 
     {
         /// <summary>
+        /// Returns matching children to grades or issues
+        /// </summary>
+        /// <returns></returns>
+        public List<Guid> GetMatchingChildrenIds(Domain.Membership.Member member)
+        {
+            var matches = new List<Guid>();
+            var allGrades = Sitecore.Context.Database.GetItem(Constants.ArticleTags.AllChildGrades);
+
+            if (member != null && member.Children.Count > 0) 
+            {
+                foreach(var child in member.Children) 
+                {
+                    Item grade = null;
+                    var childGrade = child.Grades.FirstOrDefault();
+                    if (childGrade != null)
+                    {
+                        grade = Sitecore.Context.Database.GetItem(childGrade.Key);
+                    }
+
+                    // Unmapped or All grades is considered a match in addition to child's grade
+                    if (!this.ChildGrades.ListItems.Any()
+                        || (allGrades != null && ChildGrades.ListItems.Contains(allGrades))
+                        || (grade != null && ChildGrades.ListItems.Contains(grade)))
+                    {
+                        matches.Add(child.ChildId);
+                    }
+                }
+            }
+
+            return matches;
+        }
+
+        /// <summary>
         /// Get Content Thumbnail URL, with fallback to Featured Image
         /// </summary>
         /// <param name="maxWidth"></param>
