@@ -26,6 +26,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ArticleListings
                 frPageTitle.Item = article;
                 imgThumbnail.ImageUrl = article.GetArticleThumbnailUrl(190, 107);
                 hlThumbnail.NavigateUrl = hlTitle.NavigateUrl = article.GetUrl();
+
+                articleRecommendationIcons.HasMatchingParentInterest = article.HasMatchingParentInterest(CurrentMember);
+                articleRecommendationIcons.MatchingChildrenIds = article.GetMatchingChildrenIds(CurrentMember);
             }
         }
     }
