@@ -81,7 +81,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             litType.Text = item.Type;
             HyperLink hypReplyCount = (HyperLink)e.Item.FindControl("hypReplyCount");
             hypReplyCount.NavigateUrl = item.Url;
-            hypReplyCount.Text = item.ReplyCount;
+            hypReplyCount.Text = "<span>" + item.ReplyCount + "</span>";
 
             HtmlButton lbUnSave = (HtmlButton)e.Item.FindControl("lbUnSave");
             lbUnSave.ServerClick += new EventHandler(lbUnsave_Click);
