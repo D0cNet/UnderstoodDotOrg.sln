@@ -1,0 +1,7 @@
+1. make a backup first.
+2. copy paste AlterTable_Children.sql into sql query analyzer
+3. run query
+4. validate user through the website
+5. copy paste AlterTable_Members.sql into sql query analyzer
+6. run query
+7. validate that the chilfdren are still working propely
