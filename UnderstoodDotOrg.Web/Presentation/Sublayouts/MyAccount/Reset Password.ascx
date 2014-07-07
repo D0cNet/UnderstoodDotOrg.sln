@@ -7,23 +7,29 @@
         <div class="col col-12 centered">
             <header>
                 <h1><%--Reset Your Password--%>
-                    <sc:Text id="PageHeading" runat="server" Field="Page Title"></sc:Text>
+                    <sc:Text ID="PageHeading" runat="server" Field="Page Title"></sc:Text>
                 </h1>
             </header>
 
             <%--<p>Please create a new password. Understood passwords must have 6 characters. You can use letters and/or numbers.</p>--%>
-            <sc:Text id="description" runat="server" Field="Body Content"></sc:Text>
+            <sc:Text ID="description" runat="server" Field="Body Content"></sc:Text>
 
             <label>
                 <span class="visuallyhidden">Enter new password</span>
                 <%--<input type="text" placeholder="Enter new password" aria-required="true">--%>
                 <asp:TextBox ID="uxPassword" runat="server" TextMode="Password" aria-required="true"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="valPassword" runat="server" ControlToValidate="uxPassword" CssClass="validationerror"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="valRegPassword" runat="server" ControlToValidate="uxPassword" CssClass="validationerror"></asp:RegularExpressionValidator>
+                <asp:CompareValidator ID="valCompPassword" runat="server" ControlToValidate="uxPassword" ControlToCompare="uxPasswordConfirm" CssClass="validationerror"></asp:CompareValidator>
             </label>
 
             <label>
                 <span class="visuallyhidden">Re-enter new password</span>
                 <%--<input type="text" placeholder="Re-enter new password" aria-required="true">--%>
                 <asp:TextBox ID="uxPasswordConfirm" runat="server" TextMode="Password" aria-required="true"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="valPasswordConfirm" runat="server" ControlToValidate="uxPasswordConfirm" CssClass="validationerror"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="valRegPasswordConfirm" runat="server" ControlToValidate="uxPasswordConfirm" CssClass="validationerror"></asp:RegularExpressionValidator>
+                <asp:CompareValidator ID="valCompPasswordConfirm" runat="server" ControlToValidate="uxPasswordConfirm" ControlToCompare="uxPassword" CssClass="validationerror"></asp:CompareValidator>
             </label>
 
             <%--<button class="button">Save</button>--%>

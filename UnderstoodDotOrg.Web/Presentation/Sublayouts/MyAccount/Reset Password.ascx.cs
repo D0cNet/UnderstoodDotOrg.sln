@@ -9,11 +9,29 @@
         protected void Page_Load(object sender, EventArgs e)
         {
             // Put user code to initialize the page here
-            var guid = Request.QueryString["guid"].ToString();
+            var guid = Guid.Empty.ToString();
+
+            if (!string.IsNullOrEmpty(Request.QueryString["guid"]))
+            {
+                guid = Request.QueryString["guid"].ToString();
+            }
 
             uxPassword.Attributes["placeholder"] = DictionaryConstants.EnterNewPasswordWatermark;
             uxPasswordConfirm.Attributes["placeholder"] = DictionaryConstants.ReEnterNewPasswordWatermark;
             uxSave.Text = DictionaryConstants.SubmitButtonText;
+
+            valPassword.ErrorMessage = valPasswordConfirm.ErrorMessage = DictionaryConstants.PasswordErrorMessage;
+            valRegPassword.ValidationExpression = valRegPasswordConfirm.ValidationExpression = Constants.Validators.Password;
+            //TODO: move to dictionary
+            valRegPassword.ErrorMessage = valRegPasswordConfirm.ErrorMessage = DictionaryConstants.PasswordErrorMessage;
+            //TODO: move to dictionary
+            valCompPassword.ErrorMessage = valCompPasswordConfirm.ErrorMessage = "It looks like your passwords don't match";
+            valPassword.Display =
+                valRegPassword.Display =
+                valCompPassword.Display =
+                valPasswordConfirm.Display =
+                valRegPasswordConfirm.Display =
+                valCompPasswordConfirm.Display = System.Web.UI.WebControls.ValidatorDisplay.Dynamic;
 
             // TODO: fix hardcoded text
             if (string.IsNullOrEmpty(guid))
@@ -31,7 +49,13 @@
 
         protected void uxSave_Click(object sender, EventArgs e)
         {
-            var guid = Request.QueryString["guid"].ToString();
+            var guid = Guid.Empty.ToString();
+
+            if (!string.IsNullOrEmpty(Request.QueryString["guid"]))
+            {
+                guid = Request.QueryString["guid"].ToString();
+            }
+
             string password = string.Empty;
 
             // TODO: Add validation that passwords match
