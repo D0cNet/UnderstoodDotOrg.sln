@@ -9,15 +9,18 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
 {
     public class ForumModel
     {
-        public ForumModel(ForumItem forumItem)
+        Func<string,List<ThreadModel>> readThreadFunc;
+
+        public ForumModel(ForumItem forumItem,Func<string,List<ThreadModel>> readThreads)
         {
             ForumID = forumItem.ForumID.Text;
             GroupID = forumItem.GroupID.Text;
             Description = forumItem.Description.Text;
             Name = forumItem.InnerItem.Name;// Name.Text;
+            readThreadFunc = readThreads;
         }
 
-        public ForumModel(System.Xml.XmlNode childNode)
+        public ForumModel(System.Xml.XmlNode childNode, Func<string, List<ThreadModel>> readThreads)
         {
             // TODO: Complete member initialization
            // this.childNode = childNode;
@@ -25,7 +28,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             Name = childNode.SelectSingleNode("Name").InnerText;
            // Description = childNode.SelectSingleNode("Description").ToString();
             GroupID = childNode.SelectSingleNode("Group/Id").InnerText;
-
+            readThreadFunc = readThreads;
         }
 
         public string ForumID { get; set; }
@@ -53,7 +56,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             {
                 if (thModel == null)
                 {
-                    thModel = CommunityHelper.ReadThreadList(ForumID);
+                    thModel = readThreadFunc(ForumID);  //CommunityHelper.ReadThreadList(ForumID);
                    
                 }
                 return thModel;

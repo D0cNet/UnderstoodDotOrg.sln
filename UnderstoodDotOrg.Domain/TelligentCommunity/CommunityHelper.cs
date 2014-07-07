@@ -942,26 +942,26 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return replies;
         }
-        public static List<ThreadModel> ReadThreadList(string forumID)
-        {
-            List<ThreadModel> th = new List<ThreadModel>();
-            try
-            {
-                var node = ReadThreads(forumID);
-                foreach (XmlNode childNode in node)
-                {
-                    ThreadModel t = new ThreadModel(childNode);
-                    th.Add(t);
-                    // Thread.Sleep(3000);
-                }
-            }
-            catch (Exception ex)
-            {
-                //Bth = null;
-                Sitecore.Diagnostics.Error.LogError(ex.Message);
-            }
-            return th;
-        }
+        //public static List<ThreadModel> ReadThreadList(string forumID)
+        //{
+        //    List<ThreadModel> th = new List<ThreadModel>();
+        //    try
+        //    {
+        //        var node = ReadThreads(forumID);
+        //        foreach (XmlNode childNode in node)
+        //        {
+        //            ThreadModel t = new ThreadModel(childNode);
+        //            th.Add(t);
+        //            // Thread.Sleep(3000);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        //Bth = null;
+        //        Sitecore.Diagnostics.Error.LogError(ex.Message);
+        //    }
+        //    return th;
+        //}
         public static string ReadUserId(string username)
         {
             string Userid = null;
@@ -997,24 +997,24 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
             return Userid;
         }
-        public static List<ForumModel> ReadForumsList(string groupID)
-        {
-            List<ForumModel> fm = new List<ForumModel>();
-            try
-            {
-                var node = ReadForums(groupID);
-                foreach (XmlNode childNode in node)
-                {
-                    ForumModel f = new ForumModel(childNode);
-                    fm.Add(f);
-                }
-            }
-            catch (Exception ex)
-            {
-                fm = null;
-            }
-            return fm;
-        }
+       //public static List<ForumModel> ReadForumsList(string groupID)
+       // {
+       //     List<ForumModel> fm = new List<ForumModel>();
+       //     try
+       //     {
+       //         var node = ReadForums(groupID);
+       //         foreach (XmlNode childNode in node)
+       //         {
+       //             ForumModel f = new ForumModel(childNode);
+       //             fm.Add(f);
+       //         }
+       //     }
+       //     catch (Exception ex)
+       //     {
+       //         fm = null;
+       //     }
+       //     return fm;
+       // }
         public static bool IsUserInGroup(string userScreenName, string groupID)
         {
             bool val = false;

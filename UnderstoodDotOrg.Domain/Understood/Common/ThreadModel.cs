@@ -10,21 +10,35 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
 {
    public class ThreadModel
     {
+       Func<string, string> formatDateFunc;
+       Func<string, string> formatBodyFunc;
+       Func<string,string,List<ReplyModel>> readReplyfunc;
 
-
-       public ThreadModel(XmlNode childNode){
-           
-              
-               Initialize(childNode);
-         
-        }
-       public  ThreadModel(string forumID,string threadID)
+       public ThreadModel(XmlNode childNode, Func<string, string> dateformat, Func<string, string> formatBody, Func<string, string, List<ReplyModel>> readReplies)
        {
-          
-           XmlNode node = CommunityHelper.ReadThread(forumID, threadID);
-           Initialize(node);
 
+           formatDateFunc = dateformat;
+           formatBodyFunc = formatBody;
+           readReplyfunc = readReplies;
+           Initialize(childNode);
+
+       }
+       public ThreadModel()
+       {
+        
         }
+       //public ThreadModel(string forumID, string threadID, Func<string, string, XmlNode> fun = null)
+       //{
+       //    XmlNode node=null;
+       //    if (fun == null)
+       //        node = CommunityHelper.ReadThread(forumID, threadID);
+       //    else
+       //        node = fun(forumID, threadID); 
+
+       //    Initialize(node);
+
+       // }
+      
        public void Initialize(XmlNode childNode)
        {
            if (childNode != null)
@@ -35,14 +49,14 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                //this.childNode = childNode;
                Subject = childNode.SelectSingleNode("Subject").InnerText;
                ReplyCount = childNode.SelectSingleNode("ReplyCount").InnerText??"0";
-               LastPostTime = CommunityHelper.FormatDate(childNode.SelectSingleNode("LatestPostDate").InnerText);
+               LastPostTime = formatDateFunc(childNode.SelectSingleNode("LatestPostDate").InnerText);
                if ( !ReplyCount.Equals("0"))
                {
                    LastPostUser = Replies.OrderByDescending(x => x.Date).First().AuthorName;
                    LastPostBody = Replies.OrderByDescending(x => x.Date).First().Body;
                }
                StartedBy = childNode.SelectSingleNode("Author/Username").InnerText??"admin";
-               Snippet = CommunityHelper.FormatString100(childNode.SelectSingleNode("Body").InnerText);
+               Snippet = formatBodyFunc(childNode.SelectSingleNode("Body").InnerText);
                Body = childNode.SelectSingleNode("Body").InnerText;
            }
            else
@@ -67,7 +81,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
            {
                if (_replies == null)
                {
-                _replies =  CommunityHelper.ReadReplies(ForumID, ThreadID);
+                _replies =  readReplyfunc(ForumID, ThreadID);
                    return _replies;
                }else
                     return _replies;

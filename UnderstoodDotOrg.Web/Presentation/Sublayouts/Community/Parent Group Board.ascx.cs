@@ -12,12 +12,13 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.Understood.Common;
+using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Services.CommunityServices;
 using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
-    public partial class Parent_Group_Board : System.Web.UI.UserControl
+    public partial class Parent_Group_Board : BaseSublayout//System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,7 +33,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     Session["forumItem"] = frmItem;
                     if (frmItem != null)
                     {
-                        ForumModel frmModel = new ForumModel(frmItem);
+                        ForumModel frmModel = Forum.ForumModelFactory(frmItem);
 
                         litForumName.Text = frmModel.Name;
                         if (frmModel != null)
@@ -46,63 +47,69 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
-        {
-            if (Page.IsValid)
-            {
-                var frmItem = Session["forumItem"] as ForumItem;
-                Item threadItem = null;
-                if (frmItem != null)
-                {
-                    //Grab information from fields
-                    string subject = txtSubject.Text;
-                    string body = txtBody.Text;
-                    string frmId = frmItem.ForumID.Text;
+        //protected void btnSubmit_Click(object sender, EventArgs e)
+        //{
+        //    if (Page.IsValid)
+        //    {
+        //        if (IsUserLoggedIn)
+        //        {
+        //            if (!String.IsNullOrEmpty(CurrentMember.ScreenName))
+        //            {
+        //                var frmItem = Session["forumItem"] as ForumItem;
+        //                Item threadItem = null;
+        //                if (frmItem != null)
+        //                {
+        //                    //Grab information from fields
+        //                    string subject = txtSubject.Text;
+        //                    string body = txtBody.Text;
+        //                    string frmId = frmItem.ForumID.Text;
 
-                    try
-                    {
-                        //Create item in Telligent
-                        ThreadModel thModel = TelligentService.CreateForumThread(frmId, subject, body);
-                        if (thModel != null)
-                        {
-                            //Create item in sitecore with returned forumID and threadID
-                            threadItem = Discussion.CreateSitecoreForumThread(thModel, frmItem, Sitecore.Context.Language);
-                            if (threadItem!=null)
-                            {
-                                error_msg.Visible = false;
-                                ForumModel frmModel = new ForumModel(frmItem);
-
-
-                                if (frmModel != null)
-                                {
-                                    rptThread.DataSource = frmModel.Threads;
-                                    rptThread.DataBind();
-                                    txtSubject.Text = String.Empty;
-                                    txtBody.Text = String.Empty;
-                                }
-
-                            }
-                            else
-                            {
-                                error_msg.Text = "Failed to create discussion.";
-                                error_msg.Visible = true;
-                            }
+        //                    try
+        //                    {
+        //                        //Create item in Telligent
+        //                        ThreadModel thModel = TelligentService.CreateForumThread(CurrentMember.ScreenName,frmId, subject, body);
+        //                        if (thModel != null)
+        //                        {
+        //                            //Create item in sitecore with returned forumID and threadID
+        //                            threadItem = Discussion.CreateSitecoreForumThread(thModel, frmItem, Sitecore.Context.Language);
+        //                            if (threadItem != null)
+        //                            {
+        //                                error_msg.Visible = false;
+        //                                ForumModel frmModel = new ForumModel(frmItem);
 
 
-                        }
+        //                                if (frmModel != null)
+        //                                {
+        //                                    rptThread.DataSource = frmModel.Threads;
+        //                                    rptThread.DataBind();
+        //                                    txtSubject.Text = String.Empty;
+        //                                    txtBody.Text = String.Empty;
+        //                                }
+
+        //                            }
+        //                            else
+        //                            {
+        //                                error_msg.Text = "Failed to create discussion.";
+        //                                error_msg.Visible = true;
+        //                            }
 
 
-                    }
-                    catch (Exception ex)
-                    {
-                        Sitecore.Diagnostics.Error.LogError(ex.Message);
-                    }
-                }
-            }
-            else
-                modal_discussion.Visible = true;
+        //                        }
 
-        }
+
+        //                    }
+        //                    catch (Exception ex)
+        //                    {
+        //                        Sitecore.Diagnostics.Error.LogError(ex.Message);
+        //                    }
+        //                }
+        //            }
+        //            else
+        //                modal_discussion.Visible = true;
+
+        //        }
+        //    }
+        //}
 
         
 

@@ -44,7 +44,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                         string threadID = grpDItem.ThreadID.Text;
                         try
                         {
-                            ThreadModel thModel = new ThreadModel(forumID, threadID);
+                            ThreadModel thModel = UnderstoodDotOrg.Services.CommunityServices.Threads.ThreadModelFactory(forumID, threadID);
 
                             //Populate the initial Post
                             lblSubject.Text = thModel.Subject;

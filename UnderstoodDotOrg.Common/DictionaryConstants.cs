@@ -1399,7 +1399,9 @@ namespace UnderstoodDotOrg.Common
 
        //Blog Labels
        public static string BackToAllBlogs { get { return Translate.TextByDomain(PosesDictionary, "Blog Back Link"); } }
-       
+
+       public static string ForumCreateConfirmation { get { return "Forum {0} created."; } }
+       public static string ForumValidationConfirmation { get { return "Are you sure you want to Create/Publish this item?"; } }
        #endregion
 
 
@@ -1493,5 +1495,9 @@ namespace UnderstoodDotOrg.Common
 
 
 
+
+       public static string InitialDropDownText { get { return "Select a Forum"; } }
+
+       public static string InitialTextBoxText { get { return "Create a new Forum"; } }
     }
 }

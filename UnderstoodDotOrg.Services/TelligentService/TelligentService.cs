@@ -19,10 +19,75 @@ using System.Web.Security;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.Understood.Services;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
+using System.IO;
 namespace UnderstoodDotOrg.Services.TelligentService
 {
     public class TelligentService
     {
+        public static string FormatDate(string dateTime)
+        {
+            string[] d = dateTime.Split('T');
+            DateTime date = DateTime.Parse(d[0]);
+            DateTime now = DateTime.Now;
+            TimeSpan s = now.Subtract(date);
+            int span = (int)s.TotalDays;
+            string timeSince = span.ToString();
+            string publishedDate = timeSince + " days ago";
+            if (timeSince.Equals("1"))
+            {
+                publishedDate = "yesterday";
+            }
+
+            if (timeSince.Equals("0"))
+            {
+                date = DateTime.Parse(d[1]);
+                s = now.TimeOfDay.Subtract(date.TimeOfDay);
+                span = (int)s.TotalSeconds;
+                if (span < 60)
+                {
+                    return "just now";
+                }
+
+                if (span < 120)
+                {
+                    return "1 minute ago";
+                }
+
+                if (span < 3600)
+                {
+                    return string.Format("{0} minutes ago", Math.Floor((double)span / 60));
+                }
+
+                if (span < 7200)
+                {
+                    return "1 hour ago";
+                }
+
+                if (span < 86400)
+                {
+                    return string.Format("{0} hours ago", Math.Floor((double)span / 3600));
+                }
+            }
+            return publishedDate;
+        }
+        public static string FormatString100(string inputString)
+        {
+            if (inputString.Length >= 100)
+            {
+                string myString = inputString.Substring(0, 100);
+
+                int index = myString.LastIndexOf(' ');
+                //Have to check the value for index
+                if (index > -1)
+                    myString = myString.Substring(0, index);
+
+                return myString;
+            }
+            else
+            {
+                return inputString;
+            }
+        }
         internal static string GetApiEndPoint(string path)
         {
             // Normalize path
@@ -1025,7 +1090,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 var node = ReadThreads(forumID);
                 foreach (XmlNode childNode in node)
                 {
-                    ThreadModel t = new ThreadModel(childNode);
+                    ThreadModel t = new ThreadModel(childNode,FormatDate,FormatString100,ReadReplies);
                     th.Add(t);
                 }
             }
@@ -1133,7 +1198,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 var node = ReadForums(groupID);
                 foreach (XmlNode childNode in node)
                 {
-                    ForumModel f = new ForumModel(childNode);
+                    ForumModel f = new ForumModel(childNode,ReadThreadList);
                     fm.Add(f);
                 }
             }
@@ -1213,15 +1278,16 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return success;
         }
 
-        public static ThreadModel CreateForumThread(string forumID, string subject, string body)
+        public static ThreadModel CreateForumThread(string username,string forumID, string subject, string body)
         {
             ThreadModel model = null;
-            if ((!string.IsNullOrEmpty(forumID) && !string.IsNullOrEmpty(subject)) && !string.IsNullOrEmpty(body))
+            if (  !string.IsNullOrEmpty(username)&& !string.IsNullOrEmpty(forumID) && !string.IsNullOrEmpty(subject) && !string.IsNullOrEmpty(body))
             {
                 WebClient client = new WebClient();
                 try
                 {
                     client.Headers.Add("Rest-User-Token", TelligentAuth());
+                    client.Headers.Add("Rest-Impersonate-User", username);
                     string address = string.Format(GetApiEndPoint("forums/{0}/threads.xml"), forumID);
                     NameValueCollection data = new NameValueCollection();
                     data["Subject"] = subject;
@@ -1232,11 +1298,12 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     XmlNode childNode = document.SelectSingleNode("Response/Thread");
                     if (childNode != null)
                     {
-                        model = new ThreadModel(childNode);
+                        model = new ThreadModel(childNode,FormatDate,FormatString100,ReadReplies);
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
+                    Sitecore.Diagnostics.Error.LogError("Error in TelligentService.CreateForumThread.\nError:\n"+ex.Message);
                     model = null;
                 }
 
@@ -1247,16 +1314,84 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
 
         }
-
-        public static ForumModel CreateForum(string groupID, string name)
+        public static bool DeleteForumThread(string forumID,string threadId)
         {
-            ForumModel model = null;
-            if ((!string.IsNullOrEmpty(groupID) && !string.IsNullOrEmpty(name)))
+            bool success = false;
+            if ((!string.IsNullOrEmpty(forumID) && !string.IsNullOrEmpty(threadId)))
             {
                 WebClient client = new WebClient();
                 try
                 {
                     client.Headers.Add("Rest-User-Token", TelligentAuth());
+                    client.Headers.Add("Rest-Method", "DELETE");
+                    string address = string.Format(GetApiEndPoint("forums/{0}/threads/{1}.xml "), forumID,threadId);
+                    NameValueCollection data = new NameValueCollection();
+                   
+                    string xml = Encoding.UTF8.GetString(client.UploadValues(address, data));
+                    XmlDocument document = new XmlDocument();
+                    document.LoadXml(xml);
+                    XmlNode childNode = document.SelectSingleNode("Response/Errors");
+                    if (childNode == null)
+                    {
+                        success = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Error.LogError("Error in TelligentService.DeleteForum.\nError:\n" + ex.Message);
+                    success = false;
+                }
+
+
+            }
+            return success;
+          
+        }
+        public static bool DeleteForum(string forumID)
+        {
+            bool success = false;
+            if ((!string.IsNullOrEmpty(forumID)))
+            {
+                WebClient client = new WebClient();
+                try
+                {
+                    client.Headers.Add("Rest-User-Token", TelligentAuth());
+                    client.Headers.Add("Rest-Method", "DELETE");
+                    string address = string.Format(GetApiEndPoint("forums/{id}.xml"),forumID);
+                    NameValueCollection data = new NameValueCollection();
+
+                    string xml = Encoding.UTF8.GetString(client.UploadValues(address, data));
+                    XmlDocument document = new XmlDocument();
+                    document.LoadXml(xml);
+                    XmlNode childNode = document.SelectSingleNode("Response/Errors");
+                    if (childNode == null)
+                    {
+                        success = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Error.LogError("Error in TelligentService.DeleteForum.\nError:\n" + ex.Message);
+                    success = false;
+                }
+
+
+            }
+            return success;
+        }
+        public static ForumModel CreateForum(string username,string groupID, string name)
+        {
+            ForumModel model = null;
+            if ((!string.IsNullOrEmpty(username) &&!string.IsNullOrEmpty(groupID) && !string.IsNullOrEmpty(name)))
+            {
+                string response = String.Empty;
+                WebClient client = new WebClient();
+                try
+                {
+                    //TODO: Need to check if username has permission to create a forum
+
+                    client.Headers.Add("Rest-User-Token", TelligentAuth());
+                    client.Headers.Add("Rest-Impersonate-User", "admin");
                     string address = string.Format(GetApiEndPoint("forums.xml"));
                     NameValueCollection data = new NameValueCollection();
                     data["GroupId"] = groupID;
@@ -1267,11 +1402,48 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     XmlNode childNode = document.SelectSingleNode("Response/Forum");
                     if (childNode != null)
                     {
-                        model = new ForumModel(childNode);
+                        model = new ForumModel(childNode,ReadThreadList);
                     }
                 }
-                catch
+                catch (WebException webex)
                 {
+                    // an error has occured, let's figure out what
+                    // REST returns:
+                    // 404 -- If the *endpoint* cannot be found
+                    // 403 -- If the credentials are invalid
+                    // 500 -- Any errors are in the errors collection (as in this case)
+                    // 200 -- The request is processed successfully without errors
+
+                    var responseCode = ((HttpWebResponse)webex.Response).StatusCode;
+
+                    // if it is a 404 we know the endpoint URL is wrong
+                    if (responseCode == HttpStatusCode.NotFound)
+                    {
+                        // log it
+                    }
+                    // if it is a 403 then know something is wrong with our authentication / credentials
+                    else if (responseCode == HttpStatusCode.Forbidden)
+                    {
+                        // log / handle it
+                    }
+                    // if it is a 500 then we should go ahead and get the response body and examine it
+                    // to determine what the issue is
+                    else if (responseCode == HttpStatusCode.InternalServerError)
+                    {
+                        using (var reader = new StreamReader(webex.Response.GetResponseStream()))
+                        {
+                            response = reader.ReadToEnd();
+                            Sitecore.Diagnostics.Error.LogError("Error in TelligentService.CreateForum.\nError:\n" + response);
+                        }
+                    }
+                    else
+                    {
+                        // otherwise log/handle the error
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Sitecore.Diagnostics.Error.LogError("Error in TelligentService.CreateForum.\nError:\n" + ex.Message);
                     model = null;
                 }
 

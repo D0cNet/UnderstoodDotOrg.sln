@@ -1055,6 +1055,13 @@
     <Compile Include="Presentation\Sublayouts\Common\ShareNSave_SendEmail.ascx.designer.cs">
       <DependentUpon>ShareNSave_SendEmail.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Start A Discussion.ascx.cs">
+      <DependentUpon>Start A Discussion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Start A Discussion.ascx.designer.cs">
+      <DependentUpon>Start A Discussion.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Tiles\EventTile.ascx.cs">
       <DependentUpon>EventTile.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2940,6 +2947,7 @@
     <Content Include="Presentation\Sublayouts\Common\Page Topic.ascx" />
     <Content Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Start A Discussion.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Tiles\EventTile.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Tiles\PromoTile.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Widgets\AssistiveTool.ascx" />

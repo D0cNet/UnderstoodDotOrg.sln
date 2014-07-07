@@ -100,7 +100,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
                 try
                 {
                     //Create item in Telligent
-                    ThreadModel thModel = TelligentService.CreateForumThread(frmId, subject, body);
+                    ThreadModel thModel = TelligentService.CreateForumThread(CurrentMember.ScreenName,frmId, subject, body);
                     if (thModel != null)
                     {
                         //Create item in sitecore with returned forumID and threadID

@@ -46,22 +46,20 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         {
             MembershipManager memMan = new MembershipManager();
 
-            MembershipUser mUser = memMan.GetUser(username);
+            Member mUser = memMan.GetMemberByScreenName(username);
             if (mUser != null)
             {
-                Member m = memMan.GetMember(new Guid(mUser.ProviderUserKey.ToString()));
-                if (!String.IsNullOrEmpty(m.ScreenName))
-                {
+               
                     this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
-                    this.Children = m.Children.ConvertToChildCardModelList();
+                    this.Children = mUser.Children.ConvertToChildCardModelList();
                     this.UserLabel = "Blogger"; //TODO: find role                                                                                   
                     this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
-                    this.UserName = m.ScreenName;
-                    this.Contactable = m.allowConnections;
-                    this.ProfileLink = m.GetMemberPublicProfile();
+                    this.UserName = mUser.ScreenName;
+                    this.Contactable = mUser.allowConnections;
+                    this.ProfileLink = mUser.GetMemberPublicProfile();
                     if (badgesPop != null)
                         Badges = badgesPop(username);
-                }
+                
             }
             
         }

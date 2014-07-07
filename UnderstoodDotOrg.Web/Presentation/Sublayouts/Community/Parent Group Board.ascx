@@ -1,33 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parent Group Board.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parent_Group_Board" %>
-<script type="text/javascript">
-    function checkValidation() {
-        if (!Page_ClientValidate("newDiscussion")) {
-            return false;
-        }
-        else {
-            return confirm('Items created by end user cannot be modified until published. Are you sure you want to create a thread?');
-        }
-    }
 
-    jQuery(document).ready(function () {
-
-
-        jQuery("#btn_start_discussion").click(
-             function () {
-                 jQuery(".modal_discussion").toggle();
-                 //alert("Discussion button clicked");
-             });
-        jQuery("a").click(
-          function (evt) {
-              if (jQuery(this).attr("href").indexOf("REPLACE") > -1) {
-
-                  alert("Link not implemented!");
-                  return false;
-
-              }
-          });
-    });
-</script>
 <div class="container">
     <div class="row">
         <div class="container">
@@ -75,32 +47,19 @@
 
                     </div>
                     <!-- end .discussion-boards -->
-                    <div class="col-6 start-discussion">
+                   <%-- <div class="col-6 start-discussion">
                         <p>Got a question?</p>
                         <p class="want-to-talk">Want to talk?</p>
                         <a href="#" class="button">Start a Discussion</a>
-                    </div>
+                    </div>--%>
                     <!-- end .start-discussion -->
+                     <sc:Sublayout ID="sblStartDiscussion" Path="~/Presentation/Sublayouts/Common/Start A Discussion.ascx" runat="server" />
                 </div>
             </div>
             <!-- end .discussion-board -->
             <!-- END PARTIAL: community/groups_start_discussion -->
 
-            <div class="modal_discussion" runat="server" id="modal_discussion" style="display: none; clear: both">
-
-
-                <asp:Label ID="lblSubject" runat="server" Text="Subject:" />
-                <asp:TextBox ID="txtSubject" ValidationGroup="newDiscussion" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rqdSubject" ValidationGroup="newDiscussion" ControlToValidate="txtSubject" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
-
-                <asp:Label ID="lblBody" runat="server" Text="Body:" />
-                <asp:TextBox ID="txtBody" ValidationGroup="newDiscussion" runat="server" TextMode="MultiLine"></asp:TextBox>
-                <asp:RequiredFieldValidator ValidationGroup="newDiscussion" ID="rqdDiscussion" ControlToValidate="txtBody" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
-
-                <asp:Button ID="btnSubmit" OnClick="btnSubmit_Click" CssClass="button" OnClientClick="javascript:return checkValidation();" ClientIDMode="Static" ValidationGroup="newDiscussion" runat="server" Text="Create" />
-                <asp:Label Text="" CssClass="error" ID="error_msg" ForeColor="Red" Visible="false" runat="server" />
-
-            </div>
+           
 
             <div class="col col-23 individual-group skiplink-content" aria-role="main">
                 <!-- BEGIN PARTIAL: community/groups_table -->

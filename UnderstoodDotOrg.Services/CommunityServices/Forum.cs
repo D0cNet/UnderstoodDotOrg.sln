@@ -78,6 +78,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
                         {
                             //Close the editing state
                             newItem.Editing.EndEdit();
+                          
                         }
 
 
@@ -101,6 +102,11 @@ namespace UnderstoodDotOrg.Services.CommunityServices
             forumItem = masterDb.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Forums.ForumTemplateID + "' and @ForumID = '" + id + "']");
 
             return forumItem;
+        }
+        public static ForumModel ForumModelFactory(ForumItem item)
+        {
+            ForumModel frm = new ForumModel(item, TelligentService.TelligentService.ReadThreadList);
+            return frm;
         }
     }
 }

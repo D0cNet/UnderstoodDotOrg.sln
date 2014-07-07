@@ -75,6 +75,7 @@
     <Compile Include="CommunityServices\Discussion.cs" />
     <Compile Include="CommunityServices\Forum.cs" />
     <Compile Include="CommunityServices\Groups.cs" />
+    <Compile Include="CommunityServices\Threads.cs" />
     <Compile Include="ExactTarget\ExactTargetService.cs" />
     <Compile Include="ExactTarget\IExactTargetService.cs" />
     <Compile Include="LocationServices\GeoIPLookup.cs" />
