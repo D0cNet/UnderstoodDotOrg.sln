@@ -40,7 +40,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             }
 
             AssistiveToolsSkillFolderItem issuesFolder = MainsectionItem.GetGlobals().GetIssuesFolder();
-            rptIssuesChecklist.DataSource = issuesFolder.InnerItem.Children;
+            rptIssuesChecklist.DataSource = issuesFolder.InnerItem.Children.Select(i => (MetadataItem)i);
             rptIssuesChecklist.DataBind();
 
             litAverageRating.Text = GetRatingHTML(Int32.Parse(CSMUserReviewExtensions.GetAverageRating(pageItem.ID.ToGuid())));
@@ -180,13 +180,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         {
             if (e.IsItem())
             {
-                Item skill = e.Item.DataItem as Item;
+                MetadataItem issue = e.Item.DataItem as MetadataItem;
 
-                Literal litSkill = e.FindControlAs<Literal>("litSkill");
-                HtmlInputCheckBox inputSkill = e.FindControlAs<HtmlInputCheckBox>("inputSkill");
+                if (issue != null)
+                {
+                    Literal litSkill = e.FindControlAs<Literal>("litSkill");
+                    HtmlInputCheckBox inputSkill = e.FindControlAs<HtmlInputCheckBox>("inputSkill");
 
-                inputSkill.Attributes.Add("data-id", skill.ID.ToString());
-                litSkill.Text = skill.DisplayName;
+                    inputSkill.Attributes.Add("data-id", issue.ID.ToString());
+                    litSkill.Text = issue.ContentTitle;
+                }
             }
         }
 
