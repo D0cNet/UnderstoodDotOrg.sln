@@ -91,6 +91,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             btnShowResults.Visible = false;
             lblPageCounter.Visible = false;
             btnPrevPage.Visible = false;
+            divIntro.Visible = false;
+            lblPageCounter.Visible = false;
 
             frResultHeadline.Visible = true;
             frQuizIntro.Visible = false;

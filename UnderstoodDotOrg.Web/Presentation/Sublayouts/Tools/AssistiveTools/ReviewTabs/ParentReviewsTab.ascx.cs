@@ -26,6 +26,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
     {
         public AssistiveToolsReviewPageItem pageItem = Sitecore.Context.Item;
         public List<Comment> comments;
+        public bool OpenTab = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,33 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
             if (!IsPostBack)
             {
-                ddlGrades.DataSource = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
-                ddlGrades.DataTextField = "Text";
-                ddlGrades.DataValueField = "Value";
-                ddlGrades.DataBind();
-                
-                List<ListItem> iThinkItIsItems = new List<ListItem>();
-
-                iThinkItIsItems.Add(new ListItem("Select", "", true));
-                iThinkItIsItems.Add(new ListItem("On", "On", true));
-                iThinkItIsItems.Add(new ListItem("Off", "Off", true));
-                iThinkItIsItems.Add(new ListItem("Pause", "Pause", true));
-
-                ddlIThinkItIs.DataSource = iThinkItIsItems;
-                ddlIThinkItIs.DataTextField = "Text";
-                ddlIThinkItIs.DataValueField = "Value";
-                ddlIThinkItIs.DataBind();
-
-                List<ListItem> sortingOptions = new List<ListItem>();
-
-                sortingOptions.Add(new ListItem("Date: Newest to Oldest", "1", true));
-                sortingOptions.Add(new ListItem("Date: Oldest to Newest", "2", true));
-                sortingOptions.Add(new ListItem("Rating: Highest to Lowest", "3", true));
-                sortingOptions.Add(new ListItem("Rating: Lowest to Highest", "4", true));
-
-                ddlSorting.DataSource = sortingOptions;
-                ddlSorting.DataBind();
-
+                BindDropDowns();
                 BindReviews();
             }
 
@@ -68,6 +43,36 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             rptSkillsChecklist.DataBind();
 
             litAverageRating.Text = GetRatingHTML(Int32.Parse(CSMUserReviewExtensions.GetAverageRating(pageItem.ID.ToGuid())));
+        }
+
+        protected void BindDropDowns()
+        {
+            ddlGrades.DataSource = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
+            ddlGrades.DataTextField = "Text";
+            ddlGrades.DataValueField = "Value";
+            ddlGrades.DataBind();
+
+            List<ListItem> iThinkItIsItems = new List<ListItem>();
+
+            iThinkItIsItems.Add(new ListItem("Select", "", true));
+            iThinkItIsItems.Add(new ListItem("On", "On", true));
+            iThinkItIsItems.Add(new ListItem("Off", "Off", true));
+            iThinkItIsItems.Add(new ListItem("Pause", "Pause", true));
+
+            ddlIThinkItIs.DataSource = iThinkItIsItems;
+            ddlIThinkItIs.DataTextField = "Text";
+            ddlIThinkItIs.DataValueField = "Value";
+            ddlIThinkItIs.DataBind();
+
+            List<ListItem> sortingOptions = new List<ListItem>();
+
+            sortingOptions.Add(new ListItem("Date: Newest to Oldest", "1", true));
+            sortingOptions.Add(new ListItem("Date: Oldest to Newest", "2", true));
+            sortingOptions.Add(new ListItem("Rating: Highest to Lowest", "3", true));
+            sortingOptions.Add(new ListItem("Rating: Lowest to Highest", "4", true));
+
+            ddlSorting.DataSource = sortingOptions;
+            ddlSorting.DataBind();
         }
 
         protected string GetRatingHTML(int rating)
@@ -86,26 +91,26 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
         protected void BindReviews()
         {
-            List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());
+            List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());            
 
             if (ddlSorting.SelectedIndex == 0)
-            {
-                rptReviews.DataSource = reviews.OrderBy(i => i.Created);
-            }
+                reviews = reviews.OrderBy(i => i.Created).ToList();
             else if (ddlSorting.SelectedIndex == 1)
-            {
-                rptReviews.DataSource = reviews.OrderBy(i => i.Created).Reverse();
-            }
+                reviews = reviews.OrderBy(i => i.Created).Reverse().ToList();
             else if (ddlSorting.SelectedIndex == 2)
-            {
-                rptReviews.DataSource = reviews.OrderBy(i => i.Rating).Reverse();
-            }
+                reviews = reviews.OrderBy(i => i.Rating).Reverse().ToList();
             else
-            {
-                rptReviews.DataSource = reviews.OrderBy(i => i.Rating);
-            }
+                reviews = reviews.OrderBy(i => i.Rating).ToList();
 
+            rptReviews.DataSource = reviews.Take(3);
             rptReviews.DataBind();
+
+            if (reviews.Count > 3)
+            {
+                rptShowMoreReviews.DataSource = reviews.Skip(3).Take(3);
+                rptShowMoreReviews.DataBind();
+                pnlMoreLink.Visible = true;
+            }
 
             litNumberOfReviews.Text = reviews.Count.ToString() + " Reviews of this App";
         }
@@ -260,6 +265,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         protected void ddlSorting_SelectedIndexChanged(object sender, EventArgs e)
         {
             BindReviews();
+            OpenTab = true;
         }
     }
 }

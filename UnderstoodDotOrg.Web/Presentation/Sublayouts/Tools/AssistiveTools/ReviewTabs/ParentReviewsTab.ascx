@@ -21,67 +21,116 @@
             </div>
             <!-- end .review-intro -->
             <div class="parent-reviews">
-                <asp:Repeater ID="rptReviews" runat="server" OnItemDataBound="rptReviews_ItemDataBound">
-                    <HeaderTemplate>
-                        <section class="parent-review rs_read_this what-you-need-to-know-rs-wrapper">
-                    </HeaderTemplate>
-                    <ItemTemplate>
-                        <div class="review-section-title">
-                            <div class="review-section grade">
-                                Grade
-                                <span class="review-grade four"><asp:Literal ID="litGrade" runat="server"></asp:Literal></span>
-                            </div>
-                            <div class="review-section quality">
-                                Quality
-                                <span class="visuallyhidden">rating</span>
-                                <span>
-                                    <asp:Literal ID="litRating" runat="server"></asp:Literal>
-                                </span>
-                            </div>
-                            <div class="review-section date"><asp:Literal ID="litReviewDate" runat="server"></asp:Literal></div>
-                        </div>
-                    <p>
-                        <strong><asp:Literal ID="litTitle" runat="server"></asp:Literal></strong> <asp:Literal ID="litReviewContent" runat="server"></asp:Literal>
-                    </p>
-                    <asp:Repeater ID="rptSkills" runat="server" OnItemDataBound="rptSkills_ItemDataBound">
-                        <HeaderTemplate>
-                            <p>
-                                <span>Good For</span>
-                        </HeaderTemplate>
+                <section class="parent-review rs_read_this what-you-need-to-know-rs-wrapper">
+                    <asp:Repeater ID="rptReviews" runat="server" OnItemDataBound="rptReviews_ItemDataBound">
                         <ItemTemplate>
-                            <span>
-                                <a class="link-separator" href="REPLACE"><asp:Literal ID="litSkill" runat="server"></asp:Literal></a>
-                            </span>
+                            <div class="review-section-title">
+                                <div class="review-section grade">
+                                    Grade
+                                    <span class="review-grade four"><asp:Literal ID="litGrade" runat="server"></asp:Literal></span>
+                                </div>
+                                <div class="review-section quality">
+                                    Quality
+                                    <span class="visuallyhidden">rating</span>
+                                    <span>
+                                        <asp:Literal ID="litRating" runat="server"></asp:Literal>
+                                    </span>
+                                </div>
+                                <div class="review-section date"><asp:Literal ID="litReviewDate" runat="server"></asp:Literal></div>
+                            </div>
+                        <p>
+                            <strong><asp:Literal ID="litTitle" runat="server"></asp:Literal></strong> <asp:Literal ID="litReviewContent" runat="server"></asp:Literal>
+                        </p>
+                        <asp:Repeater ID="rptSkills" runat="server" OnItemDataBound="rptSkills_ItemDataBound">
+                            <HeaderTemplate>
+                                <p>
+                                    <span>Good For</span>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <span>
+                                    <a class="link-separator" href="REPLACE"><asp:Literal ID="litSkill" runat="server"></asp:Literal></a>
+                                </span>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </p>
+                            </FooterTemplate>
+                        </asp:Repeater>
+                        <div class="review-report">
+                            <span class="write-review">
+                                <i></i>
+                                <a href="#write-review">Write Your Own Review</a></span>
+                            <span class="review-report">
+                                <i></i>
+                                <a href="#" id="reportAnchor" runat="server" onserverclick="reportAnchor_ServerClick">Report</a></span>
+                        </div>
+                        <!-- end review-report -->
                         </ItemTemplate>
-                        <FooterTemplate>
-                            </p>
-                        </FooterTemplate>
                     </asp:Repeater>
-                    <div class="review-report">
-                        <span class="write-review">
-                            <i></i>
-                            <a href="#write-review">Write Your Own Review</a></span>
-                        <span class="review-report">
-                            <i></i>
-                            <a href="#" id="reportAnchor" runat="server" onserverclick="reportAnchor_ServerClick">Report</a></span>
-                    </div>
-                    <!-- end review-report -->
-                    </ItemTemplate>
-                    <FooterTemplate>
-                        </section>
-                    </FooterTemplate>
-                </asp:Repeater>
+
+                    <asp:Panel ID="pnlShowMore" runat="server" CssClass="hide-show-more">
+                        <asp:Repeater ID="rptShowMoreReviews" runat="server" OnItemDataBound="rptReviews_ItemDataBound">
+                            <ItemTemplate>
+                                <div class="review-section-title">
+                                    <div class="review-section grade">
+                                        Grade
+                                        <span class="review-grade four"><asp:Literal ID="litGrade" runat="server"></asp:Literal></span>
+                                    </div>
+                                    <div class="review-section quality">
+                                        Quality
+                                        <span class="visuallyhidden">rating</span>
+                                        <span>
+                                            <asp:Literal ID="litRating" runat="server"></asp:Literal>
+                                        </span>
+                                    </div>
+                                    <div class="review-section date"><asp:Literal ID="litReviewDate" runat="server"></asp:Literal></div>
+                                </div>
+                            <p>
+                                <strong><asp:Literal ID="litTitle" runat="server"></asp:Literal></strong> <asp:Literal ID="litReviewContent" runat="server"></asp:Literal>
+                            </p>
+                            <asp:Repeater ID="rptSkills" runat="server" OnItemDataBound="rptSkills_ItemDataBound">
+                                <HeaderTemplate>
+                                    <p>
+                                        <span>Good For</span>
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                    <span>
+                                        <a class="link-separator" href="REPLACE"><asp:Literal ID="litSkill" runat="server"></asp:Literal></a>
+                                    </span>
+                                </ItemTemplate>
+                                <FooterTemplate>
+                                    </p>
+                                </FooterTemplate>
+                            </asp:Repeater>
+                            <div class="review-report">
+                                <span class="write-review">
+                                    <i></i>
+                                    <a href="#write-review">Write Your Own Review</a></span>
+                                <span class="review-report">
+                                    <i></i>
+                                    <a href="#" id="reportAnchor" runat="server" onserverclick="reportAnchor_ServerClick">Report</a></span>
+                            </div>
+                            <!-- end review-report -->
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </asp:Panel>
+                </section>
+
+
             </div>
             <style>
                 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-section.date{
                     margin-left: 70px;
                 }
+
+                .hide-show-more{
+                    display: none;
+                }
             </style>
             <!-- .parent-reviews -->
             <!-- Show More -->
-            <div class="show-more">
-                <a href="#" class="show-more-link" data-path="assistive-tech/reviews" data-container="parent-reviews" data-item="parent-review" data-count="6">More Results<i class="icon-arrow-down-blue"></i></a>
-            </div>
+            <asp:Panel ID="pnlMoreLink" runat="server" CssClass="show-more" Visible="false">
+                <a href="#" class="show-more-link" data-path="assistive-tech/reviews" data-container="parent-reviews" data-item="parent-review" data-count="6" onclick="$('.hide-show-more').show(); $(this).hide();">More Results<i class="icon-arrow-down-blue"></i></a>
+            </asp:Panel>
             <!-- .show-more -->
             <!-- BEGIN PARTIAL: rate-this-app -->
             <section id="write-review" class="rate-this-app">
@@ -170,6 +219,12 @@
                 <asp:HiddenField ID="hfRating" runat="server" />
                 <script>
                     $(function () {
+
+                        if (<%= OpenTab.ToString().ToLower() %>)
+                        {
+                            location.hash = '#tabs2-parent-reviews';
+                        }
+
                         var hiddenField = $("[id*='hfKeyValuePairs']");
                         var hiddenField2 = $("[id*='hfRating']");
 

@@ -12,14 +12,14 @@
             <!-- BEGIN PARTIAL: knowledge-quiz-a13a -->
             <div class="knowledge-quiz">
                 <div class="question-counter">
-                    <asp:Label CssClass="assessment-quiz-pager" ID="lblPageCounter" runat="server"></asp:Label><br /><br />
-                    <p class="assessment-quiz-intro">
+                    <asp:Label CssClass="assessment-quiz-pager" ID="lblPageCounter" runat="server"></asp:Label>
+                    <p class="assessment-quiz-intro" id="divIntro" runat="server">
                         <sc:FieldRenderer ID="frQuizIntro" runat="server" FieldName="Body Content" />
                     </p>
-                    <sc:FieldRenderer ID="frResultHeadline" runat="server" FieldName="Quiz Result Headline" Visible="false"></sc:FieldRenderer>
+                    <h3 class="assessment-result-intro"><sc:FieldRenderer ID="frResultHeadline" runat="server" FieldName="Quiz Result Headline" Visible="false"></sc:FieldRenderer></h3>
                     <%--Question 1 of 10--%>
                 </div>
-                <p class="explanation">
+                <p class="assessment-result-description">
                     <sc:FieldRenderer ID="frEndExplanation" runat="server" FieldName="Detail" Visible="false"></sc:FieldRenderer>
                 </p>
                 <asp:Repeater ID="rptPageQuestions" runat="server" OnItemDataBound="rptPageQuestions_ItemDataBound">

@@ -49,6 +49,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         protected global::System.Web.UI.WebControls.Repeater rptReviews;
         
         /// <summary>
+        /// pnlShowMore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlShowMore;
+        
+        /// <summary>
+        /// rptShowMoreReviews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptShowMoreReviews;
+        
+        /// <summary>
+        /// pnlMoreLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlMoreLink;
+        
+        /// <summary>
         /// ddlGrades control.
         /// </summary>
         /// <remarks>
